@@ -1,0 +1,135 @@
+/* Custom fonts */
+@font-face { 
+    font-family: cog;
+    src: url('fonts/Cogmind-Cog.woff2') format('woff2'),
+         url('fonts/Cogmind-Cog.woff') format('woff'),
+         url('fonts/Cogmind-Cog.ttf') format('truetype');
+}
+
+@font-face { 
+    font-family: smallcaps;
+    src: url('fonts/Cogmind-Smallcaps.woff2') format('woff2'),
+         url('fonts/Cogmind-Smallcaps.woff') format('woff'),
+         url('fonts/Cogmind-Smallcaps.ttf') format('truetype');
+}
+
+html {
+    background-color: black;
+}
+
+body {
+    font-family: smallcaps;
+    background-color: black;
+    color: #00cc00;
+}
+
+.header {
+    font-family: cog;
+}
+
+.not-visible {
+    display: none!important;
+}
+
+/* Grid */
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1px;
+}
+
+/* Grid item */
+.item {
+    display: block;
+    text-align: center;
+    padding: .25rem .25rem;
+    background-color: inherit;
+    outline: 1px solid #006200;
+}
+
+/* Popup tooltip */
+.tooltip-inner {
+    color: #00cc00;
+    background-color: #004200;
+    border: 1px solid #008800;
+}
+
+/* Popup tooltip arrow */
+.tooltip .arrow::before {
+    border-top-color: #008800;
+}
+
+/* Input label */
+.input-group-text, .input-group-lg > .input-group-prepend > .input-group-text {
+    color: #9da9af;
+    background-color: #162416;
+    border: 1px solid #006200;
+    border-radius: 0;
+}
+
+.input-group-lg > .form-control {
+    border-radius: 0;
+}
+
+/* Input textbox */
+.form-control, .form-control:focus {
+    color: #9da9af;
+    background-color: black;
+    border: 1px solid #006200;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 1px solid #00cc00;
+}
+
+/* Buttons */
+.btn {
+    color: #9da9af;
+    background-color: black;
+    border-color: #006200;
+    border-radius: 0;
+}
+
+.btn.active {
+    border-color: #00aa00;
+}
+
+.btn.focus {
+    box-shadow: none;
+}
+
+.btn:not(:disabled):not(.disabled):not(:hover).active {
+    background-color: #005700;
+}
+
+.btn:hover:not(.active) {
+    border-color: #00aa00;
+    color: #aaa;
+}
+
+.btn:hover {
+    background-color: #004200;
+    color: #aaa;
+}
+
+/* Button groups, margin stuff is a bit hacky to avoid double-wide border */
+/* .btn-group {
+    margin-left: 1px;
+} */
+
+.btn-group * {
+    margin-top: -1px;
+}
+
+/* .btn-group > label:first-of-type {
+    border-left-color: white;
+} */
+
+.input-group-prepend {
+    margin-top: 0px;
+}
+
+.btn-group > *:first-child {
+    margin-left: -1px;
+}

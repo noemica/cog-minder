@@ -1,0 +1,238 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
+    <title>Cog-Minder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Cog-Minder header -->
+    <div id="header" class="container header">
+        <h1 class="display-3 text-center">Cog-Minder</h1>
+    </div>
+
+    <!-- Name filter and reset button -->
+    <div class="container-fluid input-group input-group-lg">
+        <div class="input-group-prepend" data-toggle="tooltip" data-placement="top"
+            title="The name of an part to search for.">
+            <span class="input-group-text">Name</span>
+        </div>
+        <input id="name" type="text" class="form-control" placeholder="Any">
+        <button id="reset" type="button" class="btn btn-large ml-3" data-toggle="tooltip" data-placement="top"
+            title="Resets all filters to their default (unfiltered) state.">Reset</button>
+    </div>
+
+    <!-- Depth/Size/Mass filters -->
+    <div class="container-fluid input-group input-group-lg mt-2">
+        <!-- <div class="input-group-prepend" data-toggle="tooltip" data-placement="top" title="TODO">
+            <span class="input-group-text">Depth</span>
+        </div>
+        <input id="depth" type="text" class="form-control" placeholder="Any"> -->
+        <div class="input-group-prepend" data-toggle="tooltip" data-placement="top"
+            title="The size of the part (# of slots).">
+            <span class="input-group-text">Size</span>
+        </div>
+        <input id="size" type="text" class="form-control" placeholder="Any">
+        <div class="input-group-prepend ml-3" data-toggle="tooltip" data-placement="top" title="The mass of the part.">
+            <span class="input-group-text">Mass</span>
+        </div>
+        <input id="mass" type="text" class="form-control" placeholder="Any">
+    </div>
+
+    <!-- Slot filter -->
+    <div id="slotsContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-3"
+        data-toggle="buttons">
+        <div class="input-group-prepend" data-toggle="tooltip" data-placement="top" title="The slot for the part.">
+            <span class="input-group-text">Slot</span>
+        </div>
+        <label id="slotAny" class="btn btn-md">
+            <input type="radio" name="options"> Any
+        </label>
+        <label id="slotPower" class="btn btn-md">
+            <input type="radio" name="options"> Power
+        </label>
+        <label id="slotPropulsion" class="btn btn-md">
+            <input type="radio" name="options"> Propulsion
+        </label>
+        <label id="slotUtility" class="btn btn-md">
+            <input type="radio" name="options"> Utility
+        </label>
+        <label id="slotWeapon" class="btn btn-md">
+            <input type="radio" name="options"> Weapon
+        </label>
+        <!-- <label id="slotOther" class="btn btn-md">
+                <input type="radio" name="options"> Other
+            </label> -->
+    </div>
+
+    <div id="typeFilters">
+        <!-- Power type filter -->
+        <div id="powerTypeContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
+            data-toggle="buttons">
+            <div class="input-group-prepend" data-toggle="tooltip" data-placement="top" title="The type of power.">
+                <span class="input-group-text">Type</span>
+            </div>
+            <label id="powerTypeAny" class="btn btn-md">
+                <input type="radio" name="options"> Any
+            </label>
+            <label id="powerTypeEngine" class="btn btn-md">
+                <input type="radio" name="options"> Engine
+            </label>
+            <label id="powerTypePowerCore" class="btn btn-md">
+                <input type="radio" name="options"> Power Core
+            </label>
+            <label id="powerTypeReactor" class="btn btn-md">
+                <input type="radio" name="options"> Reactor
+            </label>
+        </div>
+
+        <!-- Propulsion type filter -->
+        <div id="propTypeContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
+            data-toggle="buttons">
+            <div class="input-group-prepend" data-toggle="tooltip" data-placement="top" title="The type of propulsion.">
+                <span class="input-group-text">Type</span>
+            </div>
+            <label id="propTypeAny" class="btn btn-md">
+                <input type="radio" name="options"> Any
+            </label>
+            <label id="propTypeFlight" class="btn btn-md">
+                <input type="radio" name="options"> Flight
+            </label>
+            <label id="propTypeHover" class="btn btn-md">
+                <input type="radio" name="options"> Hover
+            </label>
+            <label id="propTypeLeg" class="btn btn-md">
+                <input type="radio" name="options"> Leg
+            </label>
+            <label id="propTypeTread" class="btn btn-md">
+                <input type="radio" name="options"> Treads
+            </label>
+            <label id="propTypeWheel" class="btn btn-md">
+                <input type="radio" name="options"> Wheel
+            </label>
+        </div>
+
+        <!-- Utility type filter -->
+        <div id="utilTypeContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
+            data-toggle="buttons">
+            <div class="input-group-prepend" data-toggle="tooltip" data-placement="top" title="The type of utility.">
+                <span class="input-group-text">Type</span>
+            </div>
+            <label id="utilTypeAny" class="btn btn-md">
+                <input type="radio" name="options"> Any
+            </label>
+            <label id="utilTypeArtifact" class="btn btn-md">
+                <input type="radio" name="options"> Artifact
+            </label>
+            <label id="utilTypeDevice" class="btn btn-md">
+                <input type="radio" name="options"> Device
+            </label>
+            <label id="utilTypeHackware" class="btn btn-md">
+                <input type="radio" name="options"> Hackware
+            </label>
+            <label id="utilTypeProcessor" class="btn btn-md">
+                <input type="radio" name="options"> Processor
+            </label>
+            <label id="utilTypeProtection" class="btn btn-md">
+                <input type="radio" name="options"> Protection
+            </label>
+            <label id="utilTypeStorage" class="btn btn-md">
+                <input type="radio" name="options"> Storage
+            </label>
+        </div>
+
+        <!-- Weapon type filter -->
+        <div id="weaponTypeContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
+            data-toggle="buttons">
+            <div class="input-group-prepend" data-toggle="tooltip" data-placement="top" title="The type of weapon.">
+                <span class="input-group-text">Type</span>
+            </div>
+            <label id="weaponTypeAny" class="btn btn-md">
+                <input type="radio" name="options"> Any
+            </label>
+            <label id="weaponTypeBallisticCannon" class="btn btn-md">
+                <input type="radio" name="options"> Ballistic Cannon
+            </label>
+            <label id="weaponTypeBallisticGun" class="btn btn-md">
+                <input type="radio" name="options"> Ballistic Gun
+            </label>
+            <label id="weaponTypeEnergyCannon" class="btn btn-md">
+                <input type="radio" name="options"> Energy Cannon
+            </label>
+            <label id="weaponTypeEnergyGun" class="btn btn-md">
+                <input type="radio" name="options"> Energy Gun
+            </label>
+            <label id="weaponTypeImpactWeapon" class="btn btn-md">
+                <input type="radio" name="options"> Impact
+            </label>
+            <label id="weaponTypeLauncher" class="btn btn-md">
+                <input type="radio" name="options"> Launcher
+            </label>
+            <label id="weaponTypePiercingWeapon" class="btn btn-md">
+                <input type="radio" name="options"> Piercing
+            </label>
+            <label id="weaponTypeSlashingWeapon" class="btn btn-md">
+                <input type="radio" name="options"> Slashing
+            </label>
+            <label id="weaponTypeSpecialMeleeWeapon" class="btn btn-md">
+                <input type="radio" name="options"> Special Melee Weapon
+            </label>
+            <label id="weaponTypeSpecialWeapon" class="btn btn-md">
+                <input type="radio" name="options"> Special Weapon
+            </label>
+        </div>
+    </div>
+
+    <div id="categoryContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-3"
+        data-toggle="buttons">
+        <div class="input-group-prepend" data-toggle="tooltip" data-placement="top"
+            title="Additional part category like location/faction.">
+            <span class="input-group-text">Category</span>
+        </div>
+        <label class="btn btn-md">
+            <input id="categoryAny" type="radio" name="options"> Any
+        </label>
+        <label class="btn btn-md">
+            <input id="categoryNonProto" type="radio" name="options"> 0b10 Non-Proto
+        </label>
+        <label class="btn btn-md">
+            <input id="categoryProto" type="radio" name="options"> 0b10 Proto
+        </label>
+        <label class="btn btn-md">
+            <input id="categoryAlien" type="radio" name="options"> Alien
+        </label>
+        <label class="btn btn-md">
+            <input id="categoryDerelict" type="radio" name="options"> Derelict
+        </label>
+        <label class="btn btn-md">
+            <input id="categoryExile" type="radio" name="options"> Exile
+        </label>
+        <label class="btn btn-md">
+            <input id="categoryTesting" type="radio" name="options"> Testing
+        </label>
+    </div>
+
+    <div class="container-fluid">
+        <ul id="itemsGrid" class="list-group items-grid my-5">
+        </ul>
+    </div>
+</body>
+
+</html>
