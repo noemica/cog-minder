@@ -46,6 +46,11 @@
         </div>
         <input id="depth" type="text" class="form-control" placeholder="Any"> -->
         <div class="input-group-prepend" data-toggle="tooltip" data-placement="top"
+            title="The rating of the part (Use * for prototype).">
+            <span class="input-group-text">Rating</span>
+        </div>
+        <input id="rating" type="text" class="form-control" placeholder="Any">
+        <div class="input-group-prepend ml-3" data-toggle="tooltip" data-placement="top"
             title="The size of the part (# of slots).">
             <span class="input-group-text">Size</span>
         </div>
@@ -206,26 +211,26 @@
             title="Additional part category like location/faction.">
             <span class="input-group-text">Category</span>
         </div>
-        <label class="btn btn-md">
-            <input id="categoryAny" type="radio" name="options"> Any
+        <label id="categoryAny" class="btn btn-md">
+            <input type="radio" name="options"> Any
         </label>
-        <label class="btn btn-md">
-            <input id="categoryNonProto" type="radio" name="options"> 0b10 Non-Proto
+        <label id="category0b10" class="btn btn-md">
+            <input type="radio" name="options"> 0b10
         </label>
-        <label class="btn btn-md">
-            <input id="categoryProto" type="radio" name="options"> 0b10 Proto
+        <label id="categoryAlien" class="btn btn-md">
+            <input type="radio" name="options"> Alien
         </label>
-        <label class="btn btn-md">
-            <input id="categoryAlien" type="radio" name="options"> Alien
+        <label id="categoryDerelict" class="btn btn-md">
+            <input type="radio" name="options"> Derelict
         </label>
-        <label class="btn btn-md">
-            <input id="categoryDerelict" type="radio" name="options"> Derelict
+        <label id="categoryExile" class="btn btn-md">
+            <input type="radio" name="options"> Exile
         </label>
-        <label class="btn btn-md">
-            <input id="categoryExile" type="radio" name="options"> Exile
+        <label id="categoryGolem" class="btn btn-md">
+            <input type="radio" name="options"> Golem
         </label>
-        <label class="btn btn-md">
-            <input id="categoryTesting" type="radio" name="options"> Testing
+        <label id="categoryTesting" class="btn btn-md">
+            <input type="radio" name="options"> Testing
         </label>
     </div>
 

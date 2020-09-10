@@ -1,5 +1,6 @@
 import csv
 import json
+from io import StringIO
 
 categories = {
     'all': [
@@ -53,6 +54,16 @@ categories = {
         'Effect',
         'Description',
     ],
+    # 'other_overview': [
+    #     'Name',
+    #     'Type',
+    #     'Rating',
+    #     'Category',
+    #     'Size',
+    #     'Integrity',
+    #     'Life',
+    #     'Description',
+    # ],
     'power': [
         'Energy Generation',
         'Energy Storage',
@@ -176,38 +187,41 @@ index_lookup = {}
 all_values = {}
 
 with open('gallery_export.csv') as f:
-    csv.register_dialect('cog', 'excel', escapechar='\\')
-    reader = csv.reader(f, csv.get_dialect('cog'))
+    # Escape quotes to properly parse
+    string = f.read() \
+        .replace('"Lootmaker"', '\\"Lootmaker\\"') \
+        .replace('"Choppy"', '\\"Choppy\\"')
 
-    header = next(reader)
+csv.register_dialect('cog', 'excel', escapechar='\\')
+reader = csv.reader(StringIO(string), csv.get_dialect('cog'))
 
-    # Update the index lookup based on the header row
-    for category in categories.values():
-        for name in category:
-            index_lookup[name] = header.index(name)
+header = next(reader)
 
-    for row in reader:
-        slot = get_slot(row)
+# Update the index lookup based on the header row
+for category in categories.values():
+    for name in category:
+        index_lookup[name] = header.index(name)
 
-        if slot in slot_categories:
-            names = slot_categories[slot]
-            values = {}
+for row in reader:
+    slot = get_slot(row)
 
-            for name in names:
-                val = get_value(row, name)
-                if val is not None:
-                    values[name] = val
+    if slot in slot_categories:
+        names = slot_categories[slot]
+        values = {}
 
-            all_values[values['Name']] = values
+        for name in names:
+            val = get_value(row, name)
+            if val is not None:
+                values[name] = val
 
-# for slot, values_list in all_values.items():
-#     print('-------------------')
-#     print(slot)
-#     print('-------------------')
-#     print()
-#
-#     for values in values_list:
-#         print(values)
+        if 'Category' in values:
+            if values['Category'] == 'Prototype':
+                values['Rating'] = values['Rating'] + '*'
+
+            if values['Category'] == 'Alien':
+                values['Rating'] = values['Rating'] + '**'
+
+        all_values[values['Name']] = values
 
 with open('../json/items.json', 'w') as f:
     json.dump(all_values, f)

@@ -1,5 +1,17 @@
 jq = jQuery.noConflict();
 jq(function ($) {
+    // Category ID -> 
+    const categoryIdMap = {
+        "category0b10": 0,
+        "categoryAlien": 1,
+        "categoryDerelict": 2,
+        "categoryExile": 3,
+        "categoryTesting": 4,
+        "categoryGolem": 5,
+        "categorySpoiler": 6,
+        "categoryUnobtainable": 7,
+    };
+
     // Slot ID -> Slot string
     const slotMap = {
         "slotPower": "Power",
@@ -48,19 +60,19 @@ jq(function ($) {
     // Load external files
     let items = fetch("./json/items.json")
         .then(response => response.json());
-    let locations = fetch("./json/locations.json")
+    let categories = fetch("./json/categories.json")
         .then(response => response.json());
 
-    Promise.all([items, locations]).then(data => {
+    Promise.all([items, categories]).then(data => {
         $(document).ready(() => {
             init(data[0], data[1]);
         });
     })
 
     // Initialize the page state
-    function init(items, locations) {
+    function init(items, categories) {
         itemData = items;
-        locationData = locations;
+        categoryData = categories;
 
         // Reset page state
         resetFilters();
@@ -68,6 +80,7 @@ jq(function ($) {
         // Register handlers
         $("#name").on("input", updateItems);
         $("#depth").on("input", updateItems);
+        $("#rating").on("input", updateItems);
         $("#size").on("input", updateItems);
         $("#mass").on("input", updateItems);
         $("#reset").click(resetFilters);
@@ -79,6 +92,7 @@ jq(function ($) {
         $("#propTypeContainer > label > input").on("click", updateItems);
         $("#utilTypeContainer > label > input").on("click", updateItems);
         $("#weaponTypeContainer > label > input").on("click", updateItems);
+        $("#categoryContainer > label > input").on("click", updateItems);
 
         // Enable tooltips
         $('[data-toggle="tooltip"]').tooltip()
@@ -91,13 +105,18 @@ jq(function ($) {
         // Name filter
         const nameValue = $("#name").val();
         if (nameValue.length > 0) {
-            filters.push(item => item.Name.toLowerCase().includes(nameValue.toLowerCase()));
+            filters.push(item => item["Name"].toLowerCase().includes(nameValue.toLowerCase()));
         }
 
         // Depth filter TODO
         // const depthValue = $("#depth").val();
         // if (depthValue.length > 0) {
         // }
+
+        const ratingValue = $("#rating").val();
+        if (ratingValue.length > 0) {
+            filters.push(item => item["Rating"].includes(ratingValue));
+        }
 
         // Size filter
         const sizeValue = $("#size").val();
@@ -108,8 +127,7 @@ jq(function ($) {
         // Mass filter
         const massValue = $("#mass").val();
         if (massValue.length > 0) {
-            filters.push(item =>
-                item["Mass"] === massValue);
+            filters.push(item => item["Mass"] === massValue);
         }
 
         // Slot filter
@@ -124,6 +142,13 @@ jq(function ($) {
         if (typeId in typeMap) {
             const filterType = typeMap[typeId];
             filters.push(item => item["Type"] === filterType);
+        }
+
+        // Category filter
+        const categoryId = $("#categoryContainer > label.active").attr("id");
+        if (categoryId in categoryIdMap) {
+            const filterNum = categoryIdMap[categoryId];
+            filters.push(item => categoryData[item["Name"]].includes(filterNum));
         }
 
         // Create a function that checks all filters
@@ -144,6 +169,7 @@ jq(function ($) {
         // Reset text inputs
         $("#name").val("");
         $("#depth").val("");
+        $("#rating").val("");
         $("#size").val("");
         $("#mass").val("");
 
