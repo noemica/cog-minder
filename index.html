@@ -25,46 +25,52 @@
 <body>
     <!-- Cog-Minder header -->
     <div id="header" class="container header">
-        <h1 class="display-3 text-center">Cog-Minder</h1>
+        <div class="row">
+            <div class="col"></div>
+            <h1 class="col-9 display-3 text-center">Cog-Minder</h1>
+            <div id="spoilersPopupContainer" class="form-check align-self-center" data-toggle="tooltip"
+                data-placement="bottom" title="Allow items from all branches.">
+                <input id="spoilers" type="checkbox" class="form-check-input">
+                <label class="form-check-label" for="spoilers">Spoilers</label>
+            </div>
+        </div>
+        <!-- <input type="checkbox" class=form-check-input"> -->
     </div>
 
     <!-- Name filter and reset button -->
     <div class="container-fluid input-group input-group-lg">
-        <div class="input-group-prepend" data-toggle="tooltip" data-placement="top"
-            title="The name of an part to search for.">
+        <div class="input-group-prepend" data-toggle="tooltip" title="The name of an part to search for.">
             <span class="input-group-text">Name</span>
         </div>
         <input id="name" type="text" class="form-control" placeholder="Any">
-        <button id="reset" type="button" class="btn btn-large ml-3" data-toggle="tooltip" data-placement="top"
+        <button id="reset" type="button" class="btn btn-large ml-3" data-toggle="tooltip"
             title="Resets all filters to their default (unfiltered) state.">Reset</button>
     </div>
 
     <!-- Depth/Size/Mass filters -->
-    <div class="container-fluid input-group input-group-lg mt-2">
-        <!-- <div class="input-group-prepend" data-toggle="tooltip" data-placement="top" title="TODO">
+    <div class="container-fluid input-group input-group-md mt-2">
+        <!-- <div class="input-group-prepend" data-toggle="tooltip" title="TODO">
             <span class="input-group-text">Depth</span>
         </div>
         <input id="depth" type="text" class="form-control" placeholder="Any"> -->
-        <div class="input-group-prepend" data-toggle="tooltip" data-placement="top"
-            title="The rating of the part (Use * for prototype).">
+        <div class="input-group-prepend" data-toggle="tooltip" title="The rating of the part (Use * for prototype).">
             <span class="input-group-text">Rating</span>
         </div>
         <input id="rating" type="text" class="form-control" placeholder="Any">
-        <div class="input-group-prepend ml-3" data-toggle="tooltip" data-placement="top"
-            title="The size of the part (# of slots).">
+        <div class="input-group-prepend ml-3" data-toggle="tooltip" title="The size of the part (# of slots).">
             <span class="input-group-text">Size</span>
         </div>
         <input id="size" type="text" class="form-control" placeholder="Any">
-        <div class="input-group-prepend ml-3" data-toggle="tooltip" data-placement="top" title="The mass of the part.">
+        <div class="input-group-prepend ml-3" data-toggle="tooltip" title="The mass of the part.">
             <span class="input-group-text">Mass</span>
         </div>
         <input id="mass" type="text" class="form-control" placeholder="Any">
     </div>
 
     <!-- Slot filter -->
-    <div id="slotsContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-3"
+    <div id="slotsContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
         data-toggle="buttons">
-        <div class="input-group-prepend" data-toggle="tooltip" data-placement="top" title="The slot for the part.">
+        <div class="input-group-prepend" data-toggle="tooltip" title="The slot for the part.">
             <span class="input-group-text">Slot</span>
         </div>
         <label id="slotAny" class="btn btn-md">
@@ -91,7 +97,7 @@
         <!-- Power type filter -->
         <div id="powerTypeContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
             data-toggle="buttons">
-            <div class="input-group-prepend" data-toggle="tooltip" data-placement="top" title="The type of power.">
+            <div class="input-group-prepend" data-toggle="tooltip" title="The type of power.">
                 <span class="input-group-text">Type</span>
             </div>
             <label id="powerTypeAny" class="btn btn-md">
@@ -111,7 +117,7 @@
         <!-- Propulsion type filter -->
         <div id="propTypeContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
             data-toggle="buttons">
-            <div class="input-group-prepend" data-toggle="tooltip" data-placement="top" title="The type of propulsion.">
+            <div class="input-group-prepend" data-toggle="tooltip" title="The type of propulsion.">
                 <span class="input-group-text">Type</span>
             </div>
             <label id="propTypeAny" class="btn btn-md">
@@ -137,7 +143,7 @@
         <!-- Utility type filter -->
         <div id="utilTypeContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
             data-toggle="buttons">
-            <div class="input-group-prepend" data-toggle="tooltip" data-placement="top" title="The type of utility.">
+            <div class="input-group-prepend" data-toggle="tooltip" title="The type of utility.">
                 <span class="input-group-text">Type</span>
             </div>
             <label id="utilTypeAny" class="btn btn-md">
@@ -166,7 +172,7 @@
         <!-- Weapon type filter -->
         <div id="weaponTypeContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
             data-toggle="buttons">
-            <div class="input-group-prepend" data-toggle="tooltip" data-placement="top" title="The type of weapon.">
+            <div class="input-group-prepend" data-toggle="tooltip" title="The type of weapon.">
                 <span class="input-group-text">Type</span>
             </div>
             <label id="weaponTypeAny" class="btn btn-md">
@@ -205,10 +211,9 @@
         </div>
     </div>
 
-    <div id="categoryContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-3"
+    <div id="categoryContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
         data-toggle="buttons">
-        <div class="input-group-prepend" data-toggle="tooltip" data-placement="top"
-            title="Additional part category like location/faction.">
+        <div class="input-group-prepend" data-toggle="tooltip" title="Additional part category like location/faction.">
             <span class="input-group-text">Category</span>
         </div>
         <label id="categoryAny" class="btn btn-md">
@@ -235,7 +240,7 @@
     </div>
 
     <div class="container-fluid">
-        <ul id="itemsGrid" class="list-group items-grid my-5">
+        <ul id="itemsGrid" class="list-group items-grid my-4">
         </ul>
     </div>
 </body>

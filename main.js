@@ -12,6 +12,22 @@ jq(function ($) {
         "categoryUnobtainable": 7,
     };
 
+    // Spoiler category HTML ids
+    const spoilerCategoryIds = [
+        "categoryAlien",
+        "categoryTesting",
+        "categoryGolem",
+        "utilTypeArtifact",
+    ];
+
+    // List of spoiler category #s
+    const spoilerCategories = [
+        "categoryAlien",
+        "categoryTesting",
+        "categoryGolem",
+        "categorySpoiler",
+    ].map(id => categoryIdMap[id]);
+
     // Slot ID -> Slot string
     const slotMap = {
         "slotPower": "Power",
@@ -75,15 +91,25 @@ jq(function ($) {
         categoryData = categories;
 
         // Reset page state
+        updateCategoryVisibility();
         resetFilters();
 
         // Register handlers
+        $("#spoilers").on("change", () => {
+            // Hide tooltip, update categories, then update items
+            $("#spoilersPopupContainer").tooltip("hide");
+            updateCategoryVisibility();
+            updateItems();
+        });
         $("#name").on("input", updateItems);
         $("#depth").on("input", updateItems);
         $("#rating").on("input", updateItems);
         $("#size").on("input", updateItems);
         $("#mass").on("input", updateItems);
-        $("#reset").click(resetFilters);
+        $("#reset").click(() => {
+            $("#reset").tooltip("hide");
+            resetFilters();
+        });
         $("#slotsContainer > label > input").on("click", () => {
             updateTypeFilters();
             updateItems();
@@ -102,6 +128,12 @@ jq(function ($) {
     function getItemFilter() {
         let filters = [];
 
+        // Spoilers filter
+        const showSpoilers = $("#spoilers").is(":checked");
+        if (!showSpoilers) {
+            filters.push(item => !categoryData[item["Name"]].some(c => spoilerCategories.includes(c)));
+        }
+
         // Name filter
         const nameValue = $("#name").val();
         if (nameValue.length > 0) {
@@ -113,6 +145,7 @@ jq(function ($) {
         // if (depthValue.length > 0) {
         // }
 
+        // Rating filter
         const ratingValue = $("#rating").val();
         if (ratingValue.length > 0) {
             filters.push(item => item["Rating"].includes(ratingValue));
@@ -184,6 +217,18 @@ jq(function ($) {
         // Reset to default items view
         updateTypeFilters();
         updateItems();
+    }
+
+    // Updates category visibility based on the spoiler checkbox
+    function updateCategoryVisibility() {
+        const showSpoilers = $("#spoilers").is(":checked");
+
+        if (showSpoilers) {
+            spoilerCategoryIds.forEach(category => $(`#${category}`).removeClass("not-visible"));
+        }
+        else {
+            spoilerCategoryIds.forEach(category => $(`#${category}`).addClass("not-visible"));
+        }
     }
 
     // Clears all existing items and creates new ones based on the filters

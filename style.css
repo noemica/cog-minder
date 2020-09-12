@@ -57,6 +57,7 @@ body {
 /* Popup tooltip arrow */
 .tooltip .arrow::before {
     border-top-color: #008800;
+    border-bottom-color: #008800;
 }
 
 /* Input label */
@@ -89,6 +90,7 @@ body {
     background-color: black;
     border-color: #006200;
     border-radius: 0;
+    box-shadow: none;
 }
 
 .btn.active {
@@ -96,6 +98,10 @@ body {
 }
 
 .btn.focus {
+    box-shadow: none;
+}
+
+.btn:focus {
     box-shadow: none;
 }
 
