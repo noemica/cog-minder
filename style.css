@@ -7,10 +7,24 @@
 }
 
 @font-face { 
+    font-family: cog-mono;
+    src: url('fonts/Cogmind-Cog-mono.woff2') format('woff2'),
+         url('fonts/Cogmind-Cog-mono.woff') format('woff'),
+         url('fonts/Cogmind-Cog-mono.ttf') format('truetype');
+}
+
+@font-face { 
     font-family: smallcaps;
     src: url('fonts/Cogmind-Smallcaps.woff2') format('woff2'),
          url('fonts/Cogmind-Smallcaps.woff') format('woff'),
          url('fonts/Cogmind-Smallcaps.ttf') format('truetype');
+}
+
+@font-face { 
+    font-family: smallcaps-mono;
+    src: url('fonts/Cogmind-Smallcaps-mono.woff2') format('woff2'),
+         url('fonts/Cogmind-Smallcaps-mono.woff') format('woff'),
+         url('fonts/Cogmind-Smallcaps-mono.ttf') format('truetype');
 }
 
 html {
@@ -29,6 +43,10 @@ body {
 
 .not-visible {
     display: none!important;
+}
+
+pre {
+    font-size: initial;
 }
 
 /* Grid */
@@ -138,4 +156,57 @@ body {
 
 .btn-group > *:first-child {
     margin-left: -1px;
+}
+
+/* Description popover */
+.popover {
+    background-color: black;
+    border: 2px solid #008c00;
+    border-radius: 0;
+    max-width: inherit;
+}
+
+.popover-summary {
+    margin: 0;
+    font-family: smallcaps-mono;
+    color: #bfbfbf;
+}
+
+.popover-line {
+    margin: 0;
+    font-family: smallcaps-mono;
+    color: #00b200;
+}
+
+.popover .arrow::before, .popover .arrow::after {
+    border-right-color: #008800;
+    border-left-color: #008800;
+}
+
+/* Range colors */
+.range-green {
+    color: #00b200;
+}
+
+.range-yellow {
+    color: #b2b200;
+}
+
+.range-orange {
+    color: #b25900;
+}
+
+.range-red {
+    color: #b20000;
+}
+
+/* dim text style */
+.dim-text {
+    color: #004000;
+}
+
+.rating-prototype, .rating-alien {
+    color: black;
+    background-color: #00b200;
+    border: 2px solid #00b200;
 }

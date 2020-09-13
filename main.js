@@ -12,6 +12,16 @@ jq(function ($) {
         "categoryUnobtainable": 7,
     };
 
+    // Color schemes 
+    const colorSchemeLowGood = "lowGood";
+    const colorSchemeHighGood = "highGood";
+    const colorSchemeGreen = "green";
+    const colorSchemes = {
+        "lowGood": { low: "#range-green", midLow: "range-yellow", midHigh: "range-orange", high: "range-red" },
+        "highGood": { lowest: "range-red", midLow: "range-orange", midHigh: "range-yellow", high: "range-green" },
+        "green": { lowest: "#range-green", midLow: "#range-green", midHigh: "#range-green", high: "range-green" },
+    }
+
     // Spoiler category HTML ids
     const spoilerCategoryIds = [
         "categoryAlien",
@@ -84,6 +94,124 @@ jq(function ($) {
             init(data[0], data[1]);
         });
     })
+
+    // Creates a grid item's popover data content HTML string
+    function createItemDataContent(item) {
+        function getRatingHtml(item) {
+            const category = item["Category"];
+            if (category === "Prototype") {
+                return '<span class="rating-prototype"> Prototype </span>';
+            }
+            else if (category === "Alien") {
+                return '<span class="rating-alien"> Alien </span>';
+            }
+            else {
+                return '<span class="dim-text">Standard</span>'
+            }
+        }
+
+        // Creates a range line from minVal to maxVal using filled squares with the given color scheme
+        function rangeLine(category, valueString, value, minValue, maxValue, colorScheme) {
+            let valueHtml;
+            if (valueString === undefined) {
+                valueString = "N/A";
+                value = 0;
+                valueHtml = '<span class="dim-text">N/A</span>';
+            }
+            else {
+                valueHtml = valueString;
+            }
+
+            // Determine bars and spacing
+            const maxBars = 22;
+            const numSpaces = 23 - 1 - 1 - category.length - valueString.length;
+            let valuePercentage;
+            if (maxValue - minValue === 0) {
+                valuePercentage = 1;
+            }
+            else {
+                valuePercentage = value / (maxValue - minValue);
+            }
+            let fullBars = Math.min(Math.floor(maxBars * valuePercentage), 22);
+
+            // Always round away from 0
+            // This allows for things like 1/100 to show 1 bar rather than 0
+            if (fullBars == 0 && value != minValue) {
+                fullBars = 1;
+            }
+            const emptyBars = maxBars - fullBars;
+
+            // Determine color
+            let colorClass;
+            if (valuePercentage < .25) {
+                colorClass = colorSchemes[colorScheme].low;
+            }
+            else if (valuePercentage < .5) {
+                colorClass = colorSchemes[colorScheme].midLow;
+            }
+            else if (valuePercentage < .75) {
+                colorClass = colorSchemes[colorScheme].midHigh;
+            }
+            else {
+                colorClass = colorSchemes[colorScheme].high;
+            }
+
+            // Create bars HTML string
+            let barsHtml;
+            if (emptyBars > 0) {
+                barsHtml = `<span class="${colorClass}">${"▮".repeat(fullBars)}</span><span class="dim-text">${"▯".repeat(emptyBars)}</span>`;
+            }
+            else {
+                barsHtml = `<span class=${colorClass}>${"▮".repeat(fullBars)}</span>`;
+            }
+
+            // Return full HTML
+            return `
+            <pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueHtml} ${barsHtml}</pre>
+            `;
+        }
+
+        // Create a summary line
+        function summaryLine(text) { return `<pre class="popover-summary">${text}</pre>` }
+
+        // Create a text line with no value and default style
+        function textLine(category, text) {
+            const numSpaces = 23 - 1 - category.length;
+            return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${text}</pre>`;
+        }
+
+        // Create a text line with a value and a given HTML string for the text
+        function textValueHtmlLine(category, valueString, valueClass, textHtml) {
+            const numSpaces = 23 - 1 - 1 - category.length - valueString.length;
+
+            let valueHtml;
+            if (typeof (valueClass) == "string" && valueClass.length > 0) {
+                valueHtml = `<span class="${valueClass}">${valueString}</span>`;
+            }
+            else {
+                valueHtml = valueString;
+            }
+
+            return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueHtml} ${textHtml}</pre>`;
+        }
+
+        // Create a value line with no text and default style
+        function valueLine(category, valueString) {
+            const numSpaces = 23 - 1 - category.length - 1 - valueString.length;
+            return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
+        }
+
+        return `
+        ${summaryLine("Overview")}
+        ${textLine("Type", item["Type"])}
+        ${textLine("Slot", item["Slot"])}
+        ${rangeLine("Mass", item["Mass"], parseInt(item["Mass"]), 0, 15, colorSchemeLowGood)}
+        ${textValueHtmlLine("Rating", item["Rating"].replace("**", "").replace("*", ""), "", getRatingHtml(item))}
+        ${rangeLine("Integrity", item["Integrity"], 0, 0, 0, colorSchemeGreen)}
+        ${valueLine("Coverage", valueOrDefault(item["Coverage"], "0"))}
+        <span></span>
+        `;
+    }
 
     // Initialize the page state
     function init(items, categories) {
@@ -237,8 +365,10 @@ jq(function ($) {
         const itemFilter = getItemFilter();
         let items = [];
         Object.keys(itemData).forEach(itemName => {
-            if (itemFilter(itemData[itemName])) {
-                items.push(itemName);
+            const item = itemData[itemName];
+
+            if (itemFilter(item)) {
+                items.push(item);
             }
         });
 
@@ -246,7 +376,20 @@ jq(function ($) {
         items.sort();
         const itemsGrid = $("#itemsGrid");
         itemsGrid.empty();
-        items.forEach(item => itemsGrid.append(`<li class="item">${item}</li>`));
+        items.forEach(item => {
+            itemsGrid.append(
+                `<button
+                    class="item btn" 
+                    type="button"
+                    data-html=true
+                    data-content='${createItemDataContent(item)}'
+                    data-toggle="popover">
+                    <label>${item["Name"]}</label>
+                 </button>`);
+        });
+
+        $('#itemsGrid > [data-toggle="popover"]').popover();
+        // $('#itemsGrid > [data-toggle="tooltip"]').on("click", () => console.log("Test"));
     }
 
     // Updates the type filters visibility based on the selected slot
@@ -258,5 +401,14 @@ jq(function ($) {
         if (activeSlotId in slotIdToTypeIdMap) {
             $(`#${slotIdToTypeIdMap[activeSlotId]}`).removeClass("not-visible");
         }
+    }
+
+    // Returns the value if it's not undefined, otherwise return defaultVal
+    function valueOrDefault(val, defaultVal) {
+        if (val === undefined) {
+            return defaultVal;
+        }
+
+        return val;
     }
 });

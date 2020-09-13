@@ -1,0 +1,87 @@
+Part data overview
+
+Char ranges:
+0-x: Category name
+1-9: Subcategory name
+10-21: Subcategory numbers, right-aligned
+22: Space
+23-44: Graphical indicator/ text label
+
+Graphical indicator rounds down unless it would round to 0 squares
+Positive indicators green < 25%, yellow < 50%, orange < 75%, rest red
+
+Subcategory details:
+
+Overview:
+    Type: text
+    Slot: text
+    Mass: graphical 0-15 higher bad
+    Rating: text with background
+    Integrity: always 100% (never showing < full)
+    Coverage: empty
+    State: "inactive" with gray background
+
+Power:
+Active Upkeep:
+    Energy: graphical 0-0
+    Matter: graphical 0-0
+    Heat: positive graphical 0-20 higher bad
+
+Power:
+    Supply: positive graphical 0-30 higher good
+    Storage: graphical 0-300 higher good
+    Stability: graphical 0-100 higher good
+
+Propulsion:
+Active Upkeep:
+    Energy: graphical 0-20
+    Matter: graphical 0-0
+    Heat: graphical 0-x
+
+Propulsion:
+    Time/Move: graphical 0-150 higher bad
+    Drag: empty
+    Energy: negative graphical 0-10 higher bad
+    Heat: positive graphical 0-10 higher bad
+    Support: graphical 0-20 higher bad
+        Penalty: 0-60 higher bad
+    Siege: text
+
+Utility:
+Active Upkeep:
+    Energy: negative graphical 0-20 higher bad
+    Matter: negative graphical 0-20 higher bad
+    Heat: positive graphical 0-20 higher bad
+
+Weapon:
+Shot:
+    Range: graphical 0-22 higher good
+    Energy: negative graphical 0-x higher bad
+    Matter: negative graphical 0-x higher bad
+    Heat: negative grahical 0-x higher bad
+    Recoil: number
+    Targeting: percentage
+    Delay: +/- number
+    Stability: percentage graphical 0-100 higher good
+    Arc: number
+
+Projectile:
+    Damage: graphical 0-x always green
+    Type: text
+    Critical: percentage 0-50 always green
+    Penetration: x0 number
+    Heat transfer: text
+    Disruption: percentage 0-50 always green
+    Salvage: +/- number
+
+Explosion: (Multishot here)
+    Radius: graphical 0-8 higher good
+    Damage: graphical 0-x always green
+        Falloff: negative number
+    Type: Text
+    Spectrum: Text
+    Disruption: percentage 0-50 always green
+    Salvage +/- number
+    
+Effect (optional): text after newline
+Description after 2 newlines + 1 offset for paragraph
