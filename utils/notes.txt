@@ -23,8 +23,8 @@ Overview:
 
 Power:
 Active Upkeep:
-    Energy: graphical 0-0
-    Matter: graphical 0-0
+    Energy: graphical 0-0 higher bad
+    Matter: graphical 0-0 higher bad
     Heat: positive graphical 0-20 higher bad
 
 Power:
@@ -34,17 +34,18 @@ Power:
 
 Propulsion:
 Active Upkeep:
-    Energy: graphical 0-20
-    Matter: graphical 0-0
-    Heat: graphical 0-x
+    Energy: graphical 0-20 higher bad
+    Matter: graphical 0-0 higher bad
+    Heat: graphical 0-20 higher bad
 
 Propulsion:
     Time/Move: graphical 0-150 higher bad
     Drag: empty
     Energy: negative graphical 0-10 higher bad
     Heat: positive graphical 0-10 higher bad
-    Support: graphical 0-20 higher bad
+    Support: graphical 0-20 higher good
         Penalty: 0-60 higher bad
+    Burnout: graphical 0-100 higher bad
     Siege: text
 
 Utility:
@@ -56,32 +57,46 @@ Active Upkeep:
 Weapon:
 Shot:
     Range: graphical 0-22 higher good
-    Energy: negative graphical 0-x higher bad
-    Matter: negative graphical 0-x higher bad
-    Heat: negative grahical 0-x higher bad
+    Energy: negative graphical 0-50 higher bad
+    Matter: negative graphical 0-25 higher bad
+    Heat: negative graphical 0-100 higher bad
     Recoil: number
-    Targeting: percentage
+    Targeting: +/- percentage
     Delay: +/- number
     Stability: percentage graphical 0-100 higher good
-    Arc: number
+    Arc/Waypoints: number
 
 Projectile:
-    Damage: graphical 0-x always green
+    Damage: graphical 0-100 (average) always green
     Type: text
-    Critical: percentage 0-50 always green
+    Critical: graphical percentage 0-50 always green
     Penetration: x0 number
     Heat transfer: text
     Disruption: percentage 0-50 always green
     Salvage: +/- number
 
 Explosion: (Multishot here)
-    Radius: graphical 0-8 higher good
-    Damage: graphical 0-x always green
+    Radius: graphical 0-8 always green
+    Damage: graphical 0-100 (average) always green
         Falloff: negative number
     Type: Text
-    Spectrum: Text
+    Spectrum/Heat Transfer: Text
     Disruption: percentage 0-50 always green
-    Salvage +/- number
+    Salvage: +/- number
+
+Attack:
+    Energy: negative graphical 0-50 higher bad
+    Matter: negative graphical 0-25 higher bad
+    Heat: negative graphical 0-100 higher bad
+    Targeting: +/- percentage
+    Delay: +/- number
+
+Hit:
+    Damage: graphical 0-100 always green
+    Type: text
+    Critical: graphical percentage 0-50 always green
+    Disruption: percentage 0-50 always green
+    Salvage: +/- number
     
 Effect (optional): text after newline
 Description after 2 newlines + 1 offset for paragraph

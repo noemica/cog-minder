@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import csv
 import json
 from io import StringIO
@@ -144,6 +146,7 @@ slot_categories = {
         categories['all'],
         categories['propulsion_overview'],
         categories['propulsion_upkeep'],
+        categories['propulsion'],
         categories['fabrication']]
     ),
     'Utility': flatten([
