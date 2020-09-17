@@ -266,7 +266,7 @@ jq(function ($) {
             // Create bars HTML string
             let barsHtml;
             if (emptyBars > 0) {
-                barsHtml = `<span class="${colorClass}">${"▮".repeat(fullBars)}</span><span class="dim-text">${"▯".repeat(emptyBars)}</span>`;
+                barsHtml = `<span class="${colorClass}">${"▮".repeat(fullBars)}</span><span class="range-dim">${"▯".repeat(emptyBars)}</span>`;
             }
             else {
                 barsHtml = `<span class=${colorClass}>${"▮".repeat(fullBars)}</span>`;
@@ -573,6 +573,14 @@ jq(function ($) {
         $("#weaponTypeContainer > label > input").on("click", updateItems);
         $("#categoryContainer > label > input").on("click", updateItems);
 
+        $("body").on("click", (e) => {
+            // If clicking outside of a popover close the current one
+            if ($(e.target).parents(".popover").length === 0 && $(".popover").length >= 1) {
+                $('[data-toggle="popover"]').not(e.target).popover('hide');
+            }
+        });
+
+
         // Enable tooltips
         $('[data-toggle="tooltip"]').tooltip()
     }
@@ -716,7 +724,6 @@ jq(function ($) {
                     tabindex="${tabIndex}"
                     data-html=true
                     data-content='${createItemDataContent(item)}'
-                    data-trigger="focus"
                     data-toggle="popover">
                     ${item["Name"]}
                  </button>`);
@@ -724,7 +731,7 @@ jq(function ($) {
             tabIndex += 1;
         });
 
-        $('#itemsGrid > [data-toggle="popover"]').popover({ trigger: "focus" });
+        $('#itemsGrid > [data-toggle="popover"]').popover();
     }
 
     // Updates the type filters visibility based on the selected slot

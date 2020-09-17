@@ -153,7 +153,7 @@ body {
     background-color: black;
     border: 2px solid #008c00;
     border-radius: 0;
-    max-width: 85ch;
+    max-width: 82ch;
 }
 
 .popover-summary {
@@ -180,8 +180,6 @@ body {
     color: #00b200;
     font-family: smallcaps-mono;
     font-size: initial;
-    flex: 0 0 75%;
-    max-width: 75%;
 }
 
 .popover-close-btn {
@@ -191,7 +189,16 @@ body {
     margin-right: -1.5rem;
 }
 
+/* Dim text style */
+.dim-text {
+    color: #004000;
+}
+
 /* Range colors */
+.range-green, .range-yellow, .range-orange, .range-red, .range-dim {
+    letter-spacing: -.08rem;
+}
+
 .range-green {
     color: #00b200;
 }
@@ -208,8 +215,7 @@ body {
     color: #b20000;
 }
 
-/* Dim text style */
-.dim-text {
+.range-dim {
     color: #004000;
 }
 
