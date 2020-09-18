@@ -45,6 +45,10 @@ body {
     display: none!important;
 }
 
+.about-btn {
+    padding: 1rem 2rem;
+}
+
 /* Popup tooltip */
 .tooltip-inner {
     color: #00cc00;
@@ -153,7 +157,7 @@ body {
     background-color: black;
     border: 2px solid #008c00;
     border-radius: 0;
-    max-width: 82ch;
+    max-width: 81ch;
 }
 
 .popover-summary {
@@ -196,7 +200,7 @@ body {
 
 /* Range colors */
 .range-green, .range-yellow, .range-orange, .range-red, .range-dim {
-    letter-spacing: -.08rem;
+    letter-spacing: -.1rem;
 }
 
 .range-green {

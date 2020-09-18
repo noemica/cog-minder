@@ -17,9 +17,9 @@ jq(function ($) {
     const colorSchemeHighGood = "highGood";
     const colorSchemeGreen = "green";
     const colorSchemes = {
-        "lowGood": { low: "#range-green", midLow: "range-yellow", midHigh: "range-orange", high: "range-red" },
+        "lowGood": { low: "range-green", midLow: "range-yellow", midHigh: "range-orange", high: "range-red" },
         "highGood": { lowest: "range-red", midLow: "range-orange", midHigh: "range-yellow", high: "range-green" },
-        "green": { lowest: "#range-green", midLow: "#range-green", midHigh: "#range-green", high: "range-green" },
+        "green": { lowest: "range-green", midLow: "range-green", midHigh: "range-green", high: "range-green" },
     }
 
     // Character -> escape character map
@@ -573,10 +573,10 @@ jq(function ($) {
         $("#weaponTypeContainer > label > input").on("click", updateItems);
         $("#categoryContainer > label > input").on("click", updateItems);
 
-        $("body").on("click", (e) => {
+        $(window).on("click", (e) => {
             // If clicking outside of a popover close the current one
             if ($(e.target).parents(".popover").length === 0 && $(".popover").length >= 1) {
-                $('[data-toggle="popover"]').not(e.target).popover('hide');
+                $('[data-toggle="popover"]').not(e.target).popover("hide");
             }
         });
 
@@ -700,6 +700,9 @@ jq(function ($) {
 
     // Clears all existing items and creates new ones based on the filters
     function updateItems() {
+        // Hide any existing popovers
+        $('[data-toggle="popover"]').popover("hide");
+
         // Get the names of all non-filtered items
         const itemFilter = getItemFilter();
         let items = [];
