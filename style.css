@@ -160,7 +160,7 @@ body {
     background-color: black;
     border: 2px solid #008c00;
     border-radius: 0;
-    max-width: 81ch;
+    max-width: inherit;
 }
 
 .popover-summary {
@@ -170,11 +170,16 @@ body {
     font-size: initial;
 }
 
-.popover-line {
+.popover-line, .popover-description {
     margin: 0;
     font-family: smallcaps-mono;
     color: #00b200;
     font-size: initial;
+}
+
+.popover-description {
+    display: block;
+    max-width: 48ch;
 }
 
 .popover .arrow::before, .popover .arrow::after {

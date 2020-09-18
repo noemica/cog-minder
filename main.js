@@ -556,7 +556,7 @@ jq(function ($) {
             `;
 
             if ("Effect" in item) {
-                html += `<span class="popover-line">${escapeHtml(item["Effect"])}</span>`
+                html += `<span class="popover-description">${escapeHtml(item["Effect"])}</span>`
 
                 if ("Description" in item) {
                     html += "<p/><p/>"
@@ -564,7 +564,7 @@ jq(function ($) {
             }
 
             if ("Description" in item) {
-                html += `<span class="popover-line">${escapeHtml(item["Description"])}</span>`
+                html += `<span class="popover-description">${escapeHtml(item["Description"])}</span>`
             }
         }
 
