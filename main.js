@@ -135,6 +135,19 @@ jq(function ($) {
             return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
         }
 
+        function getNegativeString(item, category) {
+            const value = item[category];
+            if (value === undefined) {
+                return null;
+            }
+            else if (value[0] === "-") {
+                return value;
+            }
+            else {
+                return "-" + value;
+            }
+        }
+
         function getOverloadStabilityValue(item) {
             const stabilityString = item["Overload Stability"];
             if (stabilityString === undefined) {
@@ -175,6 +188,16 @@ jq(function ($) {
             const penetrationArray = penetrationString.split("/").map(s => s.trim());
 
             return "x" + penetrationArray.length;
+        }
+
+        function getPositiveString(item, category) {
+            const value = item[category];
+            if (value === undefined) {
+                return null;
+            }
+            else {
+                return "+" + value;
+            }
         }
 
         function getPowerStabilityValue(item) {
@@ -281,6 +304,16 @@ jq(function ($) {
         // Create a summary line
         function summaryLine(text) { return `<pre class="popover-summary">${text}</pre>` }
 
+        // Creates a summary line with an optional projectile multiplier
+        function summaryProjectileLine(item) {
+            if ("Projectile Count" in item && parseInt(item["Projectile Count"]) > 1) {
+                return `<pre class="popover-summary">Projectile${" ".repeat(13)}<span class="projectile-num"> x${item["Projectile Count"]} </span></pre>`;
+            }
+            else {
+                return summaryLine("Projectile")
+            }
+        }
+
         // Create a text line with no value and default style
         function textLine(category, text) {
             const numSpaces = 23 - 1 - category.length;
@@ -369,10 +402,10 @@ jq(function ($) {
             ${summaryLine("Active Upkeep")}
             ${rangeLine("Energy", null, 0, "-0", 0, 0, colorSchemeLowGood)}
             ${rangeLine("Matter", null, 0, "-0", 0, 0, colorSchemeLowGood)}
-            ${rangeLine("Heat", item["Heat Generation"], parseInt(item["Heat Generation"]), "+0", 0, 20, colorSchemeLowGood)}
+            ${rangeLine("Heat", getPositiveString(item, "Heat Generation"), parseInt(item["Heat Generation"]), "+0", 0, 20, colorSchemeLowGood)}
             <p/>
             ${summaryLine("Power")}
-            ${rangeLine("Supply", item["Energy Generation"], parseInt(item["Energy Generation"]), null, 0, 30, colorSchemeGreen)}
+            ${rangeLine("Supply", "+" + item["Energy Generation"], parseInt(item["Energy Generation"]), null, 0, 30, colorSchemeGreen)}
             ${rangeLine("Storage", item["Energy Storage"], parseInt(item["Energy Storage"]), "0", 0, 300, colorSchemeGreen)}
             ${rangeLine("Stability", item["Power Stability"], getPowerStabilityValue(item), "N/A", 0, 100, colorSchemeHighGood)}
             `;
@@ -382,15 +415,15 @@ jq(function ($) {
             html += `
             <p/>
             ${summaryLine("Active Upkeep")}
-            ${rangeLine("Energy", item["Energy Upkeep"], parseInt(item["Energy Upkeep"]), "-0", 0, 20, colorSchemeLowGood)}
+            ${rangeLine("Energy", getNegativeString(item, "Energy Upkeep"), parseInt(item["Energy Upkeep"]), "-0", 0, 20, colorSchemeLowGood)}
             ${rangeLine("Matter", null, 0, "-0", 0, 0, colorSchemeLowGood)}
-            ${rangeLine("Heat", item["Heat Generation"], parseInt(item["Heat Generation"]), "+0", 0, 20, colorSchemeLowGood)}
+            ${rangeLine("Heat", getPositiveString(item, "Heat Generation"), parseInt(item["Heat Generation"]), "+0", 0, 20, colorSchemeLowGood)}
             <p/>
             ${summaryLine("Propulsion")}
             ${rangeLine("Time/Move", item["Time/Move"], parseInt(item["Time/Move"]), null, 0, 150, colorSchemeLowGood)}
             ${"Mod/Extra" in item ? valueLine(" Mod/Extra", item["Mod/Extra"]) : ""}
             ${rangeLine("Energy", item["Energy/Move"], parseInt(item["Energy/Move"]), "-0", 0, 10, colorSchemeLowGood)}
-            ${rangeLine("Heat", item["Heat/Move"], parseInt(item["Heat/Move"]), "+0", 0, 10, colorSchemeLowGood)}
+            ${rangeLine("Heat", getPositiveString(item, "Heat/Move"), parseInt(item["Heat/Move"]), "+0", 0, 10, colorSchemeLowGood)}
             ${rangeLine("Support", item["Support"], parseInt(item["Support"]), null, 0, 20, colorSchemeHighGood)}
             ${rangeLine(" Penalty", item["Penalty"], parseInt(item["Penalty"]), "0", 0, 60, colorSchemeLowGood)}
             ${rangeLine("Burnout", item["Burnout"], parseInt(item["Burnout"]), "N/A", 0, 100, colorSchemeLowGood)}
@@ -401,9 +434,9 @@ jq(function ($) {
             html += `
             <p/>
             ${summaryLine("Active Upkeep")}
-            ${rangeLine("Energy", item["Energy Upkeep"], parseInt(item["Energy Upkeep"]), "-0", 0, 20, colorSchemeLowGood)}
-            ${rangeLine("Matter", item["Matter Upkeep"], parseInt(item["Matter Upkeep"]), "-0", 0, 0, colorSchemeLowGood)}
-            ${rangeLine("Heat", item["Heat Generation"], parseInt(item["Heat Generation"]), "+0", 0, 20, colorSchemeLowGood)}
+            ${rangeLine("Energy", getNegativeString(item, "Energy Upkeep"), parseInt(item["Energy Upkeep"]), "-0", 0, 20, colorSchemeLowGood)}
+            ${rangeLine("Matter", getNegativeString(item, "Matter Upkeep"), parseInt(item["Matter Upkeep"]), "-0", 0, 20, colorSchemeLowGood)}
+            ${rangeLine("Heat", getPositiveString(item, "Heat Generation"), parseInt(item["Heat Generation"]), "+0", 0, 20, colorSchemeLowGood)}
             `;
         }
         else {
@@ -413,16 +446,16 @@ jq(function ($) {
                 <p/>
                 ${summaryLine("Shot")}
                 ${rangeLine("Range", item["Range"], parseInt(item["Range"]), null, 0, 20, colorSchemeHighGood)}
-                ${rangeLine("Energy", item["Shot Energy"], parseInt(item["Shot Energy"]), "-0", 0, 50, colorSchemeLowGood)}
-                ${rangeLine("Matter", item["Shot Matter"], parseInt(item["Shot Matter"]), "-0", 0, 25, colorSchemeLowGood)}
-                ${rangeLine("Heat", item["Shot Heat"], parseInt(item["Shot Heat"]), "-0", 0, 100, colorSchemeLowGood)}
+                ${rangeLine("Energy", getNegativeString(item, "Shot Energy"), parseInt(item["Shot Energy"]), "-0", 0, 50, colorSchemeLowGood)}
+                ${rangeLine("Matter", getNegativeString(item, "Shot Matter"), parseInt(item["Shot Matter"]), "-0", 0, 25, colorSchemeLowGood)}
+                ${rangeLine("Heat", getPositiveString(item, "Shot Heat"), parseInt(item["Shot Heat"]), "-0", 0, 100, colorSchemeLowGood)}
                 ${valueLineWithDefault("Recoil", item["Recoil"], "0")}
                 ${valueLineUnitsWithDefault("Targeting", item["Targeting"], "%", "0")}
                 ${valueLineWithDefault("Delay", getDelayString(item), "0")}
                 ${rangeLine("Stability", item["Overload Stability"], getOverloadStabilityValue(item), "N/A", 0, 100, colorSchemeHighGood)}
                 ${"Waypoints" in item ? valueLine("Waypoints", item["Waypoints"]) : valueLineWithDefault("Arc", item["Arc"], "N/A")}
                 <p/>
-                ${summaryLine("Projectile")}
+                ${summaryProjectileLine(item)}
                 ${rangeLine("Damage", item["Damage"], getDamageValue(item), null, 0, 100, colorSchemeGreen)}
                 ${textLine("Type", item["Damage Type"])}
                 ${rangeLineUnit("Critical", item["Critical"], parseInt(item["Critical"]), "%", "0", 0, 50, colorSchemeGreen)}
@@ -437,9 +470,9 @@ jq(function ($) {
                 <p/>
                 ${summaryLine("Shot")}
                 ${rangeLine("Range", item["Range"], parseInt(item["Range"]), null, 0, 20, colorSchemeHighGood)}
-                ${rangeLine("Energy", item["Shot Energy"], parseInt(item["Shot Energy"]), "-0", 0, 50, colorSchemeLowGood)}
-                ${rangeLine("Matter", item["Shot Matter"], parseInt(item["Shot Matter"]), "-0", 0, 25, colorSchemeLowGood)}
-                ${rangeLine("Heat", item["Shot Heat"], parseInt(item["Shot Heat"]), "-0", 0, 100, colorSchemeLowGood)}
+                ${rangeLine("Energy", getNegativeString(item, "Shot Energy"), parseInt(item["Shot Energy"]), "-0", 0, 50, colorSchemeLowGood)}
+                ${rangeLine("Matter", getNegativeString(item, "Shot Matter"), parseInt(item["Shot Matter"]), "-0", 0, 25, colorSchemeLowGood)}
+                ${rangeLine("Heat", getPositiveString(item, "Shot Heat"), parseInt(item["Shot Heat"]), "-0", 0, 100, colorSchemeLowGood)}
                 ${valueLineWithDefault("Recoil", item["Recoil"], "0")}
                 ${valueLineUnitsWithDefault("Targeting", item["Targeting"], "%", "0")}
                 ${valueLineWithDefault("Delay", getDelayString(item), "0")}
@@ -460,9 +493,9 @@ jq(function ($) {
                 html += `
                 <p/>
                 ${summaryLine("Attack")}
-                ${rangeLine("Energy", item["Shot Energy"], parseInt(item["Shot Energy"]), "-0", 0, 50, colorSchemeLowGood)}
-                ${rangeLine("Matter", item["Shot Matter"], parseInt(item["Shot Matter"]), "-0", 0, 25, colorSchemeLowGood)}
-                ${rangeLine("Heat", item["Shot Heat"], parseInt(item["Shot Heat"]), "-0", 0, 100, colorSchemeLowGood)}
+                ${rangeLine("Energy", getNegativeString(item, "Shot Energy"), parseInt(item["Shot Energy"]), "-0", 0, 50, colorSchemeLowGood)}
+                ${rangeLine("Matter", getNegativeString(item, "Shot Matter"), parseInt(item["Shot Matter"]), "-0", 0, 25, colorSchemeLowGood)}
+                ${rangeLine("Heat", getPositiveString(item, "Shot Heat"), parseInt(item["Shot Heat"]), "-0", 0, 100, colorSchemeLowGood)}
                 ${valueLineUnitsWithDefault("Targeting", item["Targeting"], "%", "0")}
                 ${valueLineWithDefault("Delay", getDelayString(item), "0")}
                 `;
@@ -472,9 +505,9 @@ jq(function ($) {
                 <p/>
                 ${summaryLine("Shot")}
                 ${rangeLine("Range", item["Range"], parseInt(item["Range"]), null, 0, 20, colorSchemeHighGood)}
-                ${rangeLine("Energy", item["Shot Energy"], parseInt(item["Shot Energy"]), "-0", 0, 50, colorSchemeLowGood)}
-                ${rangeLine("Matter", item["Shot Matter"], parseInt(item["Shot Matter"]), "-0", 0, 25, colorSchemeLowGood)}
-                ${rangeLine("Heat", item["Shot Heat"], parseInt(item["Shot Heat"]), "-0", 0, 100, colorSchemeLowGood)}
+                ${rangeLine("Energy", getNegativeString(item, "Shot Energy"), parseInt(item["Shot Energy"]), "-0", 0, 50, colorSchemeLowGood)}
+                ${rangeLine("Matter", getNegativeString(item, "Shot Matter"), parseInt(item["Shot Matter"]), "-0", 0, 25, colorSchemeLowGood)}
+                ${rangeLine("Heat", getPositiveString(item, "Shot Heat"), parseInt(item["Shot Heat"]), "-0", 0, 100, colorSchemeLowGood)}
                 ${valueLineWithDefault("Recoil", item["Recoil"], "0")}
                 ${valueLineUnitsWithDefault("Targeting", item["Targeting"], "%", "0")}
                 ${valueLineWithDefault("Delay", getDelayString(item), "0")}
@@ -500,9 +533,9 @@ jq(function ($) {
                 html += `
                 <p/>
                 ${summaryLine("Attack")}
-                ${rangeLine("Energy", item["Shot Energy"], parseInt(item["Shot Energy"]), "-0", 0, 50, colorSchemeLowGood)}
-                ${rangeLine("Matter", item["Shot Matter"], parseInt(item["Shot Matter"]), "-0", 0, 25, colorSchemeLowGood)}
-                ${rangeLine("Heat", item["Shot Heat"], parseInt(item["Shot Heat"]), "-0", 0, 100, colorSchemeLowGood)}
+                ${rangeLine("Energy", getNegativeString(item, "Shot Energy"), parseInt(item["Shot Energy"]), "-0", 0, 50, colorSchemeLowGood)}
+                ${rangeLine("Matter", getNegativeString(item, "Shot Matter"), parseInt(item["Shot Matter"]), "-0", 0, 25, colorSchemeLowGood)}
+                ${rangeLine("Heat", getPositiveString(item, "Shot Heat"), parseInt(item["Shot Heat"]), "-0", 0, 100, colorSchemeLowGood)}
                 ${valueLineUnitsWithDefault("Targeting", item["Targeting"], "%", "0")}
                 ${valueLineWithDefault("Delay", getDelayString(item), "0")}
                 <p/>

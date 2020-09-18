@@ -227,7 +227,7 @@ body {
 }
 
 /* Prototype/Alien highlight */
-.rating-prototype, .rating-alien {
+.rating-prototype, .rating-alien, .projectile-num {
     color: black;
     background-color: #00b200;
     border: 2px solid #00b200;
