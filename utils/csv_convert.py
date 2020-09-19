@@ -7,6 +7,7 @@ from io import StringIO
 categories = {
     'all': [
         'Slot',
+        'Hackable Schematic',
     ],
     'power_overview': [
         'Name',

@@ -32,13 +32,13 @@ html {
 }
 
 body {
-    font-family: smallcaps;
+    font-family: smallcaps-mono;
     background-color: black;
     color: #00cc00;
 }
 
 .header {
-    font-family: cog;
+    font-family: cog-mono;
 }
 
 .not-visible {

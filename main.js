@@ -59,6 +59,13 @@ jq(function ($) {
         "slotOther": "Other",
     };
 
+    // Terminal ID -> int level
+    const terminalLevelMap = {
+        "terminalLevel1": 1,
+        "terminalLevel2": 2,
+        "terminalLevel3": 3,
+    }
+
     // Type ID -> Type string
     const typeMap = {
         "powerTypeEngine": "Engine",
@@ -621,6 +628,7 @@ jq(function ($) {
             updateTypeFilters();
             updateItems();
         });
+        $("#schematicsContainer > label > input").on("click", updateItems);
         $("#powerTypeContainer > label > input").on("click", updateItems);
         $("#propTypeContainer > label > input").on("click", updateItems);
         $("#utilTypeContainer > label > input").on("click", updateItems);
@@ -656,11 +664,6 @@ jq(function ($) {
             filters.push(item => item["Name"].toLowerCase().includes(nameValue.toLowerCase()));
         }
 
-        // Depth filter TODO
-        // const depthValue = $("#depth").val();
-        // if (depthValue.length > 0) {
-        // }
-
         // Rating filter
         const ratingValue = $("#rating").val();
         if (ratingValue.length > 0) {
@@ -677,6 +680,33 @@ jq(function ($) {
         const massValue = $("#mass").val();
         if (massValue.length > 0) {
             filters.push(item => item["Mass"] === massValue);
+        }
+
+        // Schematic filter
+        const depthValue = $("#depth").val();
+        if (depthValue.length > 0) {
+            const depthNum = parseInt(depthValue);
+
+            if (depthNum != NaN) {
+                const terminalModifier = terminalLevelMap[$("#schematicsContainer > label.active").attr("id")];
+                const hackLevel = 10 - depthNum + terminalModifier;
+
+                filters.push(item => {
+                    if (!"Hackable Schematic" in item || item["Hackable Schematic"] !== "1") {
+                        return;
+                    }
+
+                    let ratingValue;
+                    if (item["Rating"].includes("*")) {
+                        ratingValue = parseInt(item["Rating"].slice(0, -1)) + 1;
+                    }
+                    else {
+                        ratingValue = parseInt(item["Rating"]);
+                    }
+
+                    return hackLevel >= ratingValue;
+                });
+            }
         }
 
         // Slot filter
@@ -729,6 +759,7 @@ jq(function ($) {
         $("#mass").val("");
 
         // Reset buttons
+        resetButtonGroup($("#schematicsContainer"));
         resetButtonGroup($("#slotsContainer"));
         resetButtonGroup($("#powerTypeContainer"));
         resetButtonGroup($("#propTypeContainer"));
