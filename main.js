@@ -571,12 +571,33 @@ jq(function ($) {
         return html;
     }
 
+    // Creates buttons for all items
+    function createItems() {
+        const items = Object.values(itemData);
+        items.sort((a, b) => a["Name"].localeCompare(b["Name"]));
+        const itemsGrid = $("#itemsGrid");
+        items.forEach(item => {
+            itemsGrid.append(
+                `<button
+                    class="item btn"
+                    type="button"
+                    data-html=true
+                    data-content='${createItemDataContent(item)}'
+                    data-toggle="popover">
+                    ${item["Name"]}
+                 </button>`);
+        });
+
+        $('#itemsGrid > [data-toggle="popover"]').popover();
+    }
+
     // Initialize the page state
     function init(items, categories) {
         itemData = items;
         categoryData = categories;
 
-        // Reset page state
+        // Initialize page state
+        createItems();
         updateCategoryVisibility();
         resetFilters();
 
@@ -612,7 +633,6 @@ jq(function ($) {
                 $('[data-toggle="popover"]').not(e.target).popover("hide");
             }
         });
-
 
         // Enable tooltips
         $('[data-toggle="tooltip"]').tooltip()
@@ -740,36 +760,25 @@ jq(function ($) {
 
         // Get the names of all non-filtered items
         const itemFilter = getItemFilter();
-        let items = [];
+        let items = new Set();
         Object.keys(itemData).forEach(itemName => {
             const item = itemData[itemName];
 
             if (itemFilter(item)) {
-                items.push(item);
+                items.add(item["Name"]);
             }
         });
 
-        // Sort and create items
-        items.sort((a, b) => a["Name"].localeCompare(b["Name"]));
-        const itemsGrid = $("#itemsGrid");
-        itemsGrid.empty();
-        let tabIndex = 0;
-        items.forEach(item => {
-            itemsGrid.append(
-                `<button
-                    class="item btn"
-                    type="button"
-                    tabindex="${tabIndex}"
-                    data-html=true
-                    data-content='${createItemDataContent(item)}'
-                    data-toggle="popover">
-                    ${item["Name"]}
-                 </button>`);
+        // Set visibility of all items
+        $("#itemsGrid > button").addClass("not-visible");
 
-            tabIndex += 1;
+        $("#itemsGrid > button").each((i, item) => {
+            const itemName = $(item).text().trim();
+
+            if (items.has(itemName)) {
+                $(item).removeClass("not-visible");
+            }
         });
-
-        $('#itemsGrid > [data-toggle="popover"]').popover();
     }
 
     // Updates the type filters visibility based on the selected slot
