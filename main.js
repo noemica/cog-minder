@@ -625,7 +625,9 @@ jq(function ($) {
         // Spoilers filter
         const showSpoilers = $("#spoilers").is(":checked");
         if (!showSpoilers) {
-            filters.push(item => !categoryData[item["Name"]].some(c => spoilerCategories.includes(c)));
+            filters.push(item => 
+                !categoryData[item["Name"]].some(c => spoilerCategories.includes(c))
+            );
         }
 
         // Name filter

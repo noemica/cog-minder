@@ -124,9 +124,6 @@ body {
 }
 
 /* Button groups, margin stuff is a bit hacky to avoid double-wide border */
-.btn-group * {
-    margin-top: -1px;
-}
 .input-group-prepend {
     margin-top: 0px;
 }
