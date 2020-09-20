@@ -23,15 +23,19 @@ jq(function ($) {
     }
 
     // Character -> escape character map
+    // Note: lt/gt are hacks because for some reason they are still being
+    // interpreted as the real elements when creating the objects in jQuery
+    // Instead use a unicode symbol to approximate the real characters
     const entityMap = {
         '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
+        '<': 'ᐸ',
+        '>': 'ᐳ',
         '"': '&quot;',
         "'": '&#39;',
         '/': '&#x2F;',
         '`': '&#x60;',
-        '=': '&#x3D;'
+        '=': '&#x3D;',
+        '\n': '<br />',
     };
 
     // Spoiler category HTML ids
@@ -738,7 +742,7 @@ jq(function ($) {
 
     // Escapes the given string for HTML
     function escapeHtml(string) {
-        return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+        return String(string).replace(/[&<>"'`=\/\n]/g, function (s) {
             return entityMap[s];
         });
     }
