@@ -653,7 +653,7 @@ jq(function ($) {
         // Spoilers filter
         const showSpoilers = $("#spoilers").is(":checked");
         if (!showSpoilers) {
-            filters.push(item => 
+            filters.push(item =>
                 !categoryData[item["Name"]].some(c => spoilerCategories.includes(c))
             );
         }
@@ -685,7 +685,7 @@ jq(function ($) {
         // Schematic filter
         const depthValue = $("#depth").val();
         if (depthValue.length > 0) {
-            const depthNum = parseInt(depthValue);
+            const depthNum = Math.abs(parseInt(depthValue));
 
             if (depthNum != NaN) {
                 const terminalModifier = terminalLevelMap[$("#schematicsContainer > label.active").attr("id")];
