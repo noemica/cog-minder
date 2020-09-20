@@ -64,8 +64,10 @@
         <input id="mass" type="text" class="form-control" placeholder="Any">
     </div>
 
+    <!-- Schematic filter -->
     <div class="container-fluid input-group input-group-md mt-2">
-        <span class="input-group-text" data-toggle="tooltip" title="Search for 0b10 hackable schematics">Schematics</span>
+        <span class="input-group-text" data-toggle="tooltip"
+            title="Search for 0b10 hackable schematics">Schematics</span>
         <div class="input-group-prepend ml-3" data-toggle="tooltip" title="Current map depth">
             <span class="input-group-text">Depth</span>
         </div>
@@ -83,7 +85,7 @@
             <label id="terminalLevel3" class="btn btn-md">
                 <input type="radio" name="options"> Level 3
             </label>
-            </div>
+        </div>
     </div>
 
     <!-- Slot filter -->
@@ -230,6 +232,7 @@
         </div>
     </div>
 
+    <!-- Category filter -->
     <div id="categoryContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
         data-toggle="buttons">
         <div class="input-group-prepend" data-toggle="tooltip" title="Additional part category like location/faction">
@@ -258,6 +261,130 @@
         </label>
     </div>
 
+    <!-- Sorting -->
+    <div id="sortingContainer" class="container-fluid btn-group mt-2">
+        <div class="input-group-prepend" data-toggle="tooltip" title="How to sort items matching all filters">
+            <span class="input-group-text">Sort by</span>
+        </div>
+
+        <!-- Primary sort -->
+        <div class="sort-dropdown-container">
+            <button id="primarySort" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
+                Primary
+            </button>
+            <div id="primarySortDropdown" class="dropdown-menu fixed-height-dropdown-menu">
+                <button class="dropdown-item">Alphabetical</button>
+                <button class="dropdown-item">Gallery</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item">Rating</button>
+                <button class="dropdown-item">Size</button>
+                <button class="dropdown-item">Mass</button>
+                <button class="dropdown-item">Integrity</button>
+                <button class="dropdown-item">Coverage</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item">Critical</button>
+                <button class="dropdown-item">Damage</button>
+                <button class="dropdown-item">Delay</button>
+                <button class="dropdown-item">Disruption</button>
+                <button class="dropdown-item">Drag</button>
+                <button class="dropdown-item">Energy/Move</button>
+                <button class="dropdown-item">Energy Generation</button>
+                <button class="dropdown-item">Energy Storage</button>
+                <button class="dropdown-item">Energy Upkeep</button>
+                <button class="dropdown-item">Explosion Radius</button>
+                <button class="dropdown-item">Explosion Damage</button>
+                <button class="dropdown-item">Falloff</button>
+                <button class="dropdown-item">Heat/Move</button>
+                <button class="dropdown-item">Heat Generation</button>
+                <button class="dropdown-item">Matter Upkeep</button>
+                <button class="dropdown-item">Penalty</button>
+                <button class="dropdown-item">Projectile Count</button>
+                <button class="dropdown-item">Range</button>
+                <button class="dropdown-item">Salvage</button>
+                <button class="dropdown-item">Shot Energy</button>
+                <button class="dropdown-item">Shot Heat</button>
+                <button class="dropdown-item">Shot Matter</button>
+                <button class="dropdown-item">Support</button>
+                <button class="dropdown-item">Targeting</button>
+                <button class="dropdown-item">Time/Move</button>
+            </div>
+        </div>
+
+        <!-- Primary sort direction -->
+        <div class="sort-dropdown-container minus-left-margin">
+            <button id="primarySortDirection" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
+                Ascending
+            </button>
+            <div id="primarySortDirectionDropdown" class="dropdown-menu">
+                <button class="dropdown-item">Ascending</button>
+                <button class="dropdown-item">Descending</button>
+            </div>
+        </div>
+
+        <div id="secondarySortLabel" class="input-group-prepend ml-3" data-toggle="tooltip"
+            title="How to sort items tied by the primary sort">
+            <span class="input-group-text">Then by</span>
+        </div>
+
+        <!-- Secondary sort -->
+        <div class="sort-dropdown-container">
+            <button id="secondarySort" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
+                Secondary
+            </button>
+            <div id="secondarySortDropdown" class="dropdown-menu fixed-height-dropdown-menu">
+                <button class="dropdown-item">Nothing</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item">Alphabetical</button>
+                <button class="dropdown-item">Gallery</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item">Rating</button>
+                <button class="dropdown-item">Size</button>
+                <button class="dropdown-item">Mass</button>
+                <button class="dropdown-item">Integrity</button>
+                <button class="dropdown-item">Coverage</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item">Critical</button>
+                <button class="dropdown-item">Damage</button>
+                <button class="dropdown-item">Delay</button>
+                <button class="dropdown-item">Disruption</button>
+                <button class="dropdown-item">Drag</button>
+                <button class="dropdown-item">Energy/Move</button>
+                <button class="dropdown-item">Energy Generation</button>
+                <button class="dropdown-item">Energy Storage</button>
+                <button class="dropdown-item">Energy Upkeep</button>
+                <button class="dropdown-item">Explosion Radius</button>
+                <button class="dropdown-item">Explosion Damage</button>
+                <button class="dropdown-item">Falloff</button>
+                <button class="dropdown-item">Heat/Move</button>
+                <button class="dropdown-item">Heat Generation</button>
+                <button class="dropdown-item">Matter Upkeep</button>
+                <button class="dropdown-item">Penalty</button>
+                <button class="dropdown-item">Projectile Count</button>
+                <button class="dropdown-item">Range</button>
+                <button class="dropdown-item">Salvage</button>
+                <button class="dropdown-item">Shot Energy</button>
+                <button class="dropdown-item">Shot Heat</button>
+                <button class="dropdown-item">Shot Matter</button>
+                <button class="dropdown-item">Support</button>
+                <button class="dropdown-item">Targeting</button>
+                <button class="dropdown-item">Time/Move</button>
+            </div>
+        </div>
+
+        <!-- Secondary sort direction -->
+        <div class="sort-dropdown-container minus-left-margin">
+            <button id="secondarySortDirection" class="btn btn-flex dropdown-toggle" type="button"
+                data-toggle="dropdown">
+                Ascending
+            </button>
+            <div id="secondarySortDirectionDropdown" class="dropdown-menu">
+                <button class="dropdown-item">Ascending</button>
+                <button class="dropdown-item">Descending</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Item results -->
     <div class="container-fluid">
         <ul id="itemsGrid" class="list-group items-grid my-4">
         </ul>

@@ -115,6 +115,7 @@ categories = {
         'Salvage',
     ],
     'explosion': [
+        'Projectile Count',
         'Explosion Radius',
         'Explosion Damage',
         'Falloff',
@@ -206,6 +207,7 @@ for category in categories.values():
     for name in category:
         index_lookup[name] = header.index(name)
 
+rowNum = 0
 for row in reader:
     slot = get_slot(row)
 
@@ -224,6 +226,9 @@ for row in reader:
 
             if values['Category'] == 'Alien':
                 values['Rating'] = values['Rating'] + '**'
+
+        values['Index'] = rowNum
+        rowNum += 1
 
         all_values[values['Name']] = values
 

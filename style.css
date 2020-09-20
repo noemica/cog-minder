@@ -45,6 +45,10 @@ body {
     display: none!important;
 }
 
+.minus-left-margin {
+    margin-left: -1px;
+}
+
 .about-btn {
     padding: .5rem 1.0rem;
     font-size: 1.5rem;
@@ -53,7 +57,7 @@ body {
 /* Popup tooltip */
 .tooltip-inner {
     color: #00cc00;
-    background-color: #004200;
+    background-color: black;
     border: 1px solid #008800;
 }
 
@@ -96,6 +100,10 @@ body {
     box-shadow: none;
 }
 
+.btn-flex {
+    flex: 1 1 auto;
+}
+
 .btn.active {
     border-color: #00aa00;
 }
@@ -114,13 +122,48 @@ body {
 
 .btn:hover:not(.active) {
     border: 1px solid #00aa00;
-    z-index: 0;
     color: #aaa;
 }
 
 .btn:hover {
     background-color: #004200;
+    z-index: 0;
     color: #aaa;
+}
+
+.btn[aria-expanded="true"] {
+    border: 1px solid #00aa00;
+    background-color: #005700;
+}
+
+/* Sort dropdowns */
+.sort-dropdown-container {
+    flex: 1 1 auto;
+    display: flex;
+}
+
+.dropdown-menu {
+    background-color: black;
+    border: 1px solid #00aa00;
+    border-radius: 0;
+    overflow-y: auto;
+}
+
+.fixed-height-dropdown-menu {
+    height: 30em;
+}
+
+.dropdown-divider {
+    border-top-color: #005700;
+}
+
+.dropdown-item {
+    color: #00cc00;
+}
+
+.dropdown-item:hover {
+    color: #aaa;
+    background-color: #005700;
 }
 
 /* Button groups, margin stuff is a bit hacky to avoid double-wide border */
@@ -136,7 +179,6 @@ body {
 .items-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* gap: 1px; */
 }
 
 /* Grid item */

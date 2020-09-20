@@ -23,9 +23,6 @@ jq(function ($) {
     }
 
     // Character -> escape character map
-    // Note: lt/gt are hacks because for some reason they are still being
-    // interpreted as the real elements when creating the objects in jQuery
-    // Instead use a unicode symbol to approximate the real characters
     const entityMap = {
         '&': '&amp;',
         '<': 'ᐸ',
@@ -37,6 +34,9 @@ jq(function ($) {
         '=': '&#x3D;',
         '\n': '<br />',
     };
+
+    // Map of item names to item elements, created at page init
+    const itemElements = {};
 
     // Spoiler category HTML ids
     const spoilerCategoryIds = [
@@ -195,6 +195,10 @@ jq(function ($) {
             if (penetrationString === undefined) {
                 return "x0";
             }
+            
+            if (penetrationString === "Unlimited") {
+                return "x*";
+            }
 
             const penetrationArray = penetrationString.split("/").map(s => s.trim());
 
@@ -316,9 +320,9 @@ jq(function ($) {
         function summaryLine(text) { return `<pre class="popover-summary">${text}</pre>` }
 
         // Creates a summary line with an optional projectile multiplier
-        function summaryProjectileLine(item) {
+        function summaryProjectileLine(item, category) {
             if ("Projectile Count" in item && parseInt(item["Projectile Count"]) > 1) {
-                return `<pre class="popover-summary">Projectile${" ".repeat(13)}<span class="projectile-num"> x${item["Projectile Count"]} </span></pre>`;
+                return `<pre class="popover-summary">${category}${" ".repeat(13)}<span class="projectile-num"> x${item["Projectile Count"]} </span></pre>`;
             }
             else {
                 return summaryLine("Projectile")
@@ -466,7 +470,7 @@ jq(function ($) {
                 ${rangeLine("Stability", item["Overload Stability"], getOverloadStabilityValue(item), "N/A", 0, 100, colorSchemeHighGood)}
                 ${"Waypoints" in item ? valueLine("Waypoints", item["Waypoints"]) : valueLineWithDefault("Arc", item["Arc"], "N/A")}
                 <p/>
-                ${summaryProjectileLine(item)}
+                ${summaryProjectileLine(item, "Projectile")}
                 ${rangeLine("Damage", item["Damage"], getDamageValue(item), null, 0, 100, colorSchemeGreen)}
                 ${textLine("Type", item["Damage Type"])}
                 ${rangeLineUnit("Critical", item["Critical"], parseInt(item["Critical"]), "%", "0", 0, 50, colorSchemeGreen)}
@@ -490,7 +494,7 @@ jq(function ($) {
                 ${rangeLine("Stability", item["Overload Stability"], getOverloadStabilityValue(item), "N/A", 0, 100, colorSchemeHighGood)}
                 ${"Waypoints" in item ? valueLine("Waypoints", item["Waypoints"]) : valueLineWithDefault("Arc", item["Arc"], "N/A")}
                 <p/>
-                ${summaryLine("Explosion")}
+                ${summaryProjectileLine(item, "Explosion")}
                 ${rangeLine("Radius", item["Explosion Radius"], parseInt(item["Explosion Radius"]), null, 0, 8, colorSchemeGreen)}
                 ${rangeLine("Damage", item["Explosion Damage"], getExplosionValue(item), null, 0, 100, colorSchemeGreen)}
                 ${valueLineWithDefault(" Falloff", "Falloff" in item ? "-" + item["Falloff"] : null, "0")}
@@ -585,69 +589,41 @@ jq(function ($) {
     // Creates buttons for all items
     function createItems() {
         const items = Object.values(itemData);
-        items.sort((a, b) => a["Name"].localeCompare(b["Name"]));
         const itemsGrid = $("#itemsGrid");
         items.forEach(item => {
-            itemsGrid.append(
+            const itemName = item["Name"];
+            const itemId = itemNameToId(itemName);
+            const element = $(
                 `<button
+                    id="${itemId}"
                     class="item btn"
                     type="button"
                     data-html=true
                     data-content='${createItemDataContent(item)}'
                     data-toggle="popover">
-                    ${item["Name"]}
+                    ${itemName}
                  </button>`);
+
+            itemElements[itemName] = element;
+            itemsGrid.append(element);
         });
 
+        // Enable popovers
         $('#itemsGrid > [data-toggle="popover"]').popover();
     }
 
-    // Initialize the page state
-    function init(items, categories) {
-        itemData = items;
-        categoryData = categories;
-
-        // Initialize page state
-        createItems();
-        updateCategoryVisibility();
-        resetFilters();
-
-        // Register handlers
-        $("#spoilers").on("change", () => {
-            // Hide tooltip, update categories, then update items
-            $("#spoilersPopupContainer").tooltip("hide");
-            updateCategoryVisibility();
-            updateItems();
+    // Escapes the given string for HTML
+    function escapeHtml(string) {
+        return String(string).replace(/[&<>"'`=\/\n]/g, function (s) {
+            return entityMap[s];
         });
-        $("#name").on("input", updateItems);
-        $("#depth").on("input", updateItems);
-        $("#rating").on("input", updateItems);
-        $("#size").on("input", updateItems);
-        $("#mass").on("input", updateItems);
-        $("#reset").click(() => {
-            $("#reset").tooltip("hide");
-            resetFilters();
-        });
-        $("#slotsContainer > label > input").on("click", () => {
-            updateTypeFilters();
-            updateItems();
-        });
-        $("#schematicsContainer > label > input").on("click", updateItems);
-        $("#powerTypeContainer > label > input").on("click", updateItems);
-        $("#propTypeContainer > label > input").on("click", updateItems);
-        $("#utilTypeContainer > label > input").on("click", updateItems);
-        $("#weaponTypeContainer > label > input").on("click", updateItems);
-        $("#categoryContainer > label > input").on("click", updateItems);
+    }
 
-        $(window).on("click", (e) => {
-            // If clicking outside of a popover close the current one
-            if ($(e.target).parents(".popover").length === 0 && $(".popover").length >= 1) {
-                $('[data-toggle="popover"]').not(e.target).popover("hide");
-            }
-        });
-
-        // Enable tooltips
-        $('[data-toggle="tooltip"]').tooltip()
+    // Removes the prefix from an item name
+    const noPrefixRegex = /\w{3}\. (.*)/;
+    function noPrefixName(name) {
+        const newName = name.replace(noPrefixRegex, "$1");
+        return newName;
     }
 
     // Gets a filter function combining all current filters
@@ -740,12 +716,98 @@ jq(function ($) {
         }
     }
 
-    // Escapes the given string for HTML
-    function escapeHtml(string) {
-        return String(string).replace(/[&<>"'`=\/\n]/g, function (s) {
-            return entityMap[s];
+    // Initialize the page state
+    function init(items, categories) {
+        itemData = items;
+        categoryData = categories;
+
+        // Add the no-prefix version of the name
+        Object.keys(itemData).forEach(itemName => {
+            const item = itemData[itemName];
+            const name = noPrefixName(itemName);
+            item["No Prefix Name"] = name;
         });
+
+        // Initialize page state
+        createItems();
+        updateCategoryVisibility();
+        resetFilters();
+
+        // Register handlers
+        $("#spoilers").on("change", () => {
+            // Hide tooltip, update categories, then update items
+            $("#spoilersPopupContainer").tooltip("hide");
+            updateCategoryVisibility();
+            updateItems();
+        });
+        $("#name").on("input", updateItems);
+        $("#depth").on("input", updateItems);
+        $("#rating").on("input", updateItems);
+        $("#size").on("input", updateItems);
+        $("#mass").on("input", updateItems);
+        $("#reset").click(() => {
+            $("#reset").tooltip("hide");
+            resetFilters();
+        });
+        $("#slotsContainer > label > input").on("click", () => {
+            updateTypeFilters();
+            updateItems();
+        });
+        $("#schematicsContainer > label > input").on("click", updateItems);
+        $("#powerTypeContainer > label > input").on("click", updateItems);
+        $("#propTypeContainer > label > input").on("click", updateItems);
+        $("#utilTypeContainer > label > input").on("click", updateItems);
+        $("#weaponTypeContainer > label > input").on("click", updateItems);
+        $("#categoryContainer > label > input").on("click", updateItems);
+        $("#sortingContainer > div > button").on("click", () => {
+            // Hide popovers when clicking a sort button
+            $('[data-toggle="popover"]').popover("hide");
+        });
+        $("#primarySortDropdown > button").on("click", (e) => {
+            const targetText = $(e.target).text();
+            $("#primarySort").text(targetText);
+
+            // Reset some settings based on the primary filter choice
+            if (targetText === "Alphabetical" || targetText === "Gallery") {
+                $("#secondarySort").text("None");
+                $("#secondarySortDirection").text("Ascending");
+            }
+            else {
+                $("#secondarySort").text("Alphabetical");
+                $("#secondarySortDirection").text("Ascending");
+            }
+            updateItems();
+        });
+        $("#primarySortDirectionDropdown > button").on("click", (e) => {
+            $("#primarySortDirection").text($(e.target).text());
+            updateItems();
+        });
+        $("#secondarySortDropdown > button").on("click", (e) => {
+            $("#secondarySort").text($(e.target).text());
+            updateItems();
+        });
+        $("#secondarySortDirectionDropdown > button").on("click", (e) => {
+            $("#secondarySortDirection").text($(e.target).text());
+            updateItems();
+        });
+
+        $(window).on("click", (e) => {
+            // If clicking outside of a popover close the current one
+            if ($(e.target).parents(".popover").length === 0 && $(".popover").length >= 1) {
+                $('[data-toggle="popover"]').not(e.target).popover("hide");
+            }
+        });
+
+        // Enable tooltips
+        $('[data-toggle="tooltip"]').tooltip()
     }
+
+    // Converts an item's name to an HTML id
+    function itemNameToId(name) {
+        const id = `item${name.replace(/[ /.'"\]\[]]*/g, "")}`;
+        return id;
+    }
+
     // Clears a button group's state and sets the first item to be active
     function resetButtonGroup(group) {
         group.children().removeClass("active");
@@ -771,9 +833,195 @@ jq(function ($) {
         resetButtonGroup($("#weaponTypeContainer"));
         resetButtonGroup($("#categoryContainer"));
 
+        // Reset sort
+        $("#primarySort").text("Alphabetical");
+        $("#primarySortDirection").text("Ascending");
+        $("#secondarySort").text("None");
+        $("#secondarySortDirection").text("Ascending");
+
         // Reset to default items view
         updateTypeFilters();
         updateItems();
+    }
+
+    // Sorts the collection of item names based on the sort settings
+    function sortItemNames(itemNames) {
+        function alphabeticalSort(a, b) {
+            let aValue = typeof (a) === "string" ? a : "";
+            let bValue = typeof (b) === "string" ? b : "";
+
+            return aValue.localeCompare(bValue);
+        }
+
+        function damageSort(a, b) {
+            function getAverage(damageString) {
+                if (typeof(damageString) != "string") {
+                    return 0;
+                }
+
+                const damageArray = damageString.split("-").map(s => s.trim()).map(s => parseInt(s));
+                return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
+            }
+            
+            const aValue = getAverage(a);
+            const bValue = getAverage(b);
+
+            return aValue - bValue;
+        }
+
+        function gallerySort(a, b) {
+            // Do a lexicographical sort based on the no-prefix item name
+            const noPrefixA = noPrefixName(a);
+            const noPrefixB = noPrefixName(b);
+            let res = (noPrefixA > noPrefixB) - (noPrefixA < noPrefixB);
+
+            if (res === 0) {
+                // If no-prefix names match then use index in gallery export
+                // There may be some formula to determine the real order or
+                // it may be a hand-crafted list, I couldn't tell either way.
+                // The export index will always be ordered for different prefix
+                // versions of the same parts so this is the best way to sort
+                // them how the in-game gallery does.
+                res = parseInt(itemData[a]["Index"]) - parseInt(itemData[b]["Index"]);
+            }
+
+            return res;
+        }
+
+        function integerSort(a, b) {
+            let aValue = parseInt(a);
+            let bValue = parseInt(b);
+
+            if (isNaN(aValue)) {
+                aValue = 0;
+            }
+            if (isNaN(bValue)) {
+                bValue = 0;
+            }
+
+            return aValue - bValue;
+        }
+
+        function ratingSort(a, b) {
+            let aValue;
+            let bValue;
+            if (a.includes("*")) {
+                aValue = parseInt(a.slice(0, a.indexOf("*"))) + 0.5;
+            }
+            else {
+                aValue = parseInt(a);
+            }
+            if (b.includes("*")) {
+                bValue = parseInt(b.slice(0, b.indexOf("*"))) + 0.5;
+            }
+            else {
+                bValue = parseInt(b);
+            }
+
+            return aValue - bValue;
+        }
+
+        const sortKeyMap = {
+            "Alphabetical": { "Key": "Name", "Sort": alphabeticalSort },
+            "Gallery": { "Key": "Name", "Sort": gallerySort },
+            "Rating": { "Key": "Rating", "Sort": ratingSort },
+            "Size": { "Key": "Size", "Sort": integerSort },
+            "Mass": { "Key": "Mass", "Sort": integerSort },
+            "Integrity": { "Key": "Integrity", "Sort": integerSort },
+            "Coverage": { "Key": "Coverage", "Sort": integerSort },
+            "Critical": { "Key": "Critical", "Sort": integerSort },
+            "Damage": { "Keys": ["Damage", "Explosion Damage"], "Sort": damageSort },
+            "Delay": { "Key": "Delay", "Sort": integerSort },
+            "Disruption": { "Key": "Disruption", "Sort": integerSort },
+            "Drag": { "Key": "Drag", "Sort": integerSort },
+            "Energy/Move": { "Key": "Energy/Move", "Sort": integerSort },
+            "Energy Generation": { "Key": "Energy Generation", "Sort": integerSort },
+            "Energy Storage": { "Key": "Energy Storage", "Sort": integerSort },
+            "Energy Upkeep": { "Key": "Energy Upkeep", "Sort": integerSort },
+            "Explosion Radius": { "Key": "Explosion Radius", "Sort": integerSort },
+            "Falloff": { "Key": "Falloff", "Sort": integerSort },
+            "Heat/Move": { "Key": "Heat/Move", "Sort": integerSort },
+            "Heat Generation": { "Key": "Heat Generation", "Sort": integerSort },
+            "Matter Upkeep": { "Key": "Matter Upkeep", "Sort": integerSort },
+            "Penalty": { "Key": "Penalty", "Sort": integerSort },
+            "Projectile Count": { "Key": "Projectile Count", "Sort": integerSort },
+            "Range": { "Key": "Range", "Sort": integerSort },
+            "Salvage": { "Key": "Salvage", "Sort": integerSort },
+            "Shot Energy": { "Key": "Shot Energy", "Sort": integerSort },
+            "Shot Heat": { "Key": "Shot Heat", "Sort": integerSort },
+            "Shot Matter": { "Key": "Shot Matter", "Sort": integerSort },
+            "Support": { "Key": "Support", "Sort": integerSort },
+            "Targeting": { "Key": "Targeting", "Sort": integerSort },
+            "Time/Move": { "Key": "Time/Move", "Sort": integerSort },
+        };
+
+        // Do initial sort
+        const primaryObject = sortKeyMap[$("#primarySort").text()];
+        const primaryKeys = "Key" in primaryObject ? [primaryObject["Key"]] : primaryObject["Keys"];
+        const primarySort = primaryObject["Sort"];
+        itemNames.sort((a, b) => {
+            const itemA = itemData[a];
+            const itemB = itemData[b];
+
+            const aKey = primaryKeys.find((key) => key in itemA);
+            const bKey = primaryKeys.find((key) => key in itemB);
+            
+            return primarySort(itemA[aKey], itemB[bKey]);
+        });
+
+        if ($("#primarySortDirection").text().trim() === "Descending") {
+            itemNames.reverse();
+        }
+
+        // Do secondary sort if selected
+        const secondaryObject = sortKeyMap[$("#secondarySort").text()];
+        if (secondaryObject === undefined) {
+            return itemNames;
+        }
+
+        const secondaryKeys = "Key" in secondaryObject ? [secondaryObject["Key"]] : secondaryObject["Keys"];
+        const secondarySort = secondaryObject["Sort"];
+
+        // Group items based on the initial sort
+        const groupedItemNames = {};
+        const groupedKeys = [];
+        itemNames.forEach(itemName => {
+            const item = itemData[itemName];
+            const key = primaryKeys.find((key) => key in item);
+            const value = item[key];
+
+            if (value in groupedItemNames) {
+                groupedItemNames[value].push(itemName);
+            }
+            else {
+                groupedItemNames[value] = [itemName];
+                groupedKeys.push(value);
+            }
+        });
+
+        // Sort subgroups
+        groupedKeys.forEach(key => {
+            const itemNames = groupedItemNames[key];
+
+            itemNames.sort((a, b) => {
+                const itemA = itemData[a];
+                const itemB = itemData[b];
+    
+                const aKey = secondaryKeys.find((key) => key in itemA);
+                const bKey = secondaryKeys.find((key) => key in itemB);
+                
+                return secondarySort(itemA[aKey], itemB[bKey]);
+            });
+        });
+
+
+        // Combine groups back into single sorted array
+        let newItems = [];
+        groupedKeys.forEach(key => {
+            newItems = newItems.concat(groupedItemNames[key]);
+        });
+
+        return newItems;
     }
 
     // Updates category visibility based on the spoiler checkbox
@@ -795,24 +1043,35 @@ jq(function ($) {
 
         // Get the names of all non-filtered items
         const itemFilter = getItemFilter();
-        let items = new Set();
+        let items = [];
         Object.keys(itemData).forEach(itemName => {
             const item = itemData[itemName];
 
             if (itemFilter(item)) {
-                items.add(item["Name"]);
+                items.push(item["Name"]);
             }
         });
 
-        // Set visibility of all items
+        // Sort item names for display
+        items = sortItemNames(items);
+
+        // Update visibility and order of all items
         $("#itemsGrid > button").addClass("not-visible");
 
-        $("#itemsGrid > button").each((i, item) => {
-            const itemName = $(item).text().trim();
+        let precedingElement = null;
 
-            if (items.has(itemName)) {
-                $(item).removeClass("not-visible");
+        items.forEach(itemName => {
+            const element = itemElements[itemName];
+            element.removeClass("not-visible");
+
+            if (precedingElement == null) {
+                $("#itemsGrid").append(element);
             }
+            else {
+                element.insertAfter(precedingElement);
+            }
+
+            precedingElement = element;
         });
     }
 
