@@ -660,21 +660,75 @@ jq(function ($) {
         }
 
         // Rating filter
-        const ratingValue = $("#rating").val();
+        let ratingValue = $("#rating").val();
         if (ratingValue.length > 0) {
-            filters.push(item => item["Rating"].includes(ratingValue));
+            const includeAbove = ratingValue.slice(-1) === "+";
+            const includeBelow = ratingValue.slice(-1) === "-";
+            ratingValue = ratingValue.replace("+", "").replace("-", "");
+
+            let floatRatingValue;
+            if (ratingValue.slice(-1) === "*") {
+                floatRatingValue = parseFloat(ratingValue.slice(0, ratingValue.lastIndexOf("*"))) + 0.5;
+            }
+            else {
+                floatRatingValue = parseFloat(ratingValue);
+            }
+
+            // A + at the end means also include values above the given value
+            // A - means include values below
+            if (includeAbove) {
+                filters.push(item => item["Float Rating"] >= floatRatingValue);
+            }
+            else if (includeBelow) {
+                filters.push(item => item["Float Rating"] <= floatRatingValue);
+            }
+            else {
+                filters.push(item => item["Float Rating"] == floatRatingValue);
+            }
         }
 
         // Size filter
-        const sizeValue = $("#size").val();
+        let sizeValue = $("#size").val();
         if (sizeValue.length > 0) {
-            filters.push(item => item["Size"] === sizeValue);
+            const includeAbove = sizeValue.slice(-1) === "+";
+            const includeBelow = sizeValue.slice(-1) === "-";
+            sizeValue = sizeValue.replace("+", "").replace("-", "");
+
+            const intSizeValue = parseInt(sizeValue);
+
+            // A + at the end means also include values above the given value
+            // A - means include values below
+            if (includeAbove) {
+                filters.push(item => item["Int Size"] >= intSizeValue);
+            }
+            else if (includeBelow) {
+                filters.push(item => item["Int Size"] <= intSizeValue);
+            }
+            else {
+                filters.push(item => item["Int Size"] == intSizeValue);
+            }
         }
 
         // Mass filter
-        const massValue = $("#mass").val();
+        let massValue = $("#mass").val();
         if (massValue.length > 0) {
-            filters.push(item => item["Mass"] === massValue);
+            const includeAbove = massValue.slice(-1) === "+";
+            const includeBelow = massValue.slice(-1) === "-";
+            massValue = massValue.replace("+", "").replace("-", "");
+
+            const intMassValue = parseInt(massValue);
+
+            // A + at the end means also include values above the given value
+            // A - means include values below
+            if (includeAbove) {
+                filters.push(item => item["Int Mass"] >= intMassValue);
+            }
+            else if (includeBelow) {
+                filters.push(item => item["Int Mass"] <= intMassValue);
+            }
+            else {
+                filters.push(item => item["Int Mass"] == intMassValue);
+            }
         }
 
         // Schematic filter
@@ -736,11 +790,25 @@ jq(function ($) {
         itemData = items;
         categoryData = categories;
 
-        // Add the no-prefix version of the name
+        // Add calculated properties to items
         Object.keys(itemData).forEach(itemName => {
+            // Add no prefix name
             const item = itemData[itemName];
             const name = noPrefixName(itemName);
             item["No Prefix Name"] = name;
+
+            // Add float-value rating
+            const rating = item["Rating"];
+            if (rating.includes("*")) {
+                item["Float Rating"] = parseFloat(rating.slice(0, rating.lastIndexOf("*"))) + 0.5;
+            }
+            else {
+                item["Float Rating"] = parseFloat(rating);
+            }
+
+            // Add int-value size/mass
+            item["Int Size"] = parseInt(item["Size"]);
+            item["Int Mass"] = parseInt(item["Mass"]);
         });
 
         // Initialize page state
