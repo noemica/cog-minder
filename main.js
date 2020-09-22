@@ -682,6 +682,9 @@ jq(function ($) {
             else if (includeBelow) {
                 filters.push(item => item["Float Rating"] <= floatRatingValue);
             }
+            else if (ratingValue === "*") {
+                filters.push(item => item["Rating"].includes("*"));
+            }
             else {
                 filters.push(item => item["Float Rating"] == floatRatingValue);
             }
