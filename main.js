@@ -195,7 +195,7 @@ jq(function ($) {
             if (penetrationString === undefined) {
                 return "x0";
             }
-            
+
             if (penetrationString === "Unlimited") {
                 return "x*";
             }
@@ -639,9 +639,24 @@ jq(function ($) {
         }
 
         // Name filter
-        const nameValue = $("#name").val();
+        const nameValue = $("#name").val().toLowerCase();
         if (nameValue.length > 0) {
-            filters.push(item => item["Name"].toLowerCase().includes(nameValue.toLowerCase()));
+            filters.push(item => item["Name"].toLowerCase().includes(nameValue));
+        }
+
+        // Effect/Description filter
+        const effectValue = $("#effect").val().toLowerCase();
+        if (effectValue.length > 0) {
+            filters.push(item => {
+                if ("Effect" in item && item["Effect"].toLowerCase().includes(effectValue)) {
+                    return true;
+                }
+                else if ("Description" in item && item["Description"].toLowerCase().includes(effectValue)) {
+                    return true;
+                }
+
+                return false;
+            });
         }
 
         // Rating filter
@@ -741,6 +756,7 @@ jq(function ($) {
             updateItems();
         });
         $("#name").on("input", updateItems);
+        $("#effect").on("input", updateItems);
         $("#depth").on("input", updateItems);
         $("#rating").on("input", updateItems);
         $("#size").on("input", updateItems);
@@ -819,6 +835,7 @@ jq(function ($) {
     function resetFilters() {
         // Reset text inputs
         $("#name").val("");
+        $("#effect").val("");
         $("#depth").val("");
         $("#rating").val("");
         $("#size").val("");
@@ -855,14 +872,14 @@ jq(function ($) {
 
         function damageSort(a, b) {
             function getAverage(damageString) {
-                if (typeof(damageString) != "string") {
+                if (typeof (damageString) != "string") {
                     return 0;
                 }
 
                 const damageArray = damageString.split("-").map(s => s.trim()).map(s => parseInt(s));
                 return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
             }
-            
+
             const aValue = getAverage(a);
             const bValue = getAverage(b);
 
@@ -965,7 +982,7 @@ jq(function ($) {
 
             const aKey = primaryKeys.find((key) => key in itemA);
             const bKey = primaryKeys.find((key) => key in itemB);
-            
+
             return primarySort(itemA[aKey], itemB[bKey]);
         });
 
@@ -1006,10 +1023,10 @@ jq(function ($) {
             itemNames.sort((a, b) => {
                 const itemA = itemData[a];
                 const itemB = itemData[b];
-    
+
                 const aKey = secondaryKeys.find((key) => key in itemA);
                 const bKey = secondaryKeys.find((key) => key in itemB);
-                
+
                 return secondarySort(itemA[aKey], itemB[bKey]);
             });
         });
