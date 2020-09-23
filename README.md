@@ -3,4 +3,4 @@ Cog-Minder is a helper website for [Cogmind](https://www.gridsagegames.com/cogmi
 
 This is an MIT licensed open source project with the source available on GitHub.
 
-Thanks to Valguris, PI-314, and GJ for donating gallery exports, PlasticHeart for creating the [Cog and Smallcaps](https://github.com/plhx/cogfont) font files, and Kyzrati for making Cogmind.
+Thanks to Valguris, PI-314, GJ, and ZXC from the roguelike discord for donating gallery exports, PlasticHeart for creating the [Cog and Smallcaps](https://github.com/plhx/cogfont) font files, and Kyzrati for making Cogmind.
