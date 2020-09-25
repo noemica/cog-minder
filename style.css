@@ -35,6 +35,7 @@ body {
     font-family: smallcaps-mono;
     background-color: black;
     color: #00cc00;
+    overflow-y: scroll;
 }
 
 .header {
