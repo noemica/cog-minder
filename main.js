@@ -337,7 +337,7 @@ jq(function ($) {
 
         // Create a text line with no value  and a default
         function textLineWithDefault(category, textString, defaultString) {
-            if (!typeof (textString) != "string") {
+            if (typeof (textString) != "string") {
                 textString = `<span class="dim-text">${defaultString}</span>`;
             }
 
