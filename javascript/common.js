@@ -1,5 +1,4 @@
 // Common JS code
-
 export let itemData;
 export let categoryData;
 

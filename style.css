@@ -38,8 +38,25 @@ body {
     overflow-y: scroll;
 }
 
-.header {
+.header, .title {
     font-family: cog-mono;
+}
+
+.header {
+    font-size: 1.5rem;
+    display: flex;
+}
+
+.header > :first-child {
+    margin-right: 1rem;
+}
+
+.header > * {
+    margin: 1px;
+}
+
+.title {
+    text-align: center;
 }
 
 .not-visible {
