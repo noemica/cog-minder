@@ -1,6 +1,7 @@
 // Common JS code
-export let itemData;
+export let botData;
 export let categoryData;
+export let itemData;
 
 // Color schemes
 const colorSchemeLowGood = "lowGood";
@@ -175,6 +176,16 @@ function valueLineWithDefault(category, valueString, defaultString) {
 
     const numSpaces = 23 - 1 - category.length - 1 - valueLength;
     return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
+}
+
+export function createBotDataContent(bot) {
+    // Create overview
+    let html = `
+    <pre class="popover-title">${escapeHtml(bot["Name"])}</pre>
+    <p/>
+    `;
+
+    return html;
 }
 
 // Creates a grid item's popover data content HTML string
@@ -509,9 +520,20 @@ export function noPrefixName(name) {
 }
 
 // Initialize the item data
-export function initItemData(items, categories) {
-    itemData = items;
-    categoryData = categories;
+export async function initItemData() {
+    // Load external files
+    const bots = fetch("./json/bots.json")
+        .then(response => response.json());
+    const categories = fetch("./json/categories.json")
+        .then(response => response.json());
+    const items = fetch("./json/items.json")
+        .then(response => response.json());
+
+    await Promise.all([bots, categories, items]);
+
+    botData = await bots;
+    categoryData = await categories;
+    itemData = await items;
 
     // Add calculated properties to items
     Object.keys(itemData).forEach(itemName => {

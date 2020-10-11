@@ -4,6 +4,7 @@ import {
     initItemData,
     itemData,
     noPrefixName,
+    valueOrDefault,
 } from "./common.js";
 
 const jq = jQuery.noConflict();
@@ -91,17 +92,9 @@ jq(function ($) {
         "slotWeapon": "weaponTypeContainer",
     }
 
-    // Load external files
-    let items = fetch("./json/items.json")
-        .then(response => response.json());
-    let categories = fetch("./json/categories.json")
-        .then(response => response.json());
-
-    Promise.all([items, categories]).then(data => {
-        $(document).ready(() => {
-            init(data[0], data[1]);
-        });
-    })
+    $(document).ready(() => {
+        init();
+    });
 
     // Creates buttons for all items
     function createItems() {
@@ -292,18 +285,23 @@ jq(function ($) {
     }
 
     // Initialize the page state
-    function init(items, categories) {
-        initItemData(items, categories);
+    async function init(items, categories) {
+        await initItemData(items, categories);
 
         // Initialize page state
         createItems();
         updateCategoryVisibility();
         resetFilters();
 
+        // Load spoilers saved state
+        const spoilers = valueOrDefault(window.localStorage.getItem("spoilers"), false);
+        $("#spoilers").attr("checked", spoilers);
+
         // Register handlers
         $("#spoilers").on("change", () => {
-            // Hide tooltip, update categories, then update items
+            // Hide tooltip, update saved state, categories, and items
             $("#spoilersPopupContainer").tooltip("hide");
+            window.localStorage.setItem("spoilers", $("#spoilers").is(":checked"));
             updateCategoryVisibility();
             updateItems();
         });
