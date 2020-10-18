@@ -7,10 +7,12 @@ export let itemData;
 const colorSchemeLowGood = "lowGood";
 const colorSchemeHighGood = "highGood";
 const colorSchemeGreen = "green";
+const colorSchemeRed = "red";
 const colorSchemes = {
     "lowGood": { low: "range-green", midLow: "range-yellow", midHigh: "range-orange", high: "range-red" },
-    "highGood": { lowest: "range-red", midLow: "range-orange", midHigh: "range-yellow", high: "range-green" },
-    "green": { lowest: "range-green", midLow: "range-green", midHigh: "range-green", high: "range-green" },
+    "highGood": { low: "range-red", midLow: "range-orange", midHigh: "range-yellow", high: "range-green" },
+    "green": { lowe: "range-green", midLow: "range-green", midHigh: "range-green", high: "range-green" },
+    "red": { lowe: "range-red", midLow: "range-red", midHigh: "range-red", high: "range-red" },
 }
 
 // Character -> escape character map
@@ -25,6 +27,11 @@ export const entityMap = {
     '=': '&#x3D;',
     '\n': '<br />',
 };
+
+// Ceil the number to the nearest multiple
+function ceilToMultiple(num, multiple) {
+    return Math.ceil(num / multiple) * multiple;
+}
 
 // Creates a range line from minVal to maxVal using filled squares with the given color scheme with no unit
 function rangeLine(category, valueString, value, defaultValueString, minValue, maxValue, colorScheme) {
@@ -116,6 +123,12 @@ function textLine(category, text) {
     return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${text}</pre>`;
 }
 
+// Create a text line with no value and dim style
+function textLineDim(category, text) {
+    const numSpaces = 23 - 1 - category.length;
+    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}<span class="dim-text">${text}</span></pre>`;
+}
+
 // Create a text line with no value  and a default
 function textLineWithDefault(category, textString, defaultString) {
     if (typeof (textString) != "string") {
@@ -178,17 +191,97 @@ function valueLineWithDefault(category, valueString, defaultString) {
     return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
 }
 
+// Creates a HTML string representing a bot
 export function createBotDataContent(bot) {
+    function itemLine(itemString) {
+        return `<pre class="popover-line"> ${itemString}</pre>`;
+    }
+
     // Create overview
     let html = `
     <pre class="popover-title">${escapeHtml(bot["Name"])}</pre>
     <p/>
+    ${summaryLine("Overview")}
+    ${textLine("Class", bot["Class"])}
+    ${textLine("Size", bot["Size"])}
+    ${rangeLine("Rating", bot["Rating"].toString(), bot["Rating"], null, 0, 165, colorSchemeLowGood)}
+    ${textLine("Value", bot["Value"])}
+    ${textLine("Movement", bot["Movement"])}
+    ${rangeLine("Core Integrity", bot["Core Integrity"].toString(), bot["Core Integrity"], null, 0, bot["Core Integrity"], colorSchemeGreen)}
+    ${rangeLineUnit("Core Exposure", bot["Core Exposure"].toString(), bot["Core Exposure"], "%", null, 0, 100, colorSchemeLowGood)}
+    ${textLine("Salvage Potential", bot["Salvage Potential"])}
+    <p/>
+    ${summaryLine("Armament")}
     `;
+
+    // Add armament items
+    if (Object.keys(bot["Armament"]).length > 0) {
+        Object.keys(bot["Armament Data"]).forEach(itemName => {
+            const data = bot["Armament Data"][itemName];
+
+            let line = `${itemName} (${data["Coverage"]}%)`;
+
+            if (data["Number"] > 1) {
+                line += " x" + data["Number"].toString();
+            }
+            html += `${itemLine(line)}`;
+        });
+    }
+    else {
+        html += itemLine("None");
+    }
+
+    // Add component items
+    html += `
+    <p/>
+    ${summaryLine("Components")}
+    `;
+
+    if (bot["Components"].length > 0) {
+        Object.keys(bot["Components Data"]).forEach(itemName => {
+            const data = bot["Components Data"][itemName];
+
+            let line = `${itemName} (${data["Coverage"]}%)`;
+
+            if (data["Number"] > 1) {
+                line += " x" + data["Number"].toString();
+            }
+            html += `${itemLine(line)}`;
+        });
+    }
+    else {
+        html += itemLine("N/A");
+    }
+
+    // Add Resistances/immunities
+    const resistances = Object.keys(valueOrDefault(bot["Resistances"], {}));
+    const immunities = valueOrDefault(bot["Immunities"], []);
+    if (resistances.length > 0 || immunities.length > 0) {
+        html += `
+        <p/>
+        ${summaryLine("Resistances")}
+        `;
+
+        resistances.forEach(damageType => {
+            const resistValue = bot["Resistances"][damageType];
+
+            if (resistValue > 0) {
+                html += rangeLine(damageType, resistValue.toString() + "%", resistValue, null, 0, 100, colorSchemeGreen);
+            }
+            else {
+                html += rangeLine(damageType, resistValue.toString() + "%", resistValue, null, 0, -100, colorSchemeRed);
+            }
+        });
+
+        immunities.forEach(immunity => {
+            html += textLineDim(immunity, "IMMUNE");
+        });
+    }
 
     return html;
 }
 
-// Creates a grid item's popover data content HTML string
+// Creates an HTML string representing an item
 export function createItemDataContent(item) {
     function getDamageValue(item) {
         const damageString = item["Damage"];
@@ -512,6 +605,47 @@ export function escapeHtml(string) {
     });
 }
 
+// Tries to get an item by the name
+export function getBot(botName) {
+    if (botName in botData) {
+        return botData[botName];
+    }
+
+    console.trace();
+    throw `${botName} not a valid bot`;
+}
+
+// Tries to get an item's categories
+export function getItemCategories(itemName) {
+    if (itemName in categoryData) {
+        return categoryData[itemName];
+    }
+
+    console.trace();
+    throw `${itemName} not in category data`;
+}
+
+// Tries to get an item by the name
+export function getItem(itemName) {
+    if (itemName in itemData) {
+        return itemData[itemName];
+    }
+    console.trace();
+    throw `${itemName} not a valid item`;
+}
+
+// Gets the stored spoilers state
+export function getSpoilersState() {
+    return valueOrDefault(window.localStorage.getItem("spoilers"), false);
+}
+
+// Converts an item or bot's name to an HTML id
+const nameToIdRegex = /[ /.'"\]\[]]*/g;
+export function nameToId(name) {
+    const id = `item${name.replace(nameToIdRegex, "")}`;
+    return id;
+}
+
 // Removes the prefix from an item name
 const noPrefixRegex = /\w{3}\. (.*)/;
 export function noPrefixName(name) {
@@ -519,15 +653,15 @@ export function noPrefixName(name) {
     return newName;
 }
 
-// Initialize the item data
-export async function initItemData() {
+// Initialize all item and bot data
+export async function initData() {
     // Load external files
-    const bots = fetch("./json/bots.json")
+    const bots = fetch("./json/bots.json", {cache: "no-store"})
         .then(response => response.json());
     const categories = fetch("./json/categories.json")
-        .then(response => response.json());
+        .then(response => response.json(), {cache: "no-store"});
     const items = fetch("./json/items.json")
-        .then(response => response.json());
+        .then(response => response.json(), {cache: "no-store"});
 
     await Promise.all([bots, categories, items]);
 
@@ -538,7 +672,7 @@ export async function initItemData() {
     // Add calculated properties to items
     Object.keys(itemData).forEach(itemName => {
         // Add no prefix name
-        const item = itemData[itemName];
+        const item = getItem(itemName);
         const name = noPrefixName(itemName);
         item["No Prefix Name"] = name;
 
@@ -555,6 +689,54 @@ export async function initItemData() {
         item["Int Size"] = parseInt(item["Size"]);
         item["Int Mass"] = parseInt(item["Mass"]);
     });
+
+    // Add calculated properties to bots
+    Object.keys(botData).forEach(botName => {
+        function sumItemCoverage(sum, itemName) { return parseInt(getItem(itemName)["Coverage"]) + sum; }
+        const bot = getBot(botName);
+        bot["Name"] = botName;
+        const itemCoverage = bot["Armament"].reduce(sumItemCoverage, 0) + bot["Components"].reduce(sumItemCoverage, 0);
+
+        const roughCoreCoverage = (100.0 / (100.0 - bot["Core Exposure"]) * itemCoverage) - itemCoverage;
+        const estimatedCoreCoverage = ceilToMultiple(roughCoreCoverage, 10);
+        const totalCoverage = estimatedCoreCoverage + itemCoverage;
+        console.log(botName);
+        console.log(roughCoreCoverage);
+        console.log(estimatedCoreCoverage);
+        bot["Core Coverage"] = estimatedCoreCoverage;
+
+        let partData = {};
+        function addPartData(itemName) {
+            if (itemName in partData) {
+                partData[itemName]["Number"] += 1;
+            }
+            else {
+                partData[itemName] = {
+                    "Name": itemName,
+                    "Number": 1,
+                    "Coverage": Math.floor(100.0 * parseInt(getItem(itemName)["Coverage"]) / totalCoverage)
+                };
+            }
+        }
+
+        // Add armament and component data
+        bot["Armament"].forEach(addPartData);
+        bot["Armament Data"] = partData;
+
+        partData = {};
+        bot["Components"].forEach(addPartData);
+        bot["Components Data"] = partData;
+    });
+}
+
+// Rounds the number to the nearest multiple
+function roundToMultiple(num, multiple) {
+    return multiple * Math.round(num / multiple);
+}
+
+// Gets the stored spoilers state
+export function setSpoilersState(state) {
+    window.localStorage.setItem("spoilers", state);
 }
 
 // Returns the value if it's not undefined, otherwise return defaultVal

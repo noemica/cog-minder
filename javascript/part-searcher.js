@@ -1,10 +1,14 @@
 import {
     categoryData,
     createItemDataContent,
-    initItemData,
+    getItemCategories,
+    getItem,
+    getSpoilersState,
+    initData,
     itemData,
+    nameToId,
     noPrefixName,
-    valueOrDefault,
+    setSpoilersState,
 } from "./common.js";
 
 const jq = jQuery.noConflict();
@@ -102,7 +106,7 @@ jq(function ($) {
         const itemsGrid = $("#itemsGrid");
         items.forEach(item => {
             const itemName = item["Name"];
-            const itemId = itemNameToId(itemName);
+            const itemId = nameToId(itemName);
             const element = $(
                 `<button
                     id="${itemId}"
@@ -130,7 +134,7 @@ jq(function ($) {
         const showSpoilers = $("#spoilers").is(":checked");
         if (!showSpoilers) {
             filters.push(item =>
-                !categoryData[item["Name"]].some(c => spoilerCategories.includes(c))
+                !getItemCategories(item["Name"]).some(c => spoilerCategories.includes(c))
             );
         }
 
@@ -275,7 +279,7 @@ jq(function ($) {
         const categoryId = $("#categoryContainer > label.active").attr("id");
         if (categoryId in categoryIdMap) {
             const filterNum = categoryIdMap[categoryId];
-            filters.push(item => categoryData[item["Name"]].includes(filterNum));
+            filters.push(item => getItemCategories(item["Name"]).includes(filterNum));
         }
 
         // Create a function that checks all filters
@@ -286,7 +290,7 @@ jq(function ($) {
 
     // Initialize the page state
     async function init(items, categories) {
-        await initItemData(items, categories);
+        await initData(items, categories);
 
         // Initialize page state
         createItems();
@@ -294,14 +298,13 @@ jq(function ($) {
         resetFilters();
 
         // Load spoilers saved state
-        const spoilers = valueOrDefault(window.localStorage.getItem("spoilers"), false);
-        $("#spoilers").attr("checked", spoilers);
+        $("#spoilers").attr("checked", getSpoilersState());
 
         // Register handlers
         $("#spoilers").on("change", () => {
             // Hide tooltip, update saved state, categories, and items
             $("#spoilersPopupContainer").tooltip("hide");
-            window.localStorage.setItem("spoilers", $("#spoilers").is(":checked"));
+            setSpoilersState($("#spoilers").is(":checked"));
             updateCategoryVisibility();
             updateItems();
         });
@@ -366,12 +369,6 @@ jq(function ($) {
 
         // Enable tooltips
         $('[data-toggle="tooltip"]').tooltip()
-    }
-
-    // Converts an item's name to an HTML id
-    function itemNameToId(name) {
-        const id = `item${name.replace(/[ /.'"\]\[]]*/g, "")}`;
-        return id;
     }
 
     // Clears a button group's state and sets the first item to be active
@@ -449,7 +446,7 @@ jq(function ($) {
                 // The export index will always be ordered for different prefix
                 // versions of the same parts so this is the best way to sort
                 // them how the in-game gallery does.
-                res = parseInt(itemData[a]["Index"]) - parseInt(itemData[b]["Index"]);
+                res = parseInt(getItem(a)["Index"]) - parseInt(getItem(b)["Index"]);
             }
 
             return res;
@@ -527,8 +524,8 @@ jq(function ($) {
         const primaryKeys = "Key" in primaryObject ? [primaryObject["Key"]] : primaryObject["Keys"];
         const primarySort = primaryObject["Sort"];
         itemNames.sort((a, b) => {
-            const itemA = itemData[a];
-            const itemB = itemData[b];
+            const itemA = getItem(a);
+            const itemB = getItem(b);
 
             const aKey = primaryKeys.find((key) => key in itemA);
             const bKey = primaryKeys.find((key) => key in itemB);
@@ -553,7 +550,7 @@ jq(function ($) {
         const groupedItemNames = {};
         const groupedKeys = [];
         itemNames.forEach(itemName => {
-            const item = itemData[itemName];
+            const item = getItem(itemName);
             const key = primaryKeys.find((key) => key in item);
             const value = item[key];
 
@@ -571,8 +568,8 @@ jq(function ($) {
             const itemNames = groupedItemNames[key];
 
             itemNames.sort((a, b) => {
-                const itemA = itemData[a];
-                const itemB = itemData[b];
+                const itemA = getItem(a);
+                const itemB = getItem(b);
 
                 const aKey = secondaryKeys.find((key) => key in itemA);
                 const bKey = secondaryKeys.find((key) => key in itemB);
@@ -612,7 +609,7 @@ jq(function ($) {
         const itemFilter = getItemFilter();
         let items = [];
         Object.keys(itemData).forEach(itemName => {
-            const item = itemData[itemName];
+            const item = getItem(itemName);
 
             if (itemFilter(item)) {
                 items.push(item["Name"]);

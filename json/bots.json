@@ -1,0 +1,528 @@
+{
+    "Template": {
+        "Description": "",
+        "Class": "",
+        "Size": "",
+        "Rating": 0,
+        "Value": 0,
+        "Movement": " ()",
+        "Core Integrity": 0,
+        "Core Exposure": 0,
+        "Salvage Potential": "",
+        "Visual Range": 16,
+        "Armament": [
+        ],
+        "Components": [
+        ],
+        "Resistances": {
+        },
+        "Immunities": [
+        ]
+    },
+    "Advanced Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 48,
+        "Value": 0,
+        "Movement": "Flying (37)",
+        "Core Integrity": 50,
+        "Core Exposure": 39,
+        "Salvage Potential": "10-20",
+        "Visual Range": 22,
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Fission Core",
+            "Lgt. Fission Core",
+            "Field Propulsion Drive",
+            "Field Propulsion Drive",
+            "Adv. Heat Sink",
+            "Enh. Optical Array",
+            "Imp. Phase Shifter"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Assault Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 71,
+        "Value": 0,
+        "Movement": "Flying (32)",
+        "Core Integrity": 50,
+        "Core Exposure": 29,
+        "Salvage Potential": "30-40",
+        "Visual Range": 22,
+        "Armament": [
+            "Com. Railgun"
+        ],
+        "Components": [
+            "Mic. Neutrino Core",
+            "Mic. Neutrino Core",
+            "Cld. Field Propulsion Drive",
+            "Cld. Field Propulsion Drive",
+            "Exp. Heat Sink",
+            "Enh. Optical Array",
+            "Adv. Phase Shifter"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Bomb Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 27,
+        "Value": 0,
+        "Movement": "Flying (20)",
+        "Core Integrity": 75,
+        "Core Exposure": 50,
+        "Salvage Potential": "10-20",
+        "Visual Range": 16,
+        "Armament": [
+            "Detonator"
+        ],
+        "Components": [
+            "Mak. Microthruster"
+        ],
+        "Resistances": {
+            "Explosive": 75,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "C-30 ARC": {
+        "Description": "C-class Armored Robot Carriers are disposable transports designed to rapidly deploy an assault force to a flash point. ARCs are hardened against kinetic attacks that might otherwise penetrate the shell and damage one or more of the robots compacted within.",
+        "Class": "Carrier",
+        "Size": "Large",
+        "Rating": 25,
+        "Value": 30,
+        "Movement": "Rolling (90)",
+        "Core Integrity": 80,
+        "Core Exposure": 34,
+        "Salvage Potential": "80-120",
+        "Visual Range": 14,
+        "Armament": [
+        ],
+        "Components": [
+            "Arm. Wheel",
+            "Arm. Wheel",
+            "Arm. Wheel",
+            "Arm. Wheel",
+            "Lrg. Storage Unit"
+        ],
+        "Resistances": {
+            "Kinetic": 50,
+            "Electromagnetic": -25,
+            "Impact": 25,
+            "Slashing": 25,
+            "Piercing": 25
+        }
+    },
+    "Combat Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 63,
+        "Value": 0,
+        "Movement": "Flying (32)",
+        "Core Integrity": 50,
+        "Core Exposure": 39,
+        "Salvage Potential": "20-30",
+        "Visual Range": 22,
+        "Armament": [
+            "Com. Coil Gun"
+        ],
+        "Components": [
+            "Mic. Neutrino Core",
+            "Mic. Neutrino Core",
+            "Cld. Nuclear Pulse Thruster",
+            "Cld. Nuclear Pulse Thruster",
+            "Adv. Heat Sink",
+            "Enh. Optical Array",
+            "Imp. Phase Shifter"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Decoy Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 34,
+        "Value": 0,
+        "Movement": "Flying (20)",
+        "Core Integrity": 30,
+        "Core Exposure": 40,
+        "Salvage Potential": "5-10",
+        "Visual Range": 16,
+        "Armament": [
+        ],
+        "Components": [
+            "Mak. Power Source",
+            "Mak. Microthruster",
+            "Mak. Microthruster",
+            "Mak. Microthruster",
+            "Mak. Microthruster"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 7,
+        "Value": 0,
+        "Movement": "Hovering (56)",
+        "Core Integrity": 10,
+        "Core Exposure": 50,
+        "Salvage Potential": "5-15",
+        "Visual Range": 18,
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Ion Engine",
+            "Hover Unit",
+            "Visual Processing Unit"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "G-47 Trooper": {
+        "Description": "The G-47 Trooper replaces the G-34's laser with a more effective particle gun. However, during prolonged confrontations the G-47 is prone to overheating as its upgraded weaponry produces more heat than the design can fully dissipate.",
+        "Class": "Grunt",
+        "Size": "Medium",
+        "Rating": 16,
+        "Value": 47,
+        "Movement": "Walking (120)",
+        "Core Integrity": 30,
+        "Core Exposure": 39,
+        "Salvage Potential": "40-60",
+        "Visual Range": 14,
+        "Armament": [
+            "Particle Gun"
+        ],
+        "Components": [
+            "Lgt. Nuclear Core",
+            "Aluminum Leg",
+            "Aluminum Leg",
+            "Imp. Heat Sink"
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        }
+    },
+    "Hacking Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 28,
+        "Value": 0,
+        "Movement": "Flying (40)",
+        "Core Integrity": 40,
+        "Core Exposure": 39,
+        "Salvage Potential": "5-10",
+        "Visual Range": 16,
+        "Armament": [
+        ],
+        "Components": [
+            "Mak. Power Source",
+            "Mak. Flight Unit",
+            "Mak. Hacking Suite",
+            "Mak. Hacking Suite",
+            "Mak. System Shield"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "K-01 Serf": {
+        "Description": "K-class workers perform menial tasks such as clearing debris to facilitate work by other robots. Their built-in compact recycling unit can break down almost any form of debris into reusable matter. As K-01 Serfs are extremely cheap to produce and perform no vital function, despite their size they are among the weakest robot designs with the most exposed core.",
+        "Class": "Worker",
+        "Size": "Medium",
+        "Rating": 6,
+        "Value": 1,
+        "Movement": "Rolling (80)",
+        "Core Integrity": 10,
+        "Core Exposure": 50,
+        "Salvage Potential": "10-30",
+        "Visual Range": 14,
+        "Armament": [],
+        "Components": [
+            "Lgt. Ion Engine",
+            "Wheel",
+            "Wheel",
+            "Sml. Matter Pod"
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        },
+        "Immunities": [
+        ],
+        "Traits": [
+        ]
+    },
+    "Mapping Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 11,
+        "Value": 0,
+        "Movement": "Flying (40)",
+        "Core Integrity": 8,
+        "Core Exposure": 50,
+        "Salvage Potential": "5-10",
+        "Visual Range": 16,
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Ion Engine",
+            "Flight Unit",
+            "Mak. Terrain Scanner",
+            "Mak. Terrain Scan Processor"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Minesniffer Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 28,
+        "Value": 0,
+        "Movement": "Rolling (100)",
+        "Core Integrity": 50,
+        "Core Exposure": 40,
+        "Salvage Potential": "5-10",
+        "Visual Range": 16,
+        "Armament": [
+        ],
+        "Components": [
+            "Mak. Power Source",
+            "Com. Wheel",
+            "Structural Scanner",
+            "Imp. Trap Extractor"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Mini Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 6,
+        "Value": 0,
+        "Movement": "Flying (40)",
+        "Core Integrity": 8,
+        "Core Exposure": 50,
+        "Salvage Potential": "5-10",
+        "Visual Range": 20,
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Ion Engine",
+            "Flight Unit",
+            "Adv. Visual Processing Unit"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Stealth Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 68,
+        "Value": 0,
+        "Movement": "Flying (32)",
+        "Core Integrity": 50,
+        "Core Exposure": 40,
+        "Salvage Potential": "5-10",
+        "Visual Range": 23,
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Neutrino Core",
+            "Lgt. Neutrino Core",
+            "Cld. Field Propulsion Drive",
+            "Cld. Field Propulsion Drive",
+            "Exp. Heat Sink",
+            "Exp. Optical Array",
+            "Imp. Phase Shifter",
+            "Imp. Cloaking Device"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Thief Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 77,
+        "Value": 0,
+        "Movement": "Flying (20)",
+        "Core Integrity": 40,
+        "Core Exposure": 39,
+        "Salvage Potential": "20-30",
+        "Visual Range": 16,
+        "Armament": [
+            "Mni. Tearclaws"
+        ],
+        "Components": [
+            "Mak. Power Source",
+            "Mak. Microthruster",
+            "Mak. Microthruster",
+            "Mak. Microthruster",
+            "Mak. Microthruster",
+            "Mak. Microthruster",
+            "Mak. Microthruster",
+            "Mak. Microthruster",
+            "Mak. Microthruster",
+            "Mak. Microthruster",
+            "Mak. Cloaking Device"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        }
+    },
+    "Trailblazer": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 16,
+        "Value": 0,
+        "Movement": "Flying (3)",
+        "Core Integrity": 8,
+        "Core Exposure": 50,
+        "Salvage Potential": "5-10",
+        "Visual Range": 23,
+        "Armament": [
+        ],
+        "Components": [
+            "T-thruster",
+            "Exp. Optical Array"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Wardrone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Large",
+        "Rating": 164,
+        "Value": 0,
+        "Movement": "Flying (26)",
+        "Core Integrity": 150,
+        "Core Exposure": 24,
+        "Salvage Potential": "90-120",
+        "Visual Range": 16,
+        "Armament": [
+            "Nanosword",
+            "Nanosword",
+            "Nanosword",
+            "Nanosword"
+        ],
+        "Components": [
+            "Quantum Reactor",
+            "Cld. Impulse Thruster",
+            "Cld. Impulse Thruster",
+            "Cld. Impulse Thruster",
+            "Cld. Impulse Thruster",
+            "Exp. Cooling System",
+            "Exp. Melee Analysis Suite",
+            "Exp. Melee Analysis Suite",
+            "Femtoactuators",
+            "Exp. Actuator Array",
+            "Centrium Medium Armor Plating"
+        ],
+        "Immunities": [
+            "Coring",
+            "Hacking",
+            "Meltdown"
+        ]
+    },
+    "Z-Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": 16,
+        "Value": 0,
+        "Movement": "Flying (37)",
+        "Core Integrity": 25,
+        "Core Exposure": 50,
+        "Salvage Potential": "5-15",
+        "Visual Range": 20,
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Ion Engine",
+            "Flight Unit",
+            "Flight Unit",
+            "Adv. Visual Processing Unit",
+            "Mak. Cloaking Device"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        }
+    }
+}
