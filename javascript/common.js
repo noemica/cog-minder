@@ -278,6 +278,16 @@ export function createBotDataContent(bot) {
         });
     }
 
+    // Add description
+    const description = escapeHtml(valueOrDefault(bot["Description"], ""));
+    if (description.length > 0) {
+        html += `
+        <p/>
+        ${summaryLine("Description")}
+        <span class="popover-description">${description}</span>
+        `;
+    }
+
     return html;
 }
 
