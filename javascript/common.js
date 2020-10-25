@@ -11,8 +11,8 @@ const colorSchemeRed = "red";
 const colorSchemes = {
     "lowGood": { low: "range-green", midLow: "range-yellow", midHigh: "range-orange", high: "range-red" },
     "highGood": { low: "range-red", midLow: "range-orange", midHigh: "range-yellow", high: "range-green" },
-    "green": { lowe: "range-green", midLow: "range-green", midHigh: "range-green", high: "range-green" },
-    "red": { lowe: "range-red", midLow: "range-red", midHigh: "range-red", high: "range-red" },
+    "green": { low: "range-green", midLow: "range-green", midHigh: "range-green", high: "range-green" },
+    "red": { low: "range-red", midLow: "range-red", midHigh: "range-red", high: "range-red" },
 }
 
 // Character -> escape character map
@@ -193,8 +193,68 @@ function valueLineWithDefault(category, valueString, defaultString) {
 
 // Creates a HTML string representing a bot
 export function createBotDataContent(bot) {
+    function createItemHtml(data) {
+        let html = "";
+
+        if (Array.isArray(data)) {
+            // Found option, add all options
+            for (let i = 0; i < data.length; i++) {
+                const item = data[i];
+
+                let line = `${item["Name"]} (${item["Coverage"]}%)`;
+
+                if (item["Number"] > 1) {
+                    line += " x" + item["Number"].toString();
+                }
+
+                if (i > 0) {
+                    html += orLine();
+                }
+
+                if (i == 0) {
+                    html += itemOptionTopLine(line);
+                }
+                else if (i == data.length - 1) {
+                    html += itemOptionBottomLine(line);
+                }
+                else {
+                    html += itemLine(line);
+                }
+            }
+        }
+        else {
+            // Found item
+            let line = `${data["Name"]} (${data["Coverage"]}%)`;
+
+            if (data["Number"] > 1) {
+                line += " x" + data["Number"].toString();
+            }
+            html += `${itemLine(line)}`;
+        }
+
+        return html;
+    }
+
+    function getRatingValue(bot) {
+        const ratingString = bot["Rating"];
+        const ratingArray = ratingString.split("-").map(s => s.trim()).map(s => parseInt(s));
+        return ratingArray.reduce((sum, val) => sum + val, 0) / ratingArray.length;
+    }
+
     function itemLine(itemString) {
         return `<pre class="popover-line"> ${itemString}</pre>`;
+    }
+
+    function itemOptionBottomLine(itemString) {
+        return `<pre class="popover-option-bottom"> ${itemString}</pre>`;
+    }
+
+    function itemOptionTopLine(itemString) {
+        return `<pre class="popover-option-top"> ${itemString}</pre>`;
+    }
+
+    function orLine() {
+        return `<pre class="popover-or">  OR</pre>`;
     }
 
     // Create overview
@@ -204,7 +264,7 @@ export function createBotDataContent(bot) {
     ${summaryLine("Overview")}
     ${textLine("Class", bot["Class"])}
     ${textLine("Size", bot["Size"])}
-    ${rangeLine("Rating", bot["Rating"].toString(), bot["Rating"], null, 0, 165, colorSchemeLowGood)}
+    ${rangeLine("Rating", bot["Rating"], getRatingValue(bot), null, 0, 165, colorSchemeLowGood)}
     ${textLine("Value", bot["Value"])}
     ${textLine("Movement", bot["Movement"])}
     ${rangeLine("Core Integrity", bot["Core Integrity"].toString(), bot["Core Integrity"], null, 0, bot["Core Integrity"], colorSchemeGreen)}
@@ -215,16 +275,9 @@ export function createBotDataContent(bot) {
     `;
 
     // Add armament items
-    if (Object.keys(bot["Armament"]).length > 0) {
-        Object.keys(bot["Armament Data"]).forEach(itemName => {
-            const data = bot["Armament Data"][itemName];
-
-            let line = `${itemName} (${data["Coverage"]}%)`;
-
-            if (data["Number"] > 1) {
-                line += " x" + data["Number"].toString();
-            }
-            html += `${itemLine(line)}`;
+    if (bot["Armament"].length > 0) {
+        bot["Armament Data"].forEach(data => {
+            html += createItemHtml(data);
         });
     }
     else {
@@ -238,15 +291,8 @@ export function createBotDataContent(bot) {
     `;
 
     if (bot["Components"].length > 0) {
-        Object.keys(bot["Components Data"]).forEach(itemName => {
-            const data = bot["Components Data"][itemName];
-
-            let line = `${itemName} (${data["Coverage"]}%)`;
-
-            if (data["Number"] > 1) {
-                line += " x" + data["Number"].toString();
-            }
-            html += `${itemLine(line)}`;
+        bot["Components Data"].forEach(data => {
+            html += createItemHtml(data);
         });
     }
     else {
@@ -459,7 +505,7 @@ export function createItemDataContent(item) {
         ${summaryLine("Propulsion")}
         ${rangeLine("Time/Move", item["Time/Move"], parseInt(item["Time/Move"]), null, 0, 150, colorSchemeLowGood)}
         ${"Mod/Extra" in item ? valueLine(" Mod/Extra", item["Mod/Extra"]) : ""}
-        ${rangeLine("Energy", item["Energy/Move"], parseInt(item["Energy/Move"]), "-0", 0, 10, colorSchemeLowGood)}
+        ${rangeLine("Energy", getNegativeString(item, "Energy/Move"), parseInt(item["Energy/Move"]), "-0", 0, 10, colorSchemeLowGood)}
         ${rangeLine("Heat", getPositiveString(item, "Heat/Move"), parseInt(item["Heat/Move"]), "+0", 0, 10, colorSchemeLowGood)}
         ${rangeLine("Support", item["Support"], parseInt(item["Support"]), null, 0, 20, colorSchemeHighGood)}
         ${rangeLine(" Penalty", item["Penalty"], parseInt(item["Penalty"]), "0", 0, 60, colorSchemeLowGood)}
@@ -666,12 +712,12 @@ export function noPrefixName(name) {
 // Initialize all item and bot data
 export async function initData() {
     // Load external files
-    const bots = fetch("./json/bots.json", {cache: "no-store"})
+    const bots = fetch("./json/bots.json", { cache: "no-store" })
         .then(response => response.json());
     const categories = fetch("./json/categories.json")
-        .then(response => response.json(), {cache: "no-store"});
+        .then(response => response.json(), { cache: "no-store" });
     const items = fetch("./json/items.json")
-        .then(response => response.json(), {cache: "no-store"});
+        .then(response => response.json(), { cache: "no-store" });
 
     await Promise.all([bots, categories, items]);
 
@@ -698,11 +744,33 @@ export async function initData() {
         // Add int-value size/mass
         item["Int Size"] = parseInt(item["Size"]);
         item["Int Mass"] = parseInt(item["Mass"]);
+
+        // Add default coverage
+        if (!"Coverage" in item || isNaN(parseInt(item["Coverage"]))) {
+            item["Coverage"] = "0";
+        }
     });
 
     // Add calculated properties to bots
     Object.keys(botData).forEach(botName => {
-        function sumItemCoverage(sum, itemName) { return parseInt(getItem(itemName)["Coverage"]) + sum; }
+        function sumItemCoverage(sum, data) {
+            if (typeof (data) === "string") {
+                // Item name, just parse coverage
+                return parseInt(getItem(data)["Coverage"]) + sum;
+            }
+            else {
+                // Option, return largest sum of items
+                let largest = 0;
+                data.forEach(optionData => {
+                    const number = valueOrDefault(optionData["Number"], 1);
+                    const item = getItem(optionData["Name"]);
+                    const optionCoverage = parseInt(item["Coverage"]) * number;
+                    largest = Math.max(largest, optionCoverage);
+                });
+
+                return largest + sum;
+            }
+        }
         const bot = getBot(botName);
         bot["Name"] = botName;
         const itemCoverage = bot["Armament"].reduce(sumItemCoverage, 0) + bot["Components"].reduce(sumItemCoverage, 0);
@@ -710,22 +778,40 @@ export async function initData() {
         const roughCoreCoverage = (100.0 / (100.0 - bot["Core Exposure"]) * itemCoverage) - itemCoverage;
         const estimatedCoreCoverage = ceilToMultiple(roughCoreCoverage, 10);
         const totalCoverage = estimatedCoreCoverage + itemCoverage;
-        console.log(botName);
-        console.log(roughCoreCoverage);
-        console.log(estimatedCoreCoverage);
         bot["Core Coverage"] = estimatedCoreCoverage;
 
-        let partData = {};
-        function addPartData(itemName) {
-            if (itemName in partData) {
-                partData[itemName]["Number"] += 1;
+        let partData = [];
+        let optionCount = 0;
+        function addPartData(data) {
+            if (typeof (data) === "string") {
+                const itemName = data;
+                // Item name, add to part data
+                let result = partData.find(p => p["Name"] === data);
+
+                if (result === undefined) {
+                    partData.push({
+                        "Name": itemName,
+                        "Number": 1,
+                        "Coverage": Math.floor(100.0 * parseInt(getItem(itemName)["Coverage"]) / totalCoverage)
+                    });
+                }
+                else {
+                    result["Number"] += 1;
+                }
             }
             else {
-                partData[itemName] = {
-                    "Name": itemName,
-                    "Number": 1,
-                    "Coverage": Math.floor(100.0 * parseInt(getItem(itemName)["Coverage"]) / totalCoverage)
-                };
+                // Option, add all options
+                const options = [];
+                data.forEach(optionData => {
+                    const name = optionData["Name"];
+                    options.push({
+                        "Name": name,
+                        "Number": optionData["Number"],
+                        "Coverage": Math.floor(100 * parseInt(getItem(name)["Coverage"]) / totalCoverage)
+                    });
+                });
+                partData.push(options);
+                optionCount += 1;
             }
         }
 
@@ -733,7 +819,7 @@ export async function initData() {
         bot["Armament"].forEach(addPartData);
         bot["Armament Data"] = partData;
 
-        partData = {};
+        partData = [];
         bot["Components"].forEach(addPartData);
         bot["Components Data"] = partData;
     });

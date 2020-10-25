@@ -3,13 +3,13 @@
         "Description": "",
         "Class": "",
         "Size": "",
-        "Rating": 0,
+        "Rating": "0",
         "Value": 0,
         "Movement": " ()",
         "Core Integrity": 0,
         "Core Exposure": 0,
         "Salvage Potential": "",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
         ],
         "Components": [
@@ -23,13 +23,13 @@
         "Description": "A-series haulers transport matter and parts vital to construction and manufacturing. To minimize losses during derelict incursions, like most other maintenance robots they are of relatively sturdy construction, but remain somewhat susceptible to electromagnetic damage as such weaponry is not prevalent enough to warrant specialized defenses.",
         "Class": "Hauler",
         "Size": "Medium",
-        "Rating": 10,
+        "Rating": "10",
         "Value": 2,
         "Movement": "Treading (160)",
         "Core Integrity": 15,
         "Core Exposure": 29,
         "Salvage Potential": "40-60",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [],
         "Inventory Size": 6,
         "Components": [
@@ -48,13 +48,13 @@
         "Description": " A larger version of the A-02, with 50% greater storage capacity and advanced weight redistribution technology.",
         "Class": "Hauler",
         "Size": "Large",
-        "Rating": 23,
+        "Rating": "23",
         "Value": 15,
         "Movement": "Treading (160)",
         "Core Integrity": 40,
         "Core Exposure": 29,
         "Salvage Potential": "80-120",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [],
         "Inventory Size": 8,
         "Components": [
@@ -69,17 +69,59 @@
             "Electromagnetic": -25
         }
     },
+    "Alpha 7": {
+        "Description": "The Alpha 7 is a prototype for a new class of combat robot, very accurate with its multirail and heavy quantum rifle. Some experimental variants instead use an enhanced gamma rifle. Alpha 7s are built with strong defensive capabilities and triple-encased core technology, enabling them to easily take on multiple opponents simultaneously, while a more advanced version of the behemoth-style critical failure prevention system provides the same advantages in a smaller frame.",
+        "Class": "Alpha 7 (Prototype)",
+        "Size": "Medium",
+        "Rating": "152",
+        "Value": 200,
+        "Movement": "Walking (120)",
+        "Core Integrity": 200,
+        "Core Exposure": 24,
+        "Salvage Potential": "60-80",
+        "Visual Range": "16",
+        "Armament": [
+            "Multirail",
+            [
+                {"Name": "Hvy. Quantum Rifle"},
+                {"Name": "Enh. Gamma Rifle"}
+            ]
+        ],
+        "Components": [
+            "Imp. Quantum Reactor",
+            "Hdn. Centrium Leg",
+            "Hdn. Centrium Leg",
+            "Exp. Cooling System",
+            "Exp. Targeting Computer",
+            "Exp. Target Analyzer",
+            "Exp. ECM Suite",
+            "Centrium Medium Armor Plating",
+            "Antimissile System",
+            "Adv. Dynamic Insulation System"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Thermal": 25,
+            "Electromagnetic": 25,
+            "Piercing": -50
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Jamming"
+        ]
+    },
     "Advanced Drone": {
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 48,
+        "Rating": "48",
         "Value": 0,
         "Movement": "Flying (37)",
         "Core Integrity": 50,
         "Core Exposure": 39,
         "Salvage Potential": "10-20",
-        "Visual Range": 22,
+        "Visual Range": "22",
         "Armament": [
         ],
         "Components": [
@@ -103,13 +145,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 71,
+        "Rating": "71",
         "Value": 0,
         "Movement": "Flying (32)",
         "Core Integrity": 50,
         "Core Exposure": 29,
         "Salvage Potential": "30-40",
-        "Visual Range": 22,
+        "Visual Range": "22",
         "Armament": [
             "Com. Railgun"
         ],
@@ -134,13 +176,13 @@
         "Description": "B-series brawlers are a melee variant of the grunt class, engaging targets at close range with the support of ranged combat units. They are protected by additional armor to increase their chances of survival while closing distance with a target, after which their hammer can quickly crush vital components and diminish the target's ability to operate.",
         "Class": "Brawler",
         "Size": "Medium",
-        "Rating": 10,
+        "Rating": "10",
         "Value": 36,
         "Movement": "Treading (160)",
         "Core Integrity": 20,
         "Core Exposure": 34,
         "Salvage Potential": "50-60",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Hammer"
         ],
@@ -159,13 +201,13 @@
         "Description": "B-48 Gladiators are better armored than the B-36, replace the hammer with a slightly more damaging mace, and like other B-series brawlers are only dispatched in coordination with grunts.",
         "Class": "Brawler",
         "Size": "Medium",
-        "Rating": 20,
+        "Rating": "20",
         "Value": 48,
         "Movement": "Treading (160)",
         "Core Integrity": 45,
         "Core Exposure": 34,
         "Salvage Potential": "60-75",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Mace"
         ],
@@ -184,13 +226,13 @@
         "Description": "B-60 Warriors carry a heavier version of the B-48's mace, and additional armor. Like other B-series robots, the B-60's armor structure is reinforced against the slashes and broad impacts of melee damage.",
         "Class": "Brawler",
         "Size": "Medium",
-        "Rating": 30,
+        "Rating": "30",
         "Value": 65,
         "Movement": "Treading (160)",
         "Core Integrity": 65,
         "Core Exposure": 34,
         "Salvage Potential": "70-90",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Hvy. Mace"
         ],
@@ -209,13 +251,13 @@
         "Description": "The heaviest and most heavily armored brawler, highly likely to reach a target even under sustained fire, and highly likely to wreak havoc with its powered hammer.",
         "Class": "Brawler",
         "Size": "Medium",
-        "Rating": 42,
+        "Rating": "42",
         "Value": 74,
         "Movement": "Treading (160)",
         "Core Integrity": 85,
         "Core Exposure": 34,
         "Salvage Potential": "80-105",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Powered Hammer"
         ],
@@ -234,13 +276,13 @@
         "Description": "B-series behemoths are heavy weapons platforms stationed in open areas, often constructed directly in the very areas they defend for lack of sufficiently large access corridors. While their components could have been designed to fit a smaller frame, much of the redundant internal structure is devoted to preventing critical system failures. The B-75 Beast carries two cannons and a backup light weapon, making it especially effective against singular hardened targets.",
         "Class": "Behemoth",
         "Size": "Large",
-        "Rating": 81,
+        "Rating": "81",
         "Value": 75,
         "Movement": "Treading (160)",
         "Core Integrity": 90,
         "Core Exposure": 20,
         "Salvage Potential": "70-100",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Hvy. Plasma Cannon",
             "Hvy. Machine Gun",
@@ -271,13 +313,13 @@
         "Description": "B-86 Titans upgrade the B-75's cannons to a matter neutralizer and hardcell cannon, pairing them with a secondary railgun. Like other behemoths, the B-86 is equipped with both reflective armor and an insulated core to mitigate the negative effects of most electromagnetic weapons, which would otherwise render high-coverage heavy armor pointless.",
         "Class": "Behemoth",
         "Size": "Large",
-        "Rating": 115,
+        "Rating": "115",
         "Value": 86,
         "Movement": "Treading (160)",
         "Core Integrity": 120,
         "Core Exposure": 19,
         "Salvage Potential": "90-130",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Matter Neutralizer",
             "Railgun",
@@ -305,13 +347,13 @@
         "Description": "The B-90 Cyclops is built around a single massive nova cannon, a design decision I originally regretted as they were relatively easy to disarm. Newer versions implement dedicated weapon shielding for the cannon itself, and improved firing rates made possible by a new capacitor design. Like all behemoth class robots, the B-90's overall structure is slightly weak against kinetic attacks, but is protected by sufficient armor to make up for it.",
         "Class": "Behemoth",
         "Size": "Large",
-        "Rating": 147,
+        "Rating": "147",
         "Value": 90,
         "Movement": "Treading (170)",
         "Core Integrity": 135,
         "Core Exposure": 20,
         "Salvage Potential": "110-160",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Nova Cannon"
         ],
@@ -343,13 +385,13 @@
         "Description": "As the most powerful standard-line combat robot, a B-99 Colossus will only be stationed in areas with a confirmed significant threat. In addition to armor effective against both thermal and electromagnetic damage, the B-99 is equipped to withstand a sustained attack of almost any kind with its advanced force field. Only the most hardened target can withstand its volley of six simultaneous slugs.",
         "Class": "Behemoth",
         "Size": "Large",
-        "Rating": 222,
+        "Rating": "222",
         "Value": 99,
         "Movement": "Treading (170)",
         "Core Integrity": 150,
         "Core Exposure": 20,
         "Salvage Potential": "130-200",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Multirail",
             "Multirail",
@@ -385,13 +427,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 27,
+        "Rating": "27",
         "Value": 0,
         "Movement": "Flying (20)",
         "Core Integrity": 75,
         "Core Exposure": 50,
         "Salvage Potential": "10-20",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Detonator"
         ],
@@ -410,13 +452,13 @@
         "Description": "C-class Armored Robot Carriers are disposable transports designed to rapidly deploy an assault force to a flash point. ARCs are hardened against kinetic attacks that might otherwise penetrate the shell and damage one or more of the robots compacted within.",
         "Class": "Carrier",
         "Size": "Large",
-        "Rating": 25,
+        "Rating": "25",
         "Value": 30,
         "Movement": "Rolling (90)",
         "Core Integrity": 80,
         "Core Exposure": 34,
         "Salvage Potential": "80-120",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [
         ],
         "Components": [
@@ -438,13 +480,13 @@
         "Description": "Compactors break down obsolete robot models, and the occasional intruder sucked down a chute hatch. They are slow, but built to withstand both damage from the rugged environment of waste processing areas and dangerous shocks caused by electromagnetic radiation during robot deconstruction.",
         "Class": "Compactor",
         "Size": "Large",
-        "Rating": 129,
+        "Rating": "129",
         "Value": 40,
         "Movement": "Treading (180)",
         "Core Integrity": 80,
         "Core Exposure": 15,
         "Salvage Potential": "200-350",
-        "Visual Range": 12,
+        "Visual Range": "12",
         "Armament": [
             "Compactor"
         ],
@@ -471,13 +513,13 @@
         "Description": "C-series researchers operate labs in which they independently develop and test new technologies. As non-combat units assigned to secure areas, their core is weak against many forms of damage. However, due to the periodic need to operate in high-temperature areas they are somewhat resistant to damage of a thermal nature. The C-55 is also equipped with a stasis beam to contain derelict specimens for study.",
         "Class": "Researcher",
         "Size": "Medium",
-        "Rating": 45,
+        "Rating": "45",
         "Value": 55,
         "Movement": "Hovering (56)",
         "Core Integrity": 40,
         "Core Exposure": 40,
         "Salvage Potential": "40-60",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Stasis Beam"
         ],
@@ -504,13 +546,13 @@
         "Description": "An upgrade to the C-55 Analyst, Experts possess improved analytical capabilities and a more powerful stasis projector.",
         "Class": "Researcher",
         "Size": "Medium",
-        "Rating": 56,
+        "Rating": "56",
         "Value": 65,
         "Movement": "Hovering (56)",
         "Core Integrity": 50,
         "Core Exposure": 40,
         "Salvage Potential": "60-80",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Stasis Projector"
         ],
@@ -533,17 +575,47 @@
             "Jamming"
         ]
     },
+    "Cetus Guard": {
+        "Description": "Cetus Guards are a variant of the Y-72 outfitted with prototype technology, the first of many such experiments aimed at testing new designs in the field, albeit in this case located in an area that generally sees little to no hostile activity.",
+        "Class": "Sentry (Prototype)",
+        "Size": "Large",
+        "Rating": "82",
+        "Value": 125,
+        "Movement": "Treading (160)",
+        "Core Integrity": 100,
+        "Core Exposure": 34,
+        "Salvage Potential": "60-80",
+        "Visual Range": "16",
+        "Armament": [
+            "Adv. Variable Charge Gun",
+            "Imp. KE Penetrator"
+        ],
+        "Components": [
+            "Quantum Reactor",
+            "Centrium Heavy Treads",
+            "Adv. Heat Sink",
+            "Adv. Heat Sink",
+            "Centrium Medium Armor Plating"
+        ],
+        "Resistances": {
+            "Explosive": 50,
+            "Impact": 25
+        },
+        "Immunities": [
+            "Jamming"
+        ]
+    },
     "Combat Drone": {
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 63,
+        "Rating": "63",
         "Value": 0,
         "Movement": "Flying (32)",
         "Core Integrity": 50,
         "Core Exposure": 39,
         "Salvage Potential": "20-30",
-        "Visual Range": 22,
+        "Visual Range": "22",
         "Armament": [
             "Com. Coil Gun"
         ],
@@ -564,17 +636,61 @@
             "Hacking"
         ]
     },
+    "Combat Programmer": {
+        "Description": "As the first real front-line hacking bot, Combat Programmers are both shielded and armored to effectively face off against a variety of threats. While they possess significant hacking capabilities to make the most of time-critical situations, they also borrow the Lightning's EMDS and targeting systems, making them formidable even when outnumbered in combat. The latest model takes advantage of improved integrated shock resistance methods recently suggested by my researchers. Eventually a majority of programmers should be replaced with these combat variants.",
+        "Class": "Programmer (Prototype)",
+        "Size": "Medium",
+        "Rating": "157",
+        "Value": 200,
+        "Movement": "Hovering (42)",
+        "Core Integrity": 120,
+        "Core Exposure": 29,
+        "Salvage Potential": "70-100",
+        "Visual Range": "16",
+        "Armament": [
+            "EMDS",
+            "Exp. Remote Datajack"
+        ],
+        "Components": [
+            "Com. Particle Reactor",
+            "Com. Particle Reactor",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Quantum Shading Machine",
+            "Exp. Target Analyzer",
+            "Exp. Weapon Shielding",
+            "Centrium Medium Armor Plating",
+            "Exp. Focal Shield",
+            "Adv. Dynamic Insulation System"
+        ],
+        "Resistances": {
+            "Kinetic": 5,
+            "Thermal": -25,
+            "Explosive": 90,
+            "Electromagnetic": 75,
+            "Impact": -25
+        },
+        "Immunities": [
+            "Coring",
+            "Hacking",
+            "Jamming"
+        ],
+        "Traits": [
+            "Self-destructing"
+        ]
+    },
     "D-53 Grenadier": {
         "Description": "D-series demolishers are the only class to carry explosive weaponry, and due to the high potential for collateral damage are only assigned to support assault forces dispatched to deal with groups of high-threat intruders. The D-53 itself is highly resistant against explosive damage, however, and is therefore willing to catch targets in an explosion even while within that blast radius.",
         "Class": "Demolisher",
         "Size": "Medium",
-        "Rating": 34,
+        "Rating": "34",
         "Value": 53,
         "Movement": "Hovering (76)",
         "Core Integrity": 40,
         "Core Exposure": 40,
         "Salvage Potential": "40-60",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Mni. Grenade Launcher"
         ],
@@ -595,13 +711,13 @@
         "Description": "D-63 Destroyers improve on the D-53 with a better guidance system and more powerful heavy rocket launcher. Like all demolishers, the D-63 will hold fire if too many friendlies are within the area of effect.",
         "Class": "Demolisher",
         "Size": "Medium",
-        "Rating": 49,
+        "Rating": "49",
         "Value": 63,
         "Movement": "Hovering (76)",
         "Core Integrity": 65,
         "Core Exposure": 39,
         "Salvage Potential": "55-80",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Hvy. Rocket Launcher"
         ],
@@ -622,13 +738,13 @@
         "Description": "The most powerful demolisher, the D-83 Annihilator is built around a single micro-nuke launcher. Its advanced guidance computer is extremely accurate, and excellent defense against explosives reduce damage from such sources to almost insignificant levels, whether caused by its own micro-nuke or those of an enemy.",
         "Class": "Demolisher",
         "Size": "Medium",
-        "Rating": 67,
+        "Rating": "67",
         "Value": 83,
         "Movement": "Hovering (76)",
         "Core Integrity": 40,
         "Core Exposure": 40,
         "Salvage Potential": "70-100",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Micro-nuke Launcher"
         ],
@@ -649,13 +765,13 @@
         "Description": "",
         "Class": "Turret",
         "Size": "Small",
-        "Rating": 36,
+        "Rating": "36",
         "Value": 0,
         "Movement": "Immobile",
         "Core Integrity": 100,
         "Core Exposure": 29,
         "Salvage Potential": "40-50",
-        "Visual Range": 22,
+        "Visual Range": "22",
         "Armament": [
             "DAS Cannon"
         ],
@@ -672,13 +788,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 34,
+        "Rating": "34",
         "Value": 0,
         "Movement": "Flying (20)",
         "Core Integrity": 30,
         "Core Exposure": 40,
         "Salvage Potential": "5-10",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
         ],
         "Components": [
@@ -700,13 +816,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 7,
+        "Rating": "7",
         "Value": 0,
         "Movement": "Hovering (56)",
         "Core Integrity": 10,
         "Core Exposure": 50,
         "Salvage Potential": "5-15",
-        "Visual Range": 18,
+        "Visual Range": "18",
         "Armament": [
         ],
         "Components": [
@@ -726,13 +842,13 @@
         "Description": "Only dispatched to support an assault force, the Imp is designed to quickly rush targets, latch on, then overload their own power source to create a directed charge that blasts pieces clean off the target. While their armor has no particular weakness, E-15 cores are relatively exposed and low on integrity, keeping them light enough to rapidly close on threats.",
         "Class": "Saboteur",
         "Size": "Small",
-        "Rating": 14,
+        "Rating": "14",
         "Value": 15,
         "Movement": "Flying (37)",
         "Core Integrity": 8,
         "Core Exposure": 50,
         "Salvage Potential": "10-20",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Segregator"
         ],
@@ -745,17 +861,90 @@
         "Resistances": {
         }
     },
+    "Executioner": {
+        "Description": "The Executioner is a prototype for a new class of combat robot armed with dual helical railgun prototypes, capable of piercing targets at extreme range with extreme accuracy, often bypassing any and all armor to strike the target's core directly.",
+        "Class": "Executioner (Prototype)",
+        "Size": "Large",
+        "Rating": "108",
+        "Value": 120,
+        "Movement": "Walking (100)",
+        "Core Integrity": 80,
+        "Core Exposure": 24,
+        "Salvage Potential": "70-100",
+        "Visual Range": "23",
+        "Armament": [
+            "Helical Railgun",
+            "Helical Railgun"
+        ],
+        "Components": [
+            "Imp. Quantum Reactor",
+            "Enh. Biometal Leg",
+            "Enh. Biometal Leg",
+            "Exp. Heat Sink",
+            "Exp. Optical Array",
+            "Exp. Targeting Computer",
+            "Exp. Core Analyzer",
+            "Adv. Armor Integrity Analyzer",
+            "Adv. Kinecellerator"
+        ],
+        "Resistances": {
+        }
+    },
+    "Fortress": {
+        "Description": "Only two Fortress prototypes have been built to garrison vital locations, utilizing the latest centrium armor technology and a wide array of other defensive components to render them nearly immune to all forms of damage. While their offensive capabilities are limited to two powerful cannons, even a small army would have difficulty overcoming a Fortress before it picks them off one by one.",
+        "Class": "Fortress (Prototype)",
+        "Size": "Large",
+        "Rating": "343",
+        "Value": 500,
+        "Movement": "Treading (160)",
+        "Core Integrity": 500,
+        "Core Exposure": 25,
+        "Salvage Potential": "200-500",
+        "Visual Range": "16",
+        "Armament": [
+            "Enh. Nova Cannon",
+            "Graviton Cannon"
+        ],
+        "Components": [
+            "Vortex Chain Reactor",
+            "Vortex Chain Reactor",
+            "Hdn. Centrium Heavy Treads",
+            "Hdn. Centrium Heavy Treads",
+            "Hdn. Centrium Heavy Treads",
+            "Hdn. Centrium Heavy Treads",
+            "Coolant Network",
+            "Adv. Coolant Injector",
+            "Exp. Weapon Shielding",
+            "Centrium Heavy Armor Plating",
+            "Hvy. Insulated Plating",
+            "Thermal Barrier",
+            "EM Dispersion Field",
+            "Exp. Force Field",
+            "Antimissile System",
+            "Adv. Dynamic Insulation System"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Thermal": 75,
+            "Explosive": 50,
+            "Electromagnetic": 100
+        },
+        "Immunities":[
+            "Coring",
+            "Disruption"
+        ]
+    },
     "H-55 Commando": {
         "Description": "H-series hunters aggressively track down intruders, and have multiple means of ensuring they can complete that task. Their advanced probability systems are capable of predicting target positions for some time after contact is lost. When necessary, hunter squad leaders also launch an autonomous drone from their built-in drone bay to help find escaped targets. The H-55 cannot be remotely detected by low-level sensor arrays.",
         "Class": "Hunter",
         "Size": "Medium",
-        "Rating": 21,
+        "Rating": "21",
         "Value": 55,
         "Movement": "Walking (120)",
         "Core Integrity": 30,
         "Core Exposure": 34,
         "Salvage Potential": "40-60",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Assault Rifle",
             "Gauss Rifle"
@@ -778,13 +967,13 @@
         "Description": "H-66 Slayers are armed with a supplementary dual gauss rifles, which combined with the H-66's embedded close-range scanners can be used to penetrate walls to strike targets on the opposite side. The H-66 also uses two targeting computers in parallel for greater accuracy. The H-66 can only be remotely detected by mid-level sensor arrays.",
         "Class": "Hunter",
         "Size": "Medium",
-        "Rating": 41,
+        "Rating": "41",
         "Value": 66,
         "Movement": "Walking (120)",
         "Core Integrity": 45,
         "Core Exposure": 34,
         "Salvage Potential": "50-70",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Hvy. Assault Rifle",
             "Gauss Rifle",
@@ -810,13 +999,13 @@
         "Description": "The H-77 Assassin swaps out the H-66's gauss rifles for dual coilguns. The Assassin's position is somewhat masked by an improved Phase Shifter, making it more difficult to accurately target. The H-77 can only be remotely detected by high-level sensor arrays.",
         "Class": "Hunter",
         "Size": "Medium",
-        "Rating": 56,
+        "Rating": "56",
         "Value": 77,
         "Movement": "Walking (120)",
         "Core Integrity": 65,
         "Core Exposure": 34,
         "Salvage Potential": "60-85",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Hpw. Shotgun",
             "Coil Gun",
@@ -841,13 +1030,13 @@
         "Description": "The deadliest hunter class robot, armed with both a heavy machine gun and two KE penetrators, is well-cloaked and very difficult to hit, while possessing advanced targeting capabilities itself. The H-88 Terminator cannot be remotely detected by standard sensor array technology, though recent prototype sensors have shown some promise at penetrating even the best cloaking techniques.",
         "Class": "Hunter",
         "Size": "Medium",
-        "Rating": 69,
+        "Rating": "69",
         "Value": 88,
         "Movement": "Walking (120)",
         "Core Integrity": 75,
         "Core Exposure": 34,
         "Salvage Potential": "70-100",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Hvy. Machine Gun",
             "KE Penetrator",
@@ -868,17 +1057,50 @@
             "Scan Cloak (4)"
         ]
     },
+    "Investigator": {
+        "Description": "Investigators are built specifically to oversee the testing of dangerous prototypes, and are therefore capable of holding multiple threats in place while supporting units deal with them.",
+        "Class": "Researcher (Prototype)",
+        "Size": "Medium",
+        "Rating": "83",
+        "Value": 70,
+        "Movement": "Hovering (60)",
+        "Core Integrity": 60,
+        "Core Exposure": 40,
+        "Salvage Potential": "60-80",
+        "Visual Range": "16",
+        "Armament": [
+            "Containment Facilitator",
+            "Exp. Stasis Projector"
+        ],
+        "Components": [
+            "Lgt. Quantum Reactor",
+            "Antigrav Array",
+            "Sml. Storage Unit",
+            "Adv. Component Analysis Suite",
+            "Corruption Screen"
+        ],
+        "Resistances": {
+            "Thermal": 25,
+            "Electromagnetic": -50,
+            "Impact": -25,
+            "Slashing": -25,
+            "Piercing": -25
+        },
+        "Immunities": [
+            "Jamming"
+        ]
+    },
     "G-34 Mercenary": {
         "Description": "G-series grunts serve as low-level front-line combat units, of sturdy construction but with fairly weak armament. Internal systems are not as protected as they could be, to enable rapid repair in the field, but this also makes them somewhat susceptible to additional damage from electromagnetic attacks. Grunts patrol in groups, or sometimes operate alone as hauler escorts to protect those with more valuable cargo.",
         "Class": "Grunt",
         "Size": "Medium",
-        "Rating": 8,
+        "Rating": "8",
         "Value": 34,
         "Movement": "Walking (120)",
         "Core Integrity": 15,
         "Core Exposure": 39,
         "Salvage Potential": "30-50",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Sml. Laser"
         ],
@@ -896,13 +1118,13 @@
         "Description": "The G-47 Trooper replaces the G-34's laser with a more effective particle gun. However, during prolonged confrontations the G-47 is prone to overheating as its upgraded weaponry produces more heat than the design can fully dissipate.",
         "Class": "Grunt",
         "Size": "Medium",
-        "Rating": 16,
+        "Rating": "16",
         "Value": 47,
         "Movement": "Walking (120)",
         "Core Integrity": 30,
         "Core Exposure": 39,
         "Salvage Potential": "40-60",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [
             "Particle Gun"
         ],
@@ -920,13 +1142,13 @@
         "Description": "G-50 Soldiers are each equipped with a heavy laser, a significant upgrade from its predecessor the G-47, but like the G-47 are prone to overheating. Also still somewhat weak against electromagnetic attacks.",
         "Class": "Grunt",
         "Size": "Medium",
-        "Rating": 29,
+        "Rating": "29",
         "Value": 50,
         "Movement": "Walking (120)",
         "Core Integrity": 45,
         "Core Exposure": 39,
         "Salvage Potential": "50-70",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Hvy. Laser"
         ],
@@ -944,13 +1166,13 @@
         "Description": "The first G-series robot armed with two thermal weapons, while integrating enough advanced heat sinks to fire them non-stop.",
         "Class": "Grunt",
         "Size": "Medium",
-        "Rating": 47,
+        "Rating": "47",
         "Value": 67,
         "Movement": "Walking (120)",
         "Core Integrity": 60,
         "Core Exposure": 39,
         "Salvage Potential": "60-85",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Electrolaser",
             "Plasma Rifle"
@@ -970,13 +1192,13 @@
         "Description": "The latest G-series implementation, armed with a powerful phase gun supported by a secondary heavy laser. While not exceptionally effective in single combat, the G-73 is much more formidable in groups, as they normally operate.",
         "Class": "Grunt",
         "Size": "Medium",
-        "Rating": 58,
+        "Rating": "58",
         "Value": 73,
         "Movement": "Walking (120)",
         "Core Integrity": 70,
         "Core Exposure": 39,
         "Salvage Potential": "70-100",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Hvy. Laser",
             "Phase Gun"
@@ -996,13 +1218,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 28,
+        "Rating": "28",
         "Value": 0,
         "Movement": "Flying (40)",
         "Core Integrity": 40,
         "Core Exposure": 39,
         "Salvage Potential": "5-10",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
         ],
         "Components": [
@@ -1024,13 +1246,13 @@
         "Description": "I-series protectors are one of very few dual-engine robots, necessary to both move and power their remote shield generator. Additional power is stored in batteries for burst use during heavy confrontations, and a power amplifier increases the rate of power generation to replenish energy in an ongoing combat scenario.",
         "Class": "Protector",
         "Size": "Medium",
-        "Rating": 24,
+        "Rating": "24",
         "Value": 25,
         "Movement": "Rolling (100)",
         "Core Integrity": 20,
         "Core Exposure": 50,
         "Salvage Potential": "20-40",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [],
         "Components": [
             "Imp. Ion Engine",
@@ -1050,13 +1272,13 @@
         "Description": "The I-36 Angel's remote force field is 33% more effective than the I-25's shield generator, shielding targets from half of all damage where there is enough energy to support the field. Protector class robots are not especially well armored, but in addition to their shield are also strong against more common thermal weaponry, as well as always working in concert with a larger assault force.",
         "Class": "Protector",
         "Size": "Medium",
-        "Rating": 37,
+        "Rating": "37",
         "Value": 36,
         "Movement": "Rolling (100)",
         "Core Integrity": 40,
         "Core Exposure": 50,
         "Salvage Potential": "40-60",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [],
         "Components": [
             "Imp. Deuterium Engine",
@@ -1077,13 +1299,13 @@
         "Description": "I-47 Archangels are equipped with a more efficient force field than the I-36, and greater battery storage to support its use. Their point defense system further conserves energy by intercepting explosive projectiles prior to detonation.",
         "Class": "Protector",
         "Size": "Medium",
-        "Rating": 60,
+        "Rating": "60",
         "Value": 47,
         "Movement": "Rolling (100)",
         "Core Integrity": 60,
         "Core Exposure": 50,
         "Salvage Potential": "60-80",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [],
         "Components": [
             "Antimatter Reactor",
@@ -1107,19 +1329,22 @@
         "Description": "K-class workers perform menial tasks such as clearing debris to facilitate work by other robots. Their built-in compact recycling unit can break down almost any form of debris into reusable matter. As K-01 Serfs are extremely cheap to produce and perform no vital function, despite their size they are among the weakest robot designs with the most exposed core.",
         "Class": "Worker",
         "Size": "Medium",
-        "Rating": 6,
+        "Rating": "6",
         "Value": 1,
         "Movement": "Rolling (80)",
         "Core Integrity": 10,
         "Core Exposure": 50,
         "Salvage Potential": "10-30",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [],
         "Components": [
             "Lgt. Ion Engine",
             "Wheel",
             "Wheel",
-            "Sml. Matter Pod"
+            [
+                {"Name": "Sml. Matter Pod"},
+                {"Name": "Med. Matter Pod"}
+            ]
         ],
         "Resistances": {
             "Electromagnetic": -25
@@ -1129,13 +1354,13 @@
         "Description": "L-series duelists are a melee variant of the grunt class, engaging targets at close range with the support of ranged combat units. They lack the broad protection of the brawler class' armor, but feature an extra layer of dedicated core armor. They are highly accurate with their katana and capable of quickly reducing an opponent's effectiveness by slashing exposed components clean off.",
         "Class": "Duelist",
         "Size": "Medium",
-        "Rating": 18,
+        "Rating": "18",
         "Value": 31,
         "Movement": "Walking (120)",
         "Core Integrity": 25,
         "Core Exposure": 34,
         "Salvage Potential": "40-60",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Katana"
         ],
@@ -1155,13 +1380,13 @@
         "Description": "L-41 Fighters are even more accurate than the L-31, and use an axe for slightly improved slashing force. Like other L-series robots, the L-41 is only dispatched in coordination with grunts. Like other L-series robots, the L-41's armor structure is reinforced against the slashes of melee damage, as well as piercing attacks.",
         "Class": "Duelist",
         "Size": "Medium",
-        "Rating": 30,
+        "Rating": "30",
         "Value": 41,
         "Movement": "Walking (120)",
         "Core Integrity": 40,
         "Core Exposure": 34,
         "Salvage Potential": "50-70",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Axe"
         ],
@@ -1182,13 +1407,13 @@
         "Description": "The most accurate front-line melee combat unit, the L-61 Swordsman also has a well-shielded core and a powered sword very effective at slicing off target components.",
         "Class": "Duelist",
         "Size": "Medium",
-        "Rating": 48,
+        "Rating": "48",
         "Value": 61,
         "Movement": "Walking (120)",
         "Core Integrity": 60,
         "Core Exposure": 34,
         "Salvage Potential": "60-85",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Power Sword"
         ],
@@ -1205,17 +1430,105 @@
             "Piercing": 25
         }
     },
+    "Lightning": {
+        "Description": "A specialized hunter prototype not yet in wide deployment, currently only used to defend sensitive areas in more maze-like environments where it can quickly dispatch of intruders through walls with its experimental EMDS. It also remains completely undetectable by any known non-visual sensor, and can even survive direct engagements against multiple hostiles with the aid of the most advanced cloaking technology to date.",
+        "Class": "Hunter (Prototype)",
+        "Size": "Medium",
+        "Rating": "109",
+        "Value": 125,
+        "Movement": "Walking (120)",
+        "Core Integrity": 100,
+        "Core Exposure": 29,
+        "Salvage Potential": "70-100",
+        "Visual Range": "16",
+        "Armament": [
+            "EMDS"
+        ],
+        "Components": [
+            "Quantum Reactor",
+            "Enh. Biometal Leg",
+            "Enh. Biometal Leg",
+            "Adv. Power Amplifier",
+            "Exp. Heat Sink",
+            "Exp. Targeting Computer",
+            "Exp. Phase Shifter",
+            "Imp. Weapon Shielding",
+            "EM Dispersion Field"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Explosive": 25,
+            "Electromagnetic": 100,
+            "Impact": -25
+        },
+        "Immunities":[
+            "Jamming"
+        ],
+        "Traits": [
+            "Scan Cloak (4)"
+        ]
+    },
+    "M Guard": {
+        "Description": "The first application of prototype AEGIS shielding is naturally found in the most important of designs, my own guards. With enough energy to power it through extended confrontations even while protecting nearby allies, it would almost be enough to justify accompanying M Guards with additional squads of front-line robots, if not for their powerful AOE weaponry making close-quarters combat with allied forces problematic.",
+        "Class": "Sentry (Prototype)",
+        "Size": "Large",
+        "Rating": "194",
+        "Value": 300,
+        "Movement": "Treading (135)",
+        "Core Integrity": 200,
+        "Core Exposure": 25,
+        "Salvage Potential": "80-100",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Graviton Cannon"},
+                {"Name": "Cld. Nova Cannon"}
+            ],
+            [
+                {"Name": "Adv. Micro-nuke Launcher"},
+                {"Name": "Hellfire Missile Launcher"},
+                {"Name": "Ragnarok Missile Launcher"}
+            ]
+        ],
+        "Components": [
+            "Zero-point Reactor",
+            "Zero-point Reactor",
+            "Exp. Biometal Heavy Treads",
+            "Exp. Cooling System",
+            "Exp. Coolant Injector",
+            "Exp. Energy Well",
+            "Exp. Energy Well",
+            "Exp. Matter Compressor",
+            "Quantum Shading Machine",
+            "Exp. Targeting Computer",
+            "Hvy. Regenerative Plating",
+            "Thermal Barrier",
+            "AEGIS Remote Shield"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Thermal": 75,
+            "Explosive": 50,
+            "Electromagnetic": 50,
+            "Impact": 25
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Jamming"
+        ]
+    },
     "M-13 Machinist": {
         "Description": "M-series mechanics are valued in dangerous areas for their ability to rebuild components, repair simple core integrity, and restore missing functionality by attaching temporary backup components. Despite their well-rounded protective armor, M-13 Machinists in particular are less often used as front line units, instead operating from a designated repair station.",
         "Class": "Mechanic",
         "Size": "Medium",
-        "Rating": 11,
+        "Rating": "11",
         "Value": 13,
         "Movement": "Rolling (80)",
         "Core Integrity": 15,
         "Core Exposure": 39,
         "Salvage Potential": "20-40",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [],
         "Inventory Size": 10,
         "Inventory": [
@@ -1241,13 +1554,13 @@
         "Description": "Minesweepers are a new class derived from the mechanic, though built around a more secure core than normally found among non-combat robots, for added protection while carrying out their primary duty. Sweeper deployment only recently became necessary as a result of increasing derelict use of traps in the caves to impede patrol efforts.",
         "Class": "Minesweeper",
         "Size": "Medium",
-        "Rating": 12,
+        "Rating": "12",
         "Value": 14,
         "Movement": "Rolling (80)",
         "Core Integrity": 30,
         "Core Exposure": 25,
         "Salvage Potential": "20-40",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [
             "Datajack"
         ],
@@ -1266,13 +1579,13 @@
         "Description": "M-22 Extractors are outfitted with better datajacking and extraction technology than their predecessors, and are currently assigned to mid-level cave networks.",
         "Class": "Minesweeper",
         "Size": "Medium",
-        "Rating": 18,
+        "Rating": "18",
         "Value": 22,
         "Movement": "Rolling (80)",
         "Core Integrity": 40,
         "Core Exposure": 25,
         "Salvage Potential": "20-40",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [
             "Imp. Datajack"
         ],
@@ -1291,13 +1604,13 @@
         "Description": "M-series mechanics are valued in dangerous areas for their ability to rebuild components, repair simple core integrity, and restore missing functionality by attaching temporary backup components. M-28 Smiths are sometimes dispatched to support an assault force, or are otherwise assigned to a designated repair station.",
         "Class": "Mechanic",
         "Size": "Medium",
-        "Rating": 20,
+        "Rating": "20",
         "Value": 28,
         "Movement": "Rolling (80)",
         "Core Integrity": 30,
         "Core Exposure": 39,
         "Salvage Potential": "40-60",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [],
         "Inventory Size": 10,
         "Inventory": [
@@ -1323,13 +1636,13 @@
         "Description": "M-30 Cleansers are the most effective minesweeper variant, utilizing the latest in datajacking and extraction technology.",
         "Class": "Minesweeper",
         "Size": "Medium",
-        "Rating": 26,
+        "Rating": "26",
         "Value": 30,
         "Movement": "Rolling (80)",
         "Core Integrity": 50,
         "Core Exposure": 25,
         "Salvage Potential": "20-40",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [
             "Adv. Datajack"
         ],
@@ -1348,13 +1661,13 @@
         "Description": "M-series mechanics are valued in dangerous areas for their ability to rebuild components, repair simple core integrity, and restore missing functionality by attaching temporary backup components. M-36 Artificers are sometimes dispatched to support an assault force, or are otherwise assigned to a designated repair station.",
         "Class": "Mechanic",
         "Size": "Medium",
-        "Rating": 32,
+        "Rating": "32",
         "Value": 36,
         "Movement": "Rolling (80)",
         "Core Integrity": 50,
         "Core Exposure": 39,
         "Salvage Potential": "60-80",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [],
         "Inventory Size": 10,
         "Inventory": [
@@ -1380,13 +1693,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 11,
+        "Rating": "11",
         "Value": 0,
         "Movement": "Flying (40)",
         "Core Integrity": 8,
         "Core Exposure": 50,
         "Salvage Potential": "5-10",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
         ],
         "Components": [
@@ -1407,13 +1720,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 28,
+        "Rating": "28",
         "Value": 0,
         "Movement": "Rolling (100)",
         "Core Integrity": 50,
         "Core Exposure": 40,
         "Salvage Potential": "5-10",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
         ],
         "Components": [
@@ -1434,13 +1747,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 6,
+        "Rating": "6",
         "Value": 0,
         "Movement": "Flying (40)",
         "Core Integrity": 8,
         "Core Exposure": 50,
         "Salvage Potential": "5-10",
-        "Visual Range": 20,
+        "Visual Range": "20",
         "Armament": [
         ],
         "Components": [
@@ -1460,13 +1773,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 7,
+        "Rating": "7",
         "Value": 0,
         "Movement": "Hovering (56)",
         "Core Integrity": 10,
         "Core Exposure": 50,
         "Salvage Potential": "5-15",
-        "Visual Range": 18,
+        "Visual Range": "18",
         "Armament": [
         ],
         "Components": [
@@ -1484,13 +1797,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 8,
+        "Rating": "8",
         "Value": 1,
         "Movement": "Hovering (56)",
         "Core Integrity": 10,
         "Core Exposure": 50,
         "Salvage Potential": "5-15",
-        "Visual Range": 20,
+        "Visual Range": "20",
         "Armament": [
         ],
         "Components": [
@@ -1508,13 +1821,13 @@
         "Description": "O-series operators manage local robot activity and machine processes via dedicated terminals. They are also capable of hacking and repurposing errant derelicts, but faced with an armed threat will instead call for reinforcements, lock their terminal to protect it, and attempt to escape before their unique data core can be poached by hostiles. O-16 Technicians are not built for combat, thus their sensitive systems are especially susceptible to electromagnetic damage.",
         "Class": "Operator",
         "Size": "Medium",
-        "Rating": 10,
+        "Rating": "10",
         "Value": 16,
         "Movement": "Hovering (56)",
         "Core Integrity": 15,
         "Core Exposure": 40,
         "Salvage Potential": "10-20",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [
             "Datajack"
         ],
@@ -1533,13 +1846,13 @@
         "Description": "O-24 Administrators share many similarities with low-level O-16 Technicians, but despite the class' highly sensitive electronics they can somewhat mitigate the long-term negative effects of electromagnetic attacks via their backup module.",
         "Class": "Operator",
         "Size": "Medium",
-        "Rating": 26,
+        "Rating": "26",
         "Value": 24,
         "Movement": "Hovering (56)",
         "Core Integrity": 30,
         "Core Exposure": 39,
         "Salvage Potential": "20-30",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [
             "Imp. Datajack"
         ],
@@ -1560,13 +1873,13 @@
         "Description": "O-32 Directors are the leading O-class robot, managing the most advanced terminals and protected by armor close to that of similarly rated front-line combat units. Director armor is not, however, specialized enough to prevent penetrating electromagnetic attacks, the long-term effects of which can be mitigated by their dedicated system backup module.",
         "Class": "Operator",
         "Size": "Medium",
-        "Rating": 44,
+        "Rating": "44",
         "Value": 32,
         "Movement": "Hovering (56)",
         "Core Integrity": 50,
         "Core Exposure": 39,
         "Salvage Potential": "30-40",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [
             "Adv. Datajack"
         ],
@@ -1587,13 +1900,13 @@
         "Description": "P-series programmers are the primary means of asserting control over areas of unwanted derelict activity. As they are often dispatched to combat environments, programmers are equipped with both electromagnetic weaponry and dedicated target analysis components enabling them to quickly incapacitate hostiles.",
         "Class": "Programmer",
         "Size": "Medium",
-        "Rating":38,
+        "Rating": "38",
         "Value": 60,
         "Movement": "Hovering (56)",
         "Core Integrity": 30,
         "Core Exposure": 30,
         "Salvage Potential": "40-50",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Shock Rifle",
             "Shock Rifle",
@@ -1621,13 +1934,13 @@
         "Description": "The P-70 Sage replaces one P-60 shock rifle with a high-powered version, and swaps the other one out for a tesla rifle. Like all programmers, the P-70 can engage in both defensive and offensive remote hacking.",
         "Class": "Programmer",
         "Size": "Medium",
-        "Rating":54,
+        "Rating": "54",
         "Value": 70,
         "Movement": "Hovering (56)",
         "Core Integrity": 40,
         "Core Exposure": 29,
         "Salvage Potential": "50-60",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Hpw. Shock Rifle",
             "Tesla Rifle",
@@ -1655,13 +1968,13 @@
         "Description": "The P-80 Master is armed with dual gamma rifles, the most powerful type of standard electromagnetic gun. Like other P-series robots, the P-80 uses specialized armor insulated against electromagnetic damage, though compromises in design leave it slightly weak against kinetic attacks.",
         "Class": "Programmer",
         "Size": "Medium",
-        "Rating":90,
+        "Rating": "90",
         "Value": 80,
         "Movement": "Hovering (56)",
         "Core Integrity": 40,
         "Core Exposure": 29,
         "Salvage Potential": "60-70",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Gamma Rifle",
             "Gamma Rifle",
@@ -1689,17 +2002,441 @@
             "Hacking"
         ]
     },
+    "Protovariant Demolisher": {
+        "Description": "* 100 with Exp. Shock Absorption System, otherwise 50",
+        "Class": "Demolisher (Prototype)",
+        "Size": "Medium",
+        "Rating": "121-128",
+        "Value": 200,
+        "Movement": "Hovering (42)",
+        "Core Integrity": 180,
+        "Core Exposure": 20,
+        "Salvage Potential": "70-100",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Hellfire Missile Launcher"},
+                {"Name": "Ragnarok Missile Launcher"},
+                {"Name": "Adv. Micro-nuke Launcher"}
+            ]
+        ],
+        "Components": [
+            "Com. Particle Reactor",
+            "Com. Particle Reactor",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            [
+                {"Name": "Adv. Launcher Guidance Computer"},
+                {"Name": "Imp. Launcher Guidance Computer", "Number": 2}
+            ],
+            "Exp. Weapon Shielding",
+            "Centrium Medium Armor Plating",
+            [
+                {"Name": "Antimissile System"},
+                {"Name": "Exp. Shock Absorption System"}
+            ]
+        ],
+        "Resistances": {
+            "Explosive*": 100,
+            "Impact": 25
+        }
+    },
+    "Protovariant Duelist": {
+        "Description": "",
+        "Class": "Duelist (Prototype)",
+        "Size": "Medium",
+        "Rating": "115-128",
+        "Value": 200,
+        "Movement": "Walking (100/120)",
+        "Core Integrity": 140,
+        "Core Exposure": 16,
+        "Salvage Potential": "60-85",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Molecular Scythe"},
+                {"Name": "Nanosword"},
+                {"Name": "Vibroblade"}
+            ],
+            [
+                {"Name": "Molecular Scythe"},
+                {"Name": "Nanosword"},
+                {"Name": "Vibroblade"}
+            ]
+        ],
+        "Components": [
+            [
+                {"Name": "Com. Particle Reactor", "Number": 2},
+                {"Name": "Graviton Reactor"}
+            ],
+            [
+                {"Name": "Adv. Myomer Leg", "Number": 2},
+                {"Name": "Enh. Biometal Leg", "Number": 2}
+            ],
+            "Exp. Melee Analysis Suite",
+            "Exp. Core Analyzer",
+            "Femtoactuators",
+            "Imp. Stasis Canceller",
+            [
+                {"Name": "Adv. Reaction Control System"},
+                {"Name": "Exp. Core Shielding"}
+            ]
+        ],
+        "Resistances": {
+            "Slashing": 25,
+            "Piercing": 25
+        }
+    },
+    "Protovariant Grunt": {
+        "Description": "* Only with Exp. Thermal Shield",
+        "Class": "Grunt (Prototype)",
+        "Size": "Medium",
+        "Rating": "139-152",
+        "Value": 200,
+        "Movement": "Walking (100/120)",
+        "Core Integrity": 140,
+        "Core Exposure": 19,
+        "Salvage Potential": "80-110",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Cld. Plasma Rifle"},
+                {"Name": "Enh. Force Rifle"},
+                {"Name": "Hvy. Gatling Laser"}
+            ],
+            [
+                {"Name": "Adv. Plasma Rifle"},
+                {"Name": "Hvy. Wave Gun"},
+                {"Name": "Adv. Variable Charge Gun"},
+                {"Name": "Cld. Phase Gun"}
+            ],
+            [
+                {"Name": "Prc. Phase Gun"},
+                {"Name": "Hvy. Dispersion Rifle"}
+            ]
+        ],
+        "Components": [
+            "Imp. Quantum Reactor",
+            "Imp. Quantum Reactor",
+            [
+                {"Name": "Enh. Biometal Leg", "Number": 3},
+                {"Name": "Hdn. Centrium Leg", "Number": 3}
+            ],
+            [
+                {"Name": "Exp. Cooling System", "Number": 3},
+                {"Name": "Exp. Heat Sink", "Number": 3}
+            ],
+            [
+                {"Name": "Adv. Particle Charger"},
+                {"Name": "Exp. Targeting Computer"}
+            ],
+            [
+                {"Name": "Adv. Armor Integrity Analyzer"},
+                {"Name": "Exp. Weapon Cycler"}
+            ],
+            [
+                {"Name": "Exp. Thermal Shield"},
+                {"Name": "Exp. Utility Shielding"}
+            ]
+        ],
+        "Resistances": {
+            "Kinetic": -25,
+            "Thermal*": 30,
+            "Electromagnetic": -25
+        }
+    },
+    "Protovariant Hunter": {
+        "Description": "",
+        "Class": "Hunter (Prototype)",
+        "Size": "Medium",
+        "Rating": "144-157",
+        "Value": 200,
+        "Movement": "Walking (90/100/120)",
+        "Core Integrity": 150,
+        "Core Exposure": 16,
+        "Salvage Potential": "70-100",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Imp. KE Penetrator", "Number": 3},
+                {"Name": "Helical Railgun", "Number": 3}
+            ]
+        ],
+        "Components": [
+            [
+                {"Name": "Graviton Reactor", "Number": 2},
+                {"Name": "Zero-point Reactor", "Number": 2}
+            ],
+            [
+                {"Name": "Enh. Biometal Leg", "Number": 3},
+                {"Name": "Exp. Biometal Leg", "Number": 3},
+                {"Name": "Hdn. Centrium Leg", "Number": 3}
+            ],
+            [
+                {"Name": "Exp. Cooling System", "Number": 2},
+                {"Name": "Exp. Heat Sink", "Number": 2}
+            ],
+            "Exp. Targeting Computer",
+            [
+                {"Name": "Exp. Weapon Cycler"},
+                {"Name": "Recoil Nullifier"}
+            ],
+            [
+                {"Name": "Adv. Reaction Control System"},
+                {"Name": "Exp. ECM Suite"}
+            ],
+            "Exp. Phase Shifter"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Electromagnetic": -25
+        },
+        "Traits": [
+            "Scan Cloak (4)"
+        ]
+    },
+    "Protovariant Programmer": {
+        "Description": "",
+        "Class": "Programmer (Prototype)",
+        "Size": "Medium",
+        "Rating": "190-200",
+        "Value": 200,
+        "Movement": "Hovering (42)",
+        "Core Integrity": 150,
+        "Core Exposure": 14,
+        "Salvage Potential": "60-70",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Enh. Gamma Rifle", "Number": 2},
+                {"Name": "Hvy. Tesla Rifle", "Number": 3}
+            ],
+            "Gui. Remote Datajack"
+        ],
+        "Components": [
+            [
+                {"Name": "Graviton Reactor", "Number": 2},
+                {"Name": "Zero-point Reactor", "Number": 2}
+            ],
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Exp. Power Amplifier",
+            [
+                {"Name": "Exp. Cooling System", "Number": 3},
+                {"Name": "Exp. Heat Sink", "Number": 4}
+            ],
+            "Exp. Energy Well",
+            "Quantum Shading Machine",
+            "Exp. Target Analyzer",
+            [
+                {"Name": "Exp. Weapon Cycler"},
+                {"Name": "Adv. Weapon Cycler", "Number": 2}
+            ],
+            "Imp. Energy Mantle"
+        ],
+        "Resistances": {
+            "Kinetic": -25,
+            "Thermal": -25,
+            "Explosive": 25,
+            "Electromagnetic": 75
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Protovariant Sentry": {
+        "Description": "* 50 with Thermal Barrier, 25 with Hvy. Reflective Plating",
+        "Class": "Sentry (Prototype)",
+        "Size": "Large",
+        "Rating": "144-166",
+        "Value": 200,
+        "Movement": "Treading (135/160/180)",
+        "Core Integrity": 170,
+        "Core Exposure": 16,
+        "Salvage Potential": "80-105",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Prc. Phase Gun"},
+                {"Name": "Quantum Rifle"}
+            ],
+            [
+                {"Name": "Cld. Phase Cannon"},
+                {"Name": "Imp. Matter Neutralizer"},
+                {"Name": "Lrn. Phase Cannon"}
+            ],
+            [
+                {"Name": "Helical Railgun"},
+                {"Name": "Imp. KE Penetrator"}
+            ]
+        ],
+        "Components": [
+            [
+                {"Name": "Com. Particle Reactor"},
+                {"Name": "Imp. Quantum Reactor", "Number": 2}
+            ],
+            [
+                {"Name": "Enh. Armored Heavy Treads"},
+                {"Name": "Exp. Biometal Heavy Treads"}
+            ],
+            [
+                {"Name": "Exp. Cooling System", "Number": 3},
+                {"Name": "Exp. Heat Sink", "Number": 4}
+            ],
+            [
+                {"Name": "Exp. Target Analyzer"},
+                {"Name": "Prc. Energy Filter"}
+            ],
+            [
+                {"Name": "Centrium Heavy Armor Plating"},
+                {"Name": "Lyr. Heavy Armor Plating"}
+            ],
+            [
+                {"Name": "Hvy. Reflective Plating"},
+                {"Name": "Thermal Barrier"}
+            ]
+        ],
+        "Resistances": {
+            "Thermal*": 50,
+            "Explosive": 50,
+            "Impact": 25
+        }
+    },
+    "Protovariant Specialist": {
+        "Description": "* Only with Exp. Thermal Shield",
+        "Class": "Specialist (Prototype)",
+        "Size": "Medium",
+        "Rating": "154-166",
+        "Value": 200,
+        "Movement": "Walking (90/100/120)",
+        "Core Integrity": 140,
+        "Core Exposure": 14,
+        "Salvage Potential": "60-90",
+        "Visual Range": "23/24",
+        "Armament": [
+            [
+                {"Name": "Com. Linear Accelerator", "Number": 3},
+                {"Name": "Com. Mass Driver", "Number": 3}
+            ]
+        ],
+        "Components": [
+            [
+                {"Name": "Com. Particle Reactor", "Number": 2},
+                {"Name": "Imp. Quantum Reactor", "Number": 2}
+            ],
+            [
+                {"Name": "Enh. Biometal Leg", "Number": 3},
+                {"Name": "Hdn. Centrium Leg", "Number": 3},
+                {"Name": "Exp. Biometal Leg", "Number": 3}
+            ],
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            [
+                {"Name": "Exp. Cooling System", "Number": 3},
+                {"Name": "Exp. Heat Sink", "Number": 4}
+            ],
+            [
+                {"Name": "Exp. Matter Compressor"},
+                {"Name": "Prc. Matter Filter"}
+            ],
+            [
+                {"Name": "Exp. Optical Array"},
+                {"Name": "Spectral Analyzer"}
+            ],
+            "Exp. Targeting Computer",
+            [
+                {"Name": "Exp. Utility Shielding"},
+                {"Name": "Exp. Thermal Shield"}
+            ]
+        ],
+        "Resistances": {
+            "Thermal*": 30
+        }
+    },
+    "Q-Series": {
+        "Description": "Q-Series robots are a new modular design built to deal with specific threats as they are encountered. The base form is an armored walker with a strong well-concealed core and numerous additional slots available for both utilities and armament.",
+        "Class": "Q-Series",
+        "Size": "Large",
+        "Rating": "83",
+        "Value": 90,
+        "Movement": "Walking (110)",
+        "Core Integrity": 75,
+        "Core Exposure": 29,
+        "Salvage Potential": "70-100",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Antimatter Reactor",
+            "Lgt. Particle Reactor",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Adv. Heat Sink",
+            "Adv. Cooling System",
+            "Imp. Core Shielding",
+            "Lyr. Medium Armor Plating",
+            "Adv. Dynamic Insulation System"
+        ],
+        "Resistances": {
+            "Explosive": 50,
+            "Impact": 25
+        },
+        "Immunities": [
+            "Jamming"
+        ]
+    },
+    "Quarantine Guard": {
+        "Description": "Designed for the sole purpose of maintaining maximum operating efficiency in high-heat environments, Quarantine Guards are the most powerful and advanced Y-72 variant to date, supporting dual hypercooled linear accelerators with extra matter storage and a backup power source in combination with an array of heat management utilities.",
+        "Class": "Sentry (Prototype)",
+        "Size": "Large",
+        "Rating": "145",
+        "Value": 200,
+        "Movement": "Treading (145)",
+        "Core Integrity": 150,
+        "Core Exposure": 34,
+        "Salvage Potential": "60-80",
+        "Visual Range": "16",
+        "Armament": [
+            "Hcl. Linear Accelerator",
+            "Hcl. Linear Accelerator"
+        ],
+        "Components": [
+            "Mic. Nuclear Core",
+            "Quantum Reactor",
+            "Adv. Medium Treads",
+            "Adv. Medium Treads",
+            "Adv. Medium Treads",
+            "Exp. Thermal Generator",
+            "Adv. Cryofiber Web",
+            "Adv. Cryofiber Web",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Exp. Coolant Injector",
+            "Adv. Matter Compressor",
+            "Centrium Medium Armor Plating"
+        ],
+        "Resistances": {
+            "Explosive": 50,
+            "Impact": 25
+        },
+        "Immunities": [
+            "Jamming"
+        ]
+    },
     "R-06 Scavenger": {
         "Description": "R-series recyclers collect used, damaged, or unregistered components for recycling and repurposing. To minimize losses during derelict incursions, like most other maintenance robots they are of relatively sturdy construction, but remain somewhat susceptible to electromagnetic damage as such weaponry is not prevalent enough to warrant specialized defenses.",
         "Class": "Recycler",
         "Size": "Medium",
-        "Rating": 8,
+        "Rating": "8",
         "Value": 6,
         "Movement": "Rolling (100)",
         "Core Integrity": 15,
         "Core Exposure": 39,
         "Salvage Potential": "50-100",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [],
         "Inventory Size": 4,
         "Components": [
@@ -1717,13 +2454,13 @@
         "Description": "A larger version of the R-06, with twice the storage capacity as well as the ability to begin the recycling process while en route to the recycling unit.",
         "Class": "Recycler",
         "Size": "Large",
-        "Rating": 19,
+        "Rating": "19",
         "Value": 10,
         "Movement": "Rolling (100)",
         "Core Integrity": 40,
         "Core Exposure": 39,
         "Salvage Potential": "100-160",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [],
         "Inventory Size": 6,
         "Components": [
@@ -1740,17 +2477,53 @@
             "Electromagnetic": -25
         }
     },
+    "S-7 Guard": {
+        "Description": "S7 Guards are the first variant in a new line of sentry frames, better fulfilling their purpose with built-in resistance to most forms of damage, and self-regenerating armor to ensure long-term defense of a position until reinforcements can arrive.",
+        "Class": "Sentry (Prototype)",
+        "Size": "Large",
+        "Rating": "114",
+        "Value": 200,
+        "Movement": "Treading (135)",
+        "Core Integrity": 150,
+        "Core Exposure": 29,
+        "Salvage Potential": "80-100",
+        "Visual Range": "23",
+        "Armament": [
+            "Lrn. Phase Cannon",
+            "Hardcell Cannon"
+        ],
+        "Components": [
+            "Imp. Quantum Reactor",
+            "Exp. Biometal Heavy Treads",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Exp. Optical Array",
+            "Hvy. Regenerative Plating"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Thermal": 25,
+            "Explosive": 50,
+            "Electromagnetic": 50,
+            "Impact": 25
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Jamming"
+        ]
+    },
     "S-10 Pest": {
         "Description": "S-series swarmers are small with a weak and exposed core, but as such are quick to manufacture and can quickly overwhelm targets with greater numbers and superior speed. The light assault rifle was designed specifically for the S-10 Pest, giving it respectable firepower at a low weight for maintaining high flight speeds. Swarmer squads are particularly susceptible to explosives.",
         "Class": "Swarmer",
         "Size": "Small",
-        "Rating":5,
+        "Rating": "5",
         "Value": 10,
         "Movement": "Flying (37)",
         "Core Integrity": 8,
         "Core Exposure": 50,
         "Salvage Potential": "10-20",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Lgt. Assault Rifle"
         ],
@@ -1767,13 +2540,13 @@
         "Description": "The S-27 Virus replaces the S-10's light armament with a much more effective autogun, giving the swarmer a faster firing rate that complements its movement speed. Better propulsion provides sufficient support for additional armor, enough for the core to sustain a direct hit under some circumstances.",
         "Class": "Swarmer",
         "Size": "Small",
-        "Rating":12,
+        "Rating": "12",
         "Value": 27,
         "Movement": "Flying (37)",
         "Core Integrity": 18,
         "Core Exposure": 50,
         "Salvage Potential": "20-30",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Autogun"
         ],
@@ -1790,13 +2563,13 @@
         "Description": "S-43 Plague design is completely centered around its heavy machine gun. With a good chance to sustain at least one direct hit to the core, a group of S-43s can perforate most targets before suffering heavy losses. Powerful explosives are the only way to easily overcome an S-43 squad.",
         "Class": "Swarmer",
         "Size": "Small",
-        "Rating":30,
+        "Rating": "30",
         "Value": 43,
         "Movement": "Flying (37)",
         "Core Integrity": 30,
         "Core Exposure": 50,
         "Salvage Potential": "30-40",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Hvy. Machine Gun"
         ],
@@ -1814,13 +2587,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 68,
+        "Rating": "68",
         "Value": 0,
         "Movement": "Flying (32)",
         "Core Integrity": 50,
         "Core Exposure": 40,
         "Salvage Potential": "5-10",
-        "Visual Range": 23,
+        "Visual Range": "23",
         "Armament": [
         ],
         "Components": [
@@ -1841,17 +2614,93 @@
             "Hacking"
         ]
     },
+    "Striker": {
+        "Description": "The Striker is a prototype for a new class of combat robot, a large yet fast flier that fires its primary linear accelerator while approaching a target before engaging in melee with a plasma lance. An advanced reaction system makes the Striker more difficult to hit on approach despite its large size. The plasma lance is highly effective at skewering target cores.",
+        "Class": "Striker (Prototype)",
+        "Size": "Large",
+        "Rating": "98",
+        "Value": 110,
+        "Movement": "Flying (37)",
+        "Core Integrity": 80,
+        "Core Exposure": 19,
+        "Salvage Potential": "60-80",
+        "Visual Range": "16",
+        "Armament": [
+            "Com. Linear Accelerator",
+            "Plasma Lance"
+        ],
+        "Components": [
+            "Lgt. Quantum Reactor",
+            "Impulse Thruster Array",
+            "Impulse Thruster Array",
+            "Adv. Heat Sink",
+            "Adv. Reaction Control System",
+            "Centrium Light Armor Plating"
+        ],
+        "Resistances": {
+            "Slashing": 20,
+            "Piercing": 20
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Superbehemoth": {
+        "Description": "Superbehemoth prototypes, now in their third revision, are the answer to increasingly powerful yet maneuverable derelict robots, which can attack guerrilla style then retreat into a network of narrow caves to avoid pursuit by the heaviest assault forces. Future efforts to completely clear and protect the Proximity Caves will require a more versatile heavy attacker capable of quickly burrowing through rock. To that end, Superbehemoth frames are embedded with a weaker version of the Sigix Matter Drive, while also carrying enough different weaponry to deal with a variety of threats without supporting units.",
+        "Class": "Behemoth (Prototype)",
+        "Size": "Large",
+        "Rating": "259",
+        "Value": 300,
+        "Movement": "Treading (180)",
+        "Core Integrity": 250,
+        "Core Exposure": 20,
+        "Salvage Potential": "130-200",
+        "Visual Range": "16",
+        "Armament": [
+            "Prc. Phase Gun",
+            "Prc. Phase Gun",
+            "Helical Railgun",
+            "Com. Linear Accelerator",
+            "Com. Tesla Bomb Launcher"
+        ],
+        "Components": [
+            "Rnf. Quantum Reactor",
+            "Rnf. Quantum Reactor",
+            "Centrium Heavy Treads",
+            "Centrium Heavy Treads",
+            "Exp. Thermal Converter",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Exp. Coolant Injector",
+            "Adv. Energy Well",
+            "Imp. Core Shielding",
+            "Exp. Utility Shielding",
+            "Lyr. Heavy Armor Plating",
+            "Hvy. Reflective Plating",
+            "Hvy. Insulated Plating",
+            "Exp. Force Field",
+            "Adv. Dynamic Insulation System"
+        ],
+        "Resistances": {
+            "Thermal": 25,
+            "Electromagnetic": 55
+        },
+        "Immunities":[
+            "Coring"
+        ]
+    },
     "Swarm Drone": {
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 20,
+        "Rating": "20",
         "Value": 0,
         "Movement": "Flying (22)",
         "Core Integrity": 50,
         "Core Exposure": 20,
         "Salvage Potential": "20-30",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Com. Gauss Rifle"
         ],
@@ -1875,13 +2724,13 @@
         "Description": "K-class workers perform menial tasks such as clearing debris to facilitate work by other robots. Their built-in compact recycling unit can break down almost any form of debris into reusable matter. As K-01 Serfs are extremely cheap to produce and perform no vital function, despite their size they are among the weakest robot designs with the most exposed core.",
         "Class": "Tunneler",
         "Size": "Medium",
-        "Rating": 9,
+        "Rating": "9",
         "Value": 1,
         "Movement": "Rolling (80)",
         "Core Integrity": 10,
         "Core Exposure": 40,
         "Salvage Potential": "10-30",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [
             "Mining Laser"
         ],
@@ -1900,13 +2749,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 77,
+        "Rating": "77",
         "Value": 0,
         "Movement": "Flying (20)",
         "Core Integrity": 40,
         "Core Exposure": 39,
         "Salvage Potential": "20-30",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Mni. Tearclaws"
         ],
@@ -1928,17 +2777,50 @@
             "Electromagnetic": -100
         }
     },
+    "Tracker": {
+        "Description": " Trackers are still new designs that may need more updates, but will no doubt become vital in the effort to protect my most important assets. Their built-in drive enables them to catch up to anything ever spotted coming out of the caves so far, and although they're equipped with valuable technology themselves, rather than harden them with armor and slow them down, Trackers have improved evasive capabilities to help avoid getting hit in the first place. The combination of rapid-fire Linked Autogun and Immobilizer for slowing fast targets will make Derelicts think twice before raiding upper 0b10 for spare parts.",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": "80",
+        "Value": 100,
+        "Movement": "Flying (15)",
+        "Core Integrity": 80,
+        "Core Exposure": 39,
+        "Salvage Potential": "50-80",
+        "Visual Range": "22",
+        "Armament": [
+            "Immobilizer",
+            "Linked Autogun"
+        ],
+        "Components": [
+            "Integrated Tracker Drive",
+            "Exp. Heat Sink",
+            "Enh. Optical Array",
+            "Lrn. Sensor Array",
+            "Exp. Targeting Computer",
+            "Exp. Phase Shifter"
+        ],
+        "Resistances": {
+            "Electromagnetic": 50
+        },
+        "Immunities": [
+            "Jamming"
+        ],
+        "Traits": [
+            "Scan Cloak (5)"
+        ]
+    },
     "Trailblazer": {
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 16,
+        "Rating": "16",
         "Value": 0,
         "Movement": "Flying (3)",
         "Core Integrity": 8,
         "Core Exposure": 50,
         "Salvage Potential": "5-10",
-        "Visual Range": 23,
+        "Visual Range": "23",
         "Armament": [
         ],
         "Components": [
@@ -1957,13 +2839,13 @@
         "Description": "U-class builders lay floors, assemble new machines, and reinforce and analyze the structural integrity of walls. They travel alone, but all those within a certain vicinity will work together to complete a task.",
         "Class": "Builder",
         "Size": "Medium",
-        "Rating": 10,
+        "Rating": "10",
         "Value": 5,
         "Movement": "Rolling (80)",
         "Core Integrity": 10,
         "Core Exposure": 39,
         "Salvage Potential": "10-30",
-        "Visual Range": 14,
+        "Visual Range": "14",
         "Armament": [
             "Welding Torch"
         ],
@@ -1983,13 +2865,13 @@
         "Description": "W-series watchers are equipped with a wide variety of sensors to excel at surveillance. However, their heavy reliance on highly-exposed advanced electronic systems means they are extremely susceptible to electromagnetic attacks. On detecting intruders, a W-16 Scout will alert all nearby combat units and continue to provide position updates as long as the hostile is visible.",
         "Class": "Watcher",
         "Size": "Small",
-        "Rating": 9,
-        "Value": 16,
+        "Rating": "9",
+        "Value": 18,
         "Movement": "Hovering (56)",
         "Core Integrity": 12,
         "Core Exposure": 39,
         "Salvage Potential": "10-30",
-        "Visual Range": 18,
+        "Visual Range": "18",
         "Armament": [
         ],
         "Components": [
@@ -2008,13 +2890,13 @@
         "Description": "An upgrade to the W-16 Scout, Informers double the Scout's sensor range, and have access to even more specific signal interpretation data. They are also capable of jamming weaker sensors within their area of influence, though as unarmed surveillance units rather than front-line combatants, agility is preferred over additional armor to protect their systems from electromagnetic damage.",
         "Class": "Watcher",
         "Size": "Small",
-        "Rating": 17,
+        "Rating": "17",
         "Value": 25,
         "Movement": "Hovering (56)",
         "Core Integrity": 23,
         "Core Exposure": 39,
         "Salvage Potential": "20-40",
-        "Visual Range": 18,
+        "Visual Range": "18",
         "Armament": [
         ],
         "Components": [
@@ -2033,13 +2915,13 @@
         "Description": "The W-44 Eye is the ultimate surveillance robot, with a greater visual range than any other class and the most powerful non-experimental sensors available. They can cloak all robots within their area of influence from hostile scans.",
         "Class": "Watcher",
         "Size": "Small",
-        "Rating": 17,
+        "Rating": "17",
         "Value": 25,
         "Movement": "Hovering (56)",
         "Core Integrity": 23,
         "Core Exposure": 39,
         "Salvage Potential": "20-40",
-        "Visual Range": 18,
+        "Visual Range": "18",
         "Armament": [
         ],
         "Components": [
@@ -2058,13 +2940,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Large",
-        "Rating": 164,
+        "Rating": "164",
         "Value": 0,
         "Movement": "Flying (26)",
         "Core Integrity": 150,
         "Core Exposure": 24,
         "Salvage Potential": "90-120",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Nanosword",
             "Nanosword",
@@ -2094,13 +2976,13 @@
         "Description": "X-series specialists each possess unique loadouts for a specific purpose. The X-62 Marksman combines exceptional visual detection range and superior targeting abilities with a long-range gauss rifle. It is also armed with a pulse rifle as a secondary weapon for close encounters, and is more likely to hit a target's core, even penetrating armor to do so.",
         "Class": "Specialist",
         "Size": "Medium",
-        "Rating": 38,
+        "Rating": "38",
         "Value": 62,
         "Movement": "Walking (120)",
         "Core Integrity": 25,
         "Core Exposure": 29,
         "Salvage Potential": "40-70",
-        "Visual Range": 20,
+        "Visual Range": "20",
         "Armament": [
             "Pulse Rifle",
             "Gauss Rifle"
@@ -2122,13 +3004,13 @@
         "Description": "X-series specialists each possess unique loadouts for a specific purpose. While less likely to deal significant damage to a target, the X-72 Disruptor excels at incapacitating robots and their components, making them easier to capture for analysis.",
         "Class": "Specialist",
         "Size": "Medium",
-        "Rating": 46,
+        "Rating": "46",
         "Value": 72,
         "Movement": "Walking (120)",
         "Core Integrity": 40,
         "Core Exposure": 29,
         "Salvage Potential": "50-80",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Arc Projector",
             "Imp. Arc Projector"
@@ -2150,13 +3032,13 @@
         "Description": "X-series specialists each possess unique loadouts for a specific purpose. The X-82 Rainmaker's twin heavy flak cannons are deadly against either lightly armored or numerous clustered targets. It carries a high-capacity Matter Pod to supply them with enough ammunition for continuous firing in prolonged confrontations.",
         "Class": "Specialist",
         "Size": "Medium",
-        "Rating": 50,
+        "Rating": "50",
         "Value": 82,
         "Movement": "Walking (120)",
         "Core Integrity": 55,
         "Core Exposure": 29,
         "Salvage Potential": "60-90",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Hvy. Flak Cannon",
             "Hvy. Flak Cannon"
@@ -2175,13 +3057,13 @@
         "Description": "Y-series armored sentries are equipped with a mix of thermal and kinetic weaponry. The Y-45 guards important locations and vital machinery, and remains at its station unless they identify a hostile robot or are alerted to the presence of one nearby.",
         "Class": "Sentry",
         "Size": "Large",
-        "Rating": 15,
+        "Rating": "15",
         "Value": 45,
         "Movement": "Treading (160)",
         "Core Integrity": 20,
         "Core Exposure": 34,
         "Salvage Potential": "50-60",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Beam Rifle",
             "Hvy. Assault Rifle"
@@ -2203,13 +3085,13 @@
         "Description": "Y-54 Defenders improve on the Y-45 with better armor and greater effectiveness against both single and multiple targets, swapping out the beam rifle and heavy assault rifle for a gatling laser and flak gun. Like all Y-series sentries, their armor is hardened against impact damage and explosive blasts.",
         "Class": "Sentry",
         "Size": "Large",
-        "Rating": 32,
+        "Rating": "32",
         "Value": 54,
         "Movement": "Treading (160)",
         "Core Integrity": 45,
         "Core Exposure": 34,
         "Salvage Potential": "60-75",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Gatling Laser",
             "Flak Gun"
@@ -2231,13 +3113,13 @@
         "Description": "A better-armored version of the Y-54, with upgraded weaponry. Like other Y-class robots, their large size is a primary drawback, as it makes them easier to hit both when targeted and by stray projectiles.",
         "Class": "Sentry",
         "Size": "Large",
-        "Rating": 49,
+        "Rating": "49",
         "Value": 64,
         "Movement": "Treading (160)",
         "Core Integrity": 45,
         "Core Exposure": 34,
         "Salvage Potential": "70-90",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Wave Gun",
             "KE Penetrator"
@@ -2259,13 +3141,13 @@
         "Description": "The most heavily armored Y-series sentry, and the only current robot class to carry the quantum rifle as standard armament.",
         "Class": "Sentry",
         "Size": "Large",
-        "Rating": 64,
+        "Rating": "64",
         "Value": 72,
         "Movement": "Treading (160)",
         "Core Integrity": 85,
         "Core Exposure": 34,
         "Salvage Potential": "80-105",
-        "Visual Range": 16,
+        "Visual Range": "16",
         "Armament": [
             "Quantum Rifle",
             "Railgun"
@@ -2287,13 +3169,13 @@
         "Description": "",
         "Class": "Drone",
         "Size": "Tiny",
-        "Rating": 16,
+        "Rating": "16",
         "Value": 0,
         "Movement": "Flying (37)",
         "Core Integrity": 25,
         "Core Exposure": 50,
         "Salvage Potential": "5-15",
-        "Visual Range": 20,
+        "Visual Range": "20",
         "Armament": [
         ],
         "Components": [
