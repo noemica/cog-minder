@@ -201,7 +201,13 @@ export function createBotDataContent(bot) {
             for (let i = 0; i < data.length; i++) {
                 const item = data[i];
 
-                let line = `${item["Name"]} (${item["Coverage"]}%)`;
+                let line;
+                if (item["Name"] === "None") {
+                    line = "None";
+                }
+                else {
+                    line = `${item["Name"]} (${item["Coverage"]}%)`;
+                }
 
                 if (item["Number"] > 1) {
                     line += " x" + item["Number"].toString();
@@ -762,6 +768,10 @@ export async function initData() {
                 // Option, return largest sum of items
                 let largest = 0;
                 data.forEach(optionData => {
+                    if (optionData["Name"] === "None") {
+                        return;
+                    }
+
                     const number = valueOrDefault(optionData["Number"], 1);
                     const item = getItem(optionData["Name"]);
                     const optionCoverage = parseInt(item["Coverage"]) * number;
@@ -803,11 +813,18 @@ export async function initData() {
                 // Option, add all options
                 const options = [];
                 data.forEach(optionData => {
-                    const name = optionData["Name"];
+                    const itemName = optionData["Name"];
+
+                    let coverage = undefined;
+
+                    if (itemName !== "None") {
+                        coverage = Math.floor(100.0 * parseInt(getItem(itemName)["Coverage"]) / totalCoverage);
+                    }
+
                     options.push({
-                        "Name": name,
+                        "Name": itemName,
                         "Number": optionData["Number"],
-                        "Coverage": Math.floor(100 * parseInt(getItem(name)["Coverage"]) / totalCoverage)
+                        "Coverage": coverage
                     });
                 });
                 partData.push(options);

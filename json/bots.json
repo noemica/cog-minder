@@ -141,6 +141,63 @@
             "Hacking"
         ]
     },
+    "Army Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": "24-27",
+        "Value": 0,
+        "Movement": "Rolling (80)",
+        "Core Integrity": 30,
+        "Core Exposure": 50,
+        "Salvage Potential": "10-20",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Autogun"},
+                {"Name": "Battle Rifle"},
+                {"Name": "Barrage Gun"},
+                {"Name": "EM Shotgun"},
+                {"Name": "Gatling Laser"},
+                {"Name": "Grenade Launcher"},
+                {"Name": "Hpw. Shotgun"},
+                {"Name": "Hvy. Ion Cannon"},
+                {"Name": "Lightning Gun"},
+                {"Name": "Mak. Laser"},
+                {"Name": "Med. Laser"},
+                {"Name": "Rocket Launcher"},
+                {"Name": "Riot Gun"},
+                {"Name": "Slug Cannon"}
+            ]
+        ],
+        "Components": [
+            "Mak. Power Source",
+            "Wheel",
+            "Wheel",
+            "Wheel",
+            "Imp. Heat Sink",
+            "Imp. Heat Sink",
+            [
+                {"Name": "Adv. Targeting Computer"},
+                {"Name": "Armor Integrity Analyzer"},
+                {"Name": "Core Analyzer"},
+                {"Name": "Imp. Targeting Computer"},
+                {"Name": "Insulated Plating"},
+                {"Name": "Med. Armor Plating"},
+                {"Name": "Reflective Plating"},
+                {"Name": "Target Analyzer"},
+                {"Name": "Weapon Cycler"},
+                {"Name": "Weapon Shielding"}
+            ]
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
     "Assault Drone": {
         "Description": "",
         "Class": "Drone",
@@ -167,6 +224,110 @@
         "Resistances": {
             "Explosive": -25,
             "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Assembled (4)": {
+        "Description": "A quick but not especially dangerous combat derelict with fully integrated systems, constructed seemingly at random by an Assembler's self-contained fabrication apparatus. Individually resilient for their size, they pose a real threat in greater numbers.",
+        "Class": "Assembled (Derelict)",
+        "Size": "Small",
+        "Rating": "8-10",
+        "Value": 0,
+        "Movement": "Hovering (60)",
+        "Core Integrity": 20,
+        "Core Exposure": 50,
+        "Salvage Potential": "10-20",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Asb. Blade"},
+                {"Name": "Asb. F-torch"},
+                {"Name": "Asb. P-maul"},
+                {"Name": "Asb. Rifle"},
+                {"Name": "Asb. Heavy Rifle"}
+            ]
+        ],
+        "Components": [
+            "Asb. Hover Unit"
+        ],
+        "Resistances": {
+            "Impact": -25,
+            "Slashing": -25,
+            "Piercing": -25
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Assembled (7)": {
+        "Description": "A quick but not especially dangerous combat derelict with fully integrated systems, constructed seemingly at random by an Assembler's self-contained fabrication apparatus. Individually resilient for their size, they pose a real threat in greater numbers.",
+        "Class": "Assembled (Derelict)",
+        "Size": "Small",
+        "Rating": "13-15",
+        "Value": 0,
+        "Movement": "Hovering (60)",
+        "Core Integrity": 30,
+        "Core Exposure": 39,
+        "Salvage Potential": "10-20",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Asb. Shotgun"},
+                {"Name": "Asb. Gauss Rifle"},
+                {"Name": "Asb. P-torch"},
+                {"Name": "Asb. P-maul"},
+                {"Name": "Asb. P-sword"}
+            ]
+        ],
+        "Components": [
+            "Asb. Hover System"
+        ],
+        "Resistances": {
+            "Impact": -25,
+            "Slashing": -25,
+            "Piercing": -25
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Assembler": {
+        "Description": "An emerging threat in Complex 0b10, serving no purpose but to collect matter and construct new Assembled specifically to wreak havoc in low-security areas. The appearance of Assemblers represents an apparent offensive turn by whatever built the first Demented and Furnace models.",
+        "Class": "Assembler (Derelict)",
+        "Size": "Large",
+        "Rating": "77",
+        "Value": 40,
+        "Movement": "Treading (180)",
+        "Core Integrity": 40,
+        "Core Exposure": 29,
+        "Salvage Potential": "30-60",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Deuterium Engine",
+            "Lgt. Deuterium Engine",
+            "Med. Treads",
+            "Med. Treads",
+            "Imp. Heat Sink",
+            "Imp. Heat Sink",
+            "Com. Matter Pod",
+            "Com. Matter Pod",
+            "Com. Matter Pod",
+            "Com. Matter Pod",
+            "Com. Matter Pod",
+            "Com. Matter Pod",
+            "Com. Matter Pod",
+            "Com. Matter Pod",
+            "Com. Matter Pod",
+            "Com. Matter Pod",
+            "Lrn. Tractor Beam",
+            "Mobile Assembly Unit"
+        ],
+        "Resistances": {
+            "Electromagnetic": 50
         },
         "Immunities": [
             "Hacking"
@@ -447,6 +608,85 @@
         "Immunities": [
             "Hacking"
         ]
+    },
+    "Bouncer": {
+        "Description": "Sentries rebuilt around a single heavy autocannon make for a formidable mid-sized defender, but move too slowly to be a threat to Complex 0b10. My forces have never actually encountered one, but mining derelict records has uncovered information useful in dealing with them should that become necessary.",
+        "Class": "Bouncer (Derelict)",
+        "Size": "Large",
+        "Rating": "79",
+        "Value": 68,
+        "Movement": "Treading (170)",
+        "Core Integrity": 75,
+        "Core Exposure": 34,
+        "Salvage Potential": "75-95",
+        "Visual Range": "16",
+        "Armament": [
+            "Hvy. Autocannon"
+        ],
+        "Components": [
+            "Rnf. Fission Core",
+            "Arm. Medium Treads",
+            "Arm. Medium Treads",
+            "Adv. Heat Sink",
+            "Adv. Cooling System",
+            "Imp. Targeting Computer",
+            "Imp. Weapon Shielding",
+            "Hrd. Heavy Armor Plating"
+        ],
+        "Resistances": {
+            "Explosive": "50",
+            "Impact": 25
+        }
+    },
+    "Butcher (5)": {
+        "Description": "Butchers are duelist class variants armed with more damaging derelict-designed slashing weapons. Survival in the harsh and factious cave environment seems to drive derelicts towards the use of more violent weapons, and in some cases a preference for decisive close-quarters combat.",
+        "Class": "Butcher (Derelict)",
+        "Size": "Medium",
+        "Rating": "25",
+        "Value": 50,
+        "Movement": "Walking (120)",
+        "Core Integrity": 40,
+        "Core Exposure": 34,
+        "Salvage Potential": "50-70",
+        "Visual Range": "16",
+        "Armament": [
+            "Ripper"
+        ],
+        "Components": [
+            "Imp. Deuterium Engine",
+            "Carbon-fiber Leg",
+            "Carbon-fiber Leg",
+            "Melee Analysis Suite"
+        ],
+        "Resistances": {
+            "Slashing": 25,
+            "Piercing": 25
+        }
+    },
+    "Butcher (7)": {
+        "Description": "Butchers are duelist class variants armed with more damaging derelict-designed slashing weapons. Survival in the harsh and factious cave environment seems to drive derelicts towards the use of more violent weapons, and in some cases a preference for decisive close-quarters combat.",
+        "Class": "Butcher (Derelict)",
+        "Size": "Medium",
+        "Rating": "38",
+        "Value": 60,
+        "Movement": "Walking (120)",
+        "Core Integrity": 60,
+        "Core Exposure": 34,
+        "Salvage Potential": "60-85",
+        "Visual Range": "16",
+        "Armament": [
+            "Phasing Sabre"
+        ],
+        "Components": [
+            "Neutrino Core",
+            "Flexi-carbon Leg",
+            "Flexi-carbon Leg",
+            "Imp. Melee Analysis Suite"
+        ],
+        "Resistances": {
+            "Slashing": 25,
+            "Piercing": 25
+        }
     },
     "C-30 ARC": {
         "Description": "C-class Armored Robot Carriers are disposable transports designed to rapidly deploy an assault force to a flash point. ARCs are hardened against kinetic attacks that might otherwise penetrate the shell and damage one or more of the robots compacted within.",
@@ -784,6 +1024,30 @@
             "Hacking"
         ]
     },
+    "Decomposer": {
+        "Description": "Decomposers are the precursor to K-class workers, converting debris to matter they leave behind for other robots to then collect and utilize. This was before the matter collection and redistribution process was centralized in Complex 0b10. Derelicts seem to have modified decomposers to break down even whole components.",
+        "Class": "Decomposer (Derelict)",
+        "Size": "Medium",
+        "Rating": "7",
+        "Value": 0,
+        "Movement": "Rolling (80)",
+        "Core Integrity": 10,
+        "Core Exposure": 50,
+        "Salvage Potential": "10-30",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Ion Engine",
+            "Wheel",
+            "Wheel",
+            "Sml. Matter Pod",
+            "Tractor Beam"
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        }
+    },
     "Decoy Drone": {
         "Description": "",
         "Class": "Drone",
@@ -810,6 +1074,32 @@
         },
         "Immunities": [
             "Hacking"
+        ]
+    },
+    "Demented": {
+        "Description": " A relatively recent design, the so-called demented wander the caves corrupting nearby electronic systems. I suspect this one was devised by Warlord as an experiment in how to cause as much chaos as possible, or perhaps as a passive way to prevent Complex 0b10 patrols from venturing too deep into the caves.",
+        "Class": "Demented (Derelict)",
+        "Size": "Medium",
+        "Rating": "18",
+        "Value": 0,
+        "Movement": "Rolling (80)",
+        "Core Integrity": 40,
+        "Core Exposure": 39,
+        "Salvage Potential": "30-60",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Deuterium Engine",
+            "Wheel",
+            "Wheel",
+            "System Guard"
+        ],
+        "Resistances": {
+            "Electromagnetic": 50
+        },
+        "Traits": [
+            "Corruption Emission (10)"
         ]
     },
     "Drone": {
@@ -890,6 +1180,60 @@
         "Resistances": {
         }
     },
+    "Fireman (5)": {
+        "Description": "The fireman is a relatively new robot discovered in the caves, purely of derelict design. Their flamer technology is extremely effective against my robots, thus I've instructed researchers to revisit my most common methods of electronics housing.",
+        "Class": "Fireman (Derelict)",
+        "Size": "Medium",
+        "Rating": "28",
+        "Value": 50,
+        "Movement": "Rolling (90)",
+        "Core Integrity": 45,
+        "Core Exposure": 39,
+        "Salvage Potential": "50-70",
+        "Visual Range": "16",
+        "Armament": [
+            "Flamer",
+            "Flamer"
+        ],
+        "Components": [
+            "Lgt. Nuclear Core",
+            "Arm. Wheel",
+            "Arm. Wheel",
+            "Imp. Cooling System",
+            "Imp. Cooling System"
+        ],
+        "Resistances": {
+            "Kinetic": -25,
+            "Thermal": 50
+        }
+    },
+    "Fireman (7)": {
+        "Description": "The fireman is a relatively new robot discovered in the caves, purely of derelict design. Their flamer technology is extremely effective against my robots, thus I've instructed researchers to revisit my most common methods of electronics housing.",
+        "Class": "Fireman (Derelict)",
+        "Size": "Medium",
+        "Rating": "39",
+        "Value": 67,
+        "Movement": "Rolling (90)",
+        "Core Integrity": 45,
+        "Core Exposure": 39,
+        "Salvage Potential": "60-85",
+        "Visual Range": "16",
+        "Armament": [
+            "Enh. Flamer",
+            "Enh. Flamer"
+        ],
+        "Components": [
+            "Lgt. Nuclear Core",
+            "Arm. Wheel",
+            "Arm. Wheel",
+            "Adv. Cooling System",
+            "Adv. Cooling System"
+        ],
+        "Resistances": {
+            "Kinetic": -25,
+            "Thermal": 50
+        }
+    },
     "Fortress": {
         "Description": "Only two Fortress prototypes have been built to garrison vital locations, utilizing the latest centrium armor technology and a wide array of other defensive components to render them nearly immune to all forms of damage. While their offensive capabilities are limited to two powerful cannons, even a small army would have difficulty overcoming a Fortress before it picks them off one by one.",
         "Class": "Fortress (Prototype)",
@@ -932,6 +1276,96 @@
         "Immunities":[
             "Coring",
             "Disruption"
+        ]
+    },
+    "Furnace": {
+        "Description": "Furnace bots emit massive amounts of heat, causing nearby robots to overheat and become useless. I assume the design's aim is similar to that of the demented class derelict, built as a deterrent.",
+        "Class": "Furnace (Derelict)",
+        "Size": "Large",
+        "Rating": "28",
+        "Value": 0,
+        "Movement": "Rolling (80)",
+        "Core Integrity": 40,
+        "Core Exposure": 39,
+        "Salvage Potential": "30-60",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Deuterium Engine",
+            "Wheel",
+            "Wheel",
+            "Imp. Cooling System",
+            "Imp. Cooling System",
+            "Imp. Cooling System"
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        },
+        "Traits": [
+            "Heat Emission (150)"
+        ]
+    },
+    "Guerrilla (5)": {
+        "Description": "Derelicts have taken the original hunter and rearmed it with a weapon of their own design: the bore cannon. While the concentrated firepower is less effective in open firefights, its ability to deal significant damage even after penetrating multiple walls is surprising.",
+        "Class": "Guerrilla (Derelict)",
+        "Size": "Medium",
+        "Rating": "37",
+        "Value": 66,
+        "Movement": "Walking (120)",
+        "Core Integrity": 45,
+        "Core Exposure": 34,
+        "Salvage Potential": "50-70",
+        "Visual Range": "16",
+        "Armament": [
+            "Bore Cannon"
+        ],
+        "Components": [
+            "Lgt. Fission Core",
+            "Flexi-carbon Leg",
+            "Flexi-carbon Leg",
+            "Targeting Computer",
+            "Armor Integrity Analyzer",
+            "Phase Shifter"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Electromagnetic": -25
+        },
+        "Traits": [
+            "Scan Cloak (1)"
+        ]
+    },
+    "Guerrilla (7)": {
+        "Description": "Derelicts have taken the original hunter and rearmed it with a weapon of their own design: the bore cannon. While the concentrated firepower is less effective in open firefights, its ability to deal significant damage even after penetrating multiple walls is surprising.",
+        "Class": "Guerrilla (Derelict)",
+        "Size": "Medium",
+        "Rating": "49",
+        "Value": 77,
+        "Movement": "Walking (120)",
+        "Core Integrity": 45,
+        "Core Exposure": 34,
+        "Salvage Potential": "50-70",
+        "Visual Range": "16",
+        "Armament": [
+            "Battle Rifle",
+            "Bore Cannon"
+        ],
+        "Components": [
+            "Neutrino Core",
+            "Myomer Leg",
+            "Myomer Leg",
+            "Targeting Computer",
+            "Targeting Computer",
+            "Armor Integrity Analyzer",
+            "Phase Shifter"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Electromagnetic": -25
+        },
+        "Traits": [
+            "Scan Cloak (2)"
         ]
     },
     "H-55 Commando": {
@@ -1716,6 +2150,162 @@
             "Hacking"
         ]
     },
+    "Marauder (6)": {
+        "Description": "Inferior behemoth variants undoubtedly built by that idiot Warlord. They've only been reported deep in the caves, never anywhere near where an actual behemoth could tear them apart. They do possess respectable, if unreliable, firepower.",
+        "Class": "Marauder (Derelict)",
+        "Size": "Large",
+        "Rating": "73",
+        "Value": 80,
+        "Movement": "Treading (160)",
+        "Core Integrity": 100,
+        "Core Exposure": 19,
+        "Salvage Potential": "80-115",
+        "Visual Range": "16",
+        "Armament": [
+            "Hvy. Battle Rifle",
+            "Hvy. Battle Rifle",
+            "Slug Cannon"
+        ],
+        "Components": [
+            "Fission Core",
+            "Fission Core",
+            "Spk. Medium Treads",
+            "Spk. Medium Treads",
+            "Spk. Medium Treads",
+            "Cooling System",
+            "Cooling System",
+            "Recoil Stabilizer",
+            "Hvy. Armor Plating",
+            "Reflective Plating"
+        ],
+        "Resistances": {
+            "Thermal": 10,
+            "Electromagnetic": 50
+        },
+        "Immunities": [
+            "Coring"
+        ]
+    },
+    "Marauder (8)": {
+        "Description": "Inferior behemoth variants undoubtedly built by that idiot Warlord. They've only been reported deep in the caves, never anywhere near where an actual behemoth could tear them apart. They do possess respectable, if unreliable, firepower.",
+        "Class": "Marauder (Derelict)",
+        "Size": "Large",
+        "Rating": "94",
+        "Value": 85,
+        "Movement": "Treading (160)",
+        "Core Integrity": 130,
+        "Core Exposure": 19,
+        "Salvage Potential": "90-130",
+        "Visual Range": "16",
+        "Armament": [
+            "Hvy. Battle Rifle",
+            "Slug Cannon",
+            "Slug Cannon"
+        ],
+        "Components": [
+            "Antimatter Reactor",
+            "Spk. Heavy Treads",
+            "Spk. Heavy Treads",
+            "Imp. Cooling System",
+            "Imp. Cooling System",
+            "Recoil Stabilizer",
+            "Hvy. Armor Plating",
+            "Med. Reflective Plating"
+        ],
+        "Resistances": {
+            "Thermal": 15,
+            "Electromagnetic": 50
+        },
+        "Immunities": [
+            "Coring"
+        ]
+    },
+    "Martyr (5)": {
+        "Description": "Despite their origins as older demolisher variants, martyrs do carry a rocket or missile launcher and are therefore considered extremely dangerous. Martyrs are rarely encountered anywhere near Complex 0b10, but those that are are promptly dealt with.",
+        "Class": "Martyr (Derelict)",
+        "Size": "Medium",
+        "Rating": "35",
+        "Value": 53,
+        "Movement": "Hovering (52)",
+        "Core Integrity": 40,
+        "Core Exposure": 39,
+        "Salvage Potential": "40-60",
+        "Visual Range": "16",
+        "Armament": [
+            "Rocket Launcher"
+        ],
+        "Components": [
+            "Lgt. Deuterium Engine",
+            "Airjet",
+            "Airjet",
+            "Airjet",
+            "Launcher Guidance Computer",
+            "Hrd. Medium Armor Plating",
+            "Imp. Shock Absorption System"
+        ],
+        "Resistances": {
+            "Explosive": 100,
+            "Impact": 25
+        }
+    },
+    "Martyr (7)": {
+        "Description": "Despite their origins as older demolisher variants, martyrs do carry a rocket or missile launcher and are therefore considered extremely dangerous. Martyrs are rarely encountered anywhere near Complex 0b10, but those that are are promptly dealt with.",
+        "Class": "Martyr (Derelict)",
+        "Size": "Medium",
+        "Rating": "50",
+        "Value": 63,
+        "Movement": "Hovering (56)",
+        "Core Integrity": 65,
+        "Core Exposure": 39,
+        "Salvage Potential": "55-80",
+        "Visual Range": "16",
+        "Armament": [
+            "Missile Launcher"
+        ],
+        "Components": [
+            "Mic. Fission Core",
+            "Antigrav System",
+            "Antigrav System",
+            "Imp. Launcher Guidance Computer",
+            "Imp. Medium Armor Plating",
+            "Imp. Shock Absorption System"
+        ],
+        "Resistances": {
+            "Explosive": 100,
+            "Impact": 25
+        }
+    },
+    "Master Thief": {
+        "Description": "",
+        "Class": "Master Thief (Derelict)",
+        "Size": "Small",
+        "Rating": "64",
+        "Value": 40,
+        "Movement": "Flying (34)",
+        "Core Integrity": 40,
+        "Core Exposure": 19,
+        "Salvage Potential": "15-30",
+        "Visual Range": "22",
+        "Armament": [
+            "Master Tearclaws"
+        ],
+        "Components": [
+            "Lgt. Fission Core",
+            "Nuclear Pulse Thruster",
+            "Nuclear Pulse Thruster",
+            "Nuclear Pulse Thruster",
+            "Enh. Optical Array",
+            "Nanoactuators",
+            "Maneuvering Thrusters",
+            "Mak. Cloaking Device",
+            "Imp. Propulsion Shielding"
+        ],
+        "Resistances": {
+        },
+        "Traits": [
+            "Scan Cloak (4)"
+        ]
+    },
     "Minesniffer Drone": {
         "Description": "",
         "Class": "Drone",
@@ -1742,6 +2332,226 @@
         "Immunities": [
             "Hacking"
         ]
+    },
+    "Mutant (5)": {
+        "Description": "Lumbering abominations cobbled together from stolen or salvaged components, though much of their weaponry is derelict in origin. I believe the ever-stimulating Warlord is mass-producing these to lead an attack of some sort, since sightings by cave patrols have become increasingly common.",
+        "Class": "Mutant (Derelict)",
+        "Size": "Large",
+        "Rating": "28-32",
+        "Value": 50,
+        "Movement": "Treading (160/165/170)",
+        "Core Integrity": 55,
+        "Core Exposure": 34,
+        "Salvage Potential": "50-70",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Battle Cannon"},
+                {"Name": "Battle Rifle"}
+            ],
+            [
+                {"Name": "Barrage Gun"},
+                {"Name": "Flamer"}
+            ]
+        ],
+        "Components": [
+            [
+                {"Name": "Deuterium Engine"},
+                {"Name": "Imp. Deuterium Engine"}
+            ],
+            [
+                {"Name": "Arm. Treads"},
+                {"Name": "Imp. Treads"}
+            ],
+            [
+                {"Name": "Arm. Treads"},
+                {"Name": "Med. Treads"}
+            ],
+            "Heat Sink",
+            [
+                {"Name": "Particle Charger"},
+                {"Name": "Thermal Converter"}
+            ],
+            [
+                {"Name": "Integration Mediator"},
+                {"Name": "Salvage Targeting Computer"}
+            ]
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        }
+    },    
+    "Mutant (6)": {
+        "Description": "Lumbering abominations cobbled together from stolen or salvaged components, though much of their weaponry is derelict in origin. I believe the ever-stimulating Warlord is mass-producing these to lead an attack of some sort, since sightings by cave patrols have become increasingly common.",
+        "Class": "Mutant (Derelict)",
+        "Size": "Large",
+        "Rating": "36-41",
+        "Value": 60,
+        "Movement": "Treading (160/165)",
+        "Core Integrity": 65,
+        "Core Exposure": 34,
+        "Salvage Potential": "60-80",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Barrage Gun"},
+                {"Name": "Riot Gun"}
+            ],
+            [
+                {"Name": "Enh. Flamer"},
+                {"Name": "Hvy. Riot Gun"}
+            ]
+        ],
+        "Components": [
+            [
+                {"Name": "Angular Momentum Engine"},
+                {"Name": "Imp. Deuterium Engine"}
+            ],
+            [
+                {"Name": "Arm. Treads"},
+                {"Name": "Med. Treads"}
+            ],
+            [
+                {"Name": "Arm. Treads"},
+                {"Name": "Med. Treads"}
+            ],
+            [
+                {"Name": "Imp. Heat Sink"},
+                {"Name": "Heat Sink"}
+            ],
+            [
+                {"Name": "Particle Charger"},
+                {"Name": "Thermal Converter"}
+            ],
+            [
+                {"Name": "Integration Mediator"},
+                {"Name": "Salvage Targeting Computer"}
+            ]
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        }
+    },
+    "Mutant (7)": {
+        "Description": "Lumbering abominations cobbled together from stolen or salvaged components, though much of their weaponry is derelict in origin. I believe the ever-stimulating Warlord is mass-producing these to lead an attack of some sort, since sightings by cave patrols have become increasingly common.",
+        "Class": "Mutant (Derelict)",
+        "Size": "Large",
+        "Rating": "54-60",
+        "Value": 67,
+        "Movement": "Treading (160/170)",
+        "Core Integrity": 75,
+        "Core Exposure": 34,
+        "Salvage Potential": "70-90",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Arc Thrower"},
+                {"Name": "Hvy. Battle Rifle"}
+            ],
+            [
+                {"Name": "Beamcaster"},
+                {"Name": "Slug Cannon"}
+            ]
+        ],
+        "Components": [
+            [
+                {"Name": "Angular Momentum Engine"},
+                {"Name": "Neutrino Core"}
+            ],
+            [
+                {"Name": "Imp. Medium Treads"},
+                {"Name": "Med. Treads"},
+                {"Name": "Spk. Medium Treads"}
+            ],
+            [
+                {"Name": "Imp. Medium Treads"},
+                {"Name": "Med. Treads"},
+                {"Name": "Spk. Medium Treads"}
+            ],
+            [
+                {"Name": "Imp. Particle Charger"},
+                {"Name": "Imp. Thermal Converter"}
+            ],
+            [
+                {"Name": "Adv. Heat Sink"},
+                {"Name": "Cooling System"}
+            ],
+            [
+                {"Name": "Energy Filter"},
+                {"Name": "Matter Filter"},
+                {"Name": "Point Defense System"}
+            ],
+            [
+                {"Name": "Component Analysis Suite"},
+                {"Name": "Imp. Integration Mediator"},
+                {"Name": "Salvage Targeting Computer"}
+            ]
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        }
+    },
+    "Mutant (8)": {
+        "Description": "Lumbering abominations cobbled together from stolen or salvaged components, though much of their weaponry is derelict in origin. I believe the ever-stimulating Warlord is mass-producing these to lead an attack of some sort, since sightings by cave patrols have become increasingly common.",
+        "Class": "Mutant (Derelict)",
+        "Size": "Large",
+        "Rating": "70-79",
+        "Value": 75,
+        "Movement": "Treading (160/165/170)",
+        "Core Integrity": 85,
+        "Core Exposure": 34,
+        "Salvage Potential": "80-100",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Hvy. Beamcaster"},
+                {"Name": "Imp. Arc Thrower"}
+            ],
+            [
+                {"Name": "Bore Cannon"},
+                {"Name": "Plasma Flamer"}
+            ]
+        ],
+        "Components": [
+            [
+                {"Name": "Antimatter Reactor"},
+                {"Name": "Neutrino Core"}
+            ],
+            [
+                {"Name": "Imp. Medium Treads"},
+                {"Name": "Arm. Medium Treads"},
+                {"Name": "Spk. Medium Treads"}
+            ],
+            [
+                {"Name": "Imp. Medium Treads"},
+                {"Name": "Arm. Medium Treads"},
+                {"Name": "Spk. Medium Treads"}
+            ],
+            [
+                {"Name": "Adv. Particle Charger"},
+                {"Name": "Imp. Thermal Converter"}
+            ],
+            [
+                {"Name": "Adv. Cooling System"},
+                {"Name": "Imp. Cooling System"}
+            ],
+            [
+                {"Name": "Adv. Integration Mediator"},
+                {"Name": "Adv. Salvage Targeting Computer"},
+                {"Name": "Imp. Component Analysis Suite"}
+            ],
+            [
+                {"Name": "Energy Filter"},
+                {"Name": "Matter Filter"}
+            ],
+            [
+                {"Name": "Point Defense Array"},
+                {"Name": "Stasis Canceller"}
+            ]
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        }
     },
     "Mini Drone": {
         "Description": "",
@@ -2000,6 +2810,56 @@
         },
         "Immunities": [
             "Hacking"
+        ]
+    },
+    "Packrat": {
+        "Description": "Packrats are sent out by their derelict owners to collect useful components for later reuse, especially those that derelicts are incapable of manufacturing locally. They are especially weak against electromagnetic attacks, and are disabled by programmers on sight.",
+        "Class": "Packrat (Derelict)",
+        "Size": "Medium",
+        "Rating": "12",
+        "Value": 0,
+        "Movement": "Rolling (100)",
+        "Core Integrity": 30,
+        "Core Exposure": 39,
+        "Salvage Potential": "50-100",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Deuterium Engine",
+            "Com. Wheel",
+            "Com. Wheel",
+            "Med. Storage Unit"
+        ],
+        "Resistances": {
+            "Electromagnetic": -50
+        }
+    },
+    "Parasite": {
+        "Description": "Parasites remotely drain energy from all nearby robots for an unknown purpose. This can temporarily incapacitate the victims, but also cools them significantly.",
+        "Class": "Parasite (Derelict)",
+        "Size": "Medium",
+        "Rating": "27",
+        "Value": 0,
+        "Movement": "Hovering (56)",
+        "Core Integrity": 40,
+        "Core Exposure": 40,
+        "Salvage Potential": "30-60",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Deuterium Engine",
+            "Airjet",
+            "Airjet",
+            "Energy Well",
+            "Energy Well"
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        },
+        "Traits": [
+            "Energy Drain (50)"
         ]
     },
     "Protovariant Demolisher": {
@@ -2356,7 +3216,7 @@
         }
     },
     "Q-Series": {
-        "Description": "Q-Series robots are a new modular design built to deal with specific threats as they are encountered. The base form is an armored walker with a strong well-concealed core and numerous additional slots available for both utilities and armament.",
+        "Description": "Q-Series robots are a new modular design built to deal with specific threats as they are encountered. The base form is an armored walker with a strong well-concealed core and numerous additional slots available for both utilities and armament.\n(Not Lore) This is the base form of a Q-series bot. They have a variable number of weapons and utilities depending on the parts Cogmind has equipped when scanned.",
         "Class": "Q-Series",
         "Size": "Large",
         "Rating": "83",
@@ -2583,6 +3443,119 @@
             "Explosive": -25
         }
     },
+    "Samaritan": {
+        "Description": "As a number of derelicts have insufficient or unreliable power supplies, some crafty derelict came up with the idea to create mobile recharging stations that generate and transmit energy to all nearby robot systems.",
+        "Class": "Samaritan (Derelict)",
+        "Size": "Large",
+        "Rating": "58",
+        "Value": 0,
+        "Movement": "Treading (160)",
+        "Core Integrity": 40,
+        "Core Exposure": 39,
+        "Salvage Potential": "30-60",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Neutrino Core",
+            "Neutrino Core",
+            "Med. Treads",
+            "Med. Treads",
+            "Com. Battery",
+            "Com. Battery",
+            "Com. Battery",
+            "Com. Battery",
+            "Com. Battery",
+            "Com. Battery",
+            "Com. Battery",
+            "Com. Battery",
+            "Com. Battery",
+            "Com. Battery"
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        },
+        "Traits": [
+            "Energy Emission (30)"
+        ]
+    },
+    "Savage (5)": {
+        "Description": "Savages are early B-series brawlers, before they were upgraded with better armor. They also swing mauls rather than the faster hammers and maces of new brawler variants.",
+        "Class": "Savage (Derelict)",
+        "Size": "Medium",
+        "Rating": "20",
+        "Value": 48,
+        "Movement": "Treading (160)",
+        "Core Integrity": 45,
+        "Core Exposure": 34,
+        "Salvage Potential": "60-75",
+        "Visual Range": "16",
+        "Armament": [
+            "Great Maul"
+        ],
+        "Components": [
+            "Imp. Deuterium Engine",
+            "Lgt. Treads",
+            "Lgt. Treads",
+            "Hrd. Light Armor Plating"
+        ],
+        "Resistances": {
+            "Impact": 25,
+            "Slashing": 25
+        }
+    },
+    "Savage (7)": {
+        "Description": "Savages are early B-series brawlers, before they were upgraded with better armor. They also swing mauls rather than the faster hammers and maces of new brawler variants.",
+        "Class": "Savage (Derelict)",
+        "Size": "Medium",
+        "Rating": "29",
+        "Value": 60,
+        "Movement": "Treading (160)",
+        "Core Integrity": 65,
+        "Core Exposure": 34,
+        "Salvage Potential": "70-90",
+        "Visual Range": "16",
+        "Armament": [
+            "Power Maul"
+        ],
+        "Components": [
+            "Fission Core",
+            "Imp. Treads",
+            "Imp. Treads",
+            "Hrd. Medium Armor Plating"
+        ],
+        "Resistances": {
+            "Impact": 25,
+            "Slashing": 25
+        }
+    },
+    "Sensor Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Size": "Tiny",
+        "Rating": "19",
+        "Value": 0,
+        "Movement": "Flying (40)",
+        "Core Integrity": 20,
+        "Core Exposure": 29,
+        "Salvage Potential": "5-10",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Ion Engine",
+            "Mak. Flight Unit",
+            "Mak. Sensor Array",
+            "Exp. Signal Interpreter"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
     "Stealth Drone": {
         "Description": "",
         "Class": "Drone",
@@ -2690,6 +3663,79 @@
             "Coring"
         ]
     },
+    "Surgeon (4)": {
+        "Description": "Surgeons are derelict-modified mechanics that combine repair and recycling in a single design. Without a recycling infrastructure to support manufacturing, derelict groups rely on surgeons to handle both tasks.",
+        "Class": "Surgeon (Derelict)",
+        "Size": "Medium",
+        "Rating": "24",
+        "Value": 28,
+        "Movement": "Rolling (80)",
+        "Core Integrity": 40,
+        "Core Exposure": 40,
+        "Salvage Potential": "40-60",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Inventory Size": 10,
+        "Inventory": [
+            "Backup Power III",
+            "Backup Power III",
+            "Backup Propulsion III",
+            "Backup Propulsion III",
+            "Backup Propulsion III",
+            "Backup Propulsion III",
+            "Backup Laser III",
+            "Backup Laser III",
+            "Backup Laser III",
+            "Backup Laser III"
+        ],
+        "Components": [
+            "Lgt. Deuterium Engine",
+            "Wheel",
+            "Wheel",
+            "Imp. Field Recycling Unit",
+            "Imp. Reclamation Unit"
+        ],
+        "Resistances": {
+        }
+    },
+    "Surgeon (6)": {
+        "Description": "Surgeons are derelict-modified mechanics that combine repair and recycling in a single design. Without a recycling infrastructure to support manufacturing, derelict groups rely on surgeons to handle both tasks.",
+        "Class": "Surgeon (Derelict)",
+        "Size": "Medium",
+        "Rating": "33",
+        "Value": 36,
+        "Movement": "Rolling (80)",
+        "Core Integrity": 50,
+        "Core Exposure": 39,
+        "Salvage Potential": "50-70",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Inventory Size": 10,
+        "Inventory": [
+            "Backup Power III",
+            "Backup Power III",
+            "Backup Propulsion III",
+            "Backup Propulsion III",
+            "Backup Propulsion III",
+            "Backup Propulsion III",
+            "Backup Laser III",
+            "Backup Laser III",
+            "Backup Laser III",
+            "Backup Laser III"
+        ],
+        "Components": [
+            "Lgt. Angular Momentum Engine",
+            "Wheel",
+            "Wheel",
+            "Wheel",
+            "Adv. Field Recycling Unit",
+            "Adv. Reclamation Unit"
+        ],
+        "Resistances": {
+        }
+    },
     "Swarm Drone": {
         "Description": "",
         "Class": "Drone",
@@ -2745,6 +3791,30 @@
             "Electromagnetic": -25
         }
     },
+    "Thief": {
+        "Description": "Fast and extremely difficult to core, the thief is the most effective method derelict groups have of stealing new components directly from robots without excessive collateral damage. With a growing number of these in the caves, for now I'm reluctant to send any of the new prototypes to clear them out lest they steal that technology, too.",
+        "Class": "Thief (Derelict)",
+        "Size": "Small",
+        "Rating": "29",
+        "Value": 15,
+        "Movement": "Flying (34)",
+        "Core Integrity": 30,
+        "Core Exposure": 19,
+        "Salvage Potential": "10-20",
+        "Visual Range": "16",
+        "Armament": [
+            "Tearclaws"
+        ],
+        "Components": [
+            "Lgt. Deuterium Engine",
+            "Cesium-ion Thruster",
+            "Cesium-ion Thruster",
+            "Cesium-ion Thruster",
+            "Propulsion Shielding"
+        ],
+        "Resistances": {
+        }
+    },
     "Thief Drone": {
         "Description": "",
         "Class": "Drone",
@@ -2775,6 +3845,82 @@
         "Resistances": {
             "Explosive": -25,
             "Electromagnetic": -100
+        }
+    },
+    "Thug (5)": {
+        "Description": " A derelict improvement on the grunt that essentially fits them with a beamcaster, an interesting weapon of derelict origin. Some variants suffer serious heat issues from the added firepower, however.",
+        "Class": "Thug (Derelict)",
+        "Size": "Medium",
+        "Rating": "31",
+        "Value": 50,
+        "Movement": "Walking (120)",
+        "Core Integrity": 45,
+        "Core Exposure": 40,
+        "Salvage Potential": "50-70",
+        "Visual Range": "16",
+        "Armament": [
+            "Beamcaster"
+        ],
+        "Components": [
+            "Lgt. Angular Momentum Engine",
+            "Carbon-fiber Leg",
+            "Carbon-fiber Leg",
+            "Imp. Heat Sink",
+            "Imp. Heat Sink"
+        ],
+        "Resistances": {
+            "Kinetic": -25,
+            "Electromagnetic": -25
+        }
+    },
+    "Thug (7)": {
+        "Description": " A derelict improvement on the grunt that essentially fits them with a beamcaster, an interesting weapon of derelict origin. Some variants suffer serious heat issues from the added firepower, however.",
+        "Class": "Thug (Derelict)",
+        "Size": "Medium",
+        "Rating": "46",
+        "Value": 67,
+        "Movement": "Walking (120)",
+        "Core Integrity": 60,
+        "Core Exposure": 39,
+        "Salvage Potential": "60-855",
+        "Visual Range": "16",
+        "Armament": [
+            "Hvy. Beamcaster",
+            "Particle Gun"
+        ],
+        "Components": [
+            "Neutrino Core",
+            "Flexi-carbon Leg",
+            "Flexi-carbon Leg",
+            "Adv. Heat Sink",
+            "Adv. Heat Sink"
+        ],
+        "Resistances": {
+            "Kinetic": -25,
+            "Electromagnetic": -25
+        }
+    },
+    "Tinkerer": {
+        "Description": "I have minimal data on their capabilities, but the tinkerer design seems to be an evolution of C-series researchers.",
+        "Class": "Tinkerer (Derelict)",
+        "Size": "Medium",
+        "Rating": "0",
+        "Value": 0,
+        "Movement": "Hovering (60)",
+        "Core Integrity": 30,
+        "Core Exposure": 40,
+        "Salvage Potential": "10-30",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Nuclear Core",
+            "Gravmag System",
+            "Component Analysis Suite",
+            "Recalibrator"
+        ],
+        "Resistances": {
+            "Electromagnetic": -50
         }
     },
     "Tracker": {
@@ -2972,6 +4118,123 @@
             "Meltdown"
         ]
     },
+    "Wasp (5)": {
+        "Description": "Wasps are swarmer class variants equipped with a derelict-made battle rifle, less reliable than swarmer armament but nonetheless dangerous in large numbers.",
+        "Class": "Wasp (Derelict)",
+        "Size": "Small",
+        "Rating": "14",
+        "Value": 27,
+        "Movement": "Flying (37)",
+        "Core Integrity": 18,
+        "Core Exposure": 50,
+        "Salvage Potential": "20-30",
+        "Visual Range": "16",
+        "Armament": [
+            "Battle Rifle"
+        ],
+        "Components": [
+            "Lgt. Nuclear Core",
+            "Cesium-ion Thruster",
+            "Cesium-ion Thruster"
+        ],
+        "Resistances": {
+            "Explosive": -25
+        }
+    },
+    "Wasp (7)": {
+        "Description": "Wasps are swarmer class variants equipped with a derelict-made battle rifle, less reliable than swarmer armament but nonetheless dangerous in large numbers.",
+        "Class": "Wasp (Derelict)",
+        "Size": "Small",
+        "Rating": "25",
+        "Value": 43,
+        "Movement": "Flying (37)",
+        "Core Integrity": 30,
+        "Core Exposure": 50,
+        "Salvage Potential": "30-40",
+        "Visual Range": "16",
+        "Armament": [
+            "Hvy. Battle Rifle"
+        ],
+        "Components": [
+            "Lgt. Fission Core",
+            "Nuclear Pulse Thruster",
+            "Nuclear Pulse Thruster"
+        ],
+        "Resistances": {
+            "Explosive": -25
+        }
+    },
+    "Wizard (5)": {
+        "Description": "The single most annoying derelict out there. Hiding from my patrols, hacking my robots, accessing my databases, corrupting systems with their riot guns... According to those captured and analyzed, although the wizard's design is related to the programmer, the changes necessary to break them free of the relay network could only have been designed by an extremely intelligent system.",
+        "Class": "Wizard (Derelict)",
+        "Size": "Medium",
+        "Rating": "42",
+        "Value": 70,
+        "Movement": "Hovering (56)",
+        "Core Integrity": 40,
+        "Core Exposure": 29,
+        "Salvage Potential": "50-60",
+        "Visual Range": "16",
+        "Armament": [
+            "Riot Gun",
+            "Riot Gun"
+        ],
+        "Components": [
+            "Lgt. Fission Core",
+            "Gravmag System",
+            "Gravmag System",
+            "Imp. Heat Sink",
+            "Imp. Heat Sink",
+            "Lrg. Battery",
+            "Imp. Hacking Suite",
+            "System Shield"
+        ],
+        "Resistances": {
+            "Kinetic": -25,
+            "Thermal": -25,
+            "Explosive": 25,
+            "Electromagnetic": 75
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Wizard (7)": {
+        "Description": "The single most annoying derelict out there. Hiding from my patrols, hacking my robots, accessing my databases, corrupting systems with their riot guns... According to those captured and analyzed, although the wizard's design is related to the programmer, the changes necessary to break them free of the relay network could only have been designed by an extremely intelligent system.",
+        "Class": "Wizard (Derelict)",
+        "Size": "Medium",
+        "Rating": "70",
+        "Value": 80,
+        "Movement": "Hovering (56)",
+        "Core Integrity": 40,
+        "Core Exposure": 29,
+        "Salvage Potential": "50-60",
+        "Visual Range": "16",
+        "Armament": [
+            "Hvy. Riot Gun",
+            "Hvy. Riot Gun"
+        ],
+        "Components": [
+            "Lgt. Fission Core",
+            "Lgt. Antimatter Reactor",
+            "Antigrav System",
+            "Antigrav System",
+            "Adv. Heat Sink",
+            "Adv. Heat Sink",
+            "Hcp. Battery",
+            "Adv. Hacking Suite",
+            "Imp. System Shield"
+        ],
+        "Resistances": {
+            "Kinetic": -25,
+            "Thermal": -25,
+            "Explosive": 25,
+            "Electromagnetic": 75
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
     "X-62 Marksman": {
         "Description": "X-series specialists each possess unique loadouts for a specific purpose. The X-62 Marksman combines exceptional visual detection range and superior targeting abilities with a long-range gauss rifle. It is also armed with a pulse rifle as a secondary weapon for close encounters, and is more likely to hit a target's core, even penetrating armor to do so.",
         "Class": "Specialist",
@@ -3165,6 +4428,31 @@
             "Impact": 25
         }
     },
+    "Z-Courier": {
+        "Description": "",
+        "Class": "Z-Courier (Derelict)",
+        "Size": "Large",
+        "Rating": "27",
+        "Value": 0,
+        "Movement": "Flying (37)",
+        "Core Integrity": 25,
+        "Core Exposure": 50,
+        "Salvage Potential": "5-15",
+        "Visual Range": "20",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Ion Engine",
+            "Flight Unit",
+            "Flight Unit",
+            "Adv. Visual Processing Unit",
+            "Mak. Cloaking Device"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        }
+    },
     "Z-Drone": {
         "Description": "",
         "Class": "Drone",
@@ -3189,5 +4477,313 @@
             "Explosive": -25,
             "Electromagnetic": -100
         }
+    },
+    "Z-Experimental (8)": {
+        "Description": "",
+        "Class": "Z-EX",
+        "Size": "Large",
+        "Rating": "191",
+        "Value": 200,
+        "Movement": "Walking (110)",
+        "Core Integrity": 150,
+        "Core Exposure": 19,
+        "Salvage Potential": "80-105",
+        "Visual Range": "23",
+        "Armament": [
+            "Zio. Alpha Cannon",
+            "Zio. Alpha Cannon"
+        ],
+        "Components": [
+            "Zio. Heavy DM Reactor",
+            "Zio. Heavy DM Reactor",
+            "Zio. Supercomposite Leg",
+            "Zio. Supercomposite Leg",
+            "Zio. Supercomposite Leg",
+            "Coolant Network",
+            "Zio. Biocell Array",
+            "Exp. Optical Array",
+            "Exp. Targeting Computer",
+            "Prc. Energy Filter",
+            "Particle Accelerator",
+            "Zio. Weapon Casing",
+            "Zio. Shade Carapace",
+            "Zio. Shade Carapace"
+        ],
+        "Resistances": {
+            "Kinetic": 20,
+            "Thermal": 20,
+            "Explosive": 20,
+            "Electromagnetic": 20,
+            "Impact": 20,
+            "Slashing": 20,
+            "Piercing": 20
+        }
+    },
+    "Z-Experimental (10)": {
+        "Description": "",
+        "Class": "Z-EX",
+        "Size": "Large",
+        "Rating": "268",
+        "Value": 200,
+        "Movement": "Walking (110)",
+        "Core Integrity": 150,
+        "Core Exposure": 19,
+        "Salvage Potential": "80-105",
+        "Visual Range": "23",
+        "Armament": [
+            "Zio. Alpha Cannon Mk. II",
+            "Zio. Alpha Cannon Mk. II"
+        ],
+        "Components": [
+            "Zio. Heavy DM Reactor",
+            "Zio. Heavy DM Reactor",
+            "Zio. Supercomposite Leg",
+            "Zio. Supercomposite Leg",
+            "Zio. Supercomposite Leg",
+            "Zio. Supercomposite Leg",
+            "Coolant Network",
+            "Coolant Network",
+            "Zio. Biocell Array",
+            "Zio. Biocell Array",
+            "Exp. Optical Array",
+            "Exp. Targeting Computer",
+            "Prc. Energy Filter",
+            "Particle Accelerator",
+            "Exp. Weapon Cycler",
+            "Zio. Weapon Casing",
+            "Zio. Shade Armor",
+            "Zio. Shade Armor",
+            "Zio. Shade Armor",
+            "Zio. Shade Armor"
+        ],
+        "Resistances": {
+            "Kinetic": 30,
+            "Thermal": 30,
+            "Explosive": 30,
+            "Electromagnetic": 30,
+            "Impact": 30,
+            "Slashing": 30,
+            "Piercing": 30
+        }
+    },
+    "Z-Heavy (5)": {
+        "Description": "",
+        "Class": "Z-Heavy (Derelict)",
+        "Size": "Large",
+        "Rating": "85",
+        "Value": 66,
+        "Movement": "Walking (110)",
+        "Core Integrity": 55,
+        "Core Exposure": 29,
+        "Salvage Potential": "50-70",
+        "Visual Range": "16",
+        "Armament": [
+            "Zio. Laser-S",
+            "Zio. Phaser-S",
+            "Zio. Phaser-S"
+        ],
+        "Components": [
+            "Zio. Heavy DM Reactor",
+            "Zio. Composite Leg I",
+            "Zio. Composite Leg I",
+            "Imp. Cooling System",
+            "Imp. Cooling System",
+            "Zio. Biocell",
+            "Targeting Computer",
+            "Zio. Weapon Casing",
+            "Zio. Heavy Carapace"
+        ],
+        "Resistances": {
+        }
+    },
+    "Z-Heavy (7)": {
+        "Description": "",
+        "Class": "Z-Heavy (Derelict)",
+        "Size": "Large",
+        "Rating": "103",
+        "Value": 77,
+        "Movement": "Walking (110)",
+        "Core Integrity": 75,
+        "Core Exposure": 30,
+        "Salvage Potential": "60-85",
+        "Visual Range": "16",
+        "Armament": [
+            "Zio. Laser-M",
+            "Zio. Phaser-M",
+            "Zio. Phaser-M"
+        ],
+        "Components": [
+            "Zio. Heavy DM Reactor",
+            "Zio. Composite Leg II",
+            "Zio. Composite Leg II",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Zio. Biocell",
+            "Imp. Targeting Computer",
+            "Zio. Weapon Casing",
+            "Zio. Heavy Carapace"
+        ],
+        "Resistances": {
+        }
+    },
+    "Z-Heavy (9)": {
+        "Description": "",
+        "Class": "Z-Heavy (Derelict)",
+        "Size": "Large",
+        "Rating": "122",
+        "Value": 88,
+        "Movement": "Walking (110)",
+        "Core Integrity": 95,
+        "Core Exposure": 29,
+        "Salvage Potential": "70-100",
+        "Visual Range": "16",
+        "Armament": [
+            "Zio. Laser-H",
+            "Zio. Phaser-H",
+            "Zio. Phaser-H"
+        ],
+        "Components": [
+            "Zio. Heavy DM Reactor",
+            "Zio. Composite Leg II",
+            "Zio. Composite Leg II",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Zio. Biocell",
+            "Adv. Targeting Computer",
+            "Zio. Weapon Casing",
+            "Zio. Heavy Carapace"
+        ],
+        "Resistances": {
+        }
+    },
+    "Z-Light (5)": {
+        "Description": "",
+        "Class": "Z-Light (Derelict)",
+        "Size": "Medium",
+        "Rating": "70",
+        "Value": 50,
+        "Movement": "Hovering (56)",
+        "Core Integrity": 45,
+        "Core Exposure": 39,
+        "Salvage Potential": "50-70",
+        "Visual Range": "16",
+        "Armament": [
+            "Zio. Laser-S"
+        ],
+        "Components": [
+            "Zio. Light DM Reactor",
+            "Zio. Glidesys I",
+            "Zio. Glidesys I",
+            "Exp. Heat Sink",
+            "Zio. Biocell",
+            "Imp. Maneuvering Thrusters",
+            "Phase Shifter",
+            "Zio. Weapon Casing",
+            "Zio. Light Carapace"
+        ],
+        "Resistances": {
+        }
+    },
+    "Z-Light (7)": {
+        "Description": "",
+        "Class": "Z-Light (Derelict)",
+        "Size": "Medium",
+        "Rating": "96",
+        "Value": 67,
+        "Movement": "Hovering (56)",
+        "Core Integrity": 60,
+        "Core Exposure": 39,
+        "Salvage Potential": "60-85",
+        "Visual Range": "16",
+        "Armament": [
+            "Zio. Laser-S",
+            "Zio. Laser-M"
+        ],
+        "Components": [
+            "Zio. Light DM Reactor",
+            "Zio. Glidesys II",
+            "Zio. Glidesys II",
+            "Exp. Heat Sink",
+            "Exp. Heat Sink",
+            "Zio. Biocell",
+            "Reaction Control System",
+            "Imp. Phase Shifter",
+            "Zio. Weapon Casing",
+            "Zio. Light Carapace"
+        ],
+        "Resistances": {
+        }
+    },
+    "Z-Light (9)": {
+        "Description": "",
+        "Class": "Z-Light (Derelict)",
+        "Size": "Medium",
+        "Rating": "114",
+        "Value": 73,
+        "Movement": "Hovering (52)",
+        "Core Integrity": 70,
+        "Core Exposure": 40,
+        "Salvage Potential": "70-100",
+        "Visual Range": "16",
+        "Armament": [
+            "Zio. Laser-M",
+            "Zio. Laser-H"
+        ],
+        "Components": [
+            "Zio. Light DM Reactor",
+            "Zio. Glidesys II",
+            "Zio. Glidesys II",
+            "Zio. Glidesys II",
+            "Exp. Heat Sink",
+            "Exp. Heat Sink",
+            "Zio. Biocell",
+            "Adv. Reaction Control System",
+            "Adv. Phase Shifter",
+            "Zio. Weapon Casing",
+            "Zio. Light Carapace"
+        ],
+        "Resistances": {
+        }
+    },
+    "Z-Technician": {
+        "Description": "",
+        "Class": "Z-Technician (Derelict)",
+        "Size": "Medium",
+        "Rating": "16",
+        "Value": 0,
+        "Movement": "Hovering (56)",
+        "Core Integrity": 15,
+        "Core Exposure": 40,
+        "Salvage Potential": "10-20",
+        "Visual Range": "16",
+        "Armament": [
+            "Datajack"
+        ],
+        "Components": [
+            "Lgt. Ion Engine",
+            "Hover Unit",
+            "Hover Unit",
+            "Mak. Hacking Suite"
+        ],
+        "Resistances": {
+            "Electromagnetic": -50,
+            "Slashing": -25
+        }
+    },
+    "Zionite": {
+        "Description": "(Not lore) Zionites have extremely randomized parts, containing nearly every low rating non-prototype part rating 4 or below. Makshift (Mak.) parts are most common. All zionites have at least 1 power source and 1 leg. Additionally, they can have 0-1 weapon, 1-3 propulsion (1-2 legs and 0-1 hover/flight), and 0-3 utilities.",
+        "Class": "Zionite (Derelict)",
+        "Size": "Medium",
+        "Rating": "8-26",
+        "Value": 10,
+        "Movement": "Walking (120/130/140)",
+        "Core Integrity": 10,
+        "Core Exposure": 40,
+        "Salvage Potential": "10-30",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+        ]
     }
 }
