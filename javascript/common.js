@@ -230,7 +230,7 @@ export function createBotDataContent(bot) {
         }
         else {
             // Found item
-            let line = `${data["Name"]} (${data["Coverage"]}%)`;
+            let line = `${escapeHtml(data["Name"])} (${data["Coverage"]}%)`;
 
             if (data["Number"] > 1) {
                 line += " x" + data["Number"].toString();
@@ -785,13 +785,15 @@ export async function initData() {
         bot["Name"] = botName;
         const itemCoverage = bot["Armament"].reduce(sumItemCoverage, 0) + bot["Components"].reduce(sumItemCoverage, 0);
 
-        const roughCoreCoverage = (100.0 / (100.0 - bot["Core Exposure"]) * itemCoverage) - itemCoverage;
+        let roughCoreCoverage = (100.0 / (100.0 - bot["Core Exposure"]) * itemCoverage) - itemCoverage;
+        if (isNaN(roughCoreCoverage)) {
+            roughCoreCoverage = 1;
+        }
         const estimatedCoreCoverage = ceilToMultiple(roughCoreCoverage, 10);
         const totalCoverage = estimatedCoreCoverage + itemCoverage;
         bot["Core Coverage"] = estimatedCoreCoverage;
 
         let partData = [];
-        let optionCount = 0;
         function addPartData(data) {
             if (typeof (data) === "string") {
                 const itemName = data;
@@ -828,7 +830,6 @@ export async function initData() {
                     });
                 });
                 partData.push(options);
-                optionCount += 1;
             }
         }
 

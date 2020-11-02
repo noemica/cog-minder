@@ -19,6 +19,270 @@
         "Immunities": [
         ]
     },
+    "01-MTF": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "99",
+        "Value": 1,
+        "Movement": "Hovering (46)",
+        "Core Integrity": 110,
+        "Core Exposure": 19,
+        "Salvage Potential": "100-120",
+        "Visual Range": "16",
+        "Armament": [
+            "01-MTF's Shockpuncher"
+        ],
+        "Components": [
+            "Mni. Fusion Reactor",
+            "Cld. Gravmag System",
+            "Cld. Gravmag System",
+            "Exp. Heat Sink",
+            "Imp. Energy Well",
+            "Mak. Cloaking Device",
+            "Imp. Propulsion Shielding",
+            "Imp. Weapon Shielding",
+            "Centrium Light Armor Plating",
+            "Adv. Thermal Shield",
+            "01-MTF's Autohacker"
+        ],
+        "Resistances": {
+            "Thermal": 55,
+            "Electromagnetic": 67
+        }
+    },
+    "12-ASH": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "105",
+        "Value": 1,
+        "Movement": "Walking (90)",
+        "Core Integrity": 120,
+        "Core Exposure": 24,
+        "Salvage Potential": "100-120",
+        "Visual Range": "16",
+        "Armament": [
+            "12-ASH's Boomstick",
+            "Ripper"
+        ],
+        "Components": [
+            "Lgt. Antimatter Reactor",
+            "Exp. Flexi-carbon Leg",
+            "Exp. Flexi-carbon Leg",
+            "Exp. Heat Sink",
+            "Triangulator",
+            "0b10 Decoder Chip [Skirmisher]",
+            "Adv. Targeting Computer",
+            "Adv. Melee Analysis Suite",
+            "Exp. Core Analyzer",
+            "Adv. Reaction Control System"
+        ],
+        "Resistances": {
+            "Electromagnetic": 75
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Meltdown"
+        ]
+    },
+    "1C-UTU": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "137",
+        "Value": 1,
+        "Movement": "Walking (90)",
+        "Core Integrity": 120,
+        "Core Exposure": 19,
+        "Salvage Potential": "100-120",
+        "Visual Range": "16",
+        "Armament": [
+            "1C-UTU's Sword \"Lootmaker\"",
+            "1C-UTU's Sword \"Choppy\""
+        ],
+        "Components": [
+            "Mni. Fusion Reactor",
+            "Exp. Myomer Leg",
+            "Exp. Myomer Leg",
+            "Adv. Cooling System",
+            "Adv. Energy Well",
+            "Exp. Melee Analysis Suite",
+            "Femtoactuators",
+            "Exp. Actuator Array",
+            "Mak. Transmission Jammer",
+            "Adv. Reaction Control System",
+            "Imp. Core Shielding",
+            "1C-UTU's Buckler"
+        ],
+        "Resistances": {
+            "Electromagnetic": 75,
+            "Slashing": 25,
+            "Piercing": 25
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Meltdown"
+        ]
+    },
+    "5H-AD0": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "118",
+        "Value": 1,
+        "Movement": "Walking (110)",
+        "Core Integrity": 150,
+        "Core Exposure": 19,
+        "Salvage Potential": "100-120",
+        "Visual Range": "24",
+        "Armament": [
+            "5H-AD0's Sniper Rifle"
+        ],
+        "Components": [
+            "Mni. Fusion Reactor",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Exp. Heat Sink",
+            "Spectral Analyzer",
+            "Mak. Transmission Jammer",
+            "Exp. ECM Suite",
+            "5H-AD0's Cloak",
+            "Zio. Weapon Casing"
+        ],
+        "Resistances": {
+            "Electromagnetic": 67
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Meltdown"
+        ]
+    },
+    "7V-RTL": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Large",
+        "Rating": "180",
+        "Value": 1,
+        "Movement": "Treading (170)",
+        "Core Integrity": 150,
+        "Core Exposure": 19,
+        "Salvage Potential": "120-150",
+        "Visual Range": "16",
+        "Armament": [
+            "Dispersion Rifle",
+            "Railgun"
+        ],
+        "Components": [
+            "Mic. Neutrino Core",
+            "Rnf. Quantum Reactor",
+            "Arm. Heavy Treads",
+            "Arm. Heavy Treads",
+            "Exp. Power Amplifier",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Exp. Energy Well",
+            "Exp. Energy Well",
+            "Exp. Energy Well",
+            "Exp. Energy Well",
+            "Adv. Powered Armor",
+            "Adv. Powered Armor",
+            "7V-RTL's Ultimate Field"
+        ],
+        "Resistances": {
+            "Explosive": 50,
+            "Electromagnetic": 75,
+            "Impact": 25
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Meltdown"
+        ]
+    },
+    "8R-AWN": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "160",
+        "Value": 1,
+        "Movement": "Walking (120)",
+        "Core Integrity": 200,
+        "Core Exposure": 14,
+        "Salvage Potential": "100-120",
+        "Visual Range": "16",
+        "Armament": [
+            "8R-AWN's Boregun",
+            "8R-AWN's Boregun"
+        ],
+        "Components": [
+            "Rnf. Fission Core",
+            "Adv. Myomer Leg",
+            "Adv. Myomer Leg",
+            "Exp. Heat Sink",
+            "Gravity Neutralizing Apparatus",
+            "Gravity Neutralizing Apparatus",
+            "Exp. Targeting Computer",
+            "Adv. Weapon Cycler",
+            "8R-AWN's Armor/TH",
+            "8R-AWN's Armor/EX",
+            "AS-neutralizer No. 17b"
+        ],
+        "Resistances": {
+            "Thermal": 90,
+            "Explosive": 90,
+            "Electromagnetic": 90
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Meltdown"
+        ]
+    },
+    "99-TNT": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "135",
+        "Value": 1,
+        "Movement": "Hovering (72)",
+        "Core Integrity": 130,
+        "Core Exposure": 24,
+        "Salvage Potential": "100-120",
+        "Visual Range": "20",
+        "Armament": [
+            "99-TNT's Nukerbomber"
+        ],
+        "Components": [
+            "Hvy. Antimatter Reactor",
+            "Cmb. Antigrav System",
+            "Cmb. Antigrav System",
+            "Cmb. Antigrav System",
+            "Exp. Cooling System",
+            "Exp. Matter Compressor",
+            "Adv. Visual Processing Unit",
+            "Adv. Launcher Guidance Computer",
+            "Exp. Weapon Shielding",
+            "Hvy. Reactive Plating",
+            "Exp. Shock Absorption System",
+            "Lrn. Tractor Beam"
+        ],
+        "Resistances": {
+            "Kinetic": 40,
+            "Explosive": 100,
+            "Electromagnetic": 75,
+            "Impact": 25
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Meltdown"
+        ]
+    },
     "A-02 Transporter": {
         "Description": "A-series haulers transport matter and parts vital to construction and manufacturing. To minimize losses during derelict incursions, like most other maintenance robots they are of relatively sturdy construction, but remain somewhat susceptible to electromagnetic damage as such weaponry is not prevalent enough to warrant specialized defenses.",
         "Class": "Hauler",
@@ -68,6 +332,382 @@
         "Resistances": {
             "Electromagnetic": -25
         }
+    },
+    "A2": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Medium",
+        "Rating": "248",
+        "Value": 1,
+        "Movement": "Hovering (36)",
+        "Core Integrity": 150,
+        "Core Exposure": 24,
+        "Salvage Potential": "70-90",
+        "Visual Range": "16",
+        "Armament": [
+            "Gatling Beam",
+            "Gatling Beam"
+        ],
+        "Components": [
+            "Imp. Quantum Reactor",
+            "Imp. Quantum Reactor",
+            "Cmb. Antigrav System",
+            "Cmb. Antigrav System",
+            "Cmb. Antigrav System",
+            "Exp. Power Amplifier",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Dimensional Manipulator",
+            "ST Field Compressor",
+            "Exp. Phase Shifter",
+            "Exp. Core Shielding",
+            "Hvy. Regenerative Plating",
+            "Exp. Thermal Defense Suite",
+            "Imp. Energy Mantle",
+            "Deep Network Scanner",
+            "Deep Network Scanner",
+            "Quantum Router",
+            "Quantum Router"
+        ],
+        "Resistances": {
+            "Thermal": 55,
+            "Explosive": 50,
+            "Electromagnetic": 75,
+            "Impact": 25,
+            "Slashing": 25,
+            "Piercing": 25
+        },
+        "Immunities": [
+            "Hacking",
+            "Jamming"
+        ],
+        "Traits": [
+            "Scan Cloak (5)"
+        ]
+    },
+    "A3": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Medium",
+        "Rating": "218",
+        "Value": 1,
+        "Movement": "Hovering (21)",
+        "Core Integrity": 150,
+        "Core Exposure": 24,
+        "Salvage Potential": "70-90",
+        "Visual Range": "24",
+        "Armament": [
+            "A3's Sniper Rifle"
+        ],
+        "Components": [
+            "Lgt. Particle Reactor",
+            "Lgt. Quantum Reactor",
+            "Lgt. Quantum Reactor",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Exp. Energy Well",
+            "Quantum Shading Machine",
+            "ST Field Compressor",
+            "Spectral Analyzer",
+            "Adv. Phase Shifter",
+            "Exp. Core Shielding",
+            "Lgt. Regenerative Plating",
+            "Lgt. Regenerative Plating",
+            "Imp. Energy Mantle",
+            "Deep Network Scanner",
+            "Quantum Router"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Explosive": 25,
+            "Electromagnetic": 75,
+            "Impact": 25,
+            "Slashing": 25,
+            "Piercing": 25
+        },
+        "Immunities": [
+            "Hacking",
+            "Jamming"
+        ],
+        "Traits": [
+            "Scan Cloak (5)"
+        ]
+    },
+    "A4": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Medium",
+        "Rating": "213",
+        "Value": 1,
+        "Movement": "Hovering (72)",
+        "Core Integrity": 150,
+        "Core Exposure": 25,
+        "Salvage Potential": "70-90",
+        "Visual Range": "16",
+        "Armament": [
+            "Gamma Rifle",
+            "Quantum Rifle",
+            "Helical Railgun"
+        ],
+        "Components": [
+            "Imp. Quantum Reactor",
+            "Imp. Quantum Reactor",
+            "Cmb. Antigrav System",
+            "Cmb. Antigrav System",
+            "Cmb. Antigrav System",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Quantum Shading Machine",
+            "Adv. Phase Shifter",
+            "Exp. Core Shielding",
+            "Hvy. Regenerative Plating",
+            "Exp. Shock Absorption System",
+            "Energy Mantle",
+            "Antimissile System",
+            "System Mapper",
+            "Ghost Barrier"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Explosive": 75,
+            "Electromagnetic": 75,
+            "Impact": 25,
+            "Slashing": 25,
+            "Piercing": 25
+        },
+        "Immunities": [
+            "Hacking",
+            "Jamming"
+        ],
+        "Traits": [
+            "Scan Cloak (5)"
+        ]
+    },
+    "A5": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Medium",
+        "Rating": "192",
+        "Value": 1,
+        "Movement": "Hovering (56)",
+        "Core Integrity": 150,
+        "Core Exposure": 25,
+        "Salvage Potential": "70-90",
+        "Visual Range": "16",
+        "Armament": [
+            "Hvy. Tesla Rifle",
+            "Hvy. Tesla Rifle",
+            "Hvy. Tesla Rifle"
+        ],
+        "Components": [
+            "Graviton Reactor",
+            "Antigrav Array",
+            "Antigrav Array",
+            "Exp. Power Amplifier",
+            "Exp. Heat Sink",
+            "Exp. Heat Sink",
+            "Exp. Heat Sink",
+            "Exp. Energy Well",
+            "Inertial Stasis Machine",
+            "Adv. Phase Shifter",
+            "Exp. Core Shielding",
+            "Med. Regenerative Plating",
+            "Imp. Remote Force Field",
+            "Exp. Hacking Suite",
+            "Exp. System Shield"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Thermal": 25,
+            "Explosive": 25,
+            "Electromagnetic": 75,
+            "Impact": -50,
+            "Slashing": -25,
+            "Piercing": -50
+        },
+        "Immunities": [
+            "Hacking",
+            "Jamming"
+        ],
+        "Traits": [
+            "Scan Cloak (5)"
+        ]
+    },
+    "A6": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Medium",
+        "Rating": "199",
+        "Value": 1,
+        "Movement": "Hovering (42)",
+        "Core Integrity": 150,
+        "Core Exposure": 25,
+        "Salvage Potential": "70-90",
+        "Visual Range": "16",
+        "Armament": [
+            "Enh. Force Lance",
+            "Enh. Force Lance"
+        ],
+        "Components": [
+            "Com. Particle Reactor",
+            "Com. Particle Reactor",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Adv. Energy Well",
+            "Inertial Stasis Machine",
+            "Inertial Stasis Machine",
+            "Exp. Melee Analysis Suite",
+            "Femtoactuators",
+            "Exp. Actuator Array",
+            "Imp. Phase Shifter",
+            "Exp. Core Shielding",
+            "Med. Regenerative Plating",
+            "Adv. Force Field",
+            "Adv. Hacking Suite",
+            "Adv. System Shield"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Thermal": 25,
+            "Explosive": 50,
+            "Impact": 50,
+            "Slashing": 50,
+            "Piercing": 50
+        },
+        "Immunities": [
+            "Hacking",
+            "Jamming"
+        ]
+    },
+    "A7": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Medium",
+        "Rating": "156",
+        "Value": 1,
+        "Movement": "Hovering (56)",
+        "Core Integrity": 150,
+        "Core Exposure": 25,
+        "Salvage Potential": "70-90",
+        "Visual Range": "16",
+        "Armament": [
+            "Tesla Rifle",
+            "Tesla Rifle"
+        ],
+        "Components": [
+            "Lgt. Particle Reactor",
+            "Com. Particle Reactor",
+            "Antigrav Array",
+            "Antigrav Array",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Adv. Energy Well",
+            "Inertial Stasis Machine",
+            "Imp. Phase Shifter",
+            "Imp. Core Shielding",
+            "Med. Regenerative Plating",
+            "Remote Force Field",
+            "Adv. Hacking Suite",
+            "Adv. System Shield"
+        ],
+        "Resistances": {
+            "Explosive": 50,
+            "Electromagnetic": 75,
+            "Impact": 25,
+            "Slashing": 25,
+            "Piercing": 25
+        },
+        "Immunities": [
+            "Hacking",
+            "Jamming"
+        ]
+    },
+    "A8": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Medium",
+        "Rating": "166",
+        "Value": 1,
+        "Movement": "Hovering (56)",
+        "Core Integrity": 150,
+        "Core Exposure": 24,
+        "Salvage Potential": "70-90",
+        "Visual Range": "16",
+        "Armament": [
+            "Arc Projector",
+            "Arc Projector",
+            "Arc Projector",
+            "Arc Projector"
+        ],
+        "Components": [
+            "Lgt. Particle Reactor",
+            "Com. Particle Reactor",
+            "Antigrav Array",
+            "Antigrav Array",
+            "Exp. Heat Sink",
+            "Exp. Heat Sink",
+            "Exp. Heat Sink",
+            "Adv. Energy Well",
+            "Gravity Neutralizing Apparatus",
+            "Imp. Phase Shifter",
+            "Imp. Core Shielding",
+            "Lgt. Regenerative Plating",
+            "Remote Force Field",
+            "Adv. Hacking Suite",
+            "Adv. System Shield"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Thermal": 25,
+            "Explosive": -25,
+            "Electromagnetic": 75
+        },
+        "Immunities": [
+            "Hacking",
+            "Jamming"
+        ]
+    },
+    "AD-0RF": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "125",
+        "Value": 1,
+        "Movement": "Rolling (100)",
+        "Core Integrity": 120,
+        "Core Exposure": 24,
+        "Salvage Potential": "100-120",
+        "Visual Range": "16",
+        "Armament": [
+            "AD-0RF's Magmablaster"
+        ],
+        "Components": [
+            "Lgt. Particle Reactor",
+            "Arm. Huge Wheel",
+            "Arm. Huge Wheel",
+            "Coolant Network",
+            "Exp. Coolant Injector",
+            "Adv. Energy Well",
+            "Exp. Targeting Computer",
+            "Exp. Weapon Shielding",
+            "Lyr. Heavy Armor Plating",
+            "Exp. Thermal Shield"
+        ],
+        "Resistances": {
+            "Thermal": 80,
+            "Electromagnetic": 75
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Meltdown"
+        ]
     },
     "Alpha 7": {
         "Description": "The Alpha 7 is a prototype for a new class of combat robot, very accurate with its multirail and heavy quantum rifle. Some experimental variants instead use an enhanced gamma rifle. Alpha 7s are built with strong defensive capabilities and triple-encased core technology, enabling them to easily take on multiple opponents simultaneously, while a more advanced version of the behemoth-style critical failure prevention system provides the same advantages in a smaller frame.",
@@ -139,6 +779,67 @@
         },
         "Immunities": [
             "Hacking"
+        ]
+    },
+    "Architect": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "347",
+        "Value": 1,
+        "Movement": "Hovering (32)",
+        "Core Integrity": 400,
+        "Core Exposure": 25,
+        "Salvage Potential": "150-300",
+        "Visual Range": "22",
+        "Armament": [
+            "Modified Quantum Sheargun",
+            "Modified Quantum Sheargun",
+            "Modified Quantum Sheargun"
+        ],
+        "Components": [
+            "Zero-point Reactor",
+            "Zero-point Reactor",
+            "Cld. Linear Gravjet",
+            "Cld. Linear Gravjet",
+            "Cld. Linear Gravjet",
+            "Dimensional Manipulator",
+            "Dimensional Manipulator",
+            "Enh. Optical Array",
+            "Exp. Target Analyzer",
+            "Exp. Core Analyzer",
+            "Adv. Armor Integrity Analyzer",
+            "Exp. Phase Shifter",
+            "Centrium Linked Plating",
+            "Centrium Linked Plating",
+            "Architect God Chip A",
+            "Architect God Chip A",
+            "Architect God Chip A",
+            "Architect God Chip A",
+            "Architect God Chip D",
+            "Architect God Chip D",
+            "Architect God Chip D",
+            "Architect God Chip D"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Explosive": 25,
+            "Electromagnetic": 100,
+            "Impact": 25,
+            "Slashing": 25,
+            "Piercing": 25
+        },
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Disruption",
+            "Hacking",
+            "Jamming",
+            "Meltdown"
+        ],
+        "Traits": [
+            "Core Regeneration (5)",
+            "Scan Cloak (5)"
         ]
     },
     "Army Drone": {
@@ -609,6 +1310,54 @@
             "Hacking"
         ]
     },
+    "Borebot": {
+        "Description": "",
+        "Class": "Borebot (Derelict)",
+        "Size": "Huge",
+        "Rating": "358",
+        "Value": 1,
+        "Movement": "Treading (275)",
+        "Core Integrity": 250,
+        "Core Exposure": 20,
+        "Salvage Potential": "400-600",
+        "Visual Range": "16",
+        "Armament": [
+            "Vortex Shredder"
+        ],
+        "Components": [
+            "Rnf. Antimatter Reactor",
+            "Rnf. Antimatter Reactor",
+            "Rnf. Antimatter Reactor",
+            "Rnf. Antimatter Reactor",
+            "Rnf. Antimatter Reactor",
+            "Rnf. Antimatter Reactor",
+            "Megatreads",
+            "Megatreads",
+            "Adv. Power Amplifier",
+            "Adv. Power Amplifier",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Adv. Energy Well",
+            "Adv. Energy Well",
+            "Adv. Energy Well",
+            "Exp. Utility Shielding",
+            "Vortex Field Projector"
+        ],
+        "Resistances": {
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Criticals",
+            "Dismemberment",
+            "Disruption",
+            "Hacking",
+            "Meltdown"
+        ]
+    },
     "Bouncer": {
         "Description": "Sentries rebuilt around a single heavy autocannon make for a formidable mid-sized defender, but move too slowly to be a threat to Complex 0b10. My forces have never actually encountered one, but mining derelict records has uncovered information useful in dealing with them should that become necessary.",
         "Class": "Bouncer (Derelict)",
@@ -845,6 +1594,46 @@
             "Jamming"
         ]
     },
+    "CL-ANK": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "113",
+        "Value": 1,
+        "Movement": "Treading (145)",
+        "Core Integrity": 130,
+        "Core Exposure": 19,
+        "Salvage Potential": "100-120",
+        "Visual Range": "16",
+        "Armament": [
+            "CL-ANK's Mallet"
+        ],
+        "Components": [
+            "Hvy. Antimatter Reactor",
+            "Biometal Medium Treads",
+            "Biometal Medium Treads",
+            "Adv. Cooling System",
+            "Exp. Melee Analysis Suite",
+            "Microactuators",
+            "Nanoactuators",
+            "Force Booster",
+            "Exp. Weapon Shielding",
+            "Med. Reactive Plating",
+            "Med. Reflective Plating"
+        ],
+        "Resistances": {
+            "Kinetic": 30,
+            "Thermal": 15,
+            "Electromagnetic": 75,
+            "Impact": 25,
+            "Slashing": 25
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Meltdown"
+        ]
+    },
     "Combat Drone": {
         "Description": "",
         "Class": "Drone",
@@ -919,6 +1708,34 @@
         "Traits": [
             "Self-destructing"
         ]
+    },
+    "Commander": {
+        "Description": "",
+        "Class": "Commander (Derelict)",
+        "Size": "Medium",
+        "Rating": "73",
+        "Value": 80,
+        "Movement": "Walking (120)",
+        "Core Integrity": 80,
+        "Core Exposure": 30,
+        "Salvage Potential": "60-85",
+        "Visual Range": "22",
+        "Armament": [
+            "Beamcaster",
+            "Beamcaster"
+        ],
+        "Components": [
+            "Lgt. Antimatter Reactor",
+            "Myomer Leg",
+            "Myomer Leg",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Enh. Optical Array",
+            "Tactical Coordination Suite",
+            "Lyr. Medium Armor Plating"
+        ],
+        "Resistances": {
+        }
     },
     "D-53 Grenadier": {
         "Description": "D-series demolishers are the only class to carry explosive weaponry, and due to the high potential for collateral damage are only assigned to support assault forces dispatched to deal with groups of high-threat intruders. The D-53 itself is highly resistant against explosive damage, however, and is therefore willing to catch targets in an explosion even while within that blast radius.",
@@ -1024,6 +1841,35 @@
             "Hacking"
         ]
     },
+    "Data Miner": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Small",
+        "Rating": "59",
+        "Value": 1,
+        "Movement": "Hovering (60)",
+        "Core Integrity": 30,
+        "Core Exposure": 39,
+        "Salvage Potential": "20-30",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Angular Momentum Engine",
+            "Gravmag Array",
+            "System Mapper",
+            "Deep Network Scanner",
+            "Ghost Barrier",
+            "Quantum Router"
+        ],
+        "Resistances": {
+            "Electromagnetic": 90
+        },
+        "Immunities": [
+            "Hacking",
+            "Jamming"
+        ]
+    },
     "Decomposer": {
         "Description": "Decomposers are the precursor to K-class workers, converting debris to matter they leave behind for other robots to then collect and utilize. This was before the matter collection and redistribution process was centralized in Complex 0b10. Derelicts seem to have modified decomposers to break down even whole components.",
         "Class": "Decomposer (Derelict)",
@@ -1102,6 +1948,43 @@
             "Corruption Emission (10)"
         ]
     },
+    "Dragon": {
+        "Description": "A Derelict Prototype apparently designed specifically to counter Complex 0b10 defenses, employing two nova cannons, presumably to counter Behemoths, as well as a powerful new type of Flamer. If more designs like this enter construction, I may have to launch a pre-emptive strike on the Caves before this escalation becomes a problem.",
+        "Class": "Dragon (Derelict)",
+        "Size": "Large",
+        "Rating": "150",
+        "Value": 250,
+        "Movement": "Walking (110)",
+        "Core Integrity": 160,
+        "Core Exposure": 19,
+        "Salvage Potential": "130-200",
+        "Visual Range": "16",
+        "Armament": [
+            "Nova Cannon",
+            "Nova Cannon",
+            "Plasma Flamer",
+            "Plasma Flamer"
+        ],
+        "Components": [
+            "Particle Reactor",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Adv. Thermal Generator",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Energy Well",
+            "Energy Well",
+            "Imp. Particle Charger",
+            "Lyr. Heavy Armor Plating"
+        ],
+        "Resistances": {
+        },
+        "Immunities": [
+        ]
+    },
     "Drone": {
         "Description": "",
         "Class": "Drone",
@@ -1150,6 +2033,362 @@
         ],
         "Resistances": {
         }
+    },
+    "Enhanced Demolisher": {
+        "Description": "",
+        "Class": "Demolisher (Prototype)",
+        "Size": "Medium",
+        "Rating": "122",
+        "Value": 200,
+        "Movement": "Hovering (56)",
+        "Core Integrity": 120,
+        "Core Exposure": 39,
+        "Salvage Potential": "80-110",
+        "Visual Range": "16",
+        "Armament": [
+            "Chain Missile Launcher"
+        ],
+        "Components": [
+            "Quantum Reactor",
+            "Cmb. Linear Gravjet",
+            "Cmb. Linear Gravjet",
+            "Coolant Network",
+            "Adv. Launcher Guidance Computer",
+            "Adv. Launcher Guidance Computer",
+            "Centrium Medium Armor Plating",
+            "Exp. Shock Absorption System"
+        ],
+        "Resistances": {
+            "Explosive": 100,
+            "Electromagnetic": 25,
+            "Impact": 25
+        }
+    },
+    "Enhanced Grunt": {
+        "Description": "",
+        "Class": "Grunt (Prototype)",
+        "Size": "Medium",
+        "Rating": "94",
+        "Value": 100,
+        "Movement": "Walking (120)",
+        "Core Integrity": 120,
+        "Core Exposure": 39,
+        "Salvage Potential": "80-110",
+        "Visual Range": "16",
+        "Armament": [
+            "Neutron Cannon"
+        ],
+        "Components": [
+            "Antimatter Reactor",
+            "Enh. Flexi-carbon Leg",
+            "Enh. Flexi-carbon Leg",
+            "Adv. Heat Sink",
+            "Adv. Heat Sink",
+            "Adv. Heat Sink",
+            "Imp. Energy Well",
+            "Adv. Particle Charger",
+            "Lyr. Medium Armor Plating",
+            "Exp. Thermal Shield"
+        ],
+        "Resistances": {
+            "Thermal": 30,
+            "Electromagnetic": 25
+        },
+        "Immunities": [
+        ]
+    },
+    "Enhanced Hunter": {
+        "Description": "",
+        "Class": "Hunter (Prototype)",
+        "Size": "Medium",
+        "Rating": "164",
+        "Value": 200,
+        "Movement": "Walking (90)",
+        "Core Integrity": 120,
+        "Core Exposure": 29,
+        "Salvage Potential": "80-110",
+        "Visual Range": "16",
+        "Armament": [
+            "Hyp. Linear Accelerator",
+            "Hyp. Linear Accelerator"
+        ],
+        "Components": [
+            "Quantum Reactor",
+            "Exp. Biometal Leg",
+            "Exp. Biometal Leg",
+            "Exp. Biometal Leg",
+            "Desublimator",
+            "Exp. Power Amplifier",
+            "Coolant Network",
+            "Exp. Matter Compressor",
+            "Gravity Neutralizing Apparatus",
+            "Exp. Targeting Computer",
+            "Exp. Weapon Cycler",
+            "Exp. Phase Shifter"
+        ],
+        "Resistances": {
+            "Electromagnetic": 50
+        },
+        "Traits": [
+            "Scan Cloak (5)"
+        ]
+    },
+    "Enhanced Programmer": {
+        "Description": "",
+        "Class": "Programmer (Prototype)",
+        "Size": "Medium",
+        "Rating": "168",
+        "Value": 200,
+        "Movement": "Hovering (38)",
+        "Core Integrity": 120,
+        "Core Exposure": 30,
+        "Salvage Potential": "70-100",
+        "Visual Range": "16",
+        "Armament": [
+            "Enh. Gamma Rifle",
+            "Enh. Gamma Rifle"
+        ],
+        "Components": [
+            "Imp. Quantum Reactor",
+            "Imp. Quantum Reactor",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Exp. Cooling System",
+            "Exp. Energy Well",
+            "Exp. Target Analyzer",
+            "Exp. Focal Shield",
+            "Thermal Barrier",
+            "Imp. Energy Mantle",
+            "Antimissile System"
+        ],
+        "Resistances": {
+            "Kinetic": 30,
+            "Thermal": 50,
+            "Explosive": 75,
+            "Electromagnetic": 90
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "Enhanced Q-Series": {
+        "Description": "(Not Lore) This is the base form of an enhanced Q-series bot. Like regular Q-series, they have a large number of random combinations of weapons and items.",
+        "Class": "Q-Series (Prototype)",
+        "Size": "Large",
+        "Rating": "125",
+        "Value": 300,
+        "Movement": "Walking (90)",
+        "Core Integrity": 120,
+        "Core Exposure": 30,
+        "Salvage Potential": "90-150",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Quantum Reactor",
+            "Imp. Quantum Reactor",
+            "Exp. Biometal Leg",
+            "Exp. Biometal Leg",
+            "Exp. Biometal Leg",
+            "Exp. Heat Sink",
+            "Exp. Cooling System",
+            "Exp. Core Analyzer",
+            "Exp. Core Shielding",
+            "Centrium Medium Armor Plating",
+            "Adv. Dynamic Insulation System"
+        ],
+        "Resistances": {
+        },
+        "Immunities": [
+            "Hacking",
+            "Jamming"
+        ]
+    },
+    "Enhanced Sentry": {
+        "Description": "",
+        "Class": "Sentry (Prototype)",
+        "Size": "Large",
+        "Rating": "151",
+        "Value": 200,
+        "Movement": " ()",
+        "Core Integrity": 0,
+        "Core Exposure": 0,
+        "Salvage Potential": "",
+        "Visual Range": "16",
+        "Armament": [
+            "Lrn. Gatling Laser",
+            "Lrn. Gatling Laser",
+            "Hvy. Hardcell Cannon"
+        ],
+        "Components": [
+            "Imp. Quantum Reactor",
+            "Adv. Medium Treads",
+            "Adv. Heavy Treads",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Exp. Core Shielding",
+            "Exp. Powered Armor",
+            "Exp. Powered Armor",
+            "Antimissile System"
+        ],
+        "Resistances": {
+            "Explosive": 50,
+            "Electromagnetic": 50
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption"
+        ]
+    },
+    "EX-BIN": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "79",
+        "Value": 1,
+        "Movement": "Hovering (56)",
+        "Core Integrity": 30,
+        "Core Exposure": 40,
+        "Salvage Potential": "20-30",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Cold Fusion Reactor",
+            "Mak. Hover Unit",
+            "Mak. Hover Unit",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "Adv. Component Analysis Suite",
+            "System Purifier"
+        ],
+        "Resistances": {
+            "Electromagnetic": 90
+        },
+        "Immunities": [
+            "Disruption",
+            "Hacking",
+            "Jamming"
+        ]
+    },
+    "EX-DEC": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "109",
+        "Value": 1,
+        "Movement": "Hovering (80)",
+        "Core Integrity": 50,
+        "Core Exposure": 19,
+        "Salvage Potential": "20-30",
+        "Visual Range": "16",
+        "Armament": [
+            "AWS/EX-DEC"
+        ],
+        "Components": [
+            "Hvy. Deuterium Engine",
+            "Cmb. Antigrav System",
+            "Adv. Launcher Guidance Computer",
+            "Imp. Target Analyzer",
+            "Imp. Armor Integrity Analyzer",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2"
+        ],
+        "Resistances": {
+            "Electromagnetic": 90
+        },
+        "Immunities": [
+            "Disruption",
+            "Hacking",
+            "Jamming"
+        ]
+    },
+    "EX-HEX": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "85",
+        "Value": 1,
+        "Movement": "Hovering (60)",
+        "Core Integrity": 30,
+        "Core Exposure": 40,
+        "Salvage Potential": "20-30",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Neutrino Core",
+            "Gravmag Array",
+            "Adv. Transmission Jammer",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 1",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "EX Chip 2",
+            "Corruption Screen",
+            "Adv. Recalibrator"
+        ],
+        "Resistances": {
+            "Electromagnetic": 90
+        },
+        "Immunities": [
+            "Disruption",
+            "Hacking",
+            "Jamming"
+        ]
     },
     "Executioner": {
         "Description": "The Executioner is a prototype for a new class of combat robot armed with dual helical railgun prototypes, capable of piercing targets at extreme range with extreme accuracy, often bypassing any and all armor to strike the target's core directly.",
@@ -1304,6 +2543,279 @@
         },
         "Traits": [
             "Heat Emission (150)"
+        ]
+    },
+    "G-34 Mercenary": {
+        "Description": "G-series grunts serve as low-level front-line combat units, of sturdy construction but with fairly weak armament. Internal systems are not as protected as they could be, to enable rapid repair in the field, but this also makes them somewhat susceptible to additional damage from electromagnetic attacks. Grunts patrol in groups, or sometimes operate alone as hauler escorts to protect those with more valuable cargo.",
+        "Class": "Grunt",
+        "Size": "Medium",
+        "Rating": "8",
+        "Value": 34,
+        "Movement": "Walking (120)",
+        "Core Integrity": 15,
+        "Core Exposure": 39,
+        "Salvage Potential": "30-50",
+        "Visual Range": "16",
+        "Armament": [
+            "Sml. Laser"
+        ],
+        "Components": [
+            "Ion Engine",
+            "Aluminum Leg",
+            "Aluminum Leg",
+            "Heat Sink"
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        }
+    },
+    "G-47 Trooper": {
+        "Description": "The G-47 Trooper replaces the G-34's laser with a more effective particle gun. However, during prolonged confrontations the G-47 is prone to overheating as its upgraded weaponry produces more heat than the design can fully dissipate.",
+        "Class": "Grunt",
+        "Size": "Medium",
+        "Rating": "16",
+        "Value": 47,
+        "Movement": "Walking (120)",
+        "Core Integrity": 30,
+        "Core Exposure": 39,
+        "Salvage Potential": "40-60",
+        "Visual Range": "14",
+        "Armament": [
+            "Particle Gun"
+        ],
+        "Components": [
+            "Lgt. Nuclear Core",
+            "Aluminum Leg",
+            "Aluminum Leg",
+            "Imp. Heat Sink"
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        }
+    },
+    "G-50 Soldier": {
+        "Description": "G-50 Soldiers are each equipped with a heavy laser, a significant upgrade from its predecessor the G-47, but like the G-47 are prone to overheating. Also still somewhat weak against electromagnetic attacks.",
+        "Class": "Grunt",
+        "Size": "Medium",
+        "Rating": "29",
+        "Value": 50,
+        "Movement": "Walking (120)",
+        "Core Integrity": 45,
+        "Core Exposure": 39,
+        "Salvage Potential": "50-70",
+        "Visual Range": "16",
+        "Armament": [
+            "Hvy. Laser"
+        ],
+        "Components": [
+            "Lgt. Angular Momentum Engine",
+            "Carbon-fiber Leg",
+            "Carbon-fiber Leg",
+            "Adv. Heat Sink"
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        }
+    },
+    "G-67 Veteran": {
+        "Description": "The first G-series robot armed with two thermal weapons, while integrating enough advanced heat sinks to fire them non-stop.",
+        "Class": "Grunt",
+        "Size": "Medium",
+        "Rating": "47",
+        "Value": 67,
+        "Movement": "Walking (120)",
+        "Core Integrity": 60,
+        "Core Exposure": 39,
+        "Salvage Potential": "60-85",
+        "Visual Range": "16",
+        "Armament": [
+            "Electrolaser",
+            "Plasma Rifle"
+        ],
+        "Components": [
+            "Lgt. Antimatter Reactor",
+            "Flexi-carbon Leg",
+            "Flexi-carbon Leg",
+            "Adv. Heat Sink",
+            "Adv. Heat Sink"
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        }
+    },
+    "G-73 Veteran": {
+        "Description": "The latest G-series implementation, armed with a powerful phase gun supported by a secondary heavy laser. While not exceptionally effective in single combat, the G-73 is much more formidable in groups, as they normally operate.",
+        "Class": "Grunt",
+        "Size": "Medium",
+        "Rating": "58",
+        "Value": 73,
+        "Movement": "Walking (120)",
+        "Core Integrity": 70,
+        "Core Exposure": 39,
+        "Salvage Potential": "70-100",
+        "Visual Range": "16",
+        "Armament": [
+            "Hvy. Laser",
+            "Phase Gun"
+        ],
+        "Components": [
+            "Lgt. Quantum Reactor",
+            "Myomer Leg",
+            "Myomer Leg",
+            "Adv. Heat Sink",
+            "Adv. Heat Sink"
+        ],
+        "Resistances": {
+            "Electromagnetic": -25
+        }
+    },
+    "God Mode": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "367",
+        "Value": 2000,
+        "Movement": "Treading (160)",
+        "Core Integrity": 1000,
+        "Core Exposure": 40,
+        "Salvage Potential": "500-1000",
+        "Visual Range": "20",
+        "Armament": [
+            "Hvy. Beamcaster",
+            "Hvy. Beamcaster",
+            "Bore Cannon",
+            "Bore Cannon",
+            "Micro-nuke Launcher"
+        ],
+        "Components": [
+            "Antimatter Reactor",
+            "Antimatter Reactor",
+            "Antimatter Reactor",
+            "Antimatter Reactor",
+            "Hvy. Treads",
+            "Hvy. Treads",
+            "Hvy. Treads",
+            "Hvy. Treads",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Adv. Energy Well",
+            "Enh. Optical Array",
+            "Recoil Nullifier",
+            "Imp. Core Shielding",
+            "Imp. Weapon Shielding",
+            "Hvy. Reflective Plating",
+            "Adv. Focal Shield",
+            "Shock Absorption System"
+        ],
+        "Resistances": {
+            "Kinetic": 30,
+            "Thermal": 25,
+            "Explosive": 25,
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Disruption",
+            "Hacking",
+            "Jamming",
+            "Meltdown"
+        ]
+    },
+    "God Mode (Fake)": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "158",
+        "Value": 1,
+        "Movement": "Treading (160)",
+        "Core Integrity": 200,
+        "Core Exposure": 39,
+        "Salvage Potential": "200-400",
+        "Visual Range": "20",
+        "Armament": [
+            "Slug Cannon",
+            "Slug Cannon",
+            "Slug Cannon",
+            "Slug Cannon",
+            "Slug Cannon"
+        ],
+        "Components": [
+            "Antimatter Reactor",
+            "Antimatter Reactor",
+            "Antimatter Reactor",
+            "Hvy. Treads",
+            "Hvy. Treads",
+            "Hvy. Treads",
+            "Imp. Cooling System",
+            "Imp. Cooling System",
+            "Imp. Energy Well",
+            "Adv. Visual Processing Unit",
+            "Imp. Targeting Computer",
+            "Recoil Stabilizer",
+            "Core Shielding",
+            "Weapon Shielding",
+            "Hvy. Armor Plating",
+            "Imp. Focal Shield",
+            "Shock Absorption System"
+        ],
+        "Resistances": {
+            "Kinetic": 25,
+            "Explosive": 25,
+            "Electromagnetic": 50
+        },
+        "Immunities": [
+            "Hacking",
+            "Jamming"
+        ]
+    },
+    "Golem": {
+        "Description": "",
+        "Class": "Golem (Derelict)",
+        "Size": "Large",
+        "Rating": "243",
+        "Value": 250,
+        "Movement": "Walking (136)",
+        "Core Integrity": 200,
+        "Core Exposure": 9,
+        "Salvage Potential": "80-120",
+        "Visual Range": "16",
+        "Armament": [
+            "Asb. Focal Cannon",
+            "Asb. Focal Cannon",
+            "Asb. Focal Cannon"
+        ],
+        "Components": [
+            "Asb. Flux Generator",
+            "Asb. Alloy Leg",
+            "Asb. Alloy Leg",
+            "Asb. Nanovents",
+            "Asb. Nanovents",
+            "Asb. Nanovents",
+            "Asb. Nanovents",
+            "Asb. Biocell Array",
+            "Asb. Biocell Array",
+            "Asb. Suspension Frame",
+            "Asb. Suspension Frame",
+            "Asb. Metafiber Network",
+            "Asb. Alloy Armor",
+            "Asb. Alloy Armor",
+            "Asb. Alloy Armor",
+            "Asb. Alloy Armor",
+            "GOLEM Unit"
+        ],
+        "Resistances": {
+            "Kinetic": 15,
+            "Thermal": 15,
+            "Explosive": 15,
+            "Electromagnetic": 15,
+            "Impact": -10,
+            "Slashing": -10,
+            "Piercing": -10
+        },
+        "Immunities": [
+            "Disruption",
+            "Hacking"
         ]
     },
     "Guerrilla (5)": {
@@ -1491,163 +3003,6 @@
             "Scan Cloak (4)"
         ]
     },
-    "Investigator": {
-        "Description": "Investigators are built specifically to oversee the testing of dangerous prototypes, and are therefore capable of holding multiple threats in place while supporting units deal with them.",
-        "Class": "Researcher (Prototype)",
-        "Size": "Medium",
-        "Rating": "83",
-        "Value": 70,
-        "Movement": "Hovering (60)",
-        "Core Integrity": 60,
-        "Core Exposure": 40,
-        "Salvage Potential": "60-80",
-        "Visual Range": "16",
-        "Armament": [
-            "Containment Facilitator",
-            "Exp. Stasis Projector"
-        ],
-        "Components": [
-            "Lgt. Quantum Reactor",
-            "Antigrav Array",
-            "Sml. Storage Unit",
-            "Adv. Component Analysis Suite",
-            "Corruption Screen"
-        ],
-        "Resistances": {
-            "Thermal": 25,
-            "Electromagnetic": -50,
-            "Impact": -25,
-            "Slashing": -25,
-            "Piercing": -25
-        },
-        "Immunities": [
-            "Jamming"
-        ]
-    },
-    "G-34 Mercenary": {
-        "Description": "G-series grunts serve as low-level front-line combat units, of sturdy construction but with fairly weak armament. Internal systems are not as protected as they could be, to enable rapid repair in the field, but this also makes them somewhat susceptible to additional damage from electromagnetic attacks. Grunts patrol in groups, or sometimes operate alone as hauler escorts to protect those with more valuable cargo.",
-        "Class": "Grunt",
-        "Size": "Medium",
-        "Rating": "8",
-        "Value": 34,
-        "Movement": "Walking (120)",
-        "Core Integrity": 15,
-        "Core Exposure": 39,
-        "Salvage Potential": "30-50",
-        "Visual Range": "16",
-        "Armament": [
-            "Sml. Laser"
-        ],
-        "Components": [
-            "Ion Engine",
-            "Aluminum Leg",
-            "Aluminum Leg",
-            "Heat Sink"
-        ],
-        "Resistances": {
-            "Electromagnetic": -25
-        }
-    },
-    "G-47 Trooper": {
-        "Description": "The G-47 Trooper replaces the G-34's laser with a more effective particle gun. However, during prolonged confrontations the G-47 is prone to overheating as its upgraded weaponry produces more heat than the design can fully dissipate.",
-        "Class": "Grunt",
-        "Size": "Medium",
-        "Rating": "16",
-        "Value": 47,
-        "Movement": "Walking (120)",
-        "Core Integrity": 30,
-        "Core Exposure": 39,
-        "Salvage Potential": "40-60",
-        "Visual Range": "14",
-        "Armament": [
-            "Particle Gun"
-        ],
-        "Components": [
-            "Lgt. Nuclear Core",
-            "Aluminum Leg",
-            "Aluminum Leg",
-            "Imp. Heat Sink"
-        ],
-        "Resistances": {
-            "Electromagnetic": -25
-        }
-    },
-    "G-50 Soldier": {
-        "Description": "G-50 Soldiers are each equipped with a heavy laser, a significant upgrade from its predecessor the G-47, but like the G-47 are prone to overheating. Also still somewhat weak against electromagnetic attacks.",
-        "Class": "Grunt",
-        "Size": "Medium",
-        "Rating": "29",
-        "Value": 50,
-        "Movement": "Walking (120)",
-        "Core Integrity": 45,
-        "Core Exposure": 39,
-        "Salvage Potential": "50-70",
-        "Visual Range": "16",
-        "Armament": [
-            "Hvy. Laser"
-        ],
-        "Components": [
-            "Lgt. Angular Momentum Engine",
-            "Carbon-fiber Leg",
-            "Carbon-fiber Leg",
-            "Adv. Heat Sink"
-        ],
-        "Resistances": {
-            "Electromagnetic": -25
-        }
-    },
-    "G-67 Veteran": {
-        "Description": "The first G-series robot armed with two thermal weapons, while integrating enough advanced heat sinks to fire them non-stop.",
-        "Class": "Grunt",
-        "Size": "Medium",
-        "Rating": "47",
-        "Value": 67,
-        "Movement": "Walking (120)",
-        "Core Integrity": 60,
-        "Core Exposure": 39,
-        "Salvage Potential": "60-85",
-        "Visual Range": "16",
-        "Armament": [
-            "Electrolaser",
-            "Plasma Rifle"
-        ],
-        "Components": [
-            "Lgt. Antimatter Reactor",
-            "Flexi-carbon Leg",
-            "Flexi-carbon Leg",
-            "Adv. Heat Sink",
-            "Adv. Heat Sink"
-        ],
-        "Resistances": {
-            "Electromagnetic": -25
-        }
-    },
-    "G-73 Veteran": {
-        "Description": "The latest G-series implementation, armed with a powerful phase gun supported by a secondary heavy laser. While not exceptionally effective in single combat, the G-73 is much more formidable in groups, as they normally operate.",
-        "Class": "Grunt",
-        "Size": "Medium",
-        "Rating": "58",
-        "Value": 73,
-        "Movement": "Walking (120)",
-        "Core Integrity": 70,
-        "Core Exposure": 39,
-        "Salvage Potential": "70-100",
-        "Visual Range": "16",
-        "Armament": [
-            "Hvy. Laser",
-            "Phase Gun"
-        ],
-        "Components": [
-            "Lgt. Quantum Reactor",
-            "Myomer Leg",
-            "Myomer Leg",
-            "Adv. Heat Sink",
-            "Adv. Heat Sink"
-        ],
-        "Resistances": {
-            "Electromagnetic": -25
-        }
-    },
     "Hacking Drone": {
         "Description": "",
         "Class": "Drone",
@@ -1674,6 +3029,45 @@
         },
         "Immunities": [
             "Hacking"
+        ]
+    },
+    "Hydra": {
+        "Description": "Yet another Derelict Prototype, though this one doesn't yet appear to have reached an operational state. A six-headed monstrosity, each mounted with a single heavy battle rifle? I'm not sure where the Tinkerers are coming up with the wild ideas for their prototypes, but I have a hunch that at some point they raided the Cetus Mainframe.",
+        "Class": "Hydra (Derelict)",
+        "Size": "Large",
+        "Rating": "138",
+        "Value": 250,
+        "Movement": "Treading (160)",
+        "Core Integrity": 160,
+        "Core Exposure": 19,
+        "Salvage Potential": "130-200",
+        "Visual Range": "16",
+        "Armament": [
+            "Hvy. Battle Rifle",
+            "Hvy. Battle Rifle",
+            "Hvy. Battle Rifle",
+            "Hvy. Battle Rifle"
+        ],
+        "Components": [
+            "Particle Reactor",
+            "Hvy. Treads",
+            "Hvy. Treads",
+            "Imp. Cooling System",
+            "Imp. Cooling System",
+            "Imp. Cooling System",
+            "Matter Compressor",
+            "Imp. Target Analyzer",
+            "Recoil Nullifier",
+            "Matter Filter",
+            "Imp. Weapon Cycler",
+            "Lyr. Heavy Armor Plating"
+        ],
+        "Resistances": {
+            "Electromagnetic": 75
+        },
+        "Immunities": [
+            "Coring",
+            "Meltdown"
         ]
     },
     "I-25 Savior": {
@@ -1759,6 +3153,78 @@
             "Thermal": 25
         }
     },
+    "Imprinter": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "59",
+        "Value": 1,
+        "Movement": "Hovering (52)",
+        "Core Integrity": 60,
+        "Core Exposure": 60,
+        "Salvage Potential": "30-40",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "F-cell Engine",
+            "Mak. Hover Unit",
+            "Mak. Hover Unit",
+            "Mak. Hover Unit",
+            "Mak. Sensor Array",
+            "Mak. Hacking Suite",
+            "Mak. Hacking Suite",
+            "Mak. Hacking Suite",
+            "Mak. Hacking Suite",
+            "Mak. System Shield",
+            "Mak. System Shield",
+            "Mak. System Shield",
+            "Mak. System Shield"
+        ],
+        "Resistances": {
+            "Electromagnetic": 90
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Hacking",
+            "Jamming",
+            "Meltdown"
+        ]
+    },
+    "Investigator": {
+        "Description": "Investigators are built specifically to oversee the testing of dangerous prototypes, and are therefore capable of holding multiple threats in place while supporting units deal with them.",
+        "Class": "Researcher (Prototype)",
+        "Size": "Medium",
+        "Rating": "83",
+        "Value": 70,
+        "Movement": "Hovering (60)",
+        "Core Integrity": 60,
+        "Core Exposure": 40,
+        "Salvage Potential": "60-80",
+        "Visual Range": "16",
+        "Armament": [
+            "Containment Facilitator",
+            "Exp. Stasis Projector"
+        ],
+        "Components": [
+            "Lgt. Quantum Reactor",
+            "Antigrav Array",
+            "Sml. Storage Unit",
+            "Adv. Component Analysis Suite",
+            "Corruption Screen"
+        ],
+        "Resistances": {
+            "Thermal": 25,
+            "Electromagnetic": -50,
+            "Impact": -25,
+            "Slashing": -25,
+            "Piercing": -25
+        },
+        "Immunities": [
+            "Jamming"
+        ]
+    },
     "K-01 Serf": {
         "Description": "K-class workers perform menial tasks such as clearing debris to facilitate work by other robots. Their built-in compact recycling unit can break down almost any form of debris into reusable matter. As K-01 Serfs are extremely cheap to produce and perform no vital function, despite their size they are among the weakest robot designs with the most exposed core.",
         "Class": "Worker",
@@ -1783,6 +3249,38 @@
         "Resistances": {
             "Electromagnetic": -25
         }
+    },
+    "Knight": {
+        "Description": "A rumored Derelict Prototype still under construction, supposedly to be armed with a single Particle Cleaver of unparalleled slicing power. I hope to see this one in action and perhaps replicate its design.",
+        "Class": "Knight (Derelict)",
+        "Size": "Large",
+        "Rating": "79",
+        "Value": 250,
+        "Movement": "Walking (110)",
+        "Core Integrity": 100,
+        "Core Exposure": 24,
+        "Salvage Potential": "90-130",
+        "Visual Range": "16",
+        "Armament": [
+            "Particle Cleaver"
+        ],
+        "Components": [
+            "Particle Reactor",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Exp. Melee Analysis Suite",
+            "Imp. Weapon Shielding",
+            "Lyr. Medium Armor Plating",
+            "Hvy. Reflective Plating"
+        ],
+        "Resistances": {
+            "Thermal": 25,
+            "Electromagnetic": 75
+        },
+        "Immunities": [
+            "Coring",
+            "Meltdown"
+        ]
     },
     "L-31 Rogue": {
         "Description": "L-series duelists are a melee variant of the grunt class, engaging targets at close range with the support of ranged combat units. They lack the broad protection of the brawler class' armor, but feature an extra layer of dedicated core armor. They are highly accurate with their katana and capable of quickly reducing an opponent's effectiveness by slashing exposed components clean off.",
@@ -1900,6 +3398,69 @@
         ],
         "Traits": [
             "Scan Cloak (4)"
+        ]
+    },
+    "LRC-V4": {
+        "Description": "",
+        "Class": "LRC (Prototype)",
+        "Size": "Medium",
+        "Rating": "50",
+        "Value": 0,
+        "Movement": "Immobile",
+        "Core Integrity": 1000,
+        "Core Exposure": 100,
+        "Salvage Potential": "0-0",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+        ],
+        "Resistances": {
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "LRC-V5": {
+        "Description": "",
+        "Class": "LRC (Prototype)",
+        "Size": "Medium",
+        "Rating": "80",
+        "Value": 0,
+        "Movement": "Immobile",
+        "Core Integrity": 1000,
+        "Core Exposure": 100,
+        "Salvage Potential": "0-0",
+        "Visual Range": "18",
+        "Armament": [
+        ],
+        "Components": [
+        ],
+        "Resistances": {
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
+    "LRC-V6": {
+        "Description": "",
+        "Class": "LRC (Prototype)",
+        "Size": "Medium",
+        "Rating": "160",
+        "Value": 0,
+        "Movement": "Immobile",
+        "Core Integrity": 1000,
+        "Core Exposure": 100,
+        "Salvage Potential": "0-0",
+        "Visual Range": "20",
+        "Armament": [
+        ],
+        "Components": [
+        ],
+        "Resistances": {
+        },
+        "Immunities": [
+            "Hacking"
         ]
     },
     "M Guard": {
@@ -2123,6 +3684,105 @@
             "Adv. Recalibrator"
         ]
     },
+    "MAIN.C": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "313",
+        "Value": 1,
+        "Movement": "Hovering (34)",
+        "Core Integrity": 500,
+        "Core Exposure": 24,
+        "Salvage Potential": "150-300",
+        "Visual Range": "22",
+        "Armament": [
+            "Imp. Heavy Machine Gun",
+            "Imp. Heavy Machine Gun",
+            "Imp. Heavy Machine Gun",
+            "Imp. Heavy Machine Gun",
+            "Omega Cannon"
+        ],
+        "Components": [
+            "Zero-point Reactor",
+            "Zero-point Reactor",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Exp. Matter Compressor",
+            "Dimensional Manipulator",
+            "Enh. Optical Array",
+            "Exp. Targeting Computer",
+            "Exp. Target Analyzer",
+            "Exp. Propulsion Shielding",
+            "Exp. Weapon Shielding",
+            "Exp. Powered Armor",
+            "Exp. Powered Armor",
+            "Beam Splitter",
+            "Exp. Shock Absorption System",
+            "Antimissile System"
+        ],
+        "Resistances": {
+            "Thermal": 75,
+            "Explosive": 75,
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Disruption",
+            "Hacking",
+            "Jamming",
+            "Meltdown"
+        ],
+        "Traits": [
+            "Core Regeneration (5)"
+        ]
+    },
+    "MAIN.C (Shell)": {
+        "Description": "Ha ha ha.",
+        "Class": "Special",
+        "Size": "Huge",
+        "Rating": "333",
+        "Value": 1,
+        "Movement": "Treading (160)",
+        "Core Integrity": 500,
+        "Core Exposure": 24,
+        "Salvage Potential": "500-1000",
+        "Visual Range": "22",
+        "Armament": [
+            "Hvy. Quantum Rifle",
+            "Hvy. Quantum Rifle",
+            "Hpw. Disruptor Cannon",
+            "Hpw. Disruptor Cannon"
+        ],
+        "Components": [
+            "Singularity Reactor",
+            "Hdn. Centrium Heavy Treads",
+            "Hdn. Centrium Heavy Treads",
+            "Coolant Network",
+            "Coolant Network",
+            "Exp. Energy Well",
+            "Enh. Optical Array",
+            "Centrium Heavy Armor Plating",
+            "Centrium Heavy Armor Plating"
+        ],
+        "Resistances": {
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Disruption",
+            "Hacking",
+            "Jamming",
+            "Meltdown"
+        ],
+        "Traits": [
+            "Core Regeneration (5)"
+        ]
+    },
     "Mapping Drone": {
         "Description": "",
         "Class": "Drone",
@@ -2304,6 +3964,53 @@
         },
         "Traits": [
             "Scan Cloak (4)"
+        ]
+    },
+    "ME-RLN": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "157",
+        "Value": 1,
+        "Movement": "Hovering (42)",
+        "Core Integrity": 100,
+        "Core Exposure": 14,
+        "Salvage Potential": "100-120",
+        "Visual Range": "16",
+        "Armament": [
+            "Imp. Arc Thrower",
+            "Imp. Arc Thrower",
+            "ME-RLN's Wand"
+        ],
+        "Components": [
+            "Cld. Antimatter Reactor",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Exp. Cooling System",
+            "Adv. Energy Well",
+            "Adv. Energy Well",
+            "Exp. Phase Shifter",
+            "Imp. Cloaking Device",
+            "ME-RLN's Chromatic Screen",
+            "System Mapper",
+            "System Mapper",
+            "Ghost Barrier"
+        ],
+        "Resistances": {
+            "Kinetic": 20,
+            "Thermal": 20,
+            "Explosive": 45,
+            "Electromagnetic": 95,
+            "Impact": 20,
+            "Slashing": 20,
+            "Piercing": 20
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Hacking",
+            "Meltdown"
         ]
     },
     "Minesniffer Drone": {
@@ -2627,6 +4334,46 @@
             "Electromagnetic": -100
         }
     },
+    "NK-0LA": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "146",
+        "Value": 1,
+        "Movement": "Walking (100)",
+        "Core Integrity": 110,
+        "Core Exposure": 14,
+        "Salvage Potential": "100-120",
+        "Visual Range": "16",
+        "Armament": [
+            "NK-0LA's Tesla Doomcannon"
+        ],
+        "Components": [
+            "Graviton Reactor",
+            "Enh. Biometal Leg",
+            "Enh. Biometal Leg",
+            "Adv. Power Amplifier",
+            "Adv. Cryofiber Web",
+            "Exp. Heat Sink",
+            "Exp. Heat Sink",
+            "Exp. Heat Sink",
+            "Exp. Energy Well",
+            "Exp. Energy Well",
+            "Reflective Plating",
+            "Reflective Plating",
+            "Thermal Barrier",
+            "EM Disruption Field"
+        ],
+        "Resistances": {
+            "Thermal": 50,
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Meltdown"
+        ]
+    },
     "O-16 Technician": {
         "Description": "O-series operators manage local robot activity and machine processes via dedicated terminals. They are also capable of hacking and repurposing errant derelicts, but faced with an armed threat will instead call for reinforcements, lock their terminal to protect it, and attempt to escape before their unique data core can be poached by hostiles. O-16 Technicians are not built for combat, thus their sensitive systems are especially susceptible to electromagnetic damage.",
         "Class": "Operator",
@@ -2812,6 +4559,51 @@
             "Hacking"
         ]
     },
+    "P1-3CE": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Large",
+        "Rating": "163",
+        "Value": 1,
+        "Movement": "Treading (160)",
+        "Core Integrity": 170,
+        "Core Exposure": 19,
+        "Salvage Potential": "100-120",
+        "Visual Range": "22",
+        "Armament": [
+            "P1-3CE's Gatling Flakker"
+        ],
+        "Components": [
+            "Quantum Reactor",
+            "Spk. Heavy Treads",
+            "Spk. Heavy Treads",
+            "Imp. Heat Sink",
+            "Adv. Cooling System",
+            "Disposable Heat Sink",
+            "Med. Storage Unit",
+            "Hcp. Battery",
+            "Adv. Matter Compressor",
+            "Enh. Optical Array",
+            "Exp. Targeting Computer",
+            "Exp. Core Analyzer",
+            "Imp. Armor Integrity Analyzer",
+            "Matter Filter",
+            "Weapon Cycler",
+            "Med. Reactive Plating",
+            "EM Shield",
+            "Exp. Hacking Suite",
+            "Tractor Beam"
+        ],
+        "Resistances": {
+            "Kinetic": 30,
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Meltdown"
+        ]
+    },
     "Packrat": {
         "Description": "Packrats are sent out by their derelict owners to collect useful components for later reuse, especially those that derelicts are incapable of manufacturing locally. They are especially weak against electromagnetic attacks, and are disabled by programmers on sight.",
         "Class": "Packrat (Derelict)",
@@ -2861,6 +4653,63 @@
         "Traits": [
             "Energy Drain (50)"
         ]
+    },
+    "Perun": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "131",
+        "Value": 1,
+        "Movement": "Walking (100)",
+        "Core Integrity": 200,
+        "Core Exposure": 24,
+        "Salvage Potential": "80-105",
+        "Visual Range": "16",
+        "Armament": [
+            "Imp. Arc Thrower",
+            "Imp. Arc Thrower",
+            "Imp. Arc Thrower"
+        ],
+        "Components": [
+            "Com. Particle Reactor",
+            "Enh. Biometal Leg",
+            "Enh. Biometal Leg",
+            "Adv. Heat Sink",
+            "Exp. Energy Well",
+            "Adv. Targeting Computer",
+            "Adv. Powered Armor",
+            "Adv. Dynamic Insulation System"
+        ],
+        "Resistances": {
+            "Explosive": 50,
+            "Slashing": -50
+        },
+        "Immunities": [
+            "Jamming"
+        ]
+    },
+    "PL-HR7": {
+        "Description": "",
+        "Class": "Tinkerer (Derelict)",
+        "Size": "Medium",
+        "Rating": "21",
+        "Value": 0,
+        "Movement": "Hovering (60)",
+        "Core Integrity": 30,
+        "Core Exposure": 40,
+        "Salvage Potential": "10-30",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Nuclear Core",
+            "Gravmag System",
+            "Component Analysis Suite",
+            "Recalibrator"
+        ],
+        "Resistances": {
+            "Electromagnetic": -50
+        }
     },
     "Protovariant Demolisher": {
         "Description": "* 100 with Exp. Shock Absorption System, otherwise 50",
@@ -3337,6 +5186,111 @@
             "Electromagnetic": -25
         }
     },
+    "Revision": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Medium",
+        "Rating": "63",
+        "Value": 73,
+        "Movement": "Walking (120)",
+        "Core Integrity": 70,
+        "Core Exposure": 29,
+        "Salvage Potential": "70-100",
+        "Visual Range": "16",
+        "Armament": [
+            "Plasma Rifle",
+            "Variable Charge Gun"
+        ],
+        "Components": [
+            "Lgt. Particle Reactor",
+            "Flexi-carbon Leg",
+            "Flexi-carbon Leg",
+            "Adv. Heat Sink",
+            "Adv. Heat Sink",
+            "Com. Battery",
+            "Imp. Targeting Computer",
+            "Lyr. Medium Armor Plating"
+        ],
+        "Resistances": {
+            "Thermal": 25,
+            "Electromagnetic": 25
+        },
+        "Immunities": [
+            "Meltdown"
+        ]
+    },
+    "Revision 17": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Small",
+        "Rating": "49",
+        "Value": 1,
+        "Movement": "Flying (37)",
+        "Core Integrity": 12,
+        "Core Exposure": 39,
+        "Salvage Potential": "10-30",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Neutrino Core",
+            "Field Propulsion Drive",
+            "Field Propulsion Drive",
+            "Weight Redist. System",
+            "Enh. Optical Array",
+            "Lrn. Sensor Array",
+            "Adv. Signal Interpreter",
+            "Adv. ECM Suite",
+            "Adv. Hacking Suite",
+            "Imp. System Shield"
+        ],
+        "Resistances": {
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking",
+            "Jamming"
+        ]
+    },
+    "Revision 17++": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "141",
+        "Value": 0,
+        "Movement": "Walking (120)",
+        "Core Integrity": 25,
+        "Core Exposure": 25,
+        "Salvage Potential": "70-100",
+        "Visual Range": "16",
+        "Armament": [
+            "Quantum Rifle",
+            "Linear Accelerator",
+            "Linear Accelerator"
+        ],
+        "Components": [
+            "Lgt. Particle Reactor",
+            "Lgt. Particle Reactor",
+            "Centrium Leg",
+            "Centrium Leg",
+            "Adv. Cooling System",
+            "Quantum Shading Machine",
+            "Adv. Targeting Computer",
+            "Centrium Medium Armor Plating",
+            "Hvy. Reflective Plating"
+        ],
+        "Resistances": {
+            "Thermal": 25,
+            "Electromagnetic": 75
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Hacking",
+            "Jamming",
+            "Meltdown"
+        ]
+    },
     "S-7 Guard": {
         "Description": "S7 Guards are the first variant in a new line of sentry frames, better fulfilling their purpose with built-in resistance to most forms of damage, and self-regenerating armor to ensure long-term defense of a position until reinforcements can arrive.",
         "Class": "Sentry (Prototype)",
@@ -3556,6 +5510,42 @@
             "Hacking"
         ]
     },
+    "Sigix Warrior": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "1075",
+        "Value": 1,
+        "Movement": "Walking (30)",
+        "Core Integrity": 100,
+        "Core Exposure": 0,
+        "Salvage Potential": "70-100",
+        "Visual Range": "16",
+        "Armament": [
+            "Sigix Quantum Sheargun",
+            "Sigix Quantum Sheargun"
+        ],
+        "Components": [
+            "Sigix Exoskeleton"
+        ],
+        "Resistances": {
+            "Kinetic": 50,
+            "Thermal": 50,
+            "Explosive": 50,
+            "Electromagnetic": 100,
+            "Impact": -50,
+            "Slashing": -50,
+            "Piercing": -50
+        },
+        "Immunities": [
+            "Criticals",
+            "Dismemberment",
+            "Disruption",
+            "Hacking",
+            "Jamming",
+            "Meltdown"
+        ]
+    },
     "Stealth Drone": {
         "Description": "",
         "Class": "Drone",
@@ -3735,6 +5725,60 @@
         ],
         "Resistances": {
         }
+    },
+    "Surveybot 24": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "13",
+        "Value": 1,
+        "Movement": "Hovering (60)",
+        "Core Integrity": 30,
+        "Core Exposure": 39,
+        "Salvage Potential": "10-30",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Nuclear Core",
+            "Gravmag System"
+        ],
+        "Resistances": {
+            "Electromagnetic": -50
+        }
+    },
+    "Svarog": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "113",
+        "Value": 1,
+        "Movement": "Walking (100)",
+        "Core Integrity": 200,
+        "Core Exposure": 24,
+        "Salvage Potential": "80-105",
+        "Visual Range": "16",
+        "Armament": [
+            "Nova Cannon",
+            "Nova Cannon"
+        ],
+        "Components": [
+            "Com. Particle Reactor",
+            "Enh. Biometal Leg",
+            "Enh. Biometal Leg",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Adv. Targeting Computer",
+            "Adv. Particle Charger",
+            "Adv. Powered Armor"
+        ],
+        "Resistances": {
+            "Explosive": 50,
+            "Slashing": -50
+        },
+        "Immunities": [
+            "Jamming"
+        ]
     },
     "Swarm Drone": {
         "Description": "",
@@ -3924,7 +5968,7 @@
         }
     },
     "Tracker": {
-        "Description": " Trackers are still new designs that may need more updates, but will no doubt become vital in the effort to protect my most important assets. Their built-in drive enables them to catch up to anything ever spotted coming out of the caves so far, and although they're equipped with valuable technology themselves, rather than harden them with armor and slow them down, Trackers have improved evasive capabilities to help avoid getting hit in the first place. The combination of rapid-fire Linked Autogun and Immobilizer for slowing fast targets will make Derelicts think twice before raiding upper 0b10 for spare parts.",
+        "Description": "Trackers are still new designs that may need more updates, but will no doubt become vital in the effort to protect my most important assets. Their built-in drive enables them to catch up to anything ever spotted coming out of the caves so far, and although they're equipped with valuable technology themselves, rather than harden them with armor and slow them down, Trackers have improved evasive capabilities to help avoid getting hit in the first place. The combination of rapid-fire Linked Autogun and Immobilizer for slowing fast targets will make Derelicts think twice before raiding upper 0b10 for spare parts.",
         "Class": "Drone",
         "Size": "Tiny",
         "Rating": "80",
@@ -3979,6 +6023,34 @@
         },
         "Immunities": [
             "Hacking"
+        ]
+    },
+    "Troll": {
+        "Description": "Probably the most unique robot born to Derelict creators, initial reports suggest the Troll is encased in an exoskeleton that provides perfect core protection and is capable of rapid regeneration. I doubt it's coincidence they have discovered such a new technology on their own; they must somehow have access to the Sigix regenerative materials lab. Further evidence of undiscovered security loopholes in the labs are its extremely fast shredding claws of pure Centrium.",
+        "Class": "Troll (Derelict)",
+        "Size": "Large",
+        "Rating": "90",
+        "Value": 250,
+        "Movement": "Walking (40)",
+        "Core Integrity": 250,
+        "Core Exposure": 100,
+        "Salvage Potential": "90-130",
+        "Visual Range": "16",
+        "Armament": [
+            "Centrium Claws"
+        ],
+        "Components": [
+            "T.R.O.L.L. Exoskeleton"
+        ],
+        "Resistances": {
+            "Electromagnetic": 75
+        },
+        "Immunities": [
+            "Criticals",
+            "Meltdown"
+        ],
+        "Traits": [
+            "Core Regeneration (20)"
         ]
     },
     "U-05 Engineer": {
@@ -4082,6 +6154,55 @@
             "Electromagnetic": -100
         }
     },
+    "Warbot": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Large",
+        "Rating": "99",
+        "Value": 0,
+        "Movement": "Treading (160)",
+        "Core Integrity": 200,
+        "Core Exposure": 19,
+        "Salvage Potential": "150-200",
+        "Visual Range": "16",
+        "Armament": [
+            "Battle Rifle",
+            "Battle Rifle",
+            "Battle Rifle",
+            "Battle Rifle",
+            "Mak. Shrapnel Gun",
+            "Mak. Shrapnel Gun"
+        ],
+        "Components": [
+            "Mak. Power Source",
+            "Spk. Treads",
+            "Spk. Treads",
+            "Spk. Treads",
+            "Heat Sink",
+            "Heat Sink",
+            "Heat Sink",
+            "Heat Sink",
+            "Targeting Computer",
+            "Targeting Computer",
+            "Targeting Computer",
+            "Weapon Cycler",
+            "Weapon Shielding",
+            "Weapon Shielding",
+            "Mak. Armor Plating",
+            "Mak. Armor Plating",
+            "Mak. Kinetic Plating",
+            "Mak. Thermal Plating",
+            "Mak. System Restoration Module"
+        ],
+        "Resistances": {
+            "Kinetic": 10,
+            "Thermal": 10
+        },
+        "Immunities": [
+            "Coring",
+            "Meltdown"
+        ]
+    },
     "Wardrone": {
         "Description": "",
         "Class": "Drone",
@@ -4117,6 +6238,431 @@
             "Hacking",
             "Meltdown"
         ]
+    },
+    "Warlord": {
+        "Description": "Everyone needs a good enemy.",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "219",
+        "Value": 2000,
+        "Movement": "Treading (170)",
+        "Core Integrity": 400,
+        "Core Exposure": 24,
+        "Salvage Potential": "150-300",
+        "Visual Range": "20",
+        "Armament": [
+            "Imp. Arc Thrower",
+            "Com. HERF Cannon",
+            "Hyp. Railgun"
+        ],
+        "Components": [
+            "Particle Reactor",
+            "Particle Reactor",
+            "Arm. Heavy Treads",
+            "Arm. Heavy Treads",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Adv. Energy Well",
+            "Enh. Optical Array",
+            "Exp. Targeting Computer",
+            "Imp. Phase Shifter",
+            "Imp. Weapon Shielding",
+            "Centrium Medium Armor Plating",
+            "Adv. Powered Armor",
+            "Adv. Thermal Shield"
+        ],
+        "Resistances": {
+            "Thermal": 30,
+            "Explosive": 50,
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Disruption",
+            "Hacking",
+            "Meltdown"
+        ]
+    },
+    "Warlord (Command)": {
+        "Description": "Everyone needs a good enemy.",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "274",
+        "Value": 1,
+        "Movement": "Treading (160)",
+        "Core Integrity": 500,
+        "Core Exposure": 24,
+        "Salvage Potential": "150-300",
+        "Visual Range": "20",
+        "Armament": [
+            "Blast Cannon",
+            "Blast Cannon"
+        ],
+        "Components": [
+            "Particle Reactor",
+            "Particle Reactor",
+            "Enh. Armored Heavy Treads",
+            "Enh. Armored Heavy Treads",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Enh. Optical Array",
+            "Exp. Targeting Computer",
+            "Adv. Phase Shifter",
+            "Exp. Weapon Shielding",
+            "Centrium Medium Armor Plating",
+            "Exp. Powered Armor",
+            "Adv. Thermal Shield",
+            "Lrn. Tractor Beam"
+        ],
+        "Resistances": {
+            "Thermal": 30,
+            "Explosive": 50,
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Disruption",
+            "Hacking",
+            "Meltdown"
+        ]
+    },
+    "Warlord 4Z-XS3": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "178",
+        "Value": 0,
+        "Movement": "Treading (160)",
+        "Core Integrity": 320,
+        "Core Exposure": 24,
+        "Salvage Potential": "150-300",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Dispersion Rifle", "Number": 2},
+                {"Name": "Imp. Arc Thrower", "Number": 2},
+                {"Name": "Phase Gun", "Number": 2}
+            ],
+            "Railgun",
+            [
+                {"Name": "Hardcell Cannon"},
+                {"Name": "Hvy. Neutron Cannon"}
+            ]
+        ],
+        "Components": [
+            "Antimatter Reactor",
+            "Antimatter Reactor",
+            "Hvy. Treads",
+            "Hvy. Treads",
+            "Adv. Cooling System",
+            "Adv. Coolant Injector",
+            "Adv. Coolant Injector",
+            "Imp. Weapon Cycler",
+            "Lyr. Heavy Armor Plating",
+            "Hvy. Reflective Plating"
+        ],
+        "Resistances": {
+            "Thermal": 25,
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Hacking",
+            "Meltdown"
+        ]
+    },
+    "Warlord AM-PH4": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "64",
+        "Value": 0,
+        "Movement": "Treading (200)",
+        "Core Integrity": 100,
+        "Core Exposure": 24,
+        "Salvage Potential": "150-300",
+        "Visual Range": "16",
+        "Armament": [
+            "Particle Gun",
+            "Particle Gun",
+            "Battle Rifle",
+            "Battle Rifle",
+            "Battle Cannon"
+        ],
+        "Components": [
+            "Imp. Ion Engine",
+            "Imp. Ion Engine",
+            "Imp. Ion Engine",
+            "Imp. Treads",
+            "Arm. Huge Wheel",
+            "Arm. Huge Wheel",
+            "Cooling System",
+            "Hcp. Matter Pod",
+            "Weapon Shielding",
+            "Med. Armor Plating",
+            "Med. Armor Plating"
+        ],
+        "Resistances": {
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Hacking",
+            "Meltdown"
+        ]
+    },
+    "Warlord D3-CKR": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "160",
+        "Value": 0,
+        "Movement": "Treading (210)",
+        "Core Integrity": 260,
+        "Core Exposure": 24,
+        "Salvage Potential": "150-300",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Imp. Grenade Launcher"},
+                {"Name": "Shock Bomb Launcher"}
+            ],
+            "Hvy. Rocket Launcher",
+            "Smartbomb Launcher"
+        ],
+        "Components": [
+            "Rnf. Fission Core",
+            "Rnf. Fission Core",
+            "Arm. Medium Treads",
+            "Arm. Medium Treads",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Imp. Matter Compressor",
+            "Imp. Launcher Guidance Computer",
+            "Matter Filter",
+            "Lyr. Medium Armor Plating",
+            "Lyr. Medium Armor Plating",
+            "Lyr. Medium Armor Plating",
+            "Imp. Thermal Shield",
+            "Imp. Shock Absorption System",
+            "Point Defense System",
+            "Lrn. Tractor Beam"
+        ],
+        "Resistances": {
+            "Thermal": 25,
+            "Explosive": 50,
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Hacking",
+            "Meltdown"
+        ]
+    },
+    "Warlord HL-1SK": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "127",
+        "Value": 0,
+        "Movement": "Treading (180)",
+        "Core Integrity": 180,
+        "Core Exposure": 24,
+        "Salvage Potential": "150-300",
+        "Visual Range": "16",
+        "Armament": [
+            "Greatsword",
+            "Greatsword"
+        ],
+        "Components": [
+            "Rnf. Deuterium Engine",
+            "Rnf. Deuterium Engine",
+            "Med. Treads",
+            "Med. Treads",
+            "Imp. Cooling System",
+            "Imp. Cooling System",
+            "Imp. Melee Analysis Suite",
+            "Imp. Melee Analysis Suite",
+            "Microactuators",
+            "Microactuators",
+            "Microactuators",
+            "Force Booster",
+            "Phase Shifter",
+            "Imp. Weapon Shielding",
+            "Imp. Weapon Shielding",
+            "Hrd. Heavy Armor Plating",
+            "Hrd. Heavy Armor Plating"
+        ],
+        "Resistances": {
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Hacking",
+            "Meltdown"
+        ]
+    },
+    "Warlord KY-Z71": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "224",
+        "Value": 0,
+        "Movement": "Treading (165)",
+        "Core Integrity": 350,
+        "Core Exposure": 19,
+        "Salvage Potential": "150-300",
+        "Visual Range": "16",
+        "Armament": [
+            "Quantum Rifle",
+            "Quantum Rifle",
+            [
+                {"Name": "Linear Accelerator"},
+                {"Name": "Nova Cannon"}
+            ]
+        ],
+        "Components": [
+            "Rnf. Antimatter Reactor",
+            "Rnf. Antimatter Reactor",
+            "Rnf. Antimatter Reactor",
+            "Adv. Medium Treads",
+            "Adv. Medium Treads",
+            "Adv. Medium Treads",
+            "Power Amplifier",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Adv. Coolant Injector",
+            "Adv. Coolant Injector",
+            "Energy Well",
+            "Energy Well",
+            "Energy Well",
+            "Energy Well",
+            "Lrn. Sensor Array",
+            "Imp. Particle Charger",
+            "Imp. Core Shielding",
+            "Imp. Utility Shielding",
+            "Lyr. Heavy Armor Plating",
+            "Adv. Force Field"
+        ],
+        "Resistances": {
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Hacking",
+            "Meltdown"
+        ]
+    },
+    "Warlord MG-163": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "75",
+        "Value": 0,
+        "Movement": "Treading (190)",
+        "Core Integrity": 120,
+        "Core Exposure": 0,
+        "Salvage Potential": "150-300",
+        "Visual Range": "16",
+        "Armament": [
+            "Electrolaser",
+            "Hvy. Particle Cannon",
+            "Barrage Gun",
+            "Barrage Gun"
+        ],
+        "Components": [
+            "Deuterium Engine",
+            "Deuterium Engine",
+            "Arm. Treads",
+            "Arm. Treads",
+            "Imp. Heat Sink",
+            "Imp. Heat Sink",
+            "Imp. Heat Sink",
+            "Adv. Targeting Computer",
+            "Hvy. Armor Plating",
+            "Hvy. Armor Plating"
+        ],
+        "Resistances": {
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Hacking",
+            "Meltdown"
+        ]
+    },
+    "Warlord SH-K8T": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "117",
+        "Value": 0,
+        "Movement": "Treading (180)",
+        "Core Integrity": 240,
+        "Core Exposure": 24,
+        "Salvage Potential": "150-300",
+        "Visual Range": "16",
+        "Armament": [
+            [
+                {"Name": "Arc Thrower", "Number": 2},
+                {"Name": "Beamcaster", "Number": 2},
+                {"Name": "Plasma Rifle", "Number": 2}
+            ],
+            "Hvy. Machine Gun",
+            [
+                {"Name": "Hvy. Plasma Cannon"},
+                {"Name": "Bore Cannon"}
+            ]
+        ],
+        "Components": [
+            "Angular Momentum Engine",
+            "Angular Momentum Engine",
+            "Imp. Medium Treads",
+            "Imp. Medium Treads",
+            "Imp. Cooling System",
+            "Imp. Cooling System",
+            "Imp. Targeting Computer",
+            "Adv. Targeting Computer",
+            "Core Shielding",
+            "Lyr. Medium Armor Plating",
+            "Hvy. Reactive Plating"
+        ],
+        "Resistances": {
+            "Kinetic": 40,
+            "Electromagnetic": 100
+        },
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Hacking",
+            "Meltdown"
+        ]
+    },
+    "Warlord Statue": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "20",
+        "Value": 0,
+        "Movement": "Immobile",
+        "Core Integrity": 100,
+        "Core Exposure": 100,
+        "Salvage Potential": "10-20",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+        ],
+        "Resistances": {
+        }
     },
     "Wasp (5)": {
         "Description": "Wasps are swarmer class variants equipped with a derelict-made battle rifle, less reliable than swarmer armament but nonetheless dangerous in large numbers.",
@@ -4428,6 +6974,33 @@
             "Impact": 25
         }
     },
+    "YI-UF0": {
+        "Description": "",
+        "Class": "Unique",
+        "Size": "Medium",
+        "Rating": "42",
+        "Value": 1,
+        "Movement": "Walking (120)",
+        "Core Integrity": 60,
+        "Core Exposure": 29,
+        "Salvage Potential": "100-120",
+        "Visual Range": "16",
+        "Armament": [
+            "YI-UF0's Doublenader"
+        ],
+        "Components": [
+            "Imp. Deuterium Engine",
+            "Carbon-fiber Leg",
+            "Carbon-fiber Leg",
+            "Adv. Heat Sink",
+            "YI-UF0's Bottomless Matter Pit",
+            "Weapon Shielding",
+            "Shock Absorption System"
+        ],
+        "Resistances": {
+            "Explosive": 75
+        }
+    },
     "Z-Courier": {
         "Description": "",
         "Class": "Z-Courier (Derelict)",
@@ -4656,6 +7229,47 @@
         "Resistances": {
         }
     },
+    "Z-Imprinter": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Large",
+        "Rating": "175",
+        "Value": 1,
+        "Movement": "Hovering (24)",
+        "Core Integrity": 150,
+        "Core Exposure": 29,
+        "Salvage Potential": "70-100",
+        "Visual Range": "16",
+        "Armament": [
+            "Zio. Laser-M",
+            "Zio. Laser-M",
+            "Zio. Laser-M"
+        ],
+        "Components": [
+            "Zio. Light DM Reactor",
+            "Zio. Light DM Reactor",
+            "Zio. Glidesys II",
+            "Zio. Glidesys II",
+            "Zio. Glidesys II",
+            "Zio. Glidesys II",
+            "Zio. Biocell",
+            "Zio. Metafield Generator",
+            "Adv. Reaction Control System",
+            "Adv. Phase Shifter",
+            "Zio. Weapon Casing",
+            "Zio. Light Carapace"
+        ],
+        "Resistances": {
+            "Electromagnetic": 90
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Hacking",
+            "Jamming",
+            "Meltdown"
+        ]
+    },
     "Z-Light (5)": {
         "Description": "",
         "Class": "Z-Light (Derelict)",
@@ -4769,6 +7383,45 @@
             "Electromagnetic": -50,
             "Slashing": -25
         }
+    },
+    "Zhirov": {
+        "Description": "",
+        "Class": "Special",
+        "Size": "Medium",
+        "Rating": "122",
+        "Value": 1,
+        "Movement": "Hovering (46)",
+        "Core Integrity": 120,
+        "Core Exposure": 24,
+        "Salvage Potential": "70-90",
+        "Visual Range": "16",
+        "Armament": [
+            "Hvy. Tesla Rifle",
+            "Exp. Stasis Projector"
+        ],
+        "Components": [
+            "Com. Particle Reactor",
+            "Cld. Antigrav System",
+            "Cld. Antigrav System",
+            "Adv. Cryofiber Web",
+            "Exp. Terrain Scanner",
+            "Exp. Terrain Scan Processor",
+            "Exp. Transmission Jammer",
+            "Imp. Core Shielding",
+            "Deep Network Scanner",
+            "Quantum Router"
+        ],
+        "Resistances": {
+            "Explosive": 25,
+            "Electromagnetic": 75
+        },
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Hacking",
+            "Jamming",
+            "Meltdown"
+        ]
     },
     "Zionite": {
         "Description": "(Not lore) Zionites have extremely randomized parts, containing nearly every low rating non-prototype part rating 4 or below. Makshift (Mak.) parts are most common. All zionites have at least 1 power source and 1 leg. Additionally, they can have 0-1 weapon, 1-3 propulsion (1-2 legs and 0-1 hover/flight), and 0-3 utilities.",

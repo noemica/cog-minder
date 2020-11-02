@@ -988,5 +988,11 @@
     "Detonator": [2],
     "Mni. Tearclaws": [2],
     "Swarm Drone Bay": [0, 6],
-    "DAS Cannon": [3, 6]
+    "DAS Cannon": [3, 6],
+    "Asb. Blade": [7],
+    "Asb. F-torch": [7],
+    "Asb. Heavy Rifle": [7],
+    "Asb. Hover Unit": [7],
+    "Asb. Rifle": [7],
+    "Sigix Exoskeleton": [6, 7]
     }
