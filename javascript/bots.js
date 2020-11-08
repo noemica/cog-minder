@@ -21,11 +21,13 @@ jq(function ($) {
         "factionDerelict": "Derelict",
         "factionExile": "Exiles",
         "factionWarlord": "Warlord",
+        "factionZionite": "Zionite",
     };
 
     // Spoiler faction HTML ids
     const spoilerFactionIds = [
         "factionWarlord",
+        "factionZionite",
     ];
 
     const redactedFactionIds = [
