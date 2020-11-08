@@ -91,6 +91,36 @@ jq(function ($) {
             filters.push(bot => bot["Class"].toLowerCase().includes(classValue));
         }
 
+        // Part filter
+        const partValue = $("#part").val().toLowerCase();
+        if (partValue.length > 0) {
+            filters.push(bot => {
+                if (bot["Armament Data"].map(data => data["Name"]).some(name => name.toLowerCase().includes(partValue))) {
+                    return true;
+                }
+
+                if (bot["Components Data"].map(data => data["Name"]).some(name => name.toLowerCase().includes(partValue))) {
+                    return true;
+                }
+
+                for( let i = 0; i < bot["Armament Option Data"].length; i++) {
+                    const data = bot["Armament Option Data"][i];
+                    if (data.map(data => data["Name"]).some(name => name.toLowerCase().includes(partValue))) {
+                        return true;
+                    }
+                }
+
+                for( let i = 0; i < bot["Components Option Data"].length; i++) {
+                    const data = bot["Components Option Data"][i];
+                    if (data.map(data => data["Name"]).some(name => name.toLowerCase().includes(partValue))) {
+                        return true;
+                    }
+                }
+
+                return false;
+            });
+        }
+
         // Faction filter
         const factionId = $("#factionContainer > label.active").attr("id");
         if (factionId in factionIdToCategoryName) {
@@ -128,6 +158,7 @@ jq(function ($) {
         });
         $("#name").on("input", updateBots);
         $("#class").on("input", updateBots);
+        $("#part").on("input", updateBots);
         $("#reset").click(() => {
             $("#reset").tooltip("hide");
             resetFilters();
@@ -150,6 +181,7 @@ jq(function ($) {
         // Reset text inputs
         $("#name").val("");
         $("#class").val("");
+        $("#part").val("");
 
         // Reset buttons
         resetButtonGroup($("#factionContainer"));
