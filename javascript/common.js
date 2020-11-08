@@ -698,7 +698,12 @@ export function getItem(itemName) {
 
 // Gets the stored spoilers state
 export function getSpoilersState() {
-    return valueOrDefault(window.localStorage.getItem("spoilers"), false);
+    let value = valueOrDefault(window.localStorage.getItem("spoilers"), "None");
+    if (typeof(value) != "string" || value != "None" && value != "Spoilers" && value != "Redacted") {
+        value = "None";
+    }
+
+    return value;
 }
 
 // Converts an item or bot's name to an HTML id
@@ -842,6 +847,14 @@ export async function initData() {
         bot["Components Data"] = partData;
     });
 }
+
+// Clears a button group's state and sets the first item to be active
+export function resetButtonGroup(group) {
+    group.children().removeClass("active");
+
+    group.children("label:first-of-type").addClass("active");
+}
+
 
 // Rounds the number to the nearest multiple
 function roundToMultiple(num, multiple) {

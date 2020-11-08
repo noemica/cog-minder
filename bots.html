@@ -35,11 +35,61 @@
         <div class="row">
             <div class="col"></div>
             <h1 class="col-9 display-3 text-center title">Bots</h1>
-            <div id="spoilersPopupContainer" class="form-check align-self-center" data-toggle="tooltip"
-                data-placement="bottom" title="Warning REDACTED spoilers: Allow items from all branches">
-                <input id="spoilers" type="checkbox" class="form-check-input">
-                <label class="form-check-label" for="spoilers">Spoilers</label>
+            <div class="col dropdown align-self-center">
+                Spoilers
+                <button id="spoilers" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
+                    None
+                </button>
+                <div id="spoilersDropdown" class="dropdown-menu">
+                    <button class="dropdown-item" data-toggle="tooltip"
+                        title="No spoilers: Factory or above branch content is hidden.">None</button>
+                    <button class="dropdown-item" data-toggle="tooltip"
+                        title="Moderate spoilers: Normal Factory and Research branch content is shown.">Spoilers</button>
+                    <button class="dropdown-item" data-toggle="tooltip"
+                        title="Full spoilers: All game content is shown.">Redacted</button>
+                </div>
             </div>
+        </div>
+
+        <!-- Name/class filters and reset button -->
+        <div class="container-fluid input-group input-group-md">
+            <div class="input-group-prepend" data-toggle="tooltip" title="The name of a bot to search for.">
+                <span class="input-group-text">Name</span>
+            </div>
+            <input id="name" type="text" class="form-control" placeholder="Any">
+            <div class="input-group-prepend ml-3" data-toggle="tooltip" title="The class of a bot to search for.">
+                <span class="input-group-text">Class</span>
+            </div>
+            <input id="class" type="text" class="form-control" placeholder="Any">
+            <button id="reset" type="button" class="btn btn-large ml-3" data-toggle="tooltip"
+                title="Resets all filters to their default (unfiltered) state">Reset</button>
+        </div>
+
+        <!-- Faction filter -->
+        <div id="factionContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
+            data-toggle="buttons">
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="Bot faction">
+                <span class="input-group-text">Faction</span>
+            </div>
+            <label id="factionAny" class="btn btn-md">
+                <input type="radio" name="options"> Any
+            </label>
+            <label id="faction0b10" class="btn btn-md">
+                <input type="radio" name="options"> 0b10
+            </label>
+            <label id="factionArchitect" class="btn btn-md">
+                <input type="radio" name="options"> Architect
+            </label>
+            <label id="factionDerelict" class="btn btn-md">
+                <input type="radio" name="options"> Derelict
+            </label>
+            <label id="factionExile" class="btn btn-md">
+                <input type="radio" name="options"> Exile
+            </label>
+            <label id="factionWarlord" class="btn btn-md">
+                <input type="radio" name="options"> Warlord
+            </label>
         </div>
 
         <div class="container-fluid">

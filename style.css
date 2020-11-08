@@ -164,11 +164,11 @@ body {
     background-color: black;
     border: 1px solid #00aa00;
     border-radius: 0;
-    overflow-y: auto;
 }
 
 .fixed-height-dropdown-menu {
     height: 30em;
+    overflow-y: auto;
 }
 
 .dropdown-divider {

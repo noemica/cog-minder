@@ -1,5 +1,4 @@
 import {
-    categoryData,
     createItemDataContent,
     getItemCategories,
     getItem,
@@ -8,6 +7,7 @@ import {
     itemData,
     nameToId,
     noPrefixName,
+    resetButtonGroup,
     setSpoilersState,
 } from "./common.js";
 
@@ -22,7 +22,8 @@ jq(function ($) {
         "categoryTesting": 4,
         "categoryGolem": 5,
         "categorySpoiler": 6,
-        "categoryUnobtainable": 7,
+        "categoryRedacted": 7,
+        "categoryUnobtainable": 8,
     };
 
     // Map of item names to item elements, created at page init
@@ -36,12 +37,18 @@ jq(function ($) {
         "utilTypeArtifact",
     ];
 
-    // List of spoiler category #s
-    const spoilerCategories = [
+    // List of categories hidden on "None" spoilers type
+    const noneHiddenCategories = [
         "categoryAlien",
         "categoryTesting",
         "categoryGolem",
         "categorySpoiler",
+        "categoryRedacted"
+    ].map(id => categoryIdMap[id]);
+
+    // List of categories hidden on "Spoilers" spoilers type
+    const spoilerHiddenCategories = [
+        "categoryRedacted"
     ].map(id => categoryIdMap[id]);
 
     // Slot ID -> Slot string
@@ -128,13 +135,18 @@ jq(function ($) {
 
     // Gets a filter function combining all current filters
     function getItemFilter() {
-        let filters = [];
+        const filters = [];
 
         // Spoilers filter
-        const showSpoilers = $("#spoilers").is(":checked");
-        if (!showSpoilers) {
-            filters.push(item =>
-                !getItemCategories(item["Name"]).some(c => spoilerCategories.includes(c))
+        const spoilersState = getSpoilersState();
+        if (spoilersState === "None") {
+            filters.push(item => 
+                !getItemCategories(item["Name"]).some(c => noneHiddenCategories.includes(c))
+            );
+        }
+        else if (spoilersState === "Spoilers") {
+            filters.push(item => 
+                !getItemCategories(item["Name"]).some(c => spoilerHiddenCategories.includes(c))
             );
         }
 
@@ -289,8 +301,8 @@ jq(function ($) {
     }
 
     // Initialize the page state
-    async function init(items, categories) {
-        await initData(items, categories);
+    async function init() {
+        await initData();
 
         // Initialize page state
         createItems();
@@ -298,13 +310,14 @@ jq(function ($) {
         resetFilters();
 
         // Load spoilers saved state
-        $("#spoilers").attr("checked", getSpoilersState());
+        $("#spoilers").text(getSpoilersState());
 
         // Register handlers
-        $("#spoilers").on("change", () => {
-            // Hide tooltip, update saved state, categories, and items
-            $("#spoilersPopupContainer").tooltip("hide");
-            setSpoilersState($("#spoilers").is(":checked"));
+        $("#spoilersDropdown > button").on("click", (e) => {
+            const state = $(e.target).text();
+            $("#spoilers").text(state);
+            setSpoilersState(state);
+            $("#spoilersDropdown > button").tooltip("hide");
             updateCategoryVisibility();
             updateItems();
         });
@@ -369,13 +382,6 @@ jq(function ($) {
 
         // Enable tooltips
         $('[data-toggle="tooltip"]').tooltip()
-    }
-
-    // Clears a button group's state and sets the first item to be active
-    function resetButtonGroup(group) {
-        group.children().removeClass("active");
-
-        group.children("label:first-of-type").addClass("active");
     }
 
     // Resets all filters
@@ -588,9 +594,10 @@ jq(function ($) {
         return newItems;
     }
 
-    // Updates category visibility based on the spoiler checkbox
+    // Updates category visibility based on the spoiler state
     function updateCategoryVisibility() {
-        const showSpoilers = $("#spoilers").is(":checked");
+        const state = getSpoilersState();
+        const showSpoilers = state === "Spoilers" || state === "Redacted";
 
         if (showSpoilers) {
             spoilerCategoryIds.forEach(category => $(`#${category}`).removeClass("not-visible"));
@@ -600,7 +607,7 @@ jq(function ($) {
         }
     }
 
-    // Clears all existing items and creates new ones based on the filters
+    // Clears all existing items and adds new ones based on the filters
     function updateItems() {
         // Hide any existing popovers
         $('[data-toggle="popover"]').popover("hide");

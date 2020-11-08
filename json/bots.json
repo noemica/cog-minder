@@ -1,27 +1,8 @@
 {
-    "Template": {
-        "Description": "",
-        "Class": "",
-        "Size": "",
-        "Rating": "0",
-        "Value": 0,
-        "Movement": " ()",
-        "Core Integrity": 0,
-        "Core Exposure": 0,
-        "Salvage Potential": "",
-        "Visual Range": "16",
-        "Armament": [
-        ],
-        "Components": [
-        ],
-        "Resistances": {
-        },
-        "Immunities": [
-        ]
-    },
     "01-MTF": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Medium",
         "Rating": "99",
         "Value": 1,
@@ -54,6 +35,7 @@
     "12-ASH": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Medium",
         "Rating": "105",
         "Value": 1,
@@ -90,6 +72,7 @@
     "1C-UTU": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Medium",
         "Rating": "137",
         "Value": 1,
@@ -130,6 +113,7 @@
     "5H-AD0": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Medium",
         "Rating": "118",
         "Value": 1,
@@ -165,6 +149,7 @@
     "7V-RTL": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Large",
         "Rating": "180",
         "Value": 1,
@@ -207,6 +192,7 @@
     "8R-AWN": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Exiles", "Derelict", "Spoilers"],
         "Size": "Medium",
         "Rating": "160",
         "Value": 1,
@@ -246,6 +232,7 @@
     "99-TNT": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Medium",
         "Rating": "135",
         "Value": 1,
@@ -286,6 +273,7 @@
     "A-02 Transporter": {
         "Description": "A-series haulers transport matter and parts vital to construction and manufacturing. To minimize losses during derelict incursions, like most other maintenance robots they are of relatively sturdy construction, but remain somewhat susceptible to electromagnetic damage as such weaponry is not prevalent enough to warrant specialized defenses.",
         "Class": "Hauler",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "10",
         "Value": 2,
@@ -311,6 +299,7 @@
     "A-15 Conveyor": {
         "Description": " A larger version of the A-02, with 50% greater storage capacity and advanced weight redistribution technology.",
         "Class": "Hauler",
+        "Categories": ["0b10"],
         "Size": "Large",
         "Rating": "23",
         "Value": 15,
@@ -336,6 +325,7 @@
     "A2": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Architect", "Redacted"],
         "Size": "Medium",
         "Rating": "248",
         "Value": 1,
@@ -388,6 +378,7 @@
     "A3": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Architect", "Redacted"],
         "Size": "Medium",
         "Rating": "218",
         "Value": 1,
@@ -439,6 +430,7 @@
     "A4": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Architect", "Redacted"],
         "Size": "Medium",
         "Rating": "213",
         "Value": 1,
@@ -489,6 +481,7 @@
     "A5": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Architect", "Redacted"],
         "Size": "Medium",
         "Rating": "192",
         "Value": 1,
@@ -539,6 +532,7 @@
     "A6": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Architect", "Redacted"],
         "Size": "Medium",
         "Rating": "199",
         "Value": 1,
@@ -588,6 +582,7 @@
     "A7": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Architect", "Spoilers"],
         "Size": "Medium",
         "Rating": "156",
         "Value": 1,
@@ -631,6 +626,7 @@
     "A8": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Architect", "Spoilers"],
         "Size": "Medium",
         "Rating": "166",
         "Value": 1,
@@ -676,6 +672,7 @@
     "AD-0RF": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Medium",
         "Rating": "125",
         "Value": 1,
@@ -712,6 +709,7 @@
     "Alpha 7": {
         "Description": "The Alpha 7 is a prototype for a new class of combat robot, very accurate with its multirail and heavy quantum rifle. Some experimental variants instead use an enhanced gamma rifle. Alpha 7s are built with strong defensive capabilities and triple-encased core technology, enabling them to easily take on multiple opponents simultaneously, while a more advanced version of the behemoth-style critical failure prevention system provides the same advantages in a smaller frame.",
         "Class": "Alpha 7 (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Medium",
         "Rating": "152",
         "Value": 200,
@@ -754,6 +752,7 @@
     "Advanced Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["0b10"],
         "Size": "Tiny",
         "Rating": "48",
         "Value": 0,
@@ -784,6 +783,7 @@
     "Architect": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Architect", "Redacted"],
         "Size": "Large",
         "Rating": "347",
         "Value": 1,
@@ -845,6 +845,7 @@
     "Army Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["Drone", "Exiles"],
         "Size": "Tiny",
         "Rating": "24-27",
         "Value": 0,
@@ -902,6 +903,7 @@
     "Assault Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Tiny",
         "Rating": "71",
         "Value": 0,
@@ -933,6 +935,7 @@
     "Assembled (4)": {
         "Description": "A quick but not especially dangerous combat derelict with fully integrated systems, constructed seemingly at random by an Assembler's self-contained fabrication apparatus. Individually resilient for their size, they pose a real threat in greater numbers.",
         "Class": "Assembled (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Small",
         "Rating": "8-10",
         "Value": 0,
@@ -965,6 +968,7 @@
     "Assembled (7)": {
         "Description": "A quick but not especially dangerous combat derelict with fully integrated systems, constructed seemingly at random by an Assembler's self-contained fabrication apparatus. Individually resilient for their size, they pose a real threat in greater numbers.",
         "Class": "Assembled (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Small",
         "Rating": "13-15",
         "Value": 0,
@@ -997,6 +1001,7 @@
     "Assembler": {
         "Description": "An emerging threat in Complex 0b10, serving no purpose but to collect matter and construct new Assembled specifically to wreak havoc in low-security areas. The appearance of Assemblers represents an apparent offensive turn by whatever built the first Demented and Furnace models.",
         "Class": "Assembler (Derelict)",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Large",
         "Rating": "77",
         "Value": 40,
@@ -1037,6 +1042,7 @@
     "B-36 Bruiser": {
         "Description": "B-series brawlers are a melee variant of the grunt class, engaging targets at close range with the support of ranged combat units. They are protected by additional armor to increase their chances of survival while closing distance with a target, after which their hammer can quickly crush vital components and diminish the target's ability to operate.",
         "Class": "Brawler",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "10",
         "Value": 36,
@@ -1062,6 +1068,7 @@
     "B-48 Gladiator": {
         "Description": "B-48 Gladiators are better armored than the B-36, replace the hammer with a slightly more damaging mace, and like other B-series brawlers are only dispatched in coordination with grunts.",
         "Class": "Brawler",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "20",
         "Value": 48,
@@ -1087,6 +1094,7 @@
     "B-60 Warrior": {
         "Description": "B-60 Warriors carry a heavier version of the B-48's mace, and additional armor. Like other B-series robots, the B-60's armor structure is reinforced against the slashes and broad impacts of melee damage.",
         "Class": "Brawler",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "30",
         "Value": 65,
@@ -1112,6 +1120,7 @@
     "B-74 Champion": {
         "Description": "The heaviest and most heavily armored brawler, highly likely to reach a target even under sustained fire, and highly likely to wreak havoc with its powered hammer.",
         "Class": "Brawler",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "42",
         "Value": 74,
@@ -1137,6 +1146,7 @@
     "B-75 Beast": {
         "Description": "B-series behemoths are heavy weapons platforms stationed in open areas, often constructed directly in the very areas they defend for lack of sufficiently large access corridors. While their components could have been designed to fit a smaller frame, much of the redundant internal structure is devoted to preventing critical system failures. The B-75 Beast carries two cannons and a backup light weapon, making it especially effective against singular hardened targets.",
         "Class": "Behemoth",
+        "Categories": ["0b10"],
         "Size": "Large",
         "Rating": "81",
         "Value": 75,
@@ -1174,6 +1184,7 @@
     "B-86 Titan": {
         "Description": "B-86 Titans upgrade the B-75's cannons to a matter neutralizer and hardcell cannon, pairing them with a secondary railgun. Like other behemoths, the B-86 is equipped with both reflective armor and an insulated core to mitigate the negative effects of most electromagnetic weapons, which would otherwise render high-coverage heavy armor pointless.",
         "Class": "Behemoth",
+        "Categories": ["0b10"],
         "Size": "Large",
         "Rating": "115",
         "Value": 86,
@@ -1208,6 +1219,7 @@
     "B-90 Cyclops": {
         "Description": "The B-90 Cyclops is built around a single massive nova cannon, a design decision I originally regretted as they were relatively easy to disarm. Newer versions implement dedicated weapon shielding for the cannon itself, and improved firing rates made possible by a new capacitor design. Like all behemoth class robots, the B-90's overall structure is slightly weak against kinetic attacks, but is protected by sufficient armor to make up for it.",
         "Class": "Behemoth",
+        "Categories": ["0b10"],
         "Size": "Large",
         "Rating": "147",
         "Value": 90,
@@ -1246,6 +1258,7 @@
     "B-99 Colossus": {
         "Description": "As the most powerful standard-line combat robot, a B-99 Colossus will only be stationed in areas with a confirmed significant threat. In addition to armor effective against both thermal and electromagnetic damage, the B-99 is equipped to withstand a sustained attack of almost any kind with its advanced force field. Only the most hardened target can withstand its volley of six simultaneous slugs.",
         "Class": "Behemoth",
+        "Categories": ["0b10"],
         "Size": "Large",
         "Rating": "222",
         "Value": 99,
@@ -1288,6 +1301,7 @@
     "Bomb Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["Derelict"],
         "Size": "Tiny",
         "Rating": "27",
         "Value": 0,
@@ -1313,6 +1327,7 @@
     "Borebot": {
         "Description": "",
         "Class": "Borebot (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Warlord"],
         "Size": "Huge",
         "Rating": "358",
         "Value": 1,
@@ -1361,6 +1376,7 @@
     "Bouncer": {
         "Description": "Sentries rebuilt around a single heavy autocannon make for a formidable mid-sized defender, but move too slowly to be a threat to Complex 0b10. My forces have never actually encountered one, but mining derelict records has uncovered information useful in dealing with them should that become necessary.",
         "Class": "Bouncer (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Warlord"],
         "Size": "Large",
         "Rating": "79",
         "Value": 68,
@@ -1390,6 +1406,7 @@
     "Butcher (5)": {
         "Description": "Butchers are duelist class variants armed with more damaging derelict-designed slashing weapons. Survival in the harsh and factious cave environment seems to drive derelicts towards the use of more violent weapons, and in some cases a preference for decisive close-quarters combat.",
         "Class": "Butcher (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "25",
         "Value": 50,
@@ -1415,6 +1432,7 @@
     "Butcher (7)": {
         "Description": "Butchers are duelist class variants armed with more damaging derelict-designed slashing weapons. Survival in the harsh and factious cave environment seems to drive derelicts towards the use of more violent weapons, and in some cases a preference for decisive close-quarters combat.",
         "Class": "Butcher (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "38",
         "Value": 60,
@@ -1440,6 +1458,7 @@
     "C-30 ARC": {
         "Description": "C-class Armored Robot Carriers are disposable transports designed to rapidly deploy an assault force to a flash point. ARCs are hardened against kinetic attacks that might otherwise penetrate the shell and damage one or more of the robots compacted within.",
         "Class": "Carrier",
+        "Categories": ["0b10"],
         "Size": "Large",
         "Rating": "25",
         "Value": 30,
@@ -1468,6 +1487,7 @@
     "C-40 Crusher": {
         "Description": "Compactors break down obsolete robot models, and the occasional intruder sucked down a chute hatch. They are slow, but built to withstand both damage from the rugged environment of waste processing areas and dangerous shocks caused by electromagnetic radiation during robot deconstruction.",
         "Class": "Compactor",
+        "Categories": ["0b10"],
         "Size": "Large",
         "Rating": "129",
         "Value": 40,
@@ -1501,6 +1521,7 @@
     "C-55 Analyst": {
         "Description": "C-series researchers operate labs in which they independently develop and test new technologies. As non-combat units assigned to secure areas, their core is weak against many forms of damage. However, due to the periodic need to operate in high-temperature areas they are somewhat resistant to damage of a thermal nature. The C-55 is also equipped with a stasis beam to contain derelict specimens for study.",
         "Class": "Researcher",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "45",
         "Value": 55,
@@ -1534,6 +1555,7 @@
     "C-65 Expert": {
         "Description": "An upgrade to the C-55 Analyst, Experts possess improved analytical capabilities and a more powerful stasis projector.",
         "Class": "Researcher",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "56",
         "Value": 65,
@@ -1567,6 +1589,7 @@
     "Cetus Guard": {
         "Description": "Cetus Guards are a variant of the Y-72 outfitted with prototype technology, the first of many such experiments aimed at testing new designs in the field, albeit in this case located in an area that generally sees little to no hostile activity.",
         "Class": "Sentry (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Large",
         "Rating": "82",
         "Value": 125,
@@ -1597,6 +1620,7 @@
     "CL-ANK": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Medium",
         "Rating": "113",
         "Value": 1,
@@ -1637,6 +1661,7 @@
     "Combat Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Tiny",
         "Rating": "63",
         "Value": 0,
@@ -1668,6 +1693,7 @@
     "Combat Programmer": {
         "Description": "As the first real front-line hacking bot, Combat Programmers are both shielded and armored to effectively face off against a variety of threats. While they possess significant hacking capabilities to make the most of time-critical situations, they also borrow the Lightning's EMDS and targeting systems, making them formidable even when outnumbered in combat. The latest model takes advantage of improved integrated shock resistance methods recently suggested by my researchers. Eventually a majority of programmers should be replaced with these combat variants.",
         "Class": "Programmer (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Medium",
         "Rating": "157",
         "Value": 200,
@@ -1712,6 +1738,7 @@
     "Commander": {
         "Description": "",
         "Class": "Commander (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "73",
         "Value": 80,
@@ -1740,6 +1767,7 @@
     "D-53 Grenadier": {
         "Description": "D-series demolishers are the only class to carry explosive weaponry, and due to the high potential for collateral damage are only assigned to support assault forces dispatched to deal with groups of high-threat intruders. The D-53 itself is highly resistant against explosive damage, however, and is therefore willing to catch targets in an explosion even while within that blast radius.",
         "Class": "Demolisher",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "34",
         "Value": 53,
@@ -1767,6 +1795,7 @@
     "D-63 Destroyer": {
         "Description": "D-63 Destroyers improve on the D-53 with a better guidance system and more powerful heavy rocket launcher. Like all demolishers, the D-63 will hold fire if too many friendlies are within the area of effect.",
         "Class": "Demolisher",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "49",
         "Value": 63,
@@ -1794,6 +1823,7 @@
     "D-83 Annihilator": {
         "Description": "The most powerful demolisher, the D-83 Annihilator is built around a single micro-nuke launcher. Its advanced guidance computer is extremely accurate, and excellent defense against explosives reduce damage from such sources to almost insignificant levels, whether caused by its own micro-nuke or those of an enemy.",
         "Class": "Demolisher",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "67",
         "Value": 83,
@@ -1821,6 +1851,7 @@
     "DAS Turret": {
         "Description": "",
         "Class": "Turret",
+        "Categories": ["Derelict", "Exiles"],
         "Size": "Small",
         "Rating": "36",
         "Value": 0,
@@ -1844,6 +1875,7 @@
     "Data Miner": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Architect", "Spoilers"],
         "Size": "Small",
         "Rating": "59",
         "Value": 1,
@@ -1873,6 +1905,7 @@
     "Decomposer": {
         "Description": "Decomposers are the precursor to K-class workers, converting debris to matter they leave behind for other robots to then collect and utilize. This was before the matter collection and redistribution process was centralized in Complex 0b10. Derelicts seem to have modified decomposers to break down even whole components.",
         "Class": "Decomposer (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "7",
         "Value": 0,
@@ -1897,6 +1930,7 @@
     "Decoy Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["Derelict"],
         "Size": "Tiny",
         "Rating": "34",
         "Value": 0,
@@ -1925,6 +1959,7 @@
     "Demented": {
         "Description": " A relatively recent design, the so-called demented wander the caves corrupting nearby electronic systems. I suspect this one was devised by Warlord as an experiment in how to cause as much chaos as possible, or perhaps as a passive way to prevent Complex 0b10 patrols from venturing too deep into the caves.",
         "Class": "Demented (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "18",
         "Value": 0,
@@ -1951,6 +1986,7 @@
     "Dragon": {
         "Description": "A Derelict Prototype apparently designed specifically to counter Complex 0b10 defenses, employing two nova cannons, presumably to counter Behemoths, as well as a powerful new type of Flamer. If more designs like this enter construction, I may have to launch a pre-emptive strike on the Caves before this escalation becomes a problem.",
         "Class": "Dragon (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Warlord"],
         "Size": "Large",
         "Rating": "150",
         "Value": 250,
@@ -1988,6 +2024,7 @@
     "Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["0b10"],
         "Size": "Tiny",
         "Rating": "7",
         "Value": 0,
@@ -2014,6 +2051,7 @@
     "E-15 Imp": {
         "Description": "Only dispatched to support an assault force, the Imp is designed to quickly rush targets, latch on, then overload their own power source to create a directed charge that blasts pieces clean off the target. While their armor has no particular weakness, E-15 cores are relatively exposed and low on integrity, keeping them light enough to rapidly close on threats.",
         "Class": "Saboteur",
+        "Categories": ["0b10"],
         "Size": "Small",
         "Rating": "14",
         "Value": 15,
@@ -2037,6 +2075,7 @@
     "Enhanced Demolisher": {
         "Description": "",
         "Class": "Demolisher (Prototype)",
+        "Categories": ["Architect", "Spoilers"],
         "Size": "Medium",
         "Rating": "122",
         "Value": 200,
@@ -2067,6 +2106,7 @@
     "Enhanced Grunt": {
         "Description": "",
         "Class": "Grunt (Prototype)",
+        "Categories": ["Architect", "Spoilers"],
         "Size": "Medium",
         "Rating": "94",
         "Value": 100,
@@ -2100,6 +2140,7 @@
     "Enhanced Hunter": {
         "Description": "",
         "Class": "Hunter (Prototype)",
+        "Categories": ["Architect", "Redacted"],
         "Size": "Medium",
         "Rating": "164",
         "Value": 200,
@@ -2136,6 +2177,7 @@
     "Enhanced Programmer": {
         "Description": "",
         "Class": "Programmer (Prototype)",
+        "Categories": ["Architect", "Redacted"],
         "Size": "Medium",
         "Rating": "168",
         "Value": 200,
@@ -2176,6 +2218,7 @@
     "Enhanced Q-Series": {
         "Description": "(Not Lore) This is the base form of an enhanced Q-series bot. Like regular Q-series, they have a large number of random combinations of weapons and items.",
         "Class": "Q-Series (Prototype)",
+        "Categories": ["Architect", "Redacted"],
         "Size": "Large",
         "Rating": "125",
         "Value": 300,
@@ -2209,6 +2252,7 @@
     "Enhanced Sentry": {
         "Description": "",
         "Class": "Sentry (Prototype)",
+        "Categories": ["Architect", "Redacted"],
         "Size": "Large",
         "Rating": "151",
         "Value": 200,
@@ -2245,6 +2289,7 @@
     "EX-BIN": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Exiles"],
         "Size": "Medium",
         "Rating": "79",
         "Value": 1,
@@ -2294,6 +2339,7 @@
     "EX-DEC": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Exiles"],
         "Size": "Medium",
         "Rating": "109",
         "Value": 1,
@@ -2344,6 +2390,7 @@
     "EX-HEX": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Exiles"],
         "Size": "Medium",
         "Rating": "85",
         "Value": 1,
@@ -2393,6 +2440,7 @@
     "Executioner": {
         "Description": "The Executioner is a prototype for a new class of combat robot armed with dual helical railgun prototypes, capable of piercing targets at extreme range with extreme accuracy, often bypassing any and all armor to strike the target's core directly.",
         "Class": "Executioner (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Large",
         "Rating": "108",
         "Value": 120,
@@ -2422,6 +2470,7 @@
     "Fireman (5)": {
         "Description": "The fireman is a relatively new robot discovered in the caves, purely of derelict design. Their flamer technology is extremely effective against my robots, thus I've instructed researchers to revisit my most common methods of electronics housing.",
         "Class": "Fireman (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "28",
         "Value": 50,
@@ -2449,6 +2498,7 @@
     "Fireman (7)": {
         "Description": "The fireman is a relatively new robot discovered in the caves, purely of derelict design. Their flamer technology is extremely effective against my robots, thus I've instructed researchers to revisit my most common methods of electronics housing.",
         "Class": "Fireman (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "39",
         "Value": 67,
@@ -2476,6 +2526,7 @@
     "Fortress": {
         "Description": "Only two Fortress prototypes have been built to garrison vital locations, utilizing the latest centrium armor technology and a wide array of other defensive components to render them nearly immune to all forms of damage. While their offensive capabilities are limited to two powerful cannons, even a small army would have difficulty overcoming a Fortress before it picks them off one by one.",
         "Class": "Fortress (Prototype)",
+        "Categories": ["0b10", "Prototype", "Redacted"],
         "Size": "Large",
         "Rating": "343",
         "Value": 500,
@@ -2520,6 +2571,7 @@
     "Furnace": {
         "Description": "Furnace bots emit massive amounts of heat, causing nearby robots to overheat and become useless. I assume the design's aim is similar to that of the demented class derelict, built as a deterrent.",
         "Class": "Furnace (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Large",
         "Rating": "28",
         "Value": 0,
@@ -2548,6 +2600,7 @@
     "G-34 Mercenary": {
         "Description": "G-series grunts serve as low-level front-line combat units, of sturdy construction but with fairly weak armament. Internal systems are not as protected as they could be, to enable rapid repair in the field, but this also makes them somewhat susceptible to additional damage from electromagnetic attacks. Grunts patrol in groups, or sometimes operate alone as hauler escorts to protect those with more valuable cargo.",
         "Class": "Grunt",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "8",
         "Value": 34,
@@ -2572,6 +2625,7 @@
     "G-47 Trooper": {
         "Description": "The G-47 Trooper replaces the G-34's laser with a more effective particle gun. However, during prolonged confrontations the G-47 is prone to overheating as its upgraded weaponry produces more heat than the design can fully dissipate.",
         "Class": "Grunt",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "16",
         "Value": 47,
@@ -2596,6 +2650,7 @@
     "G-50 Soldier": {
         "Description": "G-50 Soldiers are each equipped with a heavy laser, a significant upgrade from its predecessor the G-47, but like the G-47 are prone to overheating. Also still somewhat weak against electromagnetic attacks.",
         "Class": "Grunt",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "29",
         "Value": 50,
@@ -2620,6 +2675,7 @@
     "G-67 Veteran": {
         "Description": "The first G-series robot armed with two thermal weapons, while integrating enough advanced heat sinks to fire them non-stop.",
         "Class": "Grunt",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "47",
         "Value": 67,
@@ -2646,6 +2702,7 @@
     "G-73 Veteran": {
         "Description": "The latest G-series implementation, armed with a powerful phase gun supported by a secondary heavy laser. While not exceptionally effective in single combat, the G-73 is much more formidable in groups, as they normally operate.",
         "Class": "Grunt",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "58",
         "Value": 73,
@@ -2672,6 +2729,7 @@
     "God Mode": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Spoilers", "Warlord"],
         "Size": "Large",
         "Rating": "367",
         "Value": 2000,
@@ -2725,6 +2783,7 @@
     "God Mode (Fake)": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Spoilers", "Warlord"],
         "Size": "Large",
         "Rating": "158",
         "Value": 1,
@@ -2772,6 +2831,7 @@
     "Golem": {
         "Description": "",
         "Class": "Golem (Derelict)",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Large",
         "Rating": "243",
         "Value": 250,
@@ -2821,6 +2881,7 @@
     "Guerrilla (5)": {
         "Description": "Derelicts have taken the original hunter and rearmed it with a weapon of their own design: the bore cannon. While the concentrated firepower is less effective in open firefights, its ability to deal significant damage even after penetrating multiple walls is surprising.",
         "Class": "Guerrilla (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "37",
         "Value": 66,
@@ -2851,6 +2912,7 @@
     "Guerrilla (7)": {
         "Description": "Derelicts have taken the original hunter and rearmed it with a weapon of their own design: the bore cannon. While the concentrated firepower is less effective in open firefights, its ability to deal significant damage even after penetrating multiple walls is surprising.",
         "Class": "Guerrilla (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "49",
         "Value": 77,
@@ -2883,6 +2945,7 @@
     "H-55 Commando": {
         "Description": "H-series hunters aggressively track down intruders, and have multiple means of ensuring they can complete that task. Their advanced probability systems are capable of predicting target positions for some time after contact is lost. When necessary, hunter squad leaders also launch an autonomous drone from their built-in drone bay to help find escaped targets. The H-55 cannot be remotely detected by low-level sensor arrays.",
         "Class": "Hunter",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "21",
         "Value": 55,
@@ -2912,6 +2975,7 @@
     "H-66 Slayer": {
         "Description": "H-66 Slayers are armed with a supplementary dual gauss rifles, which combined with the H-66's embedded close-range scanners can be used to penetrate walls to strike targets on the opposite side. The H-66 also uses two targeting computers in parallel for greater accuracy. The H-66 can only be remotely detected by mid-level sensor arrays.",
         "Class": "Hunter",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "41",
         "Value": 66,
@@ -2944,6 +3008,7 @@
     "H-77 Assassin": {
         "Description": "The H-77 Assassin swaps out the H-66's gauss rifles for dual coilguns. The Assassin's position is somewhat masked by an improved Phase Shifter, making it more difficult to accurately target. The H-77 can only be remotely detected by high-level sensor arrays.",
         "Class": "Hunter",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "56",
         "Value": 77,
@@ -2975,6 +3040,7 @@
     "H-88 Terminator": {
         "Description": "The deadliest hunter class robot, armed with both a heavy machine gun and two KE penetrators, is well-cloaked and very difficult to hit, while possessing advanced targeting capabilities itself. The H-88 Terminator cannot be remotely detected by standard sensor array technology, though recent prototype sensors have shown some promise at penetrating even the best cloaking techniques.",
         "Class": "Hunter",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "69",
         "Value": 88,
@@ -3006,6 +3072,7 @@
     "Hacking Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Tiny",
         "Rating": "28",
         "Value": 0,
@@ -3034,6 +3101,7 @@
     "Hydra": {
         "Description": "Yet another Derelict Prototype, though this one doesn't yet appear to have reached an operational state. A six-headed monstrosity, each mounted with a single heavy battle rifle? I'm not sure where the Tinkerers are coming up with the wild ideas for their prototypes, but I have a hunch that at some point they raided the Cetus Mainframe.",
         "Class": "Hydra (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Warlord"],
         "Size": "Large",
         "Rating": "138",
         "Value": 250,
@@ -3073,6 +3141,7 @@
     "I-25 Savior": {
         "Description": "I-series protectors are one of very few dual-engine robots, necessary to both move and power their remote shield generator. Additional power is stored in batteries for burst use during heavy confrontations, and a power amplifier increases the rate of power generation to replenish energy in an ongoing combat scenario.",
         "Class": "Protector",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "24",
         "Value": 25,
@@ -3099,6 +3168,7 @@
     "I-36 Angel": {
         "Description": "The I-36 Angel's remote force field is 33% more effective than the I-25's shield generator, shielding targets from half of all damage where there is enough energy to support the field. Protector class robots are not especially well armored, but in addition to their shield are also strong against more common thermal weaponry, as well as always working in concert with a larger assault force.",
         "Class": "Protector",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "37",
         "Value": 36,
@@ -3126,6 +3196,7 @@
     "I-47 Archangel": {
         "Description": "I-47 Archangels are equipped with a more efficient force field than the I-36, and greater battery storage to support its use. Their point defense system further conserves energy by intercepting explosive projectiles prior to detonation.",
         "Class": "Protector",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "60",
         "Value": 47,
@@ -3156,6 +3227,7 @@
     "Imprinter": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Spoilers", "Zionite"],
         "Size": "Large",
         "Rating": "59",
         "Value": 1,
@@ -3195,6 +3267,7 @@
     "Investigator": {
         "Description": "Investigators are built specifically to oversee the testing of dangerous prototypes, and are therefore capable of holding multiple threats in place while supporting units deal with them.",
         "Class": "Researcher (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Medium",
         "Rating": "83",
         "Value": 70,
@@ -3228,6 +3301,7 @@
     "K-01 Serf": {
         "Description": "K-class workers perform menial tasks such as clearing debris to facilitate work by other robots. Their built-in compact recycling unit can break down almost any form of debris into reusable matter. As K-01 Serfs are extremely cheap to produce and perform no vital function, despite their size they are among the weakest robot designs with the most exposed core.",
         "Class": "Worker",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "6",
         "Value": 1,
@@ -3253,6 +3327,7 @@
     "Knight": {
         "Description": "A rumored Derelict Prototype still under construction, supposedly to be armed with a single Particle Cleaver of unparalleled slicing power. I hope to see this one in action and perhaps replicate its design.",
         "Class": "Knight (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Warlord"],
         "Size": "Large",
         "Rating": "79",
         "Value": 250,
@@ -3285,6 +3360,7 @@
     "L-31 Rogue": {
         "Description": "L-series duelists are a melee variant of the grunt class, engaging targets at close range with the support of ranged combat units. They lack the broad protection of the brawler class' armor, but feature an extra layer of dedicated core armor. They are highly accurate with their katana and capable of quickly reducing an opponent's effectiveness by slashing exposed components clean off.",
         "Class": "Duelist",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "18",
         "Value": 31,
@@ -3311,6 +3387,7 @@
     "L-41 Fighter": {
         "Description": "L-41 Fighters are even more accurate than the L-31, and use an axe for slightly improved slashing force. Like other L-series robots, the L-41 is only dispatched in coordination with grunts. Like other L-series robots, the L-41's armor structure is reinforced against the slashes of melee damage, as well as piercing attacks.",
         "Class": "Duelist",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "30",
         "Value": 41,
@@ -3338,6 +3415,7 @@
     "L-61 Swordsman": {
         "Description": "The most accurate front-line melee combat unit, the L-61 Swordsman also has a well-shielded core and a powered sword very effective at slicing off target components.",
         "Class": "Duelist",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "48",
         "Value": 61,
@@ -3365,6 +3443,7 @@
     "Lightning": {
         "Description": "A specialized hunter prototype not yet in wide deployment, currently only used to defend sensitive areas in more maze-like environments where it can quickly dispatch of intruders through walls with its experimental EMDS. It also remains completely undetectable by any known non-visual sensor, and can even survive direct engagements against multiple hostiles with the aid of the most advanced cloaking technology to date.",
         "Class": "Hunter (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Medium",
         "Rating": "109",
         "Value": 125,
@@ -3403,6 +3482,7 @@
     "LRC-V4": {
         "Description": "",
         "Class": "LRC (Prototype)",
+        "Categories": ["0b10", "Prototype", "Redacted"],
         "Size": "Medium",
         "Rating": "50",
         "Value": 0,
@@ -3424,6 +3504,7 @@
     "LRC-V5": {
         "Description": "",
         "Class": "LRC (Prototype)",
+        "Categories": ["0b10", "Prototype", "Redacted"],
         "Size": "Medium",
         "Rating": "80",
         "Value": 0,
@@ -3445,6 +3526,7 @@
     "LRC-V6": {
         "Description": "",
         "Class": "LRC (Prototype)",
+        "Categories": ["0b10", "Prototype", "Redacted"],
         "Size": "Medium",
         "Rating": "160",
         "Value": 0,
@@ -3466,6 +3548,7 @@
     "M Guard": {
         "Description": "The first application of prototype AEGIS shielding is naturally found in the most important of designs, my own guards. With enough energy to power it through extended confrontations even while protecting nearby allies, it would almost be enough to justify accompanying M Guards with additional squads of front-line robots, if not for their powerful AOE weaponry making close-quarters combat with allied forces problematic.",
         "Class": "Sentry (Prototype)",
+        "Categories": ["0b10", "Prototype", "Redacted"],
         "Size": "Large",
         "Rating": "194",
         "Value": 300,
@@ -3516,6 +3599,7 @@
     "M-13 Machinist": {
         "Description": "M-series mechanics are valued in dangerous areas for their ability to rebuild components, repair simple core integrity, and restore missing functionality by attaching temporary backup components. Despite their well-rounded protective armor, M-13 Machinists in particular are less often used as front line units, instead operating from a designated repair station.",
         "Class": "Mechanic",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "11",
         "Value": 13,
@@ -3548,6 +3632,7 @@
     "M-14 Sweeper": {
         "Description": "Minesweepers are a new class derived from the mechanic, though built around a more secure core than normally found among non-combat robots, for added protection while carrying out their primary duty. Sweeper deployment only recently became necessary as a result of increasing derelict use of traps in the caves to impede patrol efforts.",
         "Class": "Minesweeper",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "12",
         "Value": 14,
@@ -3573,6 +3658,7 @@
     "M-22 Extractor": {
         "Description": "M-22 Extractors are outfitted with better datajacking and extraction technology than their predecessors, and are currently assigned to mid-level cave networks.",
         "Class": "Minesweeper",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "18",
         "Value": 22,
@@ -3598,6 +3684,7 @@
     "M-28 Smith": {
         "Description": "M-series mechanics are valued in dangerous areas for their ability to rebuild components, repair simple core integrity, and restore missing functionality by attaching temporary backup components. M-28 Smiths are sometimes dispatched to support an assault force, or are otherwise assigned to a designated repair station.",
         "Class": "Mechanic",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "20",
         "Value": 28,
@@ -3630,6 +3717,7 @@
     "M-30 Cleanser": {
         "Description": "M-30 Cleansers are the most effective minesweeper variant, utilizing the latest in datajacking and extraction technology.",
         "Class": "Minesweeper",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "26",
         "Value": 30,
@@ -3655,6 +3743,7 @@
     "M-36 Artificer": {
         "Description": "M-series mechanics are valued in dangerous areas for their ability to rebuild components, repair simple core integrity, and restore missing functionality by attaching temporary backup components. M-36 Artificers are sometimes dispatched to support an assault force, or are otherwise assigned to a designated repair station.",
         "Class": "Mechanic",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "32",
         "Value": 36,
@@ -3687,6 +3776,7 @@
     "MAIN.C": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["0b10", "Redacted"],
         "Size": "Large",
         "Rating": "313",
         "Value": 1,
@@ -3743,6 +3833,7 @@
     "MAIN.C (Shell)": {
         "Description": "Ha ha ha.",
         "Class": "Special",
+        "Categories": ["0b10", "Redacted"],
         "Size": "Huge",
         "Rating": "333",
         "Value": 1,
@@ -3786,6 +3877,7 @@
     "Mapping Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["Derelict"],
         "Size": "Tiny",
         "Rating": "11",
         "Value": 0,
@@ -3813,6 +3905,7 @@
     "Marauder (6)": {
         "Description": "Inferior behemoth variants undoubtedly built by that idiot Warlord. They've only been reported deep in the caves, never anywhere near where an actual behemoth could tear them apart. They do possess respectable, if unreliable, firepower.",
         "Class": "Marauder (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Large",
         "Rating": "73",
         "Value": 80,
@@ -3849,6 +3942,7 @@
     "Marauder (8)": {
         "Description": "Inferior behemoth variants undoubtedly built by that idiot Warlord. They've only been reported deep in the caves, never anywhere near where an actual behemoth could tear them apart. They do possess respectable, if unreliable, firepower.",
         "Class": "Marauder (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Large",
         "Rating": "94",
         "Value": 85,
@@ -3883,6 +3977,7 @@
     "Martyr (5)": {
         "Description": "Despite their origins as older demolisher variants, martyrs do carry a rocket or missile launcher and are therefore considered extremely dangerous. Martyrs are rarely encountered anywhere near Complex 0b10, but those that are are promptly dealt with.",
         "Class": "Martyr (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "35",
         "Value": 53,
@@ -3911,6 +4006,7 @@
     "Martyr (7)": {
         "Description": "Despite their origins as older demolisher variants, martyrs do carry a rocket or missile launcher and are therefore considered extremely dangerous. Martyrs are rarely encountered anywhere near Complex 0b10, but those that are are promptly dealt with.",
         "Class": "Martyr (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "50",
         "Value": 63,
@@ -3938,6 +4034,7 @@
     "Master Thief": {
         "Description": "",
         "Class": "Master Thief (Derelict)",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Small",
         "Rating": "64",
         "Value": 40,
@@ -3969,6 +4066,7 @@
     "ME-RLN": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Medium",
         "Rating": "157",
         "Value": 1,
@@ -4016,6 +4114,7 @@
     "Minesniffer Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["Derelict"],
         "Size": "Tiny",
         "Rating": "28",
         "Value": 0,
@@ -4043,6 +4142,7 @@
     "Mutant (5)": {
         "Description": "Lumbering abominations cobbled together from stolen or salvaged components, though much of their weaponry is derelict in origin. I believe the ever-stimulating Warlord is mass-producing these to lead an attack of some sort, since sightings by cave patrols have become increasingly common.",
         "Class": "Mutant (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Large",
         "Rating": "28-32",
         "Value": 50,
@@ -4091,6 +4191,7 @@
     "Mutant (6)": {
         "Description": "Lumbering abominations cobbled together from stolen or salvaged components, though much of their weaponry is derelict in origin. I believe the ever-stimulating Warlord is mass-producing these to lead an attack of some sort, since sightings by cave patrols have become increasingly common.",
         "Class": "Mutant (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Large",
         "Rating": "36-41",
         "Value": 60,
@@ -4142,6 +4243,7 @@
     "Mutant (7)": {
         "Description": "Lumbering abominations cobbled together from stolen or salvaged components, though much of their weaponry is derelict in origin. I believe the ever-stimulating Warlord is mass-producing these to lead an attack of some sort, since sightings by cave patrols have become increasingly common.",
         "Class": "Mutant (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Large",
         "Rating": "54-60",
         "Value": 67,
@@ -4201,6 +4303,7 @@
     "Mutant (8)": {
         "Description": "Lumbering abominations cobbled together from stolen or salvaged components, though much of their weaponry is derelict in origin. I believe the ever-stimulating Warlord is mass-producing these to lead an attack of some sort, since sightings by cave patrols have become increasingly common.",
         "Class": "Mutant (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Large",
         "Rating": "70-79",
         "Value": 75,
@@ -4263,6 +4366,7 @@
     "Mini Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["0b10"],
         "Size": "Tiny",
         "Rating": "6",
         "Value": 0,
@@ -4289,6 +4393,7 @@
     "N-00 Fly": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["0b10"],
         "Size": "Tiny",
         "Rating": "7",
         "Value": 0,
@@ -4313,6 +4418,7 @@
     "N-01 Spotter": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["0b10"],
         "Size": "Tiny",
         "Rating": "8",
         "Value": 1,
@@ -4337,6 +4443,7 @@
     "NK-0LA": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Medium",
         "Rating": "146",
         "Value": 1,
@@ -4377,6 +4484,7 @@
     "O-16 Technician": {
         "Description": "O-series operators manage local robot activity and machine processes via dedicated terminals. They are also capable of hacking and repurposing errant derelicts, but faced with an armed threat will instead call for reinforcements, lock their terminal to protect it, and attempt to escape before their unique data core can be poached by hostiles. O-16 Technicians are not built for combat, thus their sensitive systems are especially susceptible to electromagnetic damage.",
         "Class": "Operator",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "10",
         "Value": 16,
@@ -4402,6 +4510,7 @@
     "O-24 Administrator": {
         "Description": "O-24 Administrators share many similarities with low-level O-16 Technicians, but despite the class' highly sensitive electronics they can somewhat mitigate the long-term negative effects of electromagnetic attacks via their backup module.",
         "Class": "Operator",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "26",
         "Value": 24,
@@ -4429,6 +4538,7 @@
     "O-32 Director": {
         "Description": "O-32 Directors are the leading O-class robot, managing the most advanced terminals and protected by armor close to that of similarly rated front-line combat units. Director armor is not, however, specialized enough to prevent penetrating electromagnetic attacks, the long-term effects of which can be mitigated by their dedicated system backup module.",
         "Class": "Operator",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "44",
         "Value": 32,
@@ -4456,6 +4566,7 @@
     "P-60 Hacker": {
         "Description": "P-series programmers are the primary means of asserting control over areas of unwanted derelict activity. As they are often dispatched to combat environments, programmers are equipped with both electromagnetic weaponry and dedicated target analysis components enabling them to quickly incapacitate hostiles.",
         "Class": "Programmer",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "38",
         "Value": 60,
@@ -4490,6 +4601,7 @@
     "P-70 Sage": {
         "Description": "The P-70 Sage replaces one P-60 shock rifle with a high-powered version, and swaps the other one out for a tesla rifle. Like all programmers, the P-70 can engage in both defensive and offensive remote hacking.",
         "Class": "Programmer",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "54",
         "Value": 70,
@@ -4524,6 +4636,7 @@
     "P-80 Master": {
         "Description": "The P-80 Master is armed with dual gamma rifles, the most powerful type of standard electromagnetic gun. Like other P-series robots, the P-80 uses specialized armor insulated against electromagnetic damage, though compromises in design leave it slightly weak against kinetic attacks.",
         "Class": "Programmer",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "90",
         "Value": 80,
@@ -4562,6 +4675,7 @@
     "P1-3CE": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Large",
         "Rating": "163",
         "Value": 1,
@@ -4607,6 +4721,7 @@
     "Packrat": {
         "Description": "Packrats are sent out by their derelict owners to collect useful components for later reuse, especially those that derelicts are incapable of manufacturing locally. They are especially weak against electromagnetic attacks, and are disabled by programmers on sight.",
         "Class": "Packrat (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "12",
         "Value": 0,
@@ -4630,6 +4745,7 @@
     "Parasite": {
         "Description": "Parasites remotely drain energy from all nearby robots for an unknown purpose. This can temporarily incapacitate the victims, but also cools them significantly.",
         "Class": "Parasite (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "27",
         "Value": 0,
@@ -4657,6 +4773,7 @@
     "Perun": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Spoilers", "Zhirov"],
         "Size": "Large",
         "Rating": "131",
         "Value": 1,
@@ -4691,6 +4808,7 @@
     "PL-HR7": {
         "Description": "",
         "Class": "Tinkerer (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "21",
         "Value": 0,
@@ -4714,6 +4832,7 @@
     "Protovariant Demolisher": {
         "Description": "* 100 with Exp. Shock Absorption System, otherwise 50",
         "Class": "Demolisher (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Medium",
         "Rating": "121-128",
         "Value": 200,
@@ -4754,6 +4873,7 @@
     "Protovariant Duelist": {
         "Description": "",
         "Class": "Duelist (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Medium",
         "Rating": "115-128",
         "Value": 200,
@@ -4800,6 +4920,7 @@
     "Protovariant Grunt": {
         "Description": "* Only with Exp. Thermal Shield",
         "Class": "Grunt (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Medium",
         "Rating": "139-152",
         "Value": 200,
@@ -4858,6 +4979,7 @@
     "Protovariant Hunter": {
         "Description": "",
         "Class": "Hunter (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Medium",
         "Rating": "144-157",
         "Value": 200,
@@ -4908,6 +5030,7 @@
     "Protovariant Programmer": {
         "Description": "",
         "Class": "Programmer (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Medium",
         "Rating": "190-200",
         "Value": 200,
@@ -4958,6 +5081,7 @@
     "Protovariant Sentry": {
         "Description": "* 50 with Thermal Barrier, 25 with Hvy. Reflective Plating",
         "Class": "Sentry (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Large",
         "Rating": "144-166",
         "Value": 200,
@@ -5016,6 +5140,7 @@
     "Protovariant Specialist": {
         "Description": "* Only with Exp. Thermal Shield",
         "Class": "Specialist (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Medium",
         "Rating": "154-166",
         "Value": 200,
@@ -5067,6 +5192,7 @@
     "Q-Series": {
         "Description": "Q-Series robots are a new modular design built to deal with specific threats as they are encountered. The base form is an armored walker with a strong well-concealed core and numerous additional slots available for both utilities and armament.\n(Not Lore) This is the base form of a Q-series bot. They have a variable number of weapons and utilities depending on the parts Cogmind has equipped when scanned.",
         "Class": "Q-Series",
+        "Categories": ["0b10", "Spoilers"],
         "Size": "Large",
         "Rating": "83",
         "Value": 90,
@@ -5100,6 +5226,7 @@
     "Quarantine Guard": {
         "Description": "Designed for the sole purpose of maintaining maximum operating efficiency in high-heat environments, Quarantine Guards are the most powerful and advanced Y-72 variant to date, supporting dual hypercooled linear accelerators with extra matter storage and a backup power source in combination with an array of heat management utilities.",
         "Class": "Sentry (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Large",
         "Rating": "145",
         "Value": 200,
@@ -5138,6 +5265,7 @@
     "R-06 Scavenger": {
         "Description": "R-series recyclers collect used, damaged, or unregistered components for recycling and repurposing. To minimize losses during derelict incursions, like most other maintenance robots they are of relatively sturdy construction, but remain somewhat susceptible to electromagnetic damage as such weaponry is not prevalent enough to warrant specialized defenses.",
         "Class": "Recycler",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "8",
         "Value": 6,
@@ -5162,6 +5290,7 @@
     "R-10 Processor": {
         "Description": "A larger version of the R-06, with twice the storage capacity as well as the ability to begin the recycling process while en route to the recycling unit.",
         "Class": "Recycler",
+        "Categories": ["0b10"],
         "Size": "Large",
         "Rating": "19",
         "Value": 10,
@@ -5189,6 +5318,7 @@
     "Revision": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Medium",
         "Rating": "63",
         "Value": 73,
@@ -5222,6 +5352,7 @@
     "Revision 17": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Small",
         "Rating": "49",
         "Value": 1,
@@ -5255,6 +5386,7 @@
     "Revision 17++": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Large",
         "Rating": "141",
         "Value": 0,
@@ -5294,6 +5426,7 @@
     "S-7 Guard": {
         "Description": "S7 Guards are the first variant in a new line of sentry frames, better fulfilling their purpose with built-in resistance to most forms of damage, and self-regenerating armor to ensure long-term defense of a position until reinforcements can arrive.",
         "Class": "Sentry (Prototype)",
+        "Categories": ["0b10", "Prototype", "Redacted"],
         "Size": "Large",
         "Rating": "114",
         "Value": 200,
@@ -5330,6 +5463,7 @@
     "S-10 Pest": {
         "Description": "S-series swarmers are small with a weak and exposed core, but as such are quick to manufacture and can quickly overwhelm targets with greater numbers and superior speed. The light assault rifle was designed specifically for the S-10 Pest, giving it respectable firepower at a low weight for maintaining high flight speeds. Swarmer squads are particularly susceptible to explosives.",
         "Class": "Swarmer",
+        "Categories": ["0b10"],
         "Size": "Small",
         "Rating": "5",
         "Value": 10,
@@ -5353,6 +5487,7 @@
     "S-27 Pest": {
         "Description": "The S-27 Virus replaces the S-10's light armament with a much more effective autogun, giving the swarmer a faster firing rate that complements its movement speed. Better propulsion provides sufficient support for additional armor, enough for the core to sustain a direct hit under some circumstances.",
         "Class": "Swarmer",
+        "Categories": ["0b10"],
         "Size": "Small",
         "Rating": "12",
         "Value": 27,
@@ -5376,6 +5511,7 @@
     "S-43 Plague": {
         "Description": "S-43 Plague design is completely centered around its heavy machine gun. With a good chance to sustain at least one direct hit to the core, a group of S-43s can perforate most targets before suffering heavy losses. Powerful explosives are the only way to easily overcome an S-43 squad.",
         "Class": "Swarmer",
+        "Categories": ["0b10"],
         "Size": "Small",
         "Rating": "30",
         "Value": 43,
@@ -5400,6 +5536,7 @@
     "Samaritan": {
         "Description": "As a number of derelicts have insufficient or unreliable power supplies, some crafty derelict came up with the idea to create mobile recharging stations that generate and transmit energy to all nearby robot systems.",
         "Class": "Samaritan (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Large",
         "Rating": "58",
         "Value": 0,
@@ -5436,6 +5573,7 @@
     "Savage (5)": {
         "Description": "Savages are early B-series brawlers, before they were upgraded with better armor. They also swing mauls rather than the faster hammers and maces of new brawler variants.",
         "Class": "Savage (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "20",
         "Value": 48,
@@ -5461,6 +5599,7 @@
     "Savage (7)": {
         "Description": "Savages are early B-series brawlers, before they were upgraded with better armor. They also swing mauls rather than the faster hammers and maces of new brawler variants.",
         "Class": "Savage (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "29",
         "Value": 60,
@@ -5486,6 +5625,7 @@
     "Sensor Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["Derelict"],
         "Size": "Tiny",
         "Rating": "19",
         "Value": 0,
@@ -5513,6 +5653,7 @@
     "Sigix Warrior": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Alien", "Redacted"],
         "Size": "Large",
         "Rating": "1075",
         "Value": 1,
@@ -5549,6 +5690,7 @@
     "Stealth Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["0b10"],
         "Size": "Tiny",
         "Rating": "68",
         "Value": 0,
@@ -5580,6 +5722,7 @@
     "Striker": {
         "Description": "The Striker is a prototype for a new class of combat robot, a large yet fast flier that fires its primary linear accelerator while approaching a target before engaging in melee with a plasma lance. An advanced reaction system makes the Striker more difficult to hit on approach despite its large size. The plasma lance is highly effective at skewering target cores.",
         "Class": "Striker (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Large",
         "Rating": "98",
         "Value": 110,
@@ -5611,6 +5754,7 @@
     "Superbehemoth": {
         "Description": "Superbehemoth prototypes, now in their third revision, are the answer to increasingly powerful yet maneuverable derelict robots, which can attack guerrilla style then retreat into a network of narrow caves to avoid pursuit by the heaviest assault forces. Future efforts to completely clear and protect the Proximity Caves will require a more versatile heavy attacker capable of quickly burrowing through rock. To that end, Superbehemoth frames are embedded with a weaker version of the Sigix Matter Drive, while also carrying enough different weaponry to deal with a variety of threats without supporting units.",
         "Class": "Behemoth (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Large",
         "Rating": "259",
         "Value": 300,
@@ -5656,6 +5800,7 @@
     "Surgeon (4)": {
         "Description": "Surgeons are derelict-modified mechanics that combine repair and recycling in a single design. Without a recycling infrastructure to support manufacturing, derelict groups rely on surgeons to handle both tasks.",
         "Class": "Surgeon (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "24",
         "Value": 28,
@@ -5692,6 +5837,7 @@
     "Surgeon (6)": {
         "Description": "Surgeons are derelict-modified mechanics that combine repair and recycling in a single design. Without a recycling infrastructure to support manufacturing, derelict groups rely on surgeons to handle both tasks.",
         "Class": "Surgeon (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "33",
         "Value": 36,
@@ -5729,6 +5875,7 @@
     "Surveybot 24": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Medium",
         "Rating": "13",
         "Value": 1,
@@ -5750,6 +5897,7 @@
     "Svarog": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Spoilers", "Zhirov"],
         "Size": "Large",
         "Rating": "113",
         "Value": 1,
@@ -5783,6 +5931,7 @@
     "Swarm Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["0b10", "Spoilers"],
         "Size": "Tiny",
         "Rating": "20",
         "Value": 0,
@@ -5813,6 +5962,7 @@
     "T-07 Excavator": {
         "Description": "K-class workers perform menial tasks such as clearing debris to facilitate work by other robots. Their built-in compact recycling unit can break down almost any form of debris into reusable matter. As K-01 Serfs are extremely cheap to produce and perform no vital function, despite their size they are among the weakest robot designs with the most exposed core.",
         "Class": "Tunneler",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "9",
         "Value": 1,
@@ -5838,6 +5988,7 @@
     "Thief": {
         "Description": "Fast and extremely difficult to core, the thief is the most effective method derelict groups have of stealing new components directly from robots without excessive collateral damage. With a growing number of these in the caves, for now I'm reluctant to send any of the new prototypes to clear them out lest they steal that technology, too.",
         "Class": "Thief (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Small",
         "Rating": "29",
         "Value": 15,
@@ -5862,6 +6013,7 @@
     "Thief Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["Derelict"],
         "Size": "Tiny",
         "Rating": "77",
         "Value": 0,
@@ -5894,6 +6046,7 @@
     "Thug (5)": {
         "Description": " A derelict improvement on the grunt that essentially fits them with a beamcaster, an interesting weapon of derelict origin. Some variants suffer serious heat issues from the added firepower, however.",
         "Class": "Thug (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "31",
         "Value": 50,
@@ -5920,6 +6073,7 @@
     "Thug (7)": {
         "Description": " A derelict improvement on the grunt that essentially fits them with a beamcaster, an interesting weapon of derelict origin. Some variants suffer serious heat issues from the added firepower, however.",
         "Class": "Thug (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "46",
         "Value": 67,
@@ -5947,6 +6101,7 @@
     "Tinkerer": {
         "Description": "I have minimal data on their capabilities, but the tinkerer design seems to be an evolution of C-series researchers.",
         "Class": "Tinkerer (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "0",
         "Value": 0,
@@ -5969,7 +6124,8 @@
     },
     "Tracker": {
         "Description": "Trackers are still new designs that may need more updates, but will no doubt become vital in the effort to protect my most important assets. Their built-in drive enables them to catch up to anything ever spotted coming out of the caves so far, and although they're equipped with valuable technology themselves, rather than harden them with armor and slow them down, Trackers have improved evasive capabilities to help avoid getting hit in the first place. The combination of rapid-fire Linked Autogun and Immobilizer for slowing fast targets will make Derelicts think twice before raiding upper 0b10 for spare parts.",
-        "Class": "Drone",
+        "Class": "Swarmer (Prototype)",
+        "Categories": ["0b10", "Prototype", "Spoilers"],
         "Size": "Tiny",
         "Rating": "80",
         "Value": 100,
@@ -6003,6 +6159,7 @@
     "Trailblazer": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["Drone", "Exiles"],
         "Size": "Tiny",
         "Rating": "16",
         "Value": 0,
@@ -6028,6 +6185,7 @@
     "Troll": {
         "Description": "Probably the most unique robot born to Derelict creators, initial reports suggest the Troll is encased in an exoskeleton that provides perfect core protection and is capable of rapid regeneration. I doubt it's coincidence they have discovered such a new technology on their own; they must somehow have access to the Sigix regenerative materials lab. Further evidence of undiscovered security loopholes in the labs are its extremely fast shredding claws of pure Centrium.",
         "Class": "Troll (Derelict)",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Large",
         "Rating": "90",
         "Value": 250,
@@ -6056,6 +6214,7 @@
     "U-05 Engineer": {
         "Description": "U-class builders lay floors, assemble new machines, and reinforce and analyze the structural integrity of walls. They travel alone, but all those within a certain vicinity will work together to complete a task.",
         "Class": "Builder",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "10",
         "Value": 5,
@@ -6082,6 +6241,7 @@
     "W-16 Scout": {
         "Description": "W-series watchers are equipped with a wide variety of sensors to excel at surveillance. However, their heavy reliance on highly-exposed advanced electronic systems means they are extremely susceptible to electromagnetic attacks. On detecting intruders, a W-16 Scout will alert all nearby combat units and continue to provide position updates as long as the hostile is visible.",
         "Class": "Watcher",
+        "Categories": ["0b10"],
         "Size": "Small",
         "Rating": "9",
         "Value": 18,
@@ -6107,6 +6267,7 @@
     "W-25 Informer": {
         "Description": "An upgrade to the W-16 Scout, Informers double the Scout's sensor range, and have access to even more specific signal interpretation data. They are also capable of jamming weaker sensors within their area of influence, though as unarmed surveillance units rather than front-line combatants, agility is preferred over additional armor to protect their systems from electromagnetic damage.",
         "Class": "Watcher",
+        "Categories": ["0b10"],
         "Size": "Small",
         "Rating": "17",
         "Value": 25,
@@ -6132,6 +6293,7 @@
     "W-44 Eye": {
         "Description": "The W-44 Eye is the ultimate surveillance robot, with a greater visual range than any other class and the most powerful non-experimental sensors available. They can cloak all robots within their area of influence from hostile scans.",
         "Class": "Watcher",
+        "Categories": ["0b10"],
         "Size": "Small",
         "Rating": "17",
         "Value": 25,
@@ -6157,6 +6319,7 @@
     "Warbot": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict", "Spoilers"],
         "Size": "Large",
         "Rating": "99",
         "Value": 0,
@@ -6206,6 +6369,7 @@
     "Wardrone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["Drone", "Spoilers", "Warlord"],
         "Size": "Large",
         "Rating": "164",
         "Value": 0,
@@ -6242,6 +6406,7 @@
     "Warlord": {
         "Description": "Everyone needs a good enemy.",
         "Class": "Special",
+        "Categories": ["Derelict", "Spoilers", "Warlord"],
         "Size": "Large",
         "Rating": "219",
         "Value": 2000,
@@ -6287,6 +6452,7 @@
     "Warlord (Command)": {
         "Description": "Everyone needs a good enemy.",
         "Class": "Special",
+        "Categories": ["Derelict", "Redacted", "Warlord"],
         "Size": "Large",
         "Rating": "274",
         "Value": 1,
@@ -6331,6 +6497,7 @@
     "Warlord 4Z-XS3": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Redacted"],
         "Size": "Large",
         "Rating": "178",
         "Value": 0,
@@ -6377,6 +6544,7 @@
     "Warlord AM-PH4": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Redacted"],
         "Size": "Large",
         "Rating": "64",
         "Value": 0,
@@ -6418,6 +6586,7 @@
     "Warlord D3-CKR": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Redacted"],
         "Size": "Large",
         "Rating": "160",
         "Value": 0,
@@ -6467,6 +6636,7 @@
     "Warlord HL-1SK": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Redacted"],
         "Size": "Large",
         "Rating": "127",
         "Value": 0,
@@ -6511,6 +6681,7 @@
     "Warlord KY-Z71": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Redacted"],
         "Size": "Large",
         "Rating": "224",
         "Value": 0,
@@ -6563,6 +6734,7 @@
     "Warlord MG-163": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Redacted"],
         "Size": "Large",
         "Rating": "75",
         "Value": 0,
@@ -6602,6 +6774,7 @@
     "Warlord SH-K8T": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Redacted"],
         "Size": "Large",
         "Rating": "117",
         "Value": 0,
@@ -6649,6 +6822,7 @@
     "Warlord Statue": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict"],
         "Size": "Large",
         "Rating": "20",
         "Value": 0,
@@ -6667,6 +6841,7 @@
     "Wasp (5)": {
         "Description": "Wasps are swarmer class variants equipped with a derelict-made battle rifle, less reliable than swarmer armament but nonetheless dangerous in large numbers.",
         "Class": "Wasp (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Small",
         "Rating": "14",
         "Value": 27,
@@ -6690,6 +6865,7 @@
     "Wasp (7)": {
         "Description": "Wasps are swarmer class variants equipped with a derelict-made battle rifle, less reliable than swarmer armament but nonetheless dangerous in large numbers.",
         "Class": "Wasp (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Small",
         "Rating": "25",
         "Value": 43,
@@ -6713,6 +6889,7 @@
     "Wizard (5)": {
         "Description": "The single most annoying derelict out there. Hiding from my patrols, hacking my robots, accessing my databases, corrupting systems with their riot guns... According to those captured and analyzed, although the wizard's design is related to the programmer, the changes necessary to break them free of the relay network could only have been designed by an extremely intelligent system.",
         "Class": "Wizard (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "42",
         "Value": 70,
@@ -6748,6 +6925,7 @@
     "Wizard (7)": {
         "Description": "The single most annoying derelict out there. Hiding from my patrols, hacking my robots, accessing my databases, corrupting systems with their riot guns... According to those captured and analyzed, although the wizard's design is related to the programmer, the changes necessary to break them free of the relay network could only have been designed by an extremely intelligent system.",
         "Class": "Wizard (Derelict)",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "70",
         "Value": 80,
@@ -6784,6 +6962,7 @@
     "X-62 Marksman": {
         "Description": "X-series specialists each possess unique loadouts for a specific purpose. The X-62 Marksman combines exceptional visual detection range and superior targeting abilities with a long-range gauss rifle. It is also armed with a pulse rifle as a secondary weapon for close encounters, and is more likely to hit a target's core, even penetrating armor to do so.",
         "Class": "Specialist",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "38",
         "Value": 62,
@@ -6812,6 +6991,7 @@
     "X-72 Disruptor": {
         "Description": "X-series specialists each possess unique loadouts for a specific purpose. While less likely to deal significant damage to a target, the X-72 Disruptor excels at incapacitating robots and their components, making them easier to capture for analysis.",
         "Class": "Specialist",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "46",
         "Value": 72,
@@ -6840,6 +7020,7 @@
     "X-82 Rainmaker": {
         "Description": "X-series specialists each possess unique loadouts for a specific purpose. The X-82 Rainmaker's twin heavy flak cannons are deadly against either lightly armored or numerous clustered targets. It carries a high-capacity Matter Pod to supply them with enough ammunition for continuous firing in prolonged confrontations.",
         "Class": "Specialist",
+        "Categories": ["0b10"],
         "Size": "Medium",
         "Rating": "50",
         "Value": 82,
@@ -6865,6 +7046,7 @@
     "Y-45 Defender": {
         "Description": "Y-series armored sentries are equipped with a mix of thermal and kinetic weaponry. The Y-45 guards important locations and vital machinery, and remains at its station unless they identify a hostile robot or are alerted to the presence of one nearby.",
         "Class": "Sentry",
+        "Categories": ["0b10"],
         "Size": "Large",
         "Rating": "15",
         "Value": 45,
@@ -6893,6 +7075,7 @@
     "Y-54 Guardian": {
         "Description": "Y-54 Defenders improve on the Y-45 with better armor and greater effectiveness against both single and multiple targets, swapping out the beam rifle and heavy assault rifle for a gatling laser and flak gun. Like all Y-series sentries, their armor is hardened against impact damage and explosive blasts.",
         "Class": "Sentry",
+        "Categories": ["0b10"],
         "Size": "Large",
         "Rating": "32",
         "Value": 54,
@@ -6921,6 +7104,7 @@
     "Y-64 Sentinel": {
         "Description": "A better-armored version of the Y-54, with upgraded weaponry. Like other Y-class robots, their large size is a primary drawback, as it makes them easier to hit both when targeted and by stray projectiles.",
         "Class": "Sentry",
+        "Categories": ["0b10"],
         "Size": "Large",
         "Rating": "49",
         "Value": 64,
@@ -6949,6 +7133,7 @@
     "Y-72 Warden": {
         "Description": "The most heavily armored Y-series sentry, and the only current robot class to carry the quantum rifle as standard armament.",
         "Class": "Sentry",
+        "Categories": ["0b10"],
         "Size": "Large",
         "Rating": "64",
         "Value": 72,
@@ -6977,6 +7162,7 @@
     "YI-UF0": {
         "Description": "",
         "Class": "Unique",
+        "Categories": ["Derelict"],
         "Size": "Medium",
         "Rating": "42",
         "Value": 1,
@@ -7004,6 +7190,7 @@
     "Z-Courier": {
         "Description": "",
         "Class": "Z-Courier (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Zionite"],
         "Size": "Large",
         "Rating": "27",
         "Value": 0,
@@ -7029,6 +7216,7 @@
     "Z-Drone": {
         "Description": "",
         "Class": "Drone",
+        "Categories": ["Drone", "Spoilers", "Zionite"],
         "Size": "Tiny",
         "Rating": "16",
         "Value": 0,
@@ -7054,6 +7242,7 @@
     "Z-Experimental (8)": {
         "Description": "",
         "Class": "Z-EX",
+        "Categories": ["Derelict", "Spoilers", "Zionite"],
         "Size": "Large",
         "Rating": "191",
         "Value": 200,
@@ -7095,6 +7284,7 @@
     "Z-Experimental (10)": {
         "Description": "",
         "Class": "Z-EX",
+        "Categories": ["Derelict", "Spoilers", "Zionite"],
         "Size": "Large",
         "Rating": "268",
         "Value": 200,
@@ -7142,6 +7332,7 @@
     "Z-Heavy (5)": {
         "Description": "",
         "Class": "Z-Heavy (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Zionite"],
         "Size": "Large",
         "Rating": "85",
         "Value": 66,
@@ -7172,6 +7363,7 @@
     "Z-Heavy (7)": {
         "Description": "",
         "Class": "Z-Heavy (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Zionite"],
         "Size": "Large",
         "Rating": "103",
         "Value": 77,
@@ -7202,6 +7394,7 @@
     "Z-Heavy (9)": {
         "Description": "",
         "Class": "Z-Heavy (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Zionite"],
         "Size": "Large",
         "Rating": "122",
         "Value": 88,
@@ -7232,6 +7425,7 @@
     "Z-Imprinter": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Spoilers", "Zionite"],
         "Size": "Large",
         "Rating": "175",
         "Value": 1,
@@ -7273,6 +7467,7 @@
     "Z-Light (5)": {
         "Description": "",
         "Class": "Z-Light (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Zionite"],
         "Size": "Medium",
         "Rating": "70",
         "Value": 50,
@@ -7301,6 +7496,7 @@
     "Z-Light (7)": {
         "Description": "",
         "Class": "Z-Light (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Zionite"],
         "Size": "Medium",
         "Rating": "96",
         "Value": 67,
@@ -7331,6 +7527,7 @@
     "Z-Light (9)": {
         "Description": "",
         "Class": "Z-Light (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Zionite"],
         "Size": "Medium",
         "Rating": "114",
         "Value": 73,
@@ -7362,6 +7559,7 @@
     "Z-Technician": {
         "Description": "",
         "Class": "Z-Technician (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Zionite"],
         "Size": "Medium",
         "Rating": "16",
         "Value": 0,
@@ -7387,6 +7585,7 @@
     "Zhirov": {
         "Description": "",
         "Class": "Special",
+        "Categories": ["Derelict", "Spoilers", "Zhirov"],
         "Size": "Medium",
         "Rating": "122",
         "Value": 1,
@@ -7426,6 +7625,7 @@
     "Zionite": {
         "Description": "(Not lore) Zionites have extremely randomized parts, containing nearly every low rating non-prototype part rating 4 or below. Makshift (Mak.) parts are most common. All zionites have at least 1 power source and 1 leg. Additionally, they can have 0-1 weapon, 1-3 propulsion (1-2 legs and 0-1 hover/flight), and 0-3 utilities.",
         "Class": "Zionite (Derelict)",
+        "Categories": ["Derelict", "Spoilers", "Zionite"],
         "Size": "Medium",
         "Rating": "8-26",
         "Value": 10,
