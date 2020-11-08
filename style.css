@@ -86,11 +86,20 @@ body {
 }
 
 /* Input label */
-.input-group-text, .input-group-lg > .input-group-prepend > .input-group-text {
+.input-label, .input-group-text, .input-group-text-block, .input-group-lg > .input-group-prepend > .input-group-text {
     color: #9da9af;
     background-color: #162416;
     border: 1px solid #006200;
     border-radius: 0;
+}
+
+.input-label {
+    padding: .375rem .75rem;
+    display: inline-block;
+}
+
+.input-group-text-block {
+    display: inline-block;
 }
 
 .input-group-lg > .form-control {
@@ -184,6 +193,10 @@ body {
     background-color: #005700;
 }
 
+.spoilers-group {
+    max-width: 25ch;
+}
+
 /* Button groups, margin stuff is a bit hacky to avoid double-wide border */
 .input-group-prepend {
     margin-top: 0px;
@@ -193,7 +206,12 @@ body {
     margin-left: -1px;
 }
 
-/* Grid */
+/* Grids */
+.title-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 .items-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
