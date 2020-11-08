@@ -4114,7 +4114,7 @@
     "Minesniffer Drone": {
         "Description": "",
         "Class": "Drone",
-        "Categories": ["Derelict"],
+        "Categories": ["Derelict", "Spoilers", "Warlord"],
         "Size": "Tiny",
         "Rating": "28",
         "Value": 0,
