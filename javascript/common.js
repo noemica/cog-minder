@@ -194,48 +194,34 @@ function valueLineWithDefault(category, valueString, defaultString) {
 // Creates a HTML string representing a bot
 export function createBotDataContent(bot) {
     function createItemHtml(data) {
+        let line = `${escapeHtml(data["Name"])} (${data["Coverage"]}%)`;
+
+        if (data["Number"] > 1) {
+            line += " x" + data["Number"].toString();
+        }
+        return `${itemLine(line)}`;
+    }
+
+    function createItemOptionHtml(data) {
+        // Add all options
         let html = "";
 
-        if (Array.isArray(data)) {
-            // Found option, add all options
-            for (let i = 0; i < data.length; i++) {
-                const item = data[i];
+        for (let i = 0; i < data.length; i++) {
+            const item = data[i];
 
-                let line;
-                if (item["Name"] === "None") {
-                    line = "None";
-                }
-                else {
-                    line = `${item["Name"]} (${item["Coverage"]}%)`;
-                }
-
-                if (item["Number"] > 1) {
-                    line += " x" + item["Number"].toString();
-                }
-
-                if (i > 0) {
-                    html += orLine();
-                }
-
-                if (i == 0) {
-                    html += itemOptionTopLine(line);
-                }
-                else if (i == data.length - 1) {
-                    html += itemOptionBottomLine(line);
-                }
-                else {
-                    html += itemLine(line);
-                }
+            let line;
+            if (item["Name"] === "None") {
+                line = "None";
             }
-        }
-        else {
-            // Found item
-            let line = `${escapeHtml(data["Name"])} (${data["Coverage"]}%)`;
-
-            if (data["Number"] > 1) {
-                line += " x" + data["Number"].toString();
+            else {
+                line = `${item["Name"]} (${item["Coverage"]}%)`;
             }
-            html += `${itemLine(line)}`;
+
+            if (item["Number"] > 1) {
+                line += " x" + item["Number"].toString();
+            }
+
+            html += itemLineOption(line, i);
         }
 
         return html;
@@ -251,16 +237,8 @@ export function createBotDataContent(bot) {
         return `<pre class="popover-line"> ${itemString}</pre>`;
     }
 
-    function itemOptionBottomLine(itemString) {
-        return `<pre class="popover-option-bottom"> ${itemString}</pre>`;
-    }
-
-    function itemOptionTopLine(itemString) {
-        return `<pre class="popover-option-top"> ${itemString}</pre>`;
-    }
-
-    function orLine() {
-        return `<pre class="popover-or">  OR</pre>`;
+    function itemLineOption(itemString, i) {
+        return `<pre class="popover-line"><span class="popover-option"> ${String.fromCharCode(97 + i)})</span><span> ${itemString}</span></pre>`;
     }
 
     // Create overview
@@ -280,11 +258,18 @@ export function createBotDataContent(bot) {
     ${summaryLine("Armament")}
     `;
 
-    // Add armament items
+    // Add armament items and options
     if (bot["Armament"].length > 0) {
         bot["Armament Data"].forEach(data => {
             html += createItemHtml(data);
         });
+
+        for (let i = 0; i < bot["Armament Option Data"].length; i++) {
+            if (i != 0 || bot["Armament Data"].length > 0) {
+                html += "<p/>"
+            }
+            html += createItemOptionHtml(bot["Armament Option Data"][i]);
+        }
     }
     else {
         html += itemLine("None");
@@ -300,6 +285,13 @@ export function createBotDataContent(bot) {
         bot["Components Data"].forEach(data => {
             html += createItemHtml(data);
         });
+
+        for (let i = 0; i < bot["Components Option Data"].length; i++) {
+            if (i != 0 || bot["Components Data"].length > 0) {
+                html += "<p/>"
+            }
+            html += createItemOptionHtml(bot["Components Option Data"][i]);
+        }
     }
     else {
         html += itemLine("N/A");
@@ -327,6 +319,19 @@ export function createBotDataContent(bot) {
 
         immunities.forEach(immunity => {
             html += textLineDim(immunity, "IMMUNE");
+        });
+    }
+
+    // Add traits
+    const traits = valueOrDefault(bot["Traits"], {});
+    if (traits.length > 0) {
+        html += `
+        <p/>
+        ${summaryLine("Traits")}
+        `;
+
+        traits.forEach(trait => {
+            html += itemLine(trait);
         });
     }
 
@@ -699,7 +704,7 @@ export function getItem(itemName) {
 // Gets the stored spoilers state
 export function getSpoilersState() {
     let value = valueOrDefault(window.localStorage.getItem("spoilers"), "None");
-    if (typeof(value) != "string" || value != "None" && value != "Spoilers" && value != "Redacted") {
+    if (typeof (value) != "string" || value != "None" && value != "Spoilers" && value != "Redacted") {
         value = "None";
     }
 
@@ -799,6 +804,7 @@ export async function initData() {
         bot["Core Coverage"] = estimatedCoreCoverage;
 
         let partData = [];
+        let partOptionData = [];
         function addPartData(data) {
             if (typeof (data) === "string") {
                 const itemName = data;
@@ -834,17 +840,20 @@ export async function initData() {
                         "Coverage": coverage
                     });
                 });
-                partData.push(options);
+                partOptionData.push(options);
             }
         }
 
         // Add armament and component data
         bot["Armament"].forEach(addPartData);
         bot["Armament Data"] = partData;
+        bot["Armament Option Data"] = partOptionData;
 
         partData = [];
+        partOptionData = [];
         bot["Components"].forEach(addPartData);
         bot["Components Data"] = partData;
+        bot["Components Option Data"] = partOptionData;
     });
 }
 

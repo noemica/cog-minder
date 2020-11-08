@@ -227,23 +227,15 @@ body {
     font-size: .80rem;
 }
 
-.popover-line, .popover-description, .popover-or, .popover-option-top, .popover-option-bottom {
+.popover-line, .popover-description, .popover-option {
     margin: 0;
     font-family: smallcaps-mono;
     color: #00b200;
     font-size: .80rem;
 }
 
-.popover-or {
+.popover-option {
     color: #bfbfbf;
-}
-
-.popover-option-bottom {
-    /* border-bottom: solid #004200 1px; */
-}
-
-.popover-option-top {
-    /* border-top: solid #004200 1px; */
 }
 
 .popover-description {
