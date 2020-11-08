@@ -250,6 +250,7 @@ export function createBotDataContent(bot) {
     ${textLine("Size", bot["Size"])}
     ${rangeLine("Rating", bot["Rating"], getRatingValue(bot), null, 0, 165, colorSchemeLowGood)}
     ${textLine("Value", bot["Value"])}
+    ${textLine("Visual Range", bot["Visual Range"])}
     ${textLine("Movement", bot["Movement"])}
     ${rangeLine("Core Integrity", bot["Core Integrity"].toString(), bot["Core Integrity"], null, 0, bot["Core Integrity"], colorSchemeGreen)}
     ${rangeLineUnit("Core Exposure", bot["Core Exposure"].toString(), bot["Core Exposure"], "%", null, 0, 100, colorSchemeLowGood)}
