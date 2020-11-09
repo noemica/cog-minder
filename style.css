@@ -119,12 +119,20 @@ body {
 }
 
 /* Buttons */
-.btn {
+.btn, .btn-current-page {
     color: #9da9af;
-    background-color: black;
-    border-color: #006200;
     border-radius: 0;
     box-shadow: none;
+}
+
+.btn {
+    background-color: black;
+    border-color: #006200;
+}
+
+.btn-current-page {
+    background-color: #002100;
+    border-color: #009300;
 }
 
 .btn-flex {
