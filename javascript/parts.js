@@ -53,11 +53,11 @@ jq(function ($) {
 
     // Slot ID -> Slot string
     const slotMap = {
+        "slotOther": "N/A",
         "slotPower": "Power",
         "slotPropulsion": "Propulsion",
         "slotUtility": "Utility",
         "slotWeapon": "Weapon",
-        "slotOther": "Other",
     };
 
     // Terminal ID -> int level

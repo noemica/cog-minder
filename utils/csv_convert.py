@@ -57,16 +57,16 @@ categories = {
         'Effect',
         'Description',
     ],
-    # 'other_overview': [
-    #     'Name',
-    #     'Type',
-    #     'Rating',
-    #     'Category',
-    #     'Size',
-    #     'Integrity',
-    #     'Life',
-    #     'Description',
-    # ],
+    'other_overview': [
+        'Name',
+        'Type',
+        'Rating',
+        'Category',
+        'Size',
+        'Integrity',
+        'Life',
+        'Description',
+    ],
     'power': [
         'Energy Generation',
         'Energy Storage',
@@ -138,6 +138,10 @@ def flatten(lists):
 
 
 slot_categories = {
+    'N/A': flatten([
+        categories['all'],
+        categories['other_overview'],
+    ]),
     'Power': flatten([
         categories['all'],
         categories['power_overview'],

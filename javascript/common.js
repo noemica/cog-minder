@@ -470,11 +470,23 @@ export function createItemDataContent(item) {
     }
 
     function getSlotString(item) {
-        if ("Size" in item && parseInt(item["Size"]) > 1) {
-            return `${item["Slot"]} x${item["Size"]}`
+        let slotType = item["Slot"];
+
+        if (item["Slot"] === "N/A") {
+            // Take care of item special cases
+            if (item["Type"] === "Item" || item["Type"] === "Trap") {
+                slotType = "Inventory";
+            }
+            else {
+                return `<span class="dim-text">N/A</span>`
+            }
         }
 
-        return item["Slot"]
+        if ("Size" in item && parseInt(item["Size"]) > 1) {
+            return `${slotType} x${item["Size"]}`
+        }
+
+        return slotType;
     }
 
     // Create overview
