@@ -523,6 +523,7 @@ jq(function ($) {
             "Support": { "Key": "Support", "Sort": integerSort },
             "Targeting": { "Key": "Targeting", "Sort": integerSort },
             "Time/Move": { "Key": "Time/Move", "Sort": integerSort },
+            "Waypoints": { "Key": "Waypoints", "Sort": integerSort },
         };
 
         // Do initial sort
