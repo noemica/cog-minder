@@ -377,6 +377,13 @@ export function createItemDataContent(item) {
         return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
     }
 
+    function getFabricationMatterValue(item) {
+        const matter = item["Fabrication Matter"];
+        const siphonMatter = Math.floor(parseInt(item["Fabrication Matter"]) * .75).toString();
+
+        return `${matter} (With siphon: ${siphonMatter})`;
+    }
+
     function getNegativeString(item, category) {
         const value = item[category];
         if (value === undefined) {
@@ -692,7 +699,7 @@ export function createItemDataContent(item) {
 
         html += `
         ${textLine("Time", item["Fabrication Time"])}
-        ${textLine("Matter", item["Fabrication Matter"])}
+        ${textLine("Matter", getFabricationMatterValue(item))}
         ${textLine("Components", "None")}
         `;
     }    
