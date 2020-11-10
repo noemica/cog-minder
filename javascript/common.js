@@ -677,6 +677,26 @@ export function createItemDataContent(item) {
         }
     }
 
+    // Add fabrication stats if present
+    if ("Fabrication Number" in item) {
+        const number = item["Fabrication Number"];
+
+        html += "<p/>";
+
+        if (number == "1") {
+            html +=summaryLine("Fabrication");
+        }
+        else {
+            html += summaryLine(`Fabrication x${number}`);
+        }
+
+        html += `
+        ${textLine("Time", item["Fabrication Time"])}
+        ${textLine("Matter", item["Fabrication Matter"])}
+        ${textLine("Components", "None")}
+        `;
+    }    
+
     return html;
 }
 
