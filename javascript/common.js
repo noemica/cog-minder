@@ -476,6 +476,17 @@ export function createItemDataContent(item) {
         }
     }
 
+    function getSchematicString(item) {
+        if (item["Hackable Schematic"] === "1") {
+            return "Hackable";
+        }
+        else if ("Fabrication Number" in item) {
+            return "Not Hackable"
+        }
+
+        return null;
+    }
+
     function getSlotString(item) {
         let slotType = item["Slot"];
 
@@ -507,6 +518,7 @@ export function createItemDataContent(item) {
     ${textValueHtmlLine("Rating", item["Rating"].replace("**", "").replace("*", ""), "", getRatingHtml(item))}
     ${rangeLine("Integrity", item["Integrity"], 1, null, 0, 1, colorSchemeGreen)}
     ${valueLine("Coverage", valueOrDefault(item["Coverage"], "0"))}
+    ${textLineWithDefault("Schematic", getSchematicString(item), "N/A")}
     `;
 
     if (item["Slot"] === "Power") {
