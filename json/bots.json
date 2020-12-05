@@ -5985,6 +5985,34 @@
             "Electromagnetic": -25
         }
     },
+    "Target Drone": {
+        "Description": "",
+        "Class": "Drone",
+        "Categories": ["0b10"],
+        "Size": "Tiny",
+        "Rating": "9",
+        "Value": 0,
+        "Movement": "Hovering (60)",
+        "Core Integrity": 12,
+        "Core Exposure": 50,
+        "Salvage Potential": "5-10",
+        "Visual Range": "16",
+        "Armament": [
+        ],
+        "Components": [
+            "Lgt. Ion Engine",
+            "Airjet",
+            "Maneuvering Thrusters",
+            "Seismic Analyzer"
+        ],
+        "Resistances": {
+            "Explosive": -25,
+            "Electromagnetic": -100
+        },
+        "Immunities": [
+            "Hacking"
+        ]
+    },
     "Thief": {
         "Description": "Fast and extremely difficult to core, the thief is the most effective method derelict groups have of stealing new components directly from robots without excessive collateral damage. With a growing number of these in the caves, for now I'm reluctant to send any of the new prototypes to clear them out lest they steal that technology, too.",
         "Class": "Thief (Derelict)",
@@ -6898,7 +6926,7 @@
         "Core Exposure": 29,
         "Salvage Potential": "50-60",
         "Visual Range": "16",
-        "Armament": [
+        "Armament": [   
             "Riot Gun",
             "Riot Gun"
         ],
