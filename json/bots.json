@@ -2527,7 +2527,7 @@
         "Description": "Only two Fortress prototypes have been built to garrison vital locations, utilizing the latest centrium armor technology and a wide array of other defensive components to render them nearly immune to all forms of damage. While their offensive capabilities are limited to two powerful cannons, even a small army would have difficulty overcoming a Fortress before it picks them off one by one.",
         "Class": "Fortress (Prototype)",
         "Categories": ["0b10", "Prototype", "Redacted"],
-        "Size": "Large",
+        "Size": "Huge",
         "Rating": "343",
         "Value": 500,
         "Movement": "Treading (160)",
@@ -5423,7 +5423,7 @@
             "Meltdown"
         ]
     },
-    "S-7 Guard": {
+    "S7 Guard": {
         "Description": "S7 Guards are the first variant in a new line of sentry frames, better fulfilling their purpose with built-in resistance to most forms of damage, and self-regenerating armor to ensure long-term defense of a position until reinforcements can arrive.",
         "Class": "Sentry (Prototype)",
         "Categories": ["0b10", "Prototype", "Redacted"],

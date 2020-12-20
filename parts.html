@@ -4,21 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    </link>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="javascript/jquery-3.5.1.slim.min.js"></script>
+    <script src="javascript/popper.min.js"></script>
+    <script src="javascript/bootstrap.min.js"></script>
     <script type="module" src="javascript/parts.js"></script>
 
     <title>Cog-Minder</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -29,6 +24,7 @@
                 <span>Cog-Minder</span>
                 <a href="about.html" class="btn">About</a>
                 <a href="bots.html" class="btn">Bots</a>
+                <a href="simulator.html" class="btn">Simulator</a>
                 <a href="parts.html" class="btn btn-current-page">Parts</a>
             </div>
             <h1 class="display-4 text-center title">Parts</h1>
@@ -95,8 +91,9 @@
             <span class="input-group-text">Depth</span>
         </div>
         <input id="depth" type="text" class="form-control" placeholder="Any">
-        <div id="schematicsContainer" class="d-flex flex-wrap btn-group btn-group-toggle ml-3" data-toggle="buttons">
-            <div class="input-group-prepend" data-toggle="tooltip" title="The level of the terminal to hack from">
+        <div id="schematicsContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="The level of the terminal to hack from. Higher level terminals can hack higher rating schematics.">
                 <span class="input-group-text">Terminal level</span>
             </div>
             <label id="terminalLevel1" class="btn btn-md">
@@ -112,7 +109,7 @@
     </div>
 
     <!-- Slot filter -->
-    <div id="slotsContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
+    <div id="slotsContainer" class="container-fluid btn-group btn-group-toggle mt-2"
         data-toggle="buttons">
         <div class="input-group-prepend" data-toggle="tooltip" title="The slot for the part">
             <span class="input-group-text">Slot</span>
@@ -291,7 +288,7 @@
         </div>
 
         <!-- Primary sort -->
-        <div class="sort-dropdown-container">
+        <div class="flex-dropdown">
             <button id="primarySort" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
                 Primary
             </button>
@@ -334,7 +331,7 @@
         </div>
 
         <!-- Primary sort direction -->
-        <div class="sort-dropdown-container minus-left-margin">
+        <div class="flex-dropdown minus-left-margin">
             <button id="primarySortDirection" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
                 Ascending
             </button>
@@ -350,7 +347,7 @@
         </div>
 
         <!-- Secondary sort -->
-        <div class="sort-dropdown-container">
+        <div class="flex-dropdown">
             <button id="secondarySort" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
                 Secondary
             </button>
@@ -394,7 +391,7 @@
         </div>
 
         <!-- Secondary sort direction -->
-        <div class="sort-dropdown-container minus-left-margin">
+        <div class="flex-dropdown minus-left-margin">
             <button id="secondarySortDirection" class="btn btn-flex dropdown-toggle" type="button"
                 data-toggle="dropdown">
                 Ascending

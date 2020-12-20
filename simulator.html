@@ -1,0 +1,211 @@
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    </link>
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    </link>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="javascript/jquery-3.5.1.slim.min.js"></script>
+    <script src="javascript/popper.min.js"></script>
+    <script src="javascript/bootstrap.min.js"></script>
+    <script src="javascript/bootstrap-select.min.js"></script>
+    <script src="javascript/Chart.min.js"></script>
+    <script type="module" src="javascript/simulator.js"></script>
+
+    <title>Cog-Minder</title>
+</head>
+
+<body>
+    <!-- Header/Title -->
+    <div class="container-xl">
+        <div class="title-grid mt-2">
+            <div class="header d-flex align-items-center justify-content-center">
+                <span>Cog-Minder</span>
+                <a href="about.html" class="btn">About</a>
+                <a href="bots.html" class="btn">Bots</a>
+                <a href="parts.html" class="btn">Parts</a>
+                <a href="simulator.html" class="btn btn-current-page">Simulator</a>
+            </div>
+            <h1 class="display-4 text-center title">Simulator</h1>
+            <div class="d-flex align-self-center justify-content-center">
+                <div class="spoilers-group btn-group">
+                    <div class="input-group-prepend" data-toggle="tooltip" title="What spoiler content to show.">
+                        <span class="input-group-text">Spoilers</span>
+                    </div>
+                    <button id="spoilers" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
+                        None
+                    </button>
+                    <div id="spoilersDropdown" class="dropdown-menu">
+                        <button class="dropdown-item" data-toggle="tooltip"
+                            title="No spoilers: Factory or higher depth branch content is hidden.">None</button>
+                        <button class="dropdown-item" data-toggle="tooltip"
+                            title="Moderate spoilers: Normal Factory and Research branch content is shown.">Spoilers</button>
+                        <button class="dropdown-item" data-toggle="tooltip"
+                            title="Full spoilers: All game content is shown.">Redacted</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xl">
+        <div class="input-group">
+            <div class="input-group-prepend" data-toggle="tooltip" title="The name of the enemy bot to fight.">
+                <span class="input-group-text">Enemy</span>
+            </div>
+            <div id="botSelectContainer">
+                <select id="botSelect" class="selectpicker" data-live-search="true"></select>
+            </div>
+
+            <div id="analysisContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
+                <div class="input-group-prepend" data-toggle="tooltip" title="Do you have the analysis for this bot?">
+                    <span class="input-group-text">Analysis</span>
+                </div>
+                <label id="analysisNo" class="btn btn-md">
+                    <input type="radio" name="options"> No
+                </label>
+                <label id="analysisYes" class="btn btn-md">
+                    <input type="radio" name="options"> Yes
+                </label>
+            </div>
+
+            <div class="input-group-prepend ml-3" data-toggle="tooltip" title="The number of fights to simulate.">
+                <span class="input-group-text">Number of Fights</span>
+            </div>
+            <input id="numFightsInput" type="text" class="form-control" placeholder="100,000"></input>
+
+            <button id="reset" type="button" class="btn btn-large ml-3" data-toggle="tooltip"
+                title="Reset all values to their default state.">Reset</button>
+        </div>
+
+        <div id="combatTypeContainer" class="input-group btn-group-toggle mt-2" data-toggle="buttons">
+            <div class="input-group-prepend" data-toggle="tooltip" title="The type of weapons to display.">
+                <span class="input-group-text">Combat Type</span>
+            </div>
+            <label id="combatTypeRanged" class="btn btn-md">
+                <input type="radio" name="options"> Ranged
+            </label>
+            <label id="combatTypeMelee" class="btn btn-md">
+                <input type="radio" name="options"> Melee
+            </label>
+        </div>
+
+        <div class="input-group mt-2">
+            <div class="input-group-prepend" data-toggle="tooltip" title="The amount of targeting from targeting computers.">
+                <span class="input-group-text">Targeting Computer %</span>
+            </div>
+            <input id="targetingInput" type="text" class="form-control" placeholder="0"></input>
+
+            <div class="input-group-prepend ml-3" data-toggle="tooltip" title="The number of slots of treads equipped.">
+                <span class="input-group-text">Treads</span>
+            </div>
+            <input id="treadsInput" type="text" class="form-control" placeholder="0"></input>
+
+            <div id="siegeModeContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
+                <div class="input-group-prepend" data-toggle="tooltip" title="The type of siege mode active (if any).">
+                    <span class="input-group-text">Siege Mode</span>
+                </div>
+                <label id="siegeModeNone" class="btn btn-md">
+                    <input type="radio" name="options"> None
+                </label>
+                <label id="siegeModeStandard" class="btn btn-md">
+                    <input type="radio" name="options"> Standard
+                </label>
+                <label id="siegeModeHigh" class="btn btn-md">
+                    <input type="radio" name="options"> High
+                </label>
+            </div>
+        </div>
+
+        <div class="input-group mt-2">
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="The type of particle charger/accelerator that's equipped (if any). Increases damage of energy gun/cannon weapons.">
+                <span class="input-group-text">Particle Charger</span>
+            </div>
+            <select id="chargerSelect" class="selectpicker flex-dropdown">
+                <option title="0%">0%: None</option>
+                <option title="15%">15%: Particle Charger</option>
+                <option title="20%">20%: Imp. Particle Charger</option>
+                <option title="25%">25%: Adv. Particle Charger</option>
+                <option title="30%">30%: Particle Accelerator</option>
+                <option title="40%">40%: Imp. Particle Accelerator</option>
+                <option title="50%">50%: Adv. Particle Accelerator</option>
+            </select>
+
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The type of Kinecellerator that's equipped (if any). Increases minimum damage of kinetic gun/cannon weapons.">
+                <span class="input-group-text">Kinecellerator</span>
+            </div>
+            <select id="kinecelleratorSelect" class="selectpicker flex-dropdown">
+                <option title="0%">0%: None</option>
+                <option title="30%">30%: Kinecellerator</option>
+                <option title="40%">40%: Imp. Kinecellerator</option>
+                <option title="50%">50%: Adv. Kinecellerator</option>
+            </select>
+
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The type of Weapon Cycler or similar that's equipped (if any). Decreases overall volley time.">
+                <span class="input-group-text">Weapon Cycler</span>
+            </div>
+            <select id="cyclerSelect" class="selectpicker flex-dropdown" data-dropdown-align-right="auto">
+                <option title="0%">0%: None</option>
+                <option title="15%">15%: Weapon Cycler</option>
+                <option title="20%">20%: Imp. Weapon Cycler</option>
+                <option title="25%">25%: Adv. Weapon Cycler</option>
+                <option title="30%">30%: Exp. Weapon Cycler</option>
+                <option title="50%">50%: Quantum Capacitor</option>
+                <option title="50%">50%: Launcher Loader</option>
+            </select>
+        </div>
+
+        <div class="input-group mt-2">
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="The type of armor integrity analyzer that's equipped (if any). Adds a chance of bypassing enemy armor.">
+                <span class="input-group-text">Armor Integrity Analyzer</span>
+            </div>
+            <select id="armorIntegSelect" class="selectpicker flex-dropdown">
+                <option title="0%">0%: None</option>
+                <option title="33%">33%: Armor Integrity Analyzer</option>
+                <option title="50%">50%: Imp. Armor Integrity Analyzer</option>
+                <option title="66%">66%: Adv. Armor Integrity Analyzer</option>
+                <option title="90%">90%: Exp. Armor Integrity Analyzer</option>
+            </select>
+
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The type of Core Analyzer that's equipped (if any). Adds a chance of applying half of damage directly to enemy core.">
+                <span class="input-group-text">Core Analyzer</span>
+            </div>
+            <select id="coreAnalyzerSelect" class="selectpicker flex-dropdown">
+                <option title="0%">0%: None</option>
+                <option title="6%">6%: Core Analyzer</option>
+                <option title="8%">8%: Imp. Core Analyzer</option>
+                <option title="10%">10%: Adv. Core Analyzer</option>
+                <option title="15%">15%: Exp. Core Analyzer</option>
+                <option title="8%">8%: Asb. Combat Suite</option>
+            </select>
+
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The type of Target Analyzer that's equipped (if any). Increases critical hit % chance for weapons with an existing critical hit chance.">
+                <span class="input-group-text">Target Analyzer</span>
+            </div>
+            <select id="targetAnalyzerSelect" class="selectpicker flex-dropdown" data-dropdown-align-right="auto">
+                <option title="0%">0%: None</option>
+                <option title="5%">5%: Target Analyzer</option>
+                <option title="6%">6%: Imp. Target Analyzer</option>
+                <option title="8%">8%: Adv. Target Analyzer</option>
+                <option title="12%">12%: Exp. Target Analyzer</option>
+            </select>
+        </div>
+
+        <div id="weaponSelectContainer" class="mt-3"></div>
+
+        <button id="simulateButton" class="btn mt-2">Simulate</button>
+
+        <div>
+            <canvas id="chart"></canvas>
+        </div>
+    </div>
+</body>

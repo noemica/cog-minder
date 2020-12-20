@@ -1,34 +1,35 @@
 /* Custom fonts */
 @font-face { 
     font-family: cog;
-    src: url('fonts/Cogmind-Cog.woff2') format('woff2'),
-         url('fonts/Cogmind-Cog.woff') format('woff'),
-         url('fonts/Cogmind-Cog.ttf') format('truetype');
+    src: url('../fonts/Cogmind-Cog.woff2') format('woff2'),
+         url('../fonts/Cogmind-Cog.woff') format('woff'),
+         url('../fonts/Cogmind-Cog.ttf') format('truetype');
 }
 
 @font-face { 
     font-family: cog-mono;
-    src: url('fonts/Cogmind-Cog-mono.woff2') format('woff2'),
-         url('fonts/Cogmind-Cog-mono.woff') format('woff'),
-         url('fonts/Cogmind-Cog-mono.ttf') format('truetype');
+    src: url('../fonts/Cogmind-Cog-mono.woff2') format('woff2'),
+         url('../fonts/Cogmind-Cog-mono.woff') format('woff'),
+         url('../fonts/Cogmind-Cog-mono.ttf') format('truetype');
 }
 
 @font-face { 
     font-family: smallcaps;
-    src: url('fonts/Cogmind-Smallcaps.woff2') format('woff2'),
-         url('fonts/Cogmind-Smallcaps.woff') format('woff'),
-         url('fonts/Cogmind-Smallcaps.ttf') format('truetype');
+    src: url('../fonts/Cogmind-Smallcaps.woff2') format('woff2'),
+         url('../fonts/Cogmind-Smallcaps.woff') format('woff'),
+         url('../fonts/Cogmind-Smallcaps.ttf') format('truetype');
 }
 
 @font-face { 
     font-family: smallcaps-mono;
-    src: url('fonts/Cogmind-Smallcaps-mono.woff2') format('woff2'),
-         url('fonts/Cogmind-Smallcaps-mono.woff') format('woff'),
-         url('fonts/Cogmind-Smallcaps-mono.ttf') format('truetype');
+    src: url('../fonts/Cogmind-Smallcaps-mono.woff2') format('woff2'),
+         url('../fonts/Cogmind-Smallcaps-mono.woff') format('woff'),
+         url('../fonts/Cogmind-Smallcaps-mono.ttf') format('truetype');
 }
 
 html {
     background-color: black;
+    height: 100vh;
 }
 
 body {
@@ -67,6 +68,10 @@ body {
     margin-left: -1px;
 }
 
+.container-xl {
+    max-width: 1300;
+}
+
 .about-btn {
     padding: .5rem 1.0rem;
     font-size: 1.5rem;
@@ -85,7 +90,11 @@ body {
     border-bottom-color: #008800;
 }
 
-/* Input label */
+.input-group > * {
+    border-radius: 0;
+}
+
+/* Input labels */
 .input-label, .input-group-text, .input-group-text-block, .input-group-lg > .input-group-prepend > .input-group-text {
     color: #9da9af;
     background-color: #162416;
@@ -100,10 +109,6 @@ body {
 
 .input-group-text-block {
     display: inline-block;
-}
-
-.input-group-lg > .form-control {
-    border-radius: 0;
 }
 
 /* Input textbox */
@@ -123,6 +128,7 @@ body {
     color: #9da9af;
     border-radius: 0;
     box-shadow: none;
+    padding: .375rem .375rem;
 }
 
 .btn {
@@ -151,7 +157,7 @@ body {
     box-shadow: none;
 }
 
-.btn:not(:disabled):not(.disabled):not(:hover).active {
+.btn:not(:disabled):not(:hover).active {
     background-color: #005700;
 }
 
@@ -171,8 +177,8 @@ body {
     background-color: #005700;
 }
 
-/* Sort dropdowns */
-.sort-dropdown-container {
+/* Eropdowns */
+.flex-dropdown {
     flex: 1 1 auto;
     display: flex;
 }
@@ -192,15 +198,6 @@ body {
     border-top-color: #005700;
 }
 
-.dropdown-item {
-    color: #00cc00;
-}
-
-.dropdown-item:hover {
-    color: #aaa;
-    background-color: #005700;
-}
-
 .spoilers-group {
     max-width: 25ch;
 }
@@ -212,6 +209,36 @@ body {
 
 .btn-group > *:first-child {
     margin-left: -1px;
+}
+
+/* Dropdowns */
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: initial;
+}
+
+.bootstrap-select .no-results {
+    background-color: black;
+    color: #00cc00;
+}
+
+.dropdown-item {
+    background-color: black;
+    color: #00cc00;
+}
+
+.dropdown-item.selected {
+    color: #00cc00;
+    background-color: #002100;
+}
+
+.dropdown-item:not(.selected) {
+    color: #00cc00;
+    background-color: black;
+}
+
+.dropdown-item:hover {
+    color: #aaa;
+    background-color: #005700;
 }
 
 /* Grids */

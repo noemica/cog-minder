@@ -726,6 +726,30 @@ export function escapeHtml(string) {
     });
 }
 
+// Flatten an array of arrays into a single array
+export function flatten(arrays) {
+    return [].concat.apply([], arrays);
+}
+
+// Do a lexicographical sort based on the no-prefix item name
+export function gallerySort(a, b) {
+    const noPrefixA = noPrefixName(a);
+    const noPrefixB = noPrefixName(b);
+    let res = (noPrefixA > noPrefixB) - (noPrefixA < noPrefixB);
+
+    if (res === 0) {
+        // If no-prefix names match then use index in gallery export
+        // There may be some formula to determine the real order or
+        // it may be a hand-crafted list, I couldn't tell either way.
+        // The export index will always be ordered for different prefix
+        // versions of the same parts so this is the best way to sort
+        // them how the in-game gallery does.
+        res = parseInt(getItem(a)["Index"]) - parseInt(getItem(b)["Index"]);
+    }
+
+    return res;
+}
+
 // Tries to get an item by the name
 export function getBot(botName) {
     if (botName in botData) {
@@ -856,6 +880,7 @@ export async function initData() {
         const estimatedCoreCoverage = ceilToMultiple(roughCoreCoverage, 10);
         const totalCoverage = estimatedCoreCoverage + itemCoverage;
         bot["Core Coverage"] = estimatedCoreCoverage;
+        bot["Total Coverage"] = totalCoverage;
 
         let partData = [];
         let partOptionData = [];
@@ -866,10 +891,12 @@ export async function initData() {
                 let result = partData.find(p => p["Name"] === data);
 
                 if (result === undefined) {
+                    const item = getItem(itemName);
                     partData.push({
                         "Name": itemName,
                         "Number": 1,
-                        "Coverage": Math.floor(100.0 * parseInt(getItem(itemName)["Coverage"]) / totalCoverage)
+                        "Coverage": Math.floor(100.0 * parseInt(item["Coverage"]) / totalCoverage),
+                        "Integrity": parseInt(item["Integrity"]),
                     });
                 }
                 else {
@@ -883,15 +910,17 @@ export async function initData() {
                     const itemName = optionData["Name"];
 
                     let coverage = undefined;
+                    const item = getItem(itemName);
 
                     if (itemName !== "None") {
-                        coverage = Math.floor(100.0 * parseInt(getItem(itemName)["Coverage"]) / totalCoverage);
+                        coverage = Math.floor(100.0 * parseInt(item["Coverage"]) / totalCoverage);
                     }
 
                     options.push({
                         "Name": itemName,
                         "Number": optionData["Number"],
-                        "Coverage": coverage
+                        "Coverage": coverage,
+                        "Integrity": item["Integrity"],
                     });
                 });
                 partOptionData.push(options);
@@ -918,6 +947,10 @@ export function resetButtonGroup(group) {
     group.children("label:first-of-type").addClass("active");
 }
 
+// Gets a random integer between the min and max values (inclusive)
+export function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
 
 // Rounds the number to the nearest multiple
 function roundToMultiple(num, multiple) {

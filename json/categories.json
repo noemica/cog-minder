@@ -820,7 +820,7 @@
     "Com. Mass Driver": [0],
     "Hvy. Hardcell Cannon": [0],
     "Com. Linear Accelerator": [0],
-    "Hyp. Linear Accelerator": [0],
+    "Hyp. Linear Accelerator": [0, 7],
     "Hcl. Linear Accelerator": [0, 6],
     "Graviton Cannon": [0],
     "Blast Cannon": [2, 7],

@@ -1,12 +1,12 @@
 import {
     createItemDataContent,
     getItemCategories,
+    gallerySort,
     getItem,
     getSpoilersState,
     initData,
     itemData,
     nameToId,
-    noPrefixName,
     resetButtonGroup,
     setSpoilersState,
 } from "./common.js";
@@ -437,25 +437,6 @@ jq(function ($) {
             const bValue = getAverage(b);
 
             return aValue - bValue;
-        }
-
-        function gallerySort(a, b) {
-            // Do a lexicographical sort based on the no-prefix item name
-            const noPrefixA = noPrefixName(a);
-            const noPrefixB = noPrefixName(b);
-            let res = (noPrefixA > noPrefixB) - (noPrefixA < noPrefixB);
-
-            if (res === 0) {
-                // If no-prefix names match then use index in gallery export
-                // There may be some formula to determine the real order or
-                // it may be a hand-crafted list, I couldn't tell either way.
-                // The export index will always be ordered for different prefix
-                // versions of the same parts so this is the best way to sort
-                // them how the in-game gallery does.
-                res = parseInt(getItem(a)["Index"]) - parseInt(getItem(b)["Index"]);
-            }
-
-            return res;
         }
 
         function integerSort(a, b) {
