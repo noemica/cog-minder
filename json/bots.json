@@ -5484,7 +5484,7 @@
             "Explosive": -25
         }
     },
-    "S-27 Pest": {
+    "S-27 Virus": {
         "Description": "The S-27 Virus replaces the S-10's light armament with a much more effective autogun, giving the swarmer a faster firing rate that complements its movement speed. Better propulsion provides sufficient support for additional armor, enough for the core to sustain a direct hit under some circumstances.",
         "Class": "Swarmer",
         "Categories": ["0b10"],

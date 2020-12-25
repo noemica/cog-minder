@@ -177,10 +177,14 @@ body {
     background-color: #005700;
 }
 
-/* Eropdowns */
+/* Dropdowns */
 .flex-dropdown {
     flex: 1 1 auto;
     display: flex;
+}
+
+.enemy-dropdown {
+    width: 25ch !important;
 }
 
 .dropdown-menu {

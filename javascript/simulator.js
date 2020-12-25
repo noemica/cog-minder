@@ -53,9 +53,16 @@ jq(function ($) {
         "0%: None": 0,
         "6%: Core Analyzer": 6,
         "8%: Imp. Core Analyzer": 8,
+        "8%: Asb. Combat Suite": 8,
         "10%: Adv. Core Analyzer": 10,
         "15%: Exp. Core Analyzer": 15,
-        "8%: Asb. Combat Suite": 8,
+    }
+
+    // Part name to corruption ignore chance percent
+    const corruptionIgnoreMap = {
+        "Dynamic Insulation System": 50,
+        "Imp. Dynamic Insulation System": 67,
+        "Adv. Dynamic Insulation System": 75,
     }
 
     // Cycler volley time multiplier map
@@ -68,6 +75,24 @@ jq(function ($) {
         "50%: Quantum Capacitor": 0.50,
         "50%: Launcher Loader": 0.50,
     };
+
+    // Part names to damage reduction (val * damage = reduced damage)
+    const damageReductionMap = {
+        "7V-RTL's Ultimate Field": .25,
+        "AEGIS Remote Shield": .50,
+        "Adv. Force Field": .50,
+        "Adv. Shield Generator": .75,
+        "Energy Mantle": .50,
+        "Force Field": .50,
+        "Imp. Energy Mantle": .50,
+        "Imp. Force Field": .50,
+        "Imp. Remote Force Field": .50,
+        "Imp. Remote Shield": .75,
+        "Remote Force Field": .50,
+        "Remote Shield": .75,
+        "Shield Generator": .75,
+        "Vortex Field Projector": .25,
+    }
 
     // Kinecellerator min damage increase values
     const kinecelleratorMap = {
@@ -85,6 +110,26 @@ jq(function ($) {
         "Special Melee Weapon",
     ];
 
+    // Shielding name to slot/absorption
+    const shieldingMap = {
+        "Core Shielding": { slot: "Core", percent: .20 },
+        "Imp. Core Shielding": { slot: "Core", percent: .30 },
+        "Exp. Core Shielding": { slot: "Core", percent: .40 },
+        "Power Shielding": { slot: "Power", percent: .33 },
+        "Imp. Power Shielding": { slot: "Power", percent: .66 },
+        "Exp. Power Shielding": { slot: "Power", percent: .90 },
+        "Propulsion Shielding": { slot: "Propulsion", percent: .33 },
+        "Imp. Propulsion Shielding": { slot: "Propulsion", percent: .66 },
+        "Exp. Propulsion Shielding": { slot: "Propulsion", percent: .90 },
+        "Utility Shielding": { slot: "Utility", percent: .33 },
+        "Imp. Utility Shielding": { slot: "Utility", percent: .66 },
+        "Exp. Utility Shielding": { slot: "Utility", percent: .90 },
+        "Weapon Shielding": { slot: "Weapon", percent: .33 },
+        "Imp. Weapon Shielding": { slot: "Weapon", percent: .66 },
+        "Exp. Weapon Shielding": { slot: "Weapon", percent: .90 },
+        "Zio. Weapon Casing": { slot: "Weapon", percent: 1.00 },
+    }
+
     // Ranged weapon types
     const rangedTypes = [
         "Ballistic Cannon",
@@ -94,6 +139,14 @@ jq(function ($) {
         "Launcher",
         "Special Weapon",
     ];
+
+    // Part names to self damage reduction (val * damage = reduced damage)
+    const selfDamageReduction = {
+        "1C-UTU's Buckler": .50,
+        "Adv. Powered Armor": .50,
+        "Imp. Powered Armor": .50,
+        "Powered Armor": .50,
+    };
 
     // Bot size mode to accuracy bonus map
     const sizeAccuracyMap = {
@@ -241,6 +294,32 @@ jq(function ($) {
         parent.find(".btn-light").removeClass("btn-light");
     }
 
+    // Tries to get a bot defensive state part from an array
+    // Parts will be removed from the array if their integrity has dropped below 0
+    function getDefensiveStatePart(array) {
+        let part = null;
+
+        while (array.length > 0) {
+            if (array[0].integrity > 0) {
+                // Found a good part, use it here
+                part = array[0];
+                break;
+            }
+            else {
+                // Found destroyed part, remove from array
+                array.shift();
+            }
+        }
+
+        return part;
+    }
+
+    // Tries to get a bot's first shielding for a specific slot
+    // Parts will be removed from the array if their integrity has dropped below 0
+    function getShieldingType(botState, slot) {
+        return getDefensiveStatePart(botState.defensiveState.shieldings[slot]);
+    }
+
     // Applies damage to a bot
     function applyDamage(botState, damage, critical, armorAnalyzed, coreAnalyzed, canOverflow, type) {
         const chunks = [];
@@ -294,10 +373,12 @@ jq(function ($) {
             }
         }
 
+        // Apply any additional damage reduction (11)
+        const part = getDefensiveStatePart(botState.defensiveState.damageReduction);
+        let multiplier = part != null ? part.damageReduction : 1;
+
         chunks.forEach(chunk => {
-            // Check for additional damage reduction (11)
-            // TODO
-            chunk.damage = chunk.originalDamage;
+            chunk.damage = Math.floor(chunk.originalDamage * multiplier);
         });
 
         function applyDamageChunk(damage, critical, isOverflow, forceCore, armorAnalyzed) {
@@ -306,11 +387,23 @@ jq(function ($) {
 
             // Handle core hit
             if (part === null) {
-                // Check for crit immunity or shielding (15)
-                // Shielding TODO
+                // Try to get shielding
+                const shielding = getShieldingType(botState, "Core");
+
+                // Remove crit if immunity or shielding (15)
                 if (critical) {
                     critical = !botState.immunities.includes("Criticals")
-                        && !botState.immunities.includes("Coring");
+                        && !botState.immunities.includes("Coring")
+                        && shielding == null;
+                }
+
+                if (shielding != null) {
+                    // Handle core shielding reduction
+                    // Note: shielding may absorb more damage than integrity
+                    const shieldingDamage = Math.floor(shielding.shieldingPercent * damage);
+                    shielding.integrity -= shieldingDamage;
+
+                    damage = damage - shieldingDamage;
                 }
 
                 if (critical) {
@@ -323,10 +416,12 @@ jq(function ($) {
                 return;
             }
 
+            // Try to get shielding
+            const shielding = getShieldingType(botState, part.slot);
+
             // Check for crit immunity or shielding (15)
-            // Shielding TODO
             if (critical) {
-                critical = !botState.immunities.includes("Criticals");
+                critical = !botState.immunities.includes("Criticals") && shielding == null;
             }
 
             // Check for spectrum engine explosion (17)
@@ -338,23 +433,38 @@ jq(function ($) {
                 damage = Math.floor(1.2 * damage);
             }
 
+            // Reduce damage for powered armor/siege mode (18)
+            // TODO siege mode
+            if ("selfDamageReduction" in part) {
+                damage = Math.floor(part.selfDamageReduction);
+            }
+
+            if (shielding != null) {
+                // Handle slot shielding reduction
+                // Note: shielding may absorb more damage than integrity
+                const shieldingDamage = Math.floor(shielding.shieldingPercent * damage);
+                shielding.integrity -= shieldingDamage;
+
+                damage = damage - shieldingDamage;
+            }
+
             if (part.integrity <= damage || critical) {
-                // Part destroyed, remove part
+                // Part destroyed, remove part and update bot state
                 botState.parts.splice(partIndex, 1);
                 botState.armorAnalyzedCoverage -= part.armorAnalyzedCoverage;
                 botState.totalCoverage -= part.coverage;
 
                 if (part.integrity < damage && !part.protection && canOverflow && !critical) {
                     // Handle overflow damage if excess damage was dealt 
-                    // against a non-protection part
+                    // against a non-protection part (19)
                     applyDamageChunk(damage - part.integrity, false, true, false);
                 }
-                return;
+
+                part.integrity = 0;
             }
             else {
-                // Part not destroyed, just subtract integrity
+                // Part not destroyed, just reduce integrity
                 part.integrity -= damage;
-                return;
             }
         }
 
@@ -364,9 +474,15 @@ jq(function ($) {
 
             // Apply corruption (23)
             if (type === "Electromagnetic") {
-                const corruptionPercent = randomInt(50, 150) / 100;
-                const corruption = chunk.originalDamage * corruptionPercent;
-                botState.corruption += corruption;
+                // Check for corruption ignore chance
+                const corruptionIgnorePart = getDefensiveStatePart(botState.defensiveState.corruptionIgnore);
+
+                if (corruptionIgnorePart == null
+                    || randomInt(0, 99) >= corruptionIgnorePart.corruptionIgnore) {
+                    const corruptionPercent = randomInt(50, 150) / 100;
+                    const corruption = chunk.originalDamage * corruptionPercent;
+                    botState.corruption += corruption;
+                }
             }
         });
     }
@@ -375,7 +491,7 @@ jq(function ($) {
     // This is not a deep copy, any fields that can be modified are deep-copied
     // but immutable fields are not.
     function cloneBotState(botState) {
-        return {
+        const newState = {
             armorAnalyzedCoverage: botState.armorAnalyzedCoverage,
             coreCoverage: botState.coreCoverage,
             coreIntegrity: botState.coreIntegrity,
@@ -385,13 +501,18 @@ jq(function ($) {
                 return {
                     armorAnalyzedCoverage: p.armorAnalyzedCoverage,
                     coverage: p.coverage,
+                    def: p.def,
                     integrity: p.integrity,
                     protection: p.protection,
+                    slot: p.slot,
                 }
             }),
             resistances: botState.resistances,
             totalCoverage: botState.totalCoverage,
         }
+        newState.defensiveState = getBotDefensiveState(newState.parts);
+
+        return newState;
     }
 
     // Gets the number of simulations to perform
@@ -409,6 +530,59 @@ jq(function ($) {
     function getNumSimulationsString() {
         const number = getNumSimulations();
         return Number(number).toLocaleString("en");
+    }
+
+    // Returns a bot's defensive state based on parts, also adds new relevant 
+    // properties to parts
+    // Adding ad-hoc properties is a little messy but making a bunch of wrapper
+    // objects wouldn't really do very much
+    function getBotDefensiveState(parts) {
+        const state = {
+            corruptionIgnore: [],
+            damageReduction: [],
+            shieldings: {
+                "Core": [],
+                "Power": [],
+                "Propulsion": [],
+                "Utility": [],
+                "Weapon": [],
+            },
+        };
+
+        parts.forEach(part => {
+            const name = part.def["Name"];
+            if (name in corruptionIgnoreMap) {
+                part.corruptionIgnore = corruptionIgnoreMap[name];
+                state.corruptionIgnore.push(part);
+            }
+            else if (name in damageReductionMap) {
+                // Force field-like part
+                part.damageReduction = damageReductionMap[name];
+                state.damageReduction.push(part);
+            }
+            else if (name in selfDamageReduction) {
+                // Powered armor-like part
+                part.selfDamageReduction = selfDamageReduction[name];
+            }
+            else if (name in shieldingMap) {
+                // Core/slot shielding
+                const shielding = shieldingMap[name];
+                part.shieldingPercent = shielding.percent;
+                state.shieldings[shielding.slot].push(part);
+            }
+        });
+
+        // TODO sort damage reduction (11)
+        // 11. Apply the first and only first defense applicable from the 
+        // following list: phase wall, 75% personal shield (VFP etc), 
+        // Force Field, Shield Generator, stasis bubble, active Stasis Trap,
+        // Remote Shield, 50% remote shield (Energy Mantle etc.), Hardlight Generator.
+        // All other parts should technically be sorted as well.
+        // However, in game no bot ever has duplicate mixed-level defenses,
+        // the most is for things like 2 base weapon shieldings on Warbot which
+        // doesn't require sorting anyways.
+
+        return state;
     }
 
     // Determines the part that was hit by an attack
@@ -547,6 +721,8 @@ jq(function ($) {
         // Enable tooltips
         $('[data-toggle="tooltip"]').tooltip();
 
+        $("#botSelectContainer > div").addClass("enemy-dropdown");
+
         initChart();
     }
 
@@ -646,13 +822,16 @@ jq(function ($) {
         resetDropdown($("#targetAnalyzerSelect"));
 
         // Reset text inputs
+        $("#distanceInput").val("");
+        $("#numFightsInput").val("");
         $("#targetingInput").val("");
         $("#treadsInput").val("");
-        $("#numFightsInput").val("");
 
         // Reset with 1 weapon
         $("#weaponSelectContainer").empty();
         addWeaponSelect();
+
+        $("#chart").addClass("not-visible");
     }
 
     // Simulates combat
@@ -678,7 +857,7 @@ jq(function ($) {
         });
 
         if (!(botName in botData)) {
-            // TODO, no bot
+            console.log("Shouldn't happen");
             return;
         }
 
@@ -697,8 +876,10 @@ jq(function ($) {
                 parts.push({
                     armorAnalyzedCoverage: isProtection ? 0 : parseInt(itemDef["Coverage"]),
                     coverage: parseInt(itemDef["Coverage"]),
+                    def: itemDef,
                     integrity: parseInt(itemDef["Integrity"]),
                     protection: isProtection,
+                    slot: itemDef["Slot"],
                 });
             }
         });
@@ -706,12 +887,15 @@ jq(function ($) {
         const armorAnalyzedCoverage = bot["Core Coverage"] +
             parts.reduce((prev, part) => prev + part.armorAnalyzedCoverage, 0);
 
+        const defensiveState = getBotDefensiveState(parts);
+
         // Enemy bot state
         const botState = {
             armorAnalyzedCoverage: armorAnalyzedCoverage,
             coreCoverage: bot["Core Coverage"],
             coreIntegrity: bot["Core Integrity"],
             corruption: 0,
+            defensiveState: defensiveState,
             immunities: valueOrDefault(bot["Immunities"], []),
             parts: parts,
             resistances: valueOrDefault(bot["Resistances"], []),
@@ -724,11 +908,26 @@ jq(function ($) {
             numTreads = 0;
         }
 
-        // Accuracy bonuses
+        // Accuracy bonuses and penalties
         const siegeBonus = siegeModeBonusMap[$("#siegeModeContainer > label.active").attr("id")];
         let targetComputerBonus = parseInt($("#targetingInput").val());
         if (isNaN(targetComputerBonus)) {
             targetComputerBonus = 0;
+        }
+
+        let distanceValue = parseInt($("#distanceInput").val());
+        let distanceBonus;
+        if (isNaN(distanceValue) || distanceValue >= 6) {
+            // Invalid / 6 or more tiles = 0 bonus
+            distanceBonus = 0;
+        }
+        else if (distanceValue <= 1) {
+            // Less than or equal to 1 = max bonus
+            distanceBonus = 15;
+        }
+        else {
+            // Between 2-5 calculate the bonus linearly at 3% per tile
+            distanceBonus = (6 - distanceValue) * 3;
         }
 
         function getRecoil(weapon) {
@@ -802,7 +1001,7 @@ jq(function ($) {
             const critical = "Critical" in weapon ? parseInt(weapon["Critical"]) + critBonus : 0;
 
             // Calculate accuracy
-            let accuracy = initialAccuracy + targetComputerBonus;
+            let accuracy = initialAccuracy + targetComputerBonus + distanceBonus;
 
             // Size bonus/penalty
             if (bot["Size"] in sizeAccuracyMap) {
@@ -810,6 +1009,12 @@ jq(function ($) {
             }
             else {
                 console.log(`${botName} has invalid size ${bot["Size"]}`);
+            }
+
+            // Flying/hovering penalty
+            // TODO handle bots losing prop
+            if (bot["Movement"].includes("Hovering") || bot["Movement"].includes("Flying")) {
+                accuracy -= 10;
             }
 
             // Treads
@@ -880,14 +1085,10 @@ jq(function ($) {
             simulateCombat(state);
         }
 
-        Object.keys(state.killVolleys).forEach(numVolleys => {
-            console.log(`${numVolleys}: ${state.killVolleys[numVolleys] / numSimulations * 100.0}%`);
-        });
-
         updateChart(state);
     }
 
-    // TODO - move
+    // Updates the chart based on the current simulation state
     function updateChart(state) {
         // Get datasets
         const perVolleyDataset = chart.data.datasets[0];
@@ -926,9 +1127,10 @@ jq(function ($) {
 
         chart.options.title.text = `Simulated volleys/kill vs. ${$("#botSelect").selectpicker("val")}: (${getNumSimulationsString()} fights)`;
         chart.update();
+        $("#chart").removeClass("not-visible");
     }
 
-    // Fully simulates the rounds of combat to a kill from an initial state
+    // Fully simulates rounds of combat to a kill a bot from an initial state
     function simulateCombat(state) {
         // Clone initial bot state
         const botState = cloneBotState(state.initialBotState);

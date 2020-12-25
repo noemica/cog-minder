@@ -72,7 +72,8 @@
                 </label>
             </div>
 
-            <div class="input-group-prepend ml-3" data-toggle="tooltip" title="The number of fights to simulate.">
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The number of fights to simulate. Higher numbers will increase result accuracy but also increase time to calculate.">
                 <span class="input-group-text">Number of Fights</span>
             </div>
             <input id="numFightsInput" type="text" class="form-control" placeholder="100,000"></input>
@@ -94,18 +95,29 @@
         </div>
 
         <div class="input-group mt-2">
-            <div class="input-group-prepend" data-toggle="tooltip" title="The amount of targeting from targeting computers.">
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="The amount of accuracy bonus from targeting computers.">
                 <span class="input-group-text">Targeting Computer %</span>
             </div>
             <input id="targetingInput" type="text" class="form-control" placeholder="0"></input>
 
-            <div class="input-group-prepend ml-3" data-toggle="tooltip" title="The number of slots of treads equipped.">
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The number of slots of treads equipped. Each tread provides 2% accuracy and 1 recoil reduced per weapon">
                 <span class="input-group-text">Treads</span>
             </div>
             <input id="treadsInput" type="text" class="form-control" placeholder="0"></input>
 
-            <div id="siegeModeContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
-                <div class="input-group-prepend" data-toggle="tooltip" title="The type of siege mode active (if any).">
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The distance from the target. Each tile &lt; 6 tiles away provides 3% accuracy up to 15% at 1 tile away.">
+                <span class="input-group-text">Distance</span>
+            </div>
+            <input id="distanceInput" type="text" class="form-control" placeholder="6+"></input>
+        </div>
+
+        <div class="input-group mt-2">
+            <div id="siegeModeContainer" class="btn-group btn-group-toggle" data-toggle="buttons">
+                <div class="input-group-prepend" data-toggle="tooltip"
+                    title="The type of siege mode active (if any). Siege mode removes all recoil and adds a 20% (standard)/30% (high) bonus to targeting.">
                     <span class="input-group-text">Siege Mode</span>
                 </div>
                 <label id="siegeModeNone" class="btn btn-md">
@@ -181,10 +193,10 @@
             <select id="coreAnalyzerSelect" class="selectpicker flex-dropdown">
                 <option title="0%">0%: None</option>
                 <option title="6%">6%: Core Analyzer</option>
+                <option title="8%">8%: Asb. Combat Suite</option>
                 <option title="8%">8%: Imp. Core Analyzer</option>
                 <option title="10%">10%: Adv. Core Analyzer</option>
                 <option title="15%">15%: Exp. Core Analyzer</option>
-                <option title="8%">8%: Asb. Combat Suite</option>
             </select>
 
             <div class="input-group-prepend ml-3" data-toggle="tooltip"
