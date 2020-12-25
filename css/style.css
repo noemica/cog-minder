@@ -112,10 +112,14 @@ body {
 }
 
 /* Input textbox */
-.form-control, .form-control:focus {
+.form-control, .form-control:focus, .form-control.disabled {
     color: #9da9af;
     background-color: black;
     border: 1px solid #006200;
+}
+
+.form-control:disabled {
+    opacity: .65;
 }
 
 .form-control:focus {

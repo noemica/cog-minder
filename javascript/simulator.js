@@ -28,6 +28,8 @@ jq(function ($) {
     // Uncomment for development type hinting
     let chart = new Chart("");
 
+    let cancelled = false;
+
     // Armor integrity analyzer chance map
     const armorIntegrityMap = {
         "0%: None": 0,
@@ -187,8 +189,8 @@ jq(function ($) {
         init();
     });
 
-    // Adds a new weapon select dropdown
-    function addWeaponSelect() {
+    // Adds a new weapon select dropdown with an optional weapon name
+    function addWeaponSelect(weaponName) {
         const spoilersState = getSpoilersState();
         const container = $("#weaponSelectContainer");
 
@@ -260,7 +262,7 @@ jq(function ($) {
         deleteButton.on("click", () => {
             // Ensure the last dropdown is always empty
             if (parent.next().length === 0) {
-                addWeaponSelect();
+                addWeaponSelect("");
             }
 
             // Remove the associated item
@@ -270,14 +272,12 @@ jq(function ($) {
             parent.children().remove();
         });
 
-        select.selectpicker("val", "");
-        // select.selectpicker("val", "Lgt. Assault Rifle");
-        // select.selectpicker("val", "Mni. Grenade Launcher");
+        select.selectpicker("val", weaponName);
 
         // Add changed event
         select.on("changed.bs.select", () => {
             if (parent.next().length === 0) {
-                addWeaponSelect();
+                addWeaponSelect("");
             }
         });
 
@@ -417,7 +417,7 @@ jq(function ($) {
             }
 
             // Try to get shielding
-            const shielding = getShieldingType(botState, part.slot);
+            const shielding = getShieldingType(botState, part.def["Slot"]);
 
             // Check for crit immunity or shielding (15)
             if (critical) {
@@ -504,7 +504,6 @@ jq(function ($) {
                     def: p.def,
                     integrity: p.integrity,
                     protection: p.protection,
-                    slot: p.slot,
                 }
             }),
             resistances: botState.resistances,
@@ -710,6 +709,9 @@ jq(function ($) {
         $("#simulateButton").click(() => {
             simulate();
         });
+        $("#cancelButton").click(() => {
+            cancelled = true;
+        });
 
         $(window).on("click", (e) => {
             // If clicking outside of a popover close the current one
@@ -718,15 +720,18 @@ jq(function ($) {
             }
         });
 
+        $("#cancelButton").addClass("not-visible");
+
         // Enable tooltips
         $('[data-toggle="tooltip"]').tooltip();
 
+        // This div is created at runtime so have to do this at init
         $("#botSelectContainer > div").addClass("enemy-dropdown");
 
         initChart();
     }
 
-    // TODO - move
+    // Initializes the chart with default settings and no data
     function initChart() {
         function getDatasetSettings(label, backgroundColor, borderColor) {
             return {
@@ -742,12 +747,12 @@ jq(function ($) {
 
         const volleyDataset = getDatasetSettings(
             "Current volley kill %",
-            "rgba(0, 98, 0, 0.2)",
-            "rgba(0, 136, 0, 1)");
+            "rgba(0, 98, 0, 0.3)",
+            "rgba(0, 196, 0, 1)");
         const cumulativeDataset = getDatasetSettings(
             "Cumulative kill %",
-            "rgba(64, 64, 64, 0.2)",
-            "rgba(32, 32, 32, 1)");
+            "rgba(96, 96, 96, 0.3)",
+            "rgba(128, 128, 128, 1)");
 
         const chartElement = $("#chart");
         chart = new Chart(chartElement, {
@@ -766,6 +771,9 @@ jq(function ($) {
                 },
                 scales: {
                     xAxes: [{
+                        gridLines: {
+                            display: false,
+                        },
                         scaleLabel: {
                             display: true,
                             labelString: "Number of volleys",
@@ -777,6 +785,9 @@ jq(function ($) {
                         }
                     }],
                     yAxes: [{
+                        gridLines: {
+                            color: "rgba(128, 128, 128, 0.8)",
+                        },
                         scaleLabel: {
                             display: true,
                             labelString: "Percent of kills",
@@ -784,6 +795,7 @@ jq(function ($) {
                         },
                         ticks: {
                             beginAtZero: true,
+                            callback: (value, index, values) => value + "%",
                         },
                     }],
                 },
@@ -827,14 +839,67 @@ jq(function ($) {
         $("#targetingInput").val("");
         $("#treadsInput").val("");
 
-        // Reset with 1 weapon
+        // Reset with 1 preset weapon and one empty one
         $("#weaponSelectContainer").empty();
-        addWeaponSelect();
+        addWeaponSelect("Lgt. Assault Rifle");
+        addWeaponSelect("");
+
+        setStatusText("");
 
         $("#chart").addClass("not-visible");
     }
 
-    // Simulates combat
+    // Sets controls to disabled/enabled based on if the simulation is running
+    function setSimulationRunning(running) {
+        function setEnabled(selector) { 
+            selector.removeClass("disabled");
+            selector.prop("disabled", false);
+        }
+        function setDisabled(selector) { 
+            selector.addClass("disabled");
+            selector.prop("disabled", true);
+        }
+        let func = running ? setDisabled : setEnabled;
+
+        func($("#numFightsInput"));
+        func($("#reset"));
+        func($("#analysisNo"));
+        func($("#analysisNo > input"));
+        func($("#analysisYes"));
+        func($("#analysisYes > input"));
+        func($("#botSelect").next());
+        func($("#combatTypeRanged"));
+        func($("#combatTypeRanged > input"));
+        func($("#combatTypeMelee"));
+        func($("#combatTypeMelee > input"));
+        func($("#targetingInput"));
+        func($("#treadsInput"));
+        func($("#distanceInput"));
+        func($("#chargerSelect").next());
+        func($("#kinecelleratorSelect").next());
+        func($("#cyclerSelect").next());
+        func($("#armorIntegSelect").next());
+        func($("#coreAnalyzerSelect").next());
+        func($("#targetAnalyzerSelect").next());
+        func($("#weaponSelectContainer button"));
+        func($("#weaponSelectContainer input"));
+
+        if (running) {
+            $("#cancelButton").removeClass("not-visible");
+            $("#simulateButton").addClass("not-visible");
+        }
+        else {
+            $("#cancelButton").addClass("not-visible");
+            $("#simulateButton").removeClass("not-visible");
+        }
+    }
+
+    // Sets the status label to the specified value
+    function setStatusText(text) {
+        $("#statusText").text(text);
+    }
+
+    // Simulates combat with the current settings and updates the chart (simulate button entry point)
     function simulate() {
         // Check inputs first
         const botName = $("#botSelect").selectpicker("val");
@@ -857,12 +922,12 @@ jq(function ($) {
         });
 
         if (!(botName in botData)) {
-            console.log("Shouldn't happen");
+            setStatusText(`Bot ${botName} is invalid, this is probably a bug.`);
             return;
         }
 
         if (weaponDefs.length === 0) {
-            // TODO, no weapons
+            setStatusText("There must be at least 1 weapon chosen.");
             return;
         }
 
@@ -873,13 +938,13 @@ jq(function ($) {
             for (let i = 0; i < item["Number"]; i++) {
                 const itemDef = getItem(item["Name"]);
                 const isProtection = itemDef["Type"] === "Protection";
+                const coverage = parseInt(itemDef["Coverage"]);
                 parts.push({
-                    armorAnalyzedCoverage: isProtection ? 0 : parseInt(itemDef["Coverage"]),
-                    coverage: parseInt(itemDef["Coverage"]),
+                    armorAnalyzedCoverage: isProtection ? 0 : coverage,
+                    coverage: coverage,
                     def: itemDef,
                     integrity: parseInt(itemDef["Integrity"]),
                     protection: isProtection,
-                    slot: itemDef["Slot"],
                 });
             }
         });
@@ -1079,13 +1144,49 @@ jq(function ($) {
             weapons: weapons
         };
 
-        // Run simulation
-        const numSimulations = getNumSimulations();
-        for (let i = 0; i < numSimulations; i++) {
-            simulateCombat(state);
-        }
+        // Disable all input fields while the simulation is running
+        setSimulationRunning(true);
 
-        updateChart(state);
+        // Run simulation
+        cancelled = false;
+        let i = 0;
+        const numSimulations = getNumSimulations();
+        let lastFrame = performance.now();
+
+        // Run simulation in batches via setTimeout to avoid UI lockup.
+        // Each 100 simulations check if we've surpassed 30 ms since the last
+        // update, if so then pass control back so events/updates can be processed.
+        function run() {
+            for (; i < numSimulations; i++) {
+                if (i % 100 === 0) {
+                    if (cancelled) {
+                        // User cancelled
+                        setStatusText("Cancelled simulation");
+                        cancelled = false;
+                        setSimulationRunning(false);
+                        return;
+                    }
+
+                    const now = performance.now();
+                    if (now - lastFrame > 30) {
+                        lastFrame = now;
+                        setStatusText(`${i} out of ${numSimulations} completed.`);
+                        setTimeout(run, 0);
+                        break;
+                    }
+                }
+
+                simulateCombat(state);
+            }
+
+            if (i >= numSimulations) {
+                setSimulationRunning(false);
+                setStatusText("Simulations completed.");
+                updateChart(state);
+            }
+        };
+
+        run();
     }
 
     // Updates the chart based on the current simulation state
@@ -1259,8 +1360,9 @@ jq(function ($) {
         // but it doesn't really fit with everything else
         $(".btn-light").removeClass("btn-light");
 
-        // Reset with 1 weapon
+        // Reset with 1 preset weapon and one empty one
         $("#weaponSelectContainer").empty();
-        addWeaponSelect();
+        addWeaponSelect("Lgt. Assault Rifle");
+        addWeaponSelect("");
     }
 });
