@@ -2019,6 +2019,7 @@
         "Resistances": {
         },
         "Immunities": [
+            "Coring"
         ]
     },
     "Drone": {
@@ -2256,10 +2257,10 @@
         "Size": "Large",
         "Rating": "151",
         "Value": 200,
-        "Movement": " ()",
-        "Core Integrity": 0,
-        "Core Exposure": 0,
-        "Salvage Potential": "",
+        "Movement": "Treading (145)",
+        "Core Integrity": 150,
+        "Core Exposure": 29,
+        "Salvage Potential": "100-140",
         "Visual Range": "16",
         "Armament": [
             "Lrn. Gatling Laser",

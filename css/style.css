@@ -112,7 +112,7 @@ body {
 }
 
 /* Input textbox */
-.form-control, .form-control:focus, .form-control.disabled {
+.form-control, .form-control:focus, .form-control:disabled {
     color: #9da9af;
     background-color: black;
     border: 1px solid #006200;
@@ -189,6 +189,18 @@ body {
 
 .enemy-dropdown {
     width: 25ch !important;
+}
+
+.percent-dropdown {
+    width: 3ch !important;
+}
+
+.siege-dropdown {
+    width: 22ch !important;
+}
+
+.weapon-dropdown {
+    width: 31ch !important;
 }
 
 .dropdown-menu {

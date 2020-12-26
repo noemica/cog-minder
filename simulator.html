@@ -62,9 +62,9 @@
                 <select id="botSelect" class="selectpicker" data-live-search="true"></select>
             </div>
 
-            <!-- Analysis  -->
+            <!-- Analysis -->
             <div id="analysisContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
-                <div class="input-group-prepend" data-toggle="tooltip" title="Do you have the analysis for this bot?">
+                <div class="input-group-prepend" data-toggle="tooltip" title="Does Cogmind have the analysis for this bot? An analysis provides 5% accuracy and 10% damage.">
                     <span class="input-group-text">Analysis</span>
                 </div>
                 <label id="analysisNo" class="btn btn-md">
@@ -103,17 +103,32 @@
         <div class="input-group mt-2">
             <!-- Targeting computer -->
             <div class="input-group-prepend" data-toggle="tooltip"
-                title="The amount of accuracy bonus from targeting computers.">
+                title="The amount of accuracy bonus from targeting computers or similar utilities.">
                 <span class="input-group-text">Targeting Computer %</span>
             </div>
             <input id="targetingInput" type="text" class="form-control" placeholder="0"></input>
 
             <!-- Treads -->
             <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The number of slots of treads equipped. Each tread provides 2% accuracy and 1 recoil reduced per weapon">
+                title="The number of slots of treads equipped. Each tread provides 2% accuracy and 1 recoil reduced per weapon.">
                 <span class="input-group-text">Treads</span>
             </div>
             <input id="treadsInput" type="text" class="form-control" placeholder="0"></input>
+
+            <!-- Siege mode -->
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The type of siege mode active (if any). Siege mode removes all recoil and adds a 20% (standard)/30% (high) bonus to targeting.">
+                <span class="input-group-text">Siege</span>
+            </div>
+            <div id="siegeSelectContainer">
+                <select id="siegeSelect" class="selectpicker flex-dropdown">
+                    <option>No Siege</option>
+                    <option>In Siege Mode</option>
+                    <option>In High Siege Mode</option>
+                    <option>Entering Siege Mode</option>
+                    <option>Entering High Siege Mode</option>
+                </select>
+            </div>
 
             <!-- Distance -->
             <div class="input-group-prepend ml-3" data-toggle="tooltip"
@@ -121,25 +136,6 @@
                 <span class="input-group-text">Distance</span>
             </div>
             <input id="distanceInput" type="text" class="form-control" placeholder="6+"></input>
-        </div>
-
-        <!-- Siege mode -->
-        <div class="input-group mt-2">
-            <div id="siegeModeContainer" class="btn-group btn-group-toggle" data-toggle="buttons">
-                <div class="input-group-prepend" data-toggle="tooltip"
-                    title="The type of siege mode active (if any). Siege mode removes all recoil and adds a 20% (standard)/30% (high) bonus to targeting.">
-                    <span class="input-group-text">Siege Mode</span>
-                </div>
-                <label id="siegeModeNone" class="btn btn-md">
-                    <input type="radio" name="options"> None
-                </label>
-                <label id="siegeModeStandard" class="btn btn-md">
-                    <input type="radio" name="options"> Standard
-                </label>
-                <label id="siegeModeHigh" class="btn btn-md">
-                    <input type="radio" name="options"> High
-                </label>
-            </div>
         </div>
 
         <!-- Ranged only utilities -->
@@ -235,8 +231,8 @@
 
         <!-- Simulate/status -->
         <div class="mt-2">
-            <button id="simulateButton" class="btn">Simulate</button>
-            <button id="cancelButton" class="btn">Cancel</button>
+            <button id="simulateButton" class="btn btn-lg">Simulate</button>
+            <button id="cancelButton" class="btn btn-lg">Cancel</button>
             <label id="statusText"></label>
         </div>
 
