@@ -375,7 +375,12 @@ jq(function ($) {
 
         $(window).on("click", (e) => {
             // If clicking outside of a popover close the current one
-            if ($(e.target).parents(".popover").length === 0 && $(".popover").length >= 1) {
+            const targetPopover = $(e.target).parents(".popover").length != 0;
+            
+            if (targetPopover) {
+                $(e.target).blur();
+            }
+            else if (!targetPopover && $(".popover").length >= 1) {
                 $('[data-toggle="popover"]').not(e.target).popover("hide");
             }
         });
