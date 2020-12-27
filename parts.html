@@ -24,8 +24,8 @@
                 <span>Cog-Minder</span>
                 <a href="about.html" class="btn">About</a>
                 <a href="bots.html" class="btn">Bots</a>
-                <a href="simulator.html" class="btn">Simulator</a>
                 <a href="parts.html" class="btn btn-current-page">Parts</a>
+                <a href="simulator.html" class="btn">Simulator</a>
             </div>
             <h1 class="display-4 text-center title">Parts</h1>
             <div class="d-flex align-self-center justify-content-center">
@@ -60,12 +60,12 @@
             <span class="input-group-text">Effect</span>
         </div>
         <input id="effect" type="text" class="form-control" placeholder="Any">
-        <button id="reset" type="button" class="btn btn-large ml-3" data-toggle="tooltip"
+        <button id="reset" type="button" class="btn ml-3" data-toggle="tooltip"
             title="Resets all filters to their default (unfiltered) state">Reset</button>
     </div>
 
     <!-- Rating/Size/Mass filters -->
-    <div class="container-fluid input-group input-group-md mt-2">
+    <div class="container-fluid input-group mt-2">
         <div class="input-group-prepend" data-toggle="tooltip"
             title="The rating of the part (Use * for prototype). Add a + to include larger values, or - to include smaller values.">
             <span class="input-group-text">Rating</span>
@@ -84,7 +84,7 @@
     </div>
 
     <!-- Schematic filter -->
-    <div class="container-fluid input-group input-group-md mt-2">
+    <div class="container-fluid input-group mt-2">
         <span class="input-group-text" data-toggle="tooltip"
             title="Search for 0b10 hackable schematics">Schematics</span>
         <div class="input-group-prepend ml-3" data-toggle="tooltip" title="Current map depth">
@@ -96,13 +96,13 @@
                 title="The level of the terminal to hack from. Higher level terminals can hack higher rating schematics.">
                 <span class="input-group-text">Terminal level</span>
             </div>
-            <label id="terminalLevel1" class="btn btn-md">
+            <label id="terminalLevel1" class="btn">
                 <input type="radio" name="options"> Level 1
             </label>
-            <label id="terminalLevel2" class="btn btn-md">
+            <label id="terminalLevel2" class="btn">
                 <input type="radio" name="options"> Level 2
             </label>
-            <label id="terminalLevel3" class="btn btn-md">
+            <label id="terminalLevel3" class="btn">
                 <input type="radio" name="options"> Level 3
             </label>
         </div>
@@ -114,22 +114,22 @@
         <div class="input-group-prepend" data-toggle="tooltip" title="The slot for the part">
             <span class="input-group-text">Slot</span>
         </div>
-        <label id="slotAny" class="btn btn-md">
+        <label id="slotAny" class="btn">
             <input type="radio" name="options"> Any
         </label>
-        <label id="slotOther" class="btn btn-md">
+        <label id="slotOther" class="btn">
             <input type="radio" name="options"> Other
         </label>
-        <label id="slotPower" class="btn btn-md">
+        <label id="slotPower" class="btn">
             <input type="radio" name="options"> Power
         </label>
-        <label id="slotPropulsion" class="btn btn-md">
+        <label id="slotPropulsion" class="btn">
             <input type="radio" name="options"> Propulsion
         </label>
-        <label id="slotUtility" class="btn btn-md">
+        <label id="slotUtility" class="btn">
             <input type="radio" name="options"> Utility
         </label>
-        <label id="slotWeapon" class="btn btn-md">
+        <label id="slotWeapon" class="btn">
             <input type="radio" name="options"> Weapon
         </label>
     </div>
@@ -141,16 +141,16 @@
             <div class="input-group-prepend" data-toggle="tooltip" title="The type of power">
                 <span class="input-group-text">Type</span>
             </div>
-            <label id="powerTypeAny" class="btn btn-md">
+            <label id="powerTypeAny" class="btn">
                 <input type="radio" name="options"> Any
             </label>
-            <label id="powerTypeEngine" class="btn btn-md">
+            <label id="powerTypeEngine" class="btn">
                 <input type="radio" name="options"> Engine
             </label>
-            <label id="powerTypePowerCore" class="btn btn-md">
+            <label id="powerTypePowerCore" class="btn">
                 <input type="radio" name="options"> Power Core
             </label>
-            <label id="powerTypeReactor" class="btn btn-md">
+            <label id="powerTypeReactor" class="btn">
                 <input type="radio" name="options"> Reactor
             </label>
         </div>
@@ -161,22 +161,22 @@
             <div class="input-group-prepend" data-toggle="tooltip" title="The type of propulsion">
                 <span class="input-group-text">Type</span>
             </div>
-            <label id="propTypeAny" class="btn btn-md">
+            <label id="propTypeAny" class="btn">
                 <input type="radio" name="options"> Any
             </label>
-            <label id="propTypeFlight" class="btn btn-md">
+            <label id="propTypeFlight" class="btn">
                 <input type="radio" name="options"> Flight
             </label>
-            <label id="propTypeHover" class="btn btn-md">
+            <label id="propTypeHover" class="btn">
                 <input type="radio" name="options"> Hover
             </label>
-            <label id="propTypeLeg" class="btn btn-md">
+            <label id="propTypeLeg" class="btn">
                 <input type="radio" name="options"> Leg
             </label>
-            <label id="propTypeTread" class="btn btn-md">
+            <label id="propTypeTread" class="btn">
                 <input type="radio" name="options"> Treads
             </label>
-            <label id="propTypeWheel" class="btn btn-md">
+            <label id="propTypeWheel" class="btn">
                 <input type="radio" name="options"> Wheel
             </label>
         </div>
@@ -187,25 +187,25 @@
             <div class="input-group-prepend" data-toggle="tooltip" title="The type of utility">
                 <span class="input-group-text">Type</span>
             </div>
-            <label id="utilTypeAny" class="btn btn-md">
+            <label id="utilTypeAny" class="btn">
                 <input type="radio" name="options"> Any
             </label>
-            <label id="utilTypeArtifact" class="btn btn-md">
+            <label id="utilTypeArtifact" class="btn">
                 <input type="radio" name="options"> Artifact
             </label>
-            <label id="utilTypeDevice" class="btn btn-md">
+            <label id="utilTypeDevice" class="btn">
                 <input type="radio" name="options"> Device
             </label>
-            <label id="utilTypeHackware" class="btn btn-md">
+            <label id="utilTypeHackware" class="btn">
                 <input type="radio" name="options"> Hackware
             </label>
-            <label id="utilTypeProcessor" class="btn btn-md">
+            <label id="utilTypeProcessor" class="btn">
                 <input type="radio" name="options"> Processor
             </label>
-            <label id="utilTypeProtection" class="btn btn-md">
+            <label id="utilTypeProtection" class="btn">
                 <input type="radio" name="options"> Protection
             </label>
-            <label id="utilTypeStorage" class="btn btn-md">
+            <label id="utilTypeStorage" class="btn">
                 <input type="radio" name="options"> Storage
             </label>
         </div>
@@ -216,37 +216,37 @@
             <div class="input-group-prepend" data-toggle="tooltip" title="The type of weapon">
                 <span class="input-group-text">Type</span>
             </div>
-            <label id="weaponTypeAny" class="btn btn-md">
+            <label id="weaponTypeAny" class="btn">
                 <input type="radio" name="options"> Any
             </label>
-            <label id="weaponTypeBallisticCannon" class="btn btn-md">
+            <label id="weaponTypeBallisticCannon" class="btn">
                 <input type="radio" name="options"> Ballistic Cannon
             </label>
-            <label id="weaponTypeBallisticGun" class="btn btn-md">
+            <label id="weaponTypeBallisticGun" class="btn">
                 <input type="radio" name="options"> Ballistic Gun
             </label>
-            <label id="weaponTypeEnergyCannon" class="btn btn-md">
+            <label id="weaponTypeEnergyCannon" class="btn">
                 <input type="radio" name="options"> Energy Cannon
             </label>
-            <label id="weaponTypeEnergyGun" class="btn btn-md">
+            <label id="weaponTypeEnergyGun" class="btn">
                 <input type="radio" name="options"> Energy Gun
             </label>
-            <label id="weaponTypeImpactWeapon" class="btn btn-md">
+            <label id="weaponTypeImpactWeapon" class="btn">
                 <input type="radio" name="options"> Impact
             </label>
-            <label id="weaponTypeLauncher" class="btn btn-md">
+            <label id="weaponTypeLauncher" class="btn">
                 <input type="radio" name="options"> Launcher
             </label>
-            <label id="weaponTypePiercingWeapon" class="btn btn-md">
+            <label id="weaponTypePiercingWeapon" class="btn">
                 <input type="radio" name="options"> Piercing
             </label>
-            <label id="weaponTypeSlashingWeapon" class="btn btn-md">
+            <label id="weaponTypeSlashingWeapon" class="btn">
                 <input type="radio" name="options"> Slashing
             </label>
-            <label id="weaponTypeSpecialMeleeWeapon" class="btn btn-md">
+            <label id="weaponTypeSpecialMeleeWeapon" class="btn">
                 <input type="radio" name="options"> Special Melee Weapon
             </label>
-            <label id="weaponTypeSpecialWeapon" class="btn btn-md">
+            <label id="weaponTypeSpecialWeapon" class="btn">
                 <input type="radio" name="options"> Special Weapon
             </label>
         </div>
@@ -258,25 +258,25 @@
         <div class="input-group-prepend" data-toggle="tooltip" title="Additional part category like location/faction">
             <span class="input-group-text">Category</span>
         </div>
-        <label id="categoryAny" class="btn btn-md">
+        <label id="categoryAny" class="btn">
             <input type="radio" name="options"> Any
         </label>
-        <label id="category0b10" class="btn btn-md">
+        <label id="category0b10" class="btn">
             <input type="radio" name="options"> 0b10
         </label>
-        <label id="categoryAlien" class="btn btn-md">
+        <label id="categoryAlien" class="btn">
             <input type="radio" name="options"> Alien
         </label>
-        <label id="categoryDerelict" class="btn btn-md">
+        <label id="categoryDerelict" class="btn">
             <input type="radio" name="options"> Derelict
         </label>
-        <label id="categoryExile" class="btn btn-md">
+        <label id="categoryExile" class="btn">
             <input type="radio" name="options"> Exile
         </label>
-        <label id="categoryGolem" class="btn btn-md">
+        <label id="categoryGolem" class="btn">
             <input type="radio" name="options"> Golem
         </label>
-        <label id="categoryTesting" class="btn btn-md">
+        <label id="categoryTesting" class="btn">
             <input type="radio" name="options"> Testing
         </label>
     </div>

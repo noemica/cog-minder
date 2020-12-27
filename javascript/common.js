@@ -806,12 +806,12 @@ export function noPrefixName(name) {
 // Initialize all item and bot data
 export async function initData() {
     // Load external files
-    const bots = fetch("./json/bots.json", { cache: "no-store" })
+    const bots = fetch("./json/bots.json")
         .then(response => response.json());
     const categories = fetch("./json/categories.json")
-        .then(response => response.json(), { cache: "no-store" });
+        .then(response => response.json());
     const items = fetch("./json/items.json")
-        .then(response => response.json(), { cache: "no-store" });
+        .then(response => response.json());
 
     await Promise.all([bots, categories, items]);
 

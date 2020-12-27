@@ -52,8 +52,34 @@
     </div>
 
     <div class="container-xl">
-        <!-- Name/analysis/num fights options -->
+        <!-- Combat type/number of fights/reset button -->
         <div class="input-group">
+            <div id="combatTypeContainer" class="btn-group btn-group-toggle" data-toggle="buttons">
+                <div class="input-group-prepend" data-toggle="tooltip" title="The type of weapons to display.">
+                    <span class="input-group-text">Combat Type</span>
+                </div>
+                <label id="combatTypeRanged" class="btn">
+                    <input type="radio" name="options"> Ranged
+                </label>
+                <label id="combatTypeMelee" class="btn">
+                    <input type="radio" name="options"> Melee
+                </label>
+            </div>
+
+            <!-- Num fights -->
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The number of fights to simulate. Higher numbers will increase result accuracy but also increase time to calculate.">
+                <span class="input-group-text">Number of Fights</span>
+            </div>
+            <input id="numFightsInput" type="text" class="form-control" placeholder="100,000"></input>
+
+            <!-- Reset button -->
+            <button id="reset" class="btn ml-3" data-toggle="tooltip"
+                title="Reset all values to their default state.">Reset</button>
+        </div>
+
+        <!-- Name/analysis/damage reduction options -->
+        <div class="input-group mt-2">
             <!-- Enemy name -->
             <div class="input-group-prepend" data-toggle="tooltip" title="The name of the enemy bot to fight.">
                 <span class="input-group-text">Enemy</span>
@@ -68,36 +94,27 @@
                     title="Does Cogmind have the analysis for this bot? An analysis provides 5% accuracy and 10% damage.">
                     <span class="input-group-text">Analysis</span>
                 </div>
-                <label id="analysisNo" class="btn btn-md">
+                <label id="analysisNo" class="btn">
                     <input type="radio" name="options"> No
                 </label>
-                <label id="analysisYes" class="btn btn-md">
+                <label id="analysisYes" class="btn">
                     <input type="radio" name="options"> Yes
                 </label>
             </div>
 
-            <!-- Num fights -->
+            <!-- Damage Reduction -->
             <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The number of fights to simulate. Higher numbers will increase result accuracy but also increase time to calculate.">
-                <span class="input-group-text">Number of Fights</span>
+                title="The type of external damage reduction (if any) for the enemy. Note: this does not stack with personal damage reduction utilities.">
+                <span class="input-group-text">Damage Reduction</span>
             </div>
-            <input id="numFightsInput" type="text" class="form-control" placeholder="100,000"></input>
-
-            <button id="reset" type="button" class="btn btn-large ml-3" data-toggle="tooltip"
-                title="Reset all values to their default state.">Reset</button>
-        </div>
-
-        <!-- Combat type -->
-        <div id="combatTypeContainer" class="input-group btn-group-toggle mt-2" data-toggle="buttons">
-            <div class="input-group-prepend" data-toggle="tooltip" title="The type of weapons to display.">
-                <span class="input-group-text">Combat Type</span>
-            </div>
-            <label id="combatTypeRanged" class="btn btn-md">
-                <input type="radio" name="options"> Ranged
-            </label>
-            <label id="combatTypeMelee" class="btn btn-md">
-                <input type="radio" name="options"> Melee
-            </label>
+            <select id="damageReductionSelect" class="selectpicker flex-dropdown" data-dropdown-align-right="auto">
+                <option title="0%">0%: None</option>
+                <option title="25%">25%: Remote Shield</option>
+                <option title="25%">25%: Stasis Trap</option>
+                <option title="50%">50%: Phase Wall</option>
+                <option title="50%">50%: Remote Force Field (Energy Mantle)</option>
+                <option title="50%">50%: Stasis Bubble</option>
+            </select>
         </div>
 
         <!-- Ranged only accuracy settings -->
@@ -105,7 +122,7 @@
             <!-- Targeting computer -->
             <div class="input-group-prepend" data-toggle="tooltip"
                 title="The amount of accuracy bonus from targeting computers or similar utilities.">
-                <span class="input-group-text">Targeting Computer %</span>
+                <span class="input-group-text">Bonus Targeting</span>
             </div>
             <input id="targetingInput" type="text" class="form-control" placeholder="0"></input>
 

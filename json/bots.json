@@ -2700,7 +2700,7 @@
             "Electromagnetic": -25
         }
     },
-    "G-73 Veteran": {
+    "G-73 Enforcer": {
         "Description": "The latest G-series implementation, armed with a powerful phase gun supported by a secondary heavy laser. While not exceptionally effective in single combat, the G-73 is much more formidable in groups, as they normally operate.",
         "Class": "Grunt",
         "Categories": ["0b10"],

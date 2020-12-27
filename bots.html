@@ -24,6 +24,7 @@
                 <a href="about.html" class="btn">About</a>
                 <a href="bots.html" class="btn btn-current-page">Bots</a>
                 <a href="parts.html" class="btn">Parts</a>
+                <a href="simulator.html" class="btn">Simulator</a>
             </div>
             <h1 class="display-4 text-center title">Bots</h1>
             <div class="d-flex align-self-center justify-content-center">
@@ -48,7 +49,7 @@
     </div>
 
     <!-- Name/class/part filters and reset button -->
-    <div class="container-fluid input-group input-group-md">
+    <div class="container-fluid input-group">
         <div class="input-group-prepend" data-toggle="tooltip" title="The name of a bot to search for.">
             <span class="input-group-text">Name</span>
         </div>
@@ -61,7 +62,7 @@
             <span class="input-group-text">Part</span>
         </div>
         <input id="part" type="text" class="form-control" placeholder="Any">
-        <button id="reset" type="button" class="btn btn-large ml-3" data-toggle="tooltip"
+        <button id="reset" type="button" class="btn ml-3" data-toggle="tooltip"
             title="Resets all filters to their default (unfiltered) state">Reset</button>
     </div>
 
@@ -71,25 +72,25 @@
         <div class="input-group-prepend" data-toggle="tooltip" title="Bot faction">
             <span class="input-group-text">Faction</span>
         </div>
-        <label id="factionAny" class="btn btn-md">
+        <label id="factionAny" class="btn">
             <input type="radio" name="options"> Any
         </label>
-        <label id="faction0b10" class="btn btn-md">
+        <label id="faction0b10" class="btn">
             <input type="radio" name="options"> 0b10
         </label>
-        <label id="factionArchitect" class="btn btn-md">
+        <label id="factionArchitect" class="btn">
             <input type="radio" name="options"> Architect
         </label>
-        <label id="factionDerelict" class="btn btn-md">
+        <label id="factionDerelict" class="btn">
             <input type="radio" name="options"> Derelict
         </label>
-        <label id="factionExile" class="btn btn-md">
+        <label id="factionExile" class="btn">
             <input type="radio" name="options"> Exile
         </label>
-        <label id="factionWarlord" class="btn btn-md">
+        <label id="factionWarlord" class="btn">
             <input type="radio" name="options"> Warlord
         </label>
-        <label id="factionZionite" class="btn btn-md">
+        <label id="factionZionite" class="btn">
             <input type="radio" name="options"> Zionite
         </label>
     </div>
