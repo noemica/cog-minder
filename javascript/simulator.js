@@ -1,5 +1,7 @@
 import {
     botData,
+    createBotDataContent,
+    createItemDataContent,
     gallerySort,
     getItem,
     getItemCategories,
@@ -19,7 +21,7 @@ import {
     maxVolleys,
     simulateCombat,
     volleyTimeMap,
-} from "./simulatorCalcs.js"; 
+} from "./simulatorCalcs.js";
 
 // import Chart from 'chart.js';
 
@@ -33,6 +35,7 @@ jq(function ($) {
     const initialRangedAccuracy = 70;
     const initialMeleeAccuracy = 80;
 
+    let chart;
     // Uncomment for development type hinting
     // let chart = new Chart("");
 
@@ -235,6 +238,7 @@ jq(function ($) {
         const parent = $('<div class="input-group mt-1"></div>');
         const selectLabel = $('<span class="input-group-text" data-toggle="tooltip" title="Name of an equipped weapon to fire">Weapon</span>');
         const select = $(`<select class="selectpicker" data-live-search="true">${weaponOptions}</select>`);
+        const helpButton = $('<button class="btn weapon-help-btn" data-html=true data-toggle="popover">?</button>');
         const numberLabel = $(`
         <div class="input-group-prepend ml-2" data-toggle="tooltip" title="How many weapons of this type to have equipped.">
             <span class="input-group-text">Number</span>
@@ -245,6 +249,7 @@ jq(function ($) {
         container.append(parent);
         parent.append(selectLabel);
         parent.append(select);
+        parent.append(helpButton);
         parent.append(numberLabel);
         parent.append(number);
         parent.append(deleteButton);
@@ -262,14 +267,27 @@ jq(function ($) {
             parent.remove();
             parent.children().remove();
         });
+        
 
         select.selectpicker("val", weaponName);
+
+        // Set initial weapon info if valid
+        if (weaponName in itemData) {
+            const weapon = itemData[weaponName];
+            helpButton.attr("data-content", createItemDataContent(weapon));
+            helpButton.popover();
+        }
 
         // Add changed event
         select.on("changed.bs.select", () => {
             if (parent.next().length === 0) {
                 addWeaponSelect("");
             }
+
+            // Update item info
+            const weapon = itemData[select.selectpicker("val")];
+            helpButton.attr("data-content", createItemDataContent(weapon));
+            helpButton.popover();    
         });
 
         select.parent().addClass("weapon-dropdown");
@@ -320,6 +338,10 @@ jq(function ($) {
             $("#reset").tooltip("hide");
             resetValues();
         });
+        $("#botSelect").on("changed.bs.select", () => {
+            const bot = botData[$("#botSelect").selectpicker("val")];
+            $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
+        });
         $("#combatTypeContainer > label > input").on("click", () => {
             updateChoices();
         });
@@ -337,10 +359,13 @@ jq(function ($) {
             }
         });
 
-        $("#cancelButton").addClass("not-visible");
-
-        // Enable tooltips
+        // Enable tooltips/popovers
         $('[data-toggle="tooltip"]').tooltip();
+
+        //Set initial bot info
+        const bot = botData[$("#botSelect").selectpicker("val")];
+        $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
+        $("#enemyInfoButton").popover();
 
         // These divs are created at runtime so have to do this at init
         $("#damageReductionSelect").parent().addClass("percent-dropdown");
@@ -546,7 +571,7 @@ jq(function ($) {
         func($("#coreAnalyzerSelect").next());
         func($("#targetAnalyzerSelect").next());
 
-        func($("#weaponSelectContainer button"));
+        func($("#weaponSelectContainer button").not(".weapon-help-btn"));
         func($("#weaponSelectContainer input"));
 
         // Update the cancel/simulate buttons
@@ -590,7 +615,7 @@ jq(function ($) {
         }
 
         if (weaponDefs.length === 0) {
-            setStatusText("There must be at least 1 weapon.");
+            setStatusText("There must be at least 1 weapon selected.");
             return;
         }
 
@@ -873,10 +898,12 @@ jq(function ($) {
         let i = 0;
         const numSimulations = getNumSimulations();
         let lastFrame = performance.now();
+        let lastStatusUpdate = lastFrame;
 
         // Run simulation in batches via setTimeout to avoid UI lockup.
-        // Each 100 simulations check if we've surpassed 30 ms since the last
-        // update, if so then pass control back so events/updates can be processed.
+        // After each 100 simulations check if we've surpassed 30 ms since the 
+        // last update (aim for ~30 fps)
+        // If so then pass control back so events/updates can be processed.
         function run() {
             for (; i < numSimulations; i++) {
                 if (i % 100 === 0) {
@@ -891,7 +918,13 @@ jq(function ($) {
                     const now = performance.now();
                     if (now - lastFrame > 30) {
                         lastFrame = now;
-                        setStatusText(`${i} out of ${numSimulations} completed.`);
+
+                        if (now - lastStatusUpdate > 100) {
+                            // Only update status only 10 times a second
+                            const percent = (i * 100 / numSimulations).toFixed(1);
+                            setStatusText(`${String(percent).padStart(4, "0")} % completed.`);
+                            lastStatusUpdate = now;
+                        }
                         setTimeout(run, 0);
                         break;
                     }
@@ -915,7 +948,7 @@ jq(function ($) {
 
             if (i >= numSimulations) {
                 setSimulationRunning(false);
-                setStatusText("Simulations completed.");
+                setStatusText("Completed.");
                 updateChart(state);
             }
         };

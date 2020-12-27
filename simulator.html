@@ -55,7 +55,8 @@
         <!-- Combat type/number of fights/reset button -->
         <div class="input-group">
             <div id="combatTypeContainer" class="btn-group btn-group-toggle" data-toggle="buttons">
-                <div class="input-group-prepend" data-toggle="tooltip" title="The type of weapons to display.">
+                <div class="input-group-prepend" data-toggle="tooltip"
+                    title="The type of weapons to display. Melee and ranged weapons also have unique utilities and other settings.">
                     <span class="input-group-text">Combat Type</span>
                 </div>
                 <label id="combatTypeRanged" class="btn">
@@ -87,6 +88,8 @@
             <div id="botSelectContainer">
                 <select id="botSelect" class="selectpicker" data-live-search="true"></select>
             </div>
+
+            <button id="enemyInfoButton" class="btn" data-html=true data-toggle="popover">?</button>
 
             <!-- Analysis -->
             <div id="analysisContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
@@ -202,7 +205,7 @@
         </div>
 
         <!-- Melee Analysis Suites -->
-        <div id="meleeAnalysisContainer" class="input-group mt-2">
+        <div id="meleeAnalysisContainer" class="input-group not-visible mt-2">
             <div class="input-group-prepend" data-toggle="tooltip"
                 title="The number of each type of Melee Analysis Suites equipped. Provides bonus accuracy and a minimum damage increase but not more than the maximum damage for a weapon.">
                 <span class="input-group-text">Melee Analysis Suites</span>
@@ -234,7 +237,7 @@
         </div>
 
         <!-- Melee Utilities -->
-        <div id="meleeUtilitiesContainer" class="input-group mt-2">
+        <div id="meleeUtilitiesContainer" class="input-group not-visible mt-2">
             <!-- Actuator -->
             <div class="input-group-prepend" data-toggle="tooltip"
                 title="The type of actuator that's equipped (if any). Decreases volley time.">
@@ -270,7 +273,7 @@
         </div>
 
         <!-- Melee behavior -->
-        <div id="meleeBehaviorContainer" class="input-group mt-2">
+        <div id="meleeBehaviorContainer" class="input-group not-visible mt-2">
             <!-- Initial Momentum -->
             <div class="input-group-prepend" data-toggle="tooltip"
                 title="The momentum bonus from movement for the first attack. This should be 0-3.">
@@ -345,8 +348,8 @@
 
         <!-- Simulate/status -->
         <div class="mt-2">
-            <button id="simulateButton" class="btn btn-lg">Simulate</button>
-            <button id="cancelButton" class="btn btn-lg">Cancel</button>
+            <button id="simulateButton" class="btn btn-lg simulate-btn">Simulate</button>
+            <button id="cancelButton" class="btn btn-lg cancel-btn not-visible">Cancel</button>
             <label id="statusText"></label>
         </div>
 

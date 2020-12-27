@@ -327,6 +327,7 @@ function cloneBotState(botState) {
         coreIntegrity: botState.coreIntegrity,
         corruption: botState.corruption,
         def: botState.def,
+        externalDamageReduction: botState.externalDamageReduction,
         immunities: botState.immunities,
         initialCoreIntegrity: botState.initialCoreIntegrity,
         parts: botState.parts.map(p => {
@@ -342,7 +343,9 @@ function cloneBotState(botState) {
         resistances: botState.resistances,
         totalCoverage: botState.totalCoverage,
     }
-    newState.defensiveState = getBotDefensiveState(newState.parts);
+    newState.defensiveState = getBotDefensiveState(
+        newState.parts,
+        newState.externalDamageReduction);
 
     return newState;
 }
@@ -428,14 +431,6 @@ export function getBotDefensiveState(parts, externalDamageReduction) {
             else {
                 state.damageReduction.push({ integrity: 1, damageReduction: reduction });
             }
-        }
-
-        // Don't need to fully sort this section because 
-        if (externalDamageReduction === "Phase Wall") {
-            state.damageReduction.unshift({ integrity: 1, damageReduction: reduction });
-        }
-        else {
-
         }
     }
 
@@ -754,7 +749,7 @@ function simulateWeapon(state, weapon) {
 
             // Apply momentum bonus
             // ([momentum] * [speed%] / 1200) * 40)
-            if (offensiveState.melee) {
+            if (offensiveState.melee && offensiveState.momentum.current > 0) {
                 const speedPercent = 100 / offensiveState.speed * 100;
                 let momentumMultiplier = offensiveState.momentum.current * speedPercent / 1200 * 40;
 
@@ -842,6 +837,10 @@ function updateWeaponsAccuracy(state) {
         else {
             perWeaponBonus -= avoidPart.avoid.other;
         }
+    }
+
+    if (offensiveState.analysis) {
+        perWeaponBonus += 5;
     }
 
     let siegeBonus = 0;

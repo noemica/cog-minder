@@ -181,6 +181,14 @@ body {
     background-color: #005700;
 }
 
+.simulate-btn, .cancel-btn {
+    width: 10ch;
+}
+
+.weapon-help-btn {
+    /* Used just for identification */
+}
+
 /* Dropdowns */
 .flex-dropdown {
     flex: 1 1 auto;
