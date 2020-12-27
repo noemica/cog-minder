@@ -64,7 +64,8 @@
 
             <!-- Analysis -->
             <div id="analysisContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
-                <div class="input-group-prepend" data-toggle="tooltip" title="Does Cogmind have the analysis for this bot? An analysis provides 5% accuracy and 10% damage.">
+                <div class="input-group-prepend" data-toggle="tooltip"
+                    title="Does Cogmind have the analysis for this bot? An analysis provides 5% accuracy and 10% damage.">
                     <span class="input-group-text">Analysis</span>
                 </div>
                 <label id="analysisNo" class="btn btn-md">
@@ -99,8 +100,8 @@
             </label>
         </div>
 
-        <!-- Ranged only settings -->
-        <div class="input-group mt-2">
+        <!-- Ranged only accuracy settings -->
+        <div id="rangedAccuracyContainer" class="input-group mt-2">
             <!-- Targeting computer -->
             <div class="input-group-prepend" data-toggle="tooltip"
                 title="The amount of accuracy bonus from targeting computers or similar utilities.">
@@ -139,7 +140,7 @@
         </div>
 
         <!-- Ranged only utilities -->
-        <div class="input-group mt-2">
+        <div id="rangedUtilitiesContainer" class="input-group mt-2">
             <!-- Particle Charter -->
             <div class="input-group-prepend" data-toggle="tooltip"
                 title="The type of particle charger/accelerator that's equipped (if any). Increases damage of energy gun/cannon weapons.">
@@ -180,6 +181,102 @@
                 <option title="30%">30%: Exp. Weapon Cycler</option>
                 <option title="50%">50%: Quantum Capacitor</option>
                 <option title="50%">50%: Launcher Loader</option>
+            </select>
+        </div>
+
+        <!-- Melee Analysis Suites -->
+        <div id="meleeAnalysisContainer" class="input-group mt-2">
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="The number of each type of Melee Analysis Suites equipped. Provides bonus accuracy and a minimum damage increase but not more than the maximum damage for a weapon.">
+                <span class="input-group-text">Melee Analysis Suites</span>
+            </div>
+
+            <div class="input-group-prepend ml-2" data-toggle="tooltip"
+                title="The number of standard Melee Analysis Suites equipped. Each provides 5% accuracy and a minimum damage increase of 2.">
+                <span class="input-group-text">Standard</span>
+            </div>
+            <input id="meleeAnalysisInput" type="text" class="form-control" placeholder="0"></input>
+
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The number of Imp. Melee Analysis Suites equipped. Each provides 6% accuracy and a minimum damage increase of 3.">
+                <span class="input-group-text">Imp.</span>
+            </div>
+            <input id="impMeleeAnalysisInput" type="text" class="form-control" placeholder="0"></input>
+
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The number of Adv. Melee Analysis Suites equipped. Each provides 8% accuracy and a minimum damage increase of 4.">
+                <span class="input-group-text">Adv.</span>
+            </div>
+            <input id="advMeleeAnalysisInput" type="text" class="form-control" placeholder="0"></input>
+
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The number of Exp. Melee Analysis Suites equipped. Each provides 12% accuracy and a minimum damage increase of 6.">
+                <span class="input-group-text">Exp.</span>
+            </div>
+            <input id="expMeleeAnalysisInput" type="text" class="form-control" placeholder="0"></input>
+        </div>
+
+        <!-- Melee Utilities -->
+        <div id="meleeUtilitiesContainer" class="input-group mt-2">
+            <!-- Actuator -->
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="The type of actuator that's equipped (if any). Decreases volley time.">
+                <span class="input-group-text">Actuator</span>
+            </div>
+            <select id="actuatorSelect" class="selectpicker flex-dropdown">
+                <option title="0%">0%: None</option>
+                <option title="20%">20%: Microactuators</option>
+                <option title="30%">30%: Nanoactuators</option>
+                <option title="40%">40%: 2 Microactuators</option>
+                <option title="50%">50%: Femtoactuators</option>
+            </select>
+
+            <!-- Actuator Array -->
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The type of Actuator Array that's equipped (if any). Increases followup chance for all weapons.">
+                <span class="input-group-text">Actuator Array</span>
+            </div>
+            <select id="actuatorArraySelect" class="selectpicker flex-dropdown">
+                <option title="0%">0%: None</option>
+                <option title="10%">10%: Actuator Array</option>
+                <option title="12%">12%: Imp. Actuator Array</option>
+                <option title="16%">16%: Adv. Actuator Array</option>
+                <option title="20%">20%: Exp. Actuator Array</option>
+            </select>
+
+            <!-- Bonus Momentum -->
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The amount of bonus momentum from utilities such as Reaction Control System (+1 no-stack) and Force Boosters (+3/4/5 stackable).">
+                <span class="input-group-text">Bonus Momentum</span>
+            </div>
+            <input id="bonusMomentumInput" type="text" class="form-control" placeholder="0"></input>
+        </div>
+
+        <!-- Melee behavior -->
+        <div id="meleeBehaviorContainer" class="input-group mt-2">
+            <!-- Initial Momentum -->
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="The momentum bonus from movement for the first attack. This should be 0-3.">
+                <span class="input-group-text">Initial Momentum</span>
+            </div>
+            <input id="initialMomentumInput" type="text" class="form-control" placeholder="0"></input>
+
+            <!-- Speed -->
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The speed of Cogmind. Higher speed provides improved momentum bonus.">
+                <span class="input-group-text">Speed</span>
+            </div>
+            <input id="speedInput" type="text" class="form-control" placeholder="100"></input>
+
+            <!-- Sneak attacks -->
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="Whether to perform sneak attacks or not. Sneak attacks provide a base hit chance of 120% and a +100% damage boost">
+                <span class="input-group-text">Sneak Attacks</span>
+            </div>
+            <select id="sneakAttackSelect" class="selectpicker flex-dropdown">
+                <option>None</option>
+                <option>First Only</option>
+                <option>All</option>
             </select>
         </div>
 

@@ -6155,7 +6155,7 @@
         "Description": "Trackers are still new designs that may need more updates, but will no doubt become vital in the effort to protect my most important assets. Their built-in drive enables them to catch up to anything ever spotted coming out of the caves so far, and although they're equipped with valuable technology themselves, rather than harden them with armor and slow them down, Trackers have improved evasive capabilities to help avoid getting hit in the first place. The combination of rapid-fire Linked Autogun and Immobilizer for slowing fast targets will make Derelicts think twice before raiding upper 0b10 for spare parts.",
         "Class": "Swarmer (Prototype)",
         "Categories": ["0b10", "Prototype", "Spoilers"],
-        "Size": "Tiny",
+        "Size": "Small",
         "Rating": "80",
         "Value": 100,
         "Movement": "Flying (15)",

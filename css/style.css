@@ -195,6 +195,10 @@ body {
     width: 3ch !important;
 }
 
+.sneak-attack-dropdown {
+    width: 12ch !important;
+}
+
 .siege-dropdown {
     width: 22ch !important;
 }
