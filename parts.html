@@ -19,7 +19,7 @@
 
 <body>
     <!-- Header/Title -->
-    <div class="container-fluid">
+    <div class="container-xl">
         <div class="title-grid mt-2">
             <div class="header d-flex align-items-center justify-content-center">
                 <span>Cog-Minder</span>
@@ -50,365 +50,367 @@
         </div>
     </div>
 
-    <!-- Name/effect filters and reset button -->
-    <div class="container-fluid input-group input-group-md">
-        <div class="input-group-prepend" data-toggle="tooltip" title="The name of an part to search for">
-            <span class="input-group-text">Name</span>
+    <div class="container-xl">
+        <!-- Name/effect filters and reset button -->
+        <div class="input-group input-group-md">
+            <div class="input-group-prepend" data-toggle="tooltip" title="The name of an part to search for">
+                <span class="input-group-text">Name</span>
+            </div>
+            <input id="name" type="text" class="form-control" placeholder="Any">
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="Text to search for in the description/effect of a part">
+                <span class="input-group-text">Effect</span>
+            </div>
+            <input id="effect" type="text" class="form-control" placeholder="Any">
+            <button id="reset" type="button" class="btn ml-3" data-toggle="tooltip"
+                title="Resets all filters to their default (unfiltered) state">Reset</button>
         </div>
-        <input id="name" type="text" class="form-control" placeholder="Any">
-        <div class="input-group-prepend ml-3" data-toggle="tooltip"
-            title="Text to search for in the description/effect of a part">
-            <span class="input-group-text">Effect</span>
-        </div>
-        <input id="effect" type="text" class="form-control" placeholder="Any">
-        <button id="reset" type="button" class="btn ml-3" data-toggle="tooltip"
-            title="Resets all filters to their default (unfiltered) state">Reset</button>
-    </div>
 
-    <!-- Rating/Size/Mass filters -->
-    <div class="container-fluid input-group mt-2">
-        <div class="input-group-prepend" data-toggle="tooltip"
-            title="The rating of the part (Use * for prototype). Add a + to include larger values, or - to include smaller values.">
-            <span class="input-group-text">Rating</span>
-        </div>
-        <input id="rating" type="text" class="form-control" placeholder="Any">
-        <div class="input-group-prepend ml-3" data-toggle="tooltip"
-            title="The size of the part (# of slots). Add a + to include larger values, or - to include smaller values.">
-            <span class="input-group-text">Size</span>
-        </div>
-        <input id="size" type="text" class="form-control" placeholder="Any">
-        <div class="input-group-prepend ml-3" data-toggle="tooltip"
-            title="The mass of the part. Add a + to include larger values, or - to include smaller values.">
-            <span class="input-group-text">Mass</span>
-        </div>
-        <input id="mass" type="text" class="form-control" placeholder="Any">
-    </div>
-
-    <!-- Schematic filter -->
-    <div class="container-fluid input-group mt-2">
-        <span class="input-group-text" data-toggle="tooltip"
-            title="Search for 0b10 hackable schematics">Schematics</span>
-        <div class="input-group-prepend ml-3" data-toggle="tooltip" title="Current map depth">
-            <span class="input-group-text">Depth</span>
-        </div>
-        <input id="depth" type="text" class="form-control" placeholder="Any">
-        <div id="schematicsContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
+        <!-- Rating/Size/Mass filters -->
+        <div class="input-group mt-2">
             <div class="input-group-prepend" data-toggle="tooltip"
-                title="The level of the terminal to hack from. Higher level terminals can hack higher rating schematics.">
-                <span class="input-group-text">Terminal level</span>
+                title="The rating of the part (Use * for prototype). Add a + to include larger values, or - to include smaller values.">
+                <span class="input-group-text">Rating</span>
             </div>
-            <label id="terminalLevel1" class="btn">
-                <input type="radio" name="options"> Level 1
-            </label>
-            <label id="terminalLevel2" class="btn">
-                <input type="radio" name="options"> Level 2
-            </label>
-            <label id="terminalLevel3" class="btn">
-                <input type="radio" name="options"> Level 3
-            </label>
-        </div>
-    </div>
-
-    <!-- Slot filter -->
-    <div id="slotsContainer" class="container-fluid btn-group btn-group-toggle mt-2"
-        data-toggle="buttons">
-        <div class="input-group-prepend" data-toggle="tooltip" title="The slot for the part">
-            <span class="input-group-text">Slot</span>
-        </div>
-        <label id="slotAny" class="btn">
-            <input type="radio" name="options"> Any
-        </label>
-        <label id="slotOther" class="btn">
-            <input type="radio" name="options"> Other
-        </label>
-        <label id="slotPower" class="btn">
-            <input type="radio" name="options"> Power
-        </label>
-        <label id="slotPropulsion" class="btn">
-            <input type="radio" name="options"> Propulsion
-        </label>
-        <label id="slotUtility" class="btn">
-            <input type="radio" name="options"> Utility
-        </label>
-        <label id="slotWeapon" class="btn">
-            <input type="radio" name="options"> Weapon
-        </label>
-    </div>
-
-    <div id="typeFilters">
-        <!-- Power type filter -->
-        <div id="powerTypeContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
-            data-toggle="buttons">
-            <div class="input-group-prepend" data-toggle="tooltip" title="The type of power">
-                <span class="input-group-text">Type</span>
+            <input id="rating" type="text" class="form-control" placeholder="Any">
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The size of the part (# of slots). Add a + to include larger values, or - to include smaller values.">
+                <span class="input-group-text">Size</span>
             </div>
-            <label id="powerTypeAny" class="btn">
+            <input id="size" type="text" class="form-control" placeholder="Any">
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The mass of the part. Add a + to include larger values, or - to include smaller values.">
+                <span class="input-group-text">Mass</span>
+            </div>
+            <input id="mass" type="text" class="form-control" placeholder="Any">
+        </div>
+
+        <!-- Schematic filter -->
+        <div class="input-group mt-2">
+            <span class="input-group-text" data-toggle="tooltip"
+                title="Search for 0b10 hackable schematics">Schematics</span>
+            <div class="input-group-prepend ml-3" data-toggle="tooltip" title="Current map depth">
+                <span class="input-group-text">Depth</span>
+            </div>
+            <input id="depth" type="text" class="form-control" placeholder="Any">
+            <div id="schematicsContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
+                <div class="input-group-prepend" data-toggle="tooltip"
+                    title="The level of the terminal to hack from. Higher level terminals can hack higher rating schematics.">
+                    <span class="input-group-text">Terminal level</span>
+                </div>
+                <label id="terminalLevel1" class="btn">
+                    <input type="radio" name="options"> Level 1
+                </label>
+                <label id="terminalLevel2" class="btn">
+                    <input type="radio" name="options"> Level 2
+                </label>
+                <label id="terminalLevel3" class="btn">
+                    <input type="radio" name="options"> Level 3
+                </label>
+            </div>
+        </div>
+
+        <!-- Slot filter -->
+        <div id="slotsContainer" class="d-flex btn-group btn-group-toggle mt-2" data-toggle="buttons">
+            <div class="input-group-prepend" data-toggle="tooltip" title="The slot for the part">
+                <span class="input-group-text">Slot</span>
+            </div>
+            <label id="slotAny" class="btn">
                 <input type="radio" name="options"> Any
             </label>
-            <label id="powerTypeEngine" class="btn">
-                <input type="radio" name="options"> Engine
+            <label id="slotOther" class="btn">
+                <input type="radio" name="options"> Other
             </label>
-            <label id="powerTypePowerCore" class="btn">
-                <input type="radio" name="options"> Power Core
+            <label id="slotPower" class="btn">
+                <input type="radio" name="options"> Power
             </label>
-            <label id="powerTypeReactor" class="btn">
-                <input type="radio" name="options"> Reactor
+            <label id="slotPropulsion" class="btn">
+                <input type="radio" name="options"> Propulsion
+            </label>
+            <label id="slotUtility" class="btn">
+                <input type="radio" name="options"> Utility
+            </label>
+            <label id="slotWeapon" class="btn">
+                <input type="radio" name="options"> Weapon
             </label>
         </div>
 
-        <!-- Propulsion type filter -->
-        <div id="propTypeContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
-            data-toggle="buttons">
-            <div class="input-group-prepend" data-toggle="tooltip" title="The type of propulsion">
-                <span class="input-group-text">Type</span>
+        <div id="typeFilters">
+            <!-- Power type filter -->
+            <div id="powerTypeContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2"
+                data-toggle="buttons">
+                <div class="input-group-prepend" data-toggle="tooltip" title="The type of power">
+                    <span class="input-group-text">Type</span>
+                </div>
+                <label id="powerTypeAny" class="btn">
+                    <input type="radio" name="options"> Any
+                </label>
+                <label id="powerTypeEngine" class="btn">
+                    <input type="radio" name="options"> Engine
+                </label>
+                <label id="powerTypePowerCore" class="btn">
+                    <input type="radio" name="options"> Power Core
+                </label>
+                <label id="powerTypeReactor" class="btn">
+                    <input type="radio" name="options"> Reactor
+                </label>
             </div>
-            <label id="propTypeAny" class="btn">
+
+            <!-- Propulsion type filter -->
+            <div id="propTypeContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2"
+                data-toggle="buttons">
+                <div class="input-group-prepend" data-toggle="tooltip" title="The type of propulsion">
+                    <span class="input-group-text">Type</span>
+                </div>
+                <label id="propTypeAny" class="btn">
+                    <input type="radio" name="options"> Any
+                </label>
+                <label id="propTypeFlight" class="btn">
+                    <input type="radio" name="options"> Flight
+                </label>
+                <label id="propTypeHover" class="btn">
+                    <input type="radio" name="options"> Hover
+                </label>
+                <label id="propTypeLeg" class="btn">
+                    <input type="radio" name="options"> Leg
+                </label>
+                <label id="propTypeTread" class="btn">
+                    <input type="radio" name="options"> Treads
+                </label>
+                <label id="propTypeWheel" class="btn">
+                    <input type="radio" name="options"> Wheel
+                </label>
+            </div>
+
+            <!-- Utility type filter -->
+            <div id="utilTypeContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2"
+                data-toggle="buttons">
+                <div class="input-group-prepend" data-toggle="tooltip" title="The type of utility">
+                    <span class="input-group-text">Type</span>
+                </div>
+                <label id="utilTypeAny" class="btn">
+                    <input type="radio" name="options"> Any
+                </label>
+                <label id="utilTypeArtifact" class="btn">
+                    <input type="radio" name="options"> Artifact
+                </label>
+                <label id="utilTypeDevice" class="btn">
+                    <input type="radio" name="options"> Device
+                </label>
+                <label id="utilTypeHackware" class="btn">
+                    <input type="radio" name="options"> Hackware
+                </label>
+                <label id="utilTypeProcessor" class="btn">
+                    <input type="radio" name="options"> Processor
+                </label>
+                <label id="utilTypeProtection" class="btn">
+                    <input type="radio" name="options"> Protection
+                </label>
+                <label id="utilTypeStorage" class="btn">
+                    <input type="radio" name="options"> Storage
+                </label>
+            </div>
+
+            <!-- Weapon type filter -->
+            <div id="weaponTypeContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2"
+                data-toggle="buttons">
+                <div class="input-group-prepend" data-toggle="tooltip" title="The type of weapon">
+                    <span class="input-group-text">Type</span>
+                </div>
+                <label id="weaponTypeAny" class="btn">
+                    <input type="radio" name="options"> Any
+                </label>
+                <label id="weaponTypeBallisticCannon" class="btn">
+                    <input type="radio" name="options"> Ballistic Cannon
+                </label>
+                <label id="weaponTypeBallisticGun" class="btn">
+                    <input type="radio" name="options"> Ballistic Gun
+                </label>
+                <label id="weaponTypeEnergyCannon" class="btn">
+                    <input type="radio" name="options"> Energy Cannon
+                </label>
+                <label id="weaponTypeEnergyGun" class="btn">
+                    <input type="radio" name="options"> Energy Gun
+                </label>
+                <label id="weaponTypeImpactWeapon" class="btn">
+                    <input type="radio" name="options"> Impact
+                </label>
+                <label id="weaponTypeLauncher" class="btn">
+                    <input type="radio" name="options"> Launcher
+                </label>
+                <label id="weaponTypePiercingWeapon" class="btn">
+                    <input type="radio" name="options"> Piercing
+                </label>
+                <label id="weaponTypeSlashingWeapon" class="btn">
+                    <input type="radio" name="options"> Slashing
+                </label>
+                <label id="weaponTypeSpecialMeleeWeapon" class="btn">
+                    <input type="radio" name="options"> Special Melee Weapon
+                </label>
+                <label id="weaponTypeSpecialWeapon" class="btn">
+                    <input type="radio" name="options"> Special Weapon
+                </label>
+            </div>
+        </div>
+
+        <!-- Category filter -->
+        <div id="categoryContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2"
+            data-toggle="buttons">
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="Additional part category like location/faction">
+                <span class="input-group-text">Category</span>
+            </div>
+            <label id="categoryAny" class="btn">
                 <input type="radio" name="options"> Any
             </label>
-            <label id="propTypeFlight" class="btn">
-                <input type="radio" name="options"> Flight
+            <label id="category0b10" class="btn">
+                <input type="radio" name="options"> 0b10
             </label>
-            <label id="propTypeHover" class="btn">
-                <input type="radio" name="options"> Hover
+            <label id="categoryAlien" class="btn">
+                <input type="radio" name="options"> Alien
             </label>
-            <label id="propTypeLeg" class="btn">
-                <input type="radio" name="options"> Leg
+            <label id="categoryDerelict" class="btn">
+                <input type="radio" name="options"> Derelict
             </label>
-            <label id="propTypeTread" class="btn">
-                <input type="radio" name="options"> Treads
+            <label id="categoryExile" class="btn">
+                <input type="radio" name="options"> Exile
             </label>
-            <label id="propTypeWheel" class="btn">
-                <input type="radio" name="options"> Wheel
+            <label id="categoryGolem" class="btn">
+                <input type="radio" name="options"> Golem
+            </label>
+            <label id="categoryTesting" class="btn">
+                <input type="radio" name="options"> Testing
             </label>
         </div>
 
-        <!-- Utility type filter -->
-        <div id="utilTypeContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
-            data-toggle="buttons">
-            <div class="input-group-prepend" data-toggle="tooltip" title="The type of utility">
-                <span class="input-group-text">Type</span>
+        <!-- Sorting -->
+        <div id="sortingContainer" class="d-flex btn-group mt-2">
+            <div class="input-group-prepend" data-toggle="tooltip" title="How to sort items matching all filters">
+                <span class="input-group-text">Sort by</span>
             </div>
-            <label id="utilTypeAny" class="btn">
-                <input type="radio" name="options"> Any
-            </label>
-            <label id="utilTypeArtifact" class="btn">
-                <input type="radio" name="options"> Artifact
-            </label>
-            <label id="utilTypeDevice" class="btn">
-                <input type="radio" name="options"> Device
-            </label>
-            <label id="utilTypeHackware" class="btn">
-                <input type="radio" name="options"> Hackware
-            </label>
-            <label id="utilTypeProcessor" class="btn">
-                <input type="radio" name="options"> Processor
-            </label>
-            <label id="utilTypeProtection" class="btn">
-                <input type="radio" name="options"> Protection
-            </label>
-            <label id="utilTypeStorage" class="btn">
-                <input type="radio" name="options"> Storage
-            </label>
-        </div>
 
-        <!-- Weapon type filter -->
-        <div id="weaponTypeContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
-            data-toggle="buttons">
-            <div class="input-group-prepend" data-toggle="tooltip" title="The type of weapon">
-                <span class="input-group-text">Type</span>
+            <!-- Primary sort -->
+            <div class="flex-dropdown">
+                <button id="primarySort" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
+                    Primary
+                </button>
+                <div id="primarySortDropdown" class="dropdown-menu fixed-height-dropdown-menu">
+                    <button class="dropdown-item">Alphabetical</button>
+                    <button class="dropdown-item">Gallery</button>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item">Coverage</button>
+                    <button class="dropdown-item">Integrity</button>
+                    <button class="dropdown-item">Mass</button>
+                    <button class="dropdown-item">Rating</button>
+                    <button class="dropdown-item">Size</button>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item">Critical</button>
+                    <button class="dropdown-item">Damage</button>
+                    <button class="dropdown-item">Delay</button>
+                    <button class="dropdown-item">Disruption</button>
+                    <button class="dropdown-item">Drag</button>
+                    <button class="dropdown-item">Energy/Move</button>
+                    <button class="dropdown-item">Energy Generation</button>
+                    <button class="dropdown-item">Energy Storage</button>
+                    <button class="dropdown-item">Energy Upkeep</button>
+                    <button class="dropdown-item">Explosion Radius</button>
+                    <button class="dropdown-item">Falloff</button>
+                    <button class="dropdown-item">Heat/Move</button>
+                    <button class="dropdown-item">Heat Generation</button>
+                    <button class="dropdown-item">Matter Upkeep</button>
+                    <button class="dropdown-item">Penalty</button>
+                    <button class="dropdown-item">Projectile Count</button>
+                    <button class="dropdown-item">Range</button>
+                    <button class="dropdown-item">Salvage</button>
+                    <button class="dropdown-item">Shot Energy</button>
+                    <button class="dropdown-item">Shot Heat</button>
+                    <button class="dropdown-item">Shot Matter</button>
+                    <button class="dropdown-item">Support</button>
+                    <button class="dropdown-item">Targeting</button>
+                    <button class="dropdown-item">Time/Move</button>
+                    <button class="dropdown-item">Waypoints</button>
+                </div>
             </div>
-            <label id="weaponTypeAny" class="btn">
-                <input type="radio" name="options"> Any
-            </label>
-            <label id="weaponTypeBallisticCannon" class="btn">
-                <input type="radio" name="options"> Ballistic Cannon
-            </label>
-            <label id="weaponTypeBallisticGun" class="btn">
-                <input type="radio" name="options"> Ballistic Gun
-            </label>
-            <label id="weaponTypeEnergyCannon" class="btn">
-                <input type="radio" name="options"> Energy Cannon
-            </label>
-            <label id="weaponTypeEnergyGun" class="btn">
-                <input type="radio" name="options"> Energy Gun
-            </label>
-            <label id="weaponTypeImpactWeapon" class="btn">
-                <input type="radio" name="options"> Impact
-            </label>
-            <label id="weaponTypeLauncher" class="btn">
-                <input type="radio" name="options"> Launcher
-            </label>
-            <label id="weaponTypePiercingWeapon" class="btn">
-                <input type="radio" name="options"> Piercing
-            </label>
-            <label id="weaponTypeSlashingWeapon" class="btn">
-                <input type="radio" name="options"> Slashing
-            </label>
-            <label id="weaponTypeSpecialMeleeWeapon" class="btn">
-                <input type="radio" name="options"> Special Melee Weapon
-            </label>
-            <label id="weaponTypeSpecialWeapon" class="btn">
-                <input type="radio" name="options"> Special Weapon
-            </label>
-        </div>
-    </div>
 
-    <!-- Category filter -->
-    <div id="categoryContainer" class="container-fluid d-flex flex-wrap btn-group btn-group-toggle mt-2"
-        data-toggle="buttons">
-        <div class="input-group-prepend" data-toggle="tooltip" title="Additional part category like location/faction">
-            <span class="input-group-text">Category</span>
-        </div>
-        <label id="categoryAny" class="btn">
-            <input type="radio" name="options"> Any
-        </label>
-        <label id="category0b10" class="btn">
-            <input type="radio" name="options"> 0b10
-        </label>
-        <label id="categoryAlien" class="btn">
-            <input type="radio" name="options"> Alien
-        </label>
-        <label id="categoryDerelict" class="btn">
-            <input type="radio" name="options"> Derelict
-        </label>
-        <label id="categoryExile" class="btn">
-            <input type="radio" name="options"> Exile
-        </label>
-        <label id="categoryGolem" class="btn">
-            <input type="radio" name="options"> Golem
-        </label>
-        <label id="categoryTesting" class="btn">
-            <input type="radio" name="options"> Testing
-        </label>
-    </div>
+            <!-- Primary sort direction -->
+            <div class="flex-dropdown minus-left-margin">
+                <button id="primarySortDirection" class="btn btn-flex dropdown-toggle" type="button"
+                    data-toggle="dropdown">
+                    Ascending
+                </button>
+                <div id="primarySortDirectionDropdown" class="dropdown-menu">
+                    <button class="dropdown-item">Ascending</button>
+                    <button class="dropdown-item">Descending</button>
+                </div>
+            </div>
 
-    <!-- Sorting -->
-    <div id="sortingContainer" class="container-fluid btn-group mt-2">
-        <div class="input-group-prepend" data-toggle="tooltip" title="How to sort items matching all filters">
-            <span class="input-group-text">Sort by</span>
-        </div>
+            <div id="secondarySortLabel" class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="How to sort items tied by the primary sort">
+                <span class="input-group-text">Then by</span>
+            </div>
 
-        <!-- Primary sort -->
-        <div class="flex-dropdown">
-            <button id="primarySort" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
-                Primary
-            </button>
-            <div id="primarySortDropdown" class="dropdown-menu fixed-height-dropdown-menu">
-                <button class="dropdown-item">Alphabetical</button>
-                <button class="dropdown-item">Gallery</button>
-                <div class="dropdown-divider"></div>
-                <button class="dropdown-item">Coverage</button>
-                <button class="dropdown-item">Integrity</button>
-                <button class="dropdown-item">Mass</button>
-                <button class="dropdown-item">Rating</button>
-                <button class="dropdown-item">Size</button>
-                <div class="dropdown-divider"></div>
-                <button class="dropdown-item">Critical</button>
-                <button class="dropdown-item">Damage</button>
-                <button class="dropdown-item">Delay</button>
-                <button class="dropdown-item">Disruption</button>
-                <button class="dropdown-item">Drag</button>
-                <button class="dropdown-item">Energy/Move</button>
-                <button class="dropdown-item">Energy Generation</button>
-                <button class="dropdown-item">Energy Storage</button>
-                <button class="dropdown-item">Energy Upkeep</button>
-                <button class="dropdown-item">Explosion Radius</button>
-                <button class="dropdown-item">Falloff</button>
-                <button class="dropdown-item">Heat/Move</button>
-                <button class="dropdown-item">Heat Generation</button>
-                <button class="dropdown-item">Matter Upkeep</button>
-                <button class="dropdown-item">Penalty</button>
-                <button class="dropdown-item">Projectile Count</button>
-                <button class="dropdown-item">Range</button>
-                <button class="dropdown-item">Salvage</button>
-                <button class="dropdown-item">Shot Energy</button>
-                <button class="dropdown-item">Shot Heat</button>
-                <button class="dropdown-item">Shot Matter</button>
-                <button class="dropdown-item">Support</button>
-                <button class="dropdown-item">Targeting</button>
-                <button class="dropdown-item">Time/Move</button>
-                <button class="dropdown-item">Waypoints</button>
+            <!-- Secondary sort -->
+            <div class="flex-dropdown">
+                <button id="secondarySort" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
+                    Secondary
+                </button>
+                <div id="secondarySortDropdown" class="dropdown-menu fixed-height-dropdown-menu">
+                    <button class="dropdown-item">Nothing</button>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item">Alphabetical</button>
+                    <button class="dropdown-item">Gallery</button>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item">Coverage</button>
+                    <button class="dropdown-item">Integrity</button>
+                    <button class="dropdown-item">Mass</button>
+                    <button class="dropdown-item">Rating</button>
+                    <button class="dropdown-item">Size</button>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item">Critical</button>
+                    <button class="dropdown-item">Damage</button>
+                    <button class="dropdown-item">Delay</button>
+                    <button class="dropdown-item">Disruption</button>
+                    <button class="dropdown-item">Drag</button>
+                    <button class="dropdown-item">Energy/Move</button>
+                    <button class="dropdown-item">Energy Generation</button>
+                    <button class="dropdown-item">Energy Storage</button>
+                    <button class="dropdown-item">Energy Upkeep</button>
+                    <button class="dropdown-item">Explosion Radius</button>
+                    <button class="dropdown-item">Falloff</button>
+                    <button class="dropdown-item">Heat/Move</button>
+                    <button class="dropdown-item">Heat Generation</button>
+                    <button class="dropdown-item">Matter Upkeep</button>
+                    <button class="dropdown-item">Penalty</button>
+                    <button class="dropdown-item">Projectile Count</button>
+                    <button class="dropdown-item">Range</button>
+                    <button class="dropdown-item">Salvage</button>
+                    <button class="dropdown-item">Shot Energy</button>
+                    <button class="dropdown-item">Shot Heat</button>
+                    <button class="dropdown-item">Shot Matter</button>
+                    <button class="dropdown-item">Support</button>
+                    <button class="dropdown-item">Targeting</button>
+                    <button class="dropdown-item">Time/Move</button>
+                </div>
+            </div>
+
+            <!-- Secondary sort direction -->
+            <div class="flex-dropdown minus-left-margin">
+                <button id="secondarySortDirection" class="btn btn-flex dropdown-toggle" type="button"
+                    data-toggle="dropdown">
+                    Ascending
+                </button>
+                <div id="secondarySortDirectionDropdown" class="dropdown-menu">
+                    <button class="dropdown-item">Ascending</button>
+                    <button class="dropdown-item">Descending</button>
+                </div>
             </div>
         </div>
 
-        <!-- Primary sort direction -->
-        <div class="flex-dropdown minus-left-margin">
-            <button id="primarySortDirection" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
-                Ascending
-            </button>
-            <div id="primarySortDirectionDropdown" class="dropdown-menu">
-                <button class="dropdown-item">Ascending</button>
-                <button class="dropdown-item">Descending</button>
-            </div>
-        </div>
-
-        <div id="secondarySortLabel" class="input-group-prepend ml-3" data-toggle="tooltip"
-            title="How to sort items tied by the primary sort">
-            <span class="input-group-text">Then by</span>
-        </div>
-
-        <!-- Secondary sort -->
-        <div class="flex-dropdown">
-            <button id="secondarySort" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
-                Secondary
-            </button>
-            <div id="secondarySortDropdown" class="dropdown-menu fixed-height-dropdown-menu">
-                <button class="dropdown-item">Nothing</button>
-                <div class="dropdown-divider"></div>
-                <button class="dropdown-item">Alphabetical</button>
-                <button class="dropdown-item">Gallery</button>
-                <div class="dropdown-divider"></div>
-                <button class="dropdown-item">Coverage</button>
-                <button class="dropdown-item">Integrity</button>
-                <button class="dropdown-item">Mass</button>
-                <button class="dropdown-item">Rating</button>
-                <button class="dropdown-item">Size</button>
-                <div class="dropdown-divider"></div>
-                <button class="dropdown-item">Critical</button>
-                <button class="dropdown-item">Damage</button>
-                <button class="dropdown-item">Delay</button>
-                <button class="dropdown-item">Disruption</button>
-                <button class="dropdown-item">Drag</button>
-                <button class="dropdown-item">Energy/Move</button>
-                <button class="dropdown-item">Energy Generation</button>
-                <button class="dropdown-item">Energy Storage</button>
-                <button class="dropdown-item">Energy Upkeep</button>
-                <button class="dropdown-item">Explosion Radius</button>
-                <button class="dropdown-item">Falloff</button>
-                <button class="dropdown-item">Heat/Move</button>
-                <button class="dropdown-item">Heat Generation</button>
-                <button class="dropdown-item">Matter Upkeep</button>
-                <button class="dropdown-item">Penalty</button>
-                <button class="dropdown-item">Projectile Count</button>
-                <button class="dropdown-item">Range</button>
-                <button class="dropdown-item">Salvage</button>
-                <button class="dropdown-item">Shot Energy</button>
-                <button class="dropdown-item">Shot Heat</button>
-                <button class="dropdown-item">Shot Matter</button>
-                <button class="dropdown-item">Support</button>
-                <button class="dropdown-item">Targeting</button>
-                <button class="dropdown-item">Time/Move</button>
-            </div>
-        </div>
-
-        <!-- Secondary sort direction -->
-        <div class="flex-dropdown minus-left-margin">
-            <button id="secondarySortDirection" class="btn btn-flex dropdown-toggle" type="button"
-                data-toggle="dropdown">
-                Ascending
-            </button>
-            <div id="secondarySortDirectionDropdown" class="dropdown-menu">
-                <button class="dropdown-item">Ascending</button>
-                <button class="dropdown-item">Descending</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Item results -->
-    <div class="container-fluid">
+        <!-- Item results -->
         <ul id="itemsGrid" class="list-group items-grid my-4">
         </ul>
     </div>
+
 </body>
 
 </html>
