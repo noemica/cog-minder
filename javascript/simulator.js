@@ -897,7 +897,8 @@ jq(function ($) {
         cancelled = false;
         let i = 0;
         const numSimulations = getNumSimulations();
-        let lastFrame = performance.now();
+        const initial = performance.now();
+        let lastFrame = initial;
         let lastStatusUpdate = lastFrame;
 
         // Run simulation in batches via setTimeout to avoid UI lockup.
@@ -948,7 +949,10 @@ jq(function ($) {
 
             if (i >= numSimulations) {
                 setSimulationRunning(false);
-                setStatusText("Completed.");
+                let time = performance.now() - initial;
+                time /= 1000;
+                time = time.toFixed(2);
+                setStatusText(`Completed in ${time} seconds.`);
                 updateChart(state);
             }
         };

@@ -9,42 +9,6 @@ const maxMeleeAccuracy = 100;
 
 export const maxVolleys = 100000;
 
-// Avoidance utility name to avoid % map
-const avoidMap = {
-    "Maneuvering Thrusters": { legs: 3, other: 6 },
-    "Imp. Maneuvering Thrusters": { legs: 5, other: 10 },
-    "Reaction Control System": { legs: 6, other: 12 },
-    "Adv. Reaction Control System": { legs: 7, other: 14 },
-};
-
-// Part name to corruption ignore chance percent
-const corruptionIgnoreMap = {
-    "Dynamic Insulation System": 50,
-    "Imp. Dynamic Insulation System": 67,
-    "Adv. Dynamic Insulation System": 75,
-};
-
-// Part names to damage reduction (val * damage = reduced damage)
-const damageReductionMap = {
-    "7V-RTL's Ultimate Field": .25,
-    "AEGIS Remote Shield": .50,
-    "Adv. Force Field": .50,
-    "Adv. Shield Generator": .75,
-    "Exp. Force Field": .50,
-    "Exp. Shield Generator": .75,
-    "Energy Mantle": .50,
-    "Force Field": .50,
-    "Imp. Energy Mantle": .50,
-    "Imp. Force Field": .50,
-    "Imp. Remote Force Field": .50,
-    "Imp. Remote Shield": .75,
-    "Imp. Shield Generator": .75,
-    "Remote Force Field": .50,
-    "Remote Shield": .75,
-    "Shield Generator": .75,
-    "Vortex Field Projector": .25,
-};
-
 // Array of damage reducing parts to sort
 // 11. Apply the first and only first defense applicable from the 
 // following list: phase wall, 75% personal shield (VFP etc), 
@@ -77,41 +41,74 @@ const meleeAnalysisAccuracy = [
     12,
 ];
 
-// Range avoid util name to avoid percent
-const rangedAvoidMap = {
-    "Phase Shifter": 5,
-    "Imp. Phase Shifter": 10,
-    "Adv. Phase Shifter": 15,
-    "Exp. Phase Shifter": 20,
-};
+const categoryAvoid = 0;
+const categoryCorruptionIgnore = 1;
+const categoryDamageReduction = 2;
+const categoryRangedAvoid = 3;
+const categorySelfDamageReduction = 4;
+const categoryShielding = 5;
+const specialItems = {
+    // Avoid, - all weapon accuracy
+    "Maneuvering Thrusters": { category: categoryAvoid, legs: 3, other: 6 },
+    "Imp. Maneuvering Thrusters": { category: categoryAvoid, legs: 5, other: 10 },
+    "Reaction Control System": { category: categoryAvoid, legs: 6, other: 12 },
+    "Adv. Reaction Control System": { category: categoryAvoid, legs: 7, other: 14 },
 
-// Part names to self damage reduction (val * damage = reduced damage)
-const selfDamageReduction = {
-    "1C-UTU's Buckler": .50,
-    "Adv. Powered Armor": .50,
-    "Imp. Powered Armor": .50,
-    "Powered Armor": .50,
-};
+    // Corruption ignore, % of ignoring corruption addition
+    "Dynamic Insulation System": { category: categoryCorruptionIgnore, ignore: 50 },
+    "Imp. Dynamic Insulation System": { category: categoryCorruptionIgnore, ignore: 67 },
+    "Adv. Dynamic Insulation System": { category: categoryCorruptionIgnore, ignore: 75 },
 
-// Shielding name to slot/absorption
-const shieldingMap = {
-    "Core Shielding": { slot: "Core", percent: .20 },
-    "Imp. Core Shielding": { slot: "Core", percent: .30 },
-    "Exp. Core Shielding": { slot: "Core", percent: .40 },
-    "Power Shielding": { slot: "Power", percent: .33 },
-    "Imp. Power Shielding": { slot: "Power", percent: .66 },
-    "Exp. Power Shielding": { slot: "Power", percent: .90 },
-    "Propulsion Shielding": { slot: "Propulsion", percent: .33 },
-    "Imp. Propulsion Shielding": { slot: "Propulsion", percent: .66 },
-    "Exp. Propulsion Shielding": { slot: "Propulsion", percent: .90 },
-    "Utility Shielding": { slot: "Utility", percent: .33 },
-    "Imp. Utility Shielding": { slot: "Utility", percent: .66 },
-    "Exp. Utility Shielding": { slot: "Utility", percent: .90 },
-    "Weapon Shielding": { slot: "Weapon", percent: .33 },
-    "Imp. Weapon Shielding": { slot: "Weapon", percent: .66 },
-    "Exp. Weapon Shielding": { slot: "Weapon", percent: .90 },
-    "Zio. Weapon Casing": { slot: "Weapon", percent: 1.00 },
-};
+    // Damage reduction, (val * damage = reduced damage)
+    "7V-RTL's Ultimate Field": { category: categoryDamageReduction, reduction: .25 },
+    "AEGIS Remote Shield": { category: categoryDamageReduction, reduction: .50 },
+    "Adv. Force Field": { category: categoryDamageReduction, reduction: .50 },
+    "Adv. Shield Generator": { category: categoryDamageReduction, reduction: .75 },
+    "Exp. Force Field": { category: categoryDamageReduction, reduction: .50 },
+    "Exp. Shield Generator": { category: categoryDamageReduction, reduction: .75 },
+    "Energy Mantle": { category: categoryDamageReduction, reduction: .50 },
+    "Force Field": { category: categoryDamageReduction, reduction: .50 },
+    "Imp. Energy Mantle": { category: categoryDamageReduction, reduction: .50 },
+    "Imp. Force Field": { category: categoryDamageReduction, reduction: .50 },
+    "Imp. Remote Force Field": { category: categoryDamageReduction, reduction: .50 },
+    "Imp. Remote Shield": { category: categoryDamageReduction, reduction: .75 },
+    "Imp. Shield Generator": { category: categoryDamageReduction, reduction: .75 },
+    "Remote Force Field": { category: categoryDamageReduction, reduction: .50 },
+    "Remote Shield": { category: categoryDamageReduction, reduction: .75 },
+    "Shield Generator": { category: categoryDamageReduction, reduction: .75 },
+    "Vortex Field Projector": { category: categoryDamageReduction, reduction: .25 },
+
+    // Ranged avoid, - ranged weapon accuracy
+    "Phase Shifter": { category: categoryRangedAvoid, avoid: 5 },
+    "Imp. Phase Shifter": { category: categoryRangedAvoid, avoid: 10 },
+    "Adv. Phase Shifter": { category: categoryRangedAvoid, avoid: 15 },
+    "Exp. Phase Shifter": { category: categoryRangedAvoid, avoid: 20 },
+
+    // Self damage reduction, damage reduction (val * damage = reduced damage)
+    "1C-UTU's Buckler": {category: categorySelfDamageReduction, reduction: .50 },
+    "Adv. Powered Armor": {category: categorySelfDamageReduction, reduction: .50 },
+    "Exp. Powered Armor": {category: categorySelfDamageReduction, reduction: .50 },
+    "Imp. Powered Armor": {category: categorySelfDamageReduction, reduction: .50 },
+    "Powered Armor": {category: categorySelfDamageReduction, reduction: .50 },
+
+    // Part shielding, contains slot and percent of damage blocked
+    "Core Shielding": { category: categoryShielding, slot: "Core", percent: .20 },
+    "Imp. Core Shielding": { category: categoryShielding, slot: "Core", percent: .30 },
+    "Exp. Core Shielding": { category: categoryShielding, slot: "Core", percent: .40 },
+    "Power Shielding": { category: categoryShielding, slot: "Power", percent: .33 },
+    "Imp. Power Shielding": { category: categoryShielding, slot: "Power", percent: .66 },
+    "Exp. Power Shielding": { category: categoryShielding, slot: "Power", percent: .90 },
+    "Propulsion Shielding": { category: categoryShielding, slot: "Propulsion", percent: .33 },
+    "Imp. Propulsion Shielding": { category: categoryShielding, slot: "Propulsion", percent: .66 },
+    "Exp. Propulsion Shielding": { category: categoryShielding, slot: "Propulsion", percent: .90 },
+    "Utility Shielding": { category: categoryShielding, slot: "Utility", percent: .33 },
+    "Imp. Utility Shielding": { category: categoryShielding, slot: "Utility", percent: .66 },
+    "Exp. Utility Shielding": { category: categoryShielding, slot: "Utility", percent: .90 },
+    "Weapon Shielding": { category: categoryShielding, slot: "Weapon", percent: .33 },
+    "Imp. Weapon Shielding": { category: categoryShielding, slot: "Weapon", percent: .66 },
+    "Exp. Weapon Shielding": { category: categoryShielding, slot: "Weapon", percent: .90 },
+    "Zio. Weapon Casing": { category: categoryShielding, slot: "Weapon", percent: 1.00 },
+}
 
 // Weapon number to base volley time map
 export const volleyTimeMap = {
@@ -380,35 +377,41 @@ export function getBotDefensiveState(parts, externalDamageReduction) {
 
     parts.forEach(part => {
         const name = part.def["Name"];
-        if (name in avoidMap) {
+        const specialItem = specialItems[name];
+
+        if (specialItem === undefined) {
+            return;
+        }
+
+        if (specialItem.category === categoryAvoid) {
             // Reaction Control System-like part
-            part.avoid = avoidMap[name];
+            // Leg/hover/flight determination done at accuracy update time
+            part.avoid = specialItem;
             state.avoid.push(part);
         }
-        else if (name in corruptionIgnoreMap) {
+        else if (specialItem.category === categoryCorruptionIgnore) {
             // Dynamic Insulation System
-            part.corruptionIgnore = corruptionIgnoreMap[name];
+            part.corruptionIgnore = specialItem.ignore;
             state.corruptionIgnore.push(part);
         }
-        else if (name in damageReductionMap) {
+        else if (specialItem.category === categoryDamageReduction) {
             // Force field-like part
-            part.damageReduction = damageReductionMap[name];
+            part.damageReduction = specialItem.reduction;
             state.damageReduction.push(part);
         }
-        else if (name in rangedAvoidMap) {
+        else if (specialItem.category === categoryRangedAvoid) {
             // Phase Shifters
-            part.rangedAvoid = rangedAvoidMap[name];
+            part.rangedAvoid = specialItem.avoid;
             state.rangedAvoid.push(part);
         }
-        else if (name in selfDamageReduction) {
+        else if (specialItem.category === categorySelfDamageReduction) {
             // Powered armor-like part
-            part.selfDamageReduction = selfDamageReduction[name];
+            part.selfDamageReduction = specialItem.reduction;
         }
-        else if (name in shieldingMap) {
+        else if (specialItem.category === categoryShielding) {
             // Core/slot shielding
-            const shielding = shieldingMap[name];
-            part.shieldingPercent = shielding.percent;
-            state.shieldings[shielding.slot].push(part);
+            part.shieldingPercent = specialItem.percent;
+            state.shieldings[specialItem.slot].push(part);
         }
     });
 
