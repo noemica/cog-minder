@@ -267,7 +267,7 @@ jq(function ($) {
             parent.remove();
             parent.children().remove();
         });
-        
+
 
         select.selectpicker("val", weaponName);
 
@@ -287,7 +287,7 @@ jq(function ($) {
             // Update item info
             const weapon = itemData[select.selectpicker("val")];
             helpButton.attr("data-content", createItemDataContent(weapon));
-            helpButton.popover();    
+            helpButton.popover();
         });
 
         select.parent().addClass("weapon-dropdown");
@@ -784,6 +784,12 @@ jq(function ($) {
                 baseAccuracy += 10;
             }
 
+            // All launchers are missiles except for special cases
+            const isMissile = weapon["Type"] === "Launcher"
+                && weapon["Name"] != "Sigix Terminator"
+                && weapon["Name"] != "Supercharged Sigix Terminator"
+                && weapon["Name"] != "Vortex Catalyst Activator";
+
             return {
                 accelerated: weapon["Type"] === "Energy Gun" || weapon["Type"] === "Energy Cannon",
                 baseAccuracy: baseAccuracy,
@@ -796,6 +802,7 @@ jq(function ($) {
                 explosionMin: explosionMin,
                 explosionMax: explosionMax,
                 explosionType: explosionType,
+                isMissile: isMissile,
                 overflow: !weapon["Type"].includes("Gun"),
                 numProjectiles: "Projectile Count" in weapon ? parseInt(weapon["Projectile Count"]) : 1,
             };

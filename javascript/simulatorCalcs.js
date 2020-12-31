@@ -41,13 +41,19 @@ const meleeAnalysisAccuracy = [
     12,
 ];
 
-const categoryAvoid = 0;
-const categoryCorruptionIgnore = 1;
-const categoryDamageReduction = 2;
-const categoryRangedAvoid = 3;
-const categorySelfDamageReduction = 4;
-const categoryShielding = 5;
+const categoryAntimissile = 0;
+const categoryAvoid = 1;
+const categoryCorruptionIgnore = 2;
+const categoryDamageReduction = 3;
+const categoryRangedAvoid = 4;
+const categorySelfDamageReduction = 5;
+const categoryShielding = 6;
 const specialItems = {
+    // Antimissile, chance to shoot down launcher projectiles per tile
+    "Antimissile System": { category: categoryAntimissile, chance: 24 },
+    "Point Defense Array": { category: categoryAntimissile, chance: 16 },
+    "Point Defense System": { category: categoryAntimissile, chance: 8 },
+
     // Avoid, - all weapon accuracy
     "Maneuvering Thrusters": { category: categoryAvoid, legs: 3, other: 6 },
     "Imp. Maneuvering Thrusters": { category: categoryAvoid, legs: 5, other: 10 },
@@ -362,6 +368,7 @@ export function calculateResistDamage(botState, damage, damageType) {
 // objects wouldn't really do very much
 export function getBotDefensiveState(parts, externalDamageReduction) {
     const state = {
+        antimissile: [],
         avoid: [],
         corruptionIgnore: [],
         damageReduction: [],
@@ -383,7 +390,12 @@ export function getBotDefensiveState(parts, externalDamageReduction) {
             return;
         }
 
-        if (specialItem.category === categoryAvoid) {
+        if (specialItem.category === categoryAntimissile) {
+            // Antimissile System-like part
+            part.intercept = specialItem.chance;
+            state.antimissile.push(part);
+        }
+        else if (specialItem.category === categoryAvoid) {
             // Reaction Control System-like part
             // Leg/hover/flight determination done at accuracy update time
             part.avoid = specialItem;
@@ -723,7 +735,7 @@ export function simulateCombat(state) {
     return true;
 }
 
-// Simulates 1 weapon's damage in a ranged volley
+// Simulates 1 weapon's damage in a volley
 function simulateWeapon(state, weapon) {
     const botState = state.botState;
     const offensiveState = state.offensiveState;
@@ -737,8 +749,37 @@ function simulateWeapon(state, weapon) {
         // take into account is -targeting, the lowest of which
         // (CR-A16's Pointy Stick) only has -20%, making this always a
         // guaranteed hit.
-        const hit = (offensiveState.melee && offensiveState.sneakAttack)
+        let hit = (offensiveState.melee && offensiveState.sneakAttack)
             || randomInt(0, 99) < weapon.accuracy;
+
+        if (hit && weapon.isMissile) {
+            // Check for an antimissile intercept
+            const part = getDefensiveStatePart(botState.defensiveState.antimissile);
+
+            if (part != null) {
+                const intercept = part.intercept;
+                // Check once per tile
+                // Note: even though the utilities have a range of 3 there are
+                // still 4 attempts at an intercept because the projectile can
+                // be intercepted on the same tile as the bot is currently on
+                // before the damage is applied.
+                // See below, @ is cogmind, i is intercept bot, 
+                // . is empty space, and x is intercept roll
+                // @ . . . i
+                // @ x . . i
+                // @ . x . i
+                // @ . . x i
+                // @ . . . x
+                const numChanges = Math.min(4, offensiveState.distance);
+                for (let i = 0; i < numChanges; i++) {
+                    if (randomInt(0, 99) < intercept) {
+                        hit = false;
+                        break;
+                    }
+                }
+            }
+        }
+
         if (!hit) {
             continue;
         }
