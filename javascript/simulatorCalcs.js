@@ -45,14 +45,15 @@ const categoryAntimissile = 0;
 const categoryAvoid = 1;
 const categoryCorruptionIgnore = 2;
 const categoryDamageReduction = 3;
-const categoryRangedAvoid = 4;
-const categorySelfDamageReduction = 5;
-const categoryShielding = 6;
+const categoryResist = 4;
+const categoryRangedAvoid = 5;
+const categorySelfDamageReduction = 6;
+const categoryShielding = 7;
 const specialItems = {
     // Antimissile, chance to shoot down launcher projectiles per tile
-    "Antimissile System": { category: categoryAntimissile, chance: 24 },
-    "Point Defense Array": { category: categoryAntimissile, chance: 16 },
     "Point Defense System": { category: categoryAntimissile, chance: 8 },
+    "Point Defense Array": { category: categoryAntimissile, chance: 16 },
+    "Antimissile System": { category: categoryAntimissile, chance: 24 },
 
     // Avoid, - all weapon accuracy
     "Maneuvering Thrusters": { category: categoryAvoid, legs: 3, other: 6 },
@@ -66,23 +67,89 @@ const specialItems = {
     "Adv. Dynamic Insulation System": { category: categoryCorruptionIgnore, ignore: 75 },
 
     // Damage reduction, (val * damage = reduced damage)
-    "7V-RTL's Ultimate Field": { category: categoryDamageReduction, reduction: .25 },
+    "Adv. Shield Generator": { category: categoryDamageReduction, reduction: .75 },
+    "Exp. Shield Generator": { category: categoryDamageReduction, reduction: .75 },
+    "Imp. Remote Shield": { category: categoryDamageReduction, reduction: .75 },
+    "Imp. Shield Generator": { category: categoryDamageReduction, reduction: .75 },
+    "Remote Shield": { category: categoryDamageReduction, reduction: .75 },
+    "Shield Generator": { category: categoryDamageReduction, reduction: .75 },
     "AEGIS Remote Shield": { category: categoryDamageReduction, reduction: .50 },
     "Adv. Force Field": { category: categoryDamageReduction, reduction: .50 },
-    "Adv. Shield Generator": { category: categoryDamageReduction, reduction: .75 },
     "Exp. Force Field": { category: categoryDamageReduction, reduction: .50 },
-    "Exp. Shield Generator": { category: categoryDamageReduction, reduction: .75 },
     "Energy Mantle": { category: categoryDamageReduction, reduction: .50 },
     "Force Field": { category: categoryDamageReduction, reduction: .50 },
     "Imp. Energy Mantle": { category: categoryDamageReduction, reduction: .50 },
     "Imp. Force Field": { category: categoryDamageReduction, reduction: .50 },
     "Imp. Remote Force Field": { category: categoryDamageReduction, reduction: .50 },
-    "Imp. Remote Shield": { category: categoryDamageReduction, reduction: .75 },
-    "Imp. Shield Generator": { category: categoryDamageReduction, reduction: .75 },
     "Remote Force Field": { category: categoryDamageReduction, reduction: .50 },
-    "Remote Shield": { category: categoryDamageReduction, reduction: .75 },
-    "Shield Generator": { category: categoryDamageReduction, reduction: .75 },
+    "7V-RTL's Ultimate Field": { category: categoryDamageReduction, reduction: .25 },
     "Vortex Field Projector": { category: categoryDamageReduction, reduction: .25 },
+
+    // Resist, % of damage type resisted
+    "Insulated Plating": { category: categoryResist, resists: { "Electromagnetic": 15 } },
+    "Med. Insulated Plating": { category: categoryResist, resists: { "Electromagnetic": 20 } },
+    "EM Shield": { category: categoryResist, resists: { "Electromagnetic": 25 } },
+    "Hvy. Insulated Plating": { category: categoryResist, resists: { "Electromagnetic": 30 } },
+    "EM Disruption": { category: categoryResist, resists: { "Electromagnetic": 50 } },
+    "EM Dispersion": { category: categoryResist, resists: { "Electromagnetic": 75 } },
+    "Damper Plating": { category: categoryResist, resists: { "Electromagnetic": 90 } },
+    "8R-AWN's Armor/EX": { category: categoryResist, resists: { "Explosive": 90 } },
+    "Shock Absorption System": { category: categoryResist, resists: { "Explosive": 25 } },
+    "Imp. Shock Absorption System": { category: categoryResist, resists: { "Explosive": 50 } },
+    "Exp. Shock Absorption System": { category: categoryResist, resists: { "Explosive": 75 } },
+    "Mak. Kinetic Plating": { category: categoryResist, resists: { "Kinetic": 20 } },
+    "Focal Shield": { category: categoryResist, resists: { "Kinetic": 20 } },
+    "Reactive Plating": { category: categoryResist, resists: { "Kinetic": 20 } },
+    "Imp. Focal Shield": { category: categoryResist, resists: { "Kinetic": 25 } },
+    "Adv. Focal Shield": { category: categoryResist, resists: { "Kinetic": 30 } },
+    "Exp. Focal Shield": { category: categoryResist, resists: { "Kinetic": 30 } },
+    "Med. Reactive Plating": { category: categoryResist, resists: { "Kinetic": 30 } },
+    "Hvy. Reactive Plating": { category: categoryResist, resists: { "Kinetic": 40 } },
+    "8R-AWN's Armor/TH": { category: categoryResist, resists: { "Thermal": 90 } },
+    "Mak. Thermal Plating": { category: categoryResist, resists: { "Thermal": 10 } },
+    "Thermal Defense Suite": { category: categoryResist, resists: { "Thermal": 20 } },
+    "Reflective Plating": { category: categoryResist, resists: { "Thermal": 10 } },
+    "Med. Reflective Plating": { category: categoryResist, resists: { "Thermal": 15 } },
+    "Thermal Shield": { category: categoryResist, resists: { "Thermal": 20 } },
+    "Imp. Thermal Defense Suite": { category: categoryResist, resists: { "Thermal": 25 } },
+    "Imp. Thermal Shield": { category: categoryResist, resists: { "Thermal": 25 } },
+    "Hvy. Reflective Plating": { category: categoryResist, resists: { "Thermal": 25 } },
+    "Adv. Thermal Defense Suite": { category: categoryResist, resists: { "Thermal": 30 } },
+    "Adv. Thermal Shield": { category: categoryResist, resists: { "Thermal": 30 } },
+    "Exp. Thermal Defense Suite": { category: categoryResist, resists: { "Thermal": 30 } },
+    "Exp. Thermal Shield": { category: categoryResist, resists: { "Thermal": 30 } },
+    "Thermal Barrier": { category: categoryResist, resists: { "Thermal": 50 } },
+    "Beam Splitter": { category: categoryResist, resists: { "Thermal": 75 } },
+    "ME-RLN's Chromatic Screen": {
+        category: categoryResist, resists: {
+            "Electromagnetic": 20,
+            "Explosive": 20,
+            "Impact": 20,
+            "Kinetic": 20,
+            "Piercing": 20,
+            "Slashing": 20,
+        },
+    },
+    "Zio. Shade Carapace": {
+        category: categoryResist, resists: {
+            "Electromagnetic": 20,
+            "Explosive": 20,
+            "Impact": 20,
+            "Kinetic": 20,
+            "Piercing": 20,
+            "Slashing": 20,
+        },
+    },
+    "Zio. Shade Armor": {
+        category: categoryResist, resists: {
+            "Electromagnetic": 30,
+            "Explosive": 30,
+            "Impact": 30,
+            "Kinetic": 30,
+            "Piercing": 30,
+            "Slashing": 30,
+        },
+    },
 
     // Ranged avoid, - ranged weapon accuracy
     "Phase Shifter": { category: categoryRangedAvoid, avoid: 5 },
@@ -91,11 +158,11 @@ const specialItems = {
     "Exp. Phase Shifter": { category: categoryRangedAvoid, avoid: 20 },
 
     // Self damage reduction, damage reduction (val * damage = reduced damage)
-    "1C-UTU's Buckler": {category: categorySelfDamageReduction, reduction: .50 },
-    "Adv. Powered Armor": {category: categorySelfDamageReduction, reduction: .50 },
-    "Exp. Powered Armor": {category: categorySelfDamageReduction, reduction: .50 },
-    "Imp. Powered Armor": {category: categorySelfDamageReduction, reduction: .50 },
-    "Powered Armor": {category: categorySelfDamageReduction, reduction: .50 },
+    "1C-UTU's Buckler": { category: categorySelfDamageReduction, reduction: .50 },
+    "Powered Armor": { category: categorySelfDamageReduction, reduction: .50 },
+    "Imp. Powered Armor": { category: categorySelfDamageReduction, reduction: .50 },
+    "Adv. Powered Armor": { category: categorySelfDamageReduction, reduction: .50 },
+    "Exp. Powered Armor": { category: categorySelfDamageReduction, reduction: .50 },
 
     // Part shielding, contains slot and percent of damage blocked
     "Core Shielding": { category: categoryShielding, slot: "Core", percent: .20 },
@@ -276,6 +343,15 @@ function applyDamage(state, botState, damage, critical, armorAnalyzed, coreAnaly
             botState.armorAnalyzedCoverage -= part.armorAnalyzedCoverage;
             botState.totalCoverage -= part.coverage;
 
+            // If the part was providing any damage resistances remove them now
+            if ("resists" in part) {
+                Object.keys(part.resists).forEach(type => {
+                    if (type in botState.resistances) {
+                        botState.resistances[type] -= part.resists[type];
+                    }
+                });
+            }
+
             if (part.integrity < damage && !part.protection && canOverflow && !critical) {
                 // Handle overflow damage if excess damage was dealt 
                 // against a non-protection part (19)
@@ -324,9 +400,12 @@ function applyDamage(state, botState, damage, critical, armorAnalyzed, coreAnaly
 // This is not a deep copy, any fields that can be modified are deep-copied
 // but immutable fields are not.
 function cloneBotState(botState) {
+    const resistances = {};
+    Object.keys(botState.resistances).forEach(type => resistances[type] = botState.resistances[type]);
     const newState = {
         armorAnalyzedCoverage: botState.armorAnalyzedCoverage,
         coreCoverage: botState.coreCoverage,
+        coreDisrupted: botState.coreDisrupted,
         coreIntegrity: botState.coreIntegrity,
         corruption: botState.corruption,
         def: botState.def,
@@ -343,7 +422,7 @@ function cloneBotState(botState) {
             }
         }),
         regen: botState.regen,
-        resistances: botState.resistances,
+        resistances: resistances,
         totalCoverage: botState.totalCoverage,
     }
     newState.defensiveState = getBotDefensiveState(
@@ -410,6 +489,10 @@ export function getBotDefensiveState(parts, externalDamageReduction) {
             // Force field-like part
             part.damageReduction = specialItem.reduction;
             state.damageReduction.push(part);
+        }
+        else if (specialItem.category === categoryResist) {
+            // Damage type resist part
+            part.resists = specialItem.resists;
         }
         else if (specialItem.category === categoryRangedAvoid) {
             // Phase Shifters

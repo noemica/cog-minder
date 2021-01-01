@@ -647,6 +647,7 @@ jq(function ($) {
         const botState = {
             armorAnalyzedCoverage: armorAnalyzedCoverage,
             coreCoverage: bot["Core Coverage"],
+            coreDisrupted: false,
             coreIntegrity: bot["Core Integrity"],
             corruption: 0,
             def: bot,
