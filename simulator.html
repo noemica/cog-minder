@@ -347,22 +347,33 @@
         <div id="weaponSelectContainer" class="mt-3"></div>
 
         <!-- Graph display settings -->
-        <div class="mt-3">
+        <div class="input-group mt-3">
             <!-- X-axis -->
             <div id="xAxisContainer" class="btn-group btn-group-toggle" data-toggle="buttons">
-                <div class="input-group-prepend" data-toggle="tooltip"
-                    title="The type of x-axis to show on the graph.">
+                <div class="input-group-prepend" data-toggle="tooltip" title="The type of x-axis to show on the graph.">
                     <span class="input-group-text">X-axis</span>
                 </div>
                 <label id="xAxisVolleys" class="btn">
-                    <input type="radio" name="options"> Volley
+                    <input type="radio" name="options"> Volleys
                 </label>
                 <label id="xAxisTime" class="btn">
                     <input type="radio" name="options"> Time
                 </label>
             </div>
-        </div>
 
+            <!-- End condition -->
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The scenario to occur before the simulation is ended.">
+                <span class="input-group-text">End Condition</span>
+            </div>
+            <select id="endConditionSelect" class="selectpicker flex-dropdown" data-dropdown-align-right="auto">
+                <option>Kill</option>
+                <option>Kill or Core Disrupt</option>
+                <option>Kill or No Power</option>
+                <option>Kill or No Weapons</option>
+                <option id="endConditionArchTele">Architect Tele (80% integrity, 1 weapon, or 1 prop)</option>
+            </select>
+        </div>
 
         <!-- Simulate/status -->
         <div class="mt-2">

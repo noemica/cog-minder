@@ -194,7 +194,8 @@ export const volleyTimeMap = {
 };
 
 // Applies a final calculated damage value to a bot, splitting into chunks if necessary
-function applyDamage(state, botState, damage, critical, armorAnalyzed, coreAnalyzed, canOverflow, damageType) {
+function applyDamage(state, botState, damage, critical, armorAnalyzed,
+    coreAnalyzed, disruptChance, spectrum, canOverflow, damageType) {
     const chunks = [];
 
     // Split into chunks each containing originalDamage for other calcs (10)
@@ -204,7 +205,8 @@ function applyDamage(state, botState, damage, critical, armorAnalyzed, coreAnaly
         }
 
         // Split explosive damage randomly into 1-3 chunks (8)
-        // EX damage can never crit and can't ignore armor
+        // EX damage can never crit, ignore armor, disrupt, explicitly 
+        // target core, or have a spectrum
         // Note: The remainder from the division is explicitly thrown out
         const numChunks = randomInt(1, 3);
         for (let i = 0; i < numChunks; i++) {
@@ -212,8 +214,10 @@ function applyDamage(state, botState, damage, critical, armorAnalyzed, coreAnaly
                 armorAnalyzed: false,
                 critical: false,
                 damageType: damageType,
+                disruptChance: 0,
                 forceCore: false,
                 originalDamage: Math.trunc(damage / numChunks),
+                spectrum: 0,
             });
         }
     }
@@ -228,15 +232,19 @@ function applyDamage(state, botState, damage, critical, armorAnalyzed, coreAnaly
                 armorAnalyzed: armorAnalyzed,
                 critical: critical,
                 damageType: damageType,
+                disruptChance: disruptChance,
                 forceCore: false,
                 originalDamage: chunkDamage,
+                spectrum: spectrum,
             });
             chunks.push({
                 armorAnalyzed: false,
                 critical: false,
                 damageType: damageType,
+                disruptChance: 0,
                 forceCore: true,
                 originalDamage: chunkDamage,
+                spectrum: 0,
             });
         }
         else {
@@ -244,8 +252,10 @@ function applyDamage(state, botState, damage, critical, armorAnalyzed, coreAnaly
                 armorAnalyzed: armorAnalyzed,
                 critical: critical,
                 damageType: damageType,
+                disruptChance: disruptChance,
                 forceCore: false,
                 originalDamage: damage,
+                spectrum: spectrum,
             });
         }
     }
@@ -258,7 +268,8 @@ function applyDamage(state, botState, damage, critical, armorAnalyzed, coreAnaly
         chunk.damage = Math.trunc(chunk.originalDamage * multiplier);
     });
 
-    function applyDamageChunk(damage, damageType, critical, isOverflow, forceCore, armorAnalyzed) {
+    function applyDamageChunk(damage, damageType, critical, isOverflow,
+        forceCore, disruptChance, spectrum, armorAnalyzed) {
         // Determine hit part (14)
         const { part, partIndex } = getHitPart(botState, damageType,
             isOverflow, forceCore, armorAnalyzed);
@@ -291,6 +302,12 @@ function applyDamage(state, botState, damage, critical, armorAnalyzed, coreAnaly
                 botState.coreIntegrity -= damage;
             }
 
+            // Apply disruption (18)
+            // Core disruption only has 50% of the usual chance
+            if ((randomInt(0, 99) < disruptChance / 2) && botState.immunities.includes("Disruption")) {
+                botState.coreDisrupted = true;
+            }
+
             return;
         }
 
@@ -303,7 +320,9 @@ function applyDamage(state, botState, damage, critical, armorAnalyzed, coreAnaly
         }
 
         // Check for spectrum engine explosion (17)
-        // TODO
+        // TODO apply damage
+        const engineExplosion = part.def["Slot"] === "Power"
+            && randomInt(0, 99) < spectrum;
 
         // Protection can't get crit, only receives 20% more damage
         if (critical && part.protection) {
@@ -317,6 +336,9 @@ function applyDamage(state, botState, damage, critical, armorAnalyzed, coreAnaly
             damage = Math.trunc(part.selfDamageReduction);
         }
 
+        // Apply disruption (18)
+        // TODO
+
         if (shielding != null) {
             // Handle slot shielding reduction
             // Note: shielding may absorb more damage than integrity
@@ -326,7 +348,7 @@ function applyDamage(state, botState, damage, critical, armorAnalyzed, coreAnaly
             damage = damage - shieldingDamage;
         }
 
-        let destroyed = part.integrity <= damage || critical;
+        let destroyed = part.integrity <= damage || critical || engineExplosion;
 
         // Check for sever            
         if (!destroyed && damageType === "Slashing") {
@@ -378,8 +400,9 @@ function applyDamage(state, botState, damage, critical, armorAnalyzed, coreAnaly
 
     // Apply damage 
     chunks.forEach(chunk => {
-        applyDamageChunk(chunk.damage, chunk.damageType, chunk.critical,
-            false, chunk.forceCore, chunk.armorAnalyzed);
+        applyDamageChunk(chunk.damage, chunk.damageType, chunk.critical, false,
+            chunk.forceCore, chunk.disruptChance, chunk.spectrum,
+            chunk.armorAnalyzed);
 
         // Apply corruption (23)
         if (damageType === "Electromagnetic") {
@@ -710,14 +733,38 @@ export function getRangedVolleyTime(weapons, cyclerModifier) {
     return Math.trunc(Math.max(25, volleyTime));
 }
 
-
 // Tries to get a bot's first shielding for a specific slot
 // Parts will be removed from the array if their integrity has dropped below 0
 function getShieldingType(botState, slot) {
     return getDefensiveStatePart(botState.defensiveState.shieldings[slot]);
 }
 
-
+const simulationEndConditions = {
+    "Kill": function (botState) {
+        return botState.coreIntegrity <= 0
+            || botState.corruption >= 100;
+    },
+    "Kill or Core Disrupt": function (botState) {
+        return botState.coreIntegrity <= 0
+            || botState.corruption >= 100
+            || botState.coreDisrupted;
+    },
+    "Kill or No Power": function (botState) {
+        return botState.coreIntegrity <= 0
+            || botState.corruption >= 100
+            || botState.parts.every(part => part.def["Slot"] != "Power");
+    },
+    "Kill or No Weapons": function (botState) {
+        return botState.coreIntegrity <= 0
+            || botState.corruption >= 100
+            || botState.parts.every(part => part.def["Slot"] != "Weapon");
+    },
+    "Architect Tele (80% integrity, 1 weapon, or 1 prop)": function (botState) {
+        return botState.coreIntegrity <= botState.initialCoreIntegrity * 0.8
+        || botState.parts.filter(part => part.def["Slot"] === "Weapon").length === 1
+        || botState.parts.filter(part => part.def["Slot"] === "Propulsion").length === 1;
+    },
+};
 // Fully simulates rounds of combat to a kill a bot from an initial state
 export function simulateCombat(state) {
     // Clone initial bot state
@@ -730,6 +777,8 @@ export function simulateCombat(state) {
     // Update initial accuracy
     updateWeaponsAccuracy(state);
 
+    const endCondition = simulationEndConditions[state.endCondition];
+
     // Update initial sneak attack state
     offensiveState.sneakAttack = offensiveState.sneakAttackStrategy === "All"
         || offensiveState.sneakAttackStrategy === "First Only";
@@ -737,7 +786,7 @@ export function simulateCombat(state) {
     // Update initial momentum
     offensiveState.momentum.current = offensiveState.momentum.bonus + offensiveState.momentum.initial;
 
-    while (botState.coreIntegrity > 0 && botState.corruption < 100) {
+    while (!endCondition(botState)) {
         // Process each volley
         volleys += 1;
         let volleyTime = offensiveState.volleyTime;
@@ -923,7 +972,8 @@ function simulateWeapon(state, weapon) {
             const critical = randomInt(0, 99) < weapon.critical;
 
             applyDamage(state, botState, damage, critical, armorAnalyzed,
-                coreAnalyzed, weapon.overflow, weapon.damageType);
+                coreAnalyzed, weapon.disruption, weapon.spectrum,
+                weapon.overflow, weapon.damageType);
         }
 
         if (weapon.explosionType != null) {
@@ -934,7 +984,8 @@ function simulateWeapon(state, weapon) {
             damage = calculateResistDamage(botState, damage, weapon.explosionType);
 
             applyDamage(state, botState, damage, false, false, false,
-                weapon.overflow, weapon.explosionType);
+                weapon.disruption, weapon.explosionSpectrum, weapon.overflow,
+                weapon.explosionType);
         }
     }
 }

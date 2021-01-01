@@ -35,6 +35,8 @@ jq(function ($) {
     const initialRangedAccuracy = 70;
     const initialMeleeAccuracy = 80;
 
+    const spectrumRegex = /\w* \((\d*)\)/;
+
     let chart;
     // Uncomment for development type hinting
     // let chart = new Chart("");
@@ -501,6 +503,7 @@ jq(function ($) {
         resetDropdown($("#actuatorSelect"));
         resetDropdown($("#actuatorArraySelect"));
         resetDropdown($("#sneakAttackSelect"));
+        resetDropdown($("#endConditionSelect"));
 
         // Reset text inputs
         $("#distanceInput").val("");
@@ -786,6 +789,15 @@ jq(function ($) {
                 baseAccuracy += 10;
             }
 
+            const disruption = parseIntOrDefault(weapon["Disruption"]);
+
+            const spectrum = "Spectrum" in weapon ?
+                parseInt(spectrumRegex.exec(weapon["Spectrum"])[1]) :
+                0;
+            const explosionSpectrum = "Explosion Spectrum" in weapon ?
+                parseInt(spectrumRegex.exec(weapon["Explosion Spectrum"])[1]) :
+                0;
+
             // All launchers are missiles except for special cases
             const isMissile = weapon["Type"] === "Launcher"
                 && weapon["Name"] != "Sigix Terminator"
@@ -801,12 +813,15 @@ jq(function ($) {
                 damageType: damageType,
                 def: weapon,
                 delay: delay,
+                disruption: disruption,
                 explosionMin: explosionMin,
                 explosionMax: explosionMax,
+                explosionSpectrum: explosionSpectrum,
                 explosionType: explosionType,
                 isMissile: isMissile,
-                overflow: !weapon["Type"].includes("Gun"),
                 numProjectiles: "Projectile Count" in weapon ? parseInt(weapon["Projectile Count"]) : 1,
+                overflow: !weapon["Type"].includes("Gun"),
+                spectrum: spectrum,
             };
         });
 
@@ -891,6 +906,7 @@ jq(function ($) {
 
         // Overall state
         const state = {
+            endCondition: $("#endConditionSelect").selectpicker("val"),
             initialBotState: botState,
             killTus: {},
             killVolleys: {},
@@ -1006,10 +1022,12 @@ jq(function ($) {
 
             // Melee (especially with followups) can create a lot of relatively 
             // lower probability scenarios due to strange melee delays
-            // so add an extra decimal in this case
+            // so add an extra decimal place to avoid cutting out too many
+            // results that the max total % would end up being unreasonably
+            // low (like under 80%) when killing enemies with particularly
+            // large health pools
             roundDecimals = state.offensiveState.melee ? 2 : 1;
         }
-
 
         // Calculate data, round to .01% and ignore values <.01% to avoid clutter
         const perXData = perXKillsKeys
@@ -1078,6 +1096,15 @@ jq(function ($) {
                 select.append(`<option>${name}</option>`);
             }
         });
+
+        // Don't show arch tele condition when not on redacted
+        if (spoilersState === "Redacted") {
+            $("#endConditionArchTele").removeClass("not-visible");
+        }
+        else {
+            $("#endConditionArchTele").addClass("not-visible");
+        }
+        $("#endConditionSelect").selectpicker("refresh");
 
         select.selectpicker("refresh");
 
