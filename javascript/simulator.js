@@ -995,16 +995,17 @@ jq(function ($) {
 
         let perXKillsKeys;
         let perXKillsObject;
-        let perXString;
+        const perXString = $("#endConditionSelect").selectpicker("val");
         let roundDecimals;
         let stepSize;
+        let xString;
         let xAxisString;
 
         if (perVolleys) {
             // Show data per volley
             perXKillsKeys = Object.keys(state.killVolleys);
             perXKillsObject = state.killVolleys;
-            perXString = "volleys/kill";
+            xString = "Volleys";
             stepSize = 1;
             xAxisString = "Number of volleys";
 
@@ -1016,7 +1017,7 @@ jq(function ($) {
             perXKillsKeys = Object.keys(state.killTus);
             perXKillsKeys.sort((a, b) => parseFloat(a) - parseFloat(b));
             perXKillsObject = state.killTus;
-            perXString = "time units/kill";
+            xString = "Time Units";
             stepSize = state.offensiveState.volleyTime;
             xAxisString = "Number of time units";
 
@@ -1062,7 +1063,9 @@ jq(function ($) {
         perXDataset.data = perXData;
         cumulativeDataset.data = cumulativeData;
 
-        chart.options.title.text = `Simulated ${perXString} vs. ${$("#botSelect").selectpicker("val")}: (${getNumSimulationsString()} fights)`;
+        chart.options.title.text =
+            `Simulated ${xString}/${perXString} vs. ${$("#botSelect").selectpicker("val")}` +
+            `(${getNumSimulationsString()} fights)`;
         chart.update();
         $("#chart").removeClass("not-visible");
     }
