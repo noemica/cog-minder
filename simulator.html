@@ -346,6 +346,24 @@
         <!-- Weapons (added at runtime) -->
         <div id="weaponSelectContainer" class="mt-3"></div>
 
+        <!-- Graph display settings -->
+        <div class="mt-3">
+            <!-- X-axis -->
+            <div id="xAxisContainer" class="btn-group btn-group-toggle" data-toggle="buttons">
+                <div class="input-group-prepend" data-toggle="tooltip"
+                    title="The type of x-axis to show on the graph.">
+                    <span class="input-group-text">X-axis</span>
+                </div>
+                <label id="xAxisVolleys" class="btn">
+                    <input type="radio" name="options"> Volley
+                </label>
+                <label id="xAxisTime" class="btn">
+                    <input type="radio" name="options"> Time
+                </label>
+            </div>
+        </div>
+
+
         <!-- Simulate/status -->
         <div class="mt-2">
             <button id="simulateButton" class="btn btn-lg simulate-btn">Simulate</button>

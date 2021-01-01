@@ -323,6 +323,7 @@ jq(function ($) {
 
         // Set initial state
         resetButtonGroup($("#combatTypeContainer"));
+        resetButtonGroup($("#xAxisContainer"));
         resetValues();
         updateChoices();
 
@@ -971,29 +972,65 @@ jq(function ($) {
     // Updates the chart based on the current simulation state
     function updateChart(state) {
         // Get datasets
-        const perVolleyDataset = chart.data.datasets[0];
+        const perXDataset = chart.data.datasets[0];
         const cumulativeDataset = chart.data.datasets[1];
         const numSimulations = getNumSimulations();
+        const perVolleys = $("#xAxisVolleys").hasClass("active");
 
-        // Calculate data, round to .1% and ignore values <.1% to avoid clutter
-        const perVolleyData = Object.keys(state.killVolleys)
-            .filter(numVolleys => state.killVolleys[numVolleys] / numSimulations > .001)
-            .map(numVolleys => {
+        let perXKillsKeys;
+        let perXKillsObject;
+        let perXString;
+        let roundDecimals;
+        let stepSize;
+        let xAxisString;
+
+        if (perVolleys) {
+            // Show data per volley
+            perXKillsKeys = Object.keys(state.killVolleys);
+            perXKillsObject = state.killVolleys;
+            perXString = "volleys/kill";
+            stepSize = 1;
+            xAxisString = "Number of volleys";
+
+            // Always show 1 decimal with volleys
+            roundDecimals = 1;
+        }
+        else {
+            // Show data per time unit
+            perXKillsKeys = Object.keys(state.killTus);
+            perXKillsKeys.sort((a, b) => parseFloat(a) - parseFloat(b));
+            perXKillsObject = state.killTus;
+            perXString = "time units/kill";
+            stepSize = state.offensiveState.volleyTime;
+            xAxisString = "Number of time units";
+
+            // Melee (especially with followups) can create a lot of relatively 
+            // lower probability scenarios due to strange melee delays
+            // so add an extra decimal in this case
+            roundDecimals = state.offensiveState.melee ? 2 : 1;
+        }
+
+
+        // Calculate data, round to .01% and ignore values <.01% to avoid clutter
+        const perXData = perXKillsKeys
+            .filter(numX => perXKillsObject[numX] / numSimulations > Math.pow(10, -2 - roundDecimals))
+            .map(numX => {
                 return {
-                    x: numVolleys,
-                    y: Math.round(state.killVolleys[numVolleys] / numSimulations * 10000) / 100,
+                    x: numX,
+                    y: Math.round(perXKillsObject[numX] / numSimulations * Math.pow(10, 2 + roundDecimals))
+                        / Math.pow(10, roundDecimals),
                 }
             });
 
         // Add a 0 kill ending point
-        perVolleyData.push({
-            x: parseInt(perVolleyData[perVolleyData.length - 1].x) + 1,
+        perXData.push({
+            x: parseInt(perXData[perXData.length - 1].x) + stepSize,
             y: 0
         });
 
         const cumulativeData = [];
         let total = 0;
-        perVolleyData.forEach(point => {
+        perXData.forEach(point => {
             total += point.y;
             cumulativeData.push({
                 x: point.x,
@@ -1002,10 +1039,12 @@ jq(function ($) {
         });
 
         // Update chart
-        perVolleyDataset.data = perVolleyData;
+        chart.options.scales.xAxes[0].ticks.stepSize = stepSize;
+        chart.options.scales.xAxes[0].scaleLabel.labelString = xAxisString;
+        perXDataset.data = perXData;
         cumulativeDataset.data = cumulativeData;
 
-        chart.options.title.text = `Simulated volleys/kill vs. ${$("#botSelect").selectpicker("val")}: (${getNumSimulationsString()} fights)`;
+        chart.options.title.text = `Simulated ${perXString} vs. ${$("#botSelect").selectpicker("val")}: (${getNumSimulationsString()} fights)`;
         chart.update();
         $("#chart").removeClass("not-visible");
     }
