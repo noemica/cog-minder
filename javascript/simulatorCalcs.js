@@ -971,9 +971,11 @@ function simulateWeapon(state, weapon) {
             // Check for crit (9)
             const critical = randomInt(0, 99) < weapon.critical;
 
-            applyDamage(state, botState, damage, critical, armorAnalyzed,
-                coreAnalyzed, weapon.disruption, weapon.spectrum,
-                weapon.overflow, weapon.damageType);
+            if (damage > 0) {
+                applyDamage(state, botState, damage, critical, armorAnalyzed,
+                    coreAnalyzed, weapon.disruption, weapon.spectrum,
+                    weapon.overflow, weapon.damageType);
+                }
         }
 
         if (weapon.explosionType != null) {
@@ -983,9 +985,11 @@ function simulateWeapon(state, weapon) {
             // Apply resistances (6)
             damage = calculateResistDamage(botState, damage, weapon.explosionType);
 
-            applyDamage(state, botState, damage, false, false, false,
-                weapon.disruption, weapon.explosionSpectrum, weapon.overflow,
-                weapon.explosionType);
+            if (damage > 0) {
+                applyDamage(state, botState, damage, false, false, false,
+                    weapon.disruption, weapon.explosionSpectrum, weapon.overflow,
+                    weapon.explosionType);
+                }
         }
     }
 }
