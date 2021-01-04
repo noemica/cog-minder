@@ -761,8 +761,8 @@ const simulationEndConditions = {
     },
     "Architect Tele (80% integrity, 1 weapon, or 1 prop)": function (botState) {
         return botState.coreIntegrity <= botState.initialCoreIntegrity * 0.8
-        || botState.parts.filter(part => part.def["Slot"] === "Weapon").length === 1
-        || botState.parts.filter(part => part.def["Slot"] === "Propulsion").length === 1;
+            || botState.parts.filter(part => part.def["Slot"] === "Weapon").length === 1
+            || botState.parts.filter(part => part.def["Slot"] === "Propulsion").length === 1;
     },
 };
 // Fully simulates rounds of combat to a kill a bot from an initial state
@@ -839,14 +839,16 @@ export function simulateCombat(state) {
             updateWeaponsAccuracy(state);
         }
 
-        // Apply core regen
-        const lastCompletedTurns = Math.trunc(oldTus / 100);
-        const newCompletedTurns = Math.trunc(state.tus / 100);
-        const regenIntegrity = botState.regen * (newCompletedTurns - lastCompletedTurns);
+        if (botState.coreIntegrity > 0) {
+            // Apply core regen
+            const lastCompletedTurns = Math.trunc(oldTus / 100);
+            const newCompletedTurns = Math.trunc(state.tus / 100);
+            const regenIntegrity = botState.regen * (newCompletedTurns - lastCompletedTurns);
 
-        botState.coreIntegrity = Math.min(
-            botState.initialCoreIntegrity,
-            botState.coreIntegrity + regenIntegrity);
+            botState.coreIntegrity = Math.min(
+                botState.initialCoreIntegrity,
+                botState.coreIntegrity + regenIntegrity);
+        }
     }
 
     // Update kill dictionaries
@@ -975,7 +977,7 @@ function simulateWeapon(state, weapon) {
                 applyDamage(state, botState, damage, critical, armorAnalyzed,
                     coreAnalyzed, weapon.disruption, weapon.spectrum,
                     weapon.overflow, weapon.damageType);
-                }
+            }
         }
 
         if (weapon.explosionType != null) {
@@ -989,7 +991,7 @@ function simulateWeapon(state, weapon) {
                 applyDamage(state, botState, damage, false, false, false,
                     weapon.disruption, weapon.explosionSpectrum, weapon.overflow,
                     weapon.explosionType);
-                }
+            }
         }
     }
 }
