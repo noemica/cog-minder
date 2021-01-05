@@ -772,6 +772,8 @@ export function simulateCombat(state) {
     state.botState = botState;
     const offensiveState = state.offensiveState;
     let volleys = 0;
+
+    let oldTus = 0;
     state.tus = 0;
 
     // Update initial accuracy
@@ -787,6 +789,15 @@ export function simulateCombat(state) {
     offensiveState.momentum.current = offensiveState.momentum.bonus + offensiveState.momentum.initial;
 
     while (!endCondition(botState)) {
+        // Apply core regen
+        const lastCompletedTurns = Math.trunc(oldTus / 100);
+        const newCompletedTurns = Math.trunc(state.tus / 100);
+        const regenIntegrity = botState.regen * (newCompletedTurns - lastCompletedTurns);
+
+        botState.coreIntegrity = Math.min(
+            botState.initialCoreIntegrity,
+            botState.coreIntegrity + regenIntegrity);
+        
         // Process each volley
         volleys += 1;
         let volleyTime = offensiveState.volleyTime;
@@ -830,24 +841,13 @@ export function simulateCombat(state) {
         }
 
         // Update TUs and time based changes
-        const oldTus = state.tus;
+        oldTus = state.tus;
         state.tus += volleyTime;
 
         // Update accuracy when crossing siege mode activation
         if (!offensiveState.melee && oldTus < offensiveState.siegeBonus.tus
             && state.tus > offensiveState.siegeBonus.tus) {
             updateWeaponsAccuracy(state);
-        }
-
-        if (botState.coreIntegrity > 0) {
-            // Apply core regen
-            const lastCompletedTurns = Math.trunc(oldTus / 100);
-            const newCompletedTurns = Math.trunc(state.tus / 100);
-            const regenIntegrity = botState.regen * (newCompletedTurns - lastCompletedTurns);
-
-            botState.coreIntegrity = Math.min(
-                botState.initialCoreIntegrity,
-                botState.coreIntegrity + regenIntegrity);
         }
     }
 
