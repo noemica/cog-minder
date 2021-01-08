@@ -388,7 +388,7 @@ jq(function ($) {
             backgroundColor: backgroundColor,
             borderColor: borderColor,
             label: label,
-            pointRadius: 5,
+            pointRadius: 0,
             pointHitRadius: 25,
             showLine: true,
             steppedLine: "middle",
