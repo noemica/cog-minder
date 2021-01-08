@@ -23,8 +23,6 @@ import {
     volleyTimeMap,
 } from "./simulatorCalcs.js";
 
-// import Chart from 'chart.js';
-
 const jq = jQuery.noConflict();
 jq(function ($) {
     const spoilerItemCategories = [1, 4, 5, 6];
@@ -35,12 +33,26 @@ jq(function ($) {
     const initialRangedAccuracy = 70;
     const initialMeleeAccuracy = 80;
 
+    // Chart variables set on init
+    let chart;
+    let comparisonChart;
+    let currentComparisonData;
+
+    const comparisonBorderColors = [
+        'rgba(228, 26, 28, .8)',
+        'rgba(55, 126, 184, .8)',
+        'rgba(36, 192, 36, .8)',
+        'rgba(152, 78, 163, .8)',
+        'rgba(255, 127, 0, .8)',
+        'rgba(255, 255, 51, .8)',
+    ];
+
+    // Array of colors currently used to try to avoid duplicating colors when possible
+    const comparisonColorsUsed = comparisonBorderColors.map(() => 0);
+
     const spectrumRegex = /\w* \((\d*)\)/;
 
-    let chart;
-    // Uncomment for development type hinting
-    // let chart = new Chart("");
-
+    // Flag to cancel a simulation
     let cancelled = false;
 
     // Actuator array name to followup chance increase map
@@ -185,6 +197,74 @@ jq(function ($) {
         init();
     });
 
+    function addComparison() {
+        const name = $("#comparisonNameInput").val();
+        $("#comparisonNameInput").val("");
+
+        // Disable the button to avoid adding the dataset multiple times
+        const button = $("#addComparisonButton");
+        button.addClass("disabled");
+        button.prop("disabled", true);
+        button.tooltip("hide");
+
+        $("#comparisonContainer").removeClass("not-visible");
+
+        // Try to get the first unused color if possible
+        const { colorIndex } = comparisonColorsUsed.reduce((acc, num, index) => {
+            if (num < acc.value) {
+                return { colorIndex: index, value: num };
+            }
+            else {
+                return acc;
+            }
+        }, { colorIndex: -1, value: Number.MAX_VALUE });
+
+        comparisonColorsUsed[colorIndex] += 1;
+        
+        // Create and append the dataset to the chart
+        const newDataset = getDatasetSettings(name, "rgb(0, 0, 0, 0)", comparisonBorderColors[colorIndex]);
+        newDataset.data = currentComparisonData;
+        comparisonChart.data.datasets.push(newDataset);
+
+        // Create editor elements
+        const parent = $('<div class="input-group"></div>');
+        const nameInput = $(`<input class="form-control"></input>`);
+        nameInput.val(name);
+        const deleteButton = $('<button class="btn ml-2" data-toggle="tooltip" title="Removes the dataset.">X</button>');
+
+        parent.append(nameInput);
+        parent.append(deleteButton);
+
+        // Set up callbacks
+        deleteButton.tooltip();
+        deleteButton.on("click", () => {
+            // Remove the dataset from the chart
+            const datasets = comparisonChart.data.datasets;
+            datasets.splice(datasets.indexOf(newDataset), 1);
+            comparisonChart.update();
+
+            if (datasets.length === 0) {
+                // Hide the comparison chart section if no more data to show
+                $("#comparisonContainer").addClass("not-visible");
+            }
+
+            comparisonColorsUsed[colorIndex] -= 1;
+
+            // Remove the associated item
+            deleteButton.tooltip("dispose");
+            parent.remove();
+        });
+
+        nameInput.change(() => {
+            newDataset.label = nameInput.val();
+            comparisonChart.update();
+        });
+
+        $("#comparisonDatasetsContainer").append(parent);
+
+        comparisonChart.update();
+    }
+
     // Adds a new weapon select dropdown with an optional weapon name
     function addWeaponSelect(weaponName) {
         const spoilersState = getSpoilersState();
@@ -265,11 +345,9 @@ jq(function ($) {
 
             // Remove the associated item
             select.selectpicker("destroy");
-            deleteButton.tooltip("hide");
+            deleteButton.tooltip("dispose");
             parent.remove();
-            parent.children().remove();
         });
-
 
         select.selectpicker("val", weaponName);
 
@@ -304,16 +382,23 @@ jq(function ($) {
         parent.find(".btn-light").removeClass("btn-light");
     }
 
+    // Gets a dataset's overall settings with some defaults
+    function getDatasetSettings(label, backgroundColor, borderColor) {
+        return {
+            backgroundColor: backgroundColor,
+            borderColor: borderColor,
+            label: label,
+            pointRadius: 5,
+            pointHitRadius: 25,
+            showLine: true,
+            steppedLine: "middle",
+        }
+    }
+
     // Gets the number of simulations to perform
     function getNumSimulations() {
         const stringValue = $("#numFightsInput").val().replace(",", "");
         return (parseIntOrDefault(stringValue, 100000));
-    }
-
-    // Gets the string representing the number of simulations
-    function getNumSimulationsString() {
-        const number = getNumSimulations();
-        return Number(number).toLocaleString("en");
     }
 
     // Initialize the page state
@@ -354,6 +439,18 @@ jq(function ($) {
         $("#cancelButton").click(() => {
             cancelled = true;
         });
+        $("#addComparisonButton").click(() => {
+            addComparison();
+        });
+        $("#comparisonChartNameInput").change(() => {
+            let label = $("#comparisonChartNameInput").val();
+            if (label === "") {
+                label = "Custom Comparison";
+            }
+
+            comparisonChart.options.title.text = label;
+            comparisonChart.update();
+        });
 
         $(window).on("click", (e) => {
             // If clicking outside of a popover close the current one
@@ -384,24 +481,12 @@ jq(function ($) {
         $("#actuatorArraySelect").parent().addClass("percent-dropdown");
         $("#sneakAttackSelect").parent().addClass("sneak-attack-dropdown");
 
-        initChart();
+        initCharts();
     }
 
-    // Initializes the chart with default settings and no data
-    function initChart() {
-        function getDatasetSettings(label, backgroundColor, borderColor) {
-            return {
-                backgroundColor: backgroundColor,
-                borderColor: borderColor,
-                label: label,
-                pointRadius: 5,
-                pointHitRadius: 25,
-                showLine: true,
-                steppedLine: "middle",
-            }
-        }
-
-        const volleyDataset = getDatasetSettings(
+    // Initializes the charts with default settings and no data
+    function initCharts() {
+        const perXDataset = getDatasetSettings(
             "Current volley kill %",
             "rgba(0, 98, 0, 0.3)",
             "rgba(0, 196, 0, 1)");
@@ -410,12 +495,12 @@ jq(function ($) {
             "rgba(96, 96, 96, 0.3)",
             "rgba(128, 128, 128, 1)");
 
-        const chartElement = $("#chart");
+        let chartElement = $("#chart");
         chart = new Chart(chartElement, {
             type: 'scatter',
             data: {
                 datasets: [
-                    volleyDataset,
+                    perXDataset,
                     cumulativeDataset,
                 ],
             },
@@ -457,7 +542,57 @@ jq(function ($) {
                 },
                 title: {
                     display: true,
-                    text: `Simulated volleys/kill`,
+                    fontSize: 24,
+                }
+            },
+        });
+
+        chartElement = $("#comparisonChart");
+        comparisonChart = new Chart(chartElement, {
+            type: 'scatter',
+            data: {
+                datasets: [
+                ],
+            },
+            options: {
+                legend: {
+                    labels: {
+                        fontSize: 16,
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            display: false,
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Number of time units",
+                            fontSize: 24,
+                        },
+                        ticks: {
+                            min: 0,
+                            stepSize: 100,
+                        }
+                    }],
+                    yAxes: [{
+                        gridLines: {
+                            color: "rgba(128, 128, 128, 0.8)",
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Percent of kills",
+                            fontSize: 24,
+                        },
+                        ticks: {
+                            beginAtZero: true,
+                            callback: (value, index, values) => value + "%",
+                        },
+                    }],
+                },
+                title: {
+                    display: true,
+                    text: "Custom Comparison",
                     fontSize: 24,
                 }
             },
@@ -514,6 +649,7 @@ jq(function ($) {
         $("#speedInput").val("");
         $("#bonusMomentumInput").val("");
         $("#initialMomentumInput").val("");
+        $("#comparisonNameInput").val("");
 
         // Reset with 1 preset weapon and one empty one
         $("#weaponSelectContainer").empty();
@@ -524,7 +660,7 @@ jq(function ($) {
 
         setStatusText("");
 
-        $("#chart").addClass("not-visible");
+        $("#resultsContainer").addClass("not-visible");
     }
 
     // Sets controls to disabled/enabled based on if the simulation is running
@@ -946,7 +1082,7 @@ jq(function ($) {
                         lastFrame = now;
 
                         if (now - lastStatusUpdate > 100) {
-                            // Only update status only 10 times a second
+                            // Only update status ~ 10 times a second
                             const percent = (i * 100 / numSimulations).toFixed(1);
                             setStatusText(`${String(percent).padStart(4, "0")} % completed.`);
                             lastStatusUpdate = now;
@@ -979,6 +1115,10 @@ jq(function ($) {
                 time = time.toFixed(2);
                 setStatusText(`Completed in ${time} seconds.`);
                 updateChart(state);
+
+                const button = $("#addComparisonButton");
+                button.removeClass("disabled");
+                button.prop("disabled", false);
             }
         };
 
@@ -987,75 +1127,88 @@ jq(function ($) {
 
     // Updates the chart based on the current simulation state
     function updateChart(state) {
+        const numSimulations = getNumSimulations();
+
+        // Calculate data, round to the given number of decimal places and 
+        // ignore values smaller to reduce clutter
+        function getData(perXKillsKeys, perXKillsObject, roundDecimals, stepSize) {
+            const data = perXKillsKeys
+                .filter(numX => perXKillsObject[numX] / numSimulations > Math.pow(10, -2 - roundDecimals))
+                .map(numX => {
+                    return {
+                        x: numX,
+                        y: Math.trunc(perXKillsObject[numX] / numSimulations * Math.pow(10, 2 + roundDecimals))
+                            / Math.pow(10, roundDecimals),
+                    }
+                });
+
+            if (data.length < 5) {
+                // Add a 0 kill ending point if there aren't many data points
+                // to fill out a bit more nicely
+                data.push({
+                    x: parseInt(data[data.length - 1].x) + stepSize,
+                    y: 0
+                });
+            }
+
+            return data;
+        }
+
+        function getCumulativeData(data) {
+            const cumulativeData = [];
+            let total = 0;
+            data.forEach(point => {
+                total += point.y;
+                cumulativeData.push({
+                    x: point.x,
+                    y: Math.trunc(total * 100) / 100,
+                });
+            });    
+
+            return cumulativeData;
+        }
+
         // Get datasets
         const perXDataset = chart.data.datasets[0];
         const cumulativeDataset = chart.data.datasets[1];
-        const numSimulations = getNumSimulations();
         const perVolleys = $("#xAxisVolleys").hasClass("active");
 
-        let perXKillsKeys;
-        let perXKillsObject;
+        let perXData;
         const perXString = $("#endConditionSelect").selectpicker("val");
-        let roundDecimals;
         let stepSize;
         let xString;
         let xAxisString;
 
+        // Get comparison data first
+        const perXKillsKeys = Object.keys(state.killTus);
+        perXKillsKeys.sort((a, b) => parseFloat(a) - parseFloat(b));
+        // Note: Melee (especially with followups) can create a lot of 
+        // relatively  lower probability scenarios due to strange melee delays
+        // so add an extra decimal place to avoid cutting out too many
+        // results that the max total % would end up being unreasonably
+        // low (like under 80%) when killing enemies with particularly
+        // large health pools.
+        const tuData = getData(perXKillsKeys, state.killTus, state.offensiveState.melee ? 2 : 1, 100);
+        currentComparisonData = getCumulativeData(tuData);
+
         if (perVolleys) {
             // Show data per volley
-            perXKillsKeys = Object.keys(state.killVolleys);
-            perXKillsObject = state.killVolleys;
             xString = "Volleys";
             stepSize = 1;
             xAxisString = "Number of volleys";
 
-            // Always show 1 decimal with volleys
-            roundDecimals = 1;
+            perXData = getData(Object.keys(state.killVolleys), state.killVolleys, 1, 1);
         }
         else {
             // Show data per time unit
-            perXKillsKeys = Object.keys(state.killTus);
-            perXKillsKeys.sort((a, b) => parseFloat(a) - parseFloat(b));
-            perXKillsObject = state.killTus;
             xString = "Time Units";
             stepSize = state.offensiveState.volleyTime;
             xAxisString = "Number of time units";
 
-            // Melee (especially with followups) can create a lot of relatively 
-            // lower probability scenarios due to strange melee delays
-            // so add an extra decimal place to avoid cutting out too many
-            // results that the max total % would end up being unreasonably
-            // low (like under 80%) when killing enemies with particularly
-            // large health pools
-            roundDecimals = state.offensiveState.melee ? 2 : 1;
+            perXData = getData(perXKillsKeys, state.killTus, state.offensiveState.melee ? 2 : 1, stepSize);
         }
 
-        // Calculate data, round to .01% and ignore values <.01% to avoid clutter
-        const perXData = perXKillsKeys
-            .filter(numX => perXKillsObject[numX] / numSimulations > Math.pow(10, -2 - roundDecimals))
-            .map(numX => {
-                return {
-                    x: numX,
-                    y: Math.round(perXKillsObject[numX] / numSimulations * Math.pow(10, 2 + roundDecimals))
-                        / Math.pow(10, roundDecimals),
-                }
-            });
-
-        // Add a 0 kill ending point
-        perXData.push({
-            x: parseInt(perXData[perXData.length - 1].x) + stepSize,
-            y: 0
-        });
-
-        const cumulativeData = [];
-        let total = 0;
-        perXData.forEach(point => {
-            total += point.y;
-            cumulativeData.push({
-                x: point.x,
-                y: Math.round(total * 100) / 100,
-            });
-        });
+        const cumulativeData = getCumulativeData(perXData);
 
         // Update chart
         chart.options.scales.xAxes[0].ticks.stepSize = stepSize;
@@ -1064,10 +1217,9 @@ jq(function ($) {
         cumulativeDataset.data = cumulativeData;
 
         chart.options.title.text =
-            `Simulated ${xString}/${perXString} vs. ${$("#botSelect").selectpicker("val")}` +
-            `(${getNumSimulationsString()} fights)`;
+            `${xString}/${perXString} vs. ${$("#botSelect").selectpicker("val")}`;
         chart.update();
-        $("#chart").removeClass("not-visible");
+        $("#resultsContainer").removeClass("not-visible");
     }
 
     // Updates the available choices for the dropdowns depending on spoiler state and combat type

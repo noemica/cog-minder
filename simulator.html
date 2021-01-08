@@ -382,9 +382,30 @@
             <label id="statusText"></label>
         </div>
 
-        <!-- Chart -->
-        <div>
+        <!-- Charts and related controls -->
+        <div id="resultsContainer" class="not-visible">
             <canvas id="chart"></canvas>
+            <div class="input-group mt-3">
+                <div class="input-group-prepend" data-toggle="tooltip"
+                    title="The name for this data when added to the custom comparison chart.">
+                    <span class="input-group-text">Dataset Name</span>
+                </div>
+                <input id="comparisonNameInput" type="text" class="form-control"></input>
+                <button id="addComparisonButton" class="btn ml-3" data-toggle="tooltip"
+                    title="Adds the current dataset to the comparison chart.">Add to Comparison</button>
+            </div>
+        </div>
+
+        <div id="comparisonContainer" class="not-visible">
+            <div id="comparisonDatasetsContainer" class="comparison-grid mt-2">
+                <div class="input-group">
+                    <div class="input-group-prepend" data-toggle="tooltip" title="The name to show on the chart.">
+                        <span class="input-group-text">Chart Name</span>
+                    </div>
+                    <input id="comparisonChartNameInput" class="form-control" type="text" placeholder="Custom Comparison"></input>
+                </div>
+            </div>
+            <canvas id="comparisonChart"></canvas>
         </div>
     </div>
 </body>

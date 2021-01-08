@@ -279,6 +279,23 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.comparison-grid > div {
+    margin-top: .25rem;
+}
+
+.comparison-grid > div:nth-child(odd) {
+    padding-right: .5rem;
+}
+
+.comparison-grid > div:nth-child(even) {
+    padding-left: .5rem;
+}
+
 .items-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));

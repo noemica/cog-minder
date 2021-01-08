@@ -945,10 +945,11 @@ function simulateWeapon(state, weapon) {
 
                 damage = Math.trunc(momentumMultiplier * damage);
 
-                // Apply double damage sneak attack bonus
-                if (offensiveState.sneakAttack) {
-                    damage *= 2;
-                }
+            }
+
+            // Apply double damage sneak attack bonus
+            if (offensiveState.melee && offensiveState.sneakAttack) {
+                damage *= 2;
             }
 
             // Add analysis (3)
