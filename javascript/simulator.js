@@ -411,6 +411,7 @@ jq(function ($) {
         // Set initial state
         resetButtonGroup($("#combatTypeContainer"));
         resetButtonGroup($("#xAxisContainer"));
+        $("#comparisonChartNameInput").val("");
         resetValues();
         updateChoices();
 
