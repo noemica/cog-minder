@@ -4,14 +4,12 @@ import {
     createItemDataContent,
     gallerySort,
     getItem,
-    getItemCategories,
     getSpoilersState,
     initData,
     itemData,
     resetButtonGroup,
     setSpoilersState,
-    valueOrDefault,
-} from "./common.js";
+} from "./common";
 
 import {
     getBotDefensiveState,
@@ -21,7 +19,14 @@ import {
     maxVolleys,
     simulateCombat,
     volleyTimeMap,
-} from "./simulatorCalcs.js";
+} from "./simulatorCalcs";
+
+import "bootstrap";
+import { Chart, ChartDataSets, Point } from "chart.js";
+import * as jQuery from "jquery";
+import "bootstrap-select";
+import { DamageType, ItemSlot, ItemType, WeaponItem } from "./itemTypes";
+import { BotState, EndCondition, OffensiveState, SimulatorPart, SimulatorState, SimulatorWeapon, SneakAttackStrategy } from "./simulatorTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -34,8 +39,8 @@ jq(function ($) {
     const initialMeleeAccuracy = 80;
 
     // Chart variables set on init
-    let chart;
-    let comparisonChart;
+    let chart: Chart;
+    let comparisonChart: Chart;
     let currentComparisonData;
 
     const comparisonBorderColors = [
@@ -150,20 +155,20 @@ jq(function ($) {
 
     // Melee weapon types
     const meleeTypes = [
-        "Impact Weapon",
-        "Piercing Weapon",
-        "Slashing Weapon",
-        "Special Melee Weapon",
+        ItemType.ImpactWeapon,
+        ItemType.PiercingWeapon,
+        ItemType.SlashingWeapon,
+        ItemType.SpecialMeleeWeapon,
     ];
 
     // Ranged weapon types
     const rangedTypes = [
-        "Ballistic Cannon",
-        "Ballistic Gun",
-        "Energy Cannon",
-        "Energy Gun",
-        "Launcher",
-        "Special Weapon",
+        ItemType.BallisticCannon,
+        ItemType.BallisticGun,
+        ItemType.EnergyCannon,
+        ItemType.EnergyGun,
+        ItemType.Launcher,
+        ItemType.SpecialWeapon,
     ];
 
     // Bot size mode to accuracy bonus map
@@ -184,6 +189,14 @@ jq(function ($) {
         "Entering High Siege Mode": { bonus: 30, tus: 500 },
     };
 
+    // Map of spectrum values to engine explosion chance
+    const spectrumMap = {
+        "Wide (10)": 10,
+        "Intermediate (30)": 30,
+        "Narrow (50)": 50,
+        "Fine (100)": 100,
+    };
+
     // Target analyzer name to critical % chance increase
     const targetAnalyzerMap = {
         "0%: None": 0,
@@ -193,19 +206,17 @@ jq(function ($) {
         "12%: Exp. Target Analyzer": 12,
     };
 
-    $(document).ready(() => {
-        init();
-    });
+    $((document) => init());
 
     function addComparison() {
-        const name = $("#comparisonNameInput").val();
+        const name = $("#comparisonNameInput").val() as string;
         $("#comparisonNameInput").val("");
 
         // Disable the button to avoid adding the dataset multiple times
         const button = $("#addComparisonButton");
         button.addClass("disabled");
         button.prop("disabled", true);
-        button.tooltip("hide");
+        (button as any).tooltip("hide");
 
         $("#comparisonContainer").removeClass("not-visible");
 
@@ -220,11 +231,11 @@ jq(function ($) {
         }, { colorIndex: -1, value: Number.MAX_VALUE });
 
         comparisonColorsUsed[colorIndex] += 1;
-        
+
         // Create and append the dataset to the chart
         const newDataset = getDatasetSettings(name, "rgb(0, 0, 0, 0)", comparisonBorderColors[colorIndex]);
         newDataset.data = currentComparisonData;
-        comparisonChart.data.datasets.push(newDataset);
+        comparisonChart.data.datasets!.push(newDataset);
 
         // Create editor elements
         const parent = $('<div class="input-group"></div>');
@@ -236,10 +247,10 @@ jq(function ($) {
         parent.append(deleteButton);
 
         // Set up callbacks
-        deleteButton.tooltip();
+        (deleteButton as any).tooltip();
         deleteButton.on("click", () => {
             // Remove the dataset from the chart
-            const datasets = comparisonChart.data.datasets;
+            const datasets = comparisonChart.data.datasets!;
             datasets.splice(datasets.indexOf(newDataset), 1);
             comparisonChart.update();
 
@@ -251,12 +262,12 @@ jq(function ($) {
             comparisonColorsUsed[colorIndex] -= 1;
 
             // Remove the associated item
-            deleteButton.tooltip("dispose");
+            (deleteButton as any).tooltip("dispose");
             parent.remove();
         });
 
-        nameInput.change(() => {
-            newDataset.label = nameInput.val();
+        nameInput.on("change", () => {
+            newDataset.label = nameInput.val() as string;
             comparisonChart.update();
         });
 
@@ -266,43 +277,43 @@ jq(function ($) {
     }
 
     // Adds a new weapon select dropdown with an optional weapon name
-    function addWeaponSelect(weaponName) {
+    function addWeaponSelect(weaponName: string) {
         const spoilersState = getSpoilersState();
         const container = $("#weaponSelectContainer");
 
         const melee = isMelee();
         const types = melee ? meleeTypes : rangedTypes;
-        const weapons = [];
+        const weapons: string[] = [];
         Object.keys(itemData).forEach(name => {
-            const item = itemData[name];
+            const baseItem = itemData[name];
 
             // Slot check
-            if (item["Slot"] !== "Weapon") {
+            if (baseItem.slot !== ItemSlot.Weapon) {
                 return;
             }
 
+            const weapon = baseItem as WeaponItem;
+
             // Ranged/melee type check
-            if (!types.includes(item["Type"])) {
+            if (!types.includes(weapon.type)) {
                 return;
             }
 
             // Damage check
-            if (item["Damage Type"] === "Special") {
+            if (weapon.damageType === "Special") {
                 return;
             }
 
             // Spoilers check
             if (spoilersState === "None") {
                 // No spoilers, check that none of the categories are spoilers/redacted
-                const categories = getItemCategories(name);
-                if (categories.every(c => c != redactedItemCategory && !spoilerItemCategories.includes(c))) {
+                if (weapon.categories.every(c => c != redactedItemCategory && !spoilerItemCategories.includes(c))) {
                     weapons.push(name);
                 }
             }
             else if (spoilersState == "Spoilers") {
                 // Spoilers allowed, check only for redacted category
-                const categories = getItemCategories(name);
-                if (categories.every(c => c != redactedItemCategory)) {
+                if (weapon.categories.every(c => c != redactedItemCategory)) {
                     weapons.push(name);
                 }
             }
@@ -336,7 +347,7 @@ jq(function ($) {
         parent.append(number);
         parent.append(deleteButton);
 
-        deleteButton.tooltip();
+        (deleteButton as any).tooltip();
         deleteButton.on("click", () => {
             // Ensure the last dropdown is always empty
             if (parent.next().length === 0) {
@@ -345,7 +356,7 @@ jq(function ($) {
 
             // Remove the associated item
             select.selectpicker("destroy");
-            deleteButton.tooltip("dispose");
+            (deleteButton as any).tooltip("dispose");
             parent.remove();
         });
 
@@ -355,7 +366,7 @@ jq(function ($) {
         if (weaponName in itemData) {
             const weapon = itemData[weaponName];
             helpButton.attr("data-content", createItemDataContent(weapon));
-            helpButton.popover();
+            (helpButton as any).popover();
         }
 
         // Add changed event
@@ -365,17 +376,17 @@ jq(function ($) {
             }
 
             // Update item info
-            const weapon = itemData[select.selectpicker("val")];
+            const weapon = itemData[select.selectpicker("val") as any as string];
             helpButton.attr("data-content", createItemDataContent(weapon));
-            helpButton.popover();
+            (helpButton as any).popover();
         });
 
         select.parent().addClass("weapon-dropdown");
 
         // Enable tooltips
-        deleteButton.tooltip();
-        numberLabel.tooltip();
-        selectLabel.tooltip();
+        (deleteButton as any).tooltip();
+        (numberLabel as any).tooltip();
+        (selectLabel as any).tooltip();
 
         // Minor hack, the btn-light class is auto-added to dropdowns with search 
         // but it doesn't really fit with everything else
@@ -383,7 +394,7 @@ jq(function ($) {
     }
 
     // Gets a dataset's overall settings with some defaults
-    function getDatasetSettings(label, backgroundColor, borderColor) {
+    function getDatasetSettings(label: string, backgroundColor: string, borderColor: string) {
         return {
             backgroundColor: backgroundColor,
             borderColor: borderColor,
@@ -392,18 +403,18 @@ jq(function ($) {
             pointHitRadius: 25,
             showLine: true,
             steppedLine: "middle",
-        }
+        } as ChartDataSets;
     }
 
     // Gets the number of simulations to perform
     function getNumSimulations() {
-        const stringValue = $("#numFightsInput").val().replace(",", "");
+        const stringValue = ($("#numFightsInput").val() as string).replace(",", "");
         return (parseIntOrDefault(stringValue, 100000));
     }
 
     // Initialize the page state
-    async function init() {
-        await initData();
+    function init() {
+        initData();
 
         // Load spoilers saved state
         $("#spoilers").text(getSpoilersState());
@@ -420,53 +431,53 @@ jq(function ($) {
             const state = $(e.target).text();
             $("#spoilers").text(state);
             setSpoilersState(state);
-            $("#spoilersDropdown > button").tooltip("hide");
+            ($("#spoilersDropdown > button") as any).tooltip("hide");
             updateChoices();
         });
-        $("#reset").click(() => {
-            $("#reset").tooltip("hide");
+        $("#reset").on("click", () => {
+            ($("#reset") as any).tooltip("hide");
             resetValues();
         });
         $("#botSelect").on("changed.bs.select", () => {
-            const bot = botData[$("#botSelect").selectpicker("val")];
+            const bot = botData[($("#botSelect") as any).selectpicker("val") as string];
             $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
         });
         $("#combatTypeContainer > label > input").on("click", () => {
             updateChoices();
         });
-        $("#simulateButton").click(() => {
+        $("#simulateButton").on("click", () => {
             simulate();
         });
-        $("#cancelButton").click(() => {
+        $("#cancelButton").on("click", () => {
             cancelled = true;
         });
-        $("#addComparisonButton").click(() => {
+        $("#addComparisonButton").on("click", () => {
             addComparison();
         });
-        $("#comparisonChartNameInput").change(() => {
-            let label = $("#comparisonChartNameInput").val();
+        $("#comparisonChartNameInput").on("change", () => {
+            let label = $("#comparisonChartNameInput").val() as string;
             if (label === "") {
                 label = "Custom Comparison";
             }
 
-            comparisonChart.options.title.text = label;
+            comparisonChart.options.title!.text = label;
             comparisonChart.update();
         });
 
         $(window).on("click", (e) => {
             // If clicking outside of a popover close the current one
             if ($(e.target).parents(".popover").length === 0 && $(".popover").length >= 1) {
-                $('[data-toggle="popover"]').not(e.target).popover("hide");
+                ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
             }
         });
 
         // Enable tooltips/popovers
-        $('[data-toggle="tooltip"]').tooltip();
+        ($('[data-toggle="tooltip"]') as any).tooltip();
 
         //Set initial bot info
-        const bot = botData[$("#botSelect").selectpicker("val")];
+        const bot = botData[($("#botSelect") as any).selectpicker("val")];
         $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
-        $("#enemyInfoButton").popover();
+        ($("#enemyInfoButton") as any).popover();
 
         // These divs are created at runtime so have to do this at init
         $("#damageReductionSelect").parent().addClass("percent-dropdown");
@@ -497,7 +508,7 @@ jq(function ($) {
             "rgba(128, 128, 128, 1)");
 
         let chartElement = $("#chart");
-        chart = new Chart(chartElement, {
+        chart = new Chart(chartElement as any, {
             type: 'scatter',
             data: {
                 datasets: [
@@ -549,7 +560,7 @@ jq(function ($) {
         });
 
         chartElement = $("#comparisonChart");
-        comparisonChart = new Chart(chartElement, {
+        comparisonChart = new Chart(chartElement as any, {
             type: 'scatter',
             data: {
                 datasets: [
@@ -665,12 +676,12 @@ jq(function ($) {
     }
 
     // Sets controls to disabled/enabled based on if the simulation is running
-    function setSimulationRunning(running) {
-        function setEnabled(selector) {
+    function setSimulationRunning(running: boolean) {
+        function setEnabled(selector: JQuery<HTMLElement>) {
             selector.removeClass("disabled");
             selector.prop("disabled", false);
         }
-        function setDisabled(selector) {
+        function setDisabled(selector: JQuery<HTMLElement>) {
             selector.addClass("disabled");
             selector.prop("disabled", true);
         }
@@ -727,19 +738,19 @@ jq(function ($) {
     }
 
     // Sets the status label to the specified value
-    function setStatusText(text) {
+    function setStatusText(text: string) {
         $("#statusText").text(text);
     }
 
     // Simulates combat with the current settings and updates the chart (simulate button entry point)
     function simulate() {
         // Check inputs first
-        const botName = $("#botSelect").selectpicker("val");
-        const weaponDefs = [];
+        const botName = $("#botSelect").selectpicker("val") as any as string;
+        const weaponDefs: WeaponItem[] = [];
         $("#weaponSelectContainer select").each((_, s) => {
-            const name = $(s).selectpicker("val");
+            const name = $(s).selectpicker("val") as any as string;
             if (name in itemData) {
-                const weapon = itemData[name];
+                const weapon = itemData[name] as WeaponItem;
 
                 // Tread invalid or unfilled numbers as 1
                 const number = parseIntOrDefault($(s).parent().nextAll("input").val(), 1);
@@ -762,52 +773,54 @@ jq(function ($) {
 
         // Set up initial calculation state
         const bot = botData[botName];
-        const parts = [];
-        bot["Components Data"].concat(bot["Armament Data"]).forEach(item => {
-            for (let i = 0; i < item["Number"]; i++) {
-                const itemDef = getItem(item["Name"]);
-                const isProtection = itemDef["Type"] === "Protection";
-                const coverage = parseInt(itemDef["Coverage"]);
+        const parts: SimulatorPart[] = [];
+        bot.componentData.concat(bot.armamentData).forEach(item => {
+            for (let i = 0; i < item.number; i++) {
+                const itemDef = getItem(item.name);
+                const isProtection = itemDef.type === ItemType.Protection;
+                const coverage = itemDef.coverage!;
                 parts.push({
                     armorAnalyzedCoverage: isProtection ? 0 : coverage,
                     coverage: coverage,
                     def: itemDef,
-                    integrity: parseInt(itemDef["Integrity"]),
+                    integrity: itemDef.integrity,
                     protection: isProtection,
+                    selfDamageReduction: 1,
                 });
             }
         });
 
-        const armorAnalyzedCoverage = bot["Core Coverage"] +
+        const armorAnalyzedCoverage = bot.coreCoverage +
             parts.reduce((prev, part) => prev + part.armorAnalyzedCoverage, 0);
 
-        const externalDamageReduction = externalDamageReductionNameMap[$("#damageReductionSelect").selectpicker("val")];
+        const externalDamageReduction = externalDamageReductionNameMap[
+            $("#damageReductionSelect").selectpicker("val") as any as string];
         const defensiveState = getBotDefensiveState(parts, externalDamageReduction);
 
         // Enemy bot state
-        const botState = {
+        const botState: BotState = {
             armorAnalyzedCoverage: armorAnalyzedCoverage,
-            coreCoverage: bot["Core Coverage"],
+            coreCoverage: bot.coreCoverage,
             coreDisrupted: false,
-            coreIntegrity: bot["Core Integrity"],
+            coreIntegrity: bot.coreIntegrity,
             corruption: 0,
             def: bot,
             defensiveState: defensiveState,
             externalDamageReduction: externalDamageReduction,
-            immunities: valueOrDefault(bot["Immunities"], []),
-            initialCoreIntegrity: bot["Core Integrity"],
+            immunities: bot.immunities,
+            initialCoreIntegrity: bot.coreIntegrity,
             parts: parts,
             regen: getRegen(bot),
-            resistances: valueOrDefault(bot["Resistances"], []),
-            totalCoverage: bot["Total Coverage"],
-        }
+            resistances: bot.resistances,
+            totalCoverage: bot.totalCoverage,
+        };
 
         // Weapons and other offensive state
         const melee = isMelee();
         const numTreads = parseIntOrDefault($("#treadsInput").val(), 0);
 
         // Accuracy bonuses and penalties
-        const siegeBonus = melee ? null : siegeModeBonusMap[$("#siegeSelect").selectpicker("val")];
+        const siegeBonus = melee ? null : siegeModeBonusMap[$("#siegeSelect").selectpicker("val") as any as string];
         let targetingComputerBonus = 0;
         if (!melee) {
             targetingComputerBonus = parseIntOrDefault($("#targetingInput").val(), 0);
@@ -832,32 +845,32 @@ jq(function ($) {
             getRecoil(weapon, numTreads) + prev, 0);
 
         // Target Analyzer crit bonus
-        const targetAnalyzerName = $("#targetAnalyzerSelect").selectpicker("val");
+        const targetAnalyzerName = $("#targetAnalyzerSelect").selectpicker("val") as any as string;
         const critBonus = targetAnalyzerMap[targetAnalyzerName];
 
         const weapons = weaponDefs.map((weapon, i) => {
             let damageMin = 0;
             let damageMax = 0;
-            let damageType = null;
+            let damageType: DamageType | undefined = undefined;
             let explosionMin = 0;
             let explosionMax = 0;
-            let explosionType = null;
+            let explosionType: DamageType | undefined = undefined;
 
-            if ("Damage" in weapon) {
+            if (weapon.damage !== undefined) {
                 // Found regular damage
-                if (weapon["Damage"].includes("-")) {
-                    const split = weapon["Damage"].split("-");
+                if (weapon.damage.includes("-")) {
+                    const split = weapon.damage.split("-");
                     damageMin = parseInt(split[0]);
                     damageMax = parseInt(split[1]);
                 }
                 else {
-                    damageMin = parseInt(weapon["Damage"]);
+                    damageMin = parseInt(weapon.damage);
                     damageMax = damageMin;
                 }
 
-                if (weapon["Type"] === "Ballistic Gun" || weapon["Type"] === "Ballistic Cannon") {
+                if (weapon.type === ItemType.BallisticGun || weapon.type === ItemType.BallisticCannon) {
                     // Increase minimum damage for kinecellerators (2)
-                    const kinecelleratorName = $("#kinecelleratorSelect").selectpicker("val");
+                    const kinecelleratorName = $("#kinecelleratorSelect").selectpicker("val") as any as string;
                     const kinecelleratorBonus = kinecelleratorMap[kinecelleratorName];
 
                     // Double damage for overloading (2)
@@ -877,26 +890,28 @@ jq(function ($) {
                     damageMin = Math.min(minDamageIncrease + damageMin, damageMax);
                 }
 
-                damageType = weapon["Damage Type"];
+                damageType = weapon.damageType;
             }
 
-            if ("Explosion Damage" in weapon) {
+            if (weapon.explosionDamage !== undefined) {
                 // Found explosion damage
-                if (weapon["Explosion Damage"].includes("-")) {
-                    const split = weapon["Explosion Damage"].split("-");
+                if (weapon.explosionDamage.includes("-")) {
+                    const split = weapon.explosionDamage.split("-");
                     explosionMin = parseInt(split[0]);
                     explosionMax = parseInt(split[1]);
                 }
                 else {
-                    explosionMin = parseInt(weapon["Explosion Damage"]);
+                    explosionMin = parseInt(weapon.explosionDamage);
                     explosionMax = explosionMin;
                 }
 
-                explosionType = weapon["Explosion Type"];
+                explosionType = weapon.explosionType;
             }
 
             // Get crit chance, only apply target analyzer if there's a specific bonus
-            const critical = "Critical" in weapon ? parseInt(weapon["Critical"]) + critBonus : 0;
+            const critical = weapon.critical === undefined || weapon.critical === 0 ?
+                0 :
+                weapon.critical + critBonus;
 
             // Calculate base accuracy that can't change over the course of the fight
             let baseAccuracy = melee ? initialMeleeAccuracy : initialRangedAccuracy;
@@ -906,19 +921,19 @@ jq(function ($) {
             }
 
             // Size bonus/penalty
-            if (bot["Size"] in sizeAccuracyMap) {
-                baseAccuracy += sizeAccuracyMap[bot["Size"]];
+            if (bot.size in sizeAccuracyMap) {
+                baseAccuracy += sizeAccuracyMap[bot.size];
             }
             else {
-                console.log(`${botName} has invalid size ${bot["Size"]}`);
+                console.log(`${botName} has invalid size ${bot.size}`);
             }
 
             // Builtin targeting
-            if ("Targeting" in weapon) {
-                baseAccuracy += parseInt(weapon["Targeting"])
+            if (weapon.targeting !== undefined) {
+                baseAccuracy += weapon.targeting;
             }
 
-            const delay = parseIntOrDefault(weapon["Delay"], 0);
+            const delay = parseIntOrDefault(weapon.delay, 0);
 
             // Follow-up attacks on melee gain a 10% bonus to targeting
             const followUp = melee && i != 0;
@@ -926,23 +941,20 @@ jq(function ($) {
                 baseAccuracy += 10;
             }
 
-            const disruption = parseIntOrDefault(weapon["Disruption"]);
+            const disruption = weapon.disruption ?? 0;
 
-            const spectrum = "Spectrum" in weapon ?
-                parseInt(spectrumRegex.exec(weapon["Spectrum"])[1]) :
-                0;
-            const explosionSpectrum = "Explosion Spectrum" in weapon ?
-                parseInt(spectrumRegex.exec(weapon["Explosion Spectrum"])[1]) :
-                0;
+            const spectrum = weapon.spectrum === undefined ? 0 : spectrumMap[weapon.spectrum];
+            const explosionSpectrum = weapon.explosionSpectrum === undefined ? 0 : spectrumMap[weapon.explosionSpectrum];
 
             // All launchers are missiles except for special cases
-            const isMissile = weapon["Type"] === "Launcher"
-                && weapon["Name"] != "Sigix Terminator"
-                && weapon["Name"] != "Supercharged Sigix Terminator"
-                && weapon["Name"] != "Vortex Catalyst Activator";
+            const isMissile = weapon.type === "Launcher"
+                && weapon.name != "Sigix Terminator"
+                && weapon.name != "Supercharged Sigix Terminator"
+                && weapon.name != "Vortex Catalyst Activator";
 
-            return {
-                accelerated: weapon["Type"] === "Energy Gun" || weapon["Type"] === "Energy Cannon",
+            const state: SimulatorWeapon = {
+                accelerated: weapon.type === "Energy Gun" || weapon.type === "Energy Cannon",
+                accuracy: baseAccuracy,
                 baseAccuracy: baseAccuracy,
                 critical: critical,
                 damageMin: damageMin,
@@ -956,30 +968,32 @@ jq(function ($) {
                 explosionSpectrum: explosionSpectrum,
                 explosionType: explosionType,
                 isMissile: isMissile,
-                numProjectiles: "Projectile Count" in weapon ? parseInt(weapon["Projectile Count"]) : 1,
-                overflow: !weapon["Type"].includes("Gun"),
+                numProjectiles: weapon.projectileCount,
+                overflow: !weapon.type.includes("Gun"),
                 spectrum: spectrum,
             };
+
+            return state;
         });
 
         // Charger bonus
-        const chargerName = $("#chargerSelect").selectpicker("val");
+        const chargerName = $("#chargerSelect").selectpicker("val") as any as string;
         const chargerBonus = chargerMap[chargerName];
 
         // Armor Integrity Analyzer chance
-        const armorAnalyzerName = $("#armorIntegSelect").selectpicker("val");
+        const armorAnalyzerName = $("#armorIntegSelect").selectpicker("val") as any as string;
         const armorAnalyzerChance = armorIntegrityMap[armorAnalyzerName];
 
         // Core Analyzer chance
-        const coreAnalyzerName = $("#coreAnalyzerSelect").selectpicker("val");
+        const coreAnalyzerName = $("#coreAnalyzerSelect").selectpicker("val") as any as string;
         const coreAnalyzerChance = coreAnalyzerMap[coreAnalyzerName];
 
         // Actuator Array chance
-        const actuatorArrayName = $("#actuatorArraySelect").selectpicker("val");
+        const actuatorArrayName = $("#actuatorArraySelect").selectpicker("val") as any as string;
         const actuatorArrayBonus = actuatorArrayMap[actuatorArrayName];
 
         // Calculate followup chance
-        const followupChances = [];
+        const followupChances: number[] = [];
         if (melee) {
             // melee followup% = 20 + ([(primary weapon speed mod) - (followup weapon speed mod)] / 10)
             const baseChance = 20 + actuatorArrayBonus;
@@ -1004,19 +1018,19 @@ jq(function ($) {
         const initialMomentum = parseIntOrDefault($("#initialMomentumInput").val(), 0);
 
         // Determine sneak attack strategy
-        const sneakAttackStrategy = $("#sneakAttackSelect").selectpicker("val");
+        const sneakAttackStrategy = (<any>SneakAttackStrategy)[$("#sneakAttackSelect").selectpicker("val") as any as string];
 
         // Calculate total (ranged) or initial (melee) volley time
         const volleyTimeModifier = melee ?
-            actuatorMap[$("#actuatorSelect").selectpicker("val")] :
-            cyclerMap[$("#cyclerSelect").selectpicker("val")];
+            actuatorMap[$("#actuatorSelect").selectpicker("val") as any as string] :
+            cyclerMap[$("#cyclerSelect").selectpicker("val") as any as string];
 
         const volleyTime = melee ?
             weapons[0].delay + volleyTimeMap[1] :
             getRangedVolleyTime(weapons, volleyTimeModifier);
 
         // Other misc offensive state
-        const offensiveState = {
+        const offensiveState: OffensiveState = {
             armorAnalyzerChance: armorAnalyzerChance,
             analysis: $("#analysisYes").hasClass("active"),
             chargerBonus: chargerBonus,
@@ -1042,8 +1056,9 @@ jq(function ($) {
         };
 
         // Overall state
-        const state = {
-            endCondition: $("#endConditionSelect").selectpicker("val"),
+        const state: SimulatorState = {
+            botState: botState,
+            endCondition: (<any>EndCondition)[$("#endConditionSelect").selectpicker("val") as any as string],
             initialBotState: botState,
             killTus: {},
             killVolleys: {},
@@ -1113,8 +1128,7 @@ jq(function ($) {
                 setSimulationRunning(false);
                 let time = performance.now() - initial;
                 time /= 1000;
-                time = time.toFixed(2);
-                setStatusText(`Completed in ${time} seconds.`);
+                setStatusText(`Completed in ${time.toFixed(2)} seconds.`);
                 updateChart(state);
 
                 const button = $("#addComparisonButton");
@@ -1127,19 +1141,20 @@ jq(function ($) {
     }
 
     // Updates the chart based on the current simulation state
-    function updateChart(state) {
+    function updateChart(state: SimulatorState) {
         const numSimulations = getNumSimulations();
 
         // Calculate data, round to the given number of decimal places and 
         // ignore values smaller to reduce clutter
-        function getData(perXKillsKeys, perXKillsObject, roundDecimals, stepSize) {
+        function getData(perXKillsKeys: string[], perXKillsObject: { [key: number]: number },
+            numDecimalPlaces: number, stepSize: number) {
             const data = perXKillsKeys
-                .filter(numX => perXKillsObject[numX] / numSimulations > Math.pow(10, -2 - roundDecimals))
+                .filter(numX => perXKillsObject[numX] / numSimulations > Math.pow(10, -2 - numDecimalPlaces))
                 .map(numX => {
                     return {
-                        x: numX,
-                        y: Math.trunc(perXKillsObject[numX] / numSimulations * Math.pow(10, 2 + roundDecimals))
-                            / Math.pow(10, roundDecimals),
+                        x: parseInt(numX),
+                        y: Math.trunc(perXKillsObject[numX] / numSimulations * Math.pow(10, 2 + numDecimalPlaces))
+                            / Math.pow(10, numDecimalPlaces),
                     }
                 });
 
@@ -1147,7 +1162,7 @@ jq(function ($) {
                 // Add a 0 kill ending point if there aren't many data points
                 // to fill out a bit more nicely
                 data.push({
-                    x: parseInt(data[data.length - 1].x) + stepSize,
+                    x: data[data.length - 1].x + stepSize,
                     y: 0
                 });
             }
@@ -1155,8 +1170,8 @@ jq(function ($) {
             return data;
         }
 
-        function getCumulativeData(data) {
-            const cumulativeData = [];
+        function getCumulativeData(data: Point[]) {
+            const cumulativeData: Point[] = [];
             let total = 0;
             data.forEach(point => {
                 total += point.y;
@@ -1164,21 +1179,21 @@ jq(function ($) {
                     x: point.x,
                     y: Math.trunc(total * 100) / 100,
                 });
-            });    
+            });
 
             return cumulativeData;
         }
 
         // Get datasets
-        const perXDataset = chart.data.datasets[0];
-        const cumulativeDataset = chart.data.datasets[1];
+        const perXDataset = chart.data.datasets![0];
+        const cumulativeDataset = chart.data.datasets![1];
         const perVolleys = $("#xAxisVolleys").hasClass("active");
 
-        let perXData;
-        const perXString = $("#endConditionSelect").selectpicker("val");
-        let stepSize;
-        let xString;
-        let xAxisString;
+        let perXData: Point[];
+        const perXString = $("#endConditionSelect").selectpicker("val") as any as string;
+        let stepSize: number;
+        let xString: string;
+        let xAxisString: string;
 
         // Get comparison data first
         const perXKillsKeys = Object.keys(state.killTus);
@@ -1212,12 +1227,12 @@ jq(function ($) {
         const cumulativeData = getCumulativeData(perXData);
 
         // Update chart
-        chart.options.scales.xAxes[0].ticks.stepSize = stepSize;
-        chart.options.scales.xAxes[0].scaleLabel.labelString = xAxisString;
+        chart.options.scales!.xAxes![0].ticks!.stepSize = stepSize;
+        chart.options.scales!.xAxes![0].scaleLabel!.labelString = xAxisString;
         perXDataset.data = perXData;
         cumulativeDataset.data = cumulativeData;
 
-        chart.options.title.text =
+        chart.options.title!.text =
             `${xString}/${perXString} vs. ${$("#botSelect").selectpicker("val")}`;
         chart.update();
         $("#resultsContainer").removeClass("not-visible");
@@ -1229,19 +1244,19 @@ jq(function ($) {
 
         // Update all bot selections after saving old pick
         const select = $("#botSelect");
-        const oldBot = select.selectpicker("val");
+        const oldBot = select.selectpicker("val") as any as string;
         select.empty();
 
         Object.keys(botData).forEach(name => {
             const bot = botData[name];
 
-            if (bot["Categories"].some(c => c === "Spoilers")) {
+            if (bot.categories.some(c => c === "Spoilers")) {
                 // Spoiler bots allowed for spoilers/redacted
                 if ((spoilersState === "Spoilers" || spoilersState === "Redacted")) {
                     select.append(`<option>${name}</option>`);
                 }
             }
-            else if (bot["Categories"].some(c => c === "Redacted")) {
+            else if (bot.categories.some(c => c === "Redacted")) {
                 // Redacted bots only allowed for spoilers/redacted
                 if (spoilersState === "Redacted") {
                     select.append(`<option>${name}</option>`);
@@ -1277,7 +1292,7 @@ jq(function ($) {
 
         const melee = isMelee();
 
-        function setVisibility(selector, visible) {
+        function setVisibility(selector: JQuery<HTMLElement>, visible: boolean) {
             visible ?
                 selector.removeClass("not-visible") :
                 selector.addClass("not-visible")

@@ -7,7 +7,11 @@ import {
     nameToId,
     resetButtonGroup,
     setSpoilersState,
-} from "./common.js";
+} from "./common";
+
+import "bootstrap";
+import * as jQuery from "jquery";
+import { Bot } from "./botTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -34,16 +38,14 @@ jq(function ($) {
         "factionArchitect"
     ];
 
-    $(document).ready(() => {
-        init();
-    });
+    $((document) => init());
 
     // Creates the bot buttons and adds them to the grid
     function createBots() {
-        const bots = Object.values(botData);
+        const botNames = Object.keys(botData);
         const botsGrid = $("#botsGrid");
-        bots.forEach(bot => {
-            const botName = bot["Name"];
+        botNames.forEach(botName => {
+            const bot = botData[botName];
             const botId = nameToId(botName);
             const element = $(
                 `<button
@@ -59,60 +61,60 @@ jq(function ($) {
             botsGrid.append(element);
         });
 
-        $('#botsGrid > [data-toggle="popover"]').popover();
+        ($('#botsGrid > [data-toggle="popover"]') as any).popover();
     }
 
     // Gets a filter function combining all current filters
     function getBotFilter() {
-        const filters = [];
+        const filters: ((bot: Bot) => boolean)[] = [];
 
         // Spoilers filter
         const spoilersState = getSpoilersState();
         if (spoilersState === "None") {
             filters.push(bot =>
-                !bot["Categories"].some(c => c === "Spoilers" || c === "Redacted")
+                !bot.categories.some(c => c === "Spoilers" || c === "Redacted")
             );
         }
         else if (spoilersState === "Spoilers") {
             filters.push(bot =>
-                !bot["Categories"].some(c => c === "Redacted")
+                !bot.categories.some(c => c === "Redacted")
             );
         }
 
         // Name filter
-        const nameValue = $("#name").val().toLowerCase();
+        const nameValue = ($("#name").val() as string).toLowerCase();
         if (nameValue.length > 0) {
-            filters.push(bot => bot["Name"].toLowerCase().includes(nameValue));
+            filters.push(bot => bot.name.toLowerCase().includes(nameValue));
         }
 
         // Class filter
-        const classValue = $("#class").val().toLowerCase();
+        const classValue = ($("#class").val() as string).toLowerCase();
         if (classValue.length > 0) {
             filters.push(bot => bot["Class"].toLowerCase().includes(classValue));
         }
 
         // Part filter
-        const partValue = $("#part").val().toLowerCase();
+        const partValue = ($("#part").val() as string).toLowerCase();
         if (partValue.length > 0) {
             filters.push(bot => {
-                if (bot["Armament Data"].map(data => data["Name"]).some(name => name.toLowerCase().includes(partValue))) {
+                if (bot.armamentData.map(data => data.name).some(name => name.toLowerCase().includes(partValue))) {
                     return true;
                 }
 
-                if (bot["Components Data"].map(data => data["Name"]).some(name => name.toLowerCase().includes(partValue))) {
+                if (bot.componentData.map(data => data.name).some(name => name.toLowerCase().includes(partValue))) {
                     return true;
                 }
 
-                for( let i = 0; i < bot["Armament Option Data"].length; i++) {
-                    const data = bot["Armament Option Data"][i];
-                    if (data.map(data => data["Name"]).some(name => name.toLowerCase().includes(partValue))) {
+                for( let i = 0; i < bot.armamentOptionData.length; i++) {
+                    const data = bot.armamentOptionData[i];
+                    if (data.map(data => data.name).some(name => name.toLowerCase().includes(partValue))) {
                         return true;
                     }
                 }
 
-                for( let i = 0; i < bot["Components Option Data"].length; i++) {
-                    const data = bot["Components Option Data"][i];
-                    if (data.map(data => data["Name"]).some(name => name.toLowerCase().includes(partValue))) {
+                for( let i = 0; i < bot.componentOptionData.length; i++) {
+                    const data = bot.componentOptionData[i];
+                    if (data.map(data => data.name).some(name => name.toLowerCase().includes(partValue))) {
                         return true;
                     }
                 }
@@ -122,10 +124,10 @@ jq(function ($) {
         }
 
         // Faction filter
-        const factionId = $("#factionContainer > label.active").attr("id");
+        const factionId = $("#factionContainer > label.active").attr("id") as string;
         if (factionId in factionIdToCategoryName) {
             const categoryName = factionIdToCategoryName[factionId];
-            filters.push(bot => bot["Categories"].includes(categoryName));
+            filters.push(bot => bot.categories.includes(categoryName));
         }
 
         // Create a function that checks all filters
@@ -135,8 +137,8 @@ jq(function ($) {
     }
 
     // Initialize the page state
-    async function init() {
-        await initData();
+    function init() {
+        initData();
 
         createBots();
 
@@ -152,15 +154,15 @@ jq(function ($) {
             const state = $(e.target).text();
             $("#spoilers").text(state);
             setSpoilersState(state);
-            $("#spoilersDropdown > button").tooltip("hide");
+            ($("#spoilersDropdown > button") as any).tooltip("hide");
             updateFactionVisibility();
             updateBots();
         });
         $("#name").on("input", updateBots);
         $("#class").on("input", updateBots);
         $("#part").on("input", updateBots);
-        $("#reset").click(() => {
-            $("#reset").tooltip("hide");
+        $("#reset").on("click", () => {
+            ($("#reset") as any).tooltip("hide");
             resetFilters();
         });
         $("#factionContainer > label > input").on("click", updateBots);
@@ -168,12 +170,12 @@ jq(function ($) {
         $(window).on("click", (e) => {
             // If clicking outside of a popover close the current one
             if ($(e.target).parents(".popover").length === 0 && $(".popover").length >= 1) {
-                $('[data-toggle="popover"]').not(e.target).popover("hide");
+                ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
             }
         });
 
         // Enable tooltips
-        $('[data-toggle="tooltip"]').tooltip();
+        ($('[data-toggle="tooltip"]') as any).tooltip();
     }
 
     // Resets all filters
@@ -205,16 +207,16 @@ jq(function ($) {
     // Clears all existing bots and adds new ones based on the filters
     function updateBots() {
         // Hide any existing popovers
-        $('[data-toggle="popover"]').popover("hide");
+        ($('[data-toggle="popover"]') as any).popover("hide");
 
         // Get the names of all non-filtered bots
         const botFilter = getBotFilter();
-        let bots = [];
+        let bots: string[] = [];
         Object.keys(botData).forEach(botName => {
             const bot = getBot(botName);
 
             if (botFilter(bot)) {
-                bots.push(bot["Name"]);
+                bots.push(bot.name);
             }
         });
 

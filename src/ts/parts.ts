@@ -1,6 +1,5 @@
 import {
     createItemDataContent,
-    getItemCategories,
     gallerySort,
     getItem,
     getSpoilersState,
@@ -9,7 +8,11 @@ import {
     nameToId,
     resetButtonGroup,
     setSpoilersState,
-} from "./common.js";
+} from "./common";
+
+import * as jQuery from "jquery";
+import "bootstrap";
+import { Item } from "./itemTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -52,7 +55,7 @@ jq(function ($) {
     ].map(id => categoryIdMap[id]);
 
     // Slot ID -> Slot string
-    const slotMap = {
+    const slotMap: { [key: string]: string } = {
         "slotOther": "N/A",
         "slotPower": "Power",
         "slotPropulsion": "Propulsion",
@@ -61,14 +64,14 @@ jq(function ($) {
     };
 
     // Terminal ID -> int level
-    const terminalLevelMap = {
+    const terminalLevelMap: { [key: string]: number } = {
         "terminalLevel1": 1,
         "terminalLevel2": 2,
         "terminalLevel3": 3,
     }
 
     // Type ID -> Type string
-    const typeMap = {
+    const typeMap: { [key: string]: string } = {
         "powerTypeEngine": "Engine",
         "powerTypePowerCore": "Power Core",
         "powerTypeReactor": "Reactor",
@@ -96,23 +99,21 @@ jq(function ($) {
     };
 
     // Slot ID -> Type button container ID
-    const slotIdToTypeIdMap = {
+    const slotIdToTypeIdMap: { [key: string]: string } = {
         "slotPower": "powerTypeContainer",
         "slotPropulsion": "propTypeContainer",
         "slotUtility": "utilTypeContainer",
         "slotWeapon": "weaponTypeContainer",
     }
 
-    $(document).ready(() => {
-        init();
-    });
+    $((document) => init());
 
     // Creates buttons for all items
     function createItems() {
-        const items = Object.values(itemData);
+        const itemNames = Object.keys(itemData);
         const itemsGrid = $("#itemsGrid");
-        items.forEach(item => {
-            const itemName = item["Name"];
+        itemNames.forEach((itemName) => {
+            const item = itemData[itemName];
             const itemId = nameToId(itemName);
             const element = $(
                 `<button
@@ -130,40 +131,40 @@ jq(function ($) {
         });
 
         // Enable popovers
-        $('#itemsGrid > [data-toggle="popover"]').popover();
+        ($('#itemsGrid > [data-toggle="popover"]') as any).popover();
     }
 
     // Gets a filter function combining all current filters
     function getItemFilter() {
-        const filters = [];
+        const filters: ((item: Item) => boolean)[] = [];
 
         // Spoilers filter
         const spoilersState = getSpoilersState();
         if (spoilersState === "None") {
-            filters.push(item => 
-                !getItemCategories(item["Name"]).some(c => noneHiddenCategories.includes(c))
+            filters.push((item) =>
+                !item.categories.some(c => noneHiddenCategories.includes(c))
             );
         }
         else if (spoilersState === "Spoilers") {
-            filters.push(item => 
-                !getItemCategories(item["Name"]).some(c => spoilerHiddenCategories.includes(c))
+            filters.push(item =>
+                !item.categories.some(c => spoilerHiddenCategories.includes(c))
             );
         }
 
         // Name filter
-        const nameValue = $("#name").val().toLowerCase();
+        const nameValue = ($("#name").val() as string).toLowerCase();
         if (nameValue.length > 0) {
-            filters.push(item => item["Name"].toLowerCase().includes(nameValue));
+            filters.push(item => item.name.toLowerCase().includes(nameValue));
         }
 
         // Effect/Description filter
-        const effectValue = $("#effect").val().toLowerCase();
+        const effectValue = ($("#effect").val() as string).toLowerCase();
         if (effectValue.length > 0) {
             filters.push(item => {
-                if ("Effect" in item && item["Effect"].toLowerCase().includes(effectValue)) {
+                if (item.effect?.toLowerCase().includes(effectValue)) {
                     return true;
                 }
-                else if ("Description" in item && item["Description"].toLowerCase().includes(effectValue)) {
+                else if (item.description?.toLowerCase().includes(effectValue)) {
                     return true;
                 }
 
@@ -172,7 +173,7 @@ jq(function ($) {
         }
 
         // Rating filter
-        let ratingValue = $("#rating").val();
+        let ratingValue = $("#rating").val() as string;
         if (ratingValue.length > 0) {
             const includeAbove = ratingValue.slice(-1) === "+";
             const includeBelow = ratingValue.slice(-1) === "-";
@@ -189,21 +190,21 @@ jq(function ($) {
             // A + at the end means also include values above the given value
             // A - means include values below
             if (includeAbove) {
-                filters.push(item => item["Float Rating"] >= floatRatingValue);
+                filters.push(item => item.rating >= floatRatingValue);
             }
             else if (includeBelow) {
-                filters.push(item => item["Float Rating"] <= floatRatingValue);
+                filters.push(item => item.rating <= floatRatingValue);
             }
             else if (ratingValue === "*") {
-                filters.push(item => item["Rating"].includes("*"));
+                filters.push(item => item.ratingString.includes("*"));
             }
             else {
-                filters.push(item => item["Float Rating"] == floatRatingValue);
+                filters.push(item => item.rating == floatRatingValue);
             }
         }
 
         // Size filter
-        let sizeValue = $("#size").val();
+        let sizeValue = $("#size").val() as string;
         if (sizeValue.length > 0) {
             const includeAbove = sizeValue.slice(-1) === "+";
             const includeBelow = sizeValue.slice(-1) === "-";
@@ -214,18 +215,18 @@ jq(function ($) {
             // A + at the end means also include values above the given value
             // A - means include values below
             if (includeAbove) {
-                filters.push(item => item["Int Size"] >= intSizeValue);
+                filters.push(item => item.size >= intSizeValue);
             }
             else if (includeBelow) {
-                filters.push(item => item["Int Size"] <= intSizeValue);
+                filters.push(item => item.size <= intSizeValue);
             }
             else {
-                filters.push(item => item["Int Size"] == intSizeValue);
+                filters.push(item => item.size == intSizeValue);
             }
         }
 
         // Mass filter
-        let massValue = $("#mass").val();
+        let massValue = $("#mass").val() as string;
         if (massValue.length > 0) {
             const includeAbove = massValue.slice(-1) === "+";
             const includeBelow = massValue.slice(-1) === "-";
@@ -236,62 +237,54 @@ jq(function ($) {
             // A + at the end means also include values above the given value
             // A - means include values below
             if (includeAbove) {
-                filters.push(item => item["Int Mass"] >= intMassValue);
+                filters.push(item => item.mass !== undefined && item.mass >= intMassValue);
             }
             else if (includeBelow) {
-                filters.push(item => item["Int Mass"] <= intMassValue);
+                filters.push(item => item.mass !== undefined && item.mass <= intMassValue);
             }
             else {
-                filters.push(item => item["Int Mass"] == intMassValue);
+                filters.push(item => item.mass !== undefined && item.mass == intMassValue);
             }
         }
 
         // Schematic filter
-        const depthValue = $("#depth").val();
+        const depthValue = $("#depth").val() as string;
         if (depthValue.length > 0) {
             const depthNum = Math.abs(parseInt(depthValue));
 
             if (depthNum != NaN) {
-                const terminalModifier = terminalLevelMap[$("#schematicsContainer > label.active").attr("id")];
+                const terminalModifier = terminalLevelMap[$("#schematicsContainer > label.active").attr("id") as string];
                 const hackLevel = 10 - depthNum + terminalModifier;
 
                 filters.push(item => {
-                    if (!"Hackable Schematic" in item || item["Hackable Schematic"] !== "1") {
-                        return;
+                    if (!item.hackable) {
+                        return false;
                     }
 
-                    let ratingValue;
-                    if (item["Rating"].includes("*")) {
-                        ratingValue = parseInt(item["Rating"].slice(0, -1)) + 1;
-                    }
-                    else {
-                        ratingValue = parseInt(item["Rating"]);
-                    }
-
-                    return hackLevel >= ratingValue;
+                    return hackLevel >= Math.ceil(item.rating);
                 });
             }
         }
 
         // Slot filter
-        const slotId = $("#slotsContainer > label.active").attr("id");
+        const slotId = $("#slotsContainer > label.active").attr("id") as string;
         if (slotId in slotMap) {
             const filterSlot = slotMap[slotId];
-            filters.push(item => item["Slot"] === filterSlot);
+            filters.push(item => item.slot === filterSlot);
         }
 
         // Type filter
-        const typeId = $("#typeFilters > div:not(\".not-visible\") > label.active").attr("id");
+        const typeId = $("#typeFilters > div:not(\".not-visible\") > label.active").attr("id") as string;
         if (typeId in typeMap) {
             const filterType = typeMap[typeId];
-            filters.push(item => item["Type"] === filterType);
+            filters.push(item => item.type === filterType);
         }
 
         // Category filter
-        const categoryId = $("#categoryContainer > label.active").attr("id");
+        const categoryId = $("#categoryContainer > label.active").attr("id") as string;
         if (categoryId in categoryIdMap) {
             const filterNum = categoryIdMap[categoryId];
-            filters.push(item => getItemCategories(item["Name"]).includes(filterNum));
+            filters.push(item => item.categories.includes(filterNum));
         }
 
         // Create a function that checks all filters
@@ -317,7 +310,7 @@ jq(function ($) {
             const state = $(e.target).text();
             $("#spoilers").text(state);
             setSpoilersState(state);
-            $("#spoilersDropdown > button").tooltip("hide");
+            ($("#spoilersDropdown > button") as any).tooltip("hide");
             updateCategoryVisibility();
             updateItems();
         });
@@ -327,8 +320,8 @@ jq(function ($) {
         $("#rating").on("input", updateItems);
         $("#size").on("input", updateItems);
         $("#mass").on("input", updateItems);
-        $("#reset").click(() => {
-            $("#reset").tooltip("hide");
+        $("#reset").on("click", () => {
+            ($("#reset") as any).tooltip("hide");
             resetFilters();
         });
         $("#slotsContainer > label > input").on("click", () => {
@@ -343,7 +336,7 @@ jq(function ($) {
         $("#categoryContainer > label > input").on("click", updateItems);
         $("#sortingContainer > div > button").on("click", () => {
             // Hide popovers when clicking a sort button
-            $('[data-toggle="popover"]').popover("hide");
+            ($('[data-toggle="popover"]') as any).popover("hide");
         });
         $("#primarySortDropdown > button").on("click", (e) => {
             const targetText = $(e.target).text();
@@ -376,17 +369,18 @@ jq(function ($) {
         $(window).on("click", (e) => {
             // If clicking outside of a popover close the current one
             const targetPopover = $(e.target).parents(".popover").length != 0;
-            
+
             if (targetPopover) {
                 $(e.target).blur();
             }
             else if (!targetPopover && $(".popover").length >= 1) {
-                $('[data-toggle="popover"]').not(e.target).popover("hide");
+                ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
+                // $('[data-toggle="popover"]').popover("hide");
             }
         });
 
         // Enable tooltips
-        $('[data-toggle="tooltip"]').tooltip()
+        ($('[data-toggle="tooltip"]') as any).tooltip()
     }
 
     // Resets all filters
@@ -420,16 +414,16 @@ jq(function ($) {
     }
 
     // Sorts the collection of item names based on the sort settings
-    function sortItemNames(itemNames) {
-        function alphabeticalSort(a, b) {
+    function sortItemNames(itemNames: string[]): string[] {
+        function alphabeticalSort(a: any, b: any) {
             let aValue = typeof (a) === "string" ? a : "";
             let bValue = typeof (b) === "string" ? b : "";
 
             return aValue.localeCompare(bValue);
         }
 
-        function damageSort(a, b) {
-            function getAverage(damageString) {
+        function damageSort(a: string, b: string) {
+            function getAverage(damageString: string) {
                 if (typeof (damageString) != "string") {
                     return 0;
                 }
@@ -444,7 +438,7 @@ jq(function ($) {
             return aValue - bValue;
         }
 
-        function integerSort(a, b) {
+        function integerSort(a: string, b: string) {
             let aValue = parseInt(a);
             let bValue = parseInt(b);
 
@@ -458,9 +452,9 @@ jq(function ($) {
             return aValue - bValue;
         }
 
-        function ratingSort(a, b) {
-            let aValue;
-            let bValue;
+        function ratingSort(a: string, b: string) {
+            let aValue: number;
+            let bValue: number;
             if (a.includes("*")) {
                 aValue = parseInt(a.slice(0, a.indexOf("*"))) + 0.5;
             }
@@ -478,50 +472,50 @@ jq(function ($) {
         }
 
         const sortKeyMap = {
-            "Alphabetical": { "Key": "Name", "Sort": alphabeticalSort },
-            "Gallery": { "Key": "Name", "Sort": gallerySort },
-            "Rating": { "Key": "Rating", "Sort": ratingSort },
-            "Size": { "Key": "Size", "Sort": integerSort },
-            "Mass": { "Key": "Mass", "Sort": integerSort },
-            "Integrity": { "Key": "Integrity", "Sort": integerSort },
-            "Coverage": { "Key": "Coverage", "Sort": integerSort },
-            "Critical": { "Key": "Critical", "Sort": integerSort },
-            "Damage": { "Keys": ["Damage", "Explosion Damage"], "Sort": damageSort },
-            "Delay": { "Key": "Delay", "Sort": integerSort },
-            "Disruption": { "Key": "Disruption", "Sort": integerSort },
-            "Drag": { "Key": "Drag", "Sort": integerSort },
-            "Energy/Move": { "Key": "Energy/Move", "Sort": integerSort },
-            "Energy Generation": { "Key": "Energy Generation", "Sort": integerSort },
-            "Energy Storage": { "Key": "Energy Storage", "Sort": integerSort },
-            "Energy Upkeep": { "Key": "Energy Upkeep", "Sort": integerSort },
-            "Explosion Radius": { "Key": "Explosion Radius", "Sort": integerSort },
-            "Falloff": { "Key": "Falloff", "Sort": integerSort },
-            "Heat/Move": { "Key": "Heat/Move", "Sort": integerSort },
-            "Heat Generation": { "Key": "Heat Generation", "Sort": integerSort },
-            "Matter Upkeep": { "Key": "Matter Upkeep", "Sort": integerSort },
-            "Penalty": { "Key": "Penalty", "Sort": integerSort },
-            "Projectile Count": { "Key": "Projectile Count", "Sort": integerSort },
-            "Range": { "Key": "Range", "Sort": integerSort },
-            "Salvage": { "Key": "Salvage", "Sort": integerSort },
-            "Shot Energy": { "Key": "Shot Energy", "Sort": integerSort },
-            "Shot Heat": { "Key": "Shot Heat", "Sort": integerSort },
-            "Shot Matter": { "Key": "Shot Matter", "Sort": integerSort },
-            "Support": { "Key": "Support", "Sort": integerSort },
-            "Targeting": { "Key": "Targeting", "Sort": integerSort },
-            "Time/Move": { "Key": "Time/Move", "Sort": integerSort },
-            "Waypoints": { "Key": "Waypoints", "Sort": integerSort },
+            "Alphabetical": { key: "name", sort: alphabeticalSort },
+            "Gallery": { key: "name", sort: gallerySort },
+            "Rating": { key: "rating", sort: ratingSort },
+            "Size": { key: "size", sort: integerSort },
+            "Mass": { key: "mass", sort: integerSort },
+            "Integrity": { key: "integrity", sort: integerSort },
+            "Coverage": { key: "coverage", sort: integerSort },
+            "Critical": { key: "critical", sort: integerSort },
+            "Damage": { keys: ["damage", "explosionDamage"], sort: damageSort },
+            "Delay": { key: "delay", sort: integerSort },
+            "Disruption": { key: "disruption", sort: integerSort },
+            "Drag": { key: "drag", sort: integerSort },
+            "Energy/Move": { key: "energyPerMove", sort: integerSort },
+            "Energy Generation": { key: "energyGeneration", sort: integerSort },
+            "Energy Storage": { key: "energyStorage", sort: integerSort },
+            "Energy Upkeep": { key: "energyUpkeep", sort: integerSort },
+            "Explosion Radius": { key: "explosionRadius", sort: integerSort },
+            "Falloff": { key: "falloff", sort: integerSort },
+            "Heat/Move": { key: "heatPerMove", sort: integerSort },
+            "Heat Generation": { key: "heatGeneration", sort: integerSort },
+            "Matter Upkeep": { key: "matterUpkeep", sort: integerSort },
+            "Penalty": { key: "penalty", sort: integerSort },
+            "Projectile Count": { key: "projectileCount", sort: integerSort },
+            "Range": { key: "range", sort: integerSort },
+            "Salvage": { key: "salvage", sort: integerSort },
+            "Shot Energy": { key: "shotEnergy", sort: integerSort },
+            "Shot Heat": { key: "shotHeat", sort: integerSort },
+            "Shot Matter": { key: "shotMatter", sort: integerSort },
+            "Support": { key: "support", sort: integerSort },
+            "Targeting": { key: "targeting", sort: integerSort },
+            "Time/Move": { key: "timePerMove", sort: integerSort },
+            "Waypoints": { key: "waypoints", sort: integerSort },
         };
 
         // Do initial sort
         const primaryObject = sortKeyMap[$("#primarySort").text()];
-        const primaryKeys = "Key" in primaryObject ? [primaryObject["Key"]] : primaryObject["Keys"];
-        const primarySort = primaryObject["Sort"];
+        const primaryKeys = "key" in primaryObject ? [primaryObject.key] : primaryObject.keys;
+        const primarySort = primaryObject.sort;
         itemNames.sort((a, b) => {
             const itemA = getItem(a);
             const itemB = getItem(b);
 
-            const aKey = primaryKeys.find((key) => key in itemA);
-            const bKey = primaryKeys.find((key) => key in itemB);
+            const aKey = primaryKeys.find((key: string) => key in itemA);
+            const bKey = primaryKeys.find((key: string) => key in itemB);
 
             return primarySort(itemA[aKey], itemB[bKey]);
         });
@@ -536,15 +530,15 @@ jq(function ($) {
             return itemNames;
         }
 
-        const secondaryKeys = "Key" in secondaryObject ? [secondaryObject["Key"]] : secondaryObject["Keys"];
-        const secondarySort = secondaryObject["Sort"];
+        const secondaryKeys = "key" in secondaryObject ? [secondaryObject.key] : secondaryObject.keys;
+        const secondarySort = secondaryObject.sort;
 
         // Group items based on the initial sort
         const groupedItemNames = {};
-        const groupedKeys = [];
-        itemNames.forEach(itemName => {
+        const groupedKeys: any[] = [];
+        itemNames.forEach((itemName: string) => {
             const item = getItem(itemName);
-            const key = primaryKeys.find((key) => key in item);
+            const key = primaryKeys.find((key: string) => key in item);
             const value = item[key];
 
             if (value in groupedItemNames) {
@@ -560,12 +554,12 @@ jq(function ($) {
         groupedKeys.forEach(key => {
             const itemNames = groupedItemNames[key];
 
-            itemNames.sort((a, b) => {
+            itemNames.sort((a: string, b: string) => {
                 const itemA = getItem(a);
                 const itemB = getItem(b);
 
-                const aKey = secondaryKeys.find((key) => key in itemA);
-                const bKey = secondaryKeys.find((key) => key in itemB);
+                const aKey = secondaryKeys.find((key: string) => key in itemA);
+                const bKey = secondaryKeys.find((key: string) => key in itemB);
 
                 return secondarySort(itemA[aKey], itemB[bKey]);
             });
@@ -573,7 +567,7 @@ jq(function ($) {
 
 
         // Combine groups back into single sorted array
-        let newItems = [];
+        let newItems: string[] = [];
         groupedKeys.forEach(key => {
             newItems = newItems.concat(groupedItemNames[key]);
         });
@@ -597,16 +591,16 @@ jq(function ($) {
     // Clears all existing items and adds new ones based on the filters
     function updateItems() {
         // Hide any existing popovers
-        $('[data-toggle="popover"]').popover("hide");
+        ($('[data-toggle="popover"]') as any).popover("hide");
 
         // Get the names of all non-filtered items
         const itemFilter = getItemFilter();
-        let items = [];
+        let items: any[] = [];
         Object.keys(itemData).forEach(itemName => {
             const item = getItem(itemName);
 
             if (itemFilter(item)) {
-                items.push(item["Name"]);
+                items.push(item.name);
             }
         });
 
@@ -638,7 +632,7 @@ jq(function ($) {
         // Hide all type filters
         Object.keys(slotIdToTypeIdMap).forEach(k => $(`#${slotIdToTypeIdMap[k]}`).addClass("not-visible"));
 
-        const activeSlotId = $("#slotsContainer > label.active").attr("id");
+        const activeSlotId = $("#slotsContainer > label.active").attr("id") as string;
         if (activeSlotId in slotIdToTypeIdMap) {
             $(`#${slotIdToTypeIdMap[activeSlotId]}`).removeClass("not-visible");
         }

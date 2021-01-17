@@ -6,13 +6,12 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="javascript/jquery-3.5.1.slim.min.js"></script>
-    <script src="javascript/popper.min.js"></script>
-    <script src="javascript/bootstrap.min.js"></script>
-    <script type="module" src="javascript/parts.js"></script>
+    <script src="ts/parts.ts"></script>
 
     <title>Cog-Minder</title>
 </head>
@@ -52,7 +51,7 @@
 
     <div class="container-xl">
         <!-- Name/effect filters and reset button -->
-        <div class="input-group input-group-md">
+        <div class="input-group">
             <div class="input-group-prepend" data-toggle="tooltip" title="The name of an part to search for">
                 <span class="input-group-text">Name</span>
             </div>
@@ -137,8 +136,7 @@
 
         <div id="typeFilters">
             <!-- Power type filter -->
-            <div id="powerTypeContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2"
-                data-toggle="buttons">
+            <div id="powerTypeContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2" data-toggle="buttons">
                 <div class="input-group-prepend" data-toggle="tooltip" title="The type of power">
                     <span class="input-group-text">Type</span>
                 </div>
@@ -157,8 +155,7 @@
             </div>
 
             <!-- Propulsion type filter -->
-            <div id="propTypeContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2"
-                data-toggle="buttons">
+            <div id="propTypeContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2" data-toggle="buttons">
                 <div class="input-group-prepend" data-toggle="tooltip" title="The type of propulsion">
                     <span class="input-group-text">Type</span>
                 </div>
@@ -183,8 +180,7 @@
             </div>
 
             <!-- Utility type filter -->
-            <div id="utilTypeContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2"
-                data-toggle="buttons">
+            <div id="utilTypeContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2" data-toggle="buttons">
                 <div class="input-group-prepend" data-toggle="tooltip" title="The type of utility">
                     <span class="input-group-text">Type</span>
                 </div>
@@ -254,8 +250,7 @@
         </div>
 
         <!-- Category filter -->
-        <div id="categoryContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2"
-            data-toggle="buttons">
+        <div id="categoryContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2" data-toggle="buttons">
             <div class="input-group-prepend" data-toggle="tooltip"
                 title="Additional part category like location/faction">
                 <span class="input-group-text">Category</span>

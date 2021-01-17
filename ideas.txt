@@ -1,0 +1,9 @@
+Small ideas:
+
+Medium ideas:
+- Ignore obsolete parts in 
+
+Big ideas:
+- Save search/parts in URL
+- Full spreadsheet view (like gallery export html)
+- Show diffs between parts
