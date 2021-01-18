@@ -90,7 +90,7 @@ jq(function ($) {
         // Class filter
         const classValue = ($("#class").val() as string).toLowerCase();
         if (classValue.length > 0) {
-            filters.push(bot => bot["Class"].toLowerCase().includes(classValue));
+            filters.push(bot => bot.class.toLowerCase().includes(classValue));
         }
 
         // Part filter
