@@ -2,6 +2,7 @@ import {
     createItemDataContent,
     gallerySort,
     getItem,
+    getSelectedButtonId,
     getSpoilersState,
     initData,
     itemData,
@@ -253,7 +254,7 @@ jq(function ($) {
             const depthNum = Math.abs(parseInt(depthValue));
 
             if (depthNum != NaN) {
-                const terminalModifier = terminalLevelMap[$("#schematicsContainer > label.active").attr("id") as string];
+                const terminalModifier = terminalLevelMap[getSelectedButtonId($("#schematicsContainer"))];
                 const hackLevel = 10 - depthNum + terminalModifier;
 
                 filters.push(item => {
@@ -267,21 +268,21 @@ jq(function ($) {
         }
 
         // Slot filter
-        const slotId = $("#slotsContainer > label.active").attr("id") as string;
+        const slotId = getSelectedButtonId($("#slotsContainer"));
         if (slotId in slotMap) {
             const filterSlot = slotMap[slotId];
             filters.push(item => item.slot === filterSlot);
         }
 
         // Type filter
-        const typeId = $("#typeFilters > div:not(\".not-visible\") > label.active").attr("id") as string;
+        const typeId = getSelectedButtonId($("#typeFilters > div:not(\".not-visible\")"));
         if (typeId in typeMap) {
             const filterType = typeMap[typeId];
             filters.push(item => item.type === filterType);
         }
 
         // Category filter
-        const categoryId = $("#categoryContainer > label.active").attr("id") as string;
+        const categoryId = getSelectedButtonId($("#categoryContainer"));
         if (categoryId in categoryIdMap) {
             const filterNum = categoryIdMap[categoryId];
             filters.push(item => item.categories.includes(filterNum));
@@ -324,16 +325,16 @@ jq(function ($) {
             ($("#reset") as any).tooltip("hide");
             resetFilters();
         });
-        $("#slotsContainer > label > input").on("click", () => {
+        $("#slotsContainer > label > input").on("change", () => {
             updateTypeFilters();
             updateItems();
         });
-        $("#schematicsContainer > label > input").on("click", updateItems);
-        $("#powerTypeContainer > label > input").on("click", updateItems);
-        $("#propTypeContainer > label > input").on("click", updateItems);
-        $("#utilTypeContainer > label > input").on("click", updateItems);
-        $("#weaponTypeContainer > label > input").on("click", updateItems);
-        $("#categoryContainer > label > input").on("click", updateItems);
+        $("#schematicsContainer > label > input").on("change", updateItems);
+        $("#powerTypeContainer > label > input").on("change", updateItems);
+        $("#propTypeContainer > label > input").on("change", updateItems);
+        $("#utilTypeContainer > label > input").on("change", updateItems);
+        $("#weaponTypeContainer > label > input").on("change", updateItems);
+        $("#categoryContainer > label > input").on("change", updateItems);
         $("#sortingContainer > div > button").on("click", () => {
             // Hide popovers when clicking a sort button
             ($('[data-toggle="popover"]') as any).popover("hide");
@@ -632,7 +633,7 @@ jq(function ($) {
         // Hide all type filters
         Object.keys(slotIdToTypeIdMap).forEach(k => $(`#${slotIdToTypeIdMap[k]}`).addClass("not-visible"));
 
-        const activeSlotId = $("#slotsContainer > label.active").attr("id") as string;
+        const activeSlotId = getSelectedButtonId($("#slotsContainer"));
         if (activeSlotId in slotIdToTypeIdMap) {
             $(`#${slotIdToTypeIdMap[activeSlotId]}`).removeClass("not-visible");
         }

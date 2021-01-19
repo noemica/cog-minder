@@ -2,6 +2,7 @@ import {
     botData,
     createBotDataContent,
     getBot,
+    getSelectedButtonId,
     getSpoilersState,
     initData,
     nameToId,
@@ -124,14 +125,14 @@ jq(function ($) {
         }
 
         // Faction filter
-        const factionId = $("#factionContainer > label.active").attr("id") as string;
+        const factionId = getSelectedButtonId($("#factionContainer"));
         if (factionId in factionIdToCategoryName) {
             const categoryName = factionIdToCategoryName[factionId];
             filters.push(bot => bot.categories.includes(categoryName));
         }
 
         // Create a function that checks all filters
-        return bot => {
+        return (bot: Bot) => {
             return filters.every(func => func(bot));
         }
     }
@@ -165,7 +166,7 @@ jq(function ($) {
             ($("#reset") as any).tooltip("hide");
             resetFilters();
         });
-        $("#factionContainer > label > input").on("click", updateBots);
+        $("#factionContainer > label > input").on("change", updateBots);
 
         $(window).on("click", (e) => {
             // If clicking outside of a popover close the current one

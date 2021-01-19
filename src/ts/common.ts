@@ -780,6 +780,11 @@ export function getNoPrefixName(name: string): string {
     return newName;
 }
 
+// Gets the ID of the selected button in a button group
+export function getSelectedButtonId(selector: JQuery<HTMLElement>) {
+    return selector.children(".active").attr("id") as string;
+}
+
 // Gets the stored spoilers state
 export function getSpoilersState() {
     let value = valueOrDefault(window.localStorage.getItem("spoilers"), "None");

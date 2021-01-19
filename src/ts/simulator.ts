@@ -442,7 +442,7 @@ jq(function ($) {
             const bot = botData[($("#botSelect") as any).selectpicker("val") as string];
             $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
         });
-        $("#combatTypeContainer > label > input").on("click", () => {
+        $("#combatTypeContainer > label > input").on("change", () => {
             updateChoices();
         });
         $("#simulateButton").on("click", () => {
