@@ -117,7 +117,9 @@ export type OffensiveState = {
         initial: number,
     },
     numTreads: number,
+    overloadBonus: number,
     recoil: number,
+    recoilReduction: number,
     siegeBonus: {
         bonus: number,
         tus: number

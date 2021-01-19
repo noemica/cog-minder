@@ -391,7 +391,7 @@ function applyDamage(state: SimulatorState, botState: BotState, damage: number,
             if (part.resistances !== undefined) {
                 Object.keys(part.resistances).forEach(type => {
                     if (type in botState.resistances) {
-                        botState.resistances[type] -= part.resistances![type];
+                        botState.resistances[type]! -= part.resistances![type]!;
                     }
                 });
             }
@@ -482,7 +482,7 @@ function cloneBotState(botState: BotState): BotState {
 // Calculates the resisted damage for a bot given the initial damage value
 export function calculateResistDamage(botState: BotState, damage: number, damageType: DamageType) {
     if (damageType in botState.resistances) {
-        return Math.trunc(damage * (1 - (botState.resistances[damageType] / 100)));
+        return Math.trunc(damage * (1 - (botState.resistances[damageType]! / 100)));
     }
 
     return damage;
@@ -734,14 +734,15 @@ function getHitPart(botState: BotState, damageType: DamageType, isOverflow: bool
     };
 }
 
-// Calculates a weapon's recoil based on the number of treads
-export function getRecoil(weaponDef: WeaponItem, numTreads: number) {
+// Calculates a weapon's recoil based on the number of treads and other recoil reduction
+export function getRecoil(weaponDef: WeaponItem, numTreads: number, recoilReduction: number) {
     let recoil = 0;
 
     // Add recoil if siege mode not active
     if (weaponDef.recoil !== undefined) {
         recoil += weaponDef.recoil;
         recoil -= numTreads;
+        recoil -= recoilReduction;
     }
 
     // Make sure we don't have negative recoil
@@ -979,6 +980,11 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
             // Apply overload damage doubling
             if (weapon.overloaded) {
                 damage *= 2;
+
+                if (offensiveState.overloadBonus !== 0) {
+                    // Apply additional overload bonus
+                    damage = Math.trunc((1 + offensiveState.overloadBonus) * damage);
+                }
             }
 
             // Apply momentum bonus
@@ -1124,7 +1130,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
 
         if (!offensiveState.melee && siegeBonus === 0) {
             // Subtract recoil if siege mode inactive
-            accuracy -= offensiveState.recoil - getRecoil(weapon.def, offensiveState.numTreads);
+            accuracy -= offensiveState.recoil - getRecoil(weapon.def, offensiveState.numTreads, offensiveState.recoilReduction);
         }
 
         // Cap accuracy

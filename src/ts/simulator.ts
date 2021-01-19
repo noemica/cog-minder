@@ -175,6 +175,14 @@ jq(function ($) {
         ItemType.SpecialMeleeWeapon,
     ];
 
+    // Overload util to damage bonus map
+    const overloadMap = {
+        "0%: None": 0,
+        "50%: Overload Amplifier": .5,
+        "75%: Imp. Overload Amplifier": .75,
+        "100%: Adv. Overload Amplifier": 1,
+    }
+
     // Ranged weapon types
     const rangedTypes = [
         ItemType.BallisticCannon,
@@ -537,6 +545,7 @@ jq(function ($) {
         $("#chargerSelect").parent().addClass("percent-dropdown");
         $("#kinecelleratorSelect").parent().addClass("percent-dropdown");
         $("#cyclerSelect").parent().addClass("percent-dropdown");
+        $("#overloadSelect").parent().addClass("percent-dropdown");
         $("#armorIntegSelect").parent().addClass("percent-dropdown");
         $("#coreAnalyzerSelect").parent().addClass("percent-dropdown");
         $("#targetAnalyzerSelect").parent().addClass("percent-dropdown");
@@ -695,6 +704,7 @@ jq(function ($) {
         resetDropdown($("#chargerSelect"));
         resetDropdown($("#kinecelleratorSelect"));
         resetDropdown($("#cyclerSelect"));
+        resetDropdown($("#overloadSelect"));
         resetDropdown($("#armorIntegSelect"));
         resetDropdown($("#coreAnalyzerSelect"));
         resetDropdown($("#targetAnalyzerSelect"));
@@ -704,10 +714,11 @@ jq(function ($) {
         resetDropdown($("#endConditionSelect"));
 
         // Reset text inputs
-        $("#distanceInput").val("");
         $("#numFightsInput").val("");
         $("#targetingInput").val("");
         $("#treadsInput").val("");
+        $("#distanceInput").val("");
+        $("#recoilInput").val("");
         $("#meleeAnalysisContainer > input").val("");
         $("#speedInput").val("");
         $("#bonusMomentumInput").val("");
@@ -761,6 +772,9 @@ jq(function ($) {
         func($("#chargerSelect").next());
         func($("#kinecelleratorSelect").next());
         func($("#cyclerSelect").next());
+
+        func($("#recoilInput"));
+        func($("#overloadSelect").next());
 
         func($("#meleeAnalysisContainer > input"));
         func($("#actuatorSelect").next());
@@ -894,8 +908,11 @@ jq(function ($) {
             distance = 1;
         }
 
+        // Recoil reduction
+        const recoilReduction = parseIntOrDefault($("#recoilInput").val(), 0);
+
         const allRecoil = userWeapons.reduce((prev, weapon) =>
-            getRecoil(weapon.def, numTreads) + prev, 0);
+            getRecoil(weapon.def, numTreads, recoilReduction) + prev, 0);
 
         // Target Analyzer crit bonus
         const targetAnalyzerName = $("#targetAnalyzerSelect").selectpicker("val") as any as string;
@@ -1044,6 +1061,10 @@ jq(function ($) {
         const actuatorArrayName = $("#actuatorArraySelect").selectpicker("val") as any as string;
         const actuatorArrayBonus = actuatorArrayMap[actuatorArrayName];
 
+        // Overload bonus damage
+        const overloadName = $("#overloadSelect").selectpicker("val") as any as string;
+        const overloadBonus = overloadMap[overloadName];
+
         // Calculate followup chance
         const followupChances: number[] = [];
         if (melee) {
@@ -1097,7 +1118,9 @@ jq(function ($) {
                 initial: initialMomentum,
             },
             numTreads: numTreads,
+            overloadBonus: overloadBonus,
             recoil: allRecoil,
+            recoilReduction: recoilReduction,
             siegeBonus: siegeBonus,
             sneakAttack: false,
             sneakAttackStrategy: sneakAttackStrategy,
@@ -1352,6 +1375,7 @@ jq(function ($) {
 
         setVisibility($("#rangedAccuracyContainer"), !melee);
         setVisibility($("#rangedUtilitiesContainer"), !melee);
+        setVisibility($("#rangedUtilitiesContainer2"), !melee);
         setVisibility($("#meleeAnalysisContainer"), melee);
         setVisibility($("#meleeBehaviorContainer"), melee);
         setVisibility($("#meleeUtilitiesContainer"), melee);
