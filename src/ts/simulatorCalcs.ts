@@ -976,7 +976,10 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
             // and sneak attacks (2)
             let damage = randomInt(weapon.damageMin, weapon.damageMax);
 
-            // Overloading guns TODO
+            // Apply overload damage doubling
+            if (weapon.overloaded) {
+                damage *= 2;
+            }
 
             // Apply momentum bonus
             // ([momentum] * [speed%] / 1200) * 40)

@@ -15,6 +15,7 @@ import {
 } from "./commonJquery";
 import {
     DamageType,
+    Item,
     ItemSlot,
     ItemType,
     WeaponItem
@@ -69,8 +70,6 @@ jq(function ($) {
 
     // Array of colors currently used to try to avoid duplicating colors when possible
     const comparisonColorsUsed = comparisonBorderColors.map(() => 0);
-
-    const spectrumRegex = /\w* \((\d*)\)/;
 
     // Flag to cancel a simulation
     let cancelled = false;
@@ -342,11 +341,16 @@ jq(function ($) {
         weapons.sort(gallerySort);
         const weaponOptions = weapons.map(w => `<option>${w}</option>`).join();
 
-        // Add elements
+        // Create elements elements
         const parent = $('<div class="input-group mt-1"></div>');
         const selectLabel = $('<span class="input-group-text" data-toggle="tooltip" title="Name of an equipped weapon to fire">Weapon</span>');
         const select = $(`<select class="selectpicker" data-live-search="true">${weaponOptions}</select>`);
         const helpButton = $('<button class="btn weapon-help-btn" data-html=true data-toggle="popover">?</button>');
+        const overloadContainer = $('<div class="btn-group btn-group-toggle ml-2" data-toggle="buttons"></div>');
+        const overloadLabelContainer = $('<div class="input-group-prepend" data-toggle="tooltip" title="Whether to fire the weapon as overloaded"></div>');
+        const overloadLabel = $('<span class="input-group-text">Overload</span>');
+        const noLabel = $('<label class="btn"><input type="radio" name="options">No</input></label>');
+        const yesLabel = $('<label class="btn"><input type="radio" name="options">Yes</input></label>');
         const numberLabel = $(`
         <div class="input-group-prepend ml-2" data-toggle="tooltip" title="How many weapons of this type to have equipped.">
             <span class="input-group-text">Number</span>
@@ -354,15 +358,22 @@ jq(function ($) {
         const number = $('<input class="form-control" placeholder="1"></input>');
         const deleteButton = $('<button class="btn ml-2" data-toggle="tooltip" title="Removes the weapon.">X</button>');
 
+        // Add elements to DOM
         container.append(parent);
         parent.append(selectLabel);
         parent.append(select);
         parent.append(helpButton);
+        parent.append(overloadContainer);
+        overloadContainer.append(overloadLabelContainer);
+        overloadLabelContainer.append(overloadLabel);
+        overloadContainer.append(noLabel);
+        overloadContainer.append(yesLabel);
         parent.append(numberLabel);
         parent.append(number);
         parent.append(deleteButton);
 
-        (deleteButton as any).tooltip();
+        resetButtonGroup(overloadContainer);
+
         deleteButton.on("click", () => {
             // Ensure the last dropdown is always empty
             if (parent.next().length === 0) {
@@ -377,23 +388,36 @@ jq(function ($) {
 
         select.selectpicker("val", weaponName);
 
-        // Set initial weapon info if valid
-        if (weaponName in itemData) {
-            const weapon = itemData[weaponName];
-            helpButton.attr("data-content", createItemDataContent(weapon));
-            (helpButton as any).popover();
-        }
+        const updateContent = (weaponName: string) => {
+            let weapon: WeaponItem | undefined;
 
-        // Add changed event
+            if (weaponName in itemData) {
+                weapon = itemData[weaponName] as WeaponItem;
+                helpButton.attr("data-content", createItemDataContent(weapon));
+                (helpButton as any).popover();
+            }
+
+            if (weapon === undefined || weapon.overloadStability === undefined) {
+                // If no valid weapon or can't be overloaded reset/hide the overload option
+                resetButtonGroup(overloadContainer);
+                overloadContainer.addClass("not-visible");
+            }
+            else {
+                // Otherwise show the overload option
+                overloadContainer.removeClass("not-visible");
+            }
+        };
+
+        // Set initial weapon info
+        updateContent(weaponName);
+
+        // Update content when the weapon selection changes
         select.on("changed.bs.select", () => {
             if (parent.next().length === 0) {
                 addWeaponSelect("");
             }
 
-            // Update item info
-            const weapon = itemData[select.selectpicker("val") as any as string];
-            helpButton.attr("data-content", createItemDataContent(weapon));
-            (helpButton as any).popover();
+            updateContent(select.selectpicker("val") as any as string);
         });
 
         select.parent().addClass("weapon-dropdown");
@@ -402,6 +426,7 @@ jq(function ($) {
         (deleteButton as any).tooltip();
         (numberLabel as any).tooltip();
         (selectLabel as any).tooltip();
+        (overloadLabelContainer as any).tooltip();
 
         // Minor hack, the btn-light class is auto-added to dropdowns with search 
         // but it doesn't really fit with everything else
@@ -772,7 +797,7 @@ jq(function ($) {
     function simulate() {
         // Check inputs first
         const botName = $("#botSelect").selectpicker("val") as any as string;
-        const weaponDefs: WeaponItem[] = [];
+        const userWeapons: { def: WeaponItem, overloaded: boolean}[] = [];
         $("#weaponSelectContainer select").each((_, s) => {
             const name = $(s).selectpicker("val") as any as string;
             if (name in itemData) {
@@ -780,9 +805,11 @@ jq(function ($) {
 
                 // Tread invalid or unfilled numbers as 1
                 const number = parseIntOrDefault($(s).parent().nextAll("input").val(), 1);
+                
+                const overloaded = !$(s).parent().nextAll(".btn-group").children("label").first().hasClass("active");
 
                 for (let i = 0; i < number; i++) {
-                    weaponDefs.push(weapon);
+                    userWeapons.push({ def: weapon, overloaded: overloaded });
                 }
             }
         });
@@ -792,7 +819,7 @@ jq(function ($) {
             return;
         }
 
-        if (weaponDefs.length === 0) {
+        if (userWeapons.length === 0) {
             setStatusText("There must be at least 1 weapon selected.");
             return;
         }
@@ -867,14 +894,15 @@ jq(function ($) {
             distance = 1;
         }
 
-        const allRecoil = weaponDefs.reduce((prev, weapon) =>
-            getRecoil(weapon, numTreads) + prev, 0);
+        const allRecoil = userWeapons.reduce((prev, weapon) =>
+            getRecoil(weapon.def, numTreads) + prev, 0);
 
         // Target Analyzer crit bonus
         const targetAnalyzerName = $("#targetAnalyzerSelect").selectpicker("val") as any as string;
         const critBonus = targetAnalyzerMap[targetAnalyzerName];
 
-        const weapons = weaponDefs.map((weapon, i) => {
+        const weapons = userWeapons.map((weapon, i) => {
+            const def = weapon.def;
             let damageMin = 0;
             let damageMax = 0;
             let damageType: DamageType | undefined = undefined;
@@ -882,25 +910,22 @@ jq(function ($) {
             let explosionMax = 0;
             let explosionType: DamageType | undefined = undefined;
 
-            if (weapon.damage !== undefined) {
+            if (def.damage !== undefined) {
                 // Found regular damage
-                if (weapon.damage.includes("-")) {
-                    const split = weapon.damage.split("-");
+                if (def.damage.includes("-")) {
+                    const split = def.damage.split("-");
                     damageMin = parseInt(split[0]);
                     damageMax = parseInt(split[1]);
                 }
                 else {
-                    damageMin = parseInt(weapon.damage);
+                    damageMin = parseInt(def.damage);
                     damageMax = damageMin;
                 }
 
-                if (weapon.type === ItemType.BallisticGun || weapon.type === ItemType.BallisticCannon) {
+                if (def.type === ItemType.BallisticGun || def.type === ItemType.BallisticCannon) {
                     // Increase minimum damage for kinecellerators (2)
                     const kinecelleratorName = $("#kinecelleratorSelect").selectpicker("val") as any as string;
                     const kinecelleratorBonus = kinecelleratorMap[kinecelleratorName];
-
-                    // Double damage for overloading (2)
-                    // TODO
 
                     // Ensure min damage can't exceed max
                     damageMin = Math.min(Math.trunc(damageMin * kinecelleratorBonus), damageMax);
@@ -916,28 +941,28 @@ jq(function ($) {
                     damageMin = Math.min(minDamageIncrease + damageMin, damageMax);
                 }
 
-                damageType = weapon.damageType;
+                damageType = def.damageType;
             }
 
-            if (weapon.explosionDamage !== undefined) {
+            if (def.explosionDamage !== undefined) {
                 // Found explosion damage
-                if (weapon.explosionDamage.includes("-")) {
-                    const split = weapon.explosionDamage.split("-");
+                if (def.explosionDamage.includes("-")) {
+                    const split = def.explosionDamage.split("-");
                     explosionMin = parseInt(split[0]);
                     explosionMax = parseInt(split[1]);
                 }
                 else {
-                    explosionMin = parseInt(weapon.explosionDamage);
+                    explosionMin = parseInt(def.explosionDamage);
                     explosionMax = explosionMin;
                 }
 
-                explosionType = weapon.explosionType;
+                explosionType = def.explosionType;
             }
 
             // Get crit chance, only apply target analyzer if there's a specific bonus
-            const critical = weapon.critical === undefined || weapon.critical === 0 ?
+            const critical = def.critical === undefined || def.critical === 0 ?
                 0 :
-                weapon.critical + critBonus;
+                def.critical + critBonus;
 
             // Calculate base accuracy that can't change over the course of the fight
             let baseAccuracy = melee ? initialMeleeAccuracy : initialRangedAccuracy;
@@ -955,11 +980,11 @@ jq(function ($) {
             }
 
             // Builtin targeting
-            if (weapon.targeting !== undefined) {
-                baseAccuracy += weapon.targeting;
+            if (def.targeting !== undefined) {
+                baseAccuracy += def.targeting;
             }
 
-            const delay = parseIntOrDefault(weapon.delay, 0);
+            const delay = parseIntOrDefault(def.delay, 0);
 
             // Follow-up attacks on melee gain a 10% bonus to targeting
             const followUp = melee && i != 0;
@@ -967,26 +992,26 @@ jq(function ($) {
                 baseAccuracy += 10;
             }
 
-            const disruption = weapon.disruption ?? 0;
+            const disruption = def.disruption ?? 0;
 
-            const spectrum = weapon.spectrum === undefined ? 0 : spectrumMap[weapon.spectrum];
-            const explosionSpectrum = weapon.explosionSpectrum === undefined ? 0 : spectrumMap[weapon.explosionSpectrum];
+            const spectrum = def.spectrum === undefined ? 0 : spectrumMap[def.spectrum];
+            const explosionSpectrum = def.explosionSpectrum === undefined ? 0 : spectrumMap[def.explosionSpectrum];
 
             // All launchers are missiles except for special cases
-            const isMissile = weapon.type === "Launcher"
-                && weapon.name != "Sigix Terminator"
-                && weapon.name != "Supercharged Sigix Terminator"
-                && weapon.name != "Vortex Catalyst Activator";
+            const isMissile = def.type === "Launcher"
+                && def.name != "Sigix Terminator"
+                && def.name != "Supercharged Sigix Terminator"
+                && def.name != "Vortex Catalyst Activator";
 
             const state: SimulatorWeapon = {
-                accelerated: weapon.type === "Energy Gun" || weapon.type === "Energy Cannon",
+                accelerated: def.type === "Energy Gun" || def.type === "Energy Cannon",
                 accuracy: baseAccuracy,
                 baseAccuracy: baseAccuracy,
                 critical: critical,
                 damageMin: damageMin,
                 damageMax: damageMax,
                 damageType: damageType,
-                def: weapon,
+                def: def,
                 delay: delay,
                 disruption: disruption,
                 explosionMin: explosionMin,
@@ -994,8 +1019,9 @@ jq(function ($) {
                 explosionSpectrum: explosionSpectrum,
                 explosionType: explosionType,
                 isMissile: isMissile,
-                numProjectiles: weapon.projectileCount,
-                overflow: !weapon.type.includes("Gun"),
+                numProjectiles: def.projectileCount,
+                overflow: !def.type.includes("Gun"),
+                overloaded: weapon.overloaded,
                 spectrum: spectrum,
             };
 

@@ -84,6 +84,7 @@ export type SimulatorWeapon = {
     isMissile: boolean;
     numProjectiles: number;
     overflow: boolean;
+    overloaded: boolean;
     spectrum: number;
 };
 
