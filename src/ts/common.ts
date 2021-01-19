@@ -1,11 +1,26 @@
-// import "jquery";
-
 // Common code
 import * as bots from "../json/bots.json";
 import * as categories from "../json/categories.json";
 import * as items from "../json/items.json";
-import { Bot, BotPart, ItemOption, JsonBot } from "./botTypes";
-import { FabricationStats, Item, ItemCategory, ItemSlot, ItemType, JsonItem, OtherItem, PowerItem, PropulsionItem, UtilityItem, WeaponItem } from "./itemTypes";
+import {
+    Bot,
+    BotPart,
+    ItemOption,
+    JsonBot
+} from "./botTypes";
+import {
+    FabricationStats,
+    Item,
+    ItemCategory,
+    ItemSlot,
+    ItemType,
+    JsonItem,
+    OtherItem,
+    PowerItem,
+    PropulsionItem,
+    UtilityItem,
+    WeaponItem
+} from "./itemTypes";
 
 export let botData: { [key: string]: Bot };
 export let itemData: { [key: string]: Item };
@@ -25,7 +40,7 @@ const colorSchemes = {
 }
 
 // Character -> escape character map
-export const entityMap = {
+export const entityMap: { [key: string]: string } = {
     '&': '&amp;',
     '<': 'ᐸ',
     '>': 'ᐳ',
@@ -153,7 +168,7 @@ function textLineWithDefault(category: string, textString: string | undefined, d
 }
 
 // Create a text line with a value and a given HTML string for the text
-function textValueHtmlLine(category, valueString, valueClass, textHtml) {
+function textValueHtmlLine(category: string, valueString: string, valueClass: string, textHtml: string) {
     const numSpaces = 23 - 1 - 1 - category.length - valueString.length;
 
     let valueHtml;
@@ -248,12 +263,24 @@ export function createBotDataContent(bot: Bot) {
     }
 
     function itemLine(itemString: string) {
-        return `<pre class="popover-line"> ${itemString}</pre>`;
+        itemString = itemString.padEnd(46);
+        return "" +
+            '<pre class="popover-part">' +
+            '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">[</span>' +
+            `${itemString}` +
+            '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">]</span>' +
+            '</pre>';
     }
 
-    function itemLineOption(itemString: any, i: number) {
-        return `<pre class="popover-line"><span class="popover-option">` +
-            ` ${String.fromCharCode(97 + i)})</span><span> ${itemString}</span></pre>`;
+    function itemLineOption(itemString: string, i: number) {
+        itemString = itemString.padEnd(43);
+        return "" +
+            '<pre class="popover-line">' +
+            '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">[</span>' +
+            `<span class="popover-option">${String.fromCharCode(97 + i)}) </span>` +
+            `<span>${itemString}</span>` +
+            '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">]</span>' +
+            '</pre>';
     }
 
     // Create overview
@@ -324,6 +351,10 @@ export function createBotDataContent(bot: Bot) {
 
         resistances.forEach(damageType => {
             const resistValue = bot.resistances[damageType];
+
+            if (resistValue === undefined) {
+                return;
+            }
 
             if (resistValue > 0) {
                 html += rangeLine(damageType, resistValue.toString() + "%",
@@ -748,7 +779,7 @@ export function gallerySort(a: string, b: string) {
         // The export index will always be ordered for different prefix
         // versions of the same parts so this is the best way to sort
         // them how the in-game gallery does.
-        res = parseInt(getItem(a)["Index"]) - parseInt(getItem(b)["Index"]);
+        res = getItem(a).index - getItem(b).index;
     }
 
     return res;
@@ -780,21 +811,6 @@ export function getNoPrefixName(name: string): string {
     return newName;
 }
 
-// Gets the ID of the selected button in a button group
-export function getSelectedButtonId(selector: JQuery<HTMLElement>) {
-    return selector.children(".active").attr("id") as string;
-}
-
-// Gets the stored spoilers state
-export function getSpoilersState() {
-    let value = valueOrDefault(window.localStorage.getItem("spoilers"), "None");
-    if (typeof (value) != "string" || value != "None" && value != "Spoilers" && value != "Redacted") {
-        value = "None";
-    }
-
-    return value;
-}
-
 // Converts an item or bot's name to an HTML id
 const nameToIdRegex = /[ /.'"\]\[]]*/g;
 export function nameToId(name: string) {
@@ -809,14 +825,14 @@ export function initData() {
     itemData = {};
 
     // Create items
-    Object.keys(items).forEach(itemName => {
+    Object.keys(items).forEach((itemName, index) => {
         if (itemName === "default") {
             // Not sure why this "default" pops up but it messes things up
             // Maybe an artifact of being imported as a JSON file
             return;
         }
 
-        const item = items[itemName] as JsonItem;
+        const item = (items as { [key: string]: JsonItem })[itemName];
         let newItem: Item;
 
         let category: ItemCategory = (<any>ItemCategory)[item.Category ?? ""];
@@ -844,7 +860,7 @@ export function initData() {
             itemCategories = [];
         }
         else {
-            itemCategories = categories[itemName];
+            itemCategories = (categories as { [key: string]: number[] })[itemName];
         }
 
         const coverage = parseIntOrUndefined(item.Coverage!) ?? 0;
@@ -872,6 +888,7 @@ export function initData() {
                     description: item.Description,
                     categories: itemCategories,
                     life: item.Life,
+                    index: index,
                 };
                 newItem = otherItem;
                 break;
@@ -899,6 +916,7 @@ export function initData() {
                     powerStability: item["Power Stability"] == null ?
                         undefined :
                         parseIntOrUndefined(item["Power Stability"].slice(0, -1)),
+                    index: index,
                 };
                 newItem = powerItem;
                 break;
@@ -933,6 +951,7 @@ export function initData() {
                     matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
                     modPerExtra: parseIntOrUndefined(item["Mod/Extra"]),
                     siege: item.Siege,
+                    index: index,
                 };
                 newItem = propItem;
                 break;
@@ -959,6 +978,7 @@ export function initData() {
                     matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
                     mass: parseIntOrUndefined(item.Mass!) ?? 0,
                     specialTrait: item["Special Trait"],
+                    index: index,
                 };
                 newItem = utilItem;
                 break;
@@ -1012,6 +1032,7 @@ export function initData() {
                     spectrum: item.Spectrum,
                     waypoints: item.Waypoints,
                     arc: undefined, // Export bug, arc is never included
+                    index: index,
                 };
                 newItem = weaponItem;
                 break;
@@ -1050,7 +1071,7 @@ export function initData() {
                 return largest + sum;
             }
         }
-        const bot = bots[botName] as JsonBot;
+        const bot = (bots as any as { [key: string]: JsonBot })[botName];
         const itemCoverage = bot.armament.reduce(sumItemCoverage, 0) + bot.components.reduce(sumItemCoverage, 0);
 
         let roughCoreCoverage = (100.0 / (100.0 - bot.coreExposure) * itemCoverage) - itemCoverage;
@@ -1104,12 +1125,12 @@ export function initData() {
         }
 
         // Add armament and component data
-        const armamentData = [];
-        const armamentOptionData = [];
+        const armamentData: BotPart[] = [];
+        const armamentOptionData: BotPart[][] = [];
         bot.armament.forEach(data => addPartData(data, armamentData, armamentOptionData));
 
-        const componentData = [];
-        const componentOptionData = [];
+        const componentData: BotPart[] = [];
+        const componentOptionData: BotPart[][] = [];
         bot.components.forEach(data => addPartData(data, componentData, componentOptionData));
 
         botData[botName] = {
@@ -1149,13 +1170,6 @@ function parseIntOrUndefined(value: string | undefined): number | undefined {
     }
 
     return int;
-}
-
-// Clears a button group's state and sets the first item to be active
-export function resetButtonGroup(group: JQuery<HTMLElement>) {
-    group.children().removeClass("active");
-
-    group.children("label:first-of-type").addClass("active");
 }
 
 // Gets a random integer between the min and max values (inclusive)

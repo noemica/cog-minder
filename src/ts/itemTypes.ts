@@ -101,6 +101,7 @@ export type BaseItem = {
     description?: string;
     categories: number[];
     fabrication?: FabricationStats;
+    index: number;
 };
 
 export type OtherItem = BaseItem & {

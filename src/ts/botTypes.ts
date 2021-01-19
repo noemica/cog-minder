@@ -32,6 +32,7 @@ export enum BotSize {
 };
 
 export type BotResistances = {
+    [key: string]: number | undefined;
     thermal?: number;
     explosive?: number;
     electromagnetic?: number;

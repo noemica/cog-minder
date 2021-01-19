@@ -4,13 +4,21 @@ import {
     createItemDataContent,
     gallerySort,
     getItem,
-    getSpoilersState,
     initData,
     itemData,
-    resetButtonGroup,
     setSpoilersState,
 } from "./common";
-
+import {
+    enableBotInfoItemPopovers,
+    getSpoilersState,
+    resetButtonGroup
+} from "./commonJquery";
+import {
+    DamageType,
+    ItemSlot,
+    ItemType,
+    WeaponItem
+} from "./itemTypes";
 import {
     getBotDefensiveState,
     getRangedVolleyTime,
@@ -20,13 +28,20 @@ import {
     simulateCombat,
     volleyTimeMap,
 } from "./simulatorCalcs";
+import {
+    BotState,
+    EndCondition,
+    OffensiveState,
+    SimulatorPart,
+    SimulatorState,
+    SimulatorWeapon,
+    SneakAttackStrategy
+} from "./simulatorTypes";
 
 import "bootstrap";
 import { Chart, ChartDataSets, Point } from "chart.js";
 import * as jQuery from "jquery";
 import "bootstrap-select";
-import { DamageType, ItemSlot, ItemType, WeaponItem } from "./itemTypes";
-import { BotState, EndCondition, OffensiveState, SimulatorPart, SimulatorState, SimulatorWeapon, SneakAttackStrategy } from "./simulatorTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -465,9 +480,18 @@ jq(function ($) {
         });
 
         $(window).on("click", (e) => {
-            // If clicking outside of a popover close the current one
             if ($(e.target).parents(".popover").length === 0 && $(".popover").length >= 1) {
+                // If clicking outside of a popover close the current one
                 ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
+            }
+            else if ($(e.target).parents(".popover").length === 1 && $(".popover").length > 1) {
+                // If clicking inside of a popover close any nested popovers
+                ($(e.target)
+                    .parents(".popover")
+                    .find('.bot-popover-item') as any)
+                    .not(e.target)
+                    .not($(e.target).parents())
+                    .popover("hide");
             }
         });
 
@@ -478,6 +502,8 @@ jq(function ($) {
         const bot = botData[($("#botSelect") as any).selectpicker("val")];
         $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
         ($("#enemyInfoButton") as any).popover();
+
+        enableBotInfoItemPopovers($("#enemyInfoButton"));
 
         // These divs are created at runtime so have to do this at init
         $("#damageReductionSelect").parent().addClass("percent-dropdown");

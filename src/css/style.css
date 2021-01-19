@@ -162,7 +162,7 @@ body {
 }
 
 .btn:not(:disabled):not(:hover).active {
-    background-color: #005700;
+    background-color: #002100;
 }
 
 .btn:hover:not(.active) {
@@ -178,7 +178,7 @@ body {
 
 .btn[aria-expanded="true"] {
     border: 1px solid #00aa00;
-    background-color: #005700;
+    background-color: #002100;
 }
 
 .simulate-btn, .cancel-btn {
@@ -329,7 +329,7 @@ body {
     font-size: .80rem;
 }
 
-.popover-line, .popover-description, .popover-option {
+.popover-line, .popover-part, .popover-description, .popover-option {
     margin: 0;
     font-family: smallcaps-mono;
     color: #00b200;
@@ -362,6 +362,22 @@ body {
     padding: .2rem;
     background-color: #162416;
     margin-right: -1.5rem;
+}
+
+.cursor-pointer, .bot-popover-item {
+    cursor: pointer;
+}
+
+.bot-popover-item > .bot-popover-item-bracket {
+    transition: cubic-bezier(0.77, 0, 0.175, 1) color .25s;
+}
+
+.bot-popover-item:hover > .bot-popover-item-bracket {
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) color .1s;
+}
+
+.bot-popover-item-bracket-invisible {
+    color: #00cc0000;
 }
 
 /* Dim text style */

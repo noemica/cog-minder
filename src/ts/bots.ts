@@ -1,18 +1,24 @@
 import {
+    Bot,
+} from "./botTypes";
+import {
     botData,
     createBotDataContent,
     getBot,
-    getSelectedButtonId,
-    getSpoilersState,
     initData,
     nameToId,
-    resetButtonGroup,
     setSpoilersState,
 } from "./common";
+import {
+    getSpoilersState,
+    getSelectedButtonId,
+    resetButtonGroup,
+    enableBotInfoItemPopovers
+} from "./commonJquery";
 
-import "bootstrap";
 import * as jQuery from "jquery";
-import { Bot } from "./botTypes";
+import * as popper from "popper.js";
+import "bootstrap";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -46,6 +52,8 @@ jq(function ($) {
         const botNames = Object.keys(botData);
         const botsGrid = $("#botsGrid");
         botNames.forEach(botName => {
+            // Creates button that will toggle a popover when pressed displaying
+            // various stats and items
             const bot = botData[botName];
             const botId = nameToId(botName);
             const element = $(
@@ -62,7 +70,9 @@ jq(function ($) {
             botsGrid.append(element);
         });
 
-        ($('#botsGrid > [data-toggle="popover"]') as any).popover();
+        const popoverSelector = $('#botsGrid > [data-toggle="popover"]');
+        (popoverSelector as any).popover();
+        enableBotInfoItemPopovers(popoverSelector);
     }
 
     // Gets a filter function combining all current filters
@@ -106,14 +116,14 @@ jq(function ($) {
                     return true;
                 }
 
-                for( let i = 0; i < bot.armamentOptionData.length; i++) {
+                for (let i = 0; i < bot.armamentOptionData.length; i++) {
                     const data = bot.armamentOptionData[i];
                     if (data.map(data => data.name).some(name => name.toLowerCase().includes(partValue))) {
                         return true;
                     }
                 }
 
-                for( let i = 0; i < bot.componentOptionData.length; i++) {
+                for (let i = 0; i < bot.componentOptionData.length; i++) {
                     const data = bot.componentOptionData[i];
                     if (data.map(data => data.name).some(name => name.toLowerCase().includes(partValue))) {
                         return true;
@@ -139,6 +149,10 @@ jq(function ($) {
 
     // Initialize the page state
     function init() {
+        popper.default.Defaults.onCreate = (data => {
+            console.log(data);
+        });
+
         initData();
 
         createBots();
@@ -169,9 +183,18 @@ jq(function ($) {
         $("#factionContainer > label > input").on("change", updateBots);
 
         $(window).on("click", (e) => {
-            // If clicking outside of a popover close the current one
             if ($(e.target).parents(".popover").length === 0 && $(".popover").length >= 1) {
+                // If clicking outside of a popover close the current one
                 ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
+            }
+            else if ($(e.target).parents(".popover").length === 1 && $(".popover").length > 1) {
+                // If clicking inside of a popover close any nested popovers
+                ($(e.target)
+                    .parents(".popover")
+                    .find('.bot-popover-item') as any)
+                    .not(e.target)
+                    .not($(e.target).parents())
+                    .popover("hide");
             }
         });
 
@@ -194,12 +217,9 @@ jq(function ($) {
     }
 
     // Sorts bot names
-    function sortBotNames(botNames) {
+    function sortBotNames(botNames: string[]) {
         botNames.sort((a, b) => {
-            let aValue = typeof (a) === "string" ? a : "";
-            let bValue = typeof (b) === "string" ? b : "";
-
-            return aValue.localeCompare(bValue);
+            return a.localeCompare(b);
         });
 
         return botNames;

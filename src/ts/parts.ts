@@ -2,18 +2,22 @@ import {
     createItemDataContent,
     gallerySort,
     getItem,
-    getSelectedButtonId,
-    getSpoilersState,
     initData,
     itemData,
     nameToId,
-    resetButtonGroup,
     setSpoilersState,
 } from "./common";
+import {
+    getSelectedButtonId,
+    getSpoilersState,
+    resetButtonGroup
+} from "./commonJquery";
+import {
+    Item,
+} from "./itemTypes";
 
 import * as jQuery from "jquery";
 import "bootstrap";
-import { Item } from "./itemTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -295,8 +299,8 @@ jq(function ($) {
     }
 
     // Initialize the page state
-    async function init() {
-        await initData();
+    function init() {
+        initData();
 
         // Initialize page state
         createItems();
@@ -372,7 +376,7 @@ jq(function ($) {
             const targetPopover = $(e.target).parents(".popover").length != 0;
 
             if (targetPopover) {
-                $(e.target).blur();
+                $(e.target).trigger("blur");
             }
             else if (!targetPopover && $(".popover").length >= 1) {
                 ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
@@ -381,7 +385,7 @@ jq(function ($) {
         });
 
         // Enable tooltips
-        ($('[data-toggle="tooltip"]') as any).tooltip()
+        ($('[data-toggle="tooltip"]') as any).tooltip();
     }
 
     // Resets all filters
