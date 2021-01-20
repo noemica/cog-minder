@@ -977,14 +977,9 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
             // and sneak attacks (2)
             let damage = randomInt(weapon.damageMin, weapon.damageMax);
 
-            // Apply overload damage doubling
+            // Apply overload damage doubling + additional bonus
             if (weapon.overloaded) {
-                damage *= 2;
-
-                if (offensiveState.overloadBonus !== 0) {
-                    // Apply additional overload bonus
-                    damage = Math.trunc((1 + offensiveState.overloadBonus) * damage);
-                }
+                damage = Math.trunc(damage * (2 + offensiveState.overloadBonus));
             }
 
             // Apply momentum bonus
