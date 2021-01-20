@@ -457,29 +457,10 @@ jq(function ($) {
             return aValue - bValue;
         }
 
-        function ratingSort(a: string, b: string) {
-            let aValue: number;
-            let bValue: number;
-            if (a.includes("*")) {
-                aValue = parseInt(a.slice(0, a.indexOf("*"))) + 0.5;
-            }
-            else {
-                aValue = parseInt(a);
-            }
-            if (b.includes("*")) {
-                bValue = parseInt(b.slice(0, b.indexOf("*"))) + 0.5;
-            }
-            else {
-                bValue = parseInt(b);
-            }
-
-            return aValue - bValue;
-        }
-
         const sortKeyMap = {
             "Alphabetical": { key: "name", sort: alphabeticalSort },
             "Gallery": { key: "name", sort: gallerySort },
-            "Rating": { key: "rating", sort: ratingSort },
+            "Rating": { key: "rating", sort: integerSort },
             "Size": { key: "size", sort: integerSort },
             "Mass": { key: "mass", sort: integerSort },
             "Integrity": { key: "integrity", sort: integerSort },
