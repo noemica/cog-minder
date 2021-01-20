@@ -1130,10 +1130,12 @@ jq(function ($) {
             volleyTimeModifier: volleyTimeModifier,
         };
 
+        const endCondition = $("#endConditionSelect").selectpicker("val") as any as string as EndCondition;
+
         // Overall state
         const state: SimulatorState = {
             botState: botState,
-            endCondition: (<any>EndCondition)[$("#endConditionSelect").selectpicker("val") as any as string],
+            endCondition: endCondition,
             initialBotState: botState,
             killTus: {},
             killVolleys: {},
