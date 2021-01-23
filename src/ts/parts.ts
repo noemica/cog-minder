@@ -1,3 +1,5 @@
+import * as items from "../json/items.json";
+import * as itemsB11 from "../json/items_b11.json";
 import {
     createItemDataContent,
     gallerySort,
@@ -13,7 +15,7 @@ import {
     resetButtonGroup
 } from "./commonJquery";
 import {
-    Item,
+    Item, JsonItem,
 } from "./itemTypes";
 
 import * as jQuery from "jquery";
@@ -300,7 +302,9 @@ jq(function ($) {
 
     // Initialize the page state
     function init() {
-        initData();
+        initData(items as { [key: string]: JsonItem }, undefined);
+
+        $("#beta11Checkbox").prop("checked", false);
 
         // Initialize page state
         createItems();
@@ -371,6 +375,22 @@ jq(function ($) {
             updateItems();
         });
 
+        $("#beta11Checkbox").on("change", () => {
+            const newItems = $("#beta11Checkbox").prop("checked") ? itemsB11 : items;
+            
+            initData(newItems as { [key: string]: JsonItem }, undefined);
+
+            ($('#itemsGrid > [data-toggle="popover"]') as any).popover("dispose");
+            $("#itemsGrid").empty();
+    
+            // Initialize page state
+            createItems();
+            updateCategoryVisibility();
+            resetFilters();
+    
+            ($("#beta11Checkbox").parent() as any).tooltip("hide");
+        });
+
         $(window).on("click", (e) => {
             // If clicking outside of a popover close the current one
             const targetPopover = $(e.target).parents(".popover").length != 0;
@@ -380,7 +400,6 @@ jq(function ($) {
             }
             else if (!targetPopover && $(".popover").length >= 1) {
                 ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
-                // $('[data-toggle="popover"]').popover("hide");
             }
         });
 

@@ -1,3 +1,5 @@
+import * as bots from "../json/bots.json";
+import * as items from "../json/items.json";
 import {
     botData,
     createBotDataContent,
@@ -15,9 +17,9 @@ import {
 } from "./commonJquery";
 import {
     DamageType,
-    Item,
     ItemSlot,
     ItemType,
+    JsonItem,
     WeaponItem
 } from "./itemTypes";
 import {
@@ -43,6 +45,7 @@ import "bootstrap";
 import { Chart, ChartDataSets, Point } from "chart.js";
 import * as jQuery from "jquery";
 import "bootstrap-select";
+import { JsonBot } from "./botTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -462,7 +465,7 @@ jq(function ($) {
 
     // Initialize the page state
     function init() {
-        initData();
+        initData(items as { [key: string]: JsonItem }, bots as any as { [key: string]: JsonBot });
 
         // Load spoilers saved state
         $("#spoilers").text(getSpoilersState());

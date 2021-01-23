@@ -1,7 +1,5 @@
 // Common code
-import * as bots from "../json/bots.json";
 import * as categories from "../json/categories.json";
-import * as items from "../json/items.json";
 import {
     Bot,
     BotPart,
@@ -819,7 +817,7 @@ export function nameToId(name: string) {
 }
 
 // Initialize all item and bot data
-export function initData() {
+export function initData(items: { [key: string]: JsonItem }, bots: { [key: string]: JsonBot } | undefined) {
     // Load external files
     botData = {};
     itemData = {};
@@ -1041,124 +1039,126 @@ export function initData() {
         itemData[itemName] = newItem;
     });
 
-    // Create bots
-    Object.keys(bots).forEach(botName => {
-        if (botName === "default") {
-            // Not sure why this "default" pops up but it messes things up
-            // Maybe an artifact of being imported as a JSON file
-            return;
-        }
-
-        function sumItemCoverage(sum: number, data: string | ItemOption[]) {
-            if (typeof (data) === "string") {
-                // Item name, just parse coverage
-                return getItem(data).coverage! + sum;
+    if (bots !== undefined) {
+        // Create bots
+        Object.keys(bots).forEach(botName => {
+            if (botName === "default") {
+                // Not sure why this "default" pops up but it messes things up
+                // Maybe an artifact of being imported as a JSON file
+                return;
             }
-            else {
-                // Option, return largest sum of items
-                let largest = 0;
-                data.forEach(optionData => {
-                    if (optionData.name === "None") {
-                        return;
-                    }
 
-                    const number = optionData.number ?? 1;
-                    const item = getItem(optionData.name);
-                    const optionCoverage = item.coverage! * number;
-                    largest = Math.max(largest, optionCoverage);
-                });
-
-                return largest + sum;
-            }
-        }
-        const bot = (bots as any as { [key: string]: JsonBot })[botName];
-        const itemCoverage = bot.armament.reduce(sumItemCoverage, 0) + bot.components.reduce(sumItemCoverage, 0);
-
-        let roughCoreCoverage = (100.0 / (100.0 - bot.coreExposure) * itemCoverage) - itemCoverage;
-        if (isNaN(roughCoreCoverage)) {
-            roughCoreCoverage = 1;
-        }
-        const estimatedCoreCoverage = ceilToMultiple(roughCoreCoverage, 10);
-        const totalCoverage = estimatedCoreCoverage + itemCoverage;
-
-        function addPartData(data: string | ItemOption[], partData: BotPart[], partOptionData: BotPart[][]) {
-            if (typeof (data) === "string") {
-                const itemName = data;
-                // Item name, add to part data
-                let result = partData.find(p => p.name === data);
-
-                if (result === undefined) {
-                    const item = getItem(itemName);
-                    partData.push({
-                        name: itemName,
-                        number: 1,
-                        coverage: Math.floor(100.0 * item.coverage! / totalCoverage),
-                        integrity: item.integrity,
-                    });
+            function sumItemCoverage(sum: number, data: string | ItemOption[]) {
+                if (typeof (data) === "string") {
+                    // Item name, just parse coverage
+                    return getItem(data).coverage! + sum;
                 }
                 else {
-                    result.number += 1;
+                    // Option, return largest sum of items
+                    let largest = 0;
+                    data.forEach(optionData => {
+                        if (optionData.name === "None") {
+                            return;
+                        }
+
+                        const number = optionData.number ?? 1;
+                        const item = getItem(optionData.name);
+                        const optionCoverage = item.coverage! * number;
+                        largest = Math.max(largest, optionCoverage);
+                    });
+
+                    return largest + sum;
                 }
             }
-            else {
-                // Option, add all options
-                const options: BotPart[] = [];
-                data.forEach(optionData => {
-                    const itemName = optionData.name;
+            const bot = (bots as any as { [key: string]: JsonBot })[botName];
+            const itemCoverage = bot.armament.reduce(sumItemCoverage, 0) + bot.components.reduce(sumItemCoverage, 0);
 
-                    let coverage: number = 0;
-                    const item = getItem(itemName);
-
-                    if (itemName !== "None") {
-                        coverage = Math.floor(100.0 * item.coverage! / totalCoverage);
-                    }
-
-                    options.push({
-                        name: itemName,
-                        number: optionData.number ?? 1,
-                        coverage: coverage,
-                        integrity: item.integrity,
-                    });
-                });
-                partOptionData.push(options);
+            let roughCoreCoverage = (100.0 / (100.0 - bot.coreExposure) * itemCoverage) - itemCoverage;
+            if (isNaN(roughCoreCoverage)) {
+                roughCoreCoverage = 1;
             }
-        }
+            const estimatedCoreCoverage = ceilToMultiple(roughCoreCoverage, 10);
+            const totalCoverage = estimatedCoreCoverage + itemCoverage;
 
-        // Add armament and component data
-        const armamentData: BotPart[] = [];
-        const armamentOptionData: BotPart[][] = [];
-        bot.armament.forEach(data => addPartData(data, armamentData, armamentOptionData));
+            function addPartData(data: string | ItemOption[], partData: BotPart[], partOptionData: BotPart[][]) {
+                if (typeof (data) === "string") {
+                    const itemName = data;
+                    // Item name, add to part data
+                    let result = partData.find(p => p.name === data);
 
-        const componentData: BotPart[] = [];
-        const componentOptionData: BotPart[][] = [];
-        bot.components.forEach(data => addPartData(data, componentData, componentOptionData));
+                    if (result === undefined) {
+                        const item = getItem(itemName);
+                        partData.push({
+                            name: itemName,
+                            number: 1,
+                            coverage: Math.floor(100.0 * item.coverage! / totalCoverage),
+                            integrity: item.integrity,
+                        });
+                    }
+                    else {
+                        result.number += 1;
+                    }
+                }
+                else {
+                    // Option, add all options
+                    const options: BotPart[] = [];
+                    data.forEach(optionData => {
+                        const itemName = optionData.name;
 
-        botData[botName] = {
-            armament: bot.armament,
-            armamentData: armamentData,
-            armamentOptionData: armamentOptionData,
-            categories: bot.categories,
-            class: bot.class,
-            componentData: componentData,
-            componentOptionData: componentOptionData,
-            components: bot.components,
-            coreCoverage: estimatedCoreCoverage,
-            coreExposure: bot.coreExposure,
-            coreIntegrity: bot.coreIntegrity,
-            description: bot.description,
-            immunities: bot.immunities ?? [],
-            movement: bot.movement,
-            name: botName,
-            rating: bot.rating,
-            resistances: bot.resistances,
-            salvagePotential: bot.salvagePotential,
-            size: bot.size,
-            totalCoverage: totalCoverage,
-            traits: bot.traits ?? [],
-            value: bot.value,
-            visualRange: bot.visualRange,
-        };
-    });
+                        let coverage: number = 0;
+                        const item = getItem(itemName);
+
+                        if (itemName !== "None") {
+                            coverage = Math.floor(100.0 * item.coverage! / totalCoverage);
+                        }
+
+                        options.push({
+                            name: itemName,
+                            number: optionData.number ?? 1,
+                            coverage: coverage,
+                            integrity: item.integrity,
+                        });
+                    });
+                    partOptionData.push(options);
+                }
+            }
+
+            // Add armament and component data
+            const armamentData: BotPart[] = [];
+            const armamentOptionData: BotPart[][] = [];
+            bot.armament.forEach(data => addPartData(data, armamentData, armamentOptionData));
+
+            const componentData: BotPart[] = [];
+            const componentOptionData: BotPart[][] = [];
+            bot.components.forEach(data => addPartData(data, componentData, componentOptionData));
+
+            botData[botName] = {
+                armament: bot.armament,
+                armamentData: armamentData,
+                armamentOptionData: armamentOptionData,
+                categories: bot.categories,
+                class: bot.class,
+                componentData: componentData,
+                componentOptionData: componentOptionData,
+                components: bot.components,
+                coreCoverage: estimatedCoreCoverage,
+                coreExposure: bot.coreExposure,
+                coreIntegrity: bot.coreIntegrity,
+                description: bot.description,
+                immunities: bot.immunities ?? [],
+                movement: bot.movement,
+                name: botName,
+                rating: bot.rating,
+                resistances: bot.resistances,
+                salvagePotential: bot.salvagePotential,
+                size: bot.size,
+                totalCoverage: totalCoverage,
+                traits: bot.traits ?? [],
+                value: bot.value,
+                visualRange: bot.visualRange,
+            };
+        });
+    }
 }
 
 // Parses the string into a number or null if invalid

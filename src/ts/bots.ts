@@ -1,5 +1,7 @@
+import * as bots from "../json/bots.json";
+import * as items from "../json/items.json";
 import {
-    Bot,
+    Bot, JsonBot,
 } from "./botTypes";
 import {
     botData,
@@ -19,6 +21,7 @@ import {
 import * as jQuery from "jquery";
 import * as popper from "popper.js";
 import "bootstrap";
+import { JsonItem } from "./itemTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -153,8 +156,8 @@ jq(function ($) {
             console.log(data);
         });
 
-        initData();
-
+        initData(items as { [key: string]: JsonItem }, bots as any as { [key: string]: JsonBot });
+        
         createBots();
 
         // Load spoilers saved state

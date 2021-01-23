@@ -236,5 +236,5 @@ for row in reader:
 
         all_values[values['Name']] = values
 
-with open('../json/items.json', 'w') as f:
+with open('../src/json/items.json', 'w') as f:
     json.dump(all_values, f)
