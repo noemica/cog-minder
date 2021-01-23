@@ -1094,7 +1094,7 @@ jq(function ($) {
         const initialMomentum = parseIntOrDefault($("#initialMomentumInput").val(), 0);
 
         // Determine sneak attack strategy
-        const sneakAttackStrategy = (<any>SneakAttackStrategy)[$("#sneakAttackSelect").selectpicker("val") as any as string];
+        const sneakAttackStrategy = $("#sneakAttackSelect").selectpicker("val") as any as SneakAttackStrategy;
 
         // Calculate total (ranged) or initial (melee) volley time
         const volleyTimeModifier = melee ?
