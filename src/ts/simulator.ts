@@ -453,7 +453,7 @@ jq(function ($) {
             pointRadius: 0,
             pointHitRadius: 25,
             showLine: true,
-            steppedLine: "middle",
+            steppedLine: "before",
         } as ChartDataSets;
     }
 
