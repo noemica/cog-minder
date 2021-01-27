@@ -924,7 +924,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     slot: ItemSlot.Propulsion,
                     category: category,
                     coverage: coverage,
-                    energyPerMove: parseIntOrUndefined(item["Energy/Move"]),
+                    energyPerMove: parseFloatOrUndefined(item["Energy/Move"]),
                     hackable: hackable,
                     integrity: integrity,
                     name: item.Name,
@@ -943,7 +943,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     categories: itemCategories,
                     effect: item.Effect,
                     drag: item.Drag,
-                    energyUpkeep: parseIntOrUndefined(item["Energy Upkeep"]),
+                    energyUpkeep: parseFloatOrUndefined(item["Energy Upkeep"]),
                     heatGeneration: parseIntOrUndefined(item["Heat Generation"]),
                     heatPerMove: parseIntOrUndefined(item["Heat/Move"]),
                     matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
@@ -1159,6 +1159,17 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
             };
         });
     }
+}
+
+// Parses the string into a number or null if invalid
+function parseFloatOrUndefined(value: string | undefined): number | undefined {
+    const int = parseFloat(value ?? "");
+
+    if (isNaN(int)) {
+        return undefined;
+    }
+
+    return int;
 }
 
 // Parses the string into a number or null if invalid
