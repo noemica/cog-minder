@@ -249,7 +249,7 @@ function applyDamage(state: SimulatorState, botState: BotState, damage: number,
                 armorAnalyzed: armorAnalyzed,
                 critical: critical,
                 damageType: damageType,
-                disruptChance: disruptChance,
+                disruptChance: disruptChance, // Might be fixed, currently rolls disrupt on part and core
                 forceCore: false,
                 originalDamage: chunkDamage,
                 realDamage: 0,
@@ -259,7 +259,7 @@ function applyDamage(state: SimulatorState, botState: BotState, damage: number,
                 armorAnalyzed: false,
                 critical: false,
                 damageType: damageType,
-                disruptChance: 0,
+                disruptChance: disruptChance,
                 forceCore: true,
                 originalDamage: chunkDamage,
                 realDamage: 0,
@@ -372,8 +372,8 @@ function applyDamage(state: SimulatorState, botState: BotState, damage: number,
 
         let destroyed = part.integrity <= damage || critical || engineExplosion;
 
-        // Check for sever            
-        if (!destroyed && damageType === DamageType.Slashing) {
+        // Check for sever from slash damage on parts with size 1
+        if (!destroyed && damageType === DamageType.Slashing && part.def.size == 1) {
             // Sever has a damage / 3 % chance of happening against a
             // non-destroyed part (23)
             if (randomInt(0, 99) < Math.trunc(damage / 3)) {
@@ -1006,7 +1006,7 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
 
             // Apply double damage sneak attack bonus
             if (offensiveState.melee && offensiveState.sneakAttack) {
-                damage *= 2;
+                damage *= 3; // Might be fixed, currently does 3x instead of 2x
             }
 
             // Add analysis (3)
