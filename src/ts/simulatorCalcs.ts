@@ -683,7 +683,8 @@ function getHitPart(botState: BotState, damageType: DamageType, isOverflow: bool
             // If no protection parts fall into standard coverage behavior
         }
 
-        if (part === undefined) {
+        // Check to avoid rerolling an impact core hit
+        if (part === undefined && damageType !== DamageType.Impact) {
             // Piercing damage gets double core exposure
             const coreCoverageBonus = damageType === DamageType.Piercing ? botState.coreCoverage : 0;
 
