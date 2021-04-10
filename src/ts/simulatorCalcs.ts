@@ -895,6 +895,11 @@ export function simulateCombat(state: SimulatorState) {
             return false;
         }
 
+        if (offensiveState.ramming) {
+            // Ramming is always the slower of 100 TUs or the movement speed time
+            volleyTime = Math.max(100, offensiveState.speed);
+        }
+
         // Update TUs and time based changes
         oldTus = state.tus;
         state.tus += volleyTime;
@@ -928,6 +933,26 @@ export function simulateCombat(state: SimulatorState) {
 function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
     const botState = state.botState;
     const offensiveState = state.offensiveState;
+
+    if (offensiveState.ramming) {
+        // Apply ramming damage specially
+        const speedPercent = 100 / state.offensiveState.speed * 100;
+        let damageMax = (((10 + weapon.def.mass!) / 5) + 1) * 
+            (speedPercent / 100) *
+            Math.max(state.offensiveState.momentum.current, 1);
+        damageMax = Math.min(100, damageMax);
+
+        let damage = randomInt(0, damageMax);
+        damage = calculateResistDamage(botState, damage, DamageType.Impact);
+
+        if (damage > 0) {
+            applyDamage(state, botState, damage, false, false,
+                false, weapon.disruption, weapon.spectrum,
+                weapon.overflow, DamageType.Impact);
+        }        
+
+        return;
+    }
 
     for (let i = 0; i < weapon.numProjectiles; i++) {
         // Check if the attack was a sneak attack or was a hit.
@@ -1002,7 +1027,6 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
                 momentumMultiplier = (momentumMultiplier / 100) + 1;
 
                 damage = Math.trunc(momentumMultiplier * damage);
-
             }
 
             // Apply double damage sneak attack bonus

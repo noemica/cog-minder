@@ -118,6 +118,7 @@ export type OffensiveState = {
     },
     numTreads: number,
     overloadBonus: number,
+    ramming: boolean,
     recoil: number,
     recoilReduction: number,
     siegeBonus: {

@@ -17,6 +17,7 @@ import {
 } from "./commonJquery";
 import {
     DamageType,
+    ItemCategory,
     ItemSlot,
     ItemType,
     JsonItem,
@@ -348,15 +349,24 @@ jq(function ($) {
             }
         });
 
+        if (melee) {
+            weapons.push("Ram");
+        }
+
         // Sort and create weapon option HTML elements
         weapons.sort(gallerySort);
         const weaponOptions = weapons.map(w => `<option>${w}</option>`).join();
 
-        // Create elements elements
+        // Create weapon elements
         const parent = $('<div class="input-group mt-1"></div>');
         const selectLabel = $('<span class="input-group-text" data-toggle="tooltip" title="Name of an equipped weapon to fire">Weapon</span>');
         const select = $(`<select class="selectpicker" data-live-search="true">${weaponOptions}</select>`);
         const helpButton = $('<button class="btn weapon-help-btn" data-html=true data-toggle="popover">?</button>');
+        const massLabel = $(`
+        <div class="input-group-prepend ml-2" data-toggle="tooltip" title="The mass of cogmind. Ram damage is a random amount from 0 to (((10 + [mass]) / 5) + 1) * ([speed%] / 100) * [momentum].">
+            <span class="input-group-text">Mass</span>
+        </div>`);
+        const massInput = $('<input class="form-control" placeholder="0"></input>');
         const overloadContainer = $('<div class="btn-group btn-group-toggle ml-2" data-toggle="buttons"></div>');
         const overloadLabelContainer = $('<div class="input-group-prepend" data-toggle="tooltip" title="Whether to fire the weapon as overloaded"></div>');
         const overloadLabel = $('<span class="input-group-text">Overload</span>');
@@ -366,7 +376,7 @@ jq(function ($) {
         <div class="input-group-prepend ml-2" data-toggle="tooltip" title="How many weapons of this type to have equipped.">
             <span class="input-group-text">Number</span>
         </div>`);
-        const number = $('<input class="form-control" placeholder="1"></input>');
+        const numberInput = $('<input class="form-control" placeholder="1"></input>');
         const deleteButton = $('<button class="btn ml-2" data-toggle="tooltip" title="Removes the weapon.">X</button>');
 
         // Add elements to DOM
@@ -379,8 +389,10 @@ jq(function ($) {
         overloadLabelContainer.append(overloadLabel);
         overloadContainer.append(noLabel);
         overloadContainer.append(yesLabel);
+        parent.append(massLabel);
+        parent.append(massInput);
         parent.append(numberLabel);
-        parent.append(number);
+        parent.append(numberInput);
         parent.append(deleteButton);
 
         resetButtonGroup(overloadContainer);
@@ -417,6 +429,21 @@ jq(function ($) {
                 // Otherwise show the overload option
                 overloadContainer.removeClass("not-visible");
             }
+
+            if (weaponName === "Ram") {
+                // If ramming then show mass and hide weapon number
+                massLabel.removeClass("not-visible");
+                massInput.removeClass("not-visible");
+                numberLabel.addClass("not-visible");
+                numberInput.addClass("not-visible");
+            }
+            else {
+                // Otherwise do the reverse
+                massLabel.addClass("not-visible");
+                massInput.addClass("not-visible");
+                numberLabel.removeClass("not-visible");
+                numberInput.removeClass("not-visible");
+            }
         };
 
         // Set initial weapon info
@@ -437,6 +464,7 @@ jq(function ($) {
         (deleteButton as any).tooltip();
         (numberLabel as any).tooltip();
         (selectLabel as any).tooltip();
+        (massLabel as any).tooltip();
         (overloadLabelContainer as any).tooltip();
 
         // Minor hack, the btn-light class is auto-added to dropdowns with search 
@@ -829,6 +857,27 @@ jq(function ($) {
                     userWeapons.push({ def: weapon, overloaded: overloaded });
                 }
             }
+            else if (name === "Ram") {
+                const weapon: WeaponItem = {
+                    categories: [],
+                    category: ItemCategory.None,
+                    hackable: false,
+                    index: 0,
+                    integrity: 0,
+                    name: "Ram",
+                    noPrefixName: "Ram",
+                    projectileCount: 1,
+                    range: 2,
+                    rating: 0,
+                    ratingString: "",
+                    size: 0,
+                    slot: ItemSlot.NA,
+                    type: ItemType.ImpactWeapon,
+                    mass: parseIntOrDefault($(s).parent().nextAll("input").val(), 0),
+                };
+                
+                userWeapons.push({ def: weapon, overloaded: false });
+            }
         });
 
         if (!(botName in botData)) {
@@ -886,6 +935,7 @@ jq(function ($) {
         };
 
         // Weapons and other offensive state
+        let ramming = false;
         const melee = isMelee();
         const numTreads = parseIntOrDefault($("#treadsInput").val(), 0);
 
@@ -1017,6 +1067,10 @@ jq(function ($) {
             const spectrum = def.spectrum === undefined ? 0 : spectrumMap[def.spectrum];
             const explosionSpectrum = def.explosionSpectrum === undefined ? 0 : spectrumMap[def.explosionSpectrum];
 
+            if (def.name === "Ram") {
+                ramming = true;
+            }
+
             // All launchers are missiles except for special cases
             const isMissile = def.type === "Launcher"
                 && def.name != "Sigix Terminator"
@@ -1122,6 +1176,7 @@ jq(function ($) {
             },
             numTreads: numTreads,
             overloadBonus: overloadBonus,
+            ramming: ramming,
             recoil: allRecoil,
             recoilReduction: recoilReduction,
             siegeBonus: siegeBonus,
