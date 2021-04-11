@@ -279,7 +279,7 @@ jq(function ($) {
         tableBody.empty();
 
         const hackBonus = parseIntOrDefault($("#offensiveBonus").val(), 0);
-        
+
         const numBotnets = parseIntOrDefault($("#botnets").val(), 0);
         let botnetBonus = 0;
         if (numBotnets === 1) {
@@ -354,7 +354,7 @@ jq(function ($) {
                         indirect ? Math.floor(hack.baseChance / 4) - (direct ? 45 : 0) : null,
                     ];
                 }
-                
+
                 const hackCells = hackValues.map(percentage => {
                     if (percentage === null) {
                         return null;
@@ -368,68 +368,68 @@ jq(function ($) {
 
                     return percentage + hackModifier;
                 }).map(percentage => percentage === null ? "<td />" : `<td>${percentage}%</td>`)
-            .join("");
+                    .join("");
 
-        const row = `<tr><td>${hack.name}</td>${hackCells}</tr>`;
+                const row = `<tr><td>${hack.name}</td>${hackCells}</tr>`;
 
-        return row;
-    }).join("");
+                return row;
+            }).join("");
 
-// Hide machines with all results filtered out
-const visible = hackRows.length > 0;
-const machineRow = `<tr><td class="hack-category-row${visible ? "" : " not-visible"}">${machine.name}</td></tr>`;
+            // Hide machines with all results filtered out
+            const visible = hackRows.length > 0;
+            const machineRow = `<tr><td class="hack-category-row${visible ? "" : " not-visible"}">${machine.name}</td></tr>`;
 
-return machineRow + hackRows;
+            return machineRow + hackRows;
         }).join("");
 
-tableBody.append($(tableHtml));
+        tableBody.append($(tableHtml));
     }
 
-// Initialize the page state
-function init() {
-    // Load spoilers saved state
-    $("#spoilers").text(getSpoilersState());
+    // Initialize the page state
+    function init() {
+        // Load spoilers saved state
+        $("#spoilers").text(getSpoilersState());
 
-    // Set initial state
-    resetInput();
-
-    // Register handlers
-    $("#spoilersDropdown > button").on("click", (e) => {
-        const state = $(e.target).text();
-        $("#spoilers").text(state);
-        setSpoilersState(state);
-        ($("#spoilersDropdown > button") as any).tooltip("hide");
-        updateHackTables();
-    });
-    $("#reset").on("click", () => {
-        ($("#reset") as any).tooltip("hide");
+        // Set initial state
         resetInput();
-    });
-    $("#name").on("input", updateHackTables);
-    $("#dataCoreContainer > label > input").on("change", () => {
+
+        // Register handlers
+        $("#spoilersDropdown > button").on("click", (e) => {
+            const state = $(e.target).text();
+            $("#spoilers").text(state);
+            setSpoilersState(state);
+            ($("#spoilersDropdown > button") as any).tooltip("hide");
+            updateHackTables();
+        });
+        $("#reset").on("click", () => {
+            ($("#reset") as any).tooltip("hide");
+            resetInput();
+        });
+        $("#name").on("input", updateHackTables);
+        $("#dataCoreContainer > label > input").on("change", () => {
+            updateHackTables();
+        });
+        $("#offensiveBonus").on("input", updateHackTables);
+        $("#corruption").on("input", updateHackTables);
+        $("#operators").on("input", updateHackTables);
+        $("#botnets").on("input", updateHackTables);
+
+        // Enable tooltips
+        ($('[data-toggle="tooltip"]') as any).tooltip();
+    }
+
+    // Resets all filters
+    function resetInput() {
+        // Reset text inputs
+        $("#name").val("");
+        $("#offensiveBonus").val("");
+        $("#corruption").val("");
+        $("#operators").val("");
+        $("#botnets").val("");
+
+        // Reset button groups
+        resetButtonGroup($("#dataCoreContainer"));
+
         updateHackTables();
-    });
-    $("#offensiveBonus").on("input", updateHackTables);
-    $("#corruption").on("input", updateHackTables);
-    $("#operators").on("input", updateHackTables);
-    $("#botnets").on("input", updateHackTables);
-
-    // Enable tooltips
-    ($('[data-toggle="tooltip"]') as any).tooltip();
-}
-
-// Resets all filters
-function resetInput() {
-    // Reset text inputs
-    $("#name").val("");
-    $("#offensiveBonus").val("");
-    $("#corruption").val("");
-    $("#operators").val("");
-    $("#botnets").val("");
-
-    // Reset button groups
-    resetButtonGroup($("#dataCoreContainer"));
-
-    updateHackTables();
     }
 });
