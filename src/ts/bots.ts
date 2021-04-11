@@ -152,10 +152,6 @@ jq(function ($) {
 
     // Initialize the page state
     function init() {
-        popper.default.Defaults.onCreate = (data => {
-            console.log(data);
-        });
-
         initData(items as { [key: string]: JsonItem }, bots as any as { [key: string]: JsonBot });
         
         createBots();

@@ -4,6 +4,7 @@ import {
     createItemDataContent,
     getItem,
     itemData,
+    Spoiler,
     valueOrDefault
 } from "./common";
 
@@ -88,7 +89,7 @@ export function getSelectedButtonId(selector: JQuery<HTMLElement>) {
 }
 
 // Gets the stored spoilers state
-export function getSpoilersState() {
+export function getSpoilersState(): Spoiler {
     let value = valueOrDefault(window.localStorage.getItem("spoilers"), "None");
     if (typeof (value) != "string" || value != "None" && value != "Spoilers" && value != "Redacted") {
         value = "None";

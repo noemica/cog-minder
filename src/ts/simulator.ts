@@ -8,6 +8,7 @@ import {
     getItem,
     initData,
     itemData,
+    parseIntOrDefault,
     setSpoilersState,
 } from "./common";
 import {
@@ -705,16 +706,6 @@ jq(function ($) {
     // Checks if the combat type is melee or ranged
     function isMelee() {
         return $("#combatTypeMelee").hasClass("active");
-    }
-
-    // Attempts to parse an int from the string, otherwise uses the default value
-    function parseIntOrDefault(string, defaultVal) {
-        const value = parseInt(string);
-        if (isNaN(value)) {
-            return defaultVal;
-        }
-
-        return value;
     }
 
     // Resets a dropdown to the first item

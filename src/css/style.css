@@ -314,6 +314,34 @@ body {
     min-height: 3.0rem;
 }
 
+/* Hack table */
+.hack-table {
+    width: 100%;
+}
+
+.hack-table > * > tr {
+    text-align: center;
+}
+
+.hack-table, .hack-table > * > tr > * {
+    border: 1px solid #006200;
+    border-collapse: collapse;
+}
+
+.hack-header-row {
+    line-height: 2.5rem;
+}
+
+.hack-header-row, .hack-table > * > tr > :first-child:not(.hack-category-row) {
+    color: #9da9af;
+    background-color: #162416;
+}
+
+.hack-category-row {
+    line-height: 2.0rem;
+    border: none !important;
+}
+
 /* Description popover */
 .popover {
     background-color: black;

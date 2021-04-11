@@ -23,6 +23,13 @@ import {
 export let botData: { [key: string]: Bot };
 export let itemData: { [key: string]: Item };
 
+// An enum to represent spoiler level
+export enum Spoiler {
+    None = "None",
+    Spoilers = "Spoilers",
+    Redacted = "Redacted",
+};
+
 // Color schemes
 enum ColorScheme {
     LowGood = "lowGood",
@@ -1170,6 +1177,16 @@ function parseFloatOrUndefined(value: string | undefined): number | undefined {
     }
 
     return int;
+}
+
+// Attempts to parse an int from the string, otherwise uses the default value
+export function parseIntOrDefault(string, defaultVal) {
+    const value = parseInt(string);
+    if (isNaN(value)) {
+        return defaultVal;
+    }
+
+    return value;
 }
 
 // Parses the string into a number or null if invalid

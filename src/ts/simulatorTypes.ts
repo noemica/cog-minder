@@ -4,11 +4,11 @@ import { DamageType, Item, WeaponItem } from "./itemTypes";
 export type SimulatorPart = {
     armorAnalyzedCoverage: number;
     coverage: number
-    def: Item,
-    integrity: number,
-    protection: boolean,
-    selfDamageReduction: number,
-    resistances?: BotResistances,
+    def: Item;
+    integrity: number;
+    protection: boolean;
+    selfDamageReduction: number;
+    resistances?: BotResistances;
 };
 
 export type SpecialPart = {
@@ -44,26 +44,26 @@ export type DefensiveState = {
     antimissile: AntimissilePart[];
     avoid: AvoidPart[];
     corruptionIgnore: CorruptionAvoidPart[];
-    damageReduction: DamageReductionPart[],
-    rangedAvoid: RangedAvoidPart[],
+    damageReduction: DamageReductionPart[];
+    rangedAvoid: RangedAvoidPart[];
     shieldings: { [key: string]: ShieldingPart[] };
 };
 
 export type BotState = {
-    armorAnalyzedCoverage: number,
-    coreCoverage: number,
-    coreDisrupted: boolean,
-    coreIntegrity: number,
-    corruption: number,
-    def: Bot,
-    defensiveState: DefensiveState,
-    externalDamageReduction: string,
-    immunities: BotImmunity[],
-    initialCoreIntegrity: number,
-    parts: SimulatorPart[],
-    regen: number,
-    resistances: BotResistances,
-    totalCoverage: number,
+    armorAnalyzedCoverage: number;
+    coreCoverage: number;
+    coreDisrupted: boolean;
+    coreIntegrity: number;
+    corruption: number;
+    def: Bot;
+    defensiveState: DefensiveState;
+    externalDamageReduction: string;
+    immunities: BotImmunity[];
+    initialCoreIntegrity: number;
+    parts: SimulatorPart[];
+    regen: number;
+    resistances: BotResistances;
+    totalCoverage: number;
 };
 
 export type SimulatorWeapon = {
@@ -112,25 +112,25 @@ export type OffensiveState = {
     melee: boolean;
     meleeAnalysis: number[];
     momentum: {
-        bonus: number,
-        current: number,
-        initial: number,
-    },
-    numTreads: number,
-    overloadBonus: number,
-    ramming: boolean,
-    recoil: number,
-    recoilReduction: number,
+        bonus: number;
+        current: number;
+        initial: number;
+    };
+    numTreads: number;
+    overloadBonus: number;
+    ramming: boolean;
+    recoil: number;
+    recoilReduction: number;
     siegeBonus: {
-        bonus: number,
-        tus: number
-    },
-    sneakAttack: boolean,
-    sneakAttackStrategy: SneakAttackStrategy,
-    speed: number,
-    targetingComputerBonus: number,
-    volleyTime: number,
-    volleyTimeModifier: number,
+        bonus: number;
+        tus: number;
+    };
+    sneakAttack: boolean;
+    sneakAttackStrategy: SneakAttackStrategy;
+    speed: number;
+    targetingComputerBonus: number;
+    volleyTime: number;
+    volleyTimeModifier: number;
 };
 
 export type SimulatorState = {
