@@ -195,7 +195,7 @@ def get_slot(row):
 index_lookup = {}
 all_values = {}
 
-with open('gallery_export.csv') as f:
+with open('gallery_export_b11.csv') as f:
     # Escape quotes to properly parse
     string = f.read() \
         .replace('"Lootmaker"', '\\"Lootmaker\\"') \
@@ -236,5 +236,5 @@ for row in reader:
 
         all_values[values['Name']] = values
 
-with open('../src/json/items.json', 'w') as f:
+with open('../src/json/items_b11.json', 'w') as f:
     json.dump(all_values, f)

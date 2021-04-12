@@ -937,7 +937,7 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
     if (offensiveState.ramming) {
         // Apply ramming damage specially
         const speedPercent = 100 / state.offensiveState.speed * 100;
-        let damageMax = (((10 + weapon.def.mass!) / 5) + 1) * 
+        let damageMax = (((10 + weapon.def.mass!) / 5) + 1) *
             (speedPercent / 100) *
             Math.max(state.offensiveState.momentum.current, 1);
         damageMax = Math.min(100, damageMax);
@@ -949,7 +949,7 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
             applyDamage(state, botState, damage, false, false,
                 false, weapon.disruption, weapon.spectrum,
                 weapon.overflow, DamageType.Impact);
-        }        
+        }
 
         return;
     }

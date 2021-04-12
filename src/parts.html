@@ -9,6 +9,9 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"
+        integrity="sha384-2SvkxRa9G/GlZMyFexHk+WN9p0n2T+r38dvBmw5l2/J3gjUcxs9R1GwKs0seeSh3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
     <script src="ts/parts.ts"></script>
@@ -56,17 +59,37 @@
     </div>
 
     <div class="container-xl">
-        <!-- Name/effect filters and reset button -->
+        <!-- Name/effect/mode filters and reset button -->
         <div class="input-group">
+            <!-- Name -->
             <div class="input-group-prepend" data-toggle="tooltip" title="The name of an part to search for">
                 <span class="input-group-text">Name</span>
             </div>
             <input id="name" type="text" class="form-control" placeholder="Any">
+
+            <!-- Effect -->
             <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="Text to search for in the description/effect of a part">
+                title="The text to search for in the description/effect of a part.">
                 <span class="input-group-text">Effect</span>
             </div>
             <input id="effect" type="text" class="form-control" placeholder="Any">
+
+            <!-- Mode -->
+            <div id="modeContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
+                <div class="input-group-prepend" data-toggle="tooltip" title="Parts viewing mode.">
+                    <span class="input-group-text">Mode</span>
+                </div>
+                <label id="modeViewer" class="btn" data-toggle="tooltip"
+                    title="Simple part name viewer with clickable parts to show expanded part detail.">
+                    <input type="radio" name="options"> Simple
+                </label>
+                <label id="modeComparison" class="btn" data-toggle="tooltip"
+                    title="Side-by-side part comparison that shows details of both selected parts.">
+                    <input type="radio" name="options"> Comparison
+                </label>
+            </div>
+
+            <!-- Reset -->
             <button id="reset" type="button" class="btn ml-3" data-toggle="tooltip"
                 title="Resets all filters to their default (unfiltered) state">Reset</button>
         </div>
@@ -261,25 +284,29 @@
                 title="Additional part category like location/faction">
                 <span class="input-group-text">Category</span>
             </div>
-            <label id="categoryAny" class="btn">
+            <label id="categoryAny" class="btn" data-toggle="tooltip" title="All parts.">
                 <input type="radio" name="options"> Any
             </label>
-            <label id="category0b10" class="btn">
+            <label id="category0b10" class="btn" data-toggle="tooltip"
+                title="Parts that can be found on any standard complex floors or complex-controlled branches.">
                 <input type="radio" name="options"> 0b10
             </label>
-            <label id="categoryAlien" class="btn">
+            <label id="categoryAlien" class="btn" data-toggle="tooltip" title="All sigix-produced alien artifacts.">
                 <input type="radio" name="options"> Alien
             </label>
-            <label id="categoryDerelict" class="btn">
+            <label id="categoryDerelict" class="btn" data-toggle="tooltip"
+                title="Derelict-manufactured parts, either found in derelict-controlled areas or on unique derelict parts.">
                 <input type="radio" name="options"> Derelict
             </label>
-            <label id="categoryExile" class="btn">
+            <label id="categoryExile" class="btn" data-toggle="tooltip"
+                title="Exile vault items and unique Exile bot parts.">
                 <input type="radio" name="options"> Exile
             </label>
-            <label id="categoryGolem" class="btn">
+            <label id="categoryGolem" class="btn" data-toggle="tooltip" title="Parts created by the GOLEM Unit.">
                 <input type="radio" name="options"> Golem
             </label>
-            <label id="categoryTesting" class="btn">
+            <label id="categoryTesting" class="btn" data-toggle="tooltip"
+                title="Parts that can be found in special Testing shells.">
                 <input type="radio" name="options"> Testing
             </label>
         </div>
@@ -407,7 +434,34 @@
             </div>
         </div>
 
-        <!-- Item results -->
+        <!-- Comparison picker -->
+        <div id="comparisonContainer" class="comparison-container mt-3">
+            <div class="row row-cols-auto row-cols-3">
+                <div class="col-5">
+                    <!-- Left part select -->
+                    <div id="leftPartSelectContainer">
+                        <select id="leftPartSelect" class="selectpicker" data-live-search="true"></select>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-5">
+                    <!-- Right part select -->
+                    <div id="rightPartSelectContainer">
+                        <select id="rightPartSelect" class="selectpicker" data-live-search="true" data-dropdown-align-right="true"></select>
+                    </div>
+                </div>
+
+                <div id="leftPartInfoContainer" class="col-5 mt-2 comparison-infobox">
+
+                </div>
+                <div id="comparisonInfoContainer" class="col-2 mt-2 comparison-info"></div>
+                <div id="rightPartInfoContainer" class="col-5 mt-2 comparison-infobox">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Simple results -->
         <ol id="itemsGrid" class="list-group items-grid my-4">
         </ol>
     </div>

@@ -215,6 +215,14 @@ body {
     width: 31ch !important;
 }
 
+.part-dropdown {
+    width: 35ch !important;
+}
+
+.part-dropdown-menu {
+    width: 43ch !important;
+}
+
 .dropdown-menu {
     background-color: black;
     border: 1px solid #00aa00;
@@ -383,6 +391,8 @@ body {
     color: #00b200;
     font-family: smallcaps-mono;
     font-size: .80rem;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .popover-close-btn {
@@ -443,4 +453,61 @@ body {
     color: black;
     background-color: #00b200;
     border: 2px solid #00b200;
+}
+
+/* Comparison selector */
+.comparison-container {
+    align-items: center;
+    display: flex;
+}
+
+.comparison-container > * {
+    justify-content: center;
+    text-align: center;
+}
+
+.comparison-infobox {
+    border: 2px solid #008c00;
+    text-align: left;
+    max-width: 42ch;
+}
+
+.comparison-infobox > :first-child {
+    margin-top: .5rem;
+}
+
+.comparison-infobox > :last-child{
+    margin-bottom: .5rem;
+}
+
+.comparison-info {
+    border: solid 2px transparent;
+    margin: 0;
+}
+
+.comparison-info > :first-child {
+    margin-top: .5rem;
+}
+
+.comparison-positive, .comparison-neutral, .comparison-negative {
+    font-family: smallcaps-mono;
+    font-size: .80rem;
+    margin: 0;
+    padding-right: 0.5ch;
+    text-align: right;
+}
+
+.comparison-positive {
+    color: #00d900;
+    background-color: #002000;
+}
+
+.comparison-neutral {
+    color: #bfbfbf;
+    background-color: black;
+}
+
+.comparison-negative {
+    color: #d90000;
+    background-color: #200000;
 }

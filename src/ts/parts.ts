@@ -7,6 +7,7 @@ import {
     initData,
     itemData,
     nameToId,
+    parseIntOrDefault,
     setSpoilersState,
 } from "./common";
 import {
@@ -15,14 +16,22 @@ import {
     resetButtonGroup
 } from "./commonJquery";
 import {
-    Item, JsonItem,
+    DamageType,
+    Item, ItemSlot, ItemType, ItemWithUpkeep, JsonItem, PowerItem, PropulsionItem, SiegeMode, Spectrum, WeaponItem,
 } from "./itemTypes";
 
 import * as jQuery from "jquery";
 import "bootstrap";
+import "bootstrap-select";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
+    // Enum representing the selected viewing mode
+    enum ViewMode {
+        Simple = "Simple",
+        Comparison = "Comparison",
+    };
+
     // Category ID -> 
     const categoryIdMap = {
         "category0b10": 0,
@@ -115,8 +124,440 @@ jq(function ($) {
 
     $((document) => init());
 
+    // Creates comparison HTML data for two items
+    function createComparisonDataContent(leftItem: Item, rightItem: Item): string {
+        const emptyLine = `<pre class="comparison-neutral">
+    
+</pre>`;
+
+        function compareNeutralStat(leftValue: number, rightValue: number) {
+            if (leftValue === rightValue) {
+                return emptyLine;
+            }
+            else if (leftValue < rightValue) {
+                return `<pre class="comparison-neutral">+${rightValue - leftValue}</pre>`;
+            }
+            else {
+                return `<pre class="comparison-neutral">-${leftValue - rightValue}</pre>`;
+            }
+        }
+
+        function compareHighBadStat(leftValue: number, rightValue: number) {
+            if (leftValue === rightValue) {
+                return emptyLine;
+            }
+            else if (leftValue < rightValue) {
+                return `<pre class="comparison-negative">+${rightValue - leftValue}</pre>`;
+            }
+            else {
+                return `<pre class="comparison-positive">-${leftValue - rightValue}</pre>`;
+            }
+        }
+
+        function compareHighGoodStat(leftValue: number, rightValue: number) {
+            if (leftValue === rightValue) {
+                return emptyLine;
+            }
+            else if (leftValue < rightValue) {
+                return `<pre class="comparison-positive">+${rightValue - leftValue}</pre>`;
+            }
+            else {
+                return `<pre class="comparison-negative">-${leftValue - rightValue}</pre>`;
+            }
+        }
+
+        function compareRating(leftItem: Item, rightItem: Item) {
+            const leftRating = Math.ceil(leftItem.rating);
+            const rightRating = Math.ceil(rightItem.rating);
+            if (leftRating === rightRating) {
+                return emptyLine;
+            }
+            else if (leftRating < rightRating) {
+                let differenceString: String;
+                if (leftItem.ratingString.includes("*") || rightItem.ratingString.includes("*")) {
+                    differenceString = "* +" + (rightRating - leftRating);
+                }
+                else {
+                    differenceString = "+" + (rightRating - leftRating);
+                }
+
+                return `<pre class="comparison-positive">${differenceString}</pre>`;
+            }
+            else {
+                let differenceString: String;
+                if (leftItem.ratingString.includes("*") || rightItem.ratingString.includes("*")) {
+                    differenceString = "* -" + (leftRating - rightRating);
+                }
+                else {
+                    differenceString = "-" + (leftRating - rightRating);
+                }
+
+                return `<pre class="comparison-negative">${differenceString}</pre>`;
+            }
+        }
+
+        // Do Overview comparison
+        let html = `
+        ${emptyLine}
+            <pre class="popover-summary">Comparison</pre>
+            ${emptyLine}
+            ${emptyLine}
+            ${emptyLine}
+            ${compareHighBadStat(leftItem.mass ?? 0, rightItem.mass ?? 0)}
+            ${compareRating(leftItem, rightItem)}
+            ${compareHighGoodStat(leftItem.integrity, rightItem.integrity)}
+            ${compareHighGoodStat(leftItem.coverage ?? 0, rightItem.coverage ?? 0)}
+            ${emptyLine}
+            ${emptyLine}
+        `;
+
+        // Add upkeep if applicable
+        if ((leftItem.slot === ItemSlot.Power || leftItem.slot === ItemSlot.Propulsion || leftItem.slot === ItemSlot.Utility) &&
+            (rightItem.slot === ItemSlot.Power || rightItem.slot === ItemSlot.Propulsion || rightItem.slot === ItemSlot.Utility)) {
+            const leftUpkeep = leftItem as ItemWithUpkeep;
+            const rightUpkeep = rightItem as ItemWithUpkeep;
+
+            html += `
+                ${emptyLine}
+                ${compareHighBadStat(leftUpkeep.energyUpkeep ?? 0, rightUpkeep.energyUpkeep ?? 0)}
+                ${compareHighBadStat(leftUpkeep.matterUpkeep ?? 0, rightUpkeep.matterUpkeep ?? 0)}
+                ${compareHighBadStat(leftUpkeep.heatGeneration ?? 0, rightUpkeep.heatGeneration ?? 0)}
+                ${emptyLine}
+            `;
+        }
+
+        // Add power generation stats if applicable
+        if (leftItem.slot === ItemSlot.Power && rightItem.slot === ItemSlot.Power) {
+            const leftPower = leftItem as PowerItem;
+            const rightPower = rightItem as PowerItem;
+
+            html += `
+                ${emptyLine}
+                ${compareHighGoodStat(leftPower.energyGeneration ?? 0, rightPower.energyGeneration ?? 0)}
+                ${compareHighGoodStat(leftPower.energyStorage ?? 0, rightPower.energyStorage ?? 0)}
+                ${compareHighGoodStat(leftPower.powerStability ?? 100, rightPower.powerStability ?? 100)}
+            `;
+        }
+
+        // Add propulsion stats if applicable
+        if (leftItem.slot === ItemSlot.Propulsion && rightItem.slot === ItemSlot.Propulsion) {
+            const leftPropulsion = leftItem as PropulsionItem;
+            const rightPropulsion = rightItem as PropulsionItem;
+
+            function getDragOrModHtml(leftPropulsion: PropulsionItem, rightPropulsion: PropulsionItem) {
+                if (leftPropulsion.modPerExtra !== undefined && rightPropulsion.modPerExtra !== undefined) {
+                    return compareHighBadStat(leftPropulsion.modPerExtra, rightPropulsion.modPerExtra);
+                }
+                else if (leftPropulsion.drag !== undefined && rightPropulsion.drag !== undefined) {
+                    return compareHighBadStat(parseInt(leftPropulsion.drag), parseInt(rightPropulsion.drag));
+                }
+                else {
+                    return emptyLine;
+                }
+            }
+
+            function getBurnoutOrSiegeHtml(leftPropulsion: PropulsionItem, rightPropulsion: PropulsionItem) {
+                if (leftPropulsion.burnout !== undefined || rightPropulsion.burnout !== undefined) {
+                    return compareHighBadStat(parseIntOrDefault(leftPropulsion.burnout, 0), parseIntOrDefault(rightPropulsion.burnout, 0));
+                }
+                else if (leftPropulsion.type === ItemType.Treads && rightPropulsion.type === ItemType.Treads) {
+                    if (leftPropulsion.siege === rightPropulsion.siege) {
+                        return emptyLine;
+                    }
+                    else if (leftPropulsion.siege === SiegeMode.High) {
+                        return '<pre class="comparison-negative">High</pre>';
+                    }
+                    else if (leftPropulsion.siege === SiegeMode.Standard && rightPropulsion.siege === undefined) {
+                        return '<pre class="comparison-negative">Standard</pre>';
+                    }
+                    else if (leftPropulsion.siege === undefined) {
+                        return '<pre class="comparison-positive">N/A</pre>';
+                    }
+                    else {
+                        return '<pre class="comparison-positive">Standard</pre>';
+                    }
+                }
+
+                return emptyLine;
+            }
+
+            html += `
+                ${emptyLine}
+                ${compareHighBadStat(leftPropulsion.timePerMove, rightPropulsion.timePerMove)}
+                ${getDragOrModHtml(leftPropulsion, rightPropulsion)}
+                ${compareHighBadStat(leftPropulsion.energyPerMove ?? 0, rightPropulsion.energyPerMove ?? 0)}
+                ${compareHighBadStat(leftPropulsion.heatPerMove ?? 0, rightPropulsion.heatPerMove ?? 0)}
+                ${compareHighGoodStat(leftPropulsion.support, rightPropulsion.support)}
+                ${compareHighBadStat(leftPropulsion.penalty, rightPropulsion.penalty)}
+                ${getBurnoutOrSiegeHtml(leftPropulsion, rightPropulsion)}
+            `;
+        }
+
+        function getDamageHtml(leftWeapon: WeaponItem, rightWeapon: WeaponItem, explosive: boolean) {
+            function getDamage(damageString: string | undefined) {
+                let damageMin = 0;
+                let damageMax = 0;
+
+                if (damageString?.includes("-")) {
+                    const split = damageString.split("-");
+                    damageMin = parseInt(split[0]);
+                    damageMax = parseInt(split[1]);
+                }
+                else if (damageString !== undefined) {
+                    damageMin = parseInt(damageString);
+                    damageMax = damageMin;
+                }
+
+                return { average: (damageMax + damageMax) / 2, min: damageMin, max: damageMax };
+            }
+
+            let leftDamageString: string;
+            let rightDamageString: string;
+            if (explosive) {
+                leftDamageString = leftWeapon.explosionDamage!;
+                rightDamageString = rightWeapon.explosionDamage!;
+            }
+            else {
+                leftDamageString = leftWeapon.damage!;
+                rightDamageString = rightWeapon.damage!;
+            }
+            const leftDamage = getDamage(leftDamageString);
+            const rightDamage = getDamage(rightDamageString);
+
+            if (leftDamage.average === rightDamage.average) {
+                if (leftDamage.min === rightDamage.min) {
+                    return emptyLine;
+                }
+                else {
+                    return `<pre class="comparison-neutral">${leftDamage.min}-${leftDamage.min}</pre>`;
+                }
+            }
+
+            function getPlusOrMinusString(number: number) {
+                if (number > 0) {
+                    return "+" + number;
+                }
+                else {
+                    return number.toString();
+                }
+            }
+
+            const minDifference = rightDamage.min - leftDamage.min;
+            const maxDifference = rightDamage.max - leftDamage.max;
+            if (leftDamage.average < rightDamage.average) {
+                return `<pre class="comparison-positive">${getPlusOrMinusString(minDifference)}/${getPlusOrMinusString(maxDifference)}</pre>`;
+            }
+            else {
+                return `<pre class="comparison-negative">${getPlusOrMinusString(minDifference)}/${getPlusOrMinusString(maxDifference)}</pre>`;
+            }
+        }
+
+        function getDamageTypeHtml(leftWeapon: WeaponItem, rightWeapon: WeaponItem, explosive: boolean) {
+            if (explosive) {
+                if (leftWeapon.explosionType === rightWeapon.explosionType || leftWeapon.explosionType === undefined) {
+                    return emptyLine;
+                }
+            }
+            else {
+                if (leftWeapon.damageType === rightWeapon.damageType || leftWeapon.damageType === undefined) {
+                    return emptyLine;
+                }
+            }
+
+            function getTypeString(damageType: DamageType) {
+                switch (damageType) {
+                    case DamageType.Electromagnetic:
+                        return "EM";
+                    case DamageType.Entropic:
+                        return "EN";
+                    case DamageType.Explosive:
+                        return "EX";
+                    case DamageType.Impact:
+                        return "I";
+                    case DamageType.Kinetic:
+                        return "KI";
+                    case DamageType.Phasic:
+                        return "PH";
+                    case DamageType.Piercing:
+                        return "P";
+                    case DamageType.Slashing:
+                        return "S";
+                    case DamageType.Thermal:
+                        return "TH";
+                }
+
+                return "";
+            }
+
+            return `<pre class="comparison-neutral">(${getTypeString(explosive ? leftWeapon.explosionType! : leftWeapon.damageType!)})</pre>`;
+        }
+
+        // Add weapon stats if applicable
+        if (leftItem.slot === ItemSlot.Weapon && rightItem.slot === ItemSlot.Weapon) {
+            const leftWeapon = leftItem as WeaponItem;
+            const rightWeapon = rightItem as WeaponItem;
+
+            function isMelee(item: WeaponItem) {
+                return item.type === ItemType.SlashingWeapon
+                    || item.type === ItemType.ImpactWeapon
+                    || item.type === ItemType.PiercingWeapon
+                    || item.type === ItemType.SpecialMeleeWeapon;
+            }
+
+            function isRangedNonLauncher(item: WeaponItem) {
+                return item.type === ItemType.BallisticGun
+                    || item.type === ItemType.EnergyGun
+                    || item.type === ItemType.BallisticCannon
+                    || item.type === ItemType.EnergyCannon
+                    || item.type === ItemType.SpecialWeapon;
+            }
+
+            function isRanged(item: WeaponItem) {
+                return isRangedNonLauncher(item) || item.type === ItemType.Launcher;
+            }
+
+            // Add melee stats if applicable
+            if (isMelee(leftWeapon) && isMelee(rightWeapon)) {
+                html += `
+                ${emptyLine}
+                    ${compareHighBadStat(leftWeapon.shotEnergy ?? 0, rightWeapon.shotEnergy ?? 0)}
+                    ${compareHighBadStat(leftWeapon.shotMatter ?? 0, rightWeapon.shotMatter ?? 0)}
+                    ${compareHighBadStat(leftWeapon.shotHeat ?? 0, rightWeapon.shotHeat ?? 0)}
+                    ${compareHighGoodStat(leftWeapon.targeting ?? 0, rightWeapon.targeting ?? 0)}
+                    ${compareHighBadStat(leftWeapon.delay ?? 0, rightWeapon.delay ?? 0)}
+                    ${emptyLine}
+                `;
+
+                // Add melee damage if applicable
+                if (leftWeapon.damage !== undefined && rightWeapon.damage !== undefined) {
+                    html += `
+                        ${emptyLine}
+                        ${getDamageHtml(leftWeapon, rightWeapon, false)}
+                        ${getDamageTypeHtml(leftWeapon, rightWeapon, false)}
+                        ${compareHighGoodStat(leftWeapon.critical ?? 0, rightWeapon.critical ?? 0)}
+                        ${compareHighGoodStat(leftWeapon.disruption ?? 0, rightWeapon.disruption ?? 0)}
+                        ${compareHighGoodStat(leftWeapon.salvage ?? 0, rightWeapon.salvage ?? 0)}
+                        ${emptyLine}
+                    `;
+                }
+            }
+            // Add ranged weapons if applicable
+            else if (isRanged(leftWeapon) && isRanged(rightWeapon)) {
+                function getArcOrWaypointsHtml(leftWeapon: WeaponItem, rightWeapon: WeaponItem) {
+                    if (rightWeapon.waypoints !== undefined) {
+                        return compareHighGoodStat(parseIntOrDefault(leftWeapon.waypoints, 0), parseInt(rightWeapon.waypoints));
+                    }
+                    else {
+                        return compareHighBadStat(leftWeapon.arc ?? 0, rightWeapon.arc ?? 0);
+                    }
+                }
+
+                html += `
+                    ${emptyLine}
+                    ${compareHighGoodStat(leftWeapon.range ?? 0, rightWeapon.range ?? 0)}
+                    ${compareHighBadStat(leftWeapon.shotEnergy ?? 0, rightWeapon.shotEnergy ?? 0)}
+                    ${compareHighBadStat(leftWeapon.shotMatter ?? 0, rightWeapon.shotMatter ?? 0)}
+                    ${compareHighBadStat(leftWeapon.shotHeat ?? 0, rightWeapon.shotHeat ?? 0)}
+                    ${compareHighBadStat(leftWeapon.recoil ?? 0, rightWeapon.recoil ?? 0)}
+                    ${compareHighGoodStat(leftWeapon.targeting ?? 0, rightWeapon.targeting ?? 0)}
+                    ${compareHighBadStat(leftWeapon.delay ?? 0, rightWeapon.delay ?? 0)}
+                    ${compareHighGoodStat(leftWeapon.overloadStability ?? 100, rightWeapon.overloadStability ?? 100)}
+                    ${getArcOrWaypointsHtml(leftWeapon, rightWeapon)}
+                    ${emptyLine}
+                `;
+
+                function getPenetrationHtml(leftWeapon: WeaponItem, rightWeapon: WeaponItem) {
+                    if (leftWeapon.penetration === "Unlimited") {
+                        if (rightWeapon.penetration === "Unlimited") {
+                            return emptyLine;
+                        }
+
+                        return `<pre class="comparison-negative">-Inf.</pre>`;
+                    }
+                    else if (rightWeapon.penetration === "Unlimited") {
+                        return `<pre class="comparison-positive">+Inf.</pre>`;
+                    }
+
+                    function getPenetrationValue(penetrationString: string | undefined) {
+                        if (penetrationString === undefined) {
+                            return 0;
+                        }
+                        else {
+                            return penetrationString.split("/").length;
+                        }
+                    }
+
+                    const leftPenetration = getPenetrationValue(leftWeapon.penetration);
+                    const rightPenetration = getPenetrationValue(rightWeapon.penetration);
+                    return compareHighGoodStat(leftPenetration, rightPenetration)
+                }
+
+                function getSpectrumHtml(leftWeapon: WeaponItem, rightWeapon: WeaponItem, explosive: boolean) {
+                    function getSpectrumValue(spectrum: Spectrum | undefined) {
+                        if (spectrum === Spectrum.Fine) {
+                            return 100;
+                        }
+                        else if (spectrum === Spectrum.Narrow) {
+                            return 50;
+                        }
+                        else if (spectrum === Spectrum.Intermediate) {
+                            return 30;
+                        }
+                        else if (spectrum === Spectrum.Wide) {
+                            return 10;
+                        }
+                        else {
+                            return 0;
+                        }
+                    }
+
+                    const leftSpectrum = explosive ?
+                        getSpectrumValue(leftWeapon.explosionSpectrum) :
+                        getSpectrumValue(leftWeapon.spectrum);
+                    const rightSpectrum = explosive ?
+                        getSpectrumValue(rightWeapon.explosionSpectrum) :
+                        getSpectrumValue(rightWeapon.spectrum);
+
+                    return compareNeutralStat(leftSpectrum, rightSpectrum);
+                }
+
+                // Add non-launcher damage if applicable
+                if (isRangedNonLauncher(leftWeapon) && isRangedNonLauncher(rightWeapon)
+                    && leftWeapon.damage !== undefined && rightWeapon.damage !== undefined) {
+                    html += `
+                        ${compareHighGoodStat(leftWeapon.projectileCount, rightWeapon.projectileCount)}
+                        ${getDamageHtml(leftWeapon, rightWeapon, false)}
+                        ${getDamageTypeHtml(leftWeapon, rightWeapon, false)}
+                        ${compareHighGoodStat(leftWeapon.critical ?? 0, rightWeapon.critical ?? 0)}
+                        ${getPenetrationHtml(leftWeapon, rightWeapon)}
+                        ${getSpectrumHtml(leftWeapon, rightWeapon, false)}
+                        ${compareHighGoodStat(leftWeapon.disruption ?? 0, rightWeapon.disruption ?? 0)}
+                        ${compareHighGoodStat(leftWeapon.salvage ?? 0, rightWeapon.salvage ?? 0)}
+                        ${emptyLine}
+                    `;
+                }
+                // Add launcher damage if applicable
+                else if (leftWeapon.type === ItemType.Launcher && rightWeapon.type === ItemType.Launcher) {
+                    html += `
+                        ${compareHighGoodStat(leftWeapon.projectileCount, rightWeapon.projectileCount)}
+                        ${compareHighGoodStat(leftWeapon.explosionRadius ?? 0, rightWeapon.explosionRadius ?? 0)}
+                        ${getDamageHtml(leftWeapon, rightWeapon, true)}
+                        ${compareHighBadStat(parseIntOrDefault(leftWeapon.falloff, 0), parseIntOrDefault(rightWeapon.falloff, 0))}
+                        ${getDamageTypeHtml(leftWeapon, rightWeapon, true)}
+                        ${getSpectrumHtml(leftWeapon, rightWeapon, true)}
+                        ${compareHighGoodStat(leftWeapon.explosionDisruption ?? 0, rightWeapon.explosionDisruption ?? 0)}
+                        ${compareHighGoodStat(parseIntOrDefault(leftWeapon.explosionSalvage, 0), parseIntOrDefault(rightWeapon.explosionSalvage, 0))}                        ${emptyLine}
+                    `;
+                }
+            }
+        }
+
+        return html;
+    }
+
     // Creates buttons for all items
     function createItems() {
+        // Create grid items
         const itemNames = Object.keys(itemData);
         const itemsGrid = $("#itemsGrid");
         itemNames.forEach((itemName) => {
@@ -136,6 +577,22 @@ jq(function ($) {
             itemElements[itemName] = element;
             itemsGrid.append(element);
         });
+
+        // Create comparison selections
+        itemNames.sort(gallerySort);
+        const selects = [$("#leftPartSelect"), $("#rightPartSelect")];
+        selects.forEach(select => {
+            itemNames.forEach(itemName => {
+                select.append(`<option>${itemName}</option>`);
+            });
+
+            select.selectpicker("refresh");
+
+            // Minor hack, the btn-light class is auto-added to dropdowns with search 
+            // but it doesn't really fit with everything else
+            select.parent().children().removeClass("btn-light");
+        });
+
 
         // Enable popovers
         ($('#itemsGrid > [data-toggle="popover"]') as any).popover();
@@ -300,6 +757,17 @@ jq(function ($) {
         }
     }
 
+    // Gets the active view mode
+    function getViewMode(): ViewMode {
+        const modeId = getSelectedButtonId($("#modeContainer"));
+
+        if (modeId === "modeComparison") {
+            return ViewMode.Comparison;
+        }
+
+        return ViewMode.Simple;
+    }
+
     // Initialize the page state
     function init() {
         initData(items as { [key: string]: JsonItem }, undefined);
@@ -310,6 +778,7 @@ jq(function ($) {
         createItems();
         updateCategoryVisibility();
         resetFilters();
+        updateComparison();
 
         // Load spoilers saved state
         $("#spoilers").text(getSpoilersState());
@@ -325,6 +794,11 @@ jq(function ($) {
         });
         $("#name").on("input", updateItems);
         $("#effect").on("input", updateItems);
+        $("#modeContainer > label > input").on("change", e => {
+            // Tooltips on buttons need to be explicitly hidden on press
+            ($(e.target).parent() as any).tooltip("hide");
+            updateItems();
+        });
         $("#depth").on("input", updateItems);
         $("#rating").on("input", updateItems);
         $("#size").on("input", updateItems);
@@ -342,7 +816,11 @@ jq(function ($) {
         $("#propTypeContainer > label > input").on("change", updateItems);
         $("#utilTypeContainer > label > input").on("change", updateItems);
         $("#weaponTypeContainer > label > input").on("change", updateItems);
-        $("#categoryContainer > label > input").on("change", updateItems);
+        $("#categoryContainer > label > input").on("change", e => {
+            // Tooltips on buttons need to be explicitly hidden on press
+            ($(e.target).parent() as any).tooltip("hide");
+            updateItems();
+        });
         $("#sortingContainer > div > button").on("click", () => {
             // Hide popovers when clicking a sort button
             ($('[data-toggle="popover"]') as any).popover("hide");
@@ -374,20 +852,26 @@ jq(function ($) {
             $("#secondarySortDirection").text($(e.target).text());
             updateItems();
         });
+        $("#leftPartSelect").on("changed.bs.select", () => {
+            updateComparison();
+        });
+        $("#rightPartSelect").on("changed.bs.select", () => {
+            updateComparison();
+        });
 
         $("#beta11Checkbox").on("change", () => {
             const newItems = $("#beta11Checkbox").prop("checked") ? itemsB11 : items;
-            
+
             initData(newItems as { [key: string]: JsonItem }, undefined);
 
             ($('#itemsGrid > [data-toggle="popover"]') as any).popover("dispose");
             $("#itemsGrid").empty();
-    
+
             // Initialize page state
             createItems();
             updateCategoryVisibility();
             resetFilters();
-    
+
             ($("#beta11Checkbox").parent() as any).tooltip("hide");
         });
 
@@ -402,6 +886,16 @@ jq(function ($) {
                 ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
             }
         });
+
+        // These divs are created at runtime so have to do this at init
+        $("#leftPartSelectContainer > div").addClass("part-dropdown");
+        $("#leftPartSelectContainer > div > .dropdown-menu").addClass("part-dropdown-menu");
+        $("#rightPartSelectContainer > div").addClass("part-dropdown");
+        $("#rightPartSelectContainer > div > .dropdown-menu").addClass("part-dropdown-menu");
+
+        // Minor hack, the btn-light class is auto-added to dropdowns with search 
+        // but it doesn't really fit with everything else
+        $(".btn-light").removeClass("btn-light");
 
         // Enable tooltips
         ($('[data-toggle="tooltip"]') as any).tooltip();
@@ -418,6 +912,7 @@ jq(function ($) {
         $("#mass").val("");
 
         // Reset buttons
+        resetButtonGroup($("#modeContainer"));
         resetButtonGroup($("#schematicsContainer"));
         resetButtonGroup($("#slotsContainer"));
         resetButtonGroup($("#powerTypeContainer"));
@@ -593,6 +1088,26 @@ jq(function ($) {
         }
     }
 
+    // Updates the comparison stats
+    function updateComparison() {
+        const leftContainer = $("#leftPartInfoContainer");
+        const leftItemName = $("#leftPartSelect").selectpicker("val") as any as string;
+        const rightContainer = $("#rightPartInfoContainer");
+        const rightItemName = $("#rightPartSelect").selectpicker("val") as any as string;
+        const comparisonInfoContainer = $("#comparisonInfoContainer");
+
+        // Replace both part infoboxes and comparison text
+        leftContainer.empty();
+        comparisonInfoContainer.empty();
+        rightContainer.empty();
+
+        const leftItem = getItem(leftItemName);
+        const rightItem = getItem(rightItemName);
+        leftContainer.append(createItemDataContent(leftItem));
+        comparisonInfoContainer.append(createComparisonDataContent(leftItem, rightItem));
+        rightContainer.append(createItemDataContent(rightItem));
+    }
+
     // Clears all existing items and adds new ones based on the filters
     function updateItems() {
         // Hide any existing popovers
@@ -600,7 +1115,7 @@ jq(function ($) {
 
         // Get the names of all non-filtered items
         const itemFilter = getItemFilter();
-        let items: any[] = [];
+        let items: string[] = [];
         Object.keys(itemData).forEach(itemName => {
             const item = getItem(itemName);
 
@@ -612,24 +1127,60 @@ jq(function ($) {
         // Sort item names for display
         items = sortItemNames(items);
 
-        // Update visibility and order of all items
-        $("#itemsGrid > button").addClass("not-visible");
+        const viewMode = getViewMode();
 
-        let precedingElement = null;
+        if (viewMode === ViewMode.Simple) {
+            $("#sortingContainer").removeClass("not-visible");
+            $("#comparisonContainer").addClass("not-visible");
+            $("#itemsGrid").removeClass("not-visible");
 
-        items.forEach(itemName => {
-            const element = itemElements[itemName];
-            element.removeClass("not-visible");
+            // Update visibility and order of all items
+            $("#itemsGrid > button").addClass("not-visible");
 
-            if (precedingElement == null) {
-                $("#itemsGrid").append(element);
-            }
-            else {
-                element.insertAfter(precedingElement);
-            }
+            let precedingElement = null;
 
-            precedingElement = element;
-        });
+            items.forEach(itemName => {
+                // Append each element
+                const element = itemElements[itemName];
+                element.removeClass("not-visible");
+
+                if (precedingElement == null) {
+                    $("#itemsGrid").append(element);
+                }
+                else {
+                    element.insertAfter(precedingElement);
+                }
+
+                precedingElement = element;
+            });
+        }
+        else if (viewMode === ViewMode.Comparison) {
+            $("#sortingContainer").addClass("not-visible");
+            $("#comparisonContainer").removeClass("not-visible");
+            $("#itemsGrid").addClass("not-visible");
+
+            // Update the comparison select options
+            const itemSet = new Set(items);
+            const selects = [$("#leftPartSelect"), $("#rightPartSelect")];
+            selects.forEach(select => {
+
+                select.children().each((_, child) => {
+                    const item = $(child).val() as string;
+                    if (itemSet.has(item)) {
+                        $(child).removeClass("not-visible");
+                    }
+                    else {
+                        $(child).addClass("not-visible");
+                    }
+                });
+
+                select.selectpicker("refresh");
+
+                // Minor hack, the btn-light class is auto-added to dropdowns with search 
+                // but it doesn't really fit with everything else
+                select.parent().children().removeClass("btn-light");
+            });
+        }
     }
 
     // Updates the type filters visibility based on the selected slot

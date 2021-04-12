@@ -33,6 +33,12 @@ export enum ItemSlot {
     Weapon = "Weapon",
 };
 
+export interface ItemWithUpkeep {
+    energyUpkeep?: number;
+    matterUpkeep?: number;
+    heatGeneration?: number;
+};
+
 export enum ItemType {
     Artifact = "Artifact",
     BallisticCannon = "Ballistic Cannon",
@@ -108,7 +114,7 @@ export type OtherItem = BaseItem & {
     life?: string;
 };
 
-export type PowerItem = BaseItem & {
+export type PowerItem = BaseItem & ItemWithUpkeep & {
     heatGeneration?: number;
     energyGeneration?: number;
     energyStorage?: number;
@@ -130,11 +136,8 @@ export type PropulsionItem = BaseItem & {
     siege?: SiegeMode;
 };
 
-export type UtilityItem = BaseItem & {
+export type UtilityItem = BaseItem & ItemWithUpkeep & {
     specialTrait?: string;
-    energyUpkeep?: number;
-    matterUpkeep?: number;
-    heatGeneration?: number;
 };
 
 export type WeaponItem = BaseItem & {

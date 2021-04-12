@@ -288,10 +288,14 @@ export function createBotDataContent(bot: Bot) {
             '</pre>';
     }
 
+    const emptyLine = `<pre class="popover-line">
+    
+</pre>`;
+
     // Create overview
     let html = `
         <pre class="popover-title">${escapeHtml(bot.name)}</pre>
-        <p/>
+        ${emptyLine}
         ${summaryLine("Overview")}
         ${textLine("Class", bot.class)}
         ${textLine("Size", bot.size)}
@@ -302,7 +306,7 @@ export function createBotDataContent(bot: Bot) {
         ${rangeLine("Core Integrity", bot.coreIntegrity.toString(), bot.coreIntegrity, undefined, 0, bot.coreIntegrity, ColorScheme.Green)}
         ${rangeLineUnit("Core Exposure", bot.coreExposure.toString(), bot.coreExposure, "%", undefined, 0, 100, ColorScheme.LowGood)}
         ${textLine("Salvage Potential", bot.salvagePotential)}
-        <p/>
+        ${emptyLine}
         ${summaryLine("Armament")}
         `;
 
@@ -314,7 +318,7 @@ export function createBotDataContent(bot: Bot) {
 
         for (let i = 0; i < bot.armamentOptionData.length; i++) {
             if (i != 0 || bot.armamentData.length > 0) {
-                html += "<p/>"
+                html += "${emptyLine}"
             }
             html += createItemOptionHtml(bot.armamentOptionData[i]);
         }
@@ -325,7 +329,7 @@ export function createBotDataContent(bot: Bot) {
 
     // Add component items
     html += `
-    <p/>
+    ${emptyLine}
     ${summaryLine("Components")}
     `;
 
@@ -336,7 +340,7 @@ export function createBotDataContent(bot: Bot) {
 
         for (let i = 0; i < bot.componentOptionData.length; i++) {
             if (i != 0 || bot.componentData.length > 0) {
-                html += "<p/>"
+                html += `${emptyLine}`;
             }
             html += createItemOptionHtml(bot.componentOptionData[i]);
         }
@@ -350,7 +354,7 @@ export function createBotDataContent(bot: Bot) {
     const immunities = bot.immunities;
     if (resistances.length > 0 || immunities.length > 0) {
         html += `
-        <p/>
+        ${emptyLine}
         ${summaryLine("Resistances")}
         `;
 
@@ -380,7 +384,7 @@ export function createBotDataContent(bot: Bot) {
     const traits = bot.traits;
     if (traits.length > 0) {
         html += `
-        <p/>
+        ${emptyLine}
         ${summaryLine("Traits")}
         `;
 
@@ -393,7 +397,7 @@ export function createBotDataContent(bot: Bot) {
     const description = escapeHtml(valueOrDefault(bot.description, ""));
     if (description.length > 0) {
         html += `
-        <p/>
+        ${emptyLine}
         ${summaryLine("Description")}
         <span class="popover-description">${description}</span>
         `;
@@ -516,10 +520,14 @@ export function createItemDataContent(baseItem: Item) {
         return slotType;
     }
 
+    const emptyLine = `<pre class="popover-line">
+    
+</pre>`;
+
     // Create overview
     let html = `
     <pre class="popover-title">${escapeHtml(baseItem.name)}</pre>
-    <p/>
+    ${emptyLine}
     ${summaryLine("Overview")}
     ${textLine("Type", baseItem.type)}
     ${textLine("Slot", getSlotString(baseItem))}
@@ -536,12 +544,12 @@ export function createItemDataContent(baseItem: Item) {
 
             // Add power-unique categories
             html += `
-                <p/>
+                ${emptyLine}
                 ${summaryLine("Active Upkeep")}
                 ${rangeLine("Energy", undefined, 0, "-0", 0, 0, ColorScheme.LowGood)}
                 ${rangeLine("Matter", undefined, 0, "-0", 0, 0, ColorScheme.LowGood)}
                 ${rangeLine("Heat", "+" + item.heatGeneration, item.heatGeneration, "+0", 0, 20, ColorScheme.LowGood)}
-                <p/>
+                ${emptyLine}
                 ${summaryLine("Power")}
                 ${rangeLine("Supply", "+" + item.energyGeneration, item.energyGeneration, undefined, 0, 30, ColorScheme.Green)}
                 ${rangeLine("Storage", item.energyStorage?.toString(), item.energyStorage, "0", 0, 300, ColorScheme.Green)}
@@ -555,15 +563,15 @@ export function createItemDataContent(baseItem: Item) {
 
             // Add propulsion-unique categories
             html += `
-                <p/>
+                ${emptyLine}
                 ${summaryLine("Active Upkeep")}
                 ${rangeLine("Energy", "-" + item.energyUpkeep, item.energyUpkeep, "-0", 0, 20, ColorScheme.LowGood)}
                 ${rangeLine("Matter", undefined, 0, "-0", 0, 0, ColorScheme.LowGood)}
                 ${rangeLine("Heat", "+" + item.heatGeneration, item.heatGeneration, "+0", 0, 20, ColorScheme.LowGood)}
-                <p/>
+                ${emptyLine}
                 ${summaryLine("Propulsion")}
                 ${rangeLine("Time/Move", item.timePerMove.toString(), item.timePerMove, undefined, 0, 150, ColorScheme.LowGood)}
-                ${item.modPerExtra == undefined ? "" : valueLine(" Mod/Extra", item.modPerExtra.toString())}
+                ${item.modPerExtra == undefined ? valueLine("Drag", item.drag ?? "0") : valueLine(" Mod/Extra", item.modPerExtra.toString())}
                 ${rangeLine("Energy", "-" + item.energyPerMove, item.energyPerMove, "-0", 0, 10, ColorScheme.LowGood)}
                 ${rangeLine("Heat", "+" + item.heatPerMove, item.heatPerMove, "+0", 0, 10, ColorScheme.LowGood)}
                 ${rangeLine("Support", item.support?.toString(), item.support, undefined, 0, 20, ColorScheme.HighGood)}
@@ -580,7 +588,7 @@ export function createItemDataContent(baseItem: Item) {
 
             // Add utility-unique categories
             html += `
-                <p/>
+                ${emptyLine}
                 ${summaryLine("Active Upkeep")}
                 ${rangeLine("Energy", "-" + item.energyUpkeep, item.energyUpkeep, "-0", 0, 20, ColorScheme.LowGood)}
                 ${rangeLine("Matter", undefined, 0, "-0", 0, 0, ColorScheme.LowGood)}
@@ -599,7 +607,7 @@ export function createItemDataContent(baseItem: Item) {
                 case ItemType.EnergyCannon:
                 case ItemType.EnergyGun:
                     html += `
-                        <p/>
+                        ${emptyLine}
                         ${summaryLine("Shot")}
                         ${rangeLine("Range", item.range!.toString(), item.range, undefined, 0, 20, ColorScheme.HighGood)}
                         ${rangeLine("Energy", "-" + item.shotEnergy, item.shotEnergy, "-0", 0, 50, ColorScheme.LowGood)}
@@ -610,7 +618,7 @@ export function createItemDataContent(baseItem: Item) {
                         ${valueLineWithDefault("Delay", getDelayString(item), "0")}
                         ${rangeLine("Stability", item.overloadStability?.toString(), item.overloadStability, "N/A", 0, 100, ColorScheme.HighGood)}
                         ${item.waypoints === undefined ? valueLineWithDefault("Arc", item.arc?.toString(), "N/A") : valueLine("Waypoints", item.waypoints)}
-                        <p/>
+                        ${emptyLine}
                         ${summaryProjectileLine(item, "Projectile")}
                         ${rangeLine("Damage", item.damage, getDamageValue(item), undefined, 0, 100, ColorScheme.Green)}
                         ${textLine("Type", item.damageType)}
@@ -624,7 +632,7 @@ export function createItemDataContent(baseItem: Item) {
 
                 case ItemType.Launcher:
                     html += `
-                        <p/>
+                        ${emptyLine}
                         ${summaryLine("Shot")}
                         ${rangeLine("Range", item.range!.toString(), item.range, undefined, 0, 20, ColorScheme.HighGood)}
                         ${rangeLine("Energy", "-" + item.shotEnergy, item.shotEnergy, "-0", 0, 50, ColorScheme.LowGood)}
@@ -635,7 +643,7 @@ export function createItemDataContent(baseItem: Item) {
                         ${valueLineWithDefault("Delay", getDelayString(item), "0")}
                         ${rangeLine("Stability", item.overloadStability?.toString(), item.overloadStability, "N/A", 0, 100, ColorScheme.HighGood)}
                         ${item.waypoints === undefined ? valueLineWithDefault("Arc", item.arc?.toString(), "N/A") : valueLine("Waypoints", item.waypoints)}
-                        <p/>
+                        ${emptyLine}
                         ${summaryProjectileLine(item, "Explosion")}
                         ${rangeLine("Radius", item.explosionRadius?.toString(), item.explosionRadius, undefined, 0, 8, ColorScheme.Green)}
                         ${rangeLine("Damage", item.explosionDamage, getExplosionValue(item), undefined, 0, 100, ColorScheme.Green)}
@@ -649,7 +657,7 @@ export function createItemDataContent(baseItem: Item) {
 
                 case ItemType.SpecialMeleeWeapon:
                     html += `
-                        <p/>
+                        ${emptyLine}
                         ${summaryLine("Attack")}
                         ${rangeLine("Energy", "-" + item.shotEnergy, item.shotEnergy, "-0", 0, 50, ColorScheme.LowGood)}
                         ${rangeLine("Matter", "-" + item.shotMatter, item.shotMatter, "-0", 0, 25, ColorScheme.LowGood)}
@@ -661,7 +669,7 @@ export function createItemDataContent(baseItem: Item) {
 
                 case ItemType.SpecialWeapon:
                     html += `
-                        <p/>
+                        ${emptyLine}
                         ${summaryLine("Shot")}
                         ${rangeLine("Range", item.range!.toString(), item.range, undefined, 0, 20, ColorScheme.HighGood)}
                         ${rangeLine("Energy", "-" + item.shotEnergy, item.shotEnergy, "-0", 0, 50, ColorScheme.LowGood)}
@@ -677,7 +685,7 @@ export function createItemDataContent(baseItem: Item) {
                     if (item.damage !== undefined) {
                         // Only some special weapons have a damage section
                         html += `
-                        <p/>
+                        ${emptyLine}
                         ${summaryProjectileLine(item, "Projectile")}
                         ${rangeLine("Damage", item.damage, getDamageValue(item), undefined, 0, 100, ColorScheme.Green)}
                         ${textLine("Type", item.damageType)}
@@ -694,14 +702,15 @@ export function createItemDataContent(baseItem: Item) {
                 case ItemType.SlashingWeapon:
                 case ItemType.PiercingWeapon:
                     html += `
-                        <p/>
+                        ${emptyLine}
                         ${summaryLine("Attack")}
                         ${rangeLine("Energy", "-" + item.shotEnergy, item.shotEnergy, "-0", 0, 50, ColorScheme.LowGood)}
                         ${rangeLine("Matter", "-" + item.shotMatter, item.shotMatter, "-0", 0, 25, ColorScheme.LowGood)}
                         ${rangeLine("Heat", "+" + item.shotHeat, item.shotHeat, "+0", 0, 100, ColorScheme.LowGood)}
                         ${valueLineUnitsWithDefault("Targeting", item.targeting?.toString(), "%", "0")}
                         ${valueLineWithDefault("Delay", getDelayString(item), "0")}
-                        <p/>
+                        ${emptyLine}
+                        ${summaryLine("Hit")}
                         ${rangeLine("Damage", item.damage, getDamageValue(item), undefined, 0, 100, ColorScheme.Green)}
                         ${textLine("Type", item.damageType)}
                         ${rangeLineUnit("Critical", item.critical?.toString(), item.critical, "%", "0", 0, 50, ColorScheme.Green)}
@@ -719,7 +728,7 @@ export function createItemDataContent(baseItem: Item) {
     // Add effect/description if present
     if (baseItem.effect !== undefined || baseItem.description !== undefined) {
         html += `
-        <p/>
+        ${emptyLine}
         ${summaryLine("Effect")}
         `;
 
@@ -727,7 +736,7 @@ export function createItemDataContent(baseItem: Item) {
             html += `<span class="popover-description">${escapeHtml(baseItem.effect)}</span>`
 
             if (baseItem.description !== undefined) {
-                html += "<p/><p/>"
+                html += `${emptyLine}`;
             }
         }
 
@@ -740,7 +749,7 @@ export function createItemDataContent(baseItem: Item) {
     if (baseItem.fabrication != null) {
         const number = baseItem.fabrication.number;
 
-        html += "<p/>";
+        html += `${emptyLine}`;
 
         if (number === "1") {
             html += summaryLine("Fabrication");
