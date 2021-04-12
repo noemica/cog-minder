@@ -773,6 +773,7 @@ jq(function ($) {
         initData(items as { [key: string]: JsonItem }, undefined);
 
         $("#beta11Checkbox").prop("checked", false);
+        resetButtonGroup($("#modeContainer"));
 
         // Initialize page state
         createItems();
@@ -912,7 +913,6 @@ jq(function ($) {
         $("#mass").val("");
 
         // Reset buttons
-        resetButtonGroup($("#modeContainer"));
         resetButtonGroup($("#schematicsContainer"));
         resetButtonGroup($("#slotsContainer"));
         resetButtonGroup($("#powerTypeContainer"));
