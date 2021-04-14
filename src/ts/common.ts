@@ -318,7 +318,7 @@ export function createBotDataContent(bot: Bot) {
 
         for (let i = 0; i < bot.armamentOptionData.length; i++) {
             if (i != 0 || bot.armamentData.length > 0) {
-                html += "${emptyLine}"
+                html += {emptyLine};
             }
             html += createItemOptionHtml(bot.armamentOptionData[i]);
         }
