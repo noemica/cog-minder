@@ -2250,6 +2250,133 @@
             "Jamming"
         ]
     },
+    "Enhanced Q-Series Ex 1": {
+        "description": "An example of an enhanced Q-Series bot.",
+        "class": "Q-Series (Prototype)",
+        "categories": ["Architect", "Redacted"],
+        "size": "Large",
+        "rating": "176",
+        "value": 300,
+        "movement": "Walking (90)",
+        "coreIntegrity": 120,
+        "coreExposure": 15,
+        "salvagePotential": "90-150",
+        "visualRange": "16",
+        "armament": [
+            "Hvy. Dispersion Rifle",
+            "Lrn. Phase Cannon"
+        ],
+        "components": [
+            "Lgt. Quantum Reactor",
+            "Imp. Quantum Reactor",
+            "Exp. Biometal Leg",
+            "Exp. Biometal Leg",
+            "Exp. Biometal Leg",
+            "Exp. Heat Sink",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Exp. Core Analyzer",
+            "Adv. Energy Well",
+            "Adv. Targeting Computer",
+            "Exp. Core Analyzer",
+            "Particle Accelerator",
+            "Exp. Core Shielding",
+            "Centrium Medium Armor Plating",
+            "Hvy. Insulated Plating",
+            "Adv. Dynamic Insulation System"
+        ],
+        "resistances": {
+            "Electromagnetic": 30
+        },
+        "immunities": [
+            "Hacking",
+            "Jamming"
+        ]
+    },
+    "Enhanced Q-Series Ex 2": {
+        "description": "An example of an enhanced Q-Series bot.",
+        "class": "Q-Series (Prototype)",
+        "categories": ["Architect", "Redacted"],
+        "size": "Large",
+        "rating": "168",
+        "value": 300,
+        "movement": "Walking (90)",
+        "coreIntegrity": 120,
+        "coreExposure": 23,
+        "salvagePotential": "90-150",
+        "visualRange": "24",
+        "armament": [
+            "Lrn. Phase Cannon",
+            "Lgt. Antimatter Cannon"
+        ],
+        "components": [
+            "Lgt. Quantum Reactor",
+            "Imp. Quantum Reactor",
+            "Exp. Biometal Leg",
+            "Exp. Biometal Leg",
+            "Exp. Biometal Leg",
+            "Exp. Heat Sink",
+            "Exp. Cooling System",
+            "Imp. Energy Well",
+            "Enh. Optical Array",
+            "Exp. Targeting Computer",
+            "Adv. Particle Charger",
+            "Imp. Kinecellerator",
+            "Exp. Core Analyzer",
+            "Exp. Core Shielding",
+            "Centrium Medium Armor Plating",
+            "Adv. Dynamic Insulation System"
+        ],
+        "resistances": {
+        },
+        "immunities": [
+            "Hacking",
+            "Jamming"
+        ]
+    },
+    "Enhanced Q-Series Ex 3": {
+        "description": "An example of an enhanced Q-Series bot.",
+        "class": "Q-Series (Prototype)",
+        "categories": ["Architect", "Redacted"],
+        "size": "Large",
+        "rating": "179",
+        "value": 300,
+        "movement": "Walking (90)",
+        "coreIntegrity": 120,
+        "coreExposure": 22,
+        "salvagePotential": "90-150",
+        "visualRange": "24",
+        "armament": [
+            "Enh. Gamma Rifle",
+            "Com. Mass Driver"
+        ],
+        "components": [
+            "Lgt. Quantum Reactor",
+            "Imp. Quantum Reactor",
+            "Exp. Biometal Leg",
+            "Exp. Biometal Leg",
+            "Exp. Biometal Leg",
+            "Exp. Heat Sink",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Exp. Cooling System",
+            "Enh. Optical Array",
+            "Exp. Core Analyzer",
+            "Adv. Particle Charger",
+            "Adv. Kinecellerator",
+            "Exp. Core Shielding",
+            "Centrium Medium Armor Plating",
+            "Adv. Dynamic Insulation System",
+            "Swarm Drone Bay"
+        ],
+        "resistances": {
+        },
+        "immunities": [
+            "Hacking",
+            "Jamming"
+        ]
+    },
     "Enhanced Sentry": {
         "description": "",
         "class": "Sentry (Prototype)",
@@ -5217,10 +5344,129 @@
             "Adv. Dynamic Insulation System"
         ],
         "resistances": {
-            "Explosive": 50,
-            "Impact": 25
         },
         "immunities": [
+            "Hacking",
+            "Jamming"
+        ]
+    },
+    "Q-Series Example 1": {
+        "description": "Example of a fully generated Q-Series.",
+        "class": "Q-Series",
+        "categories": ["0b10", "Spoilers"],
+        "size": "Large",
+        "rating": "131",
+        "value": 90,
+        "movement": "Walking (110)",
+        "coreIntegrity": 75,
+        "coreExposure": 16,
+        "salvagePotential": "70-100",
+        "visualRange": "16",
+        "armament": [
+            "Enh. Gamma Bomb Array"
+        ],
+        "components": [
+            "Lgt. Antimatter Reactor",
+            "Lgt. Particle Reactor",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Adv. Heat Sink",
+            "Adv. Cooling System",
+            "Imp. Energy Well",
+            "Adv. Launcher Guidance Computer",
+            "Imp. Core Shielding",
+            "Lyr. Medium Armor Plating",
+            "Exp. Thermal Shield",
+            "Adv. Dynamic Insulation System",
+            "Swarm Drone Bay"
+        ],
+        "resistances": {
+            "Thermal": 30
+        },
+        "immunities": [
+            "Hacking",
+            "Jamming"
+        ]
+    },
+    "Q-Series Example 2": {
+        "description": "Example of a fully generated Q-Series.",
+        "class": "Q-Series",
+        "categories": ["0b10", "Spoilers"],
+        "size": "Large",
+        "rating": "131",
+        "value": 90,
+        "movement": "Walking (110)",
+        "coreIntegrity": 75,
+        "coreExposure": 16,
+        "salvagePotential": "70-100",
+        "visualRange": "16",
+        "armament": [
+            "Multirail",
+            "Multirail"
+        ],
+        "components": [
+            "Lgt. Antimatter Reactor",
+            "Lgt. Particle Reactor",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Adv. Heat Sink",
+            "Adv. Cooling System",
+            "Adv. Matter Compressor",
+            "Exp. Targeting Computer",
+            "Imp. Kinecellerator",
+            "Imp. Core Shielding",
+            "Lyr. Medium Armor Plating",
+            "Hvy. Reflective Plating",
+            "Adv. Dynamic Insulation System",
+            "Swarm Drone Bay"
+        ],
+        "resistances": {
+            "Thermal": 25
+        },
+        "immunities": [
+            "Hacking",
+            "Jamming"
+        ]
+    },
+    "Q-Series Example 3": {
+        "description": "Example of a fully generated Q-Series.",
+        "class": "Q-Series",
+        "categories": ["0b10", "Spoilers"],
+        "size": "Large",
+        "rating": "131",
+        "value": 90,
+        "movement": "Walking (110)",
+        "coreIntegrity": 75,
+        "coreExposure": 16,
+        "salvagePotential": "70-100",
+        "visualRange": "16",
+        "armament": [
+            "Gamma Rifle",
+            "Gamma Rifle"
+        ],
+        "components": [
+            "Lgt. Antimatter Reactor",
+            "Lgt. Particle Reactor",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Biometal Leg",
+            "Adv. Heat Sink",
+            "Adv. Cooling System",
+            "Exp. Cooling System",
+            "Imp. Energy Well",
+            "Adv. Weapon Cycler",
+            "Imp. Core Shielding",
+            "Lyr. Medium Armor Plating",
+            "Adv. Focal Shield",
+            "Adv. Dynamic Insulation System"
+        ],
+        "resistances": {
+            "Kinetic": 30
+        },
+        "immunities": [
+            "Hacking",
             "Jamming"
         ]
     },
