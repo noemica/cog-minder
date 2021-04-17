@@ -104,3 +104,11 @@ export function resetButtonGroup(group: JQuery<HTMLElement>) {
 
     group.children("label:first-of-type").addClass("active");
 }
+
+export function refreshSelectpicker(selector: JQuery<HTMLElement>) {
+    selector.selectpicker("refresh");
+
+    // Minor hack, the btn-light class is auto-added to dropdowns with search 
+    // but it doesn't really fit with everything else
+    selector.next().removeClass("btn-light");
+}    

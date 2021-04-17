@@ -13,6 +13,7 @@ import {
 import {
     getSelectedButtonId,
     getSpoilersState,
+    refreshSelectpicker,
     resetButtonGroup
 } from "./commonJquery";
 import {
@@ -586,11 +587,7 @@ jq(function ($) {
                 select.append(`<option>${itemName}</option>`);
             });
 
-            select.selectpicker("refresh");
-
-            // Minor hack, the btn-light class is auto-added to dropdowns with search 
-            // but it doesn't really fit with everything else
-            select.parent().children().removeClass("btn-light");
+            refreshSelectpicker(select);
         });
 
 
@@ -1174,11 +1171,7 @@ jq(function ($) {
                     }
                 });
 
-                select.selectpicker("refresh");
-
-                // Minor hack, the btn-light class is auto-added to dropdowns with search 
-                // but it doesn't really fit with everything else
-                select.parent().children().removeClass("btn-light");
+                refreshSelectpicker(select);
             });
         }
     }

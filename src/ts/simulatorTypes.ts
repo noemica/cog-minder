@@ -99,6 +99,7 @@ export enum EndCondition {
     KillOrDisrupt = "Kill or Core Disrupt",
     KillOrPower = "Kill or No Power",
     KillOrWeapons = "Kill or No Weapons",
+    KillOrNoTnc = "Kill or No TNC",
     Tele = "Architect Tele (80% integrity, 1 weapon, or 1 prop)",
 };
 

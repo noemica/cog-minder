@@ -814,6 +814,11 @@ const simulationEndConditions: { [key: string]: ((state: BotState) => boolean) }
             || botState.corruption >= 100
             || botState.parts.every(part => part.def.slot != ItemSlot.Weapon);
     },
+    "Kill or No TNC": function (botState) {
+        return botState.coreIntegrity <= 0
+            || botState.corruption >= 100
+            || botState.parts.every(part => part.def.name != "Transport Network Coupler");
+    },
     "Architect Tele (80% integrity, 1 weapon, or 1 prop)": function (botState) {
         return botState.coreIntegrity <= botState.initialCoreIntegrity * 0.8
             || botState.parts.filter(part => part.def.slot === ItemSlot.Weapon).length === 1

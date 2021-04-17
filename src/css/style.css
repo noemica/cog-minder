@@ -469,7 +469,7 @@ body {
 .comparison-infobox {
     border: 2px solid #008c00;
     text-align: left;
-    max-width: 42ch;
+    max-width: 40ch;
 }
 
 .comparison-infobox > :first-child {
@@ -487,6 +487,23 @@ body {
 
 .comparison-info > :first-child {
     margin-top: .5rem;
+}
+
+.comparison-info-col {
+    flex: 0 0 12.00%;
+    max-width: 12.00%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.comparison-infobox-col, .comparison-dropdown-col {
+    flex: 0 0 41%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.comparison-dropdown-col {
+    max-width: 41%;
 }
 
 .comparison-positive, .comparison-neutral, .comparison-negative {

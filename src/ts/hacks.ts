@@ -254,7 +254,7 @@ jq(function ($) {
                 { name: "Open - Access surface exit", baseChance: 7, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: Spoiler.Spoilers },
                 { name: "Open - Access Command backdoors", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: Spoiler.Redacted },
                 { name: "Open - Command Main.C door", baseChance: 60, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: Spoiler.Redacted },
-                { name: "Open - Command Cache", baseChance: 10, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: Spoiler.Redacted },
+                { name: "Open - Command prototype cache", baseChance: 10, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: Spoiler.Redacted },
                 { name: "Open - Extension A7 cell", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: Spoiler.Spoilers },
                 { name: "Open - Extension derelict cell", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: Spoiler.Spoilers },
                 { name: "Open - Factory Extension exit", baseChance: 60, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: Spoiler.Spoilers },

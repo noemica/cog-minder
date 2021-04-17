@@ -14,6 +14,7 @@ import {
 import {
     enableBotInfoItemPopovers,
     getSpoilersState,
+    refreshSelectpicker,
     resetButtonGroup
 } from "./commonJquery";
 import {
@@ -521,6 +522,15 @@ jq(function ($) {
         $("#botSelect").on("changed.bs.select", () => {
             const bot = botData[($("#botSelect") as any).selectpicker("val") as string];
             $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
+
+            if (bot.name === "A-15 Conveyor") {
+                $("#endConditionNoTnc").removeClass("not-visible");
+            }
+            else {
+                $("#endConditionNoTnc").addClass("not-visible");
+            }
+
+            refreshSelectpicker($("#endConditionSelect"));
         });
         $("#combatTypeContainer > label > input").on("change", () => {
             updateChoices();
@@ -584,6 +594,10 @@ jq(function ($) {
         $("#actuatorSelect").parent().addClass("percent-dropdown");
         $("#actuatorArraySelect").parent().addClass("percent-dropdown");
         $("#sneakAttackSelect").parent().addClass("sneak-attack-dropdown");
+
+        // Minor hack, the btn-light class is auto-added to dropdowns with search 
+        // but it doesn't really fit with everything else
+        $(".btn-light").removeClass("btn-light");
 
         initCharts();
     }
@@ -1401,9 +1415,8 @@ jq(function ($) {
         else {
             $("#endConditionArchTele").addClass("not-visible");
         }
-        $("#endConditionSelect").selectpicker("refresh");
-
-        select.selectpicker("refresh");
+        refreshSelectpicker($("#endConditionSelect"));
+        refreshSelectpicker(select);
 
         // Try to preserve the old bot, otherwise default
         select.selectpicker("val", oldBot);
@@ -1411,10 +1424,6 @@ jq(function ($) {
         if (select.selectpicker("val") === null) {
             select.selectpicker("val", "G-34 Mercenary");
         }
-
-        // Minor hack, the btn-light class is auto-added to dropdowns with search 
-        // but it doesn't really fit with everything else
-        $(".btn-light").removeClass("btn-light");
 
         const melee = isMelee();
 
