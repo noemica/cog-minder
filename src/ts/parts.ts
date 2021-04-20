@@ -309,7 +309,7 @@ jq(function ($) {
                     damageMax = damageMin;
                 }
 
-                return { average: (damageMax + damageMax) / 2, min: damageMin, max: damageMax };
+                return { average: (damageMax + damageMin) / 2, min: damageMin, max: damageMax };
             }
 
             let leftDamageString: string;
@@ -330,7 +330,7 @@ jq(function ($) {
                     return emptyLine;
                 }
                 else {
-                    return `<pre class="comparison-neutral">${leftDamage.min}-${leftDamage.min}</pre>`;
+                    return `<pre class="comparison-neutral">${leftDamage.min}-${leftDamage.max}</pre>`;
                 }
             }
 
