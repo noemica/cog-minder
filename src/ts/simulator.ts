@@ -854,7 +854,7 @@ jq(function ($) {
                 const weapon = itemData[name] as WeaponItem;
 
                 // Tread invalid or unfilled numbers as 1
-                const number = parseIntOrDefault($(s).parent().nextAll("input").val(), 1);
+                const number = parseIntOrDefault($(s).parent().nextAll("input").not(".not-visible").val(), 1);
                 
                 const overloaded = !$(s).parent().nextAll(".btn-group").children("label").first().hasClass("active");
 
