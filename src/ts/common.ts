@@ -7,6 +7,7 @@ import {
     JsonBot
 } from "./botTypes";
 import {
+    Critical,
     FabricationStats,
     Item,
     ItemCategory,
@@ -193,7 +194,7 @@ function valueLine(category: string, valueString: string) {
     return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
 }
 
-// Create a value line with no text and a default
+// Create a value line with units, no text, and a default
 function valueLineUnitsWithDefault(category: string, valueString: string | undefined,
     unitString: string, defaultString: string) {
     let valueLength: number;
@@ -208,6 +209,23 @@ function valueLineUnitsWithDefault(category: string, valueString: string | undef
 
     const numSpaces = 23 - 1 - category.length - 1 - valueLength;
     return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
+}
+
+// Create a value line with units, text, and a default
+function valueLineUnitsTextWithDefault(category: string, valueString: string | undefined,
+    unitString: string, defaultString: string, text: string) {
+    let valueLength: number;
+    if (valueString === undefined) {
+        valueString = `<span class="dim-text">${defaultString}${unitString}</span>`;
+        valueLength = defaultString.length + unitString.length;
+    }
+    else {
+        valueString += unitString;
+        valueLength = valueString.length;
+    }
+
+    const numSpaces = 23 - 1 - category.length - 1 - valueLength;
+    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString} ${text}</pre>`;
 }
 
 // Create a value line with no text and a default
@@ -622,7 +640,7 @@ export function createItemDataContent(baseItem: Item) {
                         ${summaryProjectileLine(item, "Projectile")}
                         ${rangeLine("Damage", item.damage, getDamageValue(item), undefined, 0, 100, ColorScheme.Green)}
                         ${textLine("Type", item.damageType)}
-                        ${rangeLineUnit("Critical", item.critical?.toString(), item.critical, "%", "0", 0, 50, ColorScheme.Green)}
+                        ${valueLineUnitsTextWithDefault("Critical", item.critical?.toString(), "%", "0", item.criticalType?.toString() ?? "")}
                         ${textValueHtmlLine("Penetration", getPenetrationValue(item), getPenetrationValueClass(item), getPenetrationTextHtml(item))}
                         ${item.heatTransfer === undefined ? textLineWithDefault("Spectrum", item.spectrum, "N/A") : textLine("Heat Transfer", item.heatTransfer)}
                         ${rangeLineUnit("Disruption", item.disruption?.toString(), item.disruption, "%", "0", 0, 50, ColorScheme.Green)}
@@ -689,7 +707,8 @@ export function createItemDataContent(baseItem: Item) {
                         ${summaryProjectileLine(item, "Projectile")}
                         ${rangeLine("Damage", item.damage, getDamageValue(item), undefined, 0, 100, ColorScheme.Green)}
                         ${textLine("Type", item.damageType)}
-                        ${rangeLineUnit("Critical", item.critical?.toString(), item.critical, "%", "0", 0, 50, ColorScheme.Green)}
+                        ${valueLineUnitsTextWithDefault("Critical", item.critical?.toString(), "%", "0", item.criticalType?.toString() ?? "")}
+
                         ${textValueHtmlLine("Penetration", getPenetrationValue(item), getPenetrationValueClass(item), getPenetrationTextHtml(item))}
                         ${item.heatTransfer === undefined ? textLineWithDefault("Spectrum", item.spectrum, "N/A") : textLine("Heat Transfer", item.heatTransfer)}
                         ${rangeLineUnit("Disruption", item.disruption?.toString(), item.disruption, "%", "0", 0, 50, ColorScheme.Green)}
@@ -713,7 +732,7 @@ export function createItemDataContent(baseItem: Item) {
                         ${summaryLine("Hit")}
                         ${rangeLine("Damage", item.damage, getDamageValue(item), undefined, 0, 100, ColorScheme.Green)}
                         ${textLine("Type", item.damageType)}
-                        ${rangeLineUnit("Critical", item.critical?.toString(), item.critical, "%", "0", 0, 50, ColorScheme.Green)}
+                        ${valueLineUnitsTextWithDefault("Critical", item.critical?.toString(), "%", "0", item.criticalType?.toString() ?? "")}
                         ${rangeLineUnit("Disruption", item.disruption?.toString(), item.disruption, "%", "0", 0, 50, ColorScheme.Green)}
                         ${valueLineWithDefault("Salvage", item.salvage?.toString(), "0")}
                         `;
@@ -998,6 +1017,27 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                 break;
 
             case ItemSlot.Weapon:
+                let critical: number | undefined;
+                let criticalType: Critical | undefined;
+                if (item.Critical !== undefined) {
+                    if (item.Critical.includes("%")) {
+                        // B11-type critical
+                        const result = /(\d*)% (\w*)/.exec(item.Critical);
+                        if (result === null) {
+                            critical = undefined;
+                            criticalType = undefined;
+                        }
+                        else {
+                            critical = parseInt(result[1]);
+                            criticalType = result[2] as Critical;
+                        }
+                    }
+                    else {
+                        // Pre-B11-type critical
+                        critical = parseIntOrUndefined(item.Critical);
+                        criticalType = Critical.Destroy;
+                    }
+                }
                 const weaponItem: WeaponItem = {
                     slot: ItemSlot.Weapon,
                     category: category,
@@ -1016,7 +1056,8 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     categories: itemCategories,
                     mass: parseIntOrUndefined(item.Mass!) ?? 0,
                     specialTrait: item["Special Trait"],
-                    critical: parseIntOrUndefined(item.Critical!),
+                    critical: critical,
+                    criticalType: criticalType,
                     delay: parseIntOrUndefined(item.Delay!),
                     explosionHeatTransfer: item["Explosion Heat Transfer"],
                     explosionType: item["Explosion Type"],

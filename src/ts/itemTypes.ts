@@ -84,6 +84,21 @@ export enum Spectrum {
     Fine = "Fine (100)",
 };
 
+export enum Critical {
+    Blast = "Blast",
+    Burn = "Burn",
+    Corrupt = "Corrupt",
+    Destroy = "Destroy",
+    Detonate = "Detonate",
+    Meltdown = "Meltdown",
+    Intensify = "Intensify",
+    Phase = "Phase",
+    Puncture = "Puncture",
+    Smash = "Smash",
+    Sever = "Sever",
+    Sunder = "Sunder",
+}
+
 export type FabricationStats = {
     number: string;
     time: string;
@@ -152,6 +167,7 @@ export type WeaponItem = BaseItem & {
     disruption?: number;
     salvage?: number;
     critical?: number;
+    criticalType?: Critical;
     targeting?: number;
     penetration?: string;
     delay?: number;
