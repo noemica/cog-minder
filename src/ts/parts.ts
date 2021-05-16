@@ -17,7 +17,6 @@ import {
     resetButtonGroup
 } from "./commonJquery";
 import {
-    Critical,
     DamageType,
     Item, ItemSlot, ItemType, ItemWithUpkeep, JsonItem, PowerItem, PropulsionItem, SiegeMode, Spectrum, WeaponItem,
 } from "./itemTypes";
@@ -295,58 +294,6 @@ jq(function ($) {
             `;
         }
 
-        function getCriticalHtml(leftWeapon: WeaponItem, rightWeapon: WeaponItem) {
-            if (leftWeapon.critical === undefined
-                || rightWeapon.critical === undefined
-                || leftWeapon.criticalType === rightWeapon.criticalType) {
-                return compareHighGoodStat(leftWeapon.critical ?? 0, rightWeapon.critical ?? 0);
-            }
-
-            let leftValue: string;
-            switch (leftWeapon.criticalType) {
-                case Critical.Blast:
-                    leftValue = "(Blast)";
-                    break;
-                case Critical.Burn:
-                    leftValue = "(Burn)";
-                    break;
-                case Critical.Corrupt:
-                    leftValue = "(Corrup)";
-                    break;
-                case Critical.Destroy:
-                    leftValue = "(Destro)";
-                    break;
-                case Critical.Detonate:
-                    leftValue = "(Detona)";
-                    break;
-                case Critical.Intensify:
-                    leftValue = "(Intens)";
-                    break;
-                case Critical.Meltdown:
-                    leftValue = "(Meltdo)";
-                    break;
-                case Critical.Phase:
-                    leftValue = "(Phase)";
-                    break;
-                case Critical.Puncture:
-                    leftValue = "(Punctu)";
-                    break;
-                case Critical.Sever:
-                    leftValue = "(Sever)";
-                    break;
-                case Critical.Smash:
-                    leftValue = "(Smash)";
-                    break;
-                case Critical.Sunder:
-                    leftValue = "(Sunder)";
-                    break;
-                default:
-                    throw "Invalid critical type";
-            }
-
-            return `<pre class="comparison-neutral">${leftValue}</pre>`;
-        }
-
         function getDamageHtml(leftWeapon: WeaponItem, rightWeapon: WeaponItem, explosive: boolean) {
             function getDamage(damageString: string | undefined) {
                 let damageMin = 0;
@@ -488,7 +435,7 @@ jq(function ($) {
                         ${emptyLine}
                         ${getDamageHtml(leftWeapon, rightWeapon, false)}
                         ${getDamageTypeHtml(leftWeapon, rightWeapon, false)}
-                        ${getCriticalHtml(leftWeapon, rightWeapon)}
+                        ${compareHighGoodStat(leftWeapon.critical ?? 0, rightWeapon.critical ?? 0)}
                         ${compareHighGoodStat(leftWeapon.disruption ?? 0, rightWeapon.disruption ?? 0)}
                         ${compareHighGoodStat(leftWeapon.salvage ?? 0, rightWeapon.salvage ?? 0)}
                         ${emptyLine}
@@ -582,7 +529,7 @@ jq(function ($) {
                         ${compareHighGoodStat(leftWeapon.projectileCount, rightWeapon.projectileCount)}
                         ${getDamageHtml(leftWeapon, rightWeapon, false)}
                         ${getDamageTypeHtml(leftWeapon, rightWeapon, false)}
-                        ${getCriticalHtml(leftWeapon, rightWeapon)}
+                        ${compareHighGoodStat(leftWeapon.critical ?? 0, rightWeapon.critical ?? 0)}
                         ${getPenetrationHtml(leftWeapon, rightWeapon)}
                         ${getSpectrumHtml(leftWeapon, rightWeapon, false)}
                         ${compareHighGoodStat(leftWeapon.disruption ?? 0, rightWeapon.disruption ?? 0)}
@@ -636,15 +583,13 @@ jq(function ($) {
         itemNames.sort(gallerySort);
         const selects = [$("#leftPartSelect"), $("#rightPartSelect")];
         selects.forEach(select => {
-            select.empty();
             itemNames.forEach(itemName => {
                 select.append(`<option>${itemName}</option>`);
             });
 
             refreshSelectpicker(select);
         });
-        selects[0].selectpicker("val", "Lgt. Assault Rifle");
-        selects[1].selectpicker("val", "Hvy. Assault Rifle");
+
 
         // Enable popovers
         ($('#itemsGrid > [data-toggle="popover"]') as any).popover();
