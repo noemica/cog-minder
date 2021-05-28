@@ -15,7 +15,8 @@ import {
     getSpoilersState,
     getSelectedButtonId,
     resetButtonGroup,
-    enableBotInfoItemPopovers
+    enableBotInfoItemPopovers,
+    createHeader
 } from "./commonJquery";
 
 import * as jQuery from "jquery";
@@ -155,9 +156,7 @@ jq(function ($) {
         initData(items as { [key: string]: JsonItem }, bots as any as { [key: string]: JsonBot });
         
         createBots();
-
-        // Load spoilers saved state
-        $("#spoilers").text(getSpoilersState());
+        createHeader("Bots", $("#headerContainer"))
 
         // Set initial state
         updateFactionVisibility();

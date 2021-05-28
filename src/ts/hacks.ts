@@ -1,7 +1,7 @@
 import * as jQuery from "jquery";
 import * as popper from "popper.js";
 import "bootstrap";
-import { getSpoilersState, resetButtonGroup } from "./commonJquery";
+import { createHeader, getSpoilersState, resetButtonGroup } from "./commonJquery";
 import { parseIntOrDefault, setSpoilersState, Spoiler } from "./common";
 
 const jq = jQuery.noConflict();
@@ -388,8 +388,7 @@ jq(function ($) {
 
     // Initialize the page state
     function init() {
-        // Load spoilers saved state
-        $("#spoilers").text(getSpoilersState());
+        createHeader("Hacks", $("#headerContainer"));
 
         // Set initial state
         resetInput();

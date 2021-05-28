@@ -11,6 +11,7 @@ import {
     setSpoilersState,
 } from "./common";
 import {
+    createHeader,
     getSelectedButtonId,
     getSpoilersState,
     refreshSelectpicker,
@@ -825,7 +826,7 @@ jq(function ($) {
         initData(items as { [key: string]: JsonItem }, undefined);
 
         $("#beta11Checkbox").prop("checked", false);
-        resetButtonGroup($("#modeContainer"));
+        createHeader("Parts", $("#headerContainer"));
 
         // Initialize page state
         createItems();

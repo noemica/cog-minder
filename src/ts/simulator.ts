@@ -12,6 +12,7 @@ import {
     setSpoilersState,
 } from "./common";
 import {
+    createHeader,
     enableBotInfoItemPopovers,
     getSpoilersState,
     refreshSelectpicker,
@@ -497,8 +498,7 @@ jq(function ($) {
     function init() {
         initData(items as { [key: string]: JsonItem }, bots as any as { [key: string]: JsonBot });
 
-        // Load spoilers saved state
-        $("#spoilers").text(getSpoilersState());
+        createHeader("Simulator", $("#headerContainer"));
 
         // Set initial state
         resetButtonGroup($("#combatTypeContainer"));

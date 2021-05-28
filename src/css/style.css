@@ -60,12 +60,19 @@ body {
     text-align: center;
 }
 
+/* Misc useful */
 .not-visible {
     display: none!important;
 }
 
 .minus-left-margin {
     margin-left: -1px;
+}
+
+.display-5 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
 }
 
 .container-xl {
@@ -285,6 +292,17 @@ body {
 .title-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.menu-buttons-grid {
+    /* Marker only */
+    display: flex;
+    justify-content: center;
+}
+
+.menu-buttons-grid > * {
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
 .comparison-grid {
