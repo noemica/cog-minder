@@ -7,6 +7,7 @@ import {
     JsonBot
 } from "./botTypes";
 import {
+    BaseItem,
     Critical,
     FabricationStats,
     Item,
@@ -17,19 +18,20 @@ import {
     OtherItem,
     PowerItem,
     PropulsionItem,
+    SpecialPropertyTypeName,
     UtilityItem,
     WeaponItem
 } from "./itemTypes";
+import { specialItemProperties } from "./specialItemProperties";
 
 export let botData: { [key: string]: Bot };
 export let itemData: { [key: string]: Item };
 
 // An enum to represent spoiler level
-export enum Spoiler {
-    None = "None",
-    Spoilers = "Spoilers",
-    Redacted = "Redacted",
-};
+export type Spoiler =
+    | "None"
+    | "Spoilers"
+    | "Redacted";
 
 // Color schemes
 enum ColorScheme {
@@ -57,6 +59,35 @@ export const entityMap: { [key: string]: string } = {
     '=': '&#x3D;',
     '\n': '<br />',
 };
+
+// Compile-time assert that code is unreachable
+export function assertUnreachable(_: never): never {
+    throw new Error("Invalid");
+}
+
+const spoilerItemCategories = [1, 4, 5, 6];
+const redactedItemCategory = 7;
+// Determines if the given part can be shown based on the current spoilers state
+export function canShowPart(part: Item, spoilersState: string) {
+    if (spoilersState === "None") {
+        // No spoilers, check that none of the categories are spoilers/redacted
+        if (part.categories.every(c => c != redactedItemCategory && !spoilerItemCategories.includes(c))) {
+            return true;
+        }
+    }
+    else if (spoilersState == "Spoilers") {
+        // Spoilers allowed, check only for redacted category
+        if (part.categories.every(c => c != redactedItemCategory)) {
+            return true;
+        }
+    }
+    else {
+        // Redacted, no checks
+        return true;
+    }
+
+    return false;
+}
 
 // Ceil the number to the nearest multiple
 function ceilToMultiple(num: number, multiple: number) {
@@ -589,7 +620,7 @@ export function createItemDataContent(baseItem: Item) {
                 ${emptyLine}
                 ${summaryLine("Propulsion")}
                 ${rangeLine("Time/Move", item.timePerMove.toString(), item.timePerMove, undefined, 0, 150, ColorScheme.LowGood)}
-                ${item.modPerExtra == undefined ? valueLine("Drag", item.drag ?? "0") : valueLine(" Mod/Extra", item.modPerExtra.toString())}
+                ${item.modPerExtra == undefined ? valueLine("Drag", item.drag?.toString() ?? "0") : valueLine(" Mod/Extra", item.modPerExtra.toString())}
                 ${rangeLine("Energy", "-" + item.energyPerMove, item.energyPerMove, "-0", 0, 10, ColorScheme.LowGood)}
                 ${rangeLine("Heat", "+" + item.heatPerMove, item.heatPerMove, "+0", 0, 10, ColorScheme.LowGood)}
                 ${rangeLine("Support", item.support?.toString(), item.support, undefined, 0, 20, ColorScheme.HighGood)}
@@ -837,6 +868,30 @@ export function getItem(itemName: string) {
     throw `${itemName} not a valid item`;
 }
 
+// Gets the movement name given a propulsion type
+export function getMovementText(propulsionType: ItemType | undefined) {
+    switch (propulsionType) {
+        case ItemType.FlightUnit:
+            return "Flying";
+        case ItemType.HoverUnit:
+            return "Hovering";
+        case ItemType.Leg:
+            return "Walking";
+        case ItemType.Treads:
+            return "Treading";
+        case ItemType.Wheel:
+            return "Rolling";
+        default:
+            return "Core";
+    }
+}
+
+// Gets a per-TU value scaled to the given number of TUs
+export function getValuePerTus(baseValue: number, numTus: number) {
+    return baseValue * numTus / 100;
+}
+
+
 // Removes the prefix from an item name
 const noPrefixRegex = /\w{3}\. (.*)/;
 export function getNoPrefixName(name: string): string {
@@ -844,11 +899,21 @@ export function getNoPrefixName(name: string): string {
     return newName;
 }
 
-// Converts an item or bot's name to an HTML id
-const nameToIdRegex = /[ /.'"\]\[]]*/g;
-export function nameToId(name: string) {
-    const id = `item${name.replace(nameToIdRegex, "")}`;
-    return id;
+// Checks if a part has an active special property of the given type
+export function hasActiveSpecialProperty(part: Item, partActive: boolean, propertyType: SpecialPropertyTypeName) {
+    if (part.specialProperty == undefined) {
+        return false;
+    }
+
+    if (part.specialProperty.trait.kind !== propertyType) {
+        return false;
+    }
+
+    if (part.specialProperty.active === "Part Active" && !partActive) {
+        return false;
+    }
+
+    return true;
 }
 
 // Initialize all item and bot data
@@ -902,6 +967,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
         const mass = parseIntOrUndefined(item.Mass!);
         const noPrefixName = getNoPrefixName(itemName);
         const size = parseIntOrUndefined(item.Size) ?? 1;
+        const specialProperty = specialItemProperties[itemName];
 
         switch (item["Slot"]) {
             case ItemSlot.NA:
@@ -922,6 +988,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     categories: itemCategories,
                     life: item.Life,
                     index: index,
+                    specialProperty: specialProperty,
                 };
                 newItem = otherItem;
                 break;
@@ -950,6 +1017,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                         undefined :
                         parseIntOrUndefined(item["Power Stability"].slice(0, -1)),
                     index: index,
+                    specialProperty: specialProperty,
                 };
                 newItem = powerItem;
                 break;
@@ -977,7 +1045,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     description: item.Description,
                     categories: itemCategories,
                     effect: item.Effect,
-                    drag: item.Drag,
+                    drag: parseIntOrUndefined(item.Drag),
                     energyUpkeep: parseFloatOrUndefined(item["Energy Upkeep"]),
                     heatGeneration: parseIntOrUndefined(item["Heat Generation"]),
                     heatPerMove: parseIntOrUndefined(item["Heat/Move"]),
@@ -985,6 +1053,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     modPerExtra: parseIntOrUndefined(item["Mod/Extra"]),
                     siege: item.Siege,
                     index: index,
+                    specialProperty: specialProperty,
                 };
                 newItem = propItem;
                 break;
@@ -1012,6 +1081,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     mass: parseIntOrUndefined(item.Mass!) ?? 0,
                     specialTrait: item["Special Trait"],
                     index: index,
+                    specialProperty: specialProperty,
                 };
                 newItem = utilItem;
                 break;
@@ -1088,6 +1158,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     waypoints: item.Waypoints,
                     arc: undefined, // Export bug, arc is never included
                     index: index,
+                    specialProperty: specialProperty,
                 };
                 newItem = weaponItem;
                 break;
@@ -1216,6 +1287,25 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
             };
         });
     }
+}
+
+// Determines if the given item type is melee
+export function isPartMelee(part: BaseItem) {
+    if (part.type === ItemType.ImpactWeapon
+        || part.type === ItemType.PiercingWeapon
+        || part.type === ItemType.SlashingWeapon
+        || part.type === ItemType.SpecialMeleeWeapon) {
+        return true;
+    }
+
+    return false;
+}
+
+// Converts an item or bot's name to an HTML id
+const nameToIdRegex = /[ /.'"\]\[]]*/g;
+export function nameToId(name: string) {
+    const id = `item${name.replace(nameToIdRegex, "")}`;
+    return id;
 }
 
 // Parses the string into a number or null if invalid

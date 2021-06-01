@@ -2,6 +2,7 @@ import * as bots from "../json/bots.json";
 import * as items from "../json/items.json";
 import {
     botData,
+    canShowPart,
     createBotDataContent,
     createItemDataContent,
     gallerySort,
@@ -53,9 +54,6 @@ import { JsonBot } from "./botTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
-    const spoilerItemCategories = [1, 4, 5, 6];
-    const redactedItemCategory = 7;
-
     // Actual accuracy is 60 for ranged and 70 for melee but just assume the
     // defender immobile bonus for + 10
     const initialRangedAccuracy = 70;
@@ -333,21 +331,7 @@ jq(function ($) {
                 return;
             }
 
-            // Spoilers check
-            if (spoilersState === "None") {
-                // No spoilers, check that none of the categories are spoilers/redacted
-                if (weapon.categories.every(c => c != redactedItemCategory && !spoilerItemCategories.includes(c))) {
-                    weapons.push(name);
-                }
-            }
-            else if (spoilersState == "Spoilers") {
-                // Spoilers allowed, check only for redacted category
-                if (weapon.categories.every(c => c != redactedItemCategory)) {
-                    weapons.push(name);
-                }
-            }
-            else {
-                // Redacted, no checks
+            if (canShowPart(weapon, spoilersState)) {
                 weapons.push(name);
             }
         });
@@ -364,7 +348,7 @@ jq(function ($) {
         const parent = $('<div class="input-group mt-1"></div>');
         const selectLabel = $('<span class="input-group-text" data-toggle="tooltip" title="Name of an equipped weapon to fire">Weapon</span>');
         const select = $(`<select class="selectpicker" data-live-search="true">${weaponOptions}</select>`);
-        const helpButton = $('<button class="btn weapon-help-btn" data-html=true data-toggle="popover">?</button>');
+        const helpButton = $('<button class="btn part-help-btn" data-html=true data-toggle="popover">?</button>');
         const massLabel = $(`
         <div class="input-group-prepend ml-2" data-toggle="tooltip" title="The mass of cogmind. Ram damage is a random amount from 0 to (((10 + [mass]) / 5) + 1) * ([speed%] / 100) * [momentum].">
             <span class="input-group-text">Mass</span>
@@ -1162,7 +1146,7 @@ jq(function ($) {
 
         const volleyTime = melee ?
             weapons[0].delay + volleyTimeMap[1] :
-            getRangedVolleyTime(weapons, volleyTimeModifier);
+            getRangedVolleyTime(weapons.map(w => w.def), volleyTimeModifier);
 
         // Other misc offensive state
         const offensiveState: OffensiveState = {

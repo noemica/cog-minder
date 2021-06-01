@@ -22,6 +22,7 @@ type HeaderInfo = {
 const headerLookup: Record<PageType, HeaderInfo> = {
     About: { name: "About", pageName: "about.html", spoilers: false, beta11Check: false },
     Bots: { name: "Bots", pageName: "bots.html", spoilers: true, beta11Check: false },
+    Build: { name: "Build", pageName: "build.html", spoilers: true, beta11Check: true },
     Hacks: { name: "Hacks", pageName: "hacks.html", spoilers: true, beta11Check: false },
     Parts: { name: "Parts", pageName: "parts.html", spoilers: true, beta11Check: true },
     Simulator: { name: "Simulator", pageName: "simulator.html", spoilers: true, beta11Check: false },
@@ -188,8 +189,10 @@ export function getSpoilersState(): Spoiler {
 // Clears a button group's state and sets the first item to be active
 export function resetButtonGroup(group: JQuery<HTMLElement>) {
     group.children().removeClass("active");
+    group.find("input").prop("checked", false);
 
     group.children("label:first-of-type").addClass("active");
+    group.children("label:first-of-type > input").prop("checked", true);
 }
 
 export function refreshSelectpicker(selector: JQuery<HTMLElement>) {

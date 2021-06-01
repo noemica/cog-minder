@@ -192,7 +192,7 @@ body {
     width: 10ch;
 }
 
-.weapon-help-btn {
+.part-help-btn {
     /* Used just for identification */
 }
 
@@ -223,7 +223,7 @@ body {
 }
 
 .part-dropdown {
-    width: 35ch !important;
+    width: 37ch !important;
 }
 
 .part-dropdown-menu {
@@ -545,4 +545,25 @@ body {
 .comparison-negative {
     color: #d90000;
     background-color: #200000;
+}
+
+/* Percentage bars with inline text */
+.percentage-bar-container {
+    border: 1px solid #004100;
+}
+
+.percentage-bar-inner {
+    height: 1.3rem;
+}
+
+.percentage-bar-text {
+    position: absolute;
+    color: #9da9af;
+    margin-top: 0.25rem;
+}
+
+/* Downsize everything in part selects */
+.part-select-container * {
+    font-size: 0.8rem;
+    line-height: 0.8rem;
 }

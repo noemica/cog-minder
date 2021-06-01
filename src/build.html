@@ -1,0 +1,141 @@
+<!doctype html>
+
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Build</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Cogmind helper website">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"
+        integrity="sha384-2SvkxRa9G/GlZMyFexHk+WN9p0n2T+r38dvBmw5l2/J3gjUcxs9R1GwKs0seeSh3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="ts/build.ts"></script>
+</head>
+
+<body>
+    <!-- Header/Title -->
+    <div id="headerContainer" class="container-xl">
+    </div>
+
+    <div class="container-xl">
+        <div class="input-group">
+            <!-- Depth -->
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="The current depth. Affects core integrity and heat dissipation.">
+                <span class="input-group-text">Depth</span>
+            </div>
+            <input id="depthInput" type="text" class="form-control" placeholder="-10"></input>
+
+            <!-- Innate energy generation -->
+            <div class="input-group-prepend ml-2" data-toggle="tooltip"
+                title="The amount of additional innate energy generation Cogmind has.">
+                <span class="input-group-text">Innate Energy Gen</span>
+            </div>
+            <input id="energyGenInput" type="text" class="form-control" placeholder="0"></input>
+
+            <!-- Innate heat dissipation -->
+            <div class="input-group-prepend ml-2" data-toggle="tooltip"
+                title="The amount of additional innate heat dissipation Cogmind has (not including the standard depth bonus).">
+                <span class="input-group-text">Innate Heat Dissipation</span>
+            </div>
+            <input id="heatDissipationInput" type="text" class="form-control" placeholder="0"></input>
+
+            <!-- Reset button -->
+            <button id="reset" class="btn ml-3" data-toggle="tooltip"
+                title="Reset all values to their default state.">Reset</button>
+        </div>
+
+        <!-- Info type filter -->
+        <div id="infoTypeContainer" class="d-flex flex-wrap btn-group btn-group-toggle mt-2" data-toggle="buttons">
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="The type of additional part info to show per-part.">
+                <span class="input-group-text">Part Info</span>
+            </div>
+            <label id="partInfoMass" class="btn">
+                <input type="radio" name="options"> Mass
+            </label>
+            <label id="partInfoCoverage" class="btn">
+                <input type="radio" name="options"> Coverage
+            </label>
+            <label id="partInfoIntegrity" class="btn">
+                <input type="radio" name="options"> Integrity
+            </label>
+            <label id="partInfoEnergyPerTurn" class="btn">
+                <input type="radio" name="options"> Energy Gain/Turn
+            </label>
+            <label id="partInfoHeatPerTurn" class="btn">
+                <input type="radio" name="options"> Heat Gain/Turn
+            </label>
+            <label id="partInfoEnergyPerMove" class="btn">
+                <input type="radio" name="options"> Energy Gain/Move
+            </label>
+            <label id="partInfoHeatPerMove" class="btn">
+                <input type="radio" name="options"> Heat Gain/Move
+            </label>
+            <label id="partInfoEnergyPerVolley" class="btn">
+                <input type="radio" name="options"> Energy Gain/Volley
+            </label>
+            <label id="partInfoHeatPerVolley" class="btn">
+                <input type="radio" name="options"> Heat Gain/Volley
+            </label>
+        </div>
+
+        <!-- Main body -->
+        <div class="row mt-3 align-items-center">
+            <div class="col">
+                <span class="input-label d-flex" data-toggle="tooltip"
+                    title="Summary information about Cogmind and all parts.">Summary</span>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div id="summaryContainer" class="input-group part-select-container align-items-center">
+        </div>
+        <div class="row mt-3 align-items-center">
+            <div class="col">
+                <span class="input-label d-flex" data-toggle="tooltip"
+                    title="Information about builtin core stats.">Core</span>
+            </div>
+            <div id="coreInfoContainer" class="col-3 part-select-container"></div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <span class="input-label d-flex" data-toggle="tooltip"
+                    title="Selection and information about power slot parts.">Power</span>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div id="powerContainer" class="part-select-container"></div>
+        <div class="row mt-3">
+            <div class="col">
+                <span class="input-label d-flex" data-toggle="tooltip"
+                    title="Selection and information about propulsion slot parts.">Propulsion</span>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div id="propulsionContainer" class="part-select-container"></div>
+        <div class="row mt-3">
+            <div class="col">
+                <span class="input-label d-flex" data-toggle="tooltip"
+                    title="Selection and information about utility slot parts.">Utility</span>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div id="utilityContainer" class="part-select-container"></div>
+        <div class="row mt-3">
+            <div class="col">
+                <span class="input-label d-flex" data-toggle="tooltip"
+                    title="Selection and information about weapon slot parts.">Weapon</span>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div id="weaponContainer" class="part-select-container"></div>
+    </div>
+    </div>
+</body>

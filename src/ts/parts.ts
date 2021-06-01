@@ -252,7 +252,7 @@ jq(function ($) {
                     return compareHighBadStat(leftPropulsion.modPerExtra, rightPropulsion.modPerExtra);
                 }
                 else if (leftPropulsion.drag !== undefined && rightPropulsion.drag !== undefined) {
-                    return compareHighBadStat(parseInt(leftPropulsion.drag), parseInt(rightPropulsion.drag));
+                    return compareHighBadStat(leftPropulsion.drag, rightPropulsion.drag);
                 }
                 else {
                     return emptyLine;

@@ -97,7 +97,75 @@ export enum Critical {
     Smash = "Smash",
     Sever = "Sever",
     Sunder = "Sunder",
-}
+};
+
+export type SpecialPropertyActive =
+    | "Always"
+    | "Part Active";
+
+export type Actuator = { kind: "Actuator", amount: number };
+export type AntimissileChance = { kind: "AntimissileChance", chance: number };
+export type AvoidChance = { kind: "AvoidChance", chance: number };
+export type CoreShielding = { kind: "CoreShielding", shielding: number };
+export type CorruptionIgnore = { kind: "CorruptionIgnore", chance: number };
+export type DamageReduction = { kind: "DamageReduction", chance: number };
+export type DamageResists = { kind: "DamageResists", resists: Record<DamageType, number> };
+export type EnergyStorage = { kind: "EnergyStorage", storage: number };
+export type HeatDissipation = { kind: "HeatDissipation", dissipation: number };
+export type MassSupport = { kind: "MassSupport", support: number };
+export type PowerShielding = { kind: "PowerShielding", shielding: number }
+export type PropulsionShielding = { kind: "PropulsionShielding", shielding: number };
+export type RangedAvoid = { kind: "RangedAvoid", avoid: number };
+export type RangedWeaponCycling = { kind: "RangedWeaponCycling", amount: number };
+export type SelfReduction = { kind: "SelfReduction", shielding: number };
+export type UtilityShielding = { kind: "UtilityShielding", shielding: number };
+export type WeaponRegen = { kind: "WeaponRegen", energyPerTurn: number, integrityPerTurn: number };
+export type WeaponShielding = { kind: "WeaponShielding", shielding: number };
+
+export type SpecialPropertyType =
+    | Actuator
+    | AntimissileChance
+    | AvoidChance
+    | CoreShielding
+    | CorruptionIgnore
+    | DamageReduction
+    | DamageResists
+    | EnergyStorage
+    | HeatDissipation
+    | MassSupport
+    | PowerShielding
+    | PropulsionShielding
+    | RangedAvoid
+    | RangedWeaponCycling
+    | SelfReduction
+    | UtilityShielding
+    | WeaponRegen
+    | WeaponShielding;
+
+export type SpecialPropertyTypeName =
+    | "Actuator"
+    | "AntimissileChance"
+    | "AvoidChance"
+    | "CoreShielding"
+    | "CorruptionIgnore"
+    | "DamageReduction"
+    | "DamageResists"
+    | "EnergyStorage"
+    | "HeatDissipation"
+    | "MassSupport"
+    | "PowerShielding"
+    | "PropulsionShielding"
+    | "RangedAvoid"
+    | "RangedWeaponCycling"
+    | "SelfReduction"
+    | "UtilityShielding"
+    | "WeaponRegen"
+    | "WeaponShielding";
+
+export type SpecialItemProperty = {
+    active: SpecialPropertyActive;
+    trait: SpecialPropertyType;
+};
 
 export type FabricationStats = {
     number: string;
@@ -123,6 +191,7 @@ export type BaseItem = {
     categories: number[];
     fabrication?: FabricationStats;
     index: number;
+    specialProperty?: SpecialItemProperty;
 };
 
 export type OtherItem = BaseItem & {
@@ -136,13 +205,10 @@ export type PowerItem = BaseItem & ItemWithUpkeep & {
     powerStability?: number;
 };
 
-export type PropulsionItem = BaseItem & {
-    energyUpkeep?: number;
-    matterUpkeep?: number;
-    heatGeneration?: number;
+export type PropulsionItem = BaseItem & ItemWithUpkeep & {
     timePerMove: number;
     modPerExtra?: number;
-    drag?: string;
+    drag?: number;
     energyPerMove?: number;
     heatPerMove?: number;
     support: number;

@@ -767,7 +767,7 @@ export function getRegen(bot: Bot) {
 }
 
 // Gets the volley time given an array of ranged weapons
-export function getRangedVolleyTime(weapons: SimulatorWeapon[], cyclerModifier: number) {
+export function getRangedVolleyTime(weapons: WeaponItem[], cyclerModifier: number) {
     let volleyTime: number;
     if (weapons.length in volleyTimeMap) {
         volleyTime = volleyTimeMap[weapons.length];
@@ -779,7 +779,7 @@ export function getRangedVolleyTime(weapons: SimulatorWeapon[], cyclerModifier: 
 
     weapons.forEach(weapon => {
         // Apply individual delays
-        volleyTime += weapon.delay;
+        volleyTime += weapon.delay ?? 0;
     });
 
     volleyTime *= cyclerModifier;
