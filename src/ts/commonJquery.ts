@@ -7,25 +7,78 @@ import {
     Spoiler,
     valueOrDefault
 } from "./common";
+import { PageType, pageTypes } from "./commonTypes";
 
 import * as jQuery from "jquery";
-import { PageType, pageTypes } from "./commonTypes";
+import "bootstrap";
 const $ = jQuery.noConflict();
 
 type HeaderInfo = {
     name: string;
     pageName: string;
+    helpText: string | undefined;
     spoilers: boolean;
     beta11Check: boolean;
 }
 
 const headerLookup: Record<PageType, HeaderInfo> = {
-    About: { name: "About", pageName: "about.html", spoilers: false, beta11Check: false },
-    Bots: { name: "Bots", pageName: "bots.html", spoilers: true, beta11Check: false },
-    Build: { name: "Build", pageName: "build.html", spoilers: true, beta11Check: true },
-    Hacks: { name: "Hacks", pageName: "hacks.html", spoilers: true, beta11Check: false },
-    Parts: { name: "Parts", pageName: "parts.html", spoilers: true, beta11Check: true },
-    Simulator: { name: "Simulator", pageName: "simulator.html", spoilers: true, beta11Check: false },
+    About: {
+        name: "About",
+        pageName: "about.html",
+        helpText: undefined,
+        spoilers: false,
+        beta11Check: false
+    },
+    Bots: {
+        name: "Bots",
+        pageName: "bots.html",
+        helpText: "A robot reference. This page contains a (should be) complete reference of " +
+            "known bot information (parts, resistances, and other special stats) along with some basic search " +
+            "filters. Bot names can be clicked to display bot information in a popup, and part names inside " +
+            "of those popups can be clicked to display another part info popup.",
+        spoilers: true,
+        beta11Check: false
+    },
+    Build: {
+        name: "Build",
+        pageName: "build.html",
+        helpText: "A build creator/planner. Allows for creating a build loadout and view some detailed stats " +
+            "like the ones that are shown in-game. Some overall build summary stats are always shown up at " +
+            "the top, while more individual part stats are available through the \"Part Info\" buttons. " +
+            "All stats are updated whenever any part is added, removed, or modified.",
+        spoilers: true,
+        beta11Check: true
+    },
+    Hacks: {
+        name: "Hacks",
+        pageName: "hacks.html",
+        helpText: "A machine hacking reference. Lists all available hacks for each type of machine as well " + 
+            "as their success rates. Entering hackware bonuses or other modifiers will update the odds " +
+            "of each hack.",
+        spoilers: true,
+        beta11Check: false
+    },
+    Parts: {
+        name: "Parts",
+        pageName: "parts.html",
+        helpText: "A parts reference. This page lists the stats of all known parts in Cogmind. Most parts " +
+            "come directly from the in-game gallery export, and the remainder (usually enemy-unique " + 
+            "unequippable parts) are manually entered. There are many ways to sort and filter the parts, " + 
+            "as well as multiple ways to view the parts (info popup vs part-to-part comparison).",
+        spoilers: true,
+        beta11Check: true
+    },
+    Simulator: {
+        name: "Simulator",
+        pageName: "simulator.html",
+        helpText: "A combat simulator. This page allows simulating a 1-on-1 combat with any bot in the game " +
+            "with a given offensive loadout. Select an enemy, weapons, and any number of other various " +
+            "combat-related utilities/stats, and then hit the Simulate button to kick off the simulator. " + 
+            "once complete, a graph of the number of volleys to kill is shown. Multiple simulations can be " +
+            "compared by giving each dataset a name and clicking the \"Add to comparison\" button.",
+        spoilers: true,
+        beta11Check: false
+    },
 };
 
 // Creates the header for a given page
@@ -80,12 +133,15 @@ export function createHeader(page: PageType, headerContainer: JQuery<HTMLElement
         spoilerHtml = "<div></div>";
     }
 
+    const helpLabel = info.helpText === undefined ?
+        "" : `<span class="input-group-text-block display-5" data-toggle="tooltip" title="${info.helpText}">?</span>`;
+
     headerContainer.append(`
 <div class="title-grid mt-2">
     <div class="header d-flex align-items-center justify-content-center">
         <span class="display-5">Cog-Minder</span>
     </div>
-    <h1 class="display-4 text-center title">${info.name}</h1>
+    <h1 class="display-4 text-center title">${info.name} ${helpLabel}</h1>
     ${spoilerHtml}
 </div>
 <div class="mb-2 menu-buttons-grid">
@@ -97,6 +153,8 @@ export function createHeader(page: PageType, headerContainer: JQuery<HTMLElement
         // Load spoilers saved state
         $("#spoilers").text(getSpoilersState());
     }
+
+    (headerContainer.find('[data-toggle="popover"]') as any).popover();
 }
 
 const nameRegex = /\[([\w. '"\-/]*) \(\d/;

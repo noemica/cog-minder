@@ -89,6 +89,7 @@ body {
     color: #00cc00;
     background-color: black;
     border: 1px solid #008800;
+    min-width: 300px;
 }
 
 /* Popup tooltip arrow */
