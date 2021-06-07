@@ -2,7 +2,7 @@ import * as items from "../json/items.json";
 import * as itemsB11 from "../json/items_b11.json";
 import { assertUnreachable, canShowPart, createItemDataContent, gallerySort, getMovementText, getValuePerTus, hasActiveSpecialProperty, initData, isPartMelee, itemData, parseIntOrDefault } from "./common";
 import { createHeader, getSelectedButtonId, getSpoilersState, resetButtonGroup } from "./commonJquery";
-import { Actuator, BaseItem, EnergyStorage, HeatDissipation, ItemSlot, ItemType, ItemWithUpkeep, JsonItem, MassSupport, PowerItem, PropulsionItem, RangedWeaponCycling, WeaponItem, WeaponRegen } from "./itemTypes";
+import { Actuator, BaseItem, EnergyStorage, FusionCompressor, HeatDissipation, ItemSlot, ItemType, ItemWithUpkeep, JsonItem, MassSupport, PowerAmplifier, PowerItem, PropulsionItem, RangedWeaponCycling, WeaponItem, WeaponRegen } from "./itemTypes";
 
 import * as jQuery from "jquery";
 import "bootstrap";
@@ -627,37 +627,43 @@ jq(function ($) {
     function updatePartsState() {
         function sum(a: number, b: number) { return a + b; }
 
-        function getEnergyPerMove(p: Part, tusPerMove: number) {
+        function getEnergyPerMove(p: Part, powerAmplifierBonus: number, tusPerMove: number) {
             if (!p.active) {
                 return 0;
             }
 
             // Return positive value for energy gen, negative for consumption
             if (p.part.slot === ItemSlot.Propulsion) {
-                const energyPerTurn = getEnergyPerTurn(p);
+                const energyPerTurn = getEnergyPerTurn(p, powerAmplifierBonus);
                 return getValuePerTus(energyPerTurn, tusPerMove) - ((p.part as PropulsionItem).energyPerMove ?? 0);
             }
             else {
-                return getValuePerTus(getEnergyPerTurn(p), tusPerMove);
+                return getValuePerTus(getEnergyPerTurn(p, powerAmplifierBonus), tusPerMove);
             }
         }
 
-        function getEnergyPerTurn(p: Part) {
+        function getEnergyPerTurn(p: Part, powerAmplifierBonus: number) {
             // Return positive value for energy gen, negative for consumption
             if (p.active && p.part.slot === ItemSlot.Power) {
-                return (p.part as PowerItem).energyGeneration ?? 0;
+                // Multiply only power-slot energy generation by the power amplifier bonus
+                return ((p.part as PowerItem).energyGeneration ?? 0) * powerAmplifierBonus;
+            }
+            else if (hasActiveSpecialProperty(p.part, p.abilityActive, "FusionCompressor")) {
+                // Fusion compressors convert matter to energy
+                return (p.part.specialProperty!.trait as FusionCompressor).energyPerTurn;
             }
             else if (p.active && p.part.slot === ItemSlot.Propulsion || p.part.slot === ItemSlot.Utility) {
                 return -((p.part as ItemWithUpkeep).energyUpkeep ?? 0);
             }
             else if (hasActiveSpecialProperty(p.part, p.abilityActive, "WeaponRegen")) {
+                // Weapon regen ability turns energy into weapon integrity
                 return -(p.part.specialProperty!.trait as WeaponRegen).energyPerTurn;
             }
 
             return 0;
         }
 
-        function getEnergyPerVolley(p: Part, tusPerVolley: number) {
+        function getEnergyPerVolley(p: Part, powerAmplifierBonus: number, tusPerVolley: number) {
             if (!p.active) {
                 return 0;
             }
@@ -667,7 +673,7 @@ jq(function ($) {
                 return -((p.part as WeaponItem).shotEnergy ?? 0);
             }
             else {
-                return getValuePerTus(getEnergyPerTurn(p), tusPerVolley);
+                return getValuePerTus(getEnergyPerTurn(p, powerAmplifierBonus), tusPerVolley);
             }
         }
 
@@ -871,13 +877,22 @@ jq(function ($) {
             mass: activeProp.length > 0 ? 0 : -3,
         };
 
+        // Get energy bonuses
+        const powerAmplifierBonus = 1 + parts.map(p => {
+            if (hasActiveSpecialProperty(p.part, p.active, "PowerAmplifier")) {
+                return (p.part.specialProperty!.trait as PowerAmplifier).percent;
+            }
+
+            return 0;
+        }).reduce(sum, 0);
+
         // Calculate info for each part
         const partsInfo: PartInfo[] = parts.map(p => {
             return {
                 coverage: p.part.coverage ?? 0,
-                energyPerMove: getEnergyPerMove(p, tusPerMove),
-                energyPerTurn: getEnergyPerTurn(p),
-                energyPerVolley: getEnergyPerVolley(p, tusPerVolley),
+                energyPerMove: getEnergyPerMove(p, powerAmplifierBonus, tusPerMove),
+                energyPerTurn: getEnergyPerTurn(p, powerAmplifierBonus),
+                energyPerVolley: getEnergyPerVolley(p, powerAmplifierBonus, tusPerVolley),
                 heatPerMove: getHeatPerMove(p, tusPerMove),
                 heatPerTurn: getHeatPerTurn(p),
                 heatPerVolley: getHeatPerVolley(p, tusPerVolley),

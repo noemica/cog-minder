@@ -20,7 +20,11 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Zio. Biocell": { active: "Always", trait: { kind: "EnergyStorage", storage: 1000 } },
     "Zio. Biocell Array": { active: "Always", trait: { kind: "EnergyStorage", storage: 1200 } },
     "Superbattery": { active: "Always", trait: { kind: "EnergyStorage", storage: 2000 } },
-
+    
+    // Fusion compressor
+    "Fusion Compressor": { active: "Part Active", trait: { kind: "FusionCompressor", energyPerTurn: 20 } },
+    "Imp. Fusion Compressor": { active: "Part Active", trait: { kind: "FusionCompressor", energyPerTurn: 40 } },
+    
     // Heat dissipation
     "Cooling System": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 22 } },
     "Imp. Cooling System": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 27 } },
@@ -47,6 +51,11 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Exp. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: .3 } },
     "Launcher Loader": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: .5 } },
     "Quantum Capacitor": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: .5 } },
+
+    // Power amplifiers
+    "Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: .2 } },
+    "Adv. Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: .3 } },
+    "Exp. Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: .4 } },
 
     // Weapon regen
     "Sigix Broadsword": { active: "Part Active", trait: { kind: "WeaponRegen", energyPerTurn: 5, integrityPerTurn: 2 } },

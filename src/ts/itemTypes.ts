@@ -111,8 +111,10 @@ export type CorruptionIgnore = { kind: "CorruptionIgnore", chance: number };
 export type DamageReduction = { kind: "DamageReduction", chance: number };
 export type DamageResists = { kind: "DamageResists", resists: Record<DamageType, number> };
 export type EnergyStorage = { kind: "EnergyStorage", storage: number };
+export type FusionCompressor = { kind: "FusionCompressor", energyPerTurn: number };
 export type HeatDissipation = { kind: "HeatDissipation", dissipation: number };
 export type MassSupport = { kind: "MassSupport", support: number };
+export type PowerAmplifier = { kind: "PowerAmplifier", percent: number }
 export type PowerShielding = { kind: "PowerShielding", shielding: number }
 export type PropulsionShielding = { kind: "PropulsionShielding", shielding: number };
 export type RangedAvoid = { kind: "RangedAvoid", avoid: number };
@@ -131,8 +133,10 @@ export type SpecialPropertyType =
     | DamageReduction
     | DamageResists
     | EnergyStorage
+    | FusionCompressor
     | HeatDissipation
     | MassSupport
+    | PowerAmplifier
     | PowerShielding
     | PropulsionShielding
     | RangedAvoid
@@ -151,8 +155,10 @@ export type SpecialPropertyTypeName =
     | "DamageReduction"
     | "DamageResists"
     | "EnergyStorage"
+    | "FusionCompressor"
     | "HeatDissipation"
     | "MassSupport"
+    | "PowerAmplifier"
     | "PowerShielding"
     | "PropulsionShielding"
     | "RangedAvoid"
