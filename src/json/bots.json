@@ -6207,7 +6207,7 @@
         ]
     },
     "T-07 Excavator": {
-        "description": "K-class workers perform menial tasks such as clearing debris to facilitate work by other robots. Their built-in compact recycling unit can break down almost any form of debris into reusable matter. As K-01 Serfs are extremely cheap to produce and perform no vital function, despite their size they are among the weakest robot designs with the most exposed core.",
+        "description": "T-class tunnelers analyze subsurface integrity and open new areas for expansion.",
         "class": "Tunneler",
         "categories": ["0b10"],
         "size": "Medium",
