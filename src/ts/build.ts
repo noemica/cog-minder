@@ -790,7 +790,7 @@ jq(function ($) {
             overweightPenalty = Math.trunc(activeProp.map(p => p.penalty).reduce(sum, 0) / activeProp.length);
 
             // Then apply per/move mods...
-            tusPerMove -= activeProp.filter((_, i) => i !== 0).map(p => p.modPerExtra ?? 0).reduce(sum, 0);
+            tusPerMove += activeProp.filter((_, i) => i !== 0).map(p => p.modPerExtra ?? 0).reduce(sum, 0);
 
             // Then apply overload mods...
             // TODO
