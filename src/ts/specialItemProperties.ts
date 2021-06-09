@@ -6,6 +6,10 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Nanoactuators": { active: "Part Active", trait: { kind: "Actuator", amount: .3 } },
     "Femtoactuators": { active: "Part Active", trait: { kind: "Actuator", amount: .5 } },
 
+    // Energy filter
+    "Energy Filter": { active: "Part Active", trait: { kind: "EnergyFilter", percent: .3 } },
+    "Prc. Energy Filter": { active: "Part Active", trait: { kind: "EnergyFilter", percent: .5 } },
+
     // Energy storage
     "Sml. Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 100 } },
     "Med. Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 200 } },
@@ -20,11 +24,11 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Zio. Biocell": { active: "Always", trait: { kind: "EnergyStorage", storage: 1000 } },
     "Zio. Biocell Array": { active: "Always", trait: { kind: "EnergyStorage", storage: 1200 } },
     "Superbattery": { active: "Always", trait: { kind: "EnergyStorage", storage: 2000 } },
-    
+
     // Fusion compressor
     "Fusion Compressor": { active: "Part Active", trait: { kind: "FusionCompressor", energyPerTurn: 20 } },
     "Imp. Fusion Compressor": { active: "Part Active", trait: { kind: "FusionCompressor", energyPerTurn: 40 } },
-    
+
     // Heat dissipation
     "Cooling System": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 22 } },
     "Imp. Cooling System": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 27 } },

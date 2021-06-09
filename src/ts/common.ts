@@ -901,7 +901,7 @@ export function getNoPrefixName(name: string): string {
 
 // Checks if a part has an active special property of the given type
 export function hasActiveSpecialProperty(part: Item, partActive: boolean, propertyType: SpecialPropertyTypeName) {
-    if (part.specialProperty == undefined) {
+    if (part.specialProperty === undefined) {
         return false;
     }
 

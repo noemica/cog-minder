@@ -110,6 +110,7 @@ export type CoreShielding = { kind: "CoreShielding", shielding: number };
 export type CorruptionIgnore = { kind: "CorruptionIgnore", chance: number };
 export type DamageReduction = { kind: "DamageReduction", chance: number };
 export type DamageResists = { kind: "DamageResists", resists: Record<DamageType, number> };
+export type EnergyFilter = { kind: "EnergyFilter", percent: number };
 export type EnergyStorage = { kind: "EnergyStorage", storage: number };
 export type FusionCompressor = { kind: "FusionCompressor", energyPerTurn: number };
 export type HeatDissipation = { kind: "HeatDissipation", dissipation: number };
@@ -132,6 +133,7 @@ export type SpecialPropertyType =
     | CorruptionIgnore
     | DamageReduction
     | DamageResists
+    | EnergyFilter
     | EnergyStorage
     | FusionCompressor
     | HeatDissipation
@@ -154,6 +156,7 @@ export type SpecialPropertyTypeName =
     | "CorruptionIgnore"
     | "DamageReduction"
     | "DamageResists"
+    | "EnergyFilter"
     | "EnergyStorage"
     | "FusionCompressor"
     | "HeatDissipation"
