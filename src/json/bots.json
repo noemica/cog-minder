@@ -7469,29 +7469,29 @@
         "size": "Large",
         "rating": "27",
         "value": 0,
-        "movement": "Flying (37)",
-        "coreIntegrity": 25,
-        "coreExposure": 50,
-        "salvagePotential": "5-15",
-        "visualRange": "20",
+        "movement": "Treading (180)",
+        "coreIntegrity": 40,
+        "coreExposure": 30,
+        "salvagePotential": "80-120",
+        "visualRange": "16",
         "armament": [
         ],
         "components": [
-            "Lgt. Ion Engine",
-            "Flight Unit",
-            "Flight Unit",
-            "Adv. Visual Processing Unit",
-            "Mak. Cloaking Device"
+            "Nuclear Core",
+            "Med. Treads",
+            "Med. Treads",
+            "Med. Treads",
+            "Humpback",
+            "Visual Processing Unit"
         ],
         "resistances": {
-            "Explosive": -25,
-            "Electromagnetic": -100
+            "Electromagnetic": -25
         }
     },
     "Z-Drone": {
         "description": "",
         "class": "Drone",
-        "categories": ["Drone", "Spoilers", "Zionite"],
+        "categories": ["Derelict", "Drone", "Spoilers", "Zionite"],
         "size": "Tiny",
         "rating": "16",
         "value": 0,
