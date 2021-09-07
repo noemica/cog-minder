@@ -1120,8 +1120,13 @@ jq(function ($) {
 
 
         // Combine groups back into single sorted array
+        const reverseSecondaryGroups = ($("#secondarySortDirection").text().trim() === "Descending");
         let newItems: string[] = [];
         groupedKeys.forEach(key => {
+            if (reverseSecondaryGroups) {
+                groupedItemNames[key].reverse();
+            }
+            
             newItems = newItems.concat(groupedItemNames[key]);
         });
 
