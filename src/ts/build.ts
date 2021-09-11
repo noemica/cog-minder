@@ -797,7 +797,7 @@ jq(function ($) {
         }
 
         // Then apply overweight penalties...
-        tusPerMove += Math.trunc(totalMass / totalSupport) * overweightPenalty;
+        tusPerMove += Math.trunc(Math.max(0, totalMass - 1) / totalSupport) * overweightPenalty;
 
         // Then apply drag penalties if airborne...
         if (propulsionType === ItemType.FlightUnit || propulsionType === ItemType.HoverUnit) {
