@@ -568,3 +568,12 @@ body {
     font-size: 0.8rem;
     line-height: 0.8rem;
 }
+
+/* More hacks to get part selection to properly work with the reduced line size */
+.part-select-container input {
+    height: initial;
+}
+
+.filter-option-inner-inner {
+    line-height: initial;
+}

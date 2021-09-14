@@ -23,7 +23,8 @@ jq(function ($) {
         | "Heat/Turn"
         | "Heat/Volley"
         | "Integrity"
-        | "Mass";
+        | "Mass"
+        | "Vulnerability";
 
     // Calculated information for each part
     type PartInfo = {
@@ -36,6 +37,7 @@ jq(function ($) {
         heatPerVolley: number;
         integrity: number;
         mass: number;
+        vulnerability: number;
     }
 
     type PercentageColor =
@@ -45,7 +47,8 @@ jq(function ($) {
         | "HeatDissipation"
         | "HeatGen"
         | "MassSupport"
-        | "Mass";
+        | "Mass"
+        | "Vulnerability";
 
     const percentageColorLookup: Record<PercentageColor, string> = {
         "Default": "#162416",
@@ -55,6 +58,7 @@ jq(function ($) {
         "HeatGen": "#633200",
         "MassSupport": "#5b5b00",
         "Mass": "#493e2e",
+        "Vulnerability": "#d90000",
     };
 
     // Calculated total parts state
@@ -81,6 +85,11 @@ jq(function ($) {
         
         // Heat generation associated with weapon slots firing one volley
         heatGenPerVolley: number;
+
+        // Lowest and highest expected damage to destruction values to indicate relative vulnerability
+        highestVulnerability: number;
+        lowestVulnerability: number;
+
         isMelee: boolean;
         totalCoverage: number;
         totalEnergyGenPerMove: number;
@@ -109,17 +118,21 @@ jq(function ($) {
     };
     let partsState: TotalPartsState;
 
+    type DefaultPart = {
+        name: string,
+        number?: number,
+    };
     type PartType = {
         name: string;
         id: string;
-        defaults: string[],
+        defaults: DefaultPart[],
         slot: ItemSlot;
     };
     const partTypes: PartType[] = [
-        { name: "power", id: "powerContainer", defaults: ["Ion Engine"], slot: ItemSlot.Power },
-        { name: "propulsion", id: "propulsionContainer", defaults: ["Aluminum Leg", "Aluminum Leg"], slot: ItemSlot.Propulsion },
-        { name: "utility", id: "utilityContainer", defaults: ["Sml. Storage Unit"], slot: ItemSlot.Utility },
-        { name: "weapon", id: "weaponContainer", defaults: ["Assault Rifle", "Med. Laser"], slot: ItemSlot.Weapon },
+        { name: "power", id: "powerContainer", defaults: [{ name: "Ion Engine" }], slot: ItemSlot.Power },
+        { name: "propulsion", id: "propulsionContainer", defaults: [{ name: "Aluminum Leg", number: 2 }], slot: ItemSlot.Propulsion },
+        { name: "utility", id: "utilityContainer", defaults: [{ name: "Sml. Storage Unit" }], slot: ItemSlot.Utility },
+        { name: "weapon", id: "weaponContainer", defaults: [{ name: "Assault Rifle" }, { name: "Med. Laser" }], slot: ItemSlot.Weapon },
     ];
     function addPartSelect(type: PartType, initialSelection: string) {
         const container = $("#" + type.id);
@@ -152,6 +165,9 @@ jq(function ($) {
         const infoColumn = $('<div class="col-3"></div>')
         const select = $(`<select class="selectpicker" data-live-search="true">${partOptions}</select>`);
         const helpButton = $('<button class="btn part-help-btn" data-html=true data-toggle="popover">?</button>');
+        const numberLabelContainer = $('<div class="input-group-prepend ml-3" data-toggle="tooltip" title="How many of the part to equip"></div>');
+        const numberLabel = $('<span class="input-group-text">Number</span>');
+        const numberInput = $('<input type="text" class="form-control" placeholder="1"></input>');
         const activeContainer = $('<div class="btn-group btn-group-toggle ml-2" data-toggle="buttons"></div>');
         const activeLabelContainer = $('<div class="input-group-prepend" data-toggle="tooltip" title="Whether the part is active."></div>');
         const activeLabel = $('<span class="input-group-text">Active</span>');
@@ -166,6 +182,9 @@ jq(function ($) {
         partPickerColumn.append(partPickerContainer);
         partPickerContainer.append(select);
         partPickerContainer.append(helpButton);
+        partPickerContainer.append(numberLabelContainer);
+        numberLabelContainer.append(numberLabel);
+        partPickerContainer.append(numberInput);
         partPickerContainer.append(activeContainer);
         activeContainer.append(activeLabelContainer);
         activeLabelContainer.append(activeLabel);
@@ -190,6 +209,9 @@ jq(function ($) {
             updateAll();
         });
         activeContainer.find("input").on("change", () => {
+            updateAll();
+        });
+        numberInput.on("input", () => {
             updateAll();
         });
 
@@ -230,8 +252,13 @@ jq(function ($) {
 
     // Appends a percentage bar to the specified element
     function addPercentageBar(selector: JQuery<HTMLElement>, value: number, percentage: number, color: PercentageColor) {
+        addPercentageBarWithString(selector, value, percentage, percentage.toFixed(1), color);
+    }
+
+    // Appends a percentage bar to the specified element
+    function addPercentageBarWithString(selector: JQuery<HTMLElement>, value: number, percentage: number, percentageString: string, color: PercentageColor) {
         const valueText = Number.isInteger(value) ? value.toString() : value.toFixed(1);
-        const percentageText = value === 0 ? value : `${valueText} ${percentage.toFixed(1)}%`;
+        const percentageText = value === 0 ? value : `${valueText} ${percentageString}`;
         const container = $('<div class="percentage-bar-container"></div>');
         const span = $(`<span class="percentage-bar-text ml-1">${percentageText}</span>`);
         const percentageBar = $(`<div class="percentage-bar-inner"></div>`);
@@ -259,6 +286,7 @@ jq(function ($) {
         "partInfoHeatPerVolley": "Heat/Volley",
         "partInfoIntegrity": "Integrity",
         "partInfoMass": "Mass",
+        "partInfoVulnerability": "Vulnerability",
     };
     // Gets the currently selected part info type
     function getInfoType() {
@@ -339,8 +367,10 @@ jq(function ($) {
             // Remove old options by pressing each delete button
             container.find(".input-group > button:last-child").trigger("click");
 
-            type.defaults.forEach(partName => {
-                container.find("select:last").selectpicker("val", partName);
+            type.defaults.forEach((defaultPart, i) => {
+                // Set up the default parts and number
+                container.find("select:last").selectpicker("val", defaultPart.name);
+                container.children(`div:eq(${i})`).find(".form-control:last").val(defaultPart.number?.toString() ?? "");
             });
         });
     }
@@ -448,6 +478,14 @@ jq(function ($) {
                 const support = partsState.coreInfo.mass;
                 const supportPercent = -support * 100 / partsState.totalSupport;
                 addPercentageBar(infoContainer, support, supportPercent, "MassSupport");
+                break;
+
+            case "Vulnerability":
+                const vulnerability = partsState.coreInfo.vulnerability;
+                const diffFromMin = vulnerability - partsState.highestVulnerability;
+                const minMaxDiff = partsState.lowestVulnerability - partsState.highestVulnerability;
+                const percentage = minMaxDiff === 0 ? 100.0 : 100.0 * (1.0 - (diffFromMin / minMaxDiff));
+                addPercentageBarWithString(infoContainer, Math.ceil(vulnerability), percentage, "", "Vulnerability");
                 break;
 
             default:
@@ -613,6 +651,14 @@ jq(function ($) {
                     break;
                 }
 
+            case "Vulnerability":
+                const vulnerability = partInfo.vulnerability;
+                const diffFromMin = vulnerability - partsState.highestVulnerability;
+                const minMaxDiff = partsState.lowestVulnerability - partsState.highestVulnerability;
+                const percentage = minMaxDiff === 0 ? 100.0 : 100.0 * (1.0 - (diffFromMin / minMaxDiff));
+                addPercentageBarWithString(infoColumn, Math.ceil(vulnerability), percentage, "", "Vulnerability");
+                break;
+
             default:
                 assertUnreachable(infoType);
         }
@@ -621,6 +667,7 @@ jq(function ($) {
     type Part = {
         abilityActive: boolean,
         active: boolean,
+        number: number,
         part: BaseItem,
     };
     // Recalculates the total parts state based on all current items
@@ -727,6 +774,15 @@ jq(function ($) {
             }
         }
 
+        function getVulnerability(p: Part, totalCoverage: number) {
+            if (p.part.coverage === undefined) {
+                return 0;
+            }
+
+            const multiplier = 1 / (p.part.coverage / totalCoverage);
+            return multiplier * p.part.integrity;
+        }
+
         // Get the definitions of all parts
         const parts: Part[] = [];
         partTypes.map(p => p.id).forEach(id => {
@@ -735,11 +791,12 @@ jq(function ($) {
 
                 // Check if the part is active
                 const active = selector.find("label:first").hasClass("active");
+                const number = Math.max(1, parseIntOrDefault(selector.children("input").val(), 1));
 
                 // Try to get the selected part
                 const partName = selector.find("select").selectpicker("val") as any as string;
                 if (partName in itemData) {
-                    parts.push({ abilityActive: active, active: active, part: itemData[partName] as BaseItem });
+                    parts.push({ abilityActive: active, active: active, number: number, part: itemData[partName] as BaseItem });
                 }
             });
         });
@@ -748,11 +805,16 @@ jq(function ($) {
         let firstProp = parts.find(p => p.active && p.part.slot === ItemSlot.Propulsion);
         let propulsionType: ItemType | undefined;
         let totalSupport: number;
-        const totalMass = parts.map(p => p.part.mass ?? 0).reduce(sum, 0);
+        const totalMass = parts.map(p => (p.part.mass ?? 0) * p.number).reduce(sum, 0);
         if (firstProp !== undefined) {
             propulsionType = firstProp.part.type;
         }
-        const activeProp = parts.filter(p => p.active && p.part.type === propulsionType).map(p => p.part as PropulsionItem);
+        const activeProp: PropulsionItem[] = [];
+        parts.filter(p => p.active && p.part.type === propulsionType).forEach(p => {
+            for (let i = 0; i < p.number; i++) {
+                activeProp.push(p.part as PropulsionItem);
+            }
+        });
         activeProp.sort((a, b) => (a.modPerExtra ?? 0) - (b.modPerExtra ?? 0));
         if (activeProp.length === 0) {
             // Core hover has 3 support
@@ -864,6 +926,9 @@ jq(function ($) {
         const innateEnergyGen = parseIntOrDefault($("#energyGenInput").val(), 0);
         const innateHeatDissipation = parseIntOrDefault($("#heatDissipationInput").val(), 0);
 
+        // Core is additional 100 coverage
+        const totalCoverage = parts.map(p => (p.part.coverage ?? 0) * p.number).reduce(sum, 0) + 100;
+
         // Calculate core info
         const coreInfo: PartInfo = {
             coverage: 100,
@@ -875,6 +940,7 @@ jq(function ($) {
             heatPerVolley: -getValuePerTus(55 - (3 * depth) + innateHeatDissipation, tusPerVolley),
             integrity: 1750 - (150 * depth),
             mass: activeProp.length > 0 ? 0 : -3,
+            vulnerability: totalCoverage / 100 * (1750 - (150 * depth))
         };
 
         // Get energy bonuses
@@ -897,22 +963,21 @@ jq(function ($) {
         // Calculate info for each part
         const partsInfo: PartInfo[] = parts.map(p => {
             return {
-                coverage: p.part.coverage ?? 0,
-                energyPerMove: getEnergyPerMove(p, powerAmplifierBonus, tusPerMove),
-                energyPerTurn: getEnergyPerTurn(p, powerAmplifierBonus),
-                energyPerVolley: getEnergyPerVolley(p, energyFilterPercent, powerAmplifierBonus, tusPerVolley),
-                heatPerMove: getHeatPerMove(p, tusPerMove),
-                heatPerTurn: getHeatPerTurn(p),
-                heatPerVolley: getHeatPerVolley(p, tusPerVolley),
-                integrity: p.part.integrity,
-                mass: getMass(p),
+                coverage: (p.part.coverage ?? 0) * p.number,
+                energyPerMove: getEnergyPerMove(p, powerAmplifierBonus, tusPerMove) * p.number,
+                energyPerTurn: getEnergyPerTurn(p, powerAmplifierBonus) * p.number,
+                energyPerVolley: getEnergyPerVolley(p, energyFilterPercent, powerAmplifierBonus, tusPerVolley) * p.number,
+                heatPerMove: getHeatPerMove(p, tusPerMove) * p.number,
+                heatPerTurn: getHeatPerTurn(p) * p.number,
+                heatPerVolley: getHeatPerVolley(p, tusPerVolley) * p.number,
+                integrity: p.part.integrity * p.number,
+                mass: getMass(p) * p.number,
+                vulnerability: getVulnerability(p, totalCoverage),
             };
         });
 
         // Calculate totals
-        // Core is 100 coverage
         const allPartInfo = partsInfo.concat(coreInfo);
-        const totalCoverage = allPartInfo.map(p => p.coverage).reduce(sum, 0);
         const totalEnergyGenPerTurn = innateEnergyGen + allPartInfo
             .map(p => p.energyPerTurn > 0 ? p.energyPerTurn : 0).reduce(sum, 0);
         const totalEnergyUsePerTurn = allPartInfo.map(p => p.energyPerTurn < 0 ? -p.energyPerTurn : 0).reduce(sum, 0);
@@ -937,6 +1002,9 @@ jq(function ($) {
         const totalEnergyUsePerVolley = getValuePerTus(totalEnergyUsePerTurn, tusPerVolley) + energyPerVolley;
         const totalHeatDissipationPerVolley = getValuePerTus(totalHeatDissipationPerTurn, tusPerVolley);
         const totalHeatGenPerVolley = getValuePerTus(totalHeatGenPerTurn, tusPerVolley) + heatPerVolley;
+        const vulnerabilities = allPartInfo.map(p => p.vulnerability).filter(v => v !== 0);
+        const lowestVulnerability = Math.max(...vulnerabilities, coreInfo.vulnerability) / 0.9;
+        const highestVulnerability = Math.min(...vulnerabilities, coreInfo.vulnerability) * 0.9;
 
         const energyStorage = 100 + parts.map(p => {
             if (hasActiveSpecialProperty(p.part, p.active, "EnergyStorage")) {
@@ -960,6 +1028,8 @@ jq(function ($) {
             energyUsePerVolley: energyPerVolley,
             heatGenPerMove: heatPerMove,
             heatGenPerVolley: heatPerVolley,
+            lowestVulnerability: lowestVulnerability,
+            highestVulnerability: highestVulnerability,
             totalCoverage: totalCoverage,
             totalEnergyGenPerMove: totalEnergyGenPerMove,
             totalEnergyGenPerTurn: totalEnergyGenPerTurn,

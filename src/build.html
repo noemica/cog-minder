@@ -58,31 +58,43 @@
                 title="The type of additional part info to show per-part.">
                 <span class="input-group-text">Part Info</span>
             </div>
-            <label id="partInfoMass" class="btn">
+            <label id="partInfoMass" class="btn" data-toggle="tooltip"
+                title="The mass and support values of all parts.">
                 <input type="radio" name="options"> Mass
             </label>
-            <label id="partInfoCoverage" class="btn">
+            <label id="partInfoCoverage" class="btn" data-toggle="tooltip" title="The coverage values of all parts.">
                 <input type="radio" name="options"> Coverage
             </label>
-            <label id="partInfoIntegrity" class="btn">
+            <label id="partInfoVulnerability" class="btn" data-toggle="tooltip"
+                title="The approximate vulnerability of all parts. Determined by how much damage is expected before this part breaks, assuming no other parts are destroyed first.">
+                <input type="radio" name="options"> Vulnerability
+            </label>
+            <label id="partInfoIntegrity" class="btn" data-toggle="tooltip"
+            title="The integrity values of all parts.">
                 <input type="radio" name="options"> Integrity
             </label>
-            <label id="partInfoEnergyPerTurn" class="btn">
+            <label id="partInfoEnergyPerTurn" class="btn" data-toggle="tooltip"
+            title="The energy generation and upkeep of all active parts per 100 &quot;TUs&quot; or turn.">
                 <input type="radio" name="options"> Energy Gain/Turn
             </label>
-            <label id="partInfoHeatPerTurn" class="btn">
+            <label id="partInfoHeatPerTurn" class="btn" data-toggle="tooltip"
+            title="The heat generation and dissipation of all active parts per 100 &quot;TUs&quot; or turn.">
                 <input type="radio" name="options"> Heat Gain/Turn
             </label>
-            <label id="partInfoEnergyPerMove" class="btn">
+            <label id="partInfoEnergyPerMove" class="btn" data-toggle="tooltip"
+            title="The energy generation and upkeep of all active parts per tile moved.">
                 <input type="radio" name="options"> Energy Gain/Move
             </label>
-            <label id="partInfoHeatPerMove" class="btn">
+            <label id="partInfoHeatPerMove" class="btn" data-toggle="tooltip"
+            title="The heat generation and dissipation of all active parts per tile moved.">
                 <input type="radio" name="options"> Heat Gain/Move
             </label>
-            <label id="partInfoEnergyPerVolley" class="btn">
+            <label id="partInfoEnergyPerVolley" class="btn" data-toggle="tooltip"
+            title="The energy generation, upkeep, and firing costs of all active parts and weapons per volley fired.">
                 <input type="radio" name="options"> Energy Gain/Volley
             </label>
-            <label id="partInfoHeatPerVolley" class="btn">
+            <label id="partInfoHeatPerVolley" class="btn" data-toggle="tooltip"
+            title="The heat generation, dissipation, and firing costs of all active parts and weapons per volley fired.">
                 <input type="radio" name="options"> Heat Gain/Volley
             </label>
         </div>
