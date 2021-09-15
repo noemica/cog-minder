@@ -253,6 +253,15 @@ export function resetButtonGroup(group: JQuery<HTMLElement>) {
     group.children("label:first-of-type > input").prop("checked", true);
 }
 
+// Clears a button group's state and sets the item at the selected index to be active
+export function setActiveButtonGroupButton(group: JQuery<HTMLElement>, index: number) {
+    group.children().removeClass("active");
+    group.find("input").prop("checked", false);
+
+    group.children(`label:nth-of-type(${index})`).addClass("active");
+    group.children(`label:nth-of-type(${index}) > input`).prop("checked", true);
+}
+
 export function refreshSelectpicker(selector: JQuery<HTMLElement>) {
     selector.selectpicker("refresh");
 

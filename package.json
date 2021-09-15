@@ -7,6 +7,7 @@
     "@types/bootstrap-select": "^1.13.1",
     "@types/chart.js": "^2.9.29",
     "@types/jquery": "^3.5.5",
+    "@types/lz-string": "^1.3.34",
     "@types/popper.js": "1.11.0",
     "cross-env": "^7.0.3",
     "gh-pages": "^3.1.0",
@@ -23,6 +24,7 @@
     "bootstrap-select": "^1.13.18",
     "chart.js": "^2.9.4",
     "jquery": "^3.5.1",
+    "lz-string": "^1.4.4",
     "popper.js": "^1.16.1"
   },
   "browserslist": [

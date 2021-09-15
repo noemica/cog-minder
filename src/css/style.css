@@ -65,6 +65,10 @@ body {
     display: none!important;
 }
 
+.full-width {
+    width: 100%;
+}
+
 .minus-left-margin {
     margin-left: -1px;
 }

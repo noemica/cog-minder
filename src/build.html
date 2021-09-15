@@ -69,32 +69,31 @@
                 title="The approximate vulnerability of all parts. Determined by how much damage is expected before this part breaks, assuming no other parts are destroyed first.">
                 <input type="radio" name="options"> Vulnerability
             </label>
-            <label id="partInfoIntegrity" class="btn" data-toggle="tooltip"
-            title="The integrity values of all parts.">
+            <label id="partInfoIntegrity" class="btn" data-toggle="tooltip" title="The integrity values of all parts.">
                 <input type="radio" name="options"> Integrity
             </label>
             <label id="partInfoEnergyPerTurn" class="btn" data-toggle="tooltip"
-            title="The energy generation and upkeep of all active parts per 100 &quot;TUs&quot; or turn.">
+                title="The energy generation and upkeep of all active parts per 100 &quot;TUs&quot; or turn.">
                 <input type="radio" name="options"> Energy Gain/Turn
             </label>
             <label id="partInfoHeatPerTurn" class="btn" data-toggle="tooltip"
-            title="The heat generation and dissipation of all active parts per 100 &quot;TUs&quot; or turn.">
+                title="The heat generation and dissipation of all active parts per 100 &quot;TUs&quot; or turn.">
                 <input type="radio" name="options"> Heat Gain/Turn
             </label>
             <label id="partInfoEnergyPerMove" class="btn" data-toggle="tooltip"
-            title="The energy generation and upkeep of all active parts per tile moved.">
+                title="The energy generation and upkeep of all active parts per tile moved.">
                 <input type="radio" name="options"> Energy Gain/Move
             </label>
             <label id="partInfoHeatPerMove" class="btn" data-toggle="tooltip"
-            title="The heat generation and dissipation of all active parts per tile moved.">
+                title="The heat generation and dissipation of all active parts per tile moved.">
                 <input type="radio" name="options"> Heat Gain/Move
             </label>
             <label id="partInfoEnergyPerVolley" class="btn" data-toggle="tooltip"
-            title="The energy generation, upkeep, and firing costs of all active parts and weapons per volley fired.">
+                title="The energy generation, upkeep, and firing costs of all active parts and weapons per volley fired.">
                 <input type="radio" name="options"> Energy Gain/Volley
             </label>
             <label id="partInfoHeatPerVolley" class="btn" data-toggle="tooltip"
-            title="The heat generation, dissipation, and firing costs of all active parts and weapons per volley fired.">
+                title="The heat generation, dissipation, and firing costs of all active parts and weapons per volley fired.">
                 <input type="radio" name="options"> Heat Gain/Volley
             </label>
         </div>
@@ -105,7 +104,10 @@
                 <span class="input-label d-flex" data-toggle="tooltip"
                     title="Summary information about Cogmind and all parts.">Summary</span>
             </div>
-            <div class="col-3"></div>
+            <div class="col-3">
+                <button id="getLink" class="btn full-width" data-toggle="tooltip"
+                    title="Copies a link to this page with all currently selected items to the clipboard.">Copy Build Link</button>
+            </div>
         </div>
         <div id="summaryContainer" class="input-group part-select-container align-items-center">
         </div>

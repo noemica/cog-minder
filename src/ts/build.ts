@@ -1,13 +1,15 @@
 import * as items from "../json/items.json";
 import * as itemsB11 from "../json/items_b11.json";
 import { assertUnreachable, canShowPart, createItemDataContent, gallerySort, getMovementText, getValuePerTus, hasActiveSpecialProperty, initData, isPartMelee, itemData, parseIntOrDefault } from "./common";
-import { createHeader, getSelectedButtonId, getSpoilersState, resetButtonGroup } from "./commonJquery";
+import { createHeader, getSelectedButtonId, getSpoilersState, resetButtonGroup, setActiveButtonGroupButton } from "./commonJquery";
 import { Actuator, BaseItem, EnergyFilter, EnergyStorage, FusionCompressor, HeatDissipation, ItemSlot, ItemType, ItemWithUpkeep, JsonItem, MassSupport, PowerAmplifier, PowerItem, PropulsionItem, RangedWeaponCycling, WeaponItem, WeaponRegen } from "./itemTypes";
 
 import * as jQuery from "jquery";
 import "bootstrap";
 import "bootstrap-select";
+import "lz-string"
 import { getRangedVolleyTime, volleyTimeMap } from "./simulatorCalcs";
+import LZString = require("lz-string");
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -82,7 +84,7 @@ jq(function ($) {
         heatGenPerMove: number;
 
         energyStorage: number;
-        
+
         // Heat generation associated with weapon slots firing one volley
         heatGenPerVolley: number;
 
@@ -118,24 +120,31 @@ jq(function ($) {
     };
     let partsState: TotalPartsState;
 
-    type DefaultPart = {
+    type PartState = {
+        active?: boolean,
         name: string,
         number?: number,
     };
-    type PartType = {
-        name: string;
+
+    type PartSection = {
         id: string;
-        defaults: DefaultPart[],
         slot: ItemSlot;
     };
-    const partTypes: PartType[] = [
-        { name: "power", id: "powerContainer", defaults: [{ name: "Ion Engine" }], slot: ItemSlot.Power },
-        { name: "propulsion", id: "propulsionContainer", defaults: [{ name: "Aluminum Leg", number: 2 }], slot: ItemSlot.Propulsion },
-        { name: "utility", id: "utilityContainer", defaults: [{ name: "Sml. Storage Unit" }], slot: ItemSlot.Utility },
-        { name: "weapon", id: "weaponContainer", defaults: [{ name: "Assault Rifle" }, { name: "Med. Laser" }], slot: ItemSlot.Weapon },
+    const partTypes: PartSection[] = [
+        { id: "powerContainer", slot: ItemSlot.Power },
+        { id: "propulsionContainer", slot: ItemSlot.Propulsion },
+        { id: "utilityContainer", slot: ItemSlot.Utility },
+        { id: "weaponContainer", slot: ItemSlot.Weapon },
     ];
-    function addPartSelect(type: PartType, initialSelection: string) {
-        const container = $("#" + type.id);
+    const partDefaults: PartState[][] = [
+        [{ name: "Ion Engine" }],
+        [{ name: "Aluminum Leg", number: 2 }],
+        [{ name: "Sml. Storage Unit" }],
+        [{ name: "Assault Rifle" }, { name: "Med. Laser" }]
+    ];
+
+    function addPartSelect(section: PartSection, initialSelection: string) {
+        const container = $("#" + section.id);
         const spoilersState = getSpoilersState();
 
         // Get list of valid names
@@ -144,7 +153,7 @@ jq(function ($) {
             const baseItem = itemData[name];
 
             // Slot check
-            if (baseItem.slot !== type.slot) {
+            if (baseItem.slot !== section.slot) {
                 return;
             }
 
@@ -198,7 +207,7 @@ jq(function ($) {
         deleteButton.on("click", () => {
             // Ensure the last dropdown is always empty
             if (row.next().length === 0) {
-                addPartSelect(type, "");
+                addPartSelect(section, "");
             }
 
             // Remove the associated item
@@ -234,7 +243,7 @@ jq(function ($) {
         // Update content when the weapon selection changes
         select.on("changed.bs.select", () => {
             if (row.next().length === 0) {
-                addPartSelect(type, "");
+                addPartSelect(section, "");
             }
 
             updateContent(select.selectpicker("val") as any as string);
@@ -299,6 +308,61 @@ jq(function ($) {
         return idToInfoTypeMap[buttonId];
     }
 
+    // Gets the initial parts to load, reads the url for parts, if that fails then falls back to defaults
+    function getInitialParts() {
+        //PartState[][]
+        const hash = window.location.hash.substring(1);
+
+        if (hash.length === 0) {
+            // No parts specified, load the defaults
+            return partDefaults;
+        }
+
+        const decodedString = LZString.decompressFromEncodedURIComponent(hash);
+        if (decodedString === null) {
+            // Failed to decode, return defaults
+            return partDefaults;
+        }
+
+        const parts = JSON.parse(decodedString);
+        return parts === undefined ? partDefaults : parts;
+    }
+
+    // Gets a link to the build page with the parts encoded in the URL
+    function getLinkAndCopy() {
+        console.log("test");
+        // Get the definitions of all parts
+        const parts: PartState[][] = [];
+        partTypes.map(p => p.id).forEach(id => {
+            const typeArray: PartState[] = [];
+
+            $("#" + id).find(".input-group").each((_, element) => {
+                const selector = $(element);
+
+                // Check if the part is active and the number if defined
+                const active = selector.find("label:first").hasClass("active");
+                const number = Math.max(1, parseIntOrDefault(selector.children("input").val(), 1));
+
+                // Try to get the selected part
+                const partName = selector.find("select").selectpicker("val") as any as string;
+                if (partName in itemData) {
+                    typeArray.push({
+                        active: active ? undefined : false,
+                        number: number === 1 ? undefined : number,
+                        name: partName
+                    });
+                }
+            });
+
+            parts.push(typeArray);
+        });
+
+        const partsString = JSON.stringify(parts);
+        const encodedString = LZString.compressToEncodedURIComponent(partsString);
+        const url = window.location.origin + window.location.pathname + "#" + encodedString;
+        navigator.clipboard.writeText(url);
+    }
+
     // Initialize the page state
     function init() {
         $("#beta11Checkbox").prop("checked", false);
@@ -309,12 +373,13 @@ jq(function ($) {
         resetButtonGroup($("#infoTypeContainer"));
 
         initializePartsSelects();
-        resetValues();
+        const parts = getInitialParts();
+        resetValues(parts);
 
         // Add handlers
         $("#reset").on("click", () => {
             ($("#reset") as any).tooltip("hide");
-            resetValues();
+            resetValues(partDefaults);
         });
         $("#depthInput").on("input", updateAll);
         $("#energyGenInput").on("input", updateAll);
@@ -324,6 +389,15 @@ jq(function ($) {
             ($(e.target).parent() as any).tooltip("hide");
             updateAllPartInfo();
         });
+        $("#getLink").on("click", e => {
+            getLinkAndCopy();
+            const selector = $(e.target);
+            (selector as any).tooltip("hide");
+
+            // Set the text to copied temporarily
+            selector.text("Copied");
+            setTimeout(() => selector.text("Copy Build Link"), 2000);
+        });
 
         $("#beta11Checkbox").on("change", () => {
             const newItems = $("#beta11Checkbox").prop("checked") ? itemsB11 : items;
@@ -331,7 +405,7 @@ jq(function ($) {
             initData(newItems as { [key: string]: JsonItem }, undefined);
 
             // Initialize page state
-            resetValues();
+            resetValues(getInitialParts());
 
             ($("#beta11Checkbox").parent() as any).tooltip("hide");
         });
@@ -348,6 +422,10 @@ jq(function ($) {
             }
         });
 
+        $(window).on("hashchange", () => {
+            resetPartSelects(getInitialParts());
+        });
+
         // Enable tooltips/popovers
         ($('[data-toggle="tooltip"]') as any).tooltip();
     }
@@ -360,27 +438,30 @@ jq(function ($) {
     }
 
     // Resets all part selects to their default values
-    function resetPartSelects() {
-        partTypes.forEach(type => {
+    function resetPartSelects(defaults: PartState[][]) {
+        partTypes.forEach((type, i) => {
             const container = $("#" + type.id);
 
             // Remove old options by pressing each delete button
             container.find(".input-group > button:last-child").trigger("click");
 
-            type.defaults.forEach((defaultPart, i) => {
+            defaults[i].forEach((defaultPart, i) => {
                 // Set up the default parts and number
                 container.find("select:last").selectpicker("val", defaultPart.name);
                 container.children(`div:eq(${i})`).find(".form-control:last").val(defaultPart.number?.toString() ?? "");
+                if (defaultPart.active == false) {
+                    setActiveButtonGroupButton(container.find(`.btn-group-toggle:eq(${i})`), 2);
+                }
             });
         });
     }
 
     // Resets all values on the page
-    function resetValues() {
+    function resetValues(defaults: PartState[][]) {
         $("#depthInput").val("");
         $("#energyGenInput").val("");
         $("#heatDissipationInput").val("");
-        resetPartSelects();
+        resetPartSelects(defaults);
     }
 
     // Updates all calculated part info, then updates individual part info rows
@@ -664,14 +745,14 @@ jq(function ($) {
         }
     }
 
-    type Part = {
-        abilityActive: boolean,
-        active: boolean,
-        number: number,
-        part: BaseItem,
-    };
     // Recalculates the total parts state based on all current items
     function updatePartsState() {
+        type Part = {
+            abilityActive: boolean,
+            active: boolean,
+            number: number,
+            part: BaseItem,
+        };
         function sum(a: number, b: number) { return a + b; }
 
         function getEnergyPerMove(p: Part, powerAmplifierBonus: number, tusPerMove: number) {
