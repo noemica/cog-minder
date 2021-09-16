@@ -1,6 +1,6 @@
 import * as items from "../json/items.json";
 import * as itemsB11 from "../json/items_b11.json";
-import { assertUnreachable, canShowPart, createItemDataContent, gallerySort, getMovementText, getValuePerTus, hasActiveSpecialProperty, initData, isPartMelee, itemData, parseIntOrDefault } from "./common";
+import { assertUnreachable, canShowPart, createItemDataContent, gallerySort, getMovementText, getValuePerTus, hasActiveSpecialProperty, initData, isPartMelee, itemData, parseIntOrDefault, setSpoilersState } from "./common";
 import { createHeader, getSelectedButtonId, getSpoilersState, resetButtonGroup, setActiveButtonGroupButton } from "./commonJquery";
 import { Actuator, BaseItem, EnergyFilter, EnergyStorage, FusionCompressor, HeatDissipation, ItemSlot, ItemType, ItemWithUpkeep, JsonItem, MassSupport, PowerAmplifier, PowerItem, PropulsionItem, RangedWeaponCycling, WeaponItem, WeaponRegen } from "./itemTypes";
 
@@ -371,6 +371,13 @@ jq(function ($) {
         initFromState();
 
         // Add handlers
+        $("#spoilersDropdown > button").on("click", (e) => {
+            const state = $(e.target).text();
+            $("#spoilers").text(state);
+            setSpoilersState(state);
+            ($("#spoilersDropdown > button") as any).tooltip("hide");
+            resetValues(defaultParts);
+        });        
         $("#reset").on("click", () => {
             ($("#reset") as any).tooltip("hide");
             resetValues(defaultParts);
