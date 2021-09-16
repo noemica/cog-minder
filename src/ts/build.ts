@@ -126,6 +126,15 @@ jq(function ($) {
         number?: number,
     };
 
+    type PageState = {
+        b11: boolean,
+        depth?: number,
+        energyGen?: number,
+        heatDissipation?: number,
+        parts: PartState[][],
+    };
+    let initialPageState: PageState;
+
     type PartSection = {
         id: string;
         slot: ItemSlot;
@@ -136,7 +145,7 @@ jq(function ($) {
         { id: "utilityContainer", slot: ItemSlot.Utility },
         { id: "weaponContainer", slot: ItemSlot.Weapon },
     ];
-    const partDefaults: PartState[][] = [
+    const defaultParts: PartState[][] = [
         [{ name: "Ion Engine" }],
         [{ name: "Aluminum Leg", number: 2 }],
         [{ name: "Sml. Storage Unit" }],
@@ -261,7 +270,7 @@ jq(function ($) {
 
     // Appends a percentage bar to the specified element
     function addPercentageBar(selector: JQuery<HTMLElement>, value: number, percentage: number, color: PercentageColor) {
-        addPercentageBarWithString(selector, value, percentage, percentage.toFixed(1), color);
+        addPercentageBarWithString(selector, value, percentage, percentage.toFixed(1) + "%", color);
     }
 
     // Appends a percentage bar to the specified element
@@ -308,29 +317,8 @@ jq(function ($) {
         return idToInfoTypeMap[buttonId];
     }
 
-    // Gets the initial parts to load, reads the url for parts, if that fails then falls back to defaults
-    function getInitialParts() {
-        //PartState[][]
-        const hash = window.location.hash.substring(1);
-
-        if (hash.length === 0) {
-            // No parts specified, load the defaults
-            return partDefaults;
-        }
-
-        const decodedString = LZString.decompressFromEncodedURIComponent(hash);
-        if (decodedString === null) {
-            // Failed to decode, return defaults
-            return partDefaults;
-        }
-
-        const parts = JSON.parse(decodedString);
-        return parts === undefined ? partDefaults : parts;
-    }
-
     // Gets a link to the build page with the parts encoded in the URL
     function getLinkAndCopy() {
-        console.log("test");
         // Get the definitions of all parts
         const parts: PartState[][] = [];
         partTypes.map(p => p.id).forEach(id => {
@@ -356,8 +344,19 @@ jq(function ($) {
 
             parts.push(typeArray);
         });
+        const b11 = $("#beta11Checkbox").prop("checked");
+        const depth = $("#depthInput").val();
+        const energyGen = $("#energyGenInput").val();
+        const heatDissipation = $("#heatDissipationInput").val();
+        const state: PageState = {
+            b11: b11,
+            depth: parseIntOrDefault(depth, undefined),
+            energyGen: parseIntOrDefault(energyGen, undefined),
+            heatDissipation: parseIntOrDefault(heatDissipation, undefined),
+            parts: parts
+        };
 
-        const partsString = JSON.stringify(parts);
+        const partsString = JSON.stringify(state);
         const encodedString = LZString.compressToEncodedURIComponent(partsString);
         const url = window.location.origin + window.location.pathname + "#" + encodedString;
         navigator.clipboard.writeText(url);
@@ -365,21 +364,16 @@ jq(function ($) {
 
     // Initialize the page state
     function init() {
-        $("#beta11Checkbox").prop("checked", false);
-
-        initData(items as { [key: string]: JsonItem }, undefined);
-
         createHeader("Build", $("#headerContainer"));
         resetButtonGroup($("#infoTypeContainer"));
 
-        initializePartsSelects();
-        const parts = getInitialParts();
-        resetValues(parts);
+        loadStateFromHash();
+        initFromState();
 
         // Add handlers
         $("#reset").on("click", () => {
             ($("#reset") as any).tooltip("hide");
-            resetValues(partDefaults);
+            resetValues(defaultParts);
         });
         $("#depthInput").on("input", updateAll);
         $("#energyGenInput").on("input", updateAll);
@@ -401,11 +395,10 @@ jq(function ($) {
 
         $("#beta11Checkbox").on("change", () => {
             const newItems = $("#beta11Checkbox").prop("checked") ? itemsB11 : items;
-
             initData(newItems as { [key: string]: JsonItem }, undefined);
 
             // Initialize page state
-            resetValues(getInitialParts());
+            resetValues(defaultParts);
 
             ($("#beta11Checkbox").parent() as any).tooltip("hide");
         });
@@ -423,11 +416,34 @@ jq(function ($) {
         });
 
         $(window).on("hashchange", () => {
-            resetPartSelects(getInitialParts());
+            loadStateFromHash();
+            resetPartSelects(initialPageState.parts);
         });
 
         // Enable tooltips/popovers
         ($('[data-toggle="tooltip"]') as any).tooltip();
+    }
+
+    // Initialize overall page state from the initial page state
+    function initFromState() {
+        $("#beta11Checkbox").prop("checked", initialPageState.b11);
+        const itemsToLoad = $("#beta11Checkbox").prop("checked") ? itemsB11 : items;
+
+        initData(itemsToLoad as { [key: string]: JsonItem }, undefined);
+
+        initializePartsSelects();
+        resetValues(initialPageState.parts);
+
+        // Set non-part inputs
+        if (initialPageState.depth !== undefined ) {
+            $("#depthInput").val(initialPageState.depth);
+        } 
+        if (initialPageState.energyGen !== undefined) {
+            $("#energyGenInput").val(initialPageState.energyGen);
+        }
+        if (initialPageState.heatDissipation !== undefined) {
+            $("#heatDissipationInput").val(initialPageState.heatDissipation);
+        }
     }
 
     // Adds the initial empty part selects for each type
@@ -435,6 +451,31 @@ jq(function ($) {
         partTypes.forEach(type => {
             addPartSelect(type, "");
         });
+    }
+
+    // Loads the initial page state from the hash, using defaults if there is none
+    function loadStateFromHash() {
+        const hash = window.location.hash.substring(1);
+        initialPageState = { b11: false, parts: defaultParts };
+
+        if (hash.length === 0) {
+            // No parts specified, use the defaults
+            return;
+        }
+
+        const decodedString = LZString.decompressFromEncodedURIComponent(hash);
+        if (decodedString === null) {
+            // Failed to decode, use the defaults
+            return;
+        }
+
+        const state = JSON.parse(decodedString) as PageState;
+        if (state === undefined || state.b11 === undefined || state.parts === undefined) {
+            // Failed to decode, use the defaults
+            return;
+        } else {
+            initialPageState = state;
+        }
     }
 
     // Resets all part selects to their default values
