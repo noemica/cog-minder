@@ -1020,7 +1020,9 @@ jq(function ($) {
                 p.active = false;
             }
             else if (p.active) {
-                activeWeapons.push(p.part as WeaponItem);
+                for (let i = 0; i < p.number; i++) {
+                    activeWeapons.push(p.part as WeaponItem);
+                }
             }
         });
 
