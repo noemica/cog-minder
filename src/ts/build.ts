@@ -177,7 +177,7 @@ jq(function ($) {
         partNames.sort(gallerySort);
         const partOptions = partNames.map(w => `<option>${w}</option>`).join();
 
-        const row = $('<div class="row mt-1"></div>');
+        const row = $('<div class="row mt-1 align-items-center"></div>');
         const partPickerColumn = $('<div class="col"></div>');
         const partPickerContainer = $('<div class="input-group"></div>');
         const infoColumn = $('<div class="col-3"></div>')

@@ -564,20 +564,9 @@ body {
 .percentage-bar-text {
     position: absolute;
     color: #9da9af;
-    margin-top: 0.25rem;
 }
 
 /* Downsize everything in part selects */
 .part-select-container * {
     font-size: 0.8rem;
-    line-height: 0.8rem;
-}
-
-/* More hacks to get part selection to properly work with the reduced line size */
-.part-select-container input {
-    height: initial;
-}
-
-.filter-option-inner-inner {
-    line-height: initial;
 }
