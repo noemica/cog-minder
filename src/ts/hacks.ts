@@ -1,6 +1,6 @@
 import * as jQuery from "jquery";
 import "bootstrap";
-import { createHeader, getSpoilersState, resetButtonGroup } from "./commonJquery";
+import { createHeader, getSpoilersState, registerDisableAutocomplete, resetButtonGroup } from "./commonJquery";
 import { parseIntOrDefault, setSpoilersState, Spoiler } from "./common";
 
 const jq = jQuery.noConflict();
@@ -389,6 +389,7 @@ jq(function ($) {
     // Initialize the page state
     function init() {
         createHeader("Hacks", $("#headerContainer"));
+        registerDisableAutocomplete($(document));
 
         // Set initial state
         resetInput();

@@ -15,6 +15,7 @@ import {
     getSelectedButtonId,
     getSpoilersState,
     refreshSelectpicker,
+    registerDisableAutocomplete,
     resetButtonGroup
 } from "./commonJquery";
 import {
@@ -827,6 +828,8 @@ jq(function ($) {
 
         createHeader("Parts", $("#headerContainer"));
         $("#beta11Checkbox").prop("checked", false);
+        resetButtonGroup($("#modeContainer"));
+        registerDisableAutocomplete($(document));
 
         // Initialize page state
         createItems();

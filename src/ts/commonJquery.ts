@@ -244,6 +244,13 @@ export function getSpoilersState(): Spoiler {
     return value;
 }
 
+// Registers a function on the document to disable autocomplete for all inputs
+export function registerDisableAutocomplete(document: JQuery<Document>) {
+    document.on('focus', ':input', e => {
+        $(e.target).attr('autocomplete', 'off');
+    });
+}
+
 // Clears a button group's state and sets the first item to be active
 export function resetButtonGroup(group: JQuery<HTMLElement>) {
     group.children().removeClass("active");

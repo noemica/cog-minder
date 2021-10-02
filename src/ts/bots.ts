@@ -18,7 +18,8 @@ import {
     getSelectedButtonId,
     resetButtonGroup,
     enableBotInfoItemPopovers,
-    createHeader
+    createHeader,
+    registerDisableAutocomplete
 } from "./commonJquery";
 
 import * as jQuery from "jquery";
@@ -158,8 +159,9 @@ jq(function ($) {
         initData(items as { [key: string]: JsonItem }, bots as any as { [key: string]: JsonBot });
         
         createBots();
-        createHeader("Bots", $("#headerContainer"))
+        createHeader("Bots", $("#headerContainer"));
         $("#beta11Checkbox").prop("checked", false);
+        registerDisableAutocomplete($(document));
 
         // Set initial state
         updateFactionVisibility();

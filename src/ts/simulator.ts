@@ -17,6 +17,7 @@ import {
     enableBotInfoItemPopovers,
     getSpoilersState,
     refreshSelectpicker,
+    registerDisableAutocomplete,
     resetButtonGroup
 } from "./commonJquery";
 import {
@@ -483,6 +484,7 @@ jq(function ($) {
         initData(items as { [key: string]: JsonItem }, bots as any as { [key: string]: JsonBot });
 
         createHeader("Simulator", $("#headerContainer"));
+        registerDisableAutocomplete($(document));
 
         // Set initial state
         resetButtonGroup($("#combatTypeContainer"));

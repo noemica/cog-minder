@@ -1,7 +1,7 @@
 import * as items from "../json/items.json";
 import * as itemsB11 from "../json/items_b11.json";
 import { assertUnreachable, canShowPart, createItemDataContent, gallerySort, getMovementText, getValuePerTus, hasActiveSpecialProperty, initData, isPartMelee, itemData, parseIntOrDefault, setSpoilersState } from "./common";
-import { createHeader, getSelectedButtonId, getSpoilersState, resetButtonGroup, setActiveButtonGroupButton } from "./commonJquery";
+import { createHeader, getSelectedButtonId, getSpoilersState, registerDisableAutocomplete, resetButtonGroup, setActiveButtonGroupButton } from "./commonJquery";
 import { Actuator, BaseItem, EnergyFilter, EnergyStorage, FusionCompressor, HeatDissipation, ItemSlot, ItemType, ItemWithUpkeep, JsonItem, MassSupport, PowerAmplifier, PowerItem, PropulsionItem, RangedWeaponCycling, WeaponItem, WeaponRegen } from "./itemTypes";
 
 import * as jQuery from "jquery";
@@ -365,6 +365,7 @@ jq(function ($) {
     // Initialize the page state
     function init() {
         createHeader("Build", $("#headerContainer"));
+        registerDisableAutocomplete($(document));
         resetButtonGroup($("#infoTypeContainer"));
 
         loadStateFromHash();
