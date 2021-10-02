@@ -68,33 +68,48 @@ export type Bot = {
     coreIntegrity: number;
     description: string;
     immunities: BotImmunity[];
+    memory: string;
     movement: string;
     name: string;
+    profile: string;
     rating: string;
     resistances: BotResistances;
     salvagePotential: string;
     size: BotSize;
-    traits: string[];
+    spotPercent: string;
+    threat: string;
+    tier: string;
     totalCoverage: number;
+    traits: string[];
     value: number;
     visualRange: string;
 };
 
 export type JsonBot = {
-    armament: Array<string | ItemOption[]>;
-    categories: BotCategory[];
-    class: string;
-    components: Array<string | ItemOption[]>;
-    coreExposure: number,
-    coreIntegrity: number;
-    description: string;
-    immunities?: BotImmunity[];
-    movement: string;
-    rating: string;
-    resistances: BotResistances;
-    salvagePotential: string;
-    size: BotSize;
-    traits?: string[];
-    value: number;
-    visualRange: string;
+    Name: string,
+    Class: string,
+    Tier: string,
+    Threat: string,
+    Rating: string,
+    Value: string,
+    "Size Class": BotSize,
+    Size: string,
+    Profile: string,
+    Memory: string,
+    "Spot %": string,
+    Movement: string,
+    Speed: string,
+    "Sight Range": string,
+    "Energy Generation": string,
+    "Heat Dissipation": string,
+    "Core Integrity": string,
+    "Core Exposure": string,
+    "Core Exposure %": string,
+    "Salvage Potential": string,
+    "Immunities"?: BotImmunity[],
+    Traits?: string[],
+    Armament?: Array<string | ItemOption[]>,
+    Components?: Array<string | ItemOption[]>,
+    Analysis?: string,
+    Resistances: BotResistances,
 };

@@ -1,5 +1,7 @@
 import * as bots from "../json/bots.json";
+import * as botsB11 from "../json/bots_b11.json";
 import * as items from "../json/items.json";
+import * as itemsB11 from "../json/items_b11.json";
 import {
     Bot, JsonBot,
 } from "./botTypes";
@@ -157,6 +159,7 @@ jq(function ($) {
         
         createBots();
         createHeader("Bots", $("#headerContainer"))
+        $("#beta11Checkbox").prop("checked", false);
 
         // Set initial state
         updateFactionVisibility();
@@ -194,6 +197,24 @@ jq(function ($) {
                     .not($(e.target).parents())
                     .popover("hide");
             }
+        });
+
+        $("#beta11Checkbox").on("change", () => {
+            const isB11 = $("#beta11Checkbox").prop("checked");
+            const newItems = isB11 ? itemsB11 : items as any;
+            const newBots = isB11 ? botsB11 : bots as any;
+
+            initData(newItems, newBots);
+
+            ($('#botsGrid > [data-toggle="popover"]') as any).popover("dispose");
+            $("#botsGrid").empty();
+
+            // Initialize page state
+            createBots();
+            updateFactionVisibility();
+            resetFilters();
+
+            ($("#beta11Checkbox").parent() as any).tooltip("hide");
         });
 
         // Enable tooltips

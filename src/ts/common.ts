@@ -1,7 +1,9 @@
 // Common code
-import * as categories from "../json/categories.json";
+import * as itemCategories from "../json/item_categories.json";
+import * as botCategories from "../json/bot_categories.json";
 import {
     Bot,
+    BotCategory,
     BotPart,
     ItemOption,
     JsonBot
@@ -348,9 +350,14 @@ export function createBotDataContent(bot: Bot) {
         ${summaryLine("Overview")}
         ${textLine("Class", bot.class)}
         ${textLine("Size", bot.size)}
+        ${textLine("Profile", bot.profile)}
         ${rangeLine("Rating", bot.rating, getRatingValue(bot), undefined, 0, 165, ColorScheme.LowGood)}
+        ${textLine("Tier", bot.tier)}
+        ${textLine("Threat", bot.threat)}
         ${textLine("Value", bot.value.toString())}
         ${textLine("Visual Range", bot.visualRange)}
+        ${textLine("Memory", bot.memory)}
+        ${textLine("Spot %", bot.spotPercent)}
         ${textLine("Movement", bot.movement)}
         ${rangeLine("Core Integrity", bot.coreIntegrity.toString(), bot.coreIntegrity, undefined, 0, bot.coreIntegrity, ColorScheme.Green)}
         ${rangeLineUnit("Core Exposure", bot.coreExposure.toString(), bot.coreExposure, "%", undefined, 0, 100, ColorScheme.LowGood)}
@@ -438,7 +445,7 @@ export function createBotDataContent(bot: Bot) {
         `;
 
         traits.forEach(trait => {
-            html += itemLine(trait);
+            html += `<span class="popover-description">${trait}</span>\n`
         });
     }
 
@@ -952,13 +959,13 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
             time: item["Fabrication Time"]!,
         };
 
-        let itemCategories: number[];
-        if (!(itemName in categories)) {
+        let categories: number[];
+        if (!(itemName in itemCategories)) {
             console.log(`Need to add categories for ${itemName}`);
-            itemCategories = [];
+            categories = [];
         }
         else {
-            itemCategories = (categories as { [key: string]: number[] })[itemName];
+            categories = (itemCategories as { [key: string]: number[] })[itemName];
         }
 
         const coverage = parseIntOrUndefined(item.Coverage!) ?? 0;
@@ -985,7 +992,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     size: size,
                     type: item.Type,
                     description: item.Description,
-                    categories: itemCategories,
+                    categories: categories,
                     life: item.Life,
                     index: index,
                     specialProperty: specialProperty,
@@ -1011,7 +1018,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     size: size,
                     type: item.Type,
                     description: item.Description,
-                    categories: itemCategories,
+                    categories: categories,
                     fabrication: fabrication,
                     powerStability: item["Power Stability"] == null ?
                         undefined :
@@ -1043,7 +1050,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     fabrication: fabrication,
                     burnout: item.Burnout,
                     description: item.Description,
-                    categories: itemCategories,
+                    categories: categories,
                     effect: item.Effect,
                     drag: parseIntOrUndefined(item.Drag),
                     energyUpkeep: parseFloatOrUndefined(item["Energy Upkeep"]),
@@ -1074,7 +1081,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     fabrication: fabrication,
                     description: item.Description,
                     effect: item.Effect,
-                    categories: itemCategories,
+                    categories: categories,
                     energyUpkeep: parseIntOrUndefined(item["Energy Upkeep"]),
                     heatGeneration: parseIntOrUndefined(item["Heat Generation"]),
                     matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
@@ -1123,7 +1130,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     fabrication: fabrication,
                     description: item.Description,
                     effect: item.Effect,
-                    categories: itemCategories,
+                    categories: categories,
                     mass: parseIntOrUndefined(item.Mass!) ?? 0,
                     specialTrait: item["Special Trait"],
                     critical: critical,
@@ -1199,9 +1206,10 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                 }
             }
             const bot = (bots as any as { [key: string]: JsonBot })[botName];
-            const itemCoverage = bot.armament.reduce(sumItemCoverage, 0) + bot.components.reduce(sumItemCoverage, 0);
+            const itemCoverage = (bot.Armament?.reduce(sumItemCoverage, 0) ?? 0) 
+                + (bot.Components?.reduce(sumItemCoverage, 0) ?? 0);
 
-            let roughCoreCoverage = (100.0 / (100.0 - bot.coreExposure) * itemCoverage) - itemCoverage;
+            let roughCoreCoverage = (100.0 / (100.0 - parseInt(bot["Core Exposure %"])) * itemCoverage) - itemCoverage;
             if (isNaN(roughCoreCoverage)) {
                 roughCoreCoverage = 1;
             }
@@ -1254,36 +1262,50 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
             // Add armament and component data
             const armamentData: BotPart[] = [];
             const armamentOptionData: BotPart[][] = [];
-            bot.armament.forEach(data => addPartData(data, armamentData, armamentOptionData));
+            bot.Armament?.forEach(data => addPartData(data, armamentData, armamentOptionData));
 
             const componentData: BotPart[] = [];
             const componentOptionData: BotPart[][] = [];
-            bot.components.forEach(data => addPartData(data, componentData, componentOptionData));
+            bot.Components?.forEach(data => addPartData(data, componentData, componentOptionData));
+
+            let categories: BotCategory[];
+            if (!(botName in botCategories)) {
+                console.log(`Need to add categories for ${botName}`);
+                categories = [];
+            }
+            else {
+                categories = (botCategories as { [key: string]: BotCategory[] })[botName];
+            }    
 
             botData[botName] = {
-                armament: bot.armament,
+                armament: bot.Armament ?? [],
                 armamentData: armamentData,
                 armamentOptionData: armamentOptionData,
-                categories: bot.categories,
-                class: bot.class,
+                categories: categories,
+                class: bot.Class,
                 componentData: componentData,
                 componentOptionData: componentOptionData,
-                components: bot.components,
-                coreCoverage: estimatedCoreCoverage,
-                coreExposure: bot.coreExposure,
-                coreIntegrity: bot.coreIntegrity,
-                description: bot.description,
-                immunities: bot.immunities ?? [],
-                movement: bot.movement,
+                components: bot.Components ?? [],
+                coreCoverage: roughCoreCoverage,
+                coreExposure: parseInt(bot["Core Exposure %"]),
+                coreIntegrity: parseInt(bot["Core Integrity"]),
+                description: bot.Analysis ?? "",
+                immunities: bot.Immunities ?? [],
+                memory: bot.Memory,
+                movement: `${bot.Movement} (${bot.Speed})`,
                 name: botName,
-                rating: bot.rating,
-                resistances: bot.resistances,
-                salvagePotential: bot.salvagePotential,
-                size: bot.size,
+                profile: bot.Profile,
+                rating: bot.Rating,
+                resistances: bot.Resistances,
+                salvagePotential: bot["Salvage Potential"],
+                spotPercent: bot["Spot %"] ?? "100",
+                size: bot["Size Class"],
+                threat: bot.Threat,
                 totalCoverage: totalCoverage,
-                traits: bot.traits ?? [],
-                value: bot.value,
-                visualRange: bot.visualRange,
+                tier: bot.Tier,
+                traits: bot.Traits ?? [],
+                value: parseIntOrDefault(bot.Value, 0),
+                visualRange: bot["Sight Range"],
             };
         });
     }

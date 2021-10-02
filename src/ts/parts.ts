@@ -823,10 +823,10 @@ jq(function ($) {
 
     // Initialize the page state
     function init() {
-        initData(items as { [key: string]: JsonItem }, undefined);
+        initData(items as any, undefined);
 
-        $("#beta11Checkbox").prop("checked", false);
         createHeader("Parts", $("#headerContainer"));
+        $("#beta11Checkbox").prop("checked", false);
 
         // Initialize page state
         createItems();
@@ -916,7 +916,7 @@ jq(function ($) {
         $("#beta11Checkbox").on("change", () => {
             const newItems = $("#beta11Checkbox").prop("checked") ? itemsB11 : items;
 
-            initData(newItems as { [key: string]: JsonItem }, undefined);
+            initData(newItems as any, undefined);
 
             ($('#itemsGrid > [data-toggle="popover"]') as any).popover("dispose");
             $("#itemsGrid").empty();

@@ -1,8 +1,12 @@
-#!/usr/bin/env python3
+#!/usr/bin/env py
 
 import csv
 import json
 from io import StringIO
+from os import path
+
+input_path = path.join(path.dirname(path.realpath(__file__)), 'gallery_export_b11.csv')
+output_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'items_b11.json')
 
 categories = {
     'all': [
@@ -195,11 +199,12 @@ def get_slot(row):
 index_lookup = {}
 all_values = {}
 
-with open('gallery_export_b11.csv') as f:
-    # Escape quotes to properly parse
+with open(input_path) as f:
+    # Escape a few quotes to properly parse
     string = f.read() \
         .replace('"Lootmaker"', '\\"Lootmaker\\"') \
         .replace('"Choppy"', '\\"Choppy\\"')
+    
 
 csv.register_dialect('cog', 'excel', escapechar='\\')
 reader = csv.reader(StringIO(string), csv.get_dialect('cog'))
@@ -236,5 +241,5 @@ for row in reader:
 
         all_values[values['Name']] = values
 
-with open('../src/json/items_b11.json', 'w') as f:
+with open(output_path, 'w') as f:
     json.dump(all_values, f)

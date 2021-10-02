@@ -37,7 +37,7 @@ const headerLookup: Record<PageType, HeaderInfo> = {
             "filters. Bot names can be clicked to display bot information in a popup, and part names inside " +
             "of those popups can be clicked to display another part info popup.",
         spoilers: true,
-        beta11Check: false
+        beta11Check: true
     },
     Build: {
         name: "Build",
