@@ -7,5 +7,5 @@ jq(function ($) {
 
     function init() {
         createHeader("About", $("#headerContainer"));
-    }    
+    }
 });

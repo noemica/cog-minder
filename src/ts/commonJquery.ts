@@ -1,12 +1,6 @@
 // Common Jquery related code
 
-import {
-    createItemDataContent,
-    getItem,
-    itemData,
-    Spoiler,
-    valueOrDefault
-} from "./common";
+import { createItemDataContent, getItem, itemData, Spoiler, valueOrDefault } from "./common";
 import { PageType, pageTypes } from "./commonTypes";
 
 import * as jQuery from "jquery";
@@ -19,7 +13,7 @@ type HeaderInfo = {
     helpText: string | undefined;
     spoilers: boolean;
     beta11Check: boolean;
-}
+};
 
 const headerLookup: Record<PageType, HeaderInfo> = {
     About: {
@@ -27,57 +21,62 @@ const headerLookup: Record<PageType, HeaderInfo> = {
         pageName: "about.html",
         helpText: undefined,
         spoilers: false,
-        beta11Check: false
+        beta11Check: false,
     },
     Bots: {
         name: "Bots",
         pageName: "bots.html",
-        helpText: "A robot reference. This page contains a (should be) complete reference of " +
+        helpText:
+            "A robot reference. This page contains a (should be) complete reference of " +
             "known bot information (parts, resistances, and other special stats) along with some basic search " +
             "filters. Bot names can be clicked to display bot information in a popup, and part names inside " +
             "of those popups can be clicked to display another part info popup.",
         spoilers: true,
-        beta11Check: true
+        beta11Check: true,
     },
     Build: {
         name: "Build",
         pageName: "build.html",
-        helpText: "A build creator/planner. Allows for creating a build loadout and view some detailed stats " +
+        helpText:
+            "A build creator/planner. Allows for creating a build loadout and view some detailed stats " +
             "like the ones that are shown in-game. Some overall build summary stats are always shown up at " +
-            "the top, while more individual part stats are available through the \"Part Info\" buttons. " +
+            'the top, while more individual part stats are available through the "Part Info" buttons. ' +
             "All stats are updated whenever any part is added, removed, or modified.",
         spoilers: true,
-        beta11Check: true
+        beta11Check: true,
     },
     Hacks: {
         name: "Hacks",
         pageName: "hacks.html",
-        helpText: "A machine hacking reference. Lists all available hacks for each type of machine as well " + 
+        helpText:
+            "A machine hacking reference. Lists all available hacks for each type of machine as well " +
             "as their success rates. Entering hackware bonuses or other modifiers will update the odds " +
             "of each hack.",
         spoilers: true,
-        beta11Check: false
+        beta11Check: false,
     },
     Parts: {
         name: "Parts",
         pageName: "parts.html",
-        helpText: "A parts reference. This page lists the stats of all known parts in Cogmind. Most parts " +
-            "come directly from the in-game gallery export, and the remainder (usually enemy-unique " + 
-            "unequippable parts) are manually entered. There are many ways to sort and filter the parts, " + 
+        helpText:
+            "A parts reference. This page lists the stats of all known parts in Cogmind. Most parts " +
+            "come directly from the in-game gallery export, and the remainder (usually enemy-unique " +
+            "unequippable parts) are manually entered. There are many ways to sort and filter the parts, " +
             "as well as multiple ways to view the parts (info popup vs part-to-part comparison).",
         spoilers: true,
-        beta11Check: true
+        beta11Check: true,
     },
     Simulator: {
         name: "Simulator",
         pageName: "simulator.html",
-        helpText: "A combat simulator. This page allows simulating a 1-on-1 combat with any bot in the game " +
+        helpText:
+            "A combat simulator. This page allows simulating a 1-on-1 combat with any bot in the game " +
             "with a given offensive loadout. Select an enemy, weapons, and any number of other various " +
-            "combat-related utilities/stats, and then hit the Simulate button to kick off the simulator. " + 
+            "combat-related utilities/stats, and then hit the Simulate button to kick off the simulator. " +
             "once complete, a graph of the number of volleys to kill is shown. Multiple simulations can be " +
-            "compared by giving each dataset a name and clicking the \"Add to comparison\" button.",
+            'compared by giving each dataset a name and clicking the "Add to comparison" button.',
         spoilers: true,
-        beta11Check: false
+        beta11Check: false,
     },
 };
 
@@ -85,16 +84,17 @@ const headerLookup: Record<PageType, HeaderInfo> = {
 export function createHeader(page: PageType, headerContainer: JQuery<HTMLElement>) {
     const info = headerLookup[page];
 
-    const buttonsHtml = pageTypes.map(pageType => {
-        const info = headerLookup[pageType];
+    const buttonsHtml = pageTypes
+        .map((pageType) => {
+            const info = headerLookup[pageType];
 
-        if (page === pageType) {
-            return `<a href="${info.pageName}" class="btn btn-current-page">${info.name}</a>`;
-        }
-        else {
-            return `<a href="${info.pageName}" class="btn">${info.name}</a>`;
-        }
-    }).join("");
+            if (page === pageType) {
+                return `<a href="${info.pageName}" class="btn btn-current-page">${info.name}</a>`;
+            } else {
+                return `<a href="${info.pageName}" class="btn">${info.name}</a>`;
+            }
+        })
+        .join("");
 
     let spoilerHtml: string;
     if (info.spoilers) {
@@ -128,13 +128,14 @@ export function createHeader(page: PageType, headerContainer: JQuery<HTMLElement
 
         spoilerHtml += `
 </div>`;
-    }
-    else {
+    } else {
         spoilerHtml = "<div></div>";
     }
 
-    const helpLabel = info.helpText === undefined ?
-        "" : `<span class="input-group-text-block display-5" data-toggle="tooltip" title="${info.helpText}">?</span>`;
+    const helpLabel =
+        info.helpText === undefined
+            ? ""
+            : `<span class="input-group-text-block display-5" data-toggle="tooltip" title="${info.helpText}">?</span>`;
 
     headerContainer.append(`
 <div class="title-grid mt-2">
@@ -237,7 +238,7 @@ export function getSelectedButtonId(selector: JQuery<HTMLElement>) {
 // Gets the stored spoilers state
 export function getSpoilersState(): Spoiler {
     let value = valueOrDefault(window.localStorage.getItem("spoilers"), "None");
-    if (typeof (value) != "string" || value != "None" && value != "Spoilers" && value != "Redacted") {
+    if (typeof value != "string" || (value != "None" && value != "Spoilers" && value != "Redacted")) {
         value = "None";
     }
 
@@ -246,8 +247,8 @@ export function getSpoilersState(): Spoiler {
 
 // Registers a function on the document to disable autocomplete for all inputs
 export function registerDisableAutocomplete(document: JQuery<Document>) {
-    document.on('focus', ':input', e => {
-        $(e.target).attr('autocomplete', 'off');
+    document.on("focus", ":input", (e) => {
+        $(e.target).attr("autocomplete", "off");
     });
 }
 
@@ -272,7 +273,7 @@ export function setActiveButtonGroupButton(group: JQuery<HTMLElement>, index: nu
 export function refreshSelectpicker(selector: JQuery<HTMLElement>) {
     selector.selectpicker("refresh");
 
-    // Minor hack, the btn-light class is auto-added to dropdowns with search 
+    // Minor hack, the btn-light class is auto-added to dropdowns with search
     // but it doesn't really fit with everything else
     selector.next().removeClass("btn-light");
 }

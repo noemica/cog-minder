@@ -16,12 +16,21 @@ import {
     getSpoilersState,
     refreshSelectpicker,
     registerDisableAutocomplete,
-    resetButtonGroup
+    resetButtonGroup,
 } from "./commonJquery";
 import {
     Critical,
     DamageType,
-    Item, ItemSlot, ItemType, ItemWithUpkeep, JsonItem, PowerItem, PropulsionItem, SiegeMode, Spectrum, WeaponItem,
+    Item,
+    ItemSlot,
+    ItemType,
+    ItemWithUpkeep,
+    JsonItem,
+    PowerItem,
+    PropulsionItem,
+    SiegeMode,
+    Spectrum,
+    WeaponItem,
 } from "./itemTypes";
 
 import * as jQuery from "jquery";
@@ -34,31 +43,26 @@ jq(function ($) {
     enum ViewMode {
         Simple = "Simple",
         Comparison = "Comparison",
-    };
+    }
 
-    // Category ID -> 
+    // Category ID ->
     const categoryIdMap = {
-        "category0b10": 0,
-        "categoryAlien": 1,
-        "categoryDerelict": 2,
-        "categoryExile": 3,
-        "categoryTesting": 4,
-        "categoryGolem": 5,
-        "categorySpoiler": 6,
-        "categoryRedacted": 7,
-        "categoryUnobtainable": 8,
+        category0b10: 0,
+        categoryAlien: 1,
+        categoryDerelict: 2,
+        categoryExile: 3,
+        categoryTesting: 4,
+        categoryGolem: 5,
+        categorySpoiler: 6,
+        categoryRedacted: 7,
+        categoryUnobtainable: 8,
     };
 
     // Map of item names to item elements, created at page init
     const itemElements = {};
 
     // Spoiler category HTML ids
-    const spoilerCategoryIds = [
-        "categoryAlien",
-        "categoryTesting",
-        "categoryGolem",
-        "utilTypeArtifact",
-    ];
+    const spoilerCategoryIds = ["categoryAlien", "categoryTesting", "categoryGolem", "utilTypeArtifact"];
 
     // List of categories hidden on "None" spoilers type
     const noneHiddenCategories = [
@@ -66,65 +70,63 @@ jq(function ($) {
         "categoryTesting",
         "categoryGolem",
         "categorySpoiler",
-        "categoryRedacted"
-    ].map(id => categoryIdMap[id]);
+        "categoryRedacted",
+    ].map((id) => categoryIdMap[id]);
 
     // List of categories hidden on "Spoilers" spoilers type
-    const spoilerHiddenCategories = [
-        "categoryRedacted"
-    ].map(id => categoryIdMap[id]);
+    const spoilerHiddenCategories = ["categoryRedacted"].map((id) => categoryIdMap[id]);
 
     // Slot ID -> Slot string
     const slotMap: { [key: string]: string } = {
-        "slotOther": "N/A",
-        "slotPower": "Power",
-        "slotPropulsion": "Propulsion",
-        "slotUtility": "Utility",
-        "slotWeapon": "Weapon",
+        slotOther: "N/A",
+        slotPower: "Power",
+        slotPropulsion: "Propulsion",
+        slotUtility: "Utility",
+        slotWeapon: "Weapon",
     };
 
     // Terminal ID -> int level
     const terminalLevelMap: { [key: string]: number } = {
-        "terminalLevel1": 1,
-        "terminalLevel2": 2,
-        "terminalLevel3": 3,
-    }
+        terminalLevel1: 1,
+        terminalLevel2: 2,
+        terminalLevel3: 3,
+    };
 
     // Type ID -> Type string
     const typeMap: { [key: string]: string } = {
-        "powerTypeEngine": "Engine",
-        "powerTypePowerCore": "Power Core",
-        "powerTypeReactor": "Reactor",
-        "propTypeFlight": "Flight Unit",
-        "propTypeHover": "Hover Unit",
-        "propTypeLeg": "Leg",
-        "propTypeTread": "Treads",
-        "propTypeWheel": "Wheel",
-        "utilTypeArtifact": "Artifact",
-        "utilTypeDevice": "Device",
-        "utilTypeHackware": "Hackware",
-        "utilTypeProcessor": "Processor",
-        "utilTypeProtection": "Protection",
-        "utilTypeStorage": "Storage",
-        "weaponTypeBallisticCannon": "Ballistic Cannon",
-        "weaponTypeBallisticGun": "Ballistic Gun",
-        "weaponTypeEnergyCannon": "Energy Cannon",
-        "weaponTypeEnergyGun": "Energy Gun",
-        "weaponTypeImpactWeapon": "Impact Weapon",
-        "weaponTypeLauncher": "Launcher",
-        "weaponTypePiercingWeapon": "Piercing Weapon",
-        "weaponTypeSlashingWeapon": "Slashing Weapon",
-        "weaponTypeSpecialMeleeWeapon": "Special Melee Weapon",
-        "weaponTypeSpecialWeapon": "Special Weapon",
+        powerTypeEngine: "Engine",
+        powerTypePowerCore: "Power Core",
+        powerTypeReactor: "Reactor",
+        propTypeFlight: "Flight Unit",
+        propTypeHover: "Hover Unit",
+        propTypeLeg: "Leg",
+        propTypeTread: "Treads",
+        propTypeWheel: "Wheel",
+        utilTypeArtifact: "Artifact",
+        utilTypeDevice: "Device",
+        utilTypeHackware: "Hackware",
+        utilTypeProcessor: "Processor",
+        utilTypeProtection: "Protection",
+        utilTypeStorage: "Storage",
+        weaponTypeBallisticCannon: "Ballistic Cannon",
+        weaponTypeBallisticGun: "Ballistic Gun",
+        weaponTypeEnergyCannon: "Energy Cannon",
+        weaponTypeEnergyGun: "Energy Gun",
+        weaponTypeImpactWeapon: "Impact Weapon",
+        weaponTypeLauncher: "Launcher",
+        weaponTypePiercingWeapon: "Piercing Weapon",
+        weaponTypeSlashingWeapon: "Slashing Weapon",
+        weaponTypeSpecialMeleeWeapon: "Special Melee Weapon",
+        weaponTypeSpecialWeapon: "Special Weapon",
     };
 
     // Slot ID -> Type button container ID
     const slotIdToTypeIdMap: { [key: string]: string } = {
-        "slotPower": "powerTypeContainer",
-        "slotPropulsion": "propTypeContainer",
-        "slotUtility": "utilTypeContainer",
-        "slotWeapon": "weaponTypeContainer",
-    }
+        slotPower: "powerTypeContainer",
+        slotPropulsion: "propTypeContainer",
+        slotUtility: "utilTypeContainer",
+        slotWeapon: "weaponTypeContainer",
+    };
 
     $((document) => init());
 
@@ -137,11 +139,9 @@ jq(function ($) {
         function compareNeutralStat(leftValue: number, rightValue: number) {
             if (leftValue === rightValue) {
                 return emptyLine;
-            }
-            else if (leftValue < rightValue) {
+            } else if (leftValue < rightValue) {
                 return `<pre class="comparison-neutral">+${rightValue - leftValue}</pre>`;
-            }
-            else {
+            } else {
                 return `<pre class="comparison-neutral">-${leftValue - rightValue}</pre>`;
             }
         }
@@ -149,11 +149,9 @@ jq(function ($) {
         function compareHighBadStat(leftValue: number, rightValue: number) {
             if (leftValue === rightValue) {
                 return emptyLine;
-            }
-            else if (leftValue < rightValue) {
+            } else if (leftValue < rightValue) {
                 return `<pre class="comparison-negative">+${rightValue - leftValue}</pre>`;
-            }
-            else {
+            } else {
                 return `<pre class="comparison-positive">-${leftValue - rightValue}</pre>`;
             }
         }
@@ -161,11 +159,9 @@ jq(function ($) {
         function compareHighGoodStat(leftValue: number, rightValue: number) {
             if (leftValue === rightValue) {
                 return emptyLine;
-            }
-            else if (leftValue < rightValue) {
+            } else if (leftValue < rightValue) {
                 return `<pre class="comparison-positive">+${rightValue - leftValue}</pre>`;
-            }
-            else {
+            } else {
                 return `<pre class="comparison-negative">-${leftValue - rightValue}</pre>`;
             }
         }
@@ -175,24 +171,20 @@ jq(function ($) {
             const rightRating = Math.ceil(rightItem.rating);
             if (leftRating === rightRating) {
                 return emptyLine;
-            }
-            else if (leftRating < rightRating) {
-                let differenceString: String;
+            } else if (leftRating < rightRating) {
+                let differenceString: string;
                 if (leftItem.ratingString.includes("*") || rightItem.ratingString.includes("*")) {
                     differenceString = "* +" + (rightRating - leftRating);
-                }
-                else {
+                } else {
                     differenceString = "+" + (rightRating - leftRating);
                 }
 
                 return `<pre class="comparison-positive">${differenceString}</pre>`;
-            }
-            else {
-                let differenceString: String;
+            } else {
+                let differenceString: string;
                 if (leftItem.ratingString.includes("*") || rightItem.ratingString.includes("*")) {
                     differenceString = "* -" + (leftRating - rightRating);
-                }
-                else {
+                } else {
                     differenceString = "-" + (leftRating - rightRating);
                 }
 
@@ -216,8 +208,14 @@ jq(function ($) {
         `;
 
         // Add upkeep if applicable
-        if ((leftItem.slot === ItemSlot.Power || leftItem.slot === ItemSlot.Propulsion || leftItem.slot === ItemSlot.Utility) &&
-            (rightItem.slot === ItemSlot.Power || rightItem.slot === ItemSlot.Propulsion || rightItem.slot === ItemSlot.Utility)) {
+        if (
+            (leftItem.slot === ItemSlot.Power ||
+                leftItem.slot === ItemSlot.Propulsion ||
+                leftItem.slot === ItemSlot.Utility) &&
+            (rightItem.slot === ItemSlot.Power ||
+                rightItem.slot === ItemSlot.Propulsion ||
+                rightItem.slot === ItemSlot.Utility)
+        ) {
             const leftUpkeep = leftItem as ItemWithUpkeep;
             const rightUpkeep = rightItem as ItemWithUpkeep;
 
@@ -251,33 +249,29 @@ jq(function ($) {
             function getDragOrModHtml(leftPropulsion: PropulsionItem, rightPropulsion: PropulsionItem) {
                 if (leftPropulsion.modPerExtra !== undefined && rightPropulsion.modPerExtra !== undefined) {
                     return compareHighBadStat(leftPropulsion.modPerExtra, rightPropulsion.modPerExtra);
-                }
-                else if (leftPropulsion.drag !== undefined && rightPropulsion.drag !== undefined) {
+                } else if (leftPropulsion.drag !== undefined && rightPropulsion.drag !== undefined) {
                     return compareHighBadStat(leftPropulsion.drag, rightPropulsion.drag);
-                }
-                else {
+                } else {
                     return emptyLine;
                 }
             }
 
             function getBurnoutOrSiegeHtml(leftPropulsion: PropulsionItem, rightPropulsion: PropulsionItem) {
                 if (leftPropulsion.burnout !== undefined || rightPropulsion.burnout !== undefined) {
-                    return compareHighBadStat(parseIntOrDefault(leftPropulsion.burnout, 0), parseIntOrDefault(rightPropulsion.burnout, 0));
-                }
-                else if (leftPropulsion.type === ItemType.Treads && rightPropulsion.type === ItemType.Treads) {
+                    return compareHighBadStat(
+                        parseIntOrDefault(leftPropulsion.burnout, 0),
+                        parseIntOrDefault(rightPropulsion.burnout, 0),
+                    );
+                } else if (leftPropulsion.type === ItemType.Treads && rightPropulsion.type === ItemType.Treads) {
                     if (leftPropulsion.siege === rightPropulsion.siege) {
                         return emptyLine;
-                    }
-                    else if (leftPropulsion.siege === SiegeMode.High) {
+                    } else if (leftPropulsion.siege === SiegeMode.High) {
                         return '<pre class="comparison-negative">High</pre>';
-                    }
-                    else if (leftPropulsion.siege === SiegeMode.Standard && rightPropulsion.siege === undefined) {
+                    } else if (leftPropulsion.siege === SiegeMode.Standard && rightPropulsion.siege === undefined) {
                         return '<pre class="comparison-negative">Standard</pre>';
-                    }
-                    else if (leftPropulsion.siege === undefined) {
+                    } else if (leftPropulsion.siege === undefined) {
                         return '<pre class="comparison-positive">N/A</pre>';
-                    }
-                    else {
+                    } else {
                         return '<pre class="comparison-positive">Standard</pre>';
                     }
                 }
@@ -298,9 +292,11 @@ jq(function ($) {
         }
 
         function getCriticalHtml(leftWeapon: WeaponItem, rightWeapon: WeaponItem) {
-            if (leftWeapon.critical === undefined
-                || rightWeapon.critical === undefined
-                || leftWeapon.criticalType === rightWeapon.criticalType) {
+            if (
+                leftWeapon.critical === undefined ||
+                rightWeapon.critical === undefined ||
+                leftWeapon.criticalType === rightWeapon.criticalType
+            ) {
                 return compareHighGoodStat(leftWeapon.critical ?? 0, rightWeapon.critical ?? 0);
             }
 
@@ -358,8 +354,7 @@ jq(function ($) {
                     const split = damageString.split("-");
                     damageMin = parseInt(split[0]);
                     damageMax = parseInt(split[1]);
-                }
-                else if (damageString !== undefined) {
+                } else if (damageString !== undefined) {
                     damageMin = parseInt(damageString);
                     damageMax = damageMin;
                 }
@@ -372,8 +367,7 @@ jq(function ($) {
             if (explosive) {
                 leftDamageString = leftWeapon.explosionDamage!;
                 rightDamageString = rightWeapon.explosionDamage!;
-            }
-            else {
+            } else {
                 leftDamageString = leftWeapon.damage!;
                 rightDamageString = rightWeapon.damage!;
             }
@@ -383,8 +377,7 @@ jq(function ($) {
             if (leftDamage.average === rightDamage.average) {
                 if (leftDamage.min === rightDamage.min) {
                     return emptyLine;
-                }
-                else {
+                } else {
                     return `<pre class="comparison-neutral">${leftDamage.min}-${leftDamage.max}</pre>`;
                 }
             }
@@ -392,8 +385,7 @@ jq(function ($) {
             function getPlusOrMinusString(number: number) {
                 if (number > 0) {
                     return "+" + number;
-                }
-                else {
+                } else {
                     return number.toString();
                 }
             }
@@ -401,10 +393,13 @@ jq(function ($) {
             const minDifference = rightDamage.min - leftDamage.min;
             const maxDifference = rightDamage.max - leftDamage.max;
             if (leftDamage.average < rightDamage.average) {
-                return `<pre class="comparison-positive">${getPlusOrMinusString(minDifference)}/${getPlusOrMinusString(maxDifference)}</pre>`;
-            }
-            else {
-                return `<pre class="comparison-negative">${getPlusOrMinusString(minDifference)}/${getPlusOrMinusString(maxDifference)}</pre>`;
+                return `<pre class="comparison-positive">${getPlusOrMinusString(minDifference)}/${getPlusOrMinusString(
+                    maxDifference,
+                )}</pre>`;
+            } else {
+                return `<pre class="comparison-negative">${getPlusOrMinusString(minDifference)}/${getPlusOrMinusString(
+                    maxDifference,
+                )}</pre>`;
             }
         }
 
@@ -413,8 +408,7 @@ jq(function ($) {
                 if (leftWeapon.explosionType === rightWeapon.explosionType || leftWeapon.explosionType === undefined) {
                     return emptyLine;
                 }
-            }
-            else {
+            } else {
                 if (leftWeapon.damageType === rightWeapon.damageType || leftWeapon.damageType === undefined) {
                     return emptyLine;
                 }
@@ -445,7 +439,9 @@ jq(function ($) {
                 return "";
             }
 
-            return `<pre class="comparison-neutral">(${getTypeString(explosive ? leftWeapon.explosionType! : leftWeapon.damageType!)})</pre>`;
+            return `<pre class="comparison-neutral">(${getTypeString(
+                explosive ? leftWeapon.explosionType! : leftWeapon.damageType!,
+            )})</pre>`;
         }
 
         // Add weapon stats if applicable
@@ -454,18 +450,22 @@ jq(function ($) {
             const rightWeapon = rightItem as WeaponItem;
 
             function isMelee(item: WeaponItem) {
-                return item.type === ItemType.SlashingWeapon
-                    || item.type === ItemType.ImpactWeapon
-                    || item.type === ItemType.PiercingWeapon
-                    || item.type === ItemType.SpecialMeleeWeapon;
+                return (
+                    item.type === ItemType.SlashingWeapon ||
+                    item.type === ItemType.ImpactWeapon ||
+                    item.type === ItemType.PiercingWeapon ||
+                    item.type === ItemType.SpecialMeleeWeapon
+                );
             }
 
             function isRangedNonLauncher(item: WeaponItem) {
-                return item.type === ItemType.BallisticGun
-                    || item.type === ItemType.EnergyGun
-                    || item.type === ItemType.BallisticCannon
-                    || item.type === ItemType.EnergyCannon
-                    || item.type === ItemType.SpecialWeapon;
+                return (
+                    item.type === ItemType.BallisticGun ||
+                    item.type === ItemType.EnergyGun ||
+                    item.type === ItemType.BallisticCannon ||
+                    item.type === ItemType.EnergyCannon ||
+                    item.type === ItemType.SpecialWeapon
+                );
             }
 
             function isRanged(item: WeaponItem) {
@@ -501,9 +501,11 @@ jq(function ($) {
             else if (isRanged(leftWeapon) && isRanged(rightWeapon)) {
                 function getArcOrWaypointsHtml(leftWeapon: WeaponItem, rightWeapon: WeaponItem) {
                     if (rightWeapon.waypoints !== undefined) {
-                        return compareHighGoodStat(parseIntOrDefault(leftWeapon.waypoints, 0), parseInt(rightWeapon.waypoints));
-                    }
-                    else {
+                        return compareHighGoodStat(
+                            parseIntOrDefault(leftWeapon.waypoints, 0),
+                            parseInt(rightWeapon.waypoints),
+                        );
+                    } else {
                         return compareHighBadStat(leftWeapon.arc ?? 0, rightWeapon.arc ?? 0);
                     }
                 }
@@ -529,57 +531,55 @@ jq(function ($) {
                         }
 
                         return `<pre class="comparison-negative">-Inf.</pre>`;
-                    }
-                    else if (rightWeapon.penetration === "Unlimited") {
+                    } else if (rightWeapon.penetration === "Unlimited") {
                         return `<pre class="comparison-positive">+Inf.</pre>`;
                     }
 
                     function getPenetrationValue(penetrationString: string | undefined) {
                         if (penetrationString === undefined) {
                             return 0;
-                        }
-                        else {
+                        } else {
                             return penetrationString.split("/").length;
                         }
                     }
 
                     const leftPenetration = getPenetrationValue(leftWeapon.penetration);
                     const rightPenetration = getPenetrationValue(rightWeapon.penetration);
-                    return compareHighGoodStat(leftPenetration, rightPenetration)
+                    return compareHighGoodStat(leftPenetration, rightPenetration);
                 }
 
                 function getSpectrumHtml(leftWeapon: WeaponItem, rightWeapon: WeaponItem, explosive: boolean) {
                     function getSpectrumValue(spectrum: Spectrum | undefined) {
                         if (spectrum === Spectrum.Fine) {
                             return 100;
-                        }
-                        else if (spectrum === Spectrum.Narrow) {
+                        } else if (spectrum === Spectrum.Narrow) {
                             return 50;
-                        }
-                        else if (spectrum === Spectrum.Intermediate) {
+                        } else if (spectrum === Spectrum.Intermediate) {
                             return 30;
-                        }
-                        else if (spectrum === Spectrum.Wide) {
+                        } else if (spectrum === Spectrum.Wide) {
                             return 10;
-                        }
-                        else {
+                        } else {
                             return 0;
                         }
                     }
 
-                    const leftSpectrum = explosive ?
-                        getSpectrumValue(leftWeapon.explosionSpectrum) :
-                        getSpectrumValue(leftWeapon.spectrum);
-                    const rightSpectrum = explosive ?
-                        getSpectrumValue(rightWeapon.explosionSpectrum) :
-                        getSpectrumValue(rightWeapon.spectrum);
+                    const leftSpectrum = explosive
+                        ? getSpectrumValue(leftWeapon.explosionSpectrum)
+                        : getSpectrumValue(leftWeapon.spectrum);
+                    const rightSpectrum = explosive
+                        ? getSpectrumValue(rightWeapon.explosionSpectrum)
+                        : getSpectrumValue(rightWeapon.spectrum);
 
                     return compareNeutralStat(leftSpectrum, rightSpectrum);
                 }
 
                 // Add non-launcher damage if applicable
-                if (isRangedNonLauncher(leftWeapon) && isRangedNonLauncher(rightWeapon)
-                    && leftWeapon.damage !== undefined && rightWeapon.damage !== undefined) {
+                if (
+                    isRangedNonLauncher(leftWeapon) &&
+                    isRangedNonLauncher(rightWeapon) &&
+                    leftWeapon.damage !== undefined &&
+                    rightWeapon.damage !== undefined
+                ) {
                     html += `
                         ${compareHighGoodStat(leftWeapon.projectileCount, rightWeapon.projectileCount)}
                         ${getDamageHtml(leftWeapon, rightWeapon, false)}
@@ -598,11 +598,20 @@ jq(function ($) {
                         ${compareHighGoodStat(leftWeapon.projectileCount, rightWeapon.projectileCount)}
                         ${compareHighGoodStat(leftWeapon.explosionRadius ?? 0, rightWeapon.explosionRadius ?? 0)}
                         ${getDamageHtml(leftWeapon, rightWeapon, true)}
-                        ${compareHighBadStat(parseIntOrDefault(leftWeapon.falloff, 0), parseIntOrDefault(rightWeapon.falloff, 0))}
+                        ${compareHighBadStat(
+                            parseIntOrDefault(leftWeapon.falloff, 0),
+                            parseIntOrDefault(rightWeapon.falloff, 0),
+                        )}
                         ${getDamageTypeHtml(leftWeapon, rightWeapon, true)}
                         ${getSpectrumHtml(leftWeapon, rightWeapon, true)}
-                        ${compareHighGoodStat(leftWeapon.explosionDisruption ?? 0, rightWeapon.explosionDisruption ?? 0)}
-                        ${compareHighGoodStat(parseIntOrDefault(leftWeapon.explosionSalvage, 0), parseIntOrDefault(rightWeapon.explosionSalvage, 0))}                        ${emptyLine}
+                        ${compareHighGoodStat(
+                            leftWeapon.explosionDisruption ?? 0,
+                            rightWeapon.explosionDisruption ?? 0,
+                        )}
+                        ${compareHighGoodStat(
+                            parseIntOrDefault(leftWeapon.explosionSalvage, 0),
+                            parseIntOrDefault(rightWeapon.explosionSalvage, 0),
+                        )}                        ${emptyLine}
                     `;
                 }
             }
@@ -628,7 +637,8 @@ jq(function ($) {
                     data-content='${createItemDataContent(item)}'
                     data-toggle="popover">
                     ${itemName}
-                 </button>`);
+                 </button>`,
+            );
 
             itemElements[itemName] = element;
             itemsGrid.append(element);
@@ -637,9 +647,9 @@ jq(function ($) {
         // Create comparison selections
         itemNames.sort(gallerySort);
         const selects = [$("#leftPartSelect"), $("#rightPartSelect")];
-        selects.forEach(select => {
+        selects.forEach((select) => {
             select.empty();
-            itemNames.forEach(itemName => {
+            itemNames.forEach((itemName) => {
                 select.append(`<option>${itemName}</option>`);
             });
 
@@ -659,30 +669,24 @@ jq(function ($) {
         // Spoilers filter
         const spoilersState = getSpoilersState();
         if (spoilersState === "None") {
-            filters.push((item) =>
-                !item.categories.some(c => noneHiddenCategories.includes(c))
-            );
-        }
-        else if (spoilersState === "Spoilers") {
-            filters.push(item =>
-                !item.categories.some(c => spoilerHiddenCategories.includes(c))
-            );
+            filters.push((item) => !item.categories.some((c) => noneHiddenCategories.includes(c)));
+        } else if (spoilersState === "Spoilers") {
+            filters.push((item) => !item.categories.some((c) => spoilerHiddenCategories.includes(c)));
         }
 
         // Name filter
         const nameValue = ($("#name").val() as string).toLowerCase();
         if (nameValue.length > 0) {
-            filters.push(item => item.name.toLowerCase().includes(nameValue));
+            filters.push((item) => item.name.toLowerCase().includes(nameValue));
         }
 
         // Effect/Description filter
         const effectValue = ($("#effect").val() as string).toLowerCase();
         if (effectValue.length > 0) {
-            filters.push(item => {
+            filters.push((item) => {
                 if (item.effect?.toLowerCase().includes(effectValue)) {
                     return true;
-                }
-                else if (item.description?.toLowerCase().includes(effectValue)) {
+                } else if (item.description?.toLowerCase().includes(effectValue)) {
                     return true;
                 }
 
@@ -700,24 +704,20 @@ jq(function ($) {
             let floatRatingValue;
             if (ratingValue.slice(-1) === "*") {
                 floatRatingValue = parseFloat(ratingValue.slice(0, ratingValue.lastIndexOf("*"))) + 0.5;
-            }
-            else {
+            } else {
                 floatRatingValue = parseFloat(ratingValue);
             }
 
             // A + at the end means also include values above the given value
             // A - means include values below
             if (includeAbove) {
-                filters.push(item => item.rating >= floatRatingValue);
-            }
-            else if (includeBelow) {
-                filters.push(item => item.rating <= floatRatingValue);
-            }
-            else if (ratingValue === "*") {
-                filters.push(item => item.ratingString.includes("*"));
-            }
-            else {
-                filters.push(item => item.rating == floatRatingValue);
+                filters.push((item) => item.rating >= floatRatingValue);
+            } else if (includeBelow) {
+                filters.push((item) => item.rating <= floatRatingValue);
+            } else if (ratingValue === "*") {
+                filters.push((item) => item.ratingString.includes("*"));
+            } else {
+                filters.push((item) => item.rating == floatRatingValue);
             }
         }
 
@@ -733,13 +733,11 @@ jq(function ($) {
             // A + at the end means also include values above the given value
             // A - means include values below
             if (includeAbove) {
-                filters.push(item => item.size >= intSizeValue);
-            }
-            else if (includeBelow) {
-                filters.push(item => item.size <= intSizeValue);
-            }
-            else {
-                filters.push(item => item.size == intSizeValue);
+                filters.push((item) => item.size >= intSizeValue);
+            } else if (includeBelow) {
+                filters.push((item) => item.size <= intSizeValue);
+            } else {
+                filters.push((item) => item.size == intSizeValue);
             }
         }
 
@@ -755,13 +753,11 @@ jq(function ($) {
             // A + at the end means also include values above the given value
             // A - means include values below
             if (includeAbove) {
-                filters.push(item => item.mass !== undefined && item.mass >= intMassValue);
-            }
-            else if (includeBelow) {
-                filters.push(item => item.mass !== undefined && item.mass <= intMassValue);
-            }
-            else {
-                filters.push(item => item.mass !== undefined && item.mass == intMassValue);
+                filters.push((item) => item.mass !== undefined && item.mass >= intMassValue);
+            } else if (includeBelow) {
+                filters.push((item) => item.mass !== undefined && item.mass <= intMassValue);
+            } else {
+                filters.push((item) => item.mass !== undefined && item.mass == intMassValue);
             }
         }
 
@@ -774,7 +770,7 @@ jq(function ($) {
                 const terminalModifier = terminalLevelMap[getSelectedButtonId($("#schematicsContainer"))];
                 const hackLevel = 10 - depthNum + terminalModifier;
 
-                filters.push(item => {
+                filters.push((item) => {
                     if (!item.hackable) {
                         return false;
                     }
@@ -788,27 +784,27 @@ jq(function ($) {
         const slotId = getSelectedButtonId($("#slotsContainer"));
         if (slotId in slotMap) {
             const filterSlot = slotMap[slotId];
-            filters.push(item => item.slot === filterSlot);
+            filters.push((item) => item.slot === filterSlot);
         }
 
         // Type filter
-        const typeId = getSelectedButtonId($("#typeFilters > div:not(\".not-visible\")"));
+        const typeId = getSelectedButtonId($('#typeFilters > div:not(".not-visible")'));
         if (typeId in typeMap) {
             const filterType = typeMap[typeId];
-            filters.push(item => item.type === filterType);
+            filters.push((item) => item.type === filterType);
         }
 
         // Category filter
         const categoryId = getSelectedButtonId($("#categoryContainer"));
         if (categoryId in categoryIdMap) {
             const filterNum = categoryIdMap[categoryId];
-            filters.push(item => item.categories.includes(filterNum));
+            filters.push((item) => item.categories.includes(filterNum));
         }
 
         // Create a function that checks all filters
-        return item => {
-            return filters.every(func => func(item));
-        }
+        return (item) => {
+            return filters.every((func) => func(item));
+        };
     }
 
     // Gets the active view mode
@@ -851,7 +847,7 @@ jq(function ($) {
         });
         $("#name").on("input", updateItems);
         $("#effect").on("input", updateItems);
-        $("#modeContainer > label > input").on("change", e => {
+        $("#modeContainer > label > input").on("change", (e) => {
             // Tooltips on buttons need to be explicitly hidden on press
             ($(e.target).parent() as any).tooltip("hide");
             updateItems();
@@ -873,7 +869,7 @@ jq(function ($) {
         $("#propTypeContainer > label > input").on("change", updateItems);
         $("#utilTypeContainer > label > input").on("change", updateItems);
         $("#weaponTypeContainer > label > input").on("change", updateItems);
-        $("#categoryContainer > label > input").on("change", e => {
+        $("#categoryContainer > label > input").on("change", (e) => {
             // Tooltips on buttons need to be explicitly hidden on press
             ($(e.target).parent() as any).tooltip("hide");
             updateItems();
@@ -890,8 +886,7 @@ jq(function ($) {
             if (targetText === "Alphabetical" || targetText === "Gallery") {
                 $("#secondarySort").text("None");
                 $("#secondarySortDirection").text("Ascending");
-            }
-            else {
+            } else {
                 $("#secondarySort").text("Alphabetical");
                 $("#secondarySortDirection").text("Ascending");
             }
@@ -938,8 +933,7 @@ jq(function ($) {
 
             if (targetPopover) {
                 $(e.target).trigger("blur");
-            }
-            else if (!targetPopover && $(".popover").length >= 1) {
+            } else if (!targetPopover && $(".popover").length >= 1) {
                 ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
             }
         });
@@ -950,7 +944,7 @@ jq(function ($) {
         $("#rightPartSelectContainer > div").addClass("part-dropdown");
         $("#rightPartSelectContainer > div > .dropdown-menu").addClass("part-dropdown-menu");
 
-        // Minor hack, the btn-light class is auto-added to dropdowns with search 
+        // Minor hack, the btn-light class is auto-added to dropdowns with search
         // but it doesn't really fit with everything else
         $(".btn-light").removeClass("btn-light");
 
@@ -991,19 +985,22 @@ jq(function ($) {
     // Sorts the collection of item names based on the sort settings
     function sortItemNames(itemNames: string[]): string[] {
         function alphabeticalSort(a: any, b: any) {
-            let aValue = typeof (a) === "string" ? a : "";
-            let bValue = typeof (b) === "string" ? b : "";
+            const aValue = typeof a === "string" ? a : "";
+            const bValue = typeof b === "string" ? b : "";
 
             return aValue.localeCompare(bValue);
         }
 
         function damageSort(a: string, b: string) {
             function getAverage(damageString: string) {
-                if (typeof (damageString) != "string") {
+                if (typeof damageString != "string") {
                     return 0;
                 }
 
-                const damageArray = damageString.split("-").map(s => s.trim()).map(s => parseInt(s));
+                const damageArray = damageString
+                    .split("-")
+                    .map((s) => s.trim())
+                    .map((s) => parseInt(s));
                 return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
             }
 
@@ -1028,38 +1025,38 @@ jq(function ($) {
         }
 
         const sortKeyMap = {
-            "Alphabetical": { key: "name", sort: alphabeticalSort },
-            "Gallery": { key: "name", sort: gallerySort },
-            "Rating": { key: "rating", sort: integerSort },
-            "Size": { key: "size", sort: integerSort },
-            "Mass": { key: "mass", sort: integerSort },
-            "Integrity": { key: "integrity", sort: integerSort },
-            "Coverage": { key: "coverage", sort: integerSort },
-            "Critical": { key: "critical", sort: integerSort },
-            "Damage": { keys: ["damage", "explosionDamage"], sort: damageSort },
-            "Delay": { key: "delay", sort: integerSort },
-            "Disruption": { key: "disruption", sort: integerSort },
-            "Drag": { key: "drag", sort: integerSort },
+            Alphabetical: { key: "name", sort: alphabeticalSort },
+            Gallery: { key: "name", sort: gallerySort },
+            Rating: { key: "rating", sort: integerSort },
+            Size: { key: "size", sort: integerSort },
+            Mass: { key: "mass", sort: integerSort },
+            Integrity: { key: "integrity", sort: integerSort },
+            Coverage: { key: "coverage", sort: integerSort },
+            Critical: { key: "critical", sort: integerSort },
+            Damage: { keys: ["damage", "explosionDamage"], sort: damageSort },
+            Delay: { key: "delay", sort: integerSort },
+            Disruption: { key: "disruption", sort: integerSort },
+            Drag: { key: "drag", sort: integerSort },
             "Energy/Move": { key: "energyPerMove", sort: integerSort },
             "Energy Generation": { key: "energyGeneration", sort: integerSort },
             "Energy Storage": { key: "energyStorage", sort: integerSort },
             "Energy Upkeep": { key: "energyUpkeep", sort: integerSort },
             "Explosion Radius": { key: "explosionRadius", sort: integerSort },
-            "Falloff": { key: "falloff", sort: integerSort },
+            Falloff: { key: "falloff", sort: integerSort },
             "Heat/Move": { key: "heatPerMove", sort: integerSort },
             "Heat Generation": { key: "heatGeneration", sort: integerSort },
             "Matter Upkeep": { key: "matterUpkeep", sort: integerSort },
-            "Penalty": { key: "penalty", sort: integerSort },
+            Penalty: { key: "penalty", sort: integerSort },
             "Projectile Count": { key: "projectileCount", sort: integerSort },
-            "Range": { key: "range", sort: integerSort },
-            "Salvage": { key: "salvage", sort: integerSort },
+            Range: { key: "range", sort: integerSort },
+            Salvage: { key: "salvage", sort: integerSort },
             "Shot Energy": { key: "shotEnergy", sort: integerSort },
             "Shot Heat": { key: "shotHeat", sort: integerSort },
             "Shot Matter": { key: "shotMatter", sort: integerSort },
-            "Support": { key: "support", sort: integerSort },
-            "Targeting": { key: "targeting", sort: integerSort },
+            Support: { key: "support", sort: integerSort },
+            Targeting: { key: "targeting", sort: integerSort },
             "Time/Move": { key: "timePerMove", sort: integerSort },
-            "Waypoints": { key: "waypoints", sort: integerSort },
+            Waypoints: { key: "waypoints", sort: integerSort },
         };
 
         // Do initial sort
@@ -1099,15 +1096,14 @@ jq(function ($) {
 
             if (value in groupedItemNames) {
                 groupedItemNames[value].push(itemName);
-            }
-            else {
+            } else {
                 groupedItemNames[value] = [itemName];
                 groupedKeys.push(value);
             }
         });
 
         // Sort subgroups
-        groupedKeys.forEach(key => {
+        groupedKeys.forEach((key) => {
             const itemNames = groupedItemNames[key];
 
             itemNames.sort((a: string, b: string) => {
@@ -1121,15 +1117,14 @@ jq(function ($) {
             });
         });
 
-
         // Combine groups back into single sorted array
-        const reverseSecondaryGroups = ($("#secondarySortDirection").text().trim() === "Descending");
+        const reverseSecondaryGroups = $("#secondarySortDirection").text().trim() === "Descending";
         let newItems: string[] = [];
-        groupedKeys.forEach(key => {
+        groupedKeys.forEach((key) => {
             if (reverseSecondaryGroups) {
                 groupedItemNames[key].reverse();
             }
-            
+
             newItems = newItems.concat(groupedItemNames[key]);
         });
 
@@ -1142,10 +1137,9 @@ jq(function ($) {
         const showSpoilers = state === "Spoilers" || state === "Redacted";
 
         if (showSpoilers) {
-            spoilerCategoryIds.forEach(category => $(`#${category}`).removeClass("not-visible"));
-        }
-        else {
-            spoilerCategoryIds.forEach(category => $(`#${category}`).addClass("not-visible"));
+            spoilerCategoryIds.forEach((category) => $(`#${category}`).removeClass("not-visible"));
+        } else {
+            spoilerCategoryIds.forEach((category) => $(`#${category}`).addClass("not-visible"));
         }
     }
 
@@ -1177,7 +1171,7 @@ jq(function ($) {
         // Get the names of all non-filtered items
         const itemFilter = getItemFilter();
         let items: string[] = [];
-        Object.keys(itemData).forEach(itemName => {
+        Object.keys(itemData).forEach((itemName) => {
             const item = getItem(itemName);
 
             if (itemFilter(item)) {
@@ -1200,22 +1194,20 @@ jq(function ($) {
 
             let precedingElement = null;
 
-            items.forEach(itemName => {
+            items.forEach((itemName) => {
                 // Append each element
                 const element = itemElements[itemName];
                 element.removeClass("not-visible");
 
                 if (precedingElement == null) {
                     $("#itemsGrid").append(element);
-                }
-                else {
+                } else {
                     element.insertAfter(precedingElement);
                 }
 
                 precedingElement = element;
             });
-        }
-        else if (viewMode === ViewMode.Comparison) {
+        } else if (viewMode === ViewMode.Comparison) {
             $("#sortingContainer").addClass("not-visible");
             $("#comparisonContainer").removeClass("not-visible");
             $("#itemsGrid").addClass("not-visible");
@@ -1223,14 +1215,12 @@ jq(function ($) {
             // Update the comparison select options
             const itemSet = new Set(items);
             const selects = [$("#leftPartSelect"), $("#rightPartSelect")];
-            selects.forEach(select => {
-
+            selects.forEach((select) => {
                 select.children().each((_, child) => {
                     const item = $(child).val() as string;
                     if (itemSet.has(item)) {
                         $(child).removeClass("not-visible");
-                    }
-                    else {
+                    } else {
                         $(child).addClass("not-visible");
                     }
                 });
@@ -1243,7 +1233,7 @@ jq(function ($) {
     // Updates the type filters visibility based on the selected slot
     function updateTypeFilters() {
         // Hide all type filters
-        Object.keys(slotIdToTypeIdMap).forEach(k => $(`#${slotIdToTypeIdMap[k]}`).addClass("not-visible"));
+        Object.keys(slotIdToTypeIdMap).forEach((k) => $(`#${slotIdToTypeIdMap[k]}`).addClass("not-visible"));
 
         const activeSlotId = getSelectedButtonId($("#slotsContainer"));
         if (activeSlotId in slotIdToTypeIdMap) {

@@ -2,13 +2,13 @@ import { SpecialItemProperty } from "./itemTypes";
 
 export const specialItemProperties: { [name: string]: SpecialItemProperty | undefined } = {
     // Actuator
-    "Microactuators": { active: "Part Active", trait: { kind: "Actuator", amount: .2 } },
-    "Nanoactuators": { active: "Part Active", trait: { kind: "Actuator", amount: .3 } },
-    "Femtoactuators": { active: "Part Active", trait: { kind: "Actuator", amount: .5 } },
+    Microactuators: { active: "Part Active", trait: { kind: "Actuator", amount: 0.2 } },
+    Nanoactuators: { active: "Part Active", trait: { kind: "Actuator", amount: 0.3 } },
+    Femtoactuators: { active: "Part Active", trait: { kind: "Actuator", amount: 0.5 } },
 
     // Energy filter
-    "Energy Filter": { active: "Part Active", trait: { kind: "EnergyFilter", percent: .3 } },
-    "Prc. Energy Filter": { active: "Part Active", trait: { kind: "EnergyFilter", percent: .5 } },
+    "Energy Filter": { active: "Part Active", trait: { kind: "EnergyFilter", percent: 0.3 } },
+    "Prc. Energy Filter": { active: "Part Active", trait: { kind: "EnergyFilter", percent: 0.5 } },
 
     // Energy storage
     "Sml. Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 100 } },
@@ -23,7 +23,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Asb. Biocell Array": { active: "Always", trait: { kind: "EnergyStorage", storage: 1000 } },
     "Zio. Biocell": { active: "Always", trait: { kind: "EnergyStorage", storage: 1000 } },
     "Zio. Biocell Array": { active: "Always", trait: { kind: "EnergyStorage", storage: 1200 } },
-    "Superbattery": { active: "Always", trait: { kind: "EnergyStorage", storage: 2000 } },
+    Superbattery: { active: "Always", trait: { kind: "EnergyStorage", storage: 2000 } },
 
     // Fusion compressor
     "Fusion Compressor": { active: "Part Active", trait: { kind: "FusionCompressor", energyPerTurn: 20 } },
@@ -49,18 +49,21 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Asb. Suspension Frame": { active: "Part Active", trait: { kind: "MassSupport", support: 10 } },
 
     // Ranged weapon cycling
-    "Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: .15 } },
-    "Imp. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: .2 } },
-    "Adv. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: .25 } },
-    "Exp. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: .3 } },
-    "Launcher Loader": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: .5 } },
-    "Quantum Capacitor": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: .5 } },
+    "Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.15 } },
+    "Imp. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.2 } },
+    "Adv. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.25 } },
+    "Exp. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.3 } },
+    "Launcher Loader": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.5 } },
+    "Quantum Capacitor": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.5 } },
 
     // Power amplifiers
-    "Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: .2 } },
-    "Adv. Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: .3 } },
-    "Exp. Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: .4 } },
+    "Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: 0.2 } },
+    "Adv. Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: 0.3 } },
+    "Exp. Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: 0.4 } },
 
     // Weapon regen
-    "Sigix Broadsword": { active: "Part Active", trait: { kind: "WeaponRegen", energyPerTurn: 5, integrityPerTurn: 2 } },
-}
+    "Sigix Broadsword": {
+        active: "Part Active",
+        trait: { kind: "WeaponRegen", energyPerTurn: 5, integrityPerTurn: 2 },
+    },
+};

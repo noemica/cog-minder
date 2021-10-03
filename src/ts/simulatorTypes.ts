@@ -3,7 +3,7 @@ import { DamageType, Item, WeaponItem } from "./itemTypes";
 
 export type SimulatorPart = {
     armorAnalyzedCoverage: number;
-    coverage: number
+    coverage: number;
     def: Item;
     integrity: number;
     protection: boolean;
@@ -38,7 +38,7 @@ export type RangedAvoidPart = SpecialPart & {
 
 export type ShieldingPart = SpecialPart & {
     reduction: number;
-}
+};
 
 export type DefensiveState = {
     antimissile: AntimissilePart[];
@@ -92,7 +92,7 @@ export enum SneakAttackStrategy {
     None = "None",
     FirstOnly = "First Only",
     All = "All",
-};
+}
 
 export enum EndCondition {
     Kill = "Kill",
@@ -101,7 +101,7 @@ export enum EndCondition {
     KillOrWeapons = "Kill or No Weapons",
     KillOrNoTnc = "Kill or No TNC",
     Tele = "Architect Tele (80% integrity, 1 weapon, or 1 prop)",
-};
+}
 
 export type OffensiveState = {
     armorAnalyzerChance: number;

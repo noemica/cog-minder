@@ -1,13 +1,51 @@
 import * as items from "../json/items.json";
 import * as itemsB11 from "../json/items_b11.json";
-import { assertUnreachable, canShowPart, createItemDataContent, gallerySort, getMovementText, getValuePerTus, hasActiveSpecialProperty, initData, isPartMelee, itemData, parseIntOrDefault, setSpoilersState } from "./common";
-import { createHeader, getSelectedButtonId, getSpoilersState, registerDisableAutocomplete, resetButtonGroup, setActiveButtonGroupButton } from "./commonJquery";
-import { Actuator, BaseItem, EnergyFilter, EnergyStorage, FusionCompressor, HeatDissipation, ItemSlot, ItemType, ItemWithUpkeep, JsonItem, MassSupport, PowerAmplifier, PowerItem, PropulsionItem, RangedWeaponCycling, WeaponItem, WeaponRegen } from "./itemTypes";
+import {
+    assertUnreachable,
+    canShowPart,
+    createItemDataContent,
+    gallerySort,
+    getMovementText,
+    getValuePerTus,
+    hasActiveSpecialProperty,
+    initData,
+    isPartMelee,
+    itemData,
+    parseIntOrDefault,
+    setSpoilersState,
+} from "./common";
+import {
+    createHeader,
+    getSelectedButtonId,
+    getSpoilersState,
+    registerDisableAutocomplete,
+    resetButtonGroup,
+    setActiveButtonGroupButton,
+} from "./commonJquery";
+import {
+    Actuator,
+    BaseItem,
+    EnergyFilter,
+    EnergyStorage,
+    FusionCompressor,
+    HeatDissipation,
+    ItemSlot,
+    ItemType,
+    ItemWithUpkeep,
+    JsonItem,
+    MassSupport,
+    PowerAmplifier,
+    PowerItem,
+    PropulsionItem,
+    RangedWeaponCycling,
+    WeaponItem,
+    WeaponRegen,
+} from "./itemTypes";
 
 import * as jQuery from "jquery";
 import "bootstrap";
 import "bootstrap-select";
-import "lz-string"
+import "lz-string";
 import { getRangedVolleyTime, volleyTimeMap } from "./simulatorCalcs";
 import LZString = require("lz-string");
 
@@ -40,7 +78,7 @@ jq(function ($) {
         integrity: number;
         mass: number;
         vulnerability: number;
-    }
+    };
 
     type PercentageColor =
         | "Default"
@@ -53,14 +91,14 @@ jq(function ($) {
         | "Vulnerability";
 
     const percentageColorLookup: Record<PercentageColor, string> = {
-        "Default": "#162416",
-        "EnergyConsumption": "#000073",
-        "EnergyGen": "#004a4a",
-        "HeatDissipation": "#5b5b00",
-        "HeatGen": "#633200",
-        "MassSupport": "#5b5b00",
-        "Mass": "#493e2e",
-        "Vulnerability": "#d90000",
+        Default: "#162416",
+        EnergyConsumption: "#000073",
+        EnergyGen: "#004a4a",
+        HeatDissipation: "#5b5b00",
+        HeatGen: "#633200",
+        MassSupport: "#5b5b00",
+        Mass: "#493e2e",
+        Vulnerability: "#d90000",
     };
 
     // Calculated total parts state
@@ -121,17 +159,17 @@ jq(function ($) {
     let partsState: TotalPartsState;
 
     type PartState = {
-        active?: boolean,
-        name: string,
-        number?: number,
+        active?: boolean;
+        name: string;
+        number?: number;
     };
 
     type PageState = {
-        b11: boolean,
-        depth?: number,
-        energyGen?: number,
-        heatDissipation?: number,
-        parts: PartState[][],
+        b11: boolean;
+        depth?: number;
+        energyGen?: number;
+        heatDissipation?: number;
+        parts: PartState[][];
     };
     let initialPageState: PageState;
 
@@ -149,7 +187,7 @@ jq(function ($) {
         [{ name: "Ion Engine" }],
         [{ name: "Aluminum Leg", number: 2 }],
         [{ name: "Sml. Storage Unit" }],
-        [{ name: "Assault Rifle" }, { name: "Med. Laser" }]
+        [{ name: "Assault Rifle" }, { name: "Med. Laser" }],
     ];
 
     function addPartSelect(section: PartSection, initialSelection: string) {
@@ -158,7 +196,7 @@ jq(function ($) {
 
         // Get list of valid names
         const partNames: string[] = [];
-        Object.keys(itemData).forEach(name => {
+        Object.keys(itemData).forEach((name) => {
             const baseItem = itemData[name];
 
             // Slot check
@@ -175,19 +213,23 @@ jq(function ($) {
 
         // Sort and create options
         partNames.sort(gallerySort);
-        const partOptions = partNames.map(w => `<option>${w}</option>`).join();
+        const partOptions = partNames.map((w) => `<option>${w}</option>`).join();
 
         const row = $('<div class="row mt-1 align-items-center"></div>');
         const partPickerColumn = $('<div class="col"></div>');
         const partPickerContainer = $('<div class="input-group"></div>');
-        const infoColumn = $('<div class="col-3"></div>')
+        const infoColumn = $('<div class="col-3"></div>');
         const select = $(`<select class="selectpicker" data-live-search="true">${partOptions}</select>`);
         const helpButton = $('<button class="btn part-help-btn" data-html=true data-toggle="popover">?</button>');
-        const numberLabelContainer = $('<div class="input-group-prepend ml-3" data-toggle="tooltip" title="How many of the part to equip"></div>');
+        const numberLabelContainer = $(
+            '<div class="input-group-prepend ml-3" data-toggle="tooltip" title="How many of the part to equip"></div>',
+        );
         const numberLabel = $('<span class="input-group-text">Number</span>');
         const numberInput = $('<input type="text" class="form-control" placeholder="1"></input>');
         const activeContainer = $('<div class="btn-group btn-group-toggle ml-2" data-toggle="buttons"></div>');
-        const activeLabelContainer = $('<div class="input-group-prepend" data-toggle="tooltip" title="Whether the part is active."></div>');
+        const activeLabelContainer = $(
+            '<div class="input-group-prepend" data-toggle="tooltip" title="Whether the part is active."></div>',
+        );
         const activeLabel = $('<span class="input-group-text">Active</span>');
         const yesLabel = $('<label class="btn"><input type="radio" name="options">Yes</input></label>');
         const noLabel = $('<label class="btn"><input type="radio" name="options">No</input></label>');
@@ -263,18 +305,29 @@ jq(function ($) {
         // Enable tooltips
         (deleteButton as any).tooltip();
 
-        // Minor hack, the btn-light class is auto-added to dropdowns with search 
+        // Minor hack, the btn-light class is auto-added to dropdowns with search
         // but it doesn't really fit with everything else
         partPickerContainer.find(".btn-light").removeClass("btn-light");
     }
 
     // Appends a percentage bar to the specified element
-    function addPercentageBar(selector: JQuery<HTMLElement>, value: number, percentage: number, color: PercentageColor) {
+    function addPercentageBar(
+        selector: JQuery<HTMLElement>,
+        value: number,
+        percentage: number,
+        color: PercentageColor,
+    ) {
         addPercentageBarWithString(selector, value, percentage, percentage.toFixed(1) + "%", color);
     }
 
     // Appends a percentage bar to the specified element
-    function addPercentageBarWithString(selector: JQuery<HTMLElement>, value: number, percentage: number, percentageString: string, color: PercentageColor) {
+    function addPercentageBarWithString(
+        selector: JQuery<HTMLElement>,
+        value: number,
+        percentage: number,
+        percentageString: string,
+        color: PercentageColor,
+    ) {
         const valueText = Number.isInteger(value) ? value.toString() : value.toFixed(1);
         const percentageText = value === 0 ? value : `${valueText} ${percentageString}`;
         const container = $('<div class="percentage-bar-container"></div>');
@@ -290,21 +343,21 @@ jq(function ($) {
 
     // Gets the current depth, enforcing range limits
     function getDepth() {
-        let depth = Math.abs(parseIntOrDefault($("#depthInput").val(), 10));
+        const depth = Math.abs(parseIntOrDefault($("#depthInput").val(), 10));
         return Math.max(1, Math.min(10, depth));
     }
 
     const idToInfoTypeMap: Record<string, InfoType> = {
-        "partInfoCoverage": "Coverage",
-        "partInfoEnergyPerMove": "Energy/Move",
-        "partInfoEnergyPerTurn": "Energy/Turn",
-        "partInfoEnergyPerVolley": "Energy/Volley",
-        "partInfoHeatPerMove": "Heat/Move",
-        "partInfoHeatPerTurn": "Heat/Turn",
-        "partInfoHeatPerVolley": "Heat/Volley",
-        "partInfoIntegrity": "Integrity",
-        "partInfoMass": "Mass",
-        "partInfoVulnerability": "Vulnerability",
+        partInfoCoverage: "Coverage",
+        partInfoEnergyPerMove: "Energy/Move",
+        partInfoEnergyPerTurn: "Energy/Turn",
+        partInfoEnergyPerVolley: "Energy/Volley",
+        partInfoHeatPerMove: "Heat/Move",
+        partInfoHeatPerTurn: "Heat/Turn",
+        partInfoHeatPerVolley: "Heat/Volley",
+        partInfoIntegrity: "Integrity",
+        partInfoMass: "Mass",
+        partInfoVulnerability: "Vulnerability",
     };
     // Gets the currently selected part info type
     function getInfoType() {
@@ -321,29 +374,33 @@ jq(function ($) {
     function getLinkAndCopy() {
         // Get the definitions of all parts
         const parts: PartState[][] = [];
-        partTypes.map(p => p.id).forEach(id => {
-            const typeArray: PartState[] = [];
+        partTypes
+            .map((p) => p.id)
+            .forEach((id) => {
+                const typeArray: PartState[] = [];
 
-            $("#" + id).find(".input-group").each((_, element) => {
-                const selector = $(element);
+                $("#" + id)
+                    .find(".input-group")
+                    .each((_, element) => {
+                        const selector = $(element);
 
-                // Check if the part is active and the number if defined
-                const active = selector.find("label:first").hasClass("active");
-                const number = Math.max(1, parseIntOrDefault(selector.children("input").val(), 1));
+                        // Check if the part is active and the number if defined
+                        const active = selector.find("label:first").hasClass("active");
+                        const number = Math.max(1, parseIntOrDefault(selector.children("input").val(), 1));
 
-                // Try to get the selected part
-                const partName = selector.find("select").selectpicker("val") as any as string;
-                if (partName in itemData) {
-                    typeArray.push({
-                        active: active ? undefined : false,
-                        number: number === 1 ? undefined : number,
-                        name: partName
+                        // Try to get the selected part
+                        const partName = selector.find("select").selectpicker("val") as any as string;
+                        if (partName in itemData) {
+                            typeArray.push({
+                                active: active ? undefined : false,
+                                number: number === 1 ? undefined : number,
+                                name: partName,
+                            });
+                        }
                     });
-                }
-            });
 
-            parts.push(typeArray);
-        });
+                parts.push(typeArray);
+            });
         const b11 = $("#beta11Checkbox").prop("checked");
         const depth = $("#depthInput").val();
         const energyGen = $("#energyGenInput").val();
@@ -353,7 +410,7 @@ jq(function ($) {
             depth: parseIntOrDefault(depth, undefined),
             energyGen: parseIntOrDefault(energyGen, undefined),
             heatDissipation: parseIntOrDefault(heatDissipation, undefined),
-            parts: parts
+            parts: parts,
         };
 
         const partsString = JSON.stringify(state);
@@ -378,7 +435,7 @@ jq(function ($) {
             setSpoilersState(state);
             ($("#spoilersDropdown > button") as any).tooltip("hide");
             resetValues(defaultParts);
-        });        
+        });
         $("#reset").on("click", () => {
             ($("#reset") as any).tooltip("hide");
             resetValues(defaultParts);
@@ -386,12 +443,12 @@ jq(function ($) {
         $("#depthInput").on("input", updateAll);
         $("#energyGenInput").on("input", updateAll);
         $("#heatDissipationInput").on("input", updateAll);
-        $("#infoTypeContainer > label > input").on("change", e => {
+        $("#infoTypeContainer > label > input").on("change", (e) => {
             // Tooltips on buttons need to be explicitly hidden on press
             ($(e.target).parent() as any).tooltip("hide");
             updateAllPartInfo();
         });
-        $("#getLink").on("click", e => {
+        $("#getLink").on("click", (e) => {
             getLinkAndCopy();
             const selector = $(e.target);
             (selector as any).tooltip("hide");
@@ -417,8 +474,7 @@ jq(function ($) {
 
             if (targetPopover) {
                 $(e.target).trigger("blur");
-            }
-            else if (!targetPopover && $(".popover").length >= 1) {
+            } else if (!targetPopover && $(".popover").length >= 1) {
                 ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
             }
         });
@@ -443,9 +499,9 @@ jq(function ($) {
         resetValues(initialPageState.parts);
 
         // Set non-part inputs
-        if (initialPageState.depth !== undefined ) {
+        if (initialPageState.depth !== undefined) {
             $("#depthInput").val(initialPageState.depth);
-        } 
+        }
         if (initialPageState.energyGen !== undefined) {
             $("#energyGenInput").val(initialPageState.energyGen);
         }
@@ -456,7 +512,7 @@ jq(function ($) {
 
     // Adds the initial empty part selects for each type
     function initializePartsSelects() {
-        partTypes.forEach(type => {
+        partTypes.forEach((type) => {
             addPartSelect(type, "");
         });
     }
@@ -497,7 +553,10 @@ jq(function ($) {
             defaults[i].forEach((defaultPart, i) => {
                 // Set up the default parts and number
                 container.find("select:last").selectpicker("val", defaultPart.name);
-                container.children(`div:eq(${i})`).find(".form-control:last").val(defaultPart.number?.toString() ?? "");
+                container
+                    .children(`div:eq(${i})`)
+                    .find(".form-control:last")
+                    .val(defaultPart.number?.toString() ?? "");
                 if (defaultPart.active == false) {
                     setActiveButtonGroupButton(container.find(`.btn-group-toggle:eq(${i})`), 2);
                 }
@@ -524,17 +583,21 @@ jq(function ($) {
     function updateAllPartInfo() {
         let index = 0;
 
-        partTypes.map(p => p.id).forEach(id => {
-            $("#" + id).children("div").each((_, element) => {
-                const selector = $(element);
-                const partName = selector.find("select").selectpicker("val") as any as string;
+        partTypes
+            .map((p) => p.id)
+            .forEach((id) => {
+                $("#" + id)
+                    .children("div")
+                    .each((_, element) => {
+                        const selector = $(element);
+                        const partName = selector.find("select").selectpicker("val") as any as string;
 
-                if (partName in itemData) {
-                    updatePartInfo(selector.children("div:last"), partsState.partsInfo[index]);
-                    index += 1;
-                }
-            })
-        });
+                        if (partName in itemData) {
+                            updatePartInfo(selector.children("div:last"), partsState.partsInfo[index]);
+                            index += 1;
+                        }
+                    });
+            });
 
         updateCoreInfo();
     }
@@ -550,63 +613,57 @@ jq(function ($) {
                 addPercentageBar(infoContainer, 100, 10000 / partsState.totalCoverage, "Default");
                 break;
 
-            case "Energy/Move":
-                {
-                    const energy = partsState.coreInfo.energyPerMove;
-                    const energyPercent = energy * 100 / partsState.totalEnergyGenPerMove;
-                    addPercentageBar(infoContainer, energy, energyPercent, "EnergyGen");
-                    break;
-                }
+            case "Energy/Move": {
+                const energy = partsState.coreInfo.energyPerMove;
+                const energyPercent = (energy * 100) / partsState.totalEnergyGenPerMove;
+                addPercentageBar(infoContainer, energy, energyPercent, "EnergyGen");
+                break;
+            }
 
-            case "Energy/Turn":
-                {
-                    const energy = partsState.coreInfo.energyPerTurn;
-                    const energyPercent = energy * 100 / partsState.totalEnergyGenPerTurn;
-                    addPercentageBar(infoContainer, energy, energyPercent, "EnergyGen");
-                    break;
-                }
+            case "Energy/Turn": {
+                const energy = partsState.coreInfo.energyPerTurn;
+                const energyPercent = (energy * 100) / partsState.totalEnergyGenPerTurn;
+                addPercentageBar(infoContainer, energy, energyPercent, "EnergyGen");
+                break;
+            }
 
-            case "Energy/Volley":
-                {
-                    const energy = partsState.coreInfo.energyPerVolley;
-                    const energyPercent = energy * 100 / partsState.totalEnergyGenPerVolley;
-                    addPercentageBar(infoContainer, energy, energyPercent, "EnergyGen");
-                    break;
-                }
+            case "Energy/Volley": {
+                const energy = partsState.coreInfo.energyPerVolley;
+                const energyPercent = (energy * 100) / partsState.totalEnergyGenPerVolley;
+                addPercentageBar(infoContainer, energy, energyPercent, "EnergyGen");
+                break;
+            }
 
-            case "Heat/Move":
-                {
-                    const heat = partsState.coreInfo.heatPerMove;
-                    const heatPercent = -heat * 100 / partsState.totalHeatDissipationPerMove;
-                    addPercentageBar(infoContainer, heat, heatPercent, "HeatDissipation");
-                    break;
-                }
+            case "Heat/Move": {
+                const heat = partsState.coreInfo.heatPerMove;
+                const heatPercent = (-heat * 100) / partsState.totalHeatDissipationPerMove;
+                addPercentageBar(infoContainer, heat, heatPercent, "HeatDissipation");
+                break;
+            }
 
-            case "Heat/Turn":
-                {
-                    const heat = partsState.coreInfo.heatPerTurn;
-                    const heatPercent = -heat * 100 / partsState.totalHeatDissipationPerTurn;
-                    addPercentageBar(infoContainer, heat, heatPercent, "HeatDissipation");
-                    break;
-                }
+            case "Heat/Turn": {
+                const heat = partsState.coreInfo.heatPerTurn;
+                const heatPercent = (-heat * 100) / partsState.totalHeatDissipationPerTurn;
+                addPercentageBar(infoContainer, heat, heatPercent, "HeatDissipation");
+                break;
+            }
 
-            case "Heat/Volley":
-                {
-                    const heat = partsState.coreInfo.heatPerVolley;
-                    const heatPercent = -heat * 100 / partsState.totalHeatDissipationPerVolley;
-                    addPercentageBar(infoContainer, heat, heatPercent, "HeatDissipation");
-                    break;
-                }
+            case "Heat/Volley": {
+                const heat = partsState.coreInfo.heatPerVolley;
+                const heatPercent = (-heat * 100) / partsState.totalHeatDissipationPerVolley;
+                addPercentageBar(infoContainer, heat, heatPercent, "HeatDissipation");
+                break;
+            }
 
             case "Integrity":
                 const integrity = partsState.coreInfo.integrity;
-                const integrityPercent = integrity * 100 / partsState.totalIntegrity;
+                const integrityPercent = (integrity * 100) / partsState.totalIntegrity;
                 addPercentageBar(infoContainer, integrity, integrityPercent, "Default");
                 break;
 
             case "Mass":
                 const support = partsState.coreInfo.mass;
-                const supportPercent = -support * 100 / partsState.totalSupport;
+                const supportPercent = (-support * 100) / partsState.totalSupport;
                 addPercentageBar(infoContainer, support, supportPercent, "MassSupport");
                 break;
 
@@ -614,7 +671,7 @@ jq(function ($) {
                 const vulnerability = partsState.coreInfo.vulnerability;
                 const diffFromMin = vulnerability - partsState.highestVulnerability;
                 const minMaxDiff = partsState.lowestVulnerability - partsState.highestVulnerability;
-                const percentage = minMaxDiff === 0 ? 100.0 : 100.0 * (1.0 - (diffFromMin / minMaxDiff));
+                const percentage = minMaxDiff === 0 ? 100.0 : 100.0 * (1.0 - diffFromMin / minMaxDiff);
                 addPercentageBarWithString(infoContainer, Math.ceil(vulnerability), percentage, "", "Vulnerability");
                 break;
 
@@ -629,163 +686,147 @@ jq(function ($) {
 
         const infoType = getInfoType();
         switch (infoType) {
-            case "Coverage":
-                {
-                    // Add coverage info and percentage bar
-                    const coverage = partInfo.coverage;
-                    const coveragePercent = (coverage * 100 / partsState.totalCoverage);
-                    addPercentageBar(infoColumn, coverage, coveragePercent, "Default");
-                    break;
+            case "Coverage": {
+                // Add coverage info and percentage bar
+                const coverage = partInfo.coverage;
+                const coveragePercent = (coverage * 100) / partsState.totalCoverage;
+                addPercentageBar(infoColumn, coverage, coveragePercent, "Default");
+                break;
+            }
+
+            case "Energy/Move": {
+                // Add energy/move info and percentage bar
+                const energy = partInfo.energyPerMove;
+                let energyPercent = 0;
+                let color: PercentageColor = "Default";
+                if (energy > 0) {
+                    energyPercent = (energy * 100) / partsState.totalEnergyGenPerMove;
+                    color = "EnergyGen";
+                } else if (energy < 0) {
+                    energyPercent = (-energy * 100) / partsState.totalEnergyUsePerMove;
+                    color = "EnergyConsumption";
                 }
 
-            case "Energy/Move":
-                {
-                    // Add energy/move info and percentage bar
-                    let energy = partInfo.energyPerMove;
-                    let energyPercent = 0;
-                    let color: PercentageColor = "Default";
-                    if (energy > 0) {
-                        energyPercent = energy * 100 / partsState.totalEnergyGenPerMove;
-                        color = "EnergyGen";
-                    }
-                    else if (energy < 0) {
-                        energyPercent = -energy * 100 / partsState.totalEnergyUsePerMove;
-                        color = "EnergyConsumption";
-                    }
+                addPercentageBar(infoColumn, energy, energyPercent, color);
+                break;
+            }
 
-                    addPercentageBar(infoColumn, energy, energyPercent, color);
-                    break;
+            case "Energy/Turn": {
+                // Add energy/turn info and percentage bar
+                const energy = partInfo.energyPerTurn;
+                let energyPercent = 0;
+                let color: PercentageColor = "Default";
+                if (energy > 0) {
+                    energyPercent = (energy * 100) / partsState.totalEnergyGenPerTurn;
+                    color = "EnergyGen";
+                } else if (energy < 0) {
+                    energyPercent = (-energy * 100) / partsState.totalEnergyUsePerTurn;
+                    color = "EnergyConsumption";
                 }
 
-            case "Energy/Turn":
-                {
-                    // Add energy/turn info and percentage bar
-                    let energy = partInfo.energyPerTurn;
-                    let energyPercent = 0;
-                    let color: PercentageColor = "Default";
-                    if (energy > 0) {
-                        energyPercent = energy * 100 / partsState.totalEnergyGenPerTurn;
-                        color = "EnergyGen";
-                    }
-                    else if (energy < 0) {
-                        energyPercent = -energy * 100 / partsState.totalEnergyUsePerTurn;
-                        color = "EnergyConsumption";
-                    }
+                addPercentageBar(infoColumn, energy, energyPercent, color);
+                break;
+            }
 
-                    addPercentageBar(infoColumn, energy, energyPercent, color);
-                    break;
+            case "Energy/Volley": {
+                // Add energy/volley info and percentage bar
+                const energy = partInfo.energyPerVolley;
+                let energyPercent = 0;
+                let color: PercentageColor = "Default";
+                if (energy > 0) {
+                    energyPercent = (energy * 100) / partsState.totalEnergyGenPerVolley;
+                    color = "EnergyGen";
+                } else if (energy < 0) {
+                    energyPercent = (-energy * 100) / partsState.totalEnergyUsePerVolley;
+                    color = "EnergyConsumption";
                 }
 
-            case "Energy/Volley":
-                {
-                    // Add energy/volley info and percentage bar
-                    let energy = partInfo.energyPerVolley;
-                    let energyPercent = 0;
-                    let color: PercentageColor = "Default";
-                    if (energy > 0) {
-                        energyPercent = energy * 100 / partsState.totalEnergyGenPerVolley;
-                        color = "EnergyGen";
-                    }
-                    else if (energy < 0) {
-                        energyPercent = -energy * 100 / partsState.totalEnergyUsePerVolley;
-                        color = "EnergyConsumption";
-                    }
+                addPercentageBar(infoColumn, energy, energyPercent, color);
+                break;
+            }
 
-                    addPercentageBar(infoColumn, energy, energyPercent, color);
-                    break;
+            case "Heat/Move": {
+                // Add heat/move info and percentage bar
+                const heat = partInfo.heatPerMove;
+                let heatPercent = 0;
+                let color: PercentageColor;
+                if (heat > 0) {
+                    heatPercent = (heat * 100) / partsState.totalHeatGenPerMove;
+                    color = "HeatGen";
+                } else {
+                    heatPercent = (-heat * 100) / partsState.totalHeatDissipationPerMove;
+                    color = "HeatDissipation";
                 }
 
-            case "Heat/Move":
-                {
-                    // Add heat/move info and percentage bar
-                    let heat = partInfo.heatPerMove;
-                    let heatPercent = 0;
-                    let color: PercentageColor;
-                    if (heat > 0) {
-                        heatPercent = heat * 100 / partsState.totalHeatGenPerMove;
-                        color = "HeatGen";
-                    }
-                    else {
-                        heatPercent = -heat * 100 / partsState.totalHeatDissipationPerMove;
-                        color = "HeatDissipation";
-                    }
+                addPercentageBar(infoColumn, heat, heatPercent, color);
+                break;
+            }
 
-                    addPercentageBar(infoColumn, heat, heatPercent, color);
-                    break;
+            case "Heat/Turn": {
+                // Add heat/turn info and percentage bar
+                const heat = partInfo.heatPerTurn;
+                let heatPercent = 0;
+                let color: PercentageColor;
+                if (heat > 0) {
+                    heatPercent = (heat * 100) / partsState.totalHeatGenPerTurn;
+                    color = "HeatGen";
+                } else {
+                    heatPercent = (-heat * 100) / partsState.totalHeatDissipationPerTurn;
+                    color = "HeatDissipation";
                 }
 
-            case "Heat/Turn":
-                {
-                    // Add heat/turn info and percentage bar
-                    let heat = partInfo.heatPerTurn;
-                    let heatPercent = 0;
-                    let color: PercentageColor;
-                    if (heat > 0) {
-                        heatPercent = heat * 100 / partsState.totalHeatGenPerTurn;
-                        color = "HeatGen"
-                    }
-                    else {
-                        heatPercent = -heat * 100 / partsState.totalHeatDissipationPerTurn;
-                        color = "HeatDissipation"
-                    }
+                addPercentageBar(infoColumn, heat, heatPercent, color);
+                break;
+            }
 
-                    addPercentageBar(infoColumn, heat, heatPercent, color);
-                    break;
+            case "Heat/Volley": {
+                // Add heat/volley info and percentage bar
+                const heat = partInfo.heatPerVolley;
+                let heatPercent = 0;
+                let color: PercentageColor;
+                if (heat > 0) {
+                    heatPercent = (heat * 100) / partsState.totalHeatGenPerVolley;
+                    color = "HeatGen";
+                } else {
+                    heatPercent = (-heat * 100) / partsState.totalHeatDissipationPerVolley;
+                    color = "HeatDissipation";
                 }
 
-            case "Heat/Volley":
-                {
-                    // Add heat/volley info and percentage bar
-                    let heat = partInfo.heatPerVolley;
-                    let heatPercent = 0;
-                    let color: PercentageColor;
-                    if (heat > 0) {
-                        heatPercent = heat * 100 / partsState.totalHeatGenPerVolley;
-                        color = "HeatGen"
-                    }
-                    else {
-                        heatPercent = -heat * 100 / partsState.totalHeatDissipationPerVolley;
-                        color = "HeatDissipation"
-                    }
+                addPercentageBar(infoColumn, heat, heatPercent, color);
+                break;
+            }
 
-                    addPercentageBar(infoColumn, heat, heatPercent, color);
-                    break;
+            case "Integrity": {
+                // Add integrity info and percentage bar
+                const integrity = partInfo.integrity;
+                const integrityPercent = (integrity * 100) / partsState.totalIntegrity;
+                addPercentageBar(infoColumn, integrity, integrityPercent, "Default");
+                break;
+            }
+
+            case "Mass": {
+                // Add mass info and percentage bar
+                // If we're a propulsion item then show negative mass for support and the total support percent
+                const mass = partInfo.mass;
+                let massPercent = 0;
+                let color: PercentageColor;
+                if (mass > 0) {
+                    massPercent = (mass * 100) / partsState.totalMass;
+                    color = "Mass";
+                } else {
+                    massPercent = (-mass * 100) / partsState.totalSupport;
+                    color = "MassSupport";
                 }
 
-            case "Integrity":
-                {
-                    // Add integrity info and percentage bar
-                    const integrity = partInfo.integrity;
-                    const integrityPercent = integrity * 100 / partsState.totalIntegrity;
-                    addPercentageBar(infoColumn, integrity, integrityPercent, "Default");
-                    break;
-                }
-
-            case "Mass":
-                {
-                    // Add mass info and percentage bar
-                    // If we're a propulsion item then show negative mass for support and the total support percent
-                    let mass = partInfo.mass;
-                    let massPercent = 0;
-                    let color: PercentageColor;
-                    if (mass > 0) {
-                        massPercent = mass * 100 / partsState.totalMass;
-                        color = "Mass";
-                    }
-                    else {
-                        massPercent = -mass * 100 / partsState.totalSupport;
-                        color = "MassSupport";
-                    }
-
-                    addPercentageBar(infoColumn, mass, massPercent, color);
-                    break;
-                }
+                addPercentageBar(infoColumn, mass, massPercent, color);
+                break;
+            }
 
             case "Vulnerability":
                 const vulnerability = partInfo.vulnerability;
                 const diffFromMin = vulnerability - partsState.highestVulnerability;
                 const minMaxDiff = partsState.lowestVulnerability - partsState.highestVulnerability;
-                const percentage = minMaxDiff === 0 ? 100.0 : 100.0 * (1.0 - (diffFromMin / minMaxDiff));
+                const percentage = minMaxDiff === 0 ? 100.0 : 100.0 * (1.0 - diffFromMin / minMaxDiff);
                 addPercentageBarWithString(infoColumn, Math.ceil(vulnerability), percentage, "", "Vulnerability");
                 break;
 
@@ -797,12 +838,14 @@ jq(function ($) {
     // Recalculates the total parts state based on all current items
     function updatePartsState() {
         type Part = {
-            abilityActive: boolean,
-            active: boolean,
-            number: number,
-            part: BaseItem,
+            abilityActive: boolean;
+            active: boolean;
+            number: number;
+            part: BaseItem;
         };
-        function sum(a: number, b: number) { return a + b; }
+        function sum(a: number, b: number) {
+            return a + b;
+        }
 
         function getEnergyPerMove(p: Part, powerAmplifierBonus: number, tusPerMove: number) {
             if (!p.active) {
@@ -813,8 +856,7 @@ jq(function ($) {
             if (p.part.slot === ItemSlot.Propulsion) {
                 const energyPerTurn = getEnergyPerTurn(p, powerAmplifierBonus);
                 return getValuePerTus(energyPerTurn, tusPerMove) - ((p.part as PropulsionItem).energyPerMove ?? 0);
-            }
-            else {
+            } else {
                 return getValuePerTus(getEnergyPerTurn(p, powerAmplifierBonus), tusPerMove);
             }
         }
@@ -824,15 +866,12 @@ jq(function ($) {
             if (p.active && p.part.slot === ItemSlot.Power) {
                 // Multiply only power-slot energy generation by the power amplifier bonus
                 return ((p.part as PowerItem).energyGeneration ?? 0) * powerAmplifierBonus;
-            }
-            else if (hasActiveSpecialProperty(p.part, p.abilityActive, "FusionCompressor")) {
+            } else if (hasActiveSpecialProperty(p.part, p.abilityActive, "FusionCompressor")) {
                 // Fusion compressors convert matter to energy
                 return (p.part.specialProperty!.trait as FusionCompressor).energyPerTurn;
-            }
-            else if (p.active && p.part.slot === ItemSlot.Propulsion || p.part.slot === ItemSlot.Utility) {
+            } else if ((p.active && p.part.slot === ItemSlot.Propulsion) || p.part.slot === ItemSlot.Utility) {
                 return -((p.part as ItemWithUpkeep).energyUpkeep ?? 0);
-            }
-            else if (hasActiveSpecialProperty(p.part, p.abilityActive, "WeaponRegen")) {
+            } else if (hasActiveSpecialProperty(p.part, p.abilityActive, "WeaponRegen")) {
                 // Weapon regen ability turns energy into weapon integrity
                 return -(p.part.specialProperty!.trait as WeaponRegen).energyPerTurn;
             }
@@ -840,7 +879,12 @@ jq(function ($) {
             return 0;
         }
 
-        function getEnergyPerVolley(p: Part, energyFilterPercent: number, powerAmplifierBonus: number, tusPerVolley: number) {
+        function getEnergyPerVolley(
+            p: Part,
+            energyFilterPercent: number,
+            powerAmplifierBonus: number,
+            tusPerVolley: number,
+        ) {
             if (!p.active) {
                 return 0;
             }
@@ -848,8 +892,7 @@ jq(function ($) {
             // Return positive value for energy gen, negative for consumption
             if (p.part.slot === ItemSlot.Weapon) {
                 return -((p.part as WeaponItem).shotEnergy ?? 0) * energyFilterPercent;
-            }
-            else {
+            } else {
                 return getValuePerTus(getEnergyPerTurn(p, powerAmplifierBonus), tusPerVolley);
             }
         }
@@ -858,8 +901,7 @@ jq(function ($) {
             // Return negative value for heat dissipation, positive for generation
             if (p.active && p.part.slot === ItemSlot.Propulsion) {
                 return getValuePerTus(getHeatPerTurn(p), tusPerMove) + ((p.part as PropulsionItem).heatPerMove ?? 0);
-            }
-            else {
+            } else {
                 return getValuePerTus(getHeatPerTurn(p), tusPerMove);
             }
         }
@@ -868,9 +910,12 @@ jq(function ($) {
             // Return negative value for heat dissipation, positive for generation
             if (hasActiveSpecialProperty(p.part, p.active, "HeatDissipation")) {
                 return -(p.part.specialProperty!.trait as HeatDissipation).dissipation;
-            }
-            else if (p.active && (p.part.slot === ItemSlot.Power
-                || p.part.slot === ItemSlot.Propulsion || p.part.slot === ItemSlot.Utility)) {
+            } else if (
+                p.active &&
+                (p.part.slot === ItemSlot.Power ||
+                    p.part.slot === ItemSlot.Propulsion ||
+                    p.part.slot === ItemSlot.Utility)
+            ) {
                 return (p.part as ItemWithUpkeep).heatGeneration ?? 0;
             }
 
@@ -885,21 +930,18 @@ jq(function ($) {
             // Return negative values for heat dissipation, positive for generation
             if (p.part.slot === ItemSlot.Weapon) {
                 return (p.part as WeaponItem).shotHeat ?? 0;
-            }
-            else {
+            } else {
                 return getValuePerTus(getHeatPerTurn(p), tusPerVolley);
             }
         }
 
         function getMass(p: Part) {
             // Return negative value for support, positive for mass used
-            if (p.active && (p.part.slot === ItemSlot.Propulsion)) {
+            if (p.active && p.part.slot === ItemSlot.Propulsion) {
                 return -(p.part as PropulsionItem).support;
-            }
-            else if (hasActiveSpecialProperty(p.part, p.active, "MassSupport")) {
+            } else if (hasActiveSpecialProperty(p.part, p.active, "MassSupport")) {
                 return -(p.part.specialProperty!.trait as MassSupport).support;
-            }
-            else {
+            } else {
                 return p.part.mass ?? 0;
             }
         }
@@ -915,53 +957,64 @@ jq(function ($) {
 
         // Get the definitions of all parts
         const parts: Part[] = [];
-        partTypes.map(p => p.id).forEach(id => {
-            $("#" + id).find(".input-group").each((_, element) => {
-                const selector = $(element);
+        partTypes
+            .map((p) => p.id)
+            .forEach((id) => {
+                $("#" + id)
+                    .find(".input-group")
+                    .each((_, element) => {
+                        const selector = $(element);
 
-                // Check if the part is active
-                const active = selector.find("label:first").hasClass("active");
-                const number = Math.max(1, parseIntOrDefault(selector.children("input").val(), 1));
+                        // Check if the part is active
+                        const active = selector.find("label:first").hasClass("active");
+                        const number = Math.max(1, parseIntOrDefault(selector.children("input").val(), 1));
 
-                // Try to get the selected part
-                const partName = selector.find("select").selectpicker("val") as any as string;
-                if (partName in itemData) {
-                    parts.push({ abilityActive: active, active: active, number: number, part: itemData[partName] as BaseItem });
-                }
+                        // Try to get the selected part
+                        const partName = selector.find("select").selectpicker("val") as any as string;
+                        if (partName in itemData) {
+                            parts.push({
+                                abilityActive: active,
+                                active: active,
+                                number: number,
+                                part: itemData[partName] as BaseItem,
+                            });
+                        }
+                    });
             });
-        });
 
         // Calculate propulsion-related stats
-        let firstProp = parts.find(p => p.active && p.part.slot === ItemSlot.Propulsion);
+        const firstProp = parts.find((p) => p.active && p.part.slot === ItemSlot.Propulsion);
         let propulsionType: ItemType | undefined;
         let totalSupport: number;
-        const totalMass = parts.map(p => (p.part.mass ?? 0) * p.number).reduce(sum, 0);
+        const totalMass = parts.map((p) => (p.part.mass ?? 0) * p.number).reduce(sum, 0);
         if (firstProp !== undefined) {
             propulsionType = firstProp.part.type;
         }
         const activeProp: PropulsionItem[] = [];
-        parts.filter(p => p.active && p.part.type === propulsionType).forEach(p => {
-            for (let i = 0; i < p.number; i++) {
-                activeProp.push(p.part as PropulsionItem);
-            }
-        });
+        parts
+            .filter((p) => p.active && p.part.type === propulsionType)
+            .forEach((p) => {
+                for (let i = 0; i < p.number; i++) {
+                    activeProp.push(p.part as PropulsionItem);
+                }
+            });
         activeProp.sort((a, b) => (a.modPerExtra ?? 0) - (b.modPerExtra ?? 0));
         if (activeProp.length === 0) {
             // Core hover has 3 support
             totalSupport = 3;
-        }
-        else {
+        } else {
             // Sum support of all active prop
-            totalSupport = activeProp.map(p => p.support).reduce(sum, 0);
+            totalSupport = activeProp.map((p) => p.support).reduce(sum, 0);
         }
 
         // Add mass support utils
-        totalSupport += parts.filter(p => hasActiveSpecialProperty(p.part, p.active, "MassSupport"))
-            .map(p => (p.part.specialProperty!.trait as MassSupport).support)
+        totalSupport += parts
+            .filter((p) => hasActiveSpecialProperty(p.part, p.active, "MassSupport"))
+            .map((p) => (p.part.specialProperty!.trait as MassSupport).support)
             .reduce(sum, 0);
 
         // Set irrelevant prop types to inactive
-        parts.forEach(p => {
+        parts.forEach((p) => {
             if (p.part.slot === ItemSlot.Propulsion && !activeProp.includes(p.part as PropulsionItem)) {
                 p.active = false;
             }
@@ -973,16 +1026,18 @@ jq(function ($) {
             // If no active prop then use core hover speed initially...
             tusPerMove = 50;
             overweightPenalty = 50;
-        }
-        else {
+        } else {
             // First calculate the average speed of all parts...
-            tusPerMove = Math.trunc(activeProp.map(p => p.timePerMove).reduce(sum, 0) / activeProp.length);
+            tusPerMove = Math.trunc(activeProp.map((p) => p.timePerMove).reduce(sum, 0) / activeProp.length);
 
             // Then calculate average penalty of all parts...
-            overweightPenalty = Math.trunc(activeProp.map(p => p.penalty).reduce(sum, 0) / activeProp.length);
+            overweightPenalty = Math.trunc(activeProp.map((p) => p.penalty).reduce(sum, 0) / activeProp.length);
 
             // Then apply per/move mods...
-            tusPerMove += activeProp.filter((_, i) => i !== 0).map(p => p.modPerExtra ?? 0).reduce(sum, 0);
+            tusPerMove += activeProp
+                .filter((_, i) => i !== 0)
+                .map((p) => p.modPerExtra ?? 0)
+                .reduce(sum, 0);
 
             // Then apply overload mods...
             // TODO
@@ -993,34 +1048,33 @@ jq(function ($) {
 
         // Then apply drag penalties if airborne...
         if (propulsionType === ItemType.FlightUnit || propulsionType === ItemType.HoverUnit) {
-            tusPerMove += parts.filter(p => p.part.slot === ItemSlot.Propulsion)
-                .map(p => (p.part as PropulsionItem).drag ?? 0)
+            tusPerMove += parts
+                .filter((p) => p.part.slot === ItemSlot.Propulsion)
+                .map((p) => (p.part as PropulsionItem).drag ?? 0)
                 .reduce(sum, 0);
         }
 
         // Also apply a cap of 20 for hover or 10 for flight
         if (propulsionType === ItemType.FlightUnit) {
             tusPerMove = Math.max(tusPerMove, 10);
-        }
-        else if (propulsionType === ItemType.HoverUnit) {
+        } else if (propulsionType === ItemType.HoverUnit) {
             tusPerMove = Math.max(tusPerMove, 10);
         }
 
         // Calculate weapon-related stats
-        const firstWeapon = parts.find(p => p.active && p.part.slot === ItemSlot.Weapon);
+        const firstWeapon = parts.find((p) => p.active && p.part.slot === ItemSlot.Weapon);
         const isMelee = firstWeapon !== undefined && isPartMelee(firstWeapon.part);
 
         // Set irrelevant weapon types to inactive
-        let activeWeapons: WeaponItem[] = new Array();
-        parts.forEach(p => {
+        const activeWeapons: WeaponItem[] = [];
+        parts.forEach((p) => {
             if (p.part.slot !== ItemSlot.Weapon) {
                 return;
             }
 
-            if (isMelee && !isPartMelee(p.part) || (!isMelee && isPartMelee(p.part))) {
+            if ((isMelee && !isPartMelee(p.part)) || (!isMelee && isPartMelee(p.part))) {
                 p.active = false;
-            }
-            else if (p.active) {
+            } else if (p.active) {
                 for (let i = 0; i < p.number; i++) {
                     activeWeapons.push(p.part as WeaponItem);
                 }
@@ -1030,25 +1084,33 @@ jq(function ($) {
         let tusPerVolley: number;
         if (isMelee) {
             // Assumes that all actuators stack up to 50%
-            const actuatorParts = parts.filter(p => hasActiveSpecialProperty(p.part, p.active, "Actuator"));
-            const actuatorModifier = 1 - Math.min(
-                .5,
-                actuatorParts.map(p => (p.part.specialProperty!.trait as Actuator).amount).reduce(sum, 0));
+            const actuatorParts = parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "Actuator"));
+            const actuatorModifier =
+                1 -
+                Math.min(
+                    0.5,
+                    actuatorParts.map((p) => (p.part.specialProperty!.trait as Actuator).amount).reduce(sum, 0),
+                );
 
             tusPerVolley = actuatorModifier * ((activeWeapons[0].delay ?? 0) + volleyTimeMap[1]);
-        }
-        else {
-            const cyclerParts = parts.filter(p => hasActiveSpecialProperty(p.part, p.active, "RangedWeaponCycling"));
+        } else {
+            const cyclerParts = parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "RangedWeaponCycling"));
             let cyclerModifier: number;
             // Semi-hacky, assumes that 50% cyclers are no-stack and all others stack up to 30%
-            if (cyclerParts.find(p => (p.part.specialProperty!.trait as RangedWeaponCycling).amount === 50) !== undefined) {
-                cyclerModifier = .5;
-            }
-            else {
-                cyclerModifier = 1 - Math.min(
-                    .3,
-                    cyclerParts.map(p => (p.part.specialProperty!.trait as RangedWeaponCycling).amount)
-                        .reduce(sum, 0));
+            if (
+                cyclerParts.find((p) => (p.part.specialProperty!.trait as RangedWeaponCycling).amount === 50) !==
+                undefined
+            ) {
+                cyclerModifier = 0.5;
+            } else {
+                cyclerModifier =
+                    1 -
+                    Math.min(
+                        0.3,
+                        cyclerParts
+                            .map((p) => (p.part.specialProperty!.trait as RangedWeaponCycling).amount)
+                            .reduce(sum, 0),
+                    );
             }
 
             tusPerVolley = getRangedVolleyTime(activeWeapons, cyclerModifier);
@@ -1059,46 +1121,56 @@ jq(function ($) {
         const innateHeatDissipation = parseIntOrDefault($("#heatDissipationInput").val(), 0);
 
         // Core is additional 100 coverage
-        const totalCoverage = parts.map(p => (p.part.coverage ?? 0) * p.number).reduce(sum, 0) + 100;
+        const totalCoverage = parts.map((p) => (p.part.coverage ?? 0) * p.number).reduce(sum, 0) + 100;
 
         // Calculate core info
         const coreInfo: PartInfo = {
             coverage: 100,
-            energyPerMove: activeProp.length > 0 ? getValuePerTus(5, tusPerMove) : (getValuePerTus(5, tusPerMove) - 1),
+            energyPerMove: activeProp.length > 0 ? getValuePerTus(5, tusPerMove) : getValuePerTus(5, tusPerMove) - 1,
             energyPerTurn: 5,
-            energyPerVolley: activeProp.length > 0 ? getValuePerTus(5, tusPerVolley) : (getValuePerTus(5, tusPerVolley) - 1),
-            heatPerMove: -getValuePerTus(55 - (3 * depth) + innateHeatDissipation, tusPerMove),
-            heatPerTurn: -(55 - (3 * depth) + innateHeatDissipation),
-            heatPerVolley: -getValuePerTus(55 - (3 * depth) + innateHeatDissipation, tusPerVolley),
-            integrity: 1750 - (150 * depth),
+            energyPerVolley:
+                activeProp.length > 0 ? getValuePerTus(5, tusPerVolley) : getValuePerTus(5, tusPerVolley) - 1,
+            heatPerMove: -getValuePerTus(55 - 3 * depth + innateHeatDissipation, tusPerMove),
+            heatPerTurn: -(55 - 3 * depth + innateHeatDissipation),
+            heatPerVolley: -getValuePerTus(55 - 3 * depth + innateHeatDissipation, tusPerVolley),
+            integrity: 1750 - 150 * depth,
             mass: activeProp.length > 0 ? 0 : -3,
-            vulnerability: totalCoverage / 100 * (1750 - (150 * depth))
+            vulnerability: (totalCoverage / 100) * (1750 - 150 * depth),
         };
 
         // Get energy bonuses
-        const powerAmplifierBonus = 1 + parts.map(p => {
-            if (hasActiveSpecialProperty(p.part, p.active, "PowerAmplifier")) {
-                return (p.part.specialProperty!.trait as PowerAmplifier).percent;
-            }
+        const powerAmplifierBonus =
+            1 +
+            parts
+                .map((p) => {
+                    if (hasActiveSpecialProperty(p.part, p.active, "PowerAmplifier")) {
+                        return (p.part.specialProperty!.trait as PowerAmplifier).percent;
+                    }
 
-            return 0;
-        }).reduce(sum, 0);
+                    return 0;
+                })
+                .reduce(sum, 0);
 
-        const energyFilterPercent = 1 - parts.map(p => {
-            if (hasActiveSpecialProperty(p.part, p.active, "EnergyFilter")) {
-                return (p.part.specialProperty!.trait as EnergyFilter).percent;
-            }
+        const energyFilterPercent =
+            1 -
+            parts
+                .map((p) => {
+                    if (hasActiveSpecialProperty(p.part, p.active, "EnergyFilter")) {
+                        return (p.part.specialProperty!.trait as EnergyFilter).percent;
+                    }
 
-            return 0;
-        }).reduce((a, b) => Math.max(a, b), 0);
+                    return 0;
+                })
+                .reduce((a, b) => Math.max(a, b), 0);
 
         // Calculate info for each part
-        const partsInfo: PartInfo[] = parts.map(p => {
+        const partsInfo: PartInfo[] = parts.map((p) => {
             return {
                 coverage: (p.part.coverage ?? 0) * p.number,
                 energyPerMove: getEnergyPerMove(p, powerAmplifierBonus, tusPerMove) * p.number,
                 energyPerTurn: getEnergyPerTurn(p, powerAmplifierBonus) * p.number,
-                energyPerVolley: getEnergyPerVolley(p, energyFilterPercent, powerAmplifierBonus, tusPerVolley) * p.number,
+                energyPerVolley:
+                    getEnergyPerVolley(p, energyFilterPercent, powerAmplifierBonus, tusPerVolley) * p.number,
                 heatPerMove: getHeatPerMove(p, tusPerMove) * p.number,
                 heatPerTurn: getHeatPerTurn(p) * p.number,
                 heatPerVolley: getHeatPerVolley(p, tusPerVolley) * p.number,
@@ -1110,45 +1182,51 @@ jq(function ($) {
 
         // Calculate totals
         const allPartInfo = partsInfo.concat(coreInfo);
-        const totalEnergyGenPerTurn = innateEnergyGen + allPartInfo
-            .map(p => p.energyPerTurn > 0 ? p.energyPerTurn : 0).reduce(sum, 0);
-        const totalEnergyUsePerTurn = allPartInfo.map(p => p.energyPerTurn < 0 ? -p.energyPerTurn : 0).reduce(sum, 0);
-        const totalHeatDissipationPerTurn = allPartInfo.map(p => p.heatPerTurn < 0 ? -p.heatPerTurn : 0).reduce(sum, 0);
-        const totalHeatGenPerTurn = allPartInfo.map(p => p.heatPerTurn > 0 ? p.heatPerTurn : 0).reduce(sum, 0);
-        const totalIntegrity = allPartInfo.map(p => p.integrity).reduce(sum, 0);
+        const totalEnergyGenPerTurn =
+            innateEnergyGen + allPartInfo.map((p) => (p.energyPerTurn > 0 ? p.energyPerTurn : 0)).reduce(sum, 0);
+        const totalEnergyUsePerTurn = allPartInfo
+            .map((p) => (p.energyPerTurn < 0 ? -p.energyPerTurn : 0))
+            .reduce(sum, 0);
+        const totalHeatDissipationPerTurn = allPartInfo
+            .map((p) => (p.heatPerTurn < 0 ? -p.heatPerTurn : 0))
+            .reduce(sum, 0);
+        const totalHeatGenPerTurn = allPartInfo.map((p) => (p.heatPerTurn > 0 ? p.heatPerTurn : 0)).reduce(sum, 0);
+        const totalIntegrity = allPartInfo.map((p) => p.integrity).reduce(sum, 0);
 
-        let energyPerMove = activeProp.map(p => p.energyPerMove ?? 0).reduce(sum, 0);
+        let energyPerMove = activeProp.map((p) => p.energyPerMove ?? 0).reduce(sum, 0);
         if (energyPerMove === 0) {
             // Core hover has 1 energy per move cost
             energyPerMove = 1;
         }
-        const heatPerMove = activeProp.map(p => p.heatPerMove ?? 0).reduce(sum, 0);
+        const heatPerMove = activeProp.map((p) => p.heatPerMove ?? 0).reduce(sum, 0);
         const totalEnergyGenPerMove = getValuePerTus(totalEnergyGenPerTurn, tusPerMove);
         const totalEnergyUsePerMove = getValuePerTus(totalEnergyUsePerTurn, tusPerMove) + energyPerMove;
         const totalHeatDissipationPerMove = getValuePerTus(totalHeatDissipationPerTurn, tusPerMove);
         const totalHeatGenPerMove = getValuePerTus(totalHeatGenPerTurn, tusPerMove) + heatPerMove;
 
-        const energyPerVolley = activeWeapons.map(p => (p.shotEnergy ?? 0) * energyFilterPercent).reduce(sum, 0);
-        const heatPerVolley = activeWeapons.map(p => p.shotHeat ?? 0).reduce(sum, 0);
+        const energyPerVolley = activeWeapons.map((p) => (p.shotEnergy ?? 0) * energyFilterPercent).reduce(sum, 0);
+        const heatPerVolley = activeWeapons.map((p) => p.shotHeat ?? 0).reduce(sum, 0);
         const totalEnergyGenPerVolley = getValuePerTus(totalEnergyGenPerTurn, tusPerVolley);
         const totalEnergyUsePerVolley = getValuePerTus(totalEnergyUsePerTurn, tusPerVolley) + energyPerVolley;
         const totalHeatDissipationPerVolley = getValuePerTus(totalHeatDissipationPerTurn, tusPerVolley);
         const totalHeatGenPerVolley = getValuePerTus(totalHeatGenPerTurn, tusPerVolley) + heatPerVolley;
-        const vulnerabilities = allPartInfo.map(p => p.vulnerability).filter(v => v !== 0);
+        const vulnerabilities = allPartInfo.map((p) => p.vulnerability).filter((v) => v !== 0);
         const lowestVulnerability = Math.max(...vulnerabilities, coreInfo.vulnerability) / 0.9;
         const highestVulnerability = Math.min(...vulnerabilities, coreInfo.vulnerability) * 0.9;
 
-        const energyStorage = 100 + parts.map(p => {
-            if (hasActiveSpecialProperty(p.part, p.active, "EnergyStorage")) {
-                return (p.part.specialProperty!.trait as EnergyStorage).storage;
-            }
-            else if (p.active && p.part.slot === ItemSlot.Power) {
-                return (p.part as PowerItem).energyStorage ?? 0;
-            }
-            else {
-                return 0;
-            }
-        }).reduce(sum, 0);
+        const energyStorage =
+            100 +
+            parts
+                .map((p) => {
+                    if (hasActiveSpecialProperty(p.part, p.active, "EnergyStorage")) {
+                        return (p.part.specialProperty!.trait as EnergyStorage).storage;
+                    } else if (p.active && p.part.slot === ItemSlot.Power) {
+                        return (p.part as PowerItem).energyStorage ?? 0;
+                    } else {
+                        return 0;
+                    }
+                })
+                .reduce(sum, 0);
 
         partsState = {
             activePropulsionType: propulsionType,
@@ -1188,7 +1266,7 @@ jq(function ($) {
         const summaryContainer = $("#summaryContainer");
 
         function addInfo(name: string, value: number | string, description: string) {
-            if (typeof (value) === "number" && !Number.isInteger(value)) {
+            if (typeof value === "number" && !Number.isInteger(value)) {
                 // If a number then round to 10ths place
                 value = value.toFixed(1);
             }
@@ -1205,28 +1283,53 @@ jq(function ($) {
         (summaryContainer.children() as any).tooltip("dispose");
         summaryContainer.empty();
 
-        const overweightText = partsState.totalSupport >= partsState.totalMass ?
-            ""
-            : " 0x" + Math.trunc(partsState.totalMass / partsState.totalSupport);
-        addInfo("Support", `${partsState.totalMass}/${partsState.totalSupport}${overweightText}`,
-            "Total mass / total support, including overweight multiplier if applicable.");
-        addInfo("Movement", `${getMovementText(partsState.activePropulsionType)} (${partsState.tusPerMove})`,
-            "Movement type and speed.");
+        const overweightText =
+            partsState.totalSupport >= partsState.totalMass
+                ? ""
+                : " 0x" + Math.trunc(partsState.totalMass / partsState.totalSupport);
+        addInfo(
+            "Support",
+            `${partsState.totalMass}/${partsState.totalSupport}${overweightText}`,
+            "Total mass / total support, including overweight multiplier if applicable.",
+        );
+        addInfo(
+            "Movement",
+            `${getMovementText(partsState.activePropulsionType)} (${partsState.tusPerMove})`,
+            "Movement type and speed.",
+        );
         addInfo("Total Integrity", partsState.totalIntegrity, "Total integrity of all parts and core.");
         addInfo("Total Coverage", partsState.totalCoverage, "Total coverage of all parts and core.");
         addInfo("Energy Storage", partsState.energyStorage, "Total energy storage of all equipped parts");
-        addInfo("Energy/Turn", partsState.totalEnergyGenPerTurn - partsState.totalEnergyUsePerTurn,
-            "The amount of energy gained (or lost) per turn by waiting.");
-        addInfo("Heat/Turn", partsState.totalHeatGenPerTurn - partsState.totalHeatDissipationPerTurn,
-            "The amount of heat gained (or lost) per turn by waiting.");
-        addInfo("Energy/Move", partsState.totalEnergyGenPerMove - partsState.totalEnergyUsePerMove,
-            "The amount of energy gained (or lost) per single tile move.");
-        addInfo("Heat/Move", partsState.totalHeatGenPerMove - partsState.totalHeatDissipationPerMove,
-            "The amount of heat gained (or lost) per single tile move.");
+        addInfo(
+            "Energy/Turn",
+            partsState.totalEnergyGenPerTurn - partsState.totalEnergyUsePerTurn,
+            "The amount of energy gained (or lost) per turn by waiting.",
+        );
+        addInfo(
+            "Heat/Turn",
+            partsState.totalHeatGenPerTurn - partsState.totalHeatDissipationPerTurn,
+            "The amount of heat gained (or lost) per turn by waiting.",
+        );
+        addInfo(
+            "Energy/Move",
+            partsState.totalEnergyGenPerMove - partsState.totalEnergyUsePerMove,
+            "The amount of energy gained (or lost) per single tile move.",
+        );
+        addInfo(
+            "Heat/Move",
+            partsState.totalHeatGenPerMove - partsState.totalHeatDissipationPerMove,
+            "The amount of heat gained (or lost) per single tile move.",
+        );
         addInfo("Volley Time", partsState.tusPerVolley, "The amount of TUs per volley.");
-        addInfo("Energy/Volley", partsState.totalEnergyGenPerVolley - partsState.totalEnergyUsePerVolley,
-            "The amount of energy gained (or lost) per full volley.");
-        addInfo("Heat/Volley", partsState.totalHeatGenPerVolley - partsState.totalHeatDissipationPerVolley,
-            "The amount of heat gained (or lost) per full volley.");
+        addInfo(
+            "Energy/Volley",
+            partsState.totalEnergyGenPerVolley - partsState.totalEnergyUsePerVolley,
+            "The amount of energy gained (or lost) per full volley.",
+        );
+        addInfo(
+            "Heat/Volley",
+            partsState.totalHeatGenPerVolley - partsState.totalHeatDissipationPerVolley,
+            "The amount of heat gained (or lost) per full volley.",
+        );
     }
 });

@@ -2,24 +2,15 @@ import * as bots from "../json/bots.json";
 import * as botsB11 from "../json/bots_b11.json";
 import * as items from "../json/items.json";
 import * as itemsB11 from "../json/items_b11.json";
-import {
-    Bot, JsonBot,
-} from "./botTypes";
-import {
-    botData,
-    createBotDataContent,
-    getBot,
-    initData,
-    nameToId,
-    setSpoilersState,
-} from "./common";
+import { Bot, JsonBot } from "./botTypes";
+import { botData, createBotDataContent, getBot, initData, nameToId, setSpoilersState } from "./common";
 import {
     getSpoilersState,
     getSelectedButtonId,
     resetButtonGroup,
     enableBotInfoItemPopovers,
     createHeader,
-    registerDisableAutocomplete
+    registerDisableAutocomplete,
 } from "./commonJquery";
 
 import * as jQuery from "jquery";
@@ -34,23 +25,18 @@ jq(function ($) {
 
     // Faction HTML ids to JSON category names
     const factionIdToCategoryName = {
-        "faction0b10": "0b10",
-        "factionArchitect": "Architect",
-        "factionDerelict": "Derelict",
-        "factionExile": "Exiles",
-        "factionWarlord": "Warlord",
-        "factionZionite": "Zionite",
+        faction0b10: "0b10",
+        factionArchitect: "Architect",
+        factionDerelict: "Derelict",
+        factionExile: "Exiles",
+        factionWarlord: "Warlord",
+        factionZionite: "Zionite",
     };
 
     // Spoiler faction HTML ids
-    const spoilerFactionIds = [
-        "factionWarlord",
-        "factionZionite",
-    ];
+    const spoilerFactionIds = ["factionWarlord", "factionZionite"];
 
-    const redactedFactionIds = [
-        "factionArchitect"
-    ];
+    const redactedFactionIds = ["factionArchitect"];
 
     $((document) => init());
 
@@ -58,7 +44,7 @@ jq(function ($) {
     function createBots() {
         const botNames = Object.keys(botData);
         const botsGrid = $("#botsGrid");
-        botNames.forEach(botName => {
+        botNames.forEach((botName) => {
             // Creates button that will toggle a popover when pressed displaying
             // various stats and items
             const bot = botData[botName];
@@ -71,7 +57,8 @@ jq(function ($) {
                     data-content='${createBotDataContent(bot)}'
                     data-toggle="popover">
                     ${botName}
-                 </button>`);
+                 </button>`,
+            );
 
             botElements[botName] = element;
             botsGrid.append(element);
@@ -89,50 +76,45 @@ jq(function ($) {
         // Spoilers filter
         const spoilersState = getSpoilersState();
         if (spoilersState === "None") {
-            filters.push(bot =>
-                !bot.categories.some(c => c === "Spoilers" || c === "Redacted")
-            );
-        }
-        else if (spoilersState === "Spoilers") {
-            filters.push(bot =>
-                !bot.categories.some(c => c === "Redacted")
-            );
+            filters.push((bot) => !bot.categories.some((c) => c === "Spoilers" || c === "Redacted"));
+        } else if (spoilersState === "Spoilers") {
+            filters.push((bot) => !bot.categories.some((c) => c === "Redacted"));
         }
 
         // Name filter
         const nameValue = ($("#name").val() as string).toLowerCase();
         if (nameValue.length > 0) {
-            filters.push(bot => bot.name.toLowerCase().includes(nameValue));
+            filters.push((bot) => bot.name.toLowerCase().includes(nameValue));
         }
 
         // Class filter
         const classValue = ($("#class").val() as string).toLowerCase();
         if (classValue.length > 0) {
-            filters.push(bot => bot.class.toLowerCase().includes(classValue));
+            filters.push((bot) => bot.class.toLowerCase().includes(classValue));
         }
 
         // Part filter
         const partValue = ($("#part").val() as string).toLowerCase();
         if (partValue.length > 0) {
-            filters.push(bot => {
-                if (bot.armamentData.map(data => data.name).some(name => name.toLowerCase().includes(partValue))) {
+            filters.push((bot) => {
+                if (bot.armamentData.map((data) => data.name).some((name) => name.toLowerCase().includes(partValue))) {
                     return true;
                 }
 
-                if (bot.componentData.map(data => data.name).some(name => name.toLowerCase().includes(partValue))) {
+                if (bot.componentData.map((data) => data.name).some((name) => name.toLowerCase().includes(partValue))) {
                     return true;
                 }
 
                 for (let i = 0; i < bot.armamentOptionData.length; i++) {
                     const data = bot.armamentOptionData[i];
-                    if (data.map(data => data.name).some(name => name.toLowerCase().includes(partValue))) {
+                    if (data.map((data) => data.name).some((name) => name.toLowerCase().includes(partValue))) {
                         return true;
                     }
                 }
 
                 for (let i = 0; i < bot.componentOptionData.length; i++) {
                     const data = bot.componentOptionData[i];
-                    if (data.map(data => data.name).some(name => name.toLowerCase().includes(partValue))) {
+                    if (data.map((data) => data.name).some((name) => name.toLowerCase().includes(partValue))) {
                         return true;
                     }
                 }
@@ -145,19 +127,19 @@ jq(function ($) {
         const factionId = getSelectedButtonId($("#factionContainer"));
         if (factionId in factionIdToCategoryName) {
             const categoryName = factionIdToCategoryName[factionId];
-            filters.push(bot => bot.categories.includes(categoryName));
+            filters.push((bot) => bot.categories.includes(categoryName));
         }
 
         // Create a function that checks all filters
         return (bot: Bot) => {
-            return filters.every(func => func(bot));
-        }
+            return filters.every((func) => func(bot));
+        };
     }
 
     // Initialize the page state
     function init() {
         initData(items as { [key: string]: JsonItem }, bots as any as { [key: string]: JsonBot });
-        
+
         createBots();
         createHeader("Bots", $("#headerContainer"));
         $("#beta11Checkbox").prop("checked", false);
@@ -189,12 +171,9 @@ jq(function ($) {
             if ($(e.target).parents(".popover").length === 0 && $(".popover").length >= 1) {
                 // If clicking outside of a popover close the current one
                 ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
-            }
-            else if ($(e.target).parents(".popover").length === 1 && $(".popover").length > 1) {
+            } else if ($(e.target).parents(".popover").length === 1 && $(".popover").length > 1) {
                 // If clicking inside of a popover close any nested popovers
-                ($(e.target)
-                    .parents(".popover")
-                    .find('.bot-popover-item') as any)
+                ($(e.target).parents(".popover").find(".bot-popover-item") as any)
                     .not(e.target)
                     .not($(e.target).parents())
                     .popover("hide");
@@ -203,8 +182,8 @@ jq(function ($) {
 
         $("#beta11Checkbox").on("change", () => {
             const isB11 = $("#beta11Checkbox").prop("checked");
-            const newItems = isB11 ? itemsB11 : items as any;
-            const newBots = isB11 ? botsB11 : bots as any;
+            const newItems = isB11 ? itemsB11 : (items as any);
+            const newBots = isB11 ? botsB11 : (bots as any);
 
             initData(newItems, newBots);
 
@@ -254,7 +233,7 @@ jq(function ($) {
         // Get the names of all non-filtered bots
         const botFilter = getBotFilter();
         let bots: string[] = [];
-        Object.keys(botData).forEach(botName => {
+        Object.keys(botData).forEach((botName) => {
             const bot = getBot(botName);
 
             if (botFilter(bot)) {
@@ -270,14 +249,13 @@ jq(function ($) {
 
         let precedingElement = null;
 
-        bots.forEach(botName => {
+        bots.forEach((botName) => {
             const element = botElements[botName];
             element.removeClass("not-visible");
 
             if (precedingElement == null) {
                 $("#botGrid").append(element);
-            }
-            else {
+            } else {
                 element.insertAfter(precedingElement);
             }
 
@@ -292,16 +270,14 @@ jq(function ($) {
         const showRedacted = state === "Redacted";
 
         if (showSpoilers) {
-            spoilerFactionIds.forEach(faction => $(`#${faction}`).removeClass("not-visible"));
-            redactedFactionIds.forEach(faction => $(`#${faction}`).addClass("not-visible"));
-        }
-        else if (showRedacted) {
-            spoilerFactionIds.forEach(faction => $(`#${faction}`).removeClass("not-visible"));
-            redactedFactionIds.forEach(faction => $(`#${faction}`).removeClass("not-visible"));
-        }
-        else {
-            spoilerFactionIds.forEach(faction => $(`#${faction}`).addClass("not-visible"));
-            redactedFactionIds.forEach(faction => $(`#${faction}`).addClass("not-visible"));
+            spoilerFactionIds.forEach((faction) => $(`#${faction}`).removeClass("not-visible"));
+            redactedFactionIds.forEach((faction) => $(`#${faction}`).addClass("not-visible"));
+        } else if (showRedacted) {
+            spoilerFactionIds.forEach((faction) => $(`#${faction}`).removeClass("not-visible"));
+            redactedFactionIds.forEach((faction) => $(`#${faction}`).removeClass("not-visible"));
+        } else {
+            spoilerFactionIds.forEach((faction) => $(`#${faction}`).addClass("not-visible"));
+            redactedFactionIds.forEach((faction) => $(`#${faction}`).addClass("not-visible"));
         }
     }
 });

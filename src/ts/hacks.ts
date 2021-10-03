@@ -29,8 +29,9 @@ jq(function ($) {
         dataCoreApplies: boolean;
         name: string;
         hacks: Hack[];
-    }
+    };
 
+    /* eslint-disable prettier/prettier */
     // All machine/hack data
     const allMachines: Machine[] = [
         {
@@ -270,6 +271,7 @@ jq(function ($) {
             ],
         },
     ];
+    /* eslint-enable prettier/prettier */
 
     // Updates all hacking tables based on the spoiler level and user inputs
     function updateHackTables() {
@@ -284,11 +286,9 @@ jq(function ($) {
         let botnetBonus = 0;
         if (numBotnets === 1) {
             botnetBonus = 6;
-        }
-        else if (numBotnets === 2) {
+        } else if (numBotnets === 2) {
             botnetBonus = 9;
-        }
-        else if (numBotnets > 2) {
+        } else if (numBotnets > 2) {
             botnetBonus = 9 + numBotnets - 2;
         }
 
@@ -296,18 +296,15 @@ jq(function ($) {
         let operatorBonus = 0;
         if (numOperators === 1) {
             operatorBonus = 10;
-        }
-        else if (numOperators === 2) {
+        } else if (numOperators === 2) {
             operatorBonus = 15;
-        }
-        else if (numOperators === 3) {
+        } else if (numOperators === 3) {
             operatorBonus = 17;
-        }
-        else if (numOperators > 3) {
+        } else if (numOperators > 3) {
             operatorBonus = 17 + numOperators - 3;
         }
 
-        let corruptionPenalty = Math.floor(parseIntOrDefault($("#corruption").val(), 0) / 3);
+        const corruptionPenalty = Math.floor(parseIntOrDefault($("#corruption").val(), 0) / 3);
         const hackModifier = hackBonus + botnetBonus + operatorBonus - corruptionPenalty;
 
         const nameValue = ($("#name").val() as string).toLowerCase();
@@ -315,72 +312,78 @@ jq(function ($) {
         const dataCoreActive = $("#dataCoreYes").hasClass("active");
         const spoilerLevel = getSpoilersState();
 
-        const tableHtml = allMachines.map(machine => {
-            const hackRows = machine.hacks.filter(hack => {
-                // Determine which hacks to show
-                if (filterName && !hack.name.toLowerCase().includes(nameValue)) {
-                    return false;
-                }
+        const tableHtml = allMachines
+            .map((machine) => {
+                const hackRows = machine.hacks
+                    .filter((hack) => {
+                        // Determine which hacks to show
+                        if (filterName && !hack.name.toLowerCase().includes(nameValue)) {
+                            return false;
+                        }
 
-                if (spoilerLevel === "Redacted") {
-                    return true;
-                }
-                else if (spoilerLevel === "Spoilers") {
-                    return hack.spoilerLevel !== "Redacted";
-                }
-                else {
-                    return hack.spoilerLevel === "None" || hack.spoilerLevel === undefined;
-                }
-            }).map(hack => {
-                const direct = hack.indirect !== Indirect.Always;
-                const indirect = hack.indirect !== Indirect.Never;
-                // Calculate the hack chances for direct/indirect hacks at
-                // all terminal levels and apply hacking modifier
-                // Indirect penalty is 15 per security level on top of the
-                // standard security level penalty, level penalty is 100% for
-                // level 1 terminal, 50% for level 2, and 25% for level 3
-                let hackValues: (number | null)[];
-                if (hack.level1DirectOnly) {
-                    // Special case of restricted level 1 terminals with only 1 hack
-                    hackValues = [hack.baseChance, null, null, null, null, null];
-                }
-                else {
-                    hackValues = [
-                        direct ? hack.baseChance : null,
-                        indirect ? hack.baseChance - (direct ? 15 : 0) : null,
-                        direct ? Math.floor(hack.baseChance / 2) : null,
-                        indirect ? Math.floor(hack.baseChance / 2) - (direct ? 30 : 0) : null,
-                        direct ? Math.floor(hack.baseChance / 4) : null,
-                        indirect ? Math.floor(hack.baseChance / 4) - (direct ? 45 : 0) : null,
-                    ];
-                }
+                        if (spoilerLevel === "Redacted") {
+                            return true;
+                        } else if (spoilerLevel === "Spoilers") {
+                            return hack.spoilerLevel !== "Redacted";
+                        } else {
+                            return hack.spoilerLevel === "None" || hack.spoilerLevel === undefined;
+                        }
+                    })
+                    .map((hack) => {
+                        const direct = hack.indirect !== Indirect.Always;
+                        const indirect = hack.indirect !== Indirect.Never;
+                        // Calculate the hack chances for direct/indirect hacks at
+                        // all terminal levels and apply hacking modifier
+                        // Indirect penalty is 15 per security level on top of the
+                        // standard security level penalty, level penalty is 100% for
+                        // level 1 terminal, 50% for level 2, and 25% for level 3
+                        let hackValues: (number | null)[];
+                        if (hack.level1DirectOnly) {
+                            // Special case of restricted level 1 terminals with only 1 hack
+                            hackValues = [hack.baseChance, null, null, null, null, null];
+                        } else {
+                            hackValues = [
+                                direct ? hack.baseChance : null,
+                                indirect ? hack.baseChance - (direct ? 15 : 0) : null,
+                                direct ? Math.floor(hack.baseChance / 2) : null,
+                                indirect ? Math.floor(hack.baseChance / 2) - (direct ? 30 : 0) : null,
+                                direct ? Math.floor(hack.baseChance / 4) : null,
+                                indirect ? Math.floor(hack.baseChance / 4) - (direct ? 45 : 0) : null,
+                            ];
+                        }
 
-                const hackCells = hackValues.map(percentage => {
-                    if (percentage === null) {
-                        return null;
-                    }
+                        const hackCells = hackValues
+                            .map((percentage) => {
+                                if (percentage === null) {
+                                    return null;
+                                }
 
-                    if (machine.dataCoreApplies && dataCoreActive && percentage > 0) {
-                        // If data core applies and is active then multiply the
-                        // base percentage by 1.5, only if > 0
-                        percentage = Math.floor(percentage * 1.5);
-                    }
+                                if (machine.dataCoreApplies && dataCoreActive && percentage > 0) {
+                                    // If data core applies and is active then multiply the
+                                    // base percentage by 1.5, only if > 0
+                                    percentage = Math.floor(percentage * 1.5);
+                                }
 
-                    return percentage + hackModifier;
-                }).map(percentage => percentage === null ? "<td />" : `<td>${percentage}%</td>`)
+                                return percentage + hackModifier;
+                            })
+                            .map((percentage) => (percentage === null ? "<td />" : `<td>${percentage}%</td>`))
+                            .join("");
+
+                        const row = `<tr><td data-toggle="tooltip" title="${hack.description}">${hack.name}</td>${hackCells}</tr>`;
+
+                        return row;
+                    })
                     .join("");
 
-                const row = `<tr><td data-toggle="tooltip" title="${hack.description}">${hack.name}</td>${hackCells}</tr>`;
+                // Hide machines with all results filtered out
+                const visible = hackRows.length > 0;
+                const machineRow = `<tr><td class="hack-category-row${visible ? "" : " not-visible"}">${
+                    machine.name
+                }</td></tr>`;
 
-                return row;
-            }).join("");
-
-            // Hide machines with all results filtered out
-            const visible = hackRows.length > 0;
-            const machineRow = `<tr><td class="hack-category-row${visible ? "" : " not-visible"}">${machine.name}</td></tr>`;
-
-            return machineRow + hackRows;
-        }).join("");
+                return machineRow + hackRows;
+            })
+            .join("");
 
         tableBody.append($(tableHtml));
         (tableBody.find('[data-toggle="tooltip"]') as any).tooltip();
