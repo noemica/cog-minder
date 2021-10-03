@@ -38,6 +38,7 @@ import {
     PowerItem,
     PropulsionItem,
     RangedWeaponCycling,
+    SpecialItemProperty,
     WeaponItem,
     WeaponRegen,
 } from "./itemTypes";
@@ -51,7 +52,7 @@ import LZString = require("lz-string");
 
 const jq = jQuery.noConflict();
 jq(function ($) {
-    $((document) => init());
+    $(() => init());
 
     // The type of additional part info to display
     type InfoType =
@@ -343,7 +344,7 @@ jq(function ($) {
 
     // Gets the current depth, enforcing range limits
     function getDepth() {
-        const depth = Math.abs(parseIntOrDefault($("#depthInput").val(), 10));
+        const depth = Math.abs(parseIntOrDefault($("#depthInput").val() as string, 10));
         return Math.max(1, Math.min(10, depth));
     }
 
@@ -386,7 +387,7 @@ jq(function ($) {
 
                         // Check if the part is active and the number if defined
                         const active = selector.find("label:first").hasClass("active");
-                        const number = Math.max(1, parseIntOrDefault(selector.children("input").val(), 1));
+                        const number = Math.max(1, parseIntOrDefault(selector.children("input").val() as string, 1));
 
                         // Try to get the selected part
                         const partName = selector.find("select").selectpicker("val") as any as string;
@@ -402,14 +403,14 @@ jq(function ($) {
                 parts.push(typeArray);
             });
         const b11 = $("#beta11Checkbox").prop("checked");
-        const depth = $("#depthInput").val();
-        const energyGen = $("#energyGenInput").val();
-        const heatDissipation = $("#heatDissipationInput").val();
+        const depth = $("#depthInput").val() as string;
+        const energyGen = $("#energyGenInput").val() as string;
+        const heatDissipation = $("#heatDissipationInput").val() as string;
         const state: PageState = {
             b11: b11,
-            depth: parseIntOrDefault(depth, undefined),
-            energyGen: parseIntOrDefault(energyGen, undefined),
-            heatDissipation: parseIntOrDefault(heatDissipation, undefined),
+            depth: parseIntOrDefault(depth, undefined as any),
+            energyGen: parseIntOrDefault(energyGen, undefined as any),
+            heatDissipation: parseIntOrDefault(heatDissipation, undefined as any),
             parts: parts,
         };
 
@@ -868,12 +869,12 @@ jq(function ($) {
                 return ((p.part as PowerItem).energyGeneration ?? 0) * powerAmplifierBonus;
             } else if (hasActiveSpecialProperty(p.part, p.abilityActive, "FusionCompressor")) {
                 // Fusion compressors convert matter to energy
-                return (p.part.specialProperty!.trait as FusionCompressor).energyPerTurn;
+                return ((p.part.specialProperty as SpecialItemProperty).trait as FusionCompressor).energyPerTurn;
             } else if ((p.active && p.part.slot === ItemSlot.Propulsion) || p.part.slot === ItemSlot.Utility) {
                 return -((p.part as ItemWithUpkeep).energyUpkeep ?? 0);
             } else if (hasActiveSpecialProperty(p.part, p.abilityActive, "WeaponRegen")) {
                 // Weapon regen ability turns energy into weapon integrity
-                return -(p.part.specialProperty!.trait as WeaponRegen).energyPerTurn;
+                return -((p.part.specialProperty as SpecialItemProperty).trait as WeaponRegen).energyPerTurn;
             }
 
             return 0;
@@ -909,7 +910,7 @@ jq(function ($) {
         function getHeatPerTurn(p: Part) {
             // Return negative value for heat dissipation, positive for generation
             if (hasActiveSpecialProperty(p.part, p.active, "HeatDissipation")) {
-                return -(p.part.specialProperty!.trait as HeatDissipation).dissipation;
+                return -((p.part.specialProperty as SpecialItemProperty).trait as HeatDissipation).dissipation;
             } else if (
                 p.active &&
                 (p.part.slot === ItemSlot.Power ||
@@ -940,7 +941,7 @@ jq(function ($) {
             if (p.active && p.part.slot === ItemSlot.Propulsion) {
                 return -(p.part as PropulsionItem).support;
             } else if (hasActiveSpecialProperty(p.part, p.active, "MassSupport")) {
-                return -(p.part.specialProperty!.trait as MassSupport).support;
+                return -((p.part.specialProperty as SpecialItemProperty).trait as MassSupport).support;
             } else {
                 return p.part.mass ?? 0;
             }
@@ -967,7 +968,7 @@ jq(function ($) {
 
                         // Check if the part is active
                         const active = selector.find("label:first").hasClass("active");
-                        const number = Math.max(1, parseIntOrDefault(selector.children("input").val(), 1));
+                        const number = Math.max(1, parseIntOrDefault(selector.children("input").val() as string, 1));
 
                         // Try to get the selected part
                         const partName = selector.find("select").selectpicker("val") as any as string;
@@ -1010,7 +1011,7 @@ jq(function ($) {
         // Add mass support utils
         totalSupport += parts
             .filter((p) => hasActiveSpecialProperty(p.part, p.active, "MassSupport"))
-            .map((p) => (p.part.specialProperty!.trait as MassSupport).support)
+            .map((p) => ((p.part.specialProperty as SpecialItemProperty).trait as MassSupport).support)
             .reduce(sum, 0);
 
         // Set irrelevant prop types to inactive
@@ -1089,7 +1090,9 @@ jq(function ($) {
                 1 -
                 Math.min(
                     0.5,
-                    actuatorParts.map((p) => (p.part.specialProperty!.trait as Actuator).amount).reduce(sum, 0),
+                    actuatorParts
+                        .map((p) => ((p.part.specialProperty as SpecialItemProperty).trait as Actuator).amount)
+                        .reduce(sum, 0),
                 );
 
             tusPerVolley = actuatorModifier * ((activeWeapons[0].delay ?? 0) + volleyTimeMap[1]);
@@ -1098,8 +1101,9 @@ jq(function ($) {
             let cyclerModifier: number;
             // Semi-hacky, assumes that 50% cyclers are no-stack and all others stack up to 30%
             if (
-                cyclerParts.find((p) => (p.part.specialProperty!.trait as RangedWeaponCycling).amount === 50) !==
-                undefined
+                cyclerParts.find(
+                    (p) => ((p.part.specialProperty as SpecialItemProperty).trait as RangedWeaponCycling).amount === 50,
+                ) !== undefined
             ) {
                 cyclerModifier = 0.5;
             } else {
@@ -1108,7 +1112,11 @@ jq(function ($) {
                     Math.min(
                         0.3,
                         cyclerParts
-                            .map((p) => (p.part.specialProperty!.trait as RangedWeaponCycling).amount)
+                            .map(
+                                (p) =>
+                                    ((p.part.specialProperty as SpecialItemProperty).trait as RangedWeaponCycling)
+                                        .amount,
+                            )
                             .reduce(sum, 0),
                     );
             }
@@ -1117,8 +1125,8 @@ jq(function ($) {
         }
 
         const depth = getDepth();
-        const innateEnergyGen = parseIntOrDefault($("#energyGenInput").val(), 0);
-        const innateHeatDissipation = parseIntOrDefault($("#heatDissipationInput").val(), 0);
+        const innateEnergyGen = parseIntOrDefault($("#energyGenInput").val() as string, 0);
+        const innateHeatDissipation = parseIntOrDefault($("#heatDissipationInput").val() as string, 0);
 
         // Core is additional 100 coverage
         const totalCoverage = parts.map((p) => (p.part.coverage ?? 0) * p.number).reduce(sum, 0) + 100;
@@ -1144,7 +1152,7 @@ jq(function ($) {
             parts
                 .map((p) => {
                     if (hasActiveSpecialProperty(p.part, p.active, "PowerAmplifier")) {
-                        return (p.part.specialProperty!.trait as PowerAmplifier).percent;
+                        return ((p.part.specialProperty as SpecialItemProperty).trait as PowerAmplifier).percent;
                     }
 
                     return 0;
@@ -1156,7 +1164,7 @@ jq(function ($) {
             parts
                 .map((p) => {
                     if (hasActiveSpecialProperty(p.part, p.active, "EnergyFilter")) {
-                        return (p.part.specialProperty!.trait as EnergyFilter).percent;
+                        return ((p.part.specialProperty as SpecialItemProperty).trait as EnergyFilter).percent;
                     }
 
                     return 0;
@@ -1219,7 +1227,7 @@ jq(function ($) {
             parts
                 .map((p) => {
                     if (hasActiveSpecialProperty(p.part, p.active, "EnergyStorage")) {
-                        return (p.part.specialProperty!.trait as EnergyStorage).storage;
+                        return ((p.part.specialProperty as SpecialItemProperty).trait as EnergyStorage).storage;
                     } else if (p.active && p.part.slot === ItemSlot.Power) {
                         return (p.part as PowerItem).energyStorage ?? 0;
                     } else {

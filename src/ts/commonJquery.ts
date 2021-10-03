@@ -81,7 +81,7 @@ const headerLookup: Record<PageType, HeaderInfo> = {
 };
 
 // Creates the header for a given page
-export function createHeader(page: PageType, headerContainer: JQuery<HTMLElement>) {
+export function createHeader(page: PageType, headerContainer: JQuery<HTMLElement>): void {
     const info = headerLookup[page];
 
     const buttonsHtml = pageTypes
@@ -161,7 +161,7 @@ export function createHeader(page: PageType, headerContainer: JQuery<HTMLElement
 const nameRegex = /\[([\w. '"\-/]*) \(\d/;
 const optionNameRegex = /([\w. '"\-/]*) \(\d/;
 // Enables nested bot info popovers given a selector to the root bot popover
-export function enableBotInfoItemPopovers(selector: JQuery<HTMLElement>) {
+export function enableBotInfoItemPopovers(selector: JQuery<HTMLElement>): void {
     selector.on("shown.bs.popover", (e) => {
         // Set up popovers for items on bots
         const body = $(`#${$(e.target).attr("aria-describedby")}`).children(".popover-body");
@@ -231,7 +231,7 @@ export function enableBotInfoItemPopovers(selector: JQuery<HTMLElement>) {
 }
 
 // Gets the ID of the selected button in a button group
-export function getSelectedButtonId(selector: JQuery<HTMLElement>) {
+export function getSelectedButtonId(selector: JQuery<HTMLElement>): string {
     return selector.children(".active").attr("id") as string;
 }
 
@@ -242,18 +242,18 @@ export function getSpoilersState(): Spoiler {
         value = "None";
     }
 
-    return value;
+    return value as Spoiler;
 }
 
 // Registers a function on the document to disable autocomplete for all inputs
-export function registerDisableAutocomplete(document: JQuery<Document>) {
+export function registerDisableAutocomplete(document: JQuery<Document>): void {
     document.on("focus", ":input", (e) => {
         $(e.target).attr("autocomplete", "off");
     });
 }
 
 // Clears a button group's state and sets the first item to be active
-export function resetButtonGroup(group: JQuery<HTMLElement>) {
+export function resetButtonGroup(group: JQuery<HTMLElement>): void {
     group.children().removeClass("active");
     group.find("input").prop("checked", false);
 
@@ -262,7 +262,7 @@ export function resetButtonGroup(group: JQuery<HTMLElement>) {
 }
 
 // Clears a button group's state and sets the item at the selected index to be active
-export function setActiveButtonGroupButton(group: JQuery<HTMLElement>, index: number) {
+export function setActiveButtonGroupButton(group: JQuery<HTMLElement>, index: number): void {
     group.children().removeClass("active");
     group.find("input").prop("checked", false);
 
@@ -270,7 +270,7 @@ export function setActiveButtonGroupButton(group: JQuery<HTMLElement>, index: nu
     group.children(`label:nth-of-type(${index}) > input`).prop("checked", true);
 }
 
-export function refreshSelectpicker(selector: JQuery<HTMLElement>) {
+export function refreshSelectpicker(selector: JQuery<HTMLElement>): void {
     selector.selectpicker("refresh");
 
     // Minor hack, the btn-light class is auto-added to dropdowns with search

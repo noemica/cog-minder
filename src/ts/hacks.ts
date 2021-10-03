@@ -5,7 +5,7 @@ import { parseIntOrDefault, setSpoilersState, Spoiler } from "./common";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
-    $((document) => init());
+    $(() => init());
 
     // An enum to represent the hack's indirect potential
     enum Indirect {
@@ -280,9 +280,9 @@ jq(function ($) {
         (tableBody.find('[data-toggle="tooltip"]') as any).tooltip("dispose");
         tableBody.empty();
 
-        const hackBonus = parseIntOrDefault($("#offensiveBonus").val(), 0);
+        const hackBonus = parseIntOrDefault($("#offensiveBonus").val() as string, 0);
 
-        const numBotnets = parseIntOrDefault($("#botnets").val(), 0);
+        const numBotnets = parseIntOrDefault($("#botnets").val() as string, 0);
         let botnetBonus = 0;
         if (numBotnets === 1) {
             botnetBonus = 6;
@@ -292,7 +292,7 @@ jq(function ($) {
             botnetBonus = 9 + numBotnets - 2;
         }
 
-        const numOperators = parseIntOrDefault($("#operators").val(), 0);
+        const numOperators = parseIntOrDefault($("#operators").val() as string, 0);
         let operatorBonus = 0;
         if (numOperators === 1) {
             operatorBonus = 10;
@@ -304,7 +304,7 @@ jq(function ($) {
             operatorBonus = 17 + numOperators - 3;
         }
 
-        const corruptionPenalty = Math.floor(parseIntOrDefault($("#corruption").val(), 0) / 3);
+        const corruptionPenalty = Math.floor(parseIntOrDefault($("#corruption").val() as string, 0) / 3);
         const hackModifier = hackBonus + botnetBonus + operatorBonus - corruptionPenalty;
 
         const nameValue = ($("#name").val() as string).toLowerCase();

@@ -3,7 +3,7 @@ import { createHeader } from "./commonJquery";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
-    $((document) => init());
+    $(() => init());
 
     function init() {
         createHeader("About", $("#headerContainer"));

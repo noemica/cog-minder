@@ -25,7 +25,6 @@ import {
     ItemSlot,
     ItemType,
     ItemWithUpkeep,
-    JsonItem,
     PowerItem,
     PropulsionItem,
     SiegeMode,
@@ -128,7 +127,7 @@ jq(function ($) {
         slotWeapon: "weaponTypeContainer",
     };
 
-    $((document) => init());
+    $(() => init());
 
     // Creates comparison HTML data for two items
     function createComparisonDataContent(leftItem: Item, rightItem: Item): string {
@@ -259,8 +258,8 @@ jq(function ($) {
             function getBurnoutOrSiegeHtml(leftPropulsion: PropulsionItem, rightPropulsion: PropulsionItem) {
                 if (leftPropulsion.burnout !== undefined || rightPropulsion.burnout !== undefined) {
                     return compareHighBadStat(
-                        parseIntOrDefault(leftPropulsion.burnout, 0),
-                        parseIntOrDefault(rightPropulsion.burnout, 0),
+                        parseIntOrDefault(leftPropulsion.burnout as string, 0),
+                        parseIntOrDefault(rightPropulsion.burnout as string, 0),
                     );
                 } else if (leftPropulsion.type === ItemType.Treads && rightPropulsion.type === ItemType.Treads) {
                     if (leftPropulsion.siege === rightPropulsion.siege) {
@@ -365,11 +364,11 @@ jq(function ($) {
             let leftDamageString: string;
             let rightDamageString: string;
             if (explosive) {
-                leftDamageString = leftWeapon.explosionDamage!;
-                rightDamageString = rightWeapon.explosionDamage!;
+                leftDamageString = leftWeapon.explosionDamage as string;
+                rightDamageString = rightWeapon.explosionDamage as string;
             } else {
-                leftDamageString = leftWeapon.damage!;
-                rightDamageString = rightWeapon.damage!;
+                leftDamageString = leftWeapon.damage as string;
+                rightDamageString = rightWeapon.damage as string;
             }
             const leftDamage = getDamage(leftDamageString);
             const rightDamage = getDamage(rightDamageString);
@@ -440,7 +439,7 @@ jq(function ($) {
             }
 
             return `<pre class="comparison-neutral">(${getTypeString(
-                explosive ? leftWeapon.explosionType! : leftWeapon.damageType!,
+                explosive ? (leftWeapon.explosionType as DamageType) : (leftWeapon.damageType as DamageType),
             )})</pre>`;
         }
 

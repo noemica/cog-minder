@@ -14,7 +14,7 @@ import {
 } from "./commonJquery";
 
 import * as jQuery from "jquery";
-import * as popper from "popper.js";
+import "popper.js";
 import "bootstrap";
 import { JsonItem } from "./itemTypes";
 
@@ -38,7 +38,7 @@ jq(function ($) {
 
     const redactedFactionIds = ["factionArchitect"];
 
-    $((document) => init());
+    $(() => init());
 
     // Creates the bot buttons and adds them to the grid
     function createBots() {

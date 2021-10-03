@@ -222,7 +222,7 @@ jq(function ($) {
         "12%: Exp. Target Analyzer": 12,
     };
 
-    $((document) => init());
+    $(() => init());
 
     function addComparison() {
         const name = $("#comparisonNameInput").val() as string;
@@ -628,7 +628,7 @@ jq(function ($) {
                             },
                             ticks: {
                                 beginAtZero: true,
-                                callback: (value, index, values) => value + "%",
+                                callback: (value) => value + "%",
                             },
                         },
                     ],
@@ -681,7 +681,7 @@ jq(function ($) {
                             },
                             ticks: {
                                 beginAtZero: true,
-                                callback: (value, index, values) => value + "%",
+                                callback: (value) => value + "%",
                             },
                         },
                     ],
@@ -831,7 +831,7 @@ jq(function ($) {
                 const weapon = itemData[name] as WeaponItem;
 
                 // Tread invalid or unfilled numbers as 1
-                const number = parseIntOrDefault($(s).parent().nextAll("input").not(".not-visible").val(), 1);
+                const number = parseIntOrDefault($(s).parent().nextAll("input").not(".not-visible").val() as string, 1);
 
                 const overloaded = !$(s).parent().nextAll(".btn-group").children("label").first().hasClass("active");
 
@@ -854,7 +854,7 @@ jq(function ($) {
                     size: 0,
                     slot: ItemSlot.NA,
                     type: ItemType.ImpactWeapon,
-                    mass: parseIntOrDefault($(s).parent().nextAll("input").val(), 0),
+                    mass: parseIntOrDefault($(s).parent().nextAll("input").val() as string, 0),
                 };
 
                 userWeapons.push({ def: weapon, overloaded: false });
@@ -918,32 +918,32 @@ jq(function ($) {
         // Weapons and other offensive state
         let ramming = false;
         const melee = isMelee();
-        const numTreads = parseIntOrDefault($("#treadsInput").val(), 0);
+        const numTreads = parseIntOrDefault($("#treadsInput").val() as string, 0);
 
         // Accuracy bonuses and penalties
         const siegeBonus = melee ? null : siegeModeBonusMap[$("#siegeSelect").selectpicker("val") as any as string];
         let targetingComputerBonus = 0;
         if (!melee) {
-            targetingComputerBonus = parseIntOrDefault($("#targetingInput").val(), 0);
+            targetingComputerBonus = parseIntOrDefault($("#targetingInput").val() as string, 0);
         }
 
         const meleeAnalysis = [0, 0, 0, 0];
         if (melee) {
             // Melee analysis types
             meleeAnalysisIds.map((id, i) => {
-                meleeAnalysis[i] = parseIntOrDefault($(`#${id}`).val(), 0);
+                meleeAnalysis[i] = parseIntOrDefault($(`#${id}`).val() as string, 0);
             });
         }
 
         // Invalid / 6 or more tiles = 0 bonus
-        let distance = parseIntOrDefault($("#distanceInput").val(), 6);
+        let distance = parseIntOrDefault($("#distanceInput").val() as string, 6);
         if (distance <= 1) {
             // Less than or equal to 1, just assign to 1
             distance = 1;
         }
 
         // Recoil reduction
-        const recoilReduction = parseIntOrDefault($("#recoilInput").val(), 0);
+        const recoilReduction = parseIntOrDefault($("#recoilInput").val() as string, 0);
 
         const allRecoil = userWeapons.reduce(
             (prev, weapon) => getRecoil(weapon.def, numTreads, recoilReduction) + prev,
@@ -1119,11 +1119,11 @@ jq(function ($) {
         }
 
         // Get speed
-        const speed = parseIntOrDefault($("#speedInput").val(), 100);
+        const speed = parseIntOrDefault($("#speedInput").val() as string, 100);
 
         // Get momentum
-        const bonusMomentum = parseIntOrDefault($("#bonusMomentumInput").val(), 0);
-        const initialMomentum = parseIntOrDefault($("#initialMomentumInput").val(), 0);
+        const bonusMomentum = parseIntOrDefault($("#bonusMomentumInput").val() as string, 0);
+        const initialMomentum = parseIntOrDefault($("#initialMomentumInput").val() as string, 0);
 
         // Determine sneak attack strategy
         const sneakAttackStrategy = $("#sneakAttackSelect").selectpicker("val") as any as SneakAttackStrategy;

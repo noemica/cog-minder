@@ -421,6 +421,7 @@ function applyDamage(
             if (part.resistances !== undefined) {
                 Object.keys(part.resistances).forEach((type) => {
                     if (type in botState.resistances) {
+                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                         botState.resistances[type]! -= part.resistances![type]!;
                     }
                 });
@@ -489,7 +490,7 @@ function cloneBotState(botState: BotState): BotState {
         coreIntegrity: botState.coreIntegrity,
         corruption: botState.corruption,
         def: botState.def,
-        defensiveState: undefined!,
+        defensiveState: undefined as any,
         externalDamageReduction: botState.externalDamageReduction,
         immunities: botState.immunities,
         initialCoreIntegrity: botState.initialCoreIntegrity,
@@ -513,8 +514,9 @@ function cloneBotState(botState: BotState): BotState {
 }
 
 // Calculates the resisted damage for a bot given the initial damage value
-export function calculateResistDamage(botState: BotState, damage: number, damageType: DamageType) {
+export function calculateResistDamage(botState: BotState, damage: number, damageType: DamageType): number {
     if (damageType in botState.resistances) {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         return Math.trunc(damage * (1 - botState.resistances[damageType]! / 100));
     }
 
@@ -525,7 +527,7 @@ export function calculateResistDamage(botState: BotState, damage: number, damage
 // properties to parts
 // Adding ad-hoc properties is a little messy but making a bunch of wrapper
 // objects wouldn't really do very much
-export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduction: string) {
+export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduction: string): DefensiveState {
     const state: DefensiveState = {
         antimissile: [],
         avoid: [],
@@ -592,7 +594,7 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
                 part: {
                     armorAnalyzedCoverage: 0,
                     coverage: 0,
-                    def: undefined!,
+                    def: undefined as any,
                     integrity: 1,
                     protection: false,
                     selfDamageReduction: 0,
@@ -609,7 +611,7 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
                     part: {
                         armorAnalyzedCoverage: 0,
                         coverage: 0,
-                        def: undefined!,
+                        def: undefined as any,
                         integrity: 1,
                         protection: false,
                         selfDamageReduction: 0,
@@ -621,7 +623,7 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
                     part: {
                         armorAnalyzedCoverage: 0,
                         coverage: 0,
-                        def: undefined!,
+                        def: undefined as any,
                         integrity: 1,
                         protection: false,
                         selfDamageReduction: 0,
@@ -667,7 +669,7 @@ function getHitPart(
     armorAnalyzed: boolean,
 ) {
     let part: SimulatorPart | undefined = undefined;
-    let partIndex: number;
+    let partIndex = -1;
 
     if (forceCore) {
         // Keep part undefined for core hit
@@ -704,7 +706,7 @@ function getHitPart(
                     // the loop with part still equal to undefined
                 }
 
-                partIndex = botState.parts.indexOf(part!);
+                partIndex = botState.parts.indexOf(part as SimulatorPart);
             }
 
             // If no protection parts fall into standard coverage behavior
@@ -757,12 +759,12 @@ function getHitPart(
 
     return {
         part: part,
-        partIndex: partIndex!,
+        partIndex: partIndex,
     };
 }
 
 // Calculates a weapon's recoil based on the number of treads and other recoil reduction
-export function getRecoil(weaponDef: WeaponItem, numTreads: number, recoilReduction: number) {
+export function getRecoil(weaponDef: WeaponItem, numTreads: number, recoilReduction: number): number {
     let recoil = 0;
 
     // Add recoil if siege mode not active
@@ -778,7 +780,7 @@ export function getRecoil(weaponDef: WeaponItem, numTreads: number, recoilReduct
 
 const regenRegex = /Core Regeneration \((\d*)\)/;
 // Gets the core regen value for a bot, otherwise 0
-export function getRegen(bot: Bot) {
+export function getRegen(bot: Bot): number {
     const traits = bot.traits;
 
     for (let i = 0; i < traits.length; i++) {
@@ -793,7 +795,7 @@ export function getRegen(bot: Bot) {
 }
 
 // Gets the volley time given an array of ranged weapons
-export function getRangedVolleyTime(weapons: WeaponItem[], cyclerModifier: number) {
+export function getRangedVolleyTime(weapons: WeaponItem[], cyclerModifier: number): number {
     let volleyTime: number;
     if (weapons.length in volleyTimeMap) {
         volleyTime = volleyTimeMap[weapons.length];
@@ -856,7 +858,7 @@ const simulationEndConditions: { [key: string]: (state: BotState) => boolean } =
     },
 };
 // Fully simulates rounds of combat to a kill a bot from an initial state
-export function simulateCombat(state: SimulatorState) {
+export function simulateCombat(state: SimulatorState): boolean {
     // Clone initial bot state
     const botState = cloneBotState(state.initialBotState);
     state.botState = botState;
@@ -971,7 +973,7 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
         // Apply ramming damage specially
         const speedPercent = (100 / state.offensiveState.speed) * 100;
         let damageMax =
-            ((10 + weapon.def.mass!) / 5 + 1) *
+            ((10 + (weapon.def.mass as number)) / 5 + 1) *
             (speedPercent / 100) *
             Math.max(state.offensiveState.momentum.current, 1);
         damageMax = Math.min(100, damageMax);
