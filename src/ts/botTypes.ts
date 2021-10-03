@@ -11,7 +11,7 @@ export enum BotCategory {
     Warlord = "Warlord",
     Zhirov = "Zhirov",
     Zionite = "Zionite",
-};
+}
 
 export enum BotImmunity {
     Coring = "Coring",
@@ -21,7 +21,7 @@ export enum BotImmunity {
     Hacking = "Hacking",
     Jamming = "Jamming",
     Meltdown = "Meltdown",
-};
+}
 
 export enum BotSize {
     Huge = "Huge",
@@ -29,7 +29,7 @@ export enum BotSize {
     Medium = "Medium",
     Small = "Small",
     Tiny = "Tiny",
-};
+}
 
 export type BotResistances = {
     [key: string]: number | undefined;
@@ -48,10 +48,10 @@ export type ItemOption = {
 };
 
 export type BotPart = {
-    name: string,
-    number: number,
-    coverage: number,
-    integrity: number,
+    name: string;
+    number: number;
+    coverage: number;
+    integrity: number;
 };
 
 export type Bot = {
@@ -64,7 +64,7 @@ export type Bot = {
     componentData: BotPart[];
     componentOptionData: BotPart[][];
     coreCoverage: number;
-    coreExposure: number,
+    coreExposure: number;
     coreIntegrity: number;
     description: string;
     immunities: BotImmunity[];
@@ -86,30 +86,30 @@ export type Bot = {
 };
 
 export type JsonBot = {
-    Name: string,
-    Class: string,
-    Tier: string,
-    Threat: string,
-    Rating: string,
-    Value: string,
-    "Size Class": BotSize,
-    Size: string,
-    Profile: string,
-    Memory: string,
-    "Spot %": string,
-    Movement: string,
-    Speed: string,
-    "Sight Range": string,
-    "Energy Generation": string,
-    "Heat Dissipation": string,
-    "Core Integrity": string,
-    "Core Exposure": string,
-    "Core Exposure %": string,
-    "Salvage Potential": string,
-    "Immunities"?: BotImmunity[],
-    Traits?: string[],
-    Armament?: Array<string | ItemOption[]>,
-    Components?: Array<string | ItemOption[]>,
-    Analysis?: string,
-    Resistances: BotResistances,
+    Name: string;
+    Class: string;
+    Tier: string;
+    Threat: string;
+    Rating: string;
+    Value: string;
+    "Size Class": BotSize;
+    Size: string;
+    Profile: string;
+    Memory: string;
+    "Spot %": string;
+    Movement: string;
+    Speed: string;
+    "Sight Range": string;
+    "Energy Generation": string;
+    "Heat Dissipation": string;
+    "Core Integrity": string;
+    "Core Exposure": string;
+    "Core Exposure %": string;
+    "Salvage Potential": string;
+    Immunities?: BotImmunity[];
+    Traits?: string[];
+    Armament?: Array<string | ItemOption[]>;
+    Components?: Array<string | ItemOption[]>;
+    Analysis?: string;
+    Resistances: BotResistances;
 };

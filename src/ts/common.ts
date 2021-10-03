@@ -1,13 +1,7 @@
 // Common code
 import * as itemCategories from "../json/item_categories.json";
 import * as botCategories from "../json/bot_categories.json";
-import {
-    Bot,
-    BotCategory,
-    BotPart,
-    ItemOption,
-    JsonBot
-} from "./botTypes";
+import { Bot, BotCategory, BotPart, ItemOption, JsonBot } from "./botTypes";
 import {
     BaseItem,
     Critical,
@@ -22,7 +16,7 @@ import {
     PropulsionItem,
     SpecialPropertyTypeName,
     UtilityItem,
-    WeaponItem
+    WeaponItem,
 } from "./itemTypes";
 import { specialItemProperties } from "./specialItemProperties";
 
@@ -30,10 +24,7 @@ export let botData: { [key: string]: Bot };
 export let itemData: { [key: string]: Item };
 
 // An enum to represent spoiler level
-export type Spoiler =
-    | "None"
-    | "Spoilers"
-    | "Redacted";
+export type Spoiler = "None" | "Spoilers" | "Redacted";
 
 // Color schemes
 enum ColorScheme {
@@ -41,28 +32,29 @@ enum ColorScheme {
     HighGood = "highGood",
     Green = "green",
     Red = "red",
-};
-const colorSchemes = {
-    "lowGood": { low: "range-green", midLow: "range-yellow", midHigh: "range-orange", high: "range-red" },
-    "highGood": { low: "range-red", midLow: "range-orange", midHigh: "range-yellow", high: "range-green" },
-    "green": { low: "range-green", midLow: "range-green", midHigh: "range-green", high: "range-green" },
-    "red": { low: "range-red", midLow: "range-red", midHigh: "range-red", high: "range-red" },
 }
+const colorSchemes = {
+    lowGood: { low: "range-green", midLow: "range-yellow", midHigh: "range-orange", high: "range-red" },
+    highGood: { low: "range-red", midLow: "range-orange", midHigh: "range-yellow", high: "range-green" },
+    green: { low: "range-green", midLow: "range-green", midHigh: "range-green", high: "range-green" },
+    red: { low: "range-red", midLow: "range-red", midHigh: "range-red", high: "range-red" },
+};
 
 // Character -> escape character map
 export const entityMap: { [key: string]: string } = {
-    '&': '&amp;',
-    '<': 'ᐸ',
-    '>': 'ᐳ',
-    '"': '&quot;',
-    "'": '&#39;',
-    '/': '&#x2F;',
-    '`': '&#x60;',
-    '=': '&#x3D;',
-    '\n': '<br />',
+    "&": "&amp;",
+    "<": "ᐸ",
+    ">": "ᐳ",
+    '"': "&quot;",
+    "'": "&#39;",
+    "/": "&#x2F;",
+    "`": "&#x60;",
+    "=": "&#x3D;",
+    "\n": "<br />",
 };
 
 // Compile-time assert that code is unreachable
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function assertUnreachable(_: never): never {
     throw new Error("Invalid");
 }
@@ -70,20 +62,18 @@ export function assertUnreachable(_: never): never {
 const spoilerItemCategories = [1, 4, 5, 6];
 const redactedItemCategory = 7;
 // Determines if the given part can be shown based on the current spoilers state
-export function canShowPart(part: Item, spoilersState: string) {
+export function canShowPart(part: Item, spoilersState: string): boolean {
     if (spoilersState === "None") {
         // No spoilers, check that none of the categories are spoilers/redacted
-        if (part.categories.every(c => c != redactedItemCategory && !spoilerItemCategories.includes(c))) {
+        if (part.categories.every((c) => c != redactedItemCategory && !spoilerItemCategories.includes(c))) {
             return true;
         }
-    }
-    else if (spoilersState == "Spoilers") {
+    } else if (spoilersState == "Spoilers") {
         // Spoilers allowed, check only for redacted category
-        if (part.categories.every(c => c != redactedItemCategory)) {
+        if (part.categories.every((c) => c != redactedItemCategory)) {
             return true;
         }
-    }
-    else {
+    } else {
         // Redacted, no checks
         return true;
     }
@@ -97,25 +87,37 @@ function ceilToMultiple(num: number, multiple: number) {
 }
 
 // Creates a range line from minVal to maxVal using filled squares with the given color scheme with no unit
-function rangeLine(category: string, valueString: string | undefined, value: number | undefined,
-    defaultValueString: string | undefined, minValue: number, maxValue: number, colorScheme: ColorScheme) {
+function rangeLine(
+    category: string,
+    valueString: string | undefined,
+    value: number | undefined,
+    defaultValueString: string | undefined,
+    minValue: number,
+    maxValue: number,
+    colorScheme: ColorScheme,
+) {
     return rangeLineUnit(category, valueString, value, "", defaultValueString, minValue, maxValue, colorScheme);
 }
 
 // Creates a range line from minVal to maxVal using filled squares with the given color scheme
-function rangeLineUnit(category: string, valueString: string | undefined, value: number | undefined, unitString: string,
-    defaultValueString: string | undefined, minValue: number, maxValue: number, colorScheme: ColorScheme) {
+function rangeLineUnit(
+    category: string,
+    valueString: string | undefined,
+    value: number | undefined,
+    unitString: string,
+    defaultValueString: string | undefined,
+    minValue: number,
+    maxValue: number,
+    colorScheme: ColorScheme,
+) {
     let valueHtml: string;
     if (valueString === undefined || value === undefined) {
         valueString = defaultValueString;
         value = 0;
         valueHtml = `<span class="dim-text">${defaultValueString}${unitString}</span>`;
-    }
-    else {
+    } else {
         valueHtml = valueString + unitString;
     }
-
-    const goodValue = value!;
 
     // Determine bars and spacing
     const maxBars = 22;
@@ -123,16 +125,15 @@ function rangeLineUnit(category: string, valueString: string | undefined, value:
     let valuePercentage: number;
     if (maxValue - minValue === 0) {
         valuePercentage = 1;
-    }
-    else {
-        valuePercentage = goodValue / (maxValue - minValue);
+    } else {
+        valuePercentage = value / (maxValue - minValue);
     }
 
     let fullBars = Math.min(Math.floor(maxBars * valuePercentage), 22);
 
     // Always round away from 0
     // This allows for things like 1/100 to show 1 bar rather than 0
-    if (fullBars === 0 && goodValue != minValue) {
+    if (fullBars === 0 && value != minValue) {
         fullBars = 1;
     }
 
@@ -143,25 +144,23 @@ function rangeLineUnit(category: string, valueString: string | undefined, value:
 
     // Determine color
     let colorClass: string;
-    if (valuePercentage < .25) {
+    if (valuePercentage < 0.25) {
         colorClass = colorSchemes[colorScheme].low;
-    }
-    else if (valuePercentage < .5) {
+    } else if (valuePercentage < 0.5) {
         colorClass = colorSchemes[colorScheme].midLow;
-    }
-    else if (valuePercentage < .75) {
+    } else if (valuePercentage < 0.75) {
         colorClass = colorSchemes[colorScheme].midHigh;
-    }
-    else {
+    } else {
         colorClass = colorSchemes[colorScheme].high;
     }
 
     // Create bars HTML string
     let barsHtml: string;
     if (emptyBars > 0) {
-        barsHtml = `<span class="${colorClass}">${"▮".repeat(fullBars)}</span><span class="range-dim">${"▯".repeat(emptyBars)}</span>`;
-    }
-    else {
+        barsHtml = `<span class="${colorClass}">${"▮".repeat(fullBars)}</span><span class="range-dim">${"▯".repeat(
+            emptyBars,
+        )}</span>`;
+    } else {
         barsHtml = `<span class=${colorClass}>${"▮".repeat(fullBars)}</span>`;
     }
 
@@ -172,15 +171,18 @@ function rangeLineUnit(category: string, valueString: string | undefined, value:
 }
 
 // Create a summary line
-function summaryLine(text: string) { return `<pre class="popover-summary">${text}</pre>` }
+function summaryLine(text: string) {
+    return `<pre class="popover-summary">${text}</pre>`;
+}
 
 // Creates a summary line with an optional projectile multiplier
 function summaryProjectileLine(item: WeaponItem, category: string) {
     if (item.projectileCount > 1) {
-        return `<pre class="popover-summary">${category}${" ".repeat(13)}<span class="projectile-num"> x${item.projectileCount} </span></pre>`;
-    }
-    else {
-        return summaryLine("Projectile")
+        return `<pre class="popover-summary">${category}${" ".repeat(13)}<span class="projectile-num"> x${
+            item.projectileCount
+        } </span></pre>`;
+    } else {
+        return summaryLine("Projectile");
     }
 }
 
@@ -198,7 +200,7 @@ function textLineDim(category: string, text: string) {
 
 // Create a text line with no value  and a default
 function textLineWithDefault(category: string, textString: string | undefined, defaultString: string) {
-    if (typeof (textString) != "string") {
+    if (typeof textString != "string") {
         textString = `<span class="dim-text">${defaultString}</span>`;
     }
 
@@ -211,10 +213,9 @@ function textValueHtmlLine(category: string, valueString: string, valueClass: st
     const numSpaces = 23 - 1 - 1 - category.length - valueString.length;
 
     let valueHtml;
-    if (typeof (valueClass) === "string" && valueClass.length > 0) {
+    if (typeof valueClass === "string" && valueClass.length > 0) {
         valueHtml = `<span class="${valueClass}">${valueString}</span>`;
-    }
-    else {
+    } else {
         valueHtml = valueString;
     }
 
@@ -228,14 +229,17 @@ function valueLine(category: string, valueString: string) {
 }
 
 // Create a value line with units, no text, and a default
-function valueLineUnitsWithDefault(category: string, valueString: string | undefined,
-    unitString: string, defaultString: string) {
+function valueLineUnitsWithDefault(
+    category: string,
+    valueString: string | undefined,
+    unitString: string,
+    defaultString: string,
+) {
     let valueLength: number;
     if (valueString === undefined) {
         valueString = `<span class="dim-text">${defaultString}${unitString}</span>`;
         valueLength = defaultString.length + unitString.length;
-    }
-    else {
+    } else {
         valueString += unitString;
         valueLength = valueString.length;
     }
@@ -245,14 +249,18 @@ function valueLineUnitsWithDefault(category: string, valueString: string | undef
 }
 
 // Create a value line with units, text, and a default
-function valueLineUnitsTextWithDefault(category: string, valueString: string | undefined,
-    unitString: string, defaultString: string, text: string) {
+function valueLineUnitsTextWithDefault(
+    category: string,
+    valueString: string | undefined,
+    unitString: string,
+    defaultString: string,
+    text: string,
+) {
     let valueLength: number;
     if (valueString === undefined) {
         valueString = `<span class="dim-text">${defaultString}${unitString}</span>`;
         valueLength = defaultString.length + unitString.length;
-    }
-    else {
+    } else {
         valueString += unitString;
         valueLength = valueString.length;
     }
@@ -264,11 +272,10 @@ function valueLineUnitsTextWithDefault(category: string, valueString: string | u
 // Create a value line with no text and a default
 function valueLineWithDefault(category: string, valueString: string | undefined, defaultString: string) {
     let valueLength;
-    if (typeof (valueString) != "string") {
+    if (typeof valueString != "string") {
         valueString = `<span class="dim-text">${defaultString}</span>`;
         valueLength = defaultString.length;
-    }
-    else {
+    } else {
         valueLength = valueString.length;
     }
 
@@ -276,8 +283,9 @@ function valueLineWithDefault(category: string, valueString: string | undefined,
     return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
 }
 
+/* eslint-disable prettier/prettier */
 // Creates a HTML string representing a bot
-export function createBotDataContent(bot: Bot) {
+export function createBotDataContent(bot: Bot): string {
     function createItemHtml(data: BotPart) {
         let line = `${escapeHtml(data.name)} (${data.coverage}%)`;
 
@@ -463,9 +471,9 @@ export function createBotDataContent(bot: Bot) {
 }
 
 // Creates an HTML string representing an item
-export function createItemDataContent(baseItem: Item) {
+export function createItemDataContent(baseItem: Item): string {
     function getDamageValue(item: WeaponItem) {
-        const damageString = item.damage!;
+        const damageString = item.damage as string;
         const damageArray = damageString.split("-").map(s => s.trim()).map(s => parseInt(s));
         return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
     }
@@ -484,7 +492,7 @@ export function createItemDataContent(baseItem: Item) {
     }
 
     function getExplosionValue(item: WeaponItem) {
-        const damageString = item.explosionDamage!;
+        const damageString = item.explosionDamage as string;
         const damageArray = damageString.split("-").map(s => s.trim()).map(s => parseInt(s));
         return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
     }
@@ -665,7 +673,7 @@ export function createItemDataContent(baseItem: Item) {
                     html += `
                         ${emptyLine}
                         ${summaryLine("Shot")}
-                        ${rangeLine("Range", item.range!.toString(), item.range, undefined, 0, 20, ColorScheme.HighGood)}
+                        ${rangeLine("Range", item.range.toString(), item.range, undefined, 0, 20, ColorScheme.HighGood)}
                         ${rangeLine("Energy", "-" + item.shotEnergy, item.shotEnergy, "-0", 0, 50, ColorScheme.LowGood)}
                         ${rangeLine("Matter", "-" + item.shotMatter, item.shotMatter, "-0", 0, 25, ColorScheme.LowGood)}
                         ${rangeLine("Heat", "+" + item.shotHeat, item.shotHeat, "+0", 0, 100, ColorScheme.LowGood)}
@@ -690,7 +698,7 @@ export function createItemDataContent(baseItem: Item) {
                     html += `
                         ${emptyLine}
                         ${summaryLine("Shot")}
-                        ${rangeLine("Range", item.range!.toString(), item.range, undefined, 0, 20, ColorScheme.HighGood)}
+                        ${rangeLine("Range", item.range.toString(), item.range, undefined, 0, 20, ColorScheme.HighGood)}
                         ${rangeLine("Energy", "-" + item.shotEnergy, item.shotEnergy, "-0", 0, 50, ColorScheme.LowGood)}
                         ${rangeLine("Matter", "-" + item.shotMatter, item.shotMatter, "-0", 0, 25, ColorScheme.LowGood)}
                         ${rangeLine("Heat", "+" + item.shotHeat, item.shotHeat, "+0", 0, 100, ColorScheme.LowGood)}
@@ -727,7 +735,7 @@ export function createItemDataContent(baseItem: Item) {
                     html += `
                         ${emptyLine}
                         ${summaryLine("Shot")}
-                        ${rangeLine("Range", item.range!.toString(), item.range, undefined, 0, 20, ColorScheme.HighGood)}
+                        ${rangeLine("Range", item.range.toString(), item.range, undefined, 0, 20, ColorScheme.HighGood)}
                         ${rangeLine("Energy", "-" + item.shotEnergy, item.shotEnergy, "-0", 0, 50, ColorScheme.LowGood)}
                         ${rangeLine("Matter", "-" + item.shotMatter, item.shotMatter, "-0", 0, 25, ColorScheme.LowGood)}
                         ${rangeLine("Heat", "+" + item.shotHeat, item.shotHeat, "+0", 0, 100, ColorScheme.LowGood)}
@@ -824,21 +832,23 @@ export function createItemDataContent(baseItem: Item) {
 
     return html;
 }
+/* eslint-enable prettier/prettier */
 
 // Escapes the given string for HTML
-export function escapeHtml(string: string) {
+export function escapeHtml(string: string): string {
     return String(string).replace(/[&<>"'`=\/\n]/g, function (s) {
         return entityMap[s];
     });
 }
 
 // Flatten an array of arrays into a single array
-export function flatten(arrays: [[]]) {
-    return [].concat.apply([], arrays);
+export function flatten<T>(arrays: Array<Array<T>>): Array<T> {
+    const array: Array<T> = [];
+    return array.concat(...arrays);
 }
 
 // Do a lexicographical sort based on the no-prefix item name
-export function gallerySort(a: string, b: string) {
+export function gallerySort(a: string, b: string): number {
     const noPrefixA = getNoPrefixName(a);
     const noPrefixB = getNoPrefixName(b);
     let res = noPrefixA.localeCompare(noPrefixB);
@@ -857,7 +867,7 @@ export function gallerySort(a: string, b: string) {
 }
 
 // Tries to get an item by the name
-export function getBot(botName: string) {
+export function getBot(botName: string): Bot {
     if (botName in botData) {
         return botData[botName];
     }
@@ -867,7 +877,7 @@ export function getBot(botName: string) {
 }
 
 // Tries to get an item by the name
-export function getItem(itemName: string) {
+export function getItem(itemName: string): Item {
     if (itemName in itemData) {
         return itemData[itemName];
     }
@@ -876,7 +886,7 @@ export function getItem(itemName: string) {
 }
 
 // Gets the movement name given a propulsion type
-export function getMovementText(propulsionType: ItemType | undefined) {
+export function getMovementText(propulsionType: ItemType | undefined): string {
     switch (propulsionType) {
         case ItemType.FlightUnit:
             return "Flying";
@@ -894,10 +904,9 @@ export function getMovementText(propulsionType: ItemType | undefined) {
 }
 
 // Gets a per-TU value scaled to the given number of TUs
-export function getValuePerTus(baseValue: number, numTus: number) {
-    return baseValue * numTus / 100;
+export function getValuePerTus(baseValue: number, numTus: number): number {
+    return (baseValue * numTus) / 100;
 }
-
 
 // Removes the prefix from an item name
 const noPrefixRegex = /\w{3}\. (.*)/;
@@ -907,7 +916,11 @@ export function getNoPrefixName(name: string): string {
 }
 
 // Checks if a part has an active special property of the given type
-export function hasActiveSpecialProperty(part: Item, partActive: boolean, propertyType: SpecialPropertyTypeName) {
+export function hasActiveSpecialProperty(
+    part: Item,
+    partActive: boolean,
+    propertyType: SpecialPropertyTypeName,
+): boolean {
     if (part.specialProperty === undefined) {
         return false;
     }
@@ -924,7 +937,7 @@ export function hasActiveSpecialProperty(part: Item, partActive: boolean, proper
 }
 
 // Initialize all item and bot data
-export function initData(items: { [key: string]: JsonItem }, bots: { [key: string]: JsonBot } | undefined) {
+export function initData(items: { [key: string]: JsonItem }, bots: { [key: string]: JsonBot } | undefined): void {
     // Load external files
     botData = {};
     itemData = {};
@@ -946,32 +959,34 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
         }
 
         let rating = parseIntOrUndefined(item.Rating) ?? 1;
-        if (category == ItemCategory.Alien) rating += .75;
-        else if (category == ItemCategory.Prototype) rating += .5;
+        if (category == ItemCategory.Alien) rating += 0.75;
+        else if (category == ItemCategory.Prototype) rating += 0.5;
 
         let ratingString = item.Rating;
         if (category == ItemCategory.Alien) ratingString += "*";
         else if (category == ItemCategory.Prototype) ratingString += "**";
 
-        const fabrication: FabricationStats | undefined = item["Fabrication Number"] === undefined ? undefined : {
-            matter: item["Fabrication Matter"]!,
-            number: item["Fabrication Number"]!,
-            time: item["Fabrication Time"]!,
-        };
+        const fabrication: FabricationStats | undefined =
+            item["Fabrication Number"] === undefined
+                ? undefined
+                : {
+                      matter: item["Fabrication Matter"] as string,
+                      number: item["Fabrication Number"] as string,
+                      time: item["Fabrication Time"] as string,
+                  };
 
         let categories: number[];
         if (!(itemName in itemCategories)) {
             console.log(`Need to add categories for ${itemName}`);
             categories = [];
-        }
-        else {
+        } else {
             categories = (itemCategories as { [key: string]: number[] })[itemName];
         }
 
-        const coverage = parseIntOrUndefined(item.Coverage!) ?? 0;
-        const hackable = !!parseIntOrUndefined(item["Hackable Schematic"]!) ?? 0;
+        const coverage = parseIntOrUndefined(item.Coverage) ?? 0;
+        const hackable = !!parseIntOrUndefined(item["Hackable Schematic"]) ?? 0;
         const integrity = parseIntOrUndefined(item.Integrity) ?? 0;
-        const mass = parseIntOrUndefined(item.Mass!);
+        const mass = parseIntOrUndefined(item.Mass);
         const noPrefixName = getNoPrefixName(itemName);
         const size = parseIntOrUndefined(item.Size) ?? 1;
         const specialProperty = specialItemProperties[itemName];
@@ -1005,12 +1020,12 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     slot: ItemSlot.Power,
                     category: category,
                     coverage: coverage,
-                    energyGeneration: parseIntOrUndefined(item["Energy Generation"]!),
-                    energyStorage: parseIntOrUndefined(item["Energy Storage"]!),
+                    energyGeneration: parseIntOrUndefined(item["Energy Generation"]),
+                    energyStorage: parseIntOrUndefined(item["Energy Storage"]),
                     hackable: hackable,
-                    heatGeneration: parseIntOrUndefined(item["Heat Generation"]!),
+                    heatGeneration: parseIntOrUndefined(item["Heat Generation"]),
                     integrity: integrity,
-                    mass: mass!,
+                    mass: mass,
                     name: item.Name,
                     noPrefixName: noPrefixName,
                     rating: rating,
@@ -1020,9 +1035,10 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     description: item.Description,
                     categories: categories,
                     fabrication: fabrication,
-                    powerStability: item["Power Stability"] == null ?
-                        undefined :
-                        parseIntOrUndefined(item["Power Stability"].slice(0, -1)),
+                    powerStability:
+                        item["Power Stability"] == null
+                            ? undefined
+                            : parseIntOrUndefined(item["Power Stability"].slice(0, -1)),
                     index: index,
                     specialProperty: specialProperty,
                 };
@@ -1038,14 +1054,14 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     hackable: hackable,
                     integrity: integrity,
                     name: item.Name,
-                    mass: mass!,
+                    mass: mass,
                     noPrefixName: noPrefixName,
-                    penalty: parseInt(item.Penalty!),
+                    penalty: parseInt(item.Penalty as string),
                     rating: rating,
                     ratingString: ratingString,
                     size: size,
-                    support: parseInt(item.Support!),
-                    timePerMove: parseInt(item["Time/Move"]!),
+                    support: parseInt(item.Support as string),
+                    timePerMove: parseInt(item["Time/Move"] as string),
                     type: item.Type,
                     fabrication: fabrication,
                     burnout: item.Burnout,
@@ -1085,7 +1101,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     energyUpkeep: parseIntOrUndefined(item["Energy Upkeep"]),
                     heatGeneration: parseIntOrUndefined(item["Heat Generation"]),
                     matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
-                    mass: parseIntOrUndefined(item.Mass!) ?? 0,
+                    mass: parseIntOrUndefined(item.Mass) ?? 0,
                     specialTrait: item["Special Trait"],
                     index: index,
                     specialProperty: specialProperty,
@@ -1103,13 +1119,11 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                         if (result === null) {
                             critical = undefined;
                             criticalType = undefined;
-                        }
-                        else {
+                        } else {
                             critical = parseInt(result[1]);
                             criticalType = result[2] as Critical;
                         }
-                    }
-                    else {
+                    } else {
                         // Pre-B11-type critical
                         critical = parseIntOrUndefined(item.Critical);
                         criticalType = Critical.Destroy;
@@ -1131,16 +1145,16 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     description: item.Description,
                     effect: item.Effect,
                     categories: categories,
-                    mass: parseIntOrUndefined(item.Mass!) ?? 0,
+                    mass: parseIntOrUndefined(item.Mass) ?? 0,
                     specialTrait: item["Special Trait"],
                     critical: critical,
                     criticalType: criticalType,
-                    delay: parseIntOrUndefined(item.Delay!),
+                    delay: parseIntOrUndefined(item.Delay),
                     explosionHeatTransfer: item["Explosion Heat Transfer"],
                     explosionType: item["Explosion Type"],
                     penetration: item.Penetration,
-                    projectileCount: parseIntOrUndefined(item["Projectile Count"]!) ?? 1,
-                    range: parseInt(item.Range!),
+                    projectileCount: parseIntOrUndefined(item["Projectile Count"]) ?? 1,
+                    range: parseInt(item.Range as string),
                     shotEnergy: parseIntOrUndefined(item["Shot Energy"]),
                     shotHeat: parseIntOrUndefined(item["Shot Heat"]),
                     targeting: parseIntOrUndefined(item.Targeting),
@@ -1155,10 +1169,11 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     falloff: item.Falloff,
                     heatTransfer: item["Heat Transfer"],
                     life: item.Life,
-                    overloadStability: item["Overload Stability"] == null ?
-                        undefined :
-                        parseIntOrUndefined(item["Overload Stability"].slice(0, -1)),
-                    recoil: parseIntOrUndefined(item.Recoil!),
+                    overloadStability:
+                        item["Overload Stability"] == null
+                            ? undefined
+                            : parseIntOrUndefined(item["Overload Stability"].slice(0, -1)),
+                    recoil: parseIntOrUndefined(item.Recoil),
                     salvage: parseIntOrUndefined(item.Salvage),
                     shotMatter: parseIntOrUndefined(item["Shot Matter"]),
                     spectrum: item.Spectrum,
@@ -1176,7 +1191,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
 
     if (bots !== undefined) {
         // Create bots
-        Object.keys(bots).forEach(botName => {
+        Object.keys(bots).forEach((botName) => {
             if (botName === "default") {
                 // Not sure why this "default" pops up but it messes things up
                 // Maybe an artifact of being imported as a JSON file
@@ -1184,21 +1199,20 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
             }
 
             function sumItemCoverage(sum: number, data: string | ItemOption[]) {
-                if (typeof (data) === "string") {
+                if (typeof data === "string") {
                     // Item name, just parse coverage
-                    return getItem(data).coverage! + sum;
-                }
-                else {
+                    return (getItem(data).coverage as number) + sum;
+                } else {
                     // Option, return largest sum of items
                     let largest = 0;
-                    data.forEach(optionData => {
+                    data.forEach((optionData) => {
                         if (optionData.name === "None") {
                             return;
                         }
 
                         const number = optionData.number ?? 1;
                         const item = getItem(optionData.name);
-                        const optionCoverage = item.coverage! * number;
+                        const optionCoverage = (item.coverage as number) * number;
                         largest = Math.max(largest, optionCoverage);
                     });
 
@@ -1206,10 +1220,10 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                 }
             }
             const bot = (bots as any as { [key: string]: JsonBot })[botName];
-            const itemCoverage = (bot.Armament?.reduce(sumItemCoverage, 0) ?? 0) 
-                + (bot.Components?.reduce(sumItemCoverage, 0) ?? 0);
+            const itemCoverage =
+                (bot.Armament?.reduce(sumItemCoverage, 0) ?? 0) + (bot.Components?.reduce(sumItemCoverage, 0) ?? 0);
 
-            let roughCoreCoverage = (100.0 / (100.0 - parseInt(bot["Core Exposure %"])) * itemCoverage) - itemCoverage;
+            let roughCoreCoverage = (100.0 / (100.0 - parseInt(bot["Core Exposure %"]))) * itemCoverage - itemCoverage;
             if (isNaN(roughCoreCoverage)) {
                 roughCoreCoverage = 1;
             }
@@ -1217,35 +1231,33 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
             const totalCoverage = estimatedCoreCoverage + itemCoverage;
 
             function addPartData(data: string | ItemOption[], partData: BotPart[], partOptionData: BotPart[][]) {
-                if (typeof (data) === "string") {
+                if (typeof data === "string") {
                     const itemName = data;
                     // Item name, add to part data
-                    let result = partData.find(p => p.name === data);
+                    const result = partData.find((p) => p.name === data);
 
                     if (result === undefined) {
                         const item = getItem(itemName);
                         partData.push({
                             name: itemName,
                             number: 1,
-                            coverage: Math.floor(100.0 * item.coverage! / totalCoverage),
+                            coverage: Math.floor((100.0 * (item.coverage as number)) / totalCoverage),
                             integrity: item.integrity,
                         });
-                    }
-                    else {
+                    } else {
                         result.number += 1;
                     }
-                }
-                else {
+                } else {
                     // Option, add all options
                     const options: BotPart[] = [];
-                    data.forEach(optionData => {
+                    data.forEach((optionData) => {
                         const itemName = optionData.name;
 
-                        let coverage: number = 0;
+                        let coverage = 0;
                         const item = getItem(itemName);
 
                         if (itemName !== "None") {
-                            coverage = Math.floor(100.0 * item.coverage! / totalCoverage);
+                            coverage = Math.floor((100.0 * (item.coverage as number)) / totalCoverage);
                         }
 
                         options.push({
@@ -1262,20 +1274,19 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
             // Add armament and component data
             const armamentData: BotPart[] = [];
             const armamentOptionData: BotPart[][] = [];
-            bot.Armament?.forEach(data => addPartData(data, armamentData, armamentOptionData));
+            bot.Armament?.forEach((data) => addPartData(data, armamentData, armamentOptionData));
 
             const componentData: BotPart[] = [];
             const componentOptionData: BotPart[][] = [];
-            bot.Components?.forEach(data => addPartData(data, componentData, componentOptionData));
+            bot.Components?.forEach((data) => addPartData(data, componentData, componentOptionData));
 
             let categories: BotCategory[];
             if (!(botName in botCategories)) {
                 console.log(`Need to add categories for ${botName}`);
                 categories = [];
-            }
-            else {
+            } else {
                 categories = (botCategories as { [key: string]: BotCategory[] })[botName];
-            }    
+            }
 
             botData[botName] = {
                 armament: bot.Armament ?? [],
@@ -1312,11 +1323,13 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
 }
 
 // Determines if the given item type is melee
-export function isPartMelee(part: BaseItem) {
-    if (part.type === ItemType.ImpactWeapon
-        || part.type === ItemType.PiercingWeapon
-        || part.type === ItemType.SlashingWeapon
-        || part.type === ItemType.SpecialMeleeWeapon) {
+export function isPartMelee(part: BaseItem): boolean {
+    if (
+        part.type === ItemType.ImpactWeapon ||
+        part.type === ItemType.PiercingWeapon ||
+        part.type === ItemType.SlashingWeapon ||
+        part.type === ItemType.SpecialMeleeWeapon
+    ) {
         return true;
     }
 
@@ -1325,7 +1338,7 @@ export function isPartMelee(part: BaseItem) {
 
 // Converts an item or bot's name to an HTML id
 const nameToIdRegex = /[ /.'"\]\[]]*/g;
-export function nameToId(name: string) {
+export function nameToId(name: string): string {
     const id = `item${name.replace(nameToIdRegex, "")}`;
     return id;
 }
@@ -1342,8 +1355,8 @@ function parseFloatOrUndefined(value: string | undefined): number | undefined {
 }
 
 // Attempts to parse an int from the string, otherwise uses the default value
-export function parseIntOrDefault(string, defaultVal) {
-    const value = parseInt(string);
+export function parseIntOrDefault(string: string | number | undefined, defaultVal: number): number {
+    const value = parseInt(string as string);
     if (isNaN(value)) {
         return defaultVal;
     }
@@ -1363,17 +1376,17 @@ function parseIntOrUndefined(value: string | undefined): number | undefined {
 }
 
 // Gets a random integer between the min and max values (inclusive)
-export function randomInt(min: number, max: number) {
+export function randomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 // Gets the stored spoilers state
-export function setSpoilersState(state: string) {
+export function setSpoilersState(state: string): void {
     window.localStorage.setItem("spoilers", state);
 }
 
 // Returns the value if it's not undefined, otherwise return defaultVal
-export function valueOrDefault(val: any, defaultVal: any) {
+export function valueOrDefault<T>(val: T, defaultVal: T): T {
     if (val === undefined) {
         return defaultVal;
     }

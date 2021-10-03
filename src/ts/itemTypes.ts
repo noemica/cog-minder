@@ -9,7 +9,7 @@ export enum DamageType {
     Slashing = "Slashing",
     Special = "Special",
     Thermal = "Thermal",
-};
+}
 
 export enum HeatTransfer {
     Minimal = "Minimal (5)",
@@ -17,13 +17,13 @@ export enum HeatTransfer {
     Medium = "Medium (37)",
     High = "High (50)",
     Massive = "Massive (80)",
-};
+}
 
 export enum ItemCategory {
     Alien = "Alien",
     Prototype = "Prototype",
     None = "",
-};
+}
 
 export enum ItemSlot {
     NA = "N/A",
@@ -31,13 +31,13 @@ export enum ItemSlot {
     Propulsion = "Propulsion",
     Utility = "Utility",
     Weapon = "Weapon",
-};
+}
 
 export interface ItemWithUpkeep {
     energyUpkeep?: number;
     matterUpkeep?: number;
     heatGeneration?: number;
-};
+}
 
 export enum ItemType {
     Artifact = "Artifact",
@@ -70,19 +70,19 @@ export enum ItemType {
     Trap = "Trap",
     Treads = "Treads",
     Wheel = "Wheel",
-};
+}
 
 export enum SiegeMode {
     High = "High",
     Standard = "Standard",
-};
+}
 
 export enum Spectrum {
     Wide = "Wide (10)",
     Intermediate = "Intermediate (30)",
     Narrow = "Narrow (50)",
     Fine = "Fine (100)",
-};
+}
 
 export enum Critical {
     Blast = "Blast",
@@ -97,33 +97,31 @@ export enum Critical {
     Smash = "Smash",
     Sever = "Sever",
     Sunder = "Sunder",
-};
+}
 
-export type SpecialPropertyActive =
-    | "Always"
-    | "Part Active";
+export type SpecialPropertyActive = "Always" | "Part Active";
 
-export type Actuator = { kind: "Actuator", amount: number };
-export type AntimissileChance = { kind: "AntimissileChance", chance: number };
-export type AvoidChance = { kind: "AvoidChance", chance: number };
-export type CoreShielding = { kind: "CoreShielding", shielding: number };
-export type CorruptionIgnore = { kind: "CorruptionIgnore", chance: number };
-export type DamageReduction = { kind: "DamageReduction", chance: number };
-export type DamageResists = { kind: "DamageResists", resists: Record<DamageType, number> };
-export type EnergyFilter = { kind: "EnergyFilter", percent: number };
-export type EnergyStorage = { kind: "EnergyStorage", storage: number };
-export type FusionCompressor = { kind: "FusionCompressor", energyPerTurn: number };
-export type HeatDissipation = { kind: "HeatDissipation", dissipation: number };
-export type MassSupport = { kind: "MassSupport", support: number };
-export type PowerAmplifier = { kind: "PowerAmplifier", percent: number }
-export type PowerShielding = { kind: "PowerShielding", shielding: number }
-export type PropulsionShielding = { kind: "PropulsionShielding", shielding: number };
-export type RangedAvoid = { kind: "RangedAvoid", avoid: number };
-export type RangedWeaponCycling = { kind: "RangedWeaponCycling", amount: number };
-export type SelfReduction = { kind: "SelfReduction", shielding: number };
-export type UtilityShielding = { kind: "UtilityShielding", shielding: number };
-export type WeaponRegen = { kind: "WeaponRegen", energyPerTurn: number, integrityPerTurn: number };
-export type WeaponShielding = { kind: "WeaponShielding", shielding: number };
+export type Actuator = { kind: "Actuator"; amount: number };
+export type AntimissileChance = { kind: "AntimissileChance"; chance: number };
+export type AvoidChance = { kind: "AvoidChance"; chance: number };
+export type CoreShielding = { kind: "CoreShielding"; shielding: number };
+export type CorruptionIgnore = { kind: "CorruptionIgnore"; chance: number };
+export type DamageReduction = { kind: "DamageReduction"; chance: number };
+export type DamageResists = { kind: "DamageResists"; resists: Record<DamageType, number> };
+export type EnergyFilter = { kind: "EnergyFilter"; percent: number };
+export type EnergyStorage = { kind: "EnergyStorage"; storage: number };
+export type FusionCompressor = { kind: "FusionCompressor"; energyPerTurn: number };
+export type HeatDissipation = { kind: "HeatDissipation"; dissipation: number };
+export type MassSupport = { kind: "MassSupport"; support: number };
+export type PowerAmplifier = { kind: "PowerAmplifier"; percent: number };
+export type PowerShielding = { kind: "PowerShielding"; shielding: number };
+export type PropulsionShielding = { kind: "PropulsionShielding"; shielding: number };
+export type RangedAvoid = { kind: "RangedAvoid"; avoid: number };
+export type RangedWeaponCycling = { kind: "RangedWeaponCycling"; amount: number };
+export type SelfReduction = { kind: "SelfReduction"; shielding: number };
+export type UtilityShielding = { kind: "UtilityShielding"; shielding: number };
+export type WeaponRegen = { kind: "WeaponRegen"; energyPerTurn: number; integrityPerTurn: number };
+export type WeaponShielding = { kind: "WeaponShielding"; shielding: number };
 
 export type SpecialPropertyType =
     | Actuator
@@ -207,28 +205,31 @@ export type OtherItem = BaseItem & {
     life?: string;
 };
 
-export type PowerItem = BaseItem & ItemWithUpkeep & {
-    heatGeneration?: number;
-    energyGeneration?: number;
-    energyStorage?: number;
-    powerStability?: number;
-};
+export type PowerItem = BaseItem &
+    ItemWithUpkeep & {
+        heatGeneration?: number;
+        energyGeneration?: number;
+        energyStorage?: number;
+        powerStability?: number;
+    };
 
-export type PropulsionItem = BaseItem & ItemWithUpkeep & {
-    timePerMove: number;
-    modPerExtra?: number;
-    drag?: number;
-    energyPerMove?: number;
-    heatPerMove?: number;
-    support: number;
-    penalty: number;
-    burnout?: string;
-    siege?: SiegeMode;
-};
+export type PropulsionItem = BaseItem &
+    ItemWithUpkeep & {
+        timePerMove: number;
+        modPerExtra?: number;
+        drag?: number;
+        energyPerMove?: number;
+        heatPerMove?: number;
+        support: number;
+        penalty: number;
+        burnout?: string;
+        siege?: SiegeMode;
+    };
 
-export type UtilityItem = BaseItem & ItemWithUpkeep & {
-    specialTrait?: string;
-};
+export type UtilityItem = BaseItem &
+    ItemWithUpkeep & {
+        specialTrait?: string;
+    };
 
 export type WeaponItem = BaseItem & {
     specialTrait?: string;
@@ -253,7 +254,7 @@ export type WeaponItem = BaseItem & {
     falloff?: string;
     explosionType?: DamageType;
     explosionHeatTransfer?: HeatTransfer;
-    arc?: number,
+    arc?: number;
     waypoints?: string;
     explosionSpectrum?: Spectrum;
     explosionDisruption?: number;
@@ -263,12 +264,7 @@ export type WeaponItem = BaseItem & {
     life?: string;
 };
 
-export type Item =
-    | OtherItem
-    | PowerItem
-    | PropulsionItem
-    | UtilityItem
-    | WeaponItem;
+export type Item = OtherItem | PowerItem | PropulsionItem | UtilityItem | WeaponItem;
 
 export type JsonItem = {
     Slot: ItemSlot;

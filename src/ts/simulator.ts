@@ -18,16 +18,9 @@ import {
     getSpoilersState,
     refreshSelectpicker,
     registerDisableAutocomplete,
-    resetButtonGroup
+    resetButtonGroup,
 } from "./commonJquery";
-import {
-    DamageType,
-    ItemCategory,
-    ItemSlot,
-    ItemType,
-    JsonItem,
-    WeaponItem
-} from "./itemTypes";
+import { DamageType, ItemCategory, ItemSlot, ItemType, JsonItem, WeaponItem } from "./itemTypes";
 import {
     getBotDefensiveState,
     getRangedVolleyTime,
@@ -44,7 +37,7 @@ import {
     SimulatorPart,
     SimulatorState,
     SimulatorWeapon,
-    SneakAttackStrategy
+    SneakAttackStrategy,
 } from "./simulatorTypes";
 
 import "bootstrap";
@@ -66,12 +59,12 @@ jq(function ($) {
     let currentComparisonData;
 
     const comparisonBorderColors = [
-        'rgba(228, 26, 28, .8)',
-        'rgba(55, 126, 184, .8)',
-        'rgba(36, 192, 36, .8)',
-        'rgba(152, 78, 163, .8)',
-        'rgba(255, 127, 0, .8)',
-        'rgba(255, 255, 51, .8)',
+        "rgba(228, 26, 28, .8)",
+        "rgba(55, 126, 184, .8)",
+        "rgba(36, 192, 36, .8)",
+        "rgba(152, 78, 163, .8)",
+        "rgba(255, 127, 0, .8)",
+        "rgba(255, 255, 51, .8)",
     ];
 
     // Array of colors currently used to try to avoid duplicating colors when possible
@@ -87,7 +80,7 @@ jq(function ($) {
         "12%: Imp. Actuator Array": 12,
         "16%: Adv. Actuator Array": 16,
         "20%: Exp. Actuator Array": 20,
-    }
+    };
 
     // Actuator name to tu multiplier map
     const actuatorMap = {
@@ -109,13 +102,13 @@ jq(function ($) {
 
     // Charger damage increase values
     const chargerMap = {
-        "0%: None": 1.00,
+        "0%: None": 1.0,
         "15%: Particle Charger": 1.15,
-        "20%: Imp. Particle Charger": 1.20,
+        "20%: Imp. Particle Charger": 1.2,
         "25%: Adv. Particle Charger": 1.25,
-        "30%: Particle Accelerator": 1.30,
-        "40%: Imp. Particle Accelerator": 1.40,
-        "50%: Adv. Particle Accelerator": 1.50,
+        "30%: Particle Accelerator": 1.3,
+        "40%: Imp. Particle Accelerator": 1.4,
+        "50%: Adv. Particle Accelerator": 1.5,
     };
 
     // Core analyzer to percent chance map
@@ -130,13 +123,13 @@ jq(function ($) {
 
     // Cycler volley time multiplier map
     const cyclerMap = {
-        "0%: None": 1.00,
+        "0%: None": 1.0,
         "15%: Weapon Cycler": 0.85,
-        "20%: Imp. Weapon Cycler": 0.80,
+        "20%: Imp. Weapon Cycler": 0.8,
         "25%: Adv. Weapon Cycler": 0.75,
-        "30%: Exp. Weapon Cycler": 0.70,
-        "50%: Quantum Capacitor": 0.50,
-        "50%: Launcher Loader": 0.50,
+        "30%: Exp. Weapon Cycler": 0.7,
+        "50%: Quantum Capacitor": 0.5,
+        "50%: Launcher Loader": 0.5,
     };
 
     // Damage reduction names
@@ -151,10 +144,10 @@ jq(function ($) {
 
     // Kinecellerator min damage increase values
     const kinecelleratorMap = {
-        "0%: None": 1.00,
-        "30%: Kinecellerator": 1.30,
-        "40%: Imp. Kinecellerator": 1.40,
-        "50%: Adv. Kinecellerator": 1.50,
+        "0%: None": 1.0,
+        "30%: Kinecellerator": 1.3,
+        "40%: Imp. Kinecellerator": 1.4,
+        "50%: Adv. Kinecellerator": 1.5,
     };
 
     // Melee analysis ids
@@ -166,12 +159,7 @@ jq(function ($) {
     ];
 
     // Array of melee analysis minimum damage increases
-    const meleeAnalysisMinDamageIncrease = [
-        2,
-        3,
-        4,
-        6,
-    ];
+    const meleeAnalysisMinDamageIncrease = [2, 3, 4, 6];
 
     // Melee weapon types
     const meleeTypes = [
@@ -184,10 +172,10 @@ jq(function ($) {
     // Overload util to damage bonus map
     const overloadMap = {
         "0%: None": 0,
-        "50%: Overload Amplifier": .5,
-        "75%: Imp. Overload Amplifier": .75,
+        "50%: Overload Amplifier": 0.5,
+        "75%: Imp. Overload Amplifier": 0.75,
         "100%: Adv. Overload Amplifier": 1,
-    }
+    };
 
     // Ranged weapon types
     const rangedTypes = [
@@ -201,11 +189,11 @@ jq(function ($) {
 
     // Bot size mode to accuracy bonus map
     const sizeAccuracyMap = {
-        "Huge": 30,
-        "Large": 10,
-        "Medium": 0,
-        "Small": -10,
-        "Tiny": -30,
+        Huge: 30,
+        Large: 10,
+        Medium: 0,
+        Small: -10,
+        Tiny: -30,
     };
 
     // Siege mode text to accuracy bonus/TUs to activate map
@@ -234,7 +222,7 @@ jq(function ($) {
         "12%: Exp. Target Analyzer": 12,
     };
 
-    $((document) => init());
+    $(() => init());
 
     function addComparison() {
         const name = $("#comparisonNameInput").val() as string;
@@ -249,14 +237,16 @@ jq(function ($) {
         $("#comparisonContainer").removeClass("not-visible");
 
         // Try to get the first unused color if possible
-        const { colorIndex } = comparisonColorsUsed.reduce((acc, num, index) => {
-            if (num < acc.value) {
-                return { colorIndex: index, value: num };
-            }
-            else {
-                return acc;
-            }
-        }, { colorIndex: -1, value: Number.MAX_VALUE });
+        const { colorIndex } = comparisonColorsUsed.reduce(
+            (acc, num, index) => {
+                if (num < acc.value) {
+                    return { colorIndex: index, value: num };
+                } else {
+                    return acc;
+                }
+            },
+            { colorIndex: -1, value: Number.MAX_VALUE },
+        );
 
         comparisonColorsUsed[colorIndex] += 1;
 
@@ -269,7 +259,9 @@ jq(function ($) {
         const parent = $('<div class="input-group"></div>');
         const nameInput = $(`<input class="form-control"></input>`);
         nameInput.val(name);
-        const deleteButton = $('<button class="btn ml-2" data-toggle="tooltip" title="Removes the dataset.">X</button>');
+        const deleteButton = $(
+            '<button class="btn ml-2" data-toggle="tooltip" title="Removes the dataset.">X</button>',
+        );
 
         parent.append(nameInput);
         parent.append(deleteButton);
@@ -312,7 +304,7 @@ jq(function ($) {
         const melee = isMelee();
         const types = melee ? meleeTypes : rangedTypes;
         const weapons: string[] = [];
-        Object.keys(itemData).forEach(name => {
+        Object.keys(itemData).forEach((name) => {
             const baseItem = itemData[name];
 
             // Slot check
@@ -343,11 +335,13 @@ jq(function ($) {
 
         // Sort and create weapon option HTML elements
         weapons.sort(gallerySort);
-        const weaponOptions = weapons.map(w => `<option>${w}</option>`).join();
+        const weaponOptions = weapons.map((w) => `<option>${w}</option>`).join();
 
         // Create weapon elements
         const parent = $('<div class="input-group mt-1"></div>');
-        const selectLabel = $('<span class="input-group-text" data-toggle="tooltip" title="Name of an equipped weapon to fire">Weapon</span>');
+        const selectLabel = $(
+            '<span class="input-group-text" data-toggle="tooltip" title="Name of an equipped weapon to fire">Weapon</span>',
+        );
         const select = $(`<select class="selectpicker" data-live-search="true">${weaponOptions}</select>`);
         const helpButton = $('<button class="btn part-help-btn" data-html=true data-toggle="popover">?</button>');
         const massLabel = $(`
@@ -356,7 +350,9 @@ jq(function ($) {
         </div>`);
         const massInput = $('<input class="form-control" placeholder="0"></input>');
         const overloadContainer = $('<div class="btn-group btn-group-toggle ml-2" data-toggle="buttons"></div>');
-        const overloadLabelContainer = $('<div class="input-group-prepend" data-toggle="tooltip" title="Whether to fire the weapon as overloaded"></div>');
+        const overloadLabelContainer = $(
+            '<div class="input-group-prepend" data-toggle="tooltip" title="Whether to fire the weapon as overloaded"></div>',
+        );
         const overloadLabel = $('<span class="input-group-text">Overload</span>');
         const noLabel = $('<label class="btn"><input type="radio" name="options">No</input></label>');
         const yesLabel = $('<label class="btn"><input type="radio" name="options">Yes</input></label>');
@@ -412,8 +408,7 @@ jq(function ($) {
                 // If no valid weapon or can't be overloaded reset/hide the overload option
                 resetButtonGroup(overloadContainer);
                 overloadContainer.addClass("not-visible");
-            }
-            else {
+            } else {
                 // Otherwise show the overload option
                 overloadContainer.removeClass("not-visible");
             }
@@ -424,8 +419,7 @@ jq(function ($) {
                 massInput.removeClass("not-visible");
                 numberLabel.addClass("not-visible");
                 numberInput.addClass("not-visible");
-            }
-            else {
+            } else {
                 // Otherwise do the reverse
                 massLabel.addClass("not-visible");
                 massInput.addClass("not-visible");
@@ -455,7 +449,7 @@ jq(function ($) {
         (massLabel as any).tooltip();
         (overloadLabelContainer as any).tooltip();
 
-        // Minor hack, the btn-light class is auto-added to dropdowns with search 
+        // Minor hack, the btn-light class is auto-added to dropdowns with search
         // but it doesn't really fit with everything else
         parent.find(".btn-light").removeClass("btn-light");
     }
@@ -476,7 +470,7 @@ jq(function ($) {
     // Gets the number of simulations to perform
     function getNumSimulations() {
         const stringValue = ($("#numFightsInput").val() as string).replace(",", "");
-        return (parseIntOrDefault(stringValue, 100000));
+        return parseIntOrDefault(stringValue, 100000);
     }
 
     // Initialize the page state
@@ -511,8 +505,7 @@ jq(function ($) {
 
             if (bot.name === "A-15 Conveyor") {
                 $("#endConditionNoTnc").removeClass("not-visible");
-            }
-            else {
+            } else {
                 $("#endConditionNoTnc").addClass("not-visible");
             }
 
@@ -544,12 +537,9 @@ jq(function ($) {
             if ($(e.target).parents(".popover").length === 0 && $(".popover").length >= 1) {
                 // If clicking outside of a popover close the current one
                 ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
-            }
-            else if ($(e.target).parents(".popover").length === 1 && $(".popover").length > 1) {
+            } else if ($(e.target).parents(".popover").length === 1 && $(".popover").length > 1) {
                 // If clicking inside of a popover close any nested popovers
-                ($(e.target)
-                    .parents(".popover")
-                    .find('.bot-popover-item') as any)
+                ($(e.target).parents(".popover").find(".bot-popover-item") as any)
                     .not(e.target)
                     .not($(e.target).parents())
                     .popover("hide");
@@ -581,7 +571,7 @@ jq(function ($) {
         $("#actuatorArraySelect").parent().addClass("percent-dropdown");
         $("#sneakAttackSelect").parent().addClass("sneak-attack-dropdown");
 
-        // Minor hack, the btn-light class is auto-added to dropdowns with search 
+        // Minor hack, the btn-light class is auto-added to dropdowns with search
         // but it doesn't really fit with everything else
         $(".btn-light").removeClass("btn-light");
 
@@ -590,115 +580,117 @@ jq(function ($) {
 
     // Initializes the charts with default settings and no data
     function initCharts() {
-        const perXDataset = getDatasetSettings(
-            "Current volley kill %",
-            "rgba(0, 98, 0, 0.3)",
-            "rgba(0, 196, 0, 1)");
+        const perXDataset = getDatasetSettings("Current volley kill %", "rgba(0, 98, 0, 0.3)", "rgba(0, 196, 0, 1)");
         const cumulativeDataset = getDatasetSettings(
             "Cumulative kill %",
             "rgba(96, 96, 96, 0.3)",
-            "rgba(128, 128, 128, 1)");
+            "rgba(128, 128, 128, 1)",
+        );
 
         let chartElement = $("#chart");
         chart = new Chart(chartElement as any, {
-            type: 'scatter',
+            type: "scatter",
             data: {
-                datasets: [
-                    perXDataset,
-                    cumulativeDataset,
-                ],
+                datasets: [perXDataset, cumulativeDataset],
             },
             options: {
                 legend: {
                     labels: {
                         fontSize: 16,
-                    }
+                    },
                 },
                 scales: {
-                    xAxes: [{
-                        gridLines: {
-                            display: false,
+                    xAxes: [
+                        {
+                            gridLines: {
+                                display: false,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: "Number of volleys",
+                                fontSize: 24,
+                            },
+                            ticks: {
+                                min: 0,
+                                stepSize: 1,
+                            },
                         },
-                        scaleLabel: {
-                            display: true,
-                            labelString: "Number of volleys",
-                            fontSize: 24,
+                    ],
+                    yAxes: [
+                        {
+                            gridLines: {
+                                color: "rgba(128, 128, 128, 0.8)",
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: "Percent of kills",
+                                fontSize: 24,
+                            },
+                            ticks: {
+                                beginAtZero: true,
+                                callback: (value) => value + "%",
+                            },
                         },
-                        ticks: {
-                            min: 0,
-                            stepSize: 1,
-                        }
-                    }],
-                    yAxes: [{
-                        gridLines: {
-                            color: "rgba(128, 128, 128, 0.8)",
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: "Percent of kills",
-                            fontSize: 24,
-                        },
-                        ticks: {
-                            beginAtZero: true,
-                            callback: (value, index, values) => value + "%",
-                        },
-                    }],
+                    ],
                 },
                 title: {
                     display: true,
                     fontSize: 24,
-                }
+                },
             },
         });
 
         chartElement = $("#comparisonChart");
         comparisonChart = new Chart(chartElement as any, {
-            type: 'scatter',
+            type: "scatter",
             data: {
-                datasets: [
-                ],
+                datasets: [],
             },
             options: {
                 legend: {
                     labels: {
                         fontSize: 16,
-                    }
+                    },
                 },
                 scales: {
-                    xAxes: [{
-                        gridLines: {
-                            display: false,
+                    xAxes: [
+                        {
+                            gridLines: {
+                                display: false,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: "Number of time units",
+                                fontSize: 24,
+                            },
+                            ticks: {
+                                min: 0,
+                                stepSize: 100,
+                            },
                         },
-                        scaleLabel: {
-                            display: true,
-                            labelString: "Number of time units",
-                            fontSize: 24,
+                    ],
+                    yAxes: [
+                        {
+                            gridLines: {
+                                color: "rgba(128, 128, 128, 0.8)",
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: "Percent of kills",
+                                fontSize: 24,
+                            },
+                            ticks: {
+                                beginAtZero: true,
+                                callback: (value) => value + "%",
+                            },
                         },
-                        ticks: {
-                            min: 0,
-                            stepSize: 100,
-                        }
-                    }],
-                    yAxes: [{
-                        gridLines: {
-                            color: "rgba(128, 128, 128, 0.8)",
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: "Percent of kills",
-                            fontSize: 24,
-                        },
-                        ticks: {
-                            beginAtZero: true,
-                            callback: (value, index, values) => value + "%",
-                        },
-                    }],
+                    ],
                 },
                 title: {
                     display: true,
                     text: "Custom Comparison",
                     fontSize: 24,
-                }
+                },
             },
         });
     }
@@ -769,7 +761,7 @@ jq(function ($) {
             selector.addClass("disabled");
             selector.prop("disabled", true);
         }
-        let func = running ? setDisabled : setEnabled;
+        const func = running ? setDisabled : setEnabled;
 
         func($("#spoilers"));
 
@@ -817,8 +809,7 @@ jq(function ($) {
         if (running) {
             $("#cancelButton").removeClass("not-visible");
             $("#simulateButton").addClass("not-visible");
-        }
-        else {
+        } else {
             $("#cancelButton").addClass("not-visible");
             $("#simulateButton").removeClass("not-visible");
         }
@@ -833,22 +824,21 @@ jq(function ($) {
     function simulate() {
         // Check inputs first
         const botName = $("#botSelect").selectpicker("val") as any as string;
-        const userWeapons: { def: WeaponItem, overloaded: boolean}[] = [];
+        const userWeapons: { def: WeaponItem; overloaded: boolean }[] = [];
         $("#weaponSelectContainer select").each((_, s) => {
             const name = $(s).selectpicker("val") as any as string;
             if (name in itemData) {
                 const weapon = itemData[name] as WeaponItem;
 
                 // Tread invalid or unfilled numbers as 1
-                const number = parseIntOrDefault($(s).parent().nextAll("input").not(".not-visible").val(), 1);
-                
+                const number = parseIntOrDefault($(s).parent().nextAll("input").not(".not-visible").val() as string, 1);
+
                 const overloaded = !$(s).parent().nextAll(".btn-group").children("label").first().hasClass("active");
 
                 for (let i = 0; i < number; i++) {
                     userWeapons.push({ def: weapon, overloaded: overloaded });
                 }
-            }
-            else if (name === "Ram") {
+            } else if (name === "Ram") {
                 const weapon: WeaponItem = {
                     categories: [],
                     category: ItemCategory.None,
@@ -864,9 +854,9 @@ jq(function ($) {
                     size: 0,
                     slot: ItemSlot.NA,
                     type: ItemType.ImpactWeapon,
-                    mass: parseIntOrDefault($(s).parent().nextAll("input").val(), 0),
+                    mass: parseIntOrDefault($(s).parent().nextAll("input").val() as string, 0),
                 };
-                
+
                 userWeapons.push({ def: weapon, overloaded: false });
             }
         });
@@ -884,7 +874,7 @@ jq(function ($) {
         // Set up initial calculation state
         const bot = botData[botName];
         const parts: SimulatorPart[] = [];
-        bot.componentData.concat(bot.armamentData).forEach(item => {
+        bot.componentData.concat(bot.armamentData).forEach((item) => {
             for (let i = 0; i < item.number; i++) {
                 const itemDef = getItem(item.name);
                 const isProtection = itemDef.type === ItemType.Protection;
@@ -900,11 +890,11 @@ jq(function ($) {
             }
         });
 
-        const armorAnalyzedCoverage = bot.coreCoverage +
-            parts.reduce((prev, part) => prev + part.armorAnalyzedCoverage, 0);
+        const armorAnalyzedCoverage =
+            bot.coreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedCoverage, 0);
 
-        const externalDamageReduction = externalDamageReductionNameMap[
-            $("#damageReductionSelect").selectpicker("val") as any as string];
+        const externalDamageReduction =
+            externalDamageReductionNameMap[$("#damageReductionSelect").selectpicker("val") as any as string];
         const defensiveState = getBotDefensiveState(parts, externalDamageReduction);
 
         // Enemy bot state
@@ -928,35 +918,37 @@ jq(function ($) {
         // Weapons and other offensive state
         let ramming = false;
         const melee = isMelee();
-        const numTreads = parseIntOrDefault($("#treadsInput").val(), 0);
+        const numTreads = parseIntOrDefault($("#treadsInput").val() as string, 0);
 
         // Accuracy bonuses and penalties
         const siegeBonus = melee ? null : siegeModeBonusMap[$("#siegeSelect").selectpicker("val") as any as string];
         let targetingComputerBonus = 0;
         if (!melee) {
-            targetingComputerBonus = parseIntOrDefault($("#targetingInput").val(), 0);
+            targetingComputerBonus = parseIntOrDefault($("#targetingInput").val() as string, 0);
         }
 
         const meleeAnalysis = [0, 0, 0, 0];
         if (melee) {
             // Melee analysis types
             meleeAnalysisIds.map((id, i) => {
-                meleeAnalysis[i] = parseIntOrDefault($(`#${id}`).val(), 0);
+                meleeAnalysis[i] = parseIntOrDefault($(`#${id}`).val() as string, 0);
             });
         }
 
         // Invalid / 6 or more tiles = 0 bonus
-        let distance = parseIntOrDefault($("#distanceInput").val(), 6);
+        let distance = parseIntOrDefault($("#distanceInput").val() as string, 6);
         if (distance <= 1) {
             // Less than or equal to 1, just assign to 1
             distance = 1;
         }
 
         // Recoil reduction
-        const recoilReduction = parseIntOrDefault($("#recoilInput").val(), 0);
+        const recoilReduction = parseIntOrDefault($("#recoilInput").val() as string, 0);
 
-        const allRecoil = userWeapons.reduce((prev, weapon) =>
-            getRecoil(weapon.def, numTreads, recoilReduction) + prev, 0);
+        const allRecoil = userWeapons.reduce(
+            (prev, weapon) => getRecoil(weapon.def, numTreads, recoilReduction) + prev,
+            0,
+        );
 
         // Target Analyzer crit bonus
         const targetAnalyzerName = $("#targetAnalyzerSelect").selectpicker("val") as any as string;
@@ -977,8 +969,7 @@ jq(function ($) {
                     const split = def.damage.split("-");
                     damageMin = parseInt(split[0]);
                     damageMax = parseInt(split[1]);
-                }
-                else {
+                } else {
                     damageMin = parseInt(def.damage);
                     damageMax = damageMin;
                 }
@@ -990,8 +981,7 @@ jq(function ($) {
 
                     // Ensure min damage can't exceed max
                     damageMin = Math.min(Math.trunc(damageMin * kinecelleratorBonus), damageMax);
-                }
-                else if (melee) {
+                } else if (melee) {
                     // Apply damage for melee analyses (2)
                     let minDamageIncrease = 0;
                     for (let i = 0; i < meleeAnalysisMinDamageIncrease.length; i++) {
@@ -1011,8 +1001,7 @@ jq(function ($) {
                     const split = def.explosionDamage.split("-");
                     explosionMin = parseInt(split[0]);
                     explosionMax = parseInt(split[1]);
-                }
-                else {
+                } else {
                     explosionMin = parseInt(def.explosionDamage);
                     explosionMax = explosionMin;
                 }
@@ -1021,22 +1010,19 @@ jq(function ($) {
             }
 
             // Get crit chance, only apply target analyzer if there's a specific bonus
-            const critical = def.critical === undefined || def.critical === 0 ?
-                0 :
-                def.critical + critBonus;
+            const critical = def.critical === undefined || def.critical === 0 ? 0 : def.critical + critBonus;
 
             // Calculate base accuracy that can't change over the course of the fight
             let baseAccuracy = melee ? initialMeleeAccuracy : initialRangedAccuracy;
 
             if (!melee) {
-                baseAccuracy += targetingComputerBonus + (2 * numTreads);
+                baseAccuracy += targetingComputerBonus + 2 * numTreads;
             }
 
             // Size bonus/penalty
             if (bot.size in sizeAccuracyMap) {
                 baseAccuracy += sizeAccuracyMap[bot.size];
-            }
-            else {
+            } else {
                 console.log(`${botName} has invalid size ${bot.size}`);
             }
 
@@ -1063,10 +1049,11 @@ jq(function ($) {
             }
 
             // All launchers are missiles except for special cases
-            const isMissile = def.type === "Launcher"
-                && def.name != "Sigix Terminator"
-                && def.name != "Supercharged Sigix Terminator"
-                && def.name != "Vortex Catalyst Activator";
+            const isMissile =
+                def.type === "Launcher" &&
+                def.name != "Sigix Terminator" &&
+                def.name != "Supercharged Sigix Terminator" &&
+                def.name != "Vortex Catalyst Activator";
 
             const state: SimulatorWeapon = {
                 accelerated: def.type === "Energy Gun" || def.type === "Energy Cannon",
@@ -1132,23 +1119,26 @@ jq(function ($) {
         }
 
         // Get speed
-        const speed = parseIntOrDefault($("#speedInput").val(), 100);
+        const speed = parseIntOrDefault($("#speedInput").val() as string, 100);
 
         // Get momentum
-        const bonusMomentum = parseIntOrDefault($("#bonusMomentumInput").val(), 0);
-        const initialMomentum = parseIntOrDefault($("#initialMomentumInput").val(), 0);
+        const bonusMomentum = parseIntOrDefault($("#bonusMomentumInput").val() as string, 0);
+        const initialMomentum = parseIntOrDefault($("#initialMomentumInput").val() as string, 0);
 
         // Determine sneak attack strategy
         const sneakAttackStrategy = $("#sneakAttackSelect").selectpicker("val") as any as SneakAttackStrategy;
 
         // Calculate total (ranged) or initial (melee) volley time
-        const volleyTimeModifier = melee ?
-            actuatorMap[$("#actuatorSelect").selectpicker("val") as any as string] :
-            cyclerMap[$("#cyclerSelect").selectpicker("val") as any as string];
+        const volleyTimeModifier = melee
+            ? actuatorMap[$("#actuatorSelect").selectpicker("val") as any as string]
+            : cyclerMap[$("#cyclerSelect").selectpicker("val") as any as string];
 
-        const volleyTime = melee ?
-            weapons[0].delay + volleyTimeMap[1] :
-            getRangedVolleyTime(weapons.map(w => w.def), volleyTimeModifier);
+        const volleyTime = melee
+            ? weapons[0].delay + volleyTimeMap[1]
+            : getRangedVolleyTime(
+                  weapons.map((w) => w.def),
+                  volleyTimeModifier,
+              );
 
         // Other misc offensive state
         const offensiveState: OffensiveState = {
@@ -1190,7 +1180,7 @@ jq(function ($) {
             killVolleys: {},
             offensiveState: offensiveState,
             tus: 0,
-            weapons: weapons
+            weapons: weapons,
         };
 
         // Disable all input fields while the simulation is running
@@ -1205,7 +1195,7 @@ jq(function ($) {
         let lastStatusUpdate = lastFrame;
 
         // Run simulation in batches via setTimeout to avoid UI lockup.
-        // After each 100 simulations check if we've surpassed 30 ms since the 
+        // After each 100 simulations check if we've surpassed 30 ms since the
         // last update (aim for ~30 fps)
         // If so then pass control back so events/updates can be processed.
         function run() {
@@ -1225,7 +1215,7 @@ jq(function ($) {
 
                         if (now - lastStatusUpdate > 100) {
                             // Only update status ~ 10 times a second
-                            const percent = (i * 100 / numSimulations).toFixed(1);
+                            const percent = ((i * 100) / numSimulations).toFixed(1);
                             setStatusText(`${String(percent).padStart(4, "0")} % completed.`);
                             lastStatusUpdate = now;
                         }
@@ -1241,8 +1231,7 @@ jq(function ($) {
                         setSimulationRunning(false);
                         return;
                     }
-                }
-                catch (e) {
+                } catch (e) {
                     console.log(e);
                     setStatusText("The simulation encountered an unexpected error, this is a bug.");
                     setSimulationRunning(false);
@@ -1261,7 +1250,7 @@ jq(function ($) {
                 button.removeClass("disabled");
                 button.prop("disabled", false);
             }
-        };
+        }
 
         run();
     }
@@ -1270,18 +1259,23 @@ jq(function ($) {
     function updateChart(state: SimulatorState) {
         const numSimulations = getNumSimulations();
 
-        // Calculate data, round to the given number of decimal places and 
+        // Calculate data, round to the given number of decimal places and
         // ignore values smaller to reduce clutter
-        function getData(perXKillsKeys: string[], perXKillsObject: { [key: number]: number },
-            numDecimalPlaces: number, stepSize: number) {
+        function getData(
+            perXKillsKeys: string[],
+            perXKillsObject: { [key: number]: number },
+            numDecimalPlaces: number,
+            stepSize: number,
+        ) {
             const data = perXKillsKeys
-                .filter(numX => perXKillsObject[numX] / numSimulations > Math.pow(10, -2 - numDecimalPlaces))
-                .map(numX => {
+                .filter((numX) => perXKillsObject[numX] / numSimulations > Math.pow(10, -2 - numDecimalPlaces))
+                .map((numX) => {
                     return {
                         x: parseInt(numX),
-                        y: Math.trunc(perXKillsObject[numX] / numSimulations * Math.pow(10, 2 + numDecimalPlaces))
-                            / Math.pow(10, numDecimalPlaces),
-                    }
+                        y:
+                            Math.trunc((perXKillsObject[numX] / numSimulations) * Math.pow(10, 2 + numDecimalPlaces)) /
+                            Math.pow(10, numDecimalPlaces),
+                    };
                 });
 
             if (data.length < 5) {
@@ -1289,7 +1283,7 @@ jq(function ($) {
                 // to fill out a bit more nicely
                 data.push({
                     x: data[data.length - 1].x + stepSize,
-                    y: 0
+                    y: 0,
                 });
             }
 
@@ -1299,7 +1293,7 @@ jq(function ($) {
         function getCumulativeData(data: Point[]) {
             const cumulativeData: Point[] = [];
             let total = 0;
-            data.forEach(point => {
+            data.forEach((point) => {
                 total += point.y;
                 cumulativeData.push({
                     x: point.x,
@@ -1324,7 +1318,7 @@ jq(function ($) {
         // Get comparison data first
         const perXKillsKeys = Object.keys(state.killTus);
         perXKillsKeys.sort((a, b) => parseFloat(a) - parseFloat(b));
-        // Note: Melee (especially with followups) can create a lot of 
+        // Note: Melee (especially with followups) can create a lot of
         // relatively  lower probability scenarios due to strange melee delays
         // so add an extra decimal place to avoid cutting out too many
         // results that the max total % would end up being unreasonably
@@ -1340,8 +1334,7 @@ jq(function ($) {
             xAxisString = "Number of volleys";
 
             perXData = getData(Object.keys(state.killVolleys), state.killVolleys, 1, 1);
-        }
-        else {
+        } else {
             // Show data per time unit
             xString = "Time Units";
             stepSize = state.offensiveState.volleyTime;
@@ -1358,8 +1351,7 @@ jq(function ($) {
         perXDataset.data = perXData;
         cumulativeDataset.data = cumulativeData;
 
-        chart.options.title!.text =
-            `${xString}/${perXString} vs. ${$("#botSelect").selectpicker("val")}`;
+        chart.options.title!.text = `${xString}/${perXString} vs. ${$("#botSelect").selectpicker("val")}`;
         chart.update();
         $("#resultsContainer").removeClass("not-visible");
     }
@@ -1373,22 +1365,20 @@ jq(function ($) {
         const oldBot = select.selectpicker("val") as any as string;
         select.empty();
 
-        Object.keys(botData).forEach(name => {
+        Object.keys(botData).forEach((name) => {
             const bot = botData[name];
 
-            if (bot.categories.some(c => c === "Spoilers")) {
+            if (bot.categories.some((c) => c === "Spoilers")) {
                 // Spoiler bots allowed for spoilers/redacted
-                if ((spoilersState === "Spoilers" || spoilersState === "Redacted")) {
+                if (spoilersState === "Spoilers" || spoilersState === "Redacted") {
                     select.append(`<option>${name}</option>`);
                 }
-            }
-            else if (bot.categories.some(c => c === "Redacted")) {
+            } else if (bot.categories.some((c) => c === "Redacted")) {
                 // Redacted bots only allowed for spoilers/redacted
                 if (spoilersState === "Redacted") {
                     select.append(`<option>${name}</option>`);
                 }
-            }
-            else {
+            } else {
                 // Non-spoiler bot always allowed
                 select.append(`<option>${name}</option>`);
             }
@@ -1397,8 +1387,7 @@ jq(function ($) {
         // Don't show arch tele condition when not on redacted
         if (spoilersState === "Redacted") {
             $("#endConditionArchTele").removeClass("not-visible");
-        }
-        else {
+        } else {
             $("#endConditionArchTele").addClass("not-visible");
         }
         refreshSelectpicker($("#endConditionSelect"));
@@ -1414,9 +1403,7 @@ jq(function ($) {
         const melee = isMelee();
 
         function setVisibility(selector: JQuery<HTMLElement>, visible: boolean) {
-            visible ?
-                selector.removeClass("not-visible") :
-                selector.addClass("not-visible")
+            visible ? selector.removeClass("not-visible") : selector.addClass("not-visible");
         }
 
         setVisibility($("#rangedAccuracyContainer"), !melee);
