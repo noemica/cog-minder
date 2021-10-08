@@ -76,7 +76,7 @@ const headerLookup: Record<PageType, HeaderInfo> = {
             "once complete, a graph of the number of volleys to kill is shown. Multiple simulations can be " +
             'compared by giving each dataset a name and clicking the "Add to comparison" button.',
         spoilers: true,
-        beta11Check: false,
+        beta11Check: true,
     },
 };
 

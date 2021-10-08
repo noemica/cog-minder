@@ -1,5 +1,5 @@
 import { Bot, BotImmunity, BotResistances } from "./botTypes";
-import { DamageType, Item, WeaponItem } from "./itemTypes";
+import { Critical, DamageType, Item, WeaponItem } from "./itemTypes";
 
 export type SimulatorPart = {
     armorAnalyzedCoverage: number;
@@ -70,7 +70,8 @@ export type SimulatorWeapon = {
     accelerated: boolean;
     accuracy: number;
     baseAccuracy: number;
-    critical: number;
+    criticalChance: number;
+    criticalType?: Critical;
     damageMin: number;
     damageMax: number;
     damageType?: DamageType;
@@ -138,6 +139,7 @@ export type SimulatorState = {
     botState: BotState;
     endCondition: EndCondition;
     initialBotState: BotState;
+    isB11: boolean;
     killTus: { [key: number]: number };
     killVolleys: { [key: number]: number };
     offensiveState: OffensiveState;

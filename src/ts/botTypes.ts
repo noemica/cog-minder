@@ -73,7 +73,7 @@ export type Bot = {
     name: string;
     profile: string;
     rating: string;
-    resistances: BotResistances;
+    resistances?: BotResistances;
     salvagePotential: string;
     size: BotSize;
     spotPercent: string;

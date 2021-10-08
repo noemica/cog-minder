@@ -1,5 +1,7 @@
 import * as bots from "../json/bots.json";
+import * as botsB11 from "../json/bots_b11.json";
 import * as items from "../json/items.json";
+import * as itemsB11 from "../json/items_b11.json";
 import {
     botData,
     canShowPart,
@@ -20,7 +22,7 @@ import {
     registerDisableAutocomplete,
     resetButtonGroup,
 } from "./commonJquery";
-import { DamageType, ItemCategory, ItemSlot, ItemType, JsonItem, WeaponItem } from "./itemTypes";
+import { Critical, DamageType, ItemCategory, ItemSlot, ItemType, WeaponItem } from "./itemTypes";
 import {
     getBotDefensiveState,
     getRangedVolleyTime,
@@ -44,7 +46,6 @@ import "bootstrap";
 import { Chart, ChartDataSets, Point } from "chart.js";
 import * as jQuery from "jquery";
 import "bootstrap-select";
-import { JsonBot } from "./botTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -98,6 +99,10 @@ jq(function ($) {
         "50%: Imp. Armor Integrity Analyzer": 50,
         "66%: Adv. Armor Integrity Analyzer": 66,
         "90%: Exp. Armor Integrity Analyzer": 90,
+        "20%: Armor Integrity Analyzer (B11)": 20,
+        "30%: Imp. Armor Integrity Analyzer (B11)": 30,
+        "40%: Adv. Armor Integrity Analyzer (B11)": 40,
+        "50%: Exp. Armor Integrity Analyzer (B11)": 50,
     };
 
     // Charger damage increase values
@@ -220,6 +225,7 @@ jq(function ($) {
         "6%: Imp. Target Analyzer": 6,
         "8%: Adv. Target Analyzer": 8,
         "12%: Exp. Target Analyzer": 12,
+        "10%: Exp. Target Analyzer (B11)": 10,
     };
 
     $(() => init());
@@ -475,9 +481,10 @@ jq(function ($) {
 
     // Initialize the page state
     function init() {
-        initData(items as { [key: string]: JsonItem }, bots as any as { [key: string]: JsonBot });
+        initData(items as any, bots as any);
 
         createHeader("Simulator", $("#headerContainer"));
+        $("#beta11Checkbox").prop("checked", false);
         registerDisableAutocomplete($(document));
 
         // Set initial state
@@ -531,6 +538,20 @@ jq(function ($) {
 
             comparisonChart.options.title!.text = label;
             comparisonChart.update();
+        });
+
+        $("#beta11Checkbox").on("change", () => {
+            const isB11 = $("#beta11Checkbox").prop("checked");
+            const newItems = (isB11 ? itemsB11 : items) as any;
+            const newBots = (isB11 ? botsB11 : bots) as any;
+
+            initData(newItems, newBots);
+
+            // Initialize page state
+            resetValues();
+            updateChoices();
+
+            ($("#beta11Checkbox").parent() as any).tooltip("hide");
         });
 
         $(window).on("click", (e) => {
@@ -871,6 +892,8 @@ jq(function ($) {
             return;
         }
 
+        const isB11 = $("#beta11Checkbox").prop("checked");
+
         // Set up initial calculation state
         const bot = botData[botName];
         const parts: SimulatorPart[] = [];
@@ -911,7 +934,7 @@ jq(function ($) {
             initialCoreIntegrity: bot.coreIntegrity,
             parts: parts,
             regen: getRegen(bot),
-            resistances: bot.resistances,
+            resistances: bot.resistances === undefined ? {} : bot.resistances,
             totalCoverage: bot.totalCoverage,
         };
 
@@ -1010,13 +1033,19 @@ jq(function ($) {
             }
 
             // Get crit chance, only apply target analyzer if there's a specific bonus
-            const critical = def.critical === undefined || def.critical === 0 ? 0 : def.critical + critBonus;
+            let critical: number;
+            if (def.criticalType === Critical.Meltdown) {
+                // Meltdown ignores target analyzer bonus
+                critical = def.critical!;
+            } else {
+                critical = def.critical === undefined || def.critical === 0 ? 0 : def.critical + critBonus;
+            }
 
             // Calculate base accuracy that can't change over the course of the fight
             let baseAccuracy = melee ? initialMeleeAccuracy : initialRangedAccuracy;
 
             if (!melee) {
-                baseAccuracy += targetingComputerBonus + 2 * numTreads;
+                baseAccuracy += targetingComputerBonus + isB11 ? 0 : 2 * numTreads;
             }
 
             // Size bonus/penalty
@@ -1059,7 +1088,8 @@ jq(function ($) {
                 accelerated: def.type === "Energy Gun" || def.type === "Energy Cannon",
                 accuracy: baseAccuracy,
                 baseAccuracy: baseAccuracy,
-                critical: critical,
+                criticalChance: critical,
+                criticalType: def.criticalType,
                 damageMin: damageMin,
                 damageMax: damageMax,
                 damageType: damageType,
@@ -1176,6 +1206,7 @@ jq(function ($) {
             botState: botState,
             endCondition: endCondition,
             initialBotState: botState,
+            isB11: isB11,
             killTus: {},
             killVolleys: {},
             offensiveState: offensiveState,
@@ -1365,7 +1396,9 @@ jq(function ($) {
         const oldBot = select.selectpicker("val") as any as string;
         select.empty();
 
-        Object.keys(botData).forEach((name) => {
+        const sortedBots = Object.keys(botData);
+        sortedBots.sort();
+        sortedBots.forEach((name) => {
             const bot = botData[name];
 
             if (bot.categories.some((c) => c === "Spoilers")) {

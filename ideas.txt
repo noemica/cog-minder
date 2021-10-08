@@ -1,9 +1,8 @@
 Small ideas:
 
 Medium ideas:
-- Ignore obsolete parts in 
+- Add ignore obsolete parts in search
 
 Big ideas:
 - Save search/parts in URL
 - Full spreadsheet view (like gallery export html)
-- Show diffs between parts

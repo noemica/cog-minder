@@ -182,8 +182,8 @@ jq(function ($) {
 
         $("#beta11Checkbox").on("change", () => {
             const isB11 = $("#beta11Checkbox").prop("checked");
-            const newItems = isB11 ? itemsB11 : (items as any);
-            const newBots = isB11 ? botsB11 : (bots as any);
+            const newItems = (isB11 ? itemsB11 : items) as any;
+            const newBots = (isB11 ? botsB11 : bots) as any;
 
             initData(newItems, newBots);
 
