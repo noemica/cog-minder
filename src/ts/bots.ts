@@ -3,7 +3,7 @@ import * as botsB11 from "../json/bots_b11.json";
 import * as items from "../json/items.json";
 import * as itemsB11 from "../json/items_b11.json";
 import { Bot, JsonBot } from "./botTypes";
-import { botData, createBotDataContent, getBot, initData, nameToId, setSpoilersState } from "./common";
+import { botData, createBotDataContent, getBot, initData, nameToId } from "./common";
 import {
     getSpoilersState,
     getSelectedButtonId,
@@ -11,6 +11,9 @@ import {
     enableBotInfoItemPopovers,
     createHeader,
     registerDisableAutocomplete,
+    setSpoilersState,
+    getB11State,
+    setB11State,
 } from "./commonJquery";
 
 import * as jQuery from "jquery";
@@ -142,7 +145,7 @@ jq(function ($) {
 
         createBots();
         createHeader("Bots", $("#headerContainer"));
-        $("#beta11Checkbox").prop("checked", false);
+        $("#beta11Checkbox").prop("checked", getB11State());
         registerDisableAutocomplete($(document));
 
         // Set initial state
@@ -182,6 +185,7 @@ jq(function ($) {
 
         $("#beta11Checkbox").on("change", () => {
             const isB11 = $("#beta11Checkbox").prop("checked");
+            setB11State(isB11);
             const newItems = (isB11 ? itemsB11 : items) as any;
             const newBots = (isB11 ? botsB11 : bots) as any;
 

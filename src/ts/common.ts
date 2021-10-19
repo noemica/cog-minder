@@ -414,7 +414,7 @@ export function createBotDataContent(bot: Bot): string {
     }
 
     // Add Resistances/immunities
-    const resistances = Object.keys(valueOrDefault(bot.resistances, {}));
+    const resistances = Object.keys(valueOrDefault(bot.resistances, {} as any));
     const immunities = bot.immunities;
     if (resistances.length > 0 || immunities.length > 0) {
         html += `
@@ -423,7 +423,7 @@ export function createBotDataContent(bot: Bot): string {
         `;
 
         resistances.forEach(damageType => {
-            const resistValue = bot.resistances[damageType];
+            const resistValue = bot.resistances![damageType];
 
             if (resistValue === undefined) {
                 return;
@@ -1378,11 +1378,6 @@ function parseIntOrUndefined(value: string | undefined): number | undefined {
 // Gets a random integer between the min and max values (inclusive)
 export function randomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-// Gets the stored spoilers state
-export function setSpoilersState(state: string): void {
-    window.localStorage.setItem("spoilers", state);
 }
 
 // Returns the value if it's not undefined, otherwise return defaultVal

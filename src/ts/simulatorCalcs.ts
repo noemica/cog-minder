@@ -695,8 +695,6 @@ export function calculateResistDamage(botState: BotState, damage: number, damage
 
 // Returns a bot's defensive state based on parts, also adds new relevant
 // properties to parts
-// Adding ad-hoc properties is a little messy but making a bunch of wrapper
-// objects wouldn't really do very much
 export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduction: string): DefensiveState {
     const state: DefensiveState = {
         antimissile: [],

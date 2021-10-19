@@ -12,15 +12,17 @@ import {
     initData,
     itemData,
     parseIntOrDefault,
-    setSpoilersState,
 } from "./common";
 import {
     createHeader,
     enableBotInfoItemPopovers,
+    getB11State,
     getSpoilersState,
     refreshSelectpicker,
     registerDisableAutocomplete,
     resetButtonGroup,
+    setB11State,
+    setSpoilersState,
 } from "./commonJquery";
 import { Critical, DamageType, ItemCategory, ItemSlot, ItemType, WeaponItem } from "./itemTypes";
 import {
@@ -484,7 +486,7 @@ jq(function ($) {
         initData(items as any, bots as any);
 
         createHeader("Simulator", $("#headerContainer"));
-        $("#beta11Checkbox").prop("checked", false);
+        $("#beta11Checkbox").prop("checked", getB11State());
         registerDisableAutocomplete($(document));
 
         // Set initial state
@@ -542,6 +544,7 @@ jq(function ($) {
 
         $("#beta11Checkbox").on("change", () => {
             const isB11 = $("#beta11Checkbox").prop("checked");
+            setB11State(isB11);
             const newItems = (isB11 ? itemsB11 : items) as any;
             const newBots = (isB11 ? botsB11 : bots) as any;
 

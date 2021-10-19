@@ -12,15 +12,17 @@ import {
     isPartMelee,
     itemData,
     parseIntOrDefault,
-    setSpoilersState,
 } from "./common";
 import {
     createHeader,
+    getB11State,
     getSelectedButtonId,
     getSpoilersState,
     registerDisableAutocomplete,
     resetButtonGroup,
     setActiveButtonGroupButton,
+    setB11State,
+    setSpoilersState,
 } from "./commonJquery";
 import {
     Actuator,
@@ -460,7 +462,9 @@ jq(function ($) {
         });
 
         $("#beta11Checkbox").on("change", () => {
-            const newItems = $("#beta11Checkbox").prop("checked") ? itemsB11 : items;
+            const isB11 = $("#beta11Checkbox").prop("checked");
+            setB11State(isB11);
+            const newItems = isB11 ? itemsB11 : items;
             initData(newItems as { [key: string]: JsonItem }, undefined);
 
             // Initialize page state
@@ -521,7 +525,7 @@ jq(function ($) {
     // Loads the initial page state from the hash, using defaults if there is none
     function loadStateFromHash() {
         const hash = window.location.hash.substring(1);
-        initialPageState = { b11: false, parts: defaultParts };
+        initialPageState = { b11: getB11State(), parts: defaultParts };
 
         if (hash.length === 0) {
             // No parts specified, use the defaults

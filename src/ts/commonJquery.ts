@@ -230,6 +230,11 @@ export function enableBotInfoItemPopovers(selector: JQuery<HTMLElement>): void {
     });
 }
 
+// Gets the stored boolean state
+export function getB11State(): boolean {
+    return window.localStorage.getItem("b11") === "true";
+}
+
 // Gets the ID of the selected button in a button group
 export function getSelectedButtonId(selector: JQuery<HTMLElement>): string {
     return selector.children(".active").attr("id") as string;
@@ -252,13 +257,12 @@ export function registerDisableAutocomplete(document: JQuery<Document>): void {
     });
 }
 
-// Clears a button group's state and sets the first item to be active
-export function resetButtonGroup(group: JQuery<HTMLElement>): void {
-    group.children().removeClass("active");
-    group.find("input").prop("checked", false);
+export function refreshSelectpicker(selector: JQuery<HTMLElement>): void {
+    selector.selectpicker("refresh");
 
-    group.children("label:first-of-type").addClass("active");
-    group.children("label:first-of-type > input").prop("checked", true);
+    // Minor hack, the btn-light class is auto-added to dropdowns with search
+    // but it doesn't really fit with everything else
+    selector.next().removeClass("btn-light");
 }
 
 // Clears a button group's state and sets the item at the selected index to be active
@@ -270,10 +274,21 @@ export function setActiveButtonGroupButton(group: JQuery<HTMLElement>, index: nu
     group.children(`label:nth-of-type(${index}) > input`).prop("checked", true);
 }
 
-export function refreshSelectpicker(selector: JQuery<HTMLElement>): void {
-    selector.selectpicker("refresh");
+// Clears a button group's state and sets the first item to be active
+export function resetButtonGroup(group: JQuery<HTMLElement>): void {
+    group.children().removeClass("active");
+    group.find("input").prop("checked", false);
 
-    // Minor hack, the btn-light class is auto-added to dropdowns with search
-    // but it doesn't really fit with everything else
-    selector.next().removeClass("btn-light");
+    group.children("label:first-of-type").addClass("active");
+    group.children("label:first-of-type > input").prop("checked", true);
+}
+
+// Gets the stored spoilers state
+export function setSpoilersState(state: string): void {
+    window.localStorage.setItem("spoilers", state);
+}
+
+// Gets the stored boolean state
+export function setB11State(state: boolean): void {
+    return window.localStorage.setItem("b11", state.toString());
 }

@@ -1,22 +1,16 @@
 import * as items from "../json/items.json";
 import * as itemsB11 from "../json/items_b11.json";
-import {
-    createItemDataContent,
-    gallerySort,
-    getItem,
-    initData,
-    itemData,
-    nameToId,
-    parseIntOrDefault,
-    setSpoilersState,
-} from "./common";
+import { createItemDataContent, gallerySort, getItem, initData, itemData, nameToId, parseIntOrDefault } from "./common";
 import {
     createHeader,
+    getB11State,
     getSelectedButtonId,
     getSpoilersState,
     refreshSelectpicker,
     registerDisableAutocomplete,
     resetButtonGroup,
+    setB11State,
+    setSpoilersState,
 } from "./commonJquery";
 import {
     Critical,
@@ -822,7 +816,7 @@ jq(function ($) {
         initData(items as any, undefined);
 
         createHeader("Parts", $("#headerContainer"));
-        $("#beta11Checkbox").prop("checked", false);
+        $("#beta11Checkbox").prop("checked", getB11State());
         resetButtonGroup($("#modeContainer"));
         registerDisableAutocomplete($(document));
 
@@ -911,7 +905,9 @@ jq(function ($) {
         });
 
         $("#beta11Checkbox").on("change", () => {
-            const newItems = $("#beta11Checkbox").prop("checked") ? itemsB11 : items;
+            const isB11 = $("#beta11Checkbox").prop("checked");
+            setB11State(isB11);
+            const newItems = isB11 ? itemsB11 : items;
 
             initData(newItems as any, undefined);
 
