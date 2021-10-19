@@ -813,7 +813,8 @@ jq(function ($) {
 
     // Initialize the page state
     function init() {
-        initData(items as any, undefined);
+        const isB11 = getB11State();
+        initData((isB11 ? itemsB11 : items) as any, undefined);
 
         createHeader("Parts", $("#headerContainer"));
         $("#beta11Checkbox").prop("checked", getB11State());

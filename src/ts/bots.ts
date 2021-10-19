@@ -141,7 +141,8 @@ jq(function ($) {
 
     // Initialize the page state
     function init() {
-        initData(items as { [key: string]: JsonItem }, bots as any as { [key: string]: JsonBot });
+        const isB11 = getB11State();
+        initData((isB11 ? itemsB11 : items) as any, (isB11 ? botsB11 : bots) as any);
 
         createBots();
         createHeader("Bots", $("#headerContainer"));
