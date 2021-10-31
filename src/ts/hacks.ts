@@ -1,7 +1,7 @@
 import * as jQuery from "jquery";
 import "bootstrap";
-import { createHeader, getSpoilersState, registerDisableAutocomplete, resetButtonGroup } from "./commonJquery";
-import { parseIntOrDefault, setSpoilersState, Spoiler } from "./common";
+import { createHeader, getSpoilersState, registerDisableAutocomplete, resetButtonGroup, setSpoilersState } from "./commonJquery";
+import { parseIntOrDefault, Spoiler } from "./common";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -137,6 +137,7 @@ jq(function ($) {
             name: "Scanalyzer",
             dataCoreApplies: false,
             hacks: [
+                { name: "Force(Extract)", description: "Extracts a random number of part schematics from the machine. Most schematics will be non-prototype. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
                 { name: "Insert([Part Name])", description: "Insert and scan a part to prepare for analysis.", baseChance: 80, indirect: Indirect.Never },
                 { name: "Scanalyze - rating 1", description: "Analyze the contained part to obtain its schematic for use at a Fabricator.", baseChance: 95, indirect: Indirect.Never },
                 { name: "Scanalyze - rating 2", description: "Analyze the contained part to obtain its schematic for use at a Fabricator.", baseChance: 90, indirect: Indirect.Never },
@@ -250,6 +251,7 @@ jq(function ($) {
             name: "Terminal - Door",
             dataCoreApplies: false,
             hacks: [
+                { name: "Control(Seal)", description: "Manipulate seal controls to allow access from subsurface cave network.", baseChance: 0, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Redacted" },
                 { name: "Open - Access surface exit", description: "Open the non-automatic door associated with this terminal.", baseChance: 7, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoilers" },
                 { name: "Open - Access Command backdoors", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Redacted" },
                 { name: "Open - Command Main.C door", description: "Open the non-automatic door associated with this terminal.", baseChance: 60, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Redacted" },
