@@ -306,6 +306,7 @@ export type JsonItem = {
     Damage?: string;
     "Damage Type"?: DamageType;
     Spectrum?: Spectrum;
+    Arc?: string;
     Disruption?: string;
     Salvage?: string;
     Critical?: string;

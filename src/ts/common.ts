@@ -825,7 +825,7 @@ export function createItemDataContent(baseItem: Item): string {
 
         html += `
         ${textLine("Time", baseItem.fabrication.time)}
-        ${textLine("Matter", getFabricationMatterString(baseItem.fabrication))}
+        ${baseItem.fabrication?.matter !== undefined ? textLine("Matter", getFabricationMatterString(baseItem.fabrication)) : ""}
         ${textLine("Components", "None")}
         `;
     }
@@ -1178,7 +1178,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     shotMatter: parseIntOrUndefined(item["Shot Matter"]),
                     spectrum: item.Spectrum,
                     waypoints: item.Waypoints,
-                    arc: undefined, // Export bug, arc is never included
+                    arc: parseIntOrUndefined(item.Arc),
                     index: index,
                     specialProperty: specialProperty,
                 };

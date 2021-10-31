@@ -106,6 +106,7 @@ categories = {
         'Delay',
         'Overload Stability',
         'Waypoints',
+        "Arc",
     ],
     'projectile': [
         'Projectile Count',
@@ -127,12 +128,11 @@ categories = {
         'Explosion Heat Transfer',
         'Explosion Spectrum',
         'Explosion Disruption',
-        'Explosion Salvage'
+        'Explosion Salvage',
     ],
     'fabrication': [
         'Fabrication Number',
         'Fabrication Time',
-        'Fabrication Matter',
     ],
 }
 
@@ -181,7 +181,11 @@ defaults = {
 
 
 def get_value(row, name):
-    val = row[index_lookup[name]]
+    val = ''
+    try:
+        val = row[index_lookup[name]]
+    except Exception as e:
+        print(e)
 
     if val == '':
         if name in defaults:
