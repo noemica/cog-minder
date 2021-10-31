@@ -2,7 +2,7 @@ import * as bots from "../json/bots.json";
 import * as botsB11 from "../json/bots_b11.json";
 import * as items from "../json/items.json";
 import * as itemsB11 from "../json/items_b11.json";
-import { Bot, JsonBot } from "./botTypes";
+import { Bot } from "./botTypes";
 import { botData, createBotDataContent, getBot, initData, nameToId } from "./common";
 import {
     getSpoilersState,
@@ -19,7 +19,6 @@ import {
 import * as jQuery from "jquery";
 import "popper.js";
 import "bootstrap";
-import { JsonItem } from "./itemTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {

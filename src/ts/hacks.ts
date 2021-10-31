@@ -1,6 +1,12 @@
 import * as jQuery from "jquery";
 import "bootstrap";
-import { createHeader, getSpoilersState, registerDisableAutocomplete, resetButtonGroup, setSpoilersState } from "./commonJquery";
+import {
+    createHeader,
+    getSpoilersState,
+    registerDisableAutocomplete,
+    resetButtonGroup,
+    setSpoilersState,
+} from "./commonJquery";
 import { parseIntOrDefault, Spoiler } from "./common";
 
 const jq = jQuery.noConflict();
