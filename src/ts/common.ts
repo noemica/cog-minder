@@ -713,7 +713,7 @@ export function createItemDataContent(baseItem: Item): string {
                         ${rangeLine("Damage", item.explosionDamage, getExplosionValue(item), undefined, 0, 100, ColorScheme.Green)}
                         ${valueLineWithDefault(" Falloff", item.falloff === undefined ? undefined : "-" + item.falloff, "0")}
                         ${textLine("Type", item.explosionType)}
-                        ${textLineWithDefault("Spectrum", item.explosionSpectrum, "N/A")}
+                        ${item.explosionHeatTransfer === undefined ? textLineWithDefault("Spectrum", item.explosionSpectrum, "N/A") : textLine("Heat Transfer", item.explosionHeatTransfer)}
                         ${rangeLineUnit("Disruption", item.explosionDisruption?.toString(), item.explosionDisruption, "%", "0", 0, 50, ColorScheme.Green)}
                         ${valueLineWithDefault("Salvage", item.explosionSalvage, "0")}
                         `;
