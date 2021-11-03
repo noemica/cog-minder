@@ -1049,7 +1049,7 @@ jq(function ($) {
             let baseAccuracy = melee ? initialMeleeAccuracy : initialRangedAccuracy;
 
             if (!melee) {
-                baseAccuracy += targetingComputerBonus + isB11 ? 0 : 2 * numTreads;
+                baseAccuracy += targetingComputerBonus + (isB11 ? 0 : 2 * numTreads);
             }
 
             // Size bonus/penalty
