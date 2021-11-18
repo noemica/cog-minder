@@ -864,7 +864,7 @@ export function flatten<T>(arrays: Array<Array<T>>): Array<T> {
 export function gallerySort(a: string, b: string): number {
     const noPrefixA = getNoPrefixName(a);
     const noPrefixB = getNoPrefixName(b);
-    let res = noPrefixA.localeCompare(noPrefixB);
+    let res = noPrefixA < noPrefixB ? -1 : noPrefixA > noPrefixB ? 1 : 0;
 
     if (res === 0) {
         // If no-prefix names match then use index in gallery export
