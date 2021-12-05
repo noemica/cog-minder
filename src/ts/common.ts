@@ -975,10 +975,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
         if (category == ItemCategory.Alien) rating += 0.75;
         else if (category == ItemCategory.Prototype) rating += 0.5;
 
-        let ratingString = item.Rating;
-        if (category == ItemCategory.Alien) ratingString += "*";
-        else if (category == ItemCategory.Prototype) ratingString += "**";
-
+        const ratingString = item.Rating;
         const fabrication: FabricationStats | undefined =
             item["Fabrication Number"] === undefined
                 ? undefined
@@ -1162,6 +1159,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     specialTrait: item["Special Trait"],
                     critical: critical,
                     criticalType: criticalType,
+                    criticalString: item.Critical,
                     delay: parseIntOrUndefined(item.Delay),
                     explosionHeatTransfer: item["Explosion Heat Transfer"],
                     explosionType: item["Explosion Type"],

@@ -236,6 +236,7 @@ export type WeaponItem = BaseItem & {
     range: number;
     shotEnergy?: number;
     shotHeat?: number;
+    shotMatter?: number;
     projectileCount: number;
     damage?: string;
     damageType?: DamageType;
@@ -244,6 +245,7 @@ export type WeaponItem = BaseItem & {
     salvage?: number;
     critical?: number;
     criticalType?: Critical;
+    criticalString?: string;
     targeting?: number;
     penetration?: string;
     delay?: number;
@@ -259,7 +261,6 @@ export type WeaponItem = BaseItem & {
     explosionSpectrum?: Spectrum;
     explosionDisruption?: number;
     explosionSalvage?: string;
-    shotMatter?: number;
     recoil?: number;
     life?: string;
 };

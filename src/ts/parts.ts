@@ -36,6 +36,7 @@ jq(function ($) {
     enum ViewMode {
         Simple = "Simple",
         Comparison = "Comparison",
+        Spreadsheet = "Spreadsheet",
     }
 
     // Category ID ->
@@ -51,8 +52,9 @@ jq(function ($) {
         categoryUnobtainable: 8,
     };
 
-    // Map of item names to item elements, created at page init
-    const itemElements = {};
+    // Maps of item names to item elements, created at page init
+    const simpleItemElements = {};
+    const spreadsheetItemElements = {};
 
     // Spoiler category HTML ids
     const spoilerCategoryIds = ["categoryAlien", "categoryTesting", "categoryGolem", "utilTypeArtifact"];
@@ -119,6 +121,159 @@ jq(function ($) {
         slotPropulsion: "propTypeContainer",
         slotUtility: "utilTypeContainer",
         slotWeapon: "weaponTypeContainer",
+    };
+
+    // Slot categories to show for spreadsheet view
+    type partSlotCategory = {
+        name: string;
+        propertyName?: string;
+        propertyNames?: string[];
+    };
+    type PartSlotCategoryLookup = { [key: string]: partSlotCategory[] };
+    const otherSlotCategories: PartSlotCategoryLookup = {
+        Overview: [
+            { name: "Name" },
+            { name: "Type" },
+            { name: "Rating", propertyName: "ratingString" },
+            { name: "Size" },
+            { name: "Integrity" },
+            { name: "Life" },
+        ],
+        Effect: [{ name: "Effect" }, { name: "Description" }],
+    };
+    const powerSlotCategories: PartSlotCategoryLookup = {
+        Overview: [
+            { name: "Name" },
+            { name: "Type" },
+            { name: "Rating", propertyName: "ratingString" },
+            { name: "Size" },
+            { name: "Mass" },
+            { name: "Integrity" },
+            { name: "Coverage" },
+            { name: "Heat", propertyName: "heatGeneration" },
+        ],
+        Power: [
+            { name: "Rate", propertyName: "energyGeneration" },
+            { name: "Storage", propertyName: "energyStorage" },
+            { name: "Stability", propertyName: "powerStability" },
+        ],
+        Fabrication: [
+            { name: "Matter", propertyNames: ["fabrication", "matter"] },
+            { name: "Count", propertyNames: ["fabrication", "number"] },
+            { name: "Time", propertyNames: ["fabrication", "time"] },
+        ],
+    };
+    const propulsionSlotCategories: PartSlotCategoryLookup = {
+        Overview: [
+            { name: "Name" },
+            { name: "Type" },
+            { name: "Rating", propertyName: "ratingString" },
+            { name: "Size" },
+            { name: "Integrity" },
+            { name: "Coverage" },
+        ],
+        Upkeep: [
+            { name: "Energy", propertyName: "energyUpkeep" },
+            { name: "Heat", propertyName: "heatGeneration" },
+        ],
+        Propulsion: [
+            { name: "Time/Move", propertyName: "timePerMove" },
+            { name: "Mod/Extra", propertyName: "modPerExtra" },
+            { name: "drag" },
+            { name: "Energy", propertyName: "energyPerMove" },
+            { name: "Heat", propertyName: "heatPerMove" },
+            { name: "Support" },
+            { name: "Penalty" },
+            { name: "Burnout" },
+            { name: "Siege" },
+        ],
+        Fabrication: [
+            { name: "Matter", propertyNames: ["fabrication", "matter"] },
+            { name: "Count", propertyNames: ["fabrication", "number"] },
+            { name: "Time", propertyNames: ["fabrication", "time"] },
+        ],
+    };
+    const utilitySlotCategories: PartSlotCategoryLookup = {
+        Overview: [
+            { name: "Name" },
+            { name: "Type" },
+            { name: "Rating", propertyName: "ratingString" },
+            { name: "Size" },
+            { name: "Mass" },
+            { name: "Integrity" },
+            { name: "Coverage" },
+            { name: "Special Trait", propertyName: "specialTrait" },
+        ],
+        Upkeep: [
+            { name: "Energy", propertyName: "energyUpkeep" },
+            { name: "Matter", propertyName: "matterUpkeep" },
+            { name: "Heat", propertyName: "heatGeneration" },
+        ],
+        Fabrication: [
+            { name: "Matter", propertyNames: ["fabrication", "matter"] },
+            { name: "Count", propertyNames: ["fabrication", "number"] },
+            { name: "Time", propertyNames: ["fabrication", "time"] },
+        ],
+        Effect: [{ name: "Effect" }, { name: "Description" }],
+    };
+    const WeaponSlotCategories: PartSlotCategoryLookup = {
+        Overview: [
+            { name: "Name" },
+            { name: "Type" },
+            { name: "Rating", propertyName: "ratingString" },
+            { name: "Size" },
+            { name: "Mass" },
+            { name: "Integrity" },
+            { name: "Coverage" },
+            { name: "Special Trait", propertyName: "specialTrait" },
+        ],
+        Shot: [
+            { name: "Range" },
+            { name: "Energy", propertyName: "shotEnergy" },
+            { name: "Matter", propertyName: "shotMatter" },
+            { name: "Heat", propertyName: "shotHeat" },
+            { name: "Recoil" },
+            { name: "Targeting" },
+            { name: "Delay" },
+            { name: "Stability", propertyName: "overloadStability" },
+            { name: "Waypoints" },
+        ],
+        Projectile: [
+            { name: "Arc" },
+            { name: "Count", propertyName: "projectileCount" },
+            { name: "Damage" },
+            { name: "Type", propertyName: "damageType" },
+            { name: "Critical", propertyName: "criticalString" },
+            { name: "Penetration" },
+            { name: "Heat Transfer", propertyName: "heatTransfer" },
+            { name: "Spectrum" },
+            { name: "Disruption" },
+            { name: "Salvage" },
+        ],
+        Explosion: [
+            { name: "Radius", propertyName: "explosionRadius" },
+            { name: "Damage", propertyName: "explosionDamage" },
+            { name: "Falloff", propertyName: "explosionFalloff" },
+            { name: "Type", propertyName: "explosionType" },
+            { name: "Heat Transfer", propertyName: "explosionHeatTransfer" },
+            { name: "Spectrum", propertyName: "explosionSpectrum" },
+            { name: "Disruption", propertyName: "explosionDisruption" },
+            { name: "Salvage", propertyName: "explosionSalvage" },
+        ],
+        Fabrication: [
+            { name: "Matter", propertyNames: ["fabrication", "matter"] },
+            { name: "Count", propertyNames: ["fabrication", "number"] },
+            { name: "Time", propertyNames: ["fabrication", "time"] },
+        ],
+        Effect: [{ name: "Effect" }, { name: "Description" }],
+    };
+
+    const slotCategories: { [key: string]: PartSlotCategoryLookup } = {
+        "N/A": otherSlotCategories,
+        Power: powerSlotCategories,
+        Propulsion: propulsionSlotCategories,
+        Utility: utilitySlotCategories,
+        Weapon: WeaponSlotCategories,
     };
 
     $(() => init());
@@ -613,11 +768,15 @@ jq(function ($) {
         return html;
     }
 
-    // Creates buttons for all items
-    function createItems() {
+    // Creates elements for all simple items
+    function createSimpleItems() {
+        // Clear old items
+        ($('#simpleItemsGrid > [data-toggle="popover"]') as any).popover("dispose");
+        $("#simpleItemsGrid").empty();
+
         // Create grid items
         const itemNames = Object.keys(itemData);
-        const itemsGrid = $("#itemsGrid");
+        const itemsGrid = $("#simpleItemsGrid");
         itemNames.forEach((itemName) => {
             const item = itemData[itemName];
             const itemId = nameToId(itemName);
@@ -633,7 +792,7 @@ jq(function ($) {
                  </button>`,
             );
 
-            itemElements[itemName] = element;
+            simpleItemElements[itemName] = element;
             itemsGrid.append(element);
         });
 
@@ -652,7 +811,90 @@ jq(function ($) {
         selects[1].selectpicker("val", "Hvy. Assault Rifle");
 
         // Enable popovers
-        ($('#itemsGrid > [data-toggle="popover"]') as any).popover();
+        ($('#simpleItemsGrid > [data-toggle="popover"]') as any).popover();
+    }
+
+    // Creates elements for all spreadsheet items
+    function createSpreadsheetItems() {
+        if (getViewMode() !== ViewMode.Spreadsheet) {
+            // No need to calculate if not in spreadsheet mode
+            return;
+        }
+
+        // Clear old items
+        const table = $("#spreadsheetItemsTable");
+        // ($('#spreadsheetItemsTable [data-toggle="popover"]') as any).popover("dispose");
+        table.empty();
+
+        // Create spreadsheet header elements first
+        const slotId = getSelectedButtonId($("#slotsContainer"));
+        if (!(slotId in slotMap)) {
+            // No items to create - slot must be chosen first
+            return;
+        }
+        const itemSlot = slotMap[slotId] as ItemSlot;
+        const lookup = slotCategories[itemSlot];
+        const tableHeader = $("<thead></thead>");
+        const tableHeaderRow = $("<tr></tr>");
+
+        // The first header row contains the category groupings
+        tableHeader.append(tableHeaderRow);
+        table.append(tableHeader);
+        Object.keys(lookup).forEach((categoryName) => {
+            tableHeaderRow.append(`<th colspan=${lookup[categoryName].length}>${categoryName}</th>`);
+        });
+
+        // The second header row contains all the category names
+        const nameRow = $("<tr></tr>");
+        tableHeader.append(nameRow);
+        Object.keys(lookup).forEach((categoryName) => {
+            lookup[categoryName].forEach((category) => {
+                nameRow.append(`<th>${category.name}</th>`);
+            });
+        });
+
+        // Then create the body
+        const tableBody = $("<tbody></tbody>");
+        table.append(tableBody);
+
+        // Subsequent rows contain info about each part
+        const itemNames = Object.keys(itemData);
+        itemNames.forEach((itemName) => {
+            const item = itemData[itemName];
+            const row = $("<tr></tr>");
+
+            if (item.slot !== itemSlot) {
+                return;
+            }
+
+            Object.keys(lookup).forEach((categoryName) => {
+                const categoryList = lookup[categoryName];
+                categoryList.forEach((category) => {
+                    let value: any = undefined;
+                    if (category.propertyName !== undefined) {
+                        // If explicit property name given then use that
+                        value = item[category.propertyName];
+                    } else if (category.propertyNames !== undefined) {
+                        // If multiple names then use them in sequence
+                        value = item[category.propertyNames[0]];
+                        for (let i = 1; i < category.propertyNames.length; i++) {
+                            if (value !== undefined) {
+                                value = value[category.propertyNames[i]];
+                            }
+                        }
+                    } else {
+                        // No property name, default to the category name lowercase'd
+                        value = item[category.name.toLowerCase()];
+                    }
+
+                    const cellValue = value === undefined ? "" : value.toString();
+                    row.append(`<td>${cellValue}</td>`);
+                });
+            });
+
+            spreadsheetItemElements[itemName] = row;
+            table.append(row);
+        });
     }
 
     // Gets a filter function combining all current filters
@@ -806,6 +1048,8 @@ jq(function ($) {
 
         if (modeId === "modeComparison") {
             return ViewMode.Comparison;
+        } else if (modeId === "modeSpreadsheet") {
+            return ViewMode.Spreadsheet;
         }
 
         return ViewMode.Simple;
@@ -822,7 +1066,8 @@ jq(function ($) {
         registerDisableAutocomplete($(document));
 
         // Initialize page state
-        createItems();
+        createSimpleItems();
+        createSpreadsheetItems();
         updateCategoryVisibility();
         resetFilters();
         updateComparison();
@@ -844,6 +1089,7 @@ jq(function ($) {
         $("#modeContainer > label > input").on("change", (e) => {
             // Tooltips on buttons need to be explicitly hidden on press
             ($(e.target).parent() as any).tooltip("hide");
+            createSpreadsheetItems();
             updateItems();
         });
         $("#depth").on("input", updateItems);
@@ -855,6 +1101,7 @@ jq(function ($) {
             resetFilters();
         });
         $("#slotsContainer > label > input").on("change", () => {
+            createSpreadsheetItems();
             updateTypeFilters();
             updateItems();
         });
@@ -912,11 +1159,9 @@ jq(function ($) {
 
             initData(newItems as any, undefined);
 
-            ($('#itemsGrid > [data-toggle="popover"]') as any).popover("dispose");
-            $("#itemsGrid").empty();
-
             // Initialize page state
-            createItems();
+            createSimpleItems();
+            createSpreadsheetItems();
             updateCategoryVisibility();
             resetFilters();
 
@@ -1006,6 +1251,39 @@ jq(function ($) {
             return aValue - bValue;
         }
 
+        function heatSort(a: string, b: string) {
+            function getValue(val: string | undefined) {
+                if (val === undefined) {
+                    return 0;
+                }
+                if (val.startsWith("Minimal")) {
+                    return 5;
+                }
+                if (val.startsWith("Low")) {
+                    return 25;
+                }
+                if (val.startsWith("Medium")) {
+                    return 37;
+                }
+                if (val.startsWith("High")) {
+                    return 50;
+                }
+                if (val.startsWith("Massive")) {
+                    return 80;
+                }
+                if (val.startsWith("Deadly")) {
+                    return 100;
+                }
+
+                return 0;
+            }
+
+            const aValue = getValue(a);
+            const bValue = getValue(b);
+
+            return aValue - bValue;
+        }
+
         function integerSort(a: string, b: string) {
             let aValue = parseInt(a);
             let bValue = parseInt(b);
@@ -1041,11 +1319,12 @@ jq(function ($) {
             Falloff: { key: "falloff", sort: integerSort },
             "Heat/Move": { key: "heatPerMove", sort: integerSort },
             "Heat Generation": { key: "heatGeneration", sort: integerSort },
+            "Heat Transfer": { keys: ["heatTransfer", "explosionHeatTransfer"], sort: heatSort },
             "Matter Upkeep": { key: "matterUpkeep", sort: integerSort },
             Penalty: { key: "penalty", sort: integerSort },
             "Projectile Count": { key: "projectileCount", sort: integerSort },
             Range: { key: "range", sort: integerSort },
-            Salvage: { key: "salvage", sort: integerSort },
+            Salvage: { keys: ["salvage", "explosionSalvage"], sort: integerSort },
             "Shot Energy": { key: "shotEnergy", sort: integerSort },
             "Shot Heat": { key: "shotHeat", sort: integerSort },
             "Shot Matter": { key: "shotMatter", sort: integerSort },
@@ -1057,16 +1336,18 @@ jq(function ($) {
 
         // Do initial sort
         const primaryObject = sortKeyMap[$("#primarySort").text()];
-        const primaryKeys = "key" in primaryObject ? [primaryObject.key] : primaryObject.keys;
+        const primaryKeys: string[] = "key" in primaryObject ? [primaryObject.key] : primaryObject.keys;
         const primarySort = primaryObject.sort;
         itemNames.sort((a, b) => {
             const itemA = getItem(a);
             const itemB = getItem(b);
 
-            const aKey = primaryKeys.find((key: string) => key in itemA);
-            const bKey = primaryKeys.find((key: string) => key in itemB);
+            const aKey = primaryKeys.find((key: string) => key in itemA && itemA[key] !== undefined);
+            const bKey = primaryKeys.find((key: string) => key in itemB && itemB[key] !== undefined);
+            console.log(`itemA: ${itemA.name}, aKey: ${aKey}`);
+            console.log(`itemB: ${itemB.name}, bKey: ${bKey}`);
 
-            return primarySort(itemA[aKey], itemB[bKey]);
+            return primarySort(itemA[aKey!], itemB[bKey!]);
         });
 
         if ($("#primarySortDirection").text().trim() === "Descending") {
@@ -1087,8 +1368,8 @@ jq(function ($) {
         const groupedKeys: any[] = [];
         itemNames.forEach((itemName: string) => {
             const item = getItem(itemName);
-            const key = primaryKeys.find((key: string) => key in item);
-            const value = item[key];
+            const key = primaryKeys.find((key: string) => key in item && item[key] !== undefined);
+            const value = item[key!];
 
             if (value in groupedItemNames) {
                 groupedItemNames[value].push(itemName);
@@ -1183,20 +1464,21 @@ jq(function ($) {
         if (viewMode === ViewMode.Simple) {
             $("#sortingContainer").removeClass("not-visible");
             $("#comparisonContainer").addClass("not-visible");
-            $("#itemsGrid").removeClass("not-visible");
+            $("#simpleItemsGrid").removeClass("not-visible");
+            $("#spreadsheetItemsTable").addClass("not-visible");
+            $("#spreadsheetSlotRequiredLabel").addClass("not-visible");
 
             // Update visibility and order of all items
-            $("#itemsGrid > button").addClass("not-visible");
+            $("#simpleItemsGrid > button").addClass("not-visible");
 
             let precedingElement = null;
-
             items.forEach((itemName) => {
-                // Append each element
-                const element = itemElements[itemName];
+                // Update visibility of each element
+                const element = simpleItemElements[itemName];
                 element.removeClass("not-visible");
 
                 if (precedingElement == null) {
-                    $("#itemsGrid").append(element);
+                    $("#simpleItemsGrid").append(element);
                 } else {
                     element.insertAfter(precedingElement);
                 }
@@ -1206,7 +1488,9 @@ jq(function ($) {
         } else if (viewMode === ViewMode.Comparison) {
             $("#sortingContainer").addClass("not-visible");
             $("#comparisonContainer").removeClass("not-visible");
-            $("#itemsGrid").addClass("not-visible");
+            $("#simpleItemsGrid").addClass("not-visible");
+            $("#spreadsheetItemsTable").addClass("not-visible");
+            $("#spreadsheetSlotRequiredLabel").addClass("not-visible");
 
             // Update the comparison select options
             const itemSet = new Set(items);
@@ -1222,6 +1506,37 @@ jq(function ($) {
                 });
 
                 refreshSelectpicker(select);
+            });
+        } else if (viewMode == ViewMode.Spreadsheet) {
+            $("#sortingContainer").removeClass("not-visible");
+            $("#comparisonContainer").addClass("not-visible");
+            $("#simpleItemsGrid").addClass("not-visible");
+            $("#spreadsheetItemsTable").removeClass("not-visible");
+            $("#spreadsheetSlotRequiredLabel").addClass("not-visible");
+
+            // Update visibility and order of all items
+            $("#spreadsheetItemsTable > tbody > tr").addClass("not-visible");
+
+            const slotId = getSelectedButtonId($("#slotsContainer"));
+            if (!(slotId in slotMap)) {
+                $("#spreadsheetItemsTable").addClass("not-visible");
+                $("#spreadsheetSlotRequiredLabel").removeClass("not-visible");
+                return;
+            }
+
+            let precedingElement = null;
+            items.forEach((itemName) => {
+                // Update visibility of each element
+                const element = spreadsheetItemElements[itemName];
+                element.removeClass("not-visible");
+
+                if (precedingElement == null) {
+                    $("#spreadsheetItemsTable > tbody").append(element);
+                } else {
+                    element.insertAfter(precedingElement);
+                }
+
+                precedingElement = element;
             });
         }
     }

@@ -62,7 +62,8 @@ const headerLookup: Record<PageType, HeaderInfo> = {
             "A parts reference. This page lists the stats of all known parts in Cogmind. Most parts " +
             "come directly from the in-game gallery export, and the remainder (usually enemy-unique " +
             "unequippable parts) are manually entered. There are many ways to sort and filter the parts, " +
-            "as well as multiple ways to view the parts (info popup vs part-to-part comparison).",
+            "as well as three ways to view and compare the parts (info popup, part-to-part comparison, " +
+            "and spreadsheet).",
         spoilers: true,
         beta11Check: true,
     },

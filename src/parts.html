@@ -53,6 +53,10 @@
                     title="Side-by-side part comparison that shows details of both selected parts.">
                     <input type="radio" name="options"> Comparison
                 </label>
+                <label id="modeSpreadsheet" class="btn" data-toggle="tooltip"
+                    title="Spreadsheet view that shows all applicable stats. Stats are filtered depending on selected slot.">
+                    <input type="radio" name="options"> Spreadsheet
+                </label>
             </div>
 
             <!-- Reset -->
@@ -311,6 +315,7 @@
                     <button class="dropdown-item">Falloff</button>
                     <button class="dropdown-item">Heat/Move</button>
                     <button class="dropdown-item">Heat Generation</button>
+                    <button class="dropdown-item">Heat Transfer</button>
                     <button class="dropdown-item">Matter Upkeep</button>
                     <button class="dropdown-item">Penalty</button>
                     <button class="dropdown-item">Projectile Count</button>
@@ -373,6 +378,7 @@
                     <button class="dropdown-item">Falloff</button>
                     <button class="dropdown-item">Heat/Move</button>
                     <button class="dropdown-item">Heat Generation</button>
+                    <button class="dropdown-item">Heat Transfer</button>
                     <button class="dropdown-item">Matter Upkeep</button>
                     <button class="dropdown-item">Penalty</button>
                     <button class="dropdown-item">Projectile Count</button>
@@ -401,7 +407,7 @@
         </div>
 
         <!-- Comparison picker -->
-        <div id="comparisonContainer" class="comparison-container mt-3">
+        <div id="comparisonContainer" class="comparison-container mt-3 not-visible">
             <div class="row row-cols-auto row-cols-3">
                 <div class="comparison-dropdown-col">
                     <!-- Left part select -->
@@ -413,7 +419,8 @@
                 <div class="comparison-dropdown-col">
                     <!-- Right part select -->
                     <div id="rightPartSelectContainer">
-                        <select id="rightPartSelect" class="selectpicker" data-live-search="true" data-dropdown-align-right="true"></select>
+                        <select id="rightPartSelect" class="selectpicker" data-live-search="true"
+                            data-dropdown-align-right="true"></select>
                     </div>
                 </div>
 
@@ -428,10 +435,16 @@
         </div>
 
         <!-- Simple results -->
-        <ol id="itemsGrid" class="list-group items-grid my-4">
-        </ol>
+        <ol id="simpleItemsGrid" class="list-group items-grid my-4"></ol>
+
+        <!-- Spreadsheet results -->
+        <table id="spreadsheetItemsTable" class="part-comparison-table my-4 not-visible">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+
+        <label id="spreadsheetSlotRequiredLabel" class="not-visible ml-2 my-2">Please select a slot to see the spreadsheet
+            view.</label>
     </div>
 
 </body>
-
-</html>
