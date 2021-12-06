@@ -1298,6 +1298,33 @@ jq(function ($) {
             return aValue - bValue;
         }
 
+        function spectrumSort(a: string, b: string) {
+            function getValue(val: string | undefined) {
+                if (val === undefined) {
+                    return 0;
+                }
+                if (val.startsWith("Wide")) {
+                    return 10;
+                }
+                if (val.startsWith("Intermediate")) {
+                    return 30;
+                }
+                if (val.startsWith("Narrow")) {
+                    return 50;
+                }
+                if (val.startsWith("Fine")) {
+                    return 100;
+                }
+
+                return 0;
+            }
+
+            const aValue = getValue(a);
+            const bValue = getValue(b);
+
+            return aValue - bValue;
+        }
+
         const sortKeyMap = {
             Alphabetical: { key: "name", sort: alphabeticalSort },
             Gallery: { key: "name", sort: gallerySort },
@@ -1306,10 +1333,11 @@ jq(function ($) {
             Mass: { key: "mass", sort: integerSort },
             Integrity: { key: "integrity", sort: integerSort },
             Coverage: { key: "coverage", sort: integerSort },
+            Arc: { key: "arc", sort: integerSort },
             Critical: { key: "critical", sort: integerSort },
             Damage: { keys: ["damage", "explosionDamage"], sort: damageSort },
             Delay: { key: "delay", sort: integerSort },
-            Disruption: { key: "disruption", sort: integerSort },
+            Disruption: { keys: ["disruption", "explosionDisruption"], sort: integerSort },
             Drag: { key: "drag", sort: integerSort },
             "Energy/Move": { key: "energyPerMove", sort: integerSort },
             "Energy Generation": { key: "energyGeneration", sort: integerSort },
@@ -1324,10 +1352,12 @@ jq(function ($) {
             Penalty: { key: "penalty", sort: integerSort },
             "Projectile Count": { key: "projectileCount", sort: integerSort },
             Range: { key: "range", sort: integerSort },
+            Recoil: { key: "recoil", sort: integerSort },
             Salvage: { keys: ["salvage", "explosionSalvage"], sort: integerSort },
             "Shot Energy": { key: "shotEnergy", sort: integerSort },
             "Shot Heat": { key: "shotHeat", sort: integerSort },
             "Shot Matter": { key: "shotMatter", sort: integerSort },
+            Spectrum: { keys: ["spectrum", "explosionSpectrum"], sort: spectrumSort },
             Support: { key: "support", sort: integerSort },
             Targeting: { key: "targeting", sort: integerSort },
             "Time/Move": { key: "timePerMove", sort: integerSort },
@@ -1344,8 +1374,6 @@ jq(function ($) {
 
             const aKey = primaryKeys.find((key: string) => key in itemA && itemA[key] !== undefined);
             const bKey = primaryKeys.find((key: string) => key in itemB && itemB[key] !== undefined);
-            console.log(`itemA: ${itemA.name}, aKey: ${aKey}`);
-            console.log(`itemB: ${itemB.name}, bKey: ${bKey}`);
 
             return primarySort(itemA[aKey!], itemB[bKey!]);
         });
