@@ -85,7 +85,19 @@ jq(function ($) {
 
         // Name filter
         const nameValue = ($("#name").val() as string).toLowerCase();
-        if (nameValue.length > 0) {
+        if (nameValue.length > 2) {
+            const leetSpeakMatchTransform = (name: string) => {
+                return name
+                    .replace(/o/, "0")
+                    .replace(/l/, "1")
+                    .replace(/e/, "3")
+                    .replace(/a/, "4")
+                    .replace(/t/, "7")
+                    .replace(/s/, "5")
+                    .replace(/b/, "8");
+            };
+            filters.push((bot) => bot.name.toLowerCase().includes(leetSpeakMatchTransform(nameValue)));
+        } else if (nameValue.length > 0) {
             filters.push((bot) => bot.name.toLowerCase().includes(nameValue));
         }
 
