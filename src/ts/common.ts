@@ -1347,6 +1347,18 @@ export function isPartMelee(part: BaseItem): boolean {
     return false;
 }
 
+// Converts leetspeak numbers in a string to characters
+export function leetSpeakMatchTransform(name: string): string {
+    return name
+        .replace(/0/, "o")
+        .replace(/1/, "i")
+        .replace(/3/, "e")
+        .replace(/4/, "a")
+        .replace(/7/, "t")
+        .replace(/5/, "s")
+        .replace(/8/, "b");
+}
+
 // Converts an item or bot's name to an HTML id
 const nameToIdRegex = /[ /.'"\]\[]]*/g;
 export function nameToId(name: string): string {

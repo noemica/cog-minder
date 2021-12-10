@@ -3,7 +3,7 @@ import * as botsB11 from "../json/bots_b11.json";
 import * as items from "../json/items.json";
 import * as itemsB11 from "../json/items_b11.json";
 import { Bot } from "./botTypes";
-import { botData, createBotDataContent, getBot, initData, nameToId } from "./common";
+import { botData, createBotDataContent, getBot, initData, leetSpeakMatchTransform, nameToId } from "./common";
 import {
     getSpoilersState,
     getSelectedButtonId,
@@ -85,18 +85,15 @@ jq(function ($) {
 
         // Name filter
         const nameValue = ($("#name").val() as string).toLowerCase();
-        if (nameValue.length > 2) {
-            const leetSpeakMatchTransform = (name: string) => {
-                return name
-                    .replace(/o/, "0")
-                    .replace(/l/, "1")
-                    .replace(/e/, "3")
-                    .replace(/a/, "4")
-                    .replace(/t/, "7")
-                    .replace(/s/, "5")
-                    .replace(/b/, "8");
-            };
-            filters.push((bot) => bot.name.toLowerCase().includes(leetSpeakMatchTransform(nameValue)));
+        if (nameValue.length > 1) {
+            // Only add a leetspeak convert if > 1 letter to reduce chance of
+            // false positives on the translation
+            // 2 min works well as it will catch somebody typing in the first half
+            // of a bot name, like BR for 8R-AWN
+            filters.push((bot) => {
+                const lowerName = bot.name.toLowerCase();
+                return leetSpeakMatchTransform(lowerName).includes(nameValue) || lowerName.includes(nameValue);
+            });
         } else if (nameValue.length > 0) {
             filters.push((bot) => bot.name.toLowerCase().includes(nameValue));
         }
