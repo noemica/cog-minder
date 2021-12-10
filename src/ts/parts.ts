@@ -1,6 +1,6 @@
 import * as items from "../json/items.json";
 import * as itemsB11 from "../json/items_b11.json";
-import { createItemDataContent, gallerySort, getItem, initData, itemData, nameToId, parseIntOrDefault } from "./common";
+import { createItemDataContent, gallerySort, getItem, initData, itemData, leetSpeakMatchTransform, nameToId, parseIntOrDefault } from "./common";
 import {
     createHeader,
     getB11State,
@@ -911,7 +911,16 @@ jq(function ($) {
 
         // Name filter
         const nameValue = ($("#name").val() as string).toLowerCase();
-        if (nameValue.length > 0) {
+        if (nameValue.length > 1) {
+            // Only add a leetspeak convert if > 1 letter to reduce chance of
+            // false positives on the translation
+            // 2 min works well as it will catch somebody typing in the first half
+            // of a bot name, like BR for 8R-AWN
+            filters.push((item) => {
+                const lowerName = item.name.toLowerCase();
+                return leetSpeakMatchTransform(lowerName).includes(nameValue) || lowerName.includes(nameValue);
+            });
+        } else if (nameValue.length > 0) {
             filters.push((item) => item.name.toLowerCase().includes(nameValue));
         }
 
