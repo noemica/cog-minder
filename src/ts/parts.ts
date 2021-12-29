@@ -1,6 +1,15 @@
 import * as items from "../json/items.json";
 import * as itemsB11 from "../json/items_b11.json";
-import { createItemDataContent, gallerySort, getItem, initData, itemData, leetSpeakMatchTransform, nameToId, parseIntOrDefault } from "./common";
+import {
+    createItemDataContent,
+    gallerySort,
+    getItem,
+    initData,
+    itemData,
+    leetSpeakMatchTransform,
+    nameToId,
+    parseIntOrDefault,
+} from "./common";
 import {
     createHeader,
     getB11State,
