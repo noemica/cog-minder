@@ -239,21 +239,21 @@ jq(function ($) {
         const deleteButton = $('<button class="btn ml-2" data-toggle="tooltip" title="Removes the part.">X</button>');
 
         // Add elements to DOM
-        container.append(row);
-        row.append(partPickerColumn);
-        row.append(infoColumn);
-        partPickerColumn.append(partPickerContainer);
-        partPickerContainer.append(select);
-        partPickerContainer.append(helpButton);
-        partPickerContainer.append(numberLabelContainer);
-        numberLabelContainer.append(numberLabel);
-        partPickerContainer.append(numberInput);
-        partPickerContainer.append(activeContainer);
-        activeContainer.append(activeLabelContainer);
-        activeLabelContainer.append(activeLabel);
-        activeContainer.append(yesLabel);
-        activeContainer.append(noLabel);
-        partPickerContainer.append(deleteButton);
+        container.append(row[0]);
+        row.append(partPickerColumn[0]);
+        row.append(infoColumn[0]);
+        partPickerColumn.append(partPickerContainer[0]);
+        partPickerContainer.append(select[0]);
+        partPickerContainer.append(helpButton[0]);
+        partPickerContainer.append(numberLabelContainer[0]);
+        numberLabelContainer.append(numberLabel[0]);
+        partPickerContainer.append(numberInput[0]);
+        partPickerContainer.append(activeContainer[0]);
+        activeContainer.append(activeLabelContainer[0]);
+        activeLabelContainer.append(activeLabel[0]);
+        activeContainer.append(yesLabel[0]);
+        activeContainer.append(noLabel[0]);
+        partPickerContainer.append(deleteButton[0]);
 
         resetButtonGroup(activeContainer);
 
@@ -339,9 +339,9 @@ jq(function ($) {
         percentageBar.css("background-color", percentageColorLookup[color]);
         const percentageWidth = percentage > 100 ? "100.0" : percentage;
         percentageBar.width(`${percentageWidth}%`);
-        container.append(span);
-        container.append(percentageBar);
-        selector.append(container);
+        container.append(span[0]);
+        container.append(percentageBar[0]);
+        selector.append(container[0]);
     }
 
     // Gets the current depth, enforcing range limits
@@ -1287,7 +1287,7 @@ jq(function ($) {
                 <span class="input-group-text">${name}: ${value}</span>
             </div>`);
 
-            summaryContainer.append(newElement);
+            summaryContainer.append(newElement[0]);
             (newElement as any).tooltip();
         }
 

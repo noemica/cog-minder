@@ -271,8 +271,8 @@ jq(function ($) {
             '<button class="btn ml-2" data-toggle="tooltip" title="Removes the dataset.">X</button>',
         );
 
-        parent.append(nameInput);
-        parent.append(deleteButton);
+        parent.append(nameInput[0]);
+        parent.append(deleteButton[0]);
 
         // Set up callbacks
         (deleteButton as any).tooltip();
@@ -299,7 +299,7 @@ jq(function ($) {
             comparisonChart.update();
         });
 
-        $("#comparisonDatasetsContainer").append(parent);
+        $("#comparisonDatasetsContainer").append(parent[0]);
 
         comparisonChart.update();
     }
@@ -372,20 +372,20 @@ jq(function ($) {
         const deleteButton = $('<button class="btn ml-2" data-toggle="tooltip" title="Removes the weapon.">X</button>');
 
         // Add elements to DOM
-        container.append(parent);
-        parent.append(selectLabel);
-        parent.append(select);
-        parent.append(helpButton);
-        parent.append(overloadContainer);
-        overloadContainer.append(overloadLabelContainer);
-        overloadLabelContainer.append(overloadLabel);
-        overloadContainer.append(noLabel);
-        overloadContainer.append(yesLabel);
-        parent.append(massLabel);
-        parent.append(massInput);
-        parent.append(numberLabel);
-        parent.append(numberInput);
-        parent.append(deleteButton);
+        container.append(parent[0]);
+        parent.append(selectLabel[0]);
+        parent.append(select[0]);
+        parent.append(helpButton[0]);
+        parent.append(overloadContainer[0]);
+        overloadContainer.append(overloadLabelContainer[0]);
+        overloadLabelContainer.append(overloadLabel[0]);
+        overloadContainer.append(noLabel[0]);
+        overloadContainer.append(yesLabel[0]);
+        parent.append(massLabel[0]);
+        parent.append(massInput[0]);
+        parent.append(numberLabel[0]);
+        parent.append(numberInput[0]);
+        parent.append(deleteButton[0]);
 
         resetButtonGroup(overloadContainer);
 

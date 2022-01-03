@@ -38,6 +38,7 @@ import {
 import * as jQuery from "jquery";
 import "bootstrap";
 import "bootstrap-select";
+import "tablesorter";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -802,7 +803,7 @@ jq(function ($) {
             );
 
             simpleItemElements[itemName] = element;
-            itemsGrid.append(element);
+            itemsGrid.append(element[0]);
         });
 
         // Create comparison selections
@@ -832,6 +833,7 @@ jq(function ($) {
 
         // Clear old items
         const table = $("#spreadsheetItemsTable");
+        table.trigger("destroy");
         // ($('#spreadsheetItemsTable [data-toggle="popover"]') as any).popover("dispose");
         table.empty();
 
@@ -847,15 +849,15 @@ jq(function ($) {
         const tableHeaderRow = $("<tr></tr>");
 
         // The first header row contains the category groupings
-        tableHeader.append(tableHeaderRow);
-        table.append(tableHeader);
+        tableHeader.append(tableHeaderRow[0]);
+        table.append(tableHeader[0]);
         Object.keys(lookup).forEach((categoryName) => {
             tableHeaderRow.append(`<th colspan=${lookup[categoryName].length}>${categoryName}</th>`);
         });
 
         // The second header row contains all the category names
         const nameRow = $("<tr></tr>");
-        tableHeader.append(nameRow);
+        tableHeader.append(nameRow[0]);
         Object.keys(lookup).forEach((categoryName) => {
             lookup[categoryName].forEach((category) => {
                 nameRow.append(`<th>${category.name}</th>`);
@@ -864,7 +866,7 @@ jq(function ($) {
 
         // Then create the body
         const tableBody = $("<tbody></tbody>");
-        table.append(tableBody);
+        table.append(tableBody[0]);
 
         // Subsequent rows contain info about each part
         const itemNames = Object.keys(itemData);
@@ -902,8 +904,14 @@ jq(function ($) {
             });
 
             spreadsheetItemElements[itemName] = row;
-            table.append(row);
+            table.append(row[0]);
         });
+
+        table.tablesorter({
+            selectorHeaders: "> thead > tr:nth-child(2) > th",
+        });
+        table.find(".tablesorter-headerAsc").trigger("sort");
+        table.find(".tablesorter-headerDesc").trigger("sort");
     }
 
     // Gets a filter function combining all current filters
@@ -1382,8 +1390,15 @@ jq(function ($) {
             Waypoints: { key: "waypoints", sort: integerSort },
         };
 
+        const viewMode = getViewMode();
+        if (viewMode === ViewMode.Comparison) {
+            // Comparison names are pre-sorted, don't need to sort here
+            return itemNames;
+        }
+
         // Do initial sort
-        const primaryObject = sortKeyMap[$("#primarySort").text()];
+        const isSpreadsheet = viewMode === ViewMode.Spreadsheet;
+        const primaryObject = isSpreadsheet ? sortKeyMap["Gallery"] : sortKeyMap[$("#primarySort").text()];
         const primaryKeys: string[] = "key" in primaryObject ? [primaryObject.key] : primaryObject.keys;
         const primarySort = primaryObject.sort;
         itemNames.sort((a, b) => {
@@ -1395,6 +1410,11 @@ jq(function ($) {
 
             return primarySort(itemA[aKey!], itemB[bKey!]);
         });
+
+        if (isSpreadsheet) {
+            // If in spreadsheet view do an initial gallery sort only
+            return itemNames;
+        }
 
         if ($("#primarySortDirection").text().trim() === "Descending") {
             itemNames.reverse();
@@ -1523,6 +1543,8 @@ jq(function ($) {
                 const element = simpleItemElements[itemName];
                 element.removeClass("not-visible");
 
+                // Must insert elements in-order like this because the sort
+                // mode may have changed
                 if (precedingElement == null) {
                     $("#simpleItemsGrid").append(element);
                 } else {
@@ -1554,7 +1576,7 @@ jq(function ($) {
                 refreshSelectpicker(select);
             });
         } else if (viewMode == ViewMode.Spreadsheet) {
-            $("#sortingContainer").removeClass("not-visible");
+            $("#sortingContainer").addClass("not-visible");
             $("#comparisonContainer").addClass("not-visible");
             $("#simpleItemsGrid").addClass("not-visible");
             $("#spreadsheetItemsTable").removeClass("not-visible");
@@ -1570,19 +1592,19 @@ jq(function ($) {
                 return;
             }
 
-            let precedingElement = null;
+            // Reset visibility of all items
+            Object.keys(spreadsheetItemElements).forEach((itemName) => {
+                const item = spreadsheetItemElements[itemName];
+                item.addClass("not-visible");
+            });
+
             items.forEach((itemName) => {
                 // Update visibility of each element
+                // Do not re-order the elements here
+                // Sorting is controlled by the table not by the sort dropdowns
+                // like the simple view
                 const element = spreadsheetItemElements[itemName];
                 element.removeClass("not-visible");
-
-                if (precedingElement == null) {
-                    $("#spreadsheetItemsTable > tbody").append(element);
-                } else {
-                    element.insertAfter(precedingElement);
-                }
-
-                precedingElement = element;
             });
         }
     }

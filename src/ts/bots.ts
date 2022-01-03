@@ -63,7 +63,7 @@ jq(function ($) {
             );
 
             botElements[botName] = element;
-            botsGrid.append(element);
+            botsGrid.append(element[0]);
         });
 
         const popoverSelector = $('#botsGrid > [data-toggle="popover"]');

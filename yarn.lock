@@ -983,12 +983,31 @@
   dependencies:
     moment "^2.10.2"
 
-"@types/jquery@*", "@types/jquery@^3.5.5":
-  version "3.5.5"
-  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.5.tgz#2c63f47c9c8d96693d272f5453602afd8338c903"
-  integrity sha512-6RXU9Xzpc6vxNrS6FPPapN1SxSHgQ336WC6Jj/N8q30OiaBZ00l1GBgeP7usjVZPivSkGUfL1z/WW6TX989M+w==
+"@types/cldrjs@*":
+  version "0.4.22"
+  resolved "https://registry.yarnpkg.com/@types/cldrjs/-/cldrjs-0.4.22.tgz#24e31cdf15a4ea806ca0a774b024150d1066fea1"
+  integrity sha512-YyzxXZ5s9xwPWznXnI3++X14JGnomDdDAlin7kWZvxX/MzirC9BNFcDSQ0yR8YG2M/xNMn0nXsCGkgbFVyXjGw==
+
+"@types/globalize@*":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@types/globalize/-/globalize-1.5.2.tgz#facc6b0e03ae257f9a5c488b74f477eb9fd1e5d6"
+  integrity sha512-h4+lLnsttn12wOuUs0WuVJie5Lg+H/0WMaOSSgwycOOmA2Ukj/fX+GkvNcjw1OY5CtViCCEBc3xClsXInL/r9g==
+  dependencies:
+    "@types/cldrjs" "*"
+
+"@types/jquery@*", "@types/jquery@3.5.11":
+  version "3.5.11"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.11.tgz#fb2a255e8376779e89a10ddd04bfc1a93398f861"
+  integrity sha512-lYZGdfOtUa0XFjIATQgiogqeTY5PNNMOmp3Jq48ghmJALL8t/IqABRqlEwdHfuUdA8iIE1uGD1HoI4a7Tiy6OA==
   dependencies:
     "@types/sizzle" "*"
+
+"@types/jqueryui@*":
+  version "1.12.16"
+  resolved "https://registry.yarnpkg.com/@types/jqueryui/-/jqueryui-1.12.16.tgz#9e319f7db39490db950cba77fe83887e0ad3e1d9"
+  integrity sha512-6huAQDpNlso9ayaUT9amBOA3kj02OCeUWs+UvDmbaJmwkHSg/HLsQOoap/D5uveN9ePwl72N45Bl+Frp5xyG1Q==
+  dependencies:
+    "@types/jquery" "*"
 
 "@types/json-schema@^7.0.7":
   version "7.0.9"
@@ -1012,10 +1031,27 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
   integrity sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug==
 
+"@types/select2@*":
+  version "4.0.54"
+  resolved "https://registry.yarnpkg.com/@types/select2/-/select2-4.0.54.tgz#8305e519c16ee01a3e818894bec3eec88966a3c6"
+  integrity sha512-xq8c3zsKktym2b9XbDLUWBDyX0WyWjKzeFsDQHkM9p6NfxJza4g2Ud1bheTKNXpHNyVPUrfGwDEMN7JBe3gQbw==
+  dependencies:
+    "@types/jquery" "*"
+
 "@types/sizzle@*":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
-  integrity sha512-7EJYyKTL7tFR8+gDbB6Wwz/arpGa0Mywk1TJbNzKzHtzbwVmY4HR9WqS5VV7dsBUKQmPNr192jHr/VpBluj/hg==
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.3.tgz#ff5e2f1902969d305225a047c8a0fd5c915cebef"
+  integrity sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==
+
+"@types/tablesorter@^2.31.2":
+  version "2.31.2"
+  resolved "https://registry.yarnpkg.com/@types/tablesorter/-/tablesorter-2.31.2.tgz#ee329db7260dc0eeedd2bb04a2a219db12e21d8d"
+  integrity sha512-LFWafP8klqcttMBfrL/WTo3mR8SHI5sHXh9MaHKaDgR/Uu5OomktM2VBaX472AvDAJNUBYrnWDLuqnBlS9kdIw==
+  dependencies:
+    "@types/globalize" "*"
+    "@types/jquery" "*"
+    "@types/jqueryui" "*"
+    "@types/select2" "*"
 
 "@typescript-eslint/eslint-plugin@^4.32.0":
   version "4.32.0"
@@ -3632,10 +3668,10 @@ isstream@~0.1.2:
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
 
-jquery@^3.5.1:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"
-  integrity sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg==
+jquery@>=1.2.6, jquery@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
+  integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
 
 js-tokens@^4.0.0:
   version "4.0.0"
@@ -5817,6 +5853,13 @@ table@^6.0.9:
     slice-ansi "^4.0.0"
     string-width "^4.2.3"
     strip-ansi "^6.0.1"
+
+tablesorter@^2.31.3:
+  version "2.31.3"
+  resolved "https://registry.yarnpkg.com/tablesorter/-/tablesorter-2.31.3.tgz#94c33234ba0e5d9efc5ba4e48651010a396c8b64"
+  integrity sha512-ueEzeKiMajDcCWnUoT1dOeNEaS1OmPh9+8J0O2Sjp3TTijMygH74EA9QNJiNkLJqULyNU0RhbKY26UMUq9iurA==
+  dependencies:
+    jquery ">=1.2.6"
 
 terser@^3.7.3:
   version "3.17.0"
