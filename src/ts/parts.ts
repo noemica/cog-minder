@@ -909,8 +909,6 @@ jq(function ($) {
                 return a.localeCompare(b);
             },
         });
-        table.find(".tablesorter-headerAsc").trigger("sort");
-        table.find(".tablesorter-headerDesc").trigger("sort");
     }
 
     // Gets a filter function combining all current filters
