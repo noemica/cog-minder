@@ -33,13 +33,13 @@ export enum BotSize {
 
 export type BotResistances = {
     [key: string]: number | undefined;
-    thermal?: number;
-    explosive?: number;
-    electromagnetic?: number;
-    impact?: number;
-    slashing?: number;
-    piercing?: number;
-    kinetic?: number;
+    Electromagnetic?: number;
+    Explosive?: number;
+    Impact?: number;
+    Kinetic?: number;
+    Piercing?: number;
+    Slashing?: number;
+    Thermal?: number;
 };
 
 export type ItemOption = {
@@ -58,16 +58,19 @@ export type Bot = {
     armament: Array<string | ItemOption[]>;
     armamentData: BotPart[];
     armamentOptionData: BotPart[][];
+    armamentString: string;
     categories: BotCategory[];
     class: string;
     components: Array<string | ItemOption[]>;
     componentData: BotPart[];
     componentOptionData: BotPart[][];
+    componentsString: string;
     coreCoverage: number;
     coreExposure: number;
     coreIntegrity: number;
     description: string;
     immunities: BotImmunity[];
+    immunitiesString: string;
     memory: string;
     movement: string;
     name: string;
@@ -81,6 +84,7 @@ export type Bot = {
     tier: string;
     totalCoverage: number;
     traits: string[];
+    traitsString: string;
     value: number;
     visualRange: string;
 };
@@ -108,7 +112,9 @@ export type JsonBot = {
     "Salvage Potential": string;
     Immunities?: BotImmunity[];
     Traits?: string[];
+    "Armament String"?: string;
     Armament?: Array<string | ItemOption[]>;
+    "Components String"?: string;
     Components?: Array<string | ItemOption[]>;
     Analysis?: string;
     Resistances: BotResistances;

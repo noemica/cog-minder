@@ -21,20 +21,41 @@
     <div id="headerContainer" class="container-xl">
     </div>
 
-    <!-- Name/class/part filters and reset button -->
     <div class="container-xl input-group">
+        <!-- Name -->
         <div class="input-group-prepend" data-toggle="tooltip" title="The name of a bot to search for.">
             <span class="input-group-text">Name</span>
         </div>
         <input id="name" type="text" class="form-control" placeholder="Any">
+
+        <!-- Class -->
         <div class="input-group-prepend ml-3" data-toggle="tooltip" title="The class of a bot to search for.">
             <span class="input-group-text">Class</span>
         </div>
         <input id="class" type="text" class="form-control" placeholder="Any">
+
+        <!-- Part -->
         <div class="input-group-prepend ml-3" data-toggle="tooltip" title="The name of a part to search for.">
             <span class="input-group-text">Part</span>
         </div>
         <input id="part" type="text" class="form-control" placeholder="Any">
+
+        <!-- Mode -->
+        <div id="modeContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
+            <div class="input-group-prepend" data-toggle="tooltip" title="Parts viewing mode.">
+                <span class="input-group-text">Mode</span>
+            </div>
+            <label id="modeViewer" class="btn" data-toggle="tooltip"
+                title="Simple bot viewer with clickable buttons to show expanded bot detail.">
+                <input type="radio" name="options"> Simple
+            </label>
+            <label id="modeSpreadsheet" class="btn" data-toggle="tooltip"
+                title="Spreadsheet view that shows all bot stats.">
+                <input type="radio" name="options"> Spreadsheet
+            </label>
+        </div>
+
+        <!-- Reset -->
         <button id="reset" type="button" class="btn ml-3" data-toggle="tooltip"
             title="Resets all filters to their default (unfiltered) state">Reset</button>
     </div>
@@ -69,8 +90,12 @@
     </div>
 
     <div class="container-xl">
-        <!-- Bot info -->
+        <!-- Simple results -->
         <ul id="botsGrid" class="list-group items-grid my-4">
         </ul>
+
+        <!-- Spreadsheet results -->
+        <table id="spreadsheetBotsTable" class="comparison-table tablesorter my-4 not-visible">
+        </table>
     </div>
 </body>

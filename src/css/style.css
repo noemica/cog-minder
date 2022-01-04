@@ -571,10 +571,8 @@ body {
     font-size: 0.8rem;
 }
 
-/* Comparison table */
-.part-comparison-table {
-    /* display: block;
-    overflow-x: auto; */
+/* Comparison table aka spreadsheet view*/
+.comparison-table {
     margin-left: auto;
     margin-right: auto;
     left: 15px;
@@ -584,44 +582,44 @@ body {
     border-spacing: 0;
 }
 
-.part-comparison-table * {
+.comparison-table * {
     font-size: 0.8rem;
 }
 
-.part-comparison-table > thead > tr:nth-child(2) {
+.comparison-table > thead > tr:nth-child(2) {
     position: sticky;
     top: 0;
 }
 
-.part-comparison-table td:not(:first-child), .part-comparison-table th:not(:first-child) {
+.comparison-table td:not(:first-child), .comparison-table th:not(:first-child) {
     border-left: 0;
 }
 
-.part-comparison-table > thead > tr:not(:first-child) > th, .part-comparison-table > tbody > tr > td {
+.comparison-table > thead > tr:not(:first-child) > th, .comparison-table > tbody > tr > td {
     border-top: 0;
 }
 
-.part-comparison-table > thead > tr:first-child > th {
+.comparison-table > thead > tr:first-child > th {
     text-align: center;
     font-size: 1.0rem;
 }
 
-.part-comparison-table > thead > tr:nth-child(2) > th {
+.comparison-table > thead > tr:nth-child(2) > th {
     font-size: 0.9rem;
 }
 
-.part-comparison-table > thead > tr > th {
+.comparison-table > thead > tr > th {
     background-color: #162416;
     color: #9da9af;
 }
 
-.part-comparison-table td, .part-comparison-table th {
+.comparison-table td, .comparison-table th {
     vertical-align: top;
     border: 1px solid #006200;
     white-space: nowrap;
 }
 
-.part-comparison-table td {
+.comparison-table td {
     padding: 0.25rem;
 }
 

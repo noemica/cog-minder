@@ -19,11 +19,16 @@ import {
 import * as jQuery from "jquery";
 import "popper.js";
 import "bootstrap";
+import "tablesorter";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
-    // Map of bot names to bot elements, created at page init
+    // Enum representing the selected viewing mode
+    type ViewMode = "Simple" | "Spreadsheet";
+
+    // Map of bot names to bot elements
     const botElements = {};
+    const spreadsheetBotElements = {};
 
     // Faction HTML ids to JSON category names
     const factionIdToCategoryName = {
@@ -35,17 +40,59 @@ jq(function ($) {
         factionZionite: "Zionite",
     };
 
+    // Categories to show for spreadsheet view
+    type botCategory = {
+        name: string;
+        propertyName?: string;
+        propertyNames?: string[];
+    };
+    const batCategoryLookup: { [key: string]: botCategory[] } = {
+        Overview: [
+            { name: "Name" },
+            { name: "Class" },
+            { name: "Size" },
+            { name: "Profile" },
+            { name: "Rating" },
+            { name: "Tier" },
+            { name: "Threat" },
+            { name: "Value" },
+            { name: "Visual Range", propertyName: "visualRange" },
+            { name: "Memory" },
+            { name: "Spot %", propertyName: "spotPercent" },
+            { name: "Movement" },
+            { name: "Core Integrity", propertyName: "coreIntegrity" },
+            { name: "Core Exposure", propertyName: "coreExposure" },
+            { name: "Salvage Potential", propertyName: "salvagePotential" },
+        ],
+        Parts: [
+            { name: "Armament", propertyName: "armamentString" },
+            { name: "Components", propertyName: "componentsString" },
+        ],
+        Resistances: [
+            { name: "Electromagnetic", propertyNames: ["resistances", "Electromagnetic"] },
+            { name: "Explosive", propertyNames: ["resistances", "Explosive"] },
+            { name: "Impact", propertyNames: ["resistances", "Impact"] },
+            { name: "Kinetic", propertyNames: ["resistances", "Kinetic"] },
+            { name: "Piercing", propertyNames: ["resistances", "Piercing"] },
+            { name: "Slashing", propertyNames: ["resistances", "Slashing"] },
+            { name: "Thermal", propertyNames: ["resistances", "Thermal"] },
+        ],
+        Other: [
+            { name: "Immunities", propertyName: "immunitiesString" },
+            { name: "Traits", propertyName: "traitsString" },
+        ],
+    };
+
     // Spoiler faction HTML ids
     const spoilerFactionIds = ["factionWarlord", "factionZionite"];
-
     const redactedFactionIds = ["factionArchitect"];
 
     $(() => init());
 
     // Creates the bot buttons and adds them to the grid
     function createBots() {
-        const botNames = Object.keys(botData);
         const botsGrid = $("#botsGrid");
+        const botNames = sortBotNames(Object.keys(botData));
         botNames.forEach((botName) => {
             // Creates button that will toggle a popover when pressed displaying
             // various stats and items
@@ -69,6 +116,79 @@ jq(function ($) {
         const popoverSelector = $('#botsGrid > [data-toggle="popover"]');
         (popoverSelector as any).popover();
         enableBotInfoItemPopovers(popoverSelector);
+    }
+
+    // Creates elements for all spreadsheet bots
+    function createSpreadsheetBots() {
+        const table = $("#spreadsheetBotsTable");
+        const lookup = batCategoryLookup;
+        const tableHeader = $("<thead></thead>");
+        const tableHeaderRow = $("<tr></tr>");
+
+        // The first header row contains the category groupings
+        tableHeader.append(tableHeaderRow[0]);
+        table.append(tableHeader[0]);
+        Object.keys(lookup).forEach((categoryName) => {
+            tableHeaderRow.append(`<th colspan=${lookup[categoryName].length}>${categoryName}</th>`);
+        });
+
+        // The second header row contains all the category names
+        const nameRow = $("<tr></tr>");
+        tableHeader.append(nameRow[0]);
+        Object.keys(lookup).forEach((categoryName) => {
+            lookup[categoryName].forEach((category) => {
+                const textSorter = category.name === "Name";
+                nameRow.append(`<th ${textSorter ? 'class="sorter-text"' : ""}>${category.name}</th>`);
+            });
+        });
+
+        // Then create the body
+        const tableBody = $("<tbody></tbody>");
+        table.append(tableBody[0]);
+
+        // Subsequent rows contain info about each bot
+        const botNames = sortBotNames(Object.keys(botData));
+        botNames.forEach((botName) => {
+            const item = botData[botName];
+            const row = $("<tr></tr>");
+
+            Object.keys(lookup).forEach((categoryName) => {
+                const categoryList = lookup[categoryName];
+                categoryList.forEach((category) => {
+                    let value: any = undefined;
+                    if (category.propertyName !== undefined) {
+                        // If explicit property name given then use that
+                        value = item[category.propertyName];
+                    } else if (category.propertyNames !== undefined) {
+                        // If multiple names then use them in sequence
+                        value = item[category.propertyNames[0]];
+                        for (let i = 1; i < category.propertyNames.length; i++) {
+                            if (value !== undefined) {
+                                value = value[category.propertyNames[i]];
+                            }
+                        }
+                    } else {
+                        // No property name, default to the category name lowercase'd
+                        value = item[category.name.toLowerCase()];
+                    }
+
+                    const cellValue = value === undefined ? "" : value.toString();
+                    row.append(`<td>${cellValue}</td>`);
+                });
+            });
+
+            spreadsheetBotElements[botName] = row;
+            table.append(row[0]);
+        });
+
+        table.tablesorter({
+            selectorHeaders: "> thead > tr:nth-child(2) > th",
+            textSorter: function (a, b) {
+                return a.localeCompare(b);
+            },
+        });
+        table.find(".tablesorter-headerAsc").trigger("sort");
+        table.find(".tablesorter-headerDesc").trigger("sort");
     }
 
     // Gets a filter function combining all current filters
@@ -147,6 +267,17 @@ jq(function ($) {
         };
     }
 
+    // Gets the active view mode
+    function getViewMode(): ViewMode {
+        const modeId = getSelectedButtonId($("#modeContainer"));
+
+        if (modeId === "modeSpreadsheet") {
+            return "Spreadsheet";
+        }
+
+        return "Simple";
+    }
+
     // Initialize the page state
     function init() {
         const isB11 = getB11State();
@@ -155,11 +286,13 @@ jq(function ($) {
         createBots();
         createHeader("Bots", $("#headerContainer"));
         $("#beta11Checkbox").prop("checked", getB11State());
+        resetButtonGroup($("#modeContainer"));
         registerDisableAutocomplete($(document));
 
         // Set initial state
         updateFactionVisibility();
         resetFilters();
+        createSpreadsheetBots();
 
         // Register handlers
         $("#spoilersDropdown > button").on("click", (e) => {
@@ -173,6 +306,11 @@ jq(function ($) {
         $("#name").on("input", updateBots);
         $("#class").on("input", updateBots);
         $("#part").on("input", updateBots);
+        $("#modeContainer > label > input").on("change", (e) => {
+            // Tooltips on buttons need to be explicitly hidden on press
+            ($(e.target).parent() as any).tooltip("hide");
+            updateBots();
+        });
         $("#reset").on("click", () => {
             ($("#reset") as any).tooltip("hide");
             resetFilters();
@@ -245,35 +383,43 @@ jq(function ($) {
 
         // Get the names of all non-filtered bots
         const botFilter = getBotFilter();
-        let bots: string[] = [];
+        const botNames: string[] = [];
         Object.keys(botData).forEach((botName) => {
             const bot = getBot(botName);
 
             if (botFilter(bot)) {
-                bots.push(bot.name);
+                botNames.push(bot.name);
             }
         });
 
-        // Sort bot names for display
-        bots = sortBotNames(bots);
+        const viewMode = getViewMode();
 
-        // Update visibility and order of all bots
-        $("#botsGrid > button").addClass("not-visible");
+        if (viewMode == "Spreadsheet") {
+            $("#botsGrid").addClass("not-visible");
+            $("#spreadsheetBotsTable").removeClass("not-visible");
 
-        let precedingElement = null;
+            // Update visibility of all bots
+            Object.keys(spreadsheetBotElements).forEach((botName) => {
+                const botElement = spreadsheetBotElements[botName];
+                botElement.addClass("not-visible");
+            });
 
-        bots.forEach((botName) => {
-            const element = botElements[botName];
-            element.removeClass("not-visible");
+            botNames.forEach((botName) => {
+                const element = spreadsheetBotElements[botName];
+                element.removeClass("not-visible");
+            });
+        } else if (viewMode == "Simple") {
+            $("#botsGrid").removeClass("not-visible");
+            $("#spreadsheetBotsTable").addClass("not-visible");
 
-            if (precedingElement == null) {
-                $("#botGrid").append(element);
-            } else {
-                element.insertAfter(precedingElement);
-            }
+            // Update visibility and order of all bots
+            $("#botsGrid > button").addClass("not-visible");
 
-            precedingElement = element;
-        });
+            botNames.forEach((botName) => {
+                const element = botElements[botName];
+                element.removeClass("not-visible");
+            });
+        }
     }
 
     // Updates faction visibility based on the spoiler state

@@ -173,12 +173,16 @@ for row in reader:
 
     # Combine armament and components into their own lists
     if 'Armament' in values:
+        originalString = values['Armament']
         armament = get_parts(values['Armament'].split(', '))
         values['Armament'] = armament
+        values['Armament String'] = originalString
 
     if 'Components' in values:
+        originalString = values['Components']
         components = get_parts(values['Components'].split(', '))
         values['Components'] = components
+        values['Components String'] = originalString
 
     if 'Immunities' in values:
         immunitiesStrings = values['Immunities'].split(', ')

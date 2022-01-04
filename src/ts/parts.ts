@@ -43,11 +43,7 @@ import "tablesorter";
 const jq = jQuery.noConflict();
 jq(function ($) {
     // Enum representing the selected viewing mode
-    enum ViewMode {
-        Simple = "Simple",
-        Comparison = "Comparison",
-        Spreadsheet = "Spreadsheet",
-    }
+    type ViewMode = "Simple" | "Comparison" | "Spreadsheet";
 
     // Category ID ->
     const categoryIdMap = {
@@ -62,7 +58,7 @@ jq(function ($) {
         categoryUnobtainable: 8,
     };
 
-    // Maps of item names to item elements, created at page init
+    // Maps of item names to item elements
     const simpleItemElements = {};
     const spreadsheetItemElements = {};
 
@@ -826,7 +822,7 @@ jq(function ($) {
 
     // Creates elements for all spreadsheet items
     function createSpreadsheetItems() {
-        if (getViewMode() !== ViewMode.Spreadsheet) {
+        if (getViewMode() !== "Spreadsheet") {
             // No need to calculate if not in spreadsheet mode
             return;
         }
@@ -909,6 +905,9 @@ jq(function ($) {
 
         table.tablesorter({
             selectorHeaders: "> thead > tr:nth-child(2) > th",
+            textSorter: function (a, b) {
+                return a.localeCompare(b);
+            },
         });
         table.find(".tablesorter-headerAsc").trigger("sort");
         table.find(".tablesorter-headerDesc").trigger("sort");
@@ -1073,12 +1072,12 @@ jq(function ($) {
         const modeId = getSelectedButtonId($("#modeContainer"));
 
         if (modeId === "modeComparison") {
-            return ViewMode.Comparison;
+            return "Comparison";
         } else if (modeId === "modeSpreadsheet") {
-            return ViewMode.Spreadsheet;
+            return "Spreadsheet";
         }
 
-        return ViewMode.Simple;
+        return "Simple";
     }
 
     // Initialize the page state
@@ -1391,13 +1390,13 @@ jq(function ($) {
         };
 
         const viewMode = getViewMode();
-        if (viewMode === ViewMode.Comparison) {
+        if (viewMode === "Comparison") {
             // Comparison names are pre-sorted, don't need to sort here
             return itemNames;
         }
 
         // Do initial sort
-        const isSpreadsheet = viewMode === ViewMode.Spreadsheet;
+        const isSpreadsheet = viewMode === "Spreadsheet";
         const primaryObject = isSpreadsheet ? sortKeyMap["Gallery"] : sortKeyMap[$("#primarySort").text()];
         const primaryKeys: string[] = "key" in primaryObject ? [primaryObject.key] : primaryObject.keys;
         const primarySort = primaryObject.sort;
@@ -1527,7 +1526,7 @@ jq(function ($) {
 
         const viewMode = getViewMode();
 
-        if (viewMode === ViewMode.Simple) {
+        if (viewMode === "Simple") {
             $("#sortingContainer").removeClass("not-visible");
             $("#comparisonContainer").addClass("not-visible");
             $("#simpleItemsGrid").removeClass("not-visible");
@@ -1553,7 +1552,7 @@ jq(function ($) {
 
                 precedingElement = element;
             });
-        } else if (viewMode === ViewMode.Comparison) {
+        } else if (viewMode === "Comparison") {
             $("#sortingContainer").addClass("not-visible");
             $("#comparisonContainer").removeClass("not-visible");
             $("#simpleItemsGrid").addClass("not-visible");
@@ -1575,7 +1574,7 @@ jq(function ($) {
 
                 refreshSelectpicker(select);
             });
-        } else if (viewMode == ViewMode.Spreadsheet) {
+        } else if (viewMode == "Spreadsheet") {
             $("#sortingContainer").addClass("not-visible");
             $("#comparisonContainer").addClass("not-visible");
             $("#simpleItemsGrid").addClass("not-visible");
