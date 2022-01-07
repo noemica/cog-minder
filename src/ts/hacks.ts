@@ -393,7 +393,7 @@ jq(function ($) {
             })
             .join("");
 
-        tableBody.append($(tableHtml)[0]);
+        tableBody.append($(tableHtml) as any);
         (tableBody.find('[data-toggle="tooltip"]') as any).tooltip();
     }
 
