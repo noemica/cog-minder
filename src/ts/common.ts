@@ -8,7 +8,6 @@ import {
     FabricationStats,
     Item,
     ItemCategory,
-    ItemSlot,
     ItemType,
     JsonItem,
     OtherItem,

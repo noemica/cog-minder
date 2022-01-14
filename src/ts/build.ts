@@ -507,7 +507,12 @@ jq(function ($) {
         initData(itemsToLoad as { [key: string]: JsonItem }, undefined);
 
         initializePartsSelects();
-        resetValues(initialPageState.parts);
+        resetValues(
+            initialPageState.parts,
+            initialPageState.depth,
+            initialPageState.energyGen,
+            initialPageState.heatDissipation,
+        );
 
         // Set non-part inputs
         if (initialPageState.depth !== undefined) {
@@ -576,10 +581,21 @@ jq(function ($) {
     }
 
     // Resets all values on the page
-    function resetValues(defaults: PartState[][]) {
-        $("#depthInput").val("");
-        $("#energyGenInput").val("");
-        $("#heatDissipationInput").val("");
+    function resetValues(
+        defaults: PartState[][],
+        depth?: number | string,
+        energyGen?: number | string,
+        heatDissipation?: number | string,
+    ) {
+        if (depth !== undefined) {
+            $("#depthInput").val(depth);
+        }
+        if (energyGen !== undefined) {
+            $("#energyGenInput").val(energyGen);
+        }
+        if (heatDissipation !== undefined) {
+            $("#heatDissipationInput").val(heatDissipation);
+        }
         resetPartSelects(defaults);
     }
 
@@ -1091,6 +1107,10 @@ jq(function ($) {
             } else if (p.active) {
                 for (let i = 0; i < p.number; i++) {
                     activeWeapons.push(p.part as WeaponItem);
+
+                    if (isMelee) {
+                        break;
+                    }
                 }
             }
         });
@@ -1188,15 +1208,22 @@ jq(function ($) {
 
         // Calculate info for each part
         const partsInfo: PartInfo[] = parts.map((p) => {
+            let activeMultiplierNumber = p.number;
+            if (isMelee && isPartMelee(p.part) && p.active) {
+                // In case multiple melee weapons are selected, only count the first
+                activeMultiplierNumber = 1;
+            }
+
             return {
                 coverage: (p.part.coverage ?? 0) * p.number,
-                energyPerMove: getEnergyPerMove(p, powerAmplifierBonus, tusPerMove) * p.number,
-                energyPerTurn: getEnergyPerTurn(p, powerAmplifierBonus) * p.number,
+                energyPerMove: getEnergyPerMove(p, powerAmplifierBonus, tusPerMove) * activeMultiplierNumber,
+                energyPerTurn: getEnergyPerTurn(p, powerAmplifierBonus) * activeMultiplierNumber,
                 energyPerVolley:
-                    getEnergyPerVolley(p, energyFilterPercent, powerAmplifierBonus, tusPerVolley) * p.number,
-                heatPerMove: getHeatPerMove(p, tusPerMove) * p.number,
-                heatPerTurn: getHeatPerTurn(p) * p.number,
-                heatPerVolley: getHeatPerVolley(p, tusPerVolley) * p.number,
+                    getEnergyPerVolley(p, energyFilterPercent, powerAmplifierBonus, tusPerVolley) *
+                    activeMultiplierNumber,
+                heatPerMove: getHeatPerMove(p, tusPerMove) * activeMultiplierNumber,
+                heatPerTurn: getHeatPerTurn(p) * activeMultiplierNumber,
+                heatPerVolley: getHeatPerVolley(p, tusPerVolley) * activeMultiplierNumber,
                 integrity: p.part.integrity * p.number,
                 mass: getMass(p) * p.number,
                 slot: p.part.slot,
@@ -1357,16 +1384,20 @@ jq(function ($) {
             partsState.totalHeatGenPerMove - partsState.totalHeatDissipationPerMove,
             "The amount of heat gained (or lost) per single tile move.",
         );
-        addInfo("Volley Time", partsState.tusPerVolley, "The amount of TUs per volley.");
+        addInfo(
+            "Volley Time",
+            partsState.tusPerVolley,
+            "The amount of TUs per volley. For melee this assumes no followups.",
+        );
         addInfo(
             "Energy/Volley",
             partsState.totalEnergyGenPerVolley - partsState.totalEnergyUsePerVolley,
-            "The amount of energy gained (or lost) per full volley.",
+            "The amount of energy gained (or lost) per full volley. For melee this assumes no followups.",
         );
         addInfo(
             "Heat/Volley",
             partsState.totalHeatGenPerVolley - partsState.totalHeatDissipationPerVolley,
-            "The amount of heat gained (or lost) per full volley.",
+            "The amount of heat gained (or lost) per full volley. For melee this assumes no followups.",
         );
     }
 });
