@@ -1,6 +1,6 @@
 // Common Jquery related code
 
-import { createItemDataContent, getItem, itemData, Spoiler, valueOrDefault } from "./common";
+import { createItemDataContent, escapeHtml, getItem, itemData, Spoiler, valueOrDefault } from "./common";
 import { PageType, pageTypes } from "./commonTypes";
 
 import * as jQuery from "jquery";
@@ -136,7 +136,9 @@ export function createHeader(page: PageType, headerContainer: JQuery<HTMLElement
     const helpLabel =
         info.helpText === undefined
             ? ""
-            : `<span class="input-group-text-block display-5" data-toggle="tooltip" title="${info.helpText}">?</span>`;
+            : `<span class="input-group-text-block display-5" data-toggle="tooltip" title="${escapeHtml(
+                  info.helpText,
+              )}">?</span>`;
 
     headerContainer.append(`
 <div class="title-grid mt-2">
