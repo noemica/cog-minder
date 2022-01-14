@@ -80,6 +80,8 @@ jq(function ($) {
         heatPerVolley: number;
         integrity: number;
         mass: number;
+        slot: ItemSlot;
+        size: number;
         vulnerability: number;
     };
 
@@ -133,6 +135,8 @@ jq(function ($) {
         highestVulnerability: number;
         lowestVulnerability: number;
 
+        slotsPerType: Map<ItemSlot, number>;
+
         isMelee: boolean;
         totalCoverage: number;
         totalEnergyGenPerMove: number;
@@ -177,14 +181,15 @@ jq(function ($) {
     let initialPageState: PageState;
 
     type PartSection = {
+        labelId: string;
         id: string;
         slot: ItemSlot;
     };
     const partTypes: PartSection[] = [
-        { id: "powerContainer", slot: ItemSlot.Power },
-        { id: "propulsionContainer", slot: ItemSlot.Propulsion },
-        { id: "utilityContainer", slot: ItemSlot.Utility },
-        { id: "weaponContainer", slot: ItemSlot.Weapon },
+        { labelId: "powerLabel", id: "powerContainer", slot: "Power" },
+        { labelId: "propulsionLabel", id: "propulsionContainer", slot: "Propulsion" },
+        { labelId: "utilityLabel", id: "utilityContainer", slot: "Utility" },
+        { labelId: "weaponLabel", id: "weaponContainer", slot: "Weapon" },
     ];
     const defaultParts: PartState[][] = [
         [{ name: "Ion Engine" }],
@@ -404,6 +409,7 @@ jq(function ($) {
 
                 parts.push(typeArray);
             });
+
         const b11 = $("#beta11Checkbox").prop("checked");
         const depth = $("#depthInput").val() as string;
         const energyGen = $("#energyGenInput").val() as string;
@@ -603,6 +609,11 @@ jq(function ($) {
                         }
                     });
             });
+
+        partTypes.forEach((partType) => {
+            const slotCount = partsState.slotsPerType.get(partType.slot);
+            $("#" + partType.labelId).text(`${partType.slot} x${slotCount}`);
+        });
 
         updateCoreInfo();
     }
@@ -858,7 +869,7 @@ jq(function ($) {
             }
 
             // Return positive value for energy gen, negative for consumption
-            if (p.part.slot === ItemSlot.Propulsion) {
+            if (p.part.slot === "Propulsion") {
                 const energyPerTurn = getEnergyPerTurn(p, powerAmplifierBonus);
                 return getValuePerTus(energyPerTurn, tusPerMove) - ((p.part as PropulsionItem).energyPerMove ?? 0);
             } else {
@@ -868,13 +879,13 @@ jq(function ($) {
 
         function getEnergyPerTurn(p: Part, powerAmplifierBonus: number) {
             // Return positive value for energy gen, negative for consumption
-            if (p.active && p.part.slot === ItemSlot.Power) {
+            if (p.active && p.part.slot === "Power") {
                 // Multiply only power-slot energy generation by the power amplifier bonus
                 return ((p.part as PowerItem).energyGeneration ?? 0) * powerAmplifierBonus;
             } else if (hasActiveSpecialProperty(p.part, p.abilityActive, "FusionCompressor")) {
                 // Fusion compressors convert matter to energy
                 return ((p.part.specialProperty as SpecialItemProperty).trait as FusionCompressor).energyPerTurn;
-            } else if ((p.active && p.part.slot === ItemSlot.Propulsion) || p.part.slot === ItemSlot.Utility) {
+            } else if ((p.active && p.part.slot === "Propulsion") || p.part.slot === "Utility") {
                 return -((p.part as ItemWithUpkeep).energyUpkeep ?? 0);
             } else if (hasActiveSpecialProperty(p.part, p.abilityActive, "WeaponRegen")) {
                 // Weapon regen ability turns energy into weapon integrity
@@ -895,7 +906,7 @@ jq(function ($) {
             }
 
             // Return positive value for energy gen, negative for consumption
-            if (p.part.slot === ItemSlot.Weapon) {
+            if (p.part.slot === "Weapon") {
                 return -((p.part as WeaponItem).shotEnergy ?? 0) * energyFilterPercent;
             } else {
                 return getValuePerTus(getEnergyPerTurn(p, powerAmplifierBonus), tusPerVolley);
@@ -904,7 +915,7 @@ jq(function ($) {
 
         function getHeatPerMove(p: Part, tusPerMove: number) {
             // Return negative value for heat dissipation, positive for generation
-            if (p.active && p.part.slot === ItemSlot.Propulsion) {
+            if (p.active && p.part.slot === "Propulsion") {
                 return getValuePerTus(getHeatPerTurn(p), tusPerMove) + ((p.part as PropulsionItem).heatPerMove ?? 0);
             } else {
                 return getValuePerTus(getHeatPerTurn(p), tusPerMove);
@@ -917,9 +928,7 @@ jq(function ($) {
                 return -((p.part.specialProperty as SpecialItemProperty).trait as HeatDissipation).dissipation;
             } else if (
                 p.active &&
-                (p.part.slot === ItemSlot.Power ||
-                    p.part.slot === ItemSlot.Propulsion ||
-                    p.part.slot === ItemSlot.Utility)
+                (p.part.slot === "Power" || p.part.slot === "Propulsion" || p.part.slot === "Utility")
             ) {
                 return (p.part as ItemWithUpkeep).heatGeneration ?? 0;
             }
@@ -933,7 +942,7 @@ jq(function ($) {
             }
 
             // Return negative values for heat dissipation, positive for generation
-            if (p.part.slot === ItemSlot.Weapon) {
+            if (p.part.slot === "Weapon") {
                 return (p.part as WeaponItem).shotHeat ?? 0;
             } else {
                 return getValuePerTus(getHeatPerTurn(p), tusPerVolley);
@@ -942,7 +951,7 @@ jq(function ($) {
 
         function getMass(p: Part) {
             // Return negative value for support, positive for mass used
-            if (p.active && p.part.slot === ItemSlot.Propulsion) {
+            if (p.active && p.part.slot === "Propulsion") {
                 return -(p.part as PropulsionItem).support;
             } else if (hasActiveSpecialProperty(p.part, p.active, "MassSupport")) {
                 return -((p.part.specialProperty as SpecialItemProperty).trait as MassSupport).support;
@@ -988,7 +997,7 @@ jq(function ($) {
             });
 
         // Calculate propulsion-related stats
-        const firstProp = parts.find((p) => p.active && p.part.slot === ItemSlot.Propulsion);
+        const firstProp = parts.find((p) => p.active && p.part.slot === "Propulsion");
         let propulsionType: ItemType | undefined;
         let totalSupport: number;
         const totalMass = parts.map((p) => (p.part.mass ?? 0) * p.number).reduce(sum, 0);
@@ -1020,7 +1029,7 @@ jq(function ($) {
 
         // Set irrelevant prop types to inactive
         parts.forEach((p) => {
-            if (p.part.slot === ItemSlot.Propulsion && !activeProp.includes(p.part as PropulsionItem)) {
+            if (p.part.slot === "Propulsion" && !activeProp.includes(p.part as PropulsionItem)) {
                 p.active = false;
             }
         });
@@ -1054,7 +1063,7 @@ jq(function ($) {
         // Then apply drag penalties if airborne...
         if (propulsionType === ItemType.FlightUnit || propulsionType === ItemType.HoverUnit) {
             tusPerMove += parts
-                .filter((p) => p.part.slot === ItemSlot.Propulsion)
+                .filter((p) => p.part.slot === "Propulsion")
                 .map((p) => (p.part as PropulsionItem).drag ?? 0)
                 .reduce(sum, 0);
         }
@@ -1067,13 +1076,13 @@ jq(function ($) {
         }
 
         // Calculate weapon-related stats
-        const firstWeapon = parts.find((p) => p.active && p.part.slot === ItemSlot.Weapon);
+        const firstWeapon = parts.find((p) => p.active && p.part.slot === "Weapon");
         const isMelee = firstWeapon !== undefined && isPartMelee(firstWeapon.part);
 
         // Set irrelevant weapon types to inactive
         const activeWeapons: WeaponItem[] = [];
         parts.forEach((p) => {
-            if (p.part.slot !== ItemSlot.Weapon) {
+            if (p.part.slot !== "Weapon") {
                 return;
             }
 
@@ -1147,6 +1156,8 @@ jq(function ($) {
             heatPerVolley: -getValuePerTus(55 - 3 * depth + innateHeatDissipation, tusPerVolley),
             integrity: 1750 - 150 * depth,
             mass: activeProp.length > 0 ? 0 : -3,
+            size: 0,
+            slot: "N/A",
             vulnerability: (totalCoverage / 100) * (1750 - 150 * depth),
         };
 
@@ -1188,6 +1199,8 @@ jq(function ($) {
                 heatPerVolley: getHeatPerVolley(p, tusPerVolley) * p.number,
                 integrity: p.part.integrity * p.number,
                 mass: getMass(p) * p.number,
+                slot: p.part.slot,
+                size: p.part.size * p.number,
                 vulnerability: getVulnerability(p, totalCoverage),
             };
         });
@@ -1232,13 +1245,24 @@ jq(function ($) {
                 .map((p) => {
                     if (hasActiveSpecialProperty(p.part, p.active, "EnergyStorage")) {
                         return ((p.part.specialProperty as SpecialItemProperty).trait as EnergyStorage).storage;
-                    } else if (p.active && p.part.slot === ItemSlot.Power) {
+                    } else if (p.active && p.part.slot === "Power") {
                         return (p.part as PowerItem).energyStorage ?? 0;
                     } else {
                         return 0;
                     }
                 })
                 .reduce(sum, 0);
+
+        const slotsPerType = new Map<ItemSlot, number>([
+            ["N/A", 0],
+            ["Power", 0],
+            ["Propulsion", 0],
+            ["Utility", 0],
+            ["Weapon", 0],
+        ]);
+        allPartInfo.forEach((p) => {
+            slotsPerType.set(p.slot, slotsPerType.get(p.slot)! + p.size);
+        });
 
         partsState = {
             activePropulsionType: propulsionType,
@@ -1252,6 +1276,7 @@ jq(function ($) {
             heatGenPerVolley: heatPerVolley,
             lowestVulnerability: lowestVulnerability,
             highestVulnerability: highestVulnerability,
+            slotsPerType: slotsPerType,
             totalCoverage: totalCoverage,
             totalEnergyGenPerMove: totalEnergyGenPerMove,
             totalEnergyGenPerTurn: totalEnergyGenPerTurn,

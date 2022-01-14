@@ -316,7 +316,7 @@ jq(function ($) {
             const baseItem = itemData[name];
 
             // Slot check
-            if (baseItem.slot !== ItemSlot.Weapon) {
+            if (baseItem.slot !== "Weapon") {
                 return;
             }
 
@@ -877,7 +877,7 @@ jq(function ($) {
                     rating: 0,
                     ratingString: "",
                     size: 0,
-                    slot: ItemSlot.NA,
+                    slot: "N/A",
                     type: ItemType.ImpactWeapon,
                     mass: parseIntOrDefault($(s).parent().nextAll("input").val() as string, 0),
                 };
@@ -905,7 +905,7 @@ jq(function ($) {
             for (let i = 0; i < item.number; i++) {
                 const itemDef = getItem(item.name);
                 const isProtection = itemDef.type === ItemType.Protection;
-                const coverage = itemDef.coverage!;
+                const coverage = itemDef.coverage ?? 0;
                 parts.push({
                     armorAnalyzedCoverage: isProtection ? 0 : coverage,
                     coverage: coverage,

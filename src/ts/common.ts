@@ -567,7 +567,7 @@ export function createItemDataContent(baseItem: Item): string {
     function getSlotString(item: Item): string {
         let slotType = item.slot as string;
 
-        if (slotType == ItemSlot.NA) {
+        if (slotType == "N/A") {
             // Take care of item special cases
             if (item.type == ItemType.Item || item.type == ItemType.Trap) {
                 slotType = "Inventory";
@@ -603,7 +603,7 @@ export function createItemDataContent(baseItem: Item): string {
     `;
 
     switch (baseItem.slot) {
-        case ItemSlot.Power: {
+        case "Power": {
             const item = baseItem as PowerItem;
 
             // Add power-unique categories
@@ -622,7 +622,7 @@ export function createItemDataContent(baseItem: Item): string {
             break;
         }
 
-        case ItemSlot.Propulsion: {
+        case "Propulsion": {
             const item = baseItem as PropulsionItem;
 
             // Add propulsion-unique categories
@@ -647,7 +647,7 @@ export function createItemDataContent(baseItem: Item): string {
             break;
         }
 
-        case ItemSlot.Utility: {
+        case "Utility": {
             const item = baseItem as UtilityItem;
 
             // Add utility-unique categories
@@ -661,7 +661,7 @@ export function createItemDataContent(baseItem: Item): string {
             break;
         }
 
-        case ItemSlot.Weapon: {
+        case "Weapon": {
             const item = baseItem as WeaponItem;
             // Add weapon-unique categories
 
@@ -1002,9 +1002,9 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
         const specialProperty = specialItemProperties[itemName];
 
         switch (item["Slot"]) {
-            case ItemSlot.NA:
+            case "N/A":
                 const otherItem: OtherItem = {
-                    slot: ItemSlot.NA,
+                    slot: "N/A",
                     category: category,
                     coverage: undefined,
                     hackable: hackable,
@@ -1025,9 +1025,9 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                 newItem = otherItem;
                 break;
 
-            case ItemSlot.Power:
+            case "Power":
                 const powerItem: PowerItem = {
-                    slot: ItemSlot.Power,
+                    slot: "Power",
                     category: category,
                     coverage: coverage,
                     energyGeneration: parseIntOrUndefined(item["Energy Generation"]),
@@ -1055,9 +1055,9 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                 newItem = powerItem;
                 break;
 
-            case ItemSlot.Propulsion:
+            case "Propulsion":
                 const propItem: PropulsionItem = {
-                    slot: ItemSlot.Propulsion,
+                    slot: "Propulsion",
                     category: category,
                     coverage: coverage,
                     energyPerMove: parseFloatOrUndefined(item["Energy/Move"]),
@@ -1091,9 +1091,9 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                 newItem = propItem;
                 break;
 
-            case ItemSlot.Utility:
+            case "Utility":
                 const utilItem: UtilityItem = {
-                    slot: ItemSlot.Utility,
+                    slot: "Utility",
                     category: category,
                     coverage: coverage,
                     hackable: hackable,
@@ -1119,7 +1119,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                 newItem = utilItem;
                 break;
 
-            case ItemSlot.Weapon:
+            case "Weapon":
                 let critical: number | undefined;
                 let criticalType: Critical | undefined;
                 if (item.Critical !== undefined) {
@@ -1140,7 +1140,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     }
                 }
                 const weaponItem: WeaponItem = {
-                    slot: ItemSlot.Weapon,
+                    slot: "Weapon",
                     category: category,
                     coverage: coverage,
                     hackable: hackable,

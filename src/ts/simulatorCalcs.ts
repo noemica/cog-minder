@@ -189,19 +189,19 @@ const specialItems = {
     "Core Shielding": { category: categoryShielding, slot: "Core", percent: 0.2 },
     "Imp. Core Shielding": { category: categoryShielding, slot: "Core", percent: 0.3 },
     "Exp. Core Shielding": { category: categoryShielding, slot: "Core", percent: 0.4 },
-    "Power Shielding": { category: categoryShielding, slot: ItemSlot.Power, percent: 0.33 },
-    "Imp. Power Shielding": { category: categoryShielding, slot: ItemSlot.Power, percent: 0.66 },
-    "Exp. Power Shielding": { category: categoryShielding, slot: ItemSlot.Power, percent: 0.9 },
-    "Propulsion Shielding": { category: categoryShielding, slot: ItemSlot.Propulsion, percent: 0.33 },
-    "Imp. Propulsion Shielding": { category: categoryShielding, slot: ItemSlot.Propulsion, percent: 0.66 },
-    "Exp. Propulsion Shielding": { category: categoryShielding, slot: ItemSlot.Propulsion, percent: 0.9 },
-    "Utility Shielding": { category: categoryShielding, slot: ItemSlot.Utility, percent: 0.33 },
-    "Imp. Utility Shielding": { category: categoryShielding, slot: ItemSlot.Utility, percent: 0.66 },
-    "Exp. Utility Shielding": { category: categoryShielding, slot: ItemSlot.Utility, percent: 0.9 },
-    "Weapon Shielding": { category: categoryShielding, slot: ItemSlot.Weapon, percent: 0.33 },
-    "Imp. Weapon Shielding": { category: categoryShielding, slot: ItemSlot.Weapon, percent: 0.66 },
-    "Exp. Weapon Shielding": { category: categoryShielding, slot: ItemSlot.Weapon, percent: 0.9 },
-    "Zio. Weapon Casing": { category: categoryShielding, slot: ItemSlot.Weapon, percent: 1.0 },
+    "Power Shielding": { category: categoryShielding, slot: "Power", percent: 0.33 },
+    "Imp. Power Shielding": { category: categoryShielding, slot: "Power", percent: 0.66 },
+    "Exp. Power Shielding": { category: categoryShielding, slot: "Power", percent: 0.9 },
+    "Propulsion Shielding": { category: categoryShielding, slot: "Propulsion", percent: 0.33 },
+    "Imp. Propulsion Shielding": { category: categoryShielding, slot: "Propulsion", percent: 0.66 },
+    "Exp. Propulsion Shielding": { category: categoryShielding, slot: "Propulsion", percent: 0.9 },
+    "Utility Shielding": { category: categoryShielding, slot: "Utility", percent: 0.33 },
+    "Imp. Utility Shielding": { category: categoryShielding, slot: "Utility", percent: 0.66 },
+    "Exp. Utility Shielding": { category: categoryShielding, slot: "Utility", percent: 0.9 },
+    "Weapon Shielding": { category: categoryShielding, slot: "Weapon", percent: 0.33 },
+    "Imp. Weapon Shielding": { category: categoryShielding, slot: "Weapon", percent: 0.66 },
+    "Exp. Weapon Shielding": { category: categoryShielding, slot: "Weapon", percent: 0.9 },
+    "Zio. Weapon Casing": { category: categoryShielding, slot: "Weapon", percent: 1.0 },
 };
 
 // Weapon number to base volley time map
@@ -405,7 +405,7 @@ function applyDamage(
         else if (critical === Critical.Detonate) {
             let i: number;
             for (i = 0; i < botState.parts.length; i++) {
-                if (botState.parts[i].def.slot === ItemSlot.Power) {
+                if (botState.parts[i].def.slot === "Power") {
                     break;
                 }
             }
@@ -535,7 +535,7 @@ function applyDamage(
 
         // Check for spectrum engine explosion (17)
         // TODO apply damage
-        const engineExplosion = part.def.slot === ItemSlot.Power && randomInt(0, 99) < spectrum;
+        const engineExplosion = part.def.slot === "Power" && randomInt(0, 99) < spectrum;
 
         // Protection can't get instantly destroyed, only receives 20% more damage
         if (doesCriticalDestroyPart(critical) && part.protection) {
@@ -887,7 +887,7 @@ function getHitPart(
     // Check to avoid rerolling an impact core hit
     if (part === undefined && damageType !== DamageType.Impact) {
         // Piercing damage gets double core exposure
-        const coreCoverageBonus = damageType === DamageType.Piercing ? botState.coreCoverage : 0;
+        const coreCoverageBonus = damageType === DamageType.Piercing ? botState.coreCoverage * 0.3 : 0;
 
         if (armorAnalyzed) {
             // Determine part based on reduced armor coverage
@@ -1024,14 +1024,14 @@ const simulationEndConditions: { [key: string]: (state: BotState) => boolean } =
         return (
             botState.coreIntegrity <= 0 ||
             botState.corruption >= 100 ||
-            botState.parts.every((part) => part.def.slot != ItemSlot.Power)
+            botState.parts.every((part) => part.def.slot != "Power")
         );
     },
     "Kill or No Weapons": function (botState) {
         return (
             botState.coreIntegrity <= 0 ||
             botState.corruption >= 100 ||
-            botState.parts.every((part) => part.def.slot != ItemSlot.Weapon)
+            botState.parts.every((part) => part.def.slot != "Weapon")
         );
     },
     "Kill or No TNC": function (botState) {
@@ -1044,8 +1044,8 @@ const simulationEndConditions: { [key: string]: (state: BotState) => boolean } =
     "Architect Tele (80% integrity, 1 weapon, or 1 prop)": function (botState) {
         return (
             botState.coreIntegrity <= botState.initialCoreIntegrity * 0.8 ||
-            botState.parts.filter((part) => part.def.slot === ItemSlot.Weapon).length === 1 ||
-            botState.parts.filter((part) => part.def.slot === ItemSlot.Propulsion).length === 1
+            botState.parts.filter((part) => part.def.slot === "Weapon").length === 1 ||
+            botState.parts.filter((part) => part.def.slot === "Propulsion").length === 1
         );
     },
 };

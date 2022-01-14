@@ -25,13 +25,7 @@ export enum ItemCategory {
     None = "",
 }
 
-export enum ItemSlot {
-    NA = "N/A",
-    Power = "Power",
-    Propulsion = "Propulsion",
-    Utility = "Utility",
-    Weapon = "Weapon",
-}
+export type ItemSlot = "N/A" | "Power" | "Propulsion" | "Utility" | "Weapon";
 
 export interface ItemWithUpkeep {
     energyUpkeep?: number;

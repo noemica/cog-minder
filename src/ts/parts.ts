@@ -363,12 +363,8 @@ jq(function ($) {
 
         // Add upkeep if applicable
         if (
-            (leftItem.slot === ItemSlot.Power ||
-                leftItem.slot === ItemSlot.Propulsion ||
-                leftItem.slot === ItemSlot.Utility) &&
-            (rightItem.slot === ItemSlot.Power ||
-                rightItem.slot === ItemSlot.Propulsion ||
-                rightItem.slot === ItemSlot.Utility)
+            (leftItem.slot === "Power" || leftItem.slot === "Propulsion" || leftItem.slot === "Utility") &&
+            (rightItem.slot === "Power" || rightItem.slot === "Propulsion" || rightItem.slot === "Utility")
         ) {
             const leftUpkeep = leftItem as ItemWithUpkeep;
             const rightUpkeep = rightItem as ItemWithUpkeep;
@@ -383,7 +379,7 @@ jq(function ($) {
         }
 
         // Add power generation stats if applicable
-        if (leftItem.slot === ItemSlot.Power && rightItem.slot === ItemSlot.Power) {
+        if (leftItem.slot === "Power" && rightItem.slot === "Power") {
             const leftPower = leftItem as PowerItem;
             const rightPower = rightItem as PowerItem;
 
@@ -396,7 +392,7 @@ jq(function ($) {
         }
 
         // Add propulsion stats if applicable
-        if (leftItem.slot === ItemSlot.Propulsion && rightItem.slot === ItemSlot.Propulsion) {
+        if (leftItem.slot === "Propulsion" && rightItem.slot === "Propulsion") {
             const leftPropulsion = leftItem as PropulsionItem;
             const rightPropulsion = rightItem as PropulsionItem;
 
@@ -599,7 +595,7 @@ jq(function ($) {
         }
 
         // Add weapon stats if applicable
-        if (leftItem.slot === ItemSlot.Weapon && rightItem.slot === ItemSlot.Weapon) {
+        if (leftItem.slot === "Weapon" && rightItem.slot === "Weapon") {
             const leftWeapon = leftItem as WeaponItem;
             const rightWeapon = rightItem as WeaponItem;
 
