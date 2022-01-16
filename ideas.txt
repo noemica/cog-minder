@@ -1,8 +1,13 @@
 Small ideas:
+- Add strategy dictionary
+- Add map and prefab viewers
+- Combine wheels and treads into a single propulsion type
 
 Medium ideas:
 - Add ignore obsolete parts in search
+- Add API key for Kyzrati to use to calculate core coverage
 
 Big ideas:
 - Save search/parts in URL
 - Full spreadsheet view (like gallery export html)
+- Play cogmind in web browser
