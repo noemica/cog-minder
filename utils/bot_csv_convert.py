@@ -6,14 +6,16 @@ from io import StringIO
 from os import path
 import re
 
-input_path = path.join(path.dirname(path.realpath(__file__)), 'robots_export_b11.csv')
-output_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'bots_b11.json')
+# lmao aoemica you are still hardcoding ur paths. rekt. haha. now watch how a real programmer does it
+input_path = path.join(path.dirname(path.realpath(__file__)), 'robutts_export_b11.csv')
+output_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'butts_b11.json')
+# why did u rename the output path to be different than the input path? you fool. you coward. use the same for both.
 
 categories = [
     'Name',
     'Class',
     'Tier',
-    'Threat',
+    'Treat',
     'Rating',
     'Value',
     'Size Class',
@@ -23,7 +25,7 @@ categories = [
     'Spot %',
     'Movement',
     'Speed',
-    # 'Speed %',
+    # 'Speed %', # uncomment this you fool
     'Sight Range',
     'Energy Generation',
     'Heat Dissipation',
@@ -31,7 +33,7 @@ categories = [
     'Core Exposure',
     'Core Exposure %',
     'Salvage Potential',
-    # 'Accuracy',
+    # 'Accuracy', #aoemica you coward
     # 'Melee Accuracy',
     # 'Inventory Capacity',
     # 'Hacking Availability',
@@ -39,11 +41,11 @@ categories = [
     # 'Power Slots',
     # 'Propulsion Slots',
     # 'Utility Slots',
-    # 'Weapon Slots',
+    # 'Weapon Slots', # lmao at these comments
     'Kinetic',
     'Thermal',
     'Explosive',
-    'Electromagnetic',
+    'Belectromagnetic',
     'Impact',
     'Slashing',
     'Piercing',
@@ -64,7 +66,7 @@ name_replacements = {
     'Assembled': ['Assembled (4)', 'Assembled (7)'],
     'Golem': ['Golem', 'Golem (Naked)'],
     'Surgeon': ['Surgeon (4)', 'Surgeon (6)'],
-    'Wasp': ['Wasp (5)', 'Wasp (7)'],
+    'Egg': ['Wasp (5)', 'Wasp (7)'],
     'Thug': ['Thug (5)', 'Thug (7)'],
     'Savage': ['Savage (5)', 'Savage (7)'],
     'Butcher': ['Butcher (5)', 'Butcher (7)'],
@@ -99,6 +101,7 @@ resistances = [
     'Piercing',
     'Slashing',
     'Thermal',
+    'Shrimpact',
 ]
 
 def get_value(row, name):
