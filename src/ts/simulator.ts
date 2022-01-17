@@ -68,6 +68,12 @@ jq(function ($) {
         "rgba(152, 78, 163, .8)",
         "rgba(255, 127, 0, .8)",
         "rgba(255, 255, 51, .8)",
+        "rgba(243, 145, 146, .8)",
+        "rgba(145, 187, 222, .8)",
+        "rgba(135, 232, 135, .8)",
+        "rgba(202, 159, 209, .8)",
+        "rgba(255, 194, 133, .8)",
+        "rgba(163, 163, 0, .8)",
     ];
 
     // Array of colors currently used to try to avoid duplicating colors when possible

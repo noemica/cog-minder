@@ -1,8 +1,15 @@
 Small ideas:
+- Add new b11 util changes to simulator
+    - half_stack changes
+- Fix b11 part split for special items like fusion comps
 
 Medium ideas:
 - Add ignore obsolete parts in search
+    - Hard to know what an "obsolete" part is
+- Add proper followups for build page
 
 Big ideas:
 - Save search/parts in URL
-- Full spreadsheet view (like gallery export html)
+    - Can do for all pages
+- Actively save build and update hash when modifying things
+    - Easier than other pages since hash is already in existence
