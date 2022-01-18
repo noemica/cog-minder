@@ -319,6 +319,13 @@ export function createBotDataContent(bot: Bot): string {
         return html;
     }
 
+    function getFabricationMatterString(stats: FabricationStats) {
+        const matter = stats.matter;
+        const siphonMatter = Math.floor(parseInt(matter) * .75).toString();
+
+        return `${matter} (With siphon: ${siphonMatter})`;
+    }
+
     function getRatingValue(bot: Bot) {
         const ratingString = bot.rating;
         const ratingArray = ratingString.split("-").map(s => s.trim()).map(s => parseInt(s));
@@ -454,6 +461,26 @@ export function createBotDataContent(bot: Bot): string {
         traits.forEach(trait => {
             html += `<span class="popover-description">${trait}</span>\n`
         });
+    }
+
+    // Add fabrication stats if present
+    if (bot.fabrication != null) {
+        const number = bot.fabrication.number;
+
+        html += `${emptyLine}`;
+
+        if (number === "1") {
+            html += summaryLine("Fabrication");
+        }
+        else {
+            html += summaryLine(`Fabrication x${number}`);
+        }
+
+        html += `
+        ${textLine("Time", bot.fabrication.time)}
+        ${bot.fabrication?.matter !== undefined ? textLine("Matter", getFabricationMatterString(bot.fabrication)) : ""}
+        ${textLine("Components", "None")}
+        `;
     }
 
     // Add description
@@ -1298,6 +1325,15 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                 categories = (botCategories as { [key: string]: BotCategory[] })[botName];
             }
 
+            const fabrication: FabricationStats | undefined =
+                bot["Fabrication Count"] === undefined
+                    ? undefined
+                    : {
+                          matter: bot["Fabrication Matter"] as string,
+                          number: bot["Fabrication Count"] as string,
+                          time: bot["Fabrication Time"] as string,
+                      };
+
             botData[botName] = {
                 armament: bot.Armament ?? [],
                 armamentData: armamentData,
@@ -1313,6 +1349,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                 coreExposure: parseInt(bot["Core Exposure %"]),
                 coreIntegrity: parseInt(bot["Core Integrity"]),
                 description: bot.Analysis ?? "",
+                fabrication: fabrication,
                 immunities: bot.Immunities ?? [],
                 immunitiesString: bot.Immunities?.join(", ") ?? "",
                 memory: bot.Memory,

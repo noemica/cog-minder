@@ -1,3 +1,5 @@
+import { FabricationStats } from "./itemTypes";
+
 export enum BotCategory {
     Alien = "Alien",
     Architect = "Architect",
@@ -69,6 +71,7 @@ export type Bot = {
     coreExposure: number;
     coreIntegrity: number;
     description: string;
+    fabrication?: FabricationStats;
     immunities: BotImmunity[];
     immunitiesString: string;
     memory: string;
@@ -118,4 +121,7 @@ export type JsonBot = {
     Components?: Array<string | ItemOption[]>;
     Analysis?: string;
     Resistances: BotResistances;
+    "Fabrication Count"?: string;
+    "Fabrication Time"?: string;
+    "Fabrication Matter"?: string;
 };
