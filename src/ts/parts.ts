@@ -39,6 +39,7 @@ import * as jQuery from "jquery";
 import "bootstrap";
 import "bootstrap-select";
 import "tablesorter";
+import { MappedSettings, TablesorterHeading, TextSorter } from "tablesorter";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -129,11 +130,148 @@ jq(function ($) {
         slotWeapon: "weaponTypeContainer",
     };
 
+    // Sorting functions
+    function alphabeticalSort(a: string | undefined, b: string | undefined) {
+        const aValue = typeof a === "string" ? a : "";
+        const bValue = typeof b === "string" ? b : "";
+
+        return aValue.localeCompare(bValue);
+    }
+
+    function criticalSort(a: string | undefined, b: string | undefined) {
+        function reorderName(criticalString: string | undefined) {
+            if (typeof criticalString != "string") {
+                return "";
+            }
+
+            // Try to parse a [crit]% [critType] b11 string
+            let result = /(\d+)% (\w*)/.exec(criticalString);
+            if (result === null) {
+                // Try to parse a simple number string, use destroy crit by default
+                result = /(\d+)/.exec(criticalString);
+                if (result === null) {
+                    return "";
+                }
+                // Format crit % with 3 digits for proper sorting
+                return (
+                    "Destroy" +
+                    parseInt(result[1]).toLocaleString("en-us", { minimumIntegerDigits: 3, useGrouping: false })
+                );
+            }
+
+            // Format crit % with 3 digits for proper sorting
+            return (
+                result[2] + parseInt(result[1]).toLocaleString("en-US", { minimumIntegerDigits: 3, useGrouping: false })
+            );
+        }
+
+        const aValue = reorderName(a);
+        const bValue = reorderName(b);
+
+        return aValue.localeCompare(bValue);
+    }
+
+    function damageSort(a: string, b: string) {
+        function getAverage(damageString: string) {
+            if (typeof damageString != "string" || damageString === "") {
+                return 0;
+            }
+
+            const damageArray = damageString
+                .split("-")
+                .map((s) => s.trim())
+                .map((s) => parseInt(s));
+            return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
+        }
+
+        const aValue = getAverage(a);
+        const bValue = getAverage(b);
+
+        return aValue - bValue;
+    }
+
+    function heatSort(a: string, b: string) {
+        function getValue(val: string | undefined) {
+            if (val === undefined) {
+                return 0;
+            }
+            const lowerVal = val.toLowerCase();
+            if (lowerVal.startsWith("minimal")) {
+                return 5;
+            }
+            if (lowerVal.startsWith("low")) {
+                return 25;
+            }
+            if (lowerVal.startsWith("medium")) {
+                return 37;
+            }
+            if (lowerVal.startsWith("high")) {
+                return 50;
+            }
+            if (lowerVal.startsWith("massive")) {
+                return 80;
+            }
+            if (lowerVal.startsWith("deadly")) {
+                return 100;
+            }
+
+            return 0;
+        }
+
+        const aValue = getValue(a);
+        const bValue = getValue(b);
+
+        return aValue - bValue;
+    }
+
+    function integerSort(a: string, b: string) {
+        let aValue = parseInt(a);
+        let bValue = parseInt(b);
+
+        if (isNaN(aValue)) {
+            aValue = 0;
+        }
+        if (isNaN(bValue)) {
+            bValue = 0;
+        }
+
+        return aValue - bValue;
+    }
+
+    function spectrumSort(a: string, b: string) {
+        function getValue(val: string | undefined) {
+            if (val === undefined) {
+                return 0;
+            }
+            const lowerVal = val.toLowerCase();
+            if (lowerVal.startsWith("wide")) {
+                return 10;
+            }
+            if (lowerVal.startsWith("intermediate")) {
+                return 30;
+            }
+            if (lowerVal.startsWith("narrow")) {
+                return 50;
+            }
+            if (lowerVal.startsWith("fine")) {
+                return 100;
+            }
+
+            return 0;
+        }
+
+        const aValue = getValue(a);
+        const bValue = getValue(b);
+
+        return aValue - bValue;
+    }
+
     // Slot categories to show for spreadsheet view
     type partSlotCategory = {
         name: string;
         propertyName?: string;
         propertyNames?: string[];
+        sorter?: TextSorter;
     };
     type PartSlotCategoryLookup = { [key: string]: partSlotCategory[] };
     const otherSlotCategories: PartSlotCategoryLookup = {
@@ -149,7 +287,7 @@ jq(function ($) {
     };
     const powerSlotCategories: PartSlotCategoryLookup = {
         Overview: [
-            { name: "Name" },
+            { name: "Name", sorter: alphabeticalSort },
             { name: "Type" },
             { name: "Rating", propertyName: "ratingString" },
             { name: "Size" },
@@ -171,7 +309,7 @@ jq(function ($) {
     };
     const propulsionSlotCategories: PartSlotCategoryLookup = {
         Overview: [
-            { name: "Name" },
+            { name: "Name", sorter: alphabeticalSort },
             { name: "Type" },
             { name: "Rating", propertyName: "ratingString" },
             { name: "Size" },
@@ -201,7 +339,7 @@ jq(function ($) {
     };
     const utilitySlotCategories: PartSlotCategoryLookup = {
         Overview: [
-            { name: "Name" },
+            { name: "Name", sorter: alphabeticalSort },
             { name: "Type" },
             { name: "Rating", propertyName: "ratingString" },
             { name: "Size" },
@@ -224,7 +362,7 @@ jq(function ($) {
     };
     const WeaponSlotCategories: PartSlotCategoryLookup = {
         Overview: [
-            { name: "Name" },
+            { name: "Name", sorter: alphabeticalSort },
             { name: "Type" },
             { name: "Rating", propertyName: "ratingString" },
             { name: "Size" },
@@ -247,22 +385,22 @@ jq(function ($) {
         Projectile: [
             { name: "Arc" },
             { name: "Count", propertyName: "projectileCount" },
-            { name: "Damage" },
+            { name: "Damage", sorter: damageSort },
             { name: "Type", propertyName: "damageType" },
-            { name: "Critical", propertyName: "criticalString" },
+            { name: "Critical", propertyName: "criticalString", sorter: criticalSort },
             { name: "Penetration" },
-            { name: "Heat Transfer", propertyName: "heatTransfer" },
-            { name: "Spectrum" },
+            { name: "Heat Transfer", propertyName: "heatTransfer", sorter: heatSort },
+            { name: "Spectrum", sorter: spectrumSort },
             { name: "Disruption" },
             { name: "Salvage" },
         ],
         Explosion: [
             { name: "Radius", propertyName: "explosionRadius" },
-            { name: "Damage", propertyName: "explosionDamage" },
-            { name: "Falloff", propertyName: "explosionFalloff" },
+            { name: "Damage", propertyName: "explosionDamage", sorter: damageSort },
+            { name: "Falloff", propertyName: "falloff" },
             { name: "Type", propertyName: "explosionType" },
-            { name: "Heat Transfer", propertyName: "explosionHeatTransfer" },
-            { name: "Spectrum", propertyName: "explosionSpectrum" },
+            { name: "Heat Transfer", propertyName: "explosionHeatTransfer", sorter: heatSort },
+            { name: "Spectrum", propertyName: "explosionSpectrum", sorter: spectrumSort },
             { name: "Disruption", propertyName: "explosionDisruption" },
             { name: "Salvage", propertyName: "explosionSalvage" },
         ],
@@ -899,11 +1037,26 @@ jq(function ($) {
             table.append(row[0]);
         });
 
+        // Assign special sorters
+        const textSorter: MappedSettings<TextSorter> = {};
+        const headers: { [index: number]: TablesorterHeading } = {};
+        let columnIndex = 0;
+        Object.keys(lookup).forEach((categoryName) => {
+            const categoryList = lookup[categoryName];
+            categoryList.forEach((category) => {
+                if (category.sorter !== undefined) {
+                    headers[columnIndex] = { sorter: "text" };
+                    textSorter[columnIndex] = category.sorter;
+                }
+
+                columnIndex += 1;
+            });
+        });
+
         table.tablesorter({
             selectorHeaders: "> thead > tr:nth-child(2) > th",
-            textSorter: function (a, b) {
-                return a.localeCompare(b);
-            },
+            headers: headers,
+            textSorter: textSorter,
         });
     }
 
@@ -1244,106 +1397,6 @@ jq(function ($) {
 
     // Sorts the collection of item names based on the sort settings
     function sortItemNames(itemNames: string[]): string[] {
-        function alphabeticalSort(a: any, b: any) {
-            const aValue = typeof a === "string" ? a : "";
-            const bValue = typeof b === "string" ? b : "";
-
-            return aValue.localeCompare(bValue);
-        }
-
-        function damageSort(a: string, b: string) {
-            function getAverage(damageString: string) {
-                if (typeof damageString != "string") {
-                    return 0;
-                }
-
-                const damageArray = damageString
-                    .split("-")
-                    .map((s) => s.trim())
-                    .map((s) => parseInt(s));
-                return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
-            }
-
-            const aValue = getAverage(a);
-            const bValue = getAverage(b);
-
-            return aValue - bValue;
-        }
-
-        function heatSort(a: string, b: string) {
-            function getValue(val: string | undefined) {
-                if (val === undefined) {
-                    return 0;
-                }
-                if (val.startsWith("Minimal")) {
-                    return 5;
-                }
-                if (val.startsWith("Low")) {
-                    return 25;
-                }
-                if (val.startsWith("Medium")) {
-                    return 37;
-                }
-                if (val.startsWith("High")) {
-                    return 50;
-                }
-                if (val.startsWith("Massive")) {
-                    return 80;
-                }
-                if (val.startsWith("Deadly")) {
-                    return 100;
-                }
-
-                return 0;
-            }
-
-            const aValue = getValue(a);
-            const bValue = getValue(b);
-
-            return aValue - bValue;
-        }
-
-        function integerSort(a: string, b: string) {
-            let aValue = parseInt(a);
-            let bValue = parseInt(b);
-
-            if (isNaN(aValue)) {
-                aValue = 0;
-            }
-            if (isNaN(bValue)) {
-                bValue = 0;
-            }
-
-            return aValue - bValue;
-        }
-
-        function spectrumSort(a: string, b: string) {
-            function getValue(val: string | undefined) {
-                if (val === undefined) {
-                    return 0;
-                }
-                if (val.startsWith("Wide")) {
-                    return 10;
-                }
-                if (val.startsWith("Intermediate")) {
-                    return 30;
-                }
-                if (val.startsWith("Narrow")) {
-                    return 50;
-                }
-                if (val.startsWith("Fine")) {
-                    return 100;
-                }
-
-                return 0;
-            }
-
-            const aValue = getValue(a);
-            const bValue = getValue(b);
-
-            return aValue - bValue;
-        }
-
         const sortKeyMap = {
             Alphabetical: { key: "name", sort: alphabeticalSort },
             Gallery: { key: "name", sort: gallerySort },
@@ -1353,7 +1406,7 @@ jq(function ($) {
             Integrity: { key: "integrity", sort: integerSort },
             Coverage: { key: "coverage", sort: integerSort },
             Arc: { key: "arc", sort: integerSort },
-            Critical: { key: "critical", sort: integerSort },
+            Critical: { key: "criticalString", sort: criticalSort },
             Damage: { keys: ["damage", "explosionDamage"], sort: damageSort },
             Delay: { key: "delay", sort: integerSort },
             Disruption: { keys: ["disruption", "explosionDisruption"], sort: integerSort },
