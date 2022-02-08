@@ -233,6 +233,8 @@ export type WeaponItem = BaseItem & {
     shotMatter?: number;
     projectileCount: number;
     damage?: string;
+    damageMin?: number;
+    damageMax?: number;
     damageType?: DamageType;
     spectrum?: Spectrum;
     disruption?: number;
@@ -247,6 +249,8 @@ export type WeaponItem = BaseItem & {
     overloadStability?: number;
     explosionRadius?: number;
     explosionDamage?: string;
+    explosionDamageMin?: number;
+    explosionDamageMax?: number;
     falloff?: string;
     explosionType?: DamageType;
     explosionHeatTransfer?: HeatTransfer;
@@ -298,7 +302,8 @@ export type JsonItem = {
     "Shot Energy"?: string;
     "Shot Heat"?: string;
     "Projectile Count"?: string;
-    Damage?: string;
+    "Damage Min"?: string;
+    "Damage Max"?: string;
     "Damage Type"?: DamageType;
     Spectrum?: Spectrum;
     Arc?: string;
@@ -311,7 +316,8 @@ export type JsonItem = {
     "Heat Transfer"?: HeatTransfer;
     "Overload Stability"?: string;
     "Explosion Radius"?: string;
-    "Explosion Damage"?: string;
+    "Explosion Damage Min"?: string;
+    "Explosion Damage Max"?: string;
     Falloff?: string;
     "Explosion Type"?: DamageType;
     "Explosion Heat Transfer"?: HeatTransfer;

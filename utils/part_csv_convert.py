@@ -110,7 +110,8 @@ categories = {
     ],
     'projectile': [
         'Projectile Count',
-        'Damage',
+        'Damage Min',
+        'Damage Max',
         'Damage Type',
         'Critical',
         'Penetration',
@@ -122,7 +123,8 @@ categories = {
     'explosion': [
         'Projectile Count',
         'Explosion Radius',
-        'Explosion Damage',
+        'Explosion Damage Min',
+        'Explosion Damage Max',
         'Falloff',
         'Explosion Type',
         'Explosion Heat Transfer',

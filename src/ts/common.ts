@@ -1195,10 +1195,16 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     shotEnergy: parseIntOrUndefined(item["Shot Energy"]),
                     shotHeat: parseIntOrUndefined(item["Shot Heat"]),
                     targeting: parseIntOrUndefined(item.Targeting),
-                    damage: item.Damage,
+                    damage:
+                        item["Damage Min"] !== undefined ? `${item["Damage Min"]}-${item["Damage Max"]}` : undefined,
+                    damageMin: parseIntOrUndefined(item["Damage Min"]),
+                    damageMax: parseIntOrUndefined(item["Damage Max"]),
                     damageType: item["Damage Type"],
                     disruption: parseIntOrUndefined(item.Disruption),
-                    explosionDamage: item["Explosion Damage"],
+                    explosionDamage:
+                        item["Explosion Damage Max"] !== undefined
+                            ? `${item["Explosion Damage Min"]}-${item["Explosion Damage Max"]}`
+                            : undefined,
                     explosionDisruption: parseIntOrUndefined(item["Explosion Disruption"]),
                     explosionRadius: parseIntOrUndefined(item["Explosion Radius"]),
                     explosionSalvage: item["Explosion Salvage"],

@@ -82,6 +82,7 @@ name_replacements = {
 
 skip_bots = set([
     'Anomaly',
+    'Elf',
     'Final Abomination',
     'Greater Abomination',
     'Lesser Abomination',
@@ -89,6 +90,7 @@ skip_bots = set([
     'Minor Abomination',
     'Player',
     'Player 2',
+    'Sauler',
     'Ultimate Abomination',
 ])
 
