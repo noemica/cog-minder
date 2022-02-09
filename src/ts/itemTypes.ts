@@ -302,6 +302,7 @@ export type JsonItem = {
     "Shot Energy"?: string;
     "Shot Heat"?: string;
     "Projectile Count"?: string;
+     Damage?: string;
     "Damage Min"?: string;
     "Damage Max"?: string;
     "Damage Type"?: DamageType;
@@ -316,6 +317,7 @@ export type JsonItem = {
     "Heat Transfer"?: HeatTransfer;
     "Overload Stability"?: string;
     "Explosion Radius"?: string;
+    "Explosion Damage"?: string;
     "Explosion Damage Min"?: string;
     "Explosion Damage Max"?: string;
     Falloff?: string;

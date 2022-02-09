@@ -1196,15 +1196,21 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     shotHeat: parseIntOrUndefined(item["Shot Heat"]),
                     targeting: parseIntOrUndefined(item.Targeting),
                     damage:
-                        item["Damage Min"] !== undefined ? `${item["Damage Min"]}-${item["Damage Max"]}` : undefined,
+                        item["Damage"] === undefined
+                            ? item["Damage Min"] !== undefined
+                                ? `${item["Damage Min"]}-${item["Damage Max"]}`
+                                : undefined
+                            : item["Damage"],
                     damageMin: parseIntOrUndefined(item["Damage Min"]),
                     damageMax: parseIntOrUndefined(item["Damage Max"]),
                     damageType: item["Damage Type"],
                     disruption: parseIntOrUndefined(item.Disruption),
                     explosionDamage:
-                        item["Explosion Damage Max"] !== undefined
-                            ? `${item["Explosion Damage Min"]}-${item["Explosion Damage Max"]}`
-                            : undefined,
+                        item["Explosion Damage"] === undefined
+                            ? item["Explosion Damage Max"] !== undefined
+                                ? `${item["Explosion Damage Min"]}-${item["Explosion Damage Max"]}`
+                                : undefined
+                            : item["Explosion Damage"],
                     explosionDisruption: parseIntOrUndefined(item["Explosion Disruption"]),
                     explosionRadius: parseIntOrUndefined(item["Explosion Radius"]),
                     explosionSalvage: item["Explosion Salvage"],
