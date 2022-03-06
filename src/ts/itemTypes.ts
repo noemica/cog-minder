@@ -85,9 +85,9 @@ export enum Critical {
     Destroy = "Destroy",
     Detonate = "Detonate",
     Meltdown = "Meltdown",
+    Impale = "Impale",
     Intensify = "Intensify",
     Phase = "Phase",
-    Puncture = "Puncture",
     Smash = "Smash",
     Sever = "Sever",
     Sunder = "Sunder",
@@ -302,7 +302,7 @@ export type JsonItem = {
     "Shot Energy"?: string;
     "Shot Heat"?: string;
     "Projectile Count"?: string;
-     Damage?: string;
+    Damage?: string;
     "Damage Min"?: string;
     "Damage Max"?: string;
     "Damage Type"?: DamageType;

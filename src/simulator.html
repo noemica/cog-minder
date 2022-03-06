@@ -229,6 +229,32 @@
             <input id="expMeleeAnalysisInput" type="text" class="form-control" placeholder="0"></input>
         </div>
 
+        <!-- Force boosters -->
+        <div id="forceBoosterContainer" class="input-group not-visible mt-2">
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="The number of each type of Force Booster equipped. Provides a bonus to maximum damage and a decrease to accuracy. These utilities half_stack, so only the 2 highest rating count.">
+                <span class="input-group-text">Force Boosters</span>
+            </div>
+
+            <div class="input-group-prepend ml-2" data-toggle="tooltip"
+                title="The number of standard Force Boosters equipped. Provides a maximum damage increase of 20% and a melee accuracy decrease of 4%.">
+                <span class="input-group-text">Standard</span>
+            </div>
+            <input id="forceBoosterInput" type="text" class="form-control" placeholder="0"></input>
+
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The number of Imp. Force Boosters equipped. Provides a maximum damage increase of 30% and a melee accuracy decrease of 6%.">
+                <span class="input-group-text">Imp.</span>
+            </div>
+            <input id="impForceBoosterInput" type="text" class="form-control" placeholder="0"></input>
+
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The number of Adv. Force Boosters equipped. Provides a maximum damage increase of 40% and a melee accuracy decrease of 8%.">
+                <span class="input-group-text">Adv.</span>
+            </div>
+            <input id="advForceBoosterInput" type="text" class="form-control" placeholder="0"></input>
+        </div>
+
         <!-- Melee Utilities -->
         <div id="meleeUtilitiesContainer" class="input-group not-visible mt-2">
             <!-- Actuator -->
@@ -246,20 +272,14 @@
 
             <!-- Actuator Array -->
             <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The type of Actuator Array that's equipped (if any). Increases followup chance for all weapons.">
+                title="The bonus from one or two actuator arrays equipped. Increases followup chance for all weapons. In Beta 11 this effect can half_stack">
                 <span class="input-group-text">Actuator Array</span>
             </div>
-            <select id="actuatorArraySelect" class="selectpicker flex-dropdown">
-                <option title="0%">0%: None</option>
-                <option title="10%">10%: Actuator Array</option>
-                <option title="12%">12%: Imp. Actuator Array</option>
-                <option title="16%">16%: Adv. Actuator Array</option>
-                <option title="20%">20%: Exp. Actuator Array</option>
-            </select>
+            <input id="actuatorArrayInput" type="text" class="form-control" placeholder="0"></input>
 
             <!-- Bonus Momentum -->
             <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The amount of bonus momentum from utilities such as Reaction Control System (+1 no-stack) and Force Boosters (+3/4/5 stackable).">
+                title="The amount of bonus momentum from utilities such as Reaction Control System (+1 no-stack) and in Beta 10, Force Boosters (+3/4/5 stackable).">
                 <span class="input-group-text">Bonus Momentum</span>
             </div>
             <input id="bonusMomentumInput" type="text" class="form-control" placeholder="0"></input>
@@ -283,7 +303,7 @@
 
             <!-- Sneak attacks -->
             <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="Whether to perform sneak attacks or not. Sneak attacks provide a base hit chance of 120% and a +100% damage boost">
+                title="Whether to perform sneak attacks or not. Sneak attacks provide a base hit chance of 120% and a +200% damage boost">
                 <span class="input-group-text">Sneak Attacks</span>
             </div>
             <select id="sneakAttackSelect" class="selectpicker flex-dropdown">
@@ -306,39 +326,24 @@
                 <option title="50%">50%: Imp. Armor Integrity Analyzer</option>
                 <option title="66%">66%: Adv. Armor Integrity Analyzer</option>
                 <option title="90%">90%: Exp. Armor Integrity Analyzer</option>
-                <option title="20%">20%: Armor Integrity Analyzer (B11)</option>
-                <option title="30%">30%: Imp. Armor Integrity Analyzer (B11)</option>
-                <option title="40%">40%: Adv. Armor Integrity Analyzer (B11)</option>
+                <option title="30%">30%: Armor Integrity Analyzer (B11)</option>
+                <option title="40%">40%: Imp. Armor Integrity Analyzer (B11)</option>
                 <option title="50%">50%: Exp. Armor Integrity Analyzer (B11)</option>
             </select>
 
             <!-- Core Analyzer -->
             <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The type of Core Analyzer that's equipped (if any). Adds a chance of applying half of damage directly to enemy core.">
+                title="The bonus from one or more Core Analyzer that's equipped (if any). In Beta 10 Adds a chance of applying half of damage directly to enemy core. In Beta 11 increases core exposure by the specified amount (half_stack).">
                 <span class="input-group-text">Core Analyzer</span>
             </div>
-            <select id="coreAnalyzerSelect" class="selectpicker flex-dropdown">
-                <option title="0%">0%: None</option>
-                <option title="6%">6%: Core Analyzer</option>
-                <option title="8%">8%: Asb. Combat Suite</option>
-                <option title="8%">8%: Imp. Core Analyzer</option>
-                <option title="10%">10%: Adv. Core Analyzer</option>
-                <option title="15%">15%: Exp. Core Analyzer</option>
-            </select>
+            <input id="coreAnalyzerInput" type="text" class="form-control" placeholder="0"></input>
 
             <!-- Target Analyzer -->
             <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The type of Target Analyzer that's equipped (if any). Increases critical hit % chance for weapons with an existing critical hit chance.">
+                title="The type of Target Analyzer that's equipped (if any). Increases critical hit % chance for weapons with an existing critical hit chance. In Beta 11 this effect can half_stack.">
                 <span class="input-group-text">Target Analyzer</span>
             </div>
-            <select id="targetAnalyzerSelect" class="selectpicker flex-dropdown" data-dropdown-align-right="auto">
-                <option title="0%">0%: None</option>
-                <option title="5%">5%: Target Analyzer</option>
-                <option title="6%">6%: Imp. Target Analyzer</option>
-                <option title="8%">8%: Adv. Target Analyzer</option>
-                <option title="12%">12%: Exp. Target Analyzer</option>
-                <option title="10%">10%: Exp. Target Analyzer (B11)</option>
-            </select>
+            <input id="targetAnalyzerInput" type="text" class="form-control" placeholder="0"></input>
         </div>
 
         <!-- Weapons (added at runtime) -->

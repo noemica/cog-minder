@@ -111,6 +111,7 @@ export type OffensiveState = {
     coreAnalyzerChance: number;
     distance: number;
     followupChances: number[];
+    forceBoosters: number[];
     melee: boolean;
     meleeAnalysis: number[];
     momentum: {

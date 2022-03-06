@@ -1056,7 +1056,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     slot: "Power",
                     category: category,
                     coverage: coverage,
-                    energyGeneration: parseIntOrUndefined(item["Energy Generation"]),
+                    energyGeneration: parseIntOrDefault(item["Energy Generation"], 0),
                     energyStorage: parseIntOrUndefined(item["Energy Storage"]),
                     hackable: hackable,
                     heatGeneration: parseIntOrUndefined(item["Heat Generation"]),

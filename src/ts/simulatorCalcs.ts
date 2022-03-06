@@ -1,7 +1,7 @@
 // Battle simulation calculation functions/constants
 import { Bot, BotImmunity } from "./botTypes";
 import { randomInt } from "./common";
-import { Critical, DamageType, ItemSlot, ItemType, WeaponItem } from "./itemTypes";
+import { Critical, DamageType, ItemType, WeaponItem } from "./itemTypes";
 import {
     BotState,
     DefensiveState,
@@ -52,6 +52,9 @@ const externalDamageReductionMap = {
     "Remote Force Field": 0.5,
     "Stasis Bubble": 0.5,
 };
+
+// Array of force booster accuracy penalties
+const forceBoosterAccuracyPenalty = [4, 6, 8];
 
 // Array of melee analysis accuracy increases
 const meleeAnalysisAccuracy = [5, 6, 8, 12];
@@ -216,6 +219,7 @@ export const volleyTimeMap = {
 
 type DamageChunk = {
     armorAnalyzed: boolean;
+    coreBonus: number;
     critical: Critical | undefined;
     damageType: DamageType;
     disruptChance: number;
@@ -255,6 +259,7 @@ function applyDamage(
             chunks.push({
                 armorAnalyzed: false,
                 critical: undefined,
+                coreBonus: 0,
                 damageType: damageType,
                 disruptChance: 0,
                 forceCore: false,
@@ -265,8 +270,11 @@ function applyDamage(
         }
     } else {
         // Non-EX damage is done in a single chunk unless core analyzer proc (8)
+        // TODO remove this section entirely for b11
         if (
-            ((coreAnalyzed && getShieldingType(botState, "Core") === undefined) || critical === Critical.Puncture) &&
+            !state.isB11 &&
+            coreAnalyzed &&
+            getShieldingType(botState, "Core") === undefined &&
             !botState.immunities.includes(BotImmunity.Criticals) &&
             !botState.immunities.includes(BotImmunity.Coring)
         ) {
@@ -274,6 +282,7 @@ function applyDamage(
 
             chunks.push({
                 armorAnalyzed: armorAnalyzed,
+                coreBonus: 0,
                 critical: critical,
                 damageType: damageType,
                 disruptChance: disruptChance, // Might be fixed, currently rolls disrupt on part and core
@@ -284,6 +293,7 @@ function applyDamage(
             });
             chunks.push({
                 armorAnalyzed: false,
+                coreBonus: 0,
                 critical: undefined,
                 damageType: damageType,
                 disruptChance: disruptChance,
@@ -295,6 +305,7 @@ function applyDamage(
         } else {
             chunks.push({
                 armorAnalyzed: armorAnalyzed,
+                coreBonus: state.offensiveState.coreAnalyzerChance,
                 critical: critical,
                 damageType: damageType,
                 disruptChance: disruptChance,
@@ -315,6 +326,7 @@ function applyDamage(
     });
 
     function applyDamageChunk(
+        coreBonus: number,
         damage: number,
         damageType: DamageType,
         critical: Critical | undefined,
@@ -325,7 +337,7 @@ function applyDamage(
         armorAnalyzed: boolean,
     ) {
         // Determine hit part (14)
-        const { part, partIndex } = getHitPart(botState, damageType, isOverflow, forceCore, armorAnalyzed);
+        const { part, partIndex } = getHitPart(botState, coreBonus, damageType, isOverflow, forceCore, armorAnalyzed);
         applyDamageChunkToPart(damage, damageType, critical, disruptChance, spectrum, part, partIndex);
     }
 
@@ -370,7 +382,7 @@ function applyDamage(
             if (overflowDamage > 0 && !part.protection && canOverflow && (state.isB11 || critical === undefined)) {
                 // Handle overflow damage if excess damage was dealt
                 // against a non-protection part (19)
-                applyDamageChunk(overflowDamage, damageType, undefined, true, false, 0, 0, false);
+                applyDamageChunk(0, overflowDamage, damageType, undefined, true, false, 0, 0, false);
             }
 
             if (damageType === DamageType.Impact) {
@@ -400,6 +412,11 @@ function applyDamage(
         // Apply intensify damage doubling here
         else if (critical === Critical.Intensify) {
             damage *= 2.0;
+        }
+        // Apply impale damage doubling and add delay of 1 turn
+        else if (critical === Critical.Impale) {
+            damage *= 2.0;
+            state.tus += 100;
         }
         // Apply detonate crit
         else if (critical === Critical.Detonate) {
@@ -620,6 +637,7 @@ function applyDamage(
     // Apply damage
     chunks.forEach((chunk) => {
         applyDamageChunk(
+            state.isB11 ? chunk.coreBonus : 0,
             chunk.realDamage,
             chunk.damageType,
             chunk.critical,
@@ -831,6 +849,7 @@ function getDefensiveStatePart<T extends SpecialPart>(array: T[]) {
 // Determines the part that was hit by an attack
 function getHitPart(
     botState: BotState,
+    coreBonus: number,
     damageType: DamageType,
     isOverflow: boolean,
     forceCore: boolean,
@@ -886,41 +905,40 @@ function getHitPart(
 
     // Check to avoid rerolling an impact core hit
     if (part === undefined && damageType !== DamageType.Impact) {
-        // Piercing damage gets double core exposure
-        const coreCoverageBonus = damageType === DamageType.Piercing ? botState.coreCoverage * 0.3 : 0;
+        let totalCoverage = armorAnalyzed ? botState.armorAnalyzedCoverage : botState.totalCoverage;
+        if (damageType == DamageType.Piercing) {
+            // Not ideal to force this here because it means the user has to account for half_stack manually
+            // Makes the UI very cluttered if we want to make the user choose all the possible combinations though
+            coreBonus += 8;
+        }
 
-        if (armorAnalyzed) {
-            // Determine part based on reduced armor coverage
-            const totalCoverage = botState.armorAnalyzedCoverage + coreCoverageBonus;
-            let coverageHit = randomInt(0, totalCoverage - 1);
+        if (coreBonus > 0) {
+            // Apply any core exposure % increases
+            totalCoverage -= botState.coreCoverage;
 
-            for (partIndex = 0; partIndex < botState.parts.length; partIndex++) {
-                // Subtract part's armor analyzed coverage to see if we got a hit
-                coverageHit -= botState.parts[partIndex].armorAnalyzedCoverage;
-                if (coverageHit < 0) {
-                    part = botState.parts[partIndex];
-                    break;
-                }
+            // Cap boosted coverage at 99.9% to avoid wrapping around to giving a negative core bonus
+            const coreCoveragePercentage = Math.min(
+                botState.coreCoverage / botState.totalCoverage + coreBonus / 100,
+                0.999,
+            );
+            const boostedCoreCoverage = (totalCoverage * coreCoveragePercentage) / (1 - coreCoveragePercentage);
+            totalCoverage += boostedCoreCoverage;
+        }
 
-                // If it's a core hit we'll run through all parts and exit
-                // the loop with part still equal to undefined
+        let coverageHit = randomInt(0, totalCoverage - 1);
+
+        for (partIndex = 0; partIndex < botState.parts.length; partIndex++) {
+            // Subtract part's coverage to see if we got a hit
+            coverageHit -= armorAnalyzed
+                ? botState.parts[partIndex].armorAnalyzedCoverage
+                : botState.parts[partIndex].coverage;
+            if (coverageHit < 0) {
+                part = botState.parts[partIndex];
+                break;
             }
-        } else {
-            // Determine part based on regular coverage
-            const totalCoverage = botState.totalCoverage + coreCoverageBonus;
-            let coverageHit = randomInt(0, totalCoverage - 1);
 
-            for (partIndex = 0; partIndex < botState.parts.length; partIndex++) {
-                // Subtract part's coverage to see if we got a hit
-                coverageHit -= botState.parts[partIndex].coverage;
-                if (coverageHit < 0) {
-                    part = botState.parts[partIndex];
-                    break;
-                }
-
-                // If it's a core hit we'll run through all parts and exit
-                // the loop with part still equal to undefined
-            }
+            // If it's a core hit we'll run through all parts and exit
+            // the loop with part still equal to undefined
         }
     }
 
@@ -1370,6 +1388,19 @@ function updateWeaponsAccuracy(state: SimulatorState) {
         for (let i = 0; i < meleeAnalysisAccuracy.length; i++) {
             perWeaponBonus += offensiveState.meleeAnalysis[i] * meleeAnalysisAccuracy[i];
         }
+
+        // Subtract force booster penalty
+        // Earlier code ensures that there are at most 2 boosters enabled in the array
+        let numBoostersProcessed = 0;
+        for (let i = offensiveState.forceBoosters.length - 1; i >= 0; i--) {
+            if (offensiveState.forceBoosters[i] == 2) {
+                perWeaponBonus -= 1.5 * forceBoosterAccuracyPenalty[i];
+                numBoostersProcessed += 2;
+            } else if (offensiveState.forceBoosters[i] == 1) {
+                perWeaponBonus -= forceBoosterAccuracyPenalty[i] * numBoostersProcessed == 0 ? 1 : 0.5;
+                numBoostersProcessed += 1;
+            }
+        }
     } else {
         // Add (low) distance bonus
         perWeaponBonus += offensiveState.distance < 6 ? (6 - offensiveState.distance) * 3 : 0;
@@ -1404,7 +1435,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
         }
 
         // Cap accuracy
-        const max = offensiveState.melee ? maxRangedAccuracy : maxMeleeAccuracy;
+        const max = offensiveState.melee ? maxMeleeAccuracy : maxRangedAccuracy;
         weapon.accuracy = Math.min(max, Math.max(accuracy, minAccuracy));
     });
 }

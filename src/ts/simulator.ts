@@ -24,7 +24,7 @@ import {
     setB11State,
     setSpoilersState,
 } from "./commonJquery";
-import { Critical, DamageType, ItemCategory, ItemSlot, ItemType, WeaponItem } from "./itemTypes";
+import { Critical, DamageType, ItemCategory, ItemType, WeaponItem } from "./itemTypes";
 import {
     getBotDefensiveState,
     getRangedVolleyTime,
@@ -82,15 +82,6 @@ jq(function ($) {
     // Flag to cancel a simulation
     let cancelled = false;
 
-    // Actuator array name to followup chance increase map
-    const actuatorArrayMap = {
-        "0%: None": 0,
-        "10%: Actuator Array": 10,
-        "12%: Imp. Actuator Array": 12,
-        "16%: Adv. Actuator Array": 16,
-        "20%: Exp. Actuator Array": 20,
-    };
-
     // Actuator name to tu multiplier map
     const actuatorMap = {
         "0%: None": 1.0,
@@ -107,9 +98,8 @@ jq(function ($) {
         "50%: Imp. Armor Integrity Analyzer": 50,
         "66%: Adv. Armor Integrity Analyzer": 66,
         "90%: Exp. Armor Integrity Analyzer": 90,
-        "20%: Armor Integrity Analyzer (B11)": 20,
-        "30%: Imp. Armor Integrity Analyzer (B11)": 30,
-        "40%: Adv. Armor Integrity Analyzer (B11)": 40,
+        "30%: Armor Integrity Analyzer (B11)": 30,
+        "40%: Imp. Armor Integrity Analyzer (B11)": 40,
         "50%: Exp. Armor Integrity Analyzer (B11)": 50,
     };
 
@@ -122,16 +112,6 @@ jq(function ($) {
         "30%: Particle Accelerator": 1.3,
         "40%: Imp. Particle Accelerator": 1.4,
         "50%: Adv. Particle Accelerator": 1.5,
-    };
-
-    // Core analyzer to percent chance map
-    const coreAnalyzerMap = {
-        "0%: None": 0,
-        "6%: Core Analyzer": 6,
-        "8%: Imp. Core Analyzer": 8,
-        "8%: Asb. Combat Suite": 8,
-        "10%: Adv. Core Analyzer": 10,
-        "15%: Exp. Core Analyzer": 15,
     };
 
     // Cycler volley time multiplier map
@@ -154,6 +134,12 @@ jq(function ($) {
         "50%: Remote Force Field (Energy Mantle)": "Remote Force Field",
         "50%: Stasis Bubble": "Stasis Bubble",
     };
+
+    // Force booster ids
+    const forceBoosterIds = ["forceBoosterInput", "impForceBoosterInput", "advForceBoosterInput"];
+
+    // Array of force booster maximum damage increases
+    const forceBoosterMaxDamageIncrease = [0.2, 0.3, 0.4];
 
     // Kinecellerator min damage increase values
     const kinecelleratorMap = {
@@ -224,16 +210,6 @@ jq(function ($) {
         "Intermediate (30)": 30,
         "Narrow (50)": 50,
         "Fine (100)": 100,
-    };
-
-    // Target analyzer name to critical % chance increase
-    const targetAnalyzerMap = {
-        "0%: None": 0,
-        "5%: Target Analyzer": 5,
-        "6%: Imp. Target Analyzer": 6,
-        "8%: Adv. Target Analyzer": 8,
-        "12%: Exp. Target Analyzer": 12,
-        "10%: Exp. Target Analyzer (B11)": 10,
     };
 
     $(() => init());
@@ -596,10 +572,7 @@ jq(function ($) {
         $("#cyclerSelect").parent().addClass("percent-dropdown");
         $("#overloadSelect").parent().addClass("percent-dropdown");
         $("#armorIntegSelect").parent().addClass("percent-dropdown");
-        $("#coreAnalyzerSelect").parent().addClass("percent-dropdown");
-        $("#targetAnalyzerSelect").parent().addClass("percent-dropdown");
         $("#actuatorSelect").parent().addClass("percent-dropdown");
-        $("#actuatorArraySelect").parent().addClass("percent-dropdown");
         $("#sneakAttackSelect").parent().addClass("sneak-attack-dropdown");
 
         // Minor hack, the btn-light class is auto-added to dropdowns with search
@@ -751,10 +724,7 @@ jq(function ($) {
         resetDropdown($("#cyclerSelect"));
         resetDropdown($("#overloadSelect"));
         resetDropdown($("#armorIntegSelect"));
-        resetDropdown($("#coreAnalyzerSelect"));
-        resetDropdown($("#targetAnalyzerSelect"));
         resetDropdown($("#actuatorSelect"));
-        resetDropdown($("#actuatorArraySelect"));
         resetDropdown($("#sneakAttackSelect"));
         resetDropdown($("#endConditionSelect"));
 
@@ -764,8 +734,12 @@ jq(function ($) {
         $("#treadsInput").val("");
         $("#distanceInput").val("");
         $("#recoilInput").val("");
+        $("#coreAnalyzerInput").val("");
+        $("#targetAnalyzerInput").val("");
         $("#meleeAnalysisContainer > input").val("");
+        $("#forceBoosterContainer > input").val("");
         $("#speedInput").val("");
+        $("#actuatorArrayInput").val("");
         $("#bonusMomentumInput").val("");
         $("#initialMomentumInput").val("");
         $("#comparisonNameInput").val("");
@@ -822,16 +796,17 @@ jq(function ($) {
         func($("#overloadSelect").next());
 
         func($("#meleeAnalysisContainer > input"));
+        func($("#forceBoosterContainer > input"));
         func($("#actuatorSelect").next());
-        func($("#actuatorArraySelect").next());
+        func($("#actuatorArrayInput"));
         func($("#bonusMomentumInput"));
         func($("#initialMomentumInput"));
         func($("#speedInput"));
         func($("#sneakAttackSelect").next());
 
         func($("#armorIntegSelect").next());
-        func($("#coreAnalyzerSelect").next());
-        func($("#targetAnalyzerSelect").next());
+        func($("#coreAnalyzerInput"));
+        func($("#targetAnalyzerInput"));
 
         func($("#weaponSelectContainer button").not(".weapon-help-btn"));
         func($("#weaponSelectContainer input"));
@@ -907,21 +882,26 @@ jq(function ($) {
         // Set up initial calculation state
         const bot = botData[botName];
         const parts: SimulatorPart[] = [];
-        bot.componentData.concat(bot.armamentData).forEach((item) => {
-            for (let i = 0; i < item.number; i++) {
-                const itemDef = getItem(item.name);
-                const isProtection = itemDef.type === ItemType.Protection;
-                const coverage = itemDef.coverage ?? 0;
-                parts.push({
-                    armorAnalyzedCoverage: isProtection ? 0 : coverage,
-                    coverage: coverage,
-                    def: itemDef,
-                    integrity: itemDef.integrity,
-                    protection: isProtection,
-                    selfDamageReduction: 1,
-                });
-            }
-        });
+        bot.componentData
+            .concat(bot.armamentData)
+            // For now just use the first option in each list
+            .concat(bot.componentOptionData.map((c) => c[0]))
+            .concat(bot.armamentOptionData.map((c) => c[0]))
+            .forEach((item) => {
+                for (let i = 0; i < item.number; i++) {
+                    const itemDef = getItem(item.name);
+                    const isProtection = itemDef.type === ItemType.Protection;
+                    const coverage = itemDef.coverage ?? 0;
+                    parts.push({
+                        armorAnalyzedCoverage: isProtection ? 0 : coverage,
+                        coverage: coverage,
+                        def: itemDef,
+                        integrity: itemDef.integrity,
+                        protection: isProtection,
+                        selfDamageReduction: 1,
+                    });
+                }
+            });
 
         const armorAnalyzedCoverage =
             bot.coreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedCoverage, 0);
@@ -960,12 +940,28 @@ jq(function ($) {
             targetingComputerBonus = parseIntOrDefault($("#targetingInput").val() as string, 0);
         }
 
+        // Melee analysis/force boosters
         const meleeAnalysis = [0, 0, 0, 0];
+        const forceBoosters = [0, 0, 0];
         if (melee) {
-            // Melee analysis types
             meleeAnalysisIds.map((id, i) => {
                 meleeAnalysis[i] = parseIntOrDefault($(`#${id}`).val() as string, 0);
             });
+
+            forceBoosterIds.map((id, i) => {
+                forceBoosters[i] = parseIntOrDefault($(`#${id}`).val() as string, 0);
+            });
+
+            // Reduce force boosters to the 2 highest rating parts
+            let numBoostersRemaining = 2;
+            for (let i = forceBoosters.length - 1; i >= 0; i--) {
+                if (forceBoosters[i] > numBoostersRemaining) {
+                    forceBoosters[i] = numBoostersRemaining;
+                    numBoostersRemaining = 0;
+                } else {
+                    numBoostersRemaining -= forceBoosters[i];
+                }
+            }
         }
 
         // Invalid / 6 or more tiles = 0 bonus
@@ -984,8 +980,7 @@ jq(function ($) {
         );
 
         // Target Analyzer crit bonus
-        const targetAnalyzerName = $("#targetAnalyzerSelect").selectpicker("val") as any as string;
-        const critBonus = targetAnalyzerMap[targetAnalyzerName];
+        const critBonus = parseIntOrDefault($("#targetAnalyzerInput").val() as string, 0);
 
         const weapons = userWeapons.map((weapon, i) => {
             const def = weapon.def;
@@ -1015,7 +1010,7 @@ jq(function ($) {
                     // Ensure min damage can't exceed max
                     damageMin = Math.min(Math.trunc(damageMin * kinecelleratorBonus), damageMax);
                 } else if (melee) {
-                    // Apply damage for melee analyses (2)
+                    // Apply damage for melee analyses/force boosters (2)
                     let minDamageIncrease = 0;
                     for (let i = 0; i < meleeAnalysisMinDamageIncrease.length; i++) {
                         minDamageIncrease += meleeAnalysis[i] * meleeAnalysisMinDamageIncrease[i];
@@ -1023,6 +1018,23 @@ jq(function ($) {
 
                     // Ensure min damage can't exceed max
                     damageMin = Math.min(minDamageIncrease + damageMin, damageMax);
+
+                    // Apply force boosters
+                    // Earlier code ensures that there are at most 2 boosters enabled in the array
+                    let maxDamageIncrease = 0;
+                    let numBoostersProcessed = 0;
+                    for (let i = forceBoosters.length - 1; i >= 0; i--) {
+                        if (forceBoosters[i] == 2) {
+                            maxDamageIncrease = 1.5 * forceBoosterMaxDamageIncrease[i];
+                            numBoostersProcessed += 2;
+                        } else if (forceBoosters[i] == 1) {
+                            maxDamageIncrease +=
+                                forceBoosterMaxDamageIncrease[i] * (numBoostersProcessed == 0 ? 1 : 0.5);
+                            numBoostersProcessed += 1;
+                        }
+                    }
+
+                    damageMax = Math.floor(damageMax * (1 + maxDamageIncrease));
                 }
 
                 damageType = def.damageType;
@@ -1129,12 +1141,10 @@ jq(function ($) {
         const armorAnalyzerChance = armorIntegrityMap[armorAnalyzerName];
 
         // Core Analyzer chance
-        const coreAnalyzerName = $("#coreAnalyzerSelect").selectpicker("val") as any as string;
-        const coreAnalyzerChance = coreAnalyzerMap[coreAnalyzerName];
+        const coreAnalyzerChance = parseIntOrDefault($("#coreAnalyzerInput").val() as string, 0);
 
         // Actuator Array chance
-        const actuatorArrayName = $("#actuatorArraySelect").selectpicker("val") as any as string;
-        const actuatorArrayBonus = actuatorArrayMap[actuatorArrayName];
+        const actuatorArrayBonus = parseIntOrDefault($("#actuatorArrayInput").val() as string, 0);
 
         // Overload bonus damage
         const overloadName = $("#overloadSelect").selectpicker("val") as any as string;
@@ -1188,6 +1198,7 @@ jq(function ($) {
             coreAnalyzerChance: coreAnalyzerChance,
             distance: distance,
             followupChances: followupChances,
+            forceBoosters: forceBoosters,
             melee: melee,
             meleeAnalysis: meleeAnalysis,
             momentum: {
@@ -1365,7 +1376,7 @@ jq(function ($) {
         // results that the max total % would end up being unreasonably
         // low (like under 80%) when killing enemies with particularly
         // large health pools.
-        const tuData = getData(perXKillsKeys, state.killTus, state.offensiveState.melee ? 2 : 1, 100);
+        const tuData = getData(perXKillsKeys, state.killTus, state.offensiveState.melee ? 3 : 1, 100);
         currentComparisonData = getCumulativeData(tuData);
 
         if (perVolleys) {
@@ -1381,7 +1392,7 @@ jq(function ($) {
             stepSize = state.offensiveState.volleyTime;
             xAxisString = "Number of time units";
 
-            perXData = getData(perXKillsKeys, state.killTus, state.offensiveState.melee ? 2 : 1, stepSize);
+            perXData = getData(perXKillsKeys, state.killTus, state.offensiveState.melee ? 3 : 1, stepSize);
         }
 
         const cumulativeData = getCumulativeData(perXData);
@@ -1453,6 +1464,7 @@ jq(function ($) {
         setVisibility($("#rangedUtilitiesContainer"), !melee);
         setVisibility($("#rangedUtilitiesContainer2"), !melee);
         setVisibility($("#meleeAnalysisContainer"), melee);
+        setVisibility($("#forceBoosterContainer"), melee);
         setVisibility($("#meleeBehaviorContainer"), melee);
         setVisibility($("#meleeUtilitiesContainer"), melee);
 

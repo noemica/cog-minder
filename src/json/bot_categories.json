@@ -113,6 +113,8 @@
     "LRC-V5": ["0b10", "Prototype", "Redacted"],
     "LRC-V6": ["0b10", "Prototype", "Redacted"],
     "M Guard": ["0b10", "Prototype", "Redacted"],
+    "M Shell/Atk": ["0b10", "Redacted"],
+    "M Shell/Def": ["0b10", "Redacted"],
     "M-13 Machinist": ["0b10"],
     "M-14 Sweeper": ["0b10"],
     "M-22 Extractor": ["0b10"],
