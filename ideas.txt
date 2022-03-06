@@ -1,4 +1,8 @@
 Small ideas:
+
+- Add strategy dictionary
+- Add map and prefab viewers
+- Combine wheels and treads into a single propulsion type
 - Add new b11 util changes to simulator
     - half_stack changes
 - Fix b11 part split for special items like fusion comps
@@ -6,10 +10,12 @@ Small ideas:
 Medium ideas:
 - Add ignore obsolete parts in search
     - Hard to know what an "obsolete" part is
-- Add proper followups for build page
+- Add API key for Kyzrati to use to calculate core coverage
 
 Big ideas:
 - Save search/parts in URL
     - Can do for all pages
+- Full spreadsheet view (like gallery export html)
 - Actively save build and update hash when modifying things
     - Easier than other pages since hash is already in existence
+- Play cogmind in web browser

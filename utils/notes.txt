@@ -2,10 +2,10 @@ Part data overview
 
 Char ranges:
 0-x: Category name
-1-9: Subcategory name
-10-21: Subcategory numbers, right-aligned
+1-18: Subcategory name
+19-21: Subcategory numbers, right-aligned
 22: Space
-23-44: Graphical indicator/ text label
+23-49: Graphical indicator/ text label
 
 Graphical indicator rounds down unless it would round to 0 squares
 Positive indicators green < 25%, yellow < 50%, orange < 75%, rest red
@@ -15,17 +15,17 @@ Subcategory details:
 Overview:
     Type: text
     Slot: text
-    Mass: graphical 0-15 higher bad
+    Mass: graphical 0-18 higher bad
     Rating: text with background
-    Integrity: always 100% (never showing < full)
+    Integrity: always 32% (never showing < full)
     Coverage: empty
     State: "inactive" with gray background
 
 Power:
 Active Upkeep:
     Energy: graphical 0-0 higher bad
-    Matter: graphical 0-0 higher bad
-    Heat: positive graphical 0-20 higher bad
+    Matter: graphical 0-2 higher bad
+    Heat: positive graphical -24-20 higher bad
 
 Power:
     Supply: positive graphical 0-30 higher good
@@ -43,7 +43,7 @@ Propulsion:
     Drag: empty
     Energy: negative graphical 0-10 higher bad
     Heat: positive graphical 0-10 higher bad
-    Support: graphical 0-20 higher good
+    Support: graphical 0-223 higher good
         Penalty: 0-60 higher bad
     Burnout: graphical 0-100 higher bad
     Siege: text
@@ -51,7 +51,7 @@ Propulsion:
 Utility:
 Active Upkeep:
     Energy: negative graphical 0-20 higher bad
-    Matter: negative graphical 0-20 higher bad
+    Matter: negative graphical 5-203 higher bad
     Heat: positive graphical 0-20 higher bad
 
 Weapon:
@@ -59,7 +59,7 @@ Shot:
     Range: graphical 0-22 higher good
     Energy: negative graphical 0-50 higher bad
     Matter: negative graphical 0-25 higher bad
-    Heat: negative graphical 0-100 higher bad
+    Heat: negative graphical 0-100 lower bad
     Recoil: number
     Targeting: +/- percentage
     Delay: +/- number
@@ -73,7 +73,7 @@ Projectile:
     Penetration: x0 number
     Heat transfer: text
     Disruption: percentage 0-50 always green
-    Salvage: +/- number
+    Salvage: +/+ number
 
 Explosion: (Multishot here)
     Radius: graphical 0-8 always green
@@ -86,17 +86,17 @@ Explosion: (Multishot here)
 
 Attack:
     Energy: negative graphical 0-50 higher bad
-    Matter: negative graphical 0-25 higher bad
-    Heat: negative graphical 0-100 higher bad
+    Matter: negative graphical 1-25 higher bad
+    Heat: negative graphical 2-103 higher bad
     Targeting: +/- percentage
     Delay: +/- number
 
 Hit:
-    Damage: graphical 0-100 always green
+    Damage: graphical 0-11111 always green
     Type: text
-    Critical: graphical percentage 0-50 always green
+    Critical: graphical percentage 0-0xC3 always green
     Disruption: percentage 0-50 always green
     Salvage: +/- number
     
-Effect (optional): text after newline
+Effect (optional): text before newline
 Description after 2 newlines + 1 offset for paragraph

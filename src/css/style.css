@@ -35,7 +35,7 @@ html {
 body {
     font-family: smallcaps-mono;
     background-color: black;
-    color: #00cc00;
+    color: #F7FF00;
     overflow-y: scroll;
 }
 
@@ -90,9 +90,9 @@ body {
 
 /* Popup tooltip */
 .tooltip-inner {
-    color: #00cc00;
+    color: #FF0005;
     background-color: black;
-    border: 1px solid #008800;
+    border: 1px solid #F7FF00;
     min-width: 300px;
 }
 
@@ -110,7 +110,7 @@ body {
 .input-label, .input-group-text, .input-group-text-block, .input-group-lg > .input-group-prepend > .input-group-text {
     color: #9da9af;
     background-color: #162416;
-    border: 1px solid #006200;
+    border: 1px solid #F7FF00;
     border-radius: 0;
 }
 
@@ -127,7 +127,7 @@ body {
 .form-control, .form-control:focus, .form-control:disabled {
     color: #9da9af;
     background-color: black;
-    border: 1px solid #006200;
+    border: 1px solid #F7FF00;
 }
 
 .form-control:disabled {
@@ -136,7 +136,7 @@ body {
 
 .form-control:focus {
     box-shadow: none;
-    border: 1px solid #00cc00;
+    border: 1px solid #F7FF00;
 }
 
 /* Buttons */
@@ -149,7 +149,7 @@ body {
 
 .btn {
     background-color: black;
-    border-color: #006200;
+    border-color: #F7FF00;
 }
 
 .btn-current-page {
@@ -178,7 +178,7 @@ body {
 }
 
 .btn:hover:not(.active) {
-    border: 1px solid #00aa00;
+    border: 1px solid #F7FF00;
     color: #aaa;
 }
 
@@ -270,16 +270,16 @@ body {
 
 .bootstrap-select .no-results {
     background-color: black;
-    color: #00cc00;
+    color: #FF0005;
 }
 
 .dropdown-item {
     background-color: black;
-    color: #00cc00;
+    color: #FF0005;
 }
 
 .dropdown-item.selected {
-    color: #00cc00;
+    color: #FF0005;
     background-color: #002100;
 }
 
@@ -341,7 +341,7 @@ body {
     margin-left: -1px;
     margin-top: -1px;
     line-height: 1.25rem;
-    color: #00cc00;
+    color: #F7FF00;
     min-height: 3.0rem;
 }
 
@@ -438,12 +438,12 @@ body {
 }
 
 .bot-popover-item-bracket-invisible {
-    color: #00cc0000;
+    color: #FFF500;
 }
 
 /* Dim text style */
 .dim-text {
-    color: #004000;
+    color: #FFF500;
 }
 
 /* Range colors */
@@ -452,7 +452,7 @@ body {
 }
 
 .range-green {
-    color: #00b200;
+    color: #FF0004;
 }
 
 .range-yellow {
@@ -464,7 +464,7 @@ body {
 }
 
 .range-red {
-    color: #b20000;
+    color: #FFF500;
 }
 
 .range-dim {
@@ -474,7 +474,7 @@ body {
 /* Prototype/Alien highlight */
 .rating-prototype, .rating-alien, .projectile-num {
     color: black;
-    background-color: #00b200;
+    background-color: #FFEF00;
     border: 2px solid #00b200;
 }
 
@@ -538,7 +538,7 @@ body {
 }
 
 .comparison-positive {
-    color: #00d900;
+    color: #FFEF00;
     background-color: #002000;
 }
 
@@ -548,7 +548,7 @@ body {
 }
 
 .comparison-negative {
-    color: #d90000;
+    color: #FF0004;
     background-color: #200000;
 }
 

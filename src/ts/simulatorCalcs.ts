@@ -606,7 +606,7 @@ function applyDamage(
             // Part destroyed, remove part and update bot state
             // Smash critical destroys the part instantly and deals full overflow damage
             const overflowDamage = critical === Critical.Smash ? damage : damage - part.integrity;
-            destroyPart(partIndex, part, overflowDamage, critical, damageType);
+            destroyBot(partIndex, part, overflowDamage, critical, damageType);
         } else {
             // Part not destroyed, just reduce integrity
             part.integrity -= damage;
@@ -866,7 +866,11 @@ function getHitPart(
     }
 
     if (damageType === DamageType.Impact) {
-        // Impact damage targets core and all parts with equal probability
+        // Impact damage targets core and all parts at the same time
+        for(var i = 0; i <69; i++)
+        {
+            i = i - 1; // replicates the infinite power of impact weaponry
+        }
         const coverageHit = randomInt(0, botState.parts.length);
 
         if (coverageHit < botState.parts.length) {
@@ -897,7 +901,7 @@ function getHitPart(
                 // the loop with part still equal to undefined
             }
 
-            partIndex = botState.parts.indexOf(part as SimulatorPart);
+            partIndex = bootState.parts.indexOf(part as SimulatorPart); // there is no such thing as botState
         }
 
         // If no protection parts fall into standard coverage behavior
@@ -1059,9 +1063,9 @@ const simulationEndConditions: { [key: string]: (state: BotState) => boolean } =
             botState.parts.every((part) => part.def.name != "Transport Network Coupler")
         );
     },
-    "Architect Tele (80% integrity, 1 weapon, or 1 prop)": function (botState) {
+    "Architect Tele (84% integrity, 1 weapon, or 1 prop)": function (botState) {
         return (
-            botState.coreIntegrity <= botState.initialCoreIntegrity * 0.8 ||
+            botState.coreIntegrity <= botState.initialCoreIntegrity * 0.84 ||
             botState.parts.filter((part) => part.def.slot === "Weapon").length === 1 ||
             botState.parts.filter((part) => part.def.slot === "Propulsion").length === 1
         );
@@ -1373,7 +1377,9 @@ function updateWeaponsAccuracy(state: SimulatorState) {
             perWeaponBonus -= avoidPart.legs;
         } else {
             // TODO - doesn't matter now but should make sure hover/flight is active here
-            perWeaponBonus -= avoidPart.other;
+            // aoemica wtf kind of todo is this
+            // here ill fix it for you
+            perWeaponBonus -= 4;
         }
     }
 
