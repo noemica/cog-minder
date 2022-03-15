@@ -1075,6 +1075,15 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                         item["Power Stability"] == null
                             ? undefined
                             : parseIntOrUndefined(item["Power Stability"].slice(0, -1)),
+                    explosionRadius: parseIntOrDefault(item["Explosion Radius"], 0),
+                    explosionDamage: item["Explosion Damage"],
+                    explosionDamageMax: parseIntOrDefault(item["Explosion Damage Max"], 0),
+                    explosionDamageMin: parseIntOrDefault(item["Explosion Damage Min"], 0),
+                    explosionDisruption: parseIntOrDefault(item["Explosion Disruption"], 0),
+                    explosionHeatTransfer: item["Explosion Heat Transfer"],
+                    explosionSalvage: item["Explosion Salvage"],
+                    explosionSpectrum: item["Explosion Spectrum"],
+                    explosionType: item["Explosion Type"],
                     index: index,
                     specialProperty: specialProperty,
                 };

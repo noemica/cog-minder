@@ -32,6 +32,7 @@ import {
     getRegen,
     maxVolleys,
     simulateCombat,
+    spectrumToNumber,
     volleyTimeMap,
 } from "./simulatorCalcs";
 import {
@@ -202,14 +203,6 @@ jq(function ($) {
         "In High Siege Mode": { bonus: 30, tus: 0 },
         "Entering Siege Mode": { bonus: 20, tus: 500 },
         "Entering High Siege Mode": { bonus: 30, tus: 500 },
-    };
-
-    // Map of spectrum values to engine explosion chance
-    const spectrumMap = {
-        "Wide (10)": 10,
-        "Intermediate (30)": 30,
-        "Narrow (50)": 50,
-        "Fine (100)": 100,
     };
 
     $(() => init());
@@ -1092,8 +1085,8 @@ jq(function ($) {
 
             const disruption = def.disruption ?? 0;
 
-            const spectrum = def.spectrum === undefined ? 0 : spectrumMap[def.spectrum];
-            const explosionSpectrum = def.explosionSpectrum === undefined ? 0 : spectrumMap[def.explosionSpectrum];
+            const spectrum = spectrumToNumber(def.spectrum);
+            const explosionSpectrum = spectrumToNumber(def.explosionSpectrum);
 
             if (def.name === "Ram") {
                 ramming = true;

@@ -152,6 +152,7 @@ slot_categories = {
         categories['all'],
         categories['power_overview'],
         categories['power'],
+        categories['explosion'],
         categories['fabrication']]
     ),
     'Propulsion': flatten([

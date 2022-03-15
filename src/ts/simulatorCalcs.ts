@@ -1,7 +1,7 @@
 // Battle simulation calculation functions/constants
 import { Bot, BotImmunity } from "./botTypes";
 import { randomInt } from "./common";
-import { Critical, DamageType, ItemType, WeaponItem } from "./itemTypes";
+import { Critical, DamageType, ItemType, PowerItem, Spectrum, WeaponItem } from "./itemTypes";
 import {
     BotState,
     DefensiveState,
@@ -58,6 +58,14 @@ const forceBoosterAccuracyPenalty = [4, 6, 8];
 
 // Array of melee analysis accuracy increases
 const meleeAnalysisAccuracy = [5, 6, 8, 12];
+
+// Map of spectrum values to engine explosion chance
+const spectrumMap = {
+    "Wide (10)": 10,
+    "Intermediate (30)": 30,
+    "Narrow (50)": 50,
+    "Fine (100)": 100,
+};
 
 const categoryAntimissile = 0;
 const categoryAvoid = 1;
@@ -325,6 +333,33 @@ function applyDamage(
         chunk.realDamage = Math.trunc(chunk.originalDamage * multiplier);
     });
 
+    function applyEngineExplosion(part: SimulatorPart) {
+        if (part.def.slot !== "Power") {
+            return;
+        }
+
+        const engine = part.def as PowerItem;
+        if (engine.explosionDamageMax > 0 && engine.explosionType !== undefined) {
+            // Apply engine explosion randomly as either 1 or 2 chunks
+            const baseDamage = randomInt(engine.explosionDamageMin, engine.explosionDamageMax);
+            const chunks =
+                randomInt(1, 2) === 1 ? [baseDamage] : [Math.trunc(baseDamage / 2), Math.trunc(baseDamage / 2)];
+            chunks.forEach((damage) => {
+                applyDamageChunk(
+                    0,
+                    damage,
+                    engine.explosionType!,
+                    undefined,
+                    false,
+                    false,
+                    engine.explosionDisruption,
+                    spectrumToNumber(engine.explosionSpectrum),
+                    false,
+                );
+            });
+        }
+    }
+
     function applyDamageChunk(
         coreBonus: number,
         damage: number,
@@ -432,6 +467,7 @@ function applyDamage(
             if (i < botState.parts.length) {
                 const engine = botState.parts[i];
                 destroyPart(i, engine, 0, undefined, DamageType.Entropic);
+                applyEngineExplosion(engine);
 
                 if (i === partIndex) {
                     // If detonate exploded power we were targeting just exit
@@ -631,6 +667,10 @@ function applyDamage(
         } else if (critical === Critical.Phase) {
             // Apply phasing damage to the core
             applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, undefined, -1);
+        }
+
+        if (engineExplosion) {
+            applyEngineExplosion(part);
         }
     }
 
@@ -1349,6 +1389,15 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
             }
         }
     }
+}
+
+// Converts a spectrum value to a numeric value
+export function spectrumToNumber(spectrum: Spectrum | undefined) {
+    if (spectrum === undefined) {
+        return 0;
+    }
+
+    return spectrumMap[spectrum];
 }
 
 // Updates all calculated weapon accuracies

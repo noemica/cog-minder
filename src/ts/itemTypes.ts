@@ -205,6 +205,16 @@ export type PowerItem = BaseItem &
         energyGeneration?: number;
         energyStorage?: number;
         powerStability?: number;
+        explosionRadius?: number;
+        explosionDamage?: string;
+        explosionDamageMin: number;
+        explosionDamageMax: number;
+        falloff?: string;
+        explosionType?: DamageType;
+        explosionHeatTransfer?: HeatTransfer;
+        explosionSpectrum?: Spectrum;
+        explosionDisruption: number;
+        explosionSalvage?: string;
     };
 
 export type PropulsionItem = BaseItem &
