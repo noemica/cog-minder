@@ -22,7 +22,8 @@ categories = {
         'Mass',
         'Integrity',
         'Coverage',
-        'Heat Generation'
+        'Heat Generation',
+        'Description',
     ],
     'propulsion_overview': [
         'Name',
