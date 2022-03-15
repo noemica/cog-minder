@@ -1285,7 +1285,7 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
 
             // Apply double damage sneak attack bonus
             if (offensiveState.melee && offensiveState.sneakAttack) {
-                damage *= 3; // Might be fixed, currently does 3x instead of 2x
+                damage *= 2;
             }
 
             // Add analysis (3)
