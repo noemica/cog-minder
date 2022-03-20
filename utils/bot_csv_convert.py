@@ -6,8 +6,8 @@ from io import StringIO
 from os import path
 import re
 
-input_path = path.join(path.dirname(path.realpath(__file__)), 'robots_export_b11.csv')
-output_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'bots_b11.json')
+input_path = path.join(path.dirname(path.realpath(__file__)), 'robots_export.csv')
+output_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'bots.json')
 
 categories = [
     'Name',

@@ -118,7 +118,9 @@ export function createHeader(page: PageType, headerContainer: JQuery<HTMLElement
         </div>
     </div>`;
 
-        if (info.beta11Check) {
+        // Reinstate for beta 12
+        // if (info.beta11Check) {
+        if (false) {
             spoilerHtml += `
     <label class="align-self-center ml-2" style="margin-bottom: 0;" data-toggle="tooltip"
         title="Enable or disable experimental Beta 11 part changes.">
@@ -235,7 +237,9 @@ export function enableBotInfoItemPopovers(selector: JQuery<HTMLElement>): void {
 
 // Gets the stored boolean state
 export function getB11State(): boolean {
-    return window.localStorage.getItem("b11") === "true";
+    // return window.localStorage.getItem("b11") === "true";
+    // Reinstate for beta 12
+    return false;
 }
 
 // Gets the ID of the selected button in a button group

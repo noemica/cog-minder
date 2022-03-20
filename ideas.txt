@@ -1,7 +1,4 @@
 Small ideas:
-- Add new b11 util changes to simulator
-    - half_stack changes
-- Fix b11 part split for special items like fusion comps
 
 Medium ideas:
 - Add ignore obsolete parts in search

@@ -140,7 +140,6 @@ export type SimulatorState = {
     botState: BotState;
     endCondition: EndCondition;
     initialBotState: BotState;
-    isB11: boolean;
     killTus: { [key: number]: number };
     killVolleys: { [key: number]: number };
     offensiveState: OffensiveState;

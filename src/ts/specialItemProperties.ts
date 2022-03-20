@@ -12,22 +12,22 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
 
     // Energy storage
     "Sml. Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 100 } },
-    "Med. Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 200 } },
-    "Lrg. Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 300 } },
-    "Com. Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 300 } },
-    "Hcp. Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 400 } },
-    "Energy Well": { active: "Always", trait: { kind: "EnergyStorage", storage: 500 } },
-    "Imp. Energy Well": { active: "Always", trait: { kind: "EnergyStorage", storage: 600 } },
-    "Adv. Energy Well": { active: "Always", trait: { kind: "EnergyStorage", storage: 800 } },
-    "Exp. Energy Well": { active: "Always", trait: { kind: "EnergyStorage", storage: 1000 } },
+    "Med. Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 150 } },
+    "Lrg. Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 200 } },
+    "Com. Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 200 } },
+    "Hcp. Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 250 } },
+    "Energy Well": { active: "Always", trait: { kind: "EnergyStorage", storage: 350 } },
+    "Imp. Energy Well": { active: "Always", trait: { kind: "EnergyStorage", storage: 400 } },
+    "Adv. Energy Well": { active: "Always", trait: { kind: "EnergyStorage", storage: 500 } },
+    "Exp. Energy Well": { active: "Always", trait: { kind: "EnergyStorage", storage: 600 } },
     "Asb. Biocell Array": { active: "Always", trait: { kind: "EnergyStorage", storage: 1000 } },
-    "Zio. Biocell": { active: "Always", trait: { kind: "EnergyStorage", storage: 1000 } },
-    "Zio. Biocell Array": { active: "Always", trait: { kind: "EnergyStorage", storage: 1200 } },
-    Superbattery: { active: "Always", trait: { kind: "EnergyStorage", storage: 2000 } },
+    "Zio. Biocell": { active: "Always", trait: { kind: "EnergyStorage", storage: 600 } },
+    "Zio. Biocell Array": { active: "Always", trait: { kind: "EnergyStorage", storage: 750 } },
+    Superbattery: { active: "Always", trait: { kind: "EnergyStorage", storage: 1500 } },
 
     // Fusion compressor
     "Fusion Compressor": { active: "Part Active", trait: { kind: "FusionCompressor", energyPerTurn: 20 } },
-    "Imp. Fusion Compressor": { active: "Part Active", trait: { kind: "FusionCompressor", energyPerTurn: 40 } },
+    "Imp. Fusion Compressor": { active: "Part Active", trait: { kind: "FusionCompressor", energyPerTurn: 30 } },
 
     // Heat dissipation
     "Cooling System": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 22 } },
@@ -42,11 +42,11 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     // Mass support
     "Weight Redist. System": { active: "Part Active", trait: { kind: "MassSupport", support: 6 } },
     "Adv. Weight Redist. System": { active: "Part Active", trait: { kind: "MassSupport", support: 9 } },
-    "Gravity Neutralizing Apparatus": { active: "Part Active", trait: { kind: "MassSupport", support: 12 } },
-    "Inertial Stasis Machine": { active: "Part Active", trait: { kind: "MassSupport", support: 16 } },
+    "Gravity Neutralizer": { active: "Part Active", trait: { kind: "MassSupport", support: 12 } },
+    "Adv. Gravity Neutralizer": { active: "Part Active", trait: { kind: "MassSupport", support: 16 } },
     "Quantum Shading Machine": { active: "Part Active", trait: { kind: "MassSupport", support: 20 } },
-    "Dimensional Manipulator": { active: "Part Active", trait: { kind: "MassSupport", support: 25 } },
-    "Asb. Suspension Frame": { active: "Part Active", trait: { kind: "MassSupport", support: 10 } },
+    "Adv. Quantum Shading Machine": { active: "Part Active", trait: { kind: "MassSupport", support: 25 } },
+    "Asb. Suspension Frame": { active: "Part Active", trait: { kind: "MassSupport", support: 20 } },
 
     // Ranged weapon cycling
     "Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.15 } },

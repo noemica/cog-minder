@@ -5,8 +5,8 @@ import json
 from io import StringIO
 from os import path
 
-input_path = path.join(path.dirname(path.realpath(__file__)), 'gallery_export_b11.csv')
-output_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'items_b11.json')
+input_path = path.join(path.dirname(path.realpath(__file__)), 'gallery_export.csv')
+output_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'items.json')
 
 categories = {
     'all': [

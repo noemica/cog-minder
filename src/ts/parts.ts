@@ -1,5 +1,4 @@
 import * as items from "../json/items.json";
-import * as itemsB11 from "../json/items_b11.json";
 import {
     createItemDataContent,
     gallerySort,
@@ -12,13 +11,11 @@ import {
 } from "./common";
 import {
     createHeader,
-    getB11State,
     getSelectedButtonId,
     getSpoilersState,
     refreshSelectpicker,
     registerDisableAutocomplete,
     resetButtonGroup,
-    setB11State,
     setSpoilersState,
 } from "./commonJquery";
 import {
@@ -605,6 +602,9 @@ jq(function ($) {
                 case Critical.Detonate:
                     leftValue = "(Detona)";
                     break;
+                case Critical.Impale:
+                    leftValue = "(Impale)";
+                    break;
                 case Critical.Intensify:
                     leftValue = "(Intens)";
                     break;
@@ -613,9 +613,6 @@ jq(function ($) {
                     break;
                 case Critical.Phase:
                     leftValue = "(Phase)";
-                    break;
-                case Critical.Puncture:
-                    leftValue = "(Punctu)";
                     break;
                 case Critical.Sever:
                     leftValue = "(Sever)";
@@ -1229,11 +1226,12 @@ jq(function ($) {
 
     // Initialize the page state
     function init() {
-        const isB11 = getB11State();
-        initData((isB11 ? itemsB11 : items) as any, undefined);
+        // Reintate for beta 12
+        // const isB11 = getB11State();
+        initData(items as any, undefined);
 
         createHeader("Parts", $("#headerContainer"));
-        $("#beta11Checkbox").prop("checked", getB11State());
+        // $("#beta11Checkbox").prop("checked", getB11State());
         resetButtonGroup($("#modeContainer"));
         registerDisableAutocomplete($(document));
 
@@ -1324,21 +1322,22 @@ jq(function ($) {
             updateComparison();
         });
 
-        $("#beta11Checkbox").on("change", () => {
-            const isB11 = $("#beta11Checkbox").prop("checked");
-            setB11State(isB11);
-            const newItems = isB11 ? itemsB11 : items;
+        // Reinstate for beta 12
+        // $("#beta11Checkbox").on("change", () => {
+        //     const isB11 = $("#beta11Checkbox").prop("checked");
+        //     setB11State(isB11);
+        //     const newItems = items;
 
-            initData(newItems as any, undefined);
+        //     initData(newItems as any, undefined);
 
-            // Initialize page state
-            createSimpleItems();
-            createSpreadsheetItems();
-            updateCategoryVisibility();
-            resetFilters();
+        //     // Initialize page state
+        //     createSimpleItems();
+        //     createSpreadsheetItems();
+        //     updateCategoryVisibility();
+        //     resetFilters();
 
-            ($("#beta11Checkbox").parent() as any).tooltip("hide");
-        });
+        //     ($("#beta11Checkbox").parent() as any).tooltip("hide");
+        // });
 
         $(window).on("click", (e) => {
             // If clicking outside of a popover close the current one

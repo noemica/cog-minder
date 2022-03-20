@@ -1,5 +1,4 @@
 import * as items from "../json/items.json";
-import * as itemsB11 from "../json/items_b11.json";
 import {
     assertUnreachable,
     canShowPart,
@@ -15,13 +14,11 @@ import {
 } from "./common";
 import {
     createHeader,
-    getB11State,
     getSelectedButtonId,
     getSpoilersState,
     registerDisableAutocomplete,
     resetButtonGroup,
     setActiveButtonGroupButton,
-    setB11State,
     setSpoilersState,
 } from "./commonJquery";
 import {
@@ -355,6 +352,11 @@ jq(function ($) {
         return Math.max(1, Math.min(10, depth));
     }
 
+    function getTopTwoValues(values: number[]) {
+        values = values.sort((a, b) => b - a).splice(0, 2);
+        return [values[0] === undefined ? 0 : values[0], values[1] === undefined ? 0 : values[1]];
+    }
+
     const idToInfoTypeMap: Record<string, InfoType> = {
         partInfoCoverage: "Coverage",
         partInfoEnergyPerMove: "Energy/Move",
@@ -410,12 +412,13 @@ jq(function ($) {
                 parts.push(typeArray);
             });
 
-        const b11 = $("#beta11Checkbox").prop("checked");
+        // Reinstate for beta 12
+        // const b11 = $("#beta11Checkbox").prop("checked");
         const depth = $("#depthInput").val() as string;
         const energyGen = $("#energyGenInput").val() as string;
         const heatDissipation = $("#heatDissipationInput").val() as string;
         const state: PageState = {
-            b11: b11,
+            b11: false,
             depth: parseIntOrDefault(depth, undefined as any),
             energyGen: parseIntOrDefault(energyGen, undefined as any),
             heatDissipation: parseIntOrDefault(heatDissipation, undefined as any),
@@ -467,17 +470,18 @@ jq(function ($) {
             setTimeout(() => selector.text("Copy Build Link"), 2000);
         });
 
-        $("#beta11Checkbox").on("change", () => {
-            const isB11 = $("#beta11Checkbox").prop("checked");
-            setB11State(isB11);
-            const newItems = isB11 ? itemsB11 : items;
-            initData(newItems as { [key: string]: JsonItem }, undefined);
+        // Reinstate for beta 12
+        // $("#beta11Checkbox").on("change", () => {
+        //     const isB11 = $("#beta11Checkbox").prop("checked");
+        //     setB11State(isB11);
+        //     const newItems = items;
+        //     initData(newItems as { [key: string]: JsonItem }, undefined);
 
-            // Initialize page state
-            resetValues(defaultParts);
+        //     // Initialize page state
+        //     resetValues(defaultParts);
 
-            ($("#beta11Checkbox").parent() as any).tooltip("hide");
-        });
+        //     ($("#beta11Checkbox").parent() as any).tooltip("hide");
+        // });
 
         $(window).on("click", (e) => {
             // If clicking outside of a popover close the current one
@@ -502,7 +506,9 @@ jq(function ($) {
     // Initialize overall page state from the initial page state
     function initFromState() {
         $("#beta11Checkbox").prop("checked", initialPageState.b11);
-        const itemsToLoad = $("#beta11Checkbox").prop("checked") ? itemsB11 : items;
+        // Reinstate for beta 12
+        // const itemsToLoad = $("#beta11Checkbox").prop("checked") ? itemsB11 : items;
+        const itemsToLoad = items;
 
         initData(itemsToLoad as { [key: string]: JsonItem }, undefined);
 
@@ -536,7 +542,7 @@ jq(function ($) {
     // Loads the initial page state from the hash, using defaults if there is none
     function loadStateFromHash() {
         const hash = window.location.hash.substring(1);
-        initialPageState = { b11: getB11State(), parts: defaultParts };
+        initialPageState = { b11: false, parts: defaultParts };
 
         if (hash.length === 0) {
             // No parts specified, use the defaults
@@ -900,12 +906,12 @@ jq(function ($) {
                 return ((p.part as PowerItem).energyGeneration ?? 0) * powerAmplifierBonus;
             } else if (hasActiveSpecialProperty(p.part, p.abilityActive, "FusionCompressor")) {
                 // Fusion compressors convert matter to energy
-                return ((p.part.specialProperty as SpecialItemProperty).trait as FusionCompressor).energyPerTurn;
+                return (p.part.specialProperty!.trait as FusionCompressor).energyPerTurn;
             } else if ((p.active && p.part.slot === "Propulsion") || p.part.slot === "Utility") {
                 return -((p.part as ItemWithUpkeep).energyUpkeep ?? 0);
             } else if (hasActiveSpecialProperty(p.part, p.abilityActive, "WeaponRegen")) {
                 // Weapon regen ability turns energy into weapon integrity
-                return -((p.part.specialProperty as SpecialItemProperty).trait as WeaponRegen).energyPerTurn;
+                return -(p.part.specialProperty!.trait as WeaponRegen).energyPerTurn;
             }
 
             return 0;
@@ -941,7 +947,7 @@ jq(function ($) {
         function getHeatPerTurn(p: Part) {
             // Return negative value for heat dissipation, positive for generation
             if (hasActiveSpecialProperty(p.part, p.active, "HeatDissipation")) {
-                return -((p.part.specialProperty as SpecialItemProperty).trait as HeatDissipation).dissipation;
+                return -(p.part.specialProperty!.trait as HeatDissipation).dissipation;
             } else if (
                 p.active &&
                 (p.part.slot === "Power" || p.part.slot === "Propulsion" || p.part.slot === "Utility")
@@ -970,7 +976,7 @@ jq(function ($) {
             if (p.active && p.part.slot === "Propulsion") {
                 return -(p.part as PropulsionItem).support;
             } else if (hasActiveSpecialProperty(p.part, p.active, "MassSupport")) {
-                return -((p.part.specialProperty as SpecialItemProperty).trait as MassSupport).support;
+                return -(p.part.specialProperty!.trait as MassSupport).support;
             } else {
                 return p.part.mass ?? 0;
             }
@@ -1040,7 +1046,7 @@ jq(function ($) {
         // Add mass support utils
         totalSupport += parts
             .filter((p) => hasActiveSpecialProperty(p.part, p.active, "MassSupport"))
-            .map((p) => ((p.part.specialProperty as SpecialItemProperty).trait as MassSupport).support)
+            .map((p) => (p.part.specialProperty!.trait as MassSupport).support)
             .reduce(sum, 0);
 
         // Set irrelevant prop types to inactive
@@ -1119,39 +1125,28 @@ jq(function ($) {
         if (isMelee) {
             // Assumes that all actuators stack up to 50%
             const actuatorParts = parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "Actuator"));
-            const actuatorModifier =
-                1 -
-                Math.min(
-                    0.5,
-                    actuatorParts
-                        .map((p) => ((p.part.specialProperty as SpecialItemProperty).trait as Actuator).amount)
-                        .reduce(sum, 0),
-                );
+            let actuatorModifier = 0;
+            actuatorParts.forEach(
+                (p) => (actuatorModifier += (p.part.specialProperty!.trait as Actuator).amount * p.number),
+            );
+            actuatorModifier = 1 - Math.min(0.5, actuatorModifier);
 
             tusPerVolley = actuatorModifier * ((activeWeapons[0].delay ?? 0) + volleyTimeMap[1]);
         } else {
             const cyclerParts = parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "RangedWeaponCycling"));
-            let cyclerModifier: number;
+            let cyclerModifier = 0;
             // Semi-hacky, assumes that 50% cyclers are no-stack and all others stack up to 30%
             if (
-                cyclerParts.find(
-                    (p) => ((p.part.specialProperty as SpecialItemProperty).trait as RangedWeaponCycling).amount === 50,
-                ) !== undefined
+                cyclerParts.find((p) => (p.part.specialProperty!.trait as RangedWeaponCycling).amount === 50) !==
+                undefined
             ) {
                 cyclerModifier = 0.5;
             } else {
-                cyclerModifier =
-                    1 -
-                    Math.min(
-                        0.3,
-                        cyclerParts
-                            .map(
-                                (p) =>
-                                    ((p.part.specialProperty as SpecialItemProperty).trait as RangedWeaponCycling)
-                                        .amount,
-                            )
-                            .reduce(sum, 0),
-                    );
+                let cycleModifier = 0;
+                cyclerParts.forEach(
+                    (p) => (cycleModifier += (p.part.specialProperty!.trait as RangedWeaponCycling).amount),
+                );
+                cycleModifier = 1 - Math.min(0.5, cycleModifier);
             }
 
             tusPerVolley = getRangedVolleyTime(activeWeapons, cyclerModifier);
@@ -1182,29 +1177,23 @@ jq(function ($) {
         };
 
         // Get energy bonuses
-        const powerAmplifierBonus =
-            1 +
-            parts
-                .map((p) => {
-                    if (hasActiveSpecialProperty(p.part, p.active, "PowerAmplifier")) {
-                        return ((p.part.specialProperty as SpecialItemProperty).trait as PowerAmplifier).percent;
-                    }
+        let powerAmplifierBonus = 1;
+        parts.forEach((p) => {
+            if (hasActiveSpecialProperty(p.part, p.active, "PowerAmplifier")) {
+                powerAmplifierBonus += (p.part.specialProperty!.trait as PowerAmplifier).percent * p.number;
+            }
+        });
 
-                    return 0;
-                })
-                .reduce(sum, 0);
-
-        const energyFilterPercent =
-            1 -
-            parts
-                .map((p) => {
-                    if (hasActiveSpecialProperty(p.part, p.active, "EnergyFilter")) {
-                        return ((p.part.specialProperty as SpecialItemProperty).trait as EnergyFilter).percent;
-                    }
-
-                    return 0;
-                })
-                .reduce((a, b) => Math.max(a, b), 0);
+        const filterValues: number[] = [];
+        parts.forEach((p) => {
+            if (hasActiveSpecialProperty(p.part, p.active, "EnergyFilter")) {
+                for (let i = 0; i < p.number; i++) {
+                    filterValues.push((p.part.specialProperty!.trait as EnergyFilter).percent);
+                }
+            }
+        });
+        const [topFilter, secondFilter] = getTopTwoValues(filterValues);
+        const energyFilterPercent = 1 - (topFilter + 0.5 * secondFilter);
 
         // Calculate info for each part
         const partsInfo: PartInfo[] = parts.map((p) => {
@@ -1271,7 +1260,7 @@ jq(function ($) {
             parts
                 .map((p) => {
                     if (hasActiveSpecialProperty(p.part, p.active, "EnergyStorage")) {
-                        return ((p.part.specialProperty as SpecialItemProperty).trait as EnergyStorage).storage;
+                        return (p.part.specialProperty!.trait as EnergyStorage).storage;
                     } else if (p.active && p.part.slot === "Power") {
                         return (p.part as PowerItem).energyStorage ?? 0;
                     } else {
@@ -1365,22 +1354,22 @@ jq(function ($) {
         addInfo("Total Coverage", partsState.totalCoverage, "Total coverage of all parts and core.");
         addInfo("Energy Storage", partsState.energyStorage, "Total energy storage of all equipped parts");
         addInfo(
-            "Energy/Turn",
+            "Net Energy/Turn",
             partsState.totalEnergyGenPerTurn - partsState.totalEnergyUsePerTurn,
             "The amount of energy gained (or lost) per turn by waiting.",
         );
         addInfo(
-            "Heat/Turn",
+            "Net Heat/Turn",
             partsState.totalHeatGenPerTurn - partsState.totalHeatDissipationPerTurn,
             "The amount of heat gained (or lost) per turn by waiting.",
         );
         addInfo(
-            "Energy/Move",
+            "Net Energy/Move",
             partsState.totalEnergyGenPerMove - partsState.totalEnergyUsePerMove,
             "The amount of energy gained (or lost) per single tile move.",
         );
         addInfo(
-            "Heat/Move",
+            "Net Heat/Move",
             partsState.totalHeatGenPerMove - partsState.totalHeatDissipationPerMove,
             "The amount of heat gained (or lost) per single tile move.",
         );
@@ -1390,12 +1379,12 @@ jq(function ($) {
             "The amount of TUs per volley. For melee this assumes no followups.",
         );
         addInfo(
-            "Energy/Volley",
+            "Net Energy/Volley",
             partsState.totalEnergyGenPerVolley - partsState.totalEnergyUsePerVolley,
             "The amount of energy gained (or lost) per full volley. For melee this assumes no followups.",
         );
         addInfo(
-            "Heat/Volley",
+            "Net Heat/Volley",
             partsState.totalHeatGenPerVolley - partsState.totalHeatDissipationPerVolley,
             "The amount of heat gained (or lost) per full volley. For melee this assumes no followups.",
         );

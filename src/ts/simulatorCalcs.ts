@@ -277,52 +277,18 @@ function applyDamage(
             });
         }
     } else {
-        // Non-EX damage is done in a single chunk unless core analyzer proc (8)
-        // TODO remove this section entirely for b11
-        if (
-            !state.isB11 &&
-            coreAnalyzed &&
-            getShieldingType(botState, "Core") === undefined &&
-            !botState.immunities.includes(BotImmunity.Criticals) &&
-            !botState.immunities.includes(BotImmunity.Coring)
-        ) {
-            const chunkDamage = Math.trunc(damage / 2);
-
-            chunks.push({
-                armorAnalyzed: armorAnalyzed,
-                coreBonus: 0,
-                critical: critical,
-                damageType: damageType,
-                disruptChance: disruptChance, // Might be fixed, currently rolls disrupt on part and core
-                forceCore: false,
-                originalDamage: chunkDamage,
-                realDamage: 0,
-                spectrum: spectrum,
-            });
-            chunks.push({
-                armorAnalyzed: false,
-                coreBonus: 0,
-                critical: undefined,
-                damageType: damageType,
-                disruptChance: disruptChance,
-                forceCore: true,
-                originalDamage: chunkDamage,
-                realDamage: 0,
-                spectrum: 0,
-            });
-        } else {
-            chunks.push({
-                armorAnalyzed: armorAnalyzed,
-                coreBonus: state.offensiveState.coreAnalyzerChance,
-                critical: critical,
-                damageType: damageType,
-                disruptChance: disruptChance,
-                forceCore: false,
-                originalDamage: damage,
-                realDamage: 0,
-                spectrum: spectrum,
-            });
-        }
+        // Non-EX damage is done in a single chunk
+        chunks.push({
+            armorAnalyzed: armorAnalyzed,
+            coreBonus: state.offensiveState.coreAnalyzerChance,
+            critical: critical,
+            damageType: damageType,
+            disruptChance: disruptChance,
+            forceCore: false,
+            originalDamage: damage,
+            realDamage: 0,
+            spectrum: spectrum,
+        });
     }
 
     // Apply any additional damage reduction (11)
@@ -413,8 +379,7 @@ function applyDamage(
                 });
             }
 
-            // TODO: Remove crit-overflow prevention for B11
-            if (overflowDamage > 0 && !part.protection && canOverflow && (state.isB11 || critical === undefined)) {
+            if (overflowDamage > 0 && !part.protection && canOverflow) {
                 // Handle overflow damage if excess damage was dealt
                 // against a non-protection part (19)
                 applyDamageChunk(0, overflowDamage, damageType, undefined, true, false, 0, 0, false);
@@ -616,16 +581,6 @@ function applyDamage(
 
         let destroyed = part.integrity <= damage || doesCriticalDestroyPart(critical) || engineExplosion;
 
-        // Check for sever from slash damage on parts with size 1
-        // TODO: Remove for B11
-        if (!state.isB11 && !destroyed && damageType === DamageType.Slashing && part.def.size == 1) {
-            // Sever has a damage / 3 % chance of happening against a
-            // non-destroyed part (23)
-            if (randomInt(0, 99) < Math.trunc(damage / 3)) {
-                destroyed = true;
-            }
-        }
-
         // Apply sever/sunder to instantly-remove (not destroy) part if it's a single slot and unshielded
         // Applied differently than other part destruction since this can't affect multislot
         // parts but can affect protection
@@ -677,7 +632,7 @@ function applyDamage(
     // Apply damage
     chunks.forEach((chunk) => {
         applyDamageChunk(
-            state.isB11 ? chunk.coreBonus : 0,
+            chunk.coreBonus,
             chunk.realDamage,
             chunk.damageType,
             chunk.critical,
@@ -1392,7 +1347,7 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
 }
 
 // Converts a spectrum value to a numeric value
-export function spectrumToNumber(spectrum: Spectrum | undefined) {
+export function spectrumToNumber(spectrum: Spectrum | undefined): number {
     if (spectrum === undefined) {
         return 0;
     }

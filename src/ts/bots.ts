@@ -1,7 +1,5 @@
 import * as bots from "../json/bots.json";
-import * as botsB11 from "../json/bots_b11.json";
 import * as items from "../json/items.json";
-import * as itemsB11 from "../json/items_b11.json";
 import { Bot } from "./botTypes";
 import { botData, createBotDataContent, getBot, initData, leetSpeakMatchTransform, nameToId } from "./common";
 import {
@@ -12,8 +10,6 @@ import {
     createHeader,
     registerDisableAutocomplete,
     setSpoilersState,
-    getB11State,
-    setB11State,
 } from "./commonJquery";
 
 import * as jQuery from "jquery";
@@ -280,12 +276,12 @@ jq(function ($) {
 
     // Initialize the page state
     function init() {
-        const isB11 = getB11State();
-        initData((isB11 ? itemsB11 : items) as any, (isB11 ? botsB11 : bots) as any);
+        initData(items as any, bots as any);
 
         createBots();
         createHeader("Bots", $("#headerContainer"));
-        $("#beta11Checkbox").prop("checked", getB11State());
+        // Reinstate for beta 12
+        // $("#beta11Checkbox").prop("checked", getB11State());
         resetButtonGroup($("#modeContainer"));
         registerDisableAutocomplete($(document));
 
@@ -330,24 +326,25 @@ jq(function ($) {
             }
         });
 
-        $("#beta11Checkbox").on("change", () => {
-            const isB11 = $("#beta11Checkbox").prop("checked");
-            setB11State(isB11);
-            const newItems = (isB11 ? itemsB11 : items) as any;
-            const newBots = (isB11 ? botsB11 : bots) as any;
+        // Reinstate for beta 12
+        // $("#beta11Checkbox").on("change", () => {
+        //     const isB11 = $("#beta11Checkbox").prop("checked");
+        //     setB11State(isB11);
+        //     const newItems = (isB11 ? itemsB11 : items) as any;
+        //     const newBots = (isB11 ? botsB11 : bots) as any;
 
-            initData(newItems, newBots);
+        //     initData(newItems, newBots);
 
-            ($('#botsGrid > [data-toggle="popover"]') as any).popover("dispose");
-            $("#botsGrid").empty();
+        //     ($('#botsGrid > [data-toggle="popover"]') as any).popover("dispose");
+        //     $("#botsGrid").empty();
 
-            // Initialize page state
-            createBots();
-            updateFactionVisibility();
-            resetFilters();
+        //     // Initialize page state
+        //     createBots();
+        //     updateFactionVisibility();
+        //     resetFilters();
 
-            ($("#beta11Checkbox").parent() as any).tooltip("hide");
-        });
+        //     ($("#beta11Checkbox").parent() as any).tooltip("hide");
+        // });
 
         // Enable tooltips
         ($('[data-toggle="tooltip"]') as any).tooltip();

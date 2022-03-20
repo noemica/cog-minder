@@ -1,7 +1,5 @@
 import * as bots from "../json/bots.json";
-import * as botsB11 from "../json/bots_b11.json";
 import * as items from "../json/items.json";
-import * as itemsB11 from "../json/items_b11.json";
 import {
     botData,
     canShowPart,
@@ -16,12 +14,10 @@ import {
 import {
     createHeader,
     enableBotInfoItemPopovers,
-    getB11State,
     getSpoilersState,
     refreshSelectpicker,
     registerDisableAutocomplete,
     resetButtonGroup,
-    setB11State,
     setSpoilersState,
 } from "./commonJquery";
 import { Critical, DamageType, ItemCategory, ItemType, WeaponItem } from "./itemTypes";
@@ -458,11 +454,12 @@ jq(function ($) {
 
     // Initialize the page state
     function init() {
-        const isB11 = getB11State();
-        initData((isB11 ? itemsB11 : items) as any, (isB11 ? botsB11 : bots) as any);
+        // Reinstate for beta 12
+        // const isB11 = getB11State();
+        initData(items as any, bots as any);
 
         createHeader("Simulator", $("#headerContainer"));
-        $("#beta11Checkbox").prop("checked", getB11State());
+        // $("#beta11Checkbox").prop("checked", getB11State());
         registerDisableAutocomplete($(document));
 
         // Set initial state
@@ -518,20 +515,21 @@ jq(function ($) {
             comparisonChart.update();
         });
 
-        $("#beta11Checkbox").on("change", () => {
-            const isB11 = $("#beta11Checkbox").prop("checked");
-            setB11State(isB11);
-            const newItems = (isB11 ? itemsB11 : items) as any;
-            const newBots = (isB11 ? botsB11 : bots) as any;
+        // Reinstate for beta 12
+        // $("#beta11Checkbox").on("change", () => {
+        //     const isB11 = $("#beta11Checkbox").prop("checked");
+        //     setB11State(isB11);
+        //     const newItems = (isB11 ? itemsB11 : items) as any;
+        //     const newBots = (isB11 ? botsB11 : bots) as any;
 
-            initData(newItems, newBots);
+        //     initData(newItems, newBots);
 
-            // Initialize page state
-            resetValues();
-            updateChoices();
+        //     // Initialize page state
+        //     resetValues();
+        //     updateChoices();
 
-            ($("#beta11Checkbox").parent() as any).tooltip("hide");
-        });
+        //     ($("#beta11Checkbox").parent() as any).tooltip("hide");
+        // });
 
         $(window).on("click", (e) => {
             if ($(e.target).parents(".popover").length === 0 && $(".popover").length >= 1) {
@@ -870,8 +868,6 @@ jq(function ($) {
             return;
         }
 
-        const isB11 = $("#beta11Checkbox").prop("checked");
-
         // Set up initial calculation state
         const bot = botData[botName];
         const parts: SimulatorPart[] = [];
@@ -1060,7 +1056,7 @@ jq(function ($) {
             let baseAccuracy = melee ? initialMeleeAccuracy : initialRangedAccuracy;
 
             if (!melee) {
-                baseAccuracy += targetingComputerBonus + (isB11 ? 0 : 2 * numTreads);
+                baseAccuracy += targetingComputerBonus;
             }
 
             // Size bonus/penalty
@@ -1220,7 +1216,6 @@ jq(function ($) {
             botState: botState,
             endCondition: endCondition,
             initialBotState: botState,
-            isB11: isB11,
             killTus: {},
             killVolleys: {},
             offensiveState: offensiveState,
