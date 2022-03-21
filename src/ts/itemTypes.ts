@@ -96,6 +96,7 @@ export enum Critical {
 export type SpecialPropertyActive = "Always" | "Part Active";
 
 export type Actuator = { kind: "Actuator"; amount: number };
+export type AirborneSpeedDoubling = { kind: "AirborneSpeedDoubling" };
 export type AntimissileChance = { kind: "AntimissileChance"; chance: number };
 export type AvoidChance = { kind: "AvoidChance"; chance: number };
 export type CoreShielding = { kind: "CoreShielding"; shielding: number };
@@ -107,6 +108,7 @@ export type EnergyStorage = { kind: "EnergyStorage"; storage: number };
 export type FusionCompressor = { kind: "FusionCompressor"; energyPerTurn: number };
 export type HeatDissipation = { kind: "HeatDissipation"; dissipation: number };
 export type MassSupport = { kind: "MassSupport"; support: number };
+export type Metafiber = { kind: "Metafiber" };
 export type PowerAmplifier = { kind: "PowerAmplifier"; percent: number };
 export type PowerShielding = { kind: "PowerShielding"; shielding: number };
 export type PropulsionShielding = { kind: "PropulsionShielding"; shielding: number };
@@ -120,6 +122,7 @@ export type WeaponShielding = { kind: "WeaponShielding"; shielding: number };
 export type SpecialPropertyType =
     | Actuator
     | AntimissileChance
+    | AirborneSpeedDoubling
     | AvoidChance
     | CoreShielding
     | CorruptionIgnore
@@ -130,6 +133,7 @@ export type SpecialPropertyType =
     | FusionCompressor
     | HeatDissipation
     | MassSupport
+    | Metafiber
     | PowerAmplifier
     | PowerShielding
     | PropulsionShielding
@@ -142,6 +146,7 @@ export type SpecialPropertyType =
 
 export type SpecialPropertyTypeName =
     | "Actuator"
+    | "AirborneSpeedDoubling"
     | "AntimissileChance"
     | "AvoidChance"
     | "CoreShielding"
@@ -153,6 +158,7 @@ export type SpecialPropertyTypeName =
     | "FusionCompressor"
     | "HeatDissipation"
     | "MassSupport"
+    | "Metafiber"
     | "PowerAmplifier"
     | "PowerShielding"
     | "PropulsionShielding"

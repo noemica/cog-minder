@@ -37,7 +37,6 @@ import {
     PowerItem,
     PropulsionItem,
     RangedWeaponCycling,
-    SpecialItemProperty,
     WeaponItem,
     WeaponRegen,
 } from "./itemTypes";
@@ -1079,6 +1078,16 @@ jq(function ($) {
             // TODO
         }
 
+        // Then apply speed doubling like metafield before penalties...
+        if (
+            parts.find((p) => hasActiveSpecialProperty(p.part, p.active, "AirborneSpeedDoubling")) !== undefined &&
+            (activeProp.length === 0 ||
+                activeProp[0].type === ItemType.HoverUnit ||
+                activeProp[0].type === ItemType.FlightUnit)
+        ) {
+            tusPerMove /= 2;
+        }
+
         // Then apply overweight penalties...
         tusPerMove += Math.trunc(Math.max(0, totalMass - 1) / totalSupport) * overweightPenalty;
 
@@ -1095,6 +1104,15 @@ jq(function ($) {
             tusPerMove = Math.max(tusPerMove, 10);
         } else if (propulsionType === ItemType.HoverUnit) {
             tusPerMove = Math.max(tusPerMove, 10);
+        }
+
+        // Apply metafiber after penalties
+        if (
+            parts.find((p) => hasActiveSpecialProperty(p.part, p.active, "Metafiber")) !== undefined &&
+            activeProp.length > 0 &&
+            activeProp[0].type === ItemType.Leg
+        ) {
+            tusPerMove *= 0.8;
         }
 
         // Calculate weapon-related stats

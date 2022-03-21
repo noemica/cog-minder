@@ -6,6 +6,10 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     Nanoactuators: { active: "Part Active", trait: { kind: "Actuator", amount: 0.3 } },
     Femtoactuators: { active: "Part Active", trait: { kind: "Actuator", amount: 0.5 } },
 
+    // Airborne Speed doubling
+    "ST Field Compressor": { active: "Part Active", trait: { kind: "AirborneSpeedDoubling" } },
+    "Zio. Metafield Generator": { active: "Part Active", trait: { kind: "AirborneSpeedDoubling" } },
+
     // Energy filter
     "Energy Filter": { active: "Part Active", trait: { kind: "EnergyFilter", percent: 0.3 } },
     "Prc. Energy Filter": { active: "Part Active", trait: { kind: "EnergyFilter", percent: 0.5 } },
@@ -47,6 +51,9 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Quantum Shading Machine": { active: "Part Active", trait: { kind: "MassSupport", support: 20 } },
     "Adv. Quantum Shading Machine": { active: "Part Active", trait: { kind: "MassSupport", support: 25 } },
     "Asb. Suspension Frame": { active: "Part Active", trait: { kind: "MassSupport", support: 20 } },
+
+    // Metafiber
+    "Asb. Metafiber Network": { active: "Part Active", trait: { kind: "Metafiber" } },
 
     // Ranged weapon cycling
     "Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.15 } },
