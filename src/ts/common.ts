@@ -637,7 +637,7 @@ export function createItemDataContent(baseItem: Item): string {
                 ${emptyLine}
                 ${summaryLine("Active Upkeep")}
                 ${rangeLine("Energy", undefined, 0, "-0", 0, 0, ColorScheme.LowGood)}
-                ${rangeLine("Matter", undefined, 0, "-0", 0, 0, ColorScheme.LowGood)}
+                ${rangeLine("Matter", item.matterUpkeep === undefined ? undefined : "-" + item.matterUpkeep, item.matterUpkeep, "-0", 0, 25, ColorScheme.LowGood)}
                 ${rangeLine("Heat", "+" + item.heatGeneration, item.heatGeneration, "+0", 0, 20, ColorScheme.LowGood)}
                 ${emptyLine}
                 ${summaryLine("Power")}
@@ -1060,6 +1060,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     energyStorage: parseIntOrUndefined(item["Energy Storage"]),
                     hackable: hackable,
                     heatGeneration: parseIntOrUndefined(item["Heat Generation"]),
+                    matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
                     integrity: integrity,
                     mass: mass,
                     name: item.Name,
