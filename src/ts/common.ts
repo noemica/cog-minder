@@ -641,7 +641,7 @@ export function createItemDataContent(baseItem: Item): string {
                 ${rangeLine("Heat", "+" + item.heatGeneration, item.heatGeneration, "+0", 0, 20, ColorScheme.LowGood)}
                 ${emptyLine}
                 ${summaryLine("Power")}
-                ${rangeLine("Supply", "+" + item.energyGeneration, item.energyGeneration, undefined, 0, 30, ColorScheme.Green)}
+                ${rangeLine("Supply", (item.energyGeneration === undefined || item.energyGeneration === 0) ? undefined : "+" + item.energyGeneration, item.energyGeneration, "0", 0, 30, ColorScheme.Green)}
                 ${rangeLine("Storage", item.energyStorage?.toString(), item.energyStorage, "0", 0, 300, ColorScheme.Green)}
                 ${rangeLine("Stability", item.powerStability + "%", item.powerStability, "N/A", 0, 100, ColorScheme.HighGood)}
                 `;
@@ -1071,6 +1071,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     type: item.Type,
                     description: item.Description,
                     categories: categories,
+                    effect: item.Effect,
                     fabrication: fabrication,
                     powerStability:
                         item["Power Stability"] == null

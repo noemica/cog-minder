@@ -77,6 +77,8 @@ categories = {
         'Energy Storage',
         'Power Stability',
         'Matter Upkeep',
+        'Effect',
+        'Description',
     ],
     'propulsion_upkeep': [
         'Energy Upkeep',
