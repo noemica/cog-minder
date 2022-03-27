@@ -19,11 +19,33 @@ export enum HeatTransfer {
     Massive = "Massive (80)",
 }
 
-export enum ItemCategory {
+export enum ItemRatingCategory {
     Alien = "Alien",
     Prototype = "Prototype",
     None = "",
 }
+
+export type ItemCategory =
+    | "0b10"
+    | "Alien"
+    | "Architects"
+    | "Derelict"
+    | "Exile"
+    | "Golem"
+    | "Heroes"
+    | "Lab"
+    | "Quarantine"
+    | "Redacted"
+    | "S7 Guarded"
+    | "S7 Hangar"
+    | "S7 LRC Lab"
+    | "S7 Unguarded"
+    | "Spoiler"
+    | "Testing"
+    | "Unobtainable"
+    | "Warlord"
+    | "Zion"
+    | "Zionite";
 
 export type ItemSlot = "N/A" | "Power" | "Propulsion" | "Utility" | "Weapon";
 
@@ -188,14 +210,14 @@ export type BaseItem = {
     type: ItemType;
     rating: number;
     ratingString: string;
-    category: ItemCategory;
+    category: ItemRatingCategory;
     size: number;
     mass?: number;
     integrity: number;
     coverage?: number;
     effect?: string;
     description?: string;
-    categories: number[];
+    categories: ItemCategory[];
     fabrication?: FabricationStats;
     index: number;
     specialProperty?: SpecialItemProperty;

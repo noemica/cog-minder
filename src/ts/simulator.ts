@@ -20,7 +20,7 @@ import {
     resetButtonGroup,
     setSpoilersState,
 } from "./commonJquery";
-import { Critical, DamageType, ItemCategory, ItemType, WeaponItem } from "./itemTypes";
+import { Critical, DamageType, ItemRatingCategory, ItemType, WeaponItem } from "./itemTypes";
 import {
     getBotDefensiveState,
     getRangedVolleyTime,
@@ -838,7 +838,7 @@ jq(function ($) {
             } else if (name === "Ram") {
                 const weapon: WeaponItem = {
                     categories: [],
-                    category: ItemCategory.None,
+                    category: ItemRatingCategory.None,
                     hackable: false,
                     index: 0,
                     integrity: 0,

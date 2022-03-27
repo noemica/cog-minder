@@ -19,6 +19,7 @@ import {
     setSpoilersState,
 } from "./commonJquery";
 import {
+    ItemCategory,
     Critical,
     DamageType,
     Item,
@@ -43,37 +44,77 @@ jq(function ($) {
     // Enum representing the selected viewing mode
     type ViewMode = "Simple" | "Comparison" | "Spreadsheet";
 
-    // Category ID ->
-    const categoryIdMap = {
-        category0b10: 0,
-        categoryAlien: 1,
-        categoryDerelict: 2,
-        categoryExile: 3,
-        categoryTesting: 4,
-        categoryGolem: 5,
-        categorySpoiler: 6,
-        categoryRedacted: 7,
-        categoryUnobtainable: 8,
-    };
+    type CategoryId =
+        | "category0b10"
+        | "categoryAlien"
+        | "categoryArchitects"
+        | "categoryDerelict"
+        | "categoryExile"
+        | "categoryGolem"
+        | "categoryHeroes"
+        | "categoryLab"
+        | "categoryQuarantine"
+        | "categoryS7Guarded"
+        | "categoryS7Hangar"
+        | "categoryS7Lrc"
+        | "categoryS7Unguarded"
+        | "categorySpoiler"
+        | "categoryRedacted"
+        | "categoryTesting"
+        | "categoryUnobtainable"
+        | "categoryWarlord"
+        | "categoryZion"
+        | "categoryZionite";
+
+    const categoryIdToCategoryMap: Map<CategoryId, ItemCategory> = new Map<CategoryId, ItemCategory>([
+        ["category0b10", "0b10"],
+        ["categoryAlien", "Alien"],
+        ["categoryArchitects", "Architects"],
+        ["categoryDerelict", "Derelict"],
+        ["categoryExile", "Exile"],
+        ["categoryGolem", "Golem"],
+        ["categoryHeroes", "Heroes"],
+        ["categoryLab", "Lab"],
+        ["categoryQuarantine", "Quarantine"],
+        ["categoryS7Guarded", "S7 Guarded"],
+        ["categoryS7Lrc", "S7 LRC Lab"],
+        ["categoryS7Hangar", "S7 Hangar"],
+        ["categoryS7Unguarded", "S7 Unguarded"],
+        ["categorySpoiler", "Spoiler"],
+        ["categoryRedacted", "Redacted"],
+        ["categoryTesting", "Testing"],
+        ["categoryUnobtainable", "Unobtainable"],
+        ["categoryWarlord", "Warlord"],
+        ["categoryZion", "Zion"],
+        ["categoryZionite", "Zionite"],
+    ]);
 
     // Maps of item names to item elements
     const simpleItemElements = {};
     const spreadsheetItemElements = {};
 
-    // Spoiler category HTML ids
-    const spoilerCategoryIds = ["categoryAlien", "categoryTesting", "categoryGolem", "utilTypeArtifact"];
-
-    // List of categories hidden on "None" spoilers type
-    const noneHiddenCategories = [
+    // List of Spoiler+ only categories
+    const spoilerCategoryIds: CategoryId[] = [
         "categoryAlien",
-        "categoryTesting",
         "categoryGolem",
+        "categoryHeroes",
+        "categoryQuarantine",
         "categorySpoiler",
-        "categoryRedacted",
-    ].map((id) => categoryIdMap[id]);
+        "categoryTesting",
+        "categoryWarlord",
+        "categoryZion",
+        "categoryZionite",
+    ];
 
-    // List of categories hidden on "Spoilers" spoilers type
-    const spoilerHiddenCategories = ["categoryRedacted"].map((id) => categoryIdMap[id]);
+    const redactedCategoryIds: CategoryId[] = [
+        "categoryArchitects",
+        "categoryLab",
+        "categoryRedacted",
+        "categoryS7Guarded",
+        "categoryS7Hangar",
+        "categoryS7Lrc",
+        "categoryS7Unguarded",
+    ];
 
     // Slot ID -> Slot string
     const slotMap: { [key: string]: string } = {
@@ -1064,9 +1105,9 @@ jq(function ($) {
         // Spoilers filter
         const spoilersState = getSpoilersState();
         if (spoilersState === "None") {
-            filters.push((item) => !item.categories.some((c) => noneHiddenCategories.includes(c)));
+            filters.push((item) => item.categories.every((c) => c !== "Spoiler" && c !== "Redacted"));
         } else if (spoilersState === "Spoilers") {
-            filters.push((item) => !item.categories.some((c) => spoilerHiddenCategories.includes(c)));
+            filters.push((item) => item.categories.every((c) => c !== "Redacted"));
         }
 
         // Name filter
@@ -1199,10 +1240,10 @@ jq(function ($) {
         }
 
         // Category filter
-        const categoryId = getSelectedButtonId($("#categoryContainer"));
-        if (categoryId in categoryIdMap) {
-            const filterNum = categoryIdMap[categoryId];
-            filters.push((item) => item.categories.includes(filterNum));
+        const categoryId = getSelectedButtonId($("#categoryContainer")) as CategoryId;
+        if (categoryIdToCategoryMap.has(categoryId)) {
+            const category = categoryIdToCategoryMap.get(categoryId)!;
+            filters.push((item) => item.categories.includes(category));
         }
 
         // Create a function that checks all filters
@@ -1522,12 +1563,27 @@ jq(function ($) {
     // Updates category visibility based on the spoiler state
     function updateCategoryVisibility() {
         const state = getSpoilersState();
-        const showSpoilers = state === "Spoilers" || state === "Redacted";
 
-        if (showSpoilers) {
-            spoilerCategoryIds.forEach((category) => $(`#${category}`).removeClass("not-visible"));
-        } else {
-            spoilerCategoryIds.forEach((category) => $(`#${category}`).addClass("not-visible"));
+        function setInvisible(id: CategoryId) {
+            $(`#${id}`).addClass("not-visible");
+        }
+        function setVisible(id: CategoryId) {
+            $(`#${id}`).removeClass("not-visible");
+        }
+
+        switch (state) {
+            case "None":
+                spoilerCategoryIds.forEach(setInvisible);
+                redactedCategoryIds.forEach(setInvisible);
+                break;
+            case "Spoilers":
+                spoilerCategoryIds.forEach(setVisible);
+                redactedCategoryIds.forEach(setInvisible);
+                break;
+            case "Redacted":
+                spoilerCategoryIds.forEach(setVisible);
+                redactedCategoryIds.forEach(setVisible);
+                break;
         }
     }
 

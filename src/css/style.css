@@ -263,6 +263,11 @@ body {
     margin-left: -1px;
 }
 
+.btn-group > .btn {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 /* Dropdowns */
 .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
     width: initial;

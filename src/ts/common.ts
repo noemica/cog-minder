@@ -8,6 +8,7 @@ import {
     FabricationStats,
     Item,
     ItemCategory,
+    ItemRatingCategory,
     ItemType,
     JsonItem,
     OtherItem,
@@ -58,26 +59,24 @@ export function assertUnreachable(_: never): never {
     throw new Error("Invalid");
 }
 
-const spoilerItemCategories = [1, 4, 5, 6];
-const redactedItemCategory = 7;
 // Determines if the given part can be shown based on the current spoilers state
-export function canShowPart(part: Item, spoilersState: string): boolean {
+export function canShowPart(part: Item, spoilersState: Spoiler): boolean {
     if (spoilersState === "None") {
         // No spoilers, check that none of the categories are spoilers/redacted
-        if (part.categories.every((c) => c != redactedItemCategory && !spoilerItemCategories.includes(c))) {
-            return true;
+        if (!part.categories.every((c) => c !== "Spoiler" && c !== "Redacted")) {
+            return false;
         }
     } else if (spoilersState == "Spoilers") {
         // Spoilers allowed, check only for redacted category
-        if (part.categories.every((c) => c != redactedItemCategory)) {
-            return true;
+        if (!part.categories.every((c) => c != "Redacted")) {
+            return false;
         }
     } else {
         // Redacted, no checks
         return true;
     }
 
-    return false;
+    return true;
 }
 
 // Ceil the number to the nearest multiple
@@ -568,13 +567,13 @@ export function createItemDataContent(baseItem: Item): string {
 
     function getRatingHtml(item: Item) {
         switch (item.category) {
-            case ItemCategory.Alien:
+            case ItemRatingCategory.Alien:
                 return '<span class="rating-alien"> Alien </span>';
 
-            case ItemCategory.Prototype:
+            case ItemRatingCategory.Prototype:
                 return '<span class="rating-prototype"> Prototype </span>';
 
-            case ItemCategory.None:
+            case ItemRatingCategory.None:
                 return '<span class="dim-text">Standard</span>';
         }
     }
@@ -992,14 +991,14 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
         const item = (items as { [key: string]: JsonItem })[itemName];
         let newItem: Item;
 
-        let category: ItemCategory = (<any>ItemCategory)[item.Category ?? ""];
+        let category: ItemRatingCategory = (<any>ItemRatingCategory)[item.Category ?? ""];
         if (category === undefined) {
-            category = ItemCategory.None;
+            category = ItemRatingCategory.None;
         }
 
         let rating = parseIntOrUndefined(item.Rating) ?? 1;
-        if (category == ItemCategory.Alien) rating += 0.75;
-        else if (category == ItemCategory.Prototype) rating += 0.5;
+        if (category == ItemRatingCategory.Alien) rating += 0.75;
+        else if (category == ItemRatingCategory.Prototype) rating += 0.5;
 
         const ratingString = item.Rating;
         const fabrication: FabricationStats | undefined =
@@ -1011,12 +1010,12 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                       time: item["Fabrication Time"] as string,
                   };
 
-        let categories: number[];
+        let categories: ItemCategory[];
         if (!(itemName in itemCategories)) {
             console.log(`Need to add categories for ${itemName}`);
             categories = [];
         } else {
-            categories = (itemCategories as { [key: string]: number[] })[itemName];
+            categories = (itemCategories as { [key: string]: ItemCategory[] })[itemName];
         }
 
         const coverage = parseIntOrUndefined(item.Coverage) ?? 0;
