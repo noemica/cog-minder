@@ -91,13 +91,9 @@ jq(function ($) {
     // Armor integrity analyzer chance map
     const armorIntegrityMap = {
         "0%: None": 0,
-        "33%: Armor Integrity Analyzer": 33,
-        "50%: Imp. Armor Integrity Analyzer": 50,
-        "66%: Adv. Armor Integrity Analyzer": 66,
-        "90%: Exp. Armor Integrity Analyzer": 90,
-        "30%: Armor Integrity Analyzer (B11)": 30,
-        "40%: Imp. Armor Integrity Analyzer (B11)": 40,
-        "50%: Exp. Armor Integrity Analyzer (B11)": 50,
+        "30%: Armor Integrity Analyzer": 30,
+        "40%: Imp. Armor Integrity Analyzer": 40,
+        "50%: Exp. Armor Integrity Analyzer": 50,
     };
 
     // Charger damage increase values
