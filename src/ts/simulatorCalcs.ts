@@ -244,7 +244,6 @@ function applyDamage(
     damage: number,
     critical: Critical | undefined,
     armorAnalyzed: boolean,
-    coreAnalyzed: boolean,
     disruptChance: any,
     spectrum: any,
     canOverflow: any,
@@ -252,13 +251,13 @@ function applyDamage(
 ) {
     const chunks: DamageChunk[] = [];
 
-    // Split into chunks each containing originalDamage for other calcs (10)
+    // Split into chunks each containing originalDamage for other calcs (9)
     if (damageType === DamageType.Explosive) {
         if (critical !== undefined) {
             throw "Explosive damage can't be a crit";
         }
 
-        // Split explosive damage randomly into 1-3 chunks (8)
+        // Split explosive damage randomly into 1-3 chunks (9)
         // EX damage can never crit, ignore armor, disrupt, explicitly
         // target core, or have a spectrum
         // Note: The remainder from the division is explicitly thrown out
@@ -291,7 +290,7 @@ function applyDamage(
         });
     }
 
-    // Apply any additional damage reduction (11)
+    // Apply any additional damage reduction (10)
     const part = getDefensiveStatePart(botState.defensiveState.damageReduction);
     const multiplier = part != undefined ? part.reduction : 1;
 
@@ -306,7 +305,7 @@ function applyDamage(
 
         const engine = part.def as PowerItem;
         if (engine.explosionDamageMax > 0 && engine.explosionType !== undefined) {
-            // Apply engine explosion randomly as either 1 or 2 chunks
+            // Apply engine explosion randomly as either 1 or 2 chunks (16)
             const baseDamage = randomInt(engine.explosionDamageMin, engine.explosionDamageMax);
             const chunks =
                 randomInt(1, 2) === 1 ? [baseDamage] : [Math.trunc(baseDamage / 2), Math.trunc(baseDamage / 2)];
@@ -337,7 +336,7 @@ function applyDamage(
         spectrum: number,
         armorAnalyzed: boolean,
     ) {
-        // Determine hit part (14)
+        // Determine hit part (13)
         const { part, partIndex } = getHitPart(botState, coreBonus, damageType, isOverflow, forceCore, armorAnalyzed);
         applyDamageChunkToPart(damage, damageType, critical, disruptChance, spectrum, part, partIndex);
     }
@@ -381,13 +380,13 @@ function applyDamage(
 
             if (overflowDamage > 0 && !part.protection && canOverflow) {
                 // Handle overflow damage if excess damage was dealt
-                // against a non-protection part (19)
+                // against a non-protection part (18)
                 applyDamageChunk(0, overflowDamage, damageType, undefined, true, false, 0, 0, false);
             }
 
             if (damageType === DamageType.Impact) {
                 // Apply 25-150% random corruption to the bot after
-                // destroying a part (affected by EM resistance) (23)
+                // destroying a part (affected by EM resistance) (22)
                 let corruption = randomInt(25, 150);
                 corruption = calculateResistDamage(botState, corruption, DamageType.Electromagnetic);
                 botState.corruption += corruption;
@@ -460,7 +459,7 @@ function applyDamage(
             // Try to get shielding
             const shielding = getShieldingType(botState, "Core");
 
-            // Remove crit types that apply to the core if immunity or shielding (15)
+            // Remove crit types that apply to the core if immunity or shielding (14)
             if (
                 (critical === Critical.Destroy ||
                     critical == Critical.Phase ||
@@ -491,7 +490,7 @@ function applyDamage(
                 return;
             }
 
-            // Apply disruption (18)
+            // Apply disruption (15)
             // Core disruption only has 50% of the usual chance
             if (!botState.immunities.includes(BotImmunity.Disruption) && randomInt(0, 99) < disruptChance / 2) {
                 botState.coreDisrupted = true;
@@ -546,13 +545,12 @@ function applyDamage(
         // Try to get shielding for non-protection parts
         const shielding = part.def.type === ItemType.Protection ? undefined : getShieldingType(botState, part.def.slot);
 
-        // Check for crit immunity or shielding (15)
+        // Check for crit immunity or shielding (14)
         if (shielding !== undefined && doesCriticalDestroyPart(critical)) {
             critical = undefined;
         }
 
-        // Check for spectrum engine explosion (17)
-        // TODO apply damage
+        // Check for spectrum engine explosion (16)
         const engineExplosion = part.def.slot === "Power" && randomInt(0, 99) < spectrum;
 
         // Protection can't get instantly destroyed, only receives 20% more damage
@@ -561,13 +559,13 @@ function applyDamage(
             damage = Math.trunc(1.2 * damage);
         }
 
-        // Reduce damage for powered armor/siege mode (18)
+        // Reduce damage for powered armor/siege mode (17)
         // TODO enemy siege mode
         if (part.selfDamageReduction !== 0) {
             damage = damage * Math.trunc(part.selfDamageReduction);
         }
 
-        // Apply disruption (18)
+        // Apply disruption to non-core parts (17)
         // TODO
 
         if (shielding != undefined) {
@@ -643,7 +641,7 @@ function applyDamage(
             chunk.armorAnalyzed,
         );
 
-        // Apply corruption (23)
+        // Apply corruption (22)
         if (damageType === DamageType.Electromagnetic) {
             // Check for corruption ignore chance
             const corruptionIgnorePart = getDefensiveStatePart(botState.defensiveState.corruptionIgnore);
@@ -874,7 +872,7 @@ function getHitPart(
         const protectionParts = botState.parts.filter((p) => p.protection && p.coverage > 0);
         if (protectionParts.length > 0) {
             // Handle overflow damage specially when there's armor,
-            // overflow into a random armor piece based on coverage (20)
+            // overflow into a random armor piece based on coverage (19)
             let coverageHit = randomInt(
                 0,
                 protectionParts.reduce((prev, part) => prev + part.coverage, 0),
@@ -916,7 +914,7 @@ function getHitPart(
                 botState.coreCoverage / botState.totalCoverage + coreBonus / 100,
                 0.999,
             );
-            const boostedCoreCoverage = (totalCoverage * coreCoveragePercentage) / (1 - coreCoveragePercentage);
+            const boostedCoreCoverage = botState.totalCoverage * coreCoveragePercentage;
             totalCoverage += boostedCoreCoverage;
         }
 
@@ -1193,7 +1191,6 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
                 damage,
                 undefined,
                 false,
-                false,
                 weapon.disruption,
                 weapon.spectrum,
                 weapon.overflow,
@@ -1299,10 +1296,7 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
             // Check for armor integrity analyzer
             const armorAnalyzed = randomInt(0, 99) < offensiveState.armorAnalyzerChance;
 
-            // Check for core analyzer (8)
-            const coreAnalyzed = randomInt(0, 99) < offensiveState.coreAnalyzerChance;
-
-            // Check for crit (9)
+            // Check for crit (8)
             const didCritical = randomInt(0, 99) < weapon.criticalChance;
 
             if (damage > 0) {
@@ -1312,7 +1306,6 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
                     damage,
                     didCritical ? weapon.criticalType : undefined,
                     armorAnalyzed,
-                    coreAnalyzed,
                     weapon.disruption,
                     weapon.spectrum,
                     weapon.overflow,
@@ -1334,7 +1327,6 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
                     botState,
                     damage,
                     undefined,
-                    false,
                     false,
                     weapon.disruption,
                     weapon.explosionSpectrum,
