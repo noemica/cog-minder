@@ -207,6 +207,7 @@ export type BaseItem = {
     hackable: boolean;
     name: string;
     noPrefixName: string;
+    fullName: string;
     type: ItemType;
     rating: number;
     ratingString: string;
@@ -306,6 +307,7 @@ export type Item = OtherItem | PowerItem | PropulsionItem | UtilityItem | Weapon
 export type JsonItem = {
     Slot: ItemSlot;
     Name: string;
+    "Full Name": string;
     Type: ItemType;
     Rating: string;
     Size: string;

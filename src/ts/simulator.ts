@@ -839,6 +839,7 @@ jq(function ($) {
                     index: 0,
                     integrity: 0,
                     name: "Ram",
+                    fullName: "Ram",
                     noPrefixName: "Ram",
                     projectileCount: 1,
                     range: 2,

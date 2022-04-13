@@ -914,13 +914,27 @@ export function getBot(botName: string): Bot {
     throw `${botName} not a valid bot`;
 }
 
-// Tries to get an item by the name
+// Tries to get an item by name
 export function getItem(itemName: string): Item {
     if (itemName in itemData) {
         return itemData[itemName];
     }
     console.trace();
     throw `${itemName} not a valid item`;
+}
+
+// Tries to get an item by its full name
+export function getItemByFullName(itemName: string): Item {
+    const items = Object.keys(itemData)
+        .map((name) => itemData[name])
+        .filter((item) => item.fullName == itemName);
+
+    if (items.length === 0) {
+        console.trace();
+        throw `${itemName} not a valid item`;
+    }
+
+    return items[0];
 }
 
 // Gets the movement name given a propulsion type
@@ -1036,6 +1050,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     integrity: integrity,
                     mass: undefined,
                     name: item.Name,
+                    fullName: item["Full Name"],
                     noPrefixName: noPrefixName,
                     rating: rating,
                     ratingString: ratingString,
@@ -1063,6 +1078,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     integrity: integrity,
                     mass: mass,
                     name: item.Name,
+                    fullName: item["Full Name"],
                     noPrefixName: noPrefixName,
                     rating: rating,
                     ratingString: ratingString,
@@ -1100,6 +1116,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     hackable: hackable,
                     integrity: integrity,
                     name: item.Name,
+                    fullName: item["Full Name"],
                     mass: mass,
                     noPrefixName: noPrefixName,
                     penalty: parseInt(item.Penalty as string),
@@ -1135,6 +1152,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     hackable: hackable,
                     integrity: integrity,
                     name: item.Name,
+                    fullName: item["Full Name"],
                     noPrefixName: noPrefixName,
                     rating: rating,
                     ratingString: ratingString,
@@ -1182,6 +1200,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     hackable: hackable,
                     integrity: integrity,
                     name: item.Name,
+                    fullName: item["Full Name"],
                     noPrefixName: noPrefixName,
                     rating: rating,
                     ratingString: ratingString,
@@ -1466,7 +1485,7 @@ export function randomInt(min: number, max: number): number {
 }
 
 // Returns the value if it's not undefined, otherwise return defaultVal
-export function valueOrDefault<T>(val: T, defaultVal: T): T {
+export function valueOrDefault<T>(val: T | undefined, defaultVal: T): T {
     if (val === undefined) {
         return defaultVal;
     }

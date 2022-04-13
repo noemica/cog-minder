@@ -4,6 +4,7 @@ import {
     canShowPart,
     createItemDataContent,
     gallerySort,
+    getItemByFullName,
     getMovementText,
     getValuePerTus,
     hasActiveSpecialProperty,
@@ -20,6 +21,7 @@ import {
     resetButtonGroup,
     setActiveButtonGroupButton,
     setSpoilersState,
+    temporarilySetValue,
 } from "./commonJquery";
 import {
     Actuator,
@@ -436,6 +438,7 @@ jq(function ($) {
         registerDisableAutocomplete($(document));
         resetButtonGroup($("#infoTypeContainer"));
 
+        initImportFromDump();
         loadStateFromHash();
         initFromState();
 
@@ -445,11 +448,11 @@ jq(function ($) {
             $("#spoilers").text(state);
             setSpoilersState(state);
             ($("#spoilersDropdown > button") as any).tooltip("hide");
-            resetValues(defaultParts);
+            resetValues(defaultParts, null, null, null);
         });
         $("#reset").on("click", () => {
             ($("#reset") as any).tooltip("hide");
-            resetValues(defaultParts);
+            resetValues(defaultParts, null, null, null);
         });
         $("#depthInput").on("input", updateAll);
         $("#energyGenInput").on("input", updateAll);
@@ -459,14 +462,13 @@ jq(function ($) {
             ($(e.target).parent() as any).tooltip("hide");
             updateAllPartInfo();
         });
-        $("#getLink").on("click", (e) => {
+        $("#getLinkButton").on("click", (e) => {
             getLinkAndCopy();
             const selector = $(e.target);
             (selector as any).tooltip("hide");
 
             // Set the text to copied temporarily
-            selector.text("Copied");
-            setTimeout(() => selector.text("Copy Build Link"), 2000);
+            temporarilySetValue(selector, "Copied", "Copy Build Link", 2000);
         });
 
         // Reinstate for beta 12
@@ -531,6 +533,208 @@ jq(function ($) {
         }
     }
 
+    // Initializes the import from dump button
+    function initImportFromDump() {
+        // Init data content
+        const importFromDumpButton = $("#importFromDumpButton");
+        importFromDumpButton.attr(
+            "data-content",
+            `
+<span class="input-label dump-input-label d-flex" data-toggle="tooltip"
+title="Paste the section of a run dump that starts with the list of parts below">Paste run dump below</span>
+<textarea id="dumpText" rows="10" class="form-control dump-input-textarea mt-3"></textarea>
+<div class="d-flex justify-content-end input-group mt-2">
+    <div id="peakStateToggle" class="btn-group btn-group-toggle" data-toggle="buttons">
+        <div class="input-group-prepend" data-toggle="tooltip"
+            title="Use peak state? If not then current/last state is used instead.">
+            <span class="input-group-text">Peak State</span>
+        </div>
+        <label id="peakStateNoButton" class="btn">
+            <input type="radio" name="options"> No
+        </label>
+        <label id="peakStateYesButton" class="btn">
+            <input type="radio" name="options"> Yes
+        </label>
+    </div>
+    <button id="dumpSubmitButton" class="btn ml-3">Submit</button>
+</div>
+`,
+        );
+
+        // We can't add the data content for both a tooltip and a popover in HTML
+        // Add the tooltip info here instead
+        (importFromDumpButton as any).tooltip({
+            title: "Allows for importing a build from a scoresheet or current run dump.",
+        });
+        (importFromDumpButton as any).popover({
+            sanitize: false,
+        });
+        importFromDumpButton.on("shown.bs.popover", (e) => {
+            (importFromDumpButton as any).tooltip("hide");
+
+            // Set up popover dump handling
+            const body = $(`#${$(e.target).attr("aria-describedby")}`).children(".popover-body");
+
+            // Hack to stop focus from being moved outside of the textarea immediately
+            body.find("#dumpText").on("click", (e) => {
+                e.stopPropagation();
+            });
+
+            resetButtonGroup(body.find("#peakStateToggle"));
+
+            (body.find('[data-toggle="tooltip"]') as any).tooltip();
+
+            // Add handling for submit button
+            const submitButton = body.find("#dumpSubmitButton");
+
+            submitButton.on("click", () => {
+                let text = body.find("#dumpText").val() as string;
+                const fullText = text;
+                const usePeakState = body.find("#peakStateYesButton").hasClass("active");
+
+                function getMatchAndUpdateText(regex: RegExp) {
+                    const match = regex.exec(text);
+
+                    if (match !== null) {
+                        text = text.substring(match.index + match[0].length);
+                    }
+
+                    return match;
+                }
+
+                // Parse the next part name and update the remaining text
+                function getNextPartName() {
+                    if (text[0] == ">") {
+                        return null;
+                    }
+
+                    const match = getMatchAndUpdateText(/^ *([^\n>]*)\n/);
+                    if (match === null) {
+                        return null;
+                    }
+
+                    return match[1];
+                }
+
+                // Gets the part state containing all parts for a given slot type
+                function getPartStateForType(partType: string) {
+                    // Peak state doesn't contain the slot counts while current state does
+                    const regexString = usePeakState ? `> *-* ${partType} *-*\n` : `> *-* ${partType} \\(\\d*\\) *-*\n`;
+                    const match = getMatchAndUpdateText(new RegExp(regexString));
+
+                    if (match === null) {
+                        return null;
+                    }
+
+                    const partStates: PartState[] = [];
+                    for (let nextPart = getNextPartName(); nextPart != null; nextPart = getNextPartName()) {
+                        const part = getItemByFullName(nextPart);
+                        if (part === null) {
+                            continue;
+                        }
+
+                        // Update existing part or add a new one
+                        const partState = partStates.find((p) => p.name === part.name);
+                        if (partState !== undefined) {
+                            partState.number! += 1;
+                        } else {
+                            partStates.push({
+                                name: part.name,
+                                active: true,
+                                number: 1,
+                            });
+                        }
+                    }
+
+                    return partStates;
+                }
+
+                // Gets the highest depth we've reached
+                function getCurrentDepth() {
+                    let match = getMatchAndUpdateText(/ Route \n-*\n/);
+
+                    if (match === null) {
+                        return undefined;
+                    }
+
+                    let depth = 11;
+                    const locationRegex = /-(\d+)\/\w*.*\n/;
+
+                    match = getMatchAndUpdateText(locationRegex);
+                    while (match !== null) {
+                        const newDepth = parseIntOrDefault(match[1], 10);
+                        depth = Math.min(newDepth, depth);
+
+                        if (newDepth > depth) {
+                            break;
+                        }
+
+                        match = getMatchAndUpdateText(locationRegex);
+                    }
+
+                    return -depth;
+                }
+
+                function getTotalEnergyGen() {
+                    let energyGen = 0;
+
+                    const regex = /increased core energy generation \(\+(\d+)\)/g;
+
+                    let match: RegExpMatchArray | null;
+                    while ((match = regex.exec(fullText)) !== null) {
+                        energyGen += parseIntOrDefault(match[1], 0);
+                    }
+
+                    return energyGen;
+                }
+
+                function getTotalHeatDissipation() {
+                    let heatDissipation = 0;
+
+                    const regex = /increased core heat dissipation \(\+(\d+)\)/g;
+
+                    let match: RegExpMatchArray | null;
+                    while ((match = regex.exec(fullText)) !== null) {
+                        heatDissipation += parseIntOrDefault(match[1], 0);
+                    }
+
+                    return heatDissipation;
+                }
+
+                (importFromDumpButton as any).popover("hide");
+
+                const allPartStates: PartState[][] = [];
+
+                // Get all parts
+                const powerParts = getPartStateForType("POWER");
+                const propulsionParts = getPartStateForType("PROPULSION");
+                const utilityParts = getPartStateForType("UTILITY");
+                const weaponParts = getPartStateForType("WEAPON");
+
+                if (powerParts === null || propulsionParts === null || utilityParts === null || weaponParts === null) {
+                    temporarilySetValue(importFromDumpButton, "Failed to import", "Import From Dump", 3000);
+                    return;
+                }
+
+                allPartStates.push(powerParts);
+                allPartStates.push(propulsionParts);
+                allPartStates.push(utilityParts);
+                allPartStates.push(weaponParts);
+
+                // Get current depth
+                const depth = getCurrentDepth();
+                const energyGen = getTotalEnergyGen();
+                const heatDissipation = getTotalHeatDissipation();
+
+                resetValues(allPartStates, depth, energyGen, heatDissipation);
+                temporarilySetValue(importFromDumpButton, "Imported!", "Import From Dump", 3000);
+            });
+        });
+        $(".popover").on("click", (e) => {
+            e.stopPropagation();
+        });
+    }
+
     // Adds the initial empty part selects for each type
     function initializePartsSelects() {
         partTypes.forEach((type) => {
@@ -588,18 +792,18 @@ jq(function ($) {
     // Resets all values on the page
     function resetValues(
         defaults: PartState[][],
-        depth?: number | string,
-        energyGen?: number | string,
-        heatDissipation?: number | string,
+        depth?: number | string | null,
+        energyGen?: number | string | null,
+        heatDissipation?: number | string | null,
     ) {
         if (depth !== undefined) {
-            $("#depthInput").val(depth);
+            $("#depthInput").val(depth!);
         }
         if (energyGen !== undefined) {
-            $("#energyGenInput").val(energyGen);
+            $("#energyGenInput").val(energyGen!);
         }
         if (heatDissipation !== undefined) {
-            $("#heatDissipationInput").val(heatDissipation);
+            $("#heatDissipationInput").val(heatDissipation!);
         }
         resetPartSelects(defaults);
     }

@@ -186,6 +186,30 @@ defaults = {
     "Mass": '0'
 }
 
+expansions = {
+    'Adv.': 'Advanced',
+    'Asb.': 'Assembled',
+    'Cld.': 'Cooled',
+    'Com.': 'Compact',
+    'Cmb.': 'Combat',
+    'Enh.': 'Enhanced',
+    'Exp.': 'Experimental',
+    'Hpw.': 'High-powered',
+    'Hvy.': 'Heavy',
+    'Hyb.': 'Hybrid',
+    'Hyp.': 'Hypervelocity',
+    'Imp.': 'Improved',
+    'Lgt.': 'Light',
+    'Lrn.': 'Long-range',
+    'Mak.': 'Makshift',
+    'Med.': 'Medium',
+    'Mic.': 'Micro',
+    'Mni.': 'Mini',
+    'Sml.': 'Small',
+    "Spk.": "Spiked",
+    'Zio.': 'Zionite',
+}
+
 
 def get_value(row, name):
     val = ''
@@ -249,6 +273,14 @@ for row in reader:
 
         values['Index'] = rowNum
         rowNum += 1
+
+        full_name: str = values['Name']
+        for (start, expansion) in expansions.items():
+            if full_name.startswith(start):
+                full_name = full_name.replace(start, expansion)
+                break
+
+        values['Full Name'] = full_name
 
         all_values[values['Name']] = values
 

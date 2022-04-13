@@ -272,15 +272,6 @@ export function refreshSelectpicker(selector: JQuery<HTMLElement>): void {
     selector.next().removeClass("btn-light");
 }
 
-// Clears a button group's state and sets the item at the selected index to be active
-export function setActiveButtonGroupButton(group: JQuery<HTMLElement>, index: number): void {
-    group.children().removeClass("active");
-    group.find("input").prop("checked", false);
-
-    group.children(`label:nth-of-type(${index})`).addClass("active");
-    group.children(`label:nth-of-type(${index}) > input`).prop("checked", true);
-}
-
 // Clears a button group's state and sets the first item to be active
 export function resetButtonGroup(group: JQuery<HTMLElement>): void {
     group.children().removeClass("active");
@@ -288,6 +279,15 @@ export function resetButtonGroup(group: JQuery<HTMLElement>): void {
 
     group.children("label:first-of-type").addClass("active");
     group.children("label:first-of-type > input").prop("checked", true);
+}
+
+// Clears a button group's state and sets the item at the selected index to be active
+export function setActiveButtonGroupButton(group: JQuery<HTMLElement>, index: number): void {
+    group.children().removeClass("active");
+    group.find("input").prop("checked", false);
+
+    group.children(`label:nth-of-type(${index})`).addClass("active");
+    group.children(`label:nth-of-type(${index}) > input`).prop("checked", true);
 }
 
 // Gets the stored spoilers state
@@ -298,4 +298,15 @@ export function setSpoilersState(state: string): void {
 // Gets the stored boolean state
 export function setB11State(state: boolean): void {
     return window.localStorage.setItem("b11", state.toString());
+}
+
+// Temporarily set the text value of a selector for the specified timeout
+export function temporarilySetValue(
+    selector: JQuery<HTMLElement>,
+    newValue: string,
+    initialValue: string,
+    time: number,
+): void {
+    selector.text(newValue);
+    setTimeout(() => selector.text(initialValue), time);
 }
