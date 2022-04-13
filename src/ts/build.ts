@@ -541,7 +541,7 @@ jq(function ($) {
             "data-content",
             `
 <span class="input-label dump-input-label d-flex" data-toggle="tooltip"
-title="Paste the section of a run dump that starts with the list of parts below">Paste run dump below</span>
+title="Paste the entire a run dump or scores .txt file below">Paste run dump below</span>
 <textarea id="dumpText" rows="10" class="form-control dump-input-textarea mt-3"></textarea>
 <div class="d-flex justify-content-end input-group mt-2">
     <div id="peakStateToggle" class="btn-group btn-group-toggle" data-toggle="buttons">
