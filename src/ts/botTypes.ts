@@ -106,6 +106,7 @@ export type JsonBot = {
     "Spot %": string;
     Movement: string;
     Speed: string;
+    "Overload Speed"?: string;
     "Sight Range": string;
     "Energy Generation": string;
     "Heat Dissipation": string;

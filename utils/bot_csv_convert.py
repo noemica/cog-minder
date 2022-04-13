@@ -57,6 +57,12 @@ categories = [
     'Analysis',
 ]
 
+overload_speeds = {
+    "C-17 Slicer": 20,
+    "C-35 Carver": 15,
+    "C-57 Dissector": 7,
+}
+
 name_replacements = {
     'Z-Light': ['Z-Light (5)', 'Z-Light (7)', 'Z-Light (9)'],
     'Z-Heavy': ['Z-Heavy (5)', 'Z-Heavy (7)', 'Z-Heavy (9)'],
@@ -195,7 +201,7 @@ for row in reader:
         traits_strings = values['Traits'].split('\r\n\r\n')
         values['Traits'] = traits_strings
 
-    if (values['Name']) in name_replacements:
+    if values['Name'] in name_replacements:
         # If the name should be replaced, use an alternate name in a predetermined order
         # This handles alternate bot names and duplicates
         names = name_replacements[values['Name']]
@@ -206,6 +212,9 @@ for row in reader:
 
     if values['Name'] in all_values:
         raise Exception('Duplicate name {}'.format(values['Name']))
+
+    if values['Name'] in overload_speeds:
+        values['Overload Speed'] = overload_speeds[values['Name']]
 
     all_values[values['Name']] = values
 

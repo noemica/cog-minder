@@ -1394,7 +1394,9 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                 immunities: bot.Immunities ?? [],
                 immunitiesString: bot.Immunities?.join(", ") ?? "",
                 memory: bot.Memory,
-                movement: `${bot.Movement} (${bot.Speed})`,
+                movement: `${bot.Movement} (${bot.Speed})${
+                    bot["Overload Speed"] !== undefined ? ` Ovrload (${bot["Overload Speed"]})` : ""
+                }`,
                 name: botName,
                 profile: bot.Profile,
                 rating: bot.Rating,
