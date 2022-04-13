@@ -680,7 +680,7 @@ export function createItemDataContent(baseItem: Item): string {
                 ${emptyLine}
                 ${summaryLine("Active Upkeep")}
                 ${rangeLine("Energy", "-" + item.energyUpkeep, item.energyUpkeep, "-0", 0, 20, ColorScheme.LowGood)}
-                ${rangeLine("Matter", undefined, 0, "-0", 0, 0, ColorScheme.LowGood)}
+                ${rangeLine("Matter", "-" + item.matterUpkeep, item.matterUpkeep, "-0", 0, 25, ColorScheme.LowGood)}
                 ${rangeLine("Heat", "+" + item.heatGeneration, item.heatGeneration, "+0", 0, 20, ColorScheme.LowGood)}
                 `;
             break;
