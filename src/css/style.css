@@ -380,11 +380,11 @@ body {
 
 /* Description popover */
 .popover {
+    font-family: smallcaps-mono;
     background-color: black;
     border: 2px solid #008c00;
     border-radius: 0;
     max-width: inherit;
-    font-family: smallcaps-mono;
 }
 
 .popover * {
@@ -392,12 +392,14 @@ body {
 }
 
 .popover-summary {
+    font-family: smallcaps-mono;
     margin: 0;
     color: #bfbfbf;
     font-size: .80rem;
 }
 
 .popover-line, .popover-part, .popover-description, .popover-option {
+    font-family: smallcaps-mono;
     margin: 0;
     color: #00b200;
     font-size: .80rem;
@@ -418,17 +420,12 @@ body {
 }
 
 .popover-title {
+    font-family: smallcaps-mono;
     text-align: center;
     color: #00b200;
     font-size: .80rem;
     margin-bottom: 0px;
     margin-top: 0px;
-}
-
-.popover-close-btn {
-    padding: .2rem;
-    background-color: #162416;
-    margin-right: -1.5rem;
 }
 
 .cursor-pointer, .bot-popover-item {
@@ -536,6 +533,7 @@ body {
 }
 
 .comparison-positive, .comparison-neutral, .comparison-negative {
+    font-family: smallcaps-mono;
     font-size: .80rem;
     margin: 0;
     padding-right: 0.5ch;
