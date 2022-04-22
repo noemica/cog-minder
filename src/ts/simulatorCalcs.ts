@@ -427,7 +427,6 @@ function applyDamage(
             }
 
             // Destroy first engine found (if any)
-            // TODO apply explosion damage
             if (i < botState.parts.length) {
                 const engine = botState.parts[i];
                 destroyPart(i, engine, 0, undefined, DamageType.Entropic);
@@ -476,6 +475,12 @@ function applyDamage(
                 // Note: shielding may absorb more damage than integrity
                 const shieldingDamage = Math.trunc(shielding.reduction * damage);
                 shielding.part.integrity -= shieldingDamage;
+
+                if (shielding.part.integrity <= 0) {
+                    // Remove shielding if it has run out of integrity
+                    const index = botState.parts.indexOf(shielding.part);
+                    destroyPart(index, shielding.part, 0, undefined, DamageType.Entropic);
+                }
 
                 damage = damage - shieldingDamage;
             }
@@ -573,6 +578,12 @@ function applyDamage(
             // Note: shielding may absorb more damage than integrity
             const shieldingDamage = Math.trunc(shielding.reduction * damage);
             shielding.part.integrity -= shieldingDamage;
+
+            if (shielding.part.integrity <= 0) {
+                // Remove shielding if it has run out of integrity
+                const index = botState.parts.indexOf(shielding.part);
+                destroyPart(index, shielding.part, 0, undefined, DamageType.Entropic);
+            }
 
             damage = damage - shieldingDamage;
         }
@@ -859,14 +870,24 @@ function getHitPart(
     }
 
     if (damageType === DamageType.Impact) {
-        // Impact damage targets core and all parts with equal probability
-        const coverageHit = randomInt(0, botState.parts.length);
+        // Impact damage targets core and all parts with coverage relative to their slots
+        function sum(a: number, b: number) {
+            return a + b;
+        }
 
-        if (coverageHit < botState.parts.length) {
-            partIndex = coverageHit;
+        let coverageHit = randomInt(0, botState.parts.map((p) => p.def.size).reduce(sum, 0));
+        for (let i = 0; i < botState.parts.length; i++) {
+            if (coverageHit < botState.parts[i].def.size) {
+                partIndex = i;
+                break;
+            }
+
+            coverageHit -= botState.parts[i].def.size;
+        }
+
+        // Assign part if non-core hit, otherwise leave undefined on core
+        if (partIndex >= 0) {
             part = botState.parts[partIndex];
-        } else {
-            // Keep part undefined for core hit
         }
     } else if (isOverflow) {
         const protectionParts = botState.parts.filter((p) => p.protection && p.coverage > 0);
