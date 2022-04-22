@@ -42,6 +42,8 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Imp. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 14 } },
     "Adv. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 19 } },
     "Exp. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 26 } },
+    "Active Cooling Armor": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 60 } },
+    "2N-1CE's Frost Array": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 100 } },
 
     // Mass support
     "Weight Redist. System": { active: "Part Active", trait: { kind: "MassSupport", support: 6 } },
