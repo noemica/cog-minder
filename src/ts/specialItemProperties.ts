@@ -34,6 +34,9 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Imp. Fusion Compressor": { active: "Part Active", trait: { kind: "FusionCompressor", energyPerTurn: 30 } },
 
     // Heat dissipation
+    "2N-1CE's Frost Array": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 100 } },
+    "Active Cooling Armor": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 60 } },
+    "Coolant Network": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 90 } },
     "Cooling System": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 22 } },
     "Imp. Cooling System": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 27 } },
     "Adv. Cooling System": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 31 } },
@@ -42,8 +45,6 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Imp. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 14 } },
     "Adv. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 19 } },
     "Exp. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 26 } },
-    "Active Cooling Armor": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 60 } },
-    "2N-1CE's Frost Array": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 100 } },
 
     // Mass support
     "Weight Redist. System": { active: "Part Active", trait: { kind: "MassSupport", support: 6 } },
