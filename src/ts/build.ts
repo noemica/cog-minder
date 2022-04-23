@@ -1364,11 +1364,10 @@ title="Paste the entire a run dump or scores .txt file below">Paste run dump bel
             ) {
                 cyclerModifier = 0.5;
             } else {
-                let cycleModifier = 0;
                 cyclerParts.forEach(
-                    (p) => (cycleModifier += (p.part.specialProperty!.trait as RangedWeaponCycling).amount),
+                    (p) => (cyclerModifier += (p.part.specialProperty!.trait as RangedWeaponCycling).amount),
                 );
-                cycleModifier = 1 - Math.min(0.5, cycleModifier);
+                cyclerModifier = 1 - Math.min(0.3, cyclerModifier);
             }
 
             tusPerVolley = getRangedVolleyTime(activeWeapons, cyclerModifier);
