@@ -1418,7 +1418,7 @@ title="Paste the entire a run dump or scores .txt file below">Paste run dump bel
 
         // Calculate info for each part
         const partsInfo: PartInfo[] = parts.map((p) => {
-            let activeMultiplierNumber = p.number;
+            let activeMultiplierNumber = p.active ? p.number : 0;
             if (isMelee && isPartMelee(p.part) && p.active) {
                 // In case multiple melee weapons are selected, only count the first
                 activeMultiplierNumber = 1;
