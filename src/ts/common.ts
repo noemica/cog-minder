@@ -771,20 +771,7 @@ export function createItemDataContent(baseItem: Item): string {
                         ${item.waypoints === undefined ? valueLineWithDefault("Arc", item.arc?.toString(), "N/A") : valueLine("Waypoints", item.waypoints)}
                         `;
 
-                    if (item.explosionDamage !== undefined) {
-                        html += `
-                        ${emptyLine}
-                        ${summaryProjectileLine(item, "Explosion")}
-                        ${rangeLine("Radius", item.explosionRadius?.toString(), item.explosionRadius, undefined, 0, 8, ColorScheme.Green)}
-                        ${rangeLine("Damage", item.explosionDamage, getExplosionValue(item), undefined, 0, 100, ColorScheme.Green)}
-                        ${valueLineWithDefault(" Falloff", item.falloff === undefined ? undefined : "-" + item.falloff, "0")}
-                        ${textLine("Type", item.explosionType)}
-                        ${textLineWithDefault("Spectrum", item.explosionSpectrum, "N/A")}
-                        ${rangeLineUnit("Disruption", item.explosionDisruption?.toString(), item.explosionDisruption, "%", "0", 0, 50, ColorScheme.Green)}
-                        ${valueLineWithDefault("Salvage", item.explosionSalvage, "0")}
-                        `;
-                    }
-                    else if (item.damage !== undefined) {
+                    if (item.damage !== undefined) {
                         // Only some special weapons have a damage section
                         html += `
                         ${emptyLine}
@@ -797,6 +784,18 @@ export function createItemDataContent(baseItem: Item): string {
                         ${item.heatTransfer === undefined ? textLineWithDefault("Spectrum", item.spectrum, "N/A") : textLine("Heat Transfer", item.heatTransfer)}
                         ${rangeLineUnit("Disruption", item.disruption?.toString(), item.disruption, "%", "0", 0, 50, ColorScheme.Green)}
                         ${valueLineWithDefault("Salvage", item.salvage?.toString(), "0")}
+                        `;
+                    } else if (item.explosionDamage !== undefined) {
+                        html += `
+                        ${emptyLine}
+                        ${summaryProjectileLine(item, "Explosion")}
+                        ${rangeLine("Radius", item.explosionRadius?.toString(), item.explosionRadius, undefined, 0, 8, ColorScheme.Green)}
+                        ${rangeLine("Damage", item.explosionDamage, getExplosionValue(item), undefined, 0, 100, ColorScheme.Green)}
+                        ${valueLineWithDefault(" Falloff", item.falloff === undefined ? undefined : "-" + item.falloff, "0")}
+                        ${textLine("Type", item.explosionType)}
+                        ${textLineWithDefault("Spectrum", item.explosionSpectrum, "N/A")}
+                        ${rangeLineUnit("Disruption", item.explosionDisruption?.toString(), item.explosionDisruption, "%", "0", 0, 50, ColorScheme.Green)}
+                        ${valueLineWithDefault("Salvage", item.explosionSalvage, "0")}
                         `;
                     }
                     break;
