@@ -161,14 +161,6 @@ jq(function ($) {
         ItemType.SpecialMeleeWeapon,
     ];
 
-    // Overload util to damage bonus map
-    const overloadMap = {
-        "0%: None": 0,
-        "50%: Overload Amplifier": 0.5,
-        "75%: Imp. Overload Amplifier": 0.75,
-        "100%: Adv. Overload Amplifier": 1,
-    };
-
     // Ranged weapon types
     const rangedTypes = [
         ItemType.BallisticCannon,
@@ -1132,10 +1124,6 @@ jq(function ($) {
         // Actuator Array chance
         const actuatorArrayBonus = parseIntOrDefault($("#actuatorArrayInput").val() as string, 0);
 
-        // Overload bonus damage
-        const overloadName = $("#overloadSelect").selectpicker("val") as any as string;
-        const overloadBonus = overloadMap[overloadName];
-
         // Calculate followup chance
         const followupChances: number[] = [];
         if (melee) {
@@ -1193,7 +1181,6 @@ jq(function ($) {
                 initial: initialMomentum,
             },
             numTreads: numTreads,
-            overloadBonus: overloadBonus,
             ramming: ramming,
             recoil: allRecoil,
             recoilReduction: recoilReduction,

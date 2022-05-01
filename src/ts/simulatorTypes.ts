@@ -128,9 +128,8 @@ export type OffensiveState = {
         initial: number;
     };
     numTreads: number;
-    overloadBonus: number;
-    ramming: boolean;
     recoil: number;
+    ramming: boolean;
     recoilReduction: number;
     siegeBonus: {
         bonus: number;
