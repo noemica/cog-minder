@@ -31,6 +31,7 @@ import {
     SiegeMode,
     Spectrum,
     WeaponItem,
+    HeatTransfer,
 } from "./itemTypes";
 
 import * as jQuery from "jquery";
@@ -470,9 +471,9 @@ jq(function ($) {
             if (leftValue === rightValue) {
                 return emptyLine;
             } else if (leftValue < rightValue) {
-                return `<pre class="comparison-neutral">+${rightValue - leftValue}</pre>`;
+                return `<pre class="comparison-neutral">(+${rightValue - leftValue})</pre>`;
             } else {
-                return `<pre class="comparison-neutral">-${leftValue - rightValue}</pre>`;
+                return `<pre class="comparison-neutral">(-${leftValue - rightValue})</pre>`;
             }
         }
 
@@ -874,7 +875,11 @@ jq(function ($) {
                     return compareHighGoodStat(leftPenetration, rightPenetration);
                 }
 
-                function getSpectrumHtml(leftWeapon: WeaponItem, rightWeapon: WeaponItem, explosive: boolean) {
+                function getSpectrumOrHeatTransferHtml(
+                    leftWeapon: WeaponItem,
+                    rightWeapon: WeaponItem,
+                    explosive: boolean,
+                ) {
                     function getSpectrumValue(spectrum: Spectrum | undefined) {
                         if (spectrum === Spectrum.Fine) {
                             return 100;
@@ -889,14 +894,46 @@ jq(function ($) {
                         }
                     }
 
-                    const leftSpectrum = explosive
-                        ? getSpectrumValue(leftWeapon.explosionSpectrum)
-                        : getSpectrumValue(leftWeapon.spectrum);
-                    const rightSpectrum = explosive
-                        ? getSpectrumValue(rightWeapon.explosionSpectrum)
-                        : getSpectrumValue(rightWeapon.spectrum);
+                    function getHeatTransferValue(heatTransfer: HeatTransfer | undefined) {
+                        if (heatTransfer === HeatTransfer.Minimal) {
+                            return 5;
+                        } else if (heatTransfer === HeatTransfer.Low) {
+                            return 25;
+                        } else if (heatTransfer === HeatTransfer.Medium) {
+                            return 37;
+                        } else if (heatTransfer === HeatTransfer.High) {
+                            return 50;
+                        } else if (heatTransfer === HeatTransfer.Massive) {
+                            return 80;
+                        } else {
+                            return 0;
+                        }
+                    }
 
-                    return compareNeutralStat(leftSpectrum, rightSpectrum);
+                    const rightHeatTransfer = explosive
+                        ? getHeatTransferValue(rightWeapon.explosionHeatTransfer)
+                        : getHeatTransferValue(rightWeapon.heatTransfer);
+
+                    // Heat transfer has priority if set on the right weapon
+                    // Otherwise show spectrum only
+                    let html: string;
+                    if (rightHeatTransfer != 0) {
+                        const leftHeatTransfer = explosive
+                            ? getHeatTransferValue(leftWeapon.explosionHeatTransfer)
+                            : getHeatTransferValue(leftWeapon.heatTransfer);
+                        html = compareNeutralStat(leftHeatTransfer, rightHeatTransfer);
+                    } else {
+                        const leftSpectrum = explosive
+                            ? getSpectrumValue(leftWeapon.explosionSpectrum)
+                            : getSpectrumValue(leftWeapon.spectrum);
+                        const rightSpectrum = explosive
+                            ? getSpectrumValue(rightWeapon.explosionSpectrum)
+                            : getSpectrumValue(rightWeapon.spectrum);
+
+                        html = compareNeutralStat(leftSpectrum, rightSpectrum);
+                    }
+
+                    return html;
                 }
 
                 // Add non-launcher damage if applicable
@@ -912,7 +949,7 @@ jq(function ($) {
                         ${getDamageTypeHtml(leftWeapon, rightWeapon, false)}
                         ${getCriticalHtml(leftWeapon, rightWeapon)}
                         ${getPenetrationHtml(leftWeapon, rightWeapon)}
-                        ${getSpectrumHtml(leftWeapon, rightWeapon, false)}
+                        ${getSpectrumOrHeatTransferHtml(leftWeapon, rightWeapon, false)}
                         ${compareHighGoodStat(leftWeapon.disruption ?? 0, rightWeapon.disruption ?? 0)}
                         ${compareHighGoodStat(leftWeapon.salvage ?? 0, rightWeapon.salvage ?? 0)}
                         ${emptyLine}
@@ -929,7 +966,7 @@ jq(function ($) {
                             parseIntOrDefault(rightWeapon.falloff, 0),
                         )}
                         ${getDamageTypeHtml(leftWeapon, rightWeapon, true)}
-                        ${getSpectrumHtml(leftWeapon, rightWeapon, true)}
+                        ${getSpectrumOrHeatTransferHtml(leftWeapon, rightWeapon, true)}
                         ${compareHighGoodStat(
                             leftWeapon.explosionDisruption ?? 0,
                             rightWeapon.explosionDisruption ?? 0,
