@@ -1,4 +1,4 @@
-import { ItemType, SpecialItemProperty } from "./itemTypes";
+import { SpecialItemProperty } from "./itemTypes";
 
 export const specialItemProperties: { [name: string]: SpecialItemProperty | undefined } = {
     // Actuator
@@ -34,6 +34,16 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Dynamic Insulation System": { active: "Part Active", trait: { kind: "CorruptionIgnore", chance: 50 } },
     "Imp. Dynamic Insulation System": { active: "Part Active", trait: { kind: "CorruptionIgnore", chance: 67 } },
     "Adv. Dynamic Insulation System": { active: "Part Active", trait: { kind: "CorruptionIgnore", chance: 75 } },
+
+    // Corruption prevent
+    "Corruption Screen": { active: "Part Active", trait: { kind: "CorruptionPrevent", amount: 8 } },
+    "Imp. Corruption Screen": { active: "Part Active", trait: { kind: "CorruptionPrevent", amount: 15 } },
+    "Adv. Corruption Screen": { active: "Part Active", trait: { kind: "CorruptionPrevent", amount: 20 } },
+
+    // Corruption reduction
+    "Corruption Guard": { active: "Part Active", trait: { kind: "CorruptionReduce", amount: 8 } },
+    "Imp. Corruption Guard": { active: "Part Active", trait: { kind: "CorruptionReduce", amount: 12 } },
+    "Exp. Corruption Guard": { active: "Part Active", trait: { kind: "CorruptionReduce", amount: 20 } },
 
     // Damage reduction
     "Shield Generator": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },

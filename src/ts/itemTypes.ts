@@ -124,6 +124,8 @@ export type AirborneSpeedDoubling = { kind: "AirborneSpeedDoubling" };
 export type AntimissileChance = { kind: "AntimissileChance"; chance: number };
 export type AvoidChance = { kind: "AvoidChance"; chance: number; legsChance: number };
 export type CorruptionIgnore = { kind: "CorruptionIgnore"; chance: number };
+export type CorruptionPrevent = { kind: "CorruptionPrevent"; amount: number };
+export type CorruptionReduce = { kind: "CorruptionReduce"; amount: number };
 export type DamageReduction = { kind: "DamageReduction"; multiplier: number };
 export type DamageResists = { kind: "DamageResists"; resists: BotResistances };
 export type EnergyFilter = { kind: "EnergyFilter"; percent: number };
@@ -145,6 +147,8 @@ export type SpecialPropertyType =
     | AirborneSpeedDoubling
     | AvoidChance
     | CorruptionIgnore
+    | CorruptionPrevent
+    | CorruptionReduce
     | DamageReduction
     | DamageResists
     | EnergyFilter
@@ -166,6 +170,8 @@ export type SpecialPropertyTypeName =
     | "AntimissileChance"
     | "AvoidChance"
     | "CorruptionIgnore"
+    | "CorruptionPrevent"
+    | "CorruptionReduce"
     | "DamageReduction"
     | "DamageResists"
     | "EnergyFilter"

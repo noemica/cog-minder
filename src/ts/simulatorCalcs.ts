@@ -5,6 +5,8 @@ import {
     AntimissileChance,
     AvoidChance,
     CorruptionIgnore,
+    CorruptionPrevent,
+    CorruptionReduce,
     Critical,
     DamageReduction,
     DamageResists,
@@ -210,6 +212,67 @@ function applyDamage(
         applyDamageChunkToPart(damage, damageType, critical, disruptChance, spectrum, part, partIndex);
     }
 
+    function destroyPart(partIndex: number, part: SimulatorPart, overflowDamage: number, damageType: DamageType) {
+        botState.parts.splice(partIndex, 1);
+        botState.armorAnalyzedCoverage -= part.armorAnalyzedCoverage;
+        botState.totalCoverage -= part.coverage;
+
+        // If the part was providing any damage resistances remove them now
+        // TODO - remove assumption that there can't be multiple sources of
+        // a single type of damage resistance. e.g. One part is 30% and
+        // another is providing 25% so we need to fallback to the 25%
+        if (part.resistances !== undefined) {
+            Object.keys(part.resistances).forEach((type) => {
+                if (type in botState.resistances) {
+                    botState.resistances[type]! -= part.resistances![type]!;
+                }
+            });
+        }
+
+        if (overflowDamage > 0 && !part.protection && canOverflow) {
+            // Handle overflow damage if excess damage was dealt
+            // against a non-protection part (18)
+            applyDamageChunk(0, overflowDamage, damageType, undefined, true, false, 0, 0, false);
+        }
+
+        if (damageType === DamageType.Impact) {
+            // Apply 25-150% random corruption to the bot after
+            // destroying a part (affected by EM resistance) (22)
+            let corruption = randomInt(25, 150);
+            corruption = calculateResistDamage(botState, corruption, DamageType.Electromagnetic);
+
+            applyCorruption(corruption);
+        }
+
+        part.integrity = 0;
+        updateWeaponsAccuracy(state);
+    }
+
+    function applyCorruption(corruption: number) {
+        // Check for corruption prevention parts
+        let corruptionPreventPart = getDefensiveStatePart(botState.defensiveState.corruptionPrevent);
+        while (corruption > 0 && corruptionPreventPart !== undefined) {
+            // Assume that corruption prevention parts lose 2 integrity per corruption purged
+            // TODO - remove this assumption someday
+            const maxPrevention = Math.ceil(corruptionPreventPart.part.integrity / 2);
+            if (maxPrevention < corruption) {
+                // Part has more than enough integrity to prevent corruption
+                corruptionPreventPart.part.integrity -= corruption *= 2;
+                corruption = 0;
+            } else {
+                // Corruption is greater than part can prevent, destroy part
+                botState.defensiveState.corruptionPrevent.shift();
+                const index = botState.parts.indexOf(corruptionPreventPart.part);
+                destroyPart(index, corruptionPreventPart.part, 0, DamageType.Entropic);
+                corruptionPreventPart = getDefensiveStatePart(botState.defensiveState.corruptionPrevent);
+
+                corruption -= maxPrevention;
+            }
+        }
+
+        botState.corruption += corruption;
+    }
+
     function applyDamageChunkToPart(
         damage: number,
         damageType: DamageType,
@@ -225,47 +288,6 @@ function applyDamage(
             }
 
             return false;
-        }
-
-        function destroyPart(
-            partIndex: number,
-            part: SimulatorPart,
-            overflowDamage: number,
-            critical: Critical | undefined,
-            damageType: DamageType,
-        ) {
-            botState.parts.splice(partIndex, 1);
-            botState.armorAnalyzedCoverage -= part.armorAnalyzedCoverage;
-            botState.totalCoverage -= part.coverage;
-
-            // If the part was providing any damage resistances remove them now
-            // TODO - remove assumption that there can't be multiple sources of
-            // a single type of damage resistance. e.g. One part is 30% and
-            // another is providing 25% so we need to fallback to the 25%
-            if (part.resistances !== undefined) {
-                Object.keys(part.resistances).forEach((type) => {
-                    if (type in botState.resistances) {
-                        botState.resistances[type]! -= part.resistances![type]!;
-                    }
-                });
-            }
-
-            if (overflowDamage > 0 && !part.protection && canOverflow) {
-                // Handle overflow damage if excess damage was dealt
-                // against a non-protection part (18)
-                applyDamageChunk(0, overflowDamage, damageType, undefined, true, false, 0, 0, false);
-            }
-
-            if (damageType === DamageType.Impact) {
-                // Apply 25-150% random corruption to the bot after
-                // destroying a part (affected by EM resistance) (22)
-                let corruption = randomInt(25, 150);
-                corruption = calculateResistDamage(botState, corruption, DamageType.Electromagnetic);
-                botState.corruption += corruption;
-            }
-
-            part.integrity = 0;
-            updateWeaponsAccuracy(state);
         }
 
         // Remove all criticals from totally immune bots
@@ -301,7 +323,7 @@ function applyDamage(
             // Destroy first engine found (if any)
             if (i < botState.parts.length) {
                 const engine = botState.parts[i];
-                destroyPart(i, engine, 0, undefined, DamageType.Entropic);
+                destroyPart(i, engine, 0, DamageType.Entropic);
                 applyEngineExplosion(engine);
 
                 if (i === partIndex) {
@@ -351,7 +373,7 @@ function applyDamage(
                 if (shielding.part.integrity <= 0) {
                     // Remove shielding if it has run out of integrity
                     const index = botState.parts.indexOf(shielding.part);
-                    destroyPart(index, shielding.part, 0, undefined, DamageType.Entropic);
+                    destroyPart(index, shielding.part, 0, DamageType.Entropic);
                 }
 
                 damage = damage - shieldingDamage;
@@ -391,7 +413,7 @@ function applyDamage(
                         continue;
                     }
 
-                    destroyPart(partIndex, part, 0, undefined, DamageType.Phasic);
+                    destroyPart(partIndex, part, 0, DamageType.Phasic);
                 }
 
                 return;
@@ -404,7 +426,7 @@ function applyDamage(
 
                 if (part.def.size === 1) {
                     // Single-slot items get blasted off, treat as part destruction
-                    destroyPart(partIndex, part, 0, undefined, DamageType.Phasic);
+                    destroyPart(partIndex, part, 0, DamageType.Phasic);
                 } else {
                     // Multi-slot items don't get blasted off but still take damage
                     applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, part, partIndex);
@@ -454,7 +476,7 @@ function applyDamage(
             if (shielding.part.integrity <= 0) {
                 // Remove shielding if it has run out of integrity
                 const index = botState.parts.indexOf(shielding.part);
-                destroyPart(index, shielding.part, 0, undefined, DamageType.Entropic);
+                destroyPart(index, shielding.part, 0, DamageType.Entropic);
             }
 
             damage = damage - shieldingDamage;
@@ -478,7 +500,7 @@ function applyDamage(
             // Part destroyed, remove part and update bot state
             // Smash critical destroys the part instantly and deals full overflow damage
             const overflowDamage = critical === Critical.Smash ? damage : damage - part.integrity;
-            destroyPart(partIndex, part, overflowDamage, critical, damageType);
+            destroyPart(partIndex, part, overflowDamage, damageType);
         } else {
             // Part not destroyed, just reduce integrity
             part.integrity -= damage;
@@ -495,7 +517,7 @@ function applyDamage(
 
             if (part.def.size === 1) {
                 // Single-slot items get blasted off, treat as part destruction
-                destroyPart(partIndex, part, 0, undefined, DamageType.Phasic);
+                destroyPart(partIndex, part, 0, DamageType.Phasic);
             } else {
                 // Multi-slot items don't get blasted off but still take damage
                 applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, part, partIndex);
@@ -535,7 +557,8 @@ function applyDamage(
                 // Corruption critical always applies maximum 1.5 critical modifier
                 const corruptionPercent = corruptCritical ? 1.5 : randomInt(50, 150) / 100;
                 const corruption = chunk.originalDamage * corruptionPercent;
-                botState.corruption += corruption;
+
+                applyCorruption(corruption);
             }
         }
     });
@@ -593,6 +616,8 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
         antimissile: [],
         avoid: [],
         corruptionIgnore: [],
+        corruptionPrevent: [],
+        corruptionReduce: [],
         damageReduction: [],
         rangedAvoid: [],
         shieldings: {
@@ -624,6 +649,17 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
             // Dynamic Insulation System-like part
             state.corruptionIgnore.push({
                 chance: (part.def.specialProperty!.trait as CorruptionIgnore).chance,
+                part: part,
+            });
+        } else if (hasActiveSpecialProperty(part.def, true, "CorruptionPrevent")) {
+            // Corruption Screen part
+            state.corruptionPrevent.push({
+                part: part,
+            });
+        } else if (hasActiveSpecialProperty(part.def, true, "CorruptionReduce")) {
+            // Corruption Screen part
+            state.corruptionReduce.push({
+                amount: (part.def.specialProperty!.trait as CorruptionReduce).amount,
                 part: part,
             });
         } else if (hasActiveSpecialProperty(part.def, true, "DamageReduction")) {
@@ -923,31 +959,44 @@ function getShieldingType(botState: BotState, slot: ItemSlot | "Core"): Shieldin
     return getDefensiveStatePart(botState.defensiveState.shieldings[slot]);
 }
 
+// Gets the bot's corruption when accounting for corruption reduction utilities
+function getBotCorruption(botState: BotState) {
+    let corruption = botState.corruption;
+
+    botState.defensiveState.corruptionReduce.forEach((p) => {
+        if (p.part.integrity >= 0) {
+            corruption -= p.amount;
+        }
+    });
+
+    return corruption;
+}
+
 const simulationEndConditions: { [key: string]: (state: BotState) => boolean } = {
     Kill: function (botState) {
-        return botState.coreIntegrity <= 0 || botState.corruption >= 100;
+        return botState.coreIntegrity <= 0 || getBotCorruption(botState) >= 100;
     },
     "Kill or Core Disrupt": function (botState) {
-        return botState.coreIntegrity <= 0 || botState.corruption >= 100 || botState.coreDisrupted;
+        return botState.coreIntegrity <= 0 || getBotCorruption(botState) >= 100 || botState.coreDisrupted;
     },
     "Kill or No Power": function (botState) {
         return (
             botState.coreIntegrity <= 0 ||
-            botState.corruption >= 100 ||
+            getBotCorruption(botState) >= 100 ||
             botState.parts.every((part) => part.def.slot != "Power")
         );
     },
     "Kill or No Weapons": function (botState) {
         return (
             botState.coreIntegrity <= 0 ||
-            botState.corruption >= 100 ||
+            getBotCorruption(botState) >= 100 ||
             botState.parts.every((part) => part.def.slot != "Weapon")
         );
     },
     "Kill or No TNC": function (botState) {
         return (
             botState.coreIntegrity <= 0 ||
-            botState.corruption >= 100 ||
+            getBotCorruption(botState) >= 100 ||
             botState.parts.every((part) => part.def.name != "Transport Network Coupler")
         );
     },

@@ -1,5 +1,5 @@
 import { Bot, BotImmunity, BotResistances } from "./botTypes";
-import { Critical, DamageType, Item, ItemSlot, WeaponItem } from "./itemTypes";
+import { CorruptionReduce, Critical, DamageType, Item, ItemSlot, WeaponItem } from "./itemTypes";
 
 export type SimulatorPart = {
     armorAnalyzedCoverage: number;
@@ -28,6 +28,12 @@ export type CorruptionAvoidPart = SpecialPart & {
     chance: number;
 };
 
+export type CorruptionPreventPart = SpecialPart;
+
+export type CorruptionReductionPart = SpecialPart & {
+    amount: number;
+};
+
 export type DamageReductionPart = SpecialPart & {
     reduction: number;
 };
@@ -44,6 +50,8 @@ export type DefensiveState = {
     antimissile: AntimissilePart[];
     avoid: AvoidPart[];
     corruptionIgnore: CorruptionAvoidPart[];
+    corruptionPrevent: CorruptionPreventPart[];
+    corruptionReduce: CorruptionReductionPart[];
     damageReduction: DamageReductionPart[];
     rangedAvoid: RangedAvoidPart[];
     shieldings: Record<ItemSlot | "Core", ShieldingPart[]>;
