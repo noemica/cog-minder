@@ -1,4 +1,4 @@
-import { FabricationStats } from "./itemTypes";
+import { DamageType, FabricationStats } from "./itemTypes";
 
 export enum BotCategory {
     Alien = "Alien",
@@ -33,16 +33,7 @@ export enum BotSize {
     Tiny = "Tiny",
 }
 
-export type BotResistances = {
-    [key: string]: number | undefined;
-    Electromagnetic?: number;
-    Explosive?: number;
-    Impact?: number;
-    Kinetic?: number;
-    Piercing?: number;
-    Slashing?: number;
-    Thermal?: number;
-};
+export type BotResistances = Partial<Record<DamageType, number>>;
 
 export type ItemOption = {
     name: string;

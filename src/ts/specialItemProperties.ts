@@ -1,4 +1,4 @@
-import { SpecialItemProperty } from "./itemTypes";
+import { ItemType, SpecialItemProperty } from "./itemTypes";
 
 export const specialItemProperties: { [name: string]: SpecialItemProperty | undefined } = {
     // Actuator
@@ -7,8 +7,184 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     Femtoactuators: { active: "Part Active", trait: { kind: "Actuator", amount: 0.5 } },
 
     // Airborne Speed doubling
-    "ST Field Compressor": { active: "Part Active", trait: { kind: "AirborneSpeedDoubling" } },
     "Zio. Metafield Generator": { active: "Part Active", trait: { kind: "AirborneSpeedDoubling" } },
+    "ST Field Compressor": { active: "Part Active", trait: { kind: "AirborneSpeedDoubling" } },
+
+    // Antimissile
+    "Point Defense System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 8 } },
+    "Point Defense Array": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 16 } },
+    "Antimissile System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 24 } },
+
+    // Avoid %
+    "Reaction Control System": { active: "Part Active", trait: { kind: "AvoidChance", chance: 8, legsChance: 4 } },
+    "Imp. Reaction Control System": {
+        active: "Part Active",
+        trait: { kind: "AvoidChance", chance: 10, legsChance: 5 },
+    },
+    "Adv. Reaction Control System": {
+        active: "Part Active",
+        trait: { kind: "AvoidChance", chance: 12, legsChance: 6 },
+    },
+    "Exp. Reaction Control System": {
+        active: "Part Active",
+        trait: { kind: "AvoidChance", chance: 14, legsChance: 7 },
+    },
+
+    // Corruption ignore %
+    "Dynamic Insulation System": { active: "Part Active", trait: { kind: "CorruptionIgnore", chance: 50 } },
+    "Imp. Dynamic Insulation System": { active: "Part Active", trait: { kind: "CorruptionIgnore", chance: 67 } },
+    "Adv. Dynamic Insulation System": { active: "Part Active", trait: { kind: "CorruptionIgnore", chance: 75 } },
+
+    // Damage reduction
+    "Shield Generator": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
+    "Imp. Shield Generator": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
+    "Adv. Shield Generator": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
+    "Exp. Shield Generator": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
+    "Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
+    "Imp. Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
+    "Adv. Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
+    "Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
+    "Imp. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
+    "Adv. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
+    "Exp. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
+    "Remote Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
+    "Imp. Remote Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
+    "Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
+    "Imp. Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
+    "AEGIS Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
+    "7V-RTL's Ultimate Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.25 } },
+    "Vortex Field Projector": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.25 } },
+
+    // Damage resists
+    // EM
+    "Insulated Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Electromagnetic: 15 } } },
+    "Med. Insulated Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Electromagnetic: 20 } } },
+    "EM Disruption Field": {
+        active: "Part Active",
+        trait: { kind: "DamageResists", resists: { Electromagnetic: 25 } },
+    },
+    "Hvy. Insulated Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Electromagnetic: 30 } } },
+    "Imp. EM Disruption Field": {
+        active: "Always",
+        trait: { kind: "DamageResists", resists: { Electromagnetic: 50 } },
+    },
+    "Adv. EM Disruption Field": {
+        active: "Always",
+        trait: { kind: "DamageResists", resists: { Electromagnetic: 75 } },
+    },
+    "Damper Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Electromagnetic: 90 } } },
+    // Explosive
+    "Shock Absorption System": { active: "Part Active", trait: { kind: "DamageResists", resists: { Explosive: 25 } } },
+    "Imp. Shock Absorption System": {
+        active: "Part Active",
+        trait: { kind: "DamageResists", resists: { Explosive: 50 } },
+    },
+    "Exp. Shock Absorption System": {
+        active: "Part Active",
+        trait: { kind: "DamageResists", resists: { Explosive: 75 } },
+    },
+    "8R-AWN's Armor/EX": { active: "Always", trait: { kind: "DamageResists", resists: { Explosive: 90 } } },
+    // Kinetic
+    "Mak. Kinetic Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Kinetic: 20 } } },
+    "Focal Shield": { active: "Part Active", trait: { kind: "DamageResists", resists: { Kinetic: 20 } } },
+    "Reactive Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Kinetic: 20 } } },
+    "Imp. Focal Shield": { active: "Part Active", trait: { kind: "DamageResists", resists: { Kinetic: 25 } } },
+    "Adv. Focal Shield": { active: "Part Active", trait: { kind: "DamageResists", resists: { Kinetic: 30 } } },
+    "Exp. Focal Shield": { active: "Part Active", trait: { kind: "DamageResists", resists: { Kinetic: 30 } } },
+    "Med. Reactive Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Kinetic: 30 } } },
+    "Hvy. Reactive Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Kinetic: 40 } } },
+    // Thermal
+    "Mak. Thermal Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Thermal: 10 } } },
+    "Thermal Defense Suite": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 20 } } },
+    "Reflective Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Thermal: 10 } } },
+    "Med. Reflective Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Thermal: 15 } } },
+    "Thermal Shield": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 20 } } },
+    "Imp. Thermal Defense Suite": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 25 } } },
+    "Imp. Thermal Shield": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 25 } } },
+    "Hvy. Reflective Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Thermal: 25 } } },
+    "Adv. Thermal Defense Suite": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 30 } } },
+    "Adv. Thermal Shield": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 30 } } },
+    "Exp. Thermal Defense Suite": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 30 } } },
+    "Exp. Thermal Shield": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 30 } } },
+    "Thermal Barrier": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 50 } } },
+    "Beam Splitter": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 75 } } },
+    "8R-AWN's Armor/TH": { active: "Always", trait: { kind: "DamageResists", resists: { Thermal: 90 } } },
+    // All
+    "Asb. Alloy Armor": {
+        active: "Always",
+        trait: {
+            kind: "DamageResists",
+            resists: {
+                Electromagnetic: 15,
+                Explosive: 15,
+                Impact: 15,
+                Kinetic: 15,
+                Piercing: 15,
+                Slashing: 15,
+                Thermal: 15,
+            },
+        },
+    },
+    "ME-RLN's Chromatic Screen": {
+        active: "Part Active",
+        trait: {
+            kind: "DamageResists",
+            resists: {
+                Electromagnetic: 20,
+                Explosive: 20,
+                Impact: 20,
+                Kinetic: 20,
+                Piercing: 20,
+                Slashing: 20,
+                Thermal: 20,
+            },
+        },
+    },
+    "Zio. Shade Carapace": {
+        active: "Always",
+        trait: {
+            kind: "DamageResists",
+            resists: {
+                Electromagnetic: 20,
+                Explosive: 20,
+                Impact: 20,
+                Kinetic: 20,
+                Piercing: 20,
+                Slashing: 20,
+                Thermal: 20,
+            },
+        },
+    },
+    "Zio. Shade Armor": {
+        active: "Always",
+        trait: {
+            kind: "DamageResists",
+            resists: {
+                Electromagnetic: 30,
+                Explosive: 30,
+                Impact: 30,
+                Kinetic: 30,
+                Piercing: 30,
+                Slashing: 30,
+                Thermal: 30,
+            },
+        },
+    },
+    "Sigix Exoskeleton": {
+        active: "Always",
+        trait: {
+            kind: "DamageResists",
+            resists: {
+                Electromagnetic: 50,
+                Explosive: 50,
+                Impact: 50,
+                Kinetic: 50,
+                Piercing: 50,
+                Slashing: 50,
+                Thermal: 50,
+            },
+        },
+    },
 
     // Energy filter
     "Energy Filter": { active: "Part Active", trait: { kind: "EnergyFilter", percent: 0.3 } },
@@ -58,6 +234,17 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     // Metafiber
     "Asb. Metafiber Network": { active: "Part Active", trait: { kind: "Metafiber" } },
 
+    // Power amplifiers
+    "Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: 0.2 } },
+    "Adv. Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: 0.3 } },
+    "Exp. Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: 0.4 } },
+
+    // Ranged avoid/phase shifters
+    "Phase Shifter": { active: "Part Active", trait: { kind: "RangedAvoid", avoid: 5 } },
+    "Imp. Phase Shifter": { active: "Part Active", trait: { kind: "RangedAvoid", avoid: 10 } },
+    "Adv. Phase Shifter": { active: "Part Active", trait: { kind: "RangedAvoid", avoid: 15 } },
+    "Exp. Phase Shifter": { active: "Part Active", trait: { kind: "RangedAvoid", avoid: 20 } },
+
     // Ranged weapon cycling
     "Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.15 } },
     "Imp. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.2 } },
@@ -66,10 +253,33 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Launcher Loader": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.5 } },
     "Quantum Capacitor": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.5 } },
 
-    // Power amplifiers
-    "Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: 0.2 } },
-    "Adv. Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: 0.3 } },
-    "Exp. Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: 0.4 } },
+    // Self-damage reduction
+    "1C-UTU's Buckler": { active: "Part Active", trait: { kind: "SelfReduction", shielding: 0.5 } },
+    "Powered Armor": { active: "Part Active", trait: { kind: "SelfReduction", shielding: 0.5 } },
+    "Imp. Powered Armor": { active: "Part Active", trait: { kind: "SelfReduction", shielding: 0.5 } },
+    "Adv. Powered Armor": { active: "Part Active", trait: { kind: "SelfReduction", shielding: 0.5 } },
+    "Exp. Powered Armor": { active: "Part Active", trait: { kind: "SelfReduction", shielding: 0.5 } },
+
+    // Shieldings
+    "Core Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.2, slot: "Core" } },
+    "Imp. Core Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.3, slot: "Core" } },
+    "Exp. Core Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.4, slot: "Core" } },
+    "Power Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.33, slot: "Power" } },
+    "Imp. Power Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.66, slot: "Power" } },
+    "Exp. Power Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.9, slot: "Power" } },
+    "Propulsion Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.33, slot: "Propulsion" } },
+    "Imp. Propulsion Shielding": {
+        active: "Always",
+        trait: { kind: "Shielding", shielding: 0.66, slot: "Propulsion" },
+    },
+    "Exp. Propulsion Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.9, slot: "Propulsion" } },
+    "Utility Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.33, slot: "Utility" } },
+    "Imp. Utility Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.66, slot: "Utility" } },
+    "Exp. Utility Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.9, slot: "Utility" } },
+    "Weapon Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.33, slot: "Weapon" } },
+    "Imp. Weapon Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.66, slot: "Weapon" } },
+    "Exp. Weapon Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.9, slot: "Weapon" } },
+    "Zio. Weapon Casing": { active: "Always", trait: { kind: "Shielding", shielding: 1, slot: "Weapon" } },
 
     // Weapon regen
     "Sigix Broadsword": {

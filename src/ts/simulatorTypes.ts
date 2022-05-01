@@ -1,5 +1,5 @@
 import { Bot, BotImmunity, BotResistances } from "./botTypes";
-import { Critical, DamageType, Item, WeaponItem } from "./itemTypes";
+import { Critical, DamageType, Item, ItemSlot, WeaponItem } from "./itemTypes";
 
 export type SimulatorPart = {
     armorAnalyzedCoverage: number;
@@ -46,7 +46,7 @@ export type DefensiveState = {
     corruptionIgnore: CorruptionAvoidPart[];
     damageReduction: DamageReductionPart[];
     rangedAvoid: RangedAvoidPart[];
-    shieldings: { [key: string]: ShieldingPart[] };
+    shieldings: Record<ItemSlot | "Core", ShieldingPart[]>;
 };
 
 export type BotState = {

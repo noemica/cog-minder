@@ -1,3 +1,5 @@
+import { BotResistances } from "./botTypes";
+
 export enum DamageType {
     Electromagnetic = "Electromagnetic",
     Entropic = "Entropic",
@@ -120,11 +122,10 @@ export type SpecialPropertyActive = "Always" | "Part Active";
 export type Actuator = { kind: "Actuator"; amount: number };
 export type AirborneSpeedDoubling = { kind: "AirborneSpeedDoubling" };
 export type AntimissileChance = { kind: "AntimissileChance"; chance: number };
-export type AvoidChance = { kind: "AvoidChance"; chance: number };
-export type CoreShielding = { kind: "CoreShielding"; shielding: number };
+export type AvoidChance = { kind: "AvoidChance"; chance: number; legsChance: number };
 export type CorruptionIgnore = { kind: "CorruptionIgnore"; chance: number };
-export type DamageReduction = { kind: "DamageReduction"; chance: number };
-export type DamageResists = { kind: "DamageResists"; resists: Record<DamageType, number> };
+export type DamageReduction = { kind: "DamageReduction"; multiplier: number };
+export type DamageResists = { kind: "DamageResists"; resists: BotResistances };
 export type EnergyFilter = { kind: "EnergyFilter"; percent: number };
 export type EnergyStorage = { kind: "EnergyStorage"; storage: number };
 export type FusionCompressor = { kind: "FusionCompressor"; energyPerTurn: number };
@@ -132,21 +133,17 @@ export type HeatDissipation = { kind: "HeatDissipation"; dissipation: number };
 export type MassSupport = { kind: "MassSupport"; support: number };
 export type Metafiber = { kind: "Metafiber" };
 export type PowerAmplifier = { kind: "PowerAmplifier"; percent: number };
-export type PowerShielding = { kind: "PowerShielding"; shielding: number };
-export type PropulsionShielding = { kind: "PropulsionShielding"; shielding: number };
 export type RangedAvoid = { kind: "RangedAvoid"; avoid: number };
 export type RangedWeaponCycling = { kind: "RangedWeaponCycling"; amount: number };
 export type SelfReduction = { kind: "SelfReduction"; shielding: number };
-export type UtilityShielding = { kind: "UtilityShielding"; shielding: number };
+export type Shielding = { kind: "Shielding"; shielding: number; slot: ItemSlot | "Core" };
 export type WeaponRegen = { kind: "WeaponRegen"; energyPerTurn: number; integrityPerTurn: number };
-export type WeaponShielding = { kind: "WeaponShielding"; shielding: number };
 
 export type SpecialPropertyType =
     | Actuator
     | AntimissileChance
     | AirborneSpeedDoubling
     | AvoidChance
-    | CoreShielding
     | CorruptionIgnore
     | DamageReduction
     | DamageResists
@@ -157,21 +154,17 @@ export type SpecialPropertyType =
     | MassSupport
     | Metafiber
     | PowerAmplifier
-    | PowerShielding
-    | PropulsionShielding
     | RangedAvoid
     | RangedWeaponCycling
     | SelfReduction
-    | UtilityShielding
-    | WeaponRegen
-    | WeaponShielding;
+    | Shielding
+    | WeaponRegen;
 
 export type SpecialPropertyTypeName =
     | "Actuator"
     | "AirborneSpeedDoubling"
     | "AntimissileChance"
     | "AvoidChance"
-    | "CoreShielding"
     | "CorruptionIgnore"
     | "DamageReduction"
     | "DamageResists"
@@ -182,14 +175,11 @@ export type SpecialPropertyTypeName =
     | "MassSupport"
     | "Metafiber"
     | "PowerAmplifier"
-    | "PowerShielding"
-    | "PropulsionShielding"
     | "RangedAvoid"
     | "RangedWeaponCycling"
     | "SelfReduction"
-    | "UtilityShielding"
-    | "WeaponRegen"
-    | "WeaponShielding";
+    | "Shielding"
+    | "WeaponRegen";
 
 export type SpecialItemProperty = {
     active: SpecialPropertyActive;
