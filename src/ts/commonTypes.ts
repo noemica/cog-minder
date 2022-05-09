@@ -1,3 +1,3 @@
-export type PageType = "About" | "Bots" | "Build" | "Hacks" | "Parts" | "Simulator";
+export type PageType = "About" | "Bots" | "Build" | "Hacks" | "Lore" | "Parts" | "Simulator";
 
-export const pageTypes: PageType[] = ["About", "Bots", "Build", "Hacks", "Parts", "Simulator"];
+export const pageTypes: PageType[] = ["About", "Bots", "Build", "Hacks", "Lore", "Parts", "Simulator"];

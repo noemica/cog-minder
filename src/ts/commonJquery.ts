@@ -55,6 +55,13 @@ const headerLookup: Record<PageType, HeaderInfo> = {
         spoilers: true,
         beta11Check: false,
     },
+    Lore: {
+        name: "Lore",
+        pageName: "lore.html",
+        helpText: "A lore reference. Lists all lore entries in the game and allows searching for specific entries.",
+        spoilers: true,
+        beta11Check: false,
+    },
     Parts: {
         name: "Parts",
         pageName: "parts.html",

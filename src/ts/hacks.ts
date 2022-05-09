@@ -324,21 +324,27 @@ jq(function ($) {
 
         const tableHtml = allMachines
             .map((machine) => {
-                const hackRows = machine.hacks
-                    .filter((hack) => {
-                        // Determine which hacks to show
-                        if (filterName && !hack.name.toLowerCase().includes(nameValue)) {
-                            return false;
-                        }
+                const hackRows = machine.hacks.filter((hack) => {
+                    // Determine which hacks to show
+                    if (filterName && !hack.name.toLowerCase().includes(nameValue)) {
+                        return false;
+                    }
 
-                        if (spoilerLevel === "Redacted") {
-                            return true;
-                        } else if (spoilerLevel === "Spoilers") {
-                            return hack.spoilerLevel !== "Redacted";
-                        } else {
-                            return hack.spoilerLevel === "None" || hack.spoilerLevel === undefined;
-                        }
-                    })
+                    if (spoilerLevel === "Redacted") {
+                        return true;
+                    } else if (spoilerLevel === "Spoilers") {
+                        return hack.spoilerLevel !== "Redacted";
+                    } else {
+                        return hack.spoilerLevel === "None" || hack.spoilerLevel === undefined;
+                    }
+                });
+
+                // Hide machines with all results filtered out
+                if (hackRows.length === 0) {
+                    return "";
+                }
+
+                const hackRowsHtml = hackRows
                     .map((hack) => {
                         const direct = hack.indirect !== Indirect.Always;
                         const indirect = hack.indirect !== Indirect.Never;
@@ -385,13 +391,9 @@ jq(function ($) {
                     })
                     .join("");
 
-                // Hide machines with all results filtered out
-                const visible = hackRows.length > 0;
-                const machineRow = `<tr><td class="hack-category-row${visible ? "" : " not-visible"}">${
-                    machine.name
-                }</td></tr>`;
+                const machineRow = `<tr><td class="hack-category-row">${machine.name}</td></tr>`;
 
-                return machineRow + hackRows;
+                return machineRow + hackRowsHtml;
             })
             .join("");
 

@@ -24,7 +24,7 @@
     <div class="container-xl">
         <!-- User inputs -->
         <div class="input-group">
-            <!-- Hack offensive bonus -->
+            <!-- Name filter -->
             <div class="input-group-prepend" data-toggle="tooltip" title="The name of a hack to search for.">
                 <span class="input-group-text">Name</span>
             </div>
@@ -44,6 +44,7 @@
                 </label>
             </div>
 
+            <!-- Reset button -->
             <button id="reset" type="button" class="btn ml-3" data-toggle="tooltip"
                 title="Resets all filters to their default (unfiltered) state">Reset</button>
         </div>
@@ -78,7 +79,7 @@
             <input id="botnets" type="text" class="form-control" placeholder="0">
         </div>
 
-        <!-- Hacks header table -->
+        <!-- Hacks table -->
         <table class="hack-table my-4">
             <thead>
                 <tr class="hack-header-row">
@@ -112,8 +113,6 @@
                 </tr>
             </tbody>
         </table>
-
-        <div id="hacksTablesContainer"></div>
     </div>
 
 </body>
