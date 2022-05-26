@@ -211,6 +211,7 @@ export type BaseItem = {
     size: number;
     mass?: number;
     integrity: number;
+    noRepairs: boolean;
     coverage?: number;
     effect?: string;
     description?: string;
@@ -308,6 +309,7 @@ export type JsonItem = {
     Rating: string;
     Size: string;
     Integrity: string;
+    "No Repairs"?: string;
     Description?: string;
     Index: number;
     "Hackable Schematic"?: string;

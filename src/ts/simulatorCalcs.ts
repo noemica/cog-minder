@@ -5,7 +5,6 @@ import {
     AntimissileChance,
     AvoidChance,
     CorruptionIgnore,
-    CorruptionPrevent,
     CorruptionReduce,
     Critical,
     DamageReduction,

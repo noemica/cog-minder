@@ -20,8 +20,8 @@ import {
 } from "./itemTypes";
 import { specialItemProperties } from "./specialItemProperties";
 
-export let botData: { [key: string]: Bot };
-export let itemData: { [key: string]: Item };
+export let botData: { [key: string]: Bot } = {};
+export let itemData: { [key: string]: Item } = {};
 
 // An enum to represent spoiler level
 export type Spoiler = "None" | "Spoilers" | "Redacted";
@@ -622,7 +622,7 @@ export function createItemDataContent(baseItem: Item): string {
     ${textLine("Slot", getSlotString(baseItem))}
     ${rangeLine("Mass", baseItem.mass?.toString(), baseItem.mass, "N/A", 0, 15, ColorScheme.LowGood)}
     ${textValueHtmlLine("Rating", baseItem.ratingString.replace("**", "").replace("*", ""), "", getRatingHtml(baseItem))}
-    ${rangeLine("Integrity", baseItem.integrity?.toString(), 1, undefined, 0, 1, ColorScheme.Green)}
+    ${rangeLine("Integrity", (baseItem.noRepairs ? "*" : "") + baseItem.integrity?.toString(), 1, undefined, 0, 1, ColorScheme.Green)}
     ${valueLine("Coverage", baseItem.coverage?.toString() ?? "0")}
     ${textLineWithDefault("Schematic", getSchematicString(baseItem), "N/A")}
     `;
@@ -987,9 +987,8 @@ export function hasActiveSpecialProperty(
     return true;
 }
 
-// Initialize all item and bot data
+// Initialize all item and bot data from the given items/bots, bots are optional
 export function initData(items: { [key: string]: JsonItem }, bots: { [key: string]: JsonBot } | undefined): void {
-    // Load external files
     botData = {};
     itemData = {};
 
@@ -1047,6 +1046,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     coverage: undefined,
                     hackable: hackable,
                     integrity: integrity,
+                    noRepairs: item["No Repairs"] === "1",
                     mass: undefined,
                     name: item.Name,
                     fullName: item["Full Name"],
@@ -1075,6 +1075,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     heatGeneration: parseIntOrUndefined(item["Heat Generation"]),
                     matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
                     integrity: integrity,
+                    noRepairs: item["No Repairs"] === "1",
                     mass: mass,
                     name: item.Name,
                     fullName: item["Full Name"],
@@ -1114,6 +1115,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     energyPerMove: parseFloatOrUndefined(item["Energy/Move"]),
                     hackable: hackable,
                     integrity: integrity,
+                    noRepairs: item["No Repairs"] === "1",
                     name: item.Name,
                     fullName: item["Full Name"],
                     mass: mass,
@@ -1150,6 +1152,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     coverage: coverage,
                     hackable: hackable,
                     integrity: integrity,
+                    noRepairs: item["No Repairs"] === "1",
                     name: item.Name,
                     fullName: item["Full Name"],
                     noPrefixName: noPrefixName,
@@ -1176,20 +1179,13 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                 let critical: number | undefined;
                 let criticalType: Critical | undefined;
                 if (item.Critical !== undefined) {
-                    if (item.Critical.includes("%")) {
-                        // B11-type critical
-                        const result = /(\d*)% (\w*)/.exec(item.Critical);
-                        if (result === null) {
-                            critical = undefined;
-                            criticalType = undefined;
-                        } else {
-                            critical = parseInt(result[1]);
-                            criticalType = result[2] as Critical;
-                        }
+                    const result = /(\d*)% (\w*)/.exec(item.Critical);
+                    if (result === null) {
+                        critical = undefined;
+                        criticalType = undefined;
                     } else {
-                        // Pre-B11-type critical
-                        critical = parseIntOrUndefined(item.Critical);
-                        criticalType = Critical.Destroy;
+                        critical = parseInt(result[1]);
+                        criticalType = result[2] as Critical;
                     }
                 }
                 const weaponItem: WeaponItem = {
@@ -1198,6 +1194,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                     coverage: coverage,
                     hackable: hackable,
                     integrity: integrity,
+                    noRepairs: item["No Repairs"] === "1",
                     name: item.Name,
                     fullName: item["Full Name"],
                     noPrefixName: noPrefixName,

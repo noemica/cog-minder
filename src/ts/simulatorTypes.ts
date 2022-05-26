@@ -1,5 +1,5 @@
 import { Bot, BotImmunity, BotResistances } from "./botTypes";
-import { CorruptionReduce, Critical, DamageType, Item, ItemSlot, WeaponItem } from "./itemTypes";
+import { Critical, DamageType, Item, ItemSlot, WeaponItem } from "./itemTypes";
 
 export type SimulatorPart = {
     armorAnalyzedCoverage: number;
