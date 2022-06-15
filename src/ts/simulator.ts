@@ -171,6 +171,16 @@ jq(function ($) {
         ItemType.SpecialWeapon,
     ];
 
+    // List of weapons affected by the exoskeleton
+    const sigixWeapons = [
+        "Core Cannon",
+        "Core Stripper",
+        "Modified Sigix Sheargun",
+        "Sigix Broadsword",
+        "Sigix Shearcannon",
+        "Sigix Sheargun",
+    ];
+
     // Bot size mode to accuracy bonus map
     const sizeAccuracyMap = {
         Huge: 30,
@@ -318,11 +328,18 @@ jq(function ($) {
         const massInput = $('<input class="form-control" placeholder="0"></input>');
         const overloadContainer = $('<div class="btn-group btn-group-toggle ml-2" data-toggle="buttons"></div>');
         const overloadLabelContainer = $(
-            '<div class="input-group-prepend" data-toggle="tooltip" title="Whether to fire the weapon as overloaded"></div>',
+            '<div class="input-group-prepend" data-toggle="tooltip" title="Whether to fire the weapon as overloaded (double damage)."></div>',
         );
         const overloadLabel = $('<span class="input-group-text">Overload</span>');
-        const noLabel = $('<label class="btn"><input type="radio" name="options">No</input></label>');
-        const yesLabel = $('<label class="btn"><input type="radio" name="options">Yes</input></label>');
+        const overloadNoLabel = $('<label class="btn"><input type="radio" name="options">No</input></label>');
+        const overloadYesLabel = $('<label class="btn"><input type="radio" name="options">Yes</input></label>');
+        const exoContainer = $('<div class="btn-group btn-group-toggle ml-2" data-toggle="buttons"></div>');
+        const exoLabelContainer = $(
+            '<div class="input-group-prepend" data-toggle="tooltip" title="Whether a Sigix Exoskeleton is equipped (double damage)."></div>',
+        );
+        const exoLabel = $('<span class="input-group-text">Exoskeleton</span>');
+        const exoNoLabel = $('<label class="btn"><input type="radio" name="options">No</input></label>');
+        const exoYesLabel = $('<label class="btn"><input type="radio" name="options">Yes</input></label>');
         const numberLabel = $(`
         <div class="input-group-prepend ml-2" data-toggle="tooltip" title="How many weapons of this type to have equipped.">
             <span class="input-group-text">Number</span>
@@ -338,8 +355,13 @@ jq(function ($) {
         parent.append(overloadContainer[0]);
         overloadContainer.append(overloadLabelContainer[0]);
         overloadLabelContainer.append(overloadLabel[0]);
-        overloadContainer.append(noLabel[0]);
-        overloadContainer.append(yesLabel[0]);
+        overloadContainer.append(overloadNoLabel[0]);
+        overloadContainer.append(overloadYesLabel[0]);
+        parent.append(exoContainer[0]);
+        exoContainer.append(exoLabelContainer[0]);
+        exoLabelContainer.append(exoLabel[0]);
+        exoContainer.append(exoNoLabel[0]);
+        exoContainer.append(exoYesLabel[0]);
         parent.append(massLabel[0]);
         parent.append(massInput[0]);
         parent.append(numberLabel[0]);
@@ -347,6 +369,7 @@ jq(function ($) {
         parent.append(deleteButton[0]);
 
         resetButtonGroup(overloadContainer);
+        resetButtonGroup(exoContainer);
 
         deleteButton.on("click", () => {
             // Ensure the last dropdown is always empty
@@ -371,13 +394,26 @@ jq(function ($) {
                 (helpButton as any).popover();
             }
 
-            if (weapon === undefined || weapon.overloadStability === undefined) {
-                // If no valid weapon or can't be overloaded reset/hide the overload option
+            if (weapon === undefined) {
+                // If no valid weapon hide all options
+                overloadContainer.addClass("not-visible");
+                exoContainer.addClass("not-visible");
+            } else if (weapon.overloadStability !== undefined) {
+                // Show the overload option
+                overloadContainer.removeClass("not-visible");
+                resetButtonGroup(exoContainer);
+                exoContainer.addClass("not-visible");
+            } else if (sigixWeapons.includes(weapon.name) && getSpoilersState() === "Redacted") {
+                // Show the exoskeleton option
+                overloadContainer.addClass("not-visible");
+                resetButtonGroup(overloadContainer);
+                exoContainer.removeClass("not-visible");
+            } else {
+                // If can't overload and not sigix weapon then hide all
                 resetButtonGroup(overloadContainer);
                 overloadContainer.addClass("not-visible");
-            } else {
-                // Otherwise show the overload option
-                overloadContainer.removeClass("not-visible");
+                resetButtonGroup(exoContainer);
+                exoContainer.addClass("not-visible");
             }
 
             if (weaponName === "Ram") {
@@ -415,6 +451,7 @@ jq(function ($) {
         (selectLabel as any).tooltip();
         (massLabel as any).tooltip();
         (overloadLabelContainer as any).tooltip();
+        (exoLabelContainer as any).tooltip();
 
         // Minor hack, the btn-light class is auto-added to dropdowns with search
         // but it doesn't really fit with everything else
@@ -819,9 +856,12 @@ jq(function ($) {
                 const number = parseIntOrDefault($(s).parent().nextAll("input").not(".not-visible").val() as string, 1);
 
                 const overloaded = !$(s).parent().nextAll(".btn-group").children("label").first().hasClass("active");
+                // This is so terrible but I can't be bothered to figure out a better way
+                const exo = !$($(s).parent().nextAll(".btn-group")[1]).children("label").first().hasClass("active");
 
                 for (let i = 0; i < number; i++) {
-                    userWeapons.push({ def: weapon, overloaded: overloaded });
+                    // Overload and exoskeleton both double damage so just treat them the same
+                    userWeapons.push({ def: weapon, overloaded: overloaded || exo });
                 }
             } else if (name === "Ram") {
                 const weapon: WeaponItem = {
@@ -841,6 +881,7 @@ jq(function ($) {
                     slot: "N/A",
                     type: ItemType.ImpactWeapon,
                     mass: parseIntOrDefault($(s).parent().nextAll("input").val() as string, 0),
+                    noRepairs: false,
                 };
 
                 userWeapons.push({ def: weapon, overloaded: false });
