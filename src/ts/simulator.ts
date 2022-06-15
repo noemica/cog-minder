@@ -825,6 +825,7 @@ jq(function ($) {
         func($("#targetAnalyzerInput"));
 
         func($("#weaponSelectContainer button").not(".weapon-help-btn"));
+        func($("#weaponSelectContainer .btn").not(".weapon-help-btn"));
         func($("#weaponSelectContainer input"));
 
         // Update the cancel/simulate buttons
