@@ -23,6 +23,63 @@ import { specialItemProperties } from "./specialItemProperties";
 export let botData: { [key: string]: Bot } = {};
 export let itemData: { [key: string]: Item } = {};
 
+// A special bot name to image name map for special/unique bots
+const botNameImageMap = new Map<string, string>([
+    ["01-MTF", "Programmer"],
+    ["12-ASH", "Grunt"],
+    ["1C-UTU", "Duelist"],
+    ["5H-AD0", "Hunter"],
+    ["7V-RTL", "Sentry"],
+    ["8R-AWN", "Grunt"],
+    ["99-TNT", "Demolisher"],
+    ["AD-0RF", "Fireman (Derelict)"],
+    ["A2", "Programmer"],
+    ["A3", "Programmer"],
+    ["A4", "Programmer"],
+    ["A5", "Programmer"],
+    ["A6", "Programmer"],
+    ["A7", "Programmer"],
+    ["A8", "Programmer"],
+    ["Architect", "Architect"],
+    ["CL-ANK", "Brawler"],
+    ["Data Miner", "Data Miner"],
+    ["EX-BIN", "Researcher"],
+    ["EX-DEC", "Researcher"],
+    ["EX-HEX", "Researcher"],
+    ["God Mode", "God Mode"],
+    ["God Mode (Fake)", "God Mode"],
+    ["Imprinter", "Imprinter"],
+    ["MAIN.C", "MAIN.C2"],
+    ["MAIN.C (Shell)", "MAIN.C1"],
+    ["ME-RLN", "Programmer"],
+    ["NK-0LA", "Specialist"],
+    ["Perun", "Perun"],
+    ["P1-3CE", "Mutant (Derelict)"],
+    ["Revision", "Revision"],
+    ["Revision 17", "Revision 17"],
+    ["Revision 17++", "Revision 17++"],
+    ["Sigix Warrior", "Sigix Warrior"],
+    ["Surveybot 24", "Researcher"],
+    ["Svarog", "Svarog"],
+    ["Master Thief", "Thief (Derelict)"],
+    ["Warbot", "Mutant (Derelict)"],
+    ["Warlord", "Warlord"],
+    ["Warlord (Command)", "Warlord"],
+    ["Warlord 4Z-XS3", "Warlord"],
+    ["Warlord AM-PH4", "Warlord"],
+    ["Warlord D3-CKR", "Warlord"],
+    ["Warlord HL-1SK", "Warlord"],
+    ["Warlord KY-Z71", "Warlord"],
+    ["Warlord MG-163", "Warlord"],
+    ["Warlord SH-K8T", "Warlord"],
+    ["Warlord Statue", "Warlord"],
+    ["YI-UF0", "Grunt"],
+    ["Z-Courier", "Hauler"],
+    ["Z-Imprinter", "Imprinter"],
+    ["Z-Technician", "Operator"],
+    ["Zhirov", "Zhirov"],
+]);
+
 // An enum to represent spoiler level
 export type Spoiler = "None" | "Spoilers" | "Redacted";
 
@@ -358,7 +415,7 @@ export function createBotDataContent(bot: Bot): string {
 
     // Create overview
     let html = `
-        <pre class="popover-title">${escapeHtml(bot.name)}</pre>
+        <pre class="popover-title">${escapeHtml(bot.name)} [<img src="${getBotImageName(bot)}"></img>]</pre>
         ${emptyLine}
         ${summaryLine("Overview")}
         ${textLine("Class", bot.class)}
@@ -615,7 +672,7 @@ export function createItemDataContent(baseItem: Item): string {
 
     // Create overview
     let html = `
-    <pre class="popover-title">${escapeHtml(baseItem.name)}</pre>
+    <pre class="popover-title">${escapeHtml(baseItem.name)} [<img src="${getItemImageName(baseItem)}"></img>]</pre>
     ${emptyLine}
     ${summaryLine("Overview")}
     ${textLine("Type", baseItem.type)}
@@ -913,6 +970,15 @@ export function getBot(botName: string): Bot {
     throw `${botName} not a valid bot`;
 }
 
+function getBotImageName(bot: Bot) {
+    const imageName = botNameImageMap.get(bot.name);
+    if (imageName !== undefined) {
+        return `game_sprites/${imageName}.png`;
+    }
+
+    return `game_sprites/${bot.class}.png`;
+}
+
 // Tries to get an item by name
 export function getItem(itemName: string): Item {
     if (itemName in itemData) {
@@ -920,6 +986,10 @@ export function getItem(itemName: string): Item {
     }
     console.trace();
     throw `${itemName} not a valid item`;
+}
+
+function getItemImageName(item: Item) {
+    return `game_sprites/${item.type}.png`;
 }
 
 // Tries to get an item by its full name
@@ -988,9 +1058,15 @@ export function hasActiveSpecialProperty(
 }
 
 // Initialize all item and bot data from the given items/bots, bots are optional
-export function initData(items: { [key: string]: JsonItem }, bots: { [key: string]: JsonBot } | undefined): void {
+export async function initData(
+    items: { [key: string]: JsonItem },
+    bots: { [key: string]: JsonBot } | undefined,
+): Promise<any> {
     botData = {};
     itemData = {};
+
+    const botPromises: Promise<any>[] = [];
+    const itemPromises: Promise<any>[] = [];
 
     // Create items
     Object.keys(items).forEach((itemName, index) => {
@@ -1260,6 +1336,8 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                 break;
         }
 
+        itemPromises.push(loadImage(getItemImageName(newItem)));
+
         itemData[itemName] = newItem;
     });
 
@@ -1371,7 +1449,7 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                           time: bot["Fabrication Time"] as string,
                       };
 
-            botData[botName] = {
+            const newBot = {
                 armament: bot.Armament ?? [],
                 armamentData: armamentData,
                 armamentOptionData: armamentOptionData,
@@ -1408,8 +1486,15 @@ export function initData(items: { [key: string]: JsonItem }, bots: { [key: strin
                 value: parseIntOrDefault(bot.Value, 0),
                 visualRange: bot["Sight Range"],
             };
+
+            botPromises.push(loadImage(getBotImageName(newBot)));
+
+            botData[botName] = newBot;
         });
     }
+
+    await Promise.all(itemPromises);
+    await Promise.all(botPromises);
 }
 
 // Determines if the given item type is melee
@@ -1436,6 +1521,44 @@ export function leetSpeakMatchTransform(name: string): string {
         .replace(/7/, "t")
         .replace(/5/, "s")
         .replace(/8/, "b");
+}
+
+// Waits for all bot images to be loaded
+async function loadBotImages(): Promise<any> {
+    const imageNames = Object.keys(botData).map((botName) => getBotImageName(botData[botName]));
+    return loadImages(imageNames);
+}
+
+// Awaits for all the given image urls to be loaded
+async function loadImages(imageUrls: string[]) {
+    const promises: Promise<any>[] = [];
+
+    for (const imageUrl of imageUrls) {
+        promises.push(
+            new Promise((resolve) => {
+                const image = new Image();
+                image.onload = resolve;
+                image.src = imageUrl;
+            }),
+        );
+    }
+
+    await Promise.all(promises);
+}
+
+// Awaits for all the given image urls to be loaded
+async function loadImage(imageUrl: string): Promise<any> {
+    return new Promise((resolve) => {
+        const image = new Image();
+        image.onload = resolve;
+        image.src = imageUrl;
+    });
+}
+
+// Waits for all item images to be loaded
+async function loadItemImages(): Promise<any> {
+    const imageNames = Object.keys(itemData).map((itemName) => getItemImageName(itemData[itemName]));
+    return loadImages(imageNames);
 }
 
 // Converts an item or bot's name to an HTML id

@@ -478,10 +478,10 @@ jq(function ($) {
     }
 
     // Initialize the page state
-    function init() {
+    async function init() {
         // Reinstate for beta 12
         // const isB11 = getB11State();
-        initData(items as any, bots as any);
+        await initData(items as any, bots as any);
 
         createHeader("Simulator", $("#headerContainer"));
         // $("#beta11Checkbox").prop("checked", getB11State());

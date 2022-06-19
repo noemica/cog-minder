@@ -505,13 +505,13 @@ jq(function ($) {
     }
 
     // Initialize overall page state from the initial page state
-    function initFromState() {
+    async function initFromState() {
         $("#beta11Checkbox").prop("checked", initialPageState.b11);
         // Reinstate for beta 12
         // const itemsToLoad = $("#beta11Checkbox").prop("checked") ? itemsB11 : items;
         const itemsToLoad = items;
 
-        initData(itemsToLoad as { [key: string]: JsonItem }, undefined);
+        await initData(itemsToLoad as { [key: string]: JsonItem }, undefined);
 
         initializePartsSelects();
         resetValues(

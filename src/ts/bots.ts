@@ -275,8 +275,8 @@ jq(function ($) {
     }
 
     // Initialize the page state
-    function init() {
-        initData(items as any, bots as any);
+    async function init() {
+        await initData(items as any, bots as any);
 
         createBots();
         createHeader("Bots", $("#headerContainer"));
