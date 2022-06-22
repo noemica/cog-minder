@@ -431,6 +431,7 @@ export function createBotDataContent(bot: Bot): string {
         ${textLine("Memory", bot.memory)}
         ${textLine("Spot %", bot.spotPercent)}
         ${textLine("Movement", bot.movement)}
+        ${bot.movementOverloaded !== undefined ? `${textLine(" Overloaded", bot.movementOverloaded)}` : ""}
         ${rangeLine("Core Integrity", bot.coreIntegrity.toString(), bot.coreIntegrity, undefined, 0, bot.coreIntegrity, ColorScheme.Green)}
         ${rangeLineUnit("Core Exposure", bot.coreExposure.toString(), bot.coreExposure, "%", undefined, 0, 100, ColorScheme.LowGood)}
         ${textLine("Salvage Potential", bot.salvagePotential)}
@@ -1472,9 +1473,11 @@ export async function initData(
                 immunities: bot.Immunities ?? [],
                 immunitiesString: bot.Immunities?.join(", ") ?? "",
                 memory: bot.Memory,
-                movement: `${bot.Movement} (${bot.Speed})${
-                    bot["Overload Speed"] !== undefined ? ` Ovrload (${bot["Overload Speed"]})` : ""
-                }`,
+                movement: `${bot.Movement} (${bot.Speed}/${bot["Speed %"]}%)`,
+                movementOverloaded:
+                    bot["Overload Speed"] !== undefined
+                        ? `${bot.Movement} (${bot["Overload Speed"]}/${bot["Overload Speed %"]}%)`
+                        : undefined,
                 name: botName,
                 profile: bot.Profile,
                 rating: bot.Rating,

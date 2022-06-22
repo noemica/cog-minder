@@ -23,7 +23,7 @@ categories = [
     'Spot %',
     'Movement',
     'Speed',
-    # 'Speed %',
+    'Speed %',
     'Sight Range',
     'Energy Generation',
     'Heat Dissipation',
@@ -61,6 +61,12 @@ overload_speeds = {
     "C-17 Slicer": 20,
     "C-35 Carver": 15,
     "C-57 Dissector": 7,
+}
+
+overload_speed_percentages = {
+    "C-17 Slicer": 500,
+    "C-35 Carver": 666,
+    "C-57 Dissector": 1428,
 }
 
 name_replacements = {
@@ -215,6 +221,7 @@ for row in reader:
 
     if values['Name'] in overload_speeds:
         values['Overload Speed'] = overload_speeds[values['Name']]
+        values['Overload Speed %'] = overload_speed_percentages[values['Name']]
 
     all_values[values['Name']] = values
 

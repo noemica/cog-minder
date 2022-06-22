@@ -69,6 +69,7 @@ export type Bot = {
     immunitiesString: string;
     memory: string;
     movement: string;
+    movementOverloaded?: string;
     name: string;
     profile: string;
     rating: string;
@@ -99,7 +100,9 @@ export type JsonBot = {
     "Spot %": string;
     Movement: string;
     Speed: string;
+    "Speed %": string;
     "Overload Speed"?: string;
+    "Overload Speed %"?: string;
     "Sight Range": string;
     "Energy Generation": string;
     "Heat Dissipation": string;
