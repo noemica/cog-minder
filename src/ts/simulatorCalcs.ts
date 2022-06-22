@@ -111,8 +111,10 @@ type DamageChunk = {
 function applyDamage(
     state: SimulatorState,
     botState: BotState,
-    damage: number,
+    totalDamage: number,
+    numChunks: number,
     critical: Critical | undefined,
+    isAoe: boolean,
     armorAnalyzed: boolean,
     disruptChance: any,
     spectrum: any,
@@ -121,18 +123,12 @@ function applyDamage(
 ) {
     const chunks: DamageChunk[] = [];
 
-    // Split into chunks each containing originalDamage for other calcs (9)
-    if (damageType === DamageType.Explosive) {
-        if (critical !== undefined) {
-            throw "Explosive damage can't be a crit";
-        }
+    // Split damage evenly between chunks while discarding the remainder
+    const damage = Math.trunc(totalDamage / numChunks);
 
-        // Split explosive damage randomly into 1-3 chunks (9)
-        // EX damage can never crit, ignore armor, disrupt, explicitly
-        // target core, or have a spectrum
-        // Note: The remainder from the division is explicitly thrown out
-        const numChunks = randomInt(1, 3);
+    if (isAoe) {
         for (let i = 0; i < numChunks; i++) {
+            // Aoe damage ignores a lot of specific mechanics
             chunks.push({
                 armorAnalyzed: false,
                 critical: undefined,
@@ -140,24 +136,25 @@ function applyDamage(
                 damageType: damageType,
                 disruptChance: 0,
                 forceCore: false,
-                originalDamage: Math.trunc(damage / numChunks),
+                originalDamage: damage,
                 realDamage: 0,
                 spectrum: 0,
             });
         }
     } else {
-        // Non-EX damage is done in a single chunk
-        chunks.push({
-            armorAnalyzed: armorAnalyzed,
-            coreBonus: state.offensiveState.coreAnalyzerChance,
-            critical: critical,
-            damageType: damageType,
-            disruptChance: disruptChance,
-            forceCore: false,
-            originalDamage: damage,
-            realDamage: 0,
-            spectrum: spectrum,
-        });
+        for (let i = 0; i < numChunks; i++) {
+            chunks.push({
+                armorAnalyzed: armorAnalyzed,
+                coreBonus: state.offensiveState.coreAnalyzerChance,
+                critical: critical,
+                damageType: damageType,
+                disruptChance: disruptChance,
+                forceCore: false,
+                originalDamage: damage,
+                realDamage: 0,
+                spectrum: spectrum,
+            });
+        }
     }
 
     // Apply any additional damage reduction (10)
@@ -1132,17 +1129,7 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
         damage = calculateResistDamage(botState, damage, DamageType.Impact);
 
         if (damage > 0) {
-            applyDamage(
-                state,
-                botState,
-                damage,
-                undefined,
-                false,
-                weapon.disruption,
-                weapon.spectrum,
-                weapon.overflow,
-                DamageType.Impact,
-            );
+            applyDamage(state, botState, damage, 1, undefined, false, false, false, false, true, DamageType.Impact);
         }
 
         return;
@@ -1251,7 +1238,9 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
                     state,
                     botState,
                     damage,
+                    1,
                     didCritical ? weapon.criticalType : undefined,
+                    false,
                     armorAnalyzed,
                     weapon.disruption,
                     weapon.spectrum,
@@ -1268,15 +1257,28 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
             // Apply resistances (6)
             damage = calculateResistDamage(botState, damage, weapon.explosionType);
 
+            let numChunks: number;
+            if (weapon.explosionType === DamageType.Explosive) {
+                // Explosive damage is split into 1-3 chunks at random (9)
+                numChunks = randomInt(1, 3);
+            } else if (weapon.def.name === "Sigix Terminator" || weapon.def.name === "Supercharged Sigix Terminator") {
+                // ST/SST have special chunk rules
+                numChunks = randomInt(3, 6);
+            } else {
+                numChunks = 1;
+            }
+
             if (damage > 0) {
                 applyDamage(
                     state,
                     botState,
                     damage,
+                    numChunks,
                     undefined,
+                    true,
                     false,
-                    weapon.disruption,
-                    weapon.explosionSpectrum,
+                    weapon.explosionDisruption,
+                    0, // Explosion spectrum only applies to engines on ground, ignore it here
                     weapon.overflow,
                     weapon.explosionType,
                 );

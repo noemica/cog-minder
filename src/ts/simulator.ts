@@ -1111,6 +1111,7 @@ jq(function ($) {
             }
 
             const disruption = def.disruption ?? 0;
+            const explosionDisruption = def.explosionDisruption ?? 0;
 
             const spectrum = spectrumToNumber(def.spectrum);
             const explosionSpectrum = spectrumToNumber(def.explosionSpectrum);
@@ -1138,6 +1139,7 @@ jq(function ($) {
                 def: def,
                 delay: delay,
                 disruption: disruption,
+                explosionDisruption: explosionDisruption,
                 explosionMin: explosionMin,
                 explosionMax: explosionMax,
                 explosionSpectrum: explosionSpectrum,

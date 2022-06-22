@@ -88,6 +88,7 @@ export type SimulatorWeapon = {
     disruption: number;
     explosionMin: number;
     explosionMax: number;
+    explosionDisruption: number;
     explosionSpectrum: number;
     explosionType?: DamageType;
     isMissile: boolean;
