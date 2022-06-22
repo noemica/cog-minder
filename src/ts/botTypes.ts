@@ -62,7 +62,9 @@ export type Bot = {
     coreExposure: number;
     coreIntegrity: number;
     description: string;
+    energyGeneration: number;
     fabrication?: FabricationStats;
+    heatDissipation: number;
     immunities: BotImmunity[];
     immunitiesString: string;
     memory: string;

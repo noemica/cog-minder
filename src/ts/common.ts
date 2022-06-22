@@ -425,6 +425,8 @@ export function createBotDataContent(bot: Bot): string {
         ${textLine("Tier", bot.tier)}
         ${textLine("Threat", bot.threat)}
         ${textLine("Value", bot.value.toString())}
+        ${textLine("Energy Generation", bot.energyGeneration.toString())}
+        ${textLine("Heat Dissipation", bot.heatDissipation.toString())}
         ${textLine("Visual Range", bot.visualRange)}
         ${textLine("Memory", bot.memory)}
         ${textLine("Spot %", bot.spotPercent)}
@@ -1449,7 +1451,7 @@ export async function initData(
                           time: bot["Fabrication Time"] as string,
                       };
 
-            const newBot = {
+            const newBot: Bot = {
                 armament: bot.Armament ?? [],
                 armamentData: armamentData,
                 armamentOptionData: armamentOptionData,
@@ -1464,7 +1466,9 @@ export async function initData(
                 coreExposure: parseInt(bot["Core Exposure %"]),
                 coreIntegrity: parseInt(bot["Core Integrity"]),
                 description: bot.Analysis ?? "",
+                energyGeneration: parseIntOrDefault(bot["Energy Generation"], 0),
                 fabrication: fabrication,
+                heatDissipation: parseIntOrDefault(bot["Heat Dissipation"], 0),
                 immunities: bot.Immunities ?? [],
                 immunitiesString: bot.Immunities?.join(", ") ?? "",
                 memory: bot.Memory,
