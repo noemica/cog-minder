@@ -134,18 +134,10 @@
         <div id="rangedUtilitiesContainer" class="input-group mt-2">
             <!-- Particle Charger -->
             <div class="input-group-prepend" data-toggle="tooltip"
-                title="The type of particle charger/accelerator that's equipped (if any). Increases damage of energy gun/cannon weapons.">
+                title="The type of particle charger/accelerator that's equipped (if any). Increases damage of energy gun/cannon weapons (half_stack).">
                 <span class="input-group-text">Particle Charger</span>
             </div>
-            <select id="chargerSelect" class="selectpicker flex-dropdown">
-                <option title="0%">0%: None</option>
-                <option title="15%">15%: Particle Charger</option>
-                <option title="20%">20%: Imp. Particle Charger</option>
-                <option title="25%">25%: Adv. Particle Charger</option>
-                <option title="30%">30%: Particle Accelerator</option>
-                <option title="40%">40%: Imp. Particle Accelerator</option>
-                <option title="50%">50%: Adv. Particle Accelerator</option>
-            </select>
+            <input id="particleChargerInput" type="text" class="form-control" placeholder="0"></input>
 
             <!-- Kinecellerator -->
             <div class="input-group-prepend ml-3" data-toggle="tooltip"

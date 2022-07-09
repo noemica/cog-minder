@@ -96,17 +96,6 @@ jq(function ($) {
         "50%: Exp. Armor Integrity Analyzer": 50,
     };
 
-    // Charger damage increase values
-    const chargerMap = {
-        "0%: None": 1.0,
-        "15%: Particle Charger": 1.15,
-        "20%: Imp. Particle Charger": 1.2,
-        "25%: Adv. Particle Charger": 1.25,
-        "30%: Particle Accelerator": 1.3,
-        "40%: Imp. Particle Accelerator": 1.4,
-        "50%: Adv. Particle Accelerator": 1.5,
-    };
-
     // Cycler volley time multiplier map
     const cyclerMap = {
         "0%: None": 1.0,
@@ -583,7 +572,6 @@ jq(function ($) {
         $("#damageReductionSelect").parent().addClass("percent-dropdown");
         $("#botSelectContainer > div").addClass("enemy-dropdown");
         $("#siegeSelectContainer > div").addClass("siege-dropdown");
-        $("#chargerSelect").parent().addClass("percent-dropdown");
         $("#kinecelleratorSelect").parent().addClass("percent-dropdown");
         $("#cyclerSelect").parent().addClass("percent-dropdown");
         $("#overloadSelect").parent().addClass("percent-dropdown");
@@ -735,7 +723,6 @@ jq(function ($) {
         // Reset dropdowns
         resetDropdown($("#damageReductionSelect"));
         resetDropdown($("#siegeSelect"));
-        resetDropdown($("#chargerSelect"));
         resetDropdown($("#kinecelleratorSelect"));
         resetDropdown($("#cyclerSelect"));
         resetDropdown($("#overloadSelect"));
@@ -749,6 +736,7 @@ jq(function ($) {
         $("#targetingInput").val("");
         $("#treadsInput").val("");
         $("#distanceInput").val("");
+        $("#particleChargerInput").val("");
         $("#recoilInput").val("");
         $("#coreAnalyzerInput").val("");
         $("#targetAnalyzerInput").val("");
@@ -804,7 +792,7 @@ jq(function ($) {
         func($("#siegeSelect").next());
         func($("#treadsInput"));
         func($("#distanceInput"));
-        func($("#chargerSelect").next());
+        func($("#particleChargerInput"));
         func($("#kinecelleratorSelect").next());
         func($("#cyclerSelect").next());
 
@@ -1155,8 +1143,8 @@ jq(function ($) {
         });
 
         // Charger bonus
-        const chargerName = $("#chargerSelect").selectpicker("val") as any as string;
-        const chargerBonus = chargerMap[chargerName];
+        const chargerValue = Math.max(parseIntOrDefault($("#particleChargerInput").val() as string, 0), 0);
+        const chargerBonus = 1 + chargerValue / 100;
 
         // Armor Integrity Analyzer chance
         const armorAnalyzerName = $("#armorIntegSelect").selectpicker("val") as any as string;
