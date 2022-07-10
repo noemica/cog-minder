@@ -52,6 +52,8 @@ jq(function ($) {
             { name: "Tier" },
             { name: "Threat" },
             { name: "Value" },
+            { name: "Energy Generation", propertyName: "energyGeneration" },
+            { name: "Heat Dissipation", propertyName: "heatDissipation" },
             { name: "Visual Range", propertyName: "visualRange" },
             { name: "Memory" },
             { name: "Spot %", propertyName: "spotPercent" },
