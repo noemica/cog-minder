@@ -104,8 +104,11 @@ type DamageChunk = {
     forceCore: boolean;
     originalDamage: number;
     realDamage: number;
+    salvage: number;
     spectrum: number;
 };
+
+type PartDestroyReason = "Integrity" | "CriticalRemove";
 
 // Applies a final calculated damage value to a bot, splitting into chunks if necessary
 function applyDamage(
@@ -120,6 +123,7 @@ function applyDamage(
     spectrum: any,
     canOverflow: any,
     damageType: DamageType,
+    salvage: number,
 ) {
     const chunks: DamageChunk[] = [];
 
@@ -138,6 +142,7 @@ function applyDamage(
                 forceCore: false,
                 originalDamage: damage,
                 realDamage: 0,
+                salvage: salvage,
                 spectrum: 0,
             });
         }
@@ -152,6 +157,7 @@ function applyDamage(
                 forceCore: false,
                 originalDamage: damage,
                 realDamage: 0,
+                salvage,
                 spectrum: spectrum,
             });
         }
@@ -176,6 +182,7 @@ function applyDamage(
             const baseDamage = randomInt(engine.explosionDamageMin, engine.explosionDamageMax);
             const chunks =
                 randomInt(1, 2) === 1 ? [baseDamage] : [Math.trunc(baseDamage / 2), Math.trunc(baseDamage / 2)];
+            botState.salvage += engine.explosionSalvage;
             chunks.forEach((damage) => {
                 applyDamageChunk(
                     0,
@@ -208,7 +215,13 @@ function applyDamage(
         applyDamageChunkToPart(damage, damageType, critical, disruptChance, spectrum, part, partIndex);
     }
 
-    function destroyPart(partIndex: number, part: SimulatorPart, overflowDamage: number, damageType: DamageType) {
+    function destroyPart(
+        partIndex: number,
+        part: SimulatorPart,
+        overflowDamage: number,
+        damageType: DamageType,
+        destroyReason: PartDestroyReason,
+    ) {
         botState.parts.splice(partIndex, 1);
         botState.armorAnalyzedCoverage -= part.armorAnalyzedCoverage;
         botState.totalCoverage -= part.coverage;
@@ -240,6 +253,19 @@ function applyDamage(
             applyCorruption(corruption);
         }
 
+        if (
+            destroyReason === "CriticalRemove" &&
+            part.integrity > 0 &&
+            // Processors/hackware removed via crit get destroyed
+            part.def.type !== ItemType.Processor &&
+            part.def.type !== ItemType.Hackware
+        ) {
+            // Save loot stats if the part gets removed due to crit effect
+            state.lootState.items[part.initialIndex].numDrops += 1;
+            state.lootState.items[part.initialIndex].totalCritRemoves += 1;
+            state.lootState.items[part.initialIndex].totalIntegrity += part.integrity;
+        }
+
         part.integrity = 0;
         updateWeaponsAccuracy(state);
     }
@@ -259,7 +285,7 @@ function applyDamage(
                 // Corruption is greater than part can prevent, destroy part
                 botState.defensiveState.corruptionPrevent.shift();
                 const index = botState.parts.indexOf(corruptionPreventPart.part);
-                destroyPart(index, corruptionPreventPart.part, 0, DamageType.Entropic);
+                destroyPart(index, corruptionPreventPart.part, 0, DamageType.Entropic, "Integrity");
                 corruptionPreventPart = getDefensiveStatePart(botState.defensiveState.corruptionPrevent);
 
                 corruption -= maxPrevention;
@@ -319,7 +345,7 @@ function applyDamage(
             // Destroy first engine found (if any)
             if (i < botState.parts.length) {
                 const engine = botState.parts[i];
-                destroyPart(i, engine, 0, DamageType.Entropic);
+                destroyPart(i, engine, 0, DamageType.Entropic, "Integrity");
                 applyEngineExplosion(engine);
 
                 if (i === partIndex) {
@@ -369,7 +395,7 @@ function applyDamage(
                 if (shielding.part.integrity <= 0) {
                     // Remove shielding if it has run out of integrity
                     const index = botState.parts.indexOf(shielding.part);
-                    destroyPart(index, shielding.part, 0, DamageType.Entropic);
+                    destroyPart(index, shielding.part, 0, DamageType.Entropic, "Integrity");
                 }
 
                 damage = damage - shieldingDamage;
@@ -404,12 +430,13 @@ function applyDamage(
 
                     if (part.def.size > 1) {
                         // Parts taking 2 or more slots can't be removed via sever/sunder
-                        // Technically sever does a very minor amount of damage to the part
-                        // Even if it isn't removed, but it isn't worth worrying about
                         continue;
                     }
 
-                    destroyPart(partIndex, part, 0, DamageType.Phasic);
+                    // Core severed parts lose 5-25% of integrity
+                    part.integrity -= Math.trunc((part.def.integrity * randomInt(5, 25)) / 100);
+
+                    destroyPart(partIndex, part, 0, DamageType.Phasic, "CriticalRemove");
                 }
 
                 return;
@@ -421,8 +448,13 @@ function applyDamage(
                 }
 
                 if (part.def.size === 1) {
-                    // Single-slot items get blasted off, treat as part destruction
-                    destroyPart(partIndex, part, 0, DamageType.Phasic);
+                    // Single-slot items get blasted off
+                    // Deal damage first, then destroy as a critical part removal if still intact
+                    applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, part, partIndex);
+
+                    if (part.integrity > 0) {
+                        destroyPart(partIndex, part, 0, DamageType.Phasic, "CriticalRemove");
+                    }
                 } else {
                     // Multi-slot items don't get blasted off but still take damage
                     applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, part, partIndex);
@@ -472,7 +504,7 @@ function applyDamage(
             if (shielding.part.integrity <= 0) {
                 // Remove shielding if it has run out of integrity
                 const index = botState.parts.indexOf(shielding.part);
-                destroyPart(index, shielding.part, 0, DamageType.Entropic);
+                destroyPart(index, shielding.part, 0, DamageType.Entropic, "Integrity");
             }
 
             damage = damage - shieldingDamage;
@@ -496,7 +528,7 @@ function applyDamage(
             // Part destroyed, remove part and update bot state
             // Smash critical destroys the part instantly and deals full overflow damage
             const overflowDamage = critical === Critical.Smash ? damage : damage - part.integrity;
-            destroyPart(partIndex, part, overflowDamage, damageType);
+            destroyPart(partIndex, part, overflowDamage, damageType, "Integrity");
         } else {
             // Part not destroyed, just reduce integrity
             part.integrity -= damage;
@@ -512,8 +544,13 @@ function applyDamage(
             }
 
             if (part.def.size === 1) {
-                // Single-slot items get blasted off, treat as part destruction
-                destroyPart(partIndex, part, 0, DamageType.Phasic);
+                // Single-slot items get blasted off
+                // Deal damage first, then destroy as a critical part removal if still intact
+                applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, part, partIndex);
+
+                if (part.integrity > 0) {
+                    destroyPart(partIndex, part, 0, DamageType.Phasic, "CriticalRemove");
+                }
             } else {
                 // Multi-slot items don't get blasted off but still take damage
                 applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, part, partIndex);
@@ -528,8 +565,16 @@ function applyDamage(
         }
     }
 
+    // Apply salvage for all chunks simulatenously
+    botState.salvage += salvage;
+
     // Apply damage
     chunks.forEach((chunk) => {
+        if (chunk.realDamage === 0) {
+            // Don't process the chunk if damage is reduced to 0 by shielding
+            return;
+        }
+
         applyDamageChunk(
             chunk.coreBonus,
             chunk.realDamage,
@@ -583,12 +628,14 @@ function cloneBotState(botState: BotState): BotState {
                 coverage: p.coverage,
                 def: p.def,
                 integrity: p.integrity,
+                initialIndex: p.initialIndex,
                 protection: p.protection,
                 selfDamageReduction: p.selfDamageReduction,
             };
         }),
         regen: botState.regen,
         resistances: resistances,
+        salvage: 0,
         totalCoverage: botState.totalCoverage,
     };
     newState.defensiveState = getBotDefensiveState(newState.parts, newState.externalDamageReduction);
@@ -696,6 +743,7 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
                     coverage: 0,
                     def: undefined as any,
                     integrity: 1,
+                    initialIndex: 0,
                     protection: false,
                     selfDamageReduction: 0,
                 },
@@ -713,6 +761,7 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
                         coverage: 0,
                         def: undefined as any,
                         integrity: 1,
+                        initialIndex: 0,
                         protection: false,
                         selfDamageReduction: 0,
                     },
@@ -724,6 +773,7 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
                         armorAnalyzedCoverage: 0,
                         coverage: 0,
                         def: undefined as any,
+                        initialIndex: 0,
                         integrity: 1,
                         protection: false,
                         selfDamageReduction: 0,
@@ -968,40 +1018,74 @@ function getBotCorruption(botState: BotState) {
     return corruption;
 }
 
-const simulationEndConditions: { [key: string]: (state: BotState) => boolean } = {
-    Kill: function (botState) {
-        return botState.coreIntegrity <= 0 || getBotCorruption(botState) >= 100;
+type EndConditions = {
+    volleyEndCondition: (state: BotState) => boolean;
+    projectileEndCondition: (state: BotState) => boolean;
+};
+const simulationEndConditions: { [key: string]: EndConditions } = {
+    Kill: {
+        volleyEndCondition: function (botState) {
+            return botState.coreIntegrity <= 0 || getBotCorruption(botState) >= 100;
+        },
+        projectileEndCondition: function (botState) {
+            return botState.coreIntegrity <= 0;
+        },
     },
-    "Kill or Core Disrupt": function (botState) {
-        return botState.coreIntegrity <= 0 || getBotCorruption(botState) >= 100 || botState.coreDisrupted;
+    "Kill or Core Disrupt": {
+        projectileEndCondition: function (botState) {
+            return botState.coreIntegrity <= 0;
+        },
+        volleyEndCondition: function (botState) {
+            return botState.coreIntegrity <= 0 || getBotCorruption(botState) >= 100 || botState.coreDisrupted;
+        },
     },
-    "Kill or No Power": function (botState) {
-        return (
-            botState.coreIntegrity <= 0 ||
-            getBotCorruption(botState) >= 100 ||
-            botState.parts.every((part) => part.def.slot != "Power")
-        );
+    "Kill or No Power": {
+        projectileEndCondition: function (botState) {
+            return botState.coreIntegrity <= 0;
+        },
+        volleyEndCondition: function (botState) {
+            return (
+                botState.coreIntegrity <= 0 ||
+                getBotCorruption(botState) >= 100 ||
+                botState.parts.every((part) => part.def.slot != "Power")
+            );
+        },
     },
-    "Kill or No Weapons": function (botState) {
-        return (
-            botState.coreIntegrity <= 0 ||
-            getBotCorruption(botState) >= 100 ||
-            botState.parts.every((part) => part.def.slot != "Weapon")
-        );
+    "Kill or No Weapons": {
+        projectileEndCondition: function (botState) {
+            return botState.coreIntegrity <= 0;
+        },
+        volleyEndCondition: function (botState) {
+            return (
+                botState.coreIntegrity <= 0 ||
+                getBotCorruption(botState) >= 100 ||
+                botState.parts.every((part) => part.def.slot != "Weapon")
+            );
+        },
     },
-    "Kill or No TNC": function (botState) {
-        return (
-            botState.coreIntegrity <= 0 ||
-            getBotCorruption(botState) >= 100 ||
-            botState.parts.every((part) => part.def.name != "Transport Network Coupler")
-        );
+    "Kill or No TNC": {
+        projectileEndCondition: function (botState) {
+            return botState.coreIntegrity <= 0;
+        },
+        volleyEndCondition: function (botState) {
+            return (
+                botState.coreIntegrity <= 0 ||
+                getBotCorruption(botState) >= 100 ||
+                botState.parts.every((part) => part.def.name != "Transport Network Coupler")
+            );
+        },
     },
-    "Architect Tele (80% integrity, 1 weapon, or 1 prop)": function (botState) {
-        return (
-            botState.coreIntegrity <= botState.initialCoreIntegrity * 0.8 ||
-            botState.parts.filter((part) => part.def.slot === "Weapon").length === 1 ||
-            botState.parts.filter((part) => part.def.slot === "Propulsion").length === 1
-        );
+    "Architect Tele (80% integrity, 1 weapon, or 1 prop)": {
+        projectileEndCondition: function (botState) {
+            return (
+                botState.coreIntegrity <= botState.initialCoreIntegrity * 0.8 ||
+                botState.parts.filter((part) => part.def.slot === "Weapon").length === 1 ||
+                botState.parts.filter((part) => part.def.slot === "Propulsion").length === 1
+            );
+        },
+        volleyEndCondition: function (botState) {
+            return botState.coreIntegrity <= 0;
+        },
     },
 };
 // Fully simulates rounds of combat to a kill a bot from an initial state
@@ -1018,7 +1102,7 @@ export function simulateCombat(state: SimulatorState): boolean {
     // Update initial accuracy
     updateWeaponsAccuracy(state);
 
-    const endCondition = simulationEndConditions[state.endCondition];
+    const endConditions = simulationEndConditions[state.endCondition];
 
     // Update initial sneak attack state
     offensiveState.sneakAttack =
@@ -1027,7 +1111,8 @@ export function simulateCombat(state: SimulatorState): boolean {
     // Update initial momentum
     offensiveState.momentum.current = offensiveState.momentum.bonus + offensiveState.momentum.initial;
 
-    while (!endCondition(botState)) {
+    let end = false;
+    while (!end) {
         // Apply core regen
         const lastCompletedTurns = Math.trunc(oldTus / 100);
         const newCompletedTurns = Math.trunc(state.tus / 100);
@@ -1041,12 +1126,12 @@ export function simulateCombat(state: SimulatorState): boolean {
 
         if (offensiveState.melee) {
             // Always do primary attack
-            simulateWeapon(state, state.weapons[0]);
+            end = simulateWeapon(state, state.weapons[0], endConditions.projectileEndCondition);
 
             // Handle followups chances
-            for (let i = 1; i < state.weapons.length; i++) {
+            for (let i = 1; i < state.weapons.length && !end; i++) {
                 if (randomInt(0, 99) < offensiveState.followupChances[i - 1]) {
-                    simulateWeapon(state, state.weapons[i]);
+                    end = simulateWeapon(state, state.weapons[i], endConditions.projectileEndCondition);
 
                     // Add followup delay, 50% of normal
                     volleyTime += 0.5 * state.weapons[i].delay;
@@ -1067,7 +1152,13 @@ export function simulateCombat(state: SimulatorState): boolean {
                 offensiveState.momentum.current = offensiveState.momentum.bonus;
             }
         } else {
-            state.weapons.forEach((weapon) => simulateWeapon(state, weapon));
+            for (const weapon of state.weapons) {
+                end = simulateWeapon(state, weapon, endConditions.projectileEndCondition);
+
+                if (end) {
+                    break;
+                }
+            }
         }
 
         if (volleys >= maxVolleys) {
@@ -1093,6 +1184,8 @@ export function simulateCombat(state: SimulatorState): boolean {
         ) {
             updateWeaponsAccuracy(state);
         }
+
+        end = endConditions.volleyEndCondition(botState);
     }
 
     // Update kill dictionaries
@@ -1108,11 +1201,67 @@ export function simulateCombat(state: SimulatorState): boolean {
         state.killTus[state.tus] = 1;
     }
 
+    // Update loot tracker for non-destroyed parts
+    for (const part of botState.parts) {
+        if (part.integrity > 0) {
+            const itemLootState = state.lootState.items[part.initialIndex];
+
+            // Initial drop chance is:
+            // ([percent_remaining_integrity / 2] + [salvage_modifier])
+            // So undamaged parts have a base 50% drop rate, drop rate for items
+            // should never be higher than 50% unless +salvage is applied
+            let drop = randomInt(0, 99) < ((part.integrity / part.def.integrity) * 100) / 2 + botState.salvage;
+            const corruption = getBotCorruption(botState);
+
+            if (drop && corruption > 0) {
+                // Chance to fry part and not drop is: [system_corruption - max_integrity]
+                if (randomInt(0, 99) < corruption - part.def.integrity) {
+                    itemLootState.totalFried += 1;
+                    drop = false;
+                }
+            }
+
+            // TODO add part melting here with rest of heat support
+
+            if (drop) {
+                // Part dropped, increase stats
+                itemLootState.totalIntegrity += part.integrity;
+                itemLootState.numDrops += 1;
+
+                // Chance for corrupted part on bot death is simply corruption %
+                const corrupted = randomInt(0, 99) < corruption;
+
+                if (corrupted) {
+                    // Corrupted bot part corruption increase is: 1 to (10*[corruption]/100)
+                    // Also has a hard cap of 15
+                    itemLootState.totalCorruptionPercent += randomInt(1, Math.min((10 * corruption) / 100, 15));
+                }
+            }
+        }
+    }
+
+    state.lootState.numKills += 1;
+
+    // Update matter
+    // Start with a random number between the low/high salvage counts
+    let matter = randomInt(botState.def.salvageLow, botState.def.salvageHigh);
+
+    // Offset directly by salvage, then cap with 0/max if needed
+    matter += botState.salvage;
+    matter = Math.max(0, matter);
+    matter = Math.min(matter, botState.def.salvageHigh);
+    state.lootState.matterDrop += matter;
+
     return true;
 }
 
 // Simulates 1 weapon's damage in a volley
-function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
+// Returns true if the weapon triggered the simulation end condition
+function simulateWeapon(
+    state: SimulatorState,
+    weapon: SimulatorWeapon,
+    endCondition: (state: BotState) => boolean,
+): boolean {
     const botState = state.botState;
     const offensiveState = state.offensiveState;
 
@@ -1129,10 +1278,10 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
         damage = calculateResistDamage(botState, damage, DamageType.Impact);
 
         if (damage > 0) {
-            applyDamage(state, botState, damage, 1, undefined, false, false, false, false, true, DamageType.Impact);
+            applyDamage(state, botState, damage, 1, undefined, false, false, false, false, true, DamageType.Impact, 3);
         }
 
-        return;
+        return endCondition(botState);
     }
 
     for (let i = 0; i < weapon.numProjectiles; i++) {
@@ -1176,6 +1325,11 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
 
         if (!hit) {
             continue;
+        }
+
+        if (weapon.def.type === ItemType.BallisticCannon && (weapon.def.salvage ?? 0) < -2) {
+            // Apply matter blasted off for kinetic cannons
+            state.lootState.matterBlasted += Math.trunc(randomInt(0, -weapon.def.salvage!));
         }
 
         if (weapon.damageType != undefined) {
@@ -1246,7 +1400,14 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
                     weapon.spectrum,
                     weapon.overflow,
                     weapon.damageType,
+                    weapon.salvage,
                 );
+
+                // If we've already met the end condition then exit mid-volley
+                // Also exit before checking the explosion
+                if (endCondition(botState)) {
+                    return true;
+                }
             }
         }
 
@@ -1281,10 +1442,18 @@ function simulateWeapon(state: SimulatorState, weapon: SimulatorWeapon) {
                     0, // Explosion spectrum only applies to engines on ground, ignore it here
                     weapon.overflow,
                     weapon.explosionType,
+                    weapon.salvage,
                 );
+
+                // If we've already met the end condition then exit mid-volley
+                if (endCondition(botState)) {
+                    return true;
+                }
             }
         }
     }
+
+    return false;
 }
 
 // Converts a spectrum value to a numeric value

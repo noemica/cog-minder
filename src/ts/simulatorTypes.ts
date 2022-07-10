@@ -6,6 +6,7 @@ export type SimulatorPart = {
     coverage: number;
     def: Item;
     integrity: number;
+    initialIndex: number;
     protection: boolean;
     selfDamageReduction: number;
     resistances?: BotResistances;
@@ -71,6 +72,7 @@ export type BotState = {
     parts: SimulatorPart[];
     regen: number;
     resistances: BotResistances;
+    salvage: number;
     totalCoverage: number;
 };
 
@@ -95,6 +97,7 @@ export type SimulatorWeapon = {
     numProjectiles: number;
     overflow: boolean;
     overloaded: boolean;
+    salvage: number;
     spectrum: number;
 };
 
@@ -112,6 +115,24 @@ export enum EndCondition {
     KillOrNoTnc = "Kill or No TNC",
     Tele = "Architect Tele (80% integrity, 1 weapon, or 1 prop)",
 }
+
+export type ItemLootState = {
+    item: Item;
+    numDrops: number;
+
+    // Stats totaled for all drops
+    totalCritRemoves: number;
+    totalCorruptionPercent: number;
+    totalFried: number;
+    totalIntegrity: number;
+};
+
+export type LootState = {
+    numKills: number;
+    items: ItemLootState[];
+    matterDrop: number;
+    matterBlasted: number;
+};
 
 export type OffensiveState = {
     armorAnalyzerChance: number;
@@ -150,6 +171,7 @@ export type SimulatorState = {
     initialBotState: BotState;
     killTus: { [key: number]: number };
     killVolleys: { [key: number]: number };
+    lootState: LootState;
     offensiveState: OffensiveState;
     tus: number;
     weapons: SimulatorWeapon[];

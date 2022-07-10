@@ -240,7 +240,7 @@ export type PowerItem = BaseItem &
         explosionHeatTransfer?: HeatTransfer;
         explosionSpectrum?: Spectrum;
         explosionDisruption: number;
-        explosionSalvage?: string;
+        explosionSalvage: number;
     };
 
 export type PropulsionItem = BaseItem &

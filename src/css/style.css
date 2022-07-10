@@ -70,6 +70,10 @@ body {
     width: 100%;
 }
 
+.no-wrap {
+    white-space: nowrap;
+}
+
 .minus-left-margin {
     margin-left: -1px;
 }
@@ -705,4 +709,40 @@ body {
     width: 60ch;
     height: 500;
     rows: 10;
+}
+
+.loot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.loot-box {
+    border: 1px solid #006200;
+    text-align: center;
+    color: #9da9af;
+    font-size: 0.8rem;
+}
+
+.loot-box-content-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.loot-box-content-grid > * {
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.loot-box-content-grid > :nth-child(odd) {
+    text-align: right;
+}
+
+.loot-box-content-grid > :nth-child(even) {
+    text-align: left;
+}
+
+.loot-box-part-name {
+    min-height: 45px;
+    display: inline-block;
+    color: #00cc00;
 }

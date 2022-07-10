@@ -1,3 +1,5 @@
+<!doctype html>
+
 <head lang="en">
     <meta charset="utf-8">
     <title>Cogmind Simulator</title>
@@ -134,7 +136,7 @@
         <div id="rangedUtilitiesContainer" class="input-group mt-2">
             <!-- Particle Charger -->
             <div class="input-group-prepend" data-toggle="tooltip"
-                title="The type of particle charger/accelerator that's equipped (if any). Increases damage of energy gun/cannon weapons (half_stack).">
+                title="The bonus from particle charger/accelerators that are equipped (if any). Increases damage of energy gun/cannon weapons (half_stack).">
                 <span class="input-group-text">Particle Charger</span>
             </div>
             <input id="particleChargerInput" type="text" class="form-control" placeholder="0"></input>
@@ -150,6 +152,13 @@
                 <option title="40%">40%: Imp. Kinecellerator</option>
                 <option title="50%">50%: Adv. Kinecellerator</option>
             </select>
+
+            <!-- Salvage Targeting -->
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The total of Salvage Targeting Computer bonuses that are equipped (if any). Increases salvage generate from Gun-type weapons that fire a single projectile.">
+                <span class="input-group-text">Salvage Targeting</span>
+            </div>
+            <input id="salvageTargetingInput" type="text" class="form-control" placeholder="0"></input>
         </div>
 
         <!-- Ranged only utilities 2 -->
@@ -340,6 +349,20 @@
                 </label>
             </div>
 
+            <!-- Show loot -->
+            <div id="showLootContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
+                <div class="input-group-prepend" data-toggle="tooltip"
+                    title="Whether or not to show estimated loot drops.">
+                    <span class="input-group-text">Show Loot</span>
+                </div>
+                <label id="showLootNo" class="btn">
+                    <input type="radio" name="options"> No
+                </label>
+                <label id="showLootYes" class="btn">
+                    <input type="radio" name="options"> Yes
+                </label>
+            </div>
+
             <!-- End condition -->
             <div class="input-group-prepend ml-3" data-toggle="tooltip"
                 title="The scenario to occur before the simulation is ended.">
@@ -351,7 +374,8 @@
                 <option>Kill or No Power</option>
                 <option>Kill or No Weapons</option>
                 <option class="not-visible" id="endConditionNoTnc">Kill or No TNC</option>
-                <option class="not-visible" id="endConditionArchTele">Architect Tele (80% integrity, 1 weapon, or 1 prop)</option>
+                <option class="not-visible" id="endConditionArchTele">Architect Tele (80% integrity, 1 weapon, or 1
+                    prop)</option>
             </select>
         </div>
 
@@ -362,7 +386,7 @@
             <label id="statusText"></label>
         </div>
 
-        <!-- Charts and related controls -->
+        <!-- Current weapon chart -->
         <div id="resultsContainer" class="not-visible">
             <canvas id="chart"></canvas>
             <div class="input-group mt-3">
@@ -376,6 +400,11 @@
             </div>
         </div>
 
+        <!-- Loot result -->
+        <div id="lootContainer" class="not-visible loot-grid mt-3">
+        </div>
+
+        <!-- Comparison chart -->
         <div id="comparisonContainer" class="not-visible">
             <div id="comparisonDatasetsContainer" class="comparison-grid mt-2">
                 <div class="input-group">

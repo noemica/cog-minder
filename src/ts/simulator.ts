@@ -7,6 +7,7 @@ import {
     createItemDataContent,
     gallerySort,
     getItem,
+    getItemImageName,
     initData,
     itemData,
     parseIntOrDefault,
@@ -34,6 +35,8 @@ import {
 import {
     BotState,
     EndCondition,
+    ItemLootState,
+    LootState,
     OffensiveState,
     SimulatorPart,
     SimulatorState,
@@ -479,6 +482,7 @@ jq(function ($) {
         // Set initial state
         resetButtonGroup($("#combatTypeContainer"));
         resetButtonGroup($("#xAxisContainer"));
+        resetButtonGroup($("#showLootContainer"));
         $("#comparisonChartNameInput").val("");
         resetValues();
         updateChoices();
@@ -509,6 +513,9 @@ jq(function ($) {
         });
         $("#combatTypeContainer > label > input").on("change", () => {
             updateChoices();
+        });
+        $("#showLootContainer > label > input").on("change", () => {
+            updateShowLoot();
         });
         $("#simulateButton").on("click", () => {
             simulate();
@@ -737,6 +744,7 @@ jq(function ($) {
         $("#treadsInput").val("");
         $("#distanceInput").val("");
         $("#particleChargerInput").val("");
+        $("#salvageTargetingInput").val("");
         $("#recoilInput").val("");
         $("#coreAnalyzerInput").val("");
         $("#targetAnalyzerInput").val("");
@@ -758,6 +766,7 @@ jq(function ($) {
         setStatusText("");
 
         $("#resultsContainer").addClass("not-visible");
+        $("#lootContainer").addClass("not-visible");
     }
 
     // Sets controls to disabled/enabled based on if the simulation is running
@@ -775,17 +784,13 @@ jq(function ($) {
         func($("#spoilers"));
 
         func($("#combatTypeRanged"));
-        func($("#combatTypeRanged > input"));
         func($("#combatTypeMelee"));
-        func($("#combatTypeMelee > input"));
         func($("#numFightsInput"));
         func($("#reset"));
 
         func($("#botSelect").next());
         func($("#analysisNo"));
-        func($("#analysisNo > input"));
         func($("#analysisYes"));
-        func($("#analysisYes > input"));
         func($("#damageReductionSelect").next());
 
         func($("#targetingInput"));
@@ -794,9 +799,10 @@ jq(function ($) {
         func($("#distanceInput"));
         func($("#particleChargerInput"));
         func($("#kinecelleratorSelect").next());
+        func($("#salvageTargetingInput"));
+        func($("#recoilInput"));
         func($("#cyclerSelect").next());
 
-        func($("#recoilInput"));
         func($("#overloadSelect").next());
 
         func($("#meleeAnalysisContainer > input"));
@@ -815,6 +821,12 @@ jq(function ($) {
         func($("#weaponSelectContainer button").not(".weapon-help-btn"));
         func($("#weaponSelectContainer .btn").not(".weapon-help-btn"));
         func($("#weaponSelectContainer input"));
+
+        func($("#xAxisVolleys"));
+        func($("#xAxisTime"));
+        func($("#showLootNo"));
+        func($("#showLootYes"));
+        func($("#endConditionSelect").next());
 
         // Update the cancel/simulate buttons
         if (running) {
@@ -890,6 +902,7 @@ jq(function ($) {
         // Set up initial calculation state
         const bot = botData[botName];
         const parts: SimulatorPart[] = [];
+        let partCount = 0;
         bot.componentData
             .concat(bot.armamentData)
             // For now just use the first option in each list
@@ -905,6 +918,7 @@ jq(function ($) {
                         coverage: coverage,
                         def: itemDef,
                         integrity: itemDef.integrity,
+                        initialIndex: partCount++,
                         protection: isProtection,
                         selfDamageReduction: 1,
                     });
@@ -933,6 +947,7 @@ jq(function ($) {
             parts: parts,
             regen: getRegen(bot),
             resistances: bot.resistances === undefined ? {} : bot.resistances,
+            salvage: 0,
             totalCoverage: bot.totalCoverage,
         };
 
@@ -990,6 +1005,9 @@ jq(function ($) {
         // Target Analyzer crit bonus
         const critBonus = parseIntOrDefault($("#targetAnalyzerInput").val() as string, 0);
 
+        // Salvage targeting bonus
+        const salvageTargetingBonus = parseIntOrDefault($("#salvageTargetingInput").val() as string, 0);
+
         const weapons = userWeapons.map((weapon, i) => {
             const def = weapon.def;
             let damageMin = 0;
@@ -1015,8 +1033,12 @@ jq(function ($) {
                     const kinecelleratorName = $("#kinecelleratorSelect").selectpicker("val") as any as string;
                     const kinecelleratorBonus = kinecelleratorMap[kinecelleratorName];
 
-                    // Ensure min damage can't exceed max
-                    damageMin = Math.min(Math.trunc(damageMin * kinecelleratorBonus), damageMax);
+                    damageMin = Math.trunc(damageMin * kinecelleratorBonus);
+
+                    // Min damage can increase max
+                    if (damageMin > damageMax) {
+                        damageMax = damageMin;
+                    }
                 } else if (melee) {
                     // Apply damage for melee analyses/force boosters (2)
                     let minDamageIncrease = 0;
@@ -1115,8 +1137,17 @@ jq(function ($) {
                 def.name != "Supercharged Sigix Terminator" &&
                 def.name != "Vortex Catalyst Activator";
 
+            let salvage = def.salvage ?? 0;
+            if (
+                salvageTargetingBonus > 0 &&
+                def.projectileCount == 1 &&
+                (def.type === ItemType.BallisticGun || def.type === ItemType.EnergyGun)
+            ) {
+                salvage += salvageTargetingBonus;
+            }
+
             const state: SimulatorWeapon = {
-                accelerated: def.type === "Energy Gun" || def.type === "Energy Cannon",
+                accelerated: def.type === ItemType.EnergyGun || def.type === ItemType.EnergyCannon,
                 accuracy: baseAccuracy,
                 baseAccuracy: baseAccuracy,
                 criticalChance: critical,
@@ -1136,6 +1167,7 @@ jq(function ($) {
                 numProjectiles: def.projectileCount,
                 overflow: !def.type.includes("Gun"),
                 overloaded: weapon.overloaded,
+                salvage: salvage,
                 spectrum: spectrum,
             };
 
@@ -1196,6 +1228,26 @@ jq(function ($) {
                   volleyTimeModifier,
               );
 
+        const itemLootStates: ItemLootState[] = [];
+        for (const part of botState.parts) {
+            itemLootStates.push({
+                item: part.def,
+                numDrops: 0,
+                totalCritRemoves: 0,
+                totalCorruptionPercent: 0,
+                totalFried: 0,
+                totalIntegrity: 0,
+            });
+        }
+
+        // Loot state
+        const lootState: LootState = {
+            numKills: 0,
+            items: itemLootStates,
+            matterBlasted: 0,
+            matterDrop: 0,
+        };
+
         // Other misc offensive state
         const offensiveState: OffensiveState = {
             armorAnalyzerChance: armorAnalyzerChance,
@@ -1234,6 +1286,7 @@ jq(function ($) {
             initialBotState: botState,
             killTus: {},
             killVolleys: {},
+            lootState: lootState,
             offensiveState: offensiveState,
             tus: 0,
             weapons: weapons,
@@ -1313,7 +1366,135 @@ jq(function ($) {
 
     // Updates the chart based on the current simulation state
     function updateChart(state: SimulatorState) {
+        function getClassHighGood(value: number) {
+            if (value <= 0.25) {
+                return "range-red";
+            } else if (value <= 0.5) {
+                return "range-orange";
+            } else if (value <= 0.75) {
+                return "range-yellow";
+            } else {
+                return "range-green";
+            }
+        }
+        function getClassHighBad(value: number) {
+            if (value <= 0.25) {
+                return "range-green";
+            } else if (value <= 0.5) {
+                return "range-yellow";
+            } else if (value <= 0.75) {
+                return "range-orange";
+            } else {
+                return "range-red";
+            }
+        }
+
         const numSimulations = getNumSimulations();
+
+        // Update loot boxes
+        // Do this even if currently hidden so it can be flipped on without re-running sim
+        const lootContainer = $("#lootContainer");
+        lootContainer.empty();
+        updateShowLoot();
+
+        // Show corruption/crits for all parts if any has relevant stats for consistency
+        const showCorruption = state.lootState.items.find((item) => item.totalCorruptionPercent > 0) !== undefined;
+        const showCrits = state.lootState.items.find((item) => item.totalCritRemoves > 0) !== undefined;
+
+        // Add matter first
+        const matterDropAmount = state.lootState.matterDrop / state.lootState.numKills;
+        const matterBlastedAmount = state.lootState.matterBlasted / state.lootState.numKills;
+
+        // Create HTML
+        const boxContainer = $(`<div class = "loot-box mx-1 my-1"></div>`);
+        const itemName = $(
+            `<span class="loot-box-part-name mx-1">Matter <span class="no-wrap">[<img src="${getItemImageName(
+                getItem("Matter"),
+            )}"></img>]</span></span>`,
+        );
+        const contentGrid = $(`<grid class = "loot-box-content-grid"></grid>`);
+        const matterDropAmountLabel = $(`<span>Avg. Death Drop</span>`);
+        const matterDropAmountValue = $(
+            `<span class = "${getClassHighGood(
+                matterDropAmount / state.botState.def.salvageHigh,
+            )}">${matterDropAmount.toFixed(1)}/${state.botState.def.salvagePotential}</span>`,
+        );
+        const matterBlastedAmountLabel = $(`<span>Avg. Blasted Off</span>`);
+        const matterBlastedAmountValue = $(`<span>${matterBlastedAmount.toFixed(1)}</span>`);
+
+        // Add to DOM
+        lootContainer.append(boxContainer[0]);
+        boxContainer.append(itemName[0]);
+        boxContainer.append(contentGrid[0]);
+        contentGrid.append(matterDropAmountLabel[0]);
+        contentGrid.append(matterDropAmountValue[0]);
+
+        if (matterBlastedAmount > 0) {
+            contentGrid.append(matterBlastedAmountLabel[0]);
+            contentGrid.append(matterBlastedAmountValue[0]);
+        }
+
+        // Update items
+        for (const item of state.lootState.items) {
+            // Calculate numbers/percentages
+            const dropRatePercent = (item.numDrops / state.lootState.numKills) * 100;
+            const averageDropIntegrity = item.totalIntegrity > 0 ? item.totalIntegrity / item.numDrops : 0;
+            const averageCorruptionGain = item.totalCorruptionPercent / item.numDrops;
+            const friedPercent = (item.totalFried / state.lootState.numKills) * 100;
+            const critRatePercent = (item.totalCritRemoves / item.numDrops) * 100;
+
+            // Create HTML
+            const boxContainer = $(`<div class = "loot-box mx-1 my-1"></div>`);
+            const itemName = $(
+                `<span class="loot-box-part-name mx-1">${
+                    item.item.name
+                } <span class="no-wrap">[<img src="${getItemImageName(item.item)}"></img>]</span></span>`,
+            );
+            const contentGrid = $(`<grid class = "loot-box-content-grid"></grid>`);
+            const dropRateLabel = $(`<span>Drop Rate</span>`);
+            const dropRateValue = $(
+                `<span class = "${getClassHighGood(dropRatePercent / 70)}">${dropRatePercent.toFixed(1)}%</span>`,
+            );
+            const dropIntegrityLabel = $(`<span>Avg. Integrity</span>`);
+            const dropIntegrityValue = $(
+                `<span class = "${getClassHighGood(
+                    averageDropIntegrity / item.item.integrity,
+                )}">${averageDropIntegrity.toFixed(1)}/${item.item.integrity}</span>`,
+            );
+            const corruptionGainLabel = $(`<span>Avg. Corruption</span>`);
+            const corruptionGainValue = $(
+                `<span class = "${getClassHighBad(averageCorruptionGain / 7.5)}">${averageCorruptionGain.toFixed(
+                    1,
+                )}%</span>`,
+            );
+            const friedRateLabel = $(`<span>Fried Rate</span>`);
+            const friedRateValue = $(
+                `<span class = "${getClassHighBad(friedPercent / 40)}">${friedPercent.toFixed(1)}%</span>`,
+            );
+            const critRateLabel = $(`<span>Crit Off Rate</span>`);
+            const critRateValue = $(`<span>${critRatePercent.toFixed(1)}%</span>`);
+
+            // Add to DOM
+            lootContainer.append(boxContainer[0]);
+            boxContainer.append(itemName[0]);
+            boxContainer.append(contentGrid[0]);
+            contentGrid.append(dropRateLabel[0]);
+            contentGrid.append(dropRateValue[0]);
+            contentGrid.append(dropIntegrityLabel[0]);
+            contentGrid.append(dropIntegrityValue[0]);
+
+            if (showCorruption) {
+                contentGrid.append(corruptionGainLabel[0]);
+                contentGrid.append(corruptionGainValue[0]);
+                contentGrid.append(friedRateLabel[0]);
+                contentGrid.append(friedRateValue[0]);
+            }
+
+            if (showCrits) {
+                contentGrid.append(critRateLabel[0]);
+                contentGrid.append(critRateValue[0]);
+            }
+        }
 
         // Calculate data, round to the given number of decimal places and
         // ignore values smaller to reduce clutter
@@ -1477,5 +1658,15 @@ jq(function ($) {
         $("#weaponSelectContainer").empty();
         addWeaponSelect(defaultWeapon);
         addWeaponSelect("");
+    }
+
+    // Updates visibility of the loot boxes
+    function updateShowLoot() {
+        const showLoot = $("#showLootYes").hasClass("active");
+        if (showLoot) {
+            $("#lootContainer").removeClass("not-visible");
+        } else {
+            $("#lootContainer").addClass("not-visible");
+        }
     }
 });

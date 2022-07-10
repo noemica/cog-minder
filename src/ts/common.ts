@@ -991,7 +991,8 @@ export function getItem(itemName: string): Item {
     throw `${itemName} not a valid item`;
 }
 
-function getItemImageName(item: Item) {
+// Gets the image name of an item
+export function getItemImageName(item: Item): string {
     return `game_sprites/${item.type}.png`;
 }
 
@@ -1177,7 +1178,7 @@ export async function initData(
                     explosionDamageMin: parseIntOrDefault(item["Explosion Damage Min"], 0),
                     explosionDisruption: parseIntOrDefault(item["Explosion Disruption"], 0),
                     explosionHeatTransfer: item["Explosion Heat Transfer"],
-                    explosionSalvage: item["Explosion Salvage"],
+                    explosionSalvage: parseIntOrDefault(item["Explosion Salvage"], 0),
                     explosionSpectrum: item["Explosion Spectrum"],
                     explosionType: item["Explosion Type"],
                     index: index,
@@ -1452,6 +1453,22 @@ export async function initData(
                           time: bot["Fabrication Time"] as string,
                       };
 
+            // Parse numerical salvage values out
+            let salvageLow: number;
+            let salvageHigh: number;
+            if (bot["Salvage Potential"].includes("~")) {
+                const salvageArray = bot["Salvage Potential"]
+                    .split("~")
+                    .map((s) => s.trim())
+                    .map((s) => parseInt(s));
+
+                salvageLow = salvageArray[0];
+                salvageHigh = salvageArray[1];
+            } else {
+                salvageLow = parseInt(bot["Salvage Potential"]);
+                salvageHigh = salvageLow;
+            }
+
             const newBot: Bot = {
                 armament: bot.Armament ?? [],
                 armamentData: armamentData,
@@ -1482,6 +1499,8 @@ export async function initData(
                 profile: bot.Profile,
                 rating: bot.Rating,
                 resistances: bot.Resistances,
+                salvageHigh: salvageHigh,
+                salvageLow: salvageLow,
                 salvagePotential: bot["Salvage Potential"],
                 spotPercent: bot["Spot %"] ?? "100",
                 size: bot["Size Class"],
