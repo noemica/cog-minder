@@ -1398,7 +1398,8 @@ jq(function ($) {
         updateShowLoot();
 
         // Show corruption/crits for all parts if any has relevant stats for consistency
-        const showCorruption = state.lootState.items.find((item) => item.totalCorruptionPercent > 0) !== undefined;
+        const showCorruption =
+            state.lootState.items.find((item) => item.totalCorruptionPercent > 0 || item.totalFried > 0) !== undefined;
         const showCrits = state.lootState.items.find((item) => item.totalCritRemoves > 0) !== undefined;
 
         // Add matter first
