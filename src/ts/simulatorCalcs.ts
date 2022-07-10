@@ -165,11 +165,20 @@ function applyDamage(
 
     // Apply any additional damage reduction (10)
     const part = getDefensiveStatePart(botState.defensiveState.damageReduction);
-    const multiplier = part != undefined ? part.reduction : 1;
 
-    chunks.forEach((chunk) => {
-        chunk.realDamage = Math.trunc(chunk.originalDamage * multiplier);
-    });
+    if (part !== undefined) {
+        const multiplier = part != undefined ? part.reduction : 1;
+
+        if (part.remote) {
+            chunks.forEach((chunk) => {
+                chunk.realDamage = chunk.originalDamage - Math.trunc(chunk.originalDamage * (1 - multiplier));
+            });
+        } else {
+            chunks.forEach((chunk) => {
+                chunk.realDamage = Math.trunc(chunk.originalDamage * multiplier);
+            });
+        }
+    }
 
     function applyEngineExplosion(part: SimulatorPart) {
         if (part.def.slot !== "Power") {
@@ -709,6 +718,7 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
             // Force field-like part
             state.damageReduction.push({
                 reduction: (part.def.specialProperty!.trait as DamageReduction).multiplier,
+                remote: (part.def.specialProperty!.trait as DamageReduction).remote,
                 part: part,
             });
         } else if (hasActiveSpecialProperty(part.def, true, "DamageResists")) {
@@ -733,11 +743,13 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
     // Sort damage reduction (11)
     if (externalDamageReduction in externalDamageReductionMap) {
         const reduction = externalDamageReductionMap[externalDamageReduction];
+        const remote = externalDamageReduction.includes("Remote");
 
         if (state.damageReduction.length === 0) {
             // If no other damage reduction no need to sort
             state.damageReduction.push({
                 reduction: reduction,
+                remote: remote,
                 part: {
                     armorAnalyzedCoverage: 0,
                     coverage: 0,
@@ -756,6 +768,7 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
             if (newIndex < existingIndex) {
                 state.damageReduction.unshift({
                     reduction: reduction,
+                    remote: remote,
                     part: {
                         armorAnalyzedCoverage: 0,
                         coverage: 0,
@@ -768,6 +781,7 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
                 });
             } else {
                 state.damageReduction.push({
+                    remote: remote,
                     reduction: reduction,
                     part: {
                         armorAnalyzedCoverage: 0,

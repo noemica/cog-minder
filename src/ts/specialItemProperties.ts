@@ -46,24 +46,42 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Exp. Corruption Guard": { active: "Part Active", trait: { kind: "CorruptionReduce", amount: 20 } },
 
     // Damage reduction
-    "Shield Generator": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
-    "Imp. Shield Generator": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
-    "Adv. Shield Generator": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
-    "Exp. Shield Generator": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
-    "Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
-    "Imp. Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
-    "Adv. Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75 } },
-    "Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
-    "Imp. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
-    "Adv. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
-    "Exp. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
-    "Remote Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
-    "Imp. Remote Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
-    "Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
-    "Imp. Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
-    "AEGIS Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5 } },
-    "7V-RTL's Ultimate Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.25 } },
-    "Vortex Field Projector": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.25 } },
+    "Shield Generator": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: false } },
+    "Imp. Shield Generator": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.75, remote: false },
+    },
+    "Adv. Shield Generator": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.75, remote: false },
+    },
+    "Exp. Shield Generator": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.75, remote: false },
+    },
+    "Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: true } },
+    "Imp. Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: true } },
+    "Adv. Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: true } },
+    "Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: false } },
+    "Imp. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: false } },
+    "Adv. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: false } },
+    "Exp. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: false } },
+    "Remote Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
+    "Imp. Remote Force Field": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.5, remote: true },
+    },
+    "Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
+    "Imp. Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
+    "AEGIS Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
+    "7V-RTL's Ultimate Field": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.25, remote: false },
+    },
+    "Vortex Field Projector": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.25, remote: false },
+    },
 
     // Damage resists
     // EM

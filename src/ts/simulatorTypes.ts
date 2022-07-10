@@ -37,6 +37,7 @@ export type CorruptionReductionPart = SpecialPart & {
 
 export type DamageReductionPart = SpecialPart & {
     reduction: number;
+    remote: boolean;
 };
 
 export type RangedAvoidPart = SpecialPart & {
