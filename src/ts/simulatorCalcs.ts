@@ -166,18 +166,16 @@ function applyDamage(
     // Apply any additional damage reduction (10)
     const part = getDefensiveStatePart(botState.defensiveState.damageReduction);
 
-    if (part !== undefined) {
-        const multiplier = part != undefined ? part.reduction : 1;
+    const multiplier = part != undefined ? part.reduction : 1;
 
-        if (part.remote) {
-            chunks.forEach((chunk) => {
-                chunk.realDamage = chunk.originalDamage - Math.trunc(chunk.originalDamage * (1 - multiplier));
-            });
-        } else {
-            chunks.forEach((chunk) => {
-                chunk.realDamage = Math.trunc(chunk.originalDamage * multiplier);
-            });
-        }
+    if (part !== undefined && part.remote) {
+        chunks.forEach((chunk) => {
+            chunk.realDamage = chunk.originalDamage - Math.trunc(chunk.originalDamage * (1 - multiplier));
+        });
+    } else {
+        chunks.forEach((chunk) => {
+            chunk.realDamage = Math.trunc(chunk.originalDamage * multiplier);
+        });
     }
 
     function applyEngineExplosion(part: SimulatorPart) {
