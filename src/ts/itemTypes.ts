@@ -132,9 +132,11 @@ export type EnergyFilter = { kind: "EnergyFilter"; percent: number };
 export type EnergyStorage = { kind: "EnergyStorage"; storage: number };
 export type FusionCompressor = { kind: "FusionCompressor"; energyPerTurn: number };
 export type HeatDissipation = { kind: "HeatDissipation"; dissipation: number };
+export type LauncherLoader = { kind: "LauncherLoader" };
 export type MassSupport = { kind: "MassSupport"; support: number };
 export type Metafiber = { kind: "Metafiber" };
 export type PowerAmplifier = { kind: "PowerAmplifier"; percent: number };
+export type QuantumCapacitor = { kind: "QuantumCapacitor" };
 export type RangedAvoid = { kind: "RangedAvoid"; avoid: number };
 export type RangedWeaponCycling = { kind: "RangedWeaponCycling"; amount: number };
 export type SelfReduction = { kind: "SelfReduction"; shielding: number };
@@ -155,9 +157,11 @@ export type SpecialPropertyType =
     | EnergyStorage
     | FusionCompressor
     | HeatDissipation
+    | LauncherLoader
     | MassSupport
     | Metafiber
     | PowerAmplifier
+    | QuantumCapacitor
     | RangedAvoid
     | RangedWeaponCycling
     | SelfReduction
@@ -178,9 +182,11 @@ export type SpecialPropertyTypeName =
     | "EnergyStorage"
     | "FusionCompressor"
     | "HeatDissipation"
+    | "LauncherLoader"
     | "MassSupport"
     | "Metafiber"
     | "PowerAmplifier"
+    | "QuantumCapacitor"
     | "RangedAvoid"
     | "RangedWeaponCycling"
     | "SelfReduction"

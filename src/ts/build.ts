@@ -1355,15 +1355,24 @@ title="Paste the entire a run dump or scores .txt file below">Paste run dump bel
 
             tusPerVolley = actuatorModifier * ((activeWeapons[0].delay ?? 0) + volleyTimeMap[1]);
         } else {
-            const cyclerParts = parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "RangedWeaponCycling"));
             let cyclerModifier = 0;
             // Semi-hacky, assumes that 50% cyclers are no-stack and all others stack up to 30%
             if (
-                cyclerParts.find((p) => (p.part.specialProperty!.trait as RangedWeaponCycling).amount === 0.5) !==
-                undefined
+                parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "QuantumCapacitor")).length > 0 &&
+                activeWeapons.length === 1 &&
+                (activeWeapons[0].type === ItemType.EnergyGun || activeWeapons[0].type === ItemType.EnergyCannon)
+            ) {
+                cyclerModifier = 0.5;
+            } else if (
+                parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "LauncherLoader")).length > 0 &&
+                activeWeapons.length === 1 &&
+                activeWeapons[0].type === ItemType.Launcher
             ) {
                 cyclerModifier = 0.5;
             } else {
+                const cyclerParts = parts.filter((p) =>
+                    hasActiveSpecialProperty(p.part, p.active, "RangedWeaponCycling"),
+                );
                 cyclerParts.forEach(
                     (p) => (cyclerModifier += (p.part.specialProperty!.trait as RangedWeaponCycling).amount),
                 );

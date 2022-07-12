@@ -278,8 +278,8 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Imp. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.2 } },
     "Adv. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.25 } },
     "Exp. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.3 } },
-    "Launcher Loader": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.5 } },
-    "Quantum Capacitor": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.5 } },
+    "Launcher Loader": { active: "Part Active", trait: { kind: "LauncherLoader" } },
+    "Quantum Capacitor": { active: "Part Active", trait: { kind: "QuantumCapacitor" } },
 
     // Self-damage reduction
     "1C-UTU's Buckler": { active: "Part Active", trait: { kind: "SelfReduction", shielding: 0.5 } },
