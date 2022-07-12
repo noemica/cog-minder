@@ -1359,7 +1359,7 @@ title="Paste the entire a run dump or scores .txt file below">Paste run dump bel
             let cyclerModifier = 0;
             // Semi-hacky, assumes that 50% cyclers are no-stack and all others stack up to 30%
             if (
-                cyclerParts.find((p) => (p.part.specialProperty!.trait as RangedWeaponCycling).amount === 50) !==
+                cyclerParts.find((p) => (p.part.specialProperty!.trait as RangedWeaponCycling).amount === 0.5) !==
                 undefined
             ) {
                 cyclerModifier = 0.5;
