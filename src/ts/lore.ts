@@ -222,6 +222,44 @@ jq(function ($) {
         },
     };
 
+    // Initialize the page state
+    function init() {
+        createHeader("Lore", $("#headerContainer"));
+        registerDisableAutocomplete($(document));
+
+        // Set initial state
+        resetInput();
+
+        // Register handlers
+        $("#spoilersDropdown > button").on("click", (e) => {
+            const state = $(e.target).text();
+            $("#spoilers").text(state);
+            setSpoilersState(state);
+            ($("#spoilersDropdown > button") as any).tooltip("hide");
+            updateLoreTables();
+        });
+        $("#reset").on("click", () => {
+            ($("#reset") as any).tooltip("hide");
+            resetInput();
+        });
+        $("#nameNumberInput").on("input", updateLoreTables);
+        $("#contentInput").on("input", updateLoreTables);
+        $("#groupInput").on("input", updateLoreTables);
+
+        // Enable tooltips
+        ($('[data-toggle="tooltip"]') as any).tooltip();
+    }
+
+    // Resets all filters
+    function resetInput() {
+        // Reset text inputs
+        $("#nameNumberInput").val("");
+        $("#contentInput").val("");
+        $("#groupInput").val("");
+
+        updateLoreTables();
+    }
+
     // Updates all lore tables based on the spoiler level and user inputs
     function updateLoreTables() {
         // Remove old tables
@@ -321,43 +359,5 @@ jq(function ($) {
             .join("");
         tableBody.append($(tableHtml) as any);
         (tableBody.find('[data-toggle="tooltip"]') as any).tooltip();
-    }
-
-    // Initialize the page state
-    function init() {
-        createHeader("Lore", $("#headerContainer"));
-        registerDisableAutocomplete($(document));
-
-        // Set initial state
-        resetInput();
-
-        // Register handlers
-        $("#spoilersDropdown > button").on("click", (e) => {
-            const state = $(e.target).text();
-            $("#spoilers").text(state);
-            setSpoilersState(state);
-            ($("#spoilersDropdown > button") as any).tooltip("hide");
-            updateLoreTables();
-        });
-        $("#reset").on("click", () => {
-            ($("#reset") as any).tooltip("hide");
-            resetInput();
-        });
-        $("#nameNumberInput").on("input", updateLoreTables);
-        $("#contentInput").on("input", updateLoreTables);
-        $("#groupInput").on("input", updateLoreTables);
-
-        // Enable tooltips
-        ($('[data-toggle="tooltip"]') as any).tooltip();
-    }
-
-    // Resets all filters
-    function resetInput() {
-        // Reset text inputs
-        $("#nameNumberInput").val("");
-        $("#contentInput").val("");
-        $("#groupInput").val("");
-
-        updateLoreTables();
     }
 });

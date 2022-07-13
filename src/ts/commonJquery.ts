@@ -74,6 +74,15 @@ const headerLookup: Record<PageType, HeaderInfo> = {
         spoilers: true,
         beta11Check: true,
     },
+    RIF: {
+        name: "RIF",
+        pageName: "rif.html",
+        helpText:
+            "A RIF ability/hacks reference. This page lists all RIF abilities and their effects, " +
+            "as well as all Relay Coupler-enabled hacks and their effects.",
+        spoilers: false,
+        beta11Check: false,
+    },
     Simulator: {
         name: "Simulator",
         pageName: "simulator.html",

@@ -1,0 +1,60 @@
+<!doctype html>
+
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Cogmind RIF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Cogmind RIF ability/hack reference">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="ts/rif.ts"></script>
+</head>
+
+<body>
+    <!-- Header/Title -->
+    <div id="headerContainer" class="container-xl">
+    </div>
+
+    <div class="container-xl">
+        <!-- User inputs -->
+        <div class="input-group">
+            <!-- Name filter -->
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="The name of a RIF ability to search for. Only RIF abilities with names containing this value will be shown.">
+                <span class="input-group-text">Ability Name</span>
+            </div>
+            <input id="nameInput" type="text" class="form-control" placeholder="Any">
+
+            <!-- Description filter -->
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The RIF ability description to search for. Only RIF abilities with descriptions containing this value will be shown.">
+                <span class="input-group-text">Ability Description</span>
+            </div>
+            <input id="descriptionInput" type="text" class="form-control" placeholder="Any">
+
+            <!-- Reset button -->
+            <button id="reset" type="button" class="btn ml-3" data-toggle="tooltip"
+                title="Resets all filters to their default (unfiltered) state">Reset</button>
+        </div>
+
+        <!-- Ability table -->
+        <table class="rif-ability-table my-4">
+            <thead>
+                <tr class="rif-ability-header-row">
+                    <th data-toggle="tooltip" title="The name of the RIF ability.">Ability Name</th>
+                    <th data-toggle="tooltip" title="How many different levels the ability can have.">Levels</th>
+                    <th data-toggle="tooltip" title="The effect of the ability.">Description</th>
+                </tr>
+            </thead>
+            <tbody id="rifAbilityTableBody">
+            </tbody>
+        </table>
+    </div>
+
+</body>

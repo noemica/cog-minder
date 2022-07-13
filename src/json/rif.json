@@ -1,0 +1,79 @@
+{
+    "Abilities": [
+        {
+            "Name": "Alert ID Control",
+            "Levels": "1",
+            "Description": "Block the influence of kills by allied former 0b10 bots while matching Coupler attached."
+        },
+        {
+            "Name": "Autoassimilate",
+            "Levels": "2",
+            "Description": "(10/15)% chance to automatically rewrite all target system data, permanently converting it into a fully controllable ally. Requires 6 turns to complete the process. Checked once per visible combat bot while matching Coupler attached, separately for each Coupler."
+        },
+        {
+            "Name": "Autooverride",
+            "Levels": "3",
+            "Description": "(10/20/30)% chance to automatically trick target system into believing it is allied with Cogmind. After 10 turns the network will perform an automated quickboot to restore it to normal, a process which takes anywhre from 5 to 10 turns. Checked once per visible combat bot while matching Coupler attached, separately for each Coupler."
+        },
+        {
+            "Name": "Command Fork",
+            "Levels": "3",
+            "Description": "(33/66/100)% chance to duplicate each hack, also applying it to the visible applicable target nearest to the initial target, at no extra cost. Must have a matching Coupler attached for the fork target. Compatible with most hacks, excluding generate_echo, map_walls, map_earth, map_route, or those that would have no meaningful effect."
+        },
+        {
+            "Name": "Coupler Efficiency",
+            "Levels": "3",
+            "Description": "+(6/12/20) effective code value to all Relay Couplers."
+        },
+        {
+            "Name": "Crosswire",
+            "Levels": "1",
+            "Description": "Convert Swarmer, Grunt, Brawler, and Duelist Couplers to Relay Coupler [C], usable on any common 0b10 bot of these types."
+        },
+        {
+            "Name": "Hotswap",
+            "Levels": "1",
+            "Description": "Automatically swap in additional matching couplers in sequence from inventory when effective code value of current attached Couplers insufficient for desired hack."
+        },
+        {
+            "Name": "Patrol Navigation",
+            "Levels": "1",
+            "Description": "Know routes of patrol squads within a range of 24 while matching Coupler attached."
+        },
+        {
+            "Name": "Program Shield",
+            "Levels": "1",
+            "Description": "Fully prevent Programmers from hacking allied former 0b10 combat bots while matching Coupler attached (no range or sight limitations)."
+        },
+        {
+            "Name": "Robot Detection",
+            "Levels": "1",
+            "Description": "Know positions of combat bots within a range of 24 while matching Coupler attached. Also distinguishes squad leaders (L)."
+        },
+        {
+            "Name": "Signal Jamming",
+            "Levels": "1",
+            "Description": "Blocks local transmissions from visible hostiles while matching Coupler attached, making it impossible for them to share information about your current position. Also prevents calls for reinforcements, and suppresses alarm traps."
+        },
+        {
+            "Name": "Structural Interface",
+            "Levels": "1",
+            "Description": "Reveal any hidden door or phasewall on sight, and pass through phasewalls normally."
+        },
+        {
+            "Name": "Threat Obfuscation",
+            "Levels": "3",
+            "Description": "All influence increases reduced by (25/40/50)%."
+        },
+        {
+            "Name": "Watcher Feeds",
+            "Levels": "1",
+            "Description": "Tap into visual feed data of all 0b10 watchers within a range of 22 while at least one Relay Coupler [NC] is attached."
+        },
+        {
+            "Name": "Zone Cloak",
+            "Levels": "2",
+            "Description": "Extermination squads require an average (75/150) more turns before they can pinpoint your position for dispatching."
+        }
+    ]
+}
