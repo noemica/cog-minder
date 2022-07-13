@@ -411,8 +411,12 @@ body {
 }
 
 .hack-category-row {
-    line-height: 3.0rem;
     border: none !important;
+}
+
+.hack-category-row > * {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .lore-category-row {

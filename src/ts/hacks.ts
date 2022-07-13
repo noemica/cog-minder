@@ -34,6 +34,7 @@ jq(function ($) {
     type Machine = {
         dataCoreApplies: boolean;
         name: string;
+        imageName: string;
         hacks: Hack[];
     };
 
@@ -81,6 +82,7 @@ jq(function ($) {
                 { name: "Trojan(Prioritize)", description: "Double the speed of fabrication for the current fabricator.", baseChance: 30, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
                 { name: "Trojan(Report)", description: "Reports when any fabricator on the floor is finished building something, as well as its position.", baseChance: 60, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
             ],
+            imageName: "game_sprites/Fabricator.png",
         },
         {
             name: "Garrison",
@@ -99,6 +101,7 @@ jq(function ($) {
                 { name: "Trojan(Watchers)", description: "Continuously report the position of all Watcher class robots on the current floor.", baseChance: 50, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
                 { name: "Unlock", description: "Open the entrance to this garrison.", baseChance: 60, indirect: Indirect.Never },
             ],
+            imageName: "game_sprites/Garrison.png",
         },
         {
             name: "Recycling",
@@ -115,6 +118,7 @@ jq(function ($) {
                 { name: "Trojan(Recyclers)", description: "Continuously report the position of all Recycler class robots on the current floor.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
                 { name: "Trojan(Reject)", description: "Prevent parts from being deposited into the recycling machine. Instead, any inserted parts are deposited onto the floor.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
             ],
+            imageName: "game_sprites/Recycling.png",
         },
         {
             name: "Repair Station",
@@ -140,6 +144,7 @@ jq(function ($) {
                 { name: "Refit", description: "Analyze build configuration and attach backup components to restore vital functionality.", baseChance: 35, indirect: Indirect.Never },
                 { name: "Trojan(Mechanics)", description: "Continuously report the position of all Mechanic class robots on the current floor.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
             ],
+            imageName: "game_sprites/Repair Station.png",
         },
         {
             name: "Scanalyzer",
@@ -166,6 +171,7 @@ jq(function ($) {
                 { name: "Scanalyze - rating 9*", description: "Analyze the contained part to obtain its schematic for use at a Fabricator.", baseChance: 28, indirect: Indirect.Never },
                 { name: "Trojan(Researchers)", description: "Continuously report the position of all Researcher class robots on the current floor.", baseChance: 50, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
             ],
+            imageName: "game_sprites/Scanalyzer.png",
         },
         {
             name: "Terminal",
@@ -254,6 +260,7 @@ jq(function ($) {
                 { name: "Trojan(Operators)", description: "Continuously report the position of all Operator class robots on the current floor.", baseChance: 40, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
                 { name: "Trojan(Track)", description: "Continuously report the position of all robots within a short distance of the terminal. The radius is 6 for a level 1 terminal, 8 for a level 2, and 10 for a level 3.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
             ],
+            imageName: "game_sprites/Terminal.png",
         },
         {
             name: "Terminal - Door",
@@ -279,6 +286,7 @@ jq(function ($) {
                 { name: "Open - Storage medium value vault", description: "Open the non-automatic door associated with this terminal.", baseChance: 60, indirect: Indirect.Never, level1DirectOnly: true },
                 { name: "Open - Storage high value vault", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true },
             ],
+            imageName: "game_sprites/Door Terminal.png",
         },
     ];
     /* eslint-enable prettier/prettier */
@@ -391,7 +399,7 @@ jq(function ($) {
                     })
                     .join("");
 
-                const machineRow = `<tr><td class="hack-category-row">${machine.name}</td></tr>`;
+                const machineRow = `<tr><td class="hack-category-row"><p>${machine.name}</p><img src="${machine.imageName}"></img></td></tr>`;
 
                 return machineRow + hackRowsHtml;
             })
