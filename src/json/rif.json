@@ -75,5 +75,580 @@
             "Levels": "2",
             "Description": "Extermination squads require an average (75/150) more turns before they can pinpoint your position for dispatching."
         }
+    ],
+    "Hacks": [
+        {
+            "CategoryName": "Combat",
+            "Targets": [
+                "Behemoth",
+                "Brawler",
+                "Cutter",
+                "Demolisher",
+                "Duelist",
+                "Grunt",
+                "Heavy",
+                "Hunter",
+                "Programmer",
+                "Sentry",
+                "Specialist",
+                "Swarmer"
+            ],
+            "Hacks": [
+                {
+                    "Name": "parse_system",
+                    "Rif": false,
+                    "Charges": 0,
+                    "Description": "Read system data to learn more about its current state and capabilities. Also identifies all parts, and adds them to the item gallery if not already there. Parsing friendlies will not anger them."
+                },
+                {
+                    "Name": "find_shortcuts",
+                    "Rif": true,
+                    "Charges": 1,
+                    "Description": "Reveal and label all hidden doors within a range of 50."
+                },
+                {
+                    "Name": "focus_fire",
+                    "Rif": true,
+                    "Charges": 1,
+                    "Description": "Force system to prioritize attacking Cogmind whenever possible."
+                },
+                {
+                    "Name": "scatter_targeting",
+                    "Rif": true,
+                    "Charges": 1,
+                    "Description": "Offset targeting algorithms to approximately halve their chance of achieving optimal aim."
+                },
+                {
+                    "Name": "reboot_propulsion",
+                    "Rif": true,
+                    "Charges": 2,
+                    "Description": "Render propulsion unusable for 15 turns while the control subsystem reboots."
+                },
+                {
+                    "Name": "mark_system",
+                    "Rif": true,
+                    "Charges": 2,
+                    "Description": "Mark this bot to make it the most attractive target to all allies, as well as improve accuracy against it by 10%."
+                },
+                {
+                    "Name": "spike_heat",
+                    "Rif": true,
+                    "Charges": 2,
+                    "Description": "Destabilize power systemt to induce a massive surge of heat."
+                },
+                {
+                    "Name": "wipe_record",
+                    "Rif": true,
+                    "Charges": 2,
+                    "Description": "Remove any record of Cogmind from memory, and block new Cogmind records from being created for 10 turns."
+                },
+                {
+                    "Name": "tweak_propulsion",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Rewrite sections of the propulsion control subsystem to permanently halve movement speed."
+                },
+                {
+                    "Name": "link_complain",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Tap into system's combat decision-making processes in real time, increasing your accuracy and damage against this bot by 25% while also impairing its accuracy against you by 25%."
+                },
+                {
+                    "Name": "broadcast_data",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Openly share the local combat network's defensive coordination values, giving yourself and all allies 25% better accuracy against this and all 0b10 combat bots within a range of 3. Effect stacks when installed on multiple bots."
+                },
+                {
+                    "Name": "disrupt_area",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Actively interface with the local combat network's offensive coordination calculations, reducing the accuracy of this bot by 25%, and that of all 0b10 combat bots within a range of 3. Effect stacks when installed on multiple bots."
+                },
+                {
+                    "Name": "overload_power",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Cause power source to explode. Process takes 4-6 turns to reach critical point."
+                },
+                {
+                    "Name": "find_garrison",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Locate the nearest garrison access."
+                },
+                {
+                    "Name": "show_paths",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Highlight all current patrol squad routes. Only effective when targeting a patrol squad leader."
+                },
+                {
+                    "Name": "link_fov",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Tap into system's visual feed for 100 turns. Must remain within a range of 20 to maintain the link."
+                },
+                {
+                    "Name": "disable_weapons",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Disable all weapon systems for 20 turns."
+                },
+                {
+                    "Name": "reboot_system",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Force a complete reboot. The entire sequence requires anywhere from 15 to 25 turns to complete."
+                },
+                {
+                    "Name": "go_dormant",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Wipe memory and force immediate dormant state."
+                },
+                {
+                    "Name": "amplify_resonance",
+                    "Rif": true,
+                    "Charges": 7,
+                    "Description": "Cause power source to explode when adjacent to any other active power source. Also causes the adjacent active power source to explode. Checked once per turn."
+                },
+                {
+                    "Name": "overwrite_iff",
+                    "Rif": true,
+                    "Charges": 7,
+                    "Description": "Trick system into believing it is allied with Cogmind. After 10 turns the network will perform an automated quickboot to restore it to normal, a process which takes anywhere from 5 to 10 turns."
+                },
+                {
+                    "Name": "streamctrl_high",
+                    "Rif": true,
+                    "Charges": 10,
+                    "Description": "Hijack the control node to force system to act as an ally. Must remain within a range of 5 to maintain the connection. This bot will follow while in this mode."
+                },
+                {
+                    "Name": "formatsys_high",
+                    "Rif": true,
+                    "Charges": 13,
+                    "Description": "Rewrite all system data, permanently converting it into a fully controllable ally. Requires 6 turns to complete the process."
+                }
+            ]
+        },
+        {
+            "CategoryName": "Noncombat (NC) Yellow",
+            "Targets": [
+                "Operator",
+                "Researcher",
+                "Watcher"
+            ],
+            "Hacks": [
+                {
+                    "Name": "parse_system",
+                    "Rif": false,
+                    "Charges": 0,
+                    "Description": "Read system data to learn more about its current state and capabilities. Also identifies all parts, and adds them to the item gallery if not already there. Parsing friendlies will not anger them."
+                },
+                {
+                    "Name": "overload_power",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Cause power source to explode. Process takes 4-6 turns to reach critical point."
+                },
+                {
+                    "Name": "link_fov",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Tap into system's visual feed for 100 turns. Must remain within a range of 20 to maintain the link."
+                },
+                {
+                    "Name": "streamctrl_high",
+                    "Rif": true,
+                    "Charges": 10,
+                    "Description": "Hijack the control node to force system to act as an ally. Must remain within a range of 5 to maintain the connection. This bot will follow while in this mode."
+                },
+                {
+                    "Name": "formatsys_high",
+                    "Rif": true,
+                    "Charges": 13,
+                    "Description": "Rewrite all system data, permanently converting it into a fully controllable ally. Requires 6 turns to complete the process."
+                }
+            ]
+        },
+        {
+            "CategoryName": "Noncombat (NC) Green",
+            "Targets": [
+                "Builder",
+                "Hauler",
+                "Mechanic",
+                "Minesweeper",
+                "Operator",
+                "Protector",
+                "Recycler",
+                "Tunneler",
+                "Worker"
+            ],
+            "Hacks": [
+                {
+                    "Name": "parse_system",
+                    "Rif": false,
+                    "Charges": 0,
+                    "Description": "Read system data to learn more about its current state and capabilities. Also identifies all parts, and adds them to the item gallery if not already there. Parsing friendlies will not anger them."
+                },
+                {
+                    "Name": "no_distress",
+                    "Rif": false,
+                    "Charges": 0,
+                    "Description": "Prevent this system from generating distress signals."
+                },
+                {
+                    "Name": "generate_echo",
+                    "Rif": true,
+                    "Charges": 1,
+                    "Description": "Destabilize power systems to generate a wave of energy which can be analyzer to temporarily pinpoint robots at a distance. Beyond a range of 20 the echo becomes to weak to be useful."
+                },
+                {
+                    "Name": "overload_power",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Cause power source to explode. Process takes 4-6 turns to reach critical point."
+                },
+                {
+                    "Name": "link_fov",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Tap into system's visual feed for 100 turns. Must remain within a range of 20 to maintain the link."
+                },
+                {
+                    "Name": "streamctrl_low",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Hijack the control node to force system to act as an ally. Must remain within a range of 5 to maintain the connection. This bot will follow while in this mode."
+                },
+                {
+                    "Name": "generate_anomaly",
+                    "Rif": true,
+                    "Charges": 5,
+                    "Description": "Induce an energy anomaly resembling a long-range distress signal that will attract nearby patrols and Sentries/Heavies to investigate. Anomaly detectable up to a range of 15."
+                },
+                {
+                    "Name": "amplify_resonance",
+                    "Rif": true,
+                    "Charges": 7,
+                    "Description": "Cause power source to explode when adjacent to any other active power source. Also causes the adjacent active power source to explode. Checked once per turn."
+                },
+                {
+                    "Name": "formatsys_low",
+                    "Rif": true,
+                    "Charges": 7,
+                    "Description": "Rewrite all system data, permanently converting it into a fully controllable ally. Requires 6 turns to complete the process."
+                },
+                {
+                    "Name": "start_evac",
+                    "Rif": true,
+                    "Charges": 10,
+                    "Description": "Instruct system to follow local evacuation protocols by heading to another 0b10-controlled level."
+                }
+            ]
+        },
+        {
+            "CategoryName": "Engineer",
+            "Targets": [
+                "Builder"
+            ],
+            "Hacks": [
+                {
+                    "Name": "ignore_repairs",
+                    "Rif": true,
+                    "Charges": 0,
+                    "Description": "Block system messages regarding the repair queue."
+                },
+                {
+                    "Name": "map_walls",
+                    "Rif": true,
+                    "Charges": 2,
+                    "Description": "Reveal all walls and emergency access points within a range of 25."
+                }
+            ]
+        },
+        {
+            "CategoryName": "Hauler",
+            "Targets": [
+                "Hauler"
+            ],
+            "Hacks": [
+                {
+                    "Name": "find_fabricator",
+                    "Rif": false,
+                    "Charges": 0,
+                    "Description": "Locate the nearest Fabricator."
+                },
+                {
+                    "Name": "find_dsf",
+                    "Rif": false,
+                    "Charges": 0,
+                    "Description": "Locate the nearest DSF."
+                },
+                {
+                    "Name": "drop_inventory",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Force a complete inventory dump, fully identifying contents in the process."
+                },
+                {
+                    "Name": "recall_reinforcements",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Recall reinforcement squad requested by this Hauler."
+                },
+                {
+                    "Name": "locate_stockpiles",
+                    "Rif": true,
+                    "Charges": 10,
+                    "Description": "Mark all common part stockpiles."
+                }
+            ]
+        },
+        {
+            "CategoryName": "Mechanic",
+            "Targets": [
+                "Mechanic"
+            ],
+            "Hacks": [
+                {
+                    "Name": "find_station",
+                    "Rif": false,
+                    "Charges": 0,
+                    "Description": "Locate the nearest Repair Station."
+                },
+                {
+                    "Name": "release_backups",
+                    "Rif": true,
+                    "Charges": 2,
+                    "Description": "Force the system to release all backup parts from compressed internal storage."
+                },
+                {
+                    "Name": "deconstruct_bot",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Disassemble the nearest allied visible non-huge non-prototype 0b10 bot into its constituent parts."
+                }
+            ]
+        },
+        {
+            "CategoryName": "Operator",
+            "Targets": [
+                "Operator"
+            ],
+            "Hacks": [
+                {
+                    "Name": "check_alert",
+                    "Rif": false,
+                    "Charges": 0,
+                    "Description": "Query system for current alert level."
+                },
+                {
+                    "Name": "disarm_traps",
+                    "Rif": true,
+                    "Charges": 1,
+                    "Description": "Disarm the nearest trap array within a range of 30."
+                },
+                {
+                    "Name": "clear_repairs",
+                    "Rif": true,
+                    "Charges": 1,
+                    "Description": "Clear the sector-wide repair queue and any pending Builder orders."
+                },
+                {
+                    "Name": "clear_recycling",
+                    "Rif": true,
+                    "Charges": 1,
+                    "Description": "Clear the sector-wide part collection queue and any pending Recycler order."
+                },
+                {
+                    "Name": "reprogram_traps",
+                    "Rif": true,
+                    "Charges": 2,
+                    "Description": "Reveal and reprogram the nearest trap array within a range of 30."
+                },
+                {
+                    "Name": "locate_traps",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Reveal and mark all traps within a range of 30."
+                },
+                {
+                    "Name": "block_reporting",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Block ability to report hostiles at a Terminal."
+                },
+                {
+                    "Name": "find_terminal",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Locate the nearest Terminal."
+                },
+                {
+                    "Name": "summon_haulers",
+                    "Rif": true,
+                    "Charges": 5,
+                    "Description": "Force system's call for reinforcements to instead redirect any Haulers within a range of 50."
+                },
+                {
+                    "Name": "recall_investigation",
+                    "Rif": true,
+                    "Charges": 6,
+                    "Description": "Recall the most recently dispatched investigation squad."
+                },
+                {
+                    "Name": "purge_threat",
+                    "Rif": true,
+                    "Charges": 15,
+                    "Description": "Lower the alert level."
+                }
+            ]
+        },
+        {
+            "CategoryName": "Serf",
+            "Targets": [
+                "Worker"
+            ],
+            "Hacks": [
+                {
+                    "Name": "find_chute",
+                    "Rif": false,
+                    "Charges": 0,
+                    "Description": "Reveal and mark the chute this Worker might use if immediately tasked with disposal."
+                },
+                {
+                    "Name": "deconstruct_machine",
+                    "Rif": true,
+                    "Charges": 2,
+                    "Description": "Dismantle the nearest non-interactive machine."
+                },
+                {
+                    "Name": "hold_bot",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Latch onto the nearest visible non-prototype 0b10 bot to hold it in place. This task is automatically cancelled after 25 turns."
+                },
+                {
+                    "Name": "start_disposal",
+                    "Rif": true,
+                    "Charges": 6,
+                    "Description": "Dispose of currently held bot via a chut, if possible. Huge bots are too large to push."
+                }
+            ]
+        },
+        {
+            "CategoryName": "Recycler",
+            "Targets": [
+                "Recycler"
+            ],
+            "Hacks": [
+                {
+                    "Name": "find_recycling",
+                    "Rif": false,
+                    "Charges": 0,
+                    "Description": "Locate the nearest Recycling Unit."
+                },
+                {
+                    "Name": "ignore_parts",
+                    "Rif": true,
+                    "Charges": 0,
+                    "Description": "Block system messages regarding the part collection queue."
+                }
+            ]
+        },
+        {
+            "CategoryName": "Researcher",
+            "Targets": [
+                "Researcher"
+            ],
+            "Hacks": [
+                {
+                    "Name": "find_scanalyzer",
+                    "Rif": false,
+                    "Charges": 0,
+                    "Description": "Locate the nearest Scanalyzer."
+                },
+                {
+                    "Name": "report_prototypes",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Force system to reveal 10 new prototype IDs."
+                },
+                {
+                    "Name": "report_analyses",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Force system to reveal 3 new robot analyses."
+                },
+                {
+                    "Name": "disable_scanner",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Permanently disable an active stasis system to prevent scanning ana analysis."
+                },
+                {
+                    "Name": "report_schematics",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Force system to reveal 10 new part schematics."
+                },
+                {
+                    "Name": "locate_prototypes",
+                    "Rif": true,
+                    "Charges": 10,
+                    "Description": "Mark all prototypes and alien tech within a range of 20, also providing their IDs."
+                }
+            ]
+        },
+        {
+            "CategoryName": "Excavator",
+            "Targets": [
+                "Tunneler"
+            ],
+            "Hacks": [
+                {
+                    "Name": "map_earth",
+                    "Rif": true,
+                    "Charges": 2,
+                    "Description": "Reveal all earth within a range of 25."
+                },
+                {
+                    "Name": "randomize_corridors",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Permanently add new paths to the local complex layout."
+                }
+            ]
+        },
+        {
+            "CategoryName": "Watcher",
+            "Targets": [
+                "Watcher"
+            ],
+            "Hacks": [
+                {
+                    "Name": "mark_security",
+                    "Rif": true,
+                    "Charges": 2,
+                    "Description": "Mark all active security positions within a range of 40."
+                },
+                {
+                    "Name": "relay_feed",
+                    "Rif": true,
+                    "Charges": 5,
+                    "Description": "Permanently hook into the sensor feed system, receiving scan data transmissions from up to a range of 20 from Watcher's position."
+                },
+                {
+                    "Name": "map_route",
+                    "Rif": true,
+                    "Charges": 10,
+                    "Description": "Show scan information from along this Watcher's patrol route."
+                }
+            ]
+        }
     ]
 }

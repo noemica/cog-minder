@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Cogmind RIF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Cogmind RIF ability/hack reference">
+    <meta name="description" content="Cogmind RIF ability/bothacking reference">
 
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
@@ -22,39 +22,93 @@
     </div>
 
     <div class="container-xl">
-        <!-- User inputs -->
+        <!-- RIF ability inputs -->
         <div class="input-group">
             <!-- Name filter -->
             <div class="input-group-prepend" data-toggle="tooltip"
                 title="The name of a RIF ability to search for. Only RIF abilities with names containing this value will be shown.">
                 <span class="input-group-text">Ability Name</span>
             </div>
-            <input id="nameInput" type="text" class="form-control" placeholder="Any">
+            <input id="abilityNameInput" type="text" class="form-control" placeholder="Any">
 
             <!-- Description filter -->
             <div class="input-group-prepend ml-3" data-toggle="tooltip"
                 title="The RIF ability description to search for. Only RIF abilities with descriptions containing this value will be shown.">
                 <span class="input-group-text">Ability Description</span>
             </div>
-            <input id="descriptionInput" type="text" class="form-control" placeholder="Any">
+            <input id="abilityDescriptionInput" type="text" class="form-control" placeholder="Any">
 
             <!-- Reset button -->
             <button id="reset" type="button" class="btn ml-3" data-toggle="tooltip"
                 title="Resets all filters to their default (unfiltered) state">Reset</button>
         </div>
 
-        <!-- Ability table -->
-        <table class="rif-ability-table my-4">
-            <thead>
-                <tr class="rif-ability-header-row">
-                    <th data-toggle="tooltip" title="The name of the RIF ability.">Ability Name</th>
-                    <th data-toggle="tooltip" title="How many different levels the ability can have.">Levels</th>
-                    <th data-toggle="tooltip" title="The effect of the ability.">Description</th>
-                </tr>
-            </thead>
-            <tbody id="rifAbilityTableBody">
-            </tbody>
-        </table>
+        <!-- Bot hacking inputs -->
+        <div class="input-group mt-2">
+            <!-- Name filter -->
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="The name of a bot hack to search for. Only hacks with names containing this value will be shown.">
+                <span class="input-group-text">Hack Name</span>
+            </div>
+            <input id="hackNameInput" type="text" class="form-control" placeholder="Any">
+
+            <!-- Description filter -->
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The bot hack description to search for. Only hacks with descriptions containing this value will be shown.">
+                <span class="input-group-text">Hack Description</span>
+            </div>
+            <input id="hackDescriptionInput" type="text" class="form-control" placeholder="Any">
+
+            <!-- Target filter -->
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The bot hack target to search for. Only hacks with targets containing this value will be shown. Use &quot;Combat&quot; to search for any combat targeted hacks, or &quot;NC&quot; to search for any generic non-combat targeted hacks.">
+                <span class="input-group-text">Hack Target</span>
+            </div>
+            <input id="hackTargetInput" type="text" class="form-control" placeholder="Any">
+        </div>
+
+        <div id="abilityTable">
+            <h3 class="mt-4">Abilities</h3>
+
+            <!-- Ability table -->
+            <table class="rif-ability-table my-2">
+                <thead>
+                    <tr class="rif-ability-header-row">
+                        <th data-toggle="tooltip" title="The name of the RIF ability.">Ability Name</th>
+                        <th data-toggle="tooltip"
+                            title="How many different levels the RIF ability can have. Higher ability levels have greater effect for any effect with &gt; 1 level.">
+                            Levels</th>
+                        <th data-toggle="tooltip"
+                            title="The effect of the RIF ability. If there are multiple levels, each value separated by a / in parentheses depends on the level of the ability.">
+                            Description</th>
+                    </tr>
+                </thead>
+                <tbody id="rifAbilityTableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="hacksTable">
+            <h3 class="mt-4">Hacks</h3>
+
+            <!-- Hacks table -->
+            <table class="rif-hacks-table my-2">
+                <thead>
+                    <tr class="rif-hacks-header-row">
+                        <th data-toggle="tooltip" title="The name of the hack.">Hack Name</th>
+                        <th data-toggle="tooltip"
+                            title="Is RIF required to perform this hack? Some hacks are available without a RIF install.">
+                            RIF only</th>
+                        <th data-toggle="tooltip"
+                            title="The number of charges the hack will consume. If 0, no Relay Coupler is required for the hack.">
+                            Charges</th>
+                        <th data-toggle="tooltip" title="The effect of the hack.">Description</th>
+                    </tr>
+                </thead>
+                <tbody id="rifHacksTableBody">
+                </tbody>
+            </table>
+        </div>
     </div>
 
 </body>

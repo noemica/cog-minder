@@ -362,7 +362,7 @@ body {
     min-height: 3.0rem;
 }
 
-/* Hack/lore tables */
+/* Hack/lore/RIF tables */
 .hack-table,
 .lore-table {
     width: 100%;
@@ -370,7 +370,8 @@ body {
 
 .hack-table>*>tr,
 .lore-table>thead>tr,
-.rif-ability-table>thead>tr {
+.rif-ability-table>thead>tr,
+.rif-hacks-table>thead>tr {
     text-align: center;
 }
 
@@ -379,13 +380,16 @@ body {
 .lore-table,
 .lore-table>*>tr>*,
 .rif-ability-table,
-.rif-ability-table>*>tr>* {
+.rif-ability-table>*>tr>*,
+.rif-hacks-table,
+.rif-hacks-table>*>tr>* {
     border: 1px solid #006200;
     border-collapse: collapse;
 }
 
-.lore-table>tbody>tr> *,
-.rif-ability-table>tbody>tr> * {
+.lore-table>tbody>tr>*,
+.rif-ability-table>tbody>tr>*,
+.rif-hacks-table>tbody>tr>* {
     padding: 0.25rem 0.25rem;
 }
 
@@ -398,14 +402,32 @@ body {
     color: #9da9af;
 }
 
-.rif-ability-table>tbody>tr>* {
+.rif-ability-table>*>tr> :first-child {
+    width: 20ch;
+}
+
+.rif-hacks-table>*>tr> :first-child {
+    width: 22ch;
+}
+
+.rif-hacks-table>*>tr> :nth-child(2) {
+    width: 10ch;
+}
+
+.rif-ability-table>tbody>tr>*,
+.rif-hacks-table>tbody>tr>* {
     color: #9da9af;
 }
 
 .hack-header-row,
 .lore-header-row,
-.rif-ability-header-row {
+.rif-ability-header-row,
+.rif-hacks-header-row {
     line-height: 2.5rem;
+}
+
+.rif-hacks-header-row > * {
+    padding: 0 0.5rem;
 }
 
 .hack-header-row,
@@ -413,20 +435,29 @@ body {
 .lore-header-row,
 .lore-table>*>tr> :first-child:not(.lore-category-row),
 .rif-ability-header-row,
-.rif-ability-table>*>tr> :first-child {
+.rif-ability-table>*>tr> :first-child,
+.rif-hacks-header-row,
+.rif-hacks-table>*>tr> :first-child:not(.rif-hacks-target-row) {
     color: #9da9af;
     background-color: #162416;
 }
 
-.rif-ability-header-row > * {
+.rif-hacks-table>*>tr> .rif-hacks-target-row :first-child {
+    text-align: center;
+}
+
+.rif-ability-header-row>* {
     padding: 0 0.5rem;
 }
 
-.hack-category-row {
+.hack-category-row,
+.rif-hacks-target-row {
+    color: #00cc00 !important;
     border: none !important;
 }
 
-.hack-category-row > * {
+.hack-category-row>*,
+.rif-hacks-target-row>* {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
@@ -744,16 +775,16 @@ body {
     grid-template-columns: auto auto;
 }
 
-.loot-box-content-grid > * {
+.loot-box-content-grid>* {
     margin-left: .5rem;
     margin-right: .5rem;
 }
 
-.loot-box-content-grid > :nth-child(odd) {
+.loot-box-content-grid> :nth-child(odd) {
     text-align: right;
 }
 
-.loot-box-content-grid > :nth-child(even) {
+.loot-box-content-grid> :nth-child(even) {
     text-align: left;
 }
 

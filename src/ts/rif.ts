@@ -19,8 +19,11 @@ jq(function ($) {
             ($("#reset") as any).tooltip("hide");
             resetInput();
         });
-        $("#nameInput").on("input", updateRifTables);
-        $("#descriptionInput").on("input", updateRifTables);
+        $("#abilityNameInput").on("input", updateRifTables);
+        $("#abilityDescriptionInput").on("input", updateRifTables);
+        $("#hackNameInput").on("input", updateRifTables);
+        $("#hackDescriptionInput").on("input", updateRifTables);
+        $("#hackTargetInput").on("input", updateRifTables);
 
         updateRifTables();
 
@@ -31,42 +34,127 @@ jq(function ($) {
     // Resets all filters
     function resetInput() {
         // Reset text inputs
-        $("#nameInput").val("");
-        $("#descriptionInput").val("");
+        $("#abilityNameInput").val("");
+        $("#abilityDescriptionInput").val("");
+        $("#hackNameInput").val("");
+        $("#hackDescriptionInput").val("");
+        $("#hackTargetInput").val("");
+
+        updateRifTables();
     }
 
     // Updates all RIF tables based on the JSON/user inputs
     function updateRifTables() {
-        // Remove old tables
-        const tableBody = $("#rifAbilityTableBody");
-        tableBody.empty();
+        // Update ability table first
+        const abilityTableBody = $("#rifAbilityTableBody");
+        abilityTableBody.empty();
 
         // Get user inputs and determine filters
-        const nameValue = ($("#nameInput").val() as string).toLowerCase();
-        const filterName = nameValue.length > 0;
-        const descriptionValue = ($("#descriptionInput").val() as string).toLowerCase();
-        const filterDescription = descriptionValue.length > 0;
+        const abilityNameValue = ($("#abilityNameInput").val() as string).toLowerCase();
+        const filterAbilityName = abilityNameValue.length > 0;
+        const abilityDescriptionValue = ($("#abilityDescriptionInput").val() as string).toLowerCase();
+        const filterAbilityDescription = abilityDescriptionValue.length > 0;
 
-        const tableHtml = rifData.Abilities.filter((ability) => {
-            // Filter based on inputs
-            if (filterName && !ability.Name.toLowerCase().includes(nameValue)) {
-                return false;
-            } else if (filterDescription && !ability.Description.toLowerCase().includes(descriptionValue)) {
-                return false;
+        const hacksNameValue = ($("#hackNameInput").val() as string).toLowerCase();
+        const filterHacksName = hacksNameValue.length > 0;
+        const hacksDescriptionValue = ($("#hackDescriptionInput").val() as string).toLowerCase();
+        const filterHacksDescription = hacksDescriptionValue.length > 0;
+        const hacksTargetValue = ($("#hackTargetInput").val() as string).toLowerCase();
+        const filterHacksTarget = hacksTargetValue.length > 0;
+        const filterHacks = filterHacksName || filterHacksDescription || filterHacksTarget;
+
+        if (filterHacks) {
+            // If we're filtering hacks then hide the abilities for convenience
+            $("#abilityTable").addClass("not-visible");
+        } else {
+            // Otherwise, show and update the table
+            $("#abilityTable").removeClass("not-visible");
+
+            const abilityTableHtml = rifData.Abilities.filter((ability) => {
+                // Filter based on inputs
+                if (filterAbilityName && !ability.Name.toLowerCase().includes(abilityNameValue)) {
+                    return false;
+                }
+
+                if (filterAbilityDescription && !ability.Description.toLowerCase().includes(abilityDescriptionValue)) {
+                    return false;
+                }
+
+                return true;
+            })
+                // Convert to HTML
+                .map((ability) => {
+                    return `<tr>
+                    <td>${ability.Name}</td>
+                    <td>${ability.Levels}</td>
+                    <td>${ability.Description}</td>
+                    </tr>`;
+                })
+                .join("");
+
+            abilityTableBody.append($(abilityTableHtml) as any);
+        }
+
+        // Next update hacks table
+        const hacksTableBody = $("#rifHacksTableBody");
+        hacksTableBody.empty();
+
+        const hacksTableHtml = rifData.Hacks.map((hackCategory) => {
+            // Check for overall category filter
+            if (
+                filterHacksTarget &&
+                !hackCategory.CategoryName.toLowerCase().includes(hacksTargetValue) &&
+                hackCategory.Targets.find((target) => target.toLowerCase().includes(hacksTargetValue)) === undefined
+            ) {
+                return "";
             }
 
-            return true;
-        })
-            // Convert to HTML
-            .map((ability) => {
-                return `<tr>
-                <td>${ability.Name}</td>
-                <td>${ability.Levels}</td>
-                <td>${ability.Description}</td>
-                </tr>`;
-            })
-            .join("");
+            const targetRowsHtml = hackCategory.Hacks.filter((hack) => {
+                // Check for name/description filters
+                if (filterHacksName && !hack.Name.toLowerCase().includes(hacksNameValue)) {
+                    return false;
+                }
 
-        tableBody.append($(tableHtml) as any);
+                if (filterHacksDescription && !hack.Description.toLowerCase().includes(hacksDescriptionValue)) {
+                    return false;
+                }
+
+                return true;
+            })
+                // Create hack HTML rows
+                .map((hack) => {
+                    return `<tr>
+                    <td>${hack.Name}</td>
+                    <td>${hack.Rif ? "Yes" : "No"}</td>
+                    <td>${hack.Charges}</td>
+                    <td>${hack.Description}</td>
+                    </tr>`;
+                })
+                .join("");
+
+            if (targetRowsHtml.length === 0) {
+                // If no hacks were found by filters then skip whole category
+                return "";
+            }
+
+            // Create image list HTML
+            const imagesHtml = hackCategory.Targets.map((target) => {
+                return `<img src="game_sprites/${target}.png" title="${target}"></img>`;
+            }).join(" ");
+
+            // Create whole row HTML
+            const targetTitleRowsHtml = `<tr>
+                <td class="rif-hacks-target-row">
+                    <p>${hackCategory.CategoryName}</p>
+                </td>
+                <td class="rif-hacks-target-row" colspan="3">
+                    ${imagesHtml}
+                </td>
+            </tr>`;
+
+            return targetTitleRowsHtml + targetRowsHtml;
+        }).join("");
+
+        hacksTableBody.append($(hacksTableHtml) as any);
     }
 });
