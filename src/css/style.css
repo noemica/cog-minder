@@ -406,6 +406,10 @@ body {
     width: 20ch;
 }
 
+.rif-ability-table>*>tr> :nth-child(2) {
+    width: 14ch;
+}
+
 .rif-hacks-table>*>tr> :first-child {
     width: 22ch;
 }

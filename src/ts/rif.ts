@@ -86,6 +86,7 @@ jq(function ($) {
                 .map((ability) => {
                     return `<tr>
                     <td>${ability.Name}</td>
+                    <td>${ability.MinAbilities}</td>
                     <td>${ability.Levels}</td>
                     <td>${ability.Description}</td>
                     </tr>`;
