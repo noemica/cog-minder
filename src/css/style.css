@@ -524,6 +524,15 @@ body {
     margin-top: 0px;
 }
 
+.popover-part-image-title {
+    height: 24px;
+}
+
+.part-art-image-container {
+    text-align: center;
+    height: 182px;
+}
+
 .cursor-pointer,
 .bot-popover-item {
     cursor: pointer;

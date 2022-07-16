@@ -525,7 +525,10 @@ jq(function ($) {
 
         // Do Overview comparison
         let html = `
-        ${emptyLine}
+            <div class="part-art-image-container"></div>
+            <pre class="comparison-neutral popover-part-image-title mt-2">
+    
+</pre>
             <pre class="popover-summary">Comparison</pre>
             ${emptyLine}
             ${emptyLine}
@@ -1026,7 +1029,7 @@ jq(function ($) {
         selects[1].selectpicker("val", "Hvy. Assault Rifle");
 
         // Enable popovers
-        ($('#simpleItemsGrid > [data-toggle="popover"]') as any).popover();
+        ($('#simpleItemsGrid > [data-toggle="popover"]') as any).popover({ sanitize: false });
     }
 
     // Creates elements for all spreadsheet items

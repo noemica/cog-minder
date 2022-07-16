@@ -7,6 +7,7 @@ from os import path
 
 input_path = path.join(path.dirname(path.realpath(__file__)), 'gallery_export.csv')
 output_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'items.json')
+all_parts_output_path = path.join(path.dirname(path.realpath(__file__)), 'all_parts.txt')
 
 categories = {
     'all': [
@@ -301,3 +302,6 @@ for row in reader:
 
 with open(output_path, 'w') as f:
     json.dump(all_values, f)
+
+with open (all_parts_output_path, 'w') as f:
+    f.writelines('\n'.join(all_values.keys()))

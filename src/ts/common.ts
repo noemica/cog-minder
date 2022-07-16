@@ -23,6 +23,9 @@ import { specialItemProperties } from "./specialItemProperties";
 export let botData: { [key: string]: Bot } = {};
 export let itemData: { [key: string]: Item } = {};
 
+// Use for testing with new items/bots
+const verifyImages = false;
+
 // A special bot name to image name map for special/unique bots
 const botNameImageMap = new Map<string, string>([
     ["01-MTF", "Programmer"],
@@ -78,6 +81,32 @@ const botNameImageMap = new Map<string, string>([
     ["Z-Imprinter", "Imprinter"],
     ["Z-Technician", "Operator"],
     ["Zhirov", "Zhirov"],
+]);
+
+const itemsWithNoArt = new Set([
+    "T-thruster",
+    "Mak. Microthruster",
+    "Integrated Tracker Drive",
+    "Detonator",
+    "Splice Injector",
+    "Mni. Tearclaws",
+    "DAS Cannon",
+    "Compactor",
+    "Asb. Blade",
+    "Asb. F-torch",
+    "Asb. Gauss Rifle",
+    "Asb. Heavy Rifle",
+    "Asb. Hover System",
+    "Asb. Hover Unit",
+    "Asb. Maul",
+    "Asb. P-maul",
+    "Asb. P-torch",
+    "Asb. P-sword",
+    "Asb. Rifle",
+    "Asb. Shotgun",
+    "Vortex Shredder",
+    "Centrium Claws",
+    "T.R.O.L.L. Exoskeleton",
 ]);
 
 // An enum to represent spoiler level
@@ -675,7 +704,10 @@ export function createItemDataContent(baseItem: Item): string {
 
     // Create overview
     let html = `
-    <pre class="popover-title">${escapeHtml(baseItem.name)} [<img src="${getItemImageName(baseItem)}"></img>]</pre>
+    <div class="part-art-image-container">
+        <img src="${escapeHtml(getItemAsciiArtImageName(baseItem))}"></img>
+    </div>
+    <pre class="popover-title .popover-part-image-title mt-2">${escapeHtml(baseItem.name)} [<img src="${getItemSpriteImageName(baseItem)}"></img>]</pre>
     ${emptyLine}
     ${summaryLine("Overview")}
     ${textLine("Type", baseItem.type)}
@@ -991,9 +1023,19 @@ export function getItem(itemName: string): Item {
     throw `${itemName} not a valid item`;
 }
 
-// Gets the image name of an item
-export function getItemImageName(item: Item): string {
+// Gets the sprite image name of an item
+export function getItemSpriteImageName(item: Item): string {
     return `game_sprites/${item.type}.png`;
+}
+
+// Gets the sprite image name of an item
+export function getItemAsciiArtImageName(item: Item): string {
+    if (itemsWithNoArt.has(item.name)) {
+        // Some items have no gallery art
+        return "part_art/No Image Data.png";
+    }
+
+    return `part_art/${item.name.replace(/"/g, "").replace(/\//g, "")}.png`;
 }
 
 // Tries to get an item by its full name
@@ -1340,7 +1382,10 @@ export async function initData(
                 break;
         }
 
-        itemPromises.push(loadImage(getItemImageName(newItem)));
+        if (verifyImages) {
+            itemPromises.push(loadImage(getItemSpriteImageName(newItem)));
+            itemPromises.push(loadImage(getItemAsciiArtImageName(newItem)));
+        }
 
         itemData[itemName] = newItem;
     });
@@ -1513,14 +1558,22 @@ export async function initData(
                 visualRange: bot["Sight Range"],
             };
 
-            botPromises.push(loadImage(getBotImageName(newBot)));
+            if (verifyImages) {
+                botPromises.push(loadImage(getBotImageName(newBot)));
+            }
 
             botData[botName] = newBot;
         });
     }
 
-    await Promise.all(itemPromises);
-    await Promise.all(botPromises);
+    if (verifyImages) {
+        console.log("Verifying images...");
+        await Promise.all(itemPromises);
+        console.log("Verified item images");
+        console.log("Verifying bot images...");
+        await Promise.all(botPromises);
+        console.log("Verified bot images");
+    }
 }
 
 // Determines if the given item type is melee
@@ -1583,7 +1636,7 @@ async function loadImage(imageUrl: string): Promise<any> {
 
 // Waits for all item images to be loaded
 async function loadItemImages(): Promise<any> {
-    const imageNames = Object.keys(itemData).map((itemName) => getItemImageName(itemData[itemName]));
+    const imageNames = Object.keys(itemData).map((itemName) => getItemSpriteImageName(itemData[itemName]));
     return loadImages(imageNames);
 }
 
