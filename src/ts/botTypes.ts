@@ -78,6 +78,7 @@ export type Bot = {
     salvageLow: number;
     salvagePotential: string;
     size: BotSize;
+    speed: number;
     spotPercent: string;
     threat: string;
     tier: string;

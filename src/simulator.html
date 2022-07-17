@@ -93,6 +93,52 @@
             </select>
         </div>
 
+        <!-- Player/enemy action settings -->
+        <div class="input-group mt-2">
+            <!-- Turns since moving -->
+            <div class="input-group-prepend" data-toggle="tooltip"
+                title="The number of actions performed since Cogmind last moved. For melee, there is a +10% accuracy bonus gained after not moving for 2 turns. For ranged, that bonus exists, but there is additionally a -10% penalty if the last action was a move. Basically, 0 turns since moving = -10%, 1 turns = 0%, 2 turns = 10% bonus.">
+                <span class="input-group-text">Actions Since Moving</span>
+            </div>
+            <input id="actionsSinceMovingInput" type="text" class="form-control" placeholder="2+"></input>
+
+            <!-- Is Cogmind on legs -->
+            <div id="onLegsContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
+                <div class="input-group-prepend" data-toggle="tooltip"
+                    title="Is Cogmind on legs? If so, the number tiles run in a row provide an additional 5% penalty per tile moved.">
+                    <span class="input-group-text">On Legs</span>
+                </div>
+                <label id="onLegsNo" class="btn">
+                    <input type="radio" name="options"> No
+                </label>
+                <label id="onLegsYes" class="btn">
+                    <input type="radio" name="options"> Yes
+                </label>
+            </div>
+
+            <!-- Tiles moved in a row -->
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The number of tiles Cogmind has been running for if on legs. There is a -5% penalty per tile moved for ranged weapons, up to a maximum of -15%.">
+                <span class="input-group-text">Tiles Run</span>
+            </div>
+            <input id="tilesRunInput" type="text" class="form-control" placeholder="0"></input>
+
+            <!-- Enemy Behavior -->
+            <div class="input-group-prepend ml-3" data-toggle="tooltip"
+                title="The behavior of the enemy when engaged in combat. The default for most hostile combat bots is Stand/Fight, and behavior of most hostile non-combat bots will be Run When Hit.">
+                <span class="input-group-text">Enemy Behavior</span>
+            </div>
+            <div id="enemyBehaviorSelectContainer">
+                <select id="enemyBehaviorSelect" class="selectpicker flex-dropdown" data-dropdown-align-right="auto">
+                    <option>Stand/Fight</option>
+                    <option>Siege/Fight</option>
+                    <option>Already Sieged/Fight</option>
+                    <option>Running</option>
+                    <option>Run When Hit</option>
+                </select>
+            </div>
+        </div>
+
         <!-- Ranged only accuracy settings -->
         <div id="rangedAccuracyContainer" class="input-group mt-2">
             <!-- Targeting computer -->

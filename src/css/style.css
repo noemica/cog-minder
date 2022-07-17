@@ -223,6 +223,10 @@ body {
     width: 25ch !important;
 }
 
+.enemy-behavior-dropdown {
+    width: 15ch !important;
+}
+
 .percent-dropdown {
     width: 3ch !important;
 }

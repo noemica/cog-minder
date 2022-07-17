@@ -1547,6 +1547,7 @@ export async function initData(
                 salvageHigh: salvageHigh,
                 salvageLow: salvageLow,
                 salvagePotential: bot["Salvage Potential"],
+                speed: parseInt(bot.Speed),
                 spotPercent: bot["Spot %"] ?? "100",
                 size: bot["Size Class"],
                 threat: bot.Threat,

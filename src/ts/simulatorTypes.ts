@@ -3,12 +3,14 @@ import { Critical, DamageType, Item, ItemSlot, WeaponItem } from "./itemTypes";
 
 export type SimulatorPart = {
     armorAnalyzedCoverage: number;
+    armorAnalyzedSiegedCoverage: number;
     coverage: number;
     def: Item;
     integrity: number;
     initialIndex: number;
     protection: boolean;
     selfDamageReduction: number;
+    siegedCoverage: number;
     resistances?: BotResistances;
 };
 
@@ -59,8 +61,12 @@ export type DefensiveState = {
     shieldings: Record<ItemSlot | "Core", ShieldingPart[]>;
 };
 
+export type BotBehavior = "Stand/Fight" | "Siege/Fight" | "Already Sieged/Fight" | "Running" | "Run When Hit";
+
 export type BotState = {
     armorAnalyzedCoverage: number;
+    armorAnalyzedSiegedCoverage: number;
+    behavior: BotBehavior;
     coreCoverage: number;
     coreDisrupted: boolean;
     coreIntegrity: number;
@@ -73,8 +79,14 @@ export type BotState = {
     parts: SimulatorPart[];
     regen: number;
     resistances: BotResistances;
+    running: boolean;
+    runningEvasion: number;
+    runningMomentum: number;
     salvage: number;
+    sieged: boolean;
+    siegedCoverage: number;
     totalCoverage: number;
+    tusToSiege: number;
 };
 
 export type SimulatorWeapon = {
@@ -136,6 +148,8 @@ export type LootState = {
 };
 
 export type OffensiveState = {
+    action1Accuracy: number;
+    action2Accuracy: number;
     armorAnalyzerChance: number;
     analysis: boolean;
     chargerBonus: number;
@@ -167,6 +181,7 @@ export type OffensiveState = {
 };
 
 export type SimulatorState = {
+    actionNum: number;
     botState: BotState;
     endCondition: EndCondition;
     initialBotState: BotState;

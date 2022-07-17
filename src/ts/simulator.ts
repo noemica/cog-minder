@@ -21,7 +21,7 @@ import {
     resetButtonGroup,
     setSpoilersState,
 } from "./commonJquery";
-import { Critical, DamageType, ItemRatingCategory, ItemType, WeaponItem } from "./itemTypes";
+import { Critical, DamageType, ItemRatingCategory, ItemType, PropulsionItem, WeaponItem } from "./itemTypes";
 import {
     getBotDefensiveState,
     getRangedVolleyTime,
@@ -33,6 +33,7 @@ import {
     volleyTimeMap,
 } from "./simulatorCalcs";
 import {
+    BotBehavior,
     BotState,
     EndCondition,
     ItemLootState,
@@ -51,10 +52,8 @@ import "bootstrap-select";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
-    // Actual accuracy is 60 for ranged and 70 for melee but just assume the
-    // defender immobile bonus for + 10
-    const initialRangedAccuracy = 70;
-    const initialMeleeAccuracy = 80;
+    const initialRangedAccuracy = 60;
+    const initialMeleeAccuracy = 70;
 
     // Chart variables set on init
     let chart: Chart;
@@ -483,6 +482,7 @@ jq(function ($) {
         resetButtonGroup($("#combatTypeContainer"));
         resetButtonGroup($("#xAxisContainer"));
         resetButtonGroup($("#showLootContainer"));
+        resetButtonGroup($("#onLegsContainer"));
         $("#comparisonChartNameInput").val("");
         resetValues();
         updateChoices();
@@ -578,6 +578,8 @@ jq(function ($) {
         // These divs are created at runtime so have to do this at init
         $("#damageReductionSelect").parent().addClass("percent-dropdown");
         $("#botSelectContainer > div").addClass("enemy-dropdown");
+        $("#turnsSinceMovingSelectContainer > div").addClass("turns-since-moving-dropdown");
+        $("#enemyBehaviorSelectContainer > div").addClass("enemy-behavior-dropdown");
         $("#siegeSelectContainer > div").addClass("siege-dropdown");
         $("#kinecelleratorSelect").parent().addClass("percent-dropdown");
         $("#cyclerSelect").parent().addClass("percent-dropdown");
@@ -724,11 +726,12 @@ jq(function ($) {
     function resetValues() {
         // Reset button groups
         resetButtonGroup($("#analysisContainer"));
-        resetButtonGroup($("#movedContainer"));
+        resetButtonGroup($("#onLegsContainer"));
         resetButtonGroup($("#siegeModeContainer"));
 
         // Reset dropdowns
         resetDropdown($("#damageReductionSelect"));
+        resetDropdown($("#enemyBehaviorSelect"));
         resetDropdown($("#siegeSelect"));
         resetDropdown($("#kinecelleratorSelect"));
         resetDropdown($("#cyclerSelect"));
@@ -740,6 +743,8 @@ jq(function ($) {
 
         // Reset text inputs
         $("#numFightsInput").val("");
+        $("#actionsSinceMovingInput").val("");
+        $("#tilesRunInput").val("");
         $("#targetingInput").val("");
         $("#treadsInput").val("");
         $("#distanceInput").val("");
@@ -792,6 +797,12 @@ jq(function ($) {
         func($("#analysisNo"));
         func($("#analysisYes"));
         func($("#damageReductionSelect").next());
+
+        func($("#actionsSinceMovingInput"));
+        func($("#onLegsNo"));
+        func($("#onLegsYes"));
+        func($("#tilesRunInput"));
+        func($("#enemyBehaviorSelect").next());
 
         func($("#targetingInput"));
         func($("#siegeSelect").next());
@@ -912,29 +923,53 @@ jq(function ($) {
                 for (let i = 0; i < item.number; i++) {
                     const itemDef = getItem(item.name);
                     const isProtection = itemDef.type === ItemType.Protection;
+                    const isTreads = itemDef.type === ItemType.Treads;
                     const coverage = itemDef.coverage ?? 0;
+                    const siegedCoverage = isProtection || isTreads ? 2 * coverage : coverage;
                     parts.push({
                         armorAnalyzedCoverage: isProtection ? 0 : coverage,
+                        armorAnalyzedSiegedCoverage: isProtection ? 0 : siegedCoverage,
                         coverage: coverage,
                         def: itemDef,
                         integrity: itemDef.integrity,
                         initialIndex: partCount++,
                         protection: isProtection,
                         selfDamageReduction: 1,
+                        siegedCoverage: siegedCoverage,
                     });
                 }
             });
 
         const armorAnalyzedCoverage =
             bot.coreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedCoverage, 0);
+        const armorAnalyzedSiegedCoverage =
+            bot.coreCoverage + parts.reduce((prev, part) => prev + part.siegedCoverage, 0);
+        const siegedCoverage = bot.coreCoverage + parts.reduce((prev, part) => prev + part.siegedCoverage, 0);
+
+        const behavior = $("#enemyBehaviorSelect").selectpicker("val") as any as BotBehavior;
 
         const externalDamageReduction =
             externalDamageReductionNameMap[$("#damageReductionSelect").selectpicker("val") as any as string];
         const defensiveState = getBotDefensiveState(parts, externalDamageReduction);
 
+        let runningEvasion = 0;
+        if (bot.speed < 100) {
+            // Bots gain 1% of evasion for every 5 speed under 100
+            runningEvasion = Math.trunc((100 - bot.speed) / 5);
+        } else {
+            runningEvasion = 0;
+        }
+
+        const sieged =
+            behavior === "Already Sieged/Fight" &&
+            parts.find((p) => p.def.type === ItemType.Treads && (p.def as PropulsionItem).siege !== undefined) !==
+                undefined;
+
         // Enemy bot state
         const botState: BotState = {
             armorAnalyzedCoverage: armorAnalyzedCoverage,
+            armorAnalyzedSiegedCoverage: armorAnalyzedSiegedCoverage,
+            behavior: behavior,
             coreCoverage: bot.coreCoverage,
             coreDisrupted: false,
             coreIntegrity: bot.coreIntegrity,
@@ -947,8 +982,14 @@ jq(function ($) {
             parts: parts,
             regen: getRegen(bot),
             resistances: bot.resistances === undefined ? {} : bot.resistances,
+            running: behavior === "Running",
+            runningEvasion: runningEvasion,
+            runningMomentum: behavior === "Running" ? 3 : 0,
             salvage: 0,
+            sieged: sieged,
+            siegedCoverage: siegedCoverage,
             totalCoverage: bot.totalCoverage,
+            tusToSiege: behavior === "Siege/Fight" ? 500 : 0,
         };
 
         // Weapons and other offensive state
@@ -1228,6 +1269,32 @@ jq(function ($) {
                   volleyTimeModifier,
               );
 
+        // Determine temporary accuracy modifiers
+        // -10% if attacker moved last action (ignored in melee combat)
+        // +10% if attacker didn't move for the last 2 actions
+        // simulatorCalcs.ts will always enforce the +10% accuracy as part of the 3rd action
+        let action1Accuracy;
+        let action2Accuracy;
+        const actionsSinceMoving = parseIntOrDefault($("#actionsSinceMovingInput").val() as string, 2);
+        if (actionsSinceMoving == 0) {
+            action1Accuracy = melee ? 0 : -10;
+            action2Accuracy = 0;
+        } else if (actionsSinceMoving == 1) {
+            action1Accuracy = 0;
+            action2Accuracy = 10;
+        } else {
+            action1Accuracy = 10;
+            action2Accuracy = 10;
+        }
+
+        // -5~15% if attacker running on legs (ranged attacks only)
+        const onLegs = $("#onLegsYes").hasClass("active");
+        const tilesRun = onLegs ? parseIntOrDefault($("#tilesRunInput").val() as string, 0) : 0;
+        if (tilesRun > 0 && !melee) {
+            // Cap at 3 tiles moved
+            action1Accuracy -= Math.min(tilesRun, 3) * 5;
+        }
+
         const itemLootStates: ItemLootState[] = [];
         for (const part of botState.parts) {
             itemLootStates.push({
@@ -1250,6 +1317,8 @@ jq(function ($) {
 
         // Other misc offensive state
         const offensiveState: OffensiveState = {
+            action1Accuracy: action1Accuracy,
+            action2Accuracy: action2Accuracy,
             armorAnalyzerChance: armorAnalyzerChance,
             analysis: $("#analysisYes").hasClass("active"),
             chargerBonus: chargerBonus,
@@ -1281,6 +1350,7 @@ jq(function ($) {
 
         // Overall state
         const state: SimulatorState = {
+            actionNum: 0,
             botState: botState,
             endCondition: endCondition,
             initialBotState: botState,

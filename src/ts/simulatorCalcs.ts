@@ -13,9 +13,11 @@ import {
     ItemSlot,
     ItemType,
     PowerItem,
+    PropulsionItem,
     RangedAvoid,
     SelfReduction,
     Shielding,
+    SiegeMode,
     Spectrum,
     WeaponItem,
 } from "./itemTypes";
@@ -231,6 +233,8 @@ function applyDamage(
     ) {
         botState.parts.splice(partIndex, 1);
         botState.armorAnalyzedCoverage -= part.armorAnalyzedCoverage;
+        botState.armorAnalyzedSiegedCoverage -= part.armorAnalyzedSiegedCoverage;
+        botState.siegedCoverage -= part.siegedCoverage;
         botState.totalCoverage -= part.coverage;
 
         // If the part was providing any damage resistances remove them now
@@ -488,15 +492,24 @@ function applyDamage(
         const engineExplosion = part.def.slot === "Power" && randomInt(0, 99) < spectrum;
 
         // Protection can't get instantly destroyed, only receives 20% more damage
-        if (doesCriticalDestroyPart(critical) && part.protection) {
+        // Also check for crits against sieged treads, they can't be destroyed
+        if (
+            (doesCriticalDestroyPart(critical) && part.protection) ||
+            (botState.sieged && part.def.type === ItemType.Treads && (part.def as PropulsionItem).siege !== undefined)
+        ) {
             critical = undefined;
             damage = Math.trunc(1.2 * damage);
         }
 
         // Reduce damage for powered armor/siege mode (17)
-        // TODO enemy siege mode
         if (part.selfDamageReduction !== 0) {
-            damage = damage * Math.trunc(part.selfDamageReduction);
+            damage = Math.trunc(damage * part.selfDamageReduction);
+        } else if (
+            part.def.type === ItemType.Treads &&
+            (part.def as PropulsionItem).siege !== undefined &&
+            botState.sieged
+        ) {
+            damage = Math.trunc(damage * ((part.def as PropulsionItem).siege === SiegeMode.High ? 0.5 : 0.75));
         }
 
         // Apply disruption to non-core parts (17)
@@ -620,6 +633,8 @@ function cloneBotState(botState: BotState): BotState {
     Object.keys(botState.resistances).forEach((type) => (resistances[type] = botState.resistances[type]));
     const newState: BotState = {
         armorAnalyzedCoverage: botState.armorAnalyzedCoverage,
+        armorAnalyzedSiegedCoverage: botState.armorAnalyzedSiegedCoverage,
+        behavior: botState.behavior,
         coreCoverage: botState.coreCoverage,
         coreDisrupted: botState.coreDisrupted,
         coreIntegrity: botState.coreIntegrity,
@@ -631,6 +646,7 @@ function cloneBotState(botState: BotState): BotState {
         initialCoreIntegrity: botState.initialCoreIntegrity,
         parts: botState.parts.map((p) => {
             return {
+                armorAnalyzedSiegedCoverage: p.armorAnalyzedSiegedCoverage,
                 armorAnalyzedCoverage: p.armorAnalyzedCoverage,
                 coverage: p.coverage,
                 def: p.def,
@@ -638,11 +654,18 @@ function cloneBotState(botState: BotState): BotState {
                 initialIndex: p.initialIndex,
                 protection: p.protection,
                 selfDamageReduction: p.selfDamageReduction,
+                siegedCoverage: p.siegedCoverage,
             };
         }),
         regen: botState.regen,
         resistances: resistances,
+        running: botState.running,
+        runningEvasion: botState.runningEvasion,
+        runningMomentum: botState.runningMomentum,
         salvage: 0,
+        sieged: botState.sieged,
+        siegedCoverage: botState.siegedCoverage,
+        tusToSiege: botState.tusToSiege,
         totalCoverage: botState.totalCoverage,
     };
     newState.defensiveState = getBotDefensiveState(newState.parts, newState.externalDamageReduction);
@@ -749,6 +772,7 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
                 reduction: reduction,
                 remote: remote,
                 part: {
+                    armorAnalyzedSiegedCoverage: 0,
                     armorAnalyzedCoverage: 0,
                     coverage: 0,
                     def: undefined as any,
@@ -756,6 +780,7 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
                     initialIndex: 0,
                     protection: false,
                     selfDamageReduction: 0,
+                    siegedCoverage: 0,
                 },
             });
         } else {
@@ -769,12 +794,14 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
                     remote: remote,
                     part: {
                         armorAnalyzedCoverage: 0,
+                        armorAnalyzedSiegedCoverage: 0,
                         coverage: 0,
                         def: undefined as any,
                         integrity: 1,
                         initialIndex: 0,
                         protection: false,
                         selfDamageReduction: 0,
+                        siegedCoverage: 0,
                     },
                 });
             } else {
@@ -783,12 +810,14 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
                     reduction: reduction,
                     part: {
                         armorAnalyzedCoverage: 0,
+                        armorAnalyzedSiegedCoverage: 0,
                         coverage: 0,
                         def: undefined as any,
                         initialIndex: 0,
                         integrity: 1,
                         protection: false,
                         selfDamageReduction: 0,
+                        siegedCoverage: 0,
                     },
                 });
             }
@@ -891,7 +920,20 @@ function getHitPart(
 
     // Check to avoid rerolling an impact core hit
     if (part === undefined && damageType !== DamageType.Impact) {
-        let totalCoverage = armorAnalyzed ? botState.armorAnalyzedCoverage : botState.totalCoverage;
+        let totalCoverage: number;
+        if (armorAnalyzed) {
+            if (botState.sieged) {
+                totalCoverage = botState.armorAnalyzedSiegedCoverage;
+            } else {
+                totalCoverage = botState.armorAnalyzedCoverage;
+            }
+        } else {
+            if (botState.sieged) {
+                totalCoverage = botState.siegedCoverage;
+            } else {
+                totalCoverage = botState.totalCoverage;
+            }
+        }
         if (damageType == DamageType.Piercing) {
             // Not ideal to force this here because it means the user has to account for half_stack manually
             // Makes the UI very cluttered if we want to make the user choose all the possible combinations though
@@ -915,9 +957,19 @@ function getHitPart(
 
         for (partIndex = 0; partIndex < botState.parts.length; partIndex++) {
             // Subtract part's coverage to see if we got a hit
-            coverageHit -= armorAnalyzed
-                ? botState.parts[partIndex].armorAnalyzedCoverage
-                : botState.parts[partIndex].coverage;
+            if (armorAnalyzed) {
+                if (botState.sieged) {
+                    coverageHit -= botState.parts[partIndex].armorAnalyzedSiegedCoverage;
+                } else {
+                    coverageHit -= botState.parts[partIndex].armorAnalyzedCoverage;
+                }
+            } else {
+                if (botState.sieged) {
+                    coverageHit -= botState.parts[partIndex].siegedCoverage;
+                } else {
+                    coverageHit -= botState.parts[partIndex].coverage;
+                }
+            }
             if (coverageHit < 0) {
                 part = botState.parts[partIndex];
                 break;
@@ -1110,6 +1162,7 @@ export function simulateCombat(state: SimulatorState): boolean {
 
     let oldTus = 0;
     state.tus = 0;
+    state.actionNum = 0;
 
     // Update initial accuracy
     updateWeaponsAccuracy(state);
@@ -1139,6 +1192,12 @@ export function simulateCombat(state: SimulatorState): boolean {
         if (offensiveState.melee) {
             // Always do primary attack
             end = simulateWeapon(state, state.weapons[0], endConditions.projectileEndCondition);
+            state.actionNum += 1;
+
+            if (state.actionNum <= 2) {
+                // Update accuracy after the initial weapon on relevant action #s
+                updateWeaponsAccuracy(state);
+            }
 
             // Handle followups chances
             for (let i = 1; i < state.weapons.length && !end; i++) {
@@ -1164,11 +1223,22 @@ export function simulateCombat(state: SimulatorState): boolean {
                 offensiveState.momentum.current = offensiveState.momentum.bonus;
             }
         } else {
+            let firstWeapon = true;
             for (const weapon of state.weapons) {
                 end = simulateWeapon(state, weapon, endConditions.projectileEndCondition);
 
                 if (end) {
                     break;
+                }
+
+                if (firstWeapon) {
+                    // Update accuracy after the initial weapon on relevant action #s
+                    firstWeapon = false;
+                    state.actionNum += 1;
+
+                    if (state.actionNum <= 2) {
+                        updateWeaponsAccuracy(state);
+                    }
                 }
             }
         }
@@ -1188,12 +1258,39 @@ export function simulateCombat(state: SimulatorState): boolean {
         oldTus = state.tus;
         state.tus += volleyTime;
 
+        let updateAccuracy = false;
+
         // Update accuracy when crossing siege mode activation
         if (
             !offensiveState.melee &&
             oldTus < offensiveState.siegeBonus.tus &&
-            state.tus > offensiveState.siegeBonus.tus
+            state.tus >= offensiveState.siegeBonus.tus
         ) {
+            updateAccuracy = true;
+        }
+
+        // Update enemy siege state
+        if (
+            oldTus < botState.tusToSiege &&
+            state.tus >= botState.tusToSiege &&
+            botState.behavior === "Siege/Fight" &&
+            botState.parts.find(
+                (p) => p.def.type === ItemType.Treads && (p.def as PropulsionItem).siege !== undefined,
+            ) !== undefined
+        ) {
+            botState.sieged = true;
+            updateAccuracy = true;
+        }
+
+        // Update enemy running state
+        if (botState.behavior === "Run When Hit" && botState.runningMomentum < 3) {
+            botState.running = true;
+            botState.runningMomentum = Math.min(Math.trunc(state.tus / botState.def.speed), 3);
+            updateAccuracy == true;
+        }
+
+        // Update accuracy from any end of turn-based states
+        if (updateAccuracy) {
             updateWeaponsAccuracy(state);
         }
 
@@ -1498,7 +1595,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
         if (movement.includes("Walking")) {
             perWeaponBonus -= avoidPart.legs;
         } else {
-            // TODO - doesn't matter now but should make sure hover/flight is active here
+            // TODO - handle hover/flight units are active here and not overweight
             perWeaponBonus -= avoidPart.other;
         }
     }
@@ -1543,6 +1640,34 @@ function updateWeaponsAccuracy(state: SimulatorState) {
         if (rangedAvoidPart != undefined) {
             perWeaponBonus -= rangedAvoidPart.avoid;
         }
+    }
+
+    // Update action-based accuracy calcs
+    if (state.actionNum === 0) {
+        perWeaponBonus += state.offensiveState.action1Accuracy;
+    } else if (state.actionNum === 1) {
+        perWeaponBonus += state.offensiveState.action2Accuracy;
+    } else {
+        // After the second action we gain a permanent +10% "no move" bonus
+        perWeaponBonus += 10;
+    }
+
+    // +20%/30% if attacker in standard/high siege mode (non-melee only)
+    if (botState.sieged) {
+        // No enemy bots capable of high siege mode currently
+        perWeaponBonus += 20;
+    }
+
+    if (botState.running) {
+        // TODO don't assume that bots don't become overweight
+        if (botState.parts.find((p) => p.def.type === ItemType.Leg) !== undefined) {
+            // -5~15% if attacker running on legs (ranged attacks only)
+            // (5% for each level of momentum)
+            perWeaponBonus -= 5 * botState.runningMomentum;
+        }
+
+        // Apply non-running evasion (<100 speed bonus)
+        perWeaponBonus -= botState.runningEvasion;
     }
 
     state.weapons.forEach((weapon) => {
