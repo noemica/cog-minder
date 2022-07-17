@@ -1141,14 +1141,14 @@ const simulationEndConditions: { [key: string]: EndConditions } = {
     },
     "Architect Tele (80% integrity, 1 weapon, or 1 prop)": {
         projectileEndCondition: function (botState) {
+            return botState.coreIntegrity <= 0;
+        },
+        volleyEndCondition: function (botState) {
             return (
                 botState.coreIntegrity <= botState.initialCoreIntegrity * 0.8 ||
                 botState.parts.filter((part) => part.def.slot === "Weapon").length === 1 ||
                 botState.parts.filter((part) => part.def.slot === "Propulsion").length === 1
             );
-        },
-        volleyEndCondition: function (botState) {
-            return botState.coreIntegrity <= 0;
         },
     },
 };

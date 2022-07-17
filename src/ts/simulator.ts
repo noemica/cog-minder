@@ -587,6 +587,7 @@ jq(function ($) {
         $("#armorIntegSelect").parent().addClass("percent-dropdown");
         $("#actuatorSelect").parent().addClass("percent-dropdown");
         $("#sneakAttackSelect").parent().addClass("sneak-attack-dropdown");
+        $("#endConditionSelect").parent().addClass("end-condition-dropdown");
 
         // Minor hack, the btn-light class is auto-added to dropdowns with search
         // but it doesn't really fit with everything else

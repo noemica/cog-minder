@@ -219,6 +219,10 @@ body {
     display: flex;
 }
 
+.end-condition-dropdown {
+    width: 14ch !important;
+}
+
 .enemy-dropdown {
     width: 25ch !important;
 }
