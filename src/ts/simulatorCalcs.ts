@@ -463,7 +463,8 @@ function applyDamage(
                     // Deal damage first, then destroy as a critical part removal if still intact
                     applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, part, partIndex);
 
-                    if (part.integrity > 0) {
+                    // Dismemberment immunity stops the blasting off part
+                    if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
                         destroyPart(partIndex, part, 0, DamageType.Phasic, "CriticalRemove");
                     }
                 } else {
@@ -568,7 +569,8 @@ function applyDamage(
                 // Deal damage first, then destroy as a critical part removal if still intact
                 applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, part, partIndex);
 
-                if (part.integrity > 0) {
+                // Dismemberment immunity stops the blasting off part
+                if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
                     destroyPart(partIndex, part, 0, DamageType.Phasic, "CriticalRemove");
                 }
             } else {

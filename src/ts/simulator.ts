@@ -1513,7 +1513,7 @@ jq(function ($) {
             const averageDropIntegrity = item.totalIntegrity > 0 ? item.totalIntegrity / item.numDrops : 0;
             const averageCorruptionGain = item.totalCorruptionPercent / item.numDrops;
             const friedPercent = (item.totalFried / state.lootState.numKills) * 100;
-            const critRatePercent = (item.totalCritRemoves / item.numDrops) * 100;
+            const critRatePercent = item.totalCritRemoves > 0 ? (item.totalCritRemoves / item.numDrops) * 100 : 0;
 
             // Create HTML
             const boxContainer = $(`<div class = "loot-box mx-1 my-1"></div>`);
