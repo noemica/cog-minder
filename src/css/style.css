@@ -325,9 +325,9 @@ body {
 }
 
 .menu-buttons-grid {
-    /* Marker only */
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .menu-buttons-grid>* {
