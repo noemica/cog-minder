@@ -484,7 +484,6 @@ export function createBotDataContent(bot: Bot): string {
         ${rangeLine("Core Integrity", bot.coreIntegrity.toString(), bot.coreIntegrity, undefined, 0, bot.coreIntegrity, ColorScheme.Green)}
         ${rangeLineUnit("Core Exposure", bot.coreExposure.toString(), bot.coreExposure, "%", undefined, 0, 100, ColorScheme.LowGood)}
         ${textLine("Salvage Potential", bot.salvagePotential)}
-        ${textLine("Salvage Potential", bot.salvagePotential)}
         ${textLineWithDefault("Schematic", bot.fabrication !== undefined ? "Hackable" : undefined, "N/A")}
         ${bot.fabrication !== undefined ? textLine(" Min Terminal/Depth", getSchematicDepthString(bot)) : ""}
         ${emptyLine}
