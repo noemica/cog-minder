@@ -1560,7 +1560,7 @@ export async function initData(
                 components: bot.Components ?? [],
                 componentsString: bot["Components String"] ?? "",
                 coreCoverage: roughCoreCoverage,
-                coreExposure: parseInt(bot["Core Exposure %"]),
+                coreExposure: parseIntOrDefault(bot["Core Exposure %"], 0),
                 coreIntegrity: parseInt(bot["Core Integrity"]),
                 description: bot.Analysis ?? "",
                 energyGeneration: parseIntOrDefault(bot["Energy Generation"], 0),
