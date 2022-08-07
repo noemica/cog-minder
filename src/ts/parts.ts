@@ -539,6 +539,7 @@ jq(function ($) {
             ${compareHighGoodStat(leftItem.coverage ?? 0, rightItem.coverage ?? 0)}
             ${emptyLine}
             ${emptyLine}
+            ${emptyLine}
         `;
 
         // Add upkeep if applicable

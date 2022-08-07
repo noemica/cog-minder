@@ -416,6 +416,24 @@ export function createBotDataContent(bot: Bot): string {
         return ratingArray.reduce((sum, val) => sum + val, 0) / ratingArray.length;
     }
 
+    function getSchematicDepthString(bot: Bot) {
+        function capRange(depth) {
+            return Math.floor(Math.max(Math.min(10, depth), 1));
+        }
+
+        if (bot.fabrication !== undefined) {
+            let levelOneDepth = 11 - parseInt(bot.tier);
+            let levelTwoDepth = levelOneDepth + 1;
+            let levelThreeDepth = levelTwoDepth + 1;
+            levelOneDepth = capRange(levelOneDepth);
+            levelTwoDepth = capRange(levelTwoDepth);
+            levelThreeDepth = capRange(levelThreeDepth);
+            return `1/-${levelOneDepth}  2/-${levelTwoDepth}  3/-${levelThreeDepth}`;
+        }
+        
+        return "";
+    }
+
     function itemLine(itemString: string) {
         itemString = itemString.padEnd(46);
         return "" +
@@ -466,6 +484,9 @@ export function createBotDataContent(bot: Bot): string {
         ${rangeLine("Core Integrity", bot.coreIntegrity.toString(), bot.coreIntegrity, undefined, 0, bot.coreIntegrity, ColorScheme.Green)}
         ${rangeLineUnit("Core Exposure", bot.coreExposure.toString(), bot.coreExposure, "%", undefined, 0, 100, ColorScheme.LowGood)}
         ${textLine("Salvage Potential", bot.salvagePotential)}
+        ${textLine("Salvage Potential", bot.salvagePotential)}
+        ${textLineWithDefault("Schematic", bot.fabrication !== undefined ? "Hackable" : undefined, "N/A")}
+        ${bot.fabrication !== undefined ? textLine(" Min Terminal/Depth", getSchematicDepthString(bot)) : ""}
         ${emptyLine}
         ${summaryLine("Armament")}
         `;
@@ -713,6 +734,24 @@ export function createItemDataContent(baseItem: Item): string {
         return undefined;
     }
 
+    function getSchematicDepthString(item: Item) {
+        function capRange(depth) {
+            return Math.floor(Math.max(Math.min(10, depth), 1));
+        }
+
+        if (item.hackable) {
+            let levelOneDepth = 11 - item.rating;
+            let levelTwoDepth = levelOneDepth + 1;
+            let levelThreeDepth = levelTwoDepth + 1;
+            levelOneDepth = capRange(levelOneDepth);
+            levelTwoDepth = capRange(levelTwoDepth);
+            levelThreeDepth = capRange(levelThreeDepth);
+            return `1/-${levelOneDepth}  2/-${levelTwoDepth}  3/-${levelThreeDepth}`;
+        }
+        
+        return "";
+    }
+
     function getSlotString(item: Item): string {
         let slotType = item.slot as string;
 
@@ -752,6 +791,7 @@ export function createItemDataContent(baseItem: Item): string {
     ${rangeLine("Integrity", (baseItem.noRepairs ? "*" : "") + baseItem.integrity?.toString(), 1, undefined, 0, 1, ColorScheme.Green)}
     ${valueLine("Coverage", baseItem.coverage?.toString() ?? "0")}
     ${textLineWithDefault("Schematic", getSchematicString(baseItem), "N/A")}
+    ${baseItem.hackable ? textLine(" Min Terminal/Depth", getSchematicDepthString(baseItem)) : emptyLine}
     `;
 
     switch (baseItem.slot) {
