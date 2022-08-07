@@ -1,3 +1,4 @@
+import { Spoiler } from "./commonTypes";
 import { DamageType, FabricationStats } from "./itemTypes";
 
 export enum BotCategory {
@@ -47,6 +48,12 @@ export type BotPart = {
     integrity: number;
 };
 
+export type BotLocation = {
+    Location: string;
+    Description?: string;
+    Spoiler?: Spoiler;
+};
+
 export type Bot = {
     armament: Array<string | ItemOption[]>;
     armamentData: BotPart[];
@@ -67,6 +74,7 @@ export type Bot = {
     heatDissipation: number;
     immunities: BotImmunity[];
     immunitiesString: string;
+    locations: BotLocation[];
     memory: string;
     movement: string;
     movementOverloaded?: string;
@@ -87,6 +95,11 @@ export type Bot = {
     traitsString: string;
     value: number;
     visualRange: string;
+};
+
+export type JsonBotExtraData = {
+    Categories: BotCategory[];
+    Locations?: BotLocation[];
 };
 
 export type JsonBot = {

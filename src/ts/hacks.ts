@@ -7,7 +7,8 @@ import {
     resetButtonGroup,
     setSpoilersState,
 } from "./commonJquery";
-import { parseIntOrDefault, Spoiler } from "./common";
+import { parseIntOrDefault } from "./common";
+import { Spoiler } from "./commonTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {

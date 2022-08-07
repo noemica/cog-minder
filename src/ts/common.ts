@@ -1,7 +1,7 @@
 // Common code
 import * as itemCategories from "../json/item_categories.json";
-import * as botCategories from "../json/bot_categories.json";
-import { Bot, BotCategory, BotPart, ItemOption, JsonBot } from "./botTypes";
+import * as botExtraData from "../json/bot_extra_data.json";
+import { Bot, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "./botTypes";
 import {
     BaseItem,
     Critical,
@@ -19,6 +19,8 @@ import {
     WeaponItem,
 } from "./itemTypes";
 import { specialItemProperties } from "./specialItemProperties";
+import { Spoiler } from "./commonTypes";
+import { getSpoilersState } from "./commonJquery";
 
 export let botData: { [key: string]: Bot } = {};
 export let itemData: { [key: string]: Item } = {};
@@ -108,9 +110,6 @@ const itemsWithNoArt = new Set([
     "Centrium Claws",
     "T.R.O.L.L. Exoskeleton",
 ]);
-
-// An enum to represent spoiler level
-export type Spoiler = "None" | "Spoilers" | "Redacted";
 
 // Color schemes
 enum ColorScheme {
@@ -441,6 +440,9 @@ export function createBotDataContent(bot: Bot): string {
     const emptyLine = `<pre class="popover-line">
     
 </pre>`;
+    const emptyHalfLine = `<pre class="popover-half-line">
+    
+</pre>`;
 
     // Create overview
     let html = `
@@ -547,7 +549,7 @@ export function createBotDataContent(bot: Bot): string {
         `;
 
         traits.forEach(trait => {
-            html += `<span class="popover-description">${trait}</span>\n`
+            html += `<span class="popover-description">&nbsp;${trait}</span>\n`
         });
     }
 
@@ -577,7 +579,40 @@ export function createBotDataContent(bot: Bot): string {
         html += `
         ${emptyLine}
         ${summaryLine("Description")}
-        <span class="popover-description">${description}</span>
+        <span class="popover-description">&nbsp;${description}</span>
+        `;
+    }
+
+    // Get filtered list of locations
+    const spoilers = getSpoilersState();
+    const locations = bot.locations.filter(l => {
+        if (l.Spoiler === undefined || spoilers === "Redacted") {
+            return true;
+        }
+
+        if (l.Spoiler === "Redacted") {
+            return false;
+        }
+
+        if (l.Spoiler === "Spoilers" && spoilers === "None") {
+            return false;
+        }
+
+        return true;
+    });
+    if (bot.locations.length > 0) {
+        // Add bot locations
+        html += `
+        ${emptyLine}
+        ${summaryLine("Locations")}
+        ${locations.map((location) => {
+            if (location.Description !== undefined) {
+                return `<span class="popover-location">&nbsp;${location.Location}</span>
+                <span class="popover-description">&nbsp;&nbsp;${escapeHtml(location.Description)}</span>`;
+            } else {
+                return `<span class="popover-location">&nbsp;${location.Location}</span>`;
+            }
+        }).join(emptyHalfLine)}
         `;
     }
 
@@ -927,7 +962,7 @@ export function createItemDataContent(baseItem: Item): string {
         `;
 
         if (baseItem.effect !== undefined) {
-            html += `<span class="popover-description">${escapeHtml(baseItem.effect)}</span>`
+            html += `<span class="popover-description">&nbsp;${escapeHtml(baseItem.effect)}</span>`
 
             if (baseItem.description !== undefined) {
                 html += `${emptyLine}`;
@@ -935,7 +970,7 @@ export function createItemDataContent(baseItem: Item): string {
         }
 
         if (baseItem.description !== undefined) {
-            html += `<span class="popover-description">${escapeHtml(baseItem.description)}</span>`
+            html += `<span class="popover-description">&nbsp;${escapeHtml(baseItem.description)}</span>`
         }
     }
 
@@ -1481,12 +1516,11 @@ export async function initData(
             const componentOptionData: BotPart[][] = [];
             bot.Components?.forEach((data) => addPartData(data, componentData, componentOptionData));
 
-            let categories: BotCategory[];
-            if (!(botName in botCategories)) {
-                console.log(`Need to add categories for ${botName}`);
-                categories = [];
+            let extraData: JsonBotExtraData | undefined = undefined;
+            if (!(botName in botExtraData)) {
+                console.log(`Need to add extra data for ${botName}`);
             } else {
-                categories = (botCategories as { [key: string]: BotCategory[] })[botName];
+                extraData = (botExtraData as any as { [key: string]: JsonBotExtraData })[botName];
             }
 
             const fabrication: FabricationStats | undefined =
@@ -1519,7 +1553,7 @@ export async function initData(
                 armamentData: armamentData,
                 armamentOptionData: armamentOptionData,
                 armamentString: bot["Armament String"] ?? "",
-                categories: categories,
+                categories: extraData?.Categories ?? [],
                 class: bot.Class,
                 componentData: componentData,
                 componentOptionData: componentOptionData,
@@ -1534,6 +1568,7 @@ export async function initData(
                 heatDissipation: parseIntOrDefault(bot["Heat Dissipation"], 0),
                 immunities: bot.Immunities ?? [],
                 immunitiesString: bot.Immunities?.join(", ") ?? "",
+                locations: extraData?.Locations ?? [],
                 memory: bot.Memory,
                 movement: `${bot.Movement} (${bot.Speed}/${bot["Speed %"]}%)`,
                 movementOverloaded:
@@ -1603,29 +1638,6 @@ export function leetSpeakMatchTransform(name: string): string {
         .replace(/8/, "b");
 }
 
-// Waits for all bot images to be loaded
-async function loadBotImages(): Promise<any> {
-    const imageNames = Object.keys(botData).map((botName) => getBotImageName(botData[botName]));
-    return loadImages(imageNames);
-}
-
-// Awaits for all the given image urls to be loaded
-async function loadImages(imageUrls: string[]) {
-    const promises: Promise<any>[] = [];
-
-    for (const imageUrl of imageUrls) {
-        promises.push(
-            new Promise((resolve) => {
-                const image = new Image();
-                image.onload = resolve;
-                image.src = imageUrl;
-            }),
-        );
-    }
-
-    await Promise.all(promises);
-}
-
 // Awaits for all the given image urls to be loaded
 async function loadImage(imageUrl: string): Promise<any> {
     return new Promise((resolve) => {
@@ -1633,12 +1645,6 @@ async function loadImage(imageUrl: string): Promise<any> {
         image.onload = resolve;
         image.src = imageUrl;
     });
-}
-
-// Waits for all item images to be loaded
-async function loadItemImages(): Promise<any> {
-    const imageNames = Object.keys(itemData).map((itemName) => getItemSpriteImageName(itemData[itemName]));
-    return loadImages(imageNames);
 }
 
 // Converts an item or bot's name to an HTML id

@@ -491,25 +491,30 @@ body {
     font-family: smallcaps-mono;
 }
 
-.popover-summary {
-    font-family: smallcaps-mono;
-    margin: 0;
-    color: #bfbfbf;
-    font-size: .80rem;
-}
-
 .popover-line,
+.popover-half-line,
 .popover-part,
 .popover-description,
-.popover-option {
+.popover-option,
+.popover-location,
+.popover-summary {
     font-family: smallcaps-mono;
     margin: 0;
     color: #00b200;
     font-size: .80rem;
 }
 
+.popover-half-line {
+    font-size: .40rem;
+}
+
+.popover-summary,
 .popover-option {
     color: #bfbfbf;
+}
+
+.popover-location {
+    color: #005700;
 }
 
 .popover-description {

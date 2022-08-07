@@ -1,0 +1,3066 @@
+{
+    "01-MTF": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Storage event",
+                "Description": "Friendly: Appears in an opened vault and leaves when exiting the map"
+            }
+        ]
+    },
+    "12-ASH": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Mines event",
+                "Description": "Hostile: Appears after attacking the Exiles"
+            },
+            {
+                "Location": "Zion event",
+                "Description": "Hostile: Appears after attacking Zion"
+            },
+            {
+                "Location": "Caves event",
+                "Description": "Friendly: Appears when low on core integrity while under fire and reveals an 0b10 exit"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appears as a summonable ally"
+            }
+        ]
+    },
+    "1C-UTU": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Mines event",
+                "Description": "Hostile: Appears after attacking the Exiles"
+            },
+            {
+                "Location": "Zion event",
+                "Description": "Hostile: Appears after attacking Zion"
+            },
+            {
+                "Location": "Caves event",
+                "Description": "Friendly: Appears when low on core integrity while under fire and reveals an 0b10 exit"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appears as a summonable ally"
+            }
+        ]
+    },
+    "5H-AD0": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Zion Deep Caves event",
+                "Description": "Friendly: Appears on entering the map and leaves when exiting the map"
+            }
+        ]
+    },
+    "7V-RTL": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Mines event",
+                "Description": "Hostile: Appears after attacking the Exiles"
+            },
+            {
+                "Location": "Zion event",
+                "Description": "Hostile: Appears after attacking Zion"
+            },
+            {
+                "Location": "Caves event",
+                "Description": "Friendly: Appears when low on core integrity while under fire and reveals an 0b10 exit"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appears as a summonable ally"
+            }
+        ]
+    },
+    "8R-AWN": {
+        "Categories": [
+            "Exiles",
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Materials event",
+                "Description": "Friendly: Appears in Materials heading to nearest Mines exit"
+            },
+            {
+                "Location": "Mines event",
+                "Description": "Friendly: Appears in Mines heading to Exiles exit"
+            },
+            {
+                "Location": "Exiles",
+                "Description": "Friendly: Stationed at the entrance to the Exiles map"
+            }
+        ]
+    },
+    "99-TNT": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Mines event",
+                "Description": "Hostile: Appears after attacking the Exiles"
+            },
+            {
+                "Location": "Zion event",
+                "Description": "Hostile: Appears after attacking Zion"
+            },
+            {
+                "Location": "Caves event",
+                "Description": "Friendly: Appears when low on core integrity while under fire and reveals an 0b10 exit"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appears as a summonable ally"
+            }
+        ]
+    },
+    "A-02 Transporter": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -10 through -7",
+                "Description": "Neutral: Roams the map, sometimes with 1-2 Grunt guards, sometimes picking up items created by fabricators"
+            }
+        ]
+    },
+    "A-15 Conveyor": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -6 through -1",
+                "Description": "Neutral: Roams the map, sometimes with 1-2 Grunt guards, sometimes picking up items created by fabricators"
+            }
+        ]
+    },
+    "A-27 Freighter": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "Non-branch 0b10 maps -7 through -2",
+                "Description": "Hostile: Appears at an 0b10 map exit with a Protector and 2 ARCs and exits the map from a Garrison"
+            }
+        ]
+    },
+    "A2": {
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Access_0",
+                "Description": "Hostile: Stationed at the bridge between the main bulk of the map and the Singularity Gate"
+            }
+        ]
+    },
+    "A3": {
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Access_0",
+                "Description": "Hostile: Appears while exploring the map after A6, A5, and A4"
+            }
+        ]
+    },
+    "A4": {
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Access_0",
+                "Description": "Hostile: Appears while exploring the map after A6 and A5"
+            }
+        ]
+    },
+    "A5": {
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Lab",
+                "Description": "Hostile: Appears when triggering the scanners"
+            },
+            {
+                "Location": "Access_0",
+                "Description": "Hostile: Appears while exploring the map after A6"
+            }
+        ]
+    },
+    "A6": {
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Access_0",
+                "Description": "Hostile: Appears while exploring the map"
+            }
+        ]
+    },
+    "A7": {
+        "Categories": [
+            "Architect",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Extension",
+                "Description": "Friendly: Locked up in a unique sealed sell, guarded by a Sentry"
+            }
+        ]
+    },
+    "A8": {
+        "Categories": [
+            "Architect",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Zion event",
+                "Description": "Friendly: Appears temporarily to give a special terminal hack, then leaves"
+            },
+            {
+                "Location": "Access_0",
+                "Description": "Hostile: Stationed at the entrance to the map",
+                "Spoilers": "Redacted"
+            }
+        ]
+    },
+    "AD-0RF": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Mines event",
+                "Description": "Hostile: Appears after attacking the Exiles"
+            },
+            {
+                "Location": "Zion event",
+                "Description": "Hostile: Appears after attacking Zion"
+            },
+            {
+                "Location": "Caves event",
+                "Description": "Friendly: Appears when low on core integrity while under fire and reveals an 0b10 exit"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appears as a summonable ally"
+            }
+        ]
+    },
+    "Alpha 7": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Testing",
+                "Description": "Hostile: Guarding the SGEMP Prototype"
+            },
+            {
+                "Location": "Testing event",
+                "Description": "Hostile: Shooting rewireable knights or trolls at the shooting range"
+            },
+            {
+                "Location": "Quarantine event",
+                "Description": "Hostile: Guarding the Sigix Terminator"
+            },
+            {
+                "Location": "Section 7",
+                "Description": "Hostile: 2 guarding the main entrance to the Leopard hangar",
+                "Spoilers": "Redacted"
+            },
+            {
+                "Location": "Command",
+                "Description": "Hostile: 2 guarding the surface exit on the right side of Command",
+                "Spoilers": "Redacted"
+            }
+        ]
+    },
+    "Advanced Drone": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "Advanced Drone Bay"
+            }
+        ]
+    },
+    "Architect": {
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Access_0",
+                "Description": "Hostile: Stationed at the entrance to the map"
+            }
+        ]
+    },
+    "Army Drone": {
+        "Categories": [
+            "Drone",
+            "Exiles"
+        ],
+        "Locations": [
+            {
+                "Location": "Army Drone Bay"
+            }
+        ]
+    },
+    "Assault Drone": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Assault Drone Bay"
+            }
+        ]
+    },
+    "Assembled (4)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Mines event",
+                "Description": "Hostile: Appear in a large group at random with a Demolisher ARC summoned to their location"
+            },
+            {
+                "Location": "Caves event",
+                "Description": "Hostile: Appear in a large group at an abandoned 0b10 outpost with accompanying announcement"
+            },
+            {
+                "Location": "0b10 event",
+                "Description": "Hostile: Appear in waves of small groups when triggering an ambush trap with Demolisher ARCs continually summoned to their location"
+            },
+            {
+                "Location": "Zion Deep Caves",
+                "Description": "Hostile: Appear in a large group behind the impregnable wall on the left side of the map",
+                "Spoilers": "Spoilers"
+            }
+        ]
+    },
+    "Assembled (7)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Mobile Assembly Unit",
+                "Description": "Hostile: Appear every 10 turns, friendly if Core Reset Matrix has been used",
+                "Spoilers": "Spoilers"
+            },
+            {
+                "Location": "Core Reset Matrix + low core integrity",
+                "Description": "Friendly: Appear in a small group and enables hypermatrix pings to create more in main 0b10-controlled maps",
+                "Spoilers": "Spoilers"
+            },
+            {
+                "Location": "Sigix Exoskeleton",
+                "Description": "Friendly: Appear in a small group and enables hypermatrix pings to create more in main 0b10-controlled maps",
+                "Spoilers": "Redacted"
+            }
+        ]
+    },
+    "Assembler": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Zion Deep Caves",
+                "Description": "Hostile: 2 appear behind the impregnable wall on the left side of the map"
+            }
+        ]
+    },
+    "B-36 Bruiser": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -9 through -8",
+                "Description": "Hostile: Brawlers are common bots that can be grunt patrol squad leaders and found inside assault ARCs"
+            }
+        ]
+    },
+    "B-48 Gladiator": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps and caves -7 through -6",
+                "Description": "Hostile: Brawlers are common bots that can be grunt patrol squad leaders and found inside assault ARCs"
+            }
+        ]
+    },
+    "B-60 Warrior": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps and caves -5 through -4",
+                "Description": "Hostile: Brawlers are common bots that can be grunt patrol squad leaders and found inside assault ARCs"
+            }
+        ]
+    },
+    "B-74 Champion": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -3 through -1",
+                "Description": "Hostile: Brawlers are common bots that can be grunt patrol squad leaders and found inside assault ARCs"
+            }
+        ]
+    },
+    "B-75 Beast": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -7 through -5",
+                "Description": "Hostile: Behemoths are common bots that typically guard machines and item stockpiles"
+            }
+        ]
+    },
+    "B-86 Titan": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -4 through -3",
+                "Description": "Hostile: Behemoths are common bots that typically guard machines and item stockpiles"
+            }
+        ]
+    },
+    "B-90 Cyclops": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -3 through -2",
+                "Description": "Hostile: Behemoths are common bots that typically guard machines and item stockpiles"
+            }
+        ]
+    },
+    "B-99 Colossus": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps on -1",
+                "Description": "Hostile: Behemoths are common bots that typically guard machines and item stockpiles"
+            },
+            {
+                "Location": "Section 7",
+                "Description": "Dormant Hostile: Guarding the LRC cache in the Leopard hangar"
+            }
+        ]
+    },
+    "Bomb Drone": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Bomb Drone Bay"
+            }
+        ]
+    },
+    "Borebot": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Warlord"
+        ],
+        "Locations": [
+            {
+                "Location": "-2 Research Warlord Invasion",
+                "Description": "Friendly: 3 appear on the left side of the map and tunnel through to the right side"
+            }
+        ]
+    },
+    "Bouncer": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Warlord"
+        ],
+        "Locations": [
+            {
+                "Location": "Warlord",
+                "Description": "Friendly: Guarding the Warlord base"
+            }
+        ]
+    },
+    "Butcher (5)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "Butcher (7)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "C-17 Slicer": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -8 through -6",
+                "Description": "Hostile: Appear as Heavy reinforcements, most frequently called on airborne units"
+            }
+        ]
+    },
+    "C-30 ARC": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -9 through -1",
+                "Description": "Hostile: Roam around the map as patrols or head straight toward Cogmind as an assault"
+            }
+        ]
+    },
+    "C-35 Carver": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -5 through -3",
+                "Description": "Hostile: Appear as Heavy reinforcements, most frequently called on airborne units"
+            }
+        ]
+    },
+    "C-40 Crusher": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "Wastes",
+                "Description": "Hostile: 6 appear in most wastes maps, sometimes fewer disabled Crushers can be found instead"
+            }
+        ]
+    },
+    "C-55 Analyst": {
+        "Categories": [
+            "0b10",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Research branches",
+                "Description": "Neutral: Roam the map or guard specific spots as part of prefabs, turn hostile when a bot attacks in LOS"
+            }
+        ]
+    },
+    "C-57 Dissector": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -2 through -1",
+                "Description": "Hostile: Appear as Heavy reinforcements, most frequently called on airborne units"
+            }
+        ]
+    },
+    "C-65 Expert": {
+        "Categories": [
+            "0b10",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Research branches",
+                "Description": "Neutral: Roam the map or guard specific spots as part of prefabs, turn hostile when a bot attacks in LOS"
+            }
+        ]
+    },
+    "Cetus Guard": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Cetus",
+                "Description": "Hostile: Groups of 4 guard the left and top-right sides of the map"
+            }
+        ]
+    },
+    "CL-ANK": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Mines event",
+                "Description": "Hostile: Appears after attacking the Exiles"
+            },
+            {
+                "Location": "Zion event",
+                "Description": "Hostile: Appears after attacking Zion"
+            },
+            {
+                "Location": "Caves event",
+                "Description": "Friendly: Appears when low on core integrity while under fire and reveals an 0b10 exit"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appears as a summonable ally"
+            }
+        ]
+    },
+    "Combat Drone": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Combat Drone Bay"
+            }
+        ]
+    },
+    "Combat Programmer": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Intercept squad",
+                "Description": "Hostile: Appear after Cogmind is spotted by a Tracker after using the Data Conduit"
+            },
+            {
+                "Location": "Intercept squad",
+                "Description": "Hostile: Appear after Cogmind is spotted by a Tracker after being scanned in in Section 7 or Lab",
+                "Spoilers": "Redacted"
+            },
+            {
+                "Location": "Command",
+                "Description": "Hostile: 2 guard the Doom Corridor outside of MAIN.C's room",
+                "Spoilers": "Redacted"
+            }
+        ]
+    },
+    "Commander": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly"
+            }
+        ]
+    },
+    "D-53 Grenadier": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -10 through -6",
+                "Description": "Hostile: Demolishers are summoned when a large group of hostiles are together or during an assembled infestation"
+            }
+        ]
+    },
+    "D-63 Destroyer": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -10 through -6",
+                "Description": "Hostile: Demolishers are summoned when a large group of hostiles are together or during an assembled infestation"
+            }
+        ]
+    },
+    "D-83 Annihilator": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -10 through -6",
+                "Description": "Hostile: Demolishers are summoned when a large group of hostiles are together or during an assembled infestation"
+            }
+        ]
+    },
+    "DAS Turret": {
+        "Categories": [
+            "Derelict",
+            "Exiles"
+        ],
+        "Locations": [
+            {
+                "Location": "Deploy A Sentry"
+            },
+            {
+                "Location": "Exiles",
+                "Description": "Hostile: Deployed by EX-DEC when attacking the Exiles"
+            }
+        ]
+    },
+    "Data Miner": {
+        "Categories": [
+            "Architect",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Data Miner",
+                "Description": "Friendly: Found next to the Data Conduit"
+            }
+        ]
+    },
+    "Decomposer": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves",
+                "Description": "Friendly: Wandering around the map"
+            }
+        ]
+    },
+    "Decoy Drone": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Decoy Drone Bay"
+            }
+        ]
+    },
+    "Demented": {
+        "Categories": [
+            "Derelict"
+        ]
+    },
+    "Dragon": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Warlord"
+        ],
+        "Locations": [
+            {
+                "Location": "-2 Research Warlord Invasion",
+                "Description": "Friendly: Appears as Warlord reinforcements appearing in Borebot tunnels on the left side of the map"
+            }
+        ]
+    },
+    "Drone": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "Drone Bay"
+            },
+            {
+                "Location": "Hunter",
+                "Description": "Hostile: Appear when a Hunter loses tracking on Cogmind"
+            }
+        ]
+    },
+    "E-15 Imp": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 Assaults -6 through -1",
+                "Description": "Hostile: Appear inside assault ARCS"
+            }
+        ]
+    },
+    "Enhanced Demolisher": {
+        "Categories": [
+            "Architect",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Warlord",
+                "Description": "Friendly: 3 appear after Warlord's base is infiltrated and head for the exit"
+            }
+        ]
+    },
+    "Enhanced Grunt": {
+        "Categories": [
+            "Architect",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves after Data Miner",
+                "Description": "Friendly: Appears when encountering a hostile in the caves after visiting Data Miner"
+            },
+            {
+                "Location": "Special Hack",
+                "Description": "Friendly: 2 appear when a special terminal hack given by A8 in Zion is used"
+            },
+            {
+                "Location": "Cetus",
+                "Description": "Friendly: 5 can be fabricated from the Cetus manufacturing module when a special hack given by A7 is used"
+            },
+            {
+                "Location": "Access_0",
+                "Description": "Hostile: Guard or patrol the map in groups of 3",
+                "Spoilers": "Redacted"
+            }
+        ]
+    },
+    "Enhanced Hunter": {
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Access_0",
+                "Description": "Hostile: Patrol the map in groups of 2"
+            }
+        ]
+    },
+    "Enhanced Programmer": {
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Access_0",
+                "Description": "Hostile: Patrol the map if the Data Conduit is used or more than 2 combat allies accompany Cogmind while entering the map"
+            }
+        ]
+    },
+    "Enhanced Q-Series": {
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Hostile: Appear in large groups after surrendering to MAIN.C"
+            }
+        ]
+    },
+    "Enhanced Q-Series Ex 1": {
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ]
+    },
+    "Enhanced Q-Series Ex 2": {
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ]
+    },
+    "Enhanced Q-Series Ex 3": {
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ]
+    },
+    "Enhanced Sentry": {
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Access_0",
+                "Description": "Hostile: Stationed in guard positions"
+            }
+        ]
+    },
+    "EX-BIN": {
+        "Categories": [
+            "Derelict",
+            "Exiles"
+        ],
+        "Locations": [
+            {
+                "Location": "Exiles",
+                "Description": "Friendly: Stationed near the FarCom aligner"
+            }
+        ]
+    },
+    "EX-DEC": {
+        "Categories": [
+            "Derelict",
+            "Exiles"
+        ],
+        "Locations": [
+            {
+                "Location": "Exiles",
+                "Description": "Friendly: Stationed near a large machine on the left side of the map"
+            },
+            {
+                "Location": "Warlord",
+                "Description": "Friendly: Stationed with the BFG in the vortex lab on \"Spacelab\" seeds where the Exiles are missing from their hideout"
+            }
+        ]
+    },
+    "EX-HEX": {
+        "Categories": [
+            "Derelict",
+            "Exiles"
+        ],
+        "Locations": [
+            {
+                "Location": "Exiles",
+                "Description": "Friendly: Stationed near some assembled on the right side of the map"
+            }
+        ]
+    },
+    "Executioner": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Cargo convoy escort -4 through -2",
+                "Description": "Hostile: Appear in guard ARCs escorting a Freighter"
+            },
+            {
+                "Location": "0b10 Heavy Assaults -3 through -1",
+                "Description": "Hostile: Appear as heavy assault ARC contents in High Security"
+            },
+            {
+                "Location": "Warlord",
+                "Description": "Hostile: Appear as reinforcements during the 0b10 attack"
+            },
+            {
+                "Location": "Section 7",
+                "Description": "Dormant Hostile: 2 guard the top left corner of the Leopard hangar and 2 guard the bottom right corner",
+                "Spoilers": "Redacted"
+            }
+        ]
+    },
+    "Fireman (5)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly: Occasionally hostile in specific caves events"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appear as a summonable allies in groups of 3-4"
+            }
+        ]
+    },
+    "Fireman (7)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly: Occasionally hostile in specific caves events"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appear as a summonable allies in groups of 3-4"
+            }
+        ]
+    },
+    "Fortress": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Quarantine/Testing",
+                "Description": "Hostile: Guarding the "
+            }
+        ]
+    },
+    "Furnace": {
+        "Categories": [
+            "Derelict"
+        ]
+    },
+    "G-34 Mercenary": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -10 through -9",
+                "Description": "Hostile: Patrol the map in grunt squads, can appear as investigation/reinforcement squads, and can appear inside assault ARCs"
+            }
+        ]
+    },
+    "G-47 Trooper": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -10 through -7",
+                "Description": "Hostile: Patrol the map in grunt squads, can appear as investigation/reinforcement squads, and can appear inside assault ARCs"
+            }
+        ]
+    },
+    "G-50 Soldier": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -7 through -5",
+                "Description": "Hostile: Patrol the map in grunt squads, can appear as investigation/reinforcement squads, and can appear inside assault ARCs"
+            }
+        ]
+    },
+    "G-67 Veteran": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -6 through -3",
+                "Description": "Hostile: Patrol the map in grunt squads, can appear as investigation/reinforcement squads, and can appear inside assault ARCs"
+            }
+        ]
+    },
+    "G-73 Enforcer": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -4 through -1",
+                "Description": "Hostile: Patrol the map in grunt squads, can appear as investigation/reinforcement squads, and can appear inside assault ARCs"
+            }
+        ]
+    },
+    "God Mode": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Warlord"
+        ],
+        "Locations": [
+            {
+                "Location": "-2 Research Warlord Invasion",
+                "Description": "Friendly: Appear on the left side of Reserach following a Borebot right along with Warlord"
+            }
+        ]
+    },
+    "God Mode (Fake)": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Warlord"
+        ],
+        "Locations": [
+            {
+                "Location": "Warlord",
+                "Description": "Friendly Dormant: Stationed next to Warlord in the Warlord base"
+            }
+        ]
+    },
+    "Golem": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Zion Deep Caves",
+                "Description": "Hostile: 1 guards the bottom side of the impregnable wall on the left side of the map, one guards the top side"
+            }
+        ]
+    },
+    "Golem (Naked)": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Dropped GOLEM Unit",
+                "Description": "Hostile: Regrows parts until it becomes a full GOLEM, turns friendly if a Core Reset Matrix has been used"
+            }
+        ]
+    },
+    "Guerrilla (5)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly"
+            }
+        ]
+    },
+    "Guerrilla (7)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "H-55 Commando": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -8 through -7",
+                "Description": "Hostile: Patrol the map, appear as reinforcements/investigation squads, and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "H-61 Shepherd": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -8 through -6",
+                "Description": "Stationed at high traffic corridors and on exits and rotate positions during security rotations"
+            }
+        ]
+    },
+    "H-66 Slayer": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -6 through -5",
+                "Description": "Hostile: Patrol the map, appear as reinforcements/investigation squads, and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "H-71 Marshal": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -5 through -3",
+                "Description": "Stationed at high traffic corridors and on exits and rotate positions during security rotations"
+            }
+        ]
+    },
+    "H-77 Assassin": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -4 through -3",
+                "Description": "Hostile: Patrol the map, appear as reinforcements/investigation squads, and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "H-81 Overseer": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -2 through -1",
+                "Description": "Stationed at high traffic corridors and on exits and rotate positions during security rotations"
+            }
+        ]
+    },
+    "H-88 Terminator": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -2 through -1",
+                "Description": "Hostile: Patrol the map, appear as reinforcements/investigation squads, and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "Hacking Drone": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Hacking Drone Bay"
+            }
+        ]
+    },
+    "Hydra": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Warlord"
+        ],
+        "Locations": [
+            {
+                "Location": "-2 Research Warlord Invasion",
+                "Description": "Friendly: Appears as Warlord reinforcements appearing in Borebot tunnels on the left side of the map"
+            }
+        ]
+    },
+    "I-25 Savior": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -8",
+                "Description": "Hostile: Appear inside assault ARCs"
+            }
+        ]
+    },
+    "I-36 Angel": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -7 through -6",
+                "Description": "Hostile: Appear inside assault ARCs"
+            }
+        ]
+    },
+    "I-47 Archangel": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -5 through -1",
+                "Description": "Hostile: Appear inside assault ARCs"
+            }
+        ]
+    },
+    "Imprinter": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Zion",
+                "Description": "Friendly: Stationed on the left side of the map near the imprinting machine"
+            }
+        ]
+    },
+    "Investigator": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 Heavy Assaults -3 through -1",
+                "Description": "Hostile: Appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "K-01 Serf": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps",
+                "Description": "Neutral: Roam the map looking for debris to clean up"
+            }
+        ]
+    },
+    "Knight": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Warlord"
+        ],
+        "Locations": [
+            {
+                "Location": "Warlord",
+                "Description": "Friendly: Stationed next to Warlord in the Warlord base"
+            },
+            {
+                "Location": "-2 Research Warlord Invasion",
+                "Description": "Friendly: Appears as Warlord reinforcements appearing in Borebot tunnels on the left side of the map"
+            }
+        ]
+    },
+    "L-31 Rogue": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -9 through -8",
+                "Description": "Hostile: Duelists are common bots that can be grunt patrol squad leaders and found inside assault ARCs"
+            }
+        ]
+    },
+    "L-41 Fighter": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -7 through -5",
+                "Description": "Hostile: Duelists are common bots that can be grunt patrol squad leaders and found inside assault ARCs"
+            }
+        ]
+    },
+    "L-61 Swordsman": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -4 through -1",
+                "Description": "Hostile: Duelists are common bots that can be grunt patrol squad leaders and found inside assault ARCs"
+            }
+        ]
+    },
+    "Lightning": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Hub_04(d)",
+                "Description": "Hostile: 4 squads of 3 Lightning and an Archangel appear the first time a Hub on the map is destroyed"
+            },
+            {
+                "Location": "Quarantine",
+                "Description": "Hostile: a squad of 3 Lightning and an Archangel appear when the Sigix containment room is opened"
+            }
+        ]
+    },
+    "LRC-V4": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Section 7",
+                "Description": "Broken: Stationed in the LRC lab below the Leopard hangar"
+            }
+        ]
+    },
+    "LRC-V5": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Section 7",
+                "Description": "Broken: Stationed in the LRC lab below the Leopard hangar"
+            }
+        ]
+    },
+    "LRC-V6": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Section 7",
+                "Description": "Broken: Stationed in the LRC lab below the Leopard hangar"
+            }
+        ]
+    },
+    "M Guard": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Hostile: 2 guard the Doom Corridor outside of MAIN.C's room"
+            }
+        ]
+    },
+    "M Shell/Atk": {
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Hostile: 4 appear after destroying MAIN.C's outer shell after the Sigix Exoskeleton is activated"
+            }
+        ]
+    },
+    "M Shell/Def": {
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Hostile: 4 appear after destroying MAIN.C's outer shell after the Sigix Exoskeleton is activated"
+            }
+        ]
+    },
+    "M-13 Machinist": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps",
+                "Description": "Neutral: Roam the map looking for allied bots to repair"
+            }
+        ]
+    },
+    "M-14 Sweeper": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves",
+                "Description": "Neutral: Extracts derelict traps from the grounds"
+            }
+        ]
+    },
+    "M-22 Extractor": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves",
+                "Description": "Neutral: Extracts derelict traps from the grounds"
+            }
+        ]
+    },
+    "M-28 Smith": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps",
+                "Description": "Neutral: Roam the map looking for allied bots to repair"
+            }
+        ]
+    },
+    "M-30 Cleanser": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves",
+                "Description": "Neutral: Extracts derelict traps from the grounds"
+            }
+        ]
+    },
+    "M-36 Artificer": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps",
+                "Description": "Neutral: Roam the map looking for allied bots to repair"
+            }
+        ]
+    },
+    "MAIN.C": {
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Hostile: Appears after destroying the outer shell of MAIN.C"
+            }
+        ]
+    },
+    "MAIN.C (Shell)": {
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Hostile: Appears in MAIN.C's room past the Doom Corridor"
+            }
+        ]
+    },
+    "Mapping Drone": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Mapping Drone Bay"
+            }
+        ]
+    },
+    "Marauder (6)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Warlord",
+                "Description": "Friendly: Guarding the Warlord base"
+            }
+        ]
+    },
+    "Marauder (8)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "-2 Research Warlord Invasion",
+                "Description": "Friendly: Appears as Warlord reinforcements appearing in Borebot tunnels on the left side of the map"
+            }
+        ]
+    },
+    "Martyr (5)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appear as summonable allies in groups of 1-2"
+            }
+        ]
+    },
+    "Martyr (7)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly"
+            }
+        ]
+    },
+    "Master Thief": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves",
+                "Description": "Hostile: Appears at the entrance/exits to caves maps after stealing items from the Exiles"
+            }
+        ]
+    },
+    "ME-RLN": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Mines event",
+                "Description": "Hostile: Appears after attacking the Exiles"
+            },
+            {
+                "Location": "Zion event",
+                "Description": "Hostile: Appears after attacking Zion"
+            },
+            {
+                "Location": "Caves event",
+                "Description": "Friendly: Appears when low on core integrity while under fire and reveals an 0b10 exit"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appears as a summonable ally"
+            }
+        ]
+    },
+    "Minesniffer Drone": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Warlord"
+        ],
+        "Locations": [
+            {
+                "Location": "Minesniffer Drone Bay"
+            }
+        ]
+    },
+    "Mutant (5)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "Mutant (6)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "Mutant (7)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "Mutant (8)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "Mini Drone": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "Mini Drone Bay"
+            }
+        ]
+    },
+    "N-00 Fly": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "Garrison event",
+                "Description": "Unpowered: Stationed behind emergency accesses in garrisons"
+            }
+        ]
+    },
+    "N-01 Spotter": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "Recycling",
+                "Description": "Hostile: Roam around the map and scan for intruders"
+            }
+        ]
+    },
+    "NK-0LA": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Mines event",
+                "Description": "Hostile: Appears after attacking the Exiles"
+            },
+            {
+                "Location": "Zion event",
+                "Description": "Hostile: Appears after attacking Zion"
+            },
+            {
+                "Location": "Caves event",
+                "Description": "Friendly: Appears when low on core integrity while under fire and reveals an 0b10 exit"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appears as a summonable ally"
+            }
+        ]
+    },
+    "O-16 Technician": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -10 through -3",
+                "Description": "Hostile: Roams around a home terminal, reports Cogmind and turns neutral on visual contact"
+            }
+        ]
+    },
+    "O-24 Administrator": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -8 through -1",
+                "Description": "Hostile: Roams around a home terminal, reports Cogmind and turns neutral on visual contact"
+            }
+        ]
+    },
+    "O-32 Director": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -4 through -1",
+                "Description": "Hostile: Roams around a home terminal, reports Cogmind and turns neutral on visual contact"
+            }
+        ]
+    },
+    "P-60 Hacker": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -8 through -6",
+                "Description": "Hostile: Patrol the map, appear as extermination squads, and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "P-70 Sage": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -5 through -4",
+                "Description": "Hostile: Patrol the map, appear as extermination squads, and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "P-80 Master": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -3 through -1",
+                "Description": "Hostile: Patrol the map, appear as extermination squads, and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "P1-3CE": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Mines event",
+                "Description": "Hostile: Appears after attacking the Exiles"
+            },
+            {
+                "Location": "Zion event",
+                "Description": "Hostile: Appears after attacking Zion"
+            },
+            {
+                "Location": "Caves event",
+                "Description": "Friendly: Appears when low on core integrity while under fire and reveals an 0b10 exit"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appears as a summonable ally"
+            }
+        ]
+    },
+    "Packrat": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves",
+                "Description": "Friendly: Wandering around the map"
+            }
+        ]
+    },
+    "Parasite": {
+        "Categories": [
+            "Derelict"
+        ]
+    },
+    "Perun": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zhirov"
+        ],
+        "Locations": [
+            {
+                "Location": "Zhirov",
+                "Description": "Friendly: Stationed at the entrance to Zhirov's lab"
+            }
+        ]
+    },
+    "PL-HR7": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves event",
+                "Description": "Friendly: In a small cave on the map behind a Warlord statue"
+            }
+        ]
+    },
+    "Protovariant D": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Testing event",
+                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+            }
+        ]
+    },
+    "Protovariant G": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Testing event",
+                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+            }
+        ]
+    },
+    "Protovariant H": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Testing event",
+                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+            }
+        ]
+    },
+    "Protovariant L": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Testing event",
+                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+            }
+        ]
+    },
+    "Protovariant P": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Testing event",
+                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+            }
+        ]
+    },
+    "Protovariant X": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Testing event",
+                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+            }
+        ]
+    },
+    "Protovariant Y": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Testing event",
+                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+            }
+        ]
+    },
+    "Q-Series": {
+        "Categories": [
+            "0b10",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps",
+                "Description": "Hostile: Appear instead of extermination squads sometimes after Cogmind is scanned in Quarantine/Testing"
+            }
+        ]
+    },
+    "Q-Series Example 1": {
+        "Categories": [
+            "0b10",
+            "Spoilers"
+        ]
+    },
+    "Q-Series Example 2": {
+        "Categories": [
+            "0b10",
+            "Spoilers"
+        ]
+    },
+    "Q-Series Example 3": {
+        "Categories": [
+            "0b10",
+            "Spoilers"
+        ]
+    },
+    "Quarantine Guard": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Quarantine",
+                "Description": "Hostile: Appear if 2 or more cooling ducts are broken"
+            }
+        ]
+    },
+    "R-06 Scavenger": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -11 through -7",
+                "Description": "Neutral: Roam the map looking for parts to recycle"
+            }
+        ]
+    },
+    "R-10 Processor": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -6 through -1",
+                "Description": "Neutral: Roam the map looking for parts to recycle"
+            }
+        ]
+    },
+    "Revision": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "-3 Research Revision 17 Invasion",
+                "Description": "Friendly: Appear in patrols roaming the map if Revision 17 is rescued in Cetus and the Cetus Manufacturing Module doesn't get damaged"
+            }
+        ]
+    },
+    "Revision 17": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Cetus",
+                "Description": "Friendly: Appears after destroying both sets of Cetus guards and approaching the top-right side of the map"
+            }
+        ]
+    },
+    "Revision 17++": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "-3 Research Revision 17 Invasion",
+                "Description": "Friendly: Catches up to Cogmind shortly after entering the map"
+            }
+        ]
+    },
+    "S7 Guard": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Section 7",
+                "Description": "Dormant Hostile: Guards certain alien artifacts"
+            }
+        ]
+    },
+    "S-10 Pest": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -10 through -8",
+                "Description": "Hostile: Patrol the map in large groups"
+            }
+        ]
+    },
+    "S-27 Virus": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -7 through -4",
+                "Description": "Hostile: Patrol the map in large groups"
+            }
+        ]
+    },
+    "S-43 Plague": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -3 through -1",
+                "Description": "Hostile: Patrol the map in large groups"
+            }
+        ]
+    },
+    "Samaritan": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves",
+                "Description": "Friendly: Wandering around the map"
+            }
+        ]
+    },
+    "Sapper": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves",
+                "Description": "Friendly: Wandering around the map"
+            },
+            {
+                "Location": "-2 Research Warlord Invasion",
+                "Description": "Friendly: Following borebots to the right side of the map",
+                "Spoilers": "Spoilers"
+            }
+        ]
+    },
+    "Savage (5)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "Savage (7)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "Sensor Drone": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Sensor Drone Bay"
+            }
+        ]
+    },
+    "Sigix Warrior": {
+        "Categories": [
+            "Alien",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Section 7",
+                "Description": "Unpowered: On the right-bottom side of the Leopard hangar, becomes friendly when the Sigix Containment Pod is inserted"
+            }
+        ]
+    },
+    "Splice Drone": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Splice Drone Bay"
+            }
+        ]
+    },
+    "Stealth Drone": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "Stealth Drone Bay"
+            }
+        ]
+    },
+    "Striker": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Cargo convoy escort -4 through -2",
+                "Description": "Hostile: Appear in guard ARCs escorting a Freighter"
+            },
+            {
+                "Location": "0b10 Heavy Assaults -3 through -1",
+                "Description": "Hostile: Appear as heavy assault ARC contents in High Security"
+            },
+            {
+                "Location": "Warlord",
+                "Description": "Hostile: Appear as reinforcements during the 0b10 attack"
+            },
+            {
+                "Location": "Section 7",
+                "Description": "Dormant Hostile: 2 guard the top right corner of the Leopard hangar near the Sigix Shearguns and 2 more guard the inside of the storage area",
+                "Spoilers": "Redacted"
+            }
+        ]
+    },
+    "Superbehemoth": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Testing event",
+                "Description": "Dormant Hostile: Appears next to a researcher"
+            }
+        ]
+    },
+    "Surgeon (4)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly"
+            }
+        ]
+    },
+    "Surgeon (6)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly"
+            }
+        ]
+    },
+    "Surveybot 24": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ]
+    },
+    "Svarog": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zhirov"
+        ],
+        "Locations": [
+            {
+                "Location": "Zhirov",
+                "Description": "Friendly: Stationed at the entrance to Zhirov's lab"
+            }
+        ]
+    },
+    "Swarm Drone": {
+        "Categories": [
+            "0b10",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Swarm Drone Bay"
+            }
+        ]
+    },
+    "T-07 Excavator": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps",
+                "Description": "Neutral: Dig out new rooms, then roam the map"
+            }
+        ]
+    },
+    "Target Drone": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves event",
+                "Description": "Neutral: Appear in the middle of the caves demolisher base map exit"
+            }
+        ]
+    },
+    "Thief": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves",
+                "Description": "Hostile: Appear in caves at random"
+            }
+        ]
+    },
+    "Thief Drone": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Thief Drone Bay"
+            }
+        ]
+    },
+    "Thug (5)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "Thug (7)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "Tinkerer": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly"
+            }
+        ]
+    },
+    "Tracker": {
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Intercept squad",
+                "Description": "Hostile: Appear after Cogmind has moved 1000/500(-6), 800/400(-5 through -4), or 600/300(-3 through -1) tiles after using the Data Conduit"
+            },
+            {
+                "Location": "Intercept squad",
+                "Description": "Hostile: Appear after Cogmind has moved 1000/500(-6), 800/400(-5 through -4), or 600/300(-3 through -1) tiles after being scanned in Section 7 or Lab",
+                "Spoilers": "Redacted"
+            }
+        ]
+    },
+    "Trailblazer": {
+        "Categories": [
+            "Drone",
+            "Exiles"
+        ],
+        "Locations": [
+            {
+                "Location": "Trailblazer Drone Bay"
+            }
+        ]
+    },
+    "Troll": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "-2 Research Warlord Invasion",
+                "Description": "Friendly: Appears as Warlord reinforcements appearing in Borebot tunnels on the left side of the map"
+            }
+        ]
+    },
+    "U-05 Engineer": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps",
+                "Description": "Neutral: Roam the map looking for walls to repair"
+            }
+        ]
+    },
+    "W-16 Scout": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -10 through -9",
+                "Description": "Hostile: Patrols the map"
+            }
+        ]
+    },
+    "W-25 Informer": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -8 through -5",
+                "Description": "Hostile: Patrols the map"
+            }
+        ]
+    },
+    "W-44 Eye": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -4 through -1",
+                "Description": "Hostile: Patrols the map"
+            }
+        ]
+    },
+    "Warbot": {
+        "Categories": [
+            "Derelict",
+            "Spoilers"
+        ],
+        "Locations": [
+            {
+                "Location": "Heart of Steel",
+                "Description": "Friendly: Transforms from the Heart of Steel after feeding enough matter/energy"
+            }
+        ]
+    },
+    "Wardrone": {
+        "Categories": [
+            "Drone",
+            "Spoilers",
+            "Warlord"
+        ],
+        "Locations": [
+            {
+                "Location": "Wardrone Bay"
+            }
+        ]
+    },
+    "Warlord": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Warlord"
+        ],
+        "Locations": [
+            {
+                "Location": "Warlord",
+                "Description": "Friendly: Stationed in the Warlord base"
+            },
+            {
+                "Location": "-2 Research Warlord Invasion",
+                "Description": "Friendly: Follows God Mode around the map"
+            }
+        ]
+    },
+    "Warlord (Command)": {
+        "Categories": [
+            "Derelict",
+            "Redacted",
+            "Warlord"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Friendly: Appears out of the first Command seal opened after meeting at the Warlord base",
+                "Spoilers": "Redacted"
+            }
+        ]
+    },
+    "Warlord 4Z-XS3": {
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Unpowered: Appears in the Doom Corridor"
+            }
+        ]
+    },
+    "Warlord AM-PH4": {
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Unpowered: Appears in the Doom Corridor"
+            }
+        ]
+    },
+    "Warlord D3-CKR": {
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Unpowered: Appears in the Doom Corridor"
+            }
+        ]
+    },
+    "Warlord HL-1SK": {
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Unpowered: Appears in the Doom Corridor"
+            }
+        ]
+    },
+    "Warlord KY-Z71": {
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Unpowered: Appears in the Doom Corridor"
+            }
+        ]
+    },
+    "Warlord MG-163": {
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Unpowered: Appears in the Doom Corridor"
+            }
+        ]
+    },
+    "Warlord SH-K8T": {
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
+        "Locations": [
+            {
+                "Location": "Command",
+                "Description": "Unpowered: Appears in the Doom Corridor"
+            }
+        ]
+    },
+    "Warlord Statue": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves event",
+                "Description": "Unpowered"
+            }
+        ]
+    },
+    "Wasp (5)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly"
+            }
+        ]
+    },
+    "Wasp (7)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly"
+            }
+        ]
+    },
+    "Wizard (5)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appear as a summonable allies in groups of 3-4"
+            }
+        ]
+    },
+    "Wizard (7)": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves and various derelict attack events",
+                "Description": "Friendly"
+            },
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appear as a summonable allies in groups of 3-4"
+            }
+        ]
+    },
+    "X-57 Shotgunner": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -8 through -7",
+                "Description": "Hostile: Appear as Heavy reinforcements and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "X-62 Marksman": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -8 through -6",
+                "Description": "Hostile: Appear as Heavy reinforcements and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "X-67 Chaingunner": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -7 through -5",
+                "Description": "Hostile: Appear as Heavy reinforcements and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "X-72 Disruptor": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -6 through -4",
+                "Description": "Hostile: Appear as Heavy reinforcements and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "X-77 Beamer": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -5 through -3",
+                "Description": "Hostile: Appear as Heavy reinforcements and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "X-82 Rainmaker": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -4 through -2",
+                "Description": "Hostile: Appear as Heavy reinforcements and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "X-87 Electro": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -3 through -1",
+                "Description": "Hostile: Appear as Heavy reinforcements and appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "Y-45 Defender": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -9 through -8",
+                "Description": "Hostile: Stationed in guard positions in corridors, on exits, and in rooms with machines/part stockpiles"
+            }
+        ]
+    },
+    "Y-54 Guardian": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -7 through -6",
+                "Description": "Hostile: Stationed in guard positions in corridors, on exits, and in rooms with machines/part stockpiles"
+            }
+        ]
+    },
+    "Y-64 Sentinel": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -5 through -4",
+                "Description": "Hostile: Stationed in guard positions in corridors, on exits, and in rooms with machines/part stockpiles"
+            }
+        ]
+    },
+    "Y-72 Warden": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -3 through -1",
+                "Description": "Hostile: Stationed in guard positions in corridors, on exits, and in rooms with machines/part stockpiles"
+            }
+        ]
+    },
+    "YI-UF0": {
+        "Categories": [
+            "Derelict"
+        ],
+        "Locations": [
+            {
+                "Location": "Mines event",
+                "Description": "Friendly/Hostile: Appears roaming the mines, friendly at first but turns hostile when attacked by an 0b10 bot"
+            }
+        ]
+    },
+    "Z-Courier": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appear as a summonable ally containing parts"
+            }
+        ]
+    },
+    "Z-Drone": {
+        "Categories": [
+            "Derelict",
+            "Drone",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Z-drone bay"
+            }
+        ]
+    },
+    "Z-Experimental (8)": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appears as a summonable ally"
+            },
+            {
+                "Location": "Command",
+                "Description": "Friendly: Appears out of Command seals",
+                "Spoilers": "Redacted"
+            }
+        ]
+    },
+    "Z-Experimental (10)": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appears as a summonable ally"
+            },
+            {
+                "Location": "Command",
+                "Description": "Friendly: Appears out of Command seals",
+                "Spoilers": "Redacted"
+            }
+        ]
+    },
+    "Z-Heavy (5)": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appear as summonable allies in groups of 1-2"
+            }
+        ]
+    },
+    "Z-Heavy (7)": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appear as summonable allies in groups of 1-2"
+            }
+        ]
+    },
+    "Z-Heavy (9)": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appear as summonable allies in groups of 1-2"
+            },
+            {
+                "Location": "Command",
+                "Description": "Friendly: Appears out of Command seals",
+                "Spoilers": "Redacted"
+            }
+        ]
+    },
+    "Z-Imprinter": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Zion Deep Caves",
+                "Description": "Hostile: Appears and immediately tracks Cogmind after getting to the middle of the map"
+            }
+        ]
+    },
+    "Z-Light (5)": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appear as summonable allies in groups of 2-3"
+            }
+        ]
+    },
+    "Z-Light (7)": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appear as summonable allies in groups of 2-3"
+            }
+        ]
+    },
+    "Z-Light (9)": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Imprint roster",
+                "Description": "Friendly: Appear as summonable allies in groups of 2-3"
+            },
+            {
+                "Location": "Command",
+                "Description": "Friendly: Appears out of Command seals",
+                "Spoilers": "Redacted"
+            }
+        ]
+    },
+    "Z-Technician": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Zion Deep Caves",
+                "Description": "Hostile: Stationed next to the Z-Power machine"
+            }
+        ]
+    },
+    "Zhirov": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zhirov"
+        ],
+        "Locations": [
+            {
+                "Location": "Zhirov",
+                "Description": "Friendly: Stationed at a workstation"
+            },
+            {
+                "Location": "Archives event",
+                "Description": "Friendly: Stationed around one of the terminals"
+            }
+        ]
+    },
+    "Zionite": {
+        "Categories": [
+            "Derelict",
+            "Spoilers",
+            "Zionite"
+        ],
+        "Locations": [
+            {
+                "Location": "Caves, Zion specifically, and various derelict-related events",
+                "Description": "Friendly"
+            }
+        ]
+    }
+}
