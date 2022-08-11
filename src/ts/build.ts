@@ -1490,9 +1490,9 @@ title="Paste the entire a run dump or scores .txt file below">Paste run dump bel
             parts
                 .map((p) => {
                     if (hasActiveSpecialProperty(p.part, p.active, "EnergyStorage")) {
-                        return (p.part.specialProperty!.trait as EnergyStorage).storage;
+                        return (p.part.specialProperty!.trait as EnergyStorage).storage * p.number;
                     } else if (p.active && p.part.slot === "Power") {
-                        return (p.part as PowerItem).energyStorage ?? 0;
+                        return ((p.part as PowerItem).energyStorage ?? 0) * p.number;
                     } else {
                         return 0;
                     }
