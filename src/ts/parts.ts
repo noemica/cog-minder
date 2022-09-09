@@ -1,10 +1,13 @@
 import * as items from "../json/items.json";
 import {
     createItemDataContent,
+    escapeHtml,
     gallerySort,
     getItem,
+    getItemAsciiArtImageName,
     initData,
     itemData,
+    itemsWithNoArt,
     leetSpeakMatchTransform,
     nameToId,
     parseIntOrDefault,
@@ -43,7 +46,7 @@ import { MappedSettings, TablesorterHeading, TextSorter } from "tablesorter";
 const jq = jQuery.noConflict();
 jq(function ($) {
     // Enum representing the selected viewing mode
-    type ViewMode = "Simple" | "Comparison" | "Spreadsheet";
+    type ViewMode = "Simple" | "Comparison" | "Spreadsheet" | "Gallery";
 
     type CategoryId =
         | "category0b10"
@@ -91,6 +94,7 @@ jq(function ($) {
     ]);
 
     // Maps of item names to item elements
+    const galleryItemElements = {};
     const simpleItemElements = {};
     const spreadsheetItemElements = {};
 
@@ -987,13 +991,13 @@ jq(function ($) {
         return html;
     }
 
-    // Creates elements for all simple items
+    // Creates elements for simple items on page load
     function createSimpleItems() {
         // Clear old items
         ($('#simpleItemsGrid > [data-toggle="popover"]') as any).popover("dispose");
         $("#simpleItemsGrid").empty();
 
-        // Create grid items
+        // Create simple grid items
         const itemNames = Object.keys(itemData);
         const itemsGrid = $("#simpleItemsGrid");
         itemNames.forEach((itemName) => {
@@ -1031,6 +1035,36 @@ jq(function ($) {
 
         // Enable popovers
         ($('#simpleItemsGrid > [data-toggle="popover"]') as any).popover({ sanitize: false });
+    }
+
+    // Creates elements for all gallery items
+    function createGalleryItems() {
+        ($('#galleryGrid > [data-toggle="popover"]') as any).popover("dispose");
+        $("#galleryGrid").empty();
+
+        const galleryGrid = $("#galleryGrid");
+        const itemNames = Object.keys(itemData);
+        itemNames.forEach((itemName) => {
+            const item = itemData[itemName];
+            const itemId = nameToId(itemName);
+            const element = $(
+                `<button
+                    id=${itemId}
+                    class="gallery-item btn btn-no-background-hover"
+                    type="button"
+                    data-html="true"
+                    data-content='${createItemDataContent(item)}'
+                    data-toggle="popover">
+                    <span>${itemName}</span>
+                    <img src="${escapeHtml(getItemAsciiArtImageName(item))}"></img>
+                </button>`,
+            );
+
+            galleryItemElements[itemName] = element;
+            galleryGrid.append(element[0]);
+        });
+
+        ($('#galleryGrid > [data-toggle="popover"]') as any).popover({ sanitize: false });
     }
 
     // Creates elements for all spreadsheet items
@@ -1301,6 +1335,8 @@ jq(function ($) {
             return "Comparison";
         } else if (modeId === "modeSpreadsheet") {
             return "Spreadsheet";
+        } else if (modeId === "modeGallery") {
+            return "Gallery";
         }
 
         return "Simple";
@@ -1319,6 +1355,7 @@ jq(function ($) {
 
         // Initialize page state
         createSimpleItems();
+        createGalleryItems();
         createSpreadsheetItems();
         updateCategoryVisibility();
         resetFilters();
@@ -1424,11 +1461,20 @@ jq(function ($) {
         $(window).on("click", (e) => {
             // If clicking outside of a popover close the current one
             const targetPopover = $(e.target).parents(".popover").length != 0;
+            const targetUnderPopoverButton = $(e.target).parents("[data-content]").length != 0;
 
             if (targetPopover) {
                 $(e.target).trigger("blur");
-            } else if (!targetPopover && $(".popover").length >= 1) {
-                ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
+                return;
+            }
+
+            let target = e.target;
+            if (targetUnderPopoverButton) {
+                target = $(e.target).parents("[data-content]")[0] as any;
+            }
+
+            if ($(".popover").length >= 1) {
+                ($('[data-toggle="popover"]') as any).not(target).popover("hide");
             }
         });
 
@@ -1628,7 +1674,7 @@ jq(function ($) {
         }
     }
 
-    // Updates the comparison stats
+    // Updates the comparison stats for the left/right items
     function updateComparison() {
         const leftContainer = $("#leftPartInfoContainer");
         const leftItemName = $("#leftPartSelect").selectpicker("val") as any as string;
@@ -1649,33 +1695,87 @@ jq(function ($) {
     }
 
     // Clears all existing items and adds new ones based on the filters
+    const viewModeVisibilityMap: Map<ViewMode, string[]> = new Map<ViewMode, string[]>([
+        ["Comparison", ["#comparisonContainer"]],
+        ["Gallery", ["#galleryGrid, #sortingContainer"]],
+        ["Simple", ["#sortingContainer", "#simpleItemsGrid"]],
+        ["Spreadsheet", ["#spreadsheetItemsTable", "#spreadsheetSlotRequiredLabel"]],
+    ]);
     function updateItems() {
-        // Hide any existing popovers
-        ($('[data-toggle="popover"]') as any).popover("hide");
+        function updateComparisonItems(items: string[]) {
+            // Update the comparison select options
+            const itemSet = new Set(items);
+            const selects = [$("#leftPartSelect"), $("#rightPartSelect")];
+            selects.forEach((select) => {
+                select.children().each((_, child) => {
+                    const item = $(child).val() as string;
+                    if (itemSet.has(item)) {
+                        $(child).removeClass("not-visible");
+                    } else {
+                        $(child).addClass("not-visible");
+                    }
+                });
 
-        // Get the names of all non-filtered items
-        const itemFilter = getItemFilter();
-        let items: string[] = [];
-        Object.keys(itemData).forEach((itemName) => {
-            const item = getItem(itemName);
+                refreshSelectpicker(select);
+            });
+        }
 
-            if (itemFilter(item)) {
-                items.push(item.name);
+        function updateGalleryItems(items: string[]) {
+            // Update visibility and order of all items
+            $("#galleryGrid > button").addClass("not-visible");
+
+            let precedingElement = null;
+            items.forEach((itemName) => {
+                // Update visibility of each element
+                const element = galleryItemElements[itemName];
+
+                if (itemsWithNoArt.has(itemName)) {
+                    return;
+                }
+                element.removeClass("not-visible");
+
+                // Must insert elements in-order like this because the sort
+                // mode may have changed
+                if (precedingElement == null) {
+                    $("#galleryGrid").append(element);
+                } else {
+                    element.insertAfter(precedingElement);
+                }
+
+                precedingElement = element;
+            });
+        }
+
+        function updateSpreadsheetItems(items: string[]) {
+            // Update visibility and order of all items
+            $("#spreadsheetItemsTable > tbody > tr").addClass("not-visible");
+
+            const slotId = getSelectedButtonId($("#slotsContainer"));
+            if (!(slotId in slotMap)) {
+                $("#spreadsheetItemsTable").addClass("not-visible");
+                return;
             }
-        });
 
-        // Sort item names for display
-        items = sortItemNames(items);
-
-        const viewMode = getViewMode();
-
-        if (viewMode === "Simple") {
-            $("#sortingContainer").removeClass("not-visible");
-            $("#comparisonContainer").addClass("not-visible");
-            $("#simpleItemsGrid").removeClass("not-visible");
-            $("#spreadsheetItemsTable").addClass("not-visible");
             $("#spreadsheetSlotRequiredLabel").addClass("not-visible");
 
+            // Reset visibility of all items
+            Object.keys(spreadsheetItemElements).forEach((itemName) => {
+                const item = spreadsheetItemElements[itemName];
+                item.addClass("not-visible");
+            });
+
+            items.forEach((itemName) => {
+                // Update visibility of each element
+                // Do not re-order the elements here
+                // Sorting is controlled by the table not by the sort dropdowns
+                // like the simple view
+                const element = spreadsheetItemElements[itemName];
+                element.removeClass("not-visible");
+            });
+        }
+
+        // Updates the simple items view with specified item names
+        function updateSimpleItems(items: string[]) {
             // Update visibility and order of all items
             $("#simpleItemsGrid > button").addClass("not-visible");
 
@@ -1695,59 +1795,47 @@ jq(function ($) {
 
                 precedingElement = element;
             });
-        } else if (viewMode === "Comparison") {
-            $("#sortingContainer").addClass("not-visible");
-            $("#comparisonContainer").removeClass("not-visible");
-            $("#simpleItemsGrid").addClass("not-visible");
-            $("#spreadsheetItemsTable").addClass("not-visible");
-            $("#spreadsheetSlotRequiredLabel").addClass("not-visible");
+        }
 
-            // Update the comparison select options
-            const itemSet = new Set(items);
-            const selects = [$("#leftPartSelect"), $("#rightPartSelect")];
-            selects.forEach((select) => {
-                select.children().each((_, child) => {
-                    const item = $(child).val() as string;
-                    if (itemSet.has(item)) {
-                        $(child).removeClass("not-visible");
-                    } else {
-                        $(child).addClass("not-visible");
-                    }
-                });
+        // Hide any existing popovers
+        ($('[data-toggle="popover"]') as any).popover("hide");
 
-                refreshSelectpicker(select);
-            });
-        } else if (viewMode == "Spreadsheet") {
-            $("#sortingContainer").addClass("not-visible");
-            $("#comparisonContainer").addClass("not-visible");
-            $("#simpleItemsGrid").addClass("not-visible");
-            $("#spreadsheetItemsTable").removeClass("not-visible");
-            $("#spreadsheetSlotRequiredLabel").addClass("not-visible");
+        // Get the names of all non-filtered items
+        const itemFilter = getItemFilter();
+        let items: string[] = [];
+        Object.keys(itemData).forEach((itemName) => {
+            const item = getItem(itemName);
 
-            // Update visibility and order of all items
-            $("#spreadsheetItemsTable > tbody > tr").addClass("not-visible");
-
-            const slotId = getSelectedButtonId($("#slotsContainer"));
-            if (!(slotId in slotMap)) {
-                $("#spreadsheetItemsTable").addClass("not-visible");
-                $("#spreadsheetSlotRequiredLabel").removeClass("not-visible");
-                return;
+            if (itemFilter(item)) {
+                items.push(item.name);
             }
+        });
 
-            // Reset visibility of all items
-            Object.keys(spreadsheetItemElements).forEach((itemName) => {
-                const item = spreadsheetItemElements[itemName];
-                item.addClass("not-visible");
-            });
+        // Sort item names for display
+        items = sortItemNames(items);
 
-            items.forEach((itemName) => {
-                // Update visibility of each element
-                // Do not re-order the elements here
-                // Sorting is controlled by the table not by the sort dropdowns
-                // like the simple view
-                const element = spreadsheetItemElements[itemName];
-                element.removeClass("not-visible");
-            });
+        const selectedViewMode = getViewMode();
+
+        // Show/hide appropriate elements
+        // Hide all first, then enable relevant elements later
+        for (const viewMode of viewModeVisibilityMap.keys()) {
+            for (const selector of viewModeVisibilityMap.get(viewMode)!) {
+                $(selector).addClass("not-visible");
+            }
+        }
+
+        for (const selector of viewModeVisibilityMap.get(selectedViewMode)!) {
+            $(selector).removeClass("not-visible");
+        }
+
+        if (selectedViewMode === "Simple") {
+            updateSimpleItems(items);
+        } else if (selectedViewMode === "Comparison") {
+            updateComparisonItems(items);
+        } else if (selectedViewMode === "Spreadsheet") {
+            updateSpreadsheetItems(items);
+        } else if (selectedViewMode === "Gallery") {
+            updateGalleryItems(items);
         }
     }
 

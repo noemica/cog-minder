@@ -199,6 +199,10 @@ body {
     color: #aaa;
 }
 
+.btn-no-background-hover:hover {
+    background-color: black;
+}
+
 .btn[aria-expanded="true"] {
     border: 1px solid #00aa00;
     background-color: #002100;
@@ -352,12 +356,12 @@ body {
     padding-left: .5rem;
 }
 
+/* Simple part items grid */
 .items-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
 }
 
-/* Grid item */
 .item {
     display: block;
     text-align: center;
@@ -368,6 +372,26 @@ body {
     line-height: 1.25rem;
     color: #00cc00;
     min-height: 3.0rem;
+}
+
+/* Gallery grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(432px, 1fr));
+}
+
+.gallery-item {
+    display: block;
+    text-align: center;
+    padding: 0.25rem 0.25rem;
+    background-color: inherit;
+    margin-left: -1px;
+    margin-top: -1px;
+    color: #00cc00;
+}
+
+.gallery-item > span {
+    display: block;
 }
 
 /* Hack/lore/RIF tables */

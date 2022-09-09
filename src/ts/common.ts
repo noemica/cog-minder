@@ -85,7 +85,8 @@ const botNameImageMap = new Map<string, string>([
     ["Zhirov", "Zhirov"],
 ]);
 
-const itemsWithNoArt = new Set([
+// A list of items with no gallery art
+export const itemsWithNoArt = new Set([
     "T-thruster",
     "Mak. Microthruster",
     "Integrated Tracker Drive",
