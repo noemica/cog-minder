@@ -46,6 +46,9 @@ import { MappedSettings, TablesorterHeading, TextSorter } from "tablesorter";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
+    // Use for testing with new parts
+    const generateAllHtml = false;
+
     // Enum representing the selected viewing mode
     type ViewMode = "Simple" | "Comparison" | "Spreadsheet" | "Gallery";
 
@@ -1009,12 +1012,31 @@ jq(function ($) {
                     id="${itemId}"
                     class="item btn"
                     type="button"
-                    data-html=true
-                    data-content='${createItemDataContent(item)}'
                     data-toggle="popover">
                     ${itemName}
                  </button>`,
             );
+
+            // Delay generation and init of the item popover until
+            // it is clicked on unless forcing all HTML gen
+            if (generateAllHtml) {
+                element.data("html", true);
+                element.data("content", createItemDataContent(item));
+                (element as any).popover({ sanitize: false });
+            } else {
+                element.on("click", () => {
+                    if (element.data("html") !== undefined) {
+                        return;
+                    }
+
+                    ($('[data-toggle="popover"]') as any).popover("hide");
+
+                    element.data("html", true);
+                    element.data("content", createItemDataContent(item));
+                    (element as any).popover({ sanitize: false });
+                    element.trigger("click");
+                });
+            }
 
             simpleItemElements[itemName] = element;
             itemsGrid.append(element[0]);
@@ -1033,13 +1055,20 @@ jq(function ($) {
         });
         selects[0].selectpicker("val", "Lgt. Assault Rifle");
         selects[1].selectpicker("val", "Hvy. Assault Rifle");
-
-        // Enable popovers
-        ($('#simpleItemsGrid > [data-toggle="popover"]') as any).popover({ sanitize: false });
     }
 
     // Creates elements for all gallery items
     function createGalleryItems() {
+        function createImage(item: Item) {
+            // If generating all HTML then use a normal image to force the load
+            // Normally use the lazily-loaded image for performance
+            if (generateAllHtml) {
+                return `<img src=${escapeHtml(getItemAsciiArtImageName(item))}"></img>`;
+            } else {
+                return `<img class="lozad" data-src="${escapeHtml(getItemAsciiArtImageName(item))}"></img>`;
+            }
+        }
+
         ($('#galleryGrid > [data-toggle="popover"]') as any).popover("dispose");
         $("#galleryGrid").empty();
 
@@ -1053,19 +1082,39 @@ jq(function ($) {
                     id=${itemId}
                     class="gallery-item btn btn-no-background-hover"
                     type="button"
-                    data-html="true"
-                    data-content='${createItemDataContent(item)}'
                     data-toggle="popover">
                     <span>${itemName}</span>
-                    <img class="lozad" data-src="${escapeHtml(getItemAsciiArtImageName(item))}"></img>
+                    ${createImage(item)}
                 </button>`,
             );
+
+            // Delay generation and init of the item popover until
+            // it is clicked on unless forcing all HTML gen
+            if (generateAllHtml) {
+                element.data("html", true);
+                element.data("content", createItemDataContent(item));
+                (element as any).popover({ sanitize: false });
+            } else {
+                element
+                    .find("*")
+                    .addBack()
+                    .on("click", () => {
+                        if (element.data("html") !== undefined) {
+                            return;
+                        }
+
+                        ($('[data-toggle="popover"]') as any).popover("hide");
+
+                        element.data("html", true);
+                        element.data("content", createItemDataContent(item));
+                        (element as any).popover({ sanitize: false });
+                        element.trigger("toggle");
+                    });
+            }
 
             galleryItemElements[itemName] = element;
             galleryGrid.append(element[0]);
         });
-
-        ($('#galleryGrid > [data-toggle="popover"]') as any).popover({ sanitize: false });
     }
 
     // Creates elements for all spreadsheet items
@@ -1475,7 +1524,7 @@ jq(function ($) {
         $(window).on("click", (e) => {
             // If clicking outside of a popover close the current one
             const targetPopover = $(e.target).parents(".popover").length != 0;
-            const targetUnderPopoverButton = $(e.target).parents("[data-content]").length != 0;
+            const targetUnderPopoverButton = $(e.target).parents("[data-toggle='popover']").length != 0;
 
             if (targetPopover) {
                 $(e.target).trigger("blur");
@@ -1484,11 +1533,11 @@ jq(function ($) {
 
             let target = e.target;
             if (targetUnderPopoverButton) {
-                target = $(e.target).parents("[data-content]")[0] as any;
+                target = $(e.target).parents("[data-toggle='popover']")[0] as any;
             }
 
             if ($(".popover").length >= 1) {
-                ($('[data-toggle="popover"]') as any).not(target).popover("hide");
+                ($("[data-toggle='popover']") as any).not(target).popover("hide");
             }
         });
 
