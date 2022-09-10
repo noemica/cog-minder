@@ -1034,7 +1034,7 @@
     "Signal Generator": ["Derelict"],
     "Self-destruct Interrupter": ["Derelict"],
     "Deploy-a-Sentry": ["Exile"],
-    "GAL Module": ["Derelict"],
+    "GAL Module": ["Derelict", "Spoiler"],
     "Portable AFG": ["Spoiler", "Testing"],
     "SGEMP Prototype": ["Spoiler", "Testing"],
     "Terrabomb Derivative": ["Spoiler", "Testing"],
