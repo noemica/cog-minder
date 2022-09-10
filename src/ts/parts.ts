@@ -1445,6 +1445,15 @@ jq(function ($) {
         $("#rightPartSelect").on("changed.bs.select", () => {
             updateComparison();
         });
+        $("#comparisonSwap").on("click", () => {
+            const leftPicker = $("#leftPartSelect");
+            const rightPicker = $("#rightPartSelect");
+            const leftValue = leftPicker.selectpicker("val") as any as string;
+            const rightValue = rightPicker.selectpicker("val") as any as string;
+
+            leftPicker.selectpicker("val", rightValue);
+            rightPicker.selectpicker("val", leftValue);
+        });
 
         // Reinstate for beta 12
         // $("#beta11Checkbox").on("change", () => {
