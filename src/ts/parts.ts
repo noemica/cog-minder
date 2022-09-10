@@ -37,6 +37,7 @@ import {
     HeatTransfer,
 } from "./itemTypes";
 
+import lozad = require("lozad");
 import * as jQuery from "jquery";
 import "bootstrap";
 import "bootstrap-select";
@@ -1056,7 +1057,7 @@ jq(function ($) {
                     data-content='${createItemDataContent(item)}'
                     data-toggle="popover">
                     <span>${itemName}</span>
-                    <img src="${escapeHtml(getItemAsciiArtImageName(item))}"></img>
+                    <img class="lozad" data-src="${escapeHtml(getItemAsciiArtImageName(item))}"></img>
                 </button>`,
             );
 
@@ -1363,6 +1364,10 @@ jq(function ($) {
 
         // Load spoilers saved state
         $("#spoilers").text(getSpoilersState());
+
+        // Init lazy loading for gallery images
+        const observer = lozad();
+        observer.observe();
 
         // Register handlers
         $("#spoilersDropdown > button").on("click", (e) => {
