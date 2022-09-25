@@ -28,15 +28,19 @@
 }
 
 html {
-    background-color: black;
+    background-color: #080808;
     height: 100vh;
 }
 
 body {
     font-family: smallcaps-mono;
-    background-color: black;
+    background-color: #080808;
     color: #00cc00;
     overflow-y: scroll;
+}
+
+#spoilers {
+    width: 11ch;
 }
 
 .header,
@@ -88,6 +92,10 @@ body {
     max-width: 1500px;
 }
 
+.d-grid {
+    display: grid;
+}
+
 .about-btn {
     padding: .5rem 1.0rem;
     font-size: 1.5rem;
@@ -136,7 +144,7 @@ body {
 .form-control:focus,
 .form-control:disabled {
     color: #9da9af;
-    background-color: black;
+    background-color: #080808;
     border: 1px solid #006200;
 }
 
@@ -159,7 +167,7 @@ body {
 }
 
 .btn {
-    background-color: black;
+    background-color: #080808;
     border-color: #006200;
 }
 
@@ -259,8 +267,16 @@ body {
     width: 43ch !important;
 }
 
+.page-dropdown {
+    width: 45ch !important;
+}
+
+.page-dropdown-menu {
+    width: 45 !important;
+}
+
 .dropdown-menu {
-    background-color: black;
+    background-color: #080808;
     border: 1px solid #00aa00;
     border-radius: 0;
 }
@@ -298,12 +314,12 @@ body {
 }
 
 .bootstrap-select .no-results {
-    background-color: black;
+    background-color: #080808;
     color: #00cc00;
 }
 
 .dropdown-item {
-    background-color: black;
+    background-color: #080808;
     color: #00cc00;
 }
 
@@ -314,7 +330,7 @@ body {
 
 .dropdown-item:not(.selected) {
     color: #00cc00;
-    background-color: black;
+    background-color: #080808;
 }
 
 .dropdown-item:hover {
@@ -384,7 +400,7 @@ body {
     display: block;
     text-align: center;
     padding: 0.25rem 0.25rem;
-    background-color: inherit;
+    background-color: black;
     margin-left: -1px;
     margin-top: -1px;
     color: #00cc00;
@@ -643,6 +659,7 @@ body {
 
 .comparison-infobox {
     border: 2px solid #008c00;
+    background-color: black;
     text-align: left;
     max-width: 40ch;
 }
@@ -699,7 +716,7 @@ body {
 
 .comparison-neutral {
     color: #bfbfbf;
-    background-color: black;
+    background-color: #080808;
 }
 
 .comparison-negative {
@@ -842,4 +859,28 @@ body {
     min-height: 45px;
     display: inline-block;
     color: #00cc00;
+}
+
+.wiki-content {
+    font-family: sans-serif;
+}
+
+.wiki-infobox {
+    background-color: black;
+    flex: 0;
+    border: 1px solid #008800;
+    padding: .5rem .75rem;
+    min-width: 59ch;
+}
+
+.spoiler-text {
+    background-color: #7f7f7f;
+    color: transparent;
+    user-select: none;
+    padding: 0 3px 2px 3px;
+}
+
+.spoiler-text:hover,
+.spoiler-text:focus {
+    background-color: #202020;
 }

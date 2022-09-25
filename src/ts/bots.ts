@@ -6,7 +6,7 @@ import {
     getSpoilersState,
     getSelectedButtonId,
     resetButtonGroup,
-    enableBotInfoItemPopovers,
+    enablePopoverBotInfoItemPopovers,
     createHeader,
     registerDisableAutocomplete,
     setSpoilersState,
@@ -113,7 +113,7 @@ jq(function ($) {
 
         const popoverSelector = $('#botsGrid > [data-toggle="popover"]');
         (popoverSelector as any).popover();
-        enableBotInfoItemPopovers(popoverSelector);
+        enablePopoverBotInfoItemPopovers(popoverSelector);
     }
 
     // Creates elements for all spreadsheet bots

@@ -95,6 +95,13 @@ const headerLookup: Record<PageType, HeaderInfo> = {
         spoilers: true,
         beta11Check: true,
     },
+    Wiki: {
+        name: "Wiki",
+        pageName: "wiki.html",
+        helpText: "A wiki.",
+        spoilers: true,
+        beta11Check: false,
+    },
 };
 
 // Creates the header for a given page
@@ -182,73 +189,80 @@ export function createHeader(page: PageType, headerContainer: JQuery<HTMLElement
 const nameRegex = /\[([\w. '"\-/]*) \(\d/;
 const optionNameRegex = /([\w. '"\-/]*) \(\d/;
 // Enables nested bot info popovers given a selector to the root bot popover
-export function enableBotInfoItemPopovers(selector: JQuery<HTMLElement>): void {
+export function enablePopoverBotInfoItemPopovers(selector: JQuery<HTMLElement>): void {
     selector.on("shown.bs.popover", (e) => {
-        // Set up popovers for items on bots
         const body = $(`#${$(e.target).attr("aria-describedby")}`).children(".popover-body");
-        const items = body.find(".popover-part");
-        items.each((_, element) => {
-            const selector = $(element);
-            const result = nameRegex.exec(selector.text());
-            if (result === null || !(result[1] in itemData)) {
-                // Not a valid item
-                return;
-            }
-
-            // Set up popover attributes
-            const weapon = getItem(result[1]);
-            selector.data("html", true);
-            selector.data("content", createItemDataContent(weapon));
-            selector.data("toggle", "popover");
-            selector.addClass("bot-popover-item");
-            (selector as any).popover();
-
-            // Show/hide surrounding brackets to indicate selection
-            selector.on("mouseenter", () => {
-                selector.children("span").removeClass("bot-popover-item-bracket-invisible");
-            });
-            selector.on("mouseleave", () => {
-                selector.children("span").addClass("bot-popover-item-bracket-invisible");
-            });
-
-            selector.data("toggle", "popover");
-        });
-
-        const optionItems = body.find(".popover-option").parent();
-        optionItems.each((_, element) => {
-            const selector = $(element);
-            const result = optionNameRegex.exec(selector.find("span:nth-child(3)").text());
-            if (result === null || !(result[1] in itemData)) {
-                // Not a valid item
-                return;
-            }
-
-            // Set up popover attributes
-            const weapon = getItem(result[1]);
-            selector.data("html", true);
-            selector.data("content", createItemDataContent(weapon));
-            selector.data("toggle", "popover");
-            selector.addClass("bot-popover-item");
-            (selector as any).popover();
-
-            // Show/hide surrounding brackets to indicate selection
-            selector.on("mouseenter", () => {
-                selector.children(".bot-popover-item-bracket").removeClass("bot-popover-item-bracket-invisible");
-            });
-            selector.on("mouseleave", () => {
-                selector.children(".bot-popover-item-bracket").addClass("bot-popover-item-bracket-invisible");
-            });
-
-            selector.data("toggle", "popover");
-        });
+        enableBotInfoItemPopovers(body);
     });
 
     selector.on("hide.bs.popover", (e) => {
         // Dispose nested popovers when the base popover is closed
         const body = $(`#${$(e.target).attr("aria-describedby")}`).children(".popover-body");
-        const items = body.find(".bot-popover-item");
-        (items as any).popover("dispose");
+        disableBotInfoItemPopovers(body);
     });
+}
+
+// Enables bot info popovers given a selector to the root object
+export function enableBotInfoItemPopovers(root: JQuery<HTMLElement>): void {
+    // Set up popovers for items on bots
+    const items = root.find(".popover-part");
+    items.each((_, element) => {
+        const selector = $(element);
+        const result = nameRegex.exec(selector.text());
+        if (result === null || !(result[1] in itemData)) {
+            // Not a valid item
+            return;
+        }
+
+        // Set up popover attributes
+        const weapon = getItem(result[1]);
+        selector.data("html", true);
+        selector.data("content", createItemDataContent(weapon));
+        selector.addClass("bot-popover-item");
+        (selector as any).popover();
+
+        // Show/hide surrounding brackets to indicate selection
+        selector.on("mouseenter", () => {
+            selector.children("span").removeClass("bot-popover-item-bracket-invisible");
+        });
+        selector.on("mouseleave", () => {
+            selector.children("span").addClass("bot-popover-item-bracket-invisible");
+        });
+    });
+
+    const optionItems = root.find(".popover-option").parent();
+    optionItems.each((_, element) => {
+        const selector = $(element);
+        const result = optionNameRegex.exec(selector.find("span:nth-child(3)").text());
+        if (result === null || !(result[1] in itemData)) {
+            // Not a valid item
+            return;
+        }
+
+        // Set up popover attributes
+        const weapon = getItem(result[1]);
+        selector.data("html", true);
+        selector.data("content", createItemDataContent(weapon));
+        selector.data("toggle", "popover");
+        selector.addClass("bot-popover-item");
+        (selector as any).popover();
+
+        // Show/hide surrounding brackets to indicate selection
+        selector.on("mouseenter", () => {
+            selector.children(".bot-popover-item-bracket").removeClass("bot-popover-item-bracket-invisible");
+        });
+        selector.on("mouseleave", () => {
+            selector.children(".bot-popover-item-bracket").addClass("bot-popover-item-bracket-invisible");
+        });
+
+        selector.data("toggle", "popover");
+    });
+}
+
+// Disposes of all bot info popovers given a root object
+export function disableBotInfoItemPopovers(root: JQuery<HTMLElement>): void {
+    const items = root.find(".bot-popover-item");
+    (items as any).popover("dispose");
 }
 
 // Gets the stored boolean state

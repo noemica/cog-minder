@@ -14,7 +14,7 @@ import {
 } from "./common";
 import {
     createHeader,
-    enableBotInfoItemPopovers,
+    enablePopoverBotInfoItemPopovers,
     getSpoilersState,
     refreshSelectpicker,
     registerDisableAutocomplete,
@@ -553,15 +553,13 @@ jq(function ($) {
         // });
 
         $(window).on("click", (e) => {
-            if ($(e.target).parents(".popover").length === 0 && $(".popover").length >= 1) {
-                // If clicking outside of a popover close the current one
+            // If clicking outside of a popover close the current one
+            const targetPopover = $(e.target).parents(".popover").length != 0;
+
+            if (targetPopover) {
+                $(e.target).trigger("blur");
+            } else if (!targetPopover && $(".popover").length >= 1) {
                 ($('[data-toggle="popover"]') as any).not(e.target).popover("hide");
-            } else if ($(e.target).parents(".popover").length === 1 && $(".popover").length > 1) {
-                // If clicking inside of a popover close any nested popovers
-                ($(e.target).parents(".popover").find(".bot-popover-item") as any)
-                    .not(e.target)
-                    .not($(e.target).parents())
-                    .popover("hide");
             }
         });
 
@@ -573,7 +571,7 @@ jq(function ($) {
         $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
         ($("#enemyInfoButton") as any).popover();
 
-        enableBotInfoItemPopovers($("#enemyInfoButton"));
+        enablePopoverBotInfoItemPopovers($("#enemyInfoButton"));
 
         // These divs are created at runtime so have to do this at init
         $("#damageReductionSelect").parent().addClass("percent-dropdown");

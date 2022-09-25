@@ -19,7 +19,7 @@ import {
     WeaponItem,
 } from "./itemTypes";
 import { specialItemProperties } from "./specialItemProperties";
-import { Spoiler } from "./commonTypes";
+import { MapLocation, Spoiler } from "./commonTypes";
 import { getSpoilersState } from "./commonJquery";
 
 export let botData: { [key: string]: Bot } = {};
@@ -165,6 +165,19 @@ export function canShowPart(part: Item, spoilersState: Spoiler): boolean {
     return true;
 }
 
+// Determines whether something can be shown based on the spoiler state to check and the global state
+export function canShowSpoiler(stateToCheck: Spoiler, globalState: Spoiler): boolean {
+    if (globalState === "None" && stateToCheck !== "None") {
+        // No spoilers, only show none
+        return false;
+    } else if (globalState == "Spoilers" && stateToCheck === "Redacted") {
+        // Spoilers allowed, show all but redacted
+        return false;
+    }
+
+    return true;
+}
+
 // Ceil the number to the nearest multiple
 function ceilToMultiple(num: number, multiple: number) {
     return Math.ceil(num / multiple) * multiple;
@@ -270,10 +283,20 @@ function summaryProjectileLine(item: WeaponItem, category: string) {
     }
 }
 
-// Create a text line with no value and default style
+// Create a text line with an optional value and default style
 function textLine(category: string, text: string | undefined) {
     const numSpaces = 23 - 1 - category.length;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${text}</pre>`;
+    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${text === undefined ? "" : text}</pre>`;
+}
+
+// Create a text line with a link
+function textLineLink(line: string, link: string) {
+    return `<pre class="popover-line"> <a href="${link}">${line}</a></pre>`;
+}
+
+// Create a text line with a spoiler link
+function textLineSpoilerLink(line: string, link: string) {
+    return `<pre class="popover-line"> <a href="${link}" class="spoiler-text">${line}</a></pre>`;
 }
 
 // Create a text line with no value and dim style
@@ -367,6 +390,14 @@ function valueLineWithDefault(category: string, valueString: string | undefined,
     return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
 }
 
+const emptyLine = `<pre class="popover-line">
+    
+</pre>`;
+
+const emptyHalfLine = `<pre class="popover-half-line">
+    
+</pre>`;
+
 /* eslint-disable prettier/prettier */
 // Creates a HTML string representing a bot
 export function createBotDataContent(bot: Bot): string {
@@ -438,7 +469,7 @@ export function createBotDataContent(bot: Bot): string {
     function itemLine(itemString: string) {
         itemString = itemString.padEnd(46);
         return "" +
-            '<pre class="popover-part">' +
+            '<pre class="popover-part" data-toggle="popover">' +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">[</span>' +
             `${itemString}` +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">]</span>' +
@@ -455,13 +486,6 @@ export function createBotDataContent(bot: Bot): string {
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">]</span>' +
             '</pre>';
     }
-
-    const emptyLine = `<pre class="popover-line">
-    
-</pre>`;
-    const emptyHalfLine = `<pre class="popover-half-line">
-    
-</pre>`;
 
     // Create overview
     let html = `
@@ -772,10 +796,6 @@ export function createItemDataContent(baseItem: Item): string {
         return slotType;
     }
 
-    const emptyLine = `<pre class="popover-line">
-    
-</pre>`;
-
     // Create overview
     let html = `
     <div class="part-art-image-container">
@@ -1037,6 +1057,32 @@ export function createItemDataContent(baseItem: Item): string {
     return html;
 }
 /* eslint-enable prettier/prettier */
+
+export function createLocationHtml(location: MapLocation, spoilersState: Spoiler): string {
+    let html = `
+        ${summaryLine(location.name)}
+        ${textLine("Minimum depth", location.minDepth)}
+        ${textLine("Maximum depth", location.maxDepth)}
+        ${textLine("Branch", location.branch ? "Yes" : "No")}
+    `;
+
+    if (location.exits.length > 0) {
+        html += `
+        ${emptyLine}
+        ${summaryLine("Exits")}
+        `;
+
+        for (const exit of location.exits) {
+            if (canShowSpoiler(exit.spoiler, spoilersState)) {
+                html += textLineLink(exit.name, `#${exit.name}`);
+            } else {
+                html += textLineSpoilerLink(exit.name, `#${exit.name}`);
+            }
+        }
+    }
+
+    return html;
+}
 
 // Escapes the given string for HTML
 export function escapeHtml(string: string): string {
