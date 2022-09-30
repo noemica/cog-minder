@@ -1230,9 +1230,9 @@ jq(function ($) {
         // Spoilers filter
         const spoilersState = getSpoilersState();
         if (spoilersState === "None") {
-            filters.push((item) => item.categories.every((c) => c !== "Spoiler" && c !== "Redacted"));
+            filters.push((item) => item.spoiler === "None");
         } else if (spoilersState === "Spoilers") {
-            filters.push((item) => item.categories.every((c) => c !== "Redacted"));
+            filters.push((item) => item.spoiler !== "Redacted");
         }
 
         // Name filter

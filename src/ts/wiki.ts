@@ -153,17 +153,10 @@ jq(function ($) {
         for (const botEntry of wiki.Bots) {
             const bot = getBot(botEntry.Name);
 
-            let spoiler: Spoiler = "None";
-            if (bot.categories.includes(BotCategory.Redacted)) {
-                spoiler = "Redacted";
-            } else if (bot.categories.includes(BotCategory.Spoilers)) {
-                spoiler = "Spoilers";
-            }
-
             allEntries.set(botEntry.Name, {
                 name: botEntry.Name,
                 type: "Bot",
-                spoiler: spoiler,
+                spoiler: bot.spoiler,
                 content: botEntry.Content,
                 extraData: bot,
             });
@@ -173,19 +166,44 @@ jq(function ($) {
         for (const locationEntry of wiki.Locations) {
             let spoiler: Spoiler = "None";
             if (locationEntry.Spoilers === "Redacted") {
+                spoiler = "Redacted";
             } else if (locationEntry.Spoilers === "Spoiler") {
                 spoiler = "Spoilers";
             }
 
+            const specialBots = (locationEntry.SpecialBots ?? [])
+                .map((botName) => {
+                    try {
+                        return getBot(botName);
+                    } catch {
+                        console.log(`Bad bot name ${botName} in ${locationEntry.Name}`);
+                        return null;
+                    }
+                })
+                .filter((b) => b !== null) as Bot[];
+
+            const specialItems = (locationEntry.SpecialItems ?? [])
+                .map((itemName) => {
+                    try {
+                        return getItem(itemName);
+                    } catch {
+                        console.log(`Bad item name ${itemName} in ${locationEntry.Name}`);
+                        return null;
+                    }
+                })
+                .filter((i) => i !== null) as Item[];
+
             const location: MapLocation = {
                 branch: locationEntry.Branch ?? false,
+                entries: [],
                 exits: [],
                 maxDepth: locationEntry.MaxDepth,
                 minDepth: locationEntry.MinDepth,
                 name: locationEntry.Name,
+                preDepthBranch: locationEntry.PreDepthBranch ?? false,
                 spoiler: spoiler,
-                specialBots: [],
-                specialParts: [],
+                specialBots: specialBots,
+                specialItems: specialItems,
             };
 
             allEntries.set(locationEntry.Name, {
@@ -197,16 +215,20 @@ jq(function ($) {
             });
         }
 
-        // Need to do a second pass to connect exit references
+        // Need to do a second pass to connect entry/exit references
         for (const locationEntry of wiki.Locations) {
-            const location = allEntries.get(locationEntry.Name);
+            const location = allEntries.get(locationEntry.Name)!;
 
             for (const exit of locationEntry.Exits) {
-                const exitLocation = allEntries.get(exit);
-                if (exitLocation === undefined) {
+                const exitEntry = allEntries.get(exit);
+                if (exitEntry === undefined) {
                     console.log(`Bad location reference ${exit} in ${locationEntry.Name}`);
                 } else {
-                    (location!.extraData as MapLocation).exits.push(exitLocation.extraData as MapLocation);
+                    const entryLocation = location.extraData as MapLocation;
+                    const exitLocation = exitEntry.extraData as MapLocation;
+
+                    entryLocation.exits.push(exitLocation);
+                    exitLocation.entries.push(entryLocation);
                 }
             }
         }

@@ -1,3 +1,6 @@
+import { Bot } from "./botTypes";
+import { Item } from "./itemTypes";
+
 export type PageType = "About" | "Bots" | "Build" | "Hacks" | "Lore" | "Parts" | "RIF" | "Simulator" | "Wiki";
 
 export const pageTypes: PageType[] = ["About", "Bots", "Build", "Hacks", "Lore", "Parts", "RIF", "Simulator", "Wiki"];
@@ -8,11 +11,13 @@ export type Spoiler = "None" | "Spoilers" | "Redacted";
 // A map location
 export type MapLocation = {
     branch: boolean;
+    entries: MapLocation[];
     exits: MapLocation[];
-    minDepth: string;
-    maxDepth: string;
+    minDepth: number;
+    maxDepth: number;
     name: string;
-    specialBots: string[];
-    specialParts: string[];
+    preDepthBranch: boolean;
+    specialBots: Bot[];
+    specialItems: Item[];
     spoiler: Spoiler;
 };

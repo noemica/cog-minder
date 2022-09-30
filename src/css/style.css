@@ -875,9 +875,12 @@ body {
 
 .spoiler-text {
     background-color: #7f7f7f;
-    color: transparent;
     user-select: none;
     padding: 0 3px 2px 3px;
+}
+
+.spoiler-text:not(:focus):not(:hover) {
+    color: transparent;
 }
 
 .spoiler-text:hover,

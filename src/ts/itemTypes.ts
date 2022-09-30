@@ -1,4 +1,5 @@
 import { BotResistances } from "./botTypes";
+import { Spoiler } from "./commonTypes";
 
 export enum DamageType {
     Electromagnetic = "Electromagnetic",
@@ -225,6 +226,7 @@ export type BaseItem = {
     fabrication?: FabricationStats;
     index: number;
     specialProperty?: SpecialItemProperty;
+    spoiler: Spoiler;
 };
 
 export type OtherItem = BaseItem & {

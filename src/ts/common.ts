@@ -1,7 +1,7 @@
 // Common code
 import * as itemCategories from "../json/item_categories.json";
 import * as botExtraData from "../json/bot_extra_data.json";
-import { Bot, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "./botTypes";
+import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "./botTypes";
 import {
     BaseItem,
     Critical,
@@ -284,19 +284,35 @@ function summaryProjectileLine(item: WeaponItem, category: string) {
 }
 
 // Create a text line with an optional value and default style
-function textLine(category: string, text: string | undefined) {
-    const numSpaces = 23 - 1 - category.length;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${text === undefined ? "" : text}</pre>`;
+function textLine(category: string, text: string | undefined = undefined) {
+    if (text === undefined) {
+        return `<pre class="popover-line"> ${category}</pre>`;
+    } else {
+        const numSpaces = 23 - 1 - category.length;
+        return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${text}</pre>`;
+    }
 }
 
 // Create a text line with a link
-function textLineLink(line: string, link: string) {
-    return `<pre class="popover-line"> <a href="${link}">${line}</a></pre>`;
+function textLineLink(line: string, link: string, extraText: string | undefined = undefined) {
+    if (extraText === undefined) {
+        return `<pre class="popover-line"> <a href="${link}">${line}</a></pre>`;
+    } else {
+        const numSpaces = 23 - 1 - line.length;
+        return `<pre class="popover-line"> <a href="${link}">${line}</a>${" ".repeat(numSpaces)}${extraText}</pre>`;
+    }
 }
 
 // Create a text line with a spoiler link
-function textLineSpoilerLink(line: string, link: string) {
-    return `<pre class="popover-line"> <a href="${link}" class="spoiler-text">${line}</a></pre>`;
+function textLineSpoilerLink(line: string, link: string, extraText: string | undefined = undefined) {
+    if (extraText === undefined) {
+        return `<pre class="popover-line"> <a href="${link}" class="spoiler-text">${line}</a></pre>`;
+    } else {
+        const numSpaces = 23 - 1 - line.length;
+        return `<pre class="popover-line"> <a href="${link}" class="spoiler-text">${line}</a>${" ".repeat(
+            numSpaces,
+        )}${extraText}</pre>`;
+    }
 }
 
 // Create a text line with no value and dim style
@@ -462,7 +478,7 @@ export function createBotDataContent(bot: Bot): string {
             levelThreeDepth = capRange(levelThreeDepth);
             return `1/-${levelOneDepth}  2/-${levelTwoDepth}  3/-${levelThreeDepth}`;
         }
-        
+
         return "";
     }
 
@@ -772,7 +788,7 @@ export function createItemDataContent(baseItem: Item): string {
             levelThreeDepth = capRange(levelThreeDepth);
             return `1/-${levelOneDepth}  2/-${levelTwoDepth}  3/-${levelThreeDepth}`;
         }
-        
+
         return "";
     }
 
@@ -1059,24 +1075,97 @@ export function createItemDataContent(baseItem: Item): string {
 /* eslint-enable prettier/prettier */
 
 export function createLocationHtml(location: MapLocation, spoilersState: Spoiler): string {
+    function getDepthString(minDepth: number, maxDepth: number) {
+        if (minDepth === maxDepth) {
+            return minDepth.toString();
+        } else {
+            return `${minDepth} to ${maxDepth}`;
+        }
+    }
+
+    function getMinMaxDepths(startLocation: MapLocation, endLocation: MapLocation) {
+        let minDepth: number;
+        let maxDepth: number;
+
+        if (endLocation.branch || startLocation.preDepthBranch) {
+            minDepth = Math.max(startLocation.minDepth, endLocation.minDepth);
+            maxDepth = Math.min(startLocation.maxDepth, endLocation.maxDepth);
+        } else {
+            minDepth = Math.max(startLocation.minDepth, endLocation.minDepth - 1);
+            maxDepth = Math.min(startLocation.maxDepth, endLocation.maxDepth - 1);
+        }
+
+        return { minDepth: minDepth, maxDepth: maxDepth };
+    }
+
     let html = `
         ${summaryLine(location.name)}
-        ${textLine("Minimum depth", location.minDepth)}
-        ${textLine("Maximum depth", location.maxDepth)}
-        ${textLine("Branch", location.branch ? "Yes" : "No")}
+        ${textLine("Available depths", getDepthString(location.minDepth, location.maxDepth))}
+        ${textLine("Branch", location.branch || location.preDepthBranch ? "Yes" : "No")}
     `;
+
+    if (location.entries.length > 0) {
+        html += `
+        ${emptyLine}
+        ${summaryLine("Entry from")}
+        `;
+
+        for (const entry of location.entries) {
+            const depths = getMinMaxDepths(entry, location);
+            const depthsString = getDepthString(depths.minDepth, depths.maxDepth);
+
+            if (canShowSpoiler(entry.spoiler, spoilersState)) {
+                html += textLineLink(entry.name, `#${entry.name}`, depthsString);
+            } else {
+                html += textLineSpoilerLink(entry.name, `#${entry.name}`, depthsString);
+            }
+        }
+    }
 
     if (location.exits.length > 0) {
         html += `
         ${emptyLine}
-        ${summaryLine("Exits")}
+        ${summaryLine("Exits to")}
         `;
 
         for (const exit of location.exits) {
+            const depths = getMinMaxDepths(location, exit);
+            const depthsString = getDepthString(depths.minDepth, depths.maxDepth);
+
             if (canShowSpoiler(exit.spoiler, spoilersState)) {
-                html += textLineLink(exit.name, `#${exit.name}`);
+                html += textLineLink(exit.name, `#${exit.name}`, depthsString);
             } else {
-                html += textLineSpoilerLink(exit.name, `#${exit.name}`);
+                html += textLineSpoilerLink(exit.name, `#${exit.name}`, depthsString);
+            }
+        }
+    }
+
+    if (location.specialBots.length > 0) {
+        html += `
+        ${emptyLine}
+        ${summaryLine("Special bots")}
+        `;
+
+        for (const specialBot of location.specialBots) {
+            if (canShowSpoiler(specialBot.spoiler, spoilersState)) {
+                html += textLineLink(specialBot.name, `#${specialBot.name}`);
+            } else {
+                html += textLineSpoilerLink(specialBot.name, `#${specialBot.name}`);
+            }
+        }
+    }
+
+    if (location.specialItems.length > 0) {
+        html += `
+        ${emptyLine}
+        ${summaryLine("Special items")}
+        `;
+
+        for (const specialItem of location.specialItems) {
+            if (canShowSpoiler(specialItem.spoiler, spoilersState)) {
+                html += textLineLink(specialItem.name, `#${specialItem.name}`);
+            } else {
+                html += textLineSpoilerLink(specialItem.name, `#${specialItem.name}`);
             }
         }
     }
@@ -1122,7 +1211,6 @@ export function getBot(botName: string): Bot {
         return botData[botName];
     }
 
-    console.trace();
     throw `${botName} not a valid bot`;
 }
 
@@ -1140,7 +1228,6 @@ export function getItem(itemName: string): Item {
     if (itemName in itemData) {
         return itemData[itemName];
     }
-    console.trace();
     throw `${itemName} not a valid item`;
 }
 
@@ -1280,6 +1367,11 @@ export async function initData(
         const noPrefixName = getNoPrefixName(itemName);
         const size = parseIntOrUndefined(item.Size) ?? 1;
         const specialProperty = specialItemProperties[itemName];
+        const spoiler: Spoiler = categories.includes("Redacted")
+            ? "Redacted"
+            : categories.includes("Spoiler")
+            ? "Spoilers"
+            : "None";
 
         switch (item["Slot"]) {
             case "N/A":
@@ -1303,6 +1395,7 @@ export async function initData(
                     life: item.Life,
                     index: index,
                     specialProperty: specialProperty,
+                    spoiler: spoiler,
                 };
                 newItem = otherItem;
                 break;
@@ -1346,6 +1439,7 @@ export async function initData(
                     explosionType: item["Explosion Type"],
                     index: index,
                     specialProperty: specialProperty,
+                    spoiler: spoiler,
                 };
                 newItem = powerItem;
                 break;
@@ -1384,6 +1478,7 @@ export async function initData(
                     siege: item.Siege,
                     index: index,
                     specialProperty: specialProperty,
+                    spoiler: spoiler,
                 };
                 newItem = propItem;
                 break;
@@ -1414,6 +1509,7 @@ export async function initData(
                     specialTrait: item["Special Trait"],
                     index: index,
                     specialProperty: specialProperty,
+                    spoiler: spoiler,
                 };
                 newItem = utilItem;
                 break;
@@ -1498,6 +1594,7 @@ export async function initData(
                     arc: parseIntOrUndefined(item.Arc),
                     index: index,
                     specialProperty: specialProperty,
+                    spoiler: spoiler,
                 };
                 newItem = weaponItem;
                 break;
@@ -1670,6 +1767,11 @@ export async function initData(
                 salvagePotential: bot["Salvage Potential"],
                 speed: parseInt(bot.Speed),
                 spotPercent: bot["Spot %"] ?? "100",
+                spoiler: extraData?.Categories.includes(BotCategory.Redacted)
+                    ? "Redacted"
+                    : extraData?.Categories.includes(BotCategory.Spoilers)
+                    ? "Spoilers"
+                    : "None",
                 size: bot["Size Class"],
                 threat: bot.Threat,
                 totalCoverage: totalCoverage,

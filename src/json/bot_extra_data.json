@@ -2193,12 +2193,17 @@
     },
     "Sapper": {
         "Categories": [
-            "Derelict"
+            "Derelict",
+            "Warlord"
         ],
         "Locations": [
             {
                 "Location": "Caves",
                 "Description": "Friendly: Wandering around the map"
+            },
+            {
+                "Location": "Warlord",
+                "Description": "Friendly: In a room with thermoblasters and Mak. Ablative Armor"
             },
             {
                 "Location": "-2 Research Warlord Invasion",

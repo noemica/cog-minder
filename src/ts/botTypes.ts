@@ -88,6 +88,7 @@ export type Bot = {
     size: BotSize;
     speed: number;
     spotPercent: string;
+    spoiler: Spoiler;
     threat: string;
     tier: string;
     totalCoverage: number;

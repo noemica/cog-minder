@@ -196,9 +196,9 @@ jq(function ($) {
         // Spoilers filter
         const spoilersState = getSpoilersState();
         if (spoilersState === "None") {
-            filters.push((bot) => !bot.categories.some((c) => c === "Spoilers" || c === "Redacted"));
+            filters.push((bot) => bot.spoiler === "None");
         } else if (spoilersState === "Spoilers") {
-            filters.push((bot) => !bot.categories.some((c) => c === "Redacted"));
+            filters.push((bot) => bot.spoiler !== "Redacted");
         }
 
         // Name filter
