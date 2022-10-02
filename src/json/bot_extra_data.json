@@ -2,7 +2,7 @@
     "01-MTF": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -14,7 +14,7 @@
     "12-ASH": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -38,7 +38,7 @@
     "1C-UTU": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -62,7 +62,7 @@
     "5H-AD0": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -74,7 +74,7 @@
     "7V-RTL": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -99,7 +99,7 @@
         "Categories": [
             "Exiles",
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -119,7 +119,7 @@
     "99-TNT": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -240,7 +240,7 @@
     "A7": {
         "Categories": [
             "Architect",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -252,7 +252,7 @@
     "A8": {
         "Categories": [
             "Architect",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -262,14 +262,14 @@
             {
                 "Location": "Access_0",
                 "Description": "Hostile: Stationed at the entrance to the map",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             }
         ]
     },
     "AD-0RF": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -294,7 +294,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -312,12 +312,12 @@
             {
                 "Location": "Section 7",
                 "Description": "Hostile: 2 guarding the main entrance to the Leopard hangar",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             },
             {
                 "Location": "Command",
                 "Description": "Hostile: 2 guarding the surface exit on the right side of Command",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -357,7 +357,7 @@
     "Assault Drone": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -385,7 +385,7 @@
             {
                 "Location": "Zion Deep Caves",
                 "Description": "Hostile: Appear in a large group behind the impregnable wall on the left side of the map",
-                "Spoilers": "Spoilers"
+                "Spoiler": "Spoiler"
             }
         ]
     },
@@ -397,24 +397,24 @@
             {
                 "Location": "Mobile Assembly Unit",
                 "Description": "Hostile: Appear every 10 turns, friendly if Core Reset Matrix has been used",
-                "Spoilers": "Spoilers"
+                "Spoiler": "Spoiler"
             },
             {
                 "Location": "Core Reset Matrix + low core integrity",
                 "Description": "Friendly: Appear in a small group and enables hypermatrix pings to create more in main 0b10-controlled maps",
-                "Spoilers": "Spoilers"
+                "Spoiler": "Spoiler"
             },
             {
                 "Location": "Sigix Exoskeleton",
                 "Description": "Friendly: Appear in a small group and enables hypermatrix pings to create more in main 0b10-controlled maps",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             }
         ]
     },
     "Assembler": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -528,7 +528,7 @@
     "Borebot": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Warlord"
         ],
         "Locations": [
@@ -541,7 +541,7 @@
     "Bouncer": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Warlord"
         ],
         "Locations": [
@@ -620,7 +620,7 @@
     "C-55 Analyst": {
         "Categories": [
             "0b10",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -643,7 +643,7 @@
     "C-65 Expert": {
         "Categories": [
             "0b10",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -656,7 +656,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -668,7 +668,7 @@
     "CL-ANK": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -692,7 +692,7 @@
     "Combat Drone": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -704,7 +704,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -714,12 +714,12 @@
             {
                 "Location": "Intercept squad",
                 "Description": "Hostile: Appear after Cogmind is spotted by a Tracker after being scanned in in Section 7 or Lab",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             },
             {
                 "Location": "Command",
                 "Description": "Hostile: 2 guard the Doom Corridor outside of MAIN.C's room",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -785,7 +785,7 @@
     "Data Miner": {
         "Categories": [
             "Architect",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -823,7 +823,7 @@
     "Dragon": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Warlord"
         ],
         "Locations": [
@@ -861,7 +861,7 @@
     "Enhanced Demolisher": {
         "Categories": [
             "Architect",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -873,7 +873,7 @@
     "Enhanced Grunt": {
         "Categories": [
             "Architect",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -891,7 +891,7 @@
             {
                 "Location": "Access_0",
                 "Description": "Hostile: Guard or patrol the map in groups of 3",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -1005,7 +1005,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1023,7 +1023,7 @@
             {
                 "Location": "Section 7",
                 "Description": "Dormant Hostile: 2 guard the top left corner of the Leopard hangar and 2 guard the bottom right corner",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -1133,7 +1133,7 @@
     "God Mode": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Warlord"
         ],
         "Locations": [
@@ -1146,7 +1146,7 @@
     "God Mode (Fake)": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Warlord"
         ],
         "Locations": [
@@ -1159,7 +1159,7 @@
     "Golem": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1171,7 +1171,7 @@
     "Golem (Naked)": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1282,7 +1282,7 @@
     "Hacking Drone": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1293,7 +1293,7 @@
     "Hydra": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Warlord"
         ],
         "Locations": [
@@ -1339,7 +1339,7 @@
     "Imprinter": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [
@@ -1353,7 +1353,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1376,7 +1376,7 @@
     "Knight": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Warlord"
         ],
         "Locations": [
@@ -1427,7 +1427,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1667,7 +1667,7 @@
     "Master Thief": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1679,7 +1679,7 @@
     "ME-RLN": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1703,7 +1703,7 @@
     "Minesniffer Drone": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Warlord"
         ],
         "Locations": [
@@ -1791,7 +1791,7 @@
     "NK-0LA": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1881,7 +1881,7 @@
     "P1-3CE": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1921,7 +1921,7 @@
     "Perun": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zhirov"
         ],
         "Locations": [
@@ -1946,7 +1946,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1959,7 +1959,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1972,7 +1972,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1985,7 +1985,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -1998,7 +1998,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2011,7 +2011,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2024,7 +2024,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2036,7 +2036,7 @@
     "Q-Series": {
         "Categories": [
             "0b10",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2048,26 +2048,26 @@
     "Q-Series Example 1": {
         "Categories": [
             "0b10",
-            "Spoilers"
+            "Spoiler"
         ]
     },
     "Q-Series Example 2": {
         "Categories": [
             "0b10",
-            "Spoilers"
+            "Spoiler"
         ]
     },
     "Q-Series Example 3": {
         "Categories": [
             "0b10",
-            "Spoilers"
+            "Spoiler"
         ]
     },
     "Quarantine Guard": {
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2101,7 +2101,7 @@
     "Revision": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2113,7 +2113,7 @@
     "Revision 17": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2125,7 +2125,7 @@
     "Revision 17++": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2208,7 +2208,7 @@
             {
                 "Location": "-2 Research Warlord Invasion",
                 "Description": "Friendly: Following borebots to the right side of the map",
-                "Spoilers": "Spoilers"
+                "Spoiler": "Spoiler"
             }
         ]
     },
@@ -2280,7 +2280,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2298,7 +2298,7 @@
             {
                 "Location": "Section 7",
                 "Description": "Dormant Hostile: 2 guard the top right corner of the Leopard hangar near the Sigix Shearguns and 2 more guard the inside of the storage area",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -2306,7 +2306,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2340,13 +2340,13 @@
     "Surveybot 24": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ]
     },
     "Svarog": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zhirov"
         ],
         "Locations": [
@@ -2359,7 +2359,7 @@
     "Swarm Drone": {
         "Categories": [
             "0b10",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2447,7 +2447,7 @@
         "Categories": [
             "0b10",
             "Prototype",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2457,7 +2457,7 @@
             {
                 "Location": "Intercept squad",
                 "Description": "Hostile: Appear after Cogmind has moved 1000/500(-6), 800/400(-5 through -4), or 600/300(-3 through -1) tiles after being scanned in Section 7 or Lab",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -2475,7 +2475,7 @@
     "Troll": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2531,7 +2531,7 @@
     "Warbot": {
         "Categories": [
             "Derelict",
-            "Spoilers"
+            "Spoiler"
         ],
         "Locations": [
             {
@@ -2543,7 +2543,7 @@
     "Wardrone": {
         "Categories": [
             "Drone",
-            "Spoilers",
+            "Spoiler",
             "Warlord"
         ],
         "Locations": [
@@ -2555,7 +2555,7 @@
     "Warlord": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Warlord"
         ],
         "Locations": [
@@ -2579,7 +2579,7 @@
             {
                 "Location": "Command",
                 "Description": "Friendly: Appears out of the first Command seal opened after meeting at the Warlord base",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -2865,7 +2865,7 @@
     "Z-Courier": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [
@@ -2879,7 +2879,7 @@
         "Categories": [
             "Derelict",
             "Drone",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [
@@ -2891,7 +2891,7 @@
     "Z-Experimental (8)": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [
@@ -2902,14 +2902,14 @@
             {
                 "Location": "Command",
                 "Description": "Friendly: Appears out of Command seals",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             }
         ]
     },
     "Z-Experimental (10)": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [
@@ -2920,14 +2920,14 @@
             {
                 "Location": "Command",
                 "Description": "Friendly: Appears out of Command seals",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             }
         ]
     },
     "Z-Heavy (5)": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [
@@ -2940,7 +2940,7 @@
     "Z-Heavy (7)": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [
@@ -2953,7 +2953,7 @@
     "Z-Heavy (9)": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [
@@ -2964,14 +2964,14 @@
             {
                 "Location": "Command",
                 "Description": "Friendly: Appears out of Command seals",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             }
         ]
     },
     "Z-Imprinter": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [
@@ -2984,7 +2984,7 @@
     "Z-Light (5)": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [
@@ -2997,7 +2997,7 @@
     "Z-Light (7)": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [
@@ -3010,7 +3010,7 @@
     "Z-Light (9)": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [
@@ -3021,14 +3021,14 @@
             {
                 "Location": "Command",
                 "Description": "Friendly: Appears out of Command seals",
-                "Spoilers": "Redacted"
+                "Spoiler": "Redacted"
             }
         ]
     },
     "Z-Technician": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [
@@ -3041,7 +3041,7 @@
     "Zhirov": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zhirov"
         ],
         "Locations": [
@@ -3058,7 +3058,7 @@
     "Zionite": {
         "Categories": [
             "Derelict",
-            "Spoilers",
+            "Spoiler",
             "Zionite"
         ],
         "Locations": [

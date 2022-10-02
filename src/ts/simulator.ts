@@ -3,6 +3,7 @@ import * as items from "../json/items.json";
 import {
     botData,
     canShowPart,
+    canShowSpoiler,
     createBotDataContent,
     createItemDataContent,
     gallerySort,
@@ -14,12 +15,12 @@ import {
 } from "./common";
 import {
     createHeader,
-    enablePopoverBotInfoItemPopovers,
-    getSpoilersState,
+    enablePopoverBotInfoInteraction,
+    getSpoilerState,
     refreshSelectpicker,
     registerDisableAutocomplete,
     resetButtonGroup,
-    setSpoilersState,
+    setSpoilerState,
 } from "./commonJquery";
 import { Critical, DamageType, ItemRatingCategory, ItemType, PropulsionItem, WeaponItem } from "./itemTypes";
 import {
@@ -266,7 +267,7 @@ jq(function ($) {
 
     // Adds a new weapon select dropdown with an optional weapon name
     function addWeaponSelect(weaponName: string) {
-        const spoilersState = getSpoilersState();
+        const spoilersState = getSpoilerState();
         const container = $("#weaponSelectContainer");
 
         const melee = isMelee();
@@ -394,7 +395,7 @@ jq(function ($) {
                 overloadContainer.removeClass("not-visible");
                 resetButtonGroup(exoContainer);
                 exoContainer.addClass("not-visible");
-            } else if (sigixWeapons.includes(weapon.name) && getSpoilersState() === "Redacted") {
+            } else if (sigixWeapons.includes(weapon.name) && getSpoilerState() === "Redacted") {
                 // Show the exoskeleton option
                 overloadContainer.addClass("not-visible");
                 resetButtonGroup(overloadContainer);
@@ -488,11 +489,11 @@ jq(function ($) {
         updateChoices();
 
         // Register handlers
-        $("#spoilersDropdown > button").on("click", (e) => {
+        $("#spoilerDropdown > button").on("click", (e) => {
             const state = $(e.target).text();
             $("#spoilers").text(state);
-            setSpoilersState(state);
-            ($("#spoilersDropdown > button") as any).tooltip("hide");
+            setSpoilerState(state);
+            ($("#spoilerDropdown > button") as any).tooltip("hide");
             updateChoices();
         });
         $("#reset").on("click", () => {
@@ -571,7 +572,7 @@ jq(function ($) {
         $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
         ($("#enemyInfoButton") as any).popover();
 
-        enablePopoverBotInfoItemPopovers($("#enemyInfoButton"));
+        enablePopoverBotInfoInteraction($("#enemyInfoButton"));
 
         // These divs are created at runtime so have to do this at init
         $("#damageReductionSelect").parent().addClass("percent-dropdown");
@@ -890,6 +891,7 @@ jq(function ($) {
                     ratingString: "",
                     size: 0,
                     slot: "N/A",
+                    spoiler: "None",
                     type: ItemType.ImpactWeapon,
                     mass: parseIntOrDefault($(s).parent().nextAll("input").val() as string, 0),
                     noRepairs: false,
@@ -1665,7 +1667,7 @@ jq(function ($) {
 
     // Updates the available choices for the dropdowns depending on spoiler state and combat type
     function updateChoices() {
-        const spoilersState = getSpoilersState();
+        const spoilersState = getSpoilerState();
 
         // Update all bot selections after saving old pick
         const select = $("#botSelect");
@@ -1677,18 +1679,7 @@ jq(function ($) {
         sortedBots.forEach((name) => {
             const bot = botData[name];
 
-            if (bot.categories.some((c) => c === "Spoilers")) {
-                // Spoiler bots allowed for spoilers/redacted
-                if (spoilersState === "Spoilers" || spoilersState === "Redacted") {
-                    select.append(`<option>${name}</option>`);
-                }
-            } else if (bot.categories.some((c) => c === "Redacted")) {
-                // Redacted bots only allowed for spoilers/redacted
-                if (spoilersState === "Redacted") {
-                    select.append(`<option>${name}</option>`);
-                }
-            } else {
-                // Non-spoiler bot always allowed
+            if (canShowSpoiler(bot.spoiler, spoilersState)) {
                 select.append(`<option>${name}</option>`);
             }
         });

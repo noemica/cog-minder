@@ -1,7 +1,7 @@
 import * as lore from "../json/lore.json";
 import * as jQuery from "jquery";
 import "bootstrap";
-import { createHeader, getSpoilersState, registerDisableAutocomplete, setSpoilersState } from "./commonJquery";
+import { createHeader, getSpoilerState, registerDisableAutocomplete, setSpoilerState } from "./commonJquery";
 import { escapeHtml } from "./common";
 import { Spoiler } from "./commonTypes";
 
@@ -26,58 +26,58 @@ jq(function ($) {
                 "Various records kept by 0b10. Most are obtainable at regular 0b10-controlled terminals via query() hacks.",
             groupLevel: "None",
             entries: {
-                Archives: "Spoilers",
-                "Brute Force Hacks": "Spoilers",
-                Cogmind: "Spoilers",
-                "Containment Facilitator": "Spoilers",
-                "Core Stripper": "Spoilers",
-                "Derelict Prototype": "Spoilers",
-                Disintegrator: "Spoilers",
-                Dragon: "Spoilers",
-                EMDS: "Spoilers",
-                Extension: "Spoilers",
+                Archives: "Spoiler",
+                "Brute Force Hacks": "Spoiler",
+                Cogmind: "Spoiler",
+                "Containment Facilitator": "Spoiler",
+                "Core Stripper": "Spoiler",
+                "Derelict Prototype": "Spoiler",
+                Disintegrator: "Spoiler",
+                Dragon: "Spoiler",
+                EMDS: "Spoiler",
+                Extension: "Spoiler",
                 "Gamma Refractor": "Redacted",
-                "Heavy Quantum Rifle": "Spoilers",
-                "Heroes of Zion": "Spoilers",
-                "Hub_04(d)": "Spoilers",
-                Hydra: "Spoilers",
-                "Hypervelocity EM Gauss Rifle": "Spoilers",
-                Knight: "Spoilers",
+                "Heavy Quantum Rifle": "Spoiler",
+                "Heroes of Zion": "Spoiler",
+                "Hub_04(d)": "Spoiler",
+                Hydra: "Spoiler",
+                "Hypervelocity EM Gauss Rifle": "Spoiler",
+                Knight: "Spoiler",
                 "L-Cannon": "Redacted",
                 "LRC Attachments": "Redacted",
                 "LRC-V3": "Redacted",
-                "MAIN.C": "Spoilers",
-                "Matter Drive": "Spoilers",
-                "Myomer Exoskeleton": "Spoilers",
-                "Null Cannon": "Spoilers",
-                "Omega Cannon": "Spoilers",
-                "Particle Cleaver": "Spoilers",
-                Perforator: "Spoilers",
-                "Potential Cannon": "Spoilers",
-                Quarantine: "Spoilers",
-                "Regenerative Plating": "Spoilers",
-                "SHELL Armor": "Spoilers",
+                "MAIN.C": "Spoiler",
+                "Matter Drive": "Spoiler",
+                "Myomer Exoskeleton": "Spoiler",
+                "Null Cannon": "Spoiler",
+                "Omega Cannon": "Spoiler",
+                "Particle Cleaver": "Spoiler",
+                Perforator: "Spoiler",
+                "Potential Cannon": "Spoiler",
+                Quarantine: "Spoiler",
+                "Regenerative Plating": "Spoiler",
+                "SHELL Armor": "Spoiler",
                 "Section 7": "Redacted",
                 Shearcannon: "Redacted",
                 Sheargun: "Redacted",
-                Sigix: "Spoilers",
-                "Sigix Access Protocol": "Spoilers",
-                "Sigix Autopsy": "Spoilers",
-                "Sigix Broadsword": "Spoilers",
+                Sigix: "Spoiler",
+                "Sigix Access Protocol": "Spoiler",
+                "Sigix Autopsy": "Spoiler",
+                "Sigix Broadsword": "Spoiler",
                 "Sigix Exoskeleton": "Redacted",
-                "Sigix Technology": "Spoilers",
-                "Slip Nodes": "Spoilers",
-                "Tachyon Dispersion Ray": "Spoilers",
-                Terminator: "Spoilers",
-                Terrabomb: "Spoilers",
-                Testing: "Spoilers",
-                "Transdimensional Reconstructor": "Spoilers",
-                Trojans: "Spoilers",
-                Troll: "Spoilers",
-                "Unknown Artifact": "Spoilers",
-                Warlord: "Spoilers",
-                "Warp Gun": "Spoilers",
-                "Z-bomb Delivery System": "Spoilers",
+                "Sigix Technology": "Spoiler",
+                "Slip Nodes": "Spoiler",
+                "Tachyon Dispersion Ray": "Spoiler",
+                Terminator: "Spoiler",
+                Terrabomb: "Spoiler",
+                Testing: "Spoiler",
+                "Transdimensional Reconstructor": "Spoiler",
+                Trojans: "Spoiler",
+                Troll: "Spoiler",
+                "Unknown Artifact": "Spoiler",
+                Warlord: "Spoiler",
+                "Warp Gun": "Spoiler",
+                "Z-bomb Delivery System": "Spoiler",
             },
         },
         "Access_0 Records": {
@@ -91,11 +91,11 @@ jq(function ($) {
             content:
                 "Records obtainable in the Archives map as part of the Extension branch. Only possible " +
                 "during a rare event where Zhirov is present here instead of at his standard Lab.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
         },
         "Cetus Records": {
             content: "Records obtainable via terminals in the Cetus map as part of the Extension branch.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
         },
         "Exiles Records": {
             content: "Records obtainable via terminals in the Exiles map.",
@@ -109,19 +109,19 @@ jq(function ($) {
         },
         "Oracle Records": {
             content: "Records obtainable on terminals on the Data Miner map.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
         },
         "WAR.Sys Records": {
             content: "Records obtainable on terminals on the Warlord map.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
         },
         "Zhirov Records": {
             content: "Records obtainable on terminals on the Zhirov map.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
         },
         "5H-AD0 Dialogue": {
             content: "Dialogue obtainable by speaking with the rarely spawning bot 5H-AD0 in the Zion Deep Caves map.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
         },
         "Architect Dialogue": {
             content: "Dialogue obtainable by speaking with the Architect in the Access 0 map.",
@@ -129,31 +129,31 @@ jq(function ($) {
         },
         "Base Dialogue": {
             content: "Dialogue obtainable by speaking with various derelicts on the Warlord map.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
         },
         "Data Miner Dialogue": {
             content: "Dialogue obtainable by speaking with the Data Miner on their map.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
         },
         "EX-BIN Dialogue": {
             content: "Dialogue obtainable by speaking with the exile EX-BIN on the Exiles map.",
             groupLevel: "None",
             entries: {
-                "2": "Spoilers",
+                "2": "Spoiler",
             },
         },
         "EX-DEC Dialogue": {
             content: "Dialogue obtainable by speaking with the exile EX-DEC on the Exiles map.",
             groupLevel: "None",
             entries: {
-                "2": "Spoilers",
+                "2": "Spoiler",
             },
         },
         "EX-HEX Dialogue": {
             content: "Dialogue obtainable by speaking with the exile EX-HEX on various maps.",
             groupLevel: "None",
             entries: {
-                "2": "Spoilers",
+                "2": "Spoiler",
             },
         },
         "Exiles Dialogue": {
@@ -162,7 +162,7 @@ jq(function ($) {
         },
         "Imprinter Dialogue": {
             content: "Dialogue obtainable by speaking with the Imprinter on the Zion and Zion Deep Caves maps.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
         },
         "MAIN.C Dialogue": {
             content: "Dialogue obtainable by speaking with MAIN.C on the Command map.",
@@ -170,13 +170,13 @@ jq(function ($) {
         },
         "Revision 17 Dialogue": {
             content: "Dialogue obtainable by speaking with Revision 17 on various maps.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
         },
         "Sigix Dialogue": {
             content:
                 "Dialogue obtainable by speaking with the Sigix Warrior located in Quarantine after using a " +
                 "Core Reset Matrix to decipher the messages on various maps.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
             entries: {
                 "2": "Redacted",
                 "3": "Redacted",
@@ -184,7 +184,7 @@ jq(function ($) {
         },
         "Warlord Dialogue": {
             content: "Dialogue obtainable by speaking with Warlord on various maps.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
             entries: {
                 "6": "Redacted",
                 "7": "Redacted",
@@ -196,7 +196,7 @@ jq(function ($) {
         },
         "Zhirov Dialogue": {
             content: "Dialogue obtainable by speaking with Zhirov on various maps.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
             entries: {
                 "8": "Redacted",
                 "9": "Redacted",
@@ -204,7 +204,7 @@ jq(function ($) {
         },
         "Zion Dialogue": {
             content: "Dialogue obtainable by speaking with various bots on the Zion map.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
         },
         "Common Analysis": {
             content:
@@ -219,7 +219,7 @@ jq(function ($) {
         "Prototype Analysis": {
             content:
                 "Analyses about prototype 0b10 bots, obtainable at regular 0b10-controlled terminals via analysis() hacks.",
-            groupLevel: "Spoilers",
+            groupLevel: "Spoiler",
         },
     };
 
@@ -232,11 +232,11 @@ jq(function ($) {
         resetInput();
 
         // Register handlers
-        $("#spoilersDropdown > button").on("click", (e) => {
+        $("#spoilerDropdown > button").on("click", (e) => {
             const state = $(e.target).text();
             $("#spoilers").text(state);
-            setSpoilersState(state);
-            ($("#spoilersDropdown > button") as any).tooltip("hide");
+            setSpoilerState(state);
+            ($("#spoilerDropdown > button") as any).tooltip("hide");
             updateLoreTables();
         });
         $("#reset").on("click", () => {
@@ -274,7 +274,7 @@ jq(function ($) {
         const filterContent = contentValue.length > 0;
         const groupValue = ($("#groupInput").val() as string).toLowerCase();
         const filterGroup = groupValue.length > 0;
-        const spoilerLevel = getSpoilersState();
+        const spoilerLevel = getSpoilerState();
 
         const tableHtml = Object.keys(lore)
             .map((groupName) => {
@@ -296,7 +296,7 @@ jq(function ($) {
                     loreGroup = spoilerGroups[groupName];
                     if (spoilerLevel === "None" && loreGroup.groupLevel !== "None") {
                         return "";
-                    } else if (spoilerLevel === "Spoilers" && loreGroup.groupLevel === "Redacted") {
+                    } else if (spoilerLevel === "Spoiler" && loreGroup.groupLevel === "Redacted") {
                         return "";
                     }
                 }
@@ -326,7 +326,7 @@ jq(function ($) {
                             const spoilerEntry = loreGroup.entries[entry["Name/Number"]];
                             if (spoilerLevel === "None" && spoilerEntry !== "None") {
                                 return false;
-                            } else if (spoilerLevel === "Spoilers" && spoilerEntry === "Redacted") {
+                            } else if (spoilerLevel === "Spoiler" && spoilerEntry === "Redacted") {
                                 return false;
                             }
                         }

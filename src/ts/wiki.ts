@@ -3,12 +3,12 @@ import * as items from "../json/items.json";
 import * as bots from "../json/bots.json";
 import {
     createHeader,
-    disableBotInfoItemPopovers,
-    enableBotInfoItemPopovers,
-    getSpoilersState,
+    disableBotInfoInteraction,
+    enableBotInfoInteraction,
+    getSpoilerState,
     refreshSelectpicker,
     registerDisableAutocomplete,
-    setSpoilersState,
+    setSpoilerState,
 } from "./commonJquery";
 import {
     canShowSpoiler,
@@ -68,16 +68,20 @@ jq(function ($) {
             endTag: string | undefined,
             spoilerState: Spoiler,
         ) {
+            // Regex for actions in the form of [[X]] or [[X:Y]]
             const actionRegex = /\[\[([^\]:]*)(?::([^\]]*))?\]\]/g;
 
             let content = "";
             let result: RegExpExecArray | null;
             while ((result = actionRegex.exec(initialContent))) {
                 if (index > result.index) {
+                    // Skip over results we've already processed
                     continue;
                 }
 
                 if (index < result.index) {
+                    // Append any content we've skipped processing, this should
+                    // just be plaintext
                     content += initialContent.substring(index, result.index);
                     index = result.index;
                 }
@@ -85,15 +89,22 @@ jq(function ($) {
                 if (result[2] !== undefined) {
                     // Found a [[X:Y]] match
                     if (result[1] === "Spoiler") {
+                        // Found spoiler tag like [[Spoiler:Spoiler]]Text[[/Spoiler]]
+                        // Search for the closing [[/Spoiler]] tag
                         const spoilerResult = /\[\[\/Spoiler\]\]/.exec(initialContent.substring(index));
                         if (spoilerResult === null) {
+                            // If we can't find the end tag then just skip over the opening spoiler tag
                             console.log(`Found spoiler tag without close tag in ${entry.name}`);
                             index += result[0].length;
                         } else {
+                            // Only 2 options are Spoiler and Redacted
+                            // If it's invalid canShowSpoiler will default to not showing
+                            // unless Redacted setting is active
                             if (result[2] !== "Spoiler" && result[2] !== "Redacted") {
                                 console.log(`Found unknown spoiler type ${result[2]} in ${entry.name}`);
                             }
 
+                            // Process the subsection independently
                             const subSectionStart = result.index + result[0].length;
                             const sectionResult = processSection(
                                 initialContent,
@@ -102,8 +113,9 @@ jq(function ($) {
                                 spoilerState,
                             );
 
+                            // Decide whether to add spoiler-text protection or not
                             if (!canShowSpoiler(result[2] as Spoiler, spoilerState)) {
-                                content += `<span class="spoiler-text">${sectionResult.content}</span>`;
+                                content += `<span class="spoiler-text spoiler-text-multiline">${sectionResult.content}</span>`;
                             } else {
                                 content += sectionResult.content;
                             }
@@ -115,6 +127,7 @@ jq(function ($) {
                         index += result[0].length;
                     }
                 } else if (result[1].startsWith("/")) {
+                    // Found an end tag, make sure it matches what we're expecting
                     if (result[1] === endTag) {
                         index += result[0].length;
 
@@ -127,8 +140,23 @@ jq(function ($) {
                     }
                 } else {
                     // Found a [[X]] match, check for a corresponding link
-                    if (allEntries.has(result[1])) {
-                        content += `<a href = "#${result[1]}">${result[1]}</a>`;
+                    const referenceEntry = allEntries.get(result[1]);
+                    if (referenceEntry !== undefined) {
+                        let tooltipData = "";
+                        if (referenceEntry.type === "Bot") {
+                            const bot = getBot(referenceEntry.name);
+                            tooltipData = `data-html=true data-content='${createBotDataContent(
+                                bot,
+                                true,
+                            )}' data-toggle="popover" data-trigger="hover"`;
+                        } else if (referenceEntry.type === "Part") {
+                            const item = getItem(referenceEntry.name);
+                            tooltipData = `data-html=true data-content='${createItemDataContent(
+                                item,
+                            )}' data-toggle="popover" data-trigger="hover"`;
+                        }
+
+                        content += `<a href = "#${result[1]}" ${tooltipData}>${result[1]}</a>`;
                     } else {
                         console.log(`Bad link to ${result[1]} in ${entry.name}`);
                         content += result[1];
@@ -144,7 +172,7 @@ jq(function ($) {
             return { content: content, endIndex: index };
         }
 
-        const spoilersState = getSpoilersState();
+        const spoilersState = getSpoilerState();
         const sections = entry.content.split("\n");
 
         return sections
@@ -166,16 +194,13 @@ jq(function ($) {
         updatePageSelect();
 
         // Register handlers
-        $("#spoilersDropdown > button").on("click", (e) => {
+        $("#spoilerDropdown > button").on("click", (e) => {
             const state = $(e.target).text();
             $("#spoilers").text(state);
-            setSpoilersState(state);
-            ($("#spoilersDropdown > button") as any).tooltip("hide");
+            setSpoilerState(state);
+            ($("#spoilerDropdown > button") as any).tooltip("hide");
 
             updatePageSelect();
-        });
-        $("#homeButton").on("click", () => {
-            setSelectedPage("Home", true);
         });
         $("#pageSelect").on("changed.bs.select", () => {
             if (skipSelectChange) {
@@ -231,8 +256,8 @@ jq(function ($) {
         $("#pageSelectContainer > div").addClass("page-dropdown");
         $("#pageSelectContainer > div > .dropdown-menu").addClass("page-dropdown-menu");
 
-        // Enable tooltips
-        ($('[data-toggle="tooltip"]') as any).tooltip();
+        // Enable popovers
+        ($('[data-toggle="popover"]') as any).popover();
     }
 
     // Inits the wiki entries from JSON
@@ -253,10 +278,10 @@ jq(function ($) {
         // Initialize locations
         for (const locationEntry of wiki.Locations) {
             let spoiler: Spoiler = "None";
-            if (locationEntry.Spoilers === "Redacted") {
+            if (locationEntry.Spoiler === "Redacted") {
                 spoiler = "Redacted";
-            } else if (locationEntry.Spoilers === "Spoiler") {
-                spoiler = "Spoilers";
+            } else if (locationEntry.Spoiler === "Spoiler") {
+                spoiler = "Spoiler";
             }
 
             const specialBots = (locationEntry.SpecialBots ?? [])
@@ -329,7 +354,7 @@ jq(function ($) {
             if (part.categories.includes("Redacted")) {
                 spoiler = "Redacted";
             } else if (part.categories.includes("Spoiler")) {
-                spoiler = "Spoilers";
+                spoiler = "Spoiler";
             }
 
             allEntries.set(partEntry.Name, {
@@ -344,9 +369,9 @@ jq(function ($) {
         // Initialize other
         for (const otherEntry of wiki.Other) {
             let spoiler: Spoiler = "None";
-            if (otherEntry.Spoilers === "Redacted") {
-            } else if (otherEntry.Spoilers === "Spoiler") {
-                spoiler = "Spoilers";
+            if (otherEntry.Spoiler === "Redacted") {
+            } else if (otherEntry.Spoiler === "Spoiler") {
+                spoiler = "Spoiler";
             }
 
             allEntries.set(otherEntry.Name, {
@@ -450,24 +475,21 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const parentContainer = $(`<div class="container"></div>`);
-        const rowContainer = $(`<div class="row"></div>`);
-        const contentColumn = $(`<div class="col"></div>`);
+        const parentContainer = $(`<div class="container-xl"></div>`);
         const content = $(createContentHtml(entry));
-        const infoboxColumn = $(`<div class="wiki-infobox"></div>`);
-        const infoboxContent = $(createBotDataContent(bot));
+        const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
+        const infoboxContent = $(createBotDataContent(bot, true));
 
         // Append to DOM
-        parentContainer.append(rowContainer[0]);
-        rowContainer.append(contentColumn[0]);
-        contentColumn.append(content as any);
-        rowContainer.append(infoboxColumn[0]);
+        // Append the infobox first which floats to the right
+        parentContainer.append(infoboxColumn[0]);
         infoboxColumn.append(infoboxContent as any);
+        parentContainer.append(content as any);
 
         pageContent.append(parentContainer[0]);
 
         // Bot parts have popovers, must hook them up here
-        enableBotInfoItemPopovers(parentContainer);
+        enableBotInfoInteraction(parentContainer);
     }
 
     // Updates the page content based on the current selection
@@ -477,8 +499,10 @@ jq(function ($) {
 
         if (lastEntry?.type === "Bot") {
             // Need to do proper cleanup for bots
-            disableBotInfoItemPopovers(pageContent);
+            disableBotInfoInteraction(pageContent);
         }
+
+        ($("#pageContent").find(`[data-toggle="popover"]`) as any).popover("dispose");
 
         pageContent.empty();
 
@@ -522,6 +546,8 @@ jq(function ($) {
                     updatePartContent(entry);
                     break;
             }
+
+            ($("#pageContent").find(`[data-toggle="popover"]`) as any).popover();
 
             // Fix up any links to work properly
             overrideLinks(pageContent);
@@ -581,7 +607,7 @@ jq(function ($) {
         const contentColumn = $(`<div class="col"></div>`);
         const content = $(createContentHtml(entry));
         const infoboxColumn = $(`<div class="wiki-infobox"></div>`);
-        const infoboxContent = $(createLocationHtml(location, getSpoilersState()));
+        const infoboxContent = $(createLocationHtml(location, getSpoilerState()));
 
         // Append to DOM
         parentContainer.append(rowContainer[0]);
@@ -626,7 +652,7 @@ jq(function ($) {
 
         const allPageNames = Array.from(allEntries.keys());
         allPageNames.sort();
-        const spoilersState = getSpoilersState();
+        const spoilersState = getSpoilerState();
 
         for (const pageName of allPageNames) {
             const entry = allEntries.get(pageName)!;

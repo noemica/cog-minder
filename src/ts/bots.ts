@@ -3,13 +3,13 @@ import * as items from "../json/items.json";
 import { Bot } from "./botTypes";
 import { botData, createBotDataContent, getBot, initData, leetSpeakMatchTransform, nameToId } from "./common";
 import {
-    getSpoilersState,
+    getSpoilerState,
     getSelectedButtonId,
     resetButtonGroup,
-    enablePopoverBotInfoItemPopovers,
+    enablePopoverBotInfoInteraction,
     createHeader,
     registerDisableAutocomplete,
-    setSpoilersState,
+    setSpoilerState,
 } from "./commonJquery";
 
 import * as jQuery from "jquery";
@@ -113,7 +113,7 @@ jq(function ($) {
 
         const popoverSelector = $('#botsGrid > [data-toggle="popover"]');
         (popoverSelector as any).popover();
-        enablePopoverBotInfoItemPopovers(popoverSelector);
+        enablePopoverBotInfoInteraction(popoverSelector);
     }
 
     // Creates elements for all spreadsheet bots
@@ -194,10 +194,10 @@ jq(function ($) {
         const filters: ((bot: Bot) => boolean)[] = [];
 
         // Spoilers filter
-        const spoilersState = getSpoilersState();
+        const spoilersState = getSpoilerState();
         if (spoilersState === "None") {
             filters.push((bot) => bot.spoiler === "None");
-        } else if (spoilersState === "Spoilers") {
+        } else if (spoilersState === "Spoiler") {
             filters.push((bot) => bot.spoiler !== "Redacted");
         }
 
@@ -293,11 +293,11 @@ jq(function ($) {
         createSpreadsheetBots();
 
         // Register handlers
-        $("#spoilersDropdown > button").on("click", (e) => {
+        $("#spoilerDropdown > button").on("click", (e) => {
             const state = $(e.target).text();
             $("#spoilers").text(state);
-            setSpoilersState(state);
-            ($("#spoilersDropdown > button") as any).tooltip("hide");
+            setSpoilerState(state);
+            ($("#spoilerDropdown > button") as any).tooltip("hide");
             updateFactionVisibility();
             updateBots();
         });
@@ -423,8 +423,8 @@ jq(function ($) {
 
     // Updates faction visibility based on the spoiler state
     function updateFactionVisibility() {
-        const state = getSpoilersState();
-        const showSpoilers = state === "Spoilers";
+        const state = getSpoilerState();
+        const showSpoilers = state === "Spoiler";
         const showRedacted = state === "Redacted";
 
         if (showSpoilers) {

@@ -16,11 +16,11 @@ import {
 import {
     createHeader,
     getSelectedButtonId,
-    getSpoilersState,
+    getSpoilerState,
     registerDisableAutocomplete,
     resetButtonGroup,
     setActiveButtonGroupButton,
-    setSpoilersState,
+    setSpoilerState,
     temporarilySetValue,
 } from "./commonJquery";
 import {
@@ -198,7 +198,7 @@ jq(function ($) {
 
     function addPartSelect(section: PartSection, initialSelection: string) {
         const container = $("#" + section.id);
-        const spoilersState = getSpoilersState();
+        const spoilersState = getSpoilerState();
 
         // Get list of valid names
         const partNames: string[] = [];
@@ -443,11 +443,11 @@ jq(function ($) {
         initFromState();
 
         // Add handlers
-        $("#spoilersDropdown > button").on("click", (e) => {
+        $("#spoilerDropdown > button").on("click", (e) => {
             const state = $(e.target).text();
             $("#spoilers").text(state);
-            setSpoilersState(state);
-            ($("#spoilersDropdown > button") as any).tooltip("hide");
+            setSpoilerState(state);
+            ($("#spoilerDropdown > button") as any).tooltip("hide");
             resetValues(defaultParts, null, null, null);
         });
         $("#reset").on("click", () => {

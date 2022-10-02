@@ -15,11 +15,11 @@ import {
 import {
     createHeader,
     getSelectedButtonId,
-    getSpoilersState,
+    getSpoilerState,
     refreshSelectpicker,
     registerDisableAutocomplete,
     resetButtonGroup,
-    setSpoilersState,
+    setSpoilerState,
 } from "./commonJquery";
 import {
     ItemCategory,
@@ -1228,10 +1228,10 @@ jq(function ($) {
         const filters: ((item: Item) => boolean)[] = [];
 
         // Spoilers filter
-        const spoilersState = getSpoilersState();
+        const spoilersState = getSpoilerState();
         if (spoilersState === "None") {
             filters.push((item) => item.spoiler === "None");
-        } else if (spoilersState === "Spoilers") {
+        } else if (spoilersState === "Spoiler") {
             filters.push((item) => item.spoiler !== "Redacted");
         }
 
@@ -1412,18 +1412,18 @@ jq(function ($) {
         updateComparison();
 
         // Load spoilers saved state
-        $("#spoilers").text(getSpoilersState());
+        $("#spoilers").text(getSpoilerState());
 
         // Init lazy loading for gallery images
         const observer = lozad();
         observer.observe();
 
         // Register handlers
-        $("#spoilersDropdown > button").on("click", (e) => {
+        $("#spoilerDropdown > button").on("click", (e) => {
             const state = $(e.target).text();
             $("#spoilers").text(state);
-            setSpoilersState(state);
-            ($("#spoilersDropdown > button") as any).tooltip("hide");
+            setSpoilerState(state);
+            ($("#spoilerDropdown > button") as any).tooltip("hide");
             updateCategoryVisibility();
             updateItems();
         });
@@ -1712,7 +1712,7 @@ jq(function ($) {
 
     // Updates category visibility based on the spoiler state
     function updateCategoryVisibility() {
-        const state = getSpoilersState();
+        const state = getSpoilerState();
 
         function setInvisible(id: CategoryId) {
             $(`#${id}`).addClass("not-visible");
@@ -1726,7 +1726,7 @@ jq(function ($) {
                 spoilerCategoryIds.forEach(setInvisible);
                 redactedCategoryIds.forEach(setInvisible);
                 break;
-            case "Spoilers":
+            case "Spoiler":
                 spoilerCategoryIds.forEach(setVisible);
                 redactedCategoryIds.forEach(setInvisible);
                 break;

@@ -96,6 +96,11 @@ body {
     display: grid;
 }
 
+.float-clear-right {
+    float: right;
+    clear: right;
+}
+
 .about-btn {
     padding: .5rem 1.0rem;
     font-size: 1.5rem;
@@ -544,6 +549,10 @@ body {
     font-size: .80rem;
 }
 
+.popover-part a {
+    text-decoration: none;
+}
+
 .popover-half-line {
     font-size: .40rem;
 }
@@ -871,23 +880,38 @@ body {
     border: 1px solid #008800;
     padding: .5rem .75rem;
     min-width: 59ch;
+    margin-left: 1.5rem;
 }
 
 .spoiler-text {
     background-color: #7f7f7f;
-    user-select: none;
-    padding: 0 3px 2px 3px;
+    padding: 1px 3px 2px 3px;
+}
+
+.spoiler-text-margin {
+    margin: 1px -3px -2px -3px;
+}
+
+.spoiler-text-multiline {
+    padding: 0.3em 3px;
 }
 
 .spoiler-text:not(:focus):not(:hover) {
-    color: transparent;
-}
-
-.spoiler-text:not(:focus):not(:hover) > a {
+    user-select: none;
     color: transparent;
 }
 
 .spoiler-text:hover,
 .spoiler-text:focus {
+    background-color: #202020;
+}
+
+.spoiler-text:not(:focus):not(:hover) > a:not(:focus) {
+    user-select: none;
+    color: transparent;
+}
+
+.spoiler-text > a:hover,
+.spoiler-text > a:focus{
     background-color: #202020;
 }

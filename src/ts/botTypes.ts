@@ -9,7 +9,7 @@ export enum BotCategory {
     Exiles = "Exiles",
     Prototype = "Prototype",
     Redacted = "Redacted",
-    Spoilers = "Spoilers",
+    Spoiler = "Spoiler",
     OB10 = "0b10",
     Warlord = "Warlord",
     Zhirov = "Zhirov",

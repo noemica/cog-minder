@@ -131,11 +131,11 @@ export function createHeader(page: PageType, headerContainer: JQuery<HTMLElement
         <button id="spoilers" class="btn btn-flex dropdown-toggle" type="button" data-toggle="dropdown">
             None
         </button>
-        <div id="spoilersDropdown" class="dropdown-menu">
+        <div id="spoilerDropdown" class="dropdown-menu">
             <button class="dropdown-item" data-toggle="tooltip"
                 title="No spoilers: Factory or higher depth branch content is hidden.">None</button>
             <button class="dropdown-item" data-toggle="tooltip"
-                title="Moderate spoilers: Normal Factory and Research branch content is shown.">Spoilers</button>
+                title="Moderate spoilers: Normal Factory and Research branch content is shown.">Spoiler</button>
             <button class="dropdown-item" data-toggle="tooltip"
                 title="Full spoilers: All game content is shown.">Redacted</button>
         </div>
@@ -180,30 +180,30 @@ export function createHeader(page: PageType, headerContainer: JQuery<HTMLElement
 
     if (info.spoilers) {
         // Load spoilers saved state
-        $("#spoilers").text(getSpoilersState());
+        $("#spoilers").text(getSpoilerState());
     }
 
     (headerContainer.find('[data-toggle="popover"]') as any).popover();
 }
 
-const nameRegex = /\[([\w. '"\-/]*) \(\d/;
-const optionNameRegex = /([\w. '"\-/]*) \(\d/;
 // Enables nested bot info popovers given a selector to the root bot popover
-export function enablePopoverBotInfoItemPopovers(selector: JQuery<HTMLElement>): void {
+export function enablePopoverBotInfoInteraction(selector: JQuery<HTMLElement>): void {
     selector.on("shown.bs.popover", (e) => {
         const body = $(`#${$(e.target).attr("aria-describedby")}`).children(".popover-body");
-        enableBotInfoItemPopovers(body);
+        enableBotInfoInteraction(body);
     });
 
     selector.on("hide.bs.popover", (e) => {
         // Dispose nested popovers when the base popover is closed
         const body = $(`#${$(e.target).attr("aria-describedby")}`).children(".popover-body");
-        disableBotInfoItemPopovers(body);
+        disableBotInfoInteraction(body);
     });
 }
 
+const nameRegex = /\[([\w. '"\-/]*) \(\d/;
+const optionNameRegex = /([\w. '"\-/]*) \(\d/;
 // Enables bot info popovers given a selector to the root object
-export function enableBotInfoItemPopovers(root: JQuery<HTMLElement>): void {
+export function enableBotInfoInteraction(root: JQuery<HTMLElement>): void {
     // Set up popovers for items on bots
     const items = root.find(".popover-part");
     items.each((_, element) => {
@@ -260,12 +260,12 @@ export function enableBotInfoItemPopovers(root: JQuery<HTMLElement>): void {
 }
 
 // Disposes of all bot info popovers given a root object
-export function disableBotInfoItemPopovers(root: JQuery<HTMLElement>): void {
+export function disableBotInfoInteraction(root: JQuery<HTMLElement>): void {
     const items = root.find(".bot-popover-item");
     (items as any).popover("dispose");
 }
 
-// Gets the stored boolean state
+// Gets the stored B11 state
 export function getB11State(): boolean {
     // return window.localStorage.getItem("b11") === "true";
     // Reinstate for beta 12
@@ -278,9 +278,13 @@ export function getSelectedButtonId(selector: JQuery<HTMLElement>): string {
 }
 
 // Gets the stored spoilers state
-export function getSpoilersState(): Spoiler {
+export function getSpoilerState(): Spoiler {
     let value = valueOrDefault(window.localStorage.getItem("spoilers"), "None");
-    if (typeof value != "string" || (value != "None" && value != "Spoilers" && value != "Redacted")) {
+    if (value === "Spoilers") {
+        value = "Spoiler";
+    }
+
+    if (typeof value != "string" || (value != "None" && value != "Spoiler" && value != "Redacted")) {
         value = "None";
     }
 
@@ -320,12 +324,12 @@ export function setActiveButtonGroupButton(group: JQuery<HTMLElement>, index: nu
     group.children(`label:nth-of-type(${index}) > input`).prop("checked", true);
 }
 
-// Gets the stored spoilers state
-export function setSpoilersState(state: string): void {
+// Sets the stored spoiler state
+export function setSpoilerState(state: string): void {
     window.localStorage.setItem("spoilers", state);
 }
 
-// Gets the stored boolean state
+// Sets the stored b11 state
 export function setB11State(state: boolean): void {
     return window.localStorage.setItem("b11", state.toString());
 }

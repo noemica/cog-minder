@@ -2,10 +2,10 @@ import * as jQuery from "jquery";
 import "bootstrap";
 import {
     createHeader,
-    getSpoilersState,
+    getSpoilerState,
     registerDisableAutocomplete,
     resetButtonGroup,
-    setSpoilersState,
+    setSpoilerState,
 } from "./commonJquery";
 import { parseIntOrDefault } from "./common";
 import { Spoiler } from "./commonTypes";
@@ -72,16 +72,16 @@ jq(function ($) {
                 { name: "Build - robot tier 7", description: "Initiate build process for currently loaded schematic.", baseChance: 22, indirect: Indirect.Never },
                 { name: "Build - robot tier 8", description: "Initiate build process for currently loaded schematic.", baseChance: 18, indirect: Indirect.Never },
                 { name: "Build - robot tier 9", description: "Initiate build process for currently loaded schematic.", baseChance: 14, indirect: Indirect.Never },
-                { name: "Force(Download)", description: "Save the current schematic in the player's list of schematic. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Force(Recompile)", description: "Ejects an Authchip from the fabricator with a type matching the currently loaded schematics. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Force(Overload)", description: "Render the fabricator inoperable, but cause it to send high corruption-causing arcs of electromagnetic energy at nearby bots for a short while. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
+                { name: "Force(Download)", description: "Save the current schematic in the player's list of schematic. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Force(Recompile)", description: "Ejects an Authchip from the fabricator with a type matching the currently loaded schematics. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Force(Overload)", description: "Render the fabricator inoperable, but cause it to send high corruption-causing arcs of electromagnetic energy at nearby bots for a short while. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
                 { name: "Load([Part Name])", description: "Upload a part or robot schematic to prepare for fabrication.", baseChance: 90, indirect: Indirect.Never },
                 { name: "Network(Status)", description: "Query system for fabrication network status, including location and activities of each fabricator.", baseChance: 70, indirect: Indirect.Never },
-                { name: "Trojan(Fabnet)", description: "Adds a 3% chance per 0b10 combat bot on the next depth up to temporarily turn friendly (purple) when alerted of any enemy (not just Cogmind) similar to the RIF hack overwrite IFF. This chance decreases to 1% on the following depth, and reaches 0% after that. Caps at 15%. There is a chance that the machine network on the floor will be permanently locked when this effect activates.", baseChance: 20, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Haulers)", description: "Continuously report the position of all Hauler class robots on the current floor.", baseChance: 50, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Liberate)", description: "Any bots created by this fabricator by 0b10 will be allied but noncontrollable to Cogmind (purple color). If on a factory floor, the bots will head for the closest caves exit and leave the map. Otherwise the bots will follow you as regular purple allies.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Prioritize)", description: "Double the speed of fabrication for the current fabricator.", baseChance: 30, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Report)", description: "Reports when any fabricator on the floor is finished building something, as well as its position.", baseChance: 60, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
+                { name: "Trojan(Fabnet)", description: "Adds a 3% chance per 0b10 combat bot on the next depth up to temporarily turn friendly (purple) when alerted of any enemy (not just Cogmind) similar to the RIF hack overwrite IFF. This chance decreases to 1% on the following depth, and reaches 0% after that. Caps at 15%. There is a chance that the machine network on the floor will be permanently locked when this effect activates.", baseChance: 20, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Haulers)", description: "Continuously report the position of all Hauler class robots on the current floor.", baseChance: 50, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Liberate)", description: "Any bots created by this fabricator by 0b10 will be allied but noncontrollable to Cogmind (purple color). If on a factory floor, the bots will head for the closest caves exit and leave the map. Otherwise the bots will follow you as regular purple allies.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Prioritize)", description: "Double the speed of fabrication for the current fabricator.", baseChance: 30, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Report)", description: "Reports when any fabricator on the floor is finished building something, as well as its position.", baseChance: 60, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
             ],
             imageName: "game_sprites/Fabricator.png",
         },
@@ -90,16 +90,16 @@ jq(function ($) {
             dataCoreApplies: false,
             hacks: [
                 { name: "Couplers", description: "Query system for current list of installed relay couplers.", baseChance: 40, indirect: Indirect.Never },
-                { name: "Force(Eject)", description: "Eject all relay couplers installed in this garrison to the floor. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Force(Jam)", description: "Seal this garrison's access door, preventing squad dispatches from this location and slowing extermination squad response times across the entire floor. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
+                { name: "Force(Eject)", description: "Eject all relay couplers installed in this garrison to the floor. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Force(Jam)", description: "Seal this garrison's access door, preventing squad dispatches from this location and slowing extermination squad response times across the entire floor. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
                 { name: "Seal", description: "Seal this garrison's access door, preventing squad dispatches from this location and slowing extermination squad response times across the entire floor.", baseChance: 30, indirect: Indirect.Never },
-                { name: "Trojan(Broadcast)", description: "Enable reporting of any garrison dispatch type, robot composition, and position on the floor.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Decoy)", description: "Redirect the next dispatch's target to another location, includes dispatches with otherwise perfect tracking like exterminations and assaults.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Intercept)", description: "Reduce nearby MAIN.C-controlled bot accuracy by 15%.", baseChance: 50, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Redirect)", description: "Redirect all dispatch targets to another location, includes dispatches with otherwise perfect tracking like exterminations and assaults. Each dispatch after the first has an increasing 25% chance of removing the hack, dispatching an extra investigation squad, and disabling the garrison machine.", baseChance: 30, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Reprogram)", description: "Reprogram the next dispatch to be allied but noncontrollable to Cogmind (purple color). Doesn't work against special dispatches like Lightnings.", baseChance: 20, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Restock)", description: "Dispatches a programmer to the current garrison carrying relay couplers.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Watchers)", description: "Continuously report the position of all Watcher class robots on the current floor.", baseChance: 50, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
+                { name: "Trojan(Broadcast)", description: "Enable reporting of any garrison dispatch type, robot composition, and position on the floor.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Decoy)", description: "Redirect the next dispatch's target to another location, includes dispatches with otherwise perfect tracking like exterminations and assaults.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Intercept)", description: "Reduce nearby MAIN.C-controlled bot accuracy by 15%.", baseChance: 50, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Redirect)", description: "Redirect all dispatch targets to another location, includes dispatches with otherwise perfect tracking like exterminations and assaults. Each dispatch after the first has an increasing 25% chance of removing the hack, dispatching an extra investigation squad, and disabling the garrison machine.", baseChance: 30, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Reprogram)", description: "Reprogram the next dispatch to be allied but noncontrollable to Cogmind (purple color). Doesn't work against special dispatches like Lightnings.", baseChance: 20, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Restock)", description: "Dispatches a programmer to the current garrison carrying relay couplers.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Watchers)", description: "Continuously report the position of all Watcher class robots on the current floor.", baseChance: 50, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
                 { name: "Unlock", description: "Open the entrance to this garrison.", baseChance: 60, indirect: Indirect.Never },
             ],
             imageName: "game_sprites/Garrison.png",
@@ -108,16 +108,16 @@ jq(function ($) {
             name: "Recycling",
             dataCoreApplies: false,
             hacks: [
-                { name: "Force(Tunnel)", description: "Reveal the location of a random 0b10-controlled floor. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
+                { name: "Force(Tunnel)", description: "Reveal the location of a random 0b10-controlled floor. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
                 { name: "Retrieve(Components)", description: "Eject up to 10 of the parts contained within.", baseChance: 40, indirect: Indirect.Never },
                 { name: "Retrieve(Matter)", description: "Eject all local matter reserves.", baseChance: 60, indirect: Indirect.Never },
                 { name: "Recycle([Part Name])", description: "Insert a part to prepare for recycling.", baseChance: 85, indirect: Indirect.Never },
                 { name: "Recycling(Report)", description: "Query systems for current inventory and local matter reserves.", baseChance: 90, indirect: Indirect.Never },
                 { name: "Recycling(Process)", description: "Initiate recycling process, breaking down all contained parts into matter.", baseChance: 80, indirect: Indirect.Never },
-                { name: "Trojan(Mask)", description: "Prevent Recycler robots from picking up any parts in a 15-tile square area around the machine.", baseChance: 40, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Monitor)", description: "Enable reporting of any parts inserted into this machine, as well as their integrity.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Recyclers)", description: "Continuously report the position of all Recycler class robots on the current floor.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Reject)", description: "Prevent parts from being deposited into the recycling machine. Instead, any inserted parts are deposited onto the floor.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
+                { name: "Trojan(Mask)", description: "Prevent Recycler robots from picking up any parts in a 15-tile square area around the machine.", baseChance: 40, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Monitor)", description: "Enable reporting of any parts inserted into this machine, as well as their integrity.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Recyclers)", description: "Continuously report the position of all Recycler class robots on the current floor.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Reject)", description: "Prevent parts from being deposited into the recycling machine. Instead, any inserted parts are deposited onto the floor.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
             ],
             imageName: "game_sprites/Recycling.png",
         },
@@ -143,7 +143,7 @@ jq(function ($) {
                 { name: "Repair - rating 8*", description: "Initiate repair process for the last scanned part.", baseChance: 30, indirect: Indirect.Never },
                 { name: "Repair - rating 9", description: "Initiate repair process for the last scanned part.", baseChance: 43, indirect: Indirect.Never },
                 { name: "Refit", description: "Analyze build configuration and attach backup components to restore vital functionality.", baseChance: 35, indirect: Indirect.Never },
-                { name: "Trojan(Mechanics)", description: "Continuously report the position of all Mechanic class robots on the current floor.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
+                { name: "Trojan(Mechanics)", description: "Continuously report the position of all Mechanic class robots on the current floor.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
             ],
             imageName: "game_sprites/Repair Station.png",
         },
@@ -151,7 +151,7 @@ jq(function ($) {
             name: "Scanalyzer",
             dataCoreApplies: false,
             hacks: [
-                { name: "Force(Extract)", description: "Extracts a random number of part schematics from the machine. Most schematics will be non-prototype. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
+                { name: "Force(Extract)", description: "Extracts a random number of part schematics from the machine. Most schematics will be non-prototype. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
                 { name: "Insert([Part Name])", description: "Insert and scan a part to prepare for analysis.", baseChance: 80, indirect: Indirect.Never },
                 { name: "Scanalyze - rating 1", description: "Analyze the contained part to obtain its schematic for use at a Fabricator.", baseChance: 95, indirect: Indirect.Never },
                 { name: "Scanalyze - rating 2", description: "Analyze the contained part to obtain its schematic for use at a Fabricator.", baseChance: 90, indirect: Indirect.Never },
@@ -170,7 +170,7 @@ jq(function ($) {
                 { name: "Scanalyze - rating 8*", description: "Analyze the contained part to obtain its schematic for use at a Fabricator.", baseChance: 36, indirect: Indirect.Never },
                 { name: "Scanalyze - rating 9", description: "Analyze the contained part to obtain its schematic for use at a Fabricator.", baseChance: 55, indirect: Indirect.Never },
                 { name: "Scanalyze - rating 9*", description: "Analyze the contained part to obtain its schematic for use at a Fabricator.", baseChance: 28, indirect: Indirect.Never },
-                { name: "Trojan(Researchers)", description: "Continuously report the position of all Researcher class robots on the current floor.", baseChance: 50, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
+                { name: "Trojan(Researchers)", description: "Continuously report the position of all Researcher class robots on the current floor.", baseChance: 50, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
             ],
             imageName: "game_sprites/Scanalyzer.png",
         },
@@ -193,7 +193,7 @@ jq(function ($) {
                 { name: "Analysis([Bot Name]) - tier 8", description: "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10-% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered nistead of a specific variant in order to automatically choose a variant relevant at the current depth.", baseChance: 12, indirect: Indirect.Sometimes },
                 { name: "Analysis([Bot Name]) - tier 9", description: "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10-% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered nistead of a specific variant in order to automatically choose a variant relevant at the current depth.", baseChance: 6, indirect: Indirect.Sometimes },
                 { name: "Analysis([Bot Name]) - tier 10", description: "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10-% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered nistead of a specific variant in order to automatically choose a variant relevant at the current depth.", baseChance: 0, indirect: Indirect.Sometimes },
-                { name: "Control(Protovariants)", description: "Scan local network for vulnerable protovariant control systems to overload and turn against complex 0b10. Also dispatches a supression assault squad to the protovariant location.", baseChance: 60, indirect: Indirect.Sometimes, spoilerLevel: "Spoilers" },
+                { name: "Control(Protovariants)", description: "Scan local network for vulnerable protovariant control systems to overload and turn against complex 0b10. Also dispatches a supression assault squad to the protovariant location.", baseChance: 60, indirect: Indirect.Sometimes, spoilerLevel: "Spoiler" },
                 { name: "Enumerate(Assaults)", description: "Query system for a list of all assault squads and their current positions.", baseChance: 30, indirect: Indirect.Sometimes },
                 { name: "Enumerate(Coupling)", description: "Query system for a list of all coupling squads and their current positions.", baseChance: 30, indirect: Indirect.Sometimes },
                 { name: "Enumerate(Exterminations)", description: "Query system for a list of all extermination squads and their current positions.", baseChance: 30, indirect: Indirect.Sometimes },
@@ -207,8 +207,8 @@ jq(function ($) {
                 { name: "Enumerate(Squads)", description: "Query system for a list of all active squads.", baseChance: 60, indirect: Indirect.Sometimes },
                 { name: "Enumerate(Surveillance)", description: "Query system for a list of all surveillance squads and their current positions.", baseChance: 30, indirect: Indirect.Sometimes },
                 { name: "Enumerate(Transport)", description: "Query system for a list of all transport squads and their current positions.", baseChance: 50, indirect: Indirect.Sometimes },
-                { name: "Force(Sabotage)", description: "Attempt to cause a random explosive machine on the floor to detonate. This hack can succeed but fail to have any affect. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 60, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Force(Search)", description: "Locate all nearby interactive machines. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
+                { name: "Force(Sabotage)", description: "Attempt to cause a random explosive machine on the floor to detonate. This hack can succeed but fail to have any affect. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 60, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Force(Search)", description: "Locate all nearby interactive machines. Also, locks the machine and summons an investigation squad like all force hacks.", baseChance: 80, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
                 { name: "Index(Fabricators)", description: "Download coordinates for all Fabricators.", baseChance: 40, indirect: Indirect.Sometimes },
                 { name: "Index(Garrisons)", description: "Download coordinates for all Garrisons.", baseChance: 10, indirect: Indirect.Sometimes },
                 { name: "Index(Machines)", description: "Download coordinates for all interactive machines.", baseChance: 0, indirect: Indirect.Sometimes },
@@ -254,12 +254,12 @@ jq(function ($) {
                 { name: "Traps(Disarm)", description: "Disarm a nearby random trap array, rendering all of its traps nonfunctional.", baseChance: 45, indirect: Indirect.Sometimes },
                 { name: "Traps(Locate)", description: "Locate all nearby traps.", baseChance: 60, indirect: Indirect.Sometimes },
                 { name: "Traps(Reprogram)", description: "Reprogram a nearby random trap array, causing it to target hostiles.", baseChance: 30, indirect: Indirect.Sometimes },
-                { name: "Trojan(Assimilate)", description: "Causes any operator attempting to report Cogmind to instead become a controllable (blue) ally.", baseChance: 40, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Botnet)", description: "Increase the success rate of hacking attempts on all other machines on the floor. The first hack increases success by 6%, the second by 3%, and all others by 1%.", baseChance: 50, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Detonate)", description: "Rig a nearby explosive machine to detonate when a hostile passes nearby.", baseChance: 20, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Disrupt)", description: "Reduce the targeting of all nearby hostile robots by 10%.", baseChance: 30, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Operators)", description: "Continuously report the position of all Operator class robots on the current floor.", baseChance: 40, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
-                { name: "Trojan(Track)", description: "Continuously report the position of all robots within a short distance of the terminal. The radius is 6 for a level 1 terminal, 8 for a level 2, and 10 for a level 3.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoilers" },
+                { name: "Trojan(Assimilate)", description: "Causes any operator attempting to report Cogmind to instead become a controllable (blue) ally.", baseChance: 40, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Botnet)", description: "Increase the success rate of hacking attempts on all other machines on the floor. The first hack increases success by 6%, the second by 3%, and all others by 1%.", baseChance: 50, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Detonate)", description: "Rig a nearby explosive machine to detonate when a hostile passes nearby.", baseChance: 20, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Disrupt)", description: "Reduce the targeting of all nearby hostile robots by 10%.", baseChance: 30, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Operators)", description: "Continuously report the position of all Operator class robots on the current floor.", baseChance: 40, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Track)", description: "Continuously report the position of all robots within a short distance of the terminal. The radius is 6 for a level 1 terminal, 8 for a level 2, and 10 for a level 3.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
             ],
             imageName: "game_sprites/Terminal.png",
         },
@@ -268,16 +268,16 @@ jq(function ($) {
             dataCoreApplies: false,
             hacks: [
                 { name: "Control(Seal)", description: "Manipulate seal controls to allow access from subsurface cave network.", baseChance: 0, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Redacted" },
-                { name: "Open - Access surface exit", description: "Open the non-automatic door associated with this terminal.", baseChance: 7, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoilers" },
+                { name: "Open - Access surface exit", description: "Open the non-automatic door associated with this terminal.", baseChance: 7, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoiler" },
                 { name: "Open - Access Command backdoors", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Redacted" },
                 { name: "Open - Command Main.C door", description: "Open the non-automatic door associated with this terminal.", baseChance: 60, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Redacted" },
                 { name: "Open - Command prototype cache", description: "Open the non-automatic door associated with this terminal.", baseChance: 10, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Redacted" },
-                { name: "Open - Extension A7 cell", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoilers" },
-                { name: "Open - Extension derelict cell", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoilers" },
-                { name: "Open - Factory Extension exit", description: "Open the non-automatic door associated with this terminal.", baseChance: 60, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoilers" },
-                { name: "Open - Quarantine Sigix Terminator vault", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoilers" },
-                { name: "Open - Quarantine Sigix Warrior chamber", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoilers" },
-                { name: "Open - Research Quarantine exit", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoilers" },
+                { name: "Open - Extension A7 cell", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoiler" },
+                { name: "Open - Extension derelict cell", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoiler" },
+                { name: "Open - Factory Extension exit", description: "Open the non-automatic door associated with this terminal.", baseChance: 60, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoiler" },
+                { name: "Open - Quarantine Sigix Terminator vault", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoiler" },
+                { name: "Open - Quarantine Sigix Warrior chamber", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoiler" },
+                { name: "Open - Research Quarantine exit", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Spoiler" },
                 { name: "Open - Section 7 L2 lab backdoor", description: "Open the non-automatic door associated with this terminal.", baseChance: 30, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Redacted" },
                 { name: "Open - Section 7 LRC cache", description: "Open the non-automatic door associated with this terminal.", baseChance: 60, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Redacted" },
                 { name: "Open - Section 7 Terrabomb vault", description: "Open the non-automatic door associated with this terminal.", baseChance: 60, indirect: Indirect.Never, level1DirectOnly: true, spoilerLevel: "Redacted" },
@@ -329,7 +329,7 @@ jq(function ($) {
         const nameValue = ($("#name").val() as string).toLowerCase();
         const filterName = nameValue.length > 0;
         const dataCoreActive = $("#dataCoreYes").hasClass("active");
-        const spoilerLevel = getSpoilersState();
+        const spoilerLevel = getSpoilerState();
 
         const tableHtml = allMachines
             .map((machine) => {
@@ -341,7 +341,7 @@ jq(function ($) {
 
                     if (spoilerLevel === "Redacted") {
                         return true;
-                    } else if (spoilerLevel === "Spoilers") {
+                    } else if (spoilerLevel === "Spoiler") {
                         return hack.spoilerLevel !== "Redacted";
                     } else {
                         return hack.spoilerLevel === "None" || hack.spoilerLevel === undefined;
@@ -419,11 +419,11 @@ jq(function ($) {
         resetInput();
 
         // Register handlers
-        $("#spoilersDropdown > button").on("click", (e) => {
+        $("#spoilerDropdown > button").on("click", (e) => {
             const state = $(e.target).text();
             $("#spoilers").text(state);
-            setSpoilersState(state);
-            ($("#spoilersDropdown > button") as any).tooltip("hide");
+            setSpoilerState(state);
+            ($("#spoilerDropdown > button") as any).tooltip("hide");
             updateHackTables();
         });
         $("#reset").on("click", () => {

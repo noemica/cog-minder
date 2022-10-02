@@ -6,7 +6,7 @@ export type PageType = "About" | "Bots" | "Build" | "Hacks" | "Lore" | "Parts" |
 export const pageTypes: PageType[] = ["About", "Bots", "Build", "Hacks", "Lore", "Parts", "RIF", "Simulator", "Wiki"];
 
 // An enum to represent spoiler level
-export type Spoiler = "None" | "Spoilers" | "Redacted";
+export type Spoiler = "None" | "Spoiler" | "Redacted";
 
 // A map location
 export type MapLocation = {

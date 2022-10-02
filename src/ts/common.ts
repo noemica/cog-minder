@@ -20,7 +20,7 @@ import {
 } from "./itemTypes";
 import { specialItemProperties } from "./specialItemProperties";
 import { MapLocation, Spoiler } from "./commonTypes";
-import { getSpoilersState } from "./commonJquery";
+import { getSpoilerState } from "./commonJquery";
 
 export let botData: { [key: string]: Bot } = {};
 export let itemData: { [key: string]: Item } = {};
@@ -152,7 +152,7 @@ export function canShowPart(part: Item, spoilersState: Spoiler): boolean {
         if (!part.categories.every((c) => c !== "Spoiler" && c !== "Redacted")) {
             return false;
         }
-    } else if (spoilersState == "Spoilers") {
+    } else if (spoilersState == "Spoiler") {
         // Spoilers allowed, check only for redacted category
         if (!part.categories.every((c) => c != "Redacted")) {
             return false;
@@ -170,7 +170,7 @@ export function canShowSpoiler(stateToCheck: Spoiler, globalState: Spoiler): boo
     if (globalState === "None" && stateToCheck !== "None") {
         // No spoilers, only show none
         return false;
-    } else if (globalState == "Spoilers" && stateToCheck === "Redacted") {
+    } else if (globalState == "Spoiler" && !(stateToCheck === "None" || stateToCheck === "Spoiler")) {
         // Spoilers allowed, show all but redacted
         return false;
     }
@@ -294,22 +294,30 @@ function textLine(category: string, text: string | undefined = undefined) {
 }
 
 // Create a text line with a link
-function textLineLink(line: string, link: string, extraText: string | undefined = undefined) {
+function textLineLink(
+    line: string,
+    link: string,
+    extraText: string | undefined = undefined,
+    extraAttributes: string | undefined = undefined,
+) {
+    extraAttributes = extraAttributes === undefined ? "" : extraAttributes;
     if (extraText === undefined) {
-        return `<pre class="popover-line"> <a href="${link}">${line}</a></pre>`;
+        return `<pre class="popover-line"> <a href="${link}" ${extraAttributes}>${line}</a></pre>`;
     } else {
         const numSpaces = 23 - 1 - line.length;
-        return `<pre class="popover-line"> <a href="${link}">${line}</a>${" ".repeat(numSpaces)}${extraText}</pre>`;
+        return `<pre class="popover-line"> <a href="${link}" ${extraAttributes}>${line}</a>${" ".repeat(
+            numSpaces,
+        )}${extraText}</pre>`;
     }
 }
 
 // Create a text line with a spoiler link
 function textLineSpoilerLink(line: string, link: string, extraText: string | undefined = undefined) {
     if (extraText === undefined) {
-        return `<pre class="popover-line"> <a href="${link}" class="spoiler-text">${line}</a></pre>`;
+        return `<pre class="popover-line"> <a href="${link}" class="spoiler-text spoiler-text-margin">${line}</a></pre>`;
     } else {
         const numSpaces = 23 - 1 - line.length;
-        return `<pre class="popover-line"> <a href="${link}" class="spoiler-text">${line}</a>${" ".repeat(
+        return `<pre class="popover-line"> <a href="${link}" class="spoiler-text spoiler-text-margin">${line}</a>${" ".repeat(
             numSpaces,
         )}${extraText}</pre>`;
     }
@@ -416,14 +424,14 @@ const emptyHalfLine = `<pre class="popover-half-line">
 
 /* eslint-disable prettier/prettier */
 // Creates a HTML string representing a bot
-export function createBotDataContent(bot: Bot): string {
-    function createItemHtml(data: BotPart) {
+export function createBotDataContent(bot: Bot, popoversToLinks = false): string {
+    function createItemHtml(data: BotPart, popoversToLinks: boolean) {
         let line = `${escapeHtml(data.name)} (${data.coverage}%)`;
 
         if (data.number > 1) {
             line += " x" + data.number;
         }
-        return `${itemLine(line)}`;
+        return `${itemLine(line, data.name, popoversToLinks)}`;
     }
 
     function createItemOptionHtml(data: BotPart[]) {
@@ -482,10 +490,17 @@ export function createBotDataContent(bot: Bot): string {
         return "";
     }
 
-    function itemLine(itemString: string) {
-        itemString = itemString.padEnd(46);
+    function itemLine(itemString: string, itemName: string | undefined, popoversToLinks: boolean) {
+        // Must unescape -> escape in order to properly account for escaped characters
+        // for the actual pad length
+        itemString = escapeHtml(unescapeHtml(itemString).padEnd(46));
+
+        if (popoversToLinks && itemName !== undefined) {
+            itemString = `<a href="#${itemName}">${itemString}</a>`;
+        }
+
         return "" +
-            '<pre class="popover-part" data-toggle="popover">' +
+            `<pre class="popover-part" data-toggle="popover"${popoversToLinks ? ' data-trigger="hover"' : ""}>` +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">[</span>' +
             `${itemString}` +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">]</span>' +
@@ -493,7 +508,9 @@ export function createBotDataContent(bot: Bot): string {
     }
 
     function itemLineOption(itemString: string, i: number) {
-        itemString = itemString.padEnd(43);
+        // Must unescape -> escape in order to properly account for escaped characters
+        // for the actual pad length
+        itemString = escapeHtml(unescapeHtml(itemString).padEnd(43));
         return "" +
             '<pre class="popover-line">' +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">[</span>' +
@@ -534,7 +551,7 @@ export function createBotDataContent(bot: Bot): string {
     // Add armament items and options
     if (bot.armament.length > 0) {
         bot.armamentData.forEach(data => {
-            html += createItemHtml(data);
+            html += createItemHtml(data, popoversToLinks);
         });
 
         for (let i = 0; i < bot.armamentOptionData.length; i++) {
@@ -545,7 +562,7 @@ export function createBotDataContent(bot: Bot): string {
         }
     }
     else {
-        html += itemLine("None");
+        html += itemLine("None", undefined, popoversToLinks);
     }
 
     // Add component items
@@ -556,7 +573,7 @@ export function createBotDataContent(bot: Bot): string {
 
     if (bot.components.length > 0) {
         bot.componentData.forEach(data => {
-            html += createItemHtml(data);
+            html += createItemHtml(data, popoversToLinks);
         });
 
         for (let i = 0; i < bot.componentOptionData.length; i++) {
@@ -567,7 +584,7 @@ export function createBotDataContent(bot: Bot): string {
         }
     }
     else {
-        html += itemLine("N/A");
+        html += itemLine("N/A", undefined, popoversToLinks);
     }
 
     // Add Resistances/immunities
@@ -645,7 +662,7 @@ export function createBotDataContent(bot: Bot): string {
     }
 
     // Get filtered list of locations
-    const spoilers = getSpoilersState();
+    const spoilers = getSpoilerState();
     const locations = bot.locations.filter(l => {
         if (l.Spoiler === undefined || spoilers === "Redacted") {
             return true;
@@ -655,7 +672,7 @@ export function createBotDataContent(bot: Bot): string {
             return false;
         }
 
-        if (l.Spoiler === "Spoilers" && spoilers === "None") {
+        if (l.Spoiler === "Spoiler" && spoilers === "None") {
             return false;
         }
 
@@ -1147,8 +1164,12 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
         `;
 
         for (const specialBot of location.specialBots) {
+            const extraAttributes = `data-html=true data-content='${createBotDataContent(
+                specialBot,
+            )}' data-toggle="popover" data-trigger="hover" data-boundary="viewport"`;
+
             if (canShowSpoiler(specialBot.spoiler, spoilersState)) {
-                html += textLineLink(specialBot.name, `#${specialBot.name}`);
+                html += textLineLink(specialBot.name, `#${specialBot.name}`, undefined, extraAttributes);
             } else {
                 html += textLineSpoilerLink(specialBot.name, `#${specialBot.name}`);
             }
@@ -1162,8 +1183,12 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
         `;
 
         for (const specialItem of location.specialItems) {
+            const extraAttributes = `data-html=true data-content='${createItemDataContent(
+                specialItem,
+            )}' data-toggle="popover" data-trigger="hover" data-boundary="viewport"`;
+
             if (canShowSpoiler(specialItem.spoiler, spoilersState)) {
-                html += textLineLink(specialItem.name, `#${specialItem.name}`);
+                html += textLineLink(specialItem.name, `#${specialItem.name}`, undefined, extraAttributes);
             } else {
                 html += textLineSpoilerLink(specialItem.name, `#${specialItem.name}`);
             }
@@ -1173,9 +1198,9 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
     return html;
 }
 
-// Escapes the given string for HTML
+// Escapes the given string with HTML entities
 export function escapeHtml(string: string): string {
-    return String(string).replace(/[&<>"'`=\/\n]/g, function (s) {
+    return string.replace(/[&<>"'`=\/\n]/g, function (s) {
         return entityMap[s];
     });
 }
@@ -1370,7 +1395,7 @@ export async function initData(
         const spoiler: Spoiler = categories.includes("Redacted")
             ? "Redacted"
             : categories.includes("Spoiler")
-            ? "Spoilers"
+            ? "Spoiler"
             : "None";
 
         switch (item["Slot"]) {
@@ -1769,8 +1794,8 @@ export async function initData(
                 spotPercent: bot["Spot %"] ?? "100",
                 spoiler: extraData?.Categories.includes(BotCategory.Redacted)
                     ? "Redacted"
-                    : extraData?.Categories.includes(BotCategory.Spoilers)
-                    ? "Spoilers"
+                    : extraData?.Categories.includes(BotCategory.Spoiler)
+                    ? "Spoiler"
                     : "None",
                 size: bot["Size Class"],
                 threat: bot.Threat,
@@ -1877,6 +1902,15 @@ function parseIntOrUndefined(value: string | undefined): number | undefined {
 // Gets a random integer between the min and max values (inclusive)
 export function randomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Unescapes the given string with HTML entities
+export function unescapeHtml(string: string): string {
+    for (const entity of Object.keys(entityMap)) {
+        string = string.replace(entityMap[entity], entity);
+    }
+
+    return string;
 }
 
 // Returns the value if it's not undefined, otherwise return defaultVal
