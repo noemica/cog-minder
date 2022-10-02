@@ -883,6 +883,10 @@ body {
     color: transparent;
 }
 
+.spoiler-text:not(:focus):not(:hover) > a {
+    color: transparent;
+}
+
 .spoiler-text:hover,
 .spoiler-text:focus {
     background-color: #202020;

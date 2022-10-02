@@ -20,7 +20,7 @@ import {
     initData,
 } from "./common";
 import { MapLocation, Spoiler } from "./commonTypes";
-import { Bot, BotCategory } from "./botTypes";
+import { Bot } from "./botTypes";
 
 import * as jQuery from "jquery";
 import "bootstrap";
@@ -62,8 +62,96 @@ jq(function ($) {
 
     // Creates the HTML content of a wiki entry
     function createContentHtml(entry: WikiEntry): string {
-        // TODO
-        return `<span>${entry.content}</span>`;
+        function processSection(
+            initialContent: string,
+            index: number,
+            endTag: string | undefined,
+            spoilerState: Spoiler,
+        ) {
+            const actionRegex = /\[\[([^\]:]*)(?::([^\]]*))?\]\]/g;
+
+            let content = "";
+            let result: RegExpExecArray | null;
+            while ((result = actionRegex.exec(initialContent))) {
+                if (index > result.index) {
+                    continue;
+                }
+
+                if (index < result.index) {
+                    content += initialContent.substring(index, result.index);
+                    index = result.index;
+                }
+
+                if (result[2] !== undefined) {
+                    // Found a [[X:Y]] match
+                    if (result[1] === "Spoiler") {
+                        const spoilerResult = /\[\[\/Spoiler\]\]/.exec(initialContent.substring(index));
+                        if (spoilerResult === null) {
+                            console.log(`Found spoiler tag without close tag in ${entry.name}`);
+                            index += result[0].length;
+                        } else {
+                            if (result[2] !== "Spoiler" && result[2] !== "Redacted") {
+                                console.log(`Found unknown spoiler type ${result[2]} in ${entry.name}`);
+                            }
+
+                            const subSectionStart = result.index + result[0].length;
+                            const sectionResult = processSection(
+                                initialContent,
+                                subSectionStart,
+                                "/Spoiler",
+                                spoilerState,
+                            );
+
+                            if (!canShowSpoiler(result[2] as Spoiler, spoilerState)) {
+                                content += `<span class="spoiler-text">${sectionResult.content}</span>`;
+                            } else {
+                                content += sectionResult.content;
+                            }
+
+                            index = sectionResult.endIndex;
+                        }
+                    } else {
+                        console.log(`Unrecognized action tag ${result[2]} in ${entry.name}`);
+                        index += result[0].length;
+                    }
+                } else if (result[1].startsWith("/")) {
+                    if (result[1] === endTag) {
+                        index += result[0].length;
+
+                        return { content: content, endIndex: index };
+                    } else {
+                        console.log(
+                            `Found mismatched end tag ${result[1]} with expected tag ${endTag} in ${entry.name}`,
+                        );
+                        index += result[0].length;
+                    }
+                } else {
+                    // Found a [[X]] match, check for a corresponding link
+                    if (allEntries.has(result[1])) {
+                        content += `<a href = "#${result[1]}">${result[1]}</a>`;
+                    } else {
+                        console.log(`Bad link to ${result[1]} in ${entry.name}`);
+                        content += result[1];
+                    }
+
+                    index += result[0].length;
+                }
+            }
+
+            // Append rest of content to end of string
+            content += initialContent.substring(index);
+
+            return { content: content, endIndex: index };
+        }
+
+        const spoilersState = getSpoilersState();
+        const sections = entry.content.split("\n");
+
+        return sections
+            .map((s) => {
+                return `<p>${processSection(s, 0, undefined, spoilersState).content}</p>`;
+            })
+            .join("\n");
     }
 
     // Initialize the page state
