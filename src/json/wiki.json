@@ -5121,7 +5121,18 @@
     ],
     "Locations": [
         {
+            "Name": "Scrapyard",
+            "ImageName": "Scrapyard.png",
+            "Content": "",
+            "Exits": [
+                "Materials"
+            ],
+            "MinDepth": -11,
+            "MaxDepth": -11
+        },
+        {
             "Name": "Materials",
+            "ImageName": "Materials.png",
             "Content": "",
             "Exits": [
                 "Factory",
@@ -5136,6 +5147,7 @@
         },
         {
             "Name": "Mines",
+            "ImageName": "Mines.png",
             "Content": "",
             "Exits": [
                 "Materials",
@@ -5159,6 +5171,7 @@
         },
         {
             "Name": "Exiles",
+            "ImageName": "Exiles.png",
             "Content": "",
             "Exits": [
                 "Mines"
@@ -5201,6 +5214,7 @@
         },
         {
             "Name": "Storage",
+            "ImageName": "Storage.png",
             "Content": "",
             "Exits": [
                 "Materials",
@@ -5221,6 +5235,7 @@
         },
         {
             "Name": "Recycling",
+            "ImageName": "Recycling.png",
             "Content": "",
             "Exits": [
                 "Factory"
@@ -5232,6 +5247,7 @@
         },
         {
             "Name": "Factory",
+            "ImageName": "Factory.png",
             "Content": "",
             "Exits": [
                 "Lower Caves",
@@ -5244,19 +5260,28 @@
             "MaxDepth": -4
         },
         {
-            "Name": "Lower Caves",
+            "Name": "Caves",
+            "AlternateNames": ["Lower Caves", "Upper Caves", "Proximity Caves"],
+            "ImageName": "Caves.png",
             "Content": "",
             "Exits": [
                 "Factory",
                 "Zion",
-                "Data Miner (Location)"
+                "Data Miner (Location)",
+                "Warlord (Location)",
+                "Zhirov (Location)",
+                "Research"
+            ],
+            "SpecialBots": [
+                "Sapper"
             ],
             "MinDepth": -7,
-            "MaxDepth": -6,
+            "MaxDepth": -4,
             "Branch": true 
         },
         {
             "Name": "Zion",
+            "ImageName": "Zion.png",
             "Content": "",
             "Exits": [
                 "Proximity Caves",
@@ -5281,6 +5306,7 @@
         },
         {
             "Name": "Zion Deep Caves",
+            "ImageName": "Zion Deep Caves.png",
             "Content": "",
             "Exits": [
                 "Proximity Caves"
@@ -5312,6 +5338,7 @@
         },
         {
             "Name": "Data Miner (Location)",
+            "ImageName": "Data Miner.png",
             "Content": "",
             "Exits": [
                 "Proximity Caves"
@@ -5326,18 +5353,8 @@
             "Spoiler": "Spoiler"
         },
         {
-            "Name": "Proximity Caves",
-            "Content": "",
-            "Exits": [
-                "Factory",
-                "Research"
-            ],
-            "MinDepth": -6,
-            "MaxDepth": -3,
-            "PreDepthBranch": true
-        },
-        {
             "Name": "Extension",
+            "ImageName": "Extension.png",
             "Content": "",
             "Exits": [
                 "Factory",
@@ -5354,6 +5371,7 @@
         },
         {
             "Name": "Cetus",
+            "ImageName": "Cetus.png",
             "Content": "",
             "Exits": [
                 "Factory",
@@ -5371,6 +5389,7 @@
         },
         {
             "Name": "Archives",
+            "ImageName": "Archives.png",
             "Content": "",
             "Exits": [
                 "Factory",
@@ -5389,6 +5408,7 @@
         },
         {
             "Name": "Hub_04(d)",
+            "ImageName": "Hub.png",
             "Content": "",
             "Exits": [
                 "Factory",
@@ -5403,23 +5423,8 @@
             "Spoiler": "Spoiler"
         },
         {
-            "Name": "Upper Caves",
-            "Content": "",
-            "Exits": [
-                "Factory",
-                "Warlord (Location)",
-                "Zhirov (Location)",
-                "Research"
-            ],
-            "SpecialBots": [
-                "Sapper"
-            ],
-            "MinDepth": -5,
-            "MaxDepth": -4,
-            "Branch": true
-        },
-        {
             "Name": "Warlord (Location)",
+            "ImageName": "Warlord.png",
             "Content": "",
             "Exits": [
                 "Proximity Caves"
@@ -5460,6 +5465,7 @@
         },
         {
             "Name": "Zhirov (Location)",
+            "ImageName": "Zhirov.png",
             "Content": "",
             "Exits": [
                 "Proximity Caves"
@@ -5481,6 +5487,7 @@
         },
         {
             "Name": "Armory",
+            "ImageName": "Armory.png",
             "Content": "",
             "Exits": [
                 "Lab",
@@ -5493,6 +5500,7 @@
         },
         {
             "Name": "Lab",
+            "ImageName": "Lab.png",
             "Content": "",
             "Exits": [
                 "Research"
@@ -5527,6 +5535,7 @@
         },
         {
             "Name": "Research",
+            "ImageName": "Research.png",
             "Content": "",
             "Exits": [
                 "Testing",
@@ -5538,6 +5547,7 @@
         },
         {
             "Name": "Quarantine",
+            "ImageName": "Quarantine.png",
             "Content": "",
             "Exits": [
                 "Research",
@@ -5574,6 +5584,7 @@
         },
         {
             "Name": "Testing",
+            "ImageName": "Testing.png",
             "Content": "",
             "Exits": [
                 "Research",
@@ -5630,6 +5641,7 @@
         },
         {
             "Name": "Section 7",
+            "ImageName": "Section 7.png",
             "Content": "",
             "Exits": [
                 "Research",
@@ -5681,6 +5693,7 @@
         },
         {
             "Name": "Access",
+            "ImageName": "Access.png",
             "Content": "",
             "Exits": [
                 "Surface",
@@ -5691,6 +5704,7 @@
         },
         {
             "Name": "Command",
+            "ImageName": "Command.png",
             "Content": "",
             "Exits": [
                 "Surface",
@@ -5723,6 +5737,7 @@
         },
         {
             "Name": "Access_0",
+            "ImageName": "Access_0.png",
             "Content": "",
             "Exits": [
                 "Surface"

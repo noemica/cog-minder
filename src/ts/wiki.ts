@@ -310,6 +310,7 @@ jq(function ($) {
                 branch: locationEntry.Branch ?? false,
                 entries: [],
                 exits: [],
+                imageName: locationEntry.ImageName,
                 maxDepth: locationEntry.MaxDepth,
                 minDepth: locationEntry.MinDepth,
                 name: locationEntry.Name,
@@ -319,13 +320,21 @@ jq(function ($) {
                 specialItems: specialItems,
             };
 
-            allEntries.set(locationEntry.Name, {
+            const entry: WikiEntry = {
                 name: locationEntry.Name,
                 type: "Location",
                 spoiler: spoiler,
                 content: locationEntry.Content,
                 extraData: location,
-            });
+            };
+
+            allEntries.set(locationEntry.Name, entry);
+
+            if (locationEntry.AlternateNames !== undefined) {
+                for (const alternativeName of locationEntry.AlternateNames) {
+                    allEntries.set(alternativeName, entry);
+                }
+            }
         }
 
         // Need to do a second pass to connect entry/exit references
@@ -387,6 +396,10 @@ jq(function ($) {
     // don't actually have elements with the matching IDs set
     function overrideLinks(selector: JQuery<HTMLElement>) {
         selector.find("a").on("click", (e) => {
+            if ($(e.target).attr("src")?.includes("wiki_images")) {
+                return;
+            }
+
             e.preventDefault();
 
             const selectedPage = $(e.target).attr("href")!.substring(1);

@@ -629,7 +629,7 @@
     "Integrity Redistributor": ["Alien", "S7 LRC Lab", "S7 Unguarded", "Redacted"],
     "Integrated Dissipator": ["Alien","Lab", "S7 LRC Lab", "S7 Unguarded", "Spoiler"],
     "Supercharged Integrated Dissipator": ["Alien", "Spoiler"],
-    "Integrated Thermoelectric Network": ["Alien", "S7 Guarded", "Spoiler"],
+    "Integrated Thermoelectric Network": ["Alien", "S7 Guarded", "Redacted"],
     "Integrated Reactor": ["Alien","Lab", "S7 Unguarded", "S7 LRC Lab", "Spoiler"],
     "Supercharged Integrated Reactor": ["Alien", "Spoiler"],
     "Core Membrane": ["Alien", "S7 Guarded", "Redacted"],

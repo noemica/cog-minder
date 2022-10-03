@@ -13,6 +13,7 @@ export type MapLocation = {
     branch: boolean;
     entries: MapLocation[];
     exits: MapLocation[];
+    imageName: string | undefined;
     minDepth: number;
     maxDepth: number;
     name: string;

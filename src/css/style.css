@@ -915,3 +915,8 @@ body {
 .spoiler-text > a:focus{
     background-color: #202020;
 }
+
+.location-image {
+    width: 75%;
+    margin: .25rem 0;
+}

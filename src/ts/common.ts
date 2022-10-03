@@ -1117,24 +1117,29 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
 
     let html = `
         ${summaryLine(location.name)}
+        ${
+            location.imageName === undefined
+                ? ""
+                : `<a class="d-block text-center" href="wiki_images/${location.imageName}" target="_blank"><img src="wiki_images/${location.imageName}" class="location-image"></img></a>`
+        }
         ${textLine("Available depths", getDepthString(location.minDepth, location.maxDepth))}
         ${textLine("Branch", location.branch || location.preDepthBranch ? "Yes" : "No")}
     `;
 
-    if (location.entries.length > 0) {
+    const allowedEntries = location.entries.filter((e) => canShowSpoiler(e.spoiler, spoilersState));
+    if (allowedEntries.length > 0) {
         html += `
         ${emptyLine}
         ${summaryLine("Entry from")}
         `;
 
-        for (const entry of location.entries) {
+        for (const entry of allowedEntries) {
             const depths = getMinMaxDepths(entry, location);
             const depthsString = getDepthString(depths.minDepth, depths.maxDepth);
 
+            // Don't bother showing entrances from spoiler-blocked maps
             if (canShowSpoiler(entry.spoiler, spoilersState)) {
                 html += textLineLink(entry.name, `#${entry.name}`, depthsString);
-            } else {
-                html += textLineSpoilerLink(entry.name, `#${entry.name}`, depthsString);
             }
         }
     }
@@ -1149,6 +1154,7 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
             const depths = getMinMaxDepths(location, exit);
             const depthsString = getDepthString(depths.minDepth, depths.maxDepth);
 
+            // Show exits with a spoiler
             if (canShowSpoiler(exit.spoiler, spoilersState)) {
                 html += textLineLink(exit.name, `#${exit.name}`, depthsString);
             } else {
