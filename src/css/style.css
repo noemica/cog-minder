@@ -879,7 +879,7 @@ body {
     flex: 0;
     border: 1px solid #008800;
     padding: .5rem .75rem;
-    min-width: 59ch;
+    max-width: 59ch;
     margin-left: 1.5rem;
 }
 
@@ -917,6 +917,23 @@ body {
 }
 
 .location-image {
-    width: 75%;
+    max-width: 375px;
     margin: .25rem 0;
+}
+
+.wiki-inline-image {
+    float: left;
+    clear: left;
+    border: 1px solid #008800;
+    margin: .25rem 1.5rem .25rem 0;
+    padding: .25rem;
+}
+
+.wiki-inline-image img {
+    max-width: 250px;
+}
+
+.wiki-inline-image > span {
+    display: block;
+    max-width: 250px;
 }

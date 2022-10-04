@@ -2,7 +2,7 @@
     "Bots": [
         {
             "Name": "01-MTF",
-            "Content": "A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join you as an uncontrollable purple ally for the duration of the map and usees [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It disappears after leaving the map, so salvaging this bot before leaving the floor is highly recommended to get some strong parts early in the game. [[01-MTF's Shockpuncher]] in particular is an extremely strong unique weapon."
+            "Content": "[[Image:MTF Vault.png,Running into MTF in a Storage vault]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join you as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. It disappears after leaving the map, so applying +salvage and destroying this bot before leaving the floor is highly recommended to get some very good loot early in the game. The Shockpuncher in particular is an extremely strong unique weapon that is exceptional in every way except range."
         },
         {
             "Name": "12-ASH",
@@ -5166,7 +5166,8 @@
                 "Exp. Sensor Array"
             ],
             "MinDepth": -10,
-            "MaxDepth": -9,
+            "MaxDepth": -8,
+            "PreDepthBranch": true,
             "Branch": true
         },
         {
@@ -5276,7 +5277,8 @@
                 "Sapper"
             ],
             "MinDepth": -7,
-            "MaxDepth": -4,
+            "MaxDepth": -3,
+            "PreDepthBranch": true,
             "Branch": true 
         },
         {

@@ -1120,14 +1120,14 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
         ${
             location.imageName === undefined
                 ? ""
-                : `<a class="d-block text-center" href="wiki_images/${location.imageName}" target="_blank"><img src="wiki_images/${location.imageName}" class="location-image"></img></a>`
+                : `<a href="wiki_images/${location.imageName}" target="_blank"><img src="wiki_images/${location.imageName}" class="location-image"></img></a>`
         }
         ${textLine("Available depths", getDepthString(location.minDepth, location.maxDepth))}
         ${textLine("Branch", location.branch || location.preDepthBranch ? "Yes" : "No")}
     `;
 
     const allowedEntries = location.entries.filter((e) => canShowSpoiler(e.spoiler, spoilersState));
-    if (allowedEntries.length > 0) {
+    if (location.branch && allowedEntries.length > 0) {
         html += `
         ${emptyLine}
         ${summaryLine("Entry from")}

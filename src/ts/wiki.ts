@@ -122,6 +122,31 @@ jq(function ($) {
 
                             index = sectionResult.endIndex;
                         }
+                    } else if (result[1] == "Image") {
+                        // Found an image link like [[Image:ImageName.png]]
+                        // Optionally a caption like [[Image:ImageName.png,Image Caption]]
+                        const split = result[2].split(",");
+                        const imageName = split[0];
+
+                        // Determine if there is a caption or not
+                        let imageCaption: string;
+                        if (split.length === 1) {
+                            imageCaption = "";
+                        } else {
+                            split.shift();
+                            imageCaption = split.join(",");
+                        }
+
+                        content += `
+                        <div class="wiki-inline-image">
+                            <a href="wiki_images/${imageName}" target="_blank">
+                                <img src="wiki_images/${imageName}">
+                                </img>
+                            </a>
+                            ${imageCaption.length > 0 ? `<br/><span>${imageCaption}</span>` : ""}
+                        </div>`;
+
+                        index += result[0].length;
                     } else {
                         console.log(`Unrecognized action tag ${result[2]} in ${entry.name}`);
                         index += result[0].length;
@@ -615,19 +640,16 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const parentContainer = $(`<div class="container"></div>`);
-        const rowContainer = $(`<div class="row"></div>`);
-        const contentColumn = $(`<div class="col"></div>`);
+        const parentContainer = $(`<div class="container-xl"></div>`);
         const content = $(createContentHtml(entry));
-        const infoboxColumn = $(`<div class="wiki-infobox"></div>`);
+        const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createLocationHtml(location, getSpoilerState()));
 
         // Append to DOM
-        parentContainer.append(rowContainer[0]);
-        rowContainer.append(contentColumn[0]);
-        contentColumn.append(content as any);
-        rowContainer.append(infoboxColumn[0]);
+        // Append the infobox first which floats to the right
+        parentContainer.append(infoboxColumn[0]);
         infoboxColumn.append(infoboxContent as any);
+        parentContainer.append(content as any);
 
         pageContent.append(parentContainer[0]);
     }
@@ -689,19 +711,16 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const parentContainer = $(`<div class="container"></div>`);
-        const rowContainer = $(`<div class="row"></div>`);
-        const contentColumn = $(`<div class="col"></div>`);
+        const parentContainer = $(`<div class="container-xl"></div>`);
         const content = $(createContentHtml(entry));
-        const infoboxColumn = $(`<div class="wiki-infobox"></div>`);
+        const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createItemDataContent(part));
 
         // Append to DOM
-        parentContainer.append(rowContainer[0]);
-        rowContainer.append(contentColumn[0]);
-        contentColumn.append(content as any);
-        rowContainer.append(infoboxColumn[0]);
+        // Append the infobox first which floats to the right
+        parentContainer.append(infoboxColumn[0]);
         infoboxColumn.append(infoboxContent as any);
+        parentContainer.append(content as any);
 
         pageContent.append(parentContainer[0]);
     }
