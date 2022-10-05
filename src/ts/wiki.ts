@@ -122,7 +122,7 @@ jq(function ($) {
 
                             index = sectionResult.endIndex;
                         }
-                    } else if (result[1] == "Image") {
+                    } else if (result[1] === "Image") {
                         // Found an image link like [[Image:ImageName.png]]
                         // Optionally a caption like [[Image:ImageName.png,Image Caption]]
                         const split = result[2].split(",");
@@ -137,14 +137,19 @@ jq(function ($) {
                             imageCaption = split.join(",");
                         }
 
+                        // Create the image with an optional caption
                         content += `
                         <div class="wiki-inline-image">
                             <a href="wiki_images/${imageName}" target="_blank">
                                 <img src="wiki_images/${imageName}">
                                 </img>
                             </a>
-                            ${imageCaption.length > 0 ? `<br/><span>${imageCaption}</span>` : ""}
+                            ${imageCaption.length > 0 ? `<div>${imageCaption}</div>` : ""}
                         </div>`;
+
+                        index += result[0].length;
+                    } else if (result[1] === "Header") {
+                        content += `<h3 class="wiki-header">${result[2]}</h3>`;
 
                         index += result[0].length;
                     } else {
@@ -170,9 +175,9 @@ jq(function ($) {
                         let tooltipData = "";
                         if (referenceEntry.type === "Bot") {
                             const bot = getBot(referenceEntry.name);
-                            tooltipData = `data-html=true data-content='${createBotDataContent(
+                            tooltipData = `data-html=true data-boundary="viewport" data-content='${createBotDataContent(
                                 bot,
-                                true,
+                                false,
                             )}' data-toggle="popover" data-trigger="hover"`;
                         } else if (referenceEntry.type === "Part") {
                             const item = getItem(referenceEntry.name);

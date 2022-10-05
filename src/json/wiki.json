@@ -5123,7 +5123,7 @@
         {
             "Name": "Scrapyard",
             "ImageName": "Scrapyard.png",
-            "Content": "",
+            "Content": "The starting point of every game. At the start of every game there is a semi-random fixed spawn of: [[Sml. Storage Unit]], 2 [[Lgt. Treads]], 2 [[Aluminum Leg]], a mix of 2 [[Wheel]] or [[Com. Wheel]], a mix of 2 [[Ion Engine]] or [[Lgt. Ion Engine]], and a mix of 3 [[Lgt. Assault Rifle]], [[Assault Rifle]], [[EM Pulse Gun]], [[Sml. Laser]], [[Med. Laser]]. If the advanced game    option quickStart is set, all of the parts will be either collected or equipped.[[Header:Events]]A team of [[T-07 Excavator]]s and [[U-05 Engineer]]s will dig out and finish rooms over time. The rooms themselves do not contain anything of importance.[[Image:Scrapyard Assembled Event.png,Assembled after destroying an Excavator]]However, after several thousand turns of waiting, an Excavator may dig open a small dug out area containing a large number of [[Assembled (4)]]. This will prompt a response of a [[C-30 ARC]] containing 2 [[D-53 Grenadier]]s which can be a good early source of [[Cmb. Airjet]] if they are killed by the assembled. Waiting around for this event can be fairly risky since there is no way to prepare any stronger than the standard starting items to fight with.",
             "Exits": [
                 "Materials"
             ],
@@ -5133,7 +5133,7 @@
         {
             "Name": "Materials",
             "ImageName": "Materials.png",
-            "Content": "",
+            "Content": "This[[Header:Is]]A\nTest",
             "Exits": [
                 "Factory",
                 "Mines",

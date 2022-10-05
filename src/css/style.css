@@ -927,13 +927,25 @@ body {
     border: 1px solid #008800;
     margin: .25rem 1.5rem .25rem 0;
     padding: .25rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.wiki-inline-image img {
+.wiki-inline-image > a > img {
     max-width: 250px;
 }
 
-.wiki-inline-image > span {
-    display: block;
-    max-width: 250px;
+.wiki-inline-image > div {
+    /* This nonsense is required in order
+    to force the caption to be <= in size
+    than the image itself, otherwise the
+    caption could push the box outward
+    and show a gap next to the image */
+    width: 0px;
+    min-width: 100%;
+}
+
+.wiki-header {
+    border-bottom: 1px solid #008800;
+    overflow: hidden;
 }

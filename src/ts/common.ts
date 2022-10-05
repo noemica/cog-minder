@@ -1126,8 +1126,10 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
         ${textLine("Branch", location.branch || location.preDepthBranch ? "Yes" : "No")}
     `;
 
-    const allowedEntries = location.entries.filter((e) => canShowSpoiler(e.spoiler, spoilersState));
-    if (location.branch && allowedEntries.length > 0) {
+    const allowedEntries = location.entries.filter((e) =>
+        location.branch ? canShowSpoiler(e.spoiler, spoilersState) : !e.branch,
+    );
+    if (allowedEntries.length > 0) {
         html += `
         ${emptyLine}
         ${summaryLine("Entry from")}
