@@ -2,7 +2,7 @@
     "Bots": [
         {
             "Name": "01-MTF",
-            "Content": "[[Image:MTF Vault.png,Running into MTF in a Storage vault]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join you as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. It disappears after leaving the map, so applying +salvage and destroying this bot before leaving the floor is highly recommended to get some very good loot early in the game. The Shockpuncher in particular is an extremely strong unique weapon that is exceptional in every way except range."
+            "Content": "[[Image:MTF Vault.png|Running into MTF in a Storage vault]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join you as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. It disappears after leaving the map, so applying +salvage and destroying this bot before leaving the floor is highly recommended to get some very good loot early in the game. The Shockpuncher in particular is an extremely strong unique weapon that is exceptional in every way except range."
         },
         {
             "Name": "12-ASH",
@@ -5123,7 +5123,7 @@
         {
             "Name": "Scrapyard",
             "ImageName": "Scrapyard.png",
-            "Content": "The starting point of every game. At the start of every game there is a semi-random fixed spawn of: [[Sml. Storage Unit]], 2 [[Lgt. Treads]], 2 [[Aluminum Leg]], a mix of 2 [[Wheel]] or [[Com. Wheel]], a mix of 2 [[Ion Engine]] or [[Lgt. Ion Engine]], and a mix of 3 [[Lgt. Assault Rifle]], [[Assault Rifle]], [[EM Pulse Gun]], [[Sml. Laser]], [[Med. Laser]]. If the advanced game    option quickStart is set, all of the parts will be either collected or equipped.[[Header:Events]]A team of [[T-07 Excavator]]s and [[U-05 Engineer]]s will dig out and finish rooms over time. The rooms themselves do not contain anything of importance.[[Image:Scrapyard Assembled Event.png,Assembled after destroying an Excavator]]However, after several thousand turns of waiting, an Excavator may dig open a small dug out area containing a large number of [[Assembled (4)]]. This will prompt a response of a [[C-30 ARC]] containing 2 [[D-53 Grenadier]]s which can be a good early source of [[Cmb. Airjet]] if they are killed by the assembled. Waiting around for this event can be fairly risky since there is no way to prepare any stronger than the standard starting items to fight with.",
+            "Content": "The starting point of every game. At the start of every game there is a semi-random fixed spawn of: [[Sml. Storage Unit]], 2 [[Lgt. Treads]], 2 [[Aluminum Leg]], a mix of 2 [[Wheel]] or [[Com. Wheel]], a mix of 2 [[Ion Engine]] or [[Lgt. Ion Engine]], and a mix of 3 [[Lgt. Assault Rifle]], [[Assault Rifle]], [[EM Pulse Gun]], [[Sml. Laser]], [[Med. Laser]]. If the advanced game option quickStart is set, all of the parts will be either collected or equipped.[[Header:Events]]A team of [[T-07 Excavator]]s and [[U-05 Engineer]]s will dig out and finish rooms over time. The rooms themselves do not contain anything of importance.[[Image:Scrapyard Assembled Event.png|Assembled after destroying an Excavator]]However, after several thousand turns of waiting, an Excavator may dig open a small dug out area containing a large number of [[Assembled (4)]]. This will prompt a response of a [[C-30 ARC]] containing 2 [[D-53 Grenadier]]s which can be a good early source of [[Cmb. Airjet]] if they are killed by the assembled. Waiting around for this event can be fairly risky since there is no way to prepare for the fight, and it is very easy to get killed by either the demolishers or the assembled.",
             "Exits": [
                 "Materials"
             ],
@@ -5132,8 +5132,8 @@
         },
         {
             "Name": "Materials",
-            "ImageName": "Materials.png",
-            "Content": "This[[Header:Is]]A\nTest",
+            "ImageName": "Materials.png", 
+            "Content": "Materials is the first real level of the game. These maps are very small and cramped with few paths forward. Playing stealthily is not very easy in Materials with many forced encounters with combat robots, little room for maneuvering, and few slots yet available for good utilities.[[Header:Prefabs]][[Images]]Materials Main Exit.png|A 3-tile corridor leading to a main access|Materials Mines Exit.png| A [[Mines]] exit prefab|Materials OOD Cache.png|An out-of-depth parts cache|Materials Storage Cache.png|A cache full of [[Sml. Storage Unit]], [[Med. Storage Unit]], and [[Lrg. Storage Unit]][[/Images]]Here are some things.",
             "Exits": [
                 "Factory",
                 "Mines",
@@ -5782,11 +5782,14 @@
     "Other": [
         {
             "Name": "Example",
-            "Content": "This is a test of wiki content.",
+            "Content": "This is a test of wiki content.[[Spoiler:Redacted]]Testing[[/Spoiler]]",
             "Spoiler": "Spoiler"
         },
         {
             "Name": "Wintypes",
+            "AlternateNames": [
+                "Endings"
+            ],
             "Content": "W0 \"Escaped\": Take a [[Surface]] exit on -1.\nW1 [[Spoiler:Redacted]]\"Establishing 0b11\": Take a Surface exit on -1 after destroying both phases of [[MAIN.C]].[[/Spoiler]]\nW2 [[Spoiler:Spoiler]]Heading to fleet: Take a surface exit on -1 after using a [[Core Reset Matrix]].[[/Spoiler]]\nW3 [[Spoiler:Spoiler]]Destroyed 0b10: Take a Surface exit on -1 while carrying the [[Sigix Containment Pod]] in inventory. [[Spoiler:Redacted]]May also be performed by taking the exit with the [[Sigix Warrior]].[[/Spoiler]][[/Spoiler]]\nW4 [[Spoiler:Redacted]]Assimilated 0b10: Stand next to the unbroken 0b10 Conduit machine in MAIN.C's room in [[Command]] after either killing both forms of MAIN.C or with [[RIF]].[[/Spoiler]]\nW5 [[Spoiler:Redacted]]Destroyed Tau Ceti IV: In [[Access_0]], obtain the [[A2 Data Core]] by killing [[A2]] and perform Gate Tests 138-A and 138-B once, then test 138-C twice on the Gate Controls terminal with an intact Singularity Gate machine.[[/Spoiler]]\nW6 [[Spoiler:Redacted]]Escaped singularity: In Access_0, destroy all 4 Subspace Access Nodes, destroy the Architect, and take the surface exit within 10 turns.[[/Spoiler]]\nW7 [[Spoiler:Redacted]]Establishing Free Derelict Territories: In Command, destroy both forms of MAIN.C with [[Warlord]] still alive and not shut down.[[/Spoiler]]\nW8 [[Spoiler:Redacted]]Fortifying 0b10: Choose the Surrender option after destroying MAIN.C's outer shell, then destroy enough [[Enhanced Q-Series]] while keeping MAIN.C alive.[[/Spoiler]]"
         }
     ]

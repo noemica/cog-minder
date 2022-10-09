@@ -26,20 +26,12 @@ import * as jQuery from "jquery";
 import "bootstrap";
 import "bootstrap-select";
 import { Item } from "./itemTypes";
+import { createContentHtml } from "./wikiparser";
+import { WikiEntry } from "./wikitypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
     $(() => init());
-
-    type EntryType = "Part" | "Bot" | "Location" | "Other";
-
-    type WikiEntry = {
-        content: string;
-        name: string;
-        type: EntryType;
-        spoiler: Spoiler;
-        extraData?: any;
-    };
 
     // Map of all page names to entries
     const allEntries: Map<string, WikiEntry> = new Map();
@@ -59,158 +51,6 @@ jq(function ($) {
     // Avoid recursively processing selectpicker changes when
     // we're updating the value
     let skipSelectChange = false;
-
-    // Creates the HTML content of a wiki entry
-    function createContentHtml(entry: WikiEntry): string {
-        function processSection(
-            initialContent: string,
-            index: number,
-            endTag: string | undefined,
-            spoilerState: Spoiler,
-        ) {
-            // Regex for actions in the form of [[X]] or [[X:Y]]
-            const actionRegex = /\[\[([^\]:]*)(?::([^\]]*))?\]\]/g;
-
-            let content = "";
-            let result: RegExpExecArray | null;
-            while ((result = actionRegex.exec(initialContent))) {
-                if (index > result.index) {
-                    // Skip over results we've already processed
-                    continue;
-                }
-
-                if (index < result.index) {
-                    // Append any content we've skipped processing, this should
-                    // just be plaintext
-                    content += initialContent.substring(index, result.index);
-                    index = result.index;
-                }
-
-                if (result[2] !== undefined) {
-                    // Found a [[X:Y]] match
-                    if (result[1] === "Spoiler") {
-                        // Found spoiler tag like [[Spoiler:Spoiler]]Text[[/Spoiler]]
-                        // Search for the closing [[/Spoiler]] tag
-                        const spoilerResult = /\[\[\/Spoiler\]\]/.exec(initialContent.substring(index));
-                        if (spoilerResult === null) {
-                            // If we can't find the end tag then just skip over the opening spoiler tag
-                            console.log(`Found spoiler tag without close tag in ${entry.name}`);
-                            index += result[0].length;
-                        } else {
-                            // Only 2 options are Spoiler and Redacted
-                            // If it's invalid canShowSpoiler will default to not showing
-                            // unless Redacted setting is active
-                            if (result[2] !== "Spoiler" && result[2] !== "Redacted") {
-                                console.log(`Found unknown spoiler type ${result[2]} in ${entry.name}`);
-                            }
-
-                            // Process the subsection independently
-                            const subSectionStart = result.index + result[0].length;
-                            const sectionResult = processSection(
-                                initialContent,
-                                subSectionStart,
-                                "/Spoiler",
-                                spoilerState,
-                            );
-
-                            // Decide whether to add spoiler-text protection or not
-                            if (!canShowSpoiler(result[2] as Spoiler, spoilerState)) {
-                                content += `<span class="spoiler-text spoiler-text-multiline">${sectionResult.content}</span>`;
-                            } else {
-                                content += sectionResult.content;
-                            }
-
-                            index = sectionResult.endIndex;
-                        }
-                    } else if (result[1] === "Image") {
-                        // Found an image link like [[Image:ImageName.png]]
-                        // Optionally a caption like [[Image:ImageName.png,Image Caption]]
-                        const split = result[2].split(",");
-                        const imageName = split[0];
-
-                        // Determine if there is a caption or not
-                        let imageCaption: string;
-                        if (split.length === 1) {
-                            imageCaption = "";
-                        } else {
-                            split.shift();
-                            imageCaption = split.join(",");
-                        }
-
-                        // Create the image with an optional caption
-                        content += `
-                        <div class="wiki-inline-image">
-                            <a href="wiki_images/${imageName}" target="_blank">
-                                <img src="wiki_images/${imageName}">
-                                </img>
-                            </a>
-                            ${imageCaption.length > 0 ? `<div>${imageCaption}</div>` : ""}
-                        </div>`;
-
-                        index += result[0].length;
-                    } else if (result[1] === "Header") {
-                        content += `<h3 class="wiki-header">${result[2]}</h3>`;
-
-                        index += result[0].length;
-                    } else {
-                        console.log(`Unrecognized action tag ${result[2]} in ${entry.name}`);
-                        index += result[0].length;
-                    }
-                } else if (result[1].startsWith("/")) {
-                    // Found an end tag, make sure it matches what we're expecting
-                    if (result[1] === endTag) {
-                        index += result[0].length;
-
-                        return { content: content, endIndex: index };
-                    } else {
-                        console.log(
-                            `Found mismatched end tag ${result[1]} with expected tag ${endTag} in ${entry.name}`,
-                        );
-                        index += result[0].length;
-                    }
-                } else {
-                    // Found a [[X]] match, check for a corresponding link
-                    const referenceEntry = allEntries.get(result[1]);
-                    if (referenceEntry !== undefined) {
-                        let tooltipData = "";
-                        if (referenceEntry.type === "Bot") {
-                            const bot = getBot(referenceEntry.name);
-                            tooltipData = `data-html=true data-boundary="viewport" data-content='${createBotDataContent(
-                                bot,
-                                false,
-                            )}' data-toggle="popover" data-trigger="hover"`;
-                        } else if (referenceEntry.type === "Part") {
-                            const item = getItem(referenceEntry.name);
-                            tooltipData = `data-html=true data-content='${createItemDataContent(
-                                item,
-                            )}' data-toggle="popover" data-trigger="hover"`;
-                        }
-
-                        content += `<a href = "#${result[1]}" ${tooltipData}>${result[1]}</a>`;
-                    } else {
-                        console.log(`Bad link to ${result[1]} in ${entry.name}`);
-                        content += result[1];
-                    }
-
-                    index += result[0].length;
-                }
-            }
-
-            // Append rest of content to end of string
-            content += initialContent.substring(index);
-
-            return { content: content, endIndex: index };
-        }
-
-        const spoilersState = getSpoilerState();
-        const sections = entry.content.split("\n");
-
-        return sections
-            .map((s) => {
-                return `<p>${processSection(s, 0, undefined, spoilersState).content}</p>`;
-            })
-            .join("\n");
-    }
 
     // Initialize the page state
     async function init() {
@@ -297,6 +137,7 @@ jq(function ($) {
             const bot = getBot(botEntry.Name);
 
             allEntries.set(botEntry.Name, {
+                alternativeNames: [],
                 name: botEntry.Name,
                 type: "Bot",
                 spoiler: bot.spoiler,
@@ -351,6 +192,7 @@ jq(function ($) {
             };
 
             const entry: WikiEntry = {
+                alternativeNames: locationEntry.AlternateNames ?? [],
                 name: locationEntry.Name,
                 type: "Location",
                 spoiler: spoiler,
@@ -397,6 +239,7 @@ jq(function ($) {
             }
 
             allEntries.set(partEntry.Name, {
+                alternativeNames: [],
                 name: partEntry.Name,
                 type: "Part",
                 spoiler: spoiler,
@@ -413,12 +256,21 @@ jq(function ($) {
                 spoiler = "Spoiler";
             }
 
-            allEntries.set(otherEntry.Name, {
+            const entry: WikiEntry = {
+                alternativeNames: otherEntry.AlternateNames ?? [],
                 name: otherEntry.Name,
                 type: "Other",
                 spoiler: spoiler,
                 content: otherEntry.Content,
-            });
+            };
+
+            allEntries.set(otherEntry.Name, entry);
+
+            if (otherEntry.AlternateNames !== undefined) {
+                for (const alternativeName of otherEntry.AlternateNames) {
+                    allEntries.set(alternativeName, entry);
+                }
+            }
         }
     }
 
@@ -519,7 +371,7 @@ jq(function ($) {
 
         // Create HTML elements
         const parentContainer = $(`<div class="container-xl"></div>`);
-        const content = $(createContentHtml(entry));
+        const content = $(createContentHtml(entry, allEntries, getSpoilerState()));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createBotDataContent(bot, true));
 
@@ -646,7 +498,7 @@ jq(function ($) {
 
         // Create HTML elements
         const parentContainer = $(`<div class="container-xl"></div>`);
-        const content = $(createContentHtml(entry));
+        const content = $(createContentHtml(entry, allEntries, getSpoilerState()));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createLocationHtml(location, getSpoilerState()));
 
@@ -663,7 +515,7 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const content = $(createContentHtml(entry));
+        const content = $(createContentHtml(entry, allEntries, getSpoilerState()));
 
         // Append to DOM
         pageContent.append(content as any);
@@ -717,7 +569,7 @@ jq(function ($) {
 
         // Create HTML elements
         const parentContainer = $(`<div class="container-xl"></div>`);
-        const content = $(createContentHtml(entry));
+        const content = $(createContentHtml(entry, allEntries, getSpoilerState()));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createItemDataContent(part));
 

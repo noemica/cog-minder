@@ -924,15 +924,15 @@ body {
 .wiki-inline-image {
     float: left;
     clear: left;
-    border: 1px solid #008800;
     margin: .25rem 1.5rem .25rem 0;
-    padding: .25rem;
     display: flex;
     flex-direction: column;
 }
 
 .wiki-inline-image > a > img {
     max-width: 250px;
+    border: 1px solid #008800;
+    padding: .25rem;
 }
 
 .wiki-inline-image > div {
@@ -948,4 +948,43 @@ body {
 .wiki-header {
     border-bottom: 1px solid #008800;
     overflow: hidden;
+}
+
+.wiki-inline-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wiki-inline-images > div {
+    display: inline-block;
+    margin: .25rem .5rem;
+}
+
+.wiki-inline-images > div > div {
+    border: 1px solid #008800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    height: 225px;
+}
+
+.wiki-inline-images > div > div > a > img {
+    max-width: 225px;
+    max-height: 225px;
+    padding: .25rem;
+}
+
+.wiki-inline-images > div > p {
+    width: 0px;
+    min-width: 100%;
+}
+
+.wiki-inline-images > div > p a {
+    /* Normally need this to be display: inline-block so that we can't
+    have popovers that will flash on/off when hovering over them due
+    to multiline traversal of the link text. However, we don't have that
+    issue for wrapped links in the images. */
+    display: unset !important;
 }
