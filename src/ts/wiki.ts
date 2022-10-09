@@ -26,8 +26,8 @@ import * as jQuery from "jquery";
 import "bootstrap";
 import "bootstrap-select";
 import { Item } from "./itemTypes";
-import { createContentHtml } from "./wikiparser";
-import { WikiEntry } from "./wikitypes";
+import { createContentHtml } from "./wikiParser";
+import { WikiEntry } from "./wikiTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {

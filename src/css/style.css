@@ -273,11 +273,15 @@ body {
 }
 
 .page-dropdown {
-    width: 45ch !important;
+    width: 43ch !important;
+}
+
+.page-dropdown .inner {
+    min-width: unset !important;
 }
 
 .page-dropdown-menu {
-    width: 45 !important;
+    width: 43ch !important;
 }
 
 .dropdown-menu {
@@ -893,7 +897,7 @@ body {
 }
 
 .spoiler-text-multiline {
-    padding: 0.3em 3px;
+    padding: 1px 0px 2px 0px;
 }
 
 .spoiler-text:not(:focus):not(:hover) {
@@ -916,6 +920,10 @@ body {
     background-color: #202020;
 }
 
+.spoiler-image:not(:focus):not(:hover) > img {
+    filter: brightness(30%) grayscale(70%) blur(8px);
+}
+
 .location-image {
     max-width: 375px;
     margin: .25rem 0;
@@ -929,9 +937,12 @@ body {
     flex-direction: column;
 }
 
+.wiki-inline-image > a {
+    border: 1px solid #008800;
+}
+
 .wiki-inline-image > a > img {
     max-width: 250px;
-    border: 1px solid #008800;
     padding: .25rem;
 }
 
@@ -943,6 +954,24 @@ body {
     and show a gap next to the image */
     width: 0px;
     min-width: 100%;
+}
+
+.wiki-inline-image > a {
+    position: relative;
+}
+
+.wiki-inline-image > div > p a {
+    /* Normally need this to be display: inline-block so that we can't
+    have popovers that will flash on/off when hovering over them due
+    to multiline traversal of the link text. However, we don't have that
+    issue for wrapped links in the images. */
+    display: unset !important;
+}
+
+.wiki-inline-image a:hover .wiki-spoiler-image-text,
+.wiki-inline-image a:focus .wiki-spoiler-image-text {
+    /* Hide the spoiler text when mousing over */
+    display: none;
 }
 
 .wiki-header {
@@ -962,12 +991,17 @@ body {
 }
 
 .wiki-inline-images > div > div {
+    background-color: black;
     border: 1px solid #008800;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 200px;
+    width: 225px;
     height: 225px;
+}
+
+.wiki-inline-images > div > div > a {
+    position: relative;
 }
 
 .wiki-inline-images > div > div > a > img {
@@ -987,4 +1021,23 @@ body {
     to multiline traversal of the link text. However, we don't have that
     issue for wrapped links in the images. */
     display: unset !important;
+}
+
+.wiki-spoiler-image-text {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00cc00;
+    background-color: black;
+    border-radius: 10px;
+    padding: 0.25em;
+    font-size: 1.25rem;
+}
+
+.wiki-inline-images a:hover .wiki-spoiler-image-text,
+.wiki-inline-images a:focus .wiki-spoiler-image-text {
+    /* Hide the spoiler text when mousing over */
+    display: none;
 }
