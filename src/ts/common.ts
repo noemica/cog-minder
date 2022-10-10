@@ -522,7 +522,7 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
 
     // Create overview
     let html = `
-        <pre class="popover-title">${escapeHtml(bot.name)} [<img src="${getBotImageName(bot)}"></img>]</pre>
+        <pre class="popover-title">${escapeHtml(bot.name)} [<img src="${getBotImageName(bot)}"/>]</pre>
         ${emptyLine}
         ${summaryLine("Overview")}
         ${textLine("Class", bot.class)}
@@ -832,9 +832,9 @@ export function createItemDataContent(baseItem: Item): string {
     // Create overview
     let html = `
     <div class="part-art-image-container">
-        <img src="${escapeHtml(getItemAsciiArtImageName(baseItem))}"></img>
+        <img src="${escapeHtml(getItemAsciiArtImageName(baseItem))}"/>
     </div>
-    <pre class="popover-title .popover-part-image-title mt-2">${escapeHtml(baseItem.name)} [<img src="${getItemSpriteImageName(baseItem)}"></img>]</pre>
+    <pre class="popover-title .popover-part-image-title mt-2">${escapeHtml(baseItem.name)} [<img src="${getItemSpriteImageName(baseItem)}"/>]</pre>
     ${emptyLine}
     ${summaryLine("Overview")}
     ${textLine("Type", baseItem.type)}
@@ -1120,7 +1120,7 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
         ${
             location.imageName === undefined
                 ? ""
-                : `<a href="wiki_images/${location.imageName}" target="_blank"><img src="wiki_images/${location.imageName}" class="location-image"></img></a>`
+                : `<a href="wiki_images/${location.imageName}" target="_blank"><img src="wiki_images/${location.imageName}" class="location-image"/></a>`
         }
         ${textLine("Available depths", getDepthString(location.minDepth, location.maxDepth))}
         ${textLine("Branch", location.branch || location.preDepthBranch ? "Yes" : "No")}

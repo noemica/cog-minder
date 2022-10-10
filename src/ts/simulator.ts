@@ -1482,7 +1482,7 @@ jq(function ($) {
         const itemName = $(
             `<span class="loot-box-part-name mx-1">Matter <span class="no-wrap">[<img src="${getItemSpriteImageName(
                 getItem("Matter"),
-            )}"></img>]</span></span>`,
+            )}"/>]</span></span>`,
         );
         const contentGrid = $(`<grid class = "loot-box-content-grid"></grid>`);
         const matterDropAmountLabel = $(`<span>Avg. Death Drop</span>`);
@@ -1520,7 +1520,7 @@ jq(function ($) {
             const itemName = $(
                 `<span class="loot-box-part-name mx-1">${
                     item.item.name
-                } <span class="no-wrap">[<img src="${getItemSpriteImageName(item.item)}"></img>]</span></span>`,
+                } <span class="no-wrap">[<img src="${getItemSpriteImageName(item.item)}"/>]</span></span>`,
             );
             const contentGrid = $(`<grid class = "loot-box-content-grid"></grid>`);
             const dropRateLabel = $(`<span>Drop Rate</span>`);

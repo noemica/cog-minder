@@ -1063,9 +1063,9 @@ jq(function ($) {
             // If generating all HTML then use a normal image to force the load
             // Normally use the lazily-loaded image for performance
             if (generateAllHtml) {
-                return `<img src=${escapeHtml(getItemAsciiArtImageName(item))}"></img>`;
+                return `<img src=${escapeHtml(getItemAsciiArtImageName(item))}"/>`;
             } else {
-                return `<img class="lozad" data-src="${escapeHtml(getItemAsciiArtImageName(item))}"></img>`;
+                return `<img class="lozad" data-src="${escapeHtml(getItemAsciiArtImageName(item))}"/>`;
             }
         }
 

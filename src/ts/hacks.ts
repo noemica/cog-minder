@@ -400,7 +400,7 @@ jq(function ($) {
                     })
                     .join("");
 
-                const machineRow = `<tr><td class="hack-category-row"><p>${machine.name}</p><img src="${machine.imageName}"></img></td></tr>`;
+                const machineRow = `<tr><td class="hack-category-row"><p>${machine.name}</p><img src="${machine.imageName}"/></td></tr>`;
 
                 return machineRow + hackRowsHtml;
             })

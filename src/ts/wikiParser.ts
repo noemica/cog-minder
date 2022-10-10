@@ -53,18 +53,39 @@ export function createContentHtml(entry: WikiEntry, allEntries: Map<string, Wiki
 
 // Turns a list of output groups into HTML
 // If startInGroup is true then don't auto-add the opening/closing <p> tags
-function outputGroupsToHtml(outputGroups: OutputGroup[], inSpoiler: boolean, startInGroup = false): string {
+function outputGroupsToHtml(
+    outputGroups: OutputGroup[],
+    inSpoiler: boolean,
+    startInGroup = false,
+    inTopLevelSpoiler = false,
+): string {
+    if (outputGroups.length === 0) {
+        return "";
+    }
+
     let output = "";
     let inGroup = startInGroup;
+    let inSpan = false;
+    let skipFirstP = false;
+
+    if (inSpoiler && inTopLevelSpoiler) {
+        if (outputGroups[0].groupType === "Grouped") {
+            output += `<span class="spoiler-text spoiler-text-multiline">`;
+            inSpan = true;
+        } else {
+            skipFirstP = true;
+        }
+    }
 
     for (const group of outputGroups) {
         // Auto add opening/closing <p> tags for groups
-        if (!inGroup && group.groupType === "Grouped") {
+        if (!inGroup && group.groupType === "Grouped" && group.html !== undefined && group.html.length > 0) {
             inGroup = true;
 
             output += "<p>";
 
             if (inSpoiler) {
+                inSpan = true;
                 output += `<span class="spoiler-text spoiler-text-multiline">`;
             }
         }
@@ -72,16 +93,25 @@ function outputGroupsToHtml(outputGroups: OutputGroup[], inSpoiler: boolean, sta
         if (inGroup && (group.groupType === "Separator" || group.groupType === "Individual")) {
             inGroup = false;
 
-            if (inSpoiler) {
+            if (inSpan) {
                 output += "</span>";
+                inSpan = false;
             }
 
-            output += "</p>";
+            if (skipFirstP) {
+                skipFirstP = false;
+            } else {
+                output += "</p>";
+            }
         }
 
         if (group.html !== undefined) {
             output += group.html;
         }
+    }
+
+    if (inSpan) {
+        output += "</span>";
     }
 
     if (inGroup && !startInGroup) {
@@ -107,7 +137,11 @@ function processHeaderTag(state: ParserState, result: RegExpExecArray, type: str
     };
     processSection(tempState, "/Header");
     state.index = tempState.index;
-    const headerContent = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
+    let headerContent = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
+
+    if (state.inSpoiler) {
+        headerContent = `<span class="spoiler-text spoiler-text-multiline">${headerContent}</span>`;
+    }
 
     if (type === undefined) {
         type = "1";
@@ -174,13 +208,13 @@ function processImageTag(result: RegExpExecArray, state: ParserState) {
         html: `<div class="wiki-inline-image">
             <a ${state.inSpoiler ? 'class="spoiler-image"' : ""} href="wiki_images/${imageName}" target="_blank">
                 ${state.inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
-                <img src="wiki_images/${imageName}"></img>
+                <img src="wiki_images/${imageName}"/>
             </a>
             ${imageCaptionHtml.length > 0 ? `<div>${imageCaptionHtml}</div>` : ""}
         </div>`,
     });
 
-    state.index = endIndex;
+    state.index = endIndex + imageResult[0].length;
 }
 
 // Processes images link like [[Images]]Image1.png|Image Caption|Image2.png|Image 2 caption[[/Images]]
@@ -205,7 +239,7 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
 
     if (split.length < 2) {
         console.log(`Found images action without enough images in ${entry.name}`);
-        state.index = endIndex;
+        state.index = endIndex + imagesResult[0].length;
         return;
     }
 
@@ -240,7 +274,7 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
                             state.inSpoiler ? 'class="spoiler-image"' : ""
                         } href="wiki_images/${imageName}" target="_blank">
                         ${state.inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
-                            <img src="wiki_images/${imageName}"></img>
+                            <img src="wiki_images/${imageName}"/>
                         </a>
                     </div>
                     ${imageCaptionHtml}
@@ -254,7 +288,7 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
         html: imagesContent,
     });
 
-    state.index = endIndex;
+    state.index = endIndex + imagesResult[0].length;
 }
 
 // Found a [[X]] link, make sure we can link properly
@@ -314,6 +348,11 @@ function processSection(state: ParserState, endTag: string | undefined) {
 
     let result: RegExpExecArray | null;
     while ((result = actionRegex.exec(state.initialContent))) {
+        if (state.index > result.index) {
+            // Skip over results we've already processed
+            continue;
+        }
+
         // Process newlines before actions
         let newlineIndex: number;
         while (
@@ -325,13 +364,9 @@ function processSection(state: ParserState, endTag: string | undefined) {
                 groupType: "Grouped",
                 html: state.initialContent.substring(state.index, newlineIndex),
             });
+            state.output.push({ groupType: "Separator", html: undefined });
 
             state.index = newlineIndex + 1;
-        }
-
-        if (state.index > result.index) {
-            // Skip over results we've already processed
-            continue;
         }
 
         if (state.index < result.index) {
@@ -382,15 +417,18 @@ function processSection(state: ParserState, endTag: string | undefined) {
             groupType: "Grouped",
             html: state.initialContent.substring(state.index, newlineIndex),
         });
+        state.output.push({ groupType: "Separator", html: undefined });
 
         state.index = newlineIndex + 1;
     }
 
     // Append rest of content as regular text
-    state.output.push({
-        groupType: "Grouped",
-        html: state.initialContent.substring(state.index),
-    });
+    if (state.index < state.initialContent.length) {
+        state.output.push({
+            groupType: "Grouped",
+            html: state.initialContent.substring(state.index),
+        });
+    }
 }
 
 // Process a spoiler tag like [[Spoiler:Spoiler]]Text[[/Spoiler]]
@@ -426,15 +464,17 @@ function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
         spoiler: state.spoiler,
     };
     processSection(tempState, "/Spoiler");
-    let spoilerContent = outputGroupsToHtml(tempState.output, inSpoiler, true);
+    const spoilerContent = outputGroupsToHtml(tempState.output, inSpoiler, true, true);
     state.index = tempState.index;
 
-    if (inSpoiler && tempState.output.length > 0 && tempState.output[0].groupType === "Grouped") {
-        spoilerContent = `<span class="spoiler-text spoiler-text-multiline">${spoilerContent}</span>`;
-    }
+    // If we have no grouped content then mark as an individual, otherwise mark as grouped
+    const groupType: OutputGroupType =
+        inSpoiler && tempState.output.length > 0 && tempState.output[0].groupType !== "Grouped"
+            ? "Individual"
+            : "Grouped";
 
     state.output.push({
-        groupType: "Grouped",
+        groupType: groupType,
         html: spoilerContent,
     });
 }

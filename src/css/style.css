@@ -890,6 +890,7 @@ body {
 .spoiler-text {
     background-color: #7f7f7f;
     padding: 1px 3px 2px 3px;
+    transition: .15s;
 }
 
 .spoiler-text-margin {
@@ -915,13 +916,21 @@ body {
     color: transparent;
 }
 
+.spoiler-text > a {
+    transition: .15s;
+}
+
 .spoiler-text > a:hover,
 .spoiler-text > a:focus{
     background-color: #202020;
 }
 
+.spoiler-image > img {
+    transition: .15s;
+}
+
 .spoiler-image:not(:focus):not(:hover) > img {
-    filter: brightness(30%) grayscale(70%) blur(8px);
+    filter: grayscale(40%) blur(5px);
 }
 
 .location-image {
@@ -971,7 +980,8 @@ body {
 .wiki-inline-image a:hover .wiki-spoiler-image-text,
 .wiki-inline-image a:focus .wiki-spoiler-image-text {
     /* Hide the spoiler text when mousing over */
-    display: none;
+    color: transparent;
+    background-color: transparent;
 }
 
 .wiki-header {
@@ -1034,10 +1044,12 @@ body {
     border-radius: 10px;
     padding: 0.25em;
     font-size: 1.25rem;
+    transition: .15s;
 }
 
 .wiki-inline-images a:hover .wiki-spoiler-image-text,
 .wiki-inline-images a:focus .wiki-spoiler-image-text {
     /* Hide the spoiler text when mousing over */
-    display: none;
+    color: transparent;
+    background-color: transparent;
 }
