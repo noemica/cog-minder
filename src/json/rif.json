@@ -164,7 +164,7 @@
                     "Description": "Rewrite sections of the propulsion control subsystem to permanently halve movement speed."
                 },
                 {
-                    "Name": "link_complain",
+                    "Name": "link_complan",
                     "Rif": true,
                     "Charges": 3,
                     "Description": "Tap into system's combat decision-making processes in real time, increasing your accuracy and damage against this bot by 25% while also impairing its accuracy against you by 25%."
