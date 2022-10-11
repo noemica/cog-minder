@@ -1053,3 +1053,8 @@ body {
     color: transparent;
     background-color: transparent;
 }
+
+.wiki-list {
+    /* This allows us to properly indent things with images */
+    display: flow-root;
+}

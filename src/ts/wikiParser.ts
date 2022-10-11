@@ -60,6 +60,7 @@ function outputGroupsToHtml(
     inSpoiler: boolean,
     startInGroup = false,
     inTopLevelSpoiler = false,
+    inTopLevelList = false,
 ): string {
     if (outputGroups.length === 0) {
         return "";
@@ -77,6 +78,8 @@ function outputGroupsToHtml(
         } else {
             skipFirstP = true;
         }
+    } else if (inTopLevelList) {
+        skipFirstP = true;
     }
 
     for (const group of outputGroups) {
@@ -180,7 +183,7 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
     // Split interior text by |
     // Even numbered indices contain image filenames, odd numbers contain captions
     const startIndex = state.index + result[0].length;
-    const endIndex = startIndex + imageResult.index - imageResult[0].length + 1;
+    const endIndex = startIndex + imageResult.index - result[0].length;
     const split = splitOutsideActions(state.initialContent.substring(startIndex, endIndex));
     const imageName = split[0];
 
@@ -223,7 +226,7 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
     state.index = endIndex + imageResult[0].length;
 }
 
-// Processes images link like [[Images]]Image1.png|Image Caption|Image2.png|Image 2 caption[[/Images]]
+// Processes images tag like [[Images]]Image1.png|Image Caption|Image2.png|Image 2 caption[[/Images]]
 function processImagesTag(state: ParserState, result: RegExpExecArray) {
     const entry = state.entry;
 
@@ -240,7 +243,7 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
     // Split interior text by |
     // Even numbered indices contain image filenames, odd numbers contain captions
     const startIndex = state.index + result[0].length;
-    const endIndex = startIndex + imagesResult.index - imagesResult[0].length + 1;
+    const endIndex = startIndex + imagesResult.index - result[0].length;
     const split = splitOutsideActions(state.initialContent.substring(startIndex, endIndex));
 
     if (split.length < 2) {
@@ -298,6 +301,65 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
     state.index = endIndex + imagesResult[0].length;
 }
 
+// Processes list tag like [[List]]Item 1|Item 2|Item 3[[/List]]
+function processListTag(state: ParserState, result: RegExpExecArray) {
+    const entry = state.entry;
+
+    // Find [[/List]] closing tag first
+    const listResult = /\[\[\/List\]\]/.exec(state.initialContent.substring(state.index));
+
+    if (listResult === null) {
+        // If we can't find the end tag then just skip over the opening tag
+        console.log(`Found list tag without close tag in ${entry.name}`);
+        state.index += result[0].length;
+        return;
+    }
+
+    let listType = "ul";
+    if (result[2] === "Ordered") {
+        listType = "ol";
+    } else if (result[2] !== undefined && result[2] !== "Unordered") {
+        console.log(
+            `Found list with invalid type ${result[2]} in ${entry.name}, type should be "Ordered", "Unordered", or empty`,
+        );
+    }
+
+    // Split interior text by | to get list items
+    const startIndex = state.index + result[0].length;
+    const endIndex = startIndex + listResult.index - result[0].length;
+    const split = splitOutsideActions(state.initialContent.substring(startIndex, endIndex));
+
+    let listContent = `<${listType} class="wiki-list">`;
+
+    for (const listItem of split) {
+        // Parse the list item as a subsection individually
+        const tempState: ParserState = {
+            allEntries: state.allEntries,
+            entry: state.entry,
+            inSpoiler: state.inSpoiler,
+            index: 0,
+            initialContent: listItem,
+            linkSpoilerOnly: true,
+            output: [],
+            spoiler: state.spoiler,
+        };
+        processSection(tempState, undefined);
+        const listItemHtml = outputGroupsToHtml(tempState.output, state.inSpoiler, true, false, true);
+
+        // Append list item HTML
+        listContent += `<li>${listItemHtml}</li>`;
+    }
+
+    listContent += `</${listType}>`;
+
+    state.output.push({
+        groupType: "Individual",
+        html: listContent,
+    });
+
+    state.index = endIndex + listResult[0].length;
+}
+
 // Found a [[X]] link, make sure we can link properly
 function processLinkTag(state: ParserState, result: RegExpExecArray) {
     const entry = state.entry;
@@ -347,10 +409,11 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
 }
 
 const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => void> = new Map([
-    ["Spoiler", processSpoilerTag],
     ["Header", processHeaderTag],
     ["Image", processImageTag],
     ["Images", processImagesTag],
+    ["List", processListTag],
+    ["Spoiler", processSpoilerTag],
 ]);
 // Processes the current section of text in the parser state
 function processSection(state: ParserState, endTag: string | undefined) {
@@ -425,47 +488,6 @@ function processSection(state: ParserState, endTag: string | undefined) {
                 processLinkTag(state, result);
             }
         }
-
-        // if (result[2] !== undefined) {
-        //     // Found a [[X:Y]] match
-        //     if (state.linkSpoilerOnly) {
-        //         if (result[1] === "Spoiler") {
-        //             processSpoilerTag(state, result);
-        //         } else {
-        //             console.log(
-        //                 `Unrecognized action tag ${result[2]} when only links/spoilers supported in ${entry.name}`,
-        //             );
-        //         }
-        //     } else if (result[1] === "Spoiler") {
-        //         processSpoilerTag(state, result);
-        //     } else if (result[1] === "Header") {
-        //         processHeaderTag(state, result, result[2]);
-        //     } else {
-        //         console.log(`Unrecognized action tag ${result[2]} in ${entry.name}`);
-        //         state.index += result[0].length;
-        //     }
-        // } else if (result[1].startsWith("/")) {
-        //     // Found an end tag like [[/X]], make sure it matches what we're expecting
-        //     if (result[1] === endTag) {
-        //         state.index += result[0].length;
-
-        //         return;
-        //     } else {
-        //         console.log(`Found mismatched end tag ${result[1]} with expected tag ${endTag} in ${entry.name}`);
-        //         state.index += result[0].length;
-        //     }
-        // } else if (state.linkSpoilerOnly) {
-        //     // If links/spoilers only don't process any other types
-        //     processLinkTag(state, result);
-        // } else if (result[1] === "Image") {
-        //     processImageTag(result, state);
-        // } else if (result[1] === "Images") {
-        //     processImagesTag(state, result);
-        // } else if (result[1] === "Header") {
-        //     processHeaderTag(state, result, undefined);
-        // } else {
-        //     processLinkTag(state, result);
-        // }
     }
 
     // Split out all remaining newlines
