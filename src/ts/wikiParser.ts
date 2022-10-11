@@ -17,11 +17,12 @@ type OutputGroup = {
 type ParserState = {
     allEntries: Map<string, WikiEntry>;
     entry: WikiEntry;
-    spoiler: Spoiler;
     inSpoiler: boolean;
     initialContent: string;
     index: number;
+    linkSpoilerOnly: boolean;
     output: OutputGroup[];
+    spoiler: Spoiler;
 };
 
 // Creates the HTML content of a wiki entry
@@ -33,8 +34,9 @@ export function createContentHtml(entry: WikiEntry, allEntries: Map<string, Wiki
         inSpoiler: false,
         index: 0,
         initialContent: entry.content,
-        spoiler: spoilerState,
+        linkSpoilerOnly: false,
         output: [],
+        spoiler: spoilerState,
     };
     processSection(state, undefined);
 
@@ -123,7 +125,7 @@ function outputGroupsToHtml(
 
 // Process a header tag like [[Header]]Header Text[[/Header]]
 // or like [[Header:2]]Header Text[[/Header]]
-function processHeaderTag(state: ParserState, result: RegExpExecArray, type: string | undefined) {
+function processHeaderTag(state: ParserState, result: RegExpExecArray) {
     // Process the header subsection independently
     const subSectionStart = result.index + result[0].length;
     const tempState: ParserState = {
@@ -133,6 +135,7 @@ function processHeaderTag(state: ParserState, result: RegExpExecArray, type: str
         index: subSectionStart,
         initialContent: state.initialContent,
         output: [],
+        linkSpoilerOnly: false,
         spoiler: state.spoiler,
     };
     processSection(tempState, "/Header");
@@ -142,6 +145,8 @@ function processHeaderTag(state: ParserState, result: RegExpExecArray, type: str
     if (state.inSpoiler) {
         headerContent = `<span class="spoiler-text spoiler-text-multiline">${headerContent}</span>`;
     }
+
+    let type = result[2];
 
     if (type === undefined) {
         type = "1";
@@ -159,7 +164,7 @@ function processHeaderTag(state: ParserState, result: RegExpExecArray, type: str
 
 // Process an image link like [[Image]]ImageName.png|Optional Image Caption[[/Image]]
 // Caption should probably be used but support no caption
-function processImageTag(result: RegExpExecArray, state: ParserState) {
+function processImageTag(state: ParserState, result: RegExpExecArray) {
     const entry = state.entry;
 
     // Find [[/Image]] closing tag first
@@ -195,6 +200,7 @@ function processImageTag(result: RegExpExecArray, state: ParserState) {
             inSpoiler: state.inSpoiler,
             index: 0,
             initialContent: split[1],
+            linkSpoilerOnly: true,
             output: [],
             spoiler: state.spoiler,
         };
@@ -261,6 +267,7 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
             inSpoiler: state.inSpoiler,
             index: 0,
             initialContent: imageCaption,
+            linkSpoilerOnly: true,
             output: [],
             spoiler: state.spoiler,
         };
@@ -339,6 +346,12 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
     state.index += result[0].length;
 }
 
+const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => void> = new Map([
+    ["Spoiler", processSpoilerTag],
+    ["Header", processHeaderTag],
+    ["Image", processImageTag],
+    ["Images", processImagesTag],
+]);
 // Processes the current section of text in the parser state
 function processSection(state: ParserState, endTag: string | undefined) {
     const entry = state.entry;
@@ -379,17 +392,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
             state.index = result.index;
         }
 
-        if (result[2] !== undefined) {
-            // Found a [[X:Y]] match
-            if (result[1] === "Spoiler") {
-                processSpoilerTag(state, result);
-            } else if (result[1] === "Header") {
-                processHeaderTag(state, result, result[2]);
-            } else {
-                console.log(`Unrecognized action tag ${result[2]} in ${entry.name}`);
-                state.index += result[0].length;
-            }
-        } else if (result[1].startsWith("/")) {
+        if (result[1].startsWith("/")) {
             // Found an end tag like [[/X]], make sure it matches what we're expecting
             if (result[1] === endTag) {
                 state.index += result[0].length;
@@ -399,15 +402,70 @@ function processSection(state: ParserState, endTag: string | undefined) {
                 console.log(`Found mismatched end tag ${result[1]} with expected tag ${endTag} in ${entry.name}`);
                 state.index += result[0].length;
             }
-        } else if (result[1] === "Image") {
-            processImageTag(result, state);
-        } else if (result[1] === "Images") {
-            processImagesTag(state, result);
-        } else if (result[1] === "Header") {
-            processHeaderTag(state, result, undefined);
         } else {
-            processLinkTag(state, result);
+            const actionFunc = actionMap.get(result[1]);
+
+            if (state.linkSpoilerOnly) {
+                // In some sections only links/spoilers are allowed
+                // Check for a spoiler, then for a matched but forbidden tag
+                if (result[1] === "Spoiler") {
+                    actionFunc!(state, result);
+                } else if (actionFunc !== undefined) {
+                    console.log(
+                        `Found action tag ${result[1]} in scope where only spoilers/links are allowed in ${entry.name}`,
+                    );
+                } else {
+                    processLinkTag(state, result);
+                }
+            } else if (actionFunc !== undefined) {
+                // Found match, process tag
+                actionFunc(state, result);
+            } else {
+                // No match, assume it's a link
+                processLinkTag(state, result);
+            }
         }
+
+        // if (result[2] !== undefined) {
+        //     // Found a [[X:Y]] match
+        //     if (state.linkSpoilerOnly) {
+        //         if (result[1] === "Spoiler") {
+        //             processSpoilerTag(state, result);
+        //         } else {
+        //             console.log(
+        //                 `Unrecognized action tag ${result[2]} when only links/spoilers supported in ${entry.name}`,
+        //             );
+        //         }
+        //     } else if (result[1] === "Spoiler") {
+        //         processSpoilerTag(state, result);
+        //     } else if (result[1] === "Header") {
+        //         processHeaderTag(state, result, result[2]);
+        //     } else {
+        //         console.log(`Unrecognized action tag ${result[2]} in ${entry.name}`);
+        //         state.index += result[0].length;
+        //     }
+        // } else if (result[1].startsWith("/")) {
+        //     // Found an end tag like [[/X]], make sure it matches what we're expecting
+        //     if (result[1] === endTag) {
+        //         state.index += result[0].length;
+
+        //         return;
+        //     } else {
+        //         console.log(`Found mismatched end tag ${result[1]} with expected tag ${endTag} in ${entry.name}`);
+        //         state.index += result[0].length;
+        //     }
+        // } else if (state.linkSpoilerOnly) {
+        //     // If links/spoilers only don't process any other types
+        //     processLinkTag(state, result);
+        // } else if (result[1] === "Image") {
+        //     processImageTag(result, state);
+        // } else if (result[1] === "Images") {
+        //     processImagesTag(state, result);
+        // } else if (result[1] === "Header") {
+        //     processHeaderTag(state, result, undefined);
+        // } else {
+        //     processLinkTag(state, result);
+        // }
     }
 
     // Split out all remaining newlines
@@ -460,6 +518,7 @@ function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
         inSpoiler: inSpoiler,
         index: subSectionStart,
         initialContent: state.initialContent,
+        linkSpoilerOnly: state.linkSpoilerOnly,
         output: [],
         spoiler: state.spoiler,
     };
