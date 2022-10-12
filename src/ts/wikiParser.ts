@@ -20,7 +20,7 @@ type ParserState = {
     inSpoiler: boolean;
     initialContent: string;
     index: number;
-    linkSpoilerOnly: boolean;
+    inlineOnly: boolean;
     output: OutputGroup[];
     spoiler: Spoiler;
 };
@@ -34,7 +34,7 @@ export function createContentHtml(entry: WikiEntry, allEntries: Map<string, Wiki
         inSpoiler: false,
         index: 0,
         initialContent: entry.content,
-        linkSpoilerOnly: false,
+        inlineOnly: false,
         output: [],
         spoiler: spoilerState,
     };
@@ -60,7 +60,6 @@ function outputGroupsToHtml(
     inSpoiler: boolean,
     startInGroup = false,
     inTopLevelSpoiler = false,
-    inTopLevelList = false,
 ): string {
     if (outputGroups.length === 0) {
         return "";
@@ -78,8 +77,6 @@ function outputGroupsToHtml(
         } else {
             skipFirstP = true;
         }
-    } else if (inTopLevelList) {
-        skipFirstP = true;
     }
 
     for (const group of outputGroups) {
@@ -126,6 +123,27 @@ function outputGroupsToHtml(
     return output;
 }
 
+// Process a B tag like [[B]]Bolded Text[[/Bold]]
+function processBTag(state: ParserState, result: RegExpExecArray) {
+    // Process the header subsection independently
+    const subSectionStart = result.index + result[0].length;
+    const tempState: ParserState = {
+        allEntries: state.allEntries,
+        entry: state.entry,
+        inSpoiler: state.inSpoiler,
+        index: subSectionStart,
+        initialContent: state.initialContent,
+        output: [],
+        inlineOnly: true,
+        spoiler: state.spoiler,
+    };
+    processSection(tempState, "/B");
+    state.index = tempState.index;
+    const boldedContent = `<b>${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</b>`;
+
+    state.output.push({ groupType: "Grouped", html: boldedContent });
+}
+
 // Process a header tag like [[Header]]Header Text[[/Header]]
 // or like [[Header:2]]Header Text[[/Header]]
 function processHeaderTag(state: ParserState, result: RegExpExecArray) {
@@ -138,7 +156,7 @@ function processHeaderTag(state: ParserState, result: RegExpExecArray) {
         index: subSectionStart,
         initialContent: state.initialContent,
         output: [],
-        linkSpoilerOnly: false,
+        inlineOnly: true,
         spoiler: state.spoiler,
     };
     processSection(tempState, "/Header");
@@ -163,6 +181,27 @@ function processHeaderTag(state: ParserState, result: RegExpExecArray) {
     } else {
         state.output.push({ groupType: "Individual", html: `<h4>${headerContent}</h4>` });
     }
+}
+
+// Process a I tag like [[I]]Italicized Text[[/I]]
+function processITag(state: ParserState, result: RegExpExecArray) {
+    // Process the header subsection independently
+    const subSectionStart = result.index + result[0].length;
+    const tempState: ParserState = {
+        allEntries: state.allEntries,
+        entry: state.entry,
+        inSpoiler: state.inSpoiler,
+        index: subSectionStart,
+        initialContent: state.initialContent,
+        output: [],
+        inlineOnly: true,
+        spoiler: state.spoiler,
+    };
+    processSection(tempState, "/I");
+    state.index = tempState.index;
+    const boldedContent = `<i>${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</i>`;
+
+    state.output.push({ groupType: "Grouped", html: boldedContent });
 }
 
 // Process an image link like [[Image]]ImageName.png|Optional Image Caption[[/Image]]
@@ -203,7 +242,7 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
             inSpoiler: state.inSpoiler,
             index: 0,
             initialContent: split[1],
-            linkSpoilerOnly: true,
+            inlineOnly: true,
             output: [],
             spoiler: state.spoiler,
         };
@@ -270,7 +309,7 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
             inSpoiler: state.inSpoiler,
             index: 0,
             initialContent: imageCaption,
-            linkSpoilerOnly: true,
+            inlineOnly: true,
             output: [],
             spoiler: state.spoiler,
         };
@@ -279,16 +318,14 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
 
         // Append image content HTML
         imagesContent += `<div>
-                    <div>
-                        <a ${
-                            state.inSpoiler ? 'class="spoiler-image"' : ""
-                        } href="wiki_images/${imageName}" target="_blank">
-                        ${state.inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
-                            <img src="wiki_images/${imageName}"/>
-                        </a>
-                    </div>
-                    ${imageCaptionHtml}
-                </div>`;
+            <div>
+                <a ${state.inSpoiler ? 'class="spoiler-image"' : ""} href="wiki_images/${imageName}" target="_blank">
+                ${state.inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
+                    <img src="wiki_images/${imageName}"/>
+                </a>
+            </div>
+            ${imageCaptionHtml}
+        </div>`;
     }
 
     imagesContent += "</div>";
@@ -339,15 +376,19 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
             inSpoiler: state.inSpoiler,
             index: 0,
             initialContent: listItem,
-            linkSpoilerOnly: true,
+            inlineOnly: true,
             output: [],
             spoiler: state.spoiler,
         };
         processSection(tempState, undefined);
-        const listItemHtml = outputGroupsToHtml(tempState.output, state.inSpoiler, true, false, true);
+        const listItemHtml = outputGroupsToHtml(tempState.output, state.inSpoiler, true, false);
 
         // Append list item HTML
-        listContent += `<li>${listItemHtml}</li>`;
+        if (state.inSpoiler) {
+            listContent += `<li><span class="spoiler-text spoiler-text-multiline">${listItemHtml}</span></li>`;
+        } else {
+            listContent += `<li>${listItemHtml}</li>`;
+        }
     }
 
     listContent += `</${listType}>`;
@@ -409,7 +450,9 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
 }
 
 const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => void> = new Map([
+    ["B", processBTag],
     ["Header", processHeaderTag],
+    ["I", processITag],
     ["Image", processImageTag],
     ["Images", processImagesTag],
     ["List", processListTag],
@@ -436,11 +479,16 @@ function processSection(state: ParserState, endTag: string | undefined) {
             newlineIndex !== -1 &&
             newlineIndex < result.index
         ) {
-            state.output.push({
-                groupType: "Grouped",
-                html: state.initialContent.substring(state.index, newlineIndex),
-            });
-            state.output.push({ groupType: "Separator", html: undefined });
+            if (state.inlineOnly) {
+                // If inline only don't allow separated content
+                console.log(`Found newline when only inline actions are allowed in ${entry.name}`);
+            } else {
+                state.output.push({
+                    groupType: "Grouped",
+                    html: state.initialContent.substring(state.index, newlineIndex),
+                });
+                state.output.push({ groupType: "Separator", html: undefined });
+            }
 
             state.index = newlineIndex + 1;
         }
@@ -468,14 +516,15 @@ function processSection(state: ParserState, endTag: string | undefined) {
         } else {
             const actionFunc = actionMap.get(result[1]);
 
-            if (state.linkSpoilerOnly) {
-                // In some sections only links/spoilers are allowed
-                // Check for a spoiler, then for a matched but forbidden tag
-                if (result[1] === "Spoiler") {
+            if (state.inlineOnly) {
+                // In some sections only specific inline tags are allowed
+                // Check for a allowed tags first, then for any matched but forbidden tags
+                if (result[1] === "Spoiler" || result[1] === "B" || result[1] === "I") {
                     actionFunc!(state, result);
                 } else if (actionFunc !== undefined) {
                     console.log(
-                        `Found action tag ${result[1]} in scope where only spoilers/links are allowed in ${entry.name}`,
+                        `Found action tag ${result[1]} in scope where only links ` +
+                            `and inline tags like bold/italics are allowed in ${entry.name}`,
                     );
                 } else {
                     processLinkTag(state, result);
@@ -540,7 +589,7 @@ function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
         inSpoiler: inSpoiler,
         index: subSectionStart,
         initialContent: state.initialContent,
-        linkSpoilerOnly: state.linkSpoilerOnly,
+        inlineOnly: state.inlineOnly,
         output: [],
         spoiler: state.spoiler,
     };
