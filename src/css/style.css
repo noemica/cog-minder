@@ -939,9 +939,8 @@ body {
 }
 
 .wiki-inline-image {
-    float: left;
-    clear: left;
-    margin: .25rem 1.5rem .25rem 0;
+    float: right;
+    margin: .25rem 0 .25rem 1.5rem;
     display: flex;
     flex-direction: column;
 }
