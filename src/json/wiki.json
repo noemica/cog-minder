@@ -5417,7 +5417,7 @@
     {
       "Name": "Materials",
       "ImageName": "Materials.png",
-      "Content": "Materials is the first real level of the game. These maps are very small and cramped with few paths forward. However, there are relatively few patrols hanging around, and a few special easy mechanics such as [[U-05 Engineer|Engineers]] not calling for reinforcements when attacked while trying to build structures until -8 and [[A-02 Transporter|Haulers]] not calling for reinforcements at all in Materials.\nTrying to play flight or hover is not very easy in Materials due to many forced encounters with combat robots, little room for maneuvering, and few slots yet available for good utilities. Typically the best way to play these maps is to grab some legs or treads and start blasting. Fight enemies one at a time by leading them to one of the many doorways around the map.\n[[Alert]] is not typically a big issue in these maps.[[Header]]Prefabs[[/Header]][[Images]]Materials Main Exit.png|A 3-tile corridor leading to a main access|Materials Mines Exit.png| A [[Mines]] exit prefab|Materials OOD Cache.png|An out-of-depth parts cache|Materials Storage Cache.png|A cache full of [[Sml. Storage Unit|Small]], [[Med. Storage Unit|Medium]], and [[Lrg. Storage Unit|Large]] storage units[[/Images]]Here are some things.",
+      "Content": "Materials is the first real level of the game. These maps are small, cramped, and have with few paths forward. This is the first map with hostile [[0b10]] patrols hanging around, comprised mainly of low level [[G-34 Mercenary]] and [[G-47 Trooper]] grunts and [[S-10 Pest]] swarmers. There are also a few special special mechanics such as [[U-05 Engineer|Engineers]] not calling for reinforcements when attacked while trying to build structures in -10 and -9 and [[A-02 Transporter|Haulers]] not calling for reinforcements at all.\nTrying to play flight or hover is not easy in Materials due to many forced encounters with combat robots, little room for maneuvering, and few slots yet available for good utilities. The usual recommended way to play these maps is to grab some legs or treads and start blasting. Most players prefer not to transfer to airborne propulsion until [[Factory]] where it is much easier to stealth around and avoid combat. In Materials, it's good to fight enemies one at a time by leading them to one of the many doorways around the map. Use of launchers is very effective whenever there is more than a single bot grouped up close.\n[[Alert]] is not a big issue in these maps because of the relatively small map size and number of total patrols. If making a mess of the floors on -10 and -9, entering the [[Mines]] is a good way to lose all of the alert gained from the early Materials maps.[[Header]]Prefabs[[/Header]][[Images]]Materials Main Exit.png|A 3-tile corridor leading to a main access|Materials Mines Exit.png| A [[Mines]] exit prefab|Materials Mines Exit 2.png|A second Mines exit prefab|Materials OOD Cache.png|An out-of-depth parts cache|Materials Storage Cache.png|A cache full of [[Sml. Storage Unit|Small]], [[Med. Storage Unit|Medium]], and [[Lrg. Storage Unit|Large]] storage units[[/Images]]The storage cache prefab can be very important early on in the game. Cogmind only starts with a [[Sml. Storage Unit]] with very little room for important backup parts and should upgrade ASAP. While not guaranteed, these storage caches will appear on almost every Materials map. [[Hcp. Storage Unit]] and [[Huge Storage Unit]] can both be commonly found on the floor in these maps, but they are not included in the standard storage cache prefab.\nThe other important cache is the out-of-depth parts cache. These caches contain 3 groups of 4 parts that will be one rating out of depth and can include prototypes. For example, on -9 Materials the standard highest rating part is a 2, while the cache will contain rating 3 or 3* [[Prototype Part|prototype parts]]. This is one of the best ways to become very strong in Materials. For example, getting a stockpile of [[Enh. Autogun|Enh. Autoguns]] on -9 can help set a combat up for multiple floors to come.[[Header:2]]Exits[[/Header]]There are 3 types of exits in Materials:[[List]]Main access exits: These always lead to the next main floor, either Materials or [[Factory]]. These exits can be recognized by their distinctive 3-tile corridor leading to a dead-end exit along the edges of the map. There are always 3 of these per Materials map.|[[Mines]] exits: These exits are almost always distinguishable by a few specific prefabs of some machinery and a cache of items. Occasionally Mines exits will spawn without the prefab and look like standard exits. There are either 1 or 2 Mines exits on -10 and -9.|[[Storage]] exits: These exits do not have a prefab at all and look like standard exits. There is often a [[Y-45 Defender|sentry]] guarding these exits, but it is not guaranteed. Storage only spawns on 1 depth between -9 and -7, and 1-2 exits can be found to Storage on that map.[[/List]][[Header]]Events[[/Header]][[Spoiler:Spoiler]][[Image]]8R-AWN in Materials.png|8R-AWN passing through Materials[[/Image]]Rarely, [[8R-AWN]] can appear in Materials, passing through to the nearest Mines exit. They will shoot any hostile 0b10 bots on the way, and often leave large piles of loot in their wake. If encountered, they will tell you to follow them to the Mines, and then to the [[Exiles]] map.[[/Spoiler]]",
       "Exits": [
         "Factory",
         "Mines",
@@ -5785,6 +5785,10 @@
   ],
   "Other": [
     {
+      "Name": "0b10",
+      "Content": ""
+    },
+    {
       "Name": "Alert",
       "Content": ""
     },
@@ -5797,6 +5801,10 @@
       "Name": "Example2",
       "Content": "",
       "Spoiler": "Spoiler"
+    },
+    {
+      "Name": "Prototype Part",
+      "Content": ""
     },
     {
       "Name": "RIF",

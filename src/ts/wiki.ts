@@ -370,21 +370,18 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const parentContainer = $(`<div class="container-xl"></div>`);
         const content = $(createContentHtml(entry, allEntries, getSpoilerState()));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createBotDataContent(bot, true));
 
         // Append to DOM
         // Append the infobox first which floats to the right
-        parentContainer.append(infoboxColumn[0]);
+        pageContent.append(infoboxColumn[0]);
         infoboxColumn.append(infoboxContent as any);
-        parentContainer.append(content as any);
-
-        pageContent.append(parentContainer[0]);
+        pageContent.append(content as any);
 
         // Bot parts have popovers, must hook them up here
-        enableBotInfoInteraction(parentContainer);
+        enableBotInfoInteraction(pageContent);
     }
 
     // Updates the page content based on the current selection
@@ -497,18 +494,15 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const parentContainer = $(`<div class="container-xl"></div>`);
         const content = $(createContentHtml(entry, allEntries, getSpoilerState()));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createLocationHtml(location, getSpoilerState()));
 
         // Append to DOM
         // Append the infobox first which floats to the right
-        parentContainer.append(infoboxColumn[0]);
+        pageContent.append(infoboxColumn[0]);
         infoboxColumn.append(infoboxContent as any);
-        parentContainer.append(content as any);
-
-        pageContent.append(parentContainer[0]);
+        pageContent.append(content as any);
     }
 
     function updateOtherContent(entry: WikiEntry) {
@@ -568,17 +562,14 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const parentContainer = $(`<div class="container-xl"></div>`);
         const content = $(createContentHtml(entry, allEntries, getSpoilerState()));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createItemDataContent(part));
 
         // Append to DOM
         // Append the infobox first which floats to the right
-        parentContainer.append(infoboxColumn[0]);
+        pageContent.append(infoboxColumn[0]);
         infoboxColumn.append(infoboxContent as any);
-        parentContainer.append(content as any);
-
-        pageContent.append(parentContainer[0]);
+        pageContent.append(content as any);
     }
 });
