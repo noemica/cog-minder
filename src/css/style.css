@@ -1064,6 +1064,17 @@ body {
     align-items: center;
 }
 
+.wiki-edit-content > div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 800px;
+}
+
+.wiki-edit-content > div > * {
+    margin: 0.125em 0.25em;
+}
+
 .wiki-edit-text {
     font-family: sans-serif;
     resize: none;
@@ -1099,4 +1110,11 @@ body {
 
 .wiki-edit-errors > div > p {
     margin: 0.5em 2em;
+}
+
+.wiki-button-group-label {
+    color: #9da9af;
+    background-color: #162416;
+    border: 1px solid #006200;
+    padding: 0.375rem;
 }

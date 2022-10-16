@@ -110,6 +110,58 @@ jq(function ($) {
 
             setSelectedPage(selectedPage, false);
         });
+
+        // Register editor buttons
+        function insertWrappedText(beforeText: string, afterText: string) {
+            const textArea = $("#editTextArea");
+            const start = textArea.prop("selectionStart");
+            const end = textArea.prop("selectionEnd");
+            const initialText = textArea.val() as string;
+
+            const preSplit = initialText.substring(0, start);
+            const split = initialText.substring(start, end);
+            const postSplit = initialText.substring(end);
+
+            textArea.val(`${preSplit}${beforeText}${split}${afterText}${postSplit}`);
+            (textArea.get(0) as any as HTMLTextAreaElement).setSelectionRange(
+                start + beforeText.length,
+                end + beforeText.length,
+            );
+            textArea.trigger("focus");
+        }
+        $("#editBoldTextButton").on("click", () => {
+            insertWrappedText("[[B]]", "[[/B]]");
+        });
+        $("#editItalicizeTextButton").on("click", () => {
+            insertWrappedText("[[I]]", "[[/I]]");
+        });
+        $("#editSpoilerTextButton").on("click", () => {
+            insertWrappedText("[[Spoiler:Spoiler]]", "[[/Spoiler]]");
+        });
+        $("#editRedactedTextButton").on("click", () => {
+            insertWrappedText("[[Spoiler:Redacted]]", "[[/Spoiler]]");
+        });
+        $("#editLinkTextButton").on("click", () => {
+            insertWrappedText("[[", "]]");
+        });
+        $("#editHeader1TextButton").on("click", () => {
+            insertWrappedText("[[Header]]", "[[/Header]]");
+        });
+        $("#editHeader2TextButton").on("click", () => {
+            insertWrappedText("[[Header:2]]", "[[/Header]]");
+        });
+        $("#editImageTextButton").on("click", () => {
+            insertWrappedText("[[Image]]", "[[/Image]]");
+        });
+        $("#editImagesTextButton").on("click", () => {
+            insertWrappedText("[[Images]]", "[[/Images]]");
+        });
+        $("#editUnorderedListTextButton").on("click", () => {
+            insertWrappedText("[[List]]", "[[/List]]");
+        });
+        $("#editOrderedListTextButton").on("click", () => {
+            insertWrappedText("[[List:Ordered]]", "[[/List]]");
+        });
         $("#editTextArea").on("input", () => {
             editedCurrentPage = true;
         });

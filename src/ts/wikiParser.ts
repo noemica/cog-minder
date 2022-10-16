@@ -451,7 +451,7 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
             html: `<a class="d-inline-block" href="#${linkTarget}" ${tooltipData}>${linkText}</a>`,
         });
     } else {
-        recordError(state, `Bad link to page "${linkTarget}"`);
+        recordError(state, `Bad link to page "${linkTarget}" that doesn't exist`);
         state.output.push({
             groupType: "Grouped",
             html: linkTarget,
@@ -472,8 +472,6 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
 ]);
 // Processes the current section of text in the parser state
 function processSection(state: ParserState, endTag: string | undefined) {
-    const entry = state.entry;
-
     // Global regex for actions in the form of [[X]] or [[X:Y]]
     const actionRegex = /\[\[([^\]:]*)(?::([^\]]*))?\]\]/g;
 

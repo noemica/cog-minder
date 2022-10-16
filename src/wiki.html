@@ -57,8 +57,27 @@
 
         <!-- Edit content, show on top of page content -->
         <div id="editContent" class="mt-3 wiki-edit-content not-visible">
-            <textarea id="editTextArea" class="wiki-edit-text"></textarea>
-            <div class="mt-2 d-flex">
+            <div class="mt-2">
+                <span class="wiki-button-group-label" data-toggle="tooltip"
+                    title="Any kinds of inline content in this group can be placed anywhere where regular text can be processed. Except for Spoiler and Redacted tags, inline content can be nested with other inline content but not other top-level content. For example, Bold may be nested under Italicized text, but an Image cannot be nested under Bold Text.">Inline
+                    Content</span>
+                <button id="editBoldTextButton" class="btn" data-toggle="tooltip"
+                    title="Bolds any text inside the selection.">Bold</button>
+                <button id="editItalicizeTextButton" class="btn" data-toggle="tooltip" title="Italicizes any text inside the selection">Italicize</button>
+                <button id="editSpoilerTextButton" class="btn" data-toggle="tooltip" title="Provides a spoiler tag around any text or image content nested underneath if the spoiler setting is set to None">Spoiler</button>
+                <button id="editRedactedTextButton" class="btn" data-toggle="tooltip" title="Provides a spoiler tag around any text or image content nested underneath if the spoiler setting is not set to Redacted">Redacted</button>
+                <button id="editLinkTextButton" class="btn" data-toggle="tooltip" title="Inserts a link to the selected text. Link text may be different by using the form [[Link|Link Text]]">Link</button>
+
+                <span class="wiki-button-group-label" data-toggle="tooltip" title="Top-level content that can not typically be placed underneath other tags except for spoiler tags.">Top-level Content</span>
+                <button id="editHeader1TextButton" class="btn" data-toggle="tooltip" title="Provides a large header line with an underline containing the given text">Header 1</button>
+                <button id="editHeader2TextButton" class="btn" data-toggle="tooltip" title="Provides a slightly smaller header line containing the given text">Header 2</button>
+                <button id="editImageTextButton" class="btn" data-toggle="tooltip" title="Creates an image on the right side of the page with an optional caption in the form of [[Image]]Image Name.png|Image Caption[[/Image]]">Sidebar Image</button>
+                <button id="editImagesTextButton" class="btn" data-toggle="tooltip" title="Creates a list of images centered in the page in a list form. Images and captions should be sequentially listed, like [[Images]]Image 1.png|Image 1 caption|Image 2.png|Image 2 caption[[/Images]]">Images</button>
+                <button id="editUnorderedListTextButton" class="btn" data-toggle="tooltip" title="Creates an unordered (bulleted) list of items that can be separated out like [[List]]Item 1|Item 2|Item 3[[/List]]">Unordered List</button>
+                <button id="editOrderedListTextButton" class="btn" data-toggle="tooltip" title="Creates an ordered (numbered) list of items that can be separated out like [[List:Ordered]]Item 1|Item 2|Item 3[[/List]]">Ordered List</button>
+            </div>
+            <textarea id="editTextArea" class="wiki-edit-text mt-2"></textarea>
+            <div class="mt-2">
                 <button id="closeEditButton" class="btn" data-toggle="tooltip"
                     title="Closes the edit pane and returns the content below to the original state if changes were previewed">Close</button>
                 <button id="previewEditChangesButton" class="btn ml-2" data-toggle="tooltip"
