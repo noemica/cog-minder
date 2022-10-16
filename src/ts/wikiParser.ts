@@ -264,7 +264,7 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
     // Create the image with an optional caption
     state.output.push({
         groupType: "Individual",
-        html: `<div class="wiki-inline-image">
+        html: `<div class="wiki-sidebar-image">
             <a ${state.inSpoiler ? 'class="spoiler-image"' : ""} href="wiki_images/${imageName}" target="_blank">
                 ${state.inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
                 <img src="wiki_images/${imageName}" onerror="this.onerror=null; this.src='wiki_images/Image Not Found.png'"/>
@@ -308,7 +308,7 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
         recordError(state, `Found images action without equal number of links/captions`);
     }
 
-    let imagesContent = `<div class="wiki-inline-images">`;
+    let imagesContent = `<div class="wiki-sidebar-images">`;
 
     for (let i = 0; i < Math.floor(split.length / 2); i++) {
         const imageName = split[2 * i];

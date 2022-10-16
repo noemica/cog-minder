@@ -110,9 +110,20 @@ jq(function ($) {
 
             setSelectedPage(selectedPage, false);
         });
+        $("#homeButton").on("click", () => {
+            ($("#homeButton") as any).tooltip("hide");
+        });
+        $("#editButton").on("click", () => {
+            // Show the editor pane
+            $("#editContent").removeClass("not-visible");
+            ($("#editButton") as any).tooltip("hide");
+        });
 
         // Register editor buttons
         function insertWrappedText(beforeText: string, afterText: string) {
+            // Insert the before and after text wrapping the selected text area
+            // If there is no selection then it'll just be inserted at the cursor position
+            // or the end if no text is selected at all
             const textArea = $("#editTextArea");
             const start = textArea.prop("selectionStart");
             const end = textArea.prop("selectionEnd");
@@ -164,11 +175,6 @@ jq(function ($) {
         });
         $("#editTextArea").on("input", () => {
             editedCurrentPage = true;
-        });
-        $("#editButton").on("click", () => {
-            // Show the editor pane
-            $("#editContent").removeClass("not-visible");
-            ($("#editButton") as any).tooltip("hide");
         });
         $("#editContent button").on("click", (e) => {
             // Hide tooltips when any of the edit buttons are pressed

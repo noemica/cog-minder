@@ -938,23 +938,24 @@ body {
     margin: .25rem 0;
 }
 
-.wiki-inline-image {
+.wiki-sidebar-image {
     float: right;
+    clear: right;
     margin: .25rem 0 .25rem 1.5rem;
     display: flex;
     flex-direction: column;
 }
 
-.wiki-inline-image > a {
+.wiki-sidebar-image > a {
     border: 1px solid #008800;
 }
 
-.wiki-inline-image > a > img {
+.wiki-sidebar-image > a > img {
     max-width: 250px;
     padding: .25rem;
 }
 
-.wiki-inline-image > p {
+.wiki-sidebar-image > p {
     /* This nonsense is required in order
     to force the caption to be <= in size
     than the image itself, otherwise the
@@ -964,11 +965,11 @@ body {
     min-width: 100%;
 }
 
-.wiki-inline-image > a {
+.wiki-sidebar-image > a {
     position: relative;
 }
 
-.wiki-inline-image > p a {
+.wiki-sidebar-image > p a {
     /* Normally need this to be display: inline-block so that we can't
     have popovers that will flash on/off when hovering over them due
     to multiline traversal of the link text. However, we don't have that
@@ -976,8 +977,8 @@ body {
     display: unset !important;
 }
 
-.wiki-inline-image a:hover .wiki-spoiler-image-text,
-.wiki-inline-image a:focus .wiki-spoiler-image-text {
+.wiki-sidebar-image a:hover .wiki-spoiler-image-text,
+.wiki-sidebar-image a:focus .wiki-spoiler-image-text {
     /* Hide the spoiler text when mousing over */
     color: transparent;
     background-color: transparent;
@@ -988,18 +989,18 @@ body {
     overflow: hidden;
 }
 
-.wiki-inline-images {
+.wiki-sidebar-images {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.wiki-inline-images > div {
+.wiki-sidebar-images > div {
     display: inline-block;
     margin: .25rem .5rem;
 }
 
-.wiki-inline-images > div > div {
+.wiki-sidebar-images > div > div {
     background-color: black;
     border: 1px solid #008800;
     display: flex;
@@ -1009,22 +1010,22 @@ body {
     height: 225px;
 }
 
-.wiki-inline-images > div > div > a {
+.wiki-sidebar-images > div > div > a {
     position: relative;
 }
 
-.wiki-inline-images > div > div > a > img {
+.wiki-sidebar-images > div > div > a > img {
     max-width: 225px;
     max-height: 225px;
     padding: .25rem;
 }
 
-.wiki-inline-images > div > p {
+.wiki-sidebar-images > div > p {
     width: 0px;
     min-width: 100%;
 }
 
-.wiki-inline-images > div > p a {
+.wiki-sidebar-images > div > p a {
     /* Normally need this to be display: inline-block so that we can't
     have popovers that will flash on/off when hovering over them due
     to multiline traversal of the link text. However, we don't have that
@@ -1046,8 +1047,8 @@ body {
     transition: .15s;
 }
 
-.wiki-inline-images a:hover .wiki-spoiler-image-text,
-.wiki-inline-images a:focus .wiki-spoiler-image-text {
+.wiki-sidebar-images a:hover .wiki-spoiler-image-text,
+.wiki-sidebar-images a:focus .wiki-spoiler-image-text {
     /* Hide the spoiler text when mousing over */
     color: transparent;
     background-color: transparent;
