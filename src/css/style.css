@@ -954,7 +954,7 @@ body {
     padding: .25rem;
 }
 
-.wiki-inline-image > div {
+.wiki-inline-image > p {
     /* This nonsense is required in order
     to force the caption to be <= in size
     than the image itself, otherwise the
@@ -968,7 +968,7 @@ body {
     position: relative;
 }
 
-.wiki-inline-image > div > p a {
+.wiki-inline-image > p a {
     /* Normally need this to be display: inline-block so that we can't
     have popovers that will flash on/off when hovering over them due
     to multiline traversal of the link text. However, we don't have that
@@ -1056,4 +1056,47 @@ body {
 .wiki-list {
     /* This allows us to properly indent things with images */
     display: flow-root;
+}
+
+.wiki-edit-content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.wiki-edit-text {
+    font-family: sans-serif;
+    resize: none;
+    height: 400px;
+    width: 100%;
+    max-width: 800px;
+    background-color: #101010;
+    color: #bfbfbf;
+    border: 1px solid #008800;
+}
+
+.wiki-edit-errors {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    width: 100%;
+    max-width: 800px;
+}
+
+.wiki-edit-errors * {
+    font-family: sans-serif;
+    color: #bfbfbf;
+}
+
+.wiki-edit-errors > p {
+    font-size: 2em;
+    color: #ff0000;
+}
+
+.wiki-edit-errors > div {
+    border: 1px solid #b20000;
+}
+
+.wiki-edit-errors > div > p {
+    margin: 0.5em 2em;
 }

@@ -57,4 +57,4 @@ for l in lists:
 
 # Save JSON
 with open(wiki_path, 'w') as f:
-    json.dump(wiki_json, f, indent=2)
+    json.dump(wiki_json, f, indent=1)

@@ -340,7 +340,19 @@ export function temporarilySetValue(
     newValue: string,
     initialValue: string,
     time: number,
+    maintainWidth = false,
 ): void {
+    const currentWidth = selector.width()!;
     selector.text(newValue);
-    setTimeout(() => selector.text(initialValue), time);
+
+    if (maintainWidth) {
+        selector.width(currentWidth);
+    }
+
+    setTimeout(() => {
+        if (maintainWidth) {
+            selector.width("");
+        }
+        selector.text(initialValue);
+    }, time);
 }

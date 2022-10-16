@@ -65,7 +65,7 @@ for other in wiki_json['Other']:
     else:
         new_other = {
             'Name': other_name,
-            'Page Type': 'other',
+            'Page Type': 'Other',
             'Content': other['Content']
         }
         wiki_csv[other_name] = new_other
@@ -78,5 +78,5 @@ with open(csv_path, 'w', newline='') as f:
     sorted_names = sorted(wiki_csv.keys())
 
     for name in sorted_names:
-        wiki_csv[name]['Content'] = wiki_csv[name]['Content'].replace('\n', '\\n')
+        wiki_csv[name]['Content'] = wiki_csv[name]['Content']
         writer.writerow(wiki_csv[name])

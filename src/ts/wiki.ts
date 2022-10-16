@@ -9,6 +9,7 @@ import {
     refreshSelectpicker,
     registerDisableAutocomplete,
     setSpoilerState,
+    temporarilySetValue,
 } from "./commonJquery";
 import {
     canShowSpoiler,
@@ -41,8 +42,14 @@ jq(function ($) {
     // that page
     const defaultShownEntries: Set<string> = new Set<string>();
 
+    // Has the user edited the current page since copying the text?
+    let editedCurrentPage: boolean;
+
     // Save the last entry for proper disposal when the page changes
     let lastEntry: WikiEntry | undefined;
+
+    // Save when we're showing an edited preview
+    let lastEntryIsEdit: boolean;
 
     // Keep track of whether we have promoted a spoiler-restricted
     // page to the select
@@ -51,6 +58,20 @@ jq(function ($) {
     // Avoid recursively processing selectpicker changes when
     // we're updating the value
     let skipSelectChange = false;
+
+    // Clears the page content and cleans up any resources
+    function clearPageContent() {
+        const pageContent = $("#pageContent");
+
+        if (lastEntry?.type === "Bot") {
+            // Need to do proper cleanup for bots
+            disableBotInfoInteraction(pageContent);
+        }
+
+        ($("#pageContent").find(`[data-toggle="popover"]`) as any).popover("dispose");
+
+        pageContent.empty();
+    }
 
     // Initialize the page state
     async function init() {
@@ -89,6 +110,48 @@ jq(function ($) {
 
             setSelectedPage(selectedPage, false);
         });
+        $("#editTextArea").on("input", () => {
+            editedCurrentPage = true;
+        });
+        $("#editButton").on("click", () => {
+            // Show the editor pane
+            $("#editContent").removeClass("not-visible");
+            ($("#editButton") as any).tooltip("hide");
+        });
+        $("#editContent button").on("click", (e) => {
+            // Hide tooltips when any of the edit buttons are pressed
+            ($(e.target) as any).tooltip("hide");
+        });
+        $("#closeEditButton").on("click", () => {
+            // Hide the edit pane
+            $("#editContent").addClass("not-visible");
+            if (lastEntry !== undefined) {
+                loadSelectedEntry(allEntries.get(lastEntry.name)!);
+            }
+        });
+        $("#previewEditChangesButton").on("click", () => {
+            // Previews the changes made for the current page
+            const text = $("#editTextArea").val() as string;
+            const entry: WikiEntry = {
+                alternativeNames: lastEntry!.alternativeNames,
+                content: text,
+                name: lastEntry!.name,
+                spoiler: "None",
+                type: lastEntry!.type,
+                extraData: lastEntry!.extraData,
+            };
+            lastEntryIsEdit = true;
+            loadSelectedEntry(entry);
+
+            temporarilySetValue($("#previewEditChangesButton"), "Updated", "Preview Changes", 2000, true);
+        });
+        $("#copyEditTextButton").on("click", () => {
+            // Copies the edited text to the clipboard
+            editedCurrentPage = false;
+            const text = $("#editTextArea").val() as string;
+            navigator.clipboard.writeText(text);
+            temporarilySetValue($("#copyEditTextButton"), "Copied", "Copy Text", 2000, true);
+        });
         $(window).on("hashchange", () => {
             // If the hash changes (pasted URL) then reload
             tryLoadFromHash(false);
@@ -126,8 +189,8 @@ jq(function ($) {
         $("#pageSelectContainer > div").addClass("page-dropdown");
         $("#pageSelectContainer > div > .dropdown-menu").addClass("page-dropdown-menu");
 
-        // Enable popovers
-        ($('[data-toggle="popover"]') as any).popover();
+        // Enable tooltips
+        ($('[data-toggle="tooltip"]') as any).tooltip();
     }
 
     // Inits the wiki entries from JSON
@@ -274,6 +337,66 @@ jq(function ($) {
         }
     }
 
+    // Updates the page content based on the given entry
+    function loadSelectedEntry(entry: WikiEntry) {
+        const selectedPage = entry.name;
+        const pageContent = $("#pageContent");
+        lastEntry = entry;
+
+        clearPageContent();
+
+        function setContent(entry: WikiEntry) {
+            switch (entry.type) {
+                case "Bot":
+                    updateBotContent(entry);
+                    break;
+
+                case "Location":
+                    updateLocationContent(entry);
+                    break;
+
+                case "Other":
+                    updateOtherContent(entry);
+                    break;
+
+                case "Part":
+                    updatePartContent(entry);
+                    break;
+            }
+
+            ($("#pageContent").find(`[data-toggle="popover"]`) as any).popover();
+
+            // Fix up any links to work properly
+            overrideLinks(pageContent);
+        }
+
+        if (defaultShownEntries.has(selectedPage)) {
+            // If we're showing a page by default then just load it right away
+            setContent(entry);
+        } else {
+            // If we're showing a spoilers page, create a warning page first
+            pageContent.append(`
+            <div class="d-grid justify-content-center">
+                <div class="row">
+                    <p>Page blocked by Spoilers setting. Would you like to continue?</p>
+                </div>
+                <div class="row">
+                    <button id="spoilerYesButton" class="btn col mx-2">Yes</button>
+                    <button id="spoilerBackButton" class="btn col mx-2">Back</button>
+                </div>
+            </div>`);
+
+            // Continue on Yes, go back in history if not
+            $("#spoilerYesButton").on("click", () => {
+                clearPageContent();
+                setContent(entry);
+            });
+            $("#spoilerBackButton").on("click", () => {
+                history.back();
+            });
+        }
+    }
+
     // Must override link behavior with a custom handler since we
     // don't actually have elements with the matching IDs set
     function overrideLinks(selector: JQuery<HTMLElement>) {
@@ -288,6 +411,26 @@ jq(function ($) {
 
             setSelectedPage(selectedPage, true);
         });
+    }
+
+    // Parses the Wiki entry content and updates errors
+    function parseEntryContent(entry: WikiEntry, allEntries: Map<string, WikiEntry>) {
+        const parseResult = createContentHtml(entry, allEntries, getSpoilerState());
+
+        if (parseResult.errors.length > 0) {
+            $("#editErrorsParentContainer").removeClass("not-visible");
+            $("editErrorsContainer").empty();
+            console.log(`Errors while parsing ${entry.name}`);
+
+            for (const error of parseResult.errors) {
+                console.log(`Parse error: ${error}`);
+                $("#editErrorsContainer").append(`<p>${error}</p>`);
+            }
+        } else {
+            $("#editErrorsParentContainer").addClass("not-visible");
+        }
+
+        return $(parseResult.html);
     }
 
     // Sets the selected page
@@ -316,6 +459,20 @@ jq(function ($) {
                         history.pushState(selectedPage, "", `#${selectedPage}`);
                     }
                 }
+            }
+
+            if (editedCurrentPage && lastEntry?.name !== selectedPage) {
+                // Try to prevent accidental edit data loss
+                if (
+                    !confirm(
+                        "You have modified the editor since last copying the text, are you sure you want to change the page and lose any changes made?",
+                    )
+                ) {
+                    select.selectpicker("val", lastEntry!.name);
+                    return;
+                }
+
+                editedCurrentPage = false;
             }
 
             if (updateSelect) {
@@ -370,7 +527,7 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const content = $(createContentHtml(entry, allEntries, getSpoilerState()));
+        const content = parseEntryContent(entry, allEntries);
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createBotDataContent(bot, true));
 
@@ -389,22 +546,16 @@ jq(function ($) {
         const homeContainer = $("#homeContainer");
         const pageContent = $("#pageContent");
 
-        if (lastEntry?.type === "Bot") {
-            // Need to do proper cleanup for bots
-            disableBotInfoInteraction(pageContent);
-        }
-
-        ($("#pageContent").find(`[data-toggle="popover"]`) as any).popover("dispose");
-
-        pageContent.empty();
-
         if (selectedPage === "Home") {
             // If we selected the home page then just show the home page div
             updateHomeContent();
             document.title = "Cogmind Wiki";
+            $("#editButton").prop("disabled", true);
 
             return;
         }
+
+        $("#editButton").prop("disabled", false);
 
         document.title = `${selectedPage} - Cogmind Wiki`;
 
@@ -414,62 +565,20 @@ jq(function ($) {
 
         const entry = allEntries.get(selectedPage);
         if (entry === undefined) {
+            clearPageContent();
             pageContent.append("Error generating page, this shouldn't happen");
+            return;
+        } else if (lastEntryIsEdit && lastEntry!.name === selectedPage) {
+            // If we're attempting to reload the page (usually for spoilers change)
+            // but we're currently displaying an edit preview of a page, maintain
+            // the existing editable text area
             return;
         }
 
-        lastEntry = entry;
+        $("#editTextArea").val(entry.content);
+        lastEntryIsEdit = false;
 
-        function setContent(entry: WikiEntry) {
-            switch (entry.type) {
-                case "Bot":
-                    updateBotContent(entry);
-                    break;
-
-                case "Location":
-                    updateLocationContent(entry);
-                    break;
-
-                case "Other":
-                    updateOtherContent(entry);
-                    break;
-
-                case "Part":
-                    updatePartContent(entry);
-                    break;
-            }
-
-            ($("#pageContent").find(`[data-toggle="popover"]`) as any).popover();
-
-            // Fix up any links to work properly
-            overrideLinks(pageContent);
-        }
-
-        if (defaultShownEntries.has(selectedPage)) {
-            // If we're showing a page by default then just load it right away
-            setContent(entry);
-        } else {
-            // If we're showing a spoilers page, create a warning page first
-            pageContent.append(`
-            <div class="d-grid justify-content-center">
-                <div class="row">
-                    <p>Page blocked by Spoilers setting. Would you like to continue?</p>
-                </div>
-                <div class="row">
-                    <button id="spoilerYesButton" class="btn col mx-2">Yes</button>
-                    <button id="spoilerBackButton" class="btn col mx-2">Back</button>
-                </div>
-            </div>`);
-
-            // Continue on Yes, go back in history if not
-            $("#spoilerYesButton").on("click", () => {
-                pageContent.empty();
-                setContent(entry);
-            });
-            $("#spoilerBackButton").on("click", () => {
-                history.back();
-            });
-        }
+        loadSelectedEntry(entry);
     }
 
     // Sets the home page to be active and updates the home status if set
@@ -494,7 +603,7 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const content = $(createContentHtml(entry, allEntries, getSpoilerState()));
+        const content = parseEntryContent(entry, allEntries);
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createLocationHtml(location, getSpoilerState()));
 
@@ -509,7 +618,7 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const content = $(createContentHtml(entry, allEntries, getSpoilerState()));
+        const content = parseEntryContent(entry, allEntries);
 
         // Append to DOM
         pageContent.append(content as any);
@@ -562,7 +671,7 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const content = $(createContentHtml(entry, allEntries, getSpoilerState()));
+        const content = parseEntryContent(entry, allEntries);
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createItemDataContent(part));
 

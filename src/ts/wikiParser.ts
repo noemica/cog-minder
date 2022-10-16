@@ -16,6 +16,7 @@ type OutputGroup = {
 // Full parser state
 type ParserState = {
     allEntries: Map<string, WikiEntry>;
+    errors: string[];
     entry: WikiEntry;
     inSpoiler: boolean;
     initialContent: string;
@@ -26,11 +27,16 @@ type ParserState = {
 };
 
 // Creates the HTML content of a wiki entry
-export function createContentHtml(entry: WikiEntry, allEntries: Map<string, WikiEntry>, spoilerState: Spoiler): string {
+export function createContentHtml(
+    entry: WikiEntry,
+    allEntries: Map<string, WikiEntry>,
+    spoilerState: Spoiler,
+): { html: string; errors: string[] } {
     // Process each section into the same output groups
     const state: ParserState = {
         allEntries: allEntries,
         entry: entry,
+        errors: [],
         inSpoiler: false,
         index: 0,
         initialContent: entry.content,
@@ -50,7 +56,10 @@ export function createContentHtml(entry: WikiEntry, allEntries: Map<string, Wiki
 
     // Convert to HTML
     const outputHtml = outputGroupsToHtml(state.output, false);
-    return `<h2 class="wiki-header">${headerText}</h2>${outputHtml}`;
+    return {
+        html: `<h2 class="wiki-header">${headerText}</h2>${outputHtml}`,
+        errors: state.errors,
+    };
 }
 
 // Turns a list of output groups into HTML
@@ -130,6 +139,7 @@ function processBTag(state: ParserState, result: RegExpExecArray) {
     const tempState: ParserState = {
         allEntries: state.allEntries,
         entry: state.entry,
+        errors: state.errors,
         inSpoiler: state.inSpoiler,
         index: subSectionStart,
         initialContent: state.initialContent,
@@ -147,11 +157,21 @@ function processBTag(state: ParserState, result: RegExpExecArray) {
 // Process a header tag like [[Header]]Header Text[[/Header]]
 // or like [[Header:2]]Header Text[[/Header]]
 function processHeaderTag(state: ParserState, result: RegExpExecArray) {
+    let type = result[2];
+
+    if (type === undefined) {
+        type = "1";
+    } else if (type !== "1" && type !== "2") {
+        recordError(state, `Found bad header type ${type}, should be 1 or 2`);
+        type = "1";
+    }
+
     // Process the header subsection independently
     const subSectionStart = result.index + result[0].length;
     const tempState: ParserState = {
         allEntries: state.allEntries,
         entry: state.entry,
+        errors: state.errors,
         inSpoiler: state.inSpoiler,
         index: subSectionStart,
         initialContent: state.initialContent,
@@ -165,15 +185,6 @@ function processHeaderTag(state: ParserState, result: RegExpExecArray) {
 
     if (state.inSpoiler) {
         headerContent = `<span class="spoiler-text spoiler-text-multiline">${headerContent}</span>`;
-    }
-
-    let type = result[2];
-
-    if (type === undefined) {
-        type = "1";
-    } else if (type !== "1" && type !== "2") {
-        console.log(`Found bad header type ${type} in ${state.entry.name}, should be 1 or 2`);
-        type = "1";
     }
 
     if (type === "1") {
@@ -190,6 +201,7 @@ function processITag(state: ParserState, result: RegExpExecArray) {
     const tempState: ParserState = {
         allEntries: state.allEntries,
         entry: state.entry,
+        errors: state.errors,
         inSpoiler: state.inSpoiler,
         index: subSectionStart,
         initialContent: state.initialContent,
@@ -207,14 +219,12 @@ function processITag(state: ParserState, result: RegExpExecArray) {
 // Process an image link like [[Image]]ImageName.png|Optional Image Caption[[/Image]]
 // Caption should probably be used but support no caption
 function processImageTag(state: ParserState, result: RegExpExecArray) {
-    const entry = state.entry;
-
     // Find [[/Image]] closing tag first
     const imageResult = /\[\[\/Image\]\]/.exec(state.initialContent.substring(state.index));
 
     if (imageResult === null) {
         // If we can't find the end tag then just skip over the opening image tag
-        console.log(`Found image tag "${result[0]}" without close tag in ${entry.name}`);
+        recordError(state, `Found image tag "${result[0]}" without close tag`);
         state.index += result[0].length;
         return;
     }
@@ -232,13 +242,14 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
         imageCaptionHtml = "";
     } else {
         if (split.length > 2) {
-            console.log(`Found more than 1 | in image tag ${result[0]} in ${entry.name}`);
+            recordError(state, `Found more than 1 | in image tag ${result[0]}`);
         }
 
         // Parse the image caption as a subsection individually so we can include links
         const tempState: ParserState = {
             allEntries: state.allEntries,
             entry: state.entry,
+            errors: state.errors,
             inSpoiler: state.inSpoiler,
             index: 0,
             initialContent: split[1],
@@ -256,9 +267,9 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
         html: `<div class="wiki-inline-image">
             <a ${state.inSpoiler ? 'class="spoiler-image"' : ""} href="wiki_images/${imageName}" target="_blank">
                 ${state.inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
-                <img src="wiki_images/${imageName}"/>
+                <img src="wiki_images/${imageName}" onerror="this.onerror=null; this.src='wiki_images/Image Not Found.png'"/>
             </a>
-            ${imageCaptionHtml.length > 0 ? `<div>${imageCaptionHtml}</div>` : ""}
+            ${imageCaptionHtml.length > 0 ? `${imageCaptionHtml}` : ""}
         </div>`,
     });
 
@@ -267,14 +278,12 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
 
 // Processes images tag like [[Images]]Image1.png|Image Caption|Image2.png|Image 2 caption[[/Images]]
 function processImagesTag(state: ParserState, result: RegExpExecArray) {
-    const entry = state.entry;
-
     // Find [[/Images]] closing tag first
     const imagesResult = /\[\[\/Images\]\]/.exec(state.initialContent.substring(state.index));
 
     if (imagesResult === null) {
         // If we can't find the end tag then just skip over the opening images tag
-        console.log(`Found images tag without close tag in ${entry.name}`);
+        recordError(state, `Found images tag without close tag`);
         state.index += result[0].length;
         return;
     }
@@ -286,14 +295,17 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
     const split = splitOutsideActions(state.initialContent.substring(startIndex, endIndex));
 
     if (split.length < 2) {
-        console.log(`Found images action without enough images in ${entry.name}`);
+        recordError(
+            state,
+            `Found images action without enough images/captions, there should always be an equal number of images and captions`,
+        );
         state.index = endIndex + imagesResult[0].length;
         return;
     }
 
     if (split.length % 2 !== 0) {
         // Just ignore the last image without a caption in this instance
-        console.log(`Found images action without equal number of links/captions in ${entry.name}`);
+        recordError(state, `Found images action without equal number of links/captions`);
     }
 
     let imagesContent = `<div class="wiki-inline-images">`;
@@ -306,6 +318,7 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
         const tempState: ParserState = {
             allEntries: state.allEntries,
             entry: state.entry,
+            errors: state.errors,
             inSpoiler: state.inSpoiler,
             index: 0,
             initialContent: imageCaption,
@@ -321,7 +334,7 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
             <div>
                 <a ${state.inSpoiler ? 'class="spoiler-image"' : ""} href="wiki_images/${imageName}" target="_blank">
                 ${state.inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
-                    <img src="wiki_images/${imageName}"/>
+                    <img src="wiki_images/${imageName}" onerror="this.onerror=null; this.src='wiki_images/Image Not Found.png'"/>
                 </a>
             </div>
             ${imageCaptionHtml}
@@ -340,14 +353,12 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
 
 // Processes list tag like [[List]]Item 1|Item 2|Item 3[[/List]]
 function processListTag(state: ParserState, result: RegExpExecArray) {
-    const entry = state.entry;
-
     // Find [[/List]] closing tag first
     const listResult = /\[\[\/List\]\]/.exec(state.initialContent.substring(state.index));
 
     if (listResult === null) {
         // If we can't find the end tag then just skip over the opening tag
-        console.log(`Found list tag without close tag in ${entry.name}`);
+        recordError(state, `Found list tag without close tag`);
         state.index += result[0].length;
         return;
     }
@@ -356,8 +367,9 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
     if (result[2] === "Ordered") {
         listType = "ol";
     } else if (result[2] !== undefined && result[2] !== "Unordered") {
-        console.log(
-            `Found list with invalid type ${result[2]} in ${entry.name}, type should be "Ordered", "Unordered", or empty`,
+        recordError(
+            state,
+            `Found list with invalid type ${result[2]}, type should be "Ordered", "Unordered", or empty (defaults to Unordered)`,
         );
     }
 
@@ -373,6 +385,7 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
         const tempState: ParserState = {
             allEntries: state.allEntries,
             entry: state.entry,
+            errors: state.errors,
             inSpoiler: state.inSpoiler,
             index: 0,
             initialContent: listItem,
@@ -403,7 +416,6 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
 
 // Found a [[X]] link, make sure we can link properly
 function processLinkTag(state: ParserState, result: RegExpExecArray) {
-    const entry = state.entry;
     const split = result[1].split("|");
 
     const linkTarget = split[0];
@@ -412,7 +424,7 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
         linkText = split[1];
 
         if (split.length > 2) {
-            console.log(`Too many | in link in ${entry.name}`);
+            recordError(state, `Too many | in link`);
         }
     }
 
@@ -429,7 +441,7 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
         } else if (referenceEntry.type === "Part") {
             // Add part data content overlay
             const item = getItem(referenceEntry.name);
-            tooltipData = `data-html=true data-content='${createItemDataContent(
+            tooltipData = `data-html=true data-boundary="viewport" data-content='${createItemDataContent(
                 item,
             )}' data-toggle="popover" data-trigger="hover"`;
         }
@@ -439,7 +451,7 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
             html: `<a class="d-inline-block" href="#${linkTarget}" ${tooltipData}>${linkText}</a>`,
         });
     } else {
-        console.log(`Bad link to ${linkTarget} in ${entry.name}`);
+        recordError(state, `Bad link to page "${linkTarget}"`);
         state.output.push({
             groupType: "Grouped",
             html: linkTarget,
@@ -481,7 +493,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
         ) {
             if (state.inlineOnly) {
                 // If inline only don't allow separated content
-                console.log(`Found newline when only inline actions are allowed in ${entry.name}`);
+                recordError(state, `Found line break when only inline actions are allowed`);
             } else {
                 state.output.push({
                     groupType: "Grouped",
@@ -510,7 +522,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
 
                 return;
             } else {
-                console.log(`Found mismatched end tag ${result[1]} with expected tag ${endTag} in ${entry.name}`);
+                recordError(state, `Found mismatched end tag ${result[1]} with expected tag ${endTag}`);
                 state.index += result[0].length;
             }
         } else {
@@ -522,9 +534,10 @@ function processSection(state: ParserState, endTag: string | undefined) {
                 if (result[1] === "Spoiler" || result[1] === "B" || result[1] === "I") {
                     actionFunc!(state, result);
                 } else if (actionFunc !== undefined) {
-                    console.log(
+                    recordError(
+                        state,
                         `Found action tag ${result[1]} in scope where only links ` +
-                            `and inline tags like bold/italics are allowed in ${entry.name}`,
+                            `and inline tags like bold/italics are allowed`,
                     );
                 } else {
                     processLinkTag(state, result);
@@ -562,13 +575,11 @@ function processSection(state: ParserState, endTag: string | undefined) {
 
 // Process a spoiler tag like [[Spoiler:Spoiler]]Text[[/Spoiler]]
 function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
-    const entry = state.entry;
-
     // Search for the closing [[/Spoiler]] tag first
     const spoilerResult = /\[\[\/Spoiler\]\]/.exec(state.initialContent.substring(state.index));
     if (spoilerResult === null) {
         // If we can't find the end tag then just skip over the opening spoiler tag
-        console.log(`Found spoiler tag without close tag in ${entry.name}`);
+        recordError(state, `Found spoiler tag without close tag`);
         state.index += result[0].length;
         return;
     }
@@ -577,7 +588,7 @@ function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
     // If it's invalid canShowSpoiler will default to not showing
     // unless Redacted setting is active
     if (result[2] !== "Spoiler" && result[2] !== "Redacted") {
-        console.log(`Found unknown spoiler type ${result[2]} in ${entry.name}`);
+        recordError(state, `Found unknown spoiler type ${result[2]}`);
     }
 
     // Process the spoiler subsection independently
@@ -586,6 +597,7 @@ function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
     const tempState: ParserState = {
         allEntries: state.allEntries,
         entry: state.entry,
+        errors: state.errors,
         inSpoiler: inSpoiler,
         index: subSectionStart,
         initialContent: state.initialContent,
@@ -609,6 +621,22 @@ function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
     });
 }
 
+// Records a parse error in the error list
+function recordError(state: ParserState, error: string, position: number | undefined = undefined) {
+    if (position === undefined) {
+        position = state.index;
+    }
+
+    let contentString = state.initialContent.substring(position, 50).replace("\n", "\\n");
+    if (state.initialContent.length - position - 50 > 0) {
+        contentString += "...";
+    }
+
+    state.errors.push(`${error}: section starting with "${contentString}"`);
+}
+
+// Splits a string on |s but only outside of action tags
+// Allows for parsing things like [[Image]]Image.png|Caption [[Link|with link]][[/Image]]
 function splitOutsideActions(string: string) {
     let index = 0;
 
