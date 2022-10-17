@@ -446,9 +446,15 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
             )}' data-toggle="popover" data-trigger="hover"`;
         }
 
+        let html = `<a class="d-inline-block" href="#${linkTarget}" ${tooltipData}>${linkText}</a>`;
+        if (!canShowSpoiler(referenceEntry.spoiler, state.spoiler) && !state.inSpoiler) {
+            // Auto-spoiler links that aren't in a proper spoiler block
+            html = `<span class="spoiler-text spoiler-text-multiline">${html}</span>`;
+        }
+
         state.output.push({
             groupType: "Grouped",
-            html: `<a class="d-inline-block" href="#${linkTarget}" ${tooltipData}>${linkText}</a>`,
+            html: html,
         });
     } else {
         recordError(state, `Bad link to page "${linkTarget}" that doesn't exist`);
@@ -625,7 +631,7 @@ function recordError(state: ParserState, error: string, position: number | undef
         position = state.index;
     }
 
-    let contentString = state.initialContent.substring(position, 50).replace("\n", "\\n");
+    let contentString = state.initialContent.substring(position, position + 50).replace("\n", "\\n");
     if (state.initialContent.length - position - 50 > 0) {
         contentString += "...";
     }
