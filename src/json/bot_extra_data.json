@@ -374,6 +374,10 @@
                 "Description": "Hostile: Appear in a large group at random with a Demolisher ARC summoned to their location"
             },
             {
+                "Location": "Exiles",
+                "Description": "Friendly/Hostile: Disabled and initially friendly but will turn hostile if attacking the Exiles"
+            },
+            {
                 "Location": "Caves event",
                 "Description": "Hostile: Appear in a large group at an abandoned 0b10 outpost with accompanying announcement"
             },

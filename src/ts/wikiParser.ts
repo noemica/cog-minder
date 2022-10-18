@@ -434,14 +434,14 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
         if (referenceEntry.type === "Bot") {
             // Add bot data content overlay
             const bot = getBot(referenceEntry.name);
-            tooltipData = `data-html=true data-boundary="viewport" data-content='${createBotDataContent(
+            tooltipData = `data-html=true data-boundary="window" data-content='${createBotDataContent(
                 bot,
                 false,
             )}' data-toggle="popover" data-trigger="hover"`;
         } else if (referenceEntry.type === "Part") {
             // Add part data content overlay
             const item = getItem(referenceEntry.name);
-            tooltipData = `data-html=true data-boundary="viewport" data-content='${createItemDataContent(
+            tooltipData = `data-html=true data-boundary="window" data-content='${createItemDataContent(
                 item,
             )}' data-toggle="popover" data-trigger="hover"`;
         }

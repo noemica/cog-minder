@@ -1174,7 +1174,7 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
         for (const specialBot of location.specialBots) {
             const extraAttributes = `data-html=true data-content='${createBotDataContent(
                 specialBot,
-            )}' data-toggle="popover" data-trigger="hover" data-boundary="viewport"`;
+            )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
 
             if (canShowSpoiler(specialBot.spoiler, spoilersState)) {
                 html += textLineLink(specialBot.name, `#${specialBot.name}`, undefined, extraAttributes);
@@ -1193,7 +1193,7 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
         for (const specialItem of location.specialItems) {
             const extraAttributes = `data-html=true data-content='${createItemDataContent(
                 specialItem,
-            )}' data-toggle="popover" data-trigger="hover" data-boundary="viewport"`;
+            )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
 
             if (canShowSpoiler(specialItem.spoiler, spoilersState)) {
                 html += textLineLink(specialItem.name, `#${specialItem.name}`, undefined, extraAttributes);
