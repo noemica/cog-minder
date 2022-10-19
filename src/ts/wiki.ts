@@ -112,6 +112,9 @@ jq(function ($) {
         });
         $("#homeButton").on("click", () => {
             ($("#homeButton") as any).tooltip("hide");
+
+            // Hide the edit pane too if visible
+            $("#editContent").addClass("not-visible");
         });
         $("#editButton").on("click", () => {
             // Show the editor pane
