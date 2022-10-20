@@ -43,6 +43,10 @@ body {
     width: 11ch;
 }
 
+a {
+    color: #00a0ff;
+}
+
 .header,
 .title {
     font-family: cog-mono;
