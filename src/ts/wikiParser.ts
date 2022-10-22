@@ -1,3 +1,4 @@
+import * as lore from "../json/lore.json";
 import { canShowSpoiler, getBot, createBotDataContent, getItem, createItemDataContent } from "./common";
 import { Spoiler } from "./commonTypes";
 import { WikiEntry } from "./wikiTypes";
@@ -150,6 +151,32 @@ function processBTag(state: ParserState, result: RegExpExecArray) {
     processSection(tempState, "/B");
     state.index = tempState.index;
     const boldedContent = `<b>${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</b>`;
+
+    state.output.push({ groupType: "Grouped", html: boldedContent });
+}
+
+// Process a GameText tag like [[GameText]]Text[[/GameText]]
+function processGameTextTag(state: ParserState, result: RegExpExecArray) {
+    // Process the header subsection independently
+    const subSectionStart = result.index + result[0].length;
+    const tempState: ParserState = {
+        allEntries: state.allEntries,
+        entry: state.entry,
+        errors: state.errors,
+        inSpoiler: state.inSpoiler,
+        index: subSectionStart,
+        initialContent: state.initialContent,
+        output: [],
+        inlineOnly: true,
+        spoiler: state.spoiler,
+    };
+    processSection(tempState, "/GameText");
+    state.index = tempState.index;
+    const boldedContent = `<span class="wiki-game-text">${outputGroupsToHtml(
+        tempState.output,
+        state.inSpoiler,
+        true,
+    )}</span>`;
 
     state.output.push({ groupType: "Grouped", html: boldedContent });
 }
@@ -467,13 +494,74 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
     state.index += result[0].length;
 }
 
+// Process an lore tag like [[Lore:Lore]]Lore Group|Entry name/number[[/Lore]]
+// See lore.json
+function processLoreTag(state: ParserState, result: RegExpExecArray) {
+    // Find [[/Lore]] closing tag first
+    const loreResult = /\[\[\/Lore\]\]/.exec(state.initialContent.substring(state.index));
+
+    if (loreResult === null) {
+        // If we can't find the end tag then just skip over the opening lore tag
+        recordError(state, `Found lore tag "${result[0]}" without close tag`);
+        state.index += result[0].length;
+        return;
+    }
+
+    // Split interior text by |
+    // Even numbered indices contain image filenames, odd numbers contain captions
+    const startIndex = state.index + result[0].length;
+    const endIndex = startIndex + loreResult.index - result[0].length;
+    const split = splitOutsideActions(state.initialContent.substring(startIndex, endIndex));
+    const groupName = split[0];
+    const entryName = split[1];
+
+    state.index = endIndex + loreResult[0].length;
+
+    // Make sure we have a group name and entry name
+    if (split.length !== 2) {
+        recordError(state, "Lore entry should have a group and entry name");
+        state.index += result[0].length;
+        return;
+    }
+
+    // Get group and entry
+    if (!Object.keys(lore).includes(groupName)) {
+        recordError(state, `Lore group name ${groupName} is not valid, see lore.json for valid groups`);
+        return;
+    }
+
+    const group = lore[groupName] as [];
+    const entry = group.find((obj) => obj["Name/Number"] === entryName);
+    if (entry === undefined) {
+        recordError(state, `Lore group name ${groupName} doesn't contain entry with name/number ${entryName}`);
+        return;
+    }
+
+    // Create the lore with an optional caption
+    state.output.push({ groupType: "Separator", html: undefined });
+    if (groupName === "0b10 Records") {
+        state.output.push({
+            groupType: "Grouped",
+            html: `<span class="wiki-game-text">&gt;Query(${entryName})</span>`,
+        });
+    }
+    state.output.push({ groupType: "Separator", html: undefined });
+    state.output.push({
+        groupType: "Grouped",
+        html: `<span class="wiki-game-text">${entry["Content"]}</span>`,
+    });
+    state.output.push({ groupType: "Separator", html: undefined });
+}
+
 const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => void> = new Map([
     ["B", processBTag],
+    ["GameText", processGameTextTag],
     ["Header", processHeaderTag],
     ["I", processITag],
     ["Image", processImageTag],
     ["Images", processImagesTag],
     ["List", processListTag],
+    ["Lore", processLoreTag],
     ["Spoiler", processSpoilerTag],
 ]);
 // Processes the current section of text in the parser state
@@ -535,7 +623,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
             if (state.inlineOnly) {
                 // In some sections only specific inline tags are allowed
                 // Check for a allowed tags first, then for any matched but forbidden tags
-                if (result[1] === "Spoiler" || result[1] === "B" || result[1] === "I") {
+                if (result[1] === "Spoiler" || result[1] === "B" || result[1] === "I" || result[1] === "GameText") {
                     actionFunc!(state, result);
                 } else if (actionFunc !== undefined) {
                     recordError(

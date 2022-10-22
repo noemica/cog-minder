@@ -891,10 +891,14 @@ a {
     margin-left: 1.5rem;
 }
 
+.spoiler-text,
+.spoiler-text * {
+    transition: .15s;
+}
+
 .spoiler-text {
     background-color: #7f7f7f;
     padding: 1px 3px 2px 3px;
-    transition: .15s;
 }
 
 .spoiler-text-margin {
@@ -1073,7 +1077,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
 }
 
 .wiki-edit-content > div > * {
@@ -1085,7 +1089,7 @@ a {
     resize: none;
     height: 400px;
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     background-color: #101010;
     color: #bfbfbf;
     border: 1px solid #008800;
@@ -1096,7 +1100,7 @@ a {
     flex-direction: column;
     font-family: sans-serif;
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
 }
 
 .wiki-edit-errors * {
@@ -1122,4 +1126,15 @@ a {
     background-color: #162416;
     border: 1px solid #006200;
     padding: 0.375rem;
+}
+
+.wiki-game-text {
+    font-family: smallcaps-mono;
+    color: #bfbfbf;
+    font-size: 0.85em;
+}
+
+.spoiler-text:not(:focus):not(:hover) > .wiki-game-text {
+    user-select: none;
+    color: transparent;
 }

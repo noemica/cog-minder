@@ -1,6 +1,6 @@
-import * as wiki from "../json/wiki.json";
 import * as items from "../json/items.json";
 import * as bots from "../json/bots.json";
+import * as wiki from "../json/wiki.json";
 import {
     createHeader,
     disableBotInfoInteraction,
@@ -149,6 +149,9 @@ jq(function ($) {
         $("#editItalicizeTextButton").on("click", () => {
             insertWrappedText("[[I]]", "[[/I]]");
         });
+        $("#editGameTextButton").on("click", () => {
+            insertWrappedText("[[GameText]]", "[[/GameText]]");
+        });
         $("#editSpoilerTextButton").on("click", () => {
             insertWrappedText("[[Spoiler:Spoiler]]", "[[/Spoiler]]");
         });
@@ -169,6 +172,9 @@ jq(function ($) {
         });
         $("#editImagesTextButton").on("click", () => {
             insertWrappedText("[[Images]]", "[[/Images]]");
+        });
+        $("#editLoreButton").on("click", () => {
+            insertWrappedText("[[Lore]]", "[[/Lore]]");
         });
         $("#editUnorderedListTextButton").on("click", () => {
             insertWrappedText("[[List]]", "[[/List]]");
@@ -210,7 +216,7 @@ jq(function ($) {
             // Copies the edited text to the clipboard
             editedCurrentPage = false;
             const text = $("#editTextArea").val() as string;
-            navigator.clipboard.writeText(text);
+            navigator.clipboard.writeText(text.replace(/\n/g, "\\n"));
             temporarilySetValue($("#copyEditTextButton"), "Copied", "Copy Text", 2000, true);
         });
         $(window).on("hashchange", () => {
