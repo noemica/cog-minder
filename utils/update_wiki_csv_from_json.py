@@ -18,18 +18,31 @@ with open(csv_path) as f:
         wiki_csv[row['Name']] = row
 
 # Update CSV from JSON
-for bot in wiki_json['Bots']:
-    bot_name = bot['Name']
-    if bot_name in wiki_csv:
-        wiki_csv[bot_name]['Page Type'] = 'Bot'
-        wiki_csv[bot_name]['Content'] = bot['Content']
+for bot_group in wiki_json['Bots']:
+    group_name = bot_group['Name']
+    if group_name in wiki_csv:
+        wiki_csv[group_name]['Page Type'] = 'Bot'
+        wiki_csv[group_name]['Content'] = bot_group['Content']
     else:
         new_bot = {
-            'Name': bot_name,
+            'Name': group_name,
             'Page Type': 'Bot',
-            'Content': bot['Content']
+            'Content': bot_group['Content']
         }
-        wiki_csv[bot_name] = new_bot
+        wiki_csv[group_name] = new_bot
+
+for bot_group in wiki_json['Bot Groups']:
+    group_name = bot_group['Name']
+    if group_name in wiki_csv:
+        wiki_csv[group_name]['Page Type'] = 'Bot Group'
+        wiki_csv[group_name]['Content'] = bot_group['Content']
+    else:
+        new_bot = {
+            'Name': group_name,
+            'Page Type': 'Bot Group',
+            'Content': bot_group['Content']
+        }
+        wiki_csv[group_name] = new_bot
 
 for part in wiki_json['Parts']:
     part_name = part['Name']

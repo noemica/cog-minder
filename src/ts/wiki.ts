@@ -8,6 +8,7 @@ import {
     getSpoilerState,
     refreshSelectpicker,
     registerDisableAutocomplete,
+    setActiveButtonGroupButton,
     setSpoilerState,
     temporarilySetValue,
 } from "./commonJquery";
@@ -276,6 +277,40 @@ jq(function ($) {
             });
         }
 
+        // Initialize bot groups
+        for (const botGroupEntry of wiki["Bot Groups"]) {
+            let spoiler: Spoiler = "None";
+            if (botGroupEntry.Spoiler === "Redacted") {
+                spoiler = "Redacted";
+            } else if (botGroupEntry.Spoiler === "Spoiler") {
+                spoiler = "Spoiler";
+            }
+
+            const botEntries: WikiEntry[] = [];
+            const entry: WikiEntry = {
+                alternativeNames: [],
+                content: botGroupEntry.Content ?? "",
+                name: botGroupEntry.Name,
+                spoiler: spoiler,
+                type: "Bot Group",
+                extraData: botEntries,
+            };
+            allEntries.set(entry.name, entry);
+
+            // Add all bots in group
+            for (const botName of botGroupEntry.Bots) {
+                const botEntry = allEntries.get(botName);
+                if (botEntry === undefined) {
+                    console.log(`Found bad bot name ${botName} in group ${botGroupEntry.Name}`);
+                    continue;
+                }
+
+                // Replace the regular bot entry with the group entry
+                allEntries.set(botName, entry);
+                botEntries.push(botEntry);
+            }
+        }
+
         // Initialize locations
         for (const locationEntry of wiki.Locations) {
             let spoiler: Spoiler = "None";
@@ -418,6 +453,10 @@ jq(function ($) {
                     updateBotContent(entry);
                     break;
 
+                case "Bot Group":
+                    updateBotGroupContent(entry);
+                    break;
+
                 case "Location":
                     updateLocationContent(entry);
                     break;
@@ -497,7 +536,7 @@ jq(function ($) {
             $("#editErrorsParentContainer").addClass("not-visible");
         }
 
-        return $(parseResult.html);
+        return parseResult.html;
     }
 
     // Sets the selected page
@@ -594,7 +633,7 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const content = parseEntryContent(entry, allEntries);
+        const content = $(parseEntryContent(entry, allEntries));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createBotDataContent(bot, true));
 
@@ -603,6 +642,87 @@ jq(function ($) {
         pageContent.append(infoboxColumn[0]);
         infoboxColumn.append(infoboxContent as any);
         pageContent.append(content as any);
+
+        // Bot parts have popovers, must hook them up here
+        enableBotInfoInteraction(pageContent);
+    }
+
+    // Updates the page content with the specified bot group
+    function updateBotGroupContent(entry: WikiEntry) {
+        const botEntries = entry.extraData as WikiEntry[];
+        const pageContent = $("#pageContent");
+
+        // Create HTML elements
+        const botsContent = $("<div></div>");
+        const commonContent = $(parseEntryContent(entry, allEntries));
+        const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
+        const botNameContainer = $(`<div class="btn-group btn-group-toggle" data-toggle="buttons"></div>`);
+        const infoboxContentContainer = $("<div></div>");
+
+        const pageSelect = $("#pageSelect");
+        const selectedValue = pageSelect.selectpicker("val") as any as string;
+        let botSelected = false;
+        let index = 0;
+        let selectedIndex = 0;
+
+        for (const botEntry of botEntries) {
+            // Add all of the bots in the group
+            const botIndex = index;
+            index += 1;
+
+            // Create HTML elements
+            const button = $(`<label class="btn smallcaps-font"><input type="radio">${botEntry.name}</label>`);
+            const botInfoboxContent = $(
+                `<div class="mt-2">${createBotDataContent(botEntry.extraData as Bot, true)}</div>`,
+            );
+            const botContent = $(`<div>${parseEntryContent(botEntry, allEntries)}</div>`);
+
+            // Determine if any particular bot is selected
+            if (selectedValue === botEntry.name) {
+                botSelected = true;
+                selectedIndex = botIndex;
+            } else {
+                botInfoboxContent.addClass("not-visible");
+                botContent.addClass("not-visible");
+            }
+
+            // Append to DOM
+            botsContent.append(botContent as any);
+            botNameContainer.append(button[0]);
+            infoboxContentContainer.append(botInfoboxContent as any);
+
+            // Set up switching code
+            button.on("click", () => {
+                infoboxContentContainer.children().addClass("not-visible");
+                botsContent.children().addClass("not-visible");
+                botContent.removeClass("not-visible");
+                botInfoboxContent.removeClass("not-visible");
+                setActiveButtonGroupButton(botNameContainer, botIndex);
+
+                // Update the selectpicker
+                skipSelectChange = true;
+                pageSelect.selectpicker("val", botEntry.name);
+                skipSelectChange = false;
+
+                history.replaceState(botEntry.name, "", `#${botEntry.name}`);
+            });
+        }
+
+        if (!botSelected) {
+            infoboxContentContainer.children().first().removeClass("not-visible");
+            botsContent.children().first().removeClass("not-visible");
+            selectedIndex = 0;
+        }
+
+        setActiveButtonGroupButton(botNameContainer, selectedIndex + 1);
+
+        // Append to DOM
+        // Append the infobox first which floats to the right
+        pageContent.append(infoboxColumn[0]);
+        infoboxColumn.append(botNameContainer as any);
+        infoboxColumn.append(infoboxContentContainer as any);
+        pageContent.append(commonContent as any);
+        pageContent.append(botsContent as any);
 
         // Bot parts have popovers, must hook them up here
         enableBotInfoInteraction(pageContent);
@@ -670,7 +790,7 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const content = parseEntryContent(entry, allEntries);
+        const content = $(parseEntryContent(entry, allEntries));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createLocationHtml(location, getSpoilerState()));
 
@@ -685,7 +805,7 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const content = parseEntryContent(entry, allEntries);
+        const content = $(parseEntryContent(entry, allEntries));
 
         // Append to DOM
         pageContent.append(content as any);
@@ -738,7 +858,7 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const content = parseEntryContent(entry, allEntries);
+        const content = $(parseEntryContent(entry, allEntries));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createItemDataContent(part));
 

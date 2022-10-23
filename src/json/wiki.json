@@ -945,6 +945,320 @@
    "Content": ""
   }
  ],
+ "Bot Groups": [
+  {
+    "Name": "Assembled",
+    "Bots": [
+      "Assembled (4)",
+      "Assembled (7)"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Behemoth",
+    "Bots": [
+      "B-75 Beast",
+      "B-86 Titan",
+      "B-90 Cyclops",
+      "B-99 Colossus"
+    ],
+    "Content": ""
+
+  },
+  {
+    "Name": "Brawler",
+    "Bots": [
+      "B-36 Bruiser",
+      "B-48 Gladiator",
+      "B-60 Warrior",
+      "B-74 Champion"
+    ],
+    "Content": ""
+
+  },
+  {
+    "Name": "Butcher",
+    "Bots": [
+      "Butcher (5)",
+      "Butcher (7)"
+    ],
+    "Content": ""
+
+  },
+  {
+    "Name": "Cutter",
+    "Bots": [
+      "C-17 Slicer",
+      "C-35 Carver",
+      "C-57 Dissector"
+    ],
+    "Content": ""
+
+  },
+  {
+    "Name": "Demolisher",
+    "Bots": [
+      "D-53 Grenadier",
+      "D-63 Destroyer",
+      "D-83 Annihilator"
+    ],
+    "Content": ""
+
+  },
+  {
+    "Name": "Grunt",
+    "Bots": [
+      "G-34 Mercenary",
+      "G-47 Trooper",
+      "G-50 Soldier",
+      "G-67 Veteran",
+      "G-73 Enforcer"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Guerrilla",
+    "Bots": [
+      "Guerrilla (5)",
+      "Guerrilla (7)"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Hauler",
+    "Bots": [
+      "A-02 Transporter",
+      "A-15 Conveyor",
+      "A-27 Freighter"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Heavy",
+    "Bots": [
+      "H-61 Shepherd",
+      "H-71 Marshal",
+      "H-81 Overseer"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Hunter",
+    "Bots": [
+      "H-55 Commando",
+      "H-66 Slayer",
+      "H-77 Assassin",
+      "H-88 Terminator"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Marauder",
+    "Bots": [
+      "Marauder (6)",
+      "Marauder (8)"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Martyr",
+    "Bots": [
+      "Martyr (5)",
+      "Martyr (7)"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Mechanic",
+    "Bots": [
+      "M-13 Machinist",
+      "M-28 Smith",
+      "M-36 Artificer"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Minesweeper",
+    "Bots": [
+      "M-14 Sweeper",
+      "M-22 Extractor",
+      "M-30 Cleanser"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Mutant",
+    "Bots": [
+      "Mutant (5)",
+      "Mutant (6)",
+      "Mutant (7)",
+      "Mutant (8)"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Operator",
+    "Bots": [
+      "O-16 Technician",
+      "O-24 Administrator",
+      "O-32 Director"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Programmer",
+    "Bots": [
+      "P-60 Hacker",
+      "P-70 Sage",
+      "P-80 Master"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Protector",
+    "Bots": [
+      "I-25 Savior",
+      "I-36 Angel",
+      "I-47 Archangel"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Recycler",
+    "Bots": [
+      "R-06 Scavenger",
+      "R-10 Processor"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Researcher",
+    "Bots": [
+      "C-55 Analyst",
+      "C-65 Expert"
+    ],
+    "Content": "",
+    "Spoiler": "Spoiler"
+  },
+  {
+    "Name": "Savage",
+    "Bots": [
+      "Savage (5)",
+      "Savage (7)"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Sentry",
+    "Bots": [
+      "Y-45 Defender",
+      "Y-54 Guardian",
+      "Y-64 Sentinel",
+      "Y-72 Warden"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Specialist",
+    "Bots": [
+      "X-57 Shotgunner",
+      "X-62 Marksman",
+      "X-67 Chaingunner",
+      "X-72 Disruptor",
+      "X-77 Beamer",
+      "X-82 Rainmaker",
+      "X-87 Electro"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Swarmer",
+    "Bots": [
+      "S-10 Pest",
+      "S-27 Virus",
+      "S-43 Plague"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Thug",
+    "Bots": [
+      "Thug (5)",
+      "Thug (7)"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Wasp",
+    "Bots": [
+      "Wasp (5)",
+      "Wasp (7)"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Watcher",
+    "Bots": [
+      "W-16 Scout",
+      "W-25 Informer",
+      "W-44 Eye"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Wizard",
+    "Bots": [
+      "Wizard (5)",
+      "Wizard (7)"
+    ],
+    "Content": ""
+  },
+  {
+    "Name": "Experimental",
+    "Bots": [
+      "Z-Experimental (8)",
+      "Z-Experimental (10)"
+    ],
+    "Content": "",
+    "Spoiler": "Spoiler"
+  },
+  {
+    "Name": "Z-Heavy",
+    "Bots": [
+      "Z-Heavy (5)",
+      "Z-Heavy (7)",
+      "Z-Heavy (9)"
+    ],
+    "Content": "",
+    "Spoiler": "Spoiler"
+  },
+  {
+    "Name": "Z-Light",
+    "Bots": [
+      "Z-Light (5)",
+      "Z-Light (7)",
+      "Z-Light (9)"
+    ],
+    "Content": "",
+    "Spoiler": "Spoiler"
+  },
+  {
+    "Name": "Z-Hero",
+    "Bots": [
+      "12-ASH",
+      "1C-UTU",
+      "7V-RTL",
+      "99-TNT",
+      "AD-0RF",
+      "CL-ANK",
+      "ME-RLN",
+      "NK-0LA",
+      "P1-3CE"
+    ],
+    "Content": "",
+    "Spoiler": "Spoiler"
+  }
+ ],
  "Parts": [
   {
    "Name": "01-MTF's Autohacker",

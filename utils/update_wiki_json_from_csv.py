@@ -22,6 +22,8 @@ with open(csv_path) as f:
 for csv_obj in wiki_csv.values():
     if csv_obj['Page Type'] == 'Bot':
         json_list = wiki_json['Bots']
+    if csv_obj['Page Type'] == 'Bot Group':
+        json_list = wiki_json['Bot Groups']
     elif csv_obj['Page Type'] == 'Part':
         json_list = wiki_json['Parts']
     elif csv_obj['Page Type'] == 'Location':

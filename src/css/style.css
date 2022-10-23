@@ -69,6 +69,10 @@ a {
     text-align: center;
 }
 
+.smallcaps-font {
+    font-family: smallcaps-mono;
+}
+
 /* Misc useful */
 .not-visible {
     display: none !important;
@@ -223,6 +227,10 @@ a {
 .btn[aria-expanded="true"] {
     border: 1px solid #00aa00;
     background-color: #002100;
+}
+
+.btn-group {
+    flex-wrap: wrap;
 }
 
 .simulate-btn,
