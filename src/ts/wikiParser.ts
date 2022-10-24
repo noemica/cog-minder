@@ -32,6 +32,7 @@ export function createContentHtml(
     entry: WikiEntry,
     allEntries: Map<string, WikiEntry>,
     spoilerState: Spoiler,
+    headerLink: boolean,
 ): { html: string; errors: string[] } {
     // Process each section into the same output groups
     const state: ParserState = {
@@ -58,7 +59,9 @@ export function createContentHtml(
     // Convert to HTML
     const outputHtml = outputGroupsToHtml(state.output, false);
     return {
-        html: `<h2 class="wiki-header">${headerText}</h2>${outputHtml}`,
+        html: `<h2 class="wiki-header">${
+            headerLink ? `<a href="#${entry.name}">${headerText}</a>` : headerText
+        }</h2>${outputHtml}`,
         errors: state.errors,
     };
 }

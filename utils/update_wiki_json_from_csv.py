@@ -5,7 +5,8 @@ import json
 from io import StringIO
 from os import path
 
-wiki_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'wiki.json')
+wiki_path = path.join(path.dirname(path.realpath(__file__)),
+                      '..', 'src', 'json', 'wiki.json')
 csv_path = path.join(path.dirname(path.realpath(__file__)), 'wiki.csv')
 
 # Open/parse files
@@ -22,16 +23,19 @@ with open(csv_path) as f:
 for csv_obj in wiki_csv.values():
     if csv_obj['Page Type'] == 'Bot':
         json_list = wiki_json['Bots']
-    if csv_obj['Page Type'] == 'Bot Group':
+    elif csv_obj['Page Type'] == 'Bot Group':
         json_list = wiki_json['Bot Groups']
     elif csv_obj['Page Type'] == 'Part':
         json_list = wiki_json['Parts']
     elif csv_obj['Page Type'] == 'Location':
         json_list = wiki_json['Locations']
+    elif csv_obj['Page Type'] == 'Part Group':
+        json_list = wiki_json['Part Groups']
     elif csv_obj['Page Type'] == 'Other':
         json_list = wiki_json['Other']
     else:
-        print('Found csv object without a valid type {}'.format(csv_obj['Name']))
+        print('Found csv object without a valid type {}'.format(
+            csv_obj['Name']))
         continue
 
     found = False
@@ -53,7 +57,8 @@ for csv_obj in wiki_csv.values():
     json_list.append({'Name': csv_obj['Name'], 'Content': csv_obj['Content']})
 
 # Sort all lists
-lists = [wiki_json['Bots'], wiki_json['Parts'], wiki_json['Locations'], wiki_json['Other']]
+lists = [wiki_json['Bots'], wiki_json['Bot Groups'], wiki_json['Parts'],
+         wiki_json['Part Groups'], wiki_json['Locations'], wiki_json['Other']]
 for l in lists:
     l.sort(key=lambda x: x['Name'])
 

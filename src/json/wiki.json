@@ -306,15 +306,15 @@
   },
   {
    "Name": "G-34 Mercenary",
-   "Content": ""
+   "Content": "Mercenary content"
   },
   {
    "Name": "G-47 Trooper",
-   "Content": ""
+   "Content": "Trooper content"
   },
   {
    "Name": "G-50 Soldier",
-   "Content": ""
+   "Content": "Soldier Content"
   },
   {
    "Name": "G-67 Veteran",
@@ -947,316 +947,311 @@
  ],
  "Bot Groups": [
   {
-    "Name": "Assembled",
-    "Bots": [
-      "Assembled (4)",
-      "Assembled (7)"
-    ],
-    "Content": ""
+   "Name": "Assembled",
+   "Bots": [
+    "Assembled (4)",
+    "Assembled (7)"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Behemoth",
-    "Bots": [
-      "B-75 Beast",
-      "B-86 Titan",
-      "B-90 Cyclops",
-      "B-99 Colossus"
-    ],
-    "Content": ""
-
+   "Name": "Behemoth",
+   "Bots": [
+    "B-75 Beast",
+    "B-86 Titan",
+    "B-90 Cyclops",
+    "B-99 Colossus"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Brawler",
-    "Bots": [
-      "B-36 Bruiser",
-      "B-48 Gladiator",
-      "B-60 Warrior",
-      "B-74 Champion"
-    ],
-    "Content": ""
-
+   "Name": "Brawler",
+   "Bots": [
+    "B-36 Bruiser",
+    "B-48 Gladiator",
+    "B-60 Warrior",
+    "B-74 Champion"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Butcher",
-    "Bots": [
-      "Butcher (5)",
-      "Butcher (7)"
-    ],
-    "Content": ""
-
+   "Name": "Butcher",
+   "Bots": [
+    "Butcher (5)",
+    "Butcher (7)"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Cutter",
-    "Bots": [
-      "C-17 Slicer",
-      "C-35 Carver",
-      "C-57 Dissector"
-    ],
-    "Content": ""
-
+   "Name": "Cutter",
+   "Bots": [
+    "C-17 Slicer",
+    "C-35 Carver",
+    "C-57 Dissector"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Demolisher",
-    "Bots": [
-      "D-53 Grenadier",
-      "D-63 Destroyer",
-      "D-83 Annihilator"
-    ],
-    "Content": ""
-
+   "Name": "Demolisher",
+   "Bots": [
+    "D-53 Grenadier",
+    "D-63 Destroyer",
+    "D-83 Annihilator"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Grunt",
-    "Bots": [
-      "G-34 Mercenary",
-      "G-47 Trooper",
-      "G-50 Soldier",
-      "G-67 Veteran",
-      "G-73 Enforcer"
-    ],
-    "Content": ""
+   "Name": "Experimental",
+   "Bots": [
+    "Z-Experimental (8)",
+    "Z-Experimental (10)"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
   },
   {
-    "Name": "Guerrilla",
-    "Bots": [
-      "Guerrilla (5)",
-      "Guerrilla (7)"
-    ],
-    "Content": ""
+   "Name": "Grunt",
+   "Bots": [
+    "G-34 Mercenary",
+    "G-47 Trooper",
+    "G-50 Soldier",
+    "G-67 Veteran",
+    "G-73 Enforcer"
+   ],
+   "Content": "Test Group"
   },
   {
-    "Name": "Hauler",
-    "Bots": [
-      "A-02 Transporter",
-      "A-15 Conveyor",
-      "A-27 Freighter"
-    ],
-    "Content": ""
+   "Name": "Guerrilla",
+   "Bots": [
+    "Guerrilla (5)",
+    "Guerrilla (7)"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Heavy",
-    "Bots": [
-      "H-61 Shepherd",
-      "H-71 Marshal",
-      "H-81 Overseer"
-    ],
-    "Content": ""
+   "Name": "Hauler",
+   "Bots": [
+    "A-02 Transporter",
+    "A-15 Conveyor",
+    "A-27 Freighter"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Hunter",
-    "Bots": [
-      "H-55 Commando",
-      "H-66 Slayer",
-      "H-77 Assassin",
-      "H-88 Terminator"
-    ],
-    "Content": ""
+   "Name": "Heavy",
+   "Bots": [
+    "H-61 Shepherd",
+    "H-71 Marshal",
+    "H-81 Overseer"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Marauder",
-    "Bots": [
-      "Marauder (6)",
-      "Marauder (8)"
-    ],
-    "Content": ""
+   "Name": "Hunter",
+   "Bots": [
+    "H-55 Commando",
+    "H-66 Slayer",
+    "H-77 Assassin",
+    "H-88 Terminator"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Martyr",
-    "Bots": [
-      "Martyr (5)",
-      "Martyr (7)"
-    ],
-    "Content": ""
+   "Name": "Marauder",
+   "Bots": [
+    "Marauder (6)",
+    "Marauder (8)"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Mechanic",
-    "Bots": [
-      "M-13 Machinist",
-      "M-28 Smith",
-      "M-36 Artificer"
-    ],
-    "Content": ""
+   "Name": "Martyr",
+   "Bots": [
+    "Martyr (5)",
+    "Martyr (7)"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Minesweeper",
-    "Bots": [
-      "M-14 Sweeper",
-      "M-22 Extractor",
-      "M-30 Cleanser"
-    ],
-    "Content": ""
+   "Name": "Mechanic",
+   "Bots": [
+    "M-13 Machinist",
+    "M-28 Smith",
+    "M-36 Artificer"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Mutant",
-    "Bots": [
-      "Mutant (5)",
-      "Mutant (6)",
-      "Mutant (7)",
-      "Mutant (8)"
-    ],
-    "Content": ""
+   "Name": "Minesweeper",
+   "Bots": [
+    "M-14 Sweeper",
+    "M-22 Extractor",
+    "M-30 Cleanser"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Operator",
-    "Bots": [
-      "O-16 Technician",
-      "O-24 Administrator",
-      "O-32 Director"
-    ],
-    "Content": ""
+   "Name": "Mutant",
+   "Bots": [
+    "Mutant (5)",
+    "Mutant (6)",
+    "Mutant (7)",
+    "Mutant (8)"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Programmer",
-    "Bots": [
-      "P-60 Hacker",
-      "P-70 Sage",
-      "P-80 Master"
-    ],
-    "Content": ""
+   "Name": "Operator",
+   "Bots": [
+    "O-16 Technician",
+    "O-24 Administrator",
+    "O-32 Director"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Protector",
-    "Bots": [
-      "I-25 Savior",
-      "I-36 Angel",
-      "I-47 Archangel"
-    ],
-    "Content": ""
+   "Name": "Programmer",
+   "Bots": [
+    "P-60 Hacker",
+    "P-70 Sage",
+    "P-80 Master"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Recycler",
-    "Bots": [
-      "R-06 Scavenger",
-      "R-10 Processor"
-    ],
-    "Content": ""
+   "Name": "Protector",
+   "Bots": [
+    "I-25 Savior",
+    "I-36 Angel",
+    "I-47 Archangel"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Researcher",
-    "Bots": [
-      "C-55 Analyst",
-      "C-65 Expert"
-    ],
-    "Content": "",
-    "Spoiler": "Spoiler"
+   "Name": "Recycler",
+   "Bots": [
+    "R-06 Scavenger",
+    "R-10 Processor"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Savage",
-    "Bots": [
-      "Savage (5)",
-      "Savage (7)"
-    ],
-    "Content": ""
+   "Name": "Researcher",
+   "Bots": [
+    "C-55 Analyst",
+    "C-65 Expert"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
   },
   {
-    "Name": "Sentry",
-    "Bots": [
-      "Y-45 Defender",
-      "Y-54 Guardian",
-      "Y-64 Sentinel",
-      "Y-72 Warden"
-    ],
-    "Content": ""
+   "Name": "Savage",
+   "Bots": [
+    "Savage (5)",
+    "Savage (7)"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Specialist",
-    "Bots": [
-      "X-57 Shotgunner",
-      "X-62 Marksman",
-      "X-67 Chaingunner",
-      "X-72 Disruptor",
-      "X-77 Beamer",
-      "X-82 Rainmaker",
-      "X-87 Electro"
-    ],
-    "Content": ""
+   "Name": "Sentry",
+   "Bots": [
+    "Y-45 Defender",
+    "Y-54 Guardian",
+    "Y-64 Sentinel",
+    "Y-72 Warden"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Swarmer",
-    "Bots": [
-      "S-10 Pest",
-      "S-27 Virus",
-      "S-43 Plague"
-    ],
-    "Content": ""
+   "Name": "Specialist",
+   "Bots": [
+    "X-57 Shotgunner",
+    "X-62 Marksman",
+    "X-67 Chaingunner",
+    "X-72 Disruptor",
+    "X-77 Beamer",
+    "X-82 Rainmaker",
+    "X-87 Electro"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Thug",
-    "Bots": [
-      "Thug (5)",
-      "Thug (7)"
-    ],
-    "Content": ""
+   "Name": "Swarmer",
+   "Bots": [
+    "S-10 Pest",
+    "S-27 Virus",
+    "S-43 Plague"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Wasp",
-    "Bots": [
-      "Wasp (5)",
-      "Wasp (7)"
-    ],
-    "Content": ""
+   "Name": "Thug",
+   "Bots": [
+    "Thug (5)",
+    "Thug (7)"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Watcher",
-    "Bots": [
-      "W-16 Scout",
-      "W-25 Informer",
-      "W-44 Eye"
-    ],
-    "Content": ""
+   "Name": "Wasp",
+   "Bots": [
+    "Wasp (5)",
+    "Wasp (7)"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Wizard",
-    "Bots": [
-      "Wizard (5)",
-      "Wizard (7)"
-    ],
-    "Content": ""
+   "Name": "Watcher",
+   "Bots": [
+    "W-16 Scout",
+    "W-25 Informer",
+    "W-44 Eye"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Experimental",
-    "Bots": [
-      "Z-Experimental (8)",
-      "Z-Experimental (10)"
-    ],
-    "Content": "",
-    "Spoiler": "Spoiler"
+   "Name": "Wizard",
+   "Bots": [
+    "Wizard (5)",
+    "Wizard (7)"
+   ],
+   "Content": ""
   },
   {
-    "Name": "Z-Heavy",
-    "Bots": [
-      "Z-Heavy (5)",
-      "Z-Heavy (7)",
-      "Z-Heavy (9)"
-    ],
-    "Content": "",
-    "Spoiler": "Spoiler"
+   "Name": "Z-Heavy",
+   "Bots": [
+    "Z-Heavy (5)",
+    "Z-Heavy (7)",
+    "Z-Heavy (9)"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
   },
   {
-    "Name": "Z-Light",
-    "Bots": [
-      "Z-Light (5)",
-      "Z-Light (7)",
-      "Z-Light (9)"
-    ],
-    "Content": "",
-    "Spoiler": "Spoiler"
+   "Name": "Z-Hero",
+   "Bots": [
+    "12-ASH",
+    "1C-UTU",
+    "7V-RTL",
+    "99-TNT",
+    "AD-0RF",
+    "CL-ANK",
+    "ME-RLN",
+    "NK-0LA",
+    "P1-3CE"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
   },
   {
-    "Name": "Z-Hero",
-    "Bots": [
-      "12-ASH",
-      "1C-UTU",
-      "7V-RTL",
-      "99-TNT",
-      "AD-0RF",
-      "CL-ANK",
-      "ME-RLN",
-      "NK-0LA",
-      "P1-3CE"
-    ],
-    "Content": "",
-    "Spoiler": "Spoiler"
+   "Name": "Z-Light",
+   "Bots": [
+    "Z-Light (5)",
+    "Z-Light (7)",
+    "Z-Light (9)"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
   }
  ],
  "Parts": [
@@ -5433,6 +5428,1354 @@
    "Content": ""
   }
  ],
+ "Part Groups": [
+  {
+   "Name": "0b10 Decoder Chips",
+   "Parts": [
+    "0b10 Decoder Chip [Generic]",
+    "0b10 Decoder Chip [Looter]",
+    "0b10 Decoder Chip [Scout]",
+    "0b10 Decoder Chip [Skirmisher]"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Actuator Arrays",
+   "Parts": [
+    "Actuator Array",
+    "Imp. Actuator Array",
+    "Adv. Actuator Array",
+    "Exp. Actuator Array"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Actuators",
+   "Parts": [
+    "Microactuators",
+    "Nanoactuators",
+    "Femtoactuators"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Armor Integrity Analyzers",
+   "Parts": [
+    "Armor Integrity Analyzer",
+    "Imp. Armor Integrity Analyzer",
+    "Exp. Armor Integrity Analyzer"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Authchips",
+   "Parts": [
+    "Authchip [R/NC]",
+    "Authchip [R/Combat]",
+    "Authchip [Power]",
+    "Authchip [Propulsion]",
+    "Authchip [Device]",
+    "Authchip [Storage]",
+    "Authchip [Processor]",
+    "Authchip [Armor]",
+    "Authchip [Weapon]"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Ballistic Cannons",
+   "Parts": [
+    "Lgt. Cannon",
+    "Imp. Light Cannon",
+    "Battle Cannon",
+    "Assault Cannon",
+    "Hvy. Assault Cannon",
+    "Flak Cannon",
+    "Adv. Assault Cannon",
+    "Gauss Cannon",
+    "Slug Cannon",
+    "Mni. Assault Cannon",
+    "Magnetic Acceleration Cannon",
+    "Hvy. Flak Cannon",
+    "Bore Cannon",
+    "Antimatter Cannon",
+    "Mass Driver",
+    "Hvy. Mass Driver",
+    "Enh. Gauss Cannon",
+    "Hyp. Gauss Cannon",
+    "Tri-rail Accelerator",
+    "Hardcell Cannon",
+    "Hvy. Gauss Cannon",
+    "Hyp. Mass Driver",
+    "Hvy. Autocannon",
+    "Lgt. Antimatter Cannon",
+    "Linear Accelerator",
+    "Hvy. Linear Accelerator",
+    "Com. Mass Driver",
+    "Hvy. Hardcell Cannon",
+    "Com. Linear Accelerator",
+    "Hyp. Linear Accelerator",
+    "Hcl. Linear Accelerator",
+    "Graviton Cannon",
+    "Blast Cannon",
+    "P1-3CE's Gatling Flakker",
+    "AWS/Autocannon",
+    "Perforator",
+    "Omega Cannon"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Ballistic Guns",
+   "Parts": [
+    "Assault Rifle",
+    "Lgt. Assault Rifle",
+    "Hvy. Assault Rifle",
+    "Autogun",
+    "Shotgun",
+    "Battle Rifle",
+    "Imp. Assault Rifle",
+    "Minigun",
+    "Hpw. Shotgun",
+    "Barrage Gun",
+    "Enh. Autogun",
+    "Gauss Rifle",
+    "Flak Gun",
+    "Prc. Assault Rifle",
+    "Hvy. Battle Rifle",
+    "Mak. Shrapnel Gun",
+    "Coil Gun",
+    "Hyp. Gauss Rifle",
+    "Hvy. Machine Gun",
+    "Imp. Heavy Machine Gun",
+    "Com. Gauss Rifle",
+    "XL Autogun Subcomponent",
+    "KE Penetrator",
+    "Hyp. Coil Gun",
+    "Imp. KE Penetrator",
+    "Enh. Coil Gun",
+    "Railgun",
+    "Adv. KE Penetrator",
+    "Linked Autogun",
+    "AWS/Gauss",
+    "Hyp. Railgun",
+    "Helical Railgun",
+    "XL Autogun Array",
+    "12-ASH's Boomstick",
+    "8R-AWN's Boregun",
+    "Multirail",
+    "Hyp. Multirail",
+    "5H-AD0's Sniper Rifle",
+    "A3's Sniper Rifle"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Cloaking Devices",
+   "Parts": [
+    "Cloaking Device",
+    "Mak. Cloaking Device",
+    "Imp. Cloaking Device",
+    "Adv. Cloaking Device",
+    "Exp. Cloaking Device",
+    "Cloak of Protection",
+    "5H-AD0's Cloak"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Component Analysis Suites",
+   "Parts": [
+    "Component Analysis Suite",
+    "Imp. Component Analysis Suite",
+    "Adv. Component Analysis Suite"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Coolant Injectors",
+   "Parts": [
+    "Disposable Heat Sink",
+    "Coolant Injector",
+    "Imp. Coolant Injector",
+    "Adv. Coolant Injector",
+    "Exp. Coolant Injector"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Cooling Devices",
+   "Parts": [
+    "Heat Sink",
+    "Imp. Heat Sink",
+    "Adv. Heat Sink",
+    "Exp. Heat Sink",
+    "Cooling System",
+    "Imp. Cooling System",
+    "Adv. Cooling System",
+    "Exp. Cooling System",
+    "Asb. Nanovents",
+    "Coolant Network",
+    "2N-1CE's Frost Array"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Core Analyzers",
+   "Parts": [
+    "Core Analyzer",
+    "Exp. Core Analyzer"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Core Shieldings",
+   "Parts": [
+    "Core Shielding",
+    "Imp. Core Shielding",
+    "Exp. Core Shielding"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Cryofiber Webs",
+   "Parts": [
+    "Cryofiber Web",
+    "Imp. Cryofiber Web",
+    "Adv. Cryofiber Web"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Datajacks",
+   "Parts": [
+    "Datajack",
+    "Imp. Datajack",
+    "Adv. Datajack",
+    "Remote Datajack",
+    "Imp. Remote Datajack",
+    "Adv. Remote Datajack",
+    "Exp. Remote Datajack",
+    "ME-RLN's Wand",
+    "Gui. Remote Datajack"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Drone Bays",
+   "Parts": [
+    "Drone Bay",
+    "Mni. Drone Bay",
+    "Adv. Drone Bay",
+    "Mapping Drone Bay",
+    "Z-Drone Bay",
+    "Bomb Drone Bay",
+    "Combat Drone Bay",
+    "Decoy Drone Bay",
+    "Splice Drone Bay",
+    "Thief Drone Bay",
+    "Assault Drone Bay",
+    "Sensor Drone Bay",
+    "Stealth Drone Bay",
+    "Supersonic Drone Bay",
+    "Swarm Drone Bay",
+    "Hacking Drone Bay",
+    "Minesniffer Drone Bay",
+    "Wardrone Bay"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Dynamic Insulation Systems",
+   "Parts": [
+    "Dynamic Insulation System",
+    "Imp. Dynamic Insulation System",
+    "Adv. Dynamic Insulation System"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "ECM Suites",
+   "Parts": [
+    "ECM Suite",
+    "Adv. ECM Suite",
+    "Mak. ECM Suite",
+    "Exp. ECM Suite"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Energy Cannons",
+   "Parts": [
+    "Lgt. EM Pulse Cannon",
+    "EM Pulse Cannon",
+    "Imp. EM Pulse Cannon",
+    "Proton Cannon",
+    "Lrn. Proton Cannon",
+    "Disruptor Cannon",
+    "Hvy. Proton Cannon",
+    "HERF Cannon",
+    "Hvy. Disruptor Cannon",
+    "Cld. Proton Cannon",
+    "Proton Burst Cannon",
+    "Com. HERF Cannon",
+    "Latent Energy Streamer",
+    "NK-0LA's Tesla Doomcannon",
+    "EMDS",
+    "Hpw. Disruptor Cannon",
+    "Beam Cannon",
+    "Particle Cannon",
+    "Adv. Beam Cannon",
+    "Hvy. Particle Cannon",
+    "Ion Cannon",
+    "Plasma Cannon",
+    "Hvy. Ion Cannon",
+    "Cld. Particle Cannon",
+    "Phase Cannon",
+    "Hvy. Plasma Cannon",
+    "Cld. Plasma Cannon",
+    "Com. Ion Cannon",
+    "Ion Burst Cannon",
+    "Adv. Plasma Cannon",
+    "Hvy. Phase Cannon",
+    "Neutron Cannon",
+    "Matter Neutralizer",
+    "Hvy. Neutron Cannon",
+    "Lrn. Phase Cannon",
+    "Cld. Phase Cannon",
+    "Vortex Cannon",
+    "Gui. Plasma Cannon",
+    "Nova Cannon",
+    "Imp. Matter Neutralizer",
+    "Vortex Driver",
+    "Zio. Alpha Cannon",
+    "Asb. Focal Cannon",
+    "Exp. Thermic Cannon",
+    "Enh. Nova Cannon",
+    "Firepult",
+    "YOLO Cannon",
+    "Potential Cannon",
+    "Warp Cannon",
+    "Cld. Nova Cannon",
+    "Null Cannon",
+    "Imp. Potential Cannon",
+    "Disintegrator",
+    "Core Cannon",
+    "Sigix Shearcannon",
+    "Drained L-Cannon",
+    "L-Cannon",
+    "Zio. Alpha Cannon Mk. II",
+    "BFG-9k Vortex Edition"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Energy Filters",
+   "Parts": [
+    "Energy Filter",
+    "Prc. Energy Filter"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Energy Guns",
+   "Parts": [
+    "EM Pulse Gun",
+    "Hvy. EM Pulse Gun",
+    "EM Shotgun",
+    "Imp. EM Shotgun",
+    "Shock Rifle",
+    "Riot Gun",
+    "Hvy. EM Shotgun",
+    "Lightning Gun",
+    "Hvy. Riot Gun",
+    "Arc Projector",
+    "Prc. Shock Rifle",
+    "Hpw. Shock Rifle",
+    "Arc Thrower",
+    "Imp. Lightning Gun",
+    "Tesla Rifle",
+    "Imp. Arc Projector",
+    "Hvy. Tesla Rifle",
+    "Hyp. EM Gauss Rifle",
+    "Imp. Arc Thrower",
+    "01-MTF's Shockpuncher",
+    "Gamma Rifle",
+    "Tachyon Dispersion Ray",
+    "Immobilizer",
+    "Modified EM Gauss Rifle",
+    "AWS/EX-DEC",
+    "Enh. Gamma Rifle",
+    "Med. Laser",
+    "Sml. Laser",
+    "Backup Laser I",
+    "Beam Rifle",
+    "Particle Gun",
+    "Spread Laser",
+    "Imp. Medium Laser",
+    "Field Laser",
+    "Pulse Rifle",
+    "Backup Laser III",
+    "Hvy. Particle Gun",
+    "Prc. Beam Rifle",
+    "Adv. Beam Rifle",
+    "Hvy. Laser",
+    "Gatling Laser",
+    "Cld. Pulse Rifle",
+    "Hpw. Field Laser",
+    "Imp. Spread Laser",
+    "Mak. Laser",
+    "Plasma Rifle",
+    "Thermic Laser",
+    "Beamcaster",
+    "Force Rifle",
+    "Imp. Heavy Laser",
+    "Storm Laser",
+    "Zio. Laser-S",
+    "Wave Gun",
+    "Variable Charge Gun",
+    "Hvy. Beamcaster",
+    "Cld. Plasma Rifle",
+    "Enh. Force Rifle",
+    "Hvy. Gatling Laser",
+    "Zio. Phaser-S",
+    "Phase Gun",
+    "Dispersion Rifle",
+    "Backup Laser VII",
+    "Plasma Storm",
+    "Adv. Plasma Rifle",
+    "Hvy. Wave Gun",
+    "Adv. Variable Charge Gun",
+    "Cld. Phase Gun",
+    "Lrn. Gatling Laser",
+    "Warp Gun",
+    "Vortex Rifle",
+    "Zio. Laser-M",
+    "AWS/Thermal",
+    "PD Laser",
+    "Quantum Rifle",
+    "Prc. Phase Gun",
+    "Hvy. Dispersion Rifle",
+    "Vortex Shotgun",
+    "Vortex Rail",
+    "Zio. Phaser-M",
+    "Enh. Quantum Rifle",
+    "Zio. Laser-H",
+    "Hvy. Quantum Rifle",
+    "Zio. Phaser-H",
+    "Gatling Beam",
+    "Sigix Sheargun",
+    "Modified Sigix Sheargun"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Energy Wells",
+   "Parts": [
+    "Sml. Battery",
+    "Med. Battery",
+    "Lrg. Battery",
+    "Hcp. Battery",
+    "Com. Battery",
+    "Energy Well",
+    "Imp. Energy Well",
+    "Adv. Energy Well",
+    "Exp. Energy Well",
+    "Zio. Biocell",
+    "Zio. Biocell Array",
+    "Asb. Biocell Array",
+    "Superbattery"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Engines",
+   "Parts": [
+    "Ion Engine",
+    "Lgt. Ion Engine",
+    "Backup Power I",
+    "Imp. Ion Engine",
+    "Rnf. Ion Engine",
+    "Hvy. Ion Engine",
+    "Cld. Ion Engine",
+    "Deuterium Engine",
+    "Lgt. Deuterium Engine",
+    "Backup Power III",
+    "Imp. Deuterium Engine",
+    "Rnf. Deuterium Engine",
+    "Hyb. Deuterium Engine",
+    "Hvy. Deuterium Engine",
+    "Cld. Deuterium Engine",
+    "Mak. Power Source",
+    "Angular Momentum Engine",
+    "Lgt. Angular Momentum Engine",
+    "F-cell Engine"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Field Recycling Units",
+   "Parts": [
+    "Field Recycling Unit",
+    "Imp. Field Recycling Unit",
+    "Adv. Field Recycling Unit",
+    "Exp. Field Recycling Unit"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Flight Units",
+   "Parts": [
+    "Flight Unit",
+    "VTOL Module",
+    "Imp. Flight Unit",
+    "Cesium-ion Thruster",
+    "Surge Thruster",
+    "Imp. VTOL Module",
+    "Xenon Bombardment Thruster",
+    "Imp. Cesium-ion Thruster",
+    "Cld. VTOL Module",
+    "Mak. Flight Unit",
+    "Nuclear Pulse Thruster",
+    "Imp. Surge Thruster",
+    "Cld. Cesium-ion Thruster",
+    "Biomechanical Wings",
+    "Field Propulsion Drive",
+    "Cld. Nuclear Pulse Thruster",
+    "Exp. Cesium-ion Thruster",
+    "Nuclear Pulse Array",
+    "Impulse Thruster",
+    "Adv. Surge Thruster",
+    "Cld. Field Propulsion Drive",
+    "Field Propulsion Array",
+    "Diametric Drive",
+    "Flying Fortress v7",
+    "Q-thruster",
+    "Electron Diverter",
+    "Imp. Diametric Drive",
+    "Cld. Impulse Thruster",
+    "Impulse Thruster Array",
+    "Imp. Q-thruster",
+    "Cld. Q-thruster",
+    "Exp. Q-thruster"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Force Boosters",
+   "Parts": [
+    "Force Booster",
+    "Imp. Force Booster",
+    "Adv. Force Booster"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Hackware",
+   "Parts": [
+    "EX Chip 1",
+    "Hacking Suite",
+    "Mak. Hacking Suite",
+    "Imp. Hacking Suite",
+    "Adv. Hacking Suite",
+    "Exp. Hacking Suite",
+    "System Mapper",
+    "Deep Network Scanner",
+    "Architect God Chip A",
+    "EX Chip 2",
+    "System Shield",
+    "Mak. System Shield",
+    "Imp. System Shield",
+    "Adv. System Shield",
+    "Exp. System Shield",
+    "Ghost Barrier",
+    "Quantum Router",
+    "Architect God Chip D"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Hardlight Generators",
+   "Parts": [
+    "Hardlight Generator",
+    "Imp. Hardlight Generator",
+    "Adv. Hardlight Generator",
+    "Exp. Hardlight Generator"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Hover Units",
+   "Parts": [
+    "Hover Unit",
+    "Backup Propulsion I",
+    "Imp. Hover Unit",
+    "Airjet",
+    "Aerolev Unit",
+    "Backup Propulsion III",
+    "Gravmag System",
+    "Imp. Airjet",
+    "Cld. Airjet",
+    "Imp. Gravmag System",
+    "Cld. Aerolev Unit",
+    "Cmb. Airjet",
+    "Gravmag Array",
+    "Mak. Hover Unit",
+    "Zio. Glidesys I",
+    "Antigrav System",
+    "Gyrokinetic Inverter",
+    "Linear Gravjet",
+    "Cld. Gravmag System",
+    "Cmb. Gravmag System",
+    "Imp. Antigrav System",
+    "Imp. Gyrokinetic Inverter",
+    "Imp. Linear Gravjet",
+    "Backup Propulsion VII",
+    "Zio. Glidesys II",
+    "Cld. Antigrav System",
+    "Cmb. Antigrav System",
+    "Antigrav Array",
+    "Exp. Gyrokinetic Inverter",
+    "Cld. Linear Gravjet",
+    "Cmb. Linear Gravjet"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Impact Weapons",
+   "Parts": [
+    "Hammer",
+    "Mace",
+    "Flail",
+    "Maul",
+    "Hvy. Hammer",
+    "Hvy. Mace",
+    "Hvy. Flail",
+    "Great Maul",
+    "Powered Hammer",
+    "Mak. Hammer",
+    "Power Maul",
+    "Impact Mace",
+    "Shock Maul",
+    "Thunder Hammer",
+    "Gravity Flail",
+    "CL-ANK's Mallet",
+    "Core Stripper"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Launcher Guidance Computers",
+   "Parts": [
+    "Launcher Guidance Computer",
+    "Imp. Launcher Guidance Computer",
+    "Adv. Launcher Guidance Computer"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Launchers",
+   "Parts": [
+    "EMP Blaster",
+    "Shock Bomb Launcher",
+    "Adv. EMP Blaster",
+    "Proton Missile Launcher",
+    "Imp. Proton Missile Launcher",
+    "Gui. EMP Blaster",
+    "Hvy. Shock Bomb Launcher",
+    "Tesla Bomb Launcher",
+    "Hvy. Proton Missile Launcher",
+    "Com. Tesla Bomb Launcher",
+    "Gamma Bomb Array",
+    "Enh. Gamma Bomb Array",
+    "Grenade Launcher",
+    "Rocket Launcher",
+    "Mni. Grenade Launcher",
+    "Imp. Grenade Launcher",
+    "Missile Launcher",
+    "Concussive RPG",
+    "YI-UF0's Doublenader",
+    "Hvy. Rocket Launcher",
+    "Hvy. Missile Launcher",
+    "Gui. Missile Launcher",
+    "Prc. Grenade Launcher",
+    "Rocket Array",
+    "Lrn. Missile Launcher",
+    "Imp. Concussive RPG",
+    "Prc. Rocket Launcher",
+    "Scatter Rocket Array",
+    "Smartbomb Launcher",
+    "Mni. Smartbomb Launcher",
+    "Tiamat Missile Launcher",
+    "Thermoblaster",
+    "Micro-nuke Launcher",
+    "Adv. Concussive RPG",
+    "Neutron Missile Launcher",
+    "Fusion Bomb Launcher",
+    "Hellfire Missile Launcher",
+    "Adv. Micro-nuke Launcher",
+    "Tactical Quantum Warhead",
+    "Vortex Catalyst Activator",
+    "Chain Missile Launcher",
+    "Ragnarok Missile Launcher",
+    "Point Singularity Launcher",
+    "Gui. Micro-nuke Launcher",
+    "99-TNT's Nukerbomber",
+    "Z-bomb Delivery System",
+    "Sigix Terminator",
+    "Supercharged Sigix Terminator"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Legs",
+   "Parts": [
+    "Aluminum Leg",
+    "Imp. Aluminum Leg",
+    "Carbon-fiber Leg",
+    "Titanium Leg",
+    "VSS Leg",
+    "Imp. Carbon-fiber Leg",
+    "Imp. Titanium Leg",
+    "Mak. Leg",
+    "Flexi-carbon Leg",
+    "Arm. Leg",
+    "Imp. VSS Leg",
+    "Zio. Composite Leg I",
+    "Enh. Flexi-carbon Leg",
+    "Enh. Armored Leg",
+    "Myomer Leg",
+    "Adv. VSS Leg",
+    "Adv. Myomer Leg",
+    "Exp. Flexi-carbon Leg",
+    "Zio. Composite Leg II",
+    "Biometal Leg",
+    "Enh. Biometal Leg",
+    "Exp. Myomer Leg",
+    "Asb. Alloy Leg",
+    "Centrium Leg",
+    "Hdn. Centrium Leg",
+    "Exp. Biometal Leg",
+    "Sigix Exoskeleton",
+    "Zio. Supercomposite Leg",
+    "Potential Leg",
+    "Myomer Exoskeleton"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Mass Support Devices",
+   "Parts": [
+    "Weight Redist. System",
+    "Adv. Weight Redist. System",
+    "Gravity Neutralizer",
+    "Adv. Gravity Neutralizer",
+    "Quantum Shading Machine",
+    "Adv. Quantum Shading Machine"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Matter Compressors",
+   "Parts": [
+    "Sml. Matter Pod",
+    "Med. Matter Pod",
+    "Lrg. Matter Pod",
+    "Hcp. Matter Pod",
+    "Com. Matter Pod",
+    "Matter Compressor",
+    "Imp. Matter Compressor",
+    "Adv. Matter Compressor",
+    "Exp. Matter Compressor",
+    "YI-UF0's Bottomless Matter Pit"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Matter Filters",
+   "Parts": [
+    "Matter Filter",
+    "Prc. Matter Filter"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Melee Analysis Suites",
+   "Parts": [
+    "Melee Analysis Suite",
+    "Imp. Melee Analysis Suite",
+    "Adv. Melee Analysis Suite",
+    "Exp. Melee Analysis Suite"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Particle Chargers",
+   "Parts": [
+    "Particle Charger",
+    "Imp. Particle Charger",
+    "Adv. Particle Charger",
+    "Particle Accelerator",
+    "Imp. Particle Accelerator",
+    "Adv. Particle Accelerator"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Piercing Weapons",
+   "Parts": [
+    "Spear",
+    "Mak. Spear",
+    "CR-A16's Pointy Stick",
+    "Hvy. Pick",
+    "Lance",
+    "Kinetic Spear",
+    "Force Lance",
+    "Plasma Lance",
+    "Enh. Force Lance",
+    "Vortex Lance",
+    "CR-A16's Behemoth Slayer"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Power Amplifiers",
+   "Parts": [
+    "Power Amplifier",
+    "Adv. Power Amplifier",
+    "Exp. Power Amplifier"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Power Cores",
+   "Parts": [
+    "Nuclear Core",
+    "Lgt. Nuclear Core",
+    "Enh. Nuclear Core",
+    "Mic. Nuclear Core",
+    "Fission Core",
+    "Lgt. Fission Core",
+    "Hyb. Fission Core",
+    "Fusion Compressor",
+    "Neutrino Core",
+    "Lgt. Neutrino Core",
+    "Rnf. Fission Core",
+    "Enh. Fission Core",
+    "Cld. Fission Core",
+    "Mic. Fission Core",
+    "Backup Power VII",
+    "Imp. Fusion Compressor",
+    "Mic. Neutrino Core"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Power Shieldings",
+   "Parts": [
+    "Power Shielding",
+    "Imp. Power Shielding",
+    "Exp. Power Shielding"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Powered Armors",
+   "Parts": [
+    "Powered Armor",
+    "Imp. Powered Armor",
+    "Adv. Powered Armor",
+    "Exp. Powered Armor",
+    "1C-UTU's Buckler"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Propulsion Shieldings",
+   "Parts": [
+    "Propulsion Shielding",
+    "Imp. Propulsion Shielding",
+    "Exp. Propulsion Shielding"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Protection",
+   "Parts": [
+    "Lgt. Armor Plating",
+    "Med. Armor Plating",
+    "Hvy. Armor Plating",
+    "Zio. Light Carapace",
+    "Zio. Heavy Carapace",
+    "Hrd. Light Armor Plating",
+    "Hrd. Medium Armor Plating",
+    "Hrd. Heavy Armor Plating",
+    "Imp. Light Armor Plating",
+    "Imp. Medium Armor Plating",
+    "Imp. Heavy Armor Plating",
+    "Lyr. Light Armor Plating",
+    "Mak. Armor Plating",
+    "Lyr. Medium Armor Plating",
+    "Lyr. Heavy Armor Plating",
+    "Centrium Light Armor Plating",
+    "Centrium Medium Armor Plating",
+    "Centrium Heavy Armor Plating",
+    "Centrium Linked Plating",
+    "Reactive Plating",
+    "Med. Reactive Plating",
+    "Mak. Kinetic Plating",
+    "Hvy. Reactive Plating",
+    "Reflective Plating",
+    "Med. Reflective Plating",
+    "Mak. Thermal Plating",
+    "Hvy. Reflective Plating",
+    "8R-AWN's Armor/TH",
+    "8R-AWN's Armor/EX",
+    "Insulated Plating",
+    "Med. Insulated Plating",
+    "Hvy. Insulated Plating",
+    "Damper Plating",
+    "Zio. Shade Carapace",
+    "Zio. Shade Armor",
+    "Asb. Alloy Armor",
+    "Mak. Ablative Armor",
+    "Active Cooling Armor",
+    "Lgt. Regenerative Plating",
+    "Med. Regenerative Plating",
+    "Hvy. Regenerative Plating",
+    "SHELL Armor"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Reaction Control Systems",
+   "Parts": [
+    "Reaction Control System",
+    "Imp. Reaction Control System",
+    "Adv. Reaction Control System",
+    "Exp. Reaction Control System"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Reactors",
+   "Parts": [
+    "Cold Fusion Reactor",
+    "Fusion Reactor",
+    "Antimatter Reactor",
+    "Lgt. Antimatter Reactor",
+    "Rnf. Antimatter Reactor",
+    "Hyb. Antimatter Reactor",
+    "Hvy. Antimatter Reactor",
+    "Mni. Fusion Reactor",
+    "Zio. Light DM Reactor",
+    "Zio. Heavy DM Reactor",
+    "Particle Reactor",
+    "Lgt. Particle Reactor",
+    "Mic. Antimatter Reactor",
+    "Com. Particle Reactor",
+    "Cld. Antimatter Reactor",
+    "Graviton Reactor",
+    "Asb. Flux Generator",
+    "Quantum Reactor",
+    "Lgt. Quantum Reactor",
+    "Rnf. Quantum Reactor",
+    "Imp. Quantum Reactor",
+    "Zero-point Reactor",
+    "Vortex Chain Reactor",
+    "Singularity Reactor",
+    "Matter Drive"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Recoil Nullifiers",
+   "Parts": [
+    "Recoil Nullifier",
+    "Recoil Stabilizer"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Relay Couplers",
+   "Parts": [
+    "Relay Coupler [NC]",
+    "Relay Coupler [C]",
+    "Relay Coupler [ARC]",
+    "Relay Coupler [Swarmer]",
+    "Relay Coupler [Cutter]",
+    "Relay Coupler [Grunt]",
+    "Relay Coupler [Brawler]",
+    "Relay Coupler [Duelist]",
+    "Relay Coupler [Sentry]",
+    "Relay Coupler [Demolisher]",
+    "Relay Coupler [Specialist]",
+    "Relay Coupler [Hunter]",
+    "Relay Coupler [Heavy]",
+    "Relay Coupler [Behemoth]",
+    "Relay Coupler [Programmer]"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Resistance Devices",
+   "Parts": [
+    "Focal Shield",
+    "Imp. Focal Shield",
+    "Adv. Focal Shield",
+    "Exp. Focal Shield",
+    "Thermal Shield",
+    "Imp. Thermal Shield",
+    "Adv. Thermal Shield",
+    "Exp. Thermal Shield",
+    "Thermal Barrier",
+    "Beam Splitter",
+    "Thermal Defense Suite",
+    "Imp. Thermal Defense Suite",
+    "Adv. Thermal Defense Suite",
+    "Exp. Thermal Defense Suite",
+    "Shock Absorption System",
+    "Imp. Shock Absorption System",
+    "Exp. Shock Absorption System",
+    "EM Disruption Field",
+    "Adv. EM Disruption Field",
+    "Exp. EM Disruption Field",
+    "ME-RLN's Chromatic Screen"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Salvage Targeting Computers",
+   "Parts": [
+    "Salvage Targeting Computer",
+    "Imp. Salvage Targeting Computer",
+    "Adv. Salvage Targeting Computer",
+    "Mak. Salvage Targeting Computer"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Sensor Arrays",
+   "Parts": [
+    "Sensor Array",
+    "Imp. Sensor Array",
+    "Adv. Sensor Array",
+    "Lrn. Sensor Array",
+    "Mak. Sensor Array",
+    "Exp. Sensor Array",
+    "Active Sensor Suite"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Shield Generator/Force Fields",
+   "Parts": [
+    "Shield Generator",
+    "Imp. Shield Generator",
+    "Adv. Shield Generator",
+    "Exp. Shield Generator",
+    "Remote Shield",
+    "Imp. Remote Shield",
+    "Adv. Remote Shield",
+    "Force Field",
+    "Imp. Force Field",
+    "Adv. Force Field",
+    "Exp. Force Field",
+    "Remote Force Field",
+    "Imp. Remote Force Field",
+    "Energy Mantle",
+    "Imp. Energy Mantle",
+    "AEGIS Remote Shield",
+    "7V-RTL's Ultimate Field",
+    "Vortex Field Projector"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Signal Interpreters",
+   "Parts": [
+    "Signal Interpreter",
+    "Imp. Signal Interpreter",
+    "Adv. Signal Interpreter",
+    "Exp. Signal Interpreter"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Slashing Weapons",
+   "Parts": [
+    "Mining Claw",
+    "Katana",
+    "Scythe",
+    "Axe",
+    "Blade Saw",
+    "Chainsword",
+    "Ripper",
+    "Mak. Axe",
+    "Mak. Sword",
+    "Great Axe",
+    "Greatsword",
+    "Power Sword",
+    "Falx",
+    "Carbide Saw",
+    "Segregator",
+    "Tearclaws",
+    "Phasing Sabre",
+    "Plasma Sword",
+    "Ionic Axe",
+    "Dual-blade Saw",
+    "Vibroblade",
+    "Molecular Scythe",
+    "Centrium Greatsword",
+    "Master Tearclaws",
+    "Longsword +1",
+    "Nanosword",
+    "Particle Cleaver",
+    "1C-UTU's Sword \"Lootmaker\"",
+    "1C-UTU's Sword \"Choppy\"",
+    "Sigix Broadsword"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Storage Units",
+   "Parts": [
+    "Sml. Storage Unit",
+    "Med. Storage Unit",
+    "Lrg. Storage Unit",
+    "Hcp. Storage Unit",
+    "Huge Storage Unit",
+    "Cargo Storage Unit",
+    "Humpback",
+    "Lightpack 2.0"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "System Guards",
+   "Parts": [
+    "System Guard",
+    "Imp. System Guard",
+    "Exp. System Guard"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "System Restoration Modules",
+   "Parts": [
+    "System Restoration Module",
+    "Imp. System Restoration Module",
+    "Mak. System Restoration Module",
+    "Adv. System Restoration Module",
+    "System Purifier"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Target Analyzers",
+   "Parts": [
+    "Target Analyzer",
+    "Imp. Target Analyzer",
+    "Adv. Target Analyzer",
+    "Exp. Target Analyzer"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Targeting Computers",
+   "Parts": [
+    "Targeting Computer",
+    "Imp. Targeting Computer",
+    "Adv. Targeting Computer",
+    "Exp. Targeting Computer"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Terrain Scan Processors",
+   "Parts": [
+    "Terrain Scan Processor",
+    "Imp. Terrain Scan Processor",
+    "Mak. Terrain Scan Processor",
+    "Adv. Terrain Scan Processor",
+    "Exp. Terrain Scan Processor",
+    "Surveybot 24 Chip"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Terrain Scanners",
+   "Parts": [
+    "Terrain Scanner",
+    "Imp. Terrain Scanner",
+    "Adv. Terrain Scanner",
+    "Mak. Terrain Scanner",
+    "Lrn. Terrain Scanner",
+    "Surveybot 24 Scanner",
+    "Exp. Terrain Scanner"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Thermal Generators",
+   "Parts": [
+    "Thermal Generator",
+    "Imp. Thermal Generator",
+    "Adv. Thermal Generator",
+    "Exp. Thermal Generator"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Tractor Beams",
+   "Parts": [
+    "Tractor Beam",
+    "Hpw. Tractor Beam",
+    "Lrn. Tractor Beam"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Transmission Jammers",
+   "Parts": [
+    "Transmission Jammer",
+    "Mak. Transmission Jammer",
+    "Imp. Transmission Jammer",
+    "Adv. Transmission Jammer",
+    "Exp. Transmission Jammer"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Trap Extractors",
+   "Parts": [
+    "Trap Extractor",
+    "Imp. Trap Extractor",
+    "Adv. Trap Extractor"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Trap Scanners",
+   "Parts": [
+    "Trap Scanner",
+    "Imp. Trap Scanner",
+    "Adv. Trap Scanner",
+    "Mak. Trap Scanner"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Traps",
+   "Parts": [
+    "Blade Trap",
+    "EMP Trap",
+    "Shock Trap",
+    "Explosive Trap",
+    "Stasis Trap",
+    "Proton Bomb Trap",
+    "Heavy Explosive Trap",
+    "Dirty Bomb Trap",
+    "EM Surge Trap",
+    "Fire Trap",
+    "Tesla Bomb Trap",
+    "Tiamat Bomb Trap",
+    "Fusion Bomb Trap",
+    "Segregator Trap",
+    "Gamma Bomb Trap",
+    "Hellfire Trap",
+    "Armageddon Trap"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Treads",
+   "Parts": [
+    "Lgt. Treads",
+    "Imp. Treads",
+    "Spk. Treads",
+    "Arm. Treads",
+    "Adv. Treads",
+    "Med. Treads",
+    "Imp. Medium Treads",
+    "Spk. Medium Treads",
+    "Arm. Medium Treads",
+    "Hvy. Treads",
+    "Adv. Medium Treads",
+    "Enh. Armored Medium Treads",
+    "Imp. Heavy Treads",
+    "Hvy. Siege Treads",
+    "Spk. Heavy Treads",
+    "Biometal Medium Treads",
+    "Arm. Heavy Treads",
+    "Adv. Heavy Treads",
+    "Imp. Heavy Siege Treads",
+    "Centrium Heavy Treads",
+    "Megatreads",
+    "Biometal Heavy Treads",
+    "Exp. Biometal Heavy Treads",
+    "Enh. Armored Heavy Treads",
+    "Adv. Heavy Siege Treads",
+    "Hdn. Centrium Heavy Treads",
+    "Exp. Biometal Medium Treads"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Utility Shieldings",
+   "Parts": [
+    "Utility Shielding",
+    "Imp. Utility Shielding",
+    "Exp. Utility Shielding"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Visual Processing Units",
+   "Parts": [
+    "Visual Processing Unit",
+    "Adv. Visual Processing Unit",
+    "Enh. Optical Array",
+    "Exp. Optical Array",
+    "Spectral Analyzer"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Weapon Cyclers",
+   "Parts": [
+    "Weapon Cycler",
+    "Imp. Weapon Cycler",
+    "Adv. Weapon Cycler",
+    "Exp. Weapon Cycler",
+    "Quantum Capacitor",
+    "Launcher Loader"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Weapon Shieldings",
+   "Parts": [
+    "Weapon Shielding",
+    "Imp. Weapon Shielding",
+    "Exp. Weapon Shielding",
+    "Zio. Weapon Casing"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Wheels",
+   "Parts": [
+    "Wheel",
+    "Com. Wheel",
+    "Arm. Wheel",
+    "Arm. Huge Wheel",
+    "Centrium Wheel",
+    "Hdn. Centrium Wheel"
+   ],
+   "Content": ""
+  }
+ ],
  "Locations": [
   {
    "Name": "Access",
@@ -5520,7 +6863,7 @@
     "Proximity Caves"
    ],
    "ImageName": "Caves.png",
-   "Content": "Caves is the most frequent [[Branch]] map throughout all of [[Factory]] depths. It is a non-[[0b10]]-controlled map where [[Derelict|Derelicts]] often roam free and hostile 0b10 squads patrol and can be taken out without fear of reinforcements. Non-patrolling 0b10 outposts guarded by a [[Sentry]] and dormant bots are common. Every depth has 2 guaranteed Caves exits and each Caves map is a part of a series of 3 maps in a row. Not counting event-based exits, all first Caves maps of each depth can only be exited by entering the second Caves map. Caves maps do not have very many regular parts on the ground, but piles of [[Scrap]] contain usable but partially damaged parts and [[Derelict Log|Derelict Logs]] can give unique intel about upcoming floors.\nThere are different names for the different types of Caves maps and they have slightly different characteristics. Lower Caves is the name given to the first 2 Caves maps on -7 and -6, while Caves maps on -5 and -4 are named Upper Caves. The third caves map is accessible only by exiting the depth-specific special branch at the left side of the second caves map and is called Proximity Caves, regardless of depth. Lower and Upper Caves are very similar in all but [[Robot Tier]], but Proximity Caves tends to be more densely populated with patrols.\nCaves are patrolled fairly lightly by hostile 0b10 bots compared to the main floors. [[Infowar]] utilities are a good option to avoid unnecessary encounters as many patrols can be avoided with a bit of patience. Caves have a unique mechanic where parts dropped from 0b10 bots will automatically self-destruct after a few turns. Looting must be done quickly or else the dropped parts will be lost forever. The only 2 ways around this mechanic are [[Self-destruct Interrupter|Self-destruct Interrupters]] and [[Electromagnetic Weapons]]. The interrupters will prevent the parts from frying while active and EM damage will interfere with the self-destruct mechanism. While EM will give [[Corrupted Parts]], it is far better to end up with corrupted parts than to end up with no parts at all.\nDue to the low rate of good parts spawning on the floor and the overall difficulty in looting hostile 0b10 bots, it is very easy for an unprepared build to fall apart in these maps. Bringing plenty of spares into Caves is highly recommended to avoid running out of essentials like propulsion, weapons, and armor. [[Launchers]] are a must here to handle ambushes of large numbers of 0b10 bots hiding in outposts. Launchers are also incredibly useful when entering a Caves map because the standard spawn protection that is present in 0b10 maps doesn't apply here. That means that one (or more) patrols can appear right in Cogmind's face on entering a map.\n[[Header:2]]Lore[[/Header]]\n[[Lore]]0b10 Records|Caves[[/Lore]]\n[[Header]]Navigation[[/Header]]\nCave maps all have a very similar overall layout. While the paths within the caves are unpredictable, these maps can typically be divided into 6 equal chunks. Top left, top middle, top right, bottom left, bottom middle, and bottom right. Cogmind will always spawn from the top right or bottom right chunks in Lower and Upper Caves or the top left or bottom left chunks in Proximity caves. One exit will always be in the chunk furthest from Cogmind. In the second Lower or Upper Caves map, the unique branch exit will be in that furthest chunk and the exit back to the main floor will always be on the same side. A good rule of thumb is that left is away from 0b10 while right is toward 0b10.\n[[Header]]Prefabs[[/Header]]\n[[Images]]Caves Assembled Tinkerer.png|A [[Tinkerer]] hiding behind some [[Assembled (4)|Assembled]]|Caves PL-HR7.png|Tinkerer PL-HR7 and [[Warlord Statue]] with a [[Heart of Steel]]|Caves MolDe.png|Tinkerer with a [[Molecular Deconstructor]] hiding behind a wall|Caves CE.png|Tinkerer with a [[Core Expander]] hidden behind a wall|Caves Broken Bots.png|Broken bots next to some damaged parts|Caves Hostile Mutant 1.png|Hostile [[Mutant]] guarding a stash of parts|Caves Hostile Mutant 2.png|Hostile Mutant guarding a collection of rewirable bots|Caves Hostile Thug.png|Hostile [[Thug]] guarding some disabled [[Savage|Savages]]|Caves Thief Base.png|[[Thief]] base with some presumably stolen parts|Caves Hauler Escort.png|[[Hauler]] escorted by some [[Grunt|Grunts]]|Caves Hunter Programmer Ambush.png|0b10 bots hiding in a wall to ambush Cogmind|Caves Unguarded Cache.png|Unguarded cache of parts out of sight|Caves Dirty Datajack Cache.png|Unguarded cache of [[Dirty Datajack|Dirty Datajacks]] out of sight|Caves Scrap Pile.png|Big cache of [[Scrap]]|Caves DNI.png|[[Dimensional Node Initializer]] hidden behind some sealed doors|Caves Outpost 1.png|0b10 outpost of dormant bots guarding an intel [[Terminal]]|Caves Outpost 2.png|0b10 outpost of [[Sentry]] and dormant bots guarding rewirable bots|Caves Outpost 3.png|Attacked 0b10 outpost|Caves Mega Outpost.png|Huge 0b10 outpost of Sentries and dormant bots|Caves Hostile Guards.png|0b10 guard bots|Caves Demolisher Base.png|Proximity Caves [[Demolisher]] testing base exit|Caves Huge Base.png|Huge 0b10 base exit|Caves Sapper Base.png|Friendly outpost of [[Sapper|Sappers]]|Caves Friendly Warlord Outpost.png|Friendly outpost of [[Warlord]]-aligned Derelict bots|Caves Friendly Derelicts.png|Friendly [[Derelict|Derelicts]] standing guard|Caves Reappropriated Outpost.png|\"Reappropriated\" Derelict outpost|Caves Attacked Warlord Outpost.png|Attacked Warlord Derelict outpost|Caves Invaded Warlord Outpost.png|0b10-controlled Warlord outpost|Caves Hostile Derelicts Outpost.png|Hostile Derelict outpost|Caves Graveyard.png|Graveyard of broken Derelict bots[[/Images]]\nCaves has one of the largest collections of prefabs of all the maps in the game There is a wide mix of good and bad prefabs. One of the strongest prefabs, the Tinkerer with a [[Core Expander]], is so strong that it alone can be a good reason to go into Caves. The most common encounters on this map tend to be the many different forms of 0b10 outposts. [[Transmission Jammer|Transmission Jammers]] are highly recommended to take bots in these outposts out one at a time without getting overwhelmed. In some hostile encounters, [[Sentry|Sentries]] can call for a reinforcement [[Assault Squad]]. In the first Caves map each depth only no reinforcements will come as there is no 0b10-controlled exit. Killing the Sentries as quickly as possible is highly recommended in all other cases. Fighting these outposts is a bad idea for an unprepared build, but larger outposts with Terminal intel are very vaulable. This intel can be the same as the intel found in [[Derelict Log|Derelict Logs]].\nFriendly Derelicts will not move from their guard position, but they will engage any 0b10 forces they see. Leading hostile squads into them can let them do the fighting for you. This is particularly easy to do for fast airborne builds who don't want to engage in combat and can use the Derelicts as a distraction. These Derelicts can also be safely salvaged for parts and will not retaliate.\n[[Header]]Events[[/Header]]\n[[Image]]Caves Huge Base Assault.png|Derelicts attacking a huge 0b10 base exit[[/Image]][[Image]]Caves Outpost Assembled Invasion.png|[[Assembled (4)|Assembled]] infesting an abandoned outpost[[/Image]]\n[[List]](++) [[Z-Hero]] Rescue: If Cogmind is low on core integrity and under fire, a Z-Hero can appear and fight off the attackers. The hero will also spawn an exit that leads to the next main floor.|(++) Annoying [[Tinkerer]] \"Woof\" hack: Only appears in Proximity Caves. A Tinkerer will appear and give a long-winded speech about a hack they have been working on. This is a manual datajack hack that will reprogram any [[Behemoth]]. Only works twice.|(+) [[Zion]] shortcut: A Derelict will appear and create an exit. This may skip a depth if [[Spoiler:Spoiler]]Zion[[/Spoiler]] is not on the same depth.|(+) [[Data Miner (Location)]] shortcut: A Derelict will appear and create an exit. This shortcut can not skip depths.|(+) Derelict assault on huge 0b10 exit base: Squads of Derelicts will appear and attack the exit|(-) [[Assembled (4)|Assembled]] Infestation: An abandoned outpost can become infested with Assembled that will roam the map and attack anything nearby.|[[Molecular Deconstructor]] reclamation: A mix of 0b10 bots will be dispatched after opening the containing vault|(--) [[Sapper]] base attack: Two [[Assault Squad|Assaults]] can be dispatched directly to a Sapper base[[/List]]",
+   "Content": "Caves is the most frequent [[Branch]] map throughout all of [[Factory]] depths. It is a non-[[0b10]]-controlled map where [[Derelict|Derelicts]] often roam free and hostile 0b10 squads patrol and can be taken out without fear of reinforcements. Non-patrolling 0b10 outposts guarded by a [[Sentry]] and dormant bots are common. Every depth has 2 guaranteed Caves exits and each Caves map is a part of a series of 3 maps in a row. Not counting event-based exits, all first Caves maps of each depth can only be exited by entering the second Caves map. Caves maps do not have very many regular parts on the ground, but piles of [[Scrap]] contain usable but partially damaged parts and [[Derelict Log|Derelict Logs]] can give unique intel about upcoming floors.\nThere are different names for the different types of Caves maps and they have slightly different characteristics. Lower Caves is the name given to the first 2 Caves maps on -7 and -6, while Caves maps on -5 and -4 are named Upper Caves. The third caves map is accessible only by exiting the depth-specific special branch at the left side of the second caves map and is called Proximity Caves, regardless of depth. Lower and Upper Caves are very similar in all but [[Robot Tier]], but Proximity Caves tends to be more densely populated with patrols.\nCaves are patrolled fairly lightly by hostile 0b10 bots compared to the main floors. [[Infowar]] utilities are a good option to avoid unnecessary encounters as many patrols can be avoided with a bit of patience. Caves have a unique mechanic where parts dropped from 0b10 bots will automatically self-destruct after a few turns. Looting must be done quickly or else the dropped parts will be lost forever. The only 2 ways around this mechanic are [[Self-destruct Interrupter|Self-destruct Interrupters]] and [[Electromagnetic Weapons]]. The interrupters will prevent the parts from frying while active and EM damage will interfere with the self-destruct mechanism. While EM will give [[Corrupted Parts]], it is far better to end up with corrupted parts than to end up with no parts at all.\nDue to the low rate of good parts spawning on the floor and the overall difficulty in looting hostile 0b10 bots, it is very easy for an unprepared build to fall apart in these maps. Bringing plenty of spares into Caves is highly recommended to avoid running out of essentials like propulsion, weapons, and armor. [[Launcher|Launchers]] are a must here to handle ambushes of large numbers of 0b10 bots hiding in outposts. Launchers are also incredibly useful when entering a Caves map because the standard spawn protection that is present in 0b10 maps doesn't apply here. That means that one (or more) patrols can appear right in Cogmind's face on entering a map.\n[[Header:2]]Lore[[/Header]]\n[[Lore]]0b10 Records|Caves[[/Lore]]\n[[Header]]Navigation[[/Header]]\nCave maps all have a very similar overall layout. While the paths within the caves are unpredictable, these maps can typically be divided into 6 equal chunks. Top left, top middle, top right, bottom left, bottom middle, and bottom right. Cogmind will always spawn from the top right or bottom right chunks in Lower and Upper Caves or the top left or bottom left chunks in Proximity caves. One exit will always be in the chunk furthest from Cogmind. In the second Lower or Upper Caves map, the unique branch exit will be in that furthest chunk and the exit back to the main floor will always be on the same side. A good rule of thumb is that left is away from 0b10 while right is toward 0b10.\n[[Header]]Prefabs[[/Header]]\n[[Images]]Caves Assembled Tinkerer.png|A [[Tinkerer]] hiding behind some [[Assembled (4)|Assembled]]|Caves PL-HR7.png|Tinkerer PL-HR7 and [[Warlord Statue]] with a [[Heart of Steel]]|Caves MolDe.png|Tinkerer with a [[Molecular Deconstructor]] hiding behind a wall|Caves CE.png|Tinkerer with a [[Core Expander]] hidden behind a wall|Caves Broken Bots.png|Broken bots next to some damaged parts|Caves Hostile Mutant 1.png|Hostile [[Mutant]] guarding a stash of parts|Caves Hostile Mutant 2.png|Hostile Mutant guarding a collection of rewirable bots|Caves Hostile Thug.png|Hostile [[Thug]] guarding some disabled [[Savage|Savages]]|Caves Thief Base.png|[[Thief]] base with some presumably stolen parts|Caves Hauler Escort.png|[[Hauler]] escorted by some [[Grunt|Grunts]]|Caves Hunter Programmer Ambush.png|0b10 bots hiding in a wall to ambush Cogmind|Caves Unguarded Cache.png|Unguarded cache of parts out of sight|Caves Dirty Datajack Cache.png|Unguarded cache of [[Dirty Datajack|Dirty Datajacks]] out of sight|Caves Scrap Pile.png|Big cache of [[Scrap]]|Caves DNI.png|[[Dimensional Node Initializer]] hidden behind some sealed doors|Caves Outpost 1.png|0b10 outpost of dormant bots guarding an intel [[Terminal]]|Caves Outpost 2.png|0b10 outpost of [[Sentry]] and dormant bots guarding rewirable bots|Caves Outpost 3.png|Attacked 0b10 outpost|Caves Mega Outpost.png|Huge 0b10 outpost of Sentries and dormant bots|Caves Hostile Guards.png|0b10 guard bots|Caves Demolisher Base.png|Proximity Caves [[Demolisher]] testing base exit|Caves Huge Base.png|Huge 0b10 base exit|Caves Sapper Base.png|Friendly outpost of [[Sapper|Sappers]]|Caves Friendly Warlord Outpost.png|Friendly outpost of [[Warlord]]-aligned Derelict bots|Caves Friendly Derelicts.png|Friendly [[Derelict|Derelicts]] standing guard|Caves Reappropriated Outpost.png|\"Reappropriated\" Derelict outpost|Caves Attacked Warlord Outpost.png|Attacked Warlord Derelict outpost|Caves Invaded Warlord Outpost.png|0b10-controlled Warlord outpost|Caves Hostile Derelicts Outpost.png|Hostile Derelict outpost|Caves Graveyard.png|Graveyard of broken Derelict bots[[/Images]]\nCaves has one of the largest collections of prefabs of all the maps in the game There is a wide mix of good and bad prefabs. One of the strongest prefabs, the Tinkerer with a [[Core Expander]], is so strong that it alone can be a good reason to go into Caves. The most common encounters on this map tend to be the many different forms of 0b10 outposts. [[Transmission Jammer|Transmission Jammers]] are highly recommended to take bots in these outposts out one at a time without getting overwhelmed. In some hostile encounters, [[Sentry|Sentries]] can call for a reinforcement [[Assault Squad]]. In the first Caves map each depth only no reinforcements will come as there is no 0b10-controlled exit. Killing the Sentries as quickly as possible is highly recommended in all other cases. Fighting these outposts is a bad idea for an unprepared build, but larger outposts with Terminal intel are very vaulable. This intel can be the same as the intel found in [[Derelict Log|Derelict Logs]].\nFriendly Derelicts will not move from their guard position, but they will engage any 0b10 forces they see. Leading hostile squads into them can let them do the fighting for you. This is particularly easy to do for fast airborne builds who don't want to engage in combat and can use the Derelicts as a distraction. These Derelicts can also be safely salvaged for parts and will not retaliate.\n[[Header]]Events[[/Header]]\n[[Image]]Caves Huge Base Assault.png|Derelicts attacking a huge 0b10 base exit[[/Image]][[Image]]Caves Outpost Assembled Invasion.png|[[Assembled (4)|Assembled]] infesting an abandoned outpost[[/Image]]\n[[List]](++) [[Z-Hero]] Rescue: If Cogmind is low on core integrity and under fire, a Z-Hero can appear and fight off the attackers. The hero will also spawn an exit that leads to the next main floor.|(++) Annoying [[Tinkerer]] \"Woof\" hack: Only appears in Proximity Caves. A Tinkerer will appear and give a long-winded speech about a hack they have been working on. This is a manual datajack hack that will reprogram any [[Behemoth]]. Only works twice.|(+) [[Zion]] shortcut: A Derelict will appear and create an exit. This may skip a depth if [[Spoiler:Spoiler]]Zion[[/Spoiler]] is not on the same depth.|(+) [[Data Miner (Location)]] shortcut: A Derelict will appear and create an exit. This shortcut can not skip depths.|(+) Derelict assault on huge 0b10 exit base: Squads of Derelicts will appear and attack the exit|(-) [[Assembled (4)|Assembled]] Infestation: An abandoned outpost can become infested with Assembled that will roam the map and attack anything nearby.|[[Molecular Deconstructor]] reclamation: A mix of 0b10 bots will be dispatched after opening the containing vault|(--) [[Sapper]] base attack: Two [[Assault Squad|Assaults]] can be dispatched directly to a Sapper base[[/List]]",
    "Exits": [
     "Factory",
     "Zion",
@@ -5589,6 +6932,21 @@
    "Branch": true
   },
   {
+   "Name": "DSF",
+   "ImageName": "DSF.png",
+   "Content": "",
+   "Exits": [
+    "Factory",
+    "Garrison",
+    "Research",
+    "Access"
+   ],
+   "MinDepth": -7,
+   "MaxDepth": -2,
+   "Branch": true,
+   "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Data Miner (Location)",
    "ImageName": "Data Miner.png",
    "Content": "",
@@ -5603,21 +6961,6 @@
    "MaxDepth": -6,
    "Branch": true,
    "Spoiler": "Spoiler"
-  },
-  {
-    "Name": "DSF",
-    "ImageName": "DSF.png",
-    "Content": "",
-    "Exits": [
-      "Factory",
-      "Garrison",
-      "Research",
-      "Access"
-    ],
-    "MinDepth": -7,
-    "MaxDepth": -2,
-    "Branch": true,
-    "Spoiler": "Spoiler"
   },
   {
    "Name": "Exiles",
@@ -5682,7 +7025,7 @@
   {
    "Name": "Factory",
    "ImageName": "Factory.png",
-   "Content": "Factory is the beginning of the midgame in Cogmind and is where the game really starts to open up. In stark contrast with earlier [[Materials]] maps, Factory start out huge with a ~200x200 tile map size. The rooms, the corridors, and the overall layout are all much wider and more open and connected than Materials. The patrols and guards are more spread out and stealth play with airborne propulsion and [[Infowar]] becomes a strong gameplay option.\n[[Alert]] starts to be more of a concern as the maps become bigger and harder to traverse. [[Hackware]] is useful to be able to successfully use Access hacks at terminals to locate exits. [[Signal Interpreter|Signal Interpreters]] will also be more useful at identifying exits as the exit types will be less predictable. [[Caves]] exits are available in every Factory map. They can be difficult if a player is unprepared, but they can provide many unique rewards and will typically result in a complete Alert purge by the time Cogmind makes it back to the next main floor.\nAs [[Extermination Squads]] become a regular occurrence, a large part of a build's effectiveness becomes how quickly Cogmind can kill Programmers. [[Corruption]] can build up very quickly if fighting multiple Programmers in open areas without a good way to kill them. Having strong thermal or kinetic weaponry is a good way to destroy them quickly. For lighter airborne builds, non-Impact melee weapons can work, although using hackware to recall Exterminations is also very effective. This tends to be more important in later depths as Exterminations will upgrade from a single [[P-60 Hacker]] to 1-2 [[P-70 Sage]] per squad.\nThere are many new mechanics introduced beginning in Factory floors:\n[[List]][[A-02 Transporter|Haulers]] begin to summon reinforcements when attacked if they contain [[Prototype Parts]]|[[Extermination Squad|Exterminations]] begin to appear regularly|[[Fabricator|Fabricators]] can show up on the map|[[B-75 Beast|Behemoths]] can show up on the maps|[[Cargo Convoy|Cargo Convoys]] can travel through the map|[[Chute Trap|Chute Traps]] can appear that will drop Cogmind into [[Wastes]]|[[DSF]] terminals will start to appear that can take you to DSF maps[[/List]]\n[[Header:2]]Lore[[/Header]]\n[[Lore]]0b10 Records|Factory[[/Lore]]\n[[Header]]Prefabs[[/Header]]\n[[Images]]Factory Main Exit.png|5-tile wide corridor dead ending into a Main Access|Factory Unknown Exit.png|Unknown exit, these types of intersection exits can lead to main or branch maps|Factory Locked Extension Exit.png|Locked exit into [[Extension]]|Factory Unlocked Extension Exit.png|Unlocked exit into [[Extension]]|Factory Dead End Armory Exit.png|Dead end exit into [[Armory]]|Factory Through Armory Exit.png|Corridor through exit into [[Armory]][[/Images]]\n[[Header:2]]Exits[[/Header]]\nThere are 4 types of main exits on Factory floors:\n[[List]]Main access exits: These always need to the next main floor, either Factory or [[Research]]. Sometimes these exits can be identifiable by a 5-tile wide corridor leading to a dead-end with the exit in the middle. All other types of exits that aren't a part of a prefab can be either a main or branch exit. There will always be 4 of these exits per Factory map.|[[Caves]] exit: These exits can never be identified purely by looks. Using a [[Signal Interpreter]] or access hack to identify exits are the main ways to do so. There will always be 2 of these exits per Factory map.|[[Spoiler:Spoiler]][[Extension]] exit: Extension can always be identified by a distinctive prefab where a large area is sealed off by orange Blast Doors. These doors can be open or locked. If locked, the nearby [[Terminal]] will have an Open hack available to open the doors. Otherwise, shooting the walls open with strong thermal weaponry, causing an engine detonation with an EM launcher, or strong melee attacks can dig through or around these doors. Factory maps at the same depth as Extension will have 2 Extension exits.[[/Spoiler]]|[[Spoiler:Spoiler]][[Armory]] exit: Armory can always be identified in Factory by a large 5 tile corridor leading into a 3-tile doorway. These exits will always be heavily guarded by a mix of [[Y-72 Warden|Sentries]] and [[G-67 Veteran|Grunts]] and have large stockpiles of weapons nearby. Factory maps at the same depth as Armory will have 1 of these types of exit.[[/Spoiler]][[/List]]\n[[Image]]Factory DSF Exit.png|Hacked open DSF exit[[/Image]]\nSeveral non-standard exits also begin to appear in Factory. [[Chute Trap|Chute Traps]] will throw Cogmind into [[Wastes]] which can end many good runs if unprepared. Using a [[Datajack]] on a [[K-01 Serf|Serf]] for the find_chute hack is very effective to either reveal traps to avoid or areas to head toward if planning to take on the [[C-40 Crusher|Crushers]] in combat. The other type of exit is a [[DSF]]. These exits can be hacked open at distinctive DSF terminals but will automatically lock upon being spotted by any hostile. Stealth or good luck is required to make it to these exits.",
+   "Content": "Factory is the beginning of the midgame in Cogmind and is where the game really starts to open up. In stark contrast with earlier [[Materials]] maps, Factory start out huge with a ~200x200 tile map size. The rooms, the corridors, and the overall layout are all much wider and more open and connected than Materials. The patrols and guards are more spread out and stealth play with airborne propulsion and [[Infowar]] becomes a strong gameplay option.\n[[Alert]] starts to be more of a concern as the maps become bigger and harder to traverse. [[Hackware]] is useful to be able to successfully use Access hacks at terminals to locate exits. [[Signal Interpreter|Signal Interpreters]] will also be more useful at identifying exits as the exit types will be less predictable. [[Caves]] exits are available in every Factory map. They can be difficult if a player is unprepared, but they can provide many unique rewards and will typically result in a complete Alert purge by the time Cogmind makes it back to the next main floor.\nAs [[Extermination Squads]] become a regular occurrence, a large part of a build's effectiveness becomes how quickly Cogmind can kill Programmers. [[Corruption]] can build up very quickly if fighting multiple Programmers in open areas without a good way to kill them. Having strong thermal or kinetic weaponry is a good way to destroy them quickly. For lighter airborne builds, non-Impact melee weapons can work, although using Hackware to recall Exterminations is also very effective. This tends to be more important in later depths as Exterminations will upgrade from a single [[P-60 Hacker]] to 1-2 [[P-70 Sage]] per squad.\nThere are many new mechanics introduced beginning in Factory floors:\n[[List]][[A-02 Transporter|Haulers]] begin to summon reinforcements when attacked if they contain [[Prototype Parts]]|[[Extermination Squad|Exterminations]] begin to appear regularly|[[Fabricator|Fabricators]] can show up on the map|[[B-75 Beast|Behemoths]] can show up on the maps|[[Cargo Convoy|Cargo Convoys]] can travel through the map|[[Chute Trap|Chute Traps]] can appear that will drop Cogmind into [[Wastes]]|[[DSF]] terminals will start to appear that can take you to DSF maps[[/List]]\n[[Header:2]]Lore[[/Header]]\n[[Lore]]0b10 Records|Factory[[/Lore]]\n[[Header]]Prefabs[[/Header]]\n[[Images]]Factory Main Exit.png|5-tile wide corridor dead ending into a Main Access|Factory Unknown Exit.png|Unknown exit, these types of intersection exits can lead to main or branch maps|Factory Locked Extension Exit.png|Locked exit into [[Extension]]|Factory Unlocked Extension Exit.png|Unlocked exit into [[Extension]]|Factory Dead End Armory Exit.png|Dead end exit into [[Armory]]|Factory Through Armory Exit.png|Corridor through exit into [[Armory]][[/Images]]\n[[Header:2]]Exits[[/Header]]\nThere are 4 types of main exits on Factory floors:\n[[List]]Main access exits: These always need to the next main floor, either Factory or [[Research]]. Sometimes these exits can be identifiable by a 5-tile wide corridor leading to a dead-end with the exit in the middle. All other types of exits that aren't a part of a prefab can be either a main or branch exit. There will always be 4 of these exits per Factory map.|[[Caves]] exit: These exits can never be identified purely by looks. Using a [[Signal Interpreter]] or access hack to identify exits are the main ways to do so. There will always be 2 of these exits per Factory map.|[[Spoiler:Spoiler]][[Extension]] exit: Extension can always be identified by a distinctive prefab where a large area is sealed off by orange Blast Doors. These doors can be open or locked. If locked, the nearby [[Terminal]] will have an Open hack available to open the doors. Otherwise, shooting the walls open with strong thermal weaponry, causing an engine detonation with an EM launcher, or strong melee attacks can dig through or around these doors. Factory maps at the same depth as Extension will have 2 Extension exits.[[/Spoiler]]|[[Spoiler:Spoiler]][[Armory]] exit: Armory can always be identified in Factory by a large 5 tile corridor leading into a 3-tile doorway. These exits will always be heavily guarded by a mix of [[Y-72 Warden|Sentries]] and [[G-67 Veteran|Grunts]] and have large stockpiles of weapons nearby. Factory maps at the same depth as Armory will have 1 of these types of exit.[[/Spoiler]][[/List]]\n[[Image]]Factory DSF Exit.png|Hacked open DSF exit[[/Image]]\nSeveral non-standard exits also begin to appear in Factory. [[Chute Trap|Chute Traps]] will throw Cogmind into [[Wastes]] which can end many good runs if unprepared. Using a [[Datajack]] on a [[K-01 Serf|Serf]] for the find_chute hack is very effective to either reveal traps to avoid or areas to head toward if planning to take on the [[C-40 Crusher|Crushers]] in combat. The other type of exit is a [[DSF]]. These exits can be hacked open at distinctive DSF terminals but will automatically lock upon being spotted by any hostile. Stealth or good luck is required to make it to these exits.",
    "Exits": [
     "DSF",
     "Garrison",
@@ -5696,25 +7039,25 @@
    "MaxDepth": -4
   },
   {
-    "Name": "Garrison",
-    "ImageName": "Garrison.png",
-    "Content": "",
-    "Exits": [
-      "Materials",
-      "Storage",
-      "Recycling",
-      "Factory",
-      "Extension",
-      "Armory",
-      "Research",
-      "Testing",
-      "Quarantine",
-      "Section 7",
-      "Access"
-    ],
-    "MinDepth": -9,
-    "MaxDepth": -1,
-    "Branch": true
+   "Name": "Garrison",
+   "ImageName": "Garrison.png",
+   "Content": "",
+   "Exits": [
+    "Materials",
+    "Storage",
+    "Recycling",
+    "Factory",
+    "Extension",
+    "Armory",
+    "Research",
+    "Testing",
+    "Quarantine",
+    "Section 7",
+    "Access"
+   ],
+   "MinDepth": -9,
+   "MaxDepth": -1,
+   "Branch": true
   },
   {
    "Name": "Hub_04(d)",
@@ -6022,17 +7365,6 @@
    "Spoiler": "Spoiler"
   },
   {
-    "Name": "Wastes",
-    "ImageName": "Wastes.png",
-    "Content": "",
-    "Exits": [
-      "Factory"
-    ],
-    "MinDepth": -7,
-    "MaxDepth": -4,
-    "Branch": true
-  },
-  {
    "Name": "Warlord (Location)",
    "ImageName": "Warlord.png",
    "Content": "",
@@ -6072,6 +7404,17 @@
    "MaxDepth": -4,
    "Branch": true,
    "Spoiler": "Spoiler"
+  },
+  {
+   "Name": "Wastes",
+   "ImageName": "Wastes.png",
+   "Content": "",
+   "Exits": [
+    "Factory"
+   ],
+   "MinDepth": -7,
+   "MaxDepth": -4,
+   "Branch": true
   },
   {
    "Name": "Zhirov (Location)",
@@ -6163,40 +7506,36 @@
    "Content": "Make a big mess of their home, and they make a big mess of ya"
   },
   {
-    "Name": "Assault Squad",
-    "Content": ""
+   "Name": "Assault Squad",
+   "Content": ""
   },
   {
-    "Name": "Authchip",
-    "Content": ""
+   "Name": "Branch",
+   "Content": ""
   },
   {
-    "Name": "Branch",
-    "Content": ""
+   "Name": "Cargo Convoy",
+   "Content": ""
   },
   {
-    "Name": "Cargo Convoy",
-    "Content": ""
+   "Name": "Chute Trap",
+   "Content": ""
   },
   {
-    "Name": "Chute Trap",
-    "Content": ""
+   "Name": "Corrupted Parts",
+   "Content": ""
   },
   {
-    "Name": "Corruption",
-    "Content": ""
+   "Name": "Corruption",
+   "Content": ""
   },
   {
-    "Name": "Corrupted Parts",
-    "Content": ""
+   "Name": "Derelict",
+   "Content": ""
   },
   {
-    "Name": "Derelict",
-    "Content": ""
-  },
-  {
-    "Name": "Electromagnetic Weapons",
-    "Content": ""
+   "Name": "Electromagnetic Weapons",
+   "Content": ""
   },
   {
    "Name": "Example",
@@ -6204,80 +7543,64 @@
    "Spoiler": "Spoiler"
   },
   {
-    "Name": "Extermination Squad",
-    "Content": ""
+   "Name": "Extermination Squad",
+   "Content": ""
   },
   {
-    "Name": "Fabricator",
-    "Content": ""
+   "Name": "Fabricator",
+   "Content": ""
   },
   {
-    "Name": "Farcom",
-    "Content": ""
+   "Name": "Farcom",
+   "Content": ""
   },
   {
-    "Name": "Garrison",
-    "Content": ""
+   "Name": "High Security",
+   "Content": ""
   },
   {
-    "Name": "Hackware",
-    "Content": ""
+   "Name": "Imprint",
+   "Content": ""
   },
   {
-    "Name": "High Security",
-    "Content": ""
+   "Name": "Infowar",
+   "Content": ""
   },
   {
-    "Name": "Imprint",
-    "Content": ""
+   "Name": "Investigation Squad",
+   "Content": ""
   },
   {
-    "Name": "Investigation Squad",
-    "Content": ""
-  },
-  {
-    "Name": "Infowar",
-    "Content": ""
-  },
-  {
-    "Name": "Launchers",
-    "Content": ""
-  },
-  {
-    "Name": "Maximum Security",
-    "Content": ""
+   "Name": "Maximum Security",
+   "Content": ""
   },
   {
    "Name": "Prototype Parts",
    "Content": ""
   },
   {
-    "Name": "Recycling Machine",
-    "Content": ""
-  },
-  {
-    "Name": "Reinforcement Squad",
-    "Content": ""
-  },
-  {
    "Name": "RIF",
    "Content": ""
   },
   {
-    "Name": "Robot Tier",
-    "Content": ""
+   "Name": "Recycling Machine",
+   "Content": ""
   },
   {
-    "Name": "Scanalyzer",
-    "Content": ""
+   "Name": "Reinforcement Squad",
+   "Content": ""
   },
   {
-    "Name": "Terminal",
-    "Content": ""
+   "Name": "Robot Tier",
+   "Content": ""
   },
   {
-    "Name": "Trap",
-    "Content": ""
+   "Name": "Scanalyzer",
+   "Content": ""
+  },
+  {
+   "Name": "Terminal",
+   "Content": ""
   },
   {
    "Name": "Wintypes",
@@ -6285,10 +7608,6 @@
     "Endings"
    ],
    "Content": "W0 \"Escaped\": Take a [[Surface]] exit on -1.\nW1 [[Spoiler:Redacted]]\"Establishing 0b11\": Take a Surface exit on -1 after destroying both phases of [[MAIN.C]].[[/Spoiler]]\nW2 [[Spoiler:Spoiler]]Heading to fleet: Take a surface exit on -1 after using a [[Core Reset Matrix]].[[/Spoiler]]\nW3 [[Spoiler:Spoiler]]Destroyed 0b10: Take a Surface exit on -1 while carrying the [[Sigix Containment Pod]] in inventory. [[Spoiler:Redacted]]May also be performed by taking the exit with the [[Sigix Warrior]].[[/Spoiler]][[/Spoiler]]\nW4 [[Spoiler:Redacted]]Assimilated 0b10: Stand next to the unbroken 0b10 Conduit machine in MAIN.C's room in [[Command]] after either killing both forms of MAIN.C or with [[RIF]].[[/Spoiler]]\nW5 [[Spoiler:Redacted]]Destroyed Tau Ceti IV: In [[Access_0]], obtain the [[A2 Data Core]] by killing [[A2]] and perform Gate Tests 138-A and 138-B once, then test 138-C twice on the Gate Controls terminal with an intact Singularity Gate machine.[[/Spoiler]]\nW6 [[Spoiler:Redacted]]Escaped singularity: In Access_0, destroy all 4 Subspace Access Nodes, destroy the Architect, and take the surface exit within 10 turns.[[/Spoiler]]\nW7 [[Spoiler:Redacted]]Establishing Free Derelict Territories: In Command, destroy both forms of MAIN.C with [[Warlord]] still alive and not shut down.[[/Spoiler]]\nW8 [[Spoiler:Redacted]]Fortifying 0b10: Choose the Surrender option after destroying MAIN.C's outer shell, then destroy enough [[Enhanced Q-Series]] while keeping MAIN.C alive.[[/Spoiler]]"
-  },
-  {
-    "Name": "Z-Hero",
-    "Content": ""
   }
  ]
 }

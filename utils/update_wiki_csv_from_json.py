@@ -37,12 +37,12 @@ for bot_group in wiki_json['Bot Groups']:
         wiki_csv[group_name]['Page Type'] = 'Bot Group'
         wiki_csv[group_name]['Content'] = bot_group['Content']
     else:
-        new_bot = {
+        new_group = {
             'Name': group_name,
             'Page Type': 'Bot Group',
             'Content': bot_group['Content']
         }
-        wiki_csv[group_name] = new_bot
+        wiki_csv[group_name] = new_group
 
 for part in wiki_json['Parts']:
     part_name = part['Name']
@@ -57,6 +57,19 @@ for part in wiki_json['Parts']:
         }
         wiki_csv[part_name] = new_part
 
+for part_group in wiki_json['Part Groups']:
+    group_name = part_group['Name']
+    if group_name in wiki_csv:
+        wiki_csv[group_name]['Page Type'] = 'Part Group'
+        wiki_csv[group_name]['Content'] = part_group['Content']
+    else:
+        new_group = {
+            'Name': group_name,
+            'Page Type': 'Part Group',
+            'Content': part_group['Content']
+        }
+        wiki_csv[group_name] = new_group
+
 for location in wiki_json['Locations']:
     location_name = location['Name']
     if location_name in wiki_csv:
@@ -65,7 +78,7 @@ for location in wiki_json['Locations']:
     else:
         new_location = {
             'Name': location_name,
-            'Page Type': 'location',
+            'Page Type': 'Location',
             'Content': location['Content']
         }
         wiki_csv[location_name] = new_location

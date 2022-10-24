@@ -886,18 +886,6 @@ a {
     color: #00cc00;
 }
 
-.wiki-content {
-    font-family: sans-serif;
-}
-
-.wiki-infobox {
-    background-color: black;
-    flex: 0;
-    border: 1px solid #008800;
-    padding: .5rem .75rem;
-    max-width: 59ch;
-    margin-left: 1.5rem;
-}
 
 .spoiler-text,
 .spoiler-text * {
@@ -952,6 +940,25 @@ a {
 .location-image {
     max-width: 375px;
     margin: .25rem 0;
+}
+
+.wiki-content {
+    font-family: sans-serif;
+}
+
+.wiki-infobox {
+    background-color: black;
+    flex: 0;
+    border: 1px solid #008800;
+    padding: .5rem .75rem;
+    max-width: 60ch;
+    margin-left: 1.5rem;
+}
+
+.wiki-infobox-selector-text {
+    font-family: smallcaps-mono;
+    font-size: 0.8em;
+    padding: .125rem .25rem;
 }
 
 .wiki-sidebar-image {

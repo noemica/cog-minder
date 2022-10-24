@@ -64,11 +64,7 @@ jq(function ($) {
     function clearPageContent() {
         const pageContent = $("#pageContent");
 
-        if (lastEntry?.type === "Bot") {
-            // Need to do proper cleanup for bots
-            disableBotInfoInteraction(pageContent);
-        }
-
+        // Dispose popovers
         ($("#pageContent").find(`[data-toggle="popover"]`) as any).popover("dispose");
 
         pageContent.empty();
@@ -203,10 +199,11 @@ jq(function ($) {
             const entry: WikiEntry = {
                 alternativeNames: lastEntry!.alternativeNames,
                 content: text,
+                extraData: lastEntry!.extraData,
                 name: lastEntry!.name,
+                parentGroup: lastEntry!.parentGroup,
                 spoiler: "None",
                 type: lastEntry!.type,
-                extraData: lastEntry!.extraData,
             };
             lastEntryIsEdit = true;
             loadSelectedEntry(entry);
@@ -263,11 +260,30 @@ jq(function ($) {
 
     // Inits the wiki entries from JSON
     function initAllEntries() {
+        // Add an entry to the list with duplication checking
+        function addEntry(entry: WikiEntry) {
+            function add(name: string, entry: WikiEntry) {
+                const existingEntry = allEntries.get(name);
+
+                if (existingEntry !== undefined) {
+                    console.log(`Found duplicate wiki entries for "${name}"`);
+                }
+
+                allEntries.set(name, entry);
+            }
+
+            add(entry.name, entry);
+
+            for (const alternateName of entry.alternativeNames) {
+                add(alternateName, entry);
+            }
+        }
+
         // Initialize bots
         for (const botEntry of wiki.Bots) {
             const bot = getBot(botEntry.Name);
 
-            allEntries.set(botEntry.Name, {
+            addEntry({
                 alternativeNames: [],
                 name: botEntry.Name,
                 type: "Bot",
@@ -295,7 +311,7 @@ jq(function ($) {
                 type: "Bot Group",
                 extraData: botEntries,
             };
-            allEntries.set(entry.name, entry);
+            addEntry(entry);
 
             // Add all bots in group
             for (const botName of botGroupEntry.Bots) {
@@ -305,8 +321,17 @@ jq(function ($) {
                     continue;
                 }
 
-                // Replace the regular bot entry with the group entry
-                allEntries.set(botName, entry);
+                if (botEntry.type !== "Bot") {
+                    console.log(`Found non-bot ${botEntry.name} in bot group ${entry.name}`);
+                    continue;
+                }
+
+                if (botEntry.parentGroup !== undefined) {
+                    console.log(`Found bot ${botEntry.name} in multiple groups`);
+                }
+
+                // Set the bot's parent group to point to this
+                botEntry.parentGroup = entry;
                 botEntries.push(botEntry);
             }
         }
@@ -365,13 +390,7 @@ jq(function ($) {
                 extraData: location,
             };
 
-            allEntries.set(locationEntry.Name, entry);
-
-            if (locationEntry.AlternateNames !== undefined) {
-                for (const alternativeName of locationEntry.AlternateNames) {
-                    allEntries.set(alternativeName, entry);
-                }
-            }
+            addEntry(entry);
         }
 
         // Need to do a second pass to connect entry/exit references
@@ -403,7 +422,7 @@ jq(function ($) {
                 spoiler = "Spoiler";
             }
 
-            allEntries.set(partEntry.Name, {
+            addEntry({
                 alternativeNames: [],
                 name: partEntry.Name,
                 type: "Part",
@@ -411,6 +430,49 @@ jq(function ($) {
                 content: partEntry.Content,
                 extraData: part,
             });
+        }
+
+        // Initialize part groups
+        for (const partGroupEntry of wiki["Part Groups"]) {
+            const spoiler: Spoiler = "None";
+            // if (partGroupEntry.Spoiler === "Redacted") {
+            //     spoiler = "Redacted";
+            // } else if (partGroupEntry.Spoiler === "Spoiler") {
+            //     spoiler = "Spoiler";
+            // }
+
+            const partEntries: WikiEntry[] = [];
+            const entry: WikiEntry = {
+                alternativeNames: [],
+                content: partGroupEntry.Content ?? "",
+                name: partGroupEntry.Name,
+                spoiler: spoiler,
+                type: "Part Group",
+                extraData: partEntries,
+            };
+            addEntry(entry);
+
+            // Add all parts in group
+            for (const partName of partGroupEntry.Parts) {
+                const partEntry = allEntries.get(partName);
+                if (partEntry === undefined) {
+                    console.log(`Found bad part name ${partName} in group ${partGroupEntry.Name}`);
+                    continue;
+                }
+
+                if (partEntry.type !== "Part") {
+                    console.log(`Found non-part ${partEntry.name} in part group ${entry.name}`);
+                    continue;
+                }
+
+                if (partEntry.parentGroup !== undefined) {
+                    console.log(`Found part ${partEntry.name} in multiple groups`);
+                }
+
+                // Set the part's parent group to point to this
+                partEntry.parentGroup = entry;
+                partEntries.push(partEntry);
+            }
         }
 
         // Initialize other
@@ -429,13 +491,7 @@ jq(function ($) {
                 content: otherEntry.Content,
             };
 
-            allEntries.set(otherEntry.Name, entry);
-
-            if (otherEntry.AlternateNames !== undefined) {
-                for (const alternativeName of otherEntry.AlternateNames) {
-                    allEntries.set(alternativeName, entry);
-                }
-            }
+            addEntry(entry);
         }
     }
 
@@ -467,6 +523,10 @@ jq(function ($) {
 
                 case "Part":
                     updatePartContent(entry);
+                    break;
+
+                case "Part Group":
+                    updatePartGroupContent(entry);
                     break;
             }
 
@@ -520,8 +580,8 @@ jq(function ($) {
     }
 
     // Parses the Wiki entry content and updates errors
-    function parseEntryContent(entry: WikiEntry, allEntries: Map<string, WikiEntry>) {
-        const parseResult = createContentHtml(entry, allEntries, getSpoilerState());
+    function parseEntryContent(entry: WikiEntry, allEntries: Map<string, WikiEntry>, headerLink = false) {
+        const parseResult = createContentHtml(entry, allEntries, getSpoilerState(), headerLink);
 
         if (parseResult.errors.length > 0) {
             $("#editErrorsParentContainer").removeClass("not-visible");
@@ -634,6 +694,8 @@ jq(function ($) {
 
         // Create HTML elements
         const content = $(parseEntryContent(entry, allEntries));
+        const parentContent =
+            entry.parentGroup === undefined ? undefined : $(parseEntryContent(entry.parentGroup, allEntries, true));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createBotDataContent(bot, true));
 
@@ -641,6 +703,11 @@ jq(function ($) {
         // Append the infobox first which floats to the right
         pageContent.append(infoboxColumn[0]);
         infoboxColumn.append(infoboxContent as any);
+
+        if (parentContent !== undefined) {
+            // Append parent content first
+            pageContent.append(parentContent as any);
+        }
         pageContent.append(content as any);
 
         // Bot parts have popovers, must hook them up here
@@ -659,11 +726,7 @@ jq(function ($) {
         const botNameContainer = $(`<div class="btn-group btn-group-toggle" data-toggle="buttons"></div>`);
         const infoboxContentContainer = $("<div></div>");
 
-        const pageSelect = $("#pageSelect");
-        const selectedValue = pageSelect.selectpicker("val") as any as string;
-        let botSelected = false;
         let index = 0;
-        let selectedIndex = 0;
 
         for (const botEntry of botEntries) {
             // Add all of the bots in the group
@@ -671,20 +734,13 @@ jq(function ($) {
             index += 1;
 
             // Create HTML elements
-            const button = $(`<label class="btn smallcaps-font"><input type="radio">${botEntry.name}</label>`);
+            const button = $(
+                `<label class="btn wiki-infobox-selector-text"><input type="radio">${botEntry.name}</label>`,
+            );
             const botInfoboxContent = $(
                 `<div class="mt-2">${createBotDataContent(botEntry.extraData as Bot, true)}</div>`,
             );
-            const botContent = $(`<div>${parseEntryContent(botEntry, allEntries)}</div>`);
-
-            // Determine if any particular bot is selected
-            if (selectedValue === botEntry.name) {
-                botSelected = true;
-                selectedIndex = botIndex;
-            } else {
-                botInfoboxContent.addClass("not-visible");
-                botContent.addClass("not-visible");
-            }
+            const botContent = $(`<div>${parseEntryContent(botEntry, allEntries, true)}</div>`);
 
             // Append to DOM
             botsContent.append(botContent as any);
@@ -698,23 +754,12 @@ jq(function ($) {
                 botContent.removeClass("not-visible");
                 botInfoboxContent.removeClass("not-visible");
                 setActiveButtonGroupButton(botNameContainer, botIndex);
-
-                // Update the selectpicker
-                skipSelectChange = true;
-                pageSelect.selectpicker("val", botEntry.name);
-                skipSelectChange = false;
-
-                history.replaceState(botEntry.name, "", `#${botEntry.name}`);
             });
         }
 
-        if (!botSelected) {
-            infoboxContentContainer.children().first().removeClass("not-visible");
-            botsContent.children().first().removeClass("not-visible");
-            selectedIndex = 0;
-        }
-
-        setActiveButtonGroupButton(botNameContainer, selectedIndex + 1);
+        // Toggle the first button
+        botNameContainer.children().first().trigger("click");
+        setActiveButtonGroupButton(botNameContainer, 1);
 
         // Append to DOM
         // Append the infobox first which floats to the right
@@ -861,11 +906,83 @@ jq(function ($) {
         const content = $(parseEntryContent(entry, allEntries));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createItemDataContent(part));
+        const parentContent =
+            entry.parentGroup === undefined ? undefined : $(parseEntryContent(entry.parentGroup, allEntries, true));
 
         // Append to DOM
         // Append the infobox first which floats to the right
         pageContent.append(infoboxColumn[0]);
         infoboxColumn.append(infoboxContent as any);
+
+        if (parentContent !== undefined) {
+            // Append parent content first
+            pageContent.append(parentContent as any);
+        }
         pageContent.append(content as any);
+    }
+
+    // Updates the page content with the specified part group
+    function updatePartGroupContent(entry: WikiEntry) {
+        const partEntries = entry.extraData as WikiEntry[];
+        const pageContent = $("#pageContent");
+
+        // Create HTML elements
+        const partsContent = $("<div></div>");
+        const commonContent = $(parseEntryContent(entry, allEntries));
+        const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
+        const partNameContainer = $(`<div class="btn-group btn-group-toggle" data-toggle="buttons"></div>`);
+        const infoboxContentContainer = $("<div></div>");
+
+        let index = 0;
+        const spoilerState = getSpoilerState();
+
+        // Add all of the parts in the group
+        for (const partEntry of partEntries) {
+            // Just skip parts we can't show
+            if (!canShowSpoiler(partEntry.spoiler, spoilerState)) {
+                continue;
+            }
+
+            const partIndex = index;
+            index += 1;
+
+            // Create HTML elements
+            const button = $(
+                `<label class="btn wiki-infobox-selector-text"><input type="radio">${partEntry.name}</label>`,
+            );
+            const partInfoboxContent = $(
+                `<div class="mt-2">${createItemDataContent(partEntry.extraData as Item)}</div>`,
+            );
+            const partContent = $(`<div>${parseEntryContent(partEntry, allEntries, true)}</div>`);
+
+            partInfoboxContent.addClass("not-visible");
+            partContent.addClass("not-visible");
+
+            // Append to DOM
+            partsContent.append(partContent as any);
+            partNameContainer.append(button[0]);
+            infoboxContentContainer.append(partInfoboxContent as any);
+
+            // Set up switching code
+            button.on("click", () => {
+                infoboxContentContainer.children().addClass("not-visible");
+                partsContent.children().addClass("not-visible");
+                partContent.removeClass("not-visible");
+                partInfoboxContent.removeClass("not-visible");
+                setActiveButtonGroupButton(partNameContainer, partIndex);
+            });
+        }
+
+        // Toggle the first button
+        partNameContainer.children().first().trigger("click");
+        setActiveButtonGroupButton(partNameContainer, 1);
+
+        // Append rest to DOM
+        // Append the infobox first which floats to the right
+        pageContent.append(infoboxColumn[0]);
+        infoboxColumn.append(partNameContainer as any);
+        infoboxColumn.append(infoboxContentContainer as any);
+        pageContent.append(commonContent as any);
+        pageContent.append(partsContent as any);
     }
 });
