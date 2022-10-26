@@ -1,5 +1,5 @@
 import * as lore from "../json/lore.json";
-import { canShowSpoiler, getBot, createBotDataContent, getItem, createItemDataContent } from "./common";
+import { canShowSpoiler, getBot, createBotDataContent, getItem, createItemDataContent, escapeHtml } from "./common";
 import { Spoiler } from "./commonTypes";
 import { WikiEntry } from "./wikiTypes";
 
@@ -551,7 +551,7 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
     state.output.push({ groupType: "Separator", html: undefined });
     state.output.push({
         groupType: "Grouped",
-        html: `<span class="wiki-game-text">${entry["Content"]}</span>`,
+        html: `<span class="wiki-game-text">${escapeHtml(entry["Content"])}</span>`,
     });
     state.output.push({ groupType: "Separator", html: undefined });
 }

@@ -121,24 +121,32 @@ jq(function ($) {
 
         // Register editor buttons
         function insertWrappedText(beforeText: string, afterText: string) {
-            // Insert the before and after text wrapping the selected text area
-            // If there is no selection then it'll just be inserted at the cursor position
-            // or the end if no text is selected at all
+            // This code might break at some point but it's better than
+            // the alternative which totally breaks the undo/redo stack
             const textArea = $("#editTextArea");
-            const start = textArea.prop("selectionStart");
-            const end = textArea.prop("selectionEnd");
-            const initialText = textArea.val() as string;
-
-            const preSplit = initialText.substring(0, start);
-            const split = initialText.substring(start, end);
-            const postSplit = initialText.substring(end);
-
-            textArea.val(`${preSplit}${beforeText}${split}${afterText}${postSplit}`);
-            (textArea.get(0) as any as HTMLTextAreaElement).setSelectionRange(
-                start + beforeText.length,
-                end + beforeText.length,
-            );
             textArea.trigger("focus");
+            document.execCommand("insertText", false, beforeText + afterText);
+            const newPosition = textArea.prop("selectionStart") - afterText.length;
+            textArea.prop("selectionStart", newPosition);
+            textArea.prop("selectionEnd", newPosition);
+
+            // The below text doesn't work well with the undo/redo stack
+            // // Insert the before and after text wrapping the selected text area
+            // // If there is no selection then it'll just be inserted at the cursor position
+            // // or the end if no text is selected at all
+            // const textArea = $("#editTextArea");
+            // const start = textArea.prop("selectionStart");
+            // const end = textArea.prop("selectionEnd");
+            // const initialText = textArea.val() as string;
+            // const preSplit = initialText.substring(0, start);
+            // const split = initialText.substring(start, end);
+            // const postSplit = initialText.substring(end);
+            // textArea.val(`${preSplit}${beforeText}${split}${afterText}${postSplit}`);
+            // (textArea.get(0) as any as HTMLTextAreaElement).setSelectionRange(
+            //     start + beforeText.length,
+            //     end + beforeText.length,
+            // );
+            // textArea.trigger("focus");
         }
         $("#editBoldTextButton").on("click", () => {
             insertWrappedText("[[B]]", "[[/B]]");
@@ -585,7 +593,7 @@ jq(function ($) {
 
         if (parseResult.errors.length > 0) {
             $("#editErrorsParentContainer").removeClass("not-visible");
-            $("editErrorsContainer").empty();
+            $("#editErrorsContainer").empty();
             console.log(`Errors while parsing ${entry.name}`);
 
             for (const error of parseResult.errors) {
