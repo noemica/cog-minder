@@ -7441,7 +7441,7 @@
   {
    "Name": "Zion",
    "ImageName": "Zion.png",
-   "Content": "",
+   "Content": "[[Caves]]",
    "Exits": [
     "Proximity Caves",
     "Zion Deep Caves"

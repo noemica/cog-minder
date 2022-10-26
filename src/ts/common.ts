@@ -1189,7 +1189,7 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
         for (const specialBot of location.specialBots) {
             if (inPopover) {
                 if (canShowSpoiler(specialBot.spoiler, spoilersState)) {
-                    html += textLine(specialBot.name);
+                    html += textLine(escapeHtml(specialBot.name));
                 }
             } else {
                 if (canShowSpoiler(specialBot.spoiler, spoilersState)) {
@@ -1212,7 +1212,9 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
 
         for (const specialItem of location.specialItems) {
             if (inPopover) {
-                html += textLine(specialItem.name);
+                if (canShowSpoiler(specialItem.spoiler, spoilersState)) {
+                    html += textLine(escapeHtml(specialItem.name));
+                }
             } else {
                 if (canShowSpoiler(specialItem.spoiler, spoilersState)) {
                     const extraAttributes = `data-html=true data-content='${createItemDataContent(
