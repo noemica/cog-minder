@@ -845,7 +845,7 @@ jq(function ($) {
         // Create HTML elements
         const content = $(parseEntryContent(entry, allEntries));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
-        const infoboxContent = $(createLocationHtml(location, getSpoilerState()));
+        const infoboxContent = $(createLocationHtml(location, getSpoilerState(), false));
 
         // Append to DOM
         // Append the infobox first which floats to the right

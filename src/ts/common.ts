@@ -1091,7 +1091,7 @@ export function createItemDataContent(baseItem: Item): string {
 }
 /* eslint-enable prettier/prettier */
 
-export function createLocationHtml(location: MapLocation, spoilersState: Spoiler): string {
+export function createLocationHtml(location: MapLocation, spoilersState: Spoiler, inPopover: boolean): string {
     function getDepthString(minDepth: number, maxDepth: number) {
         if (minDepth === maxDepth) {
             return minDepth.toString();
@@ -1141,7 +1141,11 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
 
             // Don't bother showing entrances from spoiler-blocked maps
             if (canShowSpoiler(entry.spoiler, spoilersState)) {
-                html += textLineLink(entry.name, `#${entry.name}`, depthsString);
+                if (inPopover) {
+                    html += textLine(entry.name, depthsString);
+                } else {
+                    html += textLineLink(entry.name, `#${entry.name}`, depthsString);
+                }
             }
         }
     }
@@ -1155,31 +1159,47 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
         for (const exit of location.exits) {
             const depths = getMinMaxDepths(location, exit);
             const depthsString = getDepthString(depths.minDepth, depths.maxDepth);
-
-            // Show exits with a spoiler
-            if (canShowSpoiler(exit.spoiler, spoilersState)) {
-                html += textLineLink(exit.name, `#${exit.name}`, depthsString);
+            if (inPopover) {
+                // In popovers never show spoilered things
+                if (canShowSpoiler(exit.spoiler, spoilersState)) {
+                    html += textLine(exit.name, depthsString);
+                }
             } else {
-                html += textLineSpoilerLink(exit.name, `#${exit.name}`, depthsString);
+                // Show exits with a spoiler
+                if (canShowSpoiler(exit.spoiler, spoilersState)) {
+                    const extraAttributes = `data-html=true data-content='${createLocationHtml(
+                        exit,
+                        spoilersState,
+                        true,
+                    )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
+                    html += textLineLink(exit.name, `#${exit.name}`, depthsString, extraAttributes);
+                } else {
+                    html += textLineSpoilerLink(exit.name, `#${exit.name}`, depthsString);
+                }
             }
         }
     }
 
     if (location.specialBots.length > 0) {
         html += `
-        ${emptyLine}
+        ${emptyLine} 
         ${summaryLine("Special bots")}
         `;
 
         for (const specialBot of location.specialBots) {
-            const extraAttributes = `data-html=true data-content='${createBotDataContent(
-                specialBot,
-            )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
-
-            if (canShowSpoiler(specialBot.spoiler, spoilersState)) {
-                html += textLineLink(specialBot.name, `#${specialBot.name}`, undefined, extraAttributes);
+            if (inPopover) {
+                if (canShowSpoiler(specialBot.spoiler, spoilersState)) {
+                    html += textLine(specialBot.name);
+                }
             } else {
-                html += textLineSpoilerLink(specialBot.name, `#${specialBot.name}`);
+                if (canShowSpoiler(specialBot.spoiler, spoilersState)) {
+                    const extraAttributes = `data-html=true data-content='${createBotDataContent(
+                        specialBot,
+                    )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
+                    html += textLineLink(specialBot.name, `#${specialBot.name}`, undefined, extraAttributes);
+                } else {
+                    html += textLineSpoilerLink(specialBot.name, `#${specialBot.name}`);
+                }
             }
         }
     }
@@ -1191,14 +1211,18 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
         `;
 
         for (const specialItem of location.specialItems) {
-            const extraAttributes = `data-html=true data-content='${createItemDataContent(
-                specialItem,
-            )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
-
-            if (canShowSpoiler(specialItem.spoiler, spoilersState)) {
-                html += textLineLink(specialItem.name, `#${specialItem.name}`, undefined, extraAttributes);
+            if (inPopover) {
+                html += textLine(specialItem.name);
             } else {
-                html += textLineSpoilerLink(specialItem.name, `#${specialItem.name}`);
+                if (canShowSpoiler(specialItem.spoiler, spoilersState)) {
+                    const extraAttributes = `data-html=true data-content='${createItemDataContent(
+                        specialItem,
+                    )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
+
+                    html += textLineLink(specialItem.name, `#${specialItem.name}`, undefined, extraAttributes);
+                } else {
+                    html += textLineSpoilerLink(specialItem.name, `#${specialItem.name}`);
+                }
             }
         }
     }

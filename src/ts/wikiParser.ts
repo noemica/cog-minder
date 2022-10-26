@@ -1,6 +1,14 @@
 import * as lore from "../json/lore.json";
-import { canShowSpoiler, getBot, createBotDataContent, getItem, createItemDataContent, escapeHtml } from "./common";
-import { Spoiler } from "./commonTypes";
+import {
+    canShowSpoiler,
+    getBot,
+    createBotDataContent,
+    getItem,
+    createItemDataContent,
+    escapeHtml,
+    createLocationHtml,
+} from "./common";
+import { MapLocation, Spoiler } from "./commonTypes";
 import { WikiEntry } from "./wikiTypes";
 
 // Output group types
@@ -473,6 +481,13 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
             const item = getItem(referenceEntry.name);
             tooltipData = `data-html=true data-boundary="window" data-content='${createItemDataContent(
                 item,
+            )}' data-toggle="popover" data-trigger="hover"`;
+        } else if (referenceEntry.type === "Location") {
+            // Add location data content overlay
+            tooltipData = `data-html=true data-boundary="window" data-content='${createLocationHtml(
+                referenceEntry.extraData as MapLocation,
+                state.spoiler,
+                true,
             )}' data-toggle="popover" data-trigger="hover"`;
         }
 
