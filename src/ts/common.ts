@@ -1144,7 +1144,12 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
                 if (inPopover) {
                     html += textLine(entry.name, depthsString);
                 } else {
-                    html += textLineLink(entry.name, `#${entry.name}`, depthsString);
+                    const extraAttributes = `data-html=true data-content='${createLocationHtml(
+                        entry,
+                        spoilersState,
+                        true,
+                    )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
+                    html += textLineLink(entry.name, `#${entry.name}`, depthsString, extraAttributes);
                 }
             }
         }

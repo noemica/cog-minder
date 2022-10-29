@@ -1625,6 +1625,10 @@
         ],
         "Locations": [
             {
+                "Location": "Zion",
+                "Description": "Friendly: Guarding Zion"
+            },
+            {
                 "Location": "Warlord",
                 "Description": "Friendly: Guarding the Warlord base"
             }
@@ -3066,7 +3070,7 @@
         ],
         "Locations": [
             {
-                "Location": "Caves, Zion specifically, and various derelict-related events",
+                "Location": "Caves, Zion, and various events",
                 "Description": "Friendly"
             }
         ]

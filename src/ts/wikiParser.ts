@@ -43,13 +43,19 @@ export function createContentHtml(
     headerLink: boolean,
 ): { html: string; errors: string[] } {
     // Process each section into the same output groups
+
+    // Process initial content by replacing any instances of [XYZ] in links with {{xyz}}
+    // Otherwise we hae issues with the regex for any links that include square brackets in them
+    const initialContent = entry.content.replace(/(?<!\[)\[([\w]*)\]/g, (_, p1) => {
+        return `{{${p1}}}`;
+    });
     const state: ParserState = {
         allEntries: allEntries,
         entry: entry,
         errors: [],
         inSpoiler: false,
         index: 0,
-        initialContent: entry.content,
+        initialContent: initialContent,
         inlineOnly: false,
         output: [],
         spoiler: spoilerState,
@@ -65,7 +71,10 @@ export function createContentHtml(
     const headerText = names.join("/");
 
     // Convert to HTML
-    const outputHtml = outputGroupsToHtml(state.output, false);
+    let outputHtml = outputGroupsToHtml(state.output, false);
+    if (outputHtml === "") {
+        outputHtml = "<p>There is no content here. Please consider contributing.</p>";
+    }
     return {
         html: `<h2 class="wiki-header">${
             headerLink ? `<a href="#${entry.name}">${headerText}</a>` : headerText
@@ -452,9 +461,10 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
     state.index = endIndex + listResult[0].length;
 }
 
-// Found a [[X]] link, make sure we can link properly
+// Found a [[X]] or [[X|Y]] link, make sure we can link properly
 function processLinkTag(state: ParserState, result: RegExpExecArray) {
-    const split = result[1].split("|");
+    // Remove the earlier substituted {{ and }}s for their proper [ and ] counterparts
+    const split = result[1].replace("{{", "[").replace("}}", "]").split("|");
 
     const linkTarget = split[0];
     let linkText = linkTarget;
