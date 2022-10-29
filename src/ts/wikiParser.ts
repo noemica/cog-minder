@@ -40,7 +40,7 @@ export function createContentHtml(
     entry: WikiEntry,
     allEntries: Map<string, WikiEntry>,
     spoilerState: Spoiler,
-    headerLink: boolean,
+    headingLink: boolean,
 ): { html: string; errors: string[] } {
     // Process each section into the same output groups
 
@@ -68,7 +68,7 @@ export function createContentHtml(
         names.push(name);
     }
 
-    const headerText = names.join("/");
+    const headingText = names.join("/");
 
     // Convert to HTML
     let outputHtml = outputGroupsToHtml(state.output, false);
@@ -76,8 +76,8 @@ export function createContentHtml(
         outputHtml = "<p>There is no content here. Please consider contributing.</p>";
     }
     return {
-        html: `<h2 class="wiki-header">${
-            headerLink ? `<a href="#${entry.name}">${headerText}</a>` : headerText
+        html: `<h2 class="wiki-heading">${
+            headingLink ? `<a href="#${entry.name}">${headingText}</a>` : headingText
         }</h2>${outputHtml}`,
         errors: state.errors,
     };
@@ -155,7 +155,7 @@ function outputGroupsToHtml(
 
 // Process a B tag like [[B]]Bolded Text[[/Bold]]
 function processBTag(state: ParserState, result: RegExpExecArray) {
-    // Process the header subsection independently
+    // Process the heading subsection independently
     const subSectionStart = result.index + result[0].length;
     const tempState: ParserState = {
         allEntries: state.allEntries,
@@ -177,7 +177,7 @@ function processBTag(state: ParserState, result: RegExpExecArray) {
 
 // Process a GameText tag like [[GameText]]Text[[/GameText]]
 function processGameTextTag(state: ParserState, result: RegExpExecArray) {
-    // Process the header subsection independently
+    // Process the heading subsection independently
     const subSectionStart = result.index + result[0].length;
     const tempState: ParserState = {
         allEntries: state.allEntries,
@@ -201,19 +201,19 @@ function processGameTextTag(state: ParserState, result: RegExpExecArray) {
     state.output.push({ groupType: "Grouped", html: boldedContent });
 }
 
-// Process a header tag like [[Header]]Header Text[[/Header]]
-// or like [[Header:2]]Header Text[[/Header]]
-function processHeaderTag(state: ParserState, result: RegExpExecArray) {
+// Process a heading tag like [[Heading]]Heading Text[[/Heading]]
+// or like [[Heading:2]]Heading Text[[/Heading]]
+function processHeadingTag(state: ParserState, result: RegExpExecArray) {
     let type = result[2];
 
     if (type === undefined) {
         type = "1";
     } else if (type !== "1" && type !== "2") {
-        recordError(state, `Found bad header type ${type}, should be 1 or 2`);
+        recordError(state, `Found bad heading type ${type}, should be 1 or 2`);
         type = "1";
     }
 
-    // Process the header subsection independently
+    // Process the heading subsection independently
     const subSectionStart = result.index + result[0].length;
     const tempState: ParserState = {
         allEntries: state.allEntries,
@@ -226,24 +226,24 @@ function processHeaderTag(state: ParserState, result: RegExpExecArray) {
         inlineOnly: true,
         spoiler: state.spoiler,
     };
-    processSection(tempState, "/Header");
+    processSection(tempState, "/Heading");
     state.index = tempState.index;
-    let headerContent = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
+    let headingContent = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
 
     if (state.inSpoiler) {
-        headerContent = `<span class="spoiler-text spoiler-text-multiline">${headerContent}</span>`;
+        headingContent = `<span class="spoiler-text spoiler-text-multiline">${headingContent}</span>`;
     }
 
     if (type === "1") {
-        state.output.push({ groupType: "Individual", html: `<h3 class="wiki-header">${headerContent}</h3>` });
+        state.output.push({ groupType: "Individual", html: `<h3 class="wiki-heading">${headingContent}</h3>` });
     } else {
-        state.output.push({ groupType: "Individual", html: `<h4>${headerContent}</h4>` });
+        state.output.push({ groupType: "Individual", html: `<h4>${headingContent}</h4>` });
     }
 }
 
 // Process a I tag like [[I]]Italicized Text[[/I]]
 function processITag(state: ParserState, result: RegExpExecArray) {
-    // Process the header subsection independently
+    // Process the heading subsection independently
     const subSectionStart = result.index + result[0].length;
     const tempState: ParserState = {
         allEntries: state.allEntries,
@@ -355,7 +355,7 @@ function processImagesTag(state: ParserState, result: RegExpExecArray) {
         recordError(state, `Found images action without equal number of links/captions`);
     }
 
-    let imagesContent = `<div class="wiki-sidebar-images">`;
+    let imagesContent = `<div class="wiki-gallery-images">`;
 
     for (let i = 0; i < Math.floor(split.length / 2); i++) {
         const imageName = split[2 * i];
@@ -584,7 +584,7 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
 const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => void> = new Map([
     ["B", processBTag],
     ["GameText", processGameTextTag],
-    ["Header", processHeaderTag],
+    ["Heading", processHeadingTag],
     ["I", processITag],
     ["Image", processImageTag],
     ["Images", processImagesTag],

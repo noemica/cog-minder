@@ -3,7 +3,6 @@ import * as bots from "../json/bots.json";
 import * as wiki from "../json/wiki.json";
 import {
     createHeader,
-    disableBotInfoInteraction,
     enableBotInfoInteraction,
     getSpoilerState,
     refreshSelectpicker,
@@ -166,11 +165,11 @@ jq(function ($) {
         $("#editLinkTextButton").on("click", () => {
             insertWrappedText("[[", "]]");
         });
-        $("#editHeader1TextButton").on("click", () => {
-            insertWrappedText("[[Header]]", "[[/Header]]");
+        $("#editHeading1TextButton").on("click", () => {
+            insertWrappedText("[[Heading]]", "[[/Heading]]");
         });
-        $("#editHeader2TextButton").on("click", () => {
-            insertWrappedText("[[Header:2]]", "[[/Header]]");
+        $("#editHeading2TextButton").on("click", () => {
+            insertWrappedText("[[Heading:2]]", "[[/Heading]]");
         });
         $("#editImageTextButton").on("click", () => {
             insertWrappedText("[[Image]]", "[[/Image]]");

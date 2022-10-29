@@ -964,7 +964,7 @@ a {
 .wiki-sidebar-image {
     float: right;
     clear: right;
-    margin: .25rem 0 .25rem 1.5rem;
+    margin: .125rem 0 .125rem 1.5rem;
     display: flex;
     flex-direction: column;
 }
@@ -974,6 +974,7 @@ a {
 }
 
 .wiki-sidebar-image > a > img {
+    max-height: 250px;
     max-width: 250px;
     padding: .25rem;
 }
@@ -986,6 +987,8 @@ a {
     and show a gap next to the image */
     width: 0px;
     min-width: 100%;
+
+    margin-bottom: 0;
 }
 
 .wiki-sidebar-image > a {
@@ -1007,23 +1010,23 @@ a {
     background-color: transparent;
 }
 
-.wiki-header {
+.wiki-heading {
     border-bottom: 1px solid #008800;
     overflow: hidden;
 }
 
-.wiki-sidebar-images {
+.wiki-gallery-images {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.wiki-sidebar-images > div {
+.wiki-gallery-images > div {
     display: inline-block;
     margin: .25rem .5rem;
 }
 
-.wiki-sidebar-images > div > div {
+.wiki-gallery-images > div > div {
     background-color: black;
     border: 1px solid #008800;
     display: flex;
@@ -1033,22 +1036,23 @@ a {
     height: 225px;
 }
 
-.wiki-sidebar-images > div > div > a {
+.wiki-gallery-images > div > div > a {
     position: relative;
 }
 
-.wiki-sidebar-images > div > div > a > img {
+.wiki-gallery-images > div > div > a > img {
     max-width: 225px;
     max-height: 225px;
     padding: .25rem;
 }
 
-.wiki-sidebar-images > div > p {
+.wiki-gallery-images > div > p {
     width: 0px;
     min-width: 100%;
+    margin-bottom: 0.5rem;
 }
 
-.wiki-sidebar-images > div > p a {
+.wiki-gallery-images > div > p a {
     /* Normally need this to be display: inline-block so that we can't
     have popovers that will flash on/off when hovering over them due
     to multiline traversal of the link text. However, we don't have that
@@ -1070,8 +1074,8 @@ a {
     transition: .15s;
 }
 
-.wiki-sidebar-images a:hover .wiki-spoiler-image-text,
-.wiki-sidebar-images a:focus .wiki-spoiler-image-text {
+.wiki-gallery-images a:hover .wiki-spoiler-image-text,
+.wiki-gallery-images a:focus .wiki-spoiler-image-text {
     /* Hide the spoiler text when mousing over */
     color: transparent;
     background-color: transparent;
