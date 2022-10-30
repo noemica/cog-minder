@@ -1083,7 +1083,7 @@ a {
 
 .wiki-list {
     /* This allows us to properly indent things with images */
-    display: flow-root;
+    /* display: flow-root; */
 }
 
 .wiki-edit-content {
