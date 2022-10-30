@@ -580,7 +580,9 @@ jq(function ($) {
     // don't actually have elements with the matching IDs set
     function overrideLinks(selector: JQuery<HTMLElement>) {
         selector.find("a").on("click", (e) => {
-            if ($(e.target).attr("src")?.includes("wiki_images")) {
+            const src = $(e.target).attr("src");
+            if (src === undefined || src.charAt(0) != "#") {
+                // Only override local paths
                 return;
             }
 
@@ -696,7 +698,7 @@ jq(function ($) {
             setSelectedPage(selectedPage, true, init);
         } else {
             history.replaceState("Home", "", "wiki.html");
-            setSelectedPage("Home", false);
+            setSelectedPage("Home", true);
         }
     }
 
