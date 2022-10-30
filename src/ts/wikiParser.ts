@@ -567,7 +567,7 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
 
     // Create the lore with an optional caption
     state.output.push({ groupType: "Separator", html: undefined });
-    if (groupName === "0b10 Records") {
+    if (groupName.includes("Records")) {
         state.output.push({
             groupType: "Grouped",
             html: `<span class="wiki-game-text">&gt;Query(${entryName})</span>`,
@@ -695,15 +695,6 @@ function processSection(state: ParserState, endTag: string | undefined) {
 
 // Process a spoiler tag like [[Spoiler:Spoiler]]Text[[/Spoiler]]
 function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
-    // Search for the closing [[/Spoiler]] tag first
-    const spoilerResult = /\[\[\/Spoiler\]\]/.exec(state.initialContent.substring(state.index));
-    if (spoilerResult === null) {
-        // If we can't find the end tag then just skip over the opening spoiler tag
-        recordError(state, `Found spoiler tag without close tag`);
-        state.index += result[0].length;
-        return;
-    }
-
     // Only 2 options are Spoiler and Redacted
     // If it's invalid canShowSpoiler will default to not showing
     // unless Redacted setting is active
