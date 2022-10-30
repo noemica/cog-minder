@@ -174,8 +174,8 @@ jq(function ($) {
         $("#editImageTextButton").on("click", () => {
             insertWrappedText("[[Image]]", "[[/Image]]");
         });
-        $("#editImagesTextButton").on("click", () => {
-            insertWrappedText("[[Images]]", "[[/Images]]");
+        $("#editGalleryTextButton").on("click", () => {
+            insertWrappedText("[[Gallery]]", "[[/Gallery]]");
         });
         $("#editLoreButton").on("click", () => {
             insertWrappedText("[[Lore]]", "[[/Lore]]");

@@ -201,6 +201,81 @@ function processGameTextTag(state: ParserState, result: RegExpExecArray) {
     state.output.push({ groupType: "Grouped", html: boldedContent });
 }
 
+// Processes gallery tag like [[Gallery]]Image1.png|Image Caption|Image2.png|Image 2 caption[[/Gallery]]
+function processGalleryTag(state: ParserState, result: RegExpExecArray) {
+    // Find [[/Gallery]] closing tag first
+    const galleryResult = /\[\[\/Gallery\]\]/.exec(state.initialContent.substring(state.index));
+
+    if (galleryResult === null) {
+        // If we can't find the end tag then just skip over the opening gallery tag
+        recordError(state, `Found gallery tag without close tag`);
+        state.index += result[0].length;
+        return;
+    }
+
+    // Split interior text by |
+    // Even numbered indices contain image filenames, odd numbers contain captions
+    const startIndex = state.index + result[0].length;
+    const endIndex = startIndex + galleryResult.index - result[0].length;
+    const split = splitOutsideActions(state.initialContent.substring(startIndex, endIndex));
+
+    if (split.length < 2) {
+        recordError(
+            state,
+            `Found gallery action without enough images/captions, there should always be an equal number of images and captions`,
+        );
+        state.index = endIndex + galleryResult[0].length;
+        return;
+    }
+
+    if (split.length % 2 !== 0) {
+        // Just ignore the last image without a caption in this instance
+        recordError(state, `Found gallery action without equal number of links/captions`);
+    }
+
+    let galleryContent = `<div class="wiki-gallery-images">`;
+
+    for (let i = 0; i < Math.floor(split.length / 2); i++) {
+        const imageName = split[2 * i];
+        const imageCaption = split[2 * i + 1];
+
+        // Parse the image caption as a subsection individually so we can include links
+        const tempState: ParserState = {
+            allEntries: state.allEntries,
+            entry: state.entry,
+            errors: state.errors,
+            inSpoiler: state.inSpoiler,
+            index: 0,
+            initialContent: imageCaption,
+            inlineOnly: true,
+            output: [],
+            spoiler: state.spoiler,
+        };
+        processSection(tempState, undefined);
+        const imageCaptionHtml = outputGroupsToHtml(tempState.output, state.inSpoiler);
+
+        // Append image content HTML
+        galleryContent += `<div>
+            <div>
+                <a ${state.inSpoiler ? 'class="spoiler-image"' : ""} href="wiki_images/${imageName}" target="_blank">
+                ${state.inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
+                    <img src="wiki_images/${imageName}" onerror="this.onerror=null; this.src='wiki_images/Image Not Found.png'"/>
+                </a>
+            </div>
+            ${imageCaptionHtml}
+        </div>`;
+    }
+
+    galleryContent += "</div>";
+
+    state.output.push({
+        groupType: "Individual",
+        html: galleryContent,
+    });
+
+    state.index = endIndex + galleryResult[0].length;
+}
+
 // Process a heading tag like [[Heading]]Heading Text[[/Heading]]
 // or like [[Heading:2]]Heading Text[[/Heading]]
 function processHeadingTag(state: ParserState, result: RegExpExecArray) {
@@ -321,81 +396,6 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
     });
 
     state.index = endIndex + imageResult[0].length;
-}
-
-// Processes images tag like [[Images]]Image1.png|Image Caption|Image2.png|Image 2 caption[[/Images]]
-function processImagesTag(state: ParserState, result: RegExpExecArray) {
-    // Find [[/Images]] closing tag first
-    const imagesResult = /\[\[\/Images\]\]/.exec(state.initialContent.substring(state.index));
-
-    if (imagesResult === null) {
-        // If we can't find the end tag then just skip over the opening images tag
-        recordError(state, `Found images tag without close tag`);
-        state.index += result[0].length;
-        return;
-    }
-
-    // Split interior text by |
-    // Even numbered indices contain image filenames, odd numbers contain captions
-    const startIndex = state.index + result[0].length;
-    const endIndex = startIndex + imagesResult.index - result[0].length;
-    const split = splitOutsideActions(state.initialContent.substring(startIndex, endIndex));
-
-    if (split.length < 2) {
-        recordError(
-            state,
-            `Found images action without enough images/captions, there should always be an equal number of images and captions`,
-        );
-        state.index = endIndex + imagesResult[0].length;
-        return;
-    }
-
-    if (split.length % 2 !== 0) {
-        // Just ignore the last image without a caption in this instance
-        recordError(state, `Found images action without equal number of links/captions`);
-    }
-
-    let imagesContent = `<div class="wiki-gallery-images">`;
-
-    for (let i = 0; i < Math.floor(split.length / 2); i++) {
-        const imageName = split[2 * i];
-        const imageCaption = split[2 * i + 1];
-
-        // Parse the image caption as a subsection individually so we can include links
-        const tempState: ParserState = {
-            allEntries: state.allEntries,
-            entry: state.entry,
-            errors: state.errors,
-            inSpoiler: state.inSpoiler,
-            index: 0,
-            initialContent: imageCaption,
-            inlineOnly: true,
-            output: [],
-            spoiler: state.spoiler,
-        };
-        processSection(tempState, undefined);
-        const imageCaptionHtml = outputGroupsToHtml(tempState.output, state.inSpoiler);
-
-        // Append image content HTML
-        imagesContent += `<div>
-            <div>
-                <a ${state.inSpoiler ? 'class="spoiler-image"' : ""} href="wiki_images/${imageName}" target="_blank">
-                ${state.inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
-                    <img src="wiki_images/${imageName}" onerror="this.onerror=null; this.src='wiki_images/Image Not Found.png'"/>
-                </a>
-            </div>
-            ${imageCaptionHtml}
-        </div>`;
-    }
-
-    imagesContent += "</div>";
-
-    state.output.push({
-        groupType: "Individual",
-        html: imagesContent,
-    });
-
-    state.index = endIndex + imagesResult[0].length;
 }
 
 // Processes list tag like [[List]]Item 1|Item 2|Item 3[[/List]]
@@ -584,10 +584,10 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
 const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => void> = new Map([
     ["B", processBTag],
     ["GameText", processGameTextTag],
+    ["Gallery", processGalleryTag],
     ["Heading", processHeadingTag],
     ["I", processITag],
     ["Image", processImageTag],
-    ["Images", processImagesTag],
     ["List", processListTag],
     ["Lore", processLoreTag],
     ["Spoiler", processSpoilerTag],
