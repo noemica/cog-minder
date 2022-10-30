@@ -1890,11 +1890,18 @@ export function leetSpeakMatchTransform(name: string): string {
         .replace(/8/, "b");
 }
 
-// Awaits for all the given image urls to be loaded
-async function loadImage(imageUrl: string): Promise<any> {
+// Returns a promise waiting for the given image url to be loaded, returns success of load
+// Will log to console if image not found
+export async function loadImage(imageUrl: string): Promise<boolean> {
     return new Promise((resolve) => {
         const image = new Image();
-        image.onload = resolve;
+        image.onload = () => {
+            resolve(true);
+        };
+        image.onerror = () => {
+            console.log(`Found invalid image ${image.src}`);
+            resolve(false);
+        };
         image.src = imageUrl;
     });
 }

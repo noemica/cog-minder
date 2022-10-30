@@ -22,18 +22,53 @@ type OutputGroup = {
     groupType: OutputGroupType;
 };
 
-// Full parser state
-type ParserState = {
+class ParserState {
     allEntries: Map<string, WikiEntry>;
     errors: string[];
     entry: WikiEntry;
+    images: Set<string>;
     inSpoiler: boolean;
     initialContent: string;
     index: number;
     inlineOnly: boolean;
     output: OutputGroup[];
     spoiler: Spoiler;
-};
+
+    constructor(
+        allEntries: Map<string, WikiEntry>,
+        entry: WikiEntry,
+        errors: string[],
+        images: Set<string>,
+        inSpoiler: boolean,
+        initialContent: string,
+        inlineOnly: boolean,
+        spoiler: Spoiler,
+    ) {
+        this.allEntries = allEntries;
+        this.errors = errors;
+        this.entry = entry;
+        this.images = images;
+        this.inSpoiler = inSpoiler;
+        this.initialContent = initialContent;
+        this.index = 0;
+        this.inlineOnly = inlineOnly;
+        this.output = [];
+        this.spoiler = spoiler;
+    }
+
+    static Clone(state: ParserState): ParserState {
+        return new ParserState(
+            state.allEntries,
+            state.entry,
+            state.errors,
+            state.images,
+            state.inSpoiler,
+            state.initialContent,
+            state.inlineOnly,
+            state.spoiler,
+        );
+    }
+}
 
 // Creates the HTML content of a wiki entry
 export function createContentHtml(
@@ -41,7 +76,7 @@ export function createContentHtml(
     allEntries: Map<string, WikiEntry>,
     spoilerState: Spoiler,
     headingLink: boolean,
-): { html: string; errors: string[] } {
+): { html: string; errors: string[]; images: Set<string> } {
     // Process each section into the same output groups
 
     // Process initial content by replacing any instances of [XYZ] in links with {{xyz}}
@@ -49,17 +84,7 @@ export function createContentHtml(
     const initialContent = entry.content.replace(/(?<!\[)\[([\w]*)\]/g, (_, p1) => {
         return `{{${p1}}}`;
     });
-    const state: ParserState = {
-        allEntries: allEntries,
-        entry: entry,
-        errors: [],
-        inSpoiler: false,
-        index: 0,
-        initialContent: initialContent,
-        inlineOnly: false,
-        output: [],
-        spoiler: spoilerState,
-    };
+    const state = new ParserState(allEntries, entry, [], new Set<string>(), false, initialContent, false, spoilerState);
     processSection(state, undefined);
 
     // Combine all alt names as part of the title
@@ -80,6 +105,7 @@ export function createContentHtml(
             headingLink ? `<a href="#${entry.name}">${headingText}</a>` : headingText
         }</h2>${outputHtml}`,
         errors: state.errors,
+        images: state.images,
     };
 }
 
@@ -157,17 +183,10 @@ function outputGroupsToHtml(
 function processBTag(state: ParserState, result: RegExpExecArray) {
     // Process the heading subsection independently
     const subSectionStart = result.index + result[0].length;
-    const tempState: ParserState = {
-        allEntries: state.allEntries,
-        entry: state.entry,
-        errors: state.errors,
-        inSpoiler: state.inSpoiler,
-        index: subSectionStart,
-        initialContent: state.initialContent,
-        output: [],
-        inlineOnly: true,
-        spoiler: state.spoiler,
-    };
+    const tempState = ParserState.Clone(state);
+    tempState.index = subSectionStart;
+    tempState.inlineOnly = true;
+
     processSection(tempState, "/B");
     state.index = tempState.index;
     const boldedContent = `<b>${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</b>`;
@@ -179,26 +198,18 @@ function processBTag(state: ParserState, result: RegExpExecArray) {
 function processGameTextTag(state: ParserState, result: RegExpExecArray) {
     // Process the heading subsection independently
     const subSectionStart = result.index + result[0].length;
-    const tempState: ParserState = {
-        allEntries: state.allEntries,
-        entry: state.entry,
-        errors: state.errors,
-        inSpoiler: state.inSpoiler,
-        index: subSectionStart,
-        initialContent: state.initialContent,
-        output: [],
-        inlineOnly: true,
-        spoiler: state.spoiler,
-    };
+    const tempState = ParserState.Clone(state);
+    tempState.index = subSectionStart;
+    tempState.inlineOnly = true;
     processSection(tempState, "/GameText");
     state.index = tempState.index;
-    const boldedContent = `<span class="wiki-game-text">${outputGroupsToHtml(
+    const gameTextContent = `<span class="wiki-game-text">${outputGroupsToHtml(
         tempState.output,
         state.inSpoiler,
         true,
     )}</span>`;
 
-    state.output.push({ groupType: "Grouped", html: boldedContent });
+    state.output.push({ groupType: "Grouped", html: gameTextContent });
 }
 
 // Processes gallery tag like [[Gallery]]Image1.png|Image Caption|Image2.png|Image 2 caption[[/Gallery]]
@@ -239,18 +250,12 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         const imageName = split[2 * i];
         const imageCaption = split[2 * i + 1];
 
+        state.images.add(imageName);
+
         // Parse the image caption as a subsection individually so we can include links
-        const tempState: ParserState = {
-            allEntries: state.allEntries,
-            entry: state.entry,
-            errors: state.errors,
-            inSpoiler: state.inSpoiler,
-            index: 0,
-            initialContent: imageCaption,
-            inlineOnly: true,
-            output: [],
-            spoiler: state.spoiler,
-        };
+        const tempState = ParserState.Clone(state);
+        tempState.inlineOnly = true;
+        tempState.initialContent = imageCaption;
         processSection(tempState, undefined);
         const imageCaptionHtml = outputGroupsToHtml(tempState.output, state.inSpoiler);
 
@@ -290,17 +295,9 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
 
     // Process the heading subsection independently
     const subSectionStart = result.index + result[0].length;
-    const tempState: ParserState = {
-        allEntries: state.allEntries,
-        entry: state.entry,
-        errors: state.errors,
-        inSpoiler: state.inSpoiler,
-        index: subSectionStart,
-        initialContent: state.initialContent,
-        output: [],
-        inlineOnly: true,
-        spoiler: state.spoiler,
-    };
+    const tempState = ParserState.Clone(state);
+    tempState.index = subSectionStart;
+    tempState.inlineOnly = true;
     processSection(tempState, "/Heading");
     state.index = tempState.index;
     let headingContent = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
@@ -320,17 +317,9 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
 function processITag(state: ParserState, result: RegExpExecArray) {
     // Process the heading subsection independently
     const subSectionStart = result.index + result[0].length;
-    const tempState: ParserState = {
-        allEntries: state.allEntries,
-        entry: state.entry,
-        errors: state.errors,
-        inSpoiler: state.inSpoiler,
-        index: subSectionStart,
-        initialContent: state.initialContent,
-        output: [],
-        inlineOnly: true,
-        spoiler: state.spoiler,
-    };
+    const tempState = ParserState.Clone(state);
+    tempState.index = subSectionStart;
+    tempState.inlineOnly = true;
     processSection(tempState, "/I");
     state.index = tempState.index;
     const boldedContent = `<i>${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</i>`;
@@ -358,6 +347,8 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
     const split = splitOutsideActions(state.initialContent.substring(startIndex, endIndex));
     const imageName = split[0];
 
+    state.images.add(imageName);
+
     // Determine if there is a caption or not
     let imageCaptionHtml: string;
     if (split.length === 1) {
@@ -368,17 +359,9 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
         }
 
         // Parse the image caption as a subsection individually so we can include links
-        const tempState: ParserState = {
-            allEntries: state.allEntries,
-            entry: state.entry,
-            errors: state.errors,
-            inSpoiler: state.inSpoiler,
-            index: 0,
-            initialContent: split[1],
-            inlineOnly: true,
-            output: [],
-            spoiler: state.spoiler,
-        };
+        const tempState = ParserState.Clone(state);
+        tempState.initialContent = split[1];
+        tempState.inlineOnly = true;
         processSection(tempState, undefined);
         imageCaptionHtml = outputGroupsToHtml(tempState.output, state.inSpoiler);
     }
@@ -429,17 +412,9 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
 
     for (const listItem of split) {
         // Parse the list item as a subsection individually
-        const tempState: ParserState = {
-            allEntries: state.allEntries,
-            entry: state.entry,
-            errors: state.errors,
-            inSpoiler: state.inSpoiler,
-            index: 0,
-            initialContent: listItem,
-            inlineOnly: true,
-            output: [],
-            spoiler: state.spoiler,
-        };
+        const tempState = ParserState.Clone(state);
+        tempState.initialContent = listItem;
+        tempState.inlineOnly = true;
         processSection(tempState, undefined);
         const listItemHtml = outputGroupsToHtml(tempState.output, state.inSpoiler, true, false);
 
@@ -705,17 +680,8 @@ function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
     // Process the spoiler subsection independently
     const inSpoiler = !canShowSpoiler(result[2] as Spoiler, state.spoiler);
     const subSectionStart = result.index + result[0].length;
-    const tempState: ParserState = {
-        allEntries: state.allEntries,
-        entry: state.entry,
-        errors: state.errors,
-        inSpoiler: inSpoiler,
-        index: subSectionStart,
-        initialContent: state.initialContent,
-        inlineOnly: state.inlineOnly,
-        output: [],
-        spoiler: state.spoiler,
-    };
+    const tempState = ParserState.Clone(state);
+    tempState.index = subSectionStart;
     processSection(tempState, "/Spoiler");
     const spoilerContent = outputGroupsToHtml(tempState.output, inSpoiler, true, true);
     state.index = tempState.index;

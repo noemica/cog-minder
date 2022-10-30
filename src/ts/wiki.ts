@@ -19,6 +19,7 @@ import {
     getBot,
     getItem,
     initData,
+    loadImage,
 } from "./common";
 import { MapLocation, Spoiler } from "./commonTypes";
 import { Bot } from "./botTypes";
@@ -116,6 +117,11 @@ jq(function ($) {
             // Show the editor pane
             $("#editContent").removeClass("not-visible");
             ($("#editButton") as any).tooltip("hide");
+        });
+        $("#validateButton").on("click", () => {
+            // Validate all content
+            validateAll();
+            ($("#validateButton") as any).tooltip("hide");
         });
 
         // Register editor buttons
@@ -587,7 +593,7 @@ jq(function ($) {
     }
 
     // Parses the Wiki entry content and updates errors
-    function parseEntryContent(entry: WikiEntry, allEntries: Map<string, WikiEntry>, headerLink = false) {
+    function parseEntryContent(entry: WikiEntry, headerLink = false) {
         const parseResult = createContentHtml(entry, allEntries, getSpoilerState(), headerLink);
 
         if (parseResult.errors.length > 0) {
@@ -700,9 +706,9 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const content = $(parseEntryContent(entry, allEntries));
+        const content = $(parseEntryContent(entry));
         const parentContent =
-            entry.parentGroup === undefined ? undefined : $(parseEntryContent(entry.parentGroup, allEntries, true));
+            entry.parentGroup === undefined ? undefined : $(parseEntryContent(entry.parentGroup, true));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createBotDataContent(bot, true));
 
@@ -728,7 +734,7 @@ jq(function ($) {
 
         // Create HTML elements
         const botsContent = $("<div></div>");
-        const commonContent = $(parseEntryContent(entry, allEntries));
+        const commonContent = $(parseEntryContent(entry));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const botNameContainer = $(`<div class="btn-group btn-group-toggle" data-toggle="buttons"></div>`);
         const infoboxContentContainer = $("<div></div>");
@@ -747,7 +753,7 @@ jq(function ($) {
             const botInfoboxContent = $(
                 `<div class="mt-2">${createBotDataContent(botEntry.extraData as Bot, true)}</div>`,
             );
-            const botContent = $(`<div>${parseEntryContent(botEntry, allEntries, true)}</div>`);
+            const botContent = $(`<div>${parseEntryContent(botEntry, true)}</div>`);
 
             // Append to DOM
             botsContent.append(botContent as any);
@@ -842,7 +848,7 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const content = $(parseEntryContent(entry, allEntries));
+        const content = $(parseEntryContent(entry));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createLocationHtml(location, getSpoilerState(), false));
 
@@ -857,7 +863,7 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const content = $(parseEntryContent(entry, allEntries));
+        const content = $(parseEntryContent(entry));
 
         // Append to DOM
         pageContent.append(content as any);
@@ -910,11 +916,11 @@ jq(function ($) {
         const pageContent = $("#pageContent");
 
         // Create HTML elements
-        const content = $(parseEntryContent(entry, allEntries));
+        const content = $(parseEntryContent(entry));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const infoboxContent = $(createItemDataContent(part));
         const parentContent =
-            entry.parentGroup === undefined ? undefined : $(parseEntryContent(entry.parentGroup, allEntries, true));
+            entry.parentGroup === undefined ? undefined : $(parseEntryContent(entry.parentGroup, true));
 
         // Append to DOM
         // Append the infobox first which floats to the right
@@ -935,7 +941,7 @@ jq(function ($) {
 
         // Create HTML elements
         const partsContent = $("<div></div>");
-        const commonContent = $(parseEntryContent(entry, allEntries));
+        const commonContent = $(parseEntryContent(entry));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
         const partNameContainer = $(`<div class="btn-group btn-group-toggle" data-toggle="buttons"></div>`);
         const infoboxContentContainer = $("<div></div>");
@@ -960,7 +966,7 @@ jq(function ($) {
             const partInfoboxContent = $(
                 `<div class="mt-2">${createItemDataContent(partEntry.extraData as Item)}</div>`,
             );
-            const partContent = $(`<div>${parseEntryContent(partEntry, allEntries, true)}</div>`);
+            const partContent = $(`<div>${parseEntryContent(partEntry, true)}</div>`);
 
             partInfoboxContent.addClass("not-visible");
             partContent.addClass("not-visible");
@@ -991,5 +997,31 @@ jq(function ($) {
         infoboxColumn.append(infoboxContentContainer as any);
         pageContent.append(commonContent as any);
         pageContent.append(partsContent as any);
+    }
+
+    // Validates all page entries
+    async function validateAll() {
+        for (const entry of allEntries.values()) {
+            const parseResult = createContentHtml(entry, allEntries, getSpoilerState(), false);
+            const promises: Promise<any>[] = [];
+
+            for (const imageName of parseResult.images.keys()) {
+                promises.push(loadImage(`wiki_images/${imageName}`));
+            }
+
+            if (parseResult.errors.length > 0) {
+                console.log(`Errors while parsing ${entry.name}`);
+
+                for (const error of parseResult.errors) {
+                    console.log(`Parse error: ${error}`);
+                }
+            }
+
+            const results = await Promise.all(promises);
+
+            if (!results.every((r) => r === true)) {
+                console.log(`Missing images above in ${entry.name}`);
+            }
+        }
     }
 });
