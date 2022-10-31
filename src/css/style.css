@@ -962,6 +962,7 @@ a {
 }
 
 .wiki-sidebar-image {
+    min-width: 150px;
     float: right;
     clear: right;
     margin: .125rem 0 .125rem 1.5rem;
