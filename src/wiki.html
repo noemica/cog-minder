@@ -55,7 +55,11 @@
         <div id="homeContainer" class="wiki-content">
             <p id="homeStatus" class="mt-2 not-visible"></p>
 
-            <p class="mt-2">This is a WIP unofficial Cogmind Wiki. Use the page dropdown to go to a specific page. For editing info, check out the <a href="https://discord.gg/f8Fqv2qQxV">Cog-Minder wiki Discord server</a></p>
+            <p class="mt-2">This is a WIP unofficial Cogmind Wiki. Use the page dropdown to go to a specific page. For
+                editing info, check out the <a href="https://discord.gg/f8Fqv2qQxV">Cog-Minder wiki Discord server</a>
+                and make contributions via <a
+                    href="https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/edit?usp=sharing">This
+                    Google Spreadsheet</a>.</p>
             <p>Contributors:</p>
             <ul>
                 <li>aoemica</li>
@@ -70,20 +74,37 @@
                     Content</span>
                 <button id="editBoldTextButton" class="btn" data-toggle="tooltip"
                     title="Bolds any text inside the selection.">Bold</button>
-                <button id="editItalicizeTextButton" class="btn" data-toggle="tooltip" title="Italicizes any text inside the selection">Italicize</button>
-                <button id="editGameTextButton" class="btn" data-toggle="tooltip" title="Provides a game-text style to text inside the selection">Game Text</button>
-                <button id="editSpoilerTextButton" class="btn" data-toggle="tooltip" title="Provides a spoiler tag around any text or image content nested underneath if the spoiler setting is set to None">Spoiler</button>
-                <button id="editRedactedTextButton" class="btn" data-toggle="tooltip" title="Provides a spoiler tag around any text or image content nested underneath if the spoiler setting is not set to Redacted">Redacted</button>
-                <button id="editLinkTextButton" class="btn" data-toggle="tooltip" title="Inserts a link to the selected text. Link text may be different by using the form [[Link|Link Text]]">Link</button>
+                <button id="editItalicizeTextButton" class="btn" data-toggle="tooltip"
+                    title="Italicizes any text inside the selection">Italicize</button>
+                <button id="editGameTextButton" class="btn" data-toggle="tooltip"
+                    title="Provides a game-text style to text inside the selection">Game Text</button>
+                <button id="editSpoilerTextButton" class="btn" data-toggle="tooltip"
+                    title="Provides a spoiler tag around any text or image content nested underneath if the spoiler setting is set to None">Spoiler</button>
+                <button id="editRedactedTextButton" class="btn" data-toggle="tooltip"
+                    title="Provides a spoiler tag around any text or image content nested underneath if the spoiler setting is not set to Redacted">Redacted</button>
+                <button id="editLinkTextButton" class="btn" data-toggle="tooltip"
+                    title="Inserts a link to the selected text. Link text may be different by using the form [[Link|Link Text]]">Link</button>
 
-                <span class="wiki-button-group-label" data-toggle="tooltip" title="Top-level content that can not typically be placed underneath other tags except for spoiler tags.">Top-level Content</span>
-                <button id="editHeading1TextButton" class="btn" data-toggle="tooltip" title="Provides a large heading line with an underline containing the given text">Heading 1</button>
-                <button id="editHeading2TextButton" class="btn" data-toggle="tooltip" title="Provides a slightly smaller heading line containing the given text">Heading 2</button>
-                <button id="editImageTextButton" class="btn" data-toggle="tooltip" title="Creates an image on the right side of the page with an optional caption in the form of [[Image]]Image Name.png|Image Caption[[/Image]]">Sidebar Image</button>
-                <button id="editGalleryTextButton" class="btn" data-toggle="tooltip" title="Creates a list of images centered in the page in a list form. Images and captions should be sequentially listed, like [[Gallery]]Image 1.png|Image 1 caption|Image 2.png|Image 2 caption[[/Gallery]]">Images</button>
-                <button id="editLoreButton" class="btn" data-toggle="tooltip" title="Creates a lore entry that pulls text from actual lore quotes, use Lore page as a reference">Lore</button>
-                <button id="editUnorderedListTextButton" class="btn" data-toggle="tooltip" title="Creates an unordered (bulleted) list of items that can be separated out like [[List]]Item 1|Item 2|Item 3[[/List]]">Unordered List</button>
-                <button id="editOrderedListTextButton" class="btn" data-toggle="tooltip" title="Creates an ordered (numbered) list of items that can be separated out like [[List:Ordered]]Item 1|Item 2|Item 3[[/List]]">Ordered List</button>
+                <span class="wiki-button-group-label" data-toggle="tooltip"
+                    title="Top-level content that can not typically be placed underneath other tags except for spoiler tags.">Top-level
+                    Content</span>
+                <button id="editHeading1TextButton" class="btn" data-toggle="tooltip"
+                    title="Provides a large heading line with an underline containing the given text">Heading 1</button>
+                <button id="editHeading2TextButton" class="btn" data-toggle="tooltip"
+                    title="Provides a slightly smaller heading line containing the given text">Heading 2</button>
+                <button id="editImageTextButton" class="btn" data-toggle="tooltip"
+                    title="Creates an image on the right side of the page with an optional caption in the form of [[Image]]Image Name.png|Image Caption[[/Image]]">Sidebar
+                    Image</button>
+                <button id="editGalleryTextButton" class="btn" data-toggle="tooltip"
+                    title="Creates a list of images centered in the page in a list form. Images and captions should be sequentially listed, like [[Gallery]]Image 1.png|Image 1 caption|Image 2.png|Image 2 caption[[/Gallery]]">Images</button>
+                <button id="editLoreButton" class="btn" data-toggle="tooltip"
+                    title="Creates a lore entry that pulls text from actual lore quotes, use Lore page as a reference">Lore</button>
+                <button id="editUnorderedListTextButton" class="btn" data-toggle="tooltip"
+                    title="Creates an unordered (bulleted) list of items that can be separated out like [[List]]Item 1|Item 2|Item 3[[/List]]">Unordered
+                    List</button>
+                <button id="editOrderedListTextButton" class="btn" data-toggle="tooltip"
+                    title="Creates an ordered (numbered) list of items that can be separated out like [[List:Ordered]]Item 1|Item 2|Item 3[[/List]]">Ordered
+                    List</button>
             </div>
             <textarea id="editTextArea" class="wiki-edit-text mt-2"></textarea>
             <div class="mt-2 justify-content-center">
