@@ -6222,14 +6222,14 @@
    "Content": ""
   },
   {
-    "Name": "Phase Shifters",
-    "Parts": [
-      "Phase Shifter",
-      "Imp. Phase Shifter",
-      "Adv. Phase Shifter",
-      "Exp. Phase Shifter"
-    ],
-    "Content": ""
+   "Name": "Phase Shifters",
+   "Parts": [
+    "Phase Shifter",
+    "Imp. Phase Shifter",
+    "Adv. Phase Shifter",
+    "Exp. Phase Shifter"
+   ],
+   "Content": ""
   },
   {
    "Name": "Piercing Weapons",
@@ -6654,7 +6654,7 @@
     "Adv. Transmission Jammer",
     "Exp. Transmission Jammer"
    ],
-   "Content": ""
+   "Content": "Transmission jammers are parts allowing to limit consequences of your activity by blocking enemy signals. Need [[Line of Sight|LoS]] to enemy to work.\n[[Heading:2]] List of effects [[/Heading]]\n[[List:Ordered]]Block [[Distress Signals|distress signals]]|Stop [[Heavy]] reinforcements calls|Prevent [[U-05 Engineer|engineers from calling reinforcements]]|When paired with [[Transport Network Coupler|TNC] block [[Hauler|hauler's reinforcements call]] [[/List]]\n[[Heading]] Tips [[/Heading]]\nMost jammers have short range, so attention needed to keep enemies in range. [[Watcher]] and [[Heavy]] bots require special attention due to their big visual range.\nSignificantly decreases chances of small confrontation snowballing into big fight.\nLimits consequences of mistakes during stealth, if you can deal with bot that spotted you. Gives significantly more freedom to stealth builds able to take on small groups of enemies.\nIf you can destroy [[Extermination Squad|extermination squad's]] leader without the rest of the squad seeing you, they might wander away.\nJammers allow you to force 1-v-1 fights via [[Line of Sight|LoS]] manipulation. Works best versus stationary bots like [[Caves|caves outposts]]. Alternatively, good jammer paired with strong [[Cloaking Devices|cloaking device]] or [[Exp. Transmission Jammer]] on it's own allow forcing 1-v-1 fighting by surpassing enemy's visual range."
   },
   {
    "Name": "Trap Extractors",
@@ -7430,7 +7430,7 @@
   {
    "Name": "Zhirov (Location)",
    "ImageName": "Zhirov.png",
-   "Content": "",
+   "Content": "Zhirov is a [[Caves]] branch that appears on -5 or -4 and is home to the eponymous bot [[Zhirov]]. This is a safe map with no hostile spawns and only friendly bots, although Cogmind should be wary of [[Corruption]] triggering misfires that anger Zhirov. Detaching all ranged weapons is advised.\nThis map initially appears to be a small section of caves with only an exit. Approaching the left wall will cause the cave walls to slide away to reveal some Cloak Generators and some larger Sealed Heavy Doors blocking the way. These Cloak Generators surround the entire outside of Zhirov's lab. Continuing to the left will cause the doors to slide down and reveal Zhirov himself who will greet you. [[Perun]] and [[Svarog]] guard just above and below the entrance on the left side.\nThere are a large collection of [[Terminal|Terminals]] to the left of Zhirov. The first terminal going counterclockwise contains some lore records and the depths of, [[Quarantine]], [[Testing]], and [[Command]]. The second contains Analyses for [[Q-Series]], [[Striker|Strikers]], [[Executioner|Executioners]], and [[Alpha 7|Alpha 7s]]. The third contains 4 Prototype ID Banks. The fourth contains Schematics for an [[Assault Drone Bay]], [[Exp. Heat Sink]], [[Exp. Optical Array]], and [[Imp. Arc Thrower]]. This is the only way that Assault Drone Bays can be obtained. In the room just below this, there is a series of 3 Terminals that describe Zhirov's past since arriving on Tau Ceti IV.\nNear the center area there are two [[Alien Artifact|Alien Artifacts]] with explanatory Terminals. The left will either be an [[Integrated Reactor]] or an [[Integrated Dissipator]]. The right will always be a [[Transdimensional Reconstructor]].\nAt the bottom of the map are some broken bots and an assorted collection of parts. None of these parts are guaranteed, although there will always be some available. The list of available parts is as follows:\n[[List]][[Adv. Myomer Leg]], [[Cld. Gravmag System]], or [[Cld. Nuclear Pulse Thruster]]|[[Fusion Reactor]] or [[Hvy. Antimatter Reactor]]|[[Adv. Energy Well]], [[Imp. Matter Compressor]], or [[Adv. Power Amplifier]]|[[Exp. Core Shielding]], [[Exp. Power Shielding]], [[Exp. Propulsion Shielding]], [[Exp. Utility Shielding]], or [[Exp. Weapon Shielding]]|[[Particle Accelerator]], [[Prc. Matter Filter]], or [[Prc. Energy Filter]]|[[Adv. System Shield]] or [[Adv. Hacking Suite]][[/List]]\n[[Image]]Zhirov Explosion.gif|Zhirov leaving with flair[[/Image]]\nUnlike the Cloak Generators in [[Zion]], these machines are the real deal. If destroyed, there are some major consequences that follow. Zhirov and friends will immediately turn aggressive and begin to attack. A large group of friendly [[Enhanced Grunt|Enhanced Grunts]] wil teleport in and start attacking Zhirov. Zhirov will attempt to teleport out when his core integrity gets to about half. He will first say [[GameText]]Looks like we have to say goodbye to this place, and you[[/GameText]]. This will rig a large number of explosions to go off in about 10 turns. This happens even if the Cloak Generators are already intact and Zhirov is attacked.\n[[Heading]]Alignment[[/Heading]][[Image]]Testing SGEMP.png|The SGEMP room in Testing[[/Image]]\nAfter entering and exiting the Terminal room, Zhirov will ask Cogmind to steal the [[SGEMP Prototype]] from Testing and bring it to [[Access]. If done, Zhirov, Perun, and Svarog will show up in Access and will give Cogmind perfect map intel. They will follow Cogmind for a while, although they will all teleport out when Zhirov falls below roughly half core integrity. If a [[Core Reset Matrix]] is used prior to Access but Cogmind still carries the SGEMP, Zhirov and his allies will turn hostile and fight Cogmind to the death. There are no other Alignment incompatabilities with this quest.\nThere is a second part of this quest that continues in [[Command]]. [[Spoiler:Redacted]]After destroying the first form of [[MAIN.C (Shell)|MAIN.C]] in Command, Zhirov, Perun, and Svarog will show up and attack MAIN.C. Zhirov will activate the Modified SGEMP and disable all 0b10-aligned bots on the map. This also affects [[Warlord (Command)]], but no other Derelicts.[[/Spoiler]]",
    "Exits": [
     "Proximity Caves"
    ],
@@ -7519,6 +7519,11 @@
    "Content": "Make a big mess of their home, and they make a big mess of ya"
   },
   {
+   "Name": "Alien Artifact",
+   "Content": "",
+   "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Assault Squad",
    "Content": ""
   },
@@ -7544,6 +7549,10 @@
   },
   {
    "Name": "Derelict",
+   "Content": ""
+  },
+  {
+   "Name": "Distress Signals",
    "Content": ""
   },
   {
@@ -7580,12 +7589,16 @@
    "Content": ""
   },
   {
-    "Name": "Intercept Squad",
-    "Content": "",
-    "Spoiler": "Spoiler"
+   "Name": "Intercept Squad",
+   "Content": "",
+   "Spoiler": "Spoiler"
   },
   {
    "Name": "Investigation Squad",
+   "Content": ""
+  },
+  {
+   "Name": "Line of Sight",
    "Content": ""
   },
   {
@@ -7593,8 +7606,8 @@
    "Content": ""
   },
   {
-    "Name": "Momentum",
-    "Content": ""
+   "Name": "Momentum",
+   "Content": ""
   },
   {
    "Name": "Prototype Parts",
@@ -7621,16 +7634,16 @@
    "Content": ""
   },
   {
-    "Name": "Schematic",
-    "Content": ""
+   "Name": "Schematic",
+   "Content": ""
   },
   {
    "Name": "Terminal",
    "Content": ""
   },
   {
-    "Name": "Transfer Station",
-    "Content": ""
+   "Name": "Transfer Station",
+   "Content": ""
   },
   {
    "Name": "Wintypes",
