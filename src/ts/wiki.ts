@@ -581,7 +581,8 @@ jq(function ($) {
     function overrideLinks(selector: JQuery<HTMLElement>) {
         selector.find("a").on("click", (e) => {
             const src = $(e.target).attr("src");
-            if (src === undefined || src.charAt(0) != "#") {
+            const href = $(e.target).attr("href");
+            if ((src !== undefined && src.charAt(0) !== "#") || (href !== undefined && href.charAt(0) !== "#")) {
                 // Only override local paths
                 return;
             }
