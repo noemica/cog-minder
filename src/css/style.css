@@ -948,7 +948,6 @@ a {
 
 .wiki-infobox {
     background-color: black;
-    flex: 0;
     border: 1px solid #008800;
     padding: .5rem .75rem;
     max-width: 60ch;

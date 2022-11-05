@@ -955,6 +955,21 @@
    "Content": ""
   },
   {
+    "Name": "A bots",
+    "Bots": [
+      "Architect",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "A6",
+      "A7",
+      "A8"
+    ],
+    "Content": "",
+    "Spoiler": "Redacted"
+  },
+  {
    "Name": "Behemoth",
    "Bots": [
     "B-75 Beast",
@@ -6864,7 +6879,7 @@
   {
    "Name": "Armory",
    "ImageName": "Armory.png",
-   "Content": "",
+   "Content": "Armory is a [[0b10]]-controlled [[Factory]]/[[Research]] [[Branch]] that apperas between -4 and -3. It is a tough map with tight corridors, few available paths, an above average number of patrols, and special dormant and guard bots. There are several unique types of patrols on this map as well, with a [[Demolisher]] leading a squad of [[Grunt|Grunts]] and [[Duelist]] squads with a [[Protector]] in tow. Stealth builds will have a difficult time of sneaking past unnoticed and combat bots must be ready to do a lot of killing to get by. If Cogmind can survive, some of the rewards are rewirable allies, a high number of [[Fabricator|Fabricators]], and large stockpiles of out-of-depth parts.\nThe overall map structure varies, but there are some common features of Armory maps. There are usually corridors running horizontally on the bottom and top of the map that contain large rooms next to each other connected by Emergency Access doors. The map can be a little maze-like although heading to the left and crossing from bottom to top or top to bottom will usually lead to an exit.\n[[Heading:2]]Special Machines[[/Heading]]\nThere is one type of special machine in Armory. The Energy Cycler is a large explosive machine that will open all Sealed Heavy Doors on the map and summon several patrols. These Sealed Heavy Doors have hackable Terminals and contain high rating part stockpiles, sometimes full of entirely non-faulty [[Prototype Parts]].\n[[Heading]]Prefabs[[/Heading]]\n[[Gallery]]Armory Guard Corridor.png|Small corridor of guards|Armory Dormant Bots.png|Dormant hostile bots|Armory Rewirable Bots.png|Rewirable bots|Armory Energy Cycler.png|Energy Cycler machine behind 2-tile door|Armory Shell Stockpile.png|Parts cache inside Reinforced Shell|Armory Prototype Stockpile.png|Prototype part cache on ground|Armory Sealed Vault Stockpile.png|Sealed vault part cache|Armory Central Exit.png|Central main access exit guarded by Sentries|Armory Left Exit.png|Left main access exit|Armory Lab Exit.png|Hidden [[Lab]] exit[[/Gallery]]\n[[Heading:2]]Exits[[/Heading]]\nThere are 3 types of exits in Armory:\n[[List]]Center main access: This exit is guarded by 4 [[Sentry|Sentries]] and appears in the center of the map. There are 2 tile wide corridors that extend in opposite directions coming from the exit.|Left main access: This exit is unguraded and is found behind a set of double doors on the left side of the map.|[[Lab]] exit: This exit is hidden behind a wall on the far-left side of the map. It will always be adjacent to a 1 tile wide hallway. [[Spoiler:Redacted]]There is a [[Dimensional Node Initializer]] installed at the exit to Lab. Using a [[Transdimensional Reconstructor]] or [[Hpw. Transdimensional Reconstructor]] will always cause Cogmind to end up next to this exit.[[/Spoiler]][[/List]]",
    "Exits": [
     "Lab",
     "Research"
@@ -7099,7 +7114,7 @@
   {
    "Name": "Lab",
    "ImageName": "Lab.png",
-   "Content": "",
+   "Content": "Lab is a [[Factory]]/[[Research]] branch between -4 and -3 that is only accessible from [[Armory]]. This map is fixed every game, with the only variations being variations in the guaranteed items. This secret lab is used as a safe spot by the [[A bots]] to plan and coordinate as well as research stolen [[Sigix]] technology.\nLab has a small square entrance and a 1-tile corridor that leads to the next main access exit and a Sealed Barrier with a [[Terminal]] locking it. There are a few different ways to get inside:\n[[List]]Breaking in: The main Sealed Barrier blocking the way has 80 armor and high resistances, while the surrounding Rinforced Barriers have only 64 armor. Cutting through this is difficult without a strong [[Impact Weapons|Impact Weapon]] or overloadable thermal [[Energy Cannons|Energy Cannon]]. Coming in this way will result in being scanned immediately.|[[Zhirov (Location)]] code: One of the Terminals at Zhirov contains an access code to open up this barrier. Opening the Lab this way not result in being scanned.|Picking up the [[A7 Data Core]]: [[A7]] drops this item when killed. The doors will automatically open when approaching, and the message [[GameText]]A0_COM: WELCOME A7[[/GameText]] will appear in the log. This will also reveal the intruder detection lasers, but Cogmind will not be scanned immediately.|Using the [[Data Conduit]]: Using the Data Conduit in [[Data Miner (Location)]] will result in the doors opening automatically, the scanning lasers being visible, and no immediate scan.[[/List]]\n[[Heading:2]]Getting Scanned[[/Heading]]\n[[Image]]Lab Visible Lasers.png|Visible Lab intruder detecting lasers[[/Image]]\nThe lasers are invisible by default, although the A7 core and using the Data Conduit will reveal them. They are 3x3 squares of yellow tiles that move randomly. Every turn there is a chance that they will move in one of the cardinal directions. The center tiles cannot overlap with other lasers and they cannot move through walls, machines, or past the entrance of the Lab. Being within the 3x3 area will result in being scanned immediately. This will cause an announcement [[GameText]]A0_COM: INTRUDER ALERT[[/GameText]] and [[A5]] will show up and fight. This scan will also cause [[Intercept Squad|Intercepts]] to appear on most [[0b10]]-controlled floors. The other way to get scanned is to break either the outer wall of Reinforced Barriers or to destroy the Active System Cloaker machine on the right side of the map. Other machines are safe to break.\nThe inside of the Lab contains many unique item spawns. In counter-clockwise order starting from the entrance:\n[[List]]Big machine on top right: [[Core Reset Matrix]]|[[Alien Artifact]] shell on top of map #1: [[Transdimensional Reconstructor]]|Shell #2: [[Integrated Dissipator]], [[Integrated Mediator]], or [[Integrated Reactor]]|Shell #3: [[Core Expander]] or [[Core Regenerator]]|Top left item spot #1: [[Deep Network Scanner]] or [[Quantum Router]]|Item spot #2: [[AEGIS Remote Shield]], [[Exp. Powered Armor]], [[Hvy. Regenerative Plating]], or [[Med. Regenerative Plating]]|Item spots #3/4: [[Hyp. EM Gauss Rifle]], [[Potential Cannon]], [[Tachyon Dispersion Ray]], or [[Warp Cannon]]|Item tucked into bottom right wall: [[Gui. Remote Datajack]][[/List]]\nThere is also a hidden chamber at the bottom of the map. Accessing it requires digging through the wall which will result in a scan. Inside is a machine that contains the [[LC Capacitor]].\n[[Heading:2]]Special Machines[[/Heading]]\nNot counting the entrance Terminal, there are 3 unique interactible Terminals on this map. They will only be understandable if the Data Conduit has been used this run, otherwise they will just be garbled text. The Active System Cloaker machine on the right has some lore records and will summon a squad of [[Grunt|Grunts]] when destroyed. The A0 Command machine on the left only has lore records. Some of these records can only be unlocked if certain gameplay actions were performed this game. The hidden Storage 04-B machine has some lore records explaining the LC Capacitor and has a hack that will drop the Capacitor on the ground where it can be used.\n[[Heading]]Unlockable Lab Orders[[/Heading]]\nWhile most of the Lab Orders in the A0 Command machine are available all of the time, there are a few that have special conditions to achieve:\n[[List]]Order 6-0321: Destroy the [[Cetus]] Manufacturing Module machine|Order 6-0323: [[Warlord]] must be destroyed in his [[Warlord (Location)|base]]. Cogmind does not need to be the one to destroy Warlord or attack him at all.|Order 6-0324: Warlord must be met in his base, survive, and plan to attack -2 [[Research]][[/List]]",
    "Exits": [
     "Research"
    ],
@@ -7120,6 +7135,7 @@
     "Integrated Mediator",
     "Integrated Reactor",
     "LC Capacitor",
+    "Med. Regenerative Plating",
     "Potential Cannon",
     "Quantum Router",
     "Tachyon Dispersion Ray",
@@ -7560,6 +7576,11 @@
    "Content": ""
   },
   {
+    "Name": "Data Conduit",
+    "Content": "",
+    "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Derelict",
    "Content": ""
   },
@@ -7648,6 +7669,11 @@
   {
    "Name": "Schematic",
    "Content": ""
+  },
+  {
+    "Name": "Sigix",
+    "Content": "",
+    "Spoiler": "Spoiler"
   },
   {
    "Name": "Terminal",
