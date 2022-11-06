@@ -22,6 +22,8 @@ type OutputGroup = {
     groupType: OutputGroupType;
 };
 
+type AllowedContentType = "InlineOnly" | "InlineList" | "All";
+
 class ParserState {
     allEntries: Map<string, WikiEntry>;
     errors: string[];
@@ -30,7 +32,7 @@ class ParserState {
     inSpoiler: boolean;
     initialContent: string;
     index: number;
-    inlineOnly: boolean;
+    inlineOnly: AllowedContentType;
     output: OutputGroup[];
     spoiler: Spoiler;
 
@@ -41,7 +43,7 @@ class ParserState {
         images: Set<string>,
         inSpoiler: boolean,
         initialContent: string,
-        inlineOnly: boolean,
+        inlineOnly: AllowedContentType,
         spoiler: Spoiler,
     ) {
         this.allEntries = allEntries;
@@ -84,7 +86,7 @@ export function createContentHtml(
     const initialContent = entry.content.replace(/(?<!\[)\[([\w]*)\]/g, (_, p1) => {
         return `{{${p1}}}`;
     });
-    const state = new ParserState(allEntries, entry, [], new Set<string>(), false, initialContent, false, spoilerState);
+    const state = new ParserState(allEntries, entry, [], new Set<string>(), false, initialContent, "All", spoilerState);
     processSection(state, undefined);
 
     // Combine all alt names as part of the title
@@ -101,9 +103,9 @@ export function createContentHtml(
         outputHtml = "<p>There is no content here. Please consider contributing.</p>";
     }
     return {
-        html: `<h2 class="wiki-heading">${
+        html: `<h1 class="wiki-heading">${
             headingLink ? `<a href="#${entry.name}">${headingText}</a>` : headingText
-        }</h2>${outputHtml}`,
+        }</h1>${outputHtml}`,
         errors: state.errors,
         images: state.images,
     };
@@ -185,7 +187,7 @@ function processBTag(state: ParserState, result: RegExpExecArray) {
     const subSectionStart = result.index + result[0].length;
     const tempState = ParserState.Clone(state);
     tempState.index = subSectionStart;
-    tempState.inlineOnly = true;
+    tempState.inlineOnly = "InlineOnly";
 
     processSection(tempState, "/B");
     state.index = tempState.index;
@@ -200,7 +202,7 @@ function processGameTextTag(state: ParserState, result: RegExpExecArray) {
     const subSectionStart = result.index + result[0].length;
     const tempState = ParserState.Clone(state);
     tempState.index = subSectionStart;
-    tempState.inlineOnly = true;
+    tempState.inlineOnly = "InlineOnly";
     processSection(tempState, "/GameText");
     state.index = tempState.index;
     const gameTextContent = `<span class="wiki-game-text">${outputGroupsToHtml(
@@ -254,7 +256,7 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
 
         // Parse the image caption as a subsection individually so we can include links
         const tempState = ParserState.Clone(state);
-        tempState.inlineOnly = true;
+        tempState.inlineOnly = "InlineOnly";
         tempState.initialContent = imageCaption;
         processSection(tempState, undefined);
         const imageCaptionHtml = outputGroupsToHtml(tempState.output, state.inSpoiler);
@@ -288,8 +290,8 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
 
     if (type === undefined) {
         type = "1";
-    } else if (type !== "1" && type !== "2") {
-        recordError(state, `Found bad heading type ${type}, should be 1 or 2`);
+    } else if (type !== "1" && type !== "2" && type !== "3") {
+        recordError(state, `Found bad heading type ${type}, should be 1, 2, or 3`);
         type = "1";
     }
 
@@ -297,7 +299,7 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
     const subSectionStart = result.index + result[0].length;
     const tempState = ParserState.Clone(state);
     tempState.index = subSectionStart;
-    tempState.inlineOnly = true;
+    tempState.inlineOnly = "InlineOnly";
     processSection(tempState, "/Heading");
     state.index = tempState.index;
     let headingContent = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
@@ -307,7 +309,9 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
     }
 
     if (type === "1") {
-        state.output.push({ groupType: "Individual", html: `<h3 class="wiki-heading">${headingContent}</h3>` });
+        state.output.push({ groupType: "Individual", html: `<h2 class="wiki-heading">${headingContent}</h2>` });
+    } else if (type === "2") {
+        state.output.push({ groupType: "Individual", html: `<h3>${headingContent}</h3>` });
     } else {
         state.output.push({ groupType: "Individual", html: `<h4>${headingContent}</h4>` });
     }
@@ -319,7 +323,7 @@ function processITag(state: ParserState, result: RegExpExecArray) {
     const subSectionStart = result.index + result[0].length;
     const tempState = ParserState.Clone(state);
     tempState.index = subSectionStart;
-    tempState.inlineOnly = true;
+    tempState.inlineOnly = "InlineOnly";
     processSection(tempState, "/I");
     state.index = tempState.index;
     const boldedContent = `<i>${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</i>`;
@@ -361,7 +365,7 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
         // Parse the image caption as a subsection individually so we can include links
         const tempState = ParserState.Clone(state);
         tempState.initialContent = split[1];
-        tempState.inlineOnly = true;
+        tempState.inlineOnly = "InlineOnly";
         processSection(tempState, undefined);
         imageCaptionHtml = outputGroupsToHtml(tempState.output, state.inSpoiler);
     }
@@ -414,7 +418,7 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
         // Parse the list item as a subsection individually
         const tempState = ParserState.Clone(state);
         tempState.initialContent = listItem;
-        tempState.inlineOnly = true;
+        tempState.inlineOnly = "InlineList";
         processSection(tempState, undefined);
         const listItemHtml = outputGroupsToHtml(tempState.output, state.inSpoiler, true, false);
 
@@ -586,7 +590,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
             newlineIndex !== -1 &&
             newlineIndex < result.index
         ) {
-            if (state.inlineOnly) {
+            if (state.inlineOnly === "InlineOnly") {
                 // If inline only don't allow separated content
                 recordError(state, `Found line break when only inline actions are allowed`);
             } else {
@@ -623,7 +627,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
         } else {
             const actionFunc = actionMap.get(result[1]);
 
-            if (state.inlineOnly) {
+            if (state.inlineOnly === "InlineOnly" || state.inlineOnly === "InlineList") {
                 // In some sections only specific inline tags are allowed
                 // Check for a allowed tags first, then for any matched but forbidden tags
                 if (result[1] === "Spoiler" || result[1] === "B" || result[1] === "I" || result[1] === "GameText") {
@@ -682,6 +686,7 @@ function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
     const subSectionStart = result.index + result[0].length;
     const tempState = ParserState.Clone(state);
     tempState.index = subSectionStart;
+    tempState.inSpoiler = inSpoiler;
     processSection(tempState, "/Spoiler");
     const spoilerContent = outputGroupsToHtml(tempState.output, inSpoiler, true, true);
     state.index = tempState.index;
