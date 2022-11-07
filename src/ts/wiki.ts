@@ -124,6 +124,10 @@ jq(function ($) {
             ($("#validateButton") as any).tooltip("hide");
         });
 
+        if (process.env.NODE_ENV !== "production") {
+            $("#validateButton").removeClass("not-visible");
+        }
+
         // Register editor buttons
         function insertWrappedText(beforeText: string, afterText: string) {
             // This code might break at some point but it's better than
