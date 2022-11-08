@@ -496,7 +496,7 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
         itemString = escapeHtml(unescapeHtml(itemString).padEnd(46));
 
         if (popoversToLinks && itemName !== undefined) {
-            itemString = `<a href="#${itemName}">${itemString}</a>`;
+            itemString = `<a href="#${escapeHtml(itemName)}">${itemString}</a>`;
         }
 
         return "" +
@@ -1953,7 +1953,7 @@ export function randomInt(min: number, max: number): number {
 // Unescapes the given string with HTML entities
 export function unescapeHtml(string: string): string {
     for (const entity of Object.keys(entityMap)) {
-        string = string.replace(entityMap[entity], entity);
+        string = string.replace(new RegExp(entityMap[entity], "g"), entity);
     }
 
     return string;
