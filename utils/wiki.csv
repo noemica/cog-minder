@@ -3,7 +3,7 @@ Name,Page Type,Content
 01-MTF's Autohacker,Part,
 01-MTF's Shockpuncher,Part,
 0b10,Other,
-0b10 Alert Chip,Part,
+0b10 Alert Chip,Part,Analyzes ambient [[0b10]] signals to guess the alert level. The best part of this item is the reduction of influence by 20%. This item is obtainable from the exiles.
 0b10 Decoder Chip [Generic],Part,
 0b10 Decoder Chip [Looter],Part,
 0b10 Decoder Chip [Scout],Part,
@@ -175,7 +175,7 @@ There is one type of special machine in Armory. The Energy Cycler is a large exp
 There are 3 types of exits in Armory:
 [[List]]Center main access: This exit is guarded by 4 [[Sentry|Sentries]] and appears in the center of the map. There are 2 tile wide corridors that extend in opposite directions coming from the exit.|Left main access: This exit is unguraded and is found behind a set of double doors on the left side of the map.|[[Lab]] exit: This exit is hidden behind a wall on the far-left side of the map. It will always be adjacent to a 1 tile wide hallway. [[Spoiler:Redacted]]There is a [[Dimensional Node Initializer]] installed at the exit to Lab. Using a [[Transdimensional Reconstructor]] or [[Hpw. Transdimensional Reconstructor]] will always cause Cogmind to end up next to this exit.[[/Spoiler]][[/List]]"
 Army Drone,Bot,
-Army-in-a-Box,Part,
+Army-in-a-Box,Part,6 slot utility piece that can assist in difficult situations. Be aware of causing some disturbance in the sector raising the alert level. For this reason this utility is most often best utilized in the caves.
 Asb. Alloy Armor,Part,
 Asb. Alloy Leg,Part,
 Asb. Biocell Array,Part,
@@ -645,7 +645,7 @@ Falx,Part,
 Farcom,Other,
 Femtoactuators,Part,
 Field Laser,Part,
-Field Lobotomy Kit,Part,
+Field Lobotomy Kit,Part,"A very popular Exile prototype choice. A common use is on heavy enemies. The further in the game that you can lobotomize enemies, the better."
 Field Propulsion Array,Part,
 Field Propulsion Drive,Part,
 Field Recycling Unit,Part,
@@ -681,7 +681,7 @@ G-50 Soldier,Bot,Soldier Content
 G-67 Veteran,Bot,
 G-73 Enforcer,Bot,
 GAL Module,Part,
-GOLEM Unit,Part,
+GOLEM Unit,Part,"Found in the deep caves in Zion. A full golem uses 2 power slots, 2 propulsion slots, 14 utility slots and 3 weapon slot. The assembled parts can be replaced when damaged by new parts. It is also possible to accompany the golem parts with parts of your choice. It is wise to carry an extra engine. This because rebuilding the engine takes some time and you will be locked when your engine gets shot off during a fight and you have no quick replacement."
 Gamma Bomb Array,Part,
 Gamma Bomb Trap,Part,
 Gamma Refractor,Part,
@@ -728,7 +728,7 @@ H-88 Terminator,Bot,
 HERF Cannon,Part,
 Hacking Drone,Bot,
 Hacking Drone Bay,Part,
-Hacking Suite,Part,
+Hacking Suite,Part,A must-have for when you want to go for a hacking route. Download the schematic and make sure you fabricate enough in the factories.
 Hackware,Part Group,
 Hammer,Part,
 Hardcell Cannon,Part,
