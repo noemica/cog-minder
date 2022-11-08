@@ -161,16 +161,16 @@ export function createHeader(page: PageType, headerContainer: JQuery<HTMLElement
     const helpLabel =
         info.helpText === undefined
             ? ""
-            : `<span class="input-group-text-block display-5" data-toggle="tooltip" title="${escapeHtml(
+            : `<span class="input-group-text-block display-6" data-toggle="tooltip" title="${escapeHtml(
                   info.helpText,
               )}">?</span>`;
 
     headerContainer.append(`
 <div class="title-grid mt-2">
     <div class="header d-flex align-items-center justify-content-center">
-        <span class="display-5">Cog-Minder</span>
+        <span class="display-6">Cog-Minder</span>
     </div>
-    <h1 class="display-4 text-center title">${info.name} ${helpLabel}</h1>
+    <h1 class="display-5 text-center title">${info.name} ${helpLabel}</h1>
     ${spoilerHtml}
 </div>
 <div class="mb-2 menu-buttons-grid">

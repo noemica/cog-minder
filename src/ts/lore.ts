@@ -345,14 +345,14 @@ jq(function ($) {
                         const name = entry["Name/Number"];
                         const content = escapeHtml(entry["Content"]);
 
-                        const row = `<tr><td>${name}</td><td>${content}</td></tr>`;
+                        const row = `<tr><td>${name}</td><td class="sans-serif-font">${content}</td></tr>`;
 
                         return row;
                     })
                     .join("");
 
                 const groupTitleRowHtml =
-                    `<tr><td class="lore-category-row">${groupName}</td><td>` +
+                    `<tr><td class="lore-category-row">${groupName}</td><td class="sans-serif-font">` +
                     `${loreGroup?.content === undefined ? "" : loreGroup.content}</td></tr>`;
 
                 return groupTitleRowHtml + groupRowsHtml;

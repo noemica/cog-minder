@@ -86,9 +86,9 @@ jq(function ($) {
                 .map((ability) => {
                     return `<tr>
                     <td>${ability.Name}</td>
-                    <td>${ability.MinAbilities}</td>
-                    <td>${ability.Levels}</td>
-                    <td>${ability.Description}</td>
+                    <td class="sans-serif-font">${ability.MinAbilities}</td>
+                    <td class="sans-serif-font">${ability.Levels}</td>
+                    <td class="sans-serif-font">${ability.Description}</td>
                     </tr>`;
                 })
                 .join("");
@@ -126,9 +126,9 @@ jq(function ($) {
                 .map((hack) => {
                     return `<tr>
                     <td>${hack.Name}</td>
-                    <td>${hack.Rif ? "Yes" : "No"}</td>
-                    <td>${hack.Charges}</td>
-                    <td>${hack.Description}</td>
+                    <td class="sans-serif-font">${hack.Rif ? "Yes" : "No"}</td>
+                    <td class="sans-serif-font">${hack.Charges}</td>
+                    <td class="sans-serif-font">${hack.Description}</td>
                     </tr>`;
                 })
                 .join("");
