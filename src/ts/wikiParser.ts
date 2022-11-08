@@ -100,7 +100,7 @@ export function createContentHtml(
     // Convert to HTML
     let outputHtml = outputGroupsToHtml(state.output, false);
     if (outputHtml === "") {
-        outputHtml = "<p>There is no content here. Please consider contributing.</p>";
+        outputHtml = "<p>There is no content here. Please consider contributing. See the home page for details.</p>";
     }
     return {
         html: `<h1 class="wiki-heading">${
