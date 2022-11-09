@@ -5,11 +5,9 @@ Medium ideas:
     - Hard to know what an "obsolete" part is
 - Add proper followups for build page
 - Add import from dump for build page
-- Add sprites to bots/parts
 
 Big ideas:
 - Save search/parts in URL
     - Can do for all pages
 - Actively save build and update hash when modifying things
     - Easier than other pages since hash is already in existence
-- Add ascii art to parts
