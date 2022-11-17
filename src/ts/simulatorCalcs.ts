@@ -531,7 +531,7 @@ function applyDamage(
             damage = damage - shieldingDamage;
         }
 
-        let destroyed = part.integrity <= damage || doesCriticalDestroyPart(critical) || engineExplosion;
+        const destroyed = part.integrity <= damage || doesCriticalDestroyPart(critical) || engineExplosion;
 
         // Apply sever/sunder to instantly-remove (not destroy) part if it's a single slot and unshielded
         // Applied differently than other part destruction since this can't affect multislot
@@ -542,7 +542,9 @@ function applyDamage(
             part.def.size === 1 &&
             shielding === undefined
         ) {
-            destroyed = true;
+            if (!destroyed) {
+                destroyPart(partIndex, part, 0, DamageType.Slashing, "CriticalRemove");
+            }
         }
 
         if (destroyed) {
