@@ -83,8 +83,8 @@ export function createContentHtml(
 
     // Process initial content by replacing any instances of [XYZ] in links with {{xyz}}
     // Otherwise we hae issues with the regex for any links that include square brackets in them
-    const initialContent = entry.content.replace(/(?<!\[)\[([\w]*)\]/g, (_, p1) => {
-        return `{{${p1}}}`;
+    const initialContent = entry.content.replace(/([^\[])\[([\w]*)\]/g, (_, p1, p2) => {
+        return `${p1}{{${p2}}}`;
     });
     const state = new ParserState(allEntries, entry, [], new Set<string>(), false, initialContent, "All", spoilerState);
     processSection(state, undefined);
