@@ -256,9 +256,9 @@ function applyDamage(
         }
 
         if (damageType === DamageType.Impact) {
-            // Apply 25-150% random corruption to the bot after
+            // Apply 50-150% random corruption to the bot after
             // destroying a part (affected by EM resistance) (22)
-            let corruption = randomInt(25, 150);
+            let corruption = randomInt(50, 150);
             corruption = calculateResistDamage(botState, corruption, DamageType.Electromagnetic);
 
             applyCorruption(corruption);
