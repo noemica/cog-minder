@@ -570,6 +570,9 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["List", processListTag],
     ["Lore", processLoreTag],
     ["Spoiler", processSpoilerTag],
+    ["Sub", processSubTag],
+    ["Sup", processSupTag],
+    ["Table", processTableTag],
 ]);
 // Processes the current section of text in the parser state
 function processSection(state: ParserState, endTag: string | undefined) {
@@ -630,7 +633,14 @@ function processSection(state: ParserState, endTag: string | undefined) {
             if (state.inlineOnly === "InlineOnly" || state.inlineOnly === "InlineList") {
                 // In some sections only specific inline tags are allowed
                 // Check for a allowed tags first, then for any matched but forbidden tags
-                if (result[1] === "Spoiler" || result[1] === "B" || result[1] === "I" || result[1] === "GameText") {
+                if (
+                    result[1] === "Spoiler" ||
+                    result[1] === "B" ||
+                    result[1] === "I" ||
+                    result[1] === "GameText" ||
+                    result[1] === "Sub" ||
+                    result[1] === "Sup"
+                ) {
                     actionFunc!(state, result);
                 } else if (actionFunc !== undefined) {
                     recordError(
@@ -703,6 +713,105 @@ function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
     });
 }
 
+// Process a Sub tag like [[Sub]]Subscript Text[[/Sub]]
+function processSubTag(state: ParserState, result: RegExpExecArray) {
+    // Process the subscript subsection independently
+    const subSectionStart = result.index + result[0].length;
+    const tempState = ParserState.Clone(state);
+    tempState.index = subSectionStart;
+    tempState.inlineOnly = "InlineOnly";
+    processSection(tempState, "/Sub");
+    state.index = tempState.index;
+    const boldedContent = `<sub>${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</sub>`;
+
+    state.output.push({ groupType: "Grouped", html: boldedContent });
+}
+
+// Process a Sup tag like [[Sup]]Superscript Text[[/Sup]]
+function processSupTag(state: ParserState, result: RegExpExecArray) {
+    // Process the superscript subsection independently
+    const supSectionStart = result.index + result[0].length;
+    const tempState = ParserState.Clone(state);
+    tempState.index = supSectionStart;
+    tempState.inlineOnly = "InlineOnly";
+    processSection(tempState, "/Sup");
+    state.index = tempState.index;
+    const boldedContent = `<sup>${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</sup>`;
+
+    state.output.push({ groupType: "Grouped", html: boldedContent });
+}
+
+// Processes table tag like [[Table]]Header 1|Header 2||Item 1|Item 2||Item 3|Item 4[[/Table]]
+function processTableTag(state: ParserState, result: RegExpExecArray) {
+    // Find [[/Table]] closing tag first
+    const tableResult = /\[\[\/Table\]\]/.exec(state.initialContent.substring(state.index));
+
+    if (tableResult === null) {
+        // If we can't find the end tag then just skip over the opening tag
+        recordError(state, "Found table tag without close tag");
+        state.index += result[0].length;
+        return;
+    }
+
+    // Split interior text by || to get each row
+    const startIndex = state.index + result[0].length;
+    const endIndex = startIndex + tableResult.index - result[0].length;
+    const rowSplit = splitOutsideActions(state.initialContent.substring(startIndex, endIndex), "||");
+
+    let tableContent = `<table class="wiki-table"><tbody>`;
+    let isHeaderRow = true;
+    let columnCount = 0;
+    let row = 0;
+
+    // Parse each row
+    for (const tableRow of rowSplit) {
+        const cellSplit = splitOutsideActions(tableRow);
+
+        if (isHeaderRow) {
+            columnCount = cellSplit.length;
+        } else {
+            if (columnCount != cellSplit.length) {
+                recordError(state, `Found ${cellSplit.length} columns in row ${row + 1} but header had ${columnCount}`);
+            }
+        }
+
+        tableContent += "<tr>";
+
+        for (const cell of cellSplit) {
+            const tempState = ParserState.Clone(state);
+            tempState.initialContent = cell;
+            tempState.inlineOnly = "InlineOnly";
+            processSection(tempState, undefined);
+            const cellHtml = outputGroupsToHtml(tempState.output, state.inSpoiler, true, false);
+
+            // Append cell HTML
+            if (isHeaderRow) {
+                tableContent += `<th>${cellHtml}</th>`;
+            } else {
+                tableContent += `<td>${cellHtml}</td>`;
+            }
+            // if (state.inSpoiler) {
+            //     tableContent += `<li><span class="spoiler-text spoiler-text-multiline">${cellHtml}</span></li>`;
+            // } else {
+            //     tableContent += `<li>${cellHtml}</li>`;
+            // }
+        }
+
+        tableContent += "</tr>";
+        isHeaderRow = false;
+        row += 1;
+    }
+
+    tableContent += "</tbody></table>";
+
+    state.output.push({
+        groupType: "Individual",
+        html: tableContent,
+    });
+
+    state.index = endIndex + tableResult[0].length;
+}
+
 // Records a parse error in the error list
 function recordError(state: ParserState, error: string, position: number | undefined = undefined) {
     if (position === undefined) {
@@ -719,10 +828,10 @@ function recordError(state: ParserState, error: string, position: number | undef
 
 // Splits a string on |s but only outside of action tags
 // Allows for parsing things like [[Image]]Image.png|Caption [[Link|with link]][[/Image]]
-function splitOutsideActions(string: string) {
+function splitOutsideActions(string: string, delimiter = "|") {
     let index = 0;
 
-    let splitIndex = string.indexOf("|");
+    let splitIndex = string.indexOf(delimiter);
     let actionStartIndex = string.indexOf("[[");
 
     if (splitIndex === -1) {
@@ -732,7 +841,7 @@ function splitOutsideActions(string: string) {
 
     if (actionStartIndex === -1) {
         // No brackets, don't need to do special split
-        return string.split("|");
+        return string.split(delimiter);
     }
 
     const split: string[] = [];
@@ -741,7 +850,7 @@ function splitOutsideActions(string: string) {
     while (true) {
         if (actionStartIndex === -1) {
             // No further brackets, just split remaining text normally and add to end
-            const remainingSplit = string.substring(index).split("|");
+            const remainingSplit = string.substring(index).split(delimiter);
             remainingSplit[0] = currentString + remainingSplit[0];
             return split.concat(remainingSplit);
         }
@@ -761,9 +870,9 @@ function splitOutsideActions(string: string) {
             currentString += string.substring(index, splitIndex);
             split.push(currentString);
             currentString = "";
-            index = splitIndex + 1;
+            index = splitIndex + delimiter.length;
 
-            splitIndex = string.indexOf("|", index);
+            splitIndex = string.indexOf(delimiter, index);
             continue;
         }
 
@@ -796,6 +905,6 @@ function splitOutsideActions(string: string) {
         }
 
         actionStartIndex = string.indexOf("[[", index);
-        splitIndex = string.indexOf("|", index);
+        splitIndex = string.indexOf(delimiter, index);
     }
 }

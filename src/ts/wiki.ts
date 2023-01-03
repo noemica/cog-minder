@@ -163,6 +163,12 @@ jq(function ($) {
         $("#editItalicizeTextButton").on("click", () => {
             insertWrappedText("[[I]]", "[[/I]]");
         });
+        $("#editSubscriptTextButton").on("click", () => {
+            insertWrappedText("[[Sub]]", "[[/Sub]]");
+        });
+        $("#editSuperscriptTextButton").on("click", () => {
+            insertWrappedText("[[Sup]]", "[[/Sup]]");
+        });
         $("#editGameTextButton").on("click", () => {
             insertWrappedText("[[GameText]]", "[[/GameText]]");
         });
@@ -195,6 +201,9 @@ jq(function ($) {
         });
         $("#editOrderedListTextButton").on("click", () => {
             insertWrappedText("[[List:Ordered]]", "[[/List]]");
+        });
+        $("#editTableTextButton").on("click", () => {
+            insertWrappedText("[[Table]]", "[[/Table]]");
         });
         $("#editTextArea").on("input", () => {
             editedCurrentPage = true;

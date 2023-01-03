@@ -75,6 +75,10 @@
                     title="Bolds any text inside the selection.">Bold</button>
                 <button id="editItalicizeTextButton" class="btn" data-toggle="tooltip"
                     title="Italicizes any text inside the selection">Italicize</button>
+                <button id="editSubscriptTextButton" class="btn" data-toggle="tooltip"
+                    title="Creates a subscript section of any text inside the selection.">Subscript</button>
+                <button id="editSuperscriptTextButton" class="btn" data-toggle="tooltip"
+                    title="Creates a superscript section of any text inside the selection.">Superscript</button>
                 <button id="editGameTextButton" class="btn" data-toggle="tooltip"
                     title="Provides a game-text style to text inside the selection">Game Text</button>
                 <button id="editSpoilerTextButton" class="btn" data-toggle="tooltip"
@@ -83,7 +87,9 @@
                     title="Provides a spoiler tag around any text or image content nested underneath if the spoiler setting is not set to Redacted">Redacted</button>
                 <button id="editLinkTextButton" class="btn" data-toggle="tooltip"
                     title="Inserts a link to the selected text. Link text may be different by using the form [[Link|Link Text]]">Link</button>
+            </div>
 
+            <div class="mt-1">
                 <span class="wiki-button-group-label" data-toggle="tooltip"
                     title="Top-level content that can not typically be placed underneath other tags except for spoiler tags.">Top-level
                     Content</span>
@@ -104,6 +110,8 @@
                 <button id="editOrderedListTextButton" class="btn" data-toggle="tooltip"
                     title="Creates an ordered (numbered) list of items that can be separated out like [[List:Ordered]]Item 1|Item 2|Item 3[[/List]]">Ordered
                     List</button>
+                <button id="editTableTextButton" class="btn" data-toggle="tooltip"
+                    title="Creates a 2-dimensional table of text items in the form of [[Table]]Column 1 Header|Column 2 header||Row 1 column 1|Row 1 column 2[[/Table]]">Table</button>
             </div>
             <textarea id="editTextArea" class="wiki-edit-text mt-2"></textarea>
             <div class="mt-2 justify-content-center">

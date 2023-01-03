@@ -1166,3 +1166,18 @@ a {
     user-select: none;
     color: transparent;
 }
+
+.wiki-table {
+    color: #9da9af;
+    background-color: #162416;
+    margin-bottom: 1.0em;
+}
+
+.wiki-table,
+.wiki-table>*>tr>* {
+    border: 1px solid #006200;
+}
+
+.wiki-table>tbody>tr>* {
+    padding: 0.25rem 0.25rem;
+}
