@@ -2,6 +2,7 @@
 
 import csv
 import json
+import sys
 from io import StringIO
 from os import path
 
@@ -63,6 +64,9 @@ for part_group in wiki_json['Part Groups']:
         wiki_csv[group_name]['Page Type'] = 'Part Group'
         wiki_csv[group_name]['Content'] = part_group['Content']
     else:
+        if 'Content' not in part_group:
+            print('Group {} missing content'.format(group_name))
+            sys.exit(1)
         new_group = {
             'Name': group_name,
             'Page Type': 'Part Group',
