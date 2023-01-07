@@ -490,6 +490,11 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
             groupType: "Grouped",
             html: html,
         });
+    } else if (linkTarget.includes(".htm")) {
+        state.output.push({
+            groupType: "Grouped",
+            html: `<a class="d-inline-block" href="${linkTarget}">${linkText}</a>`,
+        });
     } else {
         recordError(state, `Bad link to page "${linkTarget}" that doesn't exist`);
         state.output.push({
