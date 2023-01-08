@@ -6929,6 +6929,7 @@
    ],
    "MinDepth": -7,
    "MaxDepth": -3,
+   "MultipleDepths": true,
    "PreDepthBranch": true,
    "Branch": true
   },
@@ -6996,6 +6997,7 @@
    ],
    "MinDepth": -7,
    "MaxDepth": -2,
+   "MultipleDepths": true,
    "Branch": true,
    "Spoiler": "Spoiler"
   },
@@ -7089,7 +7091,8 @@
     "Research"
    ],
    "MinDepth": -7,
-   "MaxDepth": -4
+   "MaxDepth": -4,
+   "MultipleDepths": true
   },
   {
    "Name": "Garrison",
@@ -7110,6 +7113,7 @@
    ],
    "MinDepth": -9,
    "MaxDepth": -1,
+   "MultipleDepths": true,
    "Branch": true
   },
   {
@@ -7179,7 +7183,8 @@
     "8R-AWN"
    ],
    "MinDepth": -10,
-   "MaxDepth": -8
+   "MaxDepth": -8,
+   "MultipleDepths": true
   },
   {
    "Name": "Mines",
@@ -7203,6 +7208,7 @@
    ],
    "MinDepth": -10,
    "MaxDepth": -8,
+   "MultipleDepths": true,
    "PreDepthBranch": true,
    "Branch": true
   },
@@ -7281,7 +7287,8 @@
     "Warlord"
    ],
    "MinDepth": -3,
-   "MaxDepth": -2
+   "MaxDepth": -2,
+   "MultipleDepths": true
   },
   {
    "Name": "Scrapyard",
@@ -7371,7 +7378,8 @@
    "Content": "The surface is not a real map in the game, but exiting to the surface is one way to win the game. Many of the game's wintypes require getting to a surface exit. See [[Wintypes]] for more information.",
    "Exits": [],
    "MinDepth": 0,
-   "MaxDepth": 0
+   "MaxDepth": 0,
+   "Spoiler": "Spoiler"
   },
   {
    "Name": "Testing",
@@ -7484,6 +7492,7 @@
    ],
    "MinDepth": -7,
    "MaxDepth": -4,
+   "MultipleDepths": true,
    "PreDepthBranch": true,
    "Branch": true
   },
@@ -7673,6 +7682,10 @@
   {
    "Name": "Line of Sight",
    "Content": ""
+  },
+  {
+    "Name": "Locations",
+    "Content": "Locations in Cogmind are unique styles of maps to visit. The main floors (Scrapyard, Materials, Factory, Research, and Access) are always located on the same depths every run. These main floors often can be visited in multiple depths. Branches, on the other hand, are typically found on only a single depth per-run and are often mutually exclusive with other branches. For example, Mines can always be found on -9, but Storage may also appear on -9, forcing a decision.\nThe majority of maps are randomly generated, meaning no two runs or two depths will have the exact same layout. However, the overall structure of each location type is very similar. Some maps tend to be more open with large rooms and wide corridors, while others are more maze-like with tiny rooms and many small corridors leading into dead-ends. A few branches are partially or entirely static in layout and tend to be much more predictable in contents than main floors.\nThe following is a list of all locations in Cogmind:\n[[Locations]]"
   },
   {
    "Name": "Maximum Security",

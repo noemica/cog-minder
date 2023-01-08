@@ -111,6 +111,39 @@ export function createContentHtml(
     };
 }
 
+function getLinkHtml(state: ParserState, referenceEntry: WikiEntry, linkText: string) {
+    let tooltipData = "";
+    if (referenceEntry.type === "Bot") {
+        // Add bot data content overlay
+        const bot = getBot(referenceEntry.name);
+        tooltipData = `data-html=true data-boundary="window" data-content='${createBotDataContent(
+            bot,
+            false,
+        )}' data-toggle="popover" data-trigger="hover"`;
+    } else if (referenceEntry.type === "Part") {
+        // Add part data content overlay
+        const item = getItem(referenceEntry.name);
+        tooltipData = `data-html=true data-boundary="window" data-content='${createItemDataContent(
+            item,
+        )}' data-toggle="popover" data-trigger="hover"`;
+    } else if (referenceEntry.type === "Location") {
+        // Add location data content overlay
+        tooltipData = `data-html=true data-boundary="window" data-content='${createLocationHtml(
+            referenceEntry.extraData as MapLocation,
+            state.spoiler,
+            true,
+        )}' data-toggle="popover" data-trigger="hover"`;
+    }
+
+    let html = `<a class="d-inline-block" href="#${referenceEntry.name}" ${tooltipData}>${linkText}</a>`;
+    if (!canShowSpoiler(referenceEntry.spoiler, state.spoiler) && !state.inSpoiler) {
+        // Auto-spoiler links that aren't in a proper spoiler block
+        html = `<span class="spoiler-text spoiler-text-multiline">${html}</span>`;
+    }
+
+    return html;
+}
+
 // Turns a list of output groups into HTML
 // If startInGroup is true then don't auto-add the opening/closing <p> tags
 function outputGroupsToHtml(
@@ -457,34 +490,7 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
 
     const referenceEntry = state.allEntries.get(linkTarget);
     if (referenceEntry !== undefined) {
-        let tooltipData = "";
-        if (referenceEntry.type === "Bot") {
-            // Add bot data content overlay
-            const bot = getBot(referenceEntry.name);
-            tooltipData = `data-html=true data-boundary="window" data-content='${createBotDataContent(
-                bot,
-                false,
-            )}' data-toggle="popover" data-trigger="hover"`;
-        } else if (referenceEntry.type === "Part") {
-            // Add part data content overlay
-            const item = getItem(referenceEntry.name);
-            tooltipData = `data-html=true data-boundary="window" data-content='${createItemDataContent(
-                item,
-            )}' data-toggle="popover" data-trigger="hover"`;
-        } else if (referenceEntry.type === "Location") {
-            // Add location data content overlay
-            tooltipData = `data-html=true data-boundary="window" data-content='${createLocationHtml(
-                referenceEntry.extraData as MapLocation,
-                state.spoiler,
-                true,
-            )}' data-toggle="popover" data-trigger="hover"`;
-        }
-
-        let html = `<a class="d-inline-block" href="#${linkTarget}" ${tooltipData}>${linkText}</a>`;
-        if (!canShowSpoiler(referenceEntry.spoiler, state.spoiler) && !state.inSpoiler) {
-            // Auto-spoiler links that aren't in a proper spoiler block
-            html = `<span class="spoiler-text spoiler-text-multiline">${html}</span>`;
-        }
+        const html = getLinkHtml(state, referenceEntry, linkText);
 
         state.output.push({
             groupType: "Grouped",
@@ -504,6 +510,55 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
     }
 
     state.index += result[0].length;
+}
+
+// Process the locations tag like [[Locations]]
+function processLocationsTag(state: ParserState, result: RegExpExecArray) {
+    state.index += result[0].length;
+
+    // Start with table and header row
+    let html = `
+    <table class="wiki-table tablesorter">
+        <tbody>
+            <tr>
+                <th>Location Name</th>
+                <th>Main Floor/Branch</th>
+                <th>Depths</th>
+            </tr>`;
+
+    for (const entryPair of state.allEntries.entries()) {
+        const entryName = entryPair[0];
+        const entry = entryPair[1];
+
+        // Don't include alternative names as separate entries, only show the main entry
+        if (entry.type !== "Location" || entryName != entry.name) {
+            continue;
+        }
+
+        const location = entry.extraData as MapLocation;
+
+        // Fill out row for each location
+        html += `
+        <tr>
+            <td>${getLinkHtml(state, entry, location.name.replace(" (Location)", ""))}</td>
+            <td>${location.branch ? "Branch" : "Main"}</td>
+            <td>${
+                location.minDepth === location.maxDepth
+                    ? location.minDepth
+                    : `${location.minDepth} to ${location.maxDepth} ${
+                          location.multipleDepths ? "" : "(Only at one depth per run)"
+                      }`
+            }</td>
+        </tr>`;
+    }
+
+    html += "</tbody></table>";
+
+    // Add the locations table
+    state.output.push({
+        groupType: "Individual",
+        html: html,
+    });
 }
 
 // Process an lore tag like [[Lore:Lore]]Lore Group|Entry name/number[[/Lore]]
@@ -573,6 +628,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["I", processITag],
     ["Image", processImageTag],
     ["List", processListTag],
+    ["Locations", processLocationsTag],
     ["Lore", processLoreTag],
     ["Spoiler", processSpoilerTag],
     ["Sub", processSubTag],
@@ -795,11 +851,6 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
             } else {
                 tableContent += `<td>${cellHtml}</td>`;
             }
-            // if (state.inSpoiler) {
-            //     tableContent += `<li><span class="spoiler-text spoiler-text-multiline">${cellHtml}</span></li>`;
-            // } else {
-            //     tableContent += `<li>${cellHtml}</li>`;
-            // }
         }
 
         tableContent += "</tr>";

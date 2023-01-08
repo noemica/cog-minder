@@ -16,6 +16,7 @@ export type MapLocation = {
     imageName: string | undefined;
     minDepth: number;
     maxDepth: number;
+    multipleDepths: boolean;
     name: string;
     preDepthBranch: boolean;
     specialBots: Bot[];

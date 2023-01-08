@@ -400,6 +400,7 @@ jq(function ($) {
                 imageName: locationEntry.ImageName,
                 maxDepth: locationEntry.MaxDepth,
                 minDepth: locationEntry.MinDepth,
+                multipleDepths: locationEntry.MultipleDepths ?? false,
                 name: locationEntry.Name,
                 preDepthBranch: locationEntry.PreDepthBranch ?? false,
                 spoiler: spoiler,
