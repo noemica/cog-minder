@@ -366,6 +366,38 @@
             ]
         },
         {
+            "CategoryName": "Compactor",
+            "Targets": [
+                "Compactor"
+            ],
+            "Hacks": [
+                {
+                    "Name": "ignore_targets",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Block system messages regarding waste processing targets."
+                },
+                {
+                    "Name": "overload_power",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Cause power source to explode. Process takes 4-6 turns to reach critical point."
+                },
+                {
+                    "Name": "link_fov",
+                    "Rif": true,
+                    "Charges": 4,
+                    "Description": "Tap into system's visual feed for 100 turns. Must remain within a range of 20 to maintain the link."
+                },
+                {
+                    "Name": "amplify_resonance",
+                    "Rif": true,
+                    "Charges": 7,
+                    "Description": "Cause power source to explode when adjacent to any other active power source. Also causes the adjacent active power source to explode. Checked once per turn."
+                }
+            ]
+        },
+        {
             "CategoryName": "Engineer",
             "Targets": [
                 "Builder"
