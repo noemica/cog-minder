@@ -1040,5 +1040,7 @@ jq(function ($) {
                 console.log(`Missing images above in ${entry.name}`);
             }
         }
+
+        console.log("Done validating");
     }
 });
