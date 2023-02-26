@@ -2459,11 +2459,11 @@
         "Locations": [
             {
                 "Location": "Intercept squad",
-                "Description": "Hostile: Appear after Cogmind has moved 1000/500(-6), 800/400(-5 through -4), or 600/300(-3 through -1) tiles after using the Data Conduit"
+                "Description": "Hostile: Appear after Cogmind has moved 1000 or 500(-6), 800 or 400(-5 through -4), or 600 or 300(-3 through -1) tiles after using the Data Conduit"
             },
             {
                 "Location": "Intercept squad",
-                "Description": "Hostile: Appear after Cogmind has moved 1000/500(-6), 800/400(-5 through -4), or 600/300(-3 through -1) tiles after being scanned in Section 7 or Lab",
+                "Description": "Hostile: Appear after Cogmind has moved 1000 or 500(-6), 800 or 400(-5 through -4), or 600 or 300(-3 through -1) tiles after being scanned in Section 7 or Lab",
                 "Spoiler": "Redacted"
             }
         ]
