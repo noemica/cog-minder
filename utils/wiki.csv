@@ -49,6 +49,7 @@ AWS/Autocannon,Part,
 AWS/EX-DEC,Part,
 AWS/Gauss,Part,
 AWS/Thermal,Part,
+AZ-K3N,Bot,
 Access,Location,"Access is the last [[0b10]]-controlled main floor that only appears on -1. Access is the most challenging main map with increased patrol density, number of bots per patrol, map size, and level and difficulty in hackable machines compared to [[Research]]. These maps have a 150x300 tile size, either being a tall vertical level or a wide horizontal level. Access maps tend to be fairly well connected across corridors and rooms, and have fewer large rooms and larger hallways more similar to [[Factory]] than the cramped maze-like layout of Research. There are only 2 exits in Access, and locating and taking the desired exit can be especially challenging.
 In contrast with the small number of exits, Access has the highest number of [[Garrison Machine|Garrisons]] with 6 machines spread throughout the level. Shutting or destroying Garrisons is always a good idea, but there is a special interaction in Access: [[Spoiler:Spoiler]]If all 6 Garrisons are shut down or disabled, [[Maximum Security]] will be triggered, sending huge waves of hostiles directly to Cogmind. Either be prepared to fight your way out, or have an escape route planned for a fast airborne build to avoid engaging in combat.[[/Spoiler]]
 The biggest bot upgrade in Access is the [[Behemoth]] change. All Behemoths will become [[B-99 Colossus|Colossi]], extremely dangerous and hard to kill threats. They have some incredibly good loot, but trying to kill them with conventional methods is difficult due to their high damage output, high integrity, and [[Adv. Force Field]] reducing damage they take. Avoiding them or running if spotted is usually the best plan.
@@ -134,6 +135,7 @@ After all this, the Architect can finally be fought normally. For grounded build
 After the Architect is destroyed, the Singularity Gate will be triggered if it is still intact and a 10 turn countdown will trigger. Grounded builds may need to be close to the Architect if relying on the Transdimensional Reconstructor that it drops. Otherwise the singularity countdown will kill Cogmind on the escape. Most grounded propulsion builds will need to detach all parts and core hover to equip the Reconstructor and to the exit if this happens. Airborne propulsion usually have enough time to get to the exit without needing to do this.
 If the gate is destroyed, however, you are free to take your time to clean up any stragglers on the map and exit whenever. Get the Architect Data Core and head to the bottom-left corner of the map to open up the Architect Logs Terminal and obtain any new lore. Exploring the rest of the map will cause all remaining A bots to spawn as normal. The A bots and any other remaining Enhanced bots can be fought for extra points."
 Active Cooling Armor,Part,
+Active Sensor Spoofer,part,
 Active Sensor Suite,Part,
 Actuator Array,Part,
 Actuator Arrays,Part Group,
@@ -221,7 +223,7 @@ There are 2 aspects of the Alert level. The first is the ""influence"" number, w
 Alert level controls only a few aspects of the game: [[Assault Squad|Assaults]], [[Search Squad|Searches]], and [[High Security]]. Alert level does not increase the number of patrols or guards on the map in any way. Alert below level 2 does not have any impact on the game. At alert level 2/400 influence, Assaults and Search squads can start being dispatched. From this point onward, alert is a sliding scale. Increased alert will also increase the overall frequency of Assaults and the number of [[C-30 ARC|ARCs]] that will be dispatched as part of an Assault. Alert level 2 typically only sends a single ARC per Assault wave, but higher alert levels can see two or more being sent frequently.
 [[High Security]] is the other affect of alert. It is a special alert level that can only be triggered when at level 5 alert when combat hostiles are destroyed. The higher the influence value, the higher the chance of triggering High Security. [[Maximum Security]] has similar effects as High Security, but is not related to alert except that it sets influence to 1600 if it is lower than that.
 [[Heading]]Ways to raise alert[[/Heading]]
-[[Table]]Method|Alert Influence increase||Destroying a wall/door in -8 through -6|1||Destroying a wall/door in -5 through -3|2||Destroying a wall/door in -2 through -1|3||Destroying most green bots/[[Operator|Operators]]|5||Destroying a [[Hauler]]/[[Watcher]]|7||Destroying a Reinforced Barrier|10||Being forgotten by a combat hostile|10||Successful hack at a level 1 terminal|Up to 12 [[Sub]]1[[/Sub]]||Being spotted and forgotten by a combat hostile|15||Being spotted by a Watcher or [[Sentry]]|15||Destroying Sealed Heavy Doors|15||Destroying most machines|15||Successful hack at a level 2 terminal|Up to 18 [[Sub]]1[[/Sub]]||Destroying most combat hostiles|20||Using a [[Spoiler:Spoiler]]Force(Download)[[/Spoiler]] hack on a [[Fabricator]]|20||Successful hack at a level 3 terminal|Up to 24 [[Sub]]1[[/Sub]]||Destroying a squad leader, guard, or intercept|30||Using a [[Spoiler:Spoiler]]Force(Extract)[[/Spoiler]] hack on a [[Scanalyzer]]|30||Using a [[Spoiler:Spoiler]]Force(Tunnel)[[/Spoiler]] on a [[Recycling Machine]]|30||Using a [[Spoiler:Spoiler]]Force(Eject)[[/Spoiler]] hack on a [[Garrison Machine]]|30||Destroying a Garrison Relay|50||Using a [[Spoiler:Spoiler]]Force(Sabotage)[[/Spoiler]] hack on a Terminal|50||Using a [[Spoiler:Spoiler]]Force(Overload)[[/Spoiler]] hack on a Fabricator|50||[[Garrison]] interior compromised alert|100||Destroying a Garrison Machine|150||Using a [[Spoiler:Spoiler]]Force(Jam)[[/Spoiler]] hack on a Garrison Machine|200||Entering Maximum Security|Immediately sets influence to 1600[[/Table]]
+[[Table]]Method|Alert Influence increase||Destroying a wall/door in -10 through -6|1||Destroying a wall/door in -5 through -3|2||Destroying a wall/door in -2 through -1|3||Destroying most green bots/[[Operator|Operators]]|5||Destroying a [[Hauler]]/[[Watcher]]|7||Destroying a Reinforced Barrier|10||Being forgotten by a combat hostile|10||Successful hack at a level 1 terminal|Up to 12 [[Sub]]1[[/Sub]]||Being spotted and forgotten by a combat hostile|15||Being spotted by a Watcher or [[Sentry]]|15||Destroying Sealed Heavy Doors|15||Destroying most machines|15||Successful hack at a level 2 terminal|Up to 18 [[Sub]]1[[/Sub]]||Destroying most combat hostiles|20||Using a [[Spoiler:Spoiler]]Force(Download)[[/Spoiler]] hack on a [[Fabricator]]|20||Successful hack at a level 3 terminal|Up to 24 [[Sub]]1[[/Sub]]||Destroying a squad leader, guard, or intercept|30||Using a [[Spoiler:Spoiler]]Force(Extract)[[/Spoiler]] hack on a [[Scanalyzer]]|30||Using a [[Spoiler:Spoiler]]Force(Tunnel)[[/Spoiler]] on a [[Recycling Machine]]|30||Using a [[Spoiler:Spoiler]]Force(Eject)[[/Spoiler]] hack on a [[Garrison Machine]]|30||Destroying a Garrison Relay|50||Using a [[Spoiler:Spoiler]]Force(Sabotage)[[/Spoiler]] hack on a Terminal|50||Using a [[Spoiler:Spoiler]]Force(Overload)[[/Spoiler]] hack on a Fabricator|50||Using a [[Spoiler:Spoiler]]Force(Override)[[/Spoiler]] hack on a Terminal|50||[[Garrison]] interior compromised alert|100||Destroying a Garrison Machine|150||Using a [[Spoiler:Spoiler]]Force(Jam)[[/Spoiler]] hack on a Garrison Machine|200||Entering Maximum Security|Immediately sets influence to 1600[[/Table]]
 [[List:Ordered]]Successful hacking increases alert more if the hack is less likely to succeed. Alert does not increase at all from hacks with a success rate of >= 30%.[[/List]]
 There are also modifiers that can affect how much alert is gained by a certain percentage. The 0b10 Alert Chip reduces all influence gains by 20%, and the RIF ability Threat Obfuscation reduces all gains by 25%, 40%, or 50% depending on level. All alert reduction is rounded down, and reduction will not take place unless the value is at least 1. For example, gaining 3 influence from destroying a wall on -2 with the Alert Chip equipped results in 0.6 reduction which rounds down to 0. With this 20% reduction, only influence gains of 5 or more will have any reduction applied. On the other hand, having blue or purple allies within a 20-tile radius will increase alert gain from destroying bots. The gain is roughly 12.5% per ally, capping out at an additional 100% alert gain at 8 nearby allies. This effect can be cancelled out by the RIF ability Alert ID Control. In general, be cautious of taking large groups of allies into combat or else alert can quite easily skyrocket.
 [[Heading]]Ways to lower alert[[/Heading]]
@@ -235,7 +237,8 @@ The most substantial alert reduction method aside from exiting the map is a pass
 [[Table]]Turn|Alert influence reduction|Cumulative reduction||400|200|200||800|150|350||1200|112|462||1600|84|546||2000|63|609||2400|47|656||2800|35|691||3200|26|717||3600|19|736||4000|14|750||4400|10|760||4800|7|767||5200|5|772||5600|3|775||6000|2|777||6400|1|778[[/Table]]
 [[Heading:2]]Other alert influence reduction[[/Heading]]
 There are a few other miscellaneous ways of decreasing alert:
-[[Table]]Method|Alert influence reduction||Cogmind part destroyed by combat hostile|10||Non-combat ally destroyed by combat hostile|10||Combat ally destroyed by combat hostile|20||Alert(Purge) [[Terminal]] hack|150||purge_threat [[Operator]] RIF hack|150[[/Table]]"
+[[Table]]Method|Alert influence reduction||Cogmind part destroyed by combat hostile|10||Non-combat ally destroyed by combat hostile|10||Combat ally destroyed by combat hostile|20||Alert(Purge) [[Terminal]] hack|150||purge_threat [[Operator]] RIF hack|150 [[Sub]]1[[/Sub]][[/Table]]
+[[List:Ordered]]Each purge_threat hack reduces the amount of influence reduced by 25 until the minimum value of 50 is reached. So purging will reduce by 150, 125, 100, 75, and remain at 50. This number resets back to 150 with each new map.[[/List]]"
 Alien Artifact,Other,
 Alpha 7,Bot,
 Aluminum Leg,Part,
@@ -266,6 +269,7 @@ Arm. Heavy Treads,Part,
 Arm. Huge Wheel,Part,
 Arm. Leg,Part,
 Arm. Medium Treads,Part,
+Arm. Scrap Engine,part,
 Arm. Treads,Part,
 Arm. Wheel,Part,
 Armageddon Trap,Part,
@@ -336,6 +340,9 @@ BFG-9k Vortex Edition,Part,
 Backup Laser I,Part,
 Backup Laser III,Part,
 Backup Laser VII,Part,
+Backup Plating I,part,
+Backup Plating III,part,
+Backup Plating VII,part,
 Backup Power I,Part,
 Backup Power III,Part,
 Backup Power VII,Part,
@@ -707,6 +714,7 @@ EX-DEC,Bot,
 EX-HEX,Bot,
 Electromagnetic Weapons,Other,
 Electron Diverter,Part,
+Encrypted Comm Array,part,
 Energy Cannons,Part Group,
 Energy Filter,Part,
 Energy Filters,Part Group,
@@ -981,6 +989,7 @@ H-77 Assassin,Bot,
 H-81 Overseer,Bot,
 H-88 Terminator,Bot,
 HERF Cannon,Part,
+HV-R5K,Bot,
 Hacking Drone,Bot,
 Hacking Drone Bay,Part,
 Hacking Suite,Part,A must-have for when you want to go for a hacking route. Download the schematic and make sure you fabricate enough in the factories.
@@ -1204,6 +1213,10 @@ Imprinter,Bot,"When parsed while friendly in [[Zion]], thoughts read: [[GameText
 Imprinter Data Core,Part,
 Impulse Thruster,Part,
 Impulse Thruster Array,Part,
+Infiltrator,Bot Group,
+Infiltrator (6),Bot,
+Infiltrator (7),Bot,
+Infiltrator (8),Bot,
 Infowar,Other,
 Insulated Plating,Part,
 Integrated Dissipator,Part,
@@ -1606,6 +1619,7 @@ Relay Coupler [Heavy],Part,
 Relay Coupler [Hunter],Part,
 Relay Coupler [NC],Part,
 Relay Coupler [Programmer],Part,
+Relay Coupler [Proto],part,
 Relay Coupler [Sentry],Part,
 Relay Coupler [Specialist],Part,
 Relay Coupler [Swarmer],Part,
@@ -1677,6 +1691,7 @@ Scatter Rocket Array,Part,
 Schematic,Other,
 Schematic Archive,Part,
 Scrap,Part,
+Scrap Engine,part,
 Scrapyard,Location,"The starting point of every game. At the start of every game there is a semi-random fixed spawn of: [[Sml. Storage Unit]], 2 [[Lgt. Treads]], 2 [[Aluminum Leg]], a mix of 2 [[Wheel]] or [[Com. Wheel]], a mix of 2 [[Ion Engine]] or [[Lgt. Ion Engine]], and a mix of 3 [[Lgt. Assault Rifle]], [[Assault Rifle]], [[EM Pulse Gun]], [[Sml. Laser]], [[Med. Laser]]. If the advanced game option quickStart is set, all of the parts will be either collected or equipped.[[Heading]]Events[[/Heading]]A team of [[T-07 Excavator|Tunnelers]] and [[U-05 Engineer|Engineers]] will dig out and finish rooms over time. The rooms themselves do not contain anything of importance.[[Image]]Scrapyard Assembled Event.png|Assembled after ambushing a Tunneler[[/Image]]However, after several thousand turns of waiting, an Tunneler may dig open a small dug out area containing a large number of [[Assembled (4)|Assembled]]. This will prompt a response of an [[C-30 ARC|ARC]] containing 2 [[D-53 Grenadier|Demolishers]] which can be a good early source of [[Cmb. Airjet]] if they are destroyed by the assembled. Waiting around for this event can be fairly risky since there is no way to prepare for the fight and it is very easy to get destroyed by either the demolishers or the assembled."
 Scythe,Part,
 Search Squad,Other,
@@ -1783,6 +1798,7 @@ Superbehemoth,Bot,
 Supercharged Integrated Dissipator,Part,
 Supercharged Integrated Reactor,Part,
 Supercharged Sigix Terminator,Part,
+Supercharged TR,part,
 Supersonic Drone Bay,Part,
 Surface,Location,"The surface is not a real map in the game, but exiting to the surface is one way to win the game. Many of the game's wintypes require getting to a surface exit. See [[Wintypes]] for more information."
 Surge Thruster,Part,
@@ -1977,6 +1993,7 @@ Watcher,Bot Group,
 Wave Gun,Part,
 Weapon Cycler,Part,
 Weapon Cyclers,Part Group,
+Weapon Mount,part,
 Weapon Shielding,Part,
 Weapon Shieldings,Part Group,
 Weight Redist. System,Part,
