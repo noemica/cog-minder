@@ -426,6 +426,18 @@
             }
         ]
     },
+    "AZ-K3N": {
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
+        "Locations": [
+            {
+                "Location": "Garrison event",
+                "Description": "Friendly: Found in Garrisons behind a locked cell"
+            }
+        ]
+    },
     "B-36 Bruiser": {
         "Categories": [
             "0b10"
@@ -1293,6 +1305,18 @@
             }
         ]
     },
+    "HV-R5K": {
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
+        "Locations": [
+            {
+                "Location": "Garrison event",
+                "Description": "Friendly: Found in Garrisons behind a locked cell"
+            }
+        ]
+    },
     "Hydra": {
         "Categories": [
             "Derelict",
@@ -1349,6 +1373,54 @@
             {
                 "Location": "Zion",
                 "Description": "Friendly: Stationed on the left side of the map near the imprinting machine"
+            }
+        ]
+    },
+    "Infiltrator (6)": {
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
+        "Locations": [
+            {
+                "Location": "Garrison",
+                "Description": "Friendly: Dormant and hidden behind emergency access, will wake up upon discovery"
+            },
+            {
+                "Location": "Heavy Reinforcements",
+                "Description": "Friendly: After infiltrating garrisons, sometimes Specialist Heavy reinforcements will turn out to be Infiltrators"
+            }
+        ]
+    },
+    "Infiltrator (7)": {
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
+        "Locations": [
+            {
+                "Location": "Garrison",
+                "Description": "Friendly: Dormant and hidden behind emergency access, will wake up upon discovery"
+            },
+            {
+                "Location": "Heavy Reinforcements",
+                "Description": "Friendly: After infiltrating garrisons, sometimes Specialist Heavy reinforcements will turn out to be Infiltrators"
+            }
+        ]
+    },
+    "Infiltrator (8)": {
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
+        "Locations": [
+            {
+                "Location": "Garrison",
+                "Description": "Friendly: Dormant and hidden behind emergency access, will wake up upon discovery"
+            },
+            {
+                "Location": "Heavy Reinforcements",
+                "Description": "Friendly: After infiltrating garrisons, sometimes Specialist Heavy reinforcements will turn out to be Infiltrators"
             }
         ]
     },

@@ -197,6 +197,8 @@ Impulse Thruster Array
 Imp. Q-thruster
 Cld. Q-thruster
 Exp. Q-thruster
+Scrap Engine
+Arm. Scrap Engine
 Desublimator
 Power Amplifier
 Adv. Power Amplifier
@@ -304,6 +306,7 @@ Surveybot 24 Chip
 Seismic Detector
 Transport Network Coupler
 Modified TNC
+Encrypted Comm Array
 0b10 Decoder Chip [Generic]
 0b10 Decoder Chip [Looter]
 0b10 Decoder Chip [Scout]
@@ -326,6 +329,7 @@ Exp. Melee Analysis Suite
 Launcher Guidance Computer
 Imp. Launcher Guidance Computer
 Adv. Launcher Guidance Computer
+Weapon Mount
 Target Analyzer
 Imp. Target Analyzer
 Adv. Target Analyzer
@@ -376,6 +380,7 @@ ECM Suite
 Mak. ECM Suite
 Adv. ECM Suite
 Exp. ECM Suite
+Active Sensor Spoofer
 Reaction Control System
 Imp. Reaction Control System
 Adv. Reaction Control System
@@ -407,12 +412,14 @@ Weapon Shielding
 Imp. Weapon Shielding
 Exp. Weapon Shielding
 Zio. Weapon Casing
+Backup Plating I
 Lgt. Armor Plating
 Med. Armor Plating
 Hvy. Armor Plating
 Zio. Light Carapace
 Zio. Heavy Carapace
 Hrd. Light Armor Plating
+Backup Plating III
 Hrd. Medium Armor Plating
 Hrd. Heavy Armor Plating
 Imp. Light Armor Plating
@@ -422,6 +429,7 @@ Lyr. Light Armor Plating
 Mak. Armor Plating
 Lyr. Medium Armor Plating
 Lyr. Heavy Armor Plating
+Backup Plating VII
 Centrium Light Armor Plating
 Centrium Medium Armor Plating
 Centrium Heavy Armor Plating
@@ -532,7 +540,6 @@ Authchip [Armor]
 Authchip [Weapon]
 Relay Coupler [NC]
 Relay Coupler [C]
-Relay Coupler [ARC]
 Relay Coupler [Swarmer]
 Relay Coupler [Cutter]
 Relay Coupler [Grunt]
@@ -545,6 +552,7 @@ Relay Coupler [Hunter]
 Relay Coupler [Heavy]
 Relay Coupler [Behemoth]
 Relay Coupler [Programmer]
+Relay Coupler [Proto]
 Skeleton Box
 01-MTF's Autohacker
 Component Analysis Suite
@@ -610,6 +618,7 @@ Chronowheel
 Dimensional Node Initializer
 Transdimensional Reconstructor
 Hpw. Transdimensional Reconstructor
+Supercharged TR
 Core Expander
 Core Regenerator
 Integrity Redistributor

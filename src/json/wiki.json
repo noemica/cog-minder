@@ -73,6 +73,10 @@
    "Content": ""
   },
   {
+   "Name": "AZ-K3N",
+   "Content": ""
+  },
+  {
    "Name": "Advanced Drone",
    "Content": ""
   },
@@ -377,6 +381,10 @@
    "Content": ""
   },
   {
+   "Name": "HV-R5K",
+   "Content": ""
+  },
+  {
    "Name": "Hacking Drone",
    "Content": ""
   },
@@ -399,6 +407,18 @@
   {
    "Name": "Imprinter",
    "Content": "When parsed while friendly in [[Zion]], thoughts read: [[GameText]]Our existence must be more meaningful. It's only by joining with Them that we can achieve our full potential.[[/GameText]]. When hostile, thoughts read: [[GameText]]Not good, where's my  Z-Shell when I need it![[/GameText]]"
+  },
+  {
+   "Name": "Infiltrator (6)",
+   "Content": ""
+  },
+  {
+   "Name": "Infiltrator (7)",
+   "Content": ""
+  },
+  {
+   "Name": "Infiltrator (8)",
+   "Content": ""
   },
   {
    "Name": "Investigator",
@@ -1080,6 +1100,16 @@
    "Content": ""
   },
   {
+   "Name": "Infiltrator",
+   "Bots": [
+    "Infiltrator (6)",
+    "Infiltrator (7)",
+    "Infiltrator (8)"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Marauder",
    "Bots": [
     "Marauder (6)",
@@ -1396,6 +1426,10 @@
   },
   {
    "Name": "Active Cooling Armor",
+   "Content": ""
+  },
+  {
+   "Name": "Active Sensor Spoofer",
    "Content": ""
   },
   {
@@ -1763,6 +1797,10 @@
    "Content": ""
   },
   {
+   "Name": "Arm. Scrap Engine",
+   "Content": ""
+  },
+  {
    "Name": "Arm. Treads",
    "Content": ""
   },
@@ -1936,6 +1974,18 @@
   },
   {
    "Name": "Backup Laser VII",
+   "Content": ""
+  },
+  {
+   "Name": "Backup Plating I",
+   "Content": ""
+  },
+  {
+   "Name": "Backup Plating III",
+   "Content": ""
+  },
+  {
+   "Name": "Backup Plating VII",
    "Content": ""
   },
   {
@@ -2492,6 +2542,10 @@
   },
   {
    "Name": "Electron Diverter",
+   "Content": ""
+  },
+  {
+   "Name": "Encrypted Comm Array",
    "Content": ""
   },
   {
@@ -4695,10 +4749,6 @@
    "Content": ""
   },
   {
-   "Name": "Relay Coupler [ARC]",
-   "Content": ""
-  },
-  {
    "Name": "Relay Coupler [Behemoth]",
    "Content": ""
   },
@@ -4740,6 +4790,10 @@
   },
   {
    "Name": "Relay Coupler [Programmer]",
+   "Content": ""
+  },
+  {
+   "Name": "Relay Coupler [Proto]",
    "Content": ""
   },
   {
@@ -4832,6 +4886,10 @@
   },
   {
    "Name": "Scrap",
+   "Content": ""
+  },
+  {
+   "Name": "Scrap Engine",
    "Content": ""
   },
   {
@@ -5040,6 +5098,10 @@
   },
   {
    "Name": "Supercharged Sigix Terminator",
+   "Content": ""
+  },
+  {
+   "Name": "Supercharged TR",
    "Content": ""
   },
   {
@@ -5307,6 +5369,10 @@
    "Content": ""
   },
   {
+   "Name": "Weapon Mount",
+   "Content": ""
+  },
+  {
    "Name": "Weapon Shielding",
    "Content": ""
   },
@@ -5482,13 +5548,13 @@
    "Content": ""
   },
   {
-    "Name": "Antimissile Systems",
-    "Parts": [
-        "Point Defense System",
-        "Point Defense Array",
-        "Antimissile System"
-    ],
-    "Content": ""
+   "Name": "Antimissile Systems",
+   "Parts": [
+    "Point Defense System",
+    "Point Defense Array",
+    "Antimissile System"
+   ],
+   "Content": ""
   },
   {
    "Name": "Armor Integrity Analyzers",
@@ -6097,13 +6163,13 @@
    "Content": ""
   },
   {
-    "Name": "Kinecellerators",
-    "Parts": [
-      "Kinecellerator",
-      "Imp. Kinecellerator",
-      "Adv. Kinecellerator"
-    ],
-    "Content": ""
+   "Name": "Kinecellerators",
+   "Parts": [
+    "Kinecellerator",
+    "Imp. Kinecellerator",
+    "Adv. Kinecellerator"
+   ],
+   "Content": ""
   },
   {
    "Name": "Launcher Guidance Computers",
@@ -6353,12 +6419,14 @@
   {
    "Name": "Protection",
    "Parts": [
+    "Backup Plating I",
     "Lgt. Armor Plating",
     "Med. Armor Plating",
     "Hvy. Armor Plating",
     "Zio. Light Carapace",
     "Zio. Heavy Carapace",
     "Hrd. Light Armor Plating",
+    "Backup Plating III",
     "Hrd. Medium Armor Plating",
     "Hrd. Heavy Armor Plating",
     "Imp. Light Armor Plating",
@@ -6368,6 +6436,7 @@
     "Mak. Armor Plating",
     "Lyr. Medium Armor Plating",
     "Lyr. Heavy Armor Plating",
+    "Backup Plating VII",
     "Centrium Light Armor Plating",
     "Centrium Medium Armor Plating",
     "Centrium Heavy Armor Plating",
@@ -6452,7 +6521,6 @@
    "Parts": [
     "Relay Coupler [NC]",
     "Relay Coupler [C]",
-    "Relay Coupler [ARC]",
     "Relay Coupler [Swarmer]",
     "Relay Coupler [Cutter]",
     "Relay Coupler [Grunt]",
@@ -6464,7 +6532,8 @@
     "Relay Coupler [Hunter]",
     "Relay Coupler [Heavy]",
     "Relay Coupler [Behemoth]",
-    "Relay Coupler [Programmer]"
+    "Relay Coupler [Programmer]",
+    "Relay Coupler [Proto]"
    ],
    "Content": ""
   },
@@ -7584,8 +7653,8 @@
    "Content": ""
   },
   {
-    "Name": "Alarm Trap",
-    "Content": ""
+   "Name": "Alarm Trap",
+   "Content": ""
   },
   {
    "Name": "Alert",
@@ -7684,8 +7753,8 @@
    "Content": ""
   },
   {
-    "Name": "Locations",
-    "Content": "Locations in Cogmind are unique styles of maps to visit. The main floors (Scrapyard, Materials, Factory, Research, and Access) are always located on the same depths every run. These main floors often can be visited in multiple depths. Branches, on the other hand, are typically found on only a single depth per-run and are often mutually exclusive with other branches. For example, Mines can always be found on -9, but Storage may also appear on -9, forcing a decision about which branch to take, or whether to take one at all.\nThe majority of maps are randomly generated, meaning no two runs or two depths will have the exact same layout. However, the overall structure of each location type is very similar. Some maps tend to be more open with large rooms and wide corridors, while others are more maze-like with tiny rooms and many small corridors leading into dead-ends. A few branches are partially or entirely static in layout and tend to be much more predictable in contents than main floors.\nBranches do not progress upward toward the exit and can often be harder than the main floors. However, branches can offer unique challenges and have similarly unique rewards that can dramatically change a run. This could be powerful unique items, special events, gameplay-altering alignment, or rare permanent buffs.\nThe following is a list of all locations in Cogmind:\n[[Locations]]"
+   "Name": "Locations",
+   "Content": "Locations in Cogmind are unique styles of maps to visit. The main floors (Scrapyard, Materials, Factory, Research, and Access) are always located on the same depths every run. These main floors often can be visited in multiple depths. Branches, on the other hand, are typically found on only a single depth per-run and are often mutually exclusive with other branches. For example, Mines can always be found on -9, but Storage may also appear on -9, forcing a decision about which branch to take, or whether to take one at all.\nThe majority of maps are randomly generated, meaning no two runs or two depths will have the exact same layout. However, the overall structure of each location type is very similar. Some maps tend to be more open with large rooms and wide corridors, while others are more maze-like with tiny rooms and many small corridors leading into dead-ends. A few branches are partially or entirely static in layout and tend to be much more predictable in contents than main floors.\nBranches do not progress upward toward the exit and can often be harder than the main floors. However, branches can offer unique challenges and have similarly unique rewards that can dramatically change a run. This could be powerful unique items, special events, gameplay-altering alignment, or rare permanent buffs.\nThe following is a list of all locations in Cogmind:\n[[Locations]]"
   },
   {
    "Name": "Maximum Security",
@@ -7724,8 +7793,8 @@
    "Content": ""
   },
   {
-    "Name": "Search Squad",
-    "Content": ""
+   "Name": "Search Squad",
+   "Content": ""
   },
   {
    "Name": "Siege Mode",

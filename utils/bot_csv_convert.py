@@ -87,6 +87,7 @@ name_replacements = {
     'Marauder': ['Marauder (6)', 'Marauder (8)'],
     'Fireman': ['Fireman (5)', 'Fireman (7)'],
     'Mutant': ['Mutant (5)', 'Mutant (6)', 'Mutant (7)', 'Mutant (8)'],
+    'Infiltrator': ['Infiltrator (6)', 'Infiltrator (7)', 'Infiltrator (8)'],
     'God Mode': ['God Mode (Fake)', 'God Mode'],
     'Warlord': ['Warlord', 'Warlord (Command)'],
     'MAIN.C': ['MAIN.C (Shell)', 'MAIN.C']
