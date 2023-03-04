@@ -19,6 +19,12 @@
             "Description": "(10/20/30)% chance to automatically trick target system into believing it is allied with Cogmind. After 10 turns the network will perform an automated quickboot to restore it to normal, a process which takes anywhre from 5 to 10 turns. Checked once per visible combat bot while matching Coupler attached, separately for each Coupler."
         },
         {
+            "Name": "Code Merge",
+            "MinAbilities": "4",
+            "Levels": "2",
+            "Description": "Stand on a Coupler and use > or right-click on self to add (30/50)% of its code value to a matching attached Coupler. Cannot increase value beyond 99."
+        },
+        {
             "Name": "Command Fork",
             "MinAbilities": "0",
             "Levels": "3",
@@ -252,6 +258,7 @@
         {
             "CategoryName": "Noncombat (NC) Yellow",
             "Targets": [
+                "Carrier",
                 "Operator",
                 "Researcher",
                 "Watcher"
@@ -362,6 +369,26 @@
                     "Rif": true,
                     "Charges": 10,
                     "Description": "Instruct system to follow local evacuation protocols by heading to another 0b10-controlled level."
+                }
+            ]
+        },
+        {
+            "CategoryName": "Carrier",
+            "Targets": [
+                "Carrier"
+            ],
+            "Hacks": [
+                {
+                    "Name": "emergency_deploy",
+                    "Rif": true,
+                    "Charges": 15,
+                    "Description": "Forces emergency deployment, likely damaging or destroying the bots contained within."
+                },
+                {
+                    "Name": "formatsys_deep",
+                    "Rif": true,
+                    "Charges": 40,
+                    "Description": "Rewrite all system data, permanently converting it into a fully controllable ally. Requires 6 turns to complete the process. Also fully penetrates systems of all bots contained within."
                 }
             ]
         },
