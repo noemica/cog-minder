@@ -136,6 +136,7 @@ categories = {
         'Explosion Damage Min',
         'Explosion Damage Max',
         'Falloff',
+        "Chunks",
         'Explosion Type',
         'Explosion Heat Transfer',
         'Explosion Spectrum',

@@ -1168,6 +1168,9 @@ jq(function ($) {
             const spectrum = spectrumToNumber(def.spectrum);
             const explosionSpectrum = spectrumToNumber(def.explosionSpectrum);
 
+            const explosionChunksMin = def.minChunks ?? 1;
+            const explosionChunksMax = def.maxChunks ?? 1;
+
             if (def.name === "Ram") {
                 ramming = true;
             }
@@ -1200,6 +1203,8 @@ jq(function ($) {
                 def: def,
                 delay: delay,
                 disruption: disruption,
+                explosionChunksMin: explosionChunksMin,
+                explosionChunksMax: explosionChunksMax,
                 explosionDisruption: explosionDisruption,
                 explosionMin: explosionMin,
                 explosionMax: explosionMax,

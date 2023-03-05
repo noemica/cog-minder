@@ -101,6 +101,8 @@ export type SimulatorWeapon = {
     def: WeaponItem;
     delay: number;
     disruption: number;
+    explosionChunksMin: number;
+    explosionChunksMax: number;
     explosionMin: number;
     explosionMax: number;
     explosionDisruption: number;

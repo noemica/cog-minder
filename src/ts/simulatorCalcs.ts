@@ -189,13 +189,14 @@ function applyDamage(
         if (engine.explosionDamageMax > 0 && engine.explosionType !== undefined) {
             // Apply engine explosion randomly as either 1 or 2 chunks (16)
             const baseDamage = randomInt(engine.explosionDamageMin, engine.explosionDamageMax);
-            const chunks =
-                randomInt(1, 2) === 1 ? [baseDamage] : [Math.trunc(baseDamage / 2), Math.trunc(baseDamage / 2)];
+            const numChunks = randomInt(engine.minChunks ?? 0, engine.maxChunks ?? 0);
+            const chunkDamage = Math.trunc(baseDamage / numChunks);
             botState.salvage += engine.explosionSalvage;
-            chunks.forEach((damage) => {
+
+            for (let i = 0; i < numChunks; i++) {
                 applyDamageChunk(
                     0,
-                    damage,
+                    chunkDamage,
                     engine.explosionType!,
                     undefined,
                     false,
@@ -204,7 +205,7 @@ function applyDamage(
                     spectrumToNumber(engine.explosionSpectrum),
                     false,
                 );
-            });
+            }
         }
     }
 
@@ -1531,16 +1532,8 @@ function simulateWeapon(
             // Apply resistances (6)
             damage = calculateResistDamage(botState, damage, weapon.explosionType);
 
-            let numChunks: number;
-            if (weapon.explosionType === DamageType.Explosive) {
-                // Explosive damage is split into 1-3 chunks at random (9)
-                numChunks = randomInt(1, 3);
-            } else if (weapon.def.name === "Sigix Terminator" || weapon.def.name === "Supercharged Sigix Terminator") {
-                // ST/SST have special chunk rules
-                numChunks = randomInt(3, 6);
-            } else {
-                numChunks = 1;
-            }
+            // Explosive damage is split into multiple chunks depending on the source
+            const numChunks = randomInt(weapon.explosionChunksMin, weapon.explosionChunksMax);
 
             if (damage > 0) {
                 applyDamage(

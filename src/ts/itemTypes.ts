@@ -244,6 +244,8 @@ export type PowerItem = BaseItem &
         explosionDamageMin: number;
         explosionDamageMax: number;
         falloff?: string;
+        minChunks?: number;
+        maxChunks?: number;
         explosionType?: DamageType;
         explosionHeatTransfer?: HeatTransfer;
         explosionSpectrum?: Spectrum;
@@ -296,6 +298,8 @@ export type WeaponItem = BaseItem & {
     explosionDamageMin?: number;
     explosionDamageMax?: number;
     falloff?: string;
+    minChunks?: number;
+    maxChunks?: number;
     explosionType?: DamageType;
     explosionHeatTransfer?: HeatTransfer;
     arc?: number;
@@ -367,6 +371,7 @@ export type JsonItem = {
     "Explosion Damage Min"?: string;
     "Explosion Damage Max"?: string;
     Falloff?: string;
+    Chunks?: string;
     "Explosion Type"?: DamageType;
     "Explosion Heat Transfer"?: HeatTransfer;
     Waypoints?: string;

@@ -1466,7 +1466,21 @@ export async function initData(
                 newItem = otherItem;
                 break;
 
-            case "Power":
+            case "Power": {
+                let minChunks: number | undefined = undefined;
+                let maxChunks: number | undefined = undefined;
+
+                if (item["Chunks"] !== undefined) {
+                    if (item["Chunks"].includes("-")) {
+                        const split = item["Chunks"].split("-");
+
+                        minChunks = parseInt(split[0]);
+                        maxChunks = parseInt(split[1]);
+                    } else {
+                        minChunks = parseInt(item["Chunks"]);
+                        maxChunks = minChunks;
+                    }
+                }
                 const powerItem: PowerItem = {
                     slot: "Power",
                     category: category,
@@ -1503,12 +1517,15 @@ export async function initData(
                     explosionSalvage: parseIntOrDefault(item["Explosion Salvage"], 0),
                     explosionSpectrum: item["Explosion Spectrum"],
                     explosionType: item["Explosion Type"],
+                    minChunks: minChunks,
+                    maxChunks: maxChunks,
                     index: index,
                     specialProperty: specialProperty,
                     spoiler: spoiler,
                 };
                 newItem = powerItem;
                 break;
+            }
 
             case "Propulsion":
                 const propItem: PropulsionItem = {
@@ -1593,6 +1610,22 @@ export async function initData(
                         criticalType = result[2] as Critical;
                     }
                 }
+
+                let minChunks: number | undefined = undefined;
+                let maxChunks: number | undefined = undefined;
+
+                if (item["Chunks"] !== undefined) {
+                    if (item["Chunks"].includes("-")) {
+                        const split = item["Chunks"].split("-");
+
+                        minChunks = parseInt(split[0]);
+                        maxChunks = parseInt(split[1]);
+                    } else {
+                        minChunks = parseInt(item["Chunks"]);
+                        maxChunks = minChunks;
+                    }
+                }
+
                 const weaponItem: WeaponItem = {
                     slot: "Weapon",
                     category: category,
@@ -1645,6 +1678,8 @@ export async function initData(
                     explosionRadius: parseIntOrUndefined(item["Explosion Radius"]),
                     explosionSalvage: item["Explosion Salvage"],
                     explosionSpectrum: item["Explosion Spectrum"],
+                    minChunks: minChunks,
+                    maxChunks: maxChunks,
                     falloff: item.Falloff,
                     heatTransfer: item["Heat Transfer"],
                     life: item.Life,
