@@ -115,7 +115,7 @@ jq(function ($) {
                 { name: "Recycling(Report)", description: "Query systems for current inventory and local matter reserves.", baseChance: 90, indirect: Indirect.Never },
                 { name: "Recycling(Process)", description: "Initiate recycling process, breaking down all contained parts into matter.", baseChance: 80, indirect: Indirect.Never },
                 { name: "Trojan(Mask)", description: "Prevent Recycler robots from picking up any parts in a 15-tile square area around the machine.", baseChance: 40, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
-                { name: "Trojan(Monitor)", description: "Enable reporting of any parts inserted into this machine, as well as their integrity.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
+                { name: "Trojan(Monitor)", description: "Enable reporting of any parts inserted into any Recycling Machine, as well as their integrity.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
                 { name: "Trojan(Recyclers)", description: "Continuously report the position of all Recycler class robots on the current floor.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
                 { name: "Trojan(Reject)", description: "Prevent parts from being deposited into the recycling machine. Instead, any inserted parts are deposited onto the floor.", baseChance: 70, indirect: Indirect.Always, spoilerLevel: "Spoiler" },
             ],
