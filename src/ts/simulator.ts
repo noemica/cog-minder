@@ -9,9 +9,12 @@ import {
     gallerySort,
     getItem,
     getItemSpriteImageName,
+    hasActiveSpecialProperty,
     initData,
     itemData,
     parseIntOrDefault,
+    sum,
+    valueOrDefault,
 } from "./common";
 import {
     createHeader,
@@ -21,8 +24,25 @@ import {
     registerDisableAutocomplete,
     resetButtonGroup,
     setSpoilerState,
+    temporarilySetValue,
 } from "./commonJquery";
-import { Critical, DamageType, ItemRatingCategory, ItemType, PropulsionItem, WeaponItem } from "./itemTypes";
+import {
+    CombatSuite,
+    CoreAnalyzer,
+    Critical,
+    DamageType,
+    Item,
+    ItemRatingCategory,
+    ItemType,
+    LauncherGuidance,
+    ParticleCharging,
+    PropulsionItem,
+    RecoilReduction,
+    SalvageTargeting,
+    TargetAnalyzer,
+    Targeting,
+    WeaponItem,
+} from "./itemTypes";
 import {
     getBotDefensiveState,
     getRangedVolleyTime,
@@ -50,6 +70,7 @@ import "bootstrap";
 import { Chart, ChartDataSets, Point } from "chart.js";
 import * as jQuery from "jquery";
 import "bootstrap-select";
+import { DumpMindEntity } from "./dumpMindTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -593,6 +614,7 @@ jq(function ($) {
         $(".btn-light").removeClass("btn-light");
 
         initCharts();
+        initImportFromDumpMind();
     }
 
     // Initializes the charts with default settings and no data
@@ -712,9 +734,255 @@ jq(function ($) {
         });
     }
 
+    // Initializes the import from DumpMind button
+    function initImportFromDumpMind() {
+        // Init data content
+        const importFromDumpMindButton = $("#importFromDumpMindButton");
+        importFromDumpMindButton.attr(
+            "data-content",
+            `
+<span class="input-label dump-input-label d-flex" data-toggle="tooltip"
+title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind below</span>
+<textarea id="dumpText" rows="10" class="form-control dump-input-textarea mt-3"></textarea>
+<div class="d-flex justify-content-end input-group mt-2">
+    <button id="dumpSubmitButton" class="btn ml-3">Submit</button>
+</div>
+`,
+        );
+        // We can't add the data content for both a tooltip and a popover in HTML
+        // Add the tooltip info here instead
+        (importFromDumpMindButton as any).tooltip({
+            title: "Import data from Luigi's DumpMind",
+        });
+
+        (importFromDumpMindButton as any).popover({
+            sanitize: false,
+        });
+        importFromDumpMindButton.on("shown.bs.popover", (e) => {
+            (importFromDumpMindButton as any).tooltip("hide");
+
+            // Set up popover dump handling
+            const body = $(`#${$(e.target).attr("aria-describedby")}`).children(".popover-body");
+
+            // Hack to stop focus from being moved outside of the textarea immediately
+            body.find("#dumpText").on("click", (e) => {
+                e.stopPropagation();
+            });
+
+            (body.find('[data-toggle="tooltip"]') as any).tooltip();
+
+            // Add handling for submit button
+            const submitButton = body.find("#dumpSubmitButton");
+
+            submitButton.on("click", () => {
+                const text = body.find("#dumpText").val() as string;
+
+                try {
+                    const entities = JSON.parse(text) as DumpMindEntity[];
+
+                    if (entities.length == 0) {
+                        temporarilySetValue(submitButton, "Invalid JSON!", "Submit", 3000);
+                    } else {
+                        const cogmindEntity = entities.find((e) => e.entity == "Cogmind");
+
+                        if (cogmindEntity === undefined) {
+                            temporarilySetValue(submitButton, "Invalid JSON!", "Submit", 3000);
+                        } else {
+                            loadFromDumpMind(cogmindEntity);
+                            (importFromDumpMindButton as any).popover("hide");
+                        }
+                    }
+                } catch {
+                    temporarilySetValue(submitButton, "Failed to parse JSON!", "Submit", 3000);
+                }
+            });
+        });
+        $(".popover").on("click", (e) => {
+            e.stopPropagation();
+        });
+    }
+
     // Checks if the combat type is melee or ranged
     function isMelee() {
         return $("#combatTypeMelee").hasClass("active");
+    }
+
+    // Loads the simulator state of active parts based on DumpMind
+    function loadFromDumpMind(cogmindEntity: DumpMindEntity) {
+        const allParts = cogmindEntity.inventory
+            .filter((p) => p.equipped)
+            .map((p) => getItem(p.item))
+            .filter((p) => p != null);
+
+        const allWeapons = allParts.filter((p) => p.slot === "Weapon");
+        const allPropulsion = allParts.filter((p) => p.slot === "Propulsion");
+        const allUtilities = allParts.filter((p) => p.slot === "Utility");
+
+        const meleeWeapons = allWeapons.filter((w) => meleeTypes.includes(w.type));
+        const rangedWeapons = allWeapons.filter((w) => rangedTypes.includes(w.type));
+        let weaponsToAdd: Item[];
+        const isMelee = meleeWeapons.length === allWeapons.length;
+        if (isMelee) {
+            // Only do melee selection if all weapons are melee
+            $("#combatTypeMelee").children().trigger("click");
+            weaponsToAdd = meleeWeapons;
+        } else {
+            // Change to ranged selection if any ranged weapons are equipped
+            $("#combatTypeRanged").children().trigger("click");
+            weaponsToAdd = rangedWeapons;
+        }
+
+        resetValues(false);
+
+        for (const weapon of weaponsToAdd) {
+            const select = $("#weaponSelectContainer").children().last().find("select");
+            select.selectpicker("val", weapon.name);
+        }
+
+        if (isMelee) {
+            //
+        } else {
+            // Update ranged utilities
+            // Calculate targeting bonuses from standard targeting computers + combat suites
+            let targetingBonus =
+                allUtilities
+                    .filter((p) => hasActiveSpecialProperty(p, true, "Targeting"))
+                    .map((p) => (p.specialProperty!.trait as Targeting).bonus)
+                    .reduce(sum, 0) +
+                allUtilities
+                    .filter((p) => hasActiveSpecialProperty(p, true, "CombatSuite"))
+                    .map((p) => (p.specialProperty!.trait as CombatSuite).targeting)
+                    .reduce(sum, 0);
+
+            if (allWeapons.every((p) => p.type === ItemType.Launcher)) {
+                // Add launcher guidance only if all weapons are launchers
+                targetingBonus += allUtilities
+                    .filter((p) => hasActiveSpecialProperty(p, true, "LauncherGuidance"))
+                    .map((p) => (p.specialProperty!.trait as LauncherGuidance).bonus)
+                    .reduce(sum, 0);
+            }
+
+            if (targetingBonus > 0) {
+                $("#targetingInput").val(targetingBonus);
+            }
+
+            // Calculate tread slots #
+            const numTreads = allPropulsion
+                .filter((p) => p.type === ItemType.Treads)
+                .map((p) => p.size)
+                .reduce(sum, 0);
+            if (numTreads > 0) {
+                $("#treadsInput").val(numTreads);
+            }
+
+            // Maybe calculate siege here? Default to off for now
+
+            // Maybe calculate distance here? Default to unset (6+ no bonus) for now
+
+            // Calculate particle charging
+            const particleChargingBonuses = allUtilities
+                .filter((p) => hasActiveSpecialProperty(p, true, "ParticleCharging"))
+                .map((p) => (p.specialProperty!.trait as ParticleCharging).percent);
+            particleChargingBonuses.sort();
+            const chargingBonus1 = particleChargingBonuses.pop();
+            const chargingBonus2 = particleChargingBonuses.pop();
+            const chargingBonus = valueOrDefault(chargingBonus1, 0) + Math.trunc(valueOrDefault(chargingBonus2, 0) / 2);
+            if (chargingBonus > 0) {
+                $("#particleChargerInput").val(chargingBonus);
+            }
+
+            // Determine Kinecellerator type, only 3 types so just hardcode the checks
+            if (allUtilities.find((p) => p.name === "Adv. Kinecellerator")) {
+                $("#kinecelleratorSelect").selectpicker("val", "50%: Adv. Kinecellerator");
+            } else if (allUtilities.find((p) => p.name === "Imp. Kinecellerator")) {
+                $("#kinecelleratorSelect").selectpicker("val", "40%: Imp. Kinecellerator");
+            } else if (allUtilities.find((p) => p.name === "Kinecellerator")) {
+                $("#kinecelleratorSelect").selectpicker("val", "30%: Kinecellerator");
+            }
+
+            // Calculate salvage targeting
+            const salvageTargetingBonus = allUtilities
+                .filter((p) => hasActiveSpecialProperty(p, true, "SalvageTargeting"))
+                .map((p) => (p.specialProperty!.trait as SalvageTargeting).amount)
+                .reduce(sum, 0);
+            if (salvageTargetingBonus > 0) {
+                $("#salvageTargetingInput").val(salvageTargetingBonus);
+            }
+
+            // Calculate recoil reduction
+            const recoilReduction = allUtilities
+                .filter((p) => hasActiveSpecialProperty(p, true, "RecoilReduction"))
+                .map((p) => (p.specialProperty!.trait as RecoilReduction).reduction)
+                .reduce(sum, 0);
+            if (recoilReduction > 0) {
+                $("#recoilInput").val(recoilReduction);
+            }
+
+            // Determine best weapon cycler
+            if (
+                allWeapons.length === 1 &&
+                (allWeapons[0].type === ItemType.EnergyCannon || allWeapons[0].type === ItemType.EnergyGun) &&
+                allUtilities.find((p) => p.name === "Quantum Capacitor")
+            ) {
+                $("#cyclerSelect").selectpicker("val", "50%: Quantum Capacitor");
+            } else if (
+                allWeapons.length === 1 &&
+                allWeapons[0].type === ItemType.Launcher &&
+                allUtilities.find((p) => p.name === "Launcher Loader")
+            ) {
+                $("#cyclerSelect").selectpicker("val", "50%: Launcher Loader");
+            } else if (allUtilities.find((p) => p.name === "Exp. Weapon Cycler")) {
+                $("#cyclerSelect").selectpicker("val", "30%: Exp. Weapon Cycler");
+            } else if (allUtilities.find((p) => p.name === "Adv. Weapon Cycler")) {
+                $("#cyclerSelect").selectpicker("val", "25%: Adv. Weapon Cycler");
+            } else if (allUtilities.find((p) => p.name === "Imp. Weapon Cycler")) {
+                $("#cyclerSelect").selectpicker("val", "20%: Imp. Weapon Cycler");
+            } else if (allUtilities.find((p) => p.name === "Weapon Cycler")) {
+                $("#cyclerSelect").selectpicker("val", "15%: Weapon Cycler");
+            }
+
+            // Determine Armor Integrity Analyzer
+            if (allUtilities.find((p) => p.name === "Exp. Armor Integrity Analyzer")) {
+                $("#armorIntegSelect").selectpicker("val", "50%: Exp. Armor Integrity Analyzer");
+            } else if (allUtilities.find((p) => p.name === "Imp. Armor Integrity Analyzer")) {
+                $("#armorIntegSelect").selectpicker("val", "40%: Imp. Armor Integrity Analyzer");
+            } else if (allUtilities.find((p) => p.name === "Armor Integrity Analyzer")) {
+                $("#armorIntegSelect").selectpicker("val", "30%: Armor Integrity Analyzer");
+            }
+
+            // Calculate core analyzer bonus
+            let coreAnalyzerBonus = 0;
+            if (allUtilities.find((p) => hasActiveSpecialProperty(p, true, "CombatSuite"))) {
+                coreAnalyzerBonus = 8;
+            } else {
+                const coreAnalyzerBonuses = allUtilities
+                    .filter((p) => hasActiveSpecialProperty(p, true, "CoreAnalyzer"))
+                    .map((p) => (p.specialProperty!.trait as CoreAnalyzer).bonus);
+                coreAnalyzerBonuses.sort();
+                const coreAnalyzerBonus1 = coreAnalyzerBonuses.pop();
+                const coreAnalyzerBonus2 = coreAnalyzerBonuses.pop();
+                coreAnalyzerBonus =
+                    valueOrDefault(coreAnalyzerBonus1, 0) + Math.trunc(valueOrDefault(coreAnalyzerBonus2, 0) / 2);
+            }
+
+            if (coreAnalyzerBonus > 0) {
+                $("#coreAnalyzerInput").val(coreAnalyzerBonus);
+            }
+
+            // Calculate target analyzer bonus
+            const targetAnalyzerBonuses = allUtilities
+                .filter((p) => hasActiveSpecialProperty(p, true, "TargetAnalyzer"))
+                .map((p) => (p.specialProperty!.trait as TargetAnalyzer).bonus);
+            targetAnalyzerBonuses.sort();
+            const targetAnalyzerBonus1 = targetAnalyzerBonuses.pop();
+            const targetAnalyzerBonus2 = targetAnalyzerBonuses.pop();
+            const targetAnalyzerBonus =
+                valueOrDefault(targetAnalyzerBonus1, 0) + Math.trunc(valueOrDefault(targetAnalyzerBonus2, 0) / 2);
+
+            if (targetAnalyzerBonus > 0) {
+                $("#targetAnalyzerInput").val(targetAnalyzerBonus);
+            }
+        }
     }
 
     // Resets a dropdown to the first item
@@ -723,7 +991,7 @@ jq(function ($) {
     }
 
     // Resets all values
-    function resetValues() {
+    function resetValues(addDefault = true) {
         // Reset button groups
         resetButtonGroup($("#analysisContainer"));
         resetButtonGroup($("#onLegsContainer"));
@@ -761,13 +1029,15 @@ jq(function ($) {
         $("#initialMomentumInput").val("");
         $("#comparisonNameInput").val("");
 
-        // Reset with 1 preset weapon and one empty one
+        // Reset with 1 preset weapon (if adding default) and one empty one
         $("#weaponSelectContainer").empty();
 
-        const defaultWeapon = isMelee() ? "Mining Claw" : "Lgt. Assault Rifle";
-        addWeaponSelect(defaultWeapon);
-        addWeaponSelect("");
+        if (addDefault) {
+            const defaultWeapon = isMelee() ? "Mining Claw" : "Lgt. Assault Rifle";
+            addWeaponSelect(defaultWeapon);
+        }
 
+        addWeaponSelect("");
         setStatusText("");
 
         $("#resultsContainer").addClass("not-visible");
@@ -1261,7 +1531,7 @@ jq(function ($) {
         const initialMomentum = parseIntOrDefault($("#initialMomentumInput").val() as string, 0);
 
         // Determine sneak attack strategy
-        const sneakAttackStrategy = $("#sneakAttackSelect").selectpicker("val") as any as SneakAttackStrategy;
+        const sneakAttackStrategy = $("#sneakAttackSelect").selectpicker("val" as any) as SneakAttackStrategy;
 
         // Calculate total (ranged) or initial (melee) volley time
         const volleyTimeModifier = melee
@@ -1279,8 +1549,8 @@ jq(function ($) {
         // -10% if attacker moved last action (ignored in melee combat)
         // +10% if attacker didn't move for the last 2 actions
         // simulatorCalcs.ts will always enforce the +10% accuracy as part of the 3rd action
-        let action1Accuracy;
-        let action2Accuracy;
+        let action1Accuracy: number;
+        let action2Accuracy: number;
         const actionsSinceMoving = parseIntOrDefault($("#actionsSinceMovingInput").val() as string, 2);
         if (actionsSinceMoving == 0) {
             action1Accuracy = melee ? 0 : -10;

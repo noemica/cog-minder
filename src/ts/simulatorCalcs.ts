@@ -1,6 +1,6 @@
 // Battle simulation calculation functions/constants
 import { Bot, BotImmunity } from "./botTypes";
-import { hasActiveSpecialProperty, randomInt } from "./common";
+import { hasActiveSpecialProperty, randomInt, sum } from "./common";
 import {
     AntimissileChance,
     AvoidChance,
@@ -877,10 +877,6 @@ function getHitPart(
 
     if (damageType === DamageType.Impact) {
         // Impact damage targets core and all parts with coverage relative to their slots
-        function sum(a: number, b: number) {
-            return a + b;
-        }
-
         let coverageHit = randomInt(0, botState.parts.map((p) => p.def.size).reduce(sum, 0));
         for (let i = 0; i < botState.parts.length; i++) {
             if (coverageHit < botState.parts[i].def.size) {

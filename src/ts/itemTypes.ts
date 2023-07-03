@@ -124,6 +124,8 @@ export type Actuator = { kind: "Actuator"; amount: number };
 export type AirborneSpeedDoubling = { kind: "AirborneSpeedDoubling" };
 export type AntimissileChance = { kind: "AntimissileChance"; chance: number };
 export type AvoidChance = { kind: "AvoidChance"; chance: number; legsChance: number };
+export type CombatSuite = { kind: "CombatSuite"; core: 8; rangedAvoid: 8; targeting: 8 };
+export type CoreAnalyzer = { kind: "CoreAnalyzer"; bonus: number };
 export type CorruptionIgnore = { kind: "CorruptionIgnore"; chance: number };
 export type CorruptionPrevent = { kind: "CorruptionPrevent"; amount: number };
 export type CorruptionReduce = { kind: "CorruptionReduce"; amount: number };
@@ -133,15 +135,21 @@ export type EnergyFilter = { kind: "EnergyFilter"; percent: number };
 export type EnergyStorage = { kind: "EnergyStorage"; storage: number };
 export type FusionCompressor = { kind: "FusionCompressor"; energyPerTurn: number };
 export type HeatDissipation = { kind: "HeatDissipation"; dissipation: number };
+export type LauncherGuidance = { kind: "LauncherGuidance"; bonus: number };
 export type LauncherLoader = { kind: "LauncherLoader" };
 export type MassSupport = { kind: "MassSupport"; support: number };
 export type Metafiber = { kind: "Metafiber" };
 export type PowerAmplifier = { kind: "PowerAmplifier"; percent: number };
 export type QuantumCapacitor = { kind: "QuantumCapacitor" };
+export type ParticleCharging = { kind: "ParticleCharging"; percent: number };
 export type RangedAvoid = { kind: "RangedAvoid"; avoid: number };
 export type RangedWeaponCycling = { kind: "RangedWeaponCycling"; amount: number };
+export type RecoilReduction = { kind: "RecoilReduction"; reduction: number };
+export type SalvageTargeting = { kind: "SalvageTargeting"; amount: number };
 export type SelfReduction = { kind: "SelfReduction"; shielding: number };
 export type Shielding = { kind: "Shielding"; shielding: number; slot: ItemSlot | "Core" };
+export type TargetAnalyzer = { kind: "TargetAnalyzer"; bonus: number };
+export type Targeting = { kind: "Targeting"; bonus: number };
 export type WeaponRegen = { kind: "WeaponRegen"; energyPerTurn: number; integrityPerTurn: number };
 
 export type SpecialPropertyType =
@@ -149,6 +157,8 @@ export type SpecialPropertyType =
     | AntimissileChance
     | AirborneSpeedDoubling
     | AvoidChance
+    | CombatSuite
+    | CoreAnalyzer
     | CorruptionIgnore
     | CorruptionPrevent
     | CorruptionReduce
@@ -159,14 +169,20 @@ export type SpecialPropertyType =
     | FusionCompressor
     | HeatDissipation
     | LauncherLoader
+    | LauncherGuidance
     | MassSupport
     | Metafiber
+    | ParticleCharging
     | PowerAmplifier
     | QuantumCapacitor
     | RangedAvoid
     | RangedWeaponCycling
+    | RecoilReduction
+    | SalvageTargeting
     | SelfReduction
     | Shielding
+    | TargetAnalyzer
+    | Targeting
     | WeaponRegen;
 
 export type SpecialPropertyTypeName =
@@ -174,6 +190,8 @@ export type SpecialPropertyTypeName =
     | "AirborneSpeedDoubling"
     | "AntimissileChance"
     | "AvoidChance"
+    | "CombatSuite"
+    | "CoreAnalyzer"
     | "CorruptionIgnore"
     | "CorruptionPrevent"
     | "CorruptionReduce"
@@ -184,14 +202,20 @@ export type SpecialPropertyTypeName =
     | "FusionCompressor"
     | "HeatDissipation"
     | "LauncherLoader"
+    | "LauncherGuidance"
     | "MassSupport"
     | "Metafiber"
+    | "ParticleCharging"
     | "PowerAmplifier"
     | "QuantumCapacitor"
     | "RangedAvoid"
     | "RangedWeaponCycling"
+    | "RecoilReduction"
+    | "SalvageTargeting"
     | "SelfReduction"
     | "Shielding"
+    | "TargetAnalyzer"
+    | "Targeting"
     | "WeaponRegen";
 
 export type SpecialItemProperty = {

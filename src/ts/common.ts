@@ -1297,6 +1297,15 @@ export function getItem(itemName: string): Item {
     throw `${itemName} not a valid item`;
 }
 
+// Tries to get an item by name
+export function getItemOrNull(itemName: string): Item | null {
+    if (itemName in itemData) {
+        return itemData[itemName];
+    }
+
+    return null;
+}
+
 // Gets the sprite image name of an item
 export function getItemSpriteImageName(item: Item): string {
     return `game_sprites/${item.type}.png`;
@@ -1985,6 +1994,11 @@ function parseIntOrUndefined(value: string | undefined): number | undefined {
 // Gets a random integer between the min and max values (inclusive)
 export function randomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Sums the two values
+export function sum(a: number, b: number): number {
+    return a + b;
 }
 
 // Unescapes the given string with HTML entities

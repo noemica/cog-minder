@@ -30,6 +30,16 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
         trait: { kind: "AvoidChance", chance: 14, legsChance: 7 },
     },
 
+    // Combat Suite
+    "Asb. Combat Suite": {
+        active: "Part Active",
+        trait: { kind: "CombatSuite", core: 8, rangedAvoid: 8, targeting: 8 },
+    },
+
+    // Core Analyzer
+    "Core Analyzer": { active: "Part Active", trait: { kind: "CoreAnalyzer", bonus: 6 } },
+    "Exp. Core Analyzer": { active: "Part Active", trait: { kind: "CoreAnalyzer", bonus: 8 } },
+
     // Corruption ignore %
     "Dynamic Insulation System": { active: "Part Active", trait: { kind: "CorruptionIgnore", chance: 50 } },
     "Imp. Dynamic Insulation System": { active: "Part Active", trait: { kind: "CorruptionIgnore", chance: 67 } },
@@ -262,6 +272,11 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     // Metafiber
     "Asb. Metafiber Network": { active: "Part Active", trait: { kind: "Metafiber" } },
 
+    // Launcher Guidance
+    "Launcher Guidance Computer": { active: "Part Active", trait: { kind: "LauncherGuidance", bonus: 20 } },
+    "Imp. Launcher Guidance Computer": { active: "Part Active", trait: { kind: "LauncherGuidance", bonus: 30 } },
+    "Adv. Launcher Guidance Computer": { active: "Part Active", trait: { kind: "LauncherGuidance", bonus: 40 } },
+
     // Power amplifiers
     "Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: 0.2 } },
     "Adv. Power Amplifier": { active: "Always", trait: { kind: "PowerAmplifier", percent: 0.3 } },
@@ -280,6 +295,24 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Exp. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.3 } },
     "Launcher Loader": { active: "Part Active", trait: { kind: "LauncherLoader" } },
     "Quantum Capacitor": { active: "Part Active", trait: { kind: "QuantumCapacitor" } },
+
+    // Recoil reduction
+    "Recoil Stabilizer": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 4 } },
+    "Recoil Nullifier": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 6 } },
+
+    // Particle charging
+    "Particle Charger": { active: "Part Active", trait: { kind: "ParticleCharging", percent: 15 } },
+    "Imp. Particle Charger": { active: "Part Active", trait: { kind: "ParticleCharging", percent: 20 } },
+    "Adv. Particle Charger": { active: "Part Active", trait: { kind: "ParticleCharging", percent: 25 } },
+    "Particle Accelerator": { active: "Part Active", trait: { kind: "ParticleCharging", percent: 30 } },
+    "Imp. Particle Accelerator": { active: "Part Active", trait: { kind: "ParticleCharging", percent: 40 } },
+    "Adv. Particle Accelerator": { active: "Part Active", trait: { kind: "ParticleCharging", percent: 50 } },
+
+    // Salvage targeting
+    "Salvage Targeting Computer": { active: "Part Active", trait: { kind: "SalvageTargeting", amount: 1 } },
+    "Imp. Salvage Targeting Computer": { active: "Part Active", trait: { kind: "SalvageTargeting", amount: 2 } },
+    "Adv. Salvage Targeting Computer": { active: "Part Active", trait: { kind: "SalvageTargeting", amount: 3 } },
+    "Mak. Salvage Targeting Computer": { active: "Part Active", trait: { kind: "SalvageTargeting", amount: 4 } },
 
     // Self-damage reduction
     "1C-UTU's Buckler": { active: "Part Active", trait: { kind: "SelfReduction", shielding: 0.5 } },
@@ -308,6 +341,18 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Imp. Weapon Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.66, slot: "Weapon" } },
     "Exp. Weapon Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.9, slot: "Weapon" } },
     "Zio. Weapon Casing": { active: "Always", trait: { kind: "Shielding", shielding: 1, slot: "Weapon" } },
+
+    // Target Analyzers
+    "Target Analyzer": { active: "Part Active", trait: { kind: "TargetAnalyzer", bonus: 5 } },
+    "Imp. Target Analyzer": { active: "Part Active", trait: { kind: "TargetAnalyzer", bonus: 6 } },
+    "Adv. Target Analyzer": { active: "Part Active", trait: { kind: "TargetAnalyzer", bonus: 8 } },
+    "Exp. Target Analyzer": { active: "Part Active", trait: { kind: "TargetAnalyzer", bonus: 10 } },
+
+    // Targeting
+    "Targeting Computer": { active: "Part Active", trait: { kind: "Targeting", bonus: 5 } },
+    "Imp. Targeting Computer": { active: "Part Active", trait: { kind: "Targeting", bonus: 6 } },
+    "Adv. Targeting Computer": { active: "Part Active", trait: { kind: "Targeting", bonus: 8 } },
+    "Exp. Targeting Computer": { active: "Part Active", trait: { kind: "Targeting", bonus: 12 } },
 
     // Weapon regen
     "Sigix Broadsword": {
