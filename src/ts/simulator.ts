@@ -7,6 +7,8 @@ import {
     createBotDataContent,
     createItemDataContent,
     gallerySort,
+    getBot,
+    getBotOrNull,
     getItem,
     getItemOrNull,
     getItemSpriteImageName,
@@ -75,16 +77,21 @@ import { Chart, ChartDataSets, Point } from "chart.js";
 import * as jQuery from "jquery";
 import "bootstrap-select";
 import { DumpMindEntity } from "./dumpMindTypes";
+import { Bot } from "./botTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
     const initialRangedAccuracy = 60;
     const initialMeleeAccuracy = 70;
 
+    const dumpMindTargetName = "DumpMind Target";
+
     // Chart variables set on init
     let chart: Chart;
     let comparisonChart: Chart;
     let currentComparisonData;
+
+    let savedTargetEntity: DumpMindEntity | undefined = undefined;
 
     const comparisonBorderColors = [
         "rgba(228, 26, 28, .8)",
@@ -506,7 +513,22 @@ jq(function ($) {
             resetValues();
         });
         $("#botSelect").on("changed.bs.select", () => {
-            const bot = botData[($("#botSelect") as any).selectpicker("val") as string];
+            const botName = ($("#botSelect") as any).selectpicker("val") as string;
+            let bot: Bot;
+            if (botName === dumpMindTargetName) {
+                const maybeBot = getBotOrNull(savedTargetEntity?.entity ?? "");
+                if (maybeBot === null) {
+                    // Don't process dumpmind data content unless we can match the name
+                    $("#enemyInfoButton").addClass("not-visible");
+                    return;
+                }
+
+                bot = maybeBot!;
+            } else {
+                bot = getBot(botName);
+            }
+
+            $("#enemyInfoButton").removeClass("not-visible");
             $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
 
             if (bot.name === "A-15 Conveyor") {
@@ -573,7 +595,7 @@ jq(function ($) {
         ($('[data-toggle="tooltip"]') as any).tooltip();
 
         //Set initial bot info
-        const bot = botData[($("#botSelect") as any).selectpicker("val")];
+        const bot = getBot(($("#botSelect") as any).selectpicker("val"));
         $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
         ($("#enemyInfoButton") as any).popover();
 
@@ -765,17 +787,19 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
                     if (entities.length == 0) {
                         temporarilySetValue(submitButton, "Invalid JSON!", "Submit", 3000);
                     } else {
-                        const cogmindEntity = entities.find((e) => e.entity == "Cogmind");
+                        const cogmindEntity = entities.find((e) => e.entity === "Cogmind");
+                        const targetEntity = entities.find((e) => e.entity !== "Cogmind");
 
                         if (cogmindEntity === undefined) {
                             temporarilySetValue(submitButton, "Invalid JSON!", "Submit", 3000);
                         } else {
-                            loadFromDumpMind(cogmindEntity);
+                            loadStateFromDumpMind(cogmindEntity, targetEntity);
                             (importFromDumpMindButton as any).popover("hide");
                         }
                     }
-                } catch {
-                    temporarilySetValue(submitButton, "Failed to parse JSON!", "Submit", 3000);
+                } catch (e) {
+                    console.log(e);
+                    temporarilySetValue(submitButton, "Failed to load JSON!", "Submit", 3000);
                 }
             });
         });
@@ -790,7 +814,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
     }
 
     // Loads the simulator state of active parts based on DumpMind
-    function loadFromDumpMind(cogmindEntity: DumpMindEntity) {
+    function loadStateFromDumpMind(cogmindEntity: DumpMindEntity, targetEntity: DumpMindEntity | undefined) {
         const equippedParts = cogmindEntity.inventory
             .filter((p) => p.equipped)
             .map((p) => getItemOrNull(p.item)!)
@@ -1041,6 +1065,22 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
         if (targetAnalyzerBonus > 0) {
             $("#targetAnalyzerInput").val(targetAnalyzerBonus);
         }
+
+        // Save target entity if specified from DumpMind
+        if (getBotOrNull(targetEntity?.entity ?? "") === null) {
+            // Failed to find target bot, just bail now because we need
+            // builtin bot data for many calculation purposes
+            savedTargetEntity = undefined;
+            return;
+        }
+
+        savedTargetEntity = targetEntity;
+
+        updateBots();
+
+        if (targetEntity !== undefined) {
+            $("#botSelect").selectpicker("val", dumpMindTargetName);
+        }
     }
 
     // Resets a dropdown to the first item
@@ -1229,7 +1269,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
             }
         });
 
-        if (!(botName in botData)) {
+        if (!(botName in botData) && botName !== dumpMindTargetName) {
             setStatusText(`Bot ${botName} is invalid, this is probably a bug.`);
             return;
         }
@@ -1240,40 +1280,74 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
         }
 
         // Set up initial calculation state
-        const bot = botData[botName];
         const parts: SimulatorPart[] = [];
         let partCount = 0;
-        bot.componentData
-            .concat(bot.armamentData)
-            // For now just use the first option in each list
-            .concat(bot.componentOptionData.map((c) => c[0]))
-            .concat(bot.armamentOptionData.map((c) => c[0]))
-            .forEach((item) => {
-                for (let i = 0; i < item.number; i++) {
-                    const itemDef = getItem(item.name);
-                    const isProtection = itemDef.type === ItemType.Protection;
-                    const isTreads = itemDef.type === ItemType.Treads;
-                    const coverage = itemDef.coverage ?? 0;
-                    const siegedCoverage = isProtection || isTreads ? 2 * coverage : coverage;
-                    parts.push({
-                        armorAnalyzedCoverage: isProtection ? 0 : coverage,
-                        armorAnalyzedSiegedCoverage: isProtection ? 0 : siegedCoverage,
-                        coverage: coverage,
-                        def: itemDef,
-                        integrity: itemDef.integrity,
-                        initialIndex: partCount++,
-                        protection: isProtection,
-                        selfDamageReduction: 1,
-                        siegedCoverage: siegedCoverage,
-                    });
-                }
+        function addPart(itemDef: Item, integrity: number) {
+            const isProtection = itemDef.type === ItemType.Protection;
+            const isTreads = itemDef.type === ItemType.Treads;
+            const coverage = itemDef.coverage ?? 0;
+            const siegedCoverage = isProtection || isTreads ? 2 * coverage : coverage;
+            parts.push({
+                armorAnalyzedCoverage: isProtection ? 0 : coverage,
+                armorAnalyzedSiegedCoverage: isProtection ? 0 : siegedCoverage,
+                coverage: coverage,
+                def: itemDef,
+                integrity: integrity,
+                initialIndex: partCount++,
+                protection: isProtection,
+                selfDamageReduction: 1,
+                siegedCoverage: siegedCoverage,
             });
+        }
+
+        let bot: Bot;
+        let botCoreCoverage: number;
+        let botIntegrity: number;
+        let botTotalCoverage: number;
+        if (botName === dumpMindTargetName) {
+            const entity = savedTargetEntity!;
+            bot = getBot(entity.entity);
+            botTotalCoverage = 0;
+
+            for (const part of entity.inventory.filter((p) => p.equipped)) {
+                const itemDef = getItemOrNull(part.item);
+
+                if (itemDef === null) {
+                    // Failed to find a part, just ignore it
+                    continue;
+                }
+
+                addPart(itemDef, part.integrity);
+                botTotalCoverage += itemDef.coverage ?? 0;
+            }
+
+            botCoreCoverage = entity.exposure;
+            botTotalCoverage += botCoreCoverage;
+            botIntegrity = entity.integrity;
+        } else {
+            bot = getBot(botName);
+            bot.componentData
+                .concat(bot.armamentData)
+                // For now just use the first option in each list
+                .concat(bot.componentOptionData.map((c) => c[0]))
+                .concat(bot.armamentOptionData.map((c) => c[0]))
+                .forEach((item) => {
+                    for (let i = 0; i < item.number; i++) {
+                        const itemDef = getItem(item.name);
+                        addPart(itemDef, itemDef.integrity);
+                    }
+                });
+
+            botCoreCoverage = bot.coreCoverage;
+            botTotalCoverage = bot.totalCoverage;
+            botIntegrity = bot.coreIntegrity;
+        }
 
         const armorAnalyzedCoverage =
-            bot.coreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedCoverage, 0);
+            botCoreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedCoverage, 0);
         const armorAnalyzedSiegedCoverage =
-            bot.coreCoverage + parts.reduce((prev, part) => prev + part.siegedCoverage, 0);
-        const siegedCoverage = bot.coreCoverage + parts.reduce((prev, part) => prev + part.siegedCoverage, 0);
+            botCoreCoverage + parts.reduce((prev, part) => prev + part.siegedCoverage, 0);
+        const siegedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.siegedCoverage, 0);
 
         const behavior = $("#enemyBehaviorSelect").selectpicker("val") as any as BotBehavior;
 
@@ -1299,15 +1373,15 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
             armorAnalyzedCoverage: armorAnalyzedCoverage,
             armorAnalyzedSiegedCoverage: armorAnalyzedSiegedCoverage,
             behavior: behavior,
-            coreCoverage: bot.coreCoverage,
+            coreCoverage: botCoreCoverage,
             coreDisrupted: false,
-            coreIntegrity: bot.coreIntegrity,
+            coreIntegrity: botIntegrity,
             corruption: 0,
             def: bot,
             defensiveState: defensiveState,
             externalDamageReduction: externalDamageReduction,
             immunities: bot.immunities,
-            initialCoreIntegrity: bot.coreIntegrity,
+            initialCoreIntegrity: botIntegrity,
             parts: parts,
             regen: getRegen(bot),
             resistances: bot.resistances === undefined ? {} : bot.resistances,
@@ -1317,7 +1391,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
             salvage: 0,
             sieged: sieged,
             siegedCoverage: siegedCoverage,
-            totalCoverage: bot.totalCoverage,
+            totalCoverage: botTotalCoverage,
             tusToSiege: behavior === "Siege/Fight" ? 500 : 0,
         };
 
@@ -1998,8 +2072,8 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
         $("#resultsContainer").removeClass("not-visible");
     }
 
-    // Updates the available choices for the dropdowns depending on spoiler state and combat type
-    function updateChoices() {
+    // Updates the available choices for the bot dropdowns
+    function updateBots() {
         const spoilersState = getSpoilerState();
 
         // Update all bot selections after saving old pick
@@ -2017,13 +2091,11 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
             }
         });
 
-        // Don't show arch tele condition when not on redacted
-        if (spoilersState === "Redacted") {
-            $("#endConditionArchTele").removeClass("not-visible");
-        } else {
-            $("#endConditionArchTele").addClass("not-visible");
+        if (savedTargetEntity !== undefined) {
+            // Add DumpMind Target option if there is an imported target
+            select.append("<option>DumpMind Target</option>");
         }
-        refreshSelectpicker($("#endConditionSelect"));
+
         refreshSelectpicker(select);
 
         // Try to preserve the old bot, otherwise default
@@ -2032,7 +2104,20 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
         if (select.selectpicker("val") === null) {
             select.selectpicker("val", "G-34 Mercenary");
         }
+    }
 
+    // Updates the available choices for the dropdowns depending on spoiler state and combat type
+    function updateChoices() {
+        const spoilersState = getSpoilerState();
+        updateBots();
+
+        // Don't show arch tele condition when not on redacted
+        if (spoilersState === "Redacted") {
+            $("#endConditionArchTele").removeClass("not-visible");
+        } else {
+            $("#endConditionArchTele").addClass("not-visible");
+        }
+        refreshSelectpicker($("#endConditionSelect"));
         const melee = isMelee();
 
         function setVisibility(selector: JQuery<HTMLElement>, visible: boolean) {

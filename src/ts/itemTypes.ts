@@ -124,7 +124,6 @@ export type Actuator = { kind: "Actuator"; amount: number };
 export type ActuatorArray = { kind: "ActuatorArray"; amount: number };
 export type AirborneSpeedDoubling = { kind: "AirborneSpeedDoubling" };
 export type AntimissileChance = { kind: "AntimissileChance"; chance: number };
-export type AvoidChance = { kind: "AvoidChance"; chance: number; legsChance: number };
 export type CombatSuite = { kind: "CombatSuite"; core: 8; rangedAvoid: 8; targeting: 8 };
 export type CoreAnalyzer = { kind: "CoreAnalyzer"; bonus: number };
 export type CorruptionIgnore = { kind: "CorruptionIgnore"; chance: number };
@@ -145,6 +144,7 @@ export type QuantumCapacitor = { kind: "QuantumCapacitor" };
 export type ParticleCharging = { kind: "ParticleCharging"; percent: number };
 export type RangedAvoid = { kind: "RangedAvoid"; avoid: number };
 export type RangedWeaponCycling = { kind: "RangedWeaponCycling"; amount: number };
+export type ReactionControlSystem = { kind: "ReactionControlSystem"; chance: number; legsChance: number };
 export type RecoilReduction = { kind: "RecoilReduction"; reduction: number };
 export type SalvageTargeting = { kind: "SalvageTargeting"; amount: number };
 export type SelfReduction = { kind: "SelfReduction"; shielding: number };
@@ -158,7 +158,6 @@ export type SpecialPropertyType =
     | ActuatorArray
     | AntimissileChance
     | AirborneSpeedDoubling
-    | AvoidChance
     | CombatSuite
     | CoreAnalyzer
     | CorruptionIgnore
@@ -179,6 +178,7 @@ export type SpecialPropertyType =
     | QuantumCapacitor
     | RangedAvoid
     | RangedWeaponCycling
+    | ReactionControlSystem
     | RecoilReduction
     | SalvageTargeting
     | SelfReduction
@@ -192,7 +192,6 @@ export type SpecialPropertyTypeName =
     | "ActuatorArray"
     | "AirborneSpeedDoubling"
     | "AntimissileChance"
-    | "AvoidChance"
     | "CombatSuite"
     | "CoreAnalyzer"
     | "CorruptionIgnore"
@@ -213,6 +212,7 @@ export type SpecialPropertyTypeName =
     | "QuantumCapacitor"
     | "RangedAvoid"
     | "RangedWeaponCycling"
+    | "ReactionControlSystem"
     | "RecoilReduction"
     | "SalvageTargeting"
     | "SelfReduction"

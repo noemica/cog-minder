@@ -1271,13 +1271,22 @@ export function gallerySort(a: string, b: string): number {
     return res;
 }
 
-// Tries to get an item by the name
+// Tries to get a bot by the name
 export function getBot(botName: string): Bot {
     if (botName in botData) {
         return botData[botName];
     }
 
     throw `${botName} not a valid bot`;
+}
+
+// Tries to get a bot by the name
+export function getBotOrNull(botName: string): Bot | null {
+    if (botName in botData) {
+        return botData[botName];
+    }
+
+    return null;
 }
 
 function getBotImageName(bot: Bot) {
