@@ -121,6 +121,7 @@ export enum Critical {
 export type SpecialPropertyActive = "Always" | "Part Active";
 
 export type Actuator = { kind: "Actuator"; amount: number };
+export type ActuatorArray = { kind: "ActuatorArray"; amount: number };
 export type AirborneSpeedDoubling = { kind: "AirborneSpeedDoubling" };
 export type AntimissileChance = { kind: "AntimissileChance"; chance: number };
 export type AvoidChance = { kind: "AvoidChance"; chance: number; legsChance: number };
@@ -154,6 +155,7 @@ export type WeaponRegen = { kind: "WeaponRegen"; energyPerTurn: number; integrit
 
 export type SpecialPropertyType =
     | Actuator
+    | ActuatorArray
     | AntimissileChance
     | AirborneSpeedDoubling
     | AvoidChance
@@ -187,6 +189,7 @@ export type SpecialPropertyType =
 
 export type SpecialPropertyTypeName =
     | "Actuator"
+    | "ActuatorArray"
     | "AirborneSpeedDoubling"
     | "AntimissileChance"
     | "AvoidChance"

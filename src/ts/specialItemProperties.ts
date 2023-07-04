@@ -6,6 +6,12 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     Nanoactuators: { active: "Part Active", trait: { kind: "Actuator", amount: 0.3 } },
     Femtoactuators: { active: "Part Active", trait: { kind: "Actuator", amount: 0.5 } },
 
+    // Actuator Arrays
+    "Actuator Array": { active: "Part Active", trait: { kind: "ActuatorArray", amount: 10 } },
+    "Imp. Actuator Array": { active: "Part Active", trait: { kind: "ActuatorArray", amount: 12 } },
+    "Adv. Actuator Array": { active: "Part Active", trait: { kind: "ActuatorArray", amount: 16 } },
+    "Exp. Actuator Array": { active: "Part Active", trait: { kind: "ActuatorArray", amount: 20 } },
+
     // Airborne Speed doubling
     "Zio. Metafield Generator": { active: "Part Active", trait: { kind: "AirborneSpeedDoubling" } },
     "ST Field Compressor": { active: "Part Active", trait: { kind: "AirborneSpeedDoubling" } },
@@ -14,21 +20,6 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Point Defense System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 8 } },
     "Point Defense Array": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 16 } },
     "Antimissile System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 24 } },
-
-    // Avoid %
-    "Reaction Control System": { active: "Part Active", trait: { kind: "AvoidChance", chance: 8, legsChance: 4 } },
-    "Imp. Reaction Control System": {
-        active: "Part Active",
-        trait: { kind: "AvoidChance", chance: 10, legsChance: 5 },
-    },
-    "Adv. Reaction Control System": {
-        active: "Part Active",
-        trait: { kind: "AvoidChance", chance: 12, legsChance: 6 },
-    },
-    "Exp. Reaction Control System": {
-        active: "Part Active",
-        trait: { kind: "AvoidChance", chance: 14, legsChance: 7 },
-    },
 
     // Combat Suite
     "Asb. Combat Suite": {
@@ -295,6 +286,24 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Exp. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.3 } },
     "Launcher Loader": { active: "Part Active", trait: { kind: "LauncherLoader" } },
     "Quantum Capacitor": { active: "Part Active", trait: { kind: "QuantumCapacitor" } },
+
+    // Reaction control systems
+    "Reaction Control System": {
+        active: "Part Active",
+        trait: { kind: "ReactionControlSystem", chance: 8, legsChance: 4 },
+    },
+    "Imp. Reaction Control System": {
+        active: "Part Active",
+        trait: { kind: "ReactionControlSystem", chance: 10, legsChance: 5 },
+    },
+    "Adv. Reaction Control System": {
+        active: "Part Active",
+        trait: { kind: "ReactionControlSystem", chance: 12, legsChance: 6 },
+    },
+    "Exp. Reaction Control System": {
+        active: "Part Active",
+        trait: { kind: "ReactionControlSystem", chance: 14, legsChance: 7 },
+    },
 
     // Recoil reduction
     "Recoil Stabilizer": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 4 } },

@@ -3,7 +3,7 @@ import { Bot, BotImmunity } from "./botTypes";
 import { hasActiveSpecialProperty, randomInt, sum } from "./common";
 import {
     AntimissileChance,
-    AvoidChance,
+    ReactionControlSystem,
     CorruptionIgnore,
     CorruptionReduce,
     Critical,
@@ -715,12 +715,12 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
                 chance: (part.def.specialProperty!.trait as AntimissileChance).chance,
                 part: part,
             });
-        } else if (hasActiveSpecialProperty(part.def, true, "AvoidChance")) {
+        } else if (hasActiveSpecialProperty(part.def, true, "ReactionControlSystem")) {
             // Reaction Control System-like part
             // Leg/hover/flight determination done at accuracy update time
             state.avoid.push({
-                legs: (part.def.specialProperty!.trait as AvoidChance).legsChance,
-                other: (part.def.specialProperty!.trait as AvoidChance).chance,
+                legs: (part.def.specialProperty!.trait as ReactionControlSystem).legsChance,
+                other: (part.def.specialProperty!.trait as ReactionControlSystem).chance,
                 part: part,
             });
         } else if (hasActiveSpecialProperty(part.def, true, "CorruptionIgnore")) {

@@ -8,6 +8,7 @@ import {
     createItemDataContent,
     gallerySort,
     getItem,
+    getItemOrNull,
     getItemSpriteImageName,
     hasActiveSpecialProperty,
     initData,
@@ -27,6 +28,8 @@ import {
     temporarilySetValue,
 } from "./commonJquery";
 import {
+    Actuator,
+    ActuatorArray,
     CombatSuite,
     CoreAnalyzer,
     Critical,
@@ -103,15 +106,6 @@ jq(function ($) {
 
     // Flag to cancel a simulation
     let cancelled = false;
-
-    // Actuator name to tu multiplier map
-    const actuatorMap = {
-        "0%: None": 1.0,
-        "20%: Microactuators": 0.8,
-        "30%: Nanoactuators": 0.7,
-        "40%: 2 Microactuators": 0.6,
-        "50%: Femtoactuators": 0.5,
-    };
 
     // Armor integrity analyzer chance map
     const armorIntegrityMap = {
@@ -594,7 +588,6 @@ jq(function ($) {
         $("#kinecelleratorSelect").parent().addClass("percent-dropdown");
         $("#overloadSelect").parent().addClass("percent-dropdown");
         $("#armorIntegSelect").parent().addClass("percent-dropdown");
-        $("#actuatorSelect").parent().addClass("percent-dropdown");
         $("#sneakAttackSelect").parent().addClass("sneak-attack-dropdown");
         $("#endConditionSelect").parent().addClass("end-condition-dropdown");
 
@@ -798,19 +791,20 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
 
     // Loads the simulator state of active parts based on DumpMind
     function loadFromDumpMind(cogmindEntity: DumpMindEntity) {
-        const allParts = cogmindEntity.inventory
+        const equippedParts = cogmindEntity.inventory
             .filter((p) => p.equipped)
-            .map((p) => getItem(p.item))
+            .map((p) => getItemOrNull(p.item)!)
+            // Discard any unrecognized items
             .filter((p) => p != null);
 
-        const allWeapons = allParts.filter((p) => p.slot === "Weapon");
-        const allPropulsion = allParts.filter((p) => p.slot === "Propulsion");
-        const allUtilities = allParts.filter((p) => p.slot === "Utility");
+        const weapons = equippedParts.filter((p) => p.slot === "Weapon");
+        const propulsion = equippedParts.filter((p) => p.slot === "Propulsion");
+        const utilities = equippedParts.filter((p) => p.slot === "Utility");
 
-        const meleeWeapons = allWeapons.filter((w) => meleeTypes.includes(w.type));
-        const rangedWeapons = allWeapons.filter((w) => rangedTypes.includes(w.type));
+        const meleeWeapons = weapons.filter((w) => meleeTypes.includes(w.type));
+        const rangedWeapons = weapons.filter((w) => rangedTypes.includes(w.type));
         let weaponsToAdd: Item[];
-        const isMelee = meleeWeapons.length === allWeapons.length;
+        const isMelee = meleeWeapons.length === weapons.length;
         if (isMelee) {
             // Only do melee selection if all weapons are melee
             $("#combatTypeMelee").children().trigger("click");
@@ -829,23 +823,87 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
         }
 
         if (isMelee) {
-            //
+            // Update melee utilities
+            // Determine number of each Melee Analysis Suites
+            const meleeAnalysisSuites = utilities.filter((p) => p.name === "Melee Analysis Suite").length;
+            const impMeleeAnalysisSuites = utilities.filter((p) => p.name === "Imp. Melee Analysis Suite").length;
+            const advMeleeAnalysisSuites = utilities.filter((p) => p.name === "Adv. Melee Analysis Suite").length;
+            const expMeleeAnalysisSuites = utilities.filter((p) => p.name === "Exp. Melee Analysis Suite").length;
+            if (meleeAnalysisSuites > 0) {
+                $("#meleeAnalysisInput").val(meleeAnalysisSuites);
+            }
+            if (impMeleeAnalysisSuites > 0) {
+                $("#impMeleeAnalysisInput").val(impMeleeAnalysisSuites);
+            }
+            if (advMeleeAnalysisSuites > 0) {
+                $("#advMeleeAnalysisInput").val(advMeleeAnalysisSuites);
+            }
+            if (expMeleeAnalysisSuites > 0) {
+                $("#expMeleeAnalysisInput").val(expMeleeAnalysisSuites);
+            }
+
+            // Determine number of each Force Boosters
+            const forceBoosters = utilities.filter((p) => p.name === "Force Booster").length;
+            const impForceBoosters = utilities.filter((p) => p.name === "Imp. Force Booster").length;
+            const advForceBoosters = utilities.filter((p) => p.name === "Adv. Force Booster").length;
+            if (forceBoosters > 0) {
+                $("#forceBoosterInput").val(forceBoosters);
+            }
+            if (impForceBoosters > 0) {
+                $("#impForceBoosterInput").val(impForceBoosters);
+            }
+            if (advForceBoosters > 0) {
+                $("#advForceBoosterInput").val(advForceBoosters);
+            }
+
+            // Calculate actuators
+            const actuating = Math.max(
+                50,
+                utilities
+                    .filter((p) => hasActiveSpecialProperty(p, true, "Actuator"))
+                    .map((p) => (p.specialProperty!.trait as Actuator).amount)
+                    .reduce(sum, 0),
+            );
+
+            if (actuating > 0) {
+                $("#actuatorInput").val(actuating);
+            }
+
+            // Calculate actuator arrays
+            const actuatorArrayBonuses = utilities
+                .filter((p) => hasActiveSpecialProperty(p, true, "ActuatorArray"))
+                .map((p) => (p.specialProperty!.trait as ActuatorArray).amount);
+            actuatorArrayBonuses.sort();
+            const actuatorArrayBonus1 = actuatorArrayBonuses.pop();
+            const actuatorArrayBonus2 = actuatorArrayBonuses.pop();
+            const actuatorArrayBonus =
+                valueOrDefault(actuatorArrayBonus1, 0) + Math.trunc(valueOrDefault(actuatorArrayBonus2, 0) / 2);
+            if (actuatorArrayBonus > 0) {
+                $("#actuatorArrayInput").val(actuatorArrayBonus);
+            }
+
+            // Calculate bonus momentum
+            if (utilities.find((p) => hasActiveSpecialProperty(p, true, "ReactionControlSystem")) !== undefined) {
+                $("#bonusMomentumInput").val(1);
+            }
+
+            $("#speedInput").val(cogmindEntity.speed);
         } else {
             // Update ranged utilities
             // Calculate targeting bonuses from standard targeting computers + combat suites
             let targetingBonus =
-                allUtilities
+                utilities
                     .filter((p) => hasActiveSpecialProperty(p, true, "Targeting"))
                     .map((p) => (p.specialProperty!.trait as Targeting).bonus)
                     .reduce(sum, 0) +
-                allUtilities
+                utilities
                     .filter((p) => hasActiveSpecialProperty(p, true, "CombatSuite"))
                     .map((p) => (p.specialProperty!.trait as CombatSuite).targeting)
                     .reduce(sum, 0);
 
-            if (allWeapons.every((p) => p.type === ItemType.Launcher)) {
+            if (weapons.every((p) => p.type === ItemType.Launcher)) {
                 // Add launcher guidance only if all weapons are launchers
-                targetingBonus += allUtilities
+                targetingBonus += utilities
                     .filter((p) => hasActiveSpecialProperty(p, true, "LauncherGuidance"))
                     .map((p) => (p.specialProperty!.trait as LauncherGuidance).bonus)
                     .reduce(sum, 0);
@@ -856,7 +914,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
             }
 
             // Calculate tread slots #
-            const numTreads = allPropulsion
+            const numTreads = propulsion
                 .filter((p) => p.type === ItemType.Treads)
                 .map((p) => p.size)
                 .reduce(sum, 0);
@@ -869,7 +927,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
             // Maybe calculate distance here? Default to unset (6+ no bonus) for now
 
             // Calculate particle charging
-            const particleChargingBonuses = allUtilities
+            const particleChargingBonuses = utilities
                 .filter((p) => hasActiveSpecialProperty(p, true, "ParticleCharging"))
                 .map((p) => (p.specialProperty!.trait as ParticleCharging).percent);
             particleChargingBonuses.sort();
@@ -881,16 +939,16 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
             }
 
             // Determine Kinecellerator type, only 3 types so just hardcode the checks
-            if (allUtilities.find((p) => p.name === "Adv. Kinecellerator")) {
+            if (utilities.find((p) => p.name === "Adv. Kinecellerator")) {
                 $("#kinecelleratorSelect").selectpicker("val", "50%: Adv. Kinecellerator");
-            } else if (allUtilities.find((p) => p.name === "Imp. Kinecellerator")) {
+            } else if (utilities.find((p) => p.name === "Imp. Kinecellerator")) {
                 $("#kinecelleratorSelect").selectpicker("val", "40%: Imp. Kinecellerator");
-            } else if (allUtilities.find((p) => p.name === "Kinecellerator")) {
+            } else if (utilities.find((p) => p.name === "Kinecellerator")) {
                 $("#kinecelleratorSelect").selectpicker("val", "30%: Kinecellerator");
             }
 
             // Calculate salvage targeting
-            const salvageTargetingBonus = allUtilities
+            const salvageTargetingBonus = utilities
                 .filter((p) => hasActiveSpecialProperty(p, true, "SalvageTargeting"))
                 .map((p) => (p.specialProperty!.trait as SalvageTargeting).amount)
                 .reduce(sum, 0);
@@ -899,7 +957,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
             }
 
             // Calculate recoil reduction
-            const recoilReduction = allUtilities
+            const recoilReduction = utilities
                 .filter((p) => hasActiveSpecialProperty(p, true, "RecoilReduction"))
                 .map((p) => (p.specialProperty!.trait as RecoilReduction).reduction)
                 .reduce(sum, 0);
@@ -910,21 +968,21 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
             // Determine best weapon cycler
             // Use special logic for qcap or launcher loader, otherwise default to normal stackable cyclers
             if (
-                allWeapons.length === 1 &&
-                (allWeapons[0].type === ItemType.EnergyCannon || allWeapons[0].type === ItemType.EnergyGun) &&
-                allUtilities.find((p) => p.name === "Quantum Capacitor")
+                weapons.length === 1 &&
+                (weapons[0].type === ItemType.EnergyCannon || weapons[0].type === ItemType.EnergyGun) &&
+                utilities.find((p) => p.name === "Quantum Capacitor")
             ) {
                 $("#cyclerInput").val(50);
             } else if (
-                allWeapons.length === 1 &&
-                allWeapons[0].type === ItemType.Launcher &&
-                allUtilities.find((p) => p.name === "Launcher Loader")
+                weapons.length === 1 &&
+                weapons[0].type === ItemType.Launcher &&
+                utilities.find((p) => p.name === "Launcher Loader")
             ) {
                 $("#cyclerInput").val(50);
             } else {
                 const cycling = Math.max(
                     30,
-                    allUtilities
+                    utilities
                         .filter(
                             (p) =>
                                 hasActiveSpecialProperty(p, true, "RangedWeaponCycling") &&
@@ -939,48 +997,49 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
                     $("#cyclerInput").val(cycling);
                 }
             }
+        }
 
-            // Determine Armor Integrity Analyzer
-            if (allUtilities.find((p) => p.name === "Exp. Armor Integrity Analyzer")) {
-                $("#armorIntegSelect").selectpicker("val", "50%: Exp. Armor Integrity Analyzer");
-            } else if (allUtilities.find((p) => p.name === "Imp. Armor Integrity Analyzer")) {
-                $("#armorIntegSelect").selectpicker("val", "40%: Imp. Armor Integrity Analyzer");
-            } else if (allUtilities.find((p) => p.name === "Armor Integrity Analyzer")) {
-                $("#armorIntegSelect").selectpicker("val", "30%: Armor Integrity Analyzer");
-            }
+        // Determine common values
+        // Determine Armor Integrity Analyzer
+        if (utilities.find((p) => p.name === "Exp. Armor Integrity Analyzer")) {
+            $("#armorIntegSelect").selectpicker("val", "50%: Exp. Armor Integrity Analyzer");
+        } else if (utilities.find((p) => p.name === "Imp. Armor Integrity Analyzer")) {
+            $("#armorIntegSelect").selectpicker("val", "40%: Imp. Armor Integrity Analyzer");
+        } else if (utilities.find((p) => p.name === "Armor Integrity Analyzer")) {
+            $("#armorIntegSelect").selectpicker("val", "30%: Armor Integrity Analyzer");
+        }
 
-            // Calculate core analyzer bonus
-            let coreAnalyzerBonus = 0;
-            if (allUtilities.find((p) => hasActiveSpecialProperty(p, true, "CombatSuite"))) {
-                coreAnalyzerBonus = 8;
-            } else {
-                const coreAnalyzerBonuses = allUtilities
-                    .filter((p) => hasActiveSpecialProperty(p, true, "CoreAnalyzer"))
-                    .map((p) => (p.specialProperty!.trait as CoreAnalyzer).bonus);
-                coreAnalyzerBonuses.sort();
-                const coreAnalyzerBonus1 = coreAnalyzerBonuses.pop();
-                const coreAnalyzerBonus2 = coreAnalyzerBonuses.pop();
-                coreAnalyzerBonus =
-                    valueOrDefault(coreAnalyzerBonus1, 0) + Math.trunc(valueOrDefault(coreAnalyzerBonus2, 0) / 2);
-            }
+        // Calculate core analyzer bonus
+        let coreAnalyzerBonus = 0;
+        if (utilities.find((p) => hasActiveSpecialProperty(p, true, "CombatSuite"))) {
+            coreAnalyzerBonus = 8;
+        } else {
+            const coreAnalyzerBonuses = utilities
+                .filter((p) => hasActiveSpecialProperty(p, true, "CoreAnalyzer"))
+                .map((p) => (p.specialProperty!.trait as CoreAnalyzer).bonus);
+            coreAnalyzerBonuses.sort();
+            const coreAnalyzerBonus1 = coreAnalyzerBonuses.pop();
+            const coreAnalyzerBonus2 = coreAnalyzerBonuses.pop();
+            coreAnalyzerBonus =
+                valueOrDefault(coreAnalyzerBonus1, 0) + Math.trunc(valueOrDefault(coreAnalyzerBonus2, 0) / 2);
+        }
 
-            if (coreAnalyzerBonus > 0) {
-                $("#coreAnalyzerInput").val(coreAnalyzerBonus);
-            }
+        if (coreAnalyzerBonus > 0) {
+            $("#coreAnalyzerInput").val(coreAnalyzerBonus);
+        }
 
-            // Calculate target analyzer bonus
-            const targetAnalyzerBonuses = allUtilities
-                .filter((p) => hasActiveSpecialProperty(p, true, "TargetAnalyzer"))
-                .map((p) => (p.specialProperty!.trait as TargetAnalyzer).bonus);
-            targetAnalyzerBonuses.sort();
-            const targetAnalyzerBonus1 = targetAnalyzerBonuses.pop();
-            const targetAnalyzerBonus2 = targetAnalyzerBonuses.pop();
-            const targetAnalyzerBonus =
-                valueOrDefault(targetAnalyzerBonus1, 0) + Math.trunc(valueOrDefault(targetAnalyzerBonus2, 0) / 2);
+        // Calculate target analyzer bonus
+        const targetAnalyzerBonuses = utilities
+            .filter((p) => hasActiveSpecialProperty(p, true, "TargetAnalyzer"))
+            .map((p) => (p.specialProperty!.trait as TargetAnalyzer).bonus);
+        targetAnalyzerBonuses.sort();
+        const targetAnalyzerBonus1 = targetAnalyzerBonuses.pop();
+        const targetAnalyzerBonus2 = targetAnalyzerBonuses.pop();
+        const targetAnalyzerBonus =
+            valueOrDefault(targetAnalyzerBonus1, 0) + Math.trunc(valueOrDefault(targetAnalyzerBonus2, 0) / 2);
 
-            if (targetAnalyzerBonus > 0) {
-                $("#targetAnalyzerInput").val(targetAnalyzerBonus);
-            }
+        if (targetAnalyzerBonus > 0) {
+            $("#targetAnalyzerInput").val(targetAnalyzerBonus);
         }
     }
 
@@ -1003,7 +1062,6 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
         resetDropdown($("#kinecelleratorSelect"));
         resetDropdown($("#overloadSelect"));
         resetDropdown($("#armorIntegSelect"));
-        resetDropdown($("#actuatorSelect"));
         resetDropdown($("#sneakAttackSelect"));
         resetDropdown($("#endConditionSelect"));
 
@@ -1023,6 +1081,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
         $("#meleeAnalysisContainer > input").val("");
         $("#forceBoosterContainer > input").val("");
         $("#speedInput").val("");
+        $("#actuatorInput").val("");
         $("#actuatorArrayInput").val("");
         $("#bonusMomentumInput").val("");
         $("#initialMomentumInput").val("");
@@ -1087,7 +1146,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
 
         func($("#meleeAnalysisContainer > input"));
         func($("#forceBoosterContainer > input"));
-        func($("#actuatorSelect").next());
+        func($("#actuatorInput"));
         func($("#actuatorArrayInput"));
         func($("#bonusMomentumInput"));
         func($("#initialMomentumInput"));
@@ -1533,10 +1592,9 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
         const sneakAttackStrategy = $("#sneakAttackSelect").selectpicker("val" as any) as SneakAttackStrategy;
 
         // Calculate total (ranged) or initial (melee) volley time
+        const actuatorPercent = Math.max(0, Math.min(99, parseIntOrDefault($("#actuatorInput").val() as string, 0)));
         const cyclerPercent = Math.max(0, Math.min(99, parseIntOrDefault($("#cyclerInput").val() as string, 0)));
-        const volleyTimeModifier = melee
-            ? actuatorMap[$("#actuatorSelect").selectpicker("val") as any as string]
-            : 1 - cyclerPercent / 100;
+        const volleyTimeModifier = 1 - (melee ? actuatorPercent : cyclerPercent) / 100;
 
         const volleyTime = melee
             ? weapons[0].delay + volleyTimeMap[1]
