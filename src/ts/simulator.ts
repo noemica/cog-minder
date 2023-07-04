@@ -37,6 +37,7 @@ import {
     LauncherGuidance,
     ParticleCharging,
     PropulsionItem,
+    RangedWeaponCycling,
     RecoilReduction,
     SalvageTargeting,
     TargetAnalyzer,
@@ -118,17 +119,6 @@ jq(function ($) {
         "30%: Armor Integrity Analyzer": 30,
         "40%: Imp. Armor Integrity Analyzer": 40,
         "50%: Exp. Armor Integrity Analyzer": 50,
-    };
-
-    // Cycler volley time multiplier map
-    const cyclerMap = {
-        "0%: None": 1.0,
-        "15%: Weapon Cycler": 0.85,
-        "20%: Imp. Weapon Cycler": 0.8,
-        "25%: Adv. Weapon Cycler": 0.75,
-        "30%: Exp. Weapon Cycler": 0.7,
-        "50%: Quantum Capacitor": 0.5,
-        "50%: Launcher Loader": 0.5,
     };
 
     // Damage reduction names
@@ -602,7 +592,6 @@ jq(function ($) {
         $("#enemyBehaviorSelectContainer > div").addClass("enemy-behavior-dropdown");
         $("#siegeSelectContainer > div").addClass("siege-dropdown");
         $("#kinecelleratorSelect").parent().addClass("percent-dropdown");
-        $("#cyclerSelect").parent().addClass("percent-dropdown");
         $("#overloadSelect").parent().addClass("percent-dropdown");
         $("#armorIntegSelect").parent().addClass("percent-dropdown");
         $("#actuatorSelect").parent().addClass("percent-dropdown");
@@ -919,26 +908,36 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
             }
 
             // Determine best weapon cycler
+            // Use special logic for qcap or launcher loader, otherwise default to normal stackable cyclers
             if (
                 allWeapons.length === 1 &&
                 (allWeapons[0].type === ItemType.EnergyCannon || allWeapons[0].type === ItemType.EnergyGun) &&
                 allUtilities.find((p) => p.name === "Quantum Capacitor")
             ) {
-                $("#cyclerSelect").selectpicker("val", "50%: Quantum Capacitor");
+                $("#cyclerInput").val(50);
             } else if (
                 allWeapons.length === 1 &&
                 allWeapons[0].type === ItemType.Launcher &&
                 allUtilities.find((p) => p.name === "Launcher Loader")
             ) {
-                $("#cyclerSelect").selectpicker("val", "50%: Launcher Loader");
-            } else if (allUtilities.find((p) => p.name === "Exp. Weapon Cycler")) {
-                $("#cyclerSelect").selectpicker("val", "30%: Exp. Weapon Cycler");
-            } else if (allUtilities.find((p) => p.name === "Adv. Weapon Cycler")) {
-                $("#cyclerSelect").selectpicker("val", "25%: Adv. Weapon Cycler");
-            } else if (allUtilities.find((p) => p.name === "Imp. Weapon Cycler")) {
-                $("#cyclerSelect").selectpicker("val", "20%: Imp. Weapon Cycler");
-            } else if (allUtilities.find((p) => p.name === "Weapon Cycler")) {
-                $("#cyclerSelect").selectpicker("val", "15%: Weapon Cycler");
+                $("#cyclerInput").val(50);
+            } else {
+                const cycling = Math.max(
+                    30,
+                    allUtilities
+                        .filter(
+                            (p) =>
+                                hasActiveSpecialProperty(p, true, "RangedWeaponCycling") &&
+                                p.name !== "Quantum Capacitor" &&
+                                p.name !== "Launcher Loader",
+                        )
+                        .map((p) => (p.specialProperty!.trait as RangedWeaponCycling).amount)
+                        .reduce(sum, 0),
+                );
+
+                if (cycling > 0) {
+                    $("#cyclerInput").val(cycling);
+                }
             }
 
             // Determine Armor Integrity Analyzer
@@ -1002,7 +1001,6 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
         resetDropdown($("#enemyBehaviorSelect"));
         resetDropdown($("#siegeSelect"));
         resetDropdown($("#kinecelleratorSelect"));
-        resetDropdown($("#cyclerSelect"));
         resetDropdown($("#overloadSelect"));
         resetDropdown($("#armorIntegSelect"));
         resetDropdown($("#actuatorSelect"));
@@ -1019,6 +1017,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
         $("#particleChargerInput").val("");
         $("#salvageTargetingInput").val("");
         $("#recoilInput").val("");
+        $("#cyclerInput").val("");
         $("#coreAnalyzerInput").val("");
         $("#targetAnalyzerInput").val("");
         $("#meleeAnalysisContainer > input").val("");
@@ -1082,7 +1081,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
         func($("#kinecelleratorSelect").next());
         func($("#salvageTargetingInput"));
         func($("#recoilInput"));
-        func($("#cyclerSelect").next());
+        func($("#cyclerInput"));
 
         func($("#overloadSelect").next());
 
@@ -1534,9 +1533,10 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
         const sneakAttackStrategy = $("#sneakAttackSelect").selectpicker("val" as any) as SneakAttackStrategy;
 
         // Calculate total (ranged) or initial (melee) volley time
+        const cyclerPercent = Math.max(0, Math.min(99, parseIntOrDefault($("#cyclerInput").val() as string, 0)));
         const volleyTimeModifier = melee
             ? actuatorMap[$("#actuatorSelect").selectpicker("val") as any as string]
-            : cyclerMap[$("#cyclerSelect").selectpicker("val") as any as string];
+            : 1 - cyclerPercent / 100;
 
         const volleyTime = melee
             ? weapons[0].delay + volleyTimeMap[1]

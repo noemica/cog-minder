@@ -222,18 +222,10 @@
 
             <!-- Weapon Cycler -->
             <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The type of Weapon Cycler or similar that's equipped (if any). Decreases overall volley time.">
+                title="The percentage of Weapon Cycling (or similar) that's equipped (if any). Decreases overall volley time. Stacks up to 30%, though a Quantum Capacitor or Launcher Loader can go up to 50%.">
                 <span class="input-group-text">Weapon Cycler</span>
             </div>
-            <select id="cyclerSelect" class="selectpicker flex-dropdown" data-dropdown-align-right="auto">
-                <option title="0%">0%: None</option>
-                <option title="15%">15%: Weapon Cycler</option>
-                <option title="20%">20%: Imp. Weapon Cycler</option>
-                <option title="25%">25%: Adv. Weapon Cycler</option>
-                <option title="30%">30%: Exp. Weapon Cycler</option>
-                <option title="50%">50%: Quantum Capacitor</option>
-                <option title="50%">50%: Launcher Loader</option>
-            </select>
+            <input id="cyclerInput" type="text" class="form-control" placeholder="0%"></input>
         </div>
 
         <!-- Melee Analysis Suites -->
