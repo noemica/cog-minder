@@ -827,23 +827,39 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
 
         const meleeWeapons = weapons.filter((w) => meleeTypes.includes(w.type));
         const rangedWeapons = weapons.filter((w) => rangedTypes.includes(w.type));
-        let weaponsToAdd: Item[];
+        const weaponsToAdd: { item: Item; number: number }[] = [];
+        let weaponDefinitionArray: Item[];
         const isMelee = meleeWeapons.length === weapons.length;
         if (isMelee) {
             // Only do melee selection if all weapons are melee
             $("#combatTypeMelee").children().trigger("click");
-            weaponsToAdd = meleeWeapons;
+            weaponDefinitionArray = meleeWeapons;
         } else {
             // Change to ranged selection if any ranged weapons are equipped
             $("#combatTypeRanged").children().trigger("click");
-            weaponsToAdd = rangedWeapons;
+            weaponDefinitionArray = rangedWeapons;
+        }
+
+        for (const weaponDef of weaponDefinitionArray) {
+            const existingEntry = weaponsToAdd.find((e) => e.item === weaponDef);
+
+            if (existingEntry === undefined) {
+                weaponsToAdd.push({ item: weaponDef, number: 1 });
+            } else {
+                existingEntry.number += 1;
+            }
         }
 
         resetValues(false);
 
-        for (const weapon of weaponsToAdd) {
+        for (const entry of weaponsToAdd) {
             const select = $("#weaponSelectContainer").children().last().find("select");
-            select.selectpicker("val", weapon.name);
+            const numberInput = $("#weaponSelectContainer").children().last().find("input");
+            select.selectpicker("val", entry.item.name);
+
+            if (entry.number > 1) {
+                numberInput.val(entry.number);
+            }
         }
 
         if (isMelee) {
@@ -2093,7 +2109,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind bel
 
         if (savedTargetEntity !== undefined) {
             // Add DumpMind Target option if there is an imported target
-            select.append("<option>DumpMind Target</option>");
+            select.append(`<option>${dumpMindTargetName}</option>`);
         }
 
         refreshSelectpicker(select);
