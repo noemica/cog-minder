@@ -746,7 +746,7 @@ jq(function ($) {
             "data-content",
             `
 <span class="input-label dump-input-label d-flex" data-toggle="tooltip"
-title="Paste the data created by Luigi's DumpMind below">Paste from DumpMind below</span>
+title="Paste the data created by Luigi's DumpMind below">Paste from <a class="d-contents" href="https://github.com/aronson/WalkMind/tree/main">DumpMind</a> below: </span>
 <textarea id="dumpText" rows="10" class="form-control dump-input-textarea mt-3"></textarea>
 <div class="d-flex justify-content-end input-group mt-2">
     <button id="dumpSubmitButton" class="btn ml-3">Submit</button>

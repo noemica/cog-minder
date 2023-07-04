@@ -112,6 +112,10 @@ a {
     display: grid;
 }
 
+.d-contents {
+    display: contents;
+}
+
 .float-clear-right {
     float: right;
     clear: right;
