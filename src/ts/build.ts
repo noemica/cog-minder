@@ -237,7 +237,7 @@ jq(function ($) {
             '<div class="input-group-prepend" data-toggle="tooltip" title="Whether the part is active."></div>',
         );
         const activeLabel = $('<span class="input-group-text">Active</span>');
-        const yesLabel = $('<label class="btn"><input type="radio" name="options">Yes</input></label>');
+        const yesLabel = $('<label class="btn active"><input type="radio" checked name="options">Yes</input></label>');
         const noLabel = $('<label class="btn"><input type="radio" name="options">No</input></label>');
         const deleteButton = $('<button class="btn ml-2" data-toggle="tooltip" title="Removes the part.">X</button>');
 
@@ -549,8 +549,8 @@ title="Paste the entire a run dump or scores .txt file below">Paste run dump bel
             title="Use peak state? If not then current/last state is used instead.">
             <span class="input-group-text">Peak State</span>
         </div>
-        <label id="peakStateNoButton" class="btn">
-            <input type="radio" name="options"> No
+        <label id="peakStateNoButton" class="btn active">
+            <input type="radio" checked name="options"> No
         </label>
         <label id="peakStateYesButton" class="btn">
             <input type="radio" name="options"> Yes

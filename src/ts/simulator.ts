@@ -335,14 +335,16 @@ jq(function ($) {
             '<div class="input-group-prepend" data-toggle="tooltip" title="Whether to fire the weapon as overloaded (double damage)."></div>',
         );
         const overloadLabel = $('<span class="input-group-text">Overload</span>');
-        const overloadNoLabel = $('<label class="btn"><input type="radio" name="options">No</input></label>');
+        const overloadNoLabel = $(
+            '<label class="btn active"><input type="radio" checked name="options">No</input></label>',
+        );
         const overloadYesLabel = $('<label class="btn"><input type="radio" name="options">Yes</input></label>');
         const exoContainer = $('<div class="btn-group btn-group-toggle ml-2" data-toggle="buttons"></div>');
         const exoLabelContainer = $(
             '<div class="input-group-prepend" data-toggle="tooltip" title="Whether a Sigix Exoskeleton is equipped (double damage)."></div>',
         );
         const exoLabel = $('<span class="input-group-text">Exoskeleton</span>');
-        const exoNoLabel = $('<label class="btn"><input type="radio" name="options">No</input></label>');
+        const exoNoLabel = $('<label class="btn active"><input type="radio" checked name="options">No</input></label>');
         const exoYesLabel = $('<label class="btn"><input type="radio" name="options">Yes</input></label>');
         const numberLabel = $(`
         <div class="input-group-prepend ml-2" data-toggle="tooltip" title="How many weapons of this type to have equipped.">

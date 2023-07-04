@@ -765,7 +765,9 @@ jq(function ($) {
 
             // Create HTML elements
             const button = $(
-                `<label class="btn wiki-infobox-selector-text"><input type="radio">${botEntry.name}</label>`,
+                `<label class="btn wiki-infobox-selector-text${botIndex === 0 ? " active" : ""}"><input type="radio"${
+                    botIndex === 0 ? " checked" : ""
+                }>${botEntry.name}</label>`,
             );
             const botInfoboxContent = $(
                 `<div class="mt-2">${createBotDataContent(botEntry.extraData as Bot, true)}</div>`,
@@ -978,7 +980,9 @@ jq(function ($) {
 
             // Create HTML elements
             const button = $(
-                `<label class="btn wiki-infobox-selector-text"><input type="radio">${partEntry.name}</label>`,
+                `<label class="btn wiki-infobox-selector-text${partIndex === 0 ? " active" : ""}"><input type="radio"${
+                    partIndex === 0 ? " checked" : ""
+                }>${partEntry.name}</label>`,
             );
             const partInfoboxContent = $(
                 `<div class="mt-2">${createItemDataContent(partEntry.extraData as Item)}</div>`,
