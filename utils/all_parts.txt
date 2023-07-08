@@ -1018,6 +1018,7 @@ Stasis Trap
 Signal Generator
 Self-destruct Interrupter
 Sapper Charge
+Zhirov Special
 Deploy-a-Sentry
 GAL Module
 Portable AFG
