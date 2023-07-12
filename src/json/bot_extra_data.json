@@ -386,6 +386,14 @@
                 "Description": "Hostile: Appear in waves of small groups when triggering an ambush trap with Demolisher ARCs continually summoned to their location"
             },
             {
+                "Location": "Garrison event",
+                "Description": "Hostile: Appear in large groups when entering the map"
+            },
+            {
+                "Location": "DSF event",
+                "Description": "Hostile:  Appear in waves of small groups shortly after entering the map"
+            },
+            {
                 "Location": "Zion Deep Caves",
                 "Description": "Hostile: Appear in a large group behind the impregnable wall on the left side of the map",
                 "Spoiler": "Spoiler"
@@ -1862,7 +1870,7 @@
         ],
         "Locations": [
             {
-                "Location": "Recycling",
+                "Location": "Caves",
                 "Description": "Hostile: Roam around the map and scan for intruders"
             }
         ]
