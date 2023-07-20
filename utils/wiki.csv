@@ -913,7 +913,7 @@ Fusion Bomb Trap,Part,
 Fusion Compressor,Part,
 Fusion Reactor,Part,
 G-34 Mercenary,Bot,"The lowest tier of bipedal combat Robots deployed in Complex 0b10, they possess one Small Laser that can deal compounding damage to lower tier parts, especially in the numbers they are usually encountered in. Their lack of significant heat dissipation makes them quickly melt under a sustained salvo of Thermal attacks, while their low core integrity means any sufficiently consistent weapon (In upwards of 15 dmg or more) is good to destroy them, launchers are also effective due to this reason as well. Their minus -25% electromagnetic resistance makes them susceptible targets for your possibly game-start EM Pulse Gun though its actual damage will be weak. Proper positioning can limit the amount of damage you take in encounters with Grunts and most other 0b10 bots. Using doorways to limit the amount of fire you take is one such method, as well as using corners."
-G-47 Trooper,Bot,Trooper content
+G-47 Trooper,Bot,"The second iteration of the Grunt-type combat robot in 0b10, the Trooper is up-gunned from a Sml. Laser to a more potent Particle gun, capable of greater damage and heat transfer. In addition, it also possesses a Lgt. Nuclear Core and an Imp. Heatsink along with double the core integrity of the G-34. In spite of these upgrades, the standard grunt weaknesses apply, sustained thermal damage will still melt them, along with the type's instrinsic -25% electromagnetic resistance."
 G-50 Soldier,Bot,Soldier Content
 G-67 Veteran,Bot,
 G-73 Enforcer,Bot,
@@ -1606,7 +1606,6 @@ There is a rare Recycling event where the floor is stormed by white colored frie
 Recycling Machine,Other,
 Reflective Plating,Part,
 Reinforcement Squad,Other,
-Relay Coupler [ARC],Part,
 Relay Coupler [Behemoth],Part,
 Relay Coupler [Brawler],Part,
 Relay Coupler [C],Part,
@@ -1731,7 +1730,6 @@ Sensor Drone,Bot,
 Sensor Drone Bay,Part,
 Sentry,Bot Group,
 Shield Generator,Part,
-Shield Generator/Force Fields,Part Group,
 Shield Generators/Force Fields,Part Group,
 Shock Absorption System,Part,
 Shock Bomb Launcher,Part,
