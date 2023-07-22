@@ -2015,6 +2015,14 @@
             {
                 "Location": "Zhirov",
                 "Description": "Friendly: Stationed at the entrance to Zhirov's lab"
+            },
+            {
+                "Location": "Archives event",
+                "Description": "Friendly: Stationed around one of the terminals"
+            },
+            {
+                "Location": "Access event",
+                "Description": "Friendly: Appears at the start of the map if the SGEMP Prototype is brought to -1"
             }
         ]
     },
@@ -2440,6 +2448,14 @@
             {
                 "Location": "Zhirov",
                 "Description": "Friendly: Stationed at the entrance to Zhirov's lab"
+            },
+            {
+                "Location": "Archives event",
+                "Description": "Friendly: Stationed around one of the terminals"
+            },
+            {
+                "Location": "Access event",
+                "Description": "Friendly: Appears at the start of the map if the SGEMP Prototype is brought to -1"
             }
         ]
     },
@@ -3139,6 +3155,10 @@
             {
                 "Location": "Archives event",
                 "Description": "Friendly: Stationed around one of the terminals"
+            },
+            {
+                "Location": "Access event",
+                "Description": "Friendly: Appears at the start of the map if the SGEMP Prototype is brought to -1"
             }
         ]
     },
