@@ -606,6 +606,7 @@ jq(function ($) {
             const selectedPage = $(e.target).attr("href")!.substring(1);
 
             setSelectedPage(selectedPage, true);
+            document.documentElement.scrollTop = 0;
         });
     }
 

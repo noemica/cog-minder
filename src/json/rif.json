@@ -577,8 +577,8 @@
                 {
                     "Name": "purge_threat",
                     "Rif": true,
-                    "Charges": 15,
-                    "Description": "Lower the alert level."
+                    "Charges": 10,
+                    "Description": "Lower the alert influence by 150 initially. Subsequent purges reduce alert by 125, 100, 75, and finally stops at 50."
                 }
             ]
         },
