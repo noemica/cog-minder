@@ -1053,6 +1053,14 @@
    "Spoiler": "Spoiler"
   },
   {
+   "Name": "Fireman",
+   "Bots": [
+    "Fireman (5)",
+    "Fireman (7)"
+   ],
+   "Content": ""
+  },
+  {
    "Name": "Grunt",
    "Bots": [
     "G-34 Mercenary",
@@ -1061,7 +1069,7 @@
     "G-67 Veteran",
     "G-73 Enforcer"
    ],
-   "Content": "Test Group"
+   "Content": ""
   },
   {
    "Name": "Guerrilla",
@@ -1225,6 +1233,14 @@
     "X-77 Beamer",
     "X-82 Rainmaker",
     "X-87 Electro"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Surgeon",
+   "Bots": [
+    "Surgeon (4)",
+    "Surgeon (6)"
    ],
    "Content": ""
   },
@@ -2546,7 +2562,8 @@
   },
   {
    "Name": "Encrypted Comm Array",
-   "Content": ""
+   "Content": "The Encrypted Comm Array, or ECA, is a [[Warlord]]-aligned item that enables summoning various groups of [[Derelict]] allies on main [[0b10]] floors. It can be obtained after getting the [[Garrison]] interior compromised message by spending 1200 turns within a Garrison or by triggering rapid [[Sterilization]] in a [[DSF]]. After doing either of these, a Derelict will appear in the next [[Caves]] map and deliver the Array, gives some more details on usage, as well as reveal the depth of [[Warlord (Location)]].\n[[Heading:2]]Summoning squads[[/Heading]]\nEquipping the ECA on any main 0b10 floor will reveal up to 8 squads available for summoning. Each use of a squad decreases the force multiplier by 0.01. Moving over one of the squad indicators on the map will summon several white colored [[Alert]]-free allies that will follow Cogmind around the map, but will not follow to any other maps. The squads do not get stronger as depth increases, so their use in late [[Factory]] and [[Research]] depths decreases. All squads have a chance of containing a [[Surgeon]] that will repair any allied bots as well as Cogmind. The available squads are:\n[[List]]Chimera Squad: [[Mutant|Mutants]]|Dakka Squad: [[Wasp|Wasps]]|Muscle Squad: [[Butcher|Butchers]] and [[Savage|Savages]]|Geek Squad: [[Wizard|Wizards]]|Ghost Squad: [[Infiltrator|Infiltrators]]|Infantry Squad: [[Thug|Thugs]]|Pyro Squad: [[Fireman|Firemen]]|Ranger Squad: [[Guerrilla|Guerrillas]][[/List]]\nIf Cogmind meets Warlord at his base, the squad summoning mechanic stops functioning. At this point, it is not worth holding onto the ECA anymore.\n[[Heading:2]]Force multiplier[[/Heading]]\nThe ECA brings an additional mechanic to Warlord alignment called the force multiplier. This value is reported every time Cogmind enters a new main 0b10 depth. The force multiplier affects 3 things:\n[[List]]The total number of squads to summon per map. This starts at 0 squads at a 1.00 force multiplier and caps at 8 at 1.08.|Special guard squads in the -2 [[Research]] Warlord assault event. Based on the performance tier, more bots and stronger squads can be summoned to aid Cogmind during the assault.|[[Spoiler:Redacted]]The [[Command]] seals will summon more and stronger bots based on the overall force multiplier.[[/Spoiler]][[/List]]\nThe force multiplier tiers are as follows:\n[[List]]D: 1.00 - 1.09|C: 1.10 - 1.19|B: 1.20 - 1.29|A: 1.30 - 1.39|S: 1.40+[[/List]]\nHere are the following ways that the force multiplier can be modified:\n[[Table]]Method|Effect||Sterilizing a DSF|+ 0.10||Garrison interior compromised (once per Garrison)|+ 0.02||Destroying a RIF installer|+ 0.02||Destroying a Garrison Relay|+ 0.01||Destroying a Phase Generator|+ 0.01||Summoning an ECA squad|- 0.01||Ascending a depth|- 0.01[[/Table]]",
+   "Spoiler": "Spoiler"
   },
   {
    "Name": "Energy Filter",
@@ -6966,7 +6983,7 @@
   {
    "Name": "Armory",
    "ImageName": "Armory.png",
-   "Content": "Armory is a [[0b10]]-controlled [[Factory]]/[[Research]] [[Branch]] that apperas between -4 and -3. It is a tough map with tight corridors, few available paths, an above average number of patrols, and special dormant and guard bots. There are several unique types of patrols on this map as well, with a [[Demolisher]] leading a squad of [[Grunt|Grunts]] and [[Duelist]] squads with a [[Protector]] in tow. Stealth builds will have a difficult time of sneaking past unnoticed and combat hostiles must be ready to do a lot of killing to get by. If Cogmind can survive, some of the rewards are rewirable allies, a high number of [[Fabricator|Fabricators]], and large stockpiles of out-of-depth parts.\nThe overall map structure varies, but there are some common features of Armory maps. There are usually corridors running horizontally on the bottom and top of the map that contain large rooms next to each other connected by Emergency Access doors. The map can be a little maze-like although heading to the left and crossing from bottom to top or top to bottom will usually lead to an exit.\n[[Heading:2]]Special Machines[[/Heading]]\nThere is one type of special machine in Armory. The Energy Cycler is a large explosive machine that will open all Sealed Heavy Doors on the map and summon several patrols. These Sealed Heavy Doors have hackable Terminals and contain high rating part stockpiles, sometimes full of entirely non-faulty [[Prototype Parts]].\n[[Heading]]Prefabs[[/Heading]]\n[[Gallery]]Armory Guard Corridor.png|Small corridor of guards|Armory Dormant Bots.png|Dormant hostile bots|Armory Rewirable Bots.png|Rewirable bots|Armory Energy Cycler.png|Energy Cycler machine behind 2 tile door|Armory Shell Stockpile.png|Parts cache inside Reinforced Shell|Armory Prototype Stockpile.png|Prototype part cache on ground|Armory Sealed Vault Stockpile.png|Sealed vault part cache|Armory Authchips.png|A sealed cache of various [[Authchip|Authchips]]|Armory Central Exit.png|Central main access exit guarded by Sentries|Armory Left Exit.png|Left main access exit|Armory Lab Exit.png|Hidden [[Lab]] exit[[/Gallery]]\n[[Heading:2]]Exits[[/Heading]]\nThere are 3 types of exits in Armory:\n[[List]]Center main access: This exit is guarded by 4 [[Sentry|Sentries]] and appears in the center of the map. There are 2 tile wide corridors that extend in opposite directions coming from the exit.|Left main access: This exit is unguraded and is found behind a set of double doors on the left side of the map.|[[Lab]] exit: This exit is hidden behind a wall on the far-left side of the map. It will always be adjacent to a 1 tile wide hallway. [[Spoiler:Redacted]]There is a [[Dimensional Node Initializer]] installed at the exit to Lab. Using a [[Transdimensional Reconstructor]] or [[Hpw. Transdimensional Reconstructor]] will always cause Cogmind to end up next to this exit.[[/Spoiler]][[/List]]",
+   "Content": "Armory is a [[0b10]]-controlled [[Factory]]/[[Research]] [[Branch]] that apperas between -4 and -3. It is a tough map with tight corridors, few available paths, an above average number of patrols, and special dormant and guard bots. There are several unique types of patrols on this map as well, with a [[Demolisher]] leading a squad of [[Grunt|Grunts]] and [[Duelist]] squads with a [[Protector]] in tow. Stealth builds will have a difficult time of sneaking past unnoticed and combat hostiles must be ready to do a lot of killing to get by. If Cogmind can survive, some of the rewards are rewirable allies, a high number of [[Fabricator|Fabricators]], and large stockpiles of out-of-depth parts.\nThe overall map structure varies, but there are some common features of Armory maps. There are usually corridors running horizontally on the bottom and top of the map that contain large rooms next to each other connected by Emergency Access doors. The map can be a little maze-like although heading to the left and crossing from bottom to top or top to bottom will usually lead to an exit.\n[[Heading:2]]Special Machines[[/Heading]]\nThere is one type of special machine in Armory. The Energy Cycler is a large explosive machine that will open all Sealed Heavy Doors on the map and summon several patrols. These Sealed Heavy Doors have hackable Terminals and contain high rating part stockpiles, sometimes full of entirely non-faulty [[Prototype Parts]].\n[[Heading]]Prefabs[[/Heading]]\n[[Gallery]]Armory Guard Corridor.png|Small corridor of guards|Armory Dormant Bots.png|Dormant hostile bots|Armory Rewirable Bots.png|Rewirable bots|Armory Energy Cycler.png|Energy Cycler machine behind 2 tile door|Armory Shell Stockpile.png|Parts cache inside Reinforced Shell|Armory Prototype Stockpile.png|Prototype part cache on ground|Armory Sealed Vault Stockpile.png|Sealed vault part cache|Armory Authchips.png|A sealed cache of various [[Authchips]]|Armory Central Exit.png|Central main access exit guarded by Sentries|Armory Left Exit.png|Left main access exit|Armory Lab Exit.png|Hidden [[Lab]] exit[[/Gallery]]\n[[Heading:2]]Exits[[/Heading]]\nThere are 3 types of exits in Armory:\n[[List]]Center main access: This exit is guarded by 4 [[Sentry|Sentries]] and appears in the center of the map. There are 2 tile wide corridors that extend in opposite directions coming from the exit.|Left main access: This exit is unguraded and is found behind a set of double doors on the left side of the map.|[[Lab]] exit: This exit is hidden behind a wall on the far-left side of the map. It will always be adjacent to a 1 tile wide hallway. [[Spoiler:Redacted]]There is a [[Dimensional Node Initializer]] installed at the exit to Lab. Using a [[Transdimensional Reconstructor]] or [[Hpw. Transdimensional Reconstructor]] will always cause Cogmind to end up next to this exit.[[/Spoiler]][[/List]]",
    "Exits": [
     "Lab",
     "Research"
@@ -7804,6 +7821,10 @@
    "Name": "Sigix",
    "Content": "",
    "Spoiler": "Spoiler"
+  },
+  {
+   "Name": "Sterilization",
+   "Content": ""
   },
   {
    "Name": "Terminal",
