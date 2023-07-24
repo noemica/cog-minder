@@ -2814,7 +2814,7 @@
             },
             {
                 "Location": "Imprint roster",
-                "Description": "Friendly: Appear as a summonable allies in groups of 3-4"
+                "Description": "Friendly: Appear as a summonable allies in groups of 2-3"
             }
         ]
     },
@@ -2829,7 +2829,7 @@
             },
             {
                 "Location": "Imprint roster",
-                "Description": "Friendly: Appear as a summonable allies in groups of 3-4"
+                "Description": "Friendly: Appear as a summonable allies in groups of 2-3"
             }
         ]
     },
