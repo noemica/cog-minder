@@ -101,17 +101,21 @@
         {
             "CategoryName": "Combat",
             "Targets": [
+                "Alpha 7 (Prototype)",
                 "Behemoth",
                 "Brawler",
                 "Cutter",
                 "Demolisher",
                 "Duelist",
+                "Executioner (Prototype)",
+                "Fortress (Prototype)",
                 "Grunt",
                 "Heavy",
                 "Hunter",
                 "Programmer",
                 "Sentry",
                 "Specialist",
+                "Striker (Prototype)",
                 "Swarmer"
             ],
             "Hacks": [
