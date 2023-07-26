@@ -1,6 +1,7 @@
 // Common code
 import * as itemCategories from "../json/item_categories.json";
 import * as botExtraData from "../json/bot_extra_data.json";
+import * as lore from "../json/lore.json";
 import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "./botTypes";
 import {
     BaseItem,
@@ -1850,6 +1851,18 @@ export async function initData(
                 salvageHigh = salvageLow;
             }
 
+            let description: string;
+            if (bot.Analysis !== undefined) {
+                description = bot.Analysis!;
+            } else {
+                const loreEntry = lore["0b10 Records"].find((e) => e["Name/Number"] === bot.Name);
+                if (loreEntry !== undefined) {
+                    description = loreEntry.Content;
+                } else {
+                    description = "";
+                }
+            }
+
             const newBot: Bot = {
                 armament: bot.Armament ?? [],
                 armamentData: armamentData,
@@ -1864,7 +1877,7 @@ export async function initData(
                 coreCoverage: roughCoreCoverage,
                 coreExposure: parseIntOrDefault(bot["Core Exposure %"], 0),
                 coreIntegrity: parseInt(bot["Core Integrity"]),
-                description: bot.Analysis ?? "",
+                description: description,
                 energyGeneration: parseIntOrDefault(bot["Energy Generation"], 0),
                 fabrication: fabrication,
                 heatDissipation: parseIntOrDefault(bot["Heat Dissipation"], 0),
