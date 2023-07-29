@@ -282,8 +282,17 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
     let galleryContent = `<div class="wiki-gallery-images">`;
 
     for (let i = 0; i < Math.floor(split.length / 2); i++) {
-        const imageName = split[2 * i];
+        let inSpoiler = state.inSpoiler;
+        let imageName = split[2 * i];
         const imageCaption = split[2 * i + 1];
+
+        const spoilerResult = /\[\[Spoiler(?:\:(\w*))?\]\]([^\[]*)\[\[\/Spoiler\]\]/.exec(imageName);
+        if (spoilerResult) {
+            const spoiler = spoilerResult[1] === undefined ? "Spoiler" : (spoilerResult[1] as Spoiler);
+
+            inSpoiler = !canShowSpoiler(spoiler, state.spoiler);
+            imageName = spoilerResult[2];
+        }
 
         state.images.add(imageName);
 
@@ -297,8 +306,8 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         // Append image content HTML
         galleryContent += `<div>
             <div>
-                <a ${state.inSpoiler ? 'class="spoiler-image"' : ""} href="wiki_images/${imageName}" target="_blank">
-                ${state.inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
+                <a ${inSpoiler ? 'class="spoiler-image"' : ""} href="wiki_images/${imageName}" target="_blank">
+                ${inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
                     <img src="wiki_images/${imageName}" onerror="this.onerror=null; this.src='wiki_images/Image Not Found.png'"/>
                 </a>
             </div>
