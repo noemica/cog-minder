@@ -250,7 +250,7 @@ function applyDamage(
             });
         }
 
-        if (overflowDamage > 0 && !part.protection && canOverflow) {
+        if (overflowDamage > 0 && !part.protection && canOverflow && critical === undefined) {
             // Handle overflow damage if excess damage was dealt
             // against a non-protection part (18)
             applyDamageChunk(0, overflowDamage, damageType, undefined, true, false, 0, 0, false);

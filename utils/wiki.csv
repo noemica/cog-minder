@@ -630,7 +630,7 @@ When Cogmind's core reaches below 33%, Cogmind will emit a hypermatrix ping and 
 [[Heading:3]]Memory Reset[[/Heading]]
 Cogmind loses all map data, part IDs, [[Robot Analysis|Analyses]], [[Schematic|Schematics]], [[Data Conduit|Data Conduit intel]], [[RIF]] alliance, [[A7 Data Core|A7 Data Core intel]], and any manual [[Terminal]] or robot hacks. Notably, Cogmind will not lose [[Farcom]] or Imprint.
 [[Heading:3]]Non-Alien Hostilities[[/Heading]]
-Certain groups will no longer trust Cogmind as a result of using a CRM. If [[Zhirov]] shows up in [[Access]] as a result of completing the [[SGEMP Prototype]] quest, he and his allies will immediately turn hostile to Cogmind. [[Spoiler:Redacted]]The surrender option is no is no longer offered by [[MAIN.C]], causing the W8 [[Wintype]] to be unobtainable.[[/Spoiler:Redacted]]
+Certain groups will no longer trust Cogmind as a result of using a CRM. If [[Zhirov]] shows up in [[Access]] as a result of completing the [[SGEMP Prototype]] quest, he and his allies will immediately turn hostile to Cogmind. [[Spoiler:Redacted]]The surrender option is no is no longer offered by [[MAIN.C]], causing the W8 [[Wintypes|Wintype]] to be unobtainable.[[/Spoiler:Redacted]]
 [[Spoiler:Redacted]][[Heading:3]][[Sigix Exoskeleton]] Control[[/Heading]]
 Cogmind is able to pilot the Exoskeleton located in [[Section 7]].[[/Spoiler]]
 [[Heading:3]]Unique Wintype[[/Heading]]
@@ -2167,7 +2167,7 @@ There is a second part of this quest that continues in [[Command]]. [[Spoiler:Re
 [[Heading]]Fighting[[/Heading]]
 Fighting Zhirov and gaining anything from the encounter is not an easy task. Although he has some nice loot, his tendency to teleport out at the slightest hint of danger and explosive aftermath even on a successful kill is very frustrating to deal with. One option is to loot Perun and Svarog while ignoring Zhirov and simply exiting the map safely. These 2 can still have some good parts, although they have nothing as lucrative as Zhirov with the guaranteed inventory drops of [[Deep Network Scanner]], [[Quantum Router]], a [[Transdimensional Reconstructor]], and a [[Zhirov Special]]. Only Zhirov can set off the traps and cause the group to leave.
 The best way to safely grab all the loot is with [[Master Tearclaws]] that can be looted from [[Master Thief|Master Thieves]]. These Tearclaws can strip all 3 bots of their parts with little risk of explosives. Just make sure Zhirov doesn't fall below 80 core integrity. The Tearclaws can even remove the inventory items without requiring Zhirov to actually be destroyed. The idea is to shoot one of the bots from just outside of one of the rooms and then retreat behind one of the doorways. This will let you safely use the melee Tearclaws while only getting attacked by 1 bot at a time."
-Zhirov Special,part,
+Zhirov Special,Part,
 Zio. Alpha Cannon,Part,
 Zio. Alpha Cannon Mk. II,Part,
 Zio. Biocell,Part,
