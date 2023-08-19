@@ -5,13 +5,13 @@ import {
     createHeader,
     enableBotInfoInteraction,
     getSpoilerState,
-    refreshSelectpicker,
     registerDisableAutocomplete,
     setActiveButtonGroupButton,
     setSpoilerState,
     temporarilySetValue,
 } from "./commonJquery";
 import {
+    boldMatches,
     canShowSpoiler,
     createBotDataContent,
     createItemDataContent,
@@ -23,13 +23,13 @@ import {
 } from "./common";
 import { MapLocation, Spoiler } from "./commonTypes";
 import { Bot } from "./botTypes";
-
-import * as jQuery from "jquery";
-import "bootstrap";
-import "bootstrap-select";
 import { Item } from "./itemTypes";
 import { createContentHtml } from "./wikiParser";
 import { WikiEntry } from "./wikiTypes";
+
+import autocomplete, { AutocompleteItem, AutocompleteResult } from "autocompleter";
+import * as jQuery from "jquery";
+import "bootstrap";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -37,6 +37,9 @@ jq(function ($) {
 
     // Map of all page names to entries
     const allEntries: Map<string, WikiEntry> = new Map();
+
+    // Autocomplete result when setup
+    let autocompleteResult: AutocompleteResult | undefined;
 
     // Set of all entries shown in the select by default
     // If loading a spoiler-restricted page, this won't contain
@@ -52,13 +55,11 @@ jq(function ($) {
     // Save when we're showing an edited preview
     let lastEntryIsEdit: boolean;
 
-    // Keep track of whether we have promoted a spoiler-restricted
-    // page to the select
-    let showingTemporaryOption: boolean;
+    type CustomAutocompleteItem = AutocompleteItem & {
+        pageId: string;
+    };
 
-    // Avoid recursively processing selectpicker changes when
-    // we're updating the value
-    let skipSelectChange = false;
+    const searchString = "Search/";
 
     // Clears the page content and cleans up any resources
     function clearPageContent() {
@@ -77,9 +78,13 @@ jq(function ($) {
 
         await initData(items as any, bots as any);
 
+        editedCurrentPage = false;
+        $("#searchInput").val("");
+
         initAllEntries();
+        initAutocomplete();
         tryLoadFromHash(true);
-        updatePageSelect();
+        updateAvailablePages();
 
         // Register handlers
         $("#spoilerDropdown > button").on("click", (e) => {
@@ -88,24 +93,7 @@ jq(function ($) {
             setSpoilerState(state);
             ($("#spoilerDropdown > button") as any).tooltip("hide");
 
-            updatePageSelect();
-        });
-        $("#pageSelect").on("changed.bs.select", () => {
-            if (skipSelectChange) {
-                // Avoid double-processing if we just set the select
-                return;
-            }
-
-            const select = $("#pageSelect");
-            const selectedPage = select.selectpicker("val") as any as string;
-
-            if (!selectedPage) {
-                // Shouldn't happen, just fall back to setting home if it does
-                select.selectpicker("val", "Home");
-                return;
-            }
-
-            setSelectedPage(selectedPage, false);
+            updateAvailablePages();
         });
         $("#homeButton").on("click", () => {
             ($("#homeButton") as any).tooltip("hide");
@@ -122,6 +110,28 @@ jq(function ($) {
             // Validate all content
             validateAll();
             ($("#validateButton") as any).tooltip("hide");
+        });
+        $("#searchInput").on("change", () => {
+            // Search if there's any content
+            const input = $("#searchInput").val();
+            if (input) {
+                setSelectedPage(`${searchString}${input}`);
+            }
+
+            $("#searchInput").val("");
+            // We need to reinitialize the autocompleter
+            // as there is no way to programmatically hide it
+            initAutocomplete();
+        });
+        $("#searchButton").on("click", () => {
+            // Search if there's any content
+            const input = $("#searchInput").val();
+            if (input) {
+                setSelectedPage(`${searchString}${input}`);
+            }
+
+            $("#searchInput").val("");
+            ($("#searchButton") as any).tooltip("hide");
         });
 
         if (process.env.NODE_ENV !== "production") {
@@ -250,7 +260,7 @@ jq(function ($) {
         $(window).on("popstate", () => {
             // Try to load the recently popped state if set
             if (history.state !== null) {
-                setSelectedPage(history.state, true);
+                setSelectedPage(history.state);
             }
         });
 
@@ -275,10 +285,6 @@ jq(function ($) {
         });
 
         overrideLinks($("#homeContainer"));
-
-        // These divs are created at runtime so have to do this at init
-        $("#pageSelectContainer > div").addClass("page-dropdown");
-        $("#pageSelectContainer > div > .dropdown-menu").addClass("page-dropdown-menu");
 
         // Enable tooltips
         ($('[data-toggle="tooltip"]') as any).tooltip();
@@ -522,6 +528,52 @@ jq(function ($) {
         }
     }
 
+    // Initializes the autocomplete input
+    function initAutocomplete() {
+        const searchInput = $("#searchInput");
+        const searchGroupName = "Search";
+
+        if (autocompleteResult !== undefined) {
+            autocompleteResult.destroy();
+        }
+
+        autocompleteResult = autocomplete({
+            disableAutoSelect: true,
+            emptyMsg: "No results found",
+            input: searchInput[0] as any as HTMLInputElement,
+            onSelect: (item: CustomAutocompleteItem, input) => {
+                $(input).val("");
+
+                if (item.group === searchGroupName) {
+                    setSelectedPage(`${searchString}${item.pageId}`);
+                } else {
+                    setSelectedPage(item.label!);
+                }
+            },
+            fetch: (text, update: (items: CustomAutocompleteItem[]) => void) => {
+                text = text.toLowerCase();
+                const suggestions = [...defaultShownEntries.keys()]
+                    .filter((p) => p.toLowerCase().startsWith(text))
+                    .splice(0, 20)
+                    .map((p) => {
+                        const item: CustomAutocompleteItem = { pageId: p, label: p, group: "Pages" };
+                        return item;
+                    });
+
+                suggestions.push({
+                    group: searchGroupName,
+                    label: `Search for\n${searchInput.val()}`,
+                    pageId: searchInput.val() as string,
+                });
+
+                update(suggestions);
+            },
+            renderGroup: () => {
+                return undefined;
+            },
+        });
+    }
+
     // Updates the page content based on the given entry
     function loadSelectedEntry(entry: WikiEntry) {
         const selectedPage = entry.name;
@@ -605,7 +657,7 @@ jq(function ($) {
 
             const selectedPage = $(e.target).attr("href")!.substring(1);
 
-            setSelectedPage(selectedPage, true);
+            setSelectedPage(selectedPage);
             document.documentElement.scrollTop = 0;
         });
     }
@@ -630,79 +682,182 @@ jq(function ($) {
         return parseResult.html;
     }
 
+    // Searches all pages for matching text
+    // Searches page titles first as well as page contents
+    function searchPages(text: string) {
+        const homeContainer = $("#homeContainer");
+        const pageContent = $("#pageContent");
+
+        // Show page content container
+        homeContainer.addClass("not-visible");
+        pageContent.removeClass("not-visible");
+
+        document.title = `Search for "${text}" - Cogmind Wiki`;
+        const lowerText = text.toLowerCase();
+
+        pageContent.empty();
+
+        // Create overall header and search text
+        const resultsHeader = $(`<h1 class="wiki-heading">Search Results</h1>`);
+        const searchHeader = $(`<h3 class="mt-3">Searching for "${text}"</h3>`);
+        pageContent.append(resultsHeader as any);
+        pageContent.append(searchHeader as any);
+
+        let anyResults = false;
+        const titleMatches = Array.from(defaultShownEntries).filter((n) => n.toLowerCase().includes(lowerText));
+        const contentMatches = Array.from(defaultShownEntries)
+            .map((n) => allEntries.get(n)!)
+            .filter((e) => e !== undefined && e.content.toLowerCase().includes(lowerText));
+
+        if (titleMatches.length > 0) {
+            anyResults = true;
+
+            // Create header and list
+            const titleMatchesHeader = $(`<h2 class="wiki-heading mt-3">Title Matches</h2>`);
+            const searchResultsList = $(`<ul class="wiki-search-result-list"></ul>`);
+
+            for (const titleMatch of titleMatches) {
+                // Determine the page preview
+                const entry = allEntries.get(titleMatch)!;
+                let matchText = entry.content.substring(0, 200);
+                const lastPeriod = matchText.lastIndexOf(". ");
+
+                if (lastPeriod > -1) {
+                    // Found a period, chop the match off there
+                    matchText = matchText.substring(0, lastPeriod + 1);
+                }
+
+                if (matchText.length === 0) {
+                    // Default to no page content if empty page
+                    matchText = "No page content";
+                } else {
+                    // Bold matches in the page preview
+                    matchText = boldMatches(matchText, lowerText);
+                }
+
+                // Bold matches in the title
+                const boldedTitleMatch = boldMatches(titleMatch, lowerText);
+
+                // Create list item for each result
+                const titleItem = $(`<li class="mt-3"></li>`);
+                const titleLink = $(`<a href="#${titleMatch}">${boldedTitleMatch}</a>`);
+                const pagePreview = $(`<span>${matchText}</span>`);
+
+                // Append HTML
+                titleItem.append(titleLink as any);
+                searchResultsList.append(titleItem as any);
+                searchResultsList.append(pagePreview as any);
+            }
+
+            // Append to page content
+            pageContent.append(titleMatchesHeader as any);
+            pageContent.append(searchResultsList as any);
+        }
+
+        if (contentMatches.length > 0) {
+            anyResults = true;
+
+            // Create header and list
+            const contentMatchesHeader = $(`<h2 class="wiki-heading mt-3">Content Matches</h2>`);
+            const searchResultsList = $(`<ul class="wiki-search-result-list"></ul>`);
+
+            for (const entry of contentMatches) {
+                // Determine the page preview
+                let matchIndex = entry.content.toLowerCase().indexOf(lowerText);
+                const entryIndex = Math.max(0, matchIndex - 150);
+                let matchText = entry.content.substring(entryIndex, entryIndex + 300);
+                matchIndex = matchText.toLowerCase().indexOf(lowerText);
+                const firstPeriodIndex = matchText.indexOf(". ");
+
+                if (firstPeriodIndex < matchIndex) {
+                    // Found a sentence end before the match
+                    // Start at the first sentence before the match
+                    matchText = matchText.substring(firstPeriodIndex + 2);
+                }
+
+                matchIndex = matchText.toLowerCase().indexOf(lowerText);
+                const lastPeriodIndex = matchText.lastIndexOf(". ");
+                if (lastPeriodIndex > -1 && lastPeriodIndex > matchIndex) {
+                    // Found a period after the search, chop the match off there
+                    matchText = matchText.substring(0, lastPeriodIndex + 1);
+                }
+
+                if (matchText.length === 0) {
+                    // Default to no page content if empty page
+                    matchText = "No page content";
+                } else {
+                    // Bold matches in the page preview
+                    matchText = boldMatches(matchText, lowerText);
+                }
+
+                // Bold matches in the title
+                const boldedTitleMatch = boldMatches(entry.name, lowerText);
+
+                // Create list item for each result
+                const titleItem = $(`<li class="mt-3"></li>`);
+                const titleLink = $(`<a href="#${entry.name}">${boldedTitleMatch}</a>`);
+                const pagePreview = $(`<span>${matchText}</span>`);
+
+                // Append HTML
+                titleItem.append(titleLink as any);
+                searchResultsList.append(titleItem as any);
+                searchResultsList.append(pagePreview as any);
+            }
+
+            // Append to page content
+            pageContent.append(contentMatchesHeader as any);
+            pageContent.append(searchResultsList as any);
+        }
+
+        if (!anyResults) {
+            pageContent.append(`<span>No results found for "${text}".</span>`);
+        }
+
+        // Fixup links
+        overrideLinks(pageContent);
+    }
+
     // Sets the selected page
-    function setSelectedPage(selectedPage: string, updateSelect: boolean, init = false) {
-        const select = $("#pageSelect");
-
-        // Skip handling any select setting events while we're updating here
-        skipSelectChange = true;
-        try {
-            let needsRefresh = showingTemporaryOption;
-            showingTemporaryOption = false;
-            let addTemporaryOption = false;
-
-            // If we need to update the history state then do so now
-            if (history.state !== selectedPage) {
-                if (init) {
-                    if (selectedPage === "Home") {
-                        history.replaceState("Home", "", "wiki.html");
-                    } else {
-                        history.replaceState(selectedPage, "", `#${selectedPage}`);
-                    }
+    function setSelectedPage(selectedPage: string, init = false) {
+        // If we need to update the history state then do so now
+        if (history.state !== selectedPage) {
+            if (init) {
+                if (selectedPage === "Home") {
+                    history.replaceState("Home", "", "wiki.html");
                 } else {
-                    if (selectedPage === "Home") {
-                        history.pushState("Home", "", "wiki.html");
-                    } else {
-                        history.pushState(selectedPage, "", `#${selectedPage}`);
-                    }
-                }
-            }
-
-            if (editedCurrentPage && lastEntry?.name !== selectedPage) {
-                // Try to prevent accidental edit data loss
-                if (
-                    !confirm(
-                        "You have modified the editor since last copying the text, are you sure you want to change the page and lose any changes made?",
-                    )
-                ) {
-                    select.selectpicker("val", lastEntry!.name);
-                    return;
-                }
-
-                editedCurrentPage = false;
-            }
-
-            if (updateSelect) {
-                if (defaultShownEntries.has(selectedPage)) {
-                    // Found page, update now
-                    select.selectpicker("val", selectedPage);
-                    updateContent(selectedPage);
-                } else if (allEntries.get(selectedPage)) {
-                    // Found page but couldn't set selectpicker, page was filtered out
-                    // Temporarily promote page in selectpicker
-                    needsRefresh = true;
-                    addTemporaryOption = true;
-                    updateContent(selectedPage);
-                } else {
-                    // Page wasn't in select at all, just a bad URL
-                    // Default to home page
-                    select.selectpicker("val", "Home");
-                    updateHomeContent(`Page ${selectedPage} was not found.`);
+                    history.replaceState(selectedPage, "", `#${selectedPage}`);
                 }
             } else {
-                updateContent(selectedPage);
-            }
-
-            if (needsRefresh) {
-                // Refresh the selectpicker if the values changed
-                if (addTemporaryOption) {
-                    updatePageSelect(selectedPage);
+                if (selectedPage === "Home") {
+                    history.pushState("Home", "", "wiki.html");
                 } else {
-                    updatePageSelect();
+                    history.pushState(selectedPage, "", `#${selectedPage}`);
                 }
             }
-        } finally {
-            skipSelectChange = false;
+        }
+
+        if (editedCurrentPage && lastEntry?.name !== selectedPage) {
+            // Try to prevent accidental edit data loss
+            if (
+                !confirm(
+                    "You have modified the editor since last copying the text, are you sure you want to change the page and lose any changes made?",
+                )
+            ) {
+                return;
+            }
+
+            editedCurrentPage = false;
+        }
+
+        if (selectedPage.startsWith(searchString)) {
+            searchPages(selectedPage.substring(searchString.length));
+        } else if (allEntries.get(selectedPage)) {
+            // Found page, update now
+            updateContent(selectedPage);
+        } else {
+            // Page wasn't in select at all, just a bad URL
+            // Default to home page
+            updateHomeContent(selectedPage === "Home" ? "" : `Page ${selectedPage} was not found.`);
         }
     }
 
@@ -711,10 +866,10 @@ jq(function ($) {
         const hash = window.location.hash.substring(1);
         if (hash.length > 0) {
             const selectedPage = decodeURI(hash);
-            setSelectedPage(selectedPage, true, init);
+            setSelectedPage(selectedPage, init);
         } else {
             history.replaceState("Home", "", "wiki.html");
-            setSelectedPage("Home", true);
+            setSelectedPage("Home");
         }
     }
 
@@ -831,7 +986,7 @@ jq(function ($) {
         const entry = allEntries.get(selectedPage);
         if (entry === undefined) {
             clearPageContent();
-            pageContent.append("Error generating page, this shouldn't happen");
+            pageContent.append("Error generating page, maybe a bad link?");
             return;
         } else if (lastEntryIsEdit && lastEntry!.name === selectedPage) {
             // If we're attempting to reload the page (usually for spoilers change)
@@ -890,25 +1045,17 @@ jq(function ($) {
     }
 
     // Updates the available page select options
-    function updatePageSelect(selectedPage: string | undefined = undefined) {
-        const select = $("#pageSelect");
-
+    function updateAvailablePages(selectedPage: string | undefined = undefined) {
         function addOption(optionName: string) {
-            select.append(`<option>${optionName}</option>`);
             defaultShownEntries.add(optionName);
         }
 
         defaultShownEntries.clear();
-        select.empty();
 
         addOption("Home");
         if (selectedPage !== undefined) {
             addOption(selectedPage);
-            showingTemporaryOption = true;
-        } else {
-            showingTemporaryOption = false;
         }
-        select.append("<option data-divider='true'></option>");
 
         const allPageNames = Array.from(allEntries.keys());
         allPageNames.sort();
@@ -921,12 +1068,10 @@ jq(function ($) {
             }
         }
 
-        refreshSelectpicker(select);
-
         if (selectedPage === undefined) {
             tryLoadFromHash(false);
         } else {
-            select.selectpicker("val", selectedPage);
+            setSelectedPage(selectedPage);
         }
     }
 

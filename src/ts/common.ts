@@ -148,6 +148,23 @@ export function assertUnreachable(_: never): never {
     throw new Error("Invalid");
 }
 
+// In the given string, bolds all matches of matchText
+// Uses lowercase matching but returns modified text with proper capitalization
+export function boldMatches(text: string, matchText: string): string {
+    // Bold the match
+    let searchIndex: number;
+    let endSubstringIndex = Number.MAX_SAFE_INTEGER;
+    while ((searchIndex = text.substring(0, endSubstringIndex).toLowerCase().lastIndexOf(matchText)) !== -1) {
+        text =
+            text.substring(0, searchIndex) +
+            `<b>${text.substring(searchIndex, searchIndex + matchText.length)}</b>` +
+            text.substring(searchIndex + matchText.length);
+        endSubstringIndex = searchIndex;
+    }
+
+    return text;
+}
+
 // Determines if the given part can be shown based on the current spoilers state
 export function canShowPart(part: Item, spoilersState: Spoiler): boolean {
     if (spoilersState === "None") {
