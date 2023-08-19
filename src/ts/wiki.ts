@@ -111,26 +111,36 @@ jq(function ($) {
             validateAll();
             ($("#validateButton") as any).tooltip("hide");
         });
-        $("#searchInput").on("change", () => {
+        function search() {
             // Search if there's any content
-            const input = $("#searchInput").val();
-            if (input) {
+            const input = $("#searchInput").val() as string;
+
+            if (!input) {
+                return;
+            }
+
+            const lowerInput = input.toLowerCase();
+            const matchingEntry = Array.from(defaultShownEntries).find((e) => e.toLowerCase() == lowerInput);
+
+            // If we find an exact matching entry (case insensitive)
+            // then open it directly, otherwise search
+            if (matchingEntry) {
+                setSelectedPage(matchingEntry);
+            } else {
                 setSelectedPage(`${searchString}${input}`);
             }
 
             $("#searchInput").val("");
+        }
+        $("#searchInput").on("change", () => {
+            search();
             // We need to reinitialize the autocompleter
             // as there is no way to programmatically hide it
             initAutocomplete();
         });
         $("#searchButton").on("click", () => {
-            // Search if there's any content
-            const input = $("#searchInput").val();
-            if (input) {
-                setSelectedPage(`${searchString}${input}`);
-            }
+            search();
 
-            $("#searchInput").val("");
             ($("#searchButton") as any).tooltip("hide");
         });
 
