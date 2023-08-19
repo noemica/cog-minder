@@ -2207,13 +2207,17 @@
     },
     "Revision 17": {
         "Categories": [
-            "Derelict",
-            "Spoiler"
+            "Derelict"
         ],
         "Locations": [
             {
+                "Location": "Scrapyard",
+                "Description": "Friendly: Appears as part of the tutorial and rarely in normal runs to provide backstory"
+            },
+            {
                 "Location": "Cetus",
-                "Description": "Friendly: Appears after destroying both sets of Cetus guards and approaching the top-right side of the map"
+                "Description": "Friendly: Appears after destroying both sets of Cetus guards and approaching the top-right side of the map",
+                "Spoiler": "Spoiler"
             }
         ]
     },
