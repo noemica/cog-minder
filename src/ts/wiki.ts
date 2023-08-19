@@ -132,11 +132,13 @@ jq(function ($) {
 
             $("#searchInput").val("");
         }
-        $("#searchInput").on("change", () => {
-            search();
-            // We need to reinitialize the autocompleter
-            // as there is no way to programmatically hide it
-            initAutocomplete();
+        $("#searchInput").on("keyup", (e) => {
+            if (e.key === "Enter" || e.key === "NumpadEnter") {
+                search();
+                // We need to reinitialize the autocompleter
+                // as there is no way to programmatically hide it
+                initAutocomplete();
+            }
         });
         $("#searchButton").on("click", () => {
             search();
