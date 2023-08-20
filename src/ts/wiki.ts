@@ -195,10 +195,10 @@ jq(function ($) {
             insertWrappedText("[[GameText]]", "[[/GameText]]");
         });
         $("#editSpoilerTextButton").on("click", () => {
-            insertWrappedText("[[Spoiler:Spoiler]]", "[[/Spoiler]]");
+            insertWrappedText("[[Spoiler]]", "[[/Spoiler]]");
         });
         $("#editRedactedTextButton").on("click", () => {
-            insertWrappedText("[[Spoiler:Redacted]]", "[[/Spoiler]]");
+            insertWrappedText("[[Redacted]]", "[[/Redacted]]");
         });
         $("#editLinkTextButton").on("click", () => {
             insertWrappedText("[[", "]]");

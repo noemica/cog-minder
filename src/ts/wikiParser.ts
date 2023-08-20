@@ -286,12 +286,23 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         let imageName = split[2 * i];
         const imageCaption = split[2 * i + 1];
 
-        const spoilerResult = /\[\[Spoiler(?:\:(\w*))?\]\]([^\[]*)\[\[\/Spoiler\]\]/.exec(imageName);
+        const spoilerResult = /\[\[([^\]]*)]\]([^\[]*)\[\[\/([^\]]*)\]\]/.exec(imageName);
         if (spoilerResult) {
-            const spoiler = spoilerResult[1] === undefined ? "Spoiler" : (spoilerResult[1] as Spoiler);
+            if (spoilerResult[1] === spoilerResult[3]) {
+                if ((spoilerResult[1] as Spoiler) === "Spoiler" || (spoilerResult[1] as Spoiler) === "Redacted") {
+                    const spoiler = spoilerResult[1] as Spoiler;
 
-            inSpoiler = !canShowSpoiler(spoiler, state.spoiler);
-            imageName = spoilerResult[2];
+                    inSpoiler = !canShowSpoiler(spoiler, state.spoiler);
+                    imageName = spoilerResult[2];
+                } else {
+                    recordError(state, `Found unsupported tag in ${imageName}, should only be Spoiler/Redacted here`);
+                }
+            } else {
+                recordError(
+                    state,
+                    `Found mismatched start/end tags in image name ${imageName}, should only be Spoiler/Redacted`,
+                );
+            }
         }
 
         state.images.add(imageName);
@@ -642,6 +653,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["Spoiler", processSpoilerTag],
     ["Sub", processSubTag],
     ["Sup", processSupTag],
+    ["Redacted", processSpoilerTag],
     ["Table", processTableTag],
 ]);
 // Processes the current section of text in the parser state
@@ -705,6 +717,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
                 // Check for a allowed tags first, then for any matched but forbidden tags
                 if (
                     result[1] === "Spoiler" ||
+                    result[1] === "Redacted" ||
                     result[1] === "B" ||
                     result[1] === "I" ||
                     result[1] === "GameText" ||
@@ -752,22 +765,15 @@ function processSection(state: ParserState, endTag: string | undefined) {
     }
 }
 
-// Process a spoiler tag like [[Spoiler:Spoiler]]Text[[/Spoiler]]
+// Process a spoiler tag like [[Spoiler]]Text[[/Spoiler]] or [[Redacted]]Text[[/Redacted]]
 function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
-    // Only 2 options are Spoiler and Redacted
-    // If it's invalid canShowSpoiler will default to not showing
-    // unless Redacted setting is active
-    if (result[2] !== "Spoiler" && result[2] !== "Redacted") {
-        recordError(state, `Found unknown spoiler type ${result[2]}`);
-    }
-
     // Process the spoiler subsection independently
-    const inSpoiler = !canShowSpoiler(result[2] as Spoiler, state.spoiler);
+    const inSpoiler = !canShowSpoiler(result[1] as Spoiler, state.spoiler);
     const subSectionStart = result.index + result[0].length;
     const tempState = ParserState.Clone(state);
     tempState.index = subSectionStart;
     tempState.inSpoiler = inSpoiler;
-    processSection(tempState, "/Spoiler");
+    processSection(tempState, result[1] === "Spoiler" ? "/Spoiler" : "/Redacted");
     const spoilerContent = outputGroupsToHtml(tempState.output, inSpoiler, true, true);
     state.index = tempState.index;
 
