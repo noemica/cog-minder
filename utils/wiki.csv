@@ -1023,7 +1023,18 @@ Gatling Laser,Part,
 Gauss Cannon,Part,
 Gauss Rifle,Part,
 Ghost Barrier,Part,
-God Mode,Bot,
+God Mode,Bot,"When parsed, the text box reads:
+[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
+[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
+[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
+[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
+[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
+[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
+[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
+[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
+[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
+[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
+"
 God Mode (Fake),Bot,
 Golem,Bot,
 Golem (Naked),Bot,

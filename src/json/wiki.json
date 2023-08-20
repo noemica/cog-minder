@@ -330,7 +330,7 @@
   },
   {
    "Name": "God Mode",
-   "Content": ""
+   "Content": "When parsed, the text box reads:\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n"
   },
   {
    "Name": "God Mode (Fake)",
