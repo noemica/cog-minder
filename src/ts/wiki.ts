@@ -24,7 +24,7 @@ import {
 import { MapLocation, Spoiler } from "./commonTypes";
 import { Bot } from "./botTypes";
 import { Item } from "./itemTypes";
-import { createContentHtml } from "./wikiParser";
+import { createContentHtml, createPreviewContent } from "./wikiParser";
 import { WikiEntry } from "./wikiTypes";
 
 import autocomplete, { AutocompleteItem, AutocompleteResult } from "autocompleter";
@@ -35,16 +35,14 @@ const jq = jQuery.noConflict();
 jq(function ($) {
     $(() => init());
 
+    // Set of all entries shown based on current spoiler settings
+    const allowedEntries: Set<string> = new Set<string>();
+
     // Map of all page names to entries
     const allEntries: Map<string, WikiEntry> = new Map();
 
     // Autocomplete result when setup
     let autocompleteResult: AutocompleteResult | undefined;
-
-    // Set of all entries shown in the select by default
-    // If loading a spoiler-restricted page, this won't contain
-    // that page
-    const defaultShownEntries: Set<string> = new Set<string>();
 
     // Has the user edited the current page since copying the text?
     let editedCurrentPage: boolean;
@@ -84,7 +82,7 @@ jq(function ($) {
         initAllEntries();
         initAutocomplete();
         tryLoadFromHash(true);
-        updateAvailablePages();
+        updateAllowedPages();
 
         // Register handlers
         $("#spoilerDropdown > button").on("click", (e) => {
@@ -93,7 +91,7 @@ jq(function ($) {
             setSpoilerState(state);
             ($("#spoilerDropdown > button") as any).tooltip("hide");
 
-            updateAvailablePages();
+            updateAllowedPages();
         });
         $("#homeButton").on("click", () => {
             ($("#homeButton") as any).tooltip("hide");
@@ -120,7 +118,7 @@ jq(function ($) {
             }
 
             const lowerInput = input.toLowerCase();
-            const matchingEntry = Array.from(defaultShownEntries).find((e) => e.toLowerCase() == lowerInput);
+            const matchingEntry = Array.from(allowedEntries).find((e) => e.toLowerCase() == lowerInput);
 
             // If we find an exact matching entry (case insensitive)
             // then open it directly, otherwise search
@@ -564,7 +562,7 @@ jq(function ($) {
             },
             fetch: (text, update: (items: CustomAutocompleteItem[]) => void) => {
                 text = text.toLowerCase();
-                const suggestions = [...defaultShownEntries.keys()]
+                const suggestions = [...allowedEntries.keys()]
                     .filter((p) => p.toLowerCase().startsWith(text))
                     .splice(0, 20)
                     .map((p) => {
@@ -627,7 +625,7 @@ jq(function ($) {
             overrideLinks(pageContent);
         }
 
-        if (defaultShownEntries.has(selectedPage)) {
+        if (allowedEntries.has(selectedPage)) {
             // If we're showing a page by default then just load it right away
             setContent(entry);
         } else {
@@ -720,11 +718,19 @@ jq(function ($) {
         pageContent.append(resultsHeader as any);
         pageContent.append(searchHeader as any);
 
+        const spoilersState = getSpoilerState();
         let anyResults = false;
-        const titleMatches = Array.from(defaultShownEntries).filter((n) => n.toLowerCase().includes(lowerText));
-        const contentMatches = Array.from(defaultShownEntries)
+        const titleMatches = Array.from(allowedEntries).filter((n) => n.toLowerCase().includes(lowerText));
+        const previewContents = Array.from(allowedEntries)
             .map((n) => allEntries.get(n)!)
-            .filter((e) => e !== undefined && e.content.toLowerCase().includes(lowerText));
+            .filter((e) => e !== undefined)
+            .map((e) => {
+                return {
+                    name: e.name,
+                    previewContent: createPreviewContent(e.content, spoilersState),
+                };
+            });
+        const contentMatches = previewContents.filter((e) => e.previewContent.toLowerCase().includes(lowerText));
 
         if (titleMatches.length > 0) {
             anyResults = true;
@@ -742,6 +748,8 @@ jq(function ($) {
                 if (lastPeriod > -1) {
                     // Found a period, chop the match off there
                     matchText = matchText.substring(0, lastPeriod + 1);
+                } else if (matchText.length > 0) {
+                    matchText += "...";
                 }
 
                 if (matchText.length === 0) {
@@ -780,16 +788,18 @@ jq(function ($) {
 
             for (const entry of contentMatches) {
                 // Determine the page preview
-                let matchIndex = entry.content.toLowerCase().indexOf(lowerText);
+                let matchIndex = entry.previewContent.toLowerCase().indexOf(lowerText);
                 const entryIndex = Math.max(0, matchIndex - 150);
-                let matchText = entry.content.substring(entryIndex, entryIndex + 300);
+                let matchText = entry.previewContent.substring(entryIndex, entryIndex + 300);
                 matchIndex = matchText.toLowerCase().indexOf(lowerText);
                 const firstPeriodIndex = matchText.indexOf(". ");
 
-                if (firstPeriodIndex < matchIndex) {
+                if (firstPeriodIndex !== -1 && firstPeriodIndex < matchIndex) {
                     // Found a sentence end before the match
                     // Start at the first sentence before the match
                     matchText = matchText.substring(firstPeriodIndex + 2);
+                } else if (matchText.length > 0) {
+                    matchText = "..." + matchText;
                 }
 
                 matchIndex = matchText.toLowerCase().indexOf(lowerText);
@@ -797,6 +807,8 @@ jq(function ($) {
                 if (lastPeriodIndex > -1 && lastPeriodIndex > matchIndex) {
                     // Found a period after the search, chop the match off there
                     matchText = matchText.substring(0, lastPeriodIndex + 1);
+                } else if (matchText.length > 0) {
+                    matchText = matchText + "...";
                 }
 
                 if (matchText.length === 0) {
@@ -887,6 +899,37 @@ jq(function ($) {
         } else {
             history.replaceState("Home", "", "wiki.html");
             setSelectedPage("Home");
+        }
+    }
+
+    // Updates the available page select options
+    function updateAllowedPages(selectedPage: string | undefined = undefined) {
+        function addOption(optionName: string) {
+            allowedEntries.add(optionName);
+        }
+
+        allowedEntries.clear();
+
+        addOption("Home");
+        if (selectedPage !== undefined) {
+            addOption(selectedPage);
+        }
+
+        const allPageNames = Array.from(allEntries.keys());
+        allPageNames.sort();
+        const spoilersState = getSpoilerState();
+
+        for (const pageName of allPageNames) {
+            const entry = allEntries.get(pageName)!;
+            if (canShowSpoiler(entry.spoiler, spoilersState)) {
+                addOption(pageName);
+            }
+        }
+
+        if (selectedPage === undefined) {
+            tryLoadFromHash(false);
+        } else {
+            setSelectedPage(selectedPage);
         }
     }
 
@@ -1059,37 +1102,6 @@ jq(function ($) {
 
         // Append to DOM
         pageContent.append(content as any);
-    }
-
-    // Updates the available page select options
-    function updateAvailablePages(selectedPage: string | undefined = undefined) {
-        function addOption(optionName: string) {
-            defaultShownEntries.add(optionName);
-        }
-
-        defaultShownEntries.clear();
-
-        addOption("Home");
-        if (selectedPage !== undefined) {
-            addOption(selectedPage);
-        }
-
-        const allPageNames = Array.from(allEntries.keys());
-        allPageNames.sort();
-        const spoilersState = getSpoilerState();
-
-        for (const pageName of allPageNames) {
-            const entry = allEntries.get(pageName)!;
-            if (canShowSpoiler(entry.spoiler, spoilersState)) {
-                addOption(pageName);
-            }
-        }
-
-        if (selectedPage === undefined) {
-            tryLoadFromHash(false);
-        } else {
-            setSelectedPage(selectedPage);
-        }
     }
 
     // Updates the page content with the specified part

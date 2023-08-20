@@ -27,46 +27,46 @@ type AllowedContentType = "InlineOnly" | "InlineList" | "All";
 class ParserState {
     allEntries: Map<string, WikiEntry>;
     errors: string[];
-    entry: WikiEntry;
     images: Set<string>;
     inSpoiler: boolean;
     initialContent: string;
     index: number;
     inlineOnly: AllowedContentType;
+    preview: boolean;
     output: OutputGroup[];
     spoiler: Spoiler;
 
     constructor(
         allEntries: Map<string, WikiEntry>,
-        entry: WikiEntry,
         errors: string[],
         images: Set<string>,
         inSpoiler: boolean,
         initialContent: string,
         inlineOnly: AllowedContentType,
+        preview: boolean,
         spoiler: Spoiler,
     ) {
         this.allEntries = allEntries;
         this.errors = errors;
-        this.entry = entry;
         this.images = images;
         this.inSpoiler = inSpoiler;
         this.initialContent = initialContent;
         this.index = 0;
         this.inlineOnly = inlineOnly;
         this.output = [];
+        this.preview = preview;
         this.spoiler = spoiler;
     }
 
     static Clone(state: ParserState): ParserState {
         return new ParserState(
             state.allEntries,
-            state.entry,
             state.errors,
             state.images,
             state.inSpoiler,
             state.initialContent,
             state.inlineOnly,
+            state.preview,
             state.spoiler,
         );
     }
@@ -86,7 +86,7 @@ export function createContentHtml(
     const initialContent = entry.content.replace(/([^\[])\[([\w\/]*)\]/g, (_, p1, p2) => {
         return `${p1}{{${p2}}}`;
     });
-    const state = new ParserState(allEntries, entry, [], new Set<string>(), false, initialContent, "All", spoilerState);
+    const state = new ParserState(allEntries, [], new Set<string>(), false, initialContent, "All", false, spoilerState);
     processSection(state, undefined);
 
     // Combine all alt names as part of the title
@@ -109,6 +109,39 @@ export function createContentHtml(
         errors: state.errors,
         images: state.images,
     };
+}
+
+// Creates the preview content for a search result
+// This strips out any spoiler/redacted tags as well as their internal content
+// if not allowed by current spoiler level
+export function createPreviewContent(content: string, spoilerState: Spoiler): string {
+    const spoilerRegex = /(\[\[Spoiler\]\])(.*?)(\[\[\/Spoiler\]\])/s;
+    const redactedRegex = /(\[\[Redacted\]\])(.*?)(\[\[\/Redacted\]\])/s;
+
+    function stripSpoilerContent(regex: RegExp, spoiler: Spoiler) {
+        let result: RegExpExecArray | null;
+        do {
+            // Remove spoilers from the preview. If we can show the spoilers then
+            // just remove the tags but display the content. Otherwise remove the
+            // entire interior section.
+            result = regex.exec(content);
+            if (result !== null) {
+                if (canShowSpoiler(spoiler, spoilerState)) {
+                    content =
+                        content.substring(0, result.index) +
+                        result[2] +
+                        content.substring(result.index + result[0].length);
+                } else {
+                    content = content.substring(0, result.index) + content.substring(result.index + result[0].length);
+                }
+            }
+        } while (result !== null);
+    }
+
+    stripSpoilerContent(spoilerRegex, "Spoiler");
+    stripSpoilerContent(redactedRegex, "Redacted");
+
+    return content;
 }
 
 function getLinkHtml(state: ParserState, referenceEntry: WikiEntry, linkText: string) {
