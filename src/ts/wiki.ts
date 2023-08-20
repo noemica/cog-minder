@@ -743,12 +743,13 @@ jq(function ($) {
                 // Determine the page preview
                 const entry = allEntries.get(titleMatch)!;
                 let matchText = entry.content.substring(0, 200);
+                const fullText = entry.content.length <= 200;
                 const lastPeriod = matchText.lastIndexOf(". ");
 
                 if (lastPeriod > -1) {
                     // Found a period, chop the match off there
                     matchText = matchText.substring(0, lastPeriod + 1);
-                } else if (matchText.length > 0) {
+                } else if (matchText.length > 0 && !fullText) {
                     matchText += "...";
                 }
 
@@ -790,7 +791,9 @@ jq(function ($) {
                 // Determine the page preview
                 let matchIndex = entry.previewContent.toLowerCase().indexOf(lowerText);
                 const entryIndex = Math.max(0, matchIndex - 150);
-                let matchText = entry.previewContent.substring(entryIndex, entryIndex + 300);
+                let matchText = entry.previewContent.substring(entryIndex, matchIndex + 150);
+                const fullTextBefore = entryIndex == 0;
+                const fullTextAfter = matchIndex + 150 >= entry.previewContent.length;
                 matchIndex = matchText.toLowerCase().indexOf(lowerText);
                 const firstPeriodIndex = matchText.indexOf(". ");
 
@@ -798,7 +801,7 @@ jq(function ($) {
                     // Found a sentence end before the match
                     // Start at the first sentence before the match
                     matchText = matchText.substring(firstPeriodIndex + 2);
-                } else if (matchText.length > 0) {
+                } else if (matchText.length > 0 && !fullTextBefore) {
                     matchText = "..." + matchText;
                 }
 
@@ -807,7 +810,7 @@ jq(function ($) {
                 if (lastPeriodIndex > -1 && lastPeriodIndex > matchIndex) {
                     // Found a period after the search, chop the match off there
                     matchText = matchText.substring(0, lastPeriodIndex + 1);
-                } else if (matchText.length > 0) {
+                } else if (matchText.length > 0 && !fullTextAfter) {
                     matchText = matchText + "...";
                 }
 
