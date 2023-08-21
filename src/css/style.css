@@ -900,7 +900,6 @@ a {
     color: #00cc00;
 }
 
-
 .spoiler-text,
 .spoiler-text * {
     transition: .15s;
@@ -924,12 +923,12 @@ a {
     color: transparent;
 }
 
-.spoiler-text:hover,
-.spoiler-text:focus {
+.spoiler-text:hover:not(.spoiler-table),
+.spoiler-text:focus:not(.spoiler-table) {
     background-color: #202020;
 }
 
-.spoiler-text:not(:focus):not(:hover) > a:not(:focus) {
+.spoiler-text:not(:focus):not(:hover) a:not(:focus) {
     user-select: none;
     color: transparent;
 }
@@ -949,6 +948,15 @@ a {
 
 .spoiler-image:not(:focus):not(:hover) > img {
     filter: grayscale(40%) blur(5px);
+}
+
+.spoiler-table {
+    /* Nothing set on spoiler-table by itself */
+}
+
+.spoiler-table:not(:focus):not(:hover) * {
+    user-select: none;
+    color: transparent;
 }
 
 .location-image {
@@ -1185,6 +1193,21 @@ a {
 
 .wiki-table>tbody>tr>* {
     padding: 0.25rem 0.25rem;
+}
+
+.wiki-cell-good {
+    color: #dadada;
+    background-color: #005000;
+}
+
+.wiki-cell-neutral {
+    color: #dadada;
+    background-color: #505000;
+}
+
+.wiki-cell-bad {
+    color: #dadada;
+    background-color: #600000;
 }
 
 .wiki-search {

@@ -7,6 +7,7 @@ import {
     createItemDataContent,
     escapeHtml,
     createLocationHtml,
+    parseIntOrDefault,
 } from "./common";
 import { MapLocation, Spoiler } from "./commonTypes";
 import { WikiEntry } from "./wikiTypes";
@@ -867,9 +868,9 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
     const endIndex = startIndex + tableResult.index - result[0].length;
     const rowSplit = splitOutsideActions(state.initialContent.substring(startIndex, endIndex), "||");
 
-    let tableContent = `<table class="wiki-table"><tbody>`;
+    let tableContent = `<table class="wiki-table${state.inSpoiler ? " spoiler-text spoiler-table" : ""}"><tbody>`;
     let isHeaderRow = true;
-    let columnCount = 0;
+    let totalColumnCount = 0;
     let row = 0;
 
     // Parse each row
@@ -877,28 +878,74 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
         const cellSplit = splitOutsideActions(tableRow);
 
         if (isHeaderRow) {
-            columnCount = cellSplit.length;
-        } else {
-            if (columnCount != cellSplit.length) {
-                recordError(state, `Found ${cellSplit.length} columns in row ${row + 1} but header had ${columnCount}`);
-            }
+            totalColumnCount = cellSplit.length;
         }
 
         tableContent += "<tr>";
 
-        for (const cell of cellSplit) {
+        let currentColumnCount = 0;
+        for (let cell of cellSplit) {
+            let cellStyle: string | undefined = undefined;
+            const cellStyleResult = /\[\[CellStyle:(.*?)\]\]/.exec(cell);
+            if (cellStyleResult !== null) {
+                if (cellStyleResult[1] === "Good") {
+                    cellStyle = "wiki-cell-good";
+                } else if (cellStyleResult[1] === "Neutral") {
+                    cellStyle = "wiki-cell-neutral";
+                } else if (cellStyleResult[1] === "Bad") {
+                    cellStyle = "wiki-cell-bad";
+                } else {
+                    recordError(
+                        state,
+                        `Found invalid table cell style ${cellStyleResult[1]}, expected types are Good Neutral and Bad`,
+                    );
+                }
+
+                cell = cell.substring(cellStyleResult[0].length);
+            }
+
+            let cellSpan: string | undefined = undefined;
+            const cellSpanResult = /\[\[CellSpan:(.*?)\]\]/.exec(cell);
+            if (cellSpanResult !== null) {
+                cellSpan = cellSpanResult[1];
+
+                cell = cell.substring(cellSpanResult[0].length);
+                currentColumnCount += parseIntOrDefault(cellSpanResult[1], 1);
+            } else {
+                currentColumnCount += 1;
+            }
+
             const tempState = ParserState.Clone(state);
             tempState.initialContent = cell;
             tempState.inlineOnly = "InlineOnly";
             processSection(tempState, undefined);
             const cellHtml = outputGroupsToHtml(tempState.output, state.inSpoiler, true, false);
 
+            const styleClasses: string[] = [];
+            if (cellStyle !== undefined) {
+                styleClasses.push(cellStyle);
+            }
+
+            if (state.inSpoiler) {
+                // styleClasses.push("spoiler-text");
+            }
+
+            const cellStyleHtml = styleClasses.length === 0 ? "" : ` class = "${styleClasses.join(" ")}"`;
+            const cellSpanHtml = cellSpan === undefined ? "" : ` colspan="${cellSpan}"`;
+
             // Append cell HTML
             if (isHeaderRow) {
-                tableContent += `<th>${cellHtml}</th>`;
+                tableContent += `<th${cellStyleHtml}${cellSpanHtml}>${cellHtml}</th>`;
             } else {
-                tableContent += `<td>${cellHtml}</td>`;
+                tableContent += `<td${cellStyleHtml}${cellSpanHtml}>${cellHtml}</td>`;
             }
+        }
+
+        if (currentColumnCount != totalColumnCount) {
+            recordError(
+                state,
+                `Found ${currentColumnCount} columns in row ${row + 1} but header had ${totalColumnCount}`,
+            );
         }
 
         tableContent += "</tr>";
