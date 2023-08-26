@@ -276,7 +276,9 @@ function processGameTextTag(state: ParserState, result: RegExpExecArray) {
         tempState.output,
         state.inSpoiler,
         true,
-    )}</span>`;
+    )}</span>`
+        .replace("{{", "[")
+        .replace("}}", "]");
 
     state.output.push({ groupType: "Grouped", html: gameTextContent });
 }
