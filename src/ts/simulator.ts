@@ -1681,7 +1681,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from <a class="d-
         const initialMomentum = parseIntOrDefault($("#initialMomentumInput").val() as string, 0);
 
         // Determine sneak attack strategy
-        const sneakAttackStrategy = $("#sneakAttackSelect").selectpicker("val" as any) as SneakAttackStrategy;
+        const sneakAttackStrategy = $("#sneakAttackSelect").selectpicker("val") as any as SneakAttackStrategy;
 
         // Calculate total (ranged) or initial (melee) volley time
         const actuatorPercent = Math.max(0, Math.min(99, parseIntOrDefault($("#actuatorInput").val() as string, 0)));

@@ -46,6 +46,9 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Imp. Corruption Guard": { active: "Part Active", trait: { kind: "CorruptionReduce", amount: 12 } },
     "Exp. Corruption Guard": { active: "Part Active", trait: { kind: "CorruptionReduce", amount: 20 } },
 
+    // Critical immunity
+    "Graphene Brace": { active: "Always", trait: { kind: "CriticalImmunity" } },
+
     // Damage reduction
     "Shield Generator": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: false } },
     "Imp. Shield Generator": {

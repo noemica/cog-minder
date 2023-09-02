@@ -326,7 +326,10 @@ function applyDamage(
 
         // Remove all criticals from totally immune bots
         if (critical !== undefined) {
-            if (botState.immunities.includes(BotImmunity.Criticals)) {
+            if (
+                botState.immunities.includes(BotImmunity.Criticals) ||
+                getDefensiveStatePart(botState.defensiveState.critImmunity) !== undefined
+            ) {
                 critical = undefined;
             }
         }
@@ -696,6 +699,7 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
         corruptionIgnore: [],
         corruptionPrevent: [],
         corruptionReduce: [],
+        critImmunity: [],
         damageReduction: [],
         rangedAvoid: [],
         shieldings: {
@@ -738,6 +742,11 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
             // Corruption Screen part
             state.corruptionReduce.push({
                 amount: (part.def.specialProperty!.trait as CorruptionReduce).amount,
+                part: part,
+            });
+        } else if (hasActiveSpecialProperty(part.def, true, "CriticalImmunity")) {
+            // Critical immunity part
+            state.critImmunity.push({
                 part: part,
             });
         } else if (hasActiveSpecialProperty(part.def, true, "DamageReduction")) {

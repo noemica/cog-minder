@@ -37,6 +37,8 @@ export type CorruptionReductionPart = SpecialPart & {
     amount: number;
 };
 
+export type CriticalImmunityPart = SpecialPart;
+
 export type DamageReductionPart = SpecialPart & {
     reduction: number;
     remote: boolean;
@@ -56,6 +58,7 @@ export type DefensiveState = {
     corruptionIgnore: CorruptionAvoidPart[];
     corruptionPrevent: CorruptionPreventPart[];
     corruptionReduce: CorruptionReductionPart[];
+    critImmunity: CriticalImmunityPart[];
     damageReduction: DamageReductionPart[];
     rangedAvoid: RangedAvoidPart[];
     shieldings: Record<ItemSlot | "Core", ShieldingPart[]>;
