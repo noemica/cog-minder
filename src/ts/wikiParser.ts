@@ -33,7 +33,6 @@ class ParserState {
     initialContent: string;
     index: number;
     inlineOnly: AllowedContentType;
-    preview: boolean;
     output: OutputGroup[];
     spoiler: Spoiler;
 
@@ -44,7 +43,6 @@ class ParserState {
         inSpoiler: boolean,
         initialContent: string,
         inlineOnly: AllowedContentType,
-        preview: boolean,
         spoiler: Spoiler,
     ) {
         this.allEntries = allEntries;
@@ -55,7 +53,6 @@ class ParserState {
         this.index = 0;
         this.inlineOnly = inlineOnly;
         this.output = [];
-        this.preview = preview;
         this.spoiler = spoiler;
     }
 
@@ -67,7 +64,6 @@ class ParserState {
             state.inSpoiler,
             state.initialContent,
             state.inlineOnly,
-            state.preview,
             state.spoiler,
         );
     }
@@ -87,7 +83,7 @@ export function createContentHtml(
     const initialContent = entry.content.replace(/([^\[])\[([\w\/]*)\]/g, (_, p1, p2) => {
         return `${p1}{{${p2}}}`;
     });
-    const state = new ParserState(allEntries, [], new Set<string>(), false, initialContent, "All", false, spoilerState);
+    const state = new ParserState(allEntries, [], new Set<string>(), false, initialContent, "All", spoilerState);
     processSection(state, undefined);
 
     // Combine all alt names as part of the title
@@ -118,6 +114,7 @@ export function createContentHtml(
 export function createPreviewContent(content: string, spoilerState: Spoiler): string {
     const spoilerRegex = /(\[\[Spoiler\]\])(.*?)(\[\[\/Spoiler\]\])/s;
     const redactedRegex = /(\[\[Redacted\]\])(.*?)(\[\[\/Redacted\]\])/s;
+    const imageRegex = /\[\[Image\]\](.*?)\[\[\/Image\]\]/s;
 
     function stripSpoilerContent(regex: RegExp, spoiler: Spoiler) {
         let result: RegExpExecArray | null;
@@ -141,6 +138,7 @@ export function createPreviewContent(content: string, spoilerState: Spoiler): st
 
     stripSpoilerContent(spoilerRegex, "Spoiler");
     stripSpoilerContent(redactedRegex, "Redacted");
+    content = content.replace(imageRegex, "");
 
     return content;
 }
@@ -662,13 +660,19 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
 
     // Create the lore with an optional caption
     state.output.push({ groupType: "Separator", html: undefined });
-    if (groupName.includes("Records")) {
+    if (groupName == "0b10 Records") {
         state.output.push({
             groupType: "Grouped",
             html: `<span class="wiki-game-text">&gt;Query(${entryName})</span>`,
         });
+        state.output.push({ groupType: "Separator", html: undefined });
+    } else if (groupName == "WAR.Sys Records") {
+        state.output.push({
+            groupType: "Grouped",
+            html: `<span class="wiki-game-text">Intel "${entryName}"</span>`,
+        });
+        state.output.push({ groupType: "Separator", html: undefined });
     }
-    state.output.push({ groupType: "Separator", html: undefined });
     state.output.push({
         groupType: "Grouped",
         html: `<span class="wiki-game-text">${escapeHtml(entry["Content"])}</span>`,

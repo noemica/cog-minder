@@ -741,9 +741,8 @@ jq(function ($) {
 
             for (const titleMatch of titleMatches) {
                 // Determine the page preview
-                const entry = allEntries.get(titleMatch)!;
-                let matchText = entry.content.substring(0, 200);
-                const fullText = entry.content.length <= 200;
+                let matchText = previewContents.find((p) => p.name === titleMatch)!.previewContent;
+                const fullText = matchText.length <= 200;
                 const lastPeriod = matchText.lastIndexOf(". ");
 
                 if (lastPeriod > -1) {
