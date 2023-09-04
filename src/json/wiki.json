@@ -7931,7 +7931,7 @@
   },
   {
    "Name": "Surveillance Squad",
-   "Content": ""
+   "Content": "[[Image]]Surveillance Squad.png|A Watcher surveillance squad[[/Image]]\nSurveillance squads are [[0b10]] aligned [[Squad|squads]] that roam the map looking for hostiles to report to 0b10 combat bots. They consist only of a single [[Watcher]]. This is a [[W-16 Scout]] on -10 and -9, a [[W-25 Informer]] on -8 through -5, and a [[W-44 Eye]] on -4 through -1. They can be Enumerated at [[Terminal|Terminals]]. They patrol between two points at a slow pace, then turn back around when they reach the end. The [[Garrison Machine]] hack [[Spoiler]]Trojan(Watchers)[[/Spoiler]] reports where all Watchers are at all times."
   },
   {
    "Name": "Terminal",
