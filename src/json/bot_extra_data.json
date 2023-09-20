@@ -774,7 +774,7 @@
         ],
         "Locations": [
             {
-                "Location": "0b10 maps -10 through -6",
+                "Location": "0b10 maps -5 through -3",
                 "Description": "Hostile: Demolishers are summoned when a large group of hostiles are together or during an assembled infestation"
             }
         ]
@@ -785,7 +785,7 @@
         ],
         "Locations": [
             {
-                "Location": "0b10 maps -10 through -6",
+                "Location": "0b10 maps -2 through -1",
                 "Description": "Hostile: Demolishers are summoned when a large group of hostiles are together or during an assembled infestation"
             }
         ]
