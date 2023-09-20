@@ -742,14 +742,14 @@ jq(function ($) {
             for (const titleMatch of titleMatches) {
                 // Determine the page preview
                 let matchText = previewContents.find((p) => p.name === titleMatch)!.previewContent;
-                const fullText = matchText.length <= 200;
+                const fullText = matchText.length <= 250;
                 const lastPeriod = matchText.lastIndexOf(". ");
 
-                if (lastPeriod > -1) {
+                if (lastPeriod > -1 && lastPeriod <= 250) {
                     // Found a period, chop the match off there
                     matchText = matchText.substring(0, lastPeriod + 1);
                 } else if (matchText.length > 0 && !fullText) {
-                    matchText += "...";
+                    matchText = matchText.substring(0, 250) + "...";
                 }
 
                 if (matchText.length === 0) {
