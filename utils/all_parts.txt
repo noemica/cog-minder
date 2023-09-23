@@ -413,13 +413,14 @@ Imp. Weapon Shielding
 Exp. Weapon Shielding
 Zio. Weapon Casing
 Backup Plating I
+Backup Plating III
+Backup Plating VII
 Lgt. Armor Plating
 Med. Armor Plating
 Hvy. Armor Plating
 Zio. Light Carapace
 Zio. Heavy Carapace
 Hrd. Light Armor Plating
-Backup Plating III
 Hrd. Medium Armor Plating
 Hrd. Heavy Armor Plating
 Imp. Light Armor Plating
@@ -429,7 +430,6 @@ Lyr. Light Armor Plating
 Mak. Armor Plating
 Lyr. Medium Armor Plating
 Lyr. Heavy Armor Plating
-Backup Plating VII
 Centrium Light Armor Plating
 Centrium Medium Armor Plating
 Centrium Heavy Armor Plating
