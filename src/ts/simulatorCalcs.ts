@@ -222,7 +222,7 @@ function applyDamage(
     ) {
         // Determine hit part (13)
         const { part, partIndex } = getHitPart(botState, coreBonus, damageType, isOverflow, forceCore, armorAnalyzed);
-        applyDamageChunkToPart(damage, damageType, critical, disruptChance, spectrum, part, partIndex);
+        applyDamageChunkToPart(damage, damageType, critical, disruptChance, spectrum, isOverflow, part, partIndex);
     }
 
     function destroyPart(
@@ -313,6 +313,7 @@ function applyDamage(
         critical: Critical | undefined,
         disruptChance: number,
         spectrum: number,
+        isOverflow: boolean,
         part: SimulatorPart | undefined,
         partIndex: number,
     ) {
@@ -387,7 +388,7 @@ function applyDamage(
         // Handle core hit
         if (part === undefined) {
             // Try to get shielding
-            const shielding = getShieldingType(botState, "Core");
+            const shielding = isOverflow ? undefined : getShieldingType(botState, "Core");
 
             // Remove crit types that apply to the core if immunity or shielding (14)
             if (
@@ -465,7 +466,7 @@ function applyDamage(
                 if (part.def.size === 1) {
                     // Single-slot items get blasted off
                     // Deal damage first, then destroy as a critical part removal if still intact
-                    applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, part, partIndex);
+                    applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, false, part, partIndex);
 
                     // Dismemberment immunity stops the blasting off part
                     if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
@@ -473,12 +474,12 @@ function applyDamage(
                     }
                 } else {
                     // Multi-slot items don't get blasted off but still take damage
-                    applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, part, partIndex);
+                    applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, false, part, partIndex);
                 }
             } else if (critical === Critical.Phase) {
                 // Apply phasing damage to another random part
                 const { part, partIndex } = getRandomNonCorePart(botState, undefined);
-                applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, part, partIndex);
+                applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, false, part, partIndex);
             }
 
             return;
@@ -486,7 +487,8 @@ function applyDamage(
 
         // Handle non-core hit
         // Try to get shielding for non-protection parts
-        const shielding = part.def.type === ItemType.Protection ? undefined : getShieldingType(botState, part.def.slot);
+        const shielding =
+            part.def.type === ItemType.Protection || isOverflow ? undefined : getShieldingType(botState, part.def.slot);
 
         // Check for crit immunity or shielding (14)
         if (shielding !== undefined && doesCriticalDestroyPart(critical)) {
@@ -573,7 +575,7 @@ function applyDamage(
             if (part.def.size === 1) {
                 // Single-slot items get blasted off
                 // Deal damage first, then destroy as a critical part removal if still intact
-                applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, part, partIndex);
+                applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, false, part, partIndex);
 
                 // Dismemberment immunity stops the blasting off part
                 if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
@@ -581,11 +583,11 @@ function applyDamage(
                 }
             } else {
                 // Multi-slot items don't get blasted off but still take damage
-                applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, part, partIndex);
+                applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, false, part, partIndex);
             }
         } else if (critical === Critical.Phase) {
             // Apply phasing damage to the core
-            applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, undefined, -1);
+            applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, false, undefined, -1);
         }
 
         if (engineExplosion) {
