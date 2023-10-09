@@ -298,7 +298,7 @@
         "Locations": [
             {
                 "Location": "Testing",
-                "Description": "Hostile: Guarding the SGEMP Prototype"
+                "Description": "Hostile: Guarding the SGEMP Prototype in the top or bottom left corner of the map"
             },
             {
                 "Location": "Testing event",
@@ -391,7 +391,7 @@
             },
             {
                 "Location": "DSF event",
-                "Description": "Hostile:  Appear in waves of small groups shortly after entering the map"
+                "Description": "Hostile: Appear in waves of small groups shortly after entering the map"
             },
             {
                 "Location": "Zion Deep Caves",
@@ -1042,6 +1042,10 @@
             {
                 "Location": "Warlord",
                 "Description": "Hostile: Appear as reinforcements during the 0b10 attack"
+            },
+            {
+                "Location": "-2 Research Warlord Invasion",
+                "Description": "Hostile: Appear as 0b10 reinforcements as part of Assault squads"
             },
             {
                 "Location": "Section 7",
@@ -2395,9 +2399,17 @@
                 "Description": "Hostile: Appear as reinforcements during the 0b10 attack"
             },
             {
+                "Location": "Testing",
+                "Description": "Hostile: 2 guard the SGEMP Prototype in the top or bottom left corner of the map"
+            },
+            {
                 "Location": "Section 7",
                 "Description": "Dormant Hostile: 2 guard the top right corner of the Leopard hangar near the Sigix Shearguns and 2 more guard the inside of the storage area",
                 "Spoiler": "Redacted"
+            },
+            {
+                "Location": "-2 Research Warlord Invasion",
+                "Description": "Hostile: Appear as 0b10 reinforcements as part of Assault squads"
             }
         ]
     },
