@@ -1425,14 +1425,15 @@ export async function initData(
     const itemPromises: Promise<any>[] = [];
 
     // Create items
-    Object.keys(items).forEach((itemName, index) => {
-        if (itemName === "default") {
+    Object.keys(items).forEach((key, index) => {
+        if (key === "default") {
             // Not sure why this "default" pops up but it messes things up
             // Maybe an artifact of being imported as a JSON file
             return;
         }
 
-        const item = (items as { [key: string]: JsonItem })[itemName];
+        const item = (items as { [key: string]: JsonItem })[key];
+        const itemName = item.Name;
         let newItem: Item;
 
         let category: ItemRatingCategory = (<any>ItemRatingCategory)[item.Category ?? ""];
@@ -1747,8 +1748,8 @@ export async function initData(
 
     if (bots !== undefined) {
         // Create bots
-        Object.keys(bots).forEach((botName) => {
-            if (botName === "default") {
+        Object.keys(bots).forEach((key) => {
+            if (key === "default") {
                 // Not sure why this "default" pops up but it messes things up
                 // Maybe an artifact of being imported as a JSON file
                 return;
@@ -1775,7 +1776,8 @@ export async function initData(
                     return largest + sum;
                 }
             }
-            const bot = (bots as any as { [key: string]: JsonBot })[botName];
+            const bot = (bots as any as { [key: string]: JsonBot })[key];
+            const botName = bot.Name;
             const itemCoverage =
                 (bot.Armament?.reduce(sumItemCoverage, 0) ?? 0) + (bot.Components?.reduce(sumItemCoverage, 0) ?? 0);
 

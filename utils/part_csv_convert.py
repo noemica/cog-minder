@@ -249,7 +249,7 @@ def get_slot(row):
 
 
 index_lookup = {}
-all_values = {}
+all_values = []
 
 with open(input_path) as f:
     # Escape a few quotes to properly parse
@@ -299,10 +299,10 @@ for row in reader:
 
         values['Full Name'] = full_name
 
-        all_values[values['Name']] = values
+        all_values.append(values)
 
 with open(output_path, 'w') as f:
     json.dump(all_values, f)
 
 with open (all_parts_output_path, 'w') as f:
-    f.writelines('\n'.join(all_values.keys()))
+    f.writelines('\n'.join([x['Name'] for x in all_values]))

@@ -150,7 +150,7 @@ def get_parts(part_strings):
     return parts
 
 index_lookup = {}
-all_values = {}
+all_values = []
 
 with open(input_path) as f:
     string = f.read()
@@ -224,7 +224,7 @@ for row in reader:
         values['Overload Speed'] = overload_speeds[values['Name']]
         values['Overload Speed %'] = overload_speed_percentages[values['Name']]
 
-    all_values[values['Name']] = values
+    all_values.append(values)
 
 with open(output_path, 'w') as f:
     json.dump(all_values, f)
