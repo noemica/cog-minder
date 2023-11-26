@@ -90,7 +90,12 @@ name_replacements = {
     'Infiltrator': ['Infiltrator (6)', 'Infiltrator (7)', 'Infiltrator (8)'],
     'God Mode': ['God Mode (Fake)', 'God Mode'],
     'Warlord': ['Warlord', 'Warlord (Command)'],
-    'MAIN.C': ['MAIN.C (Shell)', 'MAIN.C']
+    'MAIN.C': ['MAIN.C (Shell)', 'MAIN.C'],
+    "Player": ['Cogmind'],
+}
+
+class_replacements = {
+    'Cogmind': 'Cogmind'
 }
 
 skip_bots = set([
@@ -101,7 +106,6 @@ skip_bots = set([
     'Lesser Abomination',
     'Major Abomination',
     'Minor Abomination',
-    'Player',
     'Player 2',
     'Sauler',
     'Ultimate Abomination',
@@ -216,6 +220,9 @@ for row in reader:
             raise Exception('Missing enough entries for duplicate {}'.format(values['Name']))
 
         values['Name'] = names.pop(0)
+
+    if values['Name'] in class_replacements:
+        values['Class'] = class_replacements[values['Name']]
 
     if values['Name'] in all_values:
         raise Exception('Duplicate name {}'.format(values['Name']))

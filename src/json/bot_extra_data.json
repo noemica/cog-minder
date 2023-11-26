@@ -712,6 +712,10 @@
             }
         ]
     },
+    "Cogmind": {
+        "Categories": [],
+        "Locations": []
+    },
     "Combat Drone": {
         "Categories": [
             "Derelict",
