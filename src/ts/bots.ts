@@ -44,7 +44,7 @@ jq(function ($) {
             }
 
             const damageArray = damageString
-                .split("-")
+                .split("~")
                 .map((s) => s.trim())
                 .map((s) => parseInt(s));
             return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
