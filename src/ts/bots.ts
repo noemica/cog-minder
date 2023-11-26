@@ -1,7 +1,15 @@
 import * as bots from "../json/bots.json";
 import * as items from "../json/items.json";
 import { Bot } from "./botTypes";
-import { botData, createBotDataContent, getBot, initData, leetSpeakMatchTransform, nameToId } from "./common";
+import {
+    botData,
+    createBotDataContent,
+    getBot,
+    initData,
+    leetSpeakMatchTransform,
+    nameToId,
+    parseIntOrDefault,
+} from "./common";
 import {
     getSpoilerState,
     getSelectedButtonId,
@@ -36,6 +44,14 @@ jq(function ($) {
         factionWarlord: "Warlord",
         factionZionite: "Zionite",
     };
+
+    const movementSpeedRegex = /\((\d*)/;
+    function movementSpeedSort(a: string, b: string) {
+        const aValue = parseIntOrDefault(movementSpeedRegex.exec(a)![1], 0);
+        const bValue = parseIntOrDefault(movementSpeedRegex.exec(b)![1], 0);
+
+        return aValue - bValue;
+    }
 
     function salvePotentialSort(a: string, b: string) {
         function getAverage(damageString: string) {
@@ -78,7 +94,7 @@ jq(function ($) {
             { name: "Visual Range", propertyName: "visualRange" },
             { name: "Memory" },
             { name: "Spot %", propertyName: "spotPercent" },
-            { name: "Movement" },
+            { name: "Movement", sorter: movementSpeedSort },
             { name: "Core Integrity", propertyName: "coreIntegrity" },
             { name: "Core Exposure", propertyName: "coreExposure" },
             { name: "Salvage Potential", propertyName: "salvagePotential", sorter: salvePotentialSort },
