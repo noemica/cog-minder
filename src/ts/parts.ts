@@ -1336,7 +1336,7 @@ jq(function ($) {
         if (depthValue.length > 0) {
             const depthNum = Math.abs(parseInt(depthValue));
 
-            if (depthNum != NaN) {
+            if (!Number.isNaN(depthNum)) {
                 const terminalModifier = terminalLevelMap[getSelectedButtonId($("#schematicsContainer"))];
                 const hackLevel = 10 - depthNum + terminalModifier;
 

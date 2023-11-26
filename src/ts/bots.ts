@@ -15,6 +15,7 @@ import {
 import * as jQuery from "jquery";
 import "popper.js";
 import "bootstrap";
+import { MappedSettings, TablesorterHeading, TextSorter } from "tablesorter";
 import "tablesorter";
 
 const jq = jQuery.noConflict();
@@ -36,11 +37,31 @@ jq(function ($) {
         factionZionite: "Zionite",
     };
 
+    function salvePotentialSort(a: string, b: string) {
+        function getAverage(damageString: string) {
+            if (typeof damageString != "string" || damageString === "") {
+                return 0;
+            }
+
+            const damageArray = damageString
+                .split("-")
+                .map((s) => s.trim())
+                .map((s) => parseInt(s));
+            return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
+        }
+
+        const aValue = getAverage(a);
+        const bValue = getAverage(b);
+
+        return aValue - bValue;
+    }
+
     // Categories to show for spreadsheet view
     type botCategory = {
         name: string;
         propertyName?: string;
         propertyNames?: string[];
+        sorter?: TextSorter;
     };
     const batCategoryLookup: { [key: string]: botCategory[] } = {
         Overview: [
@@ -60,7 +81,7 @@ jq(function ($) {
             { name: "Movement" },
             { name: "Core Integrity", propertyName: "coreIntegrity" },
             { name: "Core Exposure", propertyName: "coreExposure" },
-            { name: "Salvage Potential", propertyName: "salvagePotential" },
+            { name: "Salvage Potential", propertyName: "salvagePotential", sorter: salvePotentialSort },
         ],
         Parts: [
             { name: "Armament", propertyName: "armamentString" },
@@ -179,11 +200,26 @@ jq(function ($) {
             table.append(row[0]);
         });
 
+        // Assign special sorters
+        const textSorter: MappedSettings<TextSorter> = {};
+        const headers: { [index: number]: TablesorterHeading } = {};
+        let columnIndex = 0;
+        Object.keys(lookup).forEach((categoryName) => {
+            const categoryList = lookup[categoryName];
+            categoryList.forEach((category) => {
+                if (category.sorter !== undefined) {
+                    headers[columnIndex] = { sorter: "text" };
+                    textSorter[columnIndex] = category.sorter;
+                }
+
+                columnIndex += 1;
+            });
+        });
+
         table.tablesorter({
             selectorHeaders: "> thead > tr:nth-child(2) > th",
-            textSorter: function (a, b) {
-                return a.localeCompare(b);
-            },
+            headers: headers,
+            textSorter: textSorter,
         });
         table.find(".tablesorter-headerAsc").trigger("sort");
         table.find(".tablesorter-headerDesc").trigger("sort");
