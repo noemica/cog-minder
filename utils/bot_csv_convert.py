@@ -231,6 +231,11 @@ for row in reader:
         values['Overload Speed'] = overload_speeds[values['Name']]
         values['Overload Speed %'] = overload_speed_percentages[values['Name']]
 
+    match = re.match('^(\w-\d{2}) (.*)', values['Name'])
+    if match is not None:
+        values['Short Name'] = match[1]
+        values['Ally Name'] = match[2]
+
     all_values.append(values)
 
 with open(output_path, 'w') as f:

@@ -105,6 +105,8 @@ export type JsonBotExtraData = {
 
 export type JsonBot = {
     Name: string;
+    "Short Name"?: string;
+    "Ally Name"?: string;
     Class: string;
     Tier: string;
     Threat: string;
