@@ -1,4 +1,4 @@
-import * as items from "../json/items.json";
+import items from "../json/items.json";
 import {
     createItemDataContent,
     escapeHtml,
@@ -37,8 +37,8 @@ import {
     HeatTransfer,
 } from "./itemTypes";
 
-import lozad = require("lozad");
-import * as jQuery from "jquery";
+import lozad from "lozad";
+import jQuery from "jquery";
 import "bootstrap";
 import "bootstrap-select";
 import "tablesorter";
@@ -1396,7 +1396,11 @@ jq(function ($) {
     async function init() {
         // Reintate for beta 12
         // const isB11 = getB11State();
-        await initData(items as any, undefined);
+        try {
+            await initData(items as any, undefined);
+        } catch (ex) {
+            console.log(ex);
+        }
 
         createHeader("Parts", $("#headerContainer"));
         // $("#beta11Checkbox").prop("checked", getB11State());

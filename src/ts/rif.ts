@@ -1,4 +1,4 @@
-import * as rifData from "../json/rif.json";
+import rifData from "../json/rif.json";
 import * as jQuery from "jquery";
 import "bootstrap";
 import { createHeader, registerDisableAutocomplete } from "./commonJquery";
@@ -140,7 +140,7 @@ jq(function ($) {
 
             // Create image list HTML
             const imagesHtml = hackCategory.Targets.map((target) => {
-                return `<img src="game_sprites/${target}.png" title="${target}"/>`;
+                return `<img src="../game_sprites/${target}.png" title="${target}"/>`;
             }).join(" ");
 
             // Create whole row HTML

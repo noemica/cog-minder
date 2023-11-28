@@ -1,6 +1,6 @@
-import * as items from "../json/items.json";
-import * as bots from "../json/bots.json";
-import * as wiki from "../json/wiki.json";
+import items from "../json/items.json";
+import bots from "../json/bots.json";
+import wiki from "../json/wiki.json";
 import {
     createHeader,
     enableBotInfoInteraction,
@@ -1204,7 +1204,7 @@ jq(function ($) {
             const promises: Promise<any>[] = [];
 
             for (const imageName of parseResult.images.keys()) {
-                promises.push(loadImage(`wiki_images/${imageName}`));
+                promises.push(loadImage(`../wiki_images/${imageName}`));
             }
 
             if (parseResult.errors.length > 0) {

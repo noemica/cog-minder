@@ -1,4 +1,4 @@
-import * as items from "../json/items.json";
+import items from "../json/items.json";
 import {
     assertUnreachable,
     canShowPart,
@@ -33,7 +33,6 @@ import {
     ItemSlot,
     ItemType,
     ItemWithUpkeep,
-    JsonItem,
     MassSupport,
     PowerAmplifier,
     PowerItem,
@@ -48,7 +47,7 @@ import "bootstrap";
 import "bootstrap-select";
 import "lz-string";
 import { getRangedVolleyTime, volleyTimeMap } from "./simulatorCalcs";
-import LZString = require("lz-string");
+import LZString from "lz-string";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -511,7 +510,7 @@ jq(function ($) {
         // const itemsToLoad = $("#beta11Checkbox").prop("checked") ? itemsB11 : items;
         const itemsToLoad = items;
 
-        await initData(itemsToLoad as { [key: string]: JsonItem }, undefined);
+        await initData(itemsToLoad as any, undefined);
 
         initializePartsSelects();
         resetValues(

@@ -1,4 +1,4 @@
-import * as lore from "../json/lore.json";
+import lore from "../json/lore.json";
 import * as jQuery from "jquery";
 import "bootstrap";
 import { createHeader, getSpoilerState, registerDisableAutocomplete, setSpoilerState } from "./commonJquery";

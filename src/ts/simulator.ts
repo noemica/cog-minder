@@ -1,5 +1,5 @@
-import * as bots from "../json/bots.json";
-import * as items from "../json/items.json";
+import bots from "../json/bots.json";
+import items from "../json/items.json";
 import {
     botData,
     canShowPart,

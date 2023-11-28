@@ -1,7 +1,7 @@
 // Common code
-import * as itemCategories from "../json/item_categories.json";
-import * as botExtraData from "../json/bot_extra_data.json";
-import * as lore from "../json/lore.json";
+import itemCategories from "../json/item_categories.json";
+import botExtraData from "../json/bot_extra_data.json";
+import lore from "../json/lore.json";
 import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "./botTypes";
 import {
     BaseItem,
@@ -1140,7 +1140,7 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
         ${
             location.imageName === undefined
                 ? ""
-                : `<a href="wiki_images/${location.imageName}" target="_blank"><img src="wiki_images/${location.imageName}" class="location-image"/></a>`
+                : `<a href="../wiki_images/${location.imageName}" target="_blank"><img src="../wiki_images/${location.imageName}" class="location-image"/></a>`
         }
         ${textLine("Available depths", getDepthString(location.minDepth, location.maxDepth))}
         ${textLine("Branch", location.branch || location.preDepthBranch ? "Yes" : "No")}
@@ -1310,10 +1310,10 @@ export function getBotOrNull(botName: string): Bot | null {
 function getBotImageName(bot: Bot) {
     const imageName = botNameImageMap.get(bot.name);
     if (imageName !== undefined) {
-        return `game_sprites/${imageName}.png`;
+        return `../game_sprites/${imageName}.png`;
     }
 
-    return `game_sprites/${bot.class}.png`;
+    return `../game_sprites/${bot.class}.png`;
 }
 
 // Tries to get an item by name
@@ -1335,17 +1335,17 @@ export function getItemOrNull(itemName: string): Item | null {
 
 // Gets the sprite image name of an item
 export function getItemSpriteImageName(item: Item): string {
-    return `game_sprites/${item.type}.png`;
+    return `../game_sprites/${item.type}.png`;
 }
 
 // Gets the sprite image name of an item
 export function getItemAsciiArtImageName(item: Item): string {
     if (itemsWithNoArt.has(item.name)) {
         // Some items have no gallery art
-        return "part_art/No Image Data.png";
+        return "../part_art/No Image Data.png";
     }
 
-    return `part_art/${item.name.replace(/"/g, "").replace(/\//g, "")}.png`;
+    return `../part_art/${item.name.replace(/"/g, "").replace(/\//g, "")}.png`;
 }
 
 // Tries to get an item by its full name
@@ -1426,12 +1426,6 @@ export async function initData(
 
     // Create items
     Object.keys(items).forEach((key, index) => {
-        if (key === "default") {
-            // Not sure why this "default" pops up but it messes things up
-            // Maybe an artifact of being imported as a JSON file
-            return;
-        }
-
         const item = (items as { [key: string]: JsonItem })[key];
         const itemName = item.Name;
         let newItem: Item;
@@ -1464,7 +1458,7 @@ export async function initData(
         }
 
         const coverage = parseIntOrUndefined(item.Coverage) ?? 0;
-        const hackable = !!parseIntOrUndefined(item["Hackable Schematic"]) ?? 0;
+        const hackable = !!(parseIntOrUndefined(item["Hackable Schematic"]) ?? false);
         const integrity = parseIntOrUndefined(item.Integrity) ?? 0;
         const mass = parseIntOrUndefined(item.Mass);
         const noPrefixName = getNoPrefixName(itemName);
@@ -1749,12 +1743,6 @@ export async function initData(
     if (bots !== undefined) {
         // Create bots
         Object.keys(bots).forEach((key) => {
-            if (key === "default") {
-                // Not sure why this "default" pops up but it messes things up
-                // Maybe an artifact of being imported as a JSON file
-                return;
-            }
-
             function sumItemCoverage(sum: number, data: string | ItemOption[]) {
                 if (typeof data === "string") {
                     // Item name, just parse coverage
