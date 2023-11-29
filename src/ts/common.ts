@@ -464,8 +464,7 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
             let line: string;
             if (item.name === "None") {
                 line = "None";
-            }
-            else {
+            } else {
                 line = `${item.name} (${item.coverage}%)`;
             }
 
@@ -481,14 +480,17 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
 
     function getFabricationMatterString(stats: FabricationStats) {
         const matter = stats.matter;
-        const siphonMatter = Math.floor(parseInt(matter) * .75).toString();
+        const siphonMatter = Math.floor(parseInt(matter) * 0.75).toString();
 
         return `${matter} (With siphon: ${siphonMatter})`;
     }
 
     function getRatingValue(bot: Bot) {
         const ratingString = bot.rating;
-        const ratingArray = ratingString.split("-").map(s => s.trim()).map(s => parseInt(s));
+        const ratingArray = ratingString
+            .split("-")
+            .map((s) => s.trim())
+            .map((s) => parseInt(s));
         return ratingArray.reduce((sum, val) => sum + val, 0) / ratingArray.length;
     }
 
@@ -519,25 +521,29 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
             itemString = `<a href="#${escapeHtml(itemName)}">${itemString}</a>`;
         }
 
-        return "" +
+        return (
+            "" +
             `<pre class="popover-part" data-toggle="popover"${popoversToLinks ? ' data-trigger="hover"' : ""}>` +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">[</span>' +
             `${itemString}` +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">]</span>' +
-            '</pre>';
+            "</pre>"
+        );
     }
 
     function itemLineOption(itemString: string, i: number) {
         // Must unescape -> escape in order to properly account for escaped characters
         // for the actual pad length
         itemString = escapeHtml(unescapeHtml(itemString).padEnd(43));
-        return "" +
+        return (
+            "" +
             '<pre class="popover-line">' +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">[</span>' +
             `<span class="popover-option">${String.fromCharCode(97 + i)}) </span>` +
             `<span>${itemString}</span>` +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">]</span>' +
-            '</pre>';
+            "</pre>"
+        );
     }
 
     // Create overview
@@ -559,8 +565,25 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
         ${textLine("Spot %", bot.spotPercent)}
         ${textLine("Movement", bot.movement)}
         ${bot.movementOverloaded !== undefined ? `${textLine(" Overloaded", bot.movementOverloaded)}` : ""}
-        ${rangeLine("Core Integrity", bot.coreIntegrity.toString(), bot.coreIntegrity, undefined, 0, bot.coreIntegrity, ColorScheme.Green)}
-        ${rangeLineUnit("Core Exposure", bot.coreExposure.toString(), bot.coreExposure, "%", undefined, 0, 100, ColorScheme.LowGood)}
+        ${rangeLine(
+            "Core Integrity",
+            bot.coreIntegrity.toString(),
+            bot.coreIntegrity,
+            undefined,
+            0,
+            bot.coreIntegrity,
+            ColorScheme.Green,
+        )}
+        ${rangeLineUnit(
+            "Core Exposure",
+            bot.coreExposure.toString(),
+            bot.coreExposure,
+            "%",
+            undefined,
+            0,
+            100,
+            ColorScheme.LowGood,
+        )}
         ${textLine("Salvage Potential", bot.salvagePotential)}
         ${textLineWithDefault("Schematic", bot.fabrication !== undefined ? "Hackable" : undefined, "N/A")}
         ${bot.fabrication !== undefined ? textLine(" Min Terminal/Depth", getSchematicDepthString(bot)) : ""}
@@ -570,7 +593,7 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
 
     // Add armament items and options
     if (bot.armament.length > 0) {
-        bot.armamentData.forEach(data => {
+        bot.armamentData.forEach((data) => {
             html += createItemHtml(data, popoversToLinks);
         });
 
@@ -580,8 +603,7 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
             }
             html += createItemOptionHtml(bot.armamentOptionData[i]);
         }
-    }
-    else {
+    } else {
         html += itemLine("None", undefined, popoversToLinks);
     }
 
@@ -592,7 +614,7 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
     `;
 
     if (bot.components.length > 0) {
-        bot.componentData.forEach(data => {
+        bot.componentData.forEach((data) => {
             html += createItemHtml(data, popoversToLinks);
         });
 
@@ -602,8 +624,7 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
             }
             html += createItemOptionHtml(bot.componentOptionData[i]);
         }
-    }
-    else {
+    } else {
         html += itemLine("N/A", undefined, popoversToLinks);
     }
 
@@ -616,7 +637,7 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
         ${summaryLine("Resistances")}
         `;
 
-        resistances.forEach(damageType => {
+        resistances.forEach((damageType) => {
             const resistValue = bot.resistances![damageType];
 
             if (resistValue === undefined) {
@@ -624,16 +645,29 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
             }
 
             if (resistValue > 0) {
-                html += rangeLine(damageType, resistValue.toString() + "%",
-                    resistValue, undefined, 0, 100, ColorScheme.Green);
-            }
-            else {
-                html += rangeLine(damageType, resistValue.toString() + "%",
-                    resistValue, undefined, 0, -100, ColorScheme.Red);
+                html += rangeLine(
+                    damageType,
+                    resistValue.toString() + "%",
+                    resistValue,
+                    undefined,
+                    0,
+                    100,
+                    ColorScheme.Green,
+                );
+            } else {
+                html += rangeLine(
+                    damageType,
+                    resistValue.toString() + "%",
+                    resistValue,
+                    undefined,
+                    0,
+                    -100,
+                    ColorScheme.Red,
+                );
             }
         });
 
-        immunities.forEach(immunity => {
+        immunities.forEach((immunity) => {
             html += textLineDim(immunity, "IMMUNE");
         });
     }
@@ -646,8 +680,8 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
         ${summaryLine("Traits")}
         `;
 
-        traits.forEach(trait => {
-            html += `<span class="popover-description">&nbsp;${trait}</span>\n`
+        traits.forEach((trait) => {
+            html += `<span class="popover-description">&nbsp;${trait}</span>\n`;
         });
     }
 
@@ -659,8 +693,7 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
 
         if (number === "1") {
             html += summaryLine("Fabrication");
-        }
-        else {
+        } else {
             html += summaryLine(`Fabrication x${number}`);
         }
 
@@ -683,7 +716,7 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
 
     // Get filtered list of locations
     const spoilers = getSpoilerState();
-    const locations = bot.locations.filter(l => {
+    const locations = bot.locations.filter((l) => {
         if (l.Spoiler === undefined || spoilers === "Redacted") {
             return true;
         }
@@ -703,14 +736,16 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
         html += `
         ${emptyLine}
         ${summaryLine("Locations")}
-        ${locations.map((location) => {
-            if (location.Description !== undefined) {
-                return `<span class="popover-location">&nbsp;${location.Location}</span>
+        ${locations
+            .map((location) => {
+                if (location.Description !== undefined) {
+                    return `<span class="popover-location">&nbsp;${location.Location}</span>
                 <span class="popover-description">&nbsp;&nbsp;${escapeHtml(location.Description)}</span>`;
-            } else {
-                return `<span class="popover-location">&nbsp;${location.Location}</span>`;
-            }
-        }).join(emptyHalfLine)}
+                } else {
+                    return `<span class="popover-location">&nbsp;${location.Location}</span>`;
+                }
+            })
+            .join(emptyHalfLine)}
         `;
     }
 
@@ -721,32 +756,37 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
 export function createItemDataContent(baseItem: Item): string {
     function getDamageValue(item: WeaponItem) {
         const damageString = item.damage as string;
-        const damageArray = damageString.split("-").map(s => s.trim()).map(s => parseInt(s));
+        const damageArray = damageString
+            .split("-")
+            .map((s) => s.trim())
+            .map((s) => parseInt(s));
         return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
     }
 
     function getDelayString(item: WeaponItem) {
         if (item.delay === undefined) {
             return undefined;
-        }
-        else {
+        } else {
             if (item.delay > 0) {
                 return "+" + item.delay;
             }
 
-            return (item.delay).toString();
+            return item.delay.toString();
         }
     }
 
     function getExplosionValue(item: WeaponItem) {
         const damageString = item.explosionDamage as string;
-        const damageArray = damageString.split("-").map(s => s.trim()).map(s => parseInt(s));
+        const damageArray = damageString
+            .split("-")
+            .map((s) => s.trim())
+            .map((s) => parseInt(s));
         return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
     }
 
     function getFabricationMatterString(stats: FabricationStats) {
         const matter = stats.matter;
-        const siphonMatter = Math.floor(parseInt(matter) * .75).toString();
+        const siphonMatter = Math.floor(parseInt(matter) * 0.75).toString();
 
         return `${matter} (With siphon: ${siphonMatter})`;
     }
@@ -758,7 +798,7 @@ export function createItemDataContent(baseItem: Item): string {
             return "";
         }
 
-        const penetrationArray = penetrationString.split("/").map(s => s.trim());
+        const penetrationArray = penetrationString.split("/").map((s) => s.trim());
 
         return penetrationArray.join(" / ");
     }
@@ -782,7 +822,7 @@ export function createItemDataContent(baseItem: Item): string {
             return "x*";
         }
 
-        const penetrationArray = penetrationString.split("/").map(s => s.trim());
+        const penetrationArray = penetrationString.split("/").map((s) => s.trim());
 
         return "x" + penetrationArray.length;
     }
@@ -803,9 +843,8 @@ export function createItemDataContent(baseItem: Item): string {
     function getSchematicString(item: Item) {
         if (item.hackable) {
             return "Hackable";
-        }
-        else if (item.fabrication != null) {
-            return "Not Hackable"
+        } else if (item.fabrication != null) {
+            return "Not Hackable";
         }
 
         return undefined;
@@ -836,9 +875,8 @@ export function createItemDataContent(baseItem: Item): string {
             // Take care of item special cases
             if (item.type == ItemType.Item || item.type == ItemType.Trap) {
                 slotType = "Inventory";
-            }
-            else {
-                return `<span class="dim-text">N/A</span>`
+            } else {
+                return `<span class="dim-text">N/A</span>`;
             }
         }
 
@@ -854,14 +892,29 @@ export function createItemDataContent(baseItem: Item): string {
     <div class="part-art-image-container">
         <img src="${escapeHtml(getItemAsciiArtImageName(baseItem))}"/>
     </div>
-    <pre class="popover-title .popover-part-image-title mt-2">${escapeHtml(baseItem.name)} [<img src="${getItemSpriteImageName(baseItem)}"/>]</pre>
+    <pre class="popover-title .popover-part-image-title mt-2">${escapeHtml(
+        baseItem.name,
+    )} [<img src="${getItemSpriteImageName(baseItem)}"/>]</pre>
     ${emptyLine}
     ${summaryLine("Overview")}
     ${textLine("Type", baseItem.type)}
     ${textLine("Slot", getSlotString(baseItem))}
     ${rangeLine("Mass", baseItem.mass?.toString(), baseItem.mass, "N/A", 0, 15, ColorScheme.LowGood)}
-    ${textValueHtmlLine("Rating", baseItem.ratingString.replace("**", "").replace("*", ""), "", getRatingHtml(baseItem))}
-    ${rangeLine("Integrity", (baseItem.noRepairs ? "*" : "") + baseItem.integrity?.toString(), 1, undefined, 0, 1, ColorScheme.Green)}
+    ${textValueHtmlLine(
+        "Rating",
+        baseItem.ratingString.replace("**", "").replace("*", ""),
+        "",
+        getRatingHtml(baseItem),
+    )}
+    ${rangeLine(
+        "Integrity",
+        (baseItem.noRepairs ? "*" : "") + baseItem.integrity?.toString(),
+        1,
+        undefined,
+        0,
+        1,
+        ColorScheme.Green,
+    )}
     ${valueLine("Coverage", baseItem.coverage?.toString() ?? "0")}
     ${textLineWithDefault("Schematic", getSchematicString(baseItem), "N/A")}
     ${baseItem.hackable ? textLine(" Min Terminal/Depth", getSchematicDepthString(baseItem)) : emptyLine}
@@ -876,13 +929,47 @@ export function createItemDataContent(baseItem: Item): string {
                 ${emptyLine}
                 ${summaryLine("Active Upkeep")}
                 ${rangeLine("Energy", undefined, 0, "-0", 0, 0, ColorScheme.LowGood)}
-                ${rangeLine("Matter", item.matterUpkeep === undefined ? undefined : "-" + item.matterUpkeep, item.matterUpkeep, "-0", 0, 25, ColorScheme.LowGood)}
+                ${rangeLine(
+                    "Matter",
+                    item.matterUpkeep === undefined ? undefined : "-" + item.matterUpkeep,
+                    item.matterUpkeep,
+                    "-0",
+                    0,
+                    25,
+                    ColorScheme.LowGood,
+                )}
                 ${rangeLine("Heat", "+" + item.heatGeneration, item.heatGeneration, "+0", 0, 20, ColorScheme.LowGood)}
                 ${emptyLine}
                 ${summaryLine("Power")}
-                ${rangeLine("Supply", (item.energyGeneration === undefined || item.energyGeneration === 0) ? undefined : "+" + item.energyGeneration, item.energyGeneration, "0", 0, 30, ColorScheme.Green)}
-                ${rangeLine("Storage", item.energyStorage?.toString(), item.energyStorage, "0", 0, 300, ColorScheme.Green)}
-                ${rangeLine("Stability", item.powerStability + "%", item.powerStability, "N/A", 0, 100, ColorScheme.HighGood)}
+                ${rangeLine(
+                    "Supply",
+                    item.energyGeneration === undefined || item.energyGeneration === 0
+                        ? undefined
+                        : "+" + item.energyGeneration,
+                    item.energyGeneration,
+                    "0",
+                    0,
+                    30,
+                    ColorScheme.Green,
+                )}
+                ${rangeLine(
+                    "Storage",
+                    item.energyStorage?.toString(),
+                    item.energyStorage,
+                    "0",
+                    0,
+                    300,
+                    ColorScheme.Green,
+                )}
+                ${rangeLine(
+                    "Stability",
+                    item.powerStability + "%",
+                    item.powerStability,
+                    "N/A",
+                    0,
+                    100,
+                    ColorScheme.HighGood,
+                )}
                 `;
             break;
         }
@@ -899,15 +986,37 @@ export function createItemDataContent(baseItem: Item): string {
                 ${rangeLine("Heat", "+" + item.heatGeneration, item.heatGeneration, "+0", 0, 20, ColorScheme.LowGood)}
                 ${emptyLine}
                 ${summaryLine("Propulsion")}
-                ${rangeLine("Time/Move", item.timePerMove.toString(), item.timePerMove, undefined, 0, 150, ColorScheme.LowGood)}
-                ${item.modPerExtra == undefined ? valueLine("Drag", item.drag?.toString() ?? "0") : valueLine(" Mod/Extra", item.modPerExtra.toString())}
+                ${rangeLine(
+                    "Time/Move",
+                    item.timePerMove.toString(),
+                    item.timePerMove,
+                    undefined,
+                    0,
+                    150,
+                    ColorScheme.LowGood,
+                )}
+                ${
+                    item.modPerExtra == undefined
+                        ? valueLine("Drag", item.drag?.toString() ?? "0")
+                        : valueLine(" Mod/Extra", item.modPerExtra.toString())
+                }
                 ${rangeLine("Energy", "-" + item.energyPerMove, item.energyPerMove, "-0", 0, 10, ColorScheme.LowGood)}
                 ${rangeLine("Heat", "+" + item.heatPerMove, item.heatPerMove, "+0", 0, 10, ColorScheme.LowGood)}
                 ${rangeLine("Support", item.support?.toString(), item.support, undefined, 0, 20, ColorScheme.HighGood)}
                 ${rangeLine(" Penalty", item.penalty?.toString(), item.penalty, "0", 0, 60, ColorScheme.LowGood)}
-                ${item.type === ItemType.Treads ?
-                    textLineWithDefault("Siege", item.siege, "N/A") :
-                    rangeLine("Burnout", item.burnout, parseInt(item.burnout ?? ""), "N/A", 0, 100, ColorScheme.LowGood)}
+                ${
+                    item.type === ItemType.Treads
+                        ? textLineWithDefault("Siege", item.siege, "N/A")
+                        : rangeLine(
+                              "Burnout",
+                              item.burnout,
+                              parseInt(item.burnout ?? ""),
+                              "N/A",
+                              0,
+                              100,
+                              ColorScheme.LowGood,
+                          )
+                }
                 `;
             break;
         }
@@ -945,16 +1054,52 @@ export function createItemDataContent(baseItem: Item): string {
                         ${valueLineWithDefault("Recoil", item.recoil?.toString(), "0")}
                         ${valueLineUnitsWithDefault("Targeting", item.targeting?.toString(), "%", "0")}
                         ${valueLineWithDefault("Delay", getDelayString(item), "0")}
-                        ${rangeLine("Stability", item.overloadStability?.toString(), item.overloadStability, "N/A", 0, 100, ColorScheme.HighGood)}
-                        ${item.waypoints === undefined ? valueLineWithDefault("Arc", item.arc?.toString(), "N/A") : valueLine("Waypoints", item.waypoints)}
+                        ${rangeLine(
+                            "Stability",
+                            item.overloadStability?.toString(),
+                            item.overloadStability,
+                            "N/A",
+                            0,
+                            100,
+                            ColorScheme.HighGood,
+                        )}
+                        ${
+                            item.waypoints === undefined
+                                ? valueLineWithDefault("Arc", item.arc?.toString(), "N/A")
+                                : valueLine("Waypoints", item.waypoints)
+                        }
                         ${emptyLine}
                         ${summaryProjectileLine(item, "Projectile")}
                         ${rangeLine("Damage", item.damage, getDamageValue(item), undefined, 0, 100, ColorScheme.Green)}
                         ${textLine("Type", item.damageType)}
-                        ${valueLineUnitsTextWithDefault("Critical", item.critical?.toString(), "%", "0", item.criticalType?.toString() ?? "")}
-                        ${textValueHtmlLine("Penetration", getPenetrationValue(item), getPenetrationValueClass(item), getPenetrationTextHtml(item))}
-                        ${item.heatTransfer === undefined ? textLineWithDefault("Spectrum", item.spectrum, "N/A") : textLine("Heat Transfer", item.heatTransfer)}
-                        ${rangeLineUnit("Disruption", item.disruption?.toString(), item.disruption, "%", "0", 0, 50, ColorScheme.Green)}
+                        ${valueLineUnitsTextWithDefault(
+                            "Critical",
+                            item.critical?.toString(),
+                            "%",
+                            "0",
+                            item.criticalType?.toString() ?? "",
+                        )}
+                        ${textValueHtmlLine(
+                            "Penetration",
+                            getPenetrationValue(item),
+                            getPenetrationValueClass(item),
+                            getPenetrationTextHtml(item),
+                        )}
+                        ${
+                            item.heatTransfer === undefined
+                                ? textLineWithDefault("Spectrum", item.spectrum, "N/A")
+                                : textLine("Heat Transfer", item.heatTransfer)
+                        }
+                        ${rangeLineUnit(
+                            "Disruption",
+                            item.disruption?.toString(),
+                            item.disruption,
+                            "%",
+                            "0",
+                            0,
+                            50,
+                            ColorScheme.Green,
+                        )}
                         ${valueLineWithDefault("Salvage", item.salvage?.toString(), "0")}
                         `;
                     break;
@@ -970,16 +1115,61 @@ export function createItemDataContent(baseItem: Item): string {
                         ${valueLineWithDefault("Recoil", item.recoil?.toString(), "0")}
                         ${valueLineUnitsWithDefault("Targeting", item.targeting?.toString(), "%", "0")}
                         ${valueLineWithDefault("Delay", getDelayString(item), "0")}
-                        ${rangeLine("Stability", item.overloadStability?.toString(), item.overloadStability, "N/A", 0, 100, ColorScheme.HighGood)}
-                        ${item.waypoints === undefined ? valueLineWithDefault("Arc", item.arc?.toString(), "N/A") : valueLine("Waypoints", item.waypoints)}
+                        ${rangeLine(
+                            "Stability",
+                            item.overloadStability?.toString(),
+                            item.overloadStability,
+                            "N/A",
+                            0,
+                            100,
+                            ColorScheme.HighGood,
+                        )}
+                        ${
+                            item.waypoints === undefined
+                                ? valueLineWithDefault("Arc", item.arc?.toString(), "N/A")
+                                : valueLine("Waypoints", item.waypoints)
+                        }
                         ${emptyLine}
                         ${summaryProjectileLine(item, "Explosion")}
-                        ${rangeLine("Radius", item.explosionRadius?.toString(), item.explosionRadius, undefined, 0, 8, ColorScheme.Green)}
-                        ${rangeLine("Damage", item.explosionDamage, getExplosionValue(item), undefined, 0, 100, ColorScheme.Green)}
-                        ${valueLineWithDefault(" Falloff", item.falloff === undefined ? undefined : "-" + item.falloff, "0")}
+                        ${rangeLine(
+                            "Radius",
+                            item.explosionRadius?.toString(),
+                            item.explosionRadius,
+                            undefined,
+                            0,
+                            8,
+                            ColorScheme.Green,
+                        )}
+                        ${rangeLine(
+                            "Damage",
+                            item.explosionDamage,
+                            getExplosionValue(item),
+                            undefined,
+                            0,
+                            100,
+                            ColorScheme.Green,
+                        )}
+                        ${valueLineWithDefault(
+                            " Falloff",
+                            item.falloff === undefined ? undefined : "-" + item.falloff,
+                            "0",
+                        )}
                         ${textLine("Type", item.explosionType)}
-                        ${item.explosionHeatTransfer === undefined ? textLineWithDefault("Spectrum", item.explosionSpectrum, "N/A") : textLine("Heat Transfer", item.explosionHeatTransfer)}
-                        ${rangeLineUnit("Disruption", item.explosionDisruption?.toString(), item.explosionDisruption, "%", "0", 0, 50, ColorScheme.Green)}
+                        ${
+                            item.explosionHeatTransfer === undefined
+                                ? textLineWithDefault("Spectrum", item.explosionSpectrum, "N/A")
+                                : textLine("Heat Transfer", item.explosionHeatTransfer)
+                        }
+                        ${rangeLineUnit(
+                            "Disruption",
+                            item.explosionDisruption?.toString(),
+                            item.explosionDisruption,
+                            "%",
+                            "0",
+                            0,
+                            50,
+                            ColorScheme.Green,
+                        )}
                         ${valueLineWithDefault("Salvage", item.explosionSalvage, "0")}
                         `;
                     break;
@@ -1007,8 +1197,20 @@ export function createItemDataContent(baseItem: Item): string {
                         ${valueLineWithDefault("Recoil", item.recoil?.toString(), "0")}
                         ${valueLineUnitsWithDefault("Targeting", item.targeting?.toString(), "%", "0")}
                         ${valueLineWithDefault("Delay", getDelayString(item), "0")}
-                        ${rangeLine("Stability", item.overloadStability?.toString(), item.overloadStability, "N/A", 0, 100, ColorScheme.HighGood)}
-                        ${item.waypoints === undefined ? valueLineWithDefault("Arc", item.arc?.toString(), "N/A") : valueLine("Waypoints", item.waypoints)}
+                        ${rangeLine(
+                            "Stability",
+                            item.overloadStability?.toString(),
+                            item.overloadStability,
+                            "N/A",
+                            0,
+                            100,
+                            ColorScheme.HighGood,
+                        )}
+                        ${
+                            item.waypoints === undefined
+                                ? valueLineWithDefault("Arc", item.arc?.toString(), "N/A")
+                                : valueLine("Waypoints", item.waypoints)
+                        }
                         `;
 
                     if (item.damage !== undefined) {
@@ -1018,23 +1220,76 @@ export function createItemDataContent(baseItem: Item): string {
                         ${summaryProjectileLine(item, "Projectile")}
                         ${rangeLine("Damage", item.damage, getDamageValue(item), undefined, 0, 100, ColorScheme.Green)}
                         ${textLine("Type", item.damageType)}
-                        ${valueLineUnitsTextWithDefault("Critical", item.critical?.toString(), "%", "0", item.criticalType?.toString() ?? "")}
+                        ${valueLineUnitsTextWithDefault(
+                            "Critical",
+                            item.critical?.toString(),
+                            "%",
+                            "0",
+                            item.criticalType?.toString() ?? "",
+                        )}
 
-                        ${textValueHtmlLine("Penetration", getPenetrationValue(item), getPenetrationValueClass(item), getPenetrationTextHtml(item))}
-                        ${item.heatTransfer === undefined ? textLineWithDefault("Spectrum", item.spectrum, "N/A") : textLine("Heat Transfer", item.heatTransfer)}
-                        ${rangeLineUnit("Disruption", item.disruption?.toString(), item.disruption, "%", "0", 0, 50, ColorScheme.Green)}
+                        ${textValueHtmlLine(
+                            "Penetration",
+                            getPenetrationValue(item),
+                            getPenetrationValueClass(item),
+                            getPenetrationTextHtml(item),
+                        )}
+                        ${
+                            item.heatTransfer === undefined
+                                ? textLineWithDefault("Spectrum", item.spectrum, "N/A")
+                                : textLine("Heat Transfer", item.heatTransfer)
+                        }
+                        ${rangeLineUnit(
+                            "Disruption",
+                            item.disruption?.toString(),
+                            item.disruption,
+                            "%",
+                            "0",
+                            0,
+                            50,
+                            ColorScheme.Green,
+                        )}
                         ${valueLineWithDefault("Salvage", item.salvage?.toString(), "0")}
                         `;
                     } else if (item.explosionDamage !== undefined) {
                         html += `
                         ${emptyLine}
                         ${summaryProjectileLine(item, "Explosion")}
-                        ${rangeLine("Radius", item.explosionRadius?.toString(), item.explosionRadius, undefined, 0, 8, ColorScheme.Green)}
-                        ${rangeLine("Damage", item.explosionDamage, getExplosionValue(item), undefined, 0, 100, ColorScheme.Green)}
-                        ${valueLineWithDefault(" Falloff", item.falloff === undefined ? undefined : "-" + item.falloff, "0")}
+                        ${rangeLine(
+                            "Radius",
+                            item.explosionRadius?.toString(),
+                            item.explosionRadius,
+                            undefined,
+                            0,
+                            8,
+                            ColorScheme.Green,
+                        )}
+                        ${rangeLine(
+                            "Damage",
+                            item.explosionDamage,
+                            getExplosionValue(item),
+                            undefined,
+                            0,
+                            100,
+                            ColorScheme.Green,
+                        )}
+                        ${valueLineWithDefault(
+                            " Falloff",
+                            item.falloff === undefined ? undefined : "-" + item.falloff,
+                            "0",
+                        )}
                         ${textLine("Type", item.explosionType)}
                         ${textLineWithDefault("Spectrum", item.explosionSpectrum, "N/A")}
-                        ${rangeLineUnit("Disruption", item.explosionDisruption?.toString(), item.explosionDisruption, "%", "0", 0, 50, ColorScheme.Green)}
+                        ${rangeLineUnit(
+                            "Disruption",
+                            item.explosionDisruption?.toString(),
+                            item.explosionDisruption,
+                            "%",
+                            "0",
+                            0,
+                            50,
+                            ColorScheme.Green,
+                        )}
                         ${valueLineWithDefault("Salvage", item.explosionSalvage, "0")}
                         `;
                     }
@@ -1055,8 +1310,23 @@ export function createItemDataContent(baseItem: Item): string {
                         ${summaryLine("Hit")}
                         ${rangeLine("Damage", item.damage, getDamageValue(item), undefined, 0, 100, ColorScheme.Green)}
                         ${textLine("Type", item.damageType)}
-                        ${valueLineUnitsTextWithDefault("Critical", item.critical?.toString(), "%", "0", item.criticalType?.toString() ?? "")}
-                        ${rangeLineUnit("Disruption", item.disruption?.toString(), item.disruption, "%", "0", 0, 50, ColorScheme.Green)}
+                        ${valueLineUnitsTextWithDefault(
+                            "Critical",
+                            item.critical?.toString(),
+                            "%",
+                            "0",
+                            item.criticalType?.toString() ?? "",
+                        )}
+                        ${rangeLineUnit(
+                            "Disruption",
+                            item.disruption?.toString(),
+                            item.disruption,
+                            "%",
+                            "0",
+                            0,
+                            50,
+                            ColorScheme.Green,
+                        )}
                         ${valueLineWithDefault("Salvage", item.salvage?.toString(), "0")}
                         `;
                     break;
@@ -1075,7 +1345,7 @@ export function createItemDataContent(baseItem: Item): string {
         `;
 
         if (baseItem.effect !== undefined) {
-            html += `<span class="popover-description">&nbsp;${escapeHtml(baseItem.effect)}</span>`
+            html += `<span class="popover-description">&nbsp;${escapeHtml(baseItem.effect)}</span>`;
 
             if (baseItem.description !== undefined) {
                 html += `${emptyLine}`;
@@ -1083,7 +1353,7 @@ export function createItemDataContent(baseItem: Item): string {
         }
 
         if (baseItem.description !== undefined) {
-            html += `<span class="popover-description">&nbsp;${escapeHtml(baseItem.description)}</span>`
+            html += `<span class="popover-description">&nbsp;${escapeHtml(baseItem.description)}</span>`;
         }
     }
 
@@ -1095,14 +1365,17 @@ export function createItemDataContent(baseItem: Item): string {
 
         if (number === "1") {
             html += summaryLine("Fabrication");
-        }
-        else {
+        } else {
             html += summaryLine(`Fabrication x${number}`);
         }
 
         html += `
         ${textLine("Time", baseItem.fabrication.time)}
-        ${baseItem.fabrication?.matter !== undefined ? textLine("Matter", getFabricationMatterString(baseItem.fabrication)) : ""}
+        ${
+            baseItem.fabrication?.matter !== undefined
+                ? textLine("Matter", getFabricationMatterString(baseItem.fabrication))
+                : ""
+        }
         ${textLine("Components", "None")}
         `;
     }
@@ -1467,8 +1740,8 @@ export async function initData(
         const spoiler: Spoiler = categories.includes("Redacted")
             ? "Redacted"
             : categories.includes("Spoiler")
-            ? "Spoiler"
-            : "None";
+              ? "Spoiler"
+              : "None";
 
         switch (item["Slot"]) {
             case "N/A":
@@ -1909,8 +2182,8 @@ export async function initData(
                 spoiler: extraData?.Categories.includes(BotCategory.Redacted)
                     ? "Redacted"
                     : extraData?.Categories.includes(BotCategory.Spoiler)
-                    ? "Spoiler"
-                    : "None",
+                      ? "Spoiler"
+                      : "None",
                 size: bot["Size Class"],
                 threat: bot.Threat,
                 totalCoverage: totalCoverage,

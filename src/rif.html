@@ -1,69 +1,94 @@
 <!doctype html>
 
 <head lang="en">
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Cogmind RIF</title>
-    <meta name="description" content="Cogmind RIF ability/bothacking reference">
+    <meta name="description" content="Cogmind RIF ability/bothacking reference" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+        crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
 
     <script src="ts/rif.ts" type="module"></script>
 </head>
 
 <body>
     <!-- Header/Title -->
-    <div id="headerContainer" class="container-xl">
-    </div>
+    <div id="headerContainer" class="container-xl"></div>
 
     <div class="container-xl">
         <!-- RIF ability inputs -->
         <div class="input-group">
             <!-- Name filter -->
-            <div class="input-group-prepend" data-toggle="tooltip"
-                title="The name of a RIF ability to search for. Only RIF abilities with names containing this value will be shown.">
+            <div
+                class="input-group-prepend"
+                data-toggle="tooltip"
+                title="The name of a RIF ability to search for. Only RIF abilities with names containing this value will be shown."
+            >
                 <span class="input-group-text">Ability Name</span>
             </div>
-            <input id="abilityNameInput" type="text" class="form-control" placeholder="Any">
+            <input id="abilityNameInput" type="text" class="form-control" placeholder="Any" />
 
             <!-- Description filter -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The RIF ability description to search for. Only RIF abilities with descriptions containing this value will be shown.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The RIF ability description to search for. Only RIF abilities with descriptions containing this value will be shown."
+            >
                 <span class="input-group-text">Ability Description</span>
             </div>
-            <input id="abilityDescriptionInput" type="text" class="form-control" placeholder="Any">
+            <input id="abilityDescriptionInput" type="text" class="form-control" placeholder="Any" />
 
             <!-- Reset button -->
-            <button id="reset" type="button" class="btn ml-3" data-toggle="tooltip"
-                title="Resets all filters to their default (unfiltered) state">Reset</button>
+            <button
+                id="reset"
+                type="button"
+                class="btn ml-3"
+                data-toggle="tooltip"
+                title="Resets all filters to their default (unfiltered) state"
+            >
+                Reset
+            </button>
         </div>
 
         <!-- Bot hacking inputs -->
         <div class="input-group mt-2">
             <!-- Name filter -->
-            <div class="input-group-prepend" data-toggle="tooltip"
-                title="The name of a bot hack to search for. Only hacks with names containing this value will be shown.">
+            <div
+                class="input-group-prepend"
+                data-toggle="tooltip"
+                title="The name of a bot hack to search for. Only hacks with names containing this value will be shown."
+            >
                 <span class="input-group-text">Hack Name</span>
             </div>
-            <input id="hackNameInput" type="text" class="form-control" placeholder="Any">
+            <input id="hackNameInput" type="text" class="form-control" placeholder="Any" />
 
             <!-- Description filter -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The bot hack description to search for. Only hacks with descriptions containing this value will be shown.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The bot hack description to search for. Only hacks with descriptions containing this value will be shown."
+            >
                 <span class="input-group-text">Hack Description</span>
             </div>
-            <input id="hackDescriptionInput" type="text" class="form-control" placeholder="Any">
+            <input id="hackDescriptionInput" type="text" class="form-control" placeholder="Any" />
 
             <!-- Target filter -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The bot hack target to search for. Only hacks with targets containing this value will be shown. Use &quot;Combat&quot; to search for any combat targeted hacks, or &quot;NC&quot; to search for any generic non-combat targeted hacks.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title='The bot hack target to search for. Only hacks with targets containing this value will be shown. Use "Combat" to search for any combat targeted hacks, or "NC" to search for any generic non-combat targeted hacks.'
+            >
                 <span class="input-group-text">Hack Target</span>
             </div>
-            <input id="hackTargetInput" type="text" class="form-control" placeholder="Any">
+            <input id="hackTargetInput" type="text" class="form-control" placeholder="Any" />
         </div>
 
         <div id="abilityTable">
@@ -74,19 +99,27 @@
                 <thead>
                     <tr class="rif-ability-header-row">
                         <th data-toggle="tooltip" title="The name of the RIF ability.">Ability Name</th>
-                        <th data-toggle="tooltip"
-                            title="The minimum number of prerequisite abilities required in order to get this ability. For example, a min required ability limit of 2 means that this ability is unable to be obtained until the 4th RIF installer.">
-                            Min Abilities</th>
-                        <th data-toggle="tooltip"
-                            title="How many different levels the RIF ability can have. Higher ability levels have greater effect for any effect with &gt; 1 level.">
-                            Levels</th>
-                        <th data-toggle="tooltip"
-                            title="The effect of the RIF ability. If there are multiple levels, each value separated by a / in parentheses depends on the level of the ability.">
-                            Description</th>
+                        <th
+                            data-toggle="tooltip"
+                            title="The minimum number of prerequisite abilities required in order to get this ability. For example, a min required ability limit of 2 means that this ability is unable to be obtained until the 4th RIF installer."
+                        >
+                            Min Abilities
+                        </th>
+                        <th
+                            data-toggle="tooltip"
+                            title="How many different levels the RIF ability can have. Higher ability levels have greater effect for any effect with &gt; 1 level."
+                        >
+                            Levels
+                        </th>
+                        <th
+                            data-toggle="tooltip"
+                            title="The effect of the RIF ability. If there are multiple levels, each value separated by a / in parentheses depends on the level of the ability."
+                        >
+                            Description
+                        </th>
                     </tr>
                 </thead>
-                <tbody id="rifAbilityTableBody">
-                </tbody>
+                <tbody id="rifAbilityTableBody"></tbody>
             </table>
         </div>
 
@@ -98,19 +131,23 @@
                 <thead>
                     <tr class="rif-hacks-header-row">
                         <th data-toggle="tooltip" title="The name of the hack.">Hack Name</th>
-                        <th data-toggle="tooltip"
-                            title="Is RIF required to perform this hack? Some hacks are available without a RIF install.">
-                            RIF only</th>
-                        <th data-toggle="tooltip"
-                            title="The number of charges the hack will consume. If 0, no Relay Coupler is required for the hack.">
-                            Charges</th>
+                        <th
+                            data-toggle="tooltip"
+                            title="Is RIF required to perform this hack? Some hacks are available without a RIF install."
+                        >
+                            RIF only
+                        </th>
+                        <th
+                            data-toggle="tooltip"
+                            title="The number of charges the hack will consume. If 0, no Relay Coupler is required for the hack."
+                        >
+                            Charges
+                        </th>
                         <th data-toggle="tooltip" title="The effect of the hack.">Description</th>
                     </tr>
                 </thead>
-                <tbody id="rifHacksTableBody">
-                </tbody>
+                <tbody id="rifHacksTableBody"></tbody>
             </table>
         </div>
     </div>
-
 </body>

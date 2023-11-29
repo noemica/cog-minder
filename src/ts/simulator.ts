@@ -238,7 +238,7 @@ jq(function ($) {
 
         // Create editor elements
         const parent = $('<div class="input-group"></div>');
-        const nameInput = $(`<input class="form-control"></input>`);
+        const nameInput = $(`<input class="form-control" />`);
         nameInput.val(name);
         const deleteButton = $(
             '<button class="btn ml-2" data-toggle="tooltip" title="Removes the dataset.">X</button>',
@@ -329,7 +329,7 @@ jq(function ($) {
         <div class="input-group-prepend ml-2" data-toggle="tooltip" title="The mass of cogmind. Ram damage is a random amount from 0 to (((10 + [mass]) / 5) + 1) * ([speed%] / 100) * [momentum].">
             <span class="input-group-text">Mass</span>
         </div>`);
-        const massInput = $('<input class="form-control" placeholder="0"></input>');
+        const massInput = $('<input class="form-control" placeholder="0" />');
         const overloadContainer = $('<div class="btn-group btn-group-toggle ml-2" data-toggle="buttons"></div>');
         const overloadLabelContainer = $(
             '<div class="input-group-prepend" data-toggle="tooltip" title="Whether to fire the weapon as overloaded (double damage)."></div>',
@@ -350,7 +350,7 @@ jq(function ($) {
         <div class="input-group-prepend ml-2" data-toggle="tooltip" title="How many weapons of this type to have equipped.">
             <span class="input-group-text">Number</span>
         </div>`);
-        const numberInput = $('<input class="form-control" placeholder="1"></input>');
+        const numberInput = $('<input class="form-control" placeholder="1" />');
         const deleteButton = $('<button class="btn ml-2" data-toggle="tooltip" title="Removes the weapon.">X</button>');
 
         // Add elements to DOM

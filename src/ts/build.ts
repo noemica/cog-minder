@@ -230,7 +230,7 @@ jq(function ($) {
             '<div class="input-group-prepend ml-3" data-toggle="tooltip" title="How many of the part to equip"></div>',
         );
         const numberLabel = $('<span class="input-group-text">Number</span>');
-        const numberInput = $('<input type="text" class="form-control" placeholder="1"></input>');
+        const numberInput = $('<input type="text" class="form-control" placeholder="1" />');
         const activeContainer = $('<div class="btn-group btn-group-toggle ml-2" data-toggle="buttons"></div>');
         const activeLabelContainer = $(
             '<div class="input-group-prepend" data-toggle="tooltip" title="Whether the part is active."></div>',

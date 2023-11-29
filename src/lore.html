@@ -1,52 +1,72 @@
 <!doctype html>
 
 <head lang="en">
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Cogmind Lore</title>
-    <meta name="description" content="Cogmind lore reference">
+    <meta name="description" content="Cogmind lore reference" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+        crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
 
     <script src="ts/lore.ts" type="module"></script>
 </head>
 
 <body>
     <!-- Header/Title -->
-    <div id="headerContainer" class="container-xl">
-    </div>
+    <div id="headerContainer" class="container-xl"></div>
 
     <div class="container-xl">
         <!-- User inputs -->
         <div class="input-group">
             <!-- Name/Number filter -->
-            <div class="input-group-prepend" data-toggle="tooltip"
-                title="The name or number of a lore entry to search for. Only lore entries with names containing this value will be shown.">
+            <div
+                class="input-group-prepend"
+                data-toggle="tooltip"
+                title="The name or number of a lore entry to search for. Only lore entries with names containing this value will be shown."
+            >
                 <span class="input-group-text">Name/Number</span>
             </div>
-            <input id="nameNumberInput" type="text" class="form-control" placeholder="Any">
+            <input id="nameNumberInput" type="text" class="form-control" placeholder="Any" />
 
             <!-- Content filter -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The lore entry content to search for. Only lore entries with content containing this value will be shown.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The lore entry content to search for. Only lore entries with content containing this value will be shown."
+            >
                 <span class="input-group-text">Content</span>
             </div>
-            <input id="contentInput" type="text" class="form-control" placeholder="Any">
+            <input id="contentInput" type="text" class="form-control" placeholder="Any" />
 
             <!-- Group filter -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip" title="The group of lore to search for. For example, &quot;0b10 Records&quot; will display all 0b10-related
-                records.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title='The group of lore to search for. For example, "0b10 Records" will display all 0b10-related
+                records.'
+            >
                 <span class="input-group-text">Group</span>
             </div>
-            <input id="groupInput" type="text" class="form-control" placeholder="Any">
+            <input id="groupInput" type="text" class="form-control" placeholder="Any" />
 
             <!-- Reset button -->
-            <button id="reset" type="button" class="btn ml-3" data-toggle="tooltip"
-                title="Resets all filters to their default (unfiltered) state">Reset</button>
+            <button
+                id="reset"
+                type="button"
+                class="btn ml-3"
+                data-toggle="tooltip"
+                title="Resets all filters to their default (unfiltered) state"
+            >
+                Reset
+            </button>
         </div>
 
         <!-- Lore table -->
@@ -57,9 +77,7 @@
                     <th data-toggle="tooltip" title="The contents of the lore entry.">Content</th>
                 </tr>
             </thead>
-            <tbody id="loreTableBody">
-            </tbody>
+            <tbody id="loreTableBody"></tbody>
         </table>
     </div>
-
 </body>

@@ -6,10 +6,7 @@
         "target": "es6",
         "sourceMap": true,
         "declaration": true,
-        "lib": [
-            "ES2017",
-            "DOM"
-        ],
+        "lib": ["ES2017", "DOM"],
         "strict": true,
         "noUnusedLocals": true,
         "noImplicitReturns": true,
@@ -17,11 +14,6 @@
         "noImplicitAny": false,
         "resolveJsonModule": true
     },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        ".git",
-        "node_modules"
-    ]
+    "include": ["src/**/*"],
+    "exclude": [".git", "node_modules"]
 }
