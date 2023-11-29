@@ -12,7 +12,8 @@
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
         "noImplicitAny": false,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "allowArbitraryExtensions": true
     },
     "include": ["src/**/*"],
     "exclude": [".git", "node_modules"]
