@@ -73,11 +73,23 @@ import {
 } from "./simulatorTypes";
 
 import "bootstrap";
-import { Chart, ChartDataSets, Point } from "chart.js";
+import { AnimationOptions, CategoryScale, Chart, ChartDataset, ChartOptions, Filler, Legend, LineElement, LinearScale, LinearScaleOptions, Point, PointElement, ScatterController, Title, Tooltip } from "chart.js";
 import * as jQuery from "jquery";
 import "bootstrap-select";
 import { DumpMindEntity } from "./dumpMindTypes";
 import { Bot } from "./botTypes";
+
+Chart.register(
+    CategoryScale,
+    Filler,
+    Legend,
+    LineElement,
+    LinearScale,
+    PointElement,
+    ScatterController,
+    Title,
+    Tooltip,
+);
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -87,8 +99,8 @@ jq(function ($) {
     const dumpMindTargetName = "DumpMind Target";
 
     // Chart variables set on init
-    let chart: Chart;
-    let comparisonChart: Chart;
+    let chart: Chart<"scatter">;
+    let comparisonChart: Chart<"scatter">;
     let currentComparisonData;
 
     let savedTargetEntity: DumpMindEntity | undefined = undefined;
@@ -465,16 +477,19 @@ jq(function ($) {
     }
 
     // Gets a dataset's overall settings with some defaults
-    function getDatasetSettings(label: string, backgroundColor: string, borderColor: string) {
+    function getDatasetSettings(label: string, backgroundColor: string, borderColor: string): ChartDataset<"scatter"> {
         return {
+            type: "scatter",
+            data: [],
+            fill: "start",
             backgroundColor: backgroundColor,
             borderColor: borderColor,
             label: label,
             pointRadius: 0,
             pointHitRadius: 25,
             showLine: true,
-            steppedLine: "before",
-        } as ChartDataSets;
+            stepped: "before",
+        };
     }
 
     // Gets the number of simulations to perform
@@ -562,7 +577,7 @@ jq(function ($) {
                 label = "Custom Comparison";
             }
 
-            comparisonChart.options.title!.text = label;
+            comparisonChart.options.plugins!.title!.text = label;
             comparisonChart.update();
         });
 
@@ -633,108 +648,129 @@ jq(function ($) {
         );
 
         let chartElement = $("#chart");
-        chart = new Chart(chartElement as any, {
+        chart = new Chart<"scatter">(chartElement as any, {
             type: "scatter",
             data: {
                 datasets: [perXDataset, cumulativeDataset],
             },
             options: {
-                legend: {
-                    labels: {
-                        fontSize: 16,
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 16,
+                            },
+                        },
+                    },
+                    title: {
+                        display: true,
+                        font: {
+                            size: 24,
+                        },
                     },
                 },
                 scales: {
-                    xAxes: [
-                        {
-                            gridLines: {
-                                display: false,
-                            },
-                            scaleLabel: {
-                                display: true,
-                                labelString: "Number of volleys",
-                                fontSize: 24,
-                            },
-                            ticks: {
-                                min: 0,
-                                stepSize: 1,
-                            },
+                    x: {
+                        grid: {
+                            display: false,
                         },
-                    ],
-                    yAxes: [
-                        {
-                            gridLines: {
-                                color: "rgba(128, 128, 128, 0.8)",
-                            },
-                            scaleLabel: {
-                                display: true,
-                                labelString: "Percent of kills",
-                                fontSize: 24,
-                            },
-                            ticks: {
-                                beginAtZero: true,
-                                callback: (value) => value + "%",
-                            },
+                        ticks: {
+                            stepSize: 1,
                         },
-                    ],
-                },
-                title: {
-                    display: true,
-                    fontSize: 24,
+                        min: 0,
+                        title: {
+                            display: true,
+                            font: {
+                                size: 24,
+                            },
+                            text: "Number of volleys",
+                        }
+                    },
+                    y: {
+                        border: {
+                            color: "rgba(128, 128, 128, 0.8)",
+                            display: true,
+                        },
+                        grid: {
+                            color: "rgba(128, 128, 128, 0.8)",
+                        },
+                        title: {
+                            display: true,
+                            font: {
+                                size: 24,
+                            },
+                            text: "Percent of kills",
+                        },
+                        min: 0,
+                        ticks: {
+                            callback: (tickValue, index, ticks) =>
+                                tickValue + "%",
+                        }
+                    },
                 },
             },
         });
 
         chartElement = $("#comparisonChart");
-        comparisonChart = new Chart(chartElement as any, {
-            type: "scatter",
+        comparisonChart = new Chart<"scatter">(chartElement as any, {
             data: {
                 datasets: [],
             },
             options: {
-                legend: {
-                    labels: {
-                        fontSize: 16,
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 16,
+                            },
+                        },
+                    },
+                    title: {
+                        display: true,
+                        font: {
+                            size: 24,
+                        },
+                        text: "Custom Comparison",
                     },
                 },
                 scales: {
-                    xAxes: [
-                        {
-                            gridLines: {
-                                display: false,
-                            },
-                            scaleLabel: {
-                                display: true,
-                                labelString: "Number of time units",
-                                fontSize: 24,
-                            },
-                            ticks: {
-                                min: 0,
-                                stepSize: 100,
-                            },
+                    x: {
+                        grid: {
+                            display: false,
                         },
-                    ],
-                    yAxes: [
-                        {
-                            gridLines: {
-                                color: "rgba(128, 128, 128, 0.8)",
+                        title: {
+                            display: true,
+                            font: {
+                                size: 24,
                             },
-                            scaleLabel: {
-                                display: true,
-                                labelString: "Percent of kills",
-                                fontSize: 24,
-                            },
-                            ticks: {
-                                beginAtZero: true,
-                                callback: (value) => value + "%",
-                            },
+                            text: "Number of time units",
                         },
-                    ],
-                },
-                title: {
-                    display: true,
-                    text: "Custom Comparison",
-                    fontSize: 24,
+                        min: 0,
+                        ticks: {
+                            stepSize: 100,
+                        },
+                    },
+                    y: {
+                        border: {
+                            color: "rgba(128, 128, 128, 0.8)",
+                            display: true,
+                        },
+                        grid: {
+                            color: "rgba(128, 128, 128, 0.8)",
+                        },
+                        min: 0,
+                        ticks: {
+                            callback: (tickValue, index, ticks) =>
+                                tickValue + "%",
+                        },
+                        title: {
+                            display: true,
+                            font: {
+                                size: 24,
+                            },
+                            text: "Percent of kills",
+                        }
+                    },
                 },
             },
         });
@@ -1156,6 +1192,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from <a class="d-
         addWeaponSelect("");
         setStatusText("");
 
+        // Temp test
         $("#resultsContainer").addClass("not-visible");
         $("#lootContainer").addClass("not-visible");
     }
@@ -2080,12 +2117,12 @@ title="Paste the data created by Luigi's DumpMind below">Paste from <a class="d-
         const cumulativeData = getCumulativeData(perXData);
 
         // Update chart
-        chart.options.scales!.xAxes![0].ticks!.stepSize = stepSize;
-        chart.options.scales!.xAxes![0].scaleLabel!.labelString = xAxisString;
+        (chart.options.scales!.x! as LinearScaleOptions).ticks.stepSize = stepSize;
+        chart.options.scales!.x!.title!.text = xAxisString;
         perXDataset.data = perXData;
         cumulativeDataset.data = cumulativeData;
 
-        chart.options.title!.text = `${xString}/${perXString} vs. ${$("#botSelect").selectpicker("val")}`;
+        chart.options.plugins!.title!.text = `${xString}/${perXString} vs. ${$("#botSelect").selectpicker("val")}`;
         chart.update();
         $("#resultsContainer").removeClass("not-visible");
     }
