@@ -1,7 +1,7 @@
 // Common Jquery related code
 
 import { createItemDataContent, escapeHtml, getItem, itemData, valueOrDefault } from "./common";
-import { PageType, pageTypes, Spoiler } from "./commonTypes";
+import { PageType, pageTypes, Spoiler } from "../types/commonTypes";
 
 import * as jQuery from "jquery";
 import "bootstrap";

@@ -18,7 +18,7 @@ import {
     parseIntOrDefault,
     sum,
     valueOrDefault,
-} from "./common";
+} from "./utilities/common";
 import {
     createHeader,
     enablePopoverBotInfoInteraction,
@@ -28,7 +28,7 @@ import {
     resetButtonGroup,
     setSpoilerState,
     temporarilySetValue,
-} from "./commonJquery";
+} from "./utilities/commonJquery";
 import {
     Actuator,
     ActuatorArray,
@@ -48,7 +48,7 @@ import {
     TargetAnalyzer,
     Targeting,
     WeaponItem,
-} from "./itemTypes";
+} from "./types/itemTypes";
 import {
     getBotDefensiveState,
     getRangedVolleyTime,
@@ -70,13 +70,13 @@ import {
     SimulatorState,
     SimulatorWeapon,
     SneakAttackStrategy,
-} from "./simulatorTypes";
+} from "./types/simulatorTypes";
 
 import "bootstrap";
 import { AnimationOptions, CategoryScale, Chart, ChartDataset, ChartOptions, Filler, Legend, LineElement, LinearScale, LinearScaleOptions, Point, PointElement, ScatterController, Title, Tooltip } from "chart.js";
 import * as jQuery from "jquery";
 import "bootstrap-select";
-import { DumpMindEntity } from "./dumpMindTypes";
+import { DumpMindEntity } from "./types/dumpMindTypes";
 import { Bot } from "./botTypes";
 
 Chart.register(

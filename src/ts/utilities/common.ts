@@ -1,8 +1,8 @@
 // Common code
-import itemCategories from "../json/item_categories.json";
-import botExtraData from "../json/bot_extra_data.json";
-import lore from "../json/lore.json";
-import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "./botTypes";
+import itemCategories from "../../json/item_categories.json";
+import botExtraData from "../../json/bot_extra_data.json";
+import lore from "../../json/lore.json";
+import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "../botTypes";
 import {
     BaseItem,
     Critical,
@@ -18,9 +18,9 @@ import {
     SpecialPropertyTypeName,
     UtilityItem,
     WeaponItem,
-} from "./itemTypes";
-import { specialItemProperties } from "./specialItemProperties";
-import { MapLocation, Spoiler } from "./commonTypes";
+} from "../types/itemTypes";
+import { specialItemProperties } from "../specialItemProperties";
+import { MapLocation, Spoiler } from "../types/commonTypes";
 import { getSpoilerState } from "./commonJquery";
 
 export let botData: { [key: string]: Bot } = {};

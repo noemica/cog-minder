@@ -6,9 +6,9 @@ import {
     registerDisableAutocomplete,
     resetButtonGroup,
     setSpoilerState,
-} from "./commonJquery";
-import { parseIntOrDefault } from "./common";
-import { Spoiler } from "./commonTypes";
+} from "./utilities/commonJquery";
+import { parseIntOrDefault } from "./utilities/common";
+import { Spoiler } from "./types/commonTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {

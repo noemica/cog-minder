@@ -1,9 +1,9 @@
 import lore from "../json/lore.json";
 import * as jQuery from "jquery";
 import "bootstrap";
-import { createHeader, getSpoilerState, registerDisableAutocomplete, setSpoilerState } from "./commonJquery";
-import { escapeHtml } from "./common";
-import { Spoiler } from "./commonTypes";
+import { createHeader, getSpoilerState, registerDisableAutocomplete, setSpoilerState } from "./utilities/commonJquery";
+import { escapeHtml } from "./utilities/common";
+import { Spoiler } from "./types/commonTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {

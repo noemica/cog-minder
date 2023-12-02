@@ -9,7 +9,7 @@ import {
     setActiveButtonGroupButton,
     setSpoilerState,
     temporarilySetValue,
-} from "./commonJquery";
+} from "./utilities/commonJquery";
 import {
     boldMatches,
     canShowSpoiler,
@@ -20,12 +20,12 @@ import {
     getItem,
     initData,
     loadImage,
-} from "./common";
-import { MapLocation, Spoiler } from "./commonTypes";
+} from "./utilities/common";
+import { MapLocation, Spoiler } from "./types/commonTypes";
 import { Bot } from "./botTypes";
-import { Item } from "./itemTypes";
+import { Item } from "./types/itemTypes";
 import { createContentHtml, createPreviewContent } from "./wikiParser";
-import { WikiEntry } from "./wikiTypes";
+import { WikiEntry } from "./types/wikiTypes";
 
 import autocomplete, { AutocompleteItem, AutocompleteResult } from "autocompleter";
 import * as jQuery from "jquery";

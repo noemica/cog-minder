@@ -1,4 +1,4 @@
-import { Bot } from "./botTypes";
+import { Bot } from "../botTypes";
 import { Item } from "./itemTypes";
 
 export type PageType = "About" | "Bots" | "Build" | "Hacks" | "Lore" | "Parts" | "RIF" | "Simulator" | "Wiki";

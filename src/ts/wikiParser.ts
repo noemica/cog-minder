@@ -8,9 +8,9 @@ import {
     escapeHtml,
     createLocationHtml,
     parseIntOrDefault,
-} from "./common";
-import { MapLocation, Spoiler } from "./commonTypes";
-import { WikiEntry } from "./wikiTypes";
+} from "./utilities/common";
+import { MapLocation, Spoiler } from "./types/commonTypes";
+import { WikiEntry } from "./types/wikiTypes";
 
 // Output group types
 // Grouped can be in the same <p> block

@@ -9,7 +9,7 @@ import {
     leetSpeakMatchTransform,
     nameToId,
     parseIntOrDefault,
-} from "./common";
+} from "./utilities/common";
 import {
     getSpoilerState,
     getSelectedButtonId,
@@ -18,7 +18,7 @@ import {
     createHeader,
     registerDisableAutocomplete,
     setSpoilerState,
-} from "./commonJquery";
+} from "./utilities/commonJquery";
 
 import * as jQuery from "jquery";
 import "popper.js";

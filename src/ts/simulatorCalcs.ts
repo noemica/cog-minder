@@ -1,6 +1,6 @@
 // Battle simulation calculation functions/constants
 import { Bot, BotImmunity } from "./botTypes";
-import { hasActiveSpecialProperty, randomInt, sum } from "./common";
+import { hasActiveSpecialProperty, randomInt, sum } from "./utilities/common";
 import {
     AntimissileChance,
     ReactionControlSystem,
@@ -20,7 +20,7 @@ import {
     SiegeMode,
     Spectrum,
     WeaponItem,
-} from "./itemTypes";
+} from "./types/itemTypes";
 import {
     BotState,
     DefensiveState,
@@ -29,7 +29,7 @@ import {
     SimulatorState,
     SimulatorWeapon,
     SpecialPart,
-} from "./simulatorTypes";
+} from "./types/simulatorTypes";
 
 const minAccuracy = 10;
 const maxRangedAccuracy = 95;

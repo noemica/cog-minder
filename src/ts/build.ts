@@ -12,7 +12,7 @@ import {
     isPartMelee,
     itemData,
     parseIntOrDefault,
-} from "./common";
+} from "./utilities/common";
 import {
     createHeader,
     getSelectedButtonId,
@@ -22,7 +22,7 @@ import {
     setActiveButtonGroupButton,
     setSpoilerState,
     temporarilySetValue,
-} from "./commonJquery";
+} from "./utilities/commonJquery";
 import {
     Actuator,
     BaseItem,
@@ -40,7 +40,7 @@ import {
     RangedWeaponCycling,
     WeaponItem,
     WeaponRegen,
-} from "./itemTypes";
+} from "./types/itemTypes";
 
 import * as jQuery from "jquery";
 import "bootstrap";

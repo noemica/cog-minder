@@ -11,7 +11,7 @@ import {
     leetSpeakMatchTransform,
     nameToId,
     parseIntOrDefault,
-} from "./common";
+} from "./utilities/common";
 import {
     createHeader,
     getSelectedButtonId,
@@ -20,7 +20,7 @@ import {
     registerDisableAutocomplete,
     resetButtonGroup,
     setSpoilerState,
-} from "./commonJquery";
+} from "./utilities/commonJquery";
 import {
     ItemCategory,
     Critical,
@@ -35,7 +35,7 @@ import {
     Spectrum,
     WeaponItem,
     HeatTransfer,
-} from "./itemTypes";
+} from "./types/itemTypes";
 
 import lozad from "lozad";
 import jQuery from "jquery";
