@@ -1,0 +1,17 @@
+@import "../../../styles/colors.less";
+@import "../../../styles/sizes.less";
+
+.chart-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.chart-grid > * {
+    background-color: @grid-cell-background-color;
+    border: 1px solid @grid-cell-border-color;
+    flex: 1 1 0px;
+    border-radius: @chart-container-corner-radius;
+}

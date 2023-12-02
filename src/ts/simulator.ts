@@ -73,7 +73,21 @@ import {
 } from "./types/simulatorTypes";
 
 import "bootstrap";
-import { AnimationOptions, CategoryScale, Chart, ChartDataset, ChartOptions, Filler, Legend, LineElement, LinearScale, LinearScaleOptions, Point, PointElement, ScatterController, Title, Tooltip } from "chart.js";
+import {
+    CategoryScale,
+    Chart,
+    ChartDataset,
+    Filler,
+    Legend,
+    LineElement,
+    LinearScale,
+    LinearScaleOptions,
+    Point,
+    PointElement,
+    ScatterController,
+    Title,
+    Tooltip,
+} from "chart.js";
 import * as jQuery from "jquery";
 import "bootstrap-select";
 import { DumpMindEntity } from "./types/dumpMindTypes";
@@ -546,7 +560,7 @@ jq(function ($) {
             }
 
             $("#enemyInfoButton").removeClass("not-visible");
-            $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
+            $("#enemyInfoButton").attr("data-content", createBotDataContent(bot, getSpoilerState()));
 
             if (bot.name === "A-15 Conveyor") {
                 $("#endConditionNoTnc").removeClass("not-visible");
@@ -613,7 +627,7 @@ jq(function ($) {
 
         //Set initial bot info
         const bot = getBot(($("#botSelect") as any).selectpicker("val"));
-        $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
+        $("#enemyInfoButton").attr("data-content", createBotDataContent(bot, getSpoilerState()));
         ($("#enemyInfoButton") as any).popover();
 
         enablePopoverBotInfoInteraction($("#enemyInfoButton"));
@@ -684,7 +698,7 @@ jq(function ($) {
                                 size: 24,
                             },
                             text: "Number of volleys",
-                        }
+                        },
                     },
                     y: {
                         border: {
@@ -703,9 +717,8 @@ jq(function ($) {
                         },
                         min: 0,
                         ticks: {
-                            callback: (tickValue, index, ticks) =>
-                                tickValue + "%",
-                        }
+                            callback: (tickValue, _index, _ticks) => tickValue + "%",
+                        },
                     },
                 },
             },
@@ -760,8 +773,7 @@ jq(function ($) {
                         },
                         min: 0,
                         ticks: {
-                            callback: (tickValue, index, ticks) =>
-                                tickValue + "%",
+                            callback: (tickValue, _index, _ticks) => tickValue + "%",
                         },
                         title: {
                             display: true,
@@ -769,7 +781,7 @@ jq(function ($) {
                                 size: 24,
                             },
                             text: "Percent of kills",
-                        }
+                        },
                     },
                 },
             },

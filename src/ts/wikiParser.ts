@@ -80,7 +80,7 @@ export function createContentHtml(
 
     // Process initial content by replacing any instances of [XYZ] in links with {{xyz}}
     // Otherwise we hae issues with the regex for any links that include square brackets in them
-    const initialContent = entry.content.replace(/([^\[])\[([\w\/]*)\]/g, (_, p1, p2) => {
+    const initialContent = entry.content.replace(/([^[])\[([\w/]*)\]/g, (_, p1, p2) => {
         return `${p1}{{${p2}}}`;
     });
     const state = new ParserState(allEntries, [], new Set<string>(), false, initialContent, "All", spoilerState);
@@ -150,6 +150,7 @@ function getLinkHtml(state: ParserState, referenceEntry: WikiEntry, linkText: st
         const bot = getBot(referenceEntry.name);
         tooltipData = `data-html=true data-boundary="window" data-content='${createBotDataContent(
             bot,
+            state.spoiler,
             false,
         )}' data-toggle="popover" data-trigger="hover"`;
     } else if (referenceEntry.type === "Part") {
@@ -320,7 +321,7 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         let imageName = split[2 * i];
         const imageCaption = split[2 * i + 1];
 
-        const spoilerResult = /\[\[([^\]]*)]\]([^\[]*)\[\[\/([^\]]*)\]\]/.exec(imageName);
+        const spoilerResult = /\[\[([^\]]*)]\]([^[]*)\[\[\/([^\]]*)\]\]/.exec(imageName);
         if (spoilerResult) {
             if (spoilerResult[1] === spoilerResult[3]) {
                 if ((spoilerResult[1] as Spoiler) === "Spoiler" || (spoilerResult[1] as Spoiler) === "Redacted") {

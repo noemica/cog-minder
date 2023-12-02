@@ -895,25 +895,28 @@ title="Paste the entire a run dump or scores .txt file below">Paste run dump bel
                 break;
             }
 
-            case "Integrity":
+            case "Integrity": {
                 const integrity = partsState.coreInfo.integrity;
                 const integrityPercent = (integrity * 100) / partsState.totalIntegrity;
                 addPercentageBar(infoContainer, integrity, integrityPercent, "Default");
                 break;
+            }
 
-            case "Mass":
+            case "Mass": {
                 const support = partsState.coreInfo.mass;
                 const supportPercent = (-support * 100) / partsState.totalSupport;
                 addPercentageBar(infoContainer, support, supportPercent, "MassSupport");
                 break;
+            }
 
-            case "Vulnerability":
+            case "Vulnerability": {
                 const vulnerability = partsState.coreInfo.vulnerability;
                 const diffFromMin = vulnerability - partsState.highestVulnerability;
                 const minMaxDiff = partsState.lowestVulnerability - partsState.highestVulnerability;
                 const percentage = minMaxDiff === 0 ? 100.0 : 100.0 * (1.0 - diffFromMin / minMaxDiff);
                 addPercentageBarWithString(infoContainer, Math.ceil(vulnerability), percentage, "", "Vulnerability");
                 break;
+            }
 
             default:
                 assertUnreachable(infoType);
@@ -1062,13 +1065,14 @@ title="Paste the entire a run dump or scores .txt file below">Paste run dump bel
                 break;
             }
 
-            case "Vulnerability":
+            case "Vulnerability": {
                 const vulnerability = partInfo.vulnerability;
                 const diffFromMin = vulnerability - partsState.highestVulnerability;
                 const minMaxDiff = partsState.lowestVulnerability - partsState.highestVulnerability;
                 const percentage = minMaxDiff === 0 ? 100.0 : 100.0 * (1.0 - diffFromMin / minMaxDiff);
                 addPercentageBarWithString(infoColumn, Math.ceil(vulnerability), percentage, "", "Vulnerability");
                 break;
+            }
 
             default:
                 assertUnreachable(infoType);

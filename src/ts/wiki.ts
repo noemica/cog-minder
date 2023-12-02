@@ -522,6 +522,7 @@ jq(function ($) {
         for (const otherEntry of wiki.Other) {
             let spoiler: Spoiler = "None";
             if (otherEntry.Spoiler === "Redacted") {
+                spoiler = "Redacted";
             } else if (otherEntry.Spoiler === "Spoiler") {
                 spoiler = "Spoiler";
             }
@@ -945,7 +946,7 @@ jq(function ($) {
         const parentContent =
             entry.parentGroup === undefined ? undefined : $(parseEntryContent(entry.parentGroup, true));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
-        const infoboxContent = $(createBotDataContent(bot, true));
+        const infoboxContent = $(createBotDataContent(bot, getSpoilerState(), true));
 
         // Append to DOM
         // Append the infobox first which floats to the right
@@ -988,7 +989,7 @@ jq(function ($) {
                 }>${botEntry.name}</label>`,
             );
             const botInfoboxContent = $(
-                `<div class="mt-2">${createBotDataContent(botEntry.extraData as Bot, true)}</div>`,
+                `<div class="mt-2">${createBotDataContent(botEntry.extraData as Bot, getSpoilerState(), true)}</div>`,
             );
             const botContent = $(`<div>${parseEntryContent(botEntry, true)}</div>`);
 

@@ -138,7 +138,7 @@ jq(function ($) {
                     id="${botId}"
                     class="item btn"
                     data-html=true
-                    data-content='${createBotDataContent(bot)}'
+                    data-content='${createBotDataContent(bot, getSpoilerState())}'
                     data-toggle="popover">
                     ${botName}
                  </button>`,

@@ -21,7 +21,6 @@ import {
 } from "../types/itemTypes";
 import { specialItemProperties } from "../specialItemProperties";
 import { MapLocation, Spoiler } from "../types/commonTypes";
-import { getSpoilerState } from "./commonJquery";
 
 export let botData: { [key: string]: Bot } = {};
 export let itemData: { [key: string]: Item } = {};
@@ -442,9 +441,8 @@ const emptyHalfLine = `<pre class="popover-half-line">
     
 </pre>`;
 
-/* eslint-disable prettier/prettier */
 // Creates a HTML string representing a bot
-export function createBotDataContent(bot: Bot, popoversToLinks = false): string {
+export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLinks = false): string {
     function createItemHtml(data: BotPart, popoversToLinks: boolean) {
         let line = `${escapeHtml(data.name)} (${data.coverage}%)`;
 
@@ -715,7 +713,6 @@ export function createBotDataContent(bot: Bot, popoversToLinks = false): string 
     }
 
     // Get filtered list of locations
-    const spoilers = getSpoilerState();
     const locations = bot.locations.filter((l) => {
         if (l.Spoiler === undefined || spoilers === "Redacted") {
             return true;
@@ -1382,7 +1379,6 @@ export function createItemDataContent(baseItem: Item): string {
 
     return html;
 }
-/* eslint-enable prettier/prettier */
 
 export function createLocationHtml(location: MapLocation, spoilersState: Spoiler, inPopover: boolean): string {
     function getDepthString(minDepth: number, maxDepth: number) {
@@ -1493,6 +1489,7 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
                 if (canShowSpoiler(specialBot.spoiler, spoilersState)) {
                     const extraAttributes = `data-html=true data-content='${createBotDataContent(
                         specialBot,
+                        spoilersState,
                     )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
                     html += textLineLink(specialBot.name, `#${specialBot.name}`, undefined, extraAttributes);
                 } else {
@@ -1532,7 +1529,7 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
 
 // Escapes the given string with HTML entities
 export function escapeHtml(string: string): string {
-    return string.replace(/[&<>"'`=\/\n]/g, function (s) {
+    return string.replace(/[&<>"'`=/\n]/g, function (s) {
         return entityMap[s];
     });
 }
@@ -1744,7 +1741,7 @@ export async function initData(
               : "None";
 
         switch (item["Slot"]) {
-            case "N/A":
+            case "N/A": {
                 const otherItem: OtherItem = {
                     slot: "N/A",
                     category: category,
@@ -1769,6 +1766,7 @@ export async function initData(
                 };
                 newItem = otherItem;
                 break;
+            }
 
             case "Power": {
                 let minChunks: number | undefined = undefined;
@@ -1831,7 +1829,7 @@ export async function initData(
                 break;
             }
 
-            case "Propulsion":
+            case "Propulsion": {
                 const propItem: PropulsionItem = {
                     slot: "Propulsion",
                     category: category,
@@ -1869,8 +1867,9 @@ export async function initData(
                 };
                 newItem = propItem;
                 break;
+            }
 
-            case "Utility":
+            case "Utility": {
                 const utilItem: UtilityItem = {
                     slot: "Utility",
                     category: category,
@@ -1900,8 +1899,9 @@ export async function initData(
                 };
                 newItem = utilItem;
                 break;
+            }
 
-            case "Weapon":
+            case "Weapon": {
                 let critical: number | undefined;
                 let criticalType: Critical | undefined;
                 if (item.Critical !== undefined) {
@@ -2003,6 +2003,7 @@ export async function initData(
                 };
                 newItem = weaponItem;
                 break;
+            }
         }
 
         if (verifyImages) {
@@ -2255,7 +2256,7 @@ export async function loadImage(imageUrl: string): Promise<boolean> {
 }
 
 // Converts an item or bot's name to an HTML id
-const nameToIdRegex = /[ /.'"\]\[]]*/g;
+const nameToIdRegex = /[ /.'"\][]]*/g;
 export function nameToId(name: string): string {
     const id = `item${name.replace(nameToIdRegex, "")}`;
     return id;

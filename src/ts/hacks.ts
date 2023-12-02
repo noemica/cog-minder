@@ -39,7 +39,6 @@ jq(function ($) {
         hacks: Hack[];
     };
 
-    /* eslint-disable prettier/prettier */
     // All machine/hack data
     const allMachines: Machine[] = [
         {
@@ -1446,7 +1445,6 @@ jq(function ($) {
             imageName: "../game_sprites/Door Terminal.png",
         },
     ];
-    /* eslint-enable prettier/prettier */
 
     // Updates all hacking tables based on the spoiler level and user inputs
     function updateHackTables() {

@@ -1,5 +1,8 @@
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 import path from "path";
+
+declare const __dirname: string;
 
 export default defineConfig({
     root: "src",
@@ -11,6 +14,7 @@ export default defineConfig({
                 about: path.resolve(__dirname, "src/about.html"),
                 bots: path.resolve(__dirname, "src/bots.html"),
                 build: path.resolve(__dirname, "src/build.html"),
+                combat: path.resolve(__dirname, "src/combat.html"),
                 hacks: path.resolve(__dirname, "src/hacks.html"),
                 lore: path.resolve(__dirname, "src/lore.html"),
                 parts: path.resolve(__dirname, "src/parts.html"),
@@ -20,4 +24,5 @@ export default defineConfig({
             },
         },
     },
+    plugins: [react()],
 });
