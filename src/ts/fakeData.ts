@@ -1,4 +1,4 @@
-import { CombatLogEntry } from "./types/combatTypes";
+import { CombatLogEntry } from "./types/combatLogTypes";
 
 export const fakeData: CombatLogEntry[] = [
     {

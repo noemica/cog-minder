@@ -12,7 +12,7 @@ import CriticalHitsByCogmind from "../Charts/CriticalHitsByCogmindChart";
 import CriticalHitsToCogmind from "../Charts/CriticalHitsToCogmindChart";
 import Button from "../Buttons/Button";
 import ExclusiveButtonGroup, { ExclusiveButtonDefinition } from "../Buttons/ExclusiveButtonGroup";
-import { CombatLogChartType, CombatLogChartCategoryType, ChartDisplayOptions } from "../../types/combatTypes";
+import { CombatLogChartType, CombatLogChartCategoryType, ChartDisplayOptions } from "../../types/combatLogTypes";
 
 const chartTypeButtons: ExclusiveButtonDefinition<CombatLogChartType>[] = [
     {

@@ -7,6 +7,10 @@ export function isKnownItem(itemName: string) {
     return itemsByName.get(itemName) !== undefined;
 }
 
+export function getItemByName(itemName: string) {
+    return itemsByName.get(itemName);
+}
+
 export function getItemDamageType(itemName: string) {
     const item = itemsByName.get(itemName);
 

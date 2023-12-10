@@ -1,4 +1,4 @@
-import { CombatLogEntry, CombatLogDamageEntry, CombatLogChartCategoryType, ChartDataValue } from "../types/combatTypes";
+import { CombatLogEntry, CombatLogDamageEntry, CombatLogChartCategoryType, ChartDataValue } from "../types/combatLogTypes";
 import { getBotClass } from "./botUtilities";
 import { assertUnreachable } from "./common";
 import { getItemDamageType, getItemSlot } from "./itemUtilities";

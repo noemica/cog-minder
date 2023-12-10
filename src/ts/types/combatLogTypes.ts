@@ -17,7 +17,7 @@ export type CombatLogEntry = {
     sourceEntity: string;
     sourceWeapon: string;
     turn?: number;
-    weaponAccuracy: number;
+    weaponAccuracy?: number;
 };
 
 export type ChartDataValue = {

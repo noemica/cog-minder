@@ -7,9 +7,13 @@ const botsByShortName = new Map<string, JsonBot>(
     jsonBots.filter((bot) => bot["Short Name"] !== undefined).map((bot) => [bot["Short Name"]!, bot]),
 );
 
-const _botsByAllyName = new Map<string, JsonBot>(
+const botsByAllyName = new Map<string, JsonBot>(
     jsonBots.filter((bot) => bot["Ally Name"] !== undefined).map((bot) => [bot["Ally Name"]!, bot]),
 );
+
+export function getBotByAllyName(botAllyName: string) {
+    return botsByAllyName.get(botAllyName);
+}
 
 export function getBotByName(botName: string) {
     return botsByName.get(botName);
