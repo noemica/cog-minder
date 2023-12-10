@@ -3112,6 +3112,10 @@
         ],
         "Locations": [
             {
+                "Location": "Zion Deep Caves",
+                "Description": "Hostile: Guard around the top left and bottom left of the central area in groups of 3"
+            },
+            {
                 "Location": "Imprint roster",
                 "Description": "Friendly: Appear as summonable allies in groups of 2-3"
             }
