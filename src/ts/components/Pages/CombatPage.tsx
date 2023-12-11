@@ -13,6 +13,7 @@ import CriticalHitsToCogmind from "../Charts/CriticalHitsToCogmindChart";
 import Button from "../Buttons/Button";
 import ExclusiveButtonGroup, { ExclusiveButtonDefinition } from "../Buttons/ExclusiveButtonGroup";
 import { CombatLogChartType, CombatLogChartCategoryType, ChartDisplayOptions } from "../../types/combatLogTypes";
+import CombatLogDropzone from "../Dropzone/CombatLogDropzone";
 
 const chartTypeButtons: ExclusiveButtonDefinition<CombatLogChartType>[] = [
     {
@@ -44,7 +45,7 @@ const categoryTypeButtons: ExclusiveButtonDefinition<CombatLogChartCategoryType>
     {
         label: "Damage Type",
         value: "Damage Type",
-        tooltip: "Groups chart values based on the damage type of the fired weapon.",
+        tooltip: "Groups chart values based on the damage type of the weapon used.",
     },
     {
         label: "Damaged Part",
@@ -57,9 +58,9 @@ const categoryTypeButtons: ExclusiveButtonDefinition<CombatLogChartCategoryType>
         tooltip: "Groups chart values based on the damaged slot. Core is considered its own slot.",
     },
     {
-        label: "Fired Weapon",
+        label: "Used Weapon",
         value: "Weapon",
-        tooltip: "Groups chart values based on the fired weapon.",
+        tooltip: "Groups chart values based on the weapon used.",
     },
 ];
 
@@ -112,6 +113,9 @@ export function CombatPage() {
 
     return (
         <>
+            <CombatLogDropzone onParse={(combatLogEntries) => {
+                setCombatLogData(combatLogEntries);
+            }}></CombatLogDropzone>
             <Button onClick={loadDataPressed}>Load fake data</Button>
             <ExclusiveButtonGroup
                 buttons={chartTypeButtons}

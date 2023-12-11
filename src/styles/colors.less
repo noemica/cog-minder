@@ -1,27 +1,47 @@
-@default-border-color: #171717;
-
-// Page
+// Background colors
+@transparent-background-color: #000000cc;
 @page-background-color: #2f2f2f;
+@default-element-background-color: #3a3a3a;
+@moderate-contrast-background-color: #656565;
+@active-background-color: #b0b0b0;
+@emphasis-background-color: #d7d7d7;
+
+// Borders
+@default-border-color: #171717;
+@contrast-border-color: #e8e8e8;
 
 // Fonts
 @font-color-default: #e8e8e8;
-@font-color-contrast: black;
+@font-color-deemphasized: #aaaaaa;
+@font-color-contrast: #171717;
 
 // Chart grid cells
-@grid-cell-background-color: #3a3a3a;
+@grid-cell-background-color: @default-element-background-color;
 @grid-cell-border-color: @default-border-color;
 
 // Buttons
+@button-gradient-darken-percent: 40%;
 @button-border-color: @default-border-color;
 @button-background-color: #656565;
-@button-background-color2: #454545;
-@button-emphasis-background-color: #b0b0b0;
-@button-emphasis-background-color2: #707070;
-@button-active-background-color: #d7d7d7;
-@button-active-background-color2: #979797;
+@button-background-color2: darken(@button-background-color, @button-gradient-darken-percent, relative);
+@button-emphasis-background-color: @emphasis-background-color;
+@button-emphasis-background-color2: darken(
+    @button-emphasis-background-color,
+    @button-gradient-darken-percent,
+    relative
+);
+@button-active-background-color: @active-background-color;
+@button-active-background-color2: darken(@button-active-background-color, @button-gradient-darken-percent, relative);
 
 @button-font-color: @font-color-default;
 @button-font-contrast-color: @font-color-contrast;
 
+// Dropzone
+@dropzone-text-color: @font-color-deemphasized;
+@dropzone-border-color: @contrast-border-color;
+@dropzone-background-color: @default-element-background-color;
+@dropzone-drag-text-color: @font-color-contrast;
+@dropzone-drag-background-color: @moderate-contrast-background-color;
+
 // Tooltips
-@tooltip-background-color: #000000cc;
+@tooltip-background-color: @transparent-background-color;

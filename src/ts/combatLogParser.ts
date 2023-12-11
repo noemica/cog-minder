@@ -449,10 +449,16 @@ function createEmptyLogEntry(): CombatLogEntry {
 }
 
 // Parses a combat log string into an array of combat log entries
-export function parseLog(logText: string): CombatLogEntry[] {
+export function parseCombatLog(logText: string): CombatLogEntry[] {
     const lines: PartialParsedLine[] = [];
-    for (const line of logText.split("\n")) {
-        const result = lineStartRegex.exec(line)!;
+    for (let line of logText.split("\n")) {
+        line = line.trim();
+        const result = lineStartRegex.exec(line);
+
+        if (result === null) {
+            console.log(`Failed to parse log line ${line}`);
+            continue;
+        }
 
         const turn = parseIntOrDefault(result[1], 0);
         const indent = result[2].length;

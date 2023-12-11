@@ -1,0 +1,25 @@
+@import "../../../styles/colors.less";
+@import "../../../styles/sizes.less";
+
+.dropzone-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 10px;
+
+    background-color: @dropzone-background-color;
+
+    border-color: @dropzone-border-color;
+    border-width: 2px;
+    border-style: dashed;
+    border-radius: @dropzone-border-radius;
+}
+
+.dropzone-container > p {
+    color: @dropzone-text-color;
+}
+
+.dropzone-container-drag-active {
+    background-color: @dropzone-drag-background-color;
+}

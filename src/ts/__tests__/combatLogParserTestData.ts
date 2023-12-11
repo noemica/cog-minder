@@ -1224,3 +1224,29 @@ export const assembledHitCogmindPartEntries: CombatLogEntry[] = [
         weaponAccuracy: 79,
     },
 ];
+
+export const invalidDataLog = `some test invalid data
+0123456789
+none of this should crash
+!@#$%^&*()`;
+
+export const invalidDataInValidDataLog = `00001_ Base Hit%: 60-10s-10m-13mt-10ft=17
+0123456789
+none of this should crash or affect the output
+!@#$%^&*()
+00001_  should be an unrecognized line
+00001_  Lgt. Assault Rifle (17%) Miss`;
+
+export const invalidDataInValidDataEntries: CombatLogEntry[] = [
+    {
+        damageEntries: [
+        ],
+        projectilesHit: 0,
+        projectilesTotal: 1,
+        sourceEntity: "Cogmind",
+        sourceWeapon: "Lgt. Assault Rifle",
+        sneakAttack: false,
+        turn: 1,
+        weaponAccuracy: 17,
+    },
+];
