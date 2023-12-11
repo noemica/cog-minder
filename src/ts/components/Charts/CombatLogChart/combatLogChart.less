@@ -3,21 +3,21 @@
 
 // Container holding all pie-related content
 .pie-chart-container {
-    padding: 0 5px 5px 5px;
+    padding: @chart-padding;
     aspect-ratio: 1;
 
-    min-width: 450px;
-    min-height: 450px;
-    max-width: 550px;
-    max-height: 550px;
+    min-width: @chart-min-width;
+    min-height: @chart-min-width;
+    max-width: @chart-max-width;
+    max-height: @chart-max-width;
 
     position: relative;
 }
 
 // Container holding all horizontal bar-related content
 .horizontal-bar-chart-container {
-    min-width: 450px;
-    max-width: 550px;
+    min-width: @chart-min-width;
+    max-width: @chart-max-width;
 
     // Makes the chart box not take up the whole space which looks odd
     align-self: start;
@@ -28,7 +28,7 @@
 // Need an extra dedicated div for holding the chart itself
 .horizontal-bar-chart-wrapper {
     transition: height 0.25s ease-in;
-    margin: 0 5px 5px 5px;
+    margin: @chart-padding;
 }
 
 // Expand/collapse to top 10 values button

@@ -1,8 +1,14 @@
 @import "./colors.less";
+@import "./sizes.less";
 
 body {
     background-color: @page-background-color;
-    margin: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: @page-horizontal-margin;
+    padding-right: @page-horizontal-margin;
+
+    max-width: @page-max-width;
 }
 
 body * {

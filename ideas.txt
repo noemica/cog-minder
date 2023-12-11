@@ -4,13 +4,15 @@ Medium ideas:
 - Add ignore obsolete parts in search
     - Hard to know what an "obsolete" part is
 - Add proper followups for build page
-- Add import from dump for build page
 
 Big ideas:
 - Save search/parts in URL
     - Can do for all pages
 - Actively save build and update hash when modifying things
     - Easier than other pages since hash is already in existence
+
+- Combat log ideas
+    - Add support for filtering damage entries, e.g. specific bot target/damage type
 
 - Combat log possible requests
     - Start a new entry at a lower indent level if an unseen bot hits from outside LOS. Currently it appends onto the previous bot which can be confusing/misleading. Example:
