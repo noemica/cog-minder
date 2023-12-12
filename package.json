@@ -15,7 +15,6 @@
         "@typescript-eslint/eslint-plugin": "^6.13.1",
         "@typescript-eslint/parser": "^6.13.1",
         "@vitejs/plugin-react": "^4.2.0",
-        "cross-env": "^7.0.3",
         "eslint": "^8.55.0",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-import": "^2.29.0",
@@ -29,7 +28,7 @@
     },
     "scripts": {
         "start": "vite",
-        "build": "rimraf dist && cross-env NODE_ENV=production vite build",
+        "build": "rimraf dist && vite build",
         "preview": "vite preview",
         "deploy": "gh-pages -d dist",
         "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
@@ -49,7 +48,9 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-dropzone": "^14.2.3",
+        "react-select": "^5.8.0",
         "tablesorter": "^2.31.3",
+        "usehooks-ts": "^2.9.1",
         "vite": "^5.0.3"
     },
     "resolutions": {

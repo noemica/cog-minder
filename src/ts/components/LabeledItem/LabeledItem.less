@@ -1,0 +1,29 @@
+@import "../../../styles/common.less";
+
+.labeled-item {
+    display: flex;
+
+    > :first-child {
+        display: flex;
+        align-items: center;
+
+        border: @default-border-width solid @default-border-color;
+        border-radius: @default-border-radius;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-collapse: collapse;
+        border-right: 0;
+
+        padding: @button-default-padding;
+    
+        background-color: @default-element-background-color;
+    }   
+}
+
+.labeled-selectpicker {
+    .select__control {
+        border-collapse: collapse;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}

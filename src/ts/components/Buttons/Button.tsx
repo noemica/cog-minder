@@ -1,5 +1,4 @@
 import "./buttons.less";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../Tooltip/Tooltip";
 import { ReactNode } from "react";
 import TextTooltip from "../Tooltip/TextTooltip";
 

@@ -1,9 +1,9 @@
 import { ReactNode, useState } from "react";
-import { ChartDataValue, ChartDisplayOptions, CombatLogChartType } from "../../../types/commonTypes";
 import HorizontalBarChart from "../BaseCharts/HorizontalBarChart";
 import PieChart from "../BaseCharts/PieChart";
 import { barColors, barColorsWithOther, pieBackgroundColors, pieBorderColors } from "../BaseCharts/chartColors";
 import Button from "../../Buttons/Button";
+import { ChartDataValue, ChartDisplayOptions, CombatLogChartType } from "../../../types/combatLogTypes";
 
 import "./combatLogChart.less";
 
@@ -112,7 +112,7 @@ function createHorizontalBarChart(
                 sortDescending ? "Click to change sort order to descending" : "Click to change sort order to ascending"
             }
         >
-            {sortDescending ? "Sort 🠋" : "Sort 🠉"}
+            {sortDescending ? "Sort ↓" : "Sort ↑"}
         </Button>
     );
 

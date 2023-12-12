@@ -1,11 +1,10 @@
-@import "../../../styles/colors.less";
-@import "../../../styles/sizes.less";
+@import "../../../styles/common.less";
 
 .button {
-    color: @button-font-color;
-    background-image: linear-gradient(to bottom, @button-background-color 0%, @button-background-color2 100%);
-    border: @button-border-width solid @button-border-color;
-    border-radius: @button-border-radius;
+    color: @font-color-default;
+    background-image: @button-background-gradient;
+    border: @default-border-width solid @default-border-color;
+    border-radius: @default-border-radius;
 
     cursor: pointer;
 
@@ -15,38 +14,32 @@
 
 .button:hover,
 .button:focus {
-    background-image: linear-gradient(
-        to bottom,
-        @button-emphasis-background-color 0%,
-        @button-emphasis-background-color2 100%
-    );
-    color: @button-font-contrast-color;
+    background-image: @button-hover-focus-background-gradient;
+    color: @font-color-contrast;
 }
 
-.exclusive-buttons > * {
-    margin-left: -@button-border-width;
-    border-radius: 0;
-}
+.exclusive-buttons {
+    > * {
+        margin-left: -@default-border-width;
+        border-radius: 0;
+    }
 
-.exclusive-buttons > :first-child {
-    border-top-left-radius: @button-border-radius;
-    border-bottom-left-radius: @button-border-radius;
+    > :first-child {
+        border-top-left-radius: @default-border-radius;
+        border-bottom-left-radius: @default-border-radius;
 
-    margin-left: 0;
-}
+        margin-left: 0;
+    }
 
-.exclusive-buttons > :last-child {
-    border-top-right-radius: @button-border-radius;
-    border-bottom-right-radius: @button-border-radius;
+    > :last-child {
+        border-top-right-radius: @default-border-radius;
+        border-bottom-right-radius: @default-border-radius;
 
-    margin-right: 0;
+        margin-right: 0;
+    }
 }
 
 .exclusive-button-active {
-    background-image: linear-gradient(
-        to bottom,
-        @button-active-background-color 0%,
-        @button-active-background-color2 100%
-    );
-    color: @button-font-contrast-color;
+    background-image: @button-active-background-gradient;
+    color: @font-color-contrast;
 }

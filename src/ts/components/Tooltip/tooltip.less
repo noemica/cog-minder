@@ -1,15 +1,16 @@
-@import "../../../styles/colors.less";
-@import "../../../styles/sizes.less";
+@import "../../../styles/common.less";
 
 .text-tooltip {    
     max-width: @tooltip-max-width;
     padding: @tooltip-padding;
-    border-radius: @tooltip-border-radius;
+    border-radius: @default-border-radius;
     box-sizing: border-box;
 
-    background-color: @tooltip-background-color;
-    color: @tooltip-text-color;
+    background-color: @transparent-background-color;
+    color: @font-color-default;
     
     font-family: Arial, Helvetica, sans-serif !important;
     font-size: 14px !important;
+
+    z-index: 1;
 }

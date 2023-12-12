@@ -1,6 +1,11 @@
 // Borders
-@button-border-width: 1px;
-@button-border-radius: 8px;
+@default-border-width: 1px;
+@default-border-radius: 8px;
+
+// Header
+@cogminder-title-font-size: 2.0rem;
+@page-title-font-size: 2.5rem;
+@page-title-margin: 0.5rem 0;
 
 // Page
 @page-horizontal-margin: 15px;
@@ -11,10 +16,10 @@
 @button-small-padding: 4px;
 
 // Charts
-@chart-container-corner-radius: 5px;
+@chart-container-corner-radius: @default-border-radius;
 @chart-grid-gap: 15px;
-@chart-min-width: 450px;
-@chart-max-width: 550px;
+@chart-min-width: min(80vw, 450px);
+@chart-max-width: min(90vw, 550px);
 @chart-padding: 0 5px 5px 5px;
 
 // Dropzone
@@ -25,4 +30,3 @@
 // Tooltips
 @tooltip-max-width: 300px;
 @tooltip-padding: 4px 8px;
-@tooltip-border-radius: 4px;

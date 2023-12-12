@@ -1,0 +1,75 @@
+@import "../../../styles/common.less";
+
+// The double selectors are a hack used to out-prioritize the styles defined by
+// the react select component. This increases the specificity to allow
+// overriding the values without using !important.
+
+// Overall control object
+.select__control.select__control {
+    background-image: @button-background-gradient;
+    border-color: @default-border-color;
+    border-radius: @default-border-radius;
+    color: @font-color-default;
+
+    // Set text and indicator color
+    * {
+        color: @font-color-default;
+    }
+
+    // | separator line
+    .select__indicator-separator {
+        background-color: @font-color-default;
+    }
+}
+
+.select__control.select__control:hover {
+    border-color: @default-border-color;
+    cursor: pointer;
+}
+
+.select__control--is-focused.select__control--is-focused,
+.select__control.select__control:hover {
+    background-image: @button-hover-focus-background-gradient;
+    color: @font-color-contrast;
+
+    // Set text and indicator color
+    * {
+        color: @font-color-contrast;
+    }
+
+    // | separator line
+    .select__indicator-separator {
+        background-color: @font-color-contrast;
+    }
+}
+
+// Value container
+.select__value-container.select__value-container {
+    padding: @button-default-padding;
+
+    text-align: center;
+}
+
+// Overall dropdown menu
+.select__menu.select__menu {
+    background-color: @moderate-contrast-background-color;
+}
+
+// Select option in dropdown
+.select__option.select__option,
+.select__option--is-selected.select__option--is-selected {
+    padding: 0px;
+    cursor: pointer;
+    background-color: unset;
+    color: @font-color-default;
+
+    > * {
+        padding: 12px;
+    }
+}
+
+.select__option--is-focused.select__option--is-focused {
+    color: @font-color-contrast;
+    background-color: @emphasis-background-color;
+    outline: 1px solid @default-border-color;
+}

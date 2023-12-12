@@ -58,9 +58,6 @@ export function useTooltip({
     });
 
     const context = data.context;
-    const { isMounted, styles } = useTransitionStyles(context, {
-        duration: 200,
-    });
 
     const hover = useHover(context, {
         move: false,
@@ -79,12 +76,10 @@ export function useTooltip({
             open,
             setOpen,
             arrowRef,
-            isMounted,
-            styles,
             ...interactions,
             ...data,
         }),
-        [open, setOpen, arrowRef, isMounted, styles, interactions, data],
+        [open, setOpen, arrowRef, interactions, data],
     );
 }
 
@@ -129,14 +124,14 @@ export const TooltipTrigger = React.forwardRef<HTMLElement, React.HTMLProps<HTML
         }
 
         return (
-            <button
+            <div
                 ref={ref}
                 // The user can style the trigger based on the state
                 data-state={context.open ? "open" : "closed"}
                 {...context.getReferenceProps(props)}
             >
                 {children}
-            </button>
+            </div>
         );
     },
 );
@@ -148,26 +143,23 @@ export const TooltipContent = React.forwardRef<
     const context = useTooltipContext();
     const ref = useMergeRefs([context.refs.setFloating, propRef]);
 
-    if (!context.open && !context.isMounted) {
+    if (!context.open) {
         return null;
     }
 
     return (
-        context.isMounted && (
-            <FloatingPortal>
-                <div
-                    ref={ref as any}
-                    style={{
-                        ...context.floatingStyles,
-                        ...context.styles,
-                        ...style,
-                    }}
-                    {...context.getFloatingProps(props)}
-                >
-                    {props.children}
-                    <FloatingArrow tipRadius={2} height={8} ref={context.arrowRef} context={context.context} />
-                </div>
-            </FloatingPortal>
-        )
+        <FloatingPortal>
+            <div
+                ref={ref as any}
+                style={{
+                    ...context.floatingStyles,
+                    ...style,
+                }}
+                {...context.getFloatingProps(props)}
+            >
+                {props.children}
+                <FloatingArrow tipRadius={2} height={8} ref={context.arrowRef} context={context.context} />
+            </div>
+        </FloatingPortal>
     );
 });

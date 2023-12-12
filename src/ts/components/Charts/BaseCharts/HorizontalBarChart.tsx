@@ -10,8 +10,9 @@ import {
     BarElement,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { ChartDataValue } from "../../../types/commonTypes";
 import { chartGridColor, chartTextColor } from "./chartColors";
+import { ChartDataValue } from "../../../types/combatLogTypes";
+import { WindowSize, useWindowSize } from "../../Effects/useWindowSize";
 
 // Need to register functionality that gets used or else
 // it gets tree-shaken out
@@ -29,7 +30,14 @@ export type HorizontalBarChartProps = {
 };
 
 export default function HorizontalBarChart({ chartTitle, values, barColors, maxValue }: HorizontalBarChartProps) {
-    return <Bar data={makeChartData(chartTitle, values, barColors)} options={makeChartOptions(chartTitle, maxValue)} />;
+    const windowSize = useWindowSize();
+
+    return (
+        <Bar
+            data={makeChartData(chartTitle, values, barColors)}
+            options={makeChartOptions(chartTitle, maxValue, windowSize)}
+        />
+    );
 }
 
 function makeChartData(valueLabel: string, values: ChartDataValue[], barColors: string[]): ChartData<"bar"> {
@@ -46,7 +54,11 @@ function makeChartData(valueLabel: string, values: ChartDataValue[], barColors: 
     };
 }
 
-function makeChartOptions(chartTitle: string, maxValue: number | undefined): ChartOptions<"bar"> {
+function makeChartOptions(
+    chartTitle: string,
+    maxValue: number | undefined,
+    windowSize: WindowSize,
+): ChartOptions<"bar"> {
     return {
         animation: {
             duration: 300,
@@ -77,7 +89,7 @@ function makeChartOptions(chartTitle: string, maxValue: number | undefined): Cha
             title: {
                 color: chartTextColor,
                 font: {
-                    size: 24,
+                    size: Math.min(24, windowSize.width / 22),
                 },
                 display: true,
                 text: chartTitle,

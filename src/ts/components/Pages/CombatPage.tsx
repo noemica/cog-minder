@@ -12,8 +12,14 @@ import CriticalHitsByCogmind from "../Charts/CriticalHitsByCogmindChart";
 import CriticalHitsToCogmind from "../Charts/CriticalHitsToCogmindChart";
 import Button from "../Buttons/Button";
 import ExclusiveButtonGroup, { ExclusiveButtonDefinition } from "../Buttons/ExclusiveButtonGroup";
-import { CombatLogChartType, CombatLogChartCategoryType, ChartDisplayOptions } from "../../types/combatLogTypes";
+import {
+    CombatLogChartType,
+    CombatLogChartCategoryType,
+    ChartDisplayOptions,
+    CombatLogEntry,
+} from "../../types/combatLogTypes";
 import CombatLogDropzone from "../Dropzone/CombatLogDropzone";
+import PageHeader from "../PageHeader/PageHeader";
 
 const chartTypeButtons: ExclusiveButtonDefinition<CombatLogChartType>[] = [
     {
@@ -64,22 +70,8 @@ const categoryTypeButtons: ExclusiveButtonDefinition<CombatLogChartCategoryType>
     },
 ];
 
-export function CombatPage() {
-    const [loaded, setLoaded] = useState(true);
-    const [combatLogData, setCombatLogData] = useState(fakeData);
-    // const [loaded, setLoaded] = useState(false);
-    // const [combatLogData, setCombatLogData] = useState([] as CombatLogEntry[]);
-    const [displayOptions, setDisplayOptions] = useState<ChartDisplayOptions>({
-        category: "Bot",
-        chartType: "Pie",
-    });
-
-    async function loadDataPressed() {
-        setLoaded(true);
-        setCombatLogData(fakeData);
-    }
-
-    const charts = loaded ? (
+function Charts(combatLogData: CombatLogEntry[], displayOptions: ChartDisplayOptions) {
+    return (
         <ChartGrid>
             <DamageDealtChart combatLogEntries={combatLogData} displayOptions={displayOptions}></DamageDealtChart>
             <DamageReceivedChart combatLogEntries={combatLogData} displayOptions={displayOptions}></DamageReceivedChart>
@@ -109,13 +101,35 @@ export function CombatPage() {
                 displayOptions={displayOptions}
             ></CriticalHitsToCogmind>
         </ChartGrid>
-    ) : null;
+    );
+}
+
+export function CombatPage() {
+    const [loaded, setLoaded] = useState(true);
+    const [combatLogData, setCombatLogData] = useState(fakeData);
+    // const [spoilers, setSpoilers] = useLocalStorageString("spoilers", "None");
+    // const [loaded, setLoaded] = useState(false);
+    // const [combatLogData, setCombatLogData] = useState([] as CombatLogEntry[]);
+    const [displayOptions, setDisplayOptions] = useState<ChartDisplayOptions>({
+        category: "Bot",
+        chartType: "Pie",
+    });
+
+    async function loadDataPressed() {
+        setLoaded(true);
+        setCombatLogData(fakeData);
+    }
+
+    const charts = loaded ? Charts(combatLogData, displayOptions) : null;
 
     return (
         <>
-            <CombatLogDropzone onParse={(combatLogEntries) => {
-                setCombatLogData(combatLogEntries);
-            }}></CombatLogDropzone>
+            <PageHeader></PageHeader>
+            <CombatLogDropzone
+                onParse={(combatLogEntries) => {
+                    setCombatLogData(combatLogEntries);
+                }}
+            ></CombatLogDropzone>
             <Button onClick={loadDataPressed}>Load fake data</Button>
             <ExclusiveButtonGroup
                 buttons={chartTypeButtons}

@@ -2,9 +2,9 @@ import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { CombatLogEntry } from "../../types/combatLogTypes";
 import { parseCombatLog } from "../../combatLogParser";
-
-import "./dropzone.less";
 import Button from "../Buttons/Button";
+
+import "./Dropzone.less";
 
 export type CombatLogDropzoneProps = {
     onParse: (entries: CombatLogEntry[]) => void;

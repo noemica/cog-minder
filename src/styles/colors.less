@@ -2,6 +2,7 @@
 @transparent-background-color: #000000cc;
 @page-background-color: #2f2f2f;
 @default-element-background-color: #3a3a3a;
+@small-contrast-background-color: #4a4a4a;
 @moderate-contrast-background-color: #656565;
 @active-background-color: #b0b0b0;
 @emphasis-background-color: #d7d7d7;
@@ -14,35 +15,22 @@
 @font-color-default: #e8e8e8;
 @font-color-deemphasized: #aaaaaa;
 @font-color-contrast: #171717;
-
-// Chart grid cells
-@grid-cell-background-color: @default-element-background-color;
-@grid-cell-border-color: @default-border-color;
+@font-color-title: #00cc00;
 
 // Buttons
 @button-gradient-darken-percent: 40%;
-@button-border-color: @default-border-color;
-@button-background-color: #656565;
-@button-background-color2: darken(@button-background-color, @button-gradient-darken-percent, relative);
-@button-emphasis-background-color: @emphasis-background-color;
-@button-emphasis-background-color2: darken(
-    @button-emphasis-background-color,
-    @button-gradient-darken-percent,
-    relative
+@button-background-gradient: linear-gradient(
+    to bottom,
+    @moderate-contrast-background-color 0%,
+    darken(@moderate-contrast-background-color, @button-gradient-darken-percent, relative) 100%
 );
-@button-active-background-color: @active-background-color;
-@button-active-background-color2: darken(@button-active-background-color, @button-gradient-darken-percent, relative);
-
-@button-font-color: @font-color-default;
-@button-font-contrast-color: @font-color-contrast;
-
-// Dropzone
-@dropzone-text-color: @font-color-deemphasized;
-@dropzone-border-color: @contrast-border-color;
-@dropzone-background-color: @default-element-background-color;
-@dropzone-drag-text-color: @font-color-contrast;
-@dropzone-drag-background-color: @moderate-contrast-background-color;
-
-// Tooltips
-@tooltip-background-color: @transparent-background-color;
-@tooltip-text-color: white;
+@button-hover-focus-background-gradient: linear-gradient(
+    to bottom,
+    @emphasis-background-color 0%,
+    darken(@emphasis-background-color, @button-gradient-darken-percent, relative) 100%
+);
+@button-active-background-gradient: linear-gradient(
+    to bottom,
+    @active-background-color 0%,
+    darken(@active-background-color, @button-gradient-darken-percent, relative) 100%
+);
