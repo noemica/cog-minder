@@ -11,7 +11,7 @@ import SneakAttacksChart from "../Charts/SneakAttacksChart";
 import CriticalHitsByCogmind from "../Charts/CriticalHitsByCogmindChart";
 import CriticalHitsToCogmind from "../Charts/CriticalHitsToCogmindChart";
 import Button from "../Buttons/Button";
-import ExclusiveButtonGroup, { ExclusiveButtonDefinition } from "../Buttons/ExclusiveButtonGroup";
+import { ExclusiveButtonDefinition } from "../Buttons/ExclusiveButtonGroup";
 import {
     CombatLogChartType,
     CombatLogChartCategoryType,
@@ -20,9 +20,9 @@ import {
 } from "../../types/combatLogTypes";
 import CombatLogDropzone from "../Dropzone/CombatLogDropzone";
 import PageHeader from "../PageHeader/PageHeader";
+import { LabeledExclusiveButtonGroup } from "../LabeledItem/LabeledItem";
 
 import "./Pages.less";
-import { LabeledExclusiveButtonGroup } from "../LabeledItem/LabeledItem";
 
 const chartTypeButtons: ExclusiveButtonDefinition<CombatLogChartType>[] = [
     {
@@ -34,7 +34,7 @@ const chartTypeButtons: ExclusiveButtonDefinition<CombatLogChartType>[] = [
         label: "Bar",
         value: "Bar",
         tooltip:
-            'Sets charts to display as horizontal bar charts. Only the top 10 categories are shown by default, but an "Other\" category can be expanded to show the full list of options.',
+            'Sets charts to display as horizontal bar charts. Only the top 10 categories are shown by default, but an "Other" category can be expanded to show the full list of options.',
     },
 ];
 
@@ -124,7 +124,7 @@ export function CombatPage() {
     const charts = loaded ? Charts(combatLogData, displayOptions) : null;
 
     return (
-        <>
+        <div data-theme="cogmind">
             <PageHeader />
             <div className="page-content">
                 <CombatLogDropzone
@@ -136,7 +136,7 @@ export function CombatPage() {
                 {isDev && <Button onClick={onLoadDataClick}>Load fake data</Button>}
                 {loaded && (
                     <>
-                        <div className="todo">
+                        <div className="page-input-group">
                             <LabeledExclusiveButtonGroup
                                 label="Chart Type"
                                 flexGrowButtonCount={true}
@@ -161,6 +161,6 @@ export function CombatPage() {
                     </>
                 )}
             </div>
-        </>
+        </div>
     );
 }
