@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import "./LabeledItem.less";
 import TextTooltip from "../Tooltip/TextTooltip";
 import { GroupBase, Props } from "react-select";
-import Selectpicker, { SelectpickerOptionType } from "../Selectpicker/Selectpicker";
+import SelectWrapper, { SelectpickerOptionType } from "../Selectpicker/Select";
 import ExclusiveButtonGroup, { ExclusiveButtonsProps } from "../Buttons/ExclusiveButtonGroup";
 
 export type LabeledItemProps = {
@@ -35,7 +35,7 @@ export function LabeledSelectpicker<
     return (
         <div className="labeled-item labeled-selectpicker">
             {tooltip === undefined ? <span>{label}</span> : <TextTooltip tooltipText={tooltip}>{label}</TextTooltip>}
-            <Selectpicker {...props} />
+            <SelectWrapper {...props} />
         </div>
     );
 }

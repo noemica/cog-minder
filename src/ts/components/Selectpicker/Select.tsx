@@ -1,8 +1,8 @@
 import Select, { GroupBase, OptionProps, Props, components } from "react-select";
 import { ReactNode } from "react";
-
-import "./selectpicker.less";
 import TextTooltip from "../Tooltip/TextTooltip";
+
+import "./Select.less";
 
 export type SelectpickerOptionType = {
     value: string;
@@ -24,7 +24,9 @@ const Option = (props: OptionProps<SelectpickerOptionType>) => {
     }
 };
 
-export default function Selectpicker<
+// Would like to call this Select too but it interferes with the import and
+// I can't figure out a way to rename the Select import to something else
+export default function SelectWrapper<
     IsMulti extends boolean = false,
     Group extends GroupBase<SelectpickerOptionType> = GroupBase<SelectpickerOptionType>,
 >(props: Props<SelectpickerOptionType, IsMulti, Group>) {

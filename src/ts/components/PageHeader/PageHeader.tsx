@@ -1,5 +1,5 @@
 import { useLocalStorage } from "usehooks-ts";
-import Selectpicker, { SelectpickerOptionType } from "../Selectpicker/Selectpicker";
+import SelectWrapper, { SelectpickerOptionType } from "../Selectpicker/Select";
 import { LabeledSelectpicker } from "../LabeledItem/LabeledItem";
 
 import "./PageHeader.less";
