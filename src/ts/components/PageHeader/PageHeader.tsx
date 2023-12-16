@@ -3,6 +3,7 @@ import Selectpicker, { SelectpickerOptionType } from "../Selectpicker/Selectpick
 import { LabeledSelectpicker } from "../LabeledItem/LabeledItem";
 
 import "./PageHeader.less";
+import TextTooltip from "../Tooltip/TextTooltip";
 
 const options: SelectpickerOptionType[] = [
     { value: "None", label: "None", tooltip: "No spoilers: Factory or higher depth branch content is hidden." },
@@ -21,21 +22,26 @@ export default function PageHeader() {
     return (
         <div className="title-grid">
             <div className="cogminder-title">Cog-Minder</div>
-            <h1 className="page-title">Combat</h1>
+            <div className="page-title-container">
+                <h1 className="page-title">Combat</h1>
+                <TextTooltip tooltipText="Test">
+                    <span className="page-explanation">?</span>
+                </TextTooltip>
+            </div>
             <LabeledSelectpicker
                 label="Spoilers"
                 tooltip="What spoiler content to show. By default, no spoilers are shown."
-            >
-                <Selectpicker
-                    className="spoilers-selectpicker"
-                    isSearchable={false}
-                    options={options}
-                    value={selected}
-                    onChange={(newValue) => {
-                        setSpoilers(newValue!.value);
-                    }}
-                />
-            </LabeledSelectpicker>
+                className="spoilers-selectpicker"
+                isSearchable={false}
+                options={options}
+                value={selected}
+                onChange={(newValue) => {
+                    setSpoilers(newValue!.value);
+                }}
+                // >
+                // <Selectpicker
+                // />
+            ></LabeledSelectpicker>
         </div>
     );
 }

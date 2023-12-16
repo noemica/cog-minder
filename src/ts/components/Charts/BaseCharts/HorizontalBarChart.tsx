@@ -89,7 +89,7 @@ function makeChartOptions(
             title: {
                 color: chartTextColor,
                 font: {
-                    size: Math.min(24, windowSize.width / 22),
+                    size: Math.min(20, windowSize.width / 22),
                 },
                 display: true,
                 text: chartTitle,

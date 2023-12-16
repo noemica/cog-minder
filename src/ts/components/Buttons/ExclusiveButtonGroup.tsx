@@ -9,13 +9,13 @@ export type ExclusiveButtonDefinition<T> = {
     tooltip?: string;
 };
 
-export type RadioButtonsProps<T> = {
+export type ExclusiveButtonsProps<T> = {
     buttons: ExclusiveButtonDefinition<T>[];
     onValueChanged?: (value: T) => void;
     initialSelected?: string | number;
 };
 
-export default function ExclusiveButtonGroup<T>({ buttons, onValueChanged, initialSelected }: RadioButtonsProps<T>) {
+export default function ExclusiveButtonGroup<T>({ buttons, onValueChanged, initialSelected }: ExclusiveButtonsProps<T>) {
     let initialSelectedIndex = 0;
 
     if (initialSelected !== undefined) {

@@ -1,0 +1,25 @@
+@import "../../../styles/common.less";
+
+.page-content {
+    > * {
+        margin: @default-element-top-margin;
+    }
+}
+
+.todo {
+    display: flex;
+    column-gap: @default-element-column-gap;
+
+    > * {
+        flex: 1 1 auto;
+        // margin: @default-element-horizontal-margin;
+    }
+
+    // > :first-child {
+    //     margin-left: 0;
+    // }
+
+    // > :last-child {
+    //     margin-right: 0;
+    // }
+}

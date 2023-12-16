@@ -15,14 +15,26 @@
         border-right: 0;
 
         padding: @button-default-padding;
-    
+
         background-color: @default-element-background-color;
-    }   
+    }
+
+    > :not(:first-child) {
+        flex: 1 1 auto;
+    }
 }
 
 .labeled-selectpicker {
-    .select__control {
+    // Double selector hack to increase specificity
+    .select__control.select__control {
         border-collapse: collapse;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+.labeled-exclusive-button-group {
+    .exclusive-buttons > :first-child {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }

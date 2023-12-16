@@ -57,7 +57,7 @@ function makeChartOptions(chartTitle: string, windowSize: WindowSize): ChartOpti
                 color: chartTextColor,
                 display: true,
                 font: {
-                    size: Math.min(24, windowSize.width / 22),
+                    size: Math.min(20, windowSize.width / 22),
                 },
                 text: chartTitle,
             },

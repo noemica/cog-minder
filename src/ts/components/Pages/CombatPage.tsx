@@ -21,14 +21,14 @@ import {
 import CombatLogDropzone from "../Dropzone/CombatLogDropzone";
 import PageHeader from "../PageHeader/PageHeader";
 
+import "./Pages.less";
+import { LabeledExclusiveButtonGroup } from "../LabeledItem/LabeledItem";
+
 const chartTypeButtons: ExclusiveButtonDefinition<CombatLogChartType>[] = [
     {
         label: "Pie",
         value: "Pie",
-        tooltip:
-            "Sets most charts to display as pie charts. " +
-            "Some charts are only displayable as horizontal " +
-            "bar charts.",
+        tooltip: "Sets all charts to display as pie charts.",
     },
     {
         label: "Bar",
@@ -105,17 +105,17 @@ function Charts(combatLogData: CombatLogEntry[], displayOptions: ChartDisplayOpt
 }
 
 export function CombatPage() {
-    const [loaded, setLoaded] = useState(true);
-    const [combatLogData, setCombatLogData] = useState(fakeData);
-    // const [spoilers, setSpoilers] = useLocalStorageString("spoilers", "None");
-    // const [loaded, setLoaded] = useState(false);
-    // const [combatLogData, setCombatLogData] = useState([] as CombatLogEntry[]);
+    const isDev = process.env.NODE_ENV === "development";
+    const initialLoaded = isDev;
+    const initialData = isDev ? fakeData : [];
+    const [loaded, setLoaded] = useState(initialLoaded);
+    const [combatLogData, setCombatLogData] = useState(initialData);
     const [displayOptions, setDisplayOptions] = useState<ChartDisplayOptions>({
         category: "Bot",
         chartType: "Pie",
     });
 
-    async function loadDataPressed() {
+    async function onLoadDataClick() {
         setLoaded(true);
         setCombatLogData(fakeData);
     }
@@ -124,28 +124,42 @@ export function CombatPage() {
 
     return (
         <>
-            <PageHeader></PageHeader>
-            <CombatLogDropzone
-                onParse={(combatLogEntries) => {
-                    setCombatLogData(combatLogEntries);
-                }}
-            ></CombatLogDropzone>
-            <Button onClick={loadDataPressed}>Load fake data</Button>
-            <ExclusiveButtonGroup
-                buttons={chartTypeButtons}
-                initialSelected={displayOptions.chartType}
-                onValueChanged={(value) => {
-                    setDisplayOptions((d) => ({ ...d, chartType: value }));
-                }}
-            ></ExclusiveButtonGroup>
-            <ExclusiveButtonGroup<CombatLogChartCategoryType>
-                buttons={categoryTypeButtons}
-                initialSelected={displayOptions.category}
-                onValueChanged={(value) => {
-                    setDisplayOptions((d) => ({ ...d, category: value }));
-                }}
-            ></ExclusiveButtonGroup>
-            {charts}
+            <PageHeader />
+            <div className="page-content">
+                <CombatLogDropzone
+                    onParse={(combatLogEntries) => {
+                        setCombatLogData(combatLogEntries);
+                        setLoaded(true);
+                    }}
+                />
+                {isDev && <Button onClick={onLoadDataClick}>Load fake data</Button>}
+                {loaded && (
+                    <>
+                        <div className="todo">
+                            <LabeledExclusiveButtonGroup
+                                label="Chart Type"
+                                flexGrowButtonCount={true}
+                                tooltip="Sets the display type of all charts."
+                                buttons={chartTypeButtons}
+                                initialSelected={displayOptions.chartType}
+                                onValueChanged={(value) => {
+                                    setDisplayOptions((d) => ({ ...d, chartType: value }));
+                                }}
+                            />
+                            <LabeledExclusiveButtonGroup<CombatLogChartCategoryType>
+                                label="Chart Category"
+                                flexGrowButtonCount={true}
+                                buttons={categoryTypeButtons}
+                                initialSelected={displayOptions.category}
+                                onValueChanged={(value) => {
+                                    setDisplayOptions((d) => ({ ...d, category: value }));
+                                }}
+                            />
+                        </div>
+                        {charts}
+                    </>
+                )}
+            </div>
         </>
     );
 }

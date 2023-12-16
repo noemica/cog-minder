@@ -17,11 +17,24 @@
     font-family: "cog-mono";
 }
 
-.page-title {
+.page-title-container {
+    display: flex;
+}
+
+.page-title,
+.page-explanation {
     font-size: @page-title-font-size;
     font-family: "cog-mono";
 
     margin: @page-title-margin
+}
+
+.page-explanation {
+    background-color: @small-contrast-background-color;
+    border: @default-border-width solid @default-border-color;
+    border-color: @default-border-color;
+
+    margin-left: @page-title-explanation-inner-margin;
 }
 
 .spoilers-selectpicker {
