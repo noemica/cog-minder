@@ -58,6 +58,9 @@ export function useTooltip({
     });
 
     const context = data.context;
+    const { isMounted, styles } = useTransitionStyles(context, {
+        duration: 300,
+    });
 
     const hover = useHover(context, {
         move: false,
@@ -76,10 +79,12 @@ export function useTooltip({
             open,
             setOpen,
             arrowRef,
+            isMounted,
+            styles,
             ...interactions,
             ...data,
         }),
-        [open, setOpen, arrowRef, interactions, data],
+        [open, setOpen, arrowRef, isMounted, styles, interactions, data],
     );
 }
 
@@ -143,16 +148,18 @@ export const TooltipContent = React.forwardRef<
     const context = useTooltipContext();
     const ref = useMergeRefs([context.refs.setFloating, propRef]);
 
-    if (!context.open) {
+    if (!context.open && !context.isMounted) {
         return null;
     }
 
     return (
+        context.isMounted && (
         <FloatingPortal>
             <div
                 ref={ref as any}
                 style={{
                     ...context.floatingStyles,
+                        ...context.styles,
                     ...style,
                 }}
                 {...context.getFloatingProps(props)}
@@ -161,5 +168,6 @@ export const TooltipContent = React.forwardRef<
                 <FloatingArrow tipRadius={2} height={8} ref={context.arrowRef} context={context.context} />
             </div>
         </FloatingPortal>
+        )
     );
 });
