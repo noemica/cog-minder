@@ -1,10 +1,9 @@
-import { ReactNode } from "react";
-
-import "./LabeledItem.less";
 import TextTooltip from "../Tooltip/TextTooltip";
 import { GroupBase, Props } from "react-select";
 import SelectWrapper, { SelectOptionType } from "../Selectpicker/Select";
 import ExclusiveButtonGroup, { ExclusiveButtonsProps } from "../Buttons/ExclusiveButtonGroup";
+
+import "./LabeledItem.less";
 
 export type LabeledItemProps = {
     label: string;

@@ -2,9 +2,10 @@ import { useLocalStorage } from "usehooks-ts";
 import { SelectOptionType } from "../Selectpicker/Select";
 import { LabeledSelect } from "../LabeledItem/LabeledItem";
 import TextTooltip from "../Tooltip/TextTooltip";
+import { Spoiler, ThemeType, localStorageThemeName } from "../../types/commonTypes";
+import ButtonPopover from "../Tooltip/ButtonPopover";
 
 import "./PageHeader.less";
-import { Spoiler, ThemeType, localStorageThemeName } from "../../types/commonTypes";
 
 export type PageHeaderProps = {
     type: PageType;
@@ -21,12 +22,8 @@ const spoilerOptions: SelectOptionType[] = [
 ];
 
 const themeOptions: SelectOptionType[] = [
-    { value: "Dark", label: "Dark", tooltip: "Dark theme." },
-    {
-        value: "Cogmind",
-        label: "Cogmind",
-        tooltip: "Cogmind theme.",
-    },
+    { value: "Dark", label: "Dark", tooltip: "Uses a more typical dark mode website theme." },
+    { value: "Cogmind", label: "Cogmind", tooltip: "Uses a uniquely Cogmind-styled dark mode website theme." },
 ];
 
 export type PageType = "Combat";
@@ -45,25 +42,16 @@ const pages = new Map<PageType, PageDetails>([
     ],
 ]);
 
-export default function PageHeader({ type }: PageHeaderProps) {
+function SettingsButton() {
     const [spoilers, setSpoilers] = useLocalStorage<Spoiler>("spoilers", "None");
     const spoilerSelected = spoilerOptions.find((o) => o.label === spoilers) || spoilerOptions[0];
 
     const [theme, setTheme] = useLocalStorage<ThemeType>(localStorageThemeName, "Dark");
     const themeSelected = themeOptions.find((t) => t.label === theme) || themeOptions[0];
 
-    const pageDetails = pages.get(type)!;
-
     return (
-        <div className="title-grid">
-            <div className="cogminder-title">Cog-Minder</div>
-            <div className="page-title-container">
-                <h1 className="page-title">{pageDetails.label}</h1>
-                <TextTooltip tooltipText={pageDetails.explanation}>
-                    <span className="page-explanation">?</span>
-                </TextTooltip>
-            </div>
-            <div>
+        <ButtonPopover buttonLabel="Settings" buttonTooltip="Change various site-wide settings">
+            <div className="settings-popover-container">
                 <LabeledSelect
                     label="Spoilers"
                     tooltip="What spoiler content to show. By default, no spoilers are shown."
@@ -77,7 +65,7 @@ export default function PageHeader({ type }: PageHeaderProps) {
                 />
                 <LabeledSelect
                     label="Theme"
-                    tooltip="Theme to show."
+                    tooltip="Determines the overall website theme."
                     isSearchable={false}
                     options={themeOptions}
                     value={themeSelected}
@@ -86,6 +74,23 @@ export default function PageHeader({ type }: PageHeaderProps) {
                     }}
                 />
             </div>
+        </ButtonPopover>
+    );
+}
+
+export default function PageHeader({ type }: PageHeaderProps) {
+    const pageDetails = pages.get(type)!;
+
+    return (
+        <div className="title-grid">
+            <div className="cogminder-title">Cog-Minder</div>
+            <div className="page-title-container">
+                <h1 className="page-title">{pageDetails.label}</h1>
+                <TextTooltip tooltipText={pageDetails.explanation}>
+                    <span className="page-explanation">?</span>
+                </TextTooltip>
+            </div>
+            <SettingsButton />
         </div>
     );
 }

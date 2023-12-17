@@ -1,5 +1,6 @@
 import * as React from "react";
 import {
+    arrow,
     useFloating,
     autoUpdate,
     offset,
@@ -14,7 +15,11 @@ import {
     FloatingPortal,
     FloatingFocusManager,
     useId,
+    FloatingArrow,
 } from "@floating-ui/react";
+
+import "./Popover.less";
+import { useRef } from "react";
 
 interface PopoverOptions {
     initialOpen?: boolean;
@@ -32,6 +37,7 @@ export function usePopover({
     open: controlledOpen,
     onOpenChange: setControlledOpen,
 }: PopoverOptions = {}) {
+    const arrowRef = useRef(null);
     const [uncontrolledOpen, setUncontrolledOpen] = React.useState(initialOpen);
     const [labelId, setLabelId] = React.useState<string | undefined>();
     const [descriptionId, setDescriptionId] = React.useState<string | undefined>();
@@ -52,6 +58,7 @@ export function usePopover({
                 padding: 5,
             }),
             shift({ padding: 5 }),
+            arrow({ element: arrowRef }),
         ],
     });
 
@@ -69,6 +76,7 @@ export function usePopover({
         () => ({
             open,
             setOpen,
+            arrowRef,
             ...interactions,
             ...data,
             modal,
@@ -77,7 +85,7 @@ export function usePopover({
             setLabelId,
             setDescriptionId,
         }),
-        [open, setOpen, interactions, data, modal, labelId, descriptionId],
+        [open, setOpen, arrowRef, interactions, data, modal, labelId, descriptionId],
     );
 }
 
@@ -173,6 +181,13 @@ export const PopoverContent = React.forwardRef<
                     {...context.getFloatingProps(props)}
                 >
                     {props.children}
+                    <FloatingArrow
+                        className="tooltip-arrow"
+                        tipRadius={2}
+                        height={8}
+                        ref={context.arrowRef}
+                        context={floatingContext}
+                    />
                 </div>
             </FloatingFocusManager>
         </FloatingPortal>

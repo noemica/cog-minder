@@ -19,6 +19,8 @@ import {
 } from "@floating-ui/react";
 import { ReactNode, useRef } from "react";
 
+import "./Tooltip.less";
+
 // From https://floating-ui.com/docs/tooltip
 type TooltipOptions = {
     children?: ReactNode | undefined;
