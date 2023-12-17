@@ -1,21 +1,20 @@
 @import "../../../styles/common.less";
 
 .button {
-    color: @font-color-default;
+    color: @font-color;
     background-image: @button-background-gradient;
-    border: @default-border-width solid @default-border-color;
+    border: @default-border-width solid @border-color;
     border-radius: @default-border-radius;
 
     cursor: pointer;
 
     padding: @button-default-padding;
-    font-size: medium;
 }
 
 .button:hover,
 .button:focus {
     background-image: @button-hover-focus-background-gradient;
-    color: @font-color-contrast;
+    color: @font-button-interaction-color;
 }
 
 .exclusive-buttons {
@@ -45,5 +44,5 @@
 
 .exclusive-button-active {
     background-image: @button-active-background-gradient;
-    color: @font-color-contrast;
+    color: @font-button-interaction-color;
 }

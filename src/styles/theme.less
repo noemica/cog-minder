@@ -1,0 +1,159 @@
+// Keep in sync with colors.less
+// Background colors
+@dark-tooltip-background-color: #000000;
+@dark-page-background-color: #2f2f2f;
+@dark-element-background-color: #3a3a3a;
+@dark-label-background-color: @dark-element-background-color;
+@dark-small-contrast-background-color: #4a4a4a;
+@dark-dropdown-menu-background-color: #656565;
+@dark-dropdown-menu-active-option-background-color: #a7a7a7;
+@dark-dropzone-active-background-color: #a7a7a7;
+
+@dark-moderate-contrast-background-color: #656565;
+@dark-button-active-background-color: #a7a7a7;
+
+@cogmind-tooltip-background-color: @dark-tooltip-background-color;
+@cogmind-page-background-color: #080808;
+@cogmind-element-background-color: @cogmind-page-background-color;
+@cogmind-label-background-color: #162416;
+@cogmind-small-contrast-background-color: @cogmind-label-background-color;
+@cogmind-dropdown-menu-background-color: @cogmind-page-background-color;
+@cogmind-dropdown-menu-active-option-background-color: @cogmind-button-hover-focus-background-color;
+@cogmind-dropzone-active-background-color: @cogmind-button-active-background-color;
+
+@cogmind-button-hover-focus-background-color: #004200;
+@cogmind-button-active-background-color: #002100;
+
+:root {
+    --tooltip-background-color: @dark-tooltip-background-color;
+    --page-background-color: @dark-page-background-color;
+    --element-background-color: @dark-element-background-color;
+    --label-background-color: @dark-label-background-color;
+    --small-contrast-background-color: @dark-small-contrast-background-color;
+    --dropdown-menu-background-color: @dark-dropdown-menu-background-color;
+    --dropdown-menu-active-option-background-color: @dark-dropdown-menu-active-option-background-color;
+    --dropzone-active-background-color: @dark-dropzone-active-background-color;
+}
+[data-theme="cogmind"] {
+    --tooltip-background-color: @cogmind-tooltip-background-color;
+    --page-background-color: @cogmind-page-background-color;
+    --element-background-color: @cogmind-element-background-color;
+    --label-background-color: @cogmind-label-background-color;
+    --small-contrast-background-color: @cogmind-small-contrast-background-color;
+    --dropdown-menu-background-color: @cogmind-dropdown-menu-background-color;
+    --dropdown-menu-active-option-background-color: @cogmind-dropdown-menu-active-option-background-color;
+    --dropzone-active-background-color: @cogmind-dropzone-active-background-color;
+}
+
+// Borders
+@dark-border-color: #171717;
+@dark-contrast-border-color: #e8e8e8;
+
+@cogmind-border-color: #006200;
+@cogmind-contrast-border-color: #006200;
+
+:root {
+    --border-color: @dark-border-color;
+    --contrast-border-color: @dark-contrast-border-color;
+}
+[data-theme="cogmind"] {
+    --border-color: @cogmind-border-color;
+    --contrast-border-color: @cogmind-contrast-border-color;
+}
+
+// Font colors
+@dark-font-color: #e8e8e8;
+@dark-font-button-interaction-color: #171717;
+@dark-font-title-color: #00cc00;
+
+@cogmind-font-color: #9da9af;
+@cogmind-font-button-interaction-color: #9da9af;
+@cogmind-font-title-color: #00cc00;
+
+:root {
+    --font-color: @dark-font-color;
+    --font-button-interaction-color: @dark-font-button-interaction-color;
+    --font-title-color: @dark-font-title-color;
+}
+[data-theme="cogmind"] {
+    --font-color: @cogmind-font-color;
+    --font-button-interaction-color: @cogmind-font-button-interaction-color;
+    --font-title-color: @cogmind-font-title-color;
+}
+
+// Buttons
+@dark-button-gradient-darken-percent: 40%;
+@dark-button-background-gradient: linear-gradient(
+    to bottom,
+    @dark-moderate-contrast-background-color 0%,
+    darken(@dark-moderate-contrast-background-color, @dark-button-gradient-darken-percent, relative) 100%
+);
+@dark-button-hover-focus-background-gradient: linear-gradient(
+    to bottom,
+    @dark-dropdown-menu-active-option-background-color 0%,
+    darken(@dark-dropdown-menu-active-option-background-color, @dark-button-gradient-darken-percent, relative) 100%
+);
+@dark-button-active-background-gradient: linear-gradient(
+    to bottom,
+    @dark-button-active-background-color 0%,
+    darken(@dark-button-active-background-color, @dark-button-gradient-darken-percent, relative) 100%
+);
+
+@cogmind-button-background-gradient: linear-gradient(
+    @cogmind-element-background-color,
+    @cogmind-element-background-color
+);
+@cogmind-button-hover-focus-background-gradient: linear-gradient(
+    @cogmind-button-hover-focus-background-color,
+    @cogmind-button-hover-focus-background-color
+);
+@cogmind-button-active-background-gradient: linear-gradient(
+    to bottom,
+    @cogmind-button-active-background-color,
+    @cogmind-button-active-background-color
+);
+
+:root {
+    --button-background-gradient: @dark-button-background-gradient;
+    --button-hover-focus-background-gradient: @dark-button-hover-focus-background-gradient;
+    --button-active-background-gradient: @dark-button-active-background-gradient;
+}
+[data-theme="cogmind"] {
+    --button-background-gradient: @cogmind-button-background-gradient;
+    --button-hover-focus-background-gradient: @cogmind-button-hover-focus-background-gradient;
+    --button-active-background-gradient: @cogmind-button-active-background-gradient;
+}
+
+// Keep in sync with sizes.less
+// Border radii
+@dark-default-border-radius: 8px;
+@dark-dropzone-border-radius: 20px;
+
+@cogmind-default-border-radius: 0px;
+@cogmind-dropzone-border-radius: 0px;
+
+:root {
+    --default-border-radius: @dark-default-border-radius;
+    --dropzone-border-radius: @dark-dropzone-border-radius;
+}
+[data-theme="cogmind"] {
+    --default-border-radius: @cogmind-default-border-radius;
+    --dropzone-border-radius: @cogmind-dropzone-border-radius;
+}
+
+// Keep in sync with fonts.less
+// Font families
+@dark-default-font-family: Arial, Helvetica, sans-serif;
+@dark-default-font-size: 1.0rem;
+
+@cogmind-default-font-family: smallcaps;
+@cogmind-default-font-size: 0.8rem;
+
+:root {
+    --default-font-family: @dark-default-font-family;
+    --default-font-size: @dark-default-font-size;
+}
+[data-theme="cogmind"] {
+    --default-font-family: @cogmind-default-font-family;
+    --default-font-size: @cogmind-default-font-size;
+}

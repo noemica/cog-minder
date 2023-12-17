@@ -21,6 +21,7 @@ import {
 import CombatLogDropzone from "../Dropzone/CombatLogDropzone";
 import PageHeader from "../PageHeader/PageHeader";
 import { LabeledExclusiveButtonGroup } from "../LabeledItem/LabeledItem";
+import { useBodyDataAttribute } from "../Effects/useBodyDataAttribute";
 
 import "./Pages.less";
 
@@ -109,6 +110,9 @@ export function CombatPage() {
     const isDev = process.env.NODE_ENV === "development";
     const initialLoaded = isDev;
     const initialData = isDev ? fakeData : [];
+
+    useBodyDataAttribute("data-theme", "cogmind");
+
     const [loaded, setLoaded] = useState(initialLoaded);
     const [combatLogData, setCombatLogData] = useState(initialData);
     const [displayOptions, setDisplayOptions] = useState<ChartDisplayOptions>({
@@ -124,8 +128,8 @@ export function CombatPage() {
     const charts = loaded ? Charts(combatLogData, displayOptions) : null;
 
     return (
-        <div data-theme="cogmind">
-            <PageHeader />
+        <div className="page">
+            <PageHeader type="Combat" />
             <div className="page-content">
                 <CombatLogDropzone
                     onParse={(combatLogEntries) => {
@@ -139,8 +143,8 @@ export function CombatPage() {
                         <div className="page-input-group">
                             <LabeledExclusiveButtonGroup
                                 label="Chart Type"
-                                flexGrowButtonCount={true}
                                 tooltip="Sets the display type of all charts."
+                                flexGrowButtonCount={true}
                                 buttons={chartTypeButtons}
                                 initialSelected={displayOptions.chartType}
                                 onValueChanged={(value) => {
@@ -149,6 +153,7 @@ export function CombatPage() {
                             />
                             <LabeledExclusiveButtonGroup<CombatLogChartCategoryType>
                                 label="Chart Category"
+                                tooltip="Sets the category type for all charts. This determines how the combat log is split into pieces."
                                 flexGrowButtonCount={true}
                                 buttons={categoryTypeButtons}
                                 initialSelected={displayOptions.category}

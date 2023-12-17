@@ -4,13 +4,13 @@ import TextTooltip from "../Tooltip/TextTooltip";
 
 import "./Select.less";
 
-export type SelectpickerOptionType = {
+export type SelectOptionType = {
     value: string;
     label: string | ReactNode;
     tooltip?: string;
 };
 
-const Option = (props: OptionProps<SelectpickerOptionType>) => {
+const Option = (props: OptionProps<SelectOptionType>) => {
     if (props.data.tooltip === undefined) {
         return <components.Option {...props} />;
     } else {
@@ -28,7 +28,7 @@ const Option = (props: OptionProps<SelectpickerOptionType>) => {
 // I can't figure out a way to rename the Select import to something else
 export default function SelectWrapper<
     IsMulti extends boolean = false,
-    Group extends GroupBase<SelectpickerOptionType> = GroupBase<SelectpickerOptionType>,
->(props: Props<SelectpickerOptionType, IsMulti, Group>) {
+    Group extends GroupBase<SelectOptionType> = GroupBase<SelectOptionType>,
+>(props: Props<SelectOptionType, IsMulti, Group>) {
     return <Select {...props} components={{ Option }} classNamePrefix={"select"} />;
 }

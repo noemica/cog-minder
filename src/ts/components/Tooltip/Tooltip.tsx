@@ -154,20 +154,26 @@ export const TooltipContent = React.forwardRef<
 
     return (
         context.isMounted && (
-        <FloatingPortal>
-            <div
-                ref={ref as any}
-                style={{
-                    ...context.floatingStyles,
+            <FloatingPortal>
+                <div
+                    ref={ref as any}
+                    style={{
+                        ...context.floatingStyles,
                         ...context.styles,
-                    ...style,
-                }}
-                {...context.getFloatingProps(props)}
-            >
-                {props.children}
-                <FloatingArrow tipRadius={2} height={8} ref={context.arrowRef} context={context.context} />
-            </div>
-        </FloatingPortal>
+                        ...style,
+                    }}
+                    {...context.getFloatingProps(props)}
+                >
+                    {props.children}
+                    <FloatingArrow
+                        className="tooltip-arrow"
+                        tipRadius={2}
+                        height={8}
+                        ref={context.arrowRef}
+                        context={context.context}
+                    />
+                </div>
+            </FloatingPortal>
         )
     );
 });

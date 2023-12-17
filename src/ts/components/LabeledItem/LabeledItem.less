@@ -7,7 +7,7 @@
         display: flex;
         align-items: center;
 
-        border: @default-border-width solid @default-border-color;
+        border: @default-border-width solid @border-color;
         border-radius: @default-border-radius;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
@@ -16,7 +16,7 @@
 
         padding: @button-default-padding;
 
-        background-color: @default-element-background-color;
+        background-color: @label-background-color;
     }
 
     > :not(:first-child) {
@@ -24,7 +24,7 @@
     }
 }
 
-.labeled-selectpicker {
+.labeled-select {
     // Double selector hack to increase specificity
     .select__control.select__control {
         border-collapse: collapse;

@@ -4,8 +4,11 @@
 @default-element-column-gap: 5px;
 
 // Borders
+// Keep in sync with theme.less
+@default-border-radius: var(--default-border-radius);
+@dropzone-border-radius: var(--dropzone-border-radius);
+
 @default-border-width: 1px;
-@default-border-radius: 8px;
 
 // Header
 @cogminder-title-font-size: 2.0rem;
@@ -22,14 +25,13 @@
 @button-small-padding: 4px;
 
 // Charts
-@chart-container-corner-radius: @default-border-radius;
+@chart-container-border-radius: @default-border-radius;
 @chart-grid-gap: 15px;
 @chart-min-width: min(80vw, 450px);
 @chart-max-width: min(90vw, 550px);
 @chart-padding: 0 5px 5px 5px;
 
 // Dropzone
-@dropzone-border-radius: 20px;
 @dropzone-border-width: 2px;
 @dropzone-padding: 10px;
 

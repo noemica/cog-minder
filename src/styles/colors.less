@@ -1,36 +1,26 @@
+// Keep in sync with theme.less
+
 // Background colors
-@transparent-background-color: #000000cc;
-@page-background-color: #2f2f2f;
-@default-element-background-color: #3a3a3a;
-@small-contrast-background-color: #4a4a4a;
-@moderate-contrast-background-color: #656565;
-@active-background-color: #a7a7a7;
-@emphasis-background-color: #d7d7d7;
+@tooltip-background-color: var(--tooltip-background-color);
+@page-background-color: var(--page-background-color);
+@element-background-color: var(--element-background-color);
+@label-background-color: var(--label-background-color);
+@small-contrast-background-color: var(--small-contrast-background-color);
+@dropdown-menu-background-color: var(--dropdown-menu-background-color);
+@dropdown-menu-active-option-background-color: var(--dropdown-menu-active-option-background-color);
+@dropzone-active-background-color: var(--dropzone-active-background-color);
 
 // Borders
-@default-border-color: #171717;
-@contrast-border-color: #e8e8e8;
+@border-color: var(--border-color);
+@border-button-interaction-color: var(--border-button-interactive-color);
+@contrast-border-color: var(--contrast-border-color);
 
 // Fonts
-@font-color-default: #e8e8e8;
-@font-color-deemphasized: #aaaaaa;
-@font-color-contrast: #171717;
-@font-color-title: #00cc00;
+@font-color: var(--font-color);
+@font-button-interaction-color: var(--font-button-interaction-color);
+@font-title-color: var(--font-title-color);
 
 // Buttons
-@button-gradient-darken-percent: 40%;
-@button-background-gradient: linear-gradient(
-    to bottom,
-    @moderate-contrast-background-color 0%,
-    darken(@moderate-contrast-background-color, @button-gradient-darken-percent, relative) 100%
-);
-@button-hover-focus-background-gradient: linear-gradient(
-    to bottom,
-    @emphasis-background-color 0%,
-    darken(@emphasis-background-color, @button-gradient-darken-percent, relative) 100%
-);
-@button-active-background-gradient: linear-gradient(
-    to bottom,
-    @active-background-color 0%,
-    darken(@active-background-color, @button-gradient-darken-percent, relative) 100%
-);
+@button-background-gradient: var(--button-background-gradient);
+@button-hover-focus-background-gradient: var(--button-hover-focus-background-gradient);
+@button-active-background-gradient: var(--button-active-background-gradient);
