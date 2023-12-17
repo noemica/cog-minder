@@ -7,6 +7,7 @@ export const pageTypes: PageType[] = ["About", "Bots", "Build", "Hacks", "Lore",
 
 // An enum to represent spoiler level
 export type Spoiler = "None" | "Spoiler" | "Redacted";
+export const localStorageSpoilerName = "spoilers";
 
 // A map location
 export type MapLocation = {
@@ -23,3 +24,6 @@ export type MapLocation = {
     specialItems: Item[];
     spoiler: Spoiler;
 };
+
+export type ThemeType = "Dark" | "Cogmind";
+export const localStorageThemeName = "theme";

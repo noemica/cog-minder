@@ -21,7 +21,7 @@ import {
 import CombatLogDropzone from "../Dropzone/CombatLogDropzone";
 import PageHeader from "../PageHeader/PageHeader";
 import { LabeledExclusiveButtonGroup } from "../LabeledItem/LabeledItem";
-import { useBodyDataAttribute } from "../Effects/useBodyDataAttribute";
+import useThemeUpdater from "../Effects/useThemeUpdater";
 
 import "./Pages.less";
 
@@ -111,7 +111,7 @@ export function CombatPage() {
     const initialLoaded = isDev;
     const initialData = isDev ? fakeData : [];
 
-    useBodyDataAttribute("data-theme", "cogmind");
+    useThemeUpdater();
 
     const [loaded, setLoaded] = useState(initialLoaded);
     const [combatLogData, setCombatLogData] = useState(initialData);

@@ -4,12 +4,13 @@ import { LabeledSelect } from "../LabeledItem/LabeledItem";
 import TextTooltip from "../Tooltip/TextTooltip";
 
 import "./PageHeader.less";
+import { Spoiler, ThemeType, localStorageThemeName } from "../../types/commonTypes";
 
 export type PageHeaderProps = {
     type: PageType;
 };
 
-const options: SelectOptionType[] = [
+const spoilerOptions: SelectOptionType[] = [
     { value: "None", label: "None", tooltip: "No spoilers: Factory or higher depth branch content is hidden." },
     {
         value: "Spoilers",
@@ -19,8 +20,16 @@ const options: SelectOptionType[] = [
     { value: "Redacted", label: "Redacted", tooltip: "Full spoilers: All game content is shown" },
 ];
 
-export type PageType = "Combat";
+const themeOptions: SelectOptionType[] = [
+    { value: "Dark", label: "Dark", tooltip: "Dark theme." },
+    {
+        value: "Cogmind",
+        label: "Cogmind",
+        tooltip: "Cogmind theme.",
+    },
+];
 
+export type PageType = "Combat";
 type PageDetails = {
     label: string;
     explanation: string;
@@ -37,8 +46,11 @@ const pages = new Map<PageType, PageDetails>([
 ]);
 
 export default function PageHeader({ type }: PageHeaderProps) {
-    const [spoilers, setSpoilers] = useLocalStorage("spoilers", "None");
-    const selected = options.find((o) => o.label === spoilers) || options[0];
+    const [spoilers, setSpoilers] = useLocalStorage<Spoiler>("spoilers", "None");
+    const spoilerSelected = spoilerOptions.find((o) => o.label === spoilers) || spoilerOptions[0];
+
+    const [theme, setTheme] = useLocalStorage<ThemeType>(localStorageThemeName, "Dark");
+    const themeSelected = themeOptions.find((t) => t.label === theme) || themeOptions[0];
 
     const pageDetails = pages.get(type)!;
 
@@ -51,17 +63,29 @@ export default function PageHeader({ type }: PageHeaderProps) {
                     <span className="page-explanation">?</span>
                 </TextTooltip>
             </div>
-            <LabeledSelect
-                label="Spoilers"
-                tooltip="What spoiler content to show. By default, no spoilers are shown."
-                className="spoilers-selectpicker"
-                isSearchable={false}
-                options={options}
-                value={selected}
-                onChange={(newValue) => {
-                    setSpoilers(newValue!.value);
-                }}
-            ></LabeledSelect>
+            <div>
+                <LabeledSelect
+                    label="Spoilers"
+                    tooltip="What spoiler content to show. By default, no spoilers are shown."
+                    className="spoilers-selectpicker"
+                    isSearchable={false}
+                    options={spoilerOptions}
+                    value={spoilerSelected}
+                    onChange={(newValue) => {
+                        setSpoilers(newValue!.value as Spoiler);
+                    }}
+                />
+                <LabeledSelect
+                    label="Theme"
+                    tooltip="Theme to show."
+                    isSearchable={false}
+                    options={themeOptions}
+                    value={themeSelected}
+                    onChange={(newValue) => {
+                        setTheme(newValue!.value as ThemeType);
+                    }}
+                />
+            </div>
         </div>
     );
 }
