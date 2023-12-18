@@ -27,3 +27,5 @@ export type MapLocation = {
 
 export type ThemeType = "Dark" | "Cogmind";
 export const localStorageThemeName = "theme";
+
+export const localStorageCombatLogChartDisplayOptions = "combatLogChartDisplayOptions";

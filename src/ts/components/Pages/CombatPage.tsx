@@ -17,11 +17,15 @@ import {
     CombatLogChartCategoryType,
     ChartDisplayOptions,
     CombatLogEntry,
+    isValidCombatLogChartCategoryType,
+    isValidCombatLogChartType,
 } from "../../types/combatLogTypes";
 import CombatLogDropzone from "../Dropzone/CombatLogDropzone";
 import PageHeader from "../PageHeader/PageHeader";
 import { LabeledExclusiveButtonGroup } from "../LabeledItem/LabeledItem";
 import useThemeUpdater from "../Effects/useThemeUpdater";
+import { useLocalStorage } from "usehooks-ts";
+import { localStorageCombatLogChartDisplayOptions } from "../../types/commonTypes";
 
 import "./Pages.less";
 
@@ -117,13 +121,23 @@ export function CombatPage() {
     const initialData = isDev ? fakeData : [];
 
     useThemeUpdater();
+    const [initialChartDisplayOptions, setInitialChartDisplayOptions] = useLocalStorage<ChartDisplayOptions>(
+        localStorageCombatLogChartDisplayOptions,
+        {
+            category: "Bot",
+            chartType: "Pie",
+        },
+    );
+    if (!isValidCombatLogChartCategoryType(initialChartDisplayOptions.category)) {
+        initialChartDisplayOptions.category = "Bot";
+    }
+    if (!isValidCombatLogChartType(initialChartDisplayOptions.chartType)) {
+        initialChartDisplayOptions.chartType = "Bar";
+    }
 
     const [loaded, setLoaded] = useState(initialLoaded);
     const [combatLogData, setCombatLogData] = useState(initialData);
-    const [displayOptions, setDisplayOptions] = useState<ChartDisplayOptions>({
-        category: "Bot",
-        chartType: "Pie",
-    });
+    const [displayOptions, setDisplayOptions] = useState<ChartDisplayOptions>(initialChartDisplayOptions);
 
     async function onLoadDataClick() {
         setLoaded(true);
@@ -153,7 +167,9 @@ export function CombatPage() {
                                 buttons={chartTypeButtons}
                                 initialSelected={displayOptions.chartType}
                                 onValueChanged={(value) => {
-                                    setDisplayOptions((d) => ({ ...d, chartType: value }));
+                                    const newDisplayOptions = { ...displayOptions, chartType: value };
+                                    setDisplayOptions(newDisplayOptions);
+                                    setInitialChartDisplayOptions(newDisplayOptions);
                                 }}
                             />
                             <LabeledExclusiveButtonGroup<CombatLogChartCategoryType>
@@ -163,7 +179,9 @@ export function CombatPage() {
                                 buttons={categoryTypeButtons}
                                 initialSelected={displayOptions.category}
                                 onValueChanged={(value) => {
-                                    setDisplayOptions((d) => ({ ...d, category: value }));
+                                    const newDisplayOptions = { ...displayOptions, category: value };
+                                    setDisplayOptions(newDisplayOptions);
+                                    setInitialChartDisplayOptions(newDisplayOptions);
                                 }}
                             />
                         </div>
