@@ -17,7 +17,7 @@ export default function PartsDestroyedByCogmindChart({
             chartTitle="Parts Destroyed by Cogmind"
             values={values}
             displayOptions={displayOptions}
-        ></CombatLogChart>
+        />
     );
 }
 

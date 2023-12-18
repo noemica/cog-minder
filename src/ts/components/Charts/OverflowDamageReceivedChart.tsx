@@ -14,7 +14,7 @@ export default function DamageReceivedChart({ combatLogEntries, displayOptions }
             chartTitle="Overflow Damage Received"
             values={values}
             displayOptions={displayOptions}
-        ></CombatLogChart>
+        />
     );
 }
 

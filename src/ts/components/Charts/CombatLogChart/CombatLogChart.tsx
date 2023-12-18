@@ -83,7 +83,7 @@ function createHorizontalBarChart(
                 values={values}
                 barColors={otherCategoryAdded ? barColorsWithOther : barColors}
                 maxValue={maxValue}
-            ></HorizontalBarChart>
+            />
         </div>
     );
 
@@ -135,7 +135,7 @@ function createPieChart(chartTitle: string, values: ChartDataValue[]) {
                 values={values}
                 borderColors={pieBorderColors}
                 backgroundColors={pieBackgroundColors}
-            ></PieChart>
+            />
         </div>
     );
 }

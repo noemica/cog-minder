@@ -14,7 +14,7 @@ export default function CriticalHitTargetsByCogmind({ combatLogEntries, displayO
             chartTitle="Critical Hits by Cogmind"
             values={values}
             displayOptions={displayOptions}
-        ></CombatLogChart>
+        />
     );
 }
 

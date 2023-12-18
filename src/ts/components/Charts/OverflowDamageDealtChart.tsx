@@ -14,7 +14,7 @@ export default function OverflowDamageDealtChart({ combatLogEntries, displayOpti
             chartTitle="Overflow Damage Dealt"
             values={values}
             displayOptions={displayOptions}
-        ></CombatLogChart>
+        />
     );
 }
 

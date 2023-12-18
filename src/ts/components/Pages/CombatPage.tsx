@@ -86,31 +86,13 @@ function Charts(combatLogData: CombatLogEntry[], displayOptions: ChartDisplayOpt
         <ChartGrid>
             <DamageDealtChart combatLogEntries={combatLogData} displayOptions={displayOptions}></DamageDealtChart>
             <DamageReceivedChart combatLogEntries={combatLogData} displayOptions={displayOptions}></DamageReceivedChart>
-            <OverflowDamageDealtChart
-                combatLogEntries={combatLogData}
-                displayOptions={displayOptions}
-            ></OverflowDamageDealtChart>
-            <OverflowDamageReceivedChart
-                combatLogEntries={combatLogData}
-                displayOptions={displayOptions}
-            ></OverflowDamageReceivedChart>
-            <PartsDestroyedByCogmindChart
-                combatLogEntries={combatLogData}
-                displayOptions={displayOptions}
-            ></PartsDestroyedByCogmindChart>
-            <CogmindPartsDestroyedChart
-                combatLogEntries={combatLogData}
-                displayOptions={displayOptions}
-            ></CogmindPartsDestroyedChart>
+            <OverflowDamageDealtChart combatLogEntries={combatLogData} displayOptions={displayOptions} />
+            <OverflowDamageReceivedChart combatLogEntries={combatLogData} displayOptions={displayOptions} />
+            <PartsDestroyedByCogmindChart combatLogEntries={combatLogData} displayOptions={displayOptions} />
+            <CogmindPartsDestroyedChart combatLogEntries={combatLogData} displayOptions={displayOptions} />
             <SneakAttacksChart combatLogEntries={combatLogData} displayOptions={displayOptions}></SneakAttacksChart>
-            <CriticalHitTargetsByCogmind
-                combatLogEntries={combatLogData}
-                displayOptions={displayOptions}
-            ></CriticalHitTargetsByCogmind>
-            <CriticalHitTargetsToCogmind
-                combatLogEntries={combatLogData}
-                displayOptions={displayOptions}
-            ></CriticalHitTargetsToCogmind>
+            <CriticalHitTargetsByCogmind combatLogEntries={combatLogData} displayOptions={displayOptions} />
+            <CriticalHitTargetsToCogmind combatLogEntries={combatLogData} displayOptions={displayOptions} />
         </ChartGrid>
     );
 }

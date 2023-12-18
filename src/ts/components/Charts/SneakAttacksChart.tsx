@@ -14,7 +14,7 @@ export default function SneakAttacksChart({ combatLogEntries, displayOptions }: 
             chartTitle="Sneak Attacks by Cogmind"
             values={values}
             displayOptions={displayOptions}
-        ></CombatLogChart>
+        />
     );
 }
 
