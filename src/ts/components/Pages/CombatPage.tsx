@@ -8,8 +8,8 @@ import CogmindPartsDestroyedChart from "../Charts/CogmindPartsDestroyedChart";
 import OverflowDamageDealtChart from "../Charts/OverflowDamageDealtChart";
 import OverflowDamageReceivedChart from "../Charts/OverflowDamageReceivedChart";
 import SneakAttacksChart from "../Charts/SneakAttacksChart";
-import CriticalHitsByCogmind from "../Charts/CriticalHitsByCogmindChart";
-import CriticalHitsToCogmind from "../Charts/CriticalHitsToCogmindChart";
+import CriticalHitTargetsByCogmind from "../Charts/CriticalHitTargetsByCogmindChart";
+import CriticalHitTargetsToCogmind from "../Charts/CriticalHitTargetsToCogmindChart";
 import Button from "../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../Buttons/ExclusiveButtonGroup";
 import {
@@ -49,6 +49,11 @@ const categoryTypeButtons: ExclusiveButtonDefinition<CombatLogChartCategoryType>
         label: "Class",
         value: "Class",
         tooltip: "Groups chart values based on damage dealt to bot class types.",
+    },
+    {
+        label: "Critical",
+        value: "Critical",
+        tooltip: "Groups chart values based on critical hit type (or None).",
     },
     {
         label: "Damage Type",
@@ -94,14 +99,14 @@ function Charts(combatLogData: CombatLogEntry[], displayOptions: ChartDisplayOpt
                 displayOptions={displayOptions}
             ></CogmindPartsDestroyedChart>
             <SneakAttacksChart combatLogEntries={combatLogData} displayOptions={displayOptions}></SneakAttacksChart>
-            <CriticalHitsByCogmind
+            <CriticalHitTargetsByCogmind
                 combatLogEntries={combatLogData}
                 displayOptions={displayOptions}
-            ></CriticalHitsByCogmind>
-            <CriticalHitsToCogmind
+            ></CriticalHitTargetsByCogmind>
+            <CriticalHitTargetsToCogmind
                 combatLogEntries={combatLogData}
                 displayOptions={displayOptions}
-            ></CriticalHitsToCogmind>
+            ></CriticalHitTargetsToCogmind>
         </ChartGrid>
     );
 }

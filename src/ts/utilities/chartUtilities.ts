@@ -26,6 +26,9 @@ function getValueLabel(
                 case "Class":
                     return getBotClass(entry.sourceEntity);
 
+                case "Critical":
+                    return damageEntry.criticalHitType || "None";
+
                 case "Damage Type":
                     return getItemDamageType(entry.sourceWeapon);
 
@@ -50,6 +53,9 @@ function getValueLabel(
 
                 case "Class":
                     return getBotClass(damageEntry.damagedEntity);
+
+                case "Critical":
+                    return damageEntry.criticalHitType || "None";
 
                 case "Damage Type":
                     return getItemDamageType(entry.sourceWeapon);

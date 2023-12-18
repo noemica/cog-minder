@@ -25,7 +25,7 @@ export type ChartDataValue = {
     value: number;
 };
 
-export type CombatLogChartCategoryType = "Bot" | "Class" | "Damage Type" | "Part" | "Slot" | "Weapon";
+export type CombatLogChartCategoryType = "Bot" | "Class" | "Critical" | "Damage Type" | "Part" | "Slot" | "Weapon";
 
 export type CombatLogChartType = "Pie" | "Bar";
 

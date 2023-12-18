@@ -1,17 +1,17 @@
-import { CombatLogEntry, ChartDisplayOptions } from "../../types/combatLogTypes";
+import { ChartDisplayOptions, CombatLogEntry } from "../../types/combatLogTypes";
 import { CombatLogChartValuesCallbacks, getValuesForCombatLogChart } from "../../utilities/chartUtilities";
 import CombatLogChart from "./CombatLogChart/CombatLogChart";
 
-export type CriticalHitsToCogmindProps = {
+export type CriticalHitsByCogmindProps = {
     combatLogEntries: CombatLogEntry[];
     displayOptions: ChartDisplayOptions;
 };
 
-export default function CriticalHitsToCogmind({ combatLogEntries, displayOptions }: CriticalHitsToCogmindProps) {
+export default function CriticalHitTargetsByCogmind({ combatLogEntries, displayOptions }: CriticalHitsByCogmindProps) {
     const values = getValues(combatLogEntries, displayOptions);
     return (
         <CombatLogChart
-            chartTitle="Critical Hits to Cogmind"
+            chartTitle="Critical Hits by Cogmind"
             values={values}
             displayOptions={displayOptions}
         ></CombatLogChart>
@@ -19,8 +19,8 @@ export default function CriticalHitsToCogmind({ combatLogEntries, displayOptions
 }
 
 const callbacks: CombatLogChartValuesCallbacks = {
-    // Process combat log entries not sourced from Cogmind
-    processCombatLogEntry: (entry) => entry.sourceEntity !== "Cogmind",
+    // Process combat log entries sourced from Cogmind
+    processCombatLogEntry: (entry) => entry.sourceEntity === "Cogmind",
 
     // Process critical hit effects
     processDamageEntry: (damageEntry) => damageEntry.criticalHitType !== undefined,
@@ -30,5 +30,5 @@ const callbacks: CombatLogChartValuesCallbacks = {
 };
 
 function getValues(combatLogEntries: CombatLogEntry[], displayOptions: ChartDisplayOptions) {
-    return getValuesForCombatLogChart(combatLogEntries, displayOptions.category, callbacks, "Source");
+    return getValuesForCombatLogChart(combatLogEntries, displayOptions.category, callbacks, "Target");
 }
