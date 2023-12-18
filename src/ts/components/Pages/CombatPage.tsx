@@ -130,48 +130,45 @@ export function CombatPage() {
     const charts = loaded ? Charts(combatLogData, displayOptions) : null;
 
     return (
-        <div className="page">
-            <PageHeader type="Combat" />
-            <div className="page-content">
-                <CombatLogDropzone
-                    onParse={(combatLogEntries) => {
-                        setCombatLogData(combatLogEntries);
-                        setLoaded(true);
-                    }}
-                />
-                {isDev && <Button onClick={onLoadDataClick}>Load fake data</Button>}
-                {loaded && (
-                    <>
-                        <div className="page-input-group">
-                            <LabeledExclusiveButtonGroup
-                                label="Chart Type"
-                                tooltip="Sets the display type of all charts."
-                                flexGrowButtonCount={true}
-                                buttons={chartTypeButtons}
-                                initialSelected={displayOptions.chartType}
-                                onValueChanged={(value) => {
-                                    const newDisplayOptions = { ...displayOptions, chartType: value };
-                                    setDisplayOptions(newDisplayOptions);
-                                    setInitialChartDisplayOptions(newDisplayOptions);
-                                }}
-                            />
-                            <LabeledExclusiveButtonGroup<CombatLogChartCategoryType>
-                                label="Chart Category"
-                                tooltip="Sets the category type for all charts. This determines how the combat log is split into pieces."
-                                flexGrowButtonCount={true}
-                                buttons={categoryTypeButtons}
-                                initialSelected={displayOptions.category}
-                                onValueChanged={(value) => {
-                                    const newDisplayOptions = { ...displayOptions, category: value };
-                                    setDisplayOptions(newDisplayOptions);
-                                    setInitialChartDisplayOptions(newDisplayOptions);
-                                }}
-                            />
-                        </div>
-                        {charts}
-                    </>
-                )}
-            </div>
+        <div className="page-content">
+            <CombatLogDropzone
+                onParse={(combatLogEntries) => {
+                    setCombatLogData(combatLogEntries);
+                    setLoaded(true);
+                }}
+            />
+            {isDev && <Button onClick={onLoadDataClick}>Load fake data</Button>}
+            {loaded && (
+                <>
+                    <div className="page-input-group">
+                        <LabeledExclusiveButtonGroup
+                            label="Chart Type"
+                            tooltip="Sets the display type of all charts."
+                            flexGrowButtonCount={true}
+                            buttons={chartTypeButtons}
+                            initialSelected={displayOptions.chartType}
+                            onValueChanged={(value) => {
+                                const newDisplayOptions = { ...displayOptions, chartType: value };
+                                setDisplayOptions(newDisplayOptions);
+                                setInitialChartDisplayOptions(newDisplayOptions);
+                            }}
+                        />
+                        <LabeledExclusiveButtonGroup<CombatLogChartCategoryType>
+                            label="Chart Category"
+                            tooltip="Sets the category type for all charts. This determines how the combat log is split into pieces."
+                            flexGrowButtonCount={true}
+                            buttons={categoryTypeButtons}
+                            initialSelected={displayOptions.category}
+                            onValueChanged={(value) => {
+                                const newDisplayOptions = { ...displayOptions, category: value };
+                                setDisplayOptions(newDisplayOptions);
+                                setInitialChartDisplayOptions(newDisplayOptions);
+                            }}
+                        />
+                    </div>
+                    {charts}
+                </>
+            )}
         </div>
     );
 }
