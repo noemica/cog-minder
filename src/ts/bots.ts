@@ -1,3 +1,9 @@
+import "bootstrap";
+import * as jQuery from "jquery";
+import "popper.js";
+import { MappedSettings, TablesorterHeading, TextSorter } from "tablesorter";
+import "tablesorter";
+
 import bots from "../json/bots.json";
 import items from "../json/items.json";
 import { Bot } from "./botTypes";
@@ -11,20 +17,14 @@ import {
     parseIntOrDefault,
 } from "./utilities/common";
 import {
-    getSpoilerState,
-    getSelectedButtonId,
-    resetButtonGroup,
-    enablePopoverBotInfoInteraction,
     createHeader,
+    enablePopoverBotInfoInteraction,
+    getSelectedButtonId,
+    getSpoilerState,
     registerDisableAutocomplete,
+    resetButtonGroup,
     setSpoilerState,
 } from "./utilities/commonJquery";
-
-import * as jQuery from "jquery";
-import "popper.js";
-import "bootstrap";
-import { MappedSettings, TablesorterHeading, TextSorter } from "tablesorter";
-import "tablesorter";
 
 const jq = jQuery.noConflict();
 jq(function ($) {

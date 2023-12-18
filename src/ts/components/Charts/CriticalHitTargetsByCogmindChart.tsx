@@ -9,13 +9,7 @@ export type CriticalHitsByCogmindProps = {
 
 export default function CriticalHitTargetsByCogmind({ combatLogEntries, displayOptions }: CriticalHitsByCogmindProps) {
     const values = getValues(combatLogEntries, displayOptions);
-    return (
-        <CombatLogChart
-            chartTitle="Critical Hits by Cogmind"
-            values={values}
-            displayOptions={displayOptions}
-        />
-    );
+    return <CombatLogChart chartTitle="Critical Hits by Cogmind" values={values} displayOptions={displayOptions} />;
 }
 
 const callbacks: CombatLogChartValuesCallbacks = {

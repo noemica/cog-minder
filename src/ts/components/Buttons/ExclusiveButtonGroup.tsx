@@ -1,7 +1,8 @@
-import "./buttons.less";
+import { useState } from "react";
 
 import Button from "./Button";
-import { useState } from "react";
+
+import "./buttons.less";
 
 export type ExclusiveButtonDefinition<T> = {
     label: string;
@@ -15,7 +16,11 @@ export type ExclusiveButtonsProps<T> = {
     initialSelected?: string | number;
 };
 
-export default function ExclusiveButtonGroup<T>({ buttons, onValueChanged, initialSelected }: ExclusiveButtonsProps<T>) {
+export default function ExclusiveButtonGroup<T>({
+    buttons,
+    onValueChanged,
+    initialSelected,
+}: ExclusiveButtonsProps<T>) {
     let initialSelectedIndex = 0;
 
     if (initialSelected !== undefined) {

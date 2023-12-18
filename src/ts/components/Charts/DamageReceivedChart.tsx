@@ -1,4 +1,4 @@
-import { CombatLogEntry, ChartDisplayOptions } from "../../types/combatLogTypes";
+import { ChartDisplayOptions, CombatLogEntry } from "../../types/combatLogTypes";
 import { CombatLogChartValuesCallbacks, getValuesForCombatLogChart } from "../../utilities/chartUtilities";
 import CombatLogChart from "./CombatLogChart/CombatLogChart";
 

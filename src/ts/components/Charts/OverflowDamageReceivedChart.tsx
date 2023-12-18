@@ -1,4 +1,4 @@
-import { CombatLogEntry, ChartDisplayOptions } from "../../types/combatLogTypes";
+import { ChartDisplayOptions, CombatLogEntry } from "../../types/combatLogTypes";
 import { CombatLogChartValuesCallbacks, getValuesForCombatLogChart } from "../../utilities/chartUtilities";
 import CombatLogChart from "./CombatLogChart/CombatLogChart";
 
@@ -9,13 +9,7 @@ export type DamageReceivedChartProps = {
 
 export default function DamageReceivedChart({ combatLogEntries, displayOptions }: DamageReceivedChartProps) {
     const values = getValues(combatLogEntries, displayOptions);
-    return (
-        <CombatLogChart
-            chartTitle="Overflow Damage Received"
-            values={values}
-            displayOptions={displayOptions}
-        />
-    );
+    return <CombatLogChart chartTitle="Overflow Damage Received" values={values} displayOptions={displayOptions} />;
 }
 
 const callbacks: CombatLogChartValuesCallbacks = {

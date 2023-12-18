@@ -1,6 +1,7 @@
+import { describe, expect, test, vi } from "vitest";
+
 import { parseCombatLog } from "../combatLogParser";
 import * as td from "./combatLogParserTestData";
-import { describe, test, expect, vi } from "vitest";
 
 describe("Combat log parser", () => {
     // Total misses

@@ -1,8 +1,9 @@
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartData, Title, ChartOptions } from "chart.js";
+import { ArcElement, ChartData, Chart as ChartJS, ChartOptions, Legend, Title, Tooltip } from "chart.js";
 import { Pie } from "react-chartjs-2";
-import { chartTextColor } from "./chartColors";
+
 import { ChartDataValue } from "../../../types/combatLogTypes";
 import { WindowSize, useWindowSize } from "../../Effects/useWindowSize";
+import { chartTextColor } from "./chartColors";
 
 // Need to register functionality that gets used or else
 // it gets tree-shaken out
@@ -17,7 +18,7 @@ export type PieChartProps = {
 
 export default function PieChart({ chartTitle, values, backgroundColors, borderColors }: PieChartProps) {
     const windowSize = useWindowSize();
-    
+
     return (
         <Pie
             data={makeChartData(chartTitle, values, backgroundColors, borderColors)}

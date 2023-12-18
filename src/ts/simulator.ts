@@ -1,5 +1,68 @@
+import "bootstrap";
+import "bootstrap-select";
+import {
+    CategoryScale,
+    Chart,
+    ChartDataset,
+    Filler,
+    Legend,
+    LineElement,
+    LinearScale,
+    LinearScaleOptions,
+    Point,
+    PointElement,
+    ScatterController,
+    Title,
+    Tooltip,
+} from "chart.js";
+import * as jQuery from "jquery";
+
 import bots from "../json/bots.json";
 import items from "../json/items.json";
+import { Bot } from "./botTypes";
+import {
+    getBotDefensiveState,
+    getRangedVolleyTime,
+    getRecoil,
+    getRegen,
+    maxVolleys,
+    simulateCombat,
+    spectrumToNumber,
+    volleyTimeMap,
+} from "./simulatorCalcs";
+import { DumpMindEntity } from "./types/dumpMindTypes";
+import {
+    Actuator,
+    ActuatorArray,
+    CombatSuite,
+    CoreAnalyzer,
+    Critical,
+    DamageType,
+    Item,
+    ItemRatingCategory,
+    ItemType,
+    LauncherGuidance,
+    ParticleCharging,
+    PropulsionItem,
+    RangedWeaponCycling,
+    RecoilReduction,
+    SalvageTargeting,
+    TargetAnalyzer,
+    Targeting,
+    WeaponItem,
+} from "./types/itemTypes";
+import {
+    BotBehavior,
+    BotState,
+    EndCondition,
+    ItemLootState,
+    LootState,
+    OffensiveState,
+    SimulatorPart,
+    SimulatorState,
+    SimulatorWeapon,
+    SneakAttackStrategy,
+} from "./types/simulatorTypes";
 import {
     botData,
     canShowPart,
@@ -29,69 +92,6 @@ import {
     setSpoilerState,
     temporarilySetValue,
 } from "./utilities/commonJquery";
-import {
-    Actuator,
-    ActuatorArray,
-    CombatSuite,
-    CoreAnalyzer,
-    Critical,
-    DamageType,
-    Item,
-    ItemRatingCategory,
-    ItemType,
-    LauncherGuidance,
-    ParticleCharging,
-    PropulsionItem,
-    RangedWeaponCycling,
-    RecoilReduction,
-    SalvageTargeting,
-    TargetAnalyzer,
-    Targeting,
-    WeaponItem,
-} from "./types/itemTypes";
-import {
-    getBotDefensiveState,
-    getRangedVolleyTime,
-    getRecoil,
-    getRegen,
-    maxVolleys,
-    simulateCombat,
-    spectrumToNumber,
-    volleyTimeMap,
-} from "./simulatorCalcs";
-import {
-    BotBehavior,
-    BotState,
-    EndCondition,
-    ItemLootState,
-    LootState,
-    OffensiveState,
-    SimulatorPart,
-    SimulatorState,
-    SimulatorWeapon,
-    SneakAttackStrategy,
-} from "./types/simulatorTypes";
-
-import "bootstrap";
-import {
-    CategoryScale,
-    Chart,
-    ChartDataset,
-    Filler,
-    Legend,
-    LineElement,
-    LinearScale,
-    LinearScaleOptions,
-    Point,
-    PointElement,
-    ScatterController,
-    Title,
-    Tooltip,
-} from "chart.js";
-import * as jQuery from "jquery";
-import "bootstrap-select";
-import { DumpMindEntity } from "./types/dumpMindTypes";
-import { Bot } from "./botTypes";
 
 Chart.register(
     CategoryScale,

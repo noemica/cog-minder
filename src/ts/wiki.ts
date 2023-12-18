@@ -1,15 +1,14 @@
-import items from "../json/items.json";
+import autocomplete, { AutocompleteItem, AutocompleteResult } from "autocompleter";
+import "bootstrap";
+import * as jQuery from "jquery";
+
 import bots from "../json/bots.json";
+import items from "../json/items.json";
 import wiki from "../json/wiki.json";
-import {
-    createHeader,
-    enableBotInfoInteraction,
-    getSpoilerState,
-    registerDisableAutocomplete,
-    setActiveButtonGroupButton,
-    setSpoilerState,
-    temporarilySetValue,
-} from "./utilities/commonJquery";
+import { Bot } from "./botTypes";
+import { MapLocation, Spoiler } from "./types/commonTypes";
+import { Item } from "./types/itemTypes";
+import { WikiEntry } from "./types/wikiTypes";
 import {
     boldMatches,
     canShowSpoiler,
@@ -21,15 +20,16 @@ import {
     initData,
     loadImage,
 } from "./utilities/common";
-import { MapLocation, Spoiler } from "./types/commonTypes";
-import { Bot } from "./botTypes";
-import { Item } from "./types/itemTypes";
+import {
+    createHeader,
+    enableBotInfoInteraction,
+    getSpoilerState,
+    registerDisableAutocomplete,
+    setActiveButtonGroupButton,
+    setSpoilerState,
+    temporarilySetValue,
+} from "./utilities/commonJquery";
 import { createContentHtml, createPreviewContent } from "./wikiParser";
-import { WikiEntry } from "./types/wikiTypes";
-
-import autocomplete, { AutocompleteItem, AutocompleteResult } from "autocompleter";
-import * as jQuery from "jquery";
-import "bootstrap";
 
 const jq = jQuery.noConflict();
 jq(function ($) {

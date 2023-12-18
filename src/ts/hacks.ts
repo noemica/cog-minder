@@ -1,5 +1,8 @@
-import * as jQuery from "jquery";
 import "bootstrap";
+import * as jQuery from "jquery";
+
+import { Spoiler } from "./types/commonTypes";
+import { parseIntOrDefault } from "./utilities/common";
 import {
     createHeader,
     getSpoilerState,
@@ -7,8 +10,6 @@ import {
     resetButtonGroup,
     setSpoilerState,
 } from "./utilities/commonJquery";
-import { parseIntOrDefault } from "./utilities/common";
-import { Spoiler } from "./types/commonTypes";
 
 const jq = jQuery.noConflict();
 jq(function ($) {

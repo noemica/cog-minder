@@ -1,16 +1,16 @@
 import lore from "../json/lore.json";
-import {
-    canShowSpoiler,
-    getBot,
-    createBotDataContent,
-    getItem,
-    createItemDataContent,
-    escapeHtml,
-    createLocationHtml,
-    parseIntOrDefault,
-} from "./utilities/common";
 import { MapLocation, Spoiler } from "./types/commonTypes";
 import { WikiEntry } from "./types/wikiTypes";
+import {
+    canShowSpoiler,
+    createBotDataContent,
+    createItemDataContent,
+    createLocationHtml,
+    escapeHtml,
+    getBot,
+    getItem,
+    parseIntOrDefault,
+} from "./utilities/common";
 
 // Output group types
 // Grouped can be in the same <p> block

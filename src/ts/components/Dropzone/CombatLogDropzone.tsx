@@ -1,11 +1,12 @@
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
-import { CombatLogEntry } from "../../types/combatLogTypes";
+
 import { parseCombatLog } from "../../combatLogParser";
+import { CombatLogEntry } from "../../types/combatLogTypes";
 import Button from "../Buttons/Button";
+import TextTooltip from "../Tooltip/TextTooltip";
 
 import "./Dropzone.less";
-import TextTooltip from "../Tooltip/TextTooltip";
 
 export type CombatLogDropzoneProps = {
     onParse: (entries: CombatLogEntry[]) => void;

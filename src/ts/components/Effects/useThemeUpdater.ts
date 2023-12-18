@@ -1,5 +1,6 @@
 import { useReadLocalStorage } from "usehooks-ts";
-import { localStorageThemeName, ThemeType } from "../../types/commonTypes";
+
+import { ThemeType, localStorageThemeName } from "../../types/commonTypes";
 import { useBodyDataAttribute } from "./useBodyDataAttribute";
 
 // Automatically updates the page-wide theme based on the local storage setting

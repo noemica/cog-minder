@@ -1,4 +1,4 @@
-import { CombatLogEntry, ChartDisplayOptions } from "../../types/combatLogTypes";
+import { ChartDisplayOptions, CombatLogEntry } from "../../types/combatLogTypes";
 import { CombatLogChartValuesCallbacks, getValuesForCombatLogChart } from "../../utilities/chartUtilities";
 import CombatLogChart from "./CombatLogChart/CombatLogChart";
 
@@ -12,13 +12,7 @@ export default function PartsDestroyedByCogmindChart({
     displayOptions,
 }: PartsDestroyedByCogmindChartProps) {
     const values = getValues(combatLogEntries, displayOptions);
-    return (
-        <CombatLogChart
-            chartTitle="Parts Destroyed by Cogmind"
-            values={values}
-            displayOptions={displayOptions}
-        />
-    );
+    return <CombatLogChart chartTitle="Parts Destroyed by Cogmind" values={values} displayOptions={displayOptions} />;
 }
 
 const callbacks: CombatLogChartValuesCallbacks = {

@@ -1,31 +1,32 @@
 import { useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
+
 import { fakeData } from "../../fakeData";
-import DamageDealtChart from "../Charts/DamageDealtChart";
-import DamageReceivedChart from "../Charts/DamageReceivedChart";
-import ChartGrid from "../ChartGrid/ChartGrid";
-import PartsDestroyedByCogmindChart from "../Charts/PartsDestroyedByCogmindChart";
-import CogmindPartsDestroyedChart from "../Charts/CogmindPartsDestroyedChart";
-import OverflowDamageDealtChart from "../Charts/OverflowDamageDealtChart";
-import OverflowDamageReceivedChart from "../Charts/OverflowDamageReceivedChart";
-import SneakAttacksChart from "../Charts/SneakAttacksChart";
-import CriticalHitTargetsByCogmind from "../Charts/CriticalHitTargetsByCogmindChart";
-import CriticalHitTargetsToCogmind from "../Charts/CriticalHitTargetsToCogmindChart";
-import Button from "../Buttons/Button";
-import { ExclusiveButtonDefinition } from "../Buttons/ExclusiveButtonGroup";
 import {
-    CombatLogChartType,
-    CombatLogChartCategoryType,
     ChartDisplayOptions,
+    CombatLogChartCategoryType,
+    CombatLogChartType,
     CombatLogEntry,
     isValidCombatLogChartCategoryType,
     isValidCombatLogChartType,
 } from "../../types/combatLogTypes";
-import CombatLogDropzone from "../Dropzone/CombatLogDropzone";
-import PageHeader from "../PageHeader/PageHeader";
-import { LabeledExclusiveButtonGroup } from "../LabeledItem/LabeledItem";
-import useThemeUpdater from "../Effects/useThemeUpdater";
-import { useLocalStorage } from "usehooks-ts";
 import { localStorageCombatLogChartDisplayOptions } from "../../types/commonTypes";
+import Button from "../Buttons/Button";
+import { ExclusiveButtonDefinition } from "../Buttons/ExclusiveButtonGroup";
+import ChartGrid from "../ChartGrid/ChartGrid";
+import CogmindPartsDestroyedChart from "../Charts/CogmindPartsDestroyedChart";
+import CriticalHitTargetsByCogmind from "../Charts/CriticalHitTargetsByCogmindChart";
+import CriticalHitTargetsToCogmind from "../Charts/CriticalHitTargetsToCogmindChart";
+import DamageDealtChart from "../Charts/DamageDealtChart";
+import DamageReceivedChart from "../Charts/DamageReceivedChart";
+import OverflowDamageDealtChart from "../Charts/OverflowDamageDealtChart";
+import OverflowDamageReceivedChart from "../Charts/OverflowDamageReceivedChart";
+import PartsDestroyedByCogmindChart from "../Charts/PartsDestroyedByCogmindChart";
+import SneakAttacksChart from "../Charts/SneakAttacksChart";
+import CombatLogDropzone from "../Dropzone/CombatLogDropzone";
+import useThemeUpdater from "../Effects/useThemeUpdater";
+import { LabeledExclusiveButtonGroup } from "../LabeledItem/LabeledItem";
+import PageHeader from "../PageHeader/PageHeader";
 
 import "./Pages.less";
 

@@ -1,6 +1,7 @@
 {
     "type": "module",
     "devDependencies": {
+        "@trivago/prettier-plugin-sort-imports": "^4.3.0",
         "@types/bootstrap": "^5.0.3",
         "@types/bootstrap-select": "^1.13.1",
         "@types/chart.js": "^2.9.29",
@@ -33,7 +34,8 @@
         "deploy": "gh-pages -d dist",
         "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
         "lint-fix": "eslint --fix --ext .ts,.tsx --ignore-path .gitignore .",
-        "test": "vitest"
+        "test": "vitest",
+        "format": "prettier . --write"
     },
     "dependencies": {
         "@floating-ui/react": "^0.26.3",

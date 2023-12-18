@@ -1,22 +1,22 @@
-import * as React from "react";
 import {
-    arrow,
-    useFloating,
-    autoUpdate,
-    offset,
-    flip,
-    shift,
-    useHover,
-    useFocus,
-    useDismiss,
-    useRole,
-    useInteractions,
-    useMergeRefs,
+    FloatingArrow,
     FloatingPortal,
     Placement,
-    FloatingArrow,
+    arrow,
+    autoUpdate,
+    flip,
+    offset,
+    shift,
+    useDismiss,
+    useFloating,
+    useFocus,
+    useHover,
+    useInteractions,
+    useMergeRefs,
+    useRole,
     useTransitionStyles,
 } from "@floating-ui/react";
+import * as React from "react";
 import { ReactNode, useRef } from "react";
 
 import "./Tooltip.less";

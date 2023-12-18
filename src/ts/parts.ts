@@ -1,4 +1,26 @@
+import "bootstrap";
+import "bootstrap-select";
+import jQuery from "jquery";
+import lozad from "lozad";
+import "tablesorter";
+import { MappedSettings, TablesorterHeading, TextSorter } from "tablesorter";
+
 import items from "../json/items.json";
+import {
+    Critical,
+    DamageType,
+    HeatTransfer,
+    Item,
+    ItemCategory,
+    ItemSlot,
+    ItemType,
+    ItemWithUpkeep,
+    PowerItem,
+    PropulsionItem,
+    SiegeMode,
+    Spectrum,
+    WeaponItem,
+} from "./types/itemTypes";
 import {
     createItemDataContent,
     escapeHtml,
@@ -21,28 +43,6 @@ import {
     resetButtonGroup,
     setSpoilerState,
 } from "./utilities/commonJquery";
-import {
-    ItemCategory,
-    Critical,
-    DamageType,
-    Item,
-    ItemSlot,
-    ItemType,
-    ItemWithUpkeep,
-    PowerItem,
-    PropulsionItem,
-    SiegeMode,
-    Spectrum,
-    WeaponItem,
-    HeatTransfer,
-} from "./types/itemTypes";
-
-import lozad from "lozad";
-import jQuery from "jquery";
-import "bootstrap";
-import "bootstrap-select";
-import "tablesorter";
-import { MappedSettings, TablesorterHeading, TextSorter } from "tablesorter";
 
 const jq = jQuery.noConflict();
 jq(function ($) {

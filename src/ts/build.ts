@@ -1,4 +1,29 @@
+import "bootstrap";
+import "bootstrap-select";
+import * as jQuery from "jquery";
+import "lz-string";
+import LZString from "lz-string";
+
 import items from "../json/items.json";
+import { getRangedVolleyTime, volleyTimeMap } from "./simulatorCalcs";
+import {
+    Actuator,
+    BaseItem,
+    EnergyFilter,
+    EnergyStorage,
+    FusionCompressor,
+    HeatDissipation,
+    ItemSlot,
+    ItemType,
+    ItemWithUpkeep,
+    MassSupport,
+    PowerAmplifier,
+    PowerItem,
+    PropulsionItem,
+    RangedWeaponCycling,
+    WeaponItem,
+    WeaponRegen,
+} from "./types/itemTypes";
 import {
     assertUnreachable,
     canShowPart,
@@ -23,31 +48,6 @@ import {
     setSpoilerState,
     temporarilySetValue,
 } from "./utilities/commonJquery";
-import {
-    Actuator,
-    BaseItem,
-    EnergyFilter,
-    EnergyStorage,
-    FusionCompressor,
-    HeatDissipation,
-    ItemSlot,
-    ItemType,
-    ItemWithUpkeep,
-    MassSupport,
-    PowerAmplifier,
-    PowerItem,
-    PropulsionItem,
-    RangedWeaponCycling,
-    WeaponItem,
-    WeaponRegen,
-} from "./types/itemTypes";
-
-import * as jQuery from "jquery";
-import "bootstrap";
-import "bootstrap-select";
-import "lz-string";
-import { getRangedVolleyTime, volleyTimeMap } from "./simulatorCalcs";
-import LZString from "lz-string";
 
 const jq = jQuery.noConflict();
 jq(function ($) {

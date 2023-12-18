@@ -1,6 +1,8 @@
-import "./buttons.less";
 import { ReactNode } from "react";
+
 import TextTooltip from "../Tooltip/TextTooltip";
+
+import "./buttons.less";
 
 export type ButtonProps = {
     children?: ReactNode;
@@ -23,11 +25,7 @@ export default function Button({ children, onClick, className, tooltip }: Button
     );
 
     if (tooltip) {
-        return (
-            <TextTooltip tooltipText={tooltip}>
-                {button}
-            </TextTooltip>
-        );
+        return <TextTooltip tooltipText={tooltip}>{button}</TextTooltip>;
     } else {
         return button;
     }

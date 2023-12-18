@@ -1,4 +1,5 @@
 import * as jQuery from "jquery";
+
 import { createHeader } from "./utilities/commonJquery";
 
 const jq = jQuery.noConflict();

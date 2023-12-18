@@ -1,4 +1,4 @@
-import { CombatLogEntry, ChartDisplayOptions } from "../../types/combatLogTypes";
+import { ChartDisplayOptions, CombatLogEntry } from "../../types/combatLogTypes";
 import { CombatLogChartValuesCallbacks, getValuesForCombatLogChart } from "../../utilities/chartUtilities";
 import CombatLogChart from "./CombatLogChart/CombatLogChart";
 
@@ -9,13 +9,7 @@ export type CriticalHitsToCogmindProps = {
 
 export default function CriticalHitTargetsToCogmind({ combatLogEntries, displayOptions }: CriticalHitsToCogmindProps) {
     const values = getValues(combatLogEntries, displayOptions);
-    return (
-        <CombatLogChart
-            chartTitle="Critical Hits to Cogmind"
-            values={values}
-            displayOptions={displayOptions}
-        />
-    );
+    return <CombatLogChart chartTitle="Critical Hits to Cogmind" values={values} displayOptions={displayOptions} />;
 }
 
 const callbacks: CombatLogChartValuesCallbacks = {

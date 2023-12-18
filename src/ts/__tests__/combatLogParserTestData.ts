@@ -1239,8 +1239,7 @@ none of this should crash or affect the output
 
 export const invalidDataInValidDataEntries: CombatLogEntry[] = [
     {
-        damageEntries: [
-        ],
+        damageEntries: [],
         projectilesHit: 0,
         projectilesTotal: 1,
         sourceEntity: "Cogmind",

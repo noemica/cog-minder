@@ -1,4 +1,4 @@
-import { CombatLogEntry, CombatLogDamageEntry } from "./types/combatLogTypes";
+import { CombatLogDamageEntry, CombatLogEntry } from "./types/combatLogTypes";
 import { getBotByAllyName, getBotByName, getBotByShortName } from "./utilities/botUtilities";
 import { parseIntOrDefault } from "./utilities/common";
 import { getItemByName, isKnownItem } from "./utilities/itemUtilities";

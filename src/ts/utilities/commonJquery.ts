@@ -1,10 +1,10 @@
 // Common Jquery related code
-
-import { createItemDataContent, escapeHtml, getItem, itemData, valueOrDefault } from "./common";
-import { PageType, pageTypes, Spoiler } from "../types/commonTypes";
-
-import * as jQuery from "jquery";
 import "bootstrap";
+import * as jQuery from "jquery";
+
+import { PageType, Spoiler, pageTypes } from "../types/commonTypes";
+import { createItemDataContent, escapeHtml, getItem, itemData, valueOrDefault } from "./common";
+
 const $ = jQuery.noConflict();
 
 type HeaderInfo = {

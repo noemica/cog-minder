@@ -1,6 +1,7 @@
-import rifData from "../json/rif.json";
-import * as jQuery from "jquery";
 import "bootstrap";
+import * as jQuery from "jquery";
+
+import rifData from "../json/rif.json";
 import { createHeader, registerDisableAutocomplete } from "./utilities/commonJquery";
 
 const jq = jQuery.noConflict();

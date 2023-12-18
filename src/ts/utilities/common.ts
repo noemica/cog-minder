@@ -1,8 +1,10 @@
 // Common code
-import itemCategories from "../../json/item_categories.json";
 import botExtraData from "../../json/bot_extra_data.json";
+import itemCategories from "../../json/item_categories.json";
 import lore from "../../json/lore.json";
 import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "../botTypes";
+import { specialItemProperties } from "../specialItemProperties";
+import { MapLocation, Spoiler } from "../types/commonTypes";
 import {
     BaseItem,
     Critical,
@@ -19,8 +21,6 @@ import {
     UtilityItem,
     WeaponItem,
 } from "../types/itemTypes";
-import { specialItemProperties } from "../specialItemProperties";
-import { MapLocation, Spoiler } from "../types/commonTypes";
 
 export let botData: { [key: string]: Bot } = {};
 export let itemData: { [key: string]: Item } = {};
@@ -1700,7 +1700,7 @@ export async function initData(
         const itemName = item.Name;
         let newItem: Item;
 
-        let category: ItemRatingCategory = (<any>ItemRatingCategory)[item.Category ?? ""];
+        let category: ItemRatingCategory = ItemRatingCategory[item.Category ?? ""];
         if (category === undefined) {
             category = ItemRatingCategory.None;
         }

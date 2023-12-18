@@ -1,9 +1,10 @@
 import { useLocalStorage } from "usehooks-ts";
-import { SelectOptionType } from "../Selectpicker/Select";
-import { LabeledSelect } from "../LabeledItem/LabeledItem";
-import TextTooltip from "../Tooltip/TextTooltip";
+
 import { Spoiler, ThemeType, localStorageThemeName } from "../../types/commonTypes";
+import { LabeledSelect } from "../LabeledItem/LabeledItem";
+import { SelectOptionType } from "../Selectpicker/Select";
 import ButtonPopover from "../Tooltip/ButtonPopover";
+import TextTooltip from "../Tooltip/TextTooltip";
 
 import "./PageHeader.less";
 

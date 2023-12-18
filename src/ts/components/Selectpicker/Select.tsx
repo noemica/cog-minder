@@ -1,5 +1,6 @@
-import Select, { GroupBase, OptionProps, Props, components } from "react-select";
 import { ReactNode } from "react";
+import Select, { GroupBase, OptionProps, Props, components } from "react-select";
+
 import TextTooltip from "../Tooltip/TextTooltip";
 
 import "./Select.less";
@@ -16,9 +17,7 @@ const Option = (props: OptionProps<SelectOptionType>) => {
     } else {
         return (
             <components.Option {...props}>
-                <TextTooltip tooltipText={props.data.tooltip}>
-                    {props.data.label}
-                </TextTooltip>
+                <TextTooltip tooltipText={props.data.tooltip}>{props.data.label}</TextTooltip>
             </components.Option>
         );
     }

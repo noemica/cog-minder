@@ -1,18 +1,19 @@
 import {
-    Chart as ChartJS,
-    Tooltip,
-    Legend,
-    ChartData,
-    Title,
-    ChartOptions,
-    CategoryScale,
-    LinearScale,
     BarElement,
+    CategoryScale,
+    ChartData,
+    Chart as ChartJS,
+    ChartOptions,
+    Legend,
+    LinearScale,
+    Title,
+    Tooltip,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { chartGridColor, chartTextColor } from "./chartColors";
+
 import { ChartDataValue } from "../../../types/combatLogTypes";
 import { WindowSize, useWindowSize } from "../../Effects/useWindowSize";
+import { chartGridColor, chartTextColor } from "./chartColors";
 
 // Need to register functionality that gets used or else
 // it gets tree-shaken out

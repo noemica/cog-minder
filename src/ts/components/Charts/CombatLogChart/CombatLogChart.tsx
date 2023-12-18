@@ -1,9 +1,10 @@
 import { ReactNode, useState } from "react";
+
+import { ChartDataValue, ChartDisplayOptions, CombatLogChartType } from "../../../types/combatLogTypes";
+import Button from "../../Buttons/Button";
 import HorizontalBarChart from "../BaseCharts/HorizontalBarChart";
 import PieChart from "../BaseCharts/PieChart";
 import { barColors, barColorsWithOther, pieBackgroundColors, pieBorderColors } from "../BaseCharts/chartColors";
-import Button from "../../Buttons/Button";
-import { ChartDataValue, ChartDisplayOptions, CombatLogChartType } from "../../../types/combatLogTypes";
 
 import "./combatLogChart.less";
 

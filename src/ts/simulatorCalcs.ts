@@ -1,9 +1,7 @@
 // Battle simulation calculation functions/constants
 import { Bot, BotImmunity } from "./botTypes";
-import { hasActiveSpecialProperty, randomInt, sum } from "./utilities/common";
 import {
     AntimissileChance,
-    ReactionControlSystem,
     CorruptionIgnore,
     CorruptionReduce,
     Critical,
@@ -15,6 +13,7 @@ import {
     PowerItem,
     PropulsionItem,
     RangedAvoid,
+    ReactionControlSystem,
     SelfReduction,
     Shielding,
     SiegeMode,
@@ -30,6 +29,7 @@ import {
     SimulatorWeapon,
     SpecialPart,
 } from "./types/simulatorTypes";
+import { hasActiveSpecialProperty, randomInt, sum } from "./utilities/common";
 
 const minAccuracy = 10;
 const maxRangedAccuracy = 95;

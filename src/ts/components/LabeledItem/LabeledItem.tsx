@@ -1,7 +1,8 @@
-import TextTooltip from "../Tooltip/TextTooltip";
 import { GroupBase, Props } from "react-select";
-import SelectWrapper, { SelectOptionType } from "../Selectpicker/Select";
+
 import ExclusiveButtonGroup, { ExclusiveButtonsProps } from "../Buttons/ExclusiveButtonGroup";
+import SelectWrapper, { SelectOptionType } from "../Selectpicker/Select";
+import TextTooltip from "../Tooltip/TextTooltip";
 
 import "./LabeledItem.less";
 

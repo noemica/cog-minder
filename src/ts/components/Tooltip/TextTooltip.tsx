@@ -1,6 +1,7 @@
-import { ReactNode } from "react";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./Tooltip";
 import { Placement } from "@floating-ui/react";
+import { ReactNode } from "react";
+
+import { Tooltip, TooltipContent, TooltipTrigger } from "./Tooltip";
 
 type TextTooltipProps = {
     tooltipText: string;

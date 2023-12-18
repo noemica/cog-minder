@@ -1,25 +1,25 @@
-import * as React from "react";
 import {
+    FloatingArrow,
+    FloatingFocusManager,
+    FloatingPortal,
+    Placement,
     arrow,
-    useFloating,
     autoUpdate,
-    offset,
     flip,
+    offset,
     shift,
     useClick,
     useDismiss,
-    useRole,
+    useFloating,
+    useId,
     useInteractions,
     useMergeRefs,
-    Placement,
-    FloatingPortal,
-    FloatingFocusManager,
-    useId,
-    FloatingArrow,
+    useRole,
 } from "@floating-ui/react";
+import * as React from "react";
+import { useRef } from "react";
 
 import "./Popover.less";
-import { useRef } from "react";
 
 interface PopoverOptions {
     initialOpen?: boolean;

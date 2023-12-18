@@ -12,13 +12,7 @@ export default function CogmindPartsDestroyedChart({
     displayOptions,
 }: CogmindPartsDestroyedChartProps) {
     const values = getValues(combatLogEntries, displayOptions);
-    return (
-        <CombatLogChart
-            chartTitle="Cogmind's Parts Destroyed"
-            values={values}
-            displayOptions={displayOptions}
-        />
-    );
+    return <CombatLogChart chartTitle="Cogmind's Parts Destroyed" values={values} displayOptions={displayOptions} />;
 }
 
 const callbacks: CombatLogChartValuesCallbacks = {
