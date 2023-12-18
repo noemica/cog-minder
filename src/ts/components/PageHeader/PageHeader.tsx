@@ -22,8 +22,8 @@ const spoilerOptions: SelectOptionType[] = [
 ];
 
 const themeOptions: SelectOptionType[] = [
-    { value: "Dark", label: "Dark", tooltip: "Uses a more typical dark mode website theme." },
-    { value: "Cogmind", label: "Cogmind", tooltip: "Uses a uniquely Cogmind-styled dark mode website theme." },
+    { value: "Dark", label: "Dark", tooltip: "Use a more typical dark mode theme." },
+    { value: "Cogmind", label: "Cogmind", tooltip: "Use a Cogmind-styled dark mode website theme." },
 ];
 
 export type PageType = "Combat";

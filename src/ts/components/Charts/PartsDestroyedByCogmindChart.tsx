@@ -1,5 +1,5 @@
+import { CombatLogEntry, ChartDisplayOptions } from "../../types/combatLogTypes";
 import { CombatLogChartValuesCallbacks, getValuesForCombatLogChart } from "../../utilities/chartUtilities";
-import { CombatLogEntry, ChartDisplayOptions } from "../../types/commonTypes";
 import CombatLogChart from "./CombatLogChart/CombatLogChart";
 
 export type PartsDestroyedByCogmindChartProps = {
