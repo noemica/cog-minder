@@ -6,11 +6,12 @@
 @dark-label-background-color: @dark-element-background-color;
 @dark-small-contrast-background-color: #4a4a4a;
 @dark-dropdown-menu-background-color: #656565;
-@dark-dropdown-menu-active-option-background-color: #a7a7a7;
-@dark-dropzone-active-background-color: #a7a7a7;
+@dark-dropdown-menu-active-option-background-color: @dark-button-interaction-background-color;
+@dark-dropzone-active-background-color: @dark-button-active-background-color;
 
 @dark-moderate-contrast-background-color: #656565;
 @dark-button-active-background-color: #a7a7a7;
+@dark-button-interaction-background-color: #d7d7d7;
 
 @cogmind-tooltip-background-color: @dark-tooltip-background-color;
 @cogmind-page-background-color: #080808;
@@ -90,8 +91,8 @@
 );
 @dark-button-hover-focus-background-gradient: linear-gradient(
     to bottom,
-    @dark-dropdown-menu-active-option-background-color 0%,
-    darken(@dark-dropdown-menu-active-option-background-color, @dark-button-gradient-darken-percent, relative) 100%
+    @dark-button-interaction-background-color 0%,
+    darken(@dark-button-interaction-background-color, @dark-button-gradient-darken-percent, relative) 100%
 );
 @dark-button-active-background-gradient: linear-gradient(
     to bottom,
