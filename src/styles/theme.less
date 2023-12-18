@@ -2,7 +2,7 @@
 // Background colors
 @dark-tooltip-background-color: #000000cc;
 @dark-page-background-color: #2f2f2f;
-@dark-element-background-color: #3a3a3a;
+@dark-element-background-color: #3a3a3a; // Keep in sync with chartDarkBackgroundColor
 @dark-label-background-color: @dark-element-background-color;
 @dark-small-contrast-background-color: #4a4a4a;
 @dark-dropdown-menu-background-color: #656565;
@@ -15,7 +15,7 @@
 
 @cogmind-tooltip-background-color: @dark-tooltip-background-color;
 @cogmind-page-background-color: #080808;
-@cogmind-element-background-color: @cogmind-page-background-color;
+@cogmind-element-background-color: @cogmind-page-background-color; // Keep in sync with chartCogmindBackgroundColor
 @cogmind-label-background-color: #162416;
 @cogmind-small-contrast-background-color: @cogmind-label-background-color;
 @cogmind-dropdown-menu-background-color: @cogmind-page-background-color;
@@ -145,16 +145,25 @@
 // Keep in sync with fonts.less
 // Font families
 @dark-default-font-family: Arial, Helvetica, sans-serif;
-@dark-default-font-size: 1rem;
 
 @cogmind-default-font-family: smallcaps;
-@cogmind-default-font-size: 0.8rem;
 
 :root {
     --default-font-family: @dark-default-font-family;
-    --default-font-size: @dark-default-font-size;
 }
 [data-theme="Cogmind"] {
     --default-font-family: @cogmind-default-font-family;
+}
+
+// Keep in sync with sizes.less
+// Font families
+@dark-default-font-size: 1rem;
+
+@cogmind-default-font-size: 0.8rem;
+
+:root {
+    --default-font-size: @dark-default-font-size;
+}
+[data-theme="Cogmind"] {
     --default-font-size: @cogmind-default-font-size;
 }

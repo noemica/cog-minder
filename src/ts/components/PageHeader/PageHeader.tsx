@@ -1,7 +1,6 @@
-import { useLocalStorage } from "usehooks-ts";
-
-import { PageType, Spoiler, ThemeType, localStorageThemeName } from "../../types/commonTypes";
+import { PageType, Spoiler, ThemeType } from "../../types/commonTypes";
 import { ButtonLink } from "../Buttons/Button";
+import { useEditableSpoilers, useEditableTheme } from "../Effects/useLocalStorageValue";
 import { LabeledSelect } from "../LabeledItem/LabeledItem";
 import { SelectOptionType } from "../Selectpicker/Select";
 import ButtonPopover from "../Tooltip/ButtonPopover";
@@ -105,10 +104,10 @@ function PageButtons({ pageType: PageType }) {
 }
 
 function SettingsButton() {
-    const [spoilers, setSpoilers] = useLocalStorage<Spoiler>("spoilers", "None");
+    const [spoilers, setSpoilers] = useEditableSpoilers();
     const spoilerSelected = spoilerOptions.find((o) => o.label === spoilers) || spoilerOptions[0];
 
-    const [theme, setTheme] = useLocalStorage<ThemeType>(localStorageThemeName, "Dark");
+    const [theme, setTheme] = useEditableTheme();
     const themeSelected = themeOptions.find((t) => t.label === theme) || themeOptions[0];
 
     return (

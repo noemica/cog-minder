@@ -2,8 +2,11 @@ import { ArcElement, ChartData, Chart as ChartJS, ChartOptions, Legend, Title, T
 import { Pie } from "react-chartjs-2";
 
 import { ChartDataValue } from "../../../types/combatLogTypes";
+import { ThemeType } from "../../../types/commonTypes";
+import { useTheme } from "../../Effects/useLocalStorageValue";
 import { WindowSize, useWindowSize } from "../../Effects/useWindowSize";
-import { chartTextColor } from "./chartColors";
+import { chartCanvasBackgroundColorPlugin } from "./chartCanvasBackgroundColorPlugin";
+import { chartCogmindBackgroundColor, chartDarkBackgroundColor, chartTextColor } from "./chartColors";
 
 // Need to register functionality that gets used or else
 // it gets tree-shaken out
@@ -18,11 +21,13 @@ export type PieChartProps = {
 
 export default function PieChart({ chartTitle, values, backgroundColors, borderColors }: PieChartProps) {
     const windowSize = useWindowSize();
+    const theme = useTheme();
 
     return (
         <Pie
             data={makeChartData(chartTitle, values, backgroundColors, borderColors)}
-            options={makeChartOptions(chartTitle, windowSize)}
+            options={makeChartOptions(chartTitle, theme, windowSize)}
+            plugins={[chartCanvasBackgroundColorPlugin]}
         />
     );
 }
@@ -46,7 +51,7 @@ function makeChartData(
     };
 }
 
-function makeChartOptions(chartTitle: string, windowSize: WindowSize): ChartOptions<"pie"> {
+function makeChartOptions(chartTitle: string, theme: ThemeType, windowSize: WindowSize): ChartOptions<"pie"> {
     return {
         animation: {
             duration: 300,
@@ -54,6 +59,9 @@ function makeChartOptions(chartTitle: string, windowSize: WindowSize): ChartOpti
         color: chartTextColor,
         maintainAspectRatio: false,
         plugins: {
+            chartCanvasBackgroundColor: {
+                color: theme === "Cogmind" ? chartCogmindBackgroundColor : chartDarkBackgroundColor,
+            },
             title: {
                 color: chartTextColor,
                 display: true,

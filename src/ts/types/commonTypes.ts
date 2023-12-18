@@ -1,13 +1,26 @@
 import { Bot } from "../botTypes";
 import { Item } from "./itemTypes";
 
-export type PageType = "About" | "Bots" | "Build" | "Combat" | "Hacks" | "Lore" | "Parts" | "RIF" | "Simulator" | "Wiki";
+export type PageType =
+    | "About"
+    | "Bots"
+    | "Build"
+    | "Combat"
+    | "Hacks"
+    | "Lore"
+    | "Parts"
+    | "RIF"
+    | "Simulator"
+    | "Wiki";
 
 export const pageTypes: PageType[] = ["About", "Bots", "Build", "Hacks", "Lore", "Parts", "RIF", "Simulator", "Wiki"];
 
 // An enum to represent spoiler level
 export type Spoiler = "None" | "Spoiler" | "Redacted";
-export const localStorageSpoilerName = "spoilers";
+const spoilerTypes: Spoiler[] = ["None", "Spoiler", "Redacted"];
+export function isValidSpoilerType(spoiler: Spoiler) {
+    return spoilerTypes.includes(spoiler);
+}
 
 // A map location
 export type MapLocation = {
@@ -25,7 +38,10 @@ export type MapLocation = {
     spoiler: Spoiler;
 };
 
-export type ThemeType = "Dark" | "Cogmind";
-export const localStorageThemeName = "theme";
+export type ThemeType = "Cogmind" | "Dark";
+const themeTypes: ThemeType[] = ["Cogmind", "Dark"];
+export function isValidThemeType(theme: ThemeType) {
+    return themeTypes.includes(theme);
+}
 
 export const localStorageCombatLogChartDisplayOptions = "combatLogChartDisplayOptions";

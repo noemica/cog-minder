@@ -12,8 +12,11 @@ import {
 import { Bar } from "react-chartjs-2";
 
 import { ChartDataValue } from "../../../types/combatLogTypes";
+import { ThemeType } from "../../../types/commonTypes";
 import { WindowSize, useWindowSize } from "../../Effects/useWindowSize";
-import { chartGridColor, chartTextColor } from "./chartColors";
+import { chartCanvasBackgroundColorPlugin } from "./chartCanvasBackgroundColorPlugin";
+import { chartCogmindBackgroundColor, chartDarkBackgroundColor, chartGridColor, chartTextColor } from "./chartColors";
+import { useTheme } from "../../Effects/useLocalStorageValue";
 
 // Need to register functionality that gets used or else
 // it gets tree-shaken out
@@ -32,11 +35,13 @@ export type HorizontalBarChartProps = {
 
 export default function HorizontalBarChart({ chartTitle, values, barColors, maxValue }: HorizontalBarChartProps) {
     const windowSize = useWindowSize();
+    const theme = useTheme();
 
     return (
         <Bar
             data={makeChartData(chartTitle, values, barColors)}
-            options={makeChartOptions(chartTitle, maxValue, windowSize)}
+            options={makeChartOptions(chartTitle, maxValue, theme, windowSize)}
+            plugins={[chartCanvasBackgroundColorPlugin]}
         />
     );
 }
@@ -58,6 +63,7 @@ function makeChartData(valueLabel: string, values: ChartDataValue[], barColors: 
 function makeChartOptions(
     chartTitle: string,
     maxValue: number | undefined,
+    theme: ThemeType,
     windowSize: WindowSize,
 ): ChartOptions<"bar"> {
     return {
@@ -68,6 +74,9 @@ function makeChartOptions(
         indexAxis: "y",
         maintainAspectRatio: false,
         plugins: {
+            chartCanvasBackgroundColor: {
+                color: theme === "Cogmind" ? chartCogmindBackgroundColor : chartDarkBackgroundColor,
+            },
             legend: {
                 // Already show names of each dataset, don't need the legend
                 display: false,
