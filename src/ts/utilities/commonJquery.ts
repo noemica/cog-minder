@@ -26,8 +26,7 @@ const headerLookup: Record<PageType, HeaderInfo> = {
     Bots: {
         name: "Bots",
         pageName: "bots.html",
-        helpText:
-            "A robot reference. This page contains a (should be) complete reference of " +
+        helpText: "A robot reference. This page contains a (should be) complete reference of " +
             "known bot information (parts, resistances, and other special stats) along with some basic search " +
             "filters. Bot names can be clicked to display bot information in a popup, and part names inside " +
             "of those popups can be clicked to display another part info popup.",
@@ -37,19 +36,24 @@ const headerLookup: Record<PageType, HeaderInfo> = {
     Build: {
         name: "Build",
         pageName: "build.html",
-        helpText:
-            "A build creator/planner. Allows for creating a build loadout and view some detailed stats " +
+        helpText: "A build creator/planner. Allows for creating a build loadout and view some detailed stats " +
             "like the ones that are shown in-game. Some overall build summary stats are always shown up at " +
             'the top, while more individual part stats are available through the "Part Info" buttons. ' +
             "All stats are updated whenever any part is added, removed, or modified.",
         spoilers: true,
         beta11Check: true,
     },
+    Combat: {
+        name: "Combat",
+        pageName: "combat.html",
+        helpText: "TODO",
+        spoilers: false,
+        beta11Check: false
+    },
     Hacks: {
         name: "Hacks",
         pageName: "hacks.html",
-        helpText:
-            "A machine hacking reference. Lists all available hacks for each type of machine as well " +
+        helpText: "A machine hacking reference. Lists all available hacks for each type of machine as well " +
             "as their success rates. Entering hackware bonuses or other modifiers will update the odds " +
             "of each hack.",
         spoilers: true,
@@ -65,8 +69,7 @@ const headerLookup: Record<PageType, HeaderInfo> = {
     Parts: {
         name: "Parts",
         pageName: "parts.html",
-        helpText:
-            "A parts reference. This page lists the stats of all known parts in Cogmind. Most parts " +
+        helpText: "A parts reference. This page lists the stats of all known parts in Cogmind. Most parts " +
             "come directly from the in-game gallery export, and the remainder (usually enemy-unique " +
             "unequippable parts) are manually entered. There are many ways to sort and filter the parts, " +
             "as well as three ways to view and compare the parts (info popup, part-to-part comparison, " +
@@ -77,8 +80,7 @@ const headerLookup: Record<PageType, HeaderInfo> = {
     RIF: {
         name: "RIF",
         pageName: "rif.html",
-        helpText:
-            "A RIF ability and bothacking reference. This page lists all RIF abilities and their effects, " +
+        helpText: "A RIF ability and bothacking reference. This page lists all RIF abilities and their effects, " +
             "as well as all 0b10 hacks, their coupler charge usage, and effects.",
         spoilers: false,
         beta11Check: false,
@@ -86,8 +88,7 @@ const headerLookup: Record<PageType, HeaderInfo> = {
     Simulator: {
         name: "Simulator",
         pageName: "simulator.html",
-        helpText:
-            "A combat simulator. This page allows simulating a 1-on-1 combat with any bot in the game " +
+        helpText: "A combat simulator. This page allows simulating a 1-on-1 combat with any bot in the game " +
             "with a given offensive loadout. Select an enemy, weapons, and any number of other various " +
             "combat-related utilities/stats, and then hit the Simulate button to kick off the simulator. " +
             "once complete, a graph of the number of volleys to kill is shown. Multiple simulations can be " +

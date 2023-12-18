@@ -1,9 +1,10 @@
 import { ReactNode, StrictMode } from "react";
 
-import PageHeader, { PageType } from "../PageHeader/PageHeader";
+import { PageType } from "../../types/commonTypes";
 import { CombatPage } from "../Pages/CombatPage";
 
 import "../../../styles/index.less";
+import PageHeader from "../PageHeader/PageHeader";
 
 export type AppProps = {
     pageType: PageType;
@@ -17,6 +18,9 @@ export default function App({ pageType }: AppProps) {
             case "Combat":
                 page = <CombatPage />;
                 break;
+
+            default:
+                page = <div />;
         }
     } catch (ex: unknown) {
         let errorMessage: string;
@@ -41,7 +45,7 @@ export default function App({ pageType }: AppProps) {
 
     return (
         <StrictMode>
-            <PageHeader type="Combat" />
+            <PageHeader pageType="Combat" />
             {page}
         </StrictMode>
     );
