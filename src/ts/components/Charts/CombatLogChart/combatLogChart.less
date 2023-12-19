@@ -1,0 +1,65 @@
+@import "../../../../styles/common.less";
+
+// Container holding all pie-related content
+.pie-chart-container {
+    padding: @chart-padding;
+    aspect-ratio: 1;
+
+    min-width: @chart-min-width;
+    min-height: @chart-min-width;
+    max-width: @chart-max-width;
+    max-height: @chart-max-width;
+
+    position: relative;
+}
+
+// Container holding all horizontal bar-related content
+.horizontal-bar-chart-container {
+    min-width: @chart-min-width;
+    max-width: @chart-max-width;
+
+    // Makes the chart box not take up the whole space which looks odd
+    align-self: start;
+
+    position: relative;
+}
+
+// Need an extra dedicated div for holding the chart itself
+.horizontal-bar-chart-wrapper {
+    transition: height 0.25s ease-in;
+    margin: @chart-padding;
+}
+
+// Expand/collapse to top 10 values button
+.button-expand-collapse {
+    width: 100%;
+    font-size: medium;
+    padding: @button-small-padding;
+
+    // Overlap borders nicely with the grid cell outlines
+    border-bottom-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: @chart-container-border-radius;
+    border-bottom-left-radius: @chart-container-border-radius;
+}
+
+// Toggle ascending/descending behavior button
+.button-ascending-descending {
+    font-size: medium;
+
+    // Nest the button into the top right corner of the cell
+    position: absolute;
+    right: 0;
+    white-space: nowrap;
+    padding: @button-small-padding;
+
+    border-top-right-radius: @chart-container-border-radius;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-color: @border-color;
+}

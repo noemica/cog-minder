@@ -1,4 +1,4 @@
-import { SpecialItemProperty } from "./itemTypes";
+import { SpecialItemProperty } from "./types/itemTypes";
 
 export const specialItemProperties: { [name: string]: SpecialItemProperty | undefined } = {
     // Actuator

@@ -1,5 +1,11 @@
-import * as bots from "../json/bots.json";
-import * as items from "../json/items.json";
+import "bootstrap";
+import * as jQuery from "jquery";
+import "popper.js";
+import { MappedSettings, TablesorterHeading, TextSorter } from "tablesorter";
+import "tablesorter";
+
+import bots from "../json/bots.json";
+import items from "../json/items.json";
 import { Bot } from "./botTypes";
 import {
     botData,
@@ -9,22 +15,16 @@ import {
     leetSpeakMatchTransform,
     nameToId,
     parseIntOrDefault,
-} from "./common";
+} from "./utilities/common";
 import {
-    getSpoilerState,
-    getSelectedButtonId,
-    resetButtonGroup,
-    enablePopoverBotInfoInteraction,
     createHeader,
+    enablePopoverBotInfoInteraction,
+    getSelectedButtonId,
+    getSpoilerState,
     registerDisableAutocomplete,
+    resetButtonGroup,
     setSpoilerState,
-} from "./commonJquery";
-
-import * as jQuery from "jquery";
-import "popper.js";
-import "bootstrap";
-import { MappedSettings, TablesorterHeading, TextSorter } from "tablesorter";
-import "tablesorter";
+} from "./utilities/commonJquery";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -138,7 +138,7 @@ jq(function ($) {
                     id="${botId}"
                     class="item btn"
                     data-html=true
-                    data-content='${createBotDataContent(bot)}'
+                    data-content='${createBotDataContent(bot, getSpoilerState())}'
                     data-toggle="popover">
                     ${botName}
                  </button>`,

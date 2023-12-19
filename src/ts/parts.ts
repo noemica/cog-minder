@@ -1,4 +1,26 @@
-import * as items from "../json/items.json";
+import "bootstrap";
+import "bootstrap-select";
+import jQuery from "jquery";
+import lozad from "lozad";
+import "tablesorter";
+import { MappedSettings, TablesorterHeading, TextSorter } from "tablesorter";
+
+import items from "../json/items.json";
+import {
+    Critical,
+    DamageType,
+    HeatTransfer,
+    Item,
+    ItemCategory,
+    ItemSlot,
+    ItemType,
+    ItemWithUpkeep,
+    PowerItem,
+    PropulsionItem,
+    SiegeMode,
+    Spectrum,
+    WeaponItem,
+} from "./types/itemTypes";
 import {
     createItemDataContent,
     escapeHtml,
@@ -11,7 +33,7 @@ import {
     leetSpeakMatchTransform,
     nameToId,
     parseIntOrDefault,
-} from "./common";
+} from "./utilities/common";
 import {
     createHeader,
     getSelectedButtonId,
@@ -20,29 +42,7 @@ import {
     registerDisableAutocomplete,
     resetButtonGroup,
     setSpoilerState,
-} from "./commonJquery";
-import {
-    ItemCategory,
-    Critical,
-    DamageType,
-    Item,
-    ItemSlot,
-    ItemType,
-    ItemWithUpkeep,
-    PowerItem,
-    PropulsionItem,
-    SiegeMode,
-    Spectrum,
-    WeaponItem,
-    HeatTransfer,
-} from "./itemTypes";
-
-import lozad = require("lozad");
-import * as jQuery from "jquery";
-import "bootstrap";
-import "bootstrap-select";
-import "tablesorter";
-import { MappedSettings, TablesorterHeading, TextSorter } from "tablesorter";
+} from "./utilities/commonJquery";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -1396,7 +1396,11 @@ jq(function ($) {
     async function init() {
         // Reintate for beta 12
         // const isB11 = getB11State();
-        await initData(items as any, undefined);
+        try {
+            await initData(items as any, undefined);
+        } catch (ex) {
+            console.log(ex);
+        }
 
         createHeader("Parts", $("#headerContainer"));
         // $("#beta11Checkbox").prop("checked", getB11State());

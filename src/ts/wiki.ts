@@ -1,15 +1,14 @@
-import * as items from "../json/items.json";
-import * as bots from "../json/bots.json";
-import * as wiki from "../json/wiki.json";
-import {
-    createHeader,
-    enableBotInfoInteraction,
-    getSpoilerState,
-    registerDisableAutocomplete,
-    setActiveButtonGroupButton,
-    setSpoilerState,
-    temporarilySetValue,
-} from "./commonJquery";
+import autocomplete, { AutocompleteItem, AutocompleteResult } from "autocompleter";
+import "bootstrap";
+import * as jQuery from "jquery";
+
+import bots from "../json/bots.json";
+import items from "../json/items.json";
+import wiki from "../json/wiki.json";
+import { Bot } from "./botTypes";
+import { MapLocation, Spoiler } from "./types/commonTypes";
+import { Item } from "./types/itemTypes";
+import { WikiEntry } from "./types/wikiTypes";
 import {
     boldMatches,
     canShowSpoiler,
@@ -20,16 +19,17 @@ import {
     getItem,
     initData,
     loadImage,
-} from "./common";
-import { MapLocation, Spoiler } from "./commonTypes";
-import { Bot } from "./botTypes";
-import { Item } from "./itemTypes";
+} from "./utilities/common";
+import {
+    createHeader,
+    enableBotInfoInteraction,
+    getSpoilerState,
+    registerDisableAutocomplete,
+    setActiveButtonGroupButton,
+    setSpoilerState,
+    temporarilySetValue,
+} from "./utilities/commonJquery";
 import { createContentHtml, createPreviewContent } from "./wikiParser";
-import { WikiEntry } from "./wikiTypes";
-
-import autocomplete, { AutocompleteItem, AutocompleteResult } from "autocompleter";
-import * as jQuery from "jquery";
-import "bootstrap";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -144,7 +144,7 @@ jq(function ($) {
             ($("#searchButton") as any).tooltip("hide");
         });
 
-        if (process.env.NODE_ENV !== "production") {
+        if (process.env.NODE_ENV === "development") {
             $("#validateButton").removeClass("not-visible");
         }
 
@@ -522,6 +522,7 @@ jq(function ($) {
         for (const otherEntry of wiki.Other) {
             let spoiler: Spoiler = "None";
             if (otherEntry.Spoiler === "Redacted") {
+                spoiler = "Redacted";
             } else if (otherEntry.Spoiler === "Spoiler") {
                 spoiler = "Spoiler";
             }
@@ -945,7 +946,7 @@ jq(function ($) {
         const parentContent =
             entry.parentGroup === undefined ? undefined : $(parseEntryContent(entry.parentGroup, true));
         const infoboxColumn = $(`<div class="wiki-infobox float-clear-right"></div>`);
-        const infoboxContent = $(createBotDataContent(bot, true));
+        const infoboxContent = $(createBotDataContent(bot, getSpoilerState(), true));
 
         // Append to DOM
         // Append the infobox first which floats to the right
@@ -988,7 +989,7 @@ jq(function ($) {
                 }>${botEntry.name}</label>`,
             );
             const botInfoboxContent = $(
-                `<div class="mt-2">${createBotDataContent(botEntry.extraData as Bot, true)}</div>`,
+                `<div class="mt-2">${createBotDataContent(botEntry.extraData as Bot, getSpoilerState(), true)}</div>`,
             );
             const botContent = $(`<div>${parseEntryContent(botEntry, true)}</div>`);
 
@@ -1204,7 +1205,7 @@ jq(function ($) {
             const promises: Promise<any>[] = [];
 
             for (const imageName of parseResult.images.keys()) {
-                promises.push(loadImage(`wiki_images/${imageName}`));
+                promises.push(loadImage(`../wiki_images/${imageName}`));
             }
 
             if (parseResult.errors.length > 0) {

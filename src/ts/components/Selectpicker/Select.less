@@ -1,0 +1,77 @@
+@import "../../../styles/common.less";
+
+// The double selectors are a hack used to out-prioritize the styles defined by
+// the react select component. This increases the specificity to allow
+// overriding the values without using !important.
+
+// Overall control object
+.select__control.select__control {
+    background-image: @button-background-gradient;
+    border-color: @border-color;
+    border-radius: @default-border-radius;
+    color: @font-color;
+
+    // Set text and indicator color
+    * {
+        color: @font-color;
+    }
+
+    // | separator line
+    .select__indicator-separator {
+        background-color: @font-color;
+    }
+}
+
+.select__control.select__control:hover {
+    border-color: @border-color;
+    cursor: pointer;
+}
+
+.select__control--is-focused.select__control--is-focused,
+.select__control.select__control:hover {
+    background-image: @button-hover-focus-background-gradient;
+    color: @font-button-interaction-color;
+
+    // Set text and indicator color
+    * {
+        color: @font-button-interaction-color;
+    }
+
+    // | separator line
+    .select__indicator-separator {
+        background-color: @font-button-interaction-color;
+    }
+}
+
+// Value container
+.select__value-container.select__value-container {
+    padding: @button-default-padding;
+
+    text-align: center;
+}
+
+// Overall dropdown menu
+.select__menu.select__menu {
+    border: @default-border-width solid @border-color;
+    border-radius: @default-border-radius;
+    background-color: @dropdown-menu-background-color;
+}
+
+// Select option in dropdown
+.select__option.select__option,
+.select__option--is-selected.select__option--is-selected {
+    padding: 0px;
+    cursor: pointer;
+    background-color: unset;
+    color: @font-color;
+
+    > * {
+        padding: 12px;
+    }
+}
+
+.select__option--is-focused.select__option--is-focused {
+    color: @font-button-interaction-color;
+    background-color: @dropdown-menu-active-option-background-color;
+    outline: @default-border-width solid @border-color;
+}

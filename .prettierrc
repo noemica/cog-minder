@@ -1,0 +1,9 @@
+{
+    "endOfLine": "auto",
+    "printWidth": 120,
+    "tabWidth": 4,
+    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "importOrder": ["^[./].*$(?<!\\.less)", "^.*\\.less"],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
+}

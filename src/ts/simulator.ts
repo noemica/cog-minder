@@ -1,34 +1,36 @@
-import * as bots from "../json/bots.json";
-import * as items from "../json/items.json";
+import "bootstrap";
+import "bootstrap-select";
 import {
-    botData,
-    canShowPart,
-    canShowSpoiler,
-    createBotDataContent,
-    createItemDataContent,
-    gallerySort,
-    getBot,
-    getBotOrNull,
-    getItem,
-    getItemOrNull,
-    getItemSpriteImageName,
-    hasActiveSpecialProperty,
-    initData,
-    itemData,
-    parseIntOrDefault,
-    sum,
-    valueOrDefault,
-} from "./common";
+    CategoryScale,
+    Chart,
+    ChartDataset,
+    Filler,
+    Legend,
+    LineElement,
+    LinearScale,
+    LinearScaleOptions,
+    Point,
+    PointElement,
+    ScatterController,
+    Title,
+    Tooltip,
+} from "chart.js";
+import * as jQuery from "jquery";
+
+import bots from "../json/bots.json";
+import items from "../json/items.json";
+import { Bot } from "./botTypes";
 import {
-    createHeader,
-    enablePopoverBotInfoInteraction,
-    getSpoilerState,
-    refreshSelectpicker,
-    registerDisableAutocomplete,
-    resetButtonGroup,
-    setSpoilerState,
-    temporarilySetValue,
-} from "./commonJquery";
+    getBotDefensiveState,
+    getRangedVolleyTime,
+    getRecoil,
+    getRegen,
+    maxVolleys,
+    simulateCombat,
+    spectrumToNumber,
+    volleyTimeMap,
+} from "./simulatorCalcs";
+import { DumpMindEntity } from "./types/dumpMindTypes";
 import {
     Actuator,
     ActuatorArray,
@@ -48,17 +50,7 @@ import {
     TargetAnalyzer,
     Targeting,
     WeaponItem,
-} from "./itemTypes";
-import {
-    getBotDefensiveState,
-    getRangedVolleyTime,
-    getRecoil,
-    getRegen,
-    maxVolleys,
-    simulateCombat,
-    spectrumToNumber,
-    volleyTimeMap,
-} from "./simulatorCalcs";
+} from "./types/itemTypes";
 import {
     BotBehavior,
     BotState,
@@ -70,14 +62,48 @@ import {
     SimulatorState,
     SimulatorWeapon,
     SneakAttackStrategy,
-} from "./simulatorTypes";
+} from "./types/simulatorTypes";
+import {
+    botData,
+    canShowPart,
+    canShowSpoiler,
+    createBotDataContent,
+    createItemDataContent,
+    gallerySort,
+    getBot,
+    getBotOrNull,
+    getItem,
+    getItemOrNull,
+    getItemSpriteImageName,
+    hasActiveSpecialProperty,
+    initData,
+    itemData,
+    parseIntOrDefault,
+    sum,
+    valueOrDefault,
+} from "./utilities/common";
+import {
+    createHeader,
+    enablePopoverBotInfoInteraction,
+    getSpoilerState,
+    refreshSelectpicker,
+    registerDisableAutocomplete,
+    resetButtonGroup,
+    setSpoilerState,
+    temporarilySetValue,
+} from "./utilities/commonJquery";
 
-import "bootstrap";
-import { Chart, ChartDataSets, Point } from "chart.js";
-import * as jQuery from "jquery";
-import "bootstrap-select";
-import { DumpMindEntity } from "./dumpMindTypes";
-import { Bot } from "./botTypes";
+Chart.register(
+    CategoryScale,
+    Filler,
+    Legend,
+    LineElement,
+    LinearScale,
+    PointElement,
+    ScatterController,
+    Title,
+    Tooltip,
+);
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -87,8 +113,8 @@ jq(function ($) {
     const dumpMindTargetName = "DumpMind Target";
 
     // Chart variables set on init
-    let chart: Chart;
-    let comparisonChart: Chart;
+    let chart: Chart<"scatter">;
+    let comparisonChart: Chart<"scatter">;
     let currentComparisonData;
 
     let savedTargetEntity: DumpMindEntity | undefined = undefined;
@@ -238,7 +264,7 @@ jq(function ($) {
 
         // Create editor elements
         const parent = $('<div class="input-group"></div>');
-        const nameInput = $(`<input class="form-control"></input>`);
+        const nameInput = $(`<input class="form-control" />`);
         nameInput.val(name);
         const deleteButton = $(
             '<button class="btn ml-2" data-toggle="tooltip" title="Removes the dataset.">X</button>',
@@ -329,7 +355,7 @@ jq(function ($) {
         <div class="input-group-prepend ml-2" data-toggle="tooltip" title="The mass of cogmind. Ram damage is a random amount from 0 to (((10 + [mass]) / 5) + 1) * ([speed%] / 100) * [momentum].">
             <span class="input-group-text">Mass</span>
         </div>`);
-        const massInput = $('<input class="form-control" placeholder="0"></input>');
+        const massInput = $('<input class="form-control" placeholder="0" />');
         const overloadContainer = $('<div class="btn-group btn-group-toggle ml-2" data-toggle="buttons"></div>');
         const overloadLabelContainer = $(
             '<div class="input-group-prepend" data-toggle="tooltip" title="Whether to fire the weapon as overloaded (double damage)."></div>',
@@ -350,7 +376,7 @@ jq(function ($) {
         <div class="input-group-prepend ml-2" data-toggle="tooltip" title="How many weapons of this type to have equipped.">
             <span class="input-group-text">Number</span>
         </div>`);
-        const numberInput = $('<input class="form-control" placeholder="1"></input>');
+        const numberInput = $('<input class="form-control" placeholder="1" />');
         const deleteButton = $('<button class="btn ml-2" data-toggle="tooltip" title="Removes the weapon.">X</button>');
 
         // Add elements to DOM
@@ -465,16 +491,19 @@ jq(function ($) {
     }
 
     // Gets a dataset's overall settings with some defaults
-    function getDatasetSettings(label: string, backgroundColor: string, borderColor: string) {
+    function getDatasetSettings(label: string, backgroundColor: string, borderColor: string): ChartDataset<"scatter"> {
         return {
+            type: "scatter",
+            data: [],
+            fill: "start",
             backgroundColor: backgroundColor,
             borderColor: borderColor,
             label: label,
             pointRadius: 0,
             pointHitRadius: 25,
             showLine: true,
-            steppedLine: "before",
-        } as ChartDataSets;
+            stepped: "before",
+        };
     }
 
     // Gets the number of simulations to perform
@@ -531,7 +560,7 @@ jq(function ($) {
             }
 
             $("#enemyInfoButton").removeClass("not-visible");
-            $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
+            $("#enemyInfoButton").attr("data-content", createBotDataContent(bot, getSpoilerState()));
 
             if (bot.name === "A-15 Conveyor") {
                 $("#endConditionNoTnc").removeClass("not-visible");
@@ -562,7 +591,7 @@ jq(function ($) {
                 label = "Custom Comparison";
             }
 
-            comparisonChart.options.title!.text = label;
+            comparisonChart.options.plugins!.title!.text = label;
             comparisonChart.update();
         });
 
@@ -598,7 +627,7 @@ jq(function ($) {
 
         //Set initial bot info
         const bot = getBot(($("#botSelect") as any).selectpicker("val"));
-        $("#enemyInfoButton").attr("data-content", createBotDataContent(bot));
+        $("#enemyInfoButton").attr("data-content", createBotDataContent(bot, getSpoilerState()));
         ($("#enemyInfoButton") as any).popover();
 
         enablePopoverBotInfoInteraction($("#enemyInfoButton"));
@@ -633,108 +662,127 @@ jq(function ($) {
         );
 
         let chartElement = $("#chart");
-        chart = new Chart(chartElement as any, {
+        chart = new Chart<"scatter">(chartElement as any, {
             type: "scatter",
             data: {
                 datasets: [perXDataset, cumulativeDataset],
             },
             options: {
-                legend: {
-                    labels: {
-                        fontSize: 16,
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 16,
+                            },
+                        },
+                    },
+                    title: {
+                        display: true,
+                        font: {
+                            size: 24,
+                        },
                     },
                 },
                 scales: {
-                    xAxes: [
-                        {
-                            gridLines: {
-                                display: false,
-                            },
-                            scaleLabel: {
-                                display: true,
-                                labelString: "Number of volleys",
-                                fontSize: 24,
-                            },
-                            ticks: {
-                                min: 0,
-                                stepSize: 1,
-                            },
+                    x: {
+                        grid: {
+                            display: false,
                         },
-                    ],
-                    yAxes: [
-                        {
-                            gridLines: {
-                                color: "rgba(128, 128, 128, 0.8)",
-                            },
-                            scaleLabel: {
-                                display: true,
-                                labelString: "Percent of kills",
-                                fontSize: 24,
-                            },
-                            ticks: {
-                                beginAtZero: true,
-                                callback: (value) => value + "%",
-                            },
+                        ticks: {
+                            stepSize: 1,
                         },
-                    ],
-                },
-                title: {
-                    display: true,
-                    fontSize: 24,
+                        min: 0,
+                        title: {
+                            display: true,
+                            font: {
+                                size: 24,
+                            },
+                            text: "Number of volleys",
+                        },
+                    },
+                    y: {
+                        border: {
+                            color: "rgba(128, 128, 128, 0.8)",
+                            display: true,
+                        },
+                        grid: {
+                            color: "rgba(128, 128, 128, 0.8)",
+                        },
+                        title: {
+                            display: true,
+                            font: {
+                                size: 24,
+                            },
+                            text: "Percent of kills",
+                        },
+                        min: 0,
+                        ticks: {
+                            callback: (tickValue, _index, _ticks) => tickValue + "%",
+                        },
+                    },
                 },
             },
         });
 
         chartElement = $("#comparisonChart");
-        comparisonChart = new Chart(chartElement as any, {
-            type: "scatter",
+        comparisonChart = new Chart<"scatter">(chartElement as any, {
             data: {
                 datasets: [],
             },
             options: {
-                legend: {
-                    labels: {
-                        fontSize: 16,
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 16,
+                            },
+                        },
+                    },
+                    title: {
+                        display: true,
+                        font: {
+                            size: 24,
+                        },
+                        text: "Custom Comparison",
                     },
                 },
                 scales: {
-                    xAxes: [
-                        {
-                            gridLines: {
-                                display: false,
-                            },
-                            scaleLabel: {
-                                display: true,
-                                labelString: "Number of time units",
-                                fontSize: 24,
-                            },
-                            ticks: {
-                                min: 0,
-                                stepSize: 100,
-                            },
+                    x: {
+                        grid: {
+                            display: false,
                         },
-                    ],
-                    yAxes: [
-                        {
-                            gridLines: {
-                                color: "rgba(128, 128, 128, 0.8)",
+                        title: {
+                            display: true,
+                            font: {
+                                size: 24,
                             },
-                            scaleLabel: {
-                                display: true,
-                                labelString: "Percent of kills",
-                                fontSize: 24,
-                            },
-                            ticks: {
-                                beginAtZero: true,
-                                callback: (value) => value + "%",
-                            },
+                            text: "Number of time units",
                         },
-                    ],
-                },
-                title: {
-                    display: true,
-                    text: "Custom Comparison",
-                    fontSize: 24,
+                        min: 0,
+                        ticks: {
+                            stepSize: 100,
+                        },
+                    },
+                    y: {
+                        border: {
+                            color: "rgba(128, 128, 128, 0.8)",
+                            display: true,
+                        },
+                        grid: {
+                            color: "rgba(128, 128, 128, 0.8)",
+                        },
+                        min: 0,
+                        ticks: {
+                            callback: (tickValue, _index, _ticks) => tickValue + "%",
+                        },
+                        title: {
+                            display: true,
+                            font: {
+                                size: 24,
+                            },
+                            text: "Percent of kills",
+                        },
+                    },
                 },
             },
         });
@@ -1156,6 +1204,7 @@ title="Paste the data created by Luigi's DumpMind below">Paste from <a class="d-
         addWeaponSelect("");
         setStatusText("");
 
+        // Temp test
         $("#resultsContainer").addClass("not-visible");
         $("#lootContainer").addClass("not-visible");
     }
@@ -2080,12 +2129,12 @@ title="Paste the data created by Luigi's DumpMind below">Paste from <a class="d-
         const cumulativeData = getCumulativeData(perXData);
 
         // Update chart
-        chart.options.scales!.xAxes![0].ticks!.stepSize = stepSize;
-        chart.options.scales!.xAxes![0].scaleLabel!.labelString = xAxisString;
+        (chart.options.scales!.x! as LinearScaleOptions).ticks.stepSize = stepSize;
+        chart.options.scales!.x!.title!.text = xAxisString;
         perXDataset.data = perXData;
         cumulativeDataset.data = cumulativeData;
 
-        chart.options.title!.text = `${xString}/${perXString} vs. ${$("#botSelect").selectpicker("val")}`;
+        chart.options.plugins!.title!.text = `${xString}/${perXString} vs. ${$("#botSelect").selectpicker("val")}`;
         chart.update();
         $("#resultsContainer").removeClass("not-visible");
     }

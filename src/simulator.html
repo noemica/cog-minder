@@ -1,59 +1,71 @@
 <!doctype html>
 
 <head lang="en">
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Cogmind Simulator</title>
-    <meta name="description" content="Cogmind combat simulator">
+    <meta name="description" content="Cogmind combat simulator" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet"
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+        crossorigin="anonymous"
+    />
+    <link
+        rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"
-        integrity="sha384-2SvkxRa9G/GlZMyFexHk+WN9p0n2T+r38dvBmw5l2/J3gjUcxs9R1GwKs0seeSh3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+        integrity="sha384-2SvkxRa9G/GlZMyFexHk+WN9p0n2T+r38dvBmw5l2/J3gjUcxs9R1GwKs0seeSh3"
+        crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/style.less" />
 
-    <script src="ts/simulator.ts"></script>
+    <script src="ts/simulator.ts" type="module"></script>
 </head>
 
 <body>
     <!-- Header/Title -->
-    <div id="headerContainer" class="container-xl">
-    </div>
+    <div id="headerContainer" class="container-xl"></div>
 
     <div class="container-xl">
         <!-- Combat type/number of fights/reset button -->
         <div class="input-group">
             <div id="combatTypeContainer" class="btn-group btn-group-toggle" data-toggle="buttons">
-                <div class="input-group-prepend" data-toggle="tooltip"
-                    title="The type of weapons to display. Melee and ranged weapons also have unique utilities and other settings.">
+                <div
+                    class="input-group-prepend"
+                    data-toggle="tooltip"
+                    title="The type of weapons to display. Melee and ranged weapons also have unique utilities and other settings."
+                >
                     <span class="input-group-text">Combat Type</span>
                 </div>
                 <label id="combatTypeRanged" class="btn active">
-                    <input type="radio" checked name="options"> Ranged
+                    <input type="radio" checked name="options" /> Ranged
                 </label>
-                <label id="combatTypeMelee" class="btn">
-                    <input type="radio" name="options"> Melee
-                </label>
+                <label id="combatTypeMelee" class="btn"> <input type="radio" name="options" /> Melee </label>
             </div>
 
             <!-- Num fights -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The number of fights to simulate. Higher numbers will increase result accuracy but also increase time to calculate.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The number of fights to simulate. Higher numbers will increase result accuracy but also increase time to calculate."
+            >
                 <span class="input-group-text">Number of Fights</span>
             </div>
-            <input id="numFightsInput" type="text" class="form-control" placeholder="100,000"></input>
+            <input id="numFightsInput" type="text" class="form-control" placeholder="100,000" />
 
             <div class="input-group-prepend ml-3">
-                <button id="importFromDumpMindButton" class="btn full-width" data-toggle="popover"
-                    data-html=true>Import</button>
+                <button id="importFromDumpMindButton" class="btn full-width" data-toggle="popover" data-html="true">
+                    Import
+                </button>
             </div>
 
             <!-- Reset button -->
-            <button id="reset" class="btn ml-3" data-toggle="tooltip"
-                title="Reset all values to their default state.">Reset</button>
+            <button id="reset" class="btn ml-3" data-toggle="tooltip" title="Reset all values to their default state.">
+                Reset
+            </button>
         </div>
 
         <!-- Name/analysis/damage reduction options -->
@@ -66,25 +78,27 @@
                 <select id="botSelect" class="selectpicker" data-live-search="true"></select>
             </div>
 
-            <button id="enemyInfoButton" class="btn" data-html=true data-toggle="popover">?</button>
+            <button id="enemyInfoButton" class="btn" data-html="true" data-toggle="popover">?</button>
 
             <!-- Analysis -->
             <div id="analysisContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
-                <div class="input-group-prepend" data-toggle="tooltip"
-                    title="Does Cogmind have the analysis for this bot? An analysis provides 5% accuracy and 10% damage.">
+                <div
+                    class="input-group-prepend"
+                    data-toggle="tooltip"
+                    title="Does Cogmind have the analysis for this bot? An analysis provides 5% accuracy and 10% damage."
+                >
                     <span class="input-group-text">Analysis</span>
                 </div>
-                <label id="analysisNo" class="btn active">
-                    <input type="radio" checked name="options"> No
-                </label>
-                <label id="analysisYes" class="btn">
-                    <input type="radio" name="options"> Yes
-                </label>
+                <label id="analysisNo" class="btn active"> <input type="radio" checked name="options" /> No </label>
+                <label id="analysisYes" class="btn"> <input type="radio" name="options" /> Yes </label>
             </div>
 
             <!-- Damage Reduction -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The type of external damage reduction (if any) for the enemy. Note: this does not stack with personal damage reduction utilities.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The type of external damage reduction (if any) for the enemy. Note: this does not stack with personal damage reduction utilities."
+            >
                 <span class="input-group-text">Damage Reduction</span>
             </div>
             <select id="damageReductionSelect" class="selectpicker flex-dropdown" data-dropdown-align-right="auto">
@@ -100,36 +114,44 @@
         <!-- Player/enemy action settings -->
         <div class="input-group mt-2">
             <!-- Turns since moving -->
-            <div class="input-group-prepend" data-toggle="tooltip"
-                title="The number of actions performed since Cogmind last moved. For melee, there is a +10% accuracy bonus gained after not moving for 2 turns. For ranged, that bonus exists, but there is additionally a -10% penalty if the last action was a move. Basically, 0 turns since moving = -10%, 1 turns = 0%, 2 turns = 10% bonus.">
+            <div
+                class="input-group-prepend"
+                data-toggle="tooltip"
+                title="The number of actions performed since Cogmind last moved. For melee, there is a +10% accuracy bonus gained after not moving for 2 turns. For ranged, that bonus exists, but there is additionally a -10% penalty if the last action was a move. Basically, 0 turns since moving = -10%, 1 turns = 0%, 2 turns = 10% bonus."
+            >
                 <span class="input-group-text">Actions Since Moving</span>
             </div>
-            <input id="actionsSinceMovingInput" type="text" class="form-control" placeholder="2+"></input>
+            <input id="actionsSinceMovingInput" type="text" class="form-control" placeholder="2+" />
 
             <!-- Is Cogmind on legs -->
             <div id="onLegsContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
-                <div class="input-group-prepend" data-toggle="tooltip"
-                    title="Is Cogmind on legs? If so, the number tiles run in a row provide an additional 5% penalty per tile moved.">
+                <div
+                    class="input-group-prepend"
+                    data-toggle="tooltip"
+                    title="Is Cogmind on legs? If so, the number tiles run in a row provide an additional 5% penalty per tile moved."
+                >
                     <span class="input-group-text">On Legs</span>
                 </div>
-                <label id="onLegsNo" class="btn active">
-                    <input type="radio" checked name="options"> No
-                </label>
-                <label id="onLegsYes" class="btn">
-                    <input type="radio" name="options"> Yes
-                </label>
+                <label id="onLegsNo" class="btn active"> <input type="radio" checked name="options" /> No </label>
+                <label id="onLegsYes" class="btn"> <input type="radio" name="options" /> Yes </label>
             </div>
 
             <!-- Tiles moved in a row -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The number of tiles Cogmind has been running for if on legs. There is a -5% penalty per tile moved for ranged weapons, up to a maximum of -15%.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The number of tiles Cogmind has been running for if on legs. There is a -5% penalty per tile moved for ranged weapons, up to a maximum of -15%."
+            >
                 <span class="input-group-text">Tiles Run</span>
             </div>
-            <input id="tilesRunInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="tilesRunInput" type="text" class="form-control" placeholder="0" />
 
             <!-- Enemy Behavior -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The behavior of the enemy when engaged in combat. The default for most hostile combat bots is Stand/Fight, and behavior of most hostile non-combat bots will be Run When Hit.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The behavior of the enemy when engaged in combat. The default for most hostile combat bots is Stand/Fight, and behavior of most hostile non-combat bots will be Run When Hit."
+            >
                 <span class="input-group-text">Enemy Behavior</span>
             </div>
             <div id="enemyBehaviorSelectContainer">
@@ -146,22 +168,31 @@
         <!-- Ranged only accuracy settings -->
         <div id="rangedAccuracyContainer" class="input-group mt-2">
             <!-- Targeting computer -->
-            <div class="input-group-prepend" data-toggle="tooltip"
-                title="The amount of accuracy bonus from targeting computers or similar utilities.">
+            <div
+                class="input-group-prepend"
+                data-toggle="tooltip"
+                title="The amount of accuracy bonus from targeting computers or similar utilities."
+            >
                 <span class="input-group-text">Bonus Targeting</span>
             </div>
-            <input id="targetingInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="targetingInput" type="text" class="form-control" placeholder="0" />
 
             <!-- Treads -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The number of slots of treads equipped. Each tread provides 1 recoil reduced per weapon.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The number of slots of treads equipped. Each tread provides 1 recoil reduced per weapon."
+            >
                 <span class="input-group-text">Treads</span>
             </div>
-            <input id="treadsInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="treadsInput" type="text" class="form-control" placeholder="0" />
 
             <!-- Siege mode -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The type of siege mode active (if any). Siege mode removes all recoil and adds a 20% (standard)/30% (high) bonus to targeting.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The type of siege mode active (if any). Siege mode removes all recoil and adds a 20% (standard)/30% (high) bonus to targeting."
+            >
                 <span class="input-group-text">Siege</span>
             </div>
             <div id="siegeSelectContainer">
@@ -175,25 +206,34 @@
             </div>
 
             <!-- Distance -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The distance from the target. Each tile &lt; 6 tiles away provides 3% accuracy up to 15% at 1 tile away.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The distance from the target. Each tile &lt; 6 tiles away provides 3% accuracy up to 15% at 1 tile away."
+            >
                 <span class="input-group-text">Distance</span>
             </div>
-            <input id="distanceInput" type="text" class="form-control" placeholder="6+"></input>
+            <input id="distanceInput" type="text" class="form-control" placeholder="6+" />
         </div>
 
         <!-- Ranged only utilities -->
         <div id="rangedUtilitiesContainer" class="input-group mt-2">
             <!-- Particle Charger -->
-            <div class="input-group-prepend" data-toggle="tooltip"
-                title="The bonus from particle charger/accelerators that are equipped (if any). Increases damage of energy gun/cannon weapons (half_stack).">
+            <div
+                class="input-group-prepend"
+                data-toggle="tooltip"
+                title="The bonus from particle charger/accelerators that are equipped (if any). Increases damage of energy gun/cannon weapons (half_stack)."
+            >
                 <span class="input-group-text">Particle Charger</span>
             </div>
-            <input id="particleChargerInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="particleChargerInput" type="text" class="form-control" placeholder="0" />
 
             <!-- Kinecellerator -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The type of Kinecellerator that's equipped (if any). Increases minimum damage of kinetic gun/cannon weapons.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The type of Kinecellerator that's equipped (if any). Increases minimum damage of kinetic gun/cannon weapons."
+            >
                 <span class="input-group-text">Kinecellerator</span>
             </div>
             <select id="kinecelleratorSelect" class="selectpicker flex-dropdown">
@@ -204,131 +244,185 @@
             </select>
 
             <!-- Salvage Targeting -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The total of Salvage Targeting Computer bonuses that are equipped (if any). Increases salvage generate from Gun-type weapons that fire a single projectile.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The total of Salvage Targeting Computer bonuses that are equipped (if any). Increases salvage generate from Gun-type weapons that fire a single projectile."
+            >
                 <span class="input-group-text">Salvage Targeting</span>
             </div>
-            <input id="salvageTargetingInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="salvageTargetingInput" type="text" class="form-control" placeholder="0" />
         </div>
 
         <!-- Ranged only utilities 2 -->
         <div id="rangedUtilitiesContainer2" class="input-group mt-2">
             <!-- Recoil -->
-            <div class="input-group-prepend" data-toggle="tooltip"
-                title="The total amount of recoil nullification from utilities. Reduces the recoil of all weapons in a volley. 2 from a Recoil Stabilizer and 6 from a Recoil Nullifier (stacking).">
+            <div
+                class="input-group-prepend"
+                data-toggle="tooltip"
+                title="The total amount of recoil nullification from utilities. Reduces the recoil of all weapons in a volley. 2 from a Recoil Stabilizer and 6 from a Recoil Nullifier (stacking)."
+            >
                 <span class="input-group-text">Recoil Reduction</span>
             </div>
-            <input id="recoilInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="recoilInput" type="text" class="form-control" placeholder="0" />
 
             <!-- Weapon Cycler -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The percentage of Weapon Cycling (or similar) that's equipped (if any). Decreases overall volley time. Stacks up to 30%, though a Quantum Capacitor or Launcher Loader can go up to 50%.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The percentage of Weapon Cycling (or similar) that's equipped (if any). Decreases overall volley time. Stacks up to 30%, though a Quantum Capacitor or Launcher Loader can go up to 50%."
+            >
                 <span class="input-group-text">Weapon Cycler</span>
             </div>
-            <input id="cyclerInput" type="text" class="form-control" placeholder="0%"></input>
+            <input id="cyclerInput" type="text" class="form-control" placeholder="0%" />
         </div>
 
         <!-- Melee Analysis Suites -->
         <div id="meleeAnalysisContainer" class="input-group not-visible mt-2">
-            <div class="input-group-prepend" data-toggle="tooltip"
-                title="The number of each type of Melee Analysis Suites equipped. Provides bonus accuracy and a minimum damage increase but not more than the maximum damage for a weapon.">
+            <div
+                class="input-group-prepend"
+                data-toggle="tooltip"
+                title="The number of each type of Melee Analysis Suites equipped. Provides bonus accuracy and a minimum damage increase but not more than the maximum damage for a weapon."
+            >
                 <span class="input-group-text">Melee Analysis Suites</span>
             </div>
 
-            <div class="input-group-prepend ml-2" data-toggle="tooltip"
-                title="The number of standard Melee Analysis Suites equipped. Each provides 5% accuracy and a minimum damage increase of 2.">
+            <div
+                class="input-group-prepend ml-2"
+                data-toggle="tooltip"
+                title="The number of standard Melee Analysis Suites equipped. Each provides 5% accuracy and a minimum damage increase of 2."
+            >
                 <span class="input-group-text">Standard</span>
             </div>
-            <input id="meleeAnalysisInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="meleeAnalysisInput" type="text" class="form-control" placeholder="0" />
 
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The number of Imp. Melee Analysis Suites equipped. Each provides 6% accuracy and a minimum damage increase of 3.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The number of Imp. Melee Analysis Suites equipped. Each provides 6% accuracy and a minimum damage increase of 3."
+            >
                 <span class="input-group-text">Imp.</span>
             </div>
-            <input id="impMeleeAnalysisInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="impMeleeAnalysisInput" type="text" class="form-control" placeholder="0" />
 
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The number of Adv. Melee Analysis Suites equipped. Each provides 8% accuracy and a minimum damage increase of 4.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The number of Adv. Melee Analysis Suites equipped. Each provides 8% accuracy and a minimum damage increase of 4."
+            >
                 <span class="input-group-text">Adv.</span>
             </div>
-            <input id="advMeleeAnalysisInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="advMeleeAnalysisInput" type="text" class="form-control" placeholder="0" />
 
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The number of Exp. Melee Analysis Suites equipped. Each provides 12% accuracy and a minimum damage increase of 6.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The number of Exp. Melee Analysis Suites equipped. Each provides 12% accuracy and a minimum damage increase of 6."
+            >
                 <span class="input-group-text">Exp.</span>
             </div>
-            <input id="expMeleeAnalysisInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="expMeleeAnalysisInput" type="text" class="form-control" placeholder="0" />
         </div>
 
         <!-- Force boosters -->
         <div id="forceBoosterContainer" class="input-group not-visible mt-2">
-            <div class="input-group-prepend" data-toggle="tooltip"
-                title="The number of each type of Force Booster equipped. Provides a bonus to maximum damage and a decrease to accuracy. These utilities half_stack, so only the 2 highest rating count.">
+            <div
+                class="input-group-prepend"
+                data-toggle="tooltip"
+                title="The number of each type of Force Booster equipped. Provides a bonus to maximum damage and a decrease to accuracy. These utilities half_stack, so only the 2 highest rating count."
+            >
                 <span class="input-group-text">Force Boosters</span>
             </div>
 
-            <div class="input-group-prepend ml-2" data-toggle="tooltip"
-                title="The number of standard Force Boosters equipped. Provides a maximum damage increase of 20% and a melee accuracy decrease of 4%.">
+            <div
+                class="input-group-prepend ml-2"
+                data-toggle="tooltip"
+                title="The number of standard Force Boosters equipped. Provides a maximum damage increase of 20% and a melee accuracy decrease of 4%."
+            >
                 <span class="input-group-text">Standard</span>
             </div>
-            <input id="forceBoosterInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="forceBoosterInput" type="text" class="form-control" placeholder="0" />
 
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The number of Imp. Force Boosters equipped. Provides a maximum damage increase of 30% and a melee accuracy decrease of 6%.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The number of Imp. Force Boosters equipped. Provides a maximum damage increase of 30% and a melee accuracy decrease of 6%."
+            >
                 <span class="input-group-text">Imp.</span>
             </div>
-            <input id="impForceBoosterInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="impForceBoosterInput" type="text" class="form-control" placeholder="0" />
 
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The number of Adv. Force Boosters equipped. Provides a maximum damage increase of 40% and a melee accuracy decrease of 8%.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The number of Adv. Force Boosters equipped. Provides a maximum damage increase of 40% and a melee accuracy decrease of 8%."
+            >
                 <span class="input-group-text">Adv.</span>
             </div>
-            <input id="advForceBoosterInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="advForceBoosterInput" type="text" class="form-control" placeholder="0" />
         </div>
 
         <!-- Melee Utilities -->
         <div id="meleeUtilitiesContainer" class="input-group not-visible mt-2">
             <!-- Actuator -->
-            <div class="input-group-prepend" data-toggle="tooltip"
-                title="The type of actuator that's equipped (if any). Decreases volley time.">
+            <div
+                class="input-group-prepend"
+                data-toggle="tooltip"
+                title="The type of actuator that's equipped (if any). Decreases volley time."
+            >
                 <span class="input-group-text">Actuator</span>
             </div>
-            <input id="actuatorInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="actuatorInput" type="text" class="form-control" placeholder="0" />
 
             <!-- Actuator Array -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The bonus from one or two actuator arrays equipped. Increases followup chance for all weapons (half_stack).">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The bonus from one or two actuator arrays equipped. Increases followup chance for all weapons (half_stack)."
+            >
                 <span class="input-group-text">Actuator Array</span>
             </div>
-            <input id="actuatorArrayInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="actuatorArrayInput" type="text" class="form-control" placeholder="0" />
 
             <!-- Bonus Momentum -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The amount of bonus momentum from Reaction Control Systems (+1 no_stack).">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The amount of bonus momentum from Reaction Control Systems (+1 no_stack)."
+            >
                 <span class="input-group-text">Bonus Momentum</span>
             </div>
-            <input id="bonusMomentumInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="bonusMomentumInput" type="text" class="form-control" placeholder="0" />
         </div>
 
         <!-- Melee behavior -->
         <div id="meleeBehaviorContainer" class="input-group not-visible mt-2">
             <!-- Initial Momentum -->
-            <div class="input-group-prepend" data-toggle="tooltip"
-                title="The momentum bonus from movement for the first attack. This should be 0-3.">
+            <div
+                class="input-group-prepend"
+                data-toggle="tooltip"
+                title="The momentum bonus from movement for the first attack. This should be 0-3."
+            >
                 <span class="input-group-text">Initial Momentum</span>
             </div>
-            <input id="initialMomentumInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="initialMomentumInput" type="text" class="form-control" placeholder="0" />
 
             <!-- Speed -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The speed of Cogmind. Higher speed provides improved momentum bonus.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The speed of Cogmind. Higher speed provides improved momentum bonus."
+            >
                 <span class="input-group-text">Speed</span>
             </div>
-            <input id="speedInput" type="text" class="form-control" placeholder="100"></input>
+            <input id="speedInput" type="text" class="form-control" placeholder="100" />
 
             <!-- Sneak attacks -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="Whether to perform sneak attacks or not. Sneak attacks provide a base hit chance of 120% and a +200% damage boost">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="Whether to perform sneak attacks or not. Sneak attacks provide a base hit chance of 120% and a +200% damage boost"
+            >
                 <span class="input-group-text">Sneak Attacks</span>
             </div>
             <select id="sneakAttackSelect" class="selectpicker flex-dropdown">
@@ -341,8 +435,11 @@
         <!-- Generic utilities -->
         <div class="input-group mt-2">
             <!-- Armor integrity analyzer -->
-            <div class="input-group-prepend" data-toggle="tooltip"
-                title="The type of armor integrity analyzer that's equipped (if any). Adds a chance of bypassing enemy armor.">
+            <div
+                class="input-group-prepend"
+                data-toggle="tooltip"
+                title="The type of armor integrity analyzer that's equipped (if any). Adds a chance of bypassing enemy armor."
+            >
                 <span class="input-group-text">Armor Integrity Analyzer</span>
             </div>
             <select id="armorIntegSelect" class="selectpicker flex-dropdown">
@@ -353,18 +450,24 @@
             </select>
 
             <!-- Core Analyzer -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The bonus from one or more Core Analyzer that's equipped (if any). Increases core exposure by the specified amount (half_stack).">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The bonus from one or more Core Analyzer that's equipped (if any). Increases core exposure by the specified amount (half_stack)."
+            >
                 <span class="input-group-text">Core Analyzer</span>
             </div>
-            <input id="coreAnalyzerInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="coreAnalyzerInput" type="text" class="form-control" placeholder="0" />
 
             <!-- Target Analyzer -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The type of Target Analyzer that's equipped (if any). Increases critical hit % chance for weapons with an existing critical hit chance (half_stack).">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The type of Target Analyzer that's equipped (if any). Increases critical hit % chance for weapons with an existing critical hit chance (half_stack)."
+            >
                 <span class="input-group-text">Target Analyzer</span>
             </div>
-            <input id="targetAnalyzerInput" type="text" class="form-control" placeholder="0"></input>
+            <input id="targetAnalyzerInput" type="text" class="form-control" placeholder="0" />
         </div>
 
         <!-- Weapons (added at runtime) -->
@@ -378,30 +481,30 @@
                     <span class="input-group-text">X-axis</span>
                 </div>
                 <label id="xAxisVolleys" class="btn active">
-                    <input type="radio" checked name="options"> Volleys
+                    <input type="radio" checked name="options" /> Volleys
                 </label>
-                <label id="xAxisTime" class="btn">
-                    <input type="radio" name="options"> Time
-                </label>
+                <label id="xAxisTime" class="btn"> <input type="radio" name="options" /> Time </label>
             </div>
 
             <!-- Show loot -->
             <div id="showLootContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
-                <div class="input-group-prepend" data-toggle="tooltip"
-                    title="Whether or not to show estimated loot drops. Expected matter and part drop rate chance and integrity is shown. Crit off rate shows the % of the drop rate that was caused due to blast, sever, or sunder crits if applicable.">
+                <div
+                    class="input-group-prepend"
+                    data-toggle="tooltip"
+                    title="Whether or not to show estimated loot drops. Expected matter and part drop rate chance and integrity is shown. Crit off rate shows the % of the drop rate that was caused due to blast, sever, or sunder crits if applicable."
+                >
                     <span class="input-group-text">Show Loot</span>
                 </div>
-                <label id="showLootNo" class="btn active">
-                    <input type="radio" checked name="options"> No
-                </label>
-                <label id="showLootYes" class="btn">
-                    <input type="radio" name="options"> Yes
-                </label>
+                <label id="showLootNo" class="btn active"> <input type="radio" checked name="options" /> No </label>
+                <label id="showLootYes" class="btn"> <input type="radio" name="options" /> Yes </label>
             </div>
 
             <!-- End condition -->
-            <div class="input-group-prepend ml-3" data-toggle="tooltip"
-                title="The scenario to occur before the simulation is ended.">
+            <div
+                class="input-group-prepend ml-3"
+                data-toggle="tooltip"
+                title="The scenario to occur before the simulation is ended."
+            >
                 <span class="input-group-text">End Condition</span>
             </div>
             <select id="endConditionSelect" class="selectpicker flex-dropdown" data-dropdown-align-right="auto">
@@ -410,8 +513,9 @@
                 <option>Kill or No Power</option>
                 <option>Kill or No Weapons</option>
                 <option class="not-visible" id="endConditionNoTnc">Kill or No TNC</option>
-                <option class="not-visible" id="endConditionArchTele">Architect Tele (80% integrity, 1 weapon, or 1
-                    prop)</option>
+                <option class="not-visible" id="endConditionArchTele">
+                    Architect Tele (80% integrity, 1 weapon, or 1 prop)
+                </option>
             </select>
         </div>
 
@@ -424,21 +528,31 @@
 
         <!-- Current weapon chart -->
         <div id="resultsContainer" class="not-visible">
-            <canvas id="chart"></canvas>
+            <div>
+                <canvas id="chart"></canvas>
+            </div>
             <div class="input-group mt-3">
-                <div class="input-group-prepend" data-toggle="tooltip"
-                    title="The name for this data when added to the custom comparison chart.">
+                <div
+                    class="input-group-prepend"
+                    data-toggle="tooltip"
+                    title="The name for this data when added to the custom comparison chart."
+                >
                     <span class="input-group-text">Dataset Name</span>
                 </div>
-                <input id="comparisonNameInput" type="text" class="form-control"></input>
-                <button id="addComparisonButton" class="btn ml-3" data-toggle="tooltip"
-                    title="Adds the current dataset to the comparison chart.">Add to Comparison</button>
+                <input id="comparisonNameInput" type="text" class="form-control" />
+                <button
+                    id="addComparisonButton"
+                    class="btn ml-3"
+                    data-toggle="tooltip"
+                    title="Adds the current dataset to the comparison chart."
+                >
+                    Add to Comparison
+                </button>
             </div>
         </div>
 
         <!-- Loot result -->
-        <div id="lootContainer" class="not-visible loot-grid mt-3">
-        </div>
+        <div id="lootContainer" class="not-visible loot-grid mt-3"></div>
 
         <!-- Comparison chart -->
         <div id="comparisonContainer" class="not-visible">
@@ -447,11 +561,17 @@
                     <div class="input-group-prepend" data-toggle="tooltip" title="The name to show on the chart.">
                         <span class="input-group-text">Chart Name</span>
                     </div>
-                    <input id="comparisonChartNameInput" class="form-control" type="text"
-                        placeholder="Custom Comparison"></input>
+                    <input
+                        id="comparisonChartNameInput"
+                        class="form-control"
+                        type="text"
+                        placeholder="Custom Comparison"
+                    />
                 </div>
             </div>
-            <canvas id="comparisonChart"></canvas>
+            <div>
+                <canvas id="comparisonChart"></canvas>
+            </div>
         </div>
     </div>
 </body>

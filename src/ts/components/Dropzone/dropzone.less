@@ -1,0 +1,24 @@
+@import "../../../styles/common.less";
+
+.dropzone-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: @dropzone-padding;
+
+    background-color: @element-background-color;
+
+    border-color: @contrast-border-color;
+    border-width: @dropzone-border-width;
+    border-style: dashed;
+    border-radius: @dropzone-border-radius;
+
+    > * {
+        margin: @default-element-vertical-margin;
+    }
+}
+
+.dropzone-container-drag-active {
+    background-color: @dropzone-active-background-color;
+}

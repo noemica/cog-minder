@@ -1,0 +1,16 @@
+@import "../../../styles/common.less";
+
+.chart-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: @chart-grid-gap;
+    justify-content: center;
+
+    > * {
+        background-color: @element-background-color;
+        border: 1px solid @border-color;
+        flex: 1 1 0px;
+        border-radius: @chart-container-border-radius;
+    }
+}

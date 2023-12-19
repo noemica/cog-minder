@@ -1,16 +1,16 @@
-import * as lore from "../json/lore.json";
+import lore from "../json/lore.json";
+import { MapLocation, Spoiler } from "./types/commonTypes";
+import { WikiEntry } from "./types/wikiTypes";
 import {
     canShowSpoiler,
-    getBot,
     createBotDataContent,
-    getItem,
     createItemDataContent,
-    escapeHtml,
     createLocationHtml,
+    escapeHtml,
+    getBot,
+    getItem,
     parseIntOrDefault,
-} from "./common";
-import { MapLocation, Spoiler } from "./commonTypes";
-import { WikiEntry } from "./wikiTypes";
+} from "./utilities/common";
 
 // Output group types
 // Grouped can be in the same <p> block
@@ -80,7 +80,7 @@ export function createContentHtml(
 
     // Process initial content by replacing any instances of [XYZ] in links with {{xyz}}
     // Otherwise we hae issues with the regex for any links that include square brackets in them
-    const initialContent = entry.content.replace(/([^\[])\[([\w\/]*)\]/g, (_, p1, p2) => {
+    const initialContent = entry.content.replace(/([^[])\[([\w/]*)\]/g, (_, p1, p2) => {
         return `${p1}{{${p2}}}`;
     });
     const state = new ParserState(allEntries, [], new Set<string>(), false, initialContent, "All", spoilerState);
@@ -150,6 +150,7 @@ function getLinkHtml(state: ParserState, referenceEntry: WikiEntry, linkText: st
         const bot = getBot(referenceEntry.name);
         tooltipData = `data-html=true data-boundary="window" data-content='${createBotDataContent(
             bot,
+            state.spoiler,
             false,
         )}' data-toggle="popover" data-trigger="hover"`;
     } else if (referenceEntry.type === "Part") {
@@ -320,7 +321,7 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         let imageName = split[2 * i];
         const imageCaption = split[2 * i + 1];
 
-        const spoilerResult = /\[\[([^\]]*)]\]([^\[]*)\[\[\/([^\]]*)\]\]/.exec(imageName);
+        const spoilerResult = /\[\[([^\]]*)]\]([^[]*)\[\[\/([^\]]*)\]\]/.exec(imageName);
         if (spoilerResult) {
             if (spoilerResult[1] === spoilerResult[3]) {
                 if ((spoilerResult[1] as Spoiler) === "Spoiler" || (spoilerResult[1] as Spoiler) === "Redacted") {
@@ -351,9 +352,9 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         // Append image content HTML
         galleryContent += `<div>
             <div>
-                <a ${inSpoiler ? 'class="spoiler-image"' : ""} href="wiki_images/${imageName}" target="_blank">
+                <a ${inSpoiler ? 'class="spoiler-image"' : ""} href="../wiki_images/${imageName}" target="_blank">
                 ${inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
-                    <img src="wiki_images/${imageName}" onerror="this.onerror=null; this.src='wiki_images/Image Not Found.png'"/>
+                    <img src="../wiki_images/${imageName}" onerror="this.onerror=null; this.src='../wiki_images/Image Not Found.png'"/>
                 </a>
             </div>
             ${imageCaptionHtml}
@@ -461,9 +462,9 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
     state.output.push({
         groupType: "Individual",
         html: `<div class="wiki-sidebar-image">
-            <a ${state.inSpoiler ? 'class="spoiler-image"' : ""} href="wiki_images/${imageName}" target="_blank">
+            <a ${state.inSpoiler ? 'class="spoiler-image"' : ""} href="../wiki_images/${imageName}" target="_blank">
                 ${state.inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
-                <img src="wiki_images/${imageName}" onerror="this.onerror=null; this.src='wiki_images/Image Not Found.png'"/>
+                <img src="../wiki_images/${imageName}" onerror="this.onerror=null; this.src='../wiki_images/Image Not Found.png'"/>
             </a>
             ${imageCaptionHtml.length > 0 ? `${imageCaptionHtml}` : ""}
         </div>`,

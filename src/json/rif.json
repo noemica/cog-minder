@@ -261,12 +261,7 @@
         },
         {
             "CategoryName": "Noncombat (NC) Yellow",
-            "Targets": [
-                "Carrier",
-                "Operator",
-                "Researcher",
-                "Watcher"
-            ],
+            "Targets": ["Carrier", "Operator", "Researcher", "Watcher"],
             "Hacks": [
                 {
                     "Name": "parse_system",
@@ -378,9 +373,7 @@
         },
         {
             "CategoryName": "Carrier",
-            "Targets": [
-                "Carrier"
-            ],
+            "Targets": ["Carrier"],
             "Hacks": [
                 {
                     "Name": "emergency_deploy",
@@ -398,9 +391,7 @@
         },
         {
             "CategoryName": "Compactor",
-            "Targets": [
-                "Compactor"
-            ],
+            "Targets": ["Compactor"],
             "Hacks": [
                 {
                     "Name": "ignore_targets",
@@ -430,9 +421,7 @@
         },
         {
             "CategoryName": "Engineer",
-            "Targets": [
-                "Builder"
-            ],
+            "Targets": ["Builder"],
             "Hacks": [
                 {
                     "Name": "ignore_repairs",
@@ -450,9 +439,7 @@
         },
         {
             "CategoryName": "Hauler",
-            "Targets": [
-                "Hauler"
-            ],
+            "Targets": ["Hauler"],
             "Hacks": [
                 {
                     "Name": "find_fabricator",
@@ -488,9 +475,7 @@
         },
         {
             "CategoryName": "Mechanic",
-            "Targets": [
-                "Mechanic"
-            ],
+            "Targets": ["Mechanic"],
             "Hacks": [
                 {
                     "Name": "find_station",
@@ -514,9 +499,7 @@
         },
         {
             "CategoryName": "Operator",
-            "Targets": [
-                "Operator"
-            ],
+            "Targets": ["Operator"],
             "Hacks": [
                 {
                     "Name": "check_alert",
@@ -588,9 +571,7 @@
         },
         {
             "CategoryName": "Serf",
-            "Targets": [
-                "Worker"
-            ],
+            "Targets": ["Worker"],
             "Hacks": [
                 {
                     "Name": "find_chute",
@@ -620,9 +601,7 @@
         },
         {
             "CategoryName": "Recycler",
-            "Targets": [
-                "Recycler"
-            ],
+            "Targets": ["Recycler"],
             "Hacks": [
                 {
                     "Name": "find_recycling",
@@ -640,9 +619,7 @@
         },
         {
             "CategoryName": "Researcher",
-            "Targets": [
-                "Researcher"
-            ],
+            "Targets": ["Researcher"],
             "Hacks": [
                 {
                     "Name": "find_scanalyzer",
@@ -684,9 +661,7 @@
         },
         {
             "CategoryName": "Excavator",
-            "Targets": [
-                "Tunneler"
-            ],
+            "Targets": ["Tunneler"],
             "Hacks": [
                 {
                     "Name": "map_earth",
@@ -704,9 +679,7 @@
         },
         {
             "CategoryName": "Watcher",
-            "Targets": [
-                "Watcher"
-            ],
+            "Targets": ["Watcher"],
             "Hacks": [
                 {
                     "Name": "mark_security",

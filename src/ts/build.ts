@@ -1,4 +1,29 @@
-import * as items from "../json/items.json";
+import "bootstrap";
+import "bootstrap-select";
+import * as jQuery from "jquery";
+import "lz-string";
+import LZString from "lz-string";
+
+import items from "../json/items.json";
+import { getRangedVolleyTime, volleyTimeMap } from "./simulatorCalcs";
+import {
+    Actuator,
+    BaseItem,
+    EnergyFilter,
+    EnergyStorage,
+    FusionCompressor,
+    HeatDissipation,
+    ItemSlot,
+    ItemType,
+    ItemWithUpkeep,
+    MassSupport,
+    PowerAmplifier,
+    PowerItem,
+    PropulsionItem,
+    RangedWeaponCycling,
+    WeaponItem,
+    WeaponRegen,
+} from "./types/itemTypes";
 import {
     assertUnreachable,
     canShowPart,
@@ -12,7 +37,7 @@ import {
     isPartMelee,
     itemData,
     parseIntOrDefault,
-} from "./common";
+} from "./utilities/common";
 import {
     createHeader,
     getSelectedButtonId,
@@ -22,33 +47,7 @@ import {
     setActiveButtonGroupButton,
     setSpoilerState,
     temporarilySetValue,
-} from "./commonJquery";
-import {
-    Actuator,
-    BaseItem,
-    EnergyFilter,
-    EnergyStorage,
-    FusionCompressor,
-    HeatDissipation,
-    ItemSlot,
-    ItemType,
-    ItemWithUpkeep,
-    JsonItem,
-    MassSupport,
-    PowerAmplifier,
-    PowerItem,
-    PropulsionItem,
-    RangedWeaponCycling,
-    WeaponItem,
-    WeaponRegen,
-} from "./itemTypes";
-
-import * as jQuery from "jquery";
-import "bootstrap";
-import "bootstrap-select";
-import "lz-string";
-import { getRangedVolleyTime, volleyTimeMap } from "./simulatorCalcs";
-import LZString = require("lz-string");
+} from "./utilities/commonJquery";
 
 const jq = jQuery.noConflict();
 jq(function ($) {
@@ -231,7 +230,7 @@ jq(function ($) {
             '<div class="input-group-prepend ml-3" data-toggle="tooltip" title="How many of the part to equip"></div>',
         );
         const numberLabel = $('<span class="input-group-text">Number</span>');
-        const numberInput = $('<input type="text" class="form-control" placeholder="1"></input>');
+        const numberInput = $('<input type="text" class="form-control" placeholder="1" />');
         const activeContainer = $('<div class="btn-group btn-group-toggle ml-2" data-toggle="buttons"></div>');
         const activeLabelContainer = $(
             '<div class="input-group-prepend" data-toggle="tooltip" title="Whether the part is active."></div>',
@@ -511,7 +510,7 @@ jq(function ($) {
         // const itemsToLoad = $("#beta11Checkbox").prop("checked") ? itemsB11 : items;
         const itemsToLoad = items;
 
-        await initData(itemsToLoad as { [key: string]: JsonItem }, undefined);
+        await initData(itemsToLoad as any, undefined);
 
         initializePartsSelects();
         resetValues(
@@ -896,25 +895,28 @@ title="Paste the entire a run dump or scores .txt file below">Paste run dump bel
                 break;
             }
 
-            case "Integrity":
+            case "Integrity": {
                 const integrity = partsState.coreInfo.integrity;
                 const integrityPercent = (integrity * 100) / partsState.totalIntegrity;
                 addPercentageBar(infoContainer, integrity, integrityPercent, "Default");
                 break;
+            }
 
-            case "Mass":
+            case "Mass": {
                 const support = partsState.coreInfo.mass;
                 const supportPercent = (-support * 100) / partsState.totalSupport;
                 addPercentageBar(infoContainer, support, supportPercent, "MassSupport");
                 break;
+            }
 
-            case "Vulnerability":
+            case "Vulnerability": {
                 const vulnerability = partsState.coreInfo.vulnerability;
                 const diffFromMin = vulnerability - partsState.highestVulnerability;
                 const minMaxDiff = partsState.lowestVulnerability - partsState.highestVulnerability;
                 const percentage = minMaxDiff === 0 ? 100.0 : 100.0 * (1.0 - diffFromMin / minMaxDiff);
                 addPercentageBarWithString(infoContainer, Math.ceil(vulnerability), percentage, "", "Vulnerability");
                 break;
+            }
 
             default:
                 assertUnreachable(infoType);
@@ -1063,13 +1065,14 @@ title="Paste the entire a run dump or scores .txt file below">Paste run dump bel
                 break;
             }
 
-            case "Vulnerability":
+            case "Vulnerability": {
                 const vulnerability = partInfo.vulnerability;
                 const diffFromMin = vulnerability - partsState.highestVulnerability;
                 const minMaxDiff = partsState.lowestVulnerability - partsState.highestVulnerability;
                 const percentage = minMaxDiff === 0 ? 100.0 : 100.0 * (1.0 - diffFromMin / minMaxDiff);
                 addPercentageBarWithString(infoColumn, Math.ceil(vulnerability), percentage, "", "Vulnerability");
                 break;
+            }
 
             default:
                 assertUnreachable(infoType);

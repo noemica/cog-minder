@@ -1,0 +1,33 @@
+@import "./common.less";
+@import "./theme.less";
+
+body {
+    background-color: var(--page-background-color);
+    color: @font-color;
+
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: @page-horizontal-margin;
+    padding-right: @page-horizontal-margin;
+
+    max-width: @page-max-width;
+
+    overflow-y: scroll;
+}
+
+* {
+    font-family: @default-font-family;
+    font-size: @default-font-size;
+}
+
+.error-notice {
+    font-size: @error-notice-font-size;
+}
+
+.error-message {
+    font-size: @error-message-font-size;
+}
+
+a {
+    color: @font-link-color;
+}

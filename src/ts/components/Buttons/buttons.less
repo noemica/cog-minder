@@ -1,0 +1,57 @@
+@import "../../../styles/common.less";
+
+.button {
+    color: @font-color;
+    background-image: @button-background-gradient;
+    border: @default-border-width solid @border-color;
+    border-radius: @default-border-radius;
+
+    cursor: pointer;
+
+    padding: @button-default-padding;
+}
+
+.button:hover,
+.button:focus {
+    background-image: @button-hover-focus-background-gradient;
+    color: @font-button-interaction-color;
+}
+
+.exclusive-buttons {
+    display: flex;
+
+    > * {
+        margin-left: -@default-border-width;
+        border-radius: 0;
+
+        flex: 1 1 auto;
+    }
+
+    > :first-child {
+        border-top-left-radius: @default-border-radius;
+        border-bottom-left-radius: @default-border-radius;
+
+        margin-left: 0;
+    }
+
+    > :last-child {
+        border-top-right-radius: @default-border-radius;
+        border-bottom-right-radius: @default-border-radius;
+
+        margin-right: 0;
+    }
+}
+
+.exclusive-button-active {
+    background-image: @button-active-background-gradient;
+    color: @font-button-interaction-color;
+}
+
+.button-link {
+    text-decoration: none;
+}
+
+.button-link-active {
+    background-image: @button-active-background-gradient;
+    color: @font-button-interaction-color;
+}
