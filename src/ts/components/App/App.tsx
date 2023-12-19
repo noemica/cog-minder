@@ -1,10 +1,12 @@
 import { ReactNode, StrictMode } from "react";
 
 import { PageType } from "../../types/commonTypes";
+import PageHeader from "../PageHeader/PageHeader";
+import AboutPage from "../Pages/AboutPage";
 import { CombatPage } from "../Pages/CombatPage";
 
 import "../../../styles/index.less";
-import PageHeader from "../PageHeader/PageHeader";
+import useThemeUpdater from "../Effects/useThemeUpdater";
 
 export type AppProps = {
     pageType: PageType;
@@ -13,8 +15,14 @@ export type AppProps = {
 export default function App({ pageType }: AppProps) {
     let page: ReactNode = undefined;
 
+    useThemeUpdater();
+
     try {
         switch (pageType) {
+            case "About":
+                page = <AboutPage />;
+                break;
+
             case "Combat":
                 page = <CombatPage />;
                 break;
@@ -45,7 +53,7 @@ export default function App({ pageType }: AppProps) {
 
     return (
         <StrictMode>
-            <PageHeader pageType="Combat" />
+            <PageHeader pageType={pageType} />
             {page}
         </StrictMode>
     );

@@ -36,7 +36,7 @@ const pages: Record<PageType, PageDetails> = {
     About: {
         label: "About",
         link: "about.html",
-        explanation: "",
+        explanation: "About Cog-Minder.",
     },
     Bots: {
         label: "Bots",

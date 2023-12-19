@@ -103,7 +103,6 @@ export function CombatPage() {
     const initialLoaded = isDev;
     const initialData = isDev ? fakeData : [];
 
-    useThemeUpdater();
     const [chartDisplayOptions, setChartDisplayOptions] = useChartDisplayOptions();
     const [loaded, setLoaded] = useState(initialLoaded);
     const [combatLogData, setCombatLogData] = useState(initialData);
