@@ -13,7 +13,18 @@ export type PageType =
     | "Simulator"
     | "Wiki";
 
-export const pageTypes: PageType[] = ["About", "Bots", "Build", "Hacks", "Lore", "Parts", "RIF", "Simulator", "Wiki"];
+export const pageTypes: PageType[] = [
+    "About",
+    "Bots",
+    "Build",
+    "Combat",
+    "Hacks",
+    "Lore",
+    "Parts",
+    "RIF",
+    "Simulator",
+    "Wiki",
+];
 
 // An enum to represent spoiler level
 export type Spoiler = "None" | "Spoiler" | "Redacted";
