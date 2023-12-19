@@ -12,10 +12,10 @@ export type PageHeaderProps = {
     pageType: PageType;
 };
 
-const spoilerOptions: SelectOptionType[] = [
+const spoilerOptions: SelectOptionType<Spoiler>[] = [
     { value: "None", label: "None", tooltip: "No spoilers: Factory or higher depth branch content is hidden." },
     {
-        value: "Spoilers",
+        value: "Spoiler",
         label: "Spoilers",
         tooltip: "Moderate spoilers: Normal Factory and Research branch content is shown.",
     },
@@ -105,10 +105,10 @@ function PageButtons({ pageType: PageType }) {
 
 function SettingsButton() {
     const [spoilers, setSpoilers] = useEditableSpoilers();
-    const spoilerSelected = spoilerOptions.find((o) => o.label === spoilers) || spoilerOptions[0];
+    const spoilerSelected = spoilerOptions.find((o) => o.value === spoilers) || spoilerOptions[0];
 
     const [theme, setTheme] = useEditableTheme();
-    const themeSelected = themeOptions.find((t) => t.label === theme) || themeOptions[0];
+    const themeSelected = themeOptions.find((t) => t.value === theme) || themeOptions[0];
 
     return (
         <ButtonPopover buttonLabel="Settings" buttonTooltip="Change various site-wide settings">

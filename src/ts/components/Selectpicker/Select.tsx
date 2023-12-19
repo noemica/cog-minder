@@ -5,8 +5,8 @@ import TextTooltip from "../Tooltip/TextTooltip";
 
 import "./Select.less";
 
-export type SelectOptionType = {
-    value: string;
+export type SelectOptionType<T = any> = {
+    value: T;
     label: string | ReactNode;
     tooltip?: string;
 };
