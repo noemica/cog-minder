@@ -93,8 +93,6 @@ export function getValuesForCombatLogChart(
     callbacks: CombatLogChartValuesCallbacks,
     labelType: CombatChartLabelType,
 ) {
-    const values: ChartDataValue[] = [];
-
     const valueByLabel = new Map<string, number>();
     for (const entry of combatLogEntries) {
         // Check if we process this log entry, if undefined then always process
@@ -122,8 +120,9 @@ export function getValuesForCombatLogChart(
         }
     }
 
-    for (const [entity, value] of valueByLabel) {
-        values.push({ label: entity, value: value });
+    const values: ChartDataValue[] = [];
+    for (const [label, value] of valueByLabel) {
+        values.push({ label: label, value: value });
     }
 
     return values;

@@ -43,5 +43,3 @@ const themeTypes: ThemeType[] = ["Cogmind", "Dark"];
 export function isValidThemeType(theme: ThemeType) {
     return themeTypes.includes(theme);
 }
-
-export const localStorageCombatLogChartDisplayOptions = "combatLogChartDisplayOptions";

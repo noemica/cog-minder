@@ -27,7 +27,7 @@ export default function ExclusiveButtonGroup<T>({
         // Try to find initial selected index
         for (let i = 0; i < buttons.length; i++) {
             const button = buttons[i];
-            if (button.label === initialSelected || i === initialSelected) {
+            if (button.value === initialSelected || i === initialSelected) {
                 initialSelectedIndex = i;
                 break;
             }

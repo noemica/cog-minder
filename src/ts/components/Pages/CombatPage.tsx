@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useLocalStorage } from "usehooks-ts";
 
 import { fakeData } from "../../fakeData";
 import {
@@ -7,26 +6,25 @@ import {
     CombatLogChartCategoryType,
     CombatLogChartType,
     CombatLogEntry,
-    isValidCombatLogChartCategoryType,
-    isValidCombatLogChartType,
 } from "../../types/combatLogTypes";
-import { localStorageCombatLogChartDisplayOptions } from "../../types/commonTypes";
 import Button from "../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../Buttons/ExclusiveButtonGroup";
 import ChartGrid from "../ChartGrid/ChartGrid";
+import CogmindAccuracyChart from "../Charts/CogmindAccuracyChart";
 import CogmindPartsDestroyedChart from "../Charts/CogmindPartsDestroyedChart";
 import CriticalHitTargetsByCogmind from "../Charts/CriticalHitTargetsByCogmindChart";
 import CriticalHitTargetsToCogmind from "../Charts/CriticalHitTargetsToCogmindChart";
 import DamageDealtChart from "../Charts/DamageDealtChart";
 import DamageReceivedChart from "../Charts/DamageReceivedChart";
+import NonCogmindAccuracyChart from "../Charts/NonCogmindAccuracyChart";
 import OverflowDamageDealtChart from "../Charts/OverflowDamageDealtChart";
 import OverflowDamageReceivedChart from "../Charts/OverflowDamageReceivedChart";
 import PartsDestroyedByCogmindChart from "../Charts/PartsDestroyedByCogmindChart";
 import SneakAttacksChart from "../Charts/SneakAttacksChart";
 import CombatLogDropzone from "../Dropzone/CombatLogDropzone";
+import { useChartDisplayOptions } from "../Effects/useLocalStorageValue";
 import useThemeUpdater from "../Effects/useThemeUpdater";
 import { LabeledExclusiveButtonGroup } from "../LabeledItem/LabeledItem";
-import PageHeader from "../PageHeader/PageHeader";
 
 import "./Pages.less";
 
@@ -85,15 +83,17 @@ const categoryTypeButtons: ExclusiveButtonDefinition<CombatLogChartCategoryType>
 function Charts(combatLogData: CombatLogEntry[], displayOptions: ChartDisplayOptions) {
     return (
         <ChartGrid>
-            <DamageDealtChart combatLogEntries={combatLogData} displayOptions={displayOptions}></DamageDealtChart>
-            <DamageReceivedChart combatLogEntries={combatLogData} displayOptions={displayOptions}></DamageReceivedChart>
+            <DamageDealtChart combatLogEntries={combatLogData} displayOptions={displayOptions} />
+            <DamageReceivedChart combatLogEntries={combatLogData} displayOptions={displayOptions} />
             <OverflowDamageDealtChart combatLogEntries={combatLogData} displayOptions={displayOptions} />
             <OverflowDamageReceivedChart combatLogEntries={combatLogData} displayOptions={displayOptions} />
             <PartsDestroyedByCogmindChart combatLogEntries={combatLogData} displayOptions={displayOptions} />
             <CogmindPartsDestroyedChart combatLogEntries={combatLogData} displayOptions={displayOptions} />
-            <SneakAttacksChart combatLogEntries={combatLogData} displayOptions={displayOptions}></SneakAttacksChart>
             <CriticalHitTargetsByCogmind combatLogEntries={combatLogData} displayOptions={displayOptions} />
             <CriticalHitTargetsToCogmind combatLogEntries={combatLogData} displayOptions={displayOptions} />
+            <CogmindAccuracyChart combatLogEntries={combatLogData} displayOptions={displayOptions} />
+            <NonCogmindAccuracyChart combatLogEntries={combatLogData} displayOptions={displayOptions} />
+            <SneakAttacksChart combatLogEntries={combatLogData} displayOptions={displayOptions} />
         </ChartGrid>
     );
 }
@@ -104,30 +104,16 @@ export function CombatPage() {
     const initialData = isDev ? fakeData : [];
 
     useThemeUpdater();
-    const [initialChartDisplayOptions, setInitialChartDisplayOptions] = useLocalStorage<ChartDisplayOptions>(
-        localStorageCombatLogChartDisplayOptions,
-        {
-            category: "Bot",
-            chartType: "Pie",
-        },
-    );
-    if (!isValidCombatLogChartCategoryType(initialChartDisplayOptions.category)) {
-        initialChartDisplayOptions.category = "Bot";
-    }
-    if (!isValidCombatLogChartType(initialChartDisplayOptions.chartType)) {
-        initialChartDisplayOptions.chartType = "Bar";
-    }
-
+    const [chartDisplayOptions, setChartDisplayOptions] = useChartDisplayOptions();
     const [loaded, setLoaded] = useState(initialLoaded);
     const [combatLogData, setCombatLogData] = useState(initialData);
-    const [displayOptions, setDisplayOptions] = useState<ChartDisplayOptions>(initialChartDisplayOptions);
 
     async function onLoadDataClick() {
         setLoaded(true);
         setCombatLogData(fakeData);
     }
 
-    const charts = loaded ? Charts(combatLogData, displayOptions) : null;
+    const charts = loaded ? Charts(combatLogData, chartDisplayOptions) : null;
 
     return (
         <div className="page-content">
@@ -146,11 +132,10 @@ export function CombatPage() {
                             tooltip="Sets the display type of all charts."
                             flexGrowButtonCount={true}
                             buttons={chartTypeButtons}
-                            initialSelected={displayOptions.chartType}
+                            initialSelected={chartDisplayOptions.chartType}
                             onValueChanged={(value) => {
-                                const newDisplayOptions = { ...displayOptions, chartType: value };
-                                setDisplayOptions(newDisplayOptions);
-                                setInitialChartDisplayOptions(newDisplayOptions);
+                                const newDisplayOptions = { ...chartDisplayOptions, chartType: value };
+                                setChartDisplayOptions(newDisplayOptions);
                             }}
                         />
                         <LabeledExclusiveButtonGroup<CombatLogChartCategoryType>
@@ -158,11 +143,10 @@ export function CombatPage() {
                             tooltip="Sets the category type for all charts. This determines how the combat log is split into pieces."
                             flexGrowButtonCount={true}
                             buttons={categoryTypeButtons}
-                            initialSelected={displayOptions.category}
+                            initialSelected={chartDisplayOptions.category}
                             onValueChanged={(value) => {
-                                const newDisplayOptions = { ...displayOptions, category: value };
-                                setDisplayOptions(newDisplayOptions);
-                                setInitialChartDisplayOptions(newDisplayOptions);
+                                const newDisplayOptions = { ...chartDisplayOptions, category: value };
+                                setChartDisplayOptions(newDisplayOptions);
                             }}
                         />
                     </div>

@@ -143,8 +143,8 @@ export const entityMap: { [key: string]: string } = {
 
 // Compile-time assert that code is unreachable
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function assertUnreachable(_: never): never {
-    throw new Error("This should not be reachable");
+export function assertUnreachable(val: never): never {
+    throw new Error(`This should not be reachable: ${val}`);
 }
 
 // In the given string, bolds all matches of matchText

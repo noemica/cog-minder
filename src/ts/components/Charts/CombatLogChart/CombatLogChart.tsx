@@ -13,9 +13,16 @@ export type CombatLogChartProps = {
     values: ChartDataValue[];
     displayOptions: ChartDisplayOptions;
     forceChartType?: CombatLogChartType;
+    valuesArePercentages?: boolean;
 };
 
-export default function CombatLogChart({ chartTitle, values, displayOptions, forceChartType }: CombatLogChartProps) {
+export default function CombatLogChart({
+    chartTitle,
+    values,
+    displayOptions,
+    forceChartType,
+    valuesArePercentages,
+}: CombatLogChartProps) {
     const [expanded, setExpanded] = useState(false);
     const [sortDescending, setSortDescending] = useState(true);
 
@@ -50,6 +57,7 @@ export default function CombatLogChart({ chartTitle, values, displayOptions, for
             expanded,
             setSortDescending,
             sortDescending,
+            valuesArePercentages || false,
         );
     }
 }
@@ -62,6 +70,7 @@ function createHorizontalBarChart(
     expanded: boolean,
     setSortDescending: React.Dispatch<React.SetStateAction<boolean>>,
     sortDescending: boolean,
+    valuesArePercentages: boolean,
 ) {
     let maxValue: number | undefined = undefined;
     if (otherCategoryAdded && (!sortDescending || (sortDescending && values[10].value > 1.2 * values[0].value))) {
@@ -84,6 +93,7 @@ function createHorizontalBarChart(
                 values={values}
                 barColors={otherCategoryAdded ? barColorsWithOther : barColors}
                 maxValue={maxValue}
+                valuesArePercentages={valuesArePercentages}
             />
         </div>
     );
