@@ -37,7 +37,7 @@ export default function CombatLogDropzone({ onParse }: CombatLogDropzoneProps) {
         <div className={containerClasses} {...(getRootProps() as any)}>
             <input {...getInputProps()} />
             <span>Drag file or browse to upload combat log</span>
-            <TextTooltip tooltipText="Combat logs can be exported in Beta 13 by setting the TODO option in the advanced settings. Combat logs are exported in your standard Cogmind install location. For Steam users, it is usually something like TODO C:/Program Files (x86)/Steam/steamapps/common/Cogmind/dumps/">
+            <TextTooltip tooltipText="Combat logs can be exported in Beta 13 by setting `combatLogOutput=1` in the advanced settings. The standard Cogmind Options menu setting `Log Output` must also be set to `Text`. Advanced settings and combat logs are both located in your standard Cogmind install location. For Steam users, this is typically C:/Program Files (x86)/Steam/steamapps/common/Cogmind/">
                 <div>
                     <Button onClick={open}>Browse for file</Button>
                 </div>
