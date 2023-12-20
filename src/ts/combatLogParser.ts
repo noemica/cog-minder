@@ -26,6 +26,9 @@ const botMeltedRegex = /^(.*) melted$/;
 // Match 4: Critical type (optional)
 const damageRegex = /^(.*) (overflow dmg|damaged): (\d*)(?: \(Crit: (.*)\))?$/;
 
+// No matches, don't care about target
+const damageInsufficientToPenetrateRegex = /^Damage insufficient to overcome .*$/;
+
 // Match 1: Target, includes Bot and Part
 const engineDetonateRegex = /^(.*) detonated$/;
 
@@ -230,6 +233,16 @@ class ParserState {
         return true;
     }
 
+    // Tries to parse a failed to overcome armor line
+    private parseDamageInsufficientToPenetrateLine(line: PartialParsedLine): boolean {
+        const result = damageInsufficientToPenetrateRegex.exec(line.remainingText);
+        if (result === null) {
+            return false;
+        }
+
+        return true;
+    }
+
     // Tries to parse a destroyed part/bot into a damage entry
     private parseDestroyedTarget(line: PartialParsedLine): boolean {
         const destroyedResult = targetDestroyedRegex.exec(line.remainingText);
@@ -346,7 +359,11 @@ class ParserState {
                 continue;
             } else if (this.parseEngineDetonated(line)) {
                 continue;
-            } else if (this.parsePenetrationLine(line) || this.parseCriticalRemovePart(line)) {
+            } else if (
+                this.parseCriticalRemovePart(line) ||
+                this.parseDamageInsufficientToPenetrateLine(line) ||
+                this.parsePenetrationLine(line)
+            ) {
                 // These line types are unused
                 continue;
             } else {
