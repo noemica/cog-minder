@@ -26,14 +26,13 @@
 
 // Need an extra dedicated div for holding the chart itself
 .horizontal-bar-chart-wrapper {
-    transition: height 0.25s ease-in;
+    transition: height 0.1s ease-in;
     margin: @chart-padding;
 }
 
 // Expand/collapse to top 10 values button
 .button-expand-collapse {
     width: 100%;
-    font-size: medium;
     padding: @button-small-padding;
 
     // Overlap borders nicely with the grid cell outlines
@@ -48,8 +47,6 @@
 
 // Toggle ascending/descending behavior button
 .button-ascending-descending {
-    font-size: medium;
-
     // Nest the button into the top right corner of the cell
     position: absolute;
     right: 0;
