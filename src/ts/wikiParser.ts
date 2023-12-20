@@ -4,6 +4,7 @@ import { WikiEntry } from "./types/wikiTypes";
 import {
     canShowSpoiler,
     createBotDataContent,
+    createImagePath,
     createItemDataContent,
     createLocationHtml,
     escapeHtml,
@@ -350,11 +351,14 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         const imageCaptionHtml = outputGroupsToHtml(tempState.output, state.inSpoiler);
 
         // Append image content HTML
+        const path = createImagePath(`wiki_images/${imageName}`);
         galleryContent += `<div>
             <div>
-                <a ${inSpoiler ? 'class="spoiler-image"' : ""} href="../wiki_images/${imageName}" target="_blank">
+                <a ${inSpoiler ? 'class="spoiler-image"' : ""} href="${path}" target="_blank">
                 ${inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
-                    <img src="../wiki_images/${imageName}" onerror="this.onerror=null; this.src='../wiki_images/Image Not Found.png'"/>
+                    <img src="${path}" onerror="this.onerror=null; this.src='${createImagePath(
+                        "wiki_images/Image Not Found.png",
+                    )}'"/>
                 </a>
             </div>
             ${imageCaptionHtml}
@@ -459,12 +463,15 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
     }
 
     // Create the image with an optional caption
+    const path = createImagePath(`wiki_images/${imageName}`);
     state.output.push({
         groupType: "Individual",
         html: `<div class="wiki-sidebar-image">
-            <a ${state.inSpoiler ? 'class="spoiler-image"' : ""} href="../wiki_images/${imageName}" target="_blank">
+            <a ${state.inSpoiler ? 'class="spoiler-image"' : ""} href="${path}" target="_blank">
                 ${state.inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
-                <img src="../wiki_images/${imageName}" onerror="this.onerror=null; this.src='../wiki_images/Image Not Found.png'"/>
+                <img src="${path}" onerror="this.onerror=null; this.src='${createImagePath(
+                    "wiki_images/Image Not Found.png",
+                )}'"/>
             </a>
             ${imageCaptionHtml.length > 0 ? `${imageCaptionHtml}` : ""}
         </div>`,

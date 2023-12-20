@@ -2,7 +2,7 @@ import "bootstrap";
 import * as jQuery from "jquery";
 
 import { Spoiler } from "./types/commonTypes";
-import { parseIntOrDefault } from "./utilities/common";
+import { createImagePath, parseIntOrDefault } from "./utilities/common";
 import {
     createHeader,
     getSpoilerState,
@@ -278,7 +278,7 @@ jq(function ($) {
                     spoilerLevel: "Spoiler",
                 },
             ],
-            imageName: "../game_sprites/Fabricator.png",
+            imageName: createImagePath("game_sprites/Fabricator.png"),
         },
         {
             name: "Garrison",
@@ -374,7 +374,7 @@ jq(function ($) {
                     indirect: Indirect.Never,
                 },
             ],
-            imageName: "../game_sprites/Garrison.png",
+            imageName: createImagePath("game_sprites/Garrison.png"),
         },
         {
             name: "Recycling",
@@ -450,7 +450,7 @@ jq(function ($) {
                     spoilerLevel: "Spoiler",
                 },
             ],
-            imageName: "../game_sprites/Recycling.png",
+            imageName: createImagePath("game_sprites/Recycling.png"),
         },
         {
             name: "Repair Station",
@@ -573,7 +573,7 @@ jq(function ($) {
                     spoilerLevel: "Spoiler",
                 },
             ],
-            imageName: "../game_sprites/Repair Station.png",
+            imageName: createImagePath("game_sprites/Repair Station.png"),
         },
         {
             name: "Scanalyzer",
@@ -704,7 +704,7 @@ jq(function ($) {
                     spoilerLevel: "Spoiler",
                 },
             ],
-            imageName: "game_sprites/Scanalyzer.png",
+            imageName: createImagePath("game_sprites/Scanalyzer.png"),
         },
         {
             name: "Terminal",
@@ -1287,7 +1287,7 @@ jq(function ($) {
                     spoilerLevel: "Spoiler",
                 },
             ],
-            imageName: "../game_sprites/Terminal.png",
+            imageName: createImagePath("game_sprites/Terminal.png"),
         },
         {
             name: "Terminal - Door",
@@ -1443,7 +1443,7 @@ jq(function ($) {
                     level1DirectOnly: true,
                 },
             ],
-            imageName: "../game_sprites/Door Terminal.png",
+            imageName: createImagePath("game_sprites/Door Terminal.png"),
         },
     ];
 

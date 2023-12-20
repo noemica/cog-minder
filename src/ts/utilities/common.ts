@@ -141,6 +141,8 @@ export const entityMap: { [key: string]: string } = {
     "\n": "<br />",
 };
 
+export const rootDirectory = "/cog-minder/";
+
 // Compile-time assert that code is unreachable
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function assertUnreachable(val: never): never {
@@ -1380,6 +1382,10 @@ export function createItemDataContent(baseItem: Item): string {
     return html;
 }
 
+export function createImagePath(url: string) {
+    return rootDirectory + url;
+}
+
 export function createLocationHtml(location: MapLocation, spoilersState: Spoiler, inPopover: boolean): string {
     function getDepthString(minDepth: number, maxDepth: number) {
         if (minDepth === maxDepth) {
@@ -1409,7 +1415,9 @@ export function createLocationHtml(location: MapLocation, spoilersState: Spoiler
         ${
             location.imageName === undefined
                 ? ""
-                : `<a href="../wiki_images/${location.imageName}" target="_blank"><img src="../wiki_images/${location.imageName}" class="location-image"/></a>`
+                : `<a href="${createImagePath(
+                      `wiki_images/${location.imageName}`,
+                  )}" target="_blank"><img src="wiki_images/${location.imageName}" class="location-image"/></a>`
         }
         ${textLine("Available depths", getDepthString(location.minDepth, location.maxDepth))}
         ${textLine("Branch", location.branch || location.preDepthBranch ? "Yes" : "No")}
@@ -1580,10 +1588,10 @@ export function getBotOrNull(botName: string): Bot | null {
 function getBotImageName(bot: Bot) {
     const imageName = botNameImageMap.get(bot.name);
     if (imageName !== undefined) {
-        return `../game_sprites/${imageName}.png`;
+        return createImagePath(`game_sprites/${imageName}.png`);
     }
 
-    return `../game_sprites/${bot.class}.png`;
+    return createImagePath(`game_sprites/${bot.class}.png`);
 }
 
 // Tries to get an item by name
@@ -1605,17 +1613,17 @@ export function getItemOrNull(itemName: string): Item | null {
 
 // Gets the sprite image name of an item
 export function getItemSpriteImageName(item: Item): string {
-    return `../game_sprites/${item.type}.png`;
+    return createImagePath(`game_sprites/${item.type}.png`);
 }
 
 // Gets the sprite image name of an item
 export function getItemAsciiArtImageName(item: Item): string {
     if (itemsWithNoArt.has(item.name)) {
         // Some items have no gallery art
-        return "../part_art/No Image Data.png";
+        return createImagePath("part_art/No Image Data.png");
     }
 
-    return `../part_art/${item.name.replace(/"/g, "").replace(/\//g, "")}.png`;
+    return createImagePath(`part_art/${item.name.replace(/"/g, "").replace(/\//g, "")}.png`);
 }
 
 // Tries to get an item by its full name

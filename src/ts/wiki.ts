@@ -13,6 +13,7 @@ import {
     boldMatches,
     canShowSpoiler,
     createBotDataContent,
+    createImagePath,
     createItemDataContent,
     createLocationHtml,
     getBot,
@@ -1205,7 +1206,7 @@ jq(function ($) {
             const promises: Promise<any>[] = [];
 
             for (const imageName of parseResult.images.keys()) {
-                promises.push(loadImage(`../wiki_images/${imageName}`));
+                promises.push(loadImage(createImagePath(`wiki_images/${imageName}`)));
             }
 
             if (parseResult.errors.length > 0) {

@@ -293,7 +293,6 @@ export function getSpoilerState(): Spoiler {
         value = "Spoiler";
     }
 
-    console.log(value);
     if (value?.charAt(0) === '"') {
         value = value.slice(1, value.length - 1);
     }

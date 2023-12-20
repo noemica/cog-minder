@@ -2,6 +2,7 @@ import "bootstrap";
 import * as jQuery from "jquery";
 
 import rifData from "../json/rif.json";
+import { createImagePath } from "./utilities/common";
 import { createHeader, registerDisableAutocomplete } from "./utilities/commonJquery";
 
 const jq = jQuery.noConflict();
@@ -141,7 +142,7 @@ jq(function ($) {
 
             // Create image list HTML
             const imagesHtml = hackCategory.Targets.map((target) => {
-                return `<img src="../game_sprites/${target}.png" title="${target}"/>`;
+                return `<img src="${createImagePath(`game_sprites/${target}.png`)}" title="${target}"/>`;
             }).join(" ");
 
             // Create whole row HTML
