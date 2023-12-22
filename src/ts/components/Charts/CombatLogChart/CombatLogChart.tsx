@@ -36,13 +36,17 @@ export default function CombatLogChart({
         // only show the 10 highest values and then lump the
         // rest into an "Other" group unless explicitly expanded
         const topValues = values.splice(0, 10);
-        topValues.push({
-            label: "Other",
-            value: values.reduce((p, v) => p + v.value, 0),
-        });
-        values = topValues;
 
-        otherCategoryAdded = true;
+        if (!valuesArePercentages) {
+            topValues.push({
+                label: "Other",
+                value: values.reduce((p, v) => p + v.value, 0),
+            });
+            
+            otherCategoryAdded = true;
+        }
+        
+        values = topValues;
     }
 
     if (displayOptions.chartType === "Pie" && forceChartType !== "Bar") {

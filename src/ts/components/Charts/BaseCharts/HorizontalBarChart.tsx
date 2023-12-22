@@ -103,7 +103,6 @@ function makeChartOptions(
                         } else {
                             // Add the overall percentage of each bar's tooltip
                             const value = Number(context.formattedValue.replace(",", ""));
-                            console.log(context.formattedValue);
 
                             const sum = context.chart.data.datasets[0].data
                                 .map((d) => Number(d))
