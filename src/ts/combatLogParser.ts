@@ -528,7 +528,7 @@ function splitBotAndPart(line: string): { botName: string; partName: string } {
 
     // Failed to find a known bot name, try the other way around and find a
     // known existing part instead
-    for (let i = split.length; i >= 0; i--) {
+    for (let i = 1; i < split.length; i++) {
         let partName = split.slice(i).join(" ");
         const part = getItemByName(partName);
         if (part !== undefined || partName === "core" || partName === "Core") {
