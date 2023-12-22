@@ -81,6 +81,10 @@ function makeChartOptions(
         },
         color: chartTextColor,
         indexAxis: "y",
+        interaction: {
+            axis: "y",
+            intersect: false,
+        },
         maintainAspectRatio: false,
         plugins: {
             chartCanvasBackgroundColor: {
@@ -94,11 +98,12 @@ function makeChartOptions(
                 callbacks: {
                     label: (context): string => {
                         if (valuesArePercentages) {
-                            const percentage = Number(context.formattedValue).toFixed(1);
+                            const percentage = Number(context.formattedValue.replace(",", "")).toFixed(1);
                             return `${chartTitle}: ${percentage}%`;
                         } else {
                             // Add the overall percentage of each bar's tooltip
-                            const value = Number(context.formattedValue);
+                            const value = Number(context.formattedValue.replace(",", ""));
+                            console.log(context.formattedValue);
 
                             const sum = context.chart.data.datasets[0].data
                                 .map((d) => Number(d))
