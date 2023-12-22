@@ -10,15 +10,26 @@ const alliedBotNameRegex = /^(\w*) .*$/;
 // lines that we ignore
 const baseHitRegex = /^Base Hit%: .*$/;
 
+// Non-match 1: Bot doing the hacking
+// Non-match 2: Hack status
+// Non-match 3: Target bot and end result
+const botHackRegex = /^(?:.*) (?:hacks|fails to hack) (?:.*)$/;
+
 // Match 1: Bot and part
 // Non-match: Type of critical
 const criticalPartRemovedRegex = /^(.*) (?:blasted off|knocked off|severed)$/;
 
+// Non-match: bot that corrupted
+const botCorruptedRegex = /^(?:.*) system corrupted$/;
+
 // Match 1: Bot destroyed
 const botDestroyedRegex = /^(.*) destroyed$/;
 
-// Match 1: Bot destroyed
-const botMeltedRegex = /^(.*) melted$/;
+// Match 1: Bot that melted
+const botMeltedRegex = /^(.*) melted|(.*) instant meltdown$/;
+
+// Non-match: Amount of heat transferred
+const cogmindMeltdownRegex = /^Suffered critical hit: Meltdown \(\+(?:.*)\)$/;
 
 // Match 1: Target, includes Bot and Part
 // Match 2: Regular or overflow damage
@@ -26,27 +37,48 @@ const botMeltedRegex = /^(.*) melted$/;
 // Match 4: Critical type (optional)
 const damageRegex = /^(.*) (overflow dmg|damaged): (\d*)(?: \(Crit: (.*)\))?$/;
 
-// No matches, don't care about target
-const damageInsufficientToPenetrateRegex = /^Damage insufficient to overcome .*$/;
+// Non-match 1: Target
+const damageInsufficientToPenetrateRegex = /^Damage insufficient to overcome (?:.*)$/;
+
+// Non-match 1: Target disabled, includes Bot and Part
+const disabledRegex = /^(?:.*) disabled \(Disruption\)$/;
 
 // Match 1: Target, includes Bot and Part
 const engineDetonateRegex = /^(.*) detonated$/;
 
+// Non-match 1: Gunslinging target
+const gunslingingRegex = /^Gunslinging -> (?:.*)$/;
+
 // Match 1: Turn number
 // Match 2: Indentation
 // Match 3: Remainder of line
-// TODO make sure the non-greedy .*? is okay for perf
 const lineStartRegex = /^(\d*)_( *)(.*?)(?: <x(\d*|\*)>)?$/;
 
-// Match 1: Name of the exploding machine
+// Non-match 1: Name of disabled machine
+// Non-match 2: Way machine was disabled
+const machineDisabledRegex = /^(?:.*) (?:breached|damaged|disabled)$/;
+
+// Non-match: Name of the exploding machine
 const machineExplosionRegex = /^(.*) explodes$/;
 
-// No matches, don't care about penetration target or projectile
-const penetrationRegex = /^.* penetrates .*$/;
+// Non-match 1: Non-Cogmind bot being penetrated by projectile
+// Non-match 2: Cogmind being penetrated by projectile
+const penetrationRegex = /^(?:.* penetrates .*)|(?:Penetrated by .*)$/;
+
+// Non-match 1: Bot and shielding part preventing critical
+const shieldingPreventedCritRegex = /^(?:.*) prevented critical effect$/;
 
 // Match 1: Target, includes Bot and Part
 // Match 2: Critical type (optional)
 const targetDestroyedRegex = /^(.*) destroyed(?: \(Crit: (.*)\))?$/;
+
+// Non-match: Name of trap that short circuited
+// This happens from AOE EM traps
+const trapShortCircuited = /^(?:.*) short circuited$/;
+
+// Non-match 1: Type of trap triggered
+// Non-match 2: Name of bot that triggered trap (optional)
+const trapTriggeredRegex = /^(?:.*) triggered(?: by (?:.*))?$/;
 
 // Match 1: Attacker if not Cogmind (optional)
 // Match 2: Weapon
@@ -56,7 +88,6 @@ const targetDestroyedRegex = /^(.*) destroyed(?: \(Crit: (.*)\))?$/;
 // Match 5: Projectiles hit for multi-projectile weapons (optional)
 // Match 6: Projectiles total for multi-projectile weapons (optional)
 // Match 7: Hit/Miss for single projectile weapons
-// TODO make sure the non-greedy .*? is okay for perf
 const weaponAttackRegex = /^(?:([^:]*): )?(.*?) (sneak attack )?\((?:[^=)]*=)?(\d+)%\) (?:(\d*)\/(\d*) )?(\w*)$/;
 
 // Match 1: The derelict class
@@ -67,7 +98,7 @@ const derelictRegex = /^\w{2}-\w{3}\((\w)\)$/;
 const derelictClasses: Map<string, string> = new Map([
     ["T", "Borebot"],
     ["Y", "Bouncer"],
-    ["l", "Butcher (4)"],
+    ["l", "Butcher (5)"],
     // Can't tell Commanders, Sappers, and Thugs apart, but Thugs are most common
     // ["g", "Commander"],
     // ["g", "Sapper"],
@@ -76,7 +107,7 @@ const derelictClasses: Map<string, string> = new Map([
     ["D", "Dragon"],
     ["i", "Fireman (5)"],
     ["F", "Furnace"],
-    ["h", "Guerilla (5)"],
+    ["h", "Guerrilla (5)"],
     ["H", "Hydra"],
     ["x", "Infiltrator (6)"],
     ["K", "Knight"],
@@ -85,7 +116,7 @@ const derelictClasses: Map<string, string> = new Map([
     ["M", "Mutant (5)"],
     ["r", "Packrat"],
     ["S", "Samaritan"],
-    ["b", "Savage"],
+    ["b", "Savage (5)"],
     ["m", "Surgeon (4)"],
     ["f", "Thief"],
     ["g", "Thug (5)"],
@@ -146,28 +177,6 @@ class ParserState {
         return line;
     }
 
-    // Tries to parse a Cogmind base hit % line, currently do nothing with it
-    private parseBaseHit(line: PartialParsedLine): boolean {
-        const baseHitResult = baseHitRegex.exec(line.remainingText);
-        if (baseHitResult === null) {
-            return false;
-        }
-
-        // Maybe do something with this
-        return true;
-    }
-
-    // Tries to parse a critical-removed from a line, currently do nothing with it
-    private parseCriticalRemovePart(line: PartialParsedLine): boolean {
-        const criticalPartRemovedResult = criticalPartRemovedRegex.exec(line.remainingText);
-        if (criticalPartRemovedResult === null) {
-            return false;
-        }
-
-        // Maybe do something with this
-        return true;
-    }
-
     // Tries to parse a damage entry out of the line
     private parseDamageEntry(line: PartialParsedLine): boolean {
         const damageResult = damageRegex.exec(line.remainingText);
@@ -175,13 +184,17 @@ class ParserState {
             return false;
         }
 
-        const damageEntry = createEmptyDamageLogEntry();
-
         // Found damage but no destroyed part/bot
+        const damagedTarget = damageResult[1];
         const damage = parseIntOrDefault(damageResult[3], 0);
         const overflow = damageResult[2] === "overflow dmg";
-        const damagedTarget = damageResult[1];
         const critical = damageResult[4] ?? undefined;
+        const damageEntry = createEmptyDamageLogEntry();
+
+        if (ignoreTarget(damagedTarget)) {
+            // Ignore this damage entry
+            return true;
+        }
 
         if (isKnownItem(damagedTarget) || damagedTarget.toLowerCase() === "core") {
             // If we're a known part then it means Cogmind was hit
@@ -233,16 +246,6 @@ class ParserState {
         return true;
     }
 
-    // Tries to parse a failed to overcome armor line
-    private parseDamageInsufficientToPenetrateLine(line: PartialParsedLine): boolean {
-        const result = damageInsufficientToPenetrateRegex.exec(line.remainingText);
-        if (result === null) {
-            return false;
-        }
-
-        return true;
-    }
-
     // Tries to parse a destroyed part/bot into a damage entry
     private parseDestroyedTarget(line: PartialParsedLine): boolean {
         const destroyedResult = targetDestroyedRegex.exec(line.remainingText);
@@ -250,11 +253,15 @@ class ParserState {
             return false;
         }
 
-        const damageEntry = createEmptyDamageLogEntry();
-
         // Found target destruction, but no damage number available
         const damagedTarget = destroyedResult[1];
         const critical = destroyedResult[2];
+        const damageEntry = createEmptyDamageLogEntry();
+
+        if (ignoreTarget(damagedTarget)) {
+            // Ignore this damage entry
+            return true;
+        }
 
         let botName: string;
         let partName: string;
@@ -296,6 +303,36 @@ class ParserState {
         return true;
     }
 
+    private ignoredRegexes = [
+        baseHitRegex,
+        botCorruptedRegex,
+        botHackRegex,
+        botMeltedRegex,
+        cogmindMeltdownRegex,
+        criticalPartRemovedRegex,
+        damageInsufficientToPenetrateRegex,
+        disabledRegex,
+        gunslingingRegex,
+        machineDisabledRegex,
+        penetrationRegex,
+        shieldingPreventedCritRegex,
+        trapShortCircuited,
+        trapTriggeredRegex,
+    ];
+    // Tries to parse all currently ignored lines
+    private parseIgnoredLine(line: PartialParsedLine): boolean {
+        for (const regex of this.ignoredRegexes) {
+            const result = regex.exec(line.remainingText);
+
+            if (result !== null) {
+                return true;
+            }
+        }
+
+        // Maybe do something with this
+        return false;
+    }
+
     // Tries to parse a line into a new combat log entry
     private parseLogEntry(line: PartialParsedLine) {
         this.currentEntry = createEmptyLogEntry();
@@ -319,7 +356,7 @@ class ParserState {
             return;
         }
 
-        if (this.parseBaseHit(line) || this.parseCriticalRemovePart(line)) {
+        if (this.parseIgnoredLine(line)) {
             // These line types are currently ignored
             return;
         }
@@ -359,27 +396,15 @@ class ParserState {
                 continue;
             } else if (this.parseEngineDetonated(line)) {
                 continue;
-            } else if (
-                this.parseCriticalRemovePart(line) ||
-                this.parseDamageInsufficientToPenetrateLine(line) ||
-                this.parsePenetrationLine(line)
-            ) {
+            } else if (this.parseMachineExplosion(line)) {
+                continue;
+            } else if (this.parseIgnoredLine(line)) {
                 // These line types are unused
                 continue;
             } else {
                 console.log(`Skipped non-recognized nested text ${line.remainingText}`);
             }
         }
-    }
-
-    // Tries to parse a projectile penetration line
-    private parsePenetrationLine(line: PartialParsedLine): boolean {
-        const penetrationResult = penetrationRegex.exec(line.remainingText);
-        if (penetrationResult === null) {
-            return false;
-        }
-
-        return true;
     }
 
     // Tries to parse a weapon attack and all subsequent indented lines
@@ -465,6 +490,11 @@ function createEmptyLogEntry(): CombatLogEntry {
     };
 }
 
+const ignorableTargets = new Set(["Door", "Earth", "Wall"]);
+function ignoreTarget(target: string) {
+    return ignorableTargets.has(target);
+}
+
 // Parses a combat log string into an array of combat log entries
 export function parseCombatLog(logText: string): CombatLogEntry[] {
     const lines: PartialParsedLine[] = [];
@@ -473,7 +503,10 @@ export function parseCombatLog(logText: string): CombatLogEntry[] {
         const result = lineStartRegex.exec(line);
 
         if (result === null) {
-            console.log(`Failed to parse log line ${line}`);
+            if (line.length > 0 && !line.includes("Cogmind Combat Log")) {
+                console.log(`Failed to parse log line ${line}`);
+            }
+
             continue;
         }
 
@@ -542,6 +575,8 @@ function splitBotAndPart(line: string): { botName: string; partName: string } {
             return { botName: botName, partName: partName };
         }
     }
+
+    console.log(`Failed to split bot and part ${line}`);
 
     return { botName: "Unknown", partName: "Unknown" };
 }
