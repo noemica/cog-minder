@@ -181,6 +181,11 @@ describe("Combat log parser", () => {
         expect(parseCombatLog(td.assembledHitCogmindPartLog)).toEqual(td.assembledHitCogmindPartEntries);
     });
 
+    // Long entry
+    test("An extended 2 tile-long entry", () => {
+        expect(parseCombatLog(td.multiLineLog)).toEqual(td.multiLineEntries);
+    })
+
     // Invalid data
     test("Invalid data", () => {
         // Temporarily disable console logging to avoid nuisance test output

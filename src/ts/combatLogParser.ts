@@ -15,6 +15,9 @@ const baseHitRegex = /^Base Hit%: .*$/;
 // Non-match 3: Target bot and end result
 const botHackRegex = /^(?:.*) (?:hacks|fails to hack) (?:.*)$/;
 
+// Non-match 1: Bot repelling hacking attempt
+const botHackRepelledRegex = /^(?:.*) repels hacking attempt$/;
+
 // Match 1: Bot and part
 // Non-match: Type of critical
 const criticalPartRemovedRegex = /^(.*) (?:blasted off|knocked off|severed)$/;
@@ -111,7 +114,7 @@ const derelictClasses: Map<string, string> = new Map([
     ["H", "Hydra"],
     ["x", "Infiltrator (6)"],
     ["K", "Knight"],
-    ["B", "Marauder"],
+    ["B", "Marauder (6)"],
     ["d", "Martyr (5)"],
     ["M", "Mutant (5)"],
     ["r", "Packrat"],
@@ -307,6 +310,7 @@ class ParserState {
         baseHitRegex,
         botCorruptedRegex,
         botHackRegex,
+        botHackRepelledRegex,
         botMeltedRegex,
         cogmindMeltdownRegex,
         criticalPartRemovedRegex,
@@ -490,8 +494,13 @@ function createEmptyLogEntry(): CombatLogEntry {
     };
 }
 
-const ignorableTargets = new Set(["Door", "Earth", "Wall"]);
+const ignorableTargets = new Set(["Door", "Earth", "Reinforced Barrier", "Wall"]);
 function ignoreTarget(target: string) {
+    if (target.endsWith("Trap")) {
+        // Don't care about damaging traps
+        return true;
+    }
+
     return ignorableTargets.has(target);
 }
 
@@ -503,6 +512,12 @@ export function parseCombatLog(logText: string): CombatLogEntry[] {
         const result = lineStartRegex.exec(line);
 
         if (result === null) {
+            if (lines.length > 0 && line.length > 0) {
+                // If a log line is long enough, it can wrap into the next one
+                lines[lines.length - 1].remainingText += " " + line;
+                continue;
+            }
+
             if (line.length > 0 && !line.includes("Cogmind Combat Log")) {
                 console.log(`Failed to parse log line ${line}`);
             }

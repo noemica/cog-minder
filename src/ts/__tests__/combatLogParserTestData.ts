@@ -1225,6 +1225,34 @@ export const assembledHitCogmindPartEntries: CombatLogEntry[] = [
     },
 ];
 
+export const multiLineLog = `00001_ Base Hit%: 70=69
+00001_  Sigix Broadsword (69%) Hit
+00001_   Enhanced Grunt Lyr. Medium Armor Plating damaged: 155 (Crit:
+  Sever)
+`;
+
+export const multiLineEntries: CombatLogEntry[] = [
+    {
+        damageEntries: [
+            {
+                damagedEntity: "Enhanced Grunt",
+                damagedPart: "Lyr. Medium Armor Plating",
+                criticalHitType: "Sever",
+                damageDealt: 155,
+                damageOverflow: false,
+                targetDestroyed: false,
+            },
+        ],
+        projectilesHit: 1,
+        projectilesTotal: 1,
+        sourceEntity: "Cogmind",
+        sourceWeapon: "Sigix Broadsword",
+        sneakAttack: false,
+        turn: 1,
+        weaponAccuracy: 69,
+    },
+];
+
 export const invalidDataLog = `some test invalid data
 0123456789
 none of this should crash
