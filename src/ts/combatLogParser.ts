@@ -142,6 +142,8 @@ const specialBotRegexes: { name: string; regex: RegExp }[] = [
     // Assemblers use uppercase AS so this does work fine
     { name: "Assembled (4)", regex: /^as-\d+$/ },
     { name: "Assembler", regex: /^AS-\d+$/ },
+    { name: "Q-Series", regex: /^Q\d{3}-\w$/ },
+    { name: "Z-Experimental (8)", regex: /^Z-Ex$/ },
 ];
 
 type PartialParsedLine = {
