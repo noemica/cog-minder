@@ -35,6 +35,6 @@ export const barColors = chartStrongColors;
 export const barColorsWithOther = [...chartStrongColors, chartOtherStrongColor];
 
 export const chartTextColor = "#c8c8c8";
-export const chartDarkBackgroundColor = "#3a3a3a";
+export const chartDarkBackgroundColor = "#474747";
 export const chartCogmindBackgroundColor = "#080808";
 export const chartGridColor = "#646464";

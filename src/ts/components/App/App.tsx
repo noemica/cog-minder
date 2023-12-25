@@ -1,12 +1,13 @@
 import { ReactNode, StrictMode } from "react";
 
 import { PageType } from "../../types/commonTypes";
+import useThemeUpdater from "../Effects/useThemeUpdater";
 import PageHeader from "../PageHeader/PageHeader";
 import AboutPage from "../Pages/AboutPage";
-import { CombatPage } from "../Pages/CombatPage";
+import CombatPage from "../Pages/CombatPage";
+import PartsPage from "../Pages/PartsPage/PartsPage";
 
 import "../../../styles/index.less";
-import useThemeUpdater from "../Effects/useThemeUpdater";
 
 export type AppProps = {
     pageType: PageType;
@@ -25,6 +26,10 @@ export default function App({ pageType }: AppProps) {
 
             case "Combat":
                 page = <CombatPage />;
+                break;
+
+            case "Parts":
+                page = <PartsPage />;
                 break;
 
             default:

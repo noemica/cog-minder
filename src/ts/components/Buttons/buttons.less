@@ -3,47 +3,45 @@
 .button {
     color: @font-color;
     background-image: @button-background-gradient;
-    border: @default-border-width solid @border-color;
-    border-radius: @default-border-radius;
+    border: @border-width solid @border-color;
+    border-radius: @border-radius;
 
     cursor: pointer;
 
-    padding: @button-default-padding;
+    padding: @button-padding;
 }
 
 .button:hover,
 .button:focus {
     background-image: @button-hover-focus-background-gradient;
     color: @font-button-interaction-color;
+    
+    outline: none;
 }
 
-.exclusive-buttons {
-    display: flex;
+.button:hover {
+    border-color: @element-active-border-color;
+}
 
-    > * {
-        margin-left: -@default-border-width;
-        border-radius: 0;
+.exclusive-button {
+    border-radius: 0;
+}
 
-        flex: 1 1 auto;
-    }
+.exclusive-button:first-child {
+    border-top-left-radius: @border-radius;
+    border-bottom-left-radius: @border-radius;
+}
 
-    > :first-child {
-        border-top-left-radius: @default-border-radius;
-        border-bottom-left-radius: @default-border-radius;
+.exclusive-button:last-child {
+    border-top-right-radius: @border-radius;
+    border-bottom-right-radius: @border-radius;
 
-        margin-left: 0;
-    }
-
-    > :last-child {
-        border-top-right-radius: @default-border-radius;
-        border-bottom-right-radius: @default-border-radius;
-
-        margin-right: 0;
-    }
+    margin-right: 0;
 }
 
 .exclusive-button-active {
     background-image: @button-active-background-gradient;
+    border-color: @button-active-border-color;
     color: @font-button-interaction-color;
 }
 

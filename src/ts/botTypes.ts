@@ -139,5 +139,4 @@ export type JsonBot = {
     Resistances: BotResistances;
     "Fabrication Count"?: string;
     "Fabrication Time"?: string;
-    "Fabrication Matter"?: string;
 };

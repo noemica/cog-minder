@@ -2,9 +2,8 @@
 // Background colors
 @dark-tooltip-background-color: #000000cc;
 @dark-page-background-color: #2f2f2f;
-@dark-element-background-color: #3a3a3a; // Keep in sync with chartDarkBackgroundColor
+@dark-element-background-color: #474747; // Keep in sync with chartDarkBackgroundColor
 @dark-label-background-color: @dark-element-background-color;
-@dark-small-contrast-background-color: #4a4a4a;
 @dark-dropdown-menu-background-color: #656565;
 @dark-dropdown-menu-active-option-background-color: @dark-button-interaction-background-color;
 @dark-dropzone-active-background-color: @dark-button-active-background-color;
@@ -17,7 +16,6 @@
 @cogmind-page-background-color: #080808;
 @cogmind-element-background-color: @cogmind-page-background-color; // Keep in sync with chartCogmindBackgroundColor
 @cogmind-label-background-color: #162416;
-@cogmind-small-contrast-background-color: @cogmind-label-background-color;
 @cogmind-dropdown-menu-background-color: @cogmind-page-background-color;
 @cogmind-dropdown-menu-active-option-background-color: @cogmind-button-hover-focus-background-color;
 @cogmind-dropzone-active-background-color: @cogmind-button-active-background-color;
@@ -30,7 +28,6 @@
     --page-background-color: @dark-page-background-color;
     --element-background-color: @dark-element-background-color;
     --label-background-color: @dark-label-background-color;
-    --small-contrast-background-color: @dark-small-contrast-background-color;
     --dropdown-menu-background-color: @dark-dropdown-menu-background-color;
     --dropdown-menu-active-option-background-color: @dark-dropdown-menu-active-option-background-color;
     --dropzone-active-background-color: @dark-dropzone-active-background-color;
@@ -40,25 +37,32 @@
     --page-background-color: @cogmind-page-background-color;
     --element-background-color: @cogmind-element-background-color;
     --label-background-color: @cogmind-label-background-color;
-    --small-contrast-background-color: @cogmind-small-contrast-background-color;
     --dropdown-menu-background-color: @cogmind-dropdown-menu-background-color;
     --dropdown-menu-active-option-background-color: @cogmind-dropdown-menu-active-option-background-color;
     --dropzone-active-background-color: @cogmind-dropzone-active-background-color;
 }
 
 // Borders
+@dark-button-active-border-color: @dark-border-color;
 @dark-border-color: #171717;
 @dark-contrast-border-color: #e8e8e8;
+@dark-element-active-border-color: @dark-contrast-border-color;
 
+@cogmind-button-active-border-color: #00cc00;
 @cogmind-border-color: #006200;
 @cogmind-contrast-border-color: #006200;
+@cogmind-element-active-border-color: #00cc00;
 
 :root {
+    --button-active-border-color: @dark-button-active-border-color;
     --border-color: @dark-border-color;
+    --element-active-border-color: @dark-element-active-border-color;
     --contrast-border-color: @dark-contrast-border-color;
 }
 [data-theme="Cogmind"] {
+    --button-active-border-color: @cogmind-button-active-border-color;
     --border-color: @cogmind-border-color;
+    --element-active-border-color: @cogmind-element-active-border-color;
     --contrast-border-color: @cogmind-contrast-border-color;
 }
 
@@ -131,18 +135,18 @@
 
 // Keep in sync with sizes.less
 // Border radii
-@dark-default-border-radius: 8px;
+@dark-border-radius: 8px;
 @dark-dropzone-border-radius: 20px;
 
-@cogmind-default-border-radius: 0px;
+@cogmind-border-radius: 0px;
 @cogmind-dropzone-border-radius: 0px;
 
 :root {
-    --default-border-radius: @dark-default-border-radius;
+    --border-radius: @dark-border-radius;
     --dropzone-border-radius: @dark-dropzone-border-radius;
 }
 [data-theme="Cogmind"] {
-    --default-border-radius: @cogmind-default-border-radius;
+    --border-radius: @cogmind-border-radius;
     --dropzone-border-radius: @cogmind-dropzone-border-radius;
 }
 
@@ -165,17 +169,21 @@
 
 // Keep in sync with sizes.less
 // Font families
+@dark-button-grid-font-size: 1.125rem;
 @dark-default-font-size: 1rem;
 @dark-paragraph-font-size: @dark-default-font-size;
 
+@cogmind-button-grid-font-size: 1.0rem;
 @cogmind-default-font-size: 0.8rem;
 @cogmind-paragraph-font-size: @dark-paragraph-font-size;
 
 :root {
+    --button-grid-font-size: @dark-button-grid-font-size;
     --default-font-size: @dark-default-font-size;
     --paragraph-font-size: @dark-paragraph-font-size;
 }
 [data-theme="Cogmind"] {
+    --button-grid-font-size: @cogmind-button-grid-font-size;
     --default-font-size: @cogmind-default-font-size;
     --paragraph-font-size: @cogmind-paragraph-font-size;
 }

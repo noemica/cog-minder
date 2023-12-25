@@ -7,9 +7,18 @@ type ButtonPopoverProps = {
     buttonLabel: string;
     buttonTooltip?: string;
     children: ReactNode;
+    className?: string;
+    floatingArrowClassName?: string;
 };
 
-export default function ButtonPopover({ buttonLabel, buttonTooltip, children }: ButtonPopoverProps) {
+export default function ButtonPopover({
+    buttonLabel,
+    buttonTooltip,
+    children,
+    className,
+    floatingArrowClassName,
+}: ButtonPopoverProps) {
+    className = (className || "") + " button-popover";
     return (
         <Popover>
             <PopoverTrigger asChild={true}>
@@ -17,8 +26,8 @@ export default function ButtonPopover({ buttonLabel, buttonTooltip, children }: 
                     <Button tooltip={buttonTooltip}>{buttonLabel}</Button>
                 </div>
             </PopoverTrigger>
-            <PopoverContent>
-                <div className="button-popover">{children}</div>
+            <PopoverContent floatingArrowClassName={floatingArrowClassName}>
+                <div className={className}>{children}</div>
             </PopoverContent>
         </Popover>
     );

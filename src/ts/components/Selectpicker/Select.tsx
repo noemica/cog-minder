@@ -7,7 +7,7 @@ import "./Select.less";
 
 export type SelectOptionType<T = any> = {
     value: T;
-    label: string | ReactNode;
+    label?: string | ReactNode;
     tooltip?: string;
 };
 
@@ -28,6 +28,36 @@ const Option = (props: OptionProps<SelectOptionType>) => {
 export default function SelectWrapper<
     IsMulti extends boolean = false,
     Group extends GroupBase<SelectOptionType> = GroupBase<SelectOptionType>,
->(props: Props<SelectOptionType, IsMulti, Group>) {
-    return <Select {...props} components={{ Option }} classNamePrefix={"select"} />;
+>({ defaultValue, options, value, ...props }: Props<SelectOptionType, IsMulti, Group>) {
+    options = (options as SelectOptionType[])?.map((o) => {
+        let label = o.label || o.value;
+        if (typeof label === "string") {
+            label = <div>{label}</div>;
+        }
+
+        return { ...o, label: label };
+    });
+
+    if (value !== undefined) {
+        value = (options as SelectOptionType[]).find((o) => o.value === (value as SelectOptionType).value);
+    }
+    if (defaultValue !== undefined) {
+        defaultValue = (options as SelectOptionType[]).find(
+            (o) => o.value === (defaultValue as SelectOptionType).value,
+        );
+    }
+
+    return (
+        <Select
+            {...props}
+            options={options}
+            formatGroupLabel={(data: GroupBase<SelectOptionType>) => {
+                return <span>{data.label}</span>
+            }}
+            defaultValue={defaultValue}
+            value={value}
+            components={{ Option }}
+            classNamePrefix={"select"}
+        />
+    );
 }

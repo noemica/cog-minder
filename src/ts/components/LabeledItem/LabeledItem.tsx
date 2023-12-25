@@ -1,29 +1,66 @@
 import { GroupBase, Props } from "react-select";
 
 import ExclusiveButtonGroup, { ExclusiveButtonsProps } from "../Buttons/ExclusiveButtonGroup";
+import Input, { CustomInputProps } from "../Input/Input";
 import SelectWrapper, { SelectOptionType } from "../Selectpicker/Select";
 import TextTooltip from "../Tooltip/TextTooltip";
 
 import "./LabeledItem.less";
+import { ReactNode } from "react";
 
 export type LabeledItemProps = {
     label: string;
     tooltip?: string;
 };
 
-export function LabeledExclusiveButtonGroup<T>({
+export type LabeledExclusiveButtonGroupProps<T extends string> = LabeledItemProps &
+    ExclusiveButtonsProps<T> & {
+        className?: string;
+        flexGrowButtonCount?: boolean;
+    };
+
+function itemLabel(label: string, tooltip?: string) {
+    return (
+        <>
+            {tooltip === undefined ? (
+                <span className="label">{label}</span>
+            ) : (
+                <TextTooltip tooltipText={tooltip}>{<span className="label">{label}</span>}</TextTooltip>
+            )}
+        </>
+    );
+}
+
+export function Label({ label, tooltip }: LabeledItemProps) {
+    return itemLabel(label, tooltip);
+}
+
+export function LabeledExclusiveButtonGroup<T extends string>({
+    className,
     flexGrowButtonCount,
     label,
     tooltip,
     ...props
-}: LabeledItemProps & { flexGrowButtonCount?: boolean } & ExclusiveButtonsProps<T>) {
+}: LabeledExclusiveButtonGroupProps<T>) {
+    className = (className || "") + " labeled-item";
     return (
         <div
-            style={{ flexGrow: flexGrowButtonCount ? props.buttons.length : undefined }}
-            className="labeled-item labeled-exclusive-button-group"
+            style={{
+                flexGrow: flexGrowButtonCount ? props.buttons.length : undefined,
+            }}
+            className={className}
         >
-            {tooltip === undefined ? <span>{label}</span> : <TextTooltip tooltipText={tooltip}>{label}</TextTooltip>}
+            {itemLabel(label, tooltip)}
             <ExclusiveButtonGroup {...props} />
+        </div>
+    );
+}
+
+export function LabeledInput({ label, onChange, placeholder, tooltip, value }: LabeledItemProps & CustomInputProps) {
+    return (
+        <div className="labeled-item">
+            {itemLabel(label, tooltip)}
+            <Input onChange={onChange} placeholder={placeholder} value={value || ""} />
         </div>
     );
 }
@@ -31,11 +68,22 @@ export function LabeledExclusiveButtonGroup<T>({
 export function LabeledSelect<
     IsMulti extends boolean = false,
     Group extends GroupBase<SelectOptionType> = GroupBase<SelectOptionType>,
->({ label, tooltip, ...props }: LabeledItemProps & Props<SelectOptionType, IsMulti, Group>) {
+>({ className, label, tooltip, ...props }: LabeledItemProps & Props<SelectOptionType, IsMulti, Group>) {
+    className = (className || "") + " labeled-item labeled-select";
+
+    return (
+        <div className={className}>
+            {itemLabel(label, tooltip)}
+            <SelectWrapper {...props} />
+        </div>
+    );
+}
+
+export function LabeledSelectGroup({ children, label, tooltip }: LabeledItemProps & { children: ReactNode }) {
     return (
         <div className="labeled-item labeled-select">
-            {tooltip === undefined ? <span>{label}</span> : <TextTooltip tooltipText={tooltip}>{label}</TextTooltip>}
-            <SelectWrapper {...props} />
+            {itemLabel(label, tooltip)}
+            {children}
         </div>
     );
 }

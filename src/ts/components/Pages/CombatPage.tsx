@@ -23,7 +23,6 @@ import PartsDestroyedByCogmindChart from "../Charts/PartsDestroyedByCogmindChart
 import SneakAttacksChart from "../Charts/SneakAttacksChart";
 import CombatLogDropzone from "../Dropzone/CombatLogDropzone";
 import { useChartDisplayOptions } from "../Effects/useLocalStorageValue";
-import useThemeUpdater from "../Effects/useThemeUpdater";
 import { LabeledExclusiveButtonGroup } from "../LabeledItem/LabeledItem";
 
 import "./Pages.less";
@@ -98,7 +97,7 @@ function Charts(combatLogData: CombatLogEntry[], displayOptions: ChartDisplayOpt
     );
 }
 
-export function CombatPage() {
+export default function CombatPage() {
     const isDev = process.env.NODE_ENV === "development";
     const initialLoaded = isDev;
     const initialData = isDev ? fakeData : [];
@@ -131,7 +130,7 @@ export function CombatPage() {
                             tooltip="Sets the display type of all charts."
                             flexGrowButtonCount={true}
                             buttons={chartTypeButtons}
-                            initialSelected={chartDisplayOptions.chartType}
+                            selected={chartDisplayOptions.chartType}
                             onValueChanged={(value) => {
                                 const newDisplayOptions = { ...chartDisplayOptions, chartType: value };
                                 setChartDisplayOptions(newDisplayOptions);
@@ -142,7 +141,7 @@ export function CombatPage() {
                             tooltip="Sets the category type for all charts. This determines how the combat log is split into pieces."
                             flexGrowButtonCount={true}
                             buttons={categoryTypeButtons}
-                            initialSelected={chartDisplayOptions.category}
+                            selected={chartDisplayOptions.category}
                             onValueChanged={(value) => {
                                 const newDisplayOptions = { ...chartDisplayOptions, category: value };
                                 setChartDisplayOptions(newDisplayOptions);

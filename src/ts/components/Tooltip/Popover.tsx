@@ -49,10 +49,15 @@ export function usePopover({
         placement,
         open,
         onOpenChange: setOpen,
-        whileElementsMounted: autoUpdate,
+        whileElementsMounted: (reference, floating, update) =>
+            autoUpdate(reference, floating, update, {
+                ancestorScroll: false,
+                layoutShift: false,
+            }),
         middleware: [
             offset(5),
             flip({
+                fallbackStrategy: "initialPlacement",
                 crossAxis: placement.includes("-"),
                 fallbackAxisSideDirection: "end",
                 padding: 5,
@@ -161,14 +166,16 @@ export const PopoverTrigger = React.forwardRef<HTMLElement, React.HTMLProps<HTML
 
 export const PopoverContent = React.forwardRef<
     HTMLElement,
-    React.HTMLProps<HTMLElement> & { style?: React.CSSProperties | undefined }
->(function PopoverContent({ style, ...props }, propRef) {
+    React.HTMLProps<HTMLElement> & { style?: React.CSSProperties | undefined; floatingArrowClassName?: string }
+>(function PopoverContent({ style, floatingArrowClassName, ...props }, propRef) {
     const { context: floatingContext, ...context } = usePopoverContext();
     const ref = useMergeRefs([context.refs.setFloating, propRef]);
 
     if (!floatingContext.open) {
         return null;
     }
+
+    const floatingArrowClasses = (floatingArrowClassName || "") + " popover-arrow";
 
     return (
         <FloatingPortal>
@@ -182,7 +189,7 @@ export const PopoverContent = React.forwardRef<
                 >
                     {props.children}
                     <FloatingArrow
-                        className="tooltip-arrow"
+                        className={floatingArrowClasses}
                         tipRadius={2}
                         height={8}
                         ref={context.arrowRef}

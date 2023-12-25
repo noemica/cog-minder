@@ -1,0 +1,21 @@
+@import ".../../../../../styles/common.less";
+
+.input {
+    background-color: @element-background-color;
+    color: @font-color;
+    
+    border: @border-width solid @border-color;
+    border-top-right-radius: @border-radius;
+    border-bottom-right-radius: @border-radius;
+
+    padding: @input-padding;
+}
+
+.input:focus {
+    outline: none;
+    border-color: @element-active-border-color;
+}
+
+.input:hover {
+    border-color: @element-active-border-color;
+}

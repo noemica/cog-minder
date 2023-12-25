@@ -154,7 +154,6 @@ function SettingsButton() {
                 <LabeledSelect
                     label="Spoilers"
                     tooltip="What spoiler content to show. By default, no spoilers are shown."
-                    className="spoilers-selectpicker"
                     isSearchable={false}
                     options={spoilerOptions}
                     value={spoilerSelected}

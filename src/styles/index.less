@@ -1,6 +1,12 @@
 @import "./common.less";
 @import "./theme.less";
 
+html {
+    font-size: clamp(11px, 3vw, 16px);
+    // font-size: 1rem;
+    // font-size: clamp(0.688rem, 0.583rem + 0.556vw, 1rem);
+}
+
 body {
     background-color: var(--page-background-color);
     color: @font-color;

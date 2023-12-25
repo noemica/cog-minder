@@ -51,7 +51,6 @@ categories = [
     'Traits',
     'Fabrication Count',
     'Fabrication Time',
-    # 'Fabrication Matter',
     'Armament',
     'Components',
     'Analysis',

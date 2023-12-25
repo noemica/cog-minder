@@ -1,0 +1,54 @@
+@import "../Pages.less";
+
+.slot-type-select {
+    width: 21rem;
+    min-width: 21rem;
+}
+
+.category-type-select {
+    width: 19rem;
+    min-width: 19rem;
+}
+
+.sort-select {
+    width: 13rem;
+    min-width: 13rem;
+}
+
+.sort-order-select {
+    width: 10rem;
+    min-width: 10rem;
+}
+
+.part-button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+
+    button {
+        width: 100%;
+        height: 100%;
+        min-height: 3rem;
+        border-radius: 0;
+
+        padding: 0 0.25rem;
+
+        font-size: @button-grid-font-size;
+    }
+}
+
+.part-popover {
+    background-color: black;
+    border-width: 2px;
+    border-color: #008c00;
+    border-radius: 0;
+    line-height: 1.5;
+
+    * {
+        font-family: "smallcaps-mono";
+        font-size: 0.8rem;
+    }
+}
+
+.part-popover-arrow {
+    fill: #008c00;
+}

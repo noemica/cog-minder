@@ -26,7 +26,7 @@ export let botData: { [key: string]: Bot } = {};
 export let itemData: { [key: string]: Item } = {};
 
 // Use for testing with new items/bots
-const verifyImages = false;
+const verifyImages = false && isDev();
 
 // A special bot name to image name map for special/unique bots
 const botNameImageMap = new Map<string, string>([
@@ -478,13 +478,6 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
         return html;
     }
 
-    function getFabricationMatterString(stats: FabricationStats) {
-        const matter = stats.matter;
-        const siphonMatter = Math.floor(parseInt(matter) * 0.75).toString();
-
-        return `${matter} (With siphon: ${siphonMatter})`;
-    }
-
     function getRatingValue(bot: Bot) {
         const ratingString = bot.rating;
         const ratingArray = ratingString
@@ -699,7 +692,6 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
 
         html += `
         ${textLine("Time", bot.fabrication.time)}
-        ${bot.fabrication?.matter !== undefined ? textLine("Matter", getFabricationMatterString(bot.fabrication)) : ""}
         ${textLine("Components", "None")}
         `;
     }
@@ -781,13 +773,6 @@ export function createItemDataContent(baseItem: Item): string {
             .map((s) => s.trim())
             .map((s) => parseInt(s));
         return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
-    }
-
-    function getFabricationMatterString(stats: FabricationStats) {
-        const matter = stats.matter;
-        const siphonMatter = Math.floor(parseInt(matter) * 0.75).toString();
-
-        return `${matter} (With siphon: ${siphonMatter})`;
     }
 
     function getPenetrationTextHtml(item: WeaponItem): string {
@@ -1370,11 +1355,6 @@ export function createItemDataContent(baseItem: Item): string {
 
         html += `
         ${textLine("Time", baseItem.fabrication.time)}
-        ${
-            baseItem.fabrication?.matter !== undefined
-                ? textLine("Matter", getFabricationMatterString(baseItem.fabrication))
-                : ""
-        }
         ${textLine("Components", "None")}
         `;
     }
@@ -1692,10 +1672,7 @@ export function hasActiveSpecialProperty(
 }
 
 // Initialize all item and bot data from the given items/bots, bots are optional
-export async function initData(
-    items: { [key: string]: JsonItem },
-    bots: { [key: string]: JsonBot } | undefined,
-): Promise<any> {
+export async function initData(items: JsonItem[], bots: { [key: string]: JsonBot } | undefined): Promise<any> {
     botData = {};
     itemData = {};
 
@@ -1704,9 +1681,9 @@ export async function initData(
 
     // Create items
     Object.keys(items).forEach((key, index) => {
-        const item = (items as { [key: string]: JsonItem })[key];
+        const item = items[key];
         const itemName = item.Name;
-        let newItem: Item;
+        let newItem: Item | undefined;
 
         let category: ItemRatingCategory = ItemRatingCategory[item.Category ?? ""];
         if (category === undefined) {
@@ -1722,7 +1699,6 @@ export async function initData(
             item["Fabrication Number"] === undefined
                 ? undefined
                 : {
-                      matter: item["Fabrication Matter"] as string,
                       number: item["Fabrication Number"] as string,
                       time: item["Fabrication Time"] as string,
                   };
@@ -2014,12 +1990,14 @@ export async function initData(
             }
         }
 
-        if (verifyImages) {
-            itemPromises.push(loadImage(getItemSpriteImageName(newItem)));
-            itemPromises.push(loadImage(getItemAsciiArtImageName(newItem)));
-        }
+        if (newItem !== undefined) {
+            itemData[itemName] = newItem;
 
-        itemData[itemName] = newItem;
+            if (verifyImages) {
+                itemPromises.push(loadImage(getItemSpriteImageName(newItem)));
+                itemPromises.push(loadImage(getItemAsciiArtImageName(newItem)));
+            }
+        }
     });
 
     if (bots !== undefined) {
@@ -2119,7 +2097,6 @@ export async function initData(
                 bot["Fabrication Count"] === undefined
                     ? undefined
                     : {
-                          matter: bot["Fabrication Matter"] as string,
                           number: bot["Fabrication Count"] as string,
                           time: bot["Fabrication Time"] as string,
                       };
@@ -2219,6 +2196,10 @@ export async function initData(
         await Promise.all(botPromises);
         console.log("Verified bot images");
     }
+}
+
+export function isDev() {
+    return process.env.NODE_ENV === "development";
 }
 
 // Determines if the given item type is melee

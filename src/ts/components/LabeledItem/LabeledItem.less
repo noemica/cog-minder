@@ -1,23 +1,21 @@
 @import "../../../styles/common.less";
 
-.labeled-item {
+.label {
     display: flex;
+    align-items: center;
 
-    > :first-child {
-        display: flex;
-        align-items: center;
+    border: @border-width solid @border-color;
+    border-radius: @border-radius;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 
-        border: @default-border-width solid @border-color;
-        border-radius: @default-border-radius;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        border-collapse: collapse;
-        border-right: 0;
+    padding: @button-padding;
 
-        padding: @button-default-padding;
+    background-color: @label-background-color;
+}
 
-        background-color: @label-background-color;
-    }
+.labeled-item {
+    flex-wrap: wrap;
 
     > :not(:first-child) {
         flex: 1 1 auto;
@@ -31,10 +29,15 @@
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
+
+    > :not(:last-child) .select__control.select__control {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
 }
 
 .labeled-exclusive-button-group {
-    .exclusive-buttons > :first-child {
+    :first-child {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
