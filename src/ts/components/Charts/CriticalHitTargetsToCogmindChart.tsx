@@ -17,7 +17,8 @@ const callbacks: CombatLogChartValuesCallbacks = {
     processCombatLogEntry: (entry) => entry.sourceEntity !== "Cogmind",
 
     // Process critical hit effects
-    processDamageEntry: (damageEntry) => damageEntry.criticalHitType !== undefined,
+    processDamageEntry: (damageEntry) =>
+        damageEntry.criticalHitType !== undefined && damageEntry.damagedEntity === "Cogmind",
 
     // Value just increments by 1
     getValue: (_entry, _damageEntry) => 1,
