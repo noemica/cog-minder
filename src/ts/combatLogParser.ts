@@ -368,7 +368,10 @@ class ParserState {
         }
 
         // TODO: what other things can trigger this
-        console.log(`Skipped non-recognized text ${line.remainingText}`);
+        if (line.remainingText.length > 0) {
+            console.log(`Skipped non-recognized text ${line.remainingText}`);
+        }
+        
         return;
     }
 
@@ -404,6 +407,8 @@ class ParserState {
                 continue;
             } else if (this.parseMachineExplosion(line)) {
                 continue;
+            } else if (this.parseWeaponAttack(line)) {
+
             } else if (this.parseIgnoredLine(line)) {
                 // These line types are unused
                 continue;
