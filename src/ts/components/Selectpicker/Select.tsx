@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Select, { GroupBase, OptionProps, Props, components } from "react-select";
 
-import TextTooltip from "../Tooltip/TextTooltip";
+import TextTooltip from "../Popover/TextTooltip";
 
 import "./Select.less";
 

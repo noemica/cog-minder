@@ -7,8 +7,12 @@ import { initData } from "./utilities/common";
 
 import "../styles/index.less";
 
-await initData(items, undefined);
+async function render() {
+    await initData(items, undefined);
+    
+    const container = document.getElementById("root")!;
+    const root = createRoot(container);
+    root.render(<App pageType="Parts" />);
+}
 
-const container = document.getElementById("root")!;
-const root = createRoot(container);
-root.render(<App pageType="Parts" />);
+render();

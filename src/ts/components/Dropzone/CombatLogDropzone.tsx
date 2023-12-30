@@ -4,7 +4,7 @@ import { useDropzone } from "react-dropzone";
 import { parseCombatLog } from "../../combatLogParser";
 import { CombatLogEntry } from "../../types/combatLogTypes";
 import Button from "../Buttons/Button";
-import TextTooltip from "../Tooltip/TextTooltip";
+import TextTooltip from "../Popover/TextTooltip";
 
 import "./Dropzone.less";
 

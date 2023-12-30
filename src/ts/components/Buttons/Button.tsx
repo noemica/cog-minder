@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import TextTooltip from "../Tooltip/TextTooltip";
+import TextTooltip from "../Popover/TextTooltip";
 
 import "./buttons.less";
 

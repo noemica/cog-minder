@@ -1,6 +1,7 @@
 import Button from "../../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
 import {
+    Label,
     LabeledExclusiveButtonGroup,
     LabeledInput,
     LabeledSelect,
@@ -17,6 +18,7 @@ import {
     SecondarySortOptions,
     SlotSearchType,
     SortDirection,
+    TerminalSearchLevel,
     UtilitySlotType,
     WeaponSlotType,
 } from "./PartsPage";
@@ -43,7 +45,7 @@ const modeButtons: ExclusiveButtonDefinition<PartsPageMode>[] = [
 
 const slotButtons: ExclusiveButtonDefinition<SlotSearchType>[] = [
     { value: "Any" },
-    { value: "Other" },
+    { value: "N/A", label: "Other" },
     { value: "Power" },
     { value: "Propulsion" },
     { value: "Utility" },
@@ -126,6 +128,12 @@ const categoryOptions: SelectOptionType<PartCategory>[] = [
         tooltip:
             "Parts that are obtainable from Imprinter-aligned Zionites. Some are obtainable in Zion Deep Caves, and some are only obtainable by Imprinting.",
     },
+];
+
+const terminalLevelButtons: ExclusiveButtonDefinition<TerminalSearchLevel>[] = [
+    { value: "Level 1" },
+    { value: "Level 2" },
+    { value: "Level 3" },
 ];
 
 const primarySortOptions: SelectOptionType<PrimarySortOptions>[] = [
@@ -325,6 +333,26 @@ export default function PartsPageInput({
                     }}
                 />
                 <SlotSpecificFilter pageState={pageState} setPageState={setPageState} />
+            </div>
+            <div className="page-input-group">
+                <Label label="Schematics" tooltip="Search for hackable schematics." />
+                <LabeledInput
+                    label="Depth"
+                    tooltip="Current map depth. Can enter as 7 or -7."
+                    placeholder="Any"
+                    onChange={(val) => {
+                        setPageState({ ...pageState, schematicsDepthSearch: val });
+                    }}
+                />
+                <LabeledExclusiveButtonGroup
+                    label="Terminal Level"
+                    tooltip="The level of the terminal to hack from. Higher level terminals can hack higher rating schematics."
+                    buttons={terminalLevelButtons}
+                    selected={pageState.terminalLevelSearch}
+                    onValueChanged={(val) => {
+                        setPageState({ ...pageState, terminalLevelSearch: val });
+                    }}
+                />
             </div>
             <div className="page-input-group">
                 <LabeledSelectGroup label="Sort by" tooltip="How to sort parts matching all filters.">

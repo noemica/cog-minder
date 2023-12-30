@@ -187,7 +187,11 @@ function signedStringOrUndefined(val: number | undefined): string | undefined {
 function splitEffectDescription(val: string) {
     const lines = val.split("\n");
 
-    const nodes = lines.map((l) => <span className="popover-description">&nbsp;{l}</span>);
+    const nodes = lines.map((l, i) => (
+        <span key={i} className="popover-description">
+            &nbsp;{l}
+        </span>
+    ));
     return <>{nodes}</>;
 }
 

@@ -3,7 +3,7 @@ import { GroupBase, Props } from "react-select";
 import ExclusiveButtonGroup, { ExclusiveButtonsProps } from "../Buttons/ExclusiveButtonGroup";
 import Input, { CustomInputProps } from "../Input/Input";
 import SelectWrapper, { SelectOptionType } from "../Selectpicker/Select";
-import TextTooltip from "../Tooltip/TextTooltip";
+import TextTooltip from "../Popover/TextTooltip";
 
 import "./LabeledItem.less";
 import { ReactNode } from "react";

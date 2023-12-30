@@ -1,20 +1,19 @@
 import { itemData } from "../../../utilities/common";
-import PartDetails from "../../GameDetails/PartDetails";
-import ButtonPopover from "../../Tooltip/ButtonPopover";
+import ItemPopover from "../../Popover/ItemPopover";
 import { PartsPageState } from "./PartsPage";
 
 import "./PartsPage.less";
 
-export default function PartsSimpleDisplay({ pageState }: { pageState: PartsPageState }) {
-    const itemNames = Object.keys(itemData);
+export default function PartsSimpleDisplay({
+    pageState,
+    itemNames,
+}: {
+    pageState: PartsPageState;
+    itemNames: string[];
+}) {
     const itemButtons = itemNames.map((itemName) => {
         const item = itemData[itemName];
-
-        return (
-            <ButtonPopover floatingArrowClassName="part-popover-arrow" className="part-popover" key={itemName} buttonLabel={itemName}>
-                <PartDetails item={item} />
-            </ButtonPopover>
-        );
+        return <ItemPopover item={item} key={item.name} />;
     });
 
     return <div className="part-button-grid">{itemButtons}</div>;

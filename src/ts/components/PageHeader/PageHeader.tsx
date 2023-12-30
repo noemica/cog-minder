@@ -3,8 +3,8 @@ import { ButtonLink } from "../Buttons/Button";
 import { useEditableSpoilers, useEditableTheme } from "../Effects/useLocalStorageValue";
 import { LabeledSelect } from "../LabeledItem/LabeledItem";
 import { SelectOptionType } from "../Selectpicker/Select";
-import ButtonPopover from "../Tooltip/ButtonPopover";
-import TextTooltip from "../Tooltip/TextTooltip";
+import ButtonPopover from "../Popover/ButtonPopover";
+import TextTooltip from "../Popover/TextTooltip";
 
 import "./PageHeader.less";
 
