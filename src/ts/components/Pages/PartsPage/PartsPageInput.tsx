@@ -364,7 +364,13 @@ export default function PartsPageInput({
                             primarySortOptions.find((o) => o.value === pageState.primarySort) || primarySortOptions[0]
                         }
                         onChange={(val) => {
-                            setPageState({ ...pageState, primarySort: val!.value });
+                            if (pageState.secondarySort === undefined || pageState.secondarySort === "None") {
+                                // If no secondary sort set yet then default to alphabetical 
+                                // when the primary sort order is changed 
+                                setPageState({ ...pageState, primarySort: val!.value, secondarySort: "Alphabetical" });
+                            } else {
+                                setPageState({ ...pageState, primarySort: val!.value });
+                            }
                         }}
                     />
                     <SelectWrapper

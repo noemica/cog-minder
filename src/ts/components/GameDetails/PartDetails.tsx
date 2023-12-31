@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 
 import {
-    FabricationStats,
     HeatTransfer,
     Item,
     ItemRatingCategory,
@@ -188,7 +187,7 @@ function splitEffectDescription(val: string) {
     const lines = val.split("\n");
 
     const nodes = lines.map((l, i) => (
-        <span key={i} className="popover-description">
+        <span key={i} className="details-description">
             &nbsp;{l}
         </span>
     ));
@@ -925,7 +924,7 @@ export default function PartDetails({ item }: { item: Item }) {
     }
 
     return (
-        <>
+        <div className="part-details">
             <DetailsPartArtLine part={item} />
             <DetailsEmptyLine />
             <DetailsPartTitleLine part={item} />
@@ -965,6 +964,6 @@ export default function PartDetails({ item }: { item: Item }) {
             {typeSpecificDetails}
             {effectDescriptionDetails}
             {fabricationDetails}
-        </>
+        </div>
     );
 }

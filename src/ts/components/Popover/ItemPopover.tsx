@@ -26,7 +26,7 @@ export default function ItemPopover({ item }: { item: Item }) {
                 >
                     <PopoverTrigger asChild={true}>{button}</PopoverTrigger>
                     <PopoverContent floatingArrowClassName="part-popover-arrow">
-                        <div className="button-popover part-popover">
+                        <div className="item-popover">
                             <PartDetails item={item} />
                         </div>
                     </PopoverContent>
@@ -38,7 +38,7 @@ export default function ItemPopover({ item }: { item: Item }) {
     }
 
     return (
-        <TrackVisibility partialVisibility={true}>
+        <TrackVisibility partialVisibility={true} throttleInterval={0}>
             {({ isVisible }) => <ItemButton isVisible={isVisible} />}
         </TrackVisibility>
     );

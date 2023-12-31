@@ -22,33 +22,51 @@
 
 .part-button-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
 
     button {
         width: 100%;
         height: 100%;
-        min-height: 3rem;
+        min-height: @button-grid-button-height;
         border-radius: 0;
 
-        padding: 0 0.25rem;
+        padding: 0 @button-small-padding;
 
         font-size: @button-grid-font-size;
     }
 }
 
-.part-popover {
-    background-color: black;
-    border-width: 2px;
-    border-color: #008c00;
-    border-radius: 0;
-    line-height: 1.5;
-
-    * {
-        font-family: "smallcaps-mono";
-        font-size: 0.8rem;
-    }
+.part-popover-arrow {
+    fill: @popover-border-color;
 }
 
-.part-popover-arrow {
-    fill: #008c00;
+.comparison-container {
+    border: none;
+    background-color: unset;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.part-comparison-part-column {
+    display: flex;
+    flex-direction: column;
+    gap: @element-column-gap;
+}
+
+.part-comparison-details-column {
+    display: flex;
+    flex-direction: column;
+    gap: @element-column-gap;
+    line-height: 1.5;
+    
+    text-align: center;
+    width: 9.25rem;
+}
+
+.part-comparison-image-container {
+    margin-top: calc(2px + 0.5rem);
 }

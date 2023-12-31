@@ -15,6 +15,7 @@ const Option = (props: OptionProps<SelectOptionType>) => {
     if (props.data.tooltip === undefined) {
         return <components.Option {...props} />;
     } else {
+        // Add a tooltip if specified
         return (
             <components.Option {...props}>
                 <TextTooltip tooltipText={props.data.tooltip}>{props.data.label}</TextTooltip>

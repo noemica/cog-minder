@@ -3,6 +3,7 @@ import { ReactNode, useState } from "react";
 import { ItemSlot } from "../../../types/itemTypes";
 import { gallerySort, getItem, itemData, leetSpeakMatchTransform } from "../../../utilities/common";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
+import PartsComparisonDisplay from "./PartsComparisonDisplay";
 import PartsPageInput from "./PartsPageInput";
 import PartsSimpleDisplay from "./PartsSimpleDisplay";
 
@@ -130,21 +131,20 @@ function filterItemNames(pageState: PartsPageState) {
         }
 
         // Name filter
-        const lowerName = item.name.toLowerCase();
         if (pageState.nameSearch) {
+            const lowerName = item.name.toLowerCase();
+            const nameSearch = pageState.nameSearch.toLowerCase();
+
             // Only add a leetspeak convert if > 1 letter to reduce chance of
             // false positives on the translation
             // 2 min works well as it will catch somebody typing in the first half
             // of a bot name, like BR for 8R-AWN
-            if (pageState.nameSearch.length > 1) {
-                if (
-                    !lowerName.includes(pageState.nameSearch) &&
-                    !leetSpeakMatchTransform(lowerName).includes(pageState.nameSearch)
-                ) {
+            if (nameSearch.length > 1) {
+                if (!lowerName.includes(nameSearch) && !leetSpeakMatchTransform(lowerName).includes(nameSearch)) {
                     return false;
                 }
-            } else if (pageState.nameSearch.length > 0) {
-                if (!lowerName.includes(pageState.nameSearch)) {
+            } else if (nameSearch.length > 0) {
+                if (!lowerName.includes(nameSearch)) {
                     return false;
                 }
             }
@@ -152,7 +152,11 @@ function filterItemNames(pageState: PartsPageState) {
 
         // Effect/Description filter
         if (pageState.effectSearch && pageState.effectSearch.length > 0) {
-            if (!item.description?.includes(pageState.effectSearch) && !item.effect?.includes(pageState.effectSearch)) {
+            const effectSearch = pageState.effectSearch.toLowerCase();
+            if (
+                !item.description?.toLowerCase().includes(effectSearch) &&
+                !item.effect?.toLowerCase().includes(effectSearch)
+            ) {
                 return false;
             }
         }
@@ -486,10 +490,10 @@ function sortItemNames(itemNames: string[], pageState: PartsPageState) {
     }
 
     // Do secondary sort if selected
-    if (pageState.secondarySort === undefined) {
+    if (pageState.secondarySort === undefined || pageState.secondarySort === "None") {
         return itemNames;
     }
-    const secondaryObject = sortKeyMap[sortKeyMap[pageState.secondarySort]];
+    const secondaryObject = sortKeyMap[pageState.secondarySort];
 
     const secondaryKeys = "key" in secondaryObject ? [secondaryObject.key] : secondaryObject.keys;
     const secondarySort = secondaryObject.sort;
@@ -518,8 +522,8 @@ function sortItemNames(itemNames: string[], pageState: PartsPageState) {
             const itemA = getItem(a);
             const itemB = getItem(b);
 
-            const aKey = secondaryKeys.find((key: string) => key in itemA);
-            const bKey = secondaryKeys.find((key: string) => key in itemB);
+            const aKey = secondaryKeys.find((key: string) => key in itemA)!;
+            const bKey = secondaryKeys.find((key: string) => key in itemB)!;
 
             return secondarySort(itemA[aKey], itemB[bKey]);
         });
@@ -551,6 +555,10 @@ export default function PartsPage() {
     switch (pageState.mode) {
         case "Simple":
             modeNode = <PartsSimpleDisplay itemNames={itemNames} pageState={pageState} />;
+            break;
+
+        case "Comparison":
+            modeNode = <PartsComparisonDisplay itemNames={itemNames} pageState={pageState} />;
             break;
     }
 

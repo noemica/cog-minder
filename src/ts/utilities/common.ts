@@ -284,19 +284,19 @@ function rangeLineUnit(
 
     // Return full HTML
     return `
-    <pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueHtml} ${barsHtml}</pre>
+    <pre class="details-line"> ${category}${" ".repeat(numSpaces)}${valueHtml} ${barsHtml}</pre>
     `;
 }
 
 // Create a summary line
 function summaryLine(text: string) {
-    return `<pre class="popover-summary">${text}</pre>`;
+    return `<pre class="details-summary">${text}</pre>`;
 }
 
 // Creates a summary line with an optional projectile multiplier
 function summaryProjectileLine(item: WeaponItem, category: string) {
     if (item.projectileCount > 1) {
-        return `<pre class="popover-summary">${category}${" ".repeat(13)}<span class="projectile-num"> x${
+        return `<pre class="details-summary">${category}${" ".repeat(13)}<span class="projectile-num"> x${
             item.projectileCount
         } </span></pre>`;
     } else {
@@ -307,10 +307,10 @@ function summaryProjectileLine(item: WeaponItem, category: string) {
 // Create a text line with an optional value and default style
 function textLine(category: string, text: string | undefined = undefined) {
     if (text === undefined) {
-        return `<pre class="popover-line"> ${category}</pre>`;
+        return `<pre class="details-line"> ${category}</pre>`;
     } else {
         const numSpaces = 23 - 1 - category.length;
-        return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${text}</pre>`;
+        return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${text}</pre>`;
     }
 }
 
@@ -323,10 +323,10 @@ function textLineLink(
 ) {
     extraAttributes = extraAttributes === undefined ? "" : extraAttributes;
     if (extraText === undefined) {
-        return `<pre class="popover-line"> <a href="${link}" ${extraAttributes}>${line}</a></pre>`;
+        return `<pre class="details-line"> <a href="${link}" ${extraAttributes}>${line}</a></pre>`;
     } else {
         const numSpaces = 23 - 1 - line.length;
-        return `<pre class="popover-line"> <a href="${link}" ${extraAttributes}>${line}</a>${" ".repeat(
+        return `<pre class="details-line"> <a href="${link}" ${extraAttributes}>${line}</a>${" ".repeat(
             numSpaces,
         )}${extraText}</pre>`;
     }
@@ -335,10 +335,10 @@ function textLineLink(
 // Create a text line with a spoiler link
 function textLineSpoilerLink(line: string, link: string, extraText: string | undefined = undefined) {
     if (extraText === undefined) {
-        return `<pre class="popover-line"> <a href="${link}" class="spoiler-text spoiler-text-margin">${line}</a></pre>`;
+        return `<pre class="details-line"> <a href="${link}" class="spoiler-text spoiler-text-margin">${line}</a></pre>`;
     } else {
         const numSpaces = 23 - 1 - line.length;
-        return `<pre class="popover-line"> <a href="${link}" class="spoiler-text spoiler-text-margin">${line}</a>${" ".repeat(
+        return `<pre class="details-line"> <a href="${link}" class="spoiler-text spoiler-text-margin">${line}</a>${" ".repeat(
             numSpaces,
         )}${extraText}</pre>`;
     }
@@ -347,7 +347,7 @@ function textLineSpoilerLink(line: string, link: string, extraText: string | und
 // Create a text line with no value and dim style
 function textLineDim(category: string, text: string) {
     const numSpaces = 23 - 1 - category.length;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}<span class="dim-text">${text}</span></pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}<span class="dim-text">${text}</span></pre>`;
 }
 
 // Create a text line with no value  and a default
@@ -357,7 +357,7 @@ function textLineWithDefault(category: string, textString: string | undefined, d
     }
 
     const numSpaces = 23 - 1 - category.length;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${textString}</pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${textString}</pre>`;
 }
 
 // Create a text line with a value and a given HTML string for the text
@@ -371,13 +371,13 @@ function textValueHtmlLine(category: string, valueString: string, valueClass: st
         valueHtml = valueString;
     }
 
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueHtml} ${textHtml}</pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${valueHtml} ${textHtml}</pre>`;
 }
 
 // Create a value line with no text
 function valueLine(category: string, valueString: string) {
     const numSpaces = 23 - 1 - category.length - 1 - valueString.length;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
 }
 
 // Create a value line with units, no text, and a default
@@ -397,7 +397,7 @@ function valueLineUnitsWithDefault(
     }
 
     const numSpaces = 23 - 1 - category.length - 1 - valueLength;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
 }
 
 // Create a value line with units, text, and a default
@@ -418,7 +418,7 @@ function valueLineUnitsTextWithDefault(
     }
 
     const numSpaces = 23 - 1 - category.length - 1 - valueLength;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString} ${text}</pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${valueString} ${text}</pre>`;
 }
 
 // Create a value line with no text and a default
@@ -432,14 +432,14 @@ function valueLineWithDefault(category: string, valueString: string | undefined,
     }
 
     const numSpaces = 23 - 1 - category.length - 1 - valueLength;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
 }
 
-const emptyLine = `<pre class="popover-line">
+const emptyLine = `<pre class="details-line">
     
 </pre>`;
 
-const emptyHalfLine = `<pre class="popover-half-line">
+const emptyHalfLine = `<pre class="details-half-line">
     
 </pre>`;
 
@@ -516,7 +516,7 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
 
         return (
             "" +
-            `<pre class="popover-part" data-toggle="popover"${popoversToLinks ? ' data-trigger="hover"' : ""}>` +
+            `<pre class="details-part" data-toggle="popover"${popoversToLinks ? ' data-trigger="hover"' : ""}>` +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">[</span>' +
             `${itemString}` +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">]</span>' +
@@ -530,9 +530,9 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
         itemString = escapeHtml(unescapeHtml(itemString).padEnd(43));
         return (
             "" +
-            '<pre class="popover-line">' +
+            '<pre class="details-line">' +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">[</span>' +
-            `<span class="popover-option">${String.fromCharCode(97 + i)}) </span>` +
+            `<span class="details-option">${String.fromCharCode(97 + i)}) </span>` +
             `<span>${itemString}</span>` +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">]</span>' +
             "</pre>"
@@ -541,7 +541,7 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
 
     // Create overview
     let html = `
-        <pre class="popover-title">${escapeHtml(bot.name)} [<img src="${getBotImageName(bot)}"/>]</pre>
+        <pre class="details-title">${escapeHtml(bot.name)} [<img src="${getBotImageName(bot)}"/>]</pre>
         ${emptyLine}
         ${summaryLine("Overview")}
         ${textLine("Class", bot.class)}
@@ -674,7 +674,7 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
         `;
 
         traits.forEach((trait) => {
-            html += `<span class="popover-description">&nbsp;${trait}</span>\n`;
+            html += `<span class="details-description">&nbsp;${trait}</span>\n`;
         });
     }
 
@@ -702,7 +702,7 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
         html += `
         ${emptyLine}
         ${summaryLine("Description")}
-        <span class="popover-description">&nbsp;${description}</span>
+        <span class="details-description">&nbsp;${description}</span>
         `;
     }
 
@@ -730,10 +730,10 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
         ${locations
             .map((location) => {
                 if (location.Description !== undefined) {
-                    return `<span class="popover-location">&nbsp;${location.Location}</span>
-                <span class="popover-description">&nbsp;&nbsp;${escapeHtml(location.Description)}</span>`;
+                    return `<span class="details-location">&nbsp;${location.Location}</span>
+                <span class="details-description">&nbsp;&nbsp;${escapeHtml(location.Description)}</span>`;
                 } else {
-                    return `<span class="popover-location">&nbsp;${location.Location}</span>`;
+                    return `<span class="details-location">&nbsp;${location.Location}</span>`;
                 }
             })
             .join(emptyHalfLine)}
@@ -876,7 +876,7 @@ export function createItemDataContent(baseItem: Item): string {
     <div class="part-art-image-container">
         <img src="${escapeHtml(getItemAsciiArtImageName(baseItem))}"/>
     </div>
-    <pre class="popover-title .popover-part-image-title mt-2">${escapeHtml(
+    <pre class="details-title .details-part-image-title mt-2">${escapeHtml(
         baseItem.name,
     )} [<img src="${getItemSpriteImageName(baseItem)}"/>]</pre>
     ${emptyLine}
@@ -1154,7 +1154,7 @@ export function createItemDataContent(baseItem: Item): string {
                             50,
                             ColorScheme.Green,
                         )}
-                        ${valueLineWithDefault("Salvage", item.explosionSalvage, "0")}
+                        ${valueLineWithDefault("Salvage", item.explosionSalvage?.toString(), "0")}
                         `;
                     break;
 
@@ -1274,7 +1274,7 @@ export function createItemDataContent(baseItem: Item): string {
                             50,
                             ColorScheme.Green,
                         )}
-                        ${valueLineWithDefault("Salvage", item.explosionSalvage, "0")}
+                        ${valueLineWithDefault("Salvage", item.explosionSalvage?.toString(), "0")}
                         `;
                     }
                     break;
@@ -1329,7 +1329,7 @@ export function createItemDataContent(baseItem: Item): string {
         `;
 
         if (baseItem.effect !== undefined) {
-            html += `<span class="popover-description">&nbsp;${escapeHtml(baseItem.effect)}</span>`;
+            html += `<span class="details-description">&nbsp;${escapeHtml(baseItem.effect)}</span>`;
 
             if (baseItem.description !== undefined) {
                 html += `${emptyLine}`;
@@ -1337,7 +1337,7 @@ export function createItemDataContent(baseItem: Item): string {
         }
 
         if (baseItem.description !== undefined) {
-            html += `<span class="popover-description">&nbsp;${escapeHtml(baseItem.description)}</span>`;
+            html += `<span class="details-description">&nbsp;${escapeHtml(baseItem.description)}</span>`;
         }
     }
 
@@ -1964,11 +1964,11 @@ export async function initData(items: JsonItem[], bots: { [key: string]: JsonBot
                             : item["Explosion Damage"],
                     explosionDisruption: parseIntOrUndefined(item["Explosion Disruption"]),
                     explosionRadius: parseIntOrUndefined(item["Explosion Radius"]),
-                    explosionSalvage: item["Explosion Salvage"],
+                    explosionSalvage: parseIntOrUndefined(item["Explosion Salvage"]),
                     explosionSpectrum: item["Explosion Spectrum"],
                     minChunks: minChunks,
                     maxChunks: maxChunks,
-                    falloff: item.Falloff,
+                    falloff: parseIntOrUndefined(item.Falloff),
                     heatTransfer: item["Heat Transfer"],
                     life: item.Life,
                     overloadStability:

@@ -534,10 +534,10 @@ jq(function ($) {
         // Do Overview comparison
         let html = `
             <div class="part-art-image-container"></div>
-            <pre class="comparison-neutral popover-part-image-title mt-2">
+            <pre class="comparison-neutral details-part-image-title mt-2">
     
 </pre>
-            <pre class="popover-summary">Comparison</pre>
+            <pre class="details-summary">Comparison</pre>
             ${emptyLine}
             ${emptyLine}
             ${emptyLine}

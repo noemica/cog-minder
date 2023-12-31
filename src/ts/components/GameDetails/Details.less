@@ -1,53 +1,56 @@
-.popover-line,
-.popover-half-line,
-.popover-part,
-.popover-description,
-.popover-option,
-.popover-location,
-.popover-summary {
-    margin: 0;
-    color: #00b200;
+@import "../../../styles/common.less";
+
+.details-font {
+    font-family: "smallcaps-mono";
+    font-size: 0.8rem;
 }
 
-.popover-part a {
+.details-line,
+.details-half-line,
+.details-part,
+.details-description,
+.details-option,
+.details-location,
+.details-summary {
+    margin: 0;
+    color: @details-font-color;
+}
+
+.details-part a {
     text-decoration: none;
 }
 
-.popover-half-line {
-    font-size: 0.4rem;
+.details-half-line {
+    font-size: @popover-half-font-size;
 }
 
-.popover-summary,
-.popover-option {
+.details-summary,
+.details-option {
+    .details-font();
+    
     color: #bfbfbf;
 }
 
-.popover-location {
+.details-location {
     color: #005700;
 }
 
-.popover-description {
+.details-description {
     display: block;
     max-width: 28rem;
 }
 
-.popover .arrow::before,
-.popover .arrow::after {
-    border-right-color: #008800;
-    border-left-color: #008800;
-}
-
-.popover-title {
+.details-title {
     font-family: smallcaps-mono;
     text-align: center;
-    color: #00b200;
-    font-size: 0.8rem;
-    margin-bottom: 0px;
-    margin-top: 0px;
+    color: @details-font-color;
+    font-size: @popover-font-size;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
-.popover-part-image-title {
-    height: 24px;
+.details-part-image-title {
+    height: 1.5rem;
 
     > img {
         height: 1.5rem;
@@ -58,6 +61,7 @@
 
 .part-art-image-container {
     text-align: center;
+    height: 11.25rem;
 
     > img {
         width: 27rem;
@@ -103,4 +107,17 @@
     color: black;
     background-color: #00b200;
     border: 2px solid #00b200;
+}
+
+.part-details {
+    background-color: black;
+    border: 2px solid @popover-border-color;
+    border-radius: 0;
+    line-height: 1.5;
+
+    padding: 0.5rem;
+
+    * {
+        .details-font();
+    }
 }

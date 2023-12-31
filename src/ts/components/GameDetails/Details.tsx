@@ -47,7 +47,7 @@ const colorSchemes: Record<ColorScheme, Record<ColorSchemeColors, string>> = {
 };
 
 export function DetailsEmptyLine() {
-    return <pre className="popover-line"> </pre>;
+    return <pre className="details-line"> </pre>;
 }
 
 export function DetailsPartArtLine({ part }: { part: Item }) {
@@ -60,7 +60,7 @@ export function DetailsPartArtLine({ part }: { part: Item }) {
 
 export function DetailsPartTitleLine({ part }: { part: Item }) {
     return (
-        <pre className="popover-title popover-part-image-title">
+        <pre className="details-title details-part-image-title">
             {part.name}[<img src={getItemSpriteImageName(part)} />]
         </pre>
     );
@@ -83,7 +83,7 @@ export function DetailsTextLine({ category, content, defaultContent }: DetailsTe
     }
 
     return (
-        <pre className="popover-line">
+        <pre className="details-line">
             {" "}
             {category}
             {" ".repeat(numSpaces)}
@@ -128,7 +128,7 @@ export function DetailsTextValueLine({
     }
 
     return (
-        <pre className="popover-line">
+        <pre className="details-line">
             {" "}
             {category}
             {" ".repeat(numSpaces)}
@@ -206,7 +206,7 @@ export function DetailsRangeLine({
 
     // Return full HTML
     return (
-        <pre className="popover-line">
+        <pre className="details-line">
             <span> {category}</span>
             {" ".repeat(numSpaces)}
             {valueNode} {barsNode}
@@ -215,13 +215,13 @@ export function DetailsRangeLine({
 }
 
 export function DetailsSummaryLine({ text }: { text: string }) {
-    return <pre className="popover-summary">{text}</pre>;
+    return <pre className="details-summary">{text}</pre>;
 }
 
 export function DetailsProjectileSummaryLine({ category, item }: { category: string; item: WeaponItem }) {
     if (item.projectileCount > 1) {
         return (
-            <pre className="popover-summary">
+            <pre className="details-summary">
                 {category}
                 {" ".repeat(13)}
                 <span className="projectile-num"> x{item.projectileCount} </span>
@@ -260,7 +260,7 @@ export default function DetailsValueLine({
 
     const numSpaces = 23 - 1 - category.length - 1 - valueString.length;
     return (
-        <pre className="popover-line">
+        <pre className="details-line">
             {" "}
             {category}
             {" ".repeat(numSpaces)}

@@ -326,7 +326,7 @@ export type WeaponItem = BaseItem & {
     explosionDamage?: string;
     explosionDamageMin?: number;
     explosionDamageMax?: number;
-    falloff?: string;
+    falloff?: number;
     minChunks?: number;
     maxChunks?: number;
     explosionType?: DamageType;
@@ -335,7 +335,7 @@ export type WeaponItem = BaseItem & {
     waypoints?: string;
     explosionSpectrum?: Spectrum;
     explosionDisruption?: number;
-    explosionSalvage?: string;
+    explosionSalvage?: number;
     recoil?: number;
     life?: string;
 };
