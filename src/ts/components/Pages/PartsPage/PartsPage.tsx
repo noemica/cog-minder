@@ -8,6 +8,7 @@ import PartsPageInput from "./PartsPageInput";
 import PartsSimpleDisplay from "./PartsSimpleDisplay";
 
 import "./PartsPage.less";
+import PartsGalleryDisplay from "./PartsGalleryDisplay";
 
 export type PartsPageMode = "Simple" | "Comparison" | "Spreadsheet" | "Gallery";
 
@@ -559,6 +560,10 @@ export default function PartsPage() {
 
         case "Comparison":
             modeNode = <PartsComparisonDisplay itemNames={itemNames} pageState={pageState} />;
+            break;
+
+        case "Gallery":
+            modeNode = <PartsGalleryDisplay itemNames={itemNames} pageState={pageState} />;
             break;
     }
 

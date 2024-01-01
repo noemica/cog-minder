@@ -36,6 +36,31 @@
     }
 }
 
+.part-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(@details-part-image-width, 1fr));
+
+    button {
+        background-image: @gallery-part-button-background-gradient;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        padding: @button-small-padding;
+    }
+
+    span {
+        display: block;
+        font-size: @gallery-grid-font-size;
+        font-family: "smallcaps-mono";
+    }
+
+    img {
+        width: @details-part-image-width;
+        height: @details-part-image-height;
+    }
+}
+
+
 .part-popover-arrow {
     fill: @popover-border-color;
 }

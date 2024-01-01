@@ -107,7 +107,9 @@
     @dark-button-active-background-color 0%,
     darken(@dark-button-active-background-color, @dark-button-gradient-darken-percent, relative) 100%
 );
+@dark-gallery-part-button-background-gradient-gradient: @dark-button-background-gradient;
 
+@cogmind-gallery-part-button-background-color: black;
 @cogmind-button-background-gradient: linear-gradient(
     @cogmind-element-background-color,
     @cogmind-element-background-color
@@ -121,16 +123,22 @@
     @cogmind-button-active-background-color,
     @cogmind-button-active-background-color
 );
+@cogmind-gallery-part-button-background-gradient: linear-gradient(
+    @cogmind-gallery-part-button-background-color,
+    @cogmind-gallery-part-button-background-color
+);
 
 :root {
     --button-background-gradient: @dark-button-background-gradient;
     --button-hover-focus-background-gradient: @dark-button-hover-focus-background-gradient;
     --button-active-background-gradient: @dark-button-active-background-gradient;
+    --gallery-part-button-background-gradient: @dark-gallery-part-button-background-gradient-gradient;
 }
 [data-theme="Cogmind"] {
     --button-background-gradient: @cogmind-button-background-gradient;
     --button-hover-focus-background-gradient: @cogmind-button-hover-focus-background-gradient;
     --button-active-background-gradient: @cogmind-button-active-background-gradient;
+    --gallery-part-button-background-gradient: @cogmind-gallery-part-button-background-gradient;
 }
 
 // Keep in sync with sizes.less
@@ -173,7 +181,7 @@
 @dark-default-font-size: 1rem;
 @dark-paragraph-font-size: @dark-default-font-size;
 
-@cogmind-button-grid-font-size: 1.0rem;
+@cogmind-button-grid-font-size: 1rem;
 @cogmind-default-font-size: 0.8rem;
 @cogmind-paragraph-font-size: @dark-paragraph-font-size;
 

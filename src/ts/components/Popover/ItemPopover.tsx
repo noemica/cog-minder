@@ -1,45 +1,52 @@
-import { useState } from "react";
-import TrackVisibility from "react-on-screen";
+import { ReactNode } from "react";
 
 import { Item } from "../../types/itemTypes";
+import { getItemAsciiArtImageName } from "../../utilities/common";
 import Button from "../Buttons/Button";
+import { useIsVisible } from "../Effects/useIsVisible";
 import PartDetails from "../GameDetails/PartDetails";
 import { Popover, PopoverContent, PopoverTrigger } from "./Popover";
 
-export default function ItemPopover({ item }: { item: Item }) {
-    const [isOpen, setIsOpen] = useState(false);
-
-    function ItemButton({ isVisible }: { isVisible: boolean }) {
-        const button = (
-            <div>
-                <Button>{item.name}</Button>
-            </div>
+function ItemPopover({ button, isVisible, item }: { button: ReactNode; isVisible: boolean; item: Item }) {
+    if (isVisible) {
+        return (
+            <Popover>
+                <PopoverTrigger asChild={true}>{button}</PopoverTrigger>
+                <PopoverContent floatingArrowClassName="part-popover-arrow">
+                    <div className="item-popover">
+                        <PartDetails item={item} />
+                    </div>
+                </PopoverContent>
+            </Popover>
         );
-
-        if (isVisible || isOpen) {
-            return (
-                <Popover
-                    initialOpen={isOpen}
-                    onOpenChange={(open) => {
-                        setIsOpen(open);
-                    }}
-                >
-                    <PopoverTrigger asChild={true}>{button}</PopoverTrigger>
-                    <PopoverContent floatingArrowClassName="part-popover-arrow">
-                        <div className="item-popover">
-                            <PartDetails item={item} />
-                        </div>
-                    </PopoverContent>
-                </Popover>
-            );
-        } else {
-            return button;
-        }
+    } else {
+        return button;
     }
+}
 
-    return (
-        <TrackVisibility partialVisibility={true} throttleInterval={0}>
-            {({ isVisible }) => <ItemButton isVisible={isVisible} />}
-        </TrackVisibility>
+export function GalleryItemPopoverButton({ item }: { item: Item }) {
+    const [isVisible, ref] = useIsVisible("500px");
+
+    const button = (
+        <div ref={ref}>
+            <Button>
+                <span>{item.name}</span>
+                <img src={isVisible ? getItemAsciiArtImageName(item) : undefined} />
+            </Button>
+        </div>
     );
+
+    return <ItemPopover button={button} isVisible={isVisible} item={item} />;
+}
+
+export default function ItemPopoverButton({ item }: { item: Item }) {
+    const [isVisible, ref] = useIsVisible("50px");
+
+    const button = (
+        <div ref={ref}>
+            <Button>{item.name}</Button>
+        </div>
+    );
+
+    return <ItemPopover button={button} isVisible={isVisible} item={item} />;
 }

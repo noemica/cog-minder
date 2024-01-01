@@ -1,10 +1,10 @@
 import { itemData } from "../../../utilities/common";
-import ItemPopoverButton from "../../Popover/ItemPopover";
+import { GalleryItemPopoverButton } from "../../Popover/ItemPopover";
 import { PartsPageState } from "./PartsPage";
 
 import "./PartsPage.less";
 
-export default function PartsSimpleDisplay({
+export default function PartsGalleryDisplay({
     pageState,
     itemNames,
 }: {
@@ -13,13 +13,8 @@ export default function PartsSimpleDisplay({
 }) {
     const itemButtons = itemNames.map((itemName) => {
         const item = itemData[itemName];
-        return (
-            <ItemPopoverButton
-                item={item}
-                key={item.name}
-            />
-        );
+        return <GalleryItemPopoverButton item={item} key={item.name} />;
     });
 
-    return <div className="part-button-grid">{itemButtons}</div>;
+    return <div className="part-gallery-grid">{itemButtons}</div>;
 }
