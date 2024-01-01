@@ -22,7 +22,7 @@
 
 .part-button-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(@part-button-max-width, 1fr));
 
     button {
         width: 100%;
@@ -48,7 +48,7 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    gap: 8px;
+    gap: @comparison-container-gap;
 }
 
 .part-comparison-part-column {
@@ -61,12 +61,12 @@
     display: flex;
     flex-direction: column;
     gap: @element-column-gap;
-    line-height: 1.5;
-    
+    line-height: @comparison-line-height;
+
     text-align: center;
-    width: 9.25rem;
+    width: @comparison-column-width;
 }
 
 .part-comparison-image-container {
-    margin-top: calc(2px + 0.5rem);
+    margin-top: calc(@comparison-border-width + @comparison-container-gap);
 }

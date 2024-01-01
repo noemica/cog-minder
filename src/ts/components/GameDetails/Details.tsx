@@ -21,28 +21,28 @@ export type ColorScheme = "LowGood" | "HighGood" | "Green" | "Red";
 type ColorSchemeColors = "Low" | "MidLow" | "MidHigh" | "High";
 const colorSchemes: Record<ColorScheme, Record<ColorSchemeColors, string>> = {
     LowGood: {
-        Low: "range-green",
-        MidLow: "range-yellow",
-        MidHigh: "range-orange",
-        High: "range-red",
+        Low: "details-range-green",
+        MidLow: "details-range-yellow",
+        MidHigh: "details-range-orange",
+        High: "details-range-red",
     },
     HighGood: {
-        Low: "range-red",
-        MidLow: "range-orange",
-        MidHigh: "range-yellow",
-        High: "range-green",
+        Low: "details-range-red",
+        MidLow: "details-range-orange",
+        MidHigh: "details-range-yellow",
+        High: "details-range-green",
     },
     Green: {
-        Low: "range-green",
-        MidLow: "range-green",
-        MidHigh: "range-green",
-        High: "range-green",
+        Low: "details-range-green",
+        MidLow: "details-range-green",
+        MidHigh: "details-range-green",
+        High: "details-range-green",
     },
     Red: {
-        Low: "range-red",
-        MidLow: "range-red",
-        MidHigh: "range-red",
-        High: "range-red",
+        Low: "details-range-red",
+        MidLow: "details-range-red",
+        MidHigh: "details-range-red",
+        High: "details-range-red",
     },
 };
 
@@ -76,7 +76,7 @@ export function DetailsTextLine({ category, content, defaultContent }: DetailsTe
 
     if (content === undefined) {
         if (defaultContent) {
-            content = <span className="dim-text">{defaultContent}</span>;
+            content = <span className="details-dim-text">{defaultContent}</span>;
         } else {
             content = "";
         }
@@ -111,7 +111,7 @@ export function DetailsTextValueLine({
 }: DetailsTextValueLineProps) {
     if (value === undefined) {
         value = defaultValueString || "";
-        valueClass = "dim-text";
+        valueClass = "details-dim-text";
     }
     
     if (unitString !== undefined) {
@@ -151,7 +151,7 @@ export function DetailsRangeLine({
     if (valueString === undefined || value === undefined) {
         valueString = defaultValueString;
         value = 0;
-        valueNode = <span className="dim-text">{defaultValueString + unitString}</span>;
+        valueNode = <span className="details-dim-text">{defaultValueString + unitString}</span>;
     } else {
         valueNode = <>{valueString + unitString}</>;
     }
@@ -197,7 +197,7 @@ export function DetailsRangeLine({
         barsNode = (
             <>
                 <span className={colorClass}>{"▮".repeat(fullBars)}</span>
-                <span className="range-dim">{"▯".repeat(emptyBars)}</span>
+                <span className="details-range-dim">{"▯".repeat(emptyBars)}</span>
             </>
         );
     } else {
@@ -251,7 +251,7 @@ export default function DetailsValueLine({
             valueString = "";
         } else {
             valueString = defaultValue + unitString;
-            valueNode = <span className="dim-text">{valueString}</span>;
+            valueNode = <span className="details-dim-text">{valueString}</span>;
         }
     } else {
         valueString += unitString;

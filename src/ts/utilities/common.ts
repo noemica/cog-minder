@@ -122,10 +122,10 @@ enum ColorScheme {
     Red = "red",
 }
 const colorSchemes = {
-    lowGood: { low: "range-green", midLow: "range-yellow", midHigh: "range-orange", high: "range-red" },
-    highGood: { low: "range-red", midLow: "range-orange", midHigh: "range-yellow", high: "range-green" },
-    green: { low: "range-green", midLow: "range-green", midHigh: "range-green", high: "range-green" },
-    red: { low: "range-red", midLow: "range-red", midHigh: "range-red", high: "range-red" },
+    lowGood: { low: "details-range-green", midLow: "details-range-yellow", midHigh: "details-range-orange", high: "details-range-red" },
+    highGood: { low: "details-range-red", midLow: "details-range-orange", midHigh: "details-range-yellow", high: "details-range-green" },
+    green: { low: "details-range-green", midLow: "details-range-green", midHigh: "details-range-green", high: "details-range-green" },
+    red: { low: "details-range-red", midLow: "details-range-red", midHigh: "details-range-red", high: "details-range-red" },
 };
 
 // Character -> escape character map
@@ -232,7 +232,7 @@ function rangeLineUnit(
     if (valueString === undefined || value === undefined) {
         valueString = defaultValueString;
         value = 0;
-        valueHtml = `<span class="dim-text">${defaultValueString}${unitString}</span>`;
+        valueHtml = `<span class="details-dim-text">${defaultValueString}${unitString}</span>`;
     } else {
         valueHtml = valueString + unitString;
     }
@@ -275,7 +275,7 @@ function rangeLineUnit(
     // Create bars HTML string
     let barsHtml: string;
     if (emptyBars > 0) {
-        barsHtml = `<span class="${colorClass}">${"▮".repeat(fullBars)}</span><span class="range-dim">${"▯".repeat(
+        barsHtml = `<span class="${colorClass}">${"▮".repeat(fullBars)}</span><span class="details-range-dim">${"▯".repeat(
             emptyBars,
         )}</span>`;
     } else {
@@ -347,13 +347,13 @@ function textLineSpoilerLink(line: string, link: string, extraText: string | und
 // Create a text line with no value and dim style
 function textLineDim(category: string, text: string) {
     const numSpaces = 23 - 1 - category.length;
-    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}<span class="dim-text">${text}</span></pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}<span class="details-dim-text">${text}</span></pre>`;
 }
 
 // Create a text line with no value  and a default
 function textLineWithDefault(category: string, textString: string | undefined, defaultString: string) {
     if (typeof textString != "string") {
-        textString = `<span class="dim-text">${defaultString}</span>`;
+        textString = `<span class="details-dim-text">${defaultString}</span>`;
     }
 
     const numSpaces = 23 - 1 - category.length;
@@ -389,7 +389,7 @@ function valueLineUnitsWithDefault(
 ) {
     let valueLength: number;
     if (valueString === undefined) {
-        valueString = `<span class="dim-text">${defaultString}${unitString}</span>`;
+        valueString = `<span class="details-dim-text">${defaultString}${unitString}</span>`;
         valueLength = defaultString.length + unitString.length;
     } else {
         valueString += unitString;
@@ -410,7 +410,7 @@ function valueLineUnitsTextWithDefault(
 ) {
     let valueLength: number;
     if (valueString === undefined) {
-        valueString = `<span class="dim-text">${defaultString}${unitString}</span>`;
+        valueString = `<span class="details-dim-text">${defaultString}${unitString}</span>`;
         valueLength = defaultString.length + unitString.length;
     } else {
         valueString += unitString;
@@ -425,7 +425,7 @@ function valueLineUnitsTextWithDefault(
 function valueLineWithDefault(category: string, valueString: string | undefined, defaultString: string) {
     let valueLength;
     if (typeof valueString != "string") {
-        valueString = `<span class="dim-text">${defaultString}</span>`;
+        valueString = `<span class="details-dim-text">${defaultString}</span>`;
         valueLength = defaultString.length;
     } else {
         valueLength = valueString.length;
@@ -792,7 +792,7 @@ export function createItemDataContent(baseItem: Item): string {
             return "";
         }
 
-        return "dim-text";
+        return "details-dim-text";
     }
 
     function getPenetrationValue(item: WeaponItem): string {
@@ -820,7 +820,7 @@ export function createItemDataContent(baseItem: Item): string {
                 return '<span class="rating-prototype"> Prototype </span>';
 
             case ItemRatingCategory.None:
-                return '<span class="dim-text">Standard</span>';
+                return '<span class="details-dim-text">Standard</span>';
         }
     }
 
@@ -860,7 +860,7 @@ export function createItemDataContent(baseItem: Item): string {
             if (item.type == ItemType.Item || item.type == ItemType.Trap) {
                 slotType = "Inventory";
             } else {
-                return `<span class="dim-text">N/A</span>`;
+                return `<span class="details-dim-text">N/A</span>`;
             }
         }
 

@@ -2,7 +2,7 @@
 
 .details-font {
     font-family: "smallcaps-mono";
-    font-size: 0.8rem;
+    font-size: @details-font-size;
 }
 
 .details-line,
@@ -21,101 +21,101 @@
 }
 
 .details-half-line {
-    font-size: @popover-half-font-size;
+    font-size: @details-half-font-size;
 }
 
 .details-summary,
 .details-option {
     .details-font();
-    
-    color: #bfbfbf;
+
+    color: @details-summary-font-color;
 }
 
 .details-location {
-    color: #005700;
+    color: @details-location-font-color;
 }
 
 .details-description {
     display: block;
-    max-width: 28rem;
+    max-width: @details-description-max-width;
 }
 
 .details-title {
     font-family: smallcaps-mono;
     text-align: center;
     color: @details-font-color;
-    font-size: @popover-font-size;
+    font-size: @details-font-size;
     margin-bottom: 0;
     margin-top: 0;
 }
 
 .details-part-image-title {
-    height: 1.5rem;
+    height: @details-part-icon-size;
 
     > img {
-        height: 1.5rem;
-        width: 1.5rem;
+        height: @details-part-icon-size;
+        width: @details-part-icon-size;
         vertical-align: middle;
     }
 }
 
 .part-art-image-container {
     text-align: center;
-    height: 11.25rem;
+    height: @details-part-image-height;
 
     > img {
-        width: 27rem;
-        height: 11.25rem;
+        width: @details-part-image-width;
+        height: @details-part-image-height;
     }
 }
 
-.dim-text {
-    color: #004000;
+.details-range-green,
+.details-range-yellow,
+.details-range-orange,
+.details-range-red,
+.details-range-dim {
+    letter-spacing: @details-range-letter-spacing;
 }
 
-.range-green,
-.range-yellow,
-.range-orange,
-.range-red,
-.range-dim {
-    letter-spacing: -0.1875rem;
+.details-dim-text {
+    color: @details-dim-text;
 }
 
-.range-green {
-    color: #00b200;
+.details-range-green {
+    color: @details-range-green;
 }
 
-.range-yellow {
-    color: #b2b200;
+.details-range-yellow {
+    color: @details-range-yellow;
 }
 
-.range-orange {
-    color: #b25900;
+.details-range-orange {
+    color: @details-range-orange;
 }
 
-.range-red {
-    color: #b20000;
+.details-range-red {
+    color: @details-range-red;
 }
 
-.range-dim {
-    color: #004000;
+.details-range-dim {
+    color: @details-dim-text;
 }
 
 .rating-prototype,
 .rating-alien,
 .projectile-num {
-    color: black;
-    background-color: #00b200;
-    border: 2px solid #00b200;
+    color: @details-background-color;
+    background-color: @details-font-color;
+    border: @comparison-border-width solid @details-font-color;
 }
 
 .part-details {
-    background-color: black;
-    border: 2px solid @popover-border-color;
+    background-color: @details-background-color;
+    border: @comparison-border-width solid @popover-border-color;
     border-radius: 0;
-    line-height: 1.5;
+    line-height: @comparison-line-height;
 
-    padding: 0.5rem;
+    padding: @comparison-container-gap;
 
     * {
         .details-font();

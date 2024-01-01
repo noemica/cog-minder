@@ -1913,24 +1913,24 @@ title="Paste the data created by Luigi's DumpMind below">Paste from <a class="d-
     function updateChart(state: SimulatorState) {
         function getClassHighGood(value: number) {
             if (value <= 0.25) {
-                return "range-red";
+                return "details-range-red";
             } else if (value <= 0.5) {
-                return "range-orange";
+                return "details-range-orange";
             } else if (value <= 0.75) {
-                return "range-yellow";
+                return "details-range-yellow";
             } else {
-                return "range-green";
+                return "details-range-green";
             }
         }
         function getClassHighBad(value: number) {
             if (value <= 0.25) {
-                return "range-green";
+                return "details-range-green";
             } else if (value <= 0.5) {
-                return "range-yellow";
+                return "details-range-yellow";
             } else if (value <= 0.75) {
-                return "range-orange";
+                return "details-range-orange";
             } else {
-                return "range-red";
+                return "details-range-red";
             }
         }
 

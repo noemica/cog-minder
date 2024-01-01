@@ -80,7 +80,7 @@ function getPenetrationValueClass(item: WeaponItem): string {
         return "";
     }
 
-    return "dim-text";
+    return "details-dim-text";
 }
 
 function getPenetrationValue(item: WeaponItem): string {
@@ -108,7 +108,7 @@ function getRatingNode(item: Item) {
             return <span className="rating-prototype"> Prototype </span>;
 
         case ItemRatingCategory.None:
-            return <span className="dim-text">Standard</span>;
+            return <span className="details-dim-text">Standard</span>;
     }
 }
 
@@ -148,7 +148,7 @@ function getSlotString(item: Item): ReactNode {
         if (item.type == ItemType.Item || item.type == ItemType.Trap) {
             slotType = "Inventory";
         } else {
-            return <span className="dim-text">N/A</span>;
+            return <span className="details-dim-text">N/A</span>;
         }
     }
 
