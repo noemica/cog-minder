@@ -1,45 +1,49 @@
 // Keep in sync with colors.less
 // Background colors
-@dark-tooltip-background-color: #000000cc;
-@dark-page-background-color: #2f2f2f;
-@dark-element-background-color: #474747; // Keep in sync with chartDarkBackgroundColor
-@dark-label-background-color: @dark-element-background-color;
 @dark-dropdown-menu-background-color: #656565;
 @dark-dropdown-menu-active-option-background-color: @dark-button-interaction-background-color;
 @dark-dropzone-active-background-color: @dark-button-active-background-color;
+@dark-element-background-color: #474747; // Keep in sync with chartDarkBackgroundColor
+@dark-label-background-color: @dark-element-background-color;
+@dark-page-background-color: #2f2f2f;
+@dark-tooltip-background-color: #000000cc;
+@dark-table-header-background-color: @dark-element-background-color;
 
 @dark-moderate-contrast-background-color: #656565;
 @dark-button-active-background-color: #a7a7a7;
 @dark-button-interaction-background-color: #d7d7d7;
 
-@cogmind-tooltip-background-color: @dark-tooltip-background-color;
-@cogmind-page-background-color: #080808;
-@cogmind-element-background-color: @cogmind-page-background-color; // Keep in sync with chartCogmindBackgroundColor
-@cogmind-label-background-color: #162416;
 @cogmind-dropdown-menu-background-color: @cogmind-page-background-color;
 @cogmind-dropdown-menu-active-option-background-color: @cogmind-button-hover-focus-background-color;
 @cogmind-dropzone-active-background-color: @cogmind-button-active-background-color;
+@cogmind-element-background-color: @cogmind-page-background-color; // Keep in sync with chartCogmindBackgroundColor
+@cogmind-label-background-color: #162416;
+@cogmind-page-background-color: #080808;
+@cogmind-tooltip-background-color: @dark-tooltip-background-color;
+@cogmind-table-header-background-color: @cogmind-label-background-color;
 
 @cogmind-button-hover-focus-background-color: #004200;
 @cogmind-button-active-background-color: #002100;
 
 :root {
-    --tooltip-background-color: @dark-tooltip-background-color;
-    --page-background-color: @dark-page-background-color;
-    --element-background-color: @dark-element-background-color;
-    --label-background-color: @dark-label-background-color;
     --dropdown-menu-background-color: @dark-dropdown-menu-background-color;
     --dropdown-menu-active-option-background-color: @dark-dropdown-menu-active-option-background-color;
     --dropzone-active-background-color: @dark-dropzone-active-background-color;
+    --element-background-color: @dark-element-background-color;
+    --label-background-color: @dark-label-background-color;
+    --page-background-color: @dark-page-background-color;
+    --tooltip-background-color: @dark-tooltip-background-color;
+    --table-header-background-color: @dark-table-header-background-color;
 }
 [data-theme="Cogmind"] {
-    --tooltip-background-color: @cogmind-tooltip-background-color;
-    --page-background-color: @cogmind-page-background-color;
-    --element-background-color: @cogmind-element-background-color;
-    --label-background-color: @cogmind-label-background-color;
     --dropdown-menu-background-color: @cogmind-dropdown-menu-background-color;
     --dropdown-menu-active-option-background-color: @cogmind-dropdown-menu-active-option-background-color;
     --dropzone-active-background-color: @cogmind-dropzone-active-background-color;
+    --element-background-color: @cogmind-element-background-color;
+    --label-background-color: @cogmind-label-background-color;
+    --page-background-color: @cogmind-page-background-color;
+    --tooltip-background-color: @cogmind-tooltip-background-color;
+    --table-header-background-color: @cogmind-table-header-background-color;
 }
 
 // Borders

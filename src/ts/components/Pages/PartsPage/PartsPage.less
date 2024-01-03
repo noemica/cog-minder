@@ -60,11 +60,11 @@
     }
 }
 
-
 .part-popover-arrow {
     fill: @popover-border-color;
 }
 
+// Comparisons
 .comparison-container {
     border: none;
     background-color: unset;
@@ -94,4 +94,72 @@
 
 .part-comparison-image-container {
     margin-top: calc(@comparison-border-width + @comparison-container-gap);
+}
+
+.comparison-positive,
+.comparison-neutral,
+.comparison-negative {
+    font-family: smallcaps-mono;
+    font-size: @details-font-size;
+    margin: 0;
+    padding-right: @part-comparison-right-padding;
+    text-align: right;
+}
+
+.comparison-positive {
+    color: @comparison-positive-font-color;
+    background-color: @comparison-positive-background-color;
+}
+
+.comparison-neutral {
+    color: @comparison-neutral-font-color;
+}
+
+.comparison-negative {
+    color: @comparison-negative-font-color;
+    background-color: @comparison-negative-background-color;
+}
+
+.table-column-group,
+.table-column-unsorted,
+.table-column-ascending,
+.table-column-descending {
+    background-color: @table-header-background-color;
+
+    border: @border-width solid @border-color;
+    padding: 0.25rem;
+
+    white-space: nowrap;
+}
+
+.table-column-unsorted,
+.table-column-ascending,
+.table-column-descending {
+    padding-right: 18px;
+    background-position: center right;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.table-column-unsorted {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAAP///////yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+}
+
+.table-column-ascending {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAAP///////yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+}
+
+.table-column-descending {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAAP///////yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+}
+
+.table-cell {
+    border-collapse: collapse;
+    border: @border-width solid @border-color;
+    padding: 0.125rem;
+
+    font-family: @paragraph-font-family;
+    font-size: @paragraph-font-size;
 }

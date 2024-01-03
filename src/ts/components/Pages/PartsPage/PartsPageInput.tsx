@@ -354,65 +354,72 @@ export default function PartsPageInput({
                     }}
                 />
             </div>
-            <div className="page-input-group">
-                <LabeledSelectGroup label="Sort by" tooltip="How to sort parts matching all filters.">
-                    <SelectWrapper
-                        className="sort-select"
-                        options={primarySortOptions}
-                        isSearchable={false}
-                        value={
-                            primarySortOptions.find((o) => o.value === pageState.primarySort) || primarySortOptions[0]
-                        }
-                        onChange={(val) => {
-                            if (pageState.secondarySort === undefined || pageState.secondarySort === "None") {
-                                // If no secondary sort set yet then default to alphabetical 
-                                // when the primary sort order is changed 
-                                setPageState({ ...pageState, primarySort: val!.value, secondarySort: "Alphabetical" });
-                            } else {
-                                setPageState({ ...pageState, primarySort: val!.value });
+            {pageState.mode !== "Spreadsheet" && (
+                <div className="page-input-group">
+                    <LabeledSelectGroup label="Sort by" tooltip="How to sort parts matching all filters.">
+                        <SelectWrapper
+                            className="sort-select"
+                            options={primarySortOptions}
+                            isSearchable={false}
+                            value={
+                                primarySortOptions.find((o) => o.value === pageState.primarySort) ||
+                                primarySortOptions[0]
                             }
-                        }}
-                    />
-                    <SelectWrapper
-                        className="sort-order-select"
-                        options={sortDirectionOptions}
-                        isSearchable={false}
-                        value={
-                            sortDirectionOptions.find((o) => o.value === pageState.primarySortDirection) ||
-                            sortDirectionOptions[0]
-                        }
-                        onChange={(val) => {
-                            setPageState({ ...pageState, primarySortDirection: val!.value });
-                        }}
-                    />
-                </LabeledSelectGroup>
-                <LabeledSelectGroup label="Then by" tooltip="How to sort parts tied by the primary sort.">
-                    <SelectWrapper
-                        className="sort-select"
-                        options={secondarySortOptions}
-                        isSearchable={false}
-                        value={
-                            secondarySortOptions.find((o) => o.value === pageState.secondarySort) ||
-                            secondarySortOptions[0]
-                        }
-                        onChange={(val) => {
-                            setPageState({ ...pageState, secondarySort: val!.value });
-                        }}
-                    />
-                    <SelectWrapper
-                        className="sort-order-select"
-                        options={sortDirectionOptions}
-                        isSearchable={false}
-                        value={
-                            sortDirectionOptions.find((o) => o.value === pageState.secondarySortDirection) ||
-                            sortDirectionOptions[0]
-                        }
-                        onChange={(val) => {
-                            setPageState({ ...pageState, secondarySortDirection: val!.value });
-                        }}
-                    />
-                </LabeledSelectGroup>
-            </div>
+                            onChange={(val) => {
+                                if (pageState.secondarySort === undefined || pageState.secondarySort === "None") {
+                                    // If no secondary sort set yet then default to alphabetical
+                                    // when the primary sort order is changed
+                                    setPageState({
+                                        ...pageState,
+                                        primarySort: val!.value,
+                                        secondarySort: "Alphabetical",
+                                    });
+                                } else {
+                                    setPageState({ ...pageState, primarySort: val!.value });
+                                }
+                            }}
+                        />
+                        <SelectWrapper
+                            className="sort-order-select"
+                            options={sortDirectionOptions}
+                            isSearchable={false}
+                            value={
+                                sortDirectionOptions.find((o) => o.value === pageState.primarySortDirection) ||
+                                sortDirectionOptions[0]
+                            }
+                            onChange={(val) => {
+                                setPageState({ ...pageState, primarySortDirection: val!.value });
+                            }}
+                        />
+                    </LabeledSelectGroup>
+                    <LabeledSelectGroup label="Then by" tooltip="How to sort parts tied by the primary sort.">
+                        <SelectWrapper
+                            className="sort-select"
+                            options={secondarySortOptions}
+                            isSearchable={false}
+                            value={
+                                secondarySortOptions.find((o) => o.value === pageState.secondarySort) ||
+                                secondarySortOptions[0]
+                            }
+                            onChange={(val) => {
+                                setPageState({ ...pageState, secondarySort: val!.value });
+                            }}
+                        />
+                        <SelectWrapper
+                            className="sort-order-select"
+                            options={sortDirectionOptions}
+                            isSearchable={false}
+                            value={
+                                sortDirectionOptions.find((o) => o.value === pageState.secondarySortDirection) ||
+                                sortDirectionOptions[0]
+                            }
+                            onChange={(val) => {
+                                setPageState({ ...pageState, secondarySortDirection: val!.value });
+                            }}
+                        />
+                    </LabeledSelectGroup>
+                </div>
+            )}
         </>
     );
 }

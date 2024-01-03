@@ -39,6 +39,7 @@
     },
     "dependencies": {
         "@floating-ui/react": "^0.26.3",
+        "@tanstack/react-table": "^8.11.2",
         "autocompleter": "^9.0.1",
         "bootstrap": "^4.5.3",
         "bootstrap-select": "^1.13.18",

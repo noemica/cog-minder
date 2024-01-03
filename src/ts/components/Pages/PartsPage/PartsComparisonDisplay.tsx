@@ -20,7 +20,6 @@ import PartDetails from "../../GameDetails/PartDetails";
 import SelectWrapper, { SelectOptionType } from "../../Selectpicker/Select";
 import { PartsPageState } from "./PartsPage";
 
-import "./PartsComparisonDisplay.less";
 import "./PartsPage.less";
 
 type BaseComparisonProps = {
