@@ -1,5 +1,8 @@
+import { Spoiler } from "../../../types/commonTypes";
+import { canShowSpoiler, getSpoilersValue } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
+import { useSpoilers } from "../../Effects/useLocalStorageValue";
 import {
     Label,
     LabeledExclusiveButtonGroup,
@@ -94,39 +97,54 @@ const weaponSlotTypeOptions: SelectOptionType<WeaponSlotType>[] = [
     { value: "Special Weapon" },
 ];
 
-const categoryOptions: SelectOptionType<PartCategory>[] = [
+const allCategoryOptions: (SelectOptionType<PartCategory> & { spoiler?: Spoiler })[] = [
     { value: "Any", tooltip: "All parts." },
     {
         value: "0b10",
         tooltip: "Parts that can be found on any standard complex floors or complex-controlled branches.",
     },
     { value: "Alien", tooltip: "All Sigix-related alien artifacts." },
-    { value: "Architects", tooltip: "Parts found on Architect-faction related bots." },
     {
         value: "Derelict",
         tooltip: "Derelict-created parts, either found in derelict-controlled areas or on unique derelicts.",
+        spoiler: "Spoiler",
     },
+    { value: "Architects", tooltip: "Parts found on Architect-faction related bots.", spoiler: "Redacted" },
     { value: "Exile", tooltip: "Exile vault items and unique Exile bot parts." },
-    { value: "Golem", tooltip: "Parts created by the GOLEM Unit." },
-    { value: "Heroes", tooltip: "Parts unique to the Heroes of Zion." },
-    { value: "Lab", tooltip: "Parts that can be found in the hidden Lab." },
-    { value: "Quarantine", tooltip: "Parts that can be found in Quarantine." },
-    { value: "S7 Guarded", tooltip: "Parts that can be found in Section 7 suspension chambers guarded by S7 Guards." },
-    { value: "S7 Hangar", tooltip: "Parts that can be found in the Section 7 spaceship chamber." },
+    { value: "Golem", tooltip: "Parts created by the GOLEM Unit.", spoiler: "Spoiler" },
+    { value: "Heroes", tooltip: "Parts unique to the Heroes of Zion.", spoiler: "Spoiler" },
+    { value: "Lab", tooltip: "Parts that can be found in the hidden Lab.", spoiler: "Redacted" },
+    { value: "Quarantine", tooltip: "Parts that can be found in Quarantine.", spoiler: "Spoiler" },
+    {
+        value: "S7 Guarded",
+        tooltip: "Parts that can be found in Section 7 suspension chambers guarded by S7 Guards.",
+        spoiler: "Redacted",
+    },
+    { value: "S7 Hangar", tooltip: "Parts that can be found in the Section 7 spaceship chamber.", spoiler: "Redacted" },
     {
         value: "S7 LRC Lab",
         tooltip:
             "Parts that can be found in the Section 7 LRC label. LRC parts are found in the locked room with a Terminal, the others are found in suspension chambers.",
+        spoiler: "Redacted",
     },
-    { value: "S7 Unguarded", tooltip: "Parts that can be found in unguarded Section 7 suspension chambers." },
-    { value: "Testing", tooltip: "Parts that can be found in Testing." },
+    {
+        value: "S7 Unguarded",
+        tooltip: "Parts that can be found in unguarded Section 7 suspension chambers.",
+        spoiler: "Redacted",
+    },
+    { value: "Testing", tooltip: "Parts that can be found in Testing.", spoiler: "Spoiler" },
     { value: "Unobtainable", tooltip: "Parts that are not obtainable by normal gameplay." },
-    { value: "Warlord", tooltip: "Parts that are obtainable in the Warlord map, or on Warlord-aligned bots" },
-    { value: "Zion", tooltip: "Parts that are obtainable in Zion." },
+    {
+        value: "Warlord",
+        tooltip: "Parts that are obtainable in the Warlord map, or on Warlord-aligned bots",
+        spoiler: "Spoiler",
+    },
+    { value: "Zion", tooltip: "Parts that are obtainable in Zion.", spoiler: "Spoiler" },
     {
         value: "Zionite",
         tooltip:
             "Parts that are obtainable from Imprinter-aligned Zionites. Some are obtainable in Zion Deep Caves, and some are only obtainable by Imprinting.",
+        spoiler: "Spoiler",
     },
 ];
 
@@ -236,6 +254,9 @@ export default function PartsPageInput({
     pageState: PartsPageState;
     setPageState: React.Dispatch<React.SetStateAction<PartsPageState>>;
 }) {
+    const spoilers = useSpoilers();
+    const categoryOptions = allCategoryOptions.filter((option) => canShowSpoiler(option.spoiler || "None", spoilers));
+
     return (
         <>
             <div className="page-input-group">

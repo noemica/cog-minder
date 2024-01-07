@@ -1,6 +1,7 @@
 import { ReactNode, useState } from "react";
 
 import { BotCategory } from "../../../botTypes";
+import { Spoiler } from "../../../types/commonTypes";
 import { botData, canShowSpoiler, getBot, getSpoilersValue, leetSpeakMatchTransform } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
@@ -24,20 +25,14 @@ type BotsPageState = {
 
 const modeButtons: ExclusiveButtonDefinition<BotsPageMode>[] = [{ value: "Simple" }, { value: "Spreadsheet" }];
 
-const noSpoilersFactionButtons: ExclusiveButtonDefinition<Faction>[] = [
+const allFactionButtons: (ExclusiveButtonDefinition<Faction> & { spoiler?: Spoiler })[] = [
     { value: "Any" },
+    { value: "Architect", spoiler: "Redacted" },
     { value: "0b10" },
     { value: "Derelict" },
     { value: "Exiles" },
-];
-const spoilersFactionButtons: ExclusiveButtonDefinition<Faction>[] = [
-    ...noSpoilersFactionButtons,
-    { value: "Warlord" },
-    { value: "Zionite" },
-];
-const redactedFactionButtons: ExclusiveButtonDefinition<Faction>[] = [
-    ...spoilersFactionButtons,
-    { value: "Architect" },
+    { value: "Warlord", spoiler: "Spoiler" },
+    { value: "Zionite", spoiler: "Spoiler" },
 ];
 
 function filterBotNames(pageState: BotsPageState) {
@@ -121,12 +116,7 @@ export default function BotsPage() {
         pageContent = <BotsSimpleDisplay pageState={pageState} botNames={botNames} />;
     }
 
-    const factionButtons = getSpoilersValue(
-        spoilers,
-        noSpoilersFactionButtons,
-        spoilersFactionButtons,
-        redactedFactionButtons,
-    );
+    const factionButtons = allFactionButtons.filter((button) => canShowSpoiler(button.spoiler || "None", spoilers));
 
     return (
         <div className="page-content">
