@@ -122,10 +122,30 @@ enum ColorScheme {
     Red = "red",
 }
 const colorSchemes = {
-    lowGood: { low: "details-range-green", midLow: "details-range-yellow", midHigh: "details-range-orange", high: "details-range-red" },
-    highGood: { low: "details-range-red", midLow: "details-range-orange", midHigh: "details-range-yellow", high: "details-range-green" },
-    green: { low: "details-range-green", midLow: "details-range-green", midHigh: "details-range-green", high: "details-range-green" },
-    red: { low: "details-range-red", midLow: "details-range-red", midHigh: "details-range-red", high: "details-range-red" },
+    lowGood: {
+        low: "details-range-green",
+        midLow: "details-range-yellow",
+        midHigh: "details-range-orange",
+        high: "details-range-red",
+    },
+    highGood: {
+        low: "details-range-red",
+        midLow: "details-range-orange",
+        midHigh: "details-range-yellow",
+        high: "details-range-green",
+    },
+    green: {
+        low: "details-range-green",
+        midLow: "details-range-green",
+        midHigh: "details-range-green",
+        high: "details-range-green",
+    },
+    red: {
+        low: "details-range-red",
+        midLow: "details-range-red",
+        midHigh: "details-range-red",
+        high: "details-range-red",
+    },
 };
 
 // Character -> escape character map
@@ -275,9 +295,9 @@ function rangeLineUnit(
     // Create bars HTML string
     let barsHtml: string;
     if (emptyBars > 0) {
-        barsHtml = `<span class="${colorClass}">${"▮".repeat(fullBars)}</span><span class="details-range-dim">${"▯".repeat(
-            emptyBars,
-        )}</span>`;
+        barsHtml = `<span class="${colorClass}">${"▮".repeat(
+            fullBars,
+        )}</span><span class="details-range-dim">${"▯".repeat(emptyBars)}</span>`;
     } else {
         barsHtml = `<span class=${colorClass}>${"▮".repeat(fullBars)}</span>`;
     }
@@ -347,7 +367,9 @@ function textLineSpoilerLink(line: string, link: string, extraText: string | und
 // Create a text line with no value and dim style
 function textLineDim(category: string, text: string) {
     const numSpaces = 23 - 1 - category.length;
-    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}<span class="details-dim-text">${text}</span></pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(
+        numSpaces,
+    )}<span class="details-dim-text">${text}</span></pre>`;
 }
 
 // Create a text line with no value  and a default
@@ -873,10 +895,10 @@ export function createItemDataContent(baseItem: Item): string {
 
     // Create overview
     let html = `
-    <div class="part-art-image-container">
+    <div class="item-art-image-container">
         <img src="${escapeHtml(getItemAsciiArtImageName(baseItem))}"/>
     </div>
-    <pre class="details-title .details-part-image-title mt-2">${escapeHtml(
+    <pre class="details-title .details-item-image-title mt-2">${escapeHtml(
         baseItem.name,
     )} [<img src="${getItemSpriteImageName(baseItem)}"/>]</pre>
     ${emptyLine}
@@ -1565,7 +1587,7 @@ export function getBotOrNull(botName: string): Bot | null {
     return null;
 }
 
-function getBotImageName(bot: Bot) {
+export function getBotImageName(bot: Bot) {
     const imageName = botNameImageMap.get(bot.name);
     if (imageName !== undefined) {
         return createImagePath(`game_sprites/${imageName}.png`);
@@ -1648,6 +1670,16 @@ const noPrefixRegex = /\w{3}\. (.*)/;
 export function getNoPrefixName(name: string): string {
     const newName = name.replace(noPrefixRegex, "$1");
     return newName;
+}
+
+export function getSpoilersValue<T>(spoilers: Spoiler, noSpoilerValue: T, spoilersValue: T, redactedValue: T): T {
+    if (spoilers === "Spoiler") {
+        return spoilersValue;
+    } else if (spoilers === "Redacted") {
+        return redactedValue;
+    } else {
+        return noSpoilerValue;
+    }
 }
 
 // Checks if a part has an active special property of the given type

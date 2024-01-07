@@ -4,6 +4,7 @@ import { PageType } from "../../types/commonTypes";
 import useThemeUpdater from "../Effects/useThemeUpdater";
 import PageHeader from "../PageHeader/PageHeader";
 import AboutPage from "../Pages/AboutPage";
+import BotsPage from "../Pages/BotsPage/BotsPage";
 import CombatPage from "../Pages/CombatPage";
 import PartsPage from "../Pages/PartsPage/PartsPage";
 
@@ -22,6 +23,10 @@ export default function App({ pageType }: AppProps) {
         switch (pageType) {
             case "About":
                 page = <AboutPage />;
+                break;
+
+            case "Bots":
+                page = <BotsPage />;
                 break;
 
             case "Combat":

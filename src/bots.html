@@ -1,105 +1,18 @@
 <!doctype html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8" />
+        <title>Cogmind Bots</title>
 
-<head lang="en">
-    <meta charset="utf-8" />
-    <title>Cogmind Bots</title>
-    <meta name="description" content="Cogmind robot stats and parts reference" />
+        <meta name="description" content="Cogmind robot stats and parts reference" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
 
-    <link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-        crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="styles/style.less" />
-
-    <script src="ts/bots.ts" type="module"></script>
-</head>
-
-<body>
-    <!-- Header/Title -->
-    <div id="headerContainer" class="container-xl"></div>
-
-    <div class="container-xl input-group">
-        <!-- Name -->
-        <div class="input-group-prepend" data-toggle="tooltip" title="The name of a bot to search for.">
-            <span class="input-group-text">Name</span>
-        </div>
-        <input id="name" type="text" class="form-control" placeholder="Any" />
-
-        <!-- Class -->
-        <div class="input-group-prepend ml-3" data-toggle="tooltip" title="The class of a bot to search for.">
-            <span class="input-group-text">Class</span>
-        </div>
-        <input id="class" type="text" class="form-control" placeholder="Any" />
-
-        <!-- Part -->
-        <div class="input-group-prepend ml-3" data-toggle="tooltip" title="The name of a part to search for.">
-            <span class="input-group-text">Part</span>
-        </div>
-        <input id="part" type="text" class="form-control" placeholder="Any" />
-
-        <!-- Mode -->
-        <div id="modeContainer" class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
-            <div class="input-group-prepend" data-toggle="tooltip" title="Parts viewing mode.">
-                <span class="input-group-text">Mode</span>
-            </div>
-            <label
-                id="modeViewer"
-                class="btn active"
-                data-toggle="tooltip"
-                title="Simple bot viewer with clickable buttons to show expanded bot detail."
-            >
-                <input type="radio" checked name="options" /> Simple
-            </label>
-            <label
-                id="modeSpreadsheet"
-                class="btn"
-                data-toggle="tooltip"
-                title="Spreadsheet view that shows all bot stats."
-            >
-                <input type="radio" name="options" /> Spreadsheet
-            </label>
-        </div>
-
-        <!-- Reset -->
-        <button
-            id="reset"
-            type="button"
-            class="btn ml-3"
-            data-toggle="tooltip"
-            title="Resets all filters to their default (unfiltered) state"
-        >
-            Reset
-        </button>
-    </div>
-
-    <!-- Faction filter -->
-    <div
-        id="factionContainer"
-        class="container-xl d-flex flex-wrap btn-group btn-group-toggle mt-2"
-        data-toggle="buttons"
-    >
-        <div class="input-group-prepend" data-toggle="tooltip" title="Bot faction">
-            <span class="input-group-text">Faction</span>
-        </div>
-        <label id="factionAny" class="btn active"> <input type="radio" checked name="options" /> Any </label>
-        <label id="faction0b10" class="btn"> <input type="radio" name="options" /> 0b10 </label>
-        <label id="factionArchitect" class="btn"> <input type="radio" name="options" /> Architect </label>
-        <label id="factionDerelict" class="btn"> <input type="radio" name="options" /> Derelict </label>
-        <label id="factionExile" class="btn"> <input type="radio" name="options" /> Exile </label>
-        <label id="factionWarlord" class="btn"> <input type="radio" name="options" /> Warlord </label>
-        <label id="factionZionite" class="btn"> <input type="radio" name="options" /> Zionite </label>
-    </div>
-
-    <div class="container-xl">
-        <!-- Simple results -->
-        <ul id="botsGrid" class="list-group items-grid my-4"></ul>
-
-        <!-- Spreadsheet results -->
-        <table id="spreadsheetBotsTable" class="comparison-table tablesorter my-4 not-visible"></table>
-    </div>
-</body>
+        <script src="ts/bots.tsx" type="module"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+</html>

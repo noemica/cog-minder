@@ -22,6 +22,7 @@ import { useRef } from "react";
 import "./Popover.less";
 
 interface PopoverOptions {
+    test?: boolean;
     initialOpen?: boolean;
     placement?: Placement;
     modal?: boolean;
@@ -31,6 +32,7 @@ interface PopoverOptions {
 
 // From https://floating-ui.com/docs/popover
 export function usePopover({
+    test = false,
     initialOpen = false,
     placement = "bottom",
     modal,
@@ -62,7 +64,7 @@ export function usePopover({
                 fallbackAxisSideDirection: "end",
                 padding: 5,
             }),
-            shift({ padding: 5 }),
+            shift({ padding: 5, crossAxis: true }),
             arrow({ element: arrowRef }),
         ],
     });

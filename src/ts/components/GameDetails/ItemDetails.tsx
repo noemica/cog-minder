@@ -14,8 +14,8 @@ import {
 import { parseIntOrDefault } from "../../utilities/common";
 import DetailsValueLine, {
     DetailsEmptyLine,
-    DetailsPartArtLine,
-    DetailsPartTitleLine,
+    DetailsItemArtLine,
+    DetailsItemTitleLine,
     DetailsProjectileSummaryLine,
     DetailsRangeLine,
     DetailsSummaryLine,
@@ -839,7 +839,7 @@ function SpecialWeaponPartDetails({ item }: { item: WeaponItem }) {
     );
 }
 
-export default function PartDetails({ item }: { item: Item }) {
+export default function ItemDetails({ item }: { item: Item }) {
     let typeSpecificDetails: ReactNode = <></>;
     switch (item.slot) {
         case "Power":
@@ -925,9 +925,9 @@ export default function PartDetails({ item }: { item: Item }) {
 
     return (
         <div className="part-details">
-            <DetailsPartArtLine part={item} />
+            <DetailsItemArtLine part={item} />
             <DetailsEmptyLine />
-            <DetailsPartTitleLine part={item} />
+            <DetailsItemTitleLine part={item} />
             <DetailsEmptyLine />
             <DetailsSummaryLine text="Overview" />
             <DetailsTextLine category="Type" content={item.type} />

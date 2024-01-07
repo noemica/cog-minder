@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
 
+import { Bot } from "../../botTypes";
 import { Item, WeaponItem } from "../../types/itemTypes";
-import { getItemAsciiArtImageName, getItemSpriteImageName } from "../../utilities/common";
+import { getBotImageName, getItemAsciiArtImageName, getItemSpriteImageName } from "../../utilities/common";
 
 import "./Details.less";
 
@@ -46,21 +47,29 @@ const colorSchemes: Record<ColorScheme, Record<ColorSchemeColors, string>> = {
     },
 };
 
+export function DetailsBotTitleLine({ bot }: { bot: Bot }) {
+    return (
+        <pre className="details-title details-bot-image-title">
+            {bot.name}[<img src={getBotImageName(bot)} />]
+        </pre>
+    );
+}
+
 export function DetailsEmptyLine() {
     return <pre className="details-line"> </pre>;
 }
 
-export function DetailsPartArtLine({ part }: { part: Item }) {
+export function DetailsItemArtLine({ part }: { part: Item }) {
     return (
-        <div className="part-art-image-container">
+        <div className="item-art-image-container">
             <img src={getItemAsciiArtImageName(part)} />
         </div>
     );
 }
 
-export function DetailsPartTitleLine({ part }: { part: Item }) {
+export function DetailsItemTitleLine({ part }: { part: Item }) {
     return (
-        <pre className="details-title details-part-image-title">
+        <pre className="details-title details-item-image-title">
             {part.name}[<img src={getItemSpriteImageName(part)} />]
         </pre>
     );
@@ -92,6 +101,17 @@ export function DetailsTextLine({ category, content, defaultContent }: DetailsTe
     );
 }
 
+export function DetailsTextLineDim({ category, text }: { category: string; text: string }) {
+    const numSpaces = 23 - 1 - category.length;
+    return (
+        <pre className="details-line">
+            {" "}
+            {category}{" ".repeat(numSpaces)}
+            <span className="details-dim-text">{text}</span>
+        </pre>
+    );
+}
+
 export type DetailsTextValueLineProps = {
     category: string;
     defaultValueString?: string;
@@ -113,7 +133,7 @@ export function DetailsTextValueLine({
         value = defaultValueString || "";
         valueClass = "details-dim-text";
     }
-    
+
     if (unitString !== undefined) {
         value += unitString;
     }

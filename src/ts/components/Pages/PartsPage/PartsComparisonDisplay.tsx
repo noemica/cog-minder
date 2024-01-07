@@ -16,7 +16,7 @@ import {
 } from "../../../types/itemTypes";
 import { getItem, parseIntOrDefault } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
-import PartDetails from "../../GameDetails/PartDetails";
+import ItemDetails from "../../GameDetails/ItemDetails";
 import SelectWrapper, { SelectOptionType } from "../../Selectpicker/Select";
 import { PartsPageState } from "./PartsPage";
 
@@ -718,9 +718,9 @@ function WeaponComparison({ leftItem, rightItem }: { leftItem: Item; rightItem: 
 function ComparisonContent({ leftItem, rightItem }: { leftItem: Item; rightItem: Item }) {
     return (
         <>
-            <div className="part-art-image-container part-comparison-image-container" />
+            <div className="item-art-image-container part-comparison-image-container" />
             <EmptyComparisonLine />
-            <pre className="comparison-neutral details-part-image-title" />
+            <pre className="comparison-neutral details-item-image-title" />
             <pre className="details-summary">Comparison</pre>
             <EmptyComparisonLine />
             <EmptyComparisonLine />
@@ -774,7 +774,7 @@ export default function PartsComparisonDisplay({
         <div className="comparison-container">
             <div className="part-comparison-part-column">
                 {ItemSelect(leftItem, setLeftItem)}
-                <PartDetails item={getItem(leftItem)} />
+                <ItemDetails item={getItem(leftItem)} />
             </div>
             <div className="part-comparison-details-column">
                 <Button
@@ -792,7 +792,7 @@ export default function PartsComparisonDisplay({
             </div>
             <div className="part-comparison-part-column">
                 {ItemSelect(rightItem, setRightItem)}
-                <PartDetails item={getItem(rightItem)} />
+                <ItemDetails item={getItem(rightItem)} />
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
 
 import { ItemSlot } from "../../../types/itemTypes";
-import { gallerySort, getItem, itemData, leetSpeakMatchTransform } from "../../../utilities/common";
+import { canShowSpoiler, gallerySort, getItem, itemData, leetSpeakMatchTransform } from "../../../utilities/common";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
 import PartsComparisonDisplay from "./PartsComparisonDisplay";
 import PartsGalleryDisplay from "./PartsGalleryDisplay";
@@ -125,11 +125,9 @@ function filterItemNames(pageState: PartsPageState) {
 
     const filteredItemNames = Object.keys(itemData).filter((itemName) => {
         const item = itemData[itemName];
-
+        
         // Spoilers filter
-        if (spoilers === "None" && item.spoiler !== "None") {
-            return false;
-        } else if (spoilers === "Spoiler" && item.spoiler === "Redacted") {
+        if (!canShowSpoiler(item.spoiler, spoilers)) {
             return false;
         }
 
