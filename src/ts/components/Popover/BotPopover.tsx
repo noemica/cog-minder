@@ -3,15 +3,18 @@ import { ReactNode } from "react";
 import { Bot } from "../../botTypes";
 import Button from "../Buttons/Button";
 import { useIsVisible } from "../Effects/useIsVisible";
+import { usePopoverPositioning } from "../Effects/usePopoverPositioning";
 import BotDetails from "../GameDetails/BotDetails";
 import { Popover, PopoverContent, PopoverTrigger } from "./Popover";
 
 import "./Popover.less";
 
 function BotPopover({ button, isVisible, bot }: { button: ReactNode; isVisible: boolean; bot: Bot }) {
+    const positioning = usePopoverPositioning();
+
     if (isVisible) {
         return (
-            <Popover>
+            <Popover placement={positioning.placement} shouldShift={positioning.shouldShift}>
                 <PopoverTrigger asChild={true}>{button}</PopoverTrigger>
                 <PopoverContent floatingArrowClassName="bot-popover-arrow">
                     <div className="bot-popover">

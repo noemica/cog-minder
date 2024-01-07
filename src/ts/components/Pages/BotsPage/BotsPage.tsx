@@ -1,17 +1,10 @@
-import { ColumnDef, SortingState, getCoreRowModel, getSortedRowModel, useReactTable } from "@tanstack/react-table";
+import { ColumnDef, SortingState } from "@tanstack/react-table";
 import { ReactNode, useMemo, useState } from "react";
 import React from "react";
 
 import { Bot, BotCategory } from "../../../botTypes";
 import { Spoiler } from "../../../types/commonTypes";
-import {
-    botData,
-    canShowSpoiler,
-    getBot,
-    getSpoilersValue,
-    leetSpeakMatchTransform,
-    parseIntOrDefault,
-} from "../../../utilities/common";
+import { botData, canShowSpoiler, getBot, leetSpeakMatchTransform, parseIntOrDefault } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";

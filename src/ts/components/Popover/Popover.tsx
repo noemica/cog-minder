@@ -6,6 +6,7 @@ import {
     arrow,
     autoUpdate,
     flip,
+    limitShift,
     offset,
     shift,
     useClick,
@@ -22,22 +23,22 @@ import { useRef } from "react";
 import "./Popover.less";
 
 interface PopoverOptions {
-    test?: boolean;
     initialOpen?: boolean;
-    placement?: Placement;
     modal?: boolean;
     open?: boolean;
     onOpenChange?: (open: boolean) => void;
+    placement?: Placement;
+    shouldShift?: boolean;
 }
 
 // From https://floating-ui.com/docs/popover
 export function usePopover({
-    test = false,
     initialOpen = false,
-    placement = "bottom",
     modal,
     open: controlledOpen,
     onOpenChange: setControlledOpen,
+    placement = "bottom",
+    shouldShift = true,
 }: PopoverOptions = {}) {
     const arrowRef = useRef(null);
     const [uncontrolledOpen, setUncontrolledOpen] = React.useState(initialOpen);
@@ -64,7 +65,7 @@ export function usePopover({
                 fallbackAxisSideDirection: "end",
                 padding: 5,
             }),
-            shift({ padding: 5, crossAxis: true }),
+            shouldShift && shift({ padding: 5, crossAxis: true }),
             arrow({ element: arrowRef }),
         ],
     });

@@ -1,10 +1,10 @@
-import { Placement } from "@floating-ui/react";
 import { ReactNode } from "react";
 
 import { Item } from "../../types/itemTypes";
 import { getItemAsciiArtImageName } from "../../utilities/common";
 import Button from "../Buttons/Button";
 import { useIsVisible } from "../Effects/useIsVisible";
+import { usePopoverPositioning } from "../Effects/usePopoverPositioning";
 import ItemDetails from "../GameDetails/ItemDetails";
 import { Popover, PopoverContent, PopoverTrigger } from "./Popover";
 
@@ -14,13 +14,14 @@ type ItemPopoverProps = {
     button: ReactNode;
     isVisible: boolean;
     item: Item;
-    placement?: Placement;
 };
 
-function ItemPopover({ button, isVisible, item, placement }: ItemPopoverProps) {
+function ItemPopover({ button, isVisible, item }: ItemPopoverProps) {
+    const positioning = usePopoverPositioning();
+
     if (isVisible) {
         return (
-            <Popover test={true} placement={placement}>
+            <Popover placement={positioning.placement} shouldShift={positioning.shouldShift}>
                 <PopoverTrigger asChild={true}>{button}</PopoverTrigger>
                 <PopoverContent floatingArrowClassName="item-popover-arrow">
                     <div className="item-popover">
@@ -35,7 +36,7 @@ function ItemPopover({ button, isVisible, item, placement }: ItemPopoverProps) {
 }
 
 export function BotItemPopoverButton({ triggerContent, item }: { triggerContent: ReactNode; item: Item }) {
-    return <ItemPopover button={triggerContent} isVisible={true} item={item} placement="left" />;
+    return <ItemPopover button={triggerContent} isVisible={true} item={item} />;
 }
 
 export function GalleryItemPopoverButton({ item }: { item: Item }) {
