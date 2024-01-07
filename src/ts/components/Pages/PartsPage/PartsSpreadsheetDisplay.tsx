@@ -13,8 +13,9 @@ import React, { useMemo } from "react";
 
 import { Item, OtherItem, PowerItem, PropulsionItem, UtilityItem, WeaponItem } from "../../../types/itemTypes";
 import { getItem } from "../../../utilities/common";
+import Table, { TableHeaderGroup, TableRow } from "../../Table/Table";
 import { PartsPageState, SlotSearchType } from "./PartsPage";
-import { alphabeticalSort, criticalSort, damageSort, heatSort, spectrumSort } from "./PartsSortingUtils";
+import { criticalSort, damageSort, heatSort, spectrumSort } from "./PartsSortingUtils";
 
 const effectDescriptionMinWidth = 30;
 
@@ -275,65 +276,6 @@ const columnDefs: Record<SlotSearchType, ColumnDef<Item>[]> = {
     Weapon: weaponSlotColumns as any,
 };
 
-function TableRow({ row }: { row: Row<Item> }) {
-    return (
-        <tr>
-            {row.getVisibleCells().map((cell) => {
-                return (
-                    <td className="table-cell" key={cell.id}>
-                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </td>
-                );
-            })}
-        </tr>
-    );
-}
-
-function TableHeaderGroup({ headerGroup }: { headerGroup: HeaderGroup<Item> }) {
-    return (
-        <tr>
-            {headerGroup.headers.map((header) => {
-                let className: string;
-                const isSorted = header.column.getIsSorted();
-                let size: number | undefined;
-
-                if (header.subHeaders.length > 0) {
-                    className = "table-column-group";
-                } else {
-                    if (isSorted === "asc") {
-                        className = "table-column-ascending";
-                    } else if (isSorted === "desc") {
-                        className = "table-column-descending";
-                    } else {
-                        className = "table-column-unsorted";
-                    }
-
-                    size = header.getSize();
-                    if (size === 150) {
-                        size = undefined;
-                        // Default size is intended as 150 pixels but don't really
-                        // want to size everything individually
-                    }
-                }
-
-                return (
-                    <th
-                        style={{
-                            minWidth: size ? size + "rem" : undefined,
-                        }}
-                        key={header.id}
-                        colSpan={header.colSpan}
-                    >
-                        <div className={className} onClick={header.column.getToggleSortingHandler()}>
-                            {flexRender(header.column.columnDef.header, header.getContext())}
-                        </div>
-                    </th>
-                );
-            })}
-        </tr>
-    );
-}
-
 export default function PartsSpreadsheetDisplay({
     pageState,
     itemNames,
@@ -348,33 +290,10 @@ export default function PartsSpreadsheetDisplay({
 
     const slotSearch = pageState.slotSearch || "Any";
     const columns = columnDefs[slotSearch];
-    const table = useReactTable<Item>({
-        data: data,
-        columns: columns,
-        getCoreRowModel: getCoreRowModel(),
-        getSortedRowModel: getSortedRowModel(),
-        onSortingChange: setSorting,
-        state: {
-            sorting,
-        },
-    });
 
     if (slotSearch === "Any") {
         return <span>Please select a slot to see the spreadsheet view.</span>;
     }
 
-    return (
-        <table cellSpacing={0} cellPadding={0}>
-            <thead>
-                {table.getHeaderGroups().map((headerGroup) => (
-                    <TableHeaderGroup key={headerGroup.id} headerGroup={headerGroup} />
-                ))}
-            </thead>
-            <tbody>
-                {table.getRowModel().rows.map((row) => (
-                    <TableRow key={row.id} row={row} />
-                ))}
-            </tbody>
-        </table>
-    );
+    return <Table columns={columns} data={data} setSorting={setSorting} sorting={sorting} />;
 }
