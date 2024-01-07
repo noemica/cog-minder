@@ -1,31 +1,23 @@
-import {
-    ColumnDef,
-    Header,
-    HeaderGroup,
-    Row,
-    SortingState,
-    flexRender,
-    getCoreRowModel,
-    getSortedRowModel,
-    useReactTable,
-} from "@tanstack/react-table";
+import { ColumnDef } from "@tanstack/react-table";
 import React, { useMemo } from "react";
 
 import { Item, OtherItem, PowerItem, PropulsionItem, UtilityItem, WeaponItem } from "../../../types/itemTypes";
 import { getItem } from "../../../utilities/common";
-import Table, { TableHeaderGroup, TableRow } from "../../Table/Table";
+import Table from "../../Table/Table";
 import { PartsPageState, SlotSearchType } from "./PartsPage";
 import { criticalSort, damageSort, heatSort, spectrumSort } from "./PartsSortingUtils";
 
-const effectDescriptionMinWidth = 30;
+const effectDescriptionWidth = 40;
+const nameWidth = 15;
+const typeWidth = 10;
 
 // Slot categories to show for spreadsheet view
 const otherSlotColumns: ColumnDef<OtherItem>[] = [
     {
         header: "Overview",
         columns: [
-            { accessorKey: "name", header: "Name" },
-            { accessorKey: "type", header: "Type" },
+            { accessorKey: "name", header: "Name", size: nameWidth, maxSize: nameWidth },
+            { accessorKey: "type", header: "Type", maxSize: typeWidth },
             { accessorKey: "ratingString", header: "Rating" },
             { accessorKey: "size", header: "Size" },
             { accessorKey: "integrity", header: "Integrity" },
@@ -35,8 +27,8 @@ const otherSlotColumns: ColumnDef<OtherItem>[] = [
     {
         header: "Effect",
         columns: [
-            { accessorKey: "effect", header: "Effect", size: effectDescriptionMinWidth },
-            { accessorKey: "description", header: "Description", size: effectDescriptionMinWidth },
+            { accessorKey: "effect", header: "Effect", size: effectDescriptionWidth },
+            { accessorKey: "description", header: "Description", size: effectDescriptionWidth },
         ],
     },
 ];
@@ -45,8 +37,8 @@ const powerSlotColumns: ColumnDef<PowerItem>[] = [
     {
         header: "Overview",
         columns: [
-            { accessorKey: "name", header: "Name" },
-            { accessorKey: "type", header: "Type" },
+            { accessorKey: "name", header: "Name", size: nameWidth, maxSize: nameWidth },
+            { accessorKey: "type", header: "Type", maxSize: typeWidth },
             { accessorKey: "ratingString", header: "Rating" },
             { accessorKey: "size", header: "Size" },
             { accessorKey: "mass", header: "Mass" },
@@ -74,8 +66,8 @@ const powerSlotColumns: ColumnDef<PowerItem>[] = [
     {
         header: "Effect",
         columns: [
-            { accessorKey: "effect", header: "Effect", size: effectDescriptionMinWidth },
-            { accessorKey: "description", header: "Description", size: effectDescriptionMinWidth },
+            { accessorKey: "effect", header: "Effect", size: effectDescriptionWidth },
+            { accessorKey: "description", header: "Description", size: effectDescriptionWidth },
         ],
     },
 ];
@@ -84,8 +76,8 @@ const propulsionSlotColumns: ColumnDef<PropulsionItem>[] = [
     {
         header: "Overview",
         columns: [
-            { accessorKey: "name", header: "Name" },
-            { accessorKey: "type", header: "Type" },
+            { accessorKey: "name", header: "Name", size: nameWidth, maxSize: nameWidth },
+            { accessorKey: "type", header: "Type", maxSize: typeWidth },
             { accessorKey: "ratingString", header: "Rating" },
             { accessorKey: "size", header: "Size" },
             { accessorKey: "integrity", header: "Integrity" },
@@ -126,8 +118,8 @@ const utilitySlotColumns: ColumnDef<UtilityItem>[] = [
     {
         header: "Overview",
         columns: [
-            { accessorKey: "name", header: "Name" },
-            { accessorKey: "type", header: "Type" },
+            { accessorKey: "name", header: "Name", size: nameWidth, maxSize: nameWidth },
+            { accessorKey: "type", header: "Type", maxSize: typeWidth },
             { accessorKey: "ratingString", header: "Rating" },
             { accessorKey: "size", header: "Size" },
             { accessorKey: "mass", header: "Mass" },
@@ -154,8 +146,8 @@ const utilitySlotColumns: ColumnDef<UtilityItem>[] = [
     {
         header: "Effect",
         columns: [
-            { accessorKey: "effect", header: "Effect", size: effectDescriptionMinWidth },
-            { accessorKey: "description", header: "Description", size: effectDescriptionMinWidth },
+            { accessorKey: "effect", header: "Effect", size: effectDescriptionWidth },
+            { accessorKey: "description", header: "Description", size: effectDescriptionWidth },
         ],
     },
 ];
@@ -164,8 +156,8 @@ const weaponSlotColumns: ColumnDef<WeaponItem>[] = [
     {
         header: "Overview",
         columns: [
-            { accessorKey: "name", header: "Name" },
-            { accessorKey: "type", header: "Type" },
+            { accessorKey: "name", header: "Name", maxSize: nameWidth },
+            { accessorKey: "type", header: "Type", maxSize: typeWidth },
             { accessorKey: "ratingString", header: "Rating" },
             { accessorKey: "size", header: "Size" },
             { accessorKey: "mass", header: "Mass" },
@@ -205,8 +197,9 @@ const weaponSlotColumns: ColumnDef<WeaponItem>[] = [
                 header: "Critical",
                 sortingFn: (rowA, rowB, columnId) =>
                     criticalSort(rowA.getValue<string>(columnId), rowB.getValue<string>(columnId)),
+                maxSize: 8,
             },
-            { accessorKey: "penetration", header: "Penetration" },
+            { accessorKey: "penetration", header: "Penetration", maxSize: 10 },
             {
                 accessorKey: "heatTransfer",
                 header: "Heat Transfer",
@@ -218,6 +211,7 @@ const weaponSlotColumns: ColumnDef<WeaponItem>[] = [
                 header: "Spectrum",
                 sortingFn: (rowA, rowB, columnId) =>
                     spectrumSort(rowA.getValue<string>(columnId), rowB.getValue<string>(columnId)),
+                maxSize: 9,
             },
             { accessorKey: "disruption", header: "Disruption" },
             { accessorKey: "salvage", header: "Salvage" },
@@ -246,6 +240,7 @@ const weaponSlotColumns: ColumnDef<WeaponItem>[] = [
                 header: "Spectrum",
                 sortingFn: (rowA, rowB, columnId) =>
                     spectrumSort(rowA.getValue<string>(columnId), rowB.getValue<string>(columnId)),
+                maxSize: 9,
             },
             { accessorKey: "explosionDisruption", header: "Disruption" },
             { accessorKey: "explosionSalvage", header: "Salvage" },
@@ -261,8 +256,8 @@ const weaponSlotColumns: ColumnDef<WeaponItem>[] = [
     {
         header: "Effect",
         columns: [
-            { accessorKey: "effect", header: "Effect", size: effectDescriptionMinWidth },
-            { accessorKey: "description", header: "Description", size: effectDescriptionMinWidth },
+            { accessorKey: "effect", header: "Effect", size: effectDescriptionWidth },
+            { accessorKey: "description", header: "Description", size: effectDescriptionWidth },
         ],
     },
 ];
