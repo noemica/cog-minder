@@ -13,6 +13,7 @@ import BotPopoverButton from "../../Popover/BotPopover";
 import Table from "../../Table/Table";
 
 import "../Pages.less";
+import "./BotsPage.less";
 
 type BotsPageMode = "Simple" | "Spreadsheet";
 
@@ -195,7 +196,7 @@ function BotsSimpleDisplay({ pageState, botNames }: { pageState: BotsPageState; 
         return <BotPopoverButton bot={bot} key={bot.name} />;
     });
 
-    return <div className="part-button-grid">{botButtons}</div>;
+    return <div className="bot-button-grid">{botButtons}</div>;
 }
 
 function BotsSpreadsheetDisplay({ pageState, botNames }: { pageState: BotsPageState; botNames: string[] }) {

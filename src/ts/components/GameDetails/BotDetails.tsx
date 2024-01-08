@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { Bot, BotLocation, BotPart } from "../../botTypes";
 import { getItem, valueOrDefault } from "../../utilities/common";
 import { useSpoilers } from "../Effects/useLocalStorageValue";
-import ItemPopoverButton, { BotItemPopoverButton } from "../Popover/ItemPopover";
+import { BotItemPopoverButton } from "../Popover/ItemPopover";
 import {
     DetailsBotTitleLine,
     DetailsEmptyLine,

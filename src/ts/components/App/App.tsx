@@ -1,14 +1,15 @@
-import { ReactNode, StrictMode } from "react";
+import { ReactNode, StrictMode, Suspense, lazy } from "react";
 
 import { PageType } from "../../types/commonTypes";
 import useThemeUpdater from "../Effects/useThemeUpdater";
 import PageHeader from "../PageHeader/PageHeader";
-import AboutPage from "../Pages/AboutPage";
-import BotsPage from "../Pages/BotsPage/BotsPage";
-import CombatPage from "../Pages/CombatPage";
-import PartsPage from "../Pages/PartsPage/PartsPage";
 
 import "../../../styles/index.less";
+
+const AboutPage = lazy(() => import("../Pages/AboutPage"));
+const BotsPage = lazy(() => import("../Pages/BotsPage/BotsPage"));
+const CombatPage = lazy(() => import("../Pages/CombatPage"));
+const PartsPage = lazy(() => import("../Pages/PartsPage/PartsPage"));
 
 export type AppProps = {
     pageType: PageType;
@@ -64,7 +65,7 @@ export default function App({ pageType }: AppProps) {
     return (
         <StrictMode>
             <PageHeader pageType={pageType} />
-            {page}
+            <Suspense fallback={<span className="loading-message">Loading</span>}>{page}</Suspense>
         </StrictMode>
     );
 }
