@@ -1,0 +1,43 @@
+@import "../../../../styles/common.less";
+
+.hack-table {
+    width: 100%;
+    text-align: center;
+}
+
+.hack-content-row,
+.hack-header-row {
+    > :first-child {
+        background-color: @table-header-background-color;
+        font-size: @table-header-font-size;
+    }
+
+    > * {
+        border: @border-width solid @border-color;
+    }
+}
+
+.hack-content-row {
+    > * {
+        padding: @table-cell-padding;
+    }
+}
+
+.hack-header-row {
+    background-color: @table-header-background-color;
+
+    > * {
+        padding: @table-header-padding;
+
+        font-size: @table-header-font-size;
+    }
+}
+
+.hack-machine-header-cell {
+    background-color: @page-background-color;
+
+    > p {
+        font-size: @table-large-header-font-size;
+        margin: @table-large-header-margin;
+    }
+}

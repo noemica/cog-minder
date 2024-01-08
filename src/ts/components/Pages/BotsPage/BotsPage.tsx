@@ -265,6 +265,7 @@ export default function BotsPage() {
                 />
                 <Button
                     className="flex-grow-0"
+                    tooltip="Resets all filters to their default (unfiltered) state"
                     onClick={() => {
                         setPageState({
                             // The only thing that is explicitly saved is the mode

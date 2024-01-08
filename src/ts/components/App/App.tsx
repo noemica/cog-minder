@@ -9,6 +9,7 @@ import "../../../styles/index.less";
 const AboutPage = lazy(() => import("../Pages/AboutPage"));
 const BotsPage = lazy(() => import("../Pages/BotsPage/BotsPage"));
 const CombatPage = lazy(() => import("../Pages/CombatPage"));
+const HacksPage = lazy(() => import("../Pages/HacksPage/HacksPage"));
 const PartsPage = lazy(() => import("../Pages/PartsPage/PartsPage"));
 
 export type AppProps = {
@@ -32,6 +33,10 @@ export default function App({ pageType }: AppProps) {
 
             case "Combat":
                 page = <CombatPage />;
+                break;
+
+            case "Hacks":
+                page = <HacksPage />;
                 break;
 
             case "Parts":
