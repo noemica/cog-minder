@@ -2,9 +2,10 @@ import { PageType, Spoiler, ThemeType } from "../../types/commonTypes";
 import { ButtonLink } from "../Buttons/Button";
 import { useEditableSpoilers, useEditableTheme } from "../Effects/useLocalStorageValue";
 import { LabeledSelect } from "../LabeledItem/LabeledItem";
-import { SelectOptionType } from "../Selectpicker/Select";
 import ButtonPopover from "../Popover/ButtonPopover";
 import TextTooltip from "../Popover/TextTooltip";
+import TextTooltipButton from "../Popover/TextTooltipButton";
+import { SelectOptionType } from "../Selectpicker/Select";
 
 import "./PageHeader.less";
 
@@ -185,9 +186,9 @@ export default function PageHeader({ pageType }: PageHeaderProps) {
                 <div className="cogminder-title">Cog-Minder</div>
                 <div className="page-title-container">
                     <h1 className="page-title">{pageDetails.label}</h1>
-                    <TextTooltip tooltipText={pageDetails.explanation}>
-                        <span className="page-explanation">?</span>
-                    </TextTooltip>
+                    <TextTooltipButton className="page-explanation" tooltipText={pageDetails.explanation}>
+                        ?
+                    </TextTooltipButton>
                 </div>
                 <SettingsButton />
             </div>

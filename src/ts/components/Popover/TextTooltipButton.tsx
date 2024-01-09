@@ -6,19 +6,20 @@ import { useIsVisible } from "../Effects/useIsVisible";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./Tooltip";
 
 type TextTooltipButtonProps = {
-    tooltipText: string;
     children: ReactNode;
+    className?: string;
+    tooltipText: string;
     placement?: Placement;
 };
 
-export default function TextTooltipButton({ tooltipText, placement, children }: TextTooltipButtonProps) {
+export default function TextTooltipButton({ children, className, tooltipText, placement }: TextTooltipButtonProps) {
     const [open, setOpen] = useState<boolean>(false);
     const [openByButton, setOpenByButton] = useState<boolean>(false);
 
     const isVisible = useIsVisible();
 
     const button = (
-        <div>
+        <div className={className}>
             <Button
                 onClick={() => {
                     setOpenByButton(!openByButton);
