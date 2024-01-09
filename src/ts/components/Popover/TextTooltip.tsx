@@ -14,7 +14,7 @@ export default function TextTooltip({ tooltipText, placement, children }: TextTo
     const isVisible = useIsVisible();
 
     if (!isVisible) {
-        // If not visible then don't create the tooltip since that can be 
+        // If not visible then don't create the tooltip since that can be
         // expensive when there are a lot of different elements with tooltips
         return children;
     }

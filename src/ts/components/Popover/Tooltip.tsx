@@ -1,6 +1,7 @@
 import {
     FloatingArrow,
     FloatingPortal,
+    OpenChangeReason,
     Placement,
     arrow,
     autoUpdate,
@@ -27,7 +28,9 @@ type TooltipOptions = {
     initialOpen?: boolean;
     placement?: Placement;
     open?: boolean;
-    onOpenChange?: (open: boolean) => void;
+    onOpenChange?: (open: boolean, event?: Event, reason?: OpenChangeReason) => void;
+    useHover?: boolean;
+    useFocus?: boolean;
 };
 
 export function useTooltip({
@@ -35,6 +38,8 @@ export function useTooltip({
     placement = "top",
     open: controlledOpen,
     onOpenChange: setControlledOpen,
+    useHover: shouldUseHover = true,
+    useFocus: shouldUseFocus = true,
 }: TooltipOptions = {}) {
     const arrowRef = useRef(null);
     const [uncontrolledOpen, setUncontrolledOpen] = React.useState(initialOpen);
@@ -66,10 +71,10 @@ export function useTooltip({
 
     const hover = useHover(context, {
         move: false,
-        enabled: controlledOpen == null,
+        enabled: controlledOpen == null || shouldUseHover,
     });
     const focus = useFocus(context, {
-        enabled: controlledOpen == null,
+        enabled: controlledOpen == null || shouldUseFocus,
     });
     const dismiss = useDismiss(context);
     const role = useRole(context, { role: "tooltip" });
