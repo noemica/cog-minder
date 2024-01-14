@@ -1,32 +1,17 @@
 // Common code
-import botExtraData from "../../json/bot_extra_data.json";
-import itemCategories from "../../json/item_categories.json";
-import lore from "../../json/lore.json";
-import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "../botTypes";
-import { specialItemProperties } from "../specialItemProperties";
+import { Bot, BotPart } from "../botTypes";
 import { MapLocation, Spoiler } from "../types/commonTypes";
 import {
     BaseItem,
-    Critical,
-    FabricationStats,
     Item,
-    ItemCategory,
     ItemRatingCategory,
     ItemType,
-    JsonItem,
-    OtherItem,
     PowerItem,
     PropulsionItem,
     SpecialPropertyTypeName,
     UtilityItem,
     WeaponItem,
 } from "../types/itemTypes";
-
-export let botData: { [key: string]: Bot } = {};
-export let itemData: { [key: string]: Item } = {};
-
-// Use for testing with new items/bots
-const verifyImages = false && isDev();
 
 // A special bot name to image name map for special/unique bots
 const botNameImageMap = new Map<string, string>([
@@ -220,7 +205,7 @@ export function canShowSpoiler(stateToCheck: Spoiler, globalState: Spoiler): boo
 }
 
 // Ceil the number to the nearest multiple
-function ceilToMultiple(num: number, multiple: number) {
+export function ceilToMultiple(num: number, multiple: number) {
     return Math.ceil(num / multiple) * multiple;
 }
 
@@ -1551,9 +1536,9 @@ export function flatten<T>(arrays: Array<Array<T>>): Array<T> {
 }
 
 // Do a lexicographical sort based on the no-prefix item name
-export function gallerySort(a: string, b: string): number {
-    const noPrefixA = getNoPrefixName(a);
-    const noPrefixB = getNoPrefixName(b);
+export function gallerySort(itemA: Item, itemB: Item): number {
+    const noPrefixA = getNoPrefixName(itemA.name);
+    const noPrefixB = getNoPrefixName(itemB.name);
     let res = noPrefixA < noPrefixB ? -1 : noPrefixA > noPrefixB ? 1 : 0;
 
     if (res === 0) {
@@ -1563,28 +1548,10 @@ export function gallerySort(a: string, b: string): number {
         // The export index will always be ordered for different prefix
         // versions of the same parts so this is the best way to sort
         // them how the in-game gallery does.
-        res = getItem(a).index - getItem(b).index;
+        res = itemA.index - itemB.index;
     }
 
     return res;
-}
-
-// Tries to get a bot by the name
-export function getBot(botName: string): Bot {
-    if (botName in botData) {
-        return botData[botName];
-    }
-
-    throw `${botName} not a valid bot`;
-}
-
-// Tries to get a bot by the name
-export function getBotOrNull(botName: string): Bot | null {
-    if (botName in botData) {
-        return botData[botName];
-    }
-
-    return null;
 }
 
 export function getBotImageName(bot: Bot) {
@@ -1594,23 +1561,6 @@ export function getBotImageName(bot: Bot) {
     }
 
     return createImagePath(`game_sprites/${bot.class}.png`);
-}
-
-// Tries to get an item by name
-export function getItem(itemName: string): Item {
-    if (itemName in itemData) {
-        return itemData[itemName];
-    }
-    throw `${itemName} not a valid item`;
-}
-
-// Tries to get an item by name
-export function getItemOrNull(itemName: string): Item | null {
-    if (itemName in itemData) {
-        return itemData[itemName];
-    }
-
-    return null;
 }
 
 // Gets the sprite image name of an item
@@ -1626,20 +1576,6 @@ export function getItemAsciiArtImageName(item: Item): string {
     }
 
     return createImagePath(`part_art/${item.name.replace(/"/g, "").replace(/\//g, "")}.png`);
-}
-
-// Tries to get an item by its full name
-export function getItemByFullName(itemName: string): Item {
-    const items = Object.keys(itemData)
-        .map((name) => itemData[name])
-        .filter((item) => item.fullName == itemName);
-
-    if (items.length === 0) {
-        console.trace();
-        throw `${itemName} not a valid item`;
-    }
-
-    return items[0];
 }
 
 // Gets the movement name given a propulsion type
@@ -1703,533 +1639,6 @@ export function hasActiveSpecialProperty(
     return true;
 }
 
-// Initialize all item and bot data from the given items/bots, bots are optional
-export async function initData(items: JsonItem[], bots: { [key: string]: JsonBot } | undefined): Promise<any> {
-    botData = {};
-    itemData = {};
-
-    const botPromises: Promise<any>[] = [];
-    const itemPromises: Promise<any>[] = [];
-
-    // Create items
-    Object.keys(items).forEach((key, index) => {
-        const item = items[key];
-        const itemName = item.Name;
-        let newItem: Item | undefined;
-
-        let category: ItemRatingCategory = ItemRatingCategory[item.Category ?? ""];
-        if (category === undefined) {
-            category = ItemRatingCategory.None;
-        }
-
-        let rating = parseIntOrUndefined(item.Rating) ?? 1;
-        if (category == ItemRatingCategory.Alien) rating += 0.75;
-        else if (category == ItemRatingCategory.Prototype) rating += 0.5;
-
-        const ratingString = item.Rating;
-        const fabrication: FabricationStats | undefined =
-            item["Fabrication Number"] === undefined
-                ? undefined
-                : {
-                      number: item["Fabrication Number"] as string,
-                      time: item["Fabrication Time"] as string,
-                  };
-
-        let categories: ItemCategory[];
-        if (!(itemName in itemCategories)) {
-            console.log(`Need to add categories for ${itemName}`);
-            categories = [];
-        } else {
-            categories = (itemCategories as { [key: string]: ItemCategory[] })[itemName];
-        }
-
-        const coverage = parseIntOrUndefined(item.Coverage) ?? 0;
-        const hackable = !!(parseIntOrUndefined(item["Hackable Schematic"]) ?? false);
-        const integrity = parseIntOrUndefined(item.Integrity) ?? 0;
-        const mass = parseIntOrUndefined(item.Mass);
-        const noPrefixName = getNoPrefixName(itemName);
-        const size = parseIntOrUndefined(item.Size) ?? 1;
-        const specialProperty = specialItemProperties[itemName];
-        const spoiler: Spoiler = categories.includes("Redacted")
-            ? "Redacted"
-            : categories.includes("Spoiler")
-              ? "Spoiler"
-              : "None";
-
-        switch (item["Slot"]) {
-            case "N/A": {
-                const otherItem: OtherItem = {
-                    slot: "N/A",
-                    category: category,
-                    coverage: undefined,
-                    hackable: hackable,
-                    integrity: integrity,
-                    noRepairs: item["No Repairs"] === "1",
-                    mass: undefined,
-                    name: item.Name,
-                    fullName: item["Full Name"],
-                    noPrefixName: noPrefixName,
-                    rating: rating,
-                    ratingString: ratingString,
-                    size: size,
-                    type: item.Type,
-                    description: item.Description,
-                    categories: categories,
-                    life: item.Life,
-                    index: index,
-                    specialProperty: specialProperty,
-                    spoiler: spoiler,
-                };
-                newItem = otherItem;
-                break;
-            }
-
-            case "Power": {
-                let minChunks: number | undefined = undefined;
-                let maxChunks: number | undefined = undefined;
-
-                if (item["Chunks"] !== undefined) {
-                    if (item["Chunks"].includes("-")) {
-                        const split = item["Chunks"].split("-");
-
-                        minChunks = parseInt(split[0]);
-                        maxChunks = parseInt(split[1]);
-                    } else {
-                        minChunks = parseInt(item["Chunks"]);
-                        maxChunks = minChunks;
-                    }
-                }
-                const powerItem: PowerItem = {
-                    slot: "Power",
-                    category: category,
-                    coverage: coverage,
-                    energyGeneration: parseIntOrDefault(item["Energy Generation"], 0),
-                    energyStorage: parseIntOrUndefined(item["Energy Storage"]),
-                    hackable: hackable,
-                    heatGeneration: parseIntOrUndefined(item["Heat Generation"]),
-                    matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
-                    integrity: integrity,
-                    noRepairs: item["No Repairs"] === "1",
-                    mass: mass,
-                    name: item.Name,
-                    fullName: item["Full Name"],
-                    noPrefixName: noPrefixName,
-                    rating: rating,
-                    ratingString: ratingString,
-                    size: size,
-                    type: item.Type,
-                    description: item.Description,
-                    categories: categories,
-                    effect: item.Effect,
-                    fabrication: fabrication,
-                    powerStability:
-                        item["Power Stability"] == null
-                            ? undefined
-                            : parseIntOrUndefined(item["Power Stability"].slice(0, -1)),
-                    explosionRadius: parseIntOrDefault(item["Explosion Radius"], 0),
-                    explosionDamage: item["Explosion Damage"],
-                    explosionDamageMax: parseIntOrDefault(item["Explosion Damage Max"], 0),
-                    explosionDamageMin: parseIntOrDefault(item["Explosion Damage Min"], 0),
-                    explosionDisruption: parseIntOrDefault(item["Explosion Disruption"], 0),
-                    explosionHeatTransfer: item["Explosion Heat Transfer"],
-                    explosionSalvage: parseIntOrDefault(item["Explosion Salvage"], 0),
-                    explosionSpectrum: item["Explosion Spectrum"],
-                    explosionType: item["Explosion Type"],
-                    minChunks: minChunks,
-                    maxChunks: maxChunks,
-                    index: index,
-                    specialProperty: specialProperty,
-                    spoiler: spoiler,
-                };
-                newItem = powerItem;
-                break;
-            }
-
-            case "Propulsion": {
-                const propItem: PropulsionItem = {
-                    slot: "Propulsion",
-                    category: category,
-                    coverage: coverage,
-                    energyPerMove: parseFloatOrUndefined(item["Energy/Move"]),
-                    hackable: hackable,
-                    integrity: integrity,
-                    noRepairs: item["No Repairs"] === "1",
-                    name: item.Name,
-                    fullName: item["Full Name"],
-                    mass: mass,
-                    noPrefixName: noPrefixName,
-                    penalty: parseInt(item.Penalty as string),
-                    rating: rating,
-                    ratingString: ratingString,
-                    size: size,
-                    support: parseInt(item.Support as string),
-                    timePerMove: parseInt(item["Time/Move"] as string),
-                    type: item.Type,
-                    fabrication: fabrication,
-                    burnout: item.Burnout,
-                    description: item.Description,
-                    categories: categories,
-                    effect: item.Effect,
-                    drag: parseIntOrUndefined(item.Drag),
-                    energyUpkeep: parseFloatOrUndefined(item["Energy Upkeep"]),
-                    heatGeneration: parseIntOrUndefined(item["Heat Generation"]),
-                    heatPerMove: parseIntOrUndefined(item["Heat/Move"]),
-                    matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
-                    modPerExtra: parseIntOrUndefined(item["Mod/Extra"]),
-                    siege: item.Siege,
-                    index: index,
-                    specialProperty: specialProperty,
-                    spoiler: spoiler,
-                };
-                newItem = propItem;
-                break;
-            }
-
-            case "Utility": {
-                const utilItem: UtilityItem = {
-                    slot: "Utility",
-                    category: category,
-                    coverage: coverage,
-                    hackable: hackable,
-                    integrity: integrity,
-                    noRepairs: item["No Repairs"] === "1",
-                    name: item.Name,
-                    fullName: item["Full Name"],
-                    noPrefixName: noPrefixName,
-                    rating: rating,
-                    ratingString: ratingString,
-                    size: size,
-                    type: item.Type,
-                    fabrication: fabrication,
-                    description: item.Description,
-                    effect: item.Effect,
-                    categories: categories,
-                    energyUpkeep: parseIntOrUndefined(item["Energy Upkeep"]),
-                    heatGeneration: parseIntOrUndefined(item["Heat Generation"]),
-                    matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
-                    mass: parseIntOrUndefined(item.Mass) ?? 0,
-                    specialTrait: item["Special Trait"],
-                    index: index,
-                    specialProperty: specialProperty,
-                    spoiler: spoiler,
-                };
-                newItem = utilItem;
-                break;
-            }
-
-            case "Weapon": {
-                let critical: number | undefined;
-                let criticalType: Critical | undefined;
-                if (item.Critical !== undefined) {
-                    const result = /(\d*)% (\w*)/.exec(item.Critical);
-                    if (result === null) {
-                        critical = undefined;
-                        criticalType = undefined;
-                    } else {
-                        critical = parseInt(result[1]);
-                        criticalType = result[2] as Critical;
-                    }
-                }
-
-                let minChunks: number | undefined = undefined;
-                let maxChunks: number | undefined = undefined;
-
-                if (item["Chunks"] !== undefined) {
-                    if (item["Chunks"].includes("-")) {
-                        const split = item["Chunks"].split("-");
-
-                        minChunks = parseInt(split[0]);
-                        maxChunks = parseInt(split[1]);
-                    } else {
-                        minChunks = parseInt(item["Chunks"]);
-                        maxChunks = minChunks;
-                    }
-                }
-
-                const weaponItem: WeaponItem = {
-                    slot: "Weapon",
-                    category: category,
-                    coverage: coverage,
-                    hackable: hackable,
-                    integrity: integrity,
-                    noRepairs: item["No Repairs"] === "1",
-                    name: item.Name,
-                    fullName: item["Full Name"],
-                    noPrefixName: noPrefixName,
-                    rating: rating,
-                    ratingString: ratingString,
-                    size: size,
-                    type: item.Type,
-                    fabrication: fabrication,
-                    description: item.Description,
-                    effect: item.Effect,
-                    categories: categories,
-                    mass: parseIntOrUndefined(item.Mass) ?? 0,
-                    specialTrait: item["Special Trait"],
-                    critical: critical,
-                    criticalType: criticalType,
-                    criticalString: item.Critical,
-                    delay: parseIntOrUndefined(item.Delay),
-                    explosionHeatTransfer: item["Explosion Heat Transfer"],
-                    explosionType: item["Explosion Type"],
-                    penetration: item.Penetration,
-                    projectileCount: parseIntOrUndefined(item["Projectile Count"]) ?? 1,
-                    range: parseInt(item.Range as string),
-                    shotEnergy: parseIntOrUndefined(item["Shot Energy"]),
-                    shotHeat: parseIntOrUndefined(item["Shot Heat"]),
-                    targeting: parseIntOrUndefined(item.Targeting),
-                    damage:
-                        item["Damage"] === undefined
-                            ? item["Damage Min"] !== undefined
-                                ? `${item["Damage Min"]}-${item["Damage Max"]}`
-                                : undefined
-                            : item["Damage"],
-                    damageMin: parseIntOrUndefined(item["Damage Min"]),
-                    damageMax: parseIntOrUndefined(item["Damage Max"]),
-                    damageType: item["Damage Type"],
-                    disruption: parseIntOrUndefined(item.Disruption),
-                    explosionDamage:
-                        item["Explosion Damage"] === undefined
-                            ? item["Explosion Damage Max"] !== undefined
-                                ? `${item["Explosion Damage Min"]}-${item["Explosion Damage Max"]}`
-                                : undefined
-                            : item["Explosion Damage"],
-                    explosionDisruption: parseIntOrUndefined(item["Explosion Disruption"]),
-                    explosionRadius: parseIntOrUndefined(item["Explosion Radius"]),
-                    explosionSalvage: parseIntOrUndefined(item["Explosion Salvage"]),
-                    explosionSpectrum: item["Explosion Spectrum"],
-                    minChunks: minChunks,
-                    maxChunks: maxChunks,
-                    falloff: parseIntOrUndefined(item.Falloff),
-                    heatTransfer: item["Heat Transfer"],
-                    life: item.Life,
-                    overloadStability:
-                        item["Overload Stability"] == null
-                            ? undefined
-                            : parseIntOrUndefined(item["Overload Stability"].slice(0, -1)),
-                    recoil: parseIntOrUndefined(item.Recoil),
-                    salvage: parseIntOrUndefined(item.Salvage),
-                    shotMatter: parseIntOrUndefined(item["Shot Matter"]),
-                    spectrum: item.Spectrum,
-                    waypoints: item.Waypoints,
-                    arc: parseIntOrUndefined(item.Arc),
-                    index: index,
-                    specialProperty: specialProperty,
-                    spoiler: spoiler,
-                };
-                newItem = weaponItem;
-                break;
-            }
-        }
-
-        if (newItem !== undefined) {
-            itemData[itemName] = newItem;
-
-            if (verifyImages) {
-                itemPromises.push(loadImage(getItemSpriteImageName(newItem)));
-                itemPromises.push(loadImage(getItemAsciiArtImageName(newItem)));
-            }
-        }
-    });
-
-    if (bots !== undefined) {
-        // Create bots
-        Object.keys(bots).forEach((key) => {
-            function sumItemCoverage(sum: number, data: string | ItemOption[]) {
-                if (typeof data === "string") {
-                    // Item name, just parse coverage
-                    return (getItem(data).coverage as number) + sum;
-                } else {
-                    // Option, return largest sum of items
-                    let largest = 0;
-                    data.forEach((optionData) => {
-                        if (optionData.name === "None") {
-                            return;
-                        }
-
-                        const number = optionData.number ?? 1;
-                        const item = getItem(optionData.name);
-                        const optionCoverage = (item.coverage as number) * number;
-                        largest = Math.max(largest, optionCoverage);
-                    });
-
-                    return largest + sum;
-                }
-            }
-            const bot = (bots as any as { [key: string]: JsonBot })[key];
-            const botName = bot.Name;
-            const itemCoverage =
-                (bot.Armament?.reduce(sumItemCoverage, 0) ?? 0) + (bot.Components?.reduce(sumItemCoverage, 0) ?? 0);
-
-            let roughCoreCoverage = (100.0 / (100.0 - parseInt(bot["Core Exposure %"]))) * itemCoverage - itemCoverage;
-            if (isNaN(roughCoreCoverage)) {
-                roughCoreCoverage = 1;
-            }
-            const estimatedCoreCoverage = ceilToMultiple(roughCoreCoverage, 10);
-            const totalCoverage = estimatedCoreCoverage + itemCoverage;
-
-            function addPartData(data: string | ItemOption[], partData: BotPart[], partOptionData: BotPart[][]) {
-                if (typeof data === "string") {
-                    const itemName = data;
-                    // Item name, add to part data
-                    const result = partData.find((p) => p.name === data);
-
-                    if (result === undefined) {
-                        const item = getItem(itemName);
-                        partData.push({
-                            name: itemName,
-                            number: 1,
-                            coverage: Math.floor((100.0 * (item.coverage as number)) / totalCoverage),
-                            integrity: item.integrity,
-                        });
-                    } else {
-                        result.number += 1;
-                    }
-                } else {
-                    // Option, add all options
-                    const options: BotPart[] = [];
-                    data.forEach((optionData) => {
-                        const itemName = optionData.name;
-
-                        let coverage = 0;
-                        const item = getItem(itemName);
-
-                        if (itemName !== "None") {
-                            coverage = Math.floor((100.0 * (item.coverage as number)) / totalCoverage);
-                        }
-
-                        options.push({
-                            name: itemName,
-                            number: optionData.number ?? 1,
-                            coverage: coverage,
-                            integrity: item.integrity,
-                        });
-                    });
-                    partOptionData.push(options);
-                }
-            }
-
-            // Add armament and component data
-            const armamentData: BotPart[] = [];
-            const armamentOptionData: BotPart[][] = [];
-            bot.Armament?.forEach((data) => addPartData(data, armamentData, armamentOptionData));
-
-            const componentData: BotPart[] = [];
-            const componentOptionData: BotPart[][] = [];
-            bot.Components?.forEach((data) => addPartData(data, componentData, componentOptionData));
-
-            let extraData: JsonBotExtraData | undefined = undefined;
-            if (!(botName in botExtraData)) {
-                console.log(`Need to add extra data for ${botName}`);
-            } else {
-                extraData = (botExtraData as any as { [key: string]: JsonBotExtraData })[botName];
-            }
-
-            const fabrication: FabricationStats | undefined =
-                bot["Fabrication Count"] === undefined
-                    ? undefined
-                    : {
-                          number: bot["Fabrication Count"] as string,
-                          time: bot["Fabrication Time"] as string,
-                      };
-
-            // Parse numerical salvage values out
-            let salvageLow: number;
-            let salvageHigh: number;
-            if (bot["Salvage Potential"].includes("~")) {
-                const salvageArray = bot["Salvage Potential"]
-                    .split("~")
-                    .map((s) => s.trim())
-                    .map((s) => parseInt(s));
-
-                salvageLow = salvageArray[0];
-                salvageHigh = salvageArray[1];
-            } else {
-                salvageLow = parseInt(bot["Salvage Potential"]);
-                salvageHigh = salvageLow;
-            }
-
-            let description: string;
-            if (bot.Analysis !== undefined) {
-                description = bot.Analysis!;
-            } else {
-                const loreEntry = lore["0b10 Records"].find((e) => e["Name/Number"] === bot.Name);
-                if (loreEntry !== undefined) {
-                    description = loreEntry.Content;
-                } else {
-                    description = "";
-                }
-            }
-
-            const newBot: Bot = {
-                armament: bot.Armament ?? [],
-                armamentData: armamentData,
-                armamentOptionData: armamentOptionData,
-                armamentString: bot["Armament String"] ?? "",
-                categories: extraData?.Categories ?? [],
-                class: bot.Class,
-                componentData: componentData,
-                componentOptionData: componentOptionData,
-                components: bot.Components ?? [],
-                componentsString: bot["Components String"] ?? "",
-                coreCoverage: roughCoreCoverage,
-                coreExposure: parseIntOrDefault(bot["Core Exposure %"], 0),
-                coreIntegrity: parseInt(bot["Core Integrity"]),
-                description: description,
-                energyGeneration: parseIntOrDefault(bot["Energy Generation"], 0),
-                fabrication: fabrication,
-                heatDissipation: parseIntOrDefault(bot["Heat Dissipation"], 0),
-                immunities: bot.Immunities ?? [],
-                immunitiesString: bot.Immunities?.join(", ") ?? "",
-                locations: extraData?.Locations ?? [],
-                memory: bot.Memory,
-                movement: `${bot.Movement} (${bot.Speed}/${bot["Speed %"]}%)`,
-                movementOverloaded:
-                    bot["Overload Speed"] !== undefined
-                        ? `${bot.Movement} (${bot["Overload Speed"]}/${bot["Overload Speed %"]}%)`
-                        : undefined,
-                name: botName,
-                profile: bot.Profile,
-                rating: bot.Rating,
-                resistances: bot.Resistances,
-                salvageHigh: salvageHigh,
-                salvageLow: salvageLow,
-                salvagePotential: bot["Salvage Potential"],
-                speed: parseInt(bot.Speed),
-                spotPercent: bot["Spot %"] ?? "100",
-                spoiler: extraData?.Categories.includes(BotCategory.Redacted)
-                    ? "Redacted"
-                    : extraData?.Categories.includes(BotCategory.Spoiler)
-                      ? "Spoiler"
-                      : "None",
-                size: bot["Size Class"],
-                threat: bot.Threat,
-                totalCoverage: totalCoverage,
-                tier: bot.Tier,
-                traits: bot.Traits ?? [],
-                traitsString: bot.Traits?.join(", ") ?? "",
-                value: parseIntOrDefault(bot.Value, 0),
-                visualRange: bot["Sight Range"],
-            };
-
-            if (verifyImages) {
-                botPromises.push(loadImage(getBotImageName(newBot)));
-            }
-
-            botData[botName] = newBot;
-        });
-    }
-
-    if (verifyImages) {
-        console.log("Verifying images...");
-        await Promise.all(itemPromises);
-        console.log("Verified item images");
-        console.log("Verifying bot images...");
-        await Promise.all(botPromises);
-        console.log("Verified bot images");
-    }
-}
-
 export function isDev() {
     return process.env.NODE_ENV === "development";
 }
@@ -2284,7 +1693,7 @@ export function nameToId(name: string): string {
 }
 
 // Parses the string into a number or null if invalid
-function parseFloatOrUndefined(value: string | undefined): number | undefined {
+export function parseFloatOrUndefined(value: string | undefined): number | undefined {
     const int = parseFloat(value ?? "");
 
     if (isNaN(int)) {
@@ -2304,8 +1713,8 @@ export function parseIntOrDefault(string: string | number | undefined, defaultVa
     return value;
 }
 
-// Parses the string into a number or null if invalid
-function parseIntOrUndefined(value: string | undefined): number | undefined {
+// Parses the string into a number or undefined if invalid
+export function parseIntOrUndefined(value: string | undefined): number | undefined {
     const int = parseInt(value ?? "");
 
     if (isNaN(int)) {

@@ -388,9 +388,21 @@ export default function PartsPageInput({
                                 primarySortOptions[0]
                             }
                             onChange={(val) => {
-                                if (pageState.secondarySort === undefined || pageState.secondarySort === "None") {
+                                if (val!.value === "Alphabetical" || val!.value === "Gallery") {
+                                    // If setting to alphabetical/gallery sort then remove the
+                                    // secondary sort
+                                    setPageState({
+                                        ...pageState,
+                                        primarySort: val!.value,
+                                        secondarySort: undefined,
+                                    });
+                                } else if (
+                                    pageState.secondarySort === undefined ||
+                                    pageState.secondarySort === "None"
+                                ) {
                                     // If no secondary sort set yet then default to alphabetical
-                                    // when the primary sort order is changed
+                                    // when the primary sort order is changed unless the current
+                                    // sort is alphabetical
                                     setPageState({
                                         ...pageState,
                                         primarySort: val!.value,

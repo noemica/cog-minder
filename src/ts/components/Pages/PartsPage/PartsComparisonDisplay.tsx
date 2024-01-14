@@ -14,7 +14,8 @@ import {
     Spectrum,
     WeaponItem,
 } from "../../../types/itemTypes";
-import { getItem, parseIntOrDefault } from "../../../utilities/common";
+import { ItemData } from "../../../utilities/ItemData";
+import { parseIntOrDefault } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
 import ItemDetails from "../../GameDetails/ItemDetails";
 import SelectWrapper, { SelectOptionType } from "../../Selectpicker/Select";
@@ -742,17 +743,19 @@ function ComparisonContent({ leftItem, rightItem }: { leftItem: Item; rightItem:
 
 export default function PartsComparisonDisplay({
     pageState,
-    itemNames,
+    itemData,
+    items,
 }: {
     pageState: PartsPageState;
-    itemNames: string[];
+    itemData: ItemData;
+    items: Item[];
 }) {
     const [leftItem, setLeftItem] = useState("Lgt. Assault Rifle");
     const [rightItem, setRightItem] = useState("Assault Rifle");
 
-    const itemOptions = itemNames.map<SelectOptionType<string>>((itemName) => {
+    const itemOptions = items.map<SelectOptionType<string>>((item) => {
         return {
-            value: itemName,
+            value: item.name,
         };
     });
 
@@ -774,7 +777,7 @@ export default function PartsComparisonDisplay({
         <div className="comparison-container">
             <div className="part-comparison-part-column">
                 {ItemSelect(leftItem, setLeftItem)}
-                <ItemDetails item={getItem(leftItem)} />
+                <ItemDetails item={itemData.getItem(leftItem)} />
             </div>
             <div className="part-comparison-details-column">
                 <Button
@@ -787,12 +790,12 @@ export default function PartsComparisonDisplay({
                     ← Swap →
                 </Button>
                 <div>
-                    <ComparisonContent leftItem={getItem(leftItem)} rightItem={getItem(rightItem)} />
+                    <ComparisonContent leftItem={itemData.getItem(leftItem)} rightItem={itemData.getItem(rightItem)} />
                 </div>
             </div>
             <div className="part-comparison-part-column">
                 {ItemSelect(rightItem, setRightItem)}
-                <ItemDetails item={getItem(rightItem)} />
+                <ItemDetails item={itemData.getItem(rightItem)} />
             </div>
         </div>
     );

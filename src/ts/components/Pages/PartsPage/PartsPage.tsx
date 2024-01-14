@@ -1,7 +1,9 @@
 import { ReactNode, useState } from "react";
 
-import { ItemSlot } from "../../../types/itemTypes";
-import { canShowSpoiler, gallerySort, getItem, itemData, leetSpeakMatchTransform } from "../../../utilities/common";
+import { Item, ItemSlot } from "../../../types/itemTypes";
+import { ItemData } from "../../../utilities/ItemData";
+import { canShowSpoiler, gallerySort, leetSpeakMatchTransform } from "../../../utilities/common";
+import useItemData from "../../Effects/useItemData";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
 import PartsComparisonDisplay from "./PartsComparisonDisplay";
 import PartsGalleryDisplay from "./PartsGalleryDisplay";
@@ -120,12 +122,10 @@ export type PartsPageState = {
     secondarySortDirection?: SortDirection;
 };
 
-function filterItemNames(pageState: PartsPageState) {
+function filterItems(pageState: PartsPageState, itemData: ItemData) {
     const spoilers = useSpoilers();
 
-    const filteredItemNames = Object.keys(itemData).filter((itemName) => {
-        const item = itemData[itemName];
-        
+    const filteredItems = itemData.getAllItems().filter((item) => {
         // Spoilers filter
         if (!canShowSpoiler(item.spoiler, spoilers)) {
             return false;
@@ -289,58 +289,64 @@ function filterItemNames(pageState: PartsPageState) {
         return true;
     });
 
-    return filteredItemNames;
+    return filteredItems;
 }
 
-function sortItemNames(itemNames: string[], pageState: PartsPageState) {
-    // Sorts the collection of item names based on the sort settings
-    const sortKeyMap = {
-        Alphabetical: { key: "name", sort: alphabeticalSort },
-        Gallery: { key: "name", sort: gallerySort },
-        Rating: { key: "rating", sort: integerSort },
-        Size: { key: "size", sort: integerSort },
-        Mass: { key: "mass", sort: integerSort },
-        Integrity: { key: "integrity", sort: integerSort },
-        Coverage: { key: "coverage", sort: integerSort },
-        Arc: { key: "arc", sort: integerSort },
-        Critical: { key: "criticalString", sort: criticalSort },
-        Damage: { keys: ["damage", "explosionDamage"], sort: damageSort },
-        Delay: { key: "delay", sort: integerSort },
-        Disruption: { keys: ["disruption", "explosionDisruption"], sort: integerSort },
-        Drag: { key: "drag", sort: integerSort },
-        "Energy/Move": { key: "energyPerMove", sort: integerSort },
-        "Energy Generation": { key: "energyGeneration", sort: integerSort },
-        "Energy Storage": { key: "energyStorage", sort: integerSort },
-        "Energy Upkeep": { key: "energyUpkeep", sort: integerSort },
-        "Explosion Radius": { key: "explosionRadius", sort: integerSort },
-        Falloff: { key: "falloff", sort: integerSort },
-        "Heat/Move": { key: "heatPerMove", sort: integerSort },
-        "Heat Generation": { key: "heatGeneration", sort: integerSort },
-        "Heat Transfer": { keys: ["heatTransfer", "explosionHeatTransfer"], sort: heatSort },
-        "Matter Upkeep": { key: "matterUpkeep", sort: integerSort },
-        Penalty: { key: "penalty", sort: integerSort },
-        "Projectile Count": { key: "projectileCount", sort: integerSort },
-        Range: { key: "range", sort: integerSort },
-        Recoil: { key: "recoil", sort: integerSort },
-        Salvage: { keys: ["salvage", "explosionSalvage"], sort: integerSort },
-        "Shot Energy": { key: "shotEnergy", sort: integerSort },
-        "Shot Heat": { key: "shotHeat", sort: integerSort },
-        "Shot Matter": { key: "shotMatter", sort: integerSort },
-        Spectrum: { keys: ["spectrum", "explosionSpectrum"], sort: spectrumSort },
-        Support: { key: "support", sort: integerSort },
-        Targeting: { key: "targeting", sort: integerSort },
-        "Time/Move": { key: "timePerMove", sort: integerSort },
-        Waypoints: { key: "waypoints", sort: integerSort },
-    };
+type SortKeyMap = {
+    key?: string;
+    keys?: string[];
+    sort: (a: any, b: any) => number;
+};
+const sortKeyMap: { [key: string]: SortKeyMap } = {
+    Alphabetical: { key: "name", sort: alphabeticalSort },
+    Gallery: { sort: gallerySort },
+    Rating: { key: "rating", sort: integerSort },
+    Size: { key: "size", sort: integerSort },
+    Mass: { key: "mass", sort: integerSort },
+    Integrity: { key: "integrity", sort: integerSort },
+    Coverage: { key: "coverage", sort: integerSort },
+    Arc: { key: "arc", sort: integerSort },
+    Critical: { key: "criticalString", sort: criticalSort },
+    Damage: { keys: ["damage", "explosionDamage"], sort: damageSort },
+    Delay: { key: "delay", sort: integerSort },
+    Disruption: { keys: ["disruption", "explosionDisruption"], sort: integerSort },
+    Drag: { key: "drag", sort: integerSort },
+    "Energy/Move": { key: "energyPerMove", sort: integerSort },
+    "Energy Generation": { key: "energyGeneration", sort: integerSort },
+    "Energy Storage": { key: "energyStorage", sort: integerSort },
+    "Energy Upkeep": { key: "energyUpkeep", sort: integerSort },
+    "Explosion Radius": { key: "explosionRadius", sort: integerSort },
+    Falloff: { key: "falloff", sort: integerSort },
+    "Heat/Move": { key: "heatPerMove", sort: integerSort },
+    "Heat Generation": { key: "heatGeneration", sort: integerSort },
+    "Heat Transfer": { keys: ["heatTransfer", "explosionHeatTransfer"], sort: heatSort },
+    "Matter Upkeep": { key: "matterUpkeep", sort: integerSort },
+    Penalty: { key: "penalty", sort: integerSort },
+    "Projectile Count": { key: "projectileCount", sort: integerSort },
+    Range: { key: "range", sort: integerSort },
+    Recoil: { key: "recoil", sort: integerSort },
+    Salvage: { keys: ["salvage", "explosionSalvage"], sort: integerSort },
+    "Shot Energy": { key: "shotEnergy", sort: integerSort },
+    "Shot Heat": { key: "shotHeat", sort: integerSort },
+    "Shot Matter": { key: "shotMatter", sort: integerSort },
+    Spectrum: { keys: ["spectrum", "explosionSpectrum"], sort: spectrumSort },
+    Support: { key: "support", sort: integerSort },
+    Targeting: { key: "targeting", sort: integerSort },
+    "Time/Move": { key: "timePerMove", sort: integerSort },
+    Waypoints: { key: "waypoints", sort: integerSort },
+};
 
-    // Do initial sort
+function sortItems(items: Item[], pageState: PartsPageState) {
+    // Sorts the collection of item names based on the sort settings
     const isSpreadsheet = pageState.mode === "Spreadsheet";
     const primaryObject = isSpreadsheet ? sortKeyMap["Gallery"] : sortKeyMap[pageState.primarySort || "Alphabetical"];
-    const primaryKeys: string[] = "key" in primaryObject ? [primaryObject.key] : primaryObject.keys;
+    const primaryKeys: string[] =
+        "key" in primaryObject ? [primaryObject.key!] : "keys" in primaryObject ? primaryObject.keys! : [];
     const primarySort = primaryObject.sort;
-    itemNames.sort((a, b) => {
-        const itemA = getItem(a);
-        const itemB = getItem(b);
+    items.sort((itemA, itemB) => {
+        if (primaryKeys.length === 0) {
+            return primarySort(itemA, itemB);
+        }
 
         const aKey = primaryKeys.find((key: string) => key in itemA && itemA[key] !== undefined);
         const bKey = primaryKeys.find((key: string) => key in itemB && itemB[key] !== undefined);
@@ -350,45 +356,53 @@ function sortItemNames(itemNames: string[], pageState: PartsPageState) {
 
     if (isSpreadsheet) {
         // If in spreadsheet view do an initial gallery sort only
-        return itemNames;
+        return items;
     }
 
     if (pageState.primarySortDirection === "Descending") {
-        itemNames.reverse();
+        items.reverse();
     }
 
     // Do secondary sort if selected
     if (pageState.secondarySort === undefined || pageState.secondarySort === "None") {
-        return itemNames;
+        return items;
     }
+
+    if (primaryKeys.length === 0) {
+        // Length of 0 is sorting by gallery which never has any dupes, don't
+        // need to do any secondary sort
+        return items;
+    }
+
     const secondaryObject = sortKeyMap[pageState.secondarySort];
 
-    const secondaryKeys = "key" in secondaryObject ? [secondaryObject.key] : secondaryObject.keys;
+    const secondaryKeys =
+        "key" in secondaryObject ? [secondaryObject.key!] : "keys" in secondaryObject ? secondaryObject.keys! : [];
     const secondarySort = secondaryObject.sort;
 
     // Group items based on the initial sort
-    const groupedItemNames = {};
+    const groupedItems = {};
     const groupedKeys: any[] = [];
-    itemNames.forEach((itemName: string) => {
-        const item = getItem(itemName);
+    items.forEach((item) => {
         const key = primaryKeys.find((key: string) => key in item && item[key] !== undefined);
         const value = item[key!];
 
-        if (value in groupedItemNames) {
-            groupedItemNames[value].push(itemName);
+        if (value in groupedItems) {
+            groupedItems[value].push(item);
         } else {
-            groupedItemNames[value] = [itemName];
+            groupedItems[value] = [item];
             groupedKeys.push(value);
         }
     });
 
     // Sort subgroups
     groupedKeys.forEach((key) => {
-        const itemNames = groupedItemNames[key];
+        const items = groupedItems[key];
 
-        itemNames.sort((a: string, b: string) => {
-            const itemA = getItem(a);
-            const itemB = getItem(b);
+        items.sort((itemA: Item, itemB: Item) => {
+            if (secondaryKeys.length === 0) {
+                return secondarySort(itemA, itemB);
+            }
 
             const aKey = secondaryKeys.find((key: string) => key in itemA)!;
             const bKey = secondaryKeys.find((key: string) => key in itemB)!;
@@ -399,42 +413,44 @@ function sortItemNames(itemNames: string[], pageState: PartsPageState) {
 
     // Combine groups back into single sorted array
     const reverseSecondaryGroups = pageState.secondarySortDirection === "Descending";
-    let newItems: string[] = [];
+    let newItems: Item[] = [];
     groupedKeys.forEach((key) => {
         if (reverseSecondaryGroups) {
-            groupedItemNames[key].reverse();
+            groupedItems[key].reverse();
         }
 
-        newItems = newItems.concat(groupedItemNames[key]);
+        newItems = newItems.concat(groupedItems[key]);
     });
 
     return newItems;
 }
 
 export default function PartsPage() {
+    const itemData = useItemData();
+
     const [pageState, setPageState] = useState<PartsPageState>({
         mode: "Simple",
     });
 
-    const itemNames = sortItemNames(filterItemNames(pageState), pageState);
+    const items = sortItems(filterItems(pageState, itemData), pageState);
 
     let modeNode: ReactNode | undefined;
 
     switch (pageState.mode) {
         case "Simple":
-            modeNode = <PartsSimpleDisplay itemNames={itemNames} pageState={pageState} />;
+            modeNode = <PartsSimpleDisplay items={items} pageState={pageState} />;
             break;
 
         case "Comparison":
-            modeNode = <PartsComparisonDisplay itemNames={itemNames} pageState={pageState} />;
+            modeNode = <PartsComparisonDisplay items={items} itemData={itemData} pageState={pageState} />;
             break;
 
         case "Gallery":
-            modeNode = <PartsGalleryDisplay itemNames={itemNames} pageState={pageState} />;
+            modeNode = <PartsGalleryDisplay items={items} pageState={pageState} />;
             break;
 
         case "Spreadsheet":
-            modeNode = <PartsSpreadsheetDisplay itemNames={itemNames} pageState={pageState} />;
+            modeNode = <PartsSpreadsheetDisplay items={items} pageState={pageState} />;
             break;
     }
 

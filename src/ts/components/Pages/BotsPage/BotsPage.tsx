@@ -4,7 +4,7 @@ import React from "react";
 
 import { Bot, BotCategory } from "../../../botTypes";
 import { Spoiler } from "../../../types/commonTypes";
-import { botData, canShowSpoiler, getBot, leetSpeakMatchTransform, parseIntOrDefault } from "../../../utilities/common";
+import { canShowSpoiler, leetSpeakMatchTransform, parseIntOrDefault } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
@@ -14,6 +14,8 @@ import Table from "../../Table/Table";
 
 import "../Pages.less";
 import "./BotsPage.less";
+import { BotData } from "../../../utilities/BotData";
+import useBotData from "../../Effects/useBotData";
 
 type BotsPageMode = "Simple" | "Spreadsheet";
 
@@ -129,12 +131,10 @@ function salvagePotentialSort(a: string, b: string) {
     return aValue - bValue;
 }
 
-function filterBotNames(pageState: BotsPageState) {
+function filterBots(pageState: BotsPageState, botData: BotData) {
     const spoilers = useSpoilers();
 
-    const filteredBotNames = Object.keys(botData).filter((botName) => {
-        const bot = botData[botName];
-
+    const filteredBots = botData.getAllBots().filter((bot) => {
         // Filter spoilers
         if (!canShowSpoiler(bot.spoiler, spoilers)) {
             return false;
@@ -186,39 +186,36 @@ function filterBotNames(pageState: BotsPageState) {
         return true;
     });
 
-    filteredBotNames.sort();
-    return filteredBotNames;
+    filteredBots.sort();
+    return filteredBots;
 }
 
-function BotsSimpleDisplay({ pageState, botNames }: { pageState: BotsPageState; botNames: string[] }) {
-    const botButtons = botNames.map((botName) => {
-        const bot = getBot(botName);
+function BotsSimpleDisplay({ pageState, bots }: { pageState: BotsPageState; bots: Bot[] }) {
+    const botButtons = bots.map((bot) => {
         return <BotPopoverButton bot={bot} key={bot.name} />;
     });
 
     return <div className="bot-button-grid">{botButtons}</div>;
 }
 
-function BotsSpreadsheetDisplay({ pageState, botNames }: { pageState: BotsPageState; botNames: string[] }) {
+function BotsSpreadsheetDisplay({ pageState, bots }: { pageState: BotsPageState; bots: Bot[] }) {
     const [sorting, setSorting] = React.useState<SortingState>([]);
-    const data = useMemo(() => {
-        return botNames.map((botName) => getBot(botName));
-    }, [botNames]);
 
-    return <Table data={data} columns={botColumnDefs} setSorting={setSorting} sorting={sorting} />;
+    return <Table data={bots} columns={botColumnDefs} setSorting={setSorting} sorting={sorting} />;
 }
 
 export default function BotsPage() {
+    const botData = useBotData();
     const spoilers = useSpoilers();
     const [pageState, setPageState] = useState<BotsPageState>({ mode: "Simple" });
 
-    const botNames = filterBotNames(pageState);
+    const bots = filterBots(pageState, botData);
 
     let pageContent: ReactNode | undefined;
     if (pageState.mode === "Simple") {
-        pageContent = <BotsSimpleDisplay pageState={pageState} botNames={botNames} />;
+        pageContent = <BotsSimpleDisplay pageState={pageState} bots={bots} />;
     } else if (pageState.mode === "Spreadsheet") {
-        pageContent = <BotsSpreadsheetDisplay pageState={pageState} botNames={botNames} />;
+        pageContent = <BotsSpreadsheetDisplay pageState={pageState} bots={bots} />;
     }
 
     const factionButtons = allFactionButtons.filter((button) => canShowSpoiler(button.spoiler || "None", spoilers));

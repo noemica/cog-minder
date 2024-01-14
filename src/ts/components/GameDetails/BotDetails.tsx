@@ -1,7 +1,9 @@
 import { ReactNode } from "react";
 
 import { Bot, BotLocation, BotPart } from "../../botTypes";
-import { getItem, valueOrDefault } from "../../utilities/common";
+import { Item } from "../../types/itemTypes";
+import { valueOrDefault } from "../../utilities/common";
+import useItemData from "../Effects/useItemData";
 import { useSpoilers } from "../Effects/useLocalStorageValue";
 import { BotItemPopoverButton } from "../Popover/ItemPopover";
 import {
@@ -48,17 +50,17 @@ function NoneItemLine() {
 
 function ItemLine({
     itemString,
-    itemName,
+    item,
     popoversToLinks = false,
 }: {
     itemString: string;
-    itemName: string;
+    item: Item;
     popoversToLinks?: boolean;
 }) {
     let itemNode: ReactNode = itemString.padEnd(42);
 
     if (popoversToLinks) {
-        itemNode = <a href={`#(${itemName})}`}>{itemNode}</a>;
+        itemNode = <a href={`#(${item.name})}`}>{itemNode}</a>;
     }
 
     const line = (
@@ -69,20 +71,22 @@ function ItemLine({
         </pre>
     );
 
-    return <BotItemPopoverButton triggerContent={line} item={getItem(itemName)} />;
+    return <BotItemPopoverButton triggerContent={line} item={item} />;
 }
 
 function BotPartLine({ data, popoversToLinks = false }: { data: BotPart; popoversToLinks?: boolean }) {
+    const itemData = useItemData();
     let line = `${data.name} (${data.coverage}%)`;
 
     if (data.number > 1) {
         line += " x" + data.number;
     }
 
-    return <ItemLine itemName={data.name} itemString={line} />;
+    return <ItemLine item={itemData.getItem(data.name)} itemString={line} />;
 }
 
 function ItemLineOption({ itemName, itemString, i }: { itemName: string; itemString: string; i: number }) {
+    const itemData = useItemData();
     itemString = itemString.padEnd(39);
 
     const line = (
@@ -94,7 +98,7 @@ function ItemLineOption({ itemName, itemString, i }: { itemName: string; itemStr
         </pre>
     );
 
-    return <BotItemPopoverButton triggerContent={line} item={getItem(itemName)} />;
+    return <BotItemPopoverButton triggerContent={line} item={itemData.getItem(itemName)} />;
 }
 
 function BotPartOption({ data }: { data: BotPart[] }) {

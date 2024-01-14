@@ -2,6 +2,7 @@ import { Bot } from "../botTypes";
 import { Item } from "./itemTypes";
 
 export type PageType =
+    | "404"
     | "About"
     | "Bots"
     | "Build"
@@ -14,6 +15,7 @@ export type PageType =
     | "Wiki";
 
 export const pageTypes: PageType[] = [
+    "404",
     "About",
     "Bots",
     "Build",

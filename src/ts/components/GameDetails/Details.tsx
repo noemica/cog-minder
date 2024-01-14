@@ -50,7 +50,7 @@ const colorSchemes: Record<ColorScheme, Record<ColorSchemeColors, string>> = {
 export function DetailsBotTitleLine({ bot }: { bot: Bot }) {
     return (
         <pre className="details-title details-bot-image-title">
-            {bot.name}[<img src={getBotImageName(bot)} />]
+            {bot.name} [<img src={getBotImageName(bot)} />]
         </pre>
     );
 }
@@ -70,7 +70,7 @@ export function DetailsItemArtLine({ part }: { part: Item }) {
 export function DetailsItemTitleLine({ part }: { part: Item }) {
     return (
         <pre className="details-title details-item-image-title">
-            {part.name}[<img src={getItemSpriteImageName(part)} />]
+            {part.name} [<img src={getItemSpriteImageName(part)} />]
         </pre>
     );
 }

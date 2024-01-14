@@ -1,8 +1,7 @@
 import { ColumnDef, SortingState } from "@tanstack/react-table";
-import React, { useMemo } from "react";
+import React from "react";
 
 import { Item, OtherItem, PowerItem, PropulsionItem, UtilityItem, WeaponItem } from "../../../types/itemTypes";
-import { getItem } from "../../../utilities/common";
 import Table from "../../Table/Table";
 import { PartsPageState, SlotSearchType } from "./PartsPage";
 import { criticalSort, damageSort, heatSort, spectrumSort } from "./PartsSortingUtils";
@@ -273,15 +272,12 @@ const columnDefs: Record<SlotSearchType, ColumnDef<Item>[]> = {
 
 export default function PartsSpreadsheetDisplay({
     pageState,
-    itemNames,
+    items,
 }: {
     pageState: PartsPageState;
-    itemNames: string[];
+    items: Item[];
 }) {
     const [sorting, setSorting] = React.useState<SortingState>([]);
-    const data = useMemo(() => {
-        return itemNames.map((itemName) => getItem(itemName));
-    }, [itemNames]);
 
     const slotSearch = pageState.slotSearch || "Any";
     const columns = columnDefs[slotSearch];
@@ -290,5 +286,5 @@ export default function PartsSpreadsheetDisplay({
         return <span>Please select a slot to see the spreadsheet view.</span>;
     }
 
-    return <Table columns={columns} data={data} setSorting={setSorting} sorting={sorting} />;
+    return <Table columns={columns} data={items} setSorting={setSorting} sorting={sorting} />;
 }

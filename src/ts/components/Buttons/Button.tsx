@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Link } from "wouter";
 
 import TextTooltip from "../Popover/TextTooltip";
 
@@ -15,7 +16,7 @@ export type ButtonProps = CommonButtonProps & {
 
 export type ButtonLinkProps = CommonButtonProps & {
     activeLink?: boolean;
-    href?: string;
+    href: string;
 };
 
 export default function Button({ children, onClick, className, tooltip }: ButtonProps) {
@@ -38,7 +39,7 @@ export default function Button({ children, onClick, className, tooltip }: Button
     }
 }
 
-export function ButtonLink({activeLink, children, href, className, tooltip }: ButtonLinkProps) {
+export function ButtonLink({ activeLink, children, href, className, tooltip }: ButtonLinkProps) {
     let classes = "button button-link";
 
     if (activeLink) {
@@ -50,9 +51,9 @@ export function ButtonLink({activeLink, children, href, className, tooltip }: Bu
     }
 
     const button = (
-        <a className={classes} href={href}>
-            {children}
-        </a>
+        <Link href={href}>
+            <a className={classes}>{children}</a>
+        </Link>
     );
 
     if (tooltip) {
