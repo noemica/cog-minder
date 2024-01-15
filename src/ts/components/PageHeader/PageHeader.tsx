@@ -1,4 +1,4 @@
-import { useLocation, useRoute, useRouter } from "wouter";
+import { RouterObject, useLocation, useRouter } from "wouter";
 
 import { PageType, Spoiler, ThemeType, pageTypes } from "../../types/commonTypes";
 import { ButtonLink } from "../Buttons/Button";
@@ -179,6 +179,16 @@ function SettingsButton() {
     );
 }
 
+function matchRoute(router: RouterObject, route: string, path: string) {
+    const { pattern, keys } = router.parser(route);
+
+    const matches = pattern.exec(path);
+
+    return matches
+        ? [true, Object.fromEntries(keys.map((key, i) => [key, matches[i + 1]]))] // convert to object
+        : [false, null]; //  no match
+}
+
 function getPageType() {
     const [path] = useLocation();
     const router = useRouter();
@@ -186,7 +196,7 @@ function getPageType() {
     let activePageType: PageType = "404";
 
     for (const pageType of pageTypes) {
-        const [isActive] = router.matcher(`/cog-minder/${pages[pageType].link}`, path);
+        const [isActive] = matchRoute(router, `/cog-minder/${pages[pageType].link}`, path);
 
         if (isActive) {
             activePageType = pageType;

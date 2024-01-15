@@ -279,7 +279,7 @@ export default function PartsSpreadsheetDisplay({
 }) {
     const [sorting, setSorting] = React.useState<SortingState>([]);
 
-    const slotSearch = pageState.slotSearch || "Any";
+    const slotSearch = pageState.slot || "Any";
     const columns = columnDefs[slotSearch];
 
     if (slotSearch === "Any") {

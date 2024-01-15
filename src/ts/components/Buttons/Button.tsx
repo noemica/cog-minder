@@ -51,7 +51,7 @@ export function ButtonLink({ activeLink, children, href, className, tooltip }: B
     }
 
     const button = (
-        <Link href={href}>
+        <Link asChild={true} href={href}>
             <a className={classes}>{children}</a>
         </Link>
     );

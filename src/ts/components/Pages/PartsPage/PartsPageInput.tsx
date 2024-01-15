@@ -1,5 +1,5 @@
 import { Spoiler } from "../../../types/commonTypes";
-import { canShowSpoiler, getSpoilersValue } from "../../../utilities/common";
+import { canShowSpoiler } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
@@ -202,10 +202,10 @@ function SlotSpecificFilter({
     setPageState,
 }: {
     pageState: PartsPageState;
-    setPageState: React.Dispatch<React.SetStateAction<PartsPageState>>;
+    setPageState: (newPageState: PartsPageState) => void;
 }) {
     function SlotSelect<T>({ options }: { options: SelectOptionType<T>[] }) {
-        const value = options.find((o) => o.value === pageState.slotTypeSearch) || options[0];
+        const value = options.find((o) => o.value === pageState.slotType) || options[0];
         return (
             <LabeledSelect
                 label="Type"
@@ -215,13 +215,13 @@ function SlotSpecificFilter({
                 tooltip="Additional filter based on the sub-type of the part based on slot."
                 value={value}
                 onChange={(val) => {
-                    setPageState({ ...pageState, slotTypeSearch: val!.value });
+                    setPageState({ ...pageState, slotType: val!.value });
                 }}
             />
         );
     }
 
-    switch (pageState.slotSearch) {
+    switch (pageState.slot) {
         case "Power":
             return <SlotSelect options={powerSlotTypeOptions} />;
 
@@ -252,7 +252,7 @@ export default function PartsPageInput({
     setPageState,
 }: {
     pageState: PartsPageState;
-    setPageState: React.Dispatch<React.SetStateAction<PartsPageState>>;
+    setPageState: (newPageState: PartsPageState) => void;
 }) {
     const spoilers = useSpoilers();
     const categoryOptions = allCategoryOptions.filter((option) => canShowSpoiler(option.spoiler || "None", spoilers));
@@ -264,18 +264,18 @@ export default function PartsPageInput({
                     label="Name"
                     placeholder="Any"
                     tooltip="The name of a part to search for."
-                    value={pageState.nameSearch}
+                    value={pageState.name}
                     onChange={(val) => {
-                        setPageState({ ...pageState, nameSearch: val });
+                        setPageState({ ...pageState, name: val });
                     }}
                 />
                 <LabeledInput
                     label="Effect"
                     placeholder="Any"
                     tooltip="The text to search for the description or effect of a part."
-                    value={pageState.effectSearch}
+                    value={pageState.effect}
                     onChange={(val) => {
-                        setPageState({ ...pageState, effectSearch: val });
+                        setPageState({ ...pageState, effect: val });
                     }}
                 />
                 <LabeledExclusiveButtonGroup
@@ -306,27 +306,27 @@ export default function PartsPageInput({
                     label="Rating"
                     placeholder="Any"
                     tooltip="The rating of the part. Use * to search for prototypes only. Add a + to include larger values, or a - to include smaller values."
-                    value={pageState.ratingSearch}
+                    value={pageState.rating}
                     onChange={(val) => {
-                        setPageState({ ...pageState, ratingSearch: val });
+                        setPageState({ ...pageState, rating: val });
                     }}
                 />
                 <LabeledInput
                     label="Size"
                     placeholder="Any"
                     tooltip="The size of the part (aka # of slots). Add a + to include larger values, or a - to include smaller values."
-                    value={pageState.sizeSearch}
+                    value={pageState.size}
                     onChange={(val) => {
-                        setPageState({ ...pageState, sizeSearch: val });
+                        setPageState({ ...pageState, size: val });
                     }}
                 />
                 <LabeledInput
                     label="Mass"
                     placeholder="Any"
                     tooltip="The mass of the part. Add a + to include larger values, or a - to include smaller values."
-                    value={pageState.massSearch}
+                    value={pageState.mass}
                     onChange={(val) => {
-                        setPageState({ ...pageState, massSearch: val });
+                        setPageState({ ...pageState, mass: val });
                     }}
                 />
                 <LabeledSelect
@@ -335,9 +335,9 @@ export default function PartsPageInput({
                     className="category-type-select"
                     isSearchable={false}
                     options={categoryOptions}
-                    value={categoryOptions.find((o) => o.value === pageState.categorySearch) || categoryOptions[0]}
+                    value={categoryOptions.find((o) => o.value === pageState.category) || categoryOptions[0]}
                     onChange={(val) => {
-                        setPageState({ ...pageState, categorySearch: val!.value });
+                        setPageState({ ...pageState, category: val!.value });
                     }}
                 />
             </div>
@@ -346,11 +346,11 @@ export default function PartsPageInput({
                     label="Slot"
                     buttons={slotButtons}
                     flexGrowButtonCount={true}
-                    selected={pageState.slotSearch}
+                    selected={pageState.slot}
                     tooltip="Only shows parts with the matching slot."
                     onValueChanged={(val) => {
-                        if (val !== pageState.slotSearch) {
-                            setPageState({ ...pageState, slotSearch: val, slotTypeSearch: "Any" });
+                        if (val !== pageState.slot) {
+                            setPageState({ ...pageState, slot: val, slotType: "Any" });
                         }
                     }}
                 />
@@ -362,17 +362,18 @@ export default function PartsPageInput({
                     label="Depth"
                     tooltip="Current map depth. Can enter as 7 or -7."
                     placeholder="Any"
+                    value={pageState.schematicsDepth}
                     onChange={(val) => {
-                        setPageState({ ...pageState, schematicsDepthSearch: val });
+                        setPageState({ ...pageState, schematicsDepth: val });
                     }}
                 />
                 <LabeledExclusiveButtonGroup
                     label="Terminal Level"
                     tooltip="The level of the terminal to hack from. Higher level terminals can hack higher rating schematics."
                     buttons={terminalLevelButtons}
-                    selected={pageState.terminalLevelSearch}
+                    selected={pageState.terminalLevel}
                     onValueChanged={(val) => {
-                        setPageState({ ...pageState, terminalLevelSearch: val });
+                        setPageState({ ...pageState, terminalLevel: val });
                     }}
                 />
             </div>
@@ -388,9 +389,11 @@ export default function PartsPageInput({
                                 primarySortOptions[0]
                             }
                             onChange={(val) => {
+                                console.log(val);
                                 if (val!.value === "Alphabetical" || val!.value === "Gallery") {
                                     // If setting to alphabetical/gallery sort then remove the
                                     // secondary sort
+                                    console.log(1);
                                     setPageState({
                                         ...pageState,
                                         primarySort: val!.value,
@@ -403,12 +406,14 @@ export default function PartsPageInput({
                                     // If no secondary sort set yet then default to alphabetical
                                     // when the primary sort order is changed unless the current
                                     // sort is alphabetical
+                                    console.log(2);
                                     setPageState({
                                         ...pageState,
                                         primarySort: val!.value,
                                         secondarySort: "Alphabetical",
                                     });
                                 } else {
+                                    console.log(3);
                                     setPageState({ ...pageState, primarySort: val!.value });
                                 }
                             }}

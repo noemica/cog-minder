@@ -1,4 +1,5 @@
 import { ReactNode, useState } from "react";
+import { useLocation, useSearch } from "wouter";
 
 import { Item, ItemSlot } from "../../../types/itemTypes";
 import { ItemData } from "../../../utilities/ItemData";
@@ -105,17 +106,17 @@ export type SortDirection = "Ascending" | "Descending";
 export type SlotTypeSearchType = PowerSlotType | PropulsionSlotType | UtilitySlotType | WeaponSlotType;
 
 export type PartsPageState = {
-    nameSearch?: string;
-    effectSearch?: string;
-    mode: PartsPageMode;
-    ratingSearch?: string;
-    sizeSearch?: string;
-    massSearch?: string;
-    schematicsDepthSearch?: string;
-    terminalLevelSearch?: TerminalSearchLevel;
-    slotSearch?: SlotSearchType;
-    slotTypeSearch?: SlotTypeSearchType;
-    categorySearch?: PartCategory;
+    name?: string;
+    effect?: string;
+    mode?: PartsPageMode;
+    rating?: string;
+    size?: string;
+    mass?: string;
+    schematicsDepth?: string;
+    terminalLevel?: TerminalSearchLevel;
+    slot?: SlotSearchType;
+    slotType?: SlotTypeSearchType;
+    category?: PartCategory;
     primarySort?: PrimarySortOptions;
     primarySortDirection?: SortDirection;
     secondarySort?: SecondarySortOptions;
@@ -132,9 +133,9 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
         }
 
         // Name filter
-        if (pageState.nameSearch) {
+        if (pageState.name) {
             const lowerName = item.name.toLowerCase();
-            const nameSearch = pageState.nameSearch.toLowerCase();
+            const nameSearch = pageState.name.toLowerCase();
 
             // Only add a leetspeak convert if > 1 letter to reduce chance of
             // false positives on the translation
@@ -152,8 +153,8 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
         }
 
         // Effect/Description filter
-        if (pageState.effectSearch && pageState.effectSearch.length > 0) {
-            const effectSearch = pageState.effectSearch.toLowerCase();
+        if (pageState.effect && pageState.effect.length > 0) {
+            const effectSearch = pageState.effect.toLowerCase();
             if (
                 !item.description?.toLowerCase().includes(effectSearch) &&
                 !item.effect?.toLowerCase().includes(effectSearch)
@@ -163,10 +164,10 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
         }
 
         // Rating filter
-        if (pageState.ratingSearch && pageState.ratingSearch.length > 0) {
-            const includeAbove = pageState.ratingSearch.includes("+");
-            const includeBelow = pageState.ratingSearch.includes("-");
-            const ratingValue = pageState.ratingSearch.replace("+", "").replace("-", "");
+        if (pageState.rating && pageState.rating.length > 0) {
+            const includeAbove = pageState.rating.includes("+");
+            const includeBelow = pageState.rating.includes("-");
+            const ratingValue = pageState.rating.replace("+", "").replace("-", "");
 
             let floatRatingValue: number;
             if (ratingValue.slice(-1) === "*") {
@@ -197,10 +198,10 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
         }
 
         // Size filter
-        if (pageState.sizeSearch && pageState.sizeSearch.length > 0) {
-            const includeAbove = pageState.sizeSearch.includes("+");
-            const includeBelow = pageState.sizeSearch.includes("-");
-            const sizeValue = pageState.sizeSearch.replace("+", "").replace("-", "");
+        if (pageState.size && pageState.size.length > 0) {
+            const includeAbove = pageState.size.includes("+");
+            const includeBelow = pageState.size.includes("-");
+            const sizeValue = pageState.size.replace("+", "").replace("-", "");
 
             const intSizeValue = parseInt(sizeValue);
 
@@ -222,10 +223,10 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
         }
 
         // Mass filter
-        if (pageState.massSearch && pageState.massSearch.length > 0) {
-            const includeAbove = pageState.massSearch.includes("+");
-            const includeBelow = pageState.massSearch.includes("-");
-            const massValue = pageState.massSearch.replace("+", "").replace("-", "");
+        if (pageState.mass && pageState.mass.length > 0) {
+            const includeAbove = pageState.mass.includes("+");
+            const includeBelow = pageState.mass.includes("-");
+            const massValue = pageState.mass.replace("+", "").replace("-", "");
 
             const intMassValue = parseInt(massValue);
 
@@ -247,34 +248,39 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
         }
 
         // Category filter
-        if (pageState.categorySearch) {
-            if (pageState.categorySearch !== "Any" && !item.categories.includes(pageState.categorySearch)) {
+        if (pageState.category) {
+            if (pageState.category !== "Any" && !item.categories.includes(pageState.category)) {
                 return false;
             }
         }
 
         // Slot filter
-        if (pageState.slotSearch) {
-            if (pageState.slotSearch !== "Any" && item.slot !== pageState.slotSearch) {
+        if (pageState.slot) {
+            if (pageState.slot !== "Any" && item.slot !== pageState.slot) {
                 return false;
             }
         }
 
-        if (pageState.slotTypeSearch) {
-            if (pageState.slotTypeSearch !== "Any" && item.type !== pageState.slotTypeSearch) {
+        if (pageState.slotType) {
+            if (pageState.slotType !== "Any" && item.type !== pageState.slotType) {
                 return false;
             }
         }
 
         // Schematic filter
-        if (pageState.schematicsDepthSearch && pageState.schematicsDepthSearch.length > 0) {
-            const depthNum = Math.abs(parseInt(pageState.schematicsDepthSearch));
+        if (pageState.schematicsDepth && pageState.schematicsDepth.length > 0) {
+            const depthNum = Math.abs(parseInt(pageState.schematicsDepth));
 
             if (!Number.isNaN(depthNum)) {
+                if (!item.hackable) {
+                    // Don't show unhackable items
+                    return false;
+                }
+
                 let terminalModifier = 1;
-                if (pageState.terminalLevelSearch === "Level 2") {
+                if (pageState.terminalLevel === "Level 2") {
                     terminalModifier = 2;
-                } else if (pageState.terminalLevelSearch === "Level 3") {
+                } else if (pageState.terminalLevel === "Level 3") {
                     terminalModifier = 3;
                 }
 
@@ -290,6 +296,36 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
     });
 
     return filteredItems;
+}
+
+const paramRegex = /^(.*)=(.*)$/;
+function getPageState(): PartsPageState {
+    const search = useSearch();
+    let pageState: PartsPageState = {};
+
+    if (search.length === 0) {
+        // If no search state set then return default of no state set
+        return pageState;
+    }
+
+    const setParams = search.split("&");
+
+    for (const param of setParams) {
+        const match = paramRegex.exec(param);
+        if (!match) {
+            // Failed to get param out of URL, just ignore
+            console.log(`Failed to parse page parameter ${param}`);
+            continue;
+        }
+
+        const paramName = match[1];
+        const paramValue = match[2];
+
+        // Assign the parameter
+        pageState[paramName] = paramValue;
+    }
+
+    return pageState;
 }
 
 type SortKeyMap = {
@@ -425,12 +461,68 @@ function sortItems(items: Item[], pageState: PartsPageState) {
     return newItems;
 }
 
+function updateLocation(
+    pageState: PartsPageState,
+    setLocation: (
+        to: string,
+        options?:
+            | {
+                  replace?: boolean | undefined;
+              }
+            | undefined,
+    ) => void,
+) {
+    let location = "/parts";
+    let search = "";
+
+    for (const key of Object.keys(pageState)) {
+        const typedKey: keyof PartsPageState = key as keyof PartsPageState;
+
+        if (pageState[key] !== undefined) {
+            if (
+                (typedKey === "mode" && pageState.mode === "Simple") ||
+                (typedKey === "terminalLevel" && pageState.terminalLevel === "Level 1") ||
+                (typedKey === "slot" && pageState.slot === "Any") ||
+                (typedKey === "slotType" && pageState.slotType === "Any") ||
+                (typedKey === "category" && pageState.category === "Any") ||
+                (typedKey === "primarySort" && pageState.primarySort === "Alphabetical") ||
+                (typedKey === "primarySortDirection" && pageState.primarySortDirection === "Ascending") ||
+                (typedKey === "secondarySortDirection" && pageState.secondarySortDirection === "Ascending")
+            ) {
+                // Skip enum default values
+                continue;
+            }
+
+            if (typeof pageState[key] === "string" && (pageState[key] as string).length === 0) {
+                // Skip empty values
+                continue;
+            }
+
+            // Append to search
+            if (search.length === 0) {
+                search = `${key}=${pageState[key]}`;
+            } else {
+                search += `&${key}=${pageState[key]}`;
+            }
+        }
+    }
+
+    if (search.length > 0) {
+        location += `?${search}`;
+    }
+
+    setLocation(location, { replace: true });
+}
+
 export default function PartsPage() {
     const itemData = useItemData();
+    const [_, setLocation] = useLocation();
 
-    const [pageState, setPageState] = useState<PartsPageState>({
-        mode: "Simple",
-    });
+    const pageState = getPageState();
+
+    function updatePageState(newPageState: PartsPageState) {
+        updateLocation(newPageState, setLocation);
+    }
 
     const items = sortItems(filterItems(pageState, itemData), pageState);
 
@@ -438,6 +530,7 @@ export default function PartsPage() {
 
     switch (pageState.mode) {
         case "Simple":
+        default:
             modeNode = <PartsSimpleDisplay items={items} pageState={pageState} />;
             break;
 
@@ -456,7 +549,7 @@ export default function PartsPage() {
 
     return (
         <div className="page-content">
-            <PartsPageInput pageState={pageState} setPageState={setPageState} />
+            <PartsPageInput pageState={pageState} setPageState={updatePageState} />
             {modeNode}
         </div>
     );
