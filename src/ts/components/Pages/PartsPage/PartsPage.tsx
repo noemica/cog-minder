@@ -3,7 +3,13 @@ import { useLocation, useSearch } from "wouter";
 
 import { Item, ItemSlot } from "../../../types/itemTypes";
 import { ItemData } from "../../../utilities/ItemData";
-import { canShowSpoiler, gallerySort, leetSpeakMatchTransform } from "../../../utilities/common";
+import {
+    canShowSpoiler,
+    gallerySort,
+    getLocationFromState,
+    leetSpeakMatchTransform,
+    parseSearchParameters,
+} from "../../../utilities/common";
 import useItemData from "../../Effects/useItemData";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
 import PartsComparisonDisplay from "./PartsComparisonDisplay";
@@ -298,34 +304,10 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
     return filteredItems;
 }
 
-const paramRegex = /^(.*)=(.*)$/;
 function getPageState(): PartsPageState {
     const search = useSearch();
-    let pageState: PartsPageState = {};
 
-    if (search.length === 0) {
-        // If no search state set then return default of no state set
-        return pageState;
-    }
-
-    const setParams = search.split("&");
-
-    for (const param of setParams) {
-        const match = paramRegex.exec(param);
-        if (!match) {
-            // Failed to get param out of URL, just ignore
-            console.log(`Failed to parse page parameter ${param}`);
-            continue;
-        }
-
-        const paramName = match[1];
-        const paramValue = match[2];
-
-        // Assign the parameter
-        pageState[paramName] = paramValue;
-    }
-
-    return pageState;
+    return parseSearchParameters(search, {});
 }
 
 type SortKeyMap = {
@@ -461,57 +443,24 @@ function sortItems(items: Item[], pageState: PartsPageState) {
     return newItems;
 }
 
-function updateLocation(
-    pageState: PartsPageState,
-    setLocation: (
-        to: string,
-        options?:
-            | {
-                  replace?: boolean | undefined;
-              }
-            | undefined,
-    ) => void,
-) {
-    let location = "/parts";
-    let search = "";
+function skipLocationMember(key: string, pageState: PartsPageState) {
+    const typedKey: keyof PartsPageState = key as keyof PartsPageState;
 
-    for (const key of Object.keys(pageState)) {
-        const typedKey: keyof PartsPageState = key as keyof PartsPageState;
-
-        if (pageState[key] !== undefined) {
-            if (
-                (typedKey === "mode" && pageState.mode === "Simple") ||
-                (typedKey === "terminalLevel" && pageState.terminalLevel === "Level 1") ||
-                (typedKey === "slot" && pageState.slot === "Any") ||
-                (typedKey === "slotType" && pageState.slotType === "Any") ||
-                (typedKey === "category" && pageState.category === "Any") ||
-                (typedKey === "primarySort" && pageState.primarySort === "Alphabetical") ||
-                (typedKey === "primarySortDirection" && pageState.primarySortDirection === "Ascending") ||
-                (typedKey === "secondarySortDirection" && pageState.secondarySortDirection === "Ascending")
-            ) {
-                // Skip enum default values
-                continue;
-            }
-
-            if (typeof pageState[key] === "string" && (pageState[key] as string).length === 0) {
-                // Skip empty values
-                continue;
-            }
-
-            // Append to search
-            if (search.length === 0) {
-                search = `${key}=${pageState[key]}`;
-            } else {
-                search += `&${key}=${pageState[key]}`;
-            }
-        }
+    if (
+        (typedKey === "mode" && pageState.mode === "Simple") ||
+        (typedKey === "terminalLevel" && pageState.terminalLevel === "Level 1") ||
+        (typedKey === "slot" && pageState.slot === "Any") ||
+        (typedKey === "slotType" && pageState.slotType === "Any") ||
+        (typedKey === "category" && pageState.category === "Any") ||
+        (typedKey === "primarySort" && pageState.primarySort === "Alphabetical") ||
+        (typedKey === "primarySortDirection" && pageState.primarySortDirection === "Ascending") ||
+        (typedKey === "secondarySortDirection" && pageState.secondarySortDirection === "Ascending")
+    ) {
+        // Skip enum default values
+        return true;
     }
 
-    if (search.length > 0) {
-        location += `?${search}`;
-    }
-
-    setLocation(location, { replace: true });
+    return false;
 }
 
 export default function PartsPage() {
@@ -521,7 +470,8 @@ export default function PartsPage() {
     const pageState = getPageState();
 
     function updatePageState(newPageState: PartsPageState) {
-        updateLocation(newPageState, setLocation);
+        const location = getLocationFromState("/parts", newPageState, skipLocationMember);
+        setLocation(location, { replace: true });
     }
 
     const items = sortItems(filterItems(pageState, itemData), pageState);

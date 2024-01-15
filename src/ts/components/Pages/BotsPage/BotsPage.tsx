@@ -1,12 +1,21 @@
 import { ColumnDef, SortingState } from "@tanstack/react-table";
-import { ReactNode, useMemo, useState } from "react";
+import { ReactNode } from "react";
 import React from "react";
+import { useLocation, useSearch } from "wouter";
 
 import { Bot, BotCategory } from "../../../botTypes";
 import { Spoiler } from "../../../types/commonTypes";
-import { canShowSpoiler, leetSpeakMatchTransform, parseIntOrDefault } from "../../../utilities/common";
+import { BotData } from "../../../utilities/BotData";
+import {
+    canShowSpoiler,
+    getLocationFromState,
+    leetSpeakMatchTransform,
+    parseIntOrDefault,
+    parseSearchParameters,
+} from "../../../utilities/common";
 import Button from "../../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
+import useBotData from "../../Effects/useBotData";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
 import { LabeledExclusiveButtonGroup, LabeledInput } from "../../LabeledItem/LabeledItem";
 import BotPopoverButton from "../../Popover/BotPopover";
@@ -14,19 +23,17 @@ import Table from "../../Table/Table";
 
 import "../Pages.less";
 import "./BotsPage.less";
-import { BotData } from "../../../utilities/BotData";
-import useBotData from "../../Effects/useBotData";
 
 type BotsPageMode = "Simple" | "Spreadsheet";
 
 type Faction = "Any" | "0b10" | "Architect" | "Derelict" | "Exiles" | "Warlord" | "Zionite";
 
 type BotsPageState = {
-    nameSearch?: string;
-    classSearch?: string;
-    partSearch?: string;
-    mode: BotsPageMode;
-    factionSearch?: Faction;
+    name?: string;
+    class?: string;
+    part?: string;
+    mode?: BotsPageMode;
+    faction?: Faction;
 };
 
 const modeButtons: ExclusiveButtonDefinition<BotsPageMode>[] = [{ value: "Simple" }, { value: "Spreadsheet" }];
@@ -141,12 +148,12 @@ function filterBots(pageState: BotsPageState, botData: BotData) {
         }
 
         // Name filter
-        if (pageState.nameSearch && pageState.nameSearch.length > 0) {
+        if (pageState.name && pageState.name.length > 0) {
             // Only add a leetspeak convert if > 1 letter to reduce chance of
             // false positives on the translation
             // 2 min works well as it will catch somebody typing in the first half
             // of a bot name, like BR for 8R-AWN
-            const nameSearch = pageState.nameSearch.toLowerCase();
+            const nameSearch = pageState.name.toLowerCase();
             const lowerName = bot.name.toLowerCase();
             if (!lowerName.includes(nameSearch) && !leetSpeakMatchTransform(lowerName).includes(nameSearch)) {
                 return false;
@@ -154,15 +161,15 @@ function filterBots(pageState: BotsPageState, botData: BotData) {
         }
 
         // Class filter
-        if (pageState.classSearch && pageState.classSearch.length > 0) {
-            if (!bot.class.toLowerCase().includes(pageState.classSearch.toLowerCase())) {
+        if (pageState.class && pageState.class.length > 0) {
+            if (!bot.class.toLowerCase().includes(pageState.class.toLowerCase())) {
                 return false;
             }
         }
 
         // Part filter
-        if (pageState.partSearch && pageState.partSearch.length > 0) {
-            const partSearch = pageState.partSearch.toLowerCase();
+        if (pageState.part && pageState.part.length > 0) {
+            const partSearch = pageState.part.toLowerCase();
             if (
                 !bot.armamentData.find((data) => data.name.toLowerCase().includes(partSearch)) &&
                 !bot.componentData.find((data) => data.name.toLowerCase().includes(partSearch)) &&
@@ -177,8 +184,8 @@ function filterBots(pageState: BotsPageState, botData: BotData) {
             }
         }
 
-        if (pageState.factionSearch && pageState.factionSearch !== "Any") {
-            if (!bot.categories.includes(pageState.factionSearch as BotCategory)) {
+        if (pageState.faction && pageState.faction !== "Any") {
+            if (!bot.categories.includes(pageState.faction as BotCategory)) {
                 return false;
             }
         }
@@ -186,8 +193,29 @@ function filterBots(pageState: BotsPageState, botData: BotData) {
         return true;
     });
 
-    filteredBots.sort();
+    filteredBots.sort((botA, botB) => botA.name.localeCompare(botB.name));
+
     return filteredBots;
+}
+
+function getPageState(): BotsPageState {
+    const search = useSearch();
+
+    return parseSearchParameters(search, {});
+}
+
+function skipLocationMember(key: string, pageState: BotsPageState) {
+    const typedKey: keyof BotsPageState = key as keyof BotsPageState;
+
+    if (
+        (typedKey === "mode" && pageState.mode === "Simple") ||
+        (typedKey === "faction" && pageState.faction === "Any")
+    ) {
+        // Skip enum default values
+        return true;
+    }
+
+    return false;
 }
 
 function BotsSimpleDisplay({ pageState, bots }: { pageState: BotsPageState; bots: Bot[] }) {
@@ -207,15 +235,24 @@ function BotsSpreadsheetDisplay({ pageState, bots }: { pageState: BotsPageState;
 export default function BotsPage() {
     const botData = useBotData();
     const spoilers = useSpoilers();
-    const [pageState, setPageState] = useState<BotsPageState>({ mode: "Simple" });
+
+    const [_, setLocation] = useLocation();
+
+    const pageState = getPageState();
+
+    function updatePageState(newPageState: BotsPageState) {
+        const location = getLocationFromState("/bots", newPageState, skipLocationMember);
+        setLocation(location, { replace: true });
+    }
 
     const bots = filterBots(pageState, botData);
 
     let pageContent: ReactNode | undefined;
-    if (pageState.mode === "Simple") {
-        pageContent = <BotsSimpleDisplay pageState={pageState} bots={bots} />;
-    } else if (pageState.mode === "Spreadsheet") {
+    if (pageState.mode === "Spreadsheet") {
         pageContent = <BotsSpreadsheetDisplay pageState={pageState} bots={bots} />;
+    } else {
+        // Default to simple mode
+        pageContent = <BotsSimpleDisplay pageState={pageState} bots={bots} />;
     }
 
     const factionButtons = allFactionButtons.filter((button) => canShowSpoiler(button.spoiler || "None", spoilers));
@@ -227,27 +264,27 @@ export default function BotsPage() {
                     label="Name"
                     placeholder="Any"
                     tooltip="The name of a bot to search for."
-                    value={pageState.nameSearch}
+                    value={pageState.name}
                     onChange={(val) => {
-                        setPageState({ ...pageState, nameSearch: val });
+                        updatePageState({ ...pageState, name: val });
                     }}
                 />
                 <LabeledInput
                     label="Class"
                     placeholder="Any"
                     tooltip="The class of a bot to search for."
-                    value={pageState.classSearch}
+                    value={pageState.class}
                     onChange={(val) => {
-                        setPageState({ ...pageState, classSearch: val });
+                        updatePageState({ ...pageState, class: val });
                     }}
                 />
                 <LabeledInput
                     label="Part"
                     placeholder="Any"
                     tooltip="The name of a part to search for."
-                    value={pageState.partSearch}
+                    value={pageState.part}
                     onChange={(val) => {
-                        setPageState({ ...pageState, partSearch: val });
+                        updatePageState({ ...pageState, part: val });
                     }}
                 />
                 <LabeledExclusiveButtonGroup
@@ -257,14 +294,14 @@ export default function BotsPage() {
                     tooltip="The mode to display the parts in."
                     selected={pageState.mode}
                     onValueChanged={(val) => {
-                        setPageState({ ...pageState, mode: val });
+                        updatePageState({ ...pageState, mode: val });
                     }}
                 />
                 <Button
                     className="flex-grow-0"
                     tooltip="Resets all filters to their default (unfiltered) state"
                     onClick={() => {
-                        setPageState({
+                        updatePageState({
                             // The only thing that is explicitly saved is the mode
                             mode: pageState.mode,
                         });
@@ -278,9 +315,9 @@ export default function BotsPage() {
                     label="Faction"
                     buttons={factionButtons}
                     tooltip="The mode to display the bots in."
-                    selected={pageState.factionSearch}
+                    selected={pageState.faction}
                     onValueChanged={(val) => {
-                        setPageState({ ...pageState, factionSearch: val });
+                        updatePageState({ ...pageState, faction: val });
                     }}
                 />
             </div>

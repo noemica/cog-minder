@@ -1578,6 +1578,44 @@ export function getItemAsciiArtImageName(item: Item): string {
     return createImagePath(`part_art/${item.name.replace(/"/g, "").replace(/\//g, "")}.png`);
 }
 
+// Gets a location string with query parameters based on the given state object
+export function getLocationFromState<T extends object>(
+    baseLocation: string,
+    stateObject: T,
+    skipMember: (key: string, stateObject: T) => boolean,
+) {
+    let location = baseLocation;
+    let search = "";
+
+    for (const key of Object.keys(stateObject)) {
+        if (stateObject[key] !== undefined) {
+            if (skipMember(key, stateObject)) {
+                continue;
+            }
+
+            if (typeof stateObject[key] === "string" && (stateObject[key] as string).length === 0) {
+                // Skip empty values
+                continue;
+            }
+
+            const paramValue = (stateObject[key] as string).replaceAll(" ", "%20").replaceAll("#", "%23").replaceAll("&", "%26");
+
+            // Append to search
+            if (search.length === 0) {
+                search = `${key}=${paramValue}`;
+            } else {
+                search += `&${key}=${paramValue}`;
+            }
+        }
+    }
+
+    if (search.length > 0) {
+        location += `?${search}`;
+    }
+
+    return location;
+}
+
 // Gets the movement name given a propulsion type
 export function getMovementText(propulsionType: ItemType | undefined): string {
     switch (propulsionType) {
@@ -1722,6 +1760,33 @@ export function parseIntOrUndefined(value: string | undefined): number | undefin
     }
 
     return int;
+}
+
+const paramRegex = /^(.*)=(.*)$/;
+export function parseSearchParameters<T>(search: string, object: T): T {
+    if (search.length === 0) {
+        // If no search state set then return default of no state set
+        return object;
+    }
+
+    const setParams = search.split("&");
+
+    for (const param of setParams) {
+        const match = paramRegex.exec(param);
+        if (!match) {
+            // Failed to get param out of URL, just ignore
+            console.log(`Failed to parse page parameter ${param}`);
+            continue;
+        }
+
+        const paramName = match[1];
+        const paramValue = match[2];
+
+        // Assign the parameter
+        object[paramName] = paramValue.replace("%23", "#").replace("%26", "&");
+    }
+
+    return object;
 }
 
 // Gets a random integer between the min and max values (inclusive)
