@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import machines from "../../../../json/machine_hacks.json";
 import { JsonHack, JsonHackableMachine } from "../../../hackTypes";
-import { canShowSpoiler, createImagePath, parseIntOrDefault } from "../../../utilities/common";
+import { canShowSpoiler, createImagePath, getLocationFromState, parseIntOrDefault, parseSearchParameters } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
@@ -11,11 +11,12 @@ import TextTooltip from "../../Popover/TextTooltip";
 
 import "../pages.less";
 import "./HacksPage.less";
+import { useLocation, useSearch } from "wouter";
 
 type HasDataCore = "No" | "Yes";
 
 type HacksPageState = {
-    nameSearch?: string;
+    name?: string;
     dataCore?: HasDataCore;
     hackBonus?: string;
     corruptionPercent?: string;
@@ -53,6 +54,25 @@ function getHackingModifier(pageState: HacksPageState) {
     const corruptionPenalty = Math.floor(parseIntOrDefault(pageState.corruptionPercent, 0) / 3);
 
     return hackBonus + botnetBonus + operatorBonus - corruptionPenalty;
+}
+
+function getPageState(): HacksPageState {
+    const search = useSearch();
+
+    return parseSearchParameters(search, {});
+}
+
+function skipLocationMember(key: string, pageState: HacksPageState) {
+    const typedKey: keyof HacksPageState = key as keyof HacksPageState;
+
+    if (
+        (typedKey === "dataCore" && pageState.dataCore === "No")
+    ) {
+        // Skip enum default values
+        return true;
+    }
+
+    return false;
 }
 
 function HackCell({ value }: { value: number | undefined }) {
@@ -144,7 +164,7 @@ function HacksTable({ pageState }: { pageState: HacksPageState }) {
     const spoilers = useSpoilers();
     const hackingModifier = getHackingModifier(pageState);
 
-    const nameFilter = pageState.nameSearch?.toLowerCase() || "";
+    const nameFilter = pageState.name?.toLowerCase() || "";
     const filterName = nameFilter.length > 0;
 
     function MachineRows({ machine }: { machine: JsonHackableMachine }) {
@@ -204,15 +224,22 @@ function HacksTable({ pageState }: { pageState: HacksPageState }) {
 }
 
 export default function HacksPage() {
-    const [pageState, setPageState] = useState<HacksPageState>({});
+    const [_, setLocation] = useLocation();
+    
+    const pageState = getPageState();
+
+    function updatePageState(newPageState: HacksPageState) {
+        const location = getLocationFromState("/hacks", newPageState, skipLocationMember);
+        setLocation(location, { replace: true });
+    }
 
     return (
         <div className="page-content">
             <div className="page-input-group">
                 <LabeledInput
                     label="Name"
-                    value={pageState.nameSearch}
-                    onChange={(val) => setPageState({ ...pageState, nameSearch: val })}
+                    value={pageState.name}
+                    onChange={(val) => updatePageState({ ...pageState, name: val })}
                     placeholder="Any"
                     tooltip="The name of a hack to search for"
                 />
@@ -222,12 +249,12 @@ export default function HacksPage() {
                     tooltip="Does Cogmind have a data core for the Terminal? Applicable to regular Terminals only."
                     buttons={dataCoreButtons}
                     selected={pageState.dataCore}
-                    onValueChanged={(val) => setPageState({ ...pageState, dataCore: val })}
+                    onValueChanged={(val) => updatePageState({ ...pageState, dataCore: val })}
                 />
                 <Button
                     tooltip="Resets all filters to their default (unfiltered) state"
                     className="flex-grow-0"
-                    onClick={() => setPageState({})}
+                    onClick={() => updatePageState({})}
                 >
                     Reset
                 </Button>
@@ -236,28 +263,28 @@ export default function HacksPage() {
                 <LabeledInput
                     label="Hack Bonus"
                     value={pageState.hackBonus}
-                    onChange={(val) => setPageState({ ...pageState, hackBonus: val })}
+                    onChange={(val) => updatePageState({ ...pageState, hackBonus: val })}
                     placeholder="0"
                     tooltip="The total bonus of all offensive hackware. For example, a standard Hacking Suite provides +10 bonus."
                 />
                 <LabeledInput
                     label="Corruption"
                     value={pageState.corruptionPercent}
-                    onChange={(val) => setPageState({ ...pageState, corruptionPercent: val })}
+                    onChange={(val) => updatePageState({ ...pageState, corruptionPercent: val })}
                     placeholder="0%"
                     tooltip="Cogmind's current corruption. Every 3 points of corruption reduces success rates by 1%."
                 />
                 <LabeledInput
                     label="# Operators"
                     value={pageState.numOperators}
-                    onChange={(val) => setPageState({ ...pageState, numOperators: val })}
+                    onChange={(val) => updatePageState({ ...pageState, numOperators: val })}
                     placeholder="0"
                     tooltip="The number of active operator allies within 20 tiles. The first provides 10%, the second 5%, the third 2%, and all remaining provide 1% cumulative success rate to all hacks."
                 />
                 <LabeledInput
                     label="# Botnets"
                     value={pageState.numBotnets}
-                    onChange={(val) => setPageState({ ...pageState, numBotnets: val })}
+                    onChange={(val) => updatePageState({ ...pageState, numBotnets: val })}
                     placeholder="0"
                     tooltip="The number of botnets installed on other Terminals. The first provides 6%, the second 3%, and all remaining provide 1% cumulative success rate to all hacks."
                 />
