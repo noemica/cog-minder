@@ -6,15 +6,19 @@
 
     border: @border-width solid @border-color;
     border-radius: @border-radius;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
 
     padding: @button-padding;
 
     background-color: @label-background-color;
 }
 
+.label:not(.solo-label) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 .labeled-item {
+    display: flex;
     flex-wrap: wrap;
 
     > :not(:first-child) {

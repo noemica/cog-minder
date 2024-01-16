@@ -32,7 +32,7 @@ type PageDetails = {
 };
 const pages: Record<PageType, PageDetails> = {
     "404": {
-        label: "404",
+        label: "Not Found",
         link: "404",
         explanation: "Page not found. Click one of the buttons at the top of the screen to navigate to a page.",
     },

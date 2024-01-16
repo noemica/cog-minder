@@ -762,8 +762,6 @@ export default function PartsComparisonDisplay({
     function ItemSelect(item: string, setItem: React.Dispatch<React.SetStateAction<string>>) {
         return (
             <SelectWrapper
-                // If ignoreAccents is true it causes a noticeable slowdown
-                filterOption={createFilter({ ignoreAccents: false })}
                 value={itemOptions.find((o) => o.value === item) || itemOptions[0]}
                 onChange={(val) => {
                     setItem(val!.value);

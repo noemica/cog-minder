@@ -351,8 +351,20 @@ export class ItemData {
         return Object.keys(this.itemData).map((itemName) => this.itemData[itemName]);
     }
 
+    public getAllItemsSorted() {
+        const itemNames = Object.keys(this.itemData);
+        itemNames.sort();
+        return itemNames.map((itemName) => this.itemData[itemName]);
+    }
+
     public getAllItemNames() {
         return Object.keys(this.itemData);
+    }
+
+    public getFilteredItems(itemFilter: (item: Item) => boolean) {
+        return Object.keys(this.itemData)
+            .map((itemName) => this.itemData[itemName])
+            .filter(itemFilter);
     }
 
     public getItem(itemName: string) {
@@ -361,6 +373,14 @@ export class ItemData {
         }
 
         throw new Error(`${itemName} not a valid item`);
+    }
+
+    public tryGetItem(itemName: string) {
+        if (itemName in this.itemData) {
+            return this.itemData[itemName];
+        }
+
+        return undefined;
     }
 
     public async verifyImages() {

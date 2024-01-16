@@ -54,12 +54,12 @@ export function GalleryItemPopoverButton({ item }: { item: Item }) {
     return <ItemPopover button={button} isVisible={isVisible} item={item} />;
 }
 
-export default function ItemPopoverButton({ item }: { item: Item }) {
+export default function ItemPopoverButton({ item, text, tooltip }: { item: Item; text?: string; tooltip?: string }) {
     const [isVisible, ref] = useIsVisible("50px");
 
     const button = (
         <div ref={ref}>
-            <Button>{item.name}</Button>
+            <Button tooltip={tooltip}>{text || item.name}</Button>
         </div>
     );
 

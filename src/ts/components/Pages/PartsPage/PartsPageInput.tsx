@@ -4,11 +4,11 @@ import Button from "../../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
 import {
-    Label,
     LabeledExclusiveButtonGroup,
     LabeledInput,
     LabeledSelect,
     LabeledSelectGroup,
+    SoloLabel,
 } from "../../LabeledItem/LabeledItem";
 import SelectWrapper, { SelectOptionType } from "../../Selectpicker/Select";
 import {
@@ -357,7 +357,7 @@ export default function PartsPageInput({
                 <SlotSpecificFilter pageState={pageState} setPageState={setPageState} />
             </div>
             <div className="page-input-group">
-                <Label label="Schematics" tooltip="Search for hackable schematics." />
+                <SoloLabel label="Schematics" tooltip="Search for hackable schematics." />
                 <LabeledInput
                     label="Depth"
                     tooltip="Current map depth. Can enter as 7 or -7."

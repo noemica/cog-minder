@@ -1057,7 +1057,9 @@ export function getRegen(bot: Bot): number {
 // Gets the volley time given an array of ranged weapons
 export function getRangedVolleyTime(weapons: WeaponItem[], cyclerModifier: number): number {
     let volleyTime: number;
-    if (weapons.length in volleyTimeMap) {
+    if (weapons.length === 0) {
+        return 0;
+    } else if (weapons.length in volleyTimeMap) {
         volleyTime = volleyTimeMap[weapons.length];
     } else {
         // No additional penalty past 6 weapons

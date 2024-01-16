@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Select, { GroupBase, OptionProps, Props, components } from "react-select";
+import Select, { GroupBase, OptionProps, Props, components, createFilter } from "react-select";
 
 import TextTooltip from "../Popover/TextTooltip";
 
@@ -51,9 +51,11 @@ export default function SelectWrapper<
     return (
         <Select
             {...props}
+            // If ignoreAccents is true it causes a noticeable slowdown
+            filterOption={createFilter({ ignoreAccents: false })}
             options={options}
             formatGroupLabel={(data: GroupBase<SelectOptionType>) => {
-                return <span>{data.label}</span>
+                return <span>{data.label}</span>;
             }}
             defaultValue={defaultValue}
             value={value}

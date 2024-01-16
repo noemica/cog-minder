@@ -4,9 +4,11 @@ import { Redirect, Route, Router, Switch } from "wouter";
 
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import PageHeader from "../PageHeader/PageHeader";
+import useThemeUpdater from "../Effects/useThemeUpdater";
 
 const AboutPage = React.lazy(() => import("../Pages/AboutPage"));
 const BotsPage = React.lazy(() => import("../Pages/BotsPage/BotsPage"));
+const BuildPage = React.lazy(() => import("../Pages/BuildPage/BuildPage"));
 const CombatPage = React.lazy(() => import("../Pages/CombatPage"));
 const HacksPage = React.lazy(() => import("../Pages/HacksPage/HacksPage"));
 const PartsPage = React.lazy(() => import("../Pages/PartsPage/PartsPage"));
@@ -24,6 +26,9 @@ function Routes() {
             <Route path="/bots">
                 <BotsPage />
             </Route>
+            <Route path="/build">
+                <BuildPage />
+            </Route>
             <Route path="/combat">
                 <CombatPage />
             </Route>
@@ -40,6 +45,9 @@ function Routes() {
             </Route>
             <Route path="/bots.html">
                 <Redirect to="/bots" />
+            </Route>
+            <Route path="/build.html">
+                <Redirect to="/build" />
             </Route>
             <Route path="/combat.html">
                 <Redirect to="/combat" />
@@ -79,6 +87,8 @@ function errorFallback(error: Error) {
 }
 
 export default function App() {
+    useThemeUpdater();
+
     return (
         <>
             <PageHeader />

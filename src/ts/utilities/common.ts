@@ -1634,6 +1634,12 @@ export function getMovementText(propulsionType: ItemType | undefined): string {
     }
 }
 
+// Gets the top 2 highest values in an array, or 0 if undefined
+export function getTopTwoValues(values: number[]) {
+    values = values.sort((a, b) => b - a).splice(0, 2);
+    return [values[0] === undefined ? 0 : values[0], values[1] === undefined ? 0 : values[1]];
+}
+
 // Gets a per-TU value scaled to the given number of TUs
 export function getValuePerTus(baseValue: number, numTus: number): number {
     return (baseValue * numTus) / 100;

@@ -145,6 +145,46 @@
     --gallery-part-button-background-gradient: @cogmind-gallery-part-button-background-gradient;
 }
 
+// Build colors
+@dark-build-color-default: #155315;
+@dark-build-color-energy-consumption: #000073;
+@dark-build-color-energy-gen: #006f6f;
+@dark-build-color-heat-dissipation: #5b5b00;
+@dark-build-color-heat-gen: #633200;
+@dark-build-color-mass-support: #5b5b00;
+@dark-build-color-mass: #55452e;
+@dark-build-color-vulnerability: #800;
+
+@cogmind-build-color-default: #162416;
+@cogmind-build-color-energy-consumption: @dark-build-color-energy-consumption;
+@cogmind-build-color-energy-gen: #004a4a;
+@cogmind-build-color-heat-dissipation: @dark-build-color-heat-dissipation;
+@cogmind-build-color-heat-gen: #633200;
+@cogmind-build-color-mass-support: @dark-build-color-mass-support;
+@cogmind-build-color-mass: #493e2e;
+@cogmind-build-color-vulnerability: @dark-build-color-vulnerability;
+
+:root {
+    --build-color-default: @dark-build-color-default;
+    --build-color-energy-consumption: @dark-build-color-energy-consumption;
+    --build-color-energy-gen: @dark-build-color-energy-gen;
+    --build-color-heat-dissipation: @dark-build-color-heat-dissipation;
+    --build-color-heat-gen: @dark-build-color-heat-gen;
+    --build-color-mass-support: @dark-build-color-mass-support;
+    --build-color-mass: @dark-build-color-mass;
+    --build-color-vulnerability: @dark-build-color-vulnerability;
+}
+[data-theme="Cogmind"] {
+    --build-color-default: @cogmind-build-color-default;
+    --build-color-energy-consumption: @cogmind-build-color-energy-consumption;
+    --build-color-energy-gen: @cogmind-build-color-energy-gen;
+    --build-color-heat-dissipation: @cogmind-build-color-heat-dissipation;
+    --build-color-heat-gen: @cogmind-build-color-heat-gen;
+    --build-color-mass-support: @cogmind-build-color-mass-support;
+    --build-color-mass: @cogmind-build-color-mass;
+    --build-color-vulnerability: @cogmind-build-color-vulnerability;
+}
+
 // Keep in sync with sizes.less
 // Border radii
 @dark-border-radius: 8px;
@@ -184,26 +224,26 @@
 @dark-button-grid-font-size: 1.125rem;
 @dark-default-font-size: 1rem;
 @dark-paragraph-font-size: @dark-default-font-size;
-@dark-table-header-font-size: 1.125rem;
-@dark-table-large-header-font-size: 1.5rem;
+@dark-header-font-size: 1.125rem;
+@dark-large-header-font-size: 1.5rem;
 
 @cogmind-button-grid-font-size: 1rem;
 @cogmind-default-font-size: 0.8rem;
 @cogmind-paragraph-font-size: @dark-paragraph-font-size;
-@cogmind-table-header-font-size: 0.9rem;
-@cogmind-table-large-header-font-size: 1.2rem;
+@cogmind-header-font-size: 0.9rem;
+@cogmind-large-header-font-size: 1.2rem;
 
 :root {
     --button-grid-font-size: @dark-button-grid-font-size;
     --default-font-size: @dark-default-font-size;
     --paragraph-font-size: @dark-paragraph-font-size;
-    --table-header-font-size: @dark-table-header-font-size;
-    --table-large-header-font-size: @dark-table-large-header-font-size;
+    --header-font-size: @dark-header-font-size;
+    --large-header-font-size: @dark-large-header-font-size;
 }
 [data-theme="Cogmind"] {
     --button-grid-font-size: @cogmind-button-grid-font-size;
     --default-font-size: @cogmind-default-font-size;
     --paragraph-font-size: @cogmind-paragraph-font-size;
-    --table-header-font-size: @cogmind-table-header-font-size;
-    --table-large-header-font-size: @cogmind-table-large-header-font-size;
+    --header-font-size: @cogmind-header-font-size;
+    --large-header-font-size: @cogmind-large-header-font-size;
 }

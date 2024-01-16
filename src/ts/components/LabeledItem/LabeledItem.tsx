@@ -1,14 +1,15 @@
+import { ReactNode } from "react";
 import { GroupBase, Props } from "react-select";
 
 import ExclusiveButtonGroup, { ExclusiveButtonsProps } from "../Buttons/ExclusiveButtonGroup";
 import Input, { CustomInputProps } from "../Input/Input";
-import SelectWrapper, { SelectOptionType } from "../Selectpicker/Select";
 import TextTooltip from "../Popover/TextTooltip";
+import SelectWrapper, { SelectOptionType } from "../Selectpicker/Select";
 
 import "./LabeledItem.less";
-import { ReactNode } from "react";
 
 export type LabeledItemProps = {
+    className?: string;
     label: string;
     tooltip?: string;
 };
@@ -19,20 +20,16 @@ export type LabeledExclusiveButtonGroupProps<T extends string> = LabeledItemProp
         flexGrowButtonCount?: boolean;
     };
 
-function itemLabel(label: string, tooltip?: string) {
-    return (
-        <>
-            {tooltip === undefined ? (
-                <span className="label">{label}</span>
-            ) : (
-                <TextTooltip tooltipText={tooltip}>{<span className="label">{label}</span>}</TextTooltip>
-            )}
-        </>
-    );
-}
+export default function Label({ className, label, tooltip }: LabeledItemProps) {
+    let classes = "label";
 
-export function Label({ label, tooltip }: LabeledItemProps) {
-    return itemLabel(label, tooltip);
+    if (className) {
+        classes += " " + className;
+    }
+
+    const labelNode = <span className={classes}>{label}</span>;
+
+    return <>{tooltip === undefined ? labelNode : <TextTooltip tooltipText={tooltip}>{labelNode}</TextTooltip>}</>;
 }
 
 export function LabeledExclusiveButtonGroup<T extends string>({
@@ -50,16 +47,18 @@ export function LabeledExclusiveButtonGroup<T extends string>({
             }}
             className={className}
         >
-            {itemLabel(label, tooltip)}
+            <Label label={label} tooltip={tooltip} />
             <ExclusiveButtonGroup {...props} />
         </div>
     );
 }
 
-export function LabeledInput({ label, onChange, placeholder, tooltip, value }: LabeledItemProps & CustomInputProps) {
+export function LabeledInput({ className, label, onChange, placeholder, tooltip, value }: LabeledItemProps & CustomInputProps) {
+    className = (className || "") + " labeled-item";
+
     return (
-        <div className="labeled-item">
-            {itemLabel(label, tooltip)}
+        <div className={className}>
+            <Label label={label} tooltip={tooltip} />
             <Input onChange={onChange} placeholder={placeholder} value={value || ""} />
         </div>
     );
@@ -73,7 +72,7 @@ export function LabeledSelect<
 
     return (
         <div className={className}>
-            {itemLabel(label, tooltip)}
+            <Label label={label} tooltip={tooltip} />
             <SelectWrapper {...props} />
         </div>
     );
@@ -82,8 +81,18 @@ export function LabeledSelect<
 export function LabeledSelectGroup({ children, label, tooltip }: LabeledItemProps & { children: ReactNode }) {
     return (
         <div className="labeled-item labeled-select">
-            {itemLabel(label, tooltip)}
+            <Label label={label} tooltip={tooltip} />
             {children}
         </div>
     );
+}
+
+export function SoloLabel({ className, label, tooltip }: LabeledItemProps) {
+    let classes = "solo-label";
+
+    if (className) {
+        classes = classes + " " + className;
+    }
+
+    return <Label className={classes} label={label} tooltip={tooltip} />;
 }

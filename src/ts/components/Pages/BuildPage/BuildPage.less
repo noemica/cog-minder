@@ -1,0 +1,93 @@
+@import "../../../../styles/common.less";
+
+.build-grid-container {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.build-summary-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: @build-summary-info-gap;
+}
+
+.build-label-header {
+    margin-top: @build-summary-info-top-margin;
+    font-size: @build-header-font-size;
+}
+
+.build-part-row {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: @build-part-row-top-margin;
+    gap: @build-part-row-gap;
+}
+
+.build-part-row-group {
+    display: flex;
+
+    .build-part-row-growable();
+}
+
+.build-part-select {
+    min-width: 20rem;
+
+    .build-part-row-growable();
+}
+
+.build-part-row-growable {
+    flex: 1 1 auto;
+}
+
+.build-percentage-bar-text {
+    position: absolute;
+    align-self: center;
+}
+
+.build-percentage-bar-inner {
+    height: 100%;
+}
+
+.build-percentage-bar-container {
+    border: 1px solid @border-color;
+
+    display: flex;
+    align-self: center;
+
+    margin-left: 0.5rem;
+    height: 1.5rem;
+}
+
+.build-percentage-default {
+    background-color: @build-color-default;
+}
+
+.build-percentage-energy-consumption {
+    background-color: @build-color-energy-consumption;
+}
+
+.build-percentage-energy-gen {
+    background-color: @build-color-energy-gen;
+}
+
+.build-percentage-heat-dissipation {
+    background-color: @build-color-heat-dissipation;
+}
+
+.build-percentage-heat-gen {
+    background-color: @build-color-heat-gen;
+}
+
+.build-percentage-mass-support {
+    background-color: @build-color-mass-support;
+}
+
+.build-percentage-mass {
+    background-color: @build-color-mass;
+}
+
+.build-percentage-vulnerability {
+    background-color: @build-color-vulnerability;
+}
