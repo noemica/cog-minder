@@ -3,6 +3,8 @@
 .build-grid-container {
     display: grid;
     grid-template-columns: 4fr 1fr;
+
+    column-gap: 0.5rem;
 }
 
 .build-summary-container {
@@ -12,8 +14,13 @@
     gap: @build-summary-info-gap;
 }
 
+.build-parts-container {
+    > * {
+        margin-top: @build-summary-info-top-margin;
+    }
+}
+
 .build-label-header {
-    margin-top: @build-summary-info-top-margin;
     font-size: @build-header-font-size;
 }
 
@@ -32,7 +39,7 @@
 }
 
 .build-part-select {
-    min-width: 20rem;
+    min-width: 22rem;
 
     .build-part-row-growable();
 }
@@ -51,12 +58,11 @@
 }
 
 .build-percentage-bar-container {
-    border: 1px solid @border-color;
+    border: @border-width solid @border-color;
 
     display: flex;
     align-self: center;
 
-    margin-left: 0.5rem;
     height: 1.5rem;
 }
 

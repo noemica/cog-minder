@@ -1,6 +1,12 @@
 @import "../../../styles/common.less";
 
+.popover {
+    z-index: 1;
+}
+
 .button-popover {
+    .popover();
+
     padding: @popover-padding;
 
     z-index: 1;
@@ -11,9 +17,18 @@
     border: @border-width solid @border-color;
 }
 
-.bot-popover,
-.item-popover {
-    z-index: 1;
+.import-from-dump-popover {
+    display: grid;
+    gap: @medium-gap;
+}
+
+.submit-dump-row {
+    display: flex;
+    gap: @element-column-gap;
+
+    > * {
+        flex: 1 1 auto;
+    }
 }
 
 .popover-arrow {

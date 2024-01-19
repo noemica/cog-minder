@@ -5,17 +5,24 @@
     color: @font-color;
     
     border: @border-width solid @border-color;
-    border-top-right-radius: @border-radius;
-    border-bottom-right-radius: @border-radius;
 
     padding: @input-padding;
 }
 
-.input:focus {
+.grouped-input {
+    .input();
+
+    border-top-right-radius: @border-radius;
+    border-bottom-right-radius: @border-radius;
+}
+
+.input:focus,
+.grouped-input:focus {
     outline: none;
     border-color: @element-active-border-color;
 }
 
-.input:hover {
+.input:hover,
+.grouped-input:hover {
     border-color: @element-active-border-color;
 }

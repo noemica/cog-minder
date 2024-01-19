@@ -39,6 +39,7 @@ import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
 import useItemData from "../../Effects/useItemData";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
 import { LabeledExclusiveButtonGroup, LabeledInput, SoloLabel } from "../../LabeledItem/LabeledItem";
+import ImportBuildFromDumpPopover from "../../Popover/ImportBuildFromDumpPopover";
 import ItemPopoverButton from "../../Popover/ItemPopover";
 import SelectWrapper, { SelectOptionType } from "../../Selectpicker/Select";
 
@@ -719,6 +720,10 @@ function skipLocationMember(key: string, pageState: SerializableBuildPageState) 
     return false;
 }
 
+function processImportFromDump(text: string, usePeakState: boolean) {
+    
+}
+
 function CoreSection({ pageState, partsState }: { pageState: BuildPageState; partsState: TotalPartsState }) {
     let coreInfo: ReactNode;
 
@@ -1155,7 +1160,7 @@ function SlotSection({
     });
 
     return (
-        <>
+        <div>
             <TitleSection
                 title={`${slot} x${partsInfo.length}`}
                 tooltip={`Selection and information about ${slot.toLowerCase()} slot parts.`}
@@ -1164,7 +1169,7 @@ function SlotSection({
                 {partRows}
                 <AddPartRow />
             </div>
-        </>
+        </div>
     );
 }
 
@@ -1185,7 +1190,11 @@ function SummarySection({ partsState }: { partsState: TotalPartsState }) {
 
     return (
         <>
-            <TitleSection title="Summary" tooltip="Summary information about Cogmind and all parts." />
+            <TitleSection
+                title="Summary"
+                tooltip="Summary information about Cogmind and all parts."
+                content={<ImportBuildFromDumpPopover onSubmit={(text) => processImportFromDump(text, usePeakState)} />}
+            />
             <div className="build-summary-container">
                 <SummaryDetail
                     label="Support"
@@ -1324,31 +1333,33 @@ export default function BuildPage() {
                 />
             </div>
             <SummarySection partsState={totalPartsState} />
-            <CoreSection pageState={pageState} partsState={totalPartsState} />
-            <SlotSection
-                pageState={pageState}
-                partsState={totalPartsState}
-                slot="Power"
-                updatePageState={updatePageState}
-            />
-            <SlotSection
-                pageState={pageState}
-                partsState={totalPartsState}
-                slot="Propulsion"
-                updatePageState={updatePageState}
-            />
-            <SlotSection
-                pageState={pageState}
-                partsState={totalPartsState}
-                slot="Utility"
-                updatePageState={updatePageState}
-            />
-            <SlotSection
-                pageState={pageState}
-                partsState={totalPartsState}
-                slot="Weapon"
-                updatePageState={updatePageState}
-            />
+            <div className="build-parts-container">
+                <CoreSection pageState={pageState} partsState={totalPartsState} />
+                <SlotSection
+                    pageState={pageState}
+                    partsState={totalPartsState}
+                    slot="Power"
+                    updatePageState={updatePageState}
+                />
+                <SlotSection
+                    pageState={pageState}
+                    partsState={totalPartsState}
+                    slot="Propulsion"
+                    updatePageState={updatePageState}
+                />
+                <SlotSection
+                    pageState={pageState}
+                    partsState={totalPartsState}
+                    slot="Utility"
+                    updatePageState={updatePageState}
+                />
+                <SlotSection
+                    pageState={pageState}
+                    partsState={totalPartsState}
+                    slot="Weapon"
+                    updatePageState={updatePageState}
+                />
+            </div>
         </div>
     );
 }

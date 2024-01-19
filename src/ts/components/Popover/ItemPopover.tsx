@@ -24,7 +24,7 @@ function ItemPopover({ button, isVisible, item }: ItemPopoverProps) {
             <Popover placement={positioning.placement} shouldShift={positioning.shouldShift}>
                 <PopoverTrigger asChild={true}>{button}</PopoverTrigger>
                 <PopoverContent floatingArrowClassName="item-popover-arrow">
-                    <div className="item-popover">
+                    <div className="popover">
                         <ItemDetails item={item} />
                     </div>
                 </PopoverContent>

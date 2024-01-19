@@ -14,25 +14,31 @@
 @table-cell-padding: 0.125rem;
 @page-explanation-button-padding: 0.25rem @button-padding;
 
-// Margins
-@build-part-row-top-margin: 0.25rem;
-@build-summary-info-gap: 0.125rem;
-@build-summary-info-top-margin: 1.0rem;
-@build-part-row-gap: 0.5rem;
-@chart-grid-gap: 1.3125rem;
-@comparison-container-gap: 0.5rem;
-@element-top-margin: 0.625rem 0 0 0;
-@element-vertical-margin: 0.625rem 0 0.625rem 0;
-@element-column-gap: 0.3125rem;
-@header-setting-children-margin: 0.3125rem 0;
-@navigation-buttons-gap: 0.125rem;
-@paragraph-top-margin: 1.25rem;
-@page-horizontal-margin: 1.3125rem;
-@page-options-top-margin: 0.625rem;
-@page-options-left-margin: 0.625rem;
-@page-title-margin: 0.5rem 0;
-@page-title-explanation-inner-margin: 1rem;
-@table-large-header-margin: 0.5rem;
+// Margins/gaps
+@tiny-gap: 0.125rem;
+@small-gap: 0.25rem;
+@medium-gap: 0.625rem;
+@large-gap: 1rem;
+
+@build-part-row-top-margin: @small-gap;
+@build-summary-info-gap: @tiny-gap;
+@build-summary-info-top-margin: @large-gap;
+@build-part-row-gap: @medium-gap;
+@chart-grid-gap: @large-gap;
+@comparison-container-gap: @medium-gap;
+@element-top-margin: @medium-gap 0 0 0;
+@element-vertical-margin: @medium-gap 0 @medium-gap 0;
+@element-column-gap: @small-gap;
+@header-setting-children-margin: @small-gap 0;
+@paste-from-dump-grid-gap: @medium-gap;
+@navigation-buttons-gap: @tiny-gap;
+@paragraph-top-margin: @large-gap;
+@page-horizontal-margin: @large-gap;
+@page-options-top-margin: @medium-gap;
+@page-options-left-margin: @medium-gap;
+@page-title-margin: @medium-gap 0;
+@page-title-explanation-inner-margin: @large-gap;
+@table-large-header-margin: @medium-gap;
 
 // Other sizes
 @button-grid-button-height: 3rem;

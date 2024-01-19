@@ -17,7 +17,7 @@ function BotPopover({ button, isVisible, bot }: { button: ReactNode; isVisible: 
             <Popover placement={positioning.placement} shouldShift={positioning.shouldShift}>
                 <PopoverTrigger asChild={true}>{button}</PopoverTrigger>
                 <PopoverContent floatingArrowClassName="bot-popover-arrow">
-                    <div className="bot-popover">
+                    <div className="popover">
                         <BotDetails bot={bot} />
                     </div>
                 </PopoverContent>
