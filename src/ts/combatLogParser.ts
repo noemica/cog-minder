@@ -83,6 +83,9 @@ const trapShortCircuited = /^(?:.*) short circuited$/;
 // Non-match 2: Name of bot that triggered trap (optional)
 const trapTriggeredRegex = /^(?:.*) triggered(?: by (?:.*))?$/;
 
+// Non-match: ??? unknown damage source
+const questionRegex = /^\?\?\?$/;
+
 // Match 1: Attacker if not Cogmind (optional)
 // Match 2: Weapon
 // Match 3: Sneak attack (optional)
@@ -419,47 +422,49 @@ class ParserState {
     // Tries to parse a weapon attack and all subsequent indented lines
     // into a single combat log entry
     private parseWeaponAttack(line: PartialParsedLine): boolean {
+        const currentEntry = this.currentEntry;
+
         const weaponAttackResult = weaponAttackRegex.exec(line.remainingText);
         if (weaponAttackResult === null) {
-            return false;
-        }
+            const questionResult = questionRegex.exec(line.remainingText);
+            if (questionResult === null) {
+                return false;
+            }
 
-        const currentEntry = this.currentEntry;
-        if (weaponAttackResult[1] !== undefined) {
-            const bot = tryGetBot(weaponAttackResult[1]);
-            currentEntry.sourceEntity = bot === undefined ? "Unknown" : bot.Name;
-        } else {
-            currentEntry.sourceEntity = "Cogmind";
-        }
-
-        currentEntry.sourceWeapon = weaponAttackResult[2];
-
-        if (weaponAttackResult[3] !== undefined) {
-            currentEntry.sneakAttack = true;
-        }
-
-        currentEntry.weaponAccuracy = parseIntOrDefault(weaponAttackResult[4], 0);
-
-        if (weaponAttackResult[5] !== undefined && weaponAttackResult[6] !== undefined) {
-            // Multi-projectile weapons state the number of projectiles
-            // that hit like x/y here
-            currentEntry.projectilesHit = parseIntOrDefault(weaponAttackResult[5], 0);
-            currentEntry.projectilesTotal = parseIntOrDefault(weaponAttackResult[6], 0);
-        } else {
-            // Single-projectile weapons state Hit or Miss
+            // Found a ??? source of damage
+            currentEntry.sourceEntity = "Unknown";
+            currentEntry.sourceWeapon = "Unknown";
+            currentEntry.projectilesHit = 1;
             currentEntry.projectilesTotal = 1;
-            currentEntry.projectilesHit = weaponAttackResult[7] === "Hit" ? 1 : 0;
+        } else {
+            if (weaponAttackResult[1] !== undefined) {
+                const bot = tryGetBot(weaponAttackResult[1]);
+                currentEntry.sourceEntity = bot === undefined ? "Unknown" : bot.Name;
+            } else {
+                currentEntry.sourceEntity = "Cogmind";
+            }
+
+            currentEntry.sourceWeapon = weaponAttackResult[2];
+
+            if (weaponAttackResult[3] !== undefined) {
+                currentEntry.sneakAttack = true;
+            }
+
+            currentEntry.weaponAccuracy = parseIntOrDefault(weaponAttackResult[4], 0);
+
+            if (weaponAttackResult[5] !== undefined && weaponAttackResult[6] !== undefined) {
+                // Multi-projectile weapons state the number of projectiles
+                // that hit like x/y here
+                currentEntry.projectilesHit = parseIntOrDefault(weaponAttackResult[5], 0);
+                currentEntry.projectilesTotal = parseIntOrDefault(weaponAttackResult[6], 0);
+            } else {
+                // Single-projectile weapons state Hit or Miss
+                currentEntry.projectilesHit = weaponAttackResult[7] === "Hit" ? 1 : 0;
+                currentEntry.projectilesTotal = 1;
+            }
         }
 
         this.parseNestedLines(line);
-
-        for (const damageEntry of currentEntry.damageEntries) {
-            if (damageEntry.damagedPart === "core") {
-                // For consistency with parts, capitalize "core"
-                // even though it isn't capitalized in the log
-                damageEntry.damagedPart = "Core";
-            }
-        }
 
         this.entries.push(currentEntry);
         return true;
