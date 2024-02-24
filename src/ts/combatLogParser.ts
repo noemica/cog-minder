@@ -137,11 +137,9 @@ const derelictClasses: Map<string, string> = new Map([
 
 const specialBotRegexes: { name: string; regex: RegExp }[] = [
     // Note: Can't tell Assembled 4 vs 7 apart but 4 is more common so use that
-    // Unfortunately, Golems also use the same naming scheme so there's no way
-    // to tell them apart
-    // Assemblers use uppercase AS so this does work fine
     { name: "Assembled (4)", regex: /^as-\d+$/ },
     { name: "Assembler", regex: /^AS-\d+$/ },
+    { name: "Golem", regex: /^AG-\d+$/ },
     { name: "Q-Series", regex: /^Q\d{3}-\w$/ },
     { name: "Z-Experimental (8)", regex: /^Z-Ex$/ },
 ];
