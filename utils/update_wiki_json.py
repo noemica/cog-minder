@@ -19,7 +19,8 @@ with open (bots_path) as f:
     bots = json.load(f)
 
 # Update bots
-for bot_name in bots:
+for bot in bots:
+    bot_name = bot['Name']
     try:
         bot = next(bot for bot in wiki['Bots'] if bot['Name'] == bot_name)
 
@@ -33,7 +34,8 @@ for bot_name in bots:
 wiki['Bots'] = list(sorted(wiki['Bots'], key=lambda bot: bot['Name']))
 
 # Update parts
-for part_name in parts:
+for part in parts:
+    part_name = part['Name']
     try:
         part = next(part for part in wiki['Parts'] if part['Name'] == part_name)
 
@@ -47,4 +49,4 @@ for part_name in parts:
 wiki['Parts'] = list(sorted(wiki['Parts'], key=lambda part: part['Name']))
 
 with open(wiki_path, 'w') as f:
-    json.dump(wiki, f)
+    json.dump(wiki, f, indent=2)
