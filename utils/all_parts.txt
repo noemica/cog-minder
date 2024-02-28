@@ -527,6 +527,8 @@ Phase Redirector
 Point Defense System
 Point Defense Array
 Antimissile System
+Power Bank
+Heavy Servo Lattice
 EX Chip 1
 Hacking Suite
 Mak. Hacking Suite

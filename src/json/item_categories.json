@@ -541,6 +541,8 @@
     "Point Defense System": ["0b10"],
     "Point Defense Array": ["0b10"],
     "Antimissile System": ["0b10"],
+    "Heavy Servo Lattice": ["0b10"],
+    "Power Bank": ["Derelict", "Spoiler"],
     "EX Chip 1": ["Exile"],
     "Hacking Suite": ["0b10"],
     "Mak. Hacking Suite": ["Derelict"],
