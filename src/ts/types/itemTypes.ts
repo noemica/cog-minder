@@ -256,6 +256,7 @@ export type BaseItem = {
     fabrication?: FabricationStats;
     index: number;
     specialProperty?: SpecialItemProperty;
+    specialTrait?: string;
     spoiler: Spoiler;
 };
 
@@ -296,13 +297,9 @@ export type PropulsionItem = BaseItem &
         siege?: SiegeMode;
     };
 
-export type UtilityItem = BaseItem &
-    ItemWithUpkeep & {
-        specialTrait?: string;
-    };
+export type UtilityItem = BaseItem & ItemWithUpkeep;
 
 export type WeaponItem = BaseItem & {
-    specialTrait?: string;
     range: number;
     shotEnergy?: number;
     shotHeat?: number;

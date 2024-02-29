@@ -960,6 +960,7 @@ Welding Torch
 Plasma Cutter
 Imp. Plasma Cutter
 Multitool
+CPS Tube
 Flamer
 Enh. Flamer
 Plasma Flamer

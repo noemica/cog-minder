@@ -794,6 +794,20 @@ export function createItemDataContent(baseItem: Item): string {
         return `${matter} (With siphon: ${siphonMatter})`;
     }
 
+    const disposableUnstableRegex = /(?:Disposable|Unstable) \((\d*)\)/;
+    function getPartName(item: Item): string {
+        let name = escapeHtml(item.name);
+
+        console.log(item.specialTrait);
+        const result = disposableUnstableRegex.exec(item.specialTrait || "");
+        if (result !== null) {
+            console.log(result);
+            name += ` (${result[1]})`;
+        }
+
+        return name;
+    }
+
     function getPenetrationTextHtml(item: WeaponItem): string {
         const penetrationString = item.penetration;
 
@@ -895,8 +909,8 @@ export function createItemDataContent(baseItem: Item): string {
     <div class="part-art-image-container">
         <img src="${escapeHtml(getItemAsciiArtImageName(baseItem))}"/>
     </div>
-    <pre class="popover-title .popover-part-image-title mt-2">${escapeHtml(
-        baseItem.name,
+    <pre class="popover-title .popover-part-image-title mt-2">${getPartName(
+        baseItem,
     )} [<img src="${getItemSpriteImageName(baseItem)}"/>]</pre>
     ${emptyLine}
     ${summaryLine("Overview")}
@@ -1762,6 +1776,7 @@ export async function initData(
                     integrity: integrity,
                     noRepairs: item["No Repairs"] === "1",
                     mass: undefined,
+                    specialTrait: item["Special Trait"],
                     name: item.Name,
                     fullName: item["Full Name"],
                     noPrefixName: noPrefixName,
@@ -1807,6 +1822,7 @@ export async function initData(
                     integrity: integrity,
                     noRepairs: item["No Repairs"] === "1",
                     mass: mass,
+                    specialTrait: item["Special Trait"],
                     name: item.Name,
                     fullName: item["Full Name"],
                     noPrefixName: noPrefixName,
@@ -1853,6 +1869,7 @@ export async function initData(
                     name: item.Name,
                     fullName: item["Full Name"],
                     mass: mass,
+                    specialTrait: item["Special Trait"],
                     noPrefixName: noPrefixName,
                     penalty: parseInt(item.Penalty as string),
                     rating: rating,

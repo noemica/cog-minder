@@ -329,6 +329,7 @@ jq(function ($) {
             { name: "Size" },
             { name: "Integrity" },
             { name: "Life" },
+            { name: "Special Trait", propertyName: "specialTrait" },
         ],
         Effect: [{ name: "Effect" }, { name: "Description" }],
     };
@@ -342,6 +343,7 @@ jq(function ($) {
             { name: "Integrity" },
             { name: "Coverage" },
             { name: "Heat", propertyName: "heatGeneration" },
+            { name: "Special Trait", propertyName: "specialTrait" },
         ],
         Power: [
             { name: "Rate", propertyName: "energyGeneration" },
@@ -362,6 +364,7 @@ jq(function ($) {
             { name: "Size" },
             { name: "Integrity" },
             { name: "Coverage" },
+            { name: "Special Trait", propertyName: "specialTrait" },
         ],
         Upkeep: [
             { name: "Energy", propertyName: "energyUpkeep" },
