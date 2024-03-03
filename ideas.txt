@@ -4,6 +4,7 @@ Medium ideas:
 - Add ignore obsolete parts in search
     - Hard to know what an "obsolete" part is
 - Add proper followups for build page
+- Show all sizes of bot sprites
 
 Big ideas:
 - Save search/parts in URL
