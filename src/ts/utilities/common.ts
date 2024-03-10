@@ -798,10 +798,8 @@ export function createItemDataContent(baseItem: Item): string {
     function getPartName(item: Item): string {
         let name = escapeHtml(item.name);
 
-        console.log(item.specialTrait);
         const result = disposableUnstableRegex.exec(item.specialTrait || "");
         if (result !== null) {
-            console.log(result);
             name += ` (${result[1]})`;
         }
 
