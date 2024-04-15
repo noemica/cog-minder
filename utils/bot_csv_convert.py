@@ -139,7 +139,12 @@ def get_parts(part_strings):
                 if match is not None:
                     option_list.append({'name': match.group(2), 'number': int(match.group(1))})
                 else:
-                    option_list.append({'name': option})
+                    match = re.match('(.*) \(\d*%\)', option)
+                    if match is not None:
+                        # For now just strip the percentage, maybe will add in later
+                        option_list.append({'name': match.group(1)})
+                    else:
+                        option_list.append({'name': option})
             parts.append(option_list)
         else:
             part = options[0]

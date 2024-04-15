@@ -247,14 +247,16 @@ export const botHitCogmindPartMultiEntries: CombatLogEntry[] = [
     },
 ];
 
-export const unknownBotHitCogmindPartLog = `00001_  Omega Cannon damaged: 34`;
+export const unknownBotHitCogmindPartLog = `00001_  ???
+00001_   Core damaged: 34
+`;
 
 export const unknownBotHitCogmindPartEntries: CombatLogEntry[] = [
     {
         damageEntries: [
             {
                 damagedEntity: "Cogmind",
-                damagedPart: "Omega Cannon",
+                damagedPart: "Core",
                 criticalHitType: undefined,
                 damageDealt: 34,
                 damageOverflow: false,

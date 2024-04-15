@@ -16,6 +16,7 @@ Imp. Ion Engine
 Rnf. Ion Engine
 Hvy. Ion Engine
 Cld. Ion Engine
+Sub. Power Source
 Deuterium Engine
 Lgt. Deuterium Engine
 Backup Power III
@@ -70,6 +71,7 @@ Zero-point Reactor
 Vortex Chain Reactor
 Singularity Reactor
 Matter Drive
+Meta Core
 Lgt. Treads
 Imp. Treads
 Spk. Treads
@@ -104,32 +106,39 @@ Titanium Leg
 VSS Leg
 Imp. Carbon-fiber Leg
 Imp. Titanium Leg
+Lgt. Armored Exoskeleton
 Mak. Leg
 Flexi-carbon Leg
 Arm. Leg
 Imp. VSS Leg
 Zio. Composite Leg I
+Med. Armored Exoskeleton
 Enh. Flexi-carbon Leg
 Enh. Armored Leg
+Arachnoskeleton
 Myomer Leg
 Adv. VSS Leg
 Adv. Myomer Leg
 Exp. Flexi-carbon Leg
 Zio. Composite Leg II
+Cargo Legs
 Biometal Leg
+Hvy. Armored Exoskeleton
 Enh. Biometal Leg
 Exp. Myomer Leg
+Tripod Weapons Platform
 Asb. Alloy Leg
 Centrium Leg
 Hdn. Centrium Leg
 Exp. Biometal Leg
-Sigix Exoskeleton
 Zio. Supercomposite Leg
 Potential Leg
 Myomer Exoskeleton
+Sigix Exoskeleton
 Wheel
 Com. Wheel
 Arm. Wheel
+Sub. Monowheel
 Arm. Huge Wheel
 Centrium Wheel
 Hdn. Centrium Wheel
@@ -194,6 +203,7 @@ Electron Diverter
 Imp. Diametric Drive
 Cld. Impulse Thruster
 Impulse Thruster Array
+Flightbrick
 Imp. Q-thruster
 Cld. Q-thruster
 Exp. Q-thruster
@@ -210,6 +220,7 @@ Exp. Thermal Generator
 Cryofiber Web
 Imp. Cryofiber Web
 Adv. Cryofiber Web
+Exp. Cryofiber Web
 Heat Sink
 Imp. Heat Sink
 Adv. Heat Sink
@@ -275,6 +286,7 @@ Adv. Trap Scanner
 Machine Analyzer
 Triangulator
 Visual Processing Unit
+Sub. Optics
 Adv. Visual Processing Unit
 Enh. Optical Array
 Exp. Optical Array
@@ -321,6 +333,7 @@ Targeting Computer
 Imp. Targeting Computer
 Adv. Targeting Computer
 Exp. Targeting Computer
+Multitargeting Array
 Tactical Coordination Suite
 Melee Analysis Suite
 Imp. Melee Analysis Suite
@@ -354,6 +367,7 @@ Adv. Particle Accelerator
 Kinecellerator
 Imp. Kinecellerator
 Adv. Kinecellerator
+VL-GR5's Timing Chip
 Launcher Loader
 Quantum Capacitor
 Weapon Cycler
@@ -427,9 +441,10 @@ Imp. Light Armor Plating
 Imp. Medium Armor Plating
 Imp. Heavy Armor Plating
 Lyr. Light Armor Plating
-Mak. Armor Plating
+Mak. Light Armor Plating
 Lyr. Medium Armor Plating
 Lyr. Heavy Armor Plating
+Gun Armor
 Centrium Light Armor Plating
 Centrium Medium Armor Plating
 Centrium Heavy Armor Plating
@@ -453,6 +468,7 @@ Zio. Shade Armor
 Asb. Alloy Armor
 Mak. Ablative Armor
 Active Cooling Armor
+Scrap Shield
 Powered Armor
 Imp. Powered Armor
 Adv. Powered Armor
@@ -511,6 +527,8 @@ Phase Redirector
 Point Defense System
 Point Defense Array
 Antimissile System
+Power Bank
+Heavy Servo Lattice
 EX Chip 1
 Hacking Suite
 Mak. Hacking Suite
@@ -607,6 +625,7 @@ Hacking Drone Bay
 Minesniffer Drone Bay
 Army-in-a-Box
 Wardrone Bay
+Cobbler Unit
 Bomb Factory No. 2
 Mobile Assembly Unit
 Heart of Steel
@@ -614,7 +633,10 @@ GOLEM Unit
 PSU Rigger
 Phasing AFG
 AS-neutralizer No. 17b
+V3-11A's Pendant
 Chronowheel
+Rainbow Chip
+VL-GR5's Exoskeleton "Deathgrip"
 Dimensional Node Initializer
 Transdimensional Reconstructor
 Hpw. Transdimensional Reconstructor
@@ -641,7 +663,7 @@ LRC Armor
 LRC Storage
 LRC Energy Well
 LRC Matter Compressor
-LRC Boosters
+LRC Inertial Stabilizer
 LRC Insulator
 EM Pulse Gun
 Hvy. EM Pulse Gun
@@ -672,10 +694,12 @@ Enh. Gamma Rifle
 Med. Laser
 Sml. Laser
 Backup Laser I
+Autobeam
 Beam Rifle
 Particle Gun
 Spread Laser
 Imp. Medium Laser
+Sub. Laser
 Field Laser
 Pulse Rifle
 Backup Laser III
@@ -748,6 +772,7 @@ Hpw. Disruptor Cannon
 Beam Cannon
 Particle Cannon
 Adv. Beam Cannon
+Sub. Beam Cannon
 Hvy. Particle Cannon
 Ion Cannon
 Plasma Cannon
@@ -761,6 +786,7 @@ Ion Burst Cannon
 Adv. Plasma Cannon
 Hvy. Phase Cannon
 Neutron Cannon
+Powered Cannon
 Matter Neutralizer
 Hvy. Neutron Cannon
 Lrn. Phase Cannon
@@ -769,10 +795,10 @@ Vortex Cannon
 Gui. Plasma Cannon
 Nova Cannon
 Imp. Matter Neutralizer
+Exp. Thermic Cannon
 Vortex Driver
 Zio. Alpha Cannon
 Asb. Focal Cannon
-Exp. Thermic Cannon
 Enh. Nova Cannon
 Firepult
 YOLO Cannon
@@ -781,6 +807,7 @@ Warp Cannon
 Cld. Nova Cannon
 Null Cannon
 Imp. Potential Cannon
+Multinova Projection Cannon
 Disintegrator
 Core Cannon
 Sigix Shearcannon
@@ -794,6 +821,7 @@ Hvy. Assault Rifle
 Autogun
 Shotgun
 Battle Rifle
+Sub. Machine Gun
 Imp. Assault Rifle
 Minigun
 Hpw. Shotgun
@@ -881,6 +909,7 @@ Enh. Gamma Bomb Array
 Grenade Launcher
 Rocket Launcher
 Mni. Grenade Launcher
+Sub. Shrapnel Launcher
 Imp. Grenade Launcher
 Missile Launcher
 Concussive RPG
@@ -930,6 +959,8 @@ Mining Laser
 Welding Torch
 Plasma Cutter
 Imp. Plasma Cutter
+Multitool
+CPS Tube
 Flamer
 Enh. Flamer
 Plasma Flamer
@@ -1011,10 +1042,13 @@ EMP Trap
 Proton Bomb Trap
 Tesla Bomb Trap
 Gamma Bomb Trap
+Shrapnel Trap
+Piercing Trap
 Shock Trap
 EM Surge Trap
 Fire Trap
 Stasis Trap
+Scrap Shield Fragment
 Signal Generator
 Self-destruct Interrupter
 Sapper Charge

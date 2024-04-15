@@ -59,6 +59,15 @@
             }
         ]
     },
+    "7R-MNS": {
+        "Categories": ["Derelict", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "-8 Materials Event",
+                "Description": "Friendly: Wanders around each floor for a while, then heads to an exit. Can be followed across maps until -4 Upper Caves."
+            }
+        ]
+    },
     "7V-RTL": {
         "Categories": ["Derelict", "Spoiler"],
         "Locations": [
@@ -282,6 +291,15 @@
             }
         ]
     },
+    "Artisan": {
+        "Categories": ["Derelict"],
+        "Locations": [
+            {
+                "Location": "Subcaves",
+                "Description": "Friendly: Wandering around the map, building machinery "
+            }
+        ]
+    },
     "Army Drone": {
         "Categories": ["Drone", "Exiles"],
         "Locations": [
@@ -358,6 +376,15 @@
             {
                 "Location": "Zion Deep Caves",
                 "Description": "Hostile: 2 appear behind the impregnable wall on the left side of the map"
+            }
+        ]
+    },
+    "Autobeam Turret": {
+        "Categories": ["0b10"],
+        "Locations": [
+            {
+                "Location": "Subcaves",
+                "Description": "Hostile: 2 guard the exit to Recycling"
             }
         ]
     },
@@ -580,6 +607,15 @@
             {
                 "Location": "Imprint roster",
                 "Description": "Friendly: Appears as a summonable ally"
+            }
+        ]
+    },
+    "Cobbler": {
+        "Categories": ["Derelict"],
+        "Locations": [
+            {
+                "Location": "Subcaves",
+                "Description": "Friendly: Wandering around the map, collecting matter and fabricating parts"
             }
         ]
     },
@@ -1922,6 +1958,19 @@
             }
         ]
     },
+    "Subdweller": {
+        "Categories": ["Derelict"],
+        "Locations": [
+            {
+                "Location": "Subcaves",
+                "Description": "Hostile: Wander around the map, sometimes in small groups"
+            },
+            {
+                "Location": "-10 Materials event",
+                "Description": "Hostile: Several appear from the -10 Subcaves exit, attacking 0b10 and Cogmind alike"
+            }
+        ]
+    },
     "Superbehemoth": {
         "Categories": ["0b10", "Prototype", "Spoiler"],
         "Locations": [
@@ -2076,6 +2125,15 @@
             {
                 "Location": "0b10 maps",
                 "Description": "Neutral: Roam the map looking for walls to repair"
+            }
+        ]
+    },
+    "VL-GR5": {
+        "Categories": ["Derelict", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Armory event",
+                "Description": "Friendly: Appears at the entrance to Armory, challenging Cogmind to get to 15 kills first for a reward"
             }
         ]
     },

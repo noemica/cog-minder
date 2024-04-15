@@ -19,6 +19,7 @@ const botNameImageMap = new Map<string, string>([
     ["12-ASH", "Grunt"],
     ["1C-UTU", "Duelist"],
     ["5H-AD0", "Hunter"],
+    ["7R-MNS", "Grunt"],
     ["7V-RTL", "Sentry"],
     ["8R-AWN", "Grunt"],
     ["99-TNT", "Demolisher"],
@@ -32,6 +33,8 @@ const botNameImageMap = new Map<string, string>([
     ["A7", "Programmer"],
     ["A8", "Programmer"],
     ["Architect", "Architect"],
+    ["Autobeam Turret", "Autobeam Turret"],
+    ["Cobbler", "Mechanic"],
     ["CL-ANK", "Brawler"],
     ["Data Miner", "Data Miner"],
     ["EX-BIN", "Researcher"],
@@ -54,6 +57,7 @@ const botNameImageMap = new Map<string, string>([
     ["Surveybot 24", "Researcher"],
     ["Svarog", "Svarog"],
     ["Master Thief", "Thief (Derelict)"],
+    ["VL-GR5", "Specialist"],
     ["Warbot", "Mutant (Derelict)"],
     ["Warlord", "Warlord"],
     ["Warlord (Command)", "Warlord"],
@@ -780,6 +784,18 @@ export function createItemDataContent(baseItem: Item): string {
             .map((s) => s.trim())
             .map((s) => parseInt(s));
         return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
+    }
+
+    const disposableUnstableRegex = /(?:Disposable|Unstable) \((\d*)\)/;
+    function getPartName(item: Item): string {
+        let name = escapeHtml(item.name);
+
+        const result = disposableUnstableRegex.exec(item.specialTrait || "");
+        if (result !== null) {
+            name += ` (${result[1]})`;
+        }
+
+        return name;
     }
 
     function getPenetrationTextHtml(item: WeaponItem): string {
