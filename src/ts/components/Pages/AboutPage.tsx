@@ -12,7 +12,7 @@ export default function AboutPage() {
                 <a href="hacks.html">hacking calculator</a> that shows hacking success rates, a{" "}
                 <a href="simulator.html">combat simulator</a> that predicts combat outcomes from a collection of
                 equipped parts, a <a href="rif.html">RIF reference</a> for RIF abilities and bot hacking, and an
-                unofficial <a href="wiki.html">Wiki</a>. It should have all items and bots as of Beta 11, let me know if
+                unofficial <a href="wiki.html">Wiki</a>. It should have all items and bots as of Beta 13, let me know if
                 anything seems missing.
             </p>
             <p>
