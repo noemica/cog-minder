@@ -1,5 +1,5 @@
 // Common code
-import { Bot, BotPart } from "../botTypes";
+import { Bot, BotPart } from "../types/botTypes";
 import { MapLocation, Spoiler } from "../types/commonTypes";
 import {
     BaseItem,

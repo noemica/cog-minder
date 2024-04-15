@@ -1,5 +1,5 @@
-import { Spoiler } from "./types/commonTypes";
-import { DamageType, FabricationStats } from "./types/itemTypes";
+import { Spoiler } from "./commonTypes";
+import { DamageType, FabricationStats } from "./itemTypes";
 
 export enum BotCategory {
     Alien = "Alien",

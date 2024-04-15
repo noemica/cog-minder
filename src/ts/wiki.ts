@@ -5,7 +5,7 @@ import * as jQuery from "jquery";
 import bots from "../json/bots.json";
 import items from "../json/items.json";
 import wiki from "../json/wiki.json";
-import { Bot } from "./botTypes";
+import { Bot } from "./types/botTypes";
 import { MapLocation, Spoiler } from "./types/commonTypes";
 import { Item } from "./types/itemTypes";
 import { WikiEntry } from "./types/wikiTypes";

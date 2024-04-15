@@ -1,7 +1,9 @@
 import { useState } from "react";
 
+// TODO tooltips
+
 import machines from "../../../../json/machine_hacks.json";
-import { JsonHack, JsonHackableMachine } from "../../../hackTypes";
+import { JsonHack, JsonHackableMachine } from "../../../types/hackTypes";
 import { canShowSpoiler, createImagePath, getLocationFromState, parseIntOrDefault, parseSearchParameters } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";

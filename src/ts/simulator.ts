@@ -19,7 +19,7 @@ import * as jQuery from "jquery";
 
 import bots from "../json/bots.json";
 import items from "../json/items.json";
-import { Bot } from "./botTypes";
+import { Bot } from "./types/botTypes";
 import {
     getBotDefensiveState,
     getRangedVolleyTime,

@@ -1,4 +1,4 @@
-import { Bot, BotImmunity, BotResistances } from "../botTypes";
+import { Bot, BotImmunity, BotResistances } from "./botTypes";
 import { Critical, DamageType, Item, ItemSlot, WeaponItem } from "./itemTypes";
 
 export type SimulatorPart = {

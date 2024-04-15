@@ -1,4 +1,4 @@
-import { Spoiler } from "./types/commonTypes";
+import { Spoiler } from "./commonTypes";
 
 export type HackIndirectType = "Always" | "Sometimes" | "Never";
 

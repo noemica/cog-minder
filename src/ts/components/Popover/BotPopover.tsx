@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { Bot } from "../../botTypes";
+import { Bot } from "../../types/botTypes";
 import Button from "../Buttons/Button";
 import { useIsVisible } from "../Effects/useIsVisible";
 import { usePopoverPositioning } from "../Effects/usePopoverPositioning";

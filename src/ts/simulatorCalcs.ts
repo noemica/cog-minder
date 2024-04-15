@@ -1,5 +1,5 @@
 // Battle simulation calculation functions/constants
-import { Bot, BotImmunity } from "./botTypes";
+import { Bot, BotImmunity } from "./types/botTypes";
 import {
     AntimissileChance,
     CorruptionIgnore,

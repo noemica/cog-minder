@@ -1,4 +1,4 @@
-import { BotResistances } from "../botTypes";
+import { BotResistances } from "./botTypes";
 import { Spoiler } from "./commonTypes";
 
 export enum DamageType {

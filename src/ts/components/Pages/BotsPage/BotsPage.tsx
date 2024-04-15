@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import React from "react";
 import { useLocation, useSearch } from "wouter";
 
-import { Bot, BotCategory } from "../../../botTypes";
+import { Bot, BotCategory } from "../../../types/botTypes";
 import { Spoiler } from "../../../types/commonTypes";
 import { BotData } from "../../../utilities/BotData";
 import {

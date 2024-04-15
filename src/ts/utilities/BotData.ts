@@ -1,6 +1,6 @@
 import botExtraData from "../../json/bot_extra_data.json";
 import lore from "../../json/lore.json";
-import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "../botTypes";
+import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "../types/botTypes";
 import { FabricationStats } from "../types/itemTypes";
 import { ItemData } from "./ItemData";
 import { ceilToMultiple, getBotImageName, loadImage, parseIntOrDefault } from "./common";

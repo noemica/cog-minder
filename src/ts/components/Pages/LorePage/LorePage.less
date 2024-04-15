@@ -1,0 +1,53 @@
+@import "../../../../styles/common.less";
+
+.lore-table {
+    width: 100%;
+    text-align: center;
+}
+
+.lore-content-row,
+.lore-header-row {
+    > :first-child {
+        background-color: @table-header-background-color;
+        font-size: @table-header-font-size;
+        width: @lore-table-left-column-width;
+    }
+
+    > * {
+        border: @border-width solid @border-color;
+    }
+}
+
+.lore-content-row {
+    > * {
+        padding: @table-cell-text-padding;
+        line-height: 1.25;
+        text-align: left;
+        word-break: break-word;
+    }
+
+    > :first-child {
+        font-size: @table-header-font-size;
+    }
+}
+
+.lore-header-row {
+    background-color: @table-header-background-color;
+
+    > * {
+        padding: @table-header-padding;
+    }
+}
+
+.lore-group-header-row {
+    background-color: @page-background-color;
+
+    > :first-child > * {
+        font-size: @table-large-header-font-size;
+        margin: @table-large-header-margin;
+    }
+
+    > :last-child {
+        text-align: left;
+    }
+}

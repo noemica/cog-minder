@@ -2,9 +2,10 @@ import { Suspense } from "react";
 import React from "react";
 import { Redirect, Route, Router, Switch } from "wouter";
 
+import useThemeUpdater from "../Effects/useThemeUpdater";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import PageHeader from "../PageHeader/PageHeader";
-import useThemeUpdater from "../Effects/useThemeUpdater";
+import LorePage from "../Pages/LorePage/LorePage";
 
 const AboutPage = React.lazy(() => import("../Pages/AboutPage"));
 const BotsPage = React.lazy(() => import("../Pages/BotsPage/BotsPage"));
@@ -35,6 +36,9 @@ function Routes() {
             <Route path="/hacks">
                 <HacksPage />
             </Route>
+            <Route path="/lore">
+                <LorePage />
+            </Route>
             <Route path="/parts">
                 <PartsPage />
             </Route>
@@ -54,6 +58,9 @@ function Routes() {
             </Route>
             <Route path="/hacks.html">
                 <Redirect to="/hacks" />
+            </Route>
+            <Route path="/lore.html">
+                <Redirect to="/lore" />
             </Route>
             <Route path="/parts.html">
                 <Redirect to="/parts" />

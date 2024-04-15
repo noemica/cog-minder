@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { Bot } from "../../botTypes";
+import { Bot } from "../../types/botTypes";
 import { Item, WeaponItem } from "../../types/itemTypes";
 import { getBotImageName, getItemAsciiArtImageName, getItemSpriteImageName } from "../../utilities/common";
 

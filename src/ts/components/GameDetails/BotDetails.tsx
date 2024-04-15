@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { Bot, BotLocation, BotPart } from "../../botTypes";
+import { Bot, BotLocation, BotPart } from "../../types/botTypes";
 import { Item } from "../../types/itemTypes";
 import { valueOrDefault } from "../../utilities/common";
 import useItemData from "../Effects/useItemData";
