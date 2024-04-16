@@ -9,7 +9,10 @@
 .hack-header-row {
     > :first-child {
         background-color: @table-header-background-color;
-        font-size: @table-header-font-size;
+
+        > * {
+            font-size: @table-header-font-size;
+        }
     }
 
     > * {
