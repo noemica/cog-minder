@@ -18,8 +18,40 @@
 }
 
 .hack-content-row {
+    > :first-child {
+        display: flex;
+
+        > * {
+            align-self: center;
+            flex: 1 1 auto;
+        }
+
+        > :last-child {
+            flex-grow: 0;
+        }
+    }
+
     > * {
-        padding: @table-cell-padding;
+        padding: @table-cell-padding / 2;
+    }
+}
+
+.hack-info-button {
+    > * {
+        // Only show border on the left or we get too much overlap with
+        // the table cell borders
+        // Also remove border radius as it doesn't look good with
+        // the smaller button sizes here
+        font-family: cog-mono;
+        border-radius: 0;
+        border-width: 0 0 0 @border-width;
+        padding: @button-small-padding;
+    }
+
+    :hover {
+        // Override the normal border invert since we're messing with the
+        // borders that would be shown here, and it looks weird to leave
+        border-color: @border-color;
     }
 }
 

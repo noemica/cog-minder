@@ -14,6 +14,7 @@ import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
 import { LabeledExclusiveButtonGroup, LabeledInput } from "../../LabeledItem/LabeledItem";
 import TextTooltip from "../../Popover/TextTooltip";
+import TextTooltipButton from "../../Popover/TextTooltipButton";
 
 import "../pages.less";
 import "./HacksPage.less";
@@ -136,9 +137,10 @@ function HackRow({
 
     return (
         <tr className="hack-content-row">
-            <TextTooltip tooltipText={hack.Description}>
-                <td>{hack.Name}</td>
-            </TextTooltip>
+                <td>
+                    <span>{hack.Name}</span>
+                    <TextTooltipButton className="hack-info-button" tooltipText={hack.Description}>?</TextTooltipButton>
+                </td>
             {hackValues.map((value, i) => (
                 <HackCell key={i} value={value} />
             ))}
@@ -241,7 +243,6 @@ function HacksTable({ pageState }: { pageState: HacksPageState }) {
                             3 Indir
                         </TextTooltip>
                     </th>
-
                 </tr>
             </thead>
             <tbody>
