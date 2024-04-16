@@ -6,6 +6,7 @@ import { canShowSpoiler, getLocationFromState, parseSearchParameters } from "../
 import Button from "../../Buttons/Button";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
 import { LabeledInput } from "../../LabeledItem/LabeledItem";
+import TextTooltip from "../../Popover/TextTooltip";
 
 import "../pages.less";
 import "./LorePage.less";
@@ -93,8 +94,12 @@ function LoreTable({ pageState }: { pageState: LorePageState }) {
         <table cellSpacing={0} cellPadding={0} className="lore-table">
             <thead>
                 <tr className="lore-header-row">
-                    <th>Entry Name</th>
-                    <th>Content</th>
+                    <th>
+                        <TextTooltip tooltipText="The name or number of the lore entry.">Entry Name</TextTooltip>
+                    </th>
+                    <th>
+                        <TextTooltip tooltipText="The contents of the lore entry.">Content</TextTooltip>
+                    </th>
                 </tr>
             </thead>
             <tbody>

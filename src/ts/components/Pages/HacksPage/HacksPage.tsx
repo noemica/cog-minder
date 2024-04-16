@@ -1,10 +1,14 @@
-import { useState } from "react";
-
-// TODO tooltips
+import { useLocation, useSearch } from "wouter";
 
 import machines from "../../../../json/machine_hacks.json";
 import { JsonHack, JsonHackableMachine } from "../../../types/hackTypes";
-import { canShowSpoiler, createImagePath, getLocationFromState, parseIntOrDefault, parseSearchParameters } from "../../../utilities/common";
+import {
+    canShowSpoiler,
+    createImagePath,
+    getLocationFromState,
+    parseIntOrDefault,
+    parseSearchParameters,
+} from "../../../utilities/common";
 import Button from "../../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
@@ -13,7 +17,6 @@ import TextTooltip from "../../Popover/TextTooltip";
 
 import "../pages.less";
 import "./HacksPage.less";
-import { useLocation, useSearch } from "wouter";
 
 type HasDataCore = "No" | "Yes";
 
@@ -67,9 +70,7 @@ function getPageState(): HacksPageState {
 function skipLocationMember(key: string, pageState: HacksPageState) {
     const typedKey: keyof HacksPageState = key as keyof HacksPageState;
 
-    if (
-        (typedKey === "dataCore" && pageState.dataCore === "No")
-    ) {
+    if (typedKey === "dataCore" && pageState.dataCore === "No") {
         // Skip enum default values
         return true;
     }
@@ -207,13 +208,40 @@ function HacksTable({ pageState }: { pageState: HacksPageState }) {
         <table cellSpacing={0} cellPadding={0} className="hack-table">
             <thead>
                 <tr className="hack-header-row">
-                    <th>Hack Command</th>
-                    <th>1 Dir</th>
-                    <th>1 Indir</th>
-                    <th>2 Dir</th>
-                    <th>2 Indir</th>
-                    <th>3 Dir</th>
-                    <th>3 Indir</th>
+                    <th>
+                        <TextTooltip tooltipText="The hack command to type into a machine.">Hack Command</TextTooltip>
+                    </th>
+                    <th>
+                        <TextTooltip tooltipText="The success rate of a direct hack at a level 1 machine.">
+                            1 Dir
+                        </TextTooltip>
+                    </th>
+                    <th>
+                        <TextTooltip tooltipText="The success rate of an indirect hack (aka manual hack) at a level 1 machine.">
+                            1 Indir
+                        </TextTooltip>
+                    </th>
+                    <th>
+                        <TextTooltip tooltipText="The success rate of a direct hack at a level 2 machine.">
+                            2 Dir
+                        </TextTooltip>
+                    </th>
+                    <th>
+                        <TextTooltip tooltipText="The success rate of an indirect hack (aka manual hack) at a level 2 machine.">
+                            2 Indir
+                        </TextTooltip>
+                    </th>
+                    <th>
+                        <TextTooltip tooltipText="The success rate of a direct hack at a level 3 machine.">
+                            3 Dir
+                        </TextTooltip>
+                    </th>
+                    <th>
+                        <TextTooltip tooltipText="The success rate of an indirect hack (aka manual hack) at a level 3 machine.">
+                            3 Indir
+                        </TextTooltip>
+                    </th>
+
                 </tr>
             </thead>
             <tbody>
@@ -227,7 +255,7 @@ function HacksTable({ pageState }: { pageState: HacksPageState }) {
 
 export default function HacksPage() {
     const [_, setLocation] = useLocation();
-    
+
     const pageState = getPageState();
 
     function updatePageState(newPageState: HacksPageState) {
