@@ -194,35 +194,35 @@
             },
             {
                 "Name": "Trojan(Fabnet)",
-                "Description": "Adds a 3% chance per 0b10 combat bot on the next depth up to temporarily turn friendly (purple) when alerted of any enemy (not just Cogmind) similar to the RIF hack overwrite IFF. This chance decreases to 1% on the following depth, and reaches 0% after that. Caps at 15%. There is a chance that the machine network on the floor will be permanently locked when this effect activates.",
+                "Description": "Provides a cumulative 3% chance to temporarily trick any common 0b10 combat robot system encountered hostiles on the depth above this one into believing it is allied with Cogmind. After 10 turns the network will perform an automated quickboot to restore it to normal, a process which takes anywhere from 5 to 10 turns. The effect is less likely to occur on the depth above that (only 1% chance), and is capped at 15%.",
                 "BaseChance": 20,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Haulers)",
-                "Description": "Continuously report the position of all Hauler class robots on the current floor.",
+                "Description": "Reports in real time the position of all haulers across the entire floor.",
                 "BaseChance": 50,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Liberate)",
-                "Description": "Any bots created by this fabricator by 0b10 will be allied but noncontrollable to Cogmind (purple color). If on a factory floor, the bots will head for the closest caves exit and leave the map. Otherwise the bots will follow you as regular purple allies.",
+                "Description": "Frees any robots built by 0b10 at this location from central system control.",
                 "BaseChance": 80,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Prioritize)",
-                "Description": "Double the speed of fabrication for the current fabricator.",
+                "Description": "Acceleratores fabrication speed to 200% by forcing the network to allocate matter to this system first. (Effect also applies to builds already in progress.)",
                 "BaseChance": 30,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Report)",
-                "Description": "Reports when any fabricator on the floor is finished building something, as well as its position.",
+                "Description": "Reports on floorwide Fabricator activity.",
                 "BaseChance": 60,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
@@ -262,49 +262,49 @@
             },
             {
                 "Name": "Trojan(Broadcast)",
-                "Description": "Enable reporting of any garrison dispatch type, robot composition, and position on the floor.",
+                "Description": "Reports the position and composition of squads emerging from any garrison.",
                 "BaseChance": 70,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Decoy)",
-                "Description": "Redirect the next dispatch's target to another location, includes dispatches with otherwise perfect tracking like exterminations and assaults.",
+                "Description": "Redirects the next squad emerging from this garrison away from its intended target. No effect on prototypes, though if dispatched from here they do not affect the installed trojan.",
                 "BaseChance": 70,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Intercept)",
-                "Description": "Increases accuracy against nearby MAIN.C-controlled bot by 15% for all friendly bots.",
+                "Description": "Intercepts tactical planning and coordination transmissions, providing self and all controllable allies with a +15% accuracy bonus against hostile Complex 0b10 combat robots within a range of 20.",
                 "BaseChance": 50,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Redirect)",
-                "Description": "Redirect all dispatch targets to another location, includes dispatches with otherwise perfect tracking like exterminations and assaults. Each dispatch after the first has an increasing 25% chance of removing the hack, dispatching an extra investigation squad, and disabling the garrison machine.",
+                "Description": "Redirects all squads emerging from this garrison away from their intended targets, though the chance for its presence to be detected increases by 25% each time it takes effect. No effect on prototypes, though if dispatched from there they do not affect the installed trojan.",
                 "BaseChance": 30,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Reprogram)",
-                "Description": "Reprogram the next dispatch to be allied but noncontrollable to Cogmind (purple color). Doesn't work against special dispatches like Lightnings.",
+                "Description": "Reprograms the next squad emerging from this garrison. No effect on prototypes, though if dispatched from here they do not affect the installed trojan.",
                 "BaseChance": 20,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Restock)",
-                "Description": "Dispatches a programmer to the current garrison carrying relay couplers.",
+                "Description": "Manipulates coupler status records, prompting a Programmer to come replace them.",
                 "BaseChance": 70,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Watchers)",
-                "Description": "Continuously report the position of all Watcher class robots on the current floor.",
+                "Description": "Reports in real time the position of all watchers across the entire floor.",
                 "BaseChance": 50,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
@@ -361,28 +361,28 @@
             },
             {
                 "Name": "Trojan(Mask)",
-                "Description": "Prevent Recycler robots from picking up any parts in a 15-tile square area around the machine.",
+                "Description": "Prevents recyclers from collecting parts within a 31 x 31 zone.",
                 "BaseChance": 40,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Monitor)",
-                "Description": "Enable reporting of any parts inserted into any Recycling Machine, as well as their integrity.",
+                "Description": "Reports every object inserted into any recycling unit by a registered recycler.",
                 "BaseChance": 70,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Recyclers)",
-                "Description": "Continuously report the position of all Recycler class robots on the current floor.",
+                "Description": "Reports in real time the position of all recyclers across the entire floor.",
                 "BaseChance": 70,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Reject)",
-                "Description": "Prevent parts from being deposited into the recycling machine. Instead, any inserted parts are deposited onto the floor.",
+                "Description": "Ejects any object inserted into this recycling unit by a registered recycler.",
                 "BaseChance": 70,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
@@ -504,7 +504,7 @@
             },
             {
                 "Name": "Trojan(Mechanics)",
-                "Description": "Continuously report the position of all Mechanic class robots on the current floor.",
+                "Description": "Reports in real time the position of all mechanics across the entire floor.",
                 "BaseChance": 70,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
@@ -633,7 +633,7 @@
             },
             {
                 "Name": "Trojan(Researchers)",
-                "Description": "Continuously report the position of all Researcher class robots on the current floor.",
+                "Description": "Reports in real time the position of all researchers across the entire floor.",
                 "BaseChance": 50,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
@@ -1131,42 +1131,42 @@
             },
             {
                 "Name": "Trojan(Assimilate)",
-                "Description": "Causes any operator attempting to report Cogmind to instead become a controllable (blue) ally.",
+                "Description": "Reprograms this terminal's Operator when it attempts to use it.",
                 "BaseChance": 40,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Botnet)",
-                "Description": "Increase the success rate of hacking attempts on all other machines on the floor. The first hack increases success by 6%, the second by 3%, and all others by 1%.",
+                "Description": "Co-opts this terminal to aid in hacking other machines. Confers a +6% to hacks, while the benefit of each additional botnet terminal is halved (+3%, +1%), with each terminal providing no less than +1%.",
                 "BaseChance": 50,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Detonate)",
-                "Description": "Rig a nearby explosive machine to detonate when a hostile passes nearby.",
+                "Description": "Rigs all nearby potentially explosive machines to detonate when pass by a hostile Complex 0b10 combat robot.",
                 "BaseChance": 20,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Disrupt)",
-                "Description": "Reduce the targeting of all nearby hostile robots by 10%.",
+                "Description": "Disrupts targeting coordination signals among hostile Complex 0b10 combat robots, reducing their chance to hit targets by 10% while within a range of 10.",
                 "BaseChance": 30,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Operators)",
-                "Description": "Continuously report the position of all Operator class robots on the current floor.",
+                "Description": "Reports in real time the position of all operators across the entire floor.",
                 "BaseChance": 40,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Trojan(Track)",
-                "Description": "Continuously report the position of all robots within a short distance of the terminal. The radius is 6 for a level 1 terminal, 8 for a level 2, and 10 for a level 3.",
+                "Description": "Reports in real time the position and type of all robots near this terminal. The range of this effect is dependent on the terminal level: 10 for Security Level 3, 8 on level 2 terminals, and 6 on all other terminals.",
                 "BaseChance": 70,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
