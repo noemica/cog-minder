@@ -130,7 +130,9 @@ export class BotData {
             if (bot.Analysis !== undefined) {
                 description = bot.Analysis!;
             } else {
-                const loreEntry = lore["0b10 Records"].find((e) => e["Name/Number"] === bot.Name);
+                const loreEntry = lore
+                    .find((group) => group.Name === "0b10 Records")!
+                    .Entries.find((e) => e["Name/Number"] === bot.Name);
                 if (loreEntry !== undefined) {
                     description = loreEntry.Content;
                 } else {
