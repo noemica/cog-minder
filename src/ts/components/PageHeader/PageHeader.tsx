@@ -9,6 +9,7 @@ import TextTooltipButton from "../Popover/TextTooltipButton";
 import { SelectOptionType } from "../Selectpicker/Select";
 
 import "./PageHeader.less";
+import { useEffect } from "react";
 
 const spoilerOptions: SelectOptionType<Spoiler>[] = [
     { value: "None", label: "None", tooltip: "No spoilers: Factory or higher depth branch content is hidden." },
@@ -210,6 +211,10 @@ function getPageType() {
 export default function PageHeader() {
     const pageType = getPageType();
     const pageDetails = pages[pageType];
+
+    useEffect(() => {
+        document.title = `Cog-Minder ${pageType}`;
+    })
 
     return (
         <>
