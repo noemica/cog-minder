@@ -5,14 +5,15 @@ import { Redirect, Route, Router, Switch } from "wouter";
 import useThemeUpdater from "../Effects/useThemeUpdater";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import PageHeader from "../PageHeader/PageHeader";
-import LorePage from "../Pages/LorePage/LorePage";
 
 const AboutPage = React.lazy(() => import("../Pages/AboutPage"));
 const BotsPage = React.lazy(() => import("../Pages/BotsPage/BotsPage"));
 const BuildPage = React.lazy(() => import("../Pages/BuildPage/BuildPage"));
 const CombatPage = React.lazy(() => import("../Pages/CombatPage"));
 const HacksPage = React.lazy(() => import("../Pages/HacksPage/HacksPage"));
+const LorePage = React.lazy(() => import("../Pages/LorePage/LorePage"));
 const PartsPage = React.lazy(() => import("../Pages/PartsPage/PartsPage"));
+const RifPage = React.lazy(() => import("../Pages/RifPage/RifPage"));
 
 function Routes() {
     return (
@@ -42,6 +43,9 @@ function Routes() {
             <Route path="/parts">
                 <PartsPage />
             </Route>
+            <Route path="/rif">
+                <RifPage />
+            </Route>
 
             {/* Redirect routes, don't want to break existing links */}
             <Route path="/about.html">
@@ -64,6 +68,9 @@ function Routes() {
             </Route>
             <Route path="/parts.html">
                 <Redirect to="/parts" />
+            </Route>
+            <Route path="/rif.html">
+                <Redirect to="/rif" />
             </Route>
 
             {/* 404 */}
