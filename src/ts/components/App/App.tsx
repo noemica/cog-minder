@@ -14,6 +14,7 @@ const HacksPage = React.lazy(() => import("../Pages/HacksPage/HacksPage"));
 const LorePage = React.lazy(() => import("../Pages/LorePage/LorePage"));
 const PartsPage = React.lazy(() => import("../Pages/PartsPage/PartsPage"));
 const RifPage = React.lazy(() => import("../Pages/RifPage/RifPage"));
+const SimulatorPage = React.lazy(() => import("../Pages/SimulatorPage/SimulatorPage"));
 
 function Routes() {
     return (
@@ -46,6 +47,9 @@ function Routes() {
             <Route path="/rif">
                 <RifPage />
             </Route>
+            <Route path="/simulator">
+                <SimulatorPage />
+            </Route>
 
             {/* Redirect routes, don't want to break existing links */}
             <Route path="/about.html">
@@ -71,6 +75,9 @@ function Routes() {
             </Route>
             <Route path="/rif.html">
                 <Redirect to="/rif" />
+            </Route>
+            <Route path="/simulator.html">
+                <Redirect to="/simulator" />
             </Route>
 
             {/* 404 */}

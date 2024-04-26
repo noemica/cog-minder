@@ -720,9 +720,7 @@ function skipLocationMember(key: string, pageState: SerializableBuildPageState) 
     return false;
 }
 
-function processImportFromDump(text: string, usePeakState: boolean) {
-    
-}
+function processImportFromDump(text: string, usePeakState: boolean) {}
 
 function CoreSection({ pageState, partsState }: { pageState: BuildPageState; partsState: TotalPartsState }) {
     let coreInfo: ReactNode;
@@ -1193,7 +1191,11 @@ function SummarySection({ partsState }: { partsState: TotalPartsState }) {
             <TitleSection
                 title="Summary"
                 tooltip="Summary information about Cogmind and all parts."
-                content={<ImportBuildFromDumpPopover onSubmit={(text) => processImportFromDump(text, usePeakState)} />}
+                content={
+                    <ImportBuildFromDumpPopover
+                        onSubmit={(text, usePeakState) => processImportFromDump(text, usePeakState)}
+                    />
+                }
             />
             <div className="build-summary-container">
                 <SummaryDetail
