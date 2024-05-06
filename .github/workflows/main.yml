@@ -1,0 +1,74 @@
+name: Daily CSV Update
+
+on:
+  schedule:
+    - cron: '0 8 * * *' # Runs every day at midnight (UTC)
+  workflow_dispatch:
+
+jobs:
+  update-csv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Download New CSV
+        run: |
+          if curl -o data/new-data.csv https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/gviz/tq?tqx=out:csv;outFileName:wiki&sheet=Wiki; then
+            echo "CSV download successful."
+          else
+            echo "CSV download failed."
+            exit 1
+          fi
+
+      - name: Check CSV File Size
+        id: check-csv
+        run: |
+          if [ -s data/new-data.csv ]; then
+            echo "CSV file is not empty."
+          else
+            echo "CSV file is empty."
+            exit 1
+          fi
+          
+      - name: Check for Differences
+        id: check-differences
+        run: |
+          if ! diff -q data/new-data.csv utils/wiki.csv; then
+            echo "CSV files are different."
+            echo "DIFFERENT_CSV=true" >> $GITHUB_ENV
+          else
+            echo "CSV files are the same. Skipping commit."
+            echo "DIFFERENT_CSV=false" >> $GITHUB_ENV
+          fi
+
+      - name: Overwrite CSV
+        if: steps.check-csv.outcome == 'success' && env.DIFFERENT_CSV == 'true'
+        run: |
+          mv data/new-data.csv utils/wiki.csv
+
+      - name: Commit and Push Changes
+        if: steps.check-csv.outcome == 'success' && env.DIFFERENT_CSV == 'true'
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          
+          timestamp=$(date +'%Y%m%d%H%M%S')
+          branch_name="update-csv-$timestamp"
+
+          git checkout -b "$branch_name"
+
+          git add utils/wiki.csv
+
+          git commit -m "Update CSV file"
+
+          git push origin "$branch_name"
+
+          git checkout main
+          git merge --no-ff "$branch_name"
+          git push origin main
+
+          # delete the temporary branch
+          git branch -d "$branch_name"
+          git push origin --delete "$branch_name"
