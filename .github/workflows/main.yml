@@ -65,9 +65,9 @@ jobs:
 
           git push origin "$branch_name"
 
-          git checkout main
+          git checkout master
           git merge --no-ff "$branch_name"
-          git push origin main
+          git push origin master
 
           # delete the temporary branch
           git branch -d "$branch_name"
