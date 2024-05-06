@@ -1,4 +1,4 @@
-name: Daily CSV Update
+name: Daily Wiki CSV Update
 
 on:
   schedule:
@@ -13,22 +13,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
       - name: Download New CSV
         run: |
           if curl -o new-data.csv "https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/gviz/tq?tqx=out:csv;outFileName:wiki&sheet=Wiki"; then
             echo "CSV download successful."
           else
             echo "CSV download failed."
-            exit 1
-          fi
-
-      - name: Check CSV File Size
-        id: check-csv
-        run: |
-          if [ -s new-data.csv ]; then
-            echo "CSV file is not empty."
-          else
-            echo "CSV file is empty."
             exit 1
           fi
           
@@ -47,6 +42,11 @@ jobs:
         if: steps.check-csv.outcome == 'success' && env.DIFFERENT_CSV == 'true'
         run: |
           mv new-data.csv utils/wiki.csv
+      
+      - name: Convert to JSON and Overwrite
+        if: steps.check-csv.outcome == 'success' && env.DIFFERENT_CSV == 'true'
+        run: |
+          python csvtojson.py utils/wiki.csv src/json/wiki.json
 
       - name: Commit and Push Changes
         if: steps.check-csv.outcome == 'success' && env.DIFFERENT_CSV == 'true'
@@ -60,8 +60,9 @@ jobs:
           git checkout -b "$branch_name"
 
           git add utils/wiki.csv
+          git add src/json/wiki.json
 
-          git commit -m "Update CSV file"
+          git commit -m "Update Wiki"
 
           git push origin "$branch_name"
 
