@@ -2,7 +2,7 @@ name: Daily Wiki Update
 
 on:
   schedule:
-    - cron: '0 8 * * *' # Runs every day at midnight (UTC)
+    - cron: '0 */12 * * *' # Runs every day at midnight (UTC)
   workflow_dispatch:
 
 jobs:
