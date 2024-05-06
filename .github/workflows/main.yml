@@ -39,17 +39,17 @@ jobs:
           fi
 
       - name: Overwrite CSV
-        if: steps.check-csv.outcome == 'success' && env.DIFFERENT_CSV == 'true'
+        if: env.DIFFERENT_CSV == 'true'
         run: |
           mv new-data.csv utils/wiki.csv
       
       - name: Convert to JSON and Overwrite
-        if: steps.check-csv.outcome == 'success' && env.DIFFERENT_CSV == 'true'
+        if: env.DIFFERENT_CSV == 'true'
         run: |
           python csvtojson.py utils/wiki.csv src/json/wiki.json
 
       - name: Commit and Push Changes
-        if: steps.check-csv.outcome == 'success' && env.DIFFERENT_CSV == 'true'
+        if: env.DIFFERENT_CSV == 'true'
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
