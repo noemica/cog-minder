@@ -46,7 +46,7 @@ jobs:
       - name: Convert to JSON and Overwrite
         if: env.DIFFERENT_CSV == 'true'
         run: |
-          python csvtojson.py utils/wiki.csv src/json/wiki.json
+          python utils/wikicsvtojson.py utils/wiki.csv src/json/wiki.json
 
       - name: Commit and Push Changes
         if: env.DIFFERENT_CSV == 'true'
