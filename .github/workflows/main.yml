@@ -15,7 +15,7 @@ jobs:
 
       - name: Download New CSV
         run: |
-          if curl -o data/new-data.csv https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/gviz/tq?tqx=out:csv;outFileName:wiki&sheet=Wiki; then
+          if curl -o data/new-data.csv "https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/gviz/tq?tqx=out:csv;outFileName:wiki&sheet=Wiki"; then
             echo "CSV download successful."
           else
             echo "CSV download failed."
