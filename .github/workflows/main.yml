@@ -1,4 +1,4 @@
-name: Daily Wiki CSV Update
+name: Daily Wiki Update
 
 on:
   schedule:
