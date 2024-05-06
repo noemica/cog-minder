@@ -1,4 +1,4 @@
-name: Daily Wiki Update
+name: Bi-daily Wiki Update
 
 on:
   schedule:
