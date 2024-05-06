@@ -15,7 +15,7 @@ jobs:
 
       - name: Download New CSV
         run: |
-          if curl -o data/new-data.csv "https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/gviz/tq?tqx=out:csv;outFileName:wiki&sheet=Wiki"; then
+          if curl -o new-data.csv "https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/gviz/tq?tqx=out:csv;outFileName:wiki&sheet=Wiki"; then
             echo "CSV download successful."
           else
             echo "CSV download failed."
@@ -25,7 +25,7 @@ jobs:
       - name: Check CSV File Size
         id: check-csv
         run: |
-          if [ -s data/new-data.csv ]; then
+          if [ -s new-data.csv ]; then
             echo "CSV file is not empty."
           else
             echo "CSV file is empty."
@@ -35,7 +35,7 @@ jobs:
       - name: Check for Differences
         id: check-differences
         run: |
-          if ! diff -q data/new-data.csv utils/wiki.csv; then
+          if ! diff -q new-data.csv utils/wiki.csv; then
             echo "CSV files are different."
             echo "DIFFERENT_CSV=true" >> $GITHUB_ENV
           else
@@ -46,7 +46,7 @@ jobs:
       - name: Overwrite CSV
         if: steps.check-csv.outcome == 'success' && env.DIFFERENT_CSV == 'true'
         run: |
-          mv data/new-data.csv utils/wiki.csv
+          mv new-data.csv utils/wiki.csv
 
       - name: Commit and Push Changes
         if: steps.check-csv.outcome == 'success' && env.DIFFERENT_CSV == 'true'
