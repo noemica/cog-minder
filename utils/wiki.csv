@@ -405,6 +405,7 @@ The Data Miner can redirect Assaults if his help is obtained by visiting his [[D
 "Bomb Factory No. 2","Part",""
 "Bore Cannon","Part",""
 "Borebot","Bot",""
+"Bot Groups","Other","Bot Groups refer to classes of bots, which for the sake of not writing out a 1000 line page will be [[0b10]] classes only.\nLists are ordered by depth, bottom being closest to surface and top being far from surface.\n[[Heading]]Combat Bots[[/Heading]]\n[[Heading:2]][[Grunt|Grunts]][[/Heading:2]]\nOften seen in groups in a [[Patrol Squad]].\n[[Image]]gruntsquad.png | A group of Mercenaries[[/Image]]\n[[List:Ordered]][[G-34 Mercenary]] | [[G-47 Trooper]] | [[G-50 Soldier]] | [[G-67 Veteran]] | [[G-73 Enforcer]] [[/List]]\n[[Heading:2]][[Swarmer|Swarmers]][[/Heading:2]]\nAlways seen in groups, bring a launcher to deal with these or do not stand in the open, unless you're ready for that.\n[[Image]]swarmerswarm.png | A swarm of Swarmers[[/Image]]\n[[List:Ordered]][[S-10 Pest]] | [[S-27 Virus]] | [[S-43 Plague]][[/List]]\n\ntodo finish and get images"
 "Bouncer","Bot",""
 "Branch","Other",""
 "Brawler","Bot Group",""
