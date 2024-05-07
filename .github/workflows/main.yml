@@ -1,0 +1,75 @@
+name: Bi-daily Wiki Update
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-csv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Download New CSV
+        run: |
+          if curl -o new-data.csv "https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/gviz/tq?tqx=out:csv;outFileName:wiki&sheet=Wiki"; then
+            echo "CSV download successful."
+          else
+            echo "CSV download failed."
+            exit 1
+          fi
+          
+      - name: Check for Differences
+        id: check-differences
+        run: |
+          if ! diff -q new-data.csv utils/wiki.csv; then
+            echo "CSV files are different."
+            echo "DIFFERENT_CSV=true" >> $GITHUB_ENV
+          else
+            echo "CSV files are the same. Skipping commit."
+            echo "DIFFERENT_CSV=false" >> $GITHUB_ENV
+          fi
+
+      - name: Overwrite CSV
+        if: env.DIFFERENT_CSV == 'true'
+        run: |
+          mv new-data.csv utils/wiki.csv
+      
+      - name: Convert to JSON and Overwrite
+        if: env.DIFFERENT_CSV == 'true'
+        run: |
+          python utils/update_wiki_json_from_csv.py
+
+      - name: Commit and Push Changes
+        if: env.DIFFERENT_CSV == 'true'
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          
+          timestamp=$(date +'%Y%m%d%H%M%S')
+          branch_name="update-csv-$timestamp"
+
+          git checkout -b "$branch_name"
+
+          git add utils/wiki.csv
+          git add src/json/wiki.json
+
+          git commit -m "Update Wiki"
+
+          git push origin "$branch_name"
+
+          git checkout master
+          git merge --no-ff "$branch_name"
+          git push origin master
+
+          # delete the temporary branch
+          git branch -d "$branch_name"
+          git push origin --delete "$branch_name"
