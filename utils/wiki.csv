@@ -847,7 +847,7 @@ The following are the ways that the force multiplier can be modified:
 "Enhanced Programmer","Bot",""
 "Enhanced Q-Series","Bot",""
 "Enhanced Sentry","Bot",""
-"Example","Other","Here is a test of wiki content.
+"Example","Other","This is a test of wiki content.
 Content separated by a newline is split into multiple paragraphs.
 A link: [[Example]]. A [[Example|link with content different than the link]]. A [[Assault Rifle|part link]] with part information shown on mouseover. A [[S-10 Pest|bot link]] with bot information shown on mouseover. A [[Materials|location link]].
 Links are a type of inline content that can be used anywhere. Other types of inline content are [[B]]bolded text[[/B]] and [[I]]italicized text[[/I]]. Links can also be [[B]][[Example|bolded]][[/B]], [[I]][[Example|italicized]][[/I]], and [[B]][[I]][[Example|both together]][[/I]][[/B]]. Another option is [[GameText]]Inline Game Text[[/GameText]] that uses a separate font style. [[Sub]]Subscript[[/Sub]] and [[Sup]]Superscript[[/Sup]] are also available.
