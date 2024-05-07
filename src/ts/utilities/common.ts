@@ -1399,6 +1399,11 @@ export function createItemDataContent(baseItem: Item): string {
 }
 
 export function createImagePath(url: string) {
+    // regex expression by imme_emosol 
+    const regex = new RegExp("@(https?|ftp)://(-.)?([^s/?.#-]+.?)+(/[^s]*)?$@iS");
+    if(regex.test(url)) {
+        return url;
+    }
     return rootDirectory + url;
 }
 
