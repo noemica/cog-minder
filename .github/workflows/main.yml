@@ -53,23 +53,11 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          
-          timestamp=$(date +'%Y%m%d%H%M%S')
-          branch_name="update-csv-$timestamp"
 
-          git checkout -b "$branch_name"
+          git checkout master
 
           git add utils/wiki.csv
           git add src/json/wiki.json
-
           git commit -m "Update Wiki"
 
-          git push origin "$branch_name"
-
-          git checkout master
-          git merge --no-ff "$branch_name"
           git push origin master
-
-          # delete the temporary branch
-          git branch -d "$branch_name"
-          git push origin --delete "$branch_name"
