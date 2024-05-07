@@ -1398,13 +1398,14 @@ export function createItemDataContent(baseItem: Item): string {
     return html;
 }
 
-export function createImagePath(url: string) {
-    // regex expression by imme_emosol 
-    const regex = new RegExp("@(https?|ftp)://(-.)?([^s/?.#-]+.?)+(/[^s]*)?$@iS");
-    if(regex.test(url)) {
-        return url;
+export function createImagePath(name_or_url: string, file_dir: string = "") {
+    try {
+        new URL(name_or_url)
+        return name_or_url
     }
-    return rootDirectory + url;
+    catch (_) {
+        return file_dir + name_or_url;
+    }
 }
 
 export function createLocationHtml(location: MapLocation, spoilersState: Spoiler, inPopover: boolean): string {
