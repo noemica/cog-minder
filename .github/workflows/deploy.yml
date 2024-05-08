@@ -1,9 +1,14 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+name: deploy pages
 
 on:
   # Runs on pushes targeting the default branch
   push:
+    branches: ["master"]
+
+  workflow_run:
+    workflows: ['Bi-daily Wiki Update']
+    types: [completed]
     branches: ["master"]
 
   # Allows you to run this workflow manually from the Actions tab
