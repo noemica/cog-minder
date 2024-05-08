@@ -1398,13 +1398,13 @@ export function createItemDataContent(baseItem: Item): string {
     return html;
 }
 
-export function createImagePath(name_or_url: string, file_dir: string = "") {
+// Links to an external image if a valid full URL, otherwise creates a relative path
+export function createImagePath(nameOrUrl: string, fileDir: string = "") {
     try {
-        new URL(name_or_url)
-        return name_or_url
-    }
-    catch (_) {
-        return file_dir + name_or_url;
+        new URL(nameOrUrl);
+        return nameOrUrl;
+    } catch (_) {
+        return fileDir + nameOrUrl;
     }
 }
 
