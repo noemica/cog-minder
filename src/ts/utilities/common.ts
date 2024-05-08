@@ -1607,7 +1607,8 @@ export function getBotOrNull(botName: string): Bot | null {
     return null;
 }
 
-function getBotImageName(bot: Bot) {
+// Gets the image path for a specified bot
+export function getBotImageName(bot: Bot) {
     const imageName = botNameImageMap.get(bot.name);
     if (imageName !== undefined) {
         return createImagePath(`game_sprites/${imageName}.png`);
