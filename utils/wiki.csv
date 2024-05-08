@@ -756,7 +756,7 @@ Another approach is to simply run from the Grunts. This works best for airborne 
 "Decoy Drone","Bot",""
 "Decoy Drone Bay","Part",""
 "Deep Network Scanner","Part",""
-"Demented","Bot",""
+"Demented","Bot","Demented are"
 "Demolisher","Bot Group","Demolishers are [[Hover Units|hovering]] [[0b10]] combat robots armed with explosive launchers and a launcher guidance computer. Seen in [[Caves]] as part of a [[Demolisher Squad]] to deal with infestations, as part of an [[Assault Squad]] if Cogmind has too many allies. They have a decent innate resistance to Explosive damage, and are slightly resistant to Impact damage. Demolishers are extremely dangerous as they can destroy parts very fast, and running away from one is hard as they blow up whatever cover you're behind."
 "Demolisher Squad","Other","[[Image]]Demlisher Squad.png|2 Demolishers popping out of an ARC[[/Image]]
 Demolisher squads are [[0b10]] aligned [[Squad|squads]] that are dispatched to eliminate large groups of hostiles, especially [[Assembled]]. They are sent to the general area of a lot of hostiles, where they will roam around looking for bots to fight. They consist of a single [[C-30 ARC]] containing 2 [[Demolisher|Demolishers]]. Demolisher squads will never exit the map under normal circumstances after being dispatched.
