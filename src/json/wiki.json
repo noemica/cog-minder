@@ -314,11 +314,11 @@
   },
   {
    "Name": "Fireman (5)",
-   "Content": ""
+   "Content": "Fireman variant with a normal [[Flamer]]."
   },
   {
    "Name": "Fireman (7)",
-   "Content": ""
+   "Content": "Fireman variant with a better [[Flamer]] and enhanced cooling."
   },
   {
    "Name": "Fortress",
@@ -1060,7 +1060,7 @@
     "D-63 Destroyer",
     "D-83 Annihilator"
    ],
-   "Content": ""
+   "Content": "Demolishers are [[Hover Units|hovering]] [[0b10]] combat robots armed with explosive launchers and a launcher guidance computer. Seen in [[Caves]] as part of a [[Demolisher Squad]] to deal with infestations, as part of an [[Assault Squad]] if Cogmind has too many allies. They have a decent innate resistance to Explosive damage, and are slightly resistant to Impact damage. Demolishers are extremely dangerous as they can destroy parts very fast, and running away from one is hard as they blow up whatever cover you're behind."
   },
   {
    "Name": "Duelist",
@@ -1069,7 +1069,7 @@
     "L-41 Fighter",
     "L-61 Swordsman"
    ],
-   "Content": ""
+   "Content": "Duelists are [[Legs|bipedal]] [[0b10]] combat bots armed with a slashing weapon, with which they attempt to close distance  and melee the victim while severing parts. They are more accurate in melee, and have [[Core Shielding]] making it harder to damage their core. Later variants are equipped with [[Microactuators]] making them faster in melee. They have a slight resistance to Slashing and Piercing.\nRecommended to not let them get up close to you."
   },
   {
    "Name": "Exiles (Group)",
@@ -1096,7 +1096,7 @@
     "Fireman (5)",
     "Fireman (7)"
    ],
-   "Content": ""
+   "Content": "Firemen are [[Derelict]] [[Wheels|wheeled]] combat bots armed with a [[Flamer]]. They attack by attempting to meltdown the enemy, so having good cooling is recommended. Innate 50% resistance to Thermal damage, and 15% weakness to Kinetic damage."
   },
   {
    "Name": "Grunt",
@@ -1161,7 +1161,7 @@
     "Marauder (6)",
     "Marauder (8)"
    ],
-   "Content": ""
+   "Content": "Marauders are weaker [[Derelict]] [[Behemoths||Behemoth]] variants that have less numerous and less accurate but more powerful armaments than earlier Behemoth variants. Seen guarding [[Zion]] and [[Warlord (Location)]]."
   },
   {
    "Name": "Martyr",
@@ -1169,7 +1169,7 @@
     "Martyr (5)",
     "Martyr (7)"
    ],
-   "Content": ""
+   "Content": "Martyrs are the [[Derelict]] variant of [[0b10]] [[Demolisher]], however unlike Demolishers they only carry [[Rocket Launcher]]s or [[Missile Launcher]]s, and have a weaker core with better [[Armor]] plating."
   },
   {
    "Name": "Mechanic",
@@ -1187,7 +1187,7 @@
     "M-22 Extractor",
     "M-30 Cleanser"
    ],
-   "Content": ""
+   "Content": "Minesweepers are [[Wheels|wheeled]] non-combat bots seen extracting [[Derelict]] [[Traps]] in [[Caves]]."
   },
   {
    "Name": "Mutant",
@@ -1289,7 +1289,7 @@
     "S-27 Virus",
     "S-43 Plague"
    ],
-   "Content": ""
+   "Content": "Swarmers are [[Flight Units|flying]] [[0b10]] combat bots with one ballistic weapon seen in groups/swarms. Weak to Explosive damage, so blowing up groups of swarmers is a good idea. Seen in a [[Patrol Squad]] or otherwise."
   },
   {
    "Name": "Thug",
