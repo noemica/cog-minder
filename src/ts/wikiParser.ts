@@ -351,7 +351,7 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         const imageCaptionHtml = outputGroupsToHtml(tempState.output, state.inSpoiler);
 
         // Append image content HTML
-        const path = createImagePath(`wiki_images/${imageName}`);
+        const path = createImagePath(`${imageName}`, `wiki_images/`);
         galleryContent += `<div>
             <div>
                 <a ${inSpoiler ? 'class="spoiler-image"' : ""} href="${path}" target="_blank">
@@ -463,7 +463,7 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
     }
 
     // Create the image with an optional caption
-    const path = createImagePath(`wiki_images/${imageName}`);
+    const path = createImagePath(`${imageName}`, `wiki_images/`);
     state.output.push({
         groupType: "Individual",
         html: `<div class="wiki-sidebar-image">

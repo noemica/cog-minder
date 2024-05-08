@@ -1398,8 +1398,14 @@ export function createItemDataContent(baseItem: Item): string {
     return html;
 }
 
-export function createImagePath(url: string) {
-    return rootDirectory + url;
+// Links to an external image if a valid full URL, otherwise creates a relative path
+export function createImagePath(nameOrUrl: string, fileDir: string = "") {
+    try {
+        new URL(nameOrUrl);
+        return nameOrUrl;
+    } catch (_) {
+        return fileDir + nameOrUrl;
+    }
 }
 
 export function createLocationHtml(location: MapLocation, spoilersState: Spoiler, inPopover: boolean): string {
