@@ -17,6 +17,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
+      
+      - name: Set Up Variables
+        uses: FranzDiebold/github-env-vars-action@v2
 
       - name: Download New CSV
         run: |
@@ -54,15 +57,15 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
-          git checkout master
+          git checkout $GITHUB_REF_NAME
 
           git add utils/wiki.csv
           git add src/json/wiki.json
           git commit -m "Update Wiki"
 
-          git push origin master
-      
-      - name: Build Pages
+          git push origin $GITHUB_REF_NAME
+
+      - name: Build Github Pages
         if: env.DIFFERENT_CSV == 'true'
         run: |
           curl -L \
