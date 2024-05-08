@@ -102,7 +102,7 @@ for other in wiki_json['Other']:
 
 # Write out updated csv
 with open(csv_path, 'w', newline='') as f:
-    writer = csv.DictWriter(f, ['Name', 'Page Type', 'Content'])
+    writer = csv.DictWriter(f, ['Name', 'Page Type', 'Content'], quoting=csv.QUOTE_ALL)
 
     writer.writeheader()
     sorted_names = sorted(wiki_csv.keys())

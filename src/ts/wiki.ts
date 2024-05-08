@@ -1206,7 +1206,7 @@ jq(function ($) {
             const promises: Promise<any>[] = [];
 
             for (const imageName of parseResult.images.keys()) {
-                promises.push(loadImage(createImagePath(`wiki_images/${imageName}`)));
+                promises.push(loadImage(createImagePath(`${imageName}`, `wiki_images/`)));
             }
 
             if (parseResult.errors.length > 0) {

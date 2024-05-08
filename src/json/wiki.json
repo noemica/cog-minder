@@ -258,7 +258,7 @@
   },
   {
    "Name": "Demented",
-   "Content": ""
+   "Content": "Demented are"
   },
   {
    "Name": "Dragon",
@@ -7661,8 +7661,8 @@
     "Cobbler",
     "Subdweller"
    ],
-   "MinDepth": "-10",
-   "MaxDepth": "-10",
+   "MinDepth": -10,
+   "MaxDepth": -10,
    "Branch": true
   },
   {
@@ -8059,10 +8059,6 @@
   },
   {
    "Name": "Prototype Robots",
-   "Content": ""
-  },
-  {
-   "Name": "RIF",
    "Content": ""
   },
   {

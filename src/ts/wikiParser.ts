@@ -9,6 +9,7 @@ import {
     createLocationHtml,
     escapeHtml,
     getBot,
+    getBotImageName,
     getItem,
     parseIntOrDefault,
 } from "./utilities/common";
@@ -263,6 +264,48 @@ function processBTag(state: ParserState, result: RegExpExecArray) {
     state.output.push({ groupType: "Grouped", html: boldedContent });
 }
 
+// Process a [[BotGroups]][[/BotGroups]] tag
+function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
+    for (const groupEntry of state.allEntries.values()) {
+        if (groupEntry.type !== "Bot Group" || !canShowSpoiler(groupEntry.spoiler, state.spoiler)) {
+            continue;
+        }
+
+        // Get list of images to display
+        let images = new Set<string>();
+        for (const entry of state.allEntries.values()) {
+            if (entry.parentGroup === groupEntry) {
+                const bot = getBot(entry.name);
+                images.add(getBotImageName(bot));
+            }
+        }
+
+        let imageHtml = "";
+        for (const image of images.values()) {
+            imageHtml += `<img class="wiki-bot-group-image" src="${image}"/>`;
+        }
+
+        const tempState = new ParserState(
+            state.allEntries,
+            state.errors,
+            state.images,
+            false,
+            groupEntry.content,
+            "All",
+            state.spoiler,
+        );
+
+        processSection(tempState, undefined);
+
+        let content = `<h2 class="wiki-heading">${getLinkHtml(state, groupEntry, groupEntry.name)}${imageHtml}</h2>
+        ${outputGroupsToHtml(tempState.output, false)}`;
+
+        state.output.push({ groupType: "Individual", html: content });
+    }
+
+    state.index = result.index + result[0].length;
+}
+
 // Process a GameText tag like [[GameText]]Text[[/GameText]]
 function processGameTextTag(state: ParserState, result: RegExpExecArray) {
     // Process the heading subsection independently
@@ -351,7 +394,7 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         const imageCaptionHtml = outputGroupsToHtml(tempState.output, state.inSpoiler);
 
         // Append image content HTML
-        const path = createImagePath(`wiki_images/${imageName}`);
+        const path = createImagePath(`${imageName}`, `wiki_images/`);
         galleryContent += `<div>
             <div>
                 <a ${inSpoiler ? 'class="spoiler-image"' : ""} href="${path}" target="_blank">
@@ -463,7 +506,7 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
     }
 
     // Create the image with an optional caption
-    const path = createImagePath(`wiki_images/${imageName}`);
+    const path = createImagePath(`${imageName}`, `wiki_images/`);
     state.output.push({
         groupType: "Individual",
         html: `<div class="wiki-sidebar-image">
@@ -690,6 +733,7 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
 
 const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => void> = new Map([
     ["B", processBTag],
+    ["BotGroups", processBotGroupsTag],
     ["GameText", processGameTextTag],
     ["Gallery", processGalleryTag],
     ["Heading", processHeadingTag],
