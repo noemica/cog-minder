@@ -114,7 +114,7 @@
   },
   {
    "Name": "Assembler",
-   "Content": ""
+   "Content": "Produces [[Assembled]] every 10 turns. Otherwise harmless."
   },
   {
    "Name": "Autobeam Turret",
@@ -1014,7 +1014,7 @@
     "Assembled (4)",
     "Assembled (7)"
    ],
-   "Content": ""
+   "Content": "The Assembled are small swarming hovering robots often found in [[Caves]] as part of infestations or otherwise. They are weak to slashing, impact and piercing damage but immune to hacking. Blowing them up with explosions is a good way to deal with them. [[Redacted]]If a [[Core Reset Matrix]] was used, the Assembled will no longer be hostile and instead be purple uncontrollable allies.[[/Redacted]]"
   },
   {
    "Name": "Behemoth",
@@ -1024,7 +1024,7 @@
     "B-90 Cyclops",
     "B-99 Colossus"
    ],
-   "Content": ""
+   "Content": "Behemoths are heavily [[Armor|armored]] [[Treads|treading]] [[0b10]] bots that wield fearsome armaments. Behemoths are somewhat resistant to system corruption and electromagnetic damage, and earlier models are slightly weak to thermal damage. Behemoths upon sighting an enemy will fire at them even through walls, as their armaments are very capable of making holes to pass through. Engaging a behemoth is not a good idea unless you are really prepared for combat. Thankfully though, behemoths are slow so you can outrun them rather easily if you run fast enough and don't get hit too much.\nBehemoths are often found in their own spot inside a wall, often as part of a [[Security Squad]]."
   },
   {
    "Name": "Brawler",
@@ -1034,7 +1034,7 @@
     "B-60 Warrior",
     "B-74 Champion"
    ],
-   "Content": ""
+   "Content": "Brawlers are later common [[Armor|armored]] [[Treads|treading]] [[0b10]] bots that wield an [[Impact Weapons|Impact weapon]] to smash parts of their enemies. Upon sighting an enemy, Brawlers will attempt to close the distance before attempting to beat the target to death. They have a slight innate resistance to impact and slashing damage."
   },
   {
    "Name": "Butcher",
@@ -1042,7 +1042,7 @@
     "Butcher (5)",
     "Butcher (7)"
    ],
-   "Content": ""
+   "Content": "Butchers are bipedal [[Derelict]] combat bots armed with a slashing weapon capable of severing parts. They come with [[Melee Analysis Suites]] that make them better at hitting in melee."
   },
   {
    "Name": "Cutter",
@@ -1051,7 +1051,7 @@
     "C-35 Carver",
     "C-57 Dissector"
    ],
-   "Content": ""
+   "Content": "Cutters are [[Flight Units|flying]] [[0b10]] aligned combat robots that arrive in a [[Reinforcement Squad]]. Armed with a Saw and Concussive RPG, these units will firstly fire their RPG at the enemy to overwhelm them and move in blazing-fast to try and sever the enemy's parts with their Saw. They are harder to hit due to their [[Reaction Control System]]. Most commonly called at flight builds."
   },
   {
    "Name": "Demolisher",
@@ -1087,7 +1087,7 @@
     "Z-Experimental (8)",
     "Z-Experimental (10)"
    ],
-   "Content": "",
+   "Content": "Z-Experimental bots are a class of [[Legs||bipedal]] [[Imprint]] aligned combat bots equipped with a staggering amount of prototype parts, with a powerful weapon and 20% resistance to most damage. Appears in the Imprint Roster[[Redacted]] and also can come out of [[Command]] cave seals[[/Redacted]].",
    "Spoiler": "Spoiler"
   },
   {
@@ -1115,7 +1115,7 @@
     "Guerrilla (5)",
     "Guerrilla (7)"
    ],
-   "Content": ""
+   "Content": "Guerillas are [[Legs|bipedal]] [[Derelict]] combat bots equipped with an inaccurate yet powerful cannon capable of destroying parts easily. Much like a [[Hunter]], Guerillas aim better due to their Targeting Computer and are harder to hit due to their Phase Shifter. However, unlike Hunters, Guerillas also have a [[Armor Integrity Analyzer]] allowing them to bypass enemy armor and hit harder. Slightly resistant to kinetic damage and slightly susceptible to electromagnetic damage."
   },
   {
    "Name": "Hauler",
@@ -1124,7 +1124,7 @@
     "A-15 Conveyor",
     "A-27 Freighter"
    ],
-   "Content": ""
+   "Content": "Haulers are [[Treads|treading]] non-combat robots that haul parts in or near Complex [[0b10]]. Haulers carry parts that are often a higher rating than those found on the current depth, and may also carry prototypes. Haulers carrying prototype parts are escorted by combat bots and will call for a [[Reinforcement Squad]] if attacked. Often seen as part of a [[Transport Squad]] or [[Cargo Convoy]].\n\nHaulers also are equipped with [[Storage Units|medium and larger storage units]] which can be worthwhile if you cant find one while yours is damaged, and also support-increasing utility parts such as a [[Weight Redist. System]]."
   },
   {
    "Name": "Heavy",
@@ -1143,7 +1143,7 @@
     "H-77 Assassin",
     "H-88 Terminator"
    ],
-   "Content": ""
+   "Content": "Hunters are [[Legs|bipedal]] [[0b10]] combat robots equipped with one long-range penetrating ballistic gun and one short-range ballistic gun. Hunters aim better as a result of their [[Targeting Computers]], and later models are also harder to hit due to their [[Phase Shifters]]. Hunters do not appear on sensors without a strong enough [[Signal Interpreter|Signal Interpreters]].\nHunters that are the leader of a [[Squad]] are also capable of launching a drone to attempt to locate you.\nPart of most normal [[0b10]] squads."
   },
   {
    "Name": "Infiltrator",
@@ -6281,7 +6281,7 @@
     "Quantum Router",
     "Architect God Chip D"
    ],
-   "Content": ""
+   "Content": "Hackware is a group of Utility parts that improve hacking capabilities, mainly success chance for terminal hacks, trap rewiring and robot rewiring. Additionally makes it harder for [[Programmer|Programmers]] to hack your allies."
   },
   {
    "Name": "Hardlight Generators",
