@@ -1,9 +1,13 @@
-name: vite deploy
+name: Vite Deployment
 
 on:
   push:
     branches:
       - master
+  workflow_run:
+    workflows: ['Bi-daily Wiki Update']
+    types: [completed]
+    branches: ["master"]
   workflow_dispatch:
 
 permissions:
@@ -17,7 +21,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build
+    name: Build And Deploy
     runs-on: ubuntu-latest
     environment:
       name: github-pages
