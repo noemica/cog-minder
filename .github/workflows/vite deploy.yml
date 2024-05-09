@@ -4,46 +4,58 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+      
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Install yarn
+        run: |-
+          curl -fsSL --create-dirs -o $HOME/bin/yarn \
+          https://github.com/yarnpkg/yarn/releases/download/v1.22.19/yarn-1.22.19.js
+          chmod +x $HOME/bin/yarn
+          echo "$HOME/bin" >> $GITHUB_PATH
+
+      - name: Setup node
         uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: yarn
+      
+      - name: build
+        run: yarn build
 
-      - name: Build project
-        run: npm run build
-
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: production-files
-          path: ./dist
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: production-files
-          path: ./dist
-
+          # Upload dist folder
+          path: './dist'
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        id: deployment
+        uses: actions/deploy-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
