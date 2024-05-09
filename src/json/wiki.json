@@ -258,7 +258,7 @@
   },
   {
    "Name": "Demented",
-   "Content": ""
+   "Content": "Demented are"
   },
   {
    "Name": "Dragon",
@@ -746,11 +746,11 @@
   },
   {
    "Name": "Surgeon (4)",
-   "Content": ""
+   "Content": "Surgeon variant with an [[Imp. Field Recycling Unit]]."
   },
   {
    "Name": "Surgeon (6)",
-   "Content": ""
+   "Content": "Surgeon variant with an [[Adv. Field Recycling Unit]]."
   },
   {
    "Name": "Surveybot 24",
@@ -1178,7 +1178,7 @@
     "M-28 Smith",
     "M-36 Artificer"
    ],
-   "Content": ""
+   "Content": "A wheeled [[0b10]] non-combat bot that repairs the parts of any damaged ally in sight. You can salvage a [[Recalibrator]] which allows you to repair broken or malfunctioning parts, and a [[Machine Analyzer]] which helps you find machines."
   },
   {
    "Name": "Minesweeper",
@@ -1197,7 +1197,7 @@
     "Mutant (7)",
     "Mutant (8)"
    ],
-   "Content": ""
+   "Content": "Mutants are treading [[Derelict]] combat robots with a decent amount of random options for parts and 2 weapons. Slight weakness to Electromagnetic damage."
   },
   {
    "Name": "Operator",
@@ -1206,7 +1206,7 @@
     "O-24 Administrator",
     "O-32 Director"
    ],
-   "Content": ""
+   "Content": "Operators are [[Hover Units|hovering]] [[0b10]] non-combat bots. Upon seeing a hostile, operators will run to their home [[Terminal]], and if they reach it they will make it unusable and summon a [[Reinforcement Squad]] to the terminal. As such, Operators should be avoided or destroyed themselves or their terminal before they call reinforcements. Additionally, [[Spoiler]]you can use a [[GameText]]Trojan(Assimilate)[[/GameText]] on their home terminal to make them get turned into your ally if they attempt to use it[[/Spoiler]]. Operators are a good source of [[Datajack]]s and [[Hacking Suite]]s if you kill them without them calling for reinforcements. They are weak to slashing and electromagnetic damage."
   },
   {
    "Name": "Programmer",
@@ -1280,7 +1280,7 @@
     "Surgeon (4)",
     "Surgeon (6)"
    ],
-   "Content": ""
+   "Content": "Surgeons are wheeled [[Derelict]] non-combat bots that repair their allies and also recycle any dropped parts."
   },
   {
    "Name": "Swarmer",
