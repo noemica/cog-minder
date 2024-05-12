@@ -1,6 +1,7 @@
 import lore from "../json/lore.json";
 import { MapLocation, Spoiler } from "./types/commonTypes";
 import { WikiEntry } from "./types/wikiTypes";
+import { Bot } from "./botTypes";
 import {
     canShowSpoiler,
     createBotDataContent,
@@ -99,7 +100,12 @@ export function createContentHtml(
     // Convert to HTML
     let outputHtml = outputGroupsToHtml(state.output, false);
     if (outputHtml === "") {
+        if(entry.type === "Bot") {
+            const bot = entry.extraData as Bot
+            outputHtml = `<span class="wiki-game-text">${bot.description}</span>`
+        } else {
         outputHtml = "<p>There is no content here. Please consider contributing. See the home page for details.</p>";
+        }
     }
     return {
         html: `<h1 class="wiki-heading">${
