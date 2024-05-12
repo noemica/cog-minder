@@ -272,7 +272,7 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
         }
 
         // Get list of images to display
-        let images = new Set<string>();
+        const images = new Set<string>();
         for (const entry of state.allEntries.values()) {
             if (entry.parentGroup === groupEntry) {
                 const bot = getBot(entry.name);
@@ -297,11 +297,31 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
 
         processSection(tempState, undefined);
 
-        let content = `<h2 class="wiki-heading">${getLinkHtml(state, groupEntry, groupEntry.name)}${imageHtml}</h2>
+        const content = `<h2 class="wiki-heading">${getLinkHtml(state, groupEntry, groupEntry.name)}${imageHtml}</h2>
         ${outputGroupsToHtml(tempState.output, false)}`;
 
         state.output.push({ groupType: "Individual", html: content });
     }
+
+    state.index = result.index + result[0].length;
+}
+
+
+// Process a [[NonEmptyPages]][[/NonEmptyPages]] tag
+function processNonEmptyPagesTag(state: ParserState, result: RegExpExecArray) {
+    const listContents:string[] = [];
+    for (const groupEntry of state.allEntries.values()) {
+        const listContent = `<li>${getLinkHtml(state, groupEntry, groupEntry.name)}</li>`; //little band-aid fix for duplicated entries
+        if (listContents.includes(listContent) || groupEntry.content.length < 20 || !canShowSpoiler(groupEntry.spoiler, state.spoiler)) {
+            continue;
+        }
+
+        listContents.push(listContent);
+    }
+
+    listContents.sort();
+
+    state.output.push({ groupType: "Individual", html: `<ul class="wiki-list">${listContents.join("")}</ul>`});
 
     state.index = result.index + result[0].length;
 }
@@ -742,6 +762,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["List", processListTag],
     ["Locations", processLocationsTag],
     ["Lore", processLoreTag],
+    ["NonEmptyPages", processNonEmptyPagesTag],
     ["Spoiler", processSpoilerTag],
     ["Sub", processSubTag],
     ["Sup", processSupTag],
