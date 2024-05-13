@@ -358,7 +358,7 @@ The Data Miner can redirect Assaults if his help is obtained by visiting his [[D
 "Authchip [R/NC]","Part",""
 "Authchip [Storage]","Part",""
 "Authchip [Weapon]","Part",""
-"Authchips","Part Group",""
+"Authchips","Part Group","Authchips are single-use items that allow printing the relevant type of item at a fabricator. They can be acquired at a [[DSF]], [[Garrison|Garrisons]], corrupted in [[Storage]] or by using [[Redacted]][[GameText]]Force(Recompile)[[/GameText]][[/Redacted]] on a fabricator."
 "Autobeam Turret","Bot",""
 "Autogun","Part",""
 "Axe","Part",""

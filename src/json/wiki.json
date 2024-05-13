@@ -5769,7 +5769,7 @@
     "Authchip [Armor]",
     "Authchip [Weapon]"
    ],
-   "Content": ""
+   "Content": "Authchips are single-use items that allow printing the relevant type of item at a fabricator. They can be acquired at a [[DSF]], [[Garrison|Garrisons]], corrupted in [[Storage]] or by using [[Redacted]][[GameText]]Force(Recompile)[[/GameText]][[/Redacted]] on a fabricator."
   },
   {
    "Name": "Ballistic Cannons",
