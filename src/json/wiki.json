@@ -7976,7 +7976,7 @@
   },
   {
    "Name": "Game Mechanics",
-   "Content": "[[List]][[Alert]] - Semi-hidden number that represents Cogmind's perceived threat level. Has dangerous consequences when too high.|[[Allies]] - Bots friendly to [[Cogmind]].[[List:Ordered]][[/List]]|[[Corruption]] - Stat that has various negative penalties and can result in death.|[[Energy]] - Stat that is used |[[Heat]] - Stat that can cause overheating side-effects and deaths in non-immune bots.|[[Matter]] - Stat that is used as a resource to attach parts and shoot some types of weapons.[[/List]]"
+   "Content": "[[List]][[Alert]] - Semi-hidden number that represents Cogmind's perceived threat level. Has dangerous consequences when too high.|[[Allies]] - Bots friendly to [[Cogmind]].|[[Corruption]] - Stat that has various negative penalties and can result in death.|[[Energy]] - Stat that is used |[[Heat]] - Stat that can cause overheating side-effects and deaths in non-immune bots.|[[Matter]] - Stat that is used as a resource to attach parts and shoot some types of weapons.[[/List]]"
   },
   {
    "Name": "Garrison (Machine)",
