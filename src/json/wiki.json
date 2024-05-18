@@ -1079,7 +1079,7 @@
     "EX-DEC",
     "EX-HEX"
    ],
-   "Content": ""
+   "Content": "The Exiles are a group of 3 [[Tinkerer]]-like bots and their bodyguard [[8R-AWN]] stationed at [[Exiles (Location)]].\n[[EX-DEC]] wields their [[AWS/EX-DEC]] and may fight if provoked, but others (except 8R-AWN) are unarmed."
   },
   {
    "Name": "Experimental",
@@ -1152,7 +1152,7 @@
     "Infiltrator (7)",
     "Infiltrator (8)"
    ],
-   "Content": "",
+   "Content": "Infiltrators are [[Legs|bipedal]] [[Derelict]] combat bots with one [[Ballistic Cannons|Ballistic Cannon]] and other two same weapons. As their name suggests, they are seen infiltrating, such as hidden in a Garrison or pretending to be a [[Specialist]] called by a [[Heavy]].damage, so blowing up groups of swarmers is a good idea. They come with better utilites than Infiltrators, and come with an [[Active Sensor Spoofer]].",
    "Spoiler": "Spoiler"
   },
   {
@@ -1215,7 +1215,7 @@
     "P-70 Sage",
     "P-80 Master"
    ],
-   "Content": ""
+   "Content": "Programmers are [[Hover Units|hovering]] [[0b10]] combat bots armed with a weapon dealing Electromagnetic damage and a [[Datajacks|datajack]]. Programmers will attempt to corrupt and hack any hostiles, potentially turning them against [[Cogmind]]. They will also remove system corruption from their allies. Seen as part of a [[Patrol Squad]] or [[Extermination Squad]], Programmers are very resistant against Electromagnetic damage and slightly resistant against Explosive damage, but weak to Kinetic and Thermal damage. Attempting to destroy a programmer with Electromagnetic damage is slow and pointless."
   },
   {
    "Name": "Protector",
@@ -1224,7 +1224,7 @@
     "I-36 Angel",
     "I-47 Archangel"
    ],
-   "Content": ""
+   "Content": "Protectors are [[0b10]] [[Wheels|wheeled]] combat bots that specialize in protecting their allies with a [[Shield Generators/Force Fields|shield]]. Equipped with [[Energy Wells]] and two [[Engines]], Protectors are a good source of those, if you manage to survive the encounter with the [[Assault Squad]] they are often part of. Slight resistance to Thermal damage."
   },
   {
    "Name": "Recycler",
@@ -1249,7 +1249,7 @@
     "Savage (5)",
     "Savage (7)"
    ],
-   "Content": ""
+   "Content": "Savages are a [[Derelict]] variant of the [[0b10]] [[Brawler]] bots that wield a mauls stronger than earlier variants of Brawlers. They possess better [[Armor]] than early variants of Brawlers, but have a weaker engine."
   },
   {
    "Name": "Sentry",
@@ -1297,7 +1297,7 @@
     "Thug (5)",
     "Thug (7)"
    ],
-   "Content": ""
+   "Content": "Thugs are the [[Derelict]] variant of [[Grunt|Grunts]] armed with a [[Beamcaster]] that is as powerful if not more powerful than the [[Hvy. Laser]] wielded by the [[G-73 Enforcer]]. Better heat sinks and legs than early Grunt variants. Slight weakness to Kinetic and Electromagnetic damage."
   },
   {
    "Name": "Wasp",
@@ -1305,7 +1305,7 @@
     "Wasp (5)",
     "Wasp (7)"
    ],
-   "Content": ""
+   "Content": "Wasps are the [[Derelict]] variant of [[Swarmer|Swarmers]] armed with a more powerful but unreliable armament and more powerful propulsion than earlier [[Swarmer]] variants."
   },
   {
    "Name": "Watcher",
@@ -1322,7 +1322,7 @@
     "Wizard (5)",
     "Wizard (7)"
    ],
-   "Content": ""
+   "Content": "Wizards are a [[Derelict]] variant of the [[0b10]] [[Programmer]], armed solely with a [[Riot Gun]]. Compared to Programmers, Wizards have plenty of [[Hackware]] such as [[Hacking Suites]], and a [[Corruption Screen]] to help them counteract corruption."
   },
   {
    "Name": "Z-Heavy",
@@ -6281,7 +6281,7 @@
     "Quantum Router",
     "Architect God Chip D"
    ],
-   "Content": "Hackware is a group of Utility parts that improve hacking capabilities, mainly success chance for terminal hacks, trap rewiring and robot rewiring. Additionally makes it harder for [[Programmer|Programmers]] to hack your allies."
+   "Content": "Hackware is a group of Utility parts that improve hacking capabilities, mainly success chance for terminal hacks, trap rewiring and robot rewiring. Hackware also helps you hack hostiles through the defense of a [[Programmer]]. Additionally, later Hackware makes it harder for your allies to be hacked."
   },
   {
    "Name": "Hardlight Generators",

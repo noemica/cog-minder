@@ -894,7 +894,7 @@ Fighting the Exiles is not recommended on -10 due to lower slot count, lower cor
 There are some things that should be done before actually doing the fight itself. The image on the right serves as a visual reference. Any rigged engines used must be in inventory before attacking the Exiles, otherwise the engines will still remain loyal to the Exiles and explode only on Cogmind. Matter pods should be relocated near the 8R-AWN fighting spot (See point #4 in diagram) to avoid running out of matter in combat. Any allies should be told to stay in the same general area so they can contribute to the fight. However, Grunts can't deal much damage until [[8R-AWN's Armor/TH]] is destroyed. Finally, some vault items may come in handy for the fight. The [[Cloak of Protection]]'s effect is not so strong, but when turned off it is a high coverage high integrity piece of armor. The [[Longsword +1]] is a very effective kill tool. The [[Potential Leg|Potential Legs]] have a lot of integrity in case you run out of propulsion during the fight. The [[Gui. Plasma Cannon]] may be used to safely destroy the [[DAS Turret]] without getting attacked back. One thing to consider about the vault is that there may be a 0b10 attack on the Exiles after exiting. In those cases, an Exiles kill may either have to be cancelled or at least turned into a 8R-AWN only kill. Aside from that, the fight may begin:
 [[Image]]Exiles Launcher DAS.png|Launchering the DAS turret[[/Image]]
 [[List:Ordered]]Shoot one of the spike-shaped machines to turn the Exiles hostile.|Drop the rigged engines from the entrance every few tiles while walking toward the spot for step #3, they have an explosion radius of 2. This will take care of most of the Assembled that are coming your way. IMPORTANT: This must be done after the Exiles become hostile. If you do it before that, they will explode on Cogmind.|Pull out a Launcher and dispose of the remaining Assembled.|Go to the corner to fight 8R-AWN. If you have any blade traps, now is the time to use them. Place them just above the bottom-most wall to the right of the spot marked 4. This is the part that needs the most backups, as 8R-AWN will destroy many of your parts very quickly due to high damage and high part destroy critical chance. Always put on backup parts right away after they are destroyed. Make sure to apply salvage with a Plasma Cutter if you have it before finishing the kill. You may run out of matter and have to refill from matter pods at this point, which is why preemptively moving the matter pods here can be very important. Many kill attempts that don't have enough damage or integrity will end here.|Hopefully you have some good loot after 8R-AWN is destroyed. [[8R-AWN's Boregun|Boreguns]] are a very easy way to destroy the [[DAS Turret]]. Penetrate through the machines to try and kill the turret without getting shot at because the cannon deals incredibly high damage. If no Boreguns were dropped, using a launcher is another good option. The idea is to aim around the spike in the machine so that you can't get hit but the explosion radius will still hit the turret.|Finally, all that is left is to loot the Exiles and their Derelict friends. Apply positive salvage to the Exiles with a Plasma Cutter if possible. Otherwise just finish them off with whatever you have left. Watch out for [[EX-DEC]] as they have a deadly [[AWS/EX-DEC]] that can deal a lot of damage very quickly if you aren't careful. It has a short range, so just take them out from a distance.[[/List]]"
-"Exiles (Group)","Bot Group",""
+"Exiles (Group)","Bot Group","The Exiles are a group of 3 [[Tinkerer]]-like bots and their bodyguard [[8R-AWN]] stationed at [[Exiles (Location)]].\n[[EX-DEC]] wields their [[AWS/EX-DEC]] and may fight if provoked, but others (except 8R-AWN) are unarmed."
 "Exiles (Location)","Location","The Exiles map appears as a [[Branch]] off of [[Mines]] on either -10 or -9 and is home to the Exiles, a group of friendly Derelict Tinkerer outcasts made up of [[EX-BIN]], [[EX-DEC]], [[EX-HEX]], and their bodyguard [[8R-AWN]]. These Exiles have a large collection of unique prototype parts that are only available in the Exiles vault. The entrance is guarded by some rigged engines that blow up when a hostile bot crosses them. There are some lore terminals with entries written by each of the tinkerers that describe many of the prototype parts obtainable on this map as well as some that are not. The terminal near the center of the map also contains a log entry that points to the depth that [[Zion]] is on. Various caches of storage units and energy/matter storage can be found throughout the map. ""The Gauntlet"" at the bottom of the map is a stretch of tester bots that are working on the latest batch of prototype parts. These Derelicts have names that reference Cogmind community members. This map is also home to the [[Farcom]] aligner machine and a unique alignment.
 Carrying a [[Datajack]] into this map can be a good idea due to all of the prototype parts that the Exiles and 8R-AWN have on them. Parsing them will provide the associated prototype part IDs so you can recognize the parts later.
 Be wary of [[Corruption]] on this map. There is rarely any way to cleanse corruption this early in the game, and misfires are possible at even 1% corruption. One misfire hitting the wrong thing will result in the whole map turning aggressive and death will likely follow. Detaching all ranged weapons is recommended if Cogmind has any corruption.
@@ -1140,7 +1140,7 @@ If the Garrison squad was triggered by a non-combat bot reporting an attack or b
 "Hacking Drone","Bot",""
 "Hacking Drone Bay","Part",""
 "Hacking Suite","Part","A must-have for when you want to go for a hacking route. Download the schematic and make sure you fabricate enough in the factories."
-"Hackware","Part Group","Hackware is a group of Utility parts that improve hacking capabilities, mainly success chance for terminal hacks, trap rewiring and robot rewiring. Additionally makes it harder for [[Programmer|Programmers]] to hack your allies."
+"Hackware","Part Group","Hackware is a group of Utility parts that improve hacking capabilities, mainly success chance for terminal hacks, trap rewiring and robot rewiring. Hackware also helps you hack hostiles through the defense of a [[Programmer]]. Additionally, later Hackware makes it harder for your allies to be hacked."
 "Hammer","Part",""
 "Hardcell Cannon","Part",""
 "Hardlight Generator","Part",""
@@ -1401,7 +1401,7 @@ Imprinting has special cave seal interactions. Instead of the standard wild cave
 "Imprinter Data Core","Part",""
 "Impulse Thruster","Part",""
 "Impulse Thruster Array","Part",""
-"Infiltrator","Bot Group",""
+"Infiltrator","Bot Group","Infiltrators are [[Legs|bipedal]] [[Derelict]] combat bots with one [[Ballistic Cannons|Ballistic Cannon]] and other two same weapons. As their name suggests, they are seen infiltrating, such as hidden in a Garrison or pretending to be a [[Specialist]] called by a [[Heavy]].damage, so blowing up groups of swarmers is a good idea. They come with better utilites than Infiltrators, and come with an [[Active Sensor Spoofer]]."
 "Infiltrator (6)","Bot",""
 "Infiltrator (7)","Bot",""
 "Infiltrator (8)","Bot",""
@@ -1777,12 +1777,12 @@ Lightning squads consist of 3 Lightnings and an [[I-47 Archangel]]. They can be 
 "Prc. Phase Gun","Part",""
 "Prc. Rocket Launcher","Part",""
 "Prc. Shock Rifle","Part",""
-"Programmer","Bot Group",""
+"Programmer","Bot Group","Programmers are [[Hover Units|hovering]] [[0b10]] combat bots armed with a weapon dealing Electromagnetic damage and a [[Datajacks|datajack]]. Programmers will attempt to corrupt and hack any hostiles, potentially turning them against [[Cogmind]]. They will also remove system corruption from their allies. Seen as part of a [[Patrol Squad]] or [[Extermination Squad]], Programmers are very resistant against Electromagnetic damage and slightly resistant against Explosive damage, but weak to Kinetic and Thermal damage. Attempting to destroy a programmer with Electromagnetic damage is slow and pointless."
 "Propulsion","Other",""
 "Propulsion Shielding","Part",""
 "Propulsion Shieldings","Part Group",""
 "Protection","Part Group",""
-"Protector","Bot Group",""
+"Protector","Bot Group","Protectors are [[0b10]] [[Wheels|wheeled]] combat bots that specialize in protecting their allies with a [[Shield Generators/Force Fields|shield]]. Equipped with [[Energy Wells]] and two [[Engines]], Protectors are a good source of those, if you manage to survive the encounter with the [[Assault Squad]] they are often part of. Slight resistance to Thermal damage."
 "Protomatter","Part",""
 "Proton Bomb Trap","Part",""
 "Proton Burst Cannon","Part",""
@@ -1951,7 +1951,7 @@ This event can be a great blessing or a curse depending on a lot of factors. Get
 "Samaritan","Bot",""
 "Sapper","Bot",""
 "Sapper Charge","Part",""
-"Savage","Bot Group",""
+"Savage","Bot Group","Savages are a [[Derelict]] variant of the [[0b10]] [[Brawler]] bots that wield a mauls stronger than earlier variants of Brawlers. They possess better [[Armor]] than early variants of Brawlers, but have a weaker engine."
 "Savage (5)","Bot",""
 "Savage (7)","Bot",""
 "Scanalyzer","Other",""
@@ -2265,7 +2265,7 @@ There is always 1, and possibly 2 exits in Testing:
 "Thief","Bot",""
 "Thief Drone","Bot",""
 "Thief Drone Bay","Part",""
-"Thug","Bot Group",""
+"Thug","Bot Group","Thugs are the [[Derelict]] variant of [[Grunt|Grunts]] armed with a [[Beamcaster]] that is as powerful if not more powerful than the [[Hvy. Laser]] wielded by the [[G-73 Enforcer]]. Better heat sinks and legs than early Grunt variants. Slight weakness to Kinetic and Electromagnetic damage."
 "Thug (5)","Bot",""
 "Thug (7)","Bot",""
 "Thunder Hammer","Part",""
@@ -2393,7 +2393,7 @@ This is the last chance to exit the map with any amount of assistance. With assa
 "Warlord Statue","Bot",""
 "Warp Cannon","Part",""
 "Warp Gun","Part",""
-"Wasp","Bot Group",""
+"Wasp","Bot Group","Wasps are the [[Derelict]] variant of [[Swarmer|Swarmers]] armed with a more powerful but unreliable armament and more powerful propulsion than earlier [[Swarmer]] variants."
 "Wasp (5)","Bot",""
 "Wasp (7)","Bot",""
 "Wastes","Location","Wastes is a [[0b10]]-controlled sub-floor in Factory that appears on most floors between -7 and -4. It can only be entered when Cogmind triggers a [[Chute Trap]]. Cogmind will get dropped in instantly, and any nearby allies or bots who have previously triggered a chute trap will also appear over time. Wastes can be a very brutal map for an unprepared player. There are 6 hostile [[C-40 Crusher|Crushers]] that can decimate Cogmind's build in a few hits. There is an EMP that is on in some Wastes maps that fires every 100 turns and adds between 5 to 10% [[Corruption]] to Cogmind. This corruption can be reduced by EM [[Resistance Devices]] and [[Dynamic Insulation Systems]]. There are various broken, faulty, or otherwise low integrity parts scattered on the ground. These parts can be several ratings out of depth and can be good to try to repair or scan and fabricate.
@@ -2431,7 +2431,7 @@ W5 [[Redacted]]Destroyed Tau Ceti IV: In [[Access_0]], obtain the [[A2 Data Core
 W6 [[Redacted]]Escaped singularity: In Access_0, destroy all 4 Subspace Access Nodes, destroy the Architect, and take the surface exit within 10 turns.[[/Redacted]]
 W7 [[Redacted]]Establishing Free Derelict Territories: In Command, destroy both forms of MAIN.C with [[Warlord]] still alive and not shut down.[[/Redacted]]
 W8 [[Redacted]]Fortifying 0b10: Choose the Surrender option after destroying MAIN.C's outer shell, then destroy enough [[Enhanced Q-Series]] while keeping MAIN.C alive.[[/Redacted]]"
-"Wizard","Bot Group",""
+"Wizard","Bot Group","Wizards are a [[Derelict]] variant of the [[0b10]] [[Programmer]], armed solely with a [[Riot Gun]]. Compared to Programmers, Wizards have plenty of [[Hackware]] such as [[Hacking Suites]], and a [[Corruption Screen]] to help them counteract corruption."
 "Wizard (5)","Bot",""
 "Wizard (7)","Bot",""
 "X-57 Shotgunner","Bot",""
