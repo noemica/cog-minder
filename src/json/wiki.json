@@ -1087,7 +1087,7 @@
     "Z-Experimental (8)",
     "Z-Experimental (10)"
    ],
-   "Content": "Z-Experimental bots are a class of [[Legs|bipedal]] [[Imprint]] aligned combat bots equipped with a staggering amount of prototype parts, with a powerful weapon and 20% resistance to most damage. Appears in the Imprint Roster[[Redacted]] and also can come out of [[Command]] cave seals[[/Redacted]].",
+   "Content": "Z-Experimental bots are a class of [[Legs|bipedal]] [[Imprint]] aligned combat bots equipped with a staggering amount of prototype parts, with a powerful weapon and 20% resistance to most damage. Appears in the [[Imprint]] Roster [[Redacted]]and also can come out of [[Command]] cave seals if Cogmind is [[Imprint]] aligned[[/Redacted]].",
    "Spoiler": "Spoiler"
   },
   {
@@ -2224,7 +2224,7 @@
   },
   {
    "Name": "Chronowheel",
-   "Content": ""
+   "Content": "The effect of the Chronowheel allows Cogmind to rewind time as a one time save/load effect. Attaching saves, and after 30 turns (if not destroyed/removed) the load will occur.\n[[Heading]]Timeline of Effects[[/Heading]]\n[[List]]1 - [[GameText]]Spacetime feels off.[[/GameText]] log message. Random part art, map prefabs, and lore text will briefly flash on screen. The frequency of these effects increases as time goes on.|20 - [[GameText]]Chronowheel is disintegrating...[[/GameText]] log|28 - [[GameText]]Spacetime is rapidly distorting...[[/GameText]] log|29 - [[GameText]]Spacetime reconverges on this point.[[/GameText]] log. Turn before attaching the Chronowheel is loaded, Chronowheel is gone.|When ripping the Chronowheel off instead - [[GameText]]Spacetime feels normal again.[[/GameText]] log[[/List]]\nSome good uses of the Chronowheel include:\n[[List]]Determining what map an exit goes to (a very expensive one time [[Signal Interpreter]], not really recommended)|Scouting out a new map or running through a dangerous area (only really viable if fast)|Getting multiple attempts at killing the [[Data Miner]]|Using the [[Data Conduit]] and finding the locations of all locations in the game without the negative side effects|Getting the chance to reroll a [[RIF]] ability from a RIF Installer|Attaching unknown [[Alien Artifact|Alien Artifacts]] or [[Prototype Parts]] without downsides[[/List]]\n[[Spoiler]]The Chronowheel also has a hidden secondary effect when paired with the [[Subatomic Replicator]]. First, the warning [[GameText]]Chronowheel temporarily destabilized by failed replication attempt, a second attempt will likely cause a devastating explosion.[[/GameText]] will appear in the log. A second attempt will give the message [[GameText]]Local interference in replication process, triggered subspace vortex.[[/GameText]] A 20 tile radius explosion will then occur at the point of replication, dealing 1000 vortex damage in 10 damage chunks with 0 falloff.[[/Spoiler]]"
   },
   {
    "Name": "Cld. Aerolev Unit",
@@ -2504,7 +2504,7 @@
   },
   {
    "Name": "Deploy-a-Sentry",
-   "Content": ""
+   "Content": "After deployed, turns into a [[DAS Turret]]."
   },
   {
    "Name": "Derelict Log",
