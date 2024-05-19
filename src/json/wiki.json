@@ -1232,7 +1232,7 @@
     "R-06 Scavenger",
     "R-10 Processor"
    ],
-   "Content": ""
+   "Content": "Recyclers are [[0b10]] [[Wheels|wheeled]] non-combat bots that wander around looking for dropped parts, pick them up, and carry to a [[Recycling Machine]]. Will run away if shot, so that's a good way to stop them from stealing your sweet loot. R-10 Processors also have a [[Field Recycling Unit]] to recycle parts on the go, so don't let them steal your parts.\nRecyclers are slightly weak to Electromagnetic damage."
   },
   {
    "Name": "Researcher",
@@ -1240,7 +1240,7 @@
     "C-55 Analyst",
     "C-65 Expert"
    ],
-   "Content": "",
+   "Content": "Researchers are [[Hover Units|hovering]] [[0b10]] non-combat bots equipped with a [[Stasis Beam]] or [[Stasis Projector]], which much like a [[Stasis Trap]] immobilize their target. Researchers appear in [[Spoiler]][[Testing]] and [[Quarantine]][[/Spoiler]]. When a researcher spots a non-[[0b10]] bot attacking, or gets attacked, they will attempt to stasis and scan any hostile, and summon a [[Reinforcement Squad]]. However, if the scanned thing is [[Cogmind]] (you), [[Spoiler]][[Q-Series]] will be dispatched instead of an [[Extermination Squad]].[[/Spoiler]] [[Redacted]]Getting scanned in [[Sector 7]] will summon an [[Intercept Squad]], which means you messed up.[[/Redacted]]\nResearchers are also equipped anti-corruption utilities such as a [[Imp. Corruption Screen]], and are weak to Electromagnetic, Impact, Slashing, Piercing damage and slightly resistant to Thermal damage.",
    "Spoiler": "Spoiler"
   },
   {
