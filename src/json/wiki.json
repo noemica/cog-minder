@@ -1544,7 +1544,7 @@
   },
   {
    "Name": "Adv. Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Advanced Drone|Advanced Drones]]."
   },
   {
    "Name": "Adv. Dynamic Insulation System",
@@ -1968,7 +1968,7 @@
   },
   {
    "Name": "Assault Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Assault Drone|Assault Drones]]."
   },
   {
    "Name": "Assault Rifle",
@@ -2132,7 +2132,7 @@
   },
   {
    "Name": "Bomb Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Bomb Drone|Bomb Drones]]."
   },
   {
    "Name": "Bomb Factory No. 2",
@@ -2404,7 +2404,7 @@
   },
   {
    "Name": "Combat Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Combat Drone|Combat Drones]]."
   },
   {
    "Name": "Compactor",
@@ -2496,7 +2496,7 @@
   },
   {
    "Name": "Decoy Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Decoy Drone|Decoy Drones]]."
   },
   {
    "Name": "Deep Network Scanner",
@@ -2560,7 +2560,7 @@
   },
   {
    "Name": "Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Drone|Drones]]."
   },
   {
    "Name": "Dual-blade Saw",
@@ -2969,7 +2969,7 @@
   },
   {
    "Name": "Firepult",
-   "Content": ""
+   "Content": "After firing, sometimes a log message [[GameText]]Firepult emits an uncontrolled burst of heat.[[/GameText]] will appear. When this happens, a large amount of additional heat will be added to Cogmind's current temperature. The burst of heat starts at about an additional 100 heat when it first occurs. Sometimes, it is followed by an additional message [[GameText]]Several Firepult components seem to have fused.[[/GameText]]. The amount of heat Cogmind gains will continue to increase as more heat bursts occur. Eventually this effect will cap at around the 300-400 additional heat range. Using [[Coolant Injectors]] greatly helps to mitigate the unpredictable heat generation."
   },
   {
    "Name": "Fission Core",
@@ -3165,7 +3165,7 @@
   },
   {
    "Name": "Hacking Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Hacking Drone|Hacking Drones]]."
   },
   {
    "Name": "Hacking Suite",
@@ -4041,7 +4041,7 @@
   },
   {
    "Name": "Latent Energy Streamer",
-   "Content": ""
+   "Content": "The Latent Energy Streamer uses a unique mechanic called latent energy to fire. At maximum latent energy capacity (100), the true damage potential if 90-100, with 1% disruption and +4 salvage.\n[[Heading]]Latent Energy[[/Heading]]\nLatent Energy is present all around the map but only in generally small quantities. The most latent energy is present in the various machinery. This means that the Streamer tends to be unimpressive in [[Caves]], but much stronger in [[0b10]]-controlled locations. Each type of machine has a different amount of latent energy it can provide to the Streamer. Generally, larger machines provide more latent energy. Attaching the Latent Energy Streamer allows visualization of how much latent energy is in an area.\n[[Image]]Latent Energy Visualized.png|Latent energy visualized[[/Image]]\nLatent energy will gradually return to an area after being used to power the Streamer. Generally, all latent energy will be restored within about 30 turns. Some explosive machines will either become destabilized or explode instantly when used to power the Streamer. Any resulting destruction will contribute to Cogmind's [[Alert]] level."
   },
   {
    "Name": "Launcher Guidance Computer",
@@ -4125,7 +4125,7 @@
   },
   {
    "Name": "Lightpack 2.0",
-   "Content": ""
+   "Content": "Each time a part is added to inventory, there is a chance that the Lightpack will lose a random part. When this happens, the log will display a message [[GameText]][Item] swallowed by quantum anomaly within Lightpack 2.0.[[/GameText]] Occasionally, the same part may be spit out later with another message [[GameText]]Quantum anomaly discharges [Item].[[/GameText]]. These effects occur more frequently when the inventory is more full."
   },
   {
    "Name": "Linear Accelerator",
@@ -4325,7 +4325,7 @@
   },
   {
    "Name": "Mapping Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Mapping Drone|Mapping Drones]]."
   },
   {
    "Name": "Mass Driver",
@@ -4449,7 +4449,7 @@
   },
   {
    "Name": "Minesniffer Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Minesniffer Drone|Minesniffer Drones]]."
   },
   {
    "Name": "Minigun",
@@ -4473,7 +4473,7 @@
   },
   {
    "Name": "Mni. Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Mini Drone|Mini Drones]]."
   },
   {
    "Name": "Mni. Fusion Reactor",
@@ -5061,7 +5061,7 @@
   },
   {
    "Name": "Sensor Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Sensor Drone|Sensor Drones]]."
   },
   {
    "Name": "Shield Generator",
@@ -5189,7 +5189,7 @@
   },
   {
    "Name": "Splice Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Splice Drone|Splice Drones]]."
   },
   {
    "Name": "Splice Injector",
@@ -5281,7 +5281,7 @@
   },
   {
    "Name": "Supersonic Drone Bay",
-   "Content": ""
+   "Content": "Deploys a [[Trailblazer]]."
   },
   {
    "Name": "Surge Thruster",
@@ -5297,7 +5297,7 @@
   },
   {
    "Name": "Swarm Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Swarm Drone|Swarm Drones]]."
   },
   {
    "Name": "System Guard",
@@ -5405,7 +5405,7 @@
   },
   {
    "Name": "Thief Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Thief Drone|Thief Drones]]."
   },
   {
    "Name": "Thunder Hammer",
@@ -5541,7 +5541,7 @@
   },
   {
    "Name": "Wardrone Bay",
-   "Content": ""
+   "Content": "Deploys [[Wardrone|Wardrones]]."
   },
   {
    "Name": "Warp Cannon",
@@ -5605,7 +5605,7 @@
   },
   {
    "Name": "Z-Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Z-Drone|Z-Drones]]."
   },
   {
    "Name": "Z-bomb Delivery System",
