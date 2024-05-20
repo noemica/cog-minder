@@ -445,8 +445,8 @@ Behemoths are often found in their own spot inside a wall, often as part of a [[
 "CL-ANK","Bot",""
 "CL-ANK's Mallet","Part",""
 "CPS Tube","Part",""
-"CR-A16's Behemoth Slayer","Part",""
-"CR-A16's Pointy Stick","Part",""
+"CR-A16's Behemoth Slayer","Part","Transformed from [[CR-A16's Pointy Stick]]. The Behemoth Slayer will always instantly kill any [[Behemoth]] it hits. Note: This only applies to standard [[0b10]] Behemoth-class bots. [[Marauder|Marauders]] and the [[Superbehemoth]] are immune to this effect. When its effect activates, the game log [[GameText]][Behemoth] suddenly blasts apart at the seams.[[/GameText]]"
+"CR-A16's Pointy Stick","Part","Given by the [[Derelict]] CR-A16 in [[Zion]]. When used to attack [[Behemoth|Behemoths]], there is a chance that this will transform into [[CR-A16's Behemoth Slayer]]. When this occurs, the log message [[GameText]]CR-A16's Pointy Stick's crusty surface crumbles away to reveal its sleek core, which hums to life.[[/GameText]] will appear.\nNote: This transformation effect only applies to standard [[0b10]] Behemoth-class bots. [[Marauder|Marauders]] and the [[Superbehemoth]] are immune to this effect. However, it will still transform if used on an allied Behemoth or disabled one, such as the Behemoths that sometimes appear in [[Zhirov (Location)]]."
 "Carbide Saw","Part",""
 "Carbon-fiber Leg","Part",""
 "Cargo Convoy","Other","[[Image]]Cargo Convoy.png|Intact cargo convoy[[/Image]]
@@ -1085,7 +1085,7 @@ When entering -3 Research, the Exiles will send a warning message to Cogmind ind
 "G-50 Soldier","Bot","Soldier Content"
 "G-67 Veteran","Bot",""
 "G-73 Enforcer","Bot",""
-"GAL Module","Part",""
+"GAL Module","Part","Found in [[Zion]], with the [[Derelict]] V3-CT5 nearby. When a [[Hyp. EM Gauss Rifle]] is picked up, the GAL Module will attach to the Rifle with the log message [[GameText]]GAL Module attaches itself to Hyp. EM Gauss Rifle.[[/GameText]] The Rifle will be transformed into the [[Modified EM Gauss Rifle]]."
 "GOLEM Unit","Part","GOLEM Units are unique utilities found in the [[Zion Deep Caves]]. They are contained within the GOLEM Chambers found in the western wall. When attached and activated, they will produce a variety of assembled parts if there are empty slots available. While being integrated, these assembled parts have no effect and 0 coverage. These parts increase by 3 integrity every turn, and become active when their current integrity reaches 100% of maximum. Parts are built in the following order, assuming all slots are empty:
 [[Image]]Golem Parts.png|A full GOLEM loadout[[/Image]]
 [[Table]]Part|Turns to build part|Total time to build||[[Asb. Alloy Leg]] #1|133|133||[[Asb. Flux Generator]]|117|250||Asb. Alloy Leg #2|133|383||[[Asb. Biocell Array]] #1|17|400||[[Asb. Nanovents]] #1|2|402||Asb. Nanovents #2|2|404||[[Asb. Focal Cannon]] #1|52|456||[[Asb. Alloy Armor]] #1|67|523||Asb. Nanovents #3|2|525||[[Asb. Suspension Frame]]|18|543||Asb. Focal Cannon #2|52|595||[[Asb. Combat Suite]]|20|605||Asb. Alloy Armor #2|67|682||Asb. Biocell Array #2|17|699||Asb. Nanovents #4|2|701||Asb. Focal Cannon #3|52|753||Asb. Alloy Armor #3|67|820||[[Asb. Metafiber Network]]|17|837||Asb. Alloy Armor #4|67|904[[/Table]]
@@ -2494,8 +2494,8 @@ W8 [[Redacted]]Fortifying 0b10: Choose the Surrender option after destroying MAI
 "X-77 Beamer","Bot",""
 "X-82 Rainmaker","Bot",""
 "X-87 Electro","Bot",""
-"XL Autogun Array","Part",""
-"XL Autogun Subcomponent","Part",""
+"XL Autogun Array","Part","After the XL Autogun Array falls to around 50% integrity, a log message [[GameText]]XL Autogun Array falls apart.[[/GameText]] will be shown. When this occurs, the Array will be destroyed and 4 [[XL Autogun Subcomponent|XL Autogun Subcomponents]] will appear on the floor around Cogmind."
+"XL Autogun Subcomponent","Part","4 of these are created when the [[XL Autogun Array]] falls apart."
 "Xenon Bombardment Thruster","Part",""
 "Y-45 Defender","Bot",""
 "Y-54 Guardian","Bot",""
@@ -2504,7 +2504,7 @@ W8 [[Redacted]]Fortifying 0b10: Choose the Surrender option after destroying MAI
 "YI-UF0","Bot",""
 "YI-UF0's Bottomless Matter Pit","Part",""
 "YI-UF0's Doublenader","Part",""
-"YOLO Cannon","Part",""
+"YOLO Cannon","Part","Rarely on firing, the YOLO Cannon will explode with the log message [[GameText]]YOLO Cannon suddenly explodes.[[/GameText]] When this occurs, the YOLO cannon and up to 3 other random parts will instantly be destroyed. Cogmind will also lose half of the current core integrity when this effect happens."
 "Z-Courier","Bot",""
 "Z-Drone","Bot",""
 "Z-Drone Bay","Part","Deploys [[Z-Drone|Z-Drones]]."

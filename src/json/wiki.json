@@ -2152,11 +2152,11 @@
   },
   {
    "Name": "CR-A16's Behemoth Slayer",
-   "Content": ""
+   "Content": "Transformed from [[CR-A16's Pointy Stick]]. The Behemoth Slayer will always instantly kill any [[Behemoth]] it hits. Note: This only applies to standard [[0b10]] Behemoth-class bots. [[Marauder|Marauders]] and the [[Superbehemoth]] are immune to this effect. When its effect activates, the game log [[GameText]][Behemoth] suddenly blasts apart at the seams.[[/GameText]]"
   },
   {
    "Name": "CR-A16's Pointy Stick",
-   "Content": ""
+   "Content": "Given by the [[Derelict]] CR-A16 in [[Zion]]. When used to attack [[Behemoth|Behemoths]], there is a chance that this will transform into [[CR-A16's Behemoth Slayer]]. When this occurs, the log message [[GameText]]CR-A16's Pointy Stick's crusty surface crumbles away to reveal its sleek core, which hums to life.[[/GameText]] will appear.\nNote: This transformation effect only applies to standard [[0b10]] Behemoth-class bots. [[Marauder|Marauders]] and the [[Superbehemoth]] are immune to this effect. However, it will still transform if used on an allied Behemoth or disabled one, such as the Behemoths that sometimes appear in [[Zhirov (Location)]]."
   },
   {
    "Name": "Carbide Saw",
@@ -3045,7 +3045,7 @@
   },
   {
    "Name": "GAL Module",
-   "Content": ""
+   "Content": "Found in [[Zion]], with the [[Derelict]] V3-CT5 nearby. When a [[Hyp. EM Gauss Rifle]] is picked up, the GAL Module will attach to the Rifle with the log message [[GameText]]GAL Module attaches itself to Hyp. EM Gauss Rifle.[[/GameText]] The Rifle will be transformed into the [[Modified EM Gauss Rifle]]."
   },
   {
    "Name": "GOLEM Unit",
@@ -5581,11 +5581,11 @@
   },
   {
    "Name": "XL Autogun Array",
-   "Content": ""
+   "Content": "After the XL Autogun Array falls to around 50% integrity, a log message [[GameText]]XL Autogun Array falls apart.[[/GameText]] will be shown. When this occurs, the Array will be destroyed and 4 [[XL Autogun Subcomponent|XL Autogun Subcomponents]] will appear on the floor around Cogmind."
   },
   {
    "Name": "XL Autogun Subcomponent",
-   "Content": ""
+   "Content": "4 of these are created when the [[XL Autogun Array]] falls apart."
   },
   {
    "Name": "Xenon Bombardment Thruster",
@@ -5601,7 +5601,7 @@
   },
   {
    "Name": "YOLO Cannon",
-   "Content": ""
+   "Content": "Rarely on firing, the YOLO Cannon will explode with the log message [[GameText]]YOLO Cannon suddenly explodes.[[/GameText]] When this occurs, the YOLO cannon and up to 3 other random parts will instantly be destroyed. Cogmind will also lose half of the current core integrity when this effect happens."
   },
   {
    "Name": "Z-Drone Bay",
