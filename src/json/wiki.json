@@ -2536,7 +2536,7 @@
   },
   {
    "Name": "Dirty Datajack",
-   "Content": ""
+   "Content": "The following RIF hacks can be performed:\n[[List]]amplify_resonance|disable_weapons|go_dormant|overload_power|overwrite_iff|reboot_system|spike_heat[[/List]]"
   },
   {
    "Name": "Disintegrator",
@@ -4505,7 +4505,7 @@
   },
   {
    "Name": "Modified EM Gauss Rifle",
-   "Content": ""
+   "Content": "The following RIF hacks can be performed:\n[[List]]amplify_resonance|disable_weapons|overload_power|overwrite_iff|reboot_system|spike_heat[[/List]]"
   },
   {
    "Name": "Modified Sigix Sheargun",
@@ -4561,7 +4561,7 @@
   },
   {
    "Name": "Navigation Efficiency Matrix",
-   "Content": ""
+   "Content": "The Navigation Efficiency Matrix (NEM) is a single use [[Alien Artifact]] that will cause Cogmind to teleport at random intervals. When attached, the log message [[GameText]]Navigation Efficiency Matrix installed, partial failure due to system anomalies.[[/GameText]] will appear.\n[[Image]]NEM.gif|Effect of the Navigation Efficiency Matrix[[/Image]]\n[[Heading]]Teleport effects[[/Heading]]\nAn NEM teleport behaves similarly to a standard [[Transdimensional Reconstructor]] effect. All bots that are tracking Cogmind will instantly lose tracking, even including perfect tracking mechanics like [[Extermination Squad|Exterminations]] use. However, unlike a standard teleport, the NEM can teleport Cogmind through solid walls. This can sometimes be useful for escaping squads as it will place Cogmind out of sight in a different room. One downside of this effect is that teleporting can repeatedly trigger the [[Watcher]] [[Alert]] increase on sight, as it will forget Cogmind each time the teleport occurs.\n[[Heading:2]]Frequency[[/Heading]]\nThere are 2 \"timers\" that can activate an NEM teleport. One is based on tiles moved, and the other is based on non-moving actions.\nThe non-moving actions timer will count up whenever Cogmind performs any action other than moving. This includes waiting in place, so it is not possible to avoid teleports altogether. The non-moving action timer will trigger every 36-48 actions.\nThe moving actions timer will count up for every move Cogmind makes. This timer is much shorter, and will occur 20-32 tiles moved.\n[[Heading:2]]Distance[[/Heading]]\nA single NEM teleport will move Cogmind anywhere between 8-12 tiles from the original location. If a [[Subatomic Replicator]] is used on the NEM and two are consumed, this effect doubles to 16-24 tiles moved."
   },
   {
    "Name": "Neutrino Core",

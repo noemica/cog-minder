@@ -811,7 +811,8 @@ An alert will indicate whenever a Demolisher squad is dispatched. Additionally, 
 "Diametric Drive","Part",""
 "Dimensional Node Initializer","Part",""
 "Dirty Bomb Trap","Part",""
-"Dirty Datajack","Part",""
+"Dirty Datajack","Part","The following RIF hacks can be performed:
+[[List]]amplify_resonance|disable_weapons|go_dormant|overload_power|overwrite_iff|reboot_system|spike_heat[[/List]]"
 "Disintegrator","Part",""
 "Dispersion Rifle","Part",""
 "Disposable Heat Sink","Part",""
@@ -1710,7 +1711,8 @@ There are a mix of friendly and hostile events that can occur in the Mines. Whil
 "Mni. Tearclaws","Part",""
 "Mobile Assembly Unit","Part",""
 "Mobile Refinery Mk. CCLXVII","Part",""
-"Modified EM Gauss Rifle","Part",""
+"Modified EM Gauss Rifle","Part","The following RIF hacks can be performed:
+[[List]]amplify_resonance|disable_weapons|overload_power|overwrite_iff|reboot_system|spike_heat[[/List]]"
 "Modified Sigix Sheargun","Part",""
 "Modified TNC","Part",""
 "Molecular Deconstructor","Part",""
@@ -1733,7 +1735,7 @@ There are a mix of friendly and hostile events that can occur in the Mines. Whil
 "NK-0LA's Tesla Doomcannon","Part",""
 "Nanoactuators","Part",""
 "Nanosword","Part",""
-"Navigation Efficiency Matrix","Part",""
+"Navigation Efficiency Matrix","Part","The Navigation Efficiency Matrix (NEM) is a single use [[Alien Artifact]] that will cause Cogmind to teleport at random intervals. When attached, the log message [[GameText]]Navigation Efficiency Matrix installed, partial failure due to system anomalies.[[/GameText]] will appear.\n[[Image]]NEM.gif|Effect of the Navigation Efficiency Matrix[[/Image]]\n[[Heading]]Teleport effects[[/Heading]]\nAn NEM teleport behaves similarly to a standard [[Transdimensional Reconstructor]] effect. All bots that are tracking Cogmind will instantly lose tracking, even including perfect tracking mechanics like [[Extermination Squad|Exterminations]] use. However, unlike a standard teleport, the NEM can teleport Cogmind through solid walls. This can sometimes be useful for escaping squads as it will place Cogmind out of sight in a different room. One downside of this effect is that teleporting can repeatedly trigger the [[Watcher]] [[Alert]] increase on sight, as it will forget Cogmind each time the teleport occurs.\n[[Heading:2]]Frequency[[/Heading]]\nThere are 2 ""timers"" that can activate an NEM teleport. One is based on tiles moved, and the other is based on non-moving actions.\nThe non-moving actions timer will count up whenever Cogmind performs any action other than moving. This includes waiting in place, so it is not possible to avoid teleports altogether. The non-moving action timer will trigger every 36-48 actions.\nThe moving actions timer will count up for every move Cogmind makes. This timer is much shorter, and will occur 20-32 tiles moved.\n[[Heading:2]]Distance[[/Heading]]\nA single NEM teleport will move Cogmind anywhere between 8-12 tiles from the original location. If a [[Subatomic Replicator]] is used on the NEM and two are consumed, this effect doubles to 16-24 tiles moved."
 "Neutrino Core","Part",""
 "Neutron Cannon","Part",""
 "Neutron Missile Launcher","Part",""
