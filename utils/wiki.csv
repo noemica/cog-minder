@@ -711,7 +711,7 @@ Certain groups will no longer trust Cogmind as a result of using a CRM. If [[Zhi
 [[Redacted]][[Heading:3]][[Sigix Exoskeleton]] Control[[/Heading]]
 Cogmind is able to pilot the Exoskeleton located in [[Section 7]].[[/Redacted]]
 [[Heading:3]]Unique Wintype[[/Heading]]
-taking a [[Surface]] exit after using a CRM awards the W2 wintype.
+Taking a [[Surface]] exit after using a CRM awards the W2 wintype.
 [[Heading]]Where to find[[/Heading]]
 As an Alien Artifact, the CRM is only found in a few specific places:
 [[Gallery]][[Redacted]]Lab CRM.png[[/Redacted]]|[[Redacted]][[Lab]], guaranteed spawn every game[[/Redacted]]|Quarantine CRM.png|[[Quarantine]], almost every game in unique machinery|[[Redacted]]Section 7 CRM.png[[/Redacted]]|[[Redacted]]Found in Section 7 unguarded Alien Artifact Suspension Chambers, random chance[[/Redacted]]|[[Redacted]]Section 7 CRM Cache.png[[/Redacted]]|[[Redacted]]1-3 can be found in the Section 7 LRC cache, random chance[[/Redacted]][[/Gallery]]"
@@ -2117,7 +2117,8 @@ Cryocooling Duct machines may be sometimes found in Quarantine. These machines t
 "Siege Mode","Other",""
 "Sigix","Other",""
 "Sigix Broadsword","Part",""
-"Sigix Containment Pod","Part",""
+"Sigix Containment Pod","Part","The Sigix Containment Pod can be found in [[Quarantine]]. It has no gameplay effect by itself, but it enables the W3 [[Wintypes|Wintype]] and provides 5000 bonus score if carried to a win.
+[[Redacted]]The Sigix Containment Pod can be put in the [[Sigix Exoskeleton]] in [[Section 7]] to create an allied [[Sigix Warrior]].[[/Redacted]]"
 "Sigix Corpse","Part",""
 "Sigix Exoskeleton","Part","[[Image]]Section 7 Sigix Exoskeleton.png|The Exoskeleton room in Section 7[[/Image]]
 The Sigix Exoskeleton is an [[Alien Artifact]] that is only found in [[Section 7]]. Initially it is found on an unpowered [[Sigix Warrior]] named Sigix Exoskeleton in the bottom right corner of the hangar. If Cogmind has used a [[Core Reset Matrix]] (CRM), it is possible to enter the Exoskeleton, which dramatically alters gameplay for the rest of the current run.
@@ -2478,14 +2479,14 @@ Watchers are weak to Electromagnetic damage."
 "Wheel","Part",""
 "Wheels","Part Group",""
 "Wintypes","Other","W0 ""Escaped"": Take a [[Surface]] exit on -1.
-W1 [[Redacted]]""Establishing 0b11"": Take a Surface exit on -1 after destroying both phases of [[MAIN.C]].[[/Redacted]]
-W2 [[Spoiler]]Heading to fleet: Take a surface exit on -1 after using a [[Core Reset Matrix]].[[/Spoiler]]
-W3 [[Spoiler]]Destroyed 0b10: Take a Surface exit on -1 while carrying the [[Sigix Containment Pod]] in inventory. [[Redacted]]May also be performed by taking the exit with the [[Sigix Warrior]].[[/Redacted]][[/Spoiler]]
-W4 [[Redacted]]Assimilated 0b10: Stand next to the unbroken 0b10 Conduit machine in MAIN.C's room in [[Command]] after either killing both forms of MAIN.C or with [[RIF]].[[/Redacted]]
-W5 [[Redacted]]Destroyed Tau Ceti IV: In [[Access_0]], obtain the [[A2 Data Core]] by killing [[A2]] and perform Gate Tests 138-A and 138-B once, then test 138-C twice on the Gate Controls terminal with an intact Singularity Gate machine.[[/Redacted]]
-W6 [[Redacted]]Escaped singularity: In Access_0, destroy all 4 Subspace Access Nodes, destroy the Architect, and take the surface exit within 10 turns.[[/Redacted]]
-W7 [[Redacted]]Establishing Free Derelict Territories: In Command, destroy both forms of MAIN.C with [[Warlord]] still alive and not shut down.[[/Redacted]]
-W8 [[Redacted]]Fortifying 0b10: Choose the Surrender option after destroying MAIN.C's outer shell, then destroy enough [[Enhanced Q-Series]] while keeping MAIN.C alive.[[/Redacted]]"
+W1 [[Redacted]]""Establishing 0b11"": Take a Surface exit on -1 after destroying both phases of [[MAIN.C]] in [[Command]].[[/Redacted]]
+W2 [[Spoiler]]""Heading to fleet"": Take a surface exit on -1 after using a [[Core Reset Matrix]].[[/Spoiler]]
+W3 [[Spoiler]]""Destroyed 0b10"": Take a Surface exit on -1 while carrying the [[Sigix Containment Pod]] in inventory. [[Redacted]]May also be performed by taking the exit with the [[Sigix Warrior]].[[/Redacted]][[/Spoiler]]
+W4 [[Redacted]]""Assimilated 0b10"": Stand next to the unbroken 0b10 Conduit machine in MAIN.C's room in Command after either killing both forms of MAIN.C or with [[RIF]].[[/Redacted]]
+W5 [[Redacted]]""Destroyed Tau Ceti IV"": In [[Access_0]], obtain the [[A2 Data Core]] by killing [[A2]] and perform Gate Tests 138-A and 138-B once, then test 138-C twice on the Gate Controls terminal with an intact Singularity Gate machine.[[/Redacted]]
+W6 [[Redacted]]""Escaped singularity"": In Access_0, destroy all 4 Subspace Access Nodes, destroy the [[Architect]], and take the surface exit within 10 turns.[[/Redacted]]
+W7 [[Redacted]]""Establishing Free Derelict Territories"": In Command, destroy both forms of MAIN.C with [[Warlord]] still alive and not shut down.[[/Redacted]]
+W8 [[Redacted]]""Fortifying 0b10"": Choose the Surrender option after destroying MAIN.C's outer shell, then destroy enough [[Enhanced Q-Series]] while keeping MAIN.C alive.[[/Redacted]]"
 "Wizard","Bot Group","Wizards are a [[Derelict]] variant of the [[0b10]] [[Programmer]], armed solely with a [[Riot Gun]]. Compared to Programmers, Wizards have plenty of [[Hackware]] and a [[Corruption Screen]] to help them counteract corruption."
 "Wizard (5)","Bot",""
 "Wizard (7)","Bot",""
