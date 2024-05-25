@@ -184,6 +184,9 @@ jq(function ($) {
         $("#editLinkTextButton").on("click", () => {
             insertWrappedText("[[", "]]");
         });
+        $("#editColorTextButton").on("click", () => {
+            insertWrappedText("[[Color]]", "[[/Color]]");
+        });
         $("#editHeading1TextButton").on("click", () => {
             insertWrappedText("[[Heading]]", "[[/Heading]]");
         });
