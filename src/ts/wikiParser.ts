@@ -312,6 +312,25 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
     state.index = result.index + result[0].length;
 }
 
+// Process a Color tag like [[Color:Red]]Red Text[[/Color]]
+function processColorTag(state: ParserState, result: RegExpExecArray) {
+    let color = result[2];
+
+    if (color === undefined || color === "") {
+        recordError(state, `Color tag with no color, has been marked cyan`);
+        color = "cyan";
+    }
+    const subSectionStart = result.index + result[0].length;
+    const tempState = ParserState.Clone(state);
+    tempState.index = subSectionStart;
+    tempState.inlineOnly = "InlineOnly";
+
+    processSection(tempState, "/Color");
+    state.index = tempState.index;
+    const boldedContent = `<span style="color:${color}">${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</span>`;
+
+    state.output.push({ groupType: "Grouped", html: boldedContent });
+}
 
 // Process a [[NonEmptyPages]][[/NonEmptyPages]] tag
 function processNonEmptyPagesTag(state: ParserState, result: RegExpExecArray) {
@@ -760,6 +779,7 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
 const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => void> = new Map([
     ["B", processBTag],
     ["BotGroups", processBotGroupsTag],
+    ["Color", processColorTag],
     ["GameText", processGameTextTag],
     ["Gallery", processGalleryTag],
     ["Heading", processHeadingTag],
