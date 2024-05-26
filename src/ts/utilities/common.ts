@@ -1385,8 +1385,14 @@ export function createItemDataContent(baseItem: Item): string {
     return html;
 }
 
-export function createImagePath(url: string) {
-    return rootDirectory + url;
+// Links to an external image if a valid full URL, otherwise creates a relative path
+export function createImagePath(nameOrUrl: string, fileDir: string = "") {
+    try {
+        new URL(nameOrUrl);
+        return nameOrUrl;
+    } catch (_) {
+        return fileDir + nameOrUrl;
+}
 }
 
 export function createLocationHtml(location: MapLocation, spoilersState: Spoiler, inPopover: boolean): string {
@@ -1570,6 +1576,25 @@ export function gallerySort(itemA: Item, itemB: Item): number {
     return res;
 }
 
+// Tries to get a bot by the name
+export function getBot(botName: string): Bot {
+    if (botName in botData) {
+        return botData[botName];
+    }
+
+    throw `${botName} not a valid bot`;
+}
+
+// Tries to get a bot by the name
+export function getBotOrNull(botName: string): Bot | null {
+    if (botName in botData) {
+        return botData[botName];
+    }
+
+    return null;
+}
+
+// Gets the image path for a specified bot
 export function getBotImageName(bot: Bot) {
     const imageName = botNameImageMap.get(bot.name);
     if (imageName !== undefined) {

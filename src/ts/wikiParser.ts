@@ -1,4 +1,5 @@
 import lore from "../json/lore.json";
+import { Bot } from "./botTypes";
 import { MapLocation, Spoiler } from "./types/commonTypes";
 import { WikiEntry } from "./types/wikiTypes";
 import {
@@ -9,6 +10,7 @@ import {
     createLocationHtml,
     escapeHtml,
     getBot,
+    getBotImageName,
     getItem,
     parseIntOrDefault,
 } from "./utilities/common";
@@ -98,7 +100,12 @@ export function createContentHtml(
     // Convert to HTML
     let outputHtml = outputGroupsToHtml(state.output, false);
     if (outputHtml === "") {
-        outputHtml = "<p>There is no content here. Please consider contributing. See the home page for details.</p>";
+        if (entry.type === "Bot" && (entry.extraData as Bot).description.length > 0) {
+            const bot = entry.extraData as Bot;
+            outputHtml = `<span class="wiki-game-text">${bot.description}</span>\n<p>This page is a stub. Please consider contributing.</p>`;
+        } else {
+            outputHtml = "<p>This page is a stub. Please consider contributing.</p>";
+        }
     }
     return {
         html: `<h1 class="wiki-heading">${
@@ -263,6 +270,87 @@ function processBTag(state: ParserState, result: RegExpExecArray) {
     state.output.push({ groupType: "Grouped", html: boldedContent });
 }
 
+// Process a [[BotGroups]][[/BotGroups]] tag
+function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
+    for (const groupEntry of state.allEntries.values()) {
+        if (groupEntry.type !== "Bot Group" || !canShowSpoiler(groupEntry.spoiler, state.spoiler)) {
+            continue;
+        }
+
+        // Get list of images to display
+        const images = new Set<string>();
+        for (const entry of state.allEntries.values()) {
+            if (entry.parentGroup === groupEntry) {
+                const bot = getBot(entry.name);
+                images.add(getBotImageName(bot));
+            }
+        }
+
+        let imageHtml = "";
+        for (const image of images.values()) {
+            imageHtml += `<img class="wiki-bot-group-image" src="${image}"/>`;
+        }
+
+        const tempState = new ParserState(
+            state.allEntries,
+            state.errors,
+            state.images,
+            false,
+            groupEntry.content,
+            "All",
+            state.spoiler,
+        );
+
+        processSection(tempState, undefined);
+
+        const content = `<h2 class="wiki-heading">${getLinkHtml(state, groupEntry, groupEntry.name)}${imageHtml}</h2>
+        ${outputGroupsToHtml(tempState.output, false)}`;
+
+        state.output.push({ groupType: "Individual", html: content });
+    }
+
+    state.index = result.index + result[0].length;
+}
+
+// Process a Color tag like [[Color:Red]]Red Text[[/Color]]
+function processColorTag(state: ParserState, result: RegExpExecArray) {
+    let color = result[2];
+
+    if (color === undefined || color === "") {
+        recordError(state, `Color tag with no color, has been marked cyan`);
+        color = "cyan";
+    }
+    const subSectionStart = result.index + result[0].length;
+    const tempState = ParserState.Clone(state);
+    tempState.index = subSectionStart;
+    tempState.inlineOnly = "InlineOnly";
+
+    processSection(tempState, "/Color");
+    state.index = tempState.index;
+    const boldedContent = `<span style="color:${color}">${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</span>`;
+
+    state.output.push({ groupType: "Grouped", html: boldedContent });
+}
+
+// Process a [[NonEmptyPages]][[/NonEmptyPages]] tag
+function processNonEmptyPagesTag(state: ParserState, result: RegExpExecArray) {
+    const listContents:string[] = [];
+    for (const groupEntry of state.allEntries.values()) {
+        const listContent = `<li>${getLinkHtml(state, groupEntry, groupEntry.name)}</li>`; //little band-aid fix for duplicated entries
+        if (listContents.includes(listContent) || groupEntry.content.length < 20 || !canShowSpoiler(groupEntry.spoiler, state.spoiler)) {
+            continue;
+        }
+
+        listContents.push(listContent);
+    }
+
+    listContents.sort();
+
+    state.output.push({ groupType: "Individual", html: `<ul class="wiki-list">${listContents.join("")}</ul>`});
+
+    state.index = result.index + result[0].length;
+}
+
 // Process a GameText tag like [[GameText]]Text[[/GameText]]
 function processGameTextTag(state: ParserState, result: RegExpExecArray) {
     // Process the heading subsection independently
@@ -351,7 +439,7 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         const imageCaptionHtml = outputGroupsToHtml(tempState.output, state.inSpoiler);
 
         // Append image content HTML
-        const path = createImagePath(`wiki_images/${imageName}`);
+        const path = createImagePath(`${imageName}`, `wiki_images/`);
         galleryContent += `<div>
             <div>
                 <a ${inSpoiler ? 'class="spoiler-image"' : ""} href="${path}" target="_blank">
@@ -463,7 +551,7 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
     }
 
     // Create the image with an optional caption
-    const path = createImagePath(`wiki_images/${imageName}`);
+    const path = createImagePath(`${imageName}`, `wiki_images/`);
     state.output.push({
         groupType: "Individual",
         html: `<div class="wiki-sidebar-image">
@@ -690,6 +778,8 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
 
 const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => void> = new Map([
     ["B", processBTag],
+    ["BotGroups", processBotGroupsTag],
+    ["Color", processColorTag],
     ["GameText", processGameTextTag],
     ["Gallery", processGalleryTag],
     ["Heading", processHeadingTag],
@@ -698,6 +788,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["List", processListTag],
     ["Locations", processLocationsTag],
     ["Lore", processLoreTag],
+    ["NonEmptyPages", processNonEmptyPagesTag],
     ["Spoiler", processSpoilerTag],
     ["Sub", processSubTag],
     ["Sup", processSupTag],

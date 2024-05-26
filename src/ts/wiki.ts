@@ -155,28 +155,10 @@ jq(function ($) {
             // the alternative which totally breaks the undo/redo stack
             const textArea = $("#editTextArea");
             textArea.trigger("focus");
-            document.execCommand("insertText", false, beforeText + afterText);
-            const newPosition = textArea.prop("selectionStart") - afterText.length;
-            textArea.prop("selectionStart", newPosition);
-            textArea.prop("selectionEnd", newPosition);
-
-            // The below text doesn't work well with the undo/redo stack
-            // // Insert the before and after text wrapping the selected text area
-            // // If there is no selection then it'll just be inserted at the cursor position
-            // // or the end if no text is selected at all
-            // const textArea = $("#editTextArea");
-            // const start = textArea.prop("selectionStart");
-            // const end = textArea.prop("selectionEnd");
-            // const initialText = textArea.val() as string;
-            // const preSplit = initialText.substring(0, start);
-            // const split = initialText.substring(start, end);
-            // const postSplit = initialText.substring(end);
-            // textArea.val(`${preSplit}${beforeText}${split}${afterText}${postSplit}`);
-            // (textArea.get(0) as any as HTMLTextAreaElement).setSelectionRange(
-            //     start + beforeText.length,
-            //     end + beforeText.length,
-            // );
-            // textArea.trigger("focus");
+            const initialText = textArea.val() as string;
+            const selection = initialText.substring(textArea.prop("selectionStart"), textArea.prop("selectionEnd"))
+            document.execCommand("insertText", false, beforeText + selection + afterText);
+            textArea.prop("selectionStart", textArea.prop("selectionStart") - afterText.length - selection.length - beforeText.length);
         }
         $("#editBoldTextButton").on("click", () => {
             insertWrappedText("[[B]]", "[[/B]]");
@@ -201,6 +183,9 @@ jq(function ($) {
         });
         $("#editLinkTextButton").on("click", () => {
             insertWrappedText("[[", "]]");
+        });
+        $("#editColorTextButton").on("click", () => {
+            insertWrappedText("[[Color]]", "[[/Color]]");
         });
         $("#editHeading1TextButton").on("click", () => {
             insertWrappedText("[[Heading]]", "[[/Heading]]");
@@ -1206,7 +1191,7 @@ jq(function ($) {
             const promises: Promise<any>[] = [];
 
             for (const imageName of parseResult.images.keys()) {
-                promises.push(loadImage(createImagePath(`wiki_images/${imageName}`)));
+                promises.push(loadImage(createImagePath(`${imageName}`, `wiki_images/`)));
             }
 
             if (parseResult.errors.length > 0) {
