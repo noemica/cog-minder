@@ -76,7 +76,7 @@ export default function SimulatorPage() {
                     }}
                 />
                 <LabeledInput
-                    label="Name of Fights"
+                    label="Number of Fights"
                     value={pageState.numFights}
                     onChange={(val) => updatePageState({ ...pageState, numFights: val })}
                     placeholder="100,000"

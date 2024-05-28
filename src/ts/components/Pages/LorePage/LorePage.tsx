@@ -63,9 +63,23 @@ function LoreTable({ pageState }: { pageState: LorePageState }) {
     const nameFilter = pageState.name?.toLowerCase() || "";
     const filterName = nameFilter.length > 0;
 
+    const contentFilter = pageState.content?.toLowerCase() || "";
+    const filterContent = contentFilter.length > 0;
+
+    const groupFilter = pageState.group?.toLowerCase() || "";
+    const filterGroup = groupFilter.length > 0;
+
     function GroupRows({ group }: { group: JsonLoreGroup }) {
+        if (filterGroup && !group.Name.toLowerCase().includes(groupFilter)) {
+            return <></>;
+        }
+
         const entries = group.Entries.filter((entry) => {
             if (filterName && !entry["Name/Number"].toLowerCase().includes(nameFilter)) {
+                return false;
+            }
+
+            if (filterContent && !entry["Content"].toLowerCase().includes(contentFilter)) {
                 return false;
             }
 

@@ -1830,7 +1830,7 @@ export function parseSearchParameters<T>(search: string, object: T): T {
         const paramValue = match[2];
 
         // Assign the parameter
-        object[paramName] = paramValue.replace("%23", "#").replace("%26", "&");
+        object[paramName] = paramValue.replaceAll("%23", "#").replaceAll("%26", "&");
     }
 
     return object;
