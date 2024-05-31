@@ -1175,9 +1175,7 @@ Haulers also are equipped with [[Storage Units|medium and larger storage units]]
 "Heart of Steel","Part",""
 "Heat","Other",""
 "Heat Sink","Part",""
-"Heavy","Bot Group","Heavies are [[Treads|treading]] [[0b10]] combat bots seen in a [[Security Squad]] guarding important points. Heavies are more formidable enemies than the [[Sentry]], and with their armament and plenty of armor should not be underestimated.
-Heavies are also equipped with sensors that allow them to detect the enemies (such as [[Cogmind]]) in a decent radius, and if they linger in it too long the Heavy may begin to move towards the enemy, or call a squad of [[Specialist|Specialists]] to the location of the enemy. 
-[[GameText]]ALERT: Suspicious intruders detected, dispatching specialist reinforcements to area.[[/GameText]]"
+"Heavy","Bot Group","Heavies are [[Treads|treading]] [[0b10]] combat bots seen in a [[Security Squad]] guarding important points and exits. Heavies are more formidable enemies than the [[Sentry]], and with their armament and plenty of armor should not be underestimated. Heavies, much like a [[Behemoth]], will attempt to destroy any obstacle between you (such as a wall) to fire at you if spotted.\nHeavies are also equipped with sensors that allow them to detect the enemies (such as [[Cogmind]]) in a decent radius, and if they linger in it too long the Heavy may begin to move towards the enemy, or call a squad of [[Specialist|Specialists]] to the location of the enemy. \n[[GameText]]ALERT: Suspicious intruders detected, dispatching specialist reinforcements to area.[[/GameText]]"
 "Heavy Explosive Trap","Part",""
 "Heavy Servo Lattice","Part",""
 "Helical Railgun","Part",""

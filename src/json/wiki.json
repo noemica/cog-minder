@@ -1133,7 +1133,7 @@
     "H-71 Marshal",
     "H-81 Overseer"
    ],
-   "Content": "Heavies are [[Treads|treading]] [[0b10]] combat bots seen in a [[Security Squad]] guarding important points. Heavies are more formidable enemies than the [[Sentry]], and with their armament and plenty of armor should not be underestimated.\nHeavies are also equipped with sensors that allow them to detect the enemies (such as [[Cogmind]]) in a decent radius, and if they linger in it too long the Heavy may begin to move towards the enemy, or call a squad of [[Specialist|Specialists]] to the location of the enemy. \n[[GameText]]ALERT: Suspicious intruders detected, dispatching specialist reinforcements to area.[[/GameText]]"
+   "Content": "Heavies are [[Treads|treading]] [[0b10]] combat bots seen in a [[Security Squad]] guarding important points and exits. Heavies are more formidable enemies than the [[Sentry]], and with their armament and plenty of armor should not be underestimated. Heavies, much like a [[Behemoth]], will attempt to destroy any obstacle between you (such as a wall) to fire at you if spotted.\nHeavies are also equipped with sensors that allow them to detect the enemies (such as [[Cogmind]]) in a decent radius, and if they linger in it too long the Heavy may begin to move towards the enemy, or call a squad of [[Specialist|Specialists]] to the location of the enemy. \n[[GameText]]ALERT: Suspicious intruders detected, dispatching specialist reinforcements to area.[[/GameText]]"
   },
   {
    "Name": "Hunter",
