@@ -2508,7 +2508,7 @@
   },
   {
    "Name": "Derelict Log",
-   "Content": ""
+   "Content": "Derelict logs are items found in [[Caves]], consumed immediately when moved over.\n[[Heading]]Possible Intel[[/Heading]]\nMost of these usually affect the next main floor, rendered useless if you skip a depth somehow.\n[[List]]A number of zone layouts|Trap locations|Machine locations|Exit locations (may also be the same location)|[[Security Squad]] locations|Location of a random floor, or [[Zion]], or [[Warlord (Location)]]|etc.[[/List]]"
   },
   {
    "Name": "Desublimator",
@@ -7057,7 +7057,7 @@
     "Hellfire Trap",
     "Armageddon Trap"
    ],
-   "Content": ""
+   "Content": "Traps are most often found in groups called arrays, and appear in a variety of layouts including rows, blocks or sparser \u201cminefields\u201d. They are, however, usually triggered individually.\n[[Heading]]Triggering[[/Heading]]\nMoving over a trap does not always trigger it. The chance is instead determined by the form of [[propulsion]]:\n[[Table]]\nMode|Probability\n|| Overweight | 100%\n|| [[Treads]] | 100%\n|| [[Legs]] | 75%\n|| [[Wheels]] | 50%\n|| [[Hover Units|Hover]]/Core | 40%\n|| [[Flight Units|Flight]] | 20%\n[[/Table]]\nOnce triggered, the trap at that position is spent and will not trigger again. (Some traps exhibit special behavior in this regard.)\nNote there are also multiple undocumented circumstances under which a trap may be triggered, not simply regular movement. Also, [[Stasis Trap]]s are a special case and their chance to trigger is the opposite of the values listed above (Flight ex: 100 - 20 = 80%).\nCogmind has a 1% chance to detect each trap in view, checked every turn, where each active [[Structural Scanner]] provides a +2% bonus. Hack terminals to reveal entire trap arrays at once. Nearby allied [[Operator]]s will also reveal hidden traps within your field of vision, and local trap locations can also be extracted from an operator [[Data Core]].\n[[Heading]]Removal[[/Heading]]\nThe simplest way to remove one or more traps is to destroy the section of floor housing it. Arrays of traps can be permanently disarmed via terminal hacking, and disabling traps on an individual basis is a possible side effect of hacking one with an active melee [[Datajacks|datajack]].\n[[Heading]]Collection[[/Heading]]\nAn enterprising Cogmind can, with the use of a [[Trap Extractor]] or similar variant, pick up the various traps scattered throughout [[Complex 0b10]] for their own use.\n[[Heading]]Reprogramming[[/Heading]]\nBy default traps are programmed to trigger on detection of any foreign robot, a setting that can be modified via hacking. Known traps may be reprogrammed with an active melee datajack by bumping them, and entire arrays of traps can be reprogrammed at once from nearby terminals. Reprogrammed traps will no longer recognize Cogmind or allies as a threat, instead reacting to local combat robots. As part of the new programming, each trap\u2019s sensitivity will also be set dangerously high, ensuring it will trigger whenever a hostile moves over it, regardless of propulsion.\n[[Heading]]Lore[[/Heading]]\n[[Lore]]0b10 Records|Traps[[/Lore]]"
   },
   {
    "Name": "Treads",
@@ -7935,7 +7935,7 @@
  "Other": [
   {
    "Name": "0b10",
-   "Content": ""
+   "Content": "This is the main complex. Cogmind starts from the bottom [[Junkyard]] level at depth -11. Every level have stairs to an upper level until level -1 where the surface [[Access]] can be found. The levels can also contain other doorways which lead to different branches that eventually connect to the main complex. Read more about all levels at [[wiki.html#Locations|Locations]].\n[[Heading]]Lore[[/Heading]]\n[[Lore]]0b10 Records|Complex 0b10[[/Lore]]\nEntrances to new levels are implied to be long uneventful corridors where Cogmind loses all pursuers."
   },
   {
    "Name": "Alarm Trap",
@@ -7972,7 +7972,7 @@
   },
   {
    "Name": "Branch",
-   "Content": ""
+   "Content": "Branches are side locations from the main [[0b10]] complex, often with its own unique rewards and sights to behold. All of them lead back to main locations.\nRead more at: [[wiki.html#Locations|Locations]]."
   },
   {
    "Name": "Cargo Convoy",
@@ -8030,7 +8030,7 @@
   },
   {
    "Name": "Fabricator",
-   "Content": ""
+   "Content": "Fabricators construct parts and robots based on schematics. [[Schematic|Schematics]] can be acquired by using [[Scanalyzer|Scanalyzers]] or hacking [[Terminal|Terminals]] (see your status page for access to a list of schematics currently in your possession), then loaded into a fabricator which will report the resources it requires to complete construction. Starting another build on a busy fabricator will cancel the current construction. Loading a new schematic and printing it will summon an [[Investigation Squad]], unless you have the appropriate [[Authchips|Authchip]]. [[Image]]../game_sprites/Fabricator.png|Friend Creator[[/Image]]\n\nBuilding bots will build multiple.\n\nHigher security fabricators are capable of much faster construction. \n\n[[Heading]]Lore[[/Heading]]\n[[Lore]]0b10 Records|Fabricator[[/Lore]]"
   },
   {
    "Name": "Farcom",
@@ -8042,7 +8042,7 @@
   },
   {
    "Name": "Garrison (Machine)",
-   "Content": "[[Image]]Assembled Compromised Garrison.png|[[Assembled]] swarming out of a compromised Garrison[[/Image]]"
+   "Content": "[[Image]]Assembled Compromised Garrison.png|[[Assembled]] swarming out of a compromised Garrison[[/Image]]\nOld wiki port, information may be outdated\n[[Heading]]What does a Garrison Access Machine do?[[/Heading]]\nDispatched combat squads may now instead come from a garrison instead of a regular access point, especially if located closer to the target area. So for those of you being bad robots (all of you!), you\u2019ll notice enemy response times have gone down. Also, unlike normal access points where the game has been nice about not allowing hostiles to enter through them when you\u2019re nearby, hostiles can emerge from a garrison even if you\u2019re sitting right next to it! No loitering, please. But wait, there\u2019s more\u2026\nCombat robots being attacked in the vicinity of a garrison may call for backup. Knowing this you probably don\u2019t want to engage targets stationed at or passing by one these places. Unless of course\u2026 you\u2019re carrying a [[Transmission Jammer]] ;).\nEven unarmed non-hostile robots might report you and call a nearby garrison for rescue if you shoot them (and they survive =p) while close enough. If you can leave the area quickly enough that won\u2019t be a problem, though, since the garrison squad will only head to and monitor the area around the reported disturbance.\nOf course, garrisons can\u2019t spit out hostiles indefinitely. There is a delay before a given garrison will respond to another event, and even some types of responses don\u2019t come all at once--a single response might be spread out over time, another reason to not hang around, unless your plan is to attack it :D \n[[Heading]]Hacking a Garrison[[/Heading]]\nLike everything Cogmind, there are always multiple strategic aspects to a feature, and hacking helps add more dimensions to this reinforcement mechanic, or as you\u2019ll eventually discover, even turn it on the enemy! This is where things really get interesting\u2026\n[[List]][[GameText]]Seal[[/GameText]]: This locks the access point permanently (or at least for the while you\u2019ll be on that floor), originally meant as a native command to enable containment of a threat on one side or the other. It is difficult to pull off, but is the preferred way to effectively disabled one of these access points, since it won\u2019t attract any attention. (Unlike opening fire on it =p)|[[GameText]]Unlock[[/GameText]]: If you really, really (really) want to, you can unlock the door yourself! Now why would someone go and do that?[[/List]]\n[[Heading]]Attacking a Garrison[[/Heading]]\nGarrisons are a flavorful addition to the world that come with a number of unique mechanics, benefits, and drawbacks. They\u2019re your chance to take the battle to the enemy--think of it as you entering that building lobby in The Matrix :D\n[[Heading]]Some beneficial reasons to visit a garrison:[[/Heading]]\n[[List]]Gain allies, possibly raise and maintain a little army of your own.|Engage in robot hacking ([[RIF]]) in the subsequent area.|Impair defensive capabilities in the following area. Didn\u2019t mention this one yet :D. Having created a distraction by mounting a direct attack on a garrison, the enemy will be forced to recall some combat robots, thereby shrinking the average squad size by 1. This only applies if you end up back on the same map you left, not when advancing to a new area, but it\u2019s pretty significant!|Obtain better parts, if you\u2019re lucky\u2026|Have a chance to advance to another depth/area without searching for a normal exit in the main complex where floors might be sprawling and dangerous.|No Programmer dispatches, though you\u2019ll still have to deal with additional assault Carriers if you\u2019re causing enough trouble.|Earn bonus points for wreaking havoc.[[/List]]\n[[Heading]]And the top reasons to avoid garrisons:[[/Heading]]\n[[List]]Possibly very dangerous unless well-prepared! Again, this is to be expected; you\u2019re in a place where freaking everyone is packing guns, cannons, and other nasty things, quite extreme compared to most other areas of the world. It\u2019s also not exactly a huge space. There\u2019s less leeway for retreating and tactical positioning, limited sensor support, and a high probability of being ambushed.| Instead of gradually going down over time like in other floors, your security level goes up for as long as you stay inside a garrison! (Every time you see the \u201cALERT: Garrison interior compromised\u201d announcement, your influence just rose again.)|If you\u2019re running a speed/stealth build, my guess is you\u2019ll be heading into a death trap (I\u2019m also guessing someone will attempt to prove me wrong here\u2026). While maps are rather small and you might think you can fly your way past everything, one wrong or unlucky move and you could start feeling the pain.|Did I mention there are quite a few [[Stasis Trap]]s?[[/List]]"
   },
   {
    "Name": "Garrison Squad",
@@ -8162,7 +8162,7 @@
   },
   {
    "Name": "Scanalyzer",
-   "Content": ""
+   "Content": "Scanalyzers provide [[Schematic|Schematics]] for existing parts. Insert a part from your inventory, followed by the instruction to analyze. See your status page for access to a list of schematics currently in your possession.\n\nHigher security scanalyzers are less likely to damage your parts or require additional scanning passes.\n [[Image]]../game_sprites/Scanalyzer.png[[/Image]]\n[[Heading]]Lore[[/Heading]]\n[[Lore]]0b10 Records|Scanalyzer[[/Lore]]"
   },
   {
    "Name": "Schematic",
