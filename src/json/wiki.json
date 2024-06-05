@@ -4517,7 +4517,7 @@
   },
   {
    "Name": "Molecular Deconstructor",
-   "Content": ""
+   "Content": "When a bot is hit with the Molecular Deconstructor, they will take the 20-50 damage over a period of 2-5 turns, with 10 damage being dealt per turn. Multiple instances of the damage over time effect do stack with each other."
   },
   {
    "Name": "Molecular Scythe",

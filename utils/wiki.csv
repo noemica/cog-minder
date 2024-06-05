@@ -1678,7 +1678,7 @@ There are a mix of friendly and hostile events that can occur in the Mines. Whil
 [[List]]amplify_resonance|disable_weapons|overload_power|overwrite_iff|reboot_system|spike_heat[[/List]]"
 "Modified Sigix Sheargun","Part",""
 "Modified TNC","Part",""
-"Molecular Deconstructor","Part",""
+"Molecular Deconstructor","Part","When a bot is hit with the Molecular Deconstructor, they will take the 20-50 damage over a period of 2-5 turns, with 10 damage being dealt per turn. Multiple instances of the damage over time effect do stack with each other."
 "Molecular Scythe","Part",""
 "Momentum","Other",""
 "Multinova Projection Cannon","Part",""
