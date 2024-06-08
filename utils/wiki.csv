@@ -730,7 +730,7 @@ As an Alien Artifact, the CRM is only found in a few specific places:
 "Core Shielding","Part",""
 "Core Shieldings","Part Group",""
 "Core Stripper","Part",""
-"Corrupted Parts","Other","Attaching a corrupted part will give you [[Corruption]]. Corrupted parts may be repaired at a Repair Station or by [[Recalibrator]]."
+"Corrupted Parts","Other","Attaching a corrupted part will give you [[Corruption]]. Corrupted parts may be repaired at a Repair Station."
 "Corruption","Other","Stub
 Corruption describes the system corruption of a robot. 
 [[Heading]]Getting corruption[[/Heading]]

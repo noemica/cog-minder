@@ -7984,7 +7984,7 @@
   },
   {
    "Name": "Corrupted Parts",
-   "Content": "Attaching a corrupted part will give you [[Corruption]]. Corrupted parts may be repaired at a Repair Station or by [[Recalibrator]]."
+   "Content": "Attaching a corrupted part will give you [[Corruption]]. Corrupted parts may be repaired at a Repair Station."
   },
   {
    "Name": "Corruption",
