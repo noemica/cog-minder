@@ -43,7 +43,9 @@
 }
 
 .hack-info-button {
-    > * {
+    align-self: stretch !important;
+
+    > button {
         // Only show border on the left or we get too much overlap with
         // the table cell borders
         // Also remove border radius as it doesn't look good with
@@ -52,6 +54,7 @@
         border-radius: 0;
         border-width: 0 0 0 @border-width;
         padding: @button-small-padding;
+        height: 100%;
     }
 
     :hover {

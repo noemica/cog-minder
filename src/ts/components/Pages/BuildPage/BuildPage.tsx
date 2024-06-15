@@ -2,7 +2,7 @@ import LZString from "lz-string";
 import { ReactNode } from "react";
 import { useLocation, useSearch } from "wouter";
 
-import { getRangedVolleyTime, volleyTimeMap } from "../../../simulatorCalcs";
+import { getRangedVolleyTime, volleyTimeMap } from "../../../utilities/simulatorCalcs";
 import {
     Actuator,
     BaseItem,
@@ -409,8 +409,8 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     if (
         parts.find((p) => hasActiveSpecialProperty(p.part, p.active, "AirborneSpeedDoubling")) !== undefined &&
         (activeProp.length === 0 ||
-            activeProp[0].type === ItemType.HoverUnit ||
-            activeProp[0].type === ItemType.FlightUnit)
+            activeProp[0].type === "Hover Unit" ||
+            activeProp[0].type === "Flight Unit")
     ) {
         tusPerMove /= 2;
     }
@@ -419,7 +419,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     tusPerMove += Math.trunc(Math.max(0, totalMass - 1) / totalSupport) * overweightPenalty;
 
     // Then apply drag penalties if airborne...
-    if (propulsionType === ItemType.FlightUnit || propulsionType === ItemType.HoverUnit) {
+    if (propulsionType === "Flight Unit" || propulsionType === "Hover Unit") {
         tusPerMove += parts
             .filter((p) => p.part.slot === "Propulsion")
             .map((p) => (p.part as PropulsionItem).drag ?? 0)
@@ -427,9 +427,9 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     }
 
     // Also apply a cap of 20 for hover or 10 for flight
-    if (propulsionType === ItemType.FlightUnit) {
+    if (propulsionType === "Flight Unit") {
         tusPerMove = Math.max(tusPerMove, 10);
-    } else if (propulsionType === ItemType.HoverUnit) {
+    } else if (propulsionType === "Hover Unit") {
         tusPerMove = Math.max(tusPerMove, 10);
     }
 
@@ -437,7 +437,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     if (
         parts.find((p) => hasActiveSpecialProperty(p.part, p.active, "Metafiber")) !== undefined &&
         activeProp.length > 0 &&
-        activeProp[0].type === ItemType.Leg
+        activeProp[0].type === "Leg"
     ) {
         tusPerMove *= 0.8;
     }
@@ -483,13 +483,13 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         if (
             parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "QuantumCapacitor")).length > 0 &&
             activeWeapons.length === 1 &&
-            (activeWeapons[0].type === ItemType.EnergyGun || activeWeapons[0].type === ItemType.EnergyCannon)
+            (activeWeapons[0].type === "Energy Gun" || activeWeapons[0].type === "Energy Cannon")
         ) {
             cyclerModifier = 0.5;
         } else if (
             parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "LauncherLoader")).length > 0 &&
             activeWeapons.length === 1 &&
-            activeWeapons[0].type === ItemType.Launcher
+            activeWeapons[0].type === "Launcher"
         ) {
             cyclerModifier = 0.5;
         } else {
@@ -1040,7 +1040,7 @@ function PartRow({
         <LabeledInput
             label="Number"
             tooltip="The number of parts of this type."
-            className="build-part-row-growable"
+            className="flex-1-1"
             value={pageState.partState![i].number}
             placeholder="1"
             onChange={(value) => {
@@ -1123,7 +1123,7 @@ function SlotSection({
         return (
             <div className="build-part-row">
                 <SelectWrapper
-                    className="build-part-row-growable"
+                    className="flex-1-1"
                     onChange={(val) => {
                         const partState = [...(pageState.partState || [])];
 
@@ -1279,8 +1279,6 @@ export default function BuildPage() {
     const totalPartsState = calculatePartsState(pageState);
 
     function updatePageState(newPageState: BuildPageState) {
-        console.log(newPageState);
-
         const serializablePageState = getSerializedPageState(newPageState);
         const location = getLocationFromState("/build", serializablePageState, skipLocationMember);
         setLocation(location, { replace: true });

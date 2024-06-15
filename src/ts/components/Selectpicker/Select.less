@@ -1,5 +1,17 @@
 @import "../../../styles/common.less";
 
+.select--is-disabled.select--is-disabled {
+    opacity: .65;
+    // Normally the control tries to overwrite the pointer-events to none.
+    // However, we do want pointer events when disabled, but we just want to
+    // show the not allowed icon instead of allowing actual interaction.
+    pointer-events: inherit;
+
+    * {
+        cursor: not-allowed !important;
+    }
+}
+
 // The double selectors are a hack used to out-prioritize the styles defined by
 // the react select component. This increases the specificity to allow
 // overriding the values without using !important.
@@ -49,6 +61,12 @@
 }
 .select__control.select__control:hover {
     border-color: @element-active-border-color;
+}
+
+// Value text
+.select__single-value.select__single-value {
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
 // Dropdown arrow indicator icon

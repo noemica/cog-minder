@@ -53,13 +53,13 @@ export function LabeledExclusiveButtonGroup<T extends string>({
     );
 }
 
-export function LabeledInput({ className, label, onChange, placeholder, tooltip, value }: LabeledItemProps & CustomInputProps) {
+export function LabeledInput({ className, label, tooltip, ...props }: LabeledItemProps & CustomInputProps) {
     className = (className || "") + " labeled-item";
 
     return (
         <div className={className}>
             <Label label={label} tooltip={tooltip} />
-            <Input onChange={onChange} placeholder={placeholder} value={value || ""} />
+            <Input {...props} />
         </div>
     );
 }

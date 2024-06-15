@@ -26,13 +26,7 @@ export enum BotImmunity {
     Meltdown = "Meltdown",
 }
 
-export enum BotSize {
-    Huge = "Huge",
-    Large = "Large",
-    Medium = "Medium",
-    Small = "Small",
-    Tiny = "Tiny",
-}
+export type BotSize = "Huge" | "Large" | "Medium" | "Small" | "Tiny";
 
 export type BotResistances = Partial<Record<DamageType, number>>;
 

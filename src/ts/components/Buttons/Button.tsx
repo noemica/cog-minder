@@ -11,6 +11,7 @@ export type CommonButtonProps = {
     tooltip?: string;
 };
 export type ButtonProps = CommonButtonProps & {
+    disabled?: boolean;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
@@ -19,7 +20,7 @@ export type ButtonLinkProps = CommonButtonProps & {
     href: string;
 };
 
-export default function Button({ children, onClick, className, tooltip }: ButtonProps) {
+export default function Button({ children, disabled, onClick, className, tooltip }: ButtonProps) {
     let classes = "button";
 
     if (className !== undefined) {
@@ -27,7 +28,7 @@ export default function Button({ children, onClick, className, tooltip }: Button
     }
 
     const button = (
-        <button className={classes} onClick={onClick}>
+        <button className={classes} disabled={disabled} onClick={onClick}>
             {children}
         </button>
     );

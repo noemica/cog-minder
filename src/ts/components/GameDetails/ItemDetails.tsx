@@ -145,7 +145,7 @@ function getSlotString(item: Item): ReactNode {
 
     if (slotType == "N/A") {
         // Take care of item special cases
-        if (item.type == ItemType.Item || item.type == ItemType.Trap) {
+        if (item.type == "Item" || item.type == "Trap") {
             slotType = "Inventory";
         } else {
             return <span className="details-dim-text">N/A</span>;
@@ -584,7 +584,7 @@ function PropulsionPartDetails({ item }: { item: PropulsionItem }) {
                 value={item.penalty}
                 valueString={item.penalty?.toString()}
             />
-            {item.type === ItemType.Treads ? (
+            {item.type === "Treads" ? (
                 <DetailsTextLine category="Siege" content={item.siege} defaultContent="N/A" />
             ) : (
                 <DetailsRangeLine
@@ -856,28 +856,28 @@ export default function ItemDetails({ item }: { item: Item }) {
 
         case "Weapon":
             switch (item.type) {
-                case ItemType.BallisticCannon:
-                case ItemType.BallisticGun:
-                case ItemType.EnergyCannon:
-                case ItemType.EnergyGun:
+                case "Ballistic Cannon":
+                case "Ballistic Gun":
+                case "Energy Cannon":
+                case "Energy Gun":
                     typeSpecificDetails = <CannonGunPartDetails item={item as WeaponItem} />;
                     break;
 
-                case ItemType.Launcher:
+                case "Launcher":
                     typeSpecificDetails = <LauncherPartDetails item={item as WeaponItem} />;
                     break;
 
-                case ItemType.SpecialMeleeWeapon:
+                case "Special Melee Weapon":
                     typeSpecificDetails = <SpecialMeleeWeaponPartDetails item={item as WeaponItem} />;
                     break;
 
-                case ItemType.SpecialWeapon:
+                case "Special Weapon":
                     typeSpecificDetails = <SpecialWeaponPartDetails item={item as WeaponItem} />;
                     break;
 
-                case ItemType.ImpactWeapon:
-                case ItemType.SlashingWeapon:
-                case ItemType.PiercingWeapon:
+                case "Impact Weapon":
+                case "Slashing Weapon":
+                case "Piercing Weapon":
                     typeSpecificDetails = <MeleeWeaponPartDetails item={item as WeaponItem} />;
                     break;
             }

@@ -1,5 +1,4 @@
 import lore from "../json/lore.json";
-import { Bot } from "./botTypes";
 import { MapLocation, Spoiler } from "./types/commonTypes";
 import { WikiEntry } from "./types/wikiTypes";
 import {
@@ -9,9 +8,7 @@ import {
     createItemDataContent,
     createLocationHtml,
     escapeHtml,
-    getBot,
     getBotImageName,
-    getItem,
     parseIntOrDefault,
 } from "./utilities/common";
 

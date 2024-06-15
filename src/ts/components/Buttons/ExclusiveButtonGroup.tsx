@@ -11,6 +11,7 @@ export type ExclusiveButtonDefinition<T extends string> = {
 export type ExclusiveButtonsProps<T extends string> = {
     buttons: ExclusiveButtonDefinition<T>[];
     className?: string;
+    disabled?: boolean;
     onValueChanged?: (value: T) => void;
     selected?: T | number;
 };
@@ -18,6 +19,7 @@ export type ExclusiveButtonsProps<T extends string> = {
 export default function ExclusiveButtonGroup<T extends string>({
     buttons,
     className,
+    disabled,
     onValueChanged,
     selected,
 }: ExclusiveButtonsProps<T>) {
@@ -43,6 +45,7 @@ export default function ExclusiveButtonGroup<T extends string>({
         return (
             <Button
                 className={index === selectedIndex ? "exclusive-button exclusive-button-active" : "exclusive-button"}
+                disabled={disabled}
                 key={b.label || b.value}
                 tooltip={b.tooltip}
                 onClick={() => {

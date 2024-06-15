@@ -199,12 +199,26 @@ export class BotData {
         return Object.keys(this.botData).map((itemName) => this.botData[itemName]);
     }
 
+    public getAllBotsSorted() {
+        const botNames = Object.keys(this.botData);
+        botNames.sort();
+        return botNames.map((botName) => this.botData[botName]);
+    }
+
     public getBot(botName: string) {
         if (botName in this.botData) {
             return this.botData[botName];
         }
 
         throw new Error(`${botName} not a valid bot`);
+    }
+
+    public getBotOrNull(botName: string) {
+        if (botName in this.botData) {
+            return this.botData[botName];
+        }
+
+        return null;
     }
 
     public async verifyImages() {

@@ -9,20 +9,20 @@
     padding: @input-padding;
 }
 
-.grouped-input {
-    .input();
+.rounded-input {
+    border-radius: @border-radius;
+}
 
+.grouped-input {
     border-top-right-radius: @border-radius;
     border-bottom-right-radius: @border-radius;
 }
 
-.input:focus,
-.grouped-input:focus {
+.input:focus {
     outline: none;
     border-color: @element-active-border-color;
 }
 
-.input:hover,
-.grouped-input:hover {
+.input:hover {
     border-color: @element-active-border-color;
 }

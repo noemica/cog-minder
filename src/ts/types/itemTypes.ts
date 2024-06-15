@@ -1,18 +1,17 @@
 import { BotResistances } from "./botTypes";
 import { Spoiler } from "./commonTypes";
 
-export enum DamageType {
-    Electromagnetic = "Electromagnetic",
-    Entropic = "Entropic",
-    Explosive = "Explosive",
-    Impact = "Impact",
-    Kinetic = "Kinetic",
-    Phasic = "Phasic",
-    Piercing = "Piercing",
-    Slashing = "Slashing",
-    Special = "Special",
-    Thermal = "Thermal",
-}
+export type DamageType =
+    | "Electromagnetic"
+    | "Entropic"
+    | "Explosive"
+    | "Impact"
+    | "Kinetic"
+    | "Phasic"
+    | "Piercing"
+    | "Slashing"
+    | "Special"
+    | "Thermal";
 
 export enum HeatTransfer {
     Minimal = "Minimal (5)",
@@ -58,38 +57,37 @@ export interface ItemWithUpkeep {
     heatGeneration?: number;
 }
 
-export enum ItemType {
-    Artifact = "Artifact",
-    BallisticCannon = "Ballistic Cannon",
-    BallisticGun = "Ballistic Gun",
-    DataCore = "Data Core",
-    Device = "Device",
-    EnergyCannon = "Energy Cannon",
-    EnergyGun = "Energy Gun",
-    Engine = "Engine",
-    FlightUnit = "Flight Unit",
-    Hackware = "Hackware",
-    HoverUnit = "Hover Unit",
-    ImpactWeapon = "Impact Weapon",
-    Item = "Item",
-    Launcher = "Launcher",
-    Leg = "Leg",
-    Matter = "Matter",
-    PiercingWeapon = "Piercing Weapon",
-    PowerCore = "Power Core",
-    Processor = "Processor",
-    Protection = "Protection",
-    Protomatter = "Protomatter",
-    Reactor = "Reactor",
-    Scrap = "Scrap",
-    SlashingWeapon = "Slashing Weapon",
-    SpecialMeleeWeapon = "Special Melee Weapon",
-    SpecialWeapon = "Special Weapon",
-    Storage = "Storage",
-    Trap = "Trap",
-    Treads = "Treads",
-    Wheel = "Wheel",
-}
+export type ItemType =
+    | "Artifact"
+    | "Ballistic Cannon"
+    | "Ballistic Gun"
+    | "Data Core"
+    | "Device"
+    | "Energy Cannon"
+    | "Energy Gun"
+    | "Engine"
+    | "Flight Unit"
+    | "Hackware"
+    | "Hover Unit"
+    | "Impact Weapon"
+    | "Item"
+    | "Launcher"
+    | "Leg"
+    | "Matter"
+    | "Piercing Weapon"
+    | "Power Core"
+    | "Processor"
+    | "Protection"
+    | "Protomatter"
+    | "Reactor"
+    | "Scrap"
+    | "Slashing Weapon"
+    | "Special Melee Weapon"
+    | "Special Weapon"
+    | "Storage"
+    | "Trap"
+    | "Treads"
+    | "Wheel";
 
 export enum SiegeMode {
     High = "High",

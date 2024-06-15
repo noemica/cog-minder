@@ -3,8 +3,9 @@
 @dark-dropdown-menu-background-color: #656565;
 @dark-dropdown-menu-active-option-background-color: @dark-button-interaction-background-color;
 @dark-dropzone-active-background-color: @dark-button-active-background-color;
-@dark-element-background-color: #474747; // Keep in sync with chartDarkBackgroundColor
-@dark-label-background-color: @dark-element-background-color;
+@dark-chart-background-color: #393939; // Keep in sync with chartDarkBackgroundColor
+@dark-element-background-color: #474747;
+@dark-label-background-color: #393939;
 @dark-page-background-color: #2f2f2f;
 @dark-tooltip-background-color: #000000cc;
 @dark-table-header-background-color: @dark-element-background-color;
@@ -16,7 +17,8 @@
 @cogmind-dropdown-menu-background-color: @cogmind-page-background-color;
 @cogmind-dropdown-menu-active-option-background-color: @cogmind-button-hover-focus-background-color;
 @cogmind-dropzone-active-background-color: @cogmind-button-active-background-color;
-@cogmind-element-background-color: @cogmind-page-background-color; // Keep in sync with chartCogmindBackgroundColor
+@cogmind-chart-background-color: @cogmind-page-background-color; // Keep in sync with chartCogmindBackgroundColor
+@cogmind-element-background-color: @cogmind-page-background-color;
 @cogmind-label-background-color: #162416;
 @cogmind-page-background-color: #080808;
 @cogmind-tooltip-background-color: @dark-tooltip-background-color;
@@ -26,6 +28,7 @@
 @cogmind-button-active-background-color: #002100;
 
 :root {
+    --chart-background-color: @dark-chart-background-color;
     --dropdown-menu-background-color: @dark-dropdown-menu-background-color;
     --dropdown-menu-active-option-background-color: @dark-dropdown-menu-active-option-background-color;
     --dropzone-active-background-color: @dark-dropzone-active-background-color;
@@ -36,6 +39,7 @@
     --table-header-background-color: @dark-table-header-background-color;
 }
 [data-theme="Cogmind"] {
+    --chart-background-color: @cogmind-chart-background-color;
     --dropdown-menu-background-color: @cogmind-dropdown-menu-background-color;
     --dropdown-menu-active-option-background-color: @cogmind-dropdown-menu-active-option-background-color;
     --dropzone-active-background-color: @cogmind-dropzone-active-background-color;

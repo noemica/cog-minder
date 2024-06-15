@@ -28,12 +28,12 @@ function BotPopover({ button, isVisible, bot }: { button: ReactNode; isVisible: 
     }
 }
 
-export default function BotPopoverButton({ bot }: { bot: Bot }) {
+export default function BotPopoverButton({ bot, text, tooltip }: { bot: Bot; text?: string; tooltip?: string }) {
     const [isVisible, ref] = useIsVisible("50px");
 
     const button = (
         <div ref={ref}>
-            <Button>{bot.name}</Button>
+            <Button tooltip={tooltip}>{text || bot.name}</Button>
         </div>
     );
 

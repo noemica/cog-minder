@@ -109,7 +109,7 @@ function BurnoutOrSiegeComparison({
                 rightValue={parseIntOrDefault(rightPropulsion.burnout as string, 0)}
             />
         );
-    } else if (leftPropulsion.type === ItemType.Treads && rightPropulsion.type === ItemType.Treads) {
+    } else if (leftPropulsion.type === "Treads" && rightPropulsion.type === "Treads") {
         if (leftPropulsion.siege === rightPropulsion.siege) {
             return <EmptyComparisonLine />;
         } else if (leftPropulsion.siege === SiegeMode.High) {
@@ -275,23 +275,23 @@ function DamageTypeComparison({
 
     function getTypeString(damageType: DamageType) {
         switch (damageType) {
-            case DamageType.Electromagnetic:
+            case "Electromagnetic":
                 return "EM";
-            case DamageType.Entropic:
+            case "Entropic":
                 return "EN";
-            case DamageType.Explosive:
+            case "Explosive":
                 return "EX";
-            case DamageType.Impact:
+            case "Impact":
                 return "I";
-            case DamageType.Kinetic:
+            case "Kinetic":
                 return "KI";
-            case DamageType.Phasic:
+            case "Phasic":
                 return "PH";
-            case DamageType.Piercing:
+            case "Piercing":
                 return "P";
-            case DamageType.Slashing:
+            case "Slashing":
                 return "S";
-            case DamageType.Thermal:
+            case "Thermal":
                 return "TH";
         }
 
@@ -536,25 +536,25 @@ function WeaponComparison({ leftItem, rightItem }: { leftItem: Item; rightItem: 
 
         function isMelee(item: WeaponItem) {
             return (
-                item.type === ItemType.SlashingWeapon ||
-                item.type === ItemType.ImpactWeapon ||
-                item.type === ItemType.PiercingWeapon ||
-                item.type === ItemType.SpecialMeleeWeapon
+                item.type === "Slashing Weapon" ||
+                item.type === "Impact Weapon" ||
+                item.type === "Piercing Weapon" ||
+                item.type === "Special Melee Weapon"
             );
         }
 
         function isRangedNonLauncher(item: WeaponItem) {
             return (
-                item.type === ItemType.BallisticGun ||
-                item.type === ItemType.EnergyGun ||
-                item.type === ItemType.BallisticCannon ||
-                item.type === ItemType.EnergyCannon ||
-                item.type === ItemType.SpecialWeapon
+                item.type === "Ballistic Gun" ||
+                item.type === "Energy Gun" ||
+                item.type === "Ballistic Cannon" ||
+                item.type === "Energy Cannon" ||
+                item.type === "Special Weapon"
             );
         }
 
         function isRanged(item: WeaponItem) {
-            return isRangedNonLauncher(item) || item.type === ItemType.Launcher;
+            return isRangedNonLauncher(item) || item.type === "Launcher";
         }
 
         // Add melee stats if applicable
@@ -645,7 +645,7 @@ function WeaponComparison({ leftItem, rightItem }: { leftItem: Item; rightItem: 
                 );
             }
             // Add launcher damage if applicable
-            else if (leftWeapon.type === ItemType.Launcher && rightWeapon.type === ItemType.Launcher) {
+            else if (leftWeapon.type === "Launcher" && rightWeapon.type === "Launcher") {
                 damageNode = (
                     <>
                         <HighGoodComparisonStat

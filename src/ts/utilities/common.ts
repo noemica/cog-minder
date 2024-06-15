@@ -880,7 +880,7 @@ export function createItemDataContent(baseItem: Item): string {
 
         if (slotType == "N/A") {
             // Take care of item special cases
-            if (item.type == ItemType.Item || item.type == ItemType.Trap) {
+            if (item.type == "Item" || item.type == "Trap") {
                 slotType = "Inventory";
             } else {
                 return `<span class="details-dim-text">N/A</span>`;
@@ -1012,7 +1012,7 @@ export function createItemDataContent(baseItem: Item): string {
                 ${rangeLine("Support", item.support?.toString(), item.support, undefined, 0, 20, ColorScheme.HighGood)}
                 ${rangeLine(" Penalty", item.penalty?.toString(), item.penalty, "0", 0, 60, ColorScheme.LowGood)}
                 ${
-                    item.type === ItemType.Treads
+                    item.type === "Treads"
                         ? textLineWithDefault("Siege", item.siege, "N/A")
                         : rangeLine(
                               "Burnout",
@@ -1047,10 +1047,10 @@ export function createItemDataContent(baseItem: Item): string {
             // Add weapon-unique categories
 
             switch (item.type) {
-                case ItemType.BallisticCannon:
-                case ItemType.BallisticGun:
-                case ItemType.EnergyCannon:
-                case ItemType.EnergyGun:
+                case "Ballistic Cannon":
+                case "Ballistic Gun":
+                case "Energy Cannon":
+                case "Energy Gun":
                     html += `
                         ${emptyLine}
                         ${summaryLine("Shot")}
@@ -1111,7 +1111,7 @@ export function createItemDataContent(baseItem: Item): string {
                         `;
                     break;
 
-                case ItemType.Launcher:
+                case "Launcher":
                     html += `
                         ${emptyLine}
                         ${summaryLine("Shot")}
@@ -1181,7 +1181,7 @@ export function createItemDataContent(baseItem: Item): string {
                         `;
                     break;
 
-                case ItemType.SpecialMeleeWeapon:
+                case "Special Melee Weapon":
                     html += `
                         ${emptyLine}
                         ${summaryLine("Attack")}
@@ -1193,7 +1193,7 @@ export function createItemDataContent(baseItem: Item): string {
                         `;
                     break;
 
-                case ItemType.SpecialWeapon:
+                case "Special Weapon":
                     html += `
                         ${emptyLine}
                         ${summaryLine("Shot")}
@@ -1302,9 +1302,9 @@ export function createItemDataContent(baseItem: Item): string {
                     }
                     break;
 
-                case ItemType.ImpactWeapon:
-                case ItemType.SlashingWeapon:
-                case ItemType.PiercingWeapon:
+                case "Impact Weapon":
+                case "Slashing Weapon":
+                case "Piercing Weapon":
                     html += `
                         ${emptyLine}
                         ${summaryLine("Attack")}
@@ -1392,7 +1392,7 @@ export function createImagePath(nameOrUrl: string, fileDir: string = "") {
         return nameOrUrl;
     } catch (_) {
         return fileDir + nameOrUrl;
-}
+    }
 }
 
 export function createLocationHtml(location: MapLocation, spoilersState: Spoiler, inPopover: boolean): string {
@@ -1576,24 +1576,6 @@ export function gallerySort(itemA: Item, itemB: Item): number {
     return res;
 }
 
-// Tries to get a bot by the name
-export function getBot(botName: string): Bot {
-    if (botName in botData) {
-        return botData[botName];
-    }
-
-    throw `${botName} not a valid bot`;
-}
-
-// Tries to get a bot by the name
-export function getBotOrNull(botName: string): Bot | null {
-    if (botName in botData) {
-        return botData[botName];
-    }
-
-    return null;
-}
-
 // Gets the image path for a specified bot
 export function getBotImageName(bot: Bot) {
     const imageName = botNameImageMap.get(bot.name);
@@ -1639,7 +1621,14 @@ export function getLocationFromState<T extends object>(
                 continue;
             }
 
-            const paramValue = (stateObject[key] as string).replaceAll(" ", "%20").replaceAll("#", "%23").replaceAll("&", "%26");
+            // Special escaping needs to match parseSearchParameters
+            const paramValue = (stateObject[key] as string)
+                .replaceAll(" ", "%20")
+                .replaceAll("#", "%23")
+                .replaceAll("&", "%26")
+                .replaceAll("(", "%28")
+                .replaceAll(")", "%29")
+                .replaceAll(",", "%2C");
 
             // Append to search
             if (search.length === 0) {
@@ -1660,15 +1649,15 @@ export function getLocationFromState<T extends object>(
 // Gets the movement name given a propulsion type
 export function getMovementText(propulsionType: ItemType | undefined): string {
     switch (propulsionType) {
-        case ItemType.FlightUnit:
+        case "Flight Unit":
             return "Flying";
-        case ItemType.HoverUnit:
+        case "Hover Unit":
             return "Hovering";
-        case ItemType.Leg:
+        case "Leg":
             return "Walking";
-        case ItemType.Treads:
+        case "Treads":
             return "Treading";
-        case ItemType.Wheel:
+        case "Wheel":
             return "Rolling";
         default:
             return "Core";
@@ -1731,10 +1720,10 @@ export function isDev() {
 // Determines if the given item type is melee
 export function isPartMelee(part: BaseItem): boolean {
     if (
-        part.type === ItemType.ImpactWeapon ||
-        part.type === ItemType.PiercingWeapon ||
-        part.type === ItemType.SlashingWeapon ||
-        part.type === ItemType.SpecialMeleeWeapon
+        part.type === "Impact Weapon" ||
+        part.type === "Piercing Weapon" ||
+        part.type === "Slashing Weapon" ||
+        part.type === "Special Melee Weapon"
     ) {
         return true;
     }
@@ -1830,7 +1819,13 @@ export function parseSearchParameters<T>(search: string, object: T): T {
         const paramValue = match[2];
 
         // Assign the parameter
-        object[paramName] = paramValue.replaceAll("%23", "#").replaceAll("%26", "&");
+        // Special escaping needs to match getLocationFromState
+        object[paramName] = paramValue
+            .replaceAll("%23", "#")
+            .replaceAll("%26", "&")
+            .replaceAll("%28", "(")
+            .replaceAll("%29", ")")
+            .replaceAll("%2C", ",");
     }
 
     return object;

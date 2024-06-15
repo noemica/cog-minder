@@ -1,5 +1,5 @@
 // Battle simulation calculation functions/constants
-import { Bot, BotImmunity } from "./types/botTypes";
+import { Bot, BotImmunity, BotSize } from "../types/botTypes";
 import {
     AntimissileChance,
     CorruptionIgnore,
@@ -9,7 +9,6 @@ import {
     DamageResists,
     DamageType,
     ItemSlot,
-    ItemType,
     PowerItem,
     PropulsionItem,
     RangedAvoid,
@@ -19,23 +18,34 @@ import {
     SiegeMode,
     Spectrum,
     WeaponItem,
-} from "./types/itemTypes";
+} from "../types/itemTypes";
 import {
     BotState,
     DefensiveState,
+    ExternalDamageReduction,
     ShieldingPart,
+    SiegeState,
     SimulatorPart,
     SimulatorState,
     SimulatorWeapon,
     SpecialPart,
-} from "./types/simulatorTypes";
-import { hasActiveSpecialProperty, randomInt, sum } from "./utilities/common";
+} from "../types/simulatorTypes";
+import { hasActiveSpecialProperty, randomInt, sum } from "./common";
 
 const minAccuracy = 10;
 const maxRangedAccuracy = 95;
 const maxMeleeAccuracy = 100;
 
 export const maxVolleys = 100000;
+
+// Bot size mode to accuracy bonus map
+export const sizeAccuracyMap: Map<BotSize, number> = new Map([
+    ["Huge", 30],
+    ["Large", 10],
+    ["Medium", 0],
+    ["Small", -10],
+    ["Tiny", -30],
+]);
 
 // Array of damage reducing parts to sort
 // 11. Apply the first and only first defense applicable from the
@@ -65,19 +75,38 @@ const damageReductionSortOrder = [
     "AEGIS Remote Shield",
 ];
 
-const externalDamageReductionMap = {
-    "Remote Shield": 0.75,
-    "Stasis Trap": 0.75,
-    "Phase Wall": 0.5,
-    "Remote Force Field": 0.5,
-    "Stasis Bubble": 0.5,
-};
+const externalDamageReductionMap: Map<ExternalDamageReduction, number> = new Map([
+    ["Remote Shield", 0.75],
+    ["Stasis Trap", 0.75],
+    ["Phase Wall", 0.5],
+    ["Remote Force Field", 0.5],
+    ["Stasis Bubble", 0.5],
+]);
 
 // Array of force booster accuracy penalties
 const forceBoosterAccuracyPenalty = [4, 6, 8];
 
+// Array of force booster maximum damage increases
+export const forceBoosterMaxDamageIncrease = [0.2, 0.3, 0.4];
+
+// Base accuracies for combat
+export const initialRangedAccuracy = 60;
+export const initialMeleeAccuracy = 70;
+
 // Array of melee analysis accuracy increases
 const meleeAnalysisAccuracy = [5, 6, 8, 12];
+
+// Array of melee analysis minimum damage increases
+export const meleeAnalysisMinDamageIncrease = [2, 3, 4, 6];
+
+// Siege mode text to accuracy bonus/TUs to activate map
+export const siegeModeBonusMap: Map<SiegeState, { bonus: number; tus: number }> = new Map([
+    ["No Siege", { bonus: 0, tus: 0 }],
+    ["In Siege Mode", { bonus: 20, tus: 0 }],
+    ["In High Siege Mode", { bonus: 30, tus: 0 }],
+    ["Entering Siege Mode", { bonus: 20, tus: 500 }],
+    ["Entering High Siege Mode", { bonus: 30, tus: 500 }],
+]);
 
 // Map of spectrum values to engine explosion chance
 const spectrumMap = {
@@ -171,13 +200,13 @@ function applyDamage(
     const multiplier = part != undefined ? part.reduction : 1;
 
     if (part !== undefined && part.remote) {
-        chunks.forEach((chunk) => {
+        for (const chunk of chunks) {
             chunk.realDamage = chunk.originalDamage - Math.trunc(chunk.originalDamage * (1 - multiplier));
-        });
+        }
     } else {
-        chunks.forEach((chunk) => {
+        for (const chunk of chunks) {
             chunk.realDamage = Math.trunc(chunk.originalDamage * multiplier);
-        });
+        }
     }
 
     function applyEngineExplosion(part: SimulatorPart) {
@@ -243,11 +272,11 @@ function applyDamage(
         // a single type of damage resistance. e.g. One part is 30% and
         // another is providing 25% so we need to fallback to the 25%
         if (part.resistances !== undefined) {
-            Object.keys(part.resistances).forEach((type) => {
+            for (const type of Object.keys(part.resistances)) {
                 if (type in botState.resistances) {
                     botState.resistances[type]! -= part.resistances![type]!;
                 }
-            });
+            }
         }
 
         if (overflowDamage > 0 && !part.protection && canOverflow && critical === undefined) {
@@ -256,11 +285,11 @@ function applyDamage(
             applyDamageChunk(0, overflowDamage, damageType, undefined, true, false, 0, 0, false);
         }
 
-        if (damageType === DamageType.Impact) {
+        if (damageType === "Impact") {
             // Apply 50-150% random corruption to the bot after
             // destroying a part (affected by EM resistance) (22)
             let corruption = randomInt(50, 150);
-            corruption = calculateResistDamage(botState, corruption, DamageType.Electromagnetic);
+            corruption = calculateResistDamage(botState, corruption, "Electromagnetic");
 
             applyCorruption(corruption);
         }
@@ -269,8 +298,8 @@ function applyDamage(
             destroyReason === "CriticalRemove" &&
             part.integrity > 0 &&
             // Processors/hackware removed via crit get destroyed
-            part.def.type !== ItemType.Processor &&
-            part.def.type !== ItemType.Hackware
+            part.def.type !== "Processor" &&
+            part.def.type !== "Hackware"
         ) {
             // Save loot stats if the part gets removed due to crit effect
             state.lootState.items[part.initialIndex].numDrops += 1;
@@ -297,7 +326,7 @@ function applyDamage(
                 // Corruption is greater than part can prevent, destroy part
                 botState.defensiveState.corruptionPrevent.shift();
                 const index = botState.parts.indexOf(corruptionPreventPart.part);
-                destroyPart(index, corruptionPreventPart.part, 0, DamageType.Entropic, "Integrity");
+                destroyPart(index, corruptionPreventPart.part, 0, "Entropic", "Integrity");
                 corruptionPreventPart = getDefensiveStatePart(botState.defensiveState.corruptionPrevent);
 
                 corruption -= maxPrevention;
@@ -361,7 +390,7 @@ function applyDamage(
             // Destroy first engine found (if any)
             if (i < botState.parts.length) {
                 const engine = botState.parts[i];
-                destroyPart(i, engine, 0, DamageType.Entropic, "Integrity");
+                destroyPart(i, engine, 0, "Entropic", "Integrity");
                 applyEngineExplosion(engine);
 
                 if (i === partIndex) {
@@ -411,7 +440,7 @@ function applyDamage(
                 if (shielding.part.integrity <= 0) {
                     // Remove shielding if it has run out of integrity
                     const index = botState.parts.indexOf(shielding.part);
-                    destroyPart(index, shielding.part, 0, DamageType.Entropic, "Integrity");
+                    destroyPart(index, shielding.part, 0, "Entropic", "Integrity");
                 }
 
                 damage = damage - shieldingDamage;
@@ -452,7 +481,7 @@ function applyDamage(
                     // Core severed parts lose 5-25% of integrity
                     part.integrity -= Math.trunc((part.def.integrity * randomInt(5, 25)) / 100);
 
-                    destroyPart(partIndex, part, 0, DamageType.Phasic, "CriticalRemove");
+                    destroyPart(partIndex, part, 0, "Phasic", "CriticalRemove");
                 }
 
                 return;
@@ -466,20 +495,20 @@ function applyDamage(
                 if (part.def.size === 1) {
                     // Single-slot items get blasted off
                     // Deal damage first, then destroy as a critical part removal if still intact
-                    applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, false, part, partIndex);
+                    applyDamageChunkToPart(damage, "Phasic", undefined, 0, 0, false, part, partIndex);
 
                     // Dismemberment immunity stops the blasting off part
                     if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
-                        destroyPart(partIndex, part, 0, DamageType.Phasic, "CriticalRemove");
+                        destroyPart(partIndex, part, 0, "Phasic", "CriticalRemove");
                     }
                 } else {
                     // Multi-slot items don't get blasted off but still take damage
-                    applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, false, part, partIndex);
+                    applyDamageChunkToPart(damage, "Phasic", undefined, 0, 0, false, part, partIndex);
                 }
             } else if (critical === Critical.Phase) {
                 // Apply phasing damage to another random part
                 const { part, partIndex } = getRandomNonCorePart(botState, undefined);
-                applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, false, part, partIndex);
+                applyDamageChunkToPart(damage, "Phasic", undefined, 0, 0, false, part, partIndex);
             }
 
             return;
@@ -488,7 +517,7 @@ function applyDamage(
         // Handle non-core hit
         // Try to get shielding for non-protection parts
         const shielding =
-            part.def.type === ItemType.Protection || isOverflow ? undefined : getShieldingType(botState, part.def.slot);
+            part.def.type === "Protection" || isOverflow ? undefined : getShieldingType(botState, part.def.slot);
 
         // Check for crit immunity or shielding (14)
         if (shielding !== undefined && doesCriticalDestroyPart(critical)) {
@@ -502,7 +531,7 @@ function applyDamage(
         // Also check for crits against sieged treads, they can't be destroyed
         if (
             (doesCriticalDestroyPart(critical) && part.protection) ||
-            (botState.sieged && part.def.type === ItemType.Treads && (part.def as PropulsionItem).siege !== undefined)
+            (botState.sieged && part.def.type === "Treads" && (part.def as PropulsionItem).siege !== undefined)
         ) {
             critical = undefined;
             damage = Math.trunc(1.2 * damage);
@@ -511,11 +540,7 @@ function applyDamage(
         // Reduce damage for powered armor/siege mode (17)
         if (part.selfDamageReduction !== 0) {
             damage = Math.trunc(damage * part.selfDamageReduction);
-        } else if (
-            part.def.type === ItemType.Treads &&
-            (part.def as PropulsionItem).siege !== undefined &&
-            botState.sieged
-        ) {
+        } else if (part.def.type === "Treads" && (part.def as PropulsionItem).siege !== undefined && botState.sieged) {
             damage = Math.trunc(damage * ((part.def as PropulsionItem).siege === SiegeMode.High ? 0.5 : 0.75));
         }
 
@@ -531,7 +556,7 @@ function applyDamage(
             if (shielding.part.integrity <= 0) {
                 // Remove shielding if it has run out of integrity
                 const index = botState.parts.indexOf(shielding.part);
-                destroyPart(index, shielding.part, 0, DamageType.Entropic, "Integrity");
+                destroyPart(index, shielding.part, 0, "Entropic", "Integrity");
             }
 
             damage = damage - shieldingDamage;
@@ -549,7 +574,7 @@ function applyDamage(
             shielding === undefined
         ) {
             if (!destroyed) {
-                destroyPart(partIndex, part, 0, DamageType.Slashing, "CriticalRemove");
+                destroyPart(partIndex, part, 0, "Slashing", "CriticalRemove");
             }
         }
 
@@ -575,19 +600,19 @@ function applyDamage(
             if (part.def.size === 1) {
                 // Single-slot items get blasted off
                 // Deal damage first, then destroy as a critical part removal if still intact
-                applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, false, part, partIndex);
+                applyDamageChunkToPart(damage, "Phasic", undefined, 0, 0, false, part, partIndex);
 
                 // Dismemberment immunity stops the blasting off part
                 if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
-                    destroyPart(partIndex, part, 0, DamageType.Phasic, "CriticalRemove");
+                    destroyPart(partIndex, part, 0, "Phasic", "CriticalRemove");
                 }
             } else {
                 // Multi-slot items don't get blasted off but still take damage
-                applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, false, part, partIndex);
+                applyDamageChunkToPart(damage, "Phasic", undefined, 0, 0, false, part, partIndex);
             }
         } else if (critical === Critical.Phase) {
             // Apply phasing damage to the core
-            applyDamageChunkToPart(damage, DamageType.Phasic, undefined, 0, 0, false, undefined, -1);
+            applyDamageChunkToPart(damage, "Phasic", undefined, 0, 0, false, undefined, -1);
         }
 
         if (engineExplosion) {
@@ -599,7 +624,7 @@ function applyDamage(
     botState.salvage += salvage;
 
     // Apply damage
-    chunks.forEach((chunk) => {
+    for (const chunk of chunks) {
         if (chunk.realDamage === 0) {
             // Don't process the chunk if damage is reduced to 0 by shielding
             return;
@@ -618,7 +643,7 @@ function applyDamage(
         );
 
         // Apply corruption (22)
-        if (damageType === DamageType.Electromagnetic) {
+        if (damageType === "Electromagnetic") {
             // Check for corruption ignore chance
             const corruptionIgnorePart = getDefensiveStatePart(botState.defensiveState.corruptionIgnore);
             const corruptCritical =
@@ -632,7 +657,7 @@ function applyDamage(
                 applyCorruption(corruption);
             }
         }
-    });
+    }
 }
 
 // Returns a clone of a bot state
@@ -640,7 +665,9 @@ function applyDamage(
 // but immutable fields are not.
 function cloneBotState(botState: BotState): BotState {
     const resistances = {};
-    Object.keys(botState.resistances).forEach((type) => (resistances[type] = botState.resistances[type]));
+    for (const type of Object.keys(botState.resistances)) {
+        resistances[type] = botState.resistances[type];
+    }
     const newState: BotState = {
         armorAnalyzedCoverage: botState.armorAnalyzedCoverage,
         armorAnalyzedSiegedCoverage: botState.armorAnalyzedSiegedCoverage,
@@ -694,7 +721,10 @@ export function calculateResistDamage(botState: BotState, damage: number, damage
 
 // Returns a bot's defensive state based on parts, also adds new relevant
 // properties to parts
-export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduction: string): DefensiveState {
+export function getBotDefensiveState(
+    parts: SimulatorPart[],
+    externalDamageReduction: ExternalDamageReduction,
+): DefensiveState {
     const state: DefensiveState = {
         antimissile: [],
         avoid: [],
@@ -714,7 +744,7 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
         },
     };
 
-    parts.forEach((part) => {
+    for (const part of parts) {
         if (hasActiveSpecialProperty(part.def, true, "AntimissileChance")) {
             state.antimissile.push({
                 // Antimissile system-like part
@@ -775,11 +805,11 @@ export function getBotDefensiveState(parts: SimulatorPart[], externalDamageReduc
             const trait = part.def.specialProperty!.trait as Shielding;
             state.shieldings[trait.slot].push({ reduction: trait.shielding, part: part });
         }
-    });
+    }
 
     // Sort damage reduction (11)
-    if (externalDamageReduction in externalDamageReductionMap) {
-        const reduction = externalDamageReductionMap[externalDamageReduction];
+    if (externalDamageReductionMap.has(externalDamageReduction)) {
+        const reduction = externalDamageReductionMap.get(externalDamageReduction) || 1.0;
         const remote = externalDamageReduction.includes("Remote");
 
         if (state.damageReduction.length === 0) {
@@ -886,7 +916,7 @@ function getHitPart(
         };
     }
 
-    if (damageType === DamageType.Impact) {
+    if (damageType === "Impact") {
         // Impact damage targets core and all parts with coverage relative to their slots
         let coverageHit = randomInt(0, botState.parts.map((p) => p.def.size).reduce(sum, 0));
         for (let i = 0; i < botState.parts.length; i++) {
@@ -931,7 +961,7 @@ function getHitPart(
     }
 
     // Check to avoid rerolling an impact core hit
-    if (part === undefined && damageType !== DamageType.Impact) {
+    if (part === undefined && damageType !== "Impact") {
         let totalCoverage: number;
         if (armorAnalyzed) {
             if (botState.sieged) {
@@ -946,7 +976,7 @@ function getHitPart(
                 totalCoverage = botState.totalCoverage;
             }
         }
-        if (damageType == DamageType.Piercing) {
+        if (damageType == "Piercing") {
             // Not ideal to force this here because it means the user has to account for half_stack manually
             // Makes the UI very cluttered if we want to make the user choose all the possible combinations though
             coreBonus += 8;
@@ -1024,13 +1054,12 @@ function getRandomNonCorePart(botState: BotState, ignoreIndex: number | undefine
 }
 
 // Calculates a weapon's recoil based on the number of treads and other recoil reduction
-export function getRecoil(weaponDef: WeaponItem, numTreads: number, recoilReduction: number): number {
+export function getRecoil(weaponDef: WeaponItem, recoilReduction: number): number {
     let recoil = 0;
 
     // Add recoil if siege mode not active
     if (weaponDef.recoil !== undefined) {
         recoil += weaponDef.recoil;
-        recoil -= numTreads;
         recoil -= recoilReduction;
     }
 
@@ -1066,10 +1095,10 @@ export function getRangedVolleyTime(weapons: WeaponItem[], cyclerModifier: numbe
         volleyTime = 400;
     }
 
-    weapons.forEach((weapon) => {
+    for (const weapon of weapons) {
         // Apply individual delays
         volleyTime += weapon.delay ?? 0;
-    });
+    }
 
     volleyTime *= cyclerModifier;
 
@@ -1087,11 +1116,11 @@ function getShieldingType(botState: BotState, slot: ItemSlot | "Core"): Shieldin
 function getBotCorruption(botState: BotState) {
     let corruption = botState.corruption;
 
-    botState.defensiveState.corruptionReduce.forEach((p) => {
+    for (const p of botState.defensiveState.corruptionReduce) {
         if (p.part.integrity >= 0) {
             corruption -= p.amount;
         }
-    });
+    }
 
     return corruption;
 }
@@ -1153,7 +1182,7 @@ const simulationEndConditions: { [key: string]: EndConditions } = {
             );
         },
     },
-    "Architect Tele (80% integrity, 1 weapon, or 1 prop)": {
+    Tele: {
         projectileEndCondition: function (botState) {
             return botState.coreIntegrity <= 0;
         },
@@ -1288,9 +1317,8 @@ export function simulateCombat(state: SimulatorState): boolean {
             oldTus < botState.tusToSiege &&
             state.tus >= botState.tusToSiege &&
             botState.behavior === "Siege/Fight" &&
-            botState.parts.find(
-                (p) => p.def.type === ItemType.Treads && (p.def as PropulsionItem).siege !== undefined,
-            ) !== undefined
+            botState.parts.find((p) => p.def.type === "Treads" && (p.def as PropulsionItem).siege !== undefined) !==
+                undefined
         ) {
             botState.sieged = true;
             updateAccuracy = true;
@@ -1398,10 +1426,10 @@ function simulateWeapon(
         damageMax = Math.min(100, damageMax);
 
         let damage = randomInt(0, damageMax);
-        damage = calculateResistDamage(botState, damage, DamageType.Impact);
+        damage = calculateResistDamage(botState, damage, "Impact");
 
         if (damage > 0) {
-            applyDamage(state, botState, damage, 1, undefined, false, false, false, false, true, DamageType.Impact, 3);
+            applyDamage(state, botState, damage, 1, undefined, false, false, false, false, true, "Impact", 3);
         }
 
         return endCondition(botState);
@@ -1450,7 +1478,7 @@ function simulateWeapon(
             continue;
         }
 
-        if (weapon.def.type === ItemType.BallisticCannon && (weapon.def.salvage ?? 0) < -2) {
+        if (weapon.def.type === "Ballistic Cannon" && (weapon.def.salvage ?? 0) < -2) {
             // Apply matter blasted off for kinetic cannons
             state.lootState.matterBlasted += Math.trunc(randomInt(0, -weapon.def.salvage!));
         }
@@ -1476,7 +1504,7 @@ function simulateWeapon(
                 momentumMultiplier = Math.max(1, momentumMultiplier);
                 momentumMultiplier = Math.min(40, momentumMultiplier);
 
-                if (weapon.damageType === DamageType.Piercing) {
+                if (weapon.damageType === "Piercing") {
                     // Piercing gets double bonus (not double cap)
                     momentumMultiplier *= 2;
                 }
@@ -1666,7 +1694,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
 
     if (botState.running) {
         // TODO don't assume that bots don't become overweight
-        if (botState.parts.find((p) => p.def.type === ItemType.Leg) !== undefined) {
+        if (botState.parts.find((p) => p.def.type === "Leg") !== undefined) {
             // -5~15% if attacker running on legs (ranged attacks only)
             // (5% for each level of momentum)
             perWeaponBonus -= 5 * botState.runningMomentum;
@@ -1676,7 +1704,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
         perWeaponBonus -= botState.runningEvasion;
     }
 
-    state.weapons.forEach((weapon) => {
+    for (const weapon of state.weapons) {
         if (weapon.def.waypoints !== undefined) {
             // Guided weapons always have 100% accuracy
             weapon.accuracy = 100;
@@ -1687,12 +1715,11 @@ function updateWeaponsAccuracy(state: SimulatorState) {
 
         if (!offensiveState.melee && siegeBonus === 0) {
             // Subtract recoil if siege mode inactive
-            accuracy -=
-                offensiveState.recoil - getRecoil(weapon.def, offensiveState.numTreads, offensiveState.recoilReduction);
+            accuracy -= offensiveState.recoil - getRecoil(weapon.def, offensiveState.recoilReduction);
         }
 
         // Cap accuracy
         const max = offensiveState.melee ? maxMeleeAccuracy : maxRangedAccuracy;
         weapon.accuracy = Math.min(max, Math.max(accuracy, minAccuracy));
-    });
+    }
 }
