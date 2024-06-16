@@ -623,7 +623,13 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
 // Found a [[X]] or [[X|Y]] link, make sure we can link properly
 function processLinkTag(state: ParserState, result: RegExpExecArray) {
     // Remove the earlier substituted {{ and }}s for their proper [ and ] counterparts
-    const split = result[1].replace("{{", "[").replace("}}", "]").split("|");
+    let baseLinkTarget = result[1];
+    if (result[2]) {
+        // Add back the : that was split out if we have a full URL
+        baseLinkTarget += ":" + result[2];
+    }
+
+    const split = baseLinkTarget.replace("{{", "[").replace("}}", "]").split("|");
 
     const linkTarget = split[0];
     let linkText = linkTarget;
@@ -643,7 +649,7 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
             groupType: "Grouped",
             html: html,
         });
-    } else if (linkTarget.includes(".htm")) {
+    } else if (linkTarget.includes(".htm") || linkTarget.startsWith("http")) {
         state.output.push({
             groupType: "Grouped",
             html: `<a class="d-inline-block" href="${linkTarget}">${linkText}</a>`,
