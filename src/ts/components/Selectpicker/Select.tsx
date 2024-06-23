@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
-import Select, { GroupBase, OptionProps, Props, components, createFilter } from "react-select";
+import Select, { GroupBase, MenuListProps, OptionProps, Props, components, createFilter } from "react-select";
+import { SelectComponents } from "react-select/dist/declarations/src/components";
+import { FixedSizeList } from "react-window";
 
 import TextTooltip from "../Popover/TextTooltip";
 
@@ -12,6 +14,16 @@ export type SelectOptionType<T = any> = {
 };
 
 const Option = (props: OptionProps<SelectOptionType>) => {
+    // Possible alternate perf improvement, but doesn't fix scrolling speed
+    // or show currently focused option
+    // const { innerProps, isFocused, ...otherProps } = props;
+    // const { onMouseMove, onMouseOver, ...otherInnerProps } = innerProps;
+    // const newProps = {
+    //     innerProps: { onMouseMove: undefined, onMouseOver: undefined, ...otherInnerProps },
+    //     isFocused: false,
+    //     ...otherProps,
+    // };
+
     if (props.data.tooltip === undefined) {
         return <components.Option {...props} />;
     } else {
@@ -22,6 +34,33 @@ const Option = (props: OptionProps<SelectOptionType>) => {
             </components.Option>
         );
     }
+};
+
+const VirtualizedMenuList = (props: MenuListProps<SelectOptionType>) => {
+    // Not nice to hardcode this but currently all select items are text options
+    // that are about the same size anyway...
+    const itemHeight = 24;
+
+    const children = props.children as ReactNode[];
+    const [value] = props.getValue();
+    const initialOffset = props.options.indexOf(value) * itemHeight;
+
+    return (
+        <div>
+            <FixedSizeList
+                height={props.maxHeight || 0}
+                itemCount={children.length}
+                itemSize={itemHeight}
+                initialScrollOffset={initialOffset}
+                overscanCount={5}
+                width={undefined!}
+            >
+                {({ index, style }) => {
+                    return <div style={style}>{children[index]}</div>;
+                }}
+            </FixedSizeList>
+        </div>
+    );
 };
 
 // Would like to call this Select too but it interferes with the import and
@@ -48,6 +87,17 @@ export default function SelectWrapper<
         );
     }
 
+    const components: Partial<SelectComponents<SelectOptionType, IsMulti, Group>> = {
+        Option: Option,
+    };
+
+    // Only virtualize if we have a significant number of items
+    // Maybe will figure this out later but this has its own issues too and perf
+    // is not good but not unusable
+    // if (options.length > 100) {
+    //     components.MenuList = VirtualizedMenuList;
+    // }
+
     return (
         <Select
             {...props}
@@ -59,7 +109,7 @@ export default function SelectWrapper<
             }}
             defaultValue={defaultValue}
             value={value}
-            components={{ Option }}
+            components={components}
             classNamePrefix={"select"}
         />
     );

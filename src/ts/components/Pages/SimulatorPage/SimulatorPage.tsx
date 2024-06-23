@@ -45,7 +45,7 @@ import { RoundedInput } from "../../Input/Input";
 import { LabeledInput } from "../../LabeledItem/LabeledItem";
 import SimulatorPageInput from "./SimulatorPageInput";
 
-import "../pages.less";
+import "../Pages.less";
 import "./SimulatorPage.less";
 
 export type YesNoType = "No" | "Yes";
@@ -820,7 +820,7 @@ export default function SimulatorPage() {
             <div className="page-input-group">
                 <LabeledInput
                     label="Dataset Name"
-                    value={newCustomDatasetName}
+                    value={newCustomDatasetName || ""}
                     onChange={(val) => setNewCustomDatasetName(val)}
                     placeholder="Enter dataset name"
                     tooltip="The name for this dataset when added to the custom comparison chart. Can be renamed once added."
@@ -903,7 +903,7 @@ export default function SimulatorPage() {
                 <div className="page-input-group">
                     <LabeledInput
                         label="Chart Name"
-                        value={comparisonChartState.comparisonChartName}
+                        value={comparisonChartState.comparisonChartName || ""}
                         onChange={(val) =>
                             setComparisonChartState({ ...comparisonChartState, comparisonChartName: val })
                         }

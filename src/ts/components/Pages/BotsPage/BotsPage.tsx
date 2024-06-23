@@ -264,7 +264,7 @@ export default function BotsPage() {
                     label="Name"
                     placeholder="Any"
                     tooltip="The name of a bot to search for."
-                    value={pageState.name}
+                    value={pageState.name || ""}
                     onChange={(val) => {
                         updatePageState({ ...pageState, name: val });
                     }}
@@ -273,7 +273,7 @@ export default function BotsPage() {
                     label="Class"
                     placeholder="Any"
                     tooltip="The class of a bot to search for."
-                    value={pageState.class}
+                    value={pageState.class || ""}
                     onChange={(val) => {
                         updatePageState({ ...pageState, class: val });
                     }}
@@ -282,7 +282,7 @@ export default function BotsPage() {
                     label="Part"
                     placeholder="Any"
                     tooltip="The name of a part to search for."
-                    value={pageState.part}
+                    value={pageState.part || ""}
                     onChange={(val) => {
                         updatePageState({ ...pageState, part: val });
                     }}

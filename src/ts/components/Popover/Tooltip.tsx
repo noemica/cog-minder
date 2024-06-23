@@ -26,9 +26,10 @@ import "./Tooltip.less";
 type TooltipOptions = {
     children?: ReactNode | undefined;
     initialOpen?: boolean;
-    placement?: Placement;
     open?: boolean;
     onOpenChange?: (open: boolean, event?: Event, reason?: OpenChangeReason) => void;
+    placement?: Placement;
+    shouldShift?: boolean;
     useHover?: boolean;
     useFocus?: boolean;
 };
@@ -36,6 +37,7 @@ type TooltipOptions = {
 export function useTooltip({
     initialOpen = false,
     placement = "top",
+    shouldShift = true,
     open: controlledOpen,
     onOpenChange: setControlledOpen,
     useHover: shouldUseHover = true,
@@ -59,7 +61,7 @@ export function useTooltip({
                 fallbackAxisSideDirection: "start",
                 padding: 5,
             }),
-            shift({ padding: 5 }),
+            shouldShift && shift({ padding: 5 }),
             arrow({ element: arrowRef }),
         ],
     });
@@ -150,14 +152,16 @@ export const TooltipTrigger = React.forwardRef<HTMLElement, React.HTMLProps<HTML
 
 export const TooltipContent = React.forwardRef<
     HTMLElement,
-    React.HTMLProps<HTMLElement> & { style?: React.CSSProperties | undefined }
->(function TooltipContent({ style, ...props }, propRef) {
+    React.HTMLProps<HTMLElement> & { style?: React.CSSProperties | undefined; floatingArrowClassName?: string }
+>(function TooltipContent({ style, floatingArrowClassName, ...props }, propRef) {
     const context = useTooltipContext();
     const ref = useMergeRefs([context.refs.setFloating, propRef]);
 
     if (!context.open && !context.isMounted) {
         return null;
     }
+
+    const floatingArrowClasses = (floatingArrowClassName || "") + " tooltip-arrow";
 
     return (
         context.isMounted && (
@@ -173,7 +177,7 @@ export const TooltipContent = React.forwardRef<
                 >
                     {props.children}
                     <FloatingArrow
-                        className="tooltip-arrow"
+                        className={floatingArrowClasses}
                         tipRadius={2}
                         height={8}
                         ref={context.arrowRef}

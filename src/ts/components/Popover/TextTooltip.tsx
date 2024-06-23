@@ -8,9 +8,10 @@ type TextTooltipProps = {
     tooltipText: string;
     children: ReactNode;
     placement?: Placement;
+    useFlexWrapper?: boolean;
 };
 
-export default function TextTooltip({ tooltipText, placement, children }: TextTooltipProps) {
+export default function TextTooltip({ tooltipText, placement, children, useFlexWrapper = false }: TextTooltipProps) {
     const isVisible = useIsVisible();
 
     if (!isVisible) {
@@ -19,9 +20,15 @@ export default function TextTooltip({ tooltipText, placement, children }: TextTo
         return children;
     }
 
+    // In certain cases we do need the div element wrapper, and we always want
+    // to flex. Possibly better ways to do this but this works where it's needed
+    // for wrapping <Link>s with tooltips.
+    const asChild = !useFlexWrapper;
+    const className = asChild ? "" : "flex";
+
     return (
         <Tooltip placement={placement}>
-            <TooltipTrigger asChild={true} children={children} />
+            <TooltipTrigger className={className} asChild={asChild} children={children} />
             <TooltipContent className="text-tooltip">{tooltipText}</TooltipContent>
         </Tooltip>
     );

@@ -248,7 +248,7 @@ function WeaponRow({
                 label="Number"
                 disabled={disabled}
                 className="flex-1-1"
-                value={weaponInfo.number}
+                value={weaponInfo.number || ""}
                 onChange={(val) => {
                     const newWeaponState = [...pageState.weaponState!];
                     newWeaponState[i] = { ...weaponState, number: val };
@@ -357,7 +357,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Standard"
                     disabled={simulationInProgress}
-                    value={pageState.baseMas}
+                    value={pageState.baseMas || ""}
                     onChange={(val) => updatePageState({ ...pageState, baseMas: val })}
                     placeholder="0"
                     tooltip="The amount of standard Melee Analysis Suites equipped. Each provides 5% accuracy and a minimum damage increase of 2."
@@ -365,7 +365,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Imp."
                     disabled={simulationInProgress}
-                    value={pageState.impMas}
+                    value={pageState.impMas || ""}
                     onChange={(val) => updatePageState({ ...pageState, impMas: val })}
                     placeholder="0"
                     tooltip="The amount of Improved Melee Analysis Suites equipped. Each provides 6% accuracy and a minimum damage increase of 3."
@@ -373,7 +373,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Adv."
                     disabled={simulationInProgress}
-                    value={pageState.advMas}
+                    value={pageState.advMas || ""}
                     onChange={(val) => updatePageState({ ...pageState, advMas: val })}
                     placeholder="0"
                     tooltip="The amount of Advanced Melee Analysis Suites equipped. Each provides 8% accuracy and a minimum damage increase of 4."
@@ -381,7 +381,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Adv."
                     disabled={simulationInProgress}
-                    value={pageState.expMas}
+                    value={pageState.expMas || ""}
                     onChange={(val) => updatePageState({ ...pageState, expMas: val })}
                     placeholder="0"
                     tooltip="The amount of Experimental Melee Analysis Suites equipped. Each provides 12% accuracy and a minimum damage increase of 6."
@@ -395,7 +395,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Standard"
                     disabled={simulationInProgress}
-                    value={pageState.baseForceBoosters}
+                    value={pageState.baseForceBoosters || ""}
                     onChange={(val) => updatePageState({ ...pageState, baseForceBoosters: val })}
                     placeholder="0"
                     tooltip="The amount of standard Force Boosters equipped. Provides a maximum damage increase of 20% and a melee accuracy penalty of 4%."
@@ -403,7 +403,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Imp."
                     disabled={simulationInProgress}
-                    value={pageState.impForceBoosters}
+                    value={pageState.impForceBoosters || ""}
                     onChange={(val) => updatePageState({ ...pageState, impForceBoosters: val })}
                     placeholder="0"
                     tooltip="The amount of Improved Force Boosters equipped. Provides a maximum damage increase of 30% and a melee accuracy penalty of 6%."
@@ -411,7 +411,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Adv."
                     disabled={simulationInProgress}
-                    value={pageState.advForceBoosters}
+                    value={pageState.advForceBoosters || ""}
                     onChange={(val) => updatePageState({ ...pageState, advForceBoosters: val })}
                     placeholder="0"
                     tooltip="The amount of Advanced Force Boosters equipped. Provides a maximum damage increase of 40% and a melee accuracy penalty of 8%."
@@ -421,7 +421,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Initial Momentum"
                     disabled={simulationInProgress}
-                    value={pageState.initialMomentum}
+                    value={pageState.initialMomentum || ""}
                     onChange={(val) => updatePageState({ ...pageState, initialMomentum: val })}
                     placeholder="0"
                     tooltip="The momentum bonus from movement for the first attack. This should be 0-3."
@@ -429,7 +429,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Bonus Momentum"
                     disabled={simulationInProgress}
-                    value={pageState.bonusMomentum}
+                    value={pageState.bonusMomentum || ""}
                     onChange={(val) => updatePageState({ ...pageState, bonusMomentum: val })}
                     placeholder="0"
                     tooltip="The amount of bonus momentum from Reaction Control Systems (Always 0 or 1, no_stack)."
@@ -437,7 +437,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Speed"
                     disabled={simulationInProgress}
-                    value={pageState.speed}
+                    value={pageState.speed || ""}
                     onChange={(val) => updatePageState({ ...pageState, speed: val })}
                     placeholder="100"
                     tooltip="The speed of Cogmind. Higher speed provides increased momentum bonus damage."
@@ -464,7 +464,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Targeting"
                     disabled={simulationInProgress}
-                    value={pageState.targeting}
+                    value={pageState.targeting || ""}
                     onChange={(val) => updatePageState({ ...pageState, targeting: val })}
                     placeholder="0%"
                     tooltip="The amount of targeting bonus from Targeting Computers or similar utilities (stacks). Base is 5%, Improved is 6%, Advanced is 8%, Experimental is 12%."
@@ -472,7 +472,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Recoil Reduction"
                     disabled={simulationInProgress}
-                    value={pageState.recoilReduction}
+                    value={pageState.recoilReduction || ""}
                     onChange={(val) => updatePageState({ ...pageState, recoilReduction: val })}
                     placeholder="0"
                     tooltip="The number of recoil reduction. Each tread slot has 1 recoil reduction, Recoil Stabilizers have 4, and Recoil Nullifiers have 6."
@@ -480,7 +480,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Distance"
                     disabled={simulationInProgress}
-                    value={pageState.distance}
+                    value={pageState.distance || ""}
                     onChange={(val) => updatePageState({ ...pageState, distance: val })}
                     placeholder="6+"
                     tooltip="The distance from the target. Each tile closer than 6 tiles away provides 3% accuracy up to 15% at 1 tile away."
@@ -502,14 +502,14 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Particle Charging"
                     disabled={simulationInProgress}
-                    value={pageState.particleCharger}
+                    value={pageState.particleCharger || ""}
                     onChange={(val) => updatePageState({ ...pageState, particleCharger: val })}
                     placeholder="0%"
                     tooltip="The bonus from Particle Charger/Accelerators that are equipped (if any). Increases damage of energy gun/cannon weapons (half_stack). Base charger starts at 15%, going to 20%, 25%, 30%, 40%, and 50%."
                 />
                 <LabeledInput
                     label="Kinecellerator"
-                    value={pageState.kinecellerator}
+                    value={pageState.kinecellerator || ""}
                     disabled={simulationInProgress}
                     onChange={(val) => updatePageState({ ...pageState, kinecellerator: val })}
                     placeholder="0%"
@@ -518,7 +518,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Weapon Cycling"
                     disabled={simulationInProgress}
-                    value={pageState.weaponCycling}
+                    value={pageState.weaponCycling || ""}
                     onChange={(val) => updatePageState({ ...pageState, weaponCycling: val })}
                     placeholder="0%"
                     tooltip="The percentage of Weapon Cycling or similar utilities that are equipped (if any). Decreases overall volley time. Stacks up to 30%, though a Quantum Capacitor or Launcher Loader can go up to 50%."
@@ -526,7 +526,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Salvage Targeting"
                     disabled={simulationInProgress}
-                    value={pageState.salvageTargeting}
+                    value={pageState.salvageTargeting || ""}
                     onChange={(val) => updatePageState({ ...pageState, salvageTargeting: val })}
                     placeholder="0%"
                     tooltip="The bonus of Salvage Targeting Computers that are equipped (if any). Increase salvage generated from Gun-type weapons that fire a single projectile (stacks). Base Salvage Targeting Computer starts at +1, Improved is +2, Advanced is +3, and Makeshift is +4."
@@ -593,7 +593,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Num Fights"
                     disabled={simulationInProgress}
-                    value={pageState.numSimulations}
+                    value={pageState.numSimulations || ""}
                     onChange={(val) => updatePageState({ ...pageState, numSimulations: val })}
                     placeholder="100,000"
                     tooltip="The number of fights to simulate. High numbers will increase result accuracy but also increase time to calculate."
@@ -645,7 +645,7 @@ export default function SimulatorPageInput({
                     }}
                 />
                 <LabeledSelect
-                    label="Enemy Damage Reduction"
+                    label="Damage Reduction"
                     isDisabled={simulationInProgress}
                     className="damage-reduction-select"
                     tooltip="The type of external damage reduction (if any) for the enemy. Note: this does not stack with personal damage reduction utilities."
@@ -664,7 +664,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Actions Since Moving"
                     disabled={simulationInProgress}
-                    value={pageState.actionsSinceMoving}
+                    value={pageState.actionsSinceMoving || ""}
                     onChange={(val) => updatePageState({ ...pageState, actionsSinceMoving: val })}
                     placeholder="2+"
                     tooltip="The number of actions performed since Cogmind last moved. For melee, there is a +10% accuracy bonus gained after not moving for 2 turns. For ranged, there is an additional -10% penalty if the most recent action was a move. Basically, 0 turns since moving = -10%, 1 turn = 0%, 2 turns = 10%."
@@ -682,7 +682,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Tiles Run"
                     disabled={simulationInProgress}
-                    value={pageState.tilesRun}
+                    value={pageState.tilesRun || ""}
                     onChange={(val) => updatePageState({ ...pageState, tilesRun: val })}
                     placeholder="0"
                     tooltip="The number of tiles Cogmind has been running for if on legs. There is a -5% penalty per tile moved for ranged weapons, up to a maximum of -15%."
@@ -693,7 +693,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Armor Integrity Analyzer"
                     disabled={simulationInProgress}
-                    value={pageState.armorIntegrityAnalyzer}
+                    value={pageState.armorIntegrityAnalyzer || ""}
                     onChange={(val) => updatePageState({ ...pageState, armorIntegrityAnalyzer: val })}
                     placeholder="0%"
                     tooltip="The type of armor integrity analyzer that's equipped (if any). Adds a chance of bypassing enemy armor. Values are 30% for basic, 40% for Improved, and 50% for Experimental."
@@ -701,7 +701,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Core Analyzer"
                     disabled={simulationInProgress}
-                    value={pageState.coreAnalyzer}
+                    value={pageState.coreAnalyzer || ""}
                     onChange={(val) => updatePageState({ ...pageState, coreAnalyzer: val })}
                     placeholder="0%"
                     tooltip="The bonus from one or more Core Analyzers that are equipped (if any). Increases core exposure by the specific amount (half_stack). Base Analyzer is 6% and Experimental is 8%, for a maximum of 12%."
@@ -709,7 +709,7 @@ export default function SimulatorPageInput({
                 <LabeledInput
                     label="Target Analyzer"
                     disabled={simulationInProgress}
-                    value={pageState.targetAnalyzer}
+                    value={pageState.targetAnalyzer || ""}
                     onChange={(val) => updatePageState({ ...pageState, targetAnalyzer: val })}
                     placeholder="0%"
                     tooltip="The bonus from one or more Target Analyzers that are equipped (if any). Increases critical hit % chance for weapons with a critical hit (half_stack). Base Analyzer is 5%, Improved is 6%, Advanced is 8%, and Experimental is 10%."

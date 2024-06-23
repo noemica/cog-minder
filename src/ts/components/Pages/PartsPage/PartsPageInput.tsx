@@ -264,7 +264,7 @@ export default function PartsPageInput({
                     label="Name"
                     placeholder="Any"
                     tooltip="The name of a part to search for."
-                    value={pageState.name}
+                    value={pageState.name || ""}
                     onChange={(val) => {
                         setPageState({ ...pageState, name: val });
                     }}
@@ -273,7 +273,7 @@ export default function PartsPageInput({
                     label="Effect"
                     placeholder="Any"
                     tooltip="The text to search for the description or effect of a part."
-                    value={pageState.effect}
+                    value={pageState.effect || ""}
                     onChange={(val) => {
                         setPageState({ ...pageState, effect: val });
                     }}
@@ -306,7 +306,7 @@ export default function PartsPageInput({
                     label="Rating"
                     placeholder="Any"
                     tooltip="The rating of the part. Use * to search for prototypes only. Add a + to include larger values, or a - to include smaller values."
-                    value={pageState.rating}
+                    value={pageState.rating || ""}
                     onChange={(val) => {
                         setPageState({ ...pageState, rating: val });
                     }}
@@ -315,7 +315,7 @@ export default function PartsPageInput({
                     label="Size"
                     placeholder="Any"
                     tooltip="The size of the part (aka # of slots). Add a + to include larger values, or a - to include smaller values."
-                    value={pageState.size}
+                    value={pageState.size || ""}
                     onChange={(val) => {
                         setPageState({ ...pageState, size: val });
                     }}
@@ -324,7 +324,7 @@ export default function PartsPageInput({
                     label="Mass"
                     placeholder="Any"
                     tooltip="The mass of the part. Add a + to include larger values, or a - to include smaller values."
-                    value={pageState.mass}
+                    value={pageState.mass || ""}
                     onChange={(val) => {
                         setPageState({ ...pageState, mass: val });
                     }}
@@ -362,7 +362,7 @@ export default function PartsPageInput({
                     label="Depth"
                     tooltip="Current map depth. Can enter as 7 or -7."
                     placeholder="Any"
-                    value={pageState.schematicsDepth}
+                    value={pageState.schematicsDepth || ""}
                     onChange={(val) => {
                         setPageState({ ...pageState, schematicsDepth: val });
                     }}
@@ -389,11 +389,9 @@ export default function PartsPageInput({
                                 primarySortOptions[0]
                             }
                             onChange={(val) => {
-                                console.log(val);
                                 if (val!.value === "Alphabetical" || val!.value === "Gallery") {
                                     // If setting to alphabetical/gallery sort then remove the
                                     // secondary sort
-                                    console.log(1);
                                     setPageState({
                                         ...pageState,
                                         primarySort: val!.value,
@@ -406,14 +404,12 @@ export default function PartsPageInput({
                                     // If no secondary sort set yet then default to alphabetical
                                     // when the primary sort order is changed unless the current
                                     // sort is alphabetical
-                                    console.log(2);
                                     setPageState({
                                         ...pageState,
                                         primarySort: val!.value,
                                         secondarySort: "Alphabetical",
                                     });
                                 } else {
-                                    console.log(3);
                                     setPageState({ ...pageState, primarySort: val!.value });
                                 }
                             }}

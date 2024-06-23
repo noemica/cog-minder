@@ -12,6 +12,7 @@
         "@types/popper.js": "1.11.0",
         "@types/react": "^18.2.40",
         "@types/react-dom": "^18.2.17",
+        "@types/react-window": "^1.8.8",
         "@types/tablesorter": "^2.31.2",
         "@typescript-eslint/eslint-plugin": "^6.13.1",
         "@typescript-eslint/parser": "^6.13.1",
@@ -52,10 +53,11 @@
         "react-dom": "^18.2.0",
         "react-dropzone": "^14.2.3",
         "react-select": "^5.8.0",
+        "react-window": "^1.8.10",
         "tablesorter": "^2.31.3",
         "usehooks-ts": "^2.9.1",
         "vite": "^5.0.3",
-        "wouter": "^3.0.0-rc.3"
+        "wouter": "^3.2.0"
     },
     "resolutions": {
         "jquery": "^3.6.0"

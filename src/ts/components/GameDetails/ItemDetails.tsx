@@ -4,7 +4,6 @@ import {
     HeatTransfer,
     Item,
     ItemRatingCategory,
-    ItemType,
     PowerItem,
     PropulsionItem,
     Spectrum,

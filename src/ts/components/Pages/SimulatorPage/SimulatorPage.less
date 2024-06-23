@@ -1,51 +1,63 @@
 @import "../../../../styles/common.less";
 
 .damage-reduction-select {
-    flex: 0;
-    width: 35rem;
-    min-width: 35rem;
+    > div {
+        width: 18rem;
+        min-width: 18rem;
+    }
+
+    flex-wrap: wrap;
 }
 
 .enemy-group {
     display: flex;
-    flex-grow: 0;
 }
 
 .enemy-select {
-    width: 21rem;
-    min-width: 21rem;
+    flex: 1 1 auto;
+
+    > div {
+        width: 16rem;
+        min-width: 16rem;
+    }
 }
 
 .enemy-behavior-select {
-    flex: 0;
-    width: 27rem;
-    min-width: 27rem;
+    > div {
+        width: 17rem;
+        min-width: 17rem;
+    }
 }
 
 .siege-select {
-    flex: 0;
-    width: 24rem;
-    min-width: 24rem;
+    > div {
+        width: 19rem;
+        min-width: 19rem;
+    }
 }
 
 .sneak-attack-select {
-    flex: 0;
-    width: 20rem;
-    min-width: 20rem;
+    > div {
+        width: 10rem;
+        min-width: 10rem;
+    }
 }
 
 .weapon-select {
-    flex: 0;
-    width: 29rem;
-    min-width: 29rem;
+    > div {
+        width: 23rem;
+        min-width: 23rem;
+    }
 }
 
 .weapon-row,
 .new-weapon-row {
     display: flex;
-    gap: @medium-gap;
+    gap: 0 @medium-gap;
 
     margin: @small-gap 0;
+
+    flex-wrap: wrap;
 }
 
 .new-weapon-row {

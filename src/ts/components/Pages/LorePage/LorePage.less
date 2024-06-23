@@ -13,6 +13,11 @@
         width: @lore-table-left-column-width;
     }
 
+    > :not(:first-child) {
+        font-family: @paragraph-font-family;
+        font-size: @paragraph-font-size;
+    }
+
     > * {
         border: @border-width solid @border-color;
     }
@@ -49,5 +54,8 @@
 
     > :last-child {
         text-align: left;
+        
+        font-family: @paragraph-font-family;
+        font-size: @paragraph-font-size;
     }
 }

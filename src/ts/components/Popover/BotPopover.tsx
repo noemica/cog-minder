@@ -9,13 +9,13 @@ import { Popover, PopoverContent, PopoverTrigger } from "./Popover";
 
 import "./Popover.less";
 
-function BotPopover({ button, isVisible, bot }: { button: ReactNode; isVisible: boolean; bot: Bot }) {
+function BotPopover({ node, isVisible, bot }: { node: ReactNode; isVisible: boolean; bot: Bot }) {
     const positioning = usePopoverPositioning();
 
     if (isVisible) {
         return (
             <Popover placement={positioning.placement} shouldShift={positioning.shouldShift}>
-                <PopoverTrigger asChild={true}>{button}</PopoverTrigger>
+                <PopoverTrigger asChild={true}>{node}</PopoverTrigger>
                 <PopoverContent floatingArrowClassName="bot-popover-arrow">
                     <div className="popover">
                         <BotDetails bot={bot} />
@@ -24,7 +24,7 @@ function BotPopover({ button, isVisible, bot }: { button: ReactNode; isVisible: 
             </Popover>
         );
     } else {
-        return button;
+        return node;
     }
 }
 
@@ -37,5 +37,5 @@ export default function BotPopoverButton({ bot, text, tooltip }: { bot: Bot; tex
         </div>
     );
 
-    return <BotPopover button={button} isVisible={isVisible} bot={bot} />;
+    return <BotPopover node={button} isVisible={isVisible} bot={bot} />;
 }

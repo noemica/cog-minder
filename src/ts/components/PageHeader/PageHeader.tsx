@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { RouterObject, useLocation, useRouter } from "wouter";
 
 import { PageType, Spoiler, ThemeType, pageTypes } from "../../types/commonTypes";
+import { rootDirectory } from "../../utilities/common";
 import { ButtonLink } from "../Buttons/Button";
 import { useEditableSpoilers, useEditableTheme } from "../Effects/useLocalStorageValue";
 import { LabeledSelect } from "../LabeledItem/LabeledItem";
@@ -9,7 +11,6 @@ import TextTooltipButton from "../Popover/TextTooltipButton";
 import { SelectOptionType } from "../Selectpicker/Select";
 
 import "./PageHeader.less";
-import { useEffect } from "react";
 
 const spoilerOptions: SelectOptionType<Spoiler>[] = [
     { value: "None", label: "None", tooltip: "No spoilers: Factory or higher depth branch content is hidden." },
@@ -110,7 +111,7 @@ const pages: Record<PageType, PageDetails> = {
     Wiki: {
         label: "Wiki",
         link: "wiki",
-        explanation: "A Cogmind wiki.",
+        explanation: "A Cogmind wiki that is open for anybody to edit. See the homepage for how to contribute.",
     },
 };
 
@@ -133,9 +134,11 @@ function PageButtons({ pageType: PageType }) {
         return (
             <ButtonLink
                 activeLink={PageType === p}
-                tooltip={pageInfo.explanation}
+                // There is an issue on mobile where the tooltip never goes away
+                // Might figure it out but for now leave only in ? popup
+                // tooltip={pageInfo.explanation}
                 key={pageInfo.label}
-                href={pageInfo.link}
+                href={`~/${rootDirectory}/${pageInfo.link}`}
             >
                 {pageInfo.label}
             </ButtonLink>
@@ -197,7 +200,7 @@ function getPageType() {
     let activePageType: PageType = "404";
 
     for (const pageType of pageTypes) {
-        const [isActive] = matchRoute(router, `/cog-minder/${pages[pageType].link}`, path);
+        const [isActive] = matchRoute(router, `/${rootDirectory}/${pages[pageType].link}(?:/.*)?`, path);
 
         if (isActive) {
             activePageType = pageType;
@@ -213,8 +216,8 @@ export default function PageHeader() {
     const pageDetails = pages[pageType];
 
     useEffect(() => {
-        document.title = `Cog-Minder ${pageType}`;
-    })
+        document.title = `${pageType} - Cog-Minder`;
+    }, [pageType]);
 
     return (
         <>

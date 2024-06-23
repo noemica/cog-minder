@@ -1041,7 +1041,7 @@ function PartRow({
             label="Number"
             tooltip="The number of parts of this type."
             className="flex-1-1"
-            value={pageState.partState![i].number}
+            value={pageState.partState![i].number || ""}
             placeholder="1"
             onChange={(value) => {
                 // Update the current selected part
@@ -1289,7 +1289,7 @@ export default function BuildPage() {
             <div className="page-input-group">
                 <LabeledInput
                     label="Depth"
-                    value={pageState.depth}
+                    value={pageState.depth || ""}
                     onChange={(val) => {
                         updatePageState({ ...pageState, depth: val });
                     }}
@@ -1298,7 +1298,7 @@ export default function BuildPage() {
                 />
                 <LabeledInput
                     label="Bonus Energy Gen"
-                    value={pageState.bonusEnergyGen}
+                    value={pageState.bonusEnergyGen || ""}
                     onChange={(val) => {
                         updatePageState({ ...pageState, bonusEnergyGen: val });
                     }}
@@ -1307,7 +1307,7 @@ export default function BuildPage() {
                 />
                 <LabeledInput
                     label="Bonus Heat Dissipation"
-                    value={pageState.bonusHeatDissipation}
+                    value={pageState.bonusHeatDissipation || ""}
                     onChange={(val) => {
                         updatePageState({ ...pageState, bonusHeatDissipation: val });
                     }}

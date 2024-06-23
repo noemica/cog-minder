@@ -1,7 +1,8 @@
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import React from "react";
-import { Redirect, Route, Router, Switch } from "wouter";
+import { Redirect, Route, Router, Switch, useLocation } from "wouter";
 
+import { rootDirectory } from "../../utilities/common";
 import useThemeUpdater from "../Effects/useThemeUpdater";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import PageHeader from "../PageHeader/PageHeader";
@@ -15,6 +16,7 @@ const LorePage = React.lazy(() => import("../Pages/LorePage/LorePage"));
 const PartsPage = React.lazy(() => import("../Pages/PartsPage/PartsPage"));
 const RifPage = React.lazy(() => import("../Pages/RifPage/RifPage"));
 const SimulatorPage = React.lazy(() => import("../Pages/SimulatorPage/SimulatorPage"));
+const WikiPage = React.lazy(() => import("../Pages/WikiPage/WikiPage"));
 
 function Routes() {
     return (
@@ -50,6 +52,9 @@ function Routes() {
             <Route path="/simulator">
                 <SimulatorPage />
             </Route>
+            <Route path="/wiki/*?">
+                <WikiPage />
+            </Route>
 
             {/* Redirect routes, don't want to break existing links */}
             <Route path="/about.html">
@@ -79,6 +84,9 @@ function Routes() {
             <Route path="/simulator.html">
                 <Redirect to="/simulator" />
             </Route>
+            <Route path="/wiki.html">
+                <Redirect to="/wiki" />
+            </Route>
 
             {/* 404 */}
             <Route>Page not found!</Route>
@@ -100,7 +108,7 @@ function errorFallback(error: Error) {
 
     return (
         <>
-            <p className="error-notice">Unexpected error, please report the following error</p>
+            <p className="error-notice">Unexpected error, please report the following</p>
             <p className="error-message">{errorMessage}</p>
             {stacktrace && <p>{stacktrace}</p>}
         </>
@@ -109,11 +117,17 @@ function errorFallback(error: Error) {
 
 export default function App() {
     useThemeUpdater();
+    const [location] = useLocation();
+
+    // Explicitly scroll back to top whenever the URL changes
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
     return (
         <>
             <PageHeader />
-            <Router base="/cog-minder">
+            <Router base={`/${rootDirectory}`}>
                 <Suspense fallback={<span className="loading-message">Loading</span>}>
                     <ErrorBoundary fallback={errorFallback}>
                         <Switch>{<Routes />}</Switch>

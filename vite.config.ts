@@ -6,7 +6,7 @@ declare const __dirname: string;
 
 export default defineConfig({
     root: "src",
-    base: "/cog-minder/",
+    base: `/cog-minder/`,
     build: {
         outDir: path.resolve(__dirname, "dist"),
         rollupOptions: {

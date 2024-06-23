@@ -6,7 +6,6 @@ import {
     arrow,
     autoUpdate,
     flip,
-    limitShift,
     offset,
     shift,
     useClick,
@@ -65,7 +64,7 @@ export function usePopover({
                 fallbackAxisSideDirection: "end",
                 padding: 5,
             }),
-            shouldShift && shift({ padding: 5, crossAxis: true }),
+            shift({ padding: 5, mainAxis: true, crossAxis: shouldShift }),
             arrow({ element: arrowRef }),
         ],
     });

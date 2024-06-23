@@ -10,7 +10,6 @@ export type ExclusiveButtonDefinition<T extends string> = {
 
 export type ExclusiveButtonsProps<T extends string> = {
     buttons: ExclusiveButtonDefinition<T>[];
-    className?: string;
     disabled?: boolean;
     onValueChanged?: (value: T) => void;
     selected?: T | number;
@@ -18,7 +17,6 @@ export type ExclusiveButtonsProps<T extends string> = {
 
 export default function ExclusiveButtonGroup<T extends string>({
     buttons,
-    className,
     disabled,
     onValueChanged,
     selected,
@@ -40,7 +38,6 @@ export default function ExclusiveButtonGroup<T extends string>({
 
     const selectedIndex = findIndex(selected);
 
-    className = (className || "") + " exclusive-buttons";
     const buttonElements = buttons.map((b, index) => {
         return (
             <Button

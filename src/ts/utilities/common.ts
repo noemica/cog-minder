@@ -33,7 +33,7 @@ const botNameImageMap = new Map<string, string>([
     ["A7", "Programmer"],
     ["A8", "Programmer"],
     ["Architect", "Architect"],
-    ["Autobeam Turret", "Autobeam Turret"],
+    ["Autobeam Turret", "Turret"],
     ["Cobbler", "Mechanic"],
     ["CL-ANK", "Brawler"],
     ["Data Miner", "Data Miner"],
@@ -150,29 +150,12 @@ export const entityMap: { [key: string]: string } = {
     "\n": "<br />",
 };
 
-export const rootDirectory = "/cog-minder/";
+export const rootDirectory = "cog-minder";
 
 // Compile-time assert that code is unreachable
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function assertUnreachable(val: never): never {
     throw new Error(`This should not be reachable: ${val}`);
-}
-
-// In the given string, bolds all matches of matchText
-// Uses lowercase matching but returns modified text with proper capitalization
-export function boldMatches(text: string, matchText: string): string {
-    // Bold the match
-    let searchIndex: number;
-    let endSubstringIndex = Number.MAX_SAFE_INTEGER;
-    while ((searchIndex = text.substring(0, endSubstringIndex).toLowerCase().lastIndexOf(matchText)) !== -1) {
-        text =
-            text.substring(0, searchIndex) +
-            `<b>${text.substring(searchIndex, searchIndex + matchText.length)}</b>` +
-            text.substring(searchIndex + matchText.length);
-        endSubstringIndex = searchIndex;
-    }
-
-    return text;
 }
 
 // Determines if the given part can be shown based on the current spoilers state
@@ -1391,157 +1374,8 @@ export function createImagePath(nameOrUrl: string, fileDir: string = "") {
         new URL(nameOrUrl);
         return nameOrUrl;
     } catch (_) {
-        return fileDir + nameOrUrl;
+        return `/${rootDirectory}/${fileDir}${nameOrUrl}`;
     }
-}
-
-export function createLocationHtml(location: MapLocation, spoilersState: Spoiler, inPopover: boolean): string {
-    function getDepthString(minDepth: number, maxDepth: number) {
-        if (minDepth === maxDepth) {
-            return minDepth.toString();
-        } else {
-            return `${minDepth} to ${maxDepth}`;
-        }
-    }
-
-    function getMinMaxDepths(startLocation: MapLocation, endLocation: MapLocation) {
-        let minDepth: number;
-        let maxDepth: number;
-
-        if (endLocation.branch || startLocation.preDepthBranch) {
-            minDepth = Math.max(startLocation.minDepth, endLocation.minDepth);
-            maxDepth = Math.min(startLocation.maxDepth, endLocation.maxDepth);
-        } else {
-            minDepth = Math.max(startLocation.minDepth, endLocation.minDepth - 1);
-            maxDepth = Math.min(startLocation.maxDepth, endLocation.maxDepth - 1);
-        }
-
-        return { minDepth: minDepth, maxDepth: maxDepth };
-    }
-
-    let html = `
-        ${summaryLine(location.name)}
-        ${
-            location.imageName === undefined
-                ? ""
-                : `<a href="${createImagePath(
-                      `wiki_images/${location.imageName}`,
-                  )}" target="_blank"><img src="wiki_images/${location.imageName}" class="location-image"/></a>`
-        }
-        ${textLine("Available depths", getDepthString(location.minDepth, location.maxDepth))}
-        ${textLine("Branch", location.branch || location.preDepthBranch ? "Yes" : "No")}
-    `;
-
-    const allowedEntries = location.entries.filter((e) =>
-        location.branch ? canShowSpoiler(e.spoiler, spoilersState) : !e.branch,
-    );
-    if (allowedEntries.length > 0) {
-        html += `
-        ${emptyLine}
-        ${summaryLine("Entry from")}
-        `;
-
-        for (const entry of allowedEntries) {
-            const depths = getMinMaxDepths(entry, location);
-            const depthsString = getDepthString(depths.minDepth, depths.maxDepth);
-
-            // Don't bother showing entrances from spoiler-blocked maps
-            if (canShowSpoiler(entry.spoiler, spoilersState)) {
-                if (inPopover) {
-                    html += textLine(entry.name, depthsString);
-                } else {
-                    const extraAttributes = `data-html=true data-content='${createLocationHtml(
-                        entry,
-                        spoilersState,
-                        true,
-                    )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
-                    html += textLineLink(entry.name, `#${entry.name}`, depthsString, extraAttributes);
-                }
-            }
-        }
-    }
-
-    if (location.exits.length > 0) {
-        html += `
-        ${emptyLine}
-        ${summaryLine("Exits to")}
-        `;
-
-        for (const exit of location.exits) {
-            const depths = getMinMaxDepths(location, exit);
-            const depthsString = getDepthString(depths.minDepth, depths.maxDepth);
-            if (inPopover) {
-                // In popovers never show spoilered things
-                if (canShowSpoiler(exit.spoiler, spoilersState)) {
-                    html += textLine(exit.name, depthsString);
-                }
-            } else {
-                // Show exits with a spoiler
-                if (canShowSpoiler(exit.spoiler, spoilersState)) {
-                    const extraAttributes = `data-html=true data-content='${createLocationHtml(
-                        exit,
-                        spoilersState,
-                        true,
-                    )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
-                    html += textLineLink(exit.name, `#${exit.name}`, depthsString, extraAttributes);
-                } else {
-                    html += textLineSpoilerLink(exit.name, `#${exit.name}`, depthsString);
-                }
-            }
-        }
-    }
-
-    if (location.specialBots.length > 0) {
-        html += `
-        ${emptyLine} 
-        ${summaryLine("Special bots")}
-        `;
-
-        for (const specialBot of location.specialBots) {
-            if (inPopover) {
-                if (canShowSpoiler(specialBot.spoiler, spoilersState)) {
-                    html += textLine(escapeHtml(specialBot.name));
-                }
-            } else {
-                if (canShowSpoiler(specialBot.spoiler, spoilersState)) {
-                    const extraAttributes = `data-html=true data-content='${createBotDataContent(
-                        specialBot,
-                        spoilersState,
-                    )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
-                    html += textLineLink(specialBot.name, `#${specialBot.name}`, undefined, extraAttributes);
-                } else {
-                    html += textLineSpoilerLink(specialBot.name, `#${specialBot.name}`);
-                }
-            }
-        }
-    }
-
-    if (location.specialItems.length > 0) {
-        html += `
-        ${emptyLine}
-        ${summaryLine("Special items")}
-        `;
-
-        for (const specialItem of location.specialItems) {
-            if (inPopover) {
-                if (canShowSpoiler(specialItem.spoiler, spoilersState)) {
-                    html += textLine(escapeHtml(specialItem.name));
-                }
-            } else {
-                if (canShowSpoiler(specialItem.spoiler, spoilersState)) {
-                    const extraAttributes = `data-html=true data-content='${createItemDataContent(
-                        specialItem,
-                    )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
-
-                    html += textLineLink(specialItem.name, `#${specialItem.name}`, undefined, extraAttributes);
-                } else {
-                    html += textLineSpoilerLink(specialItem.name, `#${specialItem.name}`);
-                }
-            }
-        }
-    }
-
-    return html;
 }
 
 // Escapes the given string with HTML entities
@@ -1601,6 +1435,19 @@ export function getItemAsciiArtImageName(item: Item): string {
     return createImagePath(`part_art/${item.name.replace(/"/g, "").replace(/\//g, "")}.png`);
 }
 
+// Converts a normal string to a string safe to be used in an URL
+export function getLinkSafeString(str: string) {
+    return str
+        .replaceAll(" ", "%20")
+        .replaceAll("#", "%23")
+        .replaceAll("&", "%26")
+        .replaceAll("(", "%28")
+        .replaceAll(")", "%29")
+        .replaceAll(",", "%2C")
+        .replaceAll("/", "%2F")
+        .replaceAll("\\", "%5C");
+}
+
 // Gets a location string with query parameters based on the given state object
 export function getLocationFromState<T extends object>(
     baseLocation: string,
@@ -1622,13 +1469,7 @@ export function getLocationFromState<T extends object>(
             }
 
             // Special escaping needs to match parseSearchParameters
-            const paramValue = (stateObject[key] as string)
-                .replaceAll(" ", "%20")
-                .replaceAll("#", "%23")
-                .replaceAll("&", "%26")
-                .replaceAll("(", "%28")
-                .replaceAll(")", "%29")
-                .replaceAll(",", "%2C");
+            const paramValue = getLinkSafeString(stateObject[key] as string);
 
             // Append to search
             if (search.length === 0) {
@@ -1668,6 +1509,19 @@ export function getMovementText(propulsionType: ItemType | undefined): string {
 export function getTopTwoValues(values: number[]) {
     values = values.sort((a, b) => b - a).splice(0, 2);
     return [values[0] === undefined ? 0 : values[0], values[1] === undefined ? 0 : values[1]];
+}
+
+// Converts a string from getLinkSafeString to a normal string
+export function getStringFromLinkSafeString(str: string) {
+    return str
+        .replace("%20", " ")
+        .replaceAll("%23", "#")
+        .replaceAll("%26", "&")
+        .replaceAll("%28", "(")
+        .replaceAll("%29", ")")
+        .replaceAll("%2C", ",")
+        .replaceAll("%2F", "/")
+        .replaceAll("%5C", "\\");
 }
 
 // Gets a per-TU value scaled to the given number of TUs
@@ -1820,12 +1674,7 @@ export function parseSearchParameters<T>(search: string, object: T): T {
 
         // Assign the parameter
         // Special escaping needs to match getLocationFromState
-        object[paramName] = paramValue
-            .replaceAll("%23", "#")
-            .replaceAll("%26", "&")
-            .replaceAll("%28", "(")
-            .replaceAll("%29", ")")
-            .replaceAll("%2C", ",");
+        object[paramName] = getStringFromLinkSafeString(paramValue);
     }
 
     return object;

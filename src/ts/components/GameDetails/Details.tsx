@@ -75,21 +75,24 @@ export function DetailsItemTitleLine({ part }: { part: Item }) {
     );
 }
 
-export type DetailsTextLineProps = {
+export function DetailsTextLine({
+    category,
+    content,
+    defaultContent,
+}: {
     category: string;
     content?: string | ReactNode;
     defaultContent?: string;
-};
-export function DetailsTextLine({ category, content, defaultContent }: DetailsTextLineProps) {
-    const numSpaces = 23 - 1 - category.length;
+}) {
+    if (content === undefined && defaultContent) {
+        content = <span className="details-dim-text">{defaultContent}</span>;
+    }
 
     if (content === undefined) {
-        if (defaultContent) {
-            content = <span className="details-dim-text">{defaultContent}</span>;
-        } else {
-            content = "";
-        }
+        return <pre className="details-line"> {category}</pre>;
     }
+
+    const numSpaces = 23 - 1 - category.length;
 
     return (
         <pre className="details-line">
@@ -106,8 +109,34 @@ export function DetailsTextLineDim({ category, text }: { category: string; text:
     return (
         <pre className="details-line">
             {" "}
-            {category}{" ".repeat(numSpaces)}
+            {category}
+            {" ".repeat(numSpaces)}
             <span className="details-dim-text">{text}</span>
+        </pre>
+    );
+}
+
+export function DetailsTextNode({
+    category,
+    categoryLength,
+    content,
+}: {
+    category: ReactNode;
+    categoryLength: number;
+    content?: string | ReactNode;
+}) {
+    if (content === undefined) {
+        return <pre className="details-line"> {category}</pre>;
+    }
+
+    const numSpaces = 23 - 1 - categoryLength;
+
+    return (
+        <pre className="details-line">
+            {" "}
+            {category}
+            {" ".repeat(numSpaces)}
+            {content}
         </pre>
     );
 }

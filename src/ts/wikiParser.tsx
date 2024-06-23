@@ -1,15 +1,21 @@
+import { Fragment, ReactNode } from "react";
+import { Link } from "wouter";
+
 import lore from "../json/lore.json";
+import { BotLink, ItemLink, LocationLink } from "./components/Pages/WikiPage/WikiTooltips";
+import { Bot } from "./types/botTypes";
 import { MapLocation, Spoiler } from "./types/commonTypes";
+import { Item } from "./types/itemTypes";
 import { WikiEntry } from "./types/wikiTypes";
+import { BotData } from "./utilities/BotData";
+import { ItemData } from "./utilities/ItemData";
 import {
     canShowSpoiler,
-    createBotDataContent,
     createImagePath,
-    createItemDataContent,
-    createLocationHtml,
-    escapeHtml,
     getBotImageName,
+    getLinkSafeString,
     parseIntOrDefault,
+    rootDirectory,
 } from "./utilities/common";
 
 // Output group types
@@ -19,7 +25,7 @@ import {
 type OutputGroupType = "Grouped" | "Individual" | "Separator";
 
 type OutputGroup = {
-    html: string | undefined;
+    node: ReactNode | undefined;
     groupType: OutputGroupType;
 };
 
@@ -27,31 +33,37 @@ type AllowedContentType = "InlineOnly" | "InlineList" | "All";
 
 class ParserState {
     allEntries: Map<string, WikiEntry>;
+    botData: BotData;
     errors: string[];
     images: Set<string>;
     inSpoiler: boolean;
     initialContent: string;
     index: number;
     inlineOnly: AllowedContentType;
+    itemData: ItemData;
     output: OutputGroup[];
     spoiler: Spoiler;
 
     constructor(
         allEntries: Map<string, WikiEntry>,
+        botData: BotData,
         errors: string[],
         images: Set<string>,
         inSpoiler: boolean,
         initialContent: string,
         inlineOnly: AllowedContentType,
+        itemData: ItemData,
         spoiler: Spoiler,
     ) {
         this.allEntries = allEntries;
+        this.botData = botData;
         this.errors = errors;
         this.images = images;
         this.inSpoiler = inSpoiler;
         this.initialContent = initialContent;
         this.index = 0;
         this.inlineOnly = inlineOnly;
+        this.itemData = itemData;
         this.output = [];
         this.spoiler = spoiler;
     }
@@ -59,11 +71,13 @@ class ParserState {
     static Clone(state: ParserState): ParserState {
         return new ParserState(
             state.allEntries,
+            state.botData,
             state.errors,
             state.images,
             state.inSpoiler,
             state.initialContent,
             state.inlineOnly,
+            state.itemData,
             state.spoiler,
         );
     }
@@ -75,15 +89,28 @@ export function createContentHtml(
     allEntries: Map<string, WikiEntry>,
     spoilerState: Spoiler,
     headingLink: boolean,
-): { html: string; errors: string[]; images: Set<string> } {
+    itemData: ItemData,
+    botData: BotData,
+): { node: ReactNode; errors: string[]; images: Set<string> } {
     // Process each section into the same output groups
 
     // Process initial content by replacing any instances of [XYZ] in links with {{xyz}}
-    // Otherwise we hae issues with the regex for any links that include square brackets in them
+    // Otherwise we have issues with the regex for any links that include square brackets in them
+    // TODO still needed?
     const initialContent = entry.content.replace(/([^[])\[([\w/]*)\]/g, (_, p1, p2) => {
         return `${p1}{{${p2}}}`;
     });
-    const state = new ParserState(allEntries, [], new Set<string>(), false, initialContent, "All", spoilerState);
+    const state = new ParserState(
+        allEntries,
+        botData,
+        [],
+        new Set<string>(),
+        false,
+        initialContent,
+        "All",
+        itemData,
+        spoilerState,
+    );
     processSection(state, undefined);
 
     // Combine all alt names as part of the title
@@ -96,18 +123,18 @@ export function createContentHtml(
 
     // Convert to HTML
     let outputHtml = outputGroupsToHtml(state.output, false);
-    if (outputHtml === "") {
-        if (entry.type === "Bot" && (entry.extraData as Bot).description.length > 0) {
-            const bot = entry.extraData as Bot;
-            outputHtml = `<span class="wiki-game-text">${bot.description}</span>\n<p>This page is a stub. Please consider contributing.</p>`;
-        } else {
-            outputHtml = "<p>This page is a stub. Please consider contributing.</p>";
-        }
+    if (outputHtml === undefined) {
+        outputHtml = <p>This page is a stub. Please consider contributing.</p>;
     }
     return {
-        html: `<h1 class="wiki-heading">${
-            headingLink ? `<a href="#${entry.name}">${headingText}</a>` : headingText
-        }</h1>${outputHtml}`,
+        node: (
+            <>
+                <h1 className="wiki-emphasized-heading">
+                    {headingLink ? <Link href={`/${getLinkSafeString(entry.name)}`}>{headingText}</Link> : headingText}
+                </h1>
+                {outputHtml}
+            </>
+        ),
         errors: state.errors,
         images: state.images,
     };
@@ -148,108 +175,266 @@ export function createPreviewContent(content: string, spoilerState: Spoiler): st
     return content;
 }
 
-function getLinkHtml(state: ParserState, referenceEntry: WikiEntry, linkText: string) {
-    let tooltipData = "";
+function getLinkNode(state: ParserState, referenceEntry: WikiEntry, linkText: string) {
+    let node: ReactNode | undefined;
+
     if (referenceEntry.type === "Bot") {
-        // Add bot data content overlay
-        const bot = getBot(referenceEntry.name);
-        tooltipData = `data-html=true data-boundary="window" data-content='${createBotDataContent(
-            bot,
-            state.spoiler,
-            false,
-        )}' data-toggle="popover" data-trigger="hover"`;
-    } else if (referenceEntry.type === "Part") {
-        // Add part data content overlay
-        const item = getItem(referenceEntry.name);
-        tooltipData = `data-html=true data-boundary="window" data-content='${createItemDataContent(
-            item,
-        )}' data-toggle="popover" data-trigger="hover"`;
+        const bot = referenceEntry.extraData as Bot;
+        node = <BotLink bot={bot} text={linkText} />;
     } else if (referenceEntry.type === "Location") {
-        // Add location data content overlay
-        tooltipData = `data-html=true data-boundary="window" data-content='${createLocationHtml(
-            referenceEntry.extraData as MapLocation,
-            state.spoiler,
-            true,
-        )}' data-toggle="popover" data-trigger="hover"`;
+        const location = referenceEntry.extraData as MapLocation;
+        node = <LocationLink location={location} text={linkText} />;
+    } else if (referenceEntry.type === "Part") {
+        const item = referenceEntry.extraData as Item;
+        node = <ItemLink item={item} text={linkText} />;
+    } else {
+        node = <Link href={`/${getLinkSafeString(referenceEntry.name)}`}>{linkText}</Link>;
     }
 
-    let html = `<a class="d-inline-block" href="#${referenceEntry.name}" ${tooltipData}>${linkText}</a>`;
     if (!canShowSpoiler(referenceEntry.spoiler, state.spoiler) && !state.inSpoiler) {
         // Auto-spoiler links that aren't in a proper spoiler block
-        html = `<span class="spoiler-text spoiler-text-multiline">${html}</span>`;
+        node = <span className="spoiler-text spoiler-text-multiline">{node}</span>;
     }
 
-    return html;
+    return node;
 }
 
 // Turns a list of output groups into HTML
-// If startInGroup is true then don't auto-add the opening/closing <p> tags
 function outputGroupsToHtml(
     outputGroups: OutputGroup[],
     inSpoiler: boolean,
     startInGroup = false,
     inTopLevelSpoiler = false,
-): string {
+): ReactNode | undefined {
     if (outputGroups.length === 0) {
-        return "";
+        return undefined;
     }
 
-    let output = "";
-    let inGroup = startInGroup;
-    let inSpan = false;
-    let skipFirstP = false;
+    type CombinedGroups = {
+        groupNodes: (ReactNode | undefined)[];
+        parentElement: "p" | "spoiler-span" | "spoiler-p" | "none";
+    };
+
+    function processCombinedGroups(groups: CombinedGroups, key: number) {
+        switch (groups.parentElement) {
+            case "none":
+                return <Fragment key={key}>{groups.groupNodes}</Fragment>;
+
+            case "p":
+                return <p key={key}>{groups.groupNodes}</p>;
+
+            case "spoiler-p":
+                return (
+                    <p key={key}>
+                        <span className="spoiler-text spoiler-text-multiline">{groups.groupNodes}</span>
+                    </p>
+                );
+
+            case "spoiler-span":
+                return (
+                    <span key={key} className="spoiler-text spoiler-text-multiline">
+                        {groups.groupNodes}
+                    </span>
+                );
+        }
+    }
+
+    const combinedGroups: CombinedGroups[] = [];
+    let currentGroup: CombinedGroups | undefined;
+
+    // If we are starting in a parent group, output a list of nodes instead of
+    // adding another top level HTML element
+    if (startInGroup) {
+        currentGroup = {
+            groupNodes: [],
+            parentElement: "none",
+        };
+        combinedGroups.push(currentGroup);
+    }
 
     if (inSpoiler && inTopLevelSpoiler) {
+        // Grouped spoiler content needs to go into a span so it can continue
+        // on in case we are adding a spoiler block in the middle of an existing
+        // group. Otherwise, we don't want any special parent element.
         if (outputGroups[0].groupType === "Grouped") {
-            output += `<span class="spoiler-text spoiler-text-multiline">`;
-            inSpan = true;
+            currentGroup = {
+                groupNodes: [],
+                parentElement: "spoiler-span",
+            };
+            combinedGroups.push(currentGroup);
         } else {
-            skipFirstP = true;
+            currentGroup = {
+                groupNodes: [],
+                parentElement: "none",
+            };
+            combinedGroups.push(currentGroup);
         }
     }
 
     for (const group of outputGroups) {
-        // Auto add opening/closing <p> tags for groups
-        if (!inGroup && group.groupType === "Grouped" && group.html !== undefined && group.html.length > 0) {
-            inGroup = true;
-
-            output += "<p>";
-
-            if (inSpoiler) {
-                inSpan = true;
-                output += `<span class="spoiler-text spoiler-text-multiline">`;
-            }
+        if (group.node === "") {
+            continue;
         }
 
-        if (inGroup && (group.groupType === "Separator" || group.groupType === "Individual")) {
-            inGroup = false;
+        // Starting a new group
+        if (currentGroup === undefined && group.groupType === "Grouped" && group.node !== undefined) {
+            currentGroup = {
+                groupNodes: [],
+                parentElement: inSpoiler ? "spoiler-p" : "p",
+            };
+            combinedGroups.push(currentGroup);
+        }
 
-            if (inSpan) {
-                output += "</span>";
-                inSpan = false;
-            }
+        // Ending an existing group
+        if (group.groupType === "Separator" || group.groupType === "Individual") {
+            currentGroup = undefined;
+        }
 
-            if (skipFirstP) {
-                skipFirstP = false;
+        if (group.node !== undefined) {
+            if (currentGroup === undefined) {
+                // If we still don't have a group (separator/individual) then
+                // create one here, but don't save it
+                combinedGroups.push({
+                    groupNodes: [<Fragment key={0}>{group.node}</Fragment>],
+                    parentElement: group.groupType === "Grouped" ? "p" : "none",
+                });
             } else {
-                output += "</p>";
+                // Add onto existing group
+                currentGroup.groupNodes.push(<Fragment key={currentGroup.groupNodes.length}>{group.node}</Fragment>);
+            }
+        }
+    }
+
+    return combinedGroups.map((combinedGroup, i) => processCombinedGroups(combinedGroup, i));
+}
+
+export function parseEntryContent(
+    entry: WikiEntry,
+    allEntries: Map<string, WikiEntry>,
+    spoilers: Spoiler,
+    itemData: ItemData,
+    botData: BotData,
+    groupSelection?: number,
+) {
+    let parseResult = createContentHtml(entry, allEntries, spoilers, false, itemData, botData);
+
+    if (parseResult.errors.length > 0) {
+        console.log(`Errors while parsing ${entry.name}`);
+
+        for (const error of parseResult.errors) {
+            console.log(`Parse error: ${error}`);
+        }
+    }
+
+    if (entry.parentGroup !== undefined) {
+        const parentParseResult = createContentHtml(entry.parentGroup, allEntries, spoilers, true, itemData, botData);
+
+        if (parentParseResult.errors.length > 0) {
+            console.log(`Errors while parsing ${entry.name}`);
+
+            for (const error of parentParseResult.errors) {
+                console.log(`Parse error: ${error}`);
             }
         }
 
-        if (group.html !== undefined) {
-            output += group.html;
+        // Merge the parent parse results with the main parse results
+        parseResult.node = (
+            <>
+                {parentParseResult.node}
+                {parseResult.node}
+            </>
+        );
+        parseResult.errors = parseResult.errors.concat(parentParseResult.errors);
+
+        for (const image of parentParseResult.images) {
+            parseResult.images.add(image);
+        }
+    } else if ((entry.type === "Bot Group" || entry.type === "Part Group") && groupSelection !== undefined) {
+        const childParseResult = createContentHtml(
+            (entry.extraData as WikiEntry[])[groupSelection],
+            allEntries,
+            spoilers,
+            true,
+            itemData,
+            botData,
+        );
+
+        if (childParseResult.errors.length > 0) {
+            console.log(`Errors while parsing ${entry.name}`);
+
+            for (const error of childParseResult.errors) {
+                console.log(`Parse error: ${error}`);
+            }
+        }
+
+        // Merge the parent parse results with the main parse results
+        parseResult.node = (
+            <>
+                {parseResult.node}
+                {childParseResult.node}
+            </>
+        );
+        parseResult.errors = parseResult.errors.concat(childParseResult.errors);
+
+        for (const image of childParseResult.images) {
+            parseResult.images.add(image);
         }
     }
 
-    if (inSpan) {
-        output += "</span>";
+    return parseResult;
+}
+
+// Process the locations tag like [[AllLocations]]
+function processAllLocationsTag(state: ParserState, result: RegExpExecArray) {
+    state.index += result[0].length;
+
+    const locationRows: ReactNode[] = [];
+
+    for (const entryPair of state.allEntries.entries()) {
+        const entryName = entryPair[0];
+        const entry = entryPair[1];
+
+        // Don't include alternative names as separate entries, only show the main entry
+        if (entry.type !== "Location" || entryName != entry.name) {
+            continue;
+        }
+
+        const location = entry.extraData as MapLocation;
+
+        // Fill out row for each location
+        locationRows.push(
+            <tr key={entryName}>
+                <td>{getLinkNode(state, entry, location.name.replace(" (Location)", ""))}</td>
+                <td>{location.branch ? "Branch" : "Main"}</td>
+                <td>
+                    {location.minDepth === location.maxDepth
+                        ? location.minDepth
+                        : `${location.minDepth} to ${location.maxDepth} ${
+                              location.multipleDepths ? "" : "(Only at one depth per run)"
+                          }`}
+                </td>
+            </tr>,
+        );
     }
 
-    if (inGroup && !startInGroup) {
-        output += "</p>";
-    }
+    let html = (
+        <table className="wiki-table">
+            <tbody>
+                <tr>
+                    <th>Location Name</th>
+                    <th>Main Floor/Branch</th>
+                    <th>Depths</th>
+                </tr>
+                {locationRows}
+            </tbody>
+        </table>
+    );
 
-    return output;
+    // Add the locations table
+    state.output.push({
+        groupType: "Individual",
+        node: html,
+    });
 }
 
 // Process a B tag like [[B]]Bolded Text[[/Bold]]
@@ -262,9 +447,9 @@ function processBTag(state: ParserState, result: RegExpExecArray) {
 
     processSection(tempState, "/B");
     state.index = tempState.index;
-    const boldedContent = `<b>${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</b>`;
+    const boldedContent = <b>{outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</b>;
 
-    state.output.push({ groupType: "Grouped", html: boldedContent });
+    state.output.push({ groupType: "Grouped", node: boldedContent });
 }
 
 // Process a [[BotGroups]][[/BotGroups]] tag
@@ -278,32 +463,44 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
         const images = new Set<string>();
         for (const entry of state.allEntries.values()) {
             if (entry.parentGroup === groupEntry) {
-                const bot = getBot(entry.name);
+                const bot = state.botData.getBot(entry.name);
                 images.add(getBotImageName(bot));
             }
         }
 
-        let imageHtml = "";
-        for (const image of images.values()) {
-            imageHtml += `<img class="wiki-bot-group-image" src="${image}"/>`;
-        }
+        let imageNode = (
+            <>
+                {Array.from(images.values()).map((image) => (
+                    <img key={image} className="wiki-bot-group-image" src={image} />
+                ))}
+            </>
+        );
 
         const tempState = new ParserState(
             state.allEntries,
+            state.botData,
             state.errors,
             state.images,
             false,
             groupEntry.content,
             "All",
+            state.itemData,
             state.spoiler,
         );
 
         processSection(tempState, undefined);
 
-        const content = `<h2 class="wiki-heading">${getLinkHtml(state, groupEntry, groupEntry.name)}${imageHtml}</h2>
-        ${outputGroupsToHtml(tempState.output, false)}`;
+        const content = (
+            <>
+                <h2 className="wiki-heading wiki-bot-group-heading">
+                    {getLinkNode(state, groupEntry, groupEntry.name)}
+                    {imageNode}
+                </h2>
+                {outputGroupsToHtml(tempState.output, false)}
+            </>
+        );
 
-        state.output.push({ groupType: "Individual", html: content });
+        state.output.push({ groupType: "Individual", node: content });
     }
 
     state.index = result.index + result[0].length;
@@ -324,26 +521,38 @@ function processColorTag(state: ParserState, result: RegExpExecArray) {
 
     processSection(tempState, "/Color");
     state.index = tempState.index;
-    const boldedContent = `<span style="color:${color}">${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</span>`;
+    const boldedContent = (
+        <span style={{ color: color }}>{outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</span>
+    );
 
-    state.output.push({ groupType: "Grouped", html: boldedContent });
+    state.output.push({ groupType: "Grouped", node: boldedContent });
 }
 
 // Process a [[NonEmptyPages]][[/NonEmptyPages]] tag
 function processNonEmptyPagesTag(state: ParserState, result: RegExpExecArray) {
-    const listContents:string[] = [];
+    const listContents: { node: ReactNode; name: string }[] = [];
+    const processedEntries = new Set<WikiEntry>();
+
     for (const groupEntry of state.allEntries.values()) {
-        const listContent = `<li>${getLinkHtml(state, groupEntry, groupEntry.name)}</li>`; //little band-aid fix for duplicated entries
-        if (listContents.includes(listContent) || groupEntry.content.length < 20 || !canShowSpoiler(groupEntry.spoiler, state.spoiler)) {
+        if (
+            processedEntries.has(groupEntry) ||
+            groupEntry.content.length < 20 ||
+            !canShowSpoiler(groupEntry.spoiler, state.spoiler)
+        ) {
             continue;
         }
 
-        listContents.push(listContent);
+        const listContent = <li key={groupEntry.name}>{getLinkNode(state, groupEntry, groupEntry.name)}</li>;
+        processedEntries.add(groupEntry);
+        listContents.push({ node: listContent, name: groupEntry.name });
     }
 
-    listContents.sort();
+    listContents.sort((a, b) => a.name.localeCompare(b.name));
 
-    state.output.push({ groupType: "Individual", html: `<ul class="wiki-list">${listContents.join("")}</ul>`});
+    state.output.push({
+        groupType: "Individual",
+        node: <ul className="wiki-list">{listContents.map((content) => content.node)}</ul>,
+    });
 
     state.index = result.index + result[0].length;
 }
@@ -357,15 +566,14 @@ function processGameTextTag(state: ParserState, result: RegExpExecArray) {
     tempState.inlineOnly = "InlineOnly";
     processSection(tempState, "/GameText");
     state.index = tempState.index;
-    const gameTextContent = `<span class="wiki-game-text">${outputGroupsToHtml(
-        tempState.output,
-        state.inSpoiler,
-        true,
-    )}</span>`
-        .replace("{{", "[")
-        .replace("}}", "]");
+    const gameTextContent = (
+        <span className="wiki-game-text">{outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</span>
+    );
+    // TODO needed?
+    // .replace("{{", "[")
+    // .replace("}}", "]");
 
-    state.output.push({ groupType: "Grouped", html: gameTextContent });
+    state.output.push({ groupType: "Grouped", node: gameTextContent });
 }
 
 // Processes gallery tag like [[Gallery]]Image1.png|Image Caption|Image2.png|Image 2 caption[[/Gallery]]
@@ -400,7 +608,7 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         recordError(state, `Found gallery action without equal number of links/captions`);
     }
 
-    let galleryContent = `<div class="wiki-gallery-images">`;
+    const galleryItems: ReactNode[] = [];
 
     for (let i = 0; i < Math.floor(split.length / 2); i++) {
         let inSpoiler = state.inSpoiler;
@@ -437,24 +645,31 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
 
         // Append image content HTML
         const path = createImagePath(`${imageName}`, `wiki_images/`);
-        galleryContent += `<div>
-            <div>
-                <a ${inSpoiler ? 'class="spoiler-image"' : ""} href="${path}" target="_blank">
-                ${inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
-                    <img src="${path}" onerror="this.onerror=null; this.src='${createImagePath(
-                        "wiki_images/Image Not Found.png",
-                    )}'"/>
-                </a>
-            </div>
-            ${imageCaptionHtml}
-        </div>`;
+        galleryItems.push(
+            <div key={i}>
+                <div>
+                    <a className={inSpoiler ? "spoiler-image" : undefined} href={path} target="_blank">
+                        {inSpoiler && <div className="wiki-spoiler-image-text">SPOILER</div>}
+                        <img
+                            src={path}
+                            onError={(event) => {
+                                (event.target as HTMLImageElement).src = createImagePath(
+                                    "wiki_images/Image Not Found.png",
+                                );
+                            }}
+                        />
+                    </a>
+                </div>
+                {imageCaptionHtml}
+            </div>,
+        );
     }
 
-    galleryContent += "</div>";
+    const galleryContent = <div className="wiki-gallery-images">{galleryItems}</div>;
 
     state.output.push({
         groupType: "Individual",
-        html: galleryContent,
+        node: galleryContent,
     });
 
     state.index = endIndex + galleryResult[0].length;
@@ -482,15 +697,18 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
     let headingContent = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
 
     if (state.inSpoiler) {
-        headingContent = `<span class="spoiler-text spoiler-text-multiline">${headingContent}</span>`;
+        headingContent = <span className="spoiler-text spoiler-text-multiline">{headingContent}</span>;
     }
 
     if (type === "1") {
-        state.output.push({ groupType: "Individual", html: `<h2 class="wiki-heading">${headingContent}</h2>` });
+        state.output.push({
+            groupType: "Individual",
+            node: <h2 className="wiki-emphasized-heading">{headingContent}</h2>,
+        });
     } else if (type === "2") {
-        state.output.push({ groupType: "Individual", html: `<h3>${headingContent}</h3>` });
+        state.output.push({ groupType: "Individual", node: <h3 className="wiki-heading">{headingContent}</h3> });
     } else {
-        state.output.push({ groupType: "Individual", html: `<h4>${headingContent}</h4>` });
+        state.output.push({ groupType: "Individual", node: <h4 className="wiki-heading">{headingContent}</h4> });
     }
 }
 
@@ -503,9 +721,9 @@ function processITag(state: ParserState, result: RegExpExecArray) {
     tempState.inlineOnly = "InlineOnly";
     processSection(tempState, "/I");
     state.index = tempState.index;
-    const boldedContent = `<i>${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</i>`;
+    const boldedContent = <i>{outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</i>;
 
-    state.output.push({ groupType: "Grouped", html: boldedContent });
+    state.output.push({ groupType: "Grouped", node: boldedContent });
 }
 
 // Process an image link like [[Image]]ImageName.png|Optional Image Caption[[/Image]]
@@ -531,7 +749,7 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
     state.images.add(imageName);
 
     // Determine if there is a caption or not
-    let imageCaptionHtml: string;
+    let imageCaptionHtml: ReactNode;
     if (split.length === 1) {
         imageCaptionHtml = "";
     } else {
@@ -551,15 +769,20 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
     const path = createImagePath(`${imageName}`, `wiki_images/`);
     state.output.push({
         groupType: "Individual",
-        html: `<div class="wiki-sidebar-image">
-            <a ${state.inSpoiler ? 'class="spoiler-image"' : ""} href="${path}" target="_blank">
-                ${state.inSpoiler ? '<div class="wiki-spoiler-image-text">SPOILER</div>' : ""}
-                <img src="${path}" onerror="this.onerror=null; this.src='${createImagePath(
-                    "wiki_images/Image Not Found.png",
-                )}'"/>
-            </a>
-            ${imageCaptionHtml.length > 0 ? `${imageCaptionHtml}` : ""}
-        </div>`,
+        node: (
+            <div className="wiki-sidebar-image">
+                <a className={state.inSpoiler ? "spoiler-image" : undefined} href={path} target="_blank">
+                    {state.inSpoiler && <div className="wiki-spoiler-image-text">SPOILER</div>}
+                    <img
+                        src={path}
+                        onError={(event) => {
+                            (event.target as HTMLImageElement).src = createImagePath("wiki_images/Image Not Found.png");
+                        }}
+                    />
+                </a>
+                {imageCaptionHtml}
+            </div>
+        ),
     });
 
     state.index = endIndex + imageResult[0].length;
@@ -577,9 +800,9 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
         return;
     }
 
-    let listType = "ul";
+    let ordered = false;
     if (result[2] === "Ordered") {
-        listType = "ol";
+        ordered = true;
     } else if (result[2] !== undefined && result[2] !== "Unordered") {
         recordError(
             state,
@@ -592,9 +815,11 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
     const endIndex = startIndex + listResult.index - result[0].length;
     const split = splitOutsideActions(state.initialContent.substring(startIndex, endIndex));
 
-    let listContent = `<${listType} class="wiki-list">`;
+    const listItems: ReactNode[] = [];
 
-    for (const listItem of split) {
+    for (let i = 0; i < split.length; i++) {
+        const listItem = split[i];
+
         // Parse the list item as a subsection individually
         const tempState = ParserState.Clone(state);
         tempState.initialContent = listItem;
@@ -604,17 +829,25 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
 
         // Append list item HTML
         if (state.inSpoiler) {
-            listContent += `<li><span class="spoiler-text spoiler-text-multiline">${listItemHtml}</span></li>`;
+            listItems.push(
+                <li key={i}>
+                    <span className="spoiler-text spoiler-text-multiline">{listItemHtml}</span>
+                </li>,
+            );
         } else {
-            listContent += `<li>${listItemHtml}</li>`;
+            listItems.push(<li key={i}>{listItemHtml}</li>);
         }
     }
 
-    listContent += `</${listType}>`;
+    const listContent = ordered ? (
+        <ol className="wiki-list">{listItems}</ol>
+    ) : (
+        <ul className="wiki-list">{listItems}</ul>
+    );
 
     state.output.push({
         groupType: "Individual",
-        html: listContent,
+        node: listContent,
     });
 
     state.index = endIndex + listResult[0].length;
@@ -623,13 +856,7 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
 // Found a [[X]] or [[X|Y]] link, make sure we can link properly
 function processLinkTag(state: ParserState, result: RegExpExecArray) {
     // Remove the earlier substituted {{ and }}s for their proper [ and ] counterparts
-    let baseLinkTarget = result[1];
-    if (result[2]) {
-        // Add back the : that was split out if we have a full URL
-        baseLinkTarget += ":" + result[2];
-    }
-
-    const split = baseLinkTarget.replace("{{", "[").replace("}}", "]").split("|");
+    const split = result[1].replace("{{", "[").replace("}}", "]").split("|");
 
     const linkTarget = split[0];
     let linkText = linkTarget;
@@ -643,75 +870,35 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
 
     const referenceEntry = state.allEntries.get(linkTarget);
     if (referenceEntry !== undefined) {
-        const html = getLinkHtml(state, referenceEntry, linkText);
+        const html = getLinkNode(state, referenceEntry, linkText);
 
         state.output.push({
             groupType: "Grouped",
-            html: html,
+            node: html,
+        });
+    } else if (linkTarget.startsWith("~/")) {
+        state.output.push({
+            groupType: "Grouped",
+            node: <Link href={`~/${rootDirectory}/${linkTarget.slice(2)}`}>{linkText}</Link>,
         });
     } else if (linkTarget.includes(".htm") || linkTarget.startsWith("http")) {
         state.output.push({
             groupType: "Grouped",
-            html: `<a class="d-inline-block" href="${linkTarget}">${linkText}</a>`,
+            node: (
+                <a className="wiki-link" href={linkTarget}>
+                    {linkText}
+                </a>
+            ),
         });
     } else {
         recordError(state, `Bad link to page "${linkTarget}" that doesn't exist`);
         state.output.push({
             groupType: "Grouped",
-            html: linkTarget,
+            node: linkTarget,
         });
     }
 
     state.index += result[0].length;
-}
-
-// Process the locations tag like [[Locations]]
-function processLocationsTag(state: ParserState, result: RegExpExecArray) {
-    state.index += result[0].length;
-
-    // Start with table and header row
-    let html = `
-    <table class="wiki-table tablesorter">
-        <tbody>
-            <tr>
-                <th>Location Name</th>
-                <th>Main Floor/Branch</th>
-                <th>Depths</th>
-            </tr>`;
-
-    for (const entryPair of state.allEntries.entries()) {
-        const entryName = entryPair[0];
-        const entry = entryPair[1];
-
-        // Don't include alternative names as separate entries, only show the main entry
-        if (entry.type !== "Location" || entryName != entry.name) {
-            continue;
-        }
-
-        const location = entry.extraData as MapLocation;
-
-        // Fill out row for each location
-        html += `
-        <tr>
-            <td>${getLinkHtml(state, entry, location.name.replace(" (Location)", ""))}</td>
-            <td>${location.branch ? "Branch" : "Main"}</td>
-            <td>${
-                location.minDepth === location.maxDepth
-                    ? location.minDepth
-                    : `${location.minDepth} to ${location.maxDepth} ${
-                          location.multipleDepths ? "" : "(Only at one depth per run)"
-                      }`
-            }</td>
-        </tr>`;
-    }
-
-    html += "</tbody></table>";
-
-    // Add the locations table
-    state.output.push({
-        groupType: "Individual",
-        html: html,
-    });
 }
 
 // Process an lore tag like [[Lore:Lore]]Lore Group|Entry name/number[[/Lore]]
@@ -745,38 +932,38 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
     }
 
     // Get group and entry
-    if (!Object.keys(lore).includes(groupName)) {
+    const group = lore.find((group) => group.Name === groupName);
+    if (!group) {
         recordError(state, `Lore group name ${groupName} is not valid, see lore.json for valid groups`);
         return;
     }
 
-    const group = lore[groupName] as [];
-    const entry = group.find((obj) => obj["Name/Number"] === entryName);
+    const entry = group.Entries.find((obj) => obj["Name/Number"] === entryName);
     if (entry === undefined) {
         recordError(state, `Lore group name ${groupName} doesn't contain entry with name/number ${entryName}`);
         return;
     }
 
     // Create the lore with an optional caption
-    state.output.push({ groupType: "Separator", html: undefined });
+    state.output.push({ groupType: "Separator", node: undefined });
     if (groupName == "0b10 Records") {
         state.output.push({
             groupType: "Grouped",
-            html: `<span class="wiki-game-text">&gt;Query(${entryName})</span>`,
+            node: <span className="wiki-game-text">&gt;Query({entryName})</span>,
         });
-        state.output.push({ groupType: "Separator", html: undefined });
+        state.output.push({ groupType: "Separator", node: undefined });
     } else if (groupName == "WAR.Sys Records") {
         state.output.push({
             groupType: "Grouped",
-            html: `<span class="wiki-game-text">Intel "${entryName}"</span>`,
+            node: <span className="wiki-game-text">Intel "{entryName}"</span>,
         });
-        state.output.push({ groupType: "Separator", html: undefined });
+        state.output.push({ groupType: "Separator", node: undefined });
     }
     state.output.push({
         groupType: "Grouped",
-        html: `<span class="wiki-game-text">${escapeHtml(entry["Content"])}</span>`,
+        node: <span className="wiki-game-text">{entry["Content"]}</span>,
     });
-    state.output.push({ groupType: "Separator", html: undefined });
+    state.output.push({ groupType: "Separator", node: undefined });
 }
 
 const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => void> = new Map([
@@ -789,7 +976,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["I", processITag],
     ["Image", processImageTag],
     ["List", processListTag],
-    ["Locations", processLocationsTag],
+    ["AllLocations", processAllLocationsTag],
     ["Lore", processLoreTag],
     ["NonEmptyPages", processNonEmptyPagesTag],
     ["Spoiler", processSpoilerTag],
@@ -823,9 +1010,9 @@ function processSection(state: ParserState, endTag: string | undefined) {
             } else {
                 state.output.push({
                     groupType: "Grouped",
-                    html: state.initialContent.substring(state.index, newlineIndex),
+                    node: state.initialContent.substring(state.index, newlineIndex),
                 });
-                state.output.push({ groupType: "Separator", html: undefined });
+                state.output.push({ groupType: "Separator", node: undefined });
             }
 
             state.index = newlineIndex + 1;
@@ -836,7 +1023,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
             // just be plain text
             state.output.push({
                 groupType: "Grouped",
-                html: state.initialContent.substring(state.index, result.index),
+                node: state.initialContent.substring(state.index, result.index),
             });
             state.index = result.index;
         }
@@ -891,9 +1078,9 @@ function processSection(state: ParserState, endTag: string | undefined) {
     while ((newlineIndex = state.initialContent.indexOf("\n", state.index)) && newlineIndex !== -1) {
         state.output.push({
             groupType: "Grouped",
-            html: state.initialContent.substring(state.index, newlineIndex),
+            node: state.initialContent.substring(state.index, newlineIndex),
         });
-        state.output.push({ groupType: "Separator", html: undefined });
+        state.output.push({ groupType: "Separator", node: undefined });
 
         state.index = newlineIndex + 1;
     }
@@ -902,7 +1089,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
     if (state.index < state.initialContent.length) {
         state.output.push({
             groupType: "Grouped",
-            html: state.initialContent.substring(state.index),
+            node: state.initialContent.substring(state.index),
         });
     }
 }
@@ -916,19 +1103,43 @@ function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
     tempState.index = subSectionStart;
     tempState.inSpoiler = inSpoiler;
     processSection(tempState, result[1] === "Spoiler" ? "/Spoiler" : "/Redacted");
-    const spoilerContent = outputGroupsToHtml(tempState.output, inSpoiler, true, true);
     state.index = tempState.index;
 
-    // If we have no grouped content then mark as an individual, otherwise mark as grouped
-    const groupType: OutputGroupType =
-        inSpoiler && tempState.output.length > 0 && tempState.output[0].groupType !== "Grouped"
-            ? "Individual"
-            : "Grouped";
+    let startIndex = 0;
+    while (startIndex < tempState.output.length) {
+        let count = 1;
 
-    state.output.push({
-        groupType: groupType,
-        html: spoilerContent,
-    });
+        // Spoiler groups are a little special and we can't combine everything
+        // into a single output node because we allow for splitting spoiler
+        // content across multiple groups/paragraphs. Naively pushing all
+        // content to the top level results in invalid constructs like nested
+        // <p> tags. Instead, manually generate the output for grouped content
+        // and then add each group to the top-level instead.
+        // The reason we need to add additional groupings at this level is
+        // because there is more special case spoiler-behavior at the
+        // outputGroupsToHtml level, and we would lose the context of being
+        // inside a spoiler block at the top level
+        while (
+            startIndex + count < tempState.output.length &&
+            tempState.output[startIndex + count].groupType === "Grouped"
+        ) {
+            count++;
+        }
+
+        const content = outputGroupsToHtml(
+            tempState.output.slice(startIndex, startIndex + count),
+            inSpoiler,
+            true,
+            true,
+        );
+
+        state.output.push({
+            groupType: tempState.output[startIndex].groupType,
+            node: content,
+        });
+
+        startIndex += count;
+    }
 }
 
 // Process a Sub tag like [[Sub]]Subscript Text[[/Sub]]
@@ -940,9 +1151,9 @@ function processSubTag(state: ParserState, result: RegExpExecArray) {
     tempState.inlineOnly = "InlineOnly";
     processSection(tempState, "/Sub");
     state.index = tempState.index;
-    const boldedContent = `<sub>${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</sub>`;
+    const subscriptContent = <sub>{outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</sub>;
 
-    state.output.push({ groupType: "Grouped", html: boldedContent });
+    state.output.push({ groupType: "Grouped", node: subscriptContent });
 }
 
 // Process a Sup tag like [[Sup]]Superscript Text[[/Sup]]
@@ -954,9 +1165,9 @@ function processSupTag(state: ParserState, result: RegExpExecArray) {
     tempState.inlineOnly = "InlineOnly";
     processSection(tempState, "/Sup");
     state.index = tempState.index;
-    const boldedContent = `<sup>${outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</sup>`;
+    const superscriptContent = <sup>{outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</sup>;
 
-    state.output.push({ groupType: "Grouped", html: boldedContent });
+    state.output.push({ groupType: "Grouped", node: superscriptContent });
 }
 
 // Processes table tag like [[Table]]Header 1|Header 2||Item 1|Item 2||Item 3|Item 4[[/Table]]
@@ -976,23 +1187,29 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
     const endIndex = startIndex + tableResult.index - result[0].length;
     const rowSplit = splitOutsideActions(state.initialContent.substring(startIndex, endIndex), "||");
 
-    let tableContent = `<table class="wiki-table${state.inSpoiler ? " spoiler-text spoiler-table" : ""}"><tbody>`;
+    const tableRows: ReactNode[] = [];
+
     let isHeaderRow = true;
     let totalColumnCount = 0;
     let row = 0;
 
     // Parse each row
-    for (const tableRow of rowSplit) {
+    for (let i = 0; i < rowSplit.length; i++) {
+        const tableRow = rowSplit[i];
         const cellSplit = splitOutsideActions(tableRow);
 
         if (isHeaderRow) {
             totalColumnCount = cellSplit.length;
         }
 
-        tableContent += "<tr>";
+        const cells: ReactNode[] = [];
+
+        // tableContent += "<tr>";
 
         let currentColumnCount = 0;
-        for (let cell of cellSplit) {
+        for (let j = 0; j < cellSplit.length; j++) {
+            let cell = cellSplit[j];
+
             let cellStyle: string | undefined = undefined;
             const cellStyleResult = /\[\[CellStyle:(.*?)\]\]/.exec(cell);
             if (cellStyleResult !== null) {
@@ -1012,10 +1229,10 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
                 cell = cell.substring(cellStyleResult[0].length);
             }
 
-            let cellSpan: string | undefined = undefined;
+            let cellSpan: number | undefined = undefined;
             const cellSpanResult = /\[\[CellSpan:(.*?)\]\]/.exec(cell);
             if (cellSpanResult !== null) {
-                cellSpan = cellSpanResult[1];
+                cellSpan = parseIntOrDefault(cellSpanResult[1], 1);
 
                 cell = cell.substring(cellSpanResult[0].length);
                 currentColumnCount += parseIntOrDefault(cellSpanResult[1], 1);
@@ -1029,23 +1246,27 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
             processSection(tempState, undefined);
             const cellHtml = outputGroupsToHtml(tempState.output, state.inSpoiler, true, false);
 
-            const styleClasses: string[] = [];
-            if (cellStyle !== undefined) {
-                styleClasses.push(cellStyle);
-            }
-
             if (state.inSpoiler) {
-                // styleClasses.push("spoiler-text");
+                if (cellStyle !== undefined) {
+                    cellStyle += " spoiler-text";
+                } else {
+                    cellStyle = "spoiler-text";
+                }
             }
-
-            const cellStyleHtml = styleClasses.length === 0 ? "" : ` class = "${styleClasses.join(" ")}"`;
-            const cellSpanHtml = cellSpan === undefined ? "" : ` colspan="${cellSpan}"`;
 
             // Append cell HTML
             if (isHeaderRow) {
-                tableContent += `<th${cellStyleHtml}${cellSpanHtml}>${cellHtml}</th>`;
+                cells.push(
+                    <th key={j} className={cellStyle} colSpan={cellSpan}>
+                        {cellHtml}
+                    </th>,
+                );
             } else {
-                tableContent += `<td${cellStyleHtml}${cellSpanHtml}>${cellHtml}</td>`;
+                cells.push(
+                    <td key={j} className={cellStyle} colSpan={cellSpan}>
+                        {cellHtml}
+                    </td>,
+                );
             }
         }
 
@@ -1056,16 +1277,21 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
             );
         }
 
-        tableContent += "</tr>";
+        tableRows.push(<tr key={i}>{cells}</tr>);
+
         isHeaderRow = false;
         row += 1;
     }
 
-    tableContent += "</tbody></table>";
+    let tableContent = (
+        <table className={`wiki-table${state.inSpoiler ? " spoiler-text spoiler-table" : ""}`}>
+            <tbody>{tableRows}</tbody>
+        </table>
+    );
 
     state.output.push({
         groupType: "Individual",
-        html: tableContent,
+        node: tableContent,
     });
 
     state.index = endIndex + tableResult[0].length;

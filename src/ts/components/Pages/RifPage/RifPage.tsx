@@ -7,7 +7,7 @@ import Button from "../../Buttons/Button";
 import { LabeledInput } from "../../LabeledItem/LabeledItem";
 import TextTooltip from "../../Popover/TextTooltip";
 
-import "../pages.less";
+import "../Pages.less";
 import "./RifPage.less";
 
 type RifPageState = {
@@ -109,7 +109,7 @@ function HackCategoryRows({ category }: { category: JsonRifHackCategory }) {
                 </td>
             </tr>
             {category.Hacks.map((hack) => (
-                <tr className="rif-hack-row">
+                <tr key={hack.Name} className="rif-hack-row">
                     <td>{hack.Name}</td>
                     <td>{hack.Rif ? "Yes" : "No"}</td>
                     <td>{hack.Charges}</td>
@@ -216,14 +216,14 @@ export default function RifPage() {
             <div className="page-input-group">
                 <LabeledInput
                     label="Ability Name"
-                    value={pageState.abilityName}
+                    value={pageState.abilityName || ""}
                     onChange={(val) => updatePageState({ ...pageState, abilityName: val })}
                     placeholder="Any"
                     tooltip="The name of a RIF ability to search for. Only RIF abilities with names containing this value will be shown."
                 />
                 <LabeledInput
                     label="Ability Description"
-                    value={pageState.abilityDescription}
+                    value={pageState.abilityDescription || ""}
                     onChange={(val) => updatePageState({ ...pageState, abilityDescription: val })}
                     placeholder="Any"
                     tooltip="The RIF ability description to search for. Only RIF abilities with descriptions containing this value will be shown."
@@ -239,21 +239,21 @@ export default function RifPage() {
             <div className="page-input-group">
                 <LabeledInput
                     label="Hack Name"
-                    value={pageState.hackName}
+                    value={pageState.hackName || ""}
                     onChange={(val) => updatePageState({ ...pageState, hackName: val })}
                     placeholder="Any"
                     tooltip="The name of a bot hack to search for. Only hacks with names containing this value will be shown."
                 />
                 <LabeledInput
                     label="Hack Description"
-                    value={pageState.hackDescription}
+                    value={pageState.hackDescription || ""}
                     onChange={(val) => updatePageState({ ...pageState, hackDescription: val })}
                     placeholder="Any"
                     tooltip="The bot hack description to search for. Only hacks with descriptions containing this value will be shown."
                 />
                 <LabeledInput
                     label="Hack Target"
-                    value={pageState.hackTarget}
+                    value={pageState.hackTarget || ""}
                     onChange={(val) => updatePageState({ ...pageState, hackTarget: val })}
                     placeholder="Any"
                     tooltip='The bot hack target to search for. Only hacks with targets containing this value will be shown. Use "Combat" to search for any combat targeted hacks, or "NC" to search for any generic non-combat targeted hacks.'

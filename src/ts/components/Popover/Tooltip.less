@@ -13,11 +13,17 @@
     background-color: @tooltip-background-color;
     color: @font-color;
 
-    border: @border-width solid @border-color;
+    border: @border-width solid @contrast-border-color;
 
     pointer-events: none;
 }
 
 .tooltip-arrow {
-    fill: @border-color;
+    fill: @contrast-border-color;
+}
+
+.bot-tooltip-arrow,
+.item-tooltip-arrow,
+.location-tooltip-arrow {
+    fill: @popover-border-color;
 }

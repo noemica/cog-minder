@@ -26,6 +26,11 @@
         }
     }
 
+    > :not(:first-child) {
+        font-family: @paragraph-font-family;
+        font-size: @paragraph-font-size;
+    }
+
     > * {
         border: @border-width solid @border-color;
     }
@@ -34,7 +39,7 @@
 .rif-ability-row {
     > :first-child {
         text-align: left;
-        font-size: @header-font-size;
+        font-size: @rif-hack-ability-name-font-size;
     }
 
     > :last-child {
@@ -49,7 +54,7 @@
 .rif-hack-row {
     > :first-child {
         text-align: left;
-        font-size: @header-font-size;
+        font-size: @rif-hack-ability-name-font-size;
     }
 
     > :last-child {
@@ -67,7 +72,7 @@
 
     > :first-child {
         text-align: left;
-        font-size: @header-font-size;
+        font-size: @rif-hack-ability-name-font-size;
     }
 
     > * {
@@ -103,7 +108,6 @@
     > :nth-child(3) {
         width: @charges-column-width;
     }
-
 }
 
 .rif-hack-category-header-row {
@@ -118,7 +122,7 @@
 
         > * {
             vertical-align: middle;
-            padding: @rif-bot-image-padding;
+            padding: @bot-image-padding;
         }
     }
 }

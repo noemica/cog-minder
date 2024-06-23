@@ -8,7 +8,7 @@ import { useSpoilers } from "../../Effects/useLocalStorageValue";
 import { LabeledInput } from "../../LabeledItem/LabeledItem";
 import TextTooltip from "../../Popover/TextTooltip";
 
-import "../pages.less";
+import "../Pages.less";
 import "./LorePage.less";
 
 type LorePageState = {
@@ -33,7 +33,7 @@ function LoreCell({ value }: { value: string }) {
     if (value === undefined) {
         return <td />;
     } else {
-        return <td>{value}%</td>;
+        return <td>{value}</td>;
     }
 }
 
@@ -140,21 +140,21 @@ export default function LorePage() {
             <div className="page-input-group">
                 <LabeledInput
                     label="Name/Number"
-                    value={pageState.name}
+                    value={pageState.name || ""}
                     onChange={(val) => updatePageState({ ...pageState, name: val })}
                     placeholder="Any"
                     tooltip="The name or number of a lore entry to search for. Only lore entries with names containing this value will be shown."
                 />
                 <LabeledInput
                     label="Content"
-                    value={pageState.content}
+                    value={pageState.content || ""}
                     onChange={(val) => updatePageState({ ...pageState, content: val })}
                     placeholder="Any"
                     tooltip="The lore entry content to search for. Only lore entries with content containing this value will be shown."
                 />
                 <LabeledInput
                     label="Group"
-                    value={pageState.group}
+                    value={pageState.group || ""}
                     onChange={(val) => updatePageState({ ...pageState, group: val })}
                     placeholder="Any"
                     tooltip='The group of lore to search for. For example, "0b10 Records" will display all 0b10-related records.'

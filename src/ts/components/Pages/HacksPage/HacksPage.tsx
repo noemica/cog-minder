@@ -16,7 +16,7 @@ import { LabeledExclusiveButtonGroup, LabeledInput } from "../../LabeledItem/Lab
 import TextTooltip from "../../Popover/TextTooltip";
 import TextTooltipButton from "../../Popover/TextTooltipButton";
 
-import "../pages.less";
+import "../Pages.less";
 import "./HacksPage.less";
 
 type HasDataCore = "No" | "Yes";
@@ -137,10 +137,12 @@ function HackRow({
 
     return (
         <tr className="hack-content-row">
-                <td>
-                    <span>{hack.Name}</span>
-                    <TextTooltipButton className="hack-info-button" tooltipText={hack.Description}>?</TextTooltipButton>
-                </td>
+            <td>
+                <span>{hack.Name}</span>
+                <TextTooltipButton className="hack-info-button" tooltipText={hack.Description}>
+                    ?
+                </TextTooltipButton>
+            </td>
             {hackValues.map((value, i) => (
                 <HackCell key={i} value={value} />
             ))}
@@ -269,7 +271,7 @@ export default function HacksPage() {
             <div className="page-input-group">
                 <LabeledInput
                     label="Name"
-                    value={pageState.name}
+                    value={pageState.name || ""}
                     onChange={(val) => updatePageState({ ...pageState, name: val })}
                     placeholder="Any"
                     tooltip="The name of a hack to search for"
@@ -293,28 +295,28 @@ export default function HacksPage() {
             <div className="page-input-group">
                 <LabeledInput
                     label="Hack Bonus"
-                    value={pageState.hackBonus}
+                    value={pageState.hackBonus || ""}
                     onChange={(val) => updatePageState({ ...pageState, hackBonus: val })}
                     placeholder="0"
                     tooltip="The total bonus of all offensive hackware. For example, a standard Hacking Suite provides +10 bonus."
                 />
                 <LabeledInput
                     label="Corruption"
-                    value={pageState.corruptionPercent}
+                    value={pageState.corruptionPercent || ""}
                     onChange={(val) => updatePageState({ ...pageState, corruptionPercent: val })}
                     placeholder="0%"
                     tooltip="Cogmind's current corruption. Every 3 points of corruption reduces success rates by 1%."
                 />
                 <LabeledInput
                     label="# Operators"
-                    value={pageState.numOperators}
+                    value={pageState.numOperators || ""}
                     onChange={(val) => updatePageState({ ...pageState, numOperators: val })}
                     placeholder="0"
                     tooltip="The number of active operator allies within 20 tiles. The first provides 10%, the second 5%, the third 2%, and all remaining provide 1% cumulative success rate to all hacks."
                 />
                 <LabeledInput
                     label="# Botnets"
-                    value={pageState.numBotnets}
+                    value={pageState.numBotnets || ""}
                     onChange={(val) => updatePageState({ ...pageState, numBotnets: val })}
                     placeholder="0"
                     tooltip="The number of botnets installed on other Terminals. The first provides 6%, the second 3%, and all remaining provide 1% cumulative success rate to all hacks."

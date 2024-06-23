@@ -1,0 +1,413 @@
+@import "../../../../styles/common.less";
+
+@transition-duration: 0.15s;
+
+.clear-changes-button {
+    margin-right: @large-gap;
+    width: 9.5rem;
+}
+
+.preview-changes-button {
+    width: 11rem;
+}
+
+.copy-text-button {
+    width: 7rem;
+}
+
+.navigation-bar {
+    justify-content: center;
+    display: flex;
+    gap: @navigation-buttons-gap;
+
+    * {
+        align-content: center;
+    }
+}
+
+.wiki-page-content {
+    font-family: @paragraph-font-family;
+    font-size: @paragraph-font-size;
+    color: @font-paragraph-color;
+}
+
+.spoiler-text,
+.spoiler-text * {
+    transition: @transition-duration;
+}
+
+.spoiler-text {
+    background-color: @spoiler-background-color;
+    padding: @single-line-spoiler-padding;
+
+    > a {
+        // Needed or else we get a brief blue flicker on hover
+        transition: color 0s;
+    }
+
+    > a:hover,
+    > a:focus {
+        background-color: @spoiler-preview-background-color;
+    }
+}
+
+.spoiler-text-margin {
+    margin: @single-line-spoiler-margin;
+}
+
+.spoiler-text-multiline {
+    padding: @multi-line-spoiler-padding;
+}
+
+.spoiler-text:not(:focus):not(:hover) {
+    user-select: none;
+    color: transparent;
+}
+
+.spoiler-text:hover:not(.spoiler-table),
+.spoiler-text:focus:not(.spoiler-table) {
+    background-color: @spoiler-preview-background-color;
+}
+
+.spoiler-text:not(:focus):not(:hover) a:not(:focus) {
+    user-select: none;
+    color: transparent;
+}
+
+.spoiler-image > img {
+    transition: @transition-duration;
+}
+
+.spoiler-image:not(:focus):not(:hover) > img {
+    filter: grayscale(40%) blur(5px);
+}
+
+.spoiler-table:not(:focus):not(:hover) * {
+    user-select: none;
+    color: transparent;
+}
+
+.location-image {
+    max-width: @location-image-max-width;
+    margin: @small-gap 0;
+}
+
+.wiki-content {
+    font-family: @paragraph-font-family;
+}
+
+// Only place the infobox to the side if it makes sense
+// On smaller screens it should take up the full screen
+@media screen and (min-width: 600px) {
+    .wiki-infobox {
+        float: right;
+        clear: right;
+    }
+}
+
+.wiki-infobox {
+    padding: @wiki-infobox-padding;
+    max-width: @wiki-infobox-max-width;
+    margin-left: @wiki-infobox-margin-left;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: @medium-gap;
+
+    > * {
+        align-self: center;
+    }
+}
+
+.wiki-infobox-button-group {
+    display: flex;
+    flex-wrap: wrap;
+
+    > button {
+        flex: 1 1 auto;
+
+        min-width: @wiki-infobox-button-group-min-width;
+
+        padding: @button-small-padding;
+    }
+}
+
+.wiki-sidebar-image {
+    min-width: @wiki-sidebar-image-min-width;
+    float: right;
+    clear: right;
+    margin: @wiki-sidebar-image-margin;
+    display: flex;
+    flex-direction: column;
+
+    > a {
+        border: @border-width solid @border-color;
+        background-color: black;
+        position: relative;
+
+        > img {
+            max-height: @wiki-sidebar-image-max-size;
+            max-width: @wiki-sidebar-image-max-size;
+            padding: 0.25rem;
+        }
+    }
+
+    > p {
+        /* This nonsense is required in order to force the caption to be
+        <= in size than the image itself, otherwise the caption could push
+        the box outward and show a gap next to the image */
+        width: 0;
+        min-width: 100%;
+
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.wiki-sidebar-image a:hover .wiki-spoiler-image-text,
+.wiki-sidebar-image a:focus .wiki-spoiler-image-text {
+    /* Hide the spoiler text when mousing over */
+    color: transparent;
+    background-color: transparent;
+}
+
+.wiki-heading,
+.wiki-emphasized-heading {
+    color: @font-color;
+    font-family: @wiki-header-font-family;
+}
+
+.wiki-bot-group-heading {
+    display: flex;
+    align-items: center;
+
+    gap: @bot-image-padding;
+}
+
+.wiki-emphasized-heading {
+    color: @font-color;
+    border-bottom: @border-width solid @contrast-border-color;
+    display: flex;
+    
+    // word-wrap: break-word;
+}
+
+.wiki-gallery-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    > div {
+        margin: @wiki-gallery-margin;
+
+        > div {
+            background-color: black;
+            border: @border-width solid @border-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: @wiki-gallery-image-size;
+            height: @wiki-gallery-image-size;
+
+            > a {
+                position: relative;
+
+                > img {
+                    max-width: @wiki-gallery-image-size;
+                    max-height: @wiki-gallery-image-size;
+                    padding: @wiki-gallery-image-padding;
+
+                    box-sizing: border-box;
+                }
+            }
+        }
+
+        > p {
+            width: 0;
+            min-width: 100%;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.wiki-spoiler-image-text {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00cc00;
+    background-color: @page-background-color;
+    border-radius: @spoiler-border-width;
+    padding: @spoiler-button-padding;
+    font-size: @spoiler-button-font-size;
+    transition: @transition-duration;
+}
+
+.wiki-gallery-images a:hover .wiki-spoiler-image-text,
+.wiki-gallery-images a:focus .wiki-spoiler-image-text {
+    /* Hide the spoiler text when mousing over */
+    color: transparent;
+    background-color: transparent;
+}
+
+.wiki-list {
+    // Maybe restore, enabling this means that lists won't flow aroud images
+    // This looks a bit better on desktop but worse on mobile
+    // display: flow-root;
+}
+
+.wiki-edit-content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    gap: @wiki-edit-content-gap;
+}
+
+.wiki-edit-content > div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: @wiki-edit-content-max-width;
+
+    gap: @wiki-edit-content-gap;
+}
+
+.wiki-edit-text {
+    font-family: @paragraph-font-family;
+    resize: none;
+    height: @wiki-edit-content-height;
+    width: 100%;
+    max-width: @wiki-edit-content-max-width;
+    background-color: @element-background-color;
+    color: @font-color;
+    border: @border-width solid @border-color;
+}
+
+.wiki-edit-changes-group {
+    justify-content: center;
+}
+
+.wiki-edit-errors {
+    display: flex;
+    flex-direction: column;
+    font-family: @paragraph-font-family;
+    width: @wiki-edit-content-max-width;
+
+    > p {
+        font-size: @wiki-parser-error-header-font-size;
+        color: @spoiler-parsing-error-color;
+        margin: 0;
+    }
+
+    > div {
+        border: @border-width solid @spoiler-parsing-error-color;
+
+        > p {
+            margin: @wiki-parsing-errors-margin;
+        }
+    }
+}
+
+.wiki-game-text {
+    font-family: @details-font-family;
+    color: @font-color;
+}
+
+.spoiler-text:not(:focus):not(:hover) > .wiki-game-text {
+    user-select: none;
+    color: transparent;
+}
+
+.wiki-table {
+    // color: #9da9af;
+    color: @font-color;
+    background-color: @table-header-background-color;
+    margin-bottom: 1rem;
+
+    p {
+        margin: 0;
+    }
+}
+
+.wiki-table,
+.wiki-table > * > tr > * {
+    border: @border-width solid @border-color;
+    border-collapse: collapse;
+}
+
+.wiki-table > tbody > tr > * {
+    padding: @table-cell-text-padding;
+}
+
+.wiki-cell-good {
+    background-color: @wiki-cell-good-color;
+}
+
+.wiki-cell-neutral {
+    background-color: @wiki-cell-neutral-color;
+}
+
+.wiki-cell-bad {
+    background-color: @wiki-cell-bad-color;
+}
+
+.wiki-search {
+    width: @wiki-search-width;
+
+    .select__control.select__control {
+        background-image: none;
+        background-color: @element-background-color;
+
+        cursor: text;
+    }
+
+    .select__control--is-focused.select__control--is-focused,
+    .select__control.select__control:hover {
+        border-color: @element-active-border-color;
+
+        * {
+            color: @font-color;
+        }
+    }
+
+    .select__placeholder {
+        color: @font-select-placeholder-color !important;
+    }
+
+    .select__indicators {
+        display: none;
+    }
+}
+
+.wiki-search-result-list {
+    padding-left: 0;
+}
+
+.wiki-search-result-list > li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wiki-link {
+    display: inline-block;
+}
+
+.spoiler-warning {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    > div {
+        display: flex;
+        gap: @large-gap;
+
+        > button {
+            width: @wiki-spoiler-decision-button-width;
+        }
+    }
+}

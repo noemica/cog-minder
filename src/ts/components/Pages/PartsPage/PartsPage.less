@@ -32,6 +32,7 @@
 
         padding: 0 @button-small-padding;
 
+        color: @font-paragraph-color;
         font-size: @button-grid-font-size;
     }
 }
@@ -50,8 +51,9 @@
 
     span {
         display: block;
+        color: @font-paragraph-color;
         font-size: @gallery-grid-font-size;
-        font-family: "smallcaps-mono";
+        font-family: @details-font-family;
     }
 
     img {
@@ -89,13 +91,13 @@
 }
 
 .part-comparison-image-container {
-    margin-top: calc(@comparison-border-width + @comparison-container-gap);
+    margin-top: calc(@large-border-width + @comparison-container-gap);
 }
 
 .comparison-positive,
 .comparison-neutral,
 .comparison-negative {
-    font-family: smallcaps-mono;
+    font-family: @details-font-family;
     font-size: @details-font-size;
     margin: 0;
     padding-right: @part-comparison-right-padding;

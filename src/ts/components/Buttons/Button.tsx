@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useMemo, useState } from "react";
 import { Link } from "wouter";
 
 import TextTooltip from "../Popover/TextTooltip";
@@ -13,6 +13,10 @@ export type CommonButtonProps = {
 export type ButtonProps = CommonButtonProps & {
     disabled?: boolean;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    clickOverrideText?: {
+        tempChildren: ReactNode;
+        tempDuration: number;
+    };
 };
 
 export type ButtonLinkProps = CommonButtonProps & {
@@ -20,16 +24,39 @@ export type ButtonLinkProps = CommonButtonProps & {
     href: string;
 };
 
-export default function Button({ children, disabled, onClick, className, tooltip }: ButtonProps) {
+export default function Button({
+    children,
+    disabled,
+    onClick: handler,
+    clickOverrideText,
+    className,
+    tooltip,
+}: ButtonProps) {
+    const [showOverride, setShowOverride] = useState(false);
+
     let classes = "button";
 
     if (className !== undefined) {
         classes += ` ${className}`;
     }
 
+    const onClick = useMemo(() => {
+        return (e: React.MouseEvent<HTMLButtonElement>) => {
+            if (clickOverrideText) {
+                setShowOverride(true);
+
+                setTimeout(() => setShowOverride(false), clickOverrideText.tempDuration);
+            }
+
+            if (handler) {
+                handler(e);
+            }
+        };
+    }, [handler, clickOverrideText]);
+
     const button = (
         <button className={classes} disabled={disabled} onClick={onClick}>
-            {children}
+            {showOverride ? clickOverrideText!.tempChildren : children}
         </button>
     );
 
@@ -58,7 +85,11 @@ export function ButtonLink({ activeLink, children, href, className, tooltip }: B
     );
 
     if (tooltip) {
-        return <TextTooltip tooltipText={tooltip}>{button}</TextTooltip>;
+        return (
+            <TextTooltip tooltipText={tooltip} useFlexWrapper={true}>
+                {button}
+            </TextTooltip>
+        );
     } else {
         return button;
     }

@@ -1,7 +1,7 @@
 @import "../../../styles/common.less";
 
 .details-font {
-    font-family: "smallcaps-mono";
+    font-family: @details-font-family;
     font-size: @details-font-size;
 }
 
@@ -12,6 +12,8 @@
 .details-option,
 .details-location,
 .details-summary {
+    .details-font();
+
     margin: 0;
     color: @details-font-color;
 }
@@ -36,6 +38,7 @@
 }
 
 .details-location {
+    margin-bottom: @large-gap;
     color: @details-location-font-color;
 }
 
@@ -45,7 +48,7 @@
 }
 
 .details-title {
-    font-family: smallcaps-mono;
+    font-family: @details-font-family;
     text-align: center;
     color: @details-font-color;
     font-size: @details-font-size;
@@ -85,6 +88,7 @@
 .details-range-red,
 .details-range-dim {
     letter-spacing: @details-range-letter-spacing;
+    font-size: 0.8rem;
 }
 
 .details-dim-text {
@@ -116,21 +120,20 @@
 .projectile-num {
     color: @details-background-color;
     background-color: @details-font-color;
-    border: @comparison-border-width solid @details-font-color;
+    border: @large-border-width solid @details-font-color;
 }
 
 .bot-details,
-.part-details {
+.part-details,
+.location-details {
     background-color: @details-background-color;
-    border: @comparison-border-width solid @popover-border-color;
+    border: @large-border-width solid @popover-border-color;
     border-radius: 0;
     line-height: @comparison-line-height;
 
     padding: @comparison-container-gap;
 
-    * {
-        .details-font();
-    }
+    .details-font();
 }
 
 .bot-popover-item-bracket {

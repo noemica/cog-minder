@@ -9,6 +9,9 @@ body {
     background-color: var(--page-background-color);
     color: @font-color;
 
+    font-family: @default-font-family;
+    font-size: @default-font-size;
+
     margin-left: auto;
     margin-right: auto;
     padding-left: @page-horizontal-margin;
@@ -19,7 +22,35 @@ body {
     overflow-y: scroll;
 }
 
-* {
+p {
+    line-height: 1.5;
+    margin-top: 0;
+}
+
+li,
+textarea,
+ul {
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: @h1-font-size;
+}
+
+h2 {
+    font-size: @h2-font-size;
+}
+
+h3 {
+    font-size: @h3-font-size;
+}
+
+h4 {
+    font-size: @h4-font-size;
+}
+
+button,
+input {
     font-family: @default-font-family;
     font-size: @default-font-size;
 }
@@ -37,6 +68,14 @@ body {
     font-size: @loading-message-font-size;
 }
 
-a {
+a:where(a:visited) {
+    color: @font-link-visited-color;
+}
+
+a:where(:not(:visited)) {
     color: @font-link-color;
+}
+
+a:where(:not(:hover)) {
+    text-decoration: none;
 }

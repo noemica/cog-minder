@@ -1,10 +1,12 @@
 import { ReactNode } from "react";
+import { Link } from "wouter";
 
 import { Bot, BotLocation, BotPart } from "../../types/botTypes";
 import { Item } from "../../types/itemTypes";
 import { valueOrDefault } from "../../utilities/common";
 import useItemData from "../Effects/useItemData";
 import { useSpoilers } from "../Effects/useLocalStorageValue";
+import { ItemLink, ItemTooltip } from "../Pages/WikiPage/WikiTooltips";
 import { BotItemPopoverButton } from "../Popover/ItemPopover";
 import {
     DetailsBotTitleLine,
@@ -60,7 +62,7 @@ function ItemLine({
     let itemNode: ReactNode = itemString.padEnd(42);
 
     if (popoversToLinks) {
-        itemNode = <a href={`#(${item.name})}`}>{itemNode}</a>;
+        itemNode = <Link href={`/${item.name}`}>{itemNode}</Link>;
     }
 
     const line = (
@@ -71,7 +73,7 @@ function ItemLine({
         </pre>
     );
 
-    return <BotItemPopoverButton triggerContent={line} item={item} />;
+    return popoversToLinks ? <ItemTooltip item={item}>{line}</ItemTooltip> : <BotItemPopoverButton triggerContent={line} item={item} />;
 }
 
 function BotPartLine({ data, popoversToLinks = false }: { data: BotPart; popoversToLinks?: boolean }) {
@@ -82,7 +84,7 @@ function BotPartLine({ data, popoversToLinks = false }: { data: BotPart; popover
         line += " x" + data.number;
     }
 
-    return <ItemLine item={itemData.getItem(data.name)} itemString={line} />;
+    return <ItemLine item={itemData.getItem(data.name)} itemString={line} popoversToLinks={popoversToLinks} />;
 }
 
 function ItemLineOption({ itemName, itemString, i }: { itemName: string; itemString: string; i: number }) {
@@ -101,7 +103,7 @@ function ItemLineOption({ itemName, itemString, i }: { itemName: string; itemStr
     return <BotItemPopoverButton triggerContent={line} item={itemData.getItem(itemName)} />;
 }
 
-function BotPartOption({ data }: { data: BotPart[] }) {
+function BotPartOption({ data, itemsToLinks }: { data: BotPart[]; itemsToLinks: boolean }) {
     return (
         <>
             {data.map((botPart, i) => {
@@ -122,12 +124,20 @@ function BotPartOption({ data }: { data: BotPart[] }) {
     );
 }
 
-function ItemDetails({ items, itemOptions }: { items: BotPart[]; itemOptions: BotPart[][] }) {
+function ItemDetails({
+    items,
+    itemOptions,
+    itemsToLinks,
+}: {
+    items: BotPart[];
+    itemOptions: BotPart[][];
+    itemsToLinks: boolean;
+}) {
     function Option({ addEmptyLine, data, i }: { addEmptyLine: boolean; data: BotPart[]; i: number }) {
         return (
             <>
                 {addEmptyLine && <DetailsEmptyLine />}
-                <BotPartOption data={data} />
+                <BotPartOption data={data} itemsToLinks={itemsToLinks} />
             </>
         );
     }
@@ -135,7 +145,7 @@ function ItemDetails({ items, itemOptions }: { items: BotPart[]; itemOptions: Bo
     return (
         <>
             {items.map((data) => {
-                return <BotPartLine key={data.name} data={data} />;
+                return <BotPartLine key={data.name} data={data} popoversToLinks={itemsToLinks} />;
             })}
             {itemOptions.map((data, i) => {
                 return <Option key={i} addEmptyLine={items.length > 0 || i > 0} data={data} i={i} />;
@@ -144,20 +154,20 @@ function ItemDetails({ items, itemOptions }: { items: BotPart[]; itemOptions: Bo
     );
 }
 
-function ArmamentDetails({ bot }: { bot: Bot }) {
+function ArmamentDetails({ bot, itemsToLinks }: { bot: Bot; itemsToLinks: boolean }) {
     if (bot.armament.length === 0) {
         return <NoneItemLine />;
     }
 
-    return <ItemDetails items={bot.armamentData} itemOptions={bot.armamentOptionData} />;
+    return <ItemDetails items={bot.armamentData} itemOptions={bot.armamentOptionData} itemsToLinks={itemsToLinks} />;
 }
 
-function ComponentDetails({ bot }: { bot: Bot }) {
+function ComponentDetails({ bot, itemsToLinks }: { bot: Bot; itemsToLinks: boolean }) {
     if (bot.components.length === 0) {
         return <NoneItemLine />;
     }
 
-    return <ItemDetails items={bot.componentData} itemOptions={bot.componentOptionData} />;
+    return <ItemDetails items={bot.componentData} itemOptions={bot.componentOptionData} itemsToLinks={itemsToLinks} />;
 }
 
 function DescriptionDetails({ bot }: { bot: Bot }) {
@@ -231,8 +241,8 @@ function LocationDetails({ bot }: { bot: Bot }) {
         <>
             <DetailsEmptyLine />
             <DetailsSummaryLine text="Locations" />
-            {locations.map((location) => (
-                <Location key={location.Location} location={location} />
+            {locations.map((location, i) => (
+                <Location key={i} location={location} />
             ))}
         </>
     );
@@ -310,7 +320,7 @@ function TraitDetails({ bot }: { bot: Bot }) {
     );
 }
 
-export default function BotDetails({ bot }: { bot: Bot }) {
+export default function BotDetails({ bot, itemsToLinks }: { bot: Bot; itemsToLinks?: boolean }) {
     return (
         <div className="bot-details">
             <DetailsBotTitleLine bot={bot} />
@@ -365,10 +375,10 @@ export default function BotDetails({ bot }: { bot: Bot }) {
             )}
             <DetailsEmptyLine />
             <DetailsSummaryLine text="Armament" />
-            <ArmamentDetails bot={bot} />
+            <ArmamentDetails bot={bot} itemsToLinks={itemsToLinks || false} />
             <DetailsEmptyLine />
             <DetailsSummaryLine text="Components" />
-            <ComponentDetails bot={bot} />
+            <ComponentDetails bot={bot} itemsToLinks={itemsToLinks || false} />
             <ResistanceImmunityDetails bot={bot} />
             <TraitDetails bot={bot} />
             <FabricationDetails bot={bot} />
