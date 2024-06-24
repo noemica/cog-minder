@@ -3,7 +3,7 @@ import React from "react";
 import { Redirect, Route, Router, Switch, useLocation } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
 
-import { rootDirectory } from "../../utilities/common";
+import { getLinkSafeString, rootDirectory } from "../../utilities/common";
 import useThemeUpdater from "../Effects/useThemeUpdater";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import PageHeader from "../PageHeader/PageHeader";
@@ -61,40 +61,40 @@ function Routes() {
 
             {/* Redirect routes, don't want to break existing links */}
             <Route path="/about.html">
-                <Redirect to="/about" />
+                <Redirect to="/about" replace={true} />
             </Route>
             <Route path="/bots.html">
-                <Redirect to="/bots" />
+                <Redirect to="/bots" replace={true} />
             </Route>
             <Route path="/build.html">
-                <Redirect to="/build" />
+                <Redirect to="/build" replace={true} />
             </Route>
             <Route path="/combat.html">
-                <Redirect to="/combat" />
+                <Redirect to="/combat" replace={true} />
             </Route>
             <Route path="/hacks.html">
-                <Redirect to="/hacks" />
+                <Redirect to="/hacks" replace={true} />
             </Route>
             <Route path="/lore.html">
-                <Redirect to="/lore" />
+                <Redirect to="/lore" replace={true} />
             </Route>
             <Route path="/parts.html">
-                <Redirect to="/parts" />
+                <Redirect to="/parts" replace={true} />
             </Route>
             <Route path="/rif.html">
-                <Redirect to="/rif" />
+                <Redirect to="/rif" replace={true} />
             </Route>
             <Route path="/simulator.html">
-                <Redirect to="/simulator" />
+                <Redirect to="/simulator" replace={true} />
             </Route>
             <Route path="/wiki.html">
                 {() => {
                     // If old wiki hash-based URL, redirect to new scheme
                     if (hashLocation.length > 1) {
-                        return <Redirect to={`/wiki${hashLocation}`} />;
+                        return <Redirect to={`/wiki/${getLinkSafeString(hashLocation.substring(1))}`} replace={true} />;
                     }
 
-                    return <Redirect to="/wiki" />;
+                    return <Redirect to="/wiki" replace={true} />;
                 }}
             </Route>
 
