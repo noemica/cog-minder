@@ -66,8 +66,8 @@ const powerSlotTypeOptions: SelectOptionType<PowerSlotType>[] = [
 
 const propulsionSlotTypeOptions: SelectOptionType<PropulsionSlotType>[] = [
     { value: "Any" },
-    { value: "Flight" },
-    { value: "Hover" },
+    { value: "Flight Unit" },
+    { value: "Hover Unit" },
     { value: "Wheel" },
     { value: "Leg" },
     { value: "Treads" },
