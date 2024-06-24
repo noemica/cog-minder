@@ -262,7 +262,6 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
 
         // Slot filter
         if (pageState.slot) {
-          
             if (pageState.slot !== "Any" && item.slot !== pageState.slot) {
                 return false;
             }
