@@ -8,7 +8,7 @@ import useThemeUpdater from "../Effects/useThemeUpdater";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import PageHeader from "../PageHeader/PageHeader";
 
-const AboutPage = React.lazy(() => import("../Pages/AboutPage"));
+const AboutPage = React.lazy(() => import("../Pages/AboutPage/AboutPage"));
 const BotsPage = React.lazy(() => import("../Pages/BotsPage/BotsPage"));
 const BuildPage = React.lazy(() => import("../Pages/BuildPage/BuildPage"));
 const CombatPage = React.lazy(() => import("../Pages/CombatPage"));
