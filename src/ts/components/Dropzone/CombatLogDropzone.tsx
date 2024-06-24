@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
-import { parseCombatLog } from "../../combatLogParser";
+import { parseCombatLog } from "../../utilities/combatLogParser";
 import { CombatLogEntry } from "../../types/combatLogTypes";
 import Button from "../Buttons/Button";
 import TextTooltip from "../Popover/TextTooltip";

@@ -1,5 +1,5 @@
 import itemCategories from "../../json/item_categories.json";
-import { specialItemProperties } from "../specialItemProperties";
+import { specialItemProperties } from "./specialItemProperties";
 import { Spoiler } from "../types/commonTypes";
 import {
     Critical,

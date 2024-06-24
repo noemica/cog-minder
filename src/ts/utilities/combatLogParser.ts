@@ -1,7 +1,7 @@
-import { CombatLogDamageEntry, CombatLogEntry } from "./types/combatLogTypes";
-import { getBotByAllyName, getBotByName, getBotByShortName } from "./utilities/botUtilities";
-import { parseIntOrDefault } from "./utilities/common";
-import { getItemByName, isKnownItem } from "./utilities/itemUtilities";
+import { CombatLogDamageEntry, CombatLogEntry } from "../types/combatLogTypes";
+import { getBotByAllyName, getBotByName, getBotByShortName } from "./botUtilities";
+import { parseIntOrDefault } from "./common";
+import { getItemByName, isKnownItem } from "./itemUtilities";
 
 // Match 1: First part of bot name
 const alliedBotNameRegex = /^(\w*) .*$/;

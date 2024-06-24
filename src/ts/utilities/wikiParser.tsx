@@ -1,14 +1,14 @@
 import { Fragment, ReactNode } from "react";
 import { Link } from "wouter";
 
-import lore from "../json/lore.json";
-import { BotLink, ItemLink, LocationLink } from "./components/Pages/WikiPage/WikiTooltips";
-import { Bot } from "./types/botTypes";
-import { MapLocation, Spoiler } from "./types/commonTypes";
-import { Item } from "./types/itemTypes";
-import { WikiEntry } from "./types/wikiTypes";
-import { BotData } from "./utilities/BotData";
-import { ItemData } from "./utilities/ItemData";
+import lore from "../../json/lore.json";
+import { BotLink, ItemLink, LocationLink } from "../components/Pages/WikiPage/WikiTooltips";
+import { Bot } from "../types/botTypes";
+import { MapLocation, Spoiler } from "../types/commonTypes";
+import { Item } from "../types/itemTypes";
+import { WikiEntry } from "../types/wikiTypes";
+import { BotData } from "./BotData";
+import { ItemData } from "./ItemData";
 import {
     canShowSpoiler,
     createImagePath,
@@ -16,7 +16,7 @@ import {
     getLinkSafeString,
     parseIntOrDefault,
     rootDirectory,
-} from "./utilities/common";
+} from "./common";
 
 // Output group types
 // Grouped can be in the same <p> block

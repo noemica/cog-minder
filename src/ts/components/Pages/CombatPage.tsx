@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { fakeData } from "../../fakeData";
+import { fakeData } from "../../utilities/combatFakeData";
 import {
     ChartDisplayOptions,
     CombatLogChartCategoryType,

@@ -16,7 +16,7 @@ import {
     isDev,
     loadImage,
 } from "../../../utilities/common";
-import { parseEntryContent } from "../../../wikiParser";
+import { parseEntryContent } from "../../../utilities/wikiParser";
 import Button, { ButtonLink } from "../../Buttons/Button";
 import useBotData from "../../Effects/useBotData";
 import useItemData from "../../Effects/useItemData";

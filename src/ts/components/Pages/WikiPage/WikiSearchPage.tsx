@@ -2,7 +2,7 @@ import { Fragment, ReactNode, useEffect } from "react";
 import { Link } from "wouter";
 
 import { WikiEntry } from "../../../types/wikiTypes";
-import { createPreviewContent } from "../../../wikiParser";
+import { createPreviewContent } from "../../../utilities/wikiParser";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
 
 // In the given string, bolds all matches of matchText
