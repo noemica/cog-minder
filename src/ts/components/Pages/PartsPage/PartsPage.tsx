@@ -60,10 +60,10 @@ export type WeaponSlotType =
     | "Ballistic Gun"
     | "Energy Cannon"
     | "Energy Gun"
-    | "Impact"
     | "Launcher"
-    | "Piercing"
-    | "Slashing"
+    | "Impact Weapon"
+    | "Piercing Weapon"
+    | "Slashing Weapon"
     | "Special Melee Weapon"
     | "Special Weapon";
 
@@ -268,6 +268,7 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
         }
 
         if (pageState.slotType) {
+          console.log(pageState.slotType, item.type);
             if (pageState.slotType !== "Any" && item.type !== pageState.slotType) {
                 return false;
             }
