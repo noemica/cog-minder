@@ -7,12 +7,6 @@ Medium ideas:
 - Show all sizes of bot sprites
 
 Big ideas:
-- Save search/parts in URL
-    - Can do for all pages
-    - Doing in react rewrite
-- Actively save build and update hash when modifying things
-    - Easier than other pages since hash is already in existence
-    - Doing in react rewrite
 - Add graph of part stats, allow any 2 axes to be selected
 
 - Combat log ideas
