@@ -708,24 +708,7 @@ As an Alien Artifact, the CRM is only found in a few specific places:
 "Core Shieldings","Part Group",""
 "Core Stripper","Part",""
 "Corrupted Parts","Other","Attaching a corrupted part will give you [[Corruption]]. Corrupted parts may be repaired at a Repair Station."
-"Corruption","Other","Stub
-Corruption describes the system corruption of a robot. 
-[[Heading]]Getting corruption[[/Heading]]
-[[List]]Electromagnetic Damage | Crushing | Attaching a [[Corrupted Parts|Corrupted Part]] | Feedback from failed [[Terminal]] hacks[[/List]]
-[[Heading]]Corruption Effects[[/Heading]]
-These effects will become more common with more system corruption.
-[[Table]]Percentage|Effect|Cogmind exclusive||
->1%|Gibberish in Message Log|Yes||
->1%|Misdirection - May move in the wrong direction while moving|Yes||
->1%|Misfire - May shoot any attached weapon in a random direction, disastrous if this weapon was an explosive launcher|Yes||
->1%|Reject Part - A random part is dropped|Yes||
->1%|Fused Part - A random part is fused, making it be destroyed if removed|Yes||
->1%|Heat Spike - Sudden increase in [[Heat]]|Yes(?)||
->1%|Matter Fused - Lose some [[Matter]]|Yes||
->1%|Substantial Component Data Loss - A number of parts are made unknown|Yes||
-100%|System Failure - Destruction/Loss|No[[/Table]]
-[[Heading]]Getting rid of Corruption[[/Heading]]
-[[List]][[Programmer|Certain]] bots may [[Datajacks|Datajack]] others to reset their corruption | [[System Restoration Modules]]|Evolving|[[Redacted]][[Core Reset Matrix]][[/Redacted]][[/List]]"
+"Corruption","Other","Stub\nCorruption describes the system corruption of a robot. \n[[Heading]]Getting corruption[[/Heading]]\n[[List]]Electromagnetic Damage | Crushing | Attaching a [[Corrupted Parts|Corrupted Part]] | Feedback from failed [[Terminal]] hacks[[/List]]\n[[Heading]]Corruption Effects[[/Heading]]\nThese effects will become more common with more system corruption.\n[[Table]]Percentage|Effect|Cogmind exclusive||\n>1%|Gibberish in Message Log|Yes||\n>1%|Misdirection - May move in the wrong direction while moving|Yes||\n>1%|Misfire - May shoot any attached weapon in a random direction, disastrous if this weapon was an explosive launcher|No||\n>1%|Reject Part - A random part is dropped|Yes||\n>1%|Fused Part - A random part is fused, making it be destroyed if removed|Yes||\n>1%|Heat Spike - Sudden increase in [[Heat]]|No||\n>1%|Matter Fused - Lose some [[Matter]]|Yes||\n>1%|Substantial Component Data Loss - A number of parts are made unknown|Yes||\n100%|System Failure - Destruction/Loss|No[[/Table]]\n[[Heading]]Getting rid of Corruption[[/Heading]]\n[[List]][[Programmer|Certain]] bots may [[Datajacks|Datajack]] others to reset their corruption | [[System Restoration Modules]]|Evolving|[[Redacted]][[Core Reset Matrix]][[/Redacted]][[/List]]"
 "Corruption Screen","Part",""
 "Corruption Screens","Part Group",""
 "Coupling Squad","Other","[[Image]]Coupling Squad.png|A Programmer installing Relay Couplers into a Garrison[[/Image]]
