@@ -1,6 +1,7 @@
 import { Suspense, useEffect } from "react";
 import React from "react";
 import { Redirect, Route, Router, Switch, useLocation } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 
 import { rootDirectory } from "../../utilities/common";
 import useThemeUpdater from "../Effects/useThemeUpdater";
@@ -19,6 +20,8 @@ const SimulatorPage = React.lazy(() => import("../Pages/SimulatorPage/SimulatorP
 const WikiPage = React.lazy(() => import("../Pages/WikiPage/WikiPage"));
 
 function Routes() {
+    const [hashLocation] = useHashLocation();
+
     return (
         <Switch>
             {/* Main routes */}
@@ -85,7 +88,14 @@ function Routes() {
                 <Redirect to="/simulator" />
             </Route>
             <Route path="/wiki.html">
-                <Redirect to="/wiki" />
+                {() => {
+                    // If old wiki hash-based URL, redirect to new scheme
+                    if (hashLocation.length > 1) {
+                        return <Redirect to={`/wiki${hashLocation}`} />;
+                    }
+
+                    return <Redirect to="/wiki" />;
+                }}
             </Route>
 
             {/* 404 */}
