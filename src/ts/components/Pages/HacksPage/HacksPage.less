@@ -1,0 +1,88 @@
+@import "../../../../styles/common.less";
+
+// Column widths
+@hack-command-column-width: 25rem;
+
+.hack-table {
+    width: 100%;
+    text-align: center;
+}
+
+.hack-content-row,
+.hack-header-row {
+    > :first-child {
+        background-color: @table-header-background-color;
+
+        > * {
+            font-size: @table-header-font-size;
+        }
+    }
+
+    > * {
+        border: @border-width solid @border-color;
+    }
+}
+
+.hack-header-row > :first-child {
+    width: @hack-command-column-width;
+}
+
+.hack-content-row {
+    > :first-child {
+        display: flex;
+
+        > * {
+            align-self: center;
+            flex: 1 1 auto;
+        }
+
+        > :last-child {
+            flex-grow: 0;
+        }
+    }
+
+    > :not(:first-child) {
+        color: @font-paragraph-color;
+    }
+}
+
+.hack-info-button {
+    align-self: stretch !important;
+
+    > button {
+        // Only show border on the left or we get too much overlap with
+        // the table cell borders
+        // Also remove border radius as it doesn't look good with
+        // the smaller button sizes here
+        font-family: cog-mono;
+        border-radius: 0;
+        border-width: 0 0 0 @border-width;
+        padding: @button-small-padding;
+        height: 100%;
+    }
+
+    :hover {
+        // Override the normal border invert since we're messing with the
+        // borders that would be shown here, and it looks weird to leave
+        border-color: @border-color;
+    }
+}
+
+.hack-header-row {
+    background-color: @table-header-background-color;
+
+    > * {
+        padding: @table-header-padding;
+
+        font-size: @table-header-font-size;
+    }
+}
+
+.hack-machine-header-cell {
+    background-color: @page-background-color;
+
+    > p {
+        font-size: @table-large-header-font-size;
+        margin: @table-large-header-margin;
+    }
+}

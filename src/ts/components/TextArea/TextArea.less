@@ -1,0 +1,19 @@
+@import "../../../styles/common.less";
+
+.text-area {
+    background-color: @element-background-color;
+    color: @font-color;
+
+    resize: vertical;
+
+    border: @border-width solid @border-color;
+}
+
+.text-area:focus {
+    outline: none;
+    border-color: @element-active-border-color;
+}
+
+.text-area:hover {
+    border-color: @element-active-border-color;
+}

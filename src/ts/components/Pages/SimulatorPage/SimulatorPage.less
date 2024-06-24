@@ -1,0 +1,103 @@
+@import "../../../../styles/common.less";
+
+.damage-reduction-select {
+    > div {
+        width: 18rem;
+        min-width: 18rem;
+    }
+
+    flex-wrap: wrap;
+}
+
+.enemy-group {
+    display: flex;
+}
+
+.enemy-select {
+    flex: 1 1 auto;
+
+    > div {
+        width: 16rem;
+        min-width: 16rem;
+    }
+}
+
+.enemy-behavior-select {
+    > div {
+        width: 17rem;
+        min-width: 17rem;
+    }
+}
+
+.siege-select {
+    > div {
+        width: 19rem;
+        min-width: 19rem;
+    }
+}
+
+.sneak-attack-select {
+    > div {
+        width: 10rem;
+        min-width: 10rem;
+    }
+}
+
+.weapon-select {
+    > div {
+        width: 23rem;
+        min-width: 23rem;
+    }
+}
+
+.weapon-row,
+.new-weapon-row {
+    display: flex;
+    gap: 0 @medium-gap;
+
+    margin: @small-gap 0;
+
+    flex-wrap: wrap;
+}
+
+.new-weapon-row {
+    margin-bottom: @large-gap;
+}
+
+.last-pre-weapon-row {
+    margin-bottom: @large-gap;
+}
+
+.simulate-row {
+    display: flex;
+    margin-top: @large-gap;
+}
+
+.simulate-button {
+    font-size: @simulate-button-font-size;
+    width: 11rem;
+}
+
+.status-text {
+    align-self: center;
+    margin-left: @medium-gap;
+}
+
+.chart-container {
+    height: 40rem;
+}
+
+.custom-dataset-groups {
+    display: grid;
+    gap: @medium-gap;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+    > * {
+        display: flex;
+        gap: @small-gap;
+
+        > input {
+            flex: 1 1 auto;
+        }
+    }
+}

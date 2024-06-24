@@ -1,16 +1,16 @@
-import { PageType, Spoiler, ThemeType } from "../../types/commonTypes";
+import { useEffect } from "react";
+import { RouterObject, useLocation, useRouter } from "wouter";
+
+import { PageType, Spoiler, ThemeType, pageTypes } from "../../types/commonTypes";
+import { rootDirectory } from "../../utilities/common";
 import { ButtonLink } from "../Buttons/Button";
 import { useEditableSpoilers, useEditableTheme } from "../Effects/useLocalStorageValue";
 import { LabeledSelect } from "../LabeledItem/LabeledItem";
+import ButtonPopover from "../Popover/ButtonPopover";
+import TextTooltipButton from "../Popover/TextTooltipButton";
 import { SelectOptionType } from "../Selectpicker/Select";
-import ButtonPopover from "../Tooltip/ButtonPopover";
-import TextTooltip from "../Tooltip/TextTooltip";
 
 import "./PageHeader.less";
-
-export type PageHeaderProps = {
-    pageType: PageType;
-};
 
 const spoilerOptions: SelectOptionType<Spoiler>[] = [
     { value: "None", label: "None", tooltip: "No spoilers: Factory or higher depth branch content is hidden." },
@@ -33,14 +33,19 @@ type PageDetails = {
     explanation: string;
 };
 const pages: Record<PageType, PageDetails> = {
+    "404": {
+        label: "Not Found",
+        link: "404",
+        explanation: "Page not found. Click one of the buttons at the top of the screen to navigate to a page.",
+    },
     About: {
         label: "About",
-        link: "about.html",
+        link: "about",
         explanation: "About Cog-Minder.",
     },
     Bots: {
         label: "Bots",
-        link: "bots.html",
+        link: "bots",
         explanation:
             "A robot reference. This page contains a (should be) complete reference of " +
             "known bot information (parts, resistances, and other special stats) along with some basic search " +
@@ -49,7 +54,7 @@ const pages: Record<PageType, PageDetails> = {
     },
     Build: {
         label: "Build",
-        link: "build.html",
+        link: "build",
         explanation:
             "A build creator/planner. Allows for creating a build loadout and view some detailed stats " +
             "like the ones that are shown in-game. Some overall build summary stats are always shown up at " +
@@ -58,14 +63,14 @@ const pages: Record<PageType, PageDetails> = {
     },
     Combat: {
         label: "Combat",
-        link: "combat.html",
+        link: "combat",
         explanation:
             "A combat log analyzer. Combat logs from Beta 13 runs can be uploaded and analyzed to display " +
             "a breakdown of damage dealt and taken from different sources.",
     },
     Hacks: {
         label: "Hacks",
-        link: "hacks.html",
+        link: "hacks",
         explanation:
             "A machine hacking reference. Lists all available hacks for each type of machine as well " +
             "as their success rates. Entering hackware bonuses or other modifiers will update the odds " +
@@ -73,12 +78,12 @@ const pages: Record<PageType, PageDetails> = {
     },
     Lore: {
         label: "Lore",
-        link: "lore.html",
+        link: "lore",
         explanation: "A lore reference. Lists all lore entries in the game and allows searching for specific entries.",
     },
     Parts: {
         label: "Parts",
-        link: "parts.html",
+        link: "parts",
         explanation:
             "A parts reference. This page lists the stats of all known parts in Cogmind. Most parts " +
             "come directly from the in-game gallery export, and the remainder (usually enemy-unique " +
@@ -88,14 +93,14 @@ const pages: Record<PageType, PageDetails> = {
     },
     RIF: {
         label: "RIF",
-        link: "rif.html",
+        link: "rif",
         explanation:
             "A RIF ability and bothacking reference. This page lists all RIF abilities and their effects, " +
             "as well as all 0b10 hacks, their coupler charge usage, and effects.",
     },
     Simulator: {
         label: "Simulator",
-        link: "simulator.html",
+        link: "simulator",
         explanation:
             "A combat simulator. This page allows simulating a 1-on-1 combat with any bot in the game " +
             "with a given offensive loadout. Select an enemy, weapons, and any number of other various " +
@@ -105,8 +110,8 @@ const pages: Record<PageType, PageDetails> = {
     },
     Wiki: {
         label: "Wiki",
-        link: "wiki.html",
-        explanation: "A Cogmind wiki.",
+        link: "wiki",
+        explanation: "A Cogmind wiki that is open for anybody to edit. See the homepage for how to contribute.",
     },
 };
 
@@ -129,9 +134,11 @@ function PageButtons({ pageType: PageType }) {
         return (
             <ButtonLink
                 activeLink={PageType === p}
-                tooltip={pageInfo.explanation}
+                // There is an issue on mobile where the tooltip never goes away
+                // Might figure it out but for now leave only in ? popup
+                // tooltip={pageInfo.explanation}
                 key={pageInfo.label}
-                href={pageInfo.link}
+                href={`~/${rootDirectory}/${pageInfo.link}`}
             >
                 {pageInfo.label}
             </ButtonLink>
@@ -154,7 +161,6 @@ function SettingsButton() {
                 <LabeledSelect
                     label="Spoilers"
                     tooltip="What spoiler content to show. By default, no spoilers are shown."
-                    className="spoilers-selectpicker"
                     isSearchable={false}
                     options={spoilerOptions}
                     value={spoilerSelected}
@@ -177,8 +183,41 @@ function SettingsButton() {
     );
 }
 
-export default function PageHeader({ pageType }: PageHeaderProps) {
+function matchRoute(router: RouterObject, route: string, path: string) {
+    const { pattern, keys } = router.parser(route);
+
+    const matches = pattern.exec(path);
+
+    return matches
+        ? [true, Object.fromEntries(keys.map((key, i) => [key, matches[i + 1]]))] // convert to object
+        : [false, null]; //  no match
+}
+
+function getPageType() {
+    const [path] = useLocation();
+    const router = useRouter();
+
+    let activePageType: PageType = "404";
+
+    for (const pageType of pageTypes) {
+        const [isActive] = matchRoute(router, `/${rootDirectory}/${pages[pageType].link}(?:/.*)?`, path);
+
+        if (isActive) {
+            activePageType = pageType;
+            break;
+        }
+    }
+
+    return activePageType;
+}
+
+export default function PageHeader() {
+    const pageType = getPageType();
     const pageDetails = pages[pageType];
+
+    useEffect(() => {
+        document.title = `${pageType} - Cog-Minder`;
+    }, [pageType]);
 
     return (
         <>
@@ -186,9 +225,9 @@ export default function PageHeader({ pageType }: PageHeaderProps) {
                 <div className="cogminder-title">Cog-Minder</div>
                 <div className="page-title-container">
                     <h1 className="page-title">{pageDetails.label}</h1>
-                    <TextTooltip tooltipText={pageDetails.explanation}>
-                        <span className="page-explanation">?</span>
-                    </TextTooltip>
+                    <TextTooltipButton className="page-explanation" tooltipText={pageDetails.explanation}>
+                        ?
+                    </TextTooltipButton>
                 </div>
                 <SettingsButton />
             </div>

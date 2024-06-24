@@ -214,7 +214,7 @@ const optionNameRegex = /([\w. '"\-/]*) \(\d/;
 // Enables bot info popovers given a selector to the root object
 export function enableBotInfoInteraction(root: JQuery<HTMLElement>): void {
     // Set up popovers for items on bots
-    const items = root.find(".popover-part");
+    const items = root.find(".details-part");
     items.each((_, element) => {
         const selector = $(element);
         const result = nameRegex.exec(selector.text());
@@ -239,7 +239,7 @@ export function enableBotInfoInteraction(root: JQuery<HTMLElement>): void {
         });
     });
 
-    const optionItems = root.find(".popover-option").parent();
+    const optionItems = root.find(".details-option").parent();
     optionItems.each((_, element) => {
         const selector = $(element);
         const result = optionNameRegex.exec(selector.find("span:nth-child(3)").text());

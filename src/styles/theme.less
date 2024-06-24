@@ -1,64 +1,76 @@
 // Keep in sync with colors.less
 // Background colors
-@dark-tooltip-background-color: #000000cc;
-@dark-page-background-color: #2f2f2f;
-@dark-element-background-color: #3a3a3a; // Keep in sync with chartDarkBackgroundColor
-@dark-label-background-color: @dark-element-background-color;
-@dark-small-contrast-background-color: #4a4a4a;
 @dark-dropdown-menu-background-color: #656565;
 @dark-dropdown-menu-active-option-background-color: @dark-button-interaction-background-color;
 @dark-dropzone-active-background-color: @dark-button-active-background-color;
+@dark-chart-background-color: #393939; // Keep in sync with chartDarkBackgroundColor
+@dark-element-background-color: #474747;
+@dark-label-background-color: #393939;
+@dark-page-background-color: #2f2f2f;
+@dark-tooltip-background-color: #000000cc;
+@dark-table-header-background-color: @dark-element-background-color;
 
 @dark-moderate-contrast-background-color: #656565;
 @dark-button-active-background-color: #a7a7a7;
 @dark-button-interaction-background-color: #d7d7d7;
 
-@cogmind-tooltip-background-color: @dark-tooltip-background-color;
-@cogmind-page-background-color: #080808;
-@cogmind-element-background-color: @cogmind-page-background-color; // Keep in sync with chartCogmindBackgroundColor
-@cogmind-label-background-color: #162416;
-@cogmind-small-contrast-background-color: @cogmind-label-background-color;
 @cogmind-dropdown-menu-background-color: @cogmind-page-background-color;
 @cogmind-dropdown-menu-active-option-background-color: @cogmind-button-hover-focus-background-color;
 @cogmind-dropzone-active-background-color: @cogmind-button-active-background-color;
+@cogmind-chart-background-color: @cogmind-page-background-color; // Keep in sync with chartCogmindBackgroundColor
+@cogmind-element-background-color: @cogmind-page-background-color;
+@cogmind-label-background-color: #162416;
+@cogmind-page-background-color: #080808;
+@cogmind-tooltip-background-color: @dark-tooltip-background-color;
+@cogmind-table-header-background-color: @cogmind-label-background-color;
 
 @cogmind-button-hover-focus-background-color: #004200;
 @cogmind-button-active-background-color: #002100;
 
 :root {
-    --tooltip-background-color: @dark-tooltip-background-color;
-    --page-background-color: @dark-page-background-color;
-    --element-background-color: @dark-element-background-color;
-    --label-background-color: @dark-label-background-color;
-    --small-contrast-background-color: @dark-small-contrast-background-color;
+    --chart-background-color: @dark-chart-background-color;
     --dropdown-menu-background-color: @dark-dropdown-menu-background-color;
     --dropdown-menu-active-option-background-color: @dark-dropdown-menu-active-option-background-color;
     --dropzone-active-background-color: @dark-dropzone-active-background-color;
+    --element-background-color: @dark-element-background-color;
+    --label-background-color: @dark-label-background-color;
+    --page-background-color: @dark-page-background-color;
+    --tooltip-background-color: @dark-tooltip-background-color;
+    --table-header-background-color: @dark-table-header-background-color;
 }
 [data-theme="Cogmind"] {
-    --tooltip-background-color: @cogmind-tooltip-background-color;
-    --page-background-color: @cogmind-page-background-color;
-    --element-background-color: @cogmind-element-background-color;
-    --label-background-color: @cogmind-label-background-color;
-    --small-contrast-background-color: @cogmind-small-contrast-background-color;
+    --chart-background-color: @cogmind-chart-background-color;
     --dropdown-menu-background-color: @cogmind-dropdown-menu-background-color;
     --dropdown-menu-active-option-background-color: @cogmind-dropdown-menu-active-option-background-color;
     --dropzone-active-background-color: @cogmind-dropzone-active-background-color;
+    --element-background-color: @cogmind-element-background-color;
+    --label-background-color: @cogmind-label-background-color;
+    --page-background-color: @cogmind-page-background-color;
+    --tooltip-background-color: @cogmind-tooltip-background-color;
+    --table-header-background-color: @cogmind-table-header-background-color;
 }
 
 // Borders
+@dark-button-active-border-color: @dark-border-color;
 @dark-border-color: #171717;
 @dark-contrast-border-color: #e8e8e8;
+@dark-element-active-border-color: @dark-contrast-border-color;
 
+@cogmind-button-active-border-color: #00cc00;
 @cogmind-border-color: #006200;
 @cogmind-contrast-border-color: #006200;
+@cogmind-element-active-border-color: #00cc00;
 
 :root {
+    --button-active-border-color: @dark-button-active-border-color;
     --border-color: @dark-border-color;
+    --element-active-border-color: @dark-element-active-border-color;
     --contrast-border-color: @dark-contrast-border-color;
 }
 [data-theme="Cogmind"] {
+    --button-active-border-color: @cogmind-button-active-border-color;
     --border-color: @cogmind-border-color;
+    --element-active-border-color: @cogmind-element-active-border-color;
     --contrast-border-color: @cogmind-contrast-border-color;
 }
 
@@ -67,23 +79,35 @@
 @dark-font-button-interaction-color: #171717;
 @dark-font-title-color: #00cc00;
 @dark-font-link-color: #47abe6;
+@dark-font-link-visited-color: #d673e4;
+@dark-font-paragraph-color: @dark-font-color;
+@dark-font-select-placeholder-color: #9e9e9e;
 
 @cogmind-font-color: #9da9af;
 @cogmind-font-button-interaction-color: #9da9af;
 @cogmind-font-title-color: #00cc00;
-@cogmind-font-link-color: @dark-font-link-color;
+@cogmind-font-link-color: #23a0e6;
+@cogmind-font-link-visited-color: @dark-font-link-visited-color;
+@cogmind-font-paragraph-color: @cogmind-font-title-color;
+@cogmind-font-select-placeholder-color: #585f62;
 
 :root {
     --font-color: @dark-font-color;
     --font-button-interaction-color: @dark-font-button-interaction-color;
     --font-title-color: @dark-font-title-color;
     --font-link-color: @dark-font-link-color;
+    --font-link-visited-color: @dark-font-link-visited-color;
+    --font-paragraph-color: @dark-font-paragraph-color;
+    --font-select-placeholder-color: @dark-font-select-placeholder-color;
 }
 [data-theme="Cogmind"] {
     --font-color: @cogmind-font-color;
     --font-button-interaction-color: @cogmind-font-button-interaction-color;
     --font-title-color: @cogmind-font-title-color;
     --font-link-color: @cogmind-font-link-color;
+    --font-link-visited-color: @cogmind-font-link-visited-color;
+    --font-paragraph-color: @cogmind-font-paragraph-color;
+    --font-select-placeholder-color: @cogmind-font-select-placeholder-color;
 }
 
 // Buttons
@@ -103,7 +127,9 @@
     @dark-button-active-background-color 0%,
     darken(@dark-button-active-background-color, @dark-button-gradient-darken-percent, relative) 100%
 );
+@dark-gallery-part-button-background-gradient-gradient: @dark-button-background-gradient;
 
+@cogmind-gallery-part-button-background-color: black;
 @cogmind-button-background-gradient: linear-gradient(
     @cogmind-element-background-color,
     @cogmind-element-background-color
@@ -117,65 +143,101 @@
     @cogmind-button-active-background-color,
     @cogmind-button-active-background-color
 );
+@cogmind-gallery-part-button-background-gradient: linear-gradient(
+    @cogmind-gallery-part-button-background-color,
+    @cogmind-gallery-part-button-background-color
+);
 
 :root {
     --button-background-gradient: @dark-button-background-gradient;
     --button-hover-focus-background-gradient: @dark-button-hover-focus-background-gradient;
     --button-active-background-gradient: @dark-button-active-background-gradient;
+    --gallery-part-button-background-gradient: @dark-gallery-part-button-background-gradient-gradient;
 }
 [data-theme="Cogmind"] {
     --button-background-gradient: @cogmind-button-background-gradient;
     --button-hover-focus-background-gradient: @cogmind-button-hover-focus-background-gradient;
     --button-active-background-gradient: @cogmind-button-active-background-gradient;
+    --gallery-part-button-background-gradient: @cogmind-gallery-part-button-background-gradient;
+}
+
+// Build colors
+@dark-build-color-default: #155315;
+@dark-build-color-energy-consumption: #000073;
+@dark-build-color-energy-gen: #006f6f;
+@dark-build-color-heat-dissipation: #5b5b00;
+@dark-build-color-heat-gen: #633200;
+@dark-build-color-mass-support: #5b5b00;
+@dark-build-color-mass: #55452e;
+@dark-build-color-vulnerability: #800;
+
+@cogmind-build-color-default: #162416;
+@cogmind-build-color-energy-consumption: @dark-build-color-energy-consumption;
+@cogmind-build-color-energy-gen: #004a4a;
+@cogmind-build-color-heat-dissipation: @dark-build-color-heat-dissipation;
+@cogmind-build-color-heat-gen: #633200;
+@cogmind-build-color-mass-support: @dark-build-color-mass-support;
+@cogmind-build-color-mass: #493e2e;
+@cogmind-build-color-vulnerability: @dark-build-color-vulnerability;
+
+:root {
+    --build-color-default: @dark-build-color-default;
+    --build-color-energy-consumption: @dark-build-color-energy-consumption;
+    --build-color-energy-gen: @dark-build-color-energy-gen;
+    --build-color-heat-dissipation: @dark-build-color-heat-dissipation;
+    --build-color-heat-gen: @dark-build-color-heat-gen;
+    --build-color-mass-support: @dark-build-color-mass-support;
+    --build-color-mass: @dark-build-color-mass;
+    --build-color-vulnerability: @dark-build-color-vulnerability;
+}
+[data-theme="Cogmind"] {
+    --build-color-default: @cogmind-build-color-default;
+    --build-color-energy-consumption: @cogmind-build-color-energy-consumption;
+    --build-color-energy-gen: @cogmind-build-color-energy-gen;
+    --build-color-heat-dissipation: @cogmind-build-color-heat-dissipation;
+    --build-color-heat-gen: @cogmind-build-color-heat-gen;
+    --build-color-mass-support: @cogmind-build-color-mass-support;
+    --build-color-mass: @cogmind-build-color-mass;
+    --build-color-vulnerability: @cogmind-build-color-vulnerability;
 }
 
 // Keep in sync with sizes.less
 // Border radii
-@dark-default-border-radius: 8px;
+@dark-border-radius: 8px;
 @dark-dropzone-border-radius: 20px;
 
-@cogmind-default-border-radius: 0px;
+@cogmind-border-radius: 0px;
 @cogmind-dropzone-border-radius: 0px;
 
 :root {
-    --default-border-radius: @dark-default-border-radius;
+    --border-radius: @dark-border-radius;
     --dropzone-border-radius: @dark-dropzone-border-radius;
 }
 [data-theme="Cogmind"] {
-    --default-border-radius: @cogmind-default-border-radius;
+    --border-radius: @cogmind-border-radius;
     --dropzone-border-radius: @cogmind-dropzone-border-radius;
 }
 
 // Keep in sync with fonts.less
 // Font families
-@dark-default-font-family: Arial, Helvetica, sans-serif;
-@dark-paragraph-font-family: @dark-default-font-family;
+@mono-font-family: smallcaps-mono, courier-new-adjusted, monospace, monospace;
+@default-variable-font-family: Arial, Helvetica, sans-serif;
 
-@cogmind-default-font-family: smallcaps;
-@cogmind-paragraph-font-family: @dark-default-font-family;
+@dark-default-font-family: @default-variable-font-family;
+@dark-paragraph-font-family: @default-variable-font-family;
+@dark-wiki-header-font-family: @default-variable-font-family;
+
+@cogmind-default-font-family: @mono-font-family;
+@cogmind-paragraph-font-family: @default-variable-font-family;
+@cogmind-wiki-header-font-family: @mono-font-family;
 
 :root {
     --default-font-family: @dark-default-font-family;
     --paragraph-font-family: @dark-paragraph-font-family;
+    --wiki-header-font-family: @dark-wiki-header-font-family;
 }
 [data-theme="Cogmind"] {
     --default-font-family: @cogmind-default-font-family;
     --paragraph-font-family: @cogmind-paragraph-font-family;
-}
-
-// Keep in sync with sizes.less
-// Font families
-@dark-default-font-size: 1rem;
-@dark-paragraph-font-size: @dark-default-font-size;
-
-@cogmind-default-font-size: 0.8rem;
-@cogmind-paragraph-font-size: @dark-paragraph-font-size;
-
-:root {
-    --default-font-size: @dark-default-font-size;
-    --paragraph-font-size: @dark-paragraph-font-size;
-}
-[data-theme="Cogmind"] {
-    --default-font-size: @cogmind-default-font-size;
-    --paragraph-font-size: @cogmind-paragraph-font-size;
+    --wiki-header-font-family: @cogmind-wiki-header-font-family;
 }

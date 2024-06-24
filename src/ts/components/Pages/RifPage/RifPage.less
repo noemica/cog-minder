@@ -1,0 +1,128 @@
+@import "../../../../styles/common.less";
+
+// Column widths
+@ability-name-column-width: 10rem;
+@min-abilities-column-width: 7rem;
+@levels-column-width: 4rem;
+
+@hack-name-column-width: 15rem;
+@rif-only-column-width: 5rem;
+@charges-column-width: 7rem;
+
+.rif-table {
+    width: 100%;
+    text-align: center;
+}
+
+.rif-ability-row,
+.rif-hack-row,
+.rif-hack-header-row,
+.rif-ability-header-row {
+    > :first-child {
+        background-color: @table-header-background-color;
+
+        > * {
+            font-size: @table-header-font-size;
+        }
+    }
+
+    > :not(:first-child) {
+        font-family: @paragraph-font-family;
+        font-size: @paragraph-font-size;
+    }
+
+    > * {
+        border: @border-width solid @border-color;
+    }
+}
+
+.rif-ability-row {
+    > :first-child {
+        text-align: left;
+        font-size: @rif-hack-ability-name-font-size;
+    }
+
+    > :last-child {
+        text-align: left;
+    }
+
+    > * {
+        padding: @table-cell-padding;
+    }
+}
+
+.rif-hack-row {
+    > :first-child {
+        text-align: left;
+        font-size: @rif-hack-ability-name-font-size;
+    }
+
+    > :last-child {
+        text-align: left;
+    }
+
+    > * {
+        padding: @table-cell-padding;
+    }
+}
+
+.rif-hack-header-row,
+.rif-ability-header-row {
+    background-color: @table-header-background-color;
+
+    > :first-child {
+        text-align: left;
+        font-size: @rif-hack-ability-name-font-size;
+    }
+
+    > * {
+        padding: @table-header-padding;
+
+        font-size: @table-header-font-size;
+    }
+}
+
+.rif-ability-header-row {
+    > :first-child {
+        width: @ability-name-column-width;
+    }
+
+    > :nth-child(2) {
+        width: @min-abilities-column-width;
+    }
+
+    > :nth-child(3) {
+        width: @levels-column-width;
+    }
+}
+
+.rif-hack-header-row {
+    > :first-child {
+        width: @hack-name-column-width;
+    }
+
+    > :nth-child(2) {
+        width: @rif-only-column-width;
+    }
+
+    > :nth-child(3) {
+        width: @charges-column-width;
+    }
+}
+
+.rif-hack-category-header-row {
+    background-color: @page-background-color;
+
+    > :first-child {
+        font-size: @table-header-font-size;
+    }
+
+    > :last-child {
+        text-align: left;
+
+        > * {
+            vertical-align: middle;
+            padding: @bot-image-padding;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@import "../../../styles/common.less";
+
+.popover {
+    z-index: 1;
+}
+
+.button-popover {
+    .popover();
+
+    padding: @popover-padding;
+
+    z-index: 1;
+
+    background-color: @page-background-color;
+
+    border-radius: @border-radius;
+    border: @border-width solid @border-color;
+}
+
+.import-from-dump-popover {
+    display: grid;
+    gap: @medium-gap;
+}
+
+.submit-dump-row {
+    display: flex;
+    gap: @element-column-gap;
+
+    > * {
+        flex: 1 1 auto;
+    }
+}
+
+.popover-arrow {
+    fill: @border-color;
+}
+
+.bot-popover-arrow,
+.item-popover-arrow {
+    fill: @popover-border-color;
+}

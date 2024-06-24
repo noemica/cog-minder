@@ -1,0 +1,147 @@
+@import "../../../styles/common.less";
+
+.details-font {
+    font-family: @details-font-family;
+    font-size: @details-font-size;
+}
+
+.details-line,
+.details-half-line,
+.details-part,
+.details-description,
+.details-option,
+.details-location,
+.details-summary {
+    .details-font();
+
+    margin: 0;
+    color: @details-font-color;
+}
+
+.details-part {
+    cursor: pointer;
+}
+
+.details-part a {
+    text-decoration: none;
+}
+
+.details-half-line {
+    font-size: @details-half-font-size;
+}
+
+.details-summary,
+.details-option {
+    .details-font();
+
+    color: @details-summary-font-color;
+}
+
+.details-location {
+    margin-bottom: @large-gap;
+    color: @details-location-font-color;
+}
+
+.details-description {
+    display: block;
+    max-width: @details-description-max-width;
+}
+
+.details-title {
+    font-family: @details-font-family;
+    text-align: center;
+    color: @details-font-color;
+    font-size: @details-font-size;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.details-item-image-title {
+    height: @details-part-icon-size;
+
+    > img {
+        height: @details-part-icon-size;
+        width: @details-part-icon-size;
+        vertical-align: middle;
+    }
+}
+
+.details-bot-image-title {
+    > img {
+        vertical-align: middle;
+    }
+}
+
+.item-art-image-container {
+    text-align: center;
+    height: @details-part-image-height;
+
+    > img {
+        width: @details-part-image-width;
+        height: @details-part-image-height;
+    }
+}
+
+.details-range-green,
+.details-range-yellow,
+.details-range-orange,
+.details-range-red,
+.details-range-dim {
+    letter-spacing: @details-range-letter-spacing;
+    font-size: 0.8rem;
+}
+
+.details-dim-text {
+    color: @details-dim-text;
+}
+
+.details-range-green {
+    color: @details-range-green;
+}
+
+.details-range-yellow {
+    color: @details-range-yellow;
+}
+
+.details-range-orange {
+    color: @details-range-orange;
+}
+
+.details-range-red {
+    color: @details-range-red;
+}
+
+.details-range-dim {
+    color: @details-dim-text;
+}
+
+.rating-prototype,
+.rating-alien,
+.projectile-num {
+    color: @details-background-color;
+    background-color: @details-font-color;
+    border: @large-border-width solid @details-font-color;
+}
+
+.bot-details,
+.part-details,
+.location-details {
+    background-color: @details-background-color;
+    border: @large-border-width solid @popover-border-color;
+    border-radius: 0;
+    line-height: @comparison-line-height;
+
+    padding: @comparison-container-gap;
+
+    .details-font();
+}
+
+.bot-popover-item-bracket {
+    color: #00cc0000;
+    transition: cubic-bezier(0.77, 0, 0.175, 1) color 0.25s;
+}
+
+:hover > .bot-popover-item-bracket {
+    color: #00cc00;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) color 0.1s;
+}

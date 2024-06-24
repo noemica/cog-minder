@@ -1,9 +1,16 @@
 @import "./common.less";
 @import "./theme.less";
 
+html {
+    font-size: clamp(11px, 3vw, 16px);
+}
+
 body {
     background-color: var(--page-background-color);
     color: @font-color;
+
+    font-family: @default-font-family;
+    font-size: @default-font-size;
 
     margin-left: auto;
     margin-right: auto;
@@ -15,7 +22,35 @@ body {
     overflow-y: scroll;
 }
 
-* {
+p {
+    line-height: 1.5;
+    margin-top: 0;
+}
+
+li,
+textarea,
+ul {
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: @h1-font-size;
+}
+
+h2 {
+    font-size: @h2-font-size;
+}
+
+h3 {
+    font-size: @h3-font-size;
+}
+
+h4 {
+    font-size: @h4-font-size;
+}
+
+button,
+input {
     font-family: @default-font-family;
     font-size: @default-font-size;
 }
@@ -28,6 +63,19 @@ body {
     font-size: @error-message-font-size;
 }
 
-a {
+.loading-message {
+    font-family: @default-font-family;
+    font-size: @loading-message-font-size;
+}
+
+a:where(a:visited) {
+    color: @font-link-visited-color;
+}
+
+a:where(:not(:visited)) {
     color: @font-link-color;
+}
+
+a:where(:not(:hover)) {
+    text-decoration: none;
 }

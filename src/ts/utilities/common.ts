@@ -1,32 +1,17 @@
 // Common code
-import botExtraData from "../../json/bot_extra_data.json";
-import itemCategories from "../../json/item_categories.json";
-import lore from "../../json/lore.json";
-import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "../botTypes";
-import { specialItemProperties } from "../specialItemProperties";
+import { Bot, BotPart } from "../types/botTypes";
 import { MapLocation, Spoiler } from "../types/commonTypes";
 import {
     BaseItem,
-    Critical,
-    FabricationStats,
     Item,
-    ItemCategory,
     ItemRatingCategory,
     ItemType,
-    JsonItem,
-    OtherItem,
     PowerItem,
     PropulsionItem,
     SpecialPropertyTypeName,
     UtilityItem,
     WeaponItem,
 } from "../types/itemTypes";
-
-export let botData: { [key: string]: Bot } = {};
-export let itemData: { [key: string]: Item } = {};
-
-// Use for testing with new items/bots
-const verifyImages = false;
 
 // A special bot name to image name map for special/unique bots
 const botNameImageMap = new Map<string, string>([
@@ -48,7 +33,7 @@ const botNameImageMap = new Map<string, string>([
     ["A7", "Programmer"],
     ["A8", "Programmer"],
     ["Architect", "Architect"],
-    ["Autobeam Turret", "Autobeam Turret"],
+    ["Autobeam Turret", "Turret"],
     ["Cobbler", "Mechanic"],
     ["CL-ANK", "Brawler"],
     ["Data Miner", "Data Miner"],
@@ -126,10 +111,30 @@ enum ColorScheme {
     Red = "red",
 }
 const colorSchemes = {
-    lowGood: { low: "range-green", midLow: "range-yellow", midHigh: "range-orange", high: "range-red" },
-    highGood: { low: "range-red", midLow: "range-orange", midHigh: "range-yellow", high: "range-green" },
-    green: { low: "range-green", midLow: "range-green", midHigh: "range-green", high: "range-green" },
-    red: { low: "range-red", midLow: "range-red", midHigh: "range-red", high: "range-red" },
+    lowGood: {
+        low: "details-range-green",
+        midLow: "details-range-yellow",
+        midHigh: "details-range-orange",
+        high: "details-range-red",
+    },
+    highGood: {
+        low: "details-range-red",
+        midLow: "details-range-orange",
+        midHigh: "details-range-yellow",
+        high: "details-range-green",
+    },
+    green: {
+        low: "details-range-green",
+        midLow: "details-range-green",
+        midHigh: "details-range-green",
+        high: "details-range-green",
+    },
+    red: {
+        low: "details-range-red",
+        midLow: "details-range-red",
+        midHigh: "details-range-red",
+        high: "details-range-red",
+    },
 };
 
 // Character -> escape character map
@@ -145,29 +150,12 @@ export const entityMap: { [key: string]: string } = {
     "\n": "<br />",
 };
 
-export const rootDirectory = "/cog-minder/";
+export const rootDirectory = "cog-minder";
 
 // Compile-time assert that code is unreachable
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function assertUnreachable(val: never): never {
     throw new Error(`This should not be reachable: ${val}`);
-}
-
-// In the given string, bolds all matches of matchText
-// Uses lowercase matching but returns modified text with proper capitalization
-export function boldMatches(text: string, matchText: string): string {
-    // Bold the match
-    let searchIndex: number;
-    let endSubstringIndex = Number.MAX_SAFE_INTEGER;
-    while ((searchIndex = text.substring(0, endSubstringIndex).toLowerCase().lastIndexOf(matchText)) !== -1) {
-        text =
-            text.substring(0, searchIndex) +
-            `<b>${text.substring(searchIndex, searchIndex + matchText.length)}</b>` +
-            text.substring(searchIndex + matchText.length);
-        endSubstringIndex = searchIndex;
-    }
-
-    return text;
 }
 
 // Determines if the given part can be shown based on the current spoilers state
@@ -204,7 +192,7 @@ export function canShowSpoiler(stateToCheck: Spoiler, globalState: Spoiler): boo
 }
 
 // Ceil the number to the nearest multiple
-function ceilToMultiple(num: number, multiple: number) {
+export function ceilToMultiple(num: number, multiple: number) {
     return Math.ceil(num / multiple) * multiple;
 }
 
@@ -236,7 +224,7 @@ function rangeLineUnit(
     if (valueString === undefined || value === undefined) {
         valueString = defaultValueString;
         value = 0;
-        valueHtml = `<span class="dim-text">${defaultValueString}${unitString}</span>`;
+        valueHtml = `<span class="details-dim-text">${defaultValueString}${unitString}</span>`;
     } else {
         valueHtml = valueString + unitString;
     }
@@ -279,28 +267,28 @@ function rangeLineUnit(
     // Create bars HTML string
     let barsHtml: string;
     if (emptyBars > 0) {
-        barsHtml = `<span class="${colorClass}">${"▮".repeat(fullBars)}</span><span class="range-dim">${"▯".repeat(
-            emptyBars,
-        )}</span>`;
+        barsHtml = `<span class="${colorClass}">${"▮".repeat(
+            fullBars,
+        )}</span><span class="details-range-dim">${"▯".repeat(emptyBars)}</span>`;
     } else {
         barsHtml = `<span class=${colorClass}>${"▮".repeat(fullBars)}</span>`;
     }
 
     // Return full HTML
     return `
-    <pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueHtml} ${barsHtml}</pre>
+    <pre class="details-line"> ${category}${" ".repeat(numSpaces)}${valueHtml} ${barsHtml}</pre>
     `;
 }
 
 // Create a summary line
 function summaryLine(text: string) {
-    return `<pre class="popover-summary">${text}</pre>`;
+    return `<pre class="details-summary">${text}</pre>`;
 }
 
 // Creates a summary line with an optional projectile multiplier
 function summaryProjectileLine(item: WeaponItem, category: string) {
     if (item.projectileCount > 1) {
-        return `<pre class="popover-summary">${category}${" ".repeat(13)}<span class="projectile-num"> x${
+        return `<pre class="details-summary">${category}${" ".repeat(13)}<span class="projectile-num"> x${
             item.projectileCount
         } </span></pre>`;
     } else {
@@ -311,10 +299,10 @@ function summaryProjectileLine(item: WeaponItem, category: string) {
 // Create a text line with an optional value and default style
 function textLine(category: string, text: string | undefined = undefined) {
     if (text === undefined) {
-        return `<pre class="popover-line"> ${category}</pre>`;
+        return `<pre class="details-line"> ${category}</pre>`;
     } else {
         const numSpaces = 23 - 1 - category.length;
-        return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${text}</pre>`;
+        return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${text}</pre>`;
     }
 }
 
@@ -327,10 +315,10 @@ function textLineLink(
 ) {
     extraAttributes = extraAttributes === undefined ? "" : extraAttributes;
     if (extraText === undefined) {
-        return `<pre class="popover-line"> <a href="${link}" ${extraAttributes}>${line}</a></pre>`;
+        return `<pre class="details-line"> <a href="${link}" ${extraAttributes}>${line}</a></pre>`;
     } else {
         const numSpaces = 23 - 1 - line.length;
-        return `<pre class="popover-line"> <a href="${link}" ${extraAttributes}>${line}</a>${" ".repeat(
+        return `<pre class="details-line"> <a href="${link}" ${extraAttributes}>${line}</a>${" ".repeat(
             numSpaces,
         )}${extraText}</pre>`;
     }
@@ -339,10 +327,10 @@ function textLineLink(
 // Create a text line with a spoiler link
 function textLineSpoilerLink(line: string, link: string, extraText: string | undefined = undefined) {
     if (extraText === undefined) {
-        return `<pre class="popover-line"> <a href="${link}" class="spoiler-text spoiler-text-margin">${line}</a></pre>`;
+        return `<pre class="details-line"> <a href="${link}" class="spoiler-text spoiler-text-margin">${line}</a></pre>`;
     } else {
         const numSpaces = 23 - 1 - line.length;
-        return `<pre class="popover-line"> <a href="${link}" class="spoiler-text spoiler-text-margin">${line}</a>${" ".repeat(
+        return `<pre class="details-line"> <a href="${link}" class="spoiler-text spoiler-text-margin">${line}</a>${" ".repeat(
             numSpaces,
         )}${extraText}</pre>`;
     }
@@ -351,17 +339,19 @@ function textLineSpoilerLink(line: string, link: string, extraText: string | und
 // Create a text line with no value and dim style
 function textLineDim(category: string, text: string) {
     const numSpaces = 23 - 1 - category.length;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}<span class="dim-text">${text}</span></pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(
+        numSpaces,
+    )}<span class="details-dim-text">${text}</span></pre>`;
 }
 
 // Create a text line with no value  and a default
 function textLineWithDefault(category: string, textString: string | undefined, defaultString: string) {
     if (typeof textString != "string") {
-        textString = `<span class="dim-text">${defaultString}</span>`;
+        textString = `<span class="details-dim-text">${defaultString}</span>`;
     }
 
     const numSpaces = 23 - 1 - category.length;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${textString}</pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${textString}</pre>`;
 }
 
 // Create a text line with a value and a given HTML string for the text
@@ -375,13 +365,13 @@ function textValueHtmlLine(category: string, valueString: string, valueClass: st
         valueHtml = valueString;
     }
 
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueHtml} ${textHtml}</pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${valueHtml} ${textHtml}</pre>`;
 }
 
 // Create a value line with no text
 function valueLine(category: string, valueString: string) {
     const numSpaces = 23 - 1 - category.length - 1 - valueString.length;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
 }
 
 // Create a value line with units, no text, and a default
@@ -393,7 +383,7 @@ function valueLineUnitsWithDefault(
 ) {
     let valueLength: number;
     if (valueString === undefined) {
-        valueString = `<span class="dim-text">${defaultString}${unitString}</span>`;
+        valueString = `<span class="details-dim-text">${defaultString}${unitString}</span>`;
         valueLength = defaultString.length + unitString.length;
     } else {
         valueString += unitString;
@@ -401,7 +391,7 @@ function valueLineUnitsWithDefault(
     }
 
     const numSpaces = 23 - 1 - category.length - 1 - valueLength;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
 }
 
 // Create a value line with units, text, and a default
@@ -414,7 +404,7 @@ function valueLineUnitsTextWithDefault(
 ) {
     let valueLength: number;
     if (valueString === undefined) {
-        valueString = `<span class="dim-text">${defaultString}${unitString}</span>`;
+        valueString = `<span class="details-dim-text">${defaultString}${unitString}</span>`;
         valueLength = defaultString.length + unitString.length;
     } else {
         valueString += unitString;
@@ -422,28 +412,28 @@ function valueLineUnitsTextWithDefault(
     }
 
     const numSpaces = 23 - 1 - category.length - 1 - valueLength;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString} ${text}</pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${valueString} ${text}</pre>`;
 }
 
 // Create a value line with no text and a default
 function valueLineWithDefault(category: string, valueString: string | undefined, defaultString: string) {
     let valueLength;
     if (typeof valueString != "string") {
-        valueString = `<span class="dim-text">${defaultString}</span>`;
+        valueString = `<span class="details-dim-text">${defaultString}</span>`;
         valueLength = defaultString.length;
     } else {
         valueLength = valueString.length;
     }
 
     const numSpaces = 23 - 1 - category.length - 1 - valueLength;
-    return `<pre class="popover-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
+    return `<pre class="details-line"> ${category}${" ".repeat(numSpaces)}${valueString}</pre>`;
 }
 
-const emptyLine = `<pre class="popover-line">
+const emptyLine = `<pre class="details-line">
     
 </pre>`;
 
-const emptyHalfLine = `<pre class="popover-half-line">
+const emptyHalfLine = `<pre class="details-half-line">
     
 </pre>`;
 
@@ -480,13 +470,6 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
         }
 
         return html;
-    }
-
-    function getFabricationMatterString(stats: FabricationStats) {
-        const matter = stats.matter;
-        const siphonMatter = Math.floor(parseInt(matter) * 0.75).toString();
-
-        return `${matter} (With siphon: ${siphonMatter})`;
     }
 
     function getRatingValue(bot: Bot) {
@@ -527,7 +510,7 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
 
         return (
             "" +
-            `<pre class="popover-part" data-toggle="popover"${popoversToLinks ? ' data-trigger="hover"' : ""}>` +
+            `<pre class="details-part" data-toggle="popover"${popoversToLinks ? ' data-trigger="hover"' : ""}>` +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">[</span>' +
             `${itemString}` +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">]</span>' +
@@ -541,9 +524,9 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
         itemString = escapeHtml(unescapeHtml(itemString).padEnd(43));
         return (
             "" +
-            '<pre class="popover-line">' +
+            '<pre class="details-line">' +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">[</span>' +
-            `<span class="popover-option">${String.fromCharCode(97 + i)}) </span>` +
+            `<span class="details-option">${String.fromCharCode(97 + i)}) </span>` +
             `<span>${itemString}</span>` +
             '<span class="bot-popover-item-bracket bot-popover-item-bracket-invisible">]</span>' +
             "</pre>"
@@ -552,7 +535,7 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
 
     // Create overview
     let html = `
-        <pre class="popover-title">${escapeHtml(bot.name)} [<img src="${getBotImageName(bot)}"/>]</pre>
+        <pre class="details-title">${escapeHtml(bot.name)} [<img src="${getBotImageName(bot)}"/>]</pre>
         ${emptyLine}
         ${summaryLine("Overview")}
         ${textLine("Class", bot.class)}
@@ -685,7 +668,7 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
         `;
 
         traits.forEach((trait) => {
-            html += `<span class="popover-description">&nbsp;${trait}</span>\n`;
+            html += `<span class="details-description">&nbsp;${trait}</span>\n`;
         });
     }
 
@@ -703,7 +686,6 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
 
         html += `
         ${textLine("Time", bot.fabrication.time)}
-        ${bot.fabrication?.matter !== undefined ? textLine("Matter", getFabricationMatterString(bot.fabrication)) : ""}
         ${textLine("Components", "None")}
         `;
     }
@@ -714,7 +696,7 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
         html += `
         ${emptyLine}
         ${summaryLine("Description")}
-        <span class="popover-description">&nbsp;${description}</span>
+        <span class="details-description">&nbsp;${description}</span>
         `;
     }
 
@@ -742,10 +724,10 @@ export function createBotDataContent(bot: Bot, spoilers: Spoiler, popoversToLink
         ${locations
             .map((location) => {
                 if (location.Description !== undefined) {
-                    return `<span class="popover-location">&nbsp;${location.Location}</span>
-                <span class="popover-description">&nbsp;&nbsp;${escapeHtml(location.Description)}</span>`;
+                    return `<span class="details-location">&nbsp;${location.Location}</span>
+                <span class="details-description">&nbsp;&nbsp;${escapeHtml(location.Description)}</span>`;
                 } else {
-                    return `<span class="popover-location">&nbsp;${location.Location}</span>`;
+                    return `<span class="details-location">&nbsp;${location.Location}</span>`;
                 }
             })
             .join(emptyHalfLine)}
@@ -787,13 +769,6 @@ export function createItemDataContent(baseItem: Item): string {
         return damageArray.reduce((sum, val) => sum + val, 0) / damageArray.length;
     }
 
-    function getFabricationMatterString(stats: FabricationStats) {
-        const matter = stats.matter;
-        const siphonMatter = Math.floor(parseInt(matter) * 0.75).toString();
-
-        return `${matter} (With siphon: ${siphonMatter})`;
-    }
-
     const disposableUnstableRegex = /(?:Disposable|Unstable) \((\d*)\)/;
     function getPartName(item: Item): string {
         let name = escapeHtml(item.name);
@@ -823,7 +798,7 @@ export function createItemDataContent(baseItem: Item): string {
             return "";
         }
 
-        return "dim-text";
+        return "details-dim-text";
     }
 
     function getPenetrationValue(item: WeaponItem): string {
@@ -851,7 +826,7 @@ export function createItemDataContent(baseItem: Item): string {
                 return '<span class="rating-prototype"> Prototype </span>';
 
             case ItemRatingCategory.None:
-                return '<span class="dim-text">Standard</span>';
+                return '<span class="details-dim-text">Standard</span>';
         }
     }
 
@@ -888,10 +863,10 @@ export function createItemDataContent(baseItem: Item): string {
 
         if (slotType == "N/A") {
             // Take care of item special cases
-            if (item.type == ItemType.Item || item.type == ItemType.Trap) {
+            if (item.type == "Item" || item.type == "Trap") {
                 slotType = "Inventory";
             } else {
-                return `<span class="dim-text">N/A</span>`;
+                return `<span class="details-dim-text">N/A</span>`;
             }
         }
 
@@ -904,11 +879,11 @@ export function createItemDataContent(baseItem: Item): string {
 
     // Create overview
     let html = `
-    <div class="part-art-image-container">
+    <div class="item-art-image-container">
         <img src="${escapeHtml(getItemAsciiArtImageName(baseItem))}"/>
     </div>
-    <pre class="popover-title .popover-part-image-title mt-2">${getPartName(
-        baseItem,
+    <pre class="details-title .details-item-image-title mt-2">${escapeHtml(
+        baseItem.name,
     )} [<img src="${getItemSpriteImageName(baseItem)}"/>]</pre>
     ${emptyLine}
     ${summaryLine("Overview")}
@@ -1020,7 +995,7 @@ export function createItemDataContent(baseItem: Item): string {
                 ${rangeLine("Support", item.support?.toString(), item.support, undefined, 0, 20, ColorScheme.HighGood)}
                 ${rangeLine(" Penalty", item.penalty?.toString(), item.penalty, "0", 0, 60, ColorScheme.LowGood)}
                 ${
-                    item.type === ItemType.Treads
+                    item.type === "Treads"
                         ? textLineWithDefault("Siege", item.siege, "N/A")
                         : rangeLine(
                               "Burnout",
@@ -1055,10 +1030,10 @@ export function createItemDataContent(baseItem: Item): string {
             // Add weapon-unique categories
 
             switch (item.type) {
-                case ItemType.BallisticCannon:
-                case ItemType.BallisticGun:
-                case ItemType.EnergyCannon:
-                case ItemType.EnergyGun:
+                case "Ballistic Cannon":
+                case "Ballistic Gun":
+                case "Energy Cannon":
+                case "Energy Gun":
                     html += `
                         ${emptyLine}
                         ${summaryLine("Shot")}
@@ -1119,7 +1094,7 @@ export function createItemDataContent(baseItem: Item): string {
                         `;
                     break;
 
-                case ItemType.Launcher:
+                case "Launcher":
                     html += `
                         ${emptyLine}
                         ${summaryLine("Shot")}
@@ -1185,11 +1160,11 @@ export function createItemDataContent(baseItem: Item): string {
                             50,
                             ColorScheme.Green,
                         )}
-                        ${valueLineWithDefault("Salvage", item.explosionSalvage, "0")}
+                        ${valueLineWithDefault("Salvage", item.explosionSalvage?.toString(), "0")}
                         `;
                     break;
 
-                case ItemType.SpecialMeleeWeapon:
+                case "Special Melee Weapon":
                     html += `
                         ${emptyLine}
                         ${summaryLine("Attack")}
@@ -1201,7 +1176,7 @@ export function createItemDataContent(baseItem: Item): string {
                         `;
                     break;
 
-                case ItemType.SpecialWeapon:
+                case "Special Weapon":
                     html += `
                         ${emptyLine}
                         ${summaryLine("Shot")}
@@ -1305,14 +1280,14 @@ export function createItemDataContent(baseItem: Item): string {
                             50,
                             ColorScheme.Green,
                         )}
-                        ${valueLineWithDefault("Salvage", item.explosionSalvage, "0")}
+                        ${valueLineWithDefault("Salvage", item.explosionSalvage?.toString(), "0")}
                         `;
                     }
                     break;
 
-                case ItemType.ImpactWeapon:
-                case ItemType.SlashingWeapon:
-                case ItemType.PiercingWeapon:
+                case "Impact Weapon":
+                case "Slashing Weapon":
+                case "Piercing Weapon":
                     html += `
                         ${emptyLine}
                         ${summaryLine("Attack")}
@@ -1360,7 +1335,7 @@ export function createItemDataContent(baseItem: Item): string {
         `;
 
         if (baseItem.effect !== undefined) {
-            html += `<span class="popover-description">&nbsp;${escapeHtml(baseItem.effect)}</span>`;
+            html += `<span class="details-description">&nbsp;${escapeHtml(baseItem.effect)}</span>`;
 
             if (baseItem.description !== undefined) {
                 html += `${emptyLine}`;
@@ -1368,7 +1343,7 @@ export function createItemDataContent(baseItem: Item): string {
         }
 
         if (baseItem.description !== undefined) {
-            html += `<span class="popover-description">&nbsp;${escapeHtml(baseItem.description)}</span>`;
+            html += `<span class="details-description">&nbsp;${escapeHtml(baseItem.description)}</span>`;
         }
     }
 
@@ -1386,11 +1361,6 @@ export function createItemDataContent(baseItem: Item): string {
 
         html += `
         ${textLine("Time", baseItem.fabrication.time)}
-        ${
-            baseItem.fabrication?.matter !== undefined
-                ? textLine("Matter", getFabricationMatterString(baseItem.fabrication))
-                : ""
-        }
         ${textLine("Components", "None")}
         `;
     }
@@ -1404,157 +1374,8 @@ export function createImagePath(nameOrUrl: string, fileDir: string = "") {
         new URL(nameOrUrl);
         return nameOrUrl;
     } catch (_) {
-        return fileDir + nameOrUrl;
+        return `/${rootDirectory}/${fileDir}${nameOrUrl}`;
     }
-}
-
-export function createLocationHtml(location: MapLocation, spoilersState: Spoiler, inPopover: boolean): string {
-    function getDepthString(minDepth: number, maxDepth: number) {
-        if (minDepth === maxDepth) {
-            return minDepth.toString();
-        } else {
-            return `${minDepth} to ${maxDepth}`;
-        }
-    }
-
-    function getMinMaxDepths(startLocation: MapLocation, endLocation: MapLocation) {
-        let minDepth: number;
-        let maxDepth: number;
-
-        if (endLocation.branch || startLocation.preDepthBranch) {
-            minDepth = Math.max(startLocation.minDepth, endLocation.minDepth);
-            maxDepth = Math.min(startLocation.maxDepth, endLocation.maxDepth);
-        } else {
-            minDepth = Math.max(startLocation.minDepth, endLocation.minDepth - 1);
-            maxDepth = Math.min(startLocation.maxDepth, endLocation.maxDepth - 1);
-        }
-
-        return { minDepth: minDepth, maxDepth: maxDepth };
-    }
-
-    let html = `
-        ${summaryLine(location.name)}
-        ${
-            location.imageName === undefined
-                ? ""
-                : `<a href="${createImagePath(
-                      `wiki_images/${location.imageName}`,
-                  )}" target="_blank"><img src="wiki_images/${location.imageName}" class="location-image"/></a>`
-        }
-        ${textLine("Available depths", getDepthString(location.minDepth, location.maxDepth))}
-        ${textLine("Branch", location.branch || location.preDepthBranch ? "Yes" : "No")}
-    `;
-
-    const allowedEntries = location.entries.filter((e) =>
-        location.branch ? canShowSpoiler(e.spoiler, spoilersState) : !e.branch,
-    );
-    if (allowedEntries.length > 0) {
-        html += `
-        ${emptyLine}
-        ${summaryLine("Entry from")}
-        `;
-
-        for (const entry of allowedEntries) {
-            const depths = getMinMaxDepths(entry, location);
-            const depthsString = getDepthString(depths.minDepth, depths.maxDepth);
-
-            // Don't bother showing entrances from spoiler-blocked maps
-            if (canShowSpoiler(entry.spoiler, spoilersState)) {
-                if (inPopover) {
-                    html += textLine(entry.name, depthsString);
-                } else {
-                    const extraAttributes = `data-html=true data-content='${createLocationHtml(
-                        entry,
-                        spoilersState,
-                        true,
-                    )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
-                    html += textLineLink(entry.name, `#${entry.name}`, depthsString, extraAttributes);
-                }
-            }
-        }
-    }
-
-    if (location.exits.length > 0) {
-        html += `
-        ${emptyLine}
-        ${summaryLine("Exits to")}
-        `;
-
-        for (const exit of location.exits) {
-            const depths = getMinMaxDepths(location, exit);
-            const depthsString = getDepthString(depths.minDepth, depths.maxDepth);
-            if (inPopover) {
-                // In popovers never show spoilered things
-                if (canShowSpoiler(exit.spoiler, spoilersState)) {
-                    html += textLine(exit.name, depthsString);
-                }
-            } else {
-                // Show exits with a spoiler
-                if (canShowSpoiler(exit.spoiler, spoilersState)) {
-                    const extraAttributes = `data-html=true data-content='${createLocationHtml(
-                        exit,
-                        spoilersState,
-                        true,
-                    )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
-                    html += textLineLink(exit.name, `#${exit.name}`, depthsString, extraAttributes);
-                } else {
-                    html += textLineSpoilerLink(exit.name, `#${exit.name}`, depthsString);
-                }
-            }
-        }
-    }
-
-    if (location.specialBots.length > 0) {
-        html += `
-        ${emptyLine} 
-        ${summaryLine("Special bots")}
-        `;
-
-        for (const specialBot of location.specialBots) {
-            if (inPopover) {
-                if (canShowSpoiler(specialBot.spoiler, spoilersState)) {
-                    html += textLine(escapeHtml(specialBot.name));
-                }
-            } else {
-                if (canShowSpoiler(specialBot.spoiler, spoilersState)) {
-                    const extraAttributes = `data-html=true data-content='${createBotDataContent(
-                        specialBot,
-                        spoilersState,
-                    )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
-                    html += textLineLink(specialBot.name, `#${specialBot.name}`, undefined, extraAttributes);
-                } else {
-                    html += textLineSpoilerLink(specialBot.name, `#${specialBot.name}`);
-                }
-            }
-        }
-    }
-
-    if (location.specialItems.length > 0) {
-        html += `
-        ${emptyLine}
-        ${summaryLine("Special items")}
-        `;
-
-        for (const specialItem of location.specialItems) {
-            if (inPopover) {
-                if (canShowSpoiler(specialItem.spoiler, spoilersState)) {
-                    html += textLine(escapeHtml(specialItem.name));
-                }
-            } else {
-                if (canShowSpoiler(specialItem.spoiler, spoilersState)) {
-                    const extraAttributes = `data-html=true data-content='${createItemDataContent(
-                        specialItem,
-                    )}' data-toggle="popover" data-trigger="hover" data-boundary="window"`;
-
-                    html += textLineLink(specialItem.name, `#${specialItem.name}`, undefined, extraAttributes);
-                } else {
-                    html += textLineSpoilerLink(specialItem.name, `#${specialItem.name}`);
-                }
-            }
-        }
-    }
-
-    return html;
 }
 
 // Escapes the given string with HTML entities
@@ -1571,9 +1392,9 @@ export function flatten<T>(arrays: Array<Array<T>>): Array<T> {
 }
 
 // Do a lexicographical sort based on the no-prefix item name
-export function gallerySort(a: string, b: string): number {
-    const noPrefixA = getNoPrefixName(a);
-    const noPrefixB = getNoPrefixName(b);
+export function gallerySort(itemA: Item, itemB: Item): number {
+    const noPrefixA = getNoPrefixName(itemA.name);
+    const noPrefixB = getNoPrefixName(itemB.name);
     let res = noPrefixA < noPrefixB ? -1 : noPrefixA > noPrefixB ? 1 : 0;
 
     if (res === 0) {
@@ -1583,28 +1404,10 @@ export function gallerySort(a: string, b: string): number {
         // The export index will always be ordered for different prefix
         // versions of the same parts so this is the best way to sort
         // them how the in-game gallery does.
-        res = getItem(a).index - getItem(b).index;
+        res = itemA.index - itemB.index;
     }
 
     return res;
-}
-
-// Tries to get a bot by the name
-export function getBot(botName: string): Bot {
-    if (botName in botData) {
-        return botData[botName];
-    }
-
-    throw `${botName} not a valid bot`;
-}
-
-// Tries to get a bot by the name
-export function getBotOrNull(botName: string): Bot | null {
-    if (botName in botData) {
-        return botData[botName];
-    }
-
-    return null;
 }
 
 // Gets the image path for a specified bot
@@ -1615,23 +1418,6 @@ export function getBotImageName(bot: Bot) {
     }
 
     return createImagePath(`game_sprites/${bot.class}.png`);
-}
-
-// Tries to get an item by name
-export function getItem(itemName: string): Item {
-    if (itemName in itemData) {
-        return itemData[itemName];
-    }
-    throw `${itemName} not a valid item`;
-}
-
-// Tries to get an item by name
-export function getItemOrNull(itemName: string): Item | null {
-    if (itemName in itemData) {
-        return itemData[itemName];
-    }
-
-    return null;
 }
 
 // Gets the sprite image name of an item
@@ -1649,36 +1435,93 @@ export function getItemAsciiArtImageName(item: Item): string {
     return createImagePath(`part_art/${item.name.replace(/"/g, "").replace(/\//g, "")}.png`);
 }
 
-// Tries to get an item by its full name
-export function getItemByFullName(itemName: string): Item {
-    const items = Object.keys(itemData)
-        .map((name) => itemData[name])
-        .filter((item) => item.fullName == itemName);
+// Converts a normal string to a string safe to be used in an URL
+export function getLinkSafeString(str: string) {
+    return str
+        .replaceAll(" ", "%20")
+        .replaceAll("#", "%23")
+        .replaceAll("&", "%26")
+        .replaceAll("(", "%28")
+        .replaceAll(")", "%29")
+        .replaceAll(",", "%2C")
+        .replaceAll("/", "%2F")
+        .replaceAll("\\", "%5C");
+}
 
-    if (items.length === 0) {
-        console.trace();
-        throw `${itemName} not a valid item`;
+// Gets a location string with query parameters based on the given state object
+export function getLocationFromState<T extends object>(
+    baseLocation: string,
+    stateObject: T,
+    skipMember: (key: string, stateObject: T) => boolean,
+) {
+    let location = baseLocation;
+    let search = "";
+
+    for (const key of Object.keys(stateObject)) {
+        if (stateObject[key] !== undefined) {
+            if (skipMember(key, stateObject)) {
+                continue;
+            }
+
+            if (typeof stateObject[key] === "string" && (stateObject[key] as string).length === 0) {
+                // Skip empty values
+                continue;
+            }
+
+            // Special escaping needs to match parseSearchParameters
+            const paramValue = getLinkSafeString(stateObject[key] as string);
+
+            // Append to search
+            if (search.length === 0) {
+                search = `${key}=${paramValue}`;
+            } else {
+                search += `&${key}=${paramValue}`;
+            }
+        }
     }
 
-    return items[0];
+    if (search.length > 0) {
+        location += `?${search}`;
+    }
+
+    return location;
 }
 
 // Gets the movement name given a propulsion type
 export function getMovementText(propulsionType: ItemType | undefined): string {
     switch (propulsionType) {
-        case ItemType.FlightUnit:
+        case "Flight Unit":
             return "Flying";
-        case ItemType.HoverUnit:
+        case "Hover Unit":
             return "Hovering";
-        case ItemType.Leg:
+        case "Leg":
             return "Walking";
-        case ItemType.Treads:
+        case "Treads":
             return "Treading";
-        case ItemType.Wheel:
+        case "Wheel":
             return "Rolling";
         default:
             return "Core";
     }
+}
+
+// Gets the top 2 highest values in an array, or 0 if undefined
+export function getTopTwoValues(values: number[]) {
+    values = values.sort((a, b) => b - a).splice(0, 2);
+    return [values[0] === undefined ? 0 : values[0], values[1] === undefined ? 0 : values[1]];
+}
+
+// Converts a string from getLinkSafeString to a normal string
+export function getStringFromLinkSafeString(str: string) {
+    return str
+        .replace("%20", " ")
+        .replaceAll("%23", "#")
+        .replaceAll("%26", "&")
+        .replaceAll("%28", "(")
+        .replaceAll("%29", ")")
+        .replaceAll("%2C", ",")
+        .replaceAll("%2F", "/")
+        .replaceAll("%5C", "\\");
 }
 
 // Gets a per-TU value scaled to the given number of TUs
@@ -1691,6 +1534,16 @@ const noPrefixRegex = /\w{3}\. (.*)/;
 export function getNoPrefixName(name: string): string {
     const newName = name.replace(noPrefixRegex, "$1");
     return newName;
+}
+
+export function getSpoilersValue<T>(spoilers: Spoiler, noSpoilerValue: T, spoilersValue: T, redactedValue: T): T {
+    if (spoilers === "Spoiler") {
+        return spoilersValue;
+    } else if (spoilers === "Redacted") {
+        return redactedValue;
+    } else {
+        return noSpoilerValue;
+    }
 }
 
 // Checks if a part has an active special property of the given type
@@ -1714,546 +1567,17 @@ export function hasActiveSpecialProperty(
     return true;
 }
 
-// Initialize all item and bot data from the given items/bots, bots are optional
-export async function initData(
-    items: { [key: string]: JsonItem },
-    bots: { [key: string]: JsonBot } | undefined,
-): Promise<any> {
-    botData = {};
-    itemData = {};
-
-    const botPromises: Promise<any>[] = [];
-    const itemPromises: Promise<any>[] = [];
-
-    // Create items
-    Object.keys(items).forEach((key, index) => {
-        const item = (items as { [key: string]: JsonItem })[key];
-        const itemName = item.Name;
-        let newItem: Item;
-
-        let category: ItemRatingCategory = ItemRatingCategory[item.Category ?? ""];
-        if (category === undefined) {
-            category = ItemRatingCategory.None;
-        }
-
-        let rating = parseIntOrUndefined(item.Rating) ?? 1;
-        if (category == ItemRatingCategory.Alien) rating += 0.75;
-        else if (category == ItemRatingCategory.Prototype) rating += 0.5;
-
-        const ratingString = item.Rating;
-        const fabrication: FabricationStats | undefined =
-            item["Fabrication Number"] === undefined
-                ? undefined
-                : {
-                      matter: item["Fabrication Matter"] as string,
-                      number: item["Fabrication Number"] as string,
-                      time: item["Fabrication Time"] as string,
-                  };
-
-        let categories: ItemCategory[];
-        if (!(itemName in itemCategories)) {
-            console.log(`Need to add categories for ${itemName}`);
-            categories = [];
-        } else {
-            categories = (itemCategories as { [key: string]: ItemCategory[] })[itemName];
-        }
-
-        const coverage = parseIntOrUndefined(item.Coverage) ?? 0;
-        const hackable = !!(parseIntOrUndefined(item["Hackable Schematic"]) ?? false);
-        const integrity = parseIntOrUndefined(item.Integrity) ?? 0;
-        const mass = parseIntOrUndefined(item.Mass);
-        const noPrefixName = getNoPrefixName(itemName);
-        const size = parseIntOrUndefined(item.Size) ?? 1;
-        const specialProperty = specialItemProperties[itemName];
-        const spoiler: Spoiler = categories.includes("Redacted")
-            ? "Redacted"
-            : categories.includes("Spoiler")
-              ? "Spoiler"
-              : "None";
-
-        switch (item["Slot"]) {
-            case "N/A": {
-                const otherItem: OtherItem = {
-                    slot: "N/A",
-                    category: category,
-                    coverage: undefined,
-                    hackable: hackable,
-                    integrity: integrity,
-                    noRepairs: item["No Repairs"] === "1",
-                    mass: undefined,
-                    specialTrait: item["Special Trait"],
-                    name: item.Name,
-                    fullName: item["Full Name"],
-                    noPrefixName: noPrefixName,
-                    rating: rating,
-                    ratingString: ratingString,
-                    size: size,
-                    type: item.Type,
-                    description: item.Description,
-                    categories: categories,
-                    life: item.Life,
-                    index: index,
-                    specialProperty: specialProperty,
-                    spoiler: spoiler,
-                };
-                newItem = otherItem;
-                break;
-            }
-
-            case "Power": {
-                let minChunks: number | undefined = undefined;
-                let maxChunks: number | undefined = undefined;
-
-                if (item["Chunks"] !== undefined) {
-                    if (item["Chunks"].includes("-")) {
-                        const split = item["Chunks"].split("-");
-
-                        minChunks = parseInt(split[0]);
-                        maxChunks = parseInt(split[1]);
-                    } else {
-                        minChunks = parseInt(item["Chunks"]);
-                        maxChunks = minChunks;
-                    }
-                }
-                const powerItem: PowerItem = {
-                    slot: "Power",
-                    category: category,
-                    coverage: coverage,
-                    energyGeneration: parseIntOrDefault(item["Energy Generation"], 0),
-                    energyStorage: parseIntOrUndefined(item["Energy Storage"]),
-                    hackable: hackable,
-                    heatGeneration: parseIntOrUndefined(item["Heat Generation"]),
-                    matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
-                    integrity: integrity,
-                    noRepairs: item["No Repairs"] === "1",
-                    mass: mass,
-                    specialTrait: item["Special Trait"],
-                    name: item.Name,
-                    fullName: item["Full Name"],
-                    noPrefixName: noPrefixName,
-                    rating: rating,
-                    ratingString: ratingString,
-                    size: size,
-                    type: item.Type,
-                    description: item.Description,
-                    categories: categories,
-                    effect: item.Effect,
-                    fabrication: fabrication,
-                    powerStability:
-                        item["Power Stability"] == null
-                            ? undefined
-                            : parseIntOrUndefined(item["Power Stability"].slice(0, -1)),
-                    explosionRadius: parseIntOrDefault(item["Explosion Radius"], 0),
-                    explosionDamage: item["Explosion Damage"],
-                    explosionDamageMax: parseIntOrDefault(item["Explosion Damage Max"], 0),
-                    explosionDamageMin: parseIntOrDefault(item["Explosion Damage Min"], 0),
-                    explosionDisruption: parseIntOrDefault(item["Explosion Disruption"], 0),
-                    explosionHeatTransfer: item["Explosion Heat Transfer"],
-                    explosionSalvage: parseIntOrDefault(item["Explosion Salvage"], 0),
-                    explosionSpectrum: item["Explosion Spectrum"],
-                    explosionType: item["Explosion Type"],
-                    minChunks: minChunks,
-                    maxChunks: maxChunks,
-                    index: index,
-                    specialProperty: specialProperty,
-                    spoiler: spoiler,
-                };
-                newItem = powerItem;
-                break;
-            }
-
-            case "Propulsion": {
-                const propItem: PropulsionItem = {
-                    slot: "Propulsion",
-                    category: category,
-                    coverage: coverage,
-                    energyPerMove: parseFloatOrUndefined(item["Energy/Move"]),
-                    hackable: hackable,
-                    integrity: integrity,
-                    noRepairs: item["No Repairs"] === "1",
-                    name: item.Name,
-                    fullName: item["Full Name"],
-                    mass: mass,
-                    specialTrait: item["Special Trait"],
-                    noPrefixName: noPrefixName,
-                    penalty: parseInt(item.Penalty as string),
-                    rating: rating,
-                    ratingString: ratingString,
-                    size: size,
-                    support: parseInt(item.Support as string),
-                    timePerMove: parseInt(item["Time/Move"] as string),
-                    type: item.Type,
-                    fabrication: fabrication,
-                    burnout: item.Burnout,
-                    description: item.Description,
-                    categories: categories,
-                    effect: item.Effect,
-                    drag: parseIntOrUndefined(item.Drag),
-                    energyUpkeep: parseFloatOrUndefined(item["Energy Upkeep"]),
-                    heatGeneration: parseIntOrUndefined(item["Heat Generation"]),
-                    heatPerMove: parseIntOrUndefined(item["Heat/Move"]),
-                    matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
-                    modPerExtra: parseIntOrUndefined(item["Mod/Extra"]),
-                    siege: item.Siege,
-                    index: index,
-                    specialProperty: specialProperty,
-                    spoiler: spoiler,
-                };
-                newItem = propItem;
-                break;
-            }
-
-            case "Utility": {
-                const utilItem: UtilityItem = {
-                    slot: "Utility",
-                    category: category,
-                    coverage: coverage,
-                    hackable: hackable,
-                    integrity: integrity,
-                    noRepairs: item["No Repairs"] === "1",
-                    name: item.Name,
-                    fullName: item["Full Name"],
-                    noPrefixName: noPrefixName,
-                    rating: rating,
-                    ratingString: ratingString,
-                    size: size,
-                    type: item.Type,
-                    fabrication: fabrication,
-                    description: item.Description,
-                    effect: item.Effect,
-                    categories: categories,
-                    energyUpkeep: parseIntOrUndefined(item["Energy Upkeep"]),
-                    heatGeneration: parseIntOrUndefined(item["Heat Generation"]),
-                    matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
-                    mass: parseIntOrUndefined(item.Mass) ?? 0,
-                    specialTrait: item["Special Trait"],
-                    index: index,
-                    specialProperty: specialProperty,
-                    spoiler: spoiler,
-                };
-                newItem = utilItem;
-                break;
-            }
-
-            case "Weapon": {
-                let critical: number | undefined;
-                let criticalType: Critical | undefined;
-                if (item.Critical !== undefined) {
-                    const result = /(\d*)% (\w*)/.exec(item.Critical);
-                    if (result === null) {
-                        critical = undefined;
-                        criticalType = undefined;
-                    } else {
-                        critical = parseInt(result[1]);
-                        criticalType = result[2] as Critical;
-                    }
-                }
-
-                let minChunks: number | undefined = undefined;
-                let maxChunks: number | undefined = undefined;
-
-                if (item["Chunks"] !== undefined) {
-                    if (item["Chunks"].includes("-")) {
-                        const split = item["Chunks"].split("-");
-
-                        minChunks = parseInt(split[0]);
-                        maxChunks = parseInt(split[1]);
-                    } else {
-                        minChunks = parseInt(item["Chunks"]);
-                        maxChunks = minChunks;
-                    }
-                }
-
-                const weaponItem: WeaponItem = {
-                    slot: "Weapon",
-                    category: category,
-                    coverage: coverage,
-                    hackable: hackable,
-                    integrity: integrity,
-                    noRepairs: item["No Repairs"] === "1",
-                    name: item.Name,
-                    fullName: item["Full Name"],
-                    noPrefixName: noPrefixName,
-                    rating: rating,
-                    ratingString: ratingString,
-                    size: size,
-                    type: item.Type,
-                    fabrication: fabrication,
-                    description: item.Description,
-                    effect: item.Effect,
-                    categories: categories,
-                    mass: parseIntOrUndefined(item.Mass) ?? 0,
-                    specialTrait: item["Special Trait"],
-                    critical: critical,
-                    criticalType: criticalType,
-                    criticalString: item.Critical,
-                    delay: parseIntOrUndefined(item.Delay),
-                    explosionHeatTransfer: item["Explosion Heat Transfer"],
-                    explosionType: item["Explosion Type"],
-                    penetration: item.Penetration,
-                    projectileCount: parseIntOrUndefined(item["Projectile Count"]) ?? 1,
-                    range: parseInt(item.Range as string),
-                    shotEnergy: parseIntOrUndefined(item["Shot Energy"]),
-                    shotHeat: parseIntOrUndefined(item["Shot Heat"]),
-                    targeting: parseIntOrUndefined(item.Targeting),
-                    damage:
-                        item["Damage"] === undefined
-                            ? item["Damage Min"] !== undefined
-                                ? `${item["Damage Min"]}-${item["Damage Max"]}`
-                                : undefined
-                            : item["Damage"],
-                    damageMin: parseIntOrUndefined(item["Damage Min"]),
-                    damageMax: parseIntOrUndefined(item["Damage Max"]),
-                    damageType: item["Damage Type"],
-                    disruption: parseIntOrUndefined(item.Disruption),
-                    explosionDamage:
-                        item["Explosion Damage"] === undefined
-                            ? item["Explosion Damage Max"] !== undefined
-                                ? `${item["Explosion Damage Min"]}-${item["Explosion Damage Max"]}`
-                                : undefined
-                            : item["Explosion Damage"],
-                    explosionDisruption: parseIntOrUndefined(item["Explosion Disruption"]),
-                    explosionRadius: parseIntOrUndefined(item["Explosion Radius"]),
-                    explosionSalvage: item["Explosion Salvage"],
-                    explosionSpectrum: item["Explosion Spectrum"],
-                    minChunks: minChunks,
-                    maxChunks: maxChunks,
-                    falloff: item.Falloff,
-                    heatTransfer: item["Heat Transfer"],
-                    life: item.Life,
-                    overloadStability:
-                        item["Overload Stability"] == null
-                            ? undefined
-                            : parseIntOrUndefined(item["Overload Stability"].slice(0, -1)),
-                    recoil: parseIntOrUndefined(item.Recoil),
-                    salvage: parseIntOrUndefined(item.Salvage),
-                    shotMatter: parseIntOrUndefined(item["Shot Matter"]),
-                    spectrum: item.Spectrum,
-                    waypoints: item.Waypoints,
-                    arc: parseIntOrUndefined(item.Arc),
-                    index: index,
-                    specialProperty: specialProperty,
-                    spoiler: spoiler,
-                };
-                newItem = weaponItem;
-                break;
-            }
-        }
-
-        if (verifyImages) {
-            itemPromises.push(loadImage(getItemSpriteImageName(newItem)));
-            itemPromises.push(loadImage(getItemAsciiArtImageName(newItem)));
-        }
-
-        itemData[itemName] = newItem;
-    });
-
-    if (bots !== undefined) {
-        // Create bots
-        Object.keys(bots).forEach((key) => {
-            function sumItemCoverage(sum: number, data: string | ItemOption[]) {
-                if (typeof data === "string") {
-                    // Item name, just parse coverage
-                    return (getItem(data).coverage as number) + sum;
-                } else {
-                    // Option, return largest sum of items
-                    let largest = 0;
-                    data.forEach((optionData) => {
-                        if (optionData.name === "None") {
-                            return;
-                        }
-
-                        const number = optionData.number ?? 1;
-                        const item = getItem(optionData.name);
-                        const optionCoverage = (item.coverage as number) * number;
-                        largest = Math.max(largest, optionCoverage);
-                    });
-
-                    return largest + sum;
-                }
-            }
-            const bot = (bots as any as { [key: string]: JsonBot })[key];
-            const botName = bot.Name;
-            const itemCoverage =
-                (bot.Armament?.reduce(sumItemCoverage, 0) ?? 0) + (bot.Components?.reduce(sumItemCoverage, 0) ?? 0);
-
-            let roughCoreCoverage = (100.0 / (100.0 - parseInt(bot["Core Exposure %"]))) * itemCoverage - itemCoverage;
-            if (isNaN(roughCoreCoverage)) {
-                roughCoreCoverage = 1;
-            }
-            const estimatedCoreCoverage = ceilToMultiple(roughCoreCoverage, 10);
-            const totalCoverage = estimatedCoreCoverage + itemCoverage;
-
-            function addPartData(data: string | ItemOption[], partData: BotPart[], partOptionData: BotPart[][]) {
-                if (typeof data === "string") {
-                    const itemName = data;
-                    // Item name, add to part data
-                    const result = partData.find((p) => p.name === data);
-
-                    if (result === undefined) {
-                        const item = getItem(itemName);
-                        partData.push({
-                            name: itemName,
-                            number: 1,
-                            coverage: Math.floor((100.0 * (item.coverage as number)) / totalCoverage),
-                            integrity: item.integrity,
-                        });
-                    } else {
-                        result.number += 1;
-                    }
-                } else {
-                    // Option, add all options
-                    const options: BotPart[] = [];
-                    data.forEach((optionData) => {
-                        const itemName = optionData.name;
-
-                        let coverage = 0;
-                        const item = getItem(itemName);
-
-                        if (itemName !== "None") {
-                            coverage = Math.floor((100.0 * (item.coverage as number)) / totalCoverage);
-                        }
-
-                        options.push({
-                            name: itemName,
-                            number: optionData.number ?? 1,
-                            coverage: coverage,
-                            integrity: item.integrity,
-                        });
-                    });
-                    partOptionData.push(options);
-                }
-            }
-
-            // Add armament and component data
-            const armamentData: BotPart[] = [];
-            const armamentOptionData: BotPart[][] = [];
-            bot.Armament?.forEach((data) => addPartData(data, armamentData, armamentOptionData));
-
-            const componentData: BotPart[] = [];
-            const componentOptionData: BotPart[][] = [];
-            bot.Components?.forEach((data) => addPartData(data, componentData, componentOptionData));
-
-            let extraData: JsonBotExtraData | undefined = undefined;
-            if (!(botName in botExtraData)) {
-                console.log(`Need to add extra data for ${botName}`);
-            } else {
-                extraData = (botExtraData as any as { [key: string]: JsonBotExtraData })[botName];
-            }
-
-            const fabrication: FabricationStats | undefined =
-                bot["Fabrication Count"] === undefined
-                    ? undefined
-                    : {
-                          matter: bot["Fabrication Matter"] as string,
-                          number: bot["Fabrication Count"] as string,
-                          time: bot["Fabrication Time"] as string,
-                      };
-
-            // Parse numerical salvage values out
-            let salvageLow: number;
-            let salvageHigh: number;
-            if (bot["Salvage Potential"].includes("~")) {
-                const salvageArray = bot["Salvage Potential"]
-                    .split("~")
-                    .map((s) => s.trim())
-                    .map((s) => parseInt(s));
-
-                salvageLow = salvageArray[0];
-                salvageHigh = salvageArray[1];
-            } else {
-                salvageLow = parseInt(bot["Salvage Potential"]);
-                salvageHigh = salvageLow;
-            }
-
-            let description: string;
-            if (bot.Analysis !== undefined) {
-                description = bot.Analysis!;
-            } else {
-                const loreEntry = lore["0b10 Records"].find((e) => e["Name/Number"] === bot.Name);
-                if (loreEntry !== undefined) {
-                    description = loreEntry.Content;
-                } else {
-                    description = "";
-                }
-            }
-
-            const newBot: Bot = {
-                armament: bot.Armament ?? [],
-                armamentData: armamentData,
-                armamentOptionData: armamentOptionData,
-                armamentString: bot["Armament String"] ?? "",
-                categories: extraData?.Categories ?? [],
-                class: bot.Class,
-                componentData: componentData,
-                componentOptionData: componentOptionData,
-                components: bot.Components ?? [],
-                componentsString: bot["Components String"] ?? "",
-                coreCoverage: roughCoreCoverage,
-                coreExposure: parseIntOrDefault(bot["Core Exposure %"], 0),
-                coreIntegrity: parseInt(bot["Core Integrity"]),
-                description: description,
-                energyGeneration: parseIntOrDefault(bot["Energy Generation"], 0),
-                fabrication: fabrication,
-                heatDissipation: parseIntOrDefault(bot["Heat Dissipation"], 0),
-                immunities: bot.Immunities ?? [],
-                immunitiesString: bot.Immunities?.join(", ") ?? "",
-                locations: extraData?.Locations ?? [],
-                memory: bot.Memory,
-                movement: `${bot.Movement} (${bot.Speed}/${bot["Speed %"]}%)`,
-                movementOverloaded:
-                    bot["Overload Speed"] !== undefined
-                        ? `${bot.Movement} (${bot["Overload Speed"]}/${bot["Overload Speed %"]}%)`
-                        : undefined,
-                name: botName,
-                profile: bot.Profile,
-                rating: bot.Rating,
-                resistances: bot.Resistances,
-                salvageHigh: salvageHigh,
-                salvageLow: salvageLow,
-                salvagePotential: bot["Salvage Potential"],
-                speed: parseInt(bot.Speed),
-                spotPercent: bot["Spot %"] ?? "100",
-                spoiler: extraData?.Categories.includes(BotCategory.Redacted)
-                    ? "Redacted"
-                    : extraData?.Categories.includes(BotCategory.Spoiler)
-                      ? "Spoiler"
-                      : "None",
-                size: bot["Size Class"],
-                threat: bot.Threat,
-                totalCoverage: totalCoverage,
-                tier: bot.Tier,
-                traits: bot.Traits ?? [],
-                traitsString: bot.Traits?.join(", ") ?? "",
-                value: parseIntOrDefault(bot.Value, 0),
-                visualRange: bot["Sight Range"],
-            };
-
-            if (verifyImages) {
-                botPromises.push(loadImage(getBotImageName(newBot)));
-            }
-
-            botData[botName] = newBot;
-        });
-    }
-
-    if (verifyImages) {
-        console.log("Verifying images...");
-        await Promise.all(itemPromises);
-        console.log("Verified item images");
-        console.log("Verifying bot images...");
-        await Promise.all(botPromises);
-        console.log("Verified bot images");
-    }
+export function isDev() {
+    return process.env.NODE_ENV === "development";
 }
 
 // Determines if the given item type is melee
 export function isPartMelee(part: BaseItem): boolean {
     if (
-        part.type === ItemType.ImpactWeapon ||
-        part.type === ItemType.PiercingWeapon ||
-        part.type === ItemType.SlashingWeapon ||
-        part.type === ItemType.SpecialMeleeWeapon
+        part.type === "Impact Weapon" ||
+        part.type === "Piercing Weapon" ||
+        part.type === "Slashing Weapon" ||
+        part.type === "Special Melee Weapon"
     ) {
         return true;
     }
@@ -2297,7 +1621,7 @@ export function nameToId(name: string): string {
 }
 
 // Parses the string into a number or null if invalid
-function parseFloatOrUndefined(value: string | undefined): number | undefined {
+export function parseFloatOrUndefined(value: string | undefined): number | undefined {
     const int = parseFloat(value ?? "");
 
     if (isNaN(int)) {
@@ -2317,8 +1641,8 @@ export function parseIntOrDefault(string: string | number | undefined, defaultVa
     return value;
 }
 
-// Parses the string into a number or null if invalid
-function parseIntOrUndefined(value: string | undefined): number | undefined {
+// Parses the string into a number or undefined if invalid
+export function parseIntOrUndefined(value: string | undefined): number | undefined {
     const int = parseInt(value ?? "");
 
     if (isNaN(int)) {
@@ -2326,6 +1650,34 @@ function parseIntOrUndefined(value: string | undefined): number | undefined {
     }
 
     return int;
+}
+
+const paramRegex = /^(.*)=(.*)$/;
+export function parseSearchParameters<T>(search: string, object: T): T {
+    if (search.length === 0) {
+        // If no search state set then return default of no state set
+        return object;
+    }
+
+    const setParams = search.split("&");
+
+    for (const param of setParams) {
+        const match = paramRegex.exec(param);
+        if (!match) {
+            // Failed to get param out of URL, just ignore
+            console.log(`Failed to parse page parameter ${param}`);
+            continue;
+        }
+
+        const paramName = match[1];
+        const paramValue = match[2];
+
+        // Assign the parameter
+        // Special escaping needs to match getLocationFromState
+        object[paramName] = getStringFromLinkSafeString(paramValue);
+    }
+
+    return object;
 }
 
 // Gets a random integer between the min and max values (inclusive)

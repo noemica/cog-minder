@@ -7,26 +7,7 @@ Medium ideas:
 - Show all sizes of bot sprites
 
 Big ideas:
-- Save search/parts in URL
-    - Can do for all pages
-- Actively save build and update hash when modifying things
-    - Easier than other pages since hash is already in existence
+- Add graph of part stats, allow any 2 axes to be selected
 
 - Combat log ideas
     - Add support for filtering damage entries, e.g. specific bot target/damage type
-
-- Combat log possible requests
-    - Start a new entry at a lower indent level if an unseen bot hits from outside LOS. Currently it appends onto the previous bot which can be confusing/misleading. Example:
-XXXXX_ Base Hit%...
-     _  Enh. Coil Gun (94%) Hit // Cogmind shooting a wall
-     _   Enh. Coil Gun damaged: 34 // Executioner shooting me from out of LOS but it looks like Cogmind's coil gun hit itself
-    I guess that it's done this way for consistency so all types of an event are at the same indent level and you wouldn't want to demote the indent level down in this case. Maybe if an unknown source of damage is dealing damage the log could have some sort of "Unknown Source" line at the 1st indent level to group it separately.
-    - When a part is destroyed, indicate how much integrity was left on it. On bot core hit the damage is shown before the bot is destroyed. Would be nice to track total damage done along with the part destruction in general.
-    - Some robots have the same naming scheme, making it impossible to tell them apart:
-        Assembled and Golems
-        Commanders and Thugs
-        Zionites and Z-Lights
-        All multi-tier bots (this one not a big deal, not very important to know the exact version)
-    - The questionable rounding bug still exists:
-00001_ Base Hit%: 70=69
-00001_  Sigix Broadsword (69%) Hit

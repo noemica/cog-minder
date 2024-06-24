@@ -1,0 +1,119 @@
+@import "../Pages.less";
+
+.slot-type-select {
+    width: 21rem;
+    min-width: 21rem;
+}
+
+.category-type-select {
+    width: 19rem;
+    min-width: 19rem;
+}
+
+.sort-select {
+    width: 13rem;
+    min-width: 13rem;
+}
+
+.sort-order-select {
+    width: 10rem;
+    min-width: 10rem;
+}
+
+.part-button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(@part-button-max-width, 1fr));
+
+    button {
+        width: 100%;
+        height: 100%;
+        min-height: @button-grid-button-height;
+        border-radius: 0;
+
+        padding: 0 @button-small-padding;
+
+        color: @font-paragraph-color;
+        font-size: @button-grid-font-size;
+    }
+}
+
+.part-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(@details-part-image-width, 1fr));
+
+    button {
+        background-image: @gallery-part-button-background-gradient;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        padding: @button-small-padding;
+    }
+
+    span {
+        display: block;
+        color: @font-paragraph-color;
+        font-size: @gallery-grid-font-size;
+        font-family: @details-font-family;
+    }
+
+    img {
+        width: @details-part-image-width;
+        height: @details-part-image-height;
+    }
+}
+
+// Comparisons
+.comparison-container {
+    border: none;
+    background-color: unset;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: @comparison-container-gap;
+}
+
+.part-comparison-part-column {
+    display: flex;
+    flex-direction: column;
+    gap: @element-column-gap;
+}
+
+.part-comparison-details-column {
+    display: flex;
+    flex-direction: column;
+    gap: @element-column-gap;
+    line-height: @comparison-line-height;
+
+    text-align: center;
+    width: @comparison-column-width;
+}
+
+.part-comparison-image-container {
+    margin-top: calc(@large-border-width + @comparison-container-gap);
+}
+
+.comparison-positive,
+.comparison-neutral,
+.comparison-negative {
+    font-family: @details-font-family;
+    font-size: @details-font-size;
+    margin: 0;
+    padding-right: @part-comparison-right-padding;
+    text-align: right;
+}
+
+.comparison-positive {
+    color: @comparison-positive-font-color;
+    background-color: @comparison-positive-background-color;
+}
+
+.comparison-neutral {
+    color: @comparison-neutral-font-color;
+}
+
+.comparison-negative {
+    color: @comparison-negative-font-color;
+    background-color: @comparison-negative-background-color;
+}

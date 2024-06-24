@@ -2,13 +2,13 @@
 
 .page-content {
     > * {
-        margin: @default-element-top-margin;
+        margin: @element-top-margin;
     }
 }
 
 .page-paragraph-container {
     * {
-        margin-top: @default-paragraph-margin;
+        margin-top: @paragraph-top-margin;
         font-family: @paragraph-font-family;
         font-size: @paragraph-font-size;
     }
@@ -16,9 +16,30 @@
 
 .page-input-group {
     display: flex;
-    column-gap: @default-element-column-gap;
+    flex-wrap: wrap;
+    column-gap: @element-column-gap;
 
     > * {
+        display: flex;
         flex: 1 1 auto;
+        flex-wrap: wrap;
     }
+}
+
+// Utilities
+.flex {
+    display: flex;
+}
+
+.flex-1-1 {
+    flex: 1 1 auto;
+}
+
+.flex-grow-0 {
+    flex-grow: 0 !important;
+}
+
+:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
 }

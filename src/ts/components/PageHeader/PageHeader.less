@@ -21,8 +21,7 @@
     display: flex;
 }
 
-.page-title,
-.page-explanation {
+.page-title {
     font-size: @page-title-font-size;
     font-family: "cog-mono";
 
@@ -30,19 +29,21 @@
 }
 
 .page-explanation {
-    background-color: @small-contrast-background-color;
-    border: @default-border-width solid @border-color;
-    border-color: @border-color;
-
     margin-left: @page-title-explanation-inner-margin;
-}
+    align-self: center;
 
-.spoilers-selectpicker {
-    width: 15ch;
+    > button {
+        font-size: @page-explanation-font-size;
+        padding: @page-explanation-button-padding;
+        font-family: "cog-mono";
+    }
 }
 
 .settings-popover-container {
+    width: 17rem;
+
     > * {
+        display: flex;
         margin: @header-setting-children-margin;
     }
 }

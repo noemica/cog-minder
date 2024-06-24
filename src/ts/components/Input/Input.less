@@ -1,0 +1,28 @@
+@import ".../../../../../styles/common.less";
+
+.input {
+    background-color: @element-background-color;
+    color: @font-color;
+    
+    border: @border-width solid @border-color;
+
+    padding: @input-padding;
+}
+
+.rounded-input {
+    border-radius: @border-radius;
+}
+
+.grouped-input {
+    border-top-right-radius: @border-radius;
+    border-bottom-right-radius: @border-radius;
+}
+
+.input:focus {
+    outline: none;
+    border-color: @element-active-border-color;
+}
+
+.input:hover {
+    border-color: @element-active-border-color;
+}

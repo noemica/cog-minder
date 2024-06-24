@@ -1,0 +1,29 @@
+@import "../../../styles/common.less";
+
+.text-tooltip {
+    text-align: center;
+    
+    max-width: @tooltip-max-width;
+    padding: @tooltip-padding;
+    border-radius: @border-radius;
+    box-sizing: border-box;
+
+    z-index: 1;
+
+    background-color: @tooltip-background-color;
+    color: @font-color;
+
+    border: @border-width solid @contrast-border-color;
+
+    pointer-events: none;
+}
+
+.tooltip-arrow {
+    fill: @contrast-border-color;
+}
+
+.bot-tooltip-arrow,
+.item-tooltip-arrow,
+.location-tooltip-arrow {
+    fill: @popover-border-color;
+}

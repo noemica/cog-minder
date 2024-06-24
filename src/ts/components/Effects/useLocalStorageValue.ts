@@ -11,8 +11,18 @@ import { Spoiler, ThemeType, isValidSpoilerType, isValidThemeType } from "../../
 const localStorageCombatLogChartDisplayOptions = "combatLogChartDisplayOptions";
 const localStorageSpoilersName = "spoilers";
 const localStorageThemeName = "theme";
+const localStorageWikiEntriesName = "wikiEntries";
 
 type SetValue<T> = Dispatch<SetStateAction<T>>;
+
+export type SavedWikiEntry = {
+    name: string;
+    content: string;
+};
+
+export type SavedWikiEntries = {
+    entries: SavedWikiEntry[];
+};
 
 export function useSpoilers() {
     return useValue<Spoiler>(localStorageSpoilersName, "None", isValidSpoilerType);
@@ -48,18 +58,22 @@ export function useChartDisplayOptions(): [ChartDisplayOptions, SetValue<ChartDi
     return [chartDisplayOptions, setChartDisplayOptions];
 }
 
-function useValue<T>(key: string, defaultValue: T, validator: (value: T) => boolean): T {
+export function useEditableWikiEntryEdits() {
+    return useEditableValue<SavedWikiEntries>(localStorageWikiEntriesName, {entries: []});
+};
+
+function useValue<T>(key: string, defaultValue: T, validator?: (value: T) => boolean): T {
     let value = useReadLocalStorage<T>(key) || defaultValue;
-    if (!validator(value)) {
+    if (validator && !validator(value)) {
         value = defaultValue;
     }
 
     return value;
 }
 
-function useEditableValue<T>(key: string, defaultValue: T, validator: (value: T) => boolean): [T, SetValue<T>] {
+function useEditableValue<T>(key: string, defaultValue: T, validator?: (value: T) => boolean): [T, SetValue<T>] {
     let [value, setValue] = useLocalStorage<T>(key, defaultValue) || defaultValue;
-    if (!validator(value)) {
+    if (validator && !validator(value)) {
         value = defaultValue;
     }
 

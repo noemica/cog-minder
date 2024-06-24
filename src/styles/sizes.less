@@ -1,56 +1,121 @@
-// Margins
-@default-element-top-margin: 10px 0 0 0;
-@default-element-vertical-margin: 10px 0 10px 0;
-@default-element-column-gap: 5px;
-@default-paragraph-margin: 20px;
+@tiny-gap: 0.125rem;
+@small-gap: 0.25rem;
+@medium-gap: 0.5rem;
+@large-gap: 1rem;
+
+// Padding
+@bot-image-padding: @small-gap;
+@button-padding: @medium-gap;
+@button-grid-padding: 0 @small-gap;
+@button-small-padding: @small-gap;
+@chart-padding: 0 @small-gap @small-gap @small-gap;
+@dropzone-padding: @button-padding;
+@input-padding: 0 @medium-gap;
+@tooltip-padding: @small-gap @medium-gap;
+@page-explanation-button-padding: @small-gap @button-padding;
+@part-comparison-right-padding: @small-gap;
+@popover-padding: @tooltip-padding;
+@select-dropdown-indicator-padding: 0 @medium-gap;
+@select-padding: @small-gap @medium-gap;
+@spoiler-button-padding: @small-gap;
+@table-header-padding: @small-gap;
+@table-cell-padding: @tiny-gap;
+@table-cell-text-padding: @small-gap;
+@wiki-infobox-padding: @medium-gap;
+@wiki-edit-content-gap: @tiny-gap;
+
+// Margins/gaps
+@build-part-row-top-margin: @small-gap;
+@build-summary-info-gap: @tiny-gap;
+@build-summary-info-top-margin: @large-gap;
+@build-part-row-gap: @medium-gap;
+@chart-grid-gap: @large-gap;
+@comparison-container-gap: @medium-gap;
+@element-top-margin: @medium-gap 0 0 0;
+@element-vertical-margin: @medium-gap 0 @medium-gap 0;
+@element-column-gap: @small-gap;
+@header-setting-children-margin: @small-gap 0;
+@paste-from-dump-grid-gap: @medium-gap;
+@navigation-buttons-gap: @tiny-gap;
+@paragraph-top-margin: @large-gap;
+@page-horizontal-margin: @large-gap;
+@page-options-top-margin: @medium-gap;
+@page-options-left-margin: @medium-gap;
+@page-title-margin: @medium-gap 0;
+@page-title-explanation-inner-margin: @large-gap;
+@table-large-header-margin: @medium-gap;
+@wiki-gallery-margin: @small-gap @medium-gap;
+@wiki-gallery-image-padding: @small-gap;
+@wiki-infobox-margin-left: @large-gap;
+@wiki-parsing-errors-margin: @medium-gap @large-gap;
+@wiki-sidebar-image-margin: @tiny-gap 0 @small-gap @large-gap;
+
+// Other sizes
+@button-grid-button-height: 3rem;
+@chart-min-width: min(80vw, 450px);
+@comparison-column-width: 9.25rem;
+@comparison-line-height: 1.2;
+@chart-max-width: min(90vw, 550px);
+@details-range-letter-spacing: -0.125rem;
+@details-description-max-width: 28rem;
+@location-image-max-width: 23.5rem;
+@lore-table-left-column-width: 17rem;
+@page-max-width: 1700px;
+@part-button-max-width: 16rem;
+@tooltip-max-width: 18.75rem;
+@wiki-edit-content-max-width: 60rem;
+@wiki-edit-content-height: 25rem;
+@wiki-gallery-image-size: 14rem;
+@wiki-infobox-button-group-min-width: 4rem;
+@wiki-infobox-max-width: 30rem;
+@wiki-search-width: 22rem;
+@wiki-sidebar-image-min-width: 9.5rem;
+@wiki-sidebar-image-max-size: 15.5rem;
+@wiki-spoiler-decision-button-width: 15rem;
+
+@single-line-spoiler-padding: 1px 3px 2px 3px;
+@single-line-spoiler-margin: 1px -3px -2px -3px;
+@multi-line-spoiler-padding: 1px 0 2px 0;
 
 // Borders
 // Keep in sync with theme.less
-@default-border-radius: var(--default-border-radius);
+@border-radius: var(--border-radius);
 @dropzone-border-radius: var(--dropzone-border-radius);
+@chart-container-border-radius: @border-radius;
 
-@default-border-width: 1px;
+@border-width: 1px;
+@large-border-width: 2px;
 @dropzone-border-width: 2px;
-
-// Header
-@page-title-margin: 0.5rem 0;
-@page-title-explanation-inner-margin: 1rem;
-@header-setting-children-margin: 5px 0;
-
-// Page
-@page-horizontal-margin: 15px;
-@page-max-width: 1700px;
-
-// Buttons
-@button-default-padding: 10px;
-@button-small-padding: 4px;
-
-// Charts
-@chart-container-border-radius: @default-border-radius;
-@chart-grid-gap: 15px;
-@chart-min-width: min(80vw, 450px);
-@chart-max-width: min(90vw, 550px);
-@chart-padding: 0 5px 5px 5px;
-
-// Dropzone
-@dropzone-padding: 10px;
-
-// Tooltips
-@tooltip-max-width: 300px;
-@tooltip-padding: 4px 8px;
-
-// Popovers
-@popover-padding: @tooltip-padding;
+@spoiler-border-width: .75rem;
 
 // Font sizes
-@cogminder-title-font-size: 2rem;
-@page-title-font-size: 2.5rem;
-@error-notice-font-size: 2rem;
-@error-message-font-size: 1.5rem;
+@h1-font-size: 2.0rem;
+@h2-font-size: 1.75rem;
+@h3-font-size: 1.5rem;
+@h4-font-size: 1.25rem;
 
-// Navigation buttons
-@navigation-buttons-gap: 2px;
+@build-header-font-size: @h3-font-size;
+@button-grid-font-size: @h4-font-size;
+@cogminder-title-font-size: @h3-font-size;
+@default-font-size: 1rem;
+@details-font-size: 1rem;
+@details-half-font-size: @details-font-size / 2;
+@error-notice-font-size: @h1-font-size;
+@error-message-font-size: @h3-font-size;
+@rif-hack-ability-name-font-size: @h4-font-size;
+@large-header-font-size: @h3-font-size;
+@loading-message-font-size: @error-notice-font-size;
+@gallery-grid-font-size: 1rem;
+@page-title-font-size: 2.25rem;
+@page-explanation-font-size: @page-title-font-size;
+@paragraph-font-size: @default-font-size;
+@table-header-font-size: @h4-font-size;
+@table-large-header-font-size: @h3-font-size;
+@simulate-button-font-size: @h3-font-size;
+@spoiler-button-font-size: @h3-font-size;
+@wiki-parser-error-header-font-size: @h1-font-size;
 
-// Keep in sync with theme.less
-@default-font-size: var(--default-font-size);
-@paragraph-font-size: var(--paragraph-font-size);
+// Images
+@details-part-icon-size: 1.5rem;
+@details-part-image-height: 11.25rem;
+@details-part-image-width: 27rem;

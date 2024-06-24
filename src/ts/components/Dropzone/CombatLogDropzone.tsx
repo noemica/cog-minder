@@ -1,10 +1,11 @@
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
-import { parseCombatLog } from "../../combatLogParser";
+import { parseCombatLog } from "../../utilities/combatLogParser";
 import { CombatLogEntry } from "../../types/combatLogTypes";
 import Button from "../Buttons/Button";
-import TextTooltip from "../Tooltip/TextTooltip";
+import TextTooltip from "../Popover/TextTooltip";
+import TextTooltipButton from "../Popover/TextTooltipButton";
 
 import "./Dropzone.less";
 
@@ -37,11 +38,14 @@ export default function CombatLogDropzone({ onParse }: CombatLogDropzoneProps) {
         <div className={containerClasses} {...(getRootProps() as any)}>
             <input {...getInputProps()} />
             <span>Drag file or browse to upload combat log</span>
-            <TextTooltip tooltipText="Combat logs can be exported in Beta 13 by setting `combatLogOutput=1` in the advanced settings. The standard Cogmind Options menu setting `Log Output` must also be set to `Text`. Advanced settings and combat logs are both located in your standard Cogmind install location. For Steam users, this is typically C:/Program Files (x86)/Steam/steamapps/common/Cogmind/">
+            <TextTooltip tooltipText="Browse for combat log files.">
                 <div>
                     <Button onClick={open}>Browse for file</Button>
                 </div>
             </TextTooltip>
+            <TextTooltipButton tooltipText="Combat logs can be exported in Beta 13 by setting `combatLogOutput=1` in the advanced settings. The standard Cogmind Options menu setting `Log Output` must also be set to `Text`. Advanced settings and combat logs are both located in your standard Cogmind install location. For Steam users, this is typically C:/Program Files (x86)/Steam/steamapps/common/Cogmind/">
+                Help
+            </TextTooltipButton>
         </div>
     );
 }

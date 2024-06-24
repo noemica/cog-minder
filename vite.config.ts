@@ -6,22 +6,13 @@ declare const __dirname: string;
 
 export default defineConfig({
     root: "src",
-    base: "/cog-minder/",
+    base: `/cog-minder/`,
     build: {
         outDir: path.resolve(__dirname, "dist"),
         rollupOptions: {
             input: {
+                404: path.resolve(__dirname, "src/404.html"),
                 index: path.resolve(__dirname, "src/index.html"),
-                about: path.resolve(__dirname, "src/about.html"),
-                bots: path.resolve(__dirname, "src/bots.html"),
-                build: path.resolve(__dirname, "src/build.html"),
-                combat: path.resolve(__dirname, "src/combat.html"),
-                hacks: path.resolve(__dirname, "src/hacks.html"),
-                lore: path.resolve(__dirname, "src/lore.html"),
-                parts: path.resolve(__dirname, "src/parts.html"),
-                rif: path.resolve(__dirname, "src/rif.html"),
-                simulator: path.resolve(__dirname, "src/simulator.html"),
-                wiki: path.resolve(__dirname, "src/wiki.html"),
             },
         },
     },

@@ -1,5 +1,20 @@
-import { Bot, BotImmunity, BotResistances } from "../botTypes";
+import { Bot, BotImmunity, BotResistances } from "./botTypes";
 import { Critical, DamageType, Item, ItemSlot, WeaponItem } from "./itemTypes";
+
+export type ExternalDamageReduction =
+    | "None"
+    | "Remote Shield"
+    | "Stasis Trap"
+    | "Phase Wall"
+    | "Remote Force Field"
+    | "Stasis Bubble";
+
+export type SiegeState =
+    | "No Siege"
+    | "In Siege Mode"
+    | "In High Siege Mode"
+    | "Entering Siege Mode"
+    | "Entering High Siege Mode";
 
 export type SimulatorPart = {
     armorAnalyzedCoverage: number;
@@ -76,7 +91,7 @@ export type BotState = {
     corruption: number;
     def: Bot;
     defensiveState: DefensiveState;
-    externalDamageReduction: string;
+    externalDamageReduction: ExternalDamageReduction;
     immunities: BotImmunity[];
     initialCoreIntegrity: number;
     parts: SimulatorPart[];
@@ -119,20 +134,15 @@ export type SimulatorWeapon = {
     spectrum: number;
 };
 
-export enum SneakAttackStrategy {
-    None = "None",
-    FirstOnly = "First Only",
-    All = "All",
-}
+export type SneakAttackStrategy = "None" | "First Only" | "All";
 
-export enum EndCondition {
-    Kill = "Kill",
-    KillOrDisrupt = "Kill or Core Disrupt",
-    KillOrPower = "Kill or No Power",
-    KillOrWeapons = "Kill or No Weapons",
-    KillOrNoTnc = "Kill or No TNC",
-    Tele = "Architect Tele (80% integrity, 1 weapon, or 1 prop)",
-}
+export type SimulatorEndCondition =
+    | "Kill"
+    | "Kill or Core Disrupt"
+    | "Kill or No Power"
+    | "Kill or No Weapons"
+    | "Kill or No TNC"
+    | "Tele";
 
 export type ItemLootState = {
     item: Item;
@@ -169,7 +179,6 @@ export type OffensiveState = {
         current: number;
         initial: number;
     };
-    numTreads: number;
     recoil: number;
     ramming: boolean;
     recoilReduction: number;
@@ -188,7 +197,7 @@ export type OffensiveState = {
 export type SimulatorState = {
     actionNum: number;
     botState: BotState;
-    endCondition: EndCondition;
+    endCondition: SimulatorEndCondition;
     initialBotState: BotState;
     killTus: { [key: number]: number };
     killVolleys: { [key: number]: number };
