@@ -2,7 +2,6 @@ import LZString from "lz-string";
 import { ReactNode } from "react";
 import { useLocation, useSearch } from "wouter";
 
-import { getRangedVolleyTime, volleyTimeMap } from "../../../utilities/simulatorCalcs";
 import {
     Actuator,
     BaseItem,
@@ -34,6 +33,7 @@ import {
     parseIntOrDefault,
     parseSearchParameters,
 } from "../../../utilities/common";
+import { getRangedVolleyTime, volleyTimeMap } from "../../../utilities/simulatorCalcs";
 import Button from "../../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
 import useItemData from "../../Effects/useItemData";
@@ -333,8 +333,8 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
                 return undefined!;
             } else {
                 return {
-                    abilityActive: partState.active || true,
-                    active: partState.active || true,
+                    abilityActive: partState.active === false ? false : true,
+                    active: partState.active === false ? false : true,
                     id: partState.id,
                     number: parseIntOrDefault(partState.number, 1),
                     part: basePart,
@@ -408,9 +408,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     // Then apply speed doubling like metafield before penalties...
     if (
         parts.find((p) => hasActiveSpecialProperty(p.part, p.active, "AirborneSpeedDoubling")) !== undefined &&
-        (activeProp.length === 0 ||
-            activeProp[0].type === "Hover Unit" ||
-            activeProp[0].type === "Flight Unit")
+        (activeProp.length === 0 || activeProp[0].type === "Hover Unit" || activeProp[0].type === "Flight Unit")
     ) {
         tusPerMove /= 2;
     }
@@ -1065,6 +1063,8 @@ function PartRow({
                 const oldPageState = pageState.partState!;
                 const partState = [...oldPageState];
                 partState[i] = { ...oldPageState[i], active: value === "No" ? false : true };
+
+                updatePageState({ ...pageState, partState: partState });
             }}
         />
     );
@@ -1140,9 +1140,15 @@ function SlotSection({
         );
     }
 
-    const partsInfo = partsState.partsInfo.filter((part) => part.slot === slot);
+    const numSlotParts = partsState.partsInfo
+        .map((partInfo) => (partInfo.slot === slot ? partInfo.size : 0))
+        .reduce((sum, val) => sum + val, 0);
 
-    const partRows = partsInfo.map((partInfo, i) => {
+    const partRows = partsState.partsInfo.map((partInfo, i) => {
+        if (partInfo.slot !== slot) {
+            return undefined;
+        }
+
         return (
             <PartRow
                 key={partInfo.id}
@@ -1160,7 +1166,7 @@ function SlotSection({
     return (
         <div>
             <TitleSection
-                title={`${slot} x${partsInfo.length}`}
+                title={`${slot} x${numSlotParts}`}
                 tooltip={`Selection and information about ${slot.toLowerCase()} slot parts.`}
             />
             <div className="build-grid-container">
