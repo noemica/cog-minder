@@ -59,7 +59,7 @@ function BotGroupContent({
                         }}
                     />
                 </div>
-                <BotDetails bot={bot} />
+                <BotDetails bot={bot} itemsToLinks={true} />
             </div>
             {parsedNode}
         </>
