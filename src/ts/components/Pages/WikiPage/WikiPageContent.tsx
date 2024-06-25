@@ -17,7 +17,7 @@ function BotContent({ entry, parsedNode }: { entry: WikiEntry; parsedNode: React
     return (
         <>
             <div className="wiki-infobox">
-                <BotDetails bot={bot} itemsToLinks={true} />
+                <BotDetails bot={bot} popoversToLinks={true} />
             </div>
             {parsedNode}
         </>
@@ -59,7 +59,7 @@ function BotGroupContent({
                         }}
                     />
                 </div>
-                <BotDetails bot={bot} itemsToLinks={true} />
+                <BotDetails bot={bot} popoversToLinks={true} />
             </div>
             {parsedNode}
         </>

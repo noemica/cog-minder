@@ -88,7 +88,7 @@ export default function SelectWrapper<
     }
 
     const components: Partial<SelectComponents<SelectOptionType, IsMulti, Group>> = {
-        Option: Option,
+        Option: Option as any,
     };
 
     // Only virtualize if we have a significant number of items
