@@ -59,8 +59,8 @@ export function useChartDisplayOptions(): [ChartDisplayOptions, SetValue<ChartDi
 }
 
 export function useEditableWikiEntryEdits() {
-    return useEditableValue<SavedWikiEntries>(localStorageWikiEntriesName, {entries: []});
-};
+    return useEditableValue<SavedWikiEntries>(localStorageWikiEntriesName, { entries: [] });
+}
 
 function useValue<T>(key: string, defaultValue: T, validator?: (value: T) => boolean): T {
     let value = useReadLocalStorage<T>(key) || defaultValue;

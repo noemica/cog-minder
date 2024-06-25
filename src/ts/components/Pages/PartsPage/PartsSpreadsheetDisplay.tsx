@@ -270,13 +270,7 @@ const columnDefs: Record<SlotSearchType, ColumnDef<Item>[]> = {
     Weapon: weaponSlotColumns as any,
 };
 
-export default function PartsSpreadsheetDisplay({
-    pageState,
-    items,
-}: {
-    pageState: PartsPageState;
-    items: Item[];
-}) {
+export default function PartsSpreadsheetDisplay({ pageState, items }: { pageState: PartsPageState; items: Item[] }) {
     const [sorting, setSorting] = React.useState<SortingState>([]);
 
     const slotSearch = pageState.slot || "Any";

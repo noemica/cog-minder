@@ -164,7 +164,7 @@ export default function WikiSearchPage({ allowedEntries, search }: { allowedEntr
     const headerNodes = (
         <>
             <h1 className="wiki-emphasized-heading">Search Results</h1>
-            <h2 className="wiki-heading">Searching for "{search}"</h2>
+            <h2 className="wiki-heading">Searching for &quot;{search}&quot;</h2>
         </>
     );
 
@@ -172,7 +172,7 @@ export default function WikiSearchPage({ allowedEntries, search }: { allowedEntr
         return (
             <>
                 {headerNodes}
-                <span>No results found for "{search}".</span>
+                <span>No results found for &quot;{search}&quot;.</span>
             </>
         );
     }

@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-import { fakeData } from "../../utilities/combatFakeData";
 import {
     ChartDisplayOptions,
     CombatLogChartCategoryType,
     CombatLogChartType,
     CombatLogEntry,
 } from "../../types/combatLogTypes";
+import { fakeData } from "../../utilities/combatFakeData";
 import Button from "../Buttons/Button";
 import { ExclusiveButtonDefinition } from "../Buttons/ExclusiveButtonGroup";
 import ChartGrid from "../ChartGrid/ChartGrid";

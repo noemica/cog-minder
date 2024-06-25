@@ -1,6 +1,7 @@
 import { Suspense, useEffect } from "react";
 import React from "react";
 import { Redirect, Route, Router, Switch, useLocation } from "wouter";
+// eslint-disable-next-line import/no-unresolved
 import { useHashLocation } from "wouter/use-hash-location";
 
 import { getLinkSafeString, isDev, rootDirectory } from "../../utilities/common";

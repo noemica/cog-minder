@@ -316,7 +316,7 @@ export function parseEntryContent(
     botData: BotData,
     groupSelection?: number,
 ) {
-    let parseResult = createContentHtml(entry, allEntries, spoilers, false, itemData, botData);
+    const parseResult = createContentHtml(entry, allEntries, spoilers, false, itemData, botData);
 
     if (parseResult.errors.length > 0) {
         console.log(`Errors while parsing ${entry.name}`);
@@ -417,7 +417,7 @@ function processAllLocationsTag(state: ParserState, result: RegExpExecArray) {
         );
     }
 
-    let html = (
+    const html = (
         <table className="wiki-table">
             <tbody>
                 <tr>
@@ -468,7 +468,7 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
             }
         }
 
-        let imageNode = (
+        const imageNode = (
             <>
                 {Array.from(images.values()).map((image) => (
                     <img key={image} className="wiki-bot-group-image" src={image} />
@@ -648,7 +648,7 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         galleryItems.push(
             <div key={i}>
                 <div>
-                    <a className={inSpoiler ? "spoiler-image" : undefined} href={path} target="_blank">
+                    <a className={inSpoiler ? "spoiler-image" : undefined} href={path} target="_blank" rel="noreferrer">
                         {inSpoiler && <div className="wiki-spoiler-image-text">SPOILER</div>}
                         <img
                             src={path}
@@ -771,7 +771,12 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
         groupType: "Individual",
         node: (
             <div className="wiki-sidebar-image">
-                <a className={state.inSpoiler ? "spoiler-image" : undefined} href={path} target="_blank">
+                <a
+                    className={state.inSpoiler ? "spoiler-image" : undefined}
+                    href={path}
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     {state.inSpoiler && <div className="wiki-spoiler-image-text">SPOILER</div>}
                     <img
                         src={path}
@@ -955,7 +960,7 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
     } else if (groupName == "WAR.Sys Records") {
         state.output.push({
             groupType: "Grouped",
-            node: <span className="wiki-game-text">Intel "{entryName}"</span>,
+            node: <span className="wiki-game-text">Intel &quot;{entryName}&quot;</span>,
         });
         state.output.push({ groupType: "Separator", node: undefined });
     }
@@ -1283,7 +1288,7 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
         row += 1;
     }
 
-    let tableContent = (
+    const tableContent = (
         <table className={`wiki-table${state.inSpoiler ? " spoiler-text spoiler-table" : ""}`}>
             <tbody>{tableRows}</tbody>
         </table>

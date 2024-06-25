@@ -199,7 +199,7 @@ export default function LocationDetails({
         <div className="location-details">
             <DetailsSummaryLine text={location.name} />
             {location.imageName && (
-                <a href={imagePath} target="_blank">
+                <a href={imagePath} target="_blank" rel="noreferrer">
                     <img src={imagePath} className="location-image" />
                 </a>
             )}

@@ -218,7 +218,7 @@ function skipLocationMember(key: string, pageState: BotsPageState) {
     return false;
 }
 
-function BotsSimpleDisplay({ pageState, bots }: { pageState: BotsPageState; bots: Bot[] }) {
+function BotsSimpleDisplay({ bots }: { bots: Bot[] }) {
     const botButtons = bots.map((bot) => {
         return <BotPopoverButton bot={bot} key={bot.name} />;
     });
@@ -226,7 +226,7 @@ function BotsSimpleDisplay({ pageState, bots }: { pageState: BotsPageState; bots
     return <div className="bot-button-grid">{botButtons}</div>;
 }
 
-function BotsSpreadsheetDisplay({ pageState, bots }: { pageState: BotsPageState; bots: Bot[] }) {
+function BotsSpreadsheetDisplay({ bots }: { bots: Bot[] }) {
     const [sorting, setSorting] = React.useState<SortingState>([]);
 
     return <Table data={bots} columns={botColumnDefs} setSorting={setSorting} sorting={sorting} />;
@@ -249,10 +249,10 @@ export default function BotsPage() {
 
     let pageContent: ReactNode | undefined;
     if (pageState.mode === "Spreadsheet") {
-        pageContent = <BotsSpreadsheetDisplay pageState={pageState} bots={bots} />;
+        pageContent = <BotsSpreadsheetDisplay bots={bots} />;
     } else {
         // Default to simple mode
-        pageContent = <BotsSimpleDisplay pageState={pageState} bots={bots} />;
+        pageContent = <BotsSimpleDisplay bots={bots} />;
     }
 
     const factionButtons = allFactionButtons.filter((button) => canShowSpoiler(button.spoiler || "None", spoilers));

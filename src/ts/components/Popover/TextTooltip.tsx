@@ -28,7 +28,9 @@ export default function TextTooltip({ tooltipText, placement, children, useFlexW
 
     return (
         <Tooltip placement={placement}>
-            <TooltipTrigger className={className} asChild={asChild} children={children} />
+            <TooltipTrigger className={className} asChild={asChild}>
+                {children}
+            </TooltipTrigger>
             <TooltipContent className="text-tooltip">{tooltipText}</TooltipContent>
         </Tooltip>
     );

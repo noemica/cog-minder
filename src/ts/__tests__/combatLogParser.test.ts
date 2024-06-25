@@ -184,7 +184,7 @@ describe("Combat log parser", () => {
     // Long entry
     test("An extended 2 tile-long entry", () => {
         expect(parseCombatLog(td.multiLineLog)).toEqual(td.multiLineEntries);
-    })
+    });
 
     // Invalid data
     test("Invalid data", () => {

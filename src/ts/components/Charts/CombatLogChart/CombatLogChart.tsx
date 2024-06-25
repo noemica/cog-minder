@@ -42,10 +42,10 @@ export default function CombatLogChart({
                 label: "Other",
                 value: values.reduce((p, v) => p + v.value, 0),
             });
-            
+
             otherCategoryAdded = true;
         }
-        
+
         values = topValues;
     }
 

@@ -1,12 +1,13 @@
+import { useEffect } from "react";
 import { Link } from "wouter";
 
 import "./WikiPage.less";
-import { useEffect } from "react";
 
 export default function WikiHomepage() {
     useEffect(() => {
-        document.title = "Home - Cog-Minder Wiki"
-    }), [];
+        document.title = "Home - Cog-Minder Wiki";
+    }),
+        [];
 
     return (
         <div>

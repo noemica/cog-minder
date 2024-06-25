@@ -11,7 +11,6 @@ import {
     Title,
     Tooltip,
 } from "chart.js";
-import { forwardRef, useRef } from "react";
 import { Scatter } from "react-chartjs-2";
 
 import { ThemeType } from "../../../types/commonTypes";

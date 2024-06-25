@@ -21,4 +21,4 @@ export type JsonRifHackCategory = {
 export type JsonRifContents = {
     Abilities: JsonRifAbility[];
     Hacks: JsonRifHackCategory[];
-}
+};

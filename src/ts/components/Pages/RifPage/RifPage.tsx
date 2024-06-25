@@ -24,8 +24,8 @@ function getPageState(): RifPageState {
     return parseSearchParameters(search, {});
 }
 
-function skipLocationMember(key: string, pageState: RifPageState) {
-    const typedKey: keyof RifPageState = key as keyof RifPageState;
+function skipLocationMember(_key: string, _pageState: RifPageState) {
+    // const typedKey: keyof RifPageState = key as keyof RifPageState;
 
     return false;
 }

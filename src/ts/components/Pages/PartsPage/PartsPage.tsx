@@ -483,7 +483,7 @@ export default function PartsPage() {
     switch (pageState.mode) {
         case "Simple":
         default:
-            modeNode = <PartsSimpleDisplay items={items} pageState={pageState} />;
+            modeNode = <PartsSimpleDisplay items={items} />;
             break;
 
         case "Comparison":
@@ -498,7 +498,7 @@ export default function PartsPage() {
             break;
 
         case "Gallery":
-            modeNode = <PartsGalleryDisplay items={items} pageState={pageState} />;
+            modeNode = <PartsGalleryDisplay items={items} />;
             break;
 
         case "Spreadsheet":

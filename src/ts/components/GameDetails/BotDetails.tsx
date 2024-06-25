@@ -6,7 +6,7 @@ import { Item } from "../../types/itemTypes";
 import { getLinkSafeString, valueOrDefault } from "../../utilities/common";
 import useItemData from "../Effects/useItemData";
 import { useSpoilers } from "../Effects/useLocalStorageValue";
-import { ItemLink, ItemTooltip } from "../Pages/WikiPage/WikiTooltips";
+import { ItemTooltip } from "../Pages/WikiPage/WikiTooltips";
 import { BotItemPopoverButton } from "../Popover/ItemPopover";
 import {
     DetailsBotTitleLine,
@@ -164,7 +164,7 @@ function ItemDetails({
     itemOptions: BotPart[][];
     popoversToLinks: boolean;
 }) {
-    function Option({ addEmptyLine, data, i }: { addEmptyLine: boolean; data: BotPart[]; i: number }) {
+    function Option({ addEmptyLine, data }: { addEmptyLine: boolean; data: BotPart[] }) {
         return (
             <>
                 {addEmptyLine && <DetailsEmptyLine />}
@@ -179,7 +179,7 @@ function ItemDetails({
                 return <BotPartLine key={data.name} data={data} popoversToLinks={popoversToLinks} />;
             })}
             {itemOptions.map((data, i) => {
-                return <Option key={i} addEmptyLine={items.length > 0 || i > 0} data={data} i={i} />;
+                return <Option key={i} addEmptyLine={items.length > 0 || i > 0} data={data} />;
             })}
         </>
     );

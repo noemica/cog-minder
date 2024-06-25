@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useMemo, useState } from "react";
+import { ReactNode, useMemo, useState } from "react";
 import { Route, Router, Switch, useLocation, useRoute } from "wouter";
 
 import wiki from "../../../../json/wiki.json";
@@ -419,7 +419,7 @@ export default function WikiPage() {
         }
 
         if (entry !== undefined) {
-            let parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData, groupSelection);
+            const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData, groupSelection);
             parsedNode = parseResult.node;
             parsingErrors = parseResult.errors;
         }

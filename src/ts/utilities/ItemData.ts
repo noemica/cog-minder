@@ -1,5 +1,4 @@
 import itemCategories from "../../json/item_categories.json";
-import { specialItemProperties } from "./specialItemProperties";
 import { Spoiler } from "../types/commonTypes";
 import {
     Critical,
@@ -23,6 +22,7 @@ import {
     parseIntOrDefault,
     parseIntOrUndefined,
 } from "./common";
+import { specialItemProperties } from "./specialItemProperties";
 
 export class ItemData {
     itemData: { [key: string]: Item } = {};

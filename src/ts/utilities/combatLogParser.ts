@@ -236,7 +236,7 @@ class ParserState {
                     // Create a new damage entry targeting core so the bot
                     // is counted as properly being destroyed
                     this.getNextLine();
-                    let meltedEntry = createEmptyDamageLogEntry();
+                    const meltedEntry = createEmptyDamageLogEntry();
                     meltedEntry.damagedEntity = damageEntry.damagedEntity;
                     meltedEntry.damagedPart = "Core";
                     meltedEntry.targetDestroyed = true;
@@ -372,7 +372,7 @@ class ParserState {
         if (line.remainingText.length > 0) {
             console.log(`Skipped non-recognized text ${line.remainingText}`);
         }
-        
+
         return;
     }
 
@@ -409,7 +409,7 @@ class ParserState {
             } else if (this.parseMachineExplosion(line)) {
                 continue;
             } else if (this.parseWeaponAttack(line)) {
-
+                continue;
             } else if (this.parseIgnoredLine(line)) {
                 // These line types are unused
                 continue;
@@ -590,7 +590,7 @@ function splitBotAndPart(line: string): { botName: string; partName: string } {
         let partName = split.slice(i).join(" ");
         const part = getItemByName(partName);
         if (part !== undefined || partName === "core" || partName === "Core") {
-            let botName = split.slice(0, i).join(" ");
+            const botName = split.slice(0, i).join(" ");
 
             // Capitalize core for consistency with parts
             if (partName === "core") {

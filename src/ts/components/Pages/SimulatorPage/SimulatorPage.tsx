@@ -265,10 +265,6 @@ function getSimulatorState(
         });
     }
 
-    let bot: Bot;
-    let botCoreCoverage: number;
-    let botIntegrity: number;
-    let botTotalCoverage: number;
     // TODO dumpmind
     // if (botName === dumpMindTargetName) {
     //     const entity = savedTargetEntity!;
@@ -291,7 +287,7 @@ function getSimulatorState(
     //     botTotalCoverage += botCoreCoverage;
     //     botIntegrity = entity.integrity;
     // } else {
-    bot = botData.getBotOrNull(botName)!;
+    const bot = botData.getBotOrNull(botName)!;
     if (!bot) {
         setStatusText(`Bot ${botName} is invalid, this is probably a bug.`);
         return undefined;
@@ -309,9 +305,9 @@ function getSimulatorState(
             }
         });
 
-    botCoreCoverage = bot.coreCoverage;
-    botTotalCoverage = bot.totalCoverage;
-    botIntegrity = bot.coreIntegrity;
+    const botCoreCoverage = bot.coreCoverage;
+    const botTotalCoverage = bot.totalCoverage;
+    const botIntegrity = bot.coreIntegrity;
     // }
 
     const armorAnalyzedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedCoverage, 0);
@@ -828,7 +824,7 @@ export default function SimulatorPage() {
                 <Button
                     className="flex-grow-0"
                     onClick={() => {
-                        let newState: ComparisonChartState = {
+                        const newState: ComparisonChartState = {
                             ...comparisonChartState,
                         };
 
@@ -884,9 +880,9 @@ export default function SimulatorPage() {
 
     if (comparisonChartState.datasets.length > 0) {
         // Create comparison chart
-        let backgroundColors: string[] = [];
-        let borderColors: string[] = [];
-        let values: ScatterChartDataGroup[] = [];
+        const backgroundColors: string[] = [];
+        const borderColors: string[] = [];
+        const values: ScatterChartDataGroup[] = [];
 
         for (const dataset of comparisonChartState.datasets) {
             backgroundColors.push("rgba(0, 0, 0, 0)");

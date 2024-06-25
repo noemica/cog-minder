@@ -23,7 +23,7 @@ function getPageState(): LorePageState {
     return parseSearchParameters(search, {});
 }
 
-function skipLocationMember(key: string, pageState: LorePageState) {
+function skipLocationMember(_key: string, _pageState: LorePageState) {
     // const typedKey: keyof LorePageState = key as keyof LorePageState;
 
     return false;

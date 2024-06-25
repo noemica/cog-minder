@@ -61,7 +61,7 @@ export default function TextTooltipButton({ children, className, tooltipText, pl
                 }
             }}
         >
-            <TooltipTrigger asChild={true} children={button} />
+            <TooltipTrigger asChild={true}>{button}</TooltipTrigger>
             <TooltipContent className="text-tooltip">{tooltipText}</TooltipContent>
         </Tooltip>
     );

@@ -115,7 +115,7 @@ const pages: Record<PageType, PageDetails> = {
     },
 };
 
-function PageButtons({ pageType: PageType }) {
+function PageButtons({ pageType }: { pageType: PageType }) {
     const pageTypes: PageType[] = [
         "About",
         "Bots",
@@ -133,7 +133,7 @@ function PageButtons({ pageType: PageType }) {
         const pageInfo = pages[p];
         return (
             <ButtonLink
-                activeLink={PageType === p}
+                activeLink={pageType === p}
                 // There is an issue on mobile where the tooltip never goes away
                 // Might figure it out but for now leave only in ? popup
                 // tooltip={pageInfo.explanation}

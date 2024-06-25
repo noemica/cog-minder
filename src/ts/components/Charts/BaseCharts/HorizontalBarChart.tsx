@@ -137,7 +137,7 @@ function makeChartOptions(
                     color: chartTextColor,
                     // No point in showing decimal places
                     precision: 0,
-                    callback(tickValue, index, ticks) {
+                    callback(tickValue, _index, _ticks) {
                         if (valuesArePercentages) {
                             return tickValue + "%";
                         } else {
