@@ -268,7 +268,6 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
         }
 
         if (pageState.slotType) {
-          console.log(pageState.slotType, item.type);
             if (pageState.slotType !== "Any" && item.type !== pageState.slotType) {
                 return false;
             }
