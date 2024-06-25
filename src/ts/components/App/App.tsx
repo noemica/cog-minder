@@ -174,7 +174,7 @@ function errorFallback(error: Error) {
     return (
         <>
             <p className="error-notice">Unexpected error, please try refreshing the page.</p>
-            <p className="error-notice">
+            <p className="error-message">
                 If the issue persists, please report on the on Roguelikes Discord or Cog-Minder Github.
             </p>
             <p className="error-message">{errorMessage}</p>

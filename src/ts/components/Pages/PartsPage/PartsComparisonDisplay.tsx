@@ -742,24 +742,27 @@ function ComparisonContent({ leftItem, rightItem }: { leftItem: Item; rightItem:
 export default function PartsComparisonDisplay({
     itemData,
     items,
+    pageState,
+    setPageState,
 }: {
-    pageState: PartsPageState;
     itemData: ItemData;
     items: Item[];
+    pageState: PartsPageState;
+    setPageState: (newPageState: PartsPageState) => void;
 }) {
-    const [leftItem, setLeftItem] = useState("Lgt. Assault Rifle");
-    const [rightItem, setRightItem] = useState("Assault Rifle");
-
     const itemOptions = items.map<SelectOptionType<string>>((item) => {
         return {
             value: item.name,
         };
     });
 
-    function ItemSelect(item: string, setItem: React.Dispatch<React.SetStateAction<string>>) {
+    function ItemSelect({ itemName, setItem }: { itemName: string; setItem: (val: string) => void }) {
+        console.log(itemName);
+        console.log(itemOptions.find((o) => o.value === itemName));
+
         return (
             <SelectWrapper
-                value={itemOptions.find((o) => o.value === item) || itemOptions[0]}
+                value={itemOptions.find((o) => o.value === itemName) || { value: { itemName } }}
                 onChange={(val) => {
                     setItem(val!.value);
                 }}
@@ -768,29 +771,45 @@ export default function PartsComparisonDisplay({
         );
     }
 
+    const leftItem = itemData.getItem(pageState.compareLeftItem || "Lgt. Assault Rifle");
+    const rightItem = itemData.getItem(pageState.compareRightItem || "Assault Rifle");
+
     return (
         <div className="comparison-container">
             <div className="part-comparison-part-column">
-                {ItemSelect(leftItem, setLeftItem)}
-                <ItemDetails item={itemData.getItem(leftItem)} />
+                <ItemSelect
+                    itemName={leftItem.name}
+                    setItem={(val) => {
+                        setPageState({ ...pageState, compareLeftItem: val });
+                    }}
+                />
+                <ItemDetails item={leftItem} />
             </div>
             <div className="part-comparison-details-column">
                 <Button
                     tooltip="Swaps the left and right items in the comparison"
                     onClick={() => {
-                        setLeftItem(rightItem);
-                        setRightItem(leftItem);
+                        setPageState({
+                            ...pageState,
+                            compareLeftItem: rightItem.name,
+                            compareRightItem: leftItem.name,
+                        });
                     }}
                 >
                     ← Swap →
                 </Button>
                 <div>
-                    <ComparisonContent leftItem={itemData.getItem(leftItem)} rightItem={itemData.getItem(rightItem)} />
+                    <ComparisonContent leftItem={leftItem} rightItem={rightItem} />
                 </div>
             </div>
             <div className="part-comparison-part-column">
-                {ItemSelect(rightItem, setRightItem)}
-                <ItemDetails item={itemData.getItem(rightItem)} />
+                <ItemSelect
+                    itemName={rightItem.name}
+                    setItem={(val) => {
+                        setPageState({ ...pageState, compareRightItem: val });
+                    }}
+                />
+                <ItemDetails item={rightItem} />
             </div>
         </div>
     );

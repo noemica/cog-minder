@@ -127,6 +127,8 @@ export type PartsPageState = {
     primarySortDirection?: SortDirection;
     secondarySort?: SecondarySortOptions;
     secondarySortDirection?: SortDirection;
+    compareLeftItem?: string;
+    compareRightItem?: string;
 };
 
 function filterItems(pageState: PartsPageState, itemData: ItemData) {
@@ -485,7 +487,14 @@ export default function PartsPage() {
             break;
 
         case "Comparison":
-            modeNode = <PartsComparisonDisplay items={items} itemData={itemData} pageState={pageState} />;
+            modeNode = (
+                <PartsComparisonDisplay
+                    items={items}
+                    itemData={itemData}
+                    pageState={pageState}
+                    setPageState={updatePageState}
+                />
+            );
             break;
 
         case "Gallery":
