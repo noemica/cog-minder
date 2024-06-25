@@ -285,7 +285,7 @@ function WikiNavigationBar({
     allEntries,
     setEditState,
 }: {
-    allowedEntries: WikiEntry[];
+    allowedEntries: string[];
     allEntries: Map<string, WikiEntry>;
     setEditState: React.Dispatch<React.SetStateAction<EditState>>;
     spoilers: Spoiler;
@@ -395,10 +395,10 @@ export default function WikiPage() {
     const [allEntries, allowedEntries] = useMemo(() => {
         const allEntries = initEntries(botData, itemData);
 
-        const allowedEntries = Array.from(allEntries.values()).filter((entry) =>
-            canShowSpoiler(entry.spoiler, spoilers),
-        );
-        allowedEntries.sort((a, b) => a.name.localeCompare(b.name));
+        const allowedEntries = Array.from(allEntries.entries())
+            .filter(([_, entry]) => canShowSpoiler(entry.spoiler, spoilers))
+            .map(([entryName, _]) => entryName);
+        allowedEntries.sort();
 
         return [allEntries, allowedEntries];
     }, [botData, itemData, spoilers]);
@@ -409,7 +409,8 @@ export default function WikiPage() {
     let parsingErrors: string[] = [];
 
     if (pageDidMatch) {
-        baseEntry = allEntries.get(getStringFromLinkSafeString(pageNameMatch[0]!));
+        const pageName = getStringFromLinkSafeString(pageNameMatch[0]!);
+        baseEntry = allEntries.get(pageName);
         entry = baseEntry;
 
         if (entry !== undefined && editState.editText.length > 0 && editState.entry === entry) {
@@ -449,6 +450,7 @@ export default function WikiPage() {
                         <Route path={"/search/:search"}>
                             {(params) => (
                                 <WikiSearchPage
+                                    allEntries={allEntries}
                                     allowedEntries={allowedEntries}
                                     search={getStringFromLinkSafeString(params["search"]!)}
                                 />

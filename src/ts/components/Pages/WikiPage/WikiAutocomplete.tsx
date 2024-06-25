@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
 
-import { WikiEntry } from "../../../types/wikiTypes";
 import { getLinkSafeString } from "../../../utilities/common";
 import SelectWrapper, { SelectOptionType } from "../../Selectpicker/Select";
 
@@ -10,7 +9,7 @@ export default function WikiAutocomplete({
     searchString,
     setSearchString,
 }: {
-    allowedEntries: WikiEntry[];
+    allowedEntries: string[];
     searchString: string;
     setSearchString: (searchString: string) => void;
 }) {
@@ -21,14 +20,14 @@ export default function WikiAutocomplete({
 
     const options = allowedEntries
         .filter((entry) => {
-            return entry.name.toLowerCase().startsWith(searchStringLower) && searchString.length > 1;
+            return entry.toLowerCase().startsWith(searchStringLower) && searchString.length > 1;
         })
         .splice(0, 20)
         .map<SelectOptionType>((entry) => {
-            return { value: entry.name };
+            return { value: entry };
         });
 
-    if (!allowedEntries.find((entry) => entry.name.toLowerCase() == searchStringLower)) {
+    if (!allowedEntries.find((entry) => entry.toLowerCase() == searchStringLower)) {
         options.unshift({ value: `Search for ${searchString}` });
     }
 

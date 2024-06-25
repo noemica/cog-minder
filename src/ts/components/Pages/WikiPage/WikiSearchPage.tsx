@@ -37,7 +37,15 @@ function boldMatches(text: string, matchText: string): ReactNode {
     return <>{groups}</>;
 }
 
-export default function WikiSearchPage({ allowedEntries, search }: { allowedEntries: WikiEntry[]; search: string }) {
+export default function WikiSearchPage({
+    allEntries,
+    allowedEntries,
+    search,
+}: {
+    allEntries: Map<string, WikiEntry>;
+    allowedEntries: string[];
+    search: string;
+}) {
     useEffect(() => {
         document.title = `Search for "${search}" - Cog-Minder Wiki`;
     });
@@ -47,11 +55,11 @@ export default function WikiSearchPage({ allowedEntries, search }: { allowedEntr
     const lowerText = search.toLowerCase();
 
     let anyResults = false;
-    const titleMatches = Array.from(allowedEntries).filter((n) => n.name.toLowerCase().includes(lowerText));
-    const previewContents = Array.from(allowedEntries).map((e) => {
+    const titleMatches = Array.from(allowedEntries).filter((n) => n.toLowerCase().includes(lowerText));
+    const previewContents = Array.from(allowedEntries).map((entryName) => {
         return {
-            name: e.name,
-            previewContent: createPreviewContent(e.content, spoilers),
+            name: entryName,
+            previewContent: createPreviewContent(allEntries.get(entryName)!.content, spoilers),
         };
     });
     const contentMatches = previewContents.filter((e) => e.previewContent.toLowerCase().includes(lowerText));
@@ -64,7 +72,7 @@ export default function WikiSearchPage({ allowedEntries, search }: { allowedEntr
 
         const titleMatchNodes = titleMatches.map((titleMatch, i) => {
             // Determine the page preview
-            let matchText = previewContents.find((p) => p.name === titleMatch.name)!.previewContent;
+            let matchText = previewContents.find((p) => p.name === titleMatch)!.previewContent;
             const fullText = matchText.length <= 250;
             const lastPeriod = matchText.lastIndexOf(". ");
 
@@ -85,11 +93,11 @@ export default function WikiSearchPage({ allowedEntries, search }: { allowedEntr
             }
 
             // Bold matches in the title
-            const boldedTitleMatch = boldMatches(titleMatch.name, lowerText);
+            const boldedTitleMatch = boldMatches(titleMatch, lowerText);
 
             return (
                 <li key={i}>
-                    <Link href={`/${titleMatch.name}`}>{boldedTitleMatch}</Link>
+                    <Link href={`/${titleMatch}`}>{boldedTitleMatch}</Link>
                     <p>{matchNode}</p>
                 </li>
             );
