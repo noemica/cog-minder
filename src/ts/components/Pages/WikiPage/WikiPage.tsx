@@ -1,5 +1,6 @@
-import { ReactNode, useMemo, useState } from "react";
+import { ReactNode, useEffect, useMemo, useState } from "react";
 import { Route, Router, Switch, useLocation, useRoute } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 
 import wiki from "../../../../json/wiki.json";
 import { Bot } from "../../../types/botTypes";
@@ -392,6 +393,8 @@ export default function WikiPage() {
         showEdit: false,
     });
 
+    const [hashLocation] = useHashLocation();
+
     const [allEntries, allowedEntries] = useMemo(() => {
         const allEntries = initEntries(botData, itemData);
 
@@ -402,6 +405,18 @@ export default function WikiPage() {
 
         return [allEntries, allowedEntries];
     }, [botData, itemData, spoilers]);
+
+    useEffect(() => {
+        // If hash location has changed, need to manually scroll the div into view
+        // Linking may not work without this as the element needs to be immediately
+        // available when the page first renders, which may be delayed if the
+        // javascript is not immediately loaded
+        const element = document.getElementById(hashLocation.slice(1));
+
+        if (element !== null) {
+            element.scrollIntoView();
+        }
+    }, [hashLocation]);
 
     let baseEntry: WikiEntry | undefined;
     let entry: WikiEntry | undefined;

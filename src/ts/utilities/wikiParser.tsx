@@ -2,6 +2,7 @@ import { Fragment, ReactNode } from "react";
 import { Link } from "wouter";
 
 import lore from "../../json/lore.json";
+import LinkIcon from "../components/Icons/LinkIcon";
 import { BotLink, ItemLink, LocationLink } from "../components/Pages/WikiPage/WikiTooltips";
 import { Bot } from "../types/botTypes";
 import { MapLocation, Spoiler } from "../types/commonTypes";
@@ -96,7 +97,6 @@ export function createContentHtml(
 
     // Process initial content by replacing any instances of [XYZ] in links with {{xyz}}
     // Otherwise we have issues with the regex for any links that include square brackets in them
-    // TODO still needed?
     const initialContent = entry.content.replace(/([^[])\[([\w/]*)\]/g, (_, p1, p2) => {
         return `${p1}{{${p2}}}`;
     });
@@ -131,6 +131,7 @@ export function createContentHtml(
             <>
                 <h1 className="wiki-emphasized-heading">
                     {headingLink ? <Link href={`/${getLinkSafeString(entry.name)}`}>{headingText}</Link> : headingText}
+                    <LinkIcon href="#" />
                 </h1>
                 {outputHtml}
             </>
@@ -173,6 +174,51 @@ export function createPreviewContent(content: string, spoilerState: Spoiler): st
     content = content.replace(imageRegex, "");
 
     return content;
+}
+
+function getIdSafeName(text: string) {
+    // Creates an ID safe name, stripping out tags to get to the displayed text
+    const actionRegex = /\[\[([^\]:]*)(?::([^\]]*))?\]\]/g;
+
+    let result: RegExpExecArray | null;
+
+    let textId = "";
+    let index = 0;
+
+    while ((result = actionRegex.exec(text))) {
+        if (result.index > index) {
+            textId += text.slice(index, result.index);
+        }
+
+        if (actionMap.has(result[1].replace("/", ""))) {
+            // Inline content types, skip the tags entirely
+        } else {
+            // [[Link]] or [[Link|Text]], strip content inside tag
+            if (result[1].includes("|")) {
+                textId += result[1].slice(result[1].indexOf("|") + 1);
+            } else {
+                textId += result[1];
+            }
+        }
+
+        index = result.index + result[0].length;
+
+        if (index >= text.length) {
+            break;
+        }
+    }
+
+    if (index < text.length) {
+        textId += text.slice(index);
+    }
+
+    // Replace all spaces with underscore since spaces are technically not allowed
+    textId = textId.replaceAll(" ", "_");
+
+    // Strip out all chars except for alphabetical and -/_s.
+    textId = textId.replaceAll(/[^\w-]/g, "").toLowerCase();
+
+    return textId;
 }
 
 function getLinkNode(state: ParserState, referenceEntry: WikiEntry, linkText: string) {
@@ -569,7 +615,7 @@ function processGameTextTag(state: ParserState, result: RegExpExecArray) {
     const gameTextContent = (
         <span className="wiki-game-text">{outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</span>
     );
-    // TODO needed?
+    // TODO still get the {{/}}s in here, will need to unescape
     // .replace("{{", "[")
     // .replace("}}", "]");
 
@@ -696,6 +742,8 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
     state.index = tempState.index;
     let headingContent = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
 
+    const id = getIdSafeName(state.initialContent.slice(subSectionStart, state.index - "[[/Heading]]".length));
+
     if (state.inSpoiler) {
         headingContent = <span className="spoiler-text spoiler-text-multiline">{headingContent}</span>;
     }
@@ -703,12 +751,33 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
     if (type === "1") {
         state.output.push({
             groupType: "Individual",
-            node: <h2 className="wiki-emphasized-heading">{headingContent}</h2>,
+            node: (
+                <h2 id={id} className="wiki-emphasized-heading">
+                    {headingContent}
+                    <LinkIcon href={`#${id}`} />
+                </h2>
+            ),
         });
     } else if (type === "2") {
-        state.output.push({ groupType: "Individual", node: <h3 className="wiki-heading">{headingContent}</h3> });
+        state.output.push({
+            groupType: "Individual",
+            node: (
+                <h3 id={id} className="wiki-heading">
+                    {headingContent}
+                    <LinkIcon href={`#${id}`} />
+                </h3>
+            ),
+        });
     } else {
-        state.output.push({ groupType: "Individual", node: <h4 className="wiki-heading">{headingContent}</h4> });
+        state.output.push({
+            groupType: "Individual",
+            node: (
+                <h4 id={id} className="wiki-heading">
+                    {headingContent}
+                    <LinkIcon href={`#${id}`} />
+                </h4>
+            ),
+        });
     }
 }
 
@@ -990,6 +1059,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["Redacted", processSpoilerTag],
     ["Table", processTableTag],
 ]);
+
 // Processes the current section of text in the parser state
 function processSection(state: ParserState, endTag: string | undefined) {
     // Global regex for actions in the form of [[X]] or [[X:Y]]

@@ -5,6 +5,7 @@ import { Redirect, Route, Router, Switch, useLocation } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
 
 import { getLinkSafeString, isDev, rootDirectory } from "../../utilities/common";
+import { useLastLocation } from "../Effects/useLocalStorageValue";
 import useThemeUpdater from "../Effects/useThemeUpdater";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import PageHeader from "../PageHeader/PageHeader";
@@ -73,7 +74,7 @@ const WikiPage = React.lazy(() =>
 function Routes() {
     const [hashLocation] = useHashLocation();
 
-    return (
+    const routes = (
         <Switch>
             {/* Main routes */}
             <Route path="/">
@@ -153,6 +154,8 @@ function Routes() {
             <Route>Page not found!</Route>
         </Switch>
     );
+
+    return routes;
 }
 
 function errorFallback(error: Error) {
@@ -187,10 +190,14 @@ function errorFallback(error: Error) {
 export default function App() {
     useThemeUpdater();
     const [location] = useLocation();
+    const [lastLocation, setLastLocation] = useLastLocation();
 
     // Explicitly scroll back to top whenever the URL changes
     useEffect(() => {
-        window.scrollTo(0, 0);
+        if (location !== lastLocation) {
+            window.scrollTo(0, 0);
+            setLastLocation(location);
+        }
     }, [location]);
 
     return (

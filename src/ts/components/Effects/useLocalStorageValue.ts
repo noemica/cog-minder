@@ -9,6 +9,7 @@ import {
 import { Spoiler, ThemeType, isValidSpoilerType, isValidThemeType } from "../../types/commonTypes";
 
 const localStorageCombatLogChartDisplayOptions = "combatLogChartDisplayOptions";
+const localStorageLastLocationName = "lastLocation";
 const localStorageSpoilersName = "spoilers";
 const localStorageThemeName = "theme";
 const localStorageWikiEntriesName = "wikiEntries";
@@ -30,6 +31,10 @@ export function useSpoilers() {
 
 export function useEditableSpoilers() {
     return useEditableValue<Spoiler>(localStorageSpoilersName, "None", isValidSpoilerType);
+}
+
+export function useLastLocation() {
+    return useEditableValue<string>(localStorageLastLocationName, "/");
 }
 
 export function useTheme() {
