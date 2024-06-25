@@ -3,21 +3,6 @@ import LZString from "lz-string";
 import { ReactNode, useRef, useState } from "react";
 import { useLocation, useSearch } from "wouter";
 
-import {
-    forceBoosterMaxDamageIncrease,
-    getBotDefensiveState,
-    getRangedVolleyTime,
-    getRecoil,
-    initialMeleeAccuracy,
-    initialRangedAccuracy,
-    meleeAnalysisMinDamageIncrease,
-    siegeModeBonusMap,
-    simulateCombat,
-    maxVolleys as simulatorMaxVolleys,
-    sizeAccuracyMap,
-    spectrumToNumber,
-    volleyTimeMap,
-} from "../../../utilities/simulatorCalcs";
 import { Bot } from "../../../types/botTypes";
 import { Critical, DamageType, Item, PropulsionItem, WeaponItem } from "../../../types/itemTypes";
 import {
@@ -37,6 +22,21 @@ import {
 import { BotData } from "../../../utilities/BotData";
 import { ItemData } from "../../../utilities/ItemData";
 import { getLocationFromState, parseIntOrDefault, parseSearchParameters } from "../../../utilities/common";
+import {
+    forceBoosterMaxDamageIncrease,
+    getBotDefensiveState,
+    getRangedVolleyTime,
+    getRecoil,
+    initialMeleeAccuracy,
+    initialRangedAccuracy,
+    meleeAnalysisMinDamageIncrease,
+    siegeModeBonusMap,
+    simulateCombat,
+    maxVolleys as simulatorMaxVolleys,
+    sizeAccuracyMap,
+    spectrumToNumber,
+    volleyTimeMap,
+} from "../../../utilities/simulatorCalcs";
 import Button from "../../Buttons/Button";
 import ScatterLineChart, { ScatterChartDataGroup } from "../../Charts/BaseCharts/ScatterLineChart";
 import useBotData from "../../Effects/useBotData";
@@ -784,12 +784,12 @@ export default function SimulatorPage() {
             title = `Time Units/Kill vs ${activeChartState.botName}`;
             cumulativeData = activeChartState.cumulativeKillPerTuData;
             perXData = activeChartState.killPerTuData;
-            xLabel = "Number of Volleys";
+            xLabel = "Number of Time Units";
         } else {
             title = `Volleys/Kill vs ${activeChartState.botName}`;
             cumulativeData = activeChartState.cumulativeKillPerVolleyData;
             perXData = activeChartState.killPerVolleyData;
-            xLabel = "Number of Time Units";
+            xLabel = "Number of Volleys";
         }
 
         activeSimulationChart = (
