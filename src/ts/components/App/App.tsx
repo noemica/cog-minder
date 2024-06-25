@@ -3,21 +3,71 @@ import React from "react";
 import { Redirect, Route, Router, Switch, useLocation } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
 
-import { getLinkSafeString, rootDirectory } from "../../utilities/common";
+import { getLinkSafeString, isDev, rootDirectory } from "../../utilities/common";
 import useThemeUpdater from "../Effects/useThemeUpdater";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import PageHeader from "../PageHeader/PageHeader";
 
-const AboutPage = React.lazy(() => import("../Pages/AboutPage/AboutPage"));
-const BotsPage = React.lazy(() => import("../Pages/BotsPage/BotsPage"));
-const BuildPage = React.lazy(() => import("../Pages/BuildPage/BuildPage"));
-const CombatPage = React.lazy(() => import("../Pages/CombatPage"));
-const HacksPage = React.lazy(() => import("../Pages/HacksPage/HacksPage"));
-const LorePage = React.lazy(() => import("../Pages/LorePage/LorePage"));
-const PartsPage = React.lazy(() => import("../Pages/PartsPage/PartsPage"));
-const RifPage = React.lazy(() => import("../Pages/RifPage/RifPage"));
-const SimulatorPage = React.lazy(() => import("../Pages/SimulatorPage/SimulatorPage"));
-const WikiPage = React.lazy(() => import("../Pages/WikiPage/WikiPage"));
+class LazyLoadError extends Error {
+    constructor(error: any) {
+        super(error);
+        this.name = "LazyLoadError";
+    }
+}
+
+// If any of these lazily loaded pages fail to load, throw a special error
+// that will trigger a reload. This should only happen on new page navigation
+// so state is not lost.
+const AboutPage = React.lazy(() =>
+    import("../Pages/AboutPage/AboutPage").catch(() => {
+        throw new LazyLoadError("Failed to load AboutPage");
+    }),
+);
+const BotsPage = React.lazy(() =>
+    import("../Pages/BotsPage/BotsPage").catch(() => {
+        throw new LazyLoadError("Failed to load BotsPage");
+    }),
+);
+const BuildPage = React.lazy(() =>
+    import("../Pages/BuildPage/BuildPage").catch(() => {
+        throw new LazyLoadError("Failed to load BuildPage");
+    }),
+);
+const CombatPage = React.lazy(() =>
+    import("../Pages/CombatPage").catch(() => {
+        throw new LazyLoadError("Failed to load CombatPage");
+    }),
+);
+const HacksPage = React.lazy(() =>
+    import("../Pages/HacksPage/HacksPage").catch(() => {
+        throw new LazyLoadError("Failed to load HacksPage");
+    }),
+);
+const LorePage = React.lazy(() =>
+    import("../Pages/LorePage/LorePage").catch(() => {
+        throw new LazyLoadError("Failed to load LorePage");
+    }),
+);
+const PartsPage = React.lazy(() =>
+    import("../Pages/PartsPage/PartsPage").catch(() => {
+        throw new LazyLoadError("Failed to load PartsPage");
+    }),
+);
+const RifPage = React.lazy(() =>
+    import("../Pages/RifPage/RifPage").catch(() => {
+        throw new LazyLoadError("Failed to load RifPage");
+    }),
+);
+const SimulatorPage = React.lazy(() =>
+    import("../Pages/SimulatorPage/SimulatorPage").catch(() => {
+        throw new LazyLoadError("Failed to load SimulatorPage");
+    }),
+);
+const WikiPage = React.lazy(() =>
+    import("../Pages/WikiPage/WikiPage").catch(() => {
+        throw new LazyLoadError("Failed to load WikiPage");
+    }),
+);
 
 function Routes() {
     const [hashLocation] = useHashLocation();
@@ -105,6 +155,11 @@ function Routes() {
 }
 
 function errorFallback(error: Error) {
+    if (error instanceof LazyLoadError && !isDev()) {
+        setTimeout(() => location.reload(), 5000);
+        return <p className="error-notice">Cog-Minder has updated, automatically reloading page in 5 seconds...</p>;
+    }
+
     let errorMessage: string;
     let stacktrace: string | undefined = undefined;
     if (typeof error === "string") {
@@ -118,7 +173,10 @@ function errorFallback(error: Error) {
 
     return (
         <>
-            <p className="error-notice">Unexpected error, please report the following</p>
+            <p className="error-notice">Unexpected error, please try refreshing the page.</p>
+            <p className="error-notice">
+                If the issue persists, please report on the on Roguelikes Discord or Cog-Minder Github.
+            </p>
             <p className="error-message">{errorMessage}</p>
             {stacktrace && <p>{stacktrace}</p>}
         </>
