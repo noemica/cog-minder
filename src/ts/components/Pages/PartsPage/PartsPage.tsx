@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import { useLocation, useSearch } from "wouter";
 
 import { Item, ItemSlot } from "../../../types/itemTypes";
@@ -50,7 +50,7 @@ export type PartCategory =
 
 export type PowerSlotType = "Any" | "Engine" | "Power Core" | "Reactor";
 
-export type PropulsionSlotType = "Any" | "Flight" | "Hover" | "Wheel" | "Leg" | "Treads";
+export type PropulsionSlotType = "Any" | "Flight Unit" | "Hover Unit" | "Wheel" | "Leg" | "Treads";
 
 export type UtilitySlotType = "Any" | "Artifact" | "Device" | "Hackware" | "Processor" | "Protection" | "Storage";
 
@@ -60,10 +60,10 @@ export type WeaponSlotType =
     | "Ballistic Gun"
     | "Energy Cannon"
     | "Energy Gun"
-    | "Impact"
     | "Launcher"
-    | "Piercing"
-    | "Slashing"
+    | "Impact Weapon"
+    | "Piercing Weapon"
+    | "Slashing Weapon"
     | "Special Melee Weapon"
     | "Special Weapon";
 

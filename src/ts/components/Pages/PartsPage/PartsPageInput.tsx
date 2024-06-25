@@ -66,8 +66,8 @@ const powerSlotTypeOptions: SelectOptionType<PowerSlotType>[] = [
 
 const propulsionSlotTypeOptions: SelectOptionType<PropulsionSlotType>[] = [
     { value: "Any" },
-    { value: "Flight" },
-    { value: "Hover" },
+    { value: "Flight Unit" },
+    { value: "Hover Unit" },
     { value: "Wheel" },
     { value: "Leg" },
     { value: "Treads" },
@@ -89,10 +89,10 @@ const weaponSlotTypeOptions: SelectOptionType<WeaponSlotType>[] = [
     { value: "Ballistic Gun" },
     { value: "Energy Cannon" },
     { value: "Energy Gun" },
-    { value: "Impact" },
     { value: "Launcher" },
-    { value: "Piercing" },
-    { value: "Slashing" },
+    { value: "Impact Weapon" },
+    { value: "Piercing Weapon" },
+    { value: "Slashing Weapon" },
     { value: "Special Melee Weapon" },
     { value: "Special Weapon" },
 ];

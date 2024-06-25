@@ -1,12 +1,10 @@
 import React, { ReactNode, useState } from "react";
-import { createFilter } from "react-select";
 
 import {
     Critical,
     DamageType,
     HeatTransfer,
     Item,
-    ItemType,
     ItemWithUpkeep,
     PowerItem,
     PropulsionItem,
@@ -742,7 +740,6 @@ function ComparisonContent({ leftItem, rightItem }: { leftItem: Item; rightItem:
 }
 
 export default function PartsComparisonDisplay({
-    pageState,
     itemData,
     items,
 }: {
