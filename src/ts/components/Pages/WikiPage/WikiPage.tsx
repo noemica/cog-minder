@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useMemo, useState } from "react";
 import { Route, Router, Switch, useLocation, useRoute } from "wouter";
+// eslint-disable-next-line import/no-unresolved
 import { useHashLocation } from "wouter/use-hash-location";
 
 import wiki from "../../../../json/wiki.json";
@@ -407,16 +408,17 @@ export default function WikiPage() {
     }, [botData, itemData, spoilers]);
 
     useEffect(() => {
-        // If hash location has changed, need to manually scroll the div into view
-        // Linking may not work without this as the element needs to be immediately
-        // available when the page first renders, which may be delayed if the
-        // javascript is not immediately loaded
+        // If hash location has been set on initial load, we need to manually
+        // scroll the div into view. Linking may not work without this as the
+        // element needs to be immediately available when the page first
+        // renders, which may not be true if the javascript is not immediately
+        // loaded/cached. Thus, this only needs to be done on initial load.
         const element = document.getElementById(hashLocation.slice(1));
 
         if (element !== null) {
             element.scrollIntoView();
         }
-    }, [hashLocation]);
+    }, []);
 
     let baseEntry: WikiEntry | undefined;
     let entry: WikiEntry | undefined;

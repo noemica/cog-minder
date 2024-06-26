@@ -1,4 +1,5 @@
 Small ideas:
+- Enforce proper headings (heading 1 -> 2 -> 3) and no skips (heading 1 -> 3) in wiki
 
 Medium ideas:
 - Add ignore obsolete parts in search

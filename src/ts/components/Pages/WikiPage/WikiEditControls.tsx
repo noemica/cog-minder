@@ -174,6 +174,12 @@ export default function WikiEditControls({
                     Heading 3
                 </Button>
                 <Button
+                    tooltip="Provides the smallest heading line containing the given text."
+                    onClick={() => insertWrappedText("[[Heading:4]]", "[[/Heading]]")}
+                >
+                    Heading 4
+                </Button>
+                <Button
                     tooltip="Creates an image on the right side of the page with an optional caption in the form of [[Image]]Image Name.png|Image Caption[[/Image]]. May also use an external URL."
                     onClick={() => insertWrappedText("[[Image]]", "[[/Image]]")}
                 >

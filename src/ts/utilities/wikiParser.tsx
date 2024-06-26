@@ -3,6 +3,7 @@ import { Link } from "wouter";
 
 import lore from "../../json/lore.json";
 import LinkIcon from "../components/Icons/LinkIcon";
+import WikiTableOfContents, { WikiHeadingState } from "../components/Pages/WikiPage/WikiTableOfContents";
 import { BotLink, ItemLink, LocationLink } from "../components/Pages/WikiPage/WikiTooltips";
 import { Bot } from "../types/botTypes";
 import { MapLocation, Spoiler } from "../types/commonTypes";
@@ -36,6 +37,7 @@ class ParserState {
     allEntries: Map<string, WikiEntry>;
     botData: BotData;
     errors: string[];
+    headings: WikiHeadingState[];
     images: Set<string>;
     inSpoiler: boolean;
     initialContent: string;
@@ -49,6 +51,7 @@ class ParserState {
         allEntries: Map<string, WikiEntry>,
         botData: BotData,
         errors: string[],
+        headings: WikiHeadingState[],
         images: Set<string>,
         inSpoiler: boolean,
         initialContent: string,
@@ -59,6 +62,7 @@ class ParserState {
         this.allEntries = allEntries;
         this.botData = botData;
         this.errors = errors;
+        this.headings = headings;
         this.images = images;
         this.inSpoiler = inSpoiler;
         this.initialContent = initialContent;
@@ -74,6 +78,7 @@ class ParserState {
             state.allEntries,
             state.botData,
             state.errors,
+            state.headings,
             state.images,
             state.inSpoiler,
             state.initialContent,
@@ -82,6 +87,53 @@ class ParserState {
             state.spoiler,
         );
     }
+}
+
+function cleanHeadingText(text: string): { text: string; id: string } {
+    // First strips out tags to get the real displayed text
+    // Then creates an ID from it
+    const actionRegex = /\[\[([^\]:]*)(?::([^\]]*))?\]\]/g;
+
+    let result: RegExpExecArray | null;
+
+    let cleanedText = "";
+    let index = 0;
+
+    while ((result = actionRegex.exec(text))) {
+        if (result.index > index) {
+            cleanedText += text.slice(index, result.index);
+        }
+
+        if (actionMap.has(result[1].replace("/", ""))) {
+            // Inline content types, skip the tags entirely
+        } else {
+            // [[Link]] or [[Link|Text]], strip content inside tag
+            if (result[1].includes("|")) {
+                cleanedText += result[1].slice(result[1].indexOf("|") + 1);
+            } else {
+                cleanedText += result[1];
+            }
+        }
+
+        index = result.index + result[0].length;
+
+        if (index >= text.length) {
+            break;
+        }
+    }
+
+    if (index < text.length) {
+        cleanedText += text.slice(index);
+    }
+
+    // Replace all spaces with underscore since spaces are technically not allowed
+    // Then strip out all chars except for alphabetical and -/_s.
+    const textId = cleanedText
+        .replaceAll(" ", "_")
+        .replaceAll(/[^\w-]/g, "")
+        .toLowerCase();
+
+    return { text: cleanedText, id: textId };
 }
 
 // Creates the HTML content of a wiki entry
@@ -103,6 +155,7 @@ export function createContentHtml(
     const state = new ParserState(
         allEntries,
         botData,
+        [],
         [],
         new Set<string>(),
         false,
@@ -133,6 +186,7 @@ export function createContentHtml(
                     {headingLink ? <Link href={`/${getLinkSafeString(entry.name)}`}>{headingText}</Link> : headingText}
                     <LinkIcon href="#" />
                 </h1>
+                <WikiTableOfContents headings={state.headings} />
                 {outputHtml}
             </>
         ),
@@ -174,51 +228,6 @@ export function createPreviewContent(content: string, spoilerState: Spoiler): st
     content = content.replace(imageRegex, "");
 
     return content;
-}
-
-function getIdSafeName(text: string) {
-    // Creates an ID safe name, stripping out tags to get to the displayed text
-    const actionRegex = /\[\[([^\]:]*)(?::([^\]]*))?\]\]/g;
-
-    let result: RegExpExecArray | null;
-
-    let textId = "";
-    let index = 0;
-
-    while ((result = actionRegex.exec(text))) {
-        if (result.index > index) {
-            textId += text.slice(index, result.index);
-        }
-
-        if (actionMap.has(result[1].replace("/", ""))) {
-            // Inline content types, skip the tags entirely
-        } else {
-            // [[Link]] or [[Link|Text]], strip content inside tag
-            if (result[1].includes("|")) {
-                textId += result[1].slice(result[1].indexOf("|") + 1);
-            } else {
-                textId += result[1];
-            }
-        }
-
-        index = result.index + result[0].length;
-
-        if (index >= text.length) {
-            break;
-        }
-    }
-
-    if (index < text.length) {
-        textId += text.slice(index);
-    }
-
-    // Replace all spaces with underscore since spaces are technically not allowed
-    textId = textId.replaceAll(" ", "_");
-
-    // Strip out all chars except for alphabetical and -/_s.
-    textId = textId.replaceAll(/[^\w-]/g, "").toLowerCase();
-
-    return textId;
 }
 
 function getLinkNode(state: ParserState, referenceEntry: WikiEntry, linkText: string) {
@@ -526,6 +535,7 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
             state.allEntries,
             state.botData,
             state.errors,
+            state.headings,
             state.images,
             false,
             groupEntry.content,
@@ -728,8 +738,8 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
 
     if (type === undefined) {
         type = "1";
-    } else if (type !== "1" && type !== "2" && type !== "3") {
-        recordError(state, `Found bad heading type ${type}, should be 1, 2, or 3`);
+    } else if (type !== "1" && type !== "2" && type !== "3" && type !== "4") {
+        recordError(state, `Found bad heading type ${type}, should be 1, 2, 3, or 4`);
         type = "1";
     }
 
@@ -742,7 +752,19 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
     state.index = tempState.index;
     let headingContent = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
 
-    const id = getIdSafeName(state.initialContent.slice(subSectionStart, state.index - "[[/Heading]]".length));
+    const { text: cleanedText, id } = cleanHeadingText(
+        state.initialContent.slice(subSectionStart, state.index - "[[/Heading]]".length),
+    );
+
+    if (state.headings.find((heading) => heading.id === id)) {
+        recordError(state, `Found duplicate heading ID ${id}`, result.index);
+    } else {
+        state.headings.push({
+            id: id,
+            indent: parseInt(type),
+            text: cleanedText,
+        });
+    }
 
     if (state.inSpoiler) {
         headingContent = <span className="spoiler-text spoiler-text-multiline">{headingContent}</span>;
@@ -768,7 +790,7 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
                 </h3>
             ),
         });
-    } else {
+    } else if (type === "3") {
         state.output.push({
             groupType: "Individual",
             node: (
@@ -776,6 +798,16 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
                     {headingContent}
                     <LinkIcon href={`#${id}`} />
                 </h4>
+            ),
+        });
+    } else {
+        state.output.push({
+            groupType: "Individual",
+            node: (
+                <h5 id={id} className="wiki-heading">
+                    {headingContent}
+                    <LinkIcon href={`#${id}`} />
+                </h5>
             ),
         });
     }

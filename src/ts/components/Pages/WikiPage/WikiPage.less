@@ -412,3 +412,30 @@
         }
     }
 }
+
+.wiki-table-of-contents {
+    display: table;
+    background-color: @element-background-color;
+
+    margin-bottom: @medium-gap;
+
+    > details {
+        border: @border-width solid @border-color;
+        padding: @medium-gap;
+
+        > summary {
+            cursor: pointer;
+            user-select: none;
+
+            font-size: @wiki-table-of-contents-font-size;
+        }
+        
+        > ul {
+            margin: 0;
+        }
+
+        li {
+            line-height: @wiki-table-of-contents-line-height;
+        }
+    }
+}
