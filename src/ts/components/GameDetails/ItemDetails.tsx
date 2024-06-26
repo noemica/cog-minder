@@ -626,7 +626,7 @@ function UtilityPartDetails({ item }: { item: UtilityItem }) {
                 defaultValueString="+0"
                 maxValue={20}
                 value={item.heatGeneration}
-                valueString={"-" + item.heatGeneration}
+                valueString={"+" + item.heatGeneration}
             />
         </>
     );
