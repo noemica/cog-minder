@@ -192,7 +192,7 @@ export default function App() {
     const [location] = useLocation();
     const [lastLocation, setLastLocation] = useLastLocation();
 
-    // Explicitly scroll back to top whenever the URL changes
+    // Explicitly scroll back to top whenever the subpage changes
     useEffect(() => {
         if (location !== lastLocation) {
             window.scrollTo(0, 0);

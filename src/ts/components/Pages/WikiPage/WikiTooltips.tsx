@@ -11,13 +11,13 @@ import ItemDetails from "../../GameDetails/ItemDetails";
 import LocationDetails from "../../GameDetails/LocationDetails";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../../Popover/Tooltip";
 
-export function BotLink({ bot, text }: { bot: Bot; text?: string }) {
+export function BotLink({ bot, linkTarget, text }: { bot: Bot; linkTarget?: string; text?: string }) {
     const positioning = usePopoverPositioning();
 
     return (
         <Tooltip placement={positioning.placement} shouldShift={positioning.shouldShift}>
             <TooltipTrigger asChild={true}>
-                <Link href={`/${getLinkSafeString(bot.name)}`}>{text || bot.name}</Link>
+                <Link href={linkTarget || `/${getLinkSafeString(bot.name)}`}>{text || bot.name}</Link>
             </TooltipTrigger>
             <TooltipContent floatingArrowClassName="bot-tooltip-arrow" className="bot-tooltip">
                 <BotDetails bot={bot} />
@@ -26,10 +26,10 @@ export function BotLink({ bot, text }: { bot: Bot; text?: string }) {
     );
 }
 
-export function ItemLink({ item, text }: { item: Item; text?: ReactNode }) {
+export function ItemLink({ item, linkTarget, text }: { item: Item; linkTarget?: string; text?: ReactNode }) {
     return (
         <ItemTooltip item={item}>
-            <Link href={`/${getLinkSafeString(item.name)}`}>{text || item.name}</Link>
+            <Link href={linkTarget || `/${getLinkSafeString(item.name)}`}>{text || item.name}</Link>
         </ItemTooltip>
     );
 }
@@ -47,13 +47,22 @@ export function ItemTooltip({ item, children }: { item: Item; children: ReactNod
     );
 }
 
-export function LocationLink({ location, text }: { location: MapLocation; text?: string; inPopover?: boolean }) {
+export function LocationLink({
+    linkTarget,
+    location,
+    text,
+}: {
+    linkTarget?: string;
+    location: MapLocation;
+    text?: string;
+    inPopover?: boolean;
+}) {
     const positioning = usePopoverPositioning();
 
     return (
         <Tooltip placement={positioning.placement} shouldShift={positioning.shouldShift}>
             <TooltipTrigger asChild={true}>
-                <Link href={`/${getLinkSafeString(location.name)}`}>{text || location.name}</Link>
+                <Link href={linkTarget || `/${getLinkSafeString(location.name)}`}>{text || location.name}</Link>
             </TooltipTrigger>
             <TooltipContent floatingArrowClassName="location-tooltip-arrow" className="bot-tooltip">
                 <LocationDetails location={location} inPopover={true} />

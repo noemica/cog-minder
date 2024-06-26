@@ -128,10 +128,7 @@ function cleanHeadingText(text: string): { text: string; id: string } {
 
     // Replace all spaces with underscore since spaces are technically not allowed
     // Then strip out all chars except for alphabetical and -/_s.
-    const textId = cleanedText
-        .replaceAll(" ", "_")
-        .replaceAll(/[^\w-]/g, "")
-        .toLowerCase();
+    const textId = createIdFromText(cleanedText);
 
     return { text: cleanedText, id: textId };
 }
@@ -195,6 +192,14 @@ export function createContentHtml(
     };
 }
 
+// Turns an arbitrary string into an HTML ID-compatible one
+function createIdFromText(text: string) {
+    return text
+        .replaceAll(" ", "_")
+        .replaceAll(/[^\w-]/g, "")
+        .toLowerCase();
+}
+
 // Creates the preview content for a search result
 // This strips out any spoiler/redacted tags as well as their internal content
 // if not allowed by current spoiler level
@@ -230,20 +235,20 @@ export function createPreviewContent(content: string, spoilerState: Spoiler): st
     return content;
 }
 
-function getLinkNode(state: ParserState, referenceEntry: WikiEntry, linkText: string) {
+function getLinkNode(state: ParserState, referenceEntry: WikiEntry, linkText: string, linkTarget?: string) {
     let node: ReactNode | undefined;
 
     if (referenceEntry.type === "Bot") {
         const bot = referenceEntry.extraData as Bot;
-        node = <BotLink bot={bot} text={linkText} />;
+        node = <BotLink bot={bot} linkTarget={linkTarget} text={linkText} />;
     } else if (referenceEntry.type === "Location") {
         const location = referenceEntry.extraData as MapLocation;
-        node = <LocationLink location={location} text={linkText} />;
+        node = <LocationLink linkTarget={linkTarget} location={location} text={linkText} />;
     } else if (referenceEntry.type === "Part") {
         const item = referenceEntry.extraData as Item;
-        node = <ItemLink item={item} text={linkText} />;
+        node = <ItemLink  item={item} linkTarget={linkTarget} text={linkText} />;
     } else {
-        node = <Link href={`/${getLinkSafeString(referenceEntry.name)}`}>{linkText}</Link>;
+        node = <Link href={linkTarget || `/${getLinkSafeString(referenceEntry.name)}`}>{linkText}</Link>;
     }
 
     if (!canShowSpoiler(referenceEntry.spoiler, state.spoiler) && !state.inSpoiler) {
@@ -964,7 +969,7 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
     // Remove the earlier substituted {{ and }}s for their proper [ and ] counterparts
     const split = result[1].replace("{{", "[").replace("}}", "]").split("|");
 
-    const linkTarget = split[0];
+    let linkTarget: string | undefined = split[0];
     let linkText = linkTarget;
     if (split.length > 1) {
         linkText = split[1];
@@ -974,9 +979,28 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
         }
     }
 
-    const referenceEntry = state.allEntries.get(linkTarget);
+    let referenceEntry: WikiEntry | undefined;
+
+    const hashSplit = linkTarget.split("#");
+    if (hashSplit.length > 1 && state.allEntries.get(hashSplit[0]) !== undefined) {
+        // Need to split # portion out in order to convert to the real heading ID
+        referenceEntry = state.allEntries.get(hashSplit[0]);
+
+        linkTarget = `/${getLinkSafeString(hashSplit[0])}#${createIdFromText(hashSplit[1])}`;
+
+        if (split.length > 2) {
+            recordError(state, "Too many # in link");
+        }
+    } else {
+        referenceEntry = state.allEntries.get(linkTarget);
+
+        if (referenceEntry !== undefined) {
+            linkTarget = `/${getLinkSafeString(linkTarget)}`;
+        }
+    }
+
     if (referenceEntry !== undefined) {
-        const html = getLinkNode(state, referenceEntry, linkText);
+        const html = getLinkNode(state, referenceEntry, linkText, linkTarget);
 
         state.output.push({
             groupType: "Grouped",

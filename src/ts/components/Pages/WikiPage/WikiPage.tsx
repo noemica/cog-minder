@@ -413,12 +413,14 @@ export default function WikiPage() {
         // element needs to be immediately available when the page first
         // renders, which may not be true if the javascript is not immediately
         // loaded/cached. Thus, this only needs to be done on initial load.
-        const element = document.getElementById(hashLocation.slice(1));
+        setTimeout(() => {
+            const element = document.getElementById(hashLocation.slice(1));
 
-        if (element !== null) {
-            element.scrollIntoView();
-        }
-    }, []);
+            if (element !== null) {
+                element.scrollIntoView();
+            }
+        }, 0);
+    }, [hashLocation]);
 
     let baseEntry: WikiEntry | undefined;
     let entry: WikiEntry | undefined;
