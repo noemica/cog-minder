@@ -1014,7 +1014,7 @@
     "Assembled (4)",
     "Assembled (7)"
    ],
-   "Content": "The Assembled are small swarming hovering robots often found in [[Caves]] as part of infestations or otherwise. They are weak to slashing, impact and piercing damage but immune to hacking. Blowing them up with explosions is a good way to deal with them. [[Redacted]]If a [[Core Reset Matrix]] was used, the Assembled will no longer be hostile and instead be purple uncontrollable allies.[[/Redacted]]"
+   "Content": "The Assembled are small swarming hovering robots that can be found in various infestation-related events. Due to their apperanece in groups, low core, and high core exposure, using explosive [[Launchers]] is the best way to deal with them. [[Spoiler]]If a [[Core Reset Matrix]] was used, the Assembled will no longer be hostile and instead be purple uncontrollable allies.[[/Spoiler]]"
   },
   {
    "Name": "Behemoth",
@@ -1024,7 +1024,7 @@
     "B-90 Cyclops",
     "B-99 Colossus"
    ],
-   "Content": "Behemoths are heavily [[Armor|armored]] [[Treads|treading]] [[0b10]] bots that wield fearsome armaments. Behemoths are somewhat resistant to system corruption and electromagnetic damage, and earlier models are slightly weak to thermal damage. Behemoths upon sighting an enemy will fire at them even through walls, as their armaments are very capable of making holes to pass through. Engaging a behemoth is not a good idea unless you are really prepared for combat. Thankfully though, behemoths are slow so you can outrun them rather easily if you run fast enough and don't get hit too much.\nBehemoths are often found in their own spot inside a wall, often as part of a [[Security Squad]]."
+   "Content": "Behemoths are heavily [[Armor|armored]] [[Treads|treading]] [[0b10]] bots that wield fearsome armaments. Behemoths have innate EM resistance as well as corruption resistance through [[Dynamic Insulation System|Dynamic Insulation Systems]]. They also have a slight weakness to thermal damage, but higher tier versions patch this weakness up with thermal-resistant armor. Behemoths upon sighting an enemy will fire at them even through walls, as their armaments are very capable of making holes to pass through. Engaging a Behemoth is not a good idea unless you are really prepared for combat. Thankfully, behemoths are slow so you can outrun them rather easily if you run fast enough and don't get hit too much.\nBehemoths are often found in their own spot inside a wall as part of a [[Security Squad]]. In [[Caves]], they can be found in a small square open area."
   },
   {
    "Name": "Brawler",
@@ -1051,7 +1051,7 @@
     "C-35 Carver",
     "C-57 Dissector"
    ],
-   "Content": "Cutters are [[Flight Units|flying]] [[0b10]] aligned combat robots that arrive in a [[Reinforcement Squad]]. Armed with a Saw and Concussive RPG, these units will firstly fire their RPG at the enemy to overwhelm them and move in blazing-fast to try and sever the enemy's parts with their Saw. They are harder to hit due to their [[Reaction Control System]]. Most commonly called at flight builds."
+   "Content": "Cutters are [[Flight Units|flying]] [[0b10]] aligned combat robots that are most often seen in [[Reinforcement Squad|Reinforcement Squads]] after being summoned by [[Heavy|Heavies]] against flying or hovering bots. Armed with a Saw and Concussive RPG, these units will firstly fire their single-use RPG at the enemy and overload to try and sever the enemy's parts with their Saw. They will overload as soon as they are alerted to any hostile bot. They are harder to hit due to their small size and [[Reaction Control System|Reaction Control Systems]]."
   },
   {
    "Name": "Demolisher",
@@ -1060,7 +1060,7 @@
     "D-63 Destroyer",
     "D-83 Annihilator"
    ],
-   "Content": "Demolishers are [[Hover Units|hovering]] [[0b10]] combat robots armed with explosive launchers and a launcher guidance computer. Seen in [[Caves]] as part of a [[Demolisher Squad]] to deal with infestations, as part of an [[Assault Squad]] if Cogmind has too many allies. They have a decent innate resistance to Explosive damage, and are slightly resistant to Impact damage. Demolishers are extremely dangerous as they can destroy parts very fast, and running away from one is hard as they blow up whatever cover you're behind."
+   "Content": "Demolishers are [[Hover Units|hovering]] [[0b10]] combat robots armed with explosive launchers and some form of [[Launcher Guidance Computers|Launcher Guidance Computer]]. They are seen most often in [[Demolisher Squad|Demolisher Squads]] to deal with infestations and as part of an [[Assault Squad]] if Cogmind has allies. They have heavy resistance to explosive damage, so they don't take much damage from their own explosions. Demolishers are extremely dangerous as they can deal out damage very quickly to Cogmind and any allies. Running away from one is hard as they blow up whatever cover you're behind."
   },
   {
    "Name": "Duelist",
@@ -1069,7 +1069,7 @@
     "L-41 Fighter",
     "L-61 Swordsman"
    ],
-   "Content": "Duelists are [[Legs|bipedal]] [[0b10]] combat bots armed with a slashing weapon, with which they attempt to close distance  and melee the victim while severing parts. They are more accurate in melee, and have [[Core Shielding]] making it harder to damage their core. Later variants are equipped with [[Microactuators]] making them faster in melee. They have a slight resistance to Slashing and Piercing.\nRecommended to not let them get up close to you."
+   "Content": "Duelists are [[Legs|bipedal]] [[0b10]] combat bots armed with a slashing weapon, with which they attempt to close distance  and melee the victim while severing parts. They are more accurate in melee, and have [[Core Shielding]] making it harder to damage their core and impossible to destroy directly with destroy critical hits. Later variants are equipped with [[Microactuators]] making them attack faster in melee. They have a slight resistance to Slashing and Piercing.\nRecommended to not let them get up close to you."
   },
   {
    "Name": "Exiles (Group)",
@@ -1079,7 +1079,7 @@
     "EX-DEC",
     "EX-HEX"
    ],
-   "Content": "The Exiles are a group of 3 [[Tinkerer]]-like bots and their bodyguard [[8R-AWN]] stationed at [[Exiles (Location)]].\n[[EX-DEC]] wields their [[AWS/EX-DEC]] and may fight if provoked, but others (except 8R-AWN) are unarmed."
+   "Content": "The Exiles are a group of 3 [[Tinkerer]]-like bots and their bodyguard [[8R-AWN]] stationed at [[Exiles (Location)]].\n[[EX-DEC]] wields their [[AWS/EX-DEC]] and [[8R-AWN]] wields 2 [[8R-AWN's Boregun|Boreguns]] and may fight if provoked, but the others are unarmed."
   },
   {
    "Name": "Experimental",
