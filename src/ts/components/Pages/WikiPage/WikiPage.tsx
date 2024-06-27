@@ -413,7 +413,14 @@ export default function WikiPage() {
         // element needs to be immediately available when the page first
         // renders, which may not be true if the javascript is not immediately
         // loaded/cached. Thus, this only needs to be done on initial load.
-        const element = document.getElementById(hashLocation.slice(1));
+        const hash = hashLocation.slice(1);
+
+        if (hash.length === 0) {
+            // Return early to get rid of console warning
+            return;
+        }
+
+        const element = document.getElementById(hash);
 
         if (element !== null) {
             element.scrollIntoView();
