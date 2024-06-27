@@ -186,7 +186,10 @@ export function createContentHtml(
                     {headingLink ? <Link href={`/${getLinkSafeString(entry.name)}`}>{headingText}</Link> : headingText}
                     <LinkIcon href="#" />
                 </h1>
-                <WikiTableOfContents headings={state.headings} />
+                {
+                    // If the base heading is a link, don't create a TOC
+                    headingLink ? undefined : <WikiTableOfContents headings={state.headings} />
+                }
                 {outputHtml}
             </>
         ),
