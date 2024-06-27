@@ -558,7 +558,8 @@ Some good uses of the Chronowheel include:
 "Cmb. Gravmag System","Part",""
 "Cmb. Linear Gravjet","Part",""
 "Cobbler","Bot",""
-"Cobbler Unit","Part","Produces one of the following items, some of which are rarer than others:\n[[List]]\n[[Sub. Laser]] ~7%|[[Sub. Power Source]] ~7%|\n[[Sub. Beam Cannon]] ~6%|[[Sub. Monowheel]] ~6%|\n[[Barrage Gun]] ~5%|[[Battle Cannon]] ~5%|[[Battle Rifle]] ~5%|[[Flamer]] ~5%|[[Sub. Machine Gun]] ~5%\n[[/List]]\n[[List]]\n[[Mak. Light Armor Plating]] ~4%|\n[[Piercing Trap]] ~3%|[[Riot Gun]] ~3%|[[Scrap Shield]] ~3%|[[Shrapnel Trap]] ~3%|[[Spk. Treads]] ~3%|[[Sub. Optics]] ~3%\n[[/List]]\n[[List]]\n[[Mak. Thermal Plating]] ~2%|[[Sub. Shrapnel Launcher]] ~2%|\n[[Humpback]] ~1%|[[Mak. Axe]] ~1%|[[Mak. Flight Unit]] ~1%|[[Mak. Kinetic Plating]] ~1%|[[Mak. Hacking Suite]] ~1%|[[Mak. Hammer]] ~1%|[[Mak. Laser]] ~1%|[[Mak. Leg]] ~1%|[[Mak. Spear]] ~1%|[[Mak. Sword]] ~1%|[[Mak. System Shield]] ~1%|[[Multitool]] ~1%|[[Ripper]] ~1%\n[[/List]]\n[[List]]\n[[Enh. Flamer]] ~0.5%|[[Hvy. Riot Gun]] ~0.5%|[[Hvy. Battle Rifle]] ~0.5%|[[Mak. Power Source]] ~0.5%|[[Mak. Shrapnel Gun]] ~0.5%|[[Mak. System Restoration Module]] ~0.5%|[[Slug Cannon]] ~0.5%\n[[/List]]"
+"Cobbler Unit","Part","Produces one of the following items:
+[[List]][[Barrage Gun]]|[[Battle Cannon]]|[[Battle Rifle]]|[[Enh. Flamer]]|[[Flamer]]|[[Humpback]]|[[Hvy. Riot Gun]]|[[Hvy. Battle Rifle]]|[[Mak. Light Armor Plating]]|[[Mak. Axe]]|[[Mak. Kinetic Plating]]|[[Mak. Hacking Suite]]|[[Mak. Hammer]]|[[Mak. Laser]]|[[Mak. Leg]]|[[Mak. Power Source]]|[[Mak. Shrapnel Gun]]|[[Mak. Spear]]|[[Mak. System Restoration Module]]|[[Mak. System Shield]]|[[Mak. Thermal Plating]]|[[Multitool]]|[[Piercing Trap]]|[[Ripper]]|[[Riot Gun]]|[[Scrap Shield]]|[[Shrapnel Trap]]|[[Spk. Treads]]|[[Sub. Beam Cannon]]|[[Sub. Laser]]|[[Sub. Machine Gun]]|[[Sub. Monowheel]]|[[Sub. Optics]]|[[Sub. Power Source]]|[[Sub. Shrapnel Launcher]]|[[Slug Cannon]][[/List]]"
 "Cogmind","Bot",""
 "Coil Gun","Part",""
 "Cold Fusion Reactor","Part",""
@@ -915,8 +916,6 @@ A link: [[Example]]. A [[Example|link with content different than the link]]. A 
 Links are a type of inline content that can be used anywhere. Other types of inline content are [[B]]bolded text[[/B]] and [[I]]italicized text[[/I]]. Links can also be [[B]][[Example|bolded]][[/B]], [[I]][[Example|italicized]][[/I]], and [[B]][[I]][[Example|both together]][[/I]][[/B]]. Another option is [[GameText]]Inline Game Text[[/GameText]] that uses a separate font style. [[Sub]]Subscript[[/Sub]] and [[Sup]]Superscript[[/Sup]] are also available.
 [[Heading]]Heading type 1[[/Heading]]
 [[Heading:2]]Heading type 2[[/Heading]]
-[[Heading:3]]Heading type 3[[/Heading]]
-[[Heading:4]]Heading type 4[[/Heading]]
 [[Heading:1]]Heading type 1 [[B]]with[[/B]] [[I]]inline[[/I]] [[Example|content]][[/Heading]]
 Text content before an image shows up vertically above.[[Image]]Materials.png|An image [[I]]with[[/I]] [[B]]inline[[/B]] [[Materials|content]] in the caption[[/Image]]Images will show on the far right side of the page while text content after an image shows up to the left of it.
 [[List]]Lists of items|can be generated|like this[[/List]]
