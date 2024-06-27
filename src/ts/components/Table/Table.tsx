@@ -91,19 +91,17 @@ export default function Table<T>({ columns, data, sorting, setSorting }: TablePr
     });
 
     return (
-        <div className="table-container">
-            <table cellSpacing={0} cellPadding={0}>
-                <thead>
-                    {table.getHeaderGroups().map((headerGroup) => (
-                        <TableHeaderGroup key={headerGroup.id} headerGroup={headerGroup} />
-                    ))}
-                </thead>
-                <tbody>
-                    {table.getRowModel().rows.map((row) => (
-                        <TableRow key={row.id} row={row} />
-                    ))}
-                </tbody>
-            </table>
-        </div>
+        <table cellSpacing={0} cellPadding={0}>
+            <thead>
+                {table.getHeaderGroups().map((headerGroup) => (
+                    <TableHeaderGroup key={headerGroup.id} headerGroup={headerGroup} />
+                ))}
+            </thead>
+            <tbody>
+                {table.getRowModel().rows.map((row) => (
+                    <TableRow key={row.id} row={row} />
+                ))}
+            </tbody>
+        </table>
     );
 }
