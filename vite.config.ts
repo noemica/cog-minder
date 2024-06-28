@@ -1,8 +1,11 @@
 import react from "@vitejs/plugin-react";
+import * as child from "child_process";
 import path from "path";
 import { defineConfig } from "vite";
 
 declare const __dirname: string;
+
+const commit = child.execSync("git rev-parse --short HEAD").toString();
 
 export default defineConfig({
     root: "src",
@@ -15,6 +18,9 @@ export default defineConfig({
                 index: path.resolve(__dirname, "src/index.html"),
             },
         },
+    },
+    define: {
+        __COMMIT_HASH__: JSON.stringify(commit),
     },
     plugins: [react()],
 });

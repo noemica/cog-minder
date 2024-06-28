@@ -41,7 +41,7 @@ export default function AboutPage() {
             </ul>
             <p>
                 This is an MIT licensed open source project with the source available on{" "}
-                <a href="https://github.com/noemica/cog-minder">GitHub</a>.
+                <a href="https://github.com/noemica/cog-minder">GitHub</a>. Current commit hash: {__COMMIT_HASH__}
             </p>
             <p>
                 Thanks to Valguris, PI-314, GJ, ZXC, MTF, and Captain Croissandwich from the roguelike discord for
