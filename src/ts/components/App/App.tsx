@@ -196,7 +196,9 @@ function checkUpdate(timer: number, updated: boolean, setUpdated: (updated: bool
         return;
     }
 
-    fetch("https://noemica.github.io/cog-minder/hash.json")
+    fetch("https://noemica.github.io/cog-minder/hash.json", {
+        cache: "no-store",
+    })
         .then((result) => result.json() as HashJson | undefined)
         .then((hashJson) => {
             // @ts-expect-error
