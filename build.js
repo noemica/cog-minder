@@ -7,4 +7,4 @@ execSync("yarn vite build --emptyOutDir");
 
 console.log("Writing git hash file...");
 const current_hash = JSON.stringify(execSync("git rev-parse HEAD").toString().trim());
-writeFileSync("./dist/hash.json", `{"hash": "${current_hash}"}`);
+writeFileSync("./dist/hash.json", `{"hash": ${current_hash}}`);
