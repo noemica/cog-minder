@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
 import React from "react";
 import { Redirect, Route, Router, Switch, useLocation } from "wouter";
 // eslint-disable-next-line import/no-unresolved
@@ -16,6 +16,10 @@ class LazyLoadError extends Error {
         this.name = "LazyLoadError";
     }
 }
+
+type HashJson = {
+    hash?: string;
+};
 
 // If any of these lazily loaded pages fail to load, throw a special error
 // that will trigger a reload. This should only happen on new page navigation
@@ -187,8 +191,28 @@ function errorFallback(error: Error) {
     );
 }
 
+function checkUpdate(timer: number, updated: boolean, setUpdated: (updated: boolean) => void) {
+    if (updated || isDev()) {
+        return;
+    }
+
+    fetch("https://noemica.github.io/cog-minder/hash.json")
+        .then((result) => result.json() as HashJson | undefined)
+        .then((hashJson) => {
+            // @ts-expect-error
+            if (hashJson && hashJson.hash && hashJson.hash !== __COMMIT_HASH__) {
+                setUpdated(true);
+                clearInterval(timer);
+            }
+        })
+        .catch((e) => {
+            console.log(`Failed to check for update: ${e}`);
+        });
+}
+
 export default function App() {
     useThemeUpdater();
+    const [updated, setUpdated] = useState(false);
     const [location] = useLocation();
     const [lastLocation, setLastLocation] = useLastLocation();
 
@@ -200,9 +224,31 @@ export default function App() {
         }
     }, [location]);
 
+    // Check every 5 minutes if we need to update
+    // Once an update has been pushed, it will sometimes cause random issues
+    // where data cannot be fetched due to browser caching (presumably)
+    // It would be a little overbearing to instantly reload the page while the
+    // user might be doing other things, so instead show a "needs update" icon
+    // in the corner
+    useEffect(() => {
+        const timer = setInterval(
+            () => {
+                checkUpdate(timer, updated, setUpdated);
+            },
+            5 * 60 * 1000,
+            [],
+        );
+
+        checkUpdate(timer, updated, setUpdated);
+
+        return () => {
+            clearInterval(timer);
+        };
+    });
+
     return (
         <>
-            <PageHeader />
+            <PageHeader showIcon={updated} />
             <Router base={`/${rootDirectory}`}>
                 <Suspense fallback={<span className="loading-message">Loading</span>}>
                     <ErrorBoundary fallback={errorFallback}>

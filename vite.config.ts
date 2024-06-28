@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 
 declare const __dirname: string;
 
-const commit = child.execSync("git rev-parse --short HEAD").toString();
+const commit = child.execSync("git rev-parse HEAD").toString().trim().toString();
 
 export default defineConfig({
     root: "src",

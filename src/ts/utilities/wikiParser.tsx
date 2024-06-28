@@ -2,7 +2,7 @@ import { Fragment, ReactNode } from "react";
 import { Link } from "wouter";
 
 import lore from "../../json/lore.json";
-import LinkIcon from "../components/Icons/LinkIcon";
+import { LinkIcon } from "../components/Icons/Icons";
 import WikiTableOfContents, { WikiHeadingState } from "../components/Pages/WikiPage/WikiTableOfContents";
 import { BotLink, ItemLink, LocationLink } from "../components/Pages/WikiPage/WikiTooltips";
 import { Bot } from "../types/botTypes";

@@ -41,7 +41,11 @@ export default function AboutPage() {
             </ul>
             <p>
                 This is an MIT licensed open source project with the source available on{" "}
-                <a href="https://github.com/noemica/cog-minder">GitHub</a>. Current commit hash: {__COMMIT_HASH__}
+                <a href="https://github.com/noemica/cog-minder">GitHub</a>. Current commit hash:{" "}
+                {
+                    // @ts-expect-error
+                    __COMMIT_HASH__
+                }
             </p>
             <p>
                 Thanks to Valguris, PI-314, GJ, ZXC, MTF, and Captain Croissandwich from the roguelike discord for
@@ -54,7 +58,7 @@ export default function AboutPage() {
                 <table className="credits-table">
                     <tbody>
                         <tr>
-                            <th>Library</th>
+                            <th>Name</th>
                             <th>License</th>
                         </tr>
                         <tr>
@@ -127,6 +131,14 @@ export default function AboutPage() {
                             </th>
                             <th>
                                 <a href="https://github.com/bvaughn/react-window/blob/master/LICENSE.md">MIT</a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <a href="https://www.svgrepo.com/svg/409405/refresh">Refresh Icon</a>
+                            </th>
+                            <th>
+                                <a href="https://www.svgrepo.com/page/licensing/#CC%20Attribution">CC Attribution</a>
                             </th>
                         </tr>
                         <tr>

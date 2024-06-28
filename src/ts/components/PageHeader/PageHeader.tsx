@@ -5,6 +5,7 @@ import { PageType, Spoiler, ThemeType, pageTypes } from "../../types/commonTypes
 import { rootDirectory } from "../../utilities/common";
 import { ButtonLink } from "../Buttons/Button";
 import { useEditableSpoilers, useEditableTheme } from "../Effects/useLocalStorageValue";
+import { RefreshIcon } from "../Icons/Icons";
 import { LabeledSelect } from "../LabeledItem/LabeledItem";
 import ButtonPopover from "../Popover/ButtonPopover";
 import TextTooltipButton from "../Popover/TextTooltipButton";
@@ -211,7 +212,7 @@ function getPageType() {
     return activePageType;
 }
 
-export default function PageHeader() {
+export default function PageHeader({ showIcon }: { showIcon: boolean }) {
     const pageType = getPageType();
     const pageDetails = pages[pageType];
 
@@ -229,7 +230,10 @@ export default function PageHeader() {
                         ?
                     </TextTooltipButton>
                 </div>
-                <SettingsButton />
+                <div className="flex">
+                    <SettingsButton />
+                    {showIcon && <RefreshIcon />}
+                </div>
             </div>
             <PageButtons pageType={pageType} />
         </>
