@@ -215,16 +215,16 @@ function checkUpdate(timer: number, updated: boolean, setUpdated: (updated: bool
 export default function App() {
     useThemeUpdater();
     const [updated, setUpdated] = useState(false);
-    const [location] = useLocation();
+    const [urlLocation] = useLocation();
     const [lastLocation, setLastLocation] = useLastLocation();
 
     // Explicitly scroll back to top whenever the URL changes
     useEffect(() => {
-        if (location !== lastLocation) {
+        if (urlLocation !== lastLocation) {
             window.scrollTo(0, 0);
-            setLastLocation(location);
+            setLastLocation(urlLocation);
         }
-    }, [location]);
+    }, [urlLocation]);
 
     // Check every 5 minutes if we need to update
     // Once an update has been pushed, it will sometimes cause random issues
@@ -253,7 +253,15 @@ export default function App() {
             <PageHeader showIcon={updated} />
             <Router base={`/${rootDirectory}`}>
                 <Suspense fallback={<span className="loading-message">Loading</span>}>
-                    <ErrorBoundary fallback={errorFallback}>
+                    <ErrorBoundary
+                        fallback={(error) => {
+                            if (updated) {
+                                location.reload();
+                            }
+
+                            return errorFallback(error);
+                        }}
+                    >
                         <Switch>{<Routes />}</Switch>
                     </ErrorBoundary>
                 </Suspense>
