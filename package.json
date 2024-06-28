@@ -25,7 +25,7 @@
     },
     "scripts": {
         "start": "vite",
-        "build": "rimraf dist && vite build",
+        "build": "node build.js",
         "preview": "vite preview",
         "deploy": "gh-pages -d dist",
         "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
