@@ -440,8 +440,8 @@ Hrd. Heavy Armor Plating
 Imp. Light Armor Plating
 Imp. Medium Armor Plating
 Imp. Heavy Armor Plating
-Lyr. Light Armor Plating
 Mak. Light Armor Plating
+Lyr. Light Armor Plating
 Lyr. Medium Armor Plating
 Lyr. Heavy Armor Plating
 Gun Armor
@@ -694,12 +694,12 @@ Enh. Gamma Rifle
 Med. Laser
 Sml. Laser
 Backup Laser I
-Autobeam
 Beam Rifle
 Particle Gun
 Spread Laser
 Imp. Medium Laser
 Sub. Laser
+Autobeam
 Field Laser
 Pulse Rifle
 Backup Laser III
@@ -959,8 +959,8 @@ Mining Laser
 Welding Torch
 Plasma Cutter
 Imp. Plasma Cutter
-Multitool
 CPS Tube
+Multitool
 Flamer
 Enh. Flamer
 Plasma Flamer
