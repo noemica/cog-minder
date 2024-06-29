@@ -160,6 +160,7 @@ export class BotData {
                 heatDissipation: parseIntOrDefault(bot["Heat Dissipation"], 0),
                 immunities: bot.Immunities ?? [],
                 immunitiesString: bot.Immunities?.join(", ") ?? "",
+                inventorySize: bot["Inventory Capacity"],
                 locations: extraData?.Locations ?? [],
                 memory: bot.Memory,
                 movement: `${bot.Movement} (${bot.Speed}/${bot["Speed %"]}%)`,

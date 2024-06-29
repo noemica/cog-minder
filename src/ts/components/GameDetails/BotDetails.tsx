@@ -404,6 +404,7 @@ export default function BotDetails({ bot, popoversToLinks }: { bot: Bot; popover
                 unitString="%"
             />
             <DetailsTextLine category="Salvage Potential" content={bot.salvagePotential} />
+            <DetailsTextLine category="Inventory Size" content={bot.inventorySize} defaultContent="0" />
             <DetailsTextLine
                 category="Schematic"
                 content={bot.fabrication ? "Hackable" : undefined}

@@ -68,6 +68,7 @@ export type Bot = {
     heatDissipation: number;
     immunities: BotImmunity[];
     immunitiesString: string;
+    inventorySize?: string;
     locations: BotLocation[];
     memory: string;
     movement: string;
@@ -123,6 +124,7 @@ export type JsonBot = {
     "Core Exposure": string;
     "Core Exposure %": string;
     "Salvage Potential": string;
+    "Inventory Capacity": string;
     Immunities?: BotImmunity[];
     Traits?: string[];
     "Armament String"?: string;

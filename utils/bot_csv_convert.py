@@ -33,7 +33,7 @@ categories = [
     'Salvage Potential',
     # 'Accuracy',
     # 'Melee Accuracy',
-    # 'Inventory Capacity',
+    'Inventory Capacity',
     # 'Hacking Availability',
     # 'Hacking Difficulty',
     # 'Power Slots',
