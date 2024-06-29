@@ -1,13 +1,17 @@
 #!/usr/bin/env py
 
+import argparse
 import csv
 import json
-from io import StringIO
 from os import path
 
 wiki_path = path.join(path.dirname(path.realpath(__file__)),
                       '..', 'src', 'json', 'wiki.json')
 csv_path = path.join(path.dirname(path.realpath(__file__)), 'wiki.csv')
+
+parser = argparse.ArgumentParser(prog='Wiki JSON from CSV updater')
+parser.add_argument('--write-diffs', action='store_true')
+args = parser.parse_args()
 
 # Open/parse files
 with open(wiki_path) as f:
@@ -18,6 +22,8 @@ with open(csv_path) as f:
     for row in csv.DictReader(f):
         row['Content'] = row['Content'].replace('\\n', '\n')
         wiki_csv[row['Name']] = row
+
+updated_pages = []
 
 # Update JSON from CSV
 for csv_obj in wiki_csv.values():
@@ -42,7 +48,10 @@ for csv_obj in wiki_csv.values():
     for json_item in json_list:
         if json_item['Name'] == csv_obj['Name']:
             # Found existing item, update content
-            json_item['Content'] = csv_obj['Content']
+            if json_item['Content'] != csv_obj['Content']:
+                updated_pages.append(json_item['Name'])
+                json_item['Content'] = csv_obj['Content']
+
             found = True
             break
 
@@ -54,6 +63,7 @@ for csv_obj in wiki_csv.values():
         print('Found new page with type not other {}'.format(csv_obj['Name']))
         continue
 
+    updated_pages.append(csv_obj['Name'])
     json_list.append({'Name': csv_obj['Name'], 'Content': csv_obj['Content']})
 
 # Sort all lists
@@ -65,3 +75,16 @@ for l in lists:
 # Save JSON
 with open(wiki_path, 'w') as f:
     json.dump(wiki_json, f, indent=1)
+
+updated_pages.sort()
+
+if len(updated_pages) > 0:
+    print('Updated the following pages:')
+    for page in updated_pages:
+        print(page)
+
+    if args.write_diffs:
+        with open('diffs.txt', 'w') as f:
+            f.write('\n'.join(updated_pages))
+else:
+    print('No changes')

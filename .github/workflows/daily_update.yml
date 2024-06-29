@@ -49,7 +49,7 @@ jobs:
             - name: Convert to JSON and Overwrite
               if: env.DIFFERENT_CSV == 'true'
               run: |
-                  python utils/update_wiki_json_from_csv.py
+                  python utils/update_wiki_json_from_csv.py --write-diffs
 
             - name: Commit and Push Changes
               if: env.DIFFERENT_CSV == 'true'
@@ -59,8 +59,10 @@ jobs:
 
                   git checkout $GITHUB_REF_NAME
 
+                  diffs="$(< diffs.txt)"
+
                   git add utils/wiki.csv
                   git add src/json/wiki.json
-                  git commit -m "Update Wiki"
+                  git commit -m "Update Wiki from Google docs" -m "$(< diffs.txt)"
 
                   git push origin $GITHUB_REF_NAME
