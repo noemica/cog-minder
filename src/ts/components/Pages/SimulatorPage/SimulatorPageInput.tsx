@@ -714,6 +714,26 @@ export default function SimulatorPageInput({
                     placeholder="0%"
                     tooltip="The bonus from one or more Target Analyzers that are equipped (if any). Increases critical hit % chance for weapons with a critical hit (half_stack). Base Analyzer is 5%, Improved is 6%, Advanced is 8%, and Experimental is 10%."
                 />
+                {pageState.combatType === "Melee" && (
+                    <>
+                        <LabeledInput
+                            label="Actuator"
+                            disabled={simulationInProgress}
+                            value={pageState.actuator || ""}
+                            onChange={(val) => updatePageState({ ...pageState, actuator: val })}
+                            placeholder="0%"
+                            tooltip="The bonus from actuator that's equipped (if any). Decreases volley time by a fixed percentage. Microactuators are 20%, Nanoacturators are 30%, and Femtoactuators are 50%."
+                        />
+                        <LabeledInput
+                            label="Actuator Array"
+                            disabled={simulationInProgress}
+                            value={pageState.actuatorArray || ""}
+                            onChange={(val) => updatePageState({ ...pageState, actuatorArray: val })}
+                            placeholder="0%"
+                            tooltip="The bonus from one or two actuator arrays equipped. Increases followup chance for all weapons (half_stack). Base Actuator Array is 10%, Improved is 12%, Advanced is 16%, and Experimental is 20%."
+                        />
+                    </>
+                )}
             </div>
             {weaponRows}
             <div className="page-input-group">
