@@ -318,7 +318,7 @@
   },
   {
    "Name": "Fireman (7)",
-   "Content": "Fireman variant with a better [[Flamer]] and enhanced cooling."
+   "Content": "Fireman variant with an [[Enh. Flamer]] and enhanced cooling."
   },
   {
    "Name": "Fortress",
@@ -1096,7 +1096,7 @@
     "Fireman (5)",
     "Fireman (7)"
    ],
-   "Content": "Firemen are [[Derelict]] [[Wheels|wheeled]] combat bots armed with a [[Flamer]]. They attack by attempting to meltdown the enemy, so having good cooling is recommended. Innate 50% resistance to Thermal damage, and 15% weakness to Kinetic damage."
+   "Content": "Firemen are [[Derelict]] [[Wheels|wheeled]] combat bots armed with [[Flamer|Flamers]]. They have a tendency to melt foes due to their high heat transfer."
   },
   {
    "Name": "Grunt",
@@ -1115,7 +1115,7 @@
     "Guerrilla (5)",
     "Guerrilla (7)"
    ],
-   "Content": "Guerillas are [[Legs|bipedal]] [[Derelict]] combat bots equipped with an inaccurate yet powerful cannon capable of destroying parts easily. Much like a [[Hunter]], Guerillas aim better due to their Targeting Computer and are harder to hit due to their Phase Shifter. However, unlike Hunters, Guerillas also have a [[Armor Integrity Analyzer]] allowing them to bypass enemy armor and hit harder. Slightly resistant to kinetic damage and slightly susceptible to electromagnetic damage."
+   "Content": "Guerillas are [[Legs|bipedal]] [[Derelict]] combat bots equipped with an inaccurate yet powerful [[Bore Cannon]] with a high Destroy critical chance. They are essentially the Derelict version of a [[Hunter]]. Guerillas aim better due to their Targeting Computer and are harder to hit due to their Phase Shifter. However, unlike Hunters, Guerillas also have a [[Armor Integrity Analyzer]] allowing them to bypass enemy armor and hit harder."
   },
   {
    "Name": "Hauler",
@@ -1476,7 +1476,7 @@
   },
   {
    "Name": "AWS/Thermal",
-   "Content": ""
+   "Content": "If the AWS/Thermal is repaired with a [[Recalibrators|Recalibrator]], it will break down in fewer shots than it did the first time. After several repairs, it will consistently break down within a few shots of being repaired."
   },
   {
    "Name": "Active Cooling Armor",
