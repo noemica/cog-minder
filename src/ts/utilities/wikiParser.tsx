@@ -549,6 +549,12 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
 
         processSection(tempState, undefined);
 
+        // Only display the first paragraph of a page (up to the first separator)
+        const firstSplitIdx = tempState.output.findIndex((outputGroup) => outputGroup.groupType === "Separator");
+        if (firstSplitIdx !== -1) {
+            tempState.output.splice(firstSplitIdx);
+        }
+
         const id = getLinkSafeString(groupEntry.name);
         const content = (
             <>
