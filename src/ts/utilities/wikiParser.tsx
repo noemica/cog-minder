@@ -34,6 +34,7 @@ type OutputGroup = {
 type AllowedContentType = "InlineOnly" | "InlineList" | "All";
 
 class ParserState {
+    allowHeadingLinks: boolean;
     allEntries: Map<string, WikiEntry>;
     botData: BotData;
     errors: string[];
@@ -48,6 +49,7 @@ class ParserState {
     spoiler: Spoiler;
 
     constructor(
+        allowHeadingLinks: boolean,
         allEntries: Map<string, WikiEntry>,
         botData: BotData,
         errors: string[],
@@ -59,6 +61,7 @@ class ParserState {
         itemData: ItemData,
         spoiler: Spoiler,
     ) {
+        this.allowHeadingLinks = allowHeadingLinks;
         this.allEntries = allEntries;
         this.botData = botData;
         this.errors = errors;
@@ -75,6 +78,7 @@ class ParserState {
 
     static Clone(state: ParserState): ParserState {
         return new ParserState(
+            state.allowHeadingLinks,
             state.allEntries,
             state.botData,
             state.errors,
@@ -153,6 +157,7 @@ export function createContentHtml(
         return `${p1}{{${p2}}}`;
     });
     const state = new ParserState(
+        true,
         allEntries,
         botData,
         [],
@@ -535,6 +540,7 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
         );
 
         const tempState = new ParserState(
+            false,
             state.allEntries,
             state.botData,
             state.errors,
@@ -767,6 +773,7 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
         state.initialContent.slice(subSectionStart, state.index - "[[/Heading]]".length),
     );
 
+    if (state.allowHeadingLinks) {
     if (state.headings.find((heading) => heading.id === id)) {
         recordError(state, `Found duplicate heading ID ${id}`, result.index);
     } else {
@@ -776,10 +783,13 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
             text: cleanedText,
         });
     }
+    }
 
     if (state.inSpoiler) {
         headingContent = <span className="spoiler-text spoiler-text-multiline">{headingContent}</span>;
     }
+
+    const linkIcon = state.allowHeadingLinks && <LinkIcon href={`#${id}`} />;
 
     if (type === "1") {
         state.output.push({
@@ -787,7 +797,7 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
             node: (
                 <h2 id={id} className="wiki-emphasized-heading">
                     {headingContent}
-                    <LinkIcon href={`#${id}`} />
+                    {linkIcon}
                 </h2>
             ),
         });
@@ -797,7 +807,7 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
             node: (
                 <h3 id={id} className="wiki-heading">
                     {headingContent}
-                    <LinkIcon href={`#${id}`} />
+                    {linkIcon}
                 </h3>
             ),
         });
@@ -807,7 +817,7 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
             node: (
                 <h4 id={id} className="wiki-heading">
                     {headingContent}
-                    <LinkIcon href={`#${id}`} />
+                    {linkIcon}
                 </h4>
             ),
         });
@@ -817,7 +827,7 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
             node: (
                 <h5 id={id} className="wiki-heading">
                     {headingContent}
-                    <LinkIcon href={`#${id}`} />
+                    {linkIcon}
                 </h5>
             ),
         });
