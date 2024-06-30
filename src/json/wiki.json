@@ -338,7 +338,7 @@
   },
   {
    "Name": "G-50 Soldier",
-   "Content": ""
+   "Content": "Soldier Content"
   },
   {
    "Name": "G-67 Veteran",
@@ -1034,7 +1034,7 @@
     "B-60 Warrior",
     "B-74 Champion"
    ],
-   "Content": "Brawlers are later common [[Armor|armored]] [[Treads|treading]] [[0b10]] bots that wield an [[Impact Weapons|Impact weapon]] to smash parts of their enemies. Upon sighting an enemy, Brawlers will attempt to close the distance before attempting to beat the target to death. They have a slight innate resistance to impact and slashing damage."
+   "Content": "Brawlers are a [[Bot Groups|Bot Group]] of [[Armor|armored]] [[Treads|treading]] [[0b10]] combat bots that wield an [[Impact Weapons|Impact weapon]] to smash parts of their enemies. They can only attack at short range, but they are frightening for most builds to face head-on due to their Impact weapons being capable of smashing off important utilities while ignoring coverage. Their slow speed means that they have major difficulty in closing the gap on long ranged units without getting killed first.\nBrawlers don't have any particular damage type weakness and any ranged weapon types are useful against them. Unlike their cousins [[Duelist|Duelists]], Brawlers don't suffer from a weakness to knockback because the Treads negate any knockback. Since they can easily destroy highly important but low integrity utilities, fighting Brawlers in melee range should be avoided at all cost.\n[[Gallery]]Brawlers.png|All Brawler variants and colors[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nBrawlers may appear in the following squads:\n[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Patrol Squad]] - [[Squad Leader]] only[[/List]]"
   },
   {
    "Name": "Butcher",
@@ -1069,7 +1069,7 @@
     "L-41 Fighter",
     "L-61 Swordsman"
    ],
-   "Content": "Duelists are [[Legs|bipedal]] [[0b10]] combat bots armed with a slashing weapon, with which they attempt to close distance  and melee the victim while severing parts. They are more accurate in melee, and have [[Core Shielding]] making it harder to damage their core and impossible to destroy directly with destroy critical hits. Later variants are equipped with [[Microactuators]] making them attack faster in melee. They have a slight resistance to Slashing and Piercing.\nRecommended to not let them get up close to you."
+   "Content": "Duelists are a [[Bot Groups|Bot Group]] of [[Legs|bipedal]] [[0b10]] combat bots armed with a [[Slashing Weapons|Slashing Weapon]] that can sever off important parts. While they can only attack at short range, they are frightening to face up close with their [[Melee Analysis Suites]] and [[Actuators]] allowing them to hit hard and fast. They also have [[Core Shieldings|Core Shielding]] which makes them immune to direct critical hits and a bit more survivable.\nDuelists don't have any particular damage type weaknesses, though their biggest weakness is [[Ballistic Cannons]] because the knockback will help keep a them out of melee range. Other than that, any non-melee weapon is good to use against Duelists. Using melee against them is a little more dangerous since that means Cogmind hast to go toe-to-toe with their strong melee loadout. Melee is a worse idea because of their innate minor slashing/piercing resistances.\n[[Gallery]]Duelists.png|All Duelist variants and colors[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nDuelists may appear in the following squads:\n[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Patrol Squad]] - [[Squad Leader]] only[[/List]]"
   },
   {
    "Name": "Exiles (Group)",
@@ -1107,7 +1107,7 @@
     "G-67 Veteran",
     "G-73 Enforcer"
    ],
-   "Content": "Grunts are a [[Bot Groups|Bot Group]] of [[Legs|bipedal]] Thermal [[Energy Guns]] users and make up the backbone of the [[0b10]] army. They are by far the most populous combat bot class, being found on nearly every map and in many different squad types. Most Grunts are not especially durable or threatening on their own, though at higher depths ([[Research]] +) they can be dangerous due to their tendency to appear in large groups. Veterans and Enforcers in particular have a significant jump in firepower due to the upgrade from 1 to 2 weapons.\nAll Grunts share a minor weakness to Electromagnetic damage, which makes EM or Impact the best damage types to use for quick destruction via [[Corruption]]. However, without any resistances to speak of, Grunts are fairly easily dispatched by any damage type. Grunts also tend to have barely adequate cooling, which means Thermal weaponry can can easily build up heat to trigger a [[Meltdown]].\nAnother way to deal with Grunts is to take advantage of their low memory (20 actions). It is trivial for airborne builds to leave Grunts in the dust, but even a reasonably speedy grounded build may be able to turn a corner and outrun Grunts long enough for them to give up chase. This strategy is more effective when used with [[ECM Suites]].\n[[Gallery]]Grunts.png|All Grunt variants and colors[[/Gallery]]\n[[Heading]][[Squad|Squads]][[/Heading]]\nGrunts may appear in the following squads:\n[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Investigation Squad]]|[[Patrol Squad]]|[[Reinforcement Squad]]|[[Transport Squad]][[/List]]"
+   "Content": "Grunts are common [[0b10]] bipedal robots equipped with thermal weaponry. Often found in groups in squads, such as the [[Patrol Squad]]. "
   },
   {
    "Name": "Guerrilla",
@@ -1143,7 +1143,7 @@
     "H-77 Assassin",
     "H-88 Terminator"
    ],
-   "Content": "Hunters are [[Legs|bipedal]] [[0b10]] combat robots equipped with one long-range penetrating ballistic gun and one short-range ballistic gun. Hunters aim better as a result of their [[Targeting Computers]], and later models are also harder to hit due to their [[Phase Shifters]]. Hunters do not appear on sensors without a strong enough [[Signal Interpreter|Signal Interpreters]].\nHunters that are the leader of a [[Squad]] are also capable of launching a drone to attempt to locate you.\nPart of most normal [[0b10]] squads."
+   "Content": "Hunters are a [[Bot Groups|Bot Group]] of [[Legs|bipedal]] [[Ballistic Guns|Ballistic Gun]]-wielding [[0b10]] combat robots. They have unique AI where they use their penetrating guns to shoot through walls to get to hostiles. Hunters can also hit more accurately with their [[Targeting Computers]] and avoid hits themselves with [[Phase Shifters]]. Hunters also have an innate resistance to [[Sensor Arrays]] and will not show up without a high enough rating [[Signal Interpreter|Signal Interpreters]]. [[Squad Leader]] Hunters also have the ability to launch a [[Drone]] to pursue bots even after losing normal tracking. If the Drone spots a hostile, it will alert the owning Hunter to their position.\nMid-lategame Hunters are one of the most durable standard 0b10 combat bots due to their high evasion. Early tier Hunters are still strong, but the Terminators are a dangerous threat. Using [[Treads]] with Siege Mode or lots of Targeting of your own will help dealing with the high innate avoidance. Electromagnetic weaponry is by far the best choice to deal with Hunters, especially EM [[Launchers]] that don't have to directly hit the Hunter to deal damage. Kinetic builds may have more difficulty fighting Hunters due to their kinetic resistance, though they will appreciate the many Kinetic guns that might drop as loot\nDodging hunters is difficult to do for an airborne build. They have a much higher than average memory (60 actions), they shoot through walls, and they even release a fast-moving Drone to continue the chase. If running from a Hunter, make sure to consider the wall penetration ability because only certain angles will allow a Hunter to shoot through the wall and hit Cogmind. [[ECM Suites]] are of great use in reducing the memory to a more manageable number. Make use of [[Transmission Jammers]] when the Drone is nearby, since the jamming will prevent the Drone from alerting the Hunters of your position.\n[[Gallery]]Hunters.png|All Hunter variants and colors[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nHunters may appear in the following squads:\n[[List]][[Assault Squad]] - Only in heavy assaults|[[Investigation Squad]]|[[Patrol Squad]]|[[Reinforcement Squad]][[/List]]"
   },
   {
    "Name": "Infiltrator",
@@ -1259,7 +1259,7 @@
     "Y-64 Sentinel",
     "Y-72 Warden"
    ],
-   "Content": "Sentries are armored treading [[0b10]] bots that stand guard around vital points such as exits, or in the walls. They are a good source of [[Armor|armor]] and [[Treads|treads]], but their firepower in the open is not to be underestimated at higher tiers. Upon sighting an enemy (such as you, the [[Cogmind]]), sentries will pursue the target until they lose them after which they return to whatever they were guarding."
+   "Content": "Sentries are a [[Bot Groups|Bot Group]] or [[Armor|armored]] [[Treads|treaded]] [[0b10]] bots that stand guard around exits, main corridors, and side rooms with machines or item stockpiles inside them. They wield dual Kinetic and Thermal guns at each tier. Sentries tend to be slightly more durable than most other bots at their depth. Sentries typically stand guard alone as a [[Security Squad]].\nSentries have no particular weakness, and so most weapon types can be used to dispatch them. Electromagnetic damage is efficient at killing the higher tier bots, and EM is good in general at increasing the chances of looting their treads and armor.\nWhile combat bots will want (or will be forced) to fight Sentries head-on, airborne builds may want to avoid them or at least avoid getting shot by them. One way to do this is to use a [[Partial Spot]] to lure the Sentry out of their position. After that, Cogmind may be able to use the guarded machine or exit, or grab the loot without being spotted. A fast Cogmind may also be able to use the long memory of Sentries to their advantage while being spotted regularly. It is possible to lead Sentries far out of position and then leave them in the dust to grab their guarded loot.\n[[Gallery]]Sentries.png|All Sentry variants and colors[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nSentries may appear in the following squads:\n[[List]][[Garrison Squad]]|[[Security Squad]][[/List]]\nAdditionally, Sentries will appear at [[Garrison (Machine)|Garrisons]] and 0b10 exits during [[High Security]] and [[Maximum Security]]."
   },
   {
    "Name": "Specialist",
@@ -1289,7 +1289,7 @@
     "S-27 Virus",
     "S-43 Plague"
    ],
-   "Content": "Swarmers are a [[Bot Groups|bot group]] of [[Flight Units|flying]] [[0b10]] combat bots with one [[Ballistic Guns|Ballistic Gun]] that are always seen in groups. They are individually weak and non-threatening, but annoying in groups. Swarmers have a slight Explosive damage weakness. This, combined with their evasiveness, high core exposure, and low core integrity, make explosive [[Launchers|Launcher]] a great idea to use against them. Trying to pick off 6 Swarmers one by one may take much longer and result in a lot more damage dealt to Cogmind.\nSwarmers have a very low memory (20 actions). While they may pursue airborne builds quickly compared to most other bots, it can be easy to lose them after turning the corner in a corridor or hallway near max range. This stratey is more effective when used with [[ECM Suites]].\n[[Gallery]]Swarmers.png|All Swarmer variants and colors[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nSwarmers may appear in the following squads:\n[[List]][[Garrison Squad]]|[[Patrol Squad]]|[[Cargo Convoy]]: Escorts that lead the way ahead of the rest of the convoy[[/List]]"
+   "Content": "Swarmers are a [[Bot Groups|bot group]] of [[Flight Units|flying]] [[0b10]] combat bots with one [[Ballistic Guns|Ballistic Gun]] that are always seen in groups. They are individually weak and non-threatening, but annoying in groups. Swarmers have a slight Explosive damage weakness. This, combined with their evasiveness, high core exposure, and low core integrity, make explosive [[Launchers|Launcher]] a great idea to use against them. Trying to pick off 6 Swarmers one by one may take much longer and result in a lot more damage dealt to Cogmind.\nSwarmers have a very low memory (20 actions). While they may pursue airborne builds quickly compared to most other bots, it can be easy to lose them after turning the corner in a corridor or hallway near max range. This strategy is more effective when used with [[ECM Suites]].\n[[Gallery]]Swarmers.png|All Swarmer variants and colors[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nSwarmers may appear in the following squads:\n[[List]][[Garrison Squad]]|[[Patrol Squad]]|[[Cargo Convoy]]: Escorts that lead the way ahead of the rest of the convoy[[/List]]"
   },
   {
    "Name": "Thug",
@@ -7980,7 +7980,9 @@
   },
   {
    "Name": "Cave-ins",
-   "AlternateNames": ["Digging"],
+   "AlternateNames": [
+    "Digging"
+   ],
    "Content": "Cave-ins are a [[Game Mechanics|Game Mechanic]] where dug-out tiles will collapse and instantly deal a large amount of Impact damage to anything on the tile. It is safe to dig up to 3 tiles safely in some circumstances, but long distance digging is always unsafe.\n[[Heading]]Causes of cave-ins[[/Heading]]\n[[Image]]Destabilized Tiles.png|Destabilized tiles are bright red as shown by a Structural Scanner[[/Image]]\n[[Heading:2]]Destabilization[[/Heading]]\nDestabilized tiles are tiles that will always collapse if given enough time. They may collapse instantly or they may last a hundred turns or more. Destabilized tiles can be viewed with a [[Structural Scanner]]. A tile can become destabilized in two ways:\n[[List]]Explosive damage - Explosive damage (namely [[Launchers]]) will cause a tile to destabilized.|Attacking from a dug out tile - If Cogmind or any other bot fires a weapon inside of a dug out tile, the tile will destabilize. This tile may collapse instantly before Cogmind gets a chance to move, so digging from inside these tiles is never completely safe.[[/List]]\n[[Heading:2]]Dug-out tile traversal[[/Heading]]\nIt is safe to travel through dug out tiles (that are not destabilized) for up to 3 tiles, but they have to be wall-earth-wall or wall-wall-wall tiles. For a longer dig, wall-earth-earth is not safe. Each tile traversed past that safe limit will risk an instant cave-in.\n[[Heading]]Example digs[[/Heading]]\n[[Gallery]]Wall Earth Wall Dig.png|Safe 3 tile dig with a ranged weapon: Wall-earth-wall|Wall Dig.png|Safe 1 tile dig with a melee weapon: Wall only|Wall Wall Dig.png|UNSAFE 2 tile dig: Digging within a dug out tile is unsafe|Wall Earth Earth Wall Dig.png|UNSAFE 4 tile dig: Wall-earth is safe, second half earth-wall is unsafe[[/Gallery]]\n[[Heading]]Avoiding cave-ins[[/Heading]]\nHere are some strategies to avoid cave-ins\n[[List]]Don't use melee to dig more than 1 tile - Melee weapons need to be adjacent to the next tile to dig out. This means Cogmind will have to be in a dug out tile to dig two consecutive tiles which allows a chance for an immediate destabilization cave-in.|Don't use Explosive Launchers to dig - While Launchers can dig out a lot of tiles at once, those tiles have a chance to collapse as Cogmind walks through. Note: it is safe to do this with a Structural Scanner equipped, as destabilized tiles will be visible and are avoidable.|Use Thermal or Kinetic cannons - These cannons have a high base damage that is typically strong enough to dig through most non-reinforced walls. It is safe to dig a 3 tile path ahead of time and then walk through at no risk of cave-in.|Be wary of [[U-05 Engineer|Engineers]] - Engineers may seal off your path and leave you stuck in the wall, forced to dig again to escape and risk immediate cave-in.[[/List]]"
   },
   {
@@ -8107,6 +8109,10 @@
   {
    "Name": "Non-empty Pages",
    "Content": "[[NonEmptyPages]]"
+  },
+  {
+   "Name": "Partial Spot",
+   "Content": ""
   },
   {
    "Name": "Patrol Squad",
