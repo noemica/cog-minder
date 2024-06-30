@@ -1247,7 +1247,13 @@ If the Garrison squad was triggered by a non-combat bot reporting an attack or b
 "Great Maul","Part",""
 "Greatsword","Part",""
 "Grenade Launcher","Part",""
-"Grunt","Bot Group","Grunts are common [[0b10]] bipedal robots equipped with thermal weaponry. Often found in groups in squads, such as the [[Patrol Squad]]. "
+"Grunt","Bot Group","Grunts are a [[Bot Groups|Bot Group]] of [[Legs|bipedal]] Thermal [[Energy Guns]] users and make up the backbone of the [[0b10]] army. They are by far the most populous combat bot class, being found on nearly every map and in many different squad types. Most Grunts are not especially durable or threatening on their own, though at higher depths ([[Research]] +) they can be dangerous due to their tendency to appear in large groups. Veterans and Enforcers in particular have a significant jump in firepower due to the upgrade from 1 to 2 weapons.
+All Grunts share a minor weakness to Electromagnetic damage, which makes EM or Impact the best damage types to use for quick destruction via [[Corruption]]. However, without any resistances to speak of, Grunts are fairly easily dispatched by any damage type. Grunts also tend to have barely adequate cooling, which means Thermal weaponry can can easily build up heat to trigger a [[Meltdown]].
+Another way to deal with Grunts is to take advantage of their low memory (20 actions). It is trivial for airborne builds to leave Grunts in the dust, but even a reasonably speedy grounded build may be able to turn a corner and outrun Grunts long enough for them to give up chase. This strategy is more effective when used with [[ECM Suites]].
+[[Gallery]]Grunts.png|All Grunt variants and colors[[/Gallery]]
+[[Heading]][[Squad|Squads]][[/Heading]]
+Grunts may appear in the following squads:
+[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Investigation Squad]]|[[Patrol Squad]]|[[Reinforcement Squad]]|[[Transport Squad]][[/List]]"
 "Guerrilla","Bot Group","Guerillas are [[Legs|bipedal]] [[Derelict]] combat bots equipped with an inaccurate yet powerful [[Bore Cannon]] with a high Destroy critical chance. They are essentially the Derelict version of a [[Hunter]]. Guerillas aim better due to their Targeting Computer and are harder to hit due to their Phase Shifter. However, unlike Hunters, Guerillas also have a [[Armor Integrity Analyzer]] allowing them to bypass enemy armor and hit harder."
 "Guerrilla (5)","Bot",""
 "Guerrilla (7)","Bot",""
