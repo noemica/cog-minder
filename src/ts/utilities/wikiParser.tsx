@@ -549,11 +549,13 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
 
         processSection(tempState, undefined);
 
+        const id = getLinkSafeString(groupEntry.name);
         const content = (
             <>
-                <h2 className="wiki-heading wiki-bot-group-heading">
+                <h2 id={id} className="wiki-heading wiki-bot-group-heading">
                     {getLinkNode(state, groupEntry, groupEntry.name)}
                     {imageNode}
+                    <LinkIcon href={`#${id}`} />
                 </h2>
                 {outputGroupsToHtml(tempState.output, false)}
             </>
