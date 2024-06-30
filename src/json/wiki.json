@@ -338,7 +338,7 @@
   },
   {
    "Name": "G-50 Soldier",
-   "Content": "Soldier Content"
+   "Content": ""
   },
   {
    "Name": "G-67 Veteran",
@@ -1107,7 +1107,7 @@
     "G-67 Veteran",
     "G-73 Enforcer"
    ],
-   "Content": "Grunts are common [[0b10]] bipedal robots equipped with thermal weaponry. Often found in groups in squads, such as the [[Patrol Squad]]. "
+   "Content": "Grunts are a [[Bot Groups|Bot Group]] of [[Legs|bipedal]] Thermal [[Energy Guns]] users and make up the backbone of the [[0b10]] army. They are by far the most populous combat bot class, being found on nearly every map and in many different squad types. Most Grunts are not especially durable or threatening on their own, though at higher depths ([[Research]] +) they can be dangerous due to their tendency to appear in large groups. Veterans and Enforcers in particular have a significant jump in firepower due to the upgrade from 1 to 2 weapons.\nAll Grunts share a minor weakness to Electromagnetic damage, which makes EM or Impact the best damage types to use for quick destruction via [[Corruption]]. However, without any resistances to speak of, Grunts are fairly easily dispatched by any damage type. Grunts also tend to have barely adequate cooling, which means Thermal weaponry can can easily build up heat to trigger a [[Meltdown]].\nAnother way to deal with Grunts is to take advantage of their low memory (20 actions). It is trivial for airborne builds to leave Grunts in the dust, but even a reasonably speedy grounded build may be able to turn a corner and outrun Grunts long enough for them to give up chase. This strategy is more effective when used with [[ECM Suites]].\n[[Gallery]]Grunts.png|All Grunt variants and colors[[/Gallery]]\n[[Heading]][[Squad|Squads]][[/Heading]]\nGrunts may appear in the following squads:\n[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Investigation Squad]]|[[Patrol Squad]]|[[Reinforcement Squad]]|[[Transport Squad]][[/List]]"
   },
   {
    "Name": "Guerrilla",
@@ -1289,7 +1289,7 @@
     "S-27 Virus",
     "S-43 Plague"
    ],
-   "Content": "Swarmers are [[Flight Units|flying]] [[0b10]] combat bots with one ballistic weapon seen in groups/swarms. Weak to Explosive damage, so blowing up groups of swarmers is a good idea. Seen in a [[Patrol Squad]] or otherwise."
+   "Content": "Swarmers are a [[Bot Groups|bot group]] of [[Flight Units|flying]] [[0b10]] combat bots with one [[Ballistic Guns|Ballistic Gun]] that are always seen in groups. They are individually weak and non-threatening, but annoying in groups. Swarmers have a slight Explosive damage weakness. This, combined with their evasiveness, high core exposure, and low core integrity, make explosive [[Launchers|Launcher]] a great idea to use against them. Trying to pick off 6 Swarmers one by one may take much longer and result in a lot more damage dealt to Cogmind.\nSwarmers have a very low memory (20 actions). While they may pursue airborne builds quickly compared to most other bots, it can be easy to lose them after turning the corner in a corridor or hallway near max range. This stratey is more effective when used with [[ECM Suites]].\n[[Gallery]]Swarmers.png|All Swarmer variants and colors[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nSwarmers may appear in the following squads:\n[[List]][[Garrison Squad]]|[[Patrol Squad]]|[[Cargo Convoy]]: Escorts that lead the way ahead of the rest of the convoy[[/List]]"
   },
   {
    "Name": "Thug",
@@ -8095,6 +8095,10 @@
    "Name": "Maximum Security",
    "Content": "[[Image]]Maximum Security Assaults.png|A wave of Assaults and Sentries dispatched during Maximum Security[[/Image]]\nMaximum Security is a special [[0b10]] response to a few specific threats that results in immediate shutdown of machines and increasingly large waves of [[Assault Squad|Assaults]] dispatched to Cogmind's position. Unlike the similar-behaving [[High Security]], Maximum Security is unrelated to [[Alert]] mechanics. Maximum Security can be triggered on most main and branch 0b10-controlled floors, excluding [[Command]], [[DSF|DSFs]], and [[Garrison|Garrisons]]. It can be triggered only by the following scenarios:\n[[List]]Cogmind has taken [[Farcom]] and enters [[Quarantine]], [[Testing]], or [[Section 7]]|The [[Sigix Containment Pod]] is inserted into the [[Sigix Exoskeleton]] (instant)|Cogmind attaches the [[Sigix Exoskeleton]] and is spotted by an 0b10 combat bot[[/List]]\n[[Heading]]Timeline of Events[[/Heading]]\n[[List]]0: Log message [[GameText]]ALERT: [reason for Max Security]. Maximum security lockdown in progress.[[/GameText]]|1: Machines shut down, log message [[GameText]]ALERT: Machine network offline[[/GameText]]|2: Log message [[GameText]]ALERT: Performing unscheduled system reset.[[/GameText]]|3: 4 [[Sentry|Sentries]] dispatched at each 0b10-controlled exit and Garrison, log message [[GameText]]ALERT: Lockdown in effect, collecting threat data.[[/GameText]]|5/100: First assault wave dispatched, 6 assaults dispatched from nearby 0b10-controlled exits and [[Garrison (Machine)|Garrisons]]. The first wave will be dispatched after 100 turns for Farcom-triggered Maximum Security and 5 turns for other reasons.|105/200: Second wave, 6 assaults dispatched|255/350: Third wave, 8 assaults dispatched including heavy assaults with stronger bots|455/550: Fourth wave, 10 assaults dispatched including heavy assaults|705/800: Fifth wave, 12 assaults dispatched including heavy assaults|Etc. - Delay between assaults continues to increase by 50 and number of assaults per wave continues to increase by 2[[/List]]\n[[Heading]]Exiting Maximum Security[[/Heading]]\nThe only 2 ways to exit Maximum Security are to trigger [[Sterilization]] after killing enough combat hostiles or to exit the map. Otherwise, an infinite number of Assaults will continue to be dispatched.",
    "Spoiler": "Spoiler"
+  },
+  {
+   "Name": "Meltdown",
+   "Content": ""
   },
   {
    "Name": "Momentum",

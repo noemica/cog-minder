@@ -59,7 +59,7 @@ function ItemLine({
     item: Item;
     popoversToLinks?: boolean;
 }) {
-    let itemNode: ReactNode = itemString.padEnd(42);
+    let itemNode: ReactNode = itemString.padEnd(44);
 
     if (popoversToLinks) {
         itemNode = <Link href={`/${getLinkSafeString(item.name)}`}>{itemNode}</Link>;
@@ -103,7 +103,7 @@ function ItemLineOption({
     popoversToLinks?: boolean;
 }) {
     const itemData = useItemData();
-    let itemNode: ReactNode = itemString.padEnd(39);
+    let itemNode: ReactNode = itemString.padEnd(42);
     const item = itemData.getItem(itemName);
 
     if (popoversToLinks) {
