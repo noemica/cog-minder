@@ -31,9 +31,9 @@ function BotGroupContent({
     setGroupSelection,
 }: {
     entry: WikiEntry;
-    groupSelection: number;
+    groupSelection: string;
     parsedNode: ReactNode;
-    setGroupSelection: (selection: number) => void;
+    setGroupSelection: (selection: string) => void;
 }) {
     const botEntries = entry.extraData as WikiEntry[];
 
@@ -45,7 +45,8 @@ function BotGroupContent({
         });
     }, [entry]);
 
-    const bot = botEntries[groupSelection].extraData as Bot;
+    // Use the saved entry if it exists, otherwise use the first entry
+    const bot = (botEntries.find((entry) => entry.name === groupSelection) || botEntries[0]).extraData as Bot;
 
     return (
         <>
@@ -55,7 +56,7 @@ function BotGroupContent({
                         buttons={botButtons}
                         selected={groupSelection}
                         onValueChanged={(val) => {
-                            setGroupSelection(botEntries.findIndex((entry) => entry.name === val));
+                            setGroupSelection(val);
                         }}
                     />
                 </div>
@@ -99,9 +100,9 @@ function PartGroupContent({
     setGroupSelection,
 }: {
     entry: WikiEntry;
-    groupSelection: number;
+    groupSelection: string;
     parsedNode: ReactNode;
-    setGroupSelection: (selection: number) => void;
+    setGroupSelection: (selection: string) => void;
 }) {
     const itemEntries = entry.extraData as WikiEntry[];
 
@@ -113,7 +114,7 @@ function PartGroupContent({
         });
     }, [entry]);
 
-    const item = itemEntries[groupSelection].extraData as Item;
+    const item = (itemEntries.find((entry) => entry.name === groupSelection) || itemEntries[0]).extraData as Item;
 
     return (
         <>
@@ -123,7 +124,7 @@ function PartGroupContent({
                         buttons={itemButtons}
                         selected={groupSelection}
                         onValueChanged={(val) => {
-                            setGroupSelection(itemEntries.findIndex((entry) => entry.name === val));
+                            setGroupSelection(val);
                         }}
                     />
                 </div>
@@ -144,8 +145,8 @@ export default function WikiPageContent({
 }: {
     allEntries: Map<string, WikiEntry>;
     entry: WikiEntry | undefined;
-    groupSelection: number;
-    setGroupSelection: (selection: number) => void;
+    groupSelection: string;
+    setGroupSelection: (selection: string) => void;
     parsedNode: ReactNode;
     path: string;
     spoilers: Spoiler;

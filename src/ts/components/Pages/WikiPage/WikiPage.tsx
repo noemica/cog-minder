@@ -384,7 +384,7 @@ export default function WikiPage() {
     const [location] = useLocation();
     const spoilers = useSpoilers();
 
-    const [groupSelection, setGroupSelection] = useState(0);
+    const [groupSelection, setGroupSelection] = useState("");
     const [pageDidMatch, pageNameMatch] = useRoute("/wiki/:page");
 
     const [editState, setEditState] = useState<EditState>({

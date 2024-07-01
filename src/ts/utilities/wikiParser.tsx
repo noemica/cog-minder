@@ -377,7 +377,7 @@ export function parseEntryContent(
     spoilers: Spoiler,
     itemData: ItemData,
     botData: BotData,
-    groupSelection?: number,
+    groupSelection?: string,
 ) {
     const parseResult = createContentHtml(entry, allEntries, spoilers, false, itemData, botData);
 
@@ -413,8 +413,9 @@ export function parseEntryContent(
             parseResult.images.add(image);
         }
     } else if ((entry.type === "Bot Group" || entry.type === "Part Group") && groupSelection !== undefined) {
+        const childEntries = entry.extraData as WikiEntry[];
         const childParseResult = createContentHtml(
-            (entry.extraData as WikiEntry[])[groupSelection],
+            childEntries.find((childEntry) => childEntry.name === groupSelection) || childEntries[0],
             allEntries,
             spoilers,
             true,
@@ -774,15 +775,15 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
     );
 
     if (state.allowHeadingLinks) {
-    if (state.headings.find((heading) => heading.id === id)) {
-        recordError(state, `Found duplicate heading ID ${id}`, result.index);
-    } else {
-        state.headings.push({
-            id: id,
-            indent: parseInt(type),
-            text: cleanedText,
-        });
-    }
+        if (state.headings.find((heading) => heading.id === id)) {
+            recordError(state, `Found duplicate heading ID ${id}`, result.index);
+        } else {
+            state.headings.push({
+                id: id,
+                indent: parseInt(type),
+                text: cleanedText,
+            });
+        }
     }
 
     if (state.inSpoiler) {
