@@ -643,9 +643,6 @@ function processGameTextTag(state: ParserState, result: RegExpExecArray) {
     const gameTextContent = (
         <span className="wiki-game-text">{outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</span>
     );
-    // TODO still get the {{/}}s in here, will need to unescape
-    // .replace("{{", "[")
-    // .replace("}}", "]");
 
     state.output.push({ groupType: "Grouped", node: gameTextContent });
 }
@@ -1119,6 +1116,11 @@ function processSection(state: ParserState, endTag: string | undefined) {
     // Global regex for actions in the form of [[X]] or [[X:Y]]
     const actionRegex = /\[\[([^\]:]*)(?::([^\]]*))?\]\]/g;
 
+    function restoreBrackets(text: string) {
+        // Needed to undo the escaping added at the start of createContentHtml
+        return text.replaceAll("{{", "[").replaceAll("}}", "]");
+    }
+
     let result: RegExpExecArray | null;
     while ((result = actionRegex.exec(state.initialContent))) {
         if (state.index > result.index) {
@@ -1139,7 +1141,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
             } else {
                 state.output.push({
                     groupType: "Grouped",
-                    node: state.initialContent.substring(state.index, newlineIndex),
+                    node: restoreBrackets(state.initialContent.substring(state.index, newlineIndex)),
                 });
                 state.output.push({ groupType: "Separator", node: undefined });
             }
@@ -1152,7 +1154,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
             // just be plain text
             state.output.push({
                 groupType: "Grouped",
-                node: state.initialContent.substring(state.index, result.index),
+                node: restoreBrackets(state.initialContent.substring(state.index, result.index)),
             });
             state.index = result.index;
         }
