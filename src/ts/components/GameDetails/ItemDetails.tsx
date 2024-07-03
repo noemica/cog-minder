@@ -369,6 +369,14 @@ function LauncherPartDetails({ item }: { item: WeaponItem }) {
                 category=" Falloff"
                 valueString={item.falloff === undefined ? undefined : "-" + item.falloff}
             />
+            <DetailsValueLine
+                category=" Chunks"
+                valueString={
+                    item.minChunks === undefined && item.maxChunks === undefined
+                        ? "1"
+                        : `${item.minChunks}-${item.maxChunks}`
+                }
+            />
             <DetailsTextLine category="Type" content={item.explosionType} />
             {item.explosionHeatTransfer === undefined ? (
                 <DetailsTextLine
@@ -387,6 +395,11 @@ function LauncherPartDetails({ item }: { item: WeaponItem }) {
                 valueString={item.explosionDisruption?.toString()}
                 unitString="%"
                 defaultValueString="0"
+            />
+            <DetailsValueLine
+                category="Salvage"
+                valueString={signedStringOrUndefined(item.explosionSalvage)}
+                defaultValue="0"
             />
         </>
     );

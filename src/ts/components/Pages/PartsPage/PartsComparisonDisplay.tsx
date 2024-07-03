@@ -15,6 +15,7 @@ import {
 import { ItemData } from "../../../utilities/ItemData";
 import { parseIntOrDefault } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
+import { useTheme } from "../../Effects/useLocalStorageValue";
 import ItemDetails from "../../GameDetails/ItemDetails";
 import SelectWrapper, { SelectOptionType } from "../../Selectpicker/Select";
 import { PartsPageState } from "./PartsPage";
@@ -122,6 +123,18 @@ function BurnoutOrSiegeComparison({
     }
 
     return <EmptyComparisonLine />;
+}
+
+function ChunksComparison({ leftWeapon, rightWeapon }: { leftWeapon: WeaponItem; rightWeapon: WeaponItem }) {
+    if (leftWeapon.minChunks === rightWeapon.minChunks && leftWeapon.maxChunks === rightWeapon.maxChunks) {
+        return <EmptyComparisonLine />;
+    }
+
+    return (
+        <NeutralComparison>
+            {leftWeapon.minChunks}-{leftWeapon.maxChunks}
+        </NeutralComparison>
+    );
 }
 
 function CriticalComparison({ leftWeapon, rightWeapon }: { leftWeapon: WeaponItem; rightWeapon: WeaponItem }) {
@@ -659,6 +672,7 @@ function WeaponComparison({ leftItem, rightItem }: { leftItem: Item; rightItem: 
                             leftValue={leftWeapon.falloff ?? 0}
                             rightValue={rightWeapon.falloff ?? 0}
                         />
+                        <ChunksComparison leftWeapon={leftWeapon} rightWeapon={rightWeapon} />
                         <DamageTypeComparison leftWeapon={leftWeapon} rightWeapon={rightWeapon} explosive={true} />
                         <SpectrumOrHeatTransferComparison
                             leftWeapon={leftWeapon}
@@ -750,6 +764,8 @@ export default function PartsComparisonDisplay({
     pageState: PartsPageState;
     setPageState: (newPageState: PartsPageState) => void;
 }) {
+    const theme = useTheme();
+
     const itemOptions = items.map<SelectOptionType<string>>((item) => {
         return {
             value: item.name,
@@ -787,6 +803,7 @@ export default function PartsComparisonDisplay({
             </div>
             <div className="part-comparison-details-column">
                 <Button
+                    className={theme === "Cogmind" ? "swap-button-cogmind" : "swap-button"}
                     tooltip="Swaps the left and right items in the comparison"
                     onClick={() => {
                         setPageState({
