@@ -379,7 +379,7 @@ export default function SimulatorPageInput({
                     tooltip="The amount of Advanced Melee Analysis Suites equipped. Each provides 8% accuracy and a minimum damage increase of 4."
                 />
                 <LabeledInput
-                    label="Adv."
+                    label="Exp."
                     disabled={simulationInProgress}
                     value={pageState.expMas || ""}
                     onChange={(val) => updatePageState({ ...pageState, expMas: val })}
