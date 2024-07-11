@@ -598,7 +598,7 @@ Some good uses of the Chronowheel include:
 [[List]]
 [[Enh. Flamer]] ~0.5%|[[Hvy. Riot Gun]] ~0.5%|[[Hvy. Battle Rifle]] ~0.5%|[[Mak. Power Source]] ~0.5%|[[Mak. Shrapnel Gun]] ~0.5%|[[Mak. System Restoration Module]] ~0.5%|[[Slug Cannon]] ~0.5%
 [[/List]]"
-"Cogmind","Bot",""
+"Cogmind","Bot","Thats you."
 "Coil Gun","Part",""
 "Cold Fusion Reactor","Part",""
 "Com. Battery","Part",""
@@ -1866,7 +1866,7 @@ A single NEM teleport will move Cogmind anywhere between 8-12 tiles from the ori
 "PSU Rigger","Part",""
 "Packrat","Bot",""
 "Parasite","Bot",""
-"Partial Spot","Other",""
+"Partial Spot","Other","Partial spotting is when you move through a (hostile) bots field of vision while its not its turn. The bot will investigate where it saw you, look a few tiles further then head back to whatever it was doing."
 "Particle Accelerator","Part",""
 "Particle Cannon","Part",""
 "Particle Charger","Part",""
@@ -1891,7 +1891,7 @@ Search Patrols are a special type of patrol that is related to Alert. These squa
 [[Image]]Lightning Squad.png|A Lightning squad patrolling Quarantine[[/Image]]
 Lightning squads consist of 3 Lightnings and an [[I-47 Archangel]]. They can be summoned in one of two ways:
 [[List]]Destroying a Hub machine in [[Hub_04(d)]]: 3 Lightning patrols will be dispatched to the map out of exits and Garrisons. They will roam in the general area of each remaining Hub.|Opening the [[Sigix Containment Pod]] chamber: A single Lighting patrol will be dispatched to the map if Cogmind breaches the Sigix chamber. It will patrol around the location of the Sigix room.[[/List]][[/Spoiler]]"
-"Perfect Tracking","Other",""
+"Perfect Tracking","Other","Bots with perfect tracking will know where [[Cogmind]] is at all times. Most bots with this will lose it upon sighting Cogmind."
 "Perforator","Part",""
 "Perun","Bot",""
 "Phase Armor","Part",""

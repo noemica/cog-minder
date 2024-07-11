@@ -214,7 +214,7 @@
   },
   {
    "Name": "Cogmind",
-   "Content": ""
+   "Content": "Thats you."
   },
   {
    "Name": "Combat Drone",
@@ -8112,7 +8112,7 @@
   },
   {
    "Name": "Partial Spot",
-   "Content": ""
+   "Content": "Partial spotting is when you move through a (hostile) bots field of vision while its not its turn. The bot will investigate where it saw you, look a few tiles further then head back to whatever it was doing."
   },
   {
    "Name": "Patrol Squad",
@@ -8120,7 +8120,7 @@
   },
   {
    "Name": "Perfect Tracking",
-   "Content": ""
+   "Content": "Bots with perfect tracking will know where [[Cogmind]] is at all times. Most bots with this will lose it upon sighting Cogmind."
   },
   {
    "Name": "Power",
