@@ -43,6 +43,7 @@ import useBotData from "../../Effects/useBotData";
 import useItemData from "../../Effects/useItemData";
 import { RoundedInput } from "../../Input/Input";
 import { LabeledInput } from "../../LabeledItem/LabeledItem";
+import SimulatorLootItemInfobox, { SimulatorMatterInfobox } from "./SimulatorLootInfobox";
 import SimulatorPageInput from "./SimulatorPageInput";
 
 import "../Pages.less";
@@ -122,6 +123,7 @@ type ActiveChartState = {
     cumulativeKillPerVolleyData: Point[];
     killPerTuData: Point[];
     killPerVolleyData: Point[];
+    lootState: LootState;
     volleyTime: number;
 };
 
@@ -766,6 +768,7 @@ export default function SimulatorPage() {
 
     const numSimulations = parseIntOrDefault(pageState.numSimulations?.replace(",", ""), 100000);
     let activeSimulationChart: ReactNode | undefined;
+    let lootData: ReactNode | undefined;
     let comparisonSimulationInput: ReactNode | undefined;
     let comparisonSimulationChart: ReactNode | undefined;
 
@@ -876,6 +879,35 @@ export default function SimulatorPage() {
                 </Button>
             </div>
         );
+
+        // Create loot infoboxes
+        if (pageState.showLoot === "Yes") {
+            // Show corruption/crits for all parts if any has relevant stats
+            const showCorruption =
+                activeChartState.lootState.items.find(
+                    (item) => item.totalCorruptionPercent > 0 || item.totalFried > 0,
+                ) !== undefined;
+            const showCriticals =
+                activeChartState.lootState.items.find((item) => item.totalCritRemoves > 0) !== undefined;
+
+            lootData = (
+                <div className="loot-grid">
+                    <SimulatorMatterInfobox
+                        bot={botData.getBot(activeChartState.botName)}
+                        lootState={activeChartState.lootState}
+                    />
+                    {activeChartState.lootState.items.map((itemLootState, i) => (
+                        <SimulatorLootItemInfobox
+                            key={i}
+                            itemLootState={itemLootState}
+                            numKills={activeChartState.lootState.numKills}
+                            showCorruption={showCorruption}
+                            showCriticals={showCriticals}
+                        />
+                    ))}
+                </div>
+            );
+        }
     }
 
     if (comparisonChartState.datasets.length > 0) {
@@ -1120,6 +1152,7 @@ export default function SimulatorPage() {
             cumulativeKillPerVolleyData: cumulativeKillPerVolley,
             killPerTuData: perTuData,
             killPerVolleyData: perVolleyData,
+            lootState: state.lootState,
             volleyTime: state.offensiveState.volleyTime,
         });
     }
@@ -1149,6 +1182,7 @@ export default function SimulatorPage() {
             </div>
             {activeSimulationChart}
             {comparisonSimulationInput}
+            {lootData}
             {comparisonSimulationChart}
         </div>
     );

@@ -101,3 +101,61 @@
         }
     }
 }
+
+.lootbox-color-green {
+    color: @details-range-green;
+}
+
+.lootbox-color-yellow {
+    color: @details-range-yellow;
+}
+
+.lootbox-color-orange {
+    color: @details-range-orange;
+}
+
+.lootbox-color-red {
+    color: @details-range-red;
+}
+
+.loot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.loot-box {
+    border: @border-width solid @border-color;
+    text-align: center;
+
+    padding: @simulator-infobox-padding;
+}
+
+.loot-box-content-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.loot-box-content-grid > :nth-child(odd) {
+    text-align: right;
+    margin-right: @simulator-infobox-margin;
+}
+
+.loot-box-content-grid > :nth-child(even) {
+    text-align: left;
+    margin-left: @simulator-infobox-margin;
+}
+
+.loot-box-part-name-container {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-bottom: @medium-gap;
+
+    > div {
+        display: flex;
+
+        align-content: center;
+        align-items: center;
+    }
+}
