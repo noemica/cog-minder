@@ -370,6 +370,7 @@ export default function BotDetails({ bot, popoversToLinks }: { bot: Bot; popover
             <DetailsTextLine category="Profile" content={bot.profile} />
             <DetailsRangeLine
                 category="Rating"
+                tooltipOverride="Rating (Bot)"
                 colorScheme="LowGood"
                 minValue={0}
                 maxValue={165}
