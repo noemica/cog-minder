@@ -184,7 +184,7 @@
     "Mak. Flight Unit": ["Derelict"],
     "Nuclear Pulse Thruster": ["0b10"],
     "Imp. Surge Thruster": ["0b10"],
-    "Mni. Nuclear Pulse Thruster": ["0b10"],
+    "Mni. Nuclear Pulse Thruster": ["0b10", "Unobtainable"],
     "Cld. Cesium-ion Thruster": ["0b10"],
     "Biomechanical Wings": ["0b10"],
     "Field Propulsion Drive": ["0b10"],
