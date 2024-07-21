@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Link } from "wouter";
 
-import { Bot, BotLocation, BotPart } from "../../types/botTypes";
+import { Bot, BotImmunity, BotLocation, BotPart } from "../../types/botTypes";
 import { Item } from "../../types/itemTypes";
 import { getLinkSafeString, valueOrDefault } from "../../utilities/common";
 import useItemData from "../Effects/useItemData";
@@ -317,6 +317,7 @@ function ResistanceImmunityDetails({ bot }: { bot: Bot }) {
                             value={resistValue}
                             valueString={resistValue}
                             unitString="%"
+                            tooltipOverride="Resistance"
                         />
                     );
                 } else {
@@ -330,12 +331,24 @@ function ResistanceImmunityDetails({ bot }: { bot: Bot }) {
                             value={resistValue}
                             valueString={resistValue}
                             unitString="%"
+                            tooltipOverride="Resistance"
                         />
                     );
                 }
             })}
             {immunities.map((immunity) => (
-                <DetailsTextLineDim key={immunity} category={immunity} text="IMMUNE" />
+                <DetailsTextLineDim
+                    key={immunity}
+                    category={immunity}
+                    text="IMMUNE"
+                    tooltipOverride={
+                        immunity === BotImmunity.Disruption
+                            ? "Disruption Immunity"
+                            : immunity === BotImmunity.Meltdown
+                              ? "Meltdown Immunity"
+                              : ""
+                    }
+                />
             ))}
         </>
     );
