@@ -168,6 +168,7 @@ type BuildPageState = {
     depth?: string;
     bonusEnergyGen?: string;
     bonusHeatDissipation?: string;
+    bonusMassSupport?: string;
     partInfo?: PartInfoType;
     partState?: PartState[];
 };
@@ -374,6 +375,9 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         .filter((p) => hasActiveSpecialProperty(p.part, p.active, "MassSupport"))
         .map((p) => (p.part.specialProperty!.trait as MassSupport).support)
         .reduce(sum, 0);
+
+    // Add innate bonus
+    totalSupport += parseIntOrDefault(pageState.bonusMassSupport, 0);
 
     // Set irrelevant prop types to inactive
     parts.forEach((p) => {
@@ -1319,7 +1323,16 @@ export default function BuildPage() {
                         updatePageState({ ...pageState, bonusHeatDissipation: val });
                     }}
                     placeholder="0"
-                    tooltip="The amount of additional innate heat dissipation Cogmind has from alian artifacts (not including the standard depth bonus)."
+                    tooltip="The amount of additional innate heat dissipation Cogmind has from alien artifacts (not including the standard depth bonus)."
+                />
+                <LabeledInput
+                    label="Bonus Mass Support"
+                    value={pageState.bonusMassSupport || ""}
+                    onChange={(val) => {
+                        updatePageState({ ...pageState, bonusMassSupport: val });
+                    }}
+                    placeholder="0"
+                    tooltip="The amount of additional innate mass support Cogmind has from alien artifacts."
                 />
                 <Button
                     tooltip="Resets all filters to their default (unfiltered) state"
