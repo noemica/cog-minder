@@ -210,6 +210,7 @@ function CannonGunPartDetails({ item }: { item: WeaponItem }) {
                 colorScheme="LowGood"
                 defaultValueString="-0"
                 maxValue={50}
+                tooltipOverride="Energy (Gun)"
                 value={item.shotEnergy}
                 valueString={"-" + item.shotEnergy}
             />
@@ -218,6 +219,7 @@ function CannonGunPartDetails({ item }: { item: WeaponItem }) {
                 colorScheme="LowGood"
                 defaultValueString="-0"
                 maxValue={25}
+                tooltipOverride="Matter (Gun)"
                 value={item.shotMatter}
                 valueString={"-" + item.shotMatter}
             />
@@ -309,6 +311,7 @@ function LauncherPartDetails({ item }: { item: WeaponItem }) {
                 colorScheme="LowGood"
                 defaultValueString="-0"
                 maxValue={50}
+                tooltipOverride="Energy (Gun)"
                 value={item.shotEnergy}
                 valueString={"-" + item.shotEnergy}
             />
@@ -317,6 +320,7 @@ function LauncherPartDetails({ item }: { item: WeaponItem }) {
                 colorScheme="LowGood"
                 defaultValueString="-0"
                 maxValue={25}
+                tooltipOverride="Matter (Gun)"
                 value={item.shotMatter}
                 valueString={"-" + item.shotMatter}
             />
@@ -415,6 +419,7 @@ function MeleeWeaponPartDetails({ item }: { item: WeaponItem }) {
                 colorScheme="LowGood"
                 defaultValueString="-0"
                 maxValue={50}
+                tooltipOverride="Energy (Melee)"
                 value={item.shotEnergy}
                 valueString={"-" + item.shotEnergy}
             />
@@ -423,6 +428,7 @@ function MeleeWeaponPartDetails({ item }: { item: WeaponItem }) {
                 colorScheme="LowGood"
                 defaultValueString="-0"
                 maxValue={25}
+                tooltipOverride="Matter (Melee)"
                 value={item.shotMatter}
                 valueString={"-" + item.shotMatter}
             />
@@ -440,7 +446,7 @@ function MeleeWeaponPartDetails({ item }: { item: WeaponItem }) {
                 valueString={signedStringOrUndefined(item.targeting)}
                 unitString="%"
             />
-            <DetailsValueLine category="Delay" valueString={getDelayString(item)} defaultValue="0" />
+            <DetailsValueLine category="Delay" tooltipOverride="Delay (Melee)" valueString={getDelayString(item)} defaultValue="0" />
             <DetailsEmptyLine />
             <DetailsSummaryLine text="Hit" />
             <DetailsRangeLine
@@ -518,6 +524,7 @@ function PowerPartDetails({ item }: { item: PowerItem }) {
             />
             <DetailsRangeLine
                 category="Stability"
+                tooltipOverride="Stability (Engine)"
                 colorScheme="HighGood"
                 maxValue={100}
                 defaultValueString="N/A"
@@ -655,6 +662,7 @@ function SpecialMeleeWeaponPartDetails({ item }: { item: WeaponItem }) {
                 colorScheme="LowGood"
                 defaultValueString="-0"
                 maxValue={50}
+                tooltipOverride="Energy (Melee)"
                 value={item.shotEnergy}
                 valueString={"-" + item.shotEnergy}
             />
@@ -663,6 +671,7 @@ function SpecialMeleeWeaponPartDetails({ item }: { item: WeaponItem }) {
                 colorScheme="LowGood"
                 defaultValueString="-0"
                 maxValue={25}
+                tooltipOverride="Matter (Melee)"
                 value={item.shotMatter}
                 valueString={"-" + item.shotMatter}
             />
@@ -680,7 +689,7 @@ function SpecialMeleeWeaponPartDetails({ item }: { item: WeaponItem }) {
                 valueString={signedStringOrUndefined(item.targeting)}
                 unitString="%"
             />
-            <DetailsValueLine category="Delay" valueString={getDelayString(item)} defaultValue="0" />
+            <DetailsValueLine category="Delay" tooltipOverride="Delay (Melee)" valueString={getDelayString(item)} defaultValue="0" />
         </>
     );
 }
@@ -806,6 +815,7 @@ function SpecialWeaponPartDetails({ item }: { item: WeaponItem }) {
                 colorScheme="LowGood"
                 defaultValueString="-0"
                 maxValue={50}
+                tooltipOverride="Energy (Gun)"
                 value={item.shotEnergy}
                 valueString={"-" + item.shotEnergy}
             />
@@ -814,6 +824,7 @@ function SpecialWeaponPartDetails({ item }: { item: WeaponItem }) {
                 colorScheme="LowGood"
                 defaultValueString="-0"
                 maxValue={25}
+                tooltipOverride="Matter (Gun)"
                 value={item.shotMatter}
                 valueString={"-" + item.shotMatter}
             />
