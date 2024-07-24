@@ -35,6 +35,9 @@ export default function WikiHomepage() {
                     <Link href="/Bot Groups">Bot Groups</Link> - List of bot classes/other groups
                 </li>
                 <li>
+                    <Link href="/Acronyms">Acronyms</Link> - List of common community acronyms
+                </li>
+                <li>
                     <Link href="/Non-empty Pages">Non-empty Pages</Link> - List of non-empty pages
                 </li>
             </ul>
