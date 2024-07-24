@@ -119,6 +119,14 @@ export default function AboutPage() {
                         </tr>
                         <tr>
                             <th>
+                                <a href="https://reactrouter.com/en/main">React Router</a>
+                            </th>
+                            <th>
+                                <a href="https://github.com/remix-run/react-router?tab=MIT-1-ov-file#readme">MIT</a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
                                 <a href="https://react-select.com/home">React Select</a>
                             </th>
                             <th>
