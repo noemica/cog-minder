@@ -2226,14 +2226,7 @@ Cryocooling Duct machines may be sometimes found in Quarantine. These machines t
 "Sensor Arrays","Part Group",""
 "Sensor Drone","Bot",""
 "Sensor Drone Bay","Part","Deploys [[Sensor Drone|Sensor Drones]]."
-"Sentry","Bot Group","Sentries are a [[Bot Groups|Bot Group]] or [[Armor|armored]] [[Treads|treaded]] [[0b10]] bots that stand guard around exits, main corridors, and side rooms with machines or item stockpiles inside them. They wield dual Kinetic and Thermal guns at each tier. Sentries tend to be slightly more durable than most other bots at their depth. Sentries typically stand guard alone as a [[Security Squad]].
-Sentries have no particular weakness, and so most weapon types can be used to dispatch them. Electromagnetic damage is efficient at killing the higher tier bots, and EM is good in general at increasing the chances of looting their treads and armor.
-While combat bots will want (or will be forced) to fight Sentries head-on, airborne builds may want to avoid them or at least avoid getting shot by them. One way to do this is to use a [[Partial Spot]] to lure the Sentry out of their position. After that, Cogmind may be able to use the guarded machine or exit, or grab the loot without being spotted. A fast Cogmind may also be able to use the long memory of Sentries to their advantage while being spotted regularly. It is possible to lead Sentries far out of position and then leave them in the dust to grab their guarded loot.
-[[Gallery]]Sentries.png|All Sentry variants and colors|Sentry Guarded Stockpile.png|A Sentry guarding a stockpile of parts, sitting in a recognizable ""Sentry nook""[[/Gallery]]
-[[Heading]]Squads[[/Heading]]
-Sentries may appear in the following squads:
-[[List]][[Garrison Squad]]|[[Security Squad]][[/List]]
-Additionally, Sentries will appear at [[Garrison (Machine)|Garrisons]] and 0b10 exits during [[High Security]] and [[Maximum Security]]."
+"Sentry","Bot Group","Sentries are a [[Bot Groups|Bot Group]] or [[Armor|armored]] [[Treads|treaded]] [[0b10]] bots that stand guard around exits, main corridors, and side rooms with machines or item stockpiles inside them. They wield dual Kinetic and Thermal guns at each tier. Sentries tend to be slightly more durable than most other bots at their depth. Sentries typically stand guard alone as a [[Security Squad]].\nSentries have no particular weakness, and so most weapon types can be used to dispatch them. Electromagnetic damage is efficient at killing the higher tier bots, and EM is good in general at increasing the chances of looting their treads and armor.\nWhile combat bots will want (or will be forced) to fight Sentries head-on, airborne builds may want to avoid them or at least avoid getting shot by them. One way to do this is to use a [[Terminology#Partial Spot|partial spot]] to lure the Sentry out of their position. After that, Cogmind may be able to use the guarded machine or exit, or grab the loot without being spotted. A fast Cogmind may also be able to use the long memory of Sentries to their advantage while being spotted regularly. It is possible to lead Sentries far out of position and then leave them in the dust to grab their guarded loot.\n[[Gallery]]Sentries.png|All Sentry variants and colors|Sentry Guarded Stockpile.png|A Sentry guarding a stockpile of parts, sitting in a recognizable ""Sentry nook""[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nSentries may appear in the following squads:\n[[List]][[Garrison Squad]]|[[Security Squad]][[/List]]\nAdditionally, Sentries will appear at [[Garrison (Machine)|Garrisons]] and 0b10 exits during [[High Security]] and [[Maximum Security]]."
 "Shield Generator","Part",""
 "Shield Generators/Force Fields","Part Group",""
 "Shock Absorption System","Part",""
@@ -2437,6 +2430,7 @@ Getting traced may result in receiving [[Corruption]], your [[Hackware]] breakin
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Terminal[[/Lore]]"
+"Terminology","Other","This is a list of terminology, or potentially things that do not merit a full page. Also check out [[Acronyms]].\n[[Heading:3]]Partial Spot[[/Heading]]\nPartial spotting is when you move through a (hostile) bots field of vision while its not its turn. The bot will investigate where it saw you, look a few tiles further then head back to whatever it was doing."
 "Terrabomb","Part",""
 "Terrabomb Derivative","Part",""
 "Terrain Scan Processor","Part",""
