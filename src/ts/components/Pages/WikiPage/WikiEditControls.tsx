@@ -207,7 +207,7 @@ export default function WikiEditControls({
                     tooltip="Creates an ordered (numbered) list of items that can be separated out like [[List:Ordered]]Item 1|Item 2|Item 3[[/List]]."
                     onClick={() => insertWrappedText("[[List:Ordered]]", "[[/List]]")}
                 >
-                    Unordered List
+                    Ordered List
                 </Button>
                 <Button
                     tooltip="Creates a 2-dimensional table of text items in the form of [[Table]]Column 1 Header|Column 2 header||Row 1 column 1|Row 1 column 2[[/Table]]."
