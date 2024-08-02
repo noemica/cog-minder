@@ -256,7 +256,8 @@ with open(input_path) as f:
     string = f.read() \
         .replace('"Lootmaker"', '\\"Lootmaker\\"') \
         .replace('"Choppy"', '\\"Choppy\\"') \
-        .replace('"Deathgrip"', '\\"Deathgrip\\"')
+        .replace('"Deathgrip"', '\\"Deathgrip\\"') \
+        .replace('"Insurrection"', '\\"Insurrection\\"')
     
 
 csv.register_dialect('cog', 'excel', escapechar='\\')

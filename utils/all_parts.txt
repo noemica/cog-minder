@@ -50,6 +50,7 @@ Lgt. Antimatter Reactor
 Rnf. Antimatter Reactor
 Hyb. Antimatter Reactor
 Backup Power VII
+MA-1KR's Cyclogen
 Hvy. Antimatter Reactor
 Mni. Fusion Reactor
 Imp. Fusion Compressor
@@ -77,16 +78,21 @@ Imp. Treads
 Spk. Treads
 Arm. Treads
 Adv. Treads
+Ovr. Treads
 Med. Treads
 Imp. Medium Treads
 Spk. Medium Treads
 Arm. Medium Treads
 Hvy. Treads
+Tri-treads
+Wartreads
 Adv. Medium Treads
 Enh. Armored Medium Treads
 Imp. Heavy Treads
 Hvy. Siege Treads
 Spk. Heavy Treads
+Vmp. Heavy Siege Treads
+DD-05H's Wartreads
 Biometal Medium Treads
 Arm. Heavy Treads
 Adv. Heavy Treads
@@ -103,6 +109,7 @@ Aluminum Leg
 Imp. Aluminum Leg
 Carbon-fiber Leg
 Titanium Leg
+Ovr. Titanium Leg
 VSS Leg
 Imp. Carbon-fiber Leg
 Imp. Titanium Leg
@@ -113,6 +120,7 @@ Arm. Leg
 Imp. VSS Leg
 Zio. Composite Leg I
 Med. Armored Exoskeleton
+Ovr. Flexi-carbon Leg
 Enh. Flexi-carbon Leg
 Enh. Armored Leg
 Arachnoskeleton
@@ -139,7 +147,10 @@ Wheel
 Com. Wheel
 Arm. Wheel
 Sub. Monowheel
+Ovr. Scrapsphere
 Arm. Huge Wheel
+Ballwheel
+Ovr. Huge Scrapsphere
 Centrium Wheel
 Hdn. Centrium Wheel
 Hover Unit
@@ -209,6 +220,8 @@ Cld. Q-thruster
 Exp. Q-thruster
 Scrap Engine
 Arm. Scrap Engine
+Scrap Suit
+Matter Focus
 Desublimator
 Power Amplifier
 Adv. Power Amplifier
@@ -229,6 +242,7 @@ Cooling System
 Imp. Cooling System
 Adv. Cooling System
 Exp. Cooling System
+Mak. Coolant Network
 Coolant Network
 Asb. Nanovents
 2N-1CE's Frost Array
@@ -237,6 +251,7 @@ Coolant Injector
 Imp. Coolant Injector
 Adv. Coolant Injector
 Exp. Coolant Injector
+Mak. Microdissipator Network
 Sml. Storage Unit
 Med. Storage Unit
 Lrg. Storage Unit
@@ -244,6 +259,7 @@ Hcp. Storage Unit
 Huge Storage Unit
 Cargo Storage Unit
 Humpback
+Vmp. Humpback
 Lightpack 2.0
 Sml. Battery
 Med. Battery
@@ -275,10 +291,13 @@ Adv. Gravity Neutralizer
 Quantum Shading Machine
 Asb. Suspension Frame
 Adv. Quantum Shading Machine
+Rocket Booster
 Asb. Metafiber Network
 Zio. Metafield Generator
 ST Field Compressor
+Siege Articulator
 Structural Scanner
+Deep Structural Scanner
 Trap Scanner
 Imp. Trap Scanner
 Mak. Trap Scanner
@@ -314,6 +333,7 @@ Imp. Terrain Scan Processor
 Mak. Terrain Scan Processor
 Adv. Terrain Scan Processor
 Exp. Terrain Scan Processor
+Surveybot 17 Chip
 Surveybot 24 Chip
 Seismic Detector
 Transport Network Coupler
@@ -331,6 +351,7 @@ Adv. Salvage Targeting Computer
 Asb. Combat Suite
 Targeting Computer
 Imp. Targeting Computer
+Mak. Targeting Computer
 Adv. Targeting Computer
 Exp. Targeting Computer
 Multitargeting Array
@@ -367,6 +388,8 @@ Adv. Particle Accelerator
 Kinecellerator
 Imp. Kinecellerator
 Adv. Kinecellerator
+Expert System
+Heavy Servo Lattice
 VL-GR5's Timing Chip
 Launcher Loader
 Quantum Capacitor
@@ -410,20 +433,26 @@ Adv. Cloaking Device
 Exp. Cloaking Device
 Cloak of Protection
 5H-AD0's Cloak
+ID Mask
 Core Shielding
 Imp. Core Shielding
+Mak. Core Shielding
 Exp. Core Shielding
 Power Shielding
 Imp. Power Shielding
+Mak. Power Shielding
 Exp. Power Shielding
 Propulsion Shielding
 Imp. Propulsion Shielding
+Mak. Propulsion Shielding
 Exp. Propulsion Shielding
 Utility Shielding
 Imp. Utility Shielding
+Mak. Utility Shielding
 Exp. Utility Shielding
 Weapon Shielding
 Imp. Weapon Shielding
+Mak. Weapon Shielding
 Exp. Weapon Shielding
 Zio. Weapon Casing
 Backup Plating I
@@ -441,6 +470,8 @@ Imp. Light Armor Plating
 Imp. Medium Armor Plating
 Imp. Heavy Armor Plating
 Mak. Light Armor Plating
+Mak. Medium Armor Plating
+Mak. Heavy Armor Plating
 Lyr. Light Armor Plating
 Lyr. Medium Armor Plating
 Lyr. Heavy Armor Plating
@@ -469,16 +500,19 @@ Asb. Alloy Armor
 Mak. Ablative Armor
 Active Cooling Armor
 Scrap Shield
+Enh. Scrap Shield
 Powered Armor
 Imp. Powered Armor
 Adv. Powered Armor
 Exp. Powered Armor
 1C-UTU's Buckler
+Tower Shield
 Lgt. Regenerative Plating
 Med. Regenerative Plating
 Hvy. Regenerative Plating
 SHELL Armor
 Phase Armor
+Vmp. Brace Plating
 Graphene Brace
 Focal Shield
 Imp. Focal Shield
@@ -524,11 +558,11 @@ Energy Mantle
 Imp. Energy Mantle
 AEGIS Remote Shield
 Phase Redirector
+Field Manipulator
+Energy Deflector
 Point Defense System
 Point Defense Array
 Antimissile System
-Power Bank
-Heavy Servo Lattice
 EX Chip 1
 Hacking Suite
 Mak. Hacking Suite
@@ -576,6 +610,8 @@ Skeleton Box
 Component Analysis Suite
 Imp. Component Analysis Suite
 Adv. Component Analysis Suite
+A0-MCA's Component Scanner
+Tech Extrapolator
 Dynamic Insulation System
 Imp. Dynamic Insulation System
 Adv. Dynamic Insulation System
@@ -602,6 +638,7 @@ Trap Reconfigurator
 Recalibrator
 Imp. Recalibrator
 Adv. Recalibrator
+Exp. Recalibrator
 Field Recycling Unit
 Imp. Field Recycling Unit
 Adv. Field Recycling Unit
@@ -624,17 +661,22 @@ Sensor Drone Bay
 Hacking Drone Bay
 Minesniffer Drone Bay
 Army-in-a-Box
+Master Drone Bay
 Wardrone Bay
 Cobbler Unit
 Bomb Factory No. 2
 Mobile Assembly Unit
 Heart of Steel
+Scrapoid Pod
 GOLEM Unit
 PSU Rigger
+Machine Rigger
 Phasing AFG
 AS-neutralizer No. 17b
 V3-11A's Pendant
+Amulet of Y3-NDR
 Chronowheel
+Power Bank
 Rainbow Chip
 VL-GR5's Exoskeleton "Deathgrip"
 Dimensional Node Initializer
@@ -656,6 +698,8 @@ Core Reset Matrix
 Subatomic Replicator
 Terrabomb
 Core Physics Calibrator
+Personal Teleporter v0.10
+Telecube
 Spacefold Activator
 Microwarp Drive
 LC Capacitor
@@ -693,6 +737,7 @@ AWS/EX-DEC
 Enh. Gamma Rifle
 Med. Laser
 Sml. Laser
+Salvaging Laser
 Backup Laser I
 Beam Rifle
 Particle Gun
@@ -702,6 +747,7 @@ Sub. Laser
 Autobeam
 Field Laser
 Pulse Rifle
+Ovr. Pulse Rifle
 Backup Laser III
 Hvy. Particle Gun
 Prc. Beam Rifle
@@ -722,6 +768,7 @@ Zio. Laser-S
 Wave Gun
 Variable Charge Gun
 Hvy. Beamcaster
+Ovr. Beamcaster
 Cld. Plasma Rifle
 Enh. Force Rifle
 Hvy. Gatling Laser
@@ -740,7 +787,9 @@ Vortex Rifle
 Zio. Laser-M
 AWS/Thermal
 PD Laser
+KN-7UR's Autopenetrator
 Quantum Rifle
+Ovr. Quantum Rifle
 Prc. Phase Gun
 Hvy. Dispersion Rifle
 Vortex Shotgun
@@ -817,6 +866,7 @@ Zio. Alpha Cannon Mk. II
 BFG-9k Vortex Edition
 Assault Rifle
 Lgt. Assault Rifle
+Bolt Gun
 Hvy. Assault Rifle
 Autogun
 Shotgun
@@ -826,6 +876,7 @@ Imp. Assault Rifle
 Minigun
 Hpw. Shotgun
 Barrage Gun
+Ovr. Barrage Gun
 Enh. Autogun
 Gauss Rifle
 Flak Gun
@@ -840,6 +891,7 @@ Com. Gauss Rifle
 XL Autogun Subcomponent
 KE Penetrator
 Hyp. Coil Gun
+Ovr. Coil Gun
 Imp. KE Penetrator
 Enh. Coil Gun
 Com. Coil Gun
@@ -848,6 +900,7 @@ Adv. KE Penetrator
 Linked Autogun
 AWS/Gauss
 Hyp. Railgun
+Ovr. Railgun
 Helical Railgun
 Com. Railgun
 XL Autogun Array
@@ -867,10 +920,12 @@ Adv. Assault Cannon
 Gauss Cannon
 Slug Cannon
 Mni. Assault Cannon
+Siege Cannon Replica
 Magnetic Acceleration Cannon
 Hvy. Flak Cannon
 Bore Cannon
 Antimatter Cannon
+Siege Cannon
 Mass Driver
 Hvy. Mass Driver
 Enh. Gauss Cannon
@@ -940,6 +995,7 @@ Ragnarok Missile Launcher
 Point Singularity Launcher
 Gui. Micro-nuke Launcher
 99-TNT's Nukerbomber
+Exp. Neutron Missile Launcher
 Z-bomb Delivery System
 Sigix Terminator
 Supercharged Sigix Terminator
@@ -954,8 +1010,10 @@ Adv. Remote Datajack
 Exp. Remote Datajack
 Gui. Remote Datajack
 ME-RLN's Wand
+System Spiker
 Field Lobotomy Kit
 Mining Laser
+LU-1G1's Laser Shovel
 Welding Torch
 Plasma Cutter
 Imp. Plasma Cutter
@@ -966,7 +1024,11 @@ Enh. Flamer
 Plasma Flamer
 RU-N14's Throwing Claymores
 RU-N14's Throwing Claymores v3
+Warlord Statue
+Voltaic Drivehammer
 AD-0RF's Magmablaster
+IN-MT5's Pitchfork "Insurrection"
+Junk Cannon
 Stasis Beam
 Stasis Projector
 Exp. Stasis Projector
@@ -999,14 +1061,17 @@ Mak. Axe
 Mak. Sword
 Great Axe
 Greatsword
+Ripteeth
 Power Sword
 Falx
 Carbide Saw
 Segregator
 Tearclaws
+Companion Sword
 Phasing Sabre
 Plasma Sword
 Ionic Axe
+Vmp. Broadsword
 Dual-blade Saw
 Vibroblade
 Molecular Scythe
@@ -1016,7 +1081,9 @@ Longsword +1
 Nanosword
 Particle Cleaver
 1C-UTU's Sword "Lootmaker"
+DM-GVY's Chainsaw
 1C-UTU's Sword "Choppy"
+Quantum Companion
 Sigix Broadsword
 Spear
 Mak. Spear
@@ -1029,6 +1096,7 @@ Plasma Lance
 Enh. Force Lance
 Vortex Lance
 CR-A16's Behemoth Slayer
+Thermal Lance
 Blade Trap
 Segregator Trap
 Explosive Trap
@@ -1043,19 +1111,26 @@ Proton Bomb Trap
 Tesla Bomb Trap
 Gamma Bomb Trap
 Shrapnel Trap
+Vortex Trap
 Piercing Trap
 Shock Trap
 EM Surge Trap
 Fire Trap
+Heat Bomb Trap
 Stasis Trap
 Scrap Shield Fragment
+SUBCON Basin
 Signal Generator
 Self-destruct Interrupter
+DRS Beacon
 Sapper Charge
-Zhirov Special
 Deploy-a-Sentry
+Botcube
+Lrg. Botcube
+PL-3XN's Ring of Power
 GAL Module
 Portable AFG
+Zhirov Special
 SGEMP Prototype
 Terrabomb Derivative
 Sigix Containment Pod
