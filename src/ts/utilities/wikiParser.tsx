@@ -984,8 +984,23 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
 
 // Found a [[X]] or [[X|Y]] link, make sure we can link properly
 function processLinkTag(state: ParserState, result: RegExpExecArray) {
-    // Remove the earlier substituted {{ and }}s for their proper [ and ] counterparts
-    const split = result[1].replace("{{", "[").replace("}}", "]").split("|");
+    function isExternalLink() {
+        return result[0].includes("http");
+    }
+
+    let split: string[];
+    if (isExternalLink()) {
+        // If the link is external, check if we need to re-add the : since it
+        // gets removed by the regex earlier
+        if (result[2] !== undefined) {
+            split = (result[1] + ":" + result[2]).replace("{{", "[").replace("}}", "]").split("|");
+        } else {
+            split = result[1].replace("{{", "[").replace("}}", "]").split("|");
+        }
+    } else {
+        // Remove the earlier substituted {{ and }}s for their proper [ and ] counterparts
+        split = result[1].replace("{{", "[").replace("}}", "]").split("|");
+    }
 
     let linkTarget: string | undefined = split[0];
     let linkText = linkTarget.split("#")[0];
@@ -1029,7 +1044,7 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
             groupType: "Grouped",
             node: <HashLink to={`~/${rootDirectory}/${linkTarget.slice(2)}`}>{linkText}</HashLink>,
         });
-    } else if (linkTarget.includes(".htm") || linkTarget.startsWith("http")) {
+    } else if (isExternalLink()) {
         state.output.push({
             groupType: "Grouped",
             node: (
