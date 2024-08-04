@@ -90,7 +90,9 @@ name_replacements = {
     'God Mode': ['God Mode (Fake)', 'God Mode'],
     'Warlord': ['Warlord', 'Warlord (Command)'],
     'MAIN.C': ['MAIN.C (Shell)', 'MAIN.C'],
-    "Player": ['Cogmind'],
+    'Player': ['Cogmind'],
+    'Scrapoid': ['Scrapoid (3)', 'Scrapoid (6)', 'Scrapoid (8)'],
+    'Ranger': ['Ranger', 'DRS Ranger'],
 }
 
 class_replacements = {

@@ -14,6 +14,7 @@ import { parseIntOrDefault } from "../../utilities/common";
 import DetailsValueLine, {
     DetailsEmptyLine,
     DetailsItemArtLine,
+    DetailsItemImages,
     DetailsItemTitleLine,
     DetailsProjectileSummaryLine,
     DetailsRangeLine,
@@ -951,7 +952,7 @@ export default function ItemDetails({ item }: { item: Item }) {
             <DetailsItemArtLine part={item} />
             <DetailsEmptyLine />
             <DetailsItemTitleLine part={item} />
-            <DetailsEmptyLine />
+            <DetailsItemImages part={item} />
             <DetailsSummaryLine text="Overview" />
             <DetailsTextLine category="Type" content={item.type} />
             <DetailsTextLine category="Slot" content={getSlotString(item)} />

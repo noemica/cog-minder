@@ -1,6 +1,6 @@
 import { Bot } from "../../../types/botTypes";
 import { ItemLootState, LootState } from "../../../types/simulatorTypes";
-import { getItemSpriteImageName } from "../../../utilities/common";
+import { getDefaultItemSpriteImageName } from "../../../utilities/common";
 import useItemData from "../../Effects/useItemData";
 
 import "./SimulatorPage.less";
@@ -39,7 +39,7 @@ export function SimulatorMatterInfobox({ bot, lootState }: { bot: Bot; lootState
         <div className="loot-box">
             <div className="loot-box-part-name-container">
                 <span>Matter [</span>
-                <img src={getItemSpriteImageName(itemData.getItem("Matter"))} />
+                <img src={getDefaultItemSpriteImageName(itemData.getItem("Matter"))} />
                 <span>]</span>
             </div>
             <div className="loot-box-content-grid">
@@ -81,7 +81,7 @@ export default function SimulatorLootItemInfobox({
         <div className="loot-box">
             <div className="loot-box-part-name-container">
                 <span>{itemLootState.item.name} [</span>
-                <img src={getItemSpriteImageName(itemLootState.item)} />
+                <img src={getDefaultItemSpriteImageName(itemLootState.item)} />
                 <span>]</span>
             </div>
             <div className="loot-box-content-grid">

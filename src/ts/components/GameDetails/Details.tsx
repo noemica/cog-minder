@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 import { Bot } from "../../types/botTypes";
 import { Item, WeaponItem } from "../../types/itemTypes";
-import { getBotImageName, getItemAsciiArtImageName, getItemSpriteImageName } from "../../utilities/common";
+import { getBotImageNames, getItemAsciiArtImageName, getItemSpriteImageNames } from "../../utilities/common";
 import TextTooltip from "../Popover/TextTooltip";
 
 import "./Details.less";
@@ -134,20 +134,25 @@ const TooltipTexts = {
         "Chance this projectile may temporarily disable an active part on impact. If a robot core is struck, there is half this chance the entire robot may be disabled.",
     "Heat Transfer":
         "Relative heat transferred to a target, where each projectile impact heats it up separately. Also the chance to melt a part on a robot that is already overheating at the time of heat transfer. Overloaded thermal weapons transfer heat at one level higher than their normal amount.",
-    "Radius": "Maximum radius of the explosion from its origin",
-    "Falloff": "Amount of damage potential lost per space as the explosion expands from its origin. While targeting, this falloff is represented visually by the AOE color's brightness relative to the origin (this feature can be toggled via Explosion Predictions option).",
-    "Chunks": "AOE damage is often spread across each target in the area of effect, dividing the damage into separate chunks before affecting a robot, where each chunk of damage selects its own target part (though they may overlap). SOme explosive effects have a static number of chunks, while others randomly select from within a range for each attack.",
+    Radius: "Maximum radius of the explosion from its origin",
+    Falloff:
+        "Amount of damage potential lost per space as the explosion expands from its origin. While targeting, this falloff is represented visually by the AOE color's brightness relative to the origin (this feature can be toggled via Explosion Predictions option).",
+    Chunks: "AOE damage is often spread across each target in the area of effect, dividing the damage into separate chunks before affecting a robot, where each chunk of damage selects its own target part (though they may overlap). SOme explosive effects have a static number of chunks, while others randomly select from within a range for each attack.",
 
     // Propulsion stats
-    "Time/Move": "The amount of time required to move one space when unburdened and using only this type of propulsion. Where multiple active propulsion modules have different values, the average is used.",
-    "Mod/Extra": "Each flight or hover module beyond the first reduces the movement time cost by this amount, therefore increasing speed as more are attached. If not all active propulsion have the same modifier, their average value is used. Time/Move cannot normally be reduced below 20 when hovering, or 10 when flying.",
+    "Time/Move":
+        "The amount of time required to move one space when unburdened and using only this type of propulsion. Where multiple active propulsion modules have different values, the average is used.",
+    "Mod/Extra":
+        "Each flight or hover module beyond the first reduces the movement time cost by this amount, therefore increasing speed as more are attached. If not all active propulsion have the same modifier, their average value is used. Time/Move cannot normally be reduced below 20 when hovering, or 10 when flying.",
     Drag: "Inactive non-airborne propulsion modify the movement time cost by this amount while airborne. However, inactive propulsion has no adverse effect on the speed of non-airborne propulsion, including core movement.",
     "Energy Move": "Energy consumed by this part each move, if active.",
     "Heat Move": "Heat produced by this part each move, if active.",
-    "Support": "Mass supported by this part, if active.",
-    "Penalty": "Movement time penalty for being overweight, applied once if overweight at all. Penalty values for multiple different propulsion modules are averaged for calculation purposes. Further exceeding the mass support limit gradually continues to reduce speed depending on the amount of excess mass.",
-    "Burnout": "Burnout represents the rate at which this propulsion's integrity will deteriorate while overloaded, indicated as a percent chance per move to lose one point of integrity. Overloading boosts performance: speed is calculated as if there is two of this part active at once, support is increased 50%, energy costs doubled, and heat generation tripled. If N/A, this propulsion cannot be overloaded; in general only cooled hover and flight units support overloading. If moving at the normal maximum speed for the current propulsion type, each overloaded hover/flight unit further reduces final movement time by 1, to a value no better than 5.",
-    "Siege": "Entering or exiting siege mode requires 5 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and tht treads cannot be disabled or removed. WHile in siege mode, non-melee attacks have +20% accuracy, coverage for all armor and heavy treads is doubled, any treads in siege mode get a free 25% damage reduction, no weapons suffer from recoil effects, and Cogmind is immune to instant part destruction from critical hits. Treads capable of High siege mode instead give +30% accuracy and have 50% damage resist.",
+    Support: "Mass supported by this part, if active.",
+    Penalty:
+        "Movement time penalty for being overweight, applied once if overweight at all. Penalty values for multiple different propulsion modules are averaged for calculation purposes. Further exceeding the mass support limit gradually continues to reduce speed depending on the amount of excess mass.",
+    Burnout:
+        "Burnout represents the rate at which this propulsion's integrity will deteriorate while overloaded, indicated as a percent chance per move to lose one point of integrity. Overloading boosts performance: speed is calculated as if there is two of this part active at once, support is increased 50%, energy costs doubled, and heat generation tripled. If N/A, this propulsion cannot be overloaded; in general only cooled hover and flight units support overloading. If moving at the normal maximum speed for the current propulsion type, each overloaded hover/flight unit further reduces final movement time by 1, to a value no better than 5.",
+    Siege: "Entering or exiting siege mode requires 5 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and tht treads cannot be disabled or removed. WHile in siege mode, non-melee attacks have +20% accuracy, coverage for all armor and heavy treads is doubled, any treads in siege mode get a free 25% damage reduction, no weapons suffer from recoil effects, and Cogmind is immune to instant part destruction from critical hits. Treads capable of High siege mode instead give +30% accuracy and have 50% damage resist.",
 
     // Weapon Criticals
     Blast: "Chance for this weapon to apply the same amount of damage to the core or a second part, ignoring coverage, and if not destroyed then the second part is knocked to the ground.",
@@ -195,34 +200,18 @@ const colorSchemes: Record<ColorScheme, Record<ColorSchemeColors, string>> = {
     },
 };
 
-function WrapInToolTipIfExists(node: ReactNode, value?: string, category?: string) {
-    value = typeof value === "string" ? value.trim() : value;
-    category = typeof category === "string" ? category.trim() : category;
-
-    if (value && value in TooltipTexts) {
-        return (
-            <TextTooltip tooltipText={TooltipTexts[value]}>
-                <div>{node}</div>
-            </TextTooltip>
-        );
-    } else if (category && category in TooltipTexts) {
-        return (
-            <TextTooltip tooltipText={TooltipTexts[category]}>
-                <div>{node}</div>
-            </TextTooltip>
-        );
-    } else {
-        console.log(`Missing category ${category}`);
-        return node;
-    }
+export function DetailsBotImages({ bot }: { bot: Bot }) {
+    return (
+        <pre className="details-sprites">
+            {getBotImageNames(bot).map((imageName, i) => (
+                <img key={i} src={imageName} />
+            ))}
+        </pre>
+    );
 }
 
 export function DetailsBotTitleLine({ bot }: { bot: Bot }) {
-    return (
-        <pre className="details-title details-bot-image-title">
-            {bot.name} [<img src={getBotImageName(bot)} />]
-        </pre>
-    );
+    return <pre className="details-title">{bot.name}</pre>;
 }
 
 export function DetailsEmptyLine() {
@@ -237,12 +226,18 @@ export function DetailsItemArtLine({ part }: { part: Item }) {
     );
 }
 
-export function DetailsItemTitleLine({ part }: { part: Item }) {
+export function DetailsItemImages({ part }: { part: Item }) {
     return (
-        <pre className="details-title details-item-image-title">
-            {part.name} [<img src={getItemSpriteImageName(part)} />]
+        <pre className="details-sprites">
+            {getItemSpriteImageNames(part).map((imageName, i) => (
+                <img key={i} src={imageName} />
+            ))}
         </pre>
     );
+}
+
+export function DetailsItemTitleLine({ part }: { part: Item }) {
+    return <pre className="details-title details-item-image-title">{part.name}</pre>;
 }
 
 export function DetailsTextLine({
@@ -266,7 +261,7 @@ export function DetailsTextLine({
 
     const numSpaces = 23 - 1 - category.length;
 
-    return WrapInToolTipIfExists(
+    return wrapInToolTipIfExists(
         <pre className="details-line">
             {" "}
             {category}
@@ -289,7 +284,7 @@ export function DetailsTextLineDim({
 }) {
     const numSpaces = 23 - 1 - category.length;
 
-    return WrapInToolTipIfExists(
+    return wrapInToolTipIfExists(
         <pre className="details-line">
             {" "}
             {category}
@@ -372,7 +367,7 @@ export function DetailsTextValueLine({
         </pre>
     );
 
-    return WrapInToolTipIfExists(result, tooltipOverride || textNode?.toString(), category);
+    return wrapInToolTipIfExists(result, tooltipOverride || textNode?.toString(), category);
 }
 
 export function DetailsRangeLine({
@@ -444,7 +439,7 @@ export function DetailsRangeLine({
     }
 
     // Return full HTML
-    return WrapInToolTipIfExists(
+    return wrapInToolTipIfExists(
         <pre className="details-line">
             <span> {category}</span>
             {" ".repeat(numSpaces)}
@@ -502,7 +497,7 @@ export default function DetailsValueLine({
     }
 
     const numSpaces = 23 - 1 - category.length - 1 - valueString.length;
-    return WrapInToolTipIfExists(
+    return wrapInToolTipIfExists(
         <pre className="details-line">
             {" "}
             {category}
@@ -512,4 +507,26 @@ export default function DetailsValueLine({
         tooltipOverride || valueString,
         category,
     );
+}
+
+function wrapInToolTipIfExists(node: ReactNode, value?: string, category?: string) {
+    value = typeof value === "string" ? value.trim() : value;
+    category = typeof category === "string" ? category.trim() : category;
+
+    if (value && value in TooltipTexts) {
+        return (
+            <TextTooltip tooltipText={TooltipTexts[value]}>
+                <div>{node}</div>
+            </TextTooltip>
+        );
+    } else if (category && category in TooltipTexts) {
+        return (
+            <TextTooltip tooltipText={TooltipTexts[category]}>
+                <div>{node}</div>
+            </TextTooltip>
+        );
+    } else {
+        console.log(`Missing category ${category}`);
+        return node;
+    }
 }

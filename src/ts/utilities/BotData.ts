@@ -3,7 +3,7 @@ import lore from "../../json/lore.json";
 import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "../types/botTypes";
 import { FabricationStats } from "../types/itemTypes";
 import { ItemData } from "./ItemData";
-import { ceilToMultiple, getBotImageName, loadImage, parseIntOrDefault } from "./common";
+import { ceilToMultiple, getBotImageNames, loadImage, parseIntOrDefault } from "./common";
 
 export class BotData {
     botData: { [key: string]: Bot } = {};
@@ -228,10 +228,13 @@ export class BotData {
         console.log("Verifying bot images...");
 
         for (const bot of this.getAllBots()) {
-            botPromises.push(loadImage(getBotImageName(bot)));
+            for (const imageName of getBotImageNames(bot)) {
+                if (imageName.includes("Special_") || imageName.includes("Unique_")) {
+                    console.log(bot.name);
+                }
+                botPromises.push(loadImage(imageName));
+            }
         }
         await Promise.all(botPromises);
-
-        console.log("Verified bot images");
     }
 }

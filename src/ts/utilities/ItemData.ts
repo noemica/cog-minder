@@ -15,7 +15,7 @@ import {
 } from "../types/itemTypes";
 import {
     getItemAsciiArtImageName,
-    getItemSpriteImageName,
+    getItemSpriteImageNames,
     getNoPrefixName,
     loadImage,
     parseFloatOrUndefined,
@@ -388,7 +388,9 @@ export class ItemData {
         const itemPromises: Promise<any>[] = [];
 
         for (const item of this.getAllItems()) {
-            itemPromises.push(loadImage(getItemSpriteImageName(item)));
+            for (const imageName of getItemSpriteImageNames(item)) {
+                itemPromises.push(loadImage(imageName));
+            }
             itemPromises.push(loadImage(getItemAsciiArtImageName(item)));
         }
 

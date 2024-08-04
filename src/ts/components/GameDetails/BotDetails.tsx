@@ -9,6 +9,7 @@ import { useSpoilers } from "../Effects/useLocalStorageValue";
 import { ItemTooltip } from "../Pages/WikiPage/WikiTooltips";
 import { BotItemPopoverButton } from "../Popover/ItemPopover";
 import {
+    DetailsBotImages,
     DetailsBotTitleLine,
     DetailsEmptyLine,
     DetailsRangeLine,
@@ -376,6 +377,8 @@ export default function BotDetails({ bot, popoversToLinks }: { bot: Bot; popover
     return (
         <div className="bot-details">
             <DetailsBotTitleLine bot={bot} />
+            <DetailsEmptyLine />
+            <DetailsBotImages bot={bot} />
             <DetailsEmptyLine />
             <DetailsSummaryLine text="Overview" />
             <DetailsTextLine category="Class" content={bot.class} />

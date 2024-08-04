@@ -23,30 +23,90 @@ const botNameImageMap = new Map<string, string>([
     ["A7", "Programmer"],
     ["A8", "Programmer"],
     ["Architect", "Architect"],
+    ["Armor Guard", "Sentry"],
     ["Autobeam Turret", "Turret"],
+    ["Bouncer", "Sentry"],
+    ["Butcher (5)", "Duelist"],
+    ["Butcher (7)", "Duelist"],
+    ["Cetus Guard", "Sentry"],
     ["Cobbler", "Mechanic"],
+    ["Combat Programmer", "Programmer"],
+    ["Commander", "Grunt"],
     ["CL-ANK", "Brawler"],
+    ["DD-05H", "Demolisher"],
+    ["DRS Ranger", "Ranger (Derelict)"],
     ["Data Miner", "Data Miner"],
+    ["Decomposer", "Worker"],
     ["EX-BIN", "Researcher"],
     ["EX-DEC", "Researcher"],
     ["EX-HEX", "Researcher"],
-    ["HV-R5K", "Grunt"],
+    ["Enhanced Demolisher", "Demolisher"],
+    ["Enhanced Hunter", "Hunter"],
+    ["Enhanced Grunt", "Grunt"],
+    ["Enhanced Programmer", "Programmer"],
+    ["Enhanced Q-Series", "Q-Series"],
+    ["Enhanced Sentry", "Sentry"],
+    ["Federalist", "Grunt"],
     ["God Mode", "God Mode"],
     ["God Mode (Fake)", "God Mode"],
+    ["Guerrilla (5)", "Hunter"],
+    ["Guerrilla (7)", "Hunter"],
+    ["Guru", "Programmer"],
+    ["HV-R5K", "Grunt"],
     ["Imprinter", "Imprinter"],
+    ["Infiltrator (6)", "Specialist"],
+    ["Infiltrator (7)", "Specialist"],
+    ["Infiltrator (8)", "Specialist"],
+    ["Investigator", "Researcher"],
+    ["KN-7UR", "Hunter"],
+    ["LRC-V4", "Cogmind"],
+    ["LRC-V5", "Cogmind"],
+    ["LRC-V6", "Cogmind"],
+    ["LV-01A", "Demolisher"],
+    ["Large Mutated Botcube", "Mutated Botcube"],
+    ["Lightning", "Hunter"],
+    ["M Guard", "Sentry"],
+    ["M Shell/Atk", "Sentry"],
+    ["M Shell/Def", "Protector"],
     ["MAIN.C", "MAIN.C2"],
     ["MAIN.C (Shell)", "MAIN.C1"],
     ["ME-RLN", "Programmer"],
+    ["Master Thief", "Thief (Derelict)"],
+    ["Marauder (6)", "Behemoth"],
+    ["Marauder (8)", "Behemoth"],
+    ["Martyr (5)", "Demolisher"],
+    ["Martyr (7)", "Demolisher"],
+    ["Mutated Botcube", "Mutated Botcube"],
     ["NK-0LA", "Specialist"],
+    ["Packrat", "Recycler"],
     ["Perun", "Perun"],
+    ["Protovariant D", "Demolisher"],
+    ["Protovariant G", "Grunt"],
+    ["Protovariant H", "Hunter"],
+    ["Protovariant L", "Duelist"],
+    ["Protovariant P", "Programmer"],
+    ["Protovariant X", "Specialist"],
+    ["Protovariant Y", "Sentry"],
     ["P1-3CE", "Mutant (Derelict)"],
+    ["Quarantine Guard", "Sentry"],
     ["Revision", "Revision"],
     ["Revision 17", "Revision 17"],
     ["Revision 17++", "Revision 17++"],
+    ["S7 Guard", "Sentry"],
+    ["Sapper", "Grunt"],
+    ["Savage (5)", "Brawler"],
+    ["Savage (7)", "Brawler"],
     ["Sigix Warrior", "Sigix Warrior"],
+    ["Superbehemoth", "Behemoth"],
+    ["Surgeon (4)", "Mechanic"],
+    ["Surgeon (6)", "Mechanic"],
     ["Surveybot 24", "Researcher"],
     ["Svarog", "Svarog"],
-    ["Master Thief", "Thief (Derelict)"],
+    ["Tinkerer", "Researcher"],
+    ["Thug (5)", "Grunt"],
+    ["Thug (7)", "Grunt"],
+    ["Tracker", "Swarmer"],
+    ["Triborg", "Triborg"],
     ["VL-GR5", "Specialist"],
     ["Warbot", "Mutant (Derelict)"],
     ["Warlord", "Warlord"],
@@ -59,8 +119,16 @@ const botNameImageMap = new Map<string, string>([
     ["Warlord MG-163", "Warlord"],
     ["Warlord SH-K8T", "Warlord"],
     ["Warlord Statue", "Warlord"],
+    ["Wasp (5)", "Swarmer"],
+    ["Wasp (7)", "Swarmer"],
+    ["Wizard (5)", "Programmer"],
+    ["Wizard (7)", "Programmer"],
+    ["Wyrm Statue", "Dragon (Derelict)"],
     ["YI-UF0", "Grunt"],
     ["Z-Courier", "Hauler"],
+    ["Z-Drone", "Drone"],
+    ["Z-Experimental (8)", "Z-Ex"],
+    ["Z-Experimental (10)", "Z-Ex"],
     ["Z-Imprinter", "Imprinter"],
     ["Z-Technician", "Operator"],
     ["Zhirov", "Zhirov"],
@@ -91,6 +159,7 @@ export const itemsWithNoArt = new Set([
     "Vortex Shredder",
     "Centrium Claws",
     "T.R.O.L.L. Exoskeleton",
+    "Master Link",
 ]);
 
 // Character -> escape character map
@@ -194,19 +263,25 @@ export function gallerySort(itemA: Item, itemB: Item): number {
     return res;
 }
 
-// Gets the image path for a specified bot
-export function getBotImageName(bot: Bot) {
+// Gets the paths for all sizes of images for a specified bot
+const spriteSizes = ["12", "14", "16", "18", "24", "48"];
+export function getBotImageNames(bot: Bot): string[] {
     const imageName = botNameImageMap.get(bot.name);
     if (imageName !== undefined) {
-        return createImagePath(`game_sprites/${imageName}.png`);
+        return spriteSizes.map((size) => createImagePath(`game_sprites/${imageName}_${size}.png`));
     }
 
-    return createImagePath(`game_sprites/${bot.class}.png`);
+    return spriteSizes.map((size) => createImagePath(`game_sprites/${bot.class}_${size}.png`));
 }
 
-// Gets the sprite image name of an item
-export function getItemSpriteImageName(item: Item): string {
-    return createImagePath(`game_sprites/${item.type}.png`);
+// Gets the 24 tile size image name of an item
+export function getDefaultItemSpriteImageName(item: Item): string {
+    return createImagePath(`game_sprites/${item.type}_24.png`);
+}
+
+// Gets all sprite image names of an item
+export function getItemSpriteImageNames(item: Item): string[] {
+    return spriteSizes.map((size) => createImagePath(`game_sprites/${item.type}_${size}.png`));
 }
 
 // Gets the sprite image name of an item

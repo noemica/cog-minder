@@ -44,7 +44,7 @@
 
 .details-description {
     display: block;
-    max-width: @details-description-max-width;
+    max-width: @details-max-width;
 }
 
 .details-title {
@@ -66,9 +66,18 @@
     }
 }
 
-.details-bot-image-title {
+.details-sprites {
+    margin-bottom: 0;
+    margin-top: 0;
+    max-width: @details-max-width;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
     > img {
-        vertical-align: middle;
+        padding: 0 @small-gap;
+        object-fit: scale-down;
     }
 }
 
