@@ -575,10 +575,10 @@ function WeaponComparison({ leftItem, rightItem }: { leftItem: Item; rightItem: 
             if (leftWeapon.damage !== undefined && rightWeapon.damage !== undefined) {
                 damageNode = (
                     <>
-                        <EmptyComparisonLine />;
+                        <EmptyComparisonLine />
                         <DamageComparison leftWeapon={leftWeapon} rightWeapon={rightWeapon} explosive={false} />
                         <DamageTypeComparison leftWeapon={leftWeapon} rightWeapon={rightWeapon} explosive={false} />
-                        <CriticalComparison leftWeapon={leftWeapon} rightWeapon={rightWeapon} />;
+                        <CriticalComparison leftWeapon={leftWeapon} rightWeapon={rightWeapon} />
                         <HighGoodComparisonStat
                             leftValue={leftWeapon.disruption ?? 0}
                             rightValue={rightWeapon.disruption ?? 0}
@@ -587,7 +587,7 @@ function WeaponComparison({ leftItem, rightItem }: { leftItem: Item; rightItem: 
                             leftValue={leftWeapon.salvage ?? 0}
                             rightValue={rightWeapon.salvage ?? 0}
                         />
-                        <EmptyComparisonLine />;
+                        <EmptyComparisonLine />
                     </>
                 );
             }
@@ -773,9 +773,6 @@ export default function PartsComparisonDisplay({
     });
 
     function ItemSelect({ itemName, setItem }: { itemName: string; setItem: (val: string) => void }) {
-        console.log(itemName);
-        console.log(itemOptions.find((o) => o.value === itemName));
-
         return (
             <SelectWrapper
                 value={itemOptions.find((o) => o.value === itemName) || { value: { itemName } }}

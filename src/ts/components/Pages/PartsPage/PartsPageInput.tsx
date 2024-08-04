@@ -135,6 +135,11 @@ const allCategoryOptions: (SelectOptionType<PartCategory> & { spoiler?: Spoiler 
     { value: "Testing", tooltip: "Parts that can be found in Testing.", spoiler: "Spoiler" },
     { value: "Unobtainable", tooltip: "Parts that are not obtainable by normal gameplay." },
     {
+        value: "UFD",
+        tooltip: "Parts that can be found in Scraptown or are related to the United Federation of Derelicts",
+        spoiler: "Spoiler",
+    },
+    {
         value: "Warlord",
         tooltip: "Parts that are obtainable in the Warlord map, or on Warlord-aligned bots",
         spoiler: "Spoiler",

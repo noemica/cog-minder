@@ -484,6 +484,7 @@ Reactive Plating
 Med. Reactive Plating
 Mak. Kinetic Plating
 Hvy. Reactive Plating
+Superdense Plating
 Reflective Plating
 Med. Reflective Plating
 Mak. Thermal Plating
@@ -732,6 +733,7 @@ Imp. Arc Thrower
 Gamma Rifle
 Tachyon Dispersion Ray
 Immobilizer
+Electrostorm Shotgun
 Modified EM Gauss Rifle
 AWS/EX-DEC
 Enh. Gamma Rifle
@@ -853,6 +855,7 @@ Firepult
 YOLO Cannon
 Potential Cannon
 Warp Cannon
+Hyp. Alpha Cannon
 Cld. Nova Cannon
 Null Cannon
 Imp. Potential Cannon
@@ -949,6 +952,7 @@ P1-3CE's Gatling Flakker
 AWS/Autocannon
 Perforator
 Omega Cannon
+PL-3XN's Obliterator
 EMP Blaster
 Shock Bomb Launcher
 Adv. EMP Blaster
@@ -1017,6 +1021,7 @@ LU-1G1's Laser Shovel
 Welding Torch
 Plasma Cutter
 Imp. Plasma Cutter
+Exp. Plasma Cutter
 CPS Tube
 Multitool
 Flamer
@@ -1028,6 +1033,7 @@ Warlord Statue
 Voltaic Drivehammer
 AD-0RF's Magmablaster
 IN-MT5's Pitchfork "Insurrection"
+Shield Trident
 Junk Cannon
 Stasis Beam
 Stasis Projector
@@ -1084,6 +1090,7 @@ Particle Cleaver
 DM-GVY's Chainsaw
 1C-UTU's Sword "Choppy"
 Quantum Companion
+Superquantum Companion
 Sigix Broadsword
 Spear
 Mak. Spear
@@ -1128,6 +1135,7 @@ Deploy-a-Sentry
 Botcube
 Lrg. Botcube
 PL-3XN's Ring of Power
+Disassembled Obliterator
 GAL Module
 Portable AFG
 Zhirov Special

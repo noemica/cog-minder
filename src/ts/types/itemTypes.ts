@@ -45,6 +45,7 @@ export type ItemCategory =
     | "Spoiler"
     | "Testing"
     | "Unobtainable"
+    | "UFD"
     | "Warlord"
     | "Zion"
     | "Zionite";
