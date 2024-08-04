@@ -1,13 +1,9 @@
 from argparse import ArgumentParser
 from collections import namedtuple
-import copy
-import hashlib
 import logging
-import os
 from os import path
 from PIL import Image
 import shutil
-import sys
 import zipfile
 
 OUTPUT_PATH = path.abspath(path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'public', 'game_sprites'))
@@ -215,9 +211,9 @@ def process_font(font, fonts_path):
 
 # Entry point
 def main(cogmind_dir):
-    temp_folder = path.join(cogmind_dir, 'temp')
+    temp_dir = path.join(cogmind_dir, 'temp')
     cogmind_resouces_path = path.join(cogmind_dir, 'cogmind.x')
-    cogmind_resources_dir = path.join(temp_folder, 'cogmind_resources')
+    cogmind_resources_dir = path.join(temp_dir, 'cogmind_resources')
     fonts_path = path.join(cogmind_resources_dir, 'data', 'fonts')
 
     extract_resources(cogmind_resouces_path, cogmind_resources_dir)
@@ -225,6 +221,8 @@ def main(cogmind_dir):
     for font in FONTS:
         logging.info('Processing font %s', font.filename)
         process_font(font, fonts_path)
+
+    shutil.rmtree(temp_dir)
 
 
 if __name__ == '__main__':

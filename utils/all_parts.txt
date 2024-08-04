@@ -84,6 +84,7 @@ Imp. Medium Treads
 Spk. Medium Treads
 Arm. Medium Treads
 Hvy. Treads
+Ovr. Medium Treads
 Tri-treads
 Wartreads
 Adv. Medium Treads
@@ -855,9 +856,10 @@ Firepult
 YOLO Cannon
 Potential Cannon
 Warp Cannon
-Hyp. Alpha Cannon
 Cld. Nova Cannon
 Null Cannon
+Hyp. Alpha Cannon
+Zio. Alpha Cannon Mk. II
 Imp. Potential Cannon
 Multinova Projection Cannon
 Disintegrator
@@ -865,7 +867,6 @@ Core Cannon
 Sigix Shearcannon
 Drained L-Cannon
 L-Cannon
-Zio. Alpha Cannon Mk. II
 BFG-9k Vortex Edition
 Assault Rifle
 Lgt. Assault Rifle

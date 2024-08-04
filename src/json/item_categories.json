@@ -81,6 +81,7 @@
     "Spk. Medium Treads": ["Derelict"],
     "Arm. Medium Treads": ["0b10"],
     "Hvy. Treads": ["0b10"],
+    "Ovr. Medium Treads": ["Derelict", "Spoilers", "UFD"],
     "Tri-treads": ["Derelict", "Spoiler", "UFD"],
     "Wartreads": ["Derelict", "Spoiler", "UFD"],
     "Adv. Medium Treads": ["0b10"],
