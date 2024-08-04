@@ -44,6 +44,7 @@ export type PartCategory =
     | "S7 Unguarded"
     | "Testing"
     | "Unobtainable"
+    | "UFD"
     | "Warlord"
     | "Zion"
     | "Zionite";
