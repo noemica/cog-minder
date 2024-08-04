@@ -26,7 +26,7 @@ import "./BotsPage.less";
 
 type BotsPageMode = "Simple" | "Spreadsheet";
 
-type Faction = "Any" | "0b10" | "Architect" | "Derelict" | "Exiles" | "Warlord" | "Zionite";
+type Faction = "Any" | "0b10" | "Architect" | "Derelict" | "Exiles" | "UFD" | "Warlord" | "Zionite";
 
 type BotsPageState = {
     name?: string;
@@ -40,12 +40,13 @@ const modeButtons: ExclusiveButtonDefinition<BotsPageMode>[] = [{ value: "Simple
 
 const allFactionButtons: (ExclusiveButtonDefinition<Faction> & { spoiler?: Spoiler })[] = [
     { value: "Any" },
-    { value: "Architect", spoiler: "Redacted" },
-    { value: "0b10" },
-    { value: "Derelict" },
-    { value: "Exiles" },
-    { value: "Warlord", spoiler: "Spoiler" },
-    { value: "Zionite", spoiler: "Spoiler" },
+    { value: "Architect", spoiler: "Redacted", tooltip: "Any Architect or Architect-related bots." },
+    { value: "0b10", tooltip: "Any standard or prototype 0b10 bots." },
+    { value: "Derelict", tooltip: "Any non-0b10 Derelict bots." },
+    { value: "Exiles", tooltip: "Any Exiles or Exiles-related bots." },
+    { value: "UFD", spoiler: "Spoiler", tooltip: "Any United Federation of Derelict (Scraptown) or related bots" },
+    { value: "Warlord", spoiler: "Spoiler", tooltip: "Any Warlord-related bots" },
+    { value: "Zionite", spoiler: "Spoiler", tooltip: "Any Zion-related bots including Imprint-related bots" },
 ];
 
 const botColumnDefs: ColumnDef<Bot>[] = [

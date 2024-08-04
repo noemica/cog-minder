@@ -247,6 +247,14 @@
             }
         ]
     },
+    "Advanced Drone": {
+        "Categories": ["0b10"],
+        "Locations": [
+            {
+                "Location": "Advanced Drone Bay"
+            }
+        ]
+    },
     "Alpha 7": {
         "Categories": ["0b10", "Prototype", "Spoiler"],
         "Locations": [
@@ -274,20 +282,21 @@
             }
         ]
     },
-    "Advanced Drone": {
-        "Categories": ["0b10"],
-        "Locations": [
-            {
-                "Location": "Advanced Drone Bay"
-            }
-        ]
-    },
     "Architect": {
         "Categories": ["Architect", "Redacted"],
         "Locations": [
             {
                 "Location": "Access_0",
                 "Description": "Hostile: Stationed at the entrance to the map"
+            }
+        ]
+    },
+    "Armor Guard": {
+        "Categories": ["0b10", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Armory",
+                "Description": "Hostile: Guarding the Disassembled Obliterator on the left side of Armory"
             }
         ]
     },
@@ -478,6 +487,15 @@
         "Locations": [
             {
                 "Location": "Bomb Drone Bay"
+            }
+        ]
+    },
+    "Bolteater": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Scraptown",
+                "Description": "Friendly: Roam around Scraptown in groups of 3"
             }
         ]
     },
@@ -698,6 +716,15 @@
             }
         ]
     },
+    "DD-05H": {
+        "Categories": ["Derelict", "Spoiler", "Warlord"],
+        "Locations": [
+            {
+                "Location": "-2 Research Warlord Invasion",
+                "Description": "Friendly: Appears a few hundred turns after the invasion begins and follows Warlord around"
+            }
+        ]
+    },
     "Data Miner": {
         "Categories": ["Architect", "Spoiler"],
         "Locations": [
@@ -748,12 +775,30 @@
             }
         ]
     },
+    "DRS Ranger": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Caves",
+                "Description": "Friendly: Appear when Cogmind uses a DRS Beacon"
+            }
+        ]
+    },
     "E-15 Imp": {
         "Categories": ["0b10"],
         "Locations": [
             {
                 "Location": "0b10 Assaults -6 through -1",
                 "Description": "Hostile: Appear inside assault ARCS"
+            }
+        ]
+    },
+    "Elite": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Scraptown",
+                "Description": "Friendly: Stand Guard around Scraptown"
             }
         ]
     },
@@ -887,6 +932,24 @@
                 "Location": "Section 7",
                 "Description": "Dormant Hostile: 2 guard the top left corner of the Leopard hangar and 2 guard the bottom right corner",
                 "Spoiler": "Redacted"
+            }
+        ]
+    },
+    "Explorer": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Scraptown",
+                "Description": "Friendly: Roam around Scraptown"
+            }
+        ]
+    },
+    "Federalist": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Scraptown",
+                "Description": "Friendly: Roam around Scraptown"
             }
         ]
     },
@@ -1024,6 +1087,15 @@
             {
                 "Location": "Caves and various derelict attack events",
                 "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "Guru": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Scraptown",
+                "Description": "Friendly: Roam around Scraptown"
             }
         ]
     },
@@ -1209,6 +1281,15 @@
             }
         ]
     },
+    "KN-7UR": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Recycling",
+                "Description": "Friendly: Appears when 01-MTF is brought to Scraptown, hostile to 01-MTF"
+            }
+        ]
+    },
     "Knight": {
         "Categories": ["Derelict", "Spoiler", "Warlord"],
         "Locations": [
@@ -1246,6 +1327,24 @@
             {
                 "Location": "0b10 maps -4 through -1",
                 "Description": "Hostile: Duelists are common bots that can be grunt patrol squad leaders and found inside assault ARCs"
+            }
+        ]
+    },
+    "LV-01A": {
+        "Categories": ["Derelict", "Spoiler", "Warlord"],
+        "Locations": [
+            {
+                "Location": "Warlord",
+                "Description": "Friendly: Roams around the Warlord base"
+            }
+        ]
+    },
+    "Large Mutated Botcube": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Lrg. Botcube",
+                "Description": "Friendly: Created from using a Lrg. Botcube"
             }
         ]
     },
@@ -1440,6 +1539,14 @@
             }
         ]
     },
+    "Master Drone": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Master Drone Bay"
+            }
+        ]
+    },
     "Master Thief": {
         "Categories": ["Derelict", "Spoiler"],
         "Locations": [
@@ -1511,6 +1618,15 @@
             {
                 "Location": "Caves and various derelict attack events",
                 "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "Mutated Botcube": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Botcube",
+                "Description": "Friendly: Created from using a Botcube"
             }
         ]
     },
@@ -1782,6 +1898,15 @@
             }
         ]
     },
+    "Ranger": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Scraptown",
+                "Description": "Friendly: Roam around Scraptown"
+            }
+        ]
+    },
     "Revision": {
         "Categories": ["Derelict", "Spoiler"],
         "Locations": [
@@ -1892,6 +2017,51 @@
             {
                 "Location": "Caves and various derelict attack events",
                 "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "Scientist": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Scraptown",
+                "Description": "Friendly: Roam around Scraptown"
+            }
+        ]
+    },
+    "Scrapoid (3)": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Recycling Unit",
+                "Description": "Friendly: Appear from Recycling Units when using the Force(Scrapoids) hack"
+            }
+        ]
+    },
+    "Scrapoid (6)": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Recycling Unit",
+                "Description": "Friendly: Appear from Recycling Units when using the Force(Scrapoids) hack"
+            }
+        ]
+    },
+    "Scrapoid (8)": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Recycling Unit",
+                "Description": "Friendly: Appear from Recycling Units when using the Force(Scrapoids) hack"
+            }
+        ]
+    },
+    "Scrapper": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Scraptown",
+                "Description": "Friendly: Roam around Scraptown"
             }
         ]
     },
@@ -2110,6 +2280,15 @@
             }
         ]
     },
+    "Triborg": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Scraptown",
+                "Description": "Friendly: Guards the main Scraptown gate into the members only area"
+            }
+        ]
+    },
     "Troll": {
         "Categories": ["Derelict", "Spoiler"],
         "Locations": [
@@ -2317,6 +2496,15 @@
             {
                 "Location": "Imprint roster",
                 "Description": "Friendly: Appear as a summonable allies in groups of 2-3"
+            }
+        ]
+    },
+    "Wyrm Statue": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Scraptown",
+                "Description": "Friendly: In Scraptown, surrounded by followers"
             }
         ]
     },
