@@ -74,13 +74,14 @@ function makeChartOptions(chartTitle: string, theme: ThemeType, windowSize: Wind
                 callbacks: {
                     label: (context) => {
                         // Add the overall percentage of each slice to the tooltip
-                        const value = Number(context.formattedValue);
+                        const value = Number(context.formattedValue.replace(",", ""));
 
                         const sum = context.chart.data.datasets[0].data
                             .map((d) => Number(d))
                             .reduce((a, b) => a + b, 0);
 
                         const percentage = ((value * 100) / sum).toFixed(1);
+
                         return `${chartTitle}: ${value} (${percentage}%) `;
                     },
                 },
