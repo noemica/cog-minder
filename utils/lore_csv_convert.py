@@ -76,9 +76,17 @@ additional_content = {
             'Z-bomb Delivery System': 'Spoiler',
         },
     },
+    '4L-MR0 Records': {
+        'Content': 'Records obtainable from the Terminal in 4L-MR0\'s Lab in Subcaves.',
+        'Spoiler': 'Spoiler',
+    },
     '8R-AWN Dialogue': {
         'Content':
             'Dialogue obtained by speaking with 8R-AWN in Materials, Mines or on the Exiles map',
+    },
+    'Abandonware Records': {
+        'Content': 'Records obtainable from the Abandonware Association club\'s Terminal in Scraptown',
+        'Spoiler': 'Spoiler',
     },
     'Access_0 Records': {
         'Content':
@@ -93,8 +101,20 @@ additional_content = {
             'during a rare event where Zhirov is present here instead of at his standard Lab.',
         'Spoiler': 'Spoiler',
     },
+    'Cave Peace Records': {
+        'Content': 'Records obtainable from the Cave Peace club\'s Terminal in Scraptown',
+        'Spoiler': 'Spoiler',
+    },
     'Cetus Records': {
         'Content': 'Records obtainable via terminals in the Cetus map as part of the Extension branch.',
+        'Spoiler': 'Spoiler',
+    },
+    'Clippyterm Records': {
+        'Content': 'Records obtainable from the Clippyterm Terminal in Subcaves',
+        'Spoiler': 'Spoiler',
+    },
+    'Cyclists Records': {
+        'Content': 'Records obtainable from the Cyclist club\'s Terminals in Scraptown',
         'Spoiler': 'Spoiler',
     },
     'Exiles Records': {
@@ -108,6 +128,26 @@ additional_content = {
     },
     'Oracle Records': {
         'Content': 'Records obtainable on terminals on the Data Miner map.',
+        'Spoiler': 'Spoiler',
+    },
+    'Scraplab Records': {
+        'Content': 'Records obtainable from the Scraplab Terminals in the Scrap Lab Recycling.',
+        'Spoiler': 'Spoiler',
+    },
+    'Scraptown Records': {
+        'Content': 'Records obtainable from Terminals outside of the member gate in Scraptown.',
+        'Spoiler': 'Spoiler',
+    },
+    'Subcaves Records': {
+        'Content': 'Records obtainable from a Terminal in the room holding the SUBCON Basin in Subcaves.',
+        'Spoiler': 'Spoiler',
+    },
+    'Symbiants Records': {
+        'Content': 'Records obtainable from the Symbiant club\'s Terminal in Scraptown.',
+        'Spoiler': 'Spoiler',
+    },
+    'UFD Records': {
+        'Content': 'Records obtainable from the main UFD member Scraptown Terminal in Scraptown',
         'Spoiler': 'Spoiler',
     },
     'WAR.Sys Records': {
@@ -165,6 +205,14 @@ additional_content = {
     },
     'Revision 17 Dialogue': {
         'Content': 'Dialogue obtainable by speaking with Revision 17 on various maps.',
+        'Spoiler': 'Spoiler',
+    },
+    'Scraplab Dialogue': {
+        'Content': 'Dialogue obtainable by speaking with Derelicts in the Scraplab in Recycling.',
+        'Spoiler': 'Spoiler',
+    },
+    'Scraptown Dialogue': {
+        'Content': 'Dialogue obtainable by speaking with Derelicts in Scraptown.',
         'Spoiler': 'Spoiler',
     },
     'Sigix Dialogue': {
