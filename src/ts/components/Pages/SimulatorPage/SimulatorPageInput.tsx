@@ -662,6 +662,14 @@ export default function SimulatorPageInput({
             </div>
             <div className="page-input-group">
                 <LabeledInput
+                    label="Corruption"
+                    disabled={simulationInProgress}
+                    value={pageState.corruption || ""}
+                    onChange={(val) => updatePageState({ ...pageState, corruption: val })}
+                    placeholder="0%"
+                    tooltip="The amount of corruption that Cogmind currently has. Corruption reduces accuracy by 3% for every 1% of corruption."
+                />
+                <LabeledInput
                     label="Actions Since Moving"
                     disabled={simulationInProgress}
                     value={pageState.actionsSinceMoving || ""}

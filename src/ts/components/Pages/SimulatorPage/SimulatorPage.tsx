@@ -70,6 +70,7 @@ export type SimulatorPageState = {
     botName?: string;
     analysis?: YesNoType;
     damageReduction?: ExternalDamageReduction;
+    corruption?: string;
     actionsSinceMoving?: string;
     onLegs?: YesNoType;
     tilesRun?: string;
@@ -496,6 +497,9 @@ function getSimulatorState(
             critical = def.critical === undefined || def.critical === 0 ? 0 : def.critical + critBonus;
         }
 
+        // Corruption penalty, -1% per 3% corruption
+        let corruptionPenalty = Math.trunc(parseIntOrDefault(pageState.corruption, 0) / 3);
+
         // Calculate base accuracy that can't change over the course of the fight
         let baseAccuracy = melee ? initialMeleeAccuracy : initialRangedAccuracy;
 
@@ -514,6 +518,9 @@ function getSimulatorState(
         if (def.targeting !== undefined) {
             baseAccuracy += def.targeting;
         }
+
+        // Corruption penalty
+        baseAccuracy -= corruptionPenalty;
 
         const delay = parseIntOrDefault(def.delay, 0);
 
