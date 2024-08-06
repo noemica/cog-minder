@@ -323,6 +323,14 @@
         "DataCoreApplies": false,
         "Hacks": [
             {
+                "Name": "Force(Fedlink)",
+                "Description": "Allocates additional resources to the UFD reserves. Also, locks the machine and summons an investigation squad like all force hacks."
+            },
+            {
+                "Name": "Force(Scrapoids)",
+                "Description": "Summons 5 Scrapoids within around 20 turns of performing the hack while consuming 2 resources from the UFD reserves. The Scrapoids vary based on depth. Also, locks the machine and summons an investigation squad like all force hacks."
+            },
+            {
                 "Name": "Force(Tunnel)",
                 "Description": "Reveal the location of a random 0b10-controlled floor. Also, locks the machine and summons an investigation squad like all force hacks.",
                 "BaseChance": 80,
@@ -394,6 +402,12 @@
         "Name": "Repair Station",
         "DataCoreApplies": false,
         "Hacks": [
+            {
+                "Name": "Force(Patch)",
+                "Description": "Repairs multiple parts by 25% integrity up to 50% total integrity. Level 1 stations repair up to 3 parts, level 2 4 parts, and level 3 5 parts. Also, locks the machine and summons an investigation squad like all force hacks.",
+                "BaseChance": 80,
+                "Indirect": "Always"
+            },
             {
                 "Name": "Scan([Part Name])",
                 "Description": "Scan a damaged part to prepare for repairs.",
@@ -1161,6 +1175,13 @@
                 "Name": "Trojan(Operators)",
                 "Description": "Reports in real time the position of all operators across the entire floor.",
                 "BaseChance": 40,
+                "Indirect": "Always",
+                "SpoilerLevel": "Spoiler"
+            },
+            {
+                "Name": "Trojan(Skim)",
+                "Description": "Opportunistically gathers and reports on potentially useful intel remotely extracted from vulnerable Complex 0b10 networks. Must be installed on multiple terminals before it can take effect. (After installed on 5 terminals, gathers 10 pieces of intel over about 100 turns, then is purged from the system)",
+                "BaseChance": 60,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
