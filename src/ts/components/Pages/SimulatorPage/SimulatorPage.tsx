@@ -497,8 +497,8 @@ function getSimulatorState(
             critical = def.critical === undefined || def.critical === 0 ? 0 : def.critical + critBonus;
         }
 
-        // Corruption penalty, -1% per 3% corruption
-        let corruptionPenalty = Math.trunc(parseIntOrDefault(pageState.corruption, 0) / 3);
+        // Corruption penalty, -1% per 4% corruption
+        let corruptionPenalty = Math.trunc(parseIntOrDefault(pageState.corruption, 0) / 4);
 
         // Calculate base accuracy that can't change over the course of the fight
         let baseAccuracy = melee ? initialMeleeAccuracy : initialRangedAccuracy;
