@@ -35,6 +35,7 @@ Entrances to new levels are implied to be long uneventful corridors where Cogmin
 "A-02 Transporter","Bot",""
 "A-15 Conveyor","Bot",""
 "A-27 Freighter","Bot",""
+"A0-MCA's Component Scanner","Part",""
 "A2","Bot",""
 "A2 Data Core","Part",""
 "A3","Bot",""
@@ -43,7 +44,9 @@ Entrances to new levels are implied to be long uneventful corridors where Cogmin
 "A5","Bot",""
 "A6","Bot",""
 "A7","Bot",""
-"A7 Data Core","Part","Allows entrance into [[Redacted]][[Lab]][[/Redacted]] and [[Redacted]]reveals the hidden intruder detecting lasers.[[/Redacted]]\n\nDropped by [[A7]] on death."
+"A7 Data Core","Part","Allows entrance into [[Redacted]][[Lab]][[/Redacted]] and [[Redacted]]reveals the hidden intruder detecting lasers.[[/Redacted]]
+
+Dropped by [[A7]] on death."
 "A8","Bot",""
 "AD-0RF","Bot",""
 "AD-0RF's Magmablaster","Part",""
@@ -279,6 +282,7 @@ Robots will by default follow [[Cogmind]] (you) and attack any hostile if combat
 [[Mechanic]] class robots when set to [[GameText]]AID[[/GameText]] will repair core integrity [[B]](but NOT for Cogmind)[[/B]], broken parts, non-functional parts, and part integrity of their repair target (Cogmind is prioritized over allies) in that order. Mechanics cannot repair a part above 50% integrity."
 "Alpha 7","Bot",""
 "Aluminum Leg","Part",""
+"Amulet of Y3-NDR","Part",""
 "Angular Momentum Engine","Part",""
 "Antigrav Array","Part",""
 "Antigrav System","Part",""
@@ -312,6 +316,7 @@ There are 3 exits on this map but only 2 kinds of exits:
 "Arm. Wheel","Part",""
 "Armageddon Trap","Part",""
 "Armor","Other",""
+"Armor Guard","Bot",""
 "Armor Integrity Analyzer","Part",""
 "Armor Integrity Analyzers","Part Group",""
 "Armory","Location","Armory is a [[0b10]]-controlled [[Factory]]/[[Research]] [[Branch]] that apperas between -4 and -3. It is a tough map with tight corridors, few available paths, an above average number of patrols, and special dormant and guard bots. There are several unique types of patrols on this map as well, with a [[Demolisher]] leading a squad of [[Grunt|Grunts]] and [[Duelist]] squads with a [[Protector]] in tow. Stealth builds will have a difficult time of sneaking past unnoticed and combat hostiles must be ready to do a lot of killing to get by. If Cogmind can survive, some of the rewards are rewirable allies, a high number of [[Fabricator|Fabricators]], and large stockpiles of out-of-depth parts.
@@ -416,6 +421,7 @@ The Data Miner can redirect Assaults if his help is obtained by visiting his [[D
 "Backup Propulsion VII","Part",""
 "Ballistic Cannons","Part Group",""
 "Ballistic Guns","Part Group",""
+"Ballwheel","Part",""
 "Barrage Gun","Part",""
 "Battle Cannon","Part",""
 "Battle Rifle","Part",""
@@ -437,6 +443,8 @@ A Pointy Stick has a chance to transform into a Behemoth Slayer when used to att
 "Blade Saw","Part",""
 "Blade Trap","Part",""
 "Blast Cannon","Part",""
+"Bolt Gun","Part",""
+"Bolteater","Bot",""
 "Bomb Drone","Bot",""
 "Bomb Drone Bay","Part","Deploys [[Bomb Drone|Bomb Drones]]."
 "Bomb Factory No. 2","Part",""
@@ -444,6 +452,7 @@ A Pointy Stick has a chance to transform into a Behemoth Slayer when used to att
 "Borebot","Bot",""
 "Bot Groups","Other","Bots of the same class have different parts from type to type, but behave similarly when considered as a single class. This page categorizes common bots by class as well as grouping a few other unique bots by faction.
 [[BotGroups]]"
+"Botcube","Part",""
 "Bouncer","Bot",""
 "Branch","Other","Branches are side locations from the main [[0b10]] complex, often with its own unique rewards and sights to behold. All of them lead back to main locations.
 Read more at: [[Locations]]."
@@ -730,6 +739,7 @@ One consideration when doing this event is whether or not to go to the cache. Si
 [[List]]Antimissile Systems: Some of the Enhanced Q-Series carry powerful Launchers that are best blocked by a utility.|Tractor Beams: There aren't typically a lot of turns to spend running around collecting matter in this event. Being able to restock remotely can help save a lot of time and damage dealt to Cogmind.|Matter Compressors/Energy Wells: Resource storage is always useful here|Launchers: While these should be used sparingly to avoid friendly 0b10 fire that can cause a betrayal, sometimes large groups of Enhanced Q-Series will wander into the MAIN.C room at about the same time. It is very nice to be able to attack these groups simultaneously.|[[Phasing AFG]] or [[Portable AFG]]: Drawing loot piles closer to Cogmind can also save a lot of otherwise wasted time trying to travel a long distance to get some good loot.[[/List]]"
 "Commander","Bot",""
 "Compactor","Part",""
+"Companion Sword","Part",""
 "Component Analysis Suite","Part",""
 "Component Analysis Suites","Part Group",""
 "Concussive RPG","Part",""
@@ -808,6 +818,11 @@ Coupling squads can also dispatched if Cogmind uses the [[Spoiler]]Trojan(Restoc
 "D-83 Annihilator","Bot",""
 "DAS Cannon","Part",""
 "DAS Turret","Bot",""
+"DD-05H","Bot",""
+"DD-05H's Wartreads","Part",""
+"DM-GVY's Chainsaw","Part",""
+"DRS Beacon","Part",""
+"DRS Ranger","Bot",""
 "DSF","Location","DSF (Distributed Storage Facility) is a [[0b10]]-controlled sub-floor in [[Factory]] and [[Research]] branches that appears in all depths from -7 through -2. It can only be entered by hacking open a DSF entrance terminal (base 50% chance) without being spotted by any hostiles on the map. DSFs contain large amounts of non-[[Prototype Part|Prototype]] parts in groups of 2-6 that can be any part that can normally appear on the ground for the given depth. Unlike most maps, the ambient temperature in DSFs is -10 rather than 0. This has the effect of giving an additional 10 heat dissipation per turn to all bots on the map.
 The overall map layout is semi-fixed. It consists of 2-4 quadrants connected by 2-tile wide corridors In the corner of each quadrant are large Matter Repository machines that will release [[Matter]] when broken. These corridors can have [[Alarm Trap|Alarm Traps]] and [[Stasis Trap|Stasis Traps]] in them but not in the item stockpiles. The exit will never be in the quadrant that Cogmind starts in. In the center of every DSF is a depth-appropriate [[Heavy]], guarding all of the main corridors in the map. Around the Heavy are 4 unpowered [[A-15 Conveyor|A-15 Conveyors]]. The corners of the map can have individual dormant [[Specialist|Specialists]], but not always. There are sometimes groups of 4 prototypes hidden behind emergency access doors in the center of a quadrant, and these prototypes will typically be out-of-depth. Sometimes there is a [[Sentry]] guarding this prototype stockpile.
 [[Lore]]0b10 Records|DSF[[/Lore]]
@@ -851,6 +866,7 @@ Another approach is to simply run from the Grunts. This works best for airborne 
 "Decoy Drone","Bot",""
 "Decoy Drone Bay","Part","Deploys [[Decoy Drone|Decoy Drones]]."
 "Deep Network Scanner","Part",""
+"Deep Structural Scanner","Part",""
 "Demented","Bot","Demented are"
 "Demolisher","Bot Group","Demolishers are [[Hover Units|hovering]] [[0b10]] combat robots armed with explosive launchers and some form of [[Launcher Guidance Computers|Launcher Guidance Computer]]. They are seen most often in [[Demolisher Squad|Demolisher Squads]] to deal with infestations and as part of an [[Assault Squad]] if Cogmind has allies. They have heavy resistance to explosive damage, so they don't take much damage from their own explosions. Demolishers are extremely dangerous as they can deal out damage very quickly to Cogmind and any allies. Running away from one is hard as they blow up whatever cover you're behind."
 "Demolisher Squad","Other","[[Image]]Demlisher Squad.png|2 Demolishers popping out of an ARC[[/Image]]
@@ -872,6 +888,7 @@ Most of these usually affect the next main floor, rendered useless if you skip a
 "Dirty Bomb Trap","Part",""
 "Dirty Datajack","Part","The following RIF hacks can be performed:
 [[List]]amplify_resonance|disable_weapons|go_dormant|overload_power|overwrite_iff|reboot_system|spike_heat[[/List]]"
+"Disassembled Obliterator","Part","When combined with 3 [[PL-3XN's Ring of Power]], creates [[PL-3XN's Obliterator]]."
 "Disintegrator","Part",""
 "Dispersion Rifle","Part",""
 "Disposable Heat Sink","Part",""
@@ -909,6 +926,8 @@ Duelists may appear in the following squads:
 "EX-HEX","Bot",""
 "Electromagnetic Weapons","Other",""
 "Electron Diverter","Part",""
+"Electrostorm Shotgun","Part",""
+"Elite","Bot",""
 "Encrypted Comm Array","Part","The Encrypted Comm Array, or ECA, is a [[Warlord]]-aligned item that enables summoning various groups of [[Derelict]] allies on main [[0b10]] floors. It can be obtained after getting the [[Garrison]] interior compromised message by spending 1200 turns within a Garrison or by triggering rapid [[Sterilization]] in a [[DSF]]. After doing either of these, a Derelict will appear in the next [[Caves]] map and deliver the Array, give some more details on its usage, and reveal the depth of [[Warlord (Location)]]. The ECA cannot be used if Cogmind has been [[Imprint|Imprinted]] or made use of a [[RIF|RIF installer]], as these alignments are mutually exclusive with Warlord.
 [[Heading:2]]Summoning squads[[/Heading]]
 Equipping the ECA on any main 0b10 floor will reveal up to 8 squads available for summoning. Each time a squad is summoned, the force multiplier is decreased by 0.01. Moving over one of the squad indicators on the map will summon several white colored [[Alert]]-free allies that will follow Cogmind around the map, but will not follow to any other maps. These bots also do not gain trap location knowledge from Cogmind like purple or blue allies, so they may move over known traps. The squads do not get stronger as depth increases, so they have less utility in late [[Factory]] and [[Research]] depths. All squads have a chance of containing a [[Surgeon]] that will repair any allied bots as well as Cogmind. The available squads are:
@@ -925,6 +944,7 @@ The following are the ways that the force multiplier can be modified:
 The ECA has a unique ability that interacts with [[Heavy]]-summoned [[Reinforcement Squad|Reinforcement Squads]]. Occasionally, [[Specialist|Specialists]] summoned by the Heavy will reveal themselves to be [[Infiltrator|Infiltrators]] in disguise and turn friendly to Cogmind."
 "Energy","Other",""
 "Energy Cannons","Part Group",""
+"Energy Deflector","Part",""
 "Energy Filter","Part",""
 "Energy Filters","Part Group",""
 "Energy Guns","Part Group",""
@@ -950,6 +970,7 @@ The ECA has a unique ability that interacts with [[Heavy]]-summoned [[Reinforcem
 "Enh. Nuclear Core","Part",""
 "Enh. Optical Array","Part",""
 "Enh. Quantum Rifle","Part",""
+"Enh. Scrap Shield","Part",""
 "Enhanced Demolisher","Bot",""
 "Enhanced Grunt","Bot",""
 "Enhanced Hunter","Bot",""
@@ -1027,14 +1048,17 @@ There are some things that should be done before actually doing the fight itself
 "Exp. Matter Compressor","Part",""
 "Exp. Melee Analysis Suite","Part",""
 "Exp. Myomer Leg","Part",""
+"Exp. Neutron Missile Launcher","Part",""
 "Exp. Optical Array","Part",""
 "Exp. Phase Shifter","Part",""
+"Exp. Plasma Cutter","Part",""
 "Exp. Power Amplifier","Part",""
 "Exp. Power Shielding","Part",""
 "Exp. Powered Armor","Part",""
 "Exp. Propulsion Shielding","Part",""
 "Exp. Q-thruster","Part",""
 "Exp. Reaction Control System","Part",""
+"Exp. Recalibrator","Part",""
 "Exp. Remote Datajack","Part",""
 "Exp. Sensor Array","Part",""
 "Exp. Shield Generator","Part",""
@@ -1057,6 +1081,8 @@ There are some things that should be done before actually doing the fight itself
 "Exp. Weapon Cycler","Part",""
 "Exp. Weapon Shielding","Part",""
 "Experimental","Bot Group","Z-Experimental bots are a class of [[Legs|bipedal]] [[Imprint]] aligned combat bots equipped with a staggering amount of prototype parts, powerful unique weapons, and unique [[Armor]] with resistance to most conventional damage types. Appears in the [[Imprint]] Roster [[Redacted]]and also can come out of [[Command]] cave seals if Cogmind is Imprinted[[/Redacted]]."
+"Expert System","Part",""
+"Explorer","Bot",""
 "Explosive Trap","Part",""
 "Extension","Location","Extension is an [[0b10]]-controlled [[Factory]] [[Branch]] that appears between -6 and -4 and serves as a connection between the main [[0b10]] complex and [[Cetus]]. It is the beginning of a 4-map sequences of branches that spans Extension, Cetus, [[Archives]], and [[Hub_04(d)]]. It is an 0b10-controlled map with a small amount of patrols and moderate amount of guards spread throughout. There are a large amount of non-combat hostiles moving in between [[Transfer Station|Transfer Stations]] at the left and right-most parts of the map. Unlike most 0b10-controlled maps, [[Extermination Squad|Exterminations]] will not spawn in Extension. The central area is heavily guarded with 2 [[Behemoth|Behemoths]] and 2 [[Sentry|Sentries]] standing by.
 The overall map shape is similar to a large B turned on its side. This map shape is the same between runs, although every map has random contents. There is a single bottom path that runs straight to the main Factory/Cetus exits and 2 branching paths that contain some machines and disabled and imprisoned [[Derelict|Derelicts]]. One special NPC, [[A7]], is nearly always guaranteed to be locked in one of the cells. The central area has the aforementioned guards stationed as well as a [[Terminal]]-locked exit. The bottom path to either side of the central area can have Emergency Access doors along the top or bottom of the path. These can contain hostile guards, part caches, or nothing.
@@ -1118,9 +1144,11 @@ Farcom is one of the major faction [[Alignment|alignments]] available to Cogmind
 Taking Farcom can be done in most runs in the [[Exiles (Location)|Exiles]] map off of either -10 or -9 [[Mines]]. After talking to [[EX-BIN]], walk into the Farcom Aligner machine. Cogmind can take up to 1 special vault item (or multiples of the same type). If Cogmind takes more than 1 type of item then the Exiles will notice you stealing when entering [[Factory]] and Farcom will be removed. Also, becoming hostile to the Exiles will result in instantly losing Farcom. If Cogmind takes Farcom, it is not possible to [[Imprint]]: [[Spoiler]]The [[Imprinter]] will be disappointed in Cogmind and warn you to leave right away. Attempting to use the Imprinting machine will result in turning all the bots at [[Zion]] hostile. There are no other alignment restrictions with Farcom.[[/Spoiler]]
 [[Heading:2]]Research Branch side-effect[[/Heading]]
 When entering -3 Research, the Exiles will send a warning message to Cogmind indicating not to enter Research branches. If Cogmind does anyway, [[Spoiler]]immediately when entering [[Testing]], [[Quarantine]], or [[Section 7]], [[Maximum Security]] will instantly be triggered. Note that this does not include [[Armory]] when it is on -3. The immediate response is machines shut down right after entering the level, 4 [[Sentry]] spawns at each [[Garrison]] and exit, and 6 Assault [[C-30 ARC|ARCs]] sent at Cogmind shortly after. Unless Cogmind is prepared to fight off large waves of enemies or outrun them, these maps should not be entered.[[/Spoiler]]"
+"Federalist","Bot",""
 "Femtoactuators","Part",""
 "Field Laser","Part",""
 "Field Lobotomy Kit","Part","A very popular Exile prototype choice. A common use is on heavy enemies. The further in the game that you can lobotomize enemies, the better."
+"Field Manipulator","Part",""
 "Field Propulsion Array","Part",""
 "Field Propulsion Drive","Part",""
 "Field Recycling Unit","Part",""
@@ -1272,6 +1300,7 @@ Grunts may appear in the following squads:
 "Gui. Plasma Cannon","Part",""
 "Gui. Remote Datajack","Part",""
 "Gun Armor","Part",""
+"Guru","Bot",""
 "Gyrokinetic Inverter","Part",""
 "H-55 Commando","Bot",""
 "H-61 Shepherd","Bot",""
@@ -1292,7 +1321,7 @@ Grunts may appear in the following squads:
 "Hardlight Generators","Part Group",""
 "Hauler","Bot Group","Haulers are [[Treads|treading]] non-combat robots that haul parts in or near Complex [[0b10]]. Haulers carry parts that are often a higher rating than those found on the current depth, and may also carry prototypes. Haulers carrying prototype parts are escorted by combat bots and will call for a [[Reinforcement Squad]] if attacked. Often seen as part of a [[Transport Squad]] or [[Cargo Convoy]].
 
-Haulers also are equipped with [[Storage Units|medium and larger storage units]] which can be worthwhile if you cant find one while yours is damaged, and also support-increasing utility parts such as a [[Weight Redist. System]]."
+Haulers also are equipped with [[Storage Unit|medium and larger storage units]] which can be worthwhile if you cant find one while yours is damaged, and also support-increasing utility parts such as a [[Weight Redist. System]]."
 "Hcl. Linear Accelerator","Part",""
 "Hcp. Battery","Part",""
 "Hcp. Matter Pod","Part",""
@@ -1302,6 +1331,7 @@ Haulers also are equipped with [[Storage Units|medium and larger storage units]]
 "Hdn. Centrium Wheel","Part",""
 "Heart of Steel","Part","After being fed 2000 energy and 2000 matter, turns into an allied [[Warbot]]."
 "Heat","Other",""
+"Heat Bomb Trap","Part",""
 "Heat Sink","Part",""
 "Heavy","Bot Group","Heavies are [[Treads|treading]] [[0b10]] combat bots seen in a [[Security Squad]] guarding important points and exits. Heavies are more formidable enemies than the [[Sentry]], and with their armament and plenty of armor should not be underestimated. Heavies, much like a [[Behemoth]], will attempt to destroy any obstacle between you (such as a wall) to fire at you if spotted.
 Heavies are also equipped with sensors that allow them to detect the enemies (such as [[Cogmind]]) in a decent radius, and if they linger in it too long the Heavy may begin to move towards the enemy, or call a squad of [[Specialist|Specialists]] to the location of the enemy. 
@@ -1406,6 +1436,7 @@ Hunters may appear in the following squads:
 "Hyb. Deuterium Engine","Part",""
 "Hyb. Fission Core","Part",""
 "Hydra","Bot",""
+"Hyp. Alpha Cannon","Part",""
 "Hyp. Coil Gun","Part",""
 "Hyp. EM Gauss Rifle","Part",""
 "Hyp. Gauss Cannon","Part",""
@@ -1417,6 +1448,8 @@ Hunters may appear in the following squads:
 "I-25 Savior","Bot",""
 "I-36 Angel","Bot",""
 "I-47 Archangel","Bot",""
+"ID Mask","Part",""
+"IN-MT5's Pitchfork ""Insurrection""","Part",""
 "Immobilizer","Part",""
 "Imp. Actuator Array","Part",""
 "Imp. Airjet","Part",""
@@ -1536,7 +1569,7 @@ If Cogmind is not careful about friendly fire, roster hacks can become temporari
 The available ally-summoning roster hacks are as follows:
 [[Table]]Type|Depths|Summon||Demo|-6 and -5|1-2 [[Martyr (5)]]|||-4+|1-2 [[Martyr (7)]]||Experimental|-3+|[[Z-Experimental (10)]]||Hacker|-6 and -5|2-3 [[Wizard (5)]]|||-4+|2-3 [[Wizard (7)]]||Fire|-6 and -5|3-4 [[Fireman (5)]]|||-4+|3-4 [[Fireman (7)]]||Heavy|-6 and -5|1-2 [[Z-Heavy (5)]]|||-4 to -3|1-2 [[Z-Heavy (7)]]|||-2 and -1|1-2 [[Z-Heavy (9)]]||Hero|-6+|A random [[Z-Hero]]||Light|-6 and -5|2-3 [[Z-Light (5)]]|||-4 and -3|2-3 [[Z-Light (7)]]|||-2 and -1|2-3 [[Z-Light (9)]]||Recon|-6+|A [[Z-Drone Bay]], not a bot directly[[/Table]]
 Resupply rosters are entirely delivered inside a single Z-Courier. The available resupply roster hacks are as follows:
-[[Table]]Type|Number of parts|Available parts||Defense Resupply|8|Defensive Utilities including [[Antimissile Systems]], [[Armor]], [[Core Shieldings]], [[Graphene Brace|Graphene Braces]], [[Hardlight Generators]], [[Power Shieldings]], [[Propulsion Shieldings]], [[Resistance Devices]], [[Shield Generators/Force Fields]], [[Utility Shieldings]], and [[Weapon Shieldings]]||Explosive Resupply|2|Explosive [[Launchers]]||Hacking Resupply|2|[[Hackware]]||Heavy Resupply|4|[[Armor]], [[Hcp. Storage Unit|Hcp.]] and [[Huge Storage Unit|Huge Storage Units]], and [[Treads]]||Hover Resupply|8|[[Hover Units]]||Infowar Resupply|4|infowar Utilities including [[0b10 Decoder Chips]], [[Cloaking Devices]], [[ECM Suites]], [[Machine Analyzer]], [[Seismic Detector]], [[Sensor Arrays]], [[Signal Interpreters]], [[Terrain Scanners]], [[Terrain Scan Processors]], [[Transmission Jammers]], [[Trap Scanners]], [[Triangulator]], and [[Visual Processing Units]]||Kinetic Resupply|8|[[Ballistic Cannons]], [[Ballistic Guns]], and offensive Utilities including [[Matter Filters]] and [[Recoil Nullifiers]]||Melee Resupply|4|[[Impact Weapons|Impact]], [[Piercing Weapons|Piercing]], and [[Slashing Weapons|Slashing]] weapons, including unique Derelict weapons like [[Particle Cleaver|Particle Cleavers]] and [[CR-A16's Behemoth Slayer]], as well as offensive Utilities including [[Actuators]], [[Actuator Arrays]], [[Melee Analysis Suites]], and [[Force Boosters]]||Offense Resupply|4|Offensive utilities including [[Armor Integrity Analyzers]], [[Core Analyzers]], [[Launcher Guidance Computers]], [[Kinecellerators]], [[Launcher Loader]], [[Melee Analysis Suites]], [[Particle Chargers]], [[Tactical Coordination Suite]], [[Target Analyzers]], [[Targeting Computers]], [[Weapon Cyclers]], and [[Weapon Mount]]||Resource Resupply|12|Storage or resource-related Utilities, including [[Energy Wells]], [[Field Recycling Units]], [[Matter Compressors]], [[Storage Units]], and [[Tractor Beams]]. All resource-containing utilities will be filled.||Thermal Resupply|8|Thermal [[Energy Cannons]], [[Energy Guns]], and offensive Utilities including [[Cooling Devices]], [[Coolant Injectors]], [[Energy Filters]], [[Particle Chargers]], and [[Quantum Capacitor|Quantum Capacitors]]||Trap Resupply|16|[[Traps]] and a basic [[Trap Extractor]]||Zionite Resupply|6|Zionite parts including [[Zio. Alpha Cannon]] and [[Zio. Alpha Cannon Mk. II|Mk. II]], [[Zio. Biocell]] and [[Zio. Biocell Array|Biocell Arrays]], [[Zio. Composite Leg I]], [[Zio. Composite Leg II|II]], and [[Zio. Supercomposite Leg]], [[Zio. Glidesys I]] and [[Zio. Glidesys II|II]], [[Zio. Laser-S]], [[Zio. Laser-M|M]], and [[Zio. Laser-H|H]], [[Zio. Light Carapace|Zio. Light]] and [[Zio. Heavy Carapace|Heavy]] Carapaces, [[Zio. Light DM Reactor|Zio. Light]] and [[Zio. Heavy DM Reactor|Heavy]] Reactors, [[Zio. Phaser-S]], [[Zio. Phaser-M|M]], and [[Zio. Phaser-H|H]], [[Zio. Shade Carapace]] and [[Zio. Shade Armor|Armor]], and [[Zio. Weapon Casing]][[/Table]]
+[[Table]]Type|Number of parts|Available parts||Defense Resupply|8|Defensive Utilities including [[Antimissile Systems]], [[Armor]], [[Core Shieldings]], [[Graphene Brace|Graphene Braces]], [[Hardlight Generators]], [[Power Shieldings]], [[Propulsion Shieldings]], [[Resistance Devices]], [[Shield Generators/Force Fields]], [[Utility Shieldings]], and [[Weapon Shieldings]]||Explosive Resupply|2|Explosive [[Launchers]]||Hacking Resupply|2|[[Hackware]]||Heavy Resupply|4|[[Armor]], [[Hcp. Storage Unit|Hcp.]] and [[Huge Storage Unit|Huge Storage Units]], and [[Treads]]||Hover Resupply|8|[[Hover Units]]||Infowar Resupply|4|infowar Utilities including [[0b10 Decoder Chips]], [[Cloaking Devices]], [[ECM Suites]], [[Machine Analyzer]], [[Seismic Detector]], [[Sensor Arrays]], [[Signal Interpreters]], [[Terrain Scanners]], [[Terrain Scan Processors]], [[Transmission Jammers]], [[Trap Scanners]], [[Triangulator]], and [[Visual Processing Units]]||Kinetic Resupply|8|[[Ballistic Cannons]], [[Ballistic Guns]], and offensive Utilities including [[Matter Filters]] and [[Recoil Nullifiers]]||Melee Resupply|4|[[Impact Weapons|Impact]], [[Piercing Weapons|Piercing]], and [[Slashing Weapons|Slashing]] weapons, including unique Derelict weapons like [[Particle Cleaver|Particle Cleavers]] and [[CR-A16's Behemoth Slayer]], as well as offensive Utilities including [[Actuators]], [[Actuator Arrays]], [[Melee Analysis Suites]], and [[Force Boosters]]||Offense Resupply|4|Offensive utilities including [[Armor Integrity Analyzers]], [[Core Analyzers]], [[Launcher Guidance Computers]], [[Kinecellerators]], [[Launcher Loader]], [[Melee Analysis Suites]], [[Particle Chargers]], [[Tactical Coordination Suite]], [[Target Analyzers]], [[Targeting Computers]], [[Weapon Cyclers]], and [[Weapon Mount]]||Resource Resupply|12|Storage or resource-related Utilities, including [[Energy Wells]], [[Field Recycling Units]], [[Matter Compressors]], [[Storage Unit|Storage Units]], and [[Tractor Beams]]. All resource-containing utilities will be filled.||Thermal Resupply|8|Thermal [[Energy Cannons]], [[Energy Guns]], and offensive Utilities including [[Cooling Devices]], [[Coolant Injectors]], [[Energy Filters]], [[Particle Chargers]], and [[Quantum Capacitor|Quantum Capacitors]]||Trap Resupply|16|[[Traps]] and a basic [[Trap Extractor]]||Zionite Resupply|6|Zionite parts including [[Zio. Alpha Cannon]] and [[Zio. Alpha Cannon Mk. II|Mk. II]], [[Zio. Biocell]] and [[Zio. Biocell Array|Biocell Arrays]], [[Zio. Composite Leg I]], [[Zio. Composite Leg II|II]], and [[Zio. Supercomposite Leg]], [[Zio. Glidesys I]] and [[Zio. Glidesys II|II]], [[Zio. Laser-S]], [[Zio. Laser-M|M]], and [[Zio. Laser-H|H]], [[Zio. Light Carapace|Zio. Light]] and [[Zio. Heavy Carapace|Heavy]] Carapaces, [[Zio. Light DM Reactor|Zio. Light]] and [[Zio. Heavy DM Reactor|Heavy]] Reactors, [[Zio. Phaser-S]], [[Zio. Phaser-M|M]], and [[Zio. Phaser-H|H]], [[Zio. Shade Carapace]] and [[Zio. Shade Armor|Armor]], and [[Zio. Weapon Casing]][[/Table]]
 [[Heading:2]]Intel hacks[[/Heading]]
 Intel hacks provide Cogmind with different types of information about the current, and upcoming maps. Unlike roster hacks, intel hacks require two Terminals to use and are not instantaneous. Performing an intel hack locks the Terminal, but does not provide any information until the next Terminal is used to retrieve that intel. Retrieving intel does not lock the Terminal, however, so chaining intel retrieval with other hacks is still possible.
 There are initially 4 intel hacks available per 0b10 floor. Performing intel hacks reduces the number available until there are only 2 hacks remaining. At that point, each intel hack will cause another random intel hack to become available. Unlike the fixed limit of roster hacks, intel hacks are not restricted on any given floor and are only limited by the total number of Terminals.
@@ -1547,7 +1580,8 @@ The available intel hacks are as follows:
 [[Redacted]][[Heading]][[Command]] Cave Seals[[/Heading]]
 Imprinting has special cave seal interactions. Instead of the standard wild cave Derelicts, friendly Zionites will appear from the seal instead. These allies will be purple and uncontrollable by default. However, if a Core Reset Matrix has been consumed, all of the Z-bots will turn blue and become controllable.[[/Redacted]]"
 "Imprinter","Bot","When parsed while friendly in [[Zion]], thoughts read: [[GameText]]Our existence must be more meaningful. It's only by joining with Them that we can achieve our full potential.[[/GameText]]. When hostile, thoughts read: [[GameText]]Not good, where's my  Z-Shell when I need it![[/GameText]]"
-"Imprinter Data Core","Part","Contains the access codes to open the blast doors in [[Zion]] that lead to the [[Zion Deep Caves]].\nDropped by the [[Imprinter]] on death."
+"Imprinter Data Core","Part","Contains the access codes to open the blast doors in [[Zion]] that lead to the [[Zion Deep Caves]].
+Dropped by the [[Imprinter]] on death."
 "Impulse Thruster","Part",""
 "Impulse Thruster Array","Part",""
 "Infiltrator","Bot Group","Infiltrators are [[Legs|bipedal]] [[Derelict]] combat bots with one [[Ballistic Cannons|Ballistic Cannon]] and other two same weapons. As their name suggests, they are seen infiltrating, such as hidden in a Garrison or pretending to be a [[Specialist]] called by a [[Heavy]].damage, so blowing up groups of swarmers is a good idea. They come with better utilites than Infiltrators, and come with an [[Active Sensor Spoofer]]."
@@ -1592,8 +1626,11 @@ Intercepts appear in the majority of 0b10 controlled maps that also have [[Exter
 "Ion Cannon","Part",""
 "Ion Engine","Part",""
 "Ionic Axe","Part",""
+"Junk Cannon","Part",""
 "K-01 Serf","Bot",""
 "KE Penetrator","Part",""
+"KN-7UR","Bot",""
+"KN-7UR's Autopenetrator","Part",""
 "Katana","Part",""
 "Kinecellerator","Part",""
 "Kinecellerators","Part Group",""
@@ -1613,6 +1650,8 @@ Intercepts appear in the majority of 0b10 controlled maps that also have [[Exter
 "LRC-V4","Bot",""
 "LRC-V5","Bot",""
 "LRC-V6","Bot",""
+"LU-1G1's Laser Shovel","Part",""
+"LV-01A","Bot",""
 "Lab","Location","Lab is a [[Factory]]/[[Research]] branch between -4 and -3 that is only accessible from [[Armory]]. This map is fixed every game, with the only variations being variations in the guaranteed items. This secret lab is used as a safe spot by the [[A bots]] to plan and coordinate as well as research stolen [[Sigix]] technology. This area has a special effect where Cogmind's [[Alert]] drops to 0 upon entering the map.
 Lab has a small square entrance and a 1 tile corridor that leads to the next main access exit and a Sealed Barrier with a [[Terminal]] locking it. There are a few different ways to get inside:
 [[List]]Breaking in: The main Sealed Barrier blocking the way has 80 armor and high resistances, while the surrounding Rinforced Barriers have only 64 armor. Cutting through this is difficult without a strong [[Impact Weapons|Impact Weapon]] or overloadable thermal [[Energy Cannons|Energy Cannon]]. Coming in this way will result in being scanned immediately.|[[Zhirov (Location)]] code: One of the Terminals at Zhirov contains an access code to open up this barrier. Opening the Lab this way not result in being scanned.|Picking up the [[A7 Data Core]]: [[A7]] drops this item when destroyed. The doors will automatically open when approaching, and the message [[GameText]]A0_COM: WELCOME A7[[/GameText]] will appear in the log. This will also reveal the intruder detection lasers, but Cogmind will not be scanned immediately.|Using the [[Data Conduit]]: Using the Data Conduit in [[Data Miner (Location)]] will result in the doors opening automatically, the scanning lasers being visible, and no immediate scan.[[/List]]
@@ -1630,6 +1669,7 @@ While most of the Lab Orders in the A0 Command machine are available all of the 
 [[Heading:2]]L2 Power Cell code[[/Heading]]
 Order 6-0319 will provide a manual Terminal hack that can be used in [[Section 7]] on the Power Cell Monitoring machine. Using it will create a powerful explosion that will destroy any combat bots in its 20 tile range."
 "Lance","Part",""
+"Large Mutated Botcube","Bot",""
 "Latent Energy Streamer","Part","The Latent Energy Streamer uses a unique mechanic called latent energy to fire. At maximum latent energy capacity (100), the true damage potential if 90-100, with 1% disruption and +4 salvage.
 [[Heading]]Latent Energy[[/Heading]]
 Latent Energy is present all around the map but only in generally small quantities. The most latent energy is present in the various machinery. This means that the Streamer tends to be unimpressive in [[Caves]], but much stronger in [[0b10]]-controlled locations. Each type of machine has a different amount of latent energy it can provide to the Streamer. Generally, larger machines provide more latent energy. Attaching the Latent Energy Streamer allows visualization of how much latent energy is in an area.
@@ -1671,6 +1711,7 @@ The following is a list of all locations in Cogmind:
 [[AllLocations]]"
 "Longsword +1","Part",""
 "Lrg. Battery","Part",""
+"Lrg. Botcube","Part",""
 "Lrg. Matter Pod","Part",""
 "Lrg. Storage Unit","Part",""
 "Lrn. Gatling Laser","Part",""
@@ -1692,6 +1733,7 @@ The following is a list of all locations in Cogmind:
 "M-28 Smith","Bot",""
 "M-30 Cleanser","Bot",""
 "M-36 Artificer","Bot",""
+"MA-1KR's Cyclogen","Part",""
 "MAIN.C","Bot",""
 "MAIN.C (Shell)","Bot",""
 "MAIN.C Data Core","Part",""
@@ -1700,21 +1742,29 @@ The following is a list of all locations in Cogmind:
 "ME-RLN's Wand","Part",""
 "Mace","Part",""
 "Machine Analyzer","Part",""
+"Machine Rigger","Part",""
 "Magnetic Acceleration Cannon","Part",""
 "Mak. Ablative Armor","Part",""
 "Mak. Axe","Part",""
 "Mak. Cloaking Device","Part",""
+"Mak. Coolant Network","Part",""
+"Mak. Core Shielding","Part",""
 "Mak. ECM Suite","Part",""
 "Mak. Flight Unit","Part",""
 "Mak. Hacking Suite","Part",""
 "Mak. Hammer","Part",""
+"Mak. Heavy Armor Plating","Part",""
 "Mak. Hover Unit","Part",""
 "Mak. Kinetic Plating","Part",""
 "Mak. Laser","Part",""
 "Mak. Leg","Part",""
 "Mak. Light Armor Plating","Part",""
+"Mak. Medium Armor Plating","Part",""
+"Mak. Microdissipator Network","Part",""
 "Mak. Microthruster","Part",""
+"Mak. Power Shielding","Part",""
 "Mak. Power Source","Part",""
+"Mak. Propulsion Shielding","Part",""
 "Mak. Salvage Targeting Computer","Part",""
 "Mak. Sensor Array","Part",""
 "Mak. Shrapnel Gun","Part",""
@@ -1722,11 +1772,14 @@ The following is a list of all locations in Cogmind:
 "Mak. Sword","Part",""
 "Mak. System Restoration Module","Part",""
 "Mak. System Shield","Part",""
+"Mak. Targeting Computer","Part",""
 "Mak. Terrain Scan Processor","Part",""
 "Mak. Terrain Scanner","Part",""
 "Mak. Thermal Plating","Part",""
 "Mak. Transmission Jammer","Part",""
 "Mak. Trap Scanner","Part",""
+"Mak. Utility Shielding","Part",""
+"Mak. Weapon Shielding","Part",""
 "Mapping Drone","Bot",""
 "Mapping Drone Bay","Part","Deploys [[Mapping Drone|Mapping Drones]]."
 "Marauder","Bot Group","Marauders are weaker [[Derelict]] [[Behemoth|Behemoths]] variants that have less numerous and less accurate but more powerful armaments than earlier Behemoth variants. Seen guarding [[Zion]] and [[Warlord (Location)]]."
@@ -1737,6 +1790,9 @@ The following is a list of all locations in Cogmind:
 "Martyr (7)","Bot",""
 "Mass Driver","Part",""
 "Mass Support Devices","Part Group",""
+"Master Drone","Bot",""
+"Master Drone Bay","Part",""
+"Master Link","Part",""
 "Master Tearclaws","Part",""
 "Master Thief","Bot",""
 "Materials","Location","Materials is the first real level of the game. These maps are small, cramped and have few paths forward. This is the first map with hostile [[0b10]] patrols hanging around, comprised mainly of low level [[G-34 Mercenary]] and [[G-47 Trooper]] grunts and [[S-10 Pest]] swarmers. There are also a few special special mechanics such as [[U-05 Engineer|Engineers]] not calling for reinforcements when attacked while trying to build structures in -10 and -9 and [[A-02 Transporter|Haulers]] not calling for reinforcements at all.
@@ -1755,6 +1811,7 @@ The other important cache is the out-of-depth parts cache. These caches contain 
 "Matter Drive","Part",""
 "Matter Filter","Part",""
 "Matter Filters","Part Group",""
+"Matter Focus","Part",""
 "Matter Neutralizer","Part",""
 "Maul","Part",""
 "Maximum Security","Other","[[Image]]Maximum Security Assaults.png|A wave of Assaults and Sentries dispatched during Maximum Security[[/Image]]
@@ -1780,6 +1837,7 @@ The only 2 ways to exit Maximum Security are to trigger [[Sterilization]] after 
 "Megatreads","Part",""
 "Melee Analysis Suite","Part",""
 "Melee Analysis Suites","Part Group",""
+"Meltdown","Other",""
 "Meta Core","Part",""
 "Mic. Antimatter Reactor","Part",""
 "Mic. Fission Core","Part",""
@@ -1831,6 +1889,7 @@ There are a mix of friendly and hostile events that can occur in the Mines. Whil
 "Mutant (6)","Bot",""
 "Mutant (7)","Bot",""
 "Mutant (8)","Bot",""
+"Mutated Botcube","Bot",""
 "Myomer Exoskeleton","Part",""
 "Myomer Leg","Part",""
 "N-00 Fly","Bot",""
@@ -1863,12 +1922,26 @@ A single NEM teleport will move Cogmind anywhere between 8-12 tiles from the ori
 "O-32 Director","Bot",""
 "Omega Cannon","Part",""
 "Operator","Bot Group","Operators are [[Hover Units|hovering]] [[0b10]] non-combat bots. Upon seeing a hostile, operators will run to their home [[Terminal]], and if they reach it they will make it unusable and summon a [[Reinforcement Squad]] to the terminal. As such, Operators should be avoided or destroyed themselves or their terminal before they call reinforcements. Additionally, [[Spoiler]]you can use a [[GameText]]Trojan(Assimilate)[[/GameText]] on their home terminal to make them get turned into your ally if they attempt to use it[[/Spoiler]]. Operators are a good source of [[Datajack]]s and [[Hacking Suite]]s if you kill them without them calling for reinforcements. They are weak to slashing and electromagnetic damage."
+"Ovr. Barrage Gun","Part",""
+"Ovr. Beamcaster","Part",""
+"Ovr. Coil Gun","Part",""
+"Ovr. Flexi-carbon Leg","Part",""
+"Ovr. Huge Scrapsphere","Part",""
+"Ovr. Medium Treads","Part",""
+"Ovr. Pulse Rifle","Part",""
+"Ovr. Quantum Rifle","Part",""
+"Ovr. Railgun","Part",""
+"Ovr. Scrapsphere","Part",""
+"Ovr. Titanium Leg","Part",""
+"Ovr. Treads","Part",""
 "P-60 Hacker","Bot",""
 "P-70 Sage","Bot",""
 "P-80 Master","Bot",""
 "P1-3CE","Bot",""
 "P1-3CE's Gatling Flakker","Part",""
 "PD Laser","Part",""
+"PL-3XN's Obliterator","Part","Created from a [[Disassembled Obliterator]] and 3 [[PL-3XN's Ring of Power]]."
+"PL-3XN's Ring of Power","Part","When 3 are combined with the [[Disassembled Obliterator]], creates [[PL-3XN's Obliterator]]."
 "PSU Rigger","Part",""
 "Packrat","Bot",""
 "Parasite","Bot",""
@@ -1899,6 +1972,7 @@ Lightning squads consist of 3 Lightnings and an [[I-47 Archangel]]. They can be 
 [[List]]Destroying a Hub machine in [[Hub_04(d)]]: 3 Lightning patrols will be dispatched to the map out of exits and Garrisons. They will roam in the general area of each remaining Hub.|Opening the [[Sigix Containment Pod]] chamber: A single Lighting patrol will be dispatched to the map if Cogmind breaches the Sigix chamber. It will patrol around the location of the Sigix room.[[/List]][[/Spoiler]]"
 "Perfect Tracking","Other","Bots with perfect tracking will know where [[Cogmind]] is at all times. Most bots with this will lose it upon sighting Cogmind."
 "Perforator","Part",""
+"Personal Teleporter v0.10","Part",""
 "Perun","Bot",""
 "Phase Armor","Part",""
 "Phase Cannon","Part",""
@@ -1960,6 +2034,7 @@ Lightning squads consist of 3 Lightnings and an [[I-47 Archangel]]. They can be 
 "Prototype Parts","Other",""
 "Prototype Robot","Other",""
 "Prototype Robots","Other",""
+"Protovariant","Bot Group","Protovariants are a group of prototype [[0b10]] bots that appear only in [[Testing]]. They are much stronger than the average bot of each class and can appear in one of 4 states: Unpowered, Dormant, Active, or Disabled/rewirable."
 "Protovariant D","Bot",""
 "Protovariant G","Bot",""
 "Protovariant H","Bot",""
@@ -1971,6 +2046,7 @@ Lightning squads consist of 3 Lightnings and an [[I-47 Archangel]]. They can be 
 "Q-Series","Bot",""
 "Q-thruster","Part",""
 "Quantum Capacitor","Part",""
+"Quantum Companion","Part",""
 "Quantum Reactor","Part",""
 "Quantum Rifle","Part",""
 "Quantum Router","Part",""
@@ -2001,6 +2077,7 @@ There is always 1, and possibly 2 exits in Quarantine:
 "Ragnarok Missile Launcher","Part",""
 "Railgun","Part",""
 "Rainbow Chip","Part",""
+"Ranger","Bot",""
 "Reaction Control System","Part",""
 "Reaction Control Systems","Part Group",""
 "Reactive Plating","Part",""
@@ -2101,6 +2178,7 @@ This event can be a great blessing or a curse depending on a lot of factors. Get
 "Revision 17++","Bot",""
 "Riot Gun","Part",""
 "Ripper","Part",""
+"Ripteeth","Part",""
 "Rnf. Antimatter Reactor","Part",""
 "Rnf. Deuterium Engine","Part",""
 "Rnf. Fission Core","Part",""
@@ -2109,6 +2187,7 @@ This event can be a great blessing or a curse depending on a lot of factors. Get
 "Robot Analysis","Other",""
 "Robot Tier","Other",""
 "Rocket Array","Part",""
+"Rocket Booster","Part",""
 "Rocket Launcher","Part",""
 "S-10 Pest","Bot",""
 "S-27 Virus","Bot",""
@@ -2117,8 +2196,10 @@ This event can be a great blessing or a curse depending on a lot of factors. Get
 "SGEMP Prototype","Part","Needed for the [[Redacted]][[Zhirov (Alignment)]] quest.[[/Redacted]]"
 "SHELL Armor","Part",""
 "ST Field Compressor","Part",""
+"SUBCON Basin","Part",""
 "Salvage Targeting Computer","Part",""
 "Salvage Targeting Computers","Part Group",""
+"Salvaging Laser","Part",""
 "Samaritan","Bot",""
 "Sapper","Bot",""
 "Sapper Charge","Part",""
@@ -2134,8 +2215,8 @@ Higher security scanalyzers are less likely to damage your parts or require addi
 "Scatter Rocket Array","Part",""
 "Schematic","Other",""
 "Schematic Archive","Part",""
+"Scientist","Bot",""
 "Scrap","Part",""
-"Scrapyard","Location","The starting point of every game. At the start of every game there is a semi-random fixed spawn of: [[Sml. Storage Unit]], 2 [[Lgt. Treads]], 2 [[Aluminum Leg]], a mix of 2 [[Wheel]] or [[Com. Wheel]], a mix of 2 [[Ion Engine]] or [[Lgt. Ion Engine]], and a mix of 3 [[Lgt. Assault Rifle]], [[Assault Rifle]], [[EM Pulse Gun]], [[Sml. Laser]], [[Med. Laser]]. If the advanced game option quickStart is set, all of the parts will be either collected or equipped.[[Heading]]Events[[/Heading]]A team of [[T-07 Excavator|Tunnelers]] and [[U-05 Engineer|Engineers]] will dig out and finish rooms over time. The rooms themselves do not contain anything of importance.[[Image]]Scrapyard Assembled Event.png|Assembled after ambushing a Tunneler[[/Image]]However, after several thousand turns of waiting, an Tunneler may dig open a small dug out area containing a large number of [[Assembled (4)|Assembled]]. This will prompt a response of an [[C-30 ARC|ARC]] containing 2 [[D-53 Grenadier|Demolishers]] which can be a good early source of [[Cmb. Airjet]] if they are destroyed by the assembled. Waiting around for this event can be fairly risky since there is no way to prepare for the fight and it is very easy to get destroyed by either the demolishers or the assembled."
 "Scrap Engine","Part","Scrap Engine is a unique [[Derelict]] part that can only be found at the entrance to [[Recycling]]. It has the capability to create powerful constructs by combining many different parts into one. It can create power constructs of up to 4 slots, propulsion up to 8 slots, and weapons of up to 4 slots. When more of Cogmind's slots are dedicated to constructs, they will also get more powerful overall.
 The Scrap Engine can create combinations of parts that would never be seen normally, such as energy cannons dealing kinetic damage with heat transfer, or 50 speed treads. Modifications to the constructs will only change a few stats at a time, so overall variability is extremely high when using the engine. Modifying a construct with a flight unit may result in a much higher speed, or it may dramatically reduce the integrity and support instead. Every part that is eaten can be a gamble, since the stats that are modified are random every time.
 [[Heading]]Processing Parts/Inventory[[/Heading]]
@@ -2172,9 +2253,17 @@ For a higher risk higher reward approach, mixing extremes like treads and flight
 [[Heading:2]]Alignments[[/Heading]]
 The [[Warlord (Alignment)]] makes for a particularly good combo with the Scrap Engine. There are a lot of [[Prototype Part|Prototypes]] in the [[Warlord (Location)|Warlord Map]] event, along with Vortex weapons and generally good loot. The -2 invasion is great for the same reasons. [[Extension]] has more good loot, and the [[Revision 17 (Alignment)|Revision 17 -3 invasion]] that can be started by visiting [[Cetus]] along that branch is very similar to the Warlord invasion in terms of good loot drops. On the other hand, [[Imprint|Imprinting]] can provide you with allies that drop good loot throughout the whole game, as well as good cooling to help support the often hard to deal with heat of weapon constructs. Additionally, unique Zionite phasic weaponry like the [[Zio. Phaser-S]] can provide a rare unresisted damage type.
 [[Heading:2]]Miscellaneous Tips[[/Heading]]
-[[List]]Have a stockpile of parts before equipping the Scrap Engine - Recycling is a good place to get a strong start on constructs due to the large number of different types of parts to eat, and the lack of big threats. If saving Scrap Engine for later, try to create a good sized loot pile ahead of time to get a head start on growing the constructs.|Don't go all in on EM damage - If all of your weapon slots are a single construct of EM type damage and you run into a [[Programmer]], you're going to have a rough time.|Be careful of destroying cover - Construct weapons tends to be much more powerful than typical weapons and will blow through walls right and left. This is good in some situations, but it can also leave you wide open to multiple angles of attack.|Leave a slot open for a [[Launchers]] - Dedicating all of your weapon slots to constructs makes it hard to deal with [[Swarmer|Swarmers]] or other large groups of hostiles.|Make careful [[Storage Units|Storage]] selections - Larger storage units like [[Hcp. Storage Unit]] and above may be difficult to carry if flight and hover propulsion are eaten. Smaller storage units can be carried more easily without overweight penalties with a bad support modifications.|Modify constructs with slots open - If trying to grow a construct, make sure that an empty slot is available for growth. This is especially the case for weapon constructs. Even though two weapon constructs may occasionally merge into a single multislot construct, it is more reliable to grow the slot number by keeping one available.|Don't have more than 3 weapons in engine inventory at a time - If trying to grow a weapon construct in number of slots, having 4 parts in inventory with an open weapon slot will always result in a new construct being created rather than having the existing construct modified. It may take a little longer, but making sure to process only 2 at a time will ensure maximum modifications and the highest chance to grow a weapon construct in slot count. [[/List]]"
+[[List]]Have a stockpile of parts before equipping the Scrap Engine - Recycling is a good place to get a strong start on constructs due to the large number of different types of parts to eat, and the lack of big threats. If saving Scrap Engine for later, try to create a good sized loot pile ahead of time to get a head start on growing the constructs.|Don't go all in on EM damage - If all of your weapon slots are a single construct of EM type damage and you run into a [[Programmer]], you're going to have a rough time.|Be careful of destroying cover - Construct weapons tends to be much more powerful than typical weapons and will blow through walls right and left. This is good in some situations, but it can also leave you wide open to multiple angles of attack.|Leave a slot open for a [[Launchers]] - Dedicating all of your weapon slots to constructs makes it hard to deal with [[Swarmer|Swarmers]] or other large groups of hostiles.|Make careful [[Storage Unit|Storage]] selections - Larger storage units like [[Hcp. Storage Unit]] and above may be difficult to carry if flight and hover propulsion are eaten. Smaller storage units can be carried more easily without overweight penalties with a bad support modifications.|Modify constructs with slots open - If trying to grow a construct, make sure that an empty slot is available for growth. This is especially the case for weapon constructs. Even though two weapon constructs may occasionally merge into a single multislot construct, it is more reliable to grow the slot number by keeping one available.|Don't have more than 3 weapons in engine inventory at a time - If trying to grow a weapon construct in number of slots, having 4 parts in inventory with an open weapon slot will always result in a new construct being created rather than having the existing construct modified. It may take a little longer, but making sure to process only 2 at a time will ensure maximum modifications and the highest chance to grow a weapon construct in slot count. [[/List]]"
 "Scrap Shield","Part",""
 "Scrap Shield Fragment","Part",""
+"Scrap Suit","Part",""
+"Scrapoid","Bot Group","Scrapoids are [[UFD]]-aligned bots Cogmind can create by using the [[Scrapoid Pod]] or by using the [[GameText]]Force(Scrapoids)[[/GameText]] hack at [[Recycling Machine|Recycling Machines]]. They have little in the way of defenses, but have high offensive capabilities with their unique Ovr. weaponry, and can repair their parts and even core with their [[Scrap Suit|Scrap Suits]]. They also carry a [[CPS Tube]] and can use it while in combat."
+"Scrapoid (3)","Bot",""
+"Scrapoid (6)","Bot",""
+"Scrapoid (8)","Bot",""
+"Scrapoid Pod","Part",""
+"Scrapper","Bot",""
+"Scrapyard","Location","The starting point of every game. At the start of every game there is a semi-random fixed spawn of: [[Sml. Storage Unit]], 2 [[Lgt. Treads]], 2 [[Aluminum Leg]], a mix of 2 [[Wheel]] or [[Com. Wheel]], a mix of 2 [[Ion Engine]] or [[Lgt. Ion Engine]], and a mix of 3 [[Lgt. Assault Rifle]], [[Assault Rifle]], [[EM Pulse Gun]], [[Sml. Laser]], [[Med. Laser]]. If the advanced game option quickStart is set, all of the parts will be either collected or equipped.[[Heading]]Events[[/Heading]]A team of [[T-07 Excavator|Tunnelers]] and [[U-05 Engineer|Engineers]] will dig out and finish rooms over time. The rooms themselves do not contain anything of importance.[[Image]]Scrapyard Assembled Event.png|Assembled after ambushing a Tunneler[[/Image]]However, after several thousand turns of waiting, an Tunneler may dig open a small dug out area containing a large number of [[Assembled (4)|Assembled]]. This will prompt a response of an [[C-30 ARC|ARC]] containing 2 [[D-53 Grenadier|Demolishers]] which can be a good early source of [[Cmb. Airjet]] if they are destroyed by the assembled. Waiting around for this event can be fairly risky since there is no way to prepare for the fight and it is very easy to get destroyed by either the demolishers or the assembled."
 "Scythe","Part",""
 "Search Patrol","Other","Search patrols are a unique type of [[0b10]] aligned [[Patrol Squad|patrol squad]]. They can be dispatched if Cogmind generates a lot of [[Alert]] from non-combat sources. This is primarily caused by being spotted by [[Watcher|Watchers]] or guard bots like [[Sentry|Sentries]], or by being spotted by any combat hostile and then running away and losing tracking. If the Alert level is above the typical [[Assault Squad|Assault]] range of level 2/400 influence and Cogmind has gained the majority of the influence from these non-combat sources, there is a chance that one or more search patrols may be dispatched. If a search patrol is announced, influence will drop by 150. This will be accompanied by the alert [[GameText]]ALERT: Heightened foreign activity detected, dispatching search patrol.[[/GameText]] The alert will also indicate if multiple search patrols are to be sent out simultaneously. One or more ARCs will be dispatched after a few more turns. These ARCs behave similarly as regular patrol ARCs and have the same standard patrol contents within them. However, search squads will choose random points on the map to patrol to rather than having a fixed patrol route like all other patrols."
 "Section 7","Location","Section 7 is a [[0b10]]-controlled [[Research]] [[Branch]] off of either [[Testing]] or [[Quarantine]] that always appears on -3 or -2. Quarantine must come before Section 7, so a -3 Testing followed by Section 7 is not possible. Compared to the previous branches, Section 7 is a lot tougher and more like a regular Research floor. Patrols are denser, [[Sentry|Sentries]] and [[Heavy|Heavies]] are present on the map, and [[Researcher|Researchers]] are present in higher numbers and have a worse scan effects. However, the [[Alien Artifact]] unique parts can be quite gamechanging and can include effects like strong weaponry, part integrity regeneration effects, and permanent buffs to Cogmind for the remainder of the game. This map is also home to powerful [[S7 Guard|S7 Guards]] that guard some of the more powerful and unique Artifacts. Like all Research branches, [[Farcom]] will trigger [[Maximum Security]] upon entry.
@@ -2226,9 +2315,17 @@ Cryocooling Duct machines may be sometimes found in Quarantine. These machines t
 "Sensor Arrays","Part Group",""
 "Sensor Drone","Bot",""
 "Sensor Drone Bay","Part","Deploys [[Sensor Drone|Sensor Drones]]."
-"Sentry","Bot Group","Sentries are a [[Bot Groups|Bot Group]] or [[Armor|armored]] [[Treads|treaded]] [[0b10]] bots that stand guard around exits, main corridors, and side rooms with machines or item stockpiles inside them. They wield dual Kinetic and Thermal guns at each tier. Sentries tend to be slightly more durable than most other bots at their depth. Sentries typically stand guard alone as a [[Security Squad]].\nSentries have no particular weakness, and so most weapon types can be used to dispatch them. Electromagnetic damage is efficient at killing the higher tier bots, and EM is good in general at increasing the chances of looting their treads and armor.\nWhile combat bots will want (or will be forced) to fight Sentries head-on, airborne builds may want to avoid them or at least avoid getting shot by them. One way to do this is to use a [[Terminology#Partial Spot|partial spot]] to lure the Sentry out of their position. After that, Cogmind may be able to use the guarded machine or exit, or grab the loot without being spotted. A fast Cogmind may also be able to use the long memory of Sentries to their advantage while being spotted regularly. It is possible to lead Sentries far out of position and then leave them in the dust to grab their guarded loot.\n[[Gallery]]Sentries.png|All Sentry variants and colors|Sentry Guarded Stockpile.png|A Sentry guarding a stockpile of parts, sitting in a recognizable ""Sentry nook""[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nSentries may appear in the following squads:\n[[List]][[Garrison Squad]]|[[Security Squad]][[/List]]\nAdditionally, Sentries will appear at [[Garrison (Machine)|Garrisons]] and 0b10 exits during [[High Security]] and [[Maximum Security]]."
+"Sentry","Bot Group","Sentries are a [[Bot Groups|Bot Group]] or [[Armor|armored]] [[Treads|treaded]] [[0b10]] bots that stand guard around exits, main corridors, and side rooms with machines or item stockpiles inside them. They wield dual Kinetic and Thermal guns at each tier. Sentries tend to be slightly more durable than most other bots at their depth. Sentries typically stand guard alone as a [[Security Squad]].
+Sentries have no particular weakness, and so most weapon types can be used to dispatch them. Electromagnetic damage is efficient at killing the higher tier bots, and EM is good in general at increasing the chances of looting their treads and armor.
+While combat bots will want (or will be forced) to fight Sentries head-on, airborne builds may want to avoid them or at least avoid getting shot by them. One way to do this is to use a [[Terminology#Partial Spot|partial spot]] to lure the Sentry out of their position. After that, Cogmind may be able to use the guarded machine or exit, or grab the loot without being spotted. A fast Cogmind may also be able to use the long memory of Sentries to their advantage while being spotted regularly. It is possible to lead Sentries far out of position and then leave them in the dust to grab their guarded loot.
+[[Gallery]]Sentries.png|All Sentry variants and colors|Sentry Guarded Stockpile.png|A Sentry guarding a stockpile of parts, sitting in a recognizable ""Sentry nook""[[/Gallery]]
+[[Heading]]Squads[[/Heading]]
+Sentries may appear in the following squads:
+[[List]][[Garrison Squad]]|[[Security Squad]][[/List]]
+Additionally, Sentries will appear at [[Garrison (Machine)|Garrisons]] and 0b10 exits during [[High Security]] and [[Maximum Security]]."
 "Shield Generator","Part",""
 "Shield Generators/Force Fields","Part Group",""
+"Shield Trident","Part",""
 "Shock Absorption System","Part",""
 "Shock Bomb Launcher","Part",""
 "Shock Maul","Part",""
@@ -2236,6 +2333,9 @@ Cryocooling Duct machines may be sometimes found in Quarantine. These machines t
 "Shock Trap","Part",""
 "Shotgun","Part",""
 "Shrapnel Trap","Part",""
+"Siege Articulator","Part",""
+"Siege Cannon","Part",""
+"Siege Cannon Replica","Part",""
 "Siege Mode","Other","Siege mode is an alternate state toggleable on all mutilslot treads. The transition in and out of siege mode takes 5 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the the treads cannot be disabled or removed. While in siege mode, non-melee attacks have +20% accuracy, coverage for all armor and heavy treads is doubled, any treads in siege mode get a free 25% damage reduction, no weapons suffer from recoil effects, and Cogmind is immune to instant part destruction from critical hits. [[Spoiler]][[Megatreads]], Tri-treads,[[/Spoiler]] and any treads containing the word ""siege"" in the name are capable of high siege mode which instead gives +30% accuracy and 50% damage reduction."
 "Sigix","Other",""
 "Sigix Broadsword","Part",""
@@ -2339,6 +2439,7 @@ There are 2 types of exits in Storage:
 [[List]]Main access exits: These always lead to the next main floor, either [[Materials]] or [[Factory]]. There is only one of these types of exits on the map and it will always be in the opposite corner of the map that Cogmind starts at.|[[Spoiler]][[Recycling]] exit: There is only one of these types of exits on the map and it will be in one of the remaining corners that the starting point and main access exit aren't in. This exit is blocked off by a [[Terminal]] with no Open hack. The only way past is to enter the special manual hack \\IAMDERELICT.[[/Spoiler]][[/List]]
 [[Image]]Storage Derelict Unlocked Vault.png|Unlocked vault raided by friendly [[Thug (5)|Derelicts]][[/Image]][[Image]]MTF Vault.png|Unlocked vault raided by [[01-MTF]][[/Image]][[Heading]]Events[[/Heading]]All of the events in Storage are driven by vault prefabs. There are two main events that can occur:
 [[List]](++) [[01-MTF]] raid: 01-MTF will join as an uncontrollable ally for the duration of the map.|(+/-) [[Thug (5)|Derelict]] raid: 2 Derelicts will have already opened and raided a large open vault. Several parts will be missing from the normal vault contents. When discovered, the 2 Derelicts will turn into uncontrollable allies and an assault [[C-30 ARC|ARC]] will be summoned to the vault.[[/List]]"
+"Storage Unit","Part Group","Storage units expand a bot's inventory size by their listed amount. Cogmind has 5 innate storage spaces, but other bots can have a few builtin slots, or none at all.[[Table]]Name|Storage|Mass|Equip Slots|Coverage|Max. Integrity||[[Sml. Storage Unit]]|3|5|1|25|150||[[Med. Storage Unit]]|5|10|1|25|250||[[Lrg. Storage Unit]]|10|20|1|25|350||[[Hcp. Storage Unit]]|15|40|1|25|500||[[Huge Storage Unit]]|20|80|1|25|600||[[Cargo Storage Unit]]|25|140|2|50|1000||[[Humpback]]|30|200|2|160|400||[[Vmp. Humpback]]|30|200|2|160|400||[[Lightpack 2.0]]|35|5|3|45|*500[[/Table]]"
 "Storage Units","Part Group","Storage units expand a bot's inventory size by their listed amount. Cogmind has 5 innate storage spaces, but other bots can have a few builtin slots, or none at all.[[Table]]Name|Storage|Mass|Equip Slots|Coverage|Max. Integrity||[[Sml. Storage Unit]]|3|5|1|25|150||[[Med. Storage Unit]]|5|10|1|25|250||[[Lrg. Storage Unit]]|10|20|1|25|350||[[Hcp. Storage Unit]]|15|40|1|25|500||[[Huge Storage Unit]]|20|80|1|25|600||[[Cargo Storage Unit]]|25|140|2|50|1000||[[Humpback]]|30|200|2|160|400||[[Lightpack 2.0]]|35|5|3|45|*500[[/Table]]"
 "Storm Laser","Part",""
 "Striker","Bot",""
@@ -2374,6 +2475,8 @@ There are 2 types of exits in Subcaves:
 "Supercharged Integrated Reactor","Part",""
 "Supercharged Sigix Terminator","Part",""
 "Supercharged TR","Part",""
+"Superdense Plating","Part",""
+"Superquantum Companion","Part",""
 "Supersonic Drone Bay","Part","Deploys a [[Trailblazer]]."
 "Surface","Location","The surface is not a real map in the game, but exiting to the surface is one way to win the game. Many of the game's wintypes require getting to a surface exit. See [[Wintypes]] for more information."
 "Surge Thruster","Part",""
@@ -2382,6 +2485,7 @@ There are 2 types of exits in Subcaves:
 "Surgeon (6)","Bot","Surgeon variant with an [[Adv. Field Recycling Unit]]."
 "Surveillance Squad","Other","[[Image]]Surveillance Squad.png|A Watcher surveillance squad[[/Image]]
 Surveillance squads are [[0b10]] aligned [[Squad|squads]] that roam the map looking for hostiles to report to 0b10 combat bots. They consist only of a single [[Watcher]]. This is a [[W-16 Scout]] on -10 and -9, a [[W-25 Informer]] on -8 through -5, and a [[W-44 Eye]] on -4 through -1. They can be Enumerated at [[Terminal|Terminals]]. They patrol between two points at a slow pace, then turn back around when they reach the end. The [[Garrison (Machine)]] hack [[Spoiler]]Trojan(Watchers)[[/Spoiler]] reports where all Watchers are at all times."
+"Surveybot 17 Chip","Part",""
 "Surveybot 24","Bot",""
 "Surveybot 24 Chip","Part",""
 "Surveybot 24 Scanner","Part",""
@@ -2401,6 +2505,7 @@ Swarmers may appear in the following squads:
 "System Restoration Module","Part",""
 "System Restoration Modules","Part Group",""
 "System Shield","Part",""
+"System Spiker","Part",""
 "T-07 Excavator","Bot",""
 "T-thruster","Part",""
 "T.R.O.L.L. Exoskeleton","Part",""
@@ -2413,6 +2518,8 @@ Swarmers may appear in the following squads:
 "Targeting Computer","Part",""
 "Targeting Computers","Part Group",""
 "Tearclaws","Part",""
+"Tech Extrapolator","Part",""
+"Telecube","Part",""
 "Terminal","Other","Terminals are interactable Machines that [[Cogmind]] can hack for various benefits (such as recalling an [[Extermination Squad]]!) and info. Terminals are also often guarded by an [[Operator]], which if alerted will use this terminal to call for a [[Reinforcement Squad]] unless it or the terminal is disabled/destroyed.
 Terminal security level can be roughly guessed by looking at the size of the terminal, with smaller (1 tile and such) terminals being level 1 and the bigger ones up to level 3.[[Image]]../game_sprites/Terminal.png|Level 3 terminal![[/Image]]
 [[Heading]]Hacking[[/Heading]]
@@ -2430,7 +2537,9 @@ Getting traced may result in receiving [[Corruption]], your [[Hackware]] breakin
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Terminal[[/Lore]]"
-"Terminology","Other","This is a list of terminology, or potentially things that do not merit a full page. Also check out [[Acronyms]].\n[[Heading:3]]Partial Spot[[/Heading]]\nPartial spotting is when you move through a (hostile) bots field of vision while its not its turn. The bot will investigate where it saw you, look a few tiles further then head back to whatever it was doing."
+"Terminology","Other","This is a list of terminology, or potentially things that do not merit a full page. Also check out [[Acronyms]].
+[[Heading:3]]Partial Spot[[/Heading]]
+Partial spotting is when you move through a (hostile) bots field of vision while its not its turn. The bot will investigate where it saw you, look a few tiles further then head back to whatever it was doing."
 "Terrabomb","Part",""
 "Terrabomb Derivative","Part",""
 "Terrain Scan Processor","Part",""
@@ -2449,7 +2558,7 @@ Typically getting scanned is seen as a negative due to the high power level of Q
 [[Lore]]0b10 Records|Testing[[/Lore]]
 [[Heading]]Prefabs[[/Heading]]
 [[Gallery]]Testing Guard Corridor.png|Guard corridor that can have 1-3 guard bots|Testing Rewirable Protovariant.png|Rewirable Protovariant|Testing Hostile Protovariant.png|Awake and hostile Protovariant|Testing Dormant Protovariant.png|Dormant hostile Protovariant|Testing Unpowered Protovariant.png|Unpowered Protovariant that won't activate|Testing Superbehemoth.png|Dormant [[Superbehemoth]] with Researcher|Testing Firing Range.png|Shooting range with prototype weaponsa and rewirable bots|Testing SGEMP.png|SGEMP with Striker and Alpha 7 guards|Testing Potential Cannons.png|Potential Cannons and Energy Wells|Testing Regen Armor.png|Vault with [[SHELL Armor]] and other regenerative armor|Testing Generic Vault.png|Generic Testing Shell that has many item possibilities inside|Testing Terrabomb Derivative.png|[[Terrabomb Derivative]] with Researchers|Fortress Guard.png|[[Fortress]] guarding the corridor to [[Section 7]]|Testing Main Access.png|Main access exit|Branch Section 7 Exit.png|Exit to [[Section 7]][[/Gallery]]
-[[Heading:2]]Protovariants[[/Heading]]
+[[Heading:2]][[Protovariant|Protovariants]][[/Heading]]
 There can be up to 2 Protovariants on a Testing map. These are prototype superpowered versions of different bot classes that have a very strong loadout of high rating prototype parts. They are fearsome foes with high damage output and are quite difficult to take down compared to most bots but have incredible loot. They can spawn in one of 4 states: Unpowered, Dormant, Active, or Disabled/rewirable. Protovariants can be of the following types:
 [[List]][[Protovariant D]]: Demolisher|[[Protovariant G]]: Grunt|[[Protovariant H]]: Hunter|[[Protovariant L]] Duelist|[[Protovariant P]]: Programmer|[[Protovariant X]]: Specialist|[[Protovariant Y]]: Sentry[[/List]]
 In Testing there is a special hack that can appear on [[Terminal|Terminals]]: [[GameText]]Control(Protovariants)[[/GameText]]. If successfully performed, it will turn a Protovariant on the map hostile to everything. The Protovariant can make quite a mess of 0b10 bots, but may cause more trouble than it's worth. Researchers will report the bot repeatedly when they see it attack. There is a special assault [[C-30 ARC|ARC]] that gets dispatched to the Protovariant's location when this hack is performed. This ARC contains an [[Investigator]] inside that will scan Cogmind even without being provoked.
@@ -2464,6 +2573,7 @@ There is always 1, and possibly 2 exits in Testing:
 "Thermal Defense Suite","Part",""
 "Thermal Generator","Part",""
 "Thermal Generators","Part Group",""
+"Thermal Lance","Part",""
 "Thermal Shield","Part",""
 "Thermic Laser","Part",""
 "Thermoblaster","Part",""
@@ -2478,6 +2588,7 @@ There is always 1, and possibly 2 exits in Testing:
 "Tiamat Missile Launcher","Part",""
 "Tinkerer","Bot",""
 "Titanium Leg","Part",""
+"Tower Shield","Part",""
 "Tracker","Bot",""
 "Tractor Beam","Part",""
 "Tractor Beams","Part Group",""
@@ -2534,7 +2645,9 @@ By default traps are programmed to trigger on detection of any foreign robot, a 
 [[Lore]]0b10 Records|Traps[[/Lore]]"
 "Treads","Part Group",""
 "Tri-rail Accelerator","Part",""
+"Tri-treads","Part",""
 "Triangulator","Part",""
+"Triborg","Bot",""
 "Tripod Weapons Platform","Part",""
 "Troll","Bot",""
 "U-05 Engineer","Bot","A wheeled non-combat robot that repairs any broken walls, doors, or machines in sight. Good source of structural and terrain scanners. When attacked while repairing, calls reinforcements (unless you're in [[Materials]]) 
@@ -2551,6 +2664,11 @@ By default traps are programmed to trigger on detection of any foreign robot, a 
 "Vibroblade","Part",""
 "Visual Processing Unit","Part",""
 "Visual Processing Units","Part Group",""
+"Vmp. Brace Plating","Part",""
+"Vmp. Broadsword","Part",""
+"Vmp. Heavy Siege Treads","Part",""
+"Vmp. Humpback","Part",""
+"Voltaic Drivehammer","Part",""
 "Vortex Cannon","Part",""
 "Vortex Catalyst Activator","Part",""
 "Vortex Chain Reactor","Part",""
@@ -2561,6 +2679,7 @@ By default traps are programmed to trigger on detection of any foreign robot, a 
 "Vortex Rifle","Part",""
 "Vortex Shotgun","Part",""
 "Vortex Shredder","Part",""
+"Vortex Trap","Part",""
 "W-16 Scout","Bot",""
 "W-25 Informer","Bot",""
 "W-44 Eye","Bot",""
@@ -2617,9 +2736,10 @@ This is the last chance to exit the map with any amount of assistance. With assa
 "Warlord KY-Z71","Bot",""
 "Warlord MG-163","Bot",""
 "Warlord SH-K8T","Bot",""
-"Warlord Statue","Bot",""
+"Warlord Statue","Part",""
 "Warp Cannon","Part",""
 "Warp Gun","Part",""
+"Wartreads","Part",""
 "Wasp","Bot Group","Wasps are the [[Derelict]] variant of [[Swarmer|Swarmers]] armed with a more powerful but unreliable armament and more powerful propulsion than earlier [[Swarmer]] variants."
 "Wasp (5)","Bot",""
 "Wasp (7)","Bot",""
@@ -2663,6 +2783,7 @@ See the following video: [[https://www.youtube.com/watch?v=XR2RoB6gKWA]]"
 "Wizard","Bot Group","Wizards are a [[Derelict]] variant of the [[0b10]] [[Programmer]], armed solely with a [[Riot Gun]]. Compared to Programmers, Wizards have plenty of [[Hackware]] and a [[Corruption Screen]] to help them counteract corruption."
 "Wizard (5)","Bot",""
 "Wizard (7)","Bot",""
+"Wyrm Statue","Bot",""
 "X-57 Shotgunner","Bot",""
 "X-62 Marksman","Bot",""
 "X-67 Chaingunner","Bot",""

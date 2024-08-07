@@ -101,7 +101,7 @@ for other in wiki_json['Other']:
         wiki_csv[other_name] = new_other
 
 # Write out updated csv
-with open(csv_path + '2', 'w', newline='') as f:
+with open(csv_path, 'w', newline='') as f:
     writer = csv.DictWriter(f, ['Name', 'Page Type', 'Content'], quoting=csv.QUOTE_ALL)
 
     writer.writeheader()
