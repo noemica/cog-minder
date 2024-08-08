@@ -104,7 +104,7 @@ function HackCategoryRows({ category }: { category: JsonRifHackCategory }) {
                 <td>{category.CategoryName}</td>
                 <td colSpan={3}>
                     {category.Targets.map((target) => (
-                        <img key={target} title={target} src={createImagePath(`game_sprites/${target}.png`)} />
+                        <img key={target} title={target} src={createImagePath(`game_sprites/${target}_48.png`)} />
                     ))}
                 </td>
             </tr>
