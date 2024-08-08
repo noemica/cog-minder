@@ -324,11 +324,17 @@
         "Hacks": [
             {
                 "Name": "Force(Fedlink)",
-                "Description": "Allocates additional resources to the UFD reserves. Also, locks the machine and summons an investigation squad like all force hacks."
+                "Description": "Allocates additional resources to the UFD reserves. Also, locks the machine and summons an investigation squad like all force hacks.",
+                "BaseChance": 80,
+                "Indirect": "Always",
+                "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Force(Scrapoids)",
-                "Description": "Summons 5 Scrapoids within around 20 turns of performing the hack while consuming 2 resources from the UFD reserves. The Scrapoids vary based on depth. Also, locks the machine and summons an investigation squad like all force hacks."
+                "Description": "Summons 5 Scrapoids within around 20 turns of performing the hack while consuming 2 resources from the UFD reserves. The Scrapoids vary based on depth. Also, locks the machine and summons an investigation squad like all force hacks.",
+                "BaseChance": 80,
+                "Indirect": "Always",
+                "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Force(Tunnel)",
