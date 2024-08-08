@@ -35,7 +35,7 @@ SPRITES = [
     Sprite(6, 11, 1, 'Wheel'),
     Sprite(7, 11, 1, 'Leg'),
     Sprite(8, 11, 1, 'Hover Unit'),
-    Sprite(9, 11, 1, 'Flight Unite'),
+    Sprite(9, 11, 1, 'Flight Unit'),
     Sprite(10, 11, 1, 'Device'),
     Sprite(11, 11, 1, 'Storage'),
     Sprite(12, 11, 1, 'Processor'),
