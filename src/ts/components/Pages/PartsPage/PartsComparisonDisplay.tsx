@@ -735,7 +735,7 @@ function ComparisonContent({ leftItem, rightItem }: { leftItem: Item; rightItem:
             <EmptyComparisonLine />
             <pre className="comparison-neutral details-item-image-title" />
             <pre className="details-summary">Comparison</pre>
-            <EmptyComparisonLine />
+            <pre className="comparison-sprite-line" />
             <EmptyComparisonLine />
             <EmptyComparisonLine />
             <LowGoodComparisonStat leftValue={leftItem.mass ?? 0} rightValue={rightItem.mass ?? 0} />
