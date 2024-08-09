@@ -33,7 +33,7 @@ const botNameImageMap = new Map<string, string>([
     ["Combat Programmer", "Programmer"],
     ["Commander", "Grunt"],
     ["CL-ANK", "Brawler"],
-    ["DD-05H", "Demolisher"],
+    ["DD-05H", "Brawler"],
     ["DRS Ranger", "Ranger (Derelict)"],
     ["Data Miner", "Data Miner"],
     ["Decomposer", "Worker"],
