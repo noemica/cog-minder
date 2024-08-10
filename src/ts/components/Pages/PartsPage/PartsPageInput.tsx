@@ -310,7 +310,7 @@ export default function PartsPageInput({
                 <LabeledInput
                     label="Rating"
                     placeholder="Any"
-                    tooltip="The rating of the part. Use * to search for prototypes only. Add a + to include larger values, or a - to include smaller values."
+                    tooltip="The rating of the part. Use * to search for prototypes only. Add a + at the end to include larger values, a - at the end to include smaller values, or a - between two values to include a range."
                     value={pageState.rating || ""}
                     onChange={(val) => {
                         setPageState({ ...pageState, rating: val });
@@ -319,7 +319,7 @@ export default function PartsPageInput({
                 <LabeledInput
                     label="Size"
                     placeholder="Any"
-                    tooltip="The size of the part (aka # of slots). Add a + to include larger values, or a - to include smaller values."
+                    tooltip="The size of the part (aka # of slots). Add a + at the end to include larger values, a - at the end to include smaller values, or a - between two values to include a range."
                     value={pageState.size || ""}
                     onChange={(val) => {
                         setPageState({ ...pageState, size: val });
@@ -328,7 +328,7 @@ export default function PartsPageInput({
                 <LabeledInput
                     label="Mass"
                     placeholder="Any"
-                    tooltip="The mass of the part. Add a + to include larger values, or a - to include smaller values."
+                    tooltip="The mass of the part. Add a + at the end to include larger values, a - at the end to include smaller values, or a - between two values to include a range."
                     value={pageState.mass || ""}
                     onChange={(val) => {
                         setPageState({ ...pageState, mass: val });

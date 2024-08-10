@@ -174,85 +174,112 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
 
         // Rating filter
         if (pageState.rating && pageState.rating.length > 0) {
-            const includeAbove = pageState.rating.includes("+");
-            const includeBelow = pageState.rating.includes("-");
-            const ratingValue = pageState.rating.replace("+", "").replace("-", "");
-
-            let floatRatingValue: number;
-            if (ratingValue.slice(-1) === "*") {
-                floatRatingValue = parseFloat(ratingValue.slice(0, ratingValue.lastIndexOf("*"))) + 0.5;
-            } else {
-                floatRatingValue = parseFloat(ratingValue);
+            function getFloatRatingValue(ratingValue: string) {
+                if (ratingValue.slice(-1) === "*") {
+                    return parseFloat(ratingValue.slice(0, ratingValue.lastIndexOf("*"))) + 0.5;
+                } else {
+                    return parseFloat(ratingValue);
+                }
             }
 
-            // A + at the end means also include values above the given value
-            // A - means include values below
-            if (includeAbove) {
-                if (item.rating < floatRatingValue) {
-                    return false;
+            let includeBetween = pageState.rating.includes("-");
+            if (includeBetween) {
+                const split = pageState.rating.split("-");
+                if (split.length === 2 && split[1] !== "") {
+                    const lowRating = getFloatRatingValue(split[0]);
+                    const highRating = getFloatRatingValue(split[1]);
+
+                    if (item.rating < lowRating || item.rating > highRating) {
+                        return false;
+                    }
+                } else {
+                    includeBetween = false;
                 }
-            } else if (includeBelow) {
-                if (item.rating > floatRatingValue) {
-                    return false;
-                }
-            } else if (ratingValue === "*") {
-                if (!item.ratingString.includes("*")) {
-                    return false;
-                }
-            } else {
-                if (item.rating !== floatRatingValue) {
-                    return false;
+            }
+
+            if (!includeBetween) {
+                const includeAbove = pageState.rating.endsWith("+");
+                const includeBelow = pageState.rating.endsWith("-");
+                const ratingValue = pageState.rating.replace("+", "").replace("-", "");
+
+                const floatRatingValue = getFloatRatingValue(ratingValue);
+
+                // A + at the end means also include values above the given value
+                // A - means include values below
+                if (includeAbove) {
+                    if (item.rating < floatRatingValue) {
+                        return false;
+                    }
+                } else if (includeBelow) {
+                    if (item.rating > floatRatingValue) {
+                        return false;
+                    }
+                } else if (ratingValue === "*") {
+                    if (!item.ratingString.includes("*")) {
+                        return false;
+                    }
+                } else {
+                    if (item.rating !== floatRatingValue) {
+                        return false;
+                    }
                 }
             }
         }
 
+        function filterNumericValue(value: number, searchString: string) {
+            let includeBetween = searchString.includes("-");
+            if (includeBetween) {
+                const split = searchString.split("-");
+                if (split.length === 2 && split[1] !== "") {
+                    const lowValue = parseFloat(split[0]);
+                    const highValue = parseFloat(split[1]);
+
+                    if (value < lowValue || value > highValue) {
+                        return false;
+                    }
+                } else {
+                    includeBetween = false;
+                }
+            }
+
+            if (!includeBetween) {
+                const includeAbove = searchString.endsWith("+");
+                const includeBelow = searchString.endsWith("-");
+                const valueString = searchString.replace("+", "").replace("-", "");
+
+                const searchValue = parseFloat(valueString);
+
+                // A + at the end means also include values above the given value
+                // A - means include values below
+                if (includeAbove) {
+                    if (value < searchValue) {
+                        return false;
+                    }
+                } else if (includeBelow) {
+                    if (value > searchValue) {
+                        return false;
+                    }
+                } else {
+                    if (value !== searchValue) {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
         // Size filter
         if (pageState.size && pageState.size.length > 0) {
-            const includeAbove = pageState.size.includes("+");
-            const includeBelow = pageState.size.includes("-");
-            const sizeValue = pageState.size.replace("+", "").replace("-", "");
-
-            const intSizeValue = parseInt(sizeValue);
-
-            // A + at the end means also include values above the given value
-            // A - means include values below
-            if (includeAbove) {
-                if (item.size < intSizeValue) {
-                    return false;
-                }
-            } else if (includeBelow) {
-                if (item.size > intSizeValue) {
-                    return false;
-                }
-            } else {
-                if (item.size !== intSizeValue) {
-                    return false;
-                }
+            if (!filterNumericValue(item.size, pageState.size)) {
+                return false;
             }
         }
 
         // Mass filter
         if (pageState.mass && pageState.mass.length > 0) {
-            const includeAbove = pageState.mass.includes("+");
-            const includeBelow = pageState.mass.includes("-");
-            const massValue = pageState.mass.replace("+", "").replace("-", "");
-
-            const intMassValue = parseInt(massValue);
-
-            // A + at the end means also include values above the given value
-            // A - means include values below
-            if (includeAbove) {
-                if (!item.mass || item.mass < intMassValue) {
-                    return false;
-                }
-            } else if (includeBelow) {
-                if (!item.mass || item.mass > intMassValue) {
-                    return false;
-                }
-            } else {
-                if (item.mass !== intMassValue) {
-                    return false;
-                }
+            if( !filterNumericValue(item.mass ?? 0, pageState.mass)) {
+                return false;
             }
         }
 
