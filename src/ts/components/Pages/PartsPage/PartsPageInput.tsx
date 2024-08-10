@@ -55,8 +55,6 @@ const slotButtons: ExclusiveButtonDefinition<SlotSearchType>[] = [
     { value: "Weapon" },
 ];
 
-const anySlotOptions: SelectOptionType[] = [{ label: "Any", value: "Any" }];
-
 const powerSlotTypeOptions: SelectOptionType<PowerSlotType>[] = [
     { value: "Any" },
     { value: "Engine" },
@@ -96,6 +94,13 @@ const weaponSlotTypeOptions: SelectOptionType<WeaponSlotType>[] = [
     { value: "Special Melee Weapon" },
     { value: "Special Weapon" },
 ];
+
+const allSlotOptions: SelectOptionType[] = [];
+allSlotOptions.push(...powerSlotTypeOptions);
+allSlotOptions.push(...propulsionSlotTypeOptions.slice(1));
+allSlotOptions.push(...utilitySlotTypeOptions.slice(1));
+allSlotOptions.push(...weaponSlotTypeOptions.slice(1));
+allSlotOptions.sort((a, b) => (a.value as string).localeCompare(b.value as string));
 
 const allCategoryOptions: (SelectOptionType<PartCategory> & { spoiler?: Spoiler })[] = [
     { value: "Any", tooltip: "All parts." },
@@ -240,16 +245,7 @@ function SlotSpecificFilter({
             return <SlotSelect options={weaponSlotTypeOptions} />;
     }
 
-    return (
-        <LabeledSelect
-            label="Type"
-            className="slot-type-select"
-            isSearchable={false}
-            options={anySlotOptions}
-            value={anySlotOptions[0]}
-            tooltip="Additional filter based on the sub-type of the part based on slot."
-        />
-    );
+    return <SlotSelect options={allSlotOptions} />;
 }
 
 export default function PartsPageInput({
