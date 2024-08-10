@@ -4,6 +4,7 @@ import rifData from "../../../../json/rif.json";
 import { JsonRifAbility, JsonRifHackCategory } from "../../../types/rifTypes";
 import { createImagePath, getLocationFromState, parseSearchParameters } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
+import { useSpoilers } from "../../Effects/useLocalStorageValue";
 import { LabeledInput } from "../../LabeledItem/LabeledItem";
 import TextTooltip from "../../Popover/TextTooltip";
 
@@ -98,14 +99,29 @@ function AbilityTable({ pageState }: { pageState: RifPageState }) {
 }
 
 function HackCategoryRows({ category }: { category: JsonRifHackCategory }) {
+    const spoiler = useSpoilers();
+
+    console.log(category.CategoryName);
+    if (category.CategoryName === "Researcher" && spoiler === "None") {
+        return undefined;
+    }
+
     return (
         <>
             <tr className="rif-hack-category-header-row">
                 <td>{category.CategoryName}</td>
                 <td colSpan={3}>
-                    {category.Targets.map((target) => (
-                        <img key={target} title={target} src={createImagePath(`game_sprites/${target}_48.png`)} />
-                    ))}
+                    {category.Targets.map((target) => {
+                        if ((target.includes("Prototype") || target.includes("Researcher")) && spoiler === "None") {
+                            return undefined;
+                        } else if (target.includes("Fortress") && spoiler === "Spoiler") {
+                            return undefined;
+                        }
+
+                        return (
+                            <img key={target} title={target} src={createImagePath(`game_sprites/${target}_48.png`)} />
+                        );
+                    })}
                 </td>
             </tr>
             {category.Hacks.map((hack) => (
