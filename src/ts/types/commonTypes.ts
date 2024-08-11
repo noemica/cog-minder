@@ -35,11 +35,18 @@ export function isValidSpoilerType(spoiler: Spoiler) {
     return spoilerTypes.includes(spoiler);
 }
 
+// A map entry/exit location with depths
+export type MapEntryExit = {
+    depthsString: string;
+    location: MapLocation;
+}
+
 // A map location
 export type MapLocation = {
     branch: boolean;
-    entries: MapLocation[];
-    exits: MapLocation[];
+    entries: MapEntryExit[];
+    exits: MapEntryExit[];
+    exitSkipsDepth: boolean;
     imageName: string | undefined;
     minDepth: number;
     maxDepth: number;

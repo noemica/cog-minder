@@ -23,23 +23,8 @@ export default function LocationDetails({
         }
     }
 
-    function getMinMaxDepths(startLocation: MapLocation, endLocation: MapLocation) {
-        let minDepth: number;
-        let maxDepth: number;
-
-        if (endLocation.branch || startLocation.preDepthBranch) {
-            minDepth = Math.max(startLocation.minDepth, endLocation.minDepth);
-            maxDepth = Math.min(startLocation.maxDepth, endLocation.maxDepth);
-        } else {
-            minDepth = Math.max(startLocation.minDepth, endLocation.minDepth - 1);
-            maxDepth = Math.min(startLocation.maxDepth, endLocation.maxDepth - 1);
-        }
-
-        return { minDepth: minDepth, maxDepth: maxDepth };
-    }
-
     const allowedEntries = location.entries.filter((e) =>
-        location.branch ? canShowSpoiler(e.spoiler, spoilers) : !e.branch,
+        location.branch ? canShowSpoiler(e.location.spoiler, spoilers) : !e.location.branch,
     );
 
     // Entry from other maps to this map
@@ -48,22 +33,21 @@ export default function LocationDetails({
             <DetailsEmptyLine />
             <DetailsSummaryLine text="Entry from" />
             {allowedEntries.map((entry, i) => {
-                const depths = getMinMaxDepths(entry, location);
-                const depthsString = getDepthString(depths.minDepth, depths.maxDepth);
+                const depthsString = entry.depthsString;
 
                 // Don't bother showing entrances from spoiler-blocked maps
-                if (!canShowSpoiler(entry.spoiler, spoilers)) {
+                if (!canShowSpoiler(entry.location.spoiler, spoilers)) {
                     return undefined;
                 }
 
                 if (inPopover) {
-                    return <DetailsTextLine key={i} category={entry.name} content={depthsString} />;
+                    return <DetailsTextLine key={i} category={entry.location.name} content={depthsString} />;
                 } else {
                     return (
                         <DetailsTextNode
                             key={i}
-                            category={<LocationLink location={entry} inPopover={true} />}
-                            categoryLength={entry.name.length}
+                            category={<LocationLink location={entry.location} inPopover={true} />}
+                            categoryLength={entry.location.name.length}
                             content={depthsString}
                         />
                     );
@@ -78,23 +62,23 @@ export default function LocationDetails({
             <DetailsEmptyLine />
             <DetailsSummaryLine text="Exits to" />
             {location.exits.map((exit, i) => {
-                const depths = getMinMaxDepths(location, exit);
-                const depthsString = getDepthString(depths.minDepth, depths.maxDepth);
+                const depthsString = exit.depthsString;
+
                 if (inPopover) {
                     // In popovers never show spoilered things
-                    if (!canShowSpoiler(exit.spoiler, spoilers)) {
+                    if (!canShowSpoiler(exit.location.spoiler, spoilers)) {
                         return undefined;
                     }
 
-                    return <DetailsTextLine key={i} category={exit.name} content={depthsString} />;
+                    return <DetailsTextLine key={i} category={exit.location.name} content={depthsString} />;
                 } else {
                     // Show exits with a spoiler
-                    if (canShowSpoiler(exit.spoiler, spoilers)) {
+                    if (canShowSpoiler(exit.location.spoiler, spoilers)) {
                         return (
                             <DetailsTextNode
                                 key={i}
-                                category={<LocationLink location={exit} />}
-                                categoryLength={exit.name.length}
+                                category={<LocationLink location={exit.location} />}
+                                categoryLength={exit.location.name.length}
                                 content={depthsString}
                             />
                         );
@@ -104,10 +88,10 @@ export default function LocationDetails({
                                 key={i}
                                 category={
                                     <span className="spoiler-text spoiler-text-margin">
-                                        <LocationLink location={exit} />
+                                        <LocationLink location={exit.location} />
                                     </span>
                                 }
-                                categoryLength={exit.name.length}
+                                categoryLength={exit.location.name.length}
                                 content={depthsString}
                             />
                         );

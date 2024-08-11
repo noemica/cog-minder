@@ -153,6 +153,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
             branch: locationEntry.Branch ?? false,
             entries: [],
             exits: [],
+            exitSkipsDepth: locationEntry.ExitSkipsDepth ?? false,
             imageName: locationEntry.ImageName,
             maxDepth: locationEntry.MaxDepth,
             minDepth: locationEntry.MinDepth,
@@ -181,15 +182,15 @@ function initEntries(botData: BotData, itemData: ItemData) {
         const location = allEntries.get(locationEntry.Name)!;
 
         for (const exit of locationEntry.Exits) {
-            const exitEntry = allEntries.get(exit);
+            const exitEntry = allEntries.get(exit.Map);
             if (exitEntry === undefined) {
                 console.log(`Bad location reference ${exit} in ${locationEntry.Name}`);
             } else {
                 const entryLocation = location.extraData as MapLocation;
                 const exitLocation = exitEntry.extraData as MapLocation;
 
-                entryLocation.exits.push(exitLocation);
-                exitLocation.entries.push(entryLocation);
+                entryLocation.exits.push({ depthsString: exit.Depths, location: exitLocation });
+                exitLocation.entries.push({ depthsString: exit.Depths, location: entryLocation }); // TODO
             }
         }
     }
