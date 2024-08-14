@@ -84,6 +84,9 @@ additional_content = {
         'Content':
             'Dialogue obtained by speaking with 8R-AWN in Materials, Mines or on the Exiles map',
     },
+    "AZ-K3N Dialogue": {
+        'Content': 'Dialogue available by rescuing AZ-K3N from a Garrison'
+    },
     'Abandonware Records': {
         'Content': 'Records obtainable from the Abandonware Association club\'s Terminal in Scraptown',
         'Spoiler': 'Spoiler',
