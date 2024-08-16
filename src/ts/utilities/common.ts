@@ -118,7 +118,7 @@ const botNameImageMap = new Map<string, string>([
     ["Warlord KY-Z71", "Warlord"],
     ["Warlord MG-163", "Warlord"],
     ["Warlord SH-K8T", "Warlord"],
-    ["Warlord Statue", "Warlord"],
+    ["Warlord Statue (Bot)", "Warlord"],
     ["Wasp (5)", "Swarmer"],
     ["Wasp (7)", "Swarmer"],
     ["Wizard (5)", "Programmer"],

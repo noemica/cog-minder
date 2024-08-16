@@ -93,6 +93,7 @@ name_replacements = {
     'Player': ['Cogmind'],
     'Scrapoid': ['Scrapoid (3)', 'Scrapoid (6)', 'Scrapoid (8)'],
     'Ranger': ['Ranger', 'DRS Ranger'],
+    'Warlord Statue': ['Warlord Statue (Bot)'],
 }
 
 class_replacements = {
