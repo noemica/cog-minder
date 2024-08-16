@@ -293,7 +293,7 @@ function WikiNavigationBar({
     setEditState: React.Dispatch<React.SetStateAction<EditState>>;
     spoilers: Spoiler;
 }) {
-    const [location, setLocation] = useLocation();
+    const [_, setLocation] = useLocation();
     const [searchString, setSearchString] = useState("");
 
     function ValidateAllButton() {
@@ -351,7 +351,6 @@ function WikiNavigationBar({
             </ButtonLink>
             <Button
                 tooltip="Pops open an editor that allows previewing edits to the current page."
-                disabled={location === "/"}
                 onClick={() => {
                     setEditState((editState) => {
                         return { ...editState, showEdit: true };
@@ -387,6 +386,7 @@ export default function WikiPage() {
 
     const [groupSelection, setGroupSelection] = useState("");
     const [pageDidMatch, pageNameMatch] = useRoute("/wiki/:page");
+    const [pageIsHomepage] = useRoute("/wiki");
 
     const [editState, setEditState] = useState<EditState>({
         editText: "",
@@ -400,8 +400,10 @@ export default function WikiPage() {
     const [allEntries, allowedEntries] = useMemo(() => {
         const allEntries = initEntries(botData, itemData);
 
+        // Need to exclude the home page from the list of allowed entries since 
+        // that is what is shown in the searchbar
         const allowedEntries = Array.from(allEntries.entries())
-            .filter(([_, entry]) => canShowSpoiler(entry.spoiler, spoilers))
+            .filter(([_, entry]) => canShowSpoiler(entry.spoiler, spoilers) && entry.name !== "Homepage")
             .map(([entryName, _]) => entryName);
         allowedEntries.sort();
 
@@ -433,8 +435,15 @@ export default function WikiPage() {
     let parsedNode: ReactNode | undefined;
     let parsingErrors: string[] = [];
 
-    if (pageDidMatch) {
-        const pageName = getStringFromLinkSafeString(pageNameMatch[0]!);
+    if (pageDidMatch || pageIsHomepage) {
+        let pageName: string;
+
+        if (pageIsHomepage) {
+            pageName = "Homepage";
+        } else {
+            pageName = getStringFromLinkSafeString(pageNameMatch![0]!);
+        }
+
         baseEntry = allEntries.get(pageName);
         entry = baseEntry;
 
@@ -470,7 +479,16 @@ export default function WikiPage() {
                 <div className="wiki-page-content">
                     <Switch>
                         <Route path={"/"}>
-                            <WikiHomepage />
+                            <WikiPageContent
+                                key="Homepage"
+                                allEntries={allEntries}
+                                entry={allEntries.get("Homepage")}
+                                groupSelection={groupSelection}
+                                parsedNode={parsedNode}
+                                spoilers={spoilers}
+                                path={"Homepage"}
+                                setGroupSelection={setGroupSelection}
+                            />
                         </Route>
                         <Route path={"/search/:search"}>
                             {(params) => (
