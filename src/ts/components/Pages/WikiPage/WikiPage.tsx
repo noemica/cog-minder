@@ -304,6 +304,7 @@ function WikiNavigationBar({
         return (
             <Button
                 onClick={async () => {
+                    console.log("Validating...");
                     for (const entry of allEntries.values()) {
                         const parseResult = parseEntryContent(
                             entry,
