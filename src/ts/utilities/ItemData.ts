@@ -86,6 +86,7 @@ export class ItemData {
                         noRepairs: item["No Repairs"] === "1",
                         mass: undefined,
                         name: item.Name,
+                        fabrication: fabrication,
                         fullName: item["Full Name"],
                         noPrefixName: noPrefixName,
                         rating: rating,

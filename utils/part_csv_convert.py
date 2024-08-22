@@ -158,6 +158,7 @@ slot_categories = {
     'N/A': flatten([
         categories['all'],
         categories['other_overview'],
+        categories['fabrication'],
     ]),
     'Power': flatten([
         categories['all'],
@@ -304,7 +305,7 @@ for row in reader:
         all_values.append(values)
 
 with open(output_path, 'w') as f:
-    json.dump(all_values, f)
+    json.dump(all_values, f, indent=4)
 
 with open (all_parts_output_path, 'w') as f:
     f.writelines('\n'.join([x['Name'] for x in all_values]))

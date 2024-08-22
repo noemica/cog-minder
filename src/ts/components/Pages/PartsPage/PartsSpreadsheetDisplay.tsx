@@ -30,6 +30,13 @@ const otherSlotColumns: ColumnDef<OtherItem>[] = [
             { accessorKey: "description", header: "Description", size: effectDescriptionWidth },
         ],
     },
+    {
+        header: "Fabrication",
+        columns: [
+            { accessorFn: (item) => item.fabrication?.number, header: "Count" },
+            { accessorFn: (item) => item.fabrication?.time, header: "Time" },
+        ],
+    },
 ];
 
 const powerSlotColumns: ColumnDef<PowerItem>[] = [
