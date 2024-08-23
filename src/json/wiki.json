@@ -8896,7 +8896,7 @@
   },
   {
    "Name": "Game Mechanics",
-   "Content": "[[List]][[Alert]] - Semi-hidden number that represents Cogmind's perceived threat level. Has dangerous consequences when too high.|[[Allies]] - Bots friendly to [[Cogmind]].|[[Cave-ins]] - Mechanic that causes dug out walls to collapse and deal large amounts of damage.|[[Corruption]] - Stat that has various negative penalties and can result in death.|[[Energy]] - Stat that is used to power most parts in the game.|[[Heat]] - Stat that can cause overheating side-effects and deaths in non-immune bots.|[[Matter]] - Stat that is used as a resource to attach parts and shoot some types of weapons.[[/List]]"
+   "Content": "[[List]][[Alert]] - Semi-hidden number that represents Cogmind's perceived threat level. Has dangerous consequences when too high.|[[Allies]] - Bots friendly to [[Cogmind]].|[[Cave-ins]] - Mechanic that causes dug out walls to collapse and deal large amounts of damage.|[[Corruption]] - Stat that has various negative penalties and can result in death.|[[Energy]] - Stat that is used to power most parts in the game.|[[Heat]] - Stat that can cause overheating side-effects and deaths in non-immune bots.|[[Matter]] - Stat that is used as a resource to attach parts and shoot some types of weapons.|[[Overload]]: Mechanic that can increase effectiveness of parts with a possible downside.[[/List]]"
   },
   {
    "Name": "Garrison (Machine)",
@@ -8964,6 +8964,10 @@
   {
    "Name": "Non-empty Pages",
    "Content": "[[NonEmptyPages]]"
+  },
+  {
+   "Name": "Overload",
+   "Content": "Overloading is a [[Game Mechanics|Game Mechanic]] available on primarily Cld. parts that allows for a temporary increase in effectiveness with additional heat costs and potential downsides based on the stability of the part. It is possible to perform for Power, Propulsion, and Weapon type items.\n[[Heading]]Power[[/Heading]]\nSome power parts (e.g. [[Cld. Ion Engine]]) support overloading. Overloading power causes the following changes:\n[[List]]Doubled energy generation|Doubled heat generation|Chance to shut down for ~5-10 turns and be damaged ~30-40% of the maximum integrity, based on the Stability % stat[[/List]]\n[[Heading]]Propulsion[[/Heading]]\nSome propulsion types (mainly [[Flight Units]] and [[Hover Units]]), e.g. [[Cld. VTOL Module]], support overloading. Overloading propulsion causes the following changes:\n[[List]]Doubled energy cost|Tripled heat generation|50% additional support|Speed is calculated as if there are twice the number of active Flight/Hover units (e.g. an overloaded Cld. VTOL Module will gain an additional -3 speed modifier)|Overload propulsion has a chance to suffer 1 point of damage each move that the part is active or each melee attack, based on the Burnout % stat[[/List]]\nOne special case, the [[Potential Leg]], does not have any of the above effects except for the burnout damage. Overloaded Potential Legs instead have their base speed halved.\n[[Heading]]Weapons[[/Heading]]\nSome energy weapons (e.g. [[Cld. Pulse Rifle]]) support overloading. Overloading weapons causes the following changes:\n[[List]]Double damage|Doubled energy cost|Tripled heat generation|Additional level of heat transfer (e.g. Medium (+37) is turned into High (+50)|Chance of negative effect based on Shot Stability %.[[/List]]\nIf an overload side effect occurs, one of the following effects will occur:\n[[List]]Energy Bleed (~40% chance): Cogmind loses anywhere from 10-50% of total energy capacity|Heat Surge (~40% chance): Cogmind gains between 100 and 200 heat|Short Circuit (~20% chance): A random part breaks[[/List]]"
   },
   {
    "Name": "Partial Spot",
