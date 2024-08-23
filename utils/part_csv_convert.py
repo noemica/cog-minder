@@ -146,6 +146,7 @@ categories = {
     'fabrication': [
         'Fabrication Number',
         'Fabrication Time',
+        'Fabrication Components'
     ],
 }
 

@@ -942,7 +942,7 @@ export default function ItemDetails({ item }: { item: Item }) {
                     text={fabStats.number === "1" ? "Fabrication" : `Fabrication x${fabStats.number}`}
                 />
                 <DetailsTextLine category="Time" content={fabStats.time} />
-                <DetailsTextLine category="Components" content="None" />
+                <DetailsTextLine category="Components" content={fabStats.components ?? "None"} />
             </>
         );
     }

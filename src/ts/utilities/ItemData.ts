@@ -52,6 +52,7 @@ export class ItemData {
                     : {
                           number: item["Fabrication Number"] as string,
                           time: item["Fabrication Time"] as string,
+                          components: item["Fabrication Components"] as string,
                       };
 
             let categories: ItemCategory[];

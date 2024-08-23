@@ -231,6 +231,7 @@ export type SpecialItemProperty = {
 export type FabricationStats = {
     number: string;
     time: string;
+    components: string | undefined;
 };
 
 export type BaseItem = {
@@ -357,6 +358,7 @@ export type JsonItem = {
     "Energy Storage"?: string;
     "Fabrication Number"?: string;
     "Fabrication Time"?: string;
+    "Fabrication Components"?: string;
     Category?: string;
     "Power Stability"?: string;
     Effect?: string;
