@@ -1,5 +1,4 @@
 import { Fragment, ReactNode } from "react";
-import { HashLink } from "../utilities/linkExport";
 
 import lore from "../../json/lore.json";
 import { LinkIcon } from "../components/Icons/Icons";
@@ -9,6 +8,7 @@ import { Bot } from "../types/botTypes";
 import { MapLocation, Spoiler } from "../types/commonTypes";
 import { Item } from "../types/itemTypes";
 import { WikiEntry } from "../types/wikiTypes";
+import { HashLink } from "../utilities/linkExport";
 import { BotData } from "./BotData";
 import { ItemData } from "./ItemData";
 import {
@@ -192,7 +192,11 @@ export function createContentHtml(
         node: (
             <>
                 <h1 className="wiki-emphasized-heading">
-                    {headingLink ? <HashLink to={`/${getLinkSafeString(entry.name)}`}>{headingText}</HashLink> : headingText}
+                    {headingLink ? (
+                        <HashLink to={`/${getLinkSafeString(entry.name)}`}>{headingText}</HashLink>
+                    ) : (
+                        headingText
+                    )}
                     <LinkIcon href="#" />
                 </h1>
                 {
@@ -253,7 +257,7 @@ function getLinkNode(state: ParserState, referenceEntry: WikiEntry, linkText: st
         node = <LocationLink linkTarget={linkTarget} location={location} text={linkText} />;
     } else if (referenceEntry.type === "Part") {
         const item = referenceEntry.extraData as Item;
-        node = <ItemLink  item={item} linkTarget={linkTarget} text={linkText} />;
+        node = <ItemLink item={item} linkTarget={linkTarget} text={linkText} />;
     } else {
         node = <HashLink to={linkTarget || `/${getLinkSafeString(referenceEntry.name)}`}>{linkText}</HashLink>;
     }
@@ -1066,7 +1070,6 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
     state.index += result[0].length;
 }
 
-
 // Process an lore tag like [[Lore:Lore]]Lore Group|Entry name/number[[/Lore]]
 // See lore.json
 function processLoreTag(state: ParserState, result: RegExpExecArray) {
@@ -1443,10 +1446,21 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
         }
 
         if (currentColumnCount != totalColumnCount) {
-            recordError(
-                state,
-                `Found ${currentColumnCount} columns in row ${row + 1} but header had ${totalColumnCount}`,
-            );
+            for (let j = currentColumnCount; j < totalColumnCount; j++) {
+                let cellStyle = "";
+
+                if (state.inSpoiler) {
+                    cellStyle = "spoiler-text";
+                }
+
+                cells.push(<td key={j} className={cellStyle} />);
+            }
+
+            // Maybe reinstate this and add option to fill empty cells instead
+            // recordError(
+            //     state,
+            //     `Found ${currentColumnCount} columns in row ${row + 1} but header had ${totalColumnCount}`,
+            // );
         }
 
         tableRows.push(<tr key={i}>{cells}</tr>);
