@@ -274,6 +274,16 @@ export function getBotImageNames(bot: Bot): string[] {
     return spriteSizes.map((size) => createImagePath(`game_sprites/${bot.class}_${size}.png`));
 }
 
+// Gets the paths for all sizes of images for a specified bot
+export function getLargeBotImageName(bot: Bot): string {
+    const imageName = botNameImageMap.get(bot.name);
+    if (imageName !== undefined) {
+        return createImagePath(`game_sprites/${imageName}_48.png`);
+    }
+
+    return createImagePath(`game_sprites/${bot.class}_48.png`);
+}
+
 // Gets the 24 tile size image name of an item
 export function getDefaultItemSpriteImageName(item: Item): string {
     return createImagePath(`game_sprites/${item.type}_24.png`);

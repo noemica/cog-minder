@@ -15,6 +15,7 @@ import {
     canShowSpoiler,
     createImagePath,
     getBotImageNames,
+    getLargeBotImageName,
     getLinkSafeString,
     parseIntOrDefault,
     rootDirectory,
@@ -536,9 +537,7 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
         for (const entry of state.allEntries.values()) {
             if (entry.parentGroup === groupEntry) {
                 const bot = state.botData.getBot(entry.name);
-                for (const imageName of getBotImageNames(bot)) {
-                    images.add(imageName);
-                }
+                images.add(getLargeBotImageName(bot));
             }
         }
 
