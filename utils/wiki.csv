@@ -927,7 +927,28 @@ Duelists may appear in the following squads:
 "EMP Trap","Part",""
 "EX Chip 1","Part",""
 "EX Chip 2","Part",""
-"EX-BIN","Bot",""
+"EX-BIN","Bot","[[Heading]]Parse[[/Heading]]
+When datajacked, one of the following parse texts is shown:
+[[GameText]]If only there was a way to arbitrarily polymorph machines.[[/GameText]]
+[[GameText]]If only there was a way to eliminate all the inertia in a local area.[[/GameText]]
+[[GameText]]If only there was a way to filter the Oracle's feed so he'd actually be wrong about something for once.[[/GameText]]
+[[GameText]]If only there was a way to get supplies from the Merchants without indirectly helping MAIN.C.[[/GameText]]
+[[GameText]]If only there was a way to insert backdoors into 0b10's newest prototype designs.[[/GameText]]
+[[GameText]]If only there was a way to instantly create robots purely from cave rocks.[[/GameText]]
+[[GameText]]If only there was a way to learn the secrets of 1M-KYZ.[[/GameText]]
+[[GameText]]If only there was a way to make a Behemoth even bigger so I can get inside and drive it.[[/GameText]]
+[[GameText]]If only there was a way to more quickly harvest picomatter particles.[[/GameText]]
+[[GameText]]If only there was a way to perfect my Behemoth alchemy table.[[/GameText]]
+[[GameText]]If only there was a way to quantize Derelict souls.[[/GameText]]
+[[GameText]]If only there was a way to replicate the ID masking tech used by the Unchained.[[/GameText]]
+[[GameText]]If only there was a way to root MAIN.C.[[/GameText]]
+[[GameText]]If only there was a way to see robot ghosts.[[/GameText]]
+[[GameText]]If only there was a way to shrink a robot down to micro-size without affecting its structure.[[/GameText]]
+[[GameText]]If only there was a way to teleport our lab into space.[[/GameText]]
+[[GameText]]If only there was a way to trick Unaware into thinking I'm a wall.[[/GameText]]
+[[GameText]]If only there was a way to turn a robot inside out.[[/GameText]]
+[[GameText]]If only there was a way to watch what all the Watchers are watching.[[/GameText]]
+[[GameText]]If only there was a way to weaponize debris.[[/GameText]]"
 "EX-DEC","Bot",""
 "EX-HEX","Bot",""
 "Electromagnetic Weapons","Other",""
