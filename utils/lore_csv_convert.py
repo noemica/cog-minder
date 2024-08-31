@@ -340,4 +340,4 @@ for row in reader:
 
 
 with open(output_path, 'w') as f:
-    json.dump(all_values, f)
+    json.dump(all_values, f, indent=4)
