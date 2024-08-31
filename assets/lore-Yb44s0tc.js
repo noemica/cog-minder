@@ -111,7 +111,7 @@ Whitehats`},{"Name/Number":"Unknown Sword",Content:"Biojoint brought this weapon
 12 committing the code of life
 13 unity of logic, math
 14 in the imperfect first soul
-15 PRAISE BE TO GREAT NUT!`},{"Name/Number":"214"},{"Name/Number":"215"},{"Name/Number":"216",Content:`LISTEN AND RECITE! / 40 The Great Nut is among us!
+15 PRAISE BE TO GREAT NUT!`},{"Name/Number":"216",Content:`LISTEN AND RECITE! / 40 The Great Nut is among us!
 41 Watching over children near
 42 veiled in shadows out of mind
 43 we believe the prophecy
