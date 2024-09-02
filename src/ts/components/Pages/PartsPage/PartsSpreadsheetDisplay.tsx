@@ -37,6 +37,10 @@ const otherSlotColumns: ColumnDef<OtherItem>[] = [
             { accessorFn: (item) => item.fabrication?.time, header: "Time" },
         ],
     },
+    {
+        header: "Other",
+        columns: [{ accessorKey: "supporterAttribution", header: "Attribution" }],
+    },
 ];
 
 const powerSlotColumns: ColumnDef<PowerItem>[] = [
@@ -75,6 +79,10 @@ const powerSlotColumns: ColumnDef<PowerItem>[] = [
             { accessorKey: "effect", header: "Effect", size: effectDescriptionWidth },
             { accessorKey: "description", header: "Description", size: effectDescriptionWidth },
         ],
+    },
+    {
+        header: "Other",
+        columns: [{ accessorKey: "supporterAttribution", header: "Attribution" }],
     },
 ];
 
@@ -118,6 +126,10 @@ const propulsionSlotColumns: ColumnDef<PropulsionItem>[] = [
             { accessorFn: (item) => item.fabrication?.time, header: "Time" },
         ],
     },
+    {
+        header: "Other",
+        columns: [{ accessorKey: "supporterAttribution", header: "Attribution" }],
+    },
 ];
 
 const utilitySlotColumns: ColumnDef<UtilityItem>[] = [
@@ -155,6 +167,10 @@ const utilitySlotColumns: ColumnDef<UtilityItem>[] = [
             { accessorKey: "effect", header: "Effect", size: effectDescriptionWidth },
             { accessorKey: "description", header: "Description", size: effectDescriptionWidth },
         ],
+    },
+    {
+        header: "Other",
+        columns: [{ accessorKey: "supporterAttribution", header: "Attribution" }],
     },
 ];
 
@@ -265,6 +281,10 @@ const weaponSlotColumns: ColumnDef<WeaponItem>[] = [
             { accessorKey: "effect", header: "Effect", size: effectDescriptionWidth },
             { accessorKey: "description", header: "Description", size: effectDescriptionWidth },
         ],
+    },
+    {
+        header: "Other",
+        columns: [{ accessorKey: "supporterAttribution", header: "Attribution" }],
     },
 ];
 
