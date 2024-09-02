@@ -949,10 +949,20 @@ export default function ItemDetails({ item }: { item: Item }) {
             <>
                 <DetailsEmptyLine />
                 <DetailsSummaryLine
-                    text={fabStats.number === "1" ? "Fabrication" : `Fabrication x${fabStats.number}`}
+                    text={fabStats.number === "1" ? "Fabrication" : `Fabrication (x${fabStats.number})`}
                 />
                 <DetailsTextLine category="Time" content={fabStats.time} />
                 <DetailsTextLine category="Components" content={fabStats.components ?? "None"} />
+            </>
+        );
+    }
+
+    let fullNameDetails: ReactNode | undefined;
+    if (item.fullName !== item.name) {
+        fullNameDetails = (
+            <>
+                <DetailsEmptyLine />
+                <span className="details-description">({item.fullName})</span>
             </>
         );
     }
@@ -1007,6 +1017,7 @@ export default function ItemDetails({ item }: { item: Item }) {
             {typeSpecificDetails}
             {effectDescriptionDetails}
             {fabricationDetails}
+            {fullNameDetails}
             {attributionDetails}
         </div>
     );

@@ -226,7 +226,8 @@ expansions = {
     'Prc.': 'Precision',
     'Rnf.': 'Reinforced',
     'Sml.': 'Small',
-    "Spk.": "Spiked",
+    'Spk.': "Spiked",
+    'Vmp.': 'Vampiric',
     'Zio.': 'Zionite',
 }
 
