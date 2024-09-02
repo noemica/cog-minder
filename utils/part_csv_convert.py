@@ -13,6 +13,7 @@ categories = {
     'all': [
         'Slot',
         'Hackable Schematic',
+        'Supporter Attribution',
     ],
     'power_overview': [
         'Name',

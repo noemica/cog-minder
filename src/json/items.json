@@ -1,6 +1,7 @@
 [
     {
         "Slot": "N/A",
+        "Supporter Attribution": "tcsgamer",
         "Name": "Matter",
         "Type": "Matter",
         "Rating": "1",
@@ -13,6 +14,7 @@
     },
     {
         "Slot": "N/A",
+        "Supporter Attribution": "syf",
         "Name": "Data Core",
         "Type": "Data Core",
         "Rating": "1",
@@ -134,6 +136,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Warmist",
         "Name": "Ion Engine",
         "Type": "Engine",
         "Rating": "1",
@@ -187,6 +190,7 @@
     },
     {
         "Slot": "Power",
+        "Supporter Attribution": "Luke Miller",
         "Name": "Backup Power I",
         "Type": "Engine",
         "Rating": "1",
@@ -212,6 +216,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Julius Love",
         "Name": "Imp. Ion Engine",
         "Type": "Engine",
         "Rating": "2",
@@ -266,6 +271,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "BLANK",
         "Name": "Hvy. Ion Engine",
         "Type": "Engine",
         "Rating": "2*",
@@ -349,6 +355,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "SummitSummit",
         "Name": "Deuterium Engine",
         "Type": "Engine",
         "Rating": "3",
@@ -376,6 +383,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Gaspard",
         "Name": "Lgt. Deuterium Engine",
         "Type": "Engine",
         "Rating": "3",
@@ -427,6 +435,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Naberius",
         "Name": "Nuclear Core",
         "Type": "Power Core",
         "Rating": "3",
@@ -454,6 +463,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Macked",
         "Name": "Lgt. Nuclear Core",
         "Type": "Power Core",
         "Rating": "3",
@@ -481,6 +491,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Matsor Browncoat",
         "Name": "Imp. Deuterium Engine",
         "Type": "Engine",
         "Rating": "4",
@@ -562,6 +573,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Frisky",
         "Name": "Hvy. Deuterium Engine",
         "Type": "Engine",
         "Rating": "4*",
@@ -647,6 +659,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Momoi Power",
         "Name": "Mic. Nuclear Core",
         "Type": "Power Core",
         "Rating": "4",
@@ -700,6 +713,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "dr0x",
         "Name": "Angular Momentum Engine",
         "Type": "Engine",
         "Rating": "5",
@@ -727,6 +741,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "remludar",
         "Name": "Lgt. Angular Momentum Engine",
         "Type": "Engine",
         "Rating": "5",
@@ -754,6 +769,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Babyhide Briefcase",
         "Name": "F-cell Engine",
         "Type": "Engine",
         "Rating": "5*",
@@ -782,6 +798,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Dylan McNamee",
         "Name": "Fission Core",
         "Type": "Power Core",
         "Rating": "5",
@@ -809,6 +826,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "A_Generic_Carrot",
         "Name": "Lgt. Fission Core",
         "Type": "Power Core",
         "Rating": "5",
@@ -863,6 +881,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "skymaker",
         "Name": "Fusion Compressor",
         "Type": "Power Core",
         "Rating": "5",
@@ -881,6 +900,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Gabriel Frigeri",
         "Name": "Cold Fusion Reactor",
         "Type": "Reactor",
         "Rating": "5*",
@@ -908,6 +928,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Penumbrz",
         "Name": "Neutrino Core",
         "Type": "Power Core",
         "Rating": "6",
@@ -936,6 +957,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "M-SquareC",
         "Name": "Lgt. Neutrino Core",
         "Type": "Power Core",
         "Rating": "6*",
@@ -992,6 +1014,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Connary",
         "Name": "Enh. Fission Core",
         "Type": "Power Core",
         "Rating": "6*",
@@ -1049,6 +1072,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Koron",
         "Name": "Mic. Fission Core",
         "Type": "Power Core",
         "Rating": "6",
@@ -1076,6 +1100,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Sabouts",
         "Name": "Fusion Reactor",
         "Type": "Reactor",
         "Rating": "6*",
@@ -1104,6 +1129,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Merphle",
         "Name": "Antimatter Reactor",
         "Type": "Reactor",
         "Rating": "7",
@@ -1262,6 +1288,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "A Glass Of Milk",
         "Name": "Hvy. Antimatter Reactor",
         "Type": "Reactor",
         "Rating": "7*",
@@ -1290,6 +1317,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "{-o-}Baltazar",
         "Name": "Mni. Fusion Reactor",
         "Type": "Reactor",
         "Rating": "7*",
@@ -1318,6 +1346,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "CaptainWinky",
         "Name": "Imp. Fusion Compressor",
         "Type": "Power Core",
         "Rating": "7",
@@ -1412,6 +1441,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Adam Blinkinsop",
         "Name": "Particle Reactor",
         "Type": "Reactor",
         "Rating": "8",
@@ -1550,6 +1580,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Kaylor",
         "Name": "Graviton Reactor",
         "Type": "Reactor",
         "Rating": "8*",
@@ -1684,6 +1715,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "DaftAero",
         "Name": "Imp. Quantum Reactor",
         "Type": "Reactor",
         "Rating": "9*",
@@ -1713,6 +1745,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Jordan McBride",
         "Name": "Zero-point Reactor",
         "Type": "Reactor",
         "Rating": "9*",
@@ -1742,6 +1775,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Darkening Kaos",
         "Name": "Vortex Chain Reactor",
         "Type": "Reactor",
         "Rating": "9*",
@@ -1771,6 +1805,7 @@
     {
         "Slot": "Power",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "zzxc",
         "Name": "Singularity Reactor",
         "Type": "Reactor",
         "Rating": "9*",
@@ -1799,6 +1834,7 @@
     },
     {
         "Slot": "Power",
+        "Supporter Attribution": "DoomGuy",
         "Name": "Matter Drive",
         "Type": "Reactor",
         "Rating": "10**",
@@ -1843,6 +1879,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Eggnog Kashoggin",
         "Name": "Lgt. Treads",
         "Type": "Treads",
         "Rating": "1",
@@ -1865,6 +1902,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "QT v3.14",
         "Name": "Imp. Treads",
         "Type": "Treads",
         "Rating": "2",
@@ -1908,6 +1946,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "8wheelsGood",
         "Name": "Arm. Treads",
         "Type": "Treads",
         "Rating": "3",
@@ -1973,6 +2012,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Bark Bark",
         "Name": "Med. Treads",
         "Type": "Treads",
         "Rating": "4",
@@ -1995,6 +2035,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Arnot",
         "Name": "Imp. Medium Treads",
         "Type": "Treads",
         "Rating": "5",
@@ -2038,6 +2079,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Steven Portzer",
         "Name": "Arm. Medium Treads",
         "Type": "Treads",
         "Rating": "6",
@@ -2060,6 +2102,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Gobbopathe",
         "Name": "Hvy. Treads",
         "Type": "Treads",
         "Rating": "6",
@@ -2169,6 +2212,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "David Paquette-Wallace",
         "Name": "Enh. Armored Medium Treads",
         "Type": "Treads",
         "Rating": "7*",
@@ -2192,6 +2236,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Gary McBojit-Marshall",
         "Name": "Imp. Heavy Treads",
         "Type": "Treads",
         "Rating": "7",
@@ -2395,6 +2440,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Senkrad",
         "Name": "Centrium Heavy Treads",
         "Type": "Treads",
         "Rating": "8*",
@@ -2536,6 +2582,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Crawling Chaos",
         "Name": "Hdn. Centrium Heavy Treads",
         "Type": "Treads",
         "Rating": "9*",
@@ -2585,6 +2632,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Dissonance",
         "Name": "Aluminum Leg",
         "Type": "Leg",
         "Rating": "1",
@@ -2606,6 +2654,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Andrew Smith",
         "Name": "Imp. Aluminum Leg",
         "Type": "Leg",
         "Rating": "2",
@@ -2627,6 +2676,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Irongron",
         "Name": "Carbon-fiber Leg",
         "Type": "Leg",
         "Rating": "3",
@@ -2648,6 +2698,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Eloden",
         "Name": "Titanium Leg",
         "Type": "Leg",
         "Rating": "3",
@@ -2710,6 +2761,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Mike Reinstein",
         "Name": "Imp. Carbon-fiber Leg",
         "Type": "Leg",
         "Rating": "4",
@@ -2731,6 +2783,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Lap",
         "Name": "Imp. Titanium Leg",
         "Type": "Leg",
         "Rating": "4",
@@ -2792,6 +2845,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Psyha",
         "Name": "Flexi-carbon Leg",
         "Type": "Leg",
         "Rating": "5",
@@ -2813,6 +2867,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Snugglesworth",
         "Name": "Arm. Leg",
         "Type": "Leg",
         "Rating": "5",
@@ -2916,6 +2971,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "@kumo",
         "Name": "Enh. Flexi-carbon Leg",
         "Type": "Leg",
         "Rating": "6*",
@@ -2980,6 +3036,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "SystemInShock",
         "Name": "Myomer Leg",
         "Type": "Leg",
         "Rating": "7",
@@ -3022,6 +3079,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Chavise",
         "Name": "Adv. Myomer Leg",
         "Type": "Leg",
         "Rating": "7*",
@@ -3104,6 +3162,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Zeia",
         "Name": "Biometal Leg",
         "Type": "Leg",
         "Rating": "8",
@@ -3146,6 +3205,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Till Hoeppner",
         "Name": "Enh. Biometal Leg",
         "Type": "Leg",
         "Rating": "8*",
@@ -3228,6 +3288,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Massemassimo",
         "Name": "Centrium Leg",
         "Type": "Leg",
         "Rating": "9",
@@ -3249,6 +3310,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Blu Bolt",
         "Name": "Hdn. Centrium Leg",
         "Type": "Leg",
         "Rating": "9*",
@@ -3333,6 +3395,7 @@
     },
     {
         "Slot": "Propulsion",
+        "Supporter Attribution": "WINTERMUTE",
         "Name": "Myomer Exoskeleton",
         "Type": "Leg",
         "Rating": "10*",
@@ -3393,6 +3456,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Nick Evans",
         "Name": "Com. Wheel",
         "Type": "Wheel",
         "Rating": "1",
@@ -3412,6 +3476,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "c909",
         "Name": "Arm. Wheel",
         "Type": "Wheel",
         "Rating": "2",
@@ -3525,6 +3590,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "bitMaster",
         "Name": "Centrium Wheel",
         "Type": "Wheel",
         "Rating": "7",
@@ -3544,6 +3610,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Mike Reinstein",
         "Name": "Hdn. Centrium Wheel",
         "Type": "Wheel",
         "Rating": "8*",
@@ -3564,6 +3631,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Antares",
         "Name": "Hover Unit",
         "Type": "Hover Unit",
         "Rating": "1",
@@ -3585,6 +3653,7 @@
     },
     {
         "Slot": "Propulsion",
+        "Supporter Attribution": "Rarden",
         "Name": "Backup Propulsion I",
         "Type": "Hover Unit",
         "Rating": "1",
@@ -3605,6 +3674,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Rzezezz",
         "Name": "Imp. Hover Unit",
         "Type": "Hover Unit",
         "Rating": "2",
@@ -3627,6 +3697,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "TheGroundGivesWay",
         "Name": "Airjet",
         "Type": "Hover Unit",
         "Rating": "3",
@@ -3671,6 +3742,7 @@
     },
     {
         "Slot": "Propulsion",
+        "Supporter Attribution": "JASegler",
         "Name": "Backup Propulsion III",
         "Type": "Hover Unit",
         "Rating": "3",
@@ -3779,6 +3851,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Daskre",
         "Name": "Cld. Aerolev Unit",
         "Type": "Hover Unit",
         "Rating": "5*",
@@ -3822,6 +3895,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "IMPUDENCE",
         "Name": "Gravmag Array",
         "Type": "Hover Unit",
         "Rating": "5",
@@ -3884,6 +3958,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Torne",
         "Name": "Antigrav System",
         "Type": "Hover Unit",
         "Rating": "6",
@@ -3950,6 +4025,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "200tang",
         "Name": "Cld. Gravmag System",
         "Type": "Hover Unit",
         "Rating": "6*",
@@ -3994,6 +4070,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Shuttleworth",
         "Name": "Imp. Antigrav System",
         "Type": "Hover Unit",
         "Rating": "7",
@@ -4059,6 +4136,7 @@
     },
     {
         "Slot": "Propulsion",
+        "Supporter Attribution": "UsF",
         "Name": "Backup Propulsion VII",
         "Type": "Hover Unit",
         "Rating": "7",
@@ -4234,6 +4312,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "slartie",
         "Name": "Flight Unit",
         "Type": "Flight Unit",
         "Rating": "1",
@@ -4278,6 +4357,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Unisyco",
         "Name": "Imp. Flight Unit",
         "Type": "Flight Unit",
         "Rating": "2*",
@@ -4369,6 +4449,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Jerker Maantelius",
         "Name": "Xenon Bombardment Thruster",
         "Type": "Flight Unit",
         "Rating": "4",
@@ -4414,6 +4495,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "CaptainKraft",
         "Name": "Cld. VTOL Module",
         "Type": "Flight Unit",
         "Rating": "4*",
@@ -4458,6 +4540,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Maurog",
         "Name": "Nuclear Pulse Thruster",
         "Type": "Flight Unit",
         "Rating": "5",
@@ -4702,6 +4785,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Kurskovich",
         "Name": "Cld. Field Propulsion Drive",
         "Type": "Flight Unit",
         "Rating": "7*",
@@ -4725,6 +4809,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Leucine",
         "Name": "Field Propulsion Array",
         "Type": "Flight Unit",
         "Rating": "7",
@@ -4747,6 +4832,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Nalzok",
         "Name": "Diametric Drive",
         "Type": "Flight Unit",
         "Rating": "7*",
@@ -4791,6 +4877,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "fadenpendler",
         "Name": "Q-thruster",
         "Type": "Flight Unit",
         "Rating": "8",
@@ -4813,6 +4900,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "discwv",
         "Name": "Electron Diverter",
         "Type": "Flight Unit",
         "Rating": "8*",
@@ -4882,6 +4970,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Ken Chang",
         "Name": "Impulse Thruster Array",
         "Type": "Flight Unit",
         "Rating": "8",
@@ -4926,6 +5015,7 @@
     {
         "Slot": "Propulsion",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "pzzlr",
         "Name": "Imp. Q-thruster",
         "Type": "Flight Unit",
         "Rating": "9*",
@@ -5072,6 +5162,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Frido",
         "Name": "Power Amplifier",
         "Type": "Device",
         "Rating": "5",
@@ -5088,6 +5179,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Alice Marks",
         "Name": "Adv. Power Amplifier",
         "Type": "Device",
         "Rating": "7",
@@ -5104,6 +5196,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "ozymandias79",
         "Name": "Exp. Power Amplifier",
         "Type": "Device",
         "Rating": "8*",
@@ -5121,6 +5214,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Fluffhead",
         "Name": "Thermal Generator",
         "Type": "Device",
         "Rating": "3",
@@ -5137,6 +5231,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "FireFlurry",
         "Name": "Imp. Thermal Generator",
         "Type": "Device",
         "Rating": "5",
@@ -5153,6 +5248,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Forester",
         "Name": "Adv. Thermal Generator",
         "Type": "Device",
         "Rating": "7",
@@ -5169,6 +5265,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "kumo",
         "Name": "Exp. Thermal Generator",
         "Type": "Device",
         "Rating": "8*",
@@ -5186,6 +5283,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "thegrinner",
         "Name": "Cryofiber Web",
         "Type": "Device",
         "Rating": "3",
@@ -5203,6 +5301,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "coffeehousex",
         "Name": "Imp. Cryofiber Web",
         "Type": "Device",
         "Rating": "5",
@@ -5253,6 +5352,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "DaemonLlama",
         "Name": "Heat Sink",
         "Type": "Device",
         "Rating": "1",
@@ -5287,6 +5387,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Dessard",
         "Name": "Adv. Heat Sink",
         "Type": "Device",
         "Rating": "5",
@@ -5304,6 +5405,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Gregory House",
         "Name": "Exp. Heat Sink",
         "Type": "Device",
         "Rating": "6*",
@@ -5322,6 +5424,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "The EMC Device",
         "Name": "Cooling System",
         "Type": "Device",
         "Rating": "2",
@@ -5339,6 +5442,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "laserbat",
         "Name": "Imp. Cooling System",
         "Type": "Device",
         "Rating": "4",
@@ -5356,6 +5460,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Tyranicus",
         "Name": "Adv. Cooling System",
         "Type": "Device",
         "Rating": "6",
@@ -5407,6 +5512,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Aleksei Saunders",
         "Name": "Coolant Network",
         "Type": "Device",
         "Rating": "8*",
@@ -5552,6 +5658,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Khalen",
         "Name": "Sml. Storage Unit",
         "Type": "Storage",
         "Rating": "1",
@@ -5568,6 +5675,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "RU-N14",
         "Name": "Med. Storage Unit",
         "Type": "Storage",
         "Rating": "1",
@@ -5584,6 +5692,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Wolfcat",
         "Name": "Lrg. Storage Unit",
         "Type": "Storage",
         "Rating": "1",
@@ -5697,6 +5806,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "waaden",
         "Name": "Sml. Battery",
         "Type": "Storage",
         "Rating": "1",
@@ -5713,6 +5823,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Mike Messer",
         "Name": "Med. Battery",
         "Type": "Storage",
         "Rating": "1",
@@ -5729,6 +5840,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "assasinwar9",
         "Name": "Lrg. Battery",
         "Type": "Storage",
         "Rating": "1",
@@ -5745,6 +5857,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Arild (Foamed) Iversen",
         "Name": "Hcp. Battery",
         "Type": "Storage",
         "Rating": "1",
@@ -5761,6 +5874,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "lyrabold",
         "Name": "Com. Battery",
         "Type": "Storage",
         "Rating": "3",
@@ -5777,6 +5891,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Tkyl-er",
         "Name": "Energy Well",
         "Type": "Storage",
         "Rating": "5",
@@ -5810,6 +5925,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Leoprime",
         "Name": "Adv. Energy Well",
         "Type": "Storage",
         "Rating": "7*",
@@ -5827,6 +5943,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "haddron",
         "Name": "Exp. Energy Well",
         "Type": "Storage",
         "Rating": "8*",
@@ -5904,6 +6021,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Jessica",
         "Name": "Sml. Matter Pod",
         "Type": "Storage",
         "Rating": "1",
@@ -5952,6 +6070,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Christian Dudek",
         "Name": "Hcp. Matter Pod",
         "Type": "Storage",
         "Rating": "1",
@@ -5984,6 +6103,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "dolader",
         "Name": "Matter Compressor",
         "Type": "Storage",
         "Rating": "5",
@@ -6000,6 +6120,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Carnax",
         "Name": "Imp. Matter Compressor",
         "Type": "Storage",
         "Rating": "6*",
@@ -6017,6 +6138,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Captain_Yankee",
         "Name": "Adv. Matter Compressor",
         "Type": "Storage",
         "Rating": "7*",
@@ -6034,6 +6156,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Ryan Vincent",
         "Name": "Exp. Matter Compressor",
         "Type": "Storage",
         "Rating": "8*",
@@ -6083,6 +6206,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Dimmies",
         "Name": "Adv. Weight Redist. System",
         "Type": "Device",
         "Rating": "3",
@@ -6100,6 +6224,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "forsaken1111",
         "Name": "Gravity Neutralizer",
         "Type": "Device",
         "Rating": "5*",
@@ -6118,6 +6243,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Stephen Brealey",
         "Name": "Adv. Gravity Neutralizer",
         "Type": "Device",
         "Rating": "7*",
@@ -6170,6 +6296,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Alan Chang",
         "Name": "Adv. Quantum Shading Machine",
         "Type": "Device",
         "Rating": "9*",
@@ -6266,6 +6393,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Michal Melewski",
         "Name": "Structural Scanner",
         "Type": "Device",
         "Rating": "1",
@@ -6400,6 +6528,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Sionnis",
         "Name": "Visual Processing Unit",
         "Type": "Processor",
         "Rating": "2",
@@ -6433,6 +6562,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Sir Fist",
         "Name": "Adv. Visual Processing Unit",
         "Type": "Processor",
         "Rating": "3",
@@ -6449,6 +6579,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Thorgi",
         "Name": "Enh. Optical Array",
         "Type": "Processor",
         "Rating": "5",
@@ -6465,6 +6596,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "J.A. Niskanen",
         "Name": "Exp. Optical Array",
         "Type": "Processor",
         "Rating": "7*",
@@ -6482,6 +6614,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Shhivv",
         "Name": "Spectral Analyzer",
         "Type": "Processor",
         "Rating": "8*",
@@ -6499,6 +6632,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "kriptosporidium",
         "Name": "Sensor Array",
         "Type": "Device",
         "Rating": "1",
@@ -6516,6 +6650,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Cynapse",
         "Name": "Imp. Sensor Array",
         "Type": "Device",
         "Rating": "3",
@@ -6533,6 +6668,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Valguris",
         "Name": "Adv. Sensor Array",
         "Type": "Device",
         "Rating": "5",
@@ -6550,6 +6686,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Andrew Dixon",
         "Name": "Lrn. Sensor Array",
         "Type": "Device",
         "Rating": "7",
@@ -6583,6 +6720,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Pyredrid",
         "Name": "Exp. Sensor Array",
         "Type": "Device",
         "Rating": "8*",
@@ -6601,6 +6739,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Ahren Groesch",
         "Name": "Signal Interpreter",
         "Type": "Processor",
         "Rating": "1",
@@ -6617,6 +6756,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Johnny_Benzene",
         "Name": "Imp. Signal Interpreter",
         "Type": "Processor",
         "Rating": "3",
@@ -6682,6 +6822,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "RoboCicero",
         "Name": "Terrain Scanner",
         "Type": "Device",
         "Rating": "1",
@@ -6699,6 +6840,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Riot X",
         "Name": "Imp. Terrain Scanner",
         "Type": "Device",
         "Rating": "3",
@@ -6716,6 +6858,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Muffiny",
         "Name": "Adv. Terrain Scanner",
         "Type": "Device",
         "Rating": "5",
@@ -6749,6 +6892,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Nalum",
         "Name": "Lrn. Terrain Scanner",
         "Type": "Device",
         "Rating": "7",
@@ -6766,6 +6910,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Malergh",
         "Name": "Exp. Terrain Scanner",
         "Type": "Device",
         "Rating": "8*",
@@ -6815,6 +6960,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Skerj",
         "Name": "Imp. Terrain Scan Processor",
         "Type": "Processor",
         "Rating": "3",
@@ -6846,6 +6992,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Rev. Sudasana",
         "Name": "Adv. Terrain Scan Processor",
         "Type": "Processor",
         "Rating": "4",
@@ -6862,6 +7009,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Diceyface",
         "Name": "Exp. Terrain Scan Processor",
         "Type": "Processor",
         "Rating": "7*",
@@ -6907,6 +7055,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "zwolf",
         "Name": "Seismic Detector",
         "Type": "Device",
         "Rating": "1",
@@ -7044,6 +7193,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "blelm",
         "Name": "Salvage Targeting Computer",
         "Type": "Processor",
         "Rating": "2",
@@ -7060,6 +7210,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "MistaCow",
         "Name": "Imp. Salvage Targeting Computer",
         "Type": "Processor",
         "Rating": "4",
@@ -7091,6 +7242,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Xan",
         "Name": "Adv. Salvage Targeting Computer",
         "Type": "Processor",
         "Rating": "6",
@@ -7123,6 +7275,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Chrysophrase",
         "Name": "Targeting Computer",
         "Type": "Processor",
         "Rating": "1",
@@ -7139,6 +7292,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Itti",
         "Name": "Imp. Targeting Computer",
         "Type": "Processor",
         "Rating": "2",
@@ -7170,6 +7324,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "DoodleBug",
         "Name": "Adv. Targeting Computer",
         "Type": "Processor",
         "Rating": "3",
@@ -7234,6 +7389,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Adam",
         "Name": "Melee Analysis Suite",
         "Type": "Processor",
         "Rating": "3",
@@ -7250,6 +7406,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "longchamps",
         "Name": "Imp. Melee Analysis Suite",
         "Type": "Processor",
         "Rating": "4",
@@ -7266,6 +7423,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Jesse Clark",
         "Name": "Adv. Melee Analysis Suite",
         "Type": "Processor",
         "Rating": "5",
@@ -7282,6 +7440,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "saraTheCamel",
         "Name": "Exp. Melee Analysis Suite",
         "Type": "Processor",
         "Rating": "7*",
@@ -7299,6 +7458,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "prometheus",
         "Name": "Launcher Guidance Computer",
         "Type": "Processor",
         "Rating": "4",
@@ -7315,6 +7475,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Robs",
         "Name": "Imp. Launcher Guidance Computer",
         "Type": "Processor",
         "Rating": "6",
@@ -7331,6 +7492,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Deus",
         "Name": "Adv. Launcher Guidance Computer",
         "Type": "Processor",
         "Rating": "8",
@@ -7379,6 +7541,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Giann",
         "Name": "Imp. Target Analyzer",
         "Type": "Processor",
         "Rating": "5",
@@ -7395,6 +7558,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Pierce Robinson",
         "Name": "Adv. Target Analyzer",
         "Type": "Processor",
         "Rating": "7",
@@ -7411,6 +7575,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Adam Blinkinsop",
         "Name": "Exp. Target Analyzer",
         "Type": "Processor",
         "Rating": "8*",
@@ -7444,6 +7609,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "A Lost Engineer",
         "Name": "Exp. Core Analyzer",
         "Type": "Processor",
         "Rating": "9*",
@@ -7462,6 +7628,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Omniraptor",
         "Name": "Armor Integrity Analyzer",
         "Type": "Processor",
         "Rating": "4",
@@ -7478,6 +7645,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Herbie Piland",
         "Name": "Imp. Armor Integrity Analyzer",
         "Type": "Processor",
         "Rating": "7",
@@ -7512,6 +7680,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Helyea",
         "Name": "Recoil Stabilizer",
         "Type": "Device",
         "Rating": "3",
@@ -7529,6 +7698,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Korikabu",
         "Name": "Recoil Nullifier",
         "Type": "Device",
         "Rating": "6",
@@ -7546,6 +7716,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Orlovsky",
         "Name": "Matter Filter",
         "Type": "Device",
         "Rating": "4",
@@ -7600,6 +7771,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "zicho",
         "Name": "Prc. Energy Filter",
         "Type": "Device",
         "Rating": "6*",
@@ -7618,6 +7790,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "PhearBot",
         "Name": "Particle Charger",
         "Type": "Device",
         "Rating": "3",
@@ -7654,6 +7827,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Endlessblaze ",
         "Name": "Adv. Particle Charger",
         "Type": "Device",
         "Rating": "7",
@@ -7672,6 +7846,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "E.I.G.",
         "Name": "Particle Accelerator",
         "Type": "Device",
         "Rating": "7*",
@@ -8111,6 +8286,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Paul Wright",
         "Name": "Stasis Canceller",
         "Type": "Device",
         "Rating": "5",
@@ -8128,6 +8304,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "teapotahedron",
         "Name": "Transmission Jammer",
         "Type": "Device",
         "Rating": "4",
@@ -8161,6 +8338,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "brevous",
         "Name": "Imp. Transmission Jammer",
         "Type": "Device",
         "Rating": "6",
@@ -8178,6 +8356,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Trefall",
         "Name": "Adv. Transmission Jammer",
         "Type": "Device",
         "Rating": "7",
@@ -8195,6 +8374,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Draco18s",
         "Name": "Exp. Transmission Jammer",
         "Type": "Device",
         "Rating": "9*",
@@ -8214,6 +8394,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Yukihana",
         "Name": "ECM Suite",
         "Type": "Device",
         "Rating": "1",
@@ -8247,6 +8428,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Deep Wide Ruffle",
         "Name": "Adv. ECM Suite",
         "Type": "Device",
         "Rating": "4",
@@ -8264,6 +8446,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Roulin",
         "Name": "Exp. ECM Suite",
         "Type": "Device",
         "Rating": "7*",
@@ -8317,6 +8500,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "TheRealMaxion",
         "Name": "Imp. Reaction Control System",
         "Type": "Device",
         "Rating": "5",
@@ -8334,6 +8518,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Razzle Storm",
         "Name": "Adv. Reaction Control System",
         "Type": "Device",
         "Rating": "7",
@@ -8351,6 +8536,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "nikoooo",
         "Name": "Exp. Reaction Control System",
         "Type": "Device",
         "Rating": "9*",
@@ -8370,6 +8556,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "aoemica",
         "Name": "Phase Shifter",
         "Type": "Device",
         "Rating": "5",
@@ -8387,6 +8574,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "benexclaimed",
         "Name": "Imp. Phase Shifter",
         "Type": "Device",
         "Rating": "7",
@@ -8404,6 +8592,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Raltay",
         "Name": "Adv. Phase Shifter",
         "Type": "Device",
         "Rating": "9",
@@ -8421,6 +8610,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Nemesis-X",
         "Name": "Exp. Phase Shifter",
         "Type": "Device",
         "Rating": "9*",
@@ -8632,6 +8822,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "arno592000",
         "Name": "Power Shielding",
         "Type": "Protection",
         "Rating": "1",
@@ -8647,6 +8838,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Arseface",
         "Name": "Imp. Power Shielding",
         "Type": "Protection",
         "Rating": "3",
@@ -8692,6 +8884,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "fonetikli",
         "Name": "Propulsion Shielding",
         "Type": "Protection",
         "Rating": "1",
@@ -8707,6 +8900,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Hellebarde",
         "Name": "Imp. Propulsion Shielding",
         "Type": "Protection",
         "Rating": "3",
@@ -8752,6 +8946,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Jc Quayson",
         "Name": "Utility Shielding",
         "Type": "Protection",
         "Rating": "1",
@@ -8767,6 +8962,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "0verflow",
         "Name": "Imp. Utility Shielding",
         "Type": "Protection",
         "Rating": "3",
@@ -8812,6 +9008,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "rainpool",
         "Name": "Weapon Shielding",
         "Type": "Protection",
         "Rating": "1",
@@ -8931,6 +9128,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "zill",
         "Name": "Lgt. Armor Plating",
         "Type": "Protection",
         "Rating": "1",
@@ -8948,6 +9146,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Profanicus",
         "Name": "Med. Armor Plating",
         "Type": "Protection",
         "Rating": "2",
@@ -8965,6 +9164,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Pinback",
         "Name": "Hvy. Armor Plating",
         "Type": "Protection",
         "Rating": "3",
@@ -9029,6 +9229,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Kamilion",
         "Name": "Hrd. Medium Armor Plating",
         "Type": "Protection",
         "Rating": "3",
@@ -9046,6 +9247,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "flykovsky",
         "Name": "Hrd. Heavy Armor Plating",
         "Type": "Protection",
         "Rating": "4",
@@ -9063,6 +9265,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Bruno Bigras",
         "Name": "Imp. Light Armor Plating",
         "Type": "Protection",
         "Rating": "3",
@@ -9080,6 +9283,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Dagrelite",
         "Name": "Imp. Medium Armor Plating",
         "Type": "Protection",
         "Rating": "4",
@@ -9097,6 +9301,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Jathreth Kathaeron",
         "Name": "Imp. Heavy Armor Plating",
         "Type": "Protection",
         "Rating": "5",
@@ -9162,6 +9367,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Gregg Lupaczyk",
         "Name": "Lyr. Light Armor Plating",
         "Type": "Protection",
         "Rating": "4",
@@ -9179,6 +9385,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Kyle Pike",
         "Name": "Lyr. Medium Armor Plating",
         "Type": "Protection",
         "Rating": "5",
@@ -9196,6 +9403,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Nickajeglin",
         "Name": "Lyr. Heavy Armor Plating",
         "Type": "Protection",
         "Rating": "6",
@@ -9228,6 +9436,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Entane",
         "Name": "Centrium Light Armor Plating",
         "Type": "Protection",
         "Rating": "8*",
@@ -9246,6 +9455,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Amazigh",
         "Name": "Centrium Medium Armor Plating",
         "Type": "Protection",
         "Rating": "8*",
@@ -9264,6 +9474,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Kasaris",
         "Name": "Centrium Heavy Armor Plating",
         "Type": "Protection",
         "Rating": "8*",
@@ -9379,6 +9590,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "blockerz",
         "Name": "Reflective Plating",
         "Type": "Protection",
         "Rating": "3",
@@ -9396,6 +9608,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "hedshogg",
         "Name": "Med. Reflective Plating",
         "Type": "Protection",
         "Rating": "4",
@@ -9476,6 +9689,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "NiGame",
         "Name": "Insulated Plating",
         "Type": "Protection",
         "Rating": "3",
@@ -9493,6 +9707,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "CaptainKraft",
         "Name": "Med. Insulated Plating",
         "Type": "Protection",
         "Rating": "4",
@@ -9648,6 +9863,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Soylent Gray",
         "Name": "Powered Armor",
         "Type": "Protection",
         "Rating": "4",
@@ -9666,6 +9882,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "MagicWalker",
         "Name": "Imp. Powered Armor",
         "Type": "Protection",
         "Rating": "6",
@@ -9684,6 +9901,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "zill",
         "Name": "Adv. Powered Armor",
         "Type": "Protection",
         "Rating": "8",
@@ -9701,6 +9919,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Alexander Peterhans",
         "Name": "Exp. Powered Armor",
         "Type": "Protection",
         "Rating": "9*",
@@ -9767,6 +9986,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Jeremy Nielsen @_JSquigs",
         "Name": "Med. Regenerative Plating",
         "Type": "Protection",
         "Rating": "6*",
@@ -9786,6 +10006,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Oddtwang",
         "Name": "Hvy. Regenerative Plating",
         "Type": "Protection",
         "Rating": "7*",
@@ -9805,6 +10026,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Au Ellai",
         "Name": "SHELL Armor",
         "Type": "Protection",
         "Rating": "9*",
@@ -9874,6 +10096,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "bitMaster",
         "Name": "Focal Shield",
         "Type": "Device",
         "Rating": "5",
@@ -9908,6 +10131,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Windwaker",
         "Name": "Adv. Focal Shield",
         "Type": "Device",
         "Rating": "7",
@@ -9925,6 +10149,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "honey_spider",
         "Name": "Exp. Focal Shield",
         "Type": "Device",
         "Rating": "8*",
@@ -9943,6 +10168,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Oleg Krapilsky",
         "Name": "Thermal Shield",
         "Type": "Device",
         "Rating": "5",
@@ -9960,6 +10186,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "strings",
         "Name": "Imp. Thermal Shield",
         "Type": "Device",
         "Rating": "6",
@@ -10012,6 +10239,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Yukihana",
         "Name": "Thermal Barrier",
         "Type": "Device",
         "Rating": "9*",
@@ -10031,6 +10259,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "HartLord",
         "Name": "Beam Splitter",
         "Type": "Device",
         "Rating": "9*",
@@ -10139,6 +10368,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "pali6",
         "Name": "Imp. Shock Absorption System",
         "Type": "Device",
         "Rating": "6",
@@ -10175,6 +10405,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Charson",
         "Name": "EM Disruption Field",
         "Type": "Device",
         "Rating": "5",
@@ -10192,6 +10423,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "DinoMC",
         "Name": "Adv. EM Disruption Field",
         "Type": "Device",
         "Rating": "7*",
@@ -10210,6 +10442,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Justin Deal",
         "Name": "Exp. EM Disruption Field",
         "Type": "Device",
         "Rating": "8*",
@@ -10380,6 +10613,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "jaccarmac",
         "Name": "Force Field",
         "Type": "Device",
         "Rating": "5",
@@ -10397,6 +10631,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Nitz223",
         "Name": "Imp. Force Field",
         "Type": "Device",
         "Rating": "7",
@@ -10414,6 +10649,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Paul Wright",
         "Name": "Adv. Force Field",
         "Type": "Device",
         "Rating": "8",
@@ -10431,6 +10667,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Arcade",
         "Name": "Exp. Force Field",
         "Type": "Device",
         "Rating": "9*",
@@ -10483,6 +10720,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Raranak",
         "Name": "Remote Shield",
         "Type": "Device",
         "Rating": "5",
@@ -10517,6 +10755,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Slotos",
         "Name": "Adv. Remote Shield",
         "Type": "Device",
         "Rating": "8*",
@@ -10535,6 +10774,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Tuxedo-Knight",
         "Name": "Remote Force Field",
         "Type": "Device",
         "Rating": "6",
@@ -10552,6 +10792,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "LOVE",
         "Name": "Imp. Remote Force Field",
         "Type": "Device",
         "Rating": "8",
@@ -10569,6 +10810,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Hellebarde",
         "Name": "Energy Mantle",
         "Type": "Device",
         "Rating": "7*",
@@ -10604,6 +10846,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "asmodai",
         "Name": "AEGIS Remote Shield",
         "Type": "Device",
         "Rating": "9*",
@@ -10672,6 +10915,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "ArabianSandBoa",
         "Name": "Point Defense System",
         "Type": "Device",
         "Rating": "6",
@@ -10689,6 +10933,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Psybernary",
         "Name": "Point Defense Array",
         "Type": "Device",
         "Rating": "7",
@@ -10706,6 +10951,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Mr. Timn",
         "Name": "Antimissile System",
         "Type": "Device",
         "Rating": "8",
@@ -10737,6 +10983,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Macute",
         "Name": "Hacking Suite",
         "Type": "Hackware",
         "Rating": "3",
@@ -10768,6 +11015,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Tom Grus",
         "Name": "Imp. Hacking Suite",
         "Type": "Hackware",
         "Rating": "5",
@@ -10784,6 +11032,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Destry",
         "Name": "Adv. Hacking Suite",
         "Type": "Hackware",
         "Rating": "6",
@@ -10800,6 +11049,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Bjartr",
         "Name": "Exp. Hacking Suite",
         "Type": "Hackware",
         "Rating": "7*",
@@ -10816,6 +11066,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Gavilin",
         "Name": "System Mapper",
         "Type": "Hackware",
         "Rating": "8*",
@@ -10831,6 +11082,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Solklei",
         "Name": "Deep Network Scanner",
         "Type": "Hackware",
         "Rating": "9*",
@@ -10876,6 +11128,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Jayson Bergeron",
         "Name": "System Shield",
         "Type": "Hackware",
         "Rating": "3",
@@ -10923,6 +11176,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Anders Skov",
         "Name": "Adv. System Shield",
         "Type": "Hackware",
         "Rating": "6",
@@ -10939,6 +11193,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Poto",
         "Name": "Exp. System Shield",
         "Type": "Hackware",
         "Rating": "7*",
@@ -10955,6 +11210,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "SickBoy",
         "Name": "Ghost Barrier",
         "Type": "Hackware",
         "Rating": "8*",
@@ -10970,6 +11226,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Razzle Storm",
         "Name": "Quantum Router",
         "Type": "Hackware",
         "Rating": "9*",
@@ -11408,6 +11665,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "BirdoPrey",
         "Name": "Imp. Component Analysis Suite",
         "Type": "Device",
         "Rating": "6",
@@ -11470,6 +11728,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Eris Discordia",
         "Name": "Dynamic Insulation System",
         "Type": "Device",
         "Rating": "4",
@@ -11488,6 +11747,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "ktur",
         "Name": "Imp. Dynamic Insulation System",
         "Type": "Device",
         "Rating": "6",
@@ -11506,6 +11766,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "NyvenZA",
         "Name": "Adv. Dynamic Insulation System",
         "Type": "Device",
         "Rating": "7*",
@@ -11525,6 +11786,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "gregunderscorem",
         "Name": "System Guard",
         "Type": "Processor",
         "Rating": "5",
@@ -11541,6 +11803,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "sve9",
         "Name": "Imp. System Guard",
         "Type": "Processor",
         "Rating": "7",
@@ -11623,6 +11886,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Sick Willie",
         "Name": "System Restoration Module",
         "Type": "Device",
         "Rating": "4",
@@ -11673,6 +11937,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Mothringer",
         "Name": "Adv. System Restoration Module",
         "Type": "Device",
         "Rating": "6",
@@ -11690,6 +11955,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "WeberO",
         "Name": "System Purifier",
         "Type": "Device",
         "Rating": "8*",
@@ -11740,6 +12006,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Dagaz",
         "Name": "Hpw. Tractor Beam",
         "Type": "Device",
         "Rating": "3",
@@ -11757,6 +12024,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Nocken",
         "Name": "Lrn. Tractor Beam",
         "Type": "Device",
         "Rating": "6",
@@ -11874,6 +12142,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "youngster",
         "Name": "Imp. Recalibrator",
         "Type": "Device",
         "Rating": "6",
@@ -11891,6 +12160,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "aGarbage",
         "Name": "Adv. Recalibrator",
         "Type": "Device",
         "Rating": "8",
@@ -11924,6 +12194,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Patrick Jones",
         "Name": "Field Recycling Unit",
         "Type": "Device",
         "Rating": "2",
@@ -11942,6 +12213,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Kaz",
         "Name": "Imp. Field Recycling Unit",
         "Type": "Device",
         "Rating": "4",
@@ -11960,6 +12232,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Luringen",
         "Name": "Adv. Field Recycling Unit",
         "Type": "Device",
         "Rating": "6",
@@ -11978,6 +12251,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "spelk",
         "Name": "Exp. Field Recycling Unit",
         "Type": "Device",
         "Rating": "7*",
@@ -11997,6 +12271,7 @@
     {
         "Slot": "Utility",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "zukeft",
         "Name": "Drone Bay",
         "Type": "Device",
         "Rating": "5",
@@ -12359,6 +12634,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Arcfalt",
         "Name": "Mobile Assembly Unit",
         "Type": "Device",
         "Rating": "4",
@@ -12595,6 +12871,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Mark H-J",
         "Name": "Transdimensional Reconstructor",
         "Type": "Artifact",
         "Rating": "10**",
@@ -12611,6 +12888,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Aitortxv",
         "Name": "Hpw. Transdimensional Reconstructor",
         "Type": "Artifact",
         "Rating": "10**",
@@ -12659,6 +12937,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Travis Pressler",
         "Name": "Core Regenerator",
         "Type": "Artifact",
         "Rating": "10**",
@@ -12675,6 +12954,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Robrps",
         "Name": "Integrity Redistributor",
         "Type": "Artifact",
         "Rating": "10**",
@@ -12707,6 +12987,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Kenzurith",
         "Name": "Supercharged Integrated Dissipator",
         "Type": "Artifact",
         "Rating": "10**",
@@ -12755,6 +13036,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "barsae",
         "Name": "Supercharged Integrated Reactor",
         "Type": "Artifact",
         "Rating": "10**",
@@ -12819,6 +13101,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Houstons",
         "Name": "Core Reset Matrix",
         "Type": "Artifact",
         "Rating": "10**",
@@ -12851,6 +13134,7 @@
     },
     {
         "Slot": "Utility",
+        "Supporter Attribution": "Vectis",
         "Name": "Terrabomb",
         "Type": "Artifact",
         "Rating": "10**",
@@ -13058,6 +13342,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Asa7",
         "Name": "EM Pulse Gun",
         "Type": "Energy Gun",
         "Rating": "1",
@@ -13084,6 +13369,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Rekka",
         "Name": "Hvy. EM Pulse Gun",
         "Type": "Energy Gun",
         "Rating": "2",
@@ -13110,6 +13396,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Method",
         "Name": "EM Shotgun",
         "Type": "Energy Gun",
         "Rating": "2",
@@ -13135,6 +13422,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "SteadyYeti",
         "Name": "Imp. EM Shotgun",
         "Type": "Energy Gun",
         "Rating": "2*",
@@ -13161,6 +13449,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Bahb",
         "Name": "Shock Rifle",
         "Type": "Energy Gun",
         "Rating": "3",
@@ -13186,6 +13475,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Tom Grus",
         "Name": "Riot Gun",
         "Type": "Energy Gun",
         "Rating": "3",
@@ -13212,6 +13502,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Mr. Sulfate",
         "Name": "Hvy. EM Shotgun",
         "Type": "Energy Gun",
         "Rating": "3*",
@@ -13289,6 +13580,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Mike Reinstein",
         "Name": "Arc Projector",
         "Type": "Energy Gun",
         "Rating": "4",
@@ -13314,6 +13606,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Tom Grus",
         "Name": "Prc. Shock Rifle",
         "Type": "Energy Gun",
         "Rating": "4*",
@@ -13342,6 +13635,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Jimbo",
         "Name": "Hpw. Shock Rifle",
         "Type": "Energy Gun",
         "Rating": "5",
@@ -13367,6 +13661,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Jynx",
         "Name": "Arc Thrower",
         "Type": "Energy Gun",
         "Rating": "5",
@@ -13392,6 +13687,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "iopred",
         "Name": "Imp. Lightning Gun",
         "Type": "Energy Gun",
         "Rating": "5*",
@@ -13418,6 +13714,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Zakharovian",
         "Name": "Tesla Rifle",
         "Type": "Energy Gun",
         "Rating": "6",
@@ -13444,6 +13741,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Hellebarde",
         "Name": "Imp. Arc Projector",
         "Type": "Energy Gun",
         "Rating": "6",
@@ -13469,6 +13767,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Jombuh Tay Tay",
         "Name": "Hvy. Tesla Rifle",
         "Type": "Energy Gun",
         "Rating": "7*",
@@ -13495,6 +13794,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "LU-1G1",
         "Name": "Hyp. EM Gauss Rifle",
         "Type": "Energy Gun",
         "Rating": "7*",
@@ -13520,6 +13820,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "nyir",
         "Name": "Imp. Arc Thrower",
         "Type": "Energy Gun",
         "Rating": "7",
@@ -13570,6 +13871,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "tourn",
         "Name": "Gamma Rifle",
         "Type": "Energy Gun",
         "Rating": "8",
@@ -13595,6 +13897,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Suslik",
         "Name": "Tachyon Dispersion Ray",
         "Type": "Energy Gun",
         "Rating": "8*",
@@ -13725,6 +14028,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Pilcrow",
         "Name": "Enh. Gamma Rifle",
         "Type": "Energy Gun",
         "Rating": "10*",
@@ -13751,6 +14055,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Munchauser",
         "Name": "Med. Laser",
         "Type": "Energy Gun",
         "Rating": "1",
@@ -13775,6 +14080,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Max Cahill",
         "Name": "Sml. Laser",
         "Type": "Energy Gun",
         "Rating": "1",
@@ -13892,6 +14198,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Nktalloth",
         "Name": "Spread Laser",
         "Type": "Energy Gun",
         "Rating": "2",
@@ -13989,6 +14296,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Remi The FauxEnix",
         "Name": "Field Laser",
         "Type": "Energy Gun",
         "Rating": "3",
@@ -14013,6 +14321,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "ender1200",
         "Name": "Pulse Rifle",
         "Type": "Energy Gun",
         "Rating": "3",
@@ -14064,6 +14373,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Illithek",
         "Name": "Backup Laser III",
         "Type": "Energy Gun",
         "Rating": "3",
@@ -14086,6 +14396,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "PBLC",
         "Name": "Hvy. Particle Gun",
         "Type": "Energy Gun",
         "Rating": "3*",
@@ -14111,6 +14422,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Agroesch",
         "Name": "Prc. Beam Rifle",
         "Type": "Energy Gun",
         "Rating": "3*",
@@ -14162,6 +14474,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Amphibious",
         "Name": "Hvy. Laser",
         "Type": "Energy Gun",
         "Rating": "4",
@@ -14211,6 +14524,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "b_sen",
         "Name": "Cld. Pulse Rifle",
         "Type": "Energy Gun",
         "Rating": "4*",
@@ -14238,6 +14552,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Krathar",
         "Name": "Hpw. Field Laser",
         "Type": "Energy Gun",
         "Rating": "4*",
@@ -14263,6 +14578,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Cyberboss",
         "Name": "Imp. Spread Laser",
         "Type": "Energy Gun",
         "Rating": "4*",
@@ -14313,6 +14629,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Xuu",
         "Name": "Plasma Rifle",
         "Type": "Energy Gun",
         "Rating": "5",
@@ -14384,6 +14701,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "IbexiSterlinfa",
         "Name": "Force Rifle",
         "Type": "Energy Gun",
         "Rating": "5*",
@@ -14506,6 +14824,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "VacantFiend",
         "Name": "Variable Charge Gun",
         "Type": "Energy Gun",
         "Rating": "6",
@@ -14529,6 +14848,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Ababnimboble",
         "Name": "Hvy. Beamcaster",
         "Type": "Energy Gun",
         "Rating": "6",
@@ -14577,6 +14897,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Fabian Goedhart",
         "Name": "Cld. Plasma Rifle",
         "Type": "Energy Gun",
         "Rating": "6*",
@@ -14603,6 +14924,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Matthew Foley",
         "Name": "Enh. Force Rifle",
         "Type": "Energy Gun",
         "Rating": "6*",
@@ -14629,6 +14951,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Khalen",
         "Name": "Hvy. Gatling Laser",
         "Type": "Energy Gun",
         "Rating": "6*",
@@ -14677,6 +15000,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "ZyxenFryx",
         "Name": "Phase Gun",
         "Type": "Energy Gun",
         "Rating": "7",
@@ -14701,6 +15025,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Jake McKnight",
         "Name": "Dispersion Rifle",
         "Type": "Energy Gun",
         "Rating": "7",
@@ -14725,6 +15050,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Oddtwang",
         "Name": "Backup Laser VII",
         "Type": "Energy Gun",
         "Rating": "7",
@@ -14804,6 +15130,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Fossphur",
         "Name": "Hvy. Wave Gun",
         "Type": "Energy Gun",
         "Rating": "7*",
@@ -14830,6 +15157,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Sylverone",
         "Name": "Adv. Variable Charge Gun",
         "Type": "Energy Gun",
         "Rating": "7*",
@@ -14903,6 +15231,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Race Savage",
         "Name": "Warp Gun",
         "Type": "Energy Gun",
         "Rating": "7*",
@@ -15044,6 +15373,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Something Awful",
         "Name": "Quantum Rifle",
         "Type": "Energy Gun",
         "Rating": "8",
@@ -15090,6 +15420,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Johnstein",
         "Name": "Prc. Phase Gun",
         "Type": "Energy Gun",
         "Rating": "8*",
@@ -15116,6 +15447,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "SUMONECK",
         "Name": "Hvy. Dispersion Rifle",
         "Type": "Energy Gun",
         "Rating": "8*",
@@ -15214,6 +15546,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Jake McKnight",
         "Name": "Enh. Quantum Rifle",
         "Type": "Energy Gun",
         "Rating": "9",
@@ -15258,6 +15591,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Caleb Simpson",
         "Name": "Hvy. Quantum Rifle",
         "Type": "Energy Gun",
         "Rating": "10*",
@@ -15325,6 +15659,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Cedric Suzuki",
         "Name": "Sigix Sheargun",
         "Type": "Energy Gun",
         "Rating": "9**",
@@ -15376,6 +15711,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Maiker",
         "Name": "Lgt. EM Pulse Cannon",
         "Type": "Energy Cannon",
         "Rating": "2",
@@ -15403,6 +15739,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Darkening Kaos",
         "Name": "EM Pulse Cannon",
         "Type": "Energy Cannon",
         "Rating": "3",
@@ -15430,6 +15767,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Dinir Nertan",
         "Name": "Imp. EM Pulse Cannon",
         "Type": "Energy Cannon",
         "Rating": "4",
@@ -15457,6 +15795,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Schmel924",
         "Name": "Proton Cannon",
         "Type": "Energy Cannon",
         "Rating": "5",
@@ -15483,6 +15822,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Oarsman",
         "Name": "Lrn. Proton Cannon",
         "Type": "Energy Cannon",
         "Rating": "6",
@@ -15509,6 +15849,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "878787878787878",
         "Name": "Disruptor Cannon",
         "Type": "Energy Cannon",
         "Rating": "6",
@@ -15535,6 +15876,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Eigenbom",
         "Name": "Hvy. Proton Cannon",
         "Type": "Energy Cannon",
         "Rating": "6*",
@@ -15562,6 +15904,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "CaptainKraft",
         "Name": "HERF Cannon",
         "Type": "Energy Cannon",
         "Rating": "7",
@@ -15588,6 +15931,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "!Bolter!",
         "Name": "Hvy. Disruptor Cannon",
         "Type": "Energy Cannon",
         "Rating": "7",
@@ -15614,6 +15958,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "littlecrab",
         "Name": "Cld. Proton Cannon",
         "Type": "Energy Cannon",
         "Rating": "7*",
@@ -15642,6 +15987,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Los",
         "Name": "Proton Burst Cannon",
         "Type": "Energy Cannon",
         "Rating": "7*",
@@ -15782,6 +16128,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Hyparn",
         "Name": "Hpw. Disruptor Cannon",
         "Type": "Energy Cannon",
         "Rating": "10*",
@@ -15856,6 +16203,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Noboru O",
         "Name": "Adv. Beam Cannon",
         "Type": "Energy Cannon",
         "Rating": "2*",
@@ -15952,6 +16300,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "slartie",
         "Name": "Plasma Cannon",
         "Type": "Energy Cannon",
         "Rating": "4",
@@ -15976,6 +16325,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "4itor",
         "Name": "Hvy. Ion Cannon",
         "Type": "Energy Cannon",
         "Rating": "4",
@@ -16000,6 +16350,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Lekon",
         "Name": "Cld. Particle Cannon",
         "Type": "Energy Cannon",
         "Rating": "4*",
@@ -16026,6 +16377,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Itchy_Pants",
         "Name": "Phase Cannon",
         "Type": "Energy Cannon",
         "Rating": "5",
@@ -16050,6 +16402,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Attica",
         "Name": "Hvy. Plasma Cannon",
         "Type": "Energy Cannon",
         "Rating": "5",
@@ -16074,6 +16427,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "NA-4XX Mk.V",
         "Name": "Cld. Plasma Cannon",
         "Type": "Energy Cannon",
         "Rating": "5*",
@@ -16100,6 +16454,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "miriku",
         "Name": "Com. Ion Cannon",
         "Type": "Energy Cannon",
         "Rating": "5*",
@@ -16177,6 +16532,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Saluki",
         "Name": "Hvy. Phase Cannon",
         "Type": "Energy Cannon",
         "Rating": "6",
@@ -16201,6 +16557,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Happylisk",
         "Name": "Neutron Cannon",
         "Type": "Energy Cannon",
         "Rating": "6*",
@@ -16278,6 +16635,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Stephen Guise",
         "Name": "Hvy. Neutron Cannon",
         "Type": "Energy Cannon",
         "Rating": "7*",
@@ -16304,6 +16662,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Cacticus",
         "Name": "Lrn. Phase Cannon",
         "Type": "Energy Cannon",
         "Rating": "7*",
@@ -16329,6 +16688,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "stuntaneous",
         "Name": "Cld. Phase Cannon",
         "Type": "Energy Cannon",
         "Rating": "7*",
@@ -16403,6 +16763,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Biomatter",
         "Name": "Nova Cannon",
         "Type": "Energy Cannon",
         "Rating": "8",
@@ -16427,6 +16788,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "georob",
         "Name": "Imp. Matter Neutralizer",
         "Type": "Energy Cannon",
         "Rating": "8*",
@@ -16546,6 +16908,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Zephyr_Arsland",
         "Name": "Enh. Nova Cannon",
         "Type": "Energy Cannon",
         "Rating": "9",
@@ -16635,6 +16998,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Sokitoomi",
         "Name": "Potential Cannon",
         "Type": "Energy Cannon",
         "Rating": "9*",
@@ -16849,6 +17213,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Kaylor",
         "Name": "Disintegrator",
         "Type": "Energy Cannon",
         "Rating": "10*",
@@ -17032,6 +17397,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Sindlei",
         "Name": "Lgt. Assault Rifle",
         "Type": "Ballistic Gun",
         "Rating": "1",
@@ -17083,6 +17449,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Tom Luc Pickard",
         "Name": "Hvy. Assault Rifle",
         "Type": "Ballistic Gun",
         "Rating": "2",
@@ -17108,6 +17475,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Jake McKnight",
         "Name": "Autogun",
         "Type": "Ballistic Gun",
         "Rating": "2",
@@ -17134,6 +17502,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "k00pa",
         "Name": "Shotgun",
         "Type": "Ballistic Gun",
         "Rating": "2",
@@ -17160,6 +17529,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Rowsdower",
         "Name": "Battle Rifle",
         "Type": "Ballistic Gun",
         "Rating": "2",
@@ -17211,6 +17581,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Crawling Chaos",
         "Name": "Imp. Assault Rifle",
         "Type": "Ballistic Gun",
         "Rating": "2*",
@@ -17238,6 +17609,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Sabouts",
         "Name": "Minigun",
         "Type": "Ballistic Gun",
         "Rating": "3",
@@ -17264,6 +17636,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Flappity",
         "Name": "Hpw. Shotgun",
         "Type": "Ballistic Gun",
         "Rating": "3",
@@ -17341,6 +17714,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Nathan Hostetter",
         "Name": "Enh. Autogun",
         "Type": "Ballistic Gun",
         "Rating": "3*",
@@ -17368,6 +17742,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Snacks",
         "Name": "Gauss Rifle",
         "Type": "Ballistic Gun",
         "Rating": "4",
@@ -17394,6 +17769,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Assembled Type L",
         "Name": "Flak Gun",
         "Type": "Ballistic Gun",
         "Rating": "4",
@@ -17420,6 +17796,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Savage",
         "Name": "Prc. Assault Rifle",
         "Type": "Ballistic Gun",
         "Rating": "4*",
@@ -17446,6 +17823,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "ZeroAffex",
         "Name": "Hvy. Battle Rifle",
         "Type": "Ballistic Gun",
         "Rating": "4",
@@ -17497,6 +17875,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Daniel Reuter",
         "Name": "Coil Gun",
         "Type": "Ballistic Gun",
         "Rating": "5",
@@ -17523,6 +17902,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Cody R. Thomsen",
         "Name": "Hyp. Gauss Rifle",
         "Type": "Ballistic Gun",
         "Rating": "5",
@@ -17550,6 +17930,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Lord Spine",
         "Name": "Hvy. Machine Gun",
         "Type": "Ballistic Gun",
         "Rating": "5",
@@ -17577,6 +17958,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Brendin Stone",
         "Name": "Imp. Heavy Machine Gun",
         "Type": "Ballistic Gun",
         "Rating": "5*",
@@ -17654,6 +18036,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "UndeadAlbatross",
         "Name": "KE Penetrator",
         "Type": "Ballistic Gun",
         "Rating": "6",
@@ -17680,6 +18063,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "kiedra",
         "Name": "Hyp. Coil Gun",
         "Type": "Ballistic Gun",
         "Rating": "6",
@@ -17733,6 +18117,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "corpusdei",
         "Name": "Imp. KE Penetrator",
         "Type": "Ballistic Gun",
         "Rating": "6*",
@@ -17760,6 +18145,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "VXS",
         "Name": "Enh. Coil Gun",
         "Type": "Ballistic Gun",
         "Rating": "6*",
@@ -17812,6 +18198,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Daimadoshi_CL",
         "Name": "Railgun",
         "Type": "Ballistic Gun",
         "Rating": "7",
@@ -17916,6 +18303,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Cantrem",
         "Name": "Hyp. Railgun",
         "Type": "Ballistic Gun",
         "Rating": "8",
@@ -17969,6 +18357,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Amphouse",
         "Name": "Helical Railgun",
         "Type": "Ballistic Gun",
         "Rating": "8*",
@@ -18097,6 +18486,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Via",
         "Name": "Multirail",
         "Type": "Ballistic Gun",
         "Rating": "10*",
@@ -18122,6 +18512,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Maurog",
         "Name": "Hyp. Multirail",
         "Type": "Ballistic Gun",
         "Rating": "10*",
@@ -18226,6 +18617,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Adam Absurdist",
         "Name": "Imp. Light Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "2",
@@ -18251,6 +18643,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "LLA Don Zombie",
         "Name": "Battle Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "2",
@@ -18277,6 +18670,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "MikeyF",
         "Name": "Assault Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "3",
@@ -18331,6 +18725,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "ody81",
         "Name": "Flak Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "3",
@@ -18437,6 +18832,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Some Pennies",
         "Name": "Mni. Assault Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "4*",
@@ -18492,6 +18888,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Orv",
         "Name": "Magnetic Acceleration Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "5",
@@ -18518,6 +18915,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "shevtsov200",
         "Name": "Hvy. Flak Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "5",
@@ -18571,6 +18969,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Will Rogers",
         "Name": "Antimatter Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "5*",
@@ -18626,6 +19025,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Harvester",
         "Name": "Mass Driver",
         "Type": "Ballistic Cannon",
         "Rating": "6",
@@ -18681,6 +19081,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Lord Polish",
         "Name": "Enh. Gauss Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "6",
@@ -18708,6 +19109,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Mxykikker",
         "Name": "Hyp. Gauss Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "6",
@@ -18735,6 +19137,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Rivet Spawn",
         "Name": "Tri-rail Accelerator",
         "Type": "Ballistic Cannon",
         "Rating": "6*",
@@ -18762,6 +19165,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Ben Buckton",
         "Name": "Hardcell Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "7",
@@ -18788,6 +19192,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "MTF",
         "Name": "Hvy. Gauss Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "7",
@@ -18815,6 +19220,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Wizard Melkhior",
         "Name": "Hyp. Mass Driver",
         "Type": "Ballistic Cannon",
         "Rating": "7",
@@ -18867,6 +19273,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Count042",
         "Name": "Lgt. Antimatter Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "7*",
@@ -18894,6 +19301,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Michael Shock",
         "Name": "Linear Accelerator",
         "Type": "Ballistic Cannon",
         "Rating": "8",
@@ -18948,6 +19356,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "VacantFiend",
         "Name": "Com. Mass Driver",
         "Type": "Ballistic Cannon",
         "Rating": "8*",
@@ -18976,6 +19385,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "RustedShell",
         "Name": "Hvy. Hardcell Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "8*",
@@ -19004,6 +19414,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Weber Mentzel",
         "Name": "Com. Linear Accelerator",
         "Type": "Ballistic Cannon",
         "Rating": "9*",
@@ -19083,6 +19494,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Daniexpert",
         "Name": "Graviton Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "9*",
@@ -19192,6 +19604,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Ethan Westwood",
         "Name": "Perforator",
         "Type": "Ballistic Cannon",
         "Rating": "10*",
@@ -19219,6 +19632,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Laceratedsky",
         "Name": "Omega Cannon",
         "Type": "Ballistic Cannon",
         "Rating": "10*",
@@ -19275,6 +19689,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "phonic88",
         "Name": "EMP Blaster",
         "Type": "Launcher",
         "Rating": "2",
@@ -19304,6 +19719,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Kaylor",
         "Name": "Shock Bomb Launcher",
         "Type": "Launcher",
         "Rating": "3",
@@ -19333,6 +19749,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "hrr4",
         "Name": "Adv. EMP Blaster",
         "Type": "Launcher",
         "Rating": "3*",
@@ -19425,6 +19842,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "PlasticHeart",
         "Name": "Gui. EMP Blaster",
         "Type": "Launcher",
         "Rating": "5*",
@@ -19456,6 +19874,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Tuttu",
         "Name": "Hvy. Shock Bomb Launcher",
         "Type": "Launcher",
         "Rating": "6",
@@ -19485,6 +19904,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Azilus",
         "Name": "Tesla Bomb Launcher",
         "Type": "Launcher",
         "Rating": "6*",
@@ -19515,6 +19935,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Shobalk",
         "Name": "Hvy. Proton Missile Launcher",
         "Type": "Launcher",
         "Rating": "6*",
@@ -19608,6 +20029,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Chris Covert",
         "Name": "Enh. Gamma Bomb Array",
         "Type": "Launcher",
         "Rating": "9*",
@@ -19640,6 +20062,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "SuperBear",
         "Name": "Grenade Launcher",
         "Type": "Launcher",
         "Rating": "1",
@@ -19667,6 +20090,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "ComradeStalin",
         "Name": "Rocket Launcher",
         "Type": "Launcher",
         "Rating": "2",
@@ -19693,6 +20117,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "CaptainWinky",
         "Name": "Mni. Grenade Launcher",
         "Type": "Launcher",
         "Rating": "2",
@@ -19745,6 +20170,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "ACrowOfMurders",
         "Name": "Imp. Grenade Launcher",
         "Type": "Launcher",
         "Rating": "3",
@@ -19772,6 +20198,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Matt Gray",
         "Name": "Missile Launcher",
         "Type": "Launcher",
         "Rating": "3",
@@ -19881,6 +20308,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Gary McBojit-Marshall",
         "Name": "Hvy. Missile Launcher",
         "Type": "Launcher",
         "Rating": "4",
@@ -19908,6 +20336,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "yngwi",
         "Name": "Gui. Missile Launcher",
         "Type": "Launcher",
         "Rating": "4*",
@@ -19935,6 +20364,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "mrhthepie",
         "Name": "Prc. Grenade Launcher",
         "Type": "Launcher",
         "Rating": "4*",
@@ -19992,6 +20422,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "ION_DASH",
         "Name": "Lrn. Missile Launcher",
         "Type": "Launcher",
         "Rating": "5",
@@ -20050,6 +20481,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Alice Marks",
         "Name": "Prc. Rocket Launcher",
         "Type": "Launcher",
         "Rating": "5*",
@@ -20079,6 +20511,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "nsg21",
         "Name": "Scatter Rocket Array",
         "Type": "Launcher",
         "Rating": "5*",
@@ -20109,6 +20542,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "jpka",
         "Name": "Smartbomb Launcher",
         "Type": "Launcher",
         "Rating": "6",
@@ -20166,6 +20600,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Sabouts",
         "Name": "Tiamat Missile Launcher",
         "Type": "Launcher",
         "Rating": "6*",
@@ -20220,6 +20655,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "gnzvnk",
         "Name": "Micro-nuke Launcher",
         "Type": "Launcher",
         "Rating": "7",
@@ -20276,6 +20712,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "MSK Impostr",
         "Name": "Neutron Missile Launcher",
         "Type": "Launcher",
         "Rating": "7*",
@@ -20307,6 +20744,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Yukihana",
         "Name": "Fusion Bomb Launcher",
         "Type": "Launcher",
         "Rating": "8",
@@ -20333,6 +20771,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Azhain",
         "Name": "Hellfire Missile Launcher",
         "Type": "Launcher",
         "Rating": "8*",
@@ -20362,6 +20801,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "zunpre",
         "Name": "Adv. Micro-nuke Launcher",
         "Type": "Launcher",
         "Rating": "8*",
@@ -20389,6 +20829,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Zyalin",
         "Name": "Tactical Quantum Warhead",
         "Type": "Launcher",
         "Rating": "8*",
@@ -20470,6 +20911,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Nicolas M. Careau",
         "Name": "Ragnarok Missile Launcher",
         "Type": "Launcher",
         "Rating": "9*",
@@ -20500,6 +20942,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "aoemica",
         "Name": "Point Singularity Launcher",
         "Type": "Launcher",
         "Rating": "9*",
@@ -20528,6 +20971,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Shaun Sharples",
         "Name": "Gui. Micro-nuke Launcher",
         "Type": "Launcher",
         "Rating": "9*",
@@ -20611,6 +21055,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "koolatron",
         "Name": "Z-bomb Delivery System",
         "Type": "Launcher",
         "Rating": "10*",
@@ -20636,6 +21081,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "noisewar",
         "Name": "Sigix Terminator",
         "Type": "Launcher",
         "Rating": "10**",
@@ -20712,6 +21158,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "DaddyDoc",
         "Name": "Dirty Datajack",
         "Type": "Special Melee Weapon",
         "Rating": "6",
@@ -20760,6 +21207,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Harun",
         "Name": "Imp. Datajack",
         "Type": "Special Melee Weapon",
         "Rating": "3",
@@ -20783,6 +21231,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Berko",
         "Name": "Adv. Datajack",
         "Type": "Special Melee Weapon",
         "Rating": "7",
@@ -20806,6 +21255,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Troels Damgaard",
         "Name": "Remote Datajack",
         "Type": "Special Weapon",
         "Rating": "4",
@@ -20829,6 +21279,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Robot Parking",
         "Name": "Imp. Remote Datajack",
         "Type": "Special Weapon",
         "Rating": "6",
@@ -20852,6 +21303,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "ironpotato",
         "Name": "Adv. Remote Datajack",
         "Type": "Special Weapon",
         "Rating": "8",
@@ -20896,6 +21348,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Meldaran",
         "Name": "Gui. Remote Datajack",
         "Type": "Special Weapon",
         "Rating": "9*",
@@ -20984,6 +21437,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Karlito",
         "Name": "Mining Laser",
         "Type": "Special Weapon",
         "Rating": "1",
@@ -21034,6 +21488,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Ruludos",
         "Name": "Welding Torch",
         "Type": "Special Weapon",
         "Rating": "1",
@@ -21059,6 +21514,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "db48x",
         "Name": "Plasma Cutter",
         "Type": "Special Weapon",
         "Rating": "2",
@@ -21086,6 +21542,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Flappity",
         "Name": "Imp. Plasma Cutter",
         "Type": "Special Weapon",
         "Rating": "6",
@@ -21213,6 +21670,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "EarthMachine",
         "Name": "Enh. Flamer",
         "Type": "Special Weapon",
         "Rating": "3",
@@ -21480,6 +21938,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "IzRey",
         "Name": "Stasis Beam",
         "Type": "Special Weapon",
         "Rating": "8",
@@ -21500,6 +21959,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "jagregory",
         "Name": "Stasis Projector",
         "Type": "Special Weapon",
         "Rating": "9",
@@ -21520,6 +21980,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "JCC",
         "Name": "Exp. Stasis Projector",
         "Type": "Special Weapon",
         "Rating": "9*",
@@ -21563,6 +22024,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Nitz223",
         "Name": "Hammer",
         "Type": "Impact Weapon",
         "Rating": "1",
@@ -21588,6 +22050,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "ACrowOfMurders",
         "Name": "Mace",
         "Type": "Impact Weapon",
         "Rating": "2",
@@ -21613,6 +22076,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Goon",
         "Name": "Flail",
         "Type": "Impact Weapon",
         "Rating": "2",
@@ -21639,6 +22103,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "kiedra",
         "Name": "Maul",
         "Type": "Impact Weapon",
         "Rating": "2",
@@ -21664,6 +22129,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Job van der Zwan",
         "Name": "Hvy. Hammer",
         "Type": "Impact Weapon",
         "Rating": "2",
@@ -21689,6 +22155,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "=Thundershock Coil= MK621",
         "Name": "Hvy. Mace",
         "Type": "Impact Weapon",
         "Rating": "3",
@@ -21740,6 +22207,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Teras",
         "Name": "Great Maul",
         "Type": "Impact Weapon",
         "Rating": "3",
@@ -21765,6 +22233,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Meryl",
         "Name": "Powered Hammer",
         "Type": "Impact Weapon",
         "Rating": "4",
@@ -21814,6 +22283,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Double_Atari",
         "Name": "Power Maul",
         "Type": "Impact Weapon",
         "Rating": "4",
@@ -21839,6 +22309,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Slotos",
         "Name": "Impact Mace",
         "Type": "Impact Weapon",
         "Rating": "4*",
@@ -21892,6 +22363,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Pies Realis",
         "Name": "Thunder Hammer",
         "Type": "Impact Weapon",
         "Rating": "6*",
@@ -21995,6 +22467,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Polypusher",
         "Name": "Mining Claw",
         "Type": "Slashing Weapon",
         "Rating": "1",
@@ -22019,6 +22492,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "MrWeasel",
         "Name": "Katana",
         "Type": "Slashing Weapon",
         "Rating": "3",
@@ -22067,6 +22541,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Chakyl",
         "Name": "Axe",
         "Type": "Slashing Weapon",
         "Rating": "3",
@@ -22115,6 +22590,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "jimmijamjams",
         "Name": "Chainsword",
         "Type": "Slashing Weapon",
         "Rating": "4",
@@ -22208,6 +22684,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Ruludos",
         "Name": "Great Axe",
         "Type": "Slashing Weapon",
         "Rating": "4",
@@ -22232,6 +22709,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "ekun",
         "Name": "Greatsword",
         "Type": "Slashing Weapon",
         "Rating": "4",
@@ -22278,6 +22756,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Nemo",
         "Name": "Power Sword",
         "Type": "Slashing Weapon",
         "Rating": "5",
@@ -22302,6 +22781,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Akhier Dragonheart",
         "Name": "Falx",
         "Type": "Slashing Weapon",
         "Rating": "5",
@@ -22349,6 +22829,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Chaz Forte",
         "Name": "Segregator",
         "Type": "Slashing Weapon",
         "Rating": "5",
@@ -22357,7 +22838,7 @@
         "Integrity": "60",
         "No Repairs": "1",
         "Coverage": "40",
-        "Description": "Overloads the highest-listed active power source to create a powerful directed charge that blasts up to four components clean off the target.",
+        "Description": "Overloads and destroys the highest-listed active power source to create a powerful directed charge that blasts up to four components clean off the target.",
         "Range": "2",
         "Shot Energy": "10",
         "Shot Heat": "10",
@@ -22371,6 +22852,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Ali Masood",
         "Name": "Tearclaws",
         "Type": "Slashing Weapon",
         "Rating": "5",
@@ -22416,6 +22898,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "Alex Gailor",
         "Name": "Phasing Sabre",
         "Type": "Slashing Weapon",
         "Rating": "6",
@@ -22440,6 +22923,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Maurog",
         "Name": "Plasma Sword",
         "Type": "Slashing Weapon",
         "Rating": "6*",
@@ -22540,6 +23024,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Bolzan",
         "Name": "Vibroblade",
         "Type": "Slashing Weapon",
         "Rating": "7*",
@@ -22565,6 +23050,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Chris Akers",
         "Name": "Molecular Scythe",
         "Type": "Slashing Weapon",
         "Rating": "7*",
@@ -22590,6 +23076,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "bitMaster",
         "Name": "Centrium Greatsword",
         "Type": "Slashing Weapon",
         "Rating": "7*",
@@ -22684,6 +23171,7 @@
     },
     {
         "Slot": "Weapon",
+        "Supporter Attribution": "thrAsher",
         "Name": "Particle Cleaver",
         "Type": "Slashing Weapon",
         "Rating": "8*",
@@ -22845,6 +23333,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Elmberry",
         "Name": "Spear",
         "Type": "Piercing Weapon",
         "Rating": "4",
@@ -22915,6 +23404,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Collokey",
         "Name": "Hvy. Pick",
         "Type": "Piercing Weapon",
         "Rating": "5",
@@ -22939,6 +23429,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Petty Tyrant",
         "Name": "Lance",
         "Type": "Piercing Weapon",
         "Rating": "6",
@@ -22963,6 +23454,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Paladin",
         "Name": "Kinetic Spear",
         "Type": "Piercing Weapon",
         "Rating": "6*",
@@ -23012,6 +23504,7 @@
     {
         "Slot": "Weapon",
         "Hackable Schematic": "1",
+        "Supporter Attribution": "Naughtyusername",
         "Name": "Plasma Lance",
         "Type": "Piercing Weapon",
         "Rating": "7*",
@@ -23414,6 +23907,7 @@
     },
     {
         "Slot": "N/A",
+        "Supporter Attribution": "Nikolayag",
         "Name": "Signal Generator",
         "Type": "Item",
         "Rating": "5",

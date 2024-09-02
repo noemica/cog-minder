@@ -80,6 +80,7 @@ export class ItemData {
                 case "N/A": {
                     const otherItem: OtherItem = {
                         slot: "N/A",
+                        supporterAttribution: item["Supporter Attribution"],
                         category: category,
                         coverage: undefined,
                         hackable: hackable,
@@ -120,8 +121,10 @@ export class ItemData {
                             maxChunks = minChunks;
                         }
                     }
+
                     const powerItem: PowerItem = {
                         slot: "Power",
+                        supporterAttribution: item["Supporter Attribution"],
                         category: category,
                         coverage: coverage,
                         energyGeneration: parseIntOrDefault(item["Energy Generation"], 0),
@@ -169,6 +172,7 @@ export class ItemData {
                 case "Propulsion": {
                     const propItem: PropulsionItem = {
                         slot: "Propulsion",
+                        supporterAttribution: item["Supporter Attribution"],
                         category: category,
                         coverage: coverage,
                         energyPerMove: parseFloatOrUndefined(item["Energy/Move"]),
@@ -209,6 +213,7 @@ export class ItemData {
                 case "Utility": {
                     const utilItem: UtilityItem = {
                         slot: "Utility",
+                        supporterAttribution: item["Supporter Attribution"],
                         category: category,
                         coverage: coverage,
                         hackable: hackable,
@@ -269,6 +274,7 @@ export class ItemData {
 
                     const weaponItem: WeaponItem = {
                         slot: "Weapon",
+                        supporterAttribution: item["Supporter Attribution"],
                         category: category,
                         coverage: coverage,
                         hackable: hackable,

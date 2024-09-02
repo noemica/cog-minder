@@ -45,6 +45,13 @@ export function GalleryItemPopoverButton({ item }: { item: Item }) {
     const button = (
         <div ref={ref}>
             <Button>
+                <span>
+                    {item.supporterAttribution === undefined ? (
+                        <span className="unclaimed-supporter-span">&lt;unclaimed&gt;</span>
+                    ) : (
+                        `[${item.supporterAttribution}]`
+                    )}
+                </span>
                 <span>{item.name}</span>
                 <img src={isVisible ? getItemAsciiArtImageName(item) : undefined} />
             </Button>

@@ -237,6 +237,7 @@ export type FabricationStats = {
 export type BaseItem = {
     slot: ItemSlot;
     hackable: boolean;
+    supporterAttribution?: string;
     name: string;
     noPrefixName: string;
     fullName: string;
@@ -350,6 +351,7 @@ export type JsonItem = {
     "No Repairs"?: string;
     Description?: string;
     Index: number;
+    "Supporter Attribution"?: string;
     "Hackable Schematic"?: string;
     Mass?: string;
     Coverage?: string;

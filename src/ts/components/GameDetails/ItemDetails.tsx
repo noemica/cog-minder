@@ -188,7 +188,7 @@ function splitEffectDescription(val: string) {
 
     const nodes = lines.map((l, i) => (
         <span key={i} className="details-description">
-            &nbsp;{l}
+            {l}
         </span>
     ));
     return <>{nodes}</>;
@@ -447,7 +447,12 @@ function MeleeWeaponPartDetails({ item }: { item: WeaponItem }) {
                 valueString={signedStringOrUndefined(item.targeting)}
                 unitString="%"
             />
-            <DetailsValueLine category="Delay" tooltipOverride="Delay (Melee)" valueString={getDelayString(item)} defaultValue="0" />
+            <DetailsValueLine
+                category="Delay"
+                tooltipOverride="Delay (Melee)"
+                valueString={getDelayString(item)}
+                defaultValue="0"
+            />
             <DetailsEmptyLine />
             <DetailsSummaryLine text="Hit" />
             <DetailsRangeLine
@@ -690,7 +695,12 @@ function SpecialMeleeWeaponPartDetails({ item }: { item: WeaponItem }) {
                 valueString={signedStringOrUndefined(item.targeting)}
                 unitString="%"
             />
-            <DetailsValueLine category="Delay" tooltipOverride="Delay (Melee)" valueString={getDelayString(item)} defaultValue="0" />
+            <DetailsValueLine
+                category="Delay"
+                tooltipOverride="Delay (Melee)"
+                valueString={getDelayString(item)}
+                defaultValue="0"
+            />
         </>
     );
 }
@@ -947,6 +957,15 @@ export default function ItemDetails({ item }: { item: Item }) {
         );
     }
 
+    let attributionDetails = (
+        <>
+            <DetailsEmptyLine />
+            <span className="details-description">
+                {item.supporterAttribution === undefined ? "<unclaimed>" : `[ ${item.supporterAttribution} ]`}
+            </span>
+        </>
+    );
+
     return (
         <div className="part-details">
             <DetailsItemArtLine part={item} />
@@ -988,6 +1007,7 @@ export default function ItemDetails({ item }: { item: Item }) {
             {typeSpecificDetails}
             {effectDescriptionDetails}
             {fabricationDetails}
+            {attributionDetails}
         </div>
     );
 }
