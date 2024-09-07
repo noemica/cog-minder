@@ -29,15 +29,15 @@ import "./Pages.less";
 
 const chartTypeButtons: ExclusiveButtonDefinition<CombatLogChartType>[] = [
     {
-        label: "Pie",
-        value: "Pie",
-        tooltip: "Sets charts to display as pie charts. Only the top 10 categories are shown in a pie chart.",
-    },
-    {
         label: "Bar",
         value: "Bar",
         tooltip:
             'Sets charts to display as horizontal bar charts. Only the top 10 categories are shown by default, but an "Other" category can be expanded to show the full list of options.',
+    },
+    {
+        label: "Pie",
+        value: "Pie",
+        tooltip: "Sets charts to display as pie charts. Only the top 10 categories are shown in a pie chart.",
     },
 ];
 
