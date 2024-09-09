@@ -528,7 +528,7 @@ export default function SimulatorPageInput({
                     disabled={simulationInProgress}
                     value={pageState.salvageTargeting || ""}
                     onChange={(val) => updatePageState({ ...pageState, salvageTargeting: val })}
-                    placeholder="0%"
+                    placeholder="0"
                     tooltip="The bonus of Salvage Targeting Computers that are equipped (if any). Increase salvage generated from Gun-type weapons that fire a single projectile (stacks). Base Salvage Targeting Computer starts at +1, Improved is +2, Advanced is +3, and Makeshift is +4."
                 />
             </div>
