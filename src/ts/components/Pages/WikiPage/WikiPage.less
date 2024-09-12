@@ -195,7 +195,8 @@
     display: flow-root;
 }
 
-.wiki-gallery-images {
+.wiki-gallery-images,
+.wiki-fanart-gallery-images {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -209,15 +210,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: @wiki-gallery-image-size;
-            height: @wiki-gallery-image-size;
 
             > a {
+                // Can't figure out where this is coming from, but this is needed
+                // to cancel out some otherwise inexplicable sizing difference
+                margin-bottom: -3.5px;
+
                 position: relative;
 
                 > img {
-                    max-width: @wiki-gallery-image-size;
-                    max-height: @wiki-gallery-image-size;
                     padding: @wiki-gallery-image-padding;
 
                     box-sizing: border-box;
@@ -229,6 +230,39 @@
             width: 0;
             min-width: 100%;
             margin-bottom: 0;
+        }
+    }
+}
+
+.wiki-gallery-images {
+    > div {
+        > div {
+            width: @wiki-gallery-image-size;
+            height: @wiki-gallery-image-size;
+
+            > a {
+                > img {
+                    max-width: @wiki-gallery-image-size;
+                    max-height: @wiki-gallery-image-size;
+                }
+            }
+        }
+    }
+}
+
+.wiki-fanart-gallery-images {
+    > div {
+        > div {
+            > a {
+                > img {
+                    height: auto;
+                    width: 100%;
+                }
+            }
+        }
+        
+        > p {
+            font-size: @h2-font-size;
         }
     }
 }
@@ -429,7 +463,7 @@
 
             font-size: @wiki-table-of-contents-font-size;
         }
-        
+
         > ul {
             margin: 0;
         }

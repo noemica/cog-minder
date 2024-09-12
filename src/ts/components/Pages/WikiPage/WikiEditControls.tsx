@@ -192,6 +192,12 @@ export default function WikiEditControls({
                     Gallery Images
                 </Button>
                 <Button
+                    tooltip="Creates a list of images centered in the page in a list form. Images and captions should be sequentially listed, like [[FanartGallery]]Image 1.png|Image 1 caption|Image 2.png|Image 2 caption[[/FanartGallery]]. Art takes up the full screen, compared to gallery where a smaller max size is allowed."
+                    onClick={() => insertWrappedText("[[FanartGallery]]", "[[/FanartGallery]]")}
+                >
+                    Fanart Gallery Images
+                </Button>
+                <Button
                     tooltip="Creates a lore entry that pulls text from actual lore quotes, use Lore page as a reference."
                     onClick={() => insertWrappedText("[[Lore]]", "[[/Lore]]")}
                 >

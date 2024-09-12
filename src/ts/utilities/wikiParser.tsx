@@ -659,7 +659,7 @@ function processGameTextTag(state: ParserState, result: RegExpExecArray) {
 // Processes gallery tag like [[Gallery]]Image1.png|Image Caption|Image2.png|Image 2 caption[[/Gallery]]
 function processGalleryTag(state: ParserState, result: RegExpExecArray) {
     // Find [[/Gallery]] closing tag first
-    const galleryResult = /\[\[\/Gallery\]\]/.exec(state.initialContent.substring(state.index));
+    const galleryResult = /\[\[\/(Gallery|FanartGallery)\]\]/.exec(state.initialContent.substring(state.index));
 
     if (galleryResult === null) {
         // If we can't find the end tag then just skip over the opening gallery tag
@@ -667,6 +667,8 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         state.index += result[0].length;
         return;
     }
+
+    const isFanartGallery = galleryResult[1] === "FanartGallery";
 
     // Split interior text by |
     // Even numbered indices contain image filenames, odd numbers contain captions
@@ -727,6 +729,7 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         const path = createImagePath(`${imageName}`, `wiki_images/`);
         galleryItems.push(
             <div key={i}>
+                {isFanartGallery ? imageCaptionHtml : undefined}
                 <div>
                     <a className={inSpoiler ? "spoiler-image" : undefined} href={path} target="_blank" rel="noreferrer">
                         {inSpoiler && <div className="wiki-spoiler-image-text">SPOILER</div>}
@@ -740,12 +743,14 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
                         />
                     </a>
                 </div>
-                {imageCaptionHtml}
+                {isFanartGallery ? undefined : imageCaptionHtml}
             </div>,
         );
     }
 
-    const galleryContent = <div className="wiki-gallery-images">{galleryItems}</div>;
+    const galleryContent = (
+        <div className={isFanartGallery ? "wiki-fanart-gallery-images" : "wiki-gallery-images"}>{galleryItems}</div>
+    );
 
     state.output.push({
         groupType: "Individual",
@@ -1138,6 +1143,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["B", processBTag],
     ["BotGroups", processBotGroupsTag],
     ["Color", processColorTag],
+    ["FanartGallery", processGalleryTag],
     ["GameText", processGameTextTag],
     ["Gallery", processGalleryTag],
     ["Heading", processHeadingTag],
