@@ -194,7 +194,7 @@
   },
   {
    "Name": "C-40 Crusher",
-   "Content": ""
+   "Content": "Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).\n\nDue to their extreme lethality in melee, stay out of their range at all costs, and maybe just run the hell out of [[Wastes]]. Alternatively pack a good launcher or a good critical weapon, as their plating will tank most of your shots."
   },
   {
    "Name": "C-55 Analyst",
@@ -530,11 +530,11 @@
   },
   {
    "Name": "M Shell/Atk",
-   "Content": ""
+   "Content": "[[Redacted]]See [[Command#mainc|Command - MAIN.C]][[/Redacted]]"
   },
   {
    "Name": "M Shell/Def",
-   "Content": ""
+   "Content": "[[Redacted]]See [[Command#mainc|Command - MAIN.C]][[/Redacted]]"
   },
   {
    "Name": "M-13 Machinist",
@@ -562,11 +562,11 @@
   },
   {
    "Name": "MAIN.C",
-   "Content": ""
+   "Content": "[[Redacted]]See [[Command#mainc|Command - MAIN.C]][[/Redacted]]"
   },
   {
    "Name": "MAIN.C (Shell)",
-   "Content": ""
+   "Content": "[[Redacted]]See [[Command#mainc|Command - MAIN.C]][[/Redacted]]"
   },
   {
    "Name": "ME-RLN",
@@ -4597,7 +4597,7 @@
   },
   {
    "Name": "Master Drone Bay",
-   "Content": ""
+   "Content": "Deploys a [[Master Drone]]"
   },
   {
    "Name": "Master Link",
@@ -4773,7 +4773,7 @@
   },
   {
    "Name": "Mobile Assembly Unit",
-   "Content": ""
+   "Content": "Creates 1 [[Assembled]] for -10 [[Matter]], +100 [[Heat]], -100 [[Energy]]"
   },
   {
    "Name": "Mobile Refinery Mk. CCLXVII",
