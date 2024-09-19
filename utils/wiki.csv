@@ -1722,7 +1722,7 @@ The Data Miner can redirect Investigations if his help is obtained by visiting h
 "L-41 Fighter","Bot",""
 "L-61 Swordsman","Bot",""
 "L-Cannon","Part",""
-"LC Capacitor","Part",""
+"LC Capacitor","Part","Found in [[Lab]]. Loses integrity when not attached. Merges with the [[Drained L-Cannon]] to create the [[L-Cannon]]."
 "LRC Armor","Part",""
 "LRC Energy Well","Part",""
 "LRC Inertial Stabilizer","Part",""
