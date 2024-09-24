@@ -708,7 +708,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
         "Index": 31,
-        "Full Name": "Makshift Power Source"
+        "Full Name": "Makeshift Power Source"
     },
     {
         "Slot": "Power",
@@ -2840,7 +2840,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
         "Index": 117,
-        "Full Name": "Makshift Leg"
+        "Full Name": "Makeshift Leg"
     },
     {
         "Slot": "Propulsion",
@@ -3934,7 +3934,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
         "Index": 169,
-        "Full Name": "Makshift Hover Unit"
+        "Full Name": "Makeshift Hover Unit"
     },
     {
         "Slot": "Propulsion",
@@ -4535,7 +4535,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
         "Index": 196,
-        "Full Name": "Makshift Flight Unit"
+        "Full Name": "Makeshift Flight Unit"
     },
     {
         "Slot": "Propulsion",
@@ -5507,7 +5507,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "95/47/31",
         "Index": 245,
-        "Full Name": "Makshift Coolant Network"
+        "Full Name": "Makeshift Coolant Network"
     },
     {
         "Slot": "Utility",
@@ -5653,7 +5653,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
         "Index": 254,
-        "Full Name": "Makshift Microdissipator Network"
+        "Full Name": "Makeshift Microdissipator Network"
     },
     {
         "Slot": "Utility",
@@ -6473,7 +6473,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "106/53/35",
         "Index": 303,
-        "Full Name": "Makshift Trap Scanner"
+        "Full Name": "Makeshift Trap Scanner"
     },
     {
         "Slot": "Utility",
@@ -6715,7 +6715,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "117/58/39",
         "Index": 317,
-        "Full Name": "Makshift Sensor Array"
+        "Full Name": "Makeshift Sensor Array"
     },
     {
         "Slot": "Utility",
@@ -6887,7 +6887,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "117/58/39",
         "Index": 327,
-        "Full Name": "Makshift Terrain Scanner"
+        "Full Name": "Makeshift Terrain Scanner"
     },
     {
         "Slot": "Utility",
@@ -6987,7 +6987,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
         "Index": 333,
-        "Full Name": "Makshift Terrain Scan Processor"
+        "Full Name": "Makeshift Terrain Scan Processor"
     },
     {
         "Slot": "Utility",
@@ -7237,7 +7237,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
         "Index": 349,
-        "Full Name": "Makshift Salvage Targeting Computer"
+        "Full Name": "Makeshift Salvage Targeting Computer"
     },
     {
         "Slot": "Utility",
@@ -7319,7 +7319,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "62/31/20",
         "Index": 354,
-        "Full Name": "Makshift Targeting Computer"
+        "Full Name": "Makeshift Targeting Computer"
     },
     {
         "Slot": "Utility",
@@ -8333,7 +8333,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "95/47/31",
         "Index": 412,
-        "Full Name": "Makshift Transmission Jammer"
+        "Full Name": "Makeshift Transmission Jammer"
     },
     {
         "Slot": "Utility",
@@ -8423,7 +8423,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "73/36/24",
         "Index": 417,
-        "Full Name": "Makshift ECM Suite"
+        "Full Name": "Makeshift ECM Suite"
     },
     {
         "Slot": "Utility",
@@ -8658,7 +8658,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "95/47/31",
         "Index": 430,
-        "Full Name": "Makshift Cloaking Device"
+        "Full Name": "Makeshift Cloaking Device"
     },
     {
         "Slot": "Utility",
@@ -8801,7 +8801,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
         "Index": 439,
-        "Full Name": "Makshift Core Shielding"
+        "Full Name": "Makeshift Core Shielding"
     },
     {
         "Slot": "Utility",
@@ -8863,7 +8863,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
         "Index": 443,
-        "Full Name": "Makshift Power Shielding"
+        "Full Name": "Makeshift Power Shielding"
     },
     {
         "Slot": "Utility",
@@ -8925,7 +8925,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
         "Index": 447,
-        "Full Name": "Makshift Propulsion Shielding"
+        "Full Name": "Makeshift Propulsion Shielding"
     },
     {
         "Slot": "Utility",
@@ -8987,7 +8987,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
         "Index": 451,
-        "Full Name": "Makshift Utility Shielding"
+        "Full Name": "Makeshift Utility Shielding"
     },
     {
         "Slot": "Utility",
@@ -9048,7 +9048,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
         "Index": 455,
-        "Full Name": "Makshift Weapon Shielding"
+        "Full Name": "Makeshift Weapon Shielding"
     },
     {
         "Slot": "Utility",
@@ -9330,7 +9330,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
         "Index": 472,
-        "Full Name": "Makshift Light Armor Plating"
+        "Full Name": "Makeshift Light Armor Plating"
     },
     {
         "Slot": "Utility",
@@ -9346,7 +9346,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
         "Index": 473,
-        "Full Name": "Makshift Medium Armor Plating"
+        "Full Name": "Makeshift Medium Armor Plating"
     },
     {
         "Slot": "Utility",
@@ -9362,7 +9362,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "106/53/35",
         "Index": 474,
-        "Full Name": "Makshift Heavy Armor Plating"
+        "Full Name": "Makeshift Heavy Armor Plating"
     },
     {
         "Slot": "Utility",
@@ -9553,7 +9553,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
         "Index": 485,
-        "Full Name": "Makshift Kinetic Plating"
+        "Full Name": "Makeshift Kinetic Plating"
     },
     {
         "Slot": "Utility",
@@ -9637,7 +9637,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
         "Index": 490,
-        "Full Name": "Makshift Thermal Plating"
+        "Full Name": "Makeshift Thermal Plating"
     },
     {
         "Slot": "Utility",
@@ -9813,7 +9813,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "106/53/35",
         "Index": 501,
-        "Full Name": "Makshift Ablative Armor"
+        "Full Name": "Makeshift Ablative Armor"
     },
     {
         "Slot": "Utility",
@@ -11010,7 +11010,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
         "Index": 569,
-        "Full Name": "Makshift Hacking Suite"
+        "Full Name": "Makeshift Hacking Suite"
     },
     {
         "Slot": "Utility",
@@ -11155,7 +11155,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
         "Index": 578,
-        "Full Name": "Makshift System Shield"
+        "Full Name": "Makeshift System Shield"
     },
     {
         "Slot": "Utility",
@@ -11915,7 +11915,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
         "Index": 626,
-        "Full Name": "Makshift System Restoration Module"
+        "Full Name": "Makeshift System Restoration Module"
     },
     {
         "Slot": "Utility",
@@ -14624,7 +14624,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
         "Index": 762,
-        "Full Name": "Makshift Laser"
+        "Full Name": "Makeshift Laser"
     },
     {
         "Slot": "Weapon",
@@ -17870,7 +17870,7 @@
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
         "Index": 888,
-        "Full Name": "Makshift Shrapnel Gun"
+        "Full Name": "Makeshift Shrapnel Gun"
     },
     {
         "Slot": "Weapon",
@@ -22278,7 +22278,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
         "Index": 1051,
-        "Full Name": "Makshift Hammer"
+        "Full Name": "Makeshift Hammer"
     },
     {
         "Slot": "Weapon",
@@ -22656,7 +22656,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
         "Index": 1066,
-        "Full Name": "Makshift Axe"
+        "Full Name": "Makeshift Axe"
     },
     {
         "Slot": "Weapon",
@@ -22679,7 +22679,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
         "Index": 1067,
-        "Full Name": "Makshift Sword"
+        "Full Name": "Makeshift Sword"
     },
     {
         "Slot": "Weapon",
@@ -23376,7 +23376,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
         "Index": 1096,
-        "Full Name": "Makshift Spear"
+        "Full Name": "Makeshift Spear"
     },
     {
         "Slot": "Weapon",
@@ -24161,7 +24161,7 @@
         "Support": "1",
         "Penalty": "200",
         "Index": 1149,
-        "Full Name": "Makshift Microthruster"
+        "Full Name": "Makeshift Microthruster"
     },
     {
         "Slot": "Propulsion",

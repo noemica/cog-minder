@@ -219,7 +219,7 @@ expansions = {
     'Lrg.': 'Large',
     'Lrn.': 'Long-range',
     'Lyr.': 'Layered',
-    'Mak.': 'Makshift',
+    'Mak.': 'Makeshift',
     'Med.': 'Medium',
     'Mic.': 'Micro',
     'Mni.': 'Mini',
