@@ -2034,7 +2034,7 @@
         "Locations": [
             {
                 "Location": "Recycling Unit",
-                "Description": "Friendly: Appear from Recycling Units when using the Force(Scrapoids) hack"
+                "Description": "Friendly: Appear from Recycling Units when using the Force(Scrapoids) hack on -6"
             }
         ]
     },
@@ -2043,7 +2043,7 @@
         "Locations": [
             {
                 "Location": "Recycling Unit",
-                "Description": "Friendly: Appear from Recycling Units when using the Force(Scrapoids) hack"
+                "Description": "Friendly: Appear from Recycling Units when using the Force(Scrapoids) hack from -5 to -4"
             }
         ]
     },
@@ -2052,7 +2052,7 @@
         "Locations": [
             {
                 "Location": "Recycling Unit",
-                "Description": "Friendly: Appear from Recycling Units when using the Force(Scrapoids) hack"
+                "Description": "Friendly: Appear from Recycling Units when using the Force(Scrapoids) hack on -3 to -1"
             }
         ]
     },
