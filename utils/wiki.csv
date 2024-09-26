@@ -1717,7 +1717,9 @@ The Data Miner can redirect Investigations if his help is obtained by visiting h
 "LRC-V5","Bot",""
 "LRC-V6","Bot",""
 "LU-1G1's Laser Shovel","Part",""
-"LV-01A","Bot",""
+"LV-01A","Bot","Found in [[Spoiler]][[Warlord (Location)]][[/Spoiler]].
+
+Wants to blow it up. All of it."
 "Lab","Location","Lab is a [[Factory]]/[[Research]] branch between -4 and -3 that is only accessible from [[Armory]]. This map is fixed every game, with the only variations being variations in the guaranteed items. This secret lab is used as a safe spot by the [[A bots]] to plan and coordinate as well as research stolen [[Sigix]] technology. This area has a special effect where Cogmind's [[Alert]] drops to 0 upon entering the map.
 Lab has a small square entrance and a 1 tile corridor that leads to the next main access exit and a Sealed Barrier with a [[Terminal]] locking it. There are a few different ways to get inside:
 [[List]]Breaking in: The main Sealed Barrier blocking the way has 80 armor and high resistances. Cutting through this is difficult without a strong overloadable thermal [[Energy Cannons|Energy Cannon]] backed with a [[Particle Chargers|Particle Charger]] or a [[Plasma Cutters|Plasma Cutter]]. Coming in this way will result in being scanned immediately.|[[Zhirov (Location)]] code: One of the Terminals at Zhirov contains an access code to open up this barrier. Opening the Lab this way not result in being scanned instantly.|Picking up the [[A7 Data Core]]: [[A7]] drops this item when destroyed. The doors will automatically open when approaching, and the message [[GameText]]A0_COM: WELCOME A7[[/GameText]] will appear in the log. This will also reveal the intruder detection lasers, but Cogmind will not be scanned immediately.|Using the [[Data Conduit]]: Using the Data Conduit in [[Data Miner (Location)]] will result in the doors opening automatically, the scanning lasers being visible, and no immediate scan.[[/List]]
