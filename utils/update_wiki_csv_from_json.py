@@ -100,9 +100,11 @@ for other in wiki_json['Other']:
         }
         wiki_csv[other_name] = new_other
 
+csv.register_dialect('wiki', 'excel', lineterminator='\n')
+
 # Write out updated csv
 with open(csv_path, 'w', newline='') as f:
-    writer = csv.DictWriter(f, ['Name', 'Page Type', 'Content'], quoting=csv.QUOTE_ALL)
+    writer = csv.DictWriter(f, ['Name', 'Page Type', 'Content'], quoting=csv.QUOTE_ALL, dialect='wiki')
 
     writer.writeheader()
     sorted_names = sorted(wiki_csv.keys())
