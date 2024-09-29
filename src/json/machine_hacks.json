@@ -1230,6 +1230,14 @@
                 "SpoilerLevel": "Redacted"
             },
             {
+                "Name": "Open - Armory Disassembled Obliterator room",
+                "Description": "Open the non-automatic door associated with this terminal.",
+                "BaseChance": 30,
+                "Indirect": "Never",
+                "Level1DirectOnly": true,
+                "SpoilerLevel": "Spoiler"
+            },
+            {
                 "Name": "Open - Command Main.C door",
                 "Description": "Open the non-automatic door associated with this terminal.",
                 "BaseChance": 60,
