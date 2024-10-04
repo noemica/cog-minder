@@ -1202,7 +1202,7 @@ When entering -3 Research, the Exiles will send a warning message to Cogmind ind
 "Field Recycling Unit","Part",""
 "Field Recycling Units","Part Group",""
 "Fire Trap","Part",""
-"Fireman","Bot Group","Firemen are [[Derelict]] [[Wheels|wheeled]] combat bots armed with [[Flamer|Flamers]]. They have a tendency to melt foes due to their high heat transfer."
+"Fireman","Bot Group","Firemen are [[Derelict]] [[Wheels|wheeled]] combat bots armed with [[Flamer|Regular]] or [[Enh. Flamer|Enh. Flamers]]. They have a tendency to melt foes due to their high heat transfer. These bots are unique to the Derelicts and have no similar [[0b10]] counterpart. Firemen are common bots that show up in many different types of Derelict encounters and events."
 "Fireman (5)","Bot","Fireman variant with a normal [[Flamer]]."
 "Fireman (7)","Bot","Fireman variant with an [[Enh. Flamer]] and enhanced cooling."
 "Firepult","Part","After firing, sometimes a log message [[GameText]]Firepult emits an uncontrolled burst of heat.[[/GameText]] will appear. When this happens, a large amount of additional heat will be added to Cogmind's current temperature. The burst of heat starts at about an additional 100 heat when it first occurs. Sometimes, it is followed by an additional message [[GameText]]Several Firepult components seem to have fused.[[/GameText]]. The amount of heat Cogmind gains will continue to increase as more heat bursts occur. Eventually this effect will cap at around the 300-400 additional heat range. Using [[Coolant Injectors]] greatly helps to mitigate the unpredictable heat generation."
@@ -1339,7 +1339,7 @@ Another way to deal with Grunts is to take advantage of their low memory (20 act
 [[Heading]][[Squad|Squads]][[/Heading]]
 Grunts may appear in the following squads:
 [[List]][[Assault Squad]]|[[Garrison Squad]]|[[Investigation Squad]]|[[Patrol Squad]]|[[Reinforcement Squad]]|[[Security Squad]] - Only in [[Armory]], [[Garrison|Garrisons]], [[Quarantine]], and [[Testing]]|[[Transport Squad]][[/List]]"
-"Guerrilla","Bot Group","Guerillas are [[Legs|legged]] [[Derelict]] combat bots equipped with an inaccurate yet powerful [[Bore Cannon]] with a high Destroy critical chance. They are essentially the Derelict version of a [[Hunter]]. Guerillas aim better due to their Targeting Computer and are harder to hit due to their Phase Shifter. However, unlike Hunters, Guerillas also have a [[Armor Integrity Analyzer]] allowing them to bypass enemy armor and hit harder."
+"Guerrilla","Bot Group","Guerillas are [[Legs|legged]] [[Derelict]] combat bots equipped with an inaccurate yet powerful [[Bore Cannon]] with a high Destroy critical chance. These are the Derelict version of a [[Hunter]]. Their [[Targeting Computer]] somewhat offset the targeting penalty, and they have a minimal evasion boost with a [[Phase Shifter]]. Unlike Hunters, Guerillas have an [[Armor Integrity Analyzer]] allowing them to occasionally bypass enemy armor. Guerrillas are common bots that show up in many different types of Derelict encounters and events."
 "Guerrilla (5)","Bot",""
 "Guerrilla (7)","Bot",""
 "Gui. EMP Blaster","Part",""

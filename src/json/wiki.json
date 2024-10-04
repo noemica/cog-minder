@@ -1180,7 +1180,7 @@
     "Fireman (5)",
     "Fireman (7)"
    ],
-   "Content": "Firemen are [[Derelict]] [[Wheels|wheeled]] combat bots armed with [[Flamer|Flamers]]. They have a tendency to melt foes due to their high heat transfer."
+   "Content": "Firemen are [[Derelict]] [[Wheels|wheeled]] combat bots armed with [[Flamer|Regular]] or [[Enh. Flamer|Enh. Flamers]]. They have a tendency to melt foes due to their high heat transfer. These bots are unique to the Derelicts and have no similar [[0b10]] counterpart. Firemen are common bots that show up in many different types of Derelict encounters and events."
   },
   {
    "Name": "Grunt",
@@ -1199,7 +1199,7 @@
     "Guerrilla (5)",
     "Guerrilla (7)"
    ],
-   "Content": "Guerillas are [[Legs|legged]] [[Derelict]] combat bots equipped with an inaccurate yet powerful [[Bore Cannon]] with a high Destroy critical chance. They are essentially the Derelict version of a [[Hunter]]. Guerillas aim better due to their Targeting Computer and are harder to hit due to their Phase Shifter. However, unlike Hunters, Guerillas also have a [[Armor Integrity Analyzer]] allowing them to bypass enemy armor and hit harder."
+   "Content": "Guerillas are [[Legs|legged]] [[Derelict]] combat bots equipped with an inaccurate yet powerful [[Bore Cannon]] with a high Destroy critical chance. These are the Derelict version of a [[Hunter]]. Their [[Targeting Computer]] somewhat offset the targeting penalty, and they have a minimal evasion boost with a [[Phase Shifter]]. Unlike Hunters, Guerillas have an [[Armor Integrity Analyzer]] allowing them to occasionally bypass enemy armor. Guerrillas are common bots that show up in many different types of Derelict encounters and events."
   },
   {
    "Name": "Hauler",
