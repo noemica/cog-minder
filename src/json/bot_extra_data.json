@@ -760,6 +760,11 @@
             {
                 "Location": "-2 Research Warlord Invasion",
                 "Description": "Friendly: Appears as Warlord reinforcements appearing in Borebot tunnels on the left side of the map"
+            },
+            {
+                "Location": "Command",
+                "Description": "Friendly: Appears out of Command seals",
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -1185,6 +1190,11 @@
             {
                 "Location": "-2 Research Warlord Invasion",
                 "Description": "Friendly: Appears as Warlord reinforcements appearing in Borebot tunnels on the left side of the map"
+            },
+            {
+                "Location": "Command",
+                "Description": "Friendly: Appears out of Command seals",
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -1300,6 +1310,11 @@
             {
                 "Location": "-2 Research Warlord Invasion",
                 "Description": "Friendly: Appears as Warlord reinforcements appearing in Borebot tunnels on the left side of the map"
+            },
+            {
+                "Location": "Command",
+                "Description": "Friendly: Appears out of Command seals",
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -1514,6 +1529,11 @@
             {
                 "Location": "-2 Research Warlord Invasion",
                 "Description": "Friendly: Appears as Warlord reinforcements appearing in Borebot tunnels on the left side of the map"
+            },
+            {
+                "Location": "Command",
+                "Description": "Friendly: Appears out of Command seals",
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -2295,6 +2315,11 @@
             {
                 "Location": "-2 Research Warlord Invasion",
                 "Description": "Friendly: Appears as Warlord reinforcements appearing in Borebot tunnels on the left side of the map"
+            },
+            {
+                "Location": "Command",
+                "Description": "Friendly: Appears out of Command seals",
+                "Spoiler": "Redacted"
             }
         ]
     },
