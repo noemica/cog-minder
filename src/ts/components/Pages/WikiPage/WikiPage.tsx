@@ -86,7 +86,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
 
         const botEntries: WikiEntry[] = [];
         const entry: WikiEntry = {
-            alternativeNames: [],
+            alternativeNames: botGroupEntry.AlternateNames ?? [],
             content: botGroupEntry.Content ?? "",
             name: botGroupEntry.Name,
             spoiler: spoiler,
