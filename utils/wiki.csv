@@ -1367,9 +1367,7 @@ Grunts may appear in the following squads:
 "Hardcell Cannon","Part",""
 "Hardlight Generator","Part",""
 "Hardlight Generators","Part Group",""
-"Hauler","Bot Group","Haulers are [[Treads|treading]] non-combat robots that haul parts in or near Complex [[0b10]]. Haulers carry parts that are often a higher rating than those found on the current depth, and may also carry prototypes. Haulers carrying prototype parts are escorted by combat bots and will call for a [[Reinforcement Squad]] if attacked. Often seen as part of a [[Transport Squad]] or [[Cargo Convoy]].
-
-Haulers also are equipped with [[Storage Unit|medium and larger storage units]] which can be worthwhile if you cant find one while yours is damaged, and also support-increasing utility parts such as a [[Weight Redist. System]]."
+"Hauler","Bot Group","Haulers are [[Treads|treading]] non-combat robots that carry parts in or near Complex [[0b10]]. Haulers can carry large amounts of one part or a few different types. They may carry [[Prototype Part|prototypes]], although they may be faulty except for Freighters. Haulers carrying prototype parts are often escorted by combat bots and will always call for a [[Reinforcement Squad]] if attacked, unless a [[Transmission Jammer]] is used along with a [[Transport Network Coupler]]. The jammer alone is not sufficient to block their reporting. They are most often seen as part of a [[Transport Squad]] or [[Cargo Convoy]].\nHaulers are equipped with [[Storage Unit|medium and larger storage units]] which can be worthwhile to loot. All Haulers also have a [[Transport Network Coupler]] that can be used to locate other Haulers."
 "Hcl. Linear Accelerator","Part",""
 "Hcp. Battery","Part",""
 "Hcp. Matter Pod","Part",""
@@ -1430,7 +1428,7 @@ The only 2 ways to exit High Security are to trigger [[Sterilization]] after kil
 [[Heading]]Useful Pages[[/Heading]]
 [[List]][[Game Mechanics]]|[[Locations]] - Information about all locations in the game|[[Squad]] - All types of robot squads|[[Bot Groups]] - List of bos classes/other groups|[[Acronyms]] - List of common community acronyms|[[Reinforced Walls]] - Reference of reinforced walls across the game|[[Non-empty Pages]] - List of non-empty pages[[/List]]
 [[Heading]]Contributors[[/Heading]]
-[[List]]aoemica|jimmyl|ktur|lyrabold|Rocko1345[[/List]]"
+[[List]]aoemica|jimmyl|ktur|lyrabold|Perseus|Rocko1345[[/List]]"
 "Hover Unit","Part",""
 "Hover Units","Part Group",""
 "Hpw. Disruptor Cannon","Part",""
@@ -1672,7 +1670,7 @@ An Imprinted Cogmind loses the ability to receive help from a few NPCs. These ef
 Dropped by the [[Imprinter]] on death."
 "Impulse Thruster","Part",""
 "Impulse Thruster Array","Part",""
-"Infiltrator","Bot Group","Infiltrators are [[Legs|legged]] [[Derelict]] combat bots with one [[Ballistic Cannons|Ballistic Cannon]] and other two same weapons. As their name suggests, they are seen infiltrating, such as hidden in a Garrison or pretending to be a [[Specialist]] called by a [[Heavy]]. They come equipped with an [[Active Sensor Spoofer]]."
+"Infiltrator","Bot Group","Infiltrators are [[Legs|legged]] [[Derelict]] combat bots with one [[Ballistic Cannons|Ballistic Cannon]] and 2 various other guns. They are the Derelict version of a [[Specialist]]. As their name suggests, they are most often seen infiltrating a [[Garrison]], hiding in a wall. If Cogmind has gained some [[Encrypted Comm Array]] score, Infiltrators will sometimes take the place of Specialist reinforcements called by a [[Heavy]]. In this case, they will only reveal themselves as friendly after seeing Cogmind. They come equipped with a unique [[Active Sensor Spoofer]] to mislead Heavy reinforcements."
 "Infiltrator (6)","Bot",""
 "Infiltrator (7)","Bot",""
 "Infiltrator (8)","Bot",""
@@ -1871,10 +1869,10 @@ The following is a list of all locations in Cogmind:
 "Mak. Weapon Shielding","Part",""
 "Mapping Drone","Bot",""
 "Mapping Drone Bay","Part","Deploys [[Mapping Drone|Mapping Drones]]."
-"Marauder","Bot Group","Marauders are weaker [[Derelict]] [[Behemoth|Behemoths]] variants that have less numerous and less accurate but more powerful armaments than earlier Behemoth variants. Seen guarding [[Zion]] and [[Warlord (Location)]]."
+"Marauder","Bot Group","Marauders are [[Treads|treaded]] [[Derelict]] combat bots armed with kinetic weaponry. They are the Derelict versions of [[Behemoth|Behemoths]]. They have unreliable firepower, but their [[Slug Cannon|Slug Cannons]] can easily destroy hostiles with their high critical rate. In comparison to [[0b10]] Behemoths, they tend to be more fragile with low integrity in their armor, and are much more susceptible to EM damage."
 "Marauder (6)","Bot",""
 "Marauder (8)","Bot",""
-"Martyr","Bot Group","Martyrs are the [[Derelict]] variant of [[0b10]] [[Demolisher]], however unlike Demolishers they only carry [[Rocket Launcher]]s or [[Missile Launcher]]s, and have a weaker core with better [[Armor]] plating."
+"Martyr","Bot Group","Martyrs are [[Hover Unit|hovering]] [[Derelict]] combat bots armed with [[Launchers]]. They are the Derelict version of [[0b10]] [[Demolisher|Demolishers]]. They tend to be dubious allies due to their high destructive potential, and quite frequently end up skyrocketing [[Alert]] if kept around. Martyrs are common bots that show up in many different types of Derelict encounters and events."
 "Martyr (5)","Bot",""
 "Martyr (7)","Bot",""
 "Mass Driver","Part",""
@@ -1910,7 +1908,7 @@ Maximum Security is a special [[0b10]] response to a few specific threats that r
 [[List]]0: Log message [[GameText]]ALERT: [reason for Max Security]. Maximum security lockdown in progress.[[/GameText]]|1: Machines shut down, log message [[GameText]]ALERT: Machine network offline[[/GameText]]|2: Log message [[GameText]]ALERT: Performing unscheduled system reset.[[/GameText]]|3: 4 [[Sentry|Sentries]] dispatched at each 0b10-controlled exit and Garrison, log message [[GameText]]ALERT: Lockdown in effect, collecting threat data.[[/GameText]]|5/100: First assault wave dispatched, 6 assaults dispatched from nearby 0b10-controlled exits and [[Garrison (Machine)|Garrisons]]. The first wave will be dispatched after 100 turns for Farcom-triggered Maximum Security and 5 turns for other reasons.|105/200: Second wave, 6 assaults dispatched|255/350: Third wave, 8 assaults dispatched including heavy assaults with stronger bots|455/550: Fourth wave, 10 assaults dispatched including heavy assaults|705/800: Fifth wave, 12 assaults dispatched including heavy assaults|Etc. - Delay between assaults continues to increase by 50 and number of assaults per wave continues to increase by 2[[/List]]
 [[Heading]]Exiting Maximum Security[[/Heading]]
 The only 2 ways to exit Maximum Security are to trigger [[Sterilization]] after killing enough combat hostiles or to exit the map. Otherwise, an infinite number of Assaults will continue to be dispatched."
-"Mechanic","Bot Group","A wheeled [[0b10]] non-combat bot that repairs the parts of any damaged ally in sight. You can salvage a [[Recalibrator]] which allows you to repair broken or malfunctioning parts, and a [[Machine Analyzer]] which helps you find machines."
+"Mechanic","Bot Group","Mechanics are [[Wheel|wheeling]] [[0b10]] non-combat bot that repairs the parts and core of damaged allies. Mechanics will head toward damaged allies as soon as they are hurt but will not repair them while in combat. Mechanics carry [[Recalibrators]] and [[Machine Analyzer|Machine Analyzers]] that can be good to salvage.\nIf a hurt bot is not shot at for a few turns, the Mechanic will repair core integrity up to 85% and part integrity up to 50%. Allied Mechanics will also repair Cogmind's parts up to 50% integrity but will not touch core integrity."
 "Med. Armor Plating","Part",""
 "Med. Armored Exoskeleton","Part",""
 "Med. Battery","Part",""

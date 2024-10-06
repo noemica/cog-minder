@@ -1208,7 +1208,7 @@
     "A-15 Conveyor",
     "A-27 Freighter"
    ],
-   "Content": "Haulers are [[Treads|treading]] non-combat robots that haul parts in or near Complex [[0b10]]. Haulers carry parts that are often a higher rating than those found on the current depth, and may also carry prototypes. Haulers carrying prototype parts are escorted by combat bots and will call for a [[Reinforcement Squad]] if attacked. Often seen as part of a [[Transport Squad]] or [[Cargo Convoy]].\n\nHaulers also are equipped with [[Storage Unit|medium and larger storage units]] which can be worthwhile if you cant find one while yours is damaged, and also support-increasing utility parts such as a [[Weight Redist. System]]."
+   "Content": "Haulers are [[Treads|treading]] non-combat robots that carry parts in or near Complex [[0b10]]. Haulers can carry large amounts of one part or a few different types. They may carry [[Prototype Part|prototypes]], although they may be faulty except for Freighters. Haulers carrying prototype parts are often escorted by combat bots and will always call for a [[Reinforcement Squad]] if attacked, unless a [[Transmission Jammer]] is used along with a [[Transport Network Coupler]]. The jammer alone is not sufficient to block their reporting. They are most often seen as part of a [[Transport Squad]] or [[Cargo Convoy]].\nHaulers are equipped with [[Storage Unit|medium and larger storage units]] which can be worthwhile to loot. All Haulers also have a [[Transport Network Coupler]] that can be used to locate other Haulers."
   },
   {
    "Name": "Heavy",
@@ -1236,7 +1236,7 @@
     "Infiltrator (7)",
     "Infiltrator (8)"
    ],
-   "Content": "Infiltrators are [[Legs|legged]] [[Derelict]] combat bots with one [[Ballistic Cannons|Ballistic Cannon]] and other two same weapons. As their name suggests, they are seen infiltrating, such as hidden in a Garrison or pretending to be a [[Specialist]] called by a [[Heavy]]. They come equipped with an [[Active Sensor Spoofer]].",
+   "Content": "Infiltrators are [[Legs|legged]] [[Derelict]] combat bots with one [[Ballistic Cannons|Ballistic Cannon]] and 2 various other guns. They are the Derelict version of a [[Specialist]]. As their name suggests, they are most often seen infiltrating a [[Garrison]], hiding in a wall. If Cogmind has gained some [[Encrypted Comm Array]] score, Infiltrators will sometimes take the place of Specialist reinforcements called by a [[Heavy]]. In this case, they will only reveal themselves as friendly after seeing Cogmind. They come equipped with a unique [[Active Sensor Spoofer]] to mislead Heavy reinforcements.",
    "Spoiler": "Spoiler"
   },
   {
@@ -1245,7 +1245,7 @@
     "Marauder (6)",
     "Marauder (8)"
    ],
-   "Content": "Marauders are weaker [[Derelict]] [[Behemoth|Behemoths]] variants that have less numerous and less accurate but more powerful armaments than earlier Behemoth variants. Seen guarding [[Zion]] and [[Warlord (Location)]]."
+   "Content": "Marauders are [[Treads|treaded]] [[Derelict]] combat bots armed with kinetic weaponry. They are the Derelict versions of [[Behemoth|Behemoths]]. They have unreliable firepower, but their [[Slug Cannon|Slug Cannons]] can easily destroy hostiles with their high critical rate. In comparison to [[0b10]] Behemoths, they tend to be more fragile with low integrity in their armor, and are much more susceptible to EM damage."
   },
   {
    "Name": "Martyr",
@@ -1253,7 +1253,7 @@
     "Martyr (5)",
     "Martyr (7)"
    ],
-   "Content": "Martyrs are the [[Derelict]] variant of [[0b10]] [[Demolisher]], however unlike Demolishers they only carry [[Rocket Launcher]]s or [[Missile Launcher]]s, and have a weaker core with better [[Armor]] plating."
+   "Content": "Martyrs are [[Hover Unit|hovering]] [[Derelict]] combat bots armed with [[Launchers]]. They are the Derelict version of [[0b10]] [[Demolisher|Demolishers]]. They tend to be dubious allies due to their high destructive potential, and quite frequently end up skyrocketing [[Alert]] if kept around. Martyrs are common bots that show up in many different types of Derelict encounters and events."
   },
   {
    "Name": "Mechanic",
@@ -1262,7 +1262,7 @@
     "M-28 Smith",
     "M-36 Artificer"
    ],
-   "Content": "A wheeled [[0b10]] non-combat bot that repairs the parts of any damaged ally in sight. You can salvage a [[Recalibrator]] which allows you to repair broken or malfunctioning parts, and a [[Machine Analyzer]] which helps you find machines."
+   "Content": "Mechanics are [[Wheel|wheeling]] [[0b10]] non-combat bot that repairs the parts and core of damaged allies. Mechanics will head toward damaged allies as soon as they are hurt but will not repair them while in combat. Mechanics carry [[Recalibrators]] and [[Machine Analyzer|Machine Analyzers]] that can be good to salvage.\nIf a hurt bot is not shot at for a few turns, the Mechanic will repair core integrity up to 85% and part integrity up to 50%. Allied Mechanics will also repair Cogmind's parts up to 50% integrity but will not touch core integrity."
   },
   {
    "Name": "Minesweeper",
@@ -8924,7 +8924,7 @@
   },
   {
    "Name": "Homepage",
-   "Content": "This is a WIP unofficial Cogmind Wiki. Use the page dropdown to go to a specific page. For editing info, check out the [[https://discord.gg/f8Fqv2qQxV|Cog-Minder wiki Discord server]] and make contributions via [[https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/edit?usp=sharing|This Google Spreadsheet]].\n[[Heading]]Useful Pages[[/Heading]]\n[[List]][[Game Mechanics]]|[[Locations]] - Information about all locations in the game|[[Squad]] - All types of robot squads|[[Bot Groups]] - List of bos classes/other groups|[[Acronyms]] - List of common community acronyms|[[Reinforced Walls]] - Reference of reinforced walls across the game|[[Non-empty Pages]] - List of non-empty pages[[/List]]\n[[Heading]]Contributors[[/Heading]]\n[[List]]aoemica|jimmyl|ktur|lyrabold|Rocko1345[[/List]]"
+   "Content": "This is a WIP unofficial Cogmind Wiki. Use the page dropdown to go to a specific page. For editing info, check out the [[https://discord.gg/f8Fqv2qQxV|Cog-Minder wiki Discord server]] and make contributions via [[https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/edit?usp=sharing|This Google Spreadsheet]].\n[[Heading]]Useful Pages[[/Heading]]\n[[List]][[Game Mechanics]]|[[Locations]] - Information about all locations in the game|[[Squad]] - All types of robot squads|[[Bot Groups]] - List of bos classes/other groups|[[Acronyms]] - List of common community acronyms|[[Reinforced Walls]] - Reference of reinforced walls across the game|[[Non-empty Pages]] - List of non-empty pages[[/List]]\n[[Heading]]Contributors[[/Heading]]\n[[List]]aoemica|jimmyl|ktur|lyrabold|Perseus|Rocko1345[[/List]]"
   },
   {
    "Name": "Imprint",
