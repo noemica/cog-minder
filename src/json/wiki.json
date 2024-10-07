@@ -1166,15 +1166,6 @@
    "Content": "The Exiles are a group of 3 [[Tinkerer]]-like bots and their bodyguard [[8R-AWN]] stationed at [[Exiles (Location)]] that have been exiled from [[Zion]].\n[[EX-DEC]] wields their [[AWS/EX-DEC]] and [[8R-AWN]] wields 2 [[8R-AWN's Boregun|Boreguns]] and may fight if provoked, but the others are unarmed. They have developed a large number of unique prototype parts."
   },
   {
-   "Name": "Experimental",
-   "Bots": [
-    "Z-Experimental (8)",
-    "Z-Experimental (10)"
-   ],
-   "Content": "Z-Experimental bots are a class of [[Legs|legged]] [[Imprint]] aligned combat bots equipped with a staggering amount of prototype parts, powerful unique weapons, and unique [[Armor]] with resistance to most conventional damage types. Appears in the [[Imprint]] Roster [[Redacted]]and also can come out of [[Command]] cave seals if Cogmind is Imprinted[[/Redacted]].",
-   "Spoiler": "Spoiler"
-  },
-  {
    "Name": "Fireman",
    "Bots": [
     "Fireman (5)",
@@ -1433,6 +1424,18 @@
    "Content": "Wizards are a [[Bot Groups|bot group]] of [[Hover Units|hovering]] [[Derelict]] combat bots armed with [[Riot Gun|standard]] or [[Hvy. Riot Gun|Hvy. Riot Guns]]. They are the Derelict version of the [[0b10]] [[Programmer]] class. Like Programmers, they can hack hostiles to reboot or assimilate them, remove system corruptions, and remove certain hacks from allied bots. However, in contrast to Programmers, Wizards have plenty of [[Hackware]] and can actually hack [[Terminal|Terminals]] when allied to Cogmind in some circumstances. Wizards are common bots that show up in many different types of Derelict encounters and events."
   },
   {
+   "Name": "Z-Experimental",
+   "AlternateNames": [
+    "Experimental"
+   ],
+   "Bots": [
+    "Z-Experimental (8)",
+    "Z-Experimental (10)"
+   ],
+   "Content": "Z-Experimental bots are a class of [[Legs|legged]] [[Imprint]] aligned combat bots equipped with a staggering amount of prototype parts, powerful unique weapons, and unique [[Armor]] with resistance to most conventional damage types. Appears in the [[Imprint]] Roster [[Redacted]]and also can come out of [[Command]] cave seals if Cogmind is Imprinted[[/Redacted]].",
+   "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Z-Heavy",
    "Bots": [
     "Z-Heavy (5)",
@@ -1443,7 +1446,10 @@
    "Spoiler": "Spoiler"
   },
   {
-   "Name": "Z-Hero",
+   "Name": "Heroes of Zion",
+   "AlternateNames": [
+    "Z-Hero"
+   ],
    "Bots": [
     "12-ASH",
     "1C-UTU",
