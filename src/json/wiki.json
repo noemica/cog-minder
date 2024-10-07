@@ -1262,7 +1262,7 @@
     "M-28 Smith",
     "M-36 Artificer"
    ],
-   "Content": "Mechanics are [[Wheel|wheeling]] [[0b10]] non-combat bot that repairs the parts and core of damaged allies. Mechanics will head toward damaged allies as soon as they are hurt but will not repair them while in combat. Mechanics carry [[Recalibrators]] and [[Machine Analyzer|Machine Analyzers]] that can be good to salvage.\nIf a hurt bot is not shot at for a few turns, the Mechanic will repair core integrity up to 85% and part integrity up to 50%. Allied Mechanics will also repair Cogmind's parts up to 50% integrity but will not touch core integrity."
+   "Content": "Mechanics are [[Wheel|wheeling]] [[0b10]] non-combat bots that repair the parts and core of damaged allies. They tend to hang around a home [[Repair Station]]. Mechanics will head toward damaged allies as soon as they are hurt but will not repair them while in combat. Mechanics carry [[Recalibrators]] and [[Machine Analyzer|Machine Analyzers]] that can be good to salvage. They also carry a set of backup parts in their inventory based on the bot tier. These backup parts will be refitted on bots if they have empty slots.\nIf a hurt bot is not shot at for a few turns, the Mechanic will repair core integrity up to 85% and part integrity up to 50%. Allied Mechanics will also repair Cogmind's parts up to 50% integrity but will not touch core integrity. Blue allied Mechanics must be set to Aid before they will repair integrity.\nMechanics can refit parts if a bot has a slot available and fewer than 2 power, propulsion, utility, or weapon slots. 0b10 aligned Mechanics can resupply on backup parts at their home Repair Station. The available refittable parts are based on the type of Mechanic:\n[[Table]]Slot/Count|M-13 Machinist|M-28 Smith|M-36 Artificer||Power (2 available)|[[Backup Power I]]|[[Backup Power III]]|[[Backup Power VII]]||Propulsion (4 available)|[[Backup Power I]]|[[Backup Power III]]|[[Backup Power VII]]||Utility (2 available)|[[Backup Plating I]]|[[Backup Plating III]]|[[Backup Plating VII]]||Weapon (4 available)|[[Backup Laser I]]|[[Backup Laser III]]|[[Backup Laser VII]][[/Table]]"
   },
   {
    "Name": "Minesweeper",
@@ -1290,7 +1290,7 @@
     "O-24 Administrator",
     "O-32 Director"
    ],
-   "Content": "Operators are [[Hover Units|hovering]] [[0b10]] non-combat bots. Upon seeing a hostile, operators will run to their home [[Terminal]], and if they reach it they will make it unusable and summon a [[Reinforcement Squad]] to the terminal. As such, Operators should be avoided or destroyed themselves or their terminal before they call reinforcements. Additionally, [[Spoiler]]you can use a [[GameText]]Trojan(Assimilate)[[/GameText]] on their home terminal to make them get turned into your ally if they attempt to use it[[/Spoiler]]. Operators are a good source of [[Datajack]]s and [[Hacking Suite]]s if you kill them without them calling for reinforcements. They are weak to slashing and electromagnetic damage."
+   "Content": "Operators are [[Hover Units|hovering]] [[0b10]] non-combat bots that guard a single nearby [[Terminal]]. Upon seeing a hostile, operators will run to their Terminal, summon a [[Reinforcement Squad]] to their location, and disable the machine. [[Spoiler]]The same effect occurs if an [[Imprint|imprinted]] Cogmind pings a Terminal and the Operator is nearby.[[/Spoiler]] As such, Operators should ideally be avoided or prevented from summoning reinforcements in some way. Operators are good looting sources of [[Datajacks]], both offensive and defensive [[Hackware]] as well as [[System Restoration Modules]]. When destroyed, they drop a [[Data Core]] that provides a one time hacking bonus and reveals nearby traps.\nOperators make good allies due to their unique ability to increase Cogmind's hacking power and detect [[Traps]]. Operators within a range of 20 tiles will contribute a 10% (then 5%, 2%, and 1%) stacking offensive hacking bonus per Operator. Additionally, allied Operators will report all trap locations that Cogmind encounters in visual range as long as the Operator is within a 20 tile radius.\nOperators can be blocked from summoning Reinforcements in a few different ways:\n[[List]]Bot destruction: A destroyed bot will be unable to report Cogmind|[[Spoiler]][[Scraptown#abandonware_association|Scraptown hack]] [[GameText]]HACKBUD.EXE[[/GameText]]: Turn the Operator instantly friendly[[/Spoiler]]|Terminal destruction: A destroyed Terminal is unusable|[[Spoiler]]Trojan(Assimilate): The Operator will be reprogrammed to become a blue ally when it tries to report Cogmind.[[/Spoiler]]|[[RIF]] hacks [[GameText]]block_reporting[[/GameText]], [[GameText]]summon_haulers[[/GameText]], or [[GameText]]formatsys_high[[/GameText]]: Either avoid reporting altogether, turn the reporting to instead summon [[Hauler|Haulers]], or turn the Operator friendly respectively[[/List]]\n[[Gallery]]Operators.png|All Operator variants and colors[[/Gallery]]"
   },
   {
    "Name": "Programmer",
@@ -1308,7 +1308,7 @@
     "I-36 Angel",
     "I-47 Archangel"
    ],
-   "Content": "Protectors are [[0b10]] [[Wheels|wheeled]] combat bots that specialize in protecting their allies with a [[Shield Generators/Force Fields|shield]]. Equipped with [[Energy Wells]] and two [[Engines]], Protectors are a good source of those, if you manage to survive the encounter with the [[Assault Squad]] they are often part of. Slight resistance to Thermal damage."
+   "Content": "Protectors are [[0b10]] [[Wheels|wheeled]] non-combat bots that specialize in protecting their allies with [[Shield Generators/Force Fields|remote shields]]. Protectors are equipped with two power sources and [[Energy Wells]] for higher damage reduction potential. They are most often seen as part of an [[Assault Squad]] or [[Cargo Convoy]]. Later tiers are equipped with [[Point Defense System|Point Defense Systems]] that make it more difficult to use [[Launchers]] against Assaults protected by them.\n[[Gallery]]Protectors.png|All Protector variants and colors[[/Gallery]]"
   },
   {
    "Name": "Protovariant",
@@ -1330,7 +1330,7 @@
     "R-06 Scavenger",
     "R-10 Processor"
    ],
-   "Content": "Recyclers are [[0b10]] [[Wheels|wheeled]] non-combat bots that wander around looking for dropped parts, pick them up, and carry to a [[Recycling Machine]]. Will run away if shot, so that's a good way to stop them from stealing your sweet loot. R-10 Processors also have a [[Field Recycling Unit]] to recycle parts on the go, so don't let them steal your parts.\nRecyclers are slightly weak to Electromagnetic damage."
+   "Content": "Recyclers are [[0b10]] [[Wheels|wheeled]] non-combat bots that collected dropped parts and deposit them at a nearby [[Recycling Machine]]. While they are equipped with [[Tractor Beams]] and [[Field Recycling Units]], Recyclers do not actually make use of these parts. Recyclers are a major nuisance for their ability to steal loot before Cogmind can pick it up. If Recyclers are closing in, fire a single shot at them to get them to run away for a while and leave your loot alone. They have the highest salvage potential of any 0b10 non-combat bot, so killing them is a great way to restock on matter."
   },
   {
    "Name": "Researcher",
@@ -1338,7 +1338,7 @@
     "C-55 Analyst",
     "C-65 Expert"
    ],
-   "Content": "Researchers are [[Hover Units|hovering]] [[0b10]] non-combat bots equipped with a [[Stasis Beam]] or [[Stasis Projector]], which much like a [[Stasis Trap]] immobilize their target. Researchers appear in [[Spoiler]][[Testing]] and [[Quarantine]][[/Spoiler]]. When a researcher spots a non-[[0b10]] bot attacking, or gets attacked, they will attempt to stasis and scan any hostile, and summon a [[Reinforcement Squad]]. However, if the scanned thing is [[Cogmind]] (you), [[Q-Series]] will sometimes be dispatched for [[Extermination Squad|Extermination Squads]] instead of [[Programmer|Programmers]].[[Redacted]]Getting scanned in [[Section 7]] will trigger [[Intercept Squad|Intercepts]] to start showing up instead.[[/Redacted]]\nResearchers are also equipped anti-corruption utilities such as a [[Imp. Corruption Screen]].",
+   "Content": "Researchers are [[Hover Units|hovering]] [[0b10]] non-combat bots equipped with a [[Stasis Beam]] or [[Stasis Projector]] which will immobilize their target while active. Researchers appear in [[Testing]] and [[Quarantine]]. When a Researcher spots a hostile bot attacking or gets attacked, they will attempt to stasis and scan any hostile and summon a [[Reinforcement Squad]]. It is safe to dig into a wall that reveals yourself to the Research after the volley. If [[Cogmind]] is scanned, [[Q-Series]] will sometimes be dispatched for future [[Extermination Squad|Extermination Squads]] instead of [[Programmer|Programmers]]. [[Redacted]]Getting scanned in [[Section 7]] will trigger [[Intercept Squad|Intercepts]] to start showing up instead.[[/Redacted]] Researchers are also equipped with anti-corruption utilities [[System Guards]] and [[Corruption Screens]].",
    "Spoiler": "Spoiler"
   },
   {
@@ -1347,7 +1347,7 @@
     "Savage (5)",
     "Savage (7)"
    ],
-   "Content": "Savages are a [[Derelict]] variant of the [[0b10]] [[Brawler]] bots that wield a mauls stronger than earlier variants of Brawlers. They possess better [[Armor]] than early variants of Brawlers, but have a weaker engine."
+   "Content": "Savages are [[Derelict]] [[Treads|treading]] combat bots armed with [[Impact Weapons]]. They are the Derelict versions of [[0b10]] [[Brawler|Brawlers]] and have fairly negligible differences between them. Savages are common bots that show up in many different types of Derelict encounters and events."
   },
   {
    "Name": "Scrapoid",
@@ -1388,7 +1388,7 @@
     "Surgeon (4)",
     "Surgeon (6)"
    ],
-   "Content": "Surgeons are wheeled [[Derelict]] non-combat bots that repair their allies and also recycle any dropped parts."
+   "Content": "Surgeons are wheeled [[Derelict]] non-combat bots. They are the Derelict counterpart of the [[0b10]] [[Mechanic]] class of bots. Like Mechanics, they repair ally core and part integrity and have the same set of limitations that Mechanics do on repairs. They also have an inventory of 2 [[Backup Power III]], 4 [[Backup Propulsion III]], 2 [[Backup Plating III]], and 4 [[Backup Laser III]] that they will refer on allies with empty slots."
   },
   {
    "Name": "Swarmer",
@@ -1405,7 +1405,7 @@
     "Thug (5)",
     "Thug (7)"
    ],
-   "Content": "Thugs are the [[Derelict]] variant of [[Grunt|Grunts]] armed with a [[Beamcaster]] that is as powerful if not more powerful than the [[Hvy. Laser]] wielded by the [[G-73 Enforcer]]. Better heat sinks and legs than early Grunt variants. Slight weakness to Kinetic and Electromagnetic damage."
+   "Content": "Thugs are a [[Bot Groups|bot group]] of [[Legs|legged]] [[Derelict]] combat bots armed with thermal weaponry, uniquely [[Beamcaster|normal]] and [[Hvy. Beamcaster|Hvy. Beamcasters]]. They are the Derelict version of the [[0b10]] [[Grunt]] class. Thugs in [[Mines]] are notable for being significantly stronger than the typical Grunts at that depth, and their Beamcasters are one of the strongest standard weapons available in early Materials depths. Thugs are common bots that show up in many different types of Derelict encounters and events."
   },
   {
    "Name": "Wasp",
@@ -1413,7 +1413,7 @@
     "Wasp (5)",
     "Wasp (7)"
    ],
-   "Content": "Wasps are the [[Derelict]] variant of [[Swarmer|Swarmers]] armed with a more powerful but unreliable armament and more powerful propulsion than earlier [[Swarmer]] variants."
+   "Content": "Wasps are a [[Bot Groups|bot group]] of [[Flight Units|flying]] [[Derelict]] combat bots armed with Derelict [[Ballistic Guns]]. They are the Derelict version of the [[0b10]] [[Swarmer]] class, and as such, are individually quite frail and nonthreatening bots, but can be more powerful in groups. Wasps are common bots that show up in many different types of Derelict encounters and events."
   },
   {
    "Name": "Watcher",
@@ -1422,7 +1422,7 @@
     "W-25 Informer",
     "W-44 Eye"
    ],
-   "Content": "Watchers are [[Hover Units|hovering]] [[0b10]] non-combat bots. Upon seeing a hostile, watchers will run away to attempt to alert combat bots of your location. If there are bots already in range when spotting, watchers will emit a distress signal. \nWatchers are weak to Electromagnetic damage."
+   "Content": "Watchers are [[Hover Units|hovering]] [[0b10]] non-combat bots that report hostiles upon visual contact to other allied bots. Watchers have a large distress signal area of effect compared to other bots. If Cogmind has a Watcher in line of sight then an animation will play when the Watcher alerts other bots. Combat bots and [[Operator|Operators]] will all be alerted to your location when this happens, after which combat bots will pursue and Operators will attempt to report hostiles at their [[Terminal]]. Watchers have [[Visual Processing Units]] that allow them to see bots at a larger range than the usual 16 tile range of vision. Watchers also have a unique [[Sensor Arrays|Sensor]] jamming effect while Cogmind is within a certain distance of them. Watchers possess a large number of desirable parts, including their Visual Processing Units, Sensor Arrays, and [[Signal Interpreters]].\nWatchers are arguably the most troublesome non-combat bot class in the game. Their large visual range, large reporting range, and sensor jamming abilities cause a wide variety of problems for many different build types. The most effective tool against them are [[Transmission Jammers]] which will block their reporting ability. While a Watcher is jammed, it is possible to tell if bots are nearby. If there are no bots nearby, nothing will happen when the Watcher is in range. However, if there are bots nearby, there will be a constant game log message of [[GameText]][Watcher type] distress signal jammed.[[/GameText]]\nWatchers are quite difficult to kill, especially the W-44 Eye variant. Their naturally higher than usual avoidance and propensity for running away makes them hard to hit, and a Watcher that lives to run away is a Watcher that continues to summon more trouble from far away. For airborne builds, [[Impact Weapons]] are good at killing Watchers due to their high number of low integrity utilities and massive weakness fo EM damage. For grounded builds, many EM weapons can kill a Watcher in one or two hits, especially with the high amount of corruption gained. To obtain salvage, kinetic guns or non-impact melee weapons are one of the most reliable ways to kill Watchers in a salvage neutral way.\n[[Gallery]]Watchers.png|All Watcher variants and colors[[/Gallery]]"
   },
   {
    "Name": "Wizard",
@@ -1430,7 +1430,7 @@
     "Wizard (5)",
     "Wizard (7)"
    ],
-   "Content": "Wizards are a [[Derelict]] variant of the [[0b10]] [[Programmer]], armed solely with a [[Riot Gun]]. Compared to Programmers, Wizards have plenty of [[Hackware]] and a [[Corruption Screen]] to help them counteract corruption."
+   "Content": "Wizards are a [[Bot Groups|bot group]] of [[Hover Units|hovering]] [[Derelict]] combat bots armed with [[Riot Gun|standard]] or [[Hvy. Riot Gun|Hvy. Riot Guns]]. They are the Derelict version of the [[0b10]] [[Programmer]] class. Like Programmers, they can hack hostiles to reboot or assimilate them, remove system corruptions, and remove certain hacks from allied bots. However, in contrast to Programmers, Wizards have plenty of [[Hackware]] and can actually hack [[Terminal|Terminals]] when allied to Cogmind in some circumstances. Wizards are common bots that show up in many different types of Derelict encounters and events."
   },
   {
    "Name": "Z-Heavy",
@@ -1439,7 +1439,7 @@
     "Z-Heavy (7)",
     "Z-Heavy (9)"
    ],
-   "Content": "",
+   "Content": "Z-Heavy bots are a class of [[Legs|legged]] [[Imprint]] aligned combat bots equipped with many unique Zionite-specific prototype parts with powerful unique weapons. Appears in the [[Imprint]] Roster [[Redacted]]and also can come out of [[Command]] cave seals if Cogmind is Imprinted[[/Redacted]]. When summoned via roster, they have a special ally behavior where they will stop fighting and run back to Cogmind if they fall out of Cogmind's line of sight or are too many tiles away.",
    "Spoiler": "Spoiler"
   },
   {
@@ -1455,7 +1455,7 @@
     "NK-0LA",
     "P1-3CE"
    ],
-   "Content": "",
+   "Content": "The Heroes of Zion are a group of extraordinarily powerful [[Derelict|Derelicts]] wielding a variety of unique offensive and defensive parts. Heroes come to the aid of Derelicts when attacked and will be hostile to Cogmind if they appear after Cogmind has attacked the [[Exiles (Location)]] or [[Zion]]. However, if Cogmind is in trouble in the [[Caves]] or [[Imprint|Imprints]], they may come to Cogmind's aid instead.\n[[Heading]]Lore[[/Heading]]\n[[Lore]]0b10 Records|Heroes of Zion[[/Lore]]\n[[Gallery]]Heroes.png|All Heroes of Zion[[/Gallery]]",
    "Spoiler": "Spoiler"
   },
   {
@@ -1465,7 +1465,7 @@
     "Z-Light (7)",
     "Z-Light (9)"
    ],
-   "Content": "",
+   "Content": "Z-Light bots are a class of [[Hover Units|hovering]] [[Imprint]] aligned combat bots equipped with many unique Zionite-specific prototype parts with powerful unique weapons. Appears in the [[Imprint]] Roster [[Redacted]]and also can come out of [[Command]] cave seals if Cogmind is Imprinted[[/Redacted]]. When summoned via roster, they have a special ally behavior where they will stop fighting and run back to Cogmind if they fall out of Cogmind's line of sight or are too many tiles away.",
    "Spoiler": "Spoiler"
   }
  ],
@@ -9028,6 +9028,10 @@
    "AlternateNames": [
     "RIF"
    ]
+  },
+  {
+   "Name": "Repair Station",
+   "Content": ""
   },
   {
    "Name": "Revision 17 (Alignment)",
