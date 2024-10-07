@@ -242,7 +242,12 @@ function WeaponRow({
                         updatePageState({ ...pageState, weaponState: newWeaponState });
                     }}
                 />
-                <ItemPopoverButton item={weaponItem} tooltip="Show details about the part." text="?" />
+                <ItemPopoverButton
+                    item={weaponItem}
+                    tooltip="Show details about the part."
+                    text="?"
+                    showWikiLink={true}
+                />
             </div>
             <LabeledInput
                 label="Number"

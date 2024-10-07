@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
-import { HashLink } from "../../../utilities/linkExport";
 
 import { Bot } from "../../../types/botTypes";
 import { MapLocation } from "../../../types/commonTypes";
 import { Item } from "../../../types/itemTypes";
 import { getLinkSafeString } from "../../../utilities/common";
+import { HashLink } from "../../../utilities/linkExport";
 import { usePopoverPositioning } from "../../Effects/usePopoverPositioning";
 import BotDetails from "../../GameDetails/BotDetails";
 import ItemDetails from "../../GameDetails/ItemDetails";
@@ -26,7 +26,15 @@ export function BotLink({ bot, linkTarget, text }: { bot: Bot; linkTarget?: stri
     );
 }
 
-export function ItemLink({ item, linkTarget, text }: { item: Item; linkTarget?: string; text?: ReactNode }) {
+export function ItemLink({
+    item,
+    linkTarget,
+    text,
+}: {
+    item: Item;
+    linkTarget?: string;
+    text?: ReactNode;
+}) {
     return (
         <ItemTooltip item={item}>
             <HashLink to={linkTarget || `/${getLinkSafeString(item.name)}`}>{text || item.name}</HashLink>
@@ -34,7 +42,13 @@ export function ItemLink({ item, linkTarget, text }: { item: Item; linkTarget?: 
     );
 }
 
-export function ItemTooltip({ item, children }: { item: Item; children: ReactNode }) {
+export function ItemTooltip({
+    item,
+    children,
+}: {
+    item: Item;
+    children: ReactNode;
+}) {
     const positioning = usePopoverPositioning();
 
     return (

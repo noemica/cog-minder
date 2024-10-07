@@ -18,7 +18,7 @@ function BotPopover({ node, isVisible, bot }: { node: ReactNode; isVisible: bool
                 <PopoverTrigger asChild={true}>{node}</PopoverTrigger>
                 <PopoverContent floatingArrowClassName="bot-popover-arrow">
                     <div className="popover">
-                        <BotDetails bot={bot} />
+                        <BotDetails bot={bot} showWikiLink={true} />
                     </div>
                 </PopoverContent>
             </Popover>

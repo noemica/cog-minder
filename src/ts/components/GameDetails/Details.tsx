@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import { Bot } from "../../types/botTypes";
 import { Item, WeaponItem } from "../../types/itemTypes";
 import { getBotImageNames, getItemAsciiArtImageName, getItemSpriteImageNames } from "../../utilities/common";
+import { ButtonLink } from "../Buttons/Button";
 import TextTooltip from "../Popover/TextTooltip";
 
 import "./Details.less";
@@ -507,6 +508,14 @@ export default function DetailsValueLine({
         </pre>,
         tooltipOverride || valueString,
         category,
+    );
+}
+
+export function WikiLink({ wikiPage }: { wikiPage: string }) {
+    return (
+        <ButtonLink className="wiki-link-button" href={`/wiki/${wikiPage}`} tabIndex={-1}>
+            Wiki
+        </ButtonLink>
     );
 }
 

@@ -796,7 +796,7 @@ export default function PartsComparisonDisplay({
                         setPageState({ ...pageState, compareLeftItem: val });
                     }}
                 />
-                <ItemDetails item={leftItem} />
+                <ItemDetails item={leftItem} showWikiLink={true} />
             </div>
             <div className="part-comparison-details-column">
                 <Button
@@ -823,7 +823,7 @@ export default function PartsComparisonDisplay({
                         setPageState({ ...pageState, compareRightItem: val });
                     }}
                 />
-                <ItemDetails item={rightItem} />
+                <ItemDetails item={rightItem} showWikiLink={true} />
             </div>
         </div>
     );

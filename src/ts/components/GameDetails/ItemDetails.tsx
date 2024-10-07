@@ -21,6 +21,7 @@ import DetailsValueLine, {
     DetailsSummaryLine,
     DetailsTextLine,
     DetailsTextValueLine,
+    WikiLink,
 } from "./Details";
 
 import "./Details.less";
@@ -873,7 +874,7 @@ function SpecialWeaponPartDetails({ item }: { item: WeaponItem }) {
     );
 }
 
-export default function ItemDetails({ item }: { item: Item }) {
+export default function ItemDetails({ item, showWikiLink }: { item: Item, showWikiLink?: boolean }) {
     let typeSpecificDetails: ReactNode = <></>;
     switch (item.slot) {
         case "Power":
@@ -978,6 +979,7 @@ export default function ItemDetails({ item }: { item: Item }) {
 
     return (
         <div className="part-details">
+            {showWikiLink && <WikiLink wikiPage={item.name} />}
             <DetailsItemArtLine part={item} />
             <DetailsEmptyLine />
             <DetailsItemTitleLine part={item} />

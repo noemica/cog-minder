@@ -5,7 +5,7 @@ import "./PartsPage.less";
 
 export default function PartsSimpleDisplay({ items }: { items: Item[] }) {
     const itemButtons = items.map((item) => {
-        return <ItemPopoverButton item={item} key={item.name} />;
+        return <ItemPopoverButton item={item} key={item.name} showWikiLink={true} />;
     });
 
     return <div className="part-button-grid">{itemButtons}</div>;

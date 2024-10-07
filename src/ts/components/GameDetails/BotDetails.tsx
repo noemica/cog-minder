@@ -16,6 +16,7 @@ import {
     DetailsSummaryLine,
     DetailsTextLine,
     DetailsTextLineDim,
+    WikiLink,
 } from "./Details";
 
 import "./Details.less";
@@ -55,10 +56,12 @@ function ItemLine({
     itemString,
     item,
     popoversToLinks = false,
+    showWikiLink,
 }: {
     itemString: string;
     item: Item;
     popoversToLinks?: boolean;
+    showWikiLink: boolean;
 }) {
     let itemNode: ReactNode = itemString.padEnd(44);
 
@@ -77,11 +80,19 @@ function ItemLine({
     return popoversToLinks ? (
         <ItemTooltip item={item}>{line}</ItemTooltip>
     ) : (
-        <BotItemPopoverButton triggerContent={line} item={item} />
+        <BotItemPopoverButton triggerContent={line} item={item} showWikiLink={showWikiLink} />
     );
 }
 
-function BotPartLine({ data, popoversToLinks = false }: { data: BotPart; popoversToLinks?: boolean }) {
+function BotPartLine({
+    data,
+    popoversToLinks = false,
+    showWikiLink,
+}: {
+    data: BotPart;
+    popoversToLinks?: boolean;
+    showWikiLink: boolean;
+}) {
     const itemData = useItemData();
     let line = `${data.name} (${data.coverage}%)`;
 
@@ -89,7 +100,14 @@ function BotPartLine({ data, popoversToLinks = false }: { data: BotPart; popover
         line += " x" + data.number;
     }
 
-    return <ItemLine item={itemData.getItem(data.name)} itemString={line} popoversToLinks={popoversToLinks} />;
+    return (
+        <ItemLine
+            item={itemData.getItem(data.name)}
+            itemString={line}
+            popoversToLinks={popoversToLinks}
+            showWikiLink={showWikiLink}
+        />
+    );
 }
 
 function ItemLineOption({
@@ -97,11 +115,13 @@ function ItemLineOption({
     itemString,
     i,
     popoversToLinks = false,
+    showWikiLink,
 }: {
     itemName: string;
     itemString: string;
     i: number;
     popoversToLinks?: boolean;
+    showWikiLink: boolean;
 }) {
     const itemData = useItemData();
     let itemNode: ReactNode = itemString.padEnd(42);
@@ -123,11 +143,19 @@ function ItemLineOption({
     return popoversToLinks ? (
         <ItemTooltip item={item}>{line}</ItemTooltip>
     ) : (
-        <BotItemPopoverButton triggerContent={line} item={item} />
+        <BotItemPopoverButton triggerContent={line} item={item} showWikiLink={showWikiLink} />
     );
 }
 
-function BotPartOption({ data, popoversToLinks }: { data: BotPart[]; popoversToLinks: boolean }) {
+function BotPartOption({
+    data,
+    popoversToLinks,
+    showWikiLink,
+}: {
+    data: BotPart[];
+    popoversToLinks: boolean;
+    showWikiLink: boolean;
+}) {
     return (
         <>
             {data.map((botPart, i) => {
@@ -149,6 +177,7 @@ function BotPartOption({ data, popoversToLinks }: { data: BotPart[]; popoversToL
                         itemString={line}
                         i={i}
                         popoversToLinks={popoversToLinks}
+                        showWikiLink={showWikiLink}
                     />
                 );
             })}
@@ -160,16 +189,18 @@ function ItemDetails({
     items,
     itemOptions,
     popoversToLinks,
+    showWikiLink,
 }: {
     items: BotPart[];
     itemOptions: BotPart[][];
     popoversToLinks: boolean;
+    showWikiLink: boolean;
 }) {
     function Option({ addEmptyLine, data }: { addEmptyLine: boolean; data: BotPart[] }) {
         return (
             <>
                 {addEmptyLine && <DetailsEmptyLine />}
-                <BotPartOption data={data} popoversToLinks={popoversToLinks} />
+                <BotPartOption data={data} popoversToLinks={popoversToLinks} showWikiLink={showWikiLink} />
             </>
         );
     }
@@ -177,7 +208,14 @@ function ItemDetails({
     return (
         <>
             {items.map((data) => {
-                return <BotPartLine key={data.name} data={data} popoversToLinks={popoversToLinks} />;
+                return (
+                    <BotPartLine
+                        key={data.name}
+                        data={data}
+                        popoversToLinks={popoversToLinks}
+                        showWikiLink={showWikiLink}
+                    />
+                );
             })}
             {itemOptions.map((data, i) => {
                 return <Option key={i} addEmptyLine={items.length > 0 || i > 0} data={data} />;
@@ -186,17 +224,38 @@ function ItemDetails({
     );
 }
 
-function ArmamentDetails({ bot, popoversToLinks }: { bot: Bot; popoversToLinks: boolean }) {
+function ArmamentDetails({
+    bot,
+    popoversToLinks,
+    showWikiLink,
+}: {
+    bot: Bot;
+    popoversToLinks: boolean;
+    showWikiLink: boolean;
+}) {
     if (bot.armament.length === 0) {
         return <NoneItemLine />;
     }
 
     return (
-        <ItemDetails items={bot.armamentData} itemOptions={bot.armamentOptionData} popoversToLinks={popoversToLinks} />
+        <ItemDetails
+            items={bot.armamentData}
+            itemOptions={bot.armamentOptionData}
+            popoversToLinks={popoversToLinks}
+            showWikiLink={showWikiLink}
+        />
     );
 }
 
-function ComponentDetails({ bot, popoversToLinks }: { bot: Bot; popoversToLinks: boolean }) {
+function ComponentDetails({
+    bot,
+    popoversToLinks,
+    showWikiLink,
+}: {
+    bot: Bot;
+    popoversToLinks: boolean;
+    showWikiLink: boolean;
+}) {
     if (bot.components.length === 0) {
         return <NoneItemLine />;
     }
@@ -206,6 +265,7 @@ function ComponentDetails({ bot, popoversToLinks }: { bot: Bot; popoversToLinks:
             items={bot.componentData}
             itemOptions={bot.componentOptionData}
             popoversToLinks={popoversToLinks}
+            showWikiLink={showWikiLink}
         />
     );
 }
@@ -373,9 +433,18 @@ function TraitDetails({ bot }: { bot: Bot }) {
     );
 }
 
-export default function BotDetails({ bot, popoversToLinks }: { bot: Bot; popoversToLinks?: boolean }) {
+export default function BotDetails({
+    bot,
+    popoversToLinks,
+    showWikiLink,
+}: {
+    bot: Bot;
+    popoversToLinks?: boolean;
+    showWikiLink?: boolean;
+}) {
     return (
         <div className="bot-details">
+            {showWikiLink && <WikiLink wikiPage={bot.name} />}
             <DetailsBotTitleLine bot={bot} />
             <DetailsEmptyLine />
             <DetailsBotImages bot={bot} />
@@ -432,10 +501,10 @@ export default function BotDetails({ bot, popoversToLinks }: { bot: Bot; popover
             )}
             <DetailsEmptyLine />
             <DetailsSummaryLine text="Armament" />
-            <ArmamentDetails bot={bot} popoversToLinks={popoversToLinks || false} />
+            <ArmamentDetails bot={bot} popoversToLinks={popoversToLinks || false} showWikiLink={showWikiLink} />
             <DetailsEmptyLine />
             <DetailsSummaryLine text="Components" />
-            <ComponentDetails bot={bot} popoversToLinks={popoversToLinks || false} />
+            <ComponentDetails bot={bot} popoversToLinks={popoversToLinks || false} showWikiLink={showWikiLink} />
             <ResistanceImmunityDetails bot={bot} />
             <TraitDetails bot={bot} />
             <FabricationDetails bot={bot} />
