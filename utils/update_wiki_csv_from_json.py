@@ -112,3 +112,9 @@ with open(csv_path, 'w', newline='') as f:
     for name in sorted_names:
         wiki_csv[name]['Content'] = wiki_csv[name]['Content']
         writer.writerow(wiki_csv[name])
+
+with open(csv_path, 'r') as f:
+    text = f.read()
+
+with open(csv_path, 'w') as f:
+    f.write(text.replace('\\""', '""'))
