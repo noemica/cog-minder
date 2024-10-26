@@ -478,7 +478,7 @@
   },
   {
    "Name": "K-01 Serf",
-   "Content": ""
+   "Content": "Serfs are [[0b10]] [[Wheels|wheeled]] non-combat bots that clean machines and decorative scrap tiles. They are equipped with a [[Matter Compressors|Matter Pod]], which could be useful if you need more matter storage. K-01 Serfs are extremely weak and will usually almost immediately die to whatever you shoot it with. As such, they're a decent source of low-rating wheels.\nSerfs can also be seen in [[Factory]] dragging incapacitated bots to a [[Chute Trap]]."
   },
   {
    "Name": "KN-7UR",
@@ -7268,7 +7268,7 @@
     "Relay Coupler [Programmer]",
     "Relay Coupler [Proto]"
    ],
-   "Content": ""
+   "Content": "Relay couplers are used with [[RIF]] to enable special bothacks via [[Datajacks|datajacking]] that particular robot class described in the couplers description.\nRelay couplers will fry themselves when attached if you do not have [[RIF]]."
   },
   {
    "Name": "Resistance Devices",

@@ -1765,7 +1765,7 @@ The Data Miner can redirect Investigations if his help is obtained by visiting h
 "Ion Engine","Part",""
 "Ionic Axe","Part",""
 "Junk Cannon","Part",""
-"K-01 Serf","Bot",""
+"K-01 Serf","Bot","Serfs are [[0b10]] [[Wheels|wheeled]] non-combat bots that clean machines and decorative scrap tiles. They are equipped with a [[Matter Compressors|Matter Pod]], which could be useful if you need more matter storage. K-01 Serfs are extremely weak and will usually almost immediately die to whatever you shoot it with. As such, they're a decent source of low-rating wheels.\nSerfs can also be seen in [[Factory]] dragging incapacitated bots to a [[Chute Trap]]."
 "KE Penetrator","Part",""
 "KN-7UR","Bot",""
 "KN-7UR's Autopenetrator","Part",""
@@ -2414,7 +2414,7 @@ Heavy reinforcements are called more frequently if Cogmind is actively moving. I
 "Relay Coupler [Sentry]","Part",""
 "Relay Coupler [Specialist]","Part",""
 "Relay Coupler [Swarmer]","Part",""
-"Relay Couplers","Part Group",""
+"Relay Couplers","Part Group","Relay couplers are used with [[RIF]] to enable special bothacks via [[Datajacks|datajacking]] that particular robot class described in the couplers description.\nRelay couplers will fry themselves when attached if you do not have [[RIF]]."
 "Relay Interface Framework","Other","[[Image]]Garrison RIF Installer 1.png|RIF Installer in a Garrison[[/Image]]
 Relay Interface Framework, or RIF, is one of the major [[Alignment|alignments]] available to Cogmind in a run. It helps Cogmind to have much more control over [[0b10]] bots, both combat and non-combat. RIF comes with the downside of alienating several key [[Derelict]] factions, namely turning all Derelicts at [[Zion]] and [[Warlord (Location)]] hostile when passing their associated System Quarantine Field Array machines. RIF is also incompatible with the [[Core Reset Matrix]]. If Cogmind has used a CRM then it is not possible to gain RIF. If Cogmind uses a CRM after using RIF, then RIF will be entirely erased. Similarly, if Cogmind has [[Imprint|imprinted]], then the RIF will fail to be installed.
 Installing RIF can be done at any [[Garrison]] by walking into a RIF Installer machine. These machines can be hidden behind emergency accesses and Phase Walls, but there are always 1-2 installers available per map. Doing so will grant several unique abilities:
