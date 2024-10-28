@@ -2,7 +2,7 @@
  "Bots": [
   {
    "Name": "01-MTF",
-   "Content": "[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop."
+   "Content": "[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"
   },
   {
    "Name": "12-ASH",
@@ -338,7 +338,7 @@
   },
   {
    "Name": "Federalist",
-   "Content": ""
+   "Content": "Federalists are [[Legs|legged]] grunt-like [[Derelict|derelicts]] that appear in [[Scraptown]] and are armed with two extremely weak lasers with positive salvage. Not particularly powerful or otherwise remarkable."
   },
   {
    "Name": "Fireman (5)",
@@ -8784,7 +8784,7 @@
  "Other": [
   {
    "Name": "0b10",
-   "Content": "This is the main complex. Cogmind starts from the bottom [[Scrapyard]] level at depth -11. Every level have stairs to an upper level until level -1 where the surface [[Access]] can be found. The levels can also contain other doorways which lead to different branches that eventually connect to the main complex. Read more about all levels at [[Locations]].\n[[Heading]]Lore[[/Heading]]\n[[Lore]]0b10 Records|Complex 0b10[[/Lore]]\nEntrances to new levels are implied to be long uneventful corridors where Cogmind loses all pursuers."
+   "Content": "This is the main complex. Cogmind starts from the bottom [[Scrapyard]] level at depth -11. Every level have stairs to an upper level until level -1 where the surface [[Access]] can be found. The levels can also contain other doorways which lead to different branches that eventually connect to the main complex. Read more about all levels at [[Locations]].\n[[Heading]]Lore[[/Heading]]\n[[Lore]]0b10 Records|Complex 0b10[[/Lore]]\nEntrances to new levels are implied to be long uneventful corridors where Cogmind loses all pursuers.\n0b10 means 2 (0b - binary representation, 10 - 2 in decimal). [[Spoiler]]This means Complex 0b10 is the second complex, 0b1 presumably being first.[[/Spoiler]]"
   },
   {
    "Name": "Acronyms",
