@@ -9110,6 +9110,10 @@
    "Content": "This is a list of terminology, or potentially things that do not merit a full page. Also check out [[Acronyms]].\n[[Heading:3]]Partial Spot[[/Heading]]\nPartial spotting is when you move through a (hostile) bots field of vision while its not its turn. The bot will investigate where it saw you, look a few tiles further then head back to whatever it was doing."
   },
   {
+   "Name": "Transdimensional Reconstructors",
+   "Content": "Transdimensional Reconstructors are one of the most common [[Alien Artifact|Alien Artifacts]] and can be found in a great variety of locations from different sources.\n\nAttaching a Transdimensional Reconstructor consumes it and teleports the user and any part they might be standing on to an approximate distance of 32/64 from current position, depending on the range of the Transdimensional Reconstructor variant used. The direction of teleportation cannot be controlled. If a Slip Node is present on the map, Transdimensional Reconstructors will always teleport to one, regardless of the Reconstructor's range.\n\nUsing a Transdimensional Reconstructor also deteriorates core integrity by 5-10% of current. Parts, including any the user is standing on, are unaffected. The resulting damage does not appear in scoresheets.\n\n[[Heading]]Lore[[/Heading]]\n[[Spoiler]][[Lore]]0b10 Records|Transdimensional Reconstructor[[/Lore]][[/Spoiler]]\n[[Redacted]][[Lore]]0b10 Records|Reconstruction Test Results[[/Lore]][[/Redacted]]"
+  },
+  {
    "Name": "Transfer Station",
    "Content": ""
   },
