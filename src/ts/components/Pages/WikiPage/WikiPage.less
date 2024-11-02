@@ -74,12 +74,16 @@
     color: transparent;
 }
 
+.spoiler-image {
+    overflow: hidden;
+}
+
 .spoiler-image > img {
     transition: @transition-duration;
 }
 
 .spoiler-image:not(:focus):not(:hover) > img {
-    filter: grayscale(40%) blur(5px);
+    filter: grayscale(40%) blur(10px);
 }
 
 .spoiler-table:not(:focus):not(:hover) * {
@@ -234,6 +238,14 @@
     }
 }
 
+// Since fanart images can be much larger than the standard thumbnail sizes,
+// a larger blur is needed
+.wiki-fanart-gallery-images {
+    .spoiler-image:not(:focus):not(:hover) > img {
+        filter: grayscale(40%) blur(45px);
+    }
+}
+
 .wiki-gallery-images {
     > div {
         > div {
@@ -282,7 +294,9 @@
 }
 
 .wiki-gallery-images a:hover .wiki-spoiler-image-text,
-.wiki-gallery-images a:focus .wiki-spoiler-image-text {
+.wiki-gallery-images a:focus .wiki-spoiler-image-text,
+.wiki-fanart-gallery-images a:hover .wiki-spoiler-image-text,
+.wiki-fanart-gallery-images a:focus .wiki-spoiler-image-text {
     /* Hide the spoiler text when mousing over */
     color: transparent;
     background-color: transparent;
