@@ -74,12 +74,16 @@
     color: transparent;
 }
 
+.spoiler-image {
+    overflow: hidden;
+}
+
 .spoiler-image > img {
     transition: @transition-duration;
 }
 
 .spoiler-image:not(:focus):not(:hover) > img {
-    filter: grayscale(40%) blur(5px);
+    filter: grayscale(40%) blur(45px);
 }
 
 .spoiler-table:not(:focus):not(:hover) * {
