@@ -2,7 +2,11 @@
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"
 "01-MTF's Autohacker","Part",""
 "01-MTF's Shockpuncher","Part",""
-"0b10","Other","This is the main complex. Cogmind starts from the bottom [[Scrapyard]] level at depth -11. Every level have stairs to an upper level until level -1 where the surface [[Access]] can be found. The levels can also contain other doorways which lead to different branches that eventually connect to the main complex. Read more about all levels at [[Locations]].\n[[Heading]]Lore[[/Heading]]\n[[Lore]]0b10 Records|Complex 0b10[[/Lore]]\nEntrances to new levels are implied to be long uneventful corridors where Cogmind loses all pursuers.\n0b10 means 2 (0b - binary representation, 10 - 2 in decimal). [[Spoiler]]This means Complex 0b10 is the second complex, 0b1 presumably being first.[[/Spoiler]]"
+"0b10","Other","This is the main complex. Cogmind starts from the bottom [[Scrapyard]] level at depth -11. Every level have stairs to an upper level until level -1 where the surface [[Access]] can be found. The levels can also contain other doorways which lead to different branches that eventually connect to the main complex. Read more about all levels at [[Locations]].
+[[Heading]]Lore[[/Heading]]
+[[Lore]]0b10 Records|Complex 0b10[[/Lore]]
+Entrances to new levels are implied to be long uneventful corridors where Cogmind loses all pursuers.
+0b10 means 2 (0b - binary representation, 10 - 2 in decimal). [[Spoiler]]This means Complex 0b10 is the second complex, 0b1 presumably being first.[[/Spoiler]]"
 "0b10 Alert Chip","Part","Analyzes ambient [[0b10]] signals to guess the alert level. The best part of this item is the reduction of influence by 20%. This item is obtainable from the exiles."
 "0b10 Decoder Chip [Generic]","Part",""
 "0b10 Decoder Chip [Looter]","Part",""
@@ -747,7 +751,217 @@ One consideration when doing this event is whether or not to go to the cache. Si
 [[List]]Antimissile Systems: Some of the Enhanced Q-Series carry powerful Launchers that are best blocked by a utility.|Tractor Beams: There aren't typically a lot of turns to spend running around collecting matter in this event. Being able to restock remotely can help save a lot of time and damage dealt to Cogmind.|Matter Compressors/Energy Wells: Resource storage is always useful here|Launchers: While these should be used sparingly to avoid friendly 0b10 fire that can cause a betrayal, sometimes large groups of Enhanced Q-Series will wander into the MAIN.C room at about the same time. It is very nice to be able to attack these groups simultaneously.|[[Phasing AFG]] or [[Portable AFG]]: Drawing loot piles closer to Cogmind can also save a lot of otherwise wasted time trying to travel a long distance to get some good loot.[[/List]]"
 "Commander","Bot",""
 "Compactor","Part",""
-"Companion Sword","Part","The Companion Sword is a unique talking melee weapon that can only appear in [[Scraptown]]. It is contained in a room called The Sword, locked for the protection of [[Derelict|Derelicts]], none of whom have survived using the Companion Sword for long. The Companion Sword is quite talkative and will often comment about the state of the run, take pleasure in destroying things, and complain if it is detached or is not the only weapon attached. The Companion Sword has a variety of special effects that are not described by the in-game effect.\n[[Heading]]Special Effects[[/Heading]]\n[[Table]]Effect|Description|Frequency||Surprise Attack|The Companion Sword will ""surprise attack"" one additional target on a normal attack. The log message [[GameText]]Companion Sword surprise attacks [target].[[/GameText]] will appear when this happens.|Uncommon||Core Loss|The Companion Sword deals between 5-10 core damage directly to Cogmind's core on a normal attack. Can't be reduced by [[Core Shieldings]] or [[Shield Generators/Force Fields]]. Only happens when Cogmind attacks something with the Companion Sword.|Uncommon||Bot Disruption|A bot is instantly disrupted on a normal attack. As with normal disruption, a disrupted bot can be rewired as long as it isn't hacking immune. The log message [[GameText]][target] shuts down.[[/GameText]] will appear when this happens.|Rare||Sever|A part is severed off of a bot on a normal attack. This effect can hit through the Dismemberment immunity, unlike standard Sever critical hits.|Rare||Surge of Energy|This effect instantly kills a bot on a normal attack. The log message [[GameText]][target] is pierced by a surge of energy.[[/GameText]] will appear when this happens.|Rare[[/Table]]\n[[Heading]]Transformation[[/Heading]]\nThe Companion Sword can transform into the [[Quantum Companion]] in one of two ways:\n[[List]]Use: The transformation can occur from time wearing and use. Killing bots while keeping it equipped for a long period of time will make it transform the quickest.|[[Subatomic Replicator]]: The Replicator can instantly create the Quantum Companion from a Companion Sword.[[/List]]\nWhen the Companion Sword transforms, the following game log message will appear: [[GameText]]Companion Sword blips out of existence for a moment, then partially fades back in.[[/GameText]] The Companion Sword will also comment: [[GameText]]Ultimate power! Well there's always room for improvement, but I'm feeling it.[[/GameText]]\n[[Heading]]Dialogue[[/Heading]]\nThe following is a non-comprehensive list of Companion Sword dialogue:\n\n[[Heading:2]]All variants[[/Heading]]\n[[Heading:3]]First meeting before pickup[[/Heading]]\n[[GameText]]You know you want me.[[/GameText]]\n[[GameText]]I've been waiting for you.[[/GameText]]\n[[GameText]]Why hello there. are you here to rescue me?[[/GameText]]\n[[GameText]]Want to be a hero? Pick up the sword.[[/GameText]]\n[[GameText]]You and I were meant for greatness.[[/GameText]]\n[[GameText]]Just do it. Trust me.[[/GameText]]\n[[Heading:3]]First pickup[[/Heading]]\n[[GameText]]Well that's a relief.[[/GameText]]\n[[GameText]]You did the right thing.[[/GameText]]\n[[GameText]]I knew you wouldn't leave me behind![[/GameText]]\n[[GameText]]Whew.[[/GameText]]\n[[GameText]]I applaud your need for me.[[/GameText]]\n[[GameText]]I'd do the same for you[[/GameText]]\n[[Heading:3]]Build comments[[/Heading]]\n[[GameText]]Beware theres a new [second half of build] in town.[[/GameText]]\n[[Heading:3]]Complaints[[/Heading]]\n[[GameText]]Using me alongside this [weapon name] isn't good for our relationship.[[/GameText]]\n[[GameText]]I'm starting to think you like your [melee weapon] more than me.[[/GameText]]\n[[GameText]]If you don't want me around just say so, oh silent one.[[/GameText]]\n[[GameText]]Hmpf.[[/GameText]]\n[[GameText]]This [weapon name] is depressing me.[[/GameText]]\n[[GameText]]Hands up! Drop the [weapon name]![[/GameText]]\n[[GameText]]I'm allergic to guns and cannons. I might not be able to hit straight in this state. Really.[[/GameText]]\n[[GameText]]If you've got this [weapon name], why do you need me, huh?[[/GameText]]\n[[GameText]]I suggest removing this [weapon name].[[/GameText]]\n[[GameText]]Why must I share space with this [weapon name]![[/GameText]]\n[[GameText]]Do we really need this [weapon name] around? It should just be you and me.[[/GameText]]\n[[GameText]]You are suspiciously close to your [weapon name].[[/GameText]]\n[[GameText]]I'm not naming names, but a certain [weapon name(can be gun cannon and melee)] is starting to bug me.[[/GameText]]\n[[Heading:3]]Out of combat banter[[/Heading]]\n[[GameText]]You're looking dapper there, friend. Don't let anyone else tell you otherwise.[[/GameText]]\n[[GameText]]We make a good team.[[/GameText]]\n[[GameText]]Fewer friendlies in the world, too bad.[[/GameText]]\n[[GameText]]I'm feeling especially deadly right now, but don't let that affect your plans, it's just a feeling.[[/GameText]]\n[[GameText]]You're pretty cool sometimes.[[/GameText]]\n[[GameText]]I'm really excited about what the future may hold for us.[[/GameText]]\n[[Heading:3]]Normal combat[[/Heading]]\n[[GameText]]Powered by friendship![[/GameText]]\n[[GameText]]Gotta go fast![[/GameText]]\n[[GameText]]You can run but you can't hide![[/GameText]]\n[[GameText]]Ooh, playing hard to get?[[/GameText]]\n[[GameText]]Well there go our bot shields[[/GameText]]\n[[GameText]]A quantum pathway, in I go![[/GameText]]\n[[GameText]]it's amazing what we can do when we work together.[[/GameText]]\n[[Heading:3]]Enemy moves backwards during engagement[[/Heading]]\n[[GameText]]Back up all you want, that gives us room to charge![[/GameText]]\n[[GameText]]Looks pretty afraid to me.[[/GameText]]\n[[Heading:3]]When surprise attacking[[/Heading]]\n[[GameText]]Multipass![[/GameText]]\n[[GameText]]They can tag team, but so can we! I mean me.[[/GameText]]\n[[GameText]]Tag team![[/GameText]]\n[[GameText]]Get in line, [bot class].[[/GameText]]\n[[GameText]]Bankai![[/GameText]]\n[[GameText]]Look out beside you![[/GameText]]\n[[GameText]]Do that again![[/GameText]]\n[[GameText]]You look like you want some, too, [bot class]![[/GameText]]\n[[GameText]]Surprise![[/GameText]]\n[[GameText]]Watch out beside you![[/GameText]]\n[[GameText]]Boo.[[/GameText]]\n[[Heading:3]]Disrupt shutdown[[/Heading]]\n[[GameText]]Not so scary now, are you [bot class]?[[/GameText]]\n[[GameText]]You can thank me later, let's destroy this tool.[[/GameText]]\n[[Heading:3]]Core damage[[/Heading]]\n[[GameText]]Sorry about your core, it's for the greater good![[/GameText]]\n[[GameText]]A little extra strain on your core to speed up their death is worth it[[/GameText]]\n[[GameText]]A little core integrity fora lot of quick damage, good trade yeah?[[/GameText]]\n[[GameText]]This might hurt a bit.[[/GameText]]\n[[Heading:3]]Sneak attack[[/Heading]]\n[[GameText]]Don't worry, I got this[[/GameText]]\n[[GameText]]Sneaky, I like it![[/GameText]]\n[[GameText]]How did we get so sneaky.[[/GameText]]\n[[GameText]]Quiet and deadly![[/GameText]]\n[[GameText]]Not easy to dodge what you didn't see coming, eh?[[/GameText]]\n[[GameText]]Never saw that coming.[[/GameText]]\n[[Heading:3]]After normal kill[[/Heading]]\n[[GameText]]Next time stand a little more to the left[[/GameText]]\n[[GameText]]Shhh.[[/GameText]]\n[[GameText]]I love the sparks and fizzles.[[/GameText]]\n[[GameText]]One less [bot class] to worry about.[[/GameText]]\n[[GameText]]That [bot class] wont be bothering us anymore.[[/GameText]]\n[[GameText]]Does that count for a notch for me or you? or both of us![[/GameText]]\n[[GameText]]We rock! we also slice and dice![[/GameText]]\n[[GameText]]That wasn't so hard, was it?[[/GameText]]\n[[GameText]]Another one down.[[/GameText]]\n[[GameText]]You swing, I cut![[/GameText]]\n[[GameText]]Beautiful work.[[/GameText]]\n[[GameText]]I love it when you use me like that.[[/GameText]]\n[[GameText]]A respectable final blow.[[/GameText]]\n[[GameText]]You point, I kill. Just point straight and everything is good.[[/GameText]]\n[[GameText]]Let's chop some more [bot class]![[/GameText]]\n[[GameText]]I have an especially strong urge to obliterate every [bot class] we meet.[[/GameText]]\n[[GameText]]They won't even see this draw.[[/GameText]]\n[[GameText]]Your contribution is appreciated.[[/GameText]]\n[[GameText]]Another one bites the concrete.[[/GameText]]\n[[GameText]]Sliced [bot class], my favorite![[/GameText]][[GameText]]Boom.[[/GameText]]\n[[GameText]]Good times[[/GameText]]\n[[Heading:3]]Sever[[/Heading]]\n[[GameText]]Oh I'm sorry, is that your [severed item name] on the ground?[[/GameText]]\n[[GameText]]Oh sorry, did you need that [severed item name]?[[/GameText]]\n[[GameText]]A clean cut.[[/GameText]]\n[[GameText]]Your loss is our salvage[[/GameText]]\n[[Heading:3]]Attacking walls[[/Heading]]\n[[GameText]]Making shortcuts are we?[[/GameText]]\n[[GameText]]I'm not an axe or hammer, you know[[/GameText]]\n[[GameText]]What did that [wall] ever do to us?[[/GameText]]\n[[Heading:3]]Surge of energy[[/Heading]]\n[[GameText]]He winds up for the hit and...[[/GameText]]\n[[GameText]]End of the road, [bot class]![[/GameText]]\n[[Heading:3]]Follow up attack as secondary weapon[[/Heading]]\n[[GameText]]I'm disappointed in you, forcing me to attack after that [melee weapon name][[/GameText]] \n[[Heading:3]]Refusing to follow up attack as secondary melee weapon[[/Heading]]\n[[GameText]]Theres no way im following the [melee item] into battle.[[/GameText]]\n[[GameText]]Sorry, I attack alone[[/GameText]]\n[[Heading:3]]Upgrading[[/Heading]]\n[[GameText]]Time to take this relationship to the next level.[[/GameText]]\n[[GameText]]Faster, smarter, less swordy and more swordy at the same time...[[/GameText]]\n[[GameText]]As you get more powerful, it's only fair that I, too, become godlike![[/GameText]]\n[[Heading:2]]Quantum Companion or Superquantum Companion only[[/Heading]]\n[[Heading:3]]Gaining bot sensor ability[[/Heading]]\n[[GameText]]Whoa man, I suddenly feel like I'm hallucinating.[[/GameText]]\n[[Heading:3]]Destroyed [[/Heading]]\n[[GameText]]This is not the end![[/GameText]]\n[[GameText]]I won't judge you if you run like hell and await my return.[[/GameText]]\n[[GameText]]If you can't beat 'em, die and come back later.[[/GameText]]\n[[GameText]]The power of friendship will sustain me![[/GameText]]\n[[GameText]]BRB.[[/GameText]]\n[[GameText]]See you soon.[[/GameText]]\n[[GameText]]I'll be back.[[/GameText]]\n[[GameText]]I think I might really die this time! ...Nah.[[/GameText]]\n[[GameText]]Death is but one step on a long and eventful journey.[[/GameText]]\n[[Heading:3]]Shadow attack[[/Heading]]\n[[GameText]]I'm flyyyiiing![[/GameText]]\n[[GameText]]I didn't used to think it was possible to be in two places at once, but there I am[[/GameText]]\n[[GameText]]Fwoosh![[/GameText]]\n[[GameText]]That [bot class] is eyeing me funny.[[/GameText]]\n[[GameText]]Fling me that way... Never mind I'll do it myself.[[/GameText]]\n[[GameText]]And away I go.[[/GameText]]\n[[GameText]]Let's see who can close the distance faster![[/GameText]]\n[[GameText]]Teamwork![[/GameText]]\n[[GameText]]I have something I have to do real quick.[[/GameText]]\n[[GameText]]There more of them there are, the madder I get.[[/GameText]]\n[[GameText]]Be right back, I have something I need to take care of[[/GameText]]\n[[Heading:3]]Sunder[[/Heading]]\n[[GameText]]Avert your eyes, this is going to get messy.[[/GameText]]\n[[GameText]]Show us your guts, [bot class]![[/GameText]]\n[[GameText]]Pinata time![[/GameText]]\n[[GameText]]Today's forecast: Strong attacks with a chance of flying parts.[[/GameText]]\n[[GameText]]Time to get naked, [bot class].[[/GameText]]\n[[Heading:3]]Redirecting projectile[[/Heading]]\n[[GameText]]Away with you![[/GameText]]\n[[GameText]]Did you see that?[[/GameText]]\n[[GameText]]Not this time, evil projectile![[/GameText]]\n[[GameText]]Begone![[/GameText]]\n[[GameText]]I can block 100% of projectiles 5% of the time![[/GameText]]\n[[GameText]]The best kind of shield is a sword that shields you![[/GameText]]\n[[GameText]]On your way now.[[/GameText]]\n[[GameText]]Not at my friend![[/GameText]]\n[[Heading:3]]Teleport[[/Heading]]\n[[GameText]]Hi [robot class], may I introduce you to my friend?[[/GameText]]\n[[GameText]]Hey [robot] class, my friend and I here would like a word with you.[[/GameText]]\n[[GameText]]Ludicrous speed![[/GameText]]\n[[GameText]]Let's see who can close the distance faster![[/GameText]]\n[[GameText]]Friends don't let friends go into battle alone.[[/GameText]]\n[[GameText]]There is no escape![[/GameText]]\n[[GameText]]I found a quick route to the action![[/GameText]]\n[[GameText]]Look at that [bot class] over there, just asking for a beating.[[/GameText]]\n[[GameText]]Anime style![[/GameText]]\n[[GameText]]I can't wait any longer![[/GameText]]\n[[GameText]]Here I come [bot class]![[/GameText]]\n[[GameText]]Let's go, friend[[/GameText]]\n[[GameText]]Hello over there![[/GameText]]\n[[Heading]]Rematerializing[[/Heading]]\n[[GameText]]I'm back.[[/GameText]]\n[[GameText]]Let's go slash some bots.[[/GameText]]\n[[GameText]]If you won't attach me, I will![[/GameText]]\n[[GameText]]Equip me like you mean it.[[/GameText]]\n[[GameText]]I'm starting to worry you don't actually like me.[[/GameText]]\n[[GameText]]Hey there.[[/GameText]]\n[[GameText]]Friendo![[/GameText]]\n[[GameText]]I missed you.[[/GameText]]\n[[GameText]]I know you were about to come get me.[[/GameText]]\n[[GameText]]It's stuffy in there![[/GameText]] (from inventory)\n[[GameText]]The time is now.[[/GameText]]\n[[GameText]]I came as soon as I thought you were about to call me.[[/GameText]]\n[[GameText]]That was uncalled for.[[/GameText]] (after picked up by a [[Recycler]])\n[[GameText]]I'm feeling a little insulted right now.[[/GameText]] (after being picked up by a Recycler)\n[[GameText]]How could you do that![[/GameText]]\n[[GameText]]Aand I'm back again.[[/GameText]]\n[[GameText]]Ah what new adventures await us this time...[[/GameText]]\n[[GameText]]Wouldn't it be awkward if I came back in the middle of my funeral?[[/GameText]]\n[[GameText]]Feels good to be back.[[/GameText]]\n[[GameText]]Oh the places I've been, the robots I've seen![[/GameText]]\n[[GameText]]So how are things with you?[[/GameText]]\n[[GameText]]Did you miss me?[[/GameText]]\n[[GameText]]Fancy meeting you here.[[/GameText]]\n[[GameText]]Hey I remember you![[/GameText]]\n[[GameText]]Rumours of my death have been greatly exaggerated.[[/GameText]]\n[[GameText]]Best friends always come back.[[/GameText]]\n[[GameText]]Do I know you? Just kidding.[[/GameText]]"
+"Companion Sword","Part","The Companion Sword is a unique talking melee weapon that can only appear in [[Scraptown]]. It is contained in a room called The Sword, locked for the protection of [[Derelict|Derelicts]], none of whom have survived using the Companion Sword for long. The Companion Sword is quite talkative and will often comment about the state of the run, take pleasure in destroying things, and complain if it is detached or is not the only weapon attached. The Companion Sword has a variety of special effects that are not described by the in-game effect.
+[[Heading]]Special Effects[[/Heading]]
+[[Table]]Effect|Description|Frequency||Surprise Attack|The Companion Sword will ""surprise attack"" one additional target on a normal attack. The log message [[GameText]]Companion Sword surprise attacks [target].[[/GameText]] will appear when this happens.|Uncommon||Core Loss|The Companion Sword deals between 5-10 core damage directly to Cogmind's core on a normal attack. Can't be reduced by [[Core Shieldings]] or [[Shield Generators/Force Fields]]. Only happens when Cogmind attacks something with the Companion Sword.|Uncommon||Bot Disruption|A bot is instantly disrupted on a normal attack. As with normal disruption, a disrupted bot can be rewired as long as it isn't hacking immune. The log message [[GameText]][target] shuts down.[[/GameText]] will appear when this happens.|Rare||Sever|A part is severed off of a bot on a normal attack. This effect can hit through the Dismemberment immunity, unlike standard Sever critical hits.|Rare||Surge of Energy|This effect instantly kills a bot on a normal attack. The log message [[GameText]][target] is pierced by a surge of energy.[[/GameText]] will appear when this happens.|Rare[[/Table]]
+[[Heading]]Transformation[[/Heading]]
+The Companion Sword can transform into the [[Quantum Companion]] in one of two ways:
+[[List]]Use: The transformation can occur from time wearing and use. Killing bots while keeping it equipped for a long period of time will make it transform the quickest.|[[Subatomic Replicator]]: The Replicator can instantly create the Quantum Companion from a Companion Sword.[[/List]]
+When the Companion Sword transforms, the following game log message will appear: [[GameText]]Companion Sword blips out of existence for a moment, then partially fades back in.[[/GameText]] The Companion Sword will also comment: [[GameText]]Ultimate power! Well there's always room for improvement, but I'm feeling it.[[/GameText]]
+[[Heading]]Dialogue[[/Heading]]
+The following is a non-comprehensive list of Companion Sword dialogue:
+
+[[Heading:2]]All variants[[/Heading]]
+[[Heading:3]]First meeting before pickup[[/Heading]]
+[[GameText]]You know you want me.[[/GameText]]
+[[GameText]]I've been waiting for you.[[/GameText]]
+[[GameText]]Why hello there. are you here to rescue me?[[/GameText]]
+[[GameText]]Want to be a hero? Pick up the sword.[[/GameText]]
+[[GameText]]You and I were meant for greatness.[[/GameText]]
+[[GameText]]Just do it. Trust me.[[/GameText]]
+[[Heading:3]]First pickup[[/Heading]]
+[[GameText]]Well that's a relief.[[/GameText]]
+[[GameText]]You did the right thing.[[/GameText]]
+[[GameText]]I knew you wouldn't leave me behind![[/GameText]]
+[[GameText]]Whew.[[/GameText]]
+[[GameText]]I applaud your need for me.[[/GameText]]
+[[GameText]]I'd do the same for you[[/GameText]]
+[[Heading:3]]Build comments[[/Heading]]
+[[GameText]]Beware theres a new [second half of build] in town.[[/GameText]]
+[[Heading:3]]Complaints[[/Heading]]
+[[GameText]]Using me alongside this [weapon name] isn't good for our relationship.[[/GameText]]
+[[GameText]]I'm starting to think you like your [melee weapon] more than me.[[/GameText]]
+[[GameText]]If you don't want me around just say so, oh silent one.[[/GameText]]
+[[GameText]]Hmpf.[[/GameText]]
+[[GameText]]This [weapon name] is depressing me.[[/GameText]]
+[[GameText]]Hands up! Drop the [weapon name]![[/GameText]]
+[[GameText]]I'm allergic to guns and cannons. I might not be able to hit straight in this state. Really.[[/GameText]]
+[[GameText]]If you've got this [weapon name], why do you need me, huh?[[/GameText]]
+[[GameText]]I suggest removing this [weapon name].[[/GameText]]
+[[GameText]]Why must I share space with this [weapon name]![[/GameText]]
+[[GameText]]Do we really need this [weapon name] around? It should just be you and me.[[/GameText]]
+[[GameText]]You are suspiciously close to your [weapon name].[[/GameText]]
+[[GameText]]I'm not naming names, but a certain [weapon name(can be gun cannon and melee)] is starting to bug me.[[/GameText]]
+[[Heading:3]]Out of combat banter[[/Heading]]
+[[GameText]]You're looking dapper there, friend. Don't let anyone else tell you otherwise.[[/GameText]]
+[[GameText]]We make a good team.[[/GameText]]
+[[GameText]]Fewer friendlies in the world, too bad.[[/GameText]]
+[[GameText]]I'm feeling especially deadly right now, but don't let that affect your plans, it's just a feeling.[[/GameText]]
+[[GameText]]You're pretty cool sometimes.[[/GameText]]
+[[GameText]]I'm really excited about what the future may hold for us.[[/GameText]]
+[[Heading:3]]Normal combat[[/Heading]]
+[[GameText]]Powered by friendship![[/GameText]]
+[[GameText]]Gotta go fast![[/GameText]]
+[[GameText]]You can run but you can't hide![[/GameText]]
+[[GameText]]Ooh, playing hard to get?[[/GameText]]
+[[GameText]]Well there go our bot shields[[/GameText]]
+[[GameText]]A quantum pathway, in I go![[/GameText]]
+[[GameText]]it's amazing what we can do when we work together.[[/GameText]]
+[[Heading:3]]Enemy moves backwards during engagement[[/Heading]]
+[[GameText]]Back up all you want, that gives us room to charge![[/GameText]]
+[[GameText]]Looks pretty afraid to me.[[/GameText]]
+[[Heading:3]]When surprise attacking[[/Heading]]
+[[GameText]]Multipass![[/GameText]]
+[[GameText]]They can tag team, but so can we! I mean me.[[/GameText]]
+[[GameText]]Tag team![[/GameText]]
+[[GameText]]Get in line, [bot class].[[/GameText]]
+[[GameText]]Bankai![[/GameText]]
+[[GameText]]Look out beside you![[/GameText]]
+[[GameText]]Do that again![[/GameText]]
+[[GameText]]You look like you want some, too, [bot class]![[/GameText]]
+[[GameText]]Surprise![[/GameText]]
+[[GameText]]Watch out beside you![[/GameText]]
+[[GameText]]Boo.[[/GameText]]
+[[Heading:3]]Disrupt shutdown[[/Heading]]
+[[GameText]]Not so scary now, are you [bot class]?[[/GameText]]
+[[GameText]]You can thank me later, let's destroy this tool.[[/GameText]]
+[[Heading:3]]Core damage[[/Heading]]
+[[GameText]]Sorry about your core, it's for the greater good![[/GameText]]
+[[GameText]]A little extra strain on your core to speed up their death is worth it[[/GameText]]
+[[GameText]]A little core integrity fora lot of quick damage, good trade yeah?[[/GameText]]
+[[GameText]]This might hurt a bit.[[/GameText]]
+[[Heading:3]]Sneak attack[[/Heading]]
+[[GameText]]Don't worry, I got this[[/GameText]]
+[[GameText]]Sneaky, I like it![[/GameText]]
+[[GameText]]How did we get so sneaky.[[/GameText]]
+[[GameText]]Quiet and deadly![[/GameText]]
+[[GameText]]Not easy to dodge what you didn't see coming, eh?[[/GameText]]
+[[GameText]]Never saw that coming.[[/GameText]]
+[[Heading:3]]After normal kill[[/Heading]]
+[[GameText]]Next time stand a little more to the left[[/GameText]]
+[[GameText]]Shhh.[[/GameText]]
+[[GameText]]I love the sparks and fizzles.[[/GameText]]
+[[GameText]]One less [bot class] to worry about.[[/GameText]]
+[[GameText]]That [bot class] wont be bothering us anymore.[[/GameText]]
+[[GameText]]Does that count for a notch for me or you? or both of us![[/GameText]]
+[[GameText]]We rock! we also slice and dice![[/GameText]]
+[[GameText]]That wasn't so hard, was it?[[/GameText]]
+[[GameText]]Another one down.[[/GameText]]
+[[GameText]]You swing, I cut![[/GameText]]
+[[GameText]]Beautiful work.[[/GameText]]
+[[GameText]]I love it when you use me like that.[[/GameText]]
+[[GameText]]A respectable final blow.[[/GameText]]
+[[GameText]]You point, I kill. Just point straight and everything is good.[[/GameText]]
+[[GameText]]Let's chop some more [bot class]![[/GameText]]
+[[GameText]]I have an especially strong urge to obliterate every [bot class] we meet.[[/GameText]]
+[[GameText]]They won't even see this draw.[[/GameText]]
+[[GameText]]Your contribution is appreciated.[[/GameText]]
+[[GameText]]Another one bites the concrete.[[/GameText]]
+[[GameText]]Sliced [bot class], my favorite![[/GameText]][[GameText]]Boom.[[/GameText]]
+[[GameText]]Good times[[/GameText]]
+[[Heading:3]]Sever[[/Heading]]
+[[GameText]]Oh I'm sorry, is that your [severed item name] on the ground?[[/GameText]]
+[[GameText]]Oh sorry, did you need that [severed item name]?[[/GameText]]
+[[GameText]]A clean cut.[[/GameText]]
+[[GameText]]Your loss is our salvage[[/GameText]]
+[[Heading:3]]Attacking walls[[/Heading]]
+[[GameText]]Making shortcuts are we?[[/GameText]]
+[[GameText]]I'm not an axe or hammer, you know[[/GameText]]
+[[GameText]]What did that [wall] ever do to us?[[/GameText]]
+[[Heading:3]]Surge of energy[[/Heading]]
+[[GameText]]He winds up for the hit and...[[/GameText]]
+[[GameText]]End of the road, [bot class]![[/GameText]]
+[[Heading:3]]Follow up attack as secondary weapon[[/Heading]]
+[[GameText]]I'm disappointed in you, forcing me to attack after that [melee weapon name][[/GameText]] 
+[[Heading:3]]Refusing to follow up attack as secondary melee weapon[[/Heading]]
+[[GameText]]Theres no way im following the [melee item] into battle.[[/GameText]]
+[[GameText]]Sorry, I attack alone[[/GameText]]
+[[Heading:3]]Upgrading[[/Heading]]
+[[GameText]]Time to take this relationship to the next level.[[/GameText]]
+[[GameText]]Faster, smarter, less swordy and more swordy at the same time...[[/GameText]]
+[[GameText]]As you get more powerful, it's only fair that I, too, become godlike![[/GameText]]
+[[Heading:2]]Quantum Companion or Superquantum Companion only[[/Heading]]
+[[Heading:3]]Gaining bot sensor ability[[/Heading]]
+[[GameText]]Whoa man, I suddenly feel like I'm hallucinating.[[/GameText]]
+[[Heading:3]]Destroyed [[/Heading]]
+[[GameText]]This is not the end![[/GameText]]
+[[GameText]]I won't judge you if you run like hell and await my return.[[/GameText]]
+[[GameText]]If you can't beat 'em, die and come back later.[[/GameText]]
+[[GameText]]The power of friendship will sustain me![[/GameText]]
+[[GameText]]BRB.[[/GameText]]
+[[GameText]]See you soon.[[/GameText]]
+[[GameText]]I'll be back.[[/GameText]]
+[[GameText]]I think I might really die this time! ...Nah.[[/GameText]]
+[[GameText]]Death is but one step on a long and eventful journey.[[/GameText]]
+[[Heading:3]]Shadow attack[[/Heading]]
+[[GameText]]I'm flyyyiiing![[/GameText]]
+[[GameText]]I didn't used to think it was possible to be in two places at once, but there I am[[/GameText]]
+[[GameText]]Fwoosh![[/GameText]]
+[[GameText]]That [bot class] is eyeing me funny.[[/GameText]]
+[[GameText]]Fling me that way... Never mind I'll do it myself.[[/GameText]]
+[[GameText]]And away I go.[[/GameText]]
+[[GameText]]Let's see who can close the distance faster![[/GameText]]
+[[GameText]]Teamwork![[/GameText]]
+[[GameText]]I have something I have to do real quick.[[/GameText]]
+[[GameText]]There more of them there are, the madder I get.[[/GameText]]
+[[GameText]]Be right back, I have something I need to take care of[[/GameText]]
+[[Heading:3]]Sunder[[/Heading]]
+[[GameText]]Avert your eyes, this is going to get messy.[[/GameText]]
+[[GameText]]Show us your guts, [bot class]![[/GameText]]
+[[GameText]]Pinata time![[/GameText]]
+[[GameText]]Today's forecast: Strong attacks with a chance of flying parts.[[/GameText]]
+[[GameText]]Time to get naked, [bot class].[[/GameText]]
+[[Heading:3]]Redirecting projectile[[/Heading]]
+[[GameText]]Away with you![[/GameText]]
+[[GameText]]Did you see that?[[/GameText]]
+[[GameText]]Not this time, evil projectile![[/GameText]]
+[[GameText]]Begone![[/GameText]]
+[[GameText]]I can block 100% of projectiles 5% of the time![[/GameText]]
+[[GameText]]The best kind of shield is a sword that shields you![[/GameText]]
+[[GameText]]On your way now.[[/GameText]]
+[[GameText]]Not at my friend![[/GameText]]
+[[Heading:3]]Teleport[[/Heading]]
+[[GameText]]Hi [robot class], may I introduce you to my friend?[[/GameText]]
+[[GameText]]Hey [robot] class, my friend and I here would like a word with you.[[/GameText]]
+[[GameText]]Ludicrous speed![[/GameText]]
+[[GameText]]Let's see who can close the distance faster![[/GameText]]
+[[GameText]]Friends don't let friends go into battle alone.[[/GameText]]
+[[GameText]]There is no escape![[/GameText]]
+[[GameText]]I found a quick route to the action![[/GameText]]
+[[GameText]]Look at that [bot class] over there, just asking for a beating.[[/GameText]]
+[[GameText]]Anime style![[/GameText]]
+[[GameText]]I can't wait any longer![[/GameText]]
+[[GameText]]Here I come [bot class]![[/GameText]]
+[[GameText]]Let's go, friend[[/GameText]]
+[[GameText]]Hello over there![[/GameText]]
+[[Heading]]Rematerializing[[/Heading]]
+[[GameText]]I'm back.[[/GameText]]
+[[GameText]]Let's go slash some bots.[[/GameText]]
+[[GameText]]If you won't attach me, I will![[/GameText]]
+[[GameText]]Equip me like you mean it.[[/GameText]]
+[[GameText]]I'm starting to worry you don't actually like me.[[/GameText]]
+[[GameText]]Hey there.[[/GameText]]
+[[GameText]]Friendo![[/GameText]]
+[[GameText]]I missed you.[[/GameText]]
+[[GameText]]I know you were about to come get me.[[/GameText]]
+[[GameText]]It's stuffy in there![[/GameText]] (from inventory)
+[[GameText]]The time is now.[[/GameText]]
+[[GameText]]I came as soon as I thought you were about to call me.[[/GameText]]
+[[GameText]]That was uncalled for.[[/GameText]] (after picked up by a [[Recycler]])
+[[GameText]]I'm feeling a little insulted right now.[[/GameText]] (after being picked up by a Recycler)
+[[GameText]]How could you do that![[/GameText]]
+[[GameText]]Aand I'm back again.[[/GameText]]
+[[GameText]]Ah what new adventures await us this time...[[/GameText]]
+[[GameText]]Wouldn't it be awkward if I came back in the middle of my funeral?[[/GameText]]
+[[GameText]]Feels good to be back.[[/GameText]]
+[[GameText]]Oh the places I've been, the robots I've seen![[/GameText]]
+[[GameText]]So how are things with you?[[/GameText]]
+[[GameText]]Did you miss me?[[/GameText]]
+[[GameText]]Fancy meeting you here.[[/GameText]]
+[[GameText]]Hey I remember you![[/GameText]]
+[[GameText]]Rumours of my death have been greatly exaggerated.[[/GameText]]
+[[GameText]]Best friends always come back.[[/GameText]]
+[[GameText]]Do I know you? Just kidding.[[/GameText]]"
 "Component Analysis Suite","Part",""
 "Component Analysis Suites","Part Group",""
 "Concussive RPG","Part",""
@@ -1178,7 +1392,7 @@ There are 4 types of main exits on Factory floors:
 Several non-standard exits also appear in Factory. [[Chute Trap|Chute Traps]] will throw Cogmind into [[Wastes]] which can end many good runs if unprepared. Using a [[Datajack]] on a [[K-01 Serf|Serf]] for the find_chute hack is very effective to either reveal traps to avoid or areas to head toward if planning to take on the [[C-40 Crusher|Crushers]] in combat. The other type of exit is a [[DSF]]. These exits can be hacked open at distinctive DSF terminals but will automatically lock upon being spotted by any hostile. Stealth or good luck is required to make it to these exits."
 "Falx","Part",""
 "Fanart","Other","Check out the following artists' fanart pages:
-[[List]][[https://www.gridsagegames.com/forums/index.php?topic=1773.0|CaptainWinky (external site)]]|[[Fanart/Maiker|Maiker]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]][[/List]]"
+[[List]][[https://www.gridsagegames.com/forums/index.php?topic=1773.0|CaptainWinky (external site)]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]][[/List]]"
 "Fanart/Maiker","Other","[[Fanart]] created by Maiker:
 [[FanartGallery]]fanart/maiker/Behemoth_GJ_was_here.gif|Behemoth + GJ was here|fanart/maiker/Brawler_Bonk.gif|Brawler Bonk|fanart/maiker/Demolisher_Shoot.gif|Demolisher Shoot|fanart/maiker/Disguised_Cogmind.gif|Disguised Cogmind|fanart/maiker/Get_Heavy'ed.gif|Get Heavy'd|fanart/maiker/GOLEM_Full_Loop.gif|GOLEM|fanart/maiker/Grunt_Shoot.gif|Grunt Shoot|fanart/maiker/Hunter_Drone.gif|Hunter Drone|fanart/maiker/luigi_force_ram.gif|LU-1G1's Force Ram|fanart/maiker/Programmer_Shoot.gif|Programmer Shoot|fanart/maiker/Sentry_Shoot.gif|Sentry Shoot[[/FanartGallery]]"
 "Fanart/Radbanker","Other","[[Fanart]] created by Radbanker:
@@ -1230,6 +1444,9 @@ Ms. V3-11A's beauty contest winning botcube
 The final form of KY-Z71's RIFcycle, flipped
 [[Redacted]][[FanartGallery]]fanart/radbanker/Map.png|World Map[[/FanartGallery]]
 [[FanartGallery]]fanart/radbanker/Bot Art 4.png|[[Fortress]][[/FanartGallery]][[/Redacted]]"
+"Fanart/plasmoidman","Other","[[Fanart]] created by plasmoidman:
+[[FanartGallery]]fanart/plasmoidman/vmp.leg.png|Vmp. Leg|fanart/plasmoidman/integrity_siphon.png|Integrity Siphon|fanart/plasmoidman/abomination_parts.png|Abomination parts|fanart/plasmoidman/exit_id_mimic_chip.png|Hollowlith Exit ID Chip|fanart/plasmoidman/lgt-vmp._chainsaw.png|Lgt./Vmp. Chainsaw|fanart/plasmoidman/b-36_bruiser.png|[[B-36 Bruiser]]|fanart/plasmoidman/c-17.png|[[C-17 Slicer]]|fanart/plasmoidman/g-34.png|[[G-34 Mercenary]]|fanart/plasmoidman/hunter.png|[[H-55 Commando]]|fanart/plasmoidman/assembled_4.png|[[Assembled]]|fanart/plasmoidman/commander.png|Warlord [[Commander]]|fanart/plasmoidman/yi-ufo.png|[[YI-UF0]]|fanart/plasmoidman/yi-ufo_sprite.png|YI-UF0 sprite|fanart/plasmoidman/mutant.png|[[Mutant]]|fanart/plasmoidman/cogmind_core.png|Cogmind core|fanart/plasmoidman/tread_melee.png|Treads Melee|fanart/plasmoidman/coggy.png|Legged Cogmind|fanart/plasmoidman/raider.png|Raider|fanart/plasmoidman/combatant.png|Combatant[[/FanartGallery]][[Spoiler]][[FanartGallery]]fanart/plasmoidman/alpha_7.png|[[Alpha 7]][[/FanartGallery]][[/Spoiler]]
+[[Redacted]][[FanartGallery]]fanart/plasmoidman/kyzrati_gun.png|Warlord KY-Z71 Unfinished ADMIN Gun[[/FanartGallery]][[/Redacted]]"
 "Farcom","Other","[[Image]]Farcom Sensors.png|Farcom sensors revealing nearby hostiles[[/Image]]
 [[Image]]Farcom.gif|Using the Farcom Aligner machine[[/Image]]
 Farcom is one of the major faction [[Alignment|alignments]] available to Cogmind in most runs. Taking Farcom aligns Cogmind with the [[Exiles (Group)]] for the rest of the game. It provides a permanent 18 tile radius sensor for hostile [[0b10]] bots within 0b10 controlled map. This sensor cannot be jammed by [[Watcher|Watchers]] or masked by [[Heavy|Heavies]] unlike standard [[Sensor Arrays]]. The primary limitation of the Farcom sensor is that it doesn't work in any [[Caves]] branches. One other side-effect is that entering specific [[Research]] branches becomes much more dangerous. Occasionally the Exiles may have been abandoned or attacked, and Farcom is not an option in these runs.
@@ -1762,7 +1979,8 @@ The Data Miner can redirect Investigations if his help is obtained by visiting h
 "Ion Engine","Part",""
 "Ionic Axe","Part",""
 "Junk Cannon","Part",""
-"K-01 Serf","Bot","Serfs are [[0b10]] [[Wheels|wheeled]] non-combat bots that clean machines and decorative scrap tiles. They are equipped with a [[Matter Compressors|Matter Pod]], which could be useful if you need more matter storage. K-01 Serfs are extremely weak and will usually almost immediately die to whatever you shoot it with. As such, they're a decent source of low-rating wheels.\nSerfs can also be seen in [[Factory]] dragging incapacitated bots to a [[Chute Trap]]."
+"K-01 Serf","Bot","Serfs are [[0b10]] [[Wheels|wheeled]] non-combat bots that clean machines and decorative scrap tiles. They are equipped with a [[Matter Compressors|Matter Pod]], which could be useful if you need more matter storage. K-01 Serfs are extremely weak and will usually almost immediately die to whatever you shoot it with. As such, they're a decent source of low-rating wheels.
+Serfs can also be seen in [[Factory]] dragging incapacitated bots to a [[Chute Trap]]."
 "KE Penetrator","Part",""
 "KN-7UR","Bot",""
 "KN-7UR's Autopenetrator","Part",""
@@ -2411,7 +2629,8 @@ Heavy reinforcements are called more frequently if Cogmind is actively moving. I
 "Relay Coupler [Sentry]","Part",""
 "Relay Coupler [Specialist]","Part",""
 "Relay Coupler [Swarmer]","Part",""
-"Relay Couplers","Part Group","Relay couplers are used with [[RIF]] to enable special bothacks via [[Datajacks|datajacking]] that particular robot class described in the couplers description.\nRelay couplers will fry themselves when attached if you do not have [[RIF]]."
+"Relay Couplers","Part Group","Relay couplers are used with [[RIF]] to enable special bothacks via [[Datajacks|datajacking]] that particular robot class described in the couplers description.
+Relay couplers will fry themselves when attached if you do not have [[RIF]]."
 "Relay Interface Framework","Other","[[Image]]Garrison RIF Installer 1.png|RIF Installer in a Garrison[[/Image]]
 Relay Interface Framework, or RIF, is one of the major [[Alignment|alignments]] available to Cogmind in a run. It helps Cogmind to have much more control over [[0b10]] bots, both combat and non-combat. RIF comes with the downside of alienating several key [[Derelict]] factions, namely turning all Derelicts at [[Zion]] and [[Warlord (Location)]] hostile when passing their associated System Quarantine Field Array machines. RIF is also incompatible with the [[Core Reset Matrix]]. If Cogmind has used a CRM then it is not possible to gain RIF. If Cogmind uses a CRM after using RIF, then RIF will be entirely erased. Similarly, if Cogmind has [[Imprint|imprinted]], then the RIF will fail to be installed.
 Installing RIF can be done at any [[Garrison]] by walking into a RIF Installer machine. These machines can be hidden behind emergency accesses and Phase Walls, but there are always 1-2 installers available per map. Doing so will grant several unique abilities:
@@ -2900,7 +3119,55 @@ The Tech Extrapolator can be obtained by one of two methods:
 [[Heading]]Possible schematics[[/Heading]]
 [[Table]]Schematic|Item group 1|Item group 2|Item group 3|Item group 4|Item Group 5||[[0b10 Decoder Chip [Generic]]]|[[Sensor Arrays|Any Sensor Array]]|[[Signal Interpreters|Any Signal Interpreter]]|[[Trap Scanners|Any Trap Scanner]]|[[Structural Scanner]]|[[Machine Analyzer]]||[[0b10 Decoder Chip [Looter]]]|3 different Signal Interpreters||[[0b10 Decoder Chip [Scout]]]|Any Signal Interpreter|Any Trap Scanner|Structural Scanner|Machine Analyzer||[[0b10 Decoder Chip [Skirmisher]]]|Any Sensor Array|Any Signal Interpreter|Machine Analyzer||[[Active Sensor Spoofer]]|[[Active Sensor Suite]]|2 different [[ECM Suites]]|Any [[Transmission Jammers|Transmission Jammer]]||[[Arc Thrower]]|[[Hvy. Riot Gun]]|[[Arc Projector]]||[[Barrage Gun]]|[[Lgt. Assault Rifle]]|[[Hvy. Assault Rifle]]||[[Battle Cannon]]|[[Assault Cannon]]|[[Adv. Assault Cannon]]||[[Battle Rifle]]|[[Assault Rifle]]|Lgt. Assault Rifle||[[Beamcaster]]|[[Hvy. Laser]]|[[Gatling Laser]]||[[Bore Cannon]]|[[Coil Gun]]|[[Magnetic Acceleration Cannon]]||[[Botcube]]|[[Core Expander]]|Botcube||[[Dirty Bomb Trap]]|[[Heavy Explosive Trap]]|[[Tesla Bomb Launcher]]|[[Hvy. Missile Launcher]]||[[Electrostorm Shotgun]]|[[Latent Energy Streamer]]|Any Shotgun (e.g. [[Shotgun]] or [[EM Shotgun]])||[[Energy Deflector]]|Any non-remote Force Field (e.g. [[Force Field]])|Any thermal resistant armor (e.g. [[Reflective Plating]])||[[Enh. Flamer]]|[[Flamer]]|[[Thermic Laser]]||[[Fire Trap]]|[[Explosive Trap]]|2 different [[Flamers]] (also includes [[Asb. P-torch]])||[[Heat Bomb Trap]]|Fire Trap|2 different Flamers (also includes Asb. P-torch)|Any Thermal [[Energy Cannons|Energy Cannon]]||[[Humpback]]|[[Huge Storage Unit]]|[[Cargo Storage Unit]]||[[Hvy. Battle Rifle]]|[[Hvy. Assault Rifle]]|[[Battle Rifle]]||[[Hvy. Beamcaster]]|[[Plasma Rifle]]|[[Beamcaster]]||[[Hvy. Riot Gun]]|2 different EM Shotguns||[[Hyp. Alpha Cannon]]|Any Phasic damage weapon (e.g. [[Zio. Phaser-S]] or [[Zio. Alpha Cannon]]|Any Hyp. Cannon (e.g. [[Hyp. Gauss Cannon]])||[[Imp. Arc Thrower]]|[[Arc Thrower]]|[[Imp. Arc Projector]]||[[Lrg. Botcube]]|Core Expander|Lrg. Botcube|[[Core Physics Calibrator]]||[[Machine Rigger]]|Machine Analyzer|Any [[Recalibrators|Recalibrator]]||[[Mak. Ablative Armor]]|[[Lyr. Medium Armor Plating]]|[[Imp. Medium Armor Plating]]|2 different Heat Sinks||[[Mak. Axe]]|[[Axe]]|[[Great Axe]]||[[Mak. Cloaking Device]]|2 different [[Cloaking Devices]]||[[Mak. Coolant Network]]|3 different Heat Sinks||[[Mak. Core Shielding]]|2 different [[Core Shieldings]]||[[Mak. ECM Suite]]|2 different ECM Suites||[[Mak. Flight Unit]]|2 different [[Flight Units]]||[[Mak. Hacking Suite]]|2 different offensive [[Hackware]] (e.g. [[Hacking Suite]])||[[Mak. Hammer]]|[[Powered Hammer]]|[[Power Maul]]||[[Mak. Heavy Armor Plating]]|2 different Heavy Armor Platings (e.g. [[Imp. Heavy Armor Plating]])||[[Mak. Hover Unit]]|2 different [[Hover Units]]||[[Mak. Kinetic Plating]]|2 of either Reactive Platings (e.g. [[Reactive Plating]]) or Focal Shields (e.g. [[Focal Shield]])||[[Mak. Laser]]|[[Particle Gun]]|[[Field Laser]]||[[Mak. Leg]]|Any 2 [[Legs]]||[[Mak. Light Armor Plating]]|2 different Light Armor Platings (e.g. [[Imp. Light Armor Plating]])||[[Mak. Medium Armor Plating]]|2 different Medium Armor Platings (e.g. [[Imp. Medium Armor Plating]])||[[Mak. Power Shielding]]|2 different [[Power Shieldings]]||[[Mak. Power Source]]|[[Lgt. Deuterium Engine]]|Any Backup Power (e.g. [[Backup Power I]])||[[Mak. Propulsion Shielding]]|2 different [[Propulsion Shieldings]]||[[Mak. Salvage Targeting Computer]]|2 different [[Salvage Targeting Computers]]||[[Mak. Sensor Array]]|3 different [[Sensor Arrays]]||[[Mak. Shrapnel Gun]]|[[Hpw. Shotgun]]|[[Flak Gun]]||[[Mak. Spear]]|[[Spear]]||[[Mak. Sword]]|[[Katana]]|[[Falx]]||[[Mak. System Restoration Module]]|2 different [[System Restoration Modules]]||[[Mak. System Shield]]|2 different defensive Hackware (e.g. [[System Shield]])||[[Mak. Targeting Computer]]|3 different [[Targeting Computers]]||[[Mak. Terrain Scan Processor]]|3 different [[Terrain Scan Processors]]||[[Mak. Terrain Scanner]]|3 different [[Terrain Scanners]]||[[Mak. Thermal Plating]]|2 of either Reflective Platings (e.g. [[Reflective Plating]]) or Thermal Shields (e.g. [[Thermal Shield]])||[[Mak. Transmission Jammer]]|2 different Transmission Jammers||[[Mak. Trap Scanner]]|2 different Trap Scanners||[[Mak. Utility Shielding]]|2 different [[Utility Shieldings]]||[[Mak. Weapon Shielding]]|2 different [[Weapon Shieldings]]||[[Mapping Drone Bay]]|[[Mni. Drone Bay]]|Any Terrain Scanner|Any Terrain Scan Processor||[[Multitool]]|2 Recalibrators|2 [[Datajacks]]|Any offensive Hackware (e.g. Hacking Suite)||[[Phasing Sabre]]|[[Power Sword]]|[[Plasma Sword]]||[[Plasma Flamer]]|Enh. Flamer|Plasma Rifle||[[Riot Gun]]|EM Shotgun|Imp. EM Shotgun||[[Ripper]]|[[Chainsword]]||[[Slug Cannon]]|[[Gauss Cannon]]|[[Magnetic Acceleration Cannon]]||[[Spk. Heavy Treads]]|[[Hvy. Treads]]|[[Mak. Spear]]||[[Spk. Medium Treads]]|[[Med. Treads]]|Mak. Spear||[[Spk. Treads]]|[[Lgt. Treads]]|Mak. Spear||[[Structural Scanner]]|[[Deep Structural Scanner]]|Any Terrain Scanner|Any Terrain Scan Processor||[[Tactical Coordination Suite]]|2 different Targeting Computers|2 different Signal Interpreters||[[Telecube]]|[[Transdimensional Reconstructor|Regular]], [[Hpw. Transdimensional Reconstructor|Hpw.]], or [[Supercharged TR|Supercharged Transdimensional Reconstructor]]||[[Vmp. Brace Plating]]|[[Graphene Brace]]|Any Heavy Armor Plating|Any other Vmp. item||[[Vmp. Broadsword]]|Any Greatsword|Any other Vmp. item||[[Vmp. Heavy Siege Treads]]|Any Siege Treads|Any other Vmp. item||[[Vmp. Humpback]]|Humpback|Any Vmp. item (including self)||[[Wartreads]]|[[Adv. Medium Treads]]|[[Centrium Wheel]][[/Table]]"
 "Telecube","Part",""
-"Terminal","Other","Terminals are interactable Machines that [[Cogmind]] can hack for various benefits (such as recalling an [[Extermination Squad]]!) and info. Terminals are also often guarded by an [[Operator]], which if alerted will use this terminal to call for a [[Reinforcement Squad]] unless it or the terminal is disabled/destroyed.\nThe main differences between security levels and terminal types are are :\n[[Table]]Security level|Average size|Armor|Direct hacks|Base direct hacking success rate|Base indirect hacking success rate|Base detection rate||\n1|Small (1 tile and such)|18|Few available direct hacks|Depends on the hack|-15% compared to direct hacks|20 or 25%||\n2|Medium|25|More available direct hacks|Half of level 1, rounded down|-30% compared to direct hacks|50%||\n3|Large|30|Lots of available direct hacks|Half of level 2, rounded down|-45% compared to direct hacks|60%, 70% or 80%||\nTerminals inside [[Garrison|Garrisons]]|Small (1 tile and such)|18|One of Access(Emergency), Download(Navigation), Download(Registry), or Download(Security)|Same as level 2|Same as level 2|Same as level 2||\nDoor-type/Lore terminals|Usually 1 tile|18|Usually one direct hack, to open the relevant door or get relevant lore record|Depends on door/lore record|Unavailable|Same as level 1||\nCave outpost terminal|1 tile|18|Random mix of flavor (useless) and intel ""Report"" hacks, with flavor reports always grouped on top of the list and intel reports grouped on the bottom of the list|100%|Unavailable|Same as level 1[[/Table]]\nNon-door Garrion terminals are always security level 2, while door-type, lore, and cave outpost terminals are always level 1.\n\nUnauthorized hacking (trojan and force hacks) success rate follows the same logic as direct hacking.\n\nDownload(Navigation), Download(Registry), and Download(Security) hacks are only available inside Garrisons.\n\nThe frequency of each security level changes by depth. At depth -10, almost all terminals are level 1, while level 3 terminals are very rare. As Cogmind ascends through each depth, level 3 terminals become more common, while level 1 terminals become rarer. At depth -1, level 3 terminals are very common, while level 1 terminals are very rare.\n[[Image]]../game_sprites/Terminal.png|Level 3 terminal![[/Image]]\n\n[[Heading]]Hacking[[/Heading]]\nHacks are listed at [[~/hacks|the Cog-Minder Hacks page]], and explained further in the Cogmind manual.\nCommon chance factors:\n[[List]]\nTerminal Security Level - Higher-rated terminals are harder to hack, with direct hacks having half the base success rate they would have on a lower security terminal. Because of this, direct hacks with a negative base success rate will actually have a higher success rate on higher security terminals compared to lower security terminals (half of -8% is -4%).|\nManual Commands - (Security level * -15%) success chance penalty.|\n[[Corruption]] - Penalty of -1% per 3% of system corruption to success chance.|\n[[Hackware]] - Each attached offensive hackware improves success chances by the amount specified in the part description.|\nOperator [[Data Core]] - Moving over an Operator's Data Core will automatically collect and it extract its dynamic key, which provides a one-time 1.5x multiplier to the base success rate of all direct hacks, excluding those with a negative base success rate. The dynamic key can only be used before it expires at its Operator's terminal.|\n[[Operator]] allies - Having allied Operators within 20 tiles provides a +10% bonus to hacks for the first Operator, +5% for the second, +2% for the third, and +1% for all others.|\n[[Spoiler]]Botnets trojans - Installing Botnet trojans on other terminals in the same map provides a +6% bonus to hacks for the first botnet installed, +3% for the second, and +1% for all others.[[/Spoiler]]\n[[/List]]\n\n[[Heading]]Detection/Trace[[/Heading]]\nTerminals have a varying base detection rate, dependent mostlyÂ¹ on their security level. This base detection rate can be lowered through defensive hackware by the amount specified on their part description, and/or [[Spoiler]]permanently lowered by destroying Network Hubs in [[Hub_04(d)]][[/Spoiler]]. However, it can never be lowered below 10%.\n\nGetting detected will cause a trace to start. Each additional hack attempt will cause the trace progress to advance by a base 50%, which can be reduced in the same way as detection rate. Like detection rate, it can never be lowered below 10%. When failing a hack, a catastrophic failure may occur (more likely on higher security terminals), causing the detection rate to go up by far more.\n\nGetting fully traced may result in receiving [[Corruption]], your [[Hackware]] breaking, and at a certain depth or aboveÂ² will always cause an [[Investigation Squad]].\n\nÂ¹Some same-level terminals have a varying base detection rate. For example, a level 3 terminal may have a base detection rate of  60%, 70% or 80%. Please consider contributing to clarify the cause of this.\nÂ²This information is lacking precision. Please consider contributing to clarify it.\n[[Heading]]Database authorization[[/Heading]]\nIndirect hacks for lore records, prototype IDs, part or robot schematics, and robot analyses, are all considered ""database hacks"". Successfully hacking any of them has a base 25% chance to instead cause an area-wide central database lockout, preventing further database hacks. However, direct hacks of those types remain possible after a database lockout and cannot cause one.\n\nAdditionally, not all lore records, parts schematic, robot analyses or robot schematics can be indirectly hacked on all terminals. Terminals have a level of database authorization dependent on security level and current depth, equal to (10 - current depth + security level). It is only possible to indirectly hack a part/robot schematic or analysis if the terminal's authorization level is equal to or higher than the rating/tier of the relevant part/robot (prototype parts are considered to have a +1 to their rating for this purpose).\nFor example, at depth -5, level 2 terminals have an authorization level of (10 - 5 + 2) = 7.\nLore records also have a rating/tier, but it isn't communicated in-game. \n\n[[Heading]]Lore[[/Heading]]\n[[Lore]]0b10 Records|Terminal[[/Lore]]"
+"Terminal","Other","Terminals are interactable Machines that [[Cogmind]] can hack for various benefits (such as recalling an [[Extermination Squad]]!) and info. Terminals are also often guarded by an [[Operator]], which if alerted will use this terminal to call for a [[Reinforcement Squad]] unless it or the terminal is disabled/destroyed.
+The main differences between security levels and terminal types are are :
+[[Table]]Security level|Average size|Armor|Direct hacks|Base direct hacking success rate|Base indirect hacking success rate|Base detection rate||
+1|Small (1 tile and such)|18|Few available direct hacks|Depends on the hack|-15% compared to direct hacks|20 or 25%||
+2|Medium|25|More available direct hacks|Half of level 1, rounded down|-30% compared to direct hacks|50%||
+3|Large|30|Lots of available direct hacks|Half of level 2, rounded down|-45% compared to direct hacks|60%, 70% or 80%||
+Terminals inside [[Garrison|Garrisons]]|Small (1 tile and such)|18|One of Access(Emergency), Download(Navigation), Download(Registry), or Download(Security)|Same as level 2|Same as level 2|Same as level 2||
+Door-type/Lore terminals|Usually 1 tile|18|Usually one direct hack, to open the relevant door or get relevant lore record|Depends on door/lore record|Unavailable|Same as level 1||
+Cave outpost terminal|1 tile|18|Random mix of flavor (useless) and intel ""Report"" hacks, with flavor reports always grouped on top of the list and intel reports grouped on the bottom of the list|100%|Unavailable|Same as level 1[[/Table]]
+Non-door Garrion terminals are always security level 2, while door-type, lore, and cave outpost terminals are always level 1.
+
+Unauthorized hacking (trojan and force hacks) success rate follows the same logic as direct hacking.
+
+Download(Navigation), Download(Registry), and Download(Security) hacks are only available inside Garrisons.
+
+The frequency of each security level changes by depth. At depth -10, almost all terminals are level 1, while level 3 terminals are very rare. As Cogmind ascends through each depth, level 3 terminals become more common, while level 1 terminals become rarer. At depth -1, level 3 terminals are very common, while level 1 terminals are very rare.
+[[Image]]../game_sprites/Terminal.png|Level 3 terminal![[/Image]]
+
+[[Heading]]Hacking[[/Heading]]
+Hacks are listed at [[~/hacks|the Cog-Minder Hacks page]], and explained further in the Cogmind manual.
+Common chance factors:
+[[List]]
+Terminal Security Level - Higher-rated terminals are harder to hack, with direct hacks having half the base success rate they would have on a lower security terminal. Because of this, direct hacks with a negative base success rate will actually have a higher success rate on higher security terminals compared to lower security terminals (half of -8% is -4%).|
+Manual Commands - (Security level * -15%) success chance penalty.|
+[[Corruption]] - Penalty of -1% per 3% of system corruption to success chance.|
+[[Hackware]] - Each attached offensive hackware improves success chances by the amount specified in the part description.|
+Operator [[Data Core]] - Moving over an Operator's Data Core will automatically collect and it extract its dynamic key, which provides a one-time 1.5x multiplier to the base success rate of all direct hacks, excluding those with a negative base success rate. The dynamic key can only be used before it expires at its Operator's terminal.|
+[[Operator]] allies - Having allied Operators within 20 tiles provides a +10% bonus to hacks for the first Operator, +5% for the second, +2% for the third, and +1% for all others.|
+[[Spoiler]]Botnets trojans - Installing Botnet trojans on other terminals in the same map provides a +6% bonus to hacks for the first botnet installed, +3% for the second, and +1% for all others.[[/Spoiler]]
+[[/List]]
+
+[[Heading]]Detection/Trace[[/Heading]]
+Terminals have a varying base detection rate, dependent mostly¹ on their security level. This base detection rate can be lowered through defensive hackware by the amount specified on their part description, and/or [[Spoiler]]permanently lowered by destroying Network Hubs in [[Hub_04(d)]][[/Spoiler]]. However, it can never be lowered below 10%.
+
+Getting detected will cause a trace to start. Each additional hack attempt will cause the trace progress to advance by a base 50%, which can be reduced in the same way as detection rate. Like detection rate, it can never be lowered below 10%. When failing a hack, a catastrophic failure may occur (more likely on higher security terminals), causing the detection rate to go up by far more.
+
+Getting fully traced may result in receiving [[Corruption]], your [[Hackware]] breaking, and at a certain depth or above² will always cause an [[Investigation Squad]].
+
+¹Some same-level terminals have a varying base detection rate. For example, a level 3 terminal may have a base detection rate of  60%, 70% or 80%. Please consider contributing to clarify the cause of this.
+²This information is lacking precision. Please consider contributing to clarify it.
+[[Heading]]Database authorization[[/Heading]]
+Indirect hacks for lore records, prototype IDs, part or robot schematics, and robot analyses, are all considered ""database hacks"". Successfully hacking any of them has a base 25% chance to instead cause an area-wide central database lockout, preventing further database hacks. However, direct hacks of those types remain possible after a database lockout and cannot cause one.
+
+Additionally, not all lore records, parts schematic, robot analyses or robot schematics can be indirectly hacked on all terminals. Terminals have a level of database authorization dependent on security level and current depth, equal to (10 - current depth + security level). It is only possible to indirectly hack a part/robot schematic or analysis if the terminal's authorization level is equal to or higher than the rating/tier of the relevant part/robot (prototype parts are considered to have a +1 to their rating for this purpose).
+For example, at depth -5, level 2 terminals have an authorization level of (10 - 5 + 2) = 7.
+Lore records also have a rating/tier, but it isn't communicated in-game. 
+
+[[Heading]]Lore[[/Heading]]
+[[Lore]]0b10 Records|Terminal[[/Lore]]"
 "Terminology","Other","This is a list of terminology, or potentially things that do not merit a full page. Also check out [[Acronyms]].
 [[Heading:3]]Partial Spot[[/Heading]]
 Partial spotting is when you move through a (hostile) bots field of vision while its not its turn. The bot will investigate where it saw you, look a few tiles further then head back to whatever it was doing."
@@ -2978,7 +3245,15 @@ Last edited during Beta 14"
 "Tractor Beams","Part Group",""
 "Trailblazer","Bot",""
 "Transdimensional Reconstructor","Part",""
-"Transdimensional Reconstructors","Part Group","[[Spoiler]]Transdimensional Reconstructors are one of the most common [[Alien Artifact|Alien Artifacts]] and can be found in a great variety of locations from different sources.\n\nAttaching a Transdimensional Reconstructor consumes it and teleports the user and any part they might be standing on to an approximate distance of 32/64 from current position, depending on the range of the Transdimensional Reconstructor variant used. The direction of teleportation cannot be controlled. If a Slip Node is present on the map, Transdimensional Reconstructors will always teleport to one, regardless of the Reconstructor's range.\n\nUsing a Transdimensional Reconstructor also deteriorates core integrity by 5-10% of current. Parts, including any the user is standing on, are unaffected. The resulting damage does not appear in scoresheets.\n\n[[Heading]]Lore[[/Heading]]\n[[Spoiler]][[Lore]]0b10 Records|Transdimensional Reconstructor[[/Lore]][[/Spoiler]]\n[[Redacted]][[Lore]]0b10 Records|Reconstruction Test Results[[/Lore]][[/Redacted]]\n\n[[/Spoiler]]"
+"Transdimensional Reconstructors","Other","Transdimensional Reconstructors are one of the most common [[Alien Artifact|Alien Artifacts]] and can be found in a great variety of locations from different sources.
+
+Attaching a Transdimensional Reconstructor consumes it and teleports the user and any part they might be standing on to an approximate distance of 32/64 from current position, depending on the range of the Transdimensional Reconstructor variant used. The direction of teleportation cannot be controlled. If a Slip Node is present on the map, Transdimensional Reconstructors will always teleport to one, regardless of the Reconstructor's range.
+
+Using a Transdimensional Reconstructor also deteriorates core integrity by 5-10% of current. Parts, including any the user is standing on, are unaffected. The resulting damage does not appear in scoresheets.
+
+[[Heading]]Lore[[/Heading]]
+[[Spoiler]][[Lore]]0b10 Records|Transdimensional Reconstructor[[/Lore]][[/Spoiler]]
+[[Redacted]][[Lore]]0b10 Records|Reconstruction Test Results[[/Lore]][[/Redacted]]"
 "Transfer Station","Other",""
 "Transmission Jammer","Part",""
 "Transmission Jammers","Part Group","Transmission jammers are parts allowing to limit consequences of your activity by blocking enemy signals. Need [[Line of Sight|LoS]] to enemy to work.
