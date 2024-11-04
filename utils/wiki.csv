@@ -3151,14 +3151,14 @@ Operator [[Data Core]] - Moving over an Operator's Data Core will automatically 
 [[/List]]
 
 [[Heading]]Detection/Trace[[/Heading]]
-Terminals have a varying base detection rate, dependent mostly¹ on their security level. This base detection rate can be lowered through defensive hackware by the amount specified on their part description, and/or [[Spoiler]]permanently lowered by destroying Network Hubs in [[Hub_04(d)]][[/Spoiler]]. However, it can never be lowered below 10%.
+Terminals have a varying base detection rate, dependent mostlyï¿½ on their security level. This base detection rate can be lowered through defensive hackware by the amount specified on their part description, and/or [[Spoiler]]permanently lowered by destroying Network Hubs in [[Hub_04(d)]][[/Spoiler]]. However, it can never be lowered below 10%.
 
 Getting detected will cause a trace to start. Each additional hack attempt will cause the trace progress to advance by a base 50%, which can be reduced in the same way as detection rate. Like detection rate, it can never be lowered below 10%. When failing a hack, a catastrophic failure may occur (more likely on higher security terminals), causing the detection rate to go up by far more.
 
-Getting fully traced may result in receiving [[Corruption]], your [[Hackware]] breaking, and at a certain depth or above² will always cause an [[Investigation Squad]].
+Getting fully traced may result in receiving [[Corruption]], your [[Hackware]] breaking, and at a certain depth or aboveï¿½ will always cause an [[Investigation Squad]].
 
-¹Some same-level terminals have a varying base detection rate. For example, a level 3 terminal may have a base detection rate of  60%, 70% or 80%. Please consider contributing to clarify the cause of this.
-²This information is lacking precision. Please consider contributing to clarify it.
+ï¿½Some same-level terminals have a varying base detection rate. For example, a level 3 terminal may have a base detection rate of  60%, 70% or 80%. Please consider contributing to clarify the cause of this.
+ï¿½This information is lacking precision. Please consider contributing to clarify it.
 [[Heading]]Database authorization[[/Heading]]
 Indirect hacks for lore records, prototype IDs, part or robot schematics, and robot analyses, are all considered ""database hacks"". Successfully hacking any of them has a base 25% chance to instead cause an area-wide central database lockout, preventing further database hacks. However, direct hacks of those types remain possible after a database lockout and cannot cause one.
 
