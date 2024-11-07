@@ -222,7 +222,7 @@
   },
   {
    "Name": "Cogmind",
-   "Content": "Thats you."
+   "Content": "That's you."
   },
   {
    "Name": "Combat Drone",
@@ -1950,7 +1950,7 @@
   },
   {
    "Name": "Architect Data Core",
-   "Content": ""
+   "Content": "Provides access to the Architect Logs terminal in [[Access_0]] without having to destroy the 120 armor Architect shell that normally encases it. Dropped by [[Architect]] on death."
   },
   {
    "Name": "Architect God Chip A",
@@ -2638,7 +2638,7 @@
   },
   {
    "Name": "Data Core",
-   "Content": ""
+   "Content": "Reveals nearby [[Traps|trap]] arrays if collected before its renewal time expires (40 turns). Additionally improves the chances of hacking its associated [[Terminal|terminal]] if used before its renewal time expires (40 turns)."
   },
   {
    "Name": "Datajack",
@@ -9084,7 +9084,7 @@
   },
   {
    "Name": "Security Rotation",
-   "Content": ""
+   "Content": "Event occurring on 0b10 floors containing [[Heavy|heavies]]. During a security rotation, heavies will move to a new [[Security Squad|security]] position, and any heavies that have been eliminated will be replaced."
   },
   {
    "Name": "Security Squad",

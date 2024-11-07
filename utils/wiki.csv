@@ -295,7 +295,7 @@ Robots will by default follow [[Cogmind]] (you) and attack any hostile if combat
 "Arc Projector","Part",""
 "Arc Thrower","Part",""
 "Architect","Bot",""
-"Architect Data Core","Part",""
+"Architect Data Core","Part","Provides access to the Architect Logs terminal in [[Access_0]] without having to destroy the 120 armor Architect shell that normally encases it. Dropped by [[Architect]] on death."
 "Architect God Chip A","Part",""
 "Architect God Chip D","Part",""
 "Archives","Location","Archives is a [[0b10]]-controlled [[Factory]] [[Branch]] that appears between -6 and -4. It is part of the [[Extension]] branch line and can only be entered through [[Cetus]]. It is a lightly guarded static map that has the same layout every time. There are 4 [[Sentry|Sentries]] and a large number of [[O-32 Director|Operators]]. Except for 1 special map variation, all 4 of the Archive Hub machines are useless and contain no data. No normal squads can spawn on this map.
@@ -618,7 +618,7 @@ Some good uses of the Chronowheel include:
 [[List]]
 [[Enh. Flamer]] ~0.5%|[[Hvy. Riot Gun]] ~0.5%|[[Hvy. Battle Rifle]] ~0.5%|[[Mak. Power Source]] ~0.5%|[[Mak. Shrapnel Gun]] ~0.5%|[[Mak. System Restoration Module]] ~0.5%|[[Slug Cannon]] ~0.5%
 [[/List]]"
-"Cogmind","Bot","Thats you."
+"Cogmind","Bot","That's you."
 "Coil Gun","Part",""
 "Cold Fusion Reactor","Part",""
 "Com. Battery","Part",""
@@ -1066,7 +1066,7 @@ After killing around 10 hostiles on the map, rapid sterilization will be engaged
 There is only one exit in each DSF. Most of the time the exit leads to the next main floor, although it can occasionally lead into a [[Garrison]] on the current depth. If leading to a Garrison, the Garrison exit will not loop back to the same depth again."
 "Damper Plating","Part",""
 "Data Conduit","Other","The machine in [[Data Miner (Location)]] that is the source of the [[Data Miner|Data Miner's]] information. Can be used if the Data Miner is knocked out of the way."
-"Data Core","Part",""
+"Data Core","Part","Reveals nearby [[Traps|trap]] arrays if collected before its renewal time expires (40 turns). Additionally improves the chances of hacking its associated [[Terminal|terminal]] if used before its renewal time expires (40 turns)."
 "Data Miner","Bot",""
 "Data Miner (Location)","Location","The Data Miner location is a [[Caves]] [[Branch]] that appears on either -7 or -6 and is home to the eponymous bot the [[Data Miner]] aka DM. There are no initially hostile bots, but if Data Miner is attacked or the Data Conduit machine is broken he will trigger a trap door to leave the map and 4 dormant [[Enhanced Grunt|Enhanced Grunts]] hidden in the walls will wake up and become hostile. If you have any [[Corruption]], make sure to detach all ranged weapons to avoid accidental misfires.
 There are 4 unique Terminals on the bottom side of the map. The left 2 contain mostly lore records, although the top-left Terminal will also list the depth of [[Section 7]] as well as the access code to the [[Warlord (Location)|Warlord]] Prototype Stash. These two vary per run so make sure to grab these lore entries every time. The bottom ones do not contain any additional information each run. The top-right Terminal will contain several random bot [[Schematic|Schematics]] and the bottom-right Terminal will contain a large number of part schematics and a few Prototype ID Banks. The part schematics will always contain schematics for [[Combat Drone Bay]] and [[Lgt. Regenerative Plating]].
@@ -2879,7 +2879,7 @@ If either Cogmind wearing the Exoskeleton or the Sigix Warrior are spotted by a 
 One of the machines in the hangar is the Power Cell. It is a heavily armored and extremely explosive machine, with a 20 radius 250 entropic damage explosion that will instantly destroy all hostiles in range. One of the [[Lab]] orders that are accessible when using the [[Data Conduit]] will provide a manual explosion code. The Power Cell Monitoring Terminal will accept this code and start a 20 turn countdown before the machine explodes.
 [[Heading:2]]Exits[[/Heading]]
 There is only one exit in Section 7. The main access exit that leads to the next Research or [[Access]] floor can be found at a dead end of a 4 tile corridor near either the top-middle or bottom-middle of the map."
-"Security Rotation","Other",""
+"Security Rotation","Other","Event occurring on 0b10 floors containing [[Heavy|heavies]]. During a security rotation, heavies will move to a new [[Security Squad|security]] position, and any heavies that have been eliminated will be replaced."
 "Security Squad","Other","[[Image]]Security Squad Heavy.png|A Heavy guarding a busy intersection[[/Image]]
 Security squads are [[0b10]] aligned [[Squad|squads]] that guard a single location and do not move unless alerted to hostiles. While they are called squads, security bots nearly always work alone and do not come in groups. Security bots tend to be guarding busy exits, corridors, [[Interactive Machine|interactive machines]], and part stockpiles. These squads are primary composed of [[Behemoth|Behemoths]], [[Heavy|Heavies]], and [[Sentry|Sentries]]. They tend to be present on the map when Cogmind enters, and don't appear in greater numbers as time goes on. The main exception to this is Heavies, which may be replenished by the [[Security Rotation]] event, although there will typically never be more than the initial number of Heavies on a map. Security squads can be Enumerated at [[Terminal|Terminals]], but only within a very limited radius of 20 tiles.
 [[Heading]]Security Contents[[/Heading]]
