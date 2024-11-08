@@ -14,7 +14,6 @@ import { ItemData } from "./ItemData";
 import {
     canShowSpoiler,
     createImagePath,
-    getBotImageNames,
     getLargeBotImageName,
     getLinkSafeString,
     parseIntOrDefault,
@@ -527,10 +526,18 @@ function processBTag(state: ParserState, result: RegExpExecArray) {
 
 // Process a [[BotGroups]][[/BotGroups]] tag
 function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
+    const processedEntries = new Set<WikiEntry>();
+
     for (const groupEntry of state.allEntries.values()) {
-        if (groupEntry.type !== "Bot Group" || !canShowSpoiler(groupEntry.spoiler, state.spoiler)) {
+        if (
+            groupEntry.type !== "Bot Group" ||
+            !canShowSpoiler(groupEntry.spoiler, state.spoiler) ||
+            processedEntries.has(groupEntry)
+        ) {
             continue;
         }
+
+        processedEntries.add(groupEntry);
 
         // Get list of images to display
         const images = new Set<string>();
