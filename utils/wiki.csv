@@ -44,7 +44,7 @@ Entrances to new levels are implied to be long uneventful corridors where Cogmin
 "A4","Bot",""
 "A5","Bot",""
 "A6","Bot",""
-"A7","Bot",""
+"A7","Bot","Drops the [[A7 Data Core]] when killed or gives a code "
 "A7 Data Core","Part","Allows entrance into [[Lab]] and [[Redacted]]reveals the hidden intruder detecting lasers.[[/Redacted]]
 
 Dropped by [[A7]] on death."
