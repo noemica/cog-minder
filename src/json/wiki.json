@@ -66,7 +66,7 @@
   },
   {
    "Name": "A7",
-   "Content": "Drops the [[A7 Data Core]] when killed or gives a code "
+   "Content": "Drops the [[A7 Data Core]] when killed or gives a code when they are show the Cetus Mainframe in [[Cetus]]"
   },
   {
    "Name": "A8",
@@ -666,7 +666,7 @@
   },
   {
    "Name": "P1-3CE",
-   "Content": ""
+   "Content": "Very powerful bot that you [[I]]really[[/I]] don't want to be trying to kill you especially after attacking [[Exiles (Group)|Exiles]], due to low core from the level, attacking Exiles in general and less slots at that level."
   },
   {
    "Name": "Packrat",
@@ -1598,7 +1598,7 @@
   },
   {
    "Name": "Active Cooling Armor",
-   "Content": ""
+   "Content": "Obtainable only from a [[Cargo Convoy]]"
   },
   {
    "Name": "Active Sensor Spoofer",
@@ -3091,7 +3091,7 @@
   },
   {
    "Name": "Exp. Thermic Cannon",
-   "Content": ""
+   "Content": "Obtainable only from a [[Cargo Convoy]]"
   },
   {
    "Name": "Exp. Transmission Jammer",
@@ -4943,7 +4943,7 @@
   },
   {
    "Name": "PL-3XN's Ring of Power",
-   "Content": "When 3 are combined with the [[Disassembled Obliterator]], creates [[PL-3XN's Obliterator]]."
+   "Content": "When 3 are combined with the [[Disassembled Obliterator]], creates [[PL-3XN's Obliterator]]. can be obtained from a [[Cargo Convoy]]"
   },
   {
    "Name": "PSU Rigger",
