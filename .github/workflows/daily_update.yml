@@ -30,6 +30,9 @@ jobs:
                     exit 1
                   fi
 
+            - name: Remove Newlines
+              run: python utils/replace_escaped_newlines.py new-data.csv
+
             - name: Check for Differences
               id: check-differences
               run: |
