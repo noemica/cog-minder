@@ -43,7 +43,7 @@ export default function CombatLogDropzone({ onParse }: CombatLogDropzoneProps) {
                     <Button onClick={open}>Browse for file</Button>
                 </div>
             </TextTooltip>
-            <TextTooltipButton tooltipText="Combat logs can be exported in Beta 13 by setting `combatLogOutput=1` in the advanced settings and setting `combatLogLimit=0` for unlimited length, or else the combat log will truncate at 1000 lines. The standard Cogmind Options menu setting `Log Output` must also be set to `Text`. Advanced settings and combat logs are both located in your standard Cogmind install location. For Steam users, this is typically C:/Program Files (x86)/Steam/steamapps/common/Cogmind/">
+            <TextTooltipButton tooltipText="Combat logs can be exported in by setting `combatLogOutput=1` in the advanced settings and setting `combatLogLimit=0` for unlimited length, or else the combat log will truncate at 1000 lines. The standard Cogmind Options menu setting `Log Output` must also be set to `Text`. Advanced settings and combat logs are both located in your standard Cogmind install location. For Steam users, this is typically C:/Program Files (x86)/Steam/steamapps/common/Cogmind/">
                 Help
             </TextTooltipButton>
         </div>

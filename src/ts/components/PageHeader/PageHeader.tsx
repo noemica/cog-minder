@@ -66,7 +66,7 @@ const pages: Record<PageType, PageDetails> = {
         label: "Combat",
         link: "combat",
         explanation:
-            "A combat log analyzer. Combat logs from Beta 13 runs can be uploaded and analyzed to display " +
+            "A combat log analyzer. Combat logs can be uploaded and analyzed to display " +
             "a breakdown of damage dealt and taken from different sources.",
     },
     Hacks: {
