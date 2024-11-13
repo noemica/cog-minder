@@ -1232,10 +1232,12 @@ It is possible to install RIF after meeting Warlord. Warlord and his forces will
 "Enhanced Programmer","Bot",""
 "Enhanced Q-Series","Bot",""
 "Enhanced Sentry","Bot",""
-"Example","Other","This is a test of wiki content.
+"Example","Other","[[Materials#Lore]]
+This is a test of wiki content.
 Content separated by a newline is split into multiple paragraphs.
 A link: [[Example]]. A [[Example|link with content different than the link]]. A [[Assault Rifle|part link]] with part information shown on mouseover. A [[S-10 Pest|bot link]] with bot information shown on mouseover. A [[Materials|location link]]. A [[~/hacks|link to the Cog-Minder Hacks page]].
-Links are a type of inline content that can be used anywhere. Other types of inline content are [[B]]bolded text[[/B]] and [[I]]italicized text[[/I]]. Links can also be [[B]][[Example|bolded]][[/B]], [[I]][[Example|italicized]][[/I]], and [[B]][[I]][[Example|both together]][[/I]][[/B]]. Another option is [[GameText]]Inline Game Text[[/GameText]] that uses a separate font style. [[Sub]]Subscript[[/Sub]] and [[Sup]]Superscript[[/Sup]] are also available.
+Links are a type of inline content that can be used anywhere. Other types of inline content are [[B]]bolded text[[/B]] and [[I]]italicized text[[/I]]. Links can also be [[B]][[Example|bolded]][[/B]], [[I]][[Example|italicized]][[/I]], and [[B]][[I]][[Example|both together]][[/I]][[/B]]. Another option is [[GameText]]Inline Game Text[[/GameText]] that uses a separate font style. [[Sub]]Subscript[[/Sub]] and [[Sup]]Superscript[[/Sup]] are also available. Text can be colored with [[Color:Red]]HTML color names[[/Color]] or [[Color:#ff0077]]Hex colors[[/Color]].
+[[Comment]]Editor only comments are supported. This text will only show up in the editor and not in the final page.[[/Comment]]
 [[Heading]]Heading type 1[[/Heading]]
 [[Heading:2]]Heading type 2[[/Heading]]
 [[Heading:1]]Heading type 1 [[B]]with[[/B]] [[I]]inline[[/I]] [[Example|content]][[/Heading]]
