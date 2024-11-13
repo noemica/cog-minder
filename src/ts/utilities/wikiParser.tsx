@@ -618,6 +618,12 @@ function processColorTag(state: ParserState, result: RegExpExecArray) {
     state.output.push({ groupType: "Grouped", node: boldedContent });
 }
 
+// Process a Comment tag like [[Comment]]Hidden Text[[/Comment]]
+function processCommentTag(state: ParserState, result: RegExpExecArray) {
+    const index = state.initialContent.indexOf("[[/Comment]]");
+    state.index = index + "[[/Comment]]".length;
+}
+
 // Process a [[NonEmptyPages]][[/NonEmptyPages]] tag
 function processNonEmptyPagesTag(state: ParserState, result: RegExpExecArray) {
     const listContents: { node: ReactNode; name: string }[] = [];
@@ -1150,6 +1156,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["B", processBTag],
     ["BotGroups", processBotGroupsTag],
     ["Color", processColorTag],
+    ["Comment", processCommentTag],
     ["FanartGallery", processGalleryTag],
     ["GameText", processGameTextTag],
     ["Gallery", processGalleryTag],
@@ -1238,7 +1245,10 @@ function processSection(state: ParserState, endTag: string | undefined) {
                     result[1] === "I" ||
                     result[1] === "GameText" ||
                     result[1] === "Sub" ||
-                    result[1] === "Sup"
+                    result[1] === "Sup" ||
+                    result[1] === "Link" ||
+                    result[1] === "Color" ||
+                    result[1] === "Comment"
                 ) {
                     actionFunc!(state, result);
                 } else if (actionFunc !== undefined) {

@@ -149,6 +149,12 @@ export default function WikiEditControls({
                 >
                     Color
                 </Button>
+                <Button
+                    tooltip="Adds a comment for editors only that is ignored in the actual page in the form of [[Comment]]Hidden Text[[/Comment]]"
+                    onClick={() => insertWrappedText("[[Comment]]", "[[/Comment]]")}
+                >
+                    Comment
+                </Button>
             </div>
             <div>
                 <SoloLabel
