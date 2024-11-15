@@ -146,6 +146,31 @@ If the gate is destroyed, however, you are free to take your time to clean up an
 "Active Cooling Armor","Part","Obtainable only from a [[Cargo Convoy]]"
 "Active Sensor Spoofer","Part",""
 "Active Sensor Suite","Part",""
+"Achievements","Other","There are currently 256 achievements in Cogmind, which can be viewed in-game through the achievements records submenu. They are divided into several categories organized by color, with the appearance of their borders sometimes providing additional information. 81 of the 256 achievements have hidden descriptions that are only revealed after completing them.
+
+[[Table]]Type|Color|Total|Hidden|Sub-types||
+Mechanics|Orange|72|15|No specific sub-type||
+Style|Blue|46|12|-Reaching a high statistic in a specific category
+-Using specific rare/unique items and/or their mechanics||
+Progress|Yellow|33|2|-Earning enough points
+-Visiting/exiting specific areas
+-Visiting multiple areas, possibly of a specific type
+-Reaching a high peak rating
+-Reaching/earning 25/50/75/100% of lore collection/gallery collection/achievements||
+Challenges|Red|27|2|No specific sub-type||
+Events|Purple|41|40|-Triggering/witnessing a specific event
+-Reaching a specific important branch/meeting a specific important character
+-Destroying a specific hostile character||
+Wins|Green|37|10|-Winning the game with a specific ending
+-Winning the game with any ending under certain conditions
+-Winning the game with any ending while a challenge mod is active (challenge mode achievements will eventually be removed from the game)
+[[/Table]]
+
+Most achievements have to be completed within a single run, with the exception of ""Back For More"", ""True Cogmind"", and all achievements that require reaching/earning 25/50/75/100% of lore collection/gallery collection/achievements as they all require multiple runs.
+In addition, some achievements are mutually exclusive to one another (for example, all ""Specialist"" are mutually exclusive to one another), and some are seed-dependent and as a result may not be completable on some seeds (""Exterminator"" is a good example).
+
+
+This article was last updated during Beta 14."
 "Actuator Array","Part",""
 "Actuator Arrays","Part Group",""
 "Actuators","Part Group",""
@@ -562,6 +587,7 @@ There are 3 exits on this map but only 2 kinds of exits:
 "Cetus Guard","Bot",""
 "Chain Missile Launcher","Part",""
 "Chainsword","Part",""
+"Challenges Achievements","Other",""
 "Chronowheel","Part","The effect of the Chronowheel allows Cogmind to rewind time as a one time save/load effect. Attaching saves, and after 30 turns (if not destroyed/removed) the load will occur.
 [[Heading]]Timeline of Effects[[/Heading]]
 [[List]]1 - [[GameText]]Spacetime feels off.[[/GameText]] log message. Random part art, map sections, and lore text will briefly flash on screen. The frequency of these effects increases as time goes on.|20 - [[GameText]]Chronowheel is disintegrating...[[/GameText]] log|28 - [[GameText]]Spacetime is rapidly distorting...[[/GameText]] log|29 - [[GameText]]Spacetime reconverges on this point.[[/GameText]] log. Turn before attaching the Chronowheel is loaded, Chronowheel is gone.|When ripping the Chronowheel off instead - [[GameText]]Spacetime feels normal again.[[/GameText]] log[[/List]]
@@ -1232,6 +1258,7 @@ It is possible to install RIF after meeting Warlord. Warlord and his forces will
 "Enhanced Programmer","Bot",""
 "Enhanced Q-Series","Bot",""
 "Enhanced Sentry","Bot",""
+"Events Achievements","Other",""
 "Example","Other","[[Materials#Lore]]
 This is a test of wiki content.
 Content separated by a newline is split into multiple paragraphs.
@@ -2198,6 +2225,7 @@ The only 2 ways to exit Maximum Security are to trigger [[Sterilization]] after 
 If a hurt bot is not shot at for a few turns, the Mechanic will repair core integrity up to 85% and part integrity up to 50%. Allied Mechanics will also repair Cogmind's parts up to 50% integrity but will not touch core integrity. Blue allied Mechanics must be set to Aid before they will repair integrity.
 Mechanics can refit parts if a bot has a slot available and fewer than 2 power, propulsion, utility, or weapon slots. 0b10 aligned Mechanics can resupply on backup parts at their home Repair Station. The available refittable parts are based on the type of Mechanic:
 [[Table]]Slot/Count|M-13 Machinist|M-28 Smith|M-36 Artificer||Power (2 available)|[[Backup Power I]]|[[Backup Power III]]|[[Backup Power VII]]||Propulsion (4 available)|[[Backup Propulsion I]]|[[Backup Propulsion III]]|[[Backup Propulsion VII]]||Utility (2 available)|[[Backup Plating I]]|[[Backup Plating III]]|[[Backup Plating VII]]||Weapon (4 available)|[[Backup Laser I]]|[[Backup Laser III]]|[[Backup Laser VII]][[/Table]]"
+"Mechanics Achievements","Other",""
 "Med. Armor Plating","Part",""
 "Med. Armored Exoskeleton","Part",""
 "Med. Battery","Part",""
@@ -2423,6 +2451,7 @@ Programmers are not initially very threatening bots. They deal small amounts of 
 [[Heading]][[Squad|Squads]][[/Heading]]
 Programmers may appear in the following squads:
 [[List]]Extermination Squad|[[Patrol Squad]]|[[Security Squad]] - [[Armory]], [[Testing]], and [[Quarantine]] only[[/List]]"
+"Progress Achievements","Other",""
 "Propulsion","Other",""
 "Propulsion Shielding","Part",""
 "Propulsion Shieldings","Part Group",""
@@ -3041,6 +3070,7 @@ There are 2 types of exits in Storage:
 "Storm Laser","Part",""
 "Striker","Bot",""
 "Structural Scanner","Part",""
+"Style Achievements","Other",""
 "Sub. Beam Cannon","Part",""
 "Sub. Laser","Part",""
 "Sub. Machine Gun","Part",""
@@ -3482,6 +3512,7 @@ Watchers are quite difficult to kill, especially the W-44 Eye variant. Their nat
 "Welding Torch","Part",""
 "Wheel","Part",""
 "Wheels","Part Group",""
+"Wins Achievements","Other",""
 "Wintypes","Other","W0 ""Escaped"": Take a [[Surface]] exit on -1.
 W1 [[Redacted]]""Establishing 0b11"": Take a Surface exit on -1 after destroying both phases of [[MAIN.C]] in [[Command]].[[/Redacted]]
 W2 [[Spoiler]]""Heading to fleet"": Take a surface exit on -1 after using a [[Core Reset Matrix]].[[/Spoiler]]
