@@ -149,25 +149,26 @@ If the gate is destroyed, however, you are free to take your time to clean up an
 "Achievements","Other","There are currently 256 achievements in Cogmind, which can be viewed in-game through the achievements records submenu. They are divided into several categories organized by color, with the appearance of their borders sometimes providing additional information. 81 of the 256 achievements have hidden descriptions that are only revealed after completing them.
 
 [[Table]]Type|Color|Total|Hidden|Sub-types||
-Mechanics|Orange|72|15|No specific sub-type||
-Style|Blue|46|12|-Reaching a high statistic in a specific category
+[[Mechanics Achievements]]|Orange|72|15|No specific sub-type||
+[[Style Achievements]]|Blue|46|12|-Reaching a high statistic in a specific category
 -Using specific rare/unique items and/or their mechanics||
-Progress|Yellow|33|2|-Earning enough points
+[[Progress Achievements]]|Yellow|33|2|-Earning enough points
 -Visiting/exiting specific areas
 -Visiting multiple areas, possibly of a specific type
 -Reaching a high peak rating
 -Reaching/earning 25/50/75/100% of lore collection/gallery collection/achievements||
-Challenges|Red|27|2|No specific sub-type||
-Events|Purple|41|40|-Triggering/witnessing a specific event
+[[Challenges Achievements]]|Red|27|2|No specific sub-type||
+[[Events Achievements]]|Purple|41|40|-Triggering/witnessing a specific event
 -Reaching a specific important branch/meeting a specific important character
 -Destroying a specific hostile character||
-Wins|Green|37|10|-Winning the game with a specific ending
+[[Wins Achievements]]|Green|37|10|-Winning the game with a specific ending
 -Winning the game with any ending under certain conditions
--Winning the game with any ending while a challenge mod is active (challenge mode achievements will eventually be removed from the game)
+-Winning the game with any ending while a challenge mode is active
+(Challenge mode achievements will eventually be removed from the game)
 [[/Table]]
 
-Most achievements have to be completed within a single run, with the exception of ""Back For More"", ""True Cogmind"", and all achievements that require reaching/earning 25/50/75/100% of lore collection/gallery collection/achievements as they all require multiple runs.
-In addition, some achievements are mutually exclusive to one another (for example, all ""Specialist"" are mutually exclusive to one another), and some are seed-dependent and as a result may not be completable on some seeds (""Exterminator"" is a good example).
+Almost all achievements can and have to be completed within a single run, with the exception of ""Back For More"", ""True Cogmind"", and all achievements that require reaching/earning 25/50/75/100% of lore collection/gallery collection/achievements.
+In addition, some achievements are exclusive to other achievements (for example, all ""Specialist"" are mutually exclusive to one another), and some are seed-dependent and as a result may not be completable on some seeds (For example, ""Exterminator"" is not completable on all seeds).
 
 
 This article was last updated during Beta 14."
@@ -1748,7 +1749,8 @@ There are two types of special machines in Hub. The first, the [[Transfer Statio
 [[Heading]]Strategy[[/Heading]]
 Blowing up Network Hubs as soon as you see them is usually a bad idea. Shooting them directly causes a ton of [[Alert]] gain due to their large destructive radius. The Lightning squads that follow can also be very scary for an unprepared Cogmind. If unprepared to fight off the Lightning, it is a good idea to blow up the Hubs from a distance or right next an exit.
 There are a lot of methods to blow up Network Hubs that do not trigger the alert gain:
-[[List]]Hostile attack: If Cogmind stands in front of a Network Hub and a 0b10 bot misses into it, the destruction will be associated with that bot and not Cogmind. This also works well with allies and drones. Just position the ally in front of a Hub and attacking enemies can shoot around or through them to trigger the explosion.|[[Traps|Trap]] explosion: Traps never assign Alert to Cogmind no matter who is the one who triggers the trap. Any explosive traps will do the trick, and Cogmind can even self-trigger the trap with > without any Alert cost.|[[Plasma Cutter|Regular]] or [[Imp. Plasma Cutter]]: Plasma Cutters can destroy any machine with minimal Alert gain. As a bonus, Plasma Cutters also do not trigger the explosion at all, which often places Cogmind in a bad position.|Force(Sabotage): If successful, this hack will blow up a random explosive machine on the map. Network Hubs are the only available targets so this will always work on this map. This hack is inconsistent and may fail multiple times in a row. This hack will cause an Alert gain of 50 if successful, but it is substantially less than the several hundred of a manually-blown Network Hub. Note: unlike this hack, Trojan(Detonate) does cause Alert to go up from the Explosion and is not a great hack to use.[[/List]]
+[[List]]Hostile attack: If Cogmind stands in front of a Network Hub and a 0b10 bot misses into it, the destruction will be associated with that bot and not Cogmind. This also works well with allies and drones. Just position the ally in front of a Hub and attacking enemies can shoot around or through them to trigger the explosion.|[[Traps|Trap]] explosion: Traps never assign Alert to Cogmind unless they manually trigger the trap. Any explosive or area EM traps will work, [[I]]but[[/I]] if the trap triggers due to Cogmind's corruption then the alert isn't assigned, which can be used to avoid the alert. |[[Plasma Cutter|Regular]] or [[Imp. Plasma Cutter]]: Plasma Cutters can destroy any machine with minimal Alert gain. As a bonus, Plasma Cutters also do not trigger the explosion at all, which often places Cogmind in a bad position.|Force(Sabotage): If successful, this hack will blow up a random explosive machine on the map. Network Hubs are the only available targets so this will always work on this map. This hack is inconsistent and may fail multiple times in a row. This hack will cause an Alert gain of 50 if successful, but it is substantially less than the several hundred of a manually-blown Network Hub. Note: unlike this hack, Trojan(Detonate) does cause Alert to go up from the Explosion and is not a great hack to use.|[[Allies]] can be placed in front of hubs in the hope that a non-Electro bot misses into the hub, or after the hubs are triggered have an Electro's [[EMDS]] penetrate through the bot and destroy the hub[[/List]]
+
 The best way to deal with the [[Lightning]] squads is to use critical destroy weapons as they lack any critical immunity. [[8R-AWN's Boregun]], [[Adv. KE Penetrator]], and any Hyp. guns or cannons will work well. [[Damper Plating]] works great at reducing damage taken by Lightnings to negligible amounts. The [[Exp. EM Disruption Field]] that they carry can also do fine after being looted.
 [[Heading]]Exits[[/Heading]]
 There is only one type of exit on this map. All exits lead to the next main Factory or Research floor."
@@ -2451,7 +2453,55 @@ Programmers are not initially very threatening bots. They deal small amounts of 
 [[Heading]][[Squad|Squads]][[/Heading]]
 Programmers may appear in the following squads:
 [[List]]Extermination Squad|[[Patrol Squad]]|[[Security Squad]] - [[Armory]], [[Testing]], and [[Quarantine]] only[[/List]]"
-"Progress Achievements","Other",""
+"Progress Achievements","Other","Progress Achievements are earned by accomplishing actions that demonstrate the player's progress and experience with the game. Most of them will simply eventually be obtained by players as they explore the game world and get better at surviving and exploring it. 2 of the 33 Progress Achievements have hidden descriptions that are only revealed after completing them.
+(The visibility for the descriptions of hidden achievements is set to at least ""Spoilers"", and may be set to ""Redacted"" for achievements where that would be relevant. Remember to change your spoilers settings to ""None"" if you do not wish to see the descriptions of achievements you have not yet obtained!)
+
+[[Heading]]Uncategorized[[/Heading]]
+First Step to Greatness: [[Spoiler]]Get terminated.[[/Spoiler]]
+Back For More: Complete 50 runs.
+
+[[Heading]]Earning points[[/Heading]]
+5k Club: Earn 5,000 points.
+10k Club: Earn 10,000 points.
+20k Club: Earn 20,000 points.
+30k Club: Earn 30,000 points.
+40k Club: Earn 40,000 points.
+50k Club: Earn 50,000 points.
+
+[[Heading]]Lore collection progress[[/Heading]]
+This Is Interesting...: Reach 25% lore collection.
+I Think I Know What's Going On: Reach 50% lore collection.
+I Was Wrong!: Reach 75% lore collection.
+I Wish There Was More: Reach 100% lore collection.
+
+[[Heading]]Gallery collection progress[[/Heading]]
+Just Browsing: Reach 25% gallery collection.
+Tester: Reach 50% gallery collection.
+Collector: Reach 75% gallery collection.
+Curator: Reach 100% gallery collection.
+
+[[Heading]]Exploration[[/Heading]]
+Made in Tau Ceti IV: Enter [[Factory]].
+Dangerous Findings: Enter [[Research]].
+Denied?: Enter [[Access]].
+\\IAMDERELICT: [[Spoiler]]Enter [[Recycling]] via [[Storage]].[[/Spoiler]]
+I'm Back, Baby!: Exit [[Caves|Proximity Caves]].
+Tourist: Visit 3 branch areas.
+Adventurer: Visit 2 special cave areas.
+Explorer: Visit 10 branch areas.
+Great Explorer: Visit 35 areas.
+
+[[Heading]]Reaching a high peak rating[[/Heading]]
+Serviceable Loadout: Reach a peak rating of 50.
+Respectable Loadout: Reach a peak rating of 100.
+Rockin' Loadout: Reach a peak rating of 150.
+Ultimate Loadout: Reach a peak rating of 200.
+
+[[Heading]]Achievement collection progress[[/Heading]]
+Achiever: Earn 25% of achievements.
+Overachiever: Earn 50% of achievements.
+Superachiever: Earn 75% of achievements.
+Perfect Achiever: Earn all other achievements."
 "Propulsion","Other",""
 "Propulsion Shielding","Part",""
 "Propulsion Shieldings","Part Group",""
