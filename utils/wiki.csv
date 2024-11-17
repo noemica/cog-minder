@@ -2462,7 +2462,7 @@ Programmers may appear in the following squads:
 [[List]]
 First Step to Greatness: [[Spoiler]]Get terminated.[[/Spoiler]]
 Strategy : [[Spoiler]]You'll likely get this one eventually.[[/Spoiler]]|
-Back For More: Complete 50 runs.
+Back For More: Complete 50 runs.[[Comment]]This comment is to make the newline work like i want it to. I'll use empty comments in a bunch of this article's lists as a way to have newlines actually work like i want them to, instead of letting them be ignored.[[/Comment]]
 Strategy : You'll get this one eventually. The relevant scoresheet statistic is ""Game No.""
 [[/List]]
 
@@ -2488,39 +2488,50 @@ The relevant scoresheet statistic is ""TOTAL SCORE"".
 [[/List]]
 
 [[Heading]]Lore collection progress[[/Heading]]
+
+[[List]]
 This Is Interesting...: Reach 25% lore collection.
-I Think I Know What's Going On: Reach 50% lore collection.
-I Was Wrong!: Reach 75% lore collection.
-I Wish There Was More: Reach 100% lore collection.
+|I Think I Know What's Going On: Reach 50% lore collection.
+|I Was Wrong!: Reach 75% lore collection.
+|I Wish There Was More: Reach 100% lore collection.[[/List]]
 
 [[Heading]]Gallery collection progress[[/Heading]]
+The gallery collection contains all parts that have ASCII art. All parts start out as ""Undiscovered Components"", and each one is ""discovered"" and revealed upon either being attached to Cogmind or when using the [[GameText]]parse_system[[/GameText]] [[Datajacks|Datjack]] hack on any robot that currently has it attached. Gallery collection progress is based on how many parts have been discovered. Current gallery progress can be seen in the gallery collection. The relevant scoresheet statistic is ""Gallery%"".
+[[List]]
 Just Browsing: Reach 25% gallery collection.
-Tester: Reach 50% gallery collection.
-Collector: Reach 75% gallery collection.
-Curator: Reach 100% gallery collection.
+|Tester: Reach 50% gallery collection.
+|Collector: Reach 75% gallery collection.
+|Curator: Reach 100% gallery collection.
+[[/List]]
 
 [[Heading]]Exploration[[/Heading]]
+
+[[List]]
 Made in Tau Ceti IV: Enter [[Factory]].
-Dangerous Findings: Enter [[Research]].
-Denied?: Enter [[Access]].
-\\IAMDERELICT: [[Spoiler]]Enter [[Recycling]] via [[Storage]].[[/Spoiler]]
-I'm Back, Baby!: Exit [[Caves|Proximity Caves]].
-Tourist: Visit 3 branch areas.
-Adventurer: Visit 2 special cave areas.
-Explorer: Visit 10 branch areas.
-Great Explorer: Visit 35 areas.
+|Dangerous Findings: Enter [[Research]].
+|Denied?: Enter [[Access]].
+|\\IAMDERELICT: [[Spoiler]]Enter [[Recycling]] via [[Storage]].[[/Spoiler]]
+|I'm Back, Baby!: Exit [[Caves|Proximity Caves]].
+|Tourist: Visit 3 branch areas.
+|Adventurer: Visit 2 special cave areas.
+|Explorer: Visit 10 branch areas.
+|Great Explorer: Visit 35 areas.[[/List]]
 
 [[Heading]]Reaching a high peak rating[[/Heading]]
+
+[[List]]
 Serviceable Loadout: Reach a peak rating of 50.
-Respectable Loadout: Reach a peak rating of 100.
-Rockin' Loadout: Reach a peak rating of 150.
-Ultimate Loadout: Reach a peak rating of 200.
+|Respectable Loadout: Reach a peak rating of 100.
+|Rockin' Loadout: Reach a peak rating of 150.
+|Ultimate Loadout: Reach a peak rating of 200.[[/List]]
 
 [[Heading]]Achievement collection progress[[/Heading]]
+
+[[List]]
 Achiever: Earn 25% of achievements.
-Overachiever: Earn 50% of achievements.
-Superachiever: Earn 75% of achievements.
-Perfect Achiever: Earn all other achievements."
+|Overachiever: Earn 50% of achievements.
+|Superachiever: Earn 75% of achievements.
+|Perfect Achiever: Earn all other achievements.[[/List]]"
 "Propulsion","Other",""
 "Propulsion Shielding","Part",""
 "Propulsion Shieldings","Part Group",""
