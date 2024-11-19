@@ -10,6 +10,8 @@ import ExclusiveButtonGroup, { ExclusiveButtonDefinition } from "../../Buttons/E
 import BotDetails from "../../GameDetails/BotDetails";
 import ItemDetails from "../../GameDetails/ItemDetails";
 import LocationDetails from "../../GameDetails/LocationDetails";
+import Label, { LabeledSelect } from "../../LabeledItem/LabeledItem";
+import { SelectOptionType } from "../../Selectpicker/Select";
 
 function BotContent({ entry, parsedNode }: { entry: WikiEntry; parsedNode: ReactNode }) {
     const bot = entry.extraData as Bot;
@@ -80,20 +82,7 @@ function ItemContent({ entry, parsedNode }: { entry: WikiEntry; parsedNode: Reac
     );
 }
 
-function LocationContent({ entry, parsedNode }: { entry: WikiEntry; parsedNode: ReactNode }) {
-    const location = entry.extraData as MapLocation;
-
-    return (
-        <>
-            <div className="wiki-infobox">
-                <LocationDetails location={location} />
-            </div>
-            {parsedNode}
-        </>
-    );
-}
-
-function PartGroupContent({
+function ItemGroupContent({
     entry,
     groupSelection,
     parsedNode,
@@ -106,29 +95,66 @@ function PartGroupContent({
 }) {
     const itemEntries = entry.extraData as WikiEntry[];
 
-    const itemButtons = useMemo(() => {
-        return itemEntries.map<ExclusiveButtonDefinition<string>>((itemEntry) => {
+    const [itemButtons, itemOptions] = useMemo(() => {
+        const itemButtons = itemEntries.map<ExclusiveButtonDefinition<string>>((itemEntry) => {
             return {
                 value: itemEntry.name,
             };
         });
+
+        const itemOptions = itemEntries.map<SelectOptionType>((itemEntry) => {
+            return {
+                value: itemEntry.name,
+            };
+        });
+
+        return [itemButtons, itemOptions];
     }, [entry]);
 
     const item = (itemEntries.find((entry) => entry.name === groupSelection) || itemEntries[0]).extraData as Item;
 
+    const itemPicker =
+        itemEntries.length < 20 ? (
+            <div className="wiki-infobox-button-group">
+                <ExclusiveButtonGroup
+                    buttons={itemButtons}
+                    selected={groupSelection}
+                    onValueChanged={(val) => {
+                        setGroupSelection(val);
+                    }}
+                />
+            </div>
+        ) : (
+            <LabeledSelect
+                className="wiki-item-select"
+                label="Item"
+                tooltip="Item to show information for."
+                options={itemOptions}
+                value={itemOptions.find((option) => option.value === groupSelection) || itemOptions[0]}
+                onChange={(val) => {
+                    setGroupSelection(val!.value);
+                }}
+            />
+        );
+
     return (
         <>
             <div className="wiki-infobox">
-                <div className="wiki-infobox-button-group">
-                    <ExclusiveButtonGroup
-                        buttons={itemButtons}
-                        selected={groupSelection}
-                        onValueChanged={(val) => {
-                            setGroupSelection(val);
-                        }}
-                    />
-                </div>
+                {itemPicker}
                 <ItemDetails item={item} />
+            </div>
+            {parsedNode}
+        </>
+    );
+}
+
+function LocationContent({ entry, parsedNode }: { entry: WikiEntry; parsedNode: ReactNode }) {
+    const location = entry.extraData as MapLocation;
+
+    return (
+        <>
+            <div className="wiki-infobox">
+                <LocationDetails location={location} />
             </div>
             {parsedNode}
         </>
@@ -198,7 +224,7 @@ export default function WikiPageContent({
 
         case "Part Group":
             return (
-                <PartGroupContent
+                <ItemGroupContent
                     entry={entry}
                     groupSelection={groupSelection}
                     parsedNode={parsedNode}

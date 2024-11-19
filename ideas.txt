@@ -7,7 +7,6 @@ Medium ideas:
 - Add ignore obsolete parts in search
     - Hard to know what an "obsolete" part is
 - Add proper followups for build page
-- Show all sizes of bot sprites
 - Add overloads to build page
 - Add drag/drop to spreadsheet view
     - https://codesandbox.io/p/devbox/intelligent-tereshkova-sqo7wj?embed=1&file=%2Fsrc%2Fmain.tsx%3A50%2C4&theme=light
