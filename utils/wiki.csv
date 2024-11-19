@@ -1259,7 +1259,63 @@ It is possible to install RIF after meeting Warlord. Warlord and his forces will
 "Enhanced Programmer","Bot",""
 "Enhanced Q-Series","Bot",""
 "Enhanced Sentry","Bot",""
-"Events Achievements","Other",""
+"Events Achievements","Other","Events [[Achievements]] are earned by witnessing or triggering certain events. Most of them will simply eventually be obtained by players as they explore and understand more of the game world and its depths. 40 of the 41 Events Achievements have hidden descriptions that are only revealed after completing them. The borders of Events Achievement have 0-2 squares in their corners, with more squares usually meaning a more important event.
+
+[[Comment]]This warning is supposed to be there for all articles about achievement types, regardless of whether there are any Redacted-level spoilers, because saying there are no Redacted-level spoilers is itself a spoiler.[[/Comment]]
+(The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least ""Spoilers"", and may be set to ""Redacted"" for achievements where that would be relevant. Remember to change your spoilers settings to ""None"" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
+
+
+[[Heading]]0 squares - Unimportant events[[/Heading]]
+[[List]]Curiosity Killed The Cat: [[Spoiler]]Wait in Scrapyard until something interesting happens.[[/Spoiler]]
+|I Survived The Infestation: [[Spoiler]]Escape Mines after an infestation.[[/Spoiler]]
+|Woof!: [[Spoiler]]Use the Behemoth hack given by the annoying Derelict.[[/Spoiler]]
+|Help From High Places: [[Spoiler]]Use the A8 code.[[/Spoiler]]
+|Nope: [[Redacted]]Spot a Fortress.[[/Redacted]]
+[[/List]]
+
+[[Heading]]1 square - Important events[[/Heading]]
+
+[[List]]Origins: Discover what you really are.
+|The Oracle: [[Spoiler]]Find Data Miner.[[/Spoiler]]
+|Robot Respite: [[Spoiler]]Reach the gates of Zion.[[/Spoiler]]
+|Signs Are For Wimps: [[Spoiler]]Enter Deep Caves.[[/Spoiler]]
+|That's One Door That Should Stay Closed: [[Spoiler]]Open the Deep Caves wall.[[/Spoiler]]
+|The Science Guy: [[Spoiler]]Find Zhirov.[[/Spoiler]]
+|Exposed: [[Spoiler]]Destroy Zhirov's Cloak Generator.[[/Spoiler]]
+|A Powerful Ally?: [[Spoiler]]Find Warlord.[[/Spoiler]]
+|Reappropriation: [[Spoiler]]Use Data Miner's code to access Warlord Stash.[[/Spoiler]]
+|Prison Break: [[Spoiler]]Free A7.[[/Spoiler]]
+|Project G-00: [[Spoiler]]Start the Cetus Manufacturing Module.[[/Spoiler]]
+|Main Advantage: [[Spoiler]]Get the Cetus Mainframe code from A7.[[/Spoiler]]
+|Alien Roots: [[Spoiler]]Use a Core Reset Matrix.[[/Spoiler]]
+|Signature Confirmed: [[Redacted]]Get scanned by a Researcher in Section 7.[[/Redacted]]
+|Rampage: [[Spoiler]]Hack a protovariant.[[/Spoiler]]
+|False Reunion: [[Spoiler]]Find the live Sigix Warrior.[[/Spoiler]]
+|Big Bang: [[Redacted]]Detonate the L2 Power Cell.[[/Redacted]]
+|Meet Your Maker: [[Redacted]]Find MAIN.C.[[/Redacted]]
+|Poison In The Code: [[Redacted]]Hack MAIN.C with the Cetus Mainframe code.[[/Redacted]]
+[[/List]]
+
+[[Heading]]2 squares - Very important events[[/Heading]]
+
+[[List]]Unlimited Data: [[Spoiler]]Interface with the Data Conduit.[[/Spoiler]]
+|The One: [[Spoiler]]Get imprinted.[[/Spoiler]]
+|Are We The Baddies?: [[Spoiler]]Kill Z-Imprinter.[[/Spoiler]]
+|Charge!!!: [[Spoiler]]Escape Warlord's base with the counterattack.[[/Spoiler]]
+|Revising The Future: [[Spoiler]]Meet Revision 17 in Cetus.[[/Spoiler]]
+|Anyone Home?: [[Redacted]]Find and enter the hidden Lab.[[/Redacted]]
+|Decrypted!: [[Redacted]]Decrypt A0 Command.[[/Redacted]]
+|Revolutionary Research: [[Spoiler]]Trigger Revision 17's attack on Research.[[/Spoiler]]
+|All-out Warlord: [[Spoiler]]Trigger Warlord's attack on Research.[[/Spoiler]]
+|Godhack: [[Spoiler]]Hack God Mode using code from Data Miner.[[/Spoiler]]
+|Everyone Must Die: [[Redacted]]Join forces with the Sigix Warrior in its Exoskeleton.[[/Redacted]]
+|Special Delivery: [[Spoiler]]Deliver the SGEMP to Zhirov.[[/Spoiler]]
+|Corridor Of Doom: [[Redacted]]Destroy all 4 of MAIN.C's guards.[[/Redacted]]
+|void main(): [[Redacted]]Destroy MAIN.C.[[/Redacted]]
+|Sorry Old Pal: [[Redacted]]Enable Zhirov to destroy MAIN.C.[[/Redacted]]
+|Behind The Curtain: [[Redacted]]Find The Architect.[[/Redacted]]
+|The Bigger They Are: [[Redacted]]Destroy The Architect.[[/Redacted]]
+[[/List]]"
 "Example","Other","[[Materials#Lore]]
 This is a test of wiki content.
 Content separated by a newline is split into multiple paragraphs.
@@ -2227,7 +2283,126 @@ The only 2 ways to exit Maximum Security are to trigger [[Sterilization]] after 
 If a hurt bot is not shot at for a few turns, the Mechanic will repair core integrity up to 85% and part integrity up to 50%. Allied Mechanics will also repair Cogmind's parts up to 50% integrity but will not touch core integrity. Blue allied Mechanics must be set to Aid before they will repair integrity.
 Mechanics can refit parts if a bot has a slot available and fewer than 2 power, propulsion, utility, or weapon slots. 0b10 aligned Mechanics can resupply on backup parts at their home Repair Station. The available refittable parts are based on the type of Mechanic:
 [[Table]]Slot/Count|M-13 Machinist|M-28 Smith|M-36 Artificer||Power (2 available)|[[Backup Power I]]|[[Backup Power III]]|[[Backup Power VII]]||Propulsion (4 available)|[[Backup Propulsion I]]|[[Backup Propulsion III]]|[[Backup Propulsion VII]]||Utility (2 available)|[[Backup Plating I]]|[[Backup Plating III]]|[[Backup Plating VII]]||Weapon (4 available)|[[Backup Laser I]]|[[Backup Laser III]]|[[Backup Laser VII]][[/Table]]"
-"Mechanics Achievements","Other",""
+"Mechanics Achievements","Other","Mechanics [[Achievements]] are earned by interacting with and/or using many of the mechanics of the game. They are largely used as a way to teach players about some of said mechanics. Most of them will be simply eventually be obtained by players as they make mistakes and/or learn new mechanics. 15 of the 72 Mechanics Achievements have hidden descriptions that are only revealed after completing them. The borders of Mechanics Achievement indicate their difficulty compared to other achievements of the same sub-type, with more ""intense"" borders meaning higher difficulty.
+
+[[Comment]]This warning is supposed to be there for all articles about achievement types, including those that do not have any Redacted-level spoilers.[[/Comment]]
+(The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least ""Spoilers"", and may be set to ""Redacted"" for achievements where that would be relevant. Remember to change your spoilers settings to ""None"" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
+
+[[Heading]]Various[[/Heading]]
+[[List]]Close Call: [[Spoiler]]Evolve after being reduced to less than 10% of core integrity.[[/Spoiler]]
+|Universal Adapter: [[Spoiler]]Use every form of propulsion across an entire run.[[/Spoiler]]
+|Hehehe: Reprogram a trap using a Datajack.
+|Wheee!: Manually trigger a Chute Trap.
+|It Was An Accident, I Swear: Destroy 10 machines in a single turn.
+|Part-time Excavator: Use a melee weapon to dig through 10 walls or earth.
+|Unlikely Earthworm: [[Spoiler]]Get crushed by a cave-in.[[/Spoiler]]
+|Hey, That's Mine!: Attack 5 Recyclers attempting to collect parts.
+|Loot Pinata: Destroy a Hauler.
+|Treasure Hunter: Destroy 20 Haulers.
+|Use The Force: [[Spoiler]]Collect 100 matter via Tractor Beam.[[/Spoiler]]
+[[/List]]
+
+[[Heading]]Attaching parts[[/Heading]]
+
+[[List]]
+Risk Taker: Attach an unidentified prototype.
+|Ooh, Shiny!: [[Spoiler]]Attach 20 unidentified prototypes.[[/Spoiler]]
+|Alien Tech: [[Spoiler]]Attach or use an alien artifact.[[/Spoiler]]
+[[/List]]
+
+[[Heading]]Corruption[[/Heading]]
+
+[[List]]
+System Compromised: Reach 10% system corruption.
+|Z1$+NX3F=JRE3_ZNQR: [[Spoiler]]Reach 50% system corruption.[[/Spoiler]]
+|Maybe Next Time I'll Detach My Launcher: [[Spoiler]]Misfire an explosive launcher.[[/Spoiler]]
+[[/List]]
+
+[[Heading]]Various 2[[/Heading]]
+
+[[List]]
+Backstab: [[Spoiler]]Murder a friendly NPC.[[/Spoiler]]
+|Short-term Sacrifices: Escape a Stasis Trap with help from an explosion.
+|Just Shoot The Terminal: [[Spoiler]]Open a locked door by destroying its Terminal with an electromagnetic weapon.[[/Spoiler]]
+|Release The Drones!: Have 6 drones at once.
+|Subspace Traveler: Find a way to teleport.
+[[/List]]
+
+[[Heading]]Fighting[[/Heading]]
+
+[[List]]Storm Trooper: Miss 5 shots in a row.
+|Crack Shot: Hit 10 shots in a row.
+|Please Form A Line: Hit 2 robots with a single projectile.
+|Quick And Dirty: Destroy 5 hostiles via explosions in a single turn.
+|Power Corrupts: Terminally corrupt a robot.
+|It's Just You: Cause a robot to meltdown.
+|Fist Fight: Destroy a hostile by ramming.
+|Overkill: Fire 10 overloaded shots.
+|Batter Up: Knock a hostile robot into an explosive machine via melee impact damage.
+|Watch This!: Sneak attack a Watcher and destroy it in one hit.
+|Deadly Force: Melee attack a hostile using 4 momentum.
+|Ambidextrous: Destroy 2 hostiles with one melee volley.
+|Oops: [[Spoiler]]Attempt to fire a matter-consuming volley without enough matter.[[/Spoiler]]
+|No Explosion For You: Shoot down a launcher projectile with a defensive utility.
+|Oh No You Don't!: Destroy a Saboteur before it succeeds.
+|Ride The Lightning: Use a Fabricator to destroy an enemy.
+|Let's See Who's Tougher: [[Spoiler]]Fire a launcher at an enemy at point blank range.[[/Spoiler]]
+[[/List]]
+
+[[Heading]]Stealth[[/Heading]]
+
+[[List]]
+Uninvited Guest: Be spotted by an Operator that then summons reinforcements from its Terminal.
+|One Hack Too Far: Trigger an investigation by being traced to a Terminal.
+|Troublemaker: Cause a robot to call for help or reinforcements from a nearby Garrison.
+|Party Time: [[Spoiler]]Cause 3 active investigation squads at once.[[/Spoiler]]
+|Significant Disruption: Raise alert high enough to trigger an assault dispatch.
+|Slippery One: [[Spoiler]]Go from being tracked by 10 hostiles to having no pursuers without destroying any of them.[[/Spoiler]]
+|Hunted: Simultaneously tracked by 20 hostiles.
+[[/List]]
+
+[[Heading]]Hacking[[/Heading]]
+[[List]]
+My Command Is Your Wish: Build an ally via Fabricator.
+|Just What I Needed: Build a part via Fabricator.
+|Part-time Mechanic: Repair a part via Repair Station.
+|Safety First: Identify a prototype via Scanalyzer.
+|Dynamic Key: Use an Operator Data Core before it expires.
+|Novice Programmer: Hack 10 machines.
+|Librarian: Hack 10 different Terminal records.
+|Armchair Analyst: Download 3 robot analyses from Terminals.
+|Everything Is Under Control: Lower alert using a Terminal's Purge Threat hack.
+|GoHome(): Use a Terminal to recall an active squad.
+|Shopping List: Hack Hauler Manifests at a Terminal.
+|Brute Force: Use a Force() hack.
+|True Hacker: Install a Trojan().
+|Quantum Hacking: Set up a three-Terminal botnet.
+[[/List]]
+
+[[Heading]]Bothacking[[/Heading]]
+
+[[List]]
+A New Friend: Rewire a robot.
+|Factory Defaults: Reset a hostile robot using the reboot_system hack.
+|Error 47: Cause a hostile robot's power to go critical with an overload_power or amplify_resonance hack.
+|Assimilation Complete: Assimilate a hostile robot using the format_system hack.
+[[/List]]
+
+[[Heading]]Infowar[[/Heading]]
+[[List]]
+No Signal: Block an Alarm Trap transmission.
+|Total Silence: Jam 10 distress signals or other communications.
+|I Spy: Use an Imp. Sensor Array (or better) with Imp. Signal Interpreter (or better).
+|Omniscient Cartographer: Use an Imp. Terrain Scanner (or better) with Imp. Terrain Scan Processor (or better).
+|Knowing Is Half The Battle: Enter 10 identified exits.
+[[/List]]
+
+[[Heading]]Various 3[[/Heading]]
+[[List]]
+Can't Catch Me: Reach a speed of FASTx3, or 4 spaces per turn.
+|Cya!: Fly over a row of 3 robots.
+|The More The Merrier: Have 5 allies.
+[[/List]]"
 "Med. Armor Plating","Part",""
 "Med. Armored Exoskeleton","Part",""
 "Med. Battery","Part",""
