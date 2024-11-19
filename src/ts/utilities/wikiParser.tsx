@@ -620,7 +620,7 @@ function processColorTag(state: ParserState, result: RegExpExecArray) {
 
 // Process a Comment tag like [[Comment]]Hidden Text[[/Comment]]
 function processCommentTag(state: ParserState, result: RegExpExecArray) {
-    const index = state.initialContent.indexOf("[[/Comment]]");
+    const index = state.initialContent.indexOf("[[/Comment]]", result.index);
     state.index = index + "[[/Comment]]".length;
 }
 
