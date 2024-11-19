@@ -218,13 +218,12 @@ function initEntries(botData: BotData, itemData: ItemData) {
 
     // Initialize part groups
     for (const partGroupEntry of wiki["Part Groups"]) {
-        const spoiler: Spoiler = "None";
-        // Currently no spoiler part groups
-        // if (partGroupEntry.Spoiler === "Redacted") {
-        //     spoiler = "Redacted";
-        // } else if (partGroupEntry.Spoiler === "Spoiler") {
-        //     spoiler = "Spoiler";
-        // }
+        let spoiler: Spoiler = "None";
+        if (partGroupEntry.Spoiler === "Redacted") {
+            spoiler = "Redacted";
+        } else if (partGroupEntry.Spoiler === "Spoiler") {
+            spoiler = "Spoiler";
+        }
 
         const partEntries: WikiEntry[] = [];
         const entry: WikiEntry = {
