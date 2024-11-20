@@ -146,7 +146,9 @@ If the gate is destroyed, however, you are free to take your time to clean up an
 "Active Cooling Armor","Part","Obtainable only from a [[Cargo Convoy]]"
 "Active Sensor Spoofer","Part",""
 "Active Sensor Suite","Part",""
-"Achievements","Other","There are currently 256 achievements in Cogmind, which can be viewed in-game through the achievements records submenu. They are divided into several categories organized by color, with the appearance of their borders sometimes providing additional information. 81 of the 256 achievements have hidden descriptions that are only revealed after completing them.
+"Achievements","Other","There are currently 256 achievements in Cogmind, which can be viewed in-game through the Achievements records submenu. They are divided into several categories organized by color, with the appearance of their borders sometimes providing additional information. 81 of the 256 Achievements have hidden descriptions that are only revealed after completing them.
+
+Visually, Achievements are tile-based 5x5 squares. While an Achievement is locked, the inner 3x3 square is made out of question marks. Unlocking an Achievement changes the inner 3x3 square to visually represent the Achievement's requirements/results. The tiles on the border of the 5x5 square almost never change when the Achievement is unlocked. [[Comment]]Those achievements are ""Stardust"" and ""Planet Killer"". this is because Wins Achievements' inner art isn't a square but more of a cog, so some of the outer border tiles are part of said art, even if it's just a matching background. This dark green background is the same for all Wins Achievements, except those two. The locked versions, however, still have that dark green background.[[/Comment]]
 
 [[Table]]Type|Color|Total|Hidden|Sub-types||
 [[Mechanics Achievements]]|Orange|72|15|No specific sub-type||
@@ -1260,64 +1262,6 @@ It is possible to install RIF after meeting Warlord. Warlord and his forces will
 "Enhanced Q-Series","Bot",""
 "Enhanced Sentry","Bot",""
 "Events Achievements","Other","Events [[Achievements]] are earned by witnessing or triggering certain events. Most of them will simply eventually be obtained by players as they explore and understand more of the game world and its depths. 40 of the 41 Events Achievements have hidden descriptions that are only revealed after completing them. The borders of Events Achievement have 0-2 squares in their corners, with more squares usually meaning a more important event.
-
-[[Comment]]This warning is supposed to be there for all articles about achievement types, regardless of whether there are any Redacted-level spoilers, because saying there are no Redacted-level spoilers is itself a spoiler.[[/Comment]]
-(The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least ""Spoilers"", and may be set to ""Redacted"" for achievements where that would be relevant. Remember to change your spoilers settings to ""None"" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
-
-[[Comment]]Some links are present in multiple different achievements. This is because someone might check only one specific achievement, which means they would need links to be available for that achievement specifically, regardless of whatever other links were available in previously listed achievement.[[/Comment]]
-
-[[Heading]]0 squares - Unimportant events[[/Heading]]
-[[List]]Curiosity Killed The Cat: [[Spoiler]]Wait in [[Scrapyard]] until something interesting happens.[[/Spoiler]]
-|I Survived The Infestation: [[Spoiler]]Escape [[Mines]] after an infestation.[[/Spoiler]]
-|Woof!: [[Spoiler]]Use the [[Behemoth]] hack given by the [[Caves#events|annoying Derelict]].[[/Spoiler]]
-|Help From High Places: [[Spoiler]]Use the [[A8]] code.[[/Spoiler]]
-|Nope: [[Redacted]]Spot a [[Fortress]].[[/Redacted]]
-[[/List]]
-
-[[Heading]]1 square - Important events[[/Heading]]
-
-[[List]]Origins: Discover what you really are.
-|The Oracle: [[Spoiler]]Find [[Data Miner]].[[/Spoiler]]
-|Robot Respite: [[Spoiler]]Reach the gates of [[Zion]].[[/Spoiler]]
-|Signs Are For Wimps: [[Spoiler]]Enter [[Zion Deep Caves|Deep Caves]].[[/Spoiler]]
-|That's One Door That Should Stay Closed: [[Spoiler]]Open the [[Zion Deep Caves#assembled_wall|Deep Caves wall]].[[/Spoiler]]
-|The Science Guy: [[Spoiler]]Meet [[Zhirov]] in his [[Zhirov (Location)|lab]].[[/Spoiler]]
-|Exposed: [[Spoiler]]Destroy [[Zhirov]]'s Cloak Generator.[[/Spoiler]]
-Strategy : [[Spoiler]]The actual achievement trigger is seeing Zhirov's dialogue after destroying the Cloak Generator. The easiest way to earn this achievement is to break the Cloak Generator while Zhirov is in Cogmind's FOV.[[/Spoiler]]|
-A Powerful Ally?: [[Spoiler]]Find [[Warlord]].[[/Spoiler]]
-|Reappropriation: [[Spoiler]]Use [[Data Miner]]'s code to access [[Warlord (Location)|Warlord]] Stash.[[/Spoiler]]
-|Prison Break: [[Spoiler]]Free [[A7]].[[/Spoiler]]
-|Project G-00: [[Spoiler]]Start the [[Cetus]] Manufacturing Module.[[/Spoiler]]
-|Main Advantage: [[Spoiler]]Get the [[Cetus]] Mainframe code from [[A7]].[[/Spoiler]]
-|Alien Roots: [[Spoiler]]Use a [[Core Reset Matrix]].[[/Spoiler]]
-|Signature Confirmed: [[Redacted]]Get scanned by a [[Researcher]] in [[Section 7]].[[/Redacted]]
-|Rampage: [[Spoiler]]Hack a [[Protovariant|protovariant]].[[/Spoiler]]
-|False Reunion: [[Spoiler]]Find the live [[Sigix Containment Pod|Sigix Warrior]].[[/Spoiler]]
-|Big Bang: [[Redacted]]Detonate the [[Section 7#power_cell|L2 Power Cell]].[[/Redacted]]
-|Meet Your Maker: [[Redacted]]Find [[MAIN.C (Shell)|MAIN.C]].[[/Redacted]]
-|Poison In The Code: [[Redacted]]Hack [[MAIN.C (Shell)|MAIN.C]] with the [[Cetus]] Mainframe code.[[/Redacted]]
-[[/List]]
-
-[[Heading]]2 squares - Very important events[[/Heading]]
-
-[[List]]Unlimited Data: [[Spoiler]]Interface with the [[Data Conduit]].[[/Spoiler]]
-|The One: [[Spoiler]]Get [[Imprint|imprinted]].[[/Spoiler]]
-|Are We The Baddies?: [[Spoiler]]Kill [[Z-Imprinter]].[[/Spoiler]]
-|Charge!!!: [[Spoiler]]Escape [[Warlord (Location)|Warlord's base]] with the [[Warlord (Location)#counterattack|counterattack]].[[/Spoiler]]
-|Revising The Future: [[Spoiler]]Meet [[Revision 17]] in [[Cetus]].[[/Spoiler]]
-|Anyone Home?: [[Redacted]]Find and enter the [[Lab|hidden Lab]].[[/Redacted]]
-|Decrypted!: [[Redacted]]Decrypt A0 Command.[[/Redacted]]
-|Revolutionary Research: [[Spoiler]]Trigger [[Revision 17 (Alignment)#-3_research_invasion|Revision 17's attack on Research]].[[/Spoiler]]
-|All-out Warlord: [[Spoiler]]Trigger [[Warlord (Alignment)#-2_research_assault|Warlord's attack on Research]].[[/Spoiler]]
-|Godhack: [[Spoiler]]Hack [[God Mode]] using code from [[Data Miner]].[[/Spoiler]]
-|Everyone Must Die: [[Redacted]]Join forces with the [[Sigix Warrior]] in its [[Sigix Exoskeleton|Exoskeleton]].[[/Redacted]]
-|Special Delivery: [[Spoiler]]Deliver the [[SGEMP Prototype|SGEMP]] to [[Zhirov]].[[/Spoiler]]
-|Corridor Of Doom: [[Redacted]]Destroy all 4 of [[MAIN.C (Shell)|MAIN.C]]'s guards.[[/Redacted]]
-|void main(): [[Redacted]]Destroy [[MAIN.C]].[[/Redacted]]
-|Sorry Old Pal: [[Redacted]]Enable [[Zhirov]] to destroy [[MAIN.C]].[[/Redacted]]
-|Behind The Curtain: [[Redacted]]Find [[Architect|The Architect]].[[/Redacted]]
-|The Bigger They Are: [[Redacted]]Destroy [[Architect|The Architect]].[[/Redacted]]
-[[/List]]","Other","Events [[Achievements]] are earned by witnessing or triggering certain events. Most of them will simply eventually be obtained by players as they explore and understand more of the game world and its depths. 40 of the 41 Events Achievements have hidden descriptions that are only revealed after completing them. The borders of Events Achievement have 0-2 squares in their corners, with more squares usually meaning a more important event.
 
 [[Comment]]This warning is supposed to be there for all articles about achievement types, regardless of whether there are any Redacted-level spoilers, because saying there are no Redacted-level spoilers is itself a spoiler.[[/Comment]]
 (The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least ""Spoilers"", and may be set to ""Redacted"" for achievements where that would be relevant. Remember to change your spoilers settings to ""None"" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
