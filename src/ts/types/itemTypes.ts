@@ -129,6 +129,7 @@ export type CorruptionIgnore = { kind: "CorruptionIgnore"; chance: number };
 export type CorruptionPrevent = { kind: "CorruptionPrevent"; amount: number };
 export type CorruptionReduce = { kind: "CorruptionReduce"; amount: number };
 export type CriticalImmunity = { kind: "CriticalImmunity" };
+export type CryofiberWeb = { kind: "CryofiberWeb" };
 export type DamageReduction = { kind: "DamageReduction"; multiplier: number; remote: boolean };
 export type DamageResists = { kind: "DamageResists"; resists: BotResistances };
 export type EnergyFilter = { kind: "EnergyFilter"; percent: number };
@@ -164,6 +165,7 @@ export type SpecialPropertyType =
     | CorruptionPrevent
     | CorruptionReduce
     | CriticalImmunity
+    | CryofiberWeb
     | DamageReduction
     | DamageResists
     | EnergyFilter
@@ -199,6 +201,7 @@ export type SpecialPropertyTypeName =
     | "CorruptionPrevent"
     | "CorruptionReduce"
     | "CriticalImmunity"
+    | "CryofiberWeb"
     | "DamageReduction"
     | "DamageResists"
     | "EnergyFilter"

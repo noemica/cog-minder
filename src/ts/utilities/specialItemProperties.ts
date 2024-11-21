@@ -49,6 +49,12 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     // Critical immunity
     "Graphene Brace": { active: "Always", trait: { kind: "CriticalImmunity" } },
 
+    // Cryofiber Web
+    "Cryofiber Web": { active: "Part Active", trait: { kind: "CryofiberWeb" } },
+    "Imp. Cryofiber Web": { active: "Part Active", trait: { kind: "CryofiberWeb" } },
+    "Adv. Cryofiber Web": { active: "Part Active", trait: { kind: "CryofiberWeb" } },
+    "Exp. Cryofiber Web": { active: "Part Active", trait: { kind: "CryofiberWeb" } },
+
     // Damage reduction
     "Shield Generator": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: false } },
     "Imp. Shield Generator": {

@@ -273,19 +273,28 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         }
     }
 
-    function getHeatPerMove(p: Part, tusPerMove: number) {
+    function getHeatPerMove(p: Part, hasCryofiberWeb: boolean, tusPerMove: number) {
         // Return negative value for heat dissipation, positive for generation
         if (p.active && p.part.slot === "Propulsion") {
-            return getValuePerTus(getHeatPerTurn(p), tusPerMove) + ((p.part as PropulsionItem).heatPerMove ?? 0);
+            return (
+                getValuePerTus(getHeatPerTurn(p, hasCryofiberWeb), tusPerMove) +
+                ((p.part as PropulsionItem).heatPerMove ?? 0)
+            );
         } else {
-            return getValuePerTus(getHeatPerTurn(p), tusPerMove);
+            return getValuePerTus(getHeatPerTurn(p, hasCryofiberWeb), tusPerMove);
         }
     }
 
-    function getHeatPerTurn(p: Part) {
+    function getHeatPerTurn(p: Part, hasCryofiberWeb: boolean) {
         // Return negative value for heat dissipation, positive for generation
         if (hasActiveSpecialProperty(p.part, p.active, "HeatDissipation")) {
-            return -(p.part.specialProperty!.trait as HeatDissipation).dissipation;
+            let dissipation = -(p.part.specialProperty!.trait as HeatDissipation).dissipation;
+
+            if (hasCryofiberWeb && p.part.name.endsWith("Heat Sink")) {
+                dissipation *= 2;
+            }
+
+            return dissipation;
         } else if (p.active && (p.part.slot === "Power" || p.part.slot === "Propulsion" || p.part.slot === "Utility")) {
             return (p.part as ItemWithUpkeep).heatGeneration ?? 0;
         }
@@ -293,7 +302,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         return 0;
     }
 
-    function getHeatPerVolley(p: Part, tusPerVolley: number) {
+    function getHeatPerVolley(p: Part, hasCryofiberWeb: boolean, tusPerVolley: number) {
         if (!p.active) {
             return 0;
         }
@@ -302,7 +311,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         if (p.part.slot === "Weapon") {
             return (p.part as WeaponItem).shotHeat ?? 0;
         } else {
-            return getValuePerTus(getHeatPerTurn(p), tusPerVolley);
+            return getValuePerTus(getHeatPerTurn(p, hasCryofiberWeb), tusPerVolley);
         }
     }
 
@@ -510,6 +519,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
 
     const innateEnergyGen = parseIntOrDefault(pageState.bonusEnergyGen, 0);
     const innateHeatDissipation = parseIntOrDefault(pageState.bonusHeatDissipation, 0);
+    const hasCryofiberWeb = parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "CryofiberWeb")).length > 0;
 
     // Core is additional 100 coverage
     const totalCoverage = parts.map((p) => (p.part.coverage ?? 0) * p.number).reduce(sum, 0) + 100;
@@ -568,9 +578,9 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
             energyPerTurn: getEnergyPerTurn(p, powerAmplifierBonus) * activeMultiplierNumber,
             energyPerVolley:
                 getEnergyPerVolley(p, energyFilterPercent, powerAmplifierBonus, tusPerVolley) * activeMultiplierNumber,
-            heatPerMove: getHeatPerMove(p, tusPerMove) * activeMultiplierNumber,
-            heatPerTurn: getHeatPerTurn(p) * activeMultiplierNumber,
-            heatPerVolley: getHeatPerVolley(p, tusPerVolley) * activeMultiplierNumber,
+            heatPerMove: getHeatPerMove(p, hasCryofiberWeb, tusPerMove) * activeMultiplierNumber,
+            heatPerTurn: getHeatPerTurn(p, hasCryofiberWeb) * activeMultiplierNumber,
+            heatPerVolley: getHeatPerVolley(p, hasCryofiberWeb, tusPerVolley) * activeMultiplierNumber,
             id: p.id,
             integrity: p.part.integrity * p.number,
             name: p.part.name,
@@ -1035,7 +1045,12 @@ function PartRow({
                 value={itemOptions.find((o) => o.value === partInfo.name)}
                 options={itemOptions}
             />
-            <ItemPopoverButton item={itemData.getItem(partInfo.name)} tooltip="Show details about the part." text="?" showWikiLink={true} />
+            <ItemPopoverButton
+                item={itemData.getItem(partInfo.name)}
+                tooltip="Show details about the part."
+                text="?"
+                showWikiLink={true}
+            />
         </div>
     );
 
