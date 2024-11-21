@@ -854,7 +854,7 @@ Using stored energy to continue firing EM weaponry or to power [[Shield Generato
 [[Heading:4]]Traps[[/Heading]]
 [[Fire Trap|Fire Traps]] and EM traps like [[EM Surge Trap|EM Surge Traps]] can be used to take out the Combat Programmers and M Guards respectively with little else.
 [[Heading:4]][[Relay Coupler [Proto]|Prototype Relay Couplers]][[/Heading]]
-A RIF build can assimilate the entire Doom Corridor with enough of these.[[/List]]
+A RIF build can assimilate the entire Doom Corridor with enough of these.
 [[Image]]Command Doom Corridor MWD.png|Using a Microwarp Drive to lure the Combat Programmers away[[/Image]]
 [[Image]]Command Doco Warlord Aggro.png|Path to allow Warlord to draw aggro, good with Core Stripper and Disintegrator[[/Image]][[Image]]Command Doom Corridor Lure Setup.png|CRM Imprint seal Doom Corridor lure setup[[/Image]]
 [[Heading:3]]Doom Corridor Combat Strategies[[/Heading]]
@@ -880,7 +880,7 @@ Phase two is 75% resistant to Thermal damage and Explosive damage, and 100% EM r
 [[Heading:4]][[BFG-9k Vortex Edition]][[/Heading]]
 This unique weapon deserves a special mention of its own. This will always kill with 2 core hits, and even guarantee the kill with a single [[Adv. Particle Charger]].
 [[Heading:4]][[L-Cannon]][[/Heading]]This weapon is also very unique. The completed L-Cannon is capable of killing MAIN.C in a single hit, and with good aim, can even destroy both phases in a single volley. Due to MAIN.C's fixed location and the L-Cannon's unique infinite range, it is possible to camp out in the corner of the map and destroy phase one safely out of sight. If MAIN.C survives into phase two, Cogmind can just wait around until he comes into range to finish the job.
-[[Heading:4]][[Graphene Brace]][[/Heading]]
+[[Heading:4]][[Graphene Brace]] (MAIN.C)[[/Heading]]
 Phase 2's 20% blast from the Omega Cannon can blast parts off of Cogmind, causing wasted time re-equipping parts or destruction of critical utilities. Graphene brace completely negates this risk.
 [[Heading:4]][[Imp. Utility Shielding|Imp.]] or [[Exp. Utility Shielding]][[/Heading]]
 These will protect vital utilities and also protect utility parts from getting blasted by phase two.
@@ -892,7 +892,7 @@ Specifically, [[Core Analyzer|Regular]] or [[Exp. Core Analyzer]] and [[Imp. Arm
 For example, [[Adv. Focal Shield|Adv.]] or [[Exp. Focal Shield]] or [[Med. Reactive Plating|Med.]] or [[Hvy. Reactive Plating]]. Being able to cut down on the kinetic damage dealt by phase two can help a lot.
 [[Heading:4]]Any Remote [[Datajacks|Datajack]][[/Heading]]
 The A7 MAIN.C hack can only be delivered with a manual hack performed with a Datajack.
-[[Heading:4]][[Energy Wells]][[/Heading]]
+[[Heading:4]][[Energy Wells]] (MAIN.C)[[/Heading]]
 Powering Force Fields or expensive Energy Cannons can require a lot of energy, and storing some in advance is always helpful. Consider pre-dropping energy wells so that energy is available when needed.
 [[Heading:4]][[Matter Compressors]] or [[Tractor Beams]][[/Heading]]
 Kinetic Cannons will eat up huge chunks of stored matter. Without a good way to replenish it mid-combat, Cogmind can run out of matter entirely. Phase one will typically drop a large amount of matter that can be gathered mid-combat with a Tractor Beam. Matter Compressors do a good job of storing matter ahead of time.
@@ -911,7 +911,7 @@ After the bots are disabled, there are two more options to take. Either take one
 If the surrender option is selected instead of continuing to fight, Cogmind must face off against waves of Enhanced Q-Series. These bots are mostly randomized, but there are some common qualities to them. They all have [[Adv. Dynamic Insulation System|Adv. Dynamic Insulation Systems]], so EM is not a very effective way to kill. They will typically have another damage resistance utility or armor, although Kinetic and Thermal damage is usually pretty effective. A 4+ Kinetic Cannon or [[Multirail]] stack is a good set to deal a lot of damage to these Q-Series. The overall build requirements tend not to be too strict here. As long as Cogmind can put out a decent amount of damage and manage to keep a build well intact from backup parts and from Q-Series or 0b10 bot loot and MAIN.C doesn't wander off and get overwhelmed, this wintype is not too difficult.
 One consideration when doing this event is whether or not to go to the cache. Since Cogmind only gets 100 moves and about 40 more turns after that, it may be worth calculating the path ahead of time. If MAIN.C gets overwhelmed in the first fight, single-handedly fighting a large group of Q-Series, the event can end in failure right at the very beginning. A Microwarp Drive can help greatly here since one warp only counts as one move for the purposes of the timer.
 [[Heading:2]]Useful parts vs. Enhanced Q-Series[[/Heading]]
-[[Heading:3]]Antimissile Systems[[/Heading]]
+[[Heading:3]]Antimissile Systems (Enh. Q-Series)[[/Heading]]
 Some of the Enhanced Q-Series carry powerful Launchers that are best blocked by a utility.
 [[Heading:3]]Tractor Beams[[/Heading]]
 There aren't typically a lot of turns to spend running around collecting matter in this event. Being able to restock remotely can help save a lot of time and damage dealt to Cogmind.
@@ -920,7 +920,7 @@ Resource storage is always useful here.
 [[Heading:3]]Launchers[[/Heading]]
 While these should be used sparingly to avoid friendly 0b10 fire that can cause a betrayal, sometimes large groups of Enhanced Q-Series will wander into the MAIN.C room at about the same time. It is very nice to be able to attack these groups simultaneously.
 [[Heading:3]][[Phasing AFG]]/[[Portable AFG]][[/Heading]]
-Drawing loot piles closer to Cogmind can also save a lot of otherwise wasted time trying to travel a long distance to get some good loot.[[/List]]"
+Drawing loot piles closer to Cogmind can also save a lot of otherwise wasted time trying to travel a long distance to get some good loot."
 "Commander","Bot",""
 "Compactor","Part",""
 "Companion Sword","Part","The Companion Sword is a unique talking melee weapon that can only appear in [[Scraptown]]. It is contained in a room called The Sword, locked for the protection of [[Derelict|Derelicts]], none of whom have survived using the Companion Sword for long. The Companion Sword is quite talkative and will often comment about the state of the run, take pleasure in destroying things, and complain if it is detached or is not the only weapon attached. The Companion Sword has a variety of special effects that are not described by the in-game effect.
@@ -2443,9 +2443,12 @@ Mechanics can refit parts if a bot has a slot available and fewer than 2 power, 
 [[Heading]]Various[[/Heading]]
 [[List]]Close Call: [[Spoiler]]Evolve after being reduced to less than 10% of core integrity.[[/Spoiler]]
 |Universal Adapter: [[Spoiler]]Use every form of propulsion across an entire run.[[/Spoiler]]
-|Hehehe: Reprogram a trap using a Datajack.
-|Wheee!: Manually trigger a Chute Trap.
+|Hehehe: Reprogram a [[Traps|trap]] using a [[Datajack]].
+Strategy: Find some hostile Traps, attach a melee Datajack, and attempt to move into one of the Traps with the Datajack active. This won't actually cause you to move onto them, and will instead attempt to hack the Trap. On a successful attempt, the Trap will either be disarmed or reprogrammed. Only the latter will trigger the Achievement.
+|Wheee!: Manually trigger a [[Chute Trap]].
+Strategy: Find some Chute Traps in [[Factory]] either through luck or by using the [[GameText]]find_chute[[/GameText]] [[Datajacks|Datajack]] hack on a [[K-01 Serf]]. Note that the Achievement requires [[I]]manually[[/I]] triggering the Chute Trap, which means pressing '>' while on top of a known Chute Trap (or left-click on self) to force it to trigger. Triggering a Chute Trap by moving into a known one is not enough. If possible, reprogram the Traps using a melee Datajack or a nearby Terminal. When using [[Treads]] or while overwheight, the Chute Traps will need to have been reprogrammed, as it is otherwise impossible to move onto them without triggering them.
 |It Was An Accident, I Swear: Destroy 10 machines in a single turn.
+Strategy: Find a large array of explosive machines, most likely in [[Factory]], and destroy one of them through either destabilization or a powerful cannon to start a chain reaction. A melee weapon also works, but at the cost of taking damage. Alternatively, this Achievement can also be unlocked by accident.
 |Part-time Excavator: Use a melee weapon to dig through 10 walls or earth.
 |Unlikely Earthworm: [[Spoiler]]Get crushed by a cave-in.[[/Spoiler]]
 |Hey, That's Mine!: Attack 5 Recyclers attempting to collect parts.
