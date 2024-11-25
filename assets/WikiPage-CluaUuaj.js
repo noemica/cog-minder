@@ -1,4 +1,4 @@
-import{j as a,K as H,M as q,c as I,r as S,N as ie,f as j,O as re,y as L,a as O,s as se,Q as le,S as Z,B as b,o as he,U as _,z as de,u as $,L as V,V as z,W as ce,X as B,Y as me,Z as ge,_ as F,$ as pe,a0 as ue}from"./index-Bq30jnhI.js";import{l as ye}from"./lore-Yb44s0tc.js";import{H as U,a as fe,L as be,I as we,B as J,b as Ce,u as ve}from"./BotDetails-DdjiM0Q8.js";import{a as ee,u as Se}from"./ItemPopover-DQ1pRltT.js";/* empty css              */import"./bots-DjRlh2xJ.js";import"./botTypes-_WzAd8ij.js";import"./items-CuodUx7O.js";const Te=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`12-ASH is one of the Hero's Of Zion. Upon appearing, they will shout "hail to the king".`},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:""},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed or gives a code when they are show the Cetus Mainframe in [[Cetus]]"},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:""},{Name:"Bomb Drone",Content:""},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
+import{j as a,K as H,M as q,c as I,r as S,N as ie,f as j,O as re,y as L,a as O,s as se,Q as le,S as Z,B as b,o as he,U as _,z as de,u as $,L as V,V as z,W as ce,X as B,Y as me,Z as ge,_ as F,$ as pe,a0 as ue}from"./index-C-1GVULr.js";import{l as ye}from"./lore-Yb44s0tc.js";import{H as U,a as fe,L as be,I as we,B as J,b as Ce,u as ve}from"./BotDetails-B6VHc0-Z.js";import{a as ee,u as Se}from"./ItemPopover-CKDY6H0O.js";/* empty css              */import"./bots-DjRlh2xJ.js";import"./botTypes-_WzAd8ij.js";import"./items-CuodUx7O.js";const Te=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`12-ASH is one of the Hero's Of Zion. Upon appearing, they will shout "hail to the king".`},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:""},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed or gives a code when they are show the Cetus Mainframe in [[Cetus]]"},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:""},{Name:"Bomb Drone",Content:""},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
 
 Due to their extreme lethality in melee, stay out of their range at all costs, and maybe just run the hell out of [[Wastes]]. Alternatively pack a good launcher or a good critical weapon, as their plating will tank most of your shots.`},{Name:"C-55 Analyst",Content:""},{Name:"C-57 Dissector",Content:""},{Name:"C-65 Expert",Content:""},{Name:"CL-ANK",Content:""},{Name:"Cetus Guard",Content:""},{Name:"Cobbler",Content:""},{Name:"Cogmind",Content:"That's you."},{Name:"Combat Drone",Content:""},{Name:"Combat Programmer",Content:""},{Name:"Commander",Content:""},{Name:"D-53 Grenadier",Content:""},{Name:"D-63 Destroyer",Content:""},{Name:"D-83 Annihilator",Content:""},{Name:"DAS Turret",Content:""},{Name:"DD-05H",Content:""},{Name:"DRS Ranger",Content:""},{Name:"Data Miner",Content:""},{Name:"Decomposer",Content:""},{Name:"Decoy Drone",Content:""},{Name:"Demented",Content:""},{Name:"Dragon",Content:""},{Name:"Drone",Content:""},{Name:"E-15 Imp",Content:""},{Name:"EX-BIN",Content:`[[Heading]]Parse[[/Heading]]
 When datajacked, one of the following parse texts is shown:
@@ -1438,7 +1438,50 @@ It is safe to travel through dug out tiles (that are not destabilized) for up to
 [[Gallery]]Wall Earth Wall Dig.png|Safe 3 tile dig with a ranged weapon: Wall-earth-wall|Wall Dig.png|Safe 1 tile dig with a melee weapon: Wall only|Wall Wall Dig.png|UNSAFE 2 tile dig: Digging within a dug out tile is unsafe|Wall Earth Earth Wall Dig.png|UNSAFE 4 tile dig: Wall-earth is safe, second half earth-wall is unsafe[[/Gallery]]
 [[Heading]]Avoiding cave-ins[[/Heading]]
 Here are some strategies to avoid cave-ins
-[[List]]Don't use melee to dig more than 1 tile - Melee weapons need to be adjacent to the next tile to dig out. This means Cogmind will have to be in a dug out tile to dig two consecutive tiles which allows a chance for an immediate destabilization cave-in.|Don't use Explosive Launchers to dig - While Launchers can dig out a lot of tiles at once, those tiles have a chance to collapse as Cogmind walks through. Note: it is safe to do this with a Structural Scanner equipped, as destabilized tiles will be visible and are avoidable.|Use Thermal or Kinetic cannons - These cannons have a high base damage that is typically strong enough to dig through most non-reinforced walls. It is safe to dig a 3 tile path ahead of time and then walk through at no risk of cave-in.|Be wary of [[U-05 Engineer|Engineers]] - Engineers may seal off your path and leave you stuck in the wall, forced to dig again to escape and risk immediate cave-in.[[/List]]`},{Name:"Challenges Achievements",Content:""},{Name:"Chute Trap",Content:""},{Name:"Corrupted Parts",Content:"Attaching a corrupted part will give you [[Corruption]]. Corrupted parts may be repaired at a Repair Station."},{Name:"Corruption",Content:`Stub
+[[List]]Don't use melee to dig more than 1 tile - Melee weapons need to be adjacent to the next tile to dig out. This means Cogmind will have to be in a dug out tile to dig two consecutive tiles which allows a chance for an immediate destabilization cave-in.|Don't use Explosive Launchers to dig - While Launchers can dig out a lot of tiles at once, those tiles have a chance to collapse as Cogmind walks through. Note: it is safe to do this with a Structural Scanner equipped, as destabilized tiles will be visible and are avoidable.|Use Thermal or Kinetic cannons - These cannons have a high base damage that is typically strong enough to dig through most non-reinforced walls. It is safe to dig a 3 tile path ahead of time and then walk through at no risk of cave-in.|Be wary of [[U-05 Engineer|Engineers]] - Engineers may seal off your path and leave you stuck in the wall, forced to dig again to escape and risk immediate cave-in.[[/List]]`},{Name:"Challenges Achievements",Content:`Challenges [[Achievements]] are earned by completing certain challenging feats, demonstrating the player's large experience with the game. Only some of them are likely to be obtained naturally by players not actively trying to earn them. 2 of the 27 Challenge Achievements have hidden descriptions that are only revealed after completing them. The borders of Challenge Achievements tend to indicate their general difficulty as a Challenge Achievement[[Comment]]Rincewind being the biggest exception. Why is that one considered "easy"? It's basically the most difficult one in here.[[/Comment]], with more "intense" borders meaning higher difficulty.
+
+[[Comment]]This warning is supposed to be there for all articles about achievement types, including those that do not have any Redacted-level spoilers.[[/Comment]]
+(The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least "Spoilers", and may be set to "Redacted" for achievements where that would be relevant. Remember to change your spoilers settings to "None" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
+
+Warning: The writer of this article has not yet earned the "Full Golem" Achievement, and as such its description in this page is a (likely accurate) guess instead of being the official description.
+
+[[Heading]]Challenge difficulty level 1[[/Heading]]
+[[List]]Exterminator: Destroy 15 [[Assembled]] in the [[Mines]].
+|Killing Spree: Achieve a kill streak of 20 hostiles.
+|Preemptive Strike: Destroy a visible ARC before it deploys.
+|Left-hand Path: Destroy all Cetus Guards without any help from allies.
+|Below: Visit and survive 2 Waste areas.
+|Streaker: Enter a main complex map at -5 or above as a naked core, and find an exit (do not have to remain naked).
+|Rincewind: Use at least 10 Transdimensional Reconstructors (any variant).
+|Leap Before You Look: Enter 10 unidentified exits.[[/List]]
+
+[[Heading]]Challenge difficulty level 2[[/Heading]]
+[[List]]
+Boltbath: Achieve a kill streak of 35 hostiles.
+|Torch: Inflict 30,000 thermal damage across an entire run.
+|Magneto: Inflict 30,000 electromagnetic damage across an entire run.
+|Punisher: Inflict 30,000 kinetic damage across an entire run.
+|Gladiator: Destroy 200 hostiles via melee.
+|Infiltrator: Enter and survive 2 Garrisons on a single floor.
+|Desperate Times: Enter a main complex map at -3 or above as a naked core with no inventory items, and find an exit (do not have to remain naked).
+|Monster: Kill at least 20 inhabitants of Zion.
+|Equal Opportunity Bot: Destroy 30 different classes of robot.
+|Giant Slayer: Destroy 5 Behemoths.
+|Artifact Hunter: [[Spoiler]]Attach or use 15 different alien artifacts.[[/Spoiler]]
+[[/List]]
+
+[[Heading]]Challenge difficulty level 3[[/Heading]]
+[[List]]
+Fearless: Enter a Garrison with below 10% core integrity and survive it.
+|Shutout: Seal, jam, or destroy all Garrison Access machines in Access.
+|WMD: Destroy 100 robots in a single turn.
+|Rambo: Earn 10,000 bonus points for high alert combat kills.
+|Most Wanted: Trigger high security 4 times.
+|404: Destroy 4 Network Hubs and escape to the next floor.
+|Full Golem: [[Spoiler]]Fully integrate all possible parts from a GOLEM Unit.[[/Spoiler]][[Comment]]TODO: This is the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning at the top of the page.[[/Comment]]
+|Traitor: Personally kill Warlord in his base and escape. Must initiate hostilities before incursion begins.[[/List]]
+
+`},{Name:"Chute Trap",Content:""},{Name:"Corrupted Parts",Content:"Attaching a corrupted part will give you [[Corruption]]. Corrupted parts may be repaired at a Repair Station."},{Name:"Corruption",Content:`Stub
 Corruption describes the system corruption of a robot. 
 [[Heading]]Getting corruption[[/Heading]]
 [[List]]Electromagnetic Damage | Crushing | Attaching a [[Corrupted Parts|Corrupted Part]] | Feedback from failed [[Terminal]] hacks[[/List]]
@@ -1754,7 +1797,7 @@ I also don't want to just bundle all "Various" achievements together, because th
 |Hehehe: Reprogram a [[Traps|trap]] using a [[Datajack]].
 Strategy: Find some hostile Traps, attach a melee Datajack, and attempt to move into one of the Traps with the Datajack active. This won't actually cause you to move onto them, and will instead attempt to hack the Trap. On a successful attempt, the Trap will either be disarmed or reprogrammed. Only the latter will trigger the Achievement.
 |Wheee!: Manually trigger a [[Chute Trap]].
-Strategy: Find some Chute Traps in [[Factory]] either through luck or by using the [[GameText]]find_chute[[/GameText]] [[Datajacks|Datajack]] hack on a [[K-01 Serf]]. Note that the Achievement requires [[I]]manually[[/I]] triggering the Chute Trap, which means pressing '>' while on top of a known Chute Trap (or left-click on self) to force it to trigger. Triggering a Chute Trap by moving into a known one is not enough. If possible, reprogram the Traps using a melee Datajack or a nearby Terminal. When using [[Treads]] or while overwheight, the Chute Traps will need to have been reprogrammed, as it is otherwise impossible to move onto them without triggering them.
+Strategy: Find some Chute Traps in [[Factory]] either through luck or by using the [[GameText]]find_chute[[/GameText]] [[Datajacks|Datajack]] hack on a [[K-01 Serf]]. Note that the Achievement requires [[I]]manually[[/I]] triggering the Chute Trap, which means pressing '>' while on top of a known Chute Trap (or left-click on self) to force it to trigger. Triggering a Chute Trap by moving into a known one is not enough. If possible, reprogram the Traps using a melee Datajack or a nearby Terminal. When using [[Treads]] or while overweight, the Chute Traps will need to have been reprogrammed, as it is otherwise impossible to move onto them without triggering them.
 |It Was An Accident, I Swear: [[Spoiler]]Destroy 10 machines in a single turn.[[/Spoiler]]
 Strategy: [[Spoiler]]Find a large array of explosive machines, most likely in [[Factory]], and destroy one of them through either destabilization or a powerful cannon to start a chain reaction. A melee weapon also works, but at the cost of taking damage. Alternatively, this Achievement can also be unlocked by accident.[[/Spoiler]]
 |Part-time Excavator: Use a melee weapon to dig through 10 walls or earth.
@@ -1801,49 +1844,51 @@ Strategy: You'll earn it eventually, probably more times than you would like.
 Strategy: Requires a weapon with penetrative capabilities, such as a [[Gauss Rifle]]. It is easiest to earn this Achievement by shooting robots in a small corridor, where robots would be naturally aligned.
 |Quick And Dirty: Destroy 5 hostiles via explosions in a single turn.
 Strategy: Use [[Launchers]] or nearby explosive machines. Especially easy against [[Assembled]] or [[Swarmer|Swarmers]], as they are both weak to explosions and easy to find in groups.
-|Power Corrupts: Terminally corrupt a robot.
-|It's Just You: Cause a robot to meltdown.
+|Power Corrupts: Terminally [[Corruption|corrupt]] a robot.
+|It's Just You: Cause a robot to [[Meltdown|meltdown]].
 |Fist Fight: Destroy a hostile by ramming.
 |Overkill: Fire 10 [[Overload#weapons|overloaded shots]].
 |Batter Up: Knock a hostile robot into an explosive machine via melee impact damage.
 |Watch This!: Sneak attack a [[Watcher]] and destroy it in one hit.
-|Deadly Force: Melee attack a hostile using 4 momentum.
+|Deadly Force: Melee attack a hostile using 4 [[Momentum|momentum]].
+Strategy: The only way to attain 4 momentum is with the help of a [[Reaction Control Systems|Reaction Control System]], which does not work if overweight. Move three times in the same direction (to attain the base maximum of 3 momentum) while you have a Reaction Control System (+1 momentum), then attack a hostile robot. [[Comment]]Maybe there should be an explanation here for why momentum is useful for melee attacks?[[/Comment]]
 |Ambidextrous: Destroy 2 hostiles with one melee volley.
-|Oops: [[Spoiler]]Attempt to fire a matter-consuming volley without enough matter.[[/Spoiler]]
-|No Explosion For You: Shoot down a launcher projectile with a defensive utility.
-|Oh No You Don't!: Destroy a Saboteur before it succeeds.
-|Ride The Lightning: Use a Fabricator to destroy an enemy.
-|Let's See Who's Tougher: [[Spoiler]]Fire a launcher at an enemy at point blank range.[[/Spoiler]]
+|Oops: [[Spoiler]]Attempt to fire a [[Matter|matter]]-consuming volley without enough matter.[[/Spoiler]]
+|No Explosion For You: Shoot down a [[Launchers|launcher]] projectile with a [[Antimissile Systems|defensive utility]].
+|Oh No You Don't!: Destroy a [[E-15 Imp|Saboteur]] before it succeeds.
+|Ride The Lightning: Use a [[Fabricator]] to destroy an enemy.
+Strategy: [[Spoiler]]While hostiles are approaching or are already close to a Fabricator, use Force(Overload) on said Fabricator. Consider moving away to avoid becoming one of the Fabricator's targets.[[/Spoiler]]
+|Let's See Who's Tougher: [[Spoiler]]Fire a [[Launchers|launcher]] at an enemy at point blank range.[[/Spoiler]]
 [[/List]]
 
 [[Heading]]Stealth[[/Heading]]
 
 [[List]]
-Uninvited Guest: Be spotted by an Operator that then summons reinforcements from its Terminal.
-|One Hack Too Far: Trigger an investigation by being traced to a Terminal.
-|Troublemaker: Cause a robot to call for help or reinforcements from a nearby Garrison.
-|Party Time: [[Spoiler]]Cause 3 active investigation squads at once.[[/Spoiler]]
-|Significant Disruption: Raise alert high enough to trigger an assault dispatch.
+Uninvited Guest: Be spotted by an [[Operator]] that then summons [[Reinforcement Squad|reinforcements]] from its [[Terminal]].
+|One Hack Too Far: Trigger an [[Investigation Squad|investigation]] by being traced to a [[Terminal]].
+|Troublemaker: Cause a robot to call for [[Garrison Squad|help or reinforcements]] from a nearby [[Garrison|Garrison (Machine)]].
+|Party Time: [[Spoiler]]Cause 3 active [[Investigation Squad|investigation squads]] at once.[[/Spoiler]]
+|Significant Disruption: Raise [[Alert|alert]] high enough to trigger an [[Assault Squad|assault dispatch]].
 |Slippery One: [[Spoiler]]Go from being tracked by 10 hostiles to having no pursuers without destroying any of them.[[/Spoiler]]
 |Hunted: Simultaneously tracked by 20 hostiles.
 [[/List]]
 
 [[Heading]]Hacking[[/Heading]]
 [[List]]
-My Command Is Your Wish: Build an ally via Fabricator.
-|Just What I Needed: Build a part via Fabricator.
-|Part-time Mechanic: Repair a part via Repair Station.
-|Safety First: Identify a prototype via Scanalyzer.
-|Dynamic Key: Use an Operator Data Core before it expires.
+My Command Is Your Wish: Build an ally via [[Fabricator]].
+|Just What I Needed: Build a part via [[Fabricator]].
+|Part-time Mechanic: Repair a part via [[Repair Station]].
+|Safety First: Identify a prototype via [[Scanalyzer]].
+|Dynamic Key: Use an [[Operator]] [[Data Core]] before it expires.
 |Novice Programmer: Hack 10 machines.
-|Librarian: Hack 10 different Terminal records.
-|Armchair Analyst: Download 3 robot analyses from Terminals.
-|Everything Is Under Control: Lower alert using a Terminal's Purge Threat hack.
-|GoHome(): Use a Terminal to recall an active squad.
-|Shopping List: Hack Hauler Manifests at a Terminal.
+|Librarian: Hack 10 different [[Terminal]] records.
+|Armchair Analyst: Download 3 robot analyses from [[Terminal|Terminals]].
+|Everything Is Under Control: Lower alert using a [[Terminal]]'s Purge Threat hack.
+|GoHome(): Use a [[Terminal]] to recall an active squad.
+|Shopping List: Hack [[Hauler]] Manifests at a [[Terminal]].
 |Brute Force: Use a Force() hack.
 |True Hacker: Install a Trojan().
-|Quantum Hacking: Set up a three-Terminal botnet.
+|Quantum Hacking: Set up a three-[[Terminal]] botnet.
 [[/List]]
 
 [[Heading]]Bothacking[[/Heading]]
@@ -1857,10 +1902,10 @@ A New Friend: Rewire a robot.
 
 [[Heading]]Infowar[[/Heading]]
 [[List]]
-No Signal: Block an Alarm Trap transmission.
-|Total Silence: Jam 10 distress signals or other communications.
-|I Spy: Use an Imp. Sensor Array (or better) with Imp. Signal Interpreter (or better).
-|Omniscient Cartographer: Use an Imp. Terrain Scanner (or better) with Imp. Terrain Scan Processor (or better).
+No Signal: Block an [[Alarm Trap]] transmission.
+|Total Silence: Jam 10 [[Distress Signals|distress signals]] or other communications.
+|I Spy: Use an [[Imp. Sensor Array]] (or better) with [[Imp. Signal Interpreter]] (or better).
+|Omniscient Cartographer: Use an [[Imp. Terrain Scanner]] (or better) with [[Imp. Terrain Scan Processor]] (or better).
 |Knowing Is Half The Battle: Enter 10 identified exits.
 [[/List]]
 
@@ -2140,7 +2185,59 @@ Note: Unlike most other maps, in [[Access]] bots are not evacuated. The evacuati
 [[Heading:2]]Rapid Sterilization[[/Heading]]
 DSFs have a unique rapid sterilization system that works much quicker than normal sterilization. Ambient heat increases begin only 20 turns after the initial announcement and occur every 15 turns after that.
 [[Heading]]Part Melting[[/Heading]]
-After Sterilization is triggered, parts will begin to melt every 30-40 turns and be destroyed instantly. Parts that are 200 integrity or greater are safe from melting. Parts with a lower integrity are more likely to melt than those with higher integrity. For example, [[Treads]] and [[Armor]] tend to last longer or be immune to melting altogether, while fragile processors will melt almost instantly. Parts only melt when within a 20-tile radius around Cogmind, so with a good enough speed, timing, and luck, it is possible to grab parts that would otherwise melt quickly in the heat.`},{Name:"Style Achievements",Content:""},{Name:"Surveillance Squad",Content:`[[Image]]Surveillance Squad.png|A Watcher surveillance squad[[/Image]]
+After Sterilization is triggered, parts will begin to melt every 30-40 turns and be destroyed instantly. Parts that are 200 integrity or greater are safe from melting. Parts with a lower integrity are more likely to melt than those with higher integrity. For example, [[Treads]] and [[Armor]] tend to last longer or be immune to melting altogether, while fragile processors will melt almost instantly. Parts only melt when within a 20-tile radius around Cogmind, so with a good enough speed, timing, and luck, it is possible to grab parts that would otherwise melt quickly in the heat.`},{Name:"Style Achievements",Content:`Style [[Achievements]] are earned by reaching high statistics in some categories, which usually requires using an associated playstyle, or by using some rare items and/or their mechanics. Most of them will be simply eventually be obtained by players as they become familiar with the more common mechanics of the game and figure out playstyles that utilizes them or discover some of the less common mechanics of the game. 12 of the 46 Style Achievements have hidden descriptions that are only revealed after completing them. The borders of Style Achievement indicate their difficulty compared to other achievements with similar[[Comment]]TODO: Figure out a way to say "Achievements with almost exactly the same requirements, with the only difference being that one achievement requires doing thing A while the more difficult achievement requires doing thing A+B.", but use fewer words to say this.[[/Comment]] requirements, with more "intense" borders meaning higher difficulty.
+
+
+[[List]]
+
+Turtlemind: Have 2% or less core exposure.
+|Can't Touch This: Absorb 1,500 damage using shields.
+|Executioner: Have 7 weapon slots.
+|Perfect Aim: Have +40% targeting accuracy for ranged weapons via utilities.
+|More Dakka Please: Fire 10 kinetic projectiles in a single volley.
+|Gunslinger: Destroy 3 robots with a single volley using secondary targeting.
+|Gun Specialist: Destroy 100 hostiles with at least 90% of damage across an entire run dealt by guns.
+|Cannon Specialist: Destroy 100 hostiles with at least 90% of damage across an entire run dealt by cannons.
+|Launcher Specialist: Destroy 100 hostiles with at least 90% of damage across an entire run dealt by launchers.
+|Melee Specialist: Destroy 100 hostiles with at least 90% of damage across an entire run dealt by melee weapons.
+|Shocking Conclusion: Corrupt 50 hostiles.
+|Pyromaniac: Cause 20 hostiles to meltdown.
+|Guerrilla Style: Trigger reprogrammed (or placed) traps on 30 hostiles.
+|Tank: [[Spoiler]]Reach a mass of 150.[[/Spoiler]]
+|Friend Of Zion: [[Spoiler]]Summon 10 Zionite dispatches.[[/Spoiler]]
+|Heroic Deeds: [[Spoiler]]Summon a Hero of Zion.[[/Spoiler]]
+|Whoosh!: Move with 4 overloaded hover or flight units.
+|Speed Demon: Reach a speed of 10 spaces per turn.
+|Supersonic: Reach a speed of 20 spaces per turn.
+|Dodgeball, But With Guns: Reach 75% evasion.
+|Assassin: Sneak attack 15 active hostiles.
+|Sniper: [[Spoiler]]Destroy a visible hostile from more than 20 spaces away with a gun or cannon.[[/Spoiler]]
+|Dramatic Entrance: [[Spoiler]]With no hostiles in sight and no pursuers, destroy an enemy combat bot with explosives.[[/Spoiler]]
+|Decoder Ring: Obtain 50 pieces of intel from one or more 0b10 Decoder Chips.
+|Freeware: [[Spoiler]]Receive 10 pieces of Zionite intel.[[/Spoiler]]
+|Prolific Hacker: Hack 50 machines.
+|Pwned: Hack 50 hostiles.
+|l33t h4x0r: Have +100% to hack success.
+|Maximum Efficiency: Succeed at 10 hacks on a single Terminal.
+|root@: Succeed at 3 manual hacks on a single Terminal.
+|War Machine: Build 10 allied bots.
+|We Are Legion: Have 20 allies at once.
+|Beloved: Acquire 75 allies across an entire run.
+|Generalissimo: Oversee 75 ally kills across an entire run.
+|Collateral Damage: [[Spoiler]]Lose 1,000 points to friendly fire.[[/Spoiler]]
+|What Is This Thing?: Discover the use of Self-destruct Interrupters.
+|Deconstruction: Destroy a robot via core entropy.
+|Max Potential: [[Spoiler]]Fire a Potential Cannon.[[/Spoiler]]
+|Hard Hitter: Inflict 200 damage against an enemy with one shot from a single weapon.
+|Sunderer: [[Spoiler]]Instakill an enemy with a Core Stripper.[[/Spoiler]]
+|Packrat: [[Spoiler]]Carry 30 items in inventory.[[/Spoiler]]
+|Production Line: Build 10 parts.
+|Remodeling: Destroy 200 walls with area of effect damage.
+|More Power To You: [[Spoiler]]Reach 75 energy generation.[[/Spoiler]]
+|Minesweeper: Extract 30 traps.
+|Superinsulated: Become immune to electromagnetic damage.
+
+[[/List]]`},{Name:"Surveillance Squad",Content:`[[Image]]Surveillance Squad.png|A Watcher surveillance squad[[/Image]]
 Surveillance squads are [[0b10]] aligned [[Squad|squads]] that roam the map looking for hostiles to report to 0b10 combat bots. They consist only of a single [[Watcher]]. This is a [[W-16 Scout]] on -10 and -9, a [[W-25 Informer]] on -8 through -5, and a [[W-44 Eye]] on -4 through -1. They can be Enumerated at [[Terminal|Terminals]]. They patrol between two points at a slow pace, then turn back around when they reach the end. The [[Garrison (Machine)]] hack [[Spoiler]]Trojan(Watchers)[[/Spoiler]] reports where all Watchers are at all times.`},{Name:"Terminal",Content:`Terminals are interactable Machines that [[Cogmind]] can hack for various benefits (such as recalling an [[Extermination Squad]]!) and info. Terminals are also often guarded by an [[Operator]], which if alerted will use this terminal to call for a [[Reinforcement Squad]] unless it or the terminal is disabled/destroyed.
 The main differences between security levels and terminal types are are :
 [[Table]]Security level|Average size|Armor|Direct hacks|Base direct hacking success rate|Base indirect hacking success rate|Base detection rate||
