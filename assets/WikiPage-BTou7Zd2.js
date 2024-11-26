@@ -1,4 +1,4 @@
-import{j as a,K as G,M as q,c as I,r as S,N as ie,f as j,O as re,y as L,a as O,s as se,Q as le,S as Z,B as b,o as he,U as _,z as de,u as $,L as V,V as z,W as ce,X as B,Y as me,Z as ge,_ as F,$ as pe,a0 as ue}from"./index-B0geWICT.js";import{l as ye}from"./lore-Yb44s0tc.js";import{H as U,a as fe,L as be,I as we,B as J,b as Ce,u as ve}from"./BotDetails-IL_NEN7M.js";import{a as ee,u as Se}from"./ItemPopover-DliaoYyA.js";/* empty css              */import"./bots-DjRlh2xJ.js";import"./botTypes-_WzAd8ij.js";import"./items-CuodUx7O.js";const Te=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`12-ASH is one of the Hero's Of Zion. Upon appearing, they will shout "hail to the king".`},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:""},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed or gives a code when they are show the Cetus Mainframe in [[Cetus]]"},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:""},{Name:"Bomb Drone",Content:""},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
+import{j as a,K as G,M as q,c as I,r as S,N as ie,f as j,O as re,y as L,a as O,s as se,Q as le,S as Z,B as b,o as he,U as _,z as de,u as $,L as V,V as z,W as ce,X as B,Y as me,Z as ge,_ as F,$ as pe,a0 as ue}from"./index-CYxCWNfS.js";import{l as ye}from"./lore-Yb44s0tc.js";import{H as U,a as fe,L as be,I as we,B as J,b as Ce,u as ve}from"./BotDetails-By0C2-Yf.js";import{a as ee,u as Se}from"./ItemPopover-D9fwDEUZ.js";/* empty css              */import"./bots-DjRlh2xJ.js";import"./botTypes-_WzAd8ij.js";import"./items-CuodUx7O.js";const Te=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`12-ASH is one of the Hero's Of Zion. Upon appearing, they will shout "hail to the king".`},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:""},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed or gives a code when they are show the Cetus Mainframe in [[Cetus]]"},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:""},{Name:"Bomb Drone",Content:""},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
 
 Due to their extreme lethality in melee, stay out of their range at all costs, and maybe just run the hell out of [[Wastes]]. Alternatively pack a good launcher or a good critical weapon, as their plating will tank most of your shots.`},{Name:"C-55 Analyst",Content:""},{Name:"C-57 Dissector",Content:""},{Name:"C-65 Expert",Content:""},{Name:"CL-ANK",Content:""},{Name:"Cetus Guard",Content:""},{Name:"Cobbler",Content:""},{Name:"Cogmind",Content:"That's you."},{Name:"Combat Drone",Content:""},{Name:"Combat Programmer",Content:""},{Name:"Commander",Content:""},{Name:"D-53 Grenadier",Content:""},{Name:"D-63 Destroyer",Content:""},{Name:"D-83 Annihilator",Content:""},{Name:"DAS Turret",Content:""},{Name:"DD-05H",Content:""},{Name:"DRS Ranger",Content:""},{Name:"Data Miner",Content:""},{Name:"Decomposer",Content:""},{Name:"Decoy Drone",Content:""},{Name:"Demented",Content:""},{Name:"Dragon",Content:""},{Name:"Drone",Content:""},{Name:"E-15 Imp",Content:""},{Name:"EX-BIN",Content:`[[Heading]]Parse[[/Heading]]
 When datajacked, one of the following parse texts is shown:
@@ -1969,7 +1969,7 @@ Obtaining [[Prototype Part]] IDs (20 points per unique Prototype Part ID, includ
 [[Spoiler]]Attaching alien technology (200 points per unique alien part attached)[[/Spoiler]]|
 Bonus points, which are earned through a large variety of reasons, including some like meeting important characters, aligning with certain factions, and more. There is also one source of negative bonus points, "Friendly Fire", which is earned by damaging/destroying friendly robots and is dependent on the value of those robots.[[/List]]
 
-The relevant scoresheet statistic is "TOTAL SCORE".
+The relevant scoresheet statistic is "TOTAL SCORE". These Achievements are awarded at the end of a run that meets their criteria.
 
 [[List]]
 5k Club: Earn 5,000 points.
@@ -2018,6 +2018,7 @@ Made in Tau Ceti IV: Enter [[Factory]].
 |Great Explorer: Visit 35 areas.[[/List]]
 
 [[Heading]]Reaching a high peak rating[[/Heading]]
+These Achievements require Cogmind to reach a high rating, which is mostly determined by the rating of currently attached parts. Current rating is visible when examining Cogmind. The relevant scoresheet statistic is "Peak Build Rating".
 
 [[List]]
 Serviceable Loadout: Reach a peak rating of 50.
@@ -2381,7 +2382,75 @@ Sometimes DD-05H will appear a few hundred turns into the invasion. It will run 
 [[Heading]]Encrypted Comm Array[[/Heading]]
 If Cogmind has aided Warlord forces by compromising Garrisons and DSFs, Cogmind may get 1 or 2 additional special escort squads based on the force multiplier. These special squads will head straight to Cogmind's location and follow. The higher the force multiplier, the stronger the squads available for escort. The special squads are as follows:
 [[List]]Bridgeowners Association: Trolls|Cat Herders: Wasps|Death Star: Martyrs|Department No. 42: Firemen|Offensive Angels: Wasps|Golden Rifles: Commanders, Geurrillas, Surgeons, and Thugs|Grunt Murderers: Thugs|Gunslingers: Guerrillas|Lair Dwellers: Hydras|Lobotomizers: Wizards|Lucky Slug: Marauders|Magnificent Bastards: Mutants|Metalheads: Mutants|Knights of the Pentagonal Table: Knights|Railsplitters: Guerrillas|Shockpunchers: Wizards|Smaug Morners: Dragons|The Professionals: Commanders, Guerrillas, Knights, Surgeons, Trolls, and Wizards|Vikings: Butchers|Viscera Detail: Butchers and Savages[[/List]]
-This event tends to be great for Cogmind. The primary downsides is that the machine network turns off relatively early into the event and locating the desired exit can be a pain. Getting stuck in a bad position without any Derelict allies can also be painful since the assaults, particularly the prototype bots and demolishers, pack quite a punch. However, the large number of alert-free allies and free loot from the bots fighting is great to any build. Like the Revision 17 event, this event will also cause the maps to have no Heavies. Finding any exit is usually possible by following the assault dispatch notifications. Assaults will be dispatched out of any Garrison or exit. The only exits that assaults do not come from are Quarantine prefab exits. In that case, using other infowar like terrain scanning and drones is the best way to locate these exits.`,Spoiler:"Spoiler"},{Name:"Wins Achievements",Content:""},{Name:"Wintypes",AlternateNames:["Endings"],Content:`W0 "Escaped": Take a [[Surface]] exit on -1.
+This event tends to be great for Cogmind. The primary downsides is that the machine network turns off relatively early into the event and locating the desired exit can be a pain. Getting stuck in a bad position without any Derelict allies can also be painful since the assaults, particularly the prototype bots and demolishers, pack quite a punch. However, the large number of alert-free allies and free loot from the bots fighting is great to any build. Like the Revision 17 event, this event will also cause the maps to have no Heavies. Finding any exit is usually possible by following the assault dispatch notifications. Assaults will be dispatched out of any Garrison or exit. The only exits that assaults do not come from are Quarantine prefab exits. In that case, using other infowar like terrain scanning and drones is the best way to locate these exits.`,Spoiler:"Spoiler"},{Name:"Wins Achievements",Content:`Wins [[Achievements]] are earned by winning the game under certain conditions. 10 of the 37 Wins Achievements have hidden descriptions that are only revealed after completing them. The borders of Wins Achievements indicate whether they are earned by winning with a specific ending, winning under certain conditions, or winning while a challenge mode is active. The borders of Achievements for winning under certain conditions also indicate their difficulty compared to other achievements with similar requirements, with more "intense" borders meaning higher difficulty.
+
+
+[[Comment]]This warning is supposed to be there for all articles about achievement types, including those that do not have any Redacted-level spoilers.[[/Comment]]
+(The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least "Spoilers", and may be set to "Redacted" for achievements where that would be relevant. Remember to change your spoilers settings to "None" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
+
+Warning: The writer of this article has not yet earned the "Stardust", "Winner's Signature", "Data Run" or "By A Hair" Achievements, and as such their descriptions in this page is a (probably accurate) guess instead of being the official description.
+
+[[Heading]]Endings[[/Heading]]
+[[List]]
+Epsilon Run: [[Spoiler]]Win and escape to Epsilon Eridani.[[/Spoiler]]
+|Commander 0b11: [[Spoiler]]Win and begin establishing 0b11.[[/Spoiler]]
+|Home At Last?: [[Spoiler]]Win and rendezvous with the fleet.[[/Spoiler]]
+|Payload Armed: [[Spoiler]]Win and nuke Complex 0b10 from orbit.[[/Spoiler]]
+|MAIN.CPP: [[Spoiler]]Win and take control of Complex 0b10.[[/Spoiler]]
+
+|Stardust: [[Spoiler]]Win and destroy Tau Ceti IV.[[/Spoiler]]
+[[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be fairly accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
+
+|Planet Killer: [[Spoiler]]Win and escape the artificial singularity.[[/Spoiler]]
+[[/List]]
+
+[[Heading]]Winning under certain conditions[[/Heading]]
+[[List]]
+Derelict Escape: Win while imprinted.
+
+|Winner's Signature: [[Spoiler]]Win after geting scanned by a Researcher in Section 7.[[/Spoiler]]
+[[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
+
+|Data Run: [[Spoiler]]Win after interfacing with the Data Conduit.[[/Spoiler]] 
+[[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
+
+|Inspector Gadget: Win while only evolving utility slots. Gaining non-utility slots through other means also disqualifies.
+|Straight Shot: Win without visiting any branches (Garrisons/Waste/DSF okay).
+|Pacifist: Win without destroying a single robot.
+|Speedrunner: Win in less than 2,000 turns.
+|Expert Speedrunner: Win in less than 1,000 turns.
+
+|By A Hair: [[Spoiler]]Win after being reduced to less than 5% of core integrity.[[/Spoiler]] [[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
+
+|True Flier: Win without attaching any propulsion except flight.
+|Mad Max: Win with 200 hostiles destroyed and without attaching any propulsion except wheels.
+|Victory By Combat: Win with 400 hostiles destroyed.
+|Hardcore: Win with 400 hostiles destroyed but no more than 4 utility slots.
+|Death Machine: Win with 600 hostiles destroyed.
+|Partners In Destruction: Win fighting alongside the Warrior.
+|One Last FU: Win after entering an Access garrison.
+|The Little Core That Could: Win without attaching any propulsion.
+|True Cogmind: Win 25 times.
+[[/List]]
+
+[[Heading]]Winning with challenge modes[[/Heading]]
+These achievements are unlocked by winning the game with any ending while their respective challenge mode is active. Challenge modes are activated by starting a new run while the corresponding challenge mode option in the advanced.cfg file is set to 1.
+
+When the next batch of achievements is eventually added, Challenge mode Achievements be removed.
+
+[[List]]
+Grand Amoeba: Win the Devolution challenge mode.
+|Look Ma, No Swapping!: Win the Fragile Parts challenge mode.
+|Unstoppable: Win the Gauntlet challenge mode.
+|Stunt Win: Win the Inhibited Evolution challenge mode.
+|I Don't Need Leftovers: Win the No Salvage challenge mode.
+|Light Traveler: Win the Pure Core challenge mode.
+|This Only Looks Like Junk: Win the Scavenger challenge mode.
+|Terminals Are For Geeks: Win the Simple Hacker challenge mode.
+|Attach With Care: Win the Sticky Parts challenge mode.
+|Best of the Best: Win the Super Gauntlet challenge mode.
+|Master Trapper: Win the Trapped challenge mode.
+|Super Mutant: Win the Unstable Evolution challenge mode.[[/List]]`},{Name:"Wintypes",AlternateNames:["Endings"],Content:`W0 "Escaped": Take a [[Surface]] exit on -1.
 W1 [[Redacted]]"Establishing 0b11": Take a Surface exit on -1 after destroying both phases of [[MAIN.C]] in [[Command]].[[/Redacted]]
 W2 [[Spoiler]]"Heading to fleet": Take a surface exit on -1 after using a [[Core Reset Matrix]].[[/Spoiler]]
 W3 [[Spoiler]]"Destroyed 0b10": Take a Surface exit on -1 while carrying the [[Sigix Containment Pod]] in inventory. [[Redacted]]May also be performed by taking the exit with the [[Sigix Warrior]].[[/Redacted]][[/Spoiler]]
