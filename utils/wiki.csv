@@ -1528,7 +1528,138 @@ There are two types of spoilers: [[Spoiler]]Spoiler-tier spoilers[[/Spoiler]] an
 [[Gallery]]Research.png|These images can also show|Access.png|[[Spoiler]]Spoiler[[/Spoiler]] and [[Redacted]]Redacted[[/Redacted]] content[[/Gallery]]
 [[Redacted]][[List]]Lists can also|be spoiled entirely[[/List]][[/Redacted]][[List]]They can also have|some [[Redacted]]spoiled content[[/Redacted]][[/List]]
 Game text and Lore entries can also be spoilered: [[Redacted]][[GameText]]Game text[[/GameText]]
-Lore entry: [[Lore]]0b10 Records|Materials[[/Lore]][[/Redacted]]"
+Lore entry: [[Lore]]0b10 Records|Materials[[/Lore]][[/Redacted]]
+[[Heading]]Fake items[[/Heading]]
+Fake item stats can be created. Different stats are available based on the weapon type. Examples:
+[[Heading:2]]Power[[/Heading]]
+[[ItemDetails]]Name|Mni. Fusion Reactor +||
+Image Name|../part_art/Mni. Fusion Reactor.png||
+Type|Reactor||
+Slot|Power||
+Mass|8||
+Rating|7||
+Rating Category|Prototype||
+Integrity|100||
+Coverage|40||
+Hackable|true||
+Energy Upkeep|0||
+Heat Generation|13||
+Energy Generation|22||
+Energy Storage|70||
+Power Stability|99||
+Description|If triggered by chain reaction or rigged proximity response, explodes for 51-101 thermal damage with a radius of 3 (falloff: 14; chunks: 1-2; salvage: -7). High heat transfer.[[/ItemDetails]]
+[[Heading:2]]Propulsion[[/Heading]]
+[[ItemDetails]]
+Name|Electron Diverter +||
+Image Name|../part_art/Electron Diverter.png||
+Type|Flight Unit||
+Slot|Propulsion||
+Rating|8||
+Rating Category|Prototype||
+Integrity|90||
+Coverage|20||
+Hackable|true||
+Energy Upkeep|1||
+Matter Upkeep|0||
+Heat Generation|3||
+Time Per Move|35||
+Mod Per Extra|-3||
+Energy Per Move|0.5||
+Heat Per Move|1||
+Support|8||
+Penalty|60||
+Burnout|10%[[/ItemDetails]]
+[[ItemDetails]]
+Name|Biometal Heavy Treads +||
+Image Name|../part_art/Biometal Heavy Treads.png||
+Type|Treads||
+Size|2||
+Slot|Propulsion||
+Rating|9||
+Integrity|650||
+Coverage|240||
+Hackable|true||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Time Per Move|135||
+Drag|40||
+Energy Per Move|7||
+Heat Per Move|3||
+Support|75||
+Penalty|80||
+Siege|Standard||
+Description|10% chance to crush robots when ramming them. Cannot crush targets of large or greater size, or those with more than 50 core integrity.
+ <stacks, capped at 35%>
+-2 recoil from each weapon, and immunity to knockback.[[/ItemDetails]]
+[[Heading:2]]Utility[[/Heading]]
+[[ItemDetails]]
+Name|Exp. Heat Sink +||
+Image Name|../part_art/Exp. Heat Sink.png||
+Type|Device||
+Slot|Utility||
+Mass|0||
+Rating|8||
+Rating Category|Prototype||
+Integrity|100||
+Coverage|15||
+Hackable|false||
+Energy Upkeep|1||
+Matter Upkeep|0||
+Heat Generation|0||
+Description|Dissipates 32 heat per turn.
+ <Stacks>[[/ItemDetails]]
+[[Heading:2]]Weapon[[/Heading]]
+[[ItemDetails]]
+Name|Core Cannon +||
+Image Name|../part_art/Core Cannon.png||
+Type|Energy Cannon||
+Slot|Weapon||
+Mass|10||
+Rating|10||
+Rating Category|Alien||
+Integrity|350||
+Coverage|160||
+Range|22||
+Shot Energy|300||
+Shot Heat|300||
+Recoil|20||
+Targeting|25||
+Delay|-25||
+Overload Stability|99||
+Waypoints|1||
+Damage|250||
+Damage Type|Thermal||
+Critical|100% Destroy||
+Penetration|Unlimited||
+Heat Transfer|Massive (80)||
+Disruption|10%||
+Salvage|-20||
+Description|Core loses 10-30 integrity with each discharge.[[/ItemDetails]]
+[[ItemDetails]]
+Name|Exp. Neutron Missile Launcher +||
+Image Name|../part_art/Exp. Neutron Missile Launcher.png||
+Type|Launcher||
+Slot|Weapon||
+Mass|12||
+Rating|9||
+Rating Category|Prototype||
+Integrity|210||
+Coverage|110||
+Range|16||
+Shot Matter|20||
+Shot Heat|50||
+Targeting|30||
+Explosion Radius|6||
+Explosion Damage|75-105||
+Falloff|0||
+Chunks|1-3||
+Explosion Type|Explosive||
+Explosion Spectrum|Intermediate (30%)||
+Explosion Disruption|4||
+Explosion Salvage|-14||
+Penetration|Unlimited||
+Salvage|-20[[/ItemDetails]]"
 "Executioner","Bot",""
 "Exiles (Group)","Bot Group","The Exiles are a group of 3 [[Tinkerer]]-like bots and their bodyguard [[8R-AWN]] stationed at [[Exiles (Location)]] that have been exiled from [[Zion]].
 [[EX-DEC]] wields their [[AWS/EX-DEC]] and [[8R-AWN]] wields 2 [[8R-AWN's Boregun|Boreguns]] and may fight if provoked, but the others are unarmed. They have developed a large number of unique prototype parts."
