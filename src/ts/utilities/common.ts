@@ -296,6 +296,10 @@ export function getItemSpriteImageNames(item: Item): string[] {
 
 // Gets the sprite image name of an item
 export function getItemAsciiArtImageName(item: Item): string {
+    if (item.imageName !== undefined) {
+        return item.imageName;
+    }
+
     if (itemsWithNoArt.has(item.name)) {
         // Some items have no gallery art
         return createImagePath("part_art/No Image Data.png");

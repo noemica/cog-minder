@@ -13,19 +13,17 @@ export type DamageType =
     | "Special"
     | "Thermal";
 
-export enum HeatTransfer {
-    Minimal = "Minimal (5)",
-    Low = "Low (25)",
-    Medium = "Medium (37)",
-    High = "High (50)",
-    Massive = "Massive (80)",
-}
+export type HeatTransfer =
+    | "Minimal (5)"
+    | "Low (25)"
+    | "Medium (37)"
+    | "High (50)"
+    | "Massive (80)";
 
-export enum ItemRatingCategory {
-    Alien = "Alien",
-    Prototype = "Prototype",
-    None = "",
-}
+export type ItemRatingCategory =
+    | "Alien"
+    | "Prototype"
+    | "None";
 
 export type ItemCategory =
     | "0b10"
@@ -247,7 +245,7 @@ export type BaseItem = {
     type: ItemType;
     rating: number;
     ratingString: string;
-    category: ItemRatingCategory;
+    ratingCategory: ItemRatingCategory;
     size: number;
     mass?: number;
     integrity: number;
@@ -261,6 +259,8 @@ export type BaseItem = {
     specialProperty?: SpecialItemProperty;
     specialTrait?: string;
     spoiler: Spoiler;
+    imageName?: string;
+    customItem?: boolean;
 };
 
 export type OtherItem = BaseItem & {

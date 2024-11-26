@@ -1,12 +1,13 @@
 import { Fragment, ReactNode } from "react";
 
 import lore from "../../json/lore.json";
+import ItemDetails from "../components/GameDetails/ItemDetails";
 import { LinkIcon } from "../components/Icons/Icons";
 import WikiTableOfContents, { WikiHeadingState } from "../components/Pages/WikiPage/WikiTableOfContents";
 import { BotLink, ItemLink, LocationLink } from "../components/Pages/WikiPage/WikiTooltips";
 import { Bot } from "../types/botTypes";
 import { MapLocation, Spoiler } from "../types/commonTypes";
-import { Item } from "../types/itemTypes";
+import { Critical, Item, WeaponItem } from "../types/itemTypes";
 import { WikiEntry } from "../types/wikiTypes";
 import { HashLink } from "../utilities/linkExport";
 import { BotData } from "./BotData";
@@ -16,6 +17,7 @@ import {
     createImagePath,
     getLargeBotImageName,
     getLinkSafeString,
+    parseFloatOrUndefined,
     parseIntOrDefault,
     rootDirectory,
 } from "./common";
@@ -940,6 +942,224 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
     state.index = endIndex + imageResult[0].length;
 }
 
+const itemDetailsMap = new Map<
+    string,
+    {
+        key?: string;
+        isBoolean?: boolean;
+        isChunks?: boolean;
+        isCritical?: boolean;
+        isNumber?: boolean;
+        isDamage?: boolean;
+        isExplosionDamage?: boolean;
+    }
+>([
+    ["Image Name", {}],
+    ["Name", {}],
+    ["Type", {}],
+    ["Slot", {}],
+    ["Size", { isNumber: true }],
+    ["Rating", { isNumber: true }],
+    ["Rating Category", {}],
+    ["Integrity", { isNumber: true }],
+    ["Coverage", { isNumber: true }],
+    ["Hackable", { isBoolean: true }],
+    ["Mass", { isNumber: true }],
+    ["Description", {}],
+    ["Energy Upkeep", { isNumber: true }],
+    ["Matter Upkeep", { isNumber: true }],
+    ["Heat Generation", { isNumber: true }],
+    ["Energy Generation", { isNumber: true }],
+    ["Energy Storage", { isNumber: true }],
+    ["Power Stability", { isNumber: true }],
+    ["Time Per Move", { isNumber: true }],
+    ["Drag", { isNumber: true }],
+    ["Mod Per Extra", { isNumber: true }],
+    ["Siege", {}],
+    ["Energy Per Move", { isNumber: true }],
+    ["Heat Per Move", { isNumber: true }],
+    ["Support", { isNumber: true }],
+    ["Penalty", { isNumber: true }],
+    ["Burnout", {}],
+    ["Range", { isNumber: true }],
+    ["Shot Energy", { isNumber: true }],
+    ["Shot Matter", { isNumber: true }],
+    ["Shot Heat", { isNumber: true }],
+    ["Recoil", { isNumber: true }],
+    ["Targeting", { isNumber: true }],
+    ["Delay", { isNumber: true }],
+    ["Overload Stability", { isNumber: true }],
+    ["Arc", { isNumber: true }],
+    ["Waypoints", { isNumber: true }],
+    ["Projectile Count", { isNumber: true }],
+    ["Explosion Radius", { isDamage: true }],
+    ["Damage", { isDamage: true }],
+    ["Explosion Damage", { isExplosionDamage: true }],
+    ["Falloff", { isNumber: true }],
+    ["Chunks", { isChunks: true }],
+    ["Damage Type", {}],
+    ["Explosion Type", {}],
+    ["Critical", { isCritical: true }],
+    ["Penetration", {}],
+    ["Spectrum", {}],
+    ["Explosion Spectrum", {}],
+    ["Disruption", { isNumber: true }],
+    ["Explosion Disruption", { isNumber: true }],
+    ["Heat Transfer", {}],
+    ["Explosion Heat Transfer", {}],
+    ["Salvage", { isNumber: true }],
+    ["Explosion Salvage", { isNumber: true }],
+]);
+function processItemDetailsTag(state: ParserState, result: RegExpExecArray) {
+    function getItemKey(inputName: string, key?: string) {
+        if (key !== undefined) {
+            return key;
+        }
+
+        return inputName[0].toLowerCase() + inputName.substring(1).replaceAll(" ", "");
+    }
+
+    // Find [[/ItemDetails]] closing tag first
+    const closeResult = /\[\[\/ItemDetails\]\]/.exec(state.initialContent.substring(state.index));
+
+    if (closeResult === null) {
+        // If we can't find the end tag then just skip over the opening tag
+        recordError(state, "Found item details tag without close tag");
+        state.index += result[0].length;
+        return;
+    }
+
+    // Split interior text by || to get each category
+    const startIndex = state.index + result[0].length;
+    const endIndex = startIndex + closeResult.index - result[0].length;
+    const categoriesSplit = state.initialContent.substring(startIndex, endIndex).split("||");
+
+    const item: Item = {
+        slot: "N/A",
+        hackable: false,
+        name: "Item Name",
+        noPrefixName: "",
+        fullName: "",
+        type: "Item",
+        rating: 1,
+        ratingString: "",
+        ratingCategory: "None",
+        categories: [],
+        size: 1,
+        integrity: 0,
+        noRepairs: false,
+        index: 0,
+        penalty: 0,
+        projectileCount: 1,
+        range: 0,
+        spoiler: "None",
+        support: 0,
+        timePerMove: 0,
+        customItem: true,
+    };
+
+    // Process each category
+    for (const categoryValues of categoriesSplit) {
+        const split = categoryValues.split("|");
+
+        const category = split[0].trim();
+        if (split.length === 1) {
+            recordError(state, `Item data category ${category} has no value`);
+            continue;
+        }
+
+        const categoryData = itemDetailsMap.get(category);
+        if (categoryData === undefined) {
+            recordError(state, `Item data category ${category} is not expected`);
+            continue;
+        }
+
+        let value: any = split[1].trim();
+
+        if (categoryData.isNumber) {
+            value = parseFloatOrUndefined(value);
+            if (value === undefined) {
+                recordError(state, `Item data category ${category} has invalid number ${split[1]}`);
+                continue;
+            }
+
+            if (value === 0) {
+                continue;
+            }
+        } else if (categoryData.isBoolean) {
+            if (value === "True" || value === "true") {
+                value = true;
+            } else if (value === "False" || value === "false") {
+                value = false;
+            } else {
+                recordError(state, `Item data category ${category} should be true or false but is neither`);
+                value = false;
+            }
+        } else if (categoryData.isDamage || categoryData.isExplosionDamage) {
+            const damageSplit = value.split("-");
+            let damageMax: number;
+            let damageMin: number;
+
+            if (damageSplit.length === 1) {
+                damageMin = parseIntOrDefault(damageSplit[0], 0);
+                damageMax = damageMin;
+            } else {
+                damageMin = parseIntOrDefault(damageSplit[0], 0);
+                damageMax = parseIntOrDefault(damageSplit[1], 0);
+            }
+
+            if (categoryData.isDamage) {
+                (item as WeaponItem).damageMin = damageMin;
+                (item as WeaponItem).damageMax = damageMax;
+            } else {
+                (item as WeaponItem).explosionDamageMin = damageMin;
+                (item as WeaponItem).explosionDamageMax = damageMax;
+            }
+        } else if (categoryData.isCritical) {
+            const result = /(\d*)% (\w*)/.exec(value);
+            if (result !== null) {
+                (item as WeaponItem).critical = parseIntOrDefault(result[1], 0);
+                (item as WeaponItem).criticalType = result[2] as Critical;
+            } else {
+                recordError(state, `Item data category ${category} has invalid format. Should be like "x% type"`);
+            }
+
+            continue;
+        } else if (categoryData.isChunks) {
+            const chunkSplit = value.split("-");
+            let minChunks: number;
+            let maxChunks: number;
+
+            if (chunkSplit.length === 1) {
+                minChunks = parseIntOrDefault(chunkSplit[0], 0);
+                maxChunks = minChunks;
+            } else {
+                minChunks = parseIntOrDefault(chunkSplit[0], 0);
+                maxChunks = parseIntOrDefault(chunkSplit[1], 0);
+            }
+
+            (item as WeaponItem).maxChunks = maxChunks;
+            (item as WeaponItem).minChunks = minChunks;
+            continue;
+        }
+
+        // Assign the value to the item
+        item[getItemKey(category, categoryData?.key)] = value;
+    }
+
+    state.index = endIndex + closeResult[0].length;
+    const content = (
+        <div className="wiki-infobox wiki-infobox-centered">
+            <ItemDetails item={item as Item} />
+        </div>
+    );
+
+    state.output.push({
+        groupType: "Individual",
+        node: content,
+    });
+}
+
 // Processes list tag like [[List]]Item 1|Item 2|Item 3[[/List]]
 function processListTag(state: ParserState, result: RegExpExecArray) {
     // Find [[/List]] closing tag first
@@ -1153,6 +1373,7 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
 }
 
 const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => void> = new Map([
+    ["AllLocations", processAllLocationsTag],
     ["B", processBTag],
     ["BotGroups", processBotGroupsTag],
     ["Color", processColorTag],
@@ -1163,8 +1384,8 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["Heading", processHeadingTag],
     ["I", processITag],
     ["Image", processImageTag],
+    ["ItemDetails", processItemDetailsTag],
     ["List", processListTag],
-    ["AllLocations", processAllLocationsTag],
     ["Lore", processLoreTag],
     ["NonEmptyPages", processNonEmptyPagesTag],
     ["Spoiler", processSpoilerTag],

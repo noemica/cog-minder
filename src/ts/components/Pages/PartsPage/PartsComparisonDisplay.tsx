@@ -389,15 +389,15 @@ function SpectrumOrHeatTransferComparison({
     }
 
     function getHeatTransferValue(heatTransfer: HeatTransfer | undefined) {
-        if (heatTransfer === HeatTransfer.Minimal) {
+        if (heatTransfer === "Minimal (5)") {
             return 5;
-        } else if (heatTransfer === HeatTransfer.Low) {
+        } else if (heatTransfer === "Low (25)") {
             return 25;
-        } else if (heatTransfer === HeatTransfer.Medium) {
+        } else if (heatTransfer === "Medium (37)") {
             return 37;
-        } else if (heatTransfer === HeatTransfer.High) {
+        } else if (heatTransfer === "High (50)") {
             return 50;
-        } else if (heatTransfer === HeatTransfer.Massive) {
+        } else if (heatTransfer === "Massive (80)") {
             return 80;
         } else {
             return 0;

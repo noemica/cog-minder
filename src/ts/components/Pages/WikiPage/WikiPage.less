@@ -103,7 +103,7 @@
 // Only place the infobox to the side if it makes sense
 // On smaller screens it should take up the full screen
 @media screen and (min-width: 700px) {
-    .wiki-infobox {
+    .wiki-infobox:not(.wiki-infobox-centered) {
         float: right;
         clear: right;
     }
@@ -111,7 +111,6 @@
 
 .wiki-infobox {
     padding: @wiki-infobox-padding;
-    max-width: @wiki-infobox-max-width;
     margin-left: @wiki-infobox-margin-left;
 
     display: flex;
@@ -124,9 +123,14 @@
     }
 }
 
+.wiki-infobox-centered {
+    display: flex;
+}
+
 .wiki-infobox-button-group {
     display: flex;
     flex-wrap: wrap;
+    max-width: @wiki-infobox-max-width;
 
     > button {
         flex: 1 1 auto;

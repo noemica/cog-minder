@@ -36,14 +36,15 @@ export class ItemData {
             const itemName = item.Name;
             let newItem: Item | undefined;
 
-            let category: ItemRatingCategory = ItemRatingCategory[item.Category ?? ""];
-            if (category === undefined) {
-                category = ItemRatingCategory.None;
-            }
-
+            let category: ItemRatingCategory = item.Category;
             let rating = parseIntOrUndefined(item.Rating) ?? 1;
-            if (category == ItemRatingCategory.Alien) rating += 0.75;
-            else if (category == ItemRatingCategory.Prototype) rating += 0.5;
+            if (category == "Alien") {
+                rating += 0.75;
+            } else if (category === "Prototype") {
+                rating += 0.5;
+            } else {
+                category = "None";
+            }
 
             const ratingString = item.Rating;
             const fabrication: FabricationStats | undefined =
@@ -81,7 +82,7 @@ export class ItemData {
                     const otherItem: OtherItem = {
                         slot: "N/A",
                         supporterAttribution: item["Supporter Attribution"],
-                        category: category,
+                        ratingCategory: category,
                         coverage: undefined,
                         hackable: hackable,
                         integrity: integrity,
@@ -125,7 +126,7 @@ export class ItemData {
                     const powerItem: PowerItem = {
                         slot: "Power",
                         supporterAttribution: item["Supporter Attribution"],
-                        category: category,
+                        ratingCategory: category,
                         coverage: coverage,
                         energyGeneration: parseIntOrDefault(item["Energy Generation"], 0),
                         energyStorage: parseIntOrUndefined(item["Energy Storage"]),
@@ -173,7 +174,7 @@ export class ItemData {
                     const propItem: PropulsionItem = {
                         slot: "Propulsion",
                         supporterAttribution: item["Supporter Attribution"],
-                        category: category,
+                        ratingCategory: category,
                         coverage: coverage,
                         energyPerMove: parseFloatOrUndefined(item["Energy/Move"]),
                         hackable: hackable,
@@ -214,7 +215,7 @@ export class ItemData {
                     const utilItem: UtilityItem = {
                         slot: "Utility",
                         supporterAttribution: item["Supporter Attribution"],
-                        category: category,
+                        ratingCategory: category,
                         coverage: coverage,
                         hackable: hackable,
                         integrity: integrity,
@@ -275,7 +276,7 @@ export class ItemData {
                     const weaponItem: WeaponItem = {
                         slot: "Weapon",
                         supporterAttribution: item["Supporter Attribution"],
-                        category: category,
+                        ratingCategory: category,
                         coverage: coverage,
                         hackable: hackable,
                         integrity: integrity,

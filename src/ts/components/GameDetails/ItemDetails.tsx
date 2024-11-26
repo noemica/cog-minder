@@ -27,8 +27,11 @@ import DetailsValueLine, {
 import "./Details.less";
 
 function getDamageValue(item: WeaponItem) {
-    const damageString = item.damage as string;
-    const damageArray = damageString
+    if (item.damage === undefined) {
+        return 0;
+    }
+
+    const damageArray = item.damage
         .split("-")
         .map((s) => s.trim())
         .map((s) => parseInt(s));
@@ -48,8 +51,11 @@ function getDelayString(item: WeaponItem) {
 }
 
 function getExplosionValue(item: WeaponItem) {
-    const damageString = item.explosionDamage as string;
-    const damageArray = damageString
+    if (item.explosionDamage === undefined) {
+        return 0;
+    }
+
+    const damageArray = item.explosionDamage
         .split("-")
         .map((s) => s.trim())
         .map((s) => parseInt(s));
@@ -101,14 +107,14 @@ function getPenetrationValue(item: WeaponItem): string {
 }
 
 function getRatingNode(item: Item) {
-    switch (item.category) {
-        case ItemRatingCategory.Alien:
+    switch (item.ratingCategory) {
+        case "Alien":
             return <span className="rating-alien"> Alien </span>;
 
-        case ItemRatingCategory.Prototype:
+        case "Prototype":
             return <span className="rating-prototype"> Prototype </span>;
 
-        case ItemRatingCategory.None:
+        case "None":
             return <span className="details-dim-text">Standard</span>;
     }
 }
@@ -373,7 +379,7 @@ function LauncherPartDetails({ item }: { item: WeaponItem }) {
             />
             <DetailsValueLine
                 category=" Falloff"
-                valueString={item.falloff === undefined ? undefined : "-" + item.falloff}
+                valueString={item.falloff === undefined ? "0" : "-" + item.falloff}
             />
             <DetailsValueLine
                 category=" Chunks"
@@ -874,7 +880,7 @@ function SpecialWeaponPartDetails({ item }: { item: WeaponItem }) {
     );
 }
 
-export default function ItemDetails({ item, showWikiLink }: { item: Item, showWikiLink?: boolean }) {
+export default function ItemDetails({ item, showWikiLink }: { item: Item; showWikiLink?: boolean }) {
     let typeSpecificDetails: ReactNode = <></>;
     switch (item.slot) {
         case "Power":
@@ -959,7 +965,7 @@ export default function ItemDetails({ item, showWikiLink }: { item: Item, showWi
     }
 
     let fullNameDetails: ReactNode | undefined;
-    if (item.fullName !== item.name) {
+    if (item.fullName !== item.name && !item.customItem) {
         fullNameDetails = (
             <>
                 <DetailsEmptyLine />
@@ -968,7 +974,7 @@ export default function ItemDetails({ item, showWikiLink }: { item: Item, showWi
         );
     }
 
-    let attributionDetails = (
+    let attributionDetails = !item.customItem && (
         <>
             <DetailsEmptyLine />
             <span className="details-description">
@@ -998,7 +1004,7 @@ export default function ItemDetails({ item, showWikiLink }: { item: Item, showWi
             />
             <DetailsTextValueLine
                 category="Rating"
-                value={item.ratingString.replace("**", "").replace("*", "")}
+                value={Math.floor(item.rating).toString()}
                 textNode={getRatingNode(item)}
             />
             <DetailsRangeLine
