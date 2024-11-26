@@ -2860,7 +2860,7 @@ Obtaining [[Prototype Part]] IDs (20 points per unique Prototype Part ID, includ
 [[Spoiler]]Attaching alien technology (200 points per unique alien part attached)[[/Spoiler]]|
 Bonus points, which are earned through a large variety of reasons, including some like meeting important characters, aligning with certain factions, and more. There is also one source of negative bonus points, ""Friendly Fire"", which is earned by damaging/destroying friendly robots and is dependent on the value of those robots.[[/List]]
 
-The relevant scoresheet statistic is ""TOTAL SCORE"".
+The relevant scoresheet statistic is ""TOTAL SCORE"". These Achievements are awarded at the end of a run that meets their criteria.
 
 [[List]]
 5k Club: Earn 5,000 points.
@@ -2909,6 +2909,7 @@ Made in Tau Ceti IV: Enter [[Factory]].
 |Great Explorer: Visit 35 areas.[[/List]]
 
 [[Heading]]Reaching a high peak rating[[/Heading]]
+These Achievements require Cogmind to reach a high rating, which is mostly determined by the rating of currently attached parts. Current rating is visible when examining Cogmind. The relevant scoresheet statistic is ""Peak Build Rating"".
 
 [[List]]
 Serviceable Loadout: Reach a peak rating of 50.
@@ -4064,7 +4065,75 @@ Watchers are quite difficult to kill, especially the W-44 Eye variant. Their nat
 "Welding Torch","Part",""
 "Wheel","Part",""
 "Wheels","Part Group",""
-"Wins Achievements","Other",""
+"Wins Achievements","Other","Wins [[Achievements]] are earned by winning the game under certain conditions. 10 of the 37 Wins Achievements have hidden descriptions that are only revealed after completing them. The borders of Wins Achievements indicate whether they are earned by winning with a specific ending, winning under certain conditions, or winning while a challenge mode is active. The borders of Achievements for winning under certain conditions also indicate their difficulty compared to other achievements with similar requirements, with more ""intense"" borders meaning higher difficulty.
+
+
+[[Comment]]This warning is supposed to be there for all articles about achievement types, including those that do not have any Redacted-level spoilers.[[/Comment]]
+(The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least ""Spoilers"", and may be set to ""Redacted"" for achievements where that would be relevant. Remember to change your spoilers settings to ""None"" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
+
+Warning: The writer of this article has not yet earned the ""Stardust"", ""Winner's Signature"", ""Data Run"" or ""By A Hair"" Achievements, and as such their descriptions in this page is a (probably accurate) guess instead of being the official description.
+
+[[Heading]]Endings[[/Heading]]
+[[List]]
+Epsilon Run: [[Spoiler]]Win and escape to Epsilon Eridani.[[/Spoiler]]
+|Commander 0b11: [[Spoiler]]Win and begin establishing 0b11.[[/Spoiler]]
+|Home At Last?: [[Spoiler]]Win and rendezvous with the fleet.[[/Spoiler]]
+|Payload Armed: [[Spoiler]]Win and nuke Complex 0b10 from orbit.[[/Spoiler]]
+|MAIN.CPP: [[Spoiler]]Win and take control of Complex 0b10.[[/Spoiler]]
+
+|Stardust: [[Spoiler]]Win and destroy Tau Ceti IV.[[/Spoiler]]
+[[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be fairly accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
+
+|Planet Killer: [[Spoiler]]Win and escape the artificial singularity.[[/Spoiler]]
+[[/List]]
+
+[[Heading]]Winning under certain conditions[[/Heading]]
+[[List]]
+Derelict Escape: Win while imprinted.
+
+|Winner's Signature: [[Spoiler]]Win after geting scanned by a Researcher in Section 7.[[/Spoiler]]
+[[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
+
+|Data Run: [[Spoiler]]Win after interfacing with the Data Conduit.[[/Spoiler]] 
+[[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
+
+|Inspector Gadget: Win while only evolving utility slots. Gaining non-utility slots through other means also disqualifies.
+|Straight Shot: Win without visiting any branches (Garrisons/Waste/DSF okay).
+|Pacifist: Win without destroying a single robot.
+|Speedrunner: Win in less than 2,000 turns.
+|Expert Speedrunner: Win in less than 1,000 turns.
+
+|By A Hair: [[Spoiler]]Win after being reduced to less than 5% of core integrity.[[/Spoiler]] [[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
+
+|True Flier: Win without attaching any propulsion except flight.
+|Mad Max: Win with 200 hostiles destroyed and without attaching any propulsion except wheels.
+|Victory By Combat: Win with 400 hostiles destroyed.
+|Hardcore: Win with 400 hostiles destroyed but no more than 4 utility slots.
+|Death Machine: Win with 600 hostiles destroyed.
+|Partners In Destruction: Win fighting alongside the Warrior.
+|One Last FU: Win after entering an Access garrison.
+|The Little Core That Could: Win without attaching any propulsion.
+|True Cogmind: Win 25 times.
+[[/List]]
+
+[[Heading]]Winning with challenge modes[[/Heading]]
+These achievements are unlocked by winning the game with any ending while their respective challenge mode is active. Challenge modes are activated by starting a new run while the corresponding challenge mode option in the advanced.cfg file is set to 1.
+
+When the next batch of achievements is eventually added, Challenge mode Achievements be removed.
+
+[[List]]
+Grand Amoeba: Win the Devolution challenge mode.
+|Look Ma, No Swapping!: Win the Fragile Parts challenge mode.
+|Unstoppable: Win the Gauntlet challenge mode.
+|Stunt Win: Win the Inhibited Evolution challenge mode.
+|I Don't Need Leftovers: Win the No Salvage challenge mode.
+|Light Traveler: Win the Pure Core challenge mode.
+|This Only Looks Like Junk: Win the Scavenger challenge mode.
+|Terminals Are For Geeks: Win the Simple Hacker challenge mode.
+|Attach With Care: Win the Sticky Parts challenge mode.
+|Best of the Best: Win the Super Gauntlet challenge mode.
+|Master Trapper: Win the Trapped challenge mode.
+|Super Mutant: Win the Unstable Evolution challenge mode.[[/List]]"
 "Wintypes","Other","W0 ""Escaped"": Take a [[Surface]] exit on -1.
 W1 [[Redacted]]""Establishing 0b11"": Take a Surface exit on -1 after destroying both phases of [[MAIN.C]] in [[Command]].[[/Redacted]]
 W2 [[Spoiler]]""Heading to fleet"": Take a surface exit on -1 after using a [[Core Reset Matrix]].[[/Spoiler]]
