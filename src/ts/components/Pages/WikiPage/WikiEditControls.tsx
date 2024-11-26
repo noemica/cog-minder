@@ -227,6 +227,12 @@ export default function WikiEditControls({
                 >
                     Table
                 </Button>
+                <Button
+                    tooltip="Creates a fake item infobox based on the provided data in the form of [[ItemDetails]]Name|XYZ||Image Name|...[[/ItemDetails]]. See the Example page for full examples of available parameters."
+                    onClick={() => insertWrappedText("[[ItemDetails]]", "[[/ItemDetails]]")}
+                >
+                    ItemDetails
+                </Button>
             </div>
             <textarea ref={editAreaRef} key={entry.name} className="wiki-edit-text" defaultValue={defaultEditorValue} />
             <div className="wiki-edit-changes-group">
