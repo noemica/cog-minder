@@ -379,7 +379,8 @@ function LauncherPartDetails({ item }: { item: WeaponItem }) {
             />
             <DetailsValueLine
                 category=" Falloff"
-                valueString={item.falloff === undefined ? "0" : "-" + item.falloff}
+                valueString={item.falloff === undefined ? undefined : "-" + item.falloff}
+                defaultValue="-0"
             />
             <DetailsValueLine
                 category=" Chunks"
@@ -790,6 +791,7 @@ function SpecialWeaponPartDetails({ item }: { item: WeaponItem }) {
                 <DetailsValueLine
                     category=" Falloff"
                     valueString={item.falloff === undefined ? undefined : "-" + item.falloff}
+                    defaultValue="-0"
                 />
                 <DetailsTextLine category="Type" content={item.explosionType} />
                 {item.explosionHeatTransfer === undefined ? (
