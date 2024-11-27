@@ -1,4 +1,4 @@
-import{j as a,K as I,M as O,c as R,r as S,N as ie,f as G,O as re,y as P,Q as se,a as U,s as le,U as he,S as V,B as w,o as de,V as $,z as ce,u as J,L as z,W as Q,X as me,Y as F,Z as ge,_ as pe,$ as W,a0 as ue,a1 as ye}from"./index-CxGx9FiI.js";import{l as fe}from"./lore-Yb44s0tc.js";import{a as j,u as be}from"./ItemPopover-DYCziytk.js";import{H as Z,a as we,L as Ce,I as ve,B as ee,b as Se,u as Te}from"./BotDetails-CXDJpsH1.js";/* empty css              */import"./items-CuodUx7O.js";import"./bots-DjRlh2xJ.js";import"./botTypes-_WzAd8ij.js";const Ae=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`12-ASH is one of the Hero's Of Zion. Upon appearing, they will shout "hail to the king".`},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:""},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed or gives a code when they are show the Cetus Mainframe in [[Cetus]]"},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:""},{Name:"Bomb Drone",Content:""},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
+import{j as a,K as I,M as O,c as R,r as S,N as ie,f as G,O as re,y as P,Q as se,a as U,s as le,U as he,S as V,B as w,o as de,V as $,z as ce,u as J,L as z,W as Q,X as me,Y as F,Z as ge,_ as pe,$ as W,a0 as ue,a1 as ye}from"./index-CICVvQNw.js";import{l as fe}from"./lore-Yb44s0tc.js";import{a as j,u as be}from"./ItemPopover-o1CAEEHX.js";import{H as Z,a as we,L as Ce,I as ve,B as ee,b as Se,u as Te}from"./BotDetails-DqeiWxB2.js";/* empty css              */import"./items-CuodUx7O.js";import"./bots-DjRlh2xJ.js";import"./botTypes-_WzAd8ij.js";const Ae=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`12-ASH is one of the Hero's Of Zion. Upon appearing, they will shout "hail to the king".`},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:""},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed or gives a code when they are show the Cetus Mainframe in [[Cetus]]"},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:""},{Name:"Bomb Drone",Content:""},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
 
 Due to their extreme lethality in melee, stay out of their range at all costs, and maybe just run the hell out of [[Wastes]]. Alternatively pack a good launcher or a good critical weapon, as their plating will tank most of your shots.`},{Name:"C-55 Analyst",Content:""},{Name:"C-57 Dissector",Content:""},{Name:"C-65 Expert",Content:""},{Name:"CL-ANK",Content:""},{Name:"Cetus Guard",Content:""},{Name:"Cobbler",Content:""},{Name:"Cogmind",Content:"That's you."},{Name:"Combat Drone",Content:""},{Name:"Combat Programmer",Content:""},{Name:"Commander",Content:""},{Name:"D-53 Grenadier",Content:""},{Name:"D-63 Destroyer",Content:""},{Name:"D-83 Annihilator",Content:""},{Name:"DAS Turret",Content:""},{Name:"DD-05H",Content:""},{Name:"DRS Ranger",Content:""},{Name:"Data Miner",Content:""},{Name:"Decomposer",Content:""},{Name:"Decoy Drone",Content:""},{Name:"Demented",Content:""},{Name:"Dragon",Content:""},{Name:"Drone",Content:""},{Name:"E-15 Imp",Content:""},{Name:"EX-BIN",Content:`[[Heading]]Parse[[/Heading]]
 When datajacked, one of the following parse texts is shown:
@@ -1713,11 +1713,14 @@ Explosion Damage|75-105||
 Falloff|0||
 Chunks|1-3||
 Explosion Type|Explosive||
-Explosion Spectrum|Intermediate (30%)||
+Explosion Spectrum|Intermediate (30)||
 Explosion Disruption|4||
 Explosion Salvage|-14||
 Penetration|Unlimited||
-Salvage|-20[[/ItemDetails]]`,Spoiler:"Spoiler"},{Name:"Extermination Squad",Content:`[[Image]]Extermination Squad.png|An Extermination Squad hunting down Cogmind[[/Image]]
+Salvage|-20[[/ItemDetails]]
+[[Heading:2]]List of item details categories[[/Heading]]
+[[Table]]Category|Notes||Image Name|Can link to external site or cog-minder hosted image||Name||Type|Subtype like Engine, Device, Hackware, etc.||Slot|Power, Propulsion Utility, Weapon, or N/A for a non-attachable item||Size||Rating||Rating Category| Standard (default if not set), Prototype, or Alien||Integrity||Coverage||Hackable|Enter as true or false||Mass||Description|Can add 
+ for explicit new lines||Energy Upkeep|All upkeeps are positive numbers even if they subtract resources (like energy)||Matter Upkeep||Heat Generation||Energy Generation||Energy Storage||Power Stability|Enter as x%||Time Per Move||Drag||Mod Per Extra||Siege|None (default if not set), Standard, or High||Energy Per Move||Heat Per Move||Support||Penalty||Burnout|Enter as x%||Range||Shot Energy||Shot Matter||Shot Heat||Recoil||Targeting||Delay||Overload Stability|Enter as X%||Arc||Waypoints||Projectile Count||Explosion Radius||Damage|Can enter damages as a number or a range like min-max||Explosion Damage||Falloff||Chunks|Can enter as a number or a range like min-max||Damage Type||Explosion Type||Critical|Enter as X% and critical type, like 10% Destroy||Penetration|Enter as percentages divided by slashes, like 100 / 50||Spectrum|Enter as spectrum name and number in parentheses, like Intermediate (30)||Explosion Spectrum||Disruption||Explosion Disruption||Heat Transfer|Enter as transfer name and number in parentheses, like Medium (37)||Explosion Heat Transfer||Salvage||Explosion Salvage[[/Table]]`,Spoiler:"Spoiler"},{Name:"Extermination Squad",Content:`[[Image]]Extermination Squad.png|An Extermination Squad hunting down Cogmind[[/Image]]
 Extermination squads are [[0b10]] aligned [[Squad|squads]] that are sent after Cogmind periodically in [[Factory]] (-7) and beyond. Exterminations are sent directly to Cogmind with [[Perfect Tracking]] and cannot easily be shaken. Extermination squads typically consist of 1-3 [[Programmer|Programmers]] based on the floor: 1 [[P-60 Hacker]] on -7 and -6, 1 or 2 [[P-70 Sage|P-70 Sages]] on -5 and -4, and 2 or 3 [[P-80 Master|P-80 Masters]] on -3 to -1. Extermination squads can be both Enumerated and Recalled at [[Terminal|Terminals]].
 An alert will indicate whenever an an Extermination squad is dispatched. Additionally, the log will display a message like [[GameText]]ALERT: Rogue bot located, Programmers report to Factory Zone 5B.[[/GameText]]
 [[Heading]]Lore[[/Heading]]
@@ -2317,7 +2320,10 @@ Note: Unlike most other maps, in [[Access]] bots are not evacuated. The evacuati
 [[Heading:2]]Rapid Sterilization[[/Heading]]
 DSFs have a unique rapid sterilization system that works much quicker than normal sterilization. Ambient heat increases begin only 20 turns after the initial announcement and occur every 15 turns after that.
 [[Heading]]Part Melting[[/Heading]]
-After Sterilization is triggered, parts will begin to melt every 30-40 turns and be destroyed instantly. Parts that are 200 integrity or greater are safe from melting. Parts with a lower integrity are more likely to melt than those with higher integrity. For example, [[Treads]] and [[Armor]] tend to last longer or be immune to melting altogether, while fragile processors will melt almost instantly. Parts only melt when within a 20-tile radius around Cogmind, so with a good enough speed, timing, and luck, it is possible to grab parts that would otherwise melt quickly in the heat.`},{Name:"Style Achievements",Content:`Style [[Achievements]] are earned by reaching high statistics in some categories, which usually requires using an associated playstyle, or by using some rare items and/or their mechanics. Most of them will be simply eventually be obtained by players as they become familiar with the more common mechanics of the game and figure out playstyles that utilizes them or discover some of the less common mechanics of the game. 12 of the 46 Style Achievements have hidden descriptions that are only revealed after completing them. The borders of Style Achievement indicate their difficulty compared to other achievements with similar[[Comment]]TODO: Figure out a way to say "Achievements with almost exactly the same requirements, with the only difference being that one achievement requires doing thing A while the more difficult achievement requires doing thing A+B.", but use fewer words to say this.[[/Comment]] requirements, with more "intense" borders meaning higher difficulty.
+After Sterilization is triggered, parts will begin to melt every 30-40 turns and be destroyed instantly. Parts that are 200 integrity or greater are safe from melting. Parts with a lower integrity are more likely to melt than those with higher integrity. For example, [[Treads]] and [[Armor]] tend to last longer or be immune to melting altogether, while fragile processors will melt almost instantly. Parts only melt when within a 20-tile radius around Cogmind, so with a good enough speed, timing, and luck, it is possible to grab parts that would otherwise melt quickly in the heat.`},{Name:"Style Achievements",Content:`Style [[Achievements]] are earned by reaching high statistics in some categories which usually require using an associated playstyle, or by using some rare items and/or their mechanics. Most of them will be simply eventually be obtained by players as they become familiar with the more common mechanics of the game and figure out playstyles that utilizes them or discover some of the less common mechanics of the game. 12 of the 46 Style Achievements have hidden descriptions that are only revealed after completing them. The borders of Style Achievement indicate their difficulty compared to other achievements with similar[[Comment]]TODO: Figure out a way to say "Achievements with almost exactly the same requirements, with the only difference being that one achievement requires doing thing A while the more difficult achievement requires doing thing A+B.", but use fewer words to say this.[[/Comment]] requirements, with more "intense" borders meaning higher difficulty.
+
+[[Comment]]This warning is supposed to be there for all articles about achievement types[[/Comment]]
+(The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least "Spoilers", and may be set to "Redacted" for achievements where that would be relevant. Remember to change your spoilers settings to "None" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
 
 [[Heading]]Combat[[/Heading]]
 [[List]]
@@ -2326,6 +2332,7 @@ Turtlemind: Have 2% or less core exposure.
 |Executioner: Have 7 weapon slots.
 |Perfect Aim: Have +40% targeting accuracy for ranged weapons via utilities.
 |More Dakka Please: Fire 10 kinetic projectiles in a single volley.
+Strategy: Equip two "Flak" weapons and fire them both in one volley.
 |Gunslinger: Destroy 3 robots with a single volley using secondary targeting.
 |Gun Specialist: Destroy 100 hostiles with at least 90% of damage across an entire run dealt by guns.
 |Cannon Specialist: Destroy 100 hostiles with at least 90% of damage across an entire run dealt by cannons.
@@ -2339,15 +2346,17 @@ Turtlemind: Have 2% or less core exposure.
 [[Heading]]Various[[/Heading]]
 [[List]]
 Tank: [[Spoiler]]Reach a mass of 150.[[/Spoiler]]
+Strategy: Either wait for it to happen on its own while you're playing a heavy combat build, or equip either a [[Humpback]] or a [[Cargo Storage Unit]] and a few other parts.
 |Friend Of Zion: [[Spoiler]]Summon 10 [[Imprint#roster_hacks|Zionite dispatches]].[[/Spoiler]]
 |Heroic Deeds: [[Spoiler]]Summon a [[Z-Hero|Hero of Zion]].[[/Spoiler]]
 [[/List]]
 
 [[Heading]]Flight/Hover[[/Heading]]
 [[List]]
-Whoosh!: Move with 4 overloaded hover or flight units.
+Whoosh!: Move with 4 [[Overload#propulsion|overloaded]] [[Hover Unit|hover]] or [[Flight Units|flight units]].
 |Speed Demon: Reach a speed of 10 spaces per turn.
 |Supersonic: Reach a speed of 20 spaces per turn.
+Strategy: Only possible by having either at least 5 [[Overload#propulsion|overloaded]] [[Flight Units]] or 15 overloaded [[Hover Units]].
 |Dodgeball, But With Guns: Reach 75% evasion.
 [[/List]]
 
@@ -2356,7 +2365,7 @@ Whoosh!: Move with 4 overloaded hover or flight units.
 Assassin: Sneak attack 15 active hostiles.
 |Sniper: [[Spoiler]]Destroy a visible hostile from more than 20 spaces away with a gun or cannon.[[/Spoiler]]
 |Dramatic Entrance: [[Spoiler]]With no hostiles in sight and no pursuers, destroy an enemy combat bot with explosives.[[/Spoiler]]
-|Decoder Ring: Obtain 50 pieces of intel from one or more 0b10 Decoder Chips.
+|Decoder Ring: Obtain 50 pieces of intel from one or more [[0b10 Decoder Chips]].
 |Freeware: [[Spoiler]]Receive 10 pieces of [[Imprint#intel_hacks|Zionite intel]].[[/Spoiler]]
 [[/List]]
 
@@ -2365,28 +2374,28 @@ Assassin: Sneak attack 15 active hostiles.
 Prolific Hacker: Hack 50 machines.
 |Pwned: Hack 50 hostiles.
 |l33t h4x0r: Have +100% to hack success.
-|Maximum Efficiency: Succeed at 10 hacks on a single Terminal.
-|root@: Succeed at 3 manual hacks on a single Terminal.
+|Maximum Efficiency: Succeed at 10 hacks on a single [[Terminal]].
+|root@: Succeed at 3 manual hacks on a single [[Terminal]].
 [[/List]]
 
 [[Heading]]Allies[[/Heading]]
 
 [[List]]
-War Machine: Build 10 allied bots.
-|We Are Legion: Have 20 allies at once.
-|Beloved: Acquire 75 allies across an entire run.
-|Generalissimo: Oversee 75 ally kills across an entire run.
+War Machine: Build 10 [[Allies|allied bots]].
+|We Are Legion: Have 20 [[Allies|allies]] at once.
+|Beloved: Acquire 75 [[Allies|allies]] across an entire run.
+|Generalissimo: Oversee 75 [[Allies|ally]] kills across an entire run.
 |Collateral Damage: [[Spoiler]]Lose 1,000 points to friendly fire.[[/Spoiler]]
 [[/List]]
 
 [[Heading]]Item mechanics and powerful weapons[[/Heading]] [[Comment]]There's got to be a better, shorter name for this heading.[[/Comment]]
 
 [[List]]
-What Is This Thing?: Discover the use of Self-destruct Interrupters.
+What Is This Thing?: Discover the use of [[Self-destruct Interrupter|Self-destruct Interrupters]].
 |Deconstruction: Destroy a robot via core entropy.
-|Max Potential: [[Spoiler]]Fire a Potential Cannon.[[/Spoiler]]
+|Max Potential: [[Spoiler]]Fire a [[Potential Cannon]].[[/Spoiler]]
 |Hard Hitter: Inflict 200 damage against an enemy with one shot from a single weapon.
-|Sunderer: [[Spoiler]]Instakill an enemy with a Core Stripper.[[/Spoiler]]
+|Sunderer: [[Spoiler]]Instakill an enemy with a [[Core Stripper]].[[/Spoiler]]
 [[/List]]
 
 [[Heading]]Various 3[[/Heading]]
@@ -2395,7 +2404,7 @@ Packrat: [[Spoiler]]Carry 30 items in inventory.[[/Spoiler]]
 |Production Line: Build 10 parts.
 |Remodeling: [[Spoiler]]Destroy 200 walls with area of effect damage.[[/Spoiler]]
 |More Power To You: [[Spoiler]]Reach 75 energy generation.[[/Spoiler]]
-|Minesweeper: Extract 30 traps.
+|Minesweeper: Extract 30 [[Traps|traps]].
 |Superinsulated: Become immune to electromagnetic damage.
 
 [[/List]]`},{Name:"Surveillance Squad",Content:`[[Image]]Surveillance Squad.png|A Watcher surveillance squad[[/Image]]
