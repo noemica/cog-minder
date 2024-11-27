@@ -1655,11 +1655,14 @@ Explosion Damage|75-105||
 Falloff|0||
 Chunks|1-3||
 Explosion Type|Explosive||
-Explosion Spectrum|Intermediate (30%)||
+Explosion Spectrum|Intermediate (30)||
 Explosion Disruption|4||
 Explosion Salvage|-14||
 Penetration|Unlimited||
-Salvage|-20[[/ItemDetails]]"
+Salvage|-20[[/ItemDetails]]
+[[Heading:2]]List of item details categories[[/Heading]]
+[[Table]]Category|Notes||Image Name|Can link to external site or cog-minder hosted image||Name||Type|Subtype like Engine, Device, Hackware, etc.||Slot|Power, Propulsion Utility, Weapon, or N/A for a non-attachable item||Size||Rating||Rating Category| Standard (default if not set), Prototype, or Alien||Integrity||Coverage||Hackable|Enter as true or false||Mass||Description|Can add 
+ for explicit new lines||Energy Upkeep|All upkeeps are positive numbers even if they subtract resources (like energy)||Matter Upkeep||Heat Generation||Energy Generation||Energy Storage||Power Stability|Enter as x%||Time Per Move||Drag||Mod Per Extra||Siege|None (default if not set), Standard, or High||Energy Per Move||Heat Per Move||Support||Penalty||Burnout|Enter as x%||Range||Shot Energy||Shot Matter||Shot Heat||Recoil||Targeting||Delay||Overload Stability|Enter as X%||Arc||Waypoints||Projectile Count||Explosion Radius||Damage|Can enter damages as a number or a range like min-max||Explosion Damage||Falloff||Chunks|Can enter as a number or a range like min-max||Damage Type||Explosion Type||Critical|Enter as X% and critical type, like 10% Destroy||Penetration|Enter as percentages divided by slashes, like 100 / 50||Spectrum|Enter as spectrum name and number in parentheses, like Intermediate (30)||Explosion Spectrum||Disruption||Explosion Disruption||Heat Transfer|Enter as transfer name and number in parentheses, like Medium (37)||Explosion Heat Transfer||Salvage||Explosion Salvage[[/Table]]"
 "Executioner","Bot",""
 "Exiles (Group)","Bot Group","The Exiles are a group of 3 [[Tinkerer]]-like bots and their bodyguard [[8R-AWN]] stationed at [[Exiles (Location)]] that have been exiled from [[Zion]].
 [[EX-DEC]] wields their [[AWS/EX-DEC]] and [[8R-AWN]] wields 2 [[8R-AWN's Boregun|Boreguns]] and may fight if provoked, but the others are unarmed. They have developed a large number of unique prototype parts."
@@ -3673,7 +3676,10 @@ There are 2 types of exits in Storage:
 "Storm Laser","Part",""
 "Striker","Bot",""
 "Structural Scanner","Part",""
-"Style Achievements","Other","Style [[Achievements]] are earned by reaching high statistics in some categories, which usually requires using an associated playstyle, or by using some rare items and/or their mechanics. Most of them will be simply eventually be obtained by players as they become familiar with the more common mechanics of the game and figure out playstyles that utilizes them or discover some of the less common mechanics of the game. 12 of the 46 Style Achievements have hidden descriptions that are only revealed after completing them. The borders of Style Achievement indicate their difficulty compared to other achievements with similar[[Comment]]TODO: Figure out a way to say ""Achievements with almost exactly the same requirements, with the only difference being that one achievement requires doing thing A while the more difficult achievement requires doing thing A+B."", but use fewer words to say this.[[/Comment]] requirements, with more ""intense"" borders meaning higher difficulty.
+"Style Achievements","Other","Style [[Achievements]] are earned by reaching high statistics in some categories which usually require using an associated playstyle, or by using some rare items and/or their mechanics. Most of them will be simply eventually be obtained by players as they become familiar with the more common mechanics of the game and figure out playstyles that utilizes them or discover some of the less common mechanics of the game. 12 of the 46 Style Achievements have hidden descriptions that are only revealed after completing them. The borders of Style Achievement indicate their difficulty compared to other achievements with similar[[Comment]]TODO: Figure out a way to say ""Achievements with almost exactly the same requirements, with the only difference being that one achievement requires doing thing A while the more difficult achievement requires doing thing A+B."", but use fewer words to say this.[[/Comment]] requirements, with more ""intense"" borders meaning higher difficulty.
+
+[[Comment]]This warning is supposed to be there for all articles about achievement types[[/Comment]]
+(The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least ""Spoilers"", and may be set to ""Redacted"" for achievements where that would be relevant. Remember to change your spoilers settings to ""None"" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
 
 [[Heading]]Combat[[/Heading]]
 [[List]]
@@ -3682,6 +3688,7 @@ Turtlemind: Have 2% or less core exposure.
 |Executioner: Have 7 weapon slots.
 |Perfect Aim: Have +40% targeting accuracy for ranged weapons via utilities.
 |More Dakka Please: Fire 10 kinetic projectiles in a single volley.
+Strategy: Equip two ""Flak"" weapons and fire them both in one volley.
 |Gunslinger: Destroy 3 robots with a single volley using secondary targeting.
 |Gun Specialist: Destroy 100 hostiles with at least 90% of damage across an entire run dealt by guns.
 |Cannon Specialist: Destroy 100 hostiles with at least 90% of damage across an entire run dealt by cannons.
@@ -3695,15 +3702,17 @@ Turtlemind: Have 2% or less core exposure.
 [[Heading]]Various[[/Heading]]
 [[List]]
 Tank: [[Spoiler]]Reach a mass of 150.[[/Spoiler]]
+Strategy: Either wait for it to happen on its own while you're playing a heavy combat build, or equip either a [[Humpback]] or a [[Cargo Storage Unit]] and a few other parts.
 |Friend Of Zion: [[Spoiler]]Summon 10 [[Imprint#roster_hacks|Zionite dispatches]].[[/Spoiler]]
 |Heroic Deeds: [[Spoiler]]Summon a [[Z-Hero|Hero of Zion]].[[/Spoiler]]
 [[/List]]
 
 [[Heading]]Flight/Hover[[/Heading]]
 [[List]]
-Whoosh!: Move with 4 overloaded hover or flight units.
+Whoosh!: Move with 4 [[Overload#propulsion|overloaded]] [[Hover Unit|hover]] or [[Flight Units|flight units]].
 |Speed Demon: Reach a speed of 10 spaces per turn.
 |Supersonic: Reach a speed of 20 spaces per turn.
+Strategy: Only possible by having either at least 5 [[Overload#propulsion|overloaded]] [[Flight Units]] or 15 overloaded [[Hover Units]].
 |Dodgeball, But With Guns: Reach 75% evasion.
 [[/List]]
 
@@ -3712,7 +3721,7 @@ Whoosh!: Move with 4 overloaded hover or flight units.
 Assassin: Sneak attack 15 active hostiles.
 |Sniper: [[Spoiler]]Destroy a visible hostile from more than 20 spaces away with a gun or cannon.[[/Spoiler]]
 |Dramatic Entrance: [[Spoiler]]With no hostiles in sight and no pursuers, destroy an enemy combat bot with explosives.[[/Spoiler]]
-|Decoder Ring: Obtain 50 pieces of intel from one or more 0b10 Decoder Chips.
+|Decoder Ring: Obtain 50 pieces of intel from one or more [[0b10 Decoder Chips]].
 |Freeware: [[Spoiler]]Receive 10 pieces of [[Imprint#intel_hacks|Zionite intel]].[[/Spoiler]]
 [[/List]]
 
@@ -3721,28 +3730,28 @@ Assassin: Sneak attack 15 active hostiles.
 Prolific Hacker: Hack 50 machines.
 |Pwned: Hack 50 hostiles.
 |l33t h4x0r: Have +100% to hack success.
-|Maximum Efficiency: Succeed at 10 hacks on a single Terminal.
-|root@: Succeed at 3 manual hacks on a single Terminal.
+|Maximum Efficiency: Succeed at 10 hacks on a single [[Terminal]].
+|root@: Succeed at 3 manual hacks on a single [[Terminal]].
 [[/List]]
 
 [[Heading]]Allies[[/Heading]]
 
 [[List]]
-War Machine: Build 10 allied bots.
-|We Are Legion: Have 20 allies at once.
-|Beloved: Acquire 75 allies across an entire run.
-|Generalissimo: Oversee 75 ally kills across an entire run.
+War Machine: Build 10 [[Allies|allied bots]].
+|We Are Legion: Have 20 [[Allies|allies]] at once.
+|Beloved: Acquire 75 [[Allies|allies]] across an entire run.
+|Generalissimo: Oversee 75 [[Allies|ally]] kills across an entire run.
 |Collateral Damage: [[Spoiler]]Lose 1,000 points to friendly fire.[[/Spoiler]]
 [[/List]]
 
 [[Heading]]Item mechanics and powerful weapons[[/Heading]] [[Comment]]There's got to be a better, shorter name for this heading.[[/Comment]]
 
 [[List]]
-What Is This Thing?: Discover the use of Self-destruct Interrupters.
+What Is This Thing?: Discover the use of [[Self-destruct Interrupter|Self-destruct Interrupters]].
 |Deconstruction: Destroy a robot via core entropy.
-|Max Potential: [[Spoiler]]Fire a Potential Cannon.[[/Spoiler]]
+|Max Potential: [[Spoiler]]Fire a [[Potential Cannon]].[[/Spoiler]]
 |Hard Hitter: Inflict 200 damage against an enemy with one shot from a single weapon.
-|Sunderer: [[Spoiler]]Instakill an enemy with a Core Stripper.[[/Spoiler]]
+|Sunderer: [[Spoiler]]Instakill an enemy with a [[Core Stripper]].[[/Spoiler]]
 [[/List]]
 
 [[Heading]]Various 3[[/Heading]]
@@ -3751,7 +3760,7 @@ Packrat: [[Spoiler]]Carry 30 items in inventory.[[/Spoiler]]
 |Production Line: Build 10 parts.
 |Remodeling: [[Spoiler]]Destroy 200 walls with area of effect damage.[[/Spoiler]]
 |More Power To You: [[Spoiler]]Reach 75 energy generation.[[/Spoiler]]
-|Minesweeper: Extract 30 traps.
+|Minesweeper: Extract 30 [[Traps|traps]].
 |Superinsulated: Become immune to electromagnetic damage.
 
 [[/List]]"
