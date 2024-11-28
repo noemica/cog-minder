@@ -62,6 +62,7 @@ export type Bot = {
     coreCoverage: number;
     coreExposure: number;
     coreIntegrity: number;
+    customBot: boolean;
     description: string;
     energyGeneration: number;
     fabrication?: FabricationStats;

@@ -1,11 +1,12 @@
 import { Fragment, ReactNode } from "react";
 
 import lore from "../../json/lore.json";
+import BotDetails from "../components/GameDetails/BotDetails";
 import ItemDetails from "../components/GameDetails/ItemDetails";
 import { LinkIcon } from "../components/Icons/Icons";
 import WikiTableOfContents, { WikiHeadingState } from "../components/Pages/WikiPage/WikiTableOfContents";
 import { BotLink, ItemLink, LocationLink } from "../components/Pages/WikiPage/WikiTooltips";
-import { Bot } from "../types/botTypes";
+import { Bot, BotPart } from "../types/botTypes";
 import { MapLocation, Spoiler } from "../types/commonTypes";
 import { Critical, Item, WeaponItem } from "../types/itemTypes";
 import { WikiEntry } from "../types/wikiTypes";
@@ -19,6 +20,7 @@ import {
     getLinkSafeString,
     parseFloatOrUndefined,
     parseIntOrDefault,
+    parseIntOrUndefined,
     rootDirectory,
 } from "./common";
 
@@ -524,6 +526,228 @@ function processBTag(state: ParserState, result: RegExpExecArray) {
     const boldedContent = <b>{outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</b>;
 
     state.output.push({ groupType: "Grouped", node: boldedContent });
+}
+
+const botDetailsMap = new Map<
+    string,
+    {
+        key?: string;
+        isArmament?: boolean;
+        isArmamentOption?: boolean;
+        isComponents?: boolean;
+        isComponentsOption?: boolean;
+        isNumber?: boolean;
+    }
+>([
+    ["Name", {}],
+    ["Class", {}],
+    ["Size", {}],
+    ["Profile", {}],
+    ["Rating", {}],
+    ["Tier", {}],
+    ["Threat", {}],
+    ["Value", { isNumber: true }],
+    ["Energy Generation", { isNumber: true }],
+    ["Heat Dissipation", { isNumber: true }],
+    ["Visual Range", {}],
+    ["Memory", {}],
+    ["Spot Percent", {}],
+    ["Movement", {}],
+    ["Core Integrity", { isNumber: true }],
+    ["Core Exposure", { isNumber: true }],
+    ["Salvage Potential", {}],
+    ["Inventory Size", {}],
+    ["Armament", { isArmament: true }],
+    ["Armament Option", { isArmamentOption: true }],
+    ["Components", { isComponents: true }],
+    ["Components Option", { isComponentsOption: true }],
+    ["Description", {}],
+]);
+function processBotDetailsTag(state: ParserState, result: RegExpExecArray) {
+    function getBotKey(inputName: string, key?: string) {
+        if (key !== undefined) {
+            return key;
+        }
+
+        return inputName[0].toLowerCase() + inputName.substring(1).replaceAll(" ", "");
+    }
+
+    // Find [[/BotDetails]] closing tag first
+    const closeResult = /\[\[\/BotDetails\]\]/.exec(state.initialContent.substring(state.index));
+
+    if (closeResult === null) {
+        // If we can't find the end tag then just skip over the opening tag
+        recordError(state, "Found bot details tag without close tag");
+        state.index += result[0].length;
+        return;
+    }
+
+    // Split interior text by || to get each category
+    const startIndex = state.index + result[0].length;
+    const endIndex = startIndex + closeResult.index - result[0].length;
+    const categoriesSplit = state.initialContent.substring(startIndex, endIndex).split("||");
+
+    const bot: Bot = {
+        armament: [],
+        armamentData: [],
+        armamentOptionData: [],
+        armamentString: "",
+        categories: [],
+        class: "",
+        componentData: [],
+        componentOptionData: [],
+        components: [],
+        componentsString: "",
+        coreCoverage: 0,
+        coreExposure: 0,
+        coreIntegrity: 0,
+        customBot: true,
+        description: "",
+        energyGeneration: 0,
+        heatDissipation: 0,
+        immunities: [],
+        immunitiesString: "",
+        inventorySize: "1",
+        locations: [],
+        memory: "",
+        movement: "",
+        name: "",
+        profile: "",
+        rating: "",
+        salvageHigh: 0,
+        salvageLow: 0,
+        salvagePotential: "",
+        size: "Medium",
+        speed: 0,
+        spoiler: "None",
+        spotPercent: "",
+        threat: "",
+        tier: "",
+        totalCoverage: 0,
+        traits: [],
+        traitsString: "",
+        value: 0,
+        visualRange: "16",
+    };
+
+    // Process each category
+    for (const categoryValues of categoriesSplit) {
+        let split = categoryValues.split("|");
+
+        const category = split[0].trim();
+        if (split.length === 1) {
+            recordError(state, `Bot data category ${category} has no value`);
+            continue;
+        }
+
+        const categoryData = botDetailsMap.get(category);
+        if (categoryData === undefined) {
+            recordError(state, `Bot data category ${category} is not expected`);
+            continue;
+        }
+
+        let value: any = split[1].trim();
+
+        // Special category processing
+        if (categoryData.isNumber) {
+            value = parseFloatOrUndefined(value);
+            if (value === undefined) {
+                recordError(state, `Bot data category ${category} has invalid number ${split[1]}`);
+                continue;
+            }
+
+            if (value === 0) {
+                continue;
+            }
+        } else if (
+            categoryData.isArmament ||
+            categoryData.isComponents ||
+            categoryData.isArmamentOption ||
+            categoryData.isComponentsOption
+        ) {
+            // Armament/component data is split into a chain of |-separated part + number pairs
+            split.shift();
+
+            if (split.length % 2 === 1) {
+                recordError(state, `Bot data category ${category} has mismatched parts and part numbers`);
+                continue;
+            }
+
+            const optionParts: BotPart[] = [];
+
+            for (let i = 0; i < split.length; i += 2) {
+                const item = split[i].trim();
+                let number = parseIntOrUndefined(split[i + 1]);
+
+                if (number === undefined) {
+                    recordError(state, `Bot data category ${category} item ${item} has invalid number`);
+                    number = 1;
+                }
+
+                let part: BotPart = {
+                    coverage: 0,
+                    integrity: 0,
+                    name: item,
+                    number,
+                };
+
+                if (categoryData.isArmament) {
+                    bot.armamentData.push(part);
+                } else if (categoryData.isComponents) {
+                    bot.componentData.push(part);
+                } else {
+                    optionParts.push(part);
+                }
+            }
+
+            if (categoryData.isArmamentOption) {
+                bot.armamentOptionData.push(optionParts);
+            } else if (categoryData.isComponentsOption) {
+                bot.componentOptionData.push(optionParts);
+            }
+
+            continue;
+        }
+
+        // Assign the value to the item
+        bot[getBotKey(category, categoryData?.key)] = value;
+    }
+
+    // If the rating is unset, manually calculate it
+    if (bot.rating === "") {
+        let rating = 0;
+
+        let allParts: BotPart[] = [];
+
+        allParts.push(...bot.armamentData);
+        allParts.push(...bot.componentData);
+        allParts.push(...bot.armamentOptionData.map((options) => options[0]));
+        allParts.push(...bot.componentOptionData.map((options) => options[0]));
+
+        for (const part of allParts) {
+            const item = state.itemData.tryGetItem(part.name);
+
+            if (item !== undefined) {
+                rating += item.rating * part.number;
+            }
+        }
+
+        rating += parseIntOrDefault(bot.tier, 1);
+
+        bot.rating = rating.toString();
+    }
+
+    state.index = endIndex + closeResult[0].length;
+    const content = (
+        <div className="wiki-infobox wiki-infobox-centered">
+            <BotDetails bot={bot} />
+        </div>
+    );
+
+    state.output.push({
+        groupType: "Individual",
+        node: content,
+    });
 }
 
 // Process a [[BotGroups]][[/BotGroups]] tag
@@ -1150,7 +1374,7 @@ function processItemDetailsTag(state: ParserState, result: RegExpExecArray) {
     state.index = endIndex + closeResult[0].length;
     const content = (
         <div className="wiki-infobox wiki-infobox-centered">
-            <ItemDetails item={item as Item} />
+            <ItemDetails item={item} />
         </div>
     );
 
@@ -1375,6 +1599,7 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
 const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => void> = new Map([
     ["AllLocations", processAllLocationsTag],
     ["B", processBTag],
+    ["BotDetails", processBotDetailsTag],
     ["BotGroups", processBotGroupsTag],
     ["Color", processColorTag],
     ["Comment", processCommentTag],

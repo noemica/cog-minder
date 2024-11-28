@@ -119,6 +119,8 @@ const TooltipTexts = {
         "This is a direct modifier to the time it takes to attack with this weapon. Some weapons are inherently faster or slower to attack with.",
     Stability:
         "Stability represents the ability of this weapon to fire while overloaded without suffering any negative side-effects. Overloading doubles damage and energy cost, and generates triple the heat. If N/A, this weapon cannot be overloaded; only some energy weapons support overloading. While overloaded, heat transfer is one level higher than usual where applicable.",
+    Waypoints:
+        "Guided weapons fire projectiles that follow a set path designated by a number of waypoints up to this value. Guided projectiles always hit their target. If N/A, this weapon only supports direct firing.",
     Arc: "Total angle within which projectiles are randomly distributed around the target, spreading them along an arc of a circle centered on the shot origin. Improved targeting has no effect on the spread, which is always centered around the line of fire.",
 
     // Projectile Stats (damage type is never absent, thus not present)
