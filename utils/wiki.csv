@@ -1662,7 +1662,55 @@ Penetration|Unlimited||
 Salvage|-20[[/ItemDetails]]
 [[Heading:2]]List of item details categories[[/Heading]]
 [[Table]]Category|Notes||Image Name|Can link to external site or cog-minder hosted image||Name||Type|Subtype like Engine, Device, Hackware, etc.||Slot|Power, Propulsion Utility, Weapon, or N/A for a non-attachable item||Size||Rating||Rating Category| Standard (default if not set), Prototype, or Alien||Integrity||Coverage||Hackable|Enter as true or false||Mass||Description|Can add 
- for explicit new lines||Energy Upkeep|All upkeeps are positive numbers even if they subtract resources (like energy)||Matter Upkeep||Heat Generation||Energy Generation||Energy Storage||Power Stability|Enter as x%||Time Per Move||Drag||Mod Per Extra||Siege|None (default if not set), Standard, or High||Energy Per Move||Heat Per Move||Support||Penalty||Burnout|Enter as x%||Range||Shot Energy||Shot Matter||Shot Heat||Recoil||Targeting||Delay||Overload Stability|Enter as X%||Arc||Waypoints||Projectile Count||Explosion Radius||Damage|Can enter damages as a number or a range like min-max||Explosion Damage||Falloff||Chunks|Can enter as a number or a range like min-max||Damage Type||Explosion Type||Critical|Enter as X% and critical type, like 10% Destroy||Penetration|Enter as percentages divided by slashes, like 100 / 50||Spectrum|Enter as spectrum name and number in parentheses, like Intermediate (30)||Explosion Spectrum||Disruption||Explosion Disruption||Heat Transfer|Enter as transfer name and number in parentheses, like Medium (37)||Explosion Heat Transfer||Salvage||Explosion Salvage[[/Table]]"
+ for explicit new lines||Energy Upkeep|All upkeeps are positive numbers even if they subtract resources (like energy)||Matter Upkeep||Heat Generation||Energy Generation||Energy Storage||Power Stability|Enter as x%||Time Per Move||Drag||Mod Per Extra||Siege|None (default if not set), Standard, or High||Energy Per Move||Heat Per Move||Support||Penalty||Burnout|Enter as x%||Range||Shot Energy||Shot Matter||Shot Heat||Recoil||Targeting||Delay||Overload Stability|Enter as X%||Arc||Waypoints||Projectile Count||Explosion Radius||Damage|Can enter damages as a number or a range like min-max||Explosion Damage||Falloff||Chunks|Can enter as a number or a range like min-max||Damage Type||Explosion Type||Critical|Enter as X% and critical type, like 10% Destroy||Penetration|Enter as percentages divided by slashes, like 100 / 50||Spectrum|Enter as spectrum name and number in parentheses, like Intermediate (30)||Explosion Spectrum||Disruption||Explosion Disruption||Heat Transfer|Enter as transfer name and number in parentheses, like Medium (37)||Explosion Heat Transfer||Salvage||Explosion Salvage[[/Table]]
+[[Heading]]Fake bots[[/Heading]]
+Fake bot stats can also be created. Example:
+[[BotDetails]]Name|G-75 Big Grunt||
+Class|Grunt||
+Size|Large||
+Profile|RD7X7||
+Tier|9||
+Threat|5||
+Value|75||
+Energy Generation|40||
+Heat Dissipation|68||
+Visual Range|16||
+Memory|20||
+Spot Percent|20||
+Movement|Walking (110/90%)||
+Core Integrity|80||
+Core Exposure|40||
+Salvage Potential|100~130||
+Description|Grunt but bigger||
+Armament|Wave Gun|2||
+Armament Option|Dispersion Rifle|1|Phase Gun|1||
+Components|Lgt. Quantum Reactor|1|Biometal Leg|2||
+Components Option|Adv. Heat Sink|3|Adv. Cooling System|2||
+Components Option|Dynamic Insulation System|1|EM Disruption Field|1[[/BotDetails]]
+[[Heading:2]]List of bot details categories[[/Heading]]
+[[Table]]Category|Notes||Name||
+Class|Currently only existing common classes are supported||
+Size|Huge, Large, Medium, Small, or Tiny||
+Profile|Enter as square (SQ) or round (RD) with a subtile size, e.g. RD5X5||
+Rating|Total of all known parts is calculated automatically, but can override if using custom parts||
+Tier||
+Threat||
+Value||
+Energy Generation||
+Heat Dissipation||
+Visual Range||
+Memory||
+Spot Percent||
+Movement||
+Core Integrity||
+Core Exposure||
+Salvage Potential||
+Inventory Size||
+Armament|Entered as a vertical bar-separated list of parts with numbers||
+Armament Option|Entered like normal armament, but all options are considered a single option ""group"". Can appear multiple times to indicate separate groups.||
+Components|Entered the same as armament||
+Components Option|Entered the same as armament option||
+Description[[/Table]]"
 "Executioner","Bot",""
 "Exiles (Group)","Bot Group","The Exiles are a group of 3 [[Tinkerer]]-like bots and their bodyguard [[8R-AWN]] stationed at [[Exiles (Location)]] that have been exiled from [[Zion]].
 [[EX-DEC]] wields their [[AWS/EX-DEC]] and [[8R-AWN]] wields 2 [[8R-AWN's Boregun|Boreguns]] and may fight if provoked, but the others are unarmed. They have developed a large number of unique prototype parts."
