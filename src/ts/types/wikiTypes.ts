@@ -6,7 +6,7 @@ export type WikiEntry = {
     alternativeNames: string[];
     content: string;
     name: string;
-    parentGroup?: WikiEntry;
+    parentGroups: WikiEntry[];
     type: EntryType;
     spoiler: Spoiler;
     extraData?: any;

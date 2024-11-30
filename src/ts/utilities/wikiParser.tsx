@@ -4,6 +4,7 @@ import lore from "../../json/lore.json";
 import BotDetails from "../components/GameDetails/BotDetails";
 import ItemDetails from "../components/GameDetails/ItemDetails";
 import { LinkIcon } from "../components/Icons/Icons";
+import WikiGroupInfobox from "../components/Pages/WikiPage/WikiGroupInfobox";
 import WikiTableOfContents, { WikiHeadingState } from "../components/Pages/WikiPage/WikiTableOfContents";
 import { BotLink, ItemLink, LocationLink } from "../components/Pages/WikiPage/WikiTooltips";
 import { Bot, BotPart } from "../types/botTypes";
@@ -389,7 +390,6 @@ export function parseEntryContent(
     spoilers: Spoiler,
     itemData: ItemData,
     botData: BotData,
-    groupSelection?: string,
 ) {
     const parseResult = createContentHtml(entry, allEntries, spoilers, false, itemData, botData);
 
@@ -401,61 +401,22 @@ export function parseEntryContent(
         }
     }
 
-    if (entry.parentGroup !== undefined) {
-        const parentParseResult = createContentHtml(entry.parentGroup, allEntries, spoilers, true, itemData, botData);
+    let groupNodes: ReactNode[] = [];
 
-        if (parentParseResult.errors.length > 0) {
-            console.log(`Errors while parsing ${entry.name}`);
-
-            for (const error of parentParseResult.errors) {
-                console.log(`Parse error: ${error}`);
-            }
-        }
-
-        // Merge the parent parse results with the main parse results
-        parseResult.node = (
-            <>
-                {parentParseResult.node}
-                {parseResult.node}
-            </>
-        );
-        parseResult.errors = parseResult.errors.concat(parentParseResult.errors);
-
-        for (const image of parentParseResult.images) {
-            parseResult.images.add(image);
-        }
-    } else if ((entry.type === "Bot Group" || entry.type === "Part Group") && groupSelection !== undefined) {
-        const childEntries = entry.extraData as WikiEntry[];
-        const childParseResult = createContentHtml(
-            childEntries.find((childEntry) => childEntry.name === groupSelection) || childEntries[0],
-            allEntries,
-            spoilers,
-            true,
-            itemData,
-            botData,
-        );
-
-        if (childParseResult.errors.length > 0) {
-            console.log(`Errors while parsing ${entry.name}`);
-
-            for (const error of childParseResult.errors) {
-                console.log(`Parse error: ${error}`);
-            }
-        }
-
-        // Merge the parent parse results with the main parse results
-        parseResult.node = (
-            <>
-                {parseResult.node}
-                {childParseResult.node}
-            </>
-        );
-        parseResult.errors = parseResult.errors.concat(childParseResult.errors);
-
-        for (const image of childParseResult.images) {
-            parseResult.images.add(image);
-        }
+    if (entry.parentGroups.length > 0) {
+        groupNodes = Array.from(entry.parentGroups.values()).map((group, i) => (
+            <WikiGroupInfobox activeEntry={entry} group={group} key={i} />
+        ));
+    } else if (entry.type === "Bot Group" || entry.type === "Part Group") {
+        groupNodes.push(<WikiGroupInfobox activeEntry={entry} group={entry} key={0} />);
     }
+
+    parseResult.node = (
+        <>
+            {parseResult.node}
+            {groupNodes}
+        </>
+    );
 
     return parseResult;
 }
@@ -768,7 +729,7 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
         // Get list of images to display
         const images = new Set<string>();
         for (const entry of state.allEntries.values()) {
-            if (entry.parentGroup === groupEntry) {
+            if (entry.parentGroups?.includes(groupEntry)) {
                 const bot = state.botData.getBot(entry.name);
                 images.add(getLargeBotImageName(bot));
             }

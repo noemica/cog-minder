@@ -283,7 +283,7 @@
                 }
             }
         }
-        
+
         > p {
             font-size: @h2-font-size;
         }
@@ -498,3 +498,45 @@
         }
     }
 }
+
+.wiki-group-infobox {
+    background-color: @table-header-background-color;
+    border-collapse: collapse;
+    color: @font-color;
+
+    width: 100%;
+    margin-bottom: 1rem;
+
+    border: @border-width solid @border-color;
+
+    > tbody {
+        > tr:first-child {
+            text-align: center;
+            font-size: @wiki-group-infobox-font-size;
+        }
+
+        > tr:nth-child(2) > td {
+            border: 1px solid black;
+
+            > ul {
+                margin: 0;
+                padding: 0;
+
+                > * {
+                    display: inline-block;
+                    padding: @wiki-group-infobox-padding;
+                }
+            }
+        }
+    }
+}
+
+// .wiki-table,
+// .wiki-table > * > tr > * {
+//     border: @border-width solid @border-color;
+//     border-collapse: collapse;
+// }
+
+// .wiki-table > tbody > tr > * {
+//     padding: @table-cell-text-padding;
+// }

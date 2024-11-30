@@ -6,7 +6,7 @@ import { useHashLocation } from "wouter/use-hash-location";
 import wiki from "../../../../json/wiki.json";
 import { Bot } from "../../../types/botTypes";
 import { MapLocation, Spoiler } from "../../../types/commonTypes";
-import { Item } from "../../../types/itemTypes";
+import { Item, WeaponItem } from "../../../types/itemTypes";
 import { WikiEntry } from "../../../types/wikiTypes";
 import { BotData } from "../../../utilities/BotData";
 import { ItemData } from "../../../utilities/ItemData";
@@ -25,7 +25,6 @@ import useItemData from "../../Effects/useItemData";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
 import WikiAutocomplete from "./WikiAutocomplete";
 import WikiEditControls from "./WikiEditControls";
-import WikiHomepage from "./WikiHomepage";
 import WikiPageContent from "./WikiPageContent";
 import WikiSearchPage from "./WikiSearchPage";
 
@@ -38,6 +37,36 @@ export type EditState = {
     modified: boolean;
     showEdit: boolean;
 };
+
+const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
+    ["Thermal Guns", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Thermal"],
+]);
+function getItemCategoryItems(itemCategory: string, itemData: ItemData): string[] {
+    const categoryFilter = itemCategoryFilters.get(itemCategory);
+
+    if (categoryFilter === undefined) {
+        console.log(`Tried to search for undefined item category ${itemCategory}`);
+        return [];
+    }
+
+    const items: Item[] = [];
+
+    for (const item of itemData.getAllItems()) {
+        if (categoryFilter(item)) {
+            items.push(item);
+        }
+    }
+
+    items.sort((item1, item2) => {
+        if (item1.rating === item2.rating) {
+            return item1.name.localeCompare(item2.name);
+        }
+
+        return item1.rating - item2.rating;
+    });
+
+    return items.map((item) => item.name);
+}
 
 function initEntries(botData: BotData, itemData: ItemData) {
     const allEntries = new Map<string, WikiEntry>();
@@ -67,11 +96,12 @@ function initEntries(botData: BotData, itemData: ItemData) {
 
         addEntry({
             alternativeNames: [],
-            name: botEntry.Name,
-            type: "Bot",
-            spoiler: bot.spoiler,
             content: botEntry.Content,
             extraData: bot,
+            name: botEntry.Name,
+            parentGroups: [],
+            spoiler: bot.spoiler,
+            type: "Bot",
         });
     }
 
@@ -88,10 +118,11 @@ function initEntries(botData: BotData, itemData: ItemData) {
         const entry: WikiEntry = {
             alternativeNames: botGroupEntry.AlternateNames ?? [],
             content: botGroupEntry.Content ?? "",
+            extraData: botEntries,
             name: botGroupEntry.Name,
+            parentGroups: [],
             spoiler: spoiler,
             type: "Bot Group",
-            extraData: botEntries,
         };
         addEntry(entry);
 
@@ -108,12 +139,8 @@ function initEntries(botData: BotData, itemData: ItemData) {
                 continue;
             }
 
-            if (botEntry.parentGroup !== undefined) {
-                console.log(`Found bot ${botEntry.name} in multiple groups`);
-            }
-
-            // Set the bot's parent group to point to this
-            botEntry.parentGroup = entry;
+            // Add to the bot's parent groups
+            botEntry.parentGroups.push(entry);
             botEntries.push(botEntry);
         }
     }
@@ -167,11 +194,12 @@ function initEntries(botData: BotData, itemData: ItemData) {
 
         const entry: WikiEntry = {
             alternativeNames: locationEntry.AlternateNames ?? [],
-            name: locationEntry.Name,
-            type: "Location",
-            spoiler: spoiler,
             content: locationEntry.Content,
             extraData: location,
+            name: locationEntry.Name,
+            parentGroups: [],
+            spoiler: spoiler,
+            type: "Location",
         };
 
         addEntry(entry);
@@ -208,11 +236,12 @@ function initEntries(botData: BotData, itemData: ItemData) {
 
         addEntry({
             alternativeNames: [],
-            name: partEntry.Name,
-            type: "Part",
-            spoiler: spoiler,
             content: partEntry.Content,
             extraData: part,
+            name: partEntry.Name,
+            parentGroups: [],
+            spoiler: spoiler,
+            type: "Part",
         });
     }
 
@@ -229,15 +258,26 @@ function initEntries(botData: BotData, itemData: ItemData) {
         const entry: WikiEntry = {
             alternativeNames: [],
             content: partGroupEntry.Content ?? "",
+            extraData: partEntries,
             name: partGroupEntry.Name,
+            parentGroups: [],
             spoiler: spoiler,
             type: "Part Group",
-            extraData: partEntries,
         };
         addEntry(entry);
 
+        let parts: string[] = [];
+
+        if (partGroupEntry.Parts) {
+            parts = partGroupEntry.Parts;
+        } else if (partGroupEntry.PartCategory) {
+            parts = getItemCategoryItems(partGroupEntry.PartCategory, itemData);
+        } else {
+            console.log(`Part group ${entry.name} has no parts`);
+        }
+
         // Add all parts in group
-        for (const partName of partGroupEntry.Parts) {
+        for (const partName of parts) {
             const partEntry = allEntries.get(partName);
             if (partEntry === undefined) {
                 console.log(`Found bad part name ${partName} in group ${partGroupEntry.Name}`);
@@ -249,12 +289,8 @@ function initEntries(botData: BotData, itemData: ItemData) {
                 continue;
             }
 
-            if (partEntry.parentGroup !== undefined) {
-                console.log(`Found part ${partEntry.name} in multiple groups`);
-            }
-
             // Set the part's parent group to point to this
-            partEntry.parentGroup = entry;
+            partEntry.parentGroups.push(entry);
             partEntries.push(partEntry);
         }
     }
@@ -270,10 +306,11 @@ function initEntries(botData: BotData, itemData: ItemData) {
 
         const entry: WikiEntry = {
             alternativeNames: otherEntry.AlternateNames ?? [],
+            content: otherEntry.Content,
             name: otherEntry.Name,
+            parentGroups: [],
             type: "Other",
             spoiler: spoiler,
-            content: otherEntry.Content,
         };
 
         addEntry(entry);
@@ -305,14 +342,7 @@ function WikiNavigationBar({
                 onClick={async () => {
                     console.log("Validating...");
                     for (const entry of allEntries.values()) {
-                        const parseResult = parseEntryContent(
-                            entry,
-                            allEntries,
-                            spoilers,
-                            itemData,
-                            botData,
-                            undefined,
-                        );
+                        const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData);
 
                         const promises: Promise<any>[] = [];
 
@@ -400,7 +430,7 @@ export default function WikiPage() {
     const [allEntries, allowedEntries] = useMemo(() => {
         const allEntries = initEntries(botData, itemData);
 
-        // Need to exclude the home page from the list of allowed entries since 
+        // Need to exclude the home page from the list of allowed entries since
         // that is what is shown in the searchbar
         const allowedEntries = Array.from(allEntries.entries())
             .filter(([_, entry]) => canShowSpoiler(entry.spoiler, spoilers) && entry.name !== "Homepage")
@@ -454,7 +484,7 @@ export default function WikiPage() {
         }
 
         if (entry !== undefined) {
-            const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData, groupSelection);
+            const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData);
             parsedNode = parseResult.node;
             parsingErrors = parseResult.errors;
         }

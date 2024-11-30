@@ -62,7 +62,7 @@ function BotGroupContent({
                         }}
                     />
                 </div>
-                <BotDetails bot={bot} popoversToLinks={true} />
+                <BotDetails bot={bot} popoversToLinks={true} showWikiLink={true} />
             </div>
             {parsedNode}
         </>
@@ -141,7 +141,7 @@ function ItemGroupContent({
         <>
             <div className="wiki-infobox">
                 {itemPicker}
-                <ItemDetails item={item} />
+                <ItemDetails item={item} showWikiLink={true} />
             </div>
             {parsedNode}
         </>
