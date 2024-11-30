@@ -115,7 +115,25 @@ function InfoboxTable({
     groupEntry: WikiEntry;
     spoiler: Spoiler;
 }) {
-    const [show, setShow] = useState(false);
+    function isDescendent(activeEntry: WikiEntry, entryToCheck: WikiEntry) {
+        if (
+            entryToCheck.type === "Bot Group" ||
+            entryToCheck.type === "Part Group" ||
+            entryToCheck.type === "Part Supergroup"
+        ) {
+            const childEntries = entryToCheck.extraData as WikiEntry[];
+
+            for (const childEntry of childEntries) {
+                if (childEntry === activeEntry || isDescendent(activeEntry, childEntry)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    const [show, setShow] = useState(activeEntry === groupEntry || isDescendent(activeEntry, groupEntry));
 
     return (
         <table className="wiki-group-infobox">
@@ -144,8 +162,8 @@ export default function WikiGroupInfobox({
     groupEntry: WikiEntry;
     spoiler: Spoiler;
 }) {
-    // Default to showing the children only if we have supergroup children
-    const [show, setShow] = useState((groupEntry.hasSupergroupChildren) || false);
+    // Default to showing the top level always
+    const [show, setShow] = useState(true);
 
     if (groupEntry.hasSupergroupChildren) {
         return (

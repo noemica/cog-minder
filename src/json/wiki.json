@@ -6402,6 +6402,11 @@
    "Content": ""
   },
   {
+   "Name": "Electromagnetic Launchers",
+   "PartCategory": "Electromagnetic Launchers",
+   "Content": ""
+  },
+  {
    "Name": "Energy Filters",
    "Parts": [
     "Energy Filter",
@@ -6452,6 +6457,11 @@
     "Lgt. Angular Momentum Engine",
     "F-cell Engine"
    ],
+   "Content": ""
+  },
+  {
+   "Name": "Explosive Launchers",
+   "PartCategory": "Explosive Launchers",
    "Content": ""
   },
   {
@@ -6546,63 +6556,6 @@
     "Launcher Guidance Computer",
     "Imp. Launcher Guidance Computer",
     "Adv. Launcher Guidance Computer"
-   ],
-   "Content": ""
-  },
-  {
-   "Name": "Launchers",
-   "Parts": [
-    "Grenade Launcher",
-    "EMP Blaster",
-    "Mni. Grenade Launcher",
-    "Rocket Launcher",
-    "Sub. Shrapnel Launcher",
-    "Concussive RPG",
-    "Imp. Grenade Launcher",
-    "Missile Launcher",
-    "Shock Bomb Launcher",
-    "Adv. EMP Blaster",
-    "YI-UF0's Doublenader",
-    "Hvy. Missile Launcher",
-    "Proton Missile Launcher",
-    "Hvy. Rocket Launcher",
-    "Prc. Grenade Launcher",
-    "Gui. Missile Launcher",
-    "Rocket Array",
-    "Imp. Concussive RPG",
-    "Lrn. Missile Launcher",
-    "Imp. Proton Missile Launcher",
-    "Gui. EMP Blaster",
-    "Prc. Rocket Launcher",
-    "Scatter Rocket Array",
-    "Hvy. Shock Bomb Launcher",
-    "Smartbomb Launcher",
-    "Thermoblaster",
-    "Hvy. Proton Missile Launcher",
-    "Mni. Smartbomb Launcher",
-    "Tesla Bomb Launcher",
-    "Tiamat Missile Launcher",
-    "Neutron Missile Launcher",
-    "Com. Tesla Bomb Launcher",
-    "Adv. Concussive RPG",
-    "Micro-nuke Launcher",
-    "Fusion Bomb Launcher",
-    "Gamma Bomb Array",
-    "Chain Missile Launcher",
-    "Hellfire Missile Launcher",
-    "Adv. Micro-nuke Launcher",
-    "Tactical Quantum Warhead",
-    "Vortex Catalyst Activator",
-    "99-TNT's Nukerbomber",
-    "Containment Facilitator",
-    "Enh. Gamma Bomb Array",
-    "Gui. Micro-nuke Launcher",
-    "Exp. Neutron Missile Launcher",
-    "Point Singularity Launcher",
-    "Ragnarok Missile Launcher",
-    "Z-bomb Delivery System",
-    "Sigix Terminator",
-    "Supercharged Sigix Terminator"
    ],
    "Content": ""
   },
@@ -7268,6 +7221,14 @@
    "Content": ""
   },
   {
+   "Name": "Launchers",
+   "Groups": [
+    "Electromagnetic Launchers",
+    "Explosive Launchers"
+   ],
+   "Content": ""
+  },
+  {
    "Name": "Melee Weapons",
    "Groups": [
     "Impact Weapons",
@@ -7296,6 +7257,7 @@
    "SuperGroups": [
     "Energy Cannons",
     "Energy Guns",
+    "Launchers",
     "Melee Weapons"
    ],
    "Content": ""

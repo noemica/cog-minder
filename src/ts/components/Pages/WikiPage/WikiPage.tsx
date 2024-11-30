@@ -50,6 +50,11 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
         "Electromagnetic Guns",
         (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Electromagnetic",
     ],
+    [
+        "Electromagnetic Launchers",
+        (item) => item.type === "Launcher" && (item as WeaponItem).explosionType === "Electromagnetic",
+    ],
+    ["Explosive Launchers", (item) => item.type === "Launcher" && (item as WeaponItem).explosionType === "Explosive"],
     ["Flight Units", (item) => item.type === "Flight Unit"],
     ["Hover Units", (item) => item.type === "Hover Unit"],
     ["Impact Weapons", (item) => item.type === "Impact Weapon"],
