@@ -409,10 +409,10 @@ export function getNoPrefixName(name: string): string {
     return newName;
 }
 
-export function getSpoilersValue<T>(spoilers: Spoiler, noSpoilerValue: T, spoilersValue: T, redactedValue: T): T {
-    if (spoilers === "Spoiler") {
+export function getSpoilersValue<T>(spoiler: Spoiler, noSpoilerValue: T, spoilersValue: T, redactedValue: T): T {
+    if (spoiler === "Spoiler") {
         return spoilersValue;
-    } else if (spoilers === "Redacted") {
+    } else if (spoiler === "Redacted") {
         return redactedValue;
     } else {
         return noSpoilerValue;

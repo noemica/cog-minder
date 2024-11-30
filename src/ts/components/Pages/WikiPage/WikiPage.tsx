@@ -39,6 +39,10 @@ export type EditState = {
 };
 
 const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
+    [
+        "Electromagnetic Guns",
+        (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Electromagnetic",
+    ],
     ["Thermal Guns", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Thermal"],
 ]);
 function getItemCategoryItems(itemCategory: string, itemData: ItemData): string[] {
@@ -266,18 +270,18 @@ function initEntries(botData: BotData, itemData: ItemData) {
         };
         addEntry(entry);
 
-        let parts: string[] = [];
+        let children: string[] = [];
 
         if (partGroupEntry.Parts) {
-            parts = partGroupEntry.Parts;
+            children = partGroupEntry.Parts;
         } else if (partGroupEntry.PartCategory) {
-            parts = getItemCategoryItems(partGroupEntry.PartCategory, itemData);
+            children = getItemCategoryItems(partGroupEntry.PartCategory, itemData);
         } else {
             console.log(`Part group ${entry.name} has no parts`);
         }
 
         // Add all parts in group
-        for (const partName of parts) {
+        for (const partName of children) {
             const partEntry = allEntries.get(partName);
             if (partEntry === undefined) {
                 console.log(`Found bad part name ${partName} in group ${partGroupEntry.Name}`);
@@ -292,6 +296,37 @@ function initEntries(botData: BotData, itemData: ItemData) {
             // Set the part's parent group to point to this
             partEntry.parentGroups.push(entry);
             partEntries.push(partEntry);
+        }
+    }
+
+    for (const partSupergroupEntry of wiki["Part Supergroups"]) {
+        const groupEntries: WikiEntry[] = [];
+        const entry: WikiEntry = {
+            alternativeNames: [],
+            content: partSupergroupEntry.Content ?? "",
+            extraData: groupEntries,
+            name: partSupergroupEntry.Name,
+            parentGroups: [],
+            spoiler: "None",
+            type: "Part Supergroup",
+        };
+        addEntry(entry);
+
+        for (const groupName of partSupergroupEntry.Groups) {
+            const groupEntry = allEntries.get(groupName);
+            if (groupEntry === undefined) {
+                console.log(`Found bad part group name ${groupEntry} in group ${entry.name}`);
+                continue;
+            }
+
+            if (groupEntry.type !== "Part Group") {
+                console.log(`Found non-group ${groupName} in part group ${entry.name}`);
+                continue;
+            }
+
+            // Set the part's parent group to point to this
+            groupEntry.parentGroups.push(entry);
+            groupEntries.push(groupEntry);
         }
     }
 
@@ -327,7 +362,7 @@ function WikiNavigationBar({
     allowedEntries: string[];
     allEntries: Map<string, WikiEntry>;
     setEditState: React.Dispatch<React.SetStateAction<EditState>>;
-    spoilers: Spoiler;
+    spoiler: Spoiler;
 }) {
     const [_, setLocation] = useLocation();
     const [searchString, setSearchString] = useState("");
@@ -498,7 +533,7 @@ export default function WikiPage() {
                     allEntries={allEntries}
                     allowedEntries={allowedEntries}
                     setEditState={setEditState}
-                    spoilers={spoilers}
+                    spoiler={spoilers}
                 />
                 <WikiEditControls
                     editState={editState}
@@ -515,7 +550,7 @@ export default function WikiPage() {
                                 entry={allEntries.get("Homepage")}
                                 groupSelection={groupSelection}
                                 parsedNode={parsedNode}
-                                spoilers={spoilers}
+                                spoiler={spoilers}
                                 path={"Homepage"}
                                 setGroupSelection={setGroupSelection}
                             />
@@ -537,7 +572,7 @@ export default function WikiPage() {
                                     entry={entry}
                                     groupSelection={groupSelection}
                                     parsedNode={parsedNode}
-                                    spoilers={spoilers}
+                                    spoiler={spoilers}
                                     path={getStringFromLinkSafeString(params[0]!)}
                                     setGroupSelection={setGroupSelection}
                                 />

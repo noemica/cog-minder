@@ -387,11 +387,11 @@ function outputGroupsToHtml(
 export function parseEntryContent(
     entry: WikiEntry,
     allEntries: Map<string, WikiEntry>,
-    spoilers: Spoiler,
+    spoiler: Spoiler,
     itemData: ItemData,
     botData: BotData,
 ) {
-    const parseResult = createContentHtml(entry, allEntries, spoilers, false, itemData, botData);
+    const parseResult = createContentHtml(entry, allEntries, spoiler, false, itemData, botData);
 
     if (parseResult.errors.length > 0) {
         console.log(`Errors while parsing ${entry.name}`);
@@ -405,10 +405,10 @@ export function parseEntryContent(
 
     if (entry.parentGroups.length > 0) {
         groupNodes = Array.from(entry.parentGroups.values()).map((group, i) => (
-            <WikiGroupInfobox activeEntry={entry} group={group} key={i} />
+            <WikiGroupInfobox key={i} activeEntry={entry} group={group} spoiler={spoiler} />
         ));
-    } else if (entry.type === "Bot Group" || entry.type === "Part Group") {
-        groupNodes.push(<WikiGroupInfobox activeEntry={entry} group={entry} key={0} />);
+    } else if (entry.type === "Bot Group" || entry.type === "Part Group" || entry.type === "Part Supergroup") {
+        groupNodes.push(<WikiGroupInfobox activeEntry={entry} group={entry} key={0} spoiler={spoiler} />);
     }
 
     parseResult.node = (

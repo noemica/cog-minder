@@ -6472,6 +6472,11 @@
    "Content": ""
   },
   {
+   "Name": "Electromagnetic Guns",
+   "PartCategory": "Electromagnetic Guns",
+   "Content": ""
+  },
+  {
    "Name": "Energy Cannons",
    "Parts": [
     "Beam Cannon",
@@ -6545,106 +6550,6 @@
    "Parts": [
     "Energy Filter",
     "Prc. Energy Filter"
-   ],
-   "Content": ""
-  },
-  {
-   "Name": "Energy Guns",
-   "Parts": [
-    "Backup Laser I",
-    "EM Pulse Gun",
-    "Med. Laser",
-    "Salvaging Laser",
-    "Sml. Laser",
-    "Autobeam",
-    "Beam Rifle",
-    "Hvy. EM Pulse Gun",
-    "EM Shotgun",
-    "Sub. Laser",
-    "Particle Gun",
-    "Spread Laser",
-    "Imp. EM Shotgun",
-    "Imp. Medium Laser",
-    "Backup Laser III",
-    "Field Laser",
-    "Ovr. Pulse Rifle",
-    "Pulse Rifle",
-    "Riot Gun",
-    "Shock Rifle",
-    "Prc. Beam Rifle",
-    "Adv. Beam Rifle",
-    "Hvy. EM Shotgun",
-    "Hvy. Particle Gun",
-    "Arc Projector",
-    "Gatling Laser",
-    "Hvy. Laser",
-    "Mak. Laser",
-    "Lightning Gun",
-    "Hvy. Riot Gun",
-    "Hpw. Field Laser",
-    "Cld. Pulse Rifle",
-    "Prc. Shock Rifle",
-    "Imp. Spread Laser",
-    "Arc Thrower",
-    "Beamcaster",
-    "Ovr. Beamcaster",
-    "Plasma Rifle",
-    "Hpw. Shock Rifle",
-    "Thermic Laser",
-    "Force Rifle",
-    "Imp. Heavy Laser",
-    "Zio. Laser-S",
-    "Imp. Lightning Gun",
-    "Storm Laser",
-    "Imp. Arc Projector",
-    "Hvy. Beamcaster",
-    "Tesla Rifle",
-    "Variable Charge Gun",
-    "Wave Gun",
-    "Enh. Force Rifle",
-    "Hvy. Gatling Laser",
-    "Zio. Phaser-S",
-    "Cld. Plasma Rifle",
-    "AWS/Thermal",
-    "Hyp. EM Gauss Rifle",
-    "Lrn. Gatling Laser",
-    "Zio. Laser-M",
-    "Cld. Phase Gun",
-    "Adv. Plasma Rifle",
-    "KN-7UR's Autopenetrator",
-    "Plasma Storm",
-    "Hvy. Tesla Rifle",
-    "Adv. Variable Charge Gun",
-    "Vortex Rifle",
-    "Warp Gun",
-    "Hvy. Wave Gun",
-    "01-MTF's Shockpuncher",
-    "Imp. Arc Thrower",
-    "Backup Laser VII",
-    "Dispersion Rifle",
-    "PD Laser",
-    "Phase Gun",
-    "Gamma Rifle",
-    "Ovr. Quantum Rifle",
-    "Quantum Rifle",
-    "Hvy. Dispersion Rifle",
-    "Immobilizer",
-    "Modified EM Gauss Rifle",
-    "Prc. Phase Gun",
-    "Zio. Phaser-M",
-    "Tachyon Dispersion Ray",
-    "Vortex Rail",
-    "Vortex Shotgun",
-    "AWS/EX-DEC",
-    "Electrostorm Shotgun",
-    "Enh. Quantum Rifle",
-    "Zio. Laser-H",
-    "Modified Sigix Sheargun",
-    "Sigix Sheargun",
-    "Enh. Gamma Rifle",
-    "Gatling Beam",
-    "Zio. Phaser-H",
-    "Hvy. Quantum Rifle"
    ],
    "Content": ""
   },
@@ -7490,6 +7395,11 @@
    "Content": ""
   },
   {
+   "Name": "Thermal Guns",
+   "PartCategory": "Thermal Guns",
+   "Content": ""
+  },
+  {
    "Name": "Tractor Beams",
    "Parts": [
     "Tractor Beam",
@@ -7661,6 +7571,16 @@
     "Ovr. Huge Scrapsphere",
     "Centrium Wheel",
     "Hdn. Centrium Wheel"
+   ],
+   "Content": ""
+  }
+ ],
+ "Part Supergroups": [
+  {
+   "Name": "Energy Guns",
+   "Groups": [
+    "Electromagnetic Guns",
+    "Thermal Guns"
    ],
    "Content": ""
   }

@@ -385,7 +385,7 @@
 .wiki-table {
     color: @font-color;
     background-color: @table-header-background-color;
-    margin-bottom: 1rem;
+    margin-bottom: @large-gap;
 
     p {
         margin: 0;
@@ -504,8 +504,8 @@
     border-collapse: collapse;
     color: @font-color;
 
+    margin-bottom: @large-gap;
     width: 100%;
-    margin-bottom: 1rem;
 
     border: @border-width solid @border-color;
 
@@ -515,12 +515,13 @@
             font-size: @wiki-group-infobox-font-size;
         }
 
-        > tr:nth-child(2) > td {
-            border: 1px solid black;
+        > :not(:first-child) > * {
+            border: @border-width solid @border-color;
 
             > ul {
                 margin: 0;
                 padding: 0;
+                line-height: 1.25;
 
                 > * {
                     display: inline-block;
@@ -530,13 +531,3 @@
         }
     }
 }
-
-// .wiki-table,
-// .wiki-table > * > tr > * {
-//     border: @border-width solid @border-color;
-//     border-collapse: collapse;
-// }
-
-// .wiki-table > tbody > tr > * {
-//     padding: @table-cell-text-padding;
-// }

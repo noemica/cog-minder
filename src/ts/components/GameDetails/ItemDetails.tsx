@@ -3,7 +3,6 @@ import { ReactNode } from "react";
 import {
     HeatTransfer,
     Item,
-    ItemRatingCategory,
     PowerItem,
     PropulsionItem,
     Spectrum,

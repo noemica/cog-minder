@@ -167,7 +167,7 @@ export default function WikiPageContent({
     parsedNode,
     path,
     setGroupSelection,
-    spoilers,
+    spoiler,
 }: {
     allEntries: Map<string, WikiEntry>;
     entry: WikiEntry | undefined;
@@ -175,7 +175,7 @@ export default function WikiPageContent({
     setGroupSelection: (selection: string) => void;
     parsedNode: ReactNode;
     path: string;
-    spoilers: Spoiler;
+    spoiler: Spoiler;
 }) {
     const [bypassSpoilers, setBypassSpoilers] = useState(false);
     useEffect(() => {
@@ -186,7 +186,7 @@ export default function WikiPageContent({
         return <p>Page {path} not found</p>;
     }
 
-    if (!canShowSpoiler(entry.spoiler, spoilers) && !bypassSpoilers) {
+    if (!canShowSpoiler(entry.spoiler, spoiler) && !bypassSpoilers) {
         return (
             <div className="spoiler-warning">
                 <p>Page blocked by Spoilers setting: Would you like to continue?</p>
@@ -231,6 +231,9 @@ export default function WikiPageContent({
                     setGroupSelection={setGroupSelection}
                 />
             );
+
+        case "Part Supergroup":
+            return parsedNode;
 
         default:
             assertUnreachable(entry.type);
