@@ -6424,28 +6424,7 @@
   },
   {
    "Name": "Engines",
-   "Parts": [
-    "Backup Power I",
-    "Ion Engine",
-    "Lgt. Ion Engine",
-    "Imp. Ion Engine",
-    "Rnf. Ion Engine",
-    "Sub. Power Source",
-    "Hvy. Ion Engine",
-    "Cld. Ion Engine",
-    "Backup Power III",
-    "Deuterium Engine",
-    "Lgt. Deuterium Engine",
-    "Imp. Deuterium Engine",
-    "Rnf. Deuterium Engine",
-    "Hyb. Deuterium Engine",
-    "Mak. Power Source",
-    "Hvy. Deuterium Engine",
-    "Cld. Deuterium Engine",
-    "Angular Momentum Engine",
-    "Lgt. Angular Momentum Engine",
-    "F-cell Engine"
-   ],
+   "PartCategory": "Engines",
    "Content": ""
   },
   {
@@ -6662,26 +6641,7 @@
   },
   {
    "Name": "Power Cores",
-   "Parts": [
-    "Nuclear Core",
-    "Lgt. Nuclear Core",
-    "Enh. Nuclear Core",
-    "Mic. Nuclear Core",
-    "Fission Core",
-    "Lgt. Fission Core",
-    "Hyb. Fission Core",
-    "Fusion Compressor",
-    "Rnf. Fission Core",
-    "Mic. Fission Core",
-    "Neutrino Core",
-    "Enh. Fission Core",
-    "Cld. Fission Core",
-    "Lgt. Neutrino Core",
-    "Backup Power VII",
-    "Imp. Fusion Compressor",
-    "Mic. Neutrino Core",
-    "Meta Core"
-   ],
+   "PartCategory": "Power Cores",
    "Content": ""
   },
   {
@@ -6785,34 +6745,7 @@
   },
   {
    "Name": "Reactors",
-   "Parts": [
-    "Cold Fusion Reactor",
-    "Fusion Reactor",
-    "Antimatter Reactor",
-    "Lgt. Antimatter Reactor",
-    "Rnf. Antimatter Reactor",
-    "Hyb. Antimatter Reactor",
-    "Hvy. Antimatter Reactor",
-    "MA-1KR's Cyclogen",
-    "Mni. Fusion Reactor",
-    "Zio. Heavy DM Reactor",
-    "Zio. Light DM Reactor",
-    "Mic. Antimatter Reactor",
-    "Particle Reactor",
-    "Lgt. Particle Reactor",
-    "Cld. Antimatter Reactor",
-    "Asb. Flux Generator",
-    "Graviton Reactor",
-    "Com. Particle Reactor",
-    "Quantum Reactor",
-    "Lgt. Quantum Reactor",
-    "Rnf. Quantum Reactor",
-    "Imp. Quantum Reactor",
-    "Singularity Reactor",
-    "Vortex Chain Reactor",
-    "Zero-point Reactor",
-    "Matter Drive"
-   ],
+   "PartCategory": "Reactors",
    "Content": ""
   },
   {
@@ -7281,6 +7214,15 @@
     "Impact Weapons",
     "Piercing Weapons",
     "Slashing Weapons"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Power",
+   "Groups": [
+    "Engines",
+    "Power Cores",
+    "Reactors"
    ],
    "Content": ""
   },
@@ -8722,10 +8664,6 @@
   {
    "Name": "Perfect Tracking",
    "Content": "Bots with perfect tracking will know where [[Cogmind]] is at all times. Most bots with this will lose it upon sighting Cogmind."
-  },
-  {
-   "Name": "Power",
-   "Content": ""
   },
   {
    "Name": "Progress Achievements",
