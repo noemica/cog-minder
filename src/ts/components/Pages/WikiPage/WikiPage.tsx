@@ -43,7 +43,17 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
         "Electromagnetic Guns",
         (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Electromagnetic",
     ],
+    ["Phasers", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Phasic"],
+    ["Shearguns", (item) => item.type === "Energy Gun" && item.name.includes("Sheargun")],
+    [
+        "Other Energy Guns",
+        (item) =>
+            item.type === "Energy Gun" &&
+            (item as WeaponItem).damageType !== "Thermal" &&
+            (item as WeaponItem).damageType !== "Electromagnetic",
+    ],
     ["Thermal Guns", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Thermal"],
+    ["Vortex Guns", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Entropic"],
 ]);
 function getItemCategoryItems(itemCategory: string, itemData: ItemData): string[] {
     const categoryFilter = itemCategoryFilters.get(itemCategory);
@@ -349,6 +359,35 @@ function initEntries(botData: BotData, itemData: ItemData) {
         };
 
         addEntry(entry);
+    }
+
+    if (isDev()) {
+        // Checks to make sure that all new parts are included in top level
+        // supercategories that they should be in
+        function checkType(supergroupEntry: WikiEntry, filterFunc: (item: Item) => boolean) {
+            const items = new Set<Item>();
+
+            for (const item of itemData.getAllItems()) {
+                if (filterFunc(item)) {
+                    items.add(item);
+                }
+            }
+
+            for (const groupEntry of supergroupEntry.extraData as WikiEntry[]) {
+                for (const itemEntry of groupEntry.extraData as WikiEntry[]) {
+                    items.delete(itemEntry.extraData as Item);
+                }
+            }
+
+            if (items.size !== 0) {
+                console.log(`Found uncategorized items for supergroup ${supergroupEntry.name}`);
+                for (const item of items.values()) {
+                    console.log(item.name);
+                }
+            }
+        }
+
+        checkType(allEntries.get("Energy Guns")!, (item) => item.type === "Energy Gun");
     }
 
     return allEntries;

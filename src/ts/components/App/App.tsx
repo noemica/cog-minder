@@ -203,7 +203,7 @@ function checkUpdate(timer: number, updated: boolean, setUpdated: (updated: bool
     })
         .then((result) => result.json() as HashJson | undefined)
         .then((hashJson) => {
-            // @ts-expect-error
+            // @ts-expect-error commit hash is injected
             if (hashJson && hashJson.hash && hashJson.hash !== __COMMIT_HASH__) {
                 setUpdated(true);
                 clearInterval(timer);

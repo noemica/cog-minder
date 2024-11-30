@@ -10,7 +10,7 @@ import ExclusiveButtonGroup, { ExclusiveButtonDefinition } from "../../Buttons/E
 import BotDetails from "../../GameDetails/BotDetails";
 import ItemDetails from "../../GameDetails/ItemDetails";
 import LocationDetails from "../../GameDetails/LocationDetails";
-import Label, { LabeledSelect } from "../../LabeledItem/LabeledItem";
+import { LabeledSelect } from "../../LabeledItem/LabeledItem";
 import { SelectOptionType } from "../../Selectpicker/Select";
 
 function BotContent({ entry, parsedNode }: { entry: WikiEntry; parsedNode: ReactNode }) {

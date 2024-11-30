@@ -43,7 +43,7 @@ export default function AboutPage() {
                 This is an MIT licensed open source project with the source available on{" "}
                 <a href="https://github.com/noemica/cog-minder">GitHub</a>. Current commit hash:{" "}
                 {
-                    // @ts-expect-error
+                    // @ts-expect-error commit hash is injected
                     __COMMIT_HASH__
                 }
             </p>

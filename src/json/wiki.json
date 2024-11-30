@@ -6948,6 +6948,12 @@
    "Content": ""
   },
   {
+   "Name": "Phasers",
+   "PartCategory": "Phasers",
+   "Content": "",
+   "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Piercing Weapons",
    "Parts": [
     "CR-A16's Pointy Stick",
@@ -7400,6 +7406,17 @@
    "Content": ""
   },
   {
+   "Name": "Other Energy Guns",
+   "PartCategory": "Other Energy Guns",
+   "Content": ""
+  },
+  {
+   "Name": "Shearguns",
+   "PartCategory": "Shearguns",
+   "Content": "",
+   "Spoiler": "Redacted"
+  },
+  {
    "Name": "Tractor Beams",
    "Parts": [
     "Tractor Beam",
@@ -7536,6 +7553,12 @@
    "Content": ""
   },
   {
+   "Name": "Vortex Guns",
+   "PartCategory": "Vortex Guns",
+   "Content": "",
+   "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Weapon Cyclers",
    "Parts": [
     "Weapon Cycler",
@@ -7580,7 +7603,10 @@
    "Name": "Energy Guns",
    "Groups": [
     "Electromagnetic Guns",
-    "Thermal Guns"
+    "Phasers",
+    "Shearguns",
+    "Thermal Guns",
+    "Vortex Guns"
    ],
    "Content": ""
   }

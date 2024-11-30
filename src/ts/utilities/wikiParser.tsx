@@ -1795,7 +1795,7 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
 
     let isHeaderRow = true;
     let totalColumnCount = 0;
-    let row = 0;
+    let _row = 0;
 
     // Parse each row
     for (let i = 0; i < rowSplit.length; i++) {
@@ -1895,7 +1895,7 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
         tableRows.push(<tr key={i}>{cells}</tr>);
 
         isHeaderRow = false;
-        row += 1;
+        _row += 1;
     }
 
     const tableContent = (
