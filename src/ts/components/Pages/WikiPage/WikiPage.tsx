@@ -61,7 +61,7 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ["Legs", (item) => item.type === "Leg"],
     ["Phasers", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Phasic"],
     ["Piercing Weapons", (item) => item.type === "Piercing Weapon"],
-    ["Shearguns", (item) => item.type === "Energy Gun" && item.name.includes("Sheargun")],
+    ["Special Weapons", (item) => item.type === "Special Weapon"],
     ["Slashing Weapons", (item) => item.type === "Slashing Weapon"],
     ["Thermal Cannons", (item) => item.type === "Energy Cannon" && (item as WeaponItem).damageType === "Thermal"],
     ["Thermal Guns", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Thermal"],
@@ -86,13 +86,7 @@ function getItemCategoryItems(itemCategory: string, itemData: ItemData): string[
         }
     }
 
-    items.sort((item1, item2) => {
-        if (item1.rating === item2.rating) {
-            return item1.name.localeCompare(item2.name);
-        }
-
-        return item1.rating - item2.rating;
-    });
+    items.sort(itemCompare);
 
     return items.map((item) => item.name);
 }
@@ -322,6 +316,13 @@ function initEntries(botData: BotData, itemData: ItemData) {
             partEntry.parentGroups.push(entry);
             partEntries.push(partEntry);
         }
+
+        partEntries.sort((entry1, entry2) => {
+            const item1 = entry1.extraData as Item;
+            const item2 = entry2.extraData as Item;
+
+            return itemCompare(item1, item2);
+        });
     }
 
     for (const partSupergroupEntry of wiki["Part Supergroups"]) {
@@ -355,7 +356,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
         }
 
         if (partSupergroupEntry.Parts !== undefined) {
-            let parts: WikiEntry[] = [];
+            let partEntries: WikiEntry[] = [];
 
             for (const partName of partSupergroupEntry.Parts) {
                 const partEntry = allEntries.get(partName);
@@ -371,10 +372,17 @@ function initEntries(botData: BotData, itemData: ItemData) {
 
                 // Set the part's parent group to point to this
                 partEntry.parentGroups.push(entry);
-                parts.push(partEntry);
+                partEntries.push(partEntry);
             }
 
-            if (parts.length > 0) {
+            partEntries.sort((entry1, entry2) => {
+                const item1 = entry1.extraData as Item;
+                const item2 = entry2.extraData as Item;
+    
+                return itemCompare(item1, item2);
+            });    
+
+            if (partEntries.length > 0) {
                 groupEntries.push({
                     alternativeNames: [],
                     content: "",
@@ -383,7 +391,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
                     parentGroups: [],
                     spoiler: "None",
                     type: "Part Group",
-                    extraData: parts,
+                    extraData: partEntries,
                 });
             }
         }
@@ -471,9 +479,20 @@ function initEntries(botData: BotData, itemData: ItemData) {
 
         checkType(allEntries.get("Energy Cannons")!, (item) => item.type === "Energy Cannon");
         checkType(allEntries.get("Energy Guns")!, (item) => item.type === "Energy Gun");
+        checkType(allEntries.get("Launchers")!, (item) => item.type === "Launcher");
+        checkType(allEntries.get("Special Melee Weapons")!, (item) => item.type === "Special Melee Weapon");
+        checkType(allEntries.get("Special Weapons")!, (item) => item.type === "Special Weapon");
     }
 
     return allEntries;
+}
+
+function itemCompare(item1: Item, item2: Item) {
+    if (item1.rating === item2.rating) {
+        return item1.name.localeCompare(item2.name);
+    }
+
+    return item1.rating - item2.rating;
 }
 
 function WikiNavigationBar({

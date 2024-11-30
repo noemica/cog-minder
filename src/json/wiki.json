@@ -6198,7 +6198,11 @@
   },
   {
    "Name": "Alpha Cannons",
-   "PartCategory": "Alpha Cannons",
+   "Parts": [
+    "Zio. Alpha Cannon",
+    "Hyp. Alpha Cannon",
+    "Zio. Alpha Cannon Mk. II"
+   ],
    "Content": "",
    "Spoiler": "Spoiler"
   },
@@ -6330,21 +6334,6 @@
     "Imp. Cryofiber Web",
     "Adv. Cryofiber Web",
     "Exp. Cryofiber Web"
-   ],
-   "Content": ""
-  },
-  {
-   "Name": "Datajacks",
-   "Parts": [
-    "Datajack",
-    "Imp. Datajack",
-    "Adv. Datajack",
-    "Remote Datajack",
-    "Imp. Remote Datajack",
-    "Adv. Remote Datajack",
-    "Exp. Remote Datajack",
-    "ME-RLN's Wand",
-    "Gui. Remote Datajack"
    ],
    "Content": ""
   },
@@ -6612,6 +6601,15 @@
    "Content": ""
   },
   {
+   "Name": "Melee Datajacks",
+   "Parts": [
+    "Datajack",
+    "Imp. Datajack",
+    "Adv. Datajack"
+   ],
+   "Content": ""
+  },
+  {
    "Name": "Particle Chargers",
    "Parts": [
     "Particle Charger",
@@ -6856,6 +6854,18 @@
    "Content": "Relay couplers are used with [[RIF]] to enable special bothacks via [[Datajacks|datajacking]] that particular robot class described in the couplers description.\nRelay couplers will fry themselves when attached if you do not have [[RIF]]."
   },
   {
+   "Name": "Remote Datajacks",
+   "Parts": [
+    "Remote Datajack",
+    "Imp. Remote Datajack",
+    "Adv. Remote Datajack",
+    "Exp. Remote Datajack",
+    "ME-RLN's Wand",
+    "Gui. Remote Datajack"
+   ],
+   "Content": ""
+  },
+  {
    "Name": "Resistance Devices",
    "Parts": [
     "Focal Shield",
@@ -6930,6 +6940,15 @@
    "Content": ""
   },
   {
+   "Name": "Sigix Terminators",
+   "Parts": [
+    "Sigix Terminator",
+    "Supercharged Sigix Terminator"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Signal Interpreters",
    "Parts": [
     "Signal Interpreter",
@@ -6942,6 +6961,15 @@
   {
    "Name": "Slashing Weapons",
    "PartCategory": "Slashing Weapons",
+   "Content": ""
+  },
+  {
+   "Name": "Stasis Beams",
+   "Parts": [
+    "Stasis Beam",
+    "Stasis Projector",
+    "Exp. Stasis Projector"
+   ],
    "Content": ""
   },
   {
@@ -7048,9 +7076,21 @@
   },
   {
    "Name": "Shearguns",
-   "PartCategory": "Shearguns",
+   "Parts": [
+    "Sigix Sheargun",
+    "Modified Sigix Sheargun"
+   ],
    "Content": "",
    "Spoiler": "Redacted"
+  },
+  {
+   "Name": "Throwing Claymores",
+   "Parts": [
+    "RU-N14's Throwing Claymores",
+    "RU-N14's Throwing Claymores v3"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
   },
   {
    "Name": "Tractor Beams",
@@ -7224,7 +7264,14 @@
    "Name": "Launchers",
    "Groups": [
     "Electromagnetic Launchers",
-    "Explosive Launchers"
+    "Explosive Launchers",
+    "Sigix Terminators"
+   ],
+   "Parts": [
+    "Sub. Shrapnel Launcher",
+    "Thermoblaster",
+    "Vortex Catalyst Activator",
+    "Containment Facilitator"
    ],
    "Content": ""
   },
@@ -7249,6 +7296,48 @@
    "Content": ""
   },
   {
+   "Name": "Special Melee Weapons",
+   "Groups": [
+    "Melee Datajacks"
+   ],
+   "Parts": [
+    "Dirty Datajack",
+    "Detonator",
+    "Splice Injector",
+    "Master Link"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Special Weapons",
+   "Groups": [
+    "Flamers",
+    "Plasma Cutters",
+    "Remote Datajacks",
+    "Stasis Beams",
+    "Throwing Claymores"
+   ],
+   "Parts": [
+    "System Spiker",
+    "Field Lobotomy Kit",
+    "Mining Laser",
+    "LU-1G1's Laser Shovel",
+    "Welding Torch",
+    "CPS Tube",
+    "Multitool",
+    "Warlord Statue",
+    "Voltaic Drivehammer",
+    "AD-0RF's Magmablaster",
+    "IN-MT5's Pitchfork \"Insurrection\"",
+    "Shield Trident",
+    "Junk Cannon",
+    "Molecular Deconstructor",
+    "Asb. F-torch",
+    "Asb. P-torch"
+   ],
+   "Content": ""
+  },
+  {
    "Name": "Weapons",
    "Groups": [
     "Ballistic Cannons",
@@ -7258,7 +7347,9 @@
     "Energy Cannons",
     "Energy Guns",
     "Launchers",
-    "Melee Weapons"
+    "Melee Weapons",
+    "Special Melee Weapons",
+    "Special Weapons"
    ],
    "Content": ""
   }
