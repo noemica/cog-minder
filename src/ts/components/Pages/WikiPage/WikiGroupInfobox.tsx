@@ -98,7 +98,9 @@ function InfoboxHeader({
         <tr>
             <td colSpan={2}>
                 <div>
-                    <LinkOrBoldedContent activeEntry={activeEntry} entry={groupEntry} />
+                    <div>
+                        <LinkOrBoldedContent activeEntry={activeEntry} entry={groupEntry} />
+                    </div>
                     <ShowHideButton setShow={setShow} show={show} />
                 </div>
             </td>
