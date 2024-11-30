@@ -1848,8 +1848,50 @@ There are 4 types of main exits on Factory floors:
 Several non-standard exits also appear in Factory. [[Chute Trap|Chute Traps]] will throw Cogmind into [[Wastes]] which can end many good runs if unprepared. Using a [[Datajack]] on a [[K-01 Serf|Serf]] for the find_chute hack is very effective to either reveal traps to avoid or areas to head toward if planning to take on the [[C-40 Crusher|Crushers]] in combat. The other type of exit is a [[DSF]]. These exits can be hacked open at distinctive DSF terminals but will automatically lock upon being spotted by any hostile. Stealth or good luck is required to make it to these exits."
 "Falx","Part",""
 "Fanart","Other","Check out the following artists' fanart pages:
-[[List]][[https://www.gridsagegames.com/forums/index.php?topic=1773.0|CaptainWinky (external site)]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]][[/List]]"
-"Fanart/CaptainWinky","Other","Placeholder"
+[[List]][[Fanart/CaptainWinky|CaptainWinky (external site)]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]][[/List]]"
+"Fanart/CaptainWinky","Other","Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]]
+This is a work in progress.  The first few item stat cards were done with GIMP and most of the others were then done by hand editing Cog-Minder stat cards and saving them as images.  Since aoemica has implemented fake item and bot details options for the wiki, I will be redoing things and putting them here in wiki format which also gives me a chance to adjust some details.
+[[GameText]]>Analysis(G-11 Fodder)[[/GameText]]
+[[GameText]]The first of the G-series grunts, this model is no longer in production and the relevant schematics will be moved to the Archives.  The G-11 was intended to be fast and cheap to produce and deploy as a deterrent for unarmed Derelicts.  As a result it has a low-integrity core, low-coverage legs and its weapon is a repurposed low-power fabricator laser.  Existing units still number in the hundreds and are being either scrapped or deployed to the caves where they are sometimes useful as diversions.  Many Derelicts still rely on obsolete signal interpreters or seismic detectors, so they are unable to tell the difference between these bots and more capable models.[[/GameText]]
+[[ItemDetails]]
+Name|Lgt. Aluminum Leg||
+Image Name|../part_art/Aluminum Leg.png||
+Type|Leg||
+Slot|Propulsion||
+Rating|0||
+Rating Category|Standard||
+Integrity|60||
+Coverage|60||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Time Per Move|120||
+Drag|10||
+Energy Per Move|2||
+Heat Per Move|0||
+Support|7||
+Penalty|80[[/ItemDetails]]
+[[ItemDetails]]
+Name|Mod. Etching Laser||
+Image Name|../part_art/Sml. Laser.png||
+Type|Energy Gun||
+Slot|Weapon||
+Mass|1||
+Rating|0||
+Rating Category|Standard||
+Integrity|50||
+Coverage|60||
+Range|8||
+Shot Energy|4||
+Shot Heat|15||
+Recoil|0||
+Targeting|-10||
+Delay|0||
+Projectile Count|2||
+Damage|2-3||
+Damage Type|Thermal||
+Salvage|0[[/ItemDetails]]"
 "Fanart/Maiker","Other","[[Fanart]] created by Maiker:
 [[FanartGallery]]fanart/maiker/Behemoth_GJ_was_here.gif|Behemoth + GJ was here|fanart/maiker/Brawler_Bonk.gif|Brawler Bonk|fanart/maiker/Demolisher_Shoot.gif|Demolisher Shoot|fanart/maiker/Disguised_Cogmind.gif|Disguised Cogmind|fanart/maiker/Get_Heavy'ed.gif|Get Heavy'd|fanart/maiker/GOLEM_Full_Loop.gif|GOLEM|fanart/maiker/Grunt_Shoot.gif|Grunt Shoot|fanart/maiker/Hunter_Drone.gif|Hunter Drone|fanart/maiker/luigi_force_ram.gif|LU-1G1's Force Ram|fanart/maiker/Programmer_Shoot.gif|Programmer Shoot|fanart/maiker/Sentry_Shoot.gif|Sentry Shoot[[/FanartGallery]]"
 "Fanart/Radbanker","Other","[[Fanart]] created by Radbanker:
@@ -2146,7 +2188,16 @@ High Security can be triggered on the majority of 0b10-controlled maps, excludin
 [[Heading]]Timeline of Events[[/Heading]]
 [[Image]]High Security Garrison.png|Sentries dispatched to protect a Garrison[[/Image]]
 [[Image]]High Security Exit.png|Sentires dispatched to protect an 0b10-controlled exit[[/Image]]
-[[List]]0: Log message [[GameText]]ALERT: High security lockdown imminent, T-100.[[/GameText]]|50: Machines shut down and Chute traps disappear, log message [[GameText]]ALERT: Machine network offline.[[/GameText]] Note: [[Garrison (Machine)|Garrisons]] that are already opened will remain open|65: Log message [[GameText]]ALERT: Performing unscheduled system reset.[[/GameText]]|80: 4 [[Sentry|Sentries]] dispatched at each 0b10-controlled exit and Garrison, log message [[GameText]]ALERT: Lockdown in effect, collecting threat data.[[/GameText]]|100: First assault wave dispatched, 4 assaults dispatched from nearby 0b10-controlled exits and Garrisons.|200: Second wave, 4 assaults dispatched|350: Third wave, 6 assaults dispatched including heavy assaults with stronger bots|550: Fourth wave, 8 assaults dispatched including heavy assaults|800: Fifth wave, 10 assaults dispatched including heavy assaults|Etc. - Delay between assaults continues to increase by 50 and number of assaults per wave continues to increase by 2[[/List]]
+[[List]]0: Log message [[GameText]]ALERT: High security lockdown imminent, T-100.[[/GameText]]|
+50: Machines shut down and Chute traps disappear, log message [[GameText]]ALERT: Machine network offline.[[/GameText]] Note: [[Garrison (Machine)|Garrisons]] that are already opened will remain open|
+65: Trojans are removed from all machines, log message [[GameText]]ALERT: Performing unscheduled system reset.[[/GameText]]|
+80: 4 [[Sentry|Sentries]] dispatched at each 0b10-controlled exit and Garrison, log message [[GameText]]ALERT: Lockdown in effect, collecting threat data.[[/GameText]]|
+100: First assault wave dispatched, 4 assaults dispatched from nearby 0b10-controlled exits and Garrisons.|
+200: Second wave, 4 assaults dispatched|
+350: Third wave, 6 assaults dispatched including heavy assaults with stronger bots|
+550: Fourth wave, 8 assaults dispatched including heavy assaults|
+800: Fifth wave, 10 assaults dispatched including heavy assaults|
+Etc. - Delay between assaults continues to increase by 50 and number of assaults per wave continues to increase by 2[[/List]]
 [[Heading]]Exiting High Security[[/Heading]]
 The only 2 ways to exit High Security are to trigger [[Sterilization]] after killing enough combat hostiles or to exit the map. Otherwise, an infinite number of Assaults will continue to be dispatched. One unique map [[Command]] has special behavior: [[Redacted]]Since there are a limited number of [[C-30 ARC|ARCs]] on the map, no more assaults will come for Cogmind after they have been depleted. However, the alerts that assaults are dispatched never stop coming.[[/Redacted]]"
 "Homepage","Other","This is a WIP unofficial Cogmind Wiki. Use the page dropdown to go to a specific page. For editing info, check out the [[https://discord.gg/f8Fqv2qQxV|Cog-Minder wiki Discord server]] and make contributions via [[https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/edit?usp=sharing|This Google Spreadsheet]].
