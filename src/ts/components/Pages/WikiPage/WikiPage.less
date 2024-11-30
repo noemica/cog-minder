@@ -504,7 +504,7 @@
     border-collapse: collapse;
     color: @font-color;
 
-    margin-bottom: @large-gap;
+    margin-bottom: @wiki-group-infobox-bottom-margin;
     width: 100%;
 
     border: @border-width solid @border-color;
@@ -512,7 +512,22 @@
     > tbody {
         > tr:first-child {
             text-align: center;
-            font-size: @wiki-group-infobox-font-size;
+
+            > td > div {
+                display: flex;
+
+                > *:first-child {
+                    font-size: @wiki-group-infobox-font-size;
+                    flex: 1 1 auto;
+                }
+
+                > button {
+                    font-size: @small-font-size;
+                    padding: @button-small-padding;
+
+                    align-self: center;
+                }
+            }
         }
 
         > :not(:first-child) > * {
@@ -535,3 +550,25 @@
         }
     }
 }
+
+.wiki-group-infobox-supergroup {
+    margin-bottom: 0;
+
+    > tbody > tr:first-child > td > div > *:first-child {
+        font-size: @wiki-supergroup-infobox-font-size;
+    }
+}
+
+.wiki-infobox-show-hide {
+    font-size: @default-font-size;
+
+    float: right;
+    text-align: right;
+}
+
+// .wiki-infobox-show-hide-button {
+//     font-size: @small-font-size;
+//     padding: @button-small-padding;
+
+//     float: right;
+// }

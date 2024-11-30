@@ -7,6 +7,7 @@ export type WikiEntry = {
     content: string;
     extraData?: any;
     fakeGroup?: boolean;
+    hasSupergroupChildren?: boolean;
     name: string;
     parentGroups: WikiEntry[];
     spoiler: Spoiler;

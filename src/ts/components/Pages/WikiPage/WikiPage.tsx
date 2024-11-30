@@ -40,6 +40,8 @@ export type EditState = {
 
 const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ["Alpha Cannons", (item) => item.type === "Energy Cannon" && item.name.includes("Alpha Cannon")],
+    ["Ballistic Cannons", (item) => item.type === "Ballistic Cannon"],
+    ["Ballistic Guns", (item) => item.type === "Ballistic Gun"],
     [
         "Electromagnetic Cannons",
         (item) => item.type === "Energy Cannon" && (item as WeaponItem).damageType === "Electromagnetic",
@@ -48,12 +50,20 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
         "Electromagnetic Guns",
         (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Electromagnetic",
     ],
+    ["Flight Units", (item) => item.type === "Flight Unit"],
+    ["Hover Units", (item) => item.type === "Hover Unit"],
+    ["Impact Weapons", (item) => item.type === "Impact Weapon"],
+    ["Legs", (item) => item.type === "Leg"],
     ["Phasers", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Phasic"],
+    ["Piercing Weapons", (item) => item.type === "Piercing Weapon"],
     ["Shearguns", (item) => item.type === "Energy Gun" && item.name.includes("Sheargun")],
+    ["Slashing Weapons", (item) => item.type === "Slashing Weapon"],
     ["Thermal Cannons", (item) => item.type === "Energy Cannon" && (item as WeaponItem).damageType === "Thermal"],
     ["Thermal Guns", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Thermal"],
+    ["Treads", (item) => item.type === "Treads"],
     ["Vortex Cannons", (item) => item.type === "Energy Cannon" && (item as WeaponItem).damageType === "Entropic"],
     ["Vortex Guns", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Entropic"],
+    ["Wheels", (item) => item.type === "Wheel"],
 ]);
 function getItemCategoryItems(itemCategory: string, itemData: ItemData): string[] {
     const categoryFilter = itemCategoryFilters.get(itemCategory);
@@ -369,9 +379,42 @@ function initEntries(botData: BotData, itemData: ItemData) {
                     spoiler: "None",
                     type: "Part Group",
                     extraData: parts,
-                })
+                });
             }
         }
+    }
+
+    // Need to do a second pass for supergroups that contain other supergroups
+    for (const partSupergroupEntry of wiki["Part Supergroups"]) {
+        if (partSupergroupEntry.SuperGroups === undefined) {
+            continue;
+        }
+
+        const entry = allEntries.get(partSupergroupEntry.Name)!;
+        const groupEntries = entry.extraData as WikiEntry[];
+
+        for (const superGroupName of partSupergroupEntry.SuperGroups) {
+            const superGroupEntry = allEntries.get(superGroupName);
+            if (superGroupEntry === undefined) {
+                console.log(
+                    `Found bad part supergroup name ${superGroupName} in supergroup ${partSupergroupEntry.Name}`,
+                );
+                continue;
+            }
+
+            if (superGroupEntry.type !== "Part Supergroup") {
+                console.log(`Found non-part supergroup name ${superGroupEntry.name} in supergroup ${entry.name}`);
+                continue;
+            }
+
+            entry.hasSupergroupChildren = true;
+
+            // Set the part's parent group to point to this
+            superGroupEntry.parentGroups.push(entry);
+            groupEntries.push(superGroupEntry);
+        }
+
+        groupEntries.sort((entry1, entry2) => entry1.name.localeCompare(entry2.name));
     }
 
     // Initialize other
