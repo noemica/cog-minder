@@ -6197,6 +6197,12 @@
    "Content": ""
   },
   {
+   "Name": "Alpha Cannons",
+   "PartCategory": "Alpha Cannons",
+   "Content": "",
+   "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Antimissile Systems",
    "Parts": [
     "Point Defense System",
@@ -6472,77 +6478,13 @@
    "Content": ""
   },
   {
-   "Name": "Electromagnetic Guns",
-   "PartCategory": "Electromagnetic Guns",
+   "Name": "Electromagnetic Cannons",
+   "PartCategory": "Electromagnetic Cannons",
    "Content": ""
   },
   {
-   "Name": "Energy Cannons",
-   "Parts": [
-    "Beam Cannon",
-    "Sub. Beam Cannon",
-    "Lgt. EM Pulse Cannon",
-    "Particle Cannon",
-    "Adv. Beam Cannon",
-    "EM Pulse Cannon",
-    "Ion Cannon",
-    "Hvy. Particle Cannon",
-    "Imp. EM Pulse Cannon",
-    "Hvy. Ion Cannon",
-    "Plasma Cannon",
-    "Cld. Particle Cannon",
-    "Phase Cannon",
-    "Hvy. Plasma Cannon",
-    "Proton Cannon",
-    "Ion Burst Cannon",
-    "Com. Ion Cannon",
-    "Cld. Plasma Cannon",
-    "Disruptor Cannon",
-    "Hvy. Phase Cannon",
-    "Adv. Plasma Cannon",
-    "Lrn. Proton Cannon",
-    "Neutron Cannon",
-    "Powered Cannon",
-    "Hvy. Proton Cannon",
-    "Hvy. Disruptor Cannon",
-    "HERF Cannon",
-    "Matter Neutralizer",
-    "Hvy. Neutron Cannon",
-    "Lrn. Phase Cannon",
-    "Cld. Phase Cannon",
-    "Gui. Plasma Cannon",
-    "Proton Burst Cannon",
-    "Cld. Proton Cannon",
-    "Vortex Cannon",
-    "Com. HERF Cannon",
-    "Nova Cannon",
-    "Zio. Alpha Cannon",
-    "Asb. Focal Cannon",
-    "Imp. Matter Neutralizer",
-    "Exp. Thermic Cannon",
-    "Vortex Driver",
-    "EMDS",
-    "Firepult",
-    "Latent Energy Streamer",
-    "NK-0LA's Tesla Doomcannon",
-    "Potential Cannon",
-    "Warp Cannon",
-    "YOLO Cannon",
-    "Enh. Nova Cannon",
-    "Hyp. Alpha Cannon",
-    "Zio. Alpha Cannon Mk. II",
-    "BFG-9k Vortex Edition",
-    "Core Cannon",
-    "Disintegrator",
-    "Hpw. Disruptor Cannon",
-    "Multinova Projection Cannon",
-    "Cld. Nova Cannon",
-    "Null Cannon",
-    "Imp. Potential Cannon",
-    "Drained L-Cannon",
-    "L-Cannon",
-    "Sigix Shearcannon"
-   ],
+   "Name": "Electromagnetic Guns",
+   "PartCategory": "Electromagnetic Guns",
    "Content": ""
   },
   {
@@ -7401,13 +7343,13 @@
    "Content": ""
   },
   {
-   "Name": "Thermal Guns",
-   "PartCategory": "Thermal Guns",
+   "Name": "Thermal Cannons",
+   "PartCategory": "Thermal Cannons",
    "Content": ""
   },
   {
-   "Name": "Other Energy Guns",
-   "PartCategory": "Other Energy Guns",
+   "Name": "Thermal Guns",
+   "PartCategory": "Thermal Guns",
    "Content": ""
   },
   {
@@ -7553,6 +7495,12 @@
    "Content": ""
   },
   {
+   "Name": "Vortex Cannons",
+   "PartCategory": "Vortex Cannons",
+   "Content": "",
+   "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Vortex Guns",
    "PartCategory": "Vortex Guns",
    "Content": "",
@@ -7599,6 +7547,19 @@
   }
  ],
  "Part Supergroups": [
+  {
+   "Name": "Energy Cannons",
+   "Groups": [
+    "Alpha Cannons",
+    "Electromagnetic Cannons",
+    "Thermal Cannons",
+    "Vortex Cannons"
+   ],
+   "Parts": [
+    "Sigix Shearcannon"
+   ],
+   "Content": ""
+  },
   {
    "Name": "Energy Guns",
    "Groups": [

@@ -39,20 +39,20 @@ export type EditState = {
 };
 
 const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
+    ["Alpha Cannons", (item) => item.type === "Energy Cannon" && item.name.includes("Alpha Cannon")],
+    [
+        "Electromagnetic Cannons",
+        (item) => item.type === "Energy Cannon" && (item as WeaponItem).damageType === "Electromagnetic",
+    ],
     [
         "Electromagnetic Guns",
         (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Electromagnetic",
     ],
     ["Phasers", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Phasic"],
     ["Shearguns", (item) => item.type === "Energy Gun" && item.name.includes("Sheargun")],
-    [
-        "Other Energy Guns",
-        (item) =>
-            item.type === "Energy Gun" &&
-            (item as WeaponItem).damageType !== "Thermal" &&
-            (item as WeaponItem).damageType !== "Electromagnetic",
-    ],
+    ["Thermal Cannons", (item) => item.type === "Energy Cannon" && (item as WeaponItem).damageType === "Thermal"],
     ["Thermal Guns", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Thermal"],
+    ["Vortex Cannons", (item) => item.type === "Energy Cannon" && (item as WeaponItem).damageType === "Entropic"],
     ["Vortex Guns", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Entropic"],
 ]);
 function getItemCategoryItems(itemCategory: string, itemData: ItemData): string[] {
@@ -325,7 +325,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
         for (const groupName of partSupergroupEntry.Groups) {
             const groupEntry = allEntries.get(groupName);
             if (groupEntry === undefined) {
-                console.log(`Found bad part group name ${groupEntry} in group ${entry.name}`);
+                console.log(`Found bad part group name ${groupName} in group ${entry.name}`);
                 continue;
             }
 
@@ -337,6 +337,40 @@ function initEntries(botData: BotData, itemData: ItemData) {
             // Set the part's parent group to point to this
             groupEntry.parentGroups.push(entry);
             groupEntries.push(groupEntry);
+        }
+
+        if (partSupergroupEntry.Parts !== undefined) {
+            let parts: WikiEntry[] = [];
+
+            for (const partName of partSupergroupEntry.Parts) {
+                const partEntry = allEntries.get(partName);
+                if (partEntry === undefined) {
+                    console.log(`Found bad part name ${partName} in group ${partSupergroupEntry.Name}`);
+                    continue;
+                }
+
+                if (partEntry.type !== "Part") {
+                    console.log(`Found non-part ${partEntry.name} in part group ${entry.name}`);
+                    continue;
+                }
+
+                // Set the part's parent group to point to this
+                partEntry.parentGroups.push(entry);
+                parts.push(partEntry);
+            }
+
+            if (parts.length > 0) {
+                groupEntries.push({
+                    alternativeNames: [],
+                    content: "",
+                    fakeGroup: true,
+                    name: "Other",
+                    parentGroups: [],
+                    spoiler: "None",
+                    type: "Part Group",
+                    extraData: parts,
+                })
+            }
         }
     }
 
@@ -387,6 +421,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
             }
         }
 
+        checkType(allEntries.get("Energy Cannons")!, (item) => item.type === "Energy Cannon");
         checkType(allEntries.get("Energy Guns")!, (item) => item.type === "Energy Gun");
     }
 

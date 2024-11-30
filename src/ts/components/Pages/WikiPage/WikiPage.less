@@ -523,6 +523,10 @@
                 padding: 0;
                 line-height: 1.25;
 
+                > *:not(:first-child)::before {
+                    content: "• ";
+                }
+
                 > * {
                     display: inline-block;
                     padding: @wiki-group-infobox-padding;

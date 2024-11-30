@@ -404,11 +404,23 @@ export function parseEntryContent(
     let groupNodes: ReactNode[] = [];
 
     if (entry.parentGroups.length > 0) {
-        groupNodes = Array.from(entry.parentGroups.values()).map((group, i) => (
-            <WikiGroupInfobox key={i} activeEntry={entry} group={group} spoiler={spoiler} />
-        ));
+        let i = 0;
+
+        groupNodes = Array.from(entry.parentGroups.values()).map((group) => {
+            if (group.parentGroups.length > 0) {
+                return (
+                    <div>
+                        {Array.from(group.parentGroups.values()).map((supergroup) => 
+                            <WikiGroupInfobox key={i++} activeEntry={entry} groupEntry={supergroup} spoiler={spoiler} />
+                        )}
+                    </div>
+                );
+            }
+
+            return <WikiGroupInfobox key={i++} activeEntry={entry} groupEntry={group} spoiler={spoiler} />;
+        });
     } else if (entry.type === "Bot Group" || entry.type === "Part Group" || entry.type === "Part Supergroup") {
-        groupNodes.push(<WikiGroupInfobox activeEntry={entry} group={entry} key={0} spoiler={spoiler} />);
+        groupNodes.push(<WikiGroupInfobox activeEntry={entry} groupEntry={entry} key={0} spoiler={spoiler} />);
     }
 
     parseResult.node = (
