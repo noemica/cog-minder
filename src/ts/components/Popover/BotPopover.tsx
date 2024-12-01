@@ -50,7 +50,9 @@ export default function BotPopoverButton({ bot, text, tooltip }: { bot: Bot; tex
 
     const button = (
         <div>
-            <Button tooltip={tooltip}>{text || bot.name}</Button>
+            <Button onClick={() => setOpen(!open)} tooltip={tooltip}>
+                {text || bot.name}
+            </Button>
         </div>
     );
 
