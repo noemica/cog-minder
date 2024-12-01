@@ -12,10 +12,9 @@ import {
 } from "../../../utilities/common";
 import useItemData from "../../Effects/useItemData";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
+import ItemPopoverButton, { GalleryItemPopoverButton } from "../../Popover/ItemPopover";
 import PartsComparisonDisplay from "./PartsComparisonDisplay";
-import PartsGalleryDisplay from "./PartsGalleryDisplay";
 import PartsPageInput from "./PartsPageInput";
-import PartsSimpleDisplay from "./PartsSimpleDisplay";
 import { alphabeticalSort, criticalSort, damageSort, heatSort, integerSort, spectrumSort } from "./PartsSortingUtils";
 import PartsSpreadsheetDisplay from "./PartsSpreadsheetDisplay";
 
@@ -278,7 +277,7 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
 
         // Mass filter
         if (pageState.mass && pageState.mass.length > 0) {
-            if( !filterNumericValue(item.mass ?? 0, pageState.mass)) {
+            if (!filterNumericValue(item.mass ?? 0, pageState.mass)) {
                 return false;
             }
         }
@@ -491,6 +490,22 @@ function skipLocationMember(key: string, pageState: PartsPageState) {
     }
 
     return false;
+}
+
+function PartsGalleryDisplay({ items }: { items: Item[] }) {
+    const itemButtons = items.map((item) => {
+        return <GalleryItemPopoverButton item={item} key={item.name} />;
+    });
+
+    return <div className="part-gallery-grid">{itemButtons}</div>;
+}
+
+function PartsSimpleDisplay({ items }: { items: Item[] }) {
+    const itemButtons = items.map((item) => {
+        return <ItemPopoverButton item={item} key={item.name} showWikiLink={true} />;
+    });
+
+    return <div className="part-button-grid">{itemButtons}</div>;
 }
 
 export default function PartsPage() {

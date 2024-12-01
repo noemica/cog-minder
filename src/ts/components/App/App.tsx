@@ -5,7 +5,9 @@ import { Redirect, Route, Router, Switch, useLocation } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
 
 import { getLinkSafeString, isDev, rootDirectory } from "../../utilities/common";
+import { PopupPositioningContext } from "../Contexts/PopupPositioningContext";
 import { useLastLocation } from "../Effects/useLocalStorageValue";
+import { usePopoverPositioning } from "../Effects/usePopoverPositioning";
 import useThemeUpdater from "../Effects/useThemeUpdater";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import PageHeader from "../PageHeader/PageHeader";
@@ -217,6 +219,7 @@ export default function App() {
     const [updated, setUpdated] = useState(false);
     const [urlLocation] = useLocation();
     const [lastLocation, setLastLocation] = useLastLocation();
+    const popupPositioning = usePopoverPositioning();
 
     // Explicitly scroll back to top whenever the URL changes
     useEffect(() => {
@@ -249,7 +252,9 @@ export default function App() {
     });
 
     return (
-        <>
+        <PopupPositioningContext.Provider
+            value={{ placement: popupPositioning.placement, shouldShift: popupPositioning.shouldShift }}
+        >
             <PageHeader showIcon={updated} />
             <Router base={`/${rootDirectory}`}>
                 <Suspense fallback={<span className="loading-message">Loading</span>}>
@@ -266,6 +271,6 @@ export default function App() {
                     </ErrorBoundary>
                 </Suspense>
             </Router>
-        </>
+        </PopupPositioningContext.Provider>
     );
 }
