@@ -12,28 +12,23 @@ import "./Popover.less";
 
 type ItemPopoverProps = {
     button: ReactNode;
-    isVisible: boolean;
     item: Item;
     showWikiLink?: boolean;
 };
 
-function ItemPopover({ button, isVisible, item, showWikiLink }: ItemPopoverProps) {
+function ItemPopover({ button, item, showWikiLink }: ItemPopoverProps) {
     const positioning = usePopoverPositioning();
 
-    if (isVisible) {
-        return (
-            <Popover placement={positioning.placement} shouldShift={positioning.shouldShift}>
-                <PopoverTrigger asChild={true}>{button}</PopoverTrigger>
-                <PopoverContent floatingArrowClassName="item-popover-arrow">
-                    <div className="popover">
-                        <ItemDetails item={item} showWikiLink={showWikiLink} />
-                    </div>
-                </PopoverContent>
-            </Popover>
-        );
-    } else {
-        return button;
-    }
+    return (
+        <Popover placement={positioning.placement} shouldShift={positioning.shouldShift}>
+            <PopoverTrigger asChild={true}>{button}</PopoverTrigger>
+            <PopoverContent floatingArrowClassName="item-popover-arrow">
+                <div className="popover">
+                    <ItemDetails item={item} showWikiLink={showWikiLink} />
+                </div>
+            </PopoverContent>
+        </Popover>
+    );
 }
 
 export function BotItemPopoverButton({
@@ -45,7 +40,7 @@ export function BotItemPopoverButton({
     item: Item;
     showWikiLink?: boolean;
 }) {
-    return <ItemPopover button={triggerContent} isVisible={true} item={item} showWikiLink={showWikiLink} />;
+    return <ItemPopover button={triggerContent} item={item} showWikiLink={showWikiLink} />;
 }
 
 export function GalleryItemPopoverButton({ item }: { item: Item }) {
@@ -67,27 +62,25 @@ export function GalleryItemPopoverButton({ item }: { item: Item }) {
         </div>
     );
 
-    return <ItemPopover button={button} isVisible={isVisible} item={item} showWikiLink={true} />;
+    return <ItemPopover button={button} item={item} showWikiLink={true} />;
 }
 
 export default function ItemPopoverButton({
     item,
+    showWikiLink,
     text,
     tooltip,
-    showWikiLink,
 }: {
     item: Item;
+    showWikiLink?: boolean;
     text?: string;
     tooltip?: string;
-    showWikiLink?: boolean;
 }) {
-    const [isVisible, ref] = useIsVisible("50px");
-
     const button = (
-        <div ref={ref}>
+        <div>
             <Button tooltip={tooltip}>{text || item.name}</Button>
         </div>
     );
 
-    return <ItemPopover button={button} isVisible={isVisible} item={item} showWikiLink={showWikiLink} />;
+    return <ItemPopover button={button} item={item} showWikiLink={showWikiLink} />;
 }
