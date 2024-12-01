@@ -632,7 +632,7 @@ function processBotDetailsTag(state: ParserState, result: RegExpExecArray) {
 
     // Process each category
     for (const categoryValues of categoriesSplit) {
-        let split = categoryValues.split("|");
+        const split = categoryValues.split("|");
 
         const category = split[0].trim();
         if (split.length === 1) {
@@ -684,7 +684,7 @@ function processBotDetailsTag(state: ParserState, result: RegExpExecArray) {
                     number = 1;
                 }
 
-                let part: BotPart = {
+                const part: BotPart = {
                     coverage: 0,
                     integrity: 0,
                     name: item,
@@ -717,7 +717,7 @@ function processBotDetailsTag(state: ParserState, result: RegExpExecArray) {
     if (bot.rating === "") {
         let rating = 0;
 
-        let allParts: BotPart[] = [];
+        const allParts: BotPart[] = [];
 
         allParts.push(...bot.armamentData);
         allParts.push(...bot.componentData);

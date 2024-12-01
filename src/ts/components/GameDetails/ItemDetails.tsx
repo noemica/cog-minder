@@ -976,7 +976,7 @@ export default function ItemDetails({ item, showWikiLink }: { item: Item; showWi
         );
     }
 
-    let attributionDetails = !item.customItem && (
+    const attributionDetails = !item.customItem && (
         <>
             <DetailsEmptyLine />
             <span className="details-description">
