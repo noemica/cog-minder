@@ -1978,7 +1978,7 @@
   },
   {
    "Name": "Arm. Scrap Engine",
-   "Content": "Created from a [[Scrap Engine]] when a [[Protection]]-type part is fed. See the Scrap Engine page for more details."
+   "Content": "Created from a [[Scrap Engine]] when a [[Protection]]-type part is fed. See the Scrap Engine page for more details. When destroyed, reverse back into a normal Scrap Engine."
   },
   {
    "Name": "Arm. Treads",
@@ -8921,7 +8921,7 @@
   },
   {
    "Name": "Fanart",
-   "Content": "Check out the following artists' fanart pages:\n[[List]][[Fanart/CaptainWinky|CaptainWinky (external site)]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]][[/List]]"
+   "Content": "Check out the following artists' fanart pages:\n[[List]][[Fanart/CaptainWinky|CaptainWinky]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]][[/List]]"
   },
   {
    "Name": "Fanart/CaptainWinky",

@@ -416,7 +416,7 @@ There are 3 exits on this map but only 2 kinds of exits:
 "Arm. Huge Wheel","Part",""
 "Arm. Leg","Part",""
 "Arm. Medium Treads","Part",""
-"Arm. Scrap Engine","Part","Created from a [[Scrap Engine]] when a [[Protection]]-type part is fed. See the Scrap Engine page for more details."
+"Arm. Scrap Engine","Part","Created from a [[Scrap Engine]] when a [[Protection]]-type part is fed. See the Scrap Engine page for more details. When destroyed, reverse back into a normal Scrap Engine."
 "Arm. Treads","Part",""
 "Arm. Wheel","Part",""
 "Armageddon Trap","Part",""
@@ -1848,7 +1848,7 @@ There are 4 types of main exits on Factory floors:
 Several non-standard exits also appear in Factory. [[Chute Trap|Chute Traps]] will throw Cogmind into [[Wastes]] which can end many good runs if unprepared. Using a [[Datajack]] on a [[K-01 Serf|Serf]] for the find_chute hack is very effective to either reveal traps to avoid or areas to head toward if planning to take on the [[C-40 Crusher|Crushers]] in combat. The other type of exit is a [[DSF]]. These exits can be hacked open at distinctive DSF terminals but will automatically lock upon being spotted by any hostile. Stealth or good luck is required to make it to these exits."
 "Falx","Part",""
 "Fanart","Other","Check out the following artists' fanart pages:
-[[List]][[Fanart/CaptainWinky|CaptainWinky (external site)]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]][[/List]]"
+[[List]][[Fanart/CaptainWinky|CaptainWinky]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]][[/List]]"
 "Fanart/CaptainWinky","Other","Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]]
 This is a work in progress.  The first few item stat cards were done with GIMP and most of the others were then done by hand editing Cog-Minder stat cards and saving them as images.  Since aoemica has implemented fake item and bot details options for the wiki, I will be redoing things and putting them here in wiki format which also gives me a chance to adjust some details.
 [[GameText]]>Analysis(G-11 Fodder)[[/GameText]]
