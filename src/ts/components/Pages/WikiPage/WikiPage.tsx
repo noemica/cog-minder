@@ -61,9 +61,16 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ["Impact Weapons", (item) => item.type === "Impact Weapon"],
     ["Legs", (item) => item.type === "Leg"],
     ["Phasers", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Phasic"],
-    ["Power Cores", (item) => item.type === "Power Core"],
     ["Piercing Weapons", (item) => item.type === "Piercing Weapon"],
+    ["Power Cores", (item) => item.type === "Power Core"],
     ["Reactors", (item) => item.type === "Reactor"],
+    [
+        "Resistance Armor",
+        (item) =>
+            item.type === "Protection" &&
+            item.specialProperty !== undefined &&
+            item.specialProperty.trait.kind === "DamageResists",
+    ],
     ["Special Weapons", (item) => item.type === "Special Weapon"],
     ["Slashing Weapons", (item) => item.type === "Slashing Weapon"],
     ["Thermal Cannons", (item) => item.type === "Energy Cannon" && (item as WeaponItem).damageType === "Thermal"],
@@ -359,7 +366,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
         }
 
         if (partSupergroupEntry.Parts !== undefined) {
-            let partEntries: WikiEntry[] = [];
+            const partEntries: WikiEntry[] = [];
 
             for (const partName of partSupergroupEntry.Parts) {
                 const partEntry = allEntries.get(partName);
@@ -381,9 +388,9 @@ function initEntries(botData: BotData, itemData: ItemData) {
             partEntries.sort((entry1, entry2) => {
                 const item1 = entry1.extraData as Item;
                 const item2 = entry2.extraData as Item;
-    
+
                 return itemCompare(item1, item2);
-            });    
+            });
 
             if (partEntries.length > 0) {
                 groupEntries.push({
@@ -466,11 +473,17 @@ function initEntries(botData: BotData, itemData: ItemData) {
                 }
             }
 
-            for (const groupEntry of supergroupEntry.extraData as WikiEntry[]) {
-                for (const itemEntry of groupEntry.extraData as WikiEntry[]) {
-                    items.delete(itemEntry.extraData as Item);
+            function removeItems(entry: WikiEntry) {
+                if (entry.type === "Part Group" || entry.type === "Part Supergroup") {
+                    for (const childEntry of entry.extraData as WikiEntry[]) {
+                        removeItems(childEntry);
+                    }
+                } else if (entry.type === "Part") {
+                    items.delete(entry.extraData as Item);
                 }
             }
+
+            removeItems(supergroupEntry);
 
             if (items.size !== 0) {
                 console.log(`Found uncategorized items for supergroup ${supergroupEntry.name}`);
@@ -480,11 +493,16 @@ function initEntries(botData: BotData, itemData: ItemData) {
             }
         }
 
+        checkType(allEntries.get("Armor")!, (item) => item.type === "Protection" && !item.effect?.includes("Absorbs "));
         checkType(allEntries.get("Energy Cannons")!, (item) => item.type === "Energy Cannon");
         checkType(allEntries.get("Energy Guns")!, (item) => item.type === "Energy Gun");
         checkType(allEntries.get("Launchers")!, (item) => item.type === "Launcher");
+        checkType(allEntries.get("Power")!, (item) => item.slot === "Power");
+        checkType(allEntries.get("Propulsion")!, (item) => item.slot === "Propulsion");
         checkType(allEntries.get("Special Melee Weapons")!, (item) => item.type === "Special Melee Weapon");
         checkType(allEntries.get("Special Weapons")!, (item) => item.type === "Special Weapon");
+        checkType(allEntries.get("Utilities")!, (item) => item.slot === "Utility");
+        checkType(allEntries.get("Weapons")!, (item) => item.slot === "Weapon");
     }
 
     return allEntries;

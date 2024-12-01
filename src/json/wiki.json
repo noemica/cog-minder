@@ -6237,7 +6237,7 @@
     "Authchip [Storage]",
     "Authchip [Weapon]"
    ],
-   "Content": "Authchips are single-use items that allow printing the relevant type of item at a fabricator. They can be acquired at a [[DSF]], [[Garrison|Garrisons]], corrupted in [[Storage]] or by using [[Redacted]][[GameText]]Force(Recompile)[[/GameText]][[/Redacted]] on a fabricator."
+   "Content": "Authchips are single-use items that allow printing the relevant type of item at a fabricator. They can be acquired at a [[DSF]], [[Garrison|Garrisons]], corrupted in [[Storage]] or by using [[Spoiler]][[GameText]]Force(Recompile)[[/GameText]][[/Spoiler]] on a fabricator."
   },
   {
    "Name": "Ballistic Cannons",
@@ -6289,6 +6289,7 @@
     "Imp. Heat Sink",
     "Adv. Heat Sink",
     "Exp. Heat Sink",
+    "Mak. Microdissipator Network",
     "Cooling System",
     "Imp. Cooling System",
     "Mak. Coolant Network",
@@ -6348,6 +6349,7 @@
     "Bomb Drone Bay",
     "Combat Drone Bay",
     "Decoy Drone Bay",
+    "Master Drone Bay",
     "Splice Drone Bay",
     "Thief Drone Bay",
     "Assault Drone Bay",
@@ -6357,6 +6359,7 @@
     "Swarm Drone Bay",
     "Hacking Drone Bay",
     "Minesniffer Drone Bay",
+    "Army-in-a-Box",
     "Wardrone Bay"
    ],
    "Content": ""
@@ -6433,6 +6436,18 @@
    "Content": ""
   },
   {
+   "Name": "Fabrication Devices",
+   "Parts": [
+    "Cobbler Unit",
+    "Bomb Factory No. 2",
+    "Mobile Assembly Unit",
+    "Heart of Steel",
+    "Scrapoid Pod",
+    "GOLEM Unit"
+   ],
+   "Content": ""
+  },
+  {
    "Name": "Field Recycling Units",
    "Parts": [
     "Field Recycling Unit",
@@ -6462,6 +6477,23 @@
     "Force Booster",
     "Imp. Force Booster",
     "Adv. Force Booster"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Force Fields",
+   "Parts": [
+    "Force Field",
+    "Imp. Force Field",
+    "Adv. Force Field",
+    "Exp. Force Field",
+    "Remote Force Field",
+    "Imp. Remote Force Field",
+    "Energy Mantle",
+    "Imp. Energy Mantle",
+    "AEGIS Remote Shield",
+    "7V-RTL's Ultimate Field",
+    "Vortex Field Projector"
    ],
    "Content": ""
   },
@@ -6655,7 +6687,7 @@
    "Content": ""
   },
   {
-   "Name": "Powered Armors",
+   "Name": "Powered Armor (Group)",
    "Parts": [
     "Powered Armor",
     "Imp. Powered Armor",
@@ -6670,66 +6702,8 @@
    "Parts": [
     "Propulsion Shielding",
     "Imp. Propulsion Shielding",
+    "Mak. Propulsion Shielding",
     "Exp. Propulsion Shielding"
-   ],
-   "Content": ""
-  },
-  {
-   "Name": "Protection",
-   "Parts": [
-    "Lgt. Armor Plating",
-    "Backup Plating I",
-    "Med. Armor Plating",
-    "Hrd. Light Armor Plating",
-    "Scrap Shield",
-    "Hvy. Armor Plating",
-    "Backup Plating III",
-    "Insulated Plating",
-    "Imp. Light Armor Plating",
-    "Hrd. Medium Armor Plating",
-    "Reactive Plating",
-    "Reflective Plating",
-    "Hrd. Heavy Armor Plating",
-    "Med. Insulated Plating",
-    "Mak. Kinetic Plating",
-    "Lyr. Light Armor Plating",
-    "Mak. Light Armor Plating",
-    "Imp. Medium Armor Plating",
-    "Med. Reactive Plating",
-    "Med. Reflective Plating",
-    "Mak. Thermal Plating",
-    "Imp. Heavy Armor Plating",
-    "Mak. Medium Armor Plating",
-    "Hvy. Insulated Plating",
-    "Lyr. Medium Armor Plating",
-    "Hvy. Reactive Plating",
-    "Hvy. Reflective Plating",
-    "Enh. Scrap Shield",
-    "Zio. Heavy Carapace",
-    "Zio. Light Carapace",
-    "Lgt. Regenerative Plating",
-    "Mak. Ablative Armor",
-    "Mak. Heavy Armor Plating",
-    "Damper Plating",
-    "Lyr. Heavy Armor Plating",
-    "Med. Regenerative Plating",
-    "Vmp. Brace Plating",
-    "Backup Plating VII",
-    "Superdense Plating",
-    "Hvy. Regenerative Plating",
-    "Active Cooling Armor",
-    "Asb. Alloy Armor",
-    "Centrium Heavy Armor Plating",
-    "Centrium Light Armor Plating",
-    "Centrium Medium Armor Plating",
-    "Gun Armor",
-    "Zio. Shade Carapace",
-    "8R-AWN's Armor/EX",
-    "8R-AWN's Armor/TH",
-    "Centrium Linked Plating",
-    "SHELL Armor",
-    "Tower Shield",
-    "Zio. Shade Armor"
    ],
    "Content": ""
   },
@@ -6753,7 +6727,8 @@
    "Parts": [
     "Recalibrator",
     "Imp. Recalibrator",
-    "Adv. Recalibrator"
+    "Adv. Recalibrator",
+    "Exp. Recalibrator"
    ],
    "Content": ""
   },
@@ -6764,6 +6739,17 @@
     "Recoil Stabilizer"
    ],
    "Content": ""
+  },
+  {
+   "Name": "Regenerative Armor",
+   "Parts": [
+    "Lgt. Regenerative Plating",
+    "Med. Regenerative Plating",
+    "Hvy. Regenerative Plating",
+    "SHELL Armor"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
   },
   {
    "Name": "Relay Couplers",
@@ -6796,6 +6782,11 @@
     "ME-RLN's Wand",
     "Gui. Remote Datajack"
    ],
+   "Content": ""
+  },
+  {
+   "Name": "Resistance Armor",
+   "PartCategory": "Resistance Armor",
    "Content": ""
   },
   {
@@ -6849,7 +6840,16 @@
    "Content": ""
   },
   {
-   "Name": "Shield Generators/Force Fields",
+   "Name": "Shearguns",
+   "Parts": [
+    "Sigix Sheargun",
+    "Modified Sigix Sheargun"
+   ],
+   "Content": "",
+   "Spoiler": "Redacted"
+  },
+  {
+   "Name": "Shield Generators",
    "Parts": [
     "Shield Generator",
     "Imp. Shield Generator",
@@ -6857,18 +6857,7 @@
     "Exp. Shield Generator",
     "Remote Shield",
     "Imp. Remote Shield",
-    "Adv. Remote Shield",
-    "Force Field",
-    "Imp. Force Field",
-    "Adv. Force Field",
-    "Exp. Force Field",
-    "Remote Force Field",
-    "Imp. Remote Force Field",
-    "Energy Mantle",
-    "Imp. Energy Mantle",
-    "AEGIS Remote Shield",
-    "7V-RTL's Ultimate Field",
-    "Vortex Field Projector"
+    "Adv. Remote Shield"
    ],
    "Content": ""
   },
@@ -6894,6 +6883,16 @@
   {
    "Name": "Slashing Weapons",
    "PartCategory": "Slashing Weapons",
+   "Content": ""
+  },
+  {
+   "Name": "Speed Boosting Utilities",
+   "Parts": [
+    "Rocket Booster",
+    "Asb. Metafiber Network",
+    "Zio. Metafield Generator",
+    "ST Field Compressor"
+   ],
    "Content": ""
   },
   {
@@ -6958,9 +6957,22 @@
     "Imp. Targeting Computer",
     "Mak. Targeting Computer",
     "Adv. Targeting Computer",
-    "Exp. Targeting Computer"
+    "Exp. Targeting Computer",
+    "Tactical Coordination Suite",
+    "Weapon Mount",
+    "Multitargeting Array"
    ],
    "Content": ""
+  },
+  {
+   "Name": "Temporary Slot Utilities",
+   "Parts": [
+    "Power Bank",
+    "Rainbow Chip",
+    "VL-GR5's Exoskeleton \"Deathgrip\""
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
   },
   {
    "Name": "Terrain Scan Processors",
@@ -6969,6 +6981,7 @@
     "Imp. Terrain Scan Processor",
     "Mak. Terrain Scan Processor",
     "Adv. Terrain Scan Processor",
+    "Surveybot 17 Chip",
     "Exp. Terrain Scan Processor",
     "Surveybot 24 Chip"
    ],
@@ -6988,6 +7001,11 @@
    "Content": ""
   },
   {
+   "Name": "Thermal Cannons",
+   "PartCategory": "Thermal Cannons",
+   "Content": ""
+  },
+  {
    "Name": "Thermal Generators",
    "Parts": [
     "Thermal Generator",
@@ -6998,23 +7016,9 @@
    "Content": ""
   },
   {
-   "Name": "Thermal Cannons",
-   "PartCategory": "Thermal Cannons",
-   "Content": ""
-  },
-  {
    "Name": "Thermal Guns",
    "PartCategory": "Thermal Guns",
    "Content": ""
-  },
-  {
-   "Name": "Shearguns",
-   "Parts": [
-    "Sigix Sheargun",
-    "Modified Sigix Sheargun"
-   ],
-   "Content": "",
-   "Spoiler": "Redacted"
   },
   {
    "Name": "Throwing Claymores",
@@ -7120,6 +7124,7 @@
    "Name": "Visual Processing Units",
    "Parts": [
     "Visual Processing Unit",
+    "Sub. Optics",
     "Adv. Visual Processing Unit",
     "Enh. Optical Array",
     "Exp. Optical Array",
@@ -7170,6 +7175,127 @@
  ],
  "Part Supergroups": [
   {
+   "Name": "Armor",
+   "Groups": [
+    "Powered Armor (Group)",
+    "Regenerative Armor",
+    "Resistance Armor"
+   ],
+   "Parts": [
+    "Backup Plating I",
+    "Backup Plating III",
+    "Backup Plating VII",
+    "Lgt. Armor Plating",
+    "Med. Armor Plating",
+    "Hvy. Armor Plating",
+    "Zio. Light Carapace",
+    "Zio. Heavy Carapace",
+    "Zio. Heavy Carapace",
+    "Hrd. Light Armor Plating",
+    "Hrd. Medium Armor Plating",
+    "Hrd. Heavy Armor Plating",
+    "Imp. Light Armor Plating",
+    "Imp. Medium Armor Plating",
+    "Imp. Heavy Armor Plating",
+    "Mak. Light Armor Plating",
+    "Mak. Medium Armor Plating",
+    "Mak. Heavy Armor Plating",
+    "Lyr. Light Armor Plating",
+    "Lyr. Medium Armor Plating",
+    "Lyr. Heavy Armor Plating",
+    "Gun Armor",
+    "Centrium Light Armor Plating",
+    "Centrium Medium Armor Plating",
+    "Centrium Heavy Armor Plating",
+    "Centrium Linked Plating",
+    "Mak. Ablative Armor",
+    "Active Cooling Armor",
+    "Scrap Shield",
+    "Enh. Scrap Shield",
+    "Tower Shield",
+    "Vmp. Brace Plating",
+    "Phase Armor"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Cooling Utilities",
+   "Groups": [
+    "Cooling Devices",
+    "Coolant Injectors",
+    "Cryofiber Webs"
+   ],
+   "Parts": [
+    "Mak. Ablative Armor",
+    "Mak. Microdissipator Network"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Consumable Alien Artifacts",
+   "Groups": [
+    "Transdimensional Reconstructors"
+   ],
+   "Parts": [
+    "Dimensional Node Initializer",
+    "Core Expander",
+    "Core Regenerator",
+    "Integrity Redistributor",
+    "Integrated Dissipator",
+    "Supercharged Integrated Dissipator",
+    "Integrated Thermoelectric Network",
+    "Integrated Reactor",
+    "Supercharged Integrated Reactor",
+    "Integrated Mediator",
+    "Core Membrane",
+    "Navigation Efficiency Matrix",
+    "Core Reset Matrix",
+    "Subatomic Replicator",
+    "Terrabomb",
+    "LRC Armor",
+    "LRC Energy Well",
+    "LRC Matter Compressor",
+    "LRC Inertial Stabilizer",
+    "LRC Insulator",
+    "LRC Storage",
+    "Core Physics Calibrator",
+    "Personal Teleporter v0.10",
+    "Telecube",
+    "Spacefold Activator",
+    "Microwarp Drive",
+    "LC Capacitor"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Corruption Reduction Utilities",
+   "Groups": [
+    "Corruption Screens",
+    "Dynamic Insulation Systems",
+    "System Guards",
+    "System Restoration Modules"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Defensive Utilities",
+   "Groups": [
+    "Hardlight Generators",
+    "Force Fields",
+    "Phase Shifters",
+    "Reaction Control Systems",
+    "Resistance Devices",
+    "Shield Generators"
+   ],
+   "Parts": [
+    "Energy Deflector",
+    "Field Manipulator",
+    "Graphene Brace",
+    "Phase Redirector",
+    "Siege Articulator"
+   ]
+  },
+  {
    "Name": "Energy Cannons",
    "Groups": [
     "Alpha Cannons",
@@ -7194,6 +7320,35 @@
    "Content": ""
   },
   {
+   "Name": "Infowar",
+   "Groups": [
+    "0b10 Decoder Chips",
+    "Cloaking Devices",
+    "Drone Bays",
+    "ECM Suites",
+    "Sensor Arrays",
+    "Signal Interpreters",
+    "Terrain Scan Processors",
+    "Terrain Scanners",
+    "Transmission Jammers",
+    "Trap Scanners",
+    "Visual Processing Units"
+   ],
+   "Parts": [
+    "0b10 Alert Chip",
+    "Active Sensor Spoofer",
+    "Deep Structural Scanner",
+    "ID Mask",
+    "Machine Analyzer",
+    "Modified TNC",
+    "Seismic Detector",
+    "Structural Scanner",
+    "Transport Network Coupler",
+    "Triangulator"
+   ],
+   "Content": ""
+  },
+  {
    "Name": "Launchers",
    "Groups": [
     "Electromagnetic Launchers",
@@ -7209,6 +7364,19 @@
    "Content": ""
   },
   {
+   "Name": "Matter Refilling Devices",
+   "Groups": [
+    "Field Recycling Units",
+    "Tractor Beams"
+   ],
+   "Parts": [
+    "Matter Focus",
+    "Desublimator",
+    "Mobile Refinery Mk. CCLXVII"
+   ],
+   "Content": ""
+  },
+  {
    "Name": "Melee Weapons",
    "Groups": [
     "Impact Weapons",
@@ -7216,6 +7384,32 @@
     "Slashing Weapons"
    ],
    "Content": ""
+  },
+  {
+   "Name": "Offensive Utilities",
+   "Groups": [
+    "Actuators",
+    "Actuator Arrays",
+    "Armor Integrity Analyzers",
+    "Core Analyzers",
+    "Energy Filters",
+    "Force Boosters",
+    "Kinecellerators",
+    "Launcher Guidance Computers",
+    "Matter Filters",
+    "Melee Analysis Suites",
+    "Particle Chargers",
+    "Recoil Nullifiers",
+    "Target Analyzers",
+    "Targeting Computers",
+    "Weapon Cyclers"
+   ],
+   "Parts": [
+    "Asb. Combat Suite",
+    "Expert System",
+    "Heavy Servo Lattice",
+    "VL-GR5's Timing Chip"
+   ]
   },
   {
    "Name": "Power",
@@ -7234,6 +7428,17 @@
     "Legs",
     "Treads",
     "Wheels"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Shieldings",
+   "Groups": [
+    "Core Shieldings",
+    "Power Shieldings",
+    "Propulsion Shieldings",
+    "Utility Shieldings",
+    "Weapon Shieldings"
    ],
    "Content": ""
   },
@@ -7276,6 +7481,67 @@
     "Molecular Deconstructor",
     "Asb. F-torch",
     "Asb. P-torch"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Storage (Group)",
+   "Groups": [
+    "Storage Unit",
+    "Energy Wells",
+    "Matter Compressors"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Utilities",
+   "Groups": [
+    "Antimissile Systems",
+    "Authchips",
+    "Component Analysis Suites",
+    "Fabrication Devices",
+    "Hackware",
+    "Mass Support Devices",
+    "Power Amplifiers",
+    "Recalibrators",
+    "Relay Couplers",
+    "Speed Boosting Utilities",
+    "Salvage Targeting Computers",
+    "Storage Unit",
+    "Temporary Slot Utilities",
+    "Thermal Generators",
+    "Trap Extractors"
+   ],
+   "SuperGroups": [
+    "Armor",
+    "Consumable Alien Artifacts",
+    "Cooling Utilities",
+    "Corruption Reduction Utilities",
+    "Defensive Utilities",
+    "Infowar",
+    "Matter Refilling Devices",
+    "Offensive Utilities",
+    "Shieldings",
+    "Storage (Group)"
+   ],
+   "Parts": [
+    "Scrap Engine",
+    "Arm. Scrap Engine",
+    "Encrypted Comm Array",
+    "Stasis Canceller",
+    "Skeleton Box",
+    "01-MTF's Autohacker",
+    "A0-MCA's Component Scanner",
+    "Tech Extrapolator",
+    "Trap Reconfigurator",
+    "Scrap Suit",
+    "PSU Rigger",
+    "Machine Rigger",
+    "Phasing AFG",
+    "AS-neutralizer No. 17b",
+    "V3-11A's Pendant",
+    "Amulet of Y3-NDR",
+    "Chronowheel"
    ],
    "Content": ""
   },
@@ -8458,10 +8724,6 @@
    "Content": "[[Heading]]Ally Type/Color[[/Heading]]\n[[Table]]\nColor|Will Follow|Hostile|Can be Ordered|Will Retaliate||\nColor not in list|[[CellStyle:Bad]]Pursues|[[CellStyle:Bad]]Yes|[[CellStyle:Bad]]No|[[CellStyle:Bad]]Yes||\nWhite|[[CellStyle:Good]]No|[[CellStyle:Good]]No|[[CellStyle:Bad]]No|[[CellStyle:Neutral]]Sometimes - Depends on the bot||\nPurple|[[CellStyle:Good]]Yes|[[CellStyle:Good]]No|[[CellStyle:Bad]]No|[[CellStyle:Good]]No||\nBlue|[[CellStyle:Good]]Yes|[[CellStyle:Good]]No|[[CellStyle:Good]]Yes|[[CellStyle:Good]]No\n[[/Table]]\n[[Heading]]Orders[[/Heading]]\nRobots will by default follow [[Cogmind]] (you) and attack any hostile if combat capable. Orders can be issued to any robot [[B]]in sight[[/B]] listed in the allies menu [[B]](F6)[[/B]]. [[I]](Orders can also be issued directly on the map: Shift-right click on a robot, or press 'o' then its corresponding number, or in keyboard look mode, by moving the cursor over the bot and pressing 'o'.) [[/I]]\n[[List]][[GameText]]STAY[[/GameText]] - Remain at the current position, only moving aside to let allies pass. Combat-capable bots will still chase after hostiles and return to their position later.|\n[[GameText]]ROAM[[/GameText]] - Wander and do whatever.|\n[[GameText]]FOLLOW[[/GameText]] - Follow [[Cogmind]].|\n[[GameText]]GUARD[[/GameText]] - Follow the specified bot and prioritize attacking anything harming the specified bot.|\n[[GameText]]AID[[/GameText]] - Follow the specified bot and prioritize attacking anything the specified bot is attacking.|\n[[GameText]]TUNNEL[[/GameText]] - Tunnel to the specified location, if capable of digging (bots such as [[T-07 Excavator]].|\n[[GameText]]DROP[[/GameText]] - Drop everything in the bots inventory, then wander in a small area.|\n[[GameText]]PICKUP[[/GameText]] - Collect everything near [[Cogmind]], and then [[GameText]]Follow[[/GameText]] once inventory is full.|\n[[GameText]]COLLECT[[/GameText]] - Wander and collect items until inventory is full, then set to [[GameText]]Follow[[/GameText]].|\n[[GameText]]EXPLORE[[/GameText]] - Explore unexplored areas, giving info to [[Cogmind]].|\n[[GameText]]RETURN[[/GameText]] - Return this [[Drone]] to its bay. Drones only, obviously.\n[[/List]]\n[[Heading]]Benefits[[/Heading]]\n[[Image]]https://i.ibb.co/fQzvMXF/image.png|Cogminds allies (friends!)[[/Image]]\n[[Operator]] class robots will give you a diminishing hacking bonus starting at +6% (6%, 3%, 1%..), and will reveal any hidden door or trap, provided the operator is within 20 tiles range of you. Operators will also report changes in security level.\n[[Mechanic]] class robots when set to [[GameText]]AID[[/GameText]] will repair core integrity [[B]](but NOT for Cogmind)[[/B]], broken parts, non-functional parts, and part integrity of their repair target (Cogmind is prioritized over allies) in that order. Mechanics cannot repair a part above 50% integrity."
   },
   {
-   "Name": "Armor",
-   "Content": ""
-  },
-  {
    "Name": "Assault Squad",
    "Content": "Assault squads are [[0b10]] aligned [[Squad|squads]] that are sent after Cogmind as a result of having too high [[Alert]]. Assaults are sent directly to Cogmind's position with [[Perfect Tracking]] and cannot be easily shaken. They consist of a single [[C-30 ARC]] typically containing 5 bots inside. If Cogmind has 3 or more allies, up to 2 additional bots may be sent to escort the ARC as additional firepower. Assault squads can be both Enumerated and Recalled at [[Terminal|Terminals]].\nAn alert indicates whenever an Assault squad is dispatched. Additionally, the log will display a message like [[GameText]]ALERT: Significant disruption in zone 9B, assault force dispatched[[/GameText]]. If more than one ARC was sent, the message will instead indicate [[GameText]]multiple assault carriers dispatched[[/GameText]].\n[[Heading]]Lore[[/Heading]]\n[[Lore]]WAR.Sys Records|Assault Squad[[/Lore]]\n[[Heading]]Frequency and Number[[/Heading]]\nAssaults may be dispatched regularly as long as Cogmind is at least Alert level 2 or 400 influence, although at lower Alert levels Assaults are rare. At Alert levels well above 1000, Assaults may be sent out at nearly opportunity. A higher Alert level also increases the chances of multiple ARCs being dispatched. In [[Materials]], Assaults can be dispatched every 400 turns on -9 and -8. In [[Factory]] and above, this changes to be every 250 turns. If an Assault would be dispatched at the same time an [[Extermination Squad]] would be dispatched, the Assault is delayed by 50 turns. Most assault waves consists of 1-2 ARCs, but at Alert levels in excess of 5X/1600 influence, 3 or even more ARCs can be sent.\n[[Heading:2]]During [[High Security|High]] or [[Maximum Security]][[/Heading]]\nThe frequency, number, and contents of ARCs changes. Assault forces with stronger compositions than usual may be dispatched in these conditions, although these ARCs only have 4 bots inside rather than the typical 5. 4 ARCs will be dispatched 100 turns into High Security and after another 100 turns. After that, 2 more ARCs will be added to each wave, but 50 more turns will be added in between the dispatch of each wave. The sizes of the Assault waves will also start to increase each wave, and the duration between each wave will increase. Maximum Security is similar, but with 6 ARCs to start the first 2 waves. The 2nd wave of Assaults in High Security and all subsequent waves, and all waves of Maximum Security may contain stronger than usual bots in them.\n[[Heading]]Assault Contents[[/Heading]]\n[[Image]]Assault Contents.png|Example contents of an Assault squad ARC[[/Image]]\nAssault contents can vary by depth, but their makeups are always similar. Assaults will always contain 4 combat bots and 1 support-type bot. The combat bots may become stronger under heavy assault conditions, but the possible support bots are always the same.\n\n[[Heading:2]]Normal Combat bots[[/Heading]]\n[[Table]]Depth|[[Brawler]]|[[Duelist]]|[[Grunt]]||-10|N/A|N/A|[[G-34 Mercenary]], squad leader [[G-47 Trooper]]||-9|[[B-36 Bruiser]]|[[L-31 Rogue]]|G-34 Mercenary, squad leader G-47 Trooper||-8|B-36 Bruiser|L-31 Rogue|G-47 Trooper, squad leader [[G-50 Soldier]]||-7|[[B-48 Gladiator]]|[[L-41 Fighter]]|G-47 Trooper, squad leader G-50 Soldier||-6|B-48 Gladiator|L-41 Fighter|G-50 Soldier, squad leader [[G-67 Veteran]]||-5|[[B-60 Warrior]]|L-41 Fighter|G-50 Soldier, squad leader G-67 Veteran||-4|B-60 Warrior|[[L-61 Swordsman]]|G-67 Veteran, squad leader [[G-73 Enforcer]]||-3|[[B-74 Champion]]|L-61 Swordsman|G-67 Veteran, squad leader G-73 Enforcer||-2|B-74 Champion|L-61 Swordsman|G-73 Enforcer||-1|B-74 Champion|L-61 Swordsman|G-73 Enforcer[[/Table]]\n[[Heading:2]]Strong assault combat bots (High/Max sec only)[[/Heading]]\n[[Table]]Depth|[[Executioner]]|[[Hunter]]|[[Investigator]]|[[Programmer]]|[[Striker]]||-10|N/A|N/A|N/A|N/A|N/A||-9|N/A|N/A|N/A|N/A|N/A||-8|N/A|N/A|N/A|N/A|N/A||-7|N/A|[[H-55 Commando]]|N/A|[[P-60 Hacker]]|N/A||-6|N/A|[[H-66 Slayer]]|N/A|P-60 Hacker|N/A||-5|N/A|H-66 Slayer|N/A|[[P-70 Sage]]|N/A||-4|N/A|[[H-77 Assassin]]|N/A|P-70 Sage|N/A||-3|Yes|H-77 Assassin|Yes|[[P-80 Master]]|Yes||-2|Yes|H-77 Assassin|Yes|P-80 Master|Yes||-1|Yes|H-77 Assassin|Yes|P-80 Master|Yes[[/Table]]\n[[Heading:2]]Utility bots[[/Heading]]\n[[Table]]Depth|[[E-15 Imp]]|[[Mechanic]]|[[Protector]]||-10|N/A|[[M-13 Machinist]]|N/A||-9|N/A|M-13 Machinist|[[I-25 Savior]]||-8|N/A|M-13 Machinist|I-25 Savior||-7|N/A|[[M-28 Smith]]|[[I-36 Angel]]||-6|Yes|M-28 Smith|I-36 Angel||-5|Yes|M-28 Smith|[[I-47 Archangel]]||-4|Yes|[[M-36 Artificer]]|I-47 Archangel||-3|Yes|M-36 Artificer|I-47 Archangel||-2|Yes|M-36 Artificer|I-47 Archangel||-1|Yes|M-36 Artificer|I-47 Archangel[[/Table]]\n[[Heading:2]]Additional bots with allies[[/Heading]]\n[[Table]]Depth|[[Demolisher]]|Programmer|[[Specialist]]||-10|N/A|N/A|N/A||-9|N/A|N/A|N/A||-8|[[D-53 Grenadier]]|N/A|N/A||-7|D-53 Grenadier|P-60 Hacker|[[X-57 Shotgunner]], [[X-62 Marksman]], [[X-67 Chaingunner]]||-6|D-53 Grenadier|P-60 Hacker|X-62 Marksman, X-67 Chaingunner, [[X-72 Disruptor]]||-5|[[D-63 Destroyer]]|P-70 Sage|X-67 Chaingunner, X-72 Disruptor, [[X-77 Beamer]]||-4|D-63 Destroyer|P-70 Sage|X-72 Disruptor, X-77 Beamer, [[X-82 Rainmaker]]||-3|D-63 Destroyer|P-80 Master|X-77 Beamer, X-82 Rainmaker, [[X-87 Electro]]||-2|[[D-83 Annihilator]]|P-80 Master|X-82 Rainmaker, X-87 Electro||-1|D-83 Annihilator|P-80 Master|X-87 Electro[[/Table]]\n[[Spoiler]][[Heading]][[Data Miner]] redirection[[/Heading]]\nThe Data Miner can redirect Assaults if his help is obtained by visiting his [[Data Miner (Location)|hideout]]. If redirected, Assaults will roam around a random area of the map rather than head directly to Cogmind's location. The Data Miner has a 50% chance to direct each ARC as part of an Assault about 15 turns after each Assault is dispatched, if Cogmind is determined as \"needing assistance\". Redirection can only occur when High/Maximum Security is not active. If a redirect happens, the alert [[GameText]]Higher priority target acquired, redirecting assault.[[/GameText]] will be displayed. If an Assault is not redirected, there is a further 50% chance that the contents may be redirected after the ARC opens up. This can happen within 30 turns of the ARC opening. This effect will only redirect the squad leader, and the squad leader will only leave if currently unable to see Cogmind. All the remaining squad bots will continue to follow Cogmind. The true practical effect here is that if the squad forgets where Cogmind is, they will patrol around the redirected location rather than the location that the ARC opened.[[/Spoiler]]"
   },
@@ -8602,10 +8864,6 @@
    "Name": "Imprint",
    "Content": "Imprint is one of the major faction [[Alignment|alignments]] available to Cogmind in a run. It closely allies Cogmind with the [[Imprinter]] and with Zionites as a whole, with Cogmind being determined to be the Zionites' savior. Imprinting majorly changes the game, as it disables all standard [[Terminal]] hacks except for limited access Terminal hacking. Instead, there are a new set of imprint-specific hacks that are available at all Terminals. After imprinting, there is a 10 tile \"ping\" radius on all standard Terminals which will tell Cogmind their location, even through walls. However, if an [[Operator]] is nearby when this happens, the Operator will shut down the Terminal and call for [[Reinforcement Squad|Reinforcements]]. After about 1200-1500 turns on an [[0b10]]-controlled map, the Terminal network will be shut down with an accompanying log [[GameText]]Terminal network compromised, cutting hard line.[[/GameText]]\n[[Image]]Zion Imprinting.gif|Using the imprinting machine[[/Image]]\n[[Heading:2]]Imprinting[[/Heading]]\nImprinting is performed on the [[Zion]] map by walking into the imprinting machine on the bottom left corner of the map. The UI will turn orange, and the 4 nearby [[Mutant (6)|Mutants]] will turn purple and follow Cogmind around.\n[[Heading]]Special Terminal Hacks[[/Heading]]\nThere are 2 types of special Terminal hacks, roster and intel.\n[[Image]]Imprint Hacks.png|A selection of special Imprint hacks[[/Image]]\n[[Heading:2]]Roster Hacks[[/Heading]]\n[[Image]]Imprint Summoning.gif|Summoning 2 Zionites with a roster hack[[/Image]]\nRoster hacks summon combat allies or special [[Z-Courier]] haulers containing part resupplies. The allies and hauler contents here are depth-dependent and will grow stronger at higher depths. The hauler contents can include [[Prototype Part|Prototypes]] which can be faulty, so having some way to identify prototypes like a [[Component Analysis Suite]] is very useful before equipping. Using a roster hack will destroy the Terminal when the reinforcements are teleported in after a few turns. There are a limited number of roster hacks available on a given map, starting at 2 slots on -6, increasing every floor up to the cap of 6 slots on -2. Roster hacks will occasionally be rerolled, which can add new roster types or reroll existing types. All roster allies summoned will appear as purple uncontrollable allies which contribute to [[Alert]]. The exception is any summonable [[Z-Hero|Z-Heroes]] which appear as pink, but otherwise behave as purple allies.\nOne thing to keep in mind about roster rallies is that they will not attack enemies unless Cogmind is close and within line of sight. This can be both a bad and good thing. It is often bad when hostiles are hanging just around a corner and the Zionites get stuck trying to get Cogmind back in line of sight and trying to turn around the corner to fight. When stuck in this case, try to get Cogmind's line of sight over the direction the allies are trying to go. However, it may be good if Cogmind doesn't want the roster allies to stick around long and get lots of kills, racking up lots of alert. It is possible to manipulate the bots to not attack back even when they are being attacked while standing around a corner.\nIf Cogmind is not careful about friendly fire, roster hacks can become temporarily disabled. The length of the lockout can vary depending on the amount of friendly fire. In extreme cases, Cogmind can be locked out for the remainder of the game. Killing imprint allies directly is not recommended for this reason. Instead, it is best to try to allow allies to be killed naturally if their loot is desired\nThe available ally-summoning roster hacks are as follows:\n[[Table]]Type|Depths|Summon||Demo|-6 and -5|1-2 [[Martyr (5)]]|||-4+|1-2 [[Martyr (7)]]||Experimental|-3+|[[Z-Experimental (10)]]||Hacker|-6 and -5|2-3 [[Wizard (5)]]|||-4+|2-3 [[Wizard (7)]]||Fire|-6 and -5|3-4 [[Fireman (5)]]|||-4+|3-4 [[Fireman (7)]]||Heavy|-6 and -5|1-2 [[Z-Heavy (5)]]|||-4 to -3|1-2 [[Z-Heavy (7)]]|||-2 and -1|1-2 [[Z-Heavy (9)]]||Hero|-6+|A random [[Z-Hero]]||Light|-6 and -5|2-3 [[Z-Light (5)]]|||-4 and -3|2-3 [[Z-Light (7)]]|||-2 and -1|2-3 [[Z-Light (9)]]||Recon|-6+|A [[Z-Drone Bay]], not a bot directly[[/Table]]\nResupply rosters are entirely delivered inside a single Z-Courier. The available resupply roster hacks are as follows:\n[[Table]]Type|Number of parts|Available parts||Defense Resupply|8|Defensive Utilities including [[Antimissile Systems]], [[Armor]], [[Core Shieldings]], [[Graphene Brace|Graphene Braces]], [[Hardlight Generators]], [[Power Shieldings]], [[Propulsion Shieldings]], [[Resistance Devices]], [[Shield Generators/Force Fields]], [[Utility Shieldings]], and [[Weapon Shieldings]]||Explosive Resupply|2|Explosive [[Launchers]]||Hacking Resupply|2|[[Hackware]]||Heavy Resupply|4|[[Armor]], [[Hcp. Storage Unit|Hcp.]] and [[Huge Storage Unit|Huge Storage Units]], and [[Treads]]||Hover Resupply|8|[[Hover Units]]||Infowar Resupply|4|infowar Utilities including [[0b10 Decoder Chips]], [[Cloaking Devices]], [[ECM Suites]], [[Machine Analyzer]], [[Seismic Detector]], [[Sensor Arrays]], [[Signal Interpreters]], [[Terrain Scanners]], [[Terrain Scan Processors]], [[Transmission Jammers]], [[Trap Scanners]], [[Triangulator]], and [[Visual Processing Units]]||Kinetic Resupply|8|[[Ballistic Cannons]], [[Ballistic Guns]], and offensive Utilities including [[Matter Filters]] and [[Recoil Nullifiers]]||Melee Resupply|4|[[Impact Weapons|Impact]], [[Piercing Weapons|Piercing]], and [[Slashing Weapons|Slashing]] weapons, including unique Derelict weapons like [[Particle Cleaver|Particle Cleavers]] and [[CR-A16's Behemoth Slayer]], as well as offensive Utilities including [[Actuators]], [[Actuator Arrays]], [[Melee Analysis Suites]], and [[Force Boosters]]||Offense Resupply|4|Offensive utilities including [[Armor Integrity Analyzers]], [[Core Analyzers]], [[Launcher Guidance Computers]], [[Kinecellerators]], [[Launcher Loader]], [[Melee Analysis Suites]], [[Particle Chargers]], [[Tactical Coordination Suite]], [[Target Analyzers]], [[Targeting Computers]], [[Weapon Cyclers]], and [[Weapon Mount]]||Resource Resupply|12|Storage or resource-related Utilities, including [[Energy Wells]], [[Field Recycling Units]], [[Matter Compressors]], [[Storage Unit|Storage Units]], and [[Tractor Beams]]. All resource-containing utilities will be filled.||Thermal Resupply|8|Thermal [[Energy Cannons]], [[Energy Guns]], and offensive Utilities including [[Cooling Devices]], [[Coolant Injectors]], [[Energy Filters]], [[Particle Chargers]], and [[Quantum Capacitor|Quantum Capacitors]]||Trap Resupply|16|[[Traps]] and a basic [[Trap Extractor]]||Zionite Resupply|6|Zionite parts including [[Zio. Alpha Cannon]] and [[Zio. Alpha Cannon Mk. II|Mk. II]], [[Zio. Biocell]] and [[Zio. Biocell Array|Biocell Arrays]], [[Zio. Composite Leg I]], [[Zio. Composite Leg II|II]], and [[Zio. Supercomposite Leg]], [[Zio. Glidesys I]] and [[Zio. Glidesys II|II]], [[Zio. Laser-S]], [[Zio. Laser-M|M]], and [[Zio. Laser-H|H]], [[Zio. Light Carapace|Zio. Light]] and [[Zio. Heavy Carapace|Heavy]] Carapaces, [[Zio. Light DM Reactor|Zio. Light]] and [[Zio. Heavy DM Reactor|Heavy]] Reactors, [[Zio. Phaser-S]], [[Zio. Phaser-M|M]], and [[Zio. Phaser-H|H]], [[Zio. Shade Carapace]] and [[Zio. Shade Armor|Armor]], and [[Zio. Weapon Casing]][[/Table]]\n[[Heading:2]]Intel hacks[[/Heading]]\nIntel hacks provide Cogmind with different types of information about the current, and upcoming maps. Unlike roster hacks, intel hacks require two Terminals to use and are not instantaneous. Performing an intel hack locks the Terminal, but does not provide any information until the next Terminal is used to retrieve that intel. Retrieving intel does not lock the Terminal, however, so chaining intel retrieval with other hacks is still possible.\nThere are initially 4 intel hacks available per 0b10 floor. Performing intel hacks reduces the number available until there are only 2 hacks remaining. At that point, each intel hack will cause another random intel hack to become available. Unlike the fixed limit of roster hacks, intel hacks are not restricted on any given floor and are only limited by the total number of Terminals.\nThere are 2 categories of intel hacks: Repeatable and non-repeatable. Non-repeatable hacks can only be performed once per map. These types of hacks include map-specific intel and world map intel relating to the overall depth that certain locations occur on. Repeatable hacks can be performed an infinite number of times on any floor and tend to be longer-term types of information such as schematics and analyses. If trying to burn through intel for a specific piece of information, such as main or branch access, it is best to pick any non-repeatable hacks first. This will allow the pool of available hacks to get smaller, increasing the chances of getting the desired intel hack.\nThe available intel hacks are as follows:\n[[Table]]Hack Name|Repatable|Effect||Active Garrisons|No|Reveals all [[Garrison (Machine)|Garrisons]] on the current map||Active Terminals|No|Reveals all Terminals on the current map||Branch Access|No|Reveals all Derelict-known [[Branch]] exits on the current map[[Sub]]1[[/Sub]]||Component Schematics|Yes|Gives 12-16 random non-Prototype [[Fabricator]] schematics||Component Stockpiles|No|Reveals locations of all non-Prototype part stockpiles on the current map||Depthwide Sectors/0|No|Reveals all Derelict-known maps on the current depth[[Sub]]1[[/Sub]]||Depthwide Sectors/-1|No|Reveals all Derelict-known maps on the next depth[[Sub]]1[[/Sub]]||Emergency Access|No|Reveals all emergency access doors on the current map||Guard Positions|No|Reveals current locations (but not types) of all [[Behemoth]], [[Heavy]], and all [[Sentry]] bots on the map||Main Access|No|Reveals all main exits on the current map||Prototype Schematics|Yes|Gives 8-12 random Prototype Fabricator schematics||Prototype Stockpiles|No|Reveals locations of all Prototype part stockpiles on the current map||Trap Installations|No|Reveals positions and types of all traps on the current map||Unaware Analyses|Yes|Gives 3 random 0b10 bot [[Robot Analysis|Analyses]]||Unaware Schematics|Yes|Gives 3 random 0b10 bot Fabricator schematics[[/Table]]\n[[List:Ordered]]Derelicts are unaware of the following maps and map exits: [[Access_0]], [[Lab]], [[Section 7]], and [[Zhirov (Location)]][[/List]]\n[[Redacted]][[Heading]][[Command]] Cave Seals[[/Heading]]\nImprinting has special cave seal interactions. Instead of the standard wild cave Derelicts, friendly Zionites will appear from the seal instead. These allies will be purple and uncontrollable by default. However, if a Core Reset Matrix has been consumed, all of the Z-bots will turn blue and become controllable.[[/Redacted]]\n[[Heading]]Alignment Incompatibilities[[/Heading]]\n[[Heading:2]]Blocking Alignment[[/Heading]]\nThe following will prevent Cogmind from being able to Imprint:\n[[List]][[RIF]]: Zion will become hostile to a Cogmind that has installed RIF|[[Farcom]]: The Imprinter distrusts the Exiles and will refuse to let Cogmind Imprint|[[UFD]]: The Imprinter needs more preparation and vetting before any UFD member is allowed to use the Imprinting machine[[/List]]\n[[Heading:2]]Blocked Alignments[[/Heading]]\nAn Imprinted Cogmind loses the ability to receive help from a few NPCs. These effects apply even if Cogmind enters the [[Zion Deep Caves]] and loses the special Terminal hacks:\n[[List]][[Revision 17 (Alignment)]]: [[Revision 17]] will distrust an Imprinted Cogmind and refuse to help|[[Warlord (Alignment)]]: [[Warlord]] will be disappointed in Cogmind and refuse to perform the -2 [[Research]] invasion[[/List]]",
    "Spoiler": "Spoiler"
-  },
-  {
-   "Name": "Infowar",
-   "Content": ""
   },
   {
    "Name": "Interactive Machine",

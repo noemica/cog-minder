@@ -111,6 +111,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
         trait: { kind: "DamageResists", resists: { Electromagnetic: 75 } },
     },
     "Damper Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Electromagnetic: 90 } } },
+    "Superdense Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Kinetic: 25 } } },
     // Explosive
     "Shock Absorption System": { active: "Part Active", trait: { kind: "DamageResists", resists: { Explosive: 25 } } },
     "Imp. Shock Absorption System": {

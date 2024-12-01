@@ -404,7 +404,7 @@ export function parseEntryContent(
     let groupNodes: ReactNode[] = [];
 
     if (entry.parentGroups.length > 0) {
-        let ancestorEntries = new Set<WikiEntry>();
+        const ancestorEntries = new Set<WikiEntry>();
 
         function addAncestors(entry: WikiEntry) {
             for (const parent of entry.parentGroups.values()) {

@@ -145,6 +145,12 @@
     padding: @comparison-container-gap;
 
     .details-font();
+
+    > a {
+        // Default line height of 1.2 causes a row of odd-looking pixels on the
+        // bottom of the Wiki button
+        line-height: 1.0;
+    }
 }
 
 .bot-popover-item-bracket {
