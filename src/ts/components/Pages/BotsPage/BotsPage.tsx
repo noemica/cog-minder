@@ -1,5 +1,5 @@
 import { ColumnDef, SortingState } from "@tanstack/react-table";
-import { ReactNode, useMemo } from "react";
+import { ReactNode } from "react";
 import React from "react";
 import { useLocation, useSearch } from "wouter";
 
@@ -219,34 +219,10 @@ function skipLocationMember(key: string, pageState: BotsPageState) {
     return false;
 }
 
-function BotsSimpleDisplay({
-    botData,
-    bots,
-    buttons,
-}: {
-    botData: BotData;
-    bots: Bot[];
-    buttons: Map<Bot, ReactNode>;
-}) {
-    const botButtons: ReactNode[] = [];
-    const botsToProcess = new Set(botData.getAllBots());
-
-    for (const bot of bots) {
-        botButtons.push(<div key={bot.name}>{buttons.get(bot)}</div>);
-
-        botsToProcess.delete(bot);
-    }
-
-    // For performance reasons, continue to create all buttons but set
-    // display to none so they don't render. This helps prevent stuttering
-    // when resetting to the full item state
-    for (const hiddenItem of botsToProcess.values()) {
-        botButtons.push(
-            <div style={{ display: "none" }} key={hiddenItem.name}>
-                {buttons.get(hiddenItem)}
-            </div>,
-        );
-    }
+function BotsSimpleDisplay({ bots }: { bots: Bot[] }) {
+    const botButtons = bots.map((bot) => {
+        return <BotPopoverButton bot={bot} key={bot.name} />;
+    });
 
     return <div className="bot-button-grid">{botButtons}</div>;
 }
@@ -265,15 +241,6 @@ export default function BotsPage() {
 
     const pageState = getPageState();
 
-    const botButtonMap = useMemo(() => {
-        const botButtonMap = new Map<Bot, ReactNode>();
-        for (const bot of botData.getAllBots()) {
-            botButtonMap.set(bot, <BotPopoverButton bot={bot} key={bot.name} />);
-        }
-
-        return botButtonMap;
-    }, [botData]);
-
     function updatePageState(newPageState: BotsPageState) {
         const location = getLocationFromState("/bots", newPageState, skipLocationMember);
         setLocation(location, { replace: true });
@@ -286,7 +253,7 @@ export default function BotsPage() {
         pageContent = <BotsSpreadsheetDisplay bots={bots} />;
     } else {
         // Default to simple mode
-        pageContent = <BotsSimpleDisplay botData={botData} bots={bots} buttons={botButtonMap} />;
+        pageContent = <BotsSimpleDisplay bots={bots} />;
     }
 
     const factionButtons = allFactionButtons.filter((button) => canShowSpoiler(button.spoiler || "None", spoilers));

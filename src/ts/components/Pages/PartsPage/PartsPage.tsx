@@ -1,4 +1,4 @@
-import { ReactNode, useMemo } from "react";
+import { ReactNode } from "react";
 import { useLocation, useSearch } from "wouter";
 
 import { Item, ItemSlot } from "../../../types/itemTypes";
@@ -12,9 +12,10 @@ import {
 } from "../../../utilities/common";
 import useItemData from "../../Effects/useItemData";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
-import ItemPopoverButton, { GalleryItemPopoverButton } from "../../Popover/ItemPopover";
 import PartsComparisonDisplay from "./PartsComparisonDisplay";
+import PartsGalleryDisplay from "./PartsGalleryDisplay";
 import PartsPageInput from "./PartsPageInput";
+import PartsSimpleDisplay from "./PartsSimpleDisplay";
 import { alphabeticalSort, criticalSort, damageSort, heatSort, integerSort, spectrumSort } from "./PartsSortingUtils";
 import PartsSpreadsheetDisplay from "./PartsSpreadsheetDisplay";
 
@@ -277,7 +278,7 @@ function filterItems(pageState: PartsPageState, itemData: ItemData) {
 
         // Mass filter
         if (pageState.mass && pageState.mass.length > 0) {
-            if (!filterNumericValue(item.mass ?? 0, pageState.mass)) {
+            if( !filterNumericValue(item.mass ?? 0, pageState.mass)) {
                 return false;
             }
         }
@@ -492,86 +493,11 @@ function skipLocationMember(key: string, pageState: PartsPageState) {
     return false;
 }
 
-function PartsGalleryDisplay({
-    itemData,
-    items,
-    buttons,
-}: {
-    itemData: ItemData;
-    items: Item[];
-    buttons: Map<Item, ReactNode>;
-}) {
-    const itemButtons: ReactNode[] = [];
-    const itemsToProcess = new Set(itemData.getAllItems());
-
-    for (const item of items) {
-        itemButtons.push(<div key={item.name}>{buttons.get(item)}</div>);
-
-        itemsToProcess.delete(item);
-    }
-
-    // For performance reasons, continue to create all buttons but set
-    // display to none so they don't render. This helps prevent stuttering
-    // when resetting to the full item state
-    for (const hiddenItem of itemsToProcess.values()) {
-        itemButtons.push(
-            <div style={{ display: "none" }} key={hiddenItem.name}>
-                {buttons.get(hiddenItem)}
-            </div>,
-        );
-    }
-
-    return <div className="part-gallery-grid">{itemButtons}</div>;
-}
-
-function PartsSimpleDisplay({
-    buttons,
-    itemData,
-    items,
-}: {
-    buttons: Map<Item, ReactNode>;
-    itemData: ItemData;
-    items: Item[];
-}) {
-    const itemButtons: ReactNode[] = [];
-    const itemsToProcess = new Set(itemData.getAllItems());
-
-    for (const item of items) {
-        itemButtons.push(<div key={item.name}>{buttons.get(item)}</div>);
-
-        itemsToProcess.delete(item);
-    }
-
-    // For performance reasons, continue to create all buttons but set
-    // display to none so they don't render. This helps prevent stuttering
-    // when resetting to the full item state
-    for (const hiddenItem of itemsToProcess.values()) {
-        itemButtons.push(
-            <div style={{ display: "none" }} key={hiddenItem.name}>
-                {buttons.get(hiddenItem)}
-            </div>,
-        );
-    }
-
-    return <div className="part-button-grid">{itemButtons}</div>;
-}
-
 export default function PartsPage() {
     const itemData = useItemData();
     const [_, setLocation] = useLocation();
 
     const pageState = getPageState();
-
-    const [simpleItemButtonMap, galleryItemButtonMap] = useMemo(() => {
-        const simpleButtonMap = new Map<Item, ReactNode>();
-        const galleryButtonMap = new Map<Item, ReactNode>();
-        for (const item of itemData.getAllItems()) {
-            simpleButtonMap.set(item, <ItemPopoverButton item={item} key={item.name} showWikiLink={true} />);
-            galleryButtonMap.set(item, <GalleryItemPopoverButton item={item} key={item.name} />);
-        }
-
-        return [simpleButtonMap, galleryButtonMap];
-    }, [itemData]);
 
     function updatePageState(newPageState: PartsPageState) {
         const location = getLocationFromState("/parts", newPageState, skipLocationMember);
@@ -585,7 +511,7 @@ export default function PartsPage() {
     switch (pageState.mode) {
         case "Simple":
         default:
-            modeNode = <PartsSimpleDisplay buttons={simpleItemButtonMap} itemData={itemData} items={items} />;
+            modeNode = <PartsSimpleDisplay items={items} />;
             break;
 
         case "Comparison":
@@ -600,7 +526,7 @@ export default function PartsPage() {
             break;
 
         case "Gallery":
-            modeNode = <PartsGalleryDisplay buttons={galleryItemButtonMap} itemData={itemData} items={items} />;
+            modeNode = <PartsGalleryDisplay items={items} />;
             break;
 
         case "Spreadsheet":
