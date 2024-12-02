@@ -164,8 +164,13 @@ export default function WikiGroupInfobox({
     groupEntry: WikiEntry;
     spoiler: Spoiler;
 }) {
-    // Default to showing the top level always
-    const [show, setShow] = useState(activeEntry === groupEntry);
+    // Default to expanding at the top level group or if we're at the
+    // second highest level in a part group/supergroup
+    const [show, setShow] = useState(
+        activeEntry === groupEntry ||
+            (activeEntry.parentEntries.includes(groupEntry) &&
+                (groupEntry.type === "Part Group" || groupEntry.type === "Part Supergroup")),
+    );
 
     if (groupEntry.hasSupergroupChildren) {
         return (
