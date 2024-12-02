@@ -37,6 +37,8 @@ for csv_obj in wiki_csv.values():
         json_list = wiki_json['Locations']
     elif csv_obj['Page Type'] == 'Part Group':
         json_list = wiki_json['Part Groups']
+    elif csv_obj['Page Type'] == 'Part Supergroup':
+        json_list = wiki_json['Part Supergroups']
     elif csv_obj['Page Type'] == 'Other':
         json_list = wiki_json['Other']
     else:

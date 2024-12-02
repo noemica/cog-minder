@@ -1978,7 +1978,7 @@
   },
   {
    "Name": "Arm. Scrap Engine",
-   "Content": "Created from a [[Scrap Engine]] when a [[Protection]]-type part is fed. See the Scrap Engine page for more details. When destroyed, reverse back into a normal Scrap Engine."
+   "Content": "Created from a [[Scrap Engine]] when a [[Armor|Protection]]-type part is fed. See the Scrap Engine page for more details. When destroyed, reverse back into a normal Scrap Engine."
   },
   {
    "Name": "Arm. Treads",
@@ -7293,7 +7293,8 @@
     "Graphene Brace",
     "Phase Redirector",
     "Siege Articulator"
-   ]
+   ],
+   "Content": ""
   },
   {
    "Name": "Energy Cannons",
@@ -7409,7 +7410,8 @@
     "Expert System",
     "Heavy Servo Lattice",
     "VL-GR5's Timing Chip"
-   ]
+   ],
+   "Content": ""
   },
   {
    "Name": "Power",

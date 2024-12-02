@@ -3,7 +3,6 @@
 import csv
 import json
 import sys
-from io import StringIO
 from os import path
 
 wiki_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'wiki.json')
@@ -13,10 +12,12 @@ csv_path = path.join(path.dirname(path.realpath(__file__)), 'wiki.csv')
 with open(wiki_path) as f:
     wiki_json = json.load(f)
 
+csv_entries = set()
 with open(csv_path) as f:
     wiki_csv = {}
     for row in csv.DictReader(f):
         wiki_csv[row['Name']] = row
+        csv_entries.add(row['Name'])
 
 # Update CSV from JSON
 for bot_group in wiki_json['Bots']:
@@ -24,6 +25,7 @@ for bot_group in wiki_json['Bots']:
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Bot'
         wiki_csv[group_name]['Content'] = bot_group['Content']
+        csv_entries.remove(group_name)
     else:
         new_bot = {
             'Name': group_name,
@@ -37,6 +39,7 @@ for bot_group in wiki_json['Bot Groups']:
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Bot Group'
         wiki_csv[group_name]['Content'] = bot_group['Content']
+        csv_entries.remove(group_name)
     else:
         new_group = {
             'Name': group_name,
@@ -50,6 +53,7 @@ for part in wiki_json['Parts']:
     if part_name in wiki_csv:
         wiki_csv[part_name]['Page Type'] = 'Part'
         wiki_csv[part_name]['Content'] = part['Content']
+        csv_entries.remove(part_name)
     else:
         new_part = {
             'Name': part_name,
@@ -63,6 +67,7 @@ for part_group in wiki_json['Part Groups']:
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Part Group'
         wiki_csv[group_name]['Content'] = part_group['Content']
+        csv_entries.remove(group_name)
     else:
         if 'Content' not in part_group:
             print('Group {} missing content'.format(group_name))
@@ -74,11 +79,29 @@ for part_group in wiki_json['Part Groups']:
         }
         wiki_csv[group_name] = new_group
 
+for part_group in wiki_json['Part Supergroups']:
+    group_name = part_group['Name']
+    if group_name in wiki_csv:
+        wiki_csv[group_name]['Page Type'] = 'Part Supergroup'
+        wiki_csv[group_name]['Content'] = part_group['Content']
+        csv_entries.remove(group_name)
+    else:
+        if 'Content' not in part_group:
+            print('Supergroup {} missing content'.format(group_name))
+            sys.exit(1)
+        new_group = {
+            'Name': group_name,
+            'Page Type': 'Part Supergroup',
+            'Content': part_group['Content']
+        }
+        wiki_csv[group_name] = new_group
+
 for location in wiki_json['Locations']:
     location_name = location['Name']
     if location_name in wiki_csv:
         wiki_csv[location_name]['Page Type'] = 'Location'
         wiki_csv[location_name]['Content'] = location['Content']
+        csv_entries.remove(location_name)
     else:
         new_location = {
             'Name': location_name,
@@ -92,6 +115,7 @@ for other in wiki_json['Other']:
     if other_name in wiki_csv:
         wiki_csv[other_name]['Page Type'] = 'Other'
         wiki_csv[other_name]['Content'] = other['Content']
+        csv_entries.remove(other_name)
     else:
         new_other = {
             'Name': other_name,
@@ -101,6 +125,11 @@ for other in wiki_json['Other']:
         wiki_csv[other_name] = new_other
 
 csv.register_dialect('wiki', 'excel', lineterminator='\n')
+
+if len(csv_entries) > 0:
+    print('Found Wiki CSV entries not present in JSON')
+    print(csv_entries)
+    sys.exit(1)
 
 # Write out updated csv
 with open(csv_path, 'w', newline='') as f:
