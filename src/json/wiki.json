@@ -7294,6 +7294,7 @@
   {
    "Name": "Defensive Utilities",
    "Groups": [
+    "Antimissile Systems",
     "Hardlight Generators",
     "Force Fields",
     "Phase Shifters",
@@ -7512,7 +7513,6 @@
   {
    "Name": "Utilities",
    "Groups": [
-    "Antimissile Systems",
     "Authchips",
     "Component Analysis Suites",
     "Fabrication Devices",
