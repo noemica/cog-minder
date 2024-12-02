@@ -6241,12 +6241,12 @@
   },
   {
    "Name": "Ballistic Cannons",
-   "PartCategory": "Ballistic Cannons",
+   "Part Category": "Ballistic Cannons",
    "Content": ""
   },
   {
    "Name": "Ballistic Guns",
-   "PartCategory": "Ballistic Guns",
+   "Part Category": "Ballistic Guns",
    "Content": ""
   },
   {
@@ -6385,17 +6385,17 @@
   },
   {
    "Name": "Electromagnetic Cannons",
-   "PartCategory": "Electromagnetic Cannons",
+   "Part Category": "Electromagnetic Cannons",
    "Content": ""
   },
   {
    "Name": "Electromagnetic Guns",
-   "PartCategory": "Electromagnetic Guns",
+   "Part Category": "Electromagnetic Guns",
    "Content": ""
   },
   {
    "Name": "Electromagnetic Launchers",
-   "PartCategory": "Electromagnetic Launchers",
+   "Part Category": "Electromagnetic Launchers",
    "Content": ""
   },
   {
@@ -6427,12 +6427,12 @@
   },
   {
    "Name": "Engines",
-   "PartCategory": "Engines",
+   "Part Category": "Engines",
    "Content": ""
   },
   {
    "Name": "Explosive Launchers",
-   "PartCategory": "Explosive Launchers",
+   "Part Category": "Explosive Launchers",
    "Content": ""
   },
   {
@@ -6468,7 +6468,7 @@
   },
   {
    "Name": "Flight Units",
-   "PartCategory": "Flight Units",
+   "Part Category": "Flight Units",
    "Content": ""
   },
   {
@@ -6533,12 +6533,12 @@
   },
   {
    "Name": "Hover Units",
-   "PartCategory": "Hover Units",
+   "Part Category": "Hover Units",
    "Content": ""
   },
   {
    "Name": "Impact Weapons",
-   "PartCategory": "Impact Weapons",
+   "Part Category": "Impact Weapons",
    "Content": ""
   },
   {
@@ -6561,7 +6561,7 @@
   },
   {
    "Name": "Legs",
-   "PartCategory": "Legs",
+   "Part Category": "Legs",
    "Content": ""
   },
   {
@@ -6644,13 +6644,13 @@
   },
   {
    "Name": "Phasers",
-   "PartCategory": "Phasers",
+   "Part Category": "Phasers",
    "Content": "",
    "Spoiler": "Spoiler"
   },
   {
    "Name": "Piercing Weapons",
-   "PartCategory": "Piercing Weapons",
+   "Part Category": "Piercing Weapons",
    "Content": ""
   },
   {
@@ -6673,7 +6673,7 @@
   },
   {
    "Name": "Power Cores",
-   "PartCategory": "Power Cores",
+   "Part Category": "Power Cores",
    "Content": ""
   },
   {
@@ -6719,7 +6719,7 @@
   },
   {
    "Name": "Reactors",
-   "PartCategory": "Reactors",
+   "Part Category": "Reactors",
    "Content": ""
   },
   {
@@ -6786,7 +6786,7 @@
   },
   {
    "Name": "Resistance Armor",
-   "PartCategory": "Resistance Armor",
+   "Part Category": "Resistance Armor",
    "Content": ""
   },
   {
@@ -6882,7 +6882,7 @@
   },
   {
    "Name": "Slashing Weapons",
-   "PartCategory": "Slashing Weapons",
+   "Part Category": "Slashing Weapons",
    "Content": ""
   },
   {
@@ -7002,7 +7002,7 @@
   },
   {
    "Name": "Thermal Cannons",
-   "PartCategory": "Thermal Cannons",
+   "Part Category": "Thermal Cannons",
    "Content": ""
   },
   {
@@ -7017,7 +7017,7 @@
   },
   {
    "Name": "Thermal Guns",
-   "PartCategory": "Thermal Guns",
+   "Part Category": "Thermal Guns",
    "Content": ""
   },
   {
@@ -7107,7 +7107,7 @@
   },
   {
    "Name": "Treads",
-   "PartCategory": "Treads",
+   "Part Category": "Treads",
    "Content": ""
   },
   {
@@ -7134,13 +7134,13 @@
   },
   {
    "Name": "Vortex Cannons",
-   "PartCategory": "Vortex Cannons",
+   "Part Category": "Vortex Cannons",
    "Content": "",
    "Spoiler": "Spoiler"
   },
   {
    "Name": "Vortex Guns",
-   "PartCategory": "Vortex Guns",
+   "Part Category": "Vortex Guns",
    "Content": "",
    "Spoiler": "Spoiler"
   },
@@ -7169,7 +7169,7 @@
   },
   {
    "Name": "Wheels",
-   "PartCategory": "Wheels",
+   "Part Category": "Wheels",
    "Content": ""
   }
  ],

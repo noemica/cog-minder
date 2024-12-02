@@ -303,8 +303,8 @@ function initEntries(botData: BotData, itemData: ItemData) {
 
         if (partGroupEntry.Parts) {
             children = partGroupEntry.Parts;
-        } else if (partGroupEntry.PartCategory) {
-            children = getItemCategoryItems(partGroupEntry.PartCategory, itemData);
+        } else if (partGroupEntry["Part Category"]) {
+            children = getItemCategoryItems(partGroupEntry["Part Category"], itemData);
         } else {
             console.log(`Part group ${entry.name} has no parts`);
         }

@@ -75,6 +75,12 @@ for part_group in wiki_json['Part Groups']:
         wiki_csv[group_name]['Content'] = part_group['Content']
         if 'Spoiler' in part_group:
             wiki_csv[group_name]['Spoiler'] = part_group['Spoiler']
+        
+        if 'Parts' in part_group:
+            wiki_csv[group_name]['Parts'] = ','.join(part_group['Parts'])
+
+        if 'Part Category' in part_group:
+            wiki_csv[group_name]['Part Category'] = part_group['Part Category']
 
         csv_entries.remove(group_name)
     else:
@@ -155,7 +161,10 @@ if len(csv_entries) > 0:
 
 # Write out updated csv
 with open(csv_path, 'w', newline='') as f:
-    writer = csv.DictWriter(f, ['Name', 'Page Type', 'Content', 'Spoiler', 'Bots'], quoting=csv.QUOTE_ALL, dialect='wiki')
+    writer = csv.DictWriter(
+        f,
+        ['Name', 'Page Type', 'Content', 'Spoiler', 'Bots', 'Part Category', 'Parts'],
+        quoting=csv.QUOTE_ALL, dialect='wiki')
 
     writer.writeheader()
     sorted_names = sorted(wiki_csv.keys())

@@ -64,6 +64,15 @@ for csv_obj in wiki_csv.values():
                 updated = True
                 json_item['Bots'] = csv_obj['Bots'].split(',')
 
+            if csv_obj['Page Type'] == 'Part Group':
+                if 'Parts' in json_item and ','.join(json_item['Parts']) != csv_obj['Parts']:
+                    updated = True
+                    json_item['Parts'] = csv_obj['Parts'].split(',')
+
+                if 'Part Category' in json_item and json_item['Part Category'] != csv_obj['Part Category']:
+                    updated = True
+                    json_item['Part Category'] = csv_obj['Part Category']
+
             if updated:
                 updated_pages.append(json_item['Name'])
 
