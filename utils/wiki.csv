@@ -1849,8 +1849,9 @@ Several non-standard exits also appear in Factory. [[Chute Trap|Chute Traps]] wi
 "Falx","Part",""
 "Fanart","Other","Check out the following artists' fanart pages:
 [[List]][[Fanart/CaptainWinky|CaptainWinky]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]][[/List]]"
-"Fanart/CaptainWinky","Other","Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]]
-This is a work in progress.  The first few item stat cards were done with GIMP and most of the others were then done by hand editing Cog-Minder stat cards and saving them as images.  Since aoemica has implemented fake item and bot details options for the wiki, I will be redoing things and putting them here in wiki format which also gives me a chance to adjust some details.
+"Fanart/CaptainWinky","Other","Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]].
+This is a work in progress.  The first few item stat cards were done with GIMP and most of the others were then done by hand editing Cog-Minder stat cards and saving them as images.  Since aoemica has implemented fake item and bot details options for the wiki, I will be redoing things and putting them here in wiki format which also gives me a chance to adjust some details.  Item art will be placeholders until all the items are listed.
+[[Heading]]G-11 Fodder[[/Heading]]
 [[GameText]]>Analysis(G-11 Fodder)[[/GameText]]
 [[GameText]]The first of the G-series grunts, this model is no longer in production and the relevant schematics will be moved to the Archives.  The G-11 was intended to be fast and cheap to produce and deploy as a deterrent for unarmed Derelicts.  As a result it has a low-integrity core, low-coverage legs and its weapon is a repurposed low-power fabricator laser.  Existing units still number in the hundreds and are being either scrapped or deployed to the caves where they are sometimes useful as diversions.  Many Derelicts still rely on obsolete signal interpreters or seismic detectors, so they are unable to tell the difference between these bots and more capable models.[[/GameText]]
 [[ItemDetails]]
@@ -1858,8 +1859,7 @@ Name|Lgt. Aluminum Leg||
 Image Name|../part_art/Aluminum Leg.png||
 Type|Leg||
 Slot|Propulsion||
-Rating|0||
-Rating Category|Standard||
+Rating|1||
 Integrity|60||
 Coverage|60||
 Hackable|false||
@@ -1878,8 +1878,7 @@ Image Name|../part_art/Sml. Laser.png||
 Type|Energy Gun||
 Slot|Weapon||
 Mass|1||
-Rating|0||
-Rating Category|Standard||
+Rating|1||
 Integrity|50||
 Coverage|60||
 Range|8||
@@ -1891,7 +1890,160 @@ Delay|0||
 Projectile Count|2||
 Damage|2-3||
 Damage Type|Thermal||
-Salvage|0[[/ItemDetails]]"
+Salvage|0[[/ItemDetails]]
+[[Heading]]L-11 Stabber[[/Heading]]
+[[GameText]]Analysis: ""L-11 Stabber""[[/GameText]]
+[[GameText]]The first dedicated melee robot, this duelist derivative of the grunt class was armed with a small but fast dagger.  Best suited for corner ambushes as its lack of core coverage made open attacks impractical.  A few minor modifications included switching the dagger for a spear and the addition of a low-powered transmission jammer to prevent victims from warning others.  Current duelists are focused on reliability in open combat, but ambush traps ensure that they (along with brawlers) enjoy the benefits of sneak attacks from time to time.[[/GameText]]
+[[ItemDetails]]
+Name|Dagger||
+Image Name|../part_art/Sml. Laser.png||
+Type|Piercing Weapon||
+Slot|Weapon||
+Mass|1||
+Rating|1||
+Integrity|15||
+Coverage|5||
+Hackable|false||
+Shot Energy|2||
+Shot Heat|2||
+Delay|25||
+Damage|12-20||
+Damage Type|Piercing||
+Critical|2% Destroy||
+Salvage|0[[/ItemDetails]]
+[[ItemDetails]]
+Name|Lpw. Transmission Jammer||
+Image Name|../part_art/Exp. Heat Sink.png||
+Type|Device||
+Slot|Utility||
+Mass|1||
+Rating|2||
+Integrity|12||
+Coverage|8||
+Hackable|false||
+Energy Upkeep|1||
+Matter Upkeep|0||
+Heat Generation|0||
+Description|Blocks local transmissions from visible hostiles within a range of 2, making it impossible for them to share information about your current position. Also prevents calls for reinforcements but is incapable of suppressing alarm traps.[[/ItemDetails]]
+[[Heading]]Sublurker[[/Heading]]
+[[GameText]]>Cyclist Record(Sublurker)[[/GameText]]
+[[GameText]]Megaunit here with a sighting of a funny-looking Subdweller in Recycling, of all places.  And this is one Sub who really doesn't want to be seen.  I missed him at first because he has some kind of cloaking device instead of the more common Sub optics, and he uses an EM weapon that I haven't seen before.  He tagged a grunt with a couple of shots and rolled out of sight, letting the slightly corrupted grunt lose track of him instead of going for the kill.  This may be further evidence that Subs aren't as violent as they seem.  My observations ended there because he spotted me and I had to avoid being corrupted so that I could get this entered into the database.[[/GameText]]
+[[ItemDetails]]
+Name|Sub. EM Pulse Gun||
+Image Name|../part_art/Sml. Laser.png||
+Type|Energy Gun||
+Slot|Weapon||
+Mass|4||
+Rating|2||
+Integrity|60||
+Coverage|100||
+Hackable|false||
+Range|14||
+Shot Energy|24||
+Shot Heat|60||
+Damage|14-24||
+Damage Type|Electromagnetic||
+Critical|4% Corrupt||
+Spectrum|Narrow (50)||
+Disruption|2||
+Salvage|+2[[/ItemDetails]]
+[[ItemDetails]]
+Name|Sub. Cloaking Device||
+Image Name|../part_art/Exp. Heat Sink.png||
+Type|Device||
+Slot|Utility||
+Mass|2||
+Rating|2||
+Integrity|40||
+Coverage|40||
+Hackable|false||
+Energy Upkeep|5||
+Matter Upkeep|0||
+Heat Generation|0||
+Description|Effective sight range of robots attempting to spot you reduced by 3. Also -12% chance of being noticed by hostiles if passing through their field of view when not their turn. Subdwellers will not attempt to communicate with the user when active.
+  <half_stack>[[/ItemDetails]]
+[[Heading]]S-02 Bug[[/Heading]]
+[[GameText]]>Analysis(S-02 Bug)[[/GameText]]
+[[GameText]]One of my first robot designs was a small hexapod walker made in mass quantities to spread out and survey the surface.  When I began producing combat bots, I revisited this design and added an assault rifle and light armor.  The Bug's armored shell employs adaptive camouflage while the robot is dormant, enabling it to hide from distant hostiles until it wakes up.  The shell also compensates for the core's inherent weakness to explosive damage.  Bug squads were commonly used as patrols or stationed to guard an open area, but flying swarmers and sentries have replaced them in these roles.  All remaining units have been recalled to garrisons to supplement security positions.  So-called ""garrison divers"" who challenge a seemingly lone sentry might be surprised when three or four nearby Bugs reveal themselves.[[/GameText]]
+[[ItemDetails]]
+Name|Camouflage Shell||
+Image Name|../part_art/Exp. Heat Sink.png||
+Type|Protection||
+Slot|Utility||
+Mass|3||
+Rating|1||
+Integrity|40||
+Coverage|150||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|2||
+Description|Effective sight range of robots attempting to spot you reduced by 4 while dormant. Enables explosive damage resistance: 25%.
+  <no_stack>[[/ItemDetails]]
+[[ItemDetails]]
+Name|Aluminum Hexapod Legs||
+Image Name|../part_art/Aluminum Leg.png||
+Type|Leg||
+Slot|Propulsion||
+Rating|1||
+Integrity|40||
+Coverage|30||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Time Per Move|100||
+Drag|10||
+Energy Per Move|1||
+Heat Per Move|1||
+Support|8||
+Penalty|100[[/ItemDetails]]
+[[Heading]]D-43 Bomber[[/Heading]]
+[[GameText]]>Analysis(D-43 Bomber)[[/GameText]]
+[[GameText]]Sometimes tactical situations require explosive solutions.  The demolisher class was conceived to enable rapid pacification of large Derelict gatherings in the caves.  The D-43 model was armed with a grenade launcher but lacked many of the features that would be standard for future models: no shock absorption system outside of core resistance, a basic targeting computer instead of one optimized for launchers, and regular airjets instead of combat hover.  The initial version of the Bomber was actually equipped with uparmored hover units, but these produced too much heat and offered too little support.  Although the components needed improvement, the overall concept was vindicated by the success of demolishers in large-scale battles, and Derelicts were quick to hack the schematic for their own [Martyr] designs.  Bombers became priority targets whenever they were deployed and none are known to exist today.[[/GameText]]
+[[ItemDetails]]
+Name|Arm. Hover Unit||
+Image Name|../part_art/Aluminum Leg.png||
+Type|Hover Unit||
+Slot|Propulsion||
+Rating|3||
+Integrity|100||
+Coverage|75||
+Hackable|false||
+Energy Upkeep|1||
+Matter Upkeep|0||
+Heat Generation|2||
+Time Per Move|80||
+Mod Per Extra|2||
+Energy Per Move|0.5||
+Heat Per Move|2||
+Support|6||
+Penalty|60||
+Description|An Improved Hover Unit strained to its limit by additional armor.[[/ItemDetails]]
+[[Heading]]H-44 Whirlwind[[/Heading]]
+[[GameText]]>Analysis(H-44 Whirlwind)[[/GameText]]
+[[GameText]]This was the first hunter to enter regular service and does not have the Fly drone interface of the newer models.  The Whirlwind's tracking capabilities are on par with those of the Commando, so the lack of the drone is rarely an issue.  This model's most distinctive feature is an antiquated anti-materiel rifle chosen for its ability to penetrate walls and machinery.  The rifle is quite powerful but also slow to operate.  I decided to give future hunters multiple weapons to enable more efficient volleys and some degree of redundancy if one weapon is destroyed.  A few Whirlwinds still see service in low-threat cave regions where they utilize other combat robots as spotters.[[/GameText]]
+[[ItemDetails]]
+Name|Anti-Materiel Rifle||
+Image Name|../part_art/Sml. Laser.png||
+Type|Ballistic Gun||
+Slot|Weapon||
+Mass|6||
+Rating|3||
+Integrity|130||
+Coverage|110||
+Hackable|false||
+Range|22||
+Shot Energy|2||
+Shot Matter|8||
+Shot Heat|32||
+Recoil|8||
+Delay|50||
+Damage|20-26||
+Damage Type|Kinetic||
+Critical|3% Destroy||
+Penetration|80/20||
+Description|A powerful but bulky and slow-cycling rifle. Good at penetrating walls but matter inefficient and doesn't combine well with other weapons.[[/ItemDetails]]"
 "Fanart/Maiker","Other","[[Fanart]] created by Maiker:
 [[FanartGallery]]fanart/maiker/Behemoth_GJ_was_here.gif|Behemoth + GJ was here|fanart/maiker/Brawler_Bonk.gif|Brawler Bonk|fanart/maiker/Demolisher_Shoot.gif|Demolisher Shoot|fanart/maiker/Disguised_Cogmind.gif|Disguised Cogmind|fanart/maiker/Get_Heavy'ed.gif|Get Heavy'd|fanart/maiker/GOLEM_Full_Loop.gif|GOLEM|fanart/maiker/Grunt_Shoot.gif|Grunt Shoot|fanart/maiker/Hunter_Drone.gif|Hunter Drone|fanart/maiker/luigi_force_ram.gif|LU-1G1's Force Ram|fanart/maiker/Programmer_Shoot.gif|Programmer Shoot|fanart/maiker/Sentry_Shoot.gif|Sentry Shoot[[/FanartGallery]]"
 "Fanart/Radbanker","Other","[[Fanart]] created by Radbanker:
