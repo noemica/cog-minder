@@ -409,14 +409,14 @@ function initEntries(botData: BotData, itemData: ItemData) {
 
     // Need to do a second pass for supergroups that contain other supergroups
     for (const partSupergroupEntry of wiki["Part Supergroups"]) {
-        if (partSupergroupEntry.SuperGroups === undefined) {
+        if (partSupergroupEntry.Supergroups === undefined) {
             continue;
         }
 
         const entry = allEntries.get(partSupergroupEntry.Name)!;
         const groupEntries = entry.extraData as WikiEntry[];
 
-        for (const superGroupName of partSupergroupEntry.SuperGroups) {
+        for (const superGroupName of partSupergroupEntry.Supergroups) {
             const superGroupEntry = allEntries.get(superGroupName);
             if (superGroupEntry === undefined) {
                 console.log(

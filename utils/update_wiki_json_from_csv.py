@@ -73,6 +73,19 @@ for csv_obj in wiki_csv.values():
                     updated = True
                     json_item['Part Category'] = csv_obj['Part Category']
 
+            if csv_obj['Page Type'] == 'Part Supergroup':
+                if 'Parts' in json_item and ','.join(json_item['Parts']) != csv_obj['Parts']:
+                    updated = True
+                    json_item['Parts'] = csv_obj['Parts'].split(',')
+
+                if 'Groups' in json_item and ','.join(json_item['Groups']) != csv_obj['Groups']:
+                    updated = True
+                    json_item['Groups'] = csv_obj['Groups'].split(',')
+
+                if 'Supergroups' in json_item and ','.join(json_item['Supergroups']) != csv_obj['Supergroups']:
+                    updated = True
+                    json_item['Supergroups'] = csv_obj['Supergroups'].split(',')
+
             if updated:
                 updated_pages.append(json_item['Name'])
 

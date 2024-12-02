@@ -90,6 +90,8 @@ for part_group in wiki_json['Part Groups']:
         new_group = {
             'Name': group_name,
             'Page Type': 'Part Group',
+            'Parts': ','.join(part_group['Parts']) if 'Parts' in part_group else '',
+            'Part Category': part_group['Part Category'] if 'Part Category' in part_group else '',
             'Content': part_group['Content'],
             'Spoiler': part_group['Spoiler'] if 'Spoiler' in part_group else '',
         }
@@ -102,6 +104,15 @@ for part_group in wiki_json['Part Supergroups']:
         wiki_csv[group_name]['Content'] = part_group['Content']
         if 'Spoiler' in part_group:
             wiki_csv[group_name]['Spoiler'] = part_group['Spoiler']
+        
+        if 'Parts' in part_group:
+            wiki_csv[group_name]['Parts'] = ','.join(part_group['Parts'])
+
+        if 'Groups' in part_group:
+            wiki_csv[group_name]['Groups'] = ','.join(part_group['Groups'])
+
+        if 'Supergroups' in part_group:
+            wiki_csv[group_name]['Supergroups'] = ','.join(part_group['Supergroups'])
 
         csv_entries.remove(group_name)
     else:
@@ -111,6 +122,9 @@ for part_group in wiki_json['Part Supergroups']:
         new_group = {
             'Name': group_name,
             'Page Type': 'Part Supergroup',
+            'Parts': ','.join(part_group['Parts']) if 'Parts' in part_group else '',
+            'Groups': ','.join(part_group['Groups']) if 'Groups' in part_group else '',
+            'Supergroups': ','.join(part_group['Supergroups']) if 'Supergroups' in part_group else '',
             'Content': part_group['Content'],
             'Spoiler': part_group['Spoiler'] if 'Spoiler' in part_group else '',
         }
@@ -163,7 +177,8 @@ if len(csv_entries) > 0:
 with open(csv_path, 'w', newline='') as f:
     writer = csv.DictWriter(
         f,
-        ['Name', 'Page Type', 'Content', 'Spoiler', 'Bots', 'Part Category', 'Parts'],
+        ['Name', 'Page Type', 'Content', 'Spoiler', 'Bots', 'Part Category',
+         'Parts', 'Groups', 'Supergroups'],
         quoting=csv.QUOTE_ALL, dialect='wiki')
 
     writer.writeheader()
