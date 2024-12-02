@@ -19,8 +19,8 @@ function LinkOrBoldedContent({ activeEntry, entry }: { activeEntry: WikiEntry; e
 }
 
 function InfoboxGroupContent({ activeEntry, childEntries }: { activeEntry: WikiEntry; childEntries: WikiEntry[] }) {
-    return childEntries.map((child, i) => (
-        <li key={i}>
+    return childEntries.map((child) => (
+        <li key={child.name}>
             <LinkOrBoldedContent activeEntry={activeEntry} entry={child} />
         </li>
     ));
@@ -35,13 +35,17 @@ function InfoboxSupergroupContent({
     groupEntry: WikiEntry;
     spoiler: Spoiler;
 }) {
-    return (groupEntry.extraData as WikiEntry[]).map((subgroupEntry, i) => {
+    return (groupEntry.extraData as WikiEntry[]).map((subgroupEntry) => {
         const childEntries = (subgroupEntry.extraData as WikiEntry[]).filter((entry) =>
             canShowSpoiler(entry.spoiler, spoiler),
         );
 
+        if (childEntries.length === 0) {
+            return undefined;
+        }
+
         return (
-            <tr key={i}>
+            <tr key={subgroupEntry.name}>
                 <th>
                     <LinkOrBoldedContent activeEntry={activeEntry} entry={subgroupEntry} />
                 </th>
@@ -137,6 +141,26 @@ function InfoboxTable({
 
     const [show, setShow] = useState(activeEntry === groupEntry || isDescendent(activeEntry, groupEntry));
 
+    function hasVisibleDescendent(entry: WikiEntry) {
+        if (entry.type === "Bot Group" || entry.type === "Part Group" || entry.type === "Part Supergroup") {
+            for (const childEntry of entry.extraData as WikiEntry[]) {
+                if (hasVisibleDescendent(childEntry)) {
+                    return true;
+                }
+            }
+        } else {
+            if (canShowSpoiler(entry.spoiler, spoiler)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    if (!hasVisibleDescendent(groupEntry)) {
+        return undefined;
+    }
+
     return (
         <table className="wiki-group-infobox">
             <tbody>
@@ -186,9 +210,14 @@ export default function WikiGroupInfobox({
                     </tbody>
                 </table>
                 {show &&
-                    (groupEntry.extraData as WikiEntry[]).map((childEntry, i) => {
+                    (groupEntry.extraData as WikiEntry[]).map((childEntry) => {
                         return (
-                            <InfoboxTable key={i} activeEntry={activeEntry} groupEntry={childEntry} spoiler={spoiler} />
+                            <InfoboxTable
+                                key={childEntry.name}
+                                activeEntry={activeEntry}
+                                groupEntry={childEntry}
+                                spoiler={spoiler}
+                            />
                         );
                     })}
             </>

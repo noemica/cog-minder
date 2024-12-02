@@ -87,31 +87,37 @@ function ItemGroupContent({
     groupSelection,
     parsedNode,
     setGroupSelection,
+    spoiler,
 }: {
     entry: WikiEntry;
     groupSelection: string;
     parsedNode: ReactNode;
     setGroupSelection: (selection: string) => void;
+    spoiler: Spoiler;
 }) {
     const itemEntries = entry.extraData as WikiEntry[];
+    const items = useMemo(() => {
+        return itemEntries.filter((itemEntry) => canShowSpoiler(itemEntry.spoiler, spoiler));
+    }, [spoiler]);
 
     const [itemButtons, itemOptions] = useMemo(() => {
-        const itemButtons = itemEntries.map<ExclusiveButtonDefinition<string>>((itemEntry) => {
+        const itemButtons = items.map<ExclusiveButtonDefinition<string>>((itemEntry) => {
             return {
                 value: itemEntry.name,
             };
         });
 
-        const itemOptions = itemEntries.map<SelectOptionType>((itemEntry) => {
+        const itemOptions = items.map<SelectOptionType>((itemEntry) => {
             return {
                 value: itemEntry.name,
             };
         });
 
-        return [itemButtons, itemOptions];
+        return [itemButtons, itemOptions, items];
     }, [entry]);
 
-    const item = (itemEntries.find((entry) => entry.name === groupSelection) || itemEntries[0]).extraData as Item;
+    const item = (items.find((entry) => entry.name === groupSelection) || (items.length > 0 ? items[0] : undefined))
+        ?.extraData as Item;
 
     const itemPicker =
         itemEntries.length < 20 ? (
@@ -141,7 +147,7 @@ function ItemGroupContent({
         <>
             <div className="wiki-infobox">
                 {itemPicker}
-                <ItemDetails item={item} showWikiLink={true} />
+                {item && <ItemDetails item={item} showWikiLink={true} />}
             </div>
             {parsedNode}
         </>
@@ -229,6 +235,7 @@ export default function WikiPageContent({
                     groupSelection={groupSelection}
                     parsedNode={parsedNode}
                     setGroupSelection={setGroupSelection}
+                    spoiler={spoiler}
                 />
             );
 

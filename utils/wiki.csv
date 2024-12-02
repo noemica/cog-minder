@@ -1181,7 +1181,7 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 "Component Analysis Suite","Part","","","","","","",""
 "Component Analysis Suites","Part Group","","","","","Component Analysis Suite,Imp. Component Analysis Suite,Adv. Component Analysis Suite","",""
 "Concussive RPG","Part","","","","","","",""
-"Consumable Alien Artifacts","Part Supergroup","","","","","Dimensional Node Initializer,Core Expander,Core Regenerator,Integrity Redistributor,Integrated Dissipator,Supercharged Integrated Dissipator,Integrated Thermoelectric Network,Integrated Reactor,Supercharged Integrated Reactor,Integrated Mediator,Core Membrane,Navigation Efficiency Matrix,Core Reset Matrix,Subatomic Replicator,Terrabomb,LRC Armor,LRC Energy Well,LRC Matter Compressor,LRC Inertial Stabilizer,LRC Insulator,LRC Storage,Core Physics Calibrator,Personal Teleporter v0.10,Telecube,Spacefold Activator,Microwarp Drive,LC Capacitor","Transdimensional Reconstructors",""
+"Consumable Alien Artifacts","Part Supergroup","","Spoiler","","","Dimensional Node Initializer,Core Expander,Core Regenerator,Integrity Redistributor,Integrated Dissipator,Supercharged Integrated Dissipator,Integrated Thermoelectric Network,Integrated Reactor,Supercharged Integrated Reactor,Integrated Mediator,Core Membrane,Navigation Efficiency Matrix,Core Reset Matrix,Subatomic Replicator,Terrabomb,LRC Armor,LRC Energy Well,LRC Matter Compressor,LRC Inertial Stabilizer,LRC Insulator,LRC Storage,Core Physics Calibrator,Personal Teleporter v0.10,Telecube,Spacefold Activator,Microwarp Drive,LC Capacitor","Transdimensional Reconstructors",""
 "Containment Facilitator","Part","","","","","","",""
 "Coolant Injector","Part","","","","","","",""
 "Coolant Injectors","Part Group","","","","","Disposable Heat Sink,Coolant Injector,Imp. Coolant Injector,Adv. Coolant Injector,Exp. Coolant Injector","",""
@@ -1190,7 +1190,7 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 "Cooling System","Part","","","","","","",""
 "Cooling Utilities","Part Supergroup","","","","","Active Cooling Armor,Mak. Ablative Armor,Mak. Microdissipator Network","Cooling Devices,Coolant Injectors,Cryofiber Webs",""
 "Core Analyzer","Part","","","","","","",""
-"Core Analyzers","Part Group","","","","","Core Analyzer,Exp. Core Analyzer","",""
+"Core Analyzers","Part Group","","","","","Core Analyzer,Exp. Core Analyzer,Asb. Combat Suite","",""
 "Core Cannon","Part","","","","","","",""
 "Core Expander","Part","","","","","","",""
 "Core Membrane","Part","","","","","","",""
@@ -1833,7 +1833,7 @@ The following table showcases possible time periods in between Extermination squ
 [[Image]]Q-Series.png|2 Q-Series coming for Cogmind[[/Image]]
 It is possible for Extermination Programmers to be replaced by 1-2 Q-Series instead. This can occur randomly if Cogmind gets scanned by a [[Researcher]] in [[Testing]] or [[Quarantine]]. These Q-Series have customized and randomized loadouts, but will behave in the same way as regular Extermination squads do. This includes heading straight for Cogmind with perfect tracking, and the ability to be recalled at Terminals.[[/Spoiler]]","","","","","",""
 "F-cell Engine","Part","","","","","","",""
-"Fabrication Devices","Part Group","","","","","Cobbler Unit,Bomb Factory No. 2,Mobile Assembly Unit,Heart of Steel,Scrapoid Pod,GOLEM Unit","",""
+"Fabrication Devices","Part Group","","Spoiler","","","Cobbler Unit,Bomb Factory No. 2,Mobile Assembly Unit,Heart of Steel,Scrapoid Pod,GOLEM Unit","",""
 "Fabricator","Other","Fabricators construct parts and robots based on schematics. [[Schematic|Schematics]] can be acquired by using [[Scanalyzer|Scanalyzers]] or hacking [[Terminal|Terminals]] (see your status page for access to a list of schematics currently in your possession), then loaded into a fabricator which will report the resources it requires to complete construction. Starting another build on a busy fabricator will cancel the current construction. Loading a new schematic and printing it will summon an [[Investigation Squad]], unless you have the appropriate [[Authchips|Authchip]]. [[Image]]../game_sprites/Fabricator.png|Friend Creator[[/Image]]
 
 Building bots will build multiple.
@@ -2365,7 +2365,7 @@ Etc. - Delay between assaults continues to increase by 50 and number of assaults
 The only 2 ways to exit High Security are to trigger [[Sterilization]] after killing enough combat hostiles or to exit the map. Otherwise, an infinite number of Assaults will continue to be dispatched. One unique map [[Command]] has special behavior: [[Redacted]]Since there are a limited number of [[C-30 ARC|ARCs]] on the map, no more assaults will come for Cogmind after they have been depleted. However, the alerts that assaults are dispatched never stop coming.[[/Redacted]]","","","","","",""
 "Homepage","Other","This is a WIP unofficial Cogmind Wiki. Use the page dropdown to go to a specific page. For editing info, check out the [[https://discord.gg/f8Fqv2qQxV|Cog-Minder wiki Discord server]] and make contributions via [[https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/edit?usp=sharing|This Google Spreadsheet]].
 [[Heading]]Useful Pages[[/Heading]]
-[[List]][[Game Mechanics]]|[[Locations]] - Information about all locations in the game|[[Squad]] - All types of robot squads|[[Bot Groups]] - List of bos classes/other groups|[[Acronyms]] - List of common community acronyms|[[Reinforced Walls]] - Reference of reinforced walls across the game|[[Non-empty Pages]] - List of non-empty pages[[/List]]
+[[List]][[Game Mechanics]]|[[Locations]] - Information about all locations in the game|[[Squad]] - All types of robot squads|[[Bot Groups]] - List of bos classes/other groups|[[Acronyms]] - List of common community acronyms|[[Reinforced Walls]] - Reference of reinforced walls across the game|[[Power]]/[[Propulsion]]/[[Utilities]]/[[Weapons]] - List and categorization of all parts of the given slot type|[[Non-empty Pages]] - List of non-empty pages[[/List]]
 [[Heading]]Contributors[[/Heading]]
 [[List]]aoemica|jimmyl|ktur|lyrabold|Perseus|Rocko1345[[/List]]","","","","","",""
 "Hover Unit","Part","","","","","","",""
@@ -3191,7 +3191,7 @@ Lightning squads consist of 3 Lightnings and an [[I-47 Archangel]]. They can be 
 "Phase Gun","Part","","","","","","",""
 "Phase Redirector","Part","","","","","","",""
 "Phase Shifter","Part","","","","","","",""
-"Phase Shifters","Part Group","","","","","Phase Shifter,Imp. Phase Shifter,Adv. Phase Shifter,Exp. Phase Shifter","",""
+"Phase Shifters","Part Group","","","","","Phase Shifter,Imp. Phase Shifter,Adv. Phase Shifter,Exp. Phase Shifter,Asb. Combat Suite","",""
 "Phasers","Part Group","","Spoiler","","Phasers","","",""
 "Phasing AFG","Part","","","","","","",""
 "Phasing Sabre","Part","","","","","","",""
@@ -3907,7 +3907,7 @@ Specialists have no specific weaknesses or immunities, so generally any damage t
 Specialists may appear in the following squads:
 [[List]][[Assault Squad]] - Only if Cogmind has allies|[[Cargo Convoy]] - Within the escorting [[C-30 ARC|ARCs]]|[[Patrol Squad]] - [[Armory]] and [[Garrison|Garrisons]] only|[[Reinforcement Squad]] - only from [[Heavy]]-summoned Reinforcements|[[Security Squad]] - [[Armory]], Garrisons, [[Quarantine]], and [[Testing]] only[[/List]]","","X-57 Shotgunner,X-62 Marksman,X-67 Chaingunner,X-72 Disruptor,X-77 Beamer,X-82 Rainmaker,X-87 Electro","","","",""
 "Spectral Analyzer","Part","","","","","","",""
-"Speed Boosting Utilities","Part Group","","","","","Rocket Booster,Asb. Metafiber Network,Zio. Metafield Generator,ST Field Compressor","",""
+"Speed Boosting Utilities","Part Group","","Spoiler","","","Rocket Booster,Asb. Metafiber Network,Zio. Metafield Generator,ST Field Compressor","",""
 "Spk. Heavy Treads","Part","","","","","","",""
 "Spk. Medium Treads","Part","","","","","","",""
 "Spk. Treads","Part","","","","","","",""
@@ -4114,7 +4114,7 @@ Swarmers may appear in the following squads:
 "Target Analyzers","Part Group","","","","","Target Analyzer,Imp. Target Analyzer,Adv. Target Analyzer,Exp. Target Analyzer","",""
 "Target Drone","Bot","","","","","","",""
 "Targeting Computer","Part","","","","","","",""
-"Targeting Computers","Part Group","","","","","Targeting Computer,Imp. Targeting Computer,Mak. Targeting Computer,Adv. Targeting Computer,Exp. Targeting Computer,Tactical Coordination Suite,Weapon Mount,Multitargeting Array","",""
+"Targeting Computers","Part Group","","","","","Targeting Computer,Imp. Targeting Computer,Mak. Targeting Computer,Adv. Targeting Computer,Exp. Targeting Computer,Tactical Coordination Suite,Weapon Mount,Multitargeting Array,Asb. Combat Suite","",""
 "Tearclaws","Part","","","","","","",""
 "Tech Extrapolator","Part","The Tech Extrapolator is an item associated with the [[United Federation of Derelicts]], used by [[Scientist|Scientists]] to develop new parts. While attached, it can produce part schematics based on items that are seen on the ground or attached to other bots. Parts must be identified by Cogmind, but once they have been seen they can not be forgotten by the Tech Extrapolator, even if Cogmind forgets due to corruption or use of a [[Core Reset Matrix]].
 [[Heading]]Obtaining[[/Heading]]

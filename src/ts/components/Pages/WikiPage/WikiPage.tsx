@@ -336,6 +336,13 @@ function initEntries(botData: BotData, itemData: ItemData) {
     }
 
     for (const partSupergroupEntry of wiki["Part Supergroups"]) {
+        let spoiler: Spoiler = "None";
+        if (partSupergroupEntry.Spoiler === "Redacted") {
+            spoiler = "Redacted";
+        } else if (partSupergroupEntry.Spoiler === "Spoiler") {
+            spoiler = "Spoiler";
+        }
+
         const groupEntries: WikiEntry[] = [];
         const entry: WikiEntry = {
             alternativeNames: [],
@@ -343,7 +350,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
             extraData: groupEntries,
             name: partSupergroupEntry.Name,
             parentEntries: [],
-            spoiler: "None",
+            spoiler: spoiler,
             type: "Part Supergroup",
         };
         addEntry(entry);

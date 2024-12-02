@@ -6305,7 +6305,8 @@
    "Name": "Core Analyzers",
    "Parts": [
     "Core Analyzer",
-    "Exp. Core Analyzer"
+    "Exp. Core Analyzer",
+    "Asb. Combat Suite"
    ],
    "Content": ""
   },
@@ -6445,7 +6446,8 @@
     "Scrapoid Pod",
     "GOLEM Unit"
    ],
-   "Content": ""
+   "Content": "",
+   "Spoiler": "Spoiler"
   },
   {
    "Name": "Field Recycling Units",
@@ -6638,7 +6640,8 @@
     "Phase Shifter",
     "Imp. Phase Shifter",
     "Adv. Phase Shifter",
-    "Exp. Phase Shifter"
+    "Exp. Phase Shifter",
+    "Asb. Combat Suite"
    ],
    "Content": ""
   },
@@ -6893,7 +6896,8 @@
     "Zio. Metafield Generator",
     "ST Field Compressor"
    ],
-   "Content": ""
+   "Content": "",
+   "Spoiler": "Spoiler"
   },
   {
    "Name": "Stasis Beams",
@@ -6960,7 +6964,8 @@
     "Exp. Targeting Computer",
     "Tactical Coordination Suite",
     "Weapon Mount",
-    "Multitargeting Array"
+    "Multitargeting Array",
+    "Asb. Combat Suite"
    ],
    "Content": ""
   },
@@ -7251,6 +7256,7 @@
     "Microwarp Drive",
     "LC Capacitor"
    ],
+   "Spoiler": "Spoiler",
    "Content": ""
   },
   {
@@ -8870,7 +8876,7 @@
   },
   {
    "Name": "Homepage",
-   "Content": "This is a WIP unofficial Cogmind Wiki. Use the page dropdown to go to a specific page. For editing info, check out the [[https://discord.gg/f8Fqv2qQxV|Cog-Minder wiki Discord server]] and make contributions via [[https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/edit?usp=sharing|This Google Spreadsheet]].\n[[Heading]]Useful Pages[[/Heading]]\n[[List]][[Game Mechanics]]|[[Locations]] - Information about all locations in the game|[[Squad]] - All types of robot squads|[[Bot Groups]] - List of bos classes/other groups|[[Acronyms]] - List of common community acronyms|[[Reinforced Walls]] - Reference of reinforced walls across the game|[[Non-empty Pages]] - List of non-empty pages[[/List]]\n[[Heading]]Contributors[[/Heading]]\n[[List]]aoemica|jimmyl|ktur|lyrabold|Perseus|Rocko1345[[/List]]"
+   "Content": "This is a WIP unofficial Cogmind Wiki. Use the page dropdown to go to a specific page. For editing info, check out the [[https://discord.gg/f8Fqv2qQxV|Cog-Minder wiki Discord server]] and make contributions via [[https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/edit?usp=sharing|This Google Spreadsheet]].\n[[Heading]]Useful Pages[[/Heading]]\n[[List]][[Game Mechanics]]|[[Locations]] - Information about all locations in the game|[[Squad]] - All types of robot squads|[[Bot Groups]] - List of bos classes/other groups|[[Acronyms]] - List of common community acronyms|[[Reinforced Walls]] - Reference of reinforced walls across the game|[[Power]]/[[Propulsion]]/[[Utilities]]/[[Weapons]] - List and categorization of all parts of the given slot type|[[Non-empty Pages]] - List of non-empty pages[[/List]]\n[[Heading]]Contributors[[/Heading]]\n[[List]]aoemica|jimmyl|ktur|lyrabold|Perseus|Rocko1345[[/List]]"
   },
   {
    "Name": "Imprint",
