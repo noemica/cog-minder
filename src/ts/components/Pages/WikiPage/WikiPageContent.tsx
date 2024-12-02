@@ -97,7 +97,13 @@ function ItemGroupContent({
 }) {
     const itemEntries = entry.extraData as WikiEntry[];
     const items = useMemo(() => {
-        return itemEntries.filter((itemEntry) => canShowSpoiler(itemEntry.spoiler, spoiler));
+        // Filter out items based on spoiler setting
+        // However, also support viewing all items past spoiler level if the user
+        // opted past the spoiler block page
+        return itemEntries.filter(
+            (itemEntry) =>
+                canShowSpoiler(itemEntry.spoiler, spoiler) || canShowSpoiler(entry.spoiler, itemEntry.spoiler),
+        );
     }, [spoiler]);
 
     const [itemButtons, itemOptions] = useMemo(() => {
