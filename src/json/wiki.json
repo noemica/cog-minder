@@ -7213,8 +7213,7 @@
     "Scrap Shield",
     "Enh. Scrap Shield",
     "Tower Shield",
-    "Vmp. Brace Plating",
-    "Phase Armor"
+    "Vmp. Brace Plating"
    ],
    "Content": ""
   },
@@ -7262,6 +7261,7 @@
     "Cryofiber Webs"
    ],
    "Parts": [
+    "Active Cooling Armor",
     "Mak. Ablative Armor",
     "Mak. Microdissipator Network"
    ],
@@ -7551,7 +7551,8 @@
     "AS-neutralizer No. 17b",
     "V3-11A's Pendant",
     "Amulet of Y3-NDR",
-    "Chronowheel"
+    "Chronowheel",
+    "Phase Armor"
    ],
    "Content": ""
   },
