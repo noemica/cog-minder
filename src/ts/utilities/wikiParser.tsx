@@ -4,7 +4,7 @@ import lore from "../../json/lore.json";
 import BotDetails from "../components/GameDetails/BotDetails";
 import ItemDetails from "../components/GameDetails/ItemDetails";
 import { LinkIcon } from "../components/Icons/Icons";
-import WikiGroupInfobox from "../components/Pages/WikiPage/WikiGroupInfobox";
+import WikiGroupInfobox from "../components/Pages/WikiPage/WikiGroupNavbox";
 import WikiTableOfContents, { WikiHeadingState } from "../components/Pages/WikiPage/WikiTableOfContents";
 import { BotLink, ItemLink, LocationLink } from "../components/Pages/WikiPage/WikiTooltips";
 import { Bot, BotPart } from "../types/botTypes";
