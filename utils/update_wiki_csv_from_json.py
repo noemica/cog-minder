@@ -38,6 +38,7 @@ for bot_group in wiki_json['Bot Groups']:
     group_name = bot_group['Name']
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Bot Group'
+        wiki_csv[group_name]['Bots'] = ','.join(bot_group['Bots'])
         wiki_csv[group_name]['Content'] = bot_group['Content']
         if 'Spoiler' in bot_group:
             wiki_csv[group_name]['Spoiler'] = bot_group['Spoiler']
@@ -47,6 +48,7 @@ for bot_group in wiki_json['Bot Groups']:
         new_group = {
             'Name': group_name,
             'Page Type': 'Bot Group',
+            'Bots': ','.join(bot_group['Bots']),
             'Content': bot_group['Content'],
             'Spoiler': bot_group['Spoiler'] if 'Spoiler' in bot_group else '',
         }
@@ -153,7 +155,7 @@ if len(csv_entries) > 0:
 
 # Write out updated csv
 with open(csv_path, 'w', newline='') as f:
-    writer = csv.DictWriter(f, ['Name', 'Page Type', 'Content', 'Spoiler'], quoting=csv.QUOTE_ALL, dialect='wiki')
+    writer = csv.DictWriter(f, ['Name', 'Page Type', 'Content', 'Spoiler', 'Bots'], quoting=csv.QUOTE_ALL, dialect='wiki')
 
     writer.writeheader()
     sorted_names = sorted(wiki_csv.keys())

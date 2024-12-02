@@ -49,14 +49,23 @@ for csv_obj in wiki_csv.values():
     found = False
     for json_item in json_list:
         if json_item['Name'] == csv_obj['Name']:
-            # Found existing item, update content
+            # Found existing item, update values
+            updated = False
             if json_item['Content'] != csv_obj['Content']:
-                updated_pages.append(json_item['Name'])
+                updated = True
                 json_item['Content'] = csv_obj['Content']
 
             if 'Spoiler' in json_item and json_item['Spoiler'] != csv_obj['Spoiler']:
-                updated_pages.append(json_item['Name'])
+                updated = True
                 json_item['Spoiler'] = csv_obj['Spoiler']
+
+            if csv_obj['Page Type'] == 'Bot Group' and 'Bots' in json_item and \
+                ','.join(json_item['Bots']) != csv_obj['Bots']:
+                updated = True
+                json_item['Bots'] = csv_obj['Bots'].split(',')
+
+            if updated:
+                updated_pages.append(json_item['Name'])
 
             found = True
             break
