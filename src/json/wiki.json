@@ -2783,7 +2783,7 @@
   {
    "Name": "Encrypted Comm Array",
    "Content": "The Encrypted Comm Array, or ECA, is a [[Warlord]]-aligned item that enables summoning various groups of [[Derelict]] allies on main [[0b10]] floors. It can be obtained by performing any of the actions that increase the ECA force multiplier listed below. After this, a Derelict will appear in the next [[Caves]] map and deliver the Array, give some more details on its usage, and reveal the depth of [[Warlord (Location)]]. The ECA cannot be used if Cogmind has been [[Imprint|Imprinted]] or made use of a [[RIF|RIF installer]], as these alignments are mutually exclusive with Warlord.\n[[Heading]]Summoning squads[[/Heading]]\nEquipping the ECA on any main 0b10 floor will reveal up to 8 squads available for summoning. Each time a squad is summoned, the force multiplier is decreased by 0.01. Moving over one of the squad indicators on the map will summon several white colored [[Alert]]-free allies that will follow Cogmind around the map, but will not follow to any other maps. These bots also do not gain trap location knowledge from Cogmind like purple or blue allies, so they may move over known traps. The squads do not get stronger as depth increases, so they have less utility in late [[Factory]] and [[Research]] depths. All squads have a chance of containing a [[Surgeon]] that will repair any allied bots as well as Cogmind. The available squads are:\n[[List]]Chimera Squad: [[Mutant|Mutants]]|Dakka Squad: [[Wasp|Wasps]]|Muscle Squad: [[Butcher|Butchers]] and [[Savage|Savages]]|Geek Squad: [[Wizard|Wizards]]|Ghost Squad: [[Infiltrator|Infiltrators]]|Infantry Squad: [[Thug|Thugs]]|Pyro Squad: [[Fireman|Firemen]]|Ranger Squad: [[Guerrilla|Guerrillas]][[/List]]\nIf Cogmind meets Warlord at his base, the squad summoning and force multiplier reporting mechanics stop functioning, and there is no point to hold onto the ECA any longer.\n[[Heading]]Force multiplier[[/Heading]]\nThe ECA brings an additional mechanic to Warlord alignment called the force multiplier. This value is reported every time Cogmind enters a new main 0b10 depth. The force multiplier affects several things:\n[[List]]The total number of squads available to summon per map. This starts at 0 squads at a 1.00 force multiplier and caps at 8 at 1.08.|Special guard squads in the -2 [[Research]] Warlord assault event. Based on the performance tier, more bots and stronger squads can be summoned to aid Cogmind during the assault.|-1 [[Access]] spillover forces: In Access, additional Warlord forces will appear at the entrance to the map. More squads will appear with a higher force multiplier.|[[Redacted]]The [[Command]] seals will summon more and stronger bots based on the overall force multiplier.[[/Redacted]][[/List]]\nThe force multiplier tiers are as follows:\n[[List]]D: 1.00 - 1.09|C: 1.10 - 1.19|B: 1.20 - 1.29|A: 1.30 - 1.39|S: 1.40+[[/List]]\nThe following are the ways that the force multiplier can be modified:\n[[Table]]Method|Effect||Sterilizing a DSF|+ 0.10||Garrison interior compromised (once per Garrison)|+ 0.02||Destroying a RIF installer|+ 0.02||Destroying a Garrison Relay|+ 0.01||Destroying a Phase Generator|+ 0.01||Summoning an ECA squad|- 0.01||Ascending a depth|- 0.01[[/Table]]\n[[Heading]]Additional abilities[[/Heading]]\nThe ECA has a unique ability that interacts with [[Heavy]]-summoned [[Reinforcement Squad|Reinforcement Squads]]. Occasionally, [[Specialist|Specialists]] summoned by the Heavy will reveal themselves to be [[Infiltrator|Infiltrators]] in disguise and turn friendly to Cogmind.\n[[Heading]]Post-Warlord RIF[[/Heading]]\nIt is possible to install RIF after meeting Warlord. Warlord and his forces will not turn against Cogmind at this point, as they can only detect RIF inside of the Warlord base. However, doing so will lose some of the benefits. The -2 special guards will not appear based on the force multiplier. [[Redacted]]Additionally, fewer squads will be dispatched to follow Cogmind around from the Command seals. However, the seals will still have a higher number and more powerful bots based on the force multiplier as usual.[[/Redacted]]",
-   "Spoiler": "Spoiler"
+   "Spoiler": ""
   },
   {
    "Name": "Energy Deflector",
@@ -7219,19 +7219,6 @@
    "Content": ""
   },
   {
-   "Name": "Cooling Utilities",
-   "Groups": [
-    "Cooling Devices",
-    "Coolant Injectors",
-    "Cryofiber Webs"
-   ],
-   "Parts": [
-    "Mak. Ablative Armor",
-    "Mak. Microdissipator Network"
-   ],
-   "Content": ""
-  },
-  {
    "Name": "Consumable Alien Artifacts",
    "Groups": [
     "Transdimensional Reconstructors"
@@ -7264,6 +7251,19 @@
     "Spacefold Activator",
     "Microwarp Drive",
     "LC Capacitor"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Cooling Utilities",
+   "Groups": [
+    "Cooling Devices",
+    "Coolant Injectors",
+    "Cryofiber Webs"
+   ],
+   "Parts": [
+    "Mak. Ablative Armor",
+    "Mak. Microdissipator Network"
    ],
    "Content": ""
   },

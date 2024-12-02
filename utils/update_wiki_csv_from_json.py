@@ -39,12 +39,16 @@ for bot_group in wiki_json['Bot Groups']:
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Bot Group'
         wiki_csv[group_name]['Content'] = bot_group['Content']
+        if 'Spoiler' in bot_group:
+            wiki_csv[group_name]['Spoiler'] = bot_group['Spoiler']
+
         csv_entries.remove(group_name)
     else:
         new_group = {
             'Name': group_name,
             'Page Type': 'Bot Group',
-            'Content': bot_group['Content']
+            'Content': bot_group['Content'],
+            'Spoiler': bot_group['Spoiler'] if 'Spoiler' in bot_group else '',
         }
         wiki_csv[group_name] = new_group
 
@@ -67,6 +71,9 @@ for part_group in wiki_json['Part Groups']:
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Part Group'
         wiki_csv[group_name]['Content'] = part_group['Content']
+        if 'Spoiler' in part_group:
+            wiki_csv[group_name]['Spoiler'] = part_group['Spoiler']
+
         csv_entries.remove(group_name)
     else:
         if 'Content' not in part_group:
@@ -75,7 +82,8 @@ for part_group in wiki_json['Part Groups']:
         new_group = {
             'Name': group_name,
             'Page Type': 'Part Group',
-            'Content': part_group['Content']
+            'Content': part_group['Content'],
+            'Spoiler': part_group['Spoiler'] if 'Spoiler' in part_group else '',
         }
         wiki_csv[group_name] = new_group
 
@@ -84,6 +92,9 @@ for part_group in wiki_json['Part Supergroups']:
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Part Supergroup'
         wiki_csv[group_name]['Content'] = part_group['Content']
+        if 'Spoiler' in part_group:
+            wiki_csv[group_name]['Spoiler'] = part_group['Spoiler']
+
         csv_entries.remove(group_name)
     else:
         if 'Content' not in part_group:
@@ -92,7 +103,8 @@ for part_group in wiki_json['Part Supergroups']:
         new_group = {
             'Name': group_name,
             'Page Type': 'Part Supergroup',
-            'Content': part_group['Content']
+            'Content': part_group['Content'],
+            'Spoiler': part_group['Spoiler'] if 'Spoiler' in part_group else '',
         }
         wiki_csv[group_name] = new_group
 
@@ -101,12 +113,16 @@ for location in wiki_json['Locations']:
     if location_name in wiki_csv:
         wiki_csv[location_name]['Page Type'] = 'Location'
         wiki_csv[location_name]['Content'] = location['Content']
+        if 'Spoiler' in location:
+            wiki_csv[location_name]['Spoiler'] = location['Spoiler']
+
         csv_entries.remove(location_name)
     else:
         new_location = {
             'Name': location_name,
             'Page Type': 'Location',
-            'Content': location['Content']
+            'Content': location['Content'],
+            'Spoiler': location['Spoiler'] if 'Spoiler' in location else '',
         }
         wiki_csv[location_name] = new_location
 
@@ -115,12 +131,16 @@ for other in wiki_json['Other']:
     if other_name in wiki_csv:
         wiki_csv[other_name]['Page Type'] = 'Other'
         wiki_csv[other_name]['Content'] = other['Content']
+        if 'Spoiler' in other:
+            wiki_csv[other_name]['Spoiler'] = other['Spoiler']
+
         csv_entries.remove(other_name)
     else:
         new_other = {
             'Name': other_name,
             'Page Type': 'Other',
-            'Content': other['Content']
+            'Content': other['Content'],
+            'Spoiler': other['Spoiler'] if 'Spoiler' in other else '',
         }
         wiki_csv[other_name] = new_other
 
@@ -133,7 +153,7 @@ if len(csv_entries) > 0:
 
 # Write out updated csv
 with open(csv_path, 'w', newline='') as f:
-    writer = csv.DictWriter(f, ['Name', 'Page Type', 'Content'], quoting=csv.QUOTE_ALL, dialect='wiki')
+    writer = csv.DictWriter(f, ['Name', 'Page Type', 'Content', 'Spoiler'], quoting=csv.QUOTE_ALL, dialect='wiki')
 
     writer.writeheader()
     sorted_names = sorted(wiki_csv.keys())

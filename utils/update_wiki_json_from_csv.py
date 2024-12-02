@@ -54,6 +54,10 @@ for csv_obj in wiki_csv.values():
                 updated_pages.append(json_item['Name'])
                 json_item['Content'] = csv_obj['Content']
 
+            if 'Spoiler' in json_item and json_item['Spoiler'] != csv_obj['Spoiler']:
+                updated_pages.append(json_item['Name'])
+                json_item['Spoiler'] = csv_obj['Spoiler']
+
             found = True
             break
 
@@ -70,7 +74,8 @@ for csv_obj in wiki_csv.values():
 
 # Sort all lists
 lists = [wiki_json['Bots'], wiki_json['Bot Groups'], wiki_json['Parts'],
-         wiki_json['Part Groups'], wiki_json['Locations'], wiki_json['Other']]
+         wiki_json['Part Groups'], wiki_json['Part Supergroups'],
+         wiki_json['Locations'], wiki_json['Other']]
 for l in lists:
     l.sort(key=lambda x: x['Name'])
 
