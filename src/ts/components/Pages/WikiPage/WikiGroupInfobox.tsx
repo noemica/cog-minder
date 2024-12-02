@@ -165,7 +165,7 @@ export default function WikiGroupInfobox({
     spoiler: Spoiler;
 }) {
     // Default to showing the top level always
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(activeEntry === groupEntry);
 
     if (groupEntry.hasSupergroupChildren) {
         return (
