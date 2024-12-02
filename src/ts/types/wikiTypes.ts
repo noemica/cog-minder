@@ -9,7 +9,7 @@ export type WikiEntry = {
     fakeGroup?: boolean;
     hasSupergroupChildren?: boolean;
     name: string;
-    parentGroups: WikiEntry[];
+    parentEntries: WikiEntry[];
     spoiler: Spoiler;
     type: EntryType;
 };

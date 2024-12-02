@@ -132,7 +132,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
             content: botEntry.Content,
             extraData: bot,
             name: botEntry.Name,
-            parentGroups: [],
+            parentEntries: [],
             spoiler: bot.spoiler,
             type: "Bot",
         });
@@ -153,7 +153,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
             content: botGroupEntry.Content ?? "",
             extraData: botEntries,
             name: botGroupEntry.Name,
-            parentGroups: [],
+            parentEntries: [],
             spoiler: spoiler,
             type: "Bot Group",
         };
@@ -173,7 +173,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
             }
 
             // Add to the bot's parent groups
-            botEntry.parentGroups.push(entry);
+            botEntry.parentEntries.push(entry);
             botEntries.push(botEntry);
         }
     }
@@ -230,7 +230,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
             content: locationEntry.Content,
             extraData: location,
             name: locationEntry.Name,
-            parentGroups: [],
+            parentEntries: [],
             spoiler: spoiler,
             type: "Location",
         };
@@ -272,7 +272,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
             content: partEntry.Content,
             extraData: part,
             name: partEntry.Name,
-            parentGroups: [],
+            parentEntries: [],
             spoiler: spoiler,
             type: "Part",
         });
@@ -293,7 +293,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
             content: partGroupEntry.Content ?? "",
             extraData: partEntries,
             name: partGroupEntry.Name,
-            parentGroups: [],
+            parentEntries: [],
             spoiler: spoiler,
             type: "Part Group",
         };
@@ -323,7 +323,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
             }
 
             // Set the part's parent group to point to this
-            partEntry.parentGroups.push(entry);
+            partEntry.parentEntries.push(entry);
             partEntries.push(partEntry);
         }
 
@@ -342,27 +342,29 @@ function initEntries(botData: BotData, itemData: ItemData) {
             content: partSupergroupEntry.Content ?? "",
             extraData: groupEntries,
             name: partSupergroupEntry.Name,
-            parentGroups: [],
+            parentEntries: [],
             spoiler: "None",
             type: "Part Supergroup",
         };
         addEntry(entry);
 
-        for (const groupName of partSupergroupEntry.Groups) {
-            const groupEntry = allEntries.get(groupName);
-            if (groupEntry === undefined) {
-                console.log(`Found bad part group name ${groupName} in group ${entry.name}`);
-                continue;
-            }
+        if (partSupergroupEntry.Groups !== undefined) {
+            for (const groupName of partSupergroupEntry.Groups) {
+                const groupEntry = allEntries.get(groupName);
+                if (groupEntry === undefined) {
+                    console.log(`Found bad part group name ${groupName} in group ${entry.name}`);
+                    continue;
+                }
 
-            if (groupEntry.type !== "Part Group") {
-                console.log(`Found non-group ${groupName} in part group ${entry.name}`);
-                continue;
-            }
+                if (groupEntry.type !== "Part Group") {
+                    console.log(`Found non-group ${groupName} in part group ${entry.name}`);
+                    continue;
+                }
 
-            // Set the part's parent group to point to this
-            groupEntry.parentGroups.push(entry);
-            groupEntries.push(groupEntry);
+                // Set the part's parent group to point to this
+                groupEntry.parentEntries.push(entry);
+                groupEntries.push(groupEntry);
+            }
         }
 
         if (partSupergroupEntry.Parts !== undefined) {
@@ -381,7 +383,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
                 }
 
                 // Set the part's parent group to point to this
-                partEntry.parentGroups.push(entry);
+                partEntry.parentEntries.push(entry);
                 partEntries.push(partEntry);
             }
 
@@ -398,13 +400,27 @@ function initEntries(botData: BotData, itemData: ItemData) {
                     content: "",
                     fakeGroup: true,
                     name: "Other",
-                    parentGroups: [],
+                    parentEntries: [],
                     spoiler: "None",
                     type: "Part Group",
                     extraData: partEntries,
                 });
             }
         }
+    }
+
+    function isEntryAncestor(entry: WikiEntry, parentEntry: WikiEntry) {
+        if (entry === parentEntry) {
+            return true;
+        }
+
+        for (const grandparentEntry of parentEntry.parentEntries) {
+            if (isEntryAncestor(entry, grandparentEntry)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     // Need to do a second pass for supergroups that contain other supergroups
@@ -432,9 +448,13 @@ function initEntries(botData: BotData, itemData: ItemData) {
 
             entry.hasSupergroupChildren = true;
 
-            // Set the part's parent group to point to this
-            superGroupEntry.parentGroups.push(entry);
-            groupEntries.push(superGroupEntry);
+            if (isEntryAncestor(superGroupEntry, entry)) {
+                console.log(`Found recursion with part supergroups ${entry.name} and ${superGroupEntry.name}`);
+            } else {
+                // Set the part's parent group to point to this
+                superGroupEntry.parentEntries.push(entry);
+                groupEntries.push(superGroupEntry);
+            }
         }
 
         groupEntries.sort((entry1, entry2) => entry1.name.localeCompare(entry2.name));
@@ -453,7 +473,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
             alternativeNames: otherEntry.AlternateNames ?? [],
             content: otherEntry.Content,
             name: otherEntry.Name,
-            parentGroups: [],
+            parentEntries: [],
             type: "Other",
             spoiler: spoiler,
         };

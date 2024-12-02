@@ -403,12 +403,12 @@ export function parseEntryContent(
 
     let groupNodes: ReactNode[] = [];
 
-    if (entry.parentGroups.length > 0) {
+    if (entry.parentEntries.length > 0) {
         const ancestorEntries = new Set<WikiEntry>();
 
         function addAncestors(entry: WikiEntry) {
-            for (const parent of entry.parentGroups.values()) {
-                if (parent.parentGroups.length === 0) {
+            for (const parent of entry.parentEntries.values()) {
+                if (parent.parentEntries.length === 0) {
                     ancestorEntries.add(parent);
                 } else {
                     addAncestors(parent);
@@ -745,7 +745,7 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
         // Get list of images to display
         const images = new Set<string>();
         for (const entry of state.allEntries.values()) {
-            if (entry.parentGroups?.includes(groupEntry)) {
+            if (entry.parentEntries?.includes(groupEntry)) {
                 const bot = state.botData.getBot(entry.name);
                 images.add(getLargeBotImageName(bot));
             }
