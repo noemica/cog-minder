@@ -3,7 +3,7 @@ import { Link } from "wouter";
 
 import { Spoiler } from "../../../types/commonTypes";
 import { WikiEntry } from "../../../types/wikiTypes";
-import { canShowSpoiler } from "../../../utilities/common";
+import { canShowSpoiler, getLinkSafeString } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
 
 import "./WikiPage.less";
@@ -14,7 +14,7 @@ function LinkOrBoldedContent({ activeEntry, entry }: { activeEntry: WikiEntry; e
     } else if (entry.fakeGroup) {
         return <span>{entry.name}</span>;
     } else {
-        return <Link href={`/${entry.name}`}>{entry.name}</Link>;
+        return <Link href={`/${getLinkSafeString(entry.name)}`}>{entry.name}</Link>;
     }
 }
 
