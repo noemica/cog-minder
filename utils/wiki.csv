@@ -2053,7 +2053,70 @@ Damage|20-26||
 Damage Type|Kinetic||
 Critical|3% Destroy||
 Penetration|80/20||
-Description|A powerful but bulky and slow-cycling rifle. Good at penetrating walls but matter inefficient and doesn't combine well with other weapons.[[/ItemDetails]]","","","","","",""
+Description|A powerful but bulky and slow-cycling rifle. Good at penetrating walls but matter inefficient and doesn't combine well with other weapons.[[/ItemDetails]]
+[[Heading]]Light Variants[[/Heading]]
+[[GameText]]Record(Light Variants)[[/GameText]]
+[[GameText]]I was forced to reconsider my earlier evaluation of the Spawner after capturing one intact and bringing it to Testing.  While I could easily come up with a better portable fab unit, the Spawner Unit is capable of producing more advanced bots if given additional build time.  There is still no sign of where these originated, but I can now rule out Warlord and the Developers who would have come up with better schematics.  I have already come up with some new robot designs that have been successfully produced by the Spawner as well as my standard swarmers and cutters.  Instead of simply destroying the remaining Spawners I now intend to send Programmers with heavy escorts to capture them, hide them in isolated cave sectors, and have them build small armies of my own designs.  This would help me establish total control over the 0b1 outskirts while keeping most of my regular forces concentrated in and near 0b10.  Perhaps this would be a good opportunity to activate ""PP"" and let it take point on the mission.[[/GameText]]
+[[BotDetails]]Name|Recruit||
+Class|Grunt||
+Size|Medium||
+Profile|RD5X5||
+Rating|20||
+Tier|5||
+Threat|2||
+Value|50||
+Energy Generation|40||
+Heat Dissipation|35||
+Visual Range|16||
+Memory|20||
+Spot Percent|20||
+Movement|Walking (120/83%)||
+Core Integrity|35||
+Core Exposure|40||
+Salvage Potential|50~70||
+Description|A fairly capable dual-weapon light grunt with a cooled plasma rifle as primary weapon and the Derelict pulse pistol for close-range backup.  I saved on mass by using only internal power generation as well as light carbon-fiber legs, a part which I had designed cycles ago but archived unused until now.||
+Armament|Cld. Plasma Rifle|1|Pulse Pistol|1||
+Components|Lgt. Carbon-Fiber Leg|2|Adv. Heat Sink|1[[/BotDetails]]
+[[BotDetails]]Name|Stalker||
+Class|Hunter||
+Size|Medium||
+Profile|RD5X5||
+Rating|31||
+Tier|5||
+Threat|2||
+Value|50||
+Energy Generation|20||
+Heat Dissipation|35||
+Visual Range|16||
+Memory|60||
+Spot Percent|50||
+Movement|Walking (120/83%)||
+Core Integrity|40||
+Core Exposure|40||
+Salvage Potential|60~80||
+Description|This light hunter uses a pair of compact gauss rifles and new light legs.  Has no built-in drone but should be more than capable of hunting and killing Spawned Derelicts.||
+Armament|Com. Gauss Rifle|2||
+Components|Lgt. Deuterium Engine|1|Lgt. Flexi-Carbon Leg|2|Adv. Targeting Computer|1|Reaction Control System|1[[/BotDetails]]
+[[BotDetails]]Name|Gremlin||
+Class|Swarmer||
+Size|Small||
+Profile|SQ3X3||
+Rating|42||
+Tier|6||
+Threat|3||
+Value|60||
+Energy Generation|40||
+Heat Dissipation|40||
+Visual Range|16||
+Memory|40||
+Spot Percent|30||
+Movement|Flying (34/294%)||
+Core Integrity|30||
+Core Exposure|60||
+Salvage Potential|30~40||
+Description|The Gremlin is a previously unused prototype that was easily adapted to the Spawner Unit.  Something of a cross between a swarmer and programmer, its hacking capabilities are limited but it should be able to directly hack Spawned Derelicts and rapidly rewire most other robots that it successfully disrupts.||
+Armament|Imp. Arc Projector|1|Adv. Remote Datajack|1||
+Components|Mic. Fission Core|1|Biomechanical Wings|3|Core Analyzer|1[[/BotDetails]]","","","","","",""
 "Fanart/Maiker","Other","[[Fanart]] created by Maiker:
 [[FanartGallery]]fanart/maiker/Behemoth_GJ_was_here.gif|Behemoth + GJ was here|fanart/maiker/Brawler_Bonk.gif|Brawler Bonk|fanart/maiker/Demolisher_Shoot.gif|Demolisher Shoot|fanart/maiker/Disguised_Cogmind.gif|Disguised Cogmind|fanart/maiker/Get_Heavy'ed.gif|Get Heavy'd|fanart/maiker/GOLEM_Full_Loop.gif|GOLEM|fanart/maiker/Grunt_Shoot.gif|Grunt Shoot|fanart/maiker/Hunter_Drone.gif|Hunter Drone|fanart/maiker/luigi_force_ram.gif|LU-1G1's Force Ram|fanart/maiker/Programmer_Shoot.gif|Programmer Shoot|fanart/maiker/Sentry_Shoot.gif|Sentry Shoot[[/FanartGallery]]","","","","","",""
 "Fanart/Radbanker","Other","[[Fanart]] created by Radbanker:
