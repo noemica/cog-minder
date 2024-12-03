@@ -223,6 +223,7 @@ expansions = {
     'Med.': 'Medium',
     'Mic.': 'Micro',
     'Mni.': 'Mini',
+    'Ovr.': 'Overtuned',
     'Prc.': 'Precision',
     'Rnf.': 'Reinforced',
     'Sml.': 'Small',
