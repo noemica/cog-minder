@@ -5755,7 +5755,7 @@
   },
   {
    "Name": "Tech Extrapolator",
-   "Content": "The Tech Extrapolator is an item associated with the [[United Federation of Derelicts]], used by [[Scientist|Scientists]] to develop new parts. While attached, it can produce part schematics based on items that are seen on the ground or attached to other bots. Parts must be identified by Cogmind, but once they have been seen they can not be forgotten by the Tech Extrapolator, even if Cogmind forgets due to corruption or use of a [[Core Reset Matrix]].\n[[Heading]]Obtaining[[/Heading]]\nThe Tech Extrapolator can be obtained by one of two methods:\n[[List]][[SUBCON Basin]] delivery: A filled SUBCON Basin may be delivered from [[Subcaves]] to the Scraplab in [[Recycling]]. A Scientist will reward Cogmind with an Extrapolator.|Killing [[Scraptown]]: Tech Extrapolators are dropped from Scientists in Scraptown. Note: Tech Extrapolators dropped from Scientists in the Scraplab in Recycling will self-destruct.[[/List]]\n[[Heading]]Possible schematics[[/Heading]]\n[[Table]]Schematic|Item group 1|Item group 2|Item group 3|Item group 4|Item Group 5||[[0b10 Decoder Chip [Generic]]]|[[Sensor Arrays|Any Sensor Array]]|[[Signal Interpreters|Any Signal Interpreter]]|[[Trap Scanners|Any Trap Scanner]]|[[Structural Scanner]]|[[Machine Analyzer]]||[[0b10 Decoder Chip [Looter]]]|3 different Signal Interpreters||[[0b10 Decoder Chip [Scout]]]|Any Signal Interpreter|Any Trap Scanner|Structural Scanner|Machine Analyzer||[[0b10 Decoder Chip [Skirmisher]]]|Any Sensor Array|Any Signal Interpreter|Machine Analyzer||[[Active Sensor Spoofer]]|[[Active Sensor Suite]]|2 different [[ECM Suites]]|Any [[Transmission Jammers|Transmission Jammer]]||[[Arc Thrower]]|[[Hvy. Riot Gun]]|[[Arc Projector]]||[[Barrage Gun]]|[[Lgt. Assault Rifle]]|[[Hvy. Assault Rifle]]||[[Battle Cannon]]|[[Assault Cannon]]|[[Adv. Assault Cannon]]||[[Battle Rifle]]|[[Assault Rifle]]|Lgt. Assault Rifle||[[Beamcaster]]|[[Hvy. Laser]]|[[Gatling Laser]]||[[Bore Cannon]]|[[Coil Gun]]|[[Magnetic Acceleration Cannon]]||[[Botcube]]|[[Core Expander]]|Botcube||[[Dirty Bomb Trap]]|[[Heavy Explosive Trap]]|[[Tesla Bomb Launcher]]|[[Hvy. Missile Launcher]]||[[Electrostorm Shotgun]]|[[Latent Energy Streamer]]|Any Shotgun (e.g. [[Shotgun]] or [[EM Shotgun]])||[[Energy Deflector]]|Any non-remote Force Field (e.g. [[Force Field]])|Any thermal resistant armor (e.g. [[Reflective Plating]])||[[Enh. Flamer]]|[[Flamer]]|[[Thermic Laser]]||[[Fire Trap]]|[[Explosive Trap]]|2 different [[Flamers]] (also includes [[Asb. P-torch]])||[[Heat Bomb Trap]]|Fire Trap|2 different Flamers (also includes Asb. P-torch)|Any Thermal [[Energy Cannons|Energy Cannon]]||[[Humpback]]|[[Huge Storage Unit]]|[[Cargo Storage Unit]]||[[Hvy. Battle Rifle]]|[[Hvy. Assault Rifle]]|[[Battle Rifle]]||[[Hvy. Beamcaster]]|[[Plasma Rifle]]|[[Beamcaster]]||[[Hvy. Riot Gun]]|2 different EM Shotguns||[[Hyp. Alpha Cannon]]|Any Phasic damage weapon (e.g. [[Zio. Phaser-S]] or [[Zio. Alpha Cannon]]|Any Hyp. Cannon (e.g. [[Hyp. Gauss Cannon]])||[[Imp. Arc Thrower]]|[[Arc Thrower]]|[[Imp. Arc Projector]]||[[Lrg. Botcube]]|Core Expander|Lrg. Botcube|[[Core Physics Calibrator]]||[[Machine Rigger]]|Machine Analyzer|Any [[Recalibrators|Recalibrator]]||[[Mak. Ablative Armor]]|[[Lyr. Medium Armor Plating]]|[[Imp. Medium Armor Plating]]|2 different Heat Sinks||[[Mak. Axe]]|[[Axe]]|[[Great Axe]]||[[Mak. Cloaking Device]]|2 different [[Cloaking Devices]]||[[Mak. Coolant Network]]|3 different Heat Sinks||[[Mak. Core Shielding]]|2 different [[Core Shieldings]]||[[Mak. ECM Suite]]|2 different ECM Suites||[[Mak. Flight Unit]]|2 different [[Flight Units]]||[[Mak. Hacking Suite]]|2 different offensive [[Hackware]] (e.g. [[Hacking Suite]])||[[Mak. Hammer]]|[[Powered Hammer]]|[[Power Maul]]||[[Mak. Heavy Armor Plating]]|2 different Heavy Armor Platings (e.g. [[Imp. Heavy Armor Plating]])||[[Mak. Hover Unit]]|2 different [[Hover Units]]||[[Mak. Kinetic Plating]]|2 of either Reactive Platings (e.g. [[Reactive Plating]]) or Focal Shields (e.g. [[Focal Shield]])||[[Mak. Laser]]|[[Particle Gun]]|[[Field Laser]]||[[Mak. Leg]]|Any 2 [[Legs]]||[[Mak. Light Armor Plating]]|2 different Light Armor Platings (e.g. [[Imp. Light Armor Plating]])||[[Mak. Medium Armor Plating]]|2 different Medium Armor Platings (e.g. [[Imp. Medium Armor Plating]])||[[Mak. Power Shielding]]|2 different [[Power Shieldings]]||[[Mak. Power Source]]|[[Lgt. Deuterium Engine]]|Any Backup Power (e.g. [[Backup Power I]])||[[Mak. Propulsion Shielding]]|2 different [[Propulsion Shieldings]]||[[Mak. Salvage Targeting Computer]]|2 different [[Salvage Targeting Computers]]||[[Mak. Sensor Array]]|3 different [[Sensor Arrays]]||[[Mak. Shrapnel Gun]]|[[Hpw. Shotgun]]|[[Flak Gun]]||[[Mak. Spear]]|[[Spear]]||[[Mak. Sword]]|[[Katana]]|[[Falx]]||[[Mak. System Restoration Module]]|2 different [[System Restoration Modules]]||[[Mak. System Shield]]|2 different defensive Hackware (e.g. [[System Shield]])||[[Mak. Targeting Computer]]|3 different [[Targeting Computers]]||[[Mak. Terrain Scan Processor]]|3 different [[Terrain Scan Processors]]||[[Mak. Terrain Scanner]]|3 different [[Terrain Scanners]]||[[Mak. Thermal Plating]]|2 of either Reflective Platings (e.g. [[Reflective Plating]]) or Thermal Shields (e.g. [[Thermal Shield]])||[[Mak. Transmission Jammer]]|2 different Transmission Jammers||[[Mak. Trap Scanner]]|2 different Trap Scanners||[[Mak. Utility Shielding]]|2 different [[Utility Shieldings]]||[[Mak. Weapon Shielding]]|2 different [[Weapon Shieldings]]||[[Mapping Drone Bay]]|[[Mni. Drone Bay]]|Any Terrain Scanner|Any Terrain Scan Processor||[[Multitool]]|2 Recalibrators|2 [[Datajacks]]|Any offensive Hackware (e.g. Hacking Suite)||[[Phasing Sabre]]|[[Power Sword]]|[[Plasma Sword]]||[[Plasma Flamer]]|Enh. Flamer|Plasma Rifle||[[Riot Gun]]|EM Shotgun|Imp. EM Shotgun||[[Ripper]]|[[Chainsword]]||[[Slug Cannon]]|[[Gauss Cannon]]|[[Magnetic Acceleration Cannon]]||[[Spk. Heavy Treads]]|[[Hvy. Treads]]|[[Mak. Spear]]||[[Spk. Medium Treads]]|[[Med. Treads]]|Mak. Spear||[[Spk. Treads]]|[[Lgt. Treads]]|Mak. Spear||[[Structural Scanner]]|[[Deep Structural Scanner]]|Any Terrain Scanner|Any Terrain Scan Processor||[[Tactical Coordination Suite]]|2 different Targeting Computers|2 different Signal Interpreters||[[Telecube]]|[[Transdimensional Reconstructor|Regular]], [[Hpw. Transdimensional Reconstructor|Hpw.]], or [[Supercharged TR|Supercharged Transdimensional Reconstructor]]||[[Vmp. Brace Plating]]|[[Graphene Brace]]|Any Heavy Armor Plating|Any other Vmp. item||[[Vmp. Broadsword]]|Any Greatsword|Any other Vmp. item||[[Vmp. Heavy Siege Treads]]|Any Siege Treads|Any other Vmp. item||[[Vmp. Humpback]]|Humpback|Any Vmp. item (including self)||[[Wartreads]]|[[Adv. Medium Treads]]|[[Centrium Wheel]][[/Table]]"
+   "Content": "The Tech Extrapolator is an item associated with the [[United Federation of Derelicts]], used by [[Scientist|Scientists]] to develop new parts. While attached, it can produce part schematics based on items that are seen on the ground or attached to other bots. Parts must be identified by Cogmind, but once they have been seen they can not be forgotten by the Tech Extrapolator, even if Cogmind forgets due to corruption or use of a [[Core Reset Matrix]]. A list of Tech Extrapolator only parts can be found at [[Tech Extrapolator Parts]].\n[[Heading]]Obtaining[[/Heading]]\nThe Tech Extrapolator can be obtained by one of two methods:\n[[List]][[SUBCON Basin]] delivery: A filled SUBCON Basin may be delivered from [[Subcaves]] to the Scraplab in [[Recycling]]. A Scientist will reward Cogmind with an Extrapolator.|Killing [[Scraptown]]: Tech Extrapolators are dropped from Scientists in Scraptown. Note: Tech Extrapolators dropped from Scientists in the Scraplab in Recycling will self-destruct.[[/List]]\n[[Heading]]Possible schematics[[/Heading]]\n[[Table]]Schematic|Item group 1|Item group 2|Item group 3|Item group 4|Item Group 5||[[0b10 Decoder Chip [Generic]]]|[[Sensor Arrays|Any Sensor Array]]|[[Signal Interpreters|Any Signal Interpreter]]|[[Trap Scanners|Any Trap Scanner]]|[[Structural Scanner]]|[[Machine Analyzer]]||[[0b10 Decoder Chip [Looter]]]|3 different Signal Interpreters||[[0b10 Decoder Chip [Scout]]]|Any Signal Interpreter|Any Trap Scanner|Structural Scanner|Machine Analyzer||[[0b10 Decoder Chip [Skirmisher]]]|Any Sensor Array|Any Signal Interpreter|Machine Analyzer||[[Active Sensor Spoofer]]|[[Active Sensor Suite]]|2 different [[ECM Suites]]|Any [[Transmission Jammers|Transmission Jammer]]||[[Arc Thrower]]|[[Hvy. Riot Gun]]|[[Arc Projector]]||[[Barrage Gun]]|[[Lgt. Assault Rifle]]|[[Hvy. Assault Rifle]]||[[Battle Cannon]]|[[Assault Cannon]]|[[Adv. Assault Cannon]]||[[Battle Rifle]]|[[Assault Rifle]]|Lgt. Assault Rifle||[[Beamcaster]]|[[Hvy. Laser]]|[[Gatling Laser]]||[[Bore Cannon]]|[[Coil Gun]]|[[Magnetic Acceleration Cannon]]||[[Botcube]]|[[Core Expander]]|Botcube||[[Dirty Bomb Trap]]|[[Heavy Explosive Trap]]|[[Tesla Bomb Launcher]]|[[Hvy. Missile Launcher]]||[[Electrostorm Shotgun]]|[[Latent Energy Streamer]]|Any Shotgun (e.g. [[Shotgun]] or [[EM Shotgun]])||[[Energy Deflector]]|Any non-remote Force Field (e.g. [[Force Field]])|Any thermal resistant armor (e.g. [[Reflective Plating]])||[[Enh. Flamer]]|[[Flamer]]|[[Thermic Laser]]||[[Fire Trap]]|[[Explosive Trap]]|2 different [[Flamers]] (also includes [[Asb. P-torch]])||[[Heat Bomb Trap]]|Fire Trap|2 different Flamers (also includes Asb. P-torch)|Any Thermal [[Energy Cannons|Energy Cannon]]||[[Humpback]]|[[Huge Storage Unit]]|[[Cargo Storage Unit]]||[[Hvy. Battle Rifle]]|[[Hvy. Assault Rifle]]|[[Battle Rifle]]||[[Hvy. Beamcaster]]|[[Plasma Rifle]]|[[Beamcaster]]||[[Hvy. Riot Gun]]|2 different EM Shotguns||[[Hyp. Alpha Cannon]]|Any Phasic damage weapon (e.g. [[Zio. Phaser-S]] or [[Zio. Alpha Cannon]]|Any Hyp. Cannon (e.g. [[Hyp. Gauss Cannon]])||[[Imp. Arc Thrower]]|[[Arc Thrower]]|[[Imp. Arc Projector]]||[[Lrg. Botcube]]|Core Expander|Lrg. Botcube|[[Core Physics Calibrator]]||[[Machine Rigger]]|Machine Analyzer|Any [[Recalibrators|Recalibrator]]||[[Mak. Ablative Armor]]|[[Lyr. Medium Armor Plating]]|[[Imp. Medium Armor Plating]]|2 different Heat Sinks||[[Mak. Axe]]|[[Axe]]|[[Great Axe]]||[[Mak. Cloaking Device]]|2 different [[Cloaking Devices]]||[[Mak. Coolant Network]]|3 different Heat Sinks||[[Mak. Core Shielding]]|2 different [[Core Shieldings]]||[[Mak. ECM Suite]]|2 different ECM Suites||[[Mak. Flight Unit]]|2 different [[Flight Units]]||[[Mak. Hacking Suite]]|2 different offensive [[Hackware]] (e.g. [[Hacking Suite]])||[[Mak. Hammer]]|[[Powered Hammer]]|[[Power Maul]]||[[Mak. Heavy Armor Plating]]|2 different Heavy Armor Platings (e.g. [[Imp. Heavy Armor Plating]])||[[Mak. Hover Unit]]|2 different [[Hover Units]]||[[Mak. Kinetic Plating]]|2 of either Reactive Platings (e.g. [[Reactive Plating]]) or Focal Shields (e.g. [[Focal Shield]])||[[Mak. Laser]]|[[Particle Gun]]|[[Field Laser]]||[[Mak. Leg]]|Any 2 [[Legs]]||[[Mak. Light Armor Plating]]|2 different Light Armor Platings (e.g. [[Imp. Light Armor Plating]])||[[Mak. Medium Armor Plating]]|2 different Medium Armor Platings (e.g. [[Imp. Medium Armor Plating]])||[[Mak. Power Shielding]]|2 different [[Power Shieldings]]||[[Mak. Power Source]]|[[Lgt. Deuterium Engine]]|Any Backup Power (e.g. [[Backup Power I]])||[[Mak. Propulsion Shielding]]|2 different [[Propulsion Shieldings]]||[[Mak. Salvage Targeting Computer]]|2 different [[Salvage Targeting Computers]]||[[Mak. Sensor Array]]|3 different [[Sensor Arrays]]||[[Mak. Shrapnel Gun]]|[[Hpw. Shotgun]]|[[Flak Gun]]||[[Mak. Spear]]|[[Spear]]||[[Mak. Sword]]|[[Katana]]|[[Falx]]||[[Mak. System Restoration Module]]|2 different [[System Restoration Modules]]||[[Mak. System Shield]]|2 different defensive Hackware (e.g. [[System Shield]])||[[Mak. Targeting Computer]]|3 different [[Targeting Computers]]||[[Mak. Terrain Scan Processor]]|3 different [[Terrain Scan Processors]]||[[Mak. Terrain Scanner]]|3 different [[Terrain Scanners]]||[[Mak. Thermal Plating]]|2 of either Reflective Platings (e.g. [[Reflective Plating]]) or Thermal Shields (e.g. [[Thermal Shield]])||[[Mak. Transmission Jammer]]|2 different Transmission Jammers||[[Mak. Trap Scanner]]|2 different Trap Scanners||[[Mak. Utility Shielding]]|2 different [[Utility Shieldings]]||[[Mak. Weapon Shielding]]|2 different [[Weapon Shieldings]]||[[Mapping Drone Bay]]|[[Mni. Drone Bay]]|Any Terrain Scanner|Any Terrain Scan Processor||[[Multitool]]|2 Recalibrators|2 [[Datajacks]]|Any offensive Hackware (e.g. Hacking Suite)||[[Phasing Sabre]]|[[Power Sword]]|[[Plasma Sword]]||[[Plasma Flamer]]|Enh. Flamer|Plasma Rifle||[[Riot Gun]]|EM Shotgun|Imp. EM Shotgun||[[Ripper]]|[[Chainsword]]||[[Slug Cannon]]|[[Gauss Cannon]]|[[Magnetic Acceleration Cannon]]||[[Spk. Heavy Treads]]|[[Hvy. Treads]]|[[Mak. Spear]]||[[Spk. Medium Treads]]|[[Med. Treads]]|Mak. Spear||[[Spk. Treads]]|[[Lgt. Treads]]|Mak. Spear||[[Structural Scanner]]|[[Deep Structural Scanner]]|Any Terrain Scanner|Any Terrain Scan Processor||[[Tactical Coordination Suite]]|2 different Targeting Computers|2 different Signal Interpreters||[[Telecube]]|[[Transdimensional Reconstructor|Regular]], [[Hpw. Transdimensional Reconstructor|Hpw.]], or [[Supercharged TR|Supercharged Transdimensional Reconstructor]]||[[Vmp. Brace Plating]]|[[Graphene Brace]]|Any Heavy Armor Plating|Any other Vmp. item||[[Vmp. Broadsword]]|Any Greatsword|Any other Vmp. item||[[Vmp. Heavy Siege Treads]]|Any Siege Treads|Any other Vmp. item||[[Vmp. Humpback]]|Humpback|Any Vmp. item (including self)||[[Wartreads]]|[[Adv. Medium Treads]]|[[Centrium Wheel]][[/Table]]"
   },
   {
    "Name": "Telecube",
@@ -6240,6 +6240,54 @@
    "Content": "Authchips are single-use items that allow printing the relevant type of item at a fabricator. They can be acquired at a [[DSF]], [[Garrison|Garrisons]], corrupted in [[Storage]] or by using [[Spoiler]][[GameText]]Force(Recompile)[[/GameText]][[/Spoiler]] on a fabricator."
   },
   {
+   "Name": "Autonomous Weapons",
+   "Parts": [
+    "Autobeam",
+    "AWS/Autocannon",
+    "AWS/EX-DEC",
+    "AWS/Gauss",
+    "AWS/Thermal",
+    "PD Laser"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Backup Lasers",
+   "Parts": [
+    "Backup Laser I",
+    "Backup Laser III",
+    "Backup Laser VII"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Backup Plating",
+   "Parts": [
+    "Backup Plating I",
+    "Backup Plating III",
+    "Backup Plating VII"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Backup Power",
+   "Parts": [
+    "Backup Power I",
+    "Backup Power III",
+    "Backup Power VII"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Backup Propulsion",
+   "Parts": [
+    "Backup Propulsion I",
+    "Backup Propulsion III",
+    "Backup Propulsion VII"
+   ],
+   "Content": ""
+  },
+  {
    "Name": "Ballistic Cannons",
    "Part Category": "Ballistic Cannons",
    "Content": ""
@@ -6336,6 +6384,21 @@
     "Imp. Cryofiber Web",
     "Adv. Cryofiber Web",
     "Exp. Cryofiber Web"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Defensive Hackware",
+   "Parts": [
+    "EX Chip 2",
+    "System Shield",
+    "Mak. System Shield",
+    "Imp. System Shield",
+    "Adv. System Shield",
+    "Exp. System Shield",
+    "Ghost Barrier",
+    "Quantum Router",
+    "Architect God Chip D"
    ],
    "Content": ""
   },
@@ -6437,6 +6500,36 @@
    "Content": ""
   },
   {
+   "Name": "Exiles Vault Prototypes",
+   "Parts": [
+    "0b10 Alert Chip",
+    "Army-in-a-Box",
+    "AWS/Autocannon",
+    "AWS/Gauss",
+    "AWS/Thermal",
+    "Chronowheel",
+    "Cloak of Protection",
+    "Deploy-a-Sentry",
+    "Field Lobotomy Kit",
+    "Firepult",
+    "Flying Fortress v7",
+    "Gui. Plasma Cannon",
+    "Latent Energy Streamer",
+    "Lightpack 2.0",
+    "Longsword +1",
+    "Modified TNC",
+    "Potential Leg",
+    "PSU Rigger",
+    "Skeleton Box",
+    "Superbattery",
+    "Supersonic Drone Bay",
+    "Trap Reconfigurator",
+    "XL Autogun Array",
+    "YOLO Cannon"
+   ],
+   "Content": ""
+  },
+  {
    "Name": "Fabrication Devices",
    "Parts": [
     "Cobbler Unit",
@@ -6500,28 +6593,17 @@
    "Content": ""
   },
   {
-   "Name": "Hackware",
+   "Name": "Fusion Compressors",
    "Parts": [
-    "EX Chip 1",
-    "Hacking Suite",
-    "Mak. Hacking Suite",
-    "Imp. Hacking Suite",
-    "Adv. Hacking Suite",
-    "Exp. Hacking Suite",
-    "System Mapper",
-    "Deep Network Scanner",
-    "Architect God Chip A",
-    "EX Chip 2",
-    "System Shield",
-    "Mak. System Shield",
-    "Imp. System Shield",
-    "Adv. System Shield",
-    "Exp. System Shield",
-    "Ghost Barrier",
-    "Quantum Router",
-    "Architect God Chip D"
+    "Fusion Compressor",
+    "Imp. Fusion Compressor"
    ],
-   "Content": "Hackware is a group of Utility parts that improve hacking capabilities, mainly success chance for terminal hacks, trap rewiring and robot rewiring. Hackware also helps you hack hostiles through the defense of a [[Programmer]]. Additionally, later Hackware makes it harder for your allies to be hacked."
+   "Content": ""
+  },
+  {
+   "Name": "Guided Weapons",
+   "Part Category": "Guided Weapons",
+   "Content": ""
   },
   {
    "Name": "Hardlight Generators",
@@ -6536,6 +6618,26 @@
   {
    "Name": "Hover Units",
    "Part Category": "Hover Units",
+   "Content": ""
+  },
+  {
+   "Name": "Hybrid Power",
+   "Part Category": "Hybrid Power",
+   "Content": ""
+  },
+  {
+   "Name": "Hyp. Weapons",
+   "Parts": [
+    "Hyp. Alpha Cannon",
+    "Hyp. Coil Gun",
+    "Hyp. EM Gauss Rifle",
+    "Hyp. Gauss Cannon",
+    "Hyp. Gauss Rifle",
+    "Hyp. Linear Accelerator",
+    "Hyp. Mass Driver",
+    "Hyp. Multirail",
+    "Hyp. Railgun"
+   ],
    "Content": ""
   },
   {
@@ -6621,6 +6723,42 @@
     "Adv. Datajack"
    ],
    "Content": ""
+  },
+  {
+   "Name": "Offensive Hackware",
+   "Parts": [
+    "EX Chip 1",
+    "Hacking Suite",
+    "Mak. Hacking Suite",
+    "Imp. Hacking Suite",
+    "Adv. Hacking Suite",
+    "Exp. Hacking Suite",
+    "System Mapper",
+    "Deep Network Scanner",
+    "Architect God Chip A"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Overloadable Power",
+   "Part Category": "Overloadable Power",
+   "Content": ""
+  },
+  {
+   "Name": "Overloadable Propulsion",
+   "Part Category": "Overloadable Propulsion",
+   "Content": ""
+  },
+  {
+   "Name": "Overloadable Weapons",
+   "Part Category": "Overloadable Weapons",
+   "Content": ""
+  },
+  {
+   "Name": "Overtuned Parts",
+   "Part Category": "Overtuned Parts",
+   "Content": "",
+   "Spoiler": "Spoiler"
   },
   {
    "Name": "Particle Chargers",
@@ -6753,6 +6891,11 @@
    ],
    "Content": "",
    "Spoiler": "Spoiler"
+  },
+  {
+   "Name": "Reinforced Power",
+   "Part Category": "Reinforced Power",
+   "Content": ""
   },
   {
    "Name": "Relay Couplers",
@@ -6970,12 +7113,34 @@
    "Content": ""
   },
   {
-   "Name": "Temporary Slot Utilities",
+   "Name": "Tearclaws (Group)",
    "Parts": [
-    "Power Bank",
-    "Rainbow Chip",
-    "VL-GR5's Exoskeleton \"Deathgrip\""
+    "Tearclaws",
+    "Master Tearclaws"
    ],
+   "Content": "",
+   "Spoiler": "Spoiler"
+  },
+  {
+   "Name": "Tech Extrapolator Parts",
+   "Parts": [
+    "Electrostorm Shotgun",
+    "Energy Deflector",
+    "Heat Bomb Trap",
+    "Hyp. Alpha Cannon",
+    "Machine Rigger",
+    "Telecube",
+    "Vmp. Brace Plating",
+    "Vmp. Broadsword",
+    "Vmp. Heavy Siege Treads",
+    "Wartreads"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
+  },
+  {
+   "Name": "Temporary Slot Parts",
+   "Part Category": "Temporary Slot Parts",
    "Content": "",
    "Spoiler": "Spoiler"
   },
@@ -7182,14 +7347,12 @@
   {
    "Name": "Armor",
    "Groups": [
+    "Backup Plating",
     "Powered Armor (Group)",
     "Regenerative Armor",
     "Resistance Armor"
    ],
    "Parts": [
-    "Backup Plating I",
-    "Backup Plating III",
-    "Backup Plating VII",
     "Lgt. Armor Plating",
     "Med. Armor Plating",
     "Hvy. Armor Plating",
@@ -7219,6 +7382,16 @@
     "Enh. Scrap Shield",
     "Tower Shield",
     "Vmp. Brace Plating"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Backup Parts",
+   "Groups": [
+    "Backup Lasers",
+    "Backup Plating",
+    "Backup Power",
+    "Backup Propulsion"
    ],
    "Content": ""
   },
@@ -7336,6 +7509,14 @@
    "Content": ""
   },
   {
+   "Name": "Hackware",
+   "Groups": [
+    "Defensive Hackware",
+    "Offensive Hackware"
+   ],
+   "Content": "Hackware is a group of Utility parts that improve hacking capabilities, mainly success chance for terminal hacks, trap rewiring and robot rewiring. Hackware also helps you hack hostiles through the defense of a [[Programmer]]. Additionally, later Hackware makes it harder for your allies to be hacked."
+  },
+  {
    "Name": "Infowar",
    "Groups": [
     "0b10 Decoder Chips",
@@ -7429,20 +7610,36 @@
    "Content": ""
   },
   {
+   "Name": "Overloadable Parts",
+   "Groups": [
+    "Overloadable Power",
+    "Overloadable Propulsion",
+    "Overloadable Weapons"
+   ],
+   "Content": ""
+  },
+  {
    "Name": "Power",
    "Groups": [
+    "Backup Power",
     "Engines",
+    "Fusion Compressors",
+    "Hybrid Power",
+    "Overloadable Power",
     "Power Cores",
-    "Reactors"
+    "Reactors",
+    "Reinforced Power"
    ],
    "Content": ""
   },
   {
    "Name": "Propulsion",
    "Groups": [
+    "Backup Propulsion",
     "Flight Units",
     "Hover Units",
     "Legs",
+    "Overloadable Propulsion",
     "Treads",
     "Wheels"
    ],
@@ -7516,7 +7713,6 @@
     "Authchips",
     "Component Analysis Suites",
     "Fabrication Devices",
-    "Hackware",
     "Mass Support Devices",
     "Power Amplifiers",
     "Recalibrators",
@@ -7524,7 +7720,6 @@
     "Speed Boosting Utilities",
     "Salvage Targeting Computers",
     "Storage Unit",
-    "Temporary Slot Utilities",
     "Thermal Generators",
     "Trap Extractors"
    ],
@@ -7534,6 +7729,7 @@
     "Cooling Utilities",
     "Corruption Reduction Utilities",
     "Defensive Utilities",
+    "Hackware",
     "Infowar",
     "Matter Refilling Devices",
     "Offensive Utilities",
@@ -7558,15 +7754,24 @@
     "V3-11A's Pendant",
     "Amulet of Y3-NDR",
     "Chronowheel",
-    "Phase Armor"
+    "Phase Armor",
+    "Power Bank",
+    "Rainbow Chip",
+    "VL-GR5's Exoskeleton \"Deathgrip\""
    ],
    "Content": ""
   },
   {
    "Name": "Weapons",
    "Groups": [
+    "Autonomous Weapons",
+    "Backup Lasers",
     "Ballistic Cannons",
-    "Ballistic Guns"
+    "Ballistic Guns",
+    "Guided Weapons",
+    "Hyp. Weapons",
+    "Overloadable Weapons",
+    "Tearclaws (Group)"
    ],
    "Supergroups": [
     "Datajacks",
@@ -7847,7 +8052,7 @@
   {
    "Name": "Exiles (Location)",
    "ImageName": "Exiles.png",
-   "Content": "The Exiles map appears as a [[Branch]] off of [[Mines]] on either -10 or -9 and is home to the Exiles, a group of friendly Derelict Tinkerer outcasts made up of [[EX-BIN]], [[EX-DEC]], [[EX-HEX]], and their bodyguard [[8R-AWN]]. These Exiles have a large collection of unique prototype parts that are only available in the Exiles vault. The entrance is guarded by some rigged engines that blow up when a hostile bot crosses them. There are some lore terminals with entries written by each of the tinkerers that describe many of the prototype parts obtainable on this map as well as some that are not. The terminal near the center of the map also contains a log entry that points to the depth that [[Zion]] is on. Various caches of storage units and energy/matter storage can be found throughout the map. \"The Gauntlet\" at the bottom of the map is a stretch of tester bots that are working on the latest batch of prototype parts. These Derelicts have names that reference Cogmind community members. This map is also home to the [[Farcom]] aligner machine and a unique alignment.\nCarrying a [[Datajack]] into this map can be a good idea due to all of the prototype parts that the Exiles and 8R-AWN have on them. Parsing them will provide the associated prototype part IDs so you can recognize the parts later.\nBe wary of [[Corruption]] on this map. There is rarely any way to cleanse corruption this early in the game, and misfires are possible at even 1% corruption. One misfire hitting the wrong thing will result in the whole map turning aggressive and death will likely follow. Detaching all ranged weapons is recommended if Cogmind has any corruption.\n[[Heading]]Alignment[[/Heading]]\nUsing the [[Farcom]] machine grants an 18-radius permanent combat hostile sensor in any [[0b10]] controlled maps and one of the special vault items. If Farcom abilities are retained, entering any [[Research]] branches will have massive consequences. Other than that, Farcom can provide some great advantages to help players with permanent itemless sensor abilities.\n3 random items will be present in the vault in most games. Here is the list of Exiles specific vault items that can be obtained with Farcom:[[List]][[0b10 Alert Chip]]|[[Army-in-a-Box]]|[[AWS/Autocannon]]|[[AWS/Gauss]]|[[AWS/Thermal]]|[[Chronowheel]]|[[Cloak of Protection]]|3 [[Deploy-a-Sentry]]|[[Field Lobotomy Kit]]|[[Firepult]]|[[Flying Fortress v7]]|[[Gui. Plasma Cannon]]|[[Latent Energy Streamer]]|[[Lightpack 2.0]]|[[Longsword +1]]|[[Modified TNC]]|2 [[Potential Leg]]|[[PSU Rigger]]|[[Skeleton Box]]|[[Superbattery]]|[[Supersonic Drone Bay]]|[[Trap Reconfigurator]]|[[XL Autogun Array]]|[[YOLO Cannon]][[/List]]\n[[Heading:2]]Alignment Options[[/Heading]]\nThere are more ways to interact with Farcom without just taking a single vault item. Here are all of the outcomes:[[List]]Use Farcom machine, take 0-1 vault items: Permanently gain Farcom and the use of the vault item taken.|Use Farcom machine, take 2-3 vault items: Gain Farcom until [[Factory]] is reached. After that, the Exiles notice that you are a thief and will remove Farcom. [[Master Thief|Master Thieves]] will sometimes ambush you at the entrance/exits in [[Caves]] maps and rip parts off of your body and from your inventory. They will prioritize high rating parts and Exiles prototypes.|Use Farcom machine (or don't), attack Exiles and leave the map with 0 vault items: Lose Farcom instantly. The Exiles will become aggressive and send [[Assembled (4)|Assembled]], a [[DAS Turret]], and [[8R-AWN]] to kill you. After leaving the map, there is a chance that a hostile [[Z-Hero]] will spawn and attack you. Note: Using vault items on the map is safe as long as no items actually leave the map.|Use Farcom machine, attack Exiles and leave the map with 1 or more vault items: The same as above except you get Master Thieves in caves as described above.[[/List]]\n[[Heading]]Variations[[/Heading]]\nThere are several variations of the Exiles map that can change things dramatically. In the majority of maps, the Exiles are present. However, there are 2 possible variations in the maps:\n[[Image]]Exiles Attacked.png|Attacked Exiles vault[[/Image]][[List]]Abandoned Exiles: In this map, the Exiles have all fled the map and taken nearly everything on the map as well. Neither Farcom nor any vault items are obtainable in this seed. However, EX-DEC may be found in [[Spoiler]][[Warlord (Location)|Warlord]] in the Vortex Lab[[/Spoiler]] in these seeds.|Attacked Exiles: In this map, the Exiles have been attacked and are missing. There are disabled and rewirable bots on the map and random parts on the ground. Farcom is not obtainable on this seed, but one random vault prototype is available by using the manual code [[Spoiler]][[GameText]]\\\\1234[[/GameText]][[/Spoiler]] on the vault terminal.|While not changing the map in any way, there is a chance that a large [[0b10]] attack force will assault the Exiles base after using the Farcom machine and exiting the vault.[[/List]]\n[[Heading]]Fighting[[/Heading]]\nFighting the Exiles is a challenging yet rewarding endeavor. Although they are normally friendly, they can pack quite a punch and will likely end the run of any unprepared player. As far as rewards go, [[8R-AWN]] has some powerful unique [[8R-AWN's Boregun|Boreguns]] with a high salvage and destroy critical %, out-of-depth parts including [[Exp. Heat Sink]], [[Adv. Weapon Cycler]], [[Exp. Targeting Computer]], and [[Adv. Myomer Leg]]. Another unique part, the [[AS-neutralizer No. 17b]] is very helpful in a later game branch [[Zion Deep Caves]]. Other useful parts on some of the Exiles themselves are [[Adv. Component Analysis Suite]], [[System Purifier]], [[Cmb. Antigrav System]], [[Imp. Armor Integrity Analyzer]], [[Exp. Core Analyzer]], and [[Adv. Transmission Jammer]].\n[[Image]]Exiles Kill Build.png|Example Exiles kill build[[/Image]]\nFighting the Exiles is not recommended on -10 due to lower slot count, lower core integrity, and difficulty in getting enough integrity to survive the 8R-AWN fight. If fighting on -9, evolving a 3rd weapon slot can be very effective in killing 8R-AWN and any potential [[Z-Hero|Z-Heroes]] that might spawn in the next Mines map. The third weapon slot is not required to kill by any means, however, and any combination of weapon, utility, and propulsion slots for the evolve will work. As a basic checklist, the following parts are recommended:[[List]]Multiple kinetic guns with backups, ideally [[Hvy. Assault Rifle|Hvy. Assault Rifles]] or [[Imp. Assault Rifle|Imp. Assault Rifles]], weapons with negative salvage like [[Shotgun]] or a ballistic cannon like [[Imp. Light Cannon]] can work but 8R-AWN has very strong loot that is nice to get if possible|Multiple pieces of armor, preferably [[Hrd. Light Armor Plating]] or [[Med. Armor Plating]]|Multiple [[Lgt. Treads]] or [[Imp. Treads]] with backups|At least one launcher like [[Grenade Launcher]], [[Mni. Grenade Launcher]], or [[Rocket Launcher]]|(Optional) A way to gain positive salvage like a [[Salvage Targeting Computer]] can provide a better chance at part drops|(Optional) [[Blade Trap|Blade Traps]] for 8R-AWN, if an early trap extractor or trap stockpile are found in Mines. IMPORTANT: Do not install more than one trap until after the attack has begun. Exiles will give a warning if a trap is installed, and immediately turn on Cogmind if a second is installed.|(Optional) [[Thief Drone Bay]] trivializes the 8R-AWN fight. Make sure that you have aggro (he is shooting you), then release the drones. They will rip off parts very quickly and leave them defenseless.[[/List]]\n[[Image]]Exiles Kill.png|A visual guide to killing the Exiles[[/Image]]\nThere are some things that should be done before actually doing the fight itself. The image on the right serves as a visual reference. Any rigged engines used must be in inventory before attacking the Exiles, otherwise the engines will still remain loyal to the Exiles and explode only on Cogmind. Matter pods should be relocated near the 8R-AWN fighting spot (See point #4 in diagram) to avoid running out of matter in combat. Any allies should be told to stay in the same general area so they can contribute to the fight. However, Grunts can't deal much damage until [[8R-AWN's Armor/TH]] is destroyed. Finally, some vault items may come in handy for the fight. The [[Cloak of Protection]]'s effect is not so strong, but when turned off it is a high coverage high integrity piece of armor. The [[Longsword +1]] is a very effective kill tool. The [[Potential Leg|Potential Legs]] have a lot of integrity in case you run out of propulsion during the fight. The [[Gui. Plasma Cannon]] may be used to safely destroy the [[DAS Turret]] without getting attacked back. One thing to consider about the vault is that there may be a 0b10 attack on the Exiles after exiting. In those cases, an Exiles kill may either have to be cancelled or at least turned into a 8R-AWN only kill. Aside from that, the fight may begin:\n[[Image]]Exiles Launcher DAS.png|Launchering the DAS turret[[/Image]]\n[[List:Ordered]]Shoot one of the spike-shaped machines to turn the Exiles hostile.|Drop the rigged engines from the entrance every few tiles while walking toward the spot for step #3, they have an explosion radius of 2. This will take care of most of the Assembled that are coming your way. IMPORTANT: This must be done after the Exiles become hostile. If you do it before that, they will explode on Cogmind.|Pull out a Launcher and dispose of the remaining Assembled.|Go to the corner to fight 8R-AWN. If you have any blade traps, now is the time to use them. Place them just above the bottom-most wall to the right of the spot marked 4. This is the part that needs the most backups, as 8R-AWN will destroy many of your parts very quickly due to high damage and high part destroy critical chance. Always put on backup parts right away after they are destroyed.You may run out of matter and have to refill from matter pods at this point, which is why preemptively moving the matter pods here can be very important. Many kill attempts that don't have enough damage or integrity will end here.|Hopefully you have some good loot after 8R-AWN is destroyed. [[8R-AWN's Boregun|Boreguns]] are a very easy way to destroy the [[DAS Turret]]. Penetrate through the machines to try and kill the turret without getting shot at because the cannon deals incredibly high damage. If no Boreguns were dropped, using a launcher is another good option. The idea is to aim around the spike in the machine so that you can't get hit but the explosion radius will still hit the turret.|Finally, all that is left is to loot the Exiles and their Derelict friends. Otherwise just finish them off with whatever you have left. Watch out for [[EX-DEC]] as they have a deadly [[AWS/EX-DEC]] that can deal a lot of damage very quickly if you aren't careful. It has a short range, so just take them out from a distance.[[/List]]",
+   "Content": "The Exiles map appears as a [[Branch]] off of [[Mines]] on either -10 or -9 and is home to the Exiles, a group of friendly Derelict Tinkerer outcasts made up of [[EX-BIN]], [[EX-DEC]], [[EX-HEX]], and their bodyguard [[8R-AWN]]. These Exiles have a large collection of unique prototype parts that are only available in the Exiles vault. The entrance is guarded by some rigged engines that blow up when a hostile bot crosses them. There are some lore terminals with entries written by each of the tinkerers that describe many of the prototype parts obtainable on this map as well as some that are not. The terminal near the center of the map also contains a log entry that points to the depth that [[Zion]] is on. Various caches of storage units and energy/matter storage can be found throughout the map. \"The Gauntlet\" at the bottom of the map is a stretch of tester bots that are working on the latest batch of prototype parts. These Derelicts have names that reference Cogmind community members. This map is also home to the [[Farcom]] aligner machine and a unique alignment.\nCarrying a [[Datajack]] into this map can be a good idea due to all of the prototype parts that the Exiles and 8R-AWN have on them. Parsing them will provide the associated prototype part IDs so you can recognize the parts later.\nBe wary of [[Corruption]] on this map. There is rarely any way to cleanse corruption this early in the game, and misfires are possible at even 1% corruption. One misfire hitting the wrong thing will result in the whole map turning aggressive and death will likely follow. Detaching all ranged weapons is recommended if Cogmind has any corruption.\n[[Heading]]Alignment[[/Heading]]\nUsing the [[Farcom]] machine grants an 18-radius permanent combat hostile sensor in any [[0b10]] controlled maps and one of the special vault items. If Farcom abilities are retained, entering any [[Research]] branches will have massive consequences. Other than that, Farcom can provide some great advantages to help players with permanent itemless sensor abilities.\n3 random items will be present in the vault in most games from the [[Exiles Vault Prototypes]] list. However, 3 [[Deploy-a-Sentry]] and 2 [[Potential Leg]] will appear instead of just one.\n[[Heading:2]]Alignment Options[[/Heading]]\nThere are more ways to interact with Farcom without just taking a single vault item. Here are all of the outcomes:[[List]]Use Farcom machine, take 0-1 vault items: Permanently gain Farcom and the use of the vault item taken.|Use Farcom machine, take 2-3 vault items: Gain Farcom until [[Factory]] is reached. After that, the Exiles notice that you are a thief and will remove Farcom. [[Master Thief|Master Thieves]] will sometimes ambush you at the entrance/exits in [[Caves]] maps and rip parts off of your body and from your inventory. They will prioritize high rating parts and Exiles prototypes.|Use Farcom machine (or don't), attack Exiles and leave the map with 0 vault items: Lose Farcom instantly. The Exiles will become aggressive and send [[Assembled (4)|Assembled]], a [[DAS Turret]], and [[8R-AWN]] to kill you. After leaving the map, there is a chance that a hostile [[Z-Hero]] will spawn and attack you. Note: Using vault items on the map is safe as long as no items actually leave the map.|Use Farcom machine, attack Exiles and leave the map with 1 or more vault items: The same as above except you get Master Thieves in caves as described above.[[/List]]\n[[Heading]]Variations[[/Heading]]\nThere are several variations of the Exiles map that can change things dramatically. In the majority of maps, the Exiles are present. However, there are 2 possible variations in the maps:\n[[Image]]Exiles Attacked.png|Attacked Exiles vault[[/Image]][[List]]Abandoned Exiles: In this map, the Exiles have all fled the map and taken nearly everything on the map as well. Neither Farcom nor any vault items are obtainable in this seed. However, EX-DEC may be found in [[Spoiler]][[Warlord (Location)|Warlord]] in the Vortex Lab[[/Spoiler]] in these seeds.|Attacked Exiles: In this map, the Exiles have been attacked and are missing. There are disabled and rewirable bots on the map and random parts on the ground. Farcom is not obtainable on this seed, but one random vault prototype is available by using the manual code [[Spoiler]][[GameText]]\\\\1234[[/GameText]][[/Spoiler]] on the vault terminal.|While not changing the map in any way, there is a chance that a large [[0b10]] attack force will assault the Exiles base after using the Farcom machine and exiting the vault.[[/List]]\n[[Heading]]Fighting[[/Heading]]\nFighting the Exiles is a challenging yet rewarding endeavor. Although they are normally friendly, they can pack quite a punch and will likely end the run of any unprepared player. As far as rewards go, [[8R-AWN]] has some powerful unique [[8R-AWN's Boregun|Boreguns]] with a high salvage and destroy critical %, out-of-depth parts including [[Exp. Heat Sink]], [[Adv. Weapon Cycler]], [[Exp. Targeting Computer]], and [[Adv. Myomer Leg]]. Another unique part, the [[AS-neutralizer No. 17b]] is very helpful in a later game branch [[Zion Deep Caves]]. Other useful parts on some of the Exiles themselves are [[Adv. Component Analysis Suite]], [[System Purifier]], [[Cmb. Antigrav System]], [[Imp. Armor Integrity Analyzer]], [[Exp. Core Analyzer]], and [[Adv. Transmission Jammer]].\n[[Image]]Exiles Kill Build.png|Example Exiles kill build[[/Image]]\nFighting the Exiles is not recommended on -10 due to lower slot count, lower core integrity, and difficulty in getting enough integrity to survive the 8R-AWN fight. If fighting on -9, evolving a 3rd weapon slot can be very effective in killing 8R-AWN and any potential [[Z-Hero|Z-Heroes]] that might spawn in the next Mines map. The third weapon slot is not required to kill by any means, however, and any combination of weapon, utility, and propulsion slots for the evolve will work. As a basic checklist, the following parts are recommended:[[List]]Multiple kinetic guns with backups, ideally [[Hvy. Assault Rifle|Hvy. Assault Rifles]] or [[Imp. Assault Rifle|Imp. Assault Rifles]], weapons with negative salvage like [[Shotgun]] or a ballistic cannon like [[Imp. Light Cannon]] can work but 8R-AWN has very strong loot that is nice to get if possible|Multiple pieces of armor, preferably [[Hrd. Light Armor Plating]] or [[Med. Armor Plating]]|Multiple [[Lgt. Treads]] or [[Imp. Treads]] with backups|At least one launcher like [[Grenade Launcher]], [[Mni. Grenade Launcher]], or [[Rocket Launcher]]|(Optional) A way to gain positive salvage like a [[Salvage Targeting Computer]] can provide a better chance at part drops|(Optional) [[Blade Trap|Blade Traps]] for 8R-AWN, if an early trap extractor or trap stockpile are found in Mines. IMPORTANT: Do not install more than one trap until after the attack has begun. Exiles will give a warning if a trap is installed, and immediately turn on Cogmind if a second is installed.|(Optional) [[Thief Drone Bay]] trivializes the 8R-AWN fight. Make sure that you have aggro (he is shooting you), then release the drones. They will rip off parts very quickly and leave them defenseless.[[/List]]\n[[Image]]Exiles Kill.png|A visual guide to killing the Exiles[[/Image]]\nThere are some things that should be done before actually doing the fight itself. The image on the right serves as a visual reference. Any rigged engines used must be in inventory before attacking the Exiles, otherwise the engines will still remain loyal to the Exiles and explode only on Cogmind. Matter pods should be relocated near the 8R-AWN fighting spot (See point #4 in diagram) to avoid running out of matter in combat. Any allies should be told to stay in the same general area so they can contribute to the fight. However, Grunts can't deal much damage until [[8R-AWN's Armor/TH]] is destroyed. Finally, some vault items may come in handy for the fight. The [[Cloak of Protection]]'s effect is not so strong, but when turned off it is a high coverage high integrity piece of armor. The [[Longsword +1]] is a very effective kill tool. The [[Potential Leg|Potential Legs]] have a lot of integrity in case you run out of propulsion during the fight. The [[Gui. Plasma Cannon]] may be used to safely destroy the [[DAS Turret]] without getting attacked back. One thing to consider about the vault is that there may be a 0b10 attack on the Exiles after exiting. In those cases, an Exiles kill may either have to be cancelled or at least turned into a 8R-AWN only kill. Aside from that, the fight may begin:\n[[Image]]Exiles Launcher DAS.png|Launchering the DAS turret[[/Image]]\n[[List:Ordered]]Shoot one of the spike-shaped machines to turn the Exiles hostile.|Drop the rigged engines from the entrance every few tiles while walking toward the spot for step #3, they have an explosion radius of 2. This will take care of most of the Assembled that are coming your way. IMPORTANT: This must be done after the Exiles become hostile. If you do it before that, they will explode on Cogmind.|Pull out a Launcher and dispose of the remaining Assembled.|Go to the corner to fight 8R-AWN. If you have any blade traps, now is the time to use them. Place them just above the bottom-most wall to the right of the spot marked 4. This is the part that needs the most backups, as 8R-AWN will destroy many of your parts very quickly due to high damage and high part destroy critical chance. Always put on backup parts right away after they are destroyed.You may run out of matter and have to refill from matter pods at this point, which is why preemptively moving the matter pods here can be very important. Many kill attempts that don't have enough damage or integrity will end here.|Hopefully you have some good loot after 8R-AWN is destroyed. [[8R-AWN's Boregun|Boreguns]] are a very easy way to destroy the [[DAS Turret]]. Penetrate through the machines to try and kill the turret without getting shot at because the cannon deals incredibly high damage. If no Boreguns were dropped, using a launcher is another good option. The idea is to aim around the spike in the machine so that you can't get hit but the explosion radius will still hit the turret.|Finally, all that is left is to loot the Exiles and their Derelict friends. Otherwise just finish them off with whatever you have left. Watch out for [[EX-DEC]] as they have a deadly [[AWS/EX-DEC]] that can deal a lot of damage very quickly if you aren't careful. It has a short range, so just take them out from a distance.[[/List]]",
    "Exits": [
     {
      "Map": "Mines",
@@ -8927,7 +9132,7 @@
   },
   {
    "Name": "Overload",
-   "Content": "Overloading is a [[Game Mechanics|Game Mechanic]] available on primarily Cld. parts that allows for a temporary increase in effectiveness with additional heat costs and potential downsides based on the stability of the part. It is possible to perform for Power, Propulsion, and Weapon type items.\n[[Heading]]Power[[/Heading]]\nSome power parts (e.g. [[Cld. Ion Engine]]) support overloading. Overloading power causes the following changes:\n[[List]]Doubled energy generation|Doubled heat generation|Chance to shut down for ~5-10 turns and be damaged ~30-40% of the maximum integrity, based on the Stability % stat[[/List]]\n[[Heading]]Propulsion[[/Heading]]\nSome propulsion types (mainly [[Flight Units]] and [[Hover Units]]), e.g. [[Cld. VTOL Module]], support overloading. Overloading propulsion causes the following changes:\n[[List]]Doubled energy cost|Tripled heat generation|50% additional support|Speed is calculated as if there are twice the number of active Flight/Hover units (e.g. an overloaded Cld. VTOL Module will gain an additional -3 speed modifier)|Overload propulsion has a chance to suffer 1 point of damage each move that the part is active or each melee attack, based on the Burnout % stat[[/List]]\nOne special case, the [[Potential Leg]], does not have any of the above effects except for the burnout damage. Overloaded Potential Legs instead have their base speed halved.\n[[Heading]]Weapons[[/Heading]]\nSome energy weapons (e.g. [[Cld. Pulse Rifle]]) support overloading. Overloading weapons causes the following changes:\n[[List]]Double damage|Doubled energy cost|Tripled heat generation|Additional level of heat transfer (e.g. Medium (+37) is turned into High (+50)|Chance of negative effect based on Shot Stability %.[[/List]]\nIf an overload side effect occurs, one of the following effects will occur:\n[[List]]Energy Bleed (~40% chance): Cogmind loses anywhere from 10-50% of total energy capacity|Heat Surge (~40% chance): Cogmind gains between 100 and 200 heat|Short Circuit (~20% chance): A random part breaks[[/List]]"
+   "Content": "Overloading is a [[Game Mechanics|Game Mechanic]] available on [[Overloadable Parts]], primarily cooled (Cld.) parts, that allows for a temporary increase in effectiveness with additional heat costs and potential downsides based on the stability of the part. It is possible to perform for Power, Propulsion, and Weapon type items.\n[[Heading]][[Overloadable Power|Power]][[/Heading]]\nSome power parts (e.g. [[Cld. Ion Engine]]) support overloading. Overloading power causes the following changes:\n[[List]]Doubled energy generation|Doubled heat generation|Chance to shut down for ~5-10 turns and be damaged ~30-40% of the maximum integrity, based on the Stability % stat[[/List]]\n[[Heading]][[Overloadable Propulsion|Propulsion]][[/Heading]]\nSome propulsion types (mainly [[Flight Units]] and [[Hover Units]]), e.g. [[Cld. VTOL Module]], support overloading. Overloading propulsion causes the following changes:\n[[List]]Doubled energy cost|Tripled heat generation|50% additional support|Speed is calculated as if there are twice the number of active Flight/Hover units (e.g. an overloaded Cld. VTOL Module will gain an additional -3 speed modifier)|Overload propulsion has a chance to suffer 1 point of damage each move that the part is active or each melee attack, based on the Burnout % stat[[/List]]\nOne special case, the [[Potential Leg]], does not have any of the above effects except for the burnout damage. Overloaded Potential Legs instead have their base speed halved.\n[[Heading]][[Overloadable Weapons|Weapons]][[/Heading]]\nSome energy weapons (e.g. [[Cld. Pulse Rifle]]) support overloading. Overloading weapons causes the following changes:\n[[List]]Double damage|Doubled energy cost|Tripled heat generation|Additional level of heat transfer (e.g. Medium (+37) is turned into High (+50)|Chance of negative effect based on Shot Stability %.[[/List]]\nIf an overload side effect occurs, one of the following effects will occur:\n[[List]]Energy Bleed (~40% chance): Cogmind loses anywhere from 10-50% of total energy capacity|Heat Surge (~40% chance): Cogmind gains between 100 and 200 heat|Short Circuit (~20% chance): A random part breaks[[/List]]"
   },
   {
    "Name": "Partial Spot",

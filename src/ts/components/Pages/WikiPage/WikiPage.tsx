@@ -6,7 +6,7 @@ import { useHashLocation } from "wouter/use-hash-location";
 import wiki from "../../../../json/wiki.json";
 import { Bot } from "../../../types/botTypes";
 import { MapLocation, Spoiler } from "../../../types/commonTypes";
-import { Item, WeaponItem } from "../../../types/itemTypes";
+import { Item, PowerItem, PropulsionItem, WeaponItem } from "../../../types/itemTypes";
 import { WikiEntry } from "../../../types/wikiTypes";
 import { BotData } from "../../../utilities/BotData";
 import { ItemData } from "../../../utilities/ItemData";
@@ -57,13 +57,20 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ["Engines", (item) => item.type === "Engine"],
     ["Explosive Launchers", (item) => item.type === "Launcher" && (item as WeaponItem).explosionType === "Explosive"],
     ["Flight Units", (item) => item.type === "Flight Unit"],
+    ["Guided Weapons", (item) => item.slot === "Weapon" && (item as WeaponItem).waypoints !== undefined],
     ["Hover Units", (item) => item.type === "Hover Unit"],
+    ["Hybrid Power", (item) => item.slot === "Power" && item.name.startsWith("Hyb.")],
     ["Impact Weapons", (item) => item.type === "Impact Weapon"],
     ["Legs", (item) => item.type === "Leg"],
+    ["Overloadable Power", (item) => item.slot === "Power" && (item as PowerItem).powerStability !== undefined],
+    ["Overloadable Propulsion", (item) => item.slot === "Propulsion" && (item as PropulsionItem).burnout !== undefined],
+    ["Overloadable Weapons", (item) => item.slot === "Weapon" && (item as WeaponItem).overloadStability !== undefined],
+    ["Overtuned Parts", (item) => item.name.startsWith("Ovr.")],
     ["Phasers", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Phasic"],
     ["Piercing Weapons", (item) => item.type === "Piercing Weapon"],
     ["Power Cores", (item) => item.type === "Power Core"],
     ["Reactors", (item) => item.type === "Reactor"],
+    ["Reinforced Power", (item) => item.slot === "Power" && item.name.startsWith("Rnf.")],
     [
         "Resistance Armor",
         (item) =>
@@ -73,6 +80,10 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ],
     ["Special Weapons", (item) => item.type === "Special Weapon"],
     ["Slashing Weapons", (item) => item.type === "Slashing Weapon"],
+    [
+        "Temporary Slot Parts",
+        (item) => item.effect?.startsWith("When attached, gives access to additional temporary slot") || false,
+    ],
     ["Thermal Cannons", (item) => item.type === "Energy Cannon" && (item as WeaponItem).damageType === "Thermal"],
     ["Thermal Guns", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Thermal"],
     ["Treads", (item) => item.type === "Treads"],
