@@ -39,6 +39,7 @@ export type EditState = {
 };
 
 const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
+    ["Alien Artifacts", (item) => item.ratingCategory === "Alien"],
     ["Alpha Cannons", (item) => item.type === "Energy Cannon" && item.name.includes("Alpha Cannon")],
     ["Ballistic Cannons", (item) => item.type === "Ballistic Cannon"],
     ["Ballistic Guns", (item) => item.type === "Ballistic Gun"],
