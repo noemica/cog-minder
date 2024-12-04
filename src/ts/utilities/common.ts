@@ -311,6 +311,7 @@ export function getItemAsciiArtImageName(item: Item): string {
 // Converts a normal string to a string safe to be used in an URL
 export function getLinkSafeString(str: string) {
     return str
+        .replaceAll("%", "%25")
         .replaceAll(" ", "%20")
         .replaceAll("#", "%23")
         .replaceAll("&", "%26")
@@ -387,8 +388,9 @@ export function getTopTwoValues(values: number[]) {
 // Converts a string from getLinkSafeString to a normal string
 export function getStringFromLinkSafeString(str: string) {
     return str
-        .replace("%20", " ")
+        .replaceAll("%20", " ")
         .replaceAll("%23", "#")
+        .replaceAll("%25", "%")
         .replaceAll("%26", "&")
         .replaceAll("%28", "(")
         .replaceAll("%29", ")")
