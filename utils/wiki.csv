@@ -2109,7 +2109,6 @@ Components|Lgt. Deuterium Engine|1|Lgt. Flexi-Carbon Leg|2|Adv. Targeting Comput
 Class|Swarmer||
 Size|Small||
 Profile|SQ3X3||
-Rating|42||
 Tier|6||
 Threat|3||
 Value|60||
@@ -2124,7 +2123,49 @@ Core Exposure|60||
 Salvage Potential|30~40||
 Description|The Gremlin is a previously unused prototype that was easily adapted to the Spawner Unit.  Something of a cross between a swarmer and programmer, its hacking capabilities are limited but it should be able to directly hack Spawned Derelicts and rapidly rewire most other robots that it successfully disrupts.||
 Armament|Imp. Arc Projector|1|Adv. Remote Datajack|1||
-Components|Mic. Fission Core|1|Biomechanical Wings|3|Core Analyzer|1[[/BotDetails]]","","","","","",""
+Components|Mic. Fission Core|1|Biomechanical Wings|3|Core Analyzer|1[[/BotDetails]]
+[[BotDetails]]Name|Impaler||
+Class|Duelist||
+Size|Medium||
+Profile|RD5X5||
+Rating|36||
+Tier|6||
+Threat|3||
+Value|60||
+Energy Generation|25||
+Heat Dissipation|35||
+Visual Range|16||
+Memory|30||
+Spot Percent|20||
+Movement|Walking (120/83%)||
+Core Integrity|40||
+Core Exposure|40||
+Salvage Potential|60~80||
+Description|An updated take on the spear-wielding variant of the Stabber.  The idiots behind the Spawners are using the original dagger variant but neither one could handle a core hit from a lance.  The addition of a proper jammer makes this suitable for both solo defense and squad offense.||
+Armament|Lance|1||
+Components|Mic. Nuclear Core|1|Lgt. Carbon-Fiber Leg|2|Imp. Core Shielding|1|Microactuators|1||
+Components|Imp. Melee Analysis Suite|1|Imp. Transmission Jammer|1[[/BotDetails]]
+[[BotDetails]]Name|Spawner Guard||
+Class|Grunt||
+Size|Medium||
+Profile|RD5X5||
+Rating|70||
+Tier|7||
+Threat|4||
+Value|75||
+Energy Generation|40||
+Heat Dissipation|50||
+Visual Range|16||
+Memory|20||
+Spot Percent|100||
+Movement|Walking (120/83%)||
+Core Integrity|80||
+Core Exposure|20||
+Salvage Potential|40~50||
+Description|By leveraging the results of my early Reformer experiments I was able to produce a heavy grunt with the Spawner Unit.  This legged tank is fabricated as two separate units which merge as soon as the second unit is completed.  The ""halves"" of this guard take a long time and a lot of matter to finish, so it is only intended to be produced in small numbers.||
+Armament|Force Rifle|2||
+Components|Lgt. Nuclear Core|2|Arm. Leg|2|Imp. Light Armor Plating|2|Imp. Cooling System|2||
+Components|Dynamic Insulation System|1|Exp. Targeting Computer|1|Adv. Target Analyzer|1[[/BotDetails]]","","","","","",""
 "Fanart/Maiker","Other","[[Fanart]] created by Maiker:
 [[FanartGallery]]fanart/maiker/Behemoth_GJ_was_here.gif|Behemoth + GJ was here|fanart/maiker/Brawler_Bonk.gif|Brawler Bonk|fanart/maiker/Demolisher_Shoot.gif|Demolisher Shoot|fanart/maiker/Disguised_Cogmind.gif|Disguised Cogmind|fanart/maiker/Get_Heavy'ed.gif|Get Heavy'd|fanart/maiker/GOLEM_Full_Loop.gif|GOLEM|fanart/maiker/Grunt_Shoot.gif|Grunt Shoot|fanart/maiker/Hunter_Drone.gif|Hunter Drone|fanart/maiker/luigi_force_ram.gif|LU-1G1's Force Ram|fanart/maiker/Programmer_Shoot.gif|Programmer Shoot|fanart/maiker/Sentry_Shoot.gif|Sentry Shoot[[/FanartGallery]]","","","","","",""
 "Fanart/Radbanker","Other","[[Fanart]] created by Radbanker:
