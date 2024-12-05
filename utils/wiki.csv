@@ -680,15 +680,21 @@ There are 3 exits on this map but only 2 kinds of exits:
 
 Warning: The writer of this article has not yet earned the ""Full Golem"" Achievement, and as such its description in this page is a (likely accurate) guess instead of being the official description.
 
+[[Comment]]Important note : A lot of Challenge Achievements' descriptions mention by name some spoiler-tier stuff, such as the Cetus Guards or Transdimensional Reconstructors.
+Normally, these names would be contained within a Link tag.
+However, because those Achievements' descriptions are not hidden by the game (the descriptions themselves aren't spoiler-tier), these names should not be contained within a Link tag, because that would cause them to appear spoilered to anyone with a spoiler setting of ""None"".[[/Comment]]
+
 [[Heading]]Challenge difficulty level 1[[/Heading]]
 [[List]]Exterminator: Destroy 15 [[Assembled]] in the [[Mines]].
+Strategy: This Achievement is seed-dependent, and may be impossible on some seeds. When attempting to get this Achievement on a random seed, visit the Mines and bring at least one [[Launchers|launcher]]. If an Assembled infestation occurs, try to find and reach the source as quickly as possible, to be able to blow up the Assembled while they are still in a somewhat large group. Having a Seismic Detector can help locate the Assembled faster.
 |Killing Spree: Achieve a kill streak of 20 hostiles.
 |Preemptive Strike: Destroy a visible ARC before it deploys.
 |Left-hand Path: Destroy all Cetus Guards without any help from allies.
 |Below: Visit and survive 2 Waste areas.
 |Streaker: Enter a main complex map at -5 or above as a naked core, and find an exit (do not have to remain naked).
 |Rincewind: Use at least 10 Transdimensional Reconstructors (any variant).
-|Leap Before You Look: Enter 10 unidentified exits.[[/List]]
+|Leap Before You Look: Enter 10 unidentified exits.
+Strategy: It is possible to deduce the identity of exits without actually ""identifying"" the exit, through various means. For example, successfully hacking branch exits would cause all remaining unidentified exits to be main exits, and vice-versa. It is also possible to identify some exits by where they are or what's around them, such as [[Mines]] exits, which are always surrounded by mining equipment. This is especially true in branches, where all exits are distinguishable from each other. This can allow entering exits the game considers ""unidentified"", while actually knowing where they lead, making this Achievement much easier. If you have a [[Signal Interpreters|Signal Interpreter]] attached, remember to deactivate it before approaching any exits you would want to take while unidentified, as it would automatically identify them.[[/List]]
 
 [[Heading]]Challenge difficulty level 2[[/Heading]]
 [[List]]
