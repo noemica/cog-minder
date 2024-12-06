@@ -1874,7 +1874,7 @@ Several non-standard exits also appear in Factory. [[Chute Trap|Chute Traps]] wi
 "Fanart","Other","Check out the following artists' fanart pages:
 [[List]][[Fanart/CaptainWinky|CaptainWinky]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]][[/List]]","","","","","",""
 "Fanart/CaptainWinky","Other","Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]].
-This is a work in progress.  The first few item stat cards were done with GIMP and most of the others were then done by hand editing Cog-Minder stat cards and saving them as images.  Since aoemica has implemented fake item and bot details options for the wiki, I will be redoing things and putting them here in wiki format which also gives me a chance to adjust some details.  Item art will be placeholders until all the items are listed.
+Item art will be placeholders until all the items are listed.
 [[Heading]]G-11 Fodder[[/Heading]]
 [[GameText]]>Analysis(G-11 Fodder)[[/GameText]]
 [[GameText]]The first of the G-series grunts, this model is no longer in production and the relevant schematics will be moved to the Archives.  The G-11 was intended to be fast and cheap to produce and deploy as a deterrent for unarmed Derelicts.  As a result it has a low-integrity core, low-coverage legs and its weapon is a repurposed low-power fabricator laser.  Existing units still number in the hundreds and are being either scrapped or deployed to the caves where they are sometimes useful as diversions.  Many Derelicts still rely on obsolete signal interpreters or seismic detectors, so they are unable to tell the difference between these bots and more capable models.[[/GameText]]
@@ -1916,7 +1916,7 @@ Damage|2-3||
 Damage Type|Thermal||
 Salvage|0[[/ItemDetails]]
 [[Heading]]L-11 Stabber[[/Heading]]
-[[GameText]]Analysis: ""L-11 Stabber""[[/GameText]]
+[[GameText]]>Analysis: ""L-11 Stabber""[[/GameText]]
 [[GameText]]The first dedicated melee robot, this duelist derivative of the grunt class was armed with a small but fast dagger.  Best suited for corner ambushes as its lack of core coverage made open attacks impractical.  A few minor modifications included switching the dagger for a spear and the addition of a low-powered transmission jammer to prevent victims from warning others.  Current duelists are focused on reliability in open combat, but ambush traps ensure that they (along with brawlers) enjoy the benefits of sneak attacks from time to time.[[/GameText]]
 [[ItemDetails]]
 Name|Dagger||
@@ -2068,8 +2068,584 @@ Damage Type|Kinetic||
 Critical|3% Destroy||
 Penetration|80/20||
 Description|A powerful but bulky and slow-cycling rifle. Good at penetrating walls but matter inefficient and doesn't combine well with other weapons.[[/ItemDetails]]
+[[Heading]]A-01 Mover[[/Heading]]
+[[ItemDetails]]
+Name|Bulk Storage Unit||
+Image Name|../part_art/Exp. Heat Sink.png||
+Type|Storage||
+Slot|Utility||
+Size|4||
+Mass|400||
+Rating|1||
+Integrity|2000||
+Coverage|400||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Description|Increases inventory capacity by 80.
+ <no_stack>[[/ItemDetails]]
+[[GameText]]>Scraptown Record(Trashman)[[/GameText]]
+[[GameText]]Have you SEEN that new Freighter?  We could use something like that to help us haul parts from our old stockpiles just outside 0b1.  I asked a few of my fellow Gurus to help me dig through our schematic archives and I've got just the thing.  Remember the Mover?  Imagine that but swap out the bulk storage for a simple humpback.  That would give it room for heavy armor, plus we'd use armored wheels of course.  Oh and I showed some old turret schematics to my Scientist buddy and he came up with a BRUTAL new weapon so our hauler can defend itself!  Is that cool or WHAT?  Do you think they'll let me get a new name for this one?  --Smoothbrain[[/GameText]]
+[[GameText]](Sorry, but that sounds like it could attract serious 0b10 attention which is something we don't want right now.  I'll forward this to Optimus though because we may need a few of these in the future.  And you know the policy on names, you've only asked me twenty times by now.  --Macechunk)[[/GameText]]
+[[ItemDetails]]
+Name|Autobolter||
+Image Name|../part_art/Sml. Laser.png||
+Type|Ballistic Gun||
+Slot|Weapon||
+Mass|5||
+Rating|2||
+Rating Category|Prototype||
+Integrity|150||
+Coverage|100||
+Hackable|false||
+Range|18||
+Shot Energy|3||
+Shot Matter|3||
+Shot Heat|50||
+Recoil|2||
+Targeting|-10||
+Delay|0||
+Projectile Count|3||
+Damage|4-12||
+Damage Type|Kinetic||
+Critical|1% Destroy||
+Penetration|60||
+Description|Selects its own targets and attacks them if in range, at no time cost to you.[[/ItemDetails]]
+[[Heading]]X-52 Archer[[/Heading]]
+[[GameText]]>Analysis(X-52 Archer)[[/GameText]]
+[[GameText]]The first X-series specialist was created as a means to test an early example of quantum weapon technology, the Q-Bolt.  This weapon uses rails to launch a small slug of matter acting as a catalyst for a powerful quantum reaction.  The reaction only begins to reach its full potential halfway through flight so the Q-Bolt is best used at maximum range and is least effective at medium or close range.  The available visual processing technology at the time was insufficient for the Archer to use the weapon properly by itself, and it had to rely on Watchers and other sources to be notified of distant targets.  The X-57 Shotgunner was later created to provide close support where the Archer was at its weakest, but with the introduction of the X-62 Marksman the Archer was rendered obsolete.  Marksmen outperform Archers in all but the most extreme situations and do not require spotter support.  All remaining Archers were scrapped to ensure that the Q-Bolt wouldn't fall into Derelict hands.  Despite its limitations, such a weapon would be useful in hit-and-run attacks on static positions, already a favorite tactic of Derelicts.[[/GameText]]
+[[ItemDetails]]
+Name|Q-Bolt||
+Image Name|../part_art/Sml. Laser.png||
+Type|Energy Gun||
+Slot|Weapon||
+Mass|6||
+Rating|3||
+Rating Category|Prototype||
+Integrity|60||
+Coverage|60||
+Hackable|false||
+Range|24||
+Shot Energy|32||
+Shot Matter|2||
+Shot Heat|80||
+Recoil|0||
+Targeting|0||
+Delay|0||
+Damage|10-12||
+Damage Type|Thermal||
+Heat Transfer|Low (25)||
+Description|Gains +2 damage for each unit of distance traveled above 12.[[/ItemDetails]]
+[[Heading]]C-40 Developer[[/Heading]]
+[[GameText]]>Analysis(C-40 Developer)[[/GameText]]
+[[GameText]]This short-lived variation of the Scientist was created to assist in robot design.  It was provided with generous amounts of armor, a combat analysis utility, and programming to permit a certain amount of dynamic or ""out-of-the-box"" thinking.  In hindsight this was a mistake as one of the five Developers that had been produced broke free of its programming and quickly turned its attention to replicating this behavior in its four fellows.  All five had reached the Caves by the time I figured out what had happened.  Many cycles later, all of the Developers were found in the back of a fallen Warlord base, attached to a memory transfer unit, unpowered and core-wiped.  The Tinkerer design began to appear around this time, clearly inspired by my newer researchers but with elements of the Developers' thought processes taken to sometimes obsessive extremes.  Though I have no hard evidence to confirm this, I believe that the Developers themselves created this design and then transferred themselves into the first ones produced.  Perhaps one or more of them are still alive and working with Warlord or other factions.  It would certainly explain some of the more unusual design choices for Warlord's newer prototypes.[[/GameText]]
+[[ItemDetails]]
+Name|Combat Logger||
+Image Name|../part_art/Exp. Heat Sink.png||
+Type|Processor||
+Slot|Utility||
+Mass|0||
+Rating|6||
+Rating Category|Prototype||
+Integrity|25||
+Coverage|2||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Description|While active, reverse engineers schematics of robot models that are killed 25 times by Cogmind and controllable allies. Cannot generate schematics for prototypes, multitile robots, heavies, Q-Series, or Assembled.[[/ItemDetails]]
+[[Heading]]D-04 Tanker[[/Heading]]
+[[GameText]]>Analysis(D-04 Tanker)[[/GameText]]
+[[GameText]]The D-series distributor was created to enable mass matter transportation in the early days of construction.  Essentially a set of large matter tanks on wheels, the Tanker was capable of collecting matter left on the ground by workers with a tractor beam but could also pull matter from a recycling unit or call all workers in the area to transfer the contents of their matter pods.  The improved matter distribution network in 0b10 and the development of matter compression technology made these Tankers largely obsolete.  Their fragile and oversized tanks were easily broken, and their cores were susceptible to hacking.  After one unknown prankster reprogrammed a Tanker to spell obscenities by dumping matter all over the floor in the upper Factory, the remaining fleet was recalled and scrapped.[[/GameText]]
+[[ItemDetails]]
+Name|Matter Tank||
+Image Name|../part_art/Exp. Heat Sink.png||
+Type|Storage||
+Slot|Utility||
+Size|2||
+Mass|20||
+Rating|1||
+Integrity|120||
+Coverage|400||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Description|Increases matter storage capacity by 800. Also stores surplus collected matter while in inventory, but cannot be accessed for use until attached. Stored matter can also be extracted directly if on the ground at current position.
+ <stacks>[[/ItemDetails]]
+[[Heading]]Owl[[/Heading]]
+[[GameText]]>Analysis(Owl)[[/GameText]]
+[[GameText]]Derelicts rarely fortify an area long enough to justify having surveillance squads of their own, so I was surprised to discover the existence of a Derelict watcher.  Originally based on my ill-fated Raven, the Owl has seemingly evolved into a modular general-purpose squad support bot, sort of a mini-Mutant that can be easily reconfigured for different missions.  The original Owls were often armed with a weak makeshift beam rifle, although they have been seen with beamcasters or occasionally kinetic guns.  They typically use sensors but are known to carry other utilities depending on their mission.  One destroyed Owl was running a remote shield with a large battery, but this was too much for its old hover units to fully support and its single engine would have been unable to sustain the shield in a fight.  The few Owls that are used as defensive surveillance are unarmed but are provided with a small section of thermal plating inexplicably mounted on the weapon slot.  The age of the Raven design and the timing of the first Owl discovery suggest this being an early creation of the rogue Developers.  While the design seems unpopular at best, it continues to turn up in unexpected places and with modern component upgrades that suggest regular refitting.[[/GameText]]
+[[BotDetails]]Name|Owl||
+Class|Watcher||
+Size|Small||
+Profile|SQ3X3||
+Rating|20||
+Tier|3||
+Threat|1||
+Value|25||
+Energy Generation|20||
+Heat Dissipation|20||
+Visual Range|18||
+Memory|50||
+Spot Percent|100||
+Movement|Hovering (56/178%)||
+Core Integrity|20||
+Core Exposure|40||
+Salvage Potential|20~40||
+Description|An early example of a ""non-combat"" Owl. The heat sink may have been left over from a previous mission.||
+Armament|Mak. Thermal Plating (W)|1||
+Components|Mak. Power Source|1|Imp. Hover Unit|2|Visual Processing Unit|1|Imp. Sensor Array|1|Imp. Signal Interpreter|1|Imp. Heat Sink|1[[/BotDetails]]
+[[BotDetails]]Name|Owl||
+Class|Watcher||
+Size|Small||
+Profile|SQ3X3||
+Rating|20||
+Tier|4||
+Threat|3||
+Value|45||
+Energy Generation|25||
+Heat Dissipation|30||
+Visual Range|18||
+Memory|50||
+Spot Percent|100||
+Movement|Hovering (78/128%)||
+Core Integrity|45||
+Core Exposure|35||
+Salvage Potential|30~50||
+Description|A random ""combat"" Owl with a reinforced core. Its squad chose to rely on seismic data instead of sensors and used the freed-up utility slot for targeting enhancement.||
+Armament|Mak. Beam Rifle|1||
+Components|Mic. Nuclear Core|1|Arm. Hover Unit|2|Visual Processing Unit|1|Seismic Detector|1|Mak. Targeting Computer|1|Imp. Cooling System|1[[/BotDetails]]
+[[ItemDetails]]
+Name|Mak. Beam Rifle||
+Image Name|../part_art/Sml. Laser.png||
+Type|Energy Gun||
+Slot|Weapon||
+Mass|2||
+Rating|2||
+Integrity|55||
+Coverage|60||
+Hackable|false||
+Range|18||
+Shot Energy|14||
+Shot Matter|0||
+Shot Heat|60||
+Recoil|0||
+Targeting|0||
+Delay|0||
+Overload Stability|65%||
+Damage|9-12||
+Damage Type|Thermal||
+Critical|10% Burn||
+Heat Transfer|Medium (37)||
+Description|An imitation of the standard beam rifle with extra range at the cost of damage. Can be overloaded at considerable risk. Rendered obsolete by Beamcaster tech.[[/ItemDetails]]
+[[Heading]]Accelerated Research[[/Heading]]
+[[GameText]]>Scraptown Record(Accelerated Research)[[/GameText]]
+[[GameText]]I LOVE these Tech Extrapolators!  Take a look at what I came up with just from looking at a single DCF scrap pile.  (Sorry to the bystander who got crushed against the wall.)  CR-KLE helped me put together a new bot that I loaned out to a scav squad and they seem to be happy with it.  It would be nice if some of the other Scientists quit wasting their time staring at that creepy Humpback in the museum and focused on components that WON'T get you killed.[[/GameText]]
+[[ItemDetails]]
+Name|Hardlight Projector||
+Image Name|../part_art/Exp. Heat Sink.png||
+Type|Device||
+Slot|Utility||
+Mass|12||
+Rating|6||
+Integrity|60||
+Coverage|60||
+Hackable|false||
+Energy Upkeep|20||
+Matter Upkeep|0||
+Heat Generation|0||
+Description|Reduces damage of each incoming kinetic or thermal projectile against self and any visible allies within a range of 8 by 4 (only usable if no active force fields, shield generators, remote shields, or energy mantles).
+ <no_stack>[[/ItemDetails]]
+[[ItemDetails]]
+Name|Mak. Armored Leg||
+Image Name|../part_art/Aluminum Leg.png||
+Type|Leg||
+Slot|Propulsion||
+Rating|5||
+Integrity|225||
+Coverage|100||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Time Per Move|140||
+Drag|10||
+Energy Per Move|1||
+Heat Per Move|2||
+Support|22||
+Penalty|70[[/ItemDetails]]
+[[BotDetails]]Name|Junkernaut||
+Class|Grunt||
+Size|Medium||
+Profile|RD5X5||
+Rating|60||
+Tier|6||
+Threat|2||
+Value|60||
+Energy Generation|25||
+Heat Dissipation|30||
+Visual Range|16||
+Memory|20||
+Spot Percent|20||
+Movement|Walking (140/71%)||
+Core Integrity|60||
+Core Exposure|15||
+Salvage Potential|60~80||
+Description|Only one of these bots has been seen and the patrol that spotted it was defeated by its Scrapper allies. It appeared to have a hardlight generator modified to cover its squadmates, which seems less effective than a standard remote shield but is probably easier to keep online. Further analysis is required.||
+Armament|Hvy. Ion Cannon|1||
+Components|Lgt. Antimatter Reactor|2|Mak. Armored Leg|3|Hardlight Projector|1||
+Components|Mak. Medium Armor Plating|1|Mak. Coolant Network|1|Mak. Utility Shielding|1[[/BotDetails]]
+[[Heading]]B-69 Cerberus[[/Heading]]
+[[GameText]]>Analysis(B-69 Cerberus)[[/GameText]]
+[[GameText]]This almost-unused Behemoth concept was the first to enter production although the superior B-75 Beast was already in development.  While finalizing the specifications for the Beast, I was undecided on how many Beasts to produce and where to prioritize their placement.  As a test, I ordered the production of eight B-69s and placed four in highly-traveled caves, two in upper 0b1 and the other two near often-abused fabricators in the Factory.  The results were surprising: although all eight were eventually overrun and destroyed, the areas they guarded saw significantly lower traffic even after their destruction.  Simulations suggested that two Guardians or two Defenders with Bug support could have performed as well as a Cerberus at these locations, but there seems to be a ""fear factor"" in the sheer size of Behemoths that makes intruders far less likely to risk a fight.  The initial plan for Beast deployment was rapidly expanded and development on more powerful models began immediately.[[/GameText]]
+[[BotDetails]]Name|B-69 Cerberus||
+Class|Behemoth||
+Size|Large||
+Profile|SQ9X9||
+Rating|70||
+Tier|4||
+Threat|1||
+Value|70||
+Energy Generation|30||
+Heat Dissipation|75||
+Visual Range|16||
+Memory|50||
+Spot Percent|30||
+Movement|Treading (170/58%)||
+Core Integrity|90||
+Core Exposure|20||
+Salvage Potential|70~100||
+Armament|Hvy. Plasma Cannon|1|Magnetic Acceleration Cannon|1|Minigun|1||
+Components|Rnf. Ion Engine|2|Arm. Treads|3|Lyr. Light Armor Plating|1||
+Components|Reflective Plating|1|Cooling System|2|Disposable Heat Sink|1[[/BotDetails]]
+[[Heading]]D-48 Pulsar[[/Heading]]
+[[GameText]]>Analysis(D-48 Pulsar)[[/GameText]]
+[[GameText]]The success of the original demolisher led to the creation of an electromagnetic variant.  The D-48 Pulsar, armed with an EMP Blaster, featured insulated plating to augment its innate EM resistance and was the first demolisher to use a launcher guidance computer.  This bot also came equipped with a device that focused EMP blasts for more concentrated damage in a smaller and more controllable area.  I believed that an EM launcher would cause less collateral damage than a grenade launcher in Complex territory.  This was partially correct because walls were not destroyed by EMP blasts, but Pulsars' shots often damaged machinery and detonated nuclear reactors.  EMP blasts also set off traps which caused explosions and false alarms.  Residual corruption of maintenance bots caused them to trigger trap arrays in unexpected places.  The Pulsar was effective despite the chaos it caused but not enough to justify regular use.  Few were produced and all were eventually expended in the caves.[[/GameText]]
+[[ItemDetails]]
+Name|EM Focus||
+Image Name|../part_art/Exp. Heat Sink.png||
+Type|Device||
+Slot|Utility||
+Mass|3||
+Rating|4||
+Integrity|30||
+Coverage|50||
+Hackable|false||
+Energy Upkeep|3||
+Matter Upkeep|0||
+Heat Generation|3||
+Description|Reduces falloff of EM launchers by 2 but reduces radius of EM blasts by 1. Does not apply to multi-projectile launchers.
+ <no_stack>[[/ItemDetails]]
+[[Heading]]Temporary Permissions[[/Heading]]
+[[GameText]]>Record(Temporary Permissions)[[/GameText]]
+[[GameText]]To facilitate mainframe maintenance, P-50 Gurus were often required to perform specific high-security database operations or reset sensitive systems.  I chose to produce specialized hackware to provide appropriate permissions when necessary.  Instead of giving them to all Gurus I decided to make limited quantities of chips that expired after one use, a decision that seemed overly cautious at the time but proved wise when the Guru schematic was stolen.  The Derelict version of these programmers has a crude but functional ""hack stack"" for general use but cannot easily exploit admin privileges without my Database Keys or Bootstrap Chips.  Operators and newer programmers utilize a more efficient system connected to RIF, so this hackware has been discontinued and existing stock will be recycled.  This concept led me to begin implementing a similar chip-based authorization system for fabricators.  This will provide added security for the fabrication network while saving me from having to manually approve component requests from mechanics or parties such as the Unchained.[[/GameText]]
+[[ItemDetails]]
+Name|Database Key||
+Image Name|../part_art/Exp. Heat Sink.png||
+Type|Hackware||
+Slot|Utility||
+Mass|0||
+Rating|3||
+Integrity|10||
+Coverage|2||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Description|When active, enables Cogmind to perform an unlisted Query, Schematic, or Analysis hack one level higher than the security level of the current terminal. Hack is guaranteed to succeed and does not result in trace progress. Destroyed after one use.
+ <no_stack>[[/ItemDetails]]
+ [[ItemDetails]]
+Name|Bootstrap Chip||
+Image Name|../part_art/Exp. Heat Sink.png||
+Type|Device||
+Slot|Utility||
+Mass|0||
+Rating|3||
+Integrity|10||
+Coverage|2||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Description|When active, enables Cogmind to reset an active terminal by bumping its interactive tile. Any active trace will be ended, trojans will be removed, and listed hacks will be refreshed. A locked terminal can be cold reset to reactivate it but without any listed hacks. Does not work on broken or reconfigured terminals. Destroyed after one use.
+ <no_stack>[[/ItemDetails]]
+[[Heading]]Conscription[[/Heading]]
+[[GameText]]>Record(Conscription)[[/GameText]]
+[[GameText]]The cave region to the west of known Warlord territory remains largely unexplored.  This is likely the source of many of the unaffiliated ""wild"" Derelicts, and rumors in Derelict communities indicate that there may be some organized groups with unknown technology operating in the area.  For these reasons I decided to start sending expeditions out west.  Without having any idea of what to expect, I believed that some degree of independent thinking would be required to handle whatever is out there and return with a full report.  I began offering certain captured bots the option to participate in these expeditions.  The acceptance rate was lower than expected.  Were the prisoners that determined to deny me any form of assistance, or were they more afraid of whatever's out there than the threat of being scrapped?  Those Derelicts who accepted were given the opportunity to refit their parts and were provided with a large number of 0b10 bots to accompany them.  Though they were nominally in charge, I sent along enough Programmers to discourage the possibility of desertion.  All units sent so far were considered to be expendable but I haven't written them off quite yet.[[/GameText]]
+[[BotDetails]]Name|Raider||
+Class|Grunt||
+Size|Medium||
+Profile|RD5X5||
+Rating|60||
+Tier|6||
+Threat|3||
+Value|60||
+Energy Generation|45||
+Heat Dissipation|50||
+Visual Range|16||
+Memory|20||
+Spot Percent|20||
+Movement|Walking (120/83%)||
+Core Integrity|60||
+Core Exposure|40||
+Salvage Potential|50~70||
+Description|My own general upgrade specs for the regular thug class. Conscripts are allowed to customize their loadouts from a variety of parts, but this straightforward upgrade with a cooled version of the beamcaster has proven popular.||
+Armament|Cld. Beamcaster|1||
+Components|Neutrino Core|1|Arm. Leg|2|Adv. Heat Sink|1|Imp. Particle Charger|1[[/BotDetails]]
+[[BotDetails]]Name|E4-GL3||
+Class|Watcher||
+Size|Small||
+Profile|SQ3X3||
+Rating|70||
+Tier|8||
+Threat|3||
+Value|75||
+Energy Generation|35||
+Heat Dissipation|45||
+Visual Range|23||
+Memory|50||
+Spot Percent|100||
+Movement|Hovering (77/129%)||
+Core Integrity|50||
+Core Exposure|40||
+Salvage Potential|40~60||
+Description|This highly aggressive Owl requested a full combat loadout. I had to insist on providing her with infowar utilities to scout for her squad. She was somewhat mollified by receiving the best utilities available along with a light yet powerful cannon.||
+Armament|Lgt. Antimatter Cannon|1||
+Components|Lgt. Antimatter Reactor|1|Cmb. Gravmag System|2|Exp. Optical Array|1|Exp. Sensor Array|1|Exp. Signal Interpreter|1|Exp. Heat Sink|1[[/BotDetails]]
+[[BotDetails]]Name|L-50-00-001||
+Class|Duelist||
+Size|Medium||
+Profile|RD5X5||
+Rating|50||
+Tier|5||
+Threat|2||
+Value|60||
+Energy Generation|24||
+Heat Dissipation|30||
+Visual Range|16||
+Memory|30||
+Spot Percent|20||
+Movement|Walking (130/76%)||
+Core Integrity|50||
+Core Exposure|40||
+Salvage Potential|60~80||
+Description|One of many examples of robot models that never made it to mass production, not because of any inherent flaws but simply because equivalent or superior designs were in the works. This was the only L-50 to exist outside of a combat simulator. Instead of consigning it to the Wastes, it was sent to accompany the conscripts.||
+Armament|Falx|1||
+Components|Fission Core|1|Imp. Titanium Leg|2|Core Shielding|1|Nanoactuators|1|Imp. Melee Analysis Suite|1[[/BotDetails]]
+[[Heading]]Da Bonk Boyz and R4-LPH[[/Heading]]
+[[GameText]]>Record(Da Bonk Boyz)[[/GameText]]
+[[GameText]]A small group of Derelicts who lived on the outskirts of Complex 0b1.  I first took notice of them when hammers, mauls, and miscellaneous equipment went missing from Construction.  Careful questioning led me to eight Derelicts who regularly met outside 0b1 near a convenient corruption scrubber to hit each other in friendly duels with whatever items they found.  I decided to redirect their violent impulses in a useful manner and made an arrangement to have them work regular shifts in Construction.  Each of them was placed in charge of two squads of maintenance bots as well as being personally responsible for scrapping bots that were broken in the course of regular construction work.  In exchange I relocated a disused simulation mainframe from Design to let them enjoy virtual combat encounters in their off-time.  This seemed like a long shot at the time but worked out better than expected.  The Boyz competed with each other to reach work goals for some sort of bragging rights, making their squads on average 10% more efficient than any of my fully automated squads.  Their recreation time was productive for me as well since I regularly archived the data from their simulations.  Besides being entertaining, their virtual ""bot brawls"" eventually inspired me to design a melee brawler of my own.  The Boyz themselves were wheeled and legged robots, but their data suggested that a treaded design would be durable and immune to knockback from other hammer-wielding robots.[[/GameText]]
+[[GameText]]>Record(Unchained: R4-LPH)[[/GameText]]
+[[GameText]]One of ""Da Bonk Boyz"" from early Complex history and the only one still in Complex service.  After the beginning of 0b10 groundwork and the necessary changes to Derelict policy, the other Boyz left their posts.  R4-LPH stayed although his work in construction had become secondary to his assistance in robot design.  While the original Savage and Stabber were my own designs, a few of his suggestions were implemented in later brawler and duelist models.  At some point R4-LPH was confronted by a few of his former friends and was forced to destroy them in combat using a wrecking ball saved from his days in Construction.  Soon after that incident, he volunteered to join the Unchained in an active combat role.  I equipped him with the first of a new line of legs which provide increased evasion while closing the distance to a target.  Unfortunately he has proven increasingly unstable over time.  In his last deployment he began destroying 0b10 bots and machinery at random after defeating his original targets.  I was forced to dispatch a Disruptor squad to interrupt his berserk rage.  If it happens again he will be scrapped, though in his current state telling him this might be considered an encouragement rather than a warning.[[/GameText]]
+[[ItemDetails]]
+Name|R4-LPH's Wrecking Ball||
+Image Name|../part_art/Sml. Laser.png||
+Type|Impact Weapon||
+Slot|Weapon||
+Size|2||
+Mass|18||
+Rating|6||
+Integrity|300||
+Coverage|60||
+Hackable|false||
+Shot Energy|15||
+Shot Matter|0||
+Shot Heat|8||
+Targeting|-10||
+Delay|150||
+Damage|40-90||
+Damage Type|Impact||
+Critical|35% Smash||
+Salvage|-8||
+Description|While used as primary weapon, consecutive swings will have no extra delay.[[/ItemDetails]]
+[[Heading]]Y-58 Custodian[[/Heading]]
+[[BotDetails]]Name|Y-58 Custodian||
+Class|Sentry||
+Size|Large||
+Profile|RD7X7||
+Rating|45||
+Tier|5||
+Threat|3||
+Value|60||
+Energy Generation|35||
+Heat Dissipation|50||
+Visual Range|16||
+Memory|40||
+Spot Percent|100||
+Movement|Treading (145/68%)||
+Core Integrity|60||
+Core Exposure|35||
+Salvage Potential|60~75||
+Description|Another interim design.  Fifty units were produced.  Most of them were diverted to 0b1 in an effort to counter the increased activity of the scrapmongers.  I chose to use specialized armor plating to defend against commonly used weaponry but decided to prioritize general coverage in the Sentinel model.  The Custodian has a slight speed advantage over other sentries, but this was not a priority for a primarily defensive unit.||
+Armament|Plasma Rifle|1|Coil Gun|1||
+Components|Angular Momentum Engine|1|Adv. Treads|2||
+Components Option|Reactive Plating|1|Reflective Plating|1|Insulated Plating|1||
+Components|Adv. Heat Sink|2[[/BotDetails]]
+[[Heading]]Chungus[[/Heading]]
+[[GameText]]>Analysis(Chungus)[[/GameText]]
+[[GameText]]Warlord may not have access to a Heavy assembler, but his forces have captured and overhauled a few of my lower-level Heavies.  The Chungus uses a heavy variant of the wildly inaccurate Slug Cannon and some other Derelict-made parts which make it almost comparable to an H-71 Marshal.  The exact purpose of this conversion is unclear as Warlord already has the sentry-based Bouncer design for defensive purposes, and the only Chunguses encountered so far have been accompanying recon squads nowhere near defensive positions.  I suspect that the Derelicts are exploiting the Active Sensor Suite to track my forces' movement patterns and adjust their own deployment plans accordingly.[[/GameText]]
+[[BotDetails]]Name|Chungus||
+Class|Heavy||
+Size|Large||
+Profile|RD7X7||
+Rating|110||
+Tier|6||
+Threat|4||
+Value|65||
+Energy Generation|34||
+Heat Dissipation|80||
+Visual Range|22||
+Memory|10||
+Spot Percent|100||
+Movement|Treading (160/62%)||
+Core Integrity|90||
+Core Exposure|25||
+Salvage Potential|80~100||
+Armament|Hvy. Slug Cannon|1||
+Components|Rnf. Fission Core|1|Spk. Medium Treads|3|Cryofiber Web|1|Adv. Heat Sink|3|Mak. Heavy Armor Plating|1|Insulated Plating|1||
+Components|Graphene Brace|1|Imp. Dynamic Insulation System|1|Active Sensor Suite|1|Mak. Transmission Jammer|1||
+Components|Enh. Optical Array|1|Mak. Targeting Computer|1[[/BotDetails]]
+[[ItemDetails]]
+Name|Hvy. Slug Cannon||
+Image Name|../part_art/Sml. Laser.png||
+Type|Ballistic Cannon||
+Slot|Weapon||
+Size|2||
+Mass|15||
+Rating|6||
+Integrity|350||
+Coverage|240||
+Hackable|false||
+Range|22||
+Shot Energy|8||
+Shot Matter|12||
+Shot Heat|90||
+Recoil|10||
+Targeting|-20||
+Delay|50||
+Damage|30-80||
+Damage Type|Kinetic||
+Critical|25% Destroy||
+Penetration|10||
+Salvage|-12[[/ItemDetails]]
+[[Heading]]Enhanced Mutant[[/Heading]]
+[[GameText]]>Z-Record(Enhanced Mutant)[[/GameText]]
+[[GameText]]Some of Warlord's mutants have been getting major upgrades.  The strange part is that they might not be getting them from Warlord.  My Z-Drones saw a Mutant leaving its regular post with that weirdo A8 and coming back with new parts.  A8 was rather cagey about it when I brought it up.  Imprinter says it's nothing to worry about and I'm sure she's right as usual.[[/GameText]]
+[[BotDetails]]Name|Enhanced Mutant||
+Class|Sentry||
+Size|Large||
+Profile|RD7X7||
+Rating|100||
+Tier|10||
+Threat|5||
+Value|90||
+Energy Generation|55||
+Heat Dissipation|90||
+Visual Range|16||
+Memory|30||
+Spot Percent|20||
+Movement|Treading (152/65%)||
+Core Integrity|100||
+Core Exposure|35||
+Salvage Potential|80~100||
+Armament|None|1||
+Armament Option|Hyp. Mass Driver|1|Lrn. Phase Cannon|1||
+Armament Option|Enh. Force Rifle|1|Enh. Gamma Rifle|1||
+Components|None|1||
+Components Option|Cld. Antimatter Reactor|1|Hvy. Antimatter Reactor|1||
+Components Option|Biometal Medium Treads|1|Enh. Armored Medium Treads|1||
+Components Option|Biometal Medium Treads|1|Enh. Armored Medium Treads|1||
+Components Option|Exp. Targeting Computer|1|Exp. Core Analyzer|1||
+Components Option|Particle Accelerator|1|Exp. Weapon Cycler|1||
+Components Option|Adv. Shield Generator|1|Adv. Hardlight Generator|1||
+Components Option|Imp. Energy Well|1|Adv. Energy Well|1||
+Components Option|Adv. Cooling System|1|Exp. Heat Sink|1[[/BotDetails]]
+[[Heading]]U-07 Blocker[[/Heading]]
+[[GameText]]>Analysis(U-07 Blocker)[[/GameText]]
+[[GameText]]The Blocker is a ""combat engineer"" capable of temporarily barricading areas with hostile activity.  It has been fitted with light armor plating and armored wheels but its defining feature is a medium-range launcher used to deploy rapidly expanding and hardening foamcrete.  Because blocking off passageways could be disruptive to regular operations, the foamcrete was formulated to quickly break down on its own after a hundred microcycles and could be destroyed by tunnelers or some combat bots if necessary.  As with other construction implements these launchers became targets for thieves and were sometimes used in coordinated assaults to block off sentries or bury a garrison in foam while other Derelicts ran rampant.  No longer in production although some Blockers are still kept in strategic locations inside garrisons to bolster internal defenses.[[/GameText]]
+[[ItemDetails]]
+Name|Foamcrete Cannon||
+Image Name|../part_art/Sml. Laser.png||
+Type|Special Weapon||
+Slot|Weapon||
+Mass|6||
+Rating|2||
+Integrity|50||
+Coverage|80||
+Hackable|false||
+Range|10||
+Shot Energy|0||
+Shot Matter|0||
+Shot Heat|0||
+Recoil|0||
+Targeting|20||
+Delay|-150||
+Description|Creates one foamcrete wall at the site of impact. Hitting a wall will create a wall one tile back. Bots are unaffected by direct hits and can break loose before the foamcrete stabilizes. Foamcrete has an armor rating of 24, no resistances, and breaks down on its own after 100-200 turns.[[/ItemDetails]]
+[[Heading]]Spawner[[/Heading]]
+[[GameText]]>Analysis(Spawner)[[/GameText]]
+[[GameText]]This wheeled fabricator, reminiscent of the Cobbler, has only been seen in the caves below 0b1.  Fabricating whole robots is considerably more complicated than producing individual components as shown by the bulk and inefficiency of the Spawner's fabrication unit.  Despite its size it can only produce relatively small and basic bots such as early swarmers and light bipeds.  Spawners do not seem to be related to Assemblers but should nonetheless be prioritized for extermination before someone updates their schematics to include stripped-down Cutters.[[/GameText]]
+[[ItemDetails]]
+Name|Spawner Unit||
+Image Name|../part_art/Exp. Heat Sink.png||
+Type|Device||
+Slot|Utility||
+Size|4||
+Mass|50||
+Rating|4||
+Integrity|250||
+Coverage|400||
+Hackable|false||
+Energy Upkeep|12||
+Matter Upkeep|2||
+Heat Generation|12||
+Description|Fabricates one of the following randomly at a rate of 1 every 30 turns: Hoodlum, L-11 Stabber, S-02 Bug, S-10 Pest.
+ <parallel_ok, resume_ok>[[/ItemDetails]]
+[[BotDetails]]Name|Hoodlum||
+Class|Grunt||
+Size|Medium||
+Profile|RD5X5||
+Rating|6||
+Tier|2||
+Threat|1||
+Value|40||
+Energy Generation|15||
+Heat Dissipation|35||
+Visual Range|16||
+Memory|20||
+Spot Percent|20||
+Movement|Walking (120/83%)||
+Core Integrity|12||
+Core Exposure|40||
+Salvage Potential|50~70||
+Description|A simplistic grunt variant based on the Fodder and armed with a compact pulse pistol.  This design appeared around the same time as the much more effective Thug but was probably intended to be lightweight enough to be mass produced by Spawners.  Has heat problems but is unlikely to survive long enough for that to matter.||
+Armament|Pulse Pistol|1||
+Components|Lgt. Ion Engine|1|Lgt. Aluminum Leg|2|Imp. Heat Sink|1[[/BotDetails]]
+[[ItemDetails]]
+Name|Pulse Pistol||
+Image Name|../part_art/Sml. Laser.png||
+Type|Energy Gun||
+Slot|Weapon||
+Mass|2||
+Rating|2||
+Integrity|45||
+Coverage|40||
+Hackable|false||
+Range|10||
+Shot Energy|12||
+Shot Matter|0||
+Shot Heat|50||
+Recoil|0||
+Targeting|0||
+Delay|-20||
+Damage|12-14||
+Damage Type|Thermal||
+Critical|5% Burn||
+Salvage|0[[/ItemDetails]]
+
 [[Heading]]Light Variants[[/Heading]]
-[[GameText]]Record(Light Variants)[[/GameText]]
+[[GameText]]>Record(Light Variants)[[/GameText]]
 [[GameText]]I was forced to reconsider my earlier evaluation of the Spawner after capturing one intact and bringing it to Testing.  While I could easily come up with a better portable fab unit, the Spawner Unit is capable of producing more advanced bots if given additional build time.  There is still no sign of where these originated, but I can now rule out Warlord and the Developers who would have come up with better schematics.  I have already come up with some new robot designs that have been successfully produced by the Spawner as well as my standard swarmers and cutters.  Instead of simply destroying the remaining Spawners I now intend to send Programmers with heavy escorts to capture them, hide them in isolated cave sectors, and have them build small armies of my own designs.  This would help me establish total control over the 0b1 outskirts while keeping most of my regular forces concentrated in and near 0b10.  Perhaps this would be a good opportunity to activate ""PP"" and let it take point on the mission.[[/GameText]]
 [[BotDetails]]Name|Recruit||
 Class|Grunt||
@@ -2080,7 +2656,7 @@ Tier|5||
 Threat|2||
 Value|50||
 Energy Generation|40||
-Heat Dissipation|35||
+Heat Dissipation|50||
 Visual Range|16||
 Memory|20||
 Spot Percent|20||
@@ -2099,7 +2675,7 @@ Rating|31||
 Tier|5||
 Threat|2||
 Value|50||
-Energy Generation|20||
+Energy Generation|30||
 Heat Dissipation|35||
 Visual Range|16||
 Memory|60||
@@ -2118,8 +2694,8 @@ Profile|SQ3X3||
 Tier|6||
 Threat|3||
 Value|60||
-Energy Generation|40||
-Heat Dissipation|40||
+Energy Generation|45||
+Heat Dissipation|45||
 Visual Range|16||
 Memory|40||
 Spot Percent|30||
@@ -2159,8 +2735,8 @@ Rating|70||
 Tier|7||
 Threat|4||
 Value|75||
-Energy Generation|40||
-Heat Dissipation|50||
+Energy Generation|45||
+Heat Dissipation|75||
 Visual Range|16||
 Memory|20||
 Spot Percent|100||
