@@ -314,9 +314,9 @@
 }
 
 .wiki-list {
-    // Maybe restore, enabling this means that lists won't flow around images
-    // This looks a bit better on desktop but worse on mobile
-    // display: flow-root;
+    li > p {
+        margin-bottom: 0;
+    }
 }
 
 .wiki-edit-content {
@@ -525,7 +525,7 @@
                     font-size: @small-font-size;
                     padding: @button-small-padding;
 
-                    width: 3.0rem;
+                    width: 3rem;
 
                     align-self: center;
                 }

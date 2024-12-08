@@ -1396,7 +1396,7 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
     const listItems: ReactNode[] = [];
 
     for (let i = 0; i < split.length; i++) {
-        const listItem = split[i];
+        const listItem = split[i].trim();
 
         // Parse the list item as a subsection individually
         const tempState = ParserState.Clone(state);
@@ -1621,14 +1621,9 @@ function processSection(state: ParserState, endTag: string | undefined) {
 
         // Process newlines before actions
         let newlineIndex: number;
-        while (
-            (newlineIndex = state.initialContent.indexOf("\n", state.index)) &&
-            newlineIndex !== -1 &&
-            newlineIndex < result.index
-        ) {
+        while ((newlineIndex = state.initialContent.indexOf("\n", state.index)) !== -1 && newlineIndex < result.index) {
             if (state.inlineOnly === "InlineOnly") {
                 // If inline only don't allow separated content
-                recordError(state, `Found line break when only inline actions are allowed`);
             } else {
                 state.output.push({
                     groupType: "Grouped",
