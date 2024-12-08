@@ -2200,7 +2200,7 @@ Components|Mak. Power Source|1|Imp. Hover Unit|2|Visual Processing Unit|1|Imp. S
 Class|Watcher||
 Size|Small||
 Profile|SQ3X3||
-Rating|20||
+Rating|30||
 Tier|4||
 Threat|3||
 Value|45||
@@ -2358,7 +2358,7 @@ Description|When active, enables Cogmind to perform an unlisted Query, Schematic
  [[ItemDetails]]
 Name|Bootstrap Chip||
 Image Name|https://i.imgur.com/EJnyuKT.png||
-Type|Device||
+Type|Hackware||
 Slot|Utility||
 Mass|0||
 Rating|3||
@@ -3949,8 +3949,8 @@ Programmers may appear in the following squads:
 [[Heading]]Uncategorized[[/Heading]]
 [[List]]
 First Step to Greatness: [[Spoiler]]Get terminated.[[/Spoiler]]
-Strategy : [[Spoiler]]You'll likely get this one eventually.[[/Spoiler]]|
-Back For More: Complete 50 runs.[[Comment]]This comment is to make the newline work like i want it to.[[/Comment]]
+Strategy : [[Spoiler]]You'll likely get this one eventually.[[/Spoiler]]
+|Back For More: Complete 50 runs.
 Strategy : You'll get this one eventually. The relevant scoresheet statistic is ""Game No.""
 [[/List]]
 
@@ -4023,15 +4023,14 @@ Serviceable Loadout: Reach a peak rating of 50.
 
 [[Heading]]Achievement collection progress[[/Heading]]
 
-[[List]]
-Achiever: Earn 25% of achievements.[[Comment]]This comment is to make the newline work like i want it to.[[/Comment]]
+[[List]]Achiever: Earn 25% of achievements.
 Requires 64 Achievements.
 |Overachiever: Earn 50% of achievements.
 Requires 128 Achievements.
 |Superachiever: Earn 75% of achievements.
 Requires 192 Achievements.
 |Perfect Achiever: Earn all other achievements.
-Requires all 255 other Achievements.[[/List]]","","","","","",""
+Requires all other 255 Achievements.[[/List]]","","","","","",""
 "Propulsion","Part Supergroup","","","","","","Backup Propulsion,Flight Units,Hover Units,Legs,Overloadable Propulsion,Treads,Wheels",""
 "Propulsion Shielding","Part","","","","","","",""
 "Propulsion Shieldings","Part Group","","","","","Propulsion Shielding,Imp. Propulsion Shielding,Mak. Propulsion Shielding,Exp. Propulsion Shielding","",""
@@ -5210,8 +5209,9 @@ Watchers are quite difficult to kill, especially the W-44 Eye variant. Their nat
 Warning: The writer of this article has not yet earned the ""Stardust"", ""Winner's Signature"", ""Data Run"" or ""By A Hair"" Achievements, and as such their descriptions in this page is a (probably accurate) guess instead of being the official description.
 
 [[Heading]]Endings[[/Heading]]
-[[List]]
-Epsilon Run: [[Spoiler]]Win and escape to Epsilon Eridani.[[/Spoiler]]
+These Achievements are earned by winning the game with a specific ending. Currently, only 7 of the 9 endings have Achievements tied to them. Each ending is mutually exclusive with all other endings.
+
+[[List]]Epsilon Run: [[Spoiler]]Win and escape to Epsilon Eridani.[[/Spoiler]]
 |Commander 0b11: [[Spoiler]]Win and begin establishing 0b11.[[/Spoiler]]
 |Home At Last?: [[Spoiler]]Win and rendezvous with the fleet.[[/Spoiler]]
 |Payload Armed: [[Spoiler]]Win and nuke Complex 0b10 from orbit.[[/Spoiler]]
@@ -5224,30 +5224,34 @@ Epsilon Run: [[Spoiler]]Win and escape to Epsilon Eridani.[[/Spoiler]]
 [[/List]]
 
 [[Heading]]Winning under certain conditions[[/Heading]]
-[[List]]
-Derelict Escape: Win while imprinted.
 
-|Winner's Signature: [[Spoiler]]Win after geting scanned by a Researcher in Section 7.[[/Spoiler]]
+[[Comment]]Note : Some of these Achievements' descriptions aren't hidden (in-game or here), but mention by name some spoiler-tier stuff, such as imprinting.
+Normally, these names would be contained within a Link tag.
+However, because those Achievements' descriptions are not hidden by the game (the descriptions themselves aren't spoiler-tier), these names should not be contained within a Link tag, because that would cause them to appear spoilered to anyone with a spoiler setting of ""None"".[[/Comment]]
+
+[[List]]Derelict Escape: Win while imprinted.
+
+|Winner's Signature: [[Spoiler]]Win after getting scanned by a [[Researcher]] in [[Section 7]].[[/Spoiler]]
 [[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
 
-|Data Run: [[Spoiler]]Win after interfacing with the Data Conduit.[[/Spoiler]] 
+|Data Run: [[Spoiler]]Win after interfacing with the [[Data Conduit]].[[/Spoiler]] 
 [[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
 
 |Inspector Gadget: Win while only evolving utility slots. Gaining non-utility slots through other means also disqualifies.
-|Straight Shot: Win without visiting any branches (Garrisons/Waste/DSF okay).
+|Straight Shot: Win without visiting any [[Branch|branches]] ([[Garrison|Garrisons]]/[[Wastes|Waste]]/[[DSF]] okay).
 |Pacifist: Win without destroying a single robot.
 |Speedrunner: Win in less than 2,000 turns.
 |Expert Speedrunner: Win in less than 1,000 turns.
 
 |By A Hair: [[Spoiler]]Win after being reduced to less than 5% of core integrity.[[/Spoiler]] [[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
 
-|True Flier: Win without attaching any propulsion except flight.
-|Mad Max: Win with 200 hostiles destroyed and without attaching any propulsion except wheels.
+|True Flier: Win without attaching any propulsion except [[Flight Units|flight]].
+|Mad Max: Win with 200 hostiles destroyed and without attaching any propulsion except [[Wheels|wheels]].
 |Victory By Combat: Win with 400 hostiles destroyed.
 |Hardcore: Win with 400 hostiles destroyed but no more than 4 utility slots.
 |Death Machine: Win with 600 hostiles destroyed.
 |Partners In Destruction: Win fighting alongside the Warrior.
-|One Last FU: Win after entering an Access garrison.
+|One Last FU: Win after entering an [[Access]] [[Garrison|garrison]].
 |The Little Core That Could: Win without attaching any propulsion.
 |True Cogmind: Win 25 times.
 [[/List]]
