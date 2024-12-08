@@ -1,4 +1,4 @@
-import{r as S,j as t,c as G,B as C,L as q,K as M,M as j,N as ce,f as I,O as me,Q as ge,y as L,U as te,a as Z,s as pe,V as ue,S as X,o as ye,W as ae,z as fe,u as ne,X as Y,Y as be,Z as F,_ as we,$ as Ce,a0 as W,a1 as ve,a2 as Se}from"./index-ZIR1rO7y.js";import{l as Te}from"./lore-Yb44s0tc.js";import{H as oe,a as xe,L as Ae,I as ke,B as z,b as Ne,u as Ge}from"./BotDetails-DwHbbDQp.js";import{a as V,u as He}from"./ItemPopover-CXPv9pJx.js";/* empty css              */import"./bots-DjRlh2xJ.js";import"./botTypes-_WzAd8ij.js";import"./items-DASIWQ_0.js";const Ie=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`12-ASH is one of the Hero's Of Zion. Upon appearing, they will shout "hail to the king".`},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:""},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed or gives a code when they are show the Cetus Mainframe in [[Cetus]]"},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:""},{Name:"Bomb Drone",Content:""},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
+import{r as S,j as t,c as G,B as C,L as q,K as M,M as j,N as ce,f as I,O as me,Q as ge,y as L,U as te,a as Z,s as pe,V as ue,S as X,o as ye,W as ae,z as fe,u as ne,X as Y,Y as be,Z as F,_ as we,$ as Ce,a0 as W,a1 as ve,a2 as Se}from"./index-e7c97zp8.js";import{l as Te}from"./lore-Yb44s0tc.js";import{H as oe,a as xe,L as Ae,I as ke,B as z,b as Ne,u as Ge}from"./BotDetails-BAJq6Z7e.js";import{a as V,u as He}from"./ItemPopover-ou4UfSSo.js";/* empty css              */import"./bots-DjRlh2xJ.js";import"./botTypes-_WzAd8ij.js";import"./items-DASIWQ_0.js";const Ie=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`12-ASH is one of the Hero's Of Zion. Upon appearing, they will shout "hail to the king".`},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:""},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed or gives a code when they are show the Cetus Mainframe in [[Cetus]]"},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:""},{Name:"Bomb Drone",Content:""},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
 
 Due to their extreme lethality in melee, stay out of their range at all costs, and maybe just run the hell out of [[Wastes]]. Alternatively pack a good launcher or a good critical weapon, as their plating will tank most of your shots.`},{Name:"C-55 Analyst",Content:""},{Name:"C-57 Dissector",Content:""},{Name:"C-65 Expert",Content:""},{Name:"CL-ANK",Content:""},{Name:"Cetus Guard",Content:""},{Name:"Cobbler",Content:""},{Name:"Cogmind",Content:"That's you."},{Name:"Combat Drone",Content:""},{Name:"Combat Programmer",Content:""},{Name:"Commander",Content:""},{Name:"D-53 Grenadier",Content:""},{Name:"D-63 Destroyer",Content:""},{Name:"D-83 Annihilator",Content:""},{Name:"DAS Turret",Content:""},{Name:"DD-05H",Content:""},{Name:"DRS Ranger",Content:""},{Name:"Data Miner",Content:""},{Name:"Decomposer",Content:""},{Name:"Decoy Drone",Content:""},{Name:"Demented",Content:""},{Name:"Dragon",Content:""},{Name:"Drone",Content:""},{Name:"E-15 Imp",Content:""},{Name:"EX-BIN",Content:`[[Heading]]Parse[[/Heading]]
 When datajacked, one of the following parse texts is shown:
@@ -2121,7 +2121,7 @@ Components|Mak. Power Source|1|Imp. Hover Unit|2|Visual Processing Unit|1|Imp. S
 Class|Watcher||
 Size|Small||
 Profile|SQ3X3||
-Rating|20||
+Rating|30||
 Tier|4||
 Threat|3||
 Value|45||
@@ -2279,7 +2279,7 @@ Description|When active, enables Cogmind to perform an unlisted Query, Schematic
  [[ItemDetails]]
 Name|Bootstrap Chip||
 Image Name|https://i.imgur.com/EJnyuKT.png||
-Type|Device||
+Type|Hackware||
 Slot|Utility||
 Mass|0||
 Rating|3||
@@ -3023,8 +3023,8 @@ Lightning squads consist of 3 Lightnings and an [[I-47 Archangel]]. They can be 
 [[Heading]]Uncategorized[[/Heading]]
 [[List]]
 First Step to Greatness: [[Spoiler]]Get terminated.[[/Spoiler]]
-Strategy : [[Spoiler]]You'll likely get this one eventually.[[/Spoiler]]|
-Back For More: Complete 50 runs.[[Comment]]This comment is to make the newline work like i want it to.[[/Comment]]
+Strategy : [[Spoiler]]You'll likely get this one eventually.[[/Spoiler]]
+|Back For More: Complete 50 runs.
 Strategy : You'll get this one eventually. The relevant scoresheet statistic is "Game No."
 [[/List]]
 
@@ -3097,15 +3097,14 @@ Serviceable Loadout: Reach a peak rating of 50.
 
 [[Heading]]Achievement collection progress[[/Heading]]
 
-[[List]]
-Achiever: Earn 25% of achievements.[[Comment]]This comment is to make the newline work like i want it to.[[/Comment]]
+[[List]]Achiever: Earn 25% of achievements.
 Requires 64 Achievements.
 |Overachiever: Earn 50% of achievements.
 Requires 128 Achievements.
 |Superachiever: Earn 75% of achievements.
 Requires 192 Achievements.
 |Perfect Achiever: Earn all other achievements.
-Requires all 255 other Achievements.[[/List]]`},{Name:"Prototype Part",Content:""},{Name:"Prototype Robot",Content:""},{Name:"Prototype Robots",Content:""},{Name:"Recycling Machine",Content:""},{Name:"Reinforced Walls",Content:`Many areas are sealed off by various types of Reinforced Walls. These walls all have much higher than typical armor values and resistances to most common damage types. The common theme between them all is that they do not have any Thermal resistance. As such, Cld. thermal [[Energy Cannons]] are the ideal way to cut through many of these barriers. Unlike basic walls, reinforced walls will not collapse due to penetrating weapons.
+Requires all other 255 Achievements.[[/List]]`},{Name:"Prototype Part",Content:""},{Name:"Prototype Robot",Content:""},{Name:"Prototype Robots",Content:""},{Name:"Recycling Machine",Content:""},{Name:"Reinforced Walls",Content:`Many areas are sealed off by various types of Reinforced Walls. These walls all have much higher than typical armor values and resistances to most common damage types. The common theme between them all is that they do not have any Thermal resistance. As such, Cld. thermal [[Energy Cannons]] are the ideal way to cut through many of these barriers. Unlike basic walls, reinforced walls will not collapse due to penetrating weapons.
 There are two primary types of reinforced walls. Though they have different names, they behave functionally similarly. Orange doors block the main access to the blocked off area. These doors have a higher than normal armor value, but they tend to be lower than reinforced barriers. Reinforced barriers typically surround the remainder of the area to prevent digging in from the back side. In most maps, these have two times the normal armor level of walls. For example, an average Storage wall has an armor value of 24, so the reinforced barriers have an armor value of 48 on this map.
 [[Heading]][[Storage]][[/Heading]]
 [[Gallery]]Storage Locked Vault.png|Locked Storage Vaults
@@ -3470,8 +3469,9 @@ This event tends to be great for Cogmind. The primary downsides is that the mach
 Warning: The writer of this article has not yet earned the "Stardust", "Winner's Signature", "Data Run" or "By A Hair" Achievements, and as such their descriptions in this page is a (probably accurate) guess instead of being the official description.
 
 [[Heading]]Endings[[/Heading]]
-[[List]]
-Epsilon Run: [[Spoiler]]Win and escape to Epsilon Eridani.[[/Spoiler]]
+These Achievements are earned by winning the game with a specific ending. Currently, only 7 of the 9 endings have Achievements tied to them. Each ending is mutually exclusive with all other endings.
+
+[[List]]Epsilon Run: [[Spoiler]]Win and escape to Epsilon Eridani.[[/Spoiler]]
 |Commander 0b11: [[Spoiler]]Win and begin establishing 0b11.[[/Spoiler]]
 |Home At Last?: [[Spoiler]]Win and rendezvous with the fleet.[[/Spoiler]]
 |Payload Armed: [[Spoiler]]Win and nuke Complex 0b10 from orbit.[[/Spoiler]]
@@ -3484,30 +3484,34 @@ Epsilon Run: [[Spoiler]]Win and escape to Epsilon Eridani.[[/Spoiler]]
 [[/List]]
 
 [[Heading]]Winning under certain conditions[[/Heading]]
-[[List]]
-Derelict Escape: Win while imprinted.
 
-|Winner's Signature: [[Spoiler]]Win after geting scanned by a Researcher in Section 7.[[/Spoiler]]
+[[Comment]]Note : Some of these Achievements' descriptions aren't hidden (in-game or here), but mention by name some spoiler-tier stuff, such as imprinting.
+Normally, these names would be contained within a Link tag.
+However, because those Achievements' descriptions are not hidden by the game (the descriptions themselves aren't spoiler-tier), these names should not be contained within a Link tag, because that would cause them to appear spoilered to anyone with a spoiler setting of "None".[[/Comment]]
+
+[[List]]Derelict Escape: Win while imprinted.
+
+|Winner's Signature: [[Spoiler]]Win after getting scanned by a [[Researcher]] in [[Section 7]].[[/Spoiler]]
 [[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
 
-|Data Run: [[Spoiler]]Win after interfacing with the Data Conduit.[[/Spoiler]] 
+|Data Run: [[Spoiler]]Win after interfacing with the [[Data Conduit]].[[/Spoiler]] 
 [[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
 
 |Inspector Gadget: Win while only evolving utility slots. Gaining non-utility slots through other means also disqualifies.
-|Straight Shot: Win without visiting any branches (Garrisons/Waste/DSF okay).
+|Straight Shot: Win without visiting any [[Branch|branches]] ([[Garrison|Garrisons]]/[[Wastes|Waste]]/[[DSF]] okay).
 |Pacifist: Win without destroying a single robot.
 |Speedrunner: Win in less than 2,000 turns.
 |Expert Speedrunner: Win in less than 1,000 turns.
 
 |By A Hair: [[Spoiler]]Win after being reduced to less than 5% of core integrity.[[/Spoiler]] [[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
 
-|True Flier: Win without attaching any propulsion except flight.
-|Mad Max: Win with 200 hostiles destroyed and without attaching any propulsion except wheels.
+|True Flier: Win without attaching any propulsion except [[Flight Units|flight]].
+|Mad Max: Win with 200 hostiles destroyed and without attaching any propulsion except [[Wheels|wheels]].
 |Victory By Combat: Win with 400 hostiles destroyed.
 |Hardcore: Win with 400 hostiles destroyed but no more than 4 utility slots.
 |Death Machine: Win with 600 hostiles destroyed.
 |Partners In Destruction: Win fighting alongside the Warrior.
-|One Last FU: Win after entering an Access garrison.
+|One Last FU: Win after entering an [[Access]] [[Garrison|garrison]].
 |The Little Core That Could: Win without attaching any propulsion.
 |True Cogmind: Win 25 times.
 [[/List]]
