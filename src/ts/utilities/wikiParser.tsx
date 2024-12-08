@@ -1695,7 +1695,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
 
     // Split out all remaining newlines
     let newlineIndex: number;
-    while ((newlineIndex = state.initialContent.indexOf("\n", state.index)) && newlineIndex !== -1) {
+    while ((newlineIndex = state.initialContent.indexOf("\n", state.index)) !== -1) {
         state.output.push({
             groupType: "Grouped",
             node: state.initialContent.substring(state.index, newlineIndex),
