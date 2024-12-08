@@ -1,6 +1,14 @@
 import { Spoiler } from "./commonTypes";
 
-export type EntryType = "Bot" | "Bot Group" | "Location" | "Other" | "Part" | "Part Group" | "Part Supergroup";
+export type EntryType =
+    | "Bot"
+    | "Bot Group"
+    | "Bot Supergroup"
+    | "Location"
+    | "Other"
+    | "Part"
+    | "Part Group"
+    | "Part Supergroup";
 
 export type WikiEntry = {
     alternativeNames: string[];

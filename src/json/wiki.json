@@ -1106,7 +1106,8 @@
     "B-75 Beast",
     "B-86 Titan",
     "B-90 Cyclops",
-    "B-99 Colossus"
+    "B-99 Colossus",
+    "Superbehemoth"
    ],
    "Content": "Behemoths are a [[Bot Groups|Bot Group]] of heavily [[Armor|armored]] [[Treads|treading]] [[0b10]] bots that are much more durable and powerful than the majority of standard bots. They typically guard machines or valuable part stockpiles while sitting slightly indented in the wall. Similar to [[Hunter|Hunters]], Behemoths will fire through walls in order to hit an enemy, which makes it hard to hide or run from them. Behemoths can even make use of [[Siege Mode]] to become more accurate and durable in combat. These combination of traits can make Behemoths terrifying encounters if not adequately prepared.\nBehemoths have innate EM resistance as well as corruption resistance through [[Dynamic Insulation System|Dynamic Insulation Systems]], so EM weaponry is a subpar weapon choice to get a quick kill. Melee weapons are undesirable to use because most Behemoths pack [[Ballistic Cannons]] that will frequently cause knockback. Behemoths have a minor thermal weakness, though that is slightly mitigated by thermal resistant armor. Meltdown criticals from thermal cannons can instantly destroy a Behemoth from full core integrity (100+), which can save a lot of damage and provide some good undamaged loot. Thermal guns are not effective in smaller numbers, but given enough heat transferring weapons (4+) it is possible to overload their standard cooling and [[Coolant Injectors]] to get the melt instant kill.\nBehemoths can be a desirable looting target for their weapons, cooling, treads, and armor. For this reason, applying some positive salvage via Electromagnetic weaponry or [[Salvage Targeting Computers]] can be a good idea. However, it can often be a better idea to run the other way. Even slow treads builds can get away from a pursuing Behemoth with good tactics. Despite their ability to tear through walls in their way, they have a tendency to get stuck unable to path through 1 tile wide corridors. If such corridors are nearby, use them to your advantage. Otherwise, try to cut between connected rooms to avoid traveling through so much of the line of fire. Behemoths will only shoot through up to 3 walls to cut a path, so if Cogmind can turn a corner or get a good angle on the Behemoth where it is unable to shoot, it is possible to wait out the memory.\nBehemoths are often found in their own spot inside a wall as part of a [[Security Squad]]. In [[Caves]], they can be found in a small square open area.\n[[Gallery]]Behemoths.png|All Behemoth variants and colors|Behemoth Guarded Stockpile.png|A Behemoth guarding a stockpile of parts, sitting in a recognizable \"Behemoth nook\"[[/Gallery]]\n[[Heading]][[CR-A16's Pointy Stick]]/[[CR-A16's Behemoth Slayer]][[/Heading]]\nA Pointy Stick has a chance to transform into a Behemoth Slayer when used to attack a Behemoth. A Behemoth slayer will instantly destroy any Behemoth and leave them in pieces."
   },
@@ -1142,18 +1143,59 @@
    "Bots": [
     "D-53 Grenadier",
     "D-63 Destroyer",
-    "D-83 Annihilator"
+    "D-83 Annihilator",
+    "Protovariant D"
    ],
    "Content": "Demolishers are a [[Bot Groups|Bot Group]] [[Hover Units|hovering]] [[0b10]] combat robots armed with an [[Launchers|Launcher]] and some form of [[Launcher Guidance Computers|Launcher Guidance Computer]]. They are seen most often in [[Demolisher Squad|Demolisher Squads]] to deal with infestations and as part of an [[Assault Squad]] if Cogmind has allies. They have heavy resistance to explosive damage, so they don't take much damage from their own explosions. Demolishers are extremely dangerous as they can deal out damage very quickly to Cogmind and any allies. Their tendency to destroy terrain can make repositioning difficult and can often reveal Cogmind's location to other hostiles.\nDemolishers are one of the scariest standard 0b10 bots to fight head on. Their massive damage and high resistance (or immunity) to their own attacks means that they won't be harmed much by blowing themselves up. Their Shock Absorption Systems are fairly frail, and if those are destroyed they will take much more damage from self explosions. [[Antimissile Systems]] are very useful at cutting down Demolisher damage by intercepting their missiles. Demolishers don't have any particular weakness, so use any non-Explosive damage type available to take them out as quickly as possible.\n[[Gallery]]Demolishers.png|All Demolisher variants and colors[[/Gallery]]\n[[Heading]][[Squad|Squads]][[/Heading]]\nDemolishers may appear in the following squads:[[List]][[Assault Squad]] - Only if Cogmind has allies|[[Demolisher Squad]]|[[Patrol Squad]] - Only in [[Armory]]|[[Security Squad]] - Only in [[Garrison|Garrisons]][[/List]]"
+  },
+  {
+   "Name": "Drone (Group)",
+   "Bots": [
+    "Advanced Drone",
+    "Army Drone",
+    "Assault Drone",
+    "Bomb Drone",
+    "Combat Drone",
+    "Decoy Drone",
+    "Drone",
+    "Hacking Drone",
+    "Mapping Drone",
+    "Master Drone",
+    "Minesniffer Drone",
+    "Mini Drone",
+    "Sensor Drone",
+    "Splice Drone",
+    "Stealth Drone",
+    "Swarm Drone",
+    "Target Drone",
+    "Thief Drone",
+    "Wardrone",
+    "Z-Drone"
+   ],
+   "Content": ""
   },
   {
    "Name": "Duelist",
    "Bots": [
     "L-31 Rogue",
     "L-41 Fighter",
-    "L-61 Swordsman"
+    "L-61 Swordsman",
+    "Protovariant L"
    ],
    "Content": "Duelists are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[0b10]] combat bots armed with a [[Slashing Weapons|Slashing Weapon]] that can sever off important parts. While they can only attack at short range, they are frightening to face up close with their [[Melee Analysis Suites]] and [[Actuators]] allowing them to hit hard and fast. They also have [[Core Shieldings|Core Shielding]] which makes them immune to direct critical hits and a bit more survivable.\nDuelists don't have any particular damage type weaknesses, though their biggest weakness is [[Ballistic Cannons]] because the knockback will help keep a them out of melee range. Other than that, any non-melee weapon is good to use against Duelists. Using melee against them is a little more dangerous since that means Cogmind hast to go toe-to-toe with their strong melee loadout. Melee is a worse idea because of their innate minor slashing/piercing resistances.\n[[Gallery]]Duelists.png|All Duelist variants and colors[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nDuelists may appear in the following squads:\n[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Patrol Squad]] - [[Squad Leader]] only normally, or in [[Armory]]|[[Security Squad]] - Armory or [[Garrison|Garrisons]][[/List]]"
+  },
+  {
+   "Name": "Enhanced Bot",
+   "Bots": [
+    "Enhanced Demolisher",
+    "Enhanced Grunt",
+    "Enhanced Hunter",
+    "Enhanced Programmer",
+    "Enhanced Q-Series",
+    "Enhanced Sentry"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
   },
   {
    "Name": "Exiles (Group)",
@@ -1180,7 +1222,8 @@
     "G-47 Trooper",
     "G-50 Soldier",
     "G-67 Veteran",
-    "G-73 Enforcer"
+    "G-73 Enforcer",
+    "Protovariant G"
    ],
    "Content": "Grunts are a [[Bot Groups|Bot Group]] of [[Legs|legged]] Thermal [[Energy Guns]] users and make up the backbone of the [[0b10]] army. They are by far the most populous combat bot class, being found on nearly every map and in many different squad types. Most Grunts are not especially durable or threatening on their own, though at higher depths ([[Research]] +) they can be dangerous due to their tendency to appear in large groups. Veterans and Enforcers in particular have a significant jump in firepower due to the upgrade from 1 to 2 weapons.\nAll Grunts share a minor weakness to Electromagnetic damage, which makes EM or Impact the best damage types to use for quick destruction via [[Corruption]]. However, without any resistances to speak of, Grunts are fairly easily dispatched by any damage type. Grunts also tend to have barely adequate cooling, which means Thermal weaponry can can easily build up heat to trigger a [[Meltdown]].\nAnother way to deal with Grunts is to take advantage of their low memory (20 actions). It is trivial for airborne builds to leave Grunts in the dust, but even a reasonably speedy grounded build may be able to turn a corner and outrun Grunts long enough for them to give up chase. This strategy is more effective when used with [[ECM Suites]].\n[[Gallery]]Grunts.png|All Grunt variants and colors[[/Gallery]]\n[[Heading]][[Squad|Squads]][[/Heading]]\nGrunts may appear in the following squads:\n[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Investigation Squad]]|[[Patrol Squad]]|[[Reinforcement Squad]]|[[Security Squad]] - Only in [[Armory]], [[Garrison|Garrisons]], [[Quarantine]], and [[Testing]]|[[Transport Squad]][[/List]]"
   },
@@ -1235,7 +1278,9 @@
     "H-55 Commando",
     "H-66 Slayer",
     "H-77 Assassin",
-    "H-88 Terminator"
+    "H-88 Terminator",
+    "Lightning",
+    "Protovariant H"
    ],
    "Content": "Hunters are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[Ballistic Guns|Ballistic Gun]]-wielding [[0b10]] combat robots. They have unique AI where they use their penetrating guns to shoot through walls to get to hostiles. Hunters can also hit more accurately with their [[Targeting Computers]] and avoid hits themselves with [[Phase Shifters]]. Hunters also have an innate resistance to [[Sensor Arrays]] and will not show up without a high enough rating [[Signal Interpreter|Signal Interpreters]]. [[Squad Leader]] Hunters also have the ability to launch a [[Drone]] to pursue bots even after losing normal tracking. If the Drone spots a hostile, it will alert the owning Hunter to their position.\nMid-lategame Hunters are one of the most durable standard 0b10 combat bots due to their high evasion. Early tier Hunters are still strong, but the Terminators are a dangerous threat. Using [[Treads]] with Siege Mode or lots of Targeting of your own will help dealing with the high innate avoidance. Electromagnetic weaponry is by far the best choice to deal with Hunters, especially EM [[Launchers]] that don't have to directly hit the Hunter to deal damage. Kinetic builds may have more difficulty fighting Hunters due to their kinetic resistance, though they will appreciate the many Kinetic guns that might drop as loot\nDodging hunters is difficult to do for an airborne build. They have a much higher than average memory (60 actions), they shoot through walls, and they even release a fast-moving Drone to continue the chase. If running from a Hunter, make sure to consider the wall penetration ability because only certain angles will allow a Hunter to shoot through the wall and hit Cogmind. [[ECM Suites]] are of great use in reducing the memory to a more manageable number. Make use of [[Transmission Jammers]] when the Drone is nearby, since the jamming will prevent the Drone from alerting the Hunters of your position.\n[[Gallery]]Hunters.png|All Hunter variants and colors[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nHunters may appear in the following squads:\n[[List]][[Assault Squad]] - Only in heavy assaults|[[Investigation Squad]]|[[Patrol Squad]]|[[Reinforcement Squad]]|[[Security Squad]] - Only in [[Armory]], [[Garrison|Garrisons]], [[Testing]], and [[Quarantine]][[/List]]"
   },
@@ -1248,6 +1293,16 @@
    ],
    "Content": "Infiltrators are [[Legs|legged]] [[Derelict]] combat bots with one [[Ballistic Cannons|Ballistic Cannon]] and 2 various other guns. They are the Derelict version of a [[Specialist]]. As their name suggests, they are most often seen infiltrating a [[Garrison]], hiding in a wall. If Cogmind has gained some [[Encrypted Comm Array]] score, Infiltrators will sometimes take the place of Specialist reinforcements called by a [[Heavy]]. In this case, they will only reveal themselves as friendly after seeing Cogmind. They come equipped with a unique [[Active Sensor Spoofer]] to mislead Heavy reinforcements.",
    "Spoiler": "Spoiler"
+  },
+  {
+   "Name": "LRCs",
+   "Bots": [
+    "LRC-V4",
+    "LRC-V5",
+    "LRC-V6"
+   ],
+   "Content": "",
+   "Spoiler": "Redacted"
   },
   {
    "Name": "Marauder",
@@ -1307,7 +1362,9 @@
    "Bots": [
     "P-60 Hacker",
     "P-70 Sage",
-    "P-80 Master"
+    "P-80 Master",
+    "Combat Programmer",
+    "Protovariant P"
    ],
    "Content": "Programmers are a [[Bot Groups|Bot Group]] of [[Hover Units|hovering]] [[0b10]] combat bots armed with EM weaponry and a [[Datajacks|Remote Datajack]]. Programmers will attempt to corrupt and hack any hostiles, potentially changing alliances by assimilating them. They can also remove system corruption from their allies and clear certain [[RIF]] hacks from allied bots. They are a persistent threat throughout [[Factory]] and beyond due to being sent as part of [[Extermination Squad|Extermination Squads]].\nProgrammers are best fought with kinetic or thermal weaponry due to their slight weakness to them. Many cannons are able to kill a Programmer with only one core shot. These weapons are ideal to use. For thermal weaponry, they are also fairly susceptible to heat transfer triggering side effects and an early meltdown. Their EM resistance coupled with their tendency to travel in packs make EM and Impact poor choices to fight them, as corruption death is unlikely.\nProgrammers are not initially very threatening bots. They deal small amounts of EM damage and appear only in small groups in [[Factory]] depths. However, in [[Research]] they turn into a frequent threat, appearing in larger groups and dealing significant EM damage inflicting consistent corruption to Cogmind. Having a good weapon that kill Programmers in a single core hit is ideal. For airborne builds, being able to outrun or recall Exterminations is a good strategy. Keep in mind that they are fairly fast for combat bots and have a high memory of 80. [[ECM Suites]] are very helpful for shaking Programmers more easily on the run.\n[[Gallery]]Programmers.png|All Programmer variants and colors[[/Gallery]]\n[[Heading]][[Squad|Squads]][[/Heading]]\nProgrammers may appear in the following squads:\n[[List]]Extermination Squad|[[Patrol Squad]]|[[Security Squad]] - [[Armory]], [[Testing]], and [[Quarantine]] only[[/List]]"
   },
@@ -1316,9 +1373,48 @@
    "Bots": [
     "I-25 Savior",
     "I-36 Angel",
-    "I-47 Archangel"
+    "I-47 Archangel",
+    "M Shell/Def"
    ],
    "Content": "Protectors are [[0b10]] [[Wheels|wheeled]] non-combat bots that specialize in protecting their allies with remote [[Shield Generators]] and [[Force Fields]]. Protectors are equipped with two power sources and [[Energy Wells]] for higher damage reduction potential. They are most often seen as part of an [[Assault Squad]] or [[Cargo Convoy]]. Later tiers are equipped with [[Point Defense System|Point Defense Systems]] that make it more difficult to use [[Launchers]] against Assaults protected by them.\n[[Gallery]]Protectors.png|All Protector variants and colors[[/Gallery]]"
+  },
+  {
+   "Name": "Prototype Robot",
+   "Bots": [
+    "Alpha 7",
+    "Armor Guard",
+    "Cetus Guard",
+    "Combat Programmer",
+    "Enhanced Demolisher",
+    "Enhanced Grunt",
+    "Enhanced Hunter",
+    "Enhanced Programmer",
+    "Enhanced Q-Series",
+    "Enhanced Sentry",
+    "Executioner",
+    "Fortress",
+    "Investigator",
+    "Lightning",
+    "LRC-V4",
+    "LRC-V5",
+    "LRC-V6",
+    "M Guard",
+    "M Shell/Atk",
+    "M Shell/Def",
+    "Protovariant D",
+    "Protovariant G",
+    "Protovariant H",
+    "Protovariant L",
+    "Protovariant P",
+    "Protovariant X",
+    "Protovariant Y",
+    "Quarantine Guard",
+    "S7 Guard",
+    "Striker",
+    "Superbehemoth",
+    "Tracker"
+   ],
+   "Content": ""
   },
   {
    "Name": "Protovariant",
@@ -1346,7 +1442,8 @@
    "Name": "Researcher",
    "Bots": [
     "C-55 Analyst",
-    "C-65 Expert"
+    "C-65 Expert",
+    "Investigator"
    ],
    "Content": "Researchers are [[Hover Units|hovering]] [[0b10]] non-combat bots equipped with a [[Stasis Beam]] or [[Stasis Projector]] which will immobilize their target while active. Researchers appear in [[Testing]] and [[Quarantine]]. When a Researcher spots a hostile bot attacking or gets attacked, they will attempt to stasis and scan any hostile and summon a [[Reinforcement Squad]]. It is safe to dig into a wall that reveals yourself to the Research after the volley. If [[Cogmind]] is scanned, [[Q-Series]] will sometimes be dispatched for future [[Extermination Squad|Extermination Squads]] instead of [[Programmer|Programmers]]. [[Redacted]]Getting scanned in [[Section 7]] will trigger [[Intercept Squad|Intercepts]] to start showing up instead.[[/Redacted]] Researchers are also equipped with anti-corruption utilities [[System Guards]] and [[Corruption Screens]].",
    "Spoiler": "Spoiler"
@@ -1375,7 +1472,14 @@
     "Y-45 Defender",
     "Y-54 Guardian",
     "Y-64 Sentinel",
-    "Y-72 Warden"
+    "Y-72 Warden",
+    "Cetus Guard",
+    "Armor Guard",
+    "Quarantine Guard",
+    "Protovariant Y",
+    "S7 Guard",
+    "M Guard",
+    "M Shell/Atk"
    ],
    "Content": "Sentries are a [[Bot Groups|Bot Group]] or [[Armor|armored]] [[Treads|treaded]] [[0b10]] bots that stand guard around exits, main corridors, and side rooms with machines or item stockpiles inside them. They wield dual Kinetic and Thermal guns at each tier. Sentries tend to be slightly more durable than most other bots at their depth. Sentries typically stand guard alone as a [[Security Squad]].\nSentries have no particular weakness, and so most weapon types can be used to dispatch them. Electromagnetic damage is efficient at killing the higher tier bots, and EM is good in general at increasing the chances of looting their treads and armor.\nWhile combat bots will want (or will be forced) to fight Sentries head-on, airborne builds may want to avoid them or at least avoid getting shot by them. One way to do this is to use a [[Terminology#Partial Spot|partial spot]] to lure the Sentry out of their position. After that, Cogmind may be able to use the guarded machine or exit, or grab the loot without being spotted. A fast Cogmind may also be able to use the long memory of Sentries to their advantage while being spotted regularly. It is possible to lead Sentries far out of position and then leave them in the dust to grab their guarded loot.\n[[Gallery]]Sentries.png|All Sentry variants and colors|Sentry Guarded Stockpile.png|A Sentry guarding a stockpile of parts, sitting in a recognizable \"Sentry nook\"[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nSentries may appear in the following squads:\n[[List]][[Garrison Squad]]|[[Security Squad]][[/List]]\nAdditionally, Sentries will appear at [[Garrison (Machine)|Garrisons]] and 0b10 exits during [[High Security]] and [[Maximum Security]]."
   },
@@ -1388,7 +1492,8 @@
     "X-72 Disruptor",
     "X-77 Beamer",
     "X-82 Rainmaker",
-    "X-87 Electro"
+    "X-87 Electro",
+    "Protovariant X"
    ],
    "Content": "Specialists are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[0b10]] combat bots with many different themes between each variant. The best description of Specialists are glass cannons. They typically have high offensive output and little in the way of protection. Higher tier Specialists have some the highest damage output of any standard 0b10 bots in the game. Some Specialists also are unique users of [[VSS Leg|VSS Legs]] and its higher rating variants which allow them to walk at a higher speed than most legs (90 vs 120).\nSpecialists have no specific weaknesses or immunities, so generally any damage type or strategy can work against them. A few have strong cooling and [[Coolant Injectors]] so heat transfer strategies may fall flat against certain Specialists. However, the same cooling parts can also be looted and taken advantage of by Cogmind. Since Specialists are capable of dealing so much damage, they tend to be high priority targets to kill off first.\n[[Gallery]]Specialists.png|All Specialist variants and colors[[/Gallery]]\n[[Heading]][[Squad|Squads]][[/Heading]]\nSpecialists may appear in the following squads:\n[[List]][[Assault Squad]] - Only if Cogmind has allies|[[Cargo Convoy]] - Within the escorting [[C-30 ARC|ARCs]]|[[Patrol Squad]] - [[Armory]] and [[Garrison|Garrisons]] only|[[Reinforcement Squad]] - only from [[Heavy]]-summoned Reinforcements|[[Security Squad]] - [[Armory]], Garrisons, [[Quarantine]], and [[Testing]] only[[/List]]"
   },
@@ -1405,7 +1510,8 @@
    "Bots": [
     "S-10 Pest",
     "S-27 Virus",
-    "S-43 Plague"
+    "S-43 Plague",
+    "Tracker"
    ],
    "Content": "Swarmers are a [[Bot Groups|bot group]] of [[Flight Units|flying]] [[0b10]] combat bots with one [[Ballistic Guns|Ballistic Gun]] that are always seen in groups. They are individually weak and non-threatening, but annoying in groups. Swarmers have a slight Explosive damage weakness. This, combined with their evasiveness, high core exposure, and low core integrity, make explosive [[Launchers|Launcher]] a great idea to use against them. Trying to pick off 6 Swarmers one by one may take much longer and result in a lot more damage dealt to Cogmind.\nSwarmers have a very low memory (20 actions). While they may pursue airborne builds quickly compared to most other bots, it can be easy to lose them after turning the corner in a corridor or hallway near max range. This strategy is more effective when used with [[ECM Suites]].\n[[Gallery]]Swarmers.png|All Swarmer variants and colors[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nSwarmers may appear in the following squads:\n[[List]][[Cargo Convoy]]: Escorts that lead the way ahead of the rest of the convoy|[[Garrison Squad]]|[[Patrol Squad]]|[[Security Squad]] - [[Armory]], [[Garrison|Garrisons]], [[Quarantine]], and [[Testing]] only[[/List]]"
   },
@@ -1473,6 +1579,70 @@
    ],
    "Content": "Z-Light bots are a class of [[Hover Units|hovering]] [[Imprint]] aligned combat bots equipped with many unique Zionite-specific prototype parts with powerful unique weapons. Appears in the [[Imprint]] Roster [[Redacted]]and also can come out of [[Command]] cave seals if Cogmind is Imprinted[[/Redacted]]. When summoned via roster, they have a special ally behavior where they will stop fighting and run back to Cogmind if they fall out of Cogmind's line of sight or are too many tiles away.",
    "Spoiler": "Spoiler"
+  }
+ ],
+ "Bot Supergroups": [
+  {
+   "Name": "0b10 Bots",
+   "Supergroups": [
+    "0b10 Combat Bots",
+    "0b10 Non-combat Bots"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "0b10 Combat Bots",
+   "Groups": [
+    "Behemoth",
+    "Brawler",
+    "Cutter",
+    "Demolisher",
+    "Duelist",
+    "Grunt",
+    "Hauler",
+    "Heavy",
+    "Hunter",
+    "Programmer",
+    "Protovariant",
+    "Sentry",
+    "Specialist",
+    "Swarmer"
+   ],
+   "Bots": [
+    "Alpha 7",
+    "Autobeam Turret",
+    "C-40 Crusher",
+    "Cetus Guard",
+    "E-15 Imp",
+    "Executioner",
+    "Fortress",
+    "MAIN.C",
+    "MAIN.C (Shell)",
+    "Striker"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "0b10 Non-combat Bots",
+   "Groups": [
+    "Hauler",
+    "Mechanic",
+    "Minesweeper",
+    "Operator",
+    "Protector",
+    "Recycler",
+    "Researcher",
+    "Watcher"
+   ],
+   "Bots": [
+    "C-30 ARC",
+    "K-01 Serf",
+    "N-00 Fly",
+    "N-01 Spotter",
+    "T-07 Excavator",
+    "U-05 Engineer"
+   ],
+   "Content": ""
   }
  ],
  "Parts": [
@@ -7358,6 +7528,24 @@
    "Name": "Wheels",
    "Part Category": "Wheels",
    "Content": ""
+  },
+  {
+   "Name": "Z-Hero Parts",
+   "Parts": [
+    "12-ASH's Boomstick",
+    "1C-UTU's Sword \"Choppy\"",
+    "1C-UTU's Sword \"Lootmaker\"",
+    "7V-RTL's Ultimate Field",
+    "99-TNT's Nukerbomber",
+    "AD-0RF's Magmablaster",
+    "CL-ANK's Mallet",
+    "ME-RLN's Wand",
+    "ME-RLN's Chromatic Screen",
+    "NK-0LA's Tesla Doomcannon",
+    "P1-3CE's Gatling Flakker"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
   }
  ],
  "Part Supergroups": [
@@ -9164,14 +9352,6 @@
   },
   {
    "Name": "Prototype Part",
-   "Content": ""
-  },
-  {
-   "Name": "Prototype Robot",
-   "Content": ""
-  },
-  {
-   "Name": "Prototype Robots",
    "Content": ""
   },
   {

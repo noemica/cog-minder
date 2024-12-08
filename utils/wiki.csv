@@ -8,11 +8,14 @@
 Entrances to new levels are implied to be long uneventful corridors where Cogmind loses all pursuers.
 0b10 means 2 (0b - binary representation, 10 - 2 in decimal). [[Spoiler]]This means Complex 0b10 is the second complex, 0b1 presumably being first.[[/Spoiler]]","","","","","",""
 "0b10 Alert Chip","Part","Analyzes ambient [[0b10]] signals to guess the alert level. The best part of this item is the reduction of influence by 20%. This item is obtainable from the exiles.","","","","","",""
+"0b10 Bots","Bot Supergroup","","","","","","","0b10 Combat Bots,0b10 Non-combat Bots"
+"0b10 Combat Bots","Bot Supergroup","","","Alpha 7,Autobeam Turret,C-40 Crusher,Cetus Guard,E-15 Imp,Executioner,Fortress,MAIN.C,MAIN.C (Shell),Striker","","","Behemoth,Brawler,Cutter,Demolisher,Duelist,Grunt,Hauler,Heavy,Hunter,Programmer,Protovariant,Sentry,Specialist,Swarmer",""
 "0b10 Decoder Chip [Generic]","Part","","","","","","",""
 "0b10 Decoder Chip [Looter]","Part","","","","","","",""
 "0b10 Decoder Chip [Scout]","Part","","","","","","",""
 "0b10 Decoder Chip [Skirmisher]","Part","","","","","","",""
 "0b10 Decoder Chips","Part Group","","","","","0b10 Decoder Chip [Generic],0b10 Decoder Chip [Looter],0b10 Decoder Chip [Scout],0b10 Decoder Chip [Skirmisher]","",""
+"0b10 Non-combat Bots","Bot Supergroup","","","C-30 ARC,K-01 Serf,N-00 Fly,N-01 Spotter,T-07 Excavator,U-05 Engineer","","","Hauler,Mechanic,Minesweeper,Operator,Protector,Recycler,Researcher,Watcher",""
 "12-ASH","Bot","12-ASH is one of the Hero's Of Zion. Upon appearing, they will shout ""hail to the king"".","","","","","",""
 "12-ASH's Boomstick","Part","","","","","","",""
 "1C-UTU","Bot","","","","","","",""
@@ -549,7 +552,7 @@ Behemoths can be a desirable looting target for their weapons, cooling, treads, 
 Behemoths are often found in their own spot inside a wall as part of a [[Security Squad]]. In [[Caves]], they can be found in a small square open area.
 [[Gallery]]Behemoths.png|All Behemoth variants and colors|Behemoth Guarded Stockpile.png|A Behemoth guarding a stockpile of parts, sitting in a recognizable ""Behemoth nook""[[/Gallery]]
 [[Heading]][[CR-A16's Pointy Stick]]/[[CR-A16's Behemoth Slayer]][[/Heading]]
-A Pointy Stick has a chance to transform into a Behemoth Slayer when used to attack a Behemoth. A Behemoth slayer will instantly destroy any Behemoth and leave them in pieces.","","B-75 Beast,B-86 Titan,B-90 Cyclops,B-99 Colossus","","","",""
+A Pointy Stick has a chance to transform into a Behemoth Slayer when used to attack a Behemoth. A Behemoth slayer will instantly destroy any Behemoth and leave them in pieces.","","B-75 Beast,B-86 Titan,B-90 Cyclops,B-99 Colossus,Superbehemoth","","","",""
 "Biomechanical Wings","Part","","","","","","",""
 "Biometal Heavy Treads","Part","","","","","","",""
 "Biometal Leg","Part","","","","","","",""
@@ -1332,7 +1335,7 @@ Another approach is to simply run from the Grunts. This works best for airborne 
 Demolishers are one of the scariest standard 0b10 bots to fight head on. Their massive damage and high resistance (or immunity) to their own attacks means that they won't be harmed much by blowing themselves up. Their Shock Absorption Systems are fairly frail, and if those are destroyed they will take much more damage from self explosions. [[Antimissile Systems]] are very useful at cutting down Demolisher damage by intercepting their missiles. Demolishers don't have any particular weakness, so use any non-Explosive damage type available to take them out as quickly as possible.
 [[Gallery]]Demolishers.png|All Demolisher variants and colors[[/Gallery]]
 [[Heading]][[Squad|Squads]][[/Heading]]
-Demolishers may appear in the following squads:[[List]][[Assault Squad]] - Only if Cogmind has allies|[[Demolisher Squad]]|[[Patrol Squad]] - Only in [[Armory]]|[[Security Squad]] - Only in [[Garrison|Garrisons]][[/List]]","","D-53 Grenadier,D-63 Destroyer,D-83 Annihilator","","","",""
+Demolishers may appear in the following squads:[[List]][[Assault Squad]] - Only if Cogmind has allies|[[Demolisher Squad]]|[[Patrol Squad]] - Only in [[Armory]]|[[Security Squad]] - Only in [[Garrison|Garrisons]][[/List]]","","D-53 Grenadier,D-63 Destroyer,D-83 Annihilator,Protovariant D","","","",""
 "Demolisher Squad","Other","[[Image]]Demolisher Squad.png|2 Demolishers popping out of an ARC[[/Image]]
 Demolisher squads are [[0b10]] aligned [[Squad|squads]] that are dispatched to eliminate large groups of hostiles, especially [[Assembled]]. They are sent to the general area of a lot of hostiles, where they will roam around looking for bots to fight. They consist of a single [[C-30 ARC]] containing 2 [[Demolisher|Demolishers]]. Demolisher squads will never exit the map under normal circumstances after being dispatched.
 An alert will indicate whenever a Demolisher squad is dispatched. Additionally, the log will display a message like [[GameText]]ALERT: Infestation in the Mines, dispatching Demolisher response squad.[[/GameText]] Depending on the method triggering the squad, a different reason may be given in the alert.
@@ -1361,6 +1364,7 @@ Most of these usually affect the next main floor, rendered useless if you skip a
 "Dragon","Bot","","","","","","",""
 "Drained L-Cannon","Part","","","","","","",""
 "Drone","Bot","","","","","","",""
+"Drone (Group)","Bot Group","","","Advanced Drone,Army Drone,Assault Drone,Bomb Drone,Combat Drone,Decoy Drone,Drone,Hacking Drone,Mapping Drone,Master Drone,Minesniffer Drone,Mini Drone,Sensor Drone,Splice Drone,Stealth Drone,Swarm Drone,Target Drone,Thief Drone,Wardrone,Z-Drone","","","",""
 "Drone Bay","Part","Deploys [[Drone|Drones]].","","","","","",""
 "Drone Bays","Part Group","","","","","Drone Bay,Mni. Drone Bay,Adv. Drone Bay,Mapping Drone Bay,Z-Drone Bay,Bomb Drone Bay,Combat Drone Bay,Decoy Drone Bay,Master Drone Bay,Splice Drone Bay,Thief Drone Bay,Assault Drone Bay,Sensor Drone Bay,Stealth Drone Bay,Supersonic Drone Bay,Swarm Drone Bay,Hacking Drone Bay,Minesniffer Drone Bay,Army-in-a-Box,Wardrone Bay","",""
 "Dual-blade Saw","Part","","","","","","",""
@@ -1369,7 +1373,7 @@ Duelists don't have any particular damage type weaknesses, though their biggest 
 [[Gallery]]Duelists.png|All Duelist variants and colors[[/Gallery]]
 [[Heading]]Squads[[/Heading]]
 Duelists may appear in the following squads:
-[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Patrol Squad]] - [[Squad Leader]] only normally, or in [[Armory]]|[[Security Squad]] - Armory or [[Garrison|Garrisons]][[/List]]","","L-31 Rogue,L-41 Fighter,L-61 Swordsman","","","",""
+[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Patrol Squad]] - [[Squad Leader]] only normally, or in [[Armory]]|[[Security Squad]] - Armory or [[Garrison|Garrisons]][[/List]]","","L-31 Rogue,L-41 Fighter,L-61 Swordsman,Protovariant L","","","",""
 "Dynamic Insulation System","Part","","","","","","",""
 "Dynamic Insulation Systems","Part Group","","","","","Dynamic Insulation System,Imp. Dynamic Insulation System,Adv. Dynamic Insulation System","",""
 "E-15 Imp","Bot","","","","","","",""
@@ -1462,6 +1466,7 @@ It is possible to install RIF after meeting Warlord. Warlord and his forces will
 "Enh. Optical Array","Part","","","","","","",""
 "Enh. Quantum Rifle","Part","","","","","","",""
 "Enh. Scrap Shield","Part","","","","","","",""
+"Enhanced Bot","Bot Group","","Spoiler","Enhanced Demolisher,Enhanced Grunt,Enhanced Hunter,Enhanced Programmer,Enhanced Q-Series,Enhanced Sentry","","","",""
 "Enhanced Demolisher","Bot","","","","","","",""
 "Enhanced Grunt","Bot","","","","","","",""
 "Enhanced Hunter","Bot","","","","","","",""
@@ -2956,7 +2961,7 @@ Another way to deal with Grunts is to take advantage of their low memory (20 act
 [[Gallery]]Grunts.png|All Grunt variants and colors[[/Gallery]]
 [[Heading]][[Squad|Squads]][[/Heading]]
 Grunts may appear in the following squads:
-[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Investigation Squad]]|[[Patrol Squad]]|[[Reinforcement Squad]]|[[Security Squad]] - Only in [[Armory]], [[Garrison|Garrisons]], [[Quarantine]], and [[Testing]]|[[Transport Squad]][[/List]]","","G-34 Mercenary,G-47 Trooper,G-50 Soldier,G-67 Veteran,G-73 Enforcer","","","",""
+[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Investigation Squad]]|[[Patrol Squad]]|[[Reinforcement Squad]]|[[Security Squad]] - Only in [[Armory]], [[Garrison|Garrisons]], [[Quarantine]], and [[Testing]]|[[Transport Squad]][[/List]]","","G-34 Mercenary,G-47 Trooper,G-50 Soldier,G-67 Veteran,G-73 Enforcer,Protovariant G","","","",""
 "Guerrilla","Bot Group","Guerillas are [[Legs|legged]] [[Derelict]] combat bots equipped with an inaccurate yet powerful [[Bore Cannon]] with a high Destroy critical chance. These are the Derelict version of a [[Hunter]]. Their [[Targeting Computer]] somewhat offset the targeting penalty, and they have a minimal evasion boost with a [[Phase Shifter]]. Unlike Hunters, Guerillas have an [[Armor Integrity Analyzer]] allowing them to occasionally bypass enemy armor. Guerrillas are common bots that show up in many different types of Derelict encounters and events.","","Guerrilla (5),Guerrilla (7)","","","",""
 "Guerrilla (5)","Bot","","","","","","",""
 "Guerrilla (7)","Bot","","","","","","",""
@@ -3104,7 +3109,7 @@ Dodging hunters is difficult to do for an airborne build. They have a much highe
 [[Gallery]]Hunters.png|All Hunter variants and colors[[/Gallery]]
 [[Heading]]Squads[[/Heading]]
 Hunters may appear in the following squads:
-[[List]][[Assault Squad]] - Only in heavy assaults|[[Investigation Squad]]|[[Patrol Squad]]|[[Reinforcement Squad]]|[[Security Squad]] - Only in [[Armory]], [[Garrison|Garrisons]], [[Testing]], and [[Quarantine]][[/List]]","","H-55 Commando,H-66 Slayer,H-77 Assassin,H-88 Terminator","","","",""
+[[List]][[Assault Squad]] - Only in heavy assaults|[[Investigation Squad]]|[[Patrol Squad]]|[[Reinforcement Squad]]|[[Security Squad]] - Only in [[Armory]], [[Garrison|Garrisons]], [[Testing]], and [[Quarantine]][[/List]]","","H-55 Commando,H-66 Slayer,H-77 Assassin,H-88 Terminator,Lightning,Protovariant H","","","",""
 "Hvy. Antimatter Reactor","Part","","","","","","",""
 "Hvy. Armor Plating","Part","","","","","","",""
 "Hvy. Armored Exoskeleton","Part","","","","","","",""
@@ -3379,6 +3384,7 @@ Serfs can also be seen in [[Factory]] dragging incapacitated bots to a [[Chute T
 "LRC-V4","Bot","","","","","","",""
 "LRC-V5","Bot","","","","","","",""
 "LRC-V6","Bot","","","","","","",""
+"LRCs","Bot Group","","Redacted","LRC-V4,LRC-V5,LRC-V6","","","",""
 "LU-1G1's Laser Shovel","Part","","","","","","",""
 "LV-01A","Bot","Found in [[Spoiler]][[Warlord (Location)]][[/Spoiler]].
 
@@ -3940,7 +3946,7 @@ Programmers are not initially very threatening bots. They deal small amounts of 
 [[Gallery]]Programmers.png|All Programmer variants and colors[[/Gallery]]
 [[Heading]][[Squad|Squads]][[/Heading]]
 Programmers may appear in the following squads:
-[[List]]Extermination Squad|[[Patrol Squad]]|[[Security Squad]] - [[Armory]], [[Testing]], and [[Quarantine]] only[[/List]]","","P-60 Hacker,P-70 Sage,P-80 Master","","","",""
+[[List]]Extermination Squad|[[Patrol Squad]]|[[Security Squad]] - [[Armory]], [[Testing]], and [[Quarantine]] only[[/List]]","","P-60 Hacker,P-70 Sage,P-80 Master,Combat Programmer,Protovariant P","","","",""
 "Progress Achievements","Other","Progress [[Achievements]] are earned by accomplishing actions that demonstrate the player's progress and experience with the game. Most of them will simply eventually be obtained by players as they explore the game world and get better at surviving and exploring it. 2 of the 33 Progress Achievements have hidden descriptions that are only revealed after completing them. The borders of Progress Achievement indicate their difficulty compared to other achievements of the same sub-type, with more ""intense"" borders meaning higher difficulty.
 
 [[Comment]]This warning is supposed to be there for all articles about achievement types[[/Comment]]
@@ -4035,15 +4041,14 @@ Requires all other 255 Achievements.[[/List]]","","","","","",""
 "Propulsion Shielding","Part","","","","","","",""
 "Propulsion Shieldings","Part Group","","","","","Propulsion Shielding,Imp. Propulsion Shielding,Mak. Propulsion Shielding,Exp. Propulsion Shielding","",""
 "Protector","Bot Group","Protectors are [[0b10]] [[Wheels|wheeled]] non-combat bots that specialize in protecting their allies with remote [[Shield Generators]] and [[Force Fields]]. Protectors are equipped with two power sources and [[Energy Wells]] for higher damage reduction potential. They are most often seen as part of an [[Assault Squad]] or [[Cargo Convoy]]. Later tiers are equipped with [[Point Defense System|Point Defense Systems]] that make it more difficult to use [[Launchers]] against Assaults protected by them.
-[[Gallery]]Protectors.png|All Protector variants and colors[[/Gallery]]","","I-25 Savior,I-36 Angel,I-47 Archangel","","","",""
+[[Gallery]]Protectors.png|All Protector variants and colors[[/Gallery]]","","I-25 Savior,I-36 Angel,I-47 Archangel,M Shell/Def","","","",""
 "Protomatter","Part","","","","","","",""
 "Proton Bomb Trap","Part","","","","","","",""
 "Proton Burst Cannon","Part","","","","","","",""
 "Proton Cannon","Part","","","","","","",""
 "Proton Missile Launcher","Part","","","","","","",""
 "Prototype Part","Other","","","","","","",""
-"Prototype Robot","Other","","","","","","",""
-"Prototype Robots","Other","","","","","","",""
+"Prototype Robot","Bot Group","","","Alpha 7,Armor Guard,Cetus Guard,Combat Programmer,Enhanced Demolisher,Enhanced Grunt,Enhanced Hunter,Enhanced Programmer,Enhanced Q-Series,Enhanced Sentry,Executioner,Fortress,Investigator,Lightning,LRC-V4,LRC-V5,LRC-V6,M Guard,M Shell/Atk,M Shell/Def,Protovariant D,Protovariant G,Protovariant H,Protovariant L,Protovariant P,Protovariant X,Protovariant Y,Quarantine Guard,S7 Guard,Striker,Superbehemoth,Tracker","","","",""
 "Protovariant","Bot Group","Protovariants are a group of prototype [[0b10]] bots that appear only in [[Testing]]. They are much stronger than the average bot of each class and can appear in one of 4 states: Unpowered, Dormant, Active, or Disabled/rewirable. They can be made berserk with a special Testing-specific [[GameText]]Control(Protovariants)[[/GameText]] [[Terminal]] hack. If this happens, a special [[Assault Squad]] will be dispatched to their location that contains an [[Investigator]]. Occasionally, Protovariants will go out of control on their own even without performing the hack.","Spoiler","Protovariant D,Protovariant G,Protovariant H,Protovariant L,Protovariant P,Protovariant X,Protovariant Y","","","",""
 "Protovariant D","Bot","","","","","","",""
 "Protovariant G","Bot","","","","","","",""
@@ -4277,7 +4282,7 @@ If Revision 17 is rescued in [[Cetus]] and the Cetus Manufacturing Module machin
 [[Image]]Research Warlord Entrance.png|Warlord making an entrance with friends[[/Image]]
 [[Heading:2]]-2 [[Warlord (Alignment)|Warlord Invasion]][[/Heading]]
 If Warlord is aligned with in his [[Warlord (Location)|base]], he will bring huge groups of [[Derelict]] forces to attack Research. All traps on the floor will be disabled after 50 turns, and after 110 that the entire machine network will be turned offline, except for [[Garrison (Machine)|Garrisons]]. Waves of Derelicts will spawn on the left side of the map, while Assaults, [[D-83 Annihilator|D-83 Annihilators]], Strikers, and Executioners spawn from Garrisons and exits.[[/Spoiler]]","","","","","",""
-"Researcher","Bot Group","Researchers are [[Hover Units|hovering]] [[0b10]] non-combat bots equipped with a [[Stasis Beam]] or [[Stasis Projector]] which will immobilize their target while active. Researchers appear in [[Testing]] and [[Quarantine]]. When a Researcher spots a hostile bot attacking or gets attacked, they will attempt to stasis and scan any hostile and summon a [[Reinforcement Squad]]. It is safe to dig into a wall that reveals yourself to the Research after the volley. If [[Cogmind]] is scanned, [[Q-Series]] will sometimes be dispatched for future [[Extermination Squad|Extermination Squads]] instead of [[Programmer|Programmers]]. [[Redacted]]Getting scanned in [[Section 7]] will trigger [[Intercept Squad|Intercepts]] to start showing up instead.[[/Redacted]] Researchers are also equipped with anti-corruption utilities [[System Guards]] and [[Corruption Screens]].","Spoiler","C-55 Analyst,C-65 Expert","","","",""
+"Researcher","Bot Group","Researchers are [[Hover Units|hovering]] [[0b10]] non-combat bots equipped with a [[Stasis Beam]] or [[Stasis Projector]] which will immobilize their target while active. Researchers appear in [[Testing]] and [[Quarantine]]. When a Researcher spots a hostile bot attacking or gets attacked, they will attempt to stasis and scan any hostile and summon a [[Reinforcement Squad]]. It is safe to dig into a wall that reveals yourself to the Research after the volley. If [[Cogmind]] is scanned, [[Q-Series]] will sometimes be dispatched for future [[Extermination Squad|Extermination Squads]] instead of [[Programmer|Programmers]]. [[Redacted]]Getting scanned in [[Section 7]] will trigger [[Intercept Squad|Intercepts]] to start showing up instead.[[/Redacted]] Researchers are also equipped with anti-corruption utilities [[System Guards]] and [[Corruption Screens]].","Spoiler","C-55 Analyst,C-65 Expert,Investigator","","","",""
 "Resistance Armor","Part Group","","","","Resistance Armor","","",""
 "Resistance Devices","Part Group","","","","","Focal Shield,Imp. Focal Shield,Adv. Focal Shield,Exp. Focal Shield,Thermal Shield,Imp. Thermal Shield,Adv. Thermal Shield,Exp. Thermal Shield,Thermal Barrier,Beam Splitter,Thermal Defense Suite,Imp. Thermal Defense Suite,Adv. Thermal Defense Suite,Exp. Thermal Defense Suite,Shock Absorption System,Imp. Shock Absorption System,Exp. Shock Absorption System,EM Disruption Field,Adv. EM Disruption Field,Exp. EM Disruption Field,ME-RLN's Chromatic Screen","",""
 "Revision","Bot","","","","","","",""
@@ -4530,7 +4535,7 @@ While combat bots will want (or will be forced) to fight Sentries head-on, airbo
 [[Heading]]Squads[[/Heading]]
 Sentries may appear in the following squads:
 [[List]][[Garrison Squad]]|[[Security Squad]][[/List]]
-Additionally, Sentries will appear at [[Garrison (Machine)|Garrisons]] and 0b10 exits during [[High Security]] and [[Maximum Security]].","","Y-45 Defender,Y-54 Guardian,Y-64 Sentinel,Y-72 Warden","","","",""
+Additionally, Sentries will appear at [[Garrison (Machine)|Garrisons]] and 0b10 exits during [[High Security]] and [[Maximum Security]].","","Y-45 Defender,Y-54 Guardian,Y-64 Sentinel,Y-72 Warden,Cetus Guard,Armor Guard,Quarantine Guard,Protovariant Y,S7 Guard,M Guard,M Shell/Atk","","","",""
 "Shearguns","Part Group","","Redacted","","","Sigix Sheargun,Modified Sigix Sheargun","",""
 "Shield Generator","Part","","","","","","",""
 "Shield Generators","Part Group","","","","","Shield Generator,Imp. Shield Generator,Adv. Shield Generator,Exp. Shield Generator,Remote Shield,Imp. Remote Shield,Adv. Remote Shield","",""
@@ -4611,7 +4616,7 @@ Specialists have no specific weaknesses or immunities, so generally any damage t
 [[Gallery]]Specialists.png|All Specialist variants and colors[[/Gallery]]
 [[Heading]][[Squad|Squads]][[/Heading]]
 Specialists may appear in the following squads:
-[[List]][[Assault Squad]] - Only if Cogmind has allies|[[Cargo Convoy]] - Within the escorting [[C-30 ARC|ARCs]]|[[Patrol Squad]] - [[Armory]] and [[Garrison|Garrisons]] only|[[Reinforcement Squad]] - only from [[Heavy]]-summoned Reinforcements|[[Security Squad]] - [[Armory]], Garrisons, [[Quarantine]], and [[Testing]] only[[/List]]","","X-57 Shotgunner,X-62 Marksman,X-67 Chaingunner,X-72 Disruptor,X-77 Beamer,X-82 Rainmaker,X-87 Electro","","","",""
+[[List]][[Assault Squad]] - Only if Cogmind has allies|[[Cargo Convoy]] - Within the escorting [[C-30 ARC|ARCs]]|[[Patrol Squad]] - [[Armory]] and [[Garrison|Garrisons]] only|[[Reinforcement Squad]] - only from [[Heavy]]-summoned Reinforcements|[[Security Squad]] - [[Armory]], Garrisons, [[Quarantine]], and [[Testing]] only[[/List]]","","X-57 Shotgunner,X-62 Marksman,X-67 Chaingunner,X-72 Disruptor,X-77 Beamer,X-82 Rainmaker,X-87 Electro,Protovariant X","","","",""
 "Spectral Analyzer","Part","","","","","","",""
 "Speed Boosting Utilities","Part Group","","Spoiler","","","Rocket Booster,Asb. Metafiber Network,Zio. Metafield Generator,ST Field Compressor","",""
 "Spk. Heavy Treads","Part","","","","","","",""
@@ -4802,7 +4807,7 @@ Swarmers have a very low memory (20 actions). While they may pursue airborne bui
 [[Gallery]]Swarmers.png|All Swarmer variants and colors[[/Gallery]]
 [[Heading]]Squads[[/Heading]]
 Swarmers may appear in the following squads:
-[[List]][[Cargo Convoy]]: Escorts that lead the way ahead of the rest of the convoy|[[Garrison Squad]]|[[Patrol Squad]]|[[Security Squad]] - [[Armory]], [[Garrison|Garrisons]], [[Quarantine]], and [[Testing]] only[[/List]]","","S-10 Pest,S-27 Virus,S-43 Plague","","","",""
+[[List]][[Cargo Convoy]]: Escorts that lead the way ahead of the rest of the convoy|[[Garrison Squad]]|[[Patrol Squad]]|[[Security Squad]] - [[Armory]], [[Garrison|Garrisons]], [[Quarantine]], and [[Testing]] only[[/List]]","","S-10 Pest,S-27 Virus,S-43 Plague,Tracker","","","",""
 "System Guard","Part","","","","","","",""
 "System Guards","Part Group","","","","","System Guard,Imp. System Guard,Exp. System Guard","",""
 "System Mapper","Part","","","","","","",""
@@ -5317,7 +5322,7 @@ See the following video: [[https://www.youtube.com/watch?v=XR2RoB6gKWA]]","","",
 "Z-Heavy (5)","Bot","","","","","","",""
 "Z-Heavy (7)","Bot","","","","","","",""
 "Z-Heavy (9)","Bot","","","","","","",""
-"Z-Hero Parts","Part Group","","Spoiler","","","12-ASH's Boomstick,1C-UTU's Sword """"Choppy"""",1C-UTU's Sword """"Lootmaker"""",7V-RTL's Ultimate Field,99-TNT's Nukerbomber,AD-0RF's Magmablaster,CL-ANK's Mallet,ME-RLN's Wand,ME-RLN's Chromatic Screen,NK-0LA's Tesla Doomcannon,P1-3CE's Gatling Flakker","",""
+"Z-Hero Parts","Part Group","","Spoiler","","","12-ASH's Boomstick,1C-UTU's Sword ""Choppy"",1C-UTU's Sword ""Lootmaker"",7V-RTL's Ultimate Field,99-TNT's Nukerbomber,AD-0RF's Magmablaster,CL-ANK's Mallet,ME-RLN's Wand,ME-RLN's Chromatic Screen,NK-0LA's Tesla Doomcannon,P1-3CE's Gatling Flakker","",""
 "Z-Imprinter","Bot","","","","","","",""
 "Z-Light","Bot Group","Z-Light bots are a class of [[Hover Units|hovering]] [[Imprint]] aligned combat bots equipped with many unique Zionite-specific prototype parts with powerful unique weapons. Appears in the [[Imprint]] Roster [[Redacted]]and also can come out of [[Command]] cave seals if Cogmind is Imprinted[[/Redacted]]. When summoned via roster, they have a special ally behavior where they will stop fighting and run back to Cogmind if they fall out of Cogmind's line of sight or are too many tiles away.","Spoiler","Z-Light (5),Z-Light (7),Z-Light (9)","","","",""
 "Z-Light (5)","Bot","","","","","","",""

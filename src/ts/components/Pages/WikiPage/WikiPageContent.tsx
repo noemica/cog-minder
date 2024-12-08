@@ -225,6 +225,9 @@ export default function WikiPageContent({
                 />
             );
 
+        case "Bot Supergroup":
+            return parsedNode;
+
         case "Location":
             return <LocationContent entry={entry} parsedNode={parsedNode} />;
 

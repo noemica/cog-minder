@@ -58,9 +58,10 @@ for part in parts:
 
         found_group = False
         for part_group in wiki['Part Groups']:
-            if part_name in part_group['Parts']:
-                found_group = True
-                break
+            if 'Parts' in part_group:
+                if part_name in part_group['Parts']:
+                    found_group = True
+                    break
 
         if not found_group:
             print('Part {} has no group'.format(part_name))
@@ -72,4 +73,4 @@ for part in parts:
 wiki['Parts'] = list(sorted(wiki['Parts'], key=lambda part: part['Name']))
 
 with open(wiki_path, 'w') as f:
-    json.dump(wiki, f, indent=2)
+    json.dump(wiki, f, indent=1)

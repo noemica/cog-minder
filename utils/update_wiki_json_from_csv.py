@@ -31,6 +31,8 @@ for csv_obj in wiki_csv.values():
         json_list = wiki_json['Bots']
     elif csv_obj['Page Type'] == 'Bot Group':
         json_list = wiki_json['Bot Groups']
+    elif csv_obj['Page Type'] == 'Bot Supergroup':
+        json_list = wiki_json['Bot Supergroups']
     elif csv_obj['Page Type'] == 'Part':
         json_list = wiki_json['Parts']
     elif csv_obj['Page Type'] == 'Location':
@@ -63,6 +65,19 @@ for csv_obj in wiki_csv.values():
                 ','.join(json_item['Bots']) != csv_obj['Bots']:
                 updated = True
                 json_item['Bots'] = csv_obj['Bots'].split(',')
+
+            if csv_obj['Page Type'] == 'Bot Supergroup':
+                if 'Bots' in json_item and ','.join(json_item['Bots']) != csv_obj['Bots']:
+                    updated = True
+                    json_item['Bots'] = csv_obj['Bots'].split(',')
+
+                if 'Groups' in json_item and ','.join(json_item['Groups']) != csv_obj['Groups']:
+                    updated = True
+                    json_item['Groups'] = csv_obj['Groups'].split(',')
+
+                if 'Supergroups' in json_item and ','.join(json_item['Supergroups']) != csv_obj['Supergroups']:
+                    updated = True
+                    json_item['Supergroups'] = csv_obj['Supergroups'].split(',')
 
             if csv_obj['Page Type'] == 'Part Group':
                 if 'Parts' in json_item and ','.join(json_item['Parts']) != csv_obj['Parts']:
@@ -104,8 +119,8 @@ for csv_obj in wiki_csv.values():
     json_list.append({'Name': csv_obj['Name'], 'Content': csv_obj['Content']})
 
 # Sort all lists
-lists = [wiki_json['Bots'], wiki_json['Bot Groups'], wiki_json['Parts'],
-         wiki_json['Part Groups'], wiki_json['Part Supergroups'],
+lists = [wiki_json['Bots'], wiki_json['Bot Groups'], wiki_json['Bot Supergroups'],
+         wiki_json['Parts'], wiki_json['Part Groups'], wiki_json['Part Supergroups'], 
          wiki_json['Locations'], wiki_json['Other']]
 for l in lists:
     l.sort(key=lambda x: x['Name'])

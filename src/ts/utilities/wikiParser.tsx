@@ -423,7 +423,12 @@ export function parseEntryContent(
             .map((ancestorEntry, i) => (
                 <WikiGroupInfobox key={i} activeEntry={entry} groupEntry={ancestorEntry} spoiler={spoiler} />
             ));
-    } else if (entry.type === "Bot Group" || entry.type === "Part Group" || entry.type === "Part Supergroup") {
+    } else if (
+        entry.type === "Bot Group" ||
+        entry.type === "Bot Supergroup" ||
+        entry.type === "Part Group" ||
+        entry.type === "Part Supergroup"
+    ) {
         groupNodes.push(<WikiGroupInfobox activeEntry={entry} groupEntry={entry} key={0} spoiler={spoiler} />);
     }
 

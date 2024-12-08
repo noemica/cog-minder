@@ -54,6 +54,39 @@ for bot_group in wiki_json['Bot Groups']:
         }
         wiki_csv[group_name] = new_group
 
+for bot_group in wiki_json['Bot Supergroups']:
+    group_name = bot_group['Name']
+    if group_name in wiki_csv:
+        wiki_csv[group_name]['Page Type'] = 'Bot Supergroup'
+        wiki_csv[group_name]['Content'] = bot_group['Content']
+        if 'Spoiler' in bot_group:
+            wiki_csv[group_name]['Spoiler'] = bot_group['Spoiler']
+        
+        if 'Bots' in bot_group:
+            wiki_csv[group_name]['Bots'] = ','.join(bot_group['Bots'])
+
+        if 'Groups' in bot_group:
+            wiki_csv[group_name]['Groups'] = ','.join(bot_group['Groups'])
+
+        if 'Supergroups' in bot_group:
+            wiki_csv[group_name]['Supergroups'] = ','.join(bot_group['Supergroups'])
+
+        csv_entries.remove(group_name)
+    else:
+        if 'Content' not in bot_group:
+            print('Supergroup {} missing content'.format(group_name))
+            sys.exit(1)
+        new_group = {
+            'Name': group_name,
+            'Page Type': 'Bot Supergroup',
+            'Bots': ','.join(bot_group['Bots']) if 'Bots' in bot_group else '',
+            'Groups': ','.join(bot_group['Groups']) if 'Groups' in bot_group else '',
+            'Supergroups': ','.join(bot_group['Supergroups']) if 'Supergroups' in bot_group else '',
+            'Content': bot_group['Content'],
+            'Spoiler': bot_group['Spoiler'] if 'Spoiler' in bot_group else '',
+        }
+        wiki_csv[group_name] = new_group
+
 for part in wiki_json['Parts']:
     part_name = part['Name']
     if part_name in wiki_csv:

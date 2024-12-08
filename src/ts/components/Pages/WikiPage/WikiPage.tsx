@@ -17,6 +17,7 @@ import {
     getStringFromLinkSafeString,
     isDev,
     loadImage,
+    parseIntOrDefault,
 } from "../../../utilities/common";
 import { parseEntryContent } from "../../../utilities/wikiParser";
 import Button, { ButtonLink } from "../../Buttons/Button";
@@ -37,6 +38,497 @@ export type EditState = {
     modified: boolean;
     showEdit: boolean;
 };
+
+function addBotGroups(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, WikiEntry>) {
+    for (const botGroupEntry of wiki["Bot Groups"]) {
+        let spoiler: Spoiler = "None";
+        if (botGroupEntry.Spoiler === "Redacted") {
+            spoiler = "Redacted";
+        } else if (botGroupEntry.Spoiler === "Spoiler") {
+            spoiler = "Spoiler";
+        }
+
+        const botEntries: WikiEntry[] = [];
+        const entry: WikiEntry = {
+            alternativeNames: botGroupEntry.AlternateNames ?? [],
+            content: botGroupEntry.Content ?? "",
+            extraData: botEntries,
+            name: botGroupEntry.Name,
+            parentEntries: [],
+            spoiler: spoiler,
+            type: "Bot Group",
+        };
+        addEntry(entry);
+
+        // Add all bots in group
+        for (const botName of botGroupEntry.Bots) {
+            const botEntry = allEntries.get(botName);
+            if (botEntry === undefined) {
+                console.log(`Found bad bot name ${botName} in group ${botGroupEntry.Name}`);
+                continue;
+            }
+
+            if (botEntry.type !== "Bot") {
+                console.log(`Found non-bot ${botEntry.name} in bot group ${entry.name}`);
+                continue;
+            }
+
+            // Add to the bot's parent groups
+            botEntry.parentEntries.push(entry);
+            botEntries.push(botEntry);
+        }
+
+        botEntries.sort((entry1, entry2) => {
+            const bot1 = entry1.extraData as Bot;
+            const bot2 = entry2.extraData as Bot;
+
+            return botCompare(bot1, bot2);
+        });
+    }
+}
+
+function addBots(botData: BotData, addEntry: (entry: WikiEntry) => void) {
+    for (const botEntry of wiki.Bots) {
+        const bot = botData.getBot(botEntry.Name);
+
+        addEntry({
+            alternativeNames: [],
+            content: botEntry.Content,
+            extraData: bot,
+            name: botEntry.Name,
+            parentEntries: [],
+            spoiler: bot.spoiler,
+            type: "Bot",
+        });
+    }
+}
+
+function addBotSupergroups(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, WikiEntry>) {
+    for (const botSupergroupEntry of wiki["Bot Supergroups"]) {
+        let spoiler: Spoiler = "None";
+        // if (botSupergroupEntry.Spoiler === "Redacted") {
+        //     spoiler = "Redacted";
+        // } else if (botSupergroupEntry.Spoiler === "Spoiler") {
+        //     spoiler = "Spoiler";
+        // }
+        const groupEntries: WikiEntry[] = [];
+        const entry: WikiEntry = {
+            alternativeNames: [],
+            content: botSupergroupEntry.Content ?? "",
+            extraData: groupEntries,
+            name: botSupergroupEntry.Name,
+            parentEntries: [],
+            spoiler: spoiler,
+            type: "Bot Supergroup",
+        };
+        addEntry(entry);
+
+        if (botSupergroupEntry.Groups !== undefined) {
+            for (const groupName of botSupergroupEntry.Groups) {
+                const groupEntry = allEntries.get(groupName);
+                if (groupEntry === undefined) {
+                    console.log(`Found bad bot group name ${groupName} in group ${entry.name}`);
+                    continue;
+                }
+
+                if (groupEntry.type !== "Bot Group") {
+                    console.log(`Found non-group ${groupName} in bot group ${entry.name}`);
+                    continue;
+                }
+
+                // Set the bot's parent group to point to this
+                groupEntry.parentEntries.push(entry);
+                groupEntries.push(groupEntry);
+            }
+        }
+
+        if (botSupergroupEntry.Bots !== undefined) {
+            const botEntries: WikiEntry[] = [];
+
+            for (const botName of botSupergroupEntry.Bots) {
+                const botEntry = allEntries.get(botName);
+                if (botEntry === undefined) {
+                    console.log(`Found bad bot name ${botName} in group ${botSupergroupEntry.Name}`);
+                    continue;
+                }
+
+                if (botEntry.type !== "Bot") {
+                    console.log(`Found non-bot ${botEntry.name} in bot group ${entry.name}`);
+                    continue;
+                }
+
+                // Set the part's parent group to point to this
+                botEntry.parentEntries.push(entry);
+                botEntries.push(botEntry);
+            }
+
+            botEntries.sort((entry1, entry2) => {
+                entry1.name.localeCompare(entry2.name);
+                const bot1 = entry1.extraData as Bot;
+                const bot2 = entry2.extraData as Bot;
+
+                return botCompare(bot1, bot2);
+            });
+
+            if (botEntries.length > 0) {
+                groupEntries.push({
+                    alternativeNames: [],
+                    content: "",
+                    fakeGroup: true,
+                    name: "Other",
+                    parentEntries: [],
+                    spoiler: "None",
+                    type: "Bot Group",
+                    extraData: botEntries,
+                });
+            }
+        }
+    }
+
+    // Need to do a second pass for supergroups that contain other supergroups
+    for (const botSupergroupEntry of wiki["Bot Supergroups"]) {
+        if (botSupergroupEntry.Supergroups === undefined) {
+            continue;
+        }
+
+        const entry = allEntries.get(botSupergroupEntry.Name)!;
+        const groupEntries = entry.extraData as WikiEntry[];
+
+        for (const superGroupName of botSupergroupEntry.Supergroups) {
+            const superGroupEntry = allEntries.get(superGroupName);
+            if (superGroupEntry === undefined) {
+                console.log(
+                    `Found bad part supergroup name ${superGroupName} in supergroup ${botSupergroupEntry.Name}`,
+                );
+                continue;
+            }
+
+            if (superGroupEntry.type !== "Bot Supergroup") {
+                console.log(`Found non-part supergroup name ${superGroupEntry.name} in supergroup ${entry.name}`);
+                continue;
+            }
+
+            entry.hasSupergroupChildren = true;
+
+            if (isEntryAncestor(superGroupEntry, entry)) {
+                console.log(`Found recursion with bot supergroups ${entry.name} and ${superGroupEntry.name}`);
+            } else {
+                // Set the part's parent group to point to this
+                superGroupEntry.parentEntries.push(entry);
+                groupEntries.push(superGroupEntry);
+            }
+        }
+
+        groupEntries.sort((entry1, entry2) => entry1.name.localeCompare(entry2.name));
+    }
+}
+
+function addLocations(
+    botData: BotData,
+    itemData: ItemData,
+    addEntry: (entry: WikiEntry) => void,
+    allEntries: Map<string, WikiEntry>,
+) {
+    for (const locationEntry of wiki.Locations) {
+        let spoiler: Spoiler = "None";
+        if (locationEntry.Spoiler === "Redacted") {
+            spoiler = "Redacted";
+        } else if (locationEntry.Spoiler === "Spoiler") {
+            spoiler = "Spoiler";
+        }
+
+        const specialBots = (locationEntry.SpecialBots ?? [])
+            .map((botName) => {
+                try {
+                    return botData.getBot(botName);
+                } catch {
+                    console.log(`Bad bot name ${botName} in ${locationEntry.Name}`);
+                    return null;
+                }
+            })
+            .filter((b) => b !== null) as Bot[];
+
+        const specialItems = (locationEntry.SpecialItems ?? [])
+            .map((itemName) => {
+                try {
+                    return itemData.getItem(itemName);
+                } catch {
+                    console.log(`Bad item name ${itemName} in ${locationEntry.Name}`);
+                    return null;
+                }
+            })
+            .filter((i) => i !== null) as Item[];
+
+        const location: MapLocation = {
+            branch: locationEntry.Branch ?? false,
+            entries: [],
+            exits: [],
+            exitSkipsDepth: locationEntry.ExitSkipsDepth ?? false,
+            imageName: locationEntry.ImageName,
+            maxDepth: locationEntry.MaxDepth,
+            minDepth: locationEntry.MinDepth,
+            multipleDepths: locationEntry.MultipleDepths ?? false,
+            name: locationEntry.Name,
+            preDepthBranch: locationEntry.PreDepthBranch ?? false,
+            spoiler: spoiler,
+            specialBots: specialBots,
+            specialItems: specialItems,
+        };
+
+        const entry: WikiEntry = {
+            alternativeNames: locationEntry.AlternateNames ?? [],
+            content: locationEntry.Content,
+            extraData: location,
+            name: locationEntry.Name,
+            parentEntries: [],
+            spoiler: spoiler,
+            type: "Location",
+        };
+
+        addEntry(entry);
+    }
+
+    // Need to do a second pass to connect entry/exit references
+    for (const locationEntry of wiki.Locations) {
+        const location = allEntries.get(locationEntry.Name)!;
+
+        for (const exit of locationEntry.Exits) {
+            const exitEntry = allEntries.get(exit.Map);
+            if (exitEntry === undefined) {
+                console.log(`Bad location reference ${exit} in ${locationEntry.Name}`);
+            } else {
+                const entryLocation = location.extraData as MapLocation;
+                const exitLocation = exitEntry.extraData as MapLocation;
+
+                entryLocation.exits.push({ depthsString: exit.Depths, location: exitLocation });
+                exitLocation.entries.push({ depthsString: exit.Depths, location: entryLocation });
+            }
+        }
+    }
+}
+
+function addOther(addEntry: (entry: WikiEntry) => void) {
+    for (const otherEntry of wiki.Other) {
+        let spoiler: Spoiler = "None";
+        if (otherEntry.Spoiler === "Redacted") {
+            spoiler = "Redacted";
+        } else if (otherEntry.Spoiler === "Spoiler") {
+            spoiler = "Spoiler";
+        }
+
+        const entry: WikiEntry = {
+            alternativeNames: otherEntry.AlternateNames ?? [],
+            content: otherEntry.Content,
+            name: otherEntry.Name,
+            parentEntries: [],
+            type: "Other",
+            spoiler: spoiler,
+        };
+
+        addEntry(entry);
+    }
+}
+
+function addPartGroups(addEntry: (entry: WikiEntry) => void, itemData: ItemData, allEntries: Map<string, WikiEntry>) {
+    for (const partGroupEntry of wiki["Part Groups"]) {
+        let spoiler: Spoiler = "None";
+        if (partGroupEntry.Spoiler === "Redacted") {
+            spoiler = "Redacted";
+        } else if (partGroupEntry.Spoiler === "Spoiler") {
+            spoiler = "Spoiler";
+        }
+
+        const partEntries: WikiEntry[] = [];
+        const entry: WikiEntry = {
+            alternativeNames: [],
+            content: partGroupEntry.Content ?? "",
+            extraData: partEntries,
+            name: partGroupEntry.Name,
+            parentEntries: [],
+            spoiler: spoiler,
+            type: "Part Group",
+        };
+        addEntry(entry);
+
+        let children: string[] = [];
+
+        if (partGroupEntry.Parts) {
+            children = partGroupEntry.Parts;
+        } else if (partGroupEntry["Part Category"]) {
+            children = getItemCategoryItems(partGroupEntry["Part Category"], itemData);
+        } else {
+            console.log(`Part group ${entry.name} has no parts`);
+        }
+
+        // Add all parts in group
+        for (const partName of children) {
+            const partEntry = allEntries.get(partName);
+            if (partEntry === undefined) {
+                console.log(`Found bad part name ${partName} in group ${partGroupEntry.Name}`);
+                continue;
+            }
+
+            if (partEntry.type !== "Part") {
+                console.log(`Found non-part ${partEntry.name} in part group ${entry.name}`);
+                continue;
+            }
+
+            // Set the part's parent group to point to this
+            partEntry.parentEntries.push(entry);
+            partEntries.push(partEntry);
+        }
+
+        partEntries.sort((entry1, entry2) => {
+            const item1 = entry1.extraData as Item;
+            const item2 = entry2.extraData as Item;
+
+            return itemCompare(item1, item2);
+        });
+    }
+}
+
+function addParts(itemData: ItemData, addEntry: (entry: WikiEntry) => void) {
+    for (const partEntry of wiki.Parts) {
+        const part = itemData.getItem(partEntry.Name);
+
+        let spoiler: Spoiler = "None";
+        if (part.categories.includes("Redacted")) {
+            spoiler = "Redacted";
+        } else if (part.categories.includes("Spoiler")) {
+            spoiler = "Spoiler";
+        }
+
+        addEntry({
+            alternativeNames: [],
+            content: partEntry.Content,
+            extraData: part,
+            name: partEntry.Name,
+            parentEntries: [],
+            spoiler: spoiler,
+            type: "Part",
+        });
+    }
+}
+
+function addPartSupergroups(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, WikiEntry>) {
+    for (const partSupergroupEntry of wiki["Part Supergroups"]) {
+        let spoiler: Spoiler = "None";
+        if (partSupergroupEntry.Spoiler === "Redacted") {
+            spoiler = "Redacted";
+        } else if (partSupergroupEntry.Spoiler === "Spoiler") {
+            spoiler = "Spoiler";
+        }
+
+        const groupEntries: WikiEntry[] = [];
+        const entry: WikiEntry = {
+            alternativeNames: [],
+            content: partSupergroupEntry.Content ?? "",
+            extraData: groupEntries,
+            name: partSupergroupEntry.Name,
+            parentEntries: [],
+            spoiler: spoiler,
+            type: "Part Supergroup",
+        };
+        addEntry(entry);
+
+        if (partSupergroupEntry.Groups !== undefined) {
+            for (const groupName of partSupergroupEntry.Groups) {
+                const groupEntry = allEntries.get(groupName);
+                if (groupEntry === undefined) {
+                    console.log(`Found bad part group name ${groupName} in group ${entry.name}`);
+                    continue;
+                }
+
+                if (groupEntry.type !== "Part Group") {
+                    console.log(`Found non-group ${groupName} in part group ${entry.name}`);
+                    continue;
+                }
+
+                // Set the part's parent group to point to this
+                groupEntry.parentEntries.push(entry);
+                groupEntries.push(groupEntry);
+            }
+        }
+
+        if (partSupergroupEntry.Parts !== undefined) {
+            const partEntries: WikiEntry[] = [];
+
+            for (const partName of partSupergroupEntry.Parts) {
+                const partEntry = allEntries.get(partName);
+                if (partEntry === undefined) {
+                    console.log(`Found bad part name ${partName} in group ${partSupergroupEntry.Name}`);
+                    continue;
+                }
+
+                if (partEntry.type !== "Part") {
+                    console.log(`Found non-part ${partEntry.name} in part group ${entry.name}`);
+                    continue;
+                }
+
+                // Set the part's parent group to point to this
+                partEntry.parentEntries.push(entry);
+                partEntries.push(partEntry);
+            }
+
+            partEntries.sort((entry1, entry2) => {
+                const item1 = entry1.extraData as Item;
+                const item2 = entry2.extraData as Item;
+
+                return itemCompare(item1, item2);
+            });
+
+            if (partEntries.length > 0) {
+                groupEntries.push({
+                    alternativeNames: [],
+                    content: "",
+                    fakeGroup: true,
+                    name: "Other",
+                    parentEntries: [],
+                    spoiler: "None",
+                    type: "Part Group",
+                    extraData: partEntries,
+                });
+            }
+        }
+    }
+
+    // Need to do a second pass for supergroups that contain other supergroups
+    for (const partSupergroupEntry of wiki["Part Supergroups"]) {
+        if (partSupergroupEntry.Supergroups === undefined) {
+            continue;
+        }
+
+        const entry = allEntries.get(partSupergroupEntry.Name)!;
+        const groupEntries = entry.extraData as WikiEntry[];
+
+        for (const superGroupName of partSupergroupEntry.Supergroups) {
+            const superGroupEntry = allEntries.get(superGroupName);
+            if (superGroupEntry === undefined) {
+                console.log(
+                    `Found bad part supergroup name ${superGroupName} in supergroup ${partSupergroupEntry.Name}`,
+                );
+                continue;
+            }
+
+            if (superGroupEntry.type !== "Part Supergroup") {
+                console.log(`Found non-part supergroup name ${superGroupEntry.name} in supergroup ${entry.name}`);
+                continue;
+            }
+
+            entry.hasSupergroupChildren = true;
+
+            if (isEntryAncestor(superGroupEntry, entry)) {
+                console.log(`Found recursion with part supergroups ${entry.name} and ${superGroupEntry.name}`);
+            } else {
+                // Set the part's parent group to point to this
+                superGroupEntry.parentEntries.push(entry);
+                groupEntries.push(superGroupEntry);
+            }
+        }
+
+        groupEntries.sort((entry1, entry2) => entry1.name.localeCompare(entry2.name));
+    }
+}
 
 const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ["Alien Artifacts", (item) => item.ratingCategory === "Alien"],
@@ -135,370 +627,17 @@ function initEntries(botData: BotData, itemData: ItemData) {
         }
     }
 
-    // Initialize bots
-    for (const botEntry of wiki.Bots) {
-        const bot = botData.getBot(botEntry.Name);
+    addBots(botData, addEntry);
+    addBotGroups(addEntry, allEntries);
+    addBotSupergroups(addEntry, allEntries);
 
-        addEntry({
-            alternativeNames: [],
-            content: botEntry.Content,
-            extraData: bot,
-            name: botEntry.Name,
-            parentEntries: [],
-            spoiler: bot.spoiler,
-            type: "Bot",
-        });
-    }
+    addLocations(botData, itemData, addEntry, allEntries);
 
-    // Initialize bot groups
-    for (const botGroupEntry of wiki["Bot Groups"]) {
-        let spoiler: Spoiler = "None";
-        if (botGroupEntry.Spoiler === "Redacted") {
-            spoiler = "Redacted";
-        } else if (botGroupEntry.Spoiler === "Spoiler") {
-            spoiler = "Spoiler";
-        }
+    addParts(itemData, addEntry);
+    addPartGroups(addEntry, itemData, allEntries);
+    addPartSupergroups(addEntry, allEntries);
 
-        const botEntries: WikiEntry[] = [];
-        const entry: WikiEntry = {
-            alternativeNames: botGroupEntry.AlternateNames ?? [],
-            content: botGroupEntry.Content ?? "",
-            extraData: botEntries,
-            name: botGroupEntry.Name,
-            parentEntries: [],
-            spoiler: spoiler,
-            type: "Bot Group",
-        };
-        addEntry(entry);
-
-        // Add all bots in group
-        for (const botName of botGroupEntry.Bots) {
-            const botEntry = allEntries.get(botName);
-            if (botEntry === undefined) {
-                console.log(`Found bad bot name ${botName} in group ${botGroupEntry.Name}`);
-                continue;
-            }
-
-            if (botEntry.type !== "Bot") {
-                console.log(`Found non-bot ${botEntry.name} in bot group ${entry.name}`);
-                continue;
-            }
-
-            // Add to the bot's parent groups
-            botEntry.parentEntries.push(entry);
-            botEntries.push(botEntry);
-        }
-    }
-
-    // Initialize locations
-    for (const locationEntry of wiki.Locations) {
-        let spoiler: Spoiler = "None";
-        if (locationEntry.Spoiler === "Redacted") {
-            spoiler = "Redacted";
-        } else if (locationEntry.Spoiler === "Spoiler") {
-            spoiler = "Spoiler";
-        }
-
-        const specialBots = (locationEntry.SpecialBots ?? [])
-            .map((botName) => {
-                try {
-                    return botData.getBot(botName);
-                } catch {
-                    console.log(`Bad bot name ${botName} in ${locationEntry.Name}`);
-                    return null;
-                }
-            })
-            .filter((b) => b !== null) as Bot[];
-
-        const specialItems = (locationEntry.SpecialItems ?? [])
-            .map((itemName) => {
-                try {
-                    return itemData.getItem(itemName);
-                } catch {
-                    console.log(`Bad item name ${itemName} in ${locationEntry.Name}`);
-                    return null;
-                }
-            })
-            .filter((i) => i !== null) as Item[];
-
-        const location: MapLocation = {
-            branch: locationEntry.Branch ?? false,
-            entries: [],
-            exits: [],
-            exitSkipsDepth: locationEntry.ExitSkipsDepth ?? false,
-            imageName: locationEntry.ImageName,
-            maxDepth: locationEntry.MaxDepth,
-            minDepth: locationEntry.MinDepth,
-            multipleDepths: locationEntry.MultipleDepths ?? false,
-            name: locationEntry.Name,
-            preDepthBranch: locationEntry.PreDepthBranch ?? false,
-            spoiler: spoiler,
-            specialBots: specialBots,
-            specialItems: specialItems,
-        };
-
-        const entry: WikiEntry = {
-            alternativeNames: locationEntry.AlternateNames ?? [],
-            content: locationEntry.Content,
-            extraData: location,
-            name: locationEntry.Name,
-            parentEntries: [],
-            spoiler: spoiler,
-            type: "Location",
-        };
-
-        addEntry(entry);
-    }
-
-    // Need to do a second pass to connect entry/exit references
-    for (const locationEntry of wiki.Locations) {
-        const location = allEntries.get(locationEntry.Name)!;
-
-        for (const exit of locationEntry.Exits) {
-            const exitEntry = allEntries.get(exit.Map);
-            if (exitEntry === undefined) {
-                console.log(`Bad location reference ${exit} in ${locationEntry.Name}`);
-            } else {
-                const entryLocation = location.extraData as MapLocation;
-                const exitLocation = exitEntry.extraData as MapLocation;
-
-                entryLocation.exits.push({ depthsString: exit.Depths, location: exitLocation });
-                exitLocation.entries.push({ depthsString: exit.Depths, location: entryLocation }); // TODO
-            }
-        }
-    }
-
-    // Initialize parts
-    for (const partEntry of wiki.Parts) {
-        const part = itemData.getItem(partEntry.Name);
-
-        let spoiler: Spoiler = "None";
-        if (part.categories.includes("Redacted")) {
-            spoiler = "Redacted";
-        } else if (part.categories.includes("Spoiler")) {
-            spoiler = "Spoiler";
-        }
-
-        addEntry({
-            alternativeNames: [],
-            content: partEntry.Content,
-            extraData: part,
-            name: partEntry.Name,
-            parentEntries: [],
-            spoiler: spoiler,
-            type: "Part",
-        });
-    }
-
-    // Initialize part groups
-    for (const partGroupEntry of wiki["Part Groups"]) {
-        let spoiler: Spoiler = "None";
-        if (partGroupEntry.Spoiler === "Redacted") {
-            spoiler = "Redacted";
-        } else if (partGroupEntry.Spoiler === "Spoiler") {
-            spoiler = "Spoiler";
-        }
-
-        const partEntries: WikiEntry[] = [];
-        const entry: WikiEntry = {
-            alternativeNames: [],
-            content: partGroupEntry.Content ?? "",
-            extraData: partEntries,
-            name: partGroupEntry.Name,
-            parentEntries: [],
-            spoiler: spoiler,
-            type: "Part Group",
-        };
-        addEntry(entry);
-
-        let children: string[] = [];
-
-        if (partGroupEntry.Parts) {
-            children = partGroupEntry.Parts;
-        } else if (partGroupEntry["Part Category"]) {
-            children = getItemCategoryItems(partGroupEntry["Part Category"], itemData);
-        } else {
-            console.log(`Part group ${entry.name} has no parts`);
-        }
-
-        // Add all parts in group
-        for (const partName of children) {
-            const partEntry = allEntries.get(partName);
-            if (partEntry === undefined) {
-                console.log(`Found bad part name ${partName} in group ${partGroupEntry.Name}`);
-                continue;
-            }
-
-            if (partEntry.type !== "Part") {
-                console.log(`Found non-part ${partEntry.name} in part group ${entry.name}`);
-                continue;
-            }
-
-            // Set the part's parent group to point to this
-            partEntry.parentEntries.push(entry);
-            partEntries.push(partEntry);
-        }
-
-        partEntries.sort((entry1, entry2) => {
-            const item1 = entry1.extraData as Item;
-            const item2 = entry2.extraData as Item;
-
-            return itemCompare(item1, item2);
-        });
-    }
-
-    for (const partSupergroupEntry of wiki["Part Supergroups"]) {
-        let spoiler: Spoiler = "None";
-        if (partSupergroupEntry.Spoiler === "Redacted") {
-            spoiler = "Redacted";
-        } else if (partSupergroupEntry.Spoiler === "Spoiler") {
-            spoiler = "Spoiler";
-        }
-
-        const groupEntries: WikiEntry[] = [];
-        const entry: WikiEntry = {
-            alternativeNames: [],
-            content: partSupergroupEntry.Content ?? "",
-            extraData: groupEntries,
-            name: partSupergroupEntry.Name,
-            parentEntries: [],
-            spoiler: spoiler,
-            type: "Part Supergroup",
-        };
-        addEntry(entry);
-
-        if (partSupergroupEntry.Groups !== undefined) {
-            for (const groupName of partSupergroupEntry.Groups) {
-                const groupEntry = allEntries.get(groupName);
-                if (groupEntry === undefined) {
-                    console.log(`Found bad part group name ${groupName} in group ${entry.name}`);
-                    continue;
-                }
-
-                if (groupEntry.type !== "Part Group") {
-                    console.log(`Found non-group ${groupName} in part group ${entry.name}`);
-                    continue;
-                }
-
-                // Set the part's parent group to point to this
-                groupEntry.parentEntries.push(entry);
-                groupEntries.push(groupEntry);
-            }
-        }
-
-        if (partSupergroupEntry.Parts !== undefined) {
-            const partEntries: WikiEntry[] = [];
-
-            for (const partName of partSupergroupEntry.Parts) {
-                const partEntry = allEntries.get(partName);
-                if (partEntry === undefined) {
-                    console.log(`Found bad part name ${partName} in group ${partSupergroupEntry.Name}`);
-                    continue;
-                }
-
-                if (partEntry.type !== "Part") {
-                    console.log(`Found non-part ${partEntry.name} in part group ${entry.name}`);
-                    continue;
-                }
-
-                // Set the part's parent group to point to this
-                partEntry.parentEntries.push(entry);
-                partEntries.push(partEntry);
-            }
-
-            partEntries.sort((entry1, entry2) => {
-                const item1 = entry1.extraData as Item;
-                const item2 = entry2.extraData as Item;
-
-                return itemCompare(item1, item2);
-            });
-
-            if (partEntries.length > 0) {
-                groupEntries.push({
-                    alternativeNames: [],
-                    content: "",
-                    fakeGroup: true,
-                    name: "Other",
-                    parentEntries: [],
-                    spoiler: "None",
-                    type: "Part Group",
-                    extraData: partEntries,
-                });
-            }
-        }
-    }
-
-    function isEntryAncestor(entry: WikiEntry, parentEntry: WikiEntry) {
-        if (entry === parentEntry) {
-            return true;
-        }
-
-        for (const grandparentEntry of parentEntry.parentEntries) {
-            if (isEntryAncestor(entry, grandparentEntry)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    // Need to do a second pass for supergroups that contain other supergroups
-    for (const partSupergroupEntry of wiki["Part Supergroups"]) {
-        if (partSupergroupEntry.Supergroups === undefined) {
-            continue;
-        }
-
-        const entry = allEntries.get(partSupergroupEntry.Name)!;
-        const groupEntries = entry.extraData as WikiEntry[];
-
-        for (const superGroupName of partSupergroupEntry.Supergroups) {
-            const superGroupEntry = allEntries.get(superGroupName);
-            if (superGroupEntry === undefined) {
-                console.log(
-                    `Found bad part supergroup name ${superGroupName} in supergroup ${partSupergroupEntry.Name}`,
-                );
-                continue;
-            }
-
-            if (superGroupEntry.type !== "Part Supergroup") {
-                console.log(`Found non-part supergroup name ${superGroupEntry.name} in supergroup ${entry.name}`);
-                continue;
-            }
-
-            entry.hasSupergroupChildren = true;
-
-            if (isEntryAncestor(superGroupEntry, entry)) {
-                console.log(`Found recursion with part supergroups ${entry.name} and ${superGroupEntry.name}`);
-            } else {
-                // Set the part's parent group to point to this
-                superGroupEntry.parentEntries.push(entry);
-                groupEntries.push(superGroupEntry);
-            }
-        }
-
-        groupEntries.sort((entry1, entry2) => entry1.name.localeCompare(entry2.name));
-    }
-
-    // Initialize other
-    for (const otherEntry of wiki.Other) {
-        let spoiler: Spoiler = "None";
-        if (otherEntry.Spoiler === "Redacted") {
-            spoiler = "Redacted";
-        } else if (otherEntry.Spoiler === "Spoiler") {
-            spoiler = "Spoiler";
-        }
-
-        const entry: WikiEntry = {
-            alternativeNames: otherEntry.AlternateNames ?? [],
-            content: otherEntry.Content,
-            name: otherEntry.Name,
-            parentEntries: [],
-            type: "Other",
-            spoiler: spoiler,
-        };
-
-        addEntry(entry);
-    }
+    addOther(addEntry);
 
     if (isDev()) {
         // Checks to make sure that all new parts are included in top level
@@ -545,6 +684,30 @@ function initEntries(botData: BotData, itemData: ItemData) {
     }
 
     return allEntries;
+}
+
+function isEntryAncestor(entry: WikiEntry, parentEntry: WikiEntry) {
+    if (entry === parentEntry) {
+        return true;
+    }
+
+    for (const grandparentEntry of parentEntry.parentEntries) {
+        if (isEntryAncestor(entry, grandparentEntry)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function botCompare(bot1: Bot, bot2: Bot) {
+    const bot1Tier = parseIntOrDefault(bot1.tier, 1);
+    const bot2Tier = parseIntOrDefault(bot2.tier, 1);
+    if (bot1Tier === bot2Tier) {
+        return bot1.name.localeCompare(bot2.name);
+    }
+
+    return bot1Tier - bot2Tier;
 }
 
 function itemCompare(item1: Item, item2: Item) {
