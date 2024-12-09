@@ -106,14 +106,14 @@ function addBots(botData: BotData, addEntry: (entry: WikiEntry) => void) {
 function addBotSupergroups(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, WikiEntry>) {
     for (const botSupergroupEntry of wiki["Bot Supergroups"]) {
         let spoiler: Spoiler = "None";
-        // if (botSupergroupEntry.Spoiler === "Redacted") {
-        //     spoiler = "Redacted";
-        // } else if (botSupergroupEntry.Spoiler === "Spoiler") {
-        //     spoiler = "Spoiler";
-        // }
+        if (botSupergroupEntry.Spoiler === "Redacted") {
+            spoiler = "Redacted";
+        } else if (botSupergroupEntry.Spoiler === "Spoiler") {
+            spoiler = "Spoiler";
+        }
         const groupEntries: WikiEntry[] = [];
         const entry: WikiEntry = {
-            alternativeNames: [],
+            alternativeNames: botSupergroupEntry.AlternateNames || [],
             content: botSupergroupEntry.Content ?? "",
             extraData: groupEntries,
             name: botSupergroupEntry.Name,

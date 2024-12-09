@@ -1524,6 +1524,25 @@
    "Content": "Thugs are a [[Bot Groups|bot group]] of [[Legs|legged]] [[Derelict]] combat bots armed with thermal weaponry, uniquely [[Beamcaster|normal]] and [[Hvy. Beamcaster|Hvy. Beamcasters]]. They are the Derelict version of the [[0b10]] [[Grunt]] class. Thugs in [[Mines]] are notable for being significantly stronger than the typical Grunts at that depth, and their Beamcasters are one of the strongest standard weapons available in early Materials depths. Thugs are common bots that show up in many different types of Derelict encounters and events."
   },
   {
+   "Name": "Warlord (Group)",
+   "Bots": [
+    "Borebot",
+    "Bouncer",
+    "DD-05H",
+    "Dragon",
+    "God Mode",
+    "God Mode (Fake)",
+    "Hydra",
+    "Knight",
+    "LV-01A",
+    "Sapper",
+    "Warlord",
+    "Warlord (Command)"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Wasp",
    "Bots": [
     "Wasp (5)",
@@ -1579,6 +1598,16 @@
    ],
    "Content": "Z-Light bots are a class of [[Hover Units|hovering]] [[Imprint]] aligned combat bots equipped with many unique Zionite-specific prototype parts with powerful unique weapons. Appears in the [[Imprint]] Roster [[Redacted]]and also can come out of [[Command]] cave seals if Cogmind is Imprinted[[/Redacted]]. When summoned via roster, they have a special ally behavior where they will stop fighting and run back to Cogmind if they fall out of Cogmind's line of sight or are too many tiles away.",
    "Spoiler": "Spoiler"
+  },
+  {
+   "Name": "Zhirov (Group)",
+   "Bots": [
+    "Zhirov",
+    "Perun",
+    "Svarog"
+   ],
+   "Content": "",
+   "Spoiler": ""
   }
  ],
  "Bot Supergroups": [
@@ -1643,6 +1672,107 @@
     "U-05 Engineer"
    ],
    "Content": ""
+  },
+  {
+   "Name": "Derelict",
+   "Groups": [
+    "Assembled",
+    "Butcher",
+    "Exiles (Group)",
+    "Fireman",
+    "Guerrilla",
+    "Heroes of Zion",
+    "Infiltrator",
+    "Marauder",
+    "Martyr",
+    "Mutant",
+    "Savage",
+    "Thug",
+    "Warlord (Group)",
+    "Wasp",
+    "Wizard",
+    "Zhirov (Group)"
+   ],
+   "Supergroups": [
+    "United Federation of Derelicts",
+    "Zionite (Group)"
+   ],
+   "Bots": [
+    "7R-MNS",
+    "Artisan",
+    "Assembler",
+    "AZ-K3N",
+    "Cobbler",
+    "Commander",
+    "Decomposer",
+    "Demented",
+    "Furnace",
+    "Golem",
+    "Golem (Naked)",
+    "HV-R5K",
+    "Master Thief",
+    "Packrat",
+    "Parasite",
+    "Revision",
+    "Revision 17",
+    "Revision 17++",
+    "Samaritan",
+    "Sapper",
+    "Subdweller",
+    "Thief",
+    "Tinkerer",
+    "VL-GR5",
+    "Warbot",
+    "YI-UF0"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "United Federation of Derelicts",
+   "AlternateNames": [
+    "UFD"
+   ],
+   "Groups": [
+    "Scrapoid"
+   ],
+   "Bots": [
+    "Bolteater",
+    "DRS Ranger",
+    "Elite",
+    "Explorer",
+    "Federalist",
+    "Guru",
+    "KN-7UR",
+    "Large Mutated Botcube",
+    "Master Drone",
+    "Mutated Botcube",
+    "Ranger",
+    "Scientist",
+    "Scrapper",
+    "Surveybot 24",
+    "Triborg",
+    "Wyrm Statue"
+   ],
+   "Content": "[[Image]]Scraptown Alignment Derelict.png|[[Scrapper]] in Scraptown that gives Cogmind the option to align[[/Image]]\nThe United Federation of Derelicts (UFD) is a major faction of [[Derelict|Derelicts]] that live in [[Scraptown]]. Cogmind can [[Alignment|align]] with the UFD become a member by entering Scraptown through [[Recycling]]. This alignment provides further access into Scraptown along with a few special hacks.\n[[Heading]]Further Scraptown Access[[/Heading]]\nWhen Cogmind becomes a member of the UFD, the UFD HQ wall rises up on the map, and a few new areas open up with unique items and bot hacks available as possible benefits. See [[Scraptown#Possible right-side rooms|this page]] for additional details.\n[[Heading]]Unique hacks[[/Heading]]\nTwo new hacks become available with UFD alignment at [[Recycling Machine|Recycling Machines]]: [[GameText]]Force(Fedlink)[[/GameText]] and [[GameText]]Force(Scrapoids)[[/GameText]]\n[[Heading:2]]Fedlink[[/Heading]]\nFedlink hooks up additional Recycling Units to the UFD network. This provides a few more resources to be used for Scrapoid summoning.\n[[Heading:2]]Scrapoids[[/Heading]]\nForce(Scrapoids) summons 5 blue controllable [[Scrapoid|Scrapoids]] to the Recycling unit within a few turns of performing the hack. Each hack consumes 2 resources from the pool. Initial resource count is around 16, and some resources may be added automatically when Cogmind enters a new floor.\n[[Heading]]Alignment Incompatibilities[[/Heading]]\n[[Heading:2]]Blocking Alignment[[/Heading]]\nThe following will prevent Cogmind from being able to align with UFD in the first place:\n[[List]][[RIF]] alignment: The UFD will believe Cogmind to be an unaware spy|[[Farcom]], hostilities in the [[Exiles (Location)|Exiles map]], or stealing an empty [[SUBCON Basin]] from the Scraplab in Recycling: Scraplab researchers will say that Cogmind cannot be trusted[[/List]]\n[[Heading:2]]Blocked Alignment[[/Heading]]\nSeveral factions will no longer be able to assist Cogmind after UFD alignment:\n[[List]][[Imprint]]: The [[Imprinter]] will say that the Imprinting machine requires a more thorough vetting process for a UFD member such as Cogmind|[[Warlord (Alignment)]]: [[Warlord]] will call Cogmind a spy and not perform the -2 [[Research]] invasion[[/List]]",
+   "Spoiler": "Spoiler"
+  },
+  {
+   "Name": "Zionite (Group)",
+   "Groups": [
+    "Z-Heavy",
+    "Z-Light",
+    "Z-Experimental"
+   ],
+   "Bots": [
+    "Imprinter",
+    "Zionite",
+    "Z-Courier",
+    "Z-Drone",
+    "Z-Imprinter",
+    "Z-Technician"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
   }
  ],
  "Parts": [
@@ -9199,10 +9329,6 @@
    "Content": "[[Image]]Demolisher Squad.png|2 Demolishers popping out of an ARC[[/Image]]\nDemolisher squads are [[0b10]] aligned [[Squad|squads]] that are dispatched to eliminate large groups of hostiles, especially [[Assembled]]. They are sent to the general area of a lot of hostiles, where they will roam around looking for bots to fight. They consist of a single [[C-30 ARC]] containing 2 [[Demolisher|Demolishers]]. Demolisher squads will never exit the map under normal circumstances after being dispatched.\nAn alert will indicate whenever a Demolisher squad is dispatched. Additionally, the log will display a message like [[GameText]]ALERT: Infestation in the Mines, dispatching Demolisher response squad.[[/GameText]] Depending on the method triggering the squad, a different reason may be given in the alert.\n[[Heading]]How to get Demolisher Squads[[/Heading]]\n[[List]]Assembled infestation: Any Assembled infestation events will trigger an immediate Demolisher response|[[Spoiler]]Friendly Assembled: If Cogmind has used a [[Core Reset Matrix]] and uses a [[Mobile Assembly Unit]] to create allied Assembled, Demolishers will be sent after a random amount of turns[[/Spoiler]]|Too many allies: If Cogmind has 18 or more allies, Demolishers may be dispatched to Cogmind's current location.[[/List]]"
   },
   {
-   "Name": "Derelict",
-   "Content": ""
-  },
-  {
    "Name": "Distress Signals",
    "Content": ""
   },
@@ -9455,14 +9581,6 @@
   {
    "Name": "Transport Squad",
    "Content": "[[Image]]Transport Squad.png|A Hauler guarded by 2 Grunts[[/Image]]\nTransport squads are [[0b10]] aligned [[Squad|squads]] that carry parts from one location to another and can be found on most 0b10 controlled maps. They typically consist of a single [[Hauler]] and 0-2 guard [[Grunt|Grunts]] that escort them. Haulers that are guarded have [[Prototype Part|prototypes]] inside them, but some unguarded Haulers may still have prototype parts. If a Hauler that carries prototype parts is attacked, they will summon a [[Reinforcement Squad]] to their location on depths -7 and higher. Typical transport squads all start on the map, and more of them do not appear if destroyed. Transport squads can be Enumerated at [[Terminal|Terminals]], and a [[Transport Network Coupler]] or [[Modified TNC]] will reveal their current positions. The Modified TNC will also show the contents of all Haulers. Similarly, the Manifests hack shows all of the contents of all Haulers on the map, as well as any associated guards. This can be useful to determine that certain guarded/unguarded Haulers are worthwhile to try to loot. The \n[[Heading]]Transport Contents[[/Heading]]\n[[Table]]Depth|Grunt|Hauler||-10|[[G-34 Mercenary]]|[[A-02 Transporter]]||-9|G-34 Mercenary|A-02 Transporter||-8|[[G-47 Trooper]]|A-02 Transporter||-7|G-47 Trooper|A-02 Transporter||-6|[[G-50 Soldier]]|[[A-15 Conveyor]]||-5|G-50 Soldier|A-15 Conveyor||-4|[[G-67 Veteran]]|A-15 Conveyor||-3|G-67 Veteran|A-15 Conveyor||-2|[[G-73 Enforcer]]|A-15 Conveyor||-1|G-73 Enforcer|A-15 Conveyor[[/Table]]\n[[Heading]]Frequency[[/Heading]]\n[[Table]]Map|Number of patrols||-10 [[Materials]]|2||-9 Materials|6||-8 Materials|6||-7 [[Factory]]|8||-6 Factory|8||-5 Factory|10||-4 Factory|10||-3 [[Research]]|10||-2 Research|10||-1 [[Access]]|12||[[Storage]]|6||[[Extension]]|Varying, they come from Transfer Stations||[[Hub_04(d)]]|6||[[Testing]]|2||[[Quarantine]]|2||[[Section 7]]|6[[/Table]]\n[[Heading]][[Cargo Convoy]][[/Heading]]\n[[Image]]Cargo Convoy.png[[/Image]]\nCargo Convoys are a unique type of transport squad that appear in main [[Factory]] and [[Research]] maps. They are much more heavily guarded than typical Transport squads, but the parts they carry are also much higher rating than usual. If attacked, they will trigger a special response where [[Heavy|Heavies]] guard all of the exits on the map."
-  },
-  {
-   "Name": "United Federation of Derelicts",
-   "AlternateNames": [
-    "UFD"
-   ],
-   "Content": "[[Image]]Scraptown Alignment Derelict.png|[[Scrapper]] in Scraptown that gives Cogmind the option to align[[/Image]]\nThe United Federation of Derelicts (UFD) is a major faction of [[Derelict|Derelicts]] that live in [[Scraptown]]. Cogmind can [[Alignment|align]] with the UFD become a member by entering Scraptown through [[Recycling]]. This alignment provides further access into Scraptown along with a few special hacks.\n[[Heading]]Further Scraptown Access[[/Heading]]\nWhen Cogmind becomes a member of the UFD, the UFD HQ wall rises up on the map, and a few new areas open up with unique items and bot hacks available as possible benefits. See [[Scraptown#Possible right-side rooms|this page]] for additional details.\n[[Heading]]Unique hacks[[/Heading]]\nTwo new hacks become available with UFD alignment at [[Recycling Machine|Recycling Machines]]: [[GameText]]Force(Fedlink)[[/GameText]] and [[GameText]]Force(Scrapoids)[[/GameText]]\n[[Heading:2]]Fedlink[[/Heading]]\nFedlink hooks up additional Recycling Units to the UFD network. This provides a few more resources to be used for Scrapoid summoning.\n[[Heading:2]]Scrapoids[[/Heading]]\nForce(Scrapoids) summons 5 blue controllable [[Scrapoid|Scrapoids]] to the Recycling unit within a few turns of performing the hack. Each hack consumes 2 resources from the pool. Initial resource count is around 16, and some resources may be added automatically when Cogmind enters a new floor.\n[[Heading]]Alignment Incompatibilities[[/Heading]]\n[[Heading:2]]Blocking Alignment[[/Heading]]\nThe following will prevent Cogmind from being able to align with UFD in the first place:\n[[List]][[RIF]] alignment: The UFD will believe Cogmind to be an unaware spy|[[Farcom]], hostilities in the [[Exiles (Location)|Exiles map]], or stealing an empty [[SUBCON Basin]] from the Scraplab in Recycling: Scraplab researchers will say that Cogmind cannot be trusted[[/List]]\n[[Heading:2]]Blocked Alignment[[/Heading]]\nSeveral factions will no longer be able to assist Cogmind after UFD alignment:\n[[List]][[Imprint]]: The [[Imprinter]] will say that the Imprinting machine requires a more thorough vetting process for a UFD member such as Cogmind|[[Warlord (Alignment)]]: [[Warlord]] will call Cogmind a spy and not perform the -2 [[Research]] invasion[[/List]]",
-   "Spoiler": "Spoiler"
   },
   {
    "Name": "Warlord (Alignment)",
