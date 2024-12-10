@@ -3997,7 +3997,19 @@ This Is Interesting...: Reach 25% lore collection.
 |I Wish There Was More: Reach 100% lore collection.[[/List]]
 
 [[Heading]]Gallery collection progress[[/Heading]]
-The gallery collection contains all parts that have ASCII art. All parts start out as ""Undiscovered Components"", and each one is ""discovered"" and revealed upon either being attached to Cogmind or when using the [[GameText]]parse_system[[/GameText]] [[Datajacks|Datjack]] hack on any robot that currently has it attached. Gallery collection progress is based on how many parts have been discovered. Current gallery progress can be seen in the gallery collection. The relevant scoresheet statistic is ""Gallery%"".
+The gallery collection contains all parts that have ASCII art. All parts start out as ""Undiscovered Components"", and each one is ""discovered"" and revealed upon either being attached to Cogmind or when using the [[GameText]]parse_system[[/GameText]] [[Datajacks|Datjack]] hack on any robot that currently has it attached. Inventory items are added to the collection upon being picked up. Gallery collection progress is based on how many parts have been discovered. Current gallery progress can be seen in the gallery collection.
+
+While the majority of parts are fairly common and are relatively easy to just stumble upon or find on robots in multiple different areas, some parts are more difficult to find and add to the gallery collection :
+[[List]]
+A lot of parts can only be found in specific prefabs in specific [[Branch|branches]], sometimes in well-guarded, dangerous-to-access places.
+|A bunch of parts can only be obtained from rare/unique robots, sometimes because the robots are carrying them in their inventory.
+|Some parts can only be found on robots that will never drop them upon destruction, requiring the use of a [[GameText]]parse_system[[/GameText]] hack to add them to the gallery collection.
+|Some parts cannot be found anywhere, requiring the player to instead obtain their schematic and fabricate them.
+|Some parts cannot be found anywhere and have no schematics, requiring them to be created through other means.
+[[/List]]
+
+The relevant scoresheet statistic is ""Gallery%"".
+ 
 [[List]]
 Just Browsing: Reach 25% gallery collection.
 |Tester: Reach 50% gallery collection.
@@ -4029,7 +4041,8 @@ Serviceable Loadout: Reach a peak rating of 50.
 
 [[Heading]]Achievement collection progress[[/Heading]]
 
-[[List]]Achiever: Earn 25% of achievements.
+[[List]]
+Achiever: Earn 25% of achievements.
 Requires 64 Achievements.
 |Overachiever: Earn 50% of achievements.
 Requires 128 Achievements.
