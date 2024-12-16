@@ -735,10 +735,11 @@ function processBotDetailsTag(state: ParserState, result: RegExpExecArray) {
 // Process a [[BotGroups]][[/BotGroups]] tag
 function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
     const processedEntries = new Set<WikiEntry>();
+    const nodes: Map<string, ReactNode> = new Map();
 
     for (const groupEntry of state.allEntries.values()) {
         if (
-            groupEntry.type !== "Bot Group" ||
+            (groupEntry.type !== "Bot Group" && groupEntry.type !== "Bot Supergroup") ||
             !canShowSpoiler(groupEntry.spoiler, state.spoiler) ||
             processedEntries.has(groupEntry)
         ) {
@@ -748,11 +749,15 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
         processedEntries.add(groupEntry);
 
         // Get list of images to display
+        // Only show images for non-supergroups because supergroups have too many
+        // various sprites that cause clutter
         const images = new Set<string>();
-        for (const entry of state.allEntries.values()) {
-            if (entry.parentEntries?.includes(groupEntry)) {
-                const bot = state.botData.getBot(entry.name);
-                images.add(getLargeBotImageName(bot));
+        if (groupEntry.type === "Bot Group") {
+            for (const entry of state.allEntries.values()) {
+                if (entry.parentEntries?.includes(groupEntry)) {
+                    const bot = state.botData.getBot(entry.name);
+                    images.add(getLargeBotImageName(bot));
+                }
             }
         }
 
@@ -787,7 +792,8 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
         }
 
         const id = getLinkSafeString(groupEntry.name);
-        const content = (
+        nodes.set(
+            groupEntry.name,
             <>
                 <h2 id={id} className="wiki-heading wiki-bot-group-heading">
                     {getLinkNode(state, groupEntry, groupEntry.name)}
@@ -795,10 +801,12 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
                     <LinkIcon href={`#${id}`} />
                 </h2>
                 {outputGroupsToHtml(tempState.output, false)}
-            </>
+            </>,
         );
+    }
 
-        state.output.push({ groupType: "Individual", node: content });
+    for (const entryName of Array.from(nodes.keys()).sort()) {
+        state.output.push({ groupType: "Individual", node: nodes.get(entryName)! });
     }
 
     state.index = result.index + result[0].length;
