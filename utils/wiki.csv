@@ -5068,8 +5068,8 @@ By default traps are programmed to trigger on detection of any foreign robot, a 
 "Troll","Bot","","","","","","",""
 "U-05 Engineer","Bot","A wheeled non-combat robot that repairs any broken walls, doors, or machines in sight. Good source of structural and terrain scanners. When attacked while repairing, calls reinforcements (unless you're in [[Materials]]) 
 [[GameText]]ALERT: Construction progress impeded, dispatching reinforcements to local area.[[/GameText]]","","","","","",""
-"United Federation of Derelicts","Bot Supergroup","[[Image]]Scraptown Alignment Derelict.png|[[Scrapper]] in Scraptown that gives Cogmind the option to align[[/Image]]
-The United Federation of Derelicts (UFD) is a major faction of [[Derelict|Derelicts]] that live in [[Scraptown]]. Cogmind can [[Alignment|align]] with the UFD become a member by entering Scraptown through [[Recycling]]. This alignment provides further access into Scraptown along with a few special hacks.
+"United Federation of Derelicts","Bot Supergroup","The United Federation of Derelicts (UFD) is a major faction of [[Derelict|Derelicts]] that live in [[Scraptown]]. Cogmind can [[Alignment|align]] with the UFD become a member by entering Scraptown through [[Recycling]]. This alignment provides further access into Scraptown along with a few special hacks.
+[[Image]]Scraptown Alignment Derelict.png|[[Scrapper]] in Scraptown that gives Cogmind the option to align[[/Image]]
 [[Heading]]Further Scraptown Access[[/Heading]]
 When Cogmind becomes a member of the UFD, the UFD HQ wall rises up on the map, and a few new areas open up with unique items and bot hacks available as possible benefits. See [[Scraptown#Possible right-side rooms|this page]] for additional details.
 [[Heading]]Unique hacks[[/Heading]]
