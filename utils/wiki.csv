@@ -1995,7 +1995,7 @@ Description|Effective sight range of robots attempting to spot you reduced by 3.
 [[GameText]]One of my first robot designs was a small hexapod walker made in mass quantities to spread out and survey the surface.  When I began producing combat bots, I revisited this design and added an assault rifle and light armor.  The Bug's armored shell employs adaptive camouflage while the robot is dormant, enabling it to hide from distant hostiles until it wakes up.  The shell also compensates for the core's inherent weakness to explosive damage.  Bug squads were commonly used as patrols or stationed to guard an open area, but flying swarmers and sentries have replaced them in these roles.  All remaining units have been recalled to garrisons to supplement security positions.  So-called ""garrison divers"" who challenge a seemingly lone sentry might be surprised when three or four nearby Bugs reveal themselves.[[/GameText]]
 [[ItemDetails]]
 Name|Camouflage Shell||
-Image Name|https://i.imgur.com/6zGkmUY.png||
+Image Name|https://i.imgur.com/i1OCyBr.png||
 Type|Protection||
 Slot|Utility||
 Mass|3||
@@ -2075,7 +2075,7 @@ Description|A powerful but bulky and slow-cycling rifle. Good at penetrating wal
 [[Heading]]A-01 Mover[[/Heading]]
 [[ItemDetails]]
 Name|Bulk Storage Unit||
-Image Name|https://i.imgur.com/WKMbjla.png||
+Image Name|https://i.imgur.com/08QviPg.png||
 Type|Storage||
 Slot|Utility||
 Size|4||
@@ -2146,7 +2146,7 @@ Description|Gains +2 damage for each unit of distance traveled above 12.[[/ItemD
 [[GameText]]This short-lived variation of the Scientist was created to assist in robot design.  It was provided with generous amounts of armor, a combat analysis utility, and programming to permit a certain amount of dynamic or ""out-of-the-box"" thinking.  In hindsight this was a mistake as one of the five Developers that had been produced broke free of its programming and quickly turned its attention to replicating this behavior in its four fellows.  All five had reached the Caves by the time I figured out what had happened.  Many cycles later, all of the Developers were found in the back of a fallen Warlord base, attached to a memory transfer unit, unpowered and core-wiped.  The Tinkerer design began to appear around this time, clearly inspired by my newer researchers but with elements of the Developers' thought processes taken to sometimes obsessive extremes.  Though I have no hard evidence to confirm this, I believe that the Developers themselves created this design and then transferred themselves into the first ones produced.  Perhaps one or more of them are still alive and working with Warlord or other factions.  It would certainly explain some of the more unusual design choices for Warlord's newer prototypes.[[/GameText]]
 [[ItemDetails]]
 Name|Combat Logger||
-Image Name|https://i.imgur.com/N4mS8Ep.png||
+Image Name|https://i.imgur.com/NbrdkdM.png||
 Type|Processor||
 Slot|Utility||
 Mass|0||
@@ -2592,7 +2592,7 @@ Description|Creates one foamcrete wall at the site of impact. Hitting a wall wil
 [[GameText]]This wheeled fabricator, reminiscent of the Cobbler, has only been seen in the caves below 0b1.  Fabricating whole robots is considerably more complicated than producing individual components as shown by the bulk and inefficiency of the Spawner's fabrication unit.  Despite its size it can only produce relatively small and basic bots such as early swarmers and light bipeds.  Spawners do not seem to be related to Assemblers but should nonetheless be prioritized for extermination before someone updates their schematics to include stripped-down Cutters.[[/GameText]]
 [[ItemDetails]]
 Name|Spawner Unit||
-Image Name|https://i.imgur.com/HdfRgEM.png||
+Image Name|https://i.imgur.com/ad6UuYk.png||
 Type|Device||
 Slot|Utility||
 Size|4||
