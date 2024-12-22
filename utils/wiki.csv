@@ -4305,9 +4305,14 @@ Rescuing [[Revision 17]] in [[Cetus]] allows for a minor faction [[Alignment|ali
 [[Heading]]-3 Research Invasion[[/Heading]]
 [[Image]]Research Revisions.png|Revision 17++ with Revision allies[[/Image]]
 [[Image]]Research Suppression Forces.png|Suppression forces dispatched to fight the Revisions[[/Image]]
-200 turns after entering the map, Revision 17++ will lead a group of 4 Revisions to follow Cogmind. They are uncontrollable allies but do not generate any alert for Cogmind when attacking. The announcement text [[GameText]]Unknown forces entering zones 8R, 1R, 4T. Local Systems Malfunctioning[[/GameText]] will precede their coming. Squads of 4 Revisions will continue to appear from main access exits every 200 turns. Occasionally a Revision will shout [[GameText]]Recycler![[/GameText]] and turn hostile, although this may also be followed by [[GameText]]##MEMORY:RESET##[[/GameText]] to turn them friendly again. 500 turns after Revision 17 arrives, an alert [[GameText]]Research terminal network lockdown[[/GameText]] will appear, and all Terminals on the map will shut down. Another alert will show up 50 turns later: [[GameText]]Suppression forces dispatched. All non-combat units evacuate.[[/GameText]] After this message, squads of 2 [[Executioner|Executioners]] or [[Striker|Strikers]] and an [[C-30 ARC|ARC]] will start to appear from exits and roam the map, looking for hostiles. They will also spawn every 200 turns.
+200 turns after entering the map, Revision 17++ will lead a group of 4 Revisions to follow Cogmind. They are uncontrollable allies but do not generate any alert for Cogmind when attacking. The announcement text [[GameText]]Unknown forces entering zones 8R, 1R, 4T. Local Systems Malfunctioning[[/GameText]] will precede their coming. Squads of 4 Revisions will continue to appear from main access exits every 200 turns. Occasionally a Revision will shout [[GameText]]Recycler![[/GameText]] and turn hostile, although this may also be followed by [[GameText]]##MEMORY:RESET##[[/GameText]] to turn them friendly again. 500 turns after Revision 17 arrives, an alert [[GameText]]Research terminal network lockdown[[/GameText]] will appear, and all Terminals on the map will shut down (other interactive machines are unaffected). Another alert will show up 50 turns later: [[GameText]]Suppression forces dispatched. All non-combat units evacuate.[[/GameText]] After this message, squads of 2 [[Executioner|Executioners]] or [[Striker|Strikers]] and an [[C-30 ARC|ARC]] will start to appear from exits and roam the map, looking for hostiles. They will also spawn every 200 turns.
 There are a few other side-effects of this event. One is that explosive machines will explode at random whenever Cogmind is nearby. This can be good when fighting enemies around explosive machines, but be wary of them when walking around the map or else they may surprise you at a bad time. Another is that mapgen is affected. [[Heavy|Heavies]] will not appear on a map that Revision 17 invades.
-This event can be a great blessing or a curse depending on a lot of factors. Getting an escort of alert-free allies with other squads of allies roaming the map is great. They will clean up most of the map for you and can net some free prototype bot loot. Blocking Heavy spawns is incredibly useful here as well. The downsides can also be pretty major, however. Losing access to all Terminals by turn 500 can be very bad if Cogmind is on slow propulsion and has no exit intel and no form of terrain scanning. Trying to  follow the spawning Revisions or suppression forces can lead to an exit, although it can be a bit unreliable. Another downside is that the Revisions will often create a ton of squads to appear right at the beginning of the event. Sometimes, large groups of [[Operator|Operators]] and alarm traps can all be triggered at nearly the same time. This can result in massive groups of hostiles to appear right in Cogmind's face with unlucky exit or Garrison positioning.","Spoiler","","","","",""
+
+This event can be a great blessing or a curse depending on a lot of factors. Getting an escort of alert-free allies with other squads of allies roaming the map is great. They will clean up most of the map for you and can net some free prototype bot loot. Blocking Heavy spawns is incredibly useful here as well. The downsides can also be pretty major, however. Losing access to all Terminals by turn 700 can be very bad if Cogmind is on slow propulsion and has no exit intel and no form of terrain scanning. Trying to follow the spawning Revisions or suppression forces can lead to an exit, although it can be a bit unreliable. Another downside is that the Revisions will often create a ton of squads to appear right at the beginning of the event. Sometimes, large groups of [[Operator|Operators]] and alarm traps can all be triggered at nearly the same time. This can result in massive groups of hostiles to appear right in Cogmind's face with unlucky exit or [[Garrison (Machine)|Garrison]] positioning.
+
+Due to a bug (fixed for Beta 15), going through a Garrison and looping back to -3/Research will cause the event to partially continue.[[Comment]]Apparently it was a bug?[[/Comment]]
+
+Last edited during Beta 14.","Spoiler","","","","",""
 "Revision 17++","Bot","","","","","","",""
 "Riot Gun","Part","","","","","","",""
 "Ripper","Part","","","","","","",""
@@ -5228,18 +5233,18 @@ Watchers are quite difficult to kill, especially the W-44 Eye variant. Their nat
 Warning: The writer of this article has not yet earned the ""Stardust"", ""Winner's Signature"", ""Data Run"" or ""By A Hair"" Achievements, and as such their descriptions in this page is a (probably accurate) guess instead of being the official description.
 
 [[Heading]]Endings[[/Heading]]
-These Achievements are earned by winning the game with a specific ending. Currently, only 7 of the 9 endings have Achievements tied to them. Each ending is mutually exclusive with all other endings.
+These Achievements are earned by winning the game with a specific ending. Currently, only 7 of the 9 endings have Achievements tied to them. Each ending is mutually exclusive with all other endings, meaning only one of these achievements can be obtained per run.
 
 [[List]]Epsilon Run: [[Spoiler]]Win and escape to Epsilon Eridani.[[/Spoiler]]
-|Commander 0b11: [[Spoiler]]Win and begin establishing 0b11.[[/Spoiler]]
+|Commander 0b11: [[Redacted]]Win and begin establishing 0b11[[/Redacted]].
 |Home At Last?: [[Spoiler]]Win and rendezvous with the fleet.[[/Spoiler]]
 |Payload Armed: [[Spoiler]]Win and nuke Complex 0b10 from orbit.[[/Spoiler]]
-|MAIN.CPP: [[Spoiler]]Win and take control of Complex 0b10.[[/Spoiler]]
+|MAIN.CPP: [[Redacted]]Win and take control of Complex 0b10.[[/Redacted]]
 
-|Stardust: [[Spoiler]]Win and destroy Tau Ceti IV.[[/Spoiler]]
+|Stardust: [[Redacted]]Win and destroy Tau Ceti IV.[[/Redacted]]
 [[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be fairly accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
 
-|Planet Killer: [[Spoiler]]Win and escape the artificial singularity.[[/Spoiler]]
+|Planet Killer: [[Redacted]]Win and escape the artificial singularity.[[/Redacted]]
 [[/List]]
 
 [[Heading]]Winning under certain conditions[[/Heading]]
@@ -5250,7 +5255,7 @@ However, because those Achievements' descriptions are not hidden by the game (th
 
 [[List]]Derelict Escape: Win while imprinted.
 
-|Winner's Signature: [[Spoiler]]Win after getting scanned by a [[Researcher]] in [[Section 7]].[[/Spoiler]]
+|Winner's Signature: [[Redacted]]Win after getting scanned by a [[Researcher]] in [[Section 7]].[[/Redacted]]
 [[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
 
 |Data Run: [[Spoiler]]Win after interfacing with the [[Data Conduit]].[[/Spoiler]] 
