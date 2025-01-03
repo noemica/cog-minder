@@ -1327,7 +1327,7 @@
     "M-28 Smith",
     "M-36 Artificer"
    ],
-   "Content": "Mechanics are [[Wheel|wheeling]] [[0b10]] non-combat bots that repair the parts and core of damaged allies. They tend to hang around a home [[Repair Station]]. Mechanics will head toward damaged allies as soon as they are hurt but will not repair them while in combat. Mechanics carry [[Recalibrators]] and [[Machine Analyzer|Machine Analyzers]] that can be good to salvage. They also carry a set of backup parts in their inventory based on the bot tier. These backup parts will be refitted on bots if they have empty slots.\nIf a hurt bot is not shot at for a few turns, the Mechanic will repair core integrity up to 85% and part integrity up to 50%. Allied Mechanics will also repair Cogmind's parts up to 50% integrity but will not touch core integrity. Blue allied Mechanics must be set to Aid before they will repair integrity.\nMechanics can refit parts if a bot has a slot available and fewer than 2 power, propulsion, utility, or weapon slots. 0b10 aligned Mechanics can resupply on backup parts at their home Repair Station. The available refittable parts are based on the type of Mechanic:\n[[Table]]Slot/Count|M-13 Machinist|M-28 Smith|M-36 Artificer||Power (2 available)|[[Backup Power I]]|[[Backup Power III]]|[[Backup Power VII]]||Propulsion (4 available)|[[Backup Propulsion I]]|[[Backup Propulsion III]]|[[Backup Propulsion VII]]||Utility (2 available)|[[Backup Plating I]]|[[Backup Plating III]]|[[Backup Plating VII]]||Weapon (4 available)|[[Backup Laser I]]|[[Backup Laser III]]|[[Backup Laser VII]][[/Table]]"
+   "Content": "Mechanics are [[Wheel|wheeling]] [[0b10]] non-combat bots that repair the parts and core of damaged allies. They tend to hang around a home [[Repair Station]]. Mechanics will head toward damaged allies as soon as they are hurt but will not repair them while in combat. Mechanics carry [[Recalibrators]] and [[Machine Analyzer|Machine Analyzers]] that can be good to salvage. They also carry a set of backup parts in their inventory based on the bot tier. These backup parts will be refitted on bots if they have empty slots.\nIf a hurt bot is not shot at for a few turns, the Mechanic will repair core integrity up to 85% and part integrity up to 50%. Allied Mechanics will also repair Cogmind's parts up to 50% integrity but will not touch core integrity. Blue allied Mechanics must be set to Aid before they will repair integrity.\nMechanics can refit parts if a bot has a slot available and fewer than 2 power, propulsion, utility, or weapon slots. 0b10 aligned Mechanics can resupply on backup parts at their home Repair Station. The available refittable parts are based on the type of Mechanic:\n[[Table]]Slot/Count|M-13 Machinist|M-28 Smith|M-36 Artificer||Power (2 available)|[[Backup Power I]]|[[Backup Power III]]|[[Backup Power VII]]||Propulsion (4 available)|[[Backup Propulsion I]]|[[Backup Propulsion III]]|[[Backup Propulsion VII]]||Utility (2 available)|[[Backup Plating I]]|[[Backup Plating III]]|[[Backup Plating VII]]||Weapon (4 available)|[[Backup Laser I]]|[[Backup Laser III]]|[[Backup Laser VII]][[/Table]]\n[[Heading]]Integrity repaired[[/Heading]]\nThe type of Mechanic determines how much total integrity they can repair:\n[[List]]\nM-13 Machinist: 800|\nM-28 Smith: 1400|\nM-36 Artificer: 2600\n[[/List]]"
   },
   {
    "Name": "Minesweeper",
@@ -1503,7 +1503,7 @@
     "Surgeon (4)",
     "Surgeon (6)"
    ],
-   "Content": "Surgeons are wheeled [[Derelict]] non-combat bots. They are the Derelict counterpart of the [[0b10]] [[Mechanic]] class of bots. Like Mechanics, they repair ally core and part integrity and have the same set of limitations that Mechanics do on repairs. They also have an inventory of 2 [[Backup Power III]], 4 [[Backup Propulsion III]], 2 [[Backup Plating III]], and 4 [[Backup Laser III]] that they will refer on allies with empty slots."
+   "Content": "Surgeons are wheeled [[Derelict]] non-combat bots. They are the Derelict counterpart of the [[0b10]] [[Mechanic]] class of bots. Like Mechanics, they repair ally core and part integrity and have the same set of limitations that Mechanics do on repairs. They also have an inventory of 2 [[Backup Power III]], 4 [[Backup Propulsion III]], 2 [[Backup Plating III]], and 4 [[Backup Laser III]] that they will refer on allies with empty slots.\n[[Heading]]Integrity Repaired[[/Heading]]\nThe amount of integrity that can be repaired by Surgeons depends on the bot type. The Surgeon (4) can repair 1700 integrity and the Surgeon (6) can repair 2300 integrity."
   },
   {
    "Name": "Swarmer",
@@ -1687,6 +1687,7 @@
     "Martyr",
     "Mutant",
     "Savage",
+    "Surgeon",
     "Thug",
     "Warlord (Group)",
     "Wasp",
