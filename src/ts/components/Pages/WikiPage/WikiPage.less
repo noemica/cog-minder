@@ -389,8 +389,21 @@
     background-color: @table-header-background-color;
     margin-bottom: @large-gap;
 
+    // Normally we only have bottom margin on p elements, but in tables
+    // We want to have no margin on the first element altogether
+    // If we have multiple p elements in a row, add top margin only to
+    // subsequent elements so the bottom is always 0 margin
     p {
+        line-height: 1;
+    }
+
+    p:first-child {
         margin: 0;
+    }
+
+    p:not(:first-child) {
+        margin-top: 1rem;
+        margin-bottom: 0;
     }
 }
 
