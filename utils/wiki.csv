@@ -1265,7 +1265,7 @@ As an Alien Artifact, the CRM is only found in a few specific places:
 "Corruption","Other","Corruption is a [[Game Mechanics|Gameplay Mechanic]] that can cause numerous negative effects on bots, up to instant death at 100% corruption. Corruption is an always visible stat in the HUD for Cogmind. Other bots can be [[Datajacks|Datajacked]] in order to see their corruption.
 [[Heading]]Getting corruption[[/Heading]]
 [[List]]Electromagnetic Damage: Between 50-150% of EM damage is also inflicted as corruption for non-Cogmind bots. For Cogmind, each hit has a [damage %] chance of inflicting 1% corruption.|
-Impact Damage destroying parts: Each destroyed part inflicts between 25-150% corruption to non-Cogmind parts. For Cogmind, each destroyed part inflicts between 1-5% corruption.|
+Impact Damage destroying parts: Each destroyed part inflicts between 25-150% corruption to non-Cogmind bots. For Cogmind, each destroyed part inflicts between 1-5% corruption.|
 Attaching a [[Corrupted Parts|Corrupted Part]]: Between 1% and [corruption % on death / 10] corruption, capped at 15%.|
 Feedback from being fully traced at an [[Interactive Machine]] (1%)[[/List]]
 Note: All sources of corruption are affected by EM damage resistance.
@@ -1286,7 +1286,9 @@ Misdirection|Cogmind may move in a random direction other than the one commanded
 Weapon Failure|A weapon will fail to fire during a volley. Based on if the weapon is a ballistic weapon, energy weapon, or launcher, the log message will be the following: [[GameText]]System corrupted: [part name] jammed/failed to cycle/failed to launch.[[/GameText]]|Only occurs on firing a volley||
 Hacking Penalty|Cogmind suffers a [corruption % / 3] penalty to the success rate of hacks on all interactive machines.|N/A||
 Accuracy Penalty|Cogmind suffers a [corruption % / 4]% penalty to accuracy.|N/A||
-Allied Trap Triggering|Can trigger allied traps when walking on top of them, with a [corruption %] chance of triggering.|N/A[[/Table]]
+Allied Trap Triggering|Can trigger allied traps when walking on top of them, with a [corruption %] chance of triggering.|N/A||
+Instant Death|When Cogmind hits 100% corruption, the game is instantly over. Non-Cogmind bots will still take their next turn before dying.|>100% corruption 
+[[/Table]]
 [[Heading:2]]Non-Cogmind Corruption Effects[[/Heading]]
 [[Table]]Name|Effect||
 Memory Loss|Typically, each action subtracts 1 from a bot's memory memory while it is out of line of sight of a target they are tracking. Bots have an additional penalty applied to their memory that is calculated as [corruption % / 10]. For example, a [[G-34 Mercenary]] at 0% corruption has a memory of 20 actions. At 10% corruption, this is reduced to 10 actions (20 / 2). At 20%, this is reduced to 7 (20 / 3, rounding up).||
