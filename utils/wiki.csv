@@ -750,9 +750,22 @@ Fearless: Enter a [[Garrison]] with below 10% core integrity and survive it.
 ","","","","","",""
 "Chronowheel","Part","The effect of the Chronowheel allows Cogmind to rewind time as a one time save/load effect. Attaching saves, and after 30 turns (if not destroyed/removed) the load will occur.
 [[Heading]]Timeline of Effects[[/Heading]]
-[[List]]1 - [[GameText]]Spacetime feels off.[[/GameText]] log message. Random part art, map sections, and lore text will briefly flash on screen. The frequency of these effects increases as time goes on.|20 - [[GameText]]Chronowheel is disintegrating...[[/GameText]] log|28 - [[GameText]]Spacetime is rapidly distorting...[[/GameText]] log|29 - [[GameText]]Spacetime reconverges on this point.[[/GameText]] log. Turn before attaching the Chronowheel is loaded, Chronowheel is gone.|When ripping the Chronowheel off instead - [[GameText]]Spacetime feels normal again.[[/GameText]] log[[/List]]
-Some good uses of the Chronowheel include:
-[[List]]Determining what map an exit goes to (a very expensive one time [[Signal Interpreter]], not really recommended)|Scouting out a new map or running through a dangerous area (only really viable if fast)|Getting multiple attempts at killing the [[Data Miner]]|Using the [[Data Conduit]] and finding the locations of all locations in the game without the negative side effects|Getting the chance to reroll a [[RIF]] ability from a RIF Installer|Attaching unknown [[Alien Artifacts]] or [[Prototype Part|Prototype Parts]] without downsides. This is especially useful if used with a [[Core Reset Matrix]], since it will show where all other Alien Artifacts are on the current map.|Completing [[Zhirov|Zhirov's]] [[SGEMP Prototype]] quest and obtaining the [[Access]] map intel without actually getting Zhirov to spawn in Access.[[/List]]
+[[List]]
+1 - [[GameText]]Spacetime feels off.[[/GameText]] log message. Random part art, map sections, and lore text will briefly flash on screen. The frequency of these effects increases as time goes on.|
+20 - [[GameText]]Chronowheel is disintegrating...[[/GameText]] log|
+28 - [[GameText]]Spacetime is rapidly distorting...[[/GameText]] log|
+29 - [[GameText]]Spacetime reconverges on this point.[[/GameText]] log. Turn before attaching the Chronowheel is loaded, Chronowheel is gone.|
+When ripping the Chronowheel off instead - [[GameText]]Spacetime feels normal again.[[/GameText]] log
+[[/List]]
+[[Heading]]Possible Uses of Chronowheel[[/Heading]]
+[[List]]
+Determining what map an exit goes to (a very expensive one time [[Signal Interpreter]], not really recommended)|
+Scouting out a new map or running through a dangerous area (only really viable if fast)|Getting multiple attempts at killing specific NPCs like the [[Data Miner]]|
+[[Spoiler]]Using the [[Data Conduit]] and finding the locations of all locations in the game without the negative side effects[[/Spoiler]]|
+Getting the chance to reroll a [[RIF]] ability from a RIF Installer|
+Attaching unknown [[Alien Artifacts]] or [[Prototype Part|Prototype Parts]] without downsides. This is especially useful if used with a [[Spoiler]][[Core Reset Matrix]], since it will show where all other Alien Artifacts are on the current map.[[/Spoiler]]|
+[[Spoiler]]Completing [[Zhirov|Zhirov's]] [[SGEMP Prototype]] quest and obtaining the [[Access]] map intel without actually getting Zhirov to spawn in Access.[[/Spoiler]]
+[[/List]]
 [[Heading:2]]Secret second effect[[/Heading]]
 [[Spoiler]]The Chronowheel also has a hidden secondary effect when paired with the [[Subatomic Replicator]]. First, the warning [[GameText]]Chronowheel temporarily destabilized by failed replication attempt, a second attempt will likely cause a devastating explosion.[[/GameText]] will appear in the log. A second attempt will give the message [[GameText]]Local interference in replication process, triggered subspace vortex.[[/GameText]] A 20 tile radius explosion will then occur at the point of replication, dealing 1000 vortex damage in 10 damage chunks with 0 falloff.[[/Spoiler]]","","","","","",""
 "Chute Trap","Other","","","","","","",""
@@ -1267,13 +1280,13 @@ As an Alien Artifact, the CRM is only found in a few specific places:
 [[List]]Electromagnetic Damage: Between 50-150% of EM damage is also inflicted as corruption for non-Cogmind bots. For Cogmind, each hit has a [damage %] chance of inflicting 1% corruption.|
 Impact Damage destroying parts: Each destroyed part inflicts between 25-150% corruption to non-Cogmind bots. For Cogmind, each destroyed part inflicts between 1-5% corruption.|
 Attaching a [[Corrupted Parts|Corrupted Part]]: Between 1% and [corruption % on death / 10] corruption, capped at 15%.|
-Feedback from being fully traced at an [[Interactive Machine]] (1%)[[/List]]
+Feedback from being fully traced at an [[Interactive Machine]] (1%).[[/List]]
 Note: All sources of corruption are affected by EM damage resistance.
 [[Heading]]Corruption Effects[[/Heading]]
 Some corruption effects can happen at any point in time, some only happen while hostiles are nearby, and some are permanent negative effects unless corruption is purged. Chance based corruption effects become more common at higher corruption.
 [[Heading:2]]Cogmind Corruption Effects[[/Heading]]
 [[Table]]Name|Effect|Extra Conditions||
-Message Error|Garbled messages appear in the game log|N/A||
+Message Error|Garbled messages appear in the game log.|N/A||
 Matter Fused|Loss of between 5-10 [[Matter]], with the log message [[GameText]]System corrupted: Matter fused (-x).[[/GameText]]|Only occurs if Cogmind has > 0 matter||
 Heat Flow Error|Large spike in [[Heat]], between 100 and 300, with log message [[GameText]]System corrupted: Heat flow error (+x).[[/GameText]]|N/A||
 Energy Discharge|Loss of stored [[Energy]], between 20-40% of current storage capacity, with log message [[GameText]]System corrupted: Energy discharge (-x).[[/GameText]]|Only occurs if Cogmind has > 0 energy||
@@ -1287,14 +1300,15 @@ Weapon Failure|A weapon will fail to fire during a volley. Based on if the weapo
 Hacking Penalty|Cogmind suffers a [corruption % / 3] penalty to the success rate of hacks on all interactive machines.|N/A||
 Accuracy Penalty|Cogmind suffers a [corruption % / 4]% penalty to accuracy.|N/A||
 Allied Trap Triggering|Can trigger allied traps when walking on top of them, with a [corruption %] chance of triggering.|N/A||
-Instant Death|When Cogmind hits 100% corruption, the game is instantly over. Non-Cogmind bots will still take their next turn before dying.|>100% corruption 
+Instant Death|When Cogmind hits 100% corruption, the game is instantly over|>100% corruption 
 [[/Table]]
 [[Heading:2]]Non-Cogmind Corruption Effects[[/Heading]]
 [[Table]]Name|Effect||
 Memory Loss|Typically, each action subtracts 1 from a bot's memory memory while it is out of line of sight of a target they are tracking. Bots have an additional penalty applied to their memory that is calculated as [corruption % / 10]. For example, a [[G-34 Mercenary]] at 0% corruption has a memory of 20 actions. At 10% corruption, this is reduced to 10 actions (20 / 2). At 20%, this is reduced to 7 (20 / 3, rounding up).||
 Accuracy Penalty|Bots suffers a [corruption % / 8]% penalty to accuracy.||
 Misfire|Bots will shoot something that wasn't intentionally aimed at. Unlike Cogmind misfires, this can only occur while a bot is actively shooting and all weapons in one volley will fire at the same target. When a bot shoots a non-bot target, there is a log message [[GameText]][bot name] misfires.[[/GameText]] If another bot is targeted, there is a different log message [[GameText]][bot name] IFF system glitched.[[/GameText]]||
-Allied Trap Triggering|Can trigger allied traps when walking on top of them, with a [corruption %] chance of triggering.[[/Table]]
+Allied Trap Triggering|Can trigger allied traps when walking on top of them, with a [corruption %] chance of triggering.||
+Instant Death|When a non-Cogmind bot hits 100% corruption, they will die at the end of their next turn[[/Table]]
 [[Heading]]Preventing Corruption[[/Heading]]
 [[List]][[Redacted]][[Core Membrane]]: Completely negates all corruption gains[[/Redacted]]|[[Corruption Screens]]: Takes damage to prevent corruption gain|[[Dynamic Insulation Systems]]: Has a chance of negating corruption gain|EM resistance: All sources of corruption are proportionally reduced by EM resistance, and a 100% EM resistant bot cannot gain corruption in any way.|[[System Guards]]: Reduces effective corruption by a certain amount. Does not truly purge it but behaves like it isn't there.[[/List]]
 [[Heading]]Purging Corruption[[/Heading]]
@@ -3108,7 +3122,16 @@ Etc. - Delay between assaults continues to increase by 50 and number of assaults
 The only 2 ways to exit High Security are to trigger [[Sterilization]] after killing enough combat hostiles or to exit the map. Otherwise, an infinite number of Assaults will continue to be dispatched. One unique map [[Command]] has special behavior: [[Redacted]]Since there are a limited number of [[C-30 ARC|ARCs]] on the map, no more assaults will come for Cogmind after they have been depleted. However, the alerts that assaults are dispatched never stop coming.[[/Redacted]]","","","","","",""
 "Homepage","Other","This is a WIP unofficial Cogmind Wiki. Use the page dropdown to go to a specific page. For editing info, check out the [[https://discord.gg/f8Fqv2qQxV|Cog-Minder wiki Discord server]] and make contributions via [[https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/edit?usp=sharing|This Google Spreadsheet]].
 [[Heading]]Useful Pages[[/Heading]]
-[[List]][[Game Mechanics]]|[[Locations]] - Information about all locations in the game|[[Squad]] - All types of robot squads|[[Bot Groups]] - List of bos classes/other groups|[[Acronyms]] - List of common community acronyms|[[Reinforced Walls]] - Reference of reinforced walls across the game|[[Power]]/[[Propulsion]]/[[Utilities]]/[[Weapons]] - List and categorization of all parts of the given slot type|[[Non-empty Pages]] - List of non-empty pages[[/List]]
+[[List]][[Game Mechanics]]|
+[[Locations]] - Information about all locations in the game|
+[[Squad]] - All types of robot squads|
+[[Bot Groups]] - List of bos classes/other groups|
+[[Acronyms]] - List of common community acronyms|
+[[Reinforced Walls]] - Reference of reinforced walls across the game|
+[[Power]]/[[Propulsion]]/[[Utilities]]/[[Weapons]] - List and categorization of all parts of the given slot type|
+[[Non-empty Pages]] - List of non-empty pages|
+[[Fanart]]
+[[/List]]
 [[Heading]]Contributors[[/Heading]]
 [[List]]aoemica|jimmyl|ktur|lyrabold|Perseus|Rocko1345[[/List]]","","","","","",""
 "Hover Unit","Part","","","","","","",""
