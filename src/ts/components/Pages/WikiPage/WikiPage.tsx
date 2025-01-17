@@ -307,7 +307,7 @@ function addLocations(
     }
 }
 
-function addOther(addEntry: (entry: WikiEntry) => void) {
+function addOther(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, WikiEntry>) {
     for (const otherEntry of wiki.Other) {
         let spoiler: Spoiler = "None";
         if (otherEntry.Spoiler === "Redacted") {
@@ -319,6 +319,7 @@ function addOther(addEntry: (entry: WikiEntry) => void) {
         const entry: WikiEntry = {
             alternativeNames: otherEntry.AlternateNames ?? [],
             content: otherEntry.Content,
+            extraData: [],
             name: otherEntry.Name,
             parentEntries: [],
             type: "Other",
@@ -326,6 +327,44 @@ function addOther(addEntry: (entry: WikiEntry) => void) {
         };
 
         addEntry(entry);
+    }
+
+    // After adding all pages, add grouped subcategories based on name
+    for (const entry of allEntries.values()) {
+        if (entry.type !== "Other") {
+            continue;
+        }
+
+        if (entry.name.includes("/")) {
+            const slashName = entry.name.split("/")[0];
+            const parentEntry = allEntries.get(slashName);
+
+            if (parentEntry !== undefined) {
+                const childEntries = parentEntry.extraData as WikiEntry[];
+                childEntries.push(entry);
+                entry.parentEntries.push(parentEntry);
+            }
+        }
+    }
+
+    // Add subpages after all pages have been processed
+    for (const otherEntry of wiki.Other) {
+        if (otherEntry.Subpages !== undefined) {
+            const parentEntry = allEntries.get(otherEntry.Name)!;
+            const entries = parentEntry.extraData as WikiEntry[];
+
+            for (const entryName of otherEntry.Subpages) {
+                const entry = allEntries.get(entryName);
+                if (entry === undefined) {
+                    console.log(`Found bad page name ${entryName} in group ${otherEntry.Name}`);
+                    continue;
+                }
+
+                // Add to the page's parent groups
+                entry.parentEntries.push(parentEntry);
+                entries.push(entry);
+            }
+        }
     }
 }
 
@@ -637,7 +676,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
     addPartGroups(addEntry, itemData, allEntries);
     addPartSupergroups(addEntry, allEntries);
 
-    addOther(addEntry);
+    addOther(addEntry, allEntries);
 
     if (isDev()) {
         // Checks to make sure that all new parts are included in top level

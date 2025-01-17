@@ -101,6 +101,11 @@ for csv_obj in wiki_csv.values():
                     updated = True
                     json_item['Supergroups'] = csv_obj['Supergroups'].split(',')
 
+            if csv_obj['Page Type'] == 'Other':
+                if 'Subpages' in json_item and ','.join(json_item['Subpages']) != csv_obj['Subpages']:
+                    updated = True
+                    json_item['Subpages'] = csv_obj['Subpages'].split(',')
+
             if updated:
                 updated_pages.append(json_item['Name'])
 

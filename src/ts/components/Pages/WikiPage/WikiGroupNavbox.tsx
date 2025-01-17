@@ -126,7 +126,8 @@ function InfoboxTable({
             entryToCheck.type === "Bot Group" ||
             entryToCheck.type === "Bot Supergroup" ||
             entryToCheck.type === "Part Group" ||
-            entryToCheck.type === "Part Supergroup"
+            entryToCheck.type === "Part Supergroup" ||
+            entryToCheck.type === "Other"
         ) {
             const childEntries = entryToCheck.extraData as WikiEntry[];
 
@@ -147,7 +148,8 @@ function InfoboxTable({
             entry.type === "Bot Group" ||
             entry.type === "Bot Supergroup" ||
             entry.type === "Part Group" ||
-            entry.type === "Part Supergroup"
+            entry.type === "Part Supergroup" ||
+            entry.type === "Other"
         ) {
             for (const childEntry of entry.extraData as WikiEntry[]) {
                 if (hasVisibleDescendent(childEntry)) {
@@ -202,7 +204,8 @@ export default function WikiGroupInfobox({
                 (groupEntry.type === "Bot Group" ||
                     groupEntry.type === "Bot Supergroup" ||
                     groupEntry.type === "Part Group" ||
-                    groupEntry.type === "Part Supergroup")),
+                    groupEntry.type === "Part Supergroup" ||
+                    groupEntry.type === "Other")),
     );
 
     if (groupEntry.hasSupergroupChildren) {

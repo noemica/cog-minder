@@ -189,11 +189,15 @@ for other in wiki_json['Other']:
         if 'Spoiler' in other:
             wiki_csv[other_name]['Spoiler'] = other['Spoiler']
 
+        if 'Subpages' in other:
+            wiki_csv[other_name]['Subpages'] = ','.join(other['Subpages'])
+
         csv_entries.remove(other_name)
     else:
         new_other = {
             'Name': other_name,
             'Page Type': 'Other',
+            'Subpages': ','.join(other['Subpages']) if 'Subpages' in other else '',
             'Content': other['Content'],
             'Spoiler': other['Spoiler'] if 'Spoiler' in other else '',
         }
@@ -211,7 +215,7 @@ with open(csv_path, 'w', newline='') as f:
     writer = csv.DictWriter(
         f,
         ['Name', 'Page Type', 'Content', 'Spoiler', 'Bots', 'Part Category',
-         'Parts', 'Groups', 'Supergroups'],
+         'Parts', 'Groups', 'Supergroups', 'Subpages'],
         quoting=csv.QUOTE_ALL, dialect='wiki')
 
     writer.writeheader()
