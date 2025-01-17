@@ -3046,7 +3046,7 @@ Grunts may appear in the following squads:
 "Hacking Drone","Bot","","","","","","","",""
 "Hacking Drone Bay","Part","Deploys [[Hacking Drone|Hacking Drones]].","","","","","","",""
 "Hacking Suite","Part","A must-have for when you want to go for a hacking route. Download the schematic and make sure you fabricate enough in the factories.","","","","","","",""
-"Hackware","Part Supergroup","Hackware is a group of Utility parts that improve hacking capabilities, mainly success chance for terminal hacks, trap rewiring and robot rewiring. Hackware also helps you hack hostiles through the defense of a [[Programmer]]. Additionally, later Hackware makes it harder for your allies to be hacked.","","","","EX Chip 1,Hacking Suite,Mak. Hacking Suite,Imp. Hacking Suite,Adv. Hacking Suite,Exp. Hacking Suite,System Mapper,Deep Network Scanner,Architect God Chip A,EX Chip 2,System Shield,Mak. System Shield,Imp. System Shield,Adv. System Shield,Exp. System Shield,Ghost Barrier,Quantum Router,Architect God Chip D","Defensive Hackware,Offensive Hackware","",""
+"Hackware","Part Supergroup","Hackware is a group of Utility parts that improve hacking capabilities, mainly success chance for terminal hacks, trap rewiring and robot rewiring. Hackware also helps you hack hostiles through the defense of a [[Programmer]]. Additionally, later Hackware makes it harder for your allies to be hacked.","","","","","Defensive Hackware,Offensive Hackware","",""
 "Hammer","Part","","","","","","","",""
 "Hardcell Cannon","Part","","","","","","","",""
 "Hardlight Generator","Part","","","","","","","",""

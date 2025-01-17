@@ -25,6 +25,42 @@ with open(csv_path) as f:
 
 updated_pages = []
 
+def update_json_value(json_item, csv_obj, key_name):
+    if csv_obj[key_name] == '':
+        if key_name in json_item:
+            del json_item[key_name]
+            return True
+        
+        return False
+    
+    if key_name in json_item:
+        if csv_obj[key_name] != json_item[key_name]:
+            json_item[key_name] = csv_obj[key_name]
+            return True
+        
+        return False
+    else:
+        json_item[key_name] = csv_obj[key_name]
+        return True
+
+def update_json_list_value(json_item, csv_obj, key_name):
+    if csv_obj[key_name] == '':
+        if key_name in json_item:
+            del json_item[key_name]
+            return True
+        
+        return False
+    
+    if key_name in json_item:
+        if csv_obj[key_name] != ','.join(json_item[key_name]):
+            json_item[key_name] = csv_obj[key_name].split(',')
+            return True
+        
+        return False
+    else:
+        json_item[key_name] = csv_obj[key_name].split(',')
+        return True
+
 # Update JSON from CSV
 for csv_obj in wiki_csv.values():
     if csv_obj['Page Type'] == 'Bot':
@@ -57,54 +93,27 @@ for csv_obj in wiki_csv.values():
                 updated = True
                 json_item['Content'] = csv_obj['Content']
 
-            if 'Spoiler' in json_item and json_item['Spoiler'] != csv_obj['Spoiler']:
-                updated = True
-                json_item['Spoiler'] = csv_obj['Spoiler']
+            updated |= update_json_value(json_item, csv_obj, 'Spoiler')
 
-            if csv_obj['Page Type'] == 'Bot Group' and 'Bots' in json_item and \
-                ','.join(json_item['Bots']) != csv_obj['Bots']:
-                updated = True
-                json_item['Bots'] = csv_obj['Bots'].split(',')
+            if csv_obj['Page Type'] == 'Bot Group':
+                updated |= update_json_list_value(json_item, csv_obj, 'Bots')
 
             if csv_obj['Page Type'] == 'Bot Supergroup':
-                if 'Bots' in json_item and ','.join(json_item['Bots']) != csv_obj['Bots']:
-                    updated = True
-                    json_item['Bots'] = csv_obj['Bots'].split(',')
-
-                if 'Groups' in json_item and ','.join(json_item['Groups']) != csv_obj['Groups']:
-                    updated = True
-                    json_item['Groups'] = csv_obj['Groups'].split(',')
-
-                if 'Supergroups' in json_item and ','.join(json_item['Supergroups']) != csv_obj['Supergroups']:
-                    updated = True
-                    json_item['Supergroups'] = csv_obj['Supergroups'].split(',')
+                updated |= update_json_list_value(json_item, csv_obj, 'Bots')
+                updated |= update_json_list_value(json_item, csv_obj, 'Groups')
+                updated |= update_json_list_value(json_item, csv_obj, 'Supergroups')
 
             if csv_obj['Page Type'] == 'Part Group':
-                if 'Parts' in json_item and ','.join(json_item['Parts']) != csv_obj['Parts']:
-                    updated = True
-                    json_item['Parts'] = csv_obj['Parts'].split(',')
-
-                if 'Part Category' in json_item and json_item['Part Category'] != csv_obj['Part Category']:
-                    updated = True
-                    json_item['Part Category'] = csv_obj['Part Category']
+                updated |= update_json_list_value(json_item, csv_obj, 'Parts')
+                updated |= update_json_value(json_item, csv_obj, 'Part Category')
 
             if csv_obj['Page Type'] == 'Part Supergroup':
-                if 'Parts' in json_item and ','.join(json_item['Parts']) != csv_obj['Parts']:
-                    updated = True
-                    json_item['Parts'] = csv_obj['Parts'].split(',')
-
-                if 'Groups' in json_item and ','.join(json_item['Groups']) != csv_obj['Groups']:
-                    updated = True
-                    json_item['Groups'] = csv_obj['Groups'].split(',')
-
-                if 'Supergroups' in json_item and ','.join(json_item['Supergroups']) != csv_obj['Supergroups']:
-                    updated = True
-                    json_item['Supergroups'] = csv_obj['Supergroups'].split(',')
+                updated |= update_json_list_value(json_item, csv_obj, 'Parts')
+                updated |= update_json_list_value(json_item, csv_obj, 'Groups')
+                updated |= update_json_list_value(json_item, csv_obj, 'Supergroups')
 
             if csv_obj['Page Type'] == 'Other':
-                if 'Subpages' in json_item and ','.join(json_item['Subpages']) != csv_obj['Subpages']:
-                    updated = True
-                    json_item['Subpages'] = csv_obj['Subpages'].split(',')
+                updated |= update_json_list_value(json_item, csv_obj, 'Subpages')
 
             if updated:
                 updated_pages.append(json_item['Name'])
