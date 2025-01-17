@@ -1834,8 +1834,6 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
 
         const cells: ReactNode[] = [];
 
-        // tableContent += "<tr>";
-
         let currentColumnCount = 0;
         for (let j = 0; j < cellSplit.length; j++) {
             let cell = cellSplit[j];
@@ -1874,7 +1872,7 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
             tempState.initialContent = cell;
             tempState.inlineOnly = "InlineOnly";
             processSection(tempState, undefined);
-            const cellHtml = outputGroupsToHtml(tempState.output, state.inSpoiler, true, false);
+            const cellHtml = outputGroupsToHtml(tempState.output, state.inSpoiler, false, false);
 
             if (state.inSpoiler) {
                 if (cellStyle !== undefined) {
