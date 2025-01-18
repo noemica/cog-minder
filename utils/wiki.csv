@@ -4944,7 +4944,7 @@ The main differences between security levels and terminal types are are :
 Terminals inside [[Garrison|Garrisons]]|Small (1 tile and such)|18|One of Access(Emergency), Download(Navigation), Download(Registry), or Download(Security)|Same as level 2|Same as level 2|Same as level 2||
 Door-type/Lore terminals|Usually 1 tile|18|Usually one direct hack, to open the relevant door or get relevant lore record|Depends on door/lore record|Unavailable|Same as level 1||
 Cave outpost terminal|1 tile|18|Random mix of flavor (useless) and intel ""Report"" hacks, with flavor reports always grouped on top of the list and intel reports grouped on the bottom of the list|100%|Unavailable|Same as level 1[[/Table]]
-Non-door Garrion terminals are always security level 2, while door-type, lore, and cave outpost terminals are always level 1.
+Non-door Garrison terminals are always security level 2, while door-type, lore, and cave outpost terminals are always level 1.
 
 Unauthorized hacking (trojan and force hacks) success rate follows the same logic as direct hacking.
 
