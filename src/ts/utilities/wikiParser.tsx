@@ -1,6 +1,7 @@
 import { Fragment, ReactNode } from "react";
 
 import lore from "../../json/lore.json";
+import hacks from "../../json/machine_hacks.json";
 import BotDetails from "../components/GameDetails/BotDetails";
 import ItemDetails from "../components/GameDetails/ItemDetails";
 import { LinkIcon } from "../components/Icons/Icons";
@@ -991,6 +992,66 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
     state.index = endIndex + galleryResult[0].length;
 }
 
+// Process a hacks tag like [[Hacks]]Terminal[[/Heading]]
+function processHacksTag(state: ParserState, result: RegExpExecArray) {
+    // Find [[/Hacks]] closing tag first
+    const hacksResult = /\[\[\/Hacks\]\]/.exec(state.initialContent.substring(state.index));
+
+    if (hacksResult === null) {
+        // If we can't find the end tag then just skip over the opening tag
+        recordError(state, "Found hacks tag without close tag");
+        state.index += result[0].length;
+        return;
+    }
+
+    // Split interior text by |
+    // Even numbered indices contain image filenames, odd numbers contain captions
+    const startIndex = state.index + result[0].length;
+    const endIndex = startIndex + hacksResult.index - result[0].length;
+    const machineType = state.initialContent.substring(startIndex, endIndex);
+
+    state.index = endIndex + hacksResult[0].length;
+
+    const machineHacks = hacks.find((machine) => machine.Name === machineType);
+    if (machineHacks === undefined) {
+        recordError(state, "Found hacks tag with invalid machine type");
+    } else {
+        const tableNode = (
+            <table className="wiki-table">
+                <tbody>
+                    <tr>
+                        <th>Hack name</th>
+                        <th>Description</th>
+                        <th>Base success rate</th>
+                    </tr>
+                    {machineHacks.Hacks.filter((hack) =>
+                        canShowSpoiler((hack.SpoilerLevel as Spoiler) || "None", state.spoiler),
+                    ).map(
+                        (
+                            hack: { BaseChance: number; Description: string; Name: string; SpoilerLevel?: string },
+                            i: number,
+                        ) => (
+                            <tr key={i}>
+                                <td className="wiki-cell-nowrap">
+                                    <p>{hack.Name}</p>
+                                </td>
+                                <td>
+                                    <p>{hack.Description}</p>
+                                </td>
+                                <td className="wiki-cell-center-align">
+                                    <p>{hack.BaseChance}%</p>
+                                </td>
+                            </tr>
+                        ),
+                    )}
+                </tbody>
+            </table>
+        );
+
+        state.output.push({ groupType: "Individual", node: tableNode });
+    }
+}
+
 // Process a heading tag like [[Heading]]Heading Text[[/Heading]]
 // or like [[Heading:2]]Heading Text[[/Heading]]
 function processHeadingTag(state: ParserState, result: RegExpExecArray) {
@@ -1598,6 +1659,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["FanartGallery", processGalleryTag],
     ["GameText", processGameTextTag],
     ["Gallery", processGalleryTag],
+    ["Hacks", processHacksTag],
     ["Heading", processHeadingTag],
     ["I", processITag],
     ["Image", processImageTag],
@@ -1606,9 +1668,11 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["Lore", processLoreTag],
     ["NonEmptyPages", processNonEmptyPagesTag],
     ["Spoiler", processSpoilerTag],
+    ["SpoilerHidden", processSpoilerHiddenTag],
     ["Sub", processSubTag],
     ["Sup", processSupTag],
     ["Redacted", processSpoilerTag],
+    ["RedactedHidden", processSpoilerHiddenTag],
     ["Table", processTableTag],
 ]);
 
@@ -1769,6 +1833,32 @@ function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
         });
 
         startIndex += count;
+    }
+}
+
+// Process a spoiler hidden tag like [[SpoilerHidden]]Text[[/SpoilerHidden]]
+// This is the inverse of the spoiler/redacted tags
+function processSpoilerHiddenTag(state: ParserState, result: RegExpExecArray) {
+    const spoilerToHide: Spoiler = result[1] === "RedactedHidden" ? "Redacted" : "Spoiler";
+    // Hide SpoilerHidden for both Spoiler and Redacted
+    // Hide RedactedHidden for Redacted only
+    const show = !canShowSpoiler(spoilerToHide, state.spoiler);
+
+    // Process the subsection independently
+    const subSectionStart = result.index + result[0].length;
+    const tempState = ParserState.Clone(state);
+    tempState.index = subSectionStart;
+    tempState.inSpoiler = state.inSpoiler;
+    processSection(tempState, result[1] === "RedactedHidden" ? "/RedactedHidden" : "/SpoilerHidden");
+    state.index = tempState.index;
+
+    const content = outputGroupsToHtml(tempState.output, state.inSpoiler);
+
+    if (show) {
+        state.output.push({
+            groupType: "Individual",
+            node: content,
+        });
     }
 }
 

@@ -138,6 +138,18 @@ export default function WikiEditControls({
                     Redacted
                 </Button>
                 <Button
+                    tooltip="Basically the opposite of Spoiler text; content is shown only if the spoiler setting is set to None."
+                    onClick={() => insertWrappedText("[[SpoilerHidden]]", "[[/SpoilerHidden]]")}
+                >
+                    Spoiler Hidden
+                </Button>
+                <Button
+                    tooltip="Basically the opposite of Redacted text; content is shown if the spoiler setting is not set to Redacted."
+                    onClick={() => insertWrappedText("[[RedactedHidden]]", "[[/RedactedHidden]]")}
+                >
+                    Redacted Hidden
+                </Button>
+                <Button
                     tooltip="Inserts a link to the selected text. Link text may be different than the link itself by using the syntax [[Link|Link Text]]."
                     onClick={() => insertWrappedText("[[", "]]")}
                 >
@@ -231,13 +243,13 @@ export default function WikiEditControls({
                     tooltip="Creates a fake item infobox based on the provided data in the form of [[ItemDetails]]Name|XYZ||Image Name|...[[/ItemDetails]]. See the Example page for a full list of available parameters."
                     onClick={() => insertWrappedText("[[ItemDetails]]", "[[/ItemDetails]]")}
                 >
-                    ItemDetails
+                    Item Details
                 </Button>
                 <Button
                     tooltip="Creates a fake bot infobox based on the provided data in the form of [[BotDetails]]Name|XYZ||Class|...[[/BotDetails]]. See the Example page for a full list of available parameters."
                     onClick={() => insertWrappedText("[[BotDetails]]", "[[/BotDetails]]")}
                 >
-                    BotDetails
+                    Bot Details
                 </Button>
             </div>
             <textarea ref={editAreaRef} key={entry.name} className="wiki-edit-text" defaultValue={defaultEditorValue} />

@@ -1741,6 +1741,10 @@ There are two types of spoilers: [[Spoiler]]Spoiler-tier spoilers[[/Spoiler]] an
 [[Redacted]][[List]]Lists can also|be spoiled entirely[[/List]][[/Redacted]][[List]]They can also have|some [[Redacted]]spoiled content[[/Redacted]][[/List]]
 Game text and Lore entries can also be spoilered: [[Redacted]][[GameText]]Game text[[/GameText]]
 Lore entry: [[Lore]]0b10 Records|Materials[[/Lore]][[/Redacted]]
+[[Heading]]Spoiler Hidden[[/Heading]]
+Spoiler hidden and Redacted hidden sections are basically the opposite of normal Spoiler/Redacted sections. They hide their contents if the spoiler setting is at least set to spoiler/redacted respectively. This can be used to indicate that content may be hidden/excluded in some locations based on spoiler settings.
+[[SpoilerHidden]]This text can only be seen when the spoiler setting is None[[/SpoilerHidden]]
+[[RedactedHidden]]This text can only be seen when the spoiler setting is None or Spoiler[[/RedactedHidden]]
 [[Heading]]Fake items[[/Heading]]
 Fake item stats can be created. Different stats are available based on the item type. Examples:
 [[Heading:2]]Power[[/Heading]]
@@ -2039,14 +2043,25 @@ The following table showcases possible time periods in between Extermination squ
 It is possible for Extermination Programmers to be replaced by 1-2 Q-Series instead. This can occur randomly if Cogmind gets scanned by a [[Researcher]] in [[Testing]] or [[Quarantine]]. These Q-Series have customized and randomized loadouts, but will behave in the same way as regular Extermination squads do. This includes heading straight for Cogmind with perfect tracking, and the ability to be recalled at Terminals.[[/Spoiler]]","","","","","","",""
 "F-cell Engine","Part","","","","","","","",""
 "Fabrication Devices","Part Group","","Spoiler","","","Cobbler Unit,Bomb Factory No. 2,Mobile Assembly Unit,Heart of Steel,Scrapoid Pod,GOLEM Unit","","",""
-"Fabricator","Other","Fabricators construct parts and robots based on schematics. [[Schematic|Schematics]] can be acquired by using [[Scanalyzer|Scanalyzers]] or hacking [[Terminal|Terminals]] (see your status page for access to a list of schematics currently in your possession), then loaded into a fabricator which will report the resources it requires to complete construction. Starting another build on a busy fabricator will cancel the current construction. Loading a new schematic and printing it will summon an [[Investigation Squad]], unless you have the appropriate [[Authchips|Authchip]]. [[Image]]../game_sprites/Fabricator.png|Friend Creator[[/Image]]
-
-Building bots will build multiple.
-
-Higher security fabricators are capable of much faster construction. 
-
+"Fabricator","Other","[[Image]]../game_sprites/Fabricator.png|A Fabricator[[/Image]]
+Fabricators are [[0b10]]-controlled [[Interactive Machine|Machines]] that construct parts and robots based on [[Schematic|Schematics]]. Cogmind can make use of Fabricators himself, but bots may be called to investigate if an unauthorized schematic is used. At other times, 0b10 will use them to fabricate random parts and combat bots for itself. Some parts and most bots fabricate in larger groups.
 [[Heading]]Lore[[/Heading]]
-[[Lore]]0b10 Records|Fabricator[[/Lore]]","","","","","","",""
+[[Lore]]0b10 Records|Fabricator[[/Lore]]
+[[Heading]]Fabricating Things[[/Heading]]There are three primary ways that parts and bots can be fabricated.
+[[Heading:2]]Initiated by 0b10[[/Heading]]
+0b10 will periodically make use of Fabricators. Combat bots that are fabricated will be sent to the nearest [[Garrison (Machine)|Garrison]]. Part fabrication initiated by 0b10 will double the standard amount of parts are fabricated compared to the standard amount. Parts fabricated by 0b10 can be up to 2 ratings out of depth.
+[[Heading:2]]Preloaded Schematic[[/Heading]]
+Schematics can be preloaded into the fabricator without their fabrication having started yet. In this case, Cogmind can initiate the fabrication without any other requirements or downsides. The schematic will be instantly cleared when fabrication begins. Schematics preloaded this way can be up to 2 ratings out of depth.
+[[Heading:2]]Cogmind Loaded Schematic[[/Heading]]
+Cogmind can load any known part or bot schematic into the Fabricator. When a fabrication is initiated this way, the Fabricator will be instantly locked out from further use and an [[Investigation Squad]] will be dispatched to the location. The fabrication will still complete as normal at this point. The lockout and Investigation can be avoided if an [[Authchips|Authchip]] matching the type of the schematic.
+[[Heading:2]]Multiple Fabrications[[/Heading]]
+Only one thing can be fabricated at any given time. It is possible to load a new schematic while a Fabricator is operating, but starting the second fabrication will cancel the original target. This can be used to prevent a hostile 0b10 bot fabrication from completing.
+[[Heading:2]]Time to Fabricate[[/Heading]]
+The number of turns it takes to fabricate something is fixed based on the rating. An item fabricating in multiples doesn't take any additional turns.
+[[Table]]Rating|Turns at Level 1|Turns at Level 2|Turns at Level 3||1|51|25|17||2|62|31|20||2*|99|49|33||3|73|36|24||3*|116|58|38||4|84|42|28||4*|134|67|44||5|95|47|31||5*|152|76|50||6|106|53|35||6*|169|84|56||7|117|58|39||7*|187|93|62||8|128|64|42||8*|204|102|68||9|139|69|46||9*|222|111|74||10|150|75|50[[/Table]]
+[[Heading]]Hacks[[/Heading]]
+[[Hacks]]Fabricator[[/Hacks]]
+[[SpoilerHidden]]Some hacks are hidden based on spoiler setting.[[/SpoilerHidden]]","","","","","","",""
 "Factory","Location","Factory is a [[0b10]]-controlled main floor that occurs on every floor between -7 and -4. It is the beginning of the midgame where the game really starts to open up. In stark contrast with earlier [[Materials]] maps, Factory start out huge with a ~200x200 tile map size. The rooms, the corridors, and the overall layout are all much wider and more open and connected than Materials. The patrols and guards are more spread out and stealth play with airborne propulsion and [[Infowar]] becomes a strong gameplay option.
 [[Alert]] starts to be more of a concern as the maps become bigger and harder to traverse. [[Hackware]] is useful to be able to successfully use Access hacks at terminals to locate exits. [[Signal Interpreter|Signal Interpreters]] will also be more useful at identifying exits as the exit types will be less predictable. [[Caves]] exits are available in every Factory map. They can be difficult if a player is unprepared, but they can provide many unique rewards and will typically result in a complete Alert purge by the time Cogmind makes it back to the next main floor.
 As [[Extermination Squad|Exterminations]] become a regular occurrence, a large part of a build's effectiveness becomes how quickly Cogmind can kill Programmers. [[Corruption]] can build up very quickly if fighting multiple Programmers in open areas without a good way to kill them. Having strong thermal or kinetic weaponry is a good way to destroy them quickly. For lighter airborne builds, non-Impact melee weapons can work, although using Hackware to recall Exterminations is also very effective. This tends to be more important in later depths as Exterminations will upgrade from a single [[P-60 Hacker]] to 1-2 [[P-70 Sage]] per squad.
@@ -3534,8 +3549,8 @@ Dropped by the [[Imprinter]] on death.","","","","","","",""
 [[Heading]]Hacking[[/Heading]]
 Each type of machine has a number of hacks that can be used that are listed in the hacking interface, labeled from A up to Y at most, called direct hacks. Hacks can be performed on Terminals specifically that are not listed by manually typing the name of the hack in. Performing a hack this way is called indirect hacking and has an additional penalty added to it. This penalty is an additional -15% per security level. There are certain unauthorized spoiler hacks can also be used on different machine types. These are a class of hacks known either as [[Spoiler]]Trojans or Force hacks[[/Spoiler]]. The names and effects of these hacks can be discovered from a variety of [[Derelict]] sources.
 [[Heading:2]]Security level[[/Heading]]
-Security level has different effects on machine hacking:
-[[List]]Number of direct hacks: Higher security level machines have more direct hacks available.|Hacking penalty: Direct hacks on security level 2 machines have a 50% success rate compared to level 1 machines, and level 3 machines have a 25% success rate compared to level 1 machines. Indirect hacks suffer an additional -15% success rate per security level.|Detection rate: The base chance of being traced is 25% on a level 1 machine, 50% on a level 2 machine, and 80% on a level 3 machine.[[/List]]
+Security level has different effects on machine hacking. Some are specific to certain kinds of machines, but the following effects are common between all machines:
+[[List]]Hacking penalty: Direct hacks on security level 2 machines have a 50% success rate compared to level 1 machines, and level 3 machines have a 25% success rate compared to level 1 machines. Indirect hacks suffer an additional -15% success rate per security level.|Detection rate: The base chance of being traced is 25% on a level 1 machine, 50% on a level 2 machine, and 80% on a level 3 machine.|Higher armor value: The exact value varies per machine type, but higher security level machines always have more armor than lower security level machines.[[/List]]
 [[Heading:2]]Hacking Success Examples[[/Heading]]
 Example hacking success calculations. All final values are truncated.
 [[Table]]Level 1 direct|Level 1 indirect|Level 2 direct|Level 2 indirect|Level 3 direct|Level 3 indirect||80%|80% - (15% * 1)|80% / 2|(80% / 2) - (15% * 2)|(80% / 4)|(80% / 4) - (15% * 3)||80%|65%|40%|10%|20%|-25%[[/Table]]","","","","","","","Fabricator,Garrison (Machine),Recycling Machine,Repair Station,Scanalyzer,Terminal"
@@ -4566,7 +4581,7 @@ Higher security scanalyzers are less likely to damage your parts or require addi
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Scanalyzer[[/Lore]]","","","","","","",""
 "Scatter Rocket Array","Part","","","","","","","",""
-"Schematic","Other","","","","","","","",""
+"Schematic","Other","Schematics can be acquired by using [[Scanalyzer|Scanalyzers]] or hacking [[Terminal|Terminals]] (see your status page for access to a list of schematics currently in your possession).","","","","","","",""
 "Schematic Archive","Part","","","","","","","",""
 "Scientist","Bot","","","","","","","",""
 "Scrap","Part","","","","","","","",""
