@@ -1024,14 +1024,19 @@ function processHacksTag(state: ParserState, result: RegExpExecArray) {
                         <th>Description</th>
                         <th>Base success rate</th>
                     </tr>
-                    {machineHacks.Hacks.filter((hack) =>
-                        canShowSpoiler((hack.SpoilerLevel as Spoiler) || "None", state.spoiler),
-                    ).map(
+                    {machineHacks.Hacks.map(
                         (
                             hack: { BaseChance: number; Description: string; Name: string; SpoilerLevel?: string },
                             i: number,
                         ) => (
-                            <tr key={i}>
+                            <tr
+                                className={
+                                    canShowSpoiler((hack.SpoilerLevel as Spoiler) || "None", state.spoiler)
+                                        ? ""
+                                        : "spoiler-text"
+                                }
+                                key={i}
+                            >
                                 <td className="wiki-cell-nowrap">
                                     <p>{hack.Name}</p>
                                 </td>
