@@ -2062,6 +2062,10 @@ The number of turns it takes to fabricate something is fixed based on the rating
 [[Heading]]Hacks[[/Heading]]
 [[Hacks]]Fabricator[[/Hacks]]
 [[Spoiler]][[Heading:2]]Additional Details/Usage Tips[[/Heading]]
+[[Heading:3]]Force(Download)[[/Heading]]
+Adds an additional 20 [[Alert]] when successful.
+[[Heading:3]]Force(Overload)[[/Heading]]
+Adds an additional 50 Alert when successful.
 [[Heading:3]]Force(Recompile)[[/Heading]]
 A good use of this hack is to recompile an Authchip off of a low security level Fabricator and use it on a higher level one for faster fabrication. This avoids having to hang around to deal with the Investigation squad in order to retrieve the fabricated item or bots.
 [[Heading:3]]Trojan(Fabnet)[[/Heading]]
@@ -3135,6 +3139,8 @@ When a Garrison is destroyed by any means while active, there will be an alert [
 While using this hack does trigger a machine lockdown, the Garrison itself will remain open if opened beforehand. This allows for looting any [[Relay Couplers]] in the Garrison while still entering it.
 [[Heading:3]]Trojan(Reprogram)[[/Heading]]
 Like Force(Eject), a Garrison can be opened preemptively and the Garrison won't seal itself when the effect triggers. This can be useful to take additional allies into the Garrison.
+[[Heading:3]]Force(Jam)[[/Heading]]
+Adds an additional 200 Alert if successful. Note: This is 50 more Alert added than when the machine is destroyed by force.
 [[Heading:3]]Trojan(Restock)[[/Heading]]
 Summons a [[Coupling Squad]] to the Garrison, but only once. It's best to not hang around the immediate area since the [[Programmer]] may appear out of the Garrison itself and blow it up if it is a low security level. This hack can be used to obtain a [[Remote Datajack]] on -8 before Programmers typically spawn.[[/Spoiler]]","","","","","","",""
 "Garrison Squad","Other","[[Image]]Garrison Squads.png|3 Garrison Squads of Sentries roaming around[[/Image]]
