@@ -4373,7 +4373,7 @@ Attacking when in visual range of a Researcher or attacking a Researcher will re
 Typically getting scanned is seen as a negative due to the high power level of Q-Series. Some builds might intentionally want to get scanned in order to get the Q-Series loot. To avoid unintentionally scanning, detach any ranged weapons whenever a Researcher is in line of sight of Cogmind. Melee weapons, special weapons like [[Datajacks]], and any type of guided weapon are safe to keep equipped to avoid misfires due to [[Corruption]].
 [[Heading:2]]Special Machines[[/Heading]]
 There is one special type of machine in Quarantine called the Cryocooling Duct. There is usually at least one of these on every Quarantine floor. The map is affected by how many ducts are destroyed:
-[[List]]0: The ambient temperature of the map is -20|1: The ambient temperature of the map rises to 0. All noncombat (green) bots are called to evacuate map and will head toward the nearest exit. This does [[Researcher|Researchers]] and green [[Operator|Operators]] that have already spotted Cogmind, but yellow Operators and [[Watcher|Watchers]] will not exit the map.|2: The ambient temperature becomes +20 which will apply 20 heat to all bots on the map every turn. All combat hostiles will be called to evacuate the map and most forms of squad dispatches will stop happening, including [[Assault Squad|Assaults]] and [[Extermination Squad|Exterminations]]. After about 100 turns, 12 [[Quarantine Guard|Quarantine Guards]] will be dispatched to the map. Some will patrol around the map looking for hostiles, while others will guard key spots like exits and the [[Garrison Access|Garrison]] (if any are present).|3+: Ambient heat continues to rise +20 per destroyed machine, but no other special effects occur.[[/List]]
+[[List]]0: The ambient temperature of the map is -20|1: The ambient temperature of the map rises to 0. All noncombat (green) bots are called to evacuate map and will head toward the nearest exit. This does [[Researcher|Researchers]] and green [[Operator|Operators]] that have already spotted Cogmind, but yellow Operators and [[Watcher|Watchers]] will not exit the map.|2: The ambient temperature becomes +20 which will apply 20 heat to all bots on the map every turn. All combat hostiles will be called to evacuate the map and most forms of squad dispatches will stop happening, including [[Assault Squad|Assaults]] and [[Extermination Squad|Exterminations]]. Note: The recall and dispatch prevention does not occur if Maximum Security is engaged. After about 100 turns, 12 [[Quarantine Guard|Quarantine Guards]] will be dispatched to the map. Some will patrol around the map looking for hostiles, while others will guard key spots like exits and the [[Garrison Access|Garrison]] (if any are present).|3+: Ambient heat continues to rise +20 per destroyed machine, but no other special effects occur.[[/List]]
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Quarantine[[/Lore]]
 [[Heading]]Notable Locations[[/Heading]]
@@ -4597,14 +4597,6 @@ Use [[Datajacks]] with Relay Couplers to perform special hacks at the cost of ch
 Repair Stations are [[0b10]]-controlled [[Interactive Machine|Machines]] that can repair damaged parts and refit backup parts. They also serve as a base of operations for [[Mechanic|Mechanics]]. As such, they can refill 0b10 aligned Mechanic repair integrity and backup part inventory that are spent as Mechanics repair and refit allied bots.
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Repair Station[[/Lore]]
-[[Heading]]Armor Values[[/Heading]]
-The armor of a Repair Station will indicate what security level it is:
-[[Table]]
-Security level|Armor||
-1|22||
-2|32||
-3|35
-[[/Table]]
 [[Heading]]Hacks[[/Heading]]
 [[Hacks]]Repair Station[[/Hacks]]
 [[Heading:2]]Additional Details/Usage Tips[[/Heading]]
