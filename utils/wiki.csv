@@ -696,6 +696,7 @@ Brawlers don't have any particular damage type weakness and any ranged weapon ty
 [[Heading]]Squads[[/Heading]]
 Brawlers may appear in the following squads:
 [[List]][[Assault Squad]]|[[Garrison Squad]]|[[Patrol Squad]] - [[Squad Leader]] only|[[Security Squad]] - [[Armory]] only[[/List]]","","B-36 Bruiser,B-48 Gladiator,B-60 Warrior,B-74 Champion","","","","",""
+"Broken Part","Other","","","","","","","",""
 "Butcher","Bot Group","Butchers are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[Derelict]] combat bots, armed with Derelict [[Slashing Weapons]] capable of severing parts. They are the Derelict version of the [[0b10]] [[Duelist]] bot but are generally less effective than their counterparts. Butchers are common bots that show up in many different types of Derelict encounters and events.","","Butcher (5),Butcher (7)","","","","",""
 "Butcher (5)","Bot","","","","","","","",""
 "Butcher (7)","Bot","","","","","","","",""
@@ -3846,7 +3847,13 @@ The only 2 ways to exit Maximum Security are to trigger [[Sterilization]] after 
 "Mechanic","Bot Group","Mechanics are [[Wheel|wheeling]] [[0b10]] non-combat bots that repair the parts and core of damaged allies. They tend to hang around a home [[Repair Station]]. Mechanics will head toward damaged allies as soon as they are hurt but will not repair them while in combat. Mechanics carry [[Recalibrators]] and [[Machine Analyzer|Machine Analyzers]] that can be good to salvage. They also carry a set of backup parts in their inventory based on the bot tier. These backup parts will be refitted on bots if they have empty slots.
 If a hurt bot is not shot at for a few turns, the Mechanic will repair core integrity up to 85% and part integrity up to 50%. Allied Mechanics will also repair Cogmind's parts up to 50% integrity but will not touch core integrity. Blue allied Mechanics must be set to Aid before they will repair integrity.
 Mechanics can refit parts if a bot has a slot available and fewer than 2 power, propulsion, utility, or weapon slots. 0b10 aligned Mechanics can resupply on backup parts at their home Repair Station. The available refittable parts are based on the type of Mechanic:
-[[Table]]Slot/Count|M-13 Machinist|M-28 Smith|M-36 Artificer||Power (2 available)|[[Backup Power I]]|[[Backup Power III]]|[[Backup Power VII]]||Propulsion (4 available)|[[Backup Propulsion I]]|[[Backup Propulsion III]]|[[Backup Propulsion VII]]||Utility (2 available)|[[Backup Plating I]]|[[Backup Plating III]]|[[Backup Plating VII]]||Weapon (4 available)|[[Backup Laser I]]|[[Backup Laser III]]|[[Backup Laser VII]][[/Table]]
+[[Table]]
+Slot/Count|M-13 Machinist|M-28 Smith|M-36 Artificer||
+Power (2 available)|[[Backup Power I]]|[[Backup Power III]]|[[Backup Power VII]]||
+Propulsion (4 available)|[[Backup Propulsion I]]|[[Backup Propulsion III]]|[[Backup Propulsion VII]]||
+Utility (2 available)|[[Backup Plating I]]|[[Backup Plating III]]|[[Backup Plating VII]]||
+Weapon (4 available)|[[Backup Laser I]]|[[Backup Laser III]]|[[Backup Laser VII]]
+[[/Table]]
 [[Heading]]Integrity repaired[[/Heading]]
 The type of Mechanic determines how much total integrity they can repair:
 [[List]]
@@ -4586,7 +4593,46 @@ Use [[Datajacks]] with Relay Couplers to perform special hacks at the cost of ch
 "Remote Datajacks","Part Group","","","","","Remote Datajack,Imp. Remote Datajack,Adv. Remote Datajack,Exp. Remote Datajack,ME-RLN's Wand,Gui. Remote Datajack","","",""
 "Remote Force Field","Part","","","","","","","",""
 "Remote Shield","Part","","","","","","","",""
-"Repair Station","Other","","","","","","","",""
+"Repair Station","Other","[[Image]]../game_sprites/Repair Station.png|A Repair Station[[/Image]]
+Repair Stations are [[0b10]]-controlled [[Interactive Machine|Machines]] that can repair damaged parts and refit backup parts. They also serve as a base of operations for [[Mechanic|Mechanics]]. As such, they can refill 0b10 aligned Mechanic repair integrity and backup part inventory that are spent as Mechanics repair and refit allied bots.
+[[Heading]]Lore[[/Heading]]
+[[Lore]]0b10 Records|Repair Station[[/Lore]]
+[[Heading]]Hacks[[/Heading]]
+[[Hacks]]Repair Station[[/Hacks]]
+[[Heading:2]]Additional Details/Usage Tips[[/Heading]]
+[[Heading:3]]Repairing Things[[/Heading]]
+Repair stations can repair most parts in the game. The main exceptions are rating 9* prototypes, [[Alien Artifacts]], and a variety of other unique parts. Parts that cannot be repaired have a * next to their integrity in the stat view. Parts must first be inserted with the [[GameText]]Scan([Part Name])[[/GameText]] hack. Then, the rating-specific [[GameText]]Repair[[/GameText]] must be performed. Sometimes a part will become [[Broken Part|broken]] if this hack is failed. After the repair is initiated, the machine will take a rating-dependent number of turns to repair, regardless of the amount of missing integrity.
+[[Heading:4]]Time to Repair[[/Heading]]
+Security level 2 Repair Stations repair roughly twice as fast as level 1s do, and level 3 Repair Stations repair three times as fast as level 1s.
+[[Table]]Rating|Level 1 Turns|Level 2 Turns|Level 3 Turns||
+1|26|13|8||
+2|32|16|10||
+2*|51|25|17||
+3|38|19|12||
+3*|60|30|20||
+4|44|22|14||
+4*|70|35|23||
+5|50|25|16||
+5*|80|40|26||
+6|56|28|18||
+6*|89|44|29||
+7|62|31|20||
+7*|99|44|33||
+8|68|34|22||
+8*|108|54|36||
+9|74|37|24
+[[/Table]]
+[[Heading:3]]Refit[[/Heading]]
+If Cogmind has fewer than 2 filled slots in any of Power, Propulsion, Utility, and Weapons when performing this hack, he will be refitted with Backup Power, Propulsion, Plating, or Lasers respectively for each type of slots. While a maximum of 2 can be obtained at a time, more can be obtained through multiple refits by detaching the parts in between each hack.
+[[Table]]
+Slot|Security Level 1|Security Level 2|Security Level 3||
+Power|[[Backup Power I]]|[[Backup Power III]]|[[Backup Power VII]]||
+Propulsion|[[Backup Propulsion I]]|[[Backup Propulsion III]]|[[Backup Propulsion VII]]||
+Utility|[[Backup Plating I]]|[[Backup Plating III]]|[[Backup Plating VII]]||
+Weapon|[[Backup Laser I]]|[[Backup Laser III]]|[[Backup Laser VII]]
+[[/Table]]
+[[Spoiler]][[Heading:3]]Force(Patch)[[/Heading]]
+This hack is best used to quickly repair things that have low current integrity but have a high maximum integrity. This can restore large amounts of integrity quickly for parts like [[Armor]] and [[Treads]]. [[Storage Unit|Storage Units]] are an especially good choice for this hack due to the unique ability of this hack to repair parts without needing to detach them and wait around. Otherwise, repairing storage units can be quite risky with [[Recycler|Recyclers]] stealing parts while waiting.[[/Spoiler]]","","","","","","",""
 "Research","Location","Research is a [[0b10]]-controlled main floor that appears on both -3 and -2. Research maps continue to amp up the difficulty in strength and number of general combat encounters, hacking difficulty, and difficulty in locating exits. Compared to the previous [[Factory]] floors, Research maps are just as big, but are much more maze-like with large numbers of smaller interconnected rooms and big sections of the level entirely disconnected by large chunks of earth. Exploring all of these different rooms is more difficult than before, and finding an exit can be a real challenge.
 Unlike factory floors with [[Caves]] available, there are usually no easy exits to dissipate [[Alert]] in Research. The natural alert dissipation that occurs between levels continues to decrease. Purging alert or avoiding generating it in the first place can be a big deal if the player is not prepared to fight off [[High Security]]. [[Infowar]] continues to be important to avoid unnecessary encounters whenever possible, and [[Hackware]] should be used to purge alert and locate exits whenever possible.
 As the difficulty increases, the rewards do to match. Many powerful unique parts can be found in Research specific branches [[Testing]] and [[Quarantine]]. There are also more [[Prototype Part|Prototypes]] lying around on the floor. Using a [[Component Analysis Suites|Component Analysis Suite]] can pay off to avoid attaching faulty prototypes.
