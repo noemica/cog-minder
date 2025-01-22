@@ -2543,7 +2543,7 @@ Movement|Treading (170/58%)||
 Core Integrity|90||
 Core Exposure|20||
 Salvage Potential|70~100||
-Armament|Hvy. Plasma Cannon|1|Magnetic Acceleration Cannon|1|Minigun|1||
+Armament|Ion Cannon|1|Adv. Assault Cannon|1|Minigun|1||
 Components|Rnf. Ion Engine|2|Arm. Treads|3|Lyr. Light Armor Plating|1||
 Components|Reflective Plating|1|Cooling System|2|Disposable Heat Sink|1[[/BotDetails]]
 [[Heading]]D-48 Pulsar[[/Heading]]
@@ -3267,7 +3267,7 @@ If heat exceeds 200, apply broad-effect ablative cooling systems such as Mak. Mi
 [[Gallery]]Heavies.png|All Heavy variants and colors[[/Gallery]]
 [[Heading]]Active Sensor Suite Reinforcements[[/Heading]]
 [[Gallery]]HeavySensor.gif|Cogmind walking into detection range of a Heavy[[/Gallery]]
-When Cogmind enters Active Sensor Suite range, its radius will be indicated with a yellow flash. While a bot is in this radius, the Heavy may summon reinforcements based on the speed of the bot. If a bot has the [[Active Sensor Spoofer]], the reinforcements will be redirected to a location on the opposite side of the heavy. When a bot is detected, an alert will appear in the log:
+When Cogmind enters Active Sensor Suite range, its radius will be indicated with a yellow flash. While a bot is in this radius, the Heavy may summon reinforcements based on the speed of the bot. If a bot has the [[Active Sensor Spoofer]], the reinforcements will be redirected to a location on the opposite side of the heavy. These reinforcements will not be summoned if the Heavy has active tracking on Cogmind. When a bot is detected, an alert will appear in the log:
 [[GameText]]ALERT: Suspicious intruders detected, dispatching specialist reinforcements to area.[[/GameText]]
 Faster bots (hover/flight users) detected will typically get [[Cutter|Cutters]] summoned, while all other bots will typically get [[Specialist|Specialists]]. An airborne build may want to go temporarily overweight to reduce the chance of Cutters being summoned. However, the chance is never 100% in either direction. Bots that are actively moving within the radius are more likely to get Reinforcements called, so if a Heavy is moving as part of a security rotation, it may be better to sit still and wait for it to walk by than to continue to move around. If Cogmind has [[Encrypted Comm Array]] support, summoned Specialists may turn out to be [[Infiltrator|Infiltrators]] instead.
 [[Heading]]Strategies[[/Heading]]
