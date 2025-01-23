@@ -161,7 +161,7 @@
             },
             {
                 "Name": "Force(Download)",
-                "Description": "Save the current schematic in the player's list of schematic. Also, locks the machine and summons an investigation squad like all force hacks.",
+                "Description": "Save the current schematic in the player's list of schematic. Also, locks the machine and summons an investigation squad like all force hacks. Also adds 20 alert.",
                 "BaseChance": 80,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
@@ -175,7 +175,7 @@
             },
             {
                 "Name": "Force(Overload)",
-                "Description": "Render the fabricator inoperable, but cause it to send high corruption-causing arcs of electromagnetic energy at nearby bots for a short while. Also, locks the machine and summons an investigation squad like all force hacks.",
+                "Description": "Render the fabricator inoperable, but cause it to send high corruption-causing arcs of electromagnetic energy at nearby bots for a short while. Also, locks the machine and summons an investigation squad like all force hacks. Also adds 50 alert.",
                 "BaseChance": 80,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
@@ -242,14 +242,14 @@
             },
             {
                 "Name": "Force(Eject)",
-                "Description": "Eject all relay couplers installed in this garrison to the floor. Also, locks the machine and summons an investigation squad like all force hacks.",
+                "Description": "Eject all relay couplers installed in this garrison to the floor. Also, locks the machine and summons an investigation squad like all force hacks. Also adds 30 alert.",
                 "BaseChance": 80,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Force(Jam)",
-                "Description": "Seal this garrison's access door, preventing squad dispatches from this location and slowing extermination squad response times across the entire floor. Also, locks the machine and summons an investigation squad like all force hacks.",
+                "Description": "Seal this garrison's access door, preventing squad dispatches from this location and slowing extermination squad response times across the entire floor. Also, locks the machine and summons an investigation squad like all force hacks. Also adds 200 alert.",
                 "BaseChance": 80,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
@@ -338,7 +338,7 @@
             },
             {
                 "Name": "Force(Tunnel)",
-                "Description": "Reveal the location of a random 0b10-controlled floor. Also, locks the machine and summons an investigation squad like all force hacks.",
+                "Description": "Reveal the location of a random 0b10-controlled floor. Also, locks the machine and summons an investigation squad like all force hacks. Also adds 30 alert.",
                 "BaseChance": 80,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
@@ -538,7 +538,7 @@
         "Hacks": [
             {
                 "Name": "Force(Extract)",
-                "Description": "Extracts a random number of part schematics from the machine. Most schematics will be non-prototype. Also, locks the machine and summons an investigation squad like all force hacks.",
+                "Description": "Extracts a random number of part schematics from the machine. Most schematics will be non-prototype. Also, locks the machine and summons an investigation squad like all force hacks. Also adds 30 alert.",
                 "BaseChance": 80,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
@@ -757,27 +757,27 @@
             },
             {
                 "Name": "Control(Protovariants)",
-                "Description": "Scan local network for vulnerable protovariant control systems to overload and turn against complex 0b10. Also dispatches a suppression assault squad to the protovariant location.",
+                "Description": "Scan local network for vulnerable protovariant control systems to overload and turn against complex 0b10. Also dispatches a suppression assault squad to the protovariant location. Testing Terminal only.",
                 "BaseChance": 60,
                 "Indirect": "Sometimes",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Download(Navigation)",
-                "Description": "Obtain protocols for extracting patrol squad routing information throughout the connected Complex 0b10 area.",
-                "BaseChance": 25,
+                "Description": "Obtain protocols for extracting patrol squad routing information throughout the connected Complex 0b10 area. Garrison Terminal only.",
+                "BaseChance": 50,
                 "Indirect": "Sometimes"
             },
             {
                 "Name": "Download(Registry)",
-                "Description": "Access Garrison records to reveal its layout, security positions, and the locations of all registered components.",
-                "BaseChance": 30,
+                "Description": "Access Garrison records to reveal its layout, security positions, and the locations of all registered components. Garrison Terminal only.",
+                "BaseChance": 60,
                 "Indirect": "Sometimes"
             },
             {
                 "Name": "Download(Security)",
-                "Description": "Learn all active security positions throughout the connected Complex 0b10 area.",
-                "BaseChance": 20,
+                "Description": "Learn all active security positions throughout the connected Complex 0b10 area. Garrison Terminal only.",
+                "BaseChance": 40,
                 "Indirect": "Sometimes"
             },
             {
@@ -860,21 +860,21 @@
             },
             {
                 "Name": "Force(Override)",
-                "Description": "Reveals location of all exits in a Garrison and overrides the lockdown effect that prevents Cogmind from leaving the map. Does nothing if outside a Garrison.",
+                "Description": "Reveals location of all exits in a Garrison and overrides the lockdown effect that prevents Cogmind from leaving the map. Does not unlock already locked exits. Does nothing if outside a Garrison. Also adds 50 alert.",
                 "BaseChance": 40,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Force(Sabotage)",
-                "Description": "Attempt to cause a random explosive machine on the floor to detonate. This hack can succeed but fail to have any affect. Also, locks the machine and summons an investigation squad like all force hacks.",
+                "Description": "Attempt to cause a random explosive machine on the floor to detonate. This hack can succeed but fail to have any affect. Adds 50 alert if the machine does not detonate, or 100 alert if it does. Also, locks the machine and summons an investigation squad like all force hacks.",
                 "BaseChance": 60,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Force(Search)",
-                "Description": "Locate all nearby interactive machines. Also, locks the machine and summons an investigation squad like all force hacks.",
+                "Description": "Locate all interactive machines within a radius of 31. Also, locks the machine and summons an investigation squad like all force hacks.",
                 "BaseChance": 80,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
@@ -1165,7 +1165,7 @@
             },
             {
                 "Name": "Trojan(Detonate)",
-                "Description": "Rigs all nearby potentially explosive machines to detonate when pass by a hostile Complex 0b10 combat robot.",
+                "Description": "Rigs all nearby potentially explosive machines to detonate when pass by a hostile Complex 0b10 combat robot. Cogmind is attributed all generated alert if the machine explodes.",
                 "BaseChance": 20,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
