@@ -697,61 +697,61 @@
             },
             {
                 "Name": "Analysis([Bot Name]) - tier 1",
-                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10-% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
+                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
                 "BaseChance": 54,
                 "Indirect": "Sometimes"
             },
             {
                 "Name": "Analysis([Bot Name]) - tier 2",
-                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10-% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
+                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
                 "BaseChance": 48,
                 "Indirect": "Sometimes"
             },
             {
                 "Name": "Analysis([Bot Name]) - tier 3",
-                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10-% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
+                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
                 "BaseChance": 42,
                 "Indirect": "Sometimes"
             },
             {
                 "Name": "Analysis([Bot Name]) - tier 4",
-                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10-% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
+                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
                 "BaseChance": 36,
                 "Indirect": "Sometimes"
             },
             {
                 "Name": "Analysis([Bot Name]) - tier 5",
-                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10-% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
+                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
                 "BaseChance": 30,
                 "Indirect": "Sometimes"
             },
             {
                 "Name": "Analysis([Bot Name]) - tier 6",
-                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10-% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
+                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
                 "BaseChance": 24,
                 "Indirect": "Sometimes"
             },
             {
                 "Name": "Analysis([Bot Name]) - tier 7",
-                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10-% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
+                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
                 "BaseChance": 18,
                 "Indirect": "Sometimes"
             },
             {
                 "Name": "Analysis([Bot Name]) - tier 8",
-                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10-% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
+                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
                 "BaseChance": 12,
                 "Indirect": "Sometimes"
             },
             {
                 "Name": "Analysis([Bot Name]) - tier 9",
-                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10-% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
+                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
                 "BaseChance": 6,
                 "Indirect": "Sometimes"
             },
             {
                 "Name": "Analysis([Bot Name]) - tier 10",
-                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10-% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
+                "Description": "Download Complex 0b10 records about the given robot variant, conferring +5% to hit and +10% damage against it, a -5% to its accuracy when under fire from one. When manually hacking for analyses, a general robot class name can be entered instead of a specific variant in order to automatically choose a variant relevant at the current depth.",
                 "BaseChance": 0,
                 "Indirect": "Sometimes"
             },
