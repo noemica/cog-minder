@@ -397,12 +397,11 @@ Destroying a squad leader, guard, or intercept|30||
 Using a [[Spoiler]]Force(Extract)[[/Spoiler]] hack on a [[Scanalyzer]]|30||
 Using a [[Spoiler]]Force(Tunnel)[[/Spoiler]] on a [[Recycling Unit]]|30||
 Using a [[Spoiler]]Force(Eject)[[/Spoiler]] hack on a [[Garrison Access]]|30||
-Using a [[Spoiler]]Force(Override)[[/Spoiler]] on a Garrison Terminal|40||
 Getting traced on any Terminal inside a Garrison (no Alert from Terminals outside of Garrisons)|40||
 Destroying a Garrison Relay|50||
 Using a [[Spoiler]]Force(Sabotage)[[/Spoiler]] hack on a Terminal and failing|50||
 Using a [[Spoiler]]Force(Overload)[[/Spoiler]] hack on a Fabricator|50||
-Using a [[Spoiler]]Force(Override)[[/Spoiler]] hack on a Terminal|50||
+Using a [[Spoiler]]Force(Override)[[/Spoiler]] hack on a Garrison Terminal|50||
 [[Active Sensor Suite]] scanning detected (only after certain number of bots depending on bot type)|100||
 Using a [[Spoiler]]Force(Sabotage)[[/Spoiler]] hack on a Terminal and succeeding|100||
 [[Garrison]] interior compromised alert|100||
@@ -2079,10 +2078,6 @@ Security level|Armor||
 [[Heading]]Hacks[[/Heading]]
 [[Hacks]]Fabricator[[/Hacks]]
 [[Spoiler]][[Heading:2]]Additional Details/Usage Tips[[/Heading]]
-[[Heading:3]]Force(Download)[[/Heading]]
-Adds an additional 20 [[Alert]] when successful.
-[[Heading:3]]Force(Overload)[[/Heading]]
-Adds an additional 50 Alert when successful.
 [[Heading:3]]Force(Recompile)[[/Heading]]
 A good use of this hack is to recompile an Authchip off of a low security level Fabricator and use it on a higher level one for faster fabrication. This avoids having to hang around to deal with the Investigation squad in order to retrieve the fabricated item or bots.
 [[Heading:3]]Trojan(Fabnet)[[/Heading]]
@@ -3158,8 +3153,6 @@ When a Garrison is destroyed by any means while active, there will be an alert [
 While using this hack does trigger a machine lockdown, the Garrison itself will remain open if opened beforehand. This allows for looting any Relay Couplers in the Garrison while still entering it.
 [[Heading:3]]Trojan(Reprogram)[[/Heading]]
 Like Force(Eject), a Garrison can be opened preemptively and the Garrison won't seal itself when the effect triggers. This can be useful to take additional allies into the Garrison.
-[[Heading:3]]Force(Jam)[[/Heading]]
-Adds an additional 200 Alert if successful. Note: This is 50 more Alert added than when the machine is destroyed by force.
 [[Heading:3]]Trojan(Restock)[[/Heading]]
 Summons a Coupling Squad to the Garrison immediately, but only once. It's best to not hang around the immediate area since the [[Programmer]] may appear out of the Garrison itself and blow it up if it is a low security level. This hack can be used to obtain a [[Remote Datajack]] on -8 before Programmers typically spawn.[[/Spoiler]]","","","","","","",""
 "Garrison Squad","Other","[[Image]]Garrison Squads.png|3 Garrison Squads of Sentries roaming around[[/Image]]
@@ -3599,14 +3592,21 @@ Generally, Trojan hacks have a permanent or long term duration effect. Trojans c
 [[Heading:3]]Force Hacks[[/Heading]]
 Force hacks are much more dramatic in terms of effects compared to other hacks. They can only be used once on a machine, and if successful, they will immediately lock the machine and summon an [[Investigation Squad]] to the area. Most Force hacks have an additional [[Alert]] penalty that is unique per hack that can be found on the Alert page.[[/Spoiler]]
 [[Heading:2]]Being Detected[[/Heading]]
-As Cogmind hacks a machine, there is a chance of detection on each hack. The chance of detection can be reduced by [[Defensive Hackware]], but not lower than 10%. If detected on a hack that was successful, the machine's trace percent will start at 0%. If detected on a failing hack the trace percent will be anywhere from 1% to (100% - (hack success rate). The initial trace percent can also be reduced by defensive hackware. Once tracing has begun, subsequent hacks will increase the trace progress until reaching 100%. The amount of progress depends on the security level of the machine, whether a hack was successful or not, and the amount of defensive hackware equipped. Defensive hackware can reduce the trace percent gained per hack to no fewer than 15% on a successful hack and 25% on an unsuccessful hack.
+As Cogmind hacks a machine, there is a chance of detection on each hack. The chance of detection can be reduced by [[Defensive Hackware]], but not lower than 10%. [[Spoiler]]Blowing up Hub machines in [[Hub_04(d)]] provides a stacking reduction along with defensive hackware.[[/Spoiler]] If detected on a hack that was successful, the machine's trace percent will start at 0%. If detected on a failing hack the trace percent will be anywhere from 1% to (100% - (hack success rate). The initial trace percent can also be reduced by defensive hackware. Once tracing has begun, subsequent hacks will increase the trace progress until reaching 100%. The amount of progress depends on the security level of the machine, whether a hack was successful or not, and the amount of defensive hackware equipped. Defensive hackware can reduce the trace percent gained per hack to no fewer than 15% on a successful hack and 25% on an unsuccessful hack.
 [[Heading:2]]Being Fully Traced[[/Heading]]
 If a machine's trace percentage reaches 100%, Cogmind will be fully traced. If this happens, the log message [[GameText]]ALERT: Suspicious activity at [machine name]. Dispatching Investigation Squad.[[/GameText]] will appear and there are three negative consequences:
 [[List]]Machine lockout: The machine will become locked and further hacking will not be possible. [[Spoiler]]Trojans with effects over time will generally still remain operational when applied to the machine, with the exception of Trojan(Skim).[[/Spoiler]]|[[Investigation Squad]]: A squad is dispatched to the location of the machine.|Feedback: Feedback may inflict 1% [[Corruption]] on Cogmind and fry hackware attached to Cogmind. This feedback may be prevented with Defensive Hackware.[[/List]]
 [[Heading:2]]Security level[[/Heading]]
 Security level has different effects on machine hacking. Some are specific to certain kinds of machines, but the following effects are common between all machines:
-[[List]]Hacking penalty: Direct hacks on security level 2 machines have a 50% success rate compared to level 1 machines, and level 3 machines have a 25% success rate compared to level 1 machines. Indirect hacks suffer an additional -15% success rate per security level.|Detection rate: The base chance of being traced is 25% on a level 1 machine, 50% on a level 2 machine, and 80% on a level 3 machine.|Trace rate: Once detected at a machine, the trace rate is increased at a higher rate on higher rating machines.|Higher armor value: The exact value varies per machine type, but higher security level machines always have more armor than lower security level machines.[[/List]]
-[[Heading:2]]Hacking Success Examples[[/Heading]]
+[[List]]Hacking penalty: Direct hacks on security level 2 machines have a 50% success rate compared to level 1 machines, and level 3 machines have a 25% success rate compared to level 1 machines. Indirect hacks suffer an additional -15% success rate per security level.|Detection rate: The base chance of being traced is 20 or 25% on a level 1 machine, 50% on a level 2 machine, and 60, 70, or 80% on a level 3 machine.|Trace rate: Once detected at a machine, the trace rate is increased at a higher rate on higher rating machines.|Higher armor value: The exact value varies per machine type, but higher security level machines always have more armor than lower security level machines.[[/List]]
+Security level frequency scales based on depth. At lower depths, the vast majority of machines are security level 1. By -1, nearly every machine is security level 3.
+[[Heading:2]]Hacking Success[[/Heading]]
+There are several major components of hacking success rates. The formula is [[GameText]](base success rate) + ([[Offensive Hackware] bonus) - (Cogmind's [[Corruption]] % / 3) + (Operator hack bonus) + ([[Spoiler]]Botnet hack bonus[[/Spoiler]])[[/GameText]].
+[[Heading:3]]Operator bonus[[/Heading]]
+Each allied Operators within 20 tiles provides a bonus to hacking success rate. The bonus varies depending on the total number of Operators. There is a +10% bonus to hacks for the first Operator, +5% for the second, +2% for the third, and +1% for all others.
+[[Spoiler]][[Heading:3]]Trojan(Botnet)[[/Heading]]
+Installing Botnet trojans on other Terminals within the same map provides a hacking bonus. There is a +6% bonus to hacks for the first botnet installed, +3% for the second, and +1% for all others. Note that a botnet will not affect hacking success chance on the terminal it is installed on.[[/Spoiler]]
+[[Heading:3]]Base Hacking Success Rate Examples[[/Heading]]
 Example hacking success calculations. All final values are truncated.
 [[Table]]Level 1 direct|Level 1 indirect|Level 2 direct|Level 2 indirect|Level 3 direct|Level 3 indirect||80%|80% - (15% * 1)|80% / 2|(80% / 2) - (15% * 2)|(80% / 4)|(80% / 4) - (15% * 3)||80%|65%|40%|10%|20%|-25%[[/Table]]","","","","","","","Fabricator,Garrison Access,Recycling Unit,Repair Station,Scanalyzer,Terminal"
 "Intercept Squad","Other","[[Image]]Intercept Squad.png|2 Trackers and 2 Combat Programmers from Intercept squads chasing Cogmind[[/Image]]Intercept squads are [[0b10]] aligned [[Squad|squads]] that are dispatched when Cogmind gets detected and recognized in a few specific scenarios. They consist of one or more [[Tracker|Trackers]] that each summon an additional [[Combat Programmer]] upon visual contact with Cogmind. Intercept squads are dispatched depending on the number of tiles moved on a map. Once Cogmind takes enough moves, a squad will always be dispatched. Intercept squads can be Enumerated at [[Terminal|Terminals]].
@@ -4462,7 +4462,7 @@ Depth|Scrapoid||
 -3 to -1|[[Scrapoid (8)]]
 [[/Table]]
 [[Heading:3]]Force(Tunnel)[[/Heading]]
-Adds an additional 30 [[Alert]] when successful. This hack is most valuable in early floors like [[Materials]]. It can reveal the locations of all 0b10 [[Branch]] maps which can be useful in planning a route through the game.
+This hack is most valuable in early floors like [[Materials]]. It can reveal the locations of all 0b10 [[Branch]] maps which can be useful in planning a route through the game.
 [[Heading:3]]Trojan(Mask)[[/Heading]]
 Trojan(Mask) can be used in order to stockpile large numbers of parts on the ground. This is especially useful if planning a flight to grounded propulsion transition, as it is easy to bring parts back to this location and there is no risk of losing the parts due to Recyclers. Trojan(Mask) can also be good if hunting [[Cargo Convoy|Cargo Convoys]] that are heading through the area to avoid the risk of Recyclers picking up the loot.
 [[Heading:3]]Trojan(Reject)[[/Heading]]
@@ -5241,82 +5241,60 @@ The Tech Extrapolator can be obtained by one of two methods:
 "Tech Extrapolator Parts","Part Group","","Spoiler","","","Electrostorm Shotgun,Energy Deflector,Heat Bomb Trap,Hyp. Alpha Cannon,Machine Rigger,Telecube,Vmp. Brace Plating,Vmp. Broadsword,Vmp. Heavy Siege Treads,Wartreads","","",""
 "Telecube","Part","","","","","","","",""
 "Temporary Slot Parts","Part Group","","Spoiler","","Temporary Slot Parts","","","",""
-"Terminal","Other","Terminals are interactable Machines that [[Cogmind]] can hack for various benefits (such as recalling an [[Extermination Squad]]!) and info. Terminals are also often guarded by an [[Operator]], which if alerted will use this terminal to call for a [[Reinforcement Squad]] unless it or the terminal is disabled/destroyed.
-The main differences between security levels and terminal types are are :
-[[Table]]Security level|Average size|Armor|Direct hacks|Base direct hacking success rate|Base indirect hacking success rate|Base detection rate||
-1|Small (1 tile and such)|18|Few available direct hacks|Depends on the hack|-15% compared to direct hacks|20 or 25%||
-2|Medium|25|More available direct hacks|Half of level 1, rounded down|-30% compared to direct hacks|50%||
-3|Large|30|Lots of available direct hacks|Half of level 2, rounded down|-45% compared to direct hacks|60%, 70% or 80%||
-Terminals inside [[Garrison|Garrisons]]|Small (1 tile and such)|18|One of Access(Emergency), Download(Navigation), Download(Registry), or Download(Security)|Same as level 2|Same as level 2|Same as level 2||
-Door-type/Lore terminals|Usually 1 tile|18|Usually one direct hack, to open the relevant door or get relevant lore record|Depends on door/lore record|Unavailable|Same as level 1||
-Cave outpost terminal|1 tile|18|Random mix of flavor (useless) and intel ""Report"" hacks, with flavor reports always grouped on top of the list and intel reports grouped on the bottom of the list|100%|Unavailable|Same as level 1[[/Table]]
-Non-door Garrison terminals are always security level 2, while door-type, lore, and cave outpost terminals are always level 1.
-
-Unauthorized hacking (trojan and force hacks) success rate follows the same logic as direct hacking.
-
-Download(Navigation), Download(Registry), and Download(Security) hacks are only available inside Garrisons.
-
-The frequency of each Terminal security level is dependant on the area's depth. At depth -10, almost all terminals are level 1, a few are rarely level 2, and level 3 terminals are basically impossible to find[[Comment]]Maybe literally impossible?[[/Comment]]. As Cogmind ascends each depth, level 3 terminals become more common, while level 1 terminals become rarer. At first, level 2 terminals become more common, but eventually this reverses as they become less common. At depth -1, level 3 terminals are very common, level 2 terminals are rare while level 1 terminals are basically impossible to find[[Comment]]Maybe literally impossible?[[/Comment]] (excluding limited terminals).
-[[Image]]../game_sprites/Terminal.png|Level 3 terminal![[/Image]]
-
-[[Heading]]Hacking[[/Heading]]
-Hacks are listed at [[~/hacks|the Cog-Minder Hacks page]], and explained further in the Cogmind manual.
-Common chance factors:
-[[List]]
-Terminal Security Level - Higher-rated terminals are harder to hack, with direct hacks having half the base success rate they would have on a lower security terminal. Because of this, direct hacks with a negative base success rate will actually have a higher success rate on higher security terminals compared to lower security terminals (half of -8% is -4%).|
-Manual Commands - (Security level * -15%) success chance penalty.|
-[[Corruption]] - Penalty of -1% per 3% of system corruption to success chance.|
-Use penalty - Successfully hacking Alert(Purge), Recall(Investigation), Recall(Reinforcements), Recall(Extermination) or Recall(Assault) permanently reduces the success rate for that specific hack by 10% for the entire map. This penalty is applied for every successful use of the relevant hack, lowering the success rate by 10% every time. The only way to remove it is to leave the map.
-[[Hackware]] - Each attached offensive hackware improves success chances by the amount specified in the part description.|
-Operator [[Data Core]] - Moving over an Operator's Data Core will automatically collect and it extract its dynamic key, which provides a one-time 1.5x multiplier to the base success rate of all direct hacks, excluding those with a negative base success rate. The dynamic key can only be used before it expires at its Operator's terminal.|
-[[Multitool]] - Using a Multitool on a terminal's interactive tile removes all direct hacks and causes tracing to begin immediately, but applies a modifier to indirect hacks.|
-[[Operator]] allies - Having allied Operators within 20 tiles provides a +10% bonus to hacks for the first Operator, +5% for the second, +2% for the third, and +1% for all others.|
-[[Spoiler]]Botnets trojans - Installing Botnet trojans on other terminals in the same map provides a +6% bonus to hacks for the first botnet installed, +3% for the second, and +1% for all others. Note that a botnet will not affect hacking success chance on the terminal it is installed on.[[/Spoiler]]
-[[/List]]
-
-[[Heading]]Detection/Trace[[/Heading]]
-[[B]]Warning - This section is lacking in precision and information![[/B]] Please consider contributing to clarify it and/or add information.
-
-Terminals have a varying base detection rate, dependent mostly on their security level. This base detection rate can be lowered through defensive hackware by the amount specified on their part description, and/or [[Spoiler]]permanently lowered by destroying Network Hubs in [[Hub_04(d)]][[/Spoiler]]. However, it can never be lowered below 10%.
-
-Getting detected will cause a trace to start. Each additional hack attempt will cause the trace progress to advance by an amount which can be reduced in the same way as detection rate. Trace advance can never be lowered below 15%. When failing a hack, a catastrophic failure may occur (more likely on higher security terminals), causing the detection rate to go up by far more.
-
-Getting fully traced may result in receiving [[Corruption]], your [[Hackware]] breaking, and will very likely cause an [[Investigation Squad]].
-
-[[Heading]]Central database authorization[[/Heading]]
-Indirect hacks for lore records, prototype IDs, part or robot schematics, and robot analyses, are all considered ""database hacks"". Successfully hacking any of them has a base 25% chance to instead cause an area-wide central database lockout, preventing further database hacks. However, direct hacks of those types remain possible after a central database lockout and cannot cause one.
-
-Additionally, not all lore records, parts schematic, robot analyses or robot schematics can be indirectly hacked on all terminals. Terminals have a level of database authorization dependent on security level and current depth, equal to (10 - current depth + security level). It is only possible to indirectly hack a part/robot schematic or analysis if the terminal's authorization level is equal to or higher than the rating/tier of the relevant part/robot (prototype parts are considered to have a +1 to their rating for this purpose).
-For example, at depth -5, level 2 terminals have an authorization level of (10 - 5 + 2) = 7.
-Lore records also have a rating/tier, but it isn't communicated in-game. 
-
-[[Heading]]Direct hacking subtleties[[/Heading]]
-There are many small subtleties to direct hacking. Here is an incomplete list:
-[[List]]
-[[GameText]][Local Emergency Access][[/GameText]], [[GameText]][Purge Alert][[/GameText]] and all [[GameText]][Traps][[/GameText]] hacks appear greyed out in direct hacks if they are currently useless. In other words, if a terminal has a greyed out direct [[GameText]][Locate Traps][[/GameText]] hack, then there are no traps within the terminal's range.|
-If either [[GameText]][Disarm Traps][[/GameText]] or [[GameText]][Reprogram Traps][[/GameText]] is available as a direct hack, then [[GameText]][Locate Traps][[/GameText]] will also be a direct hack on that terminal.|
-If [[GameText]][Purge Alert][[/GameText]] is available as a direct hack, then [[GameText]][Check Alert][[/GameText]] will also be a direct hack on that terminal.|
-If there is a direct [[GameText]][Recall][[/GameText]] hack available, then the corresponding [[GameText]][Status][[/GameText]] hack will also be available on that terminal.|
-[[GameText]][Prototype ID Bank][[/GameText]] can only be hacked directly once, and is never greyed out, even when it does not yield new prototype IDs.|
-When entering a map, if you already have a schematic that's supposed to appear on a terminal, that schematic hack may be re-rolled.[[Sup]][[Terminal#references|[1]]][[/Sup]]|
-Direct [[GameText]][Schematic][[/GameText]] hacks may be of a higher rating/tier than the terminal's central database authorization, up to the same rating/tier as the current depth's level 3 terminals' central database authorization.
-[[/List]]
-
-[[Comment]]Uncategorized information - Stuff i didn't think of a way to integrate into the structure of this article
-
-I wasn't sure where to put this, since it isn't exclusive to direct hacking:
-
-[[GameText]][Prototype ID Bank][[/GameText]] gives a number of prototype IDs equal to 1 + Terminal security level.
-
-[[/Comment]]
-
+"Terminal","Other","[[Image]]../game_sprites/Terminal.png|An 0b10-controlled Terminal[[/Image]]
+Terminals are typically [[0b10]]-controlled [[Interactive Machine|Machines]] that [[Cogmind]] can hack for a large variety of benefits. Some [[Branch|Branches]] have [[Derelict]]-controlled Terminals. 0b10 Terminals are also sometimes guarded by an [[Operator]], which if alerted will lock down the Terminal and call for a [[Reinforcement Squad]] unless it or the Terminal is disabled/destroyed.
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Terminal[[/Lore]]
-
+[[Heading]]Types of 0b10 Terminals[[/Heading]]
+[[Table]]Type|Average Size|Armor|Direct hacks|Other Notes||
+Standard security level 1|Small|18|Few available direct hacks|N/A||
+2|Medium|25|More available direct hacks|N/A||
+3|Large|30|Lots of available direct hacks|N/A||
+Terminals inside [[Garrison|Garrisons]]|Small|18|One of Access(Emergency), Download(Navigation), Download(Registry), or Download(Security)|Terminal is always security level 2||
+Door-type/Lore Terminals|1 tile|18|Usually one direct hack, to open the relevant door or get relevant lore record|Terminal is always security level 1||
+Cave outpost Terminal|1 tile|18|Random mix of flavor (useless) and intel ""Report"" hacks, with flavor reports always grouped on top of the list and intel reports grouped on the bottom of the list ending in X|Terminal is always security level 1[[/Table]]
+[[Heading]]Hacks[[/Heading]]
+[[Hacks]]Terminal[[/Hacks]]
+[[Heading:2]]Operator [[Data Core]][[/Heading]]
+Moving over a destroyed Operator's Data Core will automatically collect and it extract its dynamic key, which provides a one-time 1.5x multiplier to the base success rate of any direct hacks, excluding those with a negative base success rate. The dynamic key can only be used within 30 turns before it expires at its Operator's Terminal.
+[[Heading:2]][[Multitool]][[/Heading]]
+Using a Multitool on a Terminal's interactive tile removes all direct hacks and causes tracing to begin immediately, but applies a modifier to indirect hacks. This modifier can range from -20% to +50%. Multitool is best used with a lot of [[Defensive Hackware]] to increase the number of hacks that can be safely performed after modification.
+[[Heading:2]]Central database authorization[[/Heading]]
+Indirect hacks for lore records, prototype IDs, part or robot schematics, and robot analyses, are all considered ""database hacks"". Successfully hacking any of them has a base 25% chance to instead cause a map-wide central database lockout, preventing further indirect database hacks. However, direct hacks of those types remain possible after a central database lockout, and they cannot cause one in the first place. The first indirect database hack on a map cannot cause a database lockout.
+Not all lore records, parts schematic, robot analyses or robot schematics can be indirectly hacked on all Terminals. Terminals have a level of database authorization dependent on security level and current depth, equal to (10 - current depth + security level). It is only possible to indirectly hack a part/robot schematic or analysis if the Terminal's authorization level is equal to or higher than the rating/tier of the relevant part/robot (prototype parts are considered to have a +1 to their rating for this purpose).
+For example, at -5 Factory, level 2 Terminals have an authorization level of (10 - 5 + 2) = 7, which would allow hacking for standard rating 7 parts or prototype rating 6 parts.
+Lore records also have a hidden rating/tier stat. This value can only be determined by attempting and failing to access a particular record.
+[[Heading:2]]Additional Details/Usage Tips[[/Heading]]
+[[Heading:3]]Grayed Out Direct Hacks[[/Heading]]
+[[GameText]][Local Emergency Access][[/GameText]], [[GameText]][Purge Alert][[/GameText]] and all [[GameText]][Traps][[/GameText]] hacks appear greyed out in direct hacks if they are currently useless. In other words, if a Terminal has a greyed out direct [[GameText]][Locate Traps][[/GameText]] hack, then there are no traps within the Terminal's range.
+[[Heading:3]]Grouped Direct Hacks[[/Heading]]
+If either [[GameText]][Disarm Traps][[/GameText]] or [[GameText]][Reprogram Traps][[/GameText]] is available as a direct hack, then [[GameText]][Locate Traps][[/GameText]] will also be a direct hack on that Terminal. If [[GameText]][Purge Alert][[/GameText]] is available as a direct hack, then [[GameText]][Check Alert][[/GameText]] will also be a direct hack on that Terminal. If there is a direct [[GameText]][Recall][[/GameText]] hack available, then the corresponding [[GameText]][Status][[/GameText]] hack will also be available on that Terminal.
+[[Heading:3]][[GameText]]Access(Branch)[[/GameText]][[/Heading]]
+Certain branch entrances are not revealed by this hack because they are either unknown to 0b10 or considered more secret/secure. The full list of these branches is: [[Lab]], [[Section 7]], [[Scraptown]] and [[Subcaves]].
+[[Heading:3]][[GameText]]Access(Emergency)[[/GameText]][[/Heading]]
+This hack reveals emergency accesses within a radius of 20 tiles of the Terminal. Within a Garrison, this reveals all emergency accesses as well as phase walls throughout the entire map.
+[[Heading:3]][[GameText]]Alert(Check)[[/GameText]][[/Heading]]
+[[Alert]] is reported in the alphabet form rather than as the exact precise number. For example, the Terminal reports alert level 1-A at 200 influence.
+[[Heading:3]][[GameText]]Alert(Purge)[[/GameText]][[/Heading]]
+The base success rate of this hack goes down by 10% after each successful hack. This reduction only applies for the current map.
+[[Heading:3]][[GameText]]Enumerate() Hacks[[/GameText]][[/Heading]]
+Enumerate hacks reveal the current position of all bots of the matching type across the map. These positions can be enabled/disabled in the intel console window. These positions will not update in realtime. If the hack is performed again, all existing intel positions of the same type will be cleared before being added again, so the intel does not stack.
+[[Spoiler]][[Heading:3]][[GameText]]Force(Sabotage)[[/GameText]][[/Heading]]
+Adds an additional 50 alert if the hack succeeds but is unsuccessful in sabotaging a machine. Adds 100 alert if the hack succeeds and sabotages a machine. Additional alert from the explosive machine does not get added like when Cogmind shoots a machine to blow it up. This can reduce alert gained in maps with huge explosive machines such as [[Hub_04(d)]]. In fact, Hub is the best place to use this hack, as blowing up a random machine is seldom useful in most other maps, and the only valid targets within the map are the Network Hubs themselves.[[/Spoiler]]
+[[Heading:3]][[GameText]]Layout(zone)[[/GameText]][[/Heading]]
+Reveals an the map in a 32x32 area around the map. That is, 16 tiles in each cardinal direction from the center tile of the Terminal.
+[[Heading:3]][[GameText]]Inventory() Hacks[[/GameText]][[/Heading]]
+Due to a bug in Beta 14, the definition of a ""stockpile"" is much different than what a player would consider a stockpile. As a result, this hack provides very little actual information. [[GameText]]Inventory(Prototypes)[[/GameText]] in particular often results in 1 or even 0 stockpiles revealed on most maps. This data can be enabled/disabled in the intel console window.
+[[Heading:3]][[GameText]]Prototypes[[/GameText]][[/Heading]]
+The number of prototype IDs received is 2 on a security level 1 terminal, 3 on a level 2, and 4 on a level 3. Duplicate prototype IDs cannot be received. This hack is never grayed out as a direct hack, even if no prototype IDs are available.
+[[Heading:3]][[GameText]]Recall() Hacks[[/GameText]][[/Heading]]
+The base success rate of these hacks go down by 10% after each successful hack. This only applies to hacks of the same type, not all Recall hacks. This reduction only applies for the current map.
+[[Heading:3]][[GameText]]Schematic() Hacks[[/GameText]][[/Heading]]
+Direct schematic hacks may contain parts/bots with a rating/tier up to 2 higher than that of the base floor. For example, in -7 Factory, standard floor parts may be rating 4, but schematics up to rating 6 may be offered.
+When entering a map, if you already have a schematic that's supposed to appear on a Terminal, that schematic hack may be re-rolled.[[Sup]][[Terminal#references|[1]]][[/Sup]]
 [[Heading]]References[[/Heading]]
 [[List:Ordered]]
-[[https://www.gridsagegames.com/blog/2018/11/debugging-mapgen-seed-divergence/|Kyzrati's blog]]: ""recalling that schematic hacks at Terminals would favor the player by usually re-rolling if the randomly chosen schematic happened to be one they already had.""
-[[/List]]","","","","","","",""
+[[https://www.gridsagegames.com/blog/2018/11/debugging-mapgen-seed-divergence/|Kyzrati's blog]]: ""recalling that schematic hacks at Terminals would favor the player by usually re-rolling if the randomly chosen schematic happened to be one they already had.""[[/List]]","","","","","","",""
 "Terminology","Other","This is a list of terminology, or potentially things that do not merit a full page. Also check out [[Acronyms]].
 [[Heading:3]]Partial Spot[[/Heading]]
 Partial spotting is when you move through a (hostile) bots field of vision while its not its turn. The bot will investigate where it saw you, look a few tiles further then head back to whatever it was doing.","","","","","","",""
