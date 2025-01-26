@@ -2078,13 +2078,13 @@ Security level|Armor||
 [[Heading]]Hacks[[/Heading]]
 [[Hacks]]Fabricator[[/Hacks]]
 [[Spoiler]][[Heading:2]]Additional Details/Usage Tips[[/Heading]]
-[[Heading:3]]Force(Recompile)[[/Heading]]
+[[Heading:3]][[GameText]]Force(Recompile)[[/GameText]][[/Heading]]
 A good use of this hack is to recompile an Authchip off of a low security level Fabricator and use it on a higher level one for faster fabrication. This avoids having to hang around to deal with the Investigation squad in order to retrieve the fabricated item or bots.
-[[Heading:3]]Trojan(Fabnet)[[/Heading]]
+[[Heading:3]][[GameText]]Trojan(Fabnet)[[/GameText]][[/Heading]]
 Fabnet works on all 0b10 bots in the following two floors, even in [[Branch]] maps like [[Caves]]. When it activates, there will be a log message [[GameText]]Fabnet algorithm triggers [bot name] IFF filter rewrite.[[/GameText]] Each time Fabnet activates on an 0b10-controlled map, there is a chance for it to be detected by 0b10. When this happens, a log message [[GameText]]ALERT: Suspected network compromise, local machines offline for diagnostic review.[[/GameText]] will appear and all non-[[Garrison Access|Garrison]] machines are immediately locked.
-[[Heading:3]]Trojan(Haulers)[[/Heading]]
+[[Heading:3]][[GameText]]Trojan(Haulers)[[/GameText]][[/Heading]]
 Although this hack does not reveal the path of [[Cargo Convoy|Cargo Convoys]], it will at least show the current location of the [[A-27 Freighter]]. This is still quite useful for both cargo convoy hunters and players trying to dodge an encounter at all costs.
-[[Heading:3]]Trojan(Liberate)[[/Heading]]
+[[Heading:3]][[GameText]]Trojan(Liberate)[[/GameText]][[/Heading]]
 All further combat bots that are created from the Fabricator with this hack will become liberated. This applies to bots that are already in progress of fabrication when the hack is applied. Liberated bots will become purple uncontrollable allies that follow Cogmind around. If a liberated bot gets within a 60 tile radius of a Caves exit, even if unidentified or unrevealed, the bot will stop following Cogmind head into that exit.[[/Spoiler]]","","","","","","",""
 "Factory","Location","Factory is a [[0b10]]-controlled main floor that occurs on every floor between -7 and -4. It is the beginning of the midgame where the game really starts to open up. In stark contrast with earlier [[Materials]] maps, Factory start out huge with a ~200x200 tile map size. The rooms, the corridors, and the overall layout are all much wider and more open and connected than Materials. The patrols and guards are more spread out and stealth play with airborne propulsion and [[Infowar]] becomes a strong gameplay option.
 [[Alert]] starts to be more of a concern as the maps become bigger and harder to traverse. [[Hackware]] is useful to be able to successfully use Access hacks at terminals to locate exits. [[Signal Interpreter|Signal Interpreters]] will also be more useful at identifying exits as the exit types will be less predictable. [[Caves]] exits are available in every Factory map. They can be difficult if a player is unprepared, but they can provide many unique rewards and will typically result in a complete Alert purge by the time Cogmind makes it back to the next main floor.
@@ -3149,11 +3149,11 @@ When a Garrison is destroyed by any means while active, there will be an alert [
 [[Heading]]Hacks[[/Heading]]
 [[Hacks]]Garrison[[/Hacks]]
 [[Heading:2]]Additional Details/Usage Tips[[/Heading]]If [[RIF]] is installed, all direct Garrison hacks have 100% success rate.
-[[Spoiler]][[Heading:3]]Force(Eject)[[/Heading]]
+[[Spoiler]][[Heading:3]][[GameText]]Force(Eject)[[/GameText]][[/Heading]]
 While using this hack does trigger a machine lockdown, the Garrison itself will remain open if opened beforehand. This allows for looting any Relay Couplers in the Garrison while still entering it.
-[[Heading:3]]Trojan(Reprogram)[[/Heading]]
-Like Force(Eject), a Garrison can be opened preemptively and the Garrison won't seal itself when the effect triggers. This can be useful to take additional allies into the Garrison.
-[[Heading:3]]Trojan(Restock)[[/Heading]]
+[[Heading:3]][[GameText]]Trojan(Reprogram)[[/GameText]][[/Heading]]
+Like [[GameText]]Force(Eject)[[/GameText]], a Garrison can be opened preemptively and the Garrison won't seal itself when the effect triggers. This can be useful to take additional allies into the Garrison.
+[[Heading:3]][[GameText]]Trojan(Restock)[[/GameText]][[/Heading]]
 Summons a Coupling Squad to the Garrison immediately, but only once. It's best to not hang around the immediate area since the [[Programmer]] may appear out of the Garrison itself and blow it up if it is a low security level. This hack can be used to obtain a [[Remote Datajack]] on -8 before Programmers typically spawn.[[/Spoiler]]","","","","","","",""
 "Garrison Squad","Other","[[Image]]Garrison Squads.png|3 Garrison Squads of Sentries roaming around[[/Image]]
 Garrison squads are [[0b10]] aligned [[Squad|squads]] that are dispatched whenever hostilities are reported within a 20 tile radius around a [[Garrison Access]]. This can occur any time an 0b10 bot is attacked and survives to report it or if a Garrison is attacked by Cogmind or an ally. They patrol around the Garrison for about 200 turns, then return back into the Garrison. These squads only have a chance to spawn and are not guaranteed. Garrison squads can be Enumerated at a [[Terminal]].
@@ -4452,9 +4452,9 @@ Security level|Armor||
 [[Heading:3]]Retrieving Matter[[/Heading]]
 Retrieving Matter from a Recycling Unit is a multi step process. First, parts must be inserted with [[GameText]]Recycle([Part Name])[[/GameText]]. Then, the [[GameText]]Recycling(Process)[[/GameText]] hack must be used to turn all parts in inventory into matter. Finally, the [[GameText]]Retrieve(Matter)[[/GameText]] hack must be used to obtain the recycled matter. All parts are processed at 50% efficiency such that 2 part integrity = 1 matter.
 [[Spoiler]]
-[[Heading:3]]Force(Fedlink)[[/Heading]]
+[[Heading:3]][[GameText]]Force(Fedlink)[[/GameText]][[/Heading]]
 This hack has no practical effect if Cogmind is not [[UFD]] aligned.
-[[Heading:3]]Force(Scrapoids)[[/Heading]]
+[[Heading:3]][[GameText]]Force(Scrapoids)[[/GameText]][[/Heading]]
 This hack has no practical effect if Cogmind is not UFD aligned. The [[Scrapoid|Scrapoids]] summoned depends on the depth.
 [[Table]]
 Depth|Scrapoid||
@@ -4462,11 +4462,11 @@ Depth|Scrapoid||
 -5 to -4|[[Scrapoid (6)]]||
 -3 to -1|[[Scrapoid (8)]]
 [[/Table]]
-[[Heading:3]]Force(Tunnel)[[/Heading]]
+[[Heading:3]][[GameText]]Force(Tunnel)[[/GameText]][[/Heading]]
 This hack is most valuable in early floors like [[Materials]]. It can reveal the locations of all 0b10 [[Branch]] maps which can be useful in planning a route through the game.
-[[Heading:3]]Trojan(Mask)[[/Heading]]
-Trojan(Mask) can be used in order to stockpile large numbers of parts on the ground. This is especially useful if planning a flight to grounded propulsion transition, as it is easy to bring parts back to this location and there is no risk of losing the parts due to Recyclers. Trojan(Mask) can also be good if hunting [[Cargo Convoy|Cargo Convoys]] that are heading through the area to avoid the risk of Recyclers picking up the loot.
-[[Heading:3]]Trojan(Reject)[[/Heading]]
+[[Heading:3]][[GameText]]Trojan(Mask)[[/GameText]][[/Heading]]
+Trojan(Mask) can be used in order to stockpile large numbers of parts on the ground. This is especially useful if planning a flight to grounded propulsion transition, as it is easy to bring parts back to this location and there is no risk of losing the parts due to Recyclers. [[GameText]]Trojan(Mask)[[/GameText]] can also be good if hunting [[Cargo Convoy|Cargo Convoys]] that are heading through the area to avoid the risk of Recyclers picking up the loot.
+[[Heading:3]][[GameText]]Trojan(Reject)[[/GameText]][[/Heading]]
 This hack has the effect of piling up a large number of parts in the area where the Recycler is located because parts that are ejected will not be re-inserted into the machine.[[/Spoiler]]","","","","","","",""
 "Reflective Plating","Part","","","","","","","",""
 "Regenerative Armor","Part Group","","Spoiler","","","Lgt. Regenerative Plating,Med. Regenerative Plating,Hvy. Regenerative Plating,SHELL Armor","","",""
@@ -4640,7 +4640,7 @@ Propulsion|[[Backup Propulsion I]]|[[Backup Propulsion III]]|[[Backup Propulsion
 Utility|[[Backup Plating I]]|[[Backup Plating III]]|[[Backup Plating VII]]||
 Weapon|[[Backup Laser I]]|[[Backup Laser III]]|[[Backup Laser VII]]
 [[/Table]]
-[[Spoiler]][[Heading:3]]Force(Patch)[[/Heading]]
+[[Spoiler]][[Heading:3]][[GameText]]Force(Patch)[[/GameText]][[/Heading]]
 This hack is best used to quickly repair things that have low current integrity but have a high maximum integrity. This can restore large amounts of integrity quickly for parts like [[Armor]] and [[Treads]]. [[Storage Unit|Storage Units]] are an especially good choice for this hack due to the unique ability of this hack to repair parts without needing to detach them and wait around. Otherwise, repairing storage units can be quite risky with [[Recycler|Recyclers]] stealing parts while waiting.[[/Spoiler]]","","","","","","",""
 "Research","Location","Research is a [[0b10]]-controlled main floor that appears on both -3 and -2. Research maps continue to amp up the difficulty in strength and number of general combat encounters, hacking difficulty, and difficulty in locating exits. Compared to the previous [[Factory]] floors, Research maps are just as big, but are much more maze-like with large numbers of smaller interconnected rooms and big sections of the level entirely disconnected by large chunks of earth. Exploring all of these different rooms is more difficult than before, and finding an exit can be a real challenge.
 Unlike factory floors with [[Caves]] available, there are usually no easy exits to dissipate [[Alert]] in Research. The natural alert dissipation that occurs between levels continues to decrease. Purging alert or avoiding generating it in the first place can be a big deal if the player is not prepared to fight off [[High Security]]. [[Infowar]] continues to be important to avoid unnecessary encounters whenever possible, and [[Hackware]] should be used to purge alert and locate exits whenever possible.
@@ -4732,7 +4732,7 @@ Security level|Armor||
 Identifying unknown parts is done by using the [[GameText]]Insert([Part Name])[[/GameText]] hack. This hack has no side effects if it fails, and can identify any part in the game. Identifying a [[Prototype Part]] this way will also determine whether it is faulty or not. If a part has no schematic available for downloading, the machine text will indicate [[GameText]]Failed: Components not registered.[[/GameText]]
 [[Heading:3]]Downloading Schematics[[/Heading]]
 After a part has been inserted, the [[GameText]]Scanalyze[[/GameText]] hack can be used to attempt to download the schematic. This process may fail to complete even if the hack was successful. Additionally, the inserted part may be broken by the scanalyzing attempt even if successful. If this happens, the part must be reinserted again before another download attempt can be made. Broken and faulty parts can be scanalyzed without issue. Higher security level Scanalyzers have a higher schematic downloading chance and a lower chance at breaking the scanalyzed part.
-[[Spoiler]][[Heading:3]]Force(Extract)[[/Heading]]
+[[Spoiler]][[Heading:3]][[GameText]]Force(Extract)[[/GameText]][[/Heading]]
 This hack can give up to 1-10 schematics that Cogmind does not already have. This can include Prototype schematics, but only rarely. Only depth-appropriate rating parts can be obtained from this hack.[[/Spoiler]]","","","","","","",""
 "Scatter Rocket Array","Part","","","","","","","",""
 "Schematic","Other","Schematics can be acquired by using [[Scanalyzer|Scanalyzers]] or hacking [[Terminal|Terminals]] (see your status page for access to a list of schematics currently in your possession).","","","","","","",""
@@ -5278,19 +5278,19 @@ This hack reveals emergency accesses within a radius of 20 tiles of the Terminal
 [[Alert]] is reported in the alphabet form rather than as the exact precise number. For example, the Terminal reports alert level 1-A at 200 influence.
 [[Heading:3]][[GameText]]Alert(Purge)[[/GameText]][[/Heading]]
 The base success rate of this hack goes down by 10% after each successful hack. This reduction only applies for the current map.
-[[Heading:3]][[GameText]]Enumerate() Hacks[[/GameText]][[/Heading]]
+[[Heading:3]][[GameText]]Enumerate()[[/GameText]] Hacks[[/Heading]]
 Enumerate hacks reveal the current position of all bots of the matching type across the map. These positions can be enabled/disabled in the intel console window. These positions will not update in realtime. If the hack is performed again, all existing intel positions of the same type will be cleared before being added again, so the intel does not stack.
 [[Spoiler]][[Heading:3]][[GameText]]Force(Sabotage)[[/GameText]][[/Heading]]
 Adds an additional 50 alert if the hack succeeds but is unsuccessful in sabotaging a machine. Adds 100 alert if the hack succeeds and sabotages a machine. Additional alert from the explosive machine does not get added like when Cogmind shoots a machine to blow it up. This can reduce alert gained in maps with huge explosive machines such as [[Hub_04(d)]]. In fact, Hub is the best place to use this hack, as blowing up a random machine is seldom useful in most other maps, and the only valid targets within the map are the Network Hubs themselves.[[/Spoiler]]
 [[Heading:3]][[GameText]]Layout(zone)[[/GameText]][[/Heading]]
 Reveals an the map in a 32x32 area around the map. That is, 16 tiles in each cardinal direction from the center tile of the Terminal.
-[[Heading:3]][[GameText]]Inventory() Hacks[[/GameText]][[/Heading]]
+[[Heading:3]][[GameText]]Inventory()[[/GameText]] Hacks[[/Heading]]
 Due to a bug in Beta 14, the definition of a ""stockpile"" is much different than what a player would consider a stockpile. As a result, this hack provides very little actual information. [[GameText]]Inventory(Prototypes)[[/GameText]] in particular often results in 1 or even 0 stockpiles revealed on most maps. This data can be enabled/disabled in the intel console window.
 [[Heading:3]][[GameText]]Prototypes[[/GameText]][[/Heading]]
 The number of prototype IDs received is 2 on a security level 1 terminal, 3 on a level 2, and 4 on a level 3. Duplicate prototype IDs cannot be received. This hack is never grayed out as a direct hack, even if no prototype IDs are available.
-[[Heading:3]][[GameText]]Recall() Hacks[[/GameText]][[/Heading]]
+[[Heading:3]][[GameText]]Recall()[[/GameText]] Hacks[[/Heading]]
 The base success rate of these hacks go down by 10% after each successful hack. This only applies to hacks of the same type, not all Recall hacks. This reduction only applies for the current map.
-[[Heading:3]][[GameText]]Schematic() Hacks[[/GameText]][[/Heading]]
+[[Heading:3]][[GameText]]Schematic()[[/GameText]] Hacks[[/Heading]]
 Direct schematic hacks may contain parts/bots with a rating/tier up to 2 higher than that of the base floor. For example, in -7 Factory, standard floor parts may be rating 4, but schematics up to rating 6 may be offered.
 When entering a map, if you already have a schematic that's supposed to appear on a Terminal, that schematic hack may be re-rolled.[[Sup]][[Terminal#references|[1]]][[/Sup]]
 [[Heading]]References[[/Heading]]
