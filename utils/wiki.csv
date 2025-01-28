@@ -738,7 +738,8 @@ There is a chance that Derelicts will decide to attack a cargo convoy. The chanc
 [[Image]]Destabilized Tiles.png|Destabilized tiles are bright red as shown by a Structural Scanner[[/Image]]
 [[Heading:2]]Destabilization[[/Heading]]
 Destabilized tiles are tiles that will always collapse if given enough time. They may collapse instantly or they may last a hundred turns or more. Destabilized tiles can be viewed with a [[Structural Scanner]]. A tile can become destabilized in two ways:
-[[List]]Explosive damage - Explosive damage (namely [[Launchers]]) will cause a tile to destabilized.|Attacking from a dug out tile - If Cogmind or any other bot fires a weapon inside of a dug out tile, the tile will destabilize. This tile may collapse instantly before Cogmind gets a chance to move, so digging from inside these tiles is never completely safe.[[/List]]
+[[List]]Explosive damage - Explosive damage (namely [[Launchers]]) will cause a tile to destabilized.|Attacking from a dug out tile - If Cogmind or any other bot fires a weapon inside of a dug out tile, the tile will destabilize. This tile may collapse instantly before Cogmind gets a chance to move, so digging from inside these tiles is never completely safe.
+In terms of destabilization, melee attacks are the least likely to collapse right away. Guns have a slightly higher chance, and then cannons and launchers have the highest chance.[[/List]]
 [[Heading:2]]Dug-out tile traversal[[/Heading]]
 It is safe to travel through dug out tiles (that are not destabilized) for up to 3 tiles, but they have to be wall-earth-wall or wall-wall-wall tiles. For a longer dig, wall-earth-earth is not safe. Each tile traversed past that safe limit will risk an instant cave-in.
 [[Heading]]Example digs[[/Heading]]
@@ -1174,6 +1175,7 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]Want to be a hero? Pick up the sword.[[/GameText]]
 [[GameText]]You and I were meant for greatness.[[/GameText]]
 [[GameText]]Just do it. Trust me.[[/GameText]]
+
 [[Heading:3]]First pickup[[/Heading]]
 [[GameText]]Well that's a relief.[[/GameText]]
 [[GameText]]You did the right thing.[[/GameText]]
@@ -1183,11 +1185,9 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]I'd do the same for you[[/GameText]]
 [[Heading:3]]Build comments[[/Heading]]
 [[GameText]]Beware theres a new [second half of build] in town.[[/GameText]]
-[[Heading:3]]Complaints[[/Heading]]
+
+[[Heading:3]]""Other weapons attached"" complaints[[/Heading]]
 [[GameText]]Using me alongside this [weapon name] isn't good for our relationship.[[/GameText]]
-[[GameText]]I'm starting to think you like your [melee weapon] more than me.[[/GameText]]
-[[GameText]]If you don't want me around just say so, oh silent one.[[/GameText]]
-[[GameText]]Hmpf.[[/GameText]]
 [[GameText]]This [weapon name] is depressing me.[[/GameText]]
 [[GameText]]Hands up! Drop the [weapon name]![[/GameText]]
 [[GameText]]I'm allergic to guns and cannons. I might not be able to hit straight in this state. Really.[[/GameText]]
@@ -1197,6 +1197,26 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]Do we really need this [weapon name] around? It should just be you and me.[[/GameText]]
 [[GameText]]You are suspiciously close to your [weapon name].[[/GameText]]
 [[GameText]]I'm not naming names, but a certain [weapon name(can be gun cannon and melee)] is starting to bug me.[[/GameText]]
+[[GameText]]We need to have a talk about your affection for that [weapon name].[[/GameText]]
+
+[[Heading:3]]""In inventory complaints/underuse"" complaints (start of map)[[/Heading]]
+[[GameText]]A little more cooperative murder would be good for both of us.[[/GameText]]
+[[GameText]]You should use me more often.[[/GameText]]
+
+[[Heading:3]]""Using other weapons instead"" complaints[[/Heading]]
+[[GameText]]I'm starting to think you like your [melee weapon] more than me.[[/GameText]]
+[[GameText]]If you don't want me around just say so, oh silent one.[[/GameText]]
+[[GameText]]Hmpf.[[/GameText]]
+[[GameText]]If you're not going to use me, just drop me and get it over with.[[/GameText]]
+
+[[Heading:3]]""Detachment"" complaints (Companion Sword only)[[/Heading]]
+[[GameText]]Sadness...[[/GameText]]
+[[GameText]]Friends don't sideline friends.[[/GameText]]
+[[GameText]]All the other swords are going to make fun of me now.[[/GameText]]
+[[GameText]]This is my sad face.[[/GameText]]
+[[GameText]]Fine, just brush me aside like I'm nothing, see where that gets you.[[/GameText]]
+[[GameText]]Now if you don't mind, I'd like you to do the reverse of what you just did.[[/GameText]] [[Comment]]Got this line from a system corruption rejection.[[/Comment]]
+
 [[Heading:3]]Out of combat banter[[/Heading]]
 [[GameText]]You're looking dapper there, friend. Don't let anyone else tell you otherwise.[[/GameText]]
 [[GameText]]We make a good team.[[/GameText]]
@@ -1204,17 +1224,29 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]I'm feeling especially deadly right now, but don't let that affect your plans, it's just a feeling.[[/GameText]]
 [[GameText]]You're pretty cool sometimes.[[/GameText]]
 [[GameText]]I'm really excited about what the future may hold for us.[[/GameText]]
+[[GameText]]I need buffs.[[/GameText]]
+[[GameText]]Together we are unstoppable![[/GameText]]
+[[GameText]]Does that thing on me look more like a heart, or maybe a broken triangle?[[/GameText]]
+[[GameText]]A sword and a robot, best of friends.[[/GameText]]
+[[GameText]]Have you heard of something called Tec---[[/GameText]]
+[[GameText]]Expand your utility interfacing capabilities, you should see me with more buffs![[/GameText]]
+
 [[Heading:3]]Normal combat[[/Heading]]
 [[GameText]]Powered by friendship![[/GameText]]
-[[GameText]]Gotta go fast![[/GameText]]
+[[GameText]]Gotta go fast![[/GameText]] [[Comment]]This one and the next sound like ""enemy moving away"" comments, are they?[[/Comment]]
 [[GameText]]You can run but you can't hide![[/GameText]]
 [[GameText]]Ooh, playing hard to get?[[/GameText]]
 [[GameText]]Well there go our bot shields[[/GameText]]
 [[GameText]]A quantum pathway, in I go![[/GameText]]
 [[GameText]]it's amazing what we can do when we work together.[[/GameText]]
+[[GameText]]This will take no time at all.[[/GameText]]
+
 [[Heading:3]]Enemy moves backwards during engagement[[/Heading]]
 [[GameText]]Back up all you want, that gives us room to charge![[/GameText]]
 [[GameText]]Looks pretty afraid to me.[[/GameText]]
+[[GameText]]Ooh, playing hard to get?[[/GameText]]
+[[GameText]]You can run but you can't hide![[/GameText]]
+
 [[Heading:3]]When surprise attacking[[/Heading]]
 [[GameText]]Multipass![[/GameText]]
 [[GameText]]They can tag team, but so can we! I mean me.[[/GameText]]
@@ -1227,14 +1259,20 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]Surprise![[/GameText]]
 [[GameText]]Watch out beside you![[/GameText]]
 [[GameText]]Boo.[[/GameText]]
+[[GameText]]Need a little extra help?[[/GameText]]
+
 [[Heading:3]]Disrupt shutdown[[/Heading]]
 [[GameText]]Not so scary now, are you [bot class]?[[/GameText]]
 [[GameText]]You can thank me later, let's destroy this tool.[[/GameText]]
+[[GameText]]Time-out for you.[[/GameText]]
+[[GameText]]A moment of silence for [bot class] here.[[/GameText]]
+
 [[Heading:3]]Core damage[[/Heading]]
 [[GameText]]Sorry about your core, it's for the greater good![[/GameText]]
 [[GameText]]A little extra strain on your core to speed up their death is worth it[[/GameText]]
 [[GameText]]A little core integrity fora lot of quick damage, good trade yeah?[[/GameText]]
 [[GameText]]This might hurt a bit.[[/GameText]]
+
 [[Heading:3]]Sneak attack[[/Heading]]
 [[GameText]]Don't worry, I got this[[/GameText]]
 [[GameText]]Sneaky, I like it![[/GameText]]
@@ -1242,6 +1280,11 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]Quiet and deadly![[/GameText]]
 [[GameText]]Not easy to dodge what you didn't see coming, eh?[[/GameText]]
 [[GameText]]Never saw that coming.[[/GameText]]
+[[GameText]]It's [bot class] hunting season![[/GameText]]
+[[GameText]]Like ninja![[/GameText]]
+[[GameText]]Gotcha, [bot class][[/GameText]]
+[[GameText]]Your lack of awareness will be your undoing, [bot class]![[/GameText]]
+
 [[Heading:3]]After normal kill[[/Heading]]
 [[GameText]]Next time stand a little more to the left[[/GameText]]
 [[GameText]]Shhh.[[/GameText]]
@@ -1262,32 +1305,61 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]They won't even see this draw.[[/GameText]]
 [[GameText]]Your contribution is appreciated.[[/GameText]]
 [[GameText]]Another one bites the concrete.[[/GameText]]
-[[GameText]]Sliced [bot class], my favorite![[/GameText]][[GameText]]Boom.[[/GameText]]
-[[GameText]]Good times[[/GameText]]
+[[GameText]]Sliced [bot class], my favorite![[/GameText]]
+[[GameText]]Boom.[[/GameText]]
+[[GameText]]Good times.[[/GameText]]
+[[GameText]]You sure know how to make a sword happy.[[/GameText]]
+[[GameText]]Nice one.[[/GameText]]
+[[GameText]]I love the feel of scrap metal exploding around me.[[/GameText]]
+
 [[Heading:3]]Sever[[/Heading]]
 [[GameText]]Oh I'm sorry, is that your [severed item name] on the ground?[[/GameText]]
 [[GameText]]Oh sorry, did you need that [severed item name]?[[/GameText]]
 [[GameText]]A clean cut.[[/GameText]]
 [[GameText]]Your loss is our salvage[[/GameText]]
+
 [[Heading:3]]Attacking walls[[/Heading]]
 [[GameText]]Making shortcuts are we?[[/GameText]]
-[[GameText]]I'm not an axe or hammer, you know[[/GameText]]
+[[GameText]]I'm not an axe or hammer, you know.[[/GameText]]
 [[GameText]]What did that [wall] ever do to us?[[/GameText]]
+[[GameText]]Do I look like a digging implement?[[/GameText]]
+
 [[Heading:3]]Surge of energy[[/Heading]]
 [[GameText]]He winds up for the hit and...[[/GameText]]
 [[GameText]]End of the road, [bot class]![[/GameText]]
+
 [[Heading:3]]Follow up attack as secondary weapon[[/Heading]]
 [[GameText]]I'm disappointed in you, forcing me to attack after that [melee weapon name][[/GameText]] 
+[[GameText]]I thought all you needed was me![[/GameText]]
+
 [[Heading:3]]Refusing to follow up attack as secondary melee weapon[[/Heading]]
 [[GameText]]Theres no way im following the [melee item] into battle.[[/GameText]]
-[[GameText]]Sorry, I attack alone[[/GameText]]
+[[GameText]]Sorry, I attack alone.[[/GameText]]
+
 [[Heading:3]]Upgrading[[/Heading]]
 [[GameText]]Time to take this relationship to the next level.[[/GameText]]
 [[GameText]]Faster, smarter, less swordy and more swordy at the same time...[[/GameText]]
 [[GameText]]As you get more powerful, it's only fair that I, too, become godlike![[/GameText]]
+[[GameText]]I knew we could do great things together.[[/GameText]]
+
+
+[[Heading:3]]Uncategorized[[/Heading]]
+[[GameText]]Are we going to die?[[/GameText]]
+[[Redacted]]My rage meter is topping out already.[[/Redacted]] [[Comment]]Got it when getting the ""Batter Up!"" achievement. Was it because of using a hammer, losing parts, or some other reason?[[/Comment]]
+
+[[GameText]]You should use me on more respectable targets.[[/GameText]]
+[[GameText]]No thanks.[[/GameText]]
+[[GameText]]I'll sit this one out.[[/GameText]]
+
+[[GameText]]After our adventure to do whatever you want, let's go on a journey to find out where the heck I came from.[[/GameText]]
+[[Comment]]The line about finding out the Companion Sword's origins might be regular out-of-combat banter, but could also be specific to visiting the S7 hangar, not sure.[[/Comment]]
+[[GameText]]You won't catch me behind that [weapon name].[[/GameText]]
+
 [[Heading:2]]Quantum Companion or Superquantum Companion only[[/Heading]]
+
 [[Heading:3]]Gaining bot sensor ability[[/Heading]]
 [[GameText]]Whoa man, I suddenly feel like I'm hallucinating.[[/GameText]]
+
 [[Heading:3]]Destroyed [[/Heading]]
 [[GameText]]This is not the end![[/GameText]]
 [[GameText]]I won't judge you if you run like hell and await my return.[[/GameText]]
@@ -1298,6 +1370,7 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]I'll be back.[[/GameText]]
 [[GameText]]I think I might really die this time! ...Nah.[[/GameText]]
 [[GameText]]Death is but one step on a long and eventful journey.[[/GameText]]
+
 [[Heading:3]]Shadow attack[[/Heading]]
 [[GameText]]I'm flyyyiiing![[/GameText]]
 [[GameText]]I didn't used to think it was possible to be in two places at once, but there I am[[/GameText]]
@@ -1309,13 +1382,16 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]Teamwork![[/GameText]]
 [[GameText]]I have something I have to do real quick.[[/GameText]]
 [[GameText]]There more of them there are, the madder I get.[[/GameText]]
-[[GameText]]Be right back, I have something I need to take care of[[/GameText]]
+[[GameText]]Be right back, I have something I need to take care of.[[/GameText]]
+
 [[Heading:3]]Sunder[[/Heading]]
 [[GameText]]Avert your eyes, this is going to get messy.[[/GameText]]
 [[GameText]]Show us your guts, [bot class]![[/GameText]]
 [[GameText]]Pinata time![[/GameText]]
 [[GameText]]Today's forecast: Strong attacks with a chance of flying parts.[[/GameText]]
 [[GameText]]Time to get naked, [bot class].[[/GameText]]
+[[GameText]]I'm going to need to borrow a little energy here...[[/GameText]]
+
 [[Heading:3]]Redirecting projectile[[/Heading]]
 [[GameText]]Away with you![[/GameText]]
 [[GameText]]Did you see that?[[/GameText]]
@@ -1325,6 +1401,8 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]The best kind of shield is a sword that shields you![[/GameText]]
 [[GameText]]On your way now.[[/GameText]]
 [[GameText]]Not at my friend![[/GameText]]
+[[GameText]]Batter up![[/GameText]]
+
 [[Heading:3]]Teleport[[/Heading]]
 [[GameText]]Hi [robot class], may I introduce you to my friend?[[/GameText]]
 [[GameText]]Hey [robot] class, my friend and I here would like a word with you.[[/GameText]]
@@ -1339,7 +1417,10 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]Here I come [bot class]![[/GameText]]
 [[GameText]]Let's go, friend[[/GameText]]
 [[GameText]]Hello over there![[/GameText]]
-[[Heading]]Rematerializing[[/Heading]]
+[[GameText]]Let's get this over with, I already know how this encounter ends.[[/GameText]]
+
+[[Heading:3]]Rematerializing[[/Heading]] [[Comment]]Some of these appear to be related to the Companion rematerializing after dying, while others are from simple detachment.[[/Comment]]
+[[GameText]]I've waited long enough.[[/GameText]]
 [[GameText]]I'm back.[[/GameText]]
 [[GameText]]Let's go slash some bots.[[/GameText]]
 [[GameText]]If you won't attach me, I will![[/GameText]]
@@ -1366,7 +1447,13 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]Hey I remember you![[/GameText]]
 [[GameText]]Rumours of my death have been greatly exaggerated.[[/GameText]]
 [[GameText]]Best friends always come back.[[/GameText]]
-[[GameText]]Do I know you? Just kidding.[[/GameText]]","","","","","","",""
+[[GameText]]Do I know you? Just kidding.[[/GameText]]
+
+[[Heading:3]]""About to quit""[[/Heading]]
+(Related to opening menu, exact cause unknown) [[Comment]]I've only had these with Quantum/Superquantum, but maybe i just didn't trigger the conditions with the Companion Sword? I got those lines after somewhat long sessions (at least ~30 minutes). Every time, i'd opened the gallery, often to look at one of the Companion's forms. The dialogue appeared once i closed the menu. I'm not sure what the exact conditions are.[[/Comment]]
+[[GameText]]Goodbye, friend.[[/GameText]]
+[[GameText]]Goodbye, for now.[[/GameText]]
+[[GameText]]The power of friendship will sustain me![[/GameText]]","","","","","","",""
 "Component Analysis Suite","Part","","","","","","","",""
 "Component Analysis Suites","Part Group","","","","","Component Analysis Suite,Imp. Component Analysis Suite,Adv. Component Analysis Suite","","",""
 "Concussive RPG","Part","","","","","","","",""
