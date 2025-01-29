@@ -1163,7 +1163,8 @@ Drawing loot piles closer to Cogmind can also save a lot of otherwise wasted tim
 [[Heading]]Transformation[[/Heading]]
 The Companion Sword can transform into the [[Quantum Companion]] in one of two ways:
 [[List]]Use: The transformation can occur from time wearing and use. Killing bots while keeping it equipped for a long period of time will make it transform the quickest.|[[Subatomic Replicator]]: The Replicator can instantly create the Quantum Companion from a Companion Sword.[[/List]]
-When the Companion Sword transforms, the following game log message will appear: [[GameText]]Companion Sword blips out of existence for a moment, then partially fades back in.[[/GameText]] The Companion Sword will also comment: [[GameText]]Ultimate power! Well there's always room for improvement, but I'm feeling it.[[/GameText]]
+When the Companion Sword transforms, the following game log message will appear: [[GameText]]Companion Sword blips out of existence for a moment, then partially fades back in.[[/GameText]] The Companion Sword will also comment on it, saying one of multiple possible [[Companion Sword#upgrading|upgrade lines]].
+
 [[Heading]]Dialogue[[/Heading]]
 The following is a non-comprehensive list of Companion Sword dialogue:
 
@@ -1331,25 +1332,25 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]I thought all you needed was me![[/GameText]]
 
 [[Heading:3]]Refusing to follow up attack as secondary melee weapon[[/Heading]]
-[[GameText]]Theres no way im following the [melee item] into battle.[[/GameText]]
+[[GameText]]There's no way I'm following the [melee weapon name] into battle.[[/GameText]]
 [[GameText]]Sorry, I attack alone.[[/GameText]]
+[[GameText]]You won't catch me behind that [weapon name].[[/GameText]]
 
 [[Heading:3]]Upgrading[[/Heading]]
 [[GameText]]Time to take this relationship to the next level.[[/GameText]]
 [[GameText]]Faster, smarter, less swordy and more swordy at the same time...[[/GameText]]
 [[GameText]]As you get more powerful, it's only fair that I, too, become godlike![[/GameText]]
 [[GameText]]I knew we could do great things together.[[/GameText]]
-
+[[GameText]]Ultimate power! Well there's always room for improvement, but I'm feeling it.[[/GameText]]
 
 [[Heading:3]]Uncategorized[[/Heading]]
 [[GameText]]Are we going to die?[[/GameText]]
-[[Redacted]]My rage meter is topping out already.[[/Redacted]] [[Comment]]Got it when getting the ""Batter Up!"" achievement. Was it because of using a hammer, losing parts, or some other reason?[[/Comment]]
+[[GameText]]My rage meter is topping out already.[[/GameText]] [[Comment]]Got it when getting the ""Batter Up!"" achievement. Was it because of using a hammer, losing parts, or some other reason?[[/Comment]]
 [[GameText]]You should use me on more respectable targets.[[/GameText]]
 [[GameText]]No thanks.[[/GameText]]
 [[GameText]]I'll sit this one out.[[/GameText]]
 [[GameText]]After our adventure to do whatever you want, let's go on a journey to find out where the heck I came from.[[/GameText]]
-[[Comment]]The line about finding out the Companion Sword's origins might be regular out-of-combat banter, but could also be specific to visiting the S7 hangar, not sure.[[/Comment]]
-[[GameText]]You won't catch me behind that [weapon name].[[/GameText]]
+[[Comment]]I got the line about finding out the Companion Sword's origins shortly after entering the S7 hangar, so it might be location-specific, but it could just be a coincidence and be regular out-of-combat banter?[[/Comment]]
 
 [[Heading:2]]Quantum Companion or Superquantum Companion only[[/Heading]]
 
@@ -1415,7 +1416,7 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]Hello over there![[/GameText]]
 [[GameText]]Let's get this over with, I already know how this encounter ends.[[/GameText]]
 
-[[Heading:3]]Rematerializing[[/Heading]] [[Comment]]Some of these appear to be related to the Companion rematerializing after dying, while others are from simple detachment.[[/Comment]]
+[[Heading:3]]Rematerializing[[/Heading]] [[Comment]]Some of these lines appear to be related to the Companion rematerializing after dying, while others are from simple detachment.[[/Comment]]
 [[GameText]]I've waited long enough.[[/GameText]]
 [[GameText]]I'm back.[[/GameText]]
 [[GameText]]Let's go slash some bots.[[/GameText]]
@@ -1445,7 +1446,7 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]Best friends always come back.[[/GameText]]
 [[GameText]]Do I know you? Just kidding.[[/GameText]]
 
-[[Heading:3]]""About to quit""[[/Heading]]
+[[Heading:3]]""About to end current game session"" goodbye[[/Heading]]
 (Can appear after closing the menu, exact cause unknown) [[Comment]]I've only had these with Quantum/Superquantum, but maybe i just didn't trigger the conditions with the Companion Sword? I got those lines after somewhat long sessions (at least ~30 minutes). Every time, i'd opened the gallery, often to look at one of the Companion's forms. The dialogue appeared once i closed the menu. I'm not sure what the exact conditions are.[[/Comment]]
 [[GameText]]Goodbye, friend.[[/GameText]]
 [[GameText]]Goodbye, for now.[[/GameText]]
