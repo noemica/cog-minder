@@ -412,7 +412,8 @@
                 "Name": "Force(Patch)",
                 "Description": "Repairs multiple parts by 25% integrity up to 50% total integrity. Level 1 stations repair up to 3 parts, level 2 4 parts, and level 3 5 parts. Also, locks the machine and summons an investigation squad like all force hacks.",
                 "BaseChance": 80,
-                "Indirect": "Always"
+                "Indirect": "Always",
+                "SpoilerLevel": "Spoiler"
             },
             {
                 "Name": "Scan([Part Name])",
