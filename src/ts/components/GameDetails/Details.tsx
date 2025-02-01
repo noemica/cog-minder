@@ -52,7 +52,7 @@ const TooltipTexts = {
     Profile:
         "The amount of space this bot takes up within the 9x9 subgrid within each single tile that is used to determine aiming and projectile behavior. RD = round and SQ = square. Smaller profile sizes mean that it is harder to hit bots around corners but easier to aim around them. Smaller profile bots are also less likely to be hit by stray projectiles.",
     Tier: "On average, corresponds to the depth that the bot will appear in. For example, a rating 4 bot will typically begin to appear in -7 Factory.",
-    Threat: "Internal game stat that bot AI uses to determine which target to attack if multiple targets are available.",
+    Threat: "Internal game stat that is used to determine the color of bot sprites. Lower threat levels are the lightest colored, while higher threat levels are the darkest colored.",
     Value: "The amount of score that will be obtained if the bot is destroyed.",
     "Energy Generation":
         "The amount of energy this bot generates per turn, not taking upkeep into account. This also includes any hidden energy generation bonuses that a bot may have hardcoded.",
