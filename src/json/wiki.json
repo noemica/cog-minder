@@ -5851,7 +5851,7 @@
   },
   {
    "Name": "Spacefold Activator",
-   "Content": ""
+   "Content": "Spacefold Activators are attachable non-consumable utility [[Alien Artifacts]], which allow moving through up to 3 solid objects, at a cost of Cogmind's core integrity equal to 1% of maximum for each space travelled. They can be found exclusively in the western side of [[Section 7]] as unguarded Artifacts.\n\nNote that the core integrity cost is for every space travelled during a spacefold, and not for every solid object, meaning that the tile that Cogmind ends up on also counts. For example, a spacefold through 2 walls would cost 3% core integrity, 2% for the wall and 1% for the tile Cogmind ends up on.\n"
   },
   {
    "Name": "Spear",
