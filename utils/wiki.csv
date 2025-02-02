@@ -5110,6 +5110,17 @@ Cogmind becomes indistinguishable from a Sigix Warrior to some NPCs. [[Warlord]]
 "Spacefold Activator","Part","Spacefold Activators are attachable non-consumable utility [[Alien Artifacts]], which allow moving through up to 3 solid objects, at a cost of Cogmind's core integrity equal to 1% of maximum for each space travelled. They can be found exclusively in the western side of [[Section 7]] as unguarded Artifacts.
 
 Note that the core integrity cost is for every space travelled during a spacefold, and not for every solid object, meaning that the tile that Cogmind ends up on also counts. For example, a spacefold through 2 walls would cost 3% core integrity, 2% for the wall and 1% for the tile Cogmind ends up on.
+
+[[Heading]]Uses[[/Heading]]
+There are many Alien Artifacts or even regular items that can replace some of the Spacefold Activator's uses or at least allow for the same overall results, without the high core integrity cost. However, a Spacefold Activator is capable of a more versatile range of movements than any single one of those items, while also being precise, consistent and only taking up one slot.
+
+[[List]]Spacefolds can be used to bypass Reinforced Barriers, Sealed Heavy Doors and other difficult-to-destroy obstacles, without causing any [[Alert]] gain or requiring hacking. Since none of those obstacles are ever larger than 3 tiles, the only cases where spacefolds fail is when those obstacles contain a solid object within, such as allied [[Derelict|Derelicts]] imprisoned within small cells in [[Garrison|Garrisons]]. As with some other travel methods, going past Sealed Heavy Doors and the like may cause 0b10 to eventually open them to allow combat robots to chase down Cogmind, especially if there is no other way through, which can make it possible for allies to go through as well.|
+
+Spacefolds can be used to quickly get out of rooms or corridors when patrols or other dangers are approaching and into safer or more strategic locations, without creating any additional paths for those dangers to reach said locations. Using spacefolds this way is much faster than digging through walls, especially multiple layers.|
+
+Spacefolds can allow for longer-range safe [[Digging|digs]]. While a [[Microwarp Drive]] would allow for longer safe digging range and a lower core integrity loss, Spacfold Activators only take up one slot and cannot cause Cogmind to go farther than expected. [[Comment]]I don't know how spacefolding affects cave-ins, but if the only thing that matters is dug-out tiles traversed and ""not-dug-out-but-diggable"" spaces don't matter, then it should be possible to do stuff like an eight-tile dig, by digging five tiles to create a ""waypoint"", then digging once to the side to create a spot where you can spacefold to the waypoint, making the full movement = Dug-out-tile -> 3-tile spacefold -> ""waypoint"" -> 3-tile spacefold -> destination.[[/Comment]]
+
+[[/List]]
 ","","","","","","",""
 "Spear","Part","","","","","","","",""
 "Special Melee Weapons","Part Supergroup","","","","","Dirty Datajack,Detonator,Splice Injector,Master Link","Melee Datajacks","",""
