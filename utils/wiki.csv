@@ -1591,7 +1591,7 @@ After killing around 10 hostiles on the map, rapid sterilization will be engaged
 There is only one exit in each DSF. Most of the time the exit leads to the next main floor, although it can occasionally lead into a [[Garrison]] on the current depth. If leading to a Garrison, the Garrison exit will not loop back to the same depth again.","","","","","","",""
 "Damper Plating","Part","","","","","","","",""
 "Data Conduit","Other","The machine in [[Data Miner (Location)]] that is the source of the [[Data Miner|Data Miner's]] information. Can be used if the Data Miner is knocked out of the way.","Spoiler","","","","","",""
-"Data Core","Part","Reveals nearby [[Traps|trap]] arrays if collected before its renewal time expires (40 turns). Additionally improves the chances of hacking its associated [[Terminal|terminal]] if used before its renewal time expires (40 turns).","","","","","","",""
+"Data Core","Part","Can be obtained by destroying a 0b10 [[Operator]] whose terminal is still active. Reveals nearby [[Traps|Trap]] arrays if collected before its renewal time expires (40 turns). Additionally improves the chances of one hacking attempt for its associated [[Terminal]] if used before its renewal time expires (40 turns), by multiplying the base success rate of direct and indirect hacks by 1.5 if the base success rate is positive, or raising it to 0% if it was negative.","","","","","","",""
 "Data Miner","Bot","","","","","","","",""
 "Data Miner (Location)","Location","The Data Miner location is a [[Caves]] [[Branch]] that appears on either -7 or -6 and is home to the eponymous bot the [[Data Miner]] aka DM. There are no initially hostile bots, but if Data Miner is attacked or the Data Conduit machine is broken he will trigger a trap door to leave the map and 4 dormant [[Enhanced Grunt|Enhanced Grunts]] hidden in the walls will wake up and become hostile. If you have any [[Corruption]], make sure to detach all ranged weapons to avoid accidental misfires.
 There are 4 unique Terminals on the bottom side of the map. The left 2 contain mostly lore records, although the top-left Terminal will also list the depth of [[Section 7]] as well as the access code to the [[Warlord (Location)|Warlord]] Prototype Stash. These two vary per run so make sure to grab these lore entries every time. The bottom ones do not contain any additional information each run. The top-right Terminal will contain several random bot [[Schematic|Schematics]] and the bottom-right Terminal will contain a large number of part schematics and a few Prototype ID Banks. The part schematics will always contain schematics for [[Combat Drone Bay]] and [[Lgt. Regenerative Plating]].
@@ -5365,7 +5365,7 @@ The Tech Extrapolator can be obtained by one of two methods:
 "Telecube","Part","","","","","","","",""
 "Temporary Slot Parts","Part Group","","Spoiler","","Temporary Slot Parts","","","",""
 "Terminal","Other","[[Image]]../game_sprites/Terminal.png|An 0b10-controlled Terminal[[/Image]]
-Terminals are typically [[0b10]]-controlled [[Interactive Machine|Machines]] that [[Cogmind]] can hack for a large variety of benefits. Some [[Branch|Branches]] have [[Derelict]]-controlled Terminals. 0b10 Terminals are also sometimes guarded by an [[Operator]], which if alerted will lock down the Terminal and call for a [[Reinforcement Squad]] unless it or the Terminal is disabled/destroyed.
+Terminals are typically [[0b10]]-controlled [[Interactive Machine|Interactive Machines]] that [[Cogmind]] can hack for a large variety of benefits. Unlike other interactive machines, non-limited 0b10 Terminals do not list all possible ""authorized"" hacks and instead only show a selection of hacks chosen from a large pool. Hack not listed can still be indirectly hacked through manual hacking, though this will incur a -15% penalty per security level to the base success rate of hacks. Some [[Branch|Branches]] have [[Derelict]]-controlled Terminals. 0b10 Terminals are also sometimes guarded by an [[Operator]], which if alerted will lock down the Terminal and call for a [[Reinforcement Squad]] unless it or the Terminal is disabled/destroyed.
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Terminal[[/Lore]]
 [[Heading]]Types of 0b10 Terminals[[/Heading]]
@@ -5376,16 +5376,19 @@ Standard security level 1|Small|18|Few available direct hacks|N/A||
 Terminals inside [[Garrison|Garrisons]]|Small|18|One of Access(Emergency), Download(Navigation), Download(Registry), or Download(Security)|Terminal is always security level 2||
 Door-type/Lore Terminals|1 tile|18|Usually one direct hack, to open the relevant door or get relevant lore record|Terminal is always security level 1||
 Cave outpost Terminal|1 tile|18|Random mix of flavor (useless) and intel ""Report"" hacks, with flavor reports always grouped on top of the list and intel reports grouped on the bottom of the list ending in X|Terminal is always security level 1[[/Table]]
+
 [[Heading]]Hacks[[/Heading]]
 [[Hacks]]Terminal[[/Hacks]]
+
 [[Heading:2]]Operator [[Data Core]][[/Heading]]
-Moving over a destroyed Operator's Data Core will automatically collect and it extract its dynamic key, which provides a one-time 1.5x multiplier to the base success rate of any direct hacks, excluding those with a negative base success rate. The dynamic key can only be used within 30 turns before it expires at its Operator's Terminal.
+Moving over a destroyed Operator's Data Core will automatically collect and it extract its dynamic key, which provides a one-time bonus that multiplies to the base success rate of all direct and indirect hacks by 1.5 if their base success rate was positive, or raise the base success rate to 0% if it was negative. The dynamic key can only be used within 40 turns before it expires at its Operator's Terminal.
+
 [[Heading:2]][[Multitool]][[/Heading]]
 Using a Multitool on a Terminal's interactive tile removes all direct hacks and causes tracing to begin immediately, but applies a modifier to indirect hacks. This modifier can range from -20% to +50%. Multitool is best used with a lot of [[Defensive Hackware]] to increase the number of hacks that can be safely performed after modification.
 [[Heading:2]]Central database authorization[[/Heading]]
 Indirect hacks for lore records, prototype IDs, part or robot schematics, and robot analyses, are all considered ""database hacks"". Successfully hacking any of them has a base 25% chance to instead cause a map-wide central database lockout, preventing further indirect database hacks. However, direct hacks of those types remain possible after a central database lockout, and they cannot cause one in the first place. The first indirect database hack on a map cannot cause a database lockout.
 Not all lore records, parts schematic, robot analyses or robot schematics can be indirectly hacked on all Terminals. Terminals have a level of database authorization dependent on security level and current depth, equal to (10 - current depth + security level). It is only possible to indirectly hack a part/robot schematic or analysis if the Terminal's authorization level is equal to or higher than the rating/tier of the relevant part/robot (prototype parts are considered to have a +1 to their rating for this purpose).
-For example, at -5 Factory, level 2 Terminals have an authorization level of (10 - 5 + 2) = 7, which would allow hacking for standard rating 7 parts or prototype rating 6 parts.
+For example, at -5/Factory, level 2 Terminals have an authorization level of (10 - 5 + 2) = 7, which would allow hacking for standard rating 7 parts or prototype rating 6 parts.
 Lore records also have a hidden rating/tier stat. This value can only be determined by attempting and failing to access a particular record.
 [[Heading:2]]Additional Details/Usage Tips[[/Heading]]
 [[Heading:3]]Grayed Out Direct Hacks[[/Heading]]
@@ -5409,7 +5412,7 @@ Reveals an the map in a 32x32 area around the map. That is, 16 tiles in each car
 [[Heading:3]][[GameText]]Inventory()[[/GameText]] Hacks[[/Heading]]
 Due to a bug in Beta 14, the definition of a ""stockpile"" is much different than what a player would consider a stockpile. As a result, this hack provides very little actual information. [[GameText]]Inventory(Prototypes)[[/GameText]] in particular often results in 1 or even 0 stockpiles revealed on most maps. This data can be enabled/disabled in the intel console window.
 [[Heading:3]][[GameText]]Prototypes[[/GameText]][[/Heading]]
-The number of prototype IDs received is 2 on a security level 1 terminal, 3 on a level 2, and 4 on a level 3. Duplicate prototype IDs cannot be received. This hack is never grayed out as a direct hack, even if no prototype IDs are available.
+The number of prototype IDs received is 2 on a security level 1 terminal, 3 on a level 2, and 4 on a level 3. Duplicate prototype IDs cannot be received from a single hack. This hack is never grayed out as a direct hack, even if no new prototype IDs are available.
 [[Heading:3]][[GameText]]Recall()[[/GameText]] Hacks[[/Heading]]
 The base success rate of these hacks go down by 10% after each successful hack. This only applies to hacks of the same type, not all Recall hacks. This reduction only applies for the current map.
 [[Heading:3]][[GameText]]Schematic()[[/GameText]] Hacks[[/Heading]]
