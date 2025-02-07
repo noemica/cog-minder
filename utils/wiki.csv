@@ -1512,6 +1512,7 @@ As an Alien Artifact, the CRM is only found in a few specific places:
 [[Heading]]Getting corruption[[/Heading]]
 [[List]]Electromagnetic Damage: Between 50-150% of EM damage is also inflicted as corruption for non-Cogmind bots. For Cogmind, each hit has a [damage %] chance of inflicting 1% corruption.|
 Impact Damage destroying parts: Each destroyed part inflicts between 25-150% corruption to non-Cogmind bots. For Cogmind, each destroyed part inflicts between 1-5% corruption.|
+Getting hit by a Corruption Crit: Between 1-10% of the damage inflicted (including EM resistance but not other forms of damage reduction) is also inflicted as corruption. If the corruption inflicted is less than 0, it truncates to 0 rather than rounding up. For example, 5% of 10 damage would be .5% corruption, which truncates to 0.|
 Attaching a [[Corrupted Parts|Corrupted Part]]: Between 1% and [corruption % on death / 10] corruption, capped at 15%.|
 Feedback from being fully traced at an [[Interactive Machine]] (1%).[[/List]]
 Note: All sources of corruption are affected by EM damage resistance.
