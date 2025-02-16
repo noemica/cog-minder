@@ -123,10 +123,14 @@ function HackRow({
             return undefined;
         }
 
-        if (dataCoreActive && value > 0) {
+        if (dataCoreActive) {
             // If data core applies and is active then multiply the
             // base percentage by 1.5, only if > 0
             value = Math.floor(value * 1.5);
+
+            // After applying the multiplier, the base value is also max'd
+            // to 0 so negative success hacks can't occur with a data core
+            value = Math.max(0, value);
         }
 
         // Apply overall hacking modifier after data core boost
