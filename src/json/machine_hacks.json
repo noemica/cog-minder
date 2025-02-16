@@ -693,7 +693,7 @@
             {
                 "Name": "Alert(Purge)",
                 "Description": "Lower the alert level by 150 influence.",
-                "BaseChance": 50,
+                "BaseChance": 40,
                 "Indirect": "Sometimes"
             },
             {
