@@ -3422,11 +3422,11 @@ The only 2 ways to exit High Security are to trigger [[Sterilization]] after kil
 [[List]][[Game Mechanics]]|
 [[Locations]] - Information about all locations in the game|
 [[Squad]] - All types of robot squads|
-[[Bot Groups]] - List of bos classes/other groups|
+[[Bot Groups]] - List of bot classes/other groups|
 [[Acronyms]] - List of common community acronyms|
 [[Reinforced Walls]] - Reference of reinforced walls across the game|
 [[Power]]/[[Propulsion]]/[[Utilities]]/[[Weapons]] - List and categorization of all parts of the given slot type|
-[[Achievements]]
+[[Achievements]]|
 [[Non-empty Pages]] - List of non-empty pages|
 [[Fanart]]
 [[/List]]
@@ -4143,9 +4143,19 @@ Can't Catch Me: Reach a speed of FASTx3, or 4 spaces per turn.
 "Mic. Nuclear Core","Part","","","","","","","",""
 "Micro-nuke Launcher","Part","","","","","","","",""
 "Microactuators","Part","","","","","","","",""
-"Microwarp Drive","Part","Microwarp Drives are attachable non-consumable two-slot utility [[Alien Artifacts]] that allow warping across any number of open spaces nearly instantly, at the cost of Cogmind's core integrity equal to 2 per space travelled. ""Open spaces"" means any tile Cogmind would be able to freely move onto, which includes tiles occupied only by items or doors[[Comment]]Does this include undiscovered hidden doors? If not, what if Cogmind has the Structural Interface RIF ability? What about phase walls?[[/Comment]]. Microwarp Drives can be found exclusively in the western side of [[Section 7]] as unguarded Artifacts.
+"Microwarp Drive","Part","Microwarp Drives are attachable non-consumable two-slot utility [[Alien Artifacts]] that allow warping across any number of open spaces nearly instantly, at the cost of Cogmind's core integrity equal to 2 per space travelled. ""Open spaces"" means any tile Cogmind would be able to freely move onto, which includes tiles occupied only by items or doors[[Comment]]Does this include undiscovered hidden doors? If not, what if Cogmind has the Structural Interface RIF ability? What about phase walls?[[/Comment]]. A microwarp will only end upon reaching a non-open space. Microwarp Drives can be found exclusively in the western side of [[Section 7]] as unguarded Artifacts.
 
-Neither hostiles nor Cogmind are able to see any moment of a microwarp, meaning hostiles will not spot Cogmind if a microwarp passes through their FOV but ends outside of it. Cogmind will not be able to see anything while microwarping either, be it robots, items, or map structure, though the specific tiles Cogmind has travelled through will be added to the map as if they had been scanned[[Comment]]Does it only add ""empty"" tiles to map intel regardless of what type of tile was actually there, or does it add each tile's current state?[[/Comment]]. Microwarps always takes one full turn[[Comment]]I'm not sure if it's exactly 100 time units, but i would guess so?[[/Comment]], regardless of current regular propulsion speed or distance travelled.","","","","","","",""
+Neither hostiles nor Cogmind are able to see any moment of a microwarp, meaning hostiles will not spot Cogmind if a microwarp passes through their FOV but ends outside of it. Cogmind will not be able to see anything while microwarping either, be it robots, items, or map structure, though the specific tiles Cogmind has travelled through will be added to the map as if they had been scanned[[Comment]]Does it only add ""empty"" tiles to map intel regardless of what type of tile was actually there, or does it add each tile's current state?[[/Comment]]. Microwarps always takes one full turn[[Comment]]I'm not sure if it's exactly 100 time units, but i would guess so?[[/Comment]], regardless of current regular propulsion speed or distance travelled.
+
+
+[[Heading]]Uses[[/Heading]]
+[[List]]
+Faster movement - When using slow propulsion such as [[Treads]], microwarps allow moving much faster than otherwise possible, making it easier/feasible to get closer to hostiles, reposition in other ways, or flee. 
+|Stealth - Since Cogmind cannot be spotted during microwarps, clever microwarping can make it possible to go past patrols and guards without getting spotted.
+
+
+|Lower move count - Each microwarp counts as a single ""move"" action, regardless of how many tiles were travelled, which can be used to delay or even avoid the dispatch of [[Intercept Squad|Intercept Squads]].[[Comment]]Source: A Beta 11 run i did, where i didn't get any Intercept Squads in Access despite having been scanned by an S7 Researcher. I had travelled 629 spaces, but only done 572 move actions. 568 of those moves were treaded, and 5 were microwarps (yes i know it should add up to 573, don't ask me why it's counted this way).[[/Comment]]
+[[/List]]","","","","","","",""
 "Mines","Location","Mines is one of the first [[Branch|Branches]] of the game and is guaranteed to appear on -10 and -9 of [[Materials]] in every game. These maps have several unique early-game rewards that can pay off throughout the whole run, but also has some very dangerous events. The assembled infestation event is a common cause of early death in runs. Aside from the events, the map is sparsely populated with early game patrols of [[G-34 Mercenary]] and [[G-47 Trooper]] grunts and [[S-10 Pest]] swarmers. Several types of friendly and occasionally hostile Derelicts can also be found here. [[Derelict Log|Derelict Logs]] and [[Scrap]] can be found randomly on the ground.
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Mines[[/Lore]]
