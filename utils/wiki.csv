@@ -1021,7 +1021,7 @@ If Warlord forces have gained a force multiplier by the [[Encrypted Comm Array]]
 [[List]][[Dragon]]|[[Hydra]]|[[Surgeon (6)]][[/List]]
 [[Heading:3]]Imprint seal[[/Heading]]
 Imprint seals contain purple-colored bots which [[I]]will[[/I]] generate Alert for Cogmind. Be careful of alert generation as it is extremely easy to trigger [[High Security]] very soon after opening an Imprint seal. Unlike most purple allies, some of these bots will wander off without following Cogmind. If a Core Reset Matrix has been used prior to opening the seal, any [[Experimental|Experimentals]], [[Z-Light|Z-Lights]], and [[Z-Heavy|Z-Heavies]] will be blue and controllable instead of purple uncontrollable. They can contain the following bots:
-[[List]][[Fireman (7)]]|[[Martyr (7)]]|[[Mutant (8)]][[Wizard (7)]]|[[Z-Experimental (8)]]|[[Z-Experimental (10)]]|[[Z-Heavy (9)]]|[[Z-Light (9)]][[/List]]
+[[List]][[Fireman (7)]]|[[Martyr (7)]]|[[Mutant (8)]]|[[Wizard (7)]]|[[Z-Experimental (8)]]|[[Z-Experimental (10)]]|[[Z-Heavy (9)]]|[[Z-Light (9)]][[/List]]
 [[Heading:3]][[Core Reset Matrix]] (CRM) seal[[/Heading]]
 CRM seals consist only of [[Golem|Golems]] and [[Assembled (7)|Assembled]]. There is either 0 or 1 Golem per spawn, and about a dozen Assembled each time.
 [[Heading:3]]Wild Derelicts[[/Heading]]
@@ -4143,7 +4143,9 @@ Can't Catch Me: Reach a speed of FASTx3, or 4 spaces per turn.
 "Mic. Nuclear Core","Part","","","","","","","",""
 "Micro-nuke Launcher","Part","","","","","","","",""
 "Microactuators","Part","","","","","","","",""
-"Microwarp Drive","Part","","","","","","","",""
+"Microwarp Drive","Part","Microwarp Drives are attachable non-consumable two-slot utility [[Alien Artifacts]] that allow warping across any number of open spaces nearly instantly, at the cost of Cogmind's core integrity equal to 2 per space travelled. ""Open spaces"" means any tile Cogmind would be able to freely move onto, which includes tiles occupied only by items or doors[[Comment]]Does this include undiscovered hidden doors? If not, what if Cogmind has the Structural Interface RIF ability? What about phase walls?[[/Comment]]. Microwarp Drives can be found exclusively in the western side of [[Section 7]] as unguarded Artifacts.
+
+Neither hostiles nor Cogmind are able to see any moment of a microwarp, meaning hostiles will not spot Cogmind if a microwarp passes through their FOV but ends outside of it. Cogmind will not be able to see anything while microwarping either, be it robots, items, or map structure, though the specific tiles Cogmind has travelled through will be added to the map as if they had been scanned[[Comment]]Does it only add ""empty"" tiles to map intel regardless of what type of tile was actually there, or does it add each tile's current state?[[/Comment]]. Microwarps always takes one full turn[[Comment]]I'm not sure if it's exactly 100 time units, but i would guess so?[[/Comment]], regardless of current regular propulsion speed or distance travelled.","","","","","","",""
 "Mines","Location","Mines is one of the first [[Branch|Branches]] of the game and is guaranteed to appear on -10 and -9 of [[Materials]] in every game. These maps have several unique early-game rewards that can pay off throughout the whole run, but also has some very dangerous events. The assembled infestation event is a common cause of early death in runs. Aside from the events, the map is sparsely populated with early game patrols of [[G-34 Mercenary]] and [[G-47 Trooper]] grunts and [[S-10 Pest]] swarmers. Several types of friendly and occasionally hostile Derelicts can also be found here. [[Derelict Log|Derelict Logs]] and [[Scrap]] can be found randomly on the ground.
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Mines[[/Lore]]
