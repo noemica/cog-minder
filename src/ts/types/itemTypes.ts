@@ -35,6 +35,7 @@ export type ItemCategory =
     | "Heroes"
     | "Lab"
     | "Quarantine"
+    | "Protoforge"
     | "Redacted"
     | "S7 Guarded"
     | "S7 Hangar"
@@ -298,6 +299,7 @@ export type PropulsionItem = BaseItem &
         penalty: number;
         burnout?: string;
         siege?: SiegeMode;
+        special?: string;
     };
 
 export type UtilityItem = BaseItem & ItemWithUpkeep;
@@ -373,7 +375,8 @@ export type JsonItem = {
     "Heat/Move"?: string;
     Support?: string;
     Penalty?: string;
-    Siege?: SiegeMode;
+    Siege?: string; // TODO remove with b15
+    Special?: string;
     Burnout?: string;
     "Energy Upkeep"?: string;
     "Mod/Extra"?: string;

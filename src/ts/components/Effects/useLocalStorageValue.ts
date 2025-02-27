@@ -10,6 +10,7 @@ import { Spoiler, ThemeType, isValidSpoilerType, isValidThemeType } from "../../
 
 const localStorageCombatLogChartDisplayOptions = "combatLogChartDisplayOptions";
 const localStorageLastLocationName = "lastLocation";
+const localStoragePrereleasesName = "prerelease";
 const localStorageSpoilersName = "spoilers";
 const localStorageThemeName = "theme";
 const localStorageWikiEntriesName = "wikiEntries";
@@ -43,6 +44,14 @@ export function useTheme() {
 
 export function useEditableTheme() {
     return useEditableValue<ThemeType>(localStorageThemeName, "Dark", isValidThemeType);
+}
+
+export function usePrerelease() {
+    return useValue<boolean>(localStoragePrereleasesName, false);
+}
+
+export function useEditablePrerelease() {
+    return useEditableValue<boolean>(localStoragePrereleasesName, false);
 }
 
 export function useChartDisplayOptions(): [ChartDisplayOptions, SetValue<ChartDisplayOptions>] {

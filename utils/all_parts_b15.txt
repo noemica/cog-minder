@@ -1,0 +1,1208 @@
+Matter
+Data Core
+Derelict Log
+Schematic Archive
+Imprinter Data Core
+A2 Data Core
+A7 Data Core
+MAIN.C Data Core
+Architect Data Core
+Scrap
+Protomatter
+Ion Engine
+Lgt. Ion Engine
+Backup Power I
+Imp. Ion Engine
+Rnf. Ion Engine
+Hvy. Ion Engine
+Cld. Ion Engine
+Sub. Power Source
+Deuterium Engine
+Lgt. Deuterium Engine
+Backup Power III
+Nuclear Core
+Lgt. Nuclear Core
+Imp. Deuterium Engine
+Rnf. Deuterium Engine
+Hyb. Deuterium Engine
+Hvy. Deuterium Engine
+Cld. Deuterium Engine
+Enh. Nuclear Core
+Mic. Nuclear Core
+Mak. Power Source
+Angular Momentum Engine
+Lgt. Angular Momentum Engine
+F-cell Engine
+Fission Core
+Lgt. Fission Core
+Hyb. Fission Core
+Fusion Compressor
+Cold Fusion Reactor
+Neutrino Core
+Lgt. Neutrino Core
+Rnf. Fission Core
+Enh. Fission Core
+Cld. Fission Core
+Mic. Fission Core
+Fusion Reactor
+Antimatter Reactor
+Lgt. Antimatter Reactor
+Rnf. Antimatter Reactor
+Hyb. Antimatter Reactor
+Backup Power VII
+MA-1KR's Cyclogen
+Ovr. Antimatter Reactor
+Hvy. Antimatter Reactor
+Mni. Fusion Reactor
+Imp. Fusion Compressor
+Mic. Neutrino Core
+Zio. Light DM Reactor
+Zio. Heavy DM Reactor
+Particle Reactor
+Lgt. Particle Reactor
+Mic. Antimatter Reactor
+Com. Particle Reactor
+Cld. Antimatter Reactor
+Graviton Reactor
+Asb. Flux Generator
+Quantum Reactor
+Lgt. Quantum Reactor
+Rnf. Quantum Reactor
+Imp. Quantum Reactor
+Hyb. Graviton Reactor
+Zero-point Reactor
+Vortex Chain Reactor
+Singularity Reactor
+Cep. Zero-point Core
+Matter Drive
+Meta Core
+Lgt. Treads
+Imp. Treads
+Spk. Treads
+Arm. Treads
+Adv. Treads
+Ovr. Treads
+Med. Treads
+Imp. Medium Treads
+Spk. Medium Treads
+Arm. Medium Treads
+Hvy. Treads
+Ovr. Medium Treads
+Tri-treads
+Wartreads
+Adv. Medium Treads
+Enh. Armored Medium Treads
+Imp. Heavy Treads
+Hvy. Siege Treads
+Spk. Heavy Treads
+Vmp. Heavy Siege Treads
+DD-05H's Wartreads
+Biometal Medium Treads
+Arm. Heavy Treads
+Adv. Heavy Treads
+Imp. Heavy Siege Treads
+Centrium Heavy Treads
+Megatreads
+Biometal Heavy Treads
+Exp. Biometal Heavy Treads
+Enh. Armored Heavy Treads
+Adv. Heavy Siege Treads
+Hdn. Centrium Heavy Treads
+Exp. Biometal Medium Treads
+Exp. Heavy Siege Treads
+Aluminum Leg
+Imp. Aluminum Leg
+Carbon-fiber Leg
+Titanium Leg
+Ovr. Titanium Leg
+VSS Leg
+Imp. Carbon-fiber Leg
+Imp. Titanium Leg
+Lgt. Armored Exoskeleton
+Mak. Leg
+Flexi-carbon Leg
+Arm. Leg
+Imp. VSS Leg
+Zio. Composite Leg I
+Thunder Leg
+Med. Armored Exoskeleton
+Ovr. Flexi-carbon Leg
+Enh. Flexi-carbon Leg
+Enh. Armored Leg
+Arachnoskeleton
+Myomer Leg
+Adv. VSS Leg
+Shield Leg
+Ovr. Armored Exoskeleton
+Adv. Myomer Leg
+Exp. Flexi-carbon Leg
+Zio. Composite Leg II
+Cargo Legs
+Biometal Leg
+Imp. Thunder Leg
+Hvy. Armored Exoskeleton
+Enh. Biometal Leg
+Exp. Myomer Leg
+Enh. Multireflex Exoskeleton
+Tripod Weapons Platform
+Asb. Alloy Leg
+Centrium Leg
+Hvy. Shield Leg
+Hdn. Centrium Leg
+Exp. Biometal Leg
+Exp. VSS Leg
+Zio. Supercomposite Leg
+Potential Leg
+Myomer Exoskeleton
+Sigix Exoskeleton
+Wheel
+Com. Wheel
+Arm. Wheel
+Sub. Monowheel
+Ovr. Scrapsphere
+Arm. Huge Wheel
+Ballwheel
+Ovr. Huge Scrapsphere
+Centrium Wheel
+Hdn. Centrium Wheel
+Hover Unit
+Backup Propulsion I
+Imp. Hover Unit
+Airjet
+Aerolev Unit
+Backup Propulsion III
+Gravmag System
+Imp. Airjet
+Cld. Airjet
+Imp. Gravmag System
+Cld. Aerolev Unit
+Cmb. Airjet
+Gravmag Array
+Mak. Hover Unit
+Zio. Glidesys I
+Antigrav System
+Gyrokinetic Inverter
+Linear Gravjet
+Cld. Gravmag System
+Cmb. Gravmag System
+Imp. Antigrav System
+Imp. Gyrokinetic Inverter
+Imp. Linear Gravjet
+Backup Propulsion VII
+Zio. Glidesys II
+Cld. Antigrav System
+Cmb. Antigrav System
+Antigrav Array
+Exp. Gyrokinetic Inverter
+Cld. Linear Gravjet
+Cmb. Linear Gravjet
+Flight Unit
+VTOL Module
+Imp. Flight Unit
+Cesium-ion Thruster
+Surge Thruster
+Imp. VTOL Module
+Xenon Bombardment Thruster
+Imp. Cesium-ion Thruster
+Cld. VTOL Module
+Mak. Flight Unit
+Nuclear Pulse Thruster
+Imp. Surge Thruster
+Mni. Nuclear Pulse Thruster
+Cld. Cesium-ion Thruster
+Biomechanical Wings
+Field Propulsion Drive
+Cld. Nuclear Pulse Thruster
+Exp. Cesium-ion Thruster
+Nuclear Pulse Array
+Impulse Thruster
+Adv. Surge Thruster
+Cld. Field Propulsion Drive
+Field Propulsion Array
+Diametric Drive
+Flying Fortress v7
+Q-thruster
+Electron Diverter
+Imp. Diametric Drive
+Cld. Impulse Thruster
+Impulse Thruster Array
+Flightbrick
+Imp. Q-thruster
+Cld. Q-thruster
+Exp. Q-thruster
+Exp. Surge Thruster
+Scrap Engine
+Arm. Scrap Engine
+Scrap Suit
+0bPrime Scrap Suit
+Matter Focus
+Desublimator
+Power Amplifier
+Adv. Power Amplifier
+Exp. Power Amplifier
+Thermal Generator
+Imp. Thermal Generator
+Adv. Thermal Generator
+Exp. Thermal Generator
+Cryofiber Web
+Imp. Cryofiber Web
+Adv. Cryofiber Web
+Exp. Cryofiber Web
+Heat Sink
+Imp. Heat Sink
+Adv. Heat Sink
+Exp. Heat Sink
+Cooling System
+Imp. Cooling System
+Adv. Cooling System
+Exp. Cooling System
+Mak. Coolant Network
+Coolant Network
+Asb. Nanovents
+2N-1CE's Frost Array
+Disposable Heat Sink
+Coolant Injector
+Imp. Coolant Injector
+Adv. Coolant Injector
+Exp. Coolant Injector
+Mak. Microdissipator Network
+Sml. Storage Unit
+Med. Storage Unit
+Lrg. Storage Unit
+Hcp. Storage Unit
+Huge Storage Unit
+Cargo Storage Unit
+Lgt. Humpback
+Humpback
+Vmp. Humpback
+Lightpack 2.0
+Sml. Battery
+Med. Battery
+Lrg. Battery
+Hcp. Battery
+Com. Battery
+Energy Well
+Imp. Energy Well
+Adv. Energy Well
+Exp. Energy Well
+Cep. Chromion Battery
+Zio. Biocell
+Asb. Biocell Array
+Zio. Biocell Array
+Superbattery
+Sml. Matter Pod
+Med. Matter Pod
+Lrg. Matter Pod
+Hcp. Matter Pod
+Com. Matter Pod
+Matter Compressor
+Imp. Matter Compressor
+Adv. Matter Compressor
+Exp. Matter Compressor
+YI-UF0's Bottomless Matter Pit
+Cep. NT7 Matterbank
+Weight Redist. System
+Adv. Weight Redist. System
+Gravity Neutralizer
+Adv. Gravity Neutralizer
+Quantum Shading Machine
+Asb. Suspension Frame
+Adv. Quantum Shading Machine
+Rocket Booster
+Asb. Metafiber Network
+Zio. Metafield Generator
+ST Field Compressor
+Siege Articulator
+Structural Scanner
+Deep Structural Scanner
+Plexus Tether
+Trap Scanner
+Imp. Trap Scanner
+Mak. Trap Scanner
+Adv. Trap Scanner
+Machine Analyzer
+Triangulator
+Visual Processing Unit
+Sub. Optics
+Adv. Visual Processing Unit
+Enh. Optical Array
+Exp. Optical Array
+Spectral Analyzer
+Sensor Array
+Imp. Sensor Array
+Adv. Sensor Array
+Lrn. Sensor Array
+Mak. Sensor Array
+Exp. Sensor Array
+Signal Interpreter
+Imp. Signal Interpreter
+Adv. Signal Interpreter
+Exp. Signal Interpreter
+Active Sensor Suite
+Exp. Active Sensor Suite
+Terrain Scanner
+Imp. Terrain Scanner
+Adv. Terrain Scanner
+Mak. Terrain Scanner
+Lrn. Terrain Scanner
+Exp. Terrain Scanner
+Surveybot 24 Scanner
+Terrain Scan Processor
+Imp. Terrain Scan Processor
+Mak. Terrain Scan Processor
+Adv. Terrain Scan Processor
+Exp. Terrain Scan Processor
+Surveybot 17 Chip
+Surveybot 24 Chip
+Seismic Detector
+Transport Network Coupler
+Modified TNC
+Encrypted Comm Array
+0b10 Decoder Chip [Generic]
+0b10 Decoder Chip [Looter]
+0b10 Decoder Chip [Scout]
+0b10 Decoder Chip [Skirmisher]
+0b10 Alert Chip
+Salvage Targeting Computer
+Imp. Salvage Targeting Computer
+Mak. Salvage Targeting Computer
+Adv. Salvage Targeting Computer
+Partition Strike Chip
+Asb. Combat Suite
+Targeting Computer
+Imp. Targeting Computer
+Mak. Targeting Computer
+Adv. Targeting Computer
+Exp. Targeting Computer
+Multitargeting Array
+Tactical Coordination Suite
+Melee Analysis Suite
+Imp. Melee Analysis Suite
+Adv. Melee Analysis Suite
+Exp. Melee Analysis Suite
+Launcher Guidance Computer
+Imp. Launcher Guidance Computer
+Adv. Launcher Guidance Computer
+Weapon Mount
+Target Analyzer
+Imp. Target Analyzer
+Adv. Target Analyzer
+Exp. Target Analyzer
+Core Analyzer
+Exp. Core Analyzer
+Armor Integrity Analyzer
+Imp. Armor Integrity Analyzer
+Exp. Armor Integrity Analyzer
+Recoil Stabilizer
+Adv. Recoil Stabilizer
+Matter Filter
+Prc. Matter Filter
+Energy Filter
+Prc. Energy Filter
+Particle Charger
+Imp. Particle Charger
+Adv. Particle Charger
+Particle Accelerator
+Imp. Particle Accelerator
+Adv. Particle Accelerator
+Kinecellerator
+Imp. Kinecellerator
+Adv. Kinecellerator
+Exp. Kinecellerator
+Expert System
+Heavy Servo Lattice
+VL-GR5's Timing Chip
+Launcher Loader
+Quantum Capacitor
+Weapon Cycler
+Imp. Weapon Cycler
+Adv. Weapon Cycler
+Exp. Weapon Cycler
+Microactuators
+Nanoactuators
+Femtoactuators
+Actuator Array
+Imp. Actuator Array
+Adv. Actuator Array
+Exp. Actuator Array
+Force Booster
+Imp. Force Booster
+Adv. Force Booster
+Stasis Canceller
+Transmission Jammer
+Mak. Transmission Jammer
+Imp. Transmission Jammer
+Adv. Transmission Jammer
+Exp. Transmission Jammer
+ECM Suite
+Mak. ECM Suite
+Adv. ECM Suite
+Exp. ECM Suite
+Active Sensor Spoofer
+Reaction Control System
+Imp. Reaction Control System
+Adv. Reaction Control System
+Exp. Reaction Control System
+Phase Shifter
+Imp. Phase Shifter
+Adv. Phase Shifter
+Exp. Phase Shifter
+Cloaking Device
+Mak. Cloaking Device
+Imp. Cloaking Device
+Adv. Cloaking Device
+Exp. Cloaking Device
+Cloak of Protection
+5H-AD0's Cloak
+ID Mask
+Core Shielding
+Imp. Core Shielding
+Mak. Core Shielding
+Exp. Core Shielding
+Cep. Core Shell
+Power Shielding
+Imp. Power Shielding
+Mak. Power Shielding
+Exp. Power Shielding
+Propulsion Shielding
+Imp. Propulsion Shielding
+Mak. Propulsion Shielding
+Exp. Propulsion Shielding
+Utility Shielding
+Imp. Utility Shielding
+Mak. Utility Shielding
+Exp. Utility Shielding
+Weapon Shielding
+Imp. Weapon Shielding
+Mak. Weapon Shielding
+Exp. Weapon Shielding
+Zio. Weapon Casing
+Backup Plating I
+Backup Plating III
+Backup Plating VII
+Lgt. Armor Plating
+Med. Armor Plating
+Hvy. Armor Plating
+Zio. Light Carapace
+Zio. Heavy Carapace
+Hrd. Light Armor Plating
+Hrd. Medium Armor Plating
+Hrd. Heavy Armor Plating
+Imp. Light Armor Plating
+Imp. Medium Armor Plating
+Imp. Heavy Armor Plating
+Mak. Light Armor Plating
+Mak. Medium Armor Plating
+Mak. Heavy Armor Plating
+Lyr. Light Armor Plating
+Lyr. Medium Armor Plating
+Lyr. Heavy Armor Plating
+Gun Armor
+Centrium Light Armor Plating
+Centrium Medium Armor Plating
+Centrium Heavy Armor Plating
+Centrium Linked Plating
+Reactive Plating
+Med. Reactive Plating
+Mak. Kinetic Plating
+Hvy. Reactive Plating
+Superdense Plating
+Reflective Plating
+Med. Reflective Plating
+Mak. Thermal Plating
+Hvy. Reflective Plating
+8R-AWN's Armor/TH
+8R-AWN's Armor/EX
+Insulated Plating
+Med. Insulated Plating
+Hvy. Insulated Plating
+Damper Plating
+Zio. Shade Carapace
+Zio. Shade Armor
+Asb. Alloy Armor
+Mak. Ablative Armor
+Active Cooling Armor
+Scrap Shield
+Enh. Scrap Shield
+Powered Armor
+Imp. Powered Armor
+Adv. Powered Armor
+Exp. Powered Armor
+1C-UTU's Buckler
+Tower Shield
+Lgt. Regenerative Plating
+Med. Regenerative Plating
+Hvy. Regenerative Plating
+SHELL Armor
+Phase Armor
+Vmp. Brace Plating
+Graphene Brace
+Focal Shield
+Imp. Focal Shield
+Adv. Focal Shield
+Exp. Focal Shield
+Thermal Shield
+Imp. Thermal Shield
+Adv. Thermal Shield
+Exp. Thermal Shield
+Thermal Barrier
+Thermal Defense Suite
+Imp. Thermal Defense Suite
+Adv. Thermal Defense Suite
+Exp. Thermal Defense Suite
+Shock Absorption System
+Imp. Shock Absorption System
+Exp. Shock Absorption System
+EM Shield
+Adv. EM Shield
+Exp. EM Shield
+EM Disruption Field
+Adv. EM Disruption Field
+Exp. EM Disruption Field
+ME-RLN's Chromatic Screen
+Hardlight Generator
+Imp. Hardlight Generator
+Adv. Hardlight Generator
+Exp. Hardlight Generator
+Shield Generator
+Imp. Shield Generator
+Adv. Shield Generator
+Exp. Shield Generator
+Force Field
+Imp. Force Field
+Adv. Force Field
+Exp. Force Field
+7V-RTL's Ultimate Field
+Vortex Field Projector
+Remote Shield
+Imp. Remote Shield
+Adv. Remote Shield
+Exp. Remote Shield
+Remote Force Field
+Imp. Remote Force Field
+Adv. Remote Force Field
+AEGIS Remote Shield
+Phase Redirector
+Field Manipulator
+Energy Deflector
+Point Defense System
+Imp. Point Defense System
+Adv. Point Defense System
+Cep. Antimissile System
+EX Chip 1
+Hacking Suite
+Mak. Hacking Suite
+Imp. Hacking Suite
+Adv. Hacking Suite
+Exp. Hacking Suite
+System Mapper
+Deep Network Scanner
+Architect God Chip A
+EX Chip 2
+System Shield
+Mak. System Shield
+Imp. System Shield
+Adv. System Shield
+Exp. System Shield
+Ghost Barrier
+Quantum Router
+Architect God Chip D
+Authchip [R/NC]
+Authchip [R/Combat]
+Authchip [Power]
+Authchip [Propulsion]
+Authchip [Device]
+Authchip [Storage]
+Authchip [Processor]
+Authchip [Armor]
+Authchip [Weapon]
+Relay Coupler [NC]
+Relay Coupler [C]
+Relay Coupler [Swarmer]
+Relay Coupler [Cutter]
+Relay Coupler [Grunt]
+Relay Coupler [Brawler]
+Relay Coupler [Duelist]
+Relay Coupler [Sentry]
+Relay Coupler [Demolisher]
+Relay Coupler [Specialist]
+Relay Coupler [Hunter]
+Relay Coupler [Heavy]
+Relay Coupler [Behemoth]
+Relay Coupler [Programmer]
+Relay Coupler [Proto]
+Skeleton Box
+01-MTF's Autohacker
+Component Analysis Suite
+Imp. Component Analysis Suite
+Adv. Component Analysis Suite
+A0-MCA's Component Scanner
+Tech Extrapolator
+Dynamic Insulation System
+Imp. Dynamic Insulation System
+Adv. Dynamic Insulation System
+System Guard
+Imp. System Guard
+Exp. System Guard
+Corruption Screen
+Imp. Corruption Screen
+Adv. Corruption Screen
+System Restoration Module
+Mak. System Restoration Module
+Imp. System Restoration Module
+Adv. System Restoration Module
+System Purifier
+Exp. System Purifier
+Tractor Beam
+Hpw. Tractor Beam
+Lrn. Tractor Beam
+Cep. Matter Streamer
+Mobile Refinery Mk. CCLXVII
+Trap Extractor
+Imp. Trap Extractor
+Adv. Trap Extractor
+Trap Reconfigurator
+Recalibrator
+Imp. Recalibrator
+Adv. Recalibrator
+Exp. Recalibrator
+Field Recycling Unit
+Imp. Field Recycling Unit
+Adv. Field Recycling Unit
+Exp. Field Recycling Unit
+Drone Bay
+Z-Drone Bay
+Mni. Drone Bay
+Mapping Drone Bay
+Adv. Drone Bay
+Bomb Drone Bay
+Thief Drone Bay
+Decoy Drone Bay
+Splice Drone Bay
+Combat Drone Bay
+Assault Drone Bay
+Stealth Drone Bay
+Swarm Drone Bay
+Supersonic Drone Bay
+Sensor Drone Bay
+Hacking Drone Bay
+Minesniffer Drone Bay
+Army-in-a-Box
+Master Drone Bay
+Wardrone Bay
+Cobbler Unit
+Bomb Factory No. 2
+Mobile Assembly Unit
+Heart of Steel
+Scrapoid Pod
+GOLEM Unit
+PSU Rigger
+Machine Rigger
+Phasing AFG
+AS-neutralizer No. 17b
+V3-11A's Pendant
+Amulet of Y3-NDR
+Chronowheel
+Power Bank
+Rainbow Chip
+VL-GR5's Exoskeleton "Deathgrip"
+Dimensional Node Initializer
+Transdimensional Reconstructor
+Hpw. Transdimensional Reconstructor
+Supercharged TR
+Core Expander
+Core Regenerator
+Integrity Redistributor
+Integrated Dissipator
+Supercharged Integrated Dissipator
+Integrated Thermoelectric Network
+Integrated Reactor
+Supercharged Integrated Reactor
+Integrated Mediator
+Core Membrane
+Navigation Efficiency Matrix
+Core Reset Matrix
+Subatomic Replicator
+Terrabomb
+Core Physics Calibrator
+Personal Teleporter v0.10
+Telecube
+Spacefold Activator
+Microwarp Drive
+LC Capacitor
+LRC Armor
+LRC Storage
+LRC Energy Well
+LRC Matter Compressor
+LRC Inertial Stabilizer
+LRC Insulator
+EM Pulse Gun
+Hvy. EM Pulse Gun
+EM Shotgun
+Imp. EM Shotgun
+Shock Rifle
+Riot Gun
+Hvy. EM Shotgun
+Lightning Gun
+Hvy. Riot Gun
+Arc Projector
+Prc. Shock Rifle
+Hpw. Shock Rifle
+Arc Thrower
+Imp. Lightning Gun
+Tesla Rifle
+Imp. Arc Projector
+Hvy. Tesla Rifle
+Hyp. EM Gauss Rifle
+Imp. Arc Thrower
+01-MTF's Shockpuncher
+Gamma Rifle
+Tachyon Dispersion Ray
+Immobilizer
+Electrostorm Shotgun
+Modified EM Gauss Rifle
+AWS/EX-DEC
+Enh. Gamma Rifle
+Med. Laser
+Sml. Laser
+Salvaging Laser
+Backup Laser I
+Beam Rifle
+Particle Gun
+Spread Laser
+Imp. Medium Laser
+Sub. Laser
+Autobeam
+Field Laser
+Pulse Rifle
+Ovr. Pulse Rifle
+Backup Laser III
+Hvy. Particle Gun
+Prc. Beam Rifle
+Adv. Beam Rifle
+Hvy. Laser
+Gatling Laser
+Cld. Pulse Rifle
+Hpw. Field Laser
+Imp. Spread Laser
+Mak. Laser
+Plasma Rifle
+Thermic Laser
+Beamcaster
+Force Rifle
+Imp. Heavy Laser
+Storm Laser
+Zio. Laser-S
+Wave Gun
+Variable Charge Gun
+Hvy. Beamcaster
+Ovr. Beamcaster
+Cld. Plasma Rifle
+Enh. Force Rifle
+Hvy. Gatling Laser
+Zio. Phaser-S
+Phase Gun
+Dispersion Rifle
+Backup Laser VII
+Plasma Storm
+Adv. Plasma Rifle
+Hvy. Wave Gun
+Adv. Variable Charge Gun
+Cld. Phase Gun
+Lrn. Gatling Laser
+Warp Gun
+Vortex Rifle
+Zio. Laser-M
+AWS/Thermal
+PD Laser
+KN-7UR's Autopenetrator
+Quantum Rifle
+Ovr. Quantum Rifle
+Prc. Phase Gun
+Hvy. Dispersion Rifle
+Vortex Shotgun
+Vortex Rail
+Zio. Phaser-M
+Enh. Quantum Rifle
+Zio. Laser-H
+Hvy. Quantum Rifle
+Zio. Phaser-H
+Gatling Beam
+Sigix Sheargun
+Modified Sigix Sheargun
+Lgt. EM Pulse Cannon
+EM Pulse Cannon
+Imp. EM Pulse Cannon
+Proton Cannon
+Lrn. Proton Cannon
+Disruptor Cannon
+Hvy. Proton Cannon
+HERF Cannon
+Hvy. Disruptor Cannon
+Cld. Proton Cannon
+Proton Burst Cannon
+Com. HERF Cannon
+Latent Energy Streamer
+NK-0LA's Tesla Doomcannon
+EMDS
+Hpw. Disruptor Cannon
+Beam Cannon
+Particle Cannon
+Adv. Beam Cannon
+Sub. Beam Cannon
+Hvy. Particle Cannon
+Ion Cannon
+Plasma Cannon
+Hvy. Ion Cannon
+Cld. Particle Cannon
+Phase Cannon
+Hvy. Plasma Cannon
+Cld. Plasma Cannon
+Com. Ion Cannon
+Ion Burst Cannon
+Adv. Plasma Cannon
+Hvy. Phase Cannon
+Ovr. Phase Cannon
+Neutron Cannon
+Powered Cannon
+Matter Neutralizer
+Hvy. Neutron Cannon
+Lrn. Phase Cannon
+Cld. Phase Cannon
+Vortex Cannon
+Gui. Plasma Cannon
+Nova Cannon
+Ovr. Nova Cannon
+Imp. Matter Neutralizer
+Exp. Thermic Cannon
+Vortex Driver
+Zio. Alpha Cannon
+Asb. Focal Cannon
+Enh. Nova Cannon
+Firepult
+YOLO Cannon
+Potential Cannon
+Warp Cannon
+Cld. Nova Cannon
+Null Cannon
+Hyp. Alpha Cannon
+Zio. Alpha Cannon Mk. II
+Imp. Potential Cannon
+Multinova Projection Cannon
+Disintegrator
+Core Cannon
+Sigix Shearcannon
+Drained L-Cannon
+L-Cannon
+BFG-9k Vortex Edition
+Assault Rifle
+Lgt. Assault Rifle
+Bolt Gun
+Hvy. Assault Rifle
+Autogun
+Shotgun
+Battle Rifle
+Sub. Machine Gun
+Imp. Assault Rifle
+Minigun
+Hpw. Shotgun
+Barrage Gun
+Ovr. Barrage Gun
+Enh. Autogun
+Gauss Rifle
+Flak Gun
+Prc. Assault Rifle
+Hvy. Battle Rifle
+Mak. Shrapnel Gun
+Coil Gun
+Hyp. Gauss Rifle
+Hvy. Machine Gun
+Imp. Heavy Machine Gun
+Com. Gauss Rifle
+XL Autogun Subcomponent
+KE Penetrator
+Hyp. Coil Gun
+Ovr. Coil Gun
+Imp. KE Penetrator
+Enh. Coil Gun
+Com. Coil Gun
+Railgun
+Adv. KE Penetrator
+Linked Autogun
+AWS/Gauss
+Hyp. Railgun
+Ovr. Railgun
+Helical Railgun
+Com. Railgun
+XL Autogun Array
+12-ASH's Boomstick
+8R-AWN's Boregun
+Multirail
+Hyp. Multirail
+Cep. XC Strikerail
+5H-AD0's Sniper Rifle
+A3's Sniper Rifle
+Lgt. Cannon
+Imp. Light Cannon
+Battle Cannon
+Assault Cannon
+Hvy. Assault Cannon
+Flak Cannon
+Adv. Assault Cannon
+Gauss Cannon
+Slug Cannon
+Mni. Assault Cannon
+Siege Cannon Replica
+Magnetic Acceleration Cannon
+Hvy. Flak Cannon
+Bore Cannon
+Antimatter Cannon
+Siege Cannon
+Mass Driver
+Hvy. Mass Driver
+Enh. Gauss Cannon
+Hyp. Gauss Cannon
+Ovr. Bore Cannon
+Tri-rail Accelerator
+Hardcell Cannon
+Hvy. Gauss Cannon
+Hyp. Mass Driver
+Hvy. Autocannon
+Lgt. Antimatter Cannon
+Linear Accelerator
+Hvy. Linear Accelerator
+Ovr. Linear Accelerator
+Com. Mass Driver
+Hvy. Hardcell Cannon
+Enh. Hardcell Cannon
+Com. Linear Accelerator
+Hyp. Linear Accelerator
+Hcl. Linear Accelerator
+Graviton Cannon
+Blast Cannon
+P1-3CE's Gatling Flakker
+Hvy. Siege Cannon
+AWS/Autocannon
+Perforator
+Omega Cannon
+PL-3XN's Obliterator
+EMP Blaster
+Shock Bomb Launcher
+Adv. EMP Blaster
+Proton Missile Launcher
+Imp. Proton Missile Launcher
+Gui. EMP Blaster
+Hvy. Shock Bomb Launcher
+Tesla Bomb Launcher
+Hvy. Proton Missile Launcher
+Com. Tesla Bomb Launcher
+Gamma Bomb Array
+Enh. Gamma Bomb Array
+Grenade Launcher
+Rocket Launcher
+Mni. Grenade Launcher
+Sub. Shrapnel Launcher
+Imp. Grenade Launcher
+Missile Launcher
+Concussive RPG
+YI-UF0's Doublenader
+Hvy. Rocket Launcher
+Hvy. Missile Launcher
+Gui. Missile Launcher
+Prc. Grenade Launcher
+Rocket Array
+Lrn. Missile Launcher
+Imp. Concussive RPG
+Prc. Rocket Launcher
+Scatter Rocket Array
+Smartbomb Launcher
+Mni. Smartbomb Launcher
+Tiamat Missile Launcher
+Thermoblaster
+Micro-nuke Launcher
+Adv. Concussive RPG
+Neutron Missile Launcher
+Fusion Bomb Launcher
+Hellfire Missile Launcher
+Adv. Micro-nuke Launcher
+Tactical Quantum Warhead
+Vortex Catalyst Activator
+Chain Missile Launcher
+Ragnarok Missile Launcher
+Point Singularity Launcher
+Gui. Micro-nuke Launcher
+Cep. Concussive Dispersal Blaster
+99-TNT's Nukerbomber
+Exp. Neutron Missile Launcher
+Z-bomb Delivery System
+Sigix Terminator
+Supercharged Sigix Terminator
+Containment Facilitator
+Dirty Datajack
+Datajack
+Imp. Datajack
+Adv. Datajack
+Remote Datajack
+Imp. Remote Datajack
+Adv. Remote Datajack
+Exp. Remote Datajack
+Gui. Remote Datajack
+ME-RLN's Wand
+System Spiker
+Field Lobotomy Kit
+Mining Laser
+LU-1G1's Laser Shovel
+Welding Torch
+Plasma Cutter
+Imp. Plasma Cutter
+Exp. Plasma Cutter
+CPS Tube
+Multitool
+Flamer
+Enh. Flamer
+Plasma Flamer
+RU-N14's Throwing Claymores
+RU-N14's Throwing Claymores v3
+Warlord Statue
+Voltaic Drivehammer
+AD-0RF's Magmablaster
+IN-MT5's Pitchfork "Insurrection"
+Shield Trident
+Junk Cannon
+Stasis Beam
+Stasis Projector
+Exp. Stasis Projector
+Molecular Deconstructor
+Hammer
+Mace
+Flail
+Maul
+Hvy. Hammer
+Hvy. Mace
+Hvy. Flail
+Great Maul
+Powered Hammer
+Mak. Hammer
+Power Maul
+Impact Mace
+Shock Maul
+Thunder Hammer
+Gravity Flail
+CL-ANK's Mallet
+Core Stripper
+Mining Claw
+Katana
+Scythe
+Axe
+Blade Saw
+Chainsword
+Ripper
+Mak. Axe
+Mak. Sword
+Great Axe
+Greatsword
+Ripteeth
+Power Sword
+Falx
+Carbide Saw
+Segregator
+Tearclaws
+Companion Sword
+Phasing Sabre
+Plasma Sword
+Ionic Axe
+Vmp. Broadsword
+Dual-blade Saw
+Vibroblade
+Molecular Scythe
+Centrium Greatsword
+Master Tearclaws
+Longsword +1
+Nanosword
+Particle Cleaver
+1C-UTU's Sword "Lootmaker"
+DM-GVY's Chainsaw
+Exp. Terror Saw
+1C-UTU's Sword "Choppy"
+Quantum Companion
+Superquantum Companion
+Sigix Broadsword
+Spear
+Mak. Spear
+CR-A16's Pointy Stick
+Hvy. Pick
+Lance
+Kinetic Spear
+Force Lance
+Plasma Lance
+Enh. Force Lance
+Vortex Lance
+CR-A16's Behemoth Slayer
+Exp. Jetlance
+Thermal Lance
+Blade Trap
+Segregator Trap
+Explosive Trap
+Heavy Explosive Trap
+Tiamat Bomb Trap
+Fusion Bomb Trap
+Hellfire Trap
+Armageddon Trap
+Dirty Bomb Trap
+EMP Trap
+Proton Bomb Trap
+Tesla Bomb Trap
+Gamma Bomb Trap
+Shrapnel Trap
+Vortex Trap
+Piercing Trap
+Shock Trap
+EM Surge Trap
+Fire Trap
+Heat Bomb Trap
+Stasis Trap
+Scrap Shield Fragment
+SUBCON Basin
+Signal Generator
+Self-destruct Interrupter
+DRS Beacon
+Sapper Charge
+Deploy-a-Sentry
+Botcube
+Lrg. Botcube
+PL-3XN's Ring of Power
+Disassembled Obliterator
+GAL Module
+Portable AFG
+UFD Drillbomb
+Zhirov Special
+SGEMP Prototype
+Terrabomb Derivative
+Sigix Containment Pod
+Sigix Corpse
+Meganuke
+Gamma Refractor
+T-thruster
+Mak. Microthruster
+Integrated Tracker Drive
+Detonator
+Splice Injector
+Mni. Tearclaws
+DAS Cannon
+Compactor
+Asb. Blade
+Asb. F-torch
+Asb. Gauss Rifle
+Asb. Heavy Rifle
+Asb. Hover System
+Asb. Hover Unit
+Asb. Maul
+Asb. P-maul
+Asb. P-torch
+Asb. P-sword
+Asb. Rifle
+Asb. Shotgun
+Vortex Shredder
+Centrium Claws
+T.R.O.L.L. Exoskeleton
+Master Link

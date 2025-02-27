@@ -10,6 +10,7 @@ import {
     OtherItem,
     PowerItem,
     PropulsionItem,
+    SiegeMode,
     UtilityItem,
     WeaponItem,
 } from "../types/itemTypes";
@@ -32,11 +33,11 @@ export class ItemData {
 
         // Create items
         Object.keys(items).forEach((key, index) => {
-            const item = items[key];
+            const item = items[key] as JsonItem;
             const itemName = item.Name;
             let newItem: Item | undefined;
 
-            let category: ItemRatingCategory = item.Category;
+            let category: ItemRatingCategory = item.Category as ItemRatingCategory;
             let rating = parseIntOrUndefined(item.Rating) ?? 1;
             if (category == "Alien") {
                 rating += 0.75;
@@ -202,7 +203,12 @@ export class ItemData {
                         heatPerMove: parseIntOrUndefined(item["Heat/Move"]),
                         matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
                         modPerExtra: parseIntOrUndefined(item["Mod/Extra"]),
-                        siege: item.Siege,
+                        siege: (item.Siege
+                            ? item.Siege
+                            : item.Special === SiegeMode.High || item.Special === SiegeMode.Standard
+                              ? item.Special
+                              : undefined) as SiegeMode,
+                        special: item.Special,
                         index: index,
                         specialProperty: specialProperty,
                         spoiler: spoiler,

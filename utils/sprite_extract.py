@@ -65,7 +65,7 @@ SPRITES = [
     Sprite(15, 12, 1, 'Elite (Derelict)'),
     Sprite(16, 12, 1, 'Scrapoid (Derelict)'),
     Sprite(18, 12, 1, 'Heavy'),
-    # Sprite(19, 12, 2, ''), Unused?
+    Sprite(19, 12, 2, 'Scraphulk (Derelict)'),
     Sprite(23, 12, 3, 'Borebot (Derelict)'),
 
     Sprite(0, 13, 1, 'Cogmind'),
@@ -138,7 +138,7 @@ SPRITES = [
     Sprite(12, 16, 3, 'MAIN.C1'),
     Sprite(21, 16, 1, 'MAIN.C2'),
     Sprite(22, 16, 1, 'Architect'),
-    # Sprite(23, 16, 1, ''), UNUSED?
+    Sprite(23, 16, 1, 'Optimus'),
     Sprite(24, 16, 2, 'Triborg'),
 ]
 
@@ -205,7 +205,7 @@ def process_font(font, fonts_path):
         if font.tile_width == 24:
             # Create zoomed 48x48 tile as well
             sprite_image = sprite_image.resize((sprite_image.width * 2, sprite_image.height * 2),
-                                               resample=Image.Resampling.NEAREST)
+                                               resample=Image.NEAREST)
             sprite_image.save(path.join(OUTPUT_PATH, '{}_{}.png'.format(sprite.name, font.tile_height * 2)))
 
 

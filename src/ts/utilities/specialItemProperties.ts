@@ -19,7 +19,10 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     // Antimissile
     "Point Defense System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 8 } },
     "Point Defense Array": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 16 } },
+    "Imp. Point Defense System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 16 } },
     "Antimissile System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 24 } },
+    "Adv. Point Defense System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 24 } },
+    "Cep. Antimissile System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 48 } },
 
     // Combat Suite
     "Asb. Combat Suite": {
@@ -72,12 +75,17 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: true } },
     "Imp. Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: true } },
     "Adv. Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: true } },
+    "Exp. Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: true } },
     "Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: false } },
     "Imp. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: false } },
     "Adv. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: false } },
     "Exp. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: false } },
     "Remote Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
     "Imp. Remote Force Field": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.5, remote: true },
+    },
+    "Adv. Remote Force Field": {
         active: "Part Active",
         trait: { kind: "DamageReduction", multiplier: 0.5, remote: true },
     },
@@ -108,6 +116,18 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     },
     "Adv. EM Disruption Field": {
         active: "Always",
+        trait: { kind: "DamageResists", resists: { Electromagnetic: 75 } },
+    },
+    "EM Shield": {
+        active: "Part Active",
+        trait: { kind: "DamageResists", resists: { Electromagnetic: 25 } },
+    },
+    "Adv. EM Shield": {
+        active: "Part Active",
+        trait: { kind: "DamageResists", resists: { Electromagnetic: 50 } },
+    },
+    "Exp. EM Shield": {
+        active: "Part Active",
         trait: { kind: "DamageResists", resists: { Electromagnetic: 75 } },
     },
     "Damper Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Electromagnetic: 90 } } },
@@ -242,6 +262,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Asb. Biocell Array": { active: "Always", trait: { kind: "EnergyStorage", storage: 1000 } },
     "Zio. Biocell": { active: "Always", trait: { kind: "EnergyStorage", storage: 600 } },
     "Zio. Biocell Array": { active: "Always", trait: { kind: "EnergyStorage", storage: 750 } },
+    "Cep. Chromion Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 800 } },
     Superbattery: { active: "Always", trait: { kind: "EnergyStorage", storage: 1500 } },
 
     // Fusion compressor
@@ -317,6 +338,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
 
     // Recoil reduction
     "Recoil Stabilizer": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 4 } },
+    "Adv. Recoil Nullifier": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 6 } },
     "Recoil Nullifier": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 6 } },
 
     // Particle charging
@@ -344,6 +366,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Core Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.2, slot: "Core" } },
     "Imp. Core Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.3, slot: "Core" } },
     "Exp. Core Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.4, slot: "Core" } },
+    "Cep. Core Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.9, slot: "Core" } },
     "Power Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.33, slot: "Power" } },
     "Imp. Power Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.66, slot: "Power" } },
     "Exp. Power Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.9, slot: "Power" } },

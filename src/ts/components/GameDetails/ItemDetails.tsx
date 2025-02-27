@@ -616,8 +616,8 @@ function PropulsionPartDetails({ item }: { item: PropulsionItem }) {
                 value={item.penalty}
                 valueString={item.penalty?.toString()}
             />
-            {item.type === "Treads" ? (
-                <DetailsTextLine category="Siege" content={item.siege} defaultContent="N/A" />
+            {item.special !== undefined ? (
+                <DetailsTextLine category="Special" content={item.special} defaultContent="N/A" />
             ) : (
                 <DetailsRangeLine
                     category="Burnout"

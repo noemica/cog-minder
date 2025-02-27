@@ -4,9 +4,9 @@ import { RouterObject, useLocation, useRouter } from "wouter";
 import { PageType, Spoiler, ThemeType, pageTypes } from "../../types/commonTypes";
 import { rootDirectory } from "../../utilities/common";
 import { ButtonLink } from "../Buttons/Button";
-import { useEditableSpoilers, useEditableTheme } from "../Effects/useLocalStorageValue";
+import { useEditablePrerelease, useEditableSpoilers, useEditableTheme } from "../Effects/useLocalStorageValue";
 import { RefreshIcon } from "../Icons/Icons";
-import { LabeledSelect } from "../LabeledItem/LabeledItem";
+import { LabeledExclusiveButtonGroup, LabeledSelect } from "../LabeledItem/LabeledItem";
 import ButtonPopover from "../Popover/ButtonPopover";
 import TextTooltipButton from "../Popover/TextTooltipButton";
 import { SelectOptionType } from "../Selectpicker/Select";
@@ -26,6 +26,11 @@ const spoilerOptions: SelectOptionType<Spoiler>[] = [
 const themeOptions: SelectOptionType[] = [
     { value: "Dark", label: "Dark", tooltip: "Use a more typical dark mode theme." },
     { value: "Cogmind", label: "Cogmind", tooltip: "Use a Cogmind-styled dark mode website theme." },
+];
+
+const prereleaseOptions: SelectOptionType[] = [
+    { value: false, label: "No", tooltip: "Don't show prerelease content." },
+    { value: true, label: "Yes", tooltip: "Show prerelease content." },
 ];
 
 type PageDetails = {
@@ -156,6 +161,9 @@ function SettingsButton() {
     const [theme, setTheme] = useEditableTheme();
     const themeSelected = themeOptions.find((t) => t.value === theme) || themeOptions[0];
 
+    const [prerelease, setPrerelease] = useEditablePrerelease();
+    const prereleaseSelected = prereleaseOptions.find((p) => p.value === prerelease) || prereleaseOptions[0];
+
     return (
         <ButtonPopover buttonLabel="Settings" buttonTooltip="Change various site-wide settings">
             <div className="settings-popover-container">
@@ -177,6 +185,16 @@ function SettingsButton() {
                     value={themeSelected}
                     onChange={(newValue) => {
                         setTheme(newValue!.value as ThemeType);
+                    }}
+                />
+                <LabeledSelect
+                    label="Beta 15 Prerelease"
+                    tooltip="Whether to show prerelease bots and parts or not."
+                    isSearchable={false}
+                    options={prereleaseOptions}
+                    value={prereleaseSelected}
+                    onChange={(newValue) => {
+                        setPrerelease(newValue!.value);
                     }}
                 />
             </div>

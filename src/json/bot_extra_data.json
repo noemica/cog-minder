@@ -282,6 +282,15 @@
             }
         ]
     },
+    "AP7-3": {
+        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Locations": [
+            {
+                "Location": "Protoforge",
+                "Description": "Hostile: Guard the entrance to the Forge Plexus"
+            }
+        ]
+    },
     "Architect": {
         "Categories": ["Architect", "Redacted"],
         "Locations": [
@@ -734,6 +743,15 @@
             }
         ]
     },
+    "Decapitator": {
+        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Locations": [
+            {
+                "Location": "Protoforge",
+                "Description": "Hostile: Appear as Overlord reinforcements and as dormant bots in the top side of the map"
+            }
+        ]
+    },
     "Decomposer": {
         "Categories": ["Derelict"],
         "Locations": [
@@ -804,6 +822,24 @@
             {
                 "Location": "Scraptown",
                 "Description": "Friendly: Stand Guard around Scraptown"
+            }
+        ]
+    },
+    "Elite (4)": {
+        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Scraptown",
+                "Description": "Friendly: Stand Guard around Scraptown"
+            }
+        ]
+    },
+    "Elite (7)": {
+        "Categories": ["Derelict", "UFD", "Redacted"],
+        "Locations": [
+            {
+                "Location": "Protoforge",
+                "Description": "Friendly: Appear after using Trojan(Fedlink) on a Recycling machine"
             }
         ]
     },
@@ -911,6 +947,15 @@
             {
                 "Location": "Exiles",
                 "Description": "Friendly: Stationed near some assembled on the right side of the map"
+            }
+        ]
+    },
+    "EXE-6": {
+        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Locations": [
+            {
+                "Location": "Protoforge",
+                "Description": "Hostile: Dormant on the inside of the Forge Plexus room"
             }
         ]
     },
@@ -1175,6 +1220,15 @@
             }
         ]
     },
+    "Hotshot": {
+        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Locations": [
+            {
+                "Location": "Protoforge",
+                "Description": "Hostile: appear in groups of 3 in patrol squads"
+            }
+        ]
+    },
     "HV-R5K": {
         "Categories": ["Derelict", "Spoiler"],
         "Locations": [
@@ -1222,6 +1276,23 @@
             {
                 "Location": "0b10 maps -5 through -1",
                 "Description": "Hostile: Appear inside assault ARCs"
+            }
+        ]
+    },
+    "Immortal": {
+        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Locations": [
+            {
+                "Location": "Protoforge",
+                "Description": "Hostile: Appear as Overlord reinforcements and as dormant bots in the top side of the map"
+            }
+        ]
+    },
+    "Impact Drone": {
+        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Locations": [
+            {
+                "Location": "Cep. Impact Drone Bay"
             }
         ]
     },
@@ -1342,6 +1413,15 @@
             {
                 "Location": "0b10 maps -4 through -1",
                 "Description": "Hostile: Duelists are common bots that can be grunt patrol squad leaders and found inside assault ARCs"
+            }
+        ]
+    },
+    "Lugger": {
+        "Categories": ["0b10", "Redacted", "UFD"],
+        "Locations": [
+            {
+                "Location": "Protoforge",
+                "Description": "Friendly: Appear after using Trojan(Fedlink) on a Recycling machine"
             }
         ]
     },
@@ -1676,6 +1756,15 @@
             }
         ]
     },
+    "N-04 Retriever": {
+        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Locations": [
+            {
+                "Location": "Protoforge",
+                "Description": "Neutral: Roam the map looking for parts to return to the Forge Plexus"
+            }
+        ]
+    },
     "NK-0LA": {
         "Categories": ["Derelict", "Spoiler"],
         "Locations": [
@@ -1721,6 +1810,24 @@
             {
                 "Location": "0b10 maps -4 through -1",
                 "Description": "Hostile: Roams around a home terminal, reports Cogmind and turns neutral on visual contact"
+            }
+        ]
+    },
+    "Optimus": {
+        "Categories": ["Derelict", "Spoiler", "UFD"],
+        "Locations": [
+            {
+                "Location": "Scraptown",
+                "Description": "Friendly: Stays around the center of the main Scraptown area behind the gate"
+            }
+        ]
+    },
+    "Overlord": {
+        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Locations": [
+            {
+                "Location": "Protoforge",
+                "Description": "Hostile: Roams around the map"
             }
         ]
     },
@@ -2054,7 +2161,7 @@
         "Locations": [
             {
                 "Location": "Recycling Unit",
-                "Description": "Friendly: Appear from Recycling Units when using the Force(Scrapoids) hack on -6"
+                "Description": "Friendly: Appear in groups of 5 from Recycling Units when using the Force(Scrapoids) hack on -6"
             }
         ]
     },
@@ -2063,7 +2170,7 @@
         "Locations": [
             {
                 "Location": "Recycling Unit",
-                "Description": "Friendly: Appear from Recycling Units when using the Force(Scrapoids) hack from -5 to -4"
+                "Description": "Friendly: Appear in groups of 5 from Recycling Units when using the Force(Scrapoids) hack from -5 to -4"
             }
         ]
     },
@@ -2072,7 +2179,35 @@
         "Locations": [
             {
                 "Location": "Recycling Unit",
-                "Description": "Friendly: Appear from Recycling Units when using the Force(Scrapoids) hack on -3 to -1"
+                "Description": "Friendly: Appear in groups of 5 from Recycling Units when using the Force(Scrapoids) hack on -3 to -1"
+            },
+            {
+                "Location": "Protoforge",
+                "Description": "Friendly: Appear after using Trojan(Fedlink) on a Recycling machine",
+                "Spoiler": "Redacted"
+            }
+        ]
+    },
+    "Scraphulk (6)": {
+        "Categories": ["0b10", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Recycling Unit",
+                "Description": "Friendly: Appear from Recycling Units when using the Force(Scraphulk) hack on -6 to -4"
+            }
+        ]
+    },
+    "Scraphulk (8)": {
+        "Categories": ["0b10", "UFD", "Spoiler"],
+        "Locations": [
+            {
+                "Location": "Recycling Unit",
+                "Description": "Friendly: Appear from Recycling Units when using the Force(Scraphulk) hack on -3 to -1"
+            },
+            {
+                "Location": "Protoforge",
+                "Description": "Friendly: Appear after using Trojan(Fedlink) on a Recycling machine",
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -2099,6 +2234,15 @@
             {
                 "Location": "Section 7",
                 "Description": "Unpowered: On the right-bottom side of the Leopard hangar, becomes friendly when the Sigix Containment Pod is inserted"
+            }
+        ]
+    },
+    "SKR-2": {
+        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Locations": [
+            {
+                "Location": "Protoforge",
+                "Description": "Hostile: Dormant on the inside of the Forge Plexus room"
             }
         ]
     },
@@ -2167,6 +2311,15 @@
             {
                 "Location": "Testing event",
                 "Description": "Dormant Hostile: Appears next to a researcher"
+            }
+        ]
+    },
+    "Superfortress": {
+        "Categories": ["0b10", "Prototype", "Protoforge", "Redacted"],
+        "Locations": [
+            {
+                "Location": "protoforge",
+                "Description": "Unpowered: Guards the prototype are above the Forge Plexus, wakes up when "
             }
         ]
     },
@@ -2306,6 +2459,15 @@
             {
                 "Location": "Scraptown",
                 "Description": "Friendly: Guards the main Scraptown gate into the members only area"
+            }
+        ]
+    },
+    "Triborg (Optimus)": {
+        "Categories": ["Derelict", "UFD", "Redacted"],
+        "Locations": [
+            {
+                "Location": "Protoforge",
+                "Description": "Friendly: Appears after using Trojan(Fedlink) on a Recycling machine"
             }
         ]
     },

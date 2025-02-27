@@ -6,8 +6,11 @@ from io import StringIO
 from os import path
 
 input_path = path.join(path.dirname(path.realpath(__file__)), 'gallery_export.csv')
+input_path_b15 = path.join(path.dirname(path.realpath(__file__)), 'gallery_export_b15.csv')
 output_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'items.json')
+output_path_b15 = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'items_b15.json')
 all_parts_output_path = path.join(path.dirname(path.realpath(__file__)), 'all_parts.txt')
+all_parts_output_path_b15 = path.join(path.dirname(path.realpath(__file__)), 'all_parts_b15.txt')
 
 categories = {
     'all': [
@@ -105,7 +108,7 @@ categories = {
         'Support',
         'Penalty',
         'Burnout',
-        'Siege',
+        'Siege'
     ],
     'shot': [
         'Range',
@@ -252,64 +255,76 @@ def get_value(row, name):
 def get_slot(row):
     return get_value(row, 'Slot')
 
-
 index_lookup = {}
 all_values = []
 
-with open(input_path) as f:
-    # Escape a few quotes to properly parse
-    string = f.read() \
-        .replace('"Lootmaker"', '\\"Lootmaker\\"') \
-        .replace('"Choppy"', '\\"Choppy\\"') \
-        .replace('"Deathgrip"', '\\"Deathgrip\\"') \
-        .replace('"Insurrection"', '\\"Insurrection\\"')
-    
+def process_csv(input_path, output_path, all_parts_output_path):
+    index_lookup.clear()
+    all_values.clear()
 
-csv.register_dialect('cog', 'excel', escapechar='\\')
-reader = csv.reader(StringIO(string), csv.get_dialect('cog'))
+    if input_path == input_path_b15:
+        # TODO remove after B15
+        categories['propulsion'][-1] = 'Special'
+        index = slot_categories['Propulsion'].index('Siege')
+        slot_categories['Propulsion'][index] = 'Special'
 
-header = next(reader)
+    with open(input_path) as f:
+        # Escape a few quotes to properly parse
+        string = f.read() \
+            .replace('"Lootmaker"', '\\"Lootmaker\\"') \
+            .replace('"Choppy"', '\\"Choppy\\"') \
+            .replace('"Deathgrip"', '\\"Deathgrip\\"') \
+            .replace('"Insurrection"', '\\"Insurrection\\"')
+        
 
-# Update the index lookup based on the header row
-for category in categories.values():
-    for name in category:
-        index_lookup[name] = header.index(name)
+    csv.register_dialect('cog', 'excel', escapechar='\\')
+    reader = csv.reader(StringIO(string), csv.get_dialect('cog'))
 
-rowNum = 0
-for row in reader:
-    slot = get_slot(row)
+    header = next(reader)
 
-    if slot in slot_categories:
-        names = slot_categories[slot]
-        values = {}
+    # Update the index lookup based on the header row
+    for category in categories.values():
+        for name in category:
+            index_lookup[name] = header.index(name)
 
-        for name in names:
-            val = get_value(row, name)
-            if val is not None:
-                values[name] = val
+    rowNum = 0
+    for row in reader:
+        slot = get_slot(row)
 
-        if 'Category' in values:
-            if values['Category'] == 'Prototype':
-                values['Rating'] = values['Rating'] + '*'
+        if slot in slot_categories:
+            names = slot_categories[slot]
+            values = {}
 
-            if values['Category'] == 'Alien':
-                values['Rating'] = values['Rating'] + '**'
+            for name in names:
+                val = get_value(row, name)
+                if val is not None:
+                    values[name] = val
 
-        values['Index'] = rowNum
-        rowNum += 1
+            if 'Category' in values:
+                if values['Category'] == 'Prototype':
+                    values['Rating'] = values['Rating'] + '*'
 
-        full_name: str = values['Name']
-        for (start, expansion) in expansions.items():
-            if full_name.startswith(start):
-                full_name = full_name.replace(start, expansion)
-                break
+                if values['Category'] == 'Alien':
+                    values['Rating'] = values['Rating'] + '**'
 
-        values['Full Name'] = full_name
+            values['Index'] = rowNum
+            rowNum += 1
 
-        all_values.append(values)
+            full_name: str = values['Name']
+            for (start, expansion) in expansions.items():
+                if full_name.startswith(start):
+                    full_name = full_name.replace(start, expansion)
+                    break
 
-with open(output_path, 'w') as f:
-    json.dump(all_values, f, indent=4)
+            values['Full Name'] = full_name
 
-with open (all_parts_output_path, 'w') as f:
-    f.writelines('\n'.join([x['Name'] for x in all_values]))
+            all_values.append(values)
+
+    with open(output_path, 'w') as f:
+        json.dump(all_values, f, indent=4)
+
+    with open (all_parts_output_path, 'w') as f:
+        f.writelines('\n'.join([x['Name'] for x in all_values]))
+
+process_csv(input_path, output_path, all_parts_output_path)
+process_csv(input_path_b15, output_path_b15, all_parts_output_path_b15)

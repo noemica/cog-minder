@@ -108,6 +108,7 @@ export class BotData {
                     : {
                           number: bot["Fabrication Count"] as string,
                           time: bot["Fabrication Time"] as string,
+                          components: undefined,
                       };
 
             // Parse numerical salvage values out
@@ -190,6 +191,7 @@ export class BotData {
                 traitsString: bot.Traits?.join(", ") ?? "",
                 value: parseIntOrDefault(bot.Value, 0),
                 visualRange: bot["Sight Range"],
+                customBot: false,
             };
 
             this.botData[botName] = newBot;

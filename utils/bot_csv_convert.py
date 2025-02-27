@@ -1,5 +1,6 @@
 #!/usr/bin/env py
 
+from collections import defaultdict
 import csv
 import json
 from io import StringIO
@@ -7,7 +8,9 @@ from os import path
 import re
 
 input_path = path.join(path.dirname(path.realpath(__file__)), 'robots_export.csv')
+input_path_b15 = path.join(path.dirname(path.realpath(__file__)), 'robots_export_b15.csv')
 output_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'bots.json')
+output_path_b15 = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'bots_b15.json')
 
 categories = [
     'Name',
@@ -91,9 +94,12 @@ name_replacements = {
     'Warlord': ['Warlord', 'Warlord (Command)'],
     'MAIN.C': ['MAIN.C (Shell)', 'MAIN.C'],
     'Player': ['Cogmind'],
+    'Elite': ['Elite (4)', 'Elite (7)'],
     'Scrapoid': ['Scrapoid (3)', 'Scrapoid (6)', 'Scrapoid (8)'],
+    'Scraphulk': ['Scraphulk (6)', 'Scraphulk (8)'],
     'Ranger': ['Ranger', 'DRS Ranger'],
     'Warlord Statue': ['Warlord Statue (Bot)'],
+    'Triborg': ['Triborg', 'Triborg (Optimus)'],
 }
 
 class_replacements = {
@@ -163,87 +169,98 @@ def get_parts(part_strings):
 index_lookup = {}
 all_values = []
 
-with open(input_path) as f:
-    string = f.read()
+def process_csv(input_path, output_path):
+    index_lookup.clear()
+    all_values.clear()
 
-csv.register_dialect('cog', 'excel', escapechar='\\')
-reader = csv.reader(StringIO(string), csv.get_dialect('cog'))
+    name_replacements_indices = defaultdict(lambda: 0)
 
-header = next(reader)
+    with open(input_path) as f:
+        string = f.read()
 
-# Update the index lookup based on the header row
-for category_name in categories:
-    index_lookup[category_name] = header.index(category_name)
+    csv.register_dialect('cog', 'excel', escapechar='\\')
+    reader = csv.reader(StringIO(string), csv.get_dialect('cog'))
 
-rowNum = 0
-for row in reader:
-    values = {}
+    header = next(reader)
 
+    # Update the index lookup based on the header row
     for category_name in categories:
-        # Get values from rows
-        val = get_value(row, category_name)
-        if val is not None:
-            values[category_name] = val
+        index_lookup[category_name] = header.index(category_name)
 
-    if values['Name'] in skip_bots:
-        continue
+    for row in reader:
+        values = {}
 
-    # Combine resistances into their own dictionary
-    bot_resistances = {}
-    for category_name in list(values):
-        if category_name in resistances:
-            bot_resistances[category_name] = values[category_name].strip('%')
-            values.pop(category_name)
+        for category_name in categories:
+            # Get values from rows
+            val = get_value(row, category_name)
+            if val is not None:
+                values[category_name] = val
 
-    if len(bot_resistances) > 0:
-        values['Resistances'] = bot_resistances
+        if values['Name'] in skip_bots:
+            continue
 
-    # Combine armament and components into their own lists
-    if 'Armament' in values:
-        originalString = values['Armament']
-        armament = get_parts(values['Armament'].split(', '))
-        values['Armament'] = armament
-        values['Armament String'] = originalString
+        # Combine resistances into their own dictionary
+        bot_resistances = {}
+        for category_name in list(values):
+            if category_name in resistances:
+                bot_resistances[category_name] = values[category_name].strip('%')
+                values.pop(category_name)
 
-    if 'Components' in values:
-        originalString = values['Components']
-        components = get_parts(values['Components'].split(', '))
-        values['Components'] = components
-        values['Components String'] = originalString
+        if len(bot_resistances) > 0:
+            values['Resistances'] = bot_resistances
 
-    if 'Immunities' in values:
-        immunitiesStrings = values['Immunities'].split(', ')
-        values['Immunities'] = immunitiesStrings
+        # Combine armament and components into their own lists
+        if 'Armament' in values:
+            originalString = values['Armament']
+            armament = get_parts(values['Armament'].split(', '))
+            values['Armament'] = armament
+            values['Armament String'] = originalString
 
-    if 'Traits' in values:
-        traits_strings = values['Traits'].split('\r\n\r\n')
-        values['Traits'] = traits_strings
+        if 'Components' in values:
+            originalString = values['Components']
+            components = get_parts(values['Components'].split(', '))
+            values['Components'] = components
+            values['Components String'] = originalString
 
-    if values['Name'] in name_replacements:
-        # If the name should be replaced, use an alternate name in a predetermined order
-        # This handles alternate bot names and duplicates
-        names = name_replacements[values['Name']]
-        if len(names) == 0:
-            raise Exception('Missing enough entries for duplicate {}'.format(values['Name']))
+        if 'Immunities' in values:
+            immunitiesStrings = values['Immunities'].split(', ')
+            values['Immunities'] = immunitiesStrings
 
-        values['Name'] = names.pop(0)
+        if 'Traits' in values:
+            traits_strings = values['Traits'].split('\r\n\r\n')
+            values['Traits'] = traits_strings
 
-    if values['Name'] in class_replacements:
-        values['Class'] = class_replacements[values['Name']]
+        if values['Name'] in name_replacements:
+            # If the name should be replaced, use an alternate name in a predetermined order
+            # This handles alternate bot names and duplicates
+            names = name_replacements[values['Name']]
+            index = name_replacements_indices[values['Name']]
 
-    if values['Name'] in all_values:
-        raise Exception('Duplicate name {}'.format(values['Name']))
+            if index >= len(names):
+                raise Exception('Missing enough entries for duplicate {}'.format(values['Name']))
 
-    if values['Name'] in overload_speeds:
-        values['Overload Speed'] = overload_speeds[values['Name']]
-        values['Overload Speed %'] = overload_speed_percentages[values['Name']]
+            name_replacements_indices[values['Name']] = index + 1
+            values['Name'] = names[index]
 
-    match = re.match('^(\w-\d{2}) (.*)', values['Name'])
-    if match is not None:
-        values['Short Name'] = match[1]
-        values['Ally Name'] = match[2]
+        if values['Name'] in class_replacements:
+            values['Class'] = class_replacements[values['Name']]
 
-    all_values.append(values)
+        if values['Name'] in all_values:
+            raise Exception('Duplicate name {}'.format(values['Name']))
 
-with open(output_path, 'w') as f:
-    json.dump(all_values, f, indent=4)
+        if values['Name'] in overload_speeds:
+            values['Overload Speed'] = overload_speeds[values['Name']]
+            values['Overload Speed %'] = overload_speed_percentages[values['Name']]
+
+        match = re.match('^(\w-\d{2}) (.*)', values['Name'])
+        if match is not None:
+            values['Short Name'] = match[1]
+            values['Ally Name'] = match[2]
+
+        all_values.append(values)
+
+    with open(output_path, 'w') as f:
+        json.dump(all_values, f, indent=4)
+
+process_csv(input_path, output_path)
+process_csv(input_path_b15, output_path_b15)
