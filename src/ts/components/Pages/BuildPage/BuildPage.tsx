@@ -9,6 +9,7 @@ import {
     EnergyStorage,
     FusionCompressor,
     HeatDissipation,
+    Item,
     ItemSlot,
     ItemType,
     ItemWithUpkeep,
@@ -59,6 +60,7 @@ type CalculatedPartInfo = {
     integrity: number;
     mass: number;
     name: string;
+    part: Item | undefined;
     partState: PartState;
     slot: ItemSlot;
     size: number;
@@ -315,14 +317,15 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         }
     }
 
-    function getMass(p: Part) {
+    function getMass(p: Part, num: number) {
         // Return negative value for support, positive for mass used
         if (p.active && p.part.slot === "Propulsion") {
-            return -(p.part as PropulsionItem).support;
+            return -(p.part as PropulsionItem).support * num;
         } else if (hasActiveSpecialProperty(p.part, p.active, "MassSupport")) {
+            // Mass support doesn't stack so only count 1
             return -(p.part.specialProperty!.trait as MassSupport).support;
         } else {
-            return p.part.mass ?? 0;
+            return (p.part.mass ?? 0) * num;
         }
     }
 
@@ -380,10 +383,17 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     }
 
     // Add mass support utils
-    totalSupport += parts
-        .filter((p) => hasActiveSpecialProperty(p.part, p.active, "MassSupport"))
-        .map((p) => (p.part.specialProperty!.trait as MassSupport).support)
-        .reduce(sum, 0);
+    // First, disable all but the highest mass support utility
+    const massSupportUtils = parts.filter((p) => hasActiveSpecialProperty(p.part, p.abilityActive, "MassSupport"));
+    massSupportUtils.sort(
+        (a, b) =>
+            (b.part.specialProperty!.trait as MassSupport).support -
+            (a.part.specialProperty!.trait as MassSupport).support,
+    ).slice(0, 1);
+    massSupportUtils.splice(1).map((p) => (p.active = false));
+
+    // Now, add only the highest part
+    totalSupport += massSupportUtils.map((p) => (p.part.specialProperty!.trait as MassSupport).support).reduce(sum, 0);
 
     // Add innate bonus
     totalSupport += parseIntOrDefault(pageState.bonusMassSupport, 0);
@@ -535,6 +545,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         heatPerTurn: -(55 - 3 * depth + innateHeatDissipation),
         heatPerVolley: -getValuePerTus(55 - 3 * depth + innateHeatDissipation, tusPerVolley),
         name: "Core",
+        part: undefined,
         partState: null!,
         id: -1,
         integrity: 1750 - 150 * depth,
@@ -584,7 +595,8 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
             id: p.id,
             integrity: p.part.integrity * p.number,
             name: p.part.name,
-            mass: getMass(p) * p.number,
+            mass: getMass(p, p.number),
+            part: p.part,
             partState: p.partState,
             slot: p.part.slot,
             size: p.part.size * p.number,
