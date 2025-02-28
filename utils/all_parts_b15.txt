@@ -69,6 +69,7 @@ Quantum Reactor
 Lgt. Quantum Reactor
 Rnf. Quantum Reactor
 Imp. Quantum Reactor
+Exp. Antimatter Reactor
 Hyb. Graviton Reactor
 Zero-point Reactor
 Vortex Chain Reactor
@@ -123,6 +124,7 @@ Mak. Leg
 Flexi-carbon Leg
 Arm. Leg
 Imp. VSS Leg
+Multireflex Exoskeleton
 Zio. Composite Leg I
 Thunder Leg
 Med. Armored Exoskeleton
@@ -153,6 +155,8 @@ Exp. Biometal Leg
 Exp. VSS Leg
 Zio. Supercomposite Leg
 Potential Leg
+Exp. Armored Exoskeleton
+Cep. Biometal Exoskeleton
 Myomer Exoskeleton
 Sigix Exoskeleton
 Wheel
@@ -196,6 +200,10 @@ Antigrav Array
 Exp. Gyrokinetic Inverter
 Cld. Linear Gravjet
 Cmb. Linear Gravjet
+Exp. Antigrav System
+Gravjet Array
+Cep. Combat Aerolev Unit
+Cep. Gyrokinetic System
 Flight Unit
 VTOL Module
 Imp. Flight Unit
@@ -230,7 +238,9 @@ Flightbrick
 Imp. Q-thruster
 Cld. Q-thruster
 Exp. Q-thruster
+Exp. Biomechanical Wings
 Exp. Surge Thruster
+Cep. Fieldthrust Drive
 Scrap Engine
 Arm. Scrap Engine
 Scrap Suit
@@ -252,6 +262,7 @@ Heat Sink
 Imp. Heat Sink
 Adv. Heat Sink
 Exp. Heat Sink
+Cep. Phasing Heat Sink
 Cooling System
 Imp. Cooling System
 Adv. Cooling System
@@ -276,6 +287,7 @@ Lgt. Humpback
 Humpback
 Vmp. Humpback
 Lightpack 2.0
+Cep. Antigrav Storage Unit
 Sml. Battery
 Med. Battery
 Lrg. Battery
@@ -308,6 +320,7 @@ Adv. Gravity Neutralizer
 Quantum Shading Machine
 Asb. Suspension Frame
 Adv. Quantum Shading Machine
+Cep. Dimensional Manipulator
 Rocket Booster
 Asb. Metafiber Network
 Zio. Metafield Generator
@@ -367,6 +380,7 @@ Salvage Targeting Computer
 Imp. Salvage Targeting Computer
 Mak. Salvage Targeting Computer
 Adv. Salvage Targeting Computer
+Exp. Salvage Targeting Computer
 Partition Strike Chip
 Asb. Combat Suite
 Targeting Computer
@@ -375,15 +389,22 @@ Mak. Targeting Computer
 Adv. Targeting Computer
 Exp. Targeting Computer
 Multitargeting Array
+Cep. Hypertargeting System
+Cep. Countertargeting System
 Tactical Coordination Suite
+Cep. Networked Targeting System
 Melee Analysis Suite
 Imp. Melee Analysis Suite
 Adv. Melee Analysis Suite
 Exp. Melee Analysis Suite
+Cep. Melee Reflex Suite
+Cep. Projectile Intercept Suite
 Launcher Guidance Computer
 Imp. Launcher Guidance Computer
 Adv. Launcher Guidance Computer
+Exp. Launcher Guidance Computer
 Weapon Mount
+Cep. Weapon Articulator
 Target Analyzer
 Imp. Target Analyzer
 Adv. Target Analyzer
@@ -395,6 +416,7 @@ Imp. Armor Integrity Analyzer
 Exp. Armor Integrity Analyzer
 Recoil Stabilizer
 Adv. Recoil Stabilizer
+Cep. Recoil Nullifier
 Matter Filter
 Prc. Matter Filter
 Energy Filter
@@ -414,6 +436,7 @@ Heavy Servo Lattice
 VL-GR5's Timing Chip
 Launcher Loader
 Quantum Capacitor
+Mni. Quantum Capacitor
 Weapon Cycler
 Imp. Weapon Cycler
 Adv. Weapon Cycler
@@ -428,6 +451,7 @@ Exp. Actuator Array
 Force Booster
 Imp. Force Booster
 Adv. Force Booster
+Exp. Force Booster
 Stasis Canceller
 Transmission Jammer
 Mak. Transmission Jammer
@@ -443,15 +467,18 @@ Reaction Control System
 Imp. Reaction Control System
 Adv. Reaction Control System
 Exp. Reaction Control System
+Cep. Reaction Jets
 Phase Shifter
 Imp. Phase Shifter
 Adv. Phase Shifter
 Exp. Phase Shifter
+Cep. Phase Shift Module
 Cloaking Device
 Mak. Cloaking Device
 Imp. Cloaking Device
 Adv. Cloaking Device
 Exp. Cloaking Device
+Cep. Cloak Mesh
 Cloak of Protection
 5H-AD0's Cloak
 ID Mask
@@ -534,6 +561,7 @@ Lgt. Regenerative Plating
 Med. Regenerative Plating
 Hvy. Regenerative Plating
 SHELL Armor
+Cep. RG22 Armor
 Phase Armor
 Vmp. Brace Plating
 Graphene Brace
@@ -546,6 +574,7 @@ Imp. Thermal Shield
 Adv. Thermal Shield
 Exp. Thermal Shield
 Thermal Barrier
+Cep. Beam Splitter
 Thermal Defense Suite
 Imp. Thermal Defense Suite
 Adv. Thermal Defense Suite
@@ -582,6 +611,7 @@ Remote Force Field
 Imp. Remote Force Field
 Adv. Remote Force Field
 AEGIS Remote Shield
+Cep. Energy Mantle
 Phase Redirector
 Field Manipulator
 Energy Deflector
@@ -661,11 +691,13 @@ Mobile Refinery Mk. CCLXVII
 Trap Extractor
 Imp. Trap Extractor
 Adv. Trap Extractor
+Exp. Trap Extractor
 Trap Reconfigurator
 Recalibrator
 Imp. Recalibrator
 Adv. Recalibrator
 Exp. Recalibrator
+Crosscalibrator
 Field Recycling Unit
 Imp. Field Recycling Unit
 Adv. Field Recycling Unit
@@ -689,6 +721,7 @@ Hacking Drone Bay
 Minesniffer Drone Bay
 Army-in-a-Box
 Master Drone Bay
+Cep. Impact Drone Bay
 Wardrone Bay
 Cobbler Unit
 Bomb Factory No. 2
@@ -763,6 +796,7 @@ Electrostorm Shotgun
 Modified EM Gauss Rifle
 AWS/EX-DEC
 Enh. Gamma Rifle
+Cep. Lightning Penetrator
 Med. Laser
 Sml. Laser
 Salvaging Laser
@@ -828,6 +862,7 @@ Zio. Laser-H
 Hvy. Quantum Rifle
 Zio. Phaser-H
 Gatling Beam
+Cep. Variable Chargecaster
 Sigix Sheargun
 Modified Sigix Sheargun
 Lgt. EM Pulse Cannon
@@ -885,6 +920,7 @@ Potential Cannon
 Warp Cannon
 Cld. Nova Cannon
 Null Cannon
+Cep. Plasma Driver
 Hyp. Alpha Cannon
 Zio. Alpha Cannon Mk. II
 Imp. Potential Cannon
@@ -984,7 +1020,10 @@ P1-3CE's Gatling Flakker
 Hvy. Siege Cannon
 AWS/Autocannon
 Perforator
+Cep. Miniperforator
 Omega Cannon
+Cep. Helical Railcannon
+Cep. Heavy Railcannon
 PL-3XN's Obliterator
 EMP Blaster
 Shock Bomb Launcher
@@ -998,6 +1037,8 @@ Hvy. Proton Missile Launcher
 Com. Tesla Bomb Launcher
 Gamma Bomb Array
 Enh. Gamma Bomb Array
+Gamma Driveblaster
+Cep. EMP Blanket Launcher
 Grenade Launcher
 Rocket Launcher
 Mni. Grenade Launcher
@@ -1029,12 +1070,17 @@ Tactical Quantum Warhead
 Vortex Catalyst Activator
 Chain Missile Launcher
 Ragnarok Missile Launcher
+Cep. Rapid Grenade Launcher
 Point Singularity Launcher
 Gui. Micro-nuke Launcher
 Cep. Concussive Dispersal Blaster
 99-TNT's Nukerbomber
 Exp. Neutron Missile Launcher
+Cep. Arcsight Missile Launcher
+Cep. Tactical Fusion Warhead
+Cep. Tiamat Rocket Array
 Z-bomb Delivery System
+Cep. Smart ZDS
 Sigix Terminator
 Supercharged Sigix Terminator
 Containment Facilitator
@@ -1051,6 +1097,7 @@ ME-RLN's Wand
 System Spiker
 Field Lobotomy Kit
 Mining Laser
+Mak. Laser Shovel
 LU-1G1's Laser Shovel
 Welding Torch
 Plasma Cutter
@@ -1089,6 +1136,7 @@ Shock Maul
 Thunder Hammer
 Gravity Flail
 CL-ANK's Mallet
+Cep. Blasthammer
 Core Stripper
 Mining Claw
 Katana
@@ -1124,6 +1172,7 @@ Particle Cleaver
 DM-GVY's Chainsaw
 Exp. Terror Saw
 1C-UTU's Sword "Choppy"
+Cep. Deflector Sword
 Quantum Companion
 Superquantum Companion
 Sigix Broadsword
