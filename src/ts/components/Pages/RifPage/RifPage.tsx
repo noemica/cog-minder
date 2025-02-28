@@ -172,7 +172,8 @@ function HacksTable({ pageState }: { pageState: RifPageState }) {
 
         if (
             filterTarget &&
-            category.Targets.find((target) => target.toLowerCase().includes(targetFilter)) === undefined
+            category.Targets.find((target) => target.toLowerCase().includes(targetFilter)) === undefined &&
+            !category.CategoryName.toLowerCase().includes(targetFilter)
         ) {
             hacks = [];
         }
