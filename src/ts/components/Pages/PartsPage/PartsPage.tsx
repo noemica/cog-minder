@@ -36,6 +36,7 @@ export type PartCategory =
     | "Golem"
     | "Heroes"
     | "Lab"
+    | "Protoforge"
     | "Quarantine"
     | "S7 Guarded"
     | "S7 Hangar"

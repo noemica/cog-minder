@@ -120,6 +120,7 @@ const allCategoryOptions: (SelectOptionType<PartCategory> & { spoiler?: Spoiler 
     { value: "Heroes", tooltip: "Parts unique to the Heroes of Zion.", spoiler: "Spoiler" },
     { value: "Lab", tooltip: "Parts that can be found in the hidden Lab.", spoiler: "Redacted" },
     { value: "Quarantine", tooltip: "Parts that can be found in Quarantine.", spoiler: "Spoiler" },
+    { value: "Protoforge", tooltip: "Parts that can be found in Protoforge.", spoiler: "Redacted" },
     {
         value: "S7 Guarded",
         tooltip: "Parts that can be found in Section 7 suspension chambers guarded by S7 Guards.",

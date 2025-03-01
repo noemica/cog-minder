@@ -283,7 +283,7 @@
         ]
     },
     "AP7-3": {
-        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Categories": ["0b10", "Redacted"],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -744,7 +744,7 @@
         ]
     },
     "Decapitator": {
-        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Categories": ["0b10", "Redacted"],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -951,7 +951,7 @@
         ]
     },
     "EXE-6": {
-        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Categories": ["0b10", "Redacted"],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -1221,7 +1221,7 @@
         ]
     },
     "Hotshot": {
-        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Categories": ["0b10", "Redacted"],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -1280,7 +1280,7 @@
         ]
     },
     "Immortal": {
-        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Categories": ["0b10", "Redacted"],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -1289,7 +1289,7 @@
         ]
     },
     "Impact Drone": {
-        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Categories": ["0b10", "Redacted"],
         "Locations": [
             {
                 "Location": "Cep. Impact Drone Bay"
@@ -1757,7 +1757,7 @@
         ]
     },
     "N-04 Retriever": {
-        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Categories": ["0b10", "Redacted"],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -1823,7 +1823,7 @@
         ]
     },
     "Overlord": {
-        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Categories": ["0b10", "Redacted"],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -2238,7 +2238,7 @@
         ]
     },
     "SKR-2": {
-        "Categories": ["0b10", "Protoforge", "Redacted"],
+        "Categories": ["0b10", "Redacted"],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -2315,7 +2315,7 @@
         ]
     },
     "Superfortress": {
-        "Categories": ["0b10", "Prototype", "Protoforge", "Redacted"],
+        "Categories": ["0b10", "Prototype", "Redacted"],
         "Locations": [
             {
                 "Location": "protoforge",
