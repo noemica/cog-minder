@@ -79,6 +79,10 @@ export type DefensiveState = {
     shieldings: Record<ItemSlot | "Core", ShieldingPart[]>;
 };
 
+export type SuperfortressRegenState = {
+    nextRegenAttempt: number;
+}
+
 export type BotBehavior = "Stand/Fight" | "Siege/Fight" | "Already Sieged/Fight" | "Running" | "Run When Hit";
 
 export type BotState = {
@@ -105,6 +109,7 @@ export type BotState = {
     salvage: number;
     sieged: boolean;
     siegedCoverage: number;
+    superfortressRegen: SuperfortressRegenState | undefined;
     totalCoverage: number;
     tusToSiege: number;
 };

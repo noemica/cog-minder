@@ -741,6 +741,7 @@ function cloneBotState(botState: BotState): BotState {
         salvage: 0,
         sieged: botState.sieged,
         siegedCoverage: botState.siegedCoverage,
+        superfortressRegen: botState.superfortressRegen,
         tusToSiege: botState.tusToSiege,
         totalCoverage: botState.totalCoverage,
     };
@@ -1273,14 +1274,28 @@ export function simulateCombat(state: SimulatorState): boolean {
             part.integrity = Math.min(part.integrity + partRegenIntegrity, part.def.integrity);
         }
 
-        // Apply part regen to destroyed parts
-        // Every 10 turns, one part is recreated
-        const numRegenTurns = [...Array(newCompletedTurns - lastCompletedTurns)]
-            .map((_, i) => i + lastCompletedTurns)
-            .filter((t) => t % 10 === 0).length;
+        if (botState.partRegen > 0) {
+            // Apply part regen to destroyed parts
+            // Every 10 turns, one part is recreated
+            const numRegenTurns = [...Array(newCompletedTurns - lastCompletedTurns)]
+                .map((_, i) => i + lastCompletedTurns)
+                .filter((t) => t % 10 === 0).length;
 
-        for (let i = 0; i < numRegenTurns; i++) {
-            addRandomDestroyedPart(state);
+            for (let i = 0; i < numRegenTurns; i++) {
+                addRandomDestroyedPart(state);
+            }
+        }
+
+        if (botState.superfortressRegen) {
+            // Check for superfortress part regrowth
+            if (newCompletedTurns <= botState.superfortressRegen.nextRegenAttempt) {
+                addRandomDestroyedPart(state);
+
+                // Observation shows this to be between this range
+                // There are probably more complex rules, but this is a decent
+                // enough approximation
+                botState.superfortressRegen.nextRegenAttempt += randomInt(5, 25);
+            }
         }
 
         // Process each volley

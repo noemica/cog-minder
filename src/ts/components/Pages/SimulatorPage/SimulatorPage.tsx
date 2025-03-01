@@ -374,6 +374,7 @@ function getSimulatorState(
         salvage: 0,
         sieged: sieged,
         siegedCoverage: siegedCoverage,
+        superfortressRegen: bot.name === "Superfortress" ? { nextRegenAttempt: 0 } : undefined,
         totalCoverage: botTotalCoverage,
         tusToSiege: behavior === "Siege/Fight" ? 500 : 0,
     };
