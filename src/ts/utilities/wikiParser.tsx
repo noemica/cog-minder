@@ -37,7 +37,7 @@ type OutputGroup = {
     groupType: OutputGroupType;
 };
 
-type AllowedContentType = "InlineOnly" | "InlineList" | "All";
+type AllowedContentType = "InlineOnly" | "InlineWithNewlines" | "All";
 
 class ParserState {
     allowHeadingLinks: boolean;
@@ -878,7 +878,7 @@ function processGameTextTag(state: ParserState, result: RegExpExecArray) {
     const subSectionStart = result.index + result[0].length;
     const tempState = ParserState.Clone(state);
     tempState.index = subSectionStart;
-    tempState.inlineOnly = "InlineOnly";
+    tempState.inlineOnly = "InlineWithNewlines";
     processSection(tempState, "/GameText");
     state.index = tempState.index;
     const gameTextContent = (
@@ -1477,7 +1477,7 @@ function processListTag(state: ParserState, result: RegExpExecArray) {
         // Parse the list item as a subsection individually
         const tempState = ParserState.Clone(state);
         tempState.initialContent = listItem;
-        tempState.inlineOnly = "InlineList";
+        tempState.inlineOnly = "InlineWithNewlines";
         processSection(tempState, undefined);
         const listItemHtml = outputGroupsToHtml(tempState.output, state.inSpoiler, true, false);
 
@@ -1737,7 +1737,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
         } else {
             const actionFunc = actionMap.get(result[1]);
 
-            if (state.inlineOnly === "InlineOnly" || state.inlineOnly === "InlineList") {
+            if (state.inlineOnly === "InlineOnly" || state.inlineOnly === "InlineWithNewlines") {
                 // In some sections only specific inline tags are allowed
                 // Check for a allowed tags first, then for any matched but forbidden tags
                 if (
