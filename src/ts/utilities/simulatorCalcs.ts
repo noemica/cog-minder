@@ -139,6 +139,41 @@ type DamageChunk = {
     spectrum: number;
 };
 
+// Adds a part to the bot state
+// Intended to only add parts back that have been destroyed
+function addRandomDestroyedPart(state: SimulatorState) {
+    const botState = state.botState;
+
+    // If no parts destroyed then nothing to do
+    if (botState.destroyedParts.length === 0) {
+        return;
+    }
+
+    // Pick a random destroyed part to restore
+    const part = botState.destroyedParts.splice(randomInt(0, botState.destroyedParts.length - 1), 1)[0];
+
+    botState.parts.push(part);
+    botState.armorAnalyzedCoverage += part.armorAnalyzedCoverage;
+    botState.armorAnalyzedSiegedCoverage += part.armorAnalyzedSiegedCoverage;
+    botState.siegedCoverage += part.siegedCoverage;
+    botState.totalCoverage += part.coverage;
+
+    // If the part provides damage resistances add them now
+    // TODO - remove assumption that there can't be multiple sources of
+    // a single type of damage resistance. e.g. One part is 30% and
+    // another is providing 25% so we need to fallback to the 25%
+    if (part.resistances !== undefined) {
+        for (const type of Object.keys(part.resistances)) {
+            if (type in botState.resistances) {
+                botState.resistances[type]! += part.resistances![type]!;
+            }
+        }
+    }
+
+    part.integrity = part.def.integrity;
+    updateWeaponsAccuracy(state);
+}
+
 type PartDestroyReason = "Integrity" | "CriticalRemove";
 
 // Applies a final calculated damage value to a bot, splitting into chunks if necessary
@@ -309,6 +344,8 @@ function applyDamage(
 
         part.integrity = 0;
         updateWeaponsAccuracy(state);
+
+        botState.destroyedParts.push(part);
     }
 
     function applyCorruption(corruption: number) {
@@ -678,6 +715,7 @@ function cloneBotState(botState: BotState): BotState {
         corruption: botState.corruption,
         def: botState.def,
         defensiveState: undefined as any,
+        destroyedParts: [],
         externalDamageReduction: botState.externalDamageReduction,
         immunities: botState.immunities,
         initialCoreIntegrity: botState.initialCoreIntegrity,
@@ -694,7 +732,8 @@ function cloneBotState(botState: BotState): BotState {
                 siegedCoverage: p.siegedCoverage,
             };
         }),
-        regen: botState.regen,
+        partRegen: botState.partRegen,
+        coreRegen: botState.coreRegen,
         resistances: resistances,
         running: botState.running,
         runningEvasion: botState.runningEvasion,
@@ -1224,9 +1263,25 @@ export function simulateCombat(state: SimulatorState): boolean {
         // Apply core regen
         const lastCompletedTurns = Math.trunc(oldTus / 100);
         const newCompletedTurns = Math.trunc(state.tus / 100);
-        const regenIntegrity = botState.regen * (newCompletedTurns - lastCompletedTurns);
+        const coreRegenIntegrity = botState.coreRegen * (newCompletedTurns - lastCompletedTurns);
 
-        botState.coreIntegrity = Math.min(botState.initialCoreIntegrity, botState.coreIntegrity + regenIntegrity);
+        botState.coreIntegrity = Math.min(botState.initialCoreIntegrity, botState.coreIntegrity + coreRegenIntegrity);
+
+        // Apply part regen to existing parts
+        const partRegenIntegrity = botState.partRegen * (newCompletedTurns - lastCompletedTurns);
+        for (const part of botState.parts) {
+            part.integrity = Math.min(part.integrity + partRegenIntegrity, part.def.integrity);
+        }
+
+        // Apply part regen to destroyed parts
+        // Every 10 turns, one part is recreated
+        const numRegenTurns = [...Array(newCompletedTurns - lastCompletedTurns)]
+            .map((_, i) => i + lastCompletedTurns)
+            .filter((t) => t % 10 === 0).length;
+
+        for (let i = 0; i < numRegenTurns; i++) {
+            addRandomDestroyedPart(state);
+        }
 
         // Process each volley
         volleys += 1;

@@ -184,13 +184,29 @@ function getPageState(): SimulatorPageState {
     };
 }
 
-const regenRegex = /Core Regeneration \((\d*)\)/;
+const coreRegenRegex = /Core Regeneration \((\d*)\)/;
 // Gets the core regen value for a bot, otherwise 0
-export function getRegen(bot: Bot): number {
+export function getCoreRegen(bot: Bot): number {
     const traits = bot.traits;
 
     for (let i = 0; i < traits.length; i++) {
-        const result = regenRegex.exec(traits[i]);
+        const result = coreRegenRegex.exec(traits[i]);
+
+        if (result != null) {
+            return parseInt(result[1]);
+        }
+    }
+
+    return 0;
+}
+
+const partRegenRegex = /Part Regeneration \((\d*)\)/;
+// Gets the core regen value for a bot, otherwise 0
+export function getPartRegen(bot: Bot): number {
+    const traits = bot.traits;
+
+    for (let i = 0; i < traits.length; i++) {
+        const result = partRegenRegex.exec(traits[i]);
 
         if (result != null) {
             return parseInt(result[1]);
@@ -341,14 +357,16 @@ function getSimulatorState(
         coreCoverage: botCoreCoverage,
         coreDisrupted: false,
         coreIntegrity: botIntegrity,
+        coreRegen: getCoreRegen(bot),
         corruption: 0,
         def: bot,
         defensiveState: defensiveState,
+        destroyedParts: [],
         externalDamageReduction: pageState.damageReduction || "None",
         immunities: bot.immunities,
         initialCoreIntegrity: botIntegrity,
         parts: parts,
-        regen: getRegen(bot),
+        partRegen: getPartRegen(bot),
         resistances: bot.resistances === undefined ? {} : bot.resistances,
         running: behavior === "Running",
         runningEvasion: runningEvasion,

@@ -88,14 +88,16 @@ export type BotState = {
     coreCoverage: number;
     coreDisrupted: boolean;
     coreIntegrity: number;
+    coreRegen: number;
     corruption: number;
     def: Bot;
     defensiveState: DefensiveState;
+    destroyedParts: SimulatorPart[];
     externalDamageReduction: ExternalDamageReduction;
     immunities: BotImmunity[];
     initialCoreIntegrity: number;
     parts: SimulatorPart[];
-    regen: number;
+    partRegen: number;
     resistances: BotResistances;
     running: boolean;
     runningEvasion: number;
