@@ -31,16 +31,28 @@ function BotGroupContent({
     groupSelection,
     parsedNode,
     setGroupSelection,
+    spoiler,
 }: {
     entry: WikiEntry;
     groupSelection: string;
     parsedNode: ReactNode;
     setGroupSelection: (selection: string) => void;
+    spoiler: Spoiler
 }) {
     const botEntries = entry.extraData as WikiEntry[];
+    const bots = useMemo(() => {
+        // Filter out bots based on spoiler setting
+        // However, also support viewing all bots past spoiler level if the user
+        // opted past the spoiler block page
+        return botEntries.filter(
+            (botEntry) => {
+                return canShowSpoiler(botEntry.spoiler, spoiler) || canShowSpoiler(botEntry.spoiler, entry.spoiler);
+            }
+        );
+    }, [spoiler]);
 
     const botButtons = useMemo(() => {
-        return botEntries.map<ExclusiveButtonDefinition<string>>((botEntry) => {
+        return bots.map<ExclusiveButtonDefinition<string>>((botEntry) => {
             return {
                 value: botEntry.name,
             };
@@ -48,7 +60,7 @@ function BotGroupContent({
     }, [entry]);
 
     // Use the saved entry if it exists, otherwise use the first entry
-    const bot = (botEntries.find((entry) => entry.name === groupSelection) || botEntries[0]).extraData as Bot;
+    const bot = (bots.find((entry) => entry.name === groupSelection) || bots[0]).extraData as Bot;
 
     return (
         <>
@@ -102,7 +114,7 @@ function ItemGroupContent({
         // opted past the spoiler block page
         return itemEntries.filter(
             (itemEntry) =>
-                canShowSpoiler(itemEntry.spoiler, spoiler) || canShowSpoiler(entry.spoiler, itemEntry.spoiler),
+                canShowSpoiler(itemEntry.spoiler, spoiler) || canShowSpoiler(itemEntry.spoiler, entry.spoiler),
         );
     }, [spoiler]);
 
@@ -222,6 +234,7 @@ export default function WikiPageContent({
                     groupSelection={groupSelection}
                     parsedNode={parsedNode}
                     setGroupSelection={setGroupSelection}
+                    spoiler={spoiler}
                 />
             );
 
