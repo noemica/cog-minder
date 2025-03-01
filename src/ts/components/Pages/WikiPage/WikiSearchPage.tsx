@@ -2,6 +2,7 @@ import { Fragment, ReactNode, useEffect } from "react";
 import { Link } from "wouter";
 
 import { WikiEntry } from "../../../types/wikiTypes";
+import { escapeHtml, getLinkSafeString } from "../../../utilities/common";
 import { createPreviewContent } from "../../../utilities/wikiParser";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
 
@@ -97,7 +98,7 @@ export default function WikiSearchPage({
 
             return (
                 <li key={i}>
-                    <Link href={`/${titleMatch}`}>{boldedTitleMatch}</Link>
+                    <Link href={`/${getLinkSafeString(titleMatch)}`}>{boldedTitleMatch}</Link>
                     <p>{matchNode}</p>
                 </li>
             );
