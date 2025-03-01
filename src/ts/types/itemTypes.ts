@@ -139,12 +139,13 @@ export type LauncherGuidance = { kind: "LauncherGuidance"; bonus: number };
 export type LauncherLoader = { kind: "LauncherLoader" };
 export type MassSupport = { kind: "MassSupport"; support: number };
 export type Metafiber = { kind: "Metafiber" };
+export type MniQuantumCapacitor = { kind: "MniQuantumCapacitor" };
 export type PowerAmplifier = { kind: "PowerAmplifier"; percent: number };
 export type QuantumCapacitor = { kind: "QuantumCapacitor" };
 export type ParticleCharging = { kind: "ParticleCharging"; percent: number };
 export type RangedAvoid = { kind: "RangedAvoid"; avoid: number };
 export type RangedWeaponCycling = { kind: "RangedWeaponCycling"; amount: number };
-export type ReactionControlSystem = { kind: "ReactionControlSystem"; chance: number; legsChance: number };
+export type ReactionControlSystem = { kind: "ReactionControlSystem"; chance: number; };
 export type RecoilReduction = { kind: "RecoilReduction"; reduction: number };
 export type SalvageTargeting = { kind: "SalvageTargeting"; amount: number };
 export type SelfReduction = { kind: "SelfReduction"; shielding: number };
@@ -175,6 +176,7 @@ export type SpecialPropertyType =
     | LauncherGuidance
     | MassSupport
     | Metafiber
+    | MniQuantumCapacitor
     | ParticleCharging
     | PowerAmplifier
     | QuantumCapacitor
@@ -211,6 +213,7 @@ export type SpecialPropertyTypeName =
     | "LauncherGuidance"
     | "MassSupport"
     | "Metafiber"
+    | "MniQuantumCapacitor"
     | "ParticleCharging"
     | "PowerAmplifier"
     | "QuantumCapacitor"

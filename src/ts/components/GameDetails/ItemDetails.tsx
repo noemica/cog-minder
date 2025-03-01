@@ -617,7 +617,7 @@ function PropulsionPartDetails({ item }: { item: PropulsionItem }) {
                 valueString={item.penalty?.toString()}
             />
             {item.special !== undefined ? (
-                <DetailsTextLine category="Special" content={item.special} defaultContent="N/A" />
+                <DetailsTextLine category="Special" content={item.special} defaultContent="N/A" tooltipOverride={item.special}/>
             ) : (
                 <DetailsRangeLine
                     category="Burnout"

@@ -92,6 +92,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
     "Imp. Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
     "AEGIS Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
+    "Cep. Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
     "7V-RTL's Ultimate Field": {
         active: "Part Active",
         trait: { kind: "DamageReduction", multiplier: 0.25, remote: false },
@@ -166,7 +167,8 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Exp. Thermal Defense Suite": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 30 } } },
     "Exp. Thermal Shield": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 30 } } },
     "Thermal Barrier": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 50 } } },
-    "Beam Splitter": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 75 } } },
+    "Beam Splitter": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 75 } } }, // TODO b15
+    "Cep. Beam Splitter": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 75 } } },
     "8R-AWN's Armor/TH": { active: "Always", trait: { kind: "DamageResists", resists: { Thermal: 90 } } },
     // All
     "Asb. Alloy Armor": {
@@ -281,6 +283,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Imp. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 14 } },
     "Adv. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 19 } },
     "Exp. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 26 } },
+    "Cep. Phasing Heat sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 36 } },
 
     // Mass support
     "Weight Redist. System": { active: "Part Active", trait: { kind: "MassSupport", support: 6 } },
@@ -290,6 +293,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Quantum Shading Machine": { active: "Part Active", trait: { kind: "MassSupport", support: 20 } },
     "Adv. Quantum Shading Machine": { active: "Part Active", trait: { kind: "MassSupport", support: 25 } },
     "Asb. Suspension Frame": { active: "Part Active", trait: { kind: "MassSupport", support: 20 } },
+    "Cep. Dimensional Manipulator": { active: "Part Active", trait: { kind: "MassSupport", support: 30 } },
 
     // Metafiber
     "Asb. Metafiber Network": { active: "Part Active", trait: { kind: "Metafiber" } },
@@ -309,6 +313,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Imp. Phase Shifter": { active: "Part Active", trait: { kind: "RangedAvoid", avoid: 10 } },
     "Adv. Phase Shifter": { active: "Part Active", trait: { kind: "RangedAvoid", avoid: 15 } },
     "Exp. Phase Shifter": { active: "Part Active", trait: { kind: "RangedAvoid", avoid: 20 } },
+    "Cep. Phase Shift Module": { active: "Part Active", trait: { kind: "RangedAvoid", avoid: 20 } },
 
     // Ranged weapon cycling
     "Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.15 } },
@@ -316,30 +321,36 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Adv. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.25 } },
     "Exp. Weapon Cycler": { active: "Part Active", trait: { kind: "RangedWeaponCycling", amount: 0.3 } },
     "Launcher Loader": { active: "Part Active", trait: { kind: "LauncherLoader" } },
+    "Mni. Quantum Capacitor": { active: "Part Active", trait: { kind: "MniQuantumCapacitor" } },
     "Quantum Capacitor": { active: "Part Active", trait: { kind: "QuantumCapacitor" } },
 
     // Reaction control systems
     "Reaction Control System": {
         active: "Part Active",
-        trait: { kind: "ReactionControlSystem", chance: 8, legsChance: 4 },
+        trait: { kind: "ReactionControlSystem", chance: 8 },
     },
     "Imp. Reaction Control System": {
         active: "Part Active",
-        trait: { kind: "ReactionControlSystem", chance: 10, legsChance: 5 },
+        trait: { kind: "ReactionControlSystem", chance: 10 },
     },
     "Adv. Reaction Control System": {
         active: "Part Active",
-        trait: { kind: "ReactionControlSystem", chance: 12, legsChance: 6 },
+        trait: { kind: "ReactionControlSystem", chance: 12 },
     },
     "Exp. Reaction Control System": {
         active: "Part Active",
-        trait: { kind: "ReactionControlSystem", chance: 14, legsChance: 7 },
+        trait: { kind: "ReactionControlSystem", chance: 14 },
+    },
+    "Cep. Reaction Jets": {
+        active: "Part Active",
+        trait: { kind: "ReactionControlSystem", chance: 18 },
     },
 
     // Recoil reduction
     "Recoil Stabilizer": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 4 } },
     "Adv. Recoil Nullifier": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 6 } },
     "Recoil Nullifier": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 6 } },
+    "Cep. Recoil Nullifier": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 99 } },
 
     // Particle charging
     "Particle Charger": { active: "Part Active", trait: { kind: "ParticleCharging", percent: 15 } },
@@ -354,6 +365,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Imp. Salvage Targeting Computer": { active: "Part Active", trait: { kind: "SalvageTargeting", amount: 2 } },
     "Adv. Salvage Targeting Computer": { active: "Part Active", trait: { kind: "SalvageTargeting", amount: 3 } },
     "Mak. Salvage Targeting Computer": { active: "Part Active", trait: { kind: "SalvageTargeting", amount: 4 } },
+    "Exp. Salvage Targeting Computer": { active: "Part Active", trait: { kind: "SalvageTargeting", amount: 5 } },
 
     // Self-damage reduction
     "1C-UTU's Buckler": { active: "Part Active", trait: { kind: "SelfReduction", shielding: 0.5 } },

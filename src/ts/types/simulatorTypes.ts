@@ -38,8 +38,7 @@ export type AntimissilePart = SpecialPart & {
 };
 
 export type AvoidPart = SpecialPart & {
-    legs: number;
-    other: number;
+    chance: number;
 };
 
 export type CorruptionAvoidPart = SpecialPart & {

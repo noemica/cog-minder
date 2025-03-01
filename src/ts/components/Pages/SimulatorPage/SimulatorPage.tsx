@@ -97,6 +97,7 @@ export type SimulatorPageState = {
     baseForceBoosters?: string;
     impForceBoosters?: string;
     advForceBoosters?: string;
+    expForceBoosters?: string;
     actuator?: string;
     actuatorArray?: string;
     bonusMomentum?: string;
@@ -402,6 +403,7 @@ function getSimulatorState(
         parseIntOrDefault(pageState.baseForceBoosters, 0),
         parseIntOrDefault(pageState.impForceBoosters, 0),
         parseIntOrDefault(pageState.advForceBoosters, 0),
+        parseIntOrDefault(pageState.expForceBoosters, 0),
     ];
     if (melee) {
         // Reduce force boosters to the 2 highest rating parts (half_stack)

@@ -421,6 +421,14 @@ export default function SimulatorPageInput({
                     placeholder="0"
                     tooltip="The amount of Advanced Force Boosters equipped. Provides a maximum damage increase of 40% and a melee accuracy penalty of 8%."
                 />
+                <LabeledInput
+                    label="Exp."
+                    disabled={simulationInProgress}
+                    value={pageState.expForceBoosters || ""}
+                    onChange={(val) => updatePageState({ ...pageState, expForceBoosters: val })}
+                    placeholder="0"
+                    tooltip="The amount of Experimental Force Boosters equipped. Provides a maximum damage increase of 50% and a melee accuracy penalty of 10%."
+                />
             </div>
             <div className="page-input-group">
                 <LabeledInput

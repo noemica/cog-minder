@@ -84,10 +84,10 @@ const externalDamageReductionMap: Map<ExternalDamageReduction, number> = new Map
 ]);
 
 // Array of force booster accuracy penalties
-const forceBoosterAccuracyPenalty = [4, 6, 8];
+const forceBoosterAccuracyPenalty = [4, 6, 8, 10];
 
 // Array of force booster maximum damage increases
-export const forceBoosterMaxDamageIncrease = [0.2, 0.3, 0.4];
+export const forceBoosterMaxDamageIncrease = [0.2, 0.3, 0.4, 0.5];
 
 // Base accuracies for combat
 export const initialRangedAccuracy = 60;
@@ -795,8 +795,7 @@ export function getBotDefensiveState(
             // Reaction Control System-like part
             // Leg/hover/flight determination done at accuracy update time
             state.avoid.push({
-                legs: (part.def.specialProperty!.trait as ReactionControlSystem).legsChance,
-                other: (part.def.specialProperty!.trait as ReactionControlSystem).chance,
+                chance: (part.def.specialProperty!.trait as ReactionControlSystem).chance,
                 part: part,
             });
         } else if (hasActiveSpecialProperty(part.def, true, "CorruptionIgnore")) {
@@ -1696,12 +1695,8 @@ function updateWeaponsAccuracy(state: SimulatorState) {
     // Subtract always avoid util (reaction control system)
     const avoidPart = getDefensiveStatePart(botState.defensiveState.avoid);
     if (avoidPart != undefined) {
-        if (movement.includes("Walking")) {
-            perWeaponBonus -= avoidPart.legs;
-        } else {
-            // TODO - handle hover/flight units are active here and not overweight
-            perWeaponBonus -= avoidPart.other;
-        }
+        // TODO - handle hover/flight units are active here and not overweight
+        perWeaponBonus -= avoidPart.chance;
     }
 
     if (offensiveState.analysis) {
