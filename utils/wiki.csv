@@ -930,6 +930,10 @@ Boltbath: Achieve a kill streak of 35 hostiles.
 |Desperate Times: Enter a main complex map at -3 or above as a naked core with no inventory items, and find an exit (do not have to remain naked).
 |Monster: Kill at least 20 inhabitants of Zion.
 |Equal Opportunity Bot: Destroy 30 different classes of robot.
+Notes: What counts as a ""class"" isn't immediately obvious. For example, the in-game examination window classifies [[Thug|Thugs]] as ""Thug (Derelict)"" and [[Grunt|Grunts]] as ""Grunt"", but they are considered the same class for scoresheet purposes. This achievement relies on the scoresheet definition, making it somewhat confusing.
+As a general rule, robots with different sprites will count as different classes (with the exception of unique NPCs, which do not count at all).
+The exact definition is likely related to the ""build type"" and purpose of each robot. For example, both [[Packrat|Packrats]] and [[Recycler|Recyclers]] have the purpose of collecting parts and have similar parts. Both Thugs and Grunts are two-legged, have a [[Cooling Devices|Heat Sink]], and use thermal guns. [[Cobbler|Cobblers]] and [[Mechanic|Mechanics]], however, are completely different in both build and purpose, and as such count as different classes.
+The relevant scoresheet statistic is ""Classes Destroyed"".
 |Giant Slayer: Destroy 5 [[Behemoth|Behemoths]].
 |Artifact Hunter: [[Spoiler]]Attach or use 15 different alien artifacts.[[/Spoiler]]
 [[/List]]
