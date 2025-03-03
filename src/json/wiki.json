@@ -158,11 +158,11 @@
   },
   {
    "Name": "Bolteater",
-   "Content": ""
+   "Content": "Bolteaters are fast [[Wheels|wheeled]] [[UFD]] combat bots armed with [[Ripteeth]]. Valuable for a wheels build with their [[Rocket Booster|Rocket Boosters]]. Their ripteeth can rip off a component ignoring armor, so keep them away from you. Slightly resistant to Kinetic, Thermal, Electromagnetic and Explosive damage."
   },
   {
    "Name": "Bomb Drone",
-   "Content": ""
+   "Content": "Fast disposable drones that attempt to melee hostiles, which will cause them to explode. Deployed by a [[Bomb Drone Bay]]"
   },
   {
    "Name": "Borebot",
@@ -258,7 +258,7 @@
   },
   {
    "Name": "DRS Ranger",
-   "Content": ""
+   "Content": "More powerful [[Ranger]] variants that appear in [[Caves]] when a [[DRS Beacon]] is used."
   },
   {
    "Name": "Data Miner",
@@ -726,7 +726,7 @@
   },
   {
    "Name": "Ranger",
-   "Content": ""
+   "Content": "Rangers are [[Hover Units|hovering]] [[UFD]] armed with penetrating [[Bolt Gun]]s. Slightly resistant to kinetic damage and slightly vulnerable to electromagnetic damage.\nFor the rangers dispatched as part of a rescue squad, see [[DRS Ranger]]."
   },
   {
    "Name": "Revision",
@@ -758,7 +758,7 @@
   },
   {
    "Name": "Samaritan",
-   "Content": ""
+   "Content": "Samaritans are [[Treads|treaded]] [[Derelict|derelict]] non-combat bots with a big amount of batteries and two [[Neutrino Core|Neutrino Cores]], which are valuable if you lack spares in [[Caves]]. Slightly vulnerable to EM.\nSamaritans will give energy each turn to every robot (and [[Cogmind]]) in range."
   },
   {
    "Name": "Sapper",
@@ -774,7 +774,7 @@
   },
   {
    "Name": "Scientist",
-   "Content": ""
+   "Content": "Scientists are [[Wheels|two-wheeled]] [[UFD]] non-combat bots found in [[Scraptown]] and [[Recycling]]. They are quite valuable for their [[Tech Extrapolator]], and are defenseless. Vulnerable to EM."
   },
   {
    "Name": "Scrapoid (3)",
@@ -790,7 +790,7 @@
   },
   {
    "Name": "Scrapper",
-   "Content": ""
+   "Content": "Scrappers are [[Legs|legged]] [[UFD]] bots armed with an [[Ovr. Pulse Rifle]] located mainly in [[Scraptown]]."
   },
   {
    "Name": "Sensor Drone",
@@ -1022,11 +1022,11 @@
   },
   {
    "Name": "Z-Courier",
-   "Content": ""
+   "Content": "[[Imprint]]-aligned derelict [[Hauler]] variant. Delivers resupplies via the [[Imprint]] roster."
   },
   {
    "Name": "Z-Drone",
-   "Content": ""
+   "Content": "Created by a [[Z-Drone Bay]]. Slightly better than a [[Mini Drone]], with a makeshift cloaking device."
   },
   {
    "Name": "Z-Experimental (10)",
@@ -1050,7 +1050,7 @@
   },
   {
    "Name": "Z-Imprinter",
-   "Content": ""
+   "Content": "See [[Zion Deep Caves]]."
   },
   {
    "Name": "Z-Light (5)",
@@ -1066,7 +1066,7 @@
   },
   {
    "Name": "Z-Technician",
-   "Content": ""
+   "Content": "Harmless zion [[Derelict|derelict]] [[Operator]] variants found stationary in [[Zion Deep Caves]]."
   },
   {
    "Name": "Zhirov",
@@ -1310,7 +1310,7 @@
     "Marauder (6)",
     "Marauder (8)"
    ],
-   "Content": "Marauders are [[Treads|treaded]] [[Derelict]] combat bots armed with kinetic weaponry. They are the Derelict versions of [[Behemoth|Behemoths]]. They have unreliable firepower, but their [[Slug Cannon|Slug Cannons]] can easily destroy hostiles with their high critical rate. In comparison to [[0b10]] Behemoths, they tend to be more fragile with low integrity in their armor, and are much more susceptible to EM damage."
+   "Content": "Marauders are [[Treads|treaded]] [[Derelict]] combat bots armed with kinetic weaponry. They are the Derelict versions of [[Behemoth|Behemoths]]. They have unreliable firepower, but their [[Slug Cannon|Slug Cannons]] can easily destroy hostiles with their high critical rate. In comparison to [[0b10]] Behemoths, they tend to be more fragile with low integrity in their armor, and are less susceptible to EM damage."
   },
   {
    "Name": "Martyr",
@@ -1464,7 +1464,7 @@
     "Scrapoid (6)",
     "Scrapoid (8)"
    ],
-   "Content": "Scrapoids are [[UFD]]-aligned bots Cogmind can create by using the [[Scrapoid Pod]] or by using the [[GameText]]Force(Scrapoids)[[/GameText]] hack at [[Recycling Unit|Recycling Units]]. They have little in the way of defenses, but have high offensive capabilities with their unique Ovr. weaponry, and can repair their parts and even core with their [[Scrap Suit|Scrap Suits]]. They also carry a [[CPS Tube]] and can use it while in combat.",
+   "Content": "Scrapoids are [[UFD]]-aligned combat bots Cogmind can create by using the [[Scrapoid Pod]] or by using the [[GameText]]Force(Scrapoids)[[/GameText]] hack at [[Recycling Unit|Recycling Units]]. They have little in the way of defenses, but have high offensive capabilities with their unique Ovr. weaponry, and can repair their parts and even core with their [[Scrap Suit|Scrap Suits]]. They also carry a [[CPS Tube]] and can use it while in combat.",
    "Spoiler": "Spoiler"
   },
   {
@@ -2932,7 +2932,7 @@
   },
   {
    "Name": "DRS Beacon",
-   "Content": ""
+   "Content": "Used to summon a [[DRS Ranger]] rescue squad in [[Caves]] when activated. Rangers will attempt to pathfind to cogmind and follow them until they leave the level."
   },
   {
    "Name": "Damper Plating",
@@ -9283,7 +9283,7 @@
   },
   {
    "Name": "Allies",
-   "Content": "[[Heading]]Ally Type/Color[[/Heading]]\n[[Table]]\nColor|Will Follow|Hostile|Can be Ordered|Will Retaliate||\nColor not in list|[[CellStyle:Bad]]Pursues|[[CellStyle:Bad]]Yes|[[CellStyle:Bad]]No|[[CellStyle:Bad]]Yes||\nWhite|[[CellStyle:Good]]No|[[CellStyle:Good]]No|[[CellStyle:Bad]]No|[[CellStyle:Neutral]]Sometimes - Depends on the bot||\nPurple|[[CellStyle:Good]]Yes|[[CellStyle:Good]]No|[[CellStyle:Bad]]No|[[CellStyle:Good]]No||\nBlue|[[CellStyle:Good]]Yes|[[CellStyle:Good]]No|[[CellStyle:Good]]Yes|[[CellStyle:Good]]No\n[[/Table]]\n[[Heading]]Orders[[/Heading]]\nRobots will by default follow [[Cogmind]] (you) and attack any hostile if combat capable. Orders can be issued to any robot [[B]]in sight[[/B]] listed in the allies menu [[B]](F6)[[/B]]. [[I]](Orders can also be issued directly on the map: Shift-right click on a robot, or press 'o' then its corresponding number, or in keyboard look mode, by moving the cursor over the bot and pressing 'o'.) [[/I]]\n[[List]][[GameText]]STAY[[/GameText]] - Remain at the current position, only moving aside to let allies pass. Combat-capable bots will still chase after hostiles and return to their position later.|\n[[GameText]]ROAM[[/GameText]] - Wander and do whatever.|\n[[GameText]]FOLLOW[[/GameText]] - Follow [[Cogmind]].|\n[[GameText]]GUARD[[/GameText]] - Follow the specified bot and prioritize attacking anything harming the specified bot.|\n[[GameText]]AID[[/GameText]] - Follow the specified bot and prioritize attacking anything the specified bot is attacking.|\n[[GameText]]TUNNEL[[/GameText]] - Tunnel to the specified location, if capable of digging (bots such as [[T-07 Excavator]].|\n[[GameText]]DROP[[/GameText]] - Drop everything in the bots inventory, then wander in a small area.|\n[[GameText]]PICKUP[[/GameText]] - Collect everything near [[Cogmind]], and then [[GameText]]Follow[[/GameText]] once inventory is full.|\n[[GameText]]COLLECT[[/GameText]] - Wander and collect items until inventory is full, then set to [[GameText]]Follow[[/GameText]].|\n[[GameText]]EXPLORE[[/GameText]] - Explore unexplored areas, giving info to [[Cogmind]].|\n[[GameText]]RETURN[[/GameText]] - Return this [[Drone]] to its bay. Drones only, obviously.\n[[/List]]\n[[Heading]]Benefits[[/Heading]]\n[[Image]]https://i.ibb.co/fQzvMXF/image.png|Cogminds allies (friends!)[[/Image]]\n[[Operator]] class robots will give you a diminishing hacking bonus starting at +6% (6%, 3%, 1%..), and will reveal any hidden door or trap, provided the operator is within 20 tiles range of you. Operators will also report changes in security level.\n[[Mechanic]] class robots when set to [[GameText]]AID[[/GameText]] will repair core integrity [[B]](but NOT for Cogmind)[[/B]], broken parts, non-functional parts, and part integrity of their repair target (Cogmind is prioritized over allies) in that order. Mechanics cannot repair a part above 50% integrity."
+   "Content": "[[Heading]]Ally Type/Color[[/Heading]]\n[[Image]]https://i.ibb.co/fQzvMXF/image.png|Cogminds allies (friends!)[[/Image]]\n[[Table]]\nColor|Will Follow|Hostile|Can be Ordered|Will Retaliate||\nColor not in list|[[CellStyle:Bad]]Pursues|[[CellStyle:Bad]]Yes|[[CellStyle:Bad]]No|[[CellStyle:Bad]]Yes||\nWhite|[[CellStyle:Good]]No|[[CellStyle:Good]]No|[[CellStyle:Bad]]No|[[CellStyle:Neutral]]Sometimes - Depends on the bot||\nPurple|[[CellStyle:Good]]Yes|[[CellStyle:Good]]No|[[CellStyle:Bad]]No|[[CellStyle:Good]]No||\nBlue|[[CellStyle:Good]]Yes|[[CellStyle:Good]]No|[[CellStyle:Good]]Yes|[[CellStyle:Good]]No\n[[/Table]]\n[[Heading]]Orders[[/Heading]]\nRobots will by default follow [[Cogmind]] (you) and attack any hostile if combat capable. Orders can be issued to any robot [[B]]in sight[[/B]] listed in the allies menu [[B]](F6)[[/B]]. [[I]](Orders can also be issued directly on the map: Shift-right click on a robot, or press 'o' then its corresponding number, or in keyboard look mode, by moving the cursor over the bot and pressing 'o'.) [[/I]]\n[[List]][[GameText]]STAY[[/GameText]] - Remain at the current position, only moving aside to let allies pass. Combat-capable bots will still chase after hostiles and return to their position later.|\n[[GameText]]ROAM[[/GameText]] - Wander and do whatever.|\n[[GameText]]FOLLOW[[/GameText]] - Follow [[Cogmind]].|\n[[GameText]]GUARD[[/GameText]] - Follow the specified bot and prioritize attacking anything harming the specified bot.|\n[[GameText]]AID[[/GameText]] - Follow the specified bot and prioritize attacking anything the specified bot is attacking.|\n[[GameText]]TUNNEL[[/GameText]] - Tunnel to the specified location, if capable of digging (bots such as [[T-07 Excavator]]).|\n[[GameText]]DROP[[/GameText]] - Drop everything in the bots inventory, then wander in a small area.|\n[[GameText]]PICKUP[[/GameText]] - Collect everything near [[Cogmind]], and then [[GameText]]Follow[[/GameText]] once inventory is full.|\n[[GameText]]COLLECT[[/GameText]] - Wander and collect items until inventory is full, then set to [[GameText]]Follow[[/GameText]].|\n[[GameText]]EXPLORE[[/GameText]] - Explore unexplored areas, giving info to [[Cogmind]].|\n[[GameText]]RETURN[[/GameText]] - Return this [[Drone]] to its bay. Drones only, obviously.\n[[/List]]\n[[Heading]]Benefits[[/Heading]]\n[[Operator]] class robots will give you a diminishing hacking bonus starting at +6% (6%, 3%, 1%..), and will reveal any hidden door or trap, provided the operator is within 20 tiles range of you. Operators will also report changes in security level.\n[[Mechanic]] class robots when set to [[GameText]]AID[[/GameText]] will repair core integrity [[B]](but NOT for Cogmind)[[/B]], broken parts, non-functional parts, and part integrity of their repair target (Cogmind is prioritized over allies) in that order. Mechanics cannot repair a part above 50% integrity."
   },
   {
    "Name": "Assault Squad",
@@ -9392,7 +9392,7 @@
   },
   {
    "Name": "Fanart/jimmyl",
-   "Content": "[[FanartGallery]]https://i.ibb.co/Fk2FsVTr/image.png|Prefabs|https://i.ibb.co/QFX0LvT3/derelicttube.png|DerelictTube|https://i.ibb.co/1Gz6bTcS/ezgif-3-ae1dc60bf1.gif|Classic Garrison Trap|https://i.ibb.co/rf6QFmC8/ezgif-1-5962fb4d15.gif |Limited AI|https://i.ibb.co/C3TsNk7z/ezgif-4-6de5f1f83d.gif|J-985 Containment|https://i.ibb.co/zW3cPYsf/unnamed.png|Cant hear the fans|https://i.ibb.co/FLj01pRx/expedite.png|Wild Caves Derelict Conscript|https://i.ibb.co/VcwQydyP/ezgif-5-13808726b5.gif|Caves Hauler Experiment|https://i.ibb.co/b5F4MMYC/ezgif-1-e45fe5ba57.gif|0b1 Club|https://i.ibb.co/1ttDKY9s/ezgif-5-4f74ce1950.gif|STANDING HERE|https://i.ibb.co/DgjtTFd1/ezgif-4-d6b2029e45.gif|0b1 Football|https://i.ibb.co/mPLYQYz/ezgif-5-39024168a0.gif|Loop Theory|https://i.ibb.co/xk19Qm1/ezgif-2-0d4141b711.gif|Fake Prototypes|https://i.ibb.co/xtG8w84p/ezgif-1-7f4e6b0206.gif|Prototype ARC|https://i.ibb.co/6JTSP10J/ezgif-5-95e8354051.gif|Authchips[[/FanartGallery]]",
+   "Content": "[[FanartGallery]]https://i.ibb.co/Fk2FsVTr/image.png|Prefabs|https://i.ibb.co/QFX0LvT3/derelicttube.png|DerelictTube|https://i.ibb.co/1Gz6bTcS/ezgif-3-ae1dc60bf1.gif|Classic Garrison Trap|https://i.ibb.co/rf6QFmC8/ezgif-1-5962fb4d15.gif |Limited AI|https://i.ibb.co/C3TsNk7z/ezgif-4-6de5f1f83d.gif|J-985 Containment|https://i.ibb.co/zW3cPYsf/unnamed.png|Cant hear the fans|https://i.ibb.co/FLj01pRx/expedite.png|Wild Caves Derelict Conscript|https://i.ibb.co/VcwQydyP/ezgif-5-13808726b5.gif|Caves Hauler Experiment|https://i.ibb.co/b5F4MMYC/ezgif-1-e45fe5ba57.gif|0b1 Club|https://i.ibb.co/1ttDKY9s/ezgif-5-4f74ce1950.gif|STANDING HERE|https://i.ibb.co/DgjtTFd1/ezgif-4-d6b2029e45.gif|0b1 Football|https://i.ibb.co/mPLYQYz/ezgif-5-39024168a0.gif|Loop Theory|https://i.ibb.co/xk19Qm1/ezgif-2-0d4141b711.gif|Fake Prototypes|https://i.ibb.co/xtG8w84p/ezgif-1-7f4e6b0206.gif|Prototype ARC|https://i.ibb.co/6JTSP10J/ezgif-5-95e8354051.gif|Authchips|https://i.ibb.co/8LVC87hR/imag3e.png|Lemonade|https://i.ibb.co/ZRJZV4hd/ezgif-5-1a1597833b.gif|Pet Serfs|https://i.ibb.co/Y4ZmLXgX/f1.png|No UTF-8|https://i.ibb.co/Hpq48jpC/dnd.png|Complexes And Dragons|https://i.ibb.co/tTp85hkR/image.png|-12 (real 100%)|https://i.ibb.co/fV98P2ff/ezgif-5c84c8ca48ec58.gif|Blade Trap Raking[[/FanartGallery]]",
    "Spoiler": "Spoiler"
   },
   {
@@ -9405,7 +9405,7 @@
   },
   {
    "Name": "Game Mechanics",
-   "Content": "[[List]][[Alert]] - Semi-hidden number that represents Cogmind's perceived threat level. Has dangerous consequences when too high.|[[Allies]] - Bots friendly to [[Cogmind]].|[[Cave-ins]] - Mechanic that causes dug out walls to collapse and deal large amounts of damage.|[[Corruption]] - Stat that has various negative penalties and can result in death.|[[Energy]] - Stat that is used to power most parts in the game.|[[Heat]] - Stat that can cause overheating side-effects and deaths in non-immune bots.|[[Matter]] - Stat that is used as a resource to attach parts and shoot some types of weapons.|[[Overload]]: Mechanic that can increase effectiveness of parts with a possible downside.[[/List]]"
+   "Content": "[[List]][[Alert]] - Semi-hidden number that represents Cogmind's perceived threat level. Has dangerous consequences when too high.|[[Allies]] - Bots friendly to [[Cogmind]].|[[Cave-ins]] - Mechanic that causes dug out walls to collapse and deal large amounts of damage.|[[Corruption]] - Stat that has various negative penalties and can result in death.|[[Energy]] - Stat that is used to power most parts in the game.|[[Heat]] - Stat that can cause overheating side-effects and deaths in non-immune bots.|[[Matter]] - Stat that is used as a resource to attach parts and shoot some types of weapons.|[[Overload]] - Mechanic that can increase effectiveness of parts with a possible downside.[[/List]]"
   },
   {
    "Name": "Garrison Access",

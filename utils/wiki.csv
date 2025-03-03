@@ -479,6 +479,7 @@ purge_threat [[Operator]] RIF hack|150 [[Sub]]1[[/Sub]]
 Below is a list of all faction alignments available in the game and their compatibility. The row is for the first alignment, and the column is for the second. Each cell indicates whether the two alignments are compatible in a particular order.
 [[Redacted]][[Table]]First/Second alignment|Core Reset Matrix|Farcom|Imprint|MAIN.C Surrender|Relay Interface Framework|Revision 17|Sigix Exoskeleton|UFD|Warlord|Zhirov||Core Reset Matrix|[[CellStyle:Good]]Multiple CRMs can be used|[[CellStyle:Good]]No issues|[[CellStyle:Neutral]]N/A, can't CRM first|[[CellStyle:Bad]]Can't surrender after CRM|[[CellStyle:Bad]]CRMing prevents using RIF installers|[[CellStyle:Neutral]]N/A, can't CRM first|[[CellStyle:Good]]Using CRM required first|[[CellStyle:Neutral]]N/A, can't CRM first|[[CellStyle:Good]]N/A, can't CRM first|[[CellStyle:Bad]]Zhirov turns hostile after CRM||Farcom|[[CellStyle:Good]]No issues|[[CellStyle:Neutral]]N/A|[[CellStyle:Bad]]Farcom prevents Imprinting|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues, Farcom stays but has no practical benefit|[[CellStyle:Bad]]UFD unavailable after using Farcom|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues||Imprint|[[CellStyle:Good]]No issues, CRM turns cave seal Z-bots controllable|[[CellStyle:Neutral]]N/A, can't Imprint first|[[CellStyle:Neutral]]N/A|[[CellStyle:Good]]No issues|[[CellStyle:Bad]]Imprinting prevents using RIF installers|[[CellStyle:Bad]]Imprinting prevents Revision 17 event|[[CellStyle:Good]]No issues|[[CellStyle:Neutral]]N/A, can't Imprint first|[[CellStyle:Bad]]Imprinting prevents Warlord alliance|[[CellStyle:Good]]No issues||MAIN.C Surrender|[[CellStyle:Good]]Using a CRM after surrendering has no consequences|[[CellStyle:Neutral]]N/A, can't surrender first|[[CellStyle:Neutral]]N/A, can't surrender first|[[CellStyle:Neutral]]N/A|[[CellStyle:Neutral]]N/A, can't surrender first|[[CellStyle:Neutral]]N/A, can't surrender first|[[CellStyle:Neutral]]N/A, can't surrender first|[[CellStyle:Neutral]]N/A, can't surrender first|[[CellStyle:Neutral]]N/A, can't surrender first|[[CellStyle:Neutral]]N/A, can't surrender first||Relay Interface Framework|[[CellStyle:Good]]No issues, although RIF will be removed|[[CellStyle:Neutral]]N/A, can't install RIF first|[[CellStyle:Bad]]Installing RIF turns Zion aggressive|[[CellStyle:Good]]No issues|[[CellStyle:Good]]Repeated RIF installers give more bonuses|[[CellStyle:Good]]No issues|[[CellStyle:Neutral]]N/A, must use CRM first which removes RIF|[[CellStyle:Bad]]Entering Scraptown okay but UFD alignment not allowed|[[CellStyle:Bad]]Installing RIF turns Warlord aggressive|[[CellStyle:Good]]No issues||Revision 17|[[CellStyle:Good]]No issues|[[CellStyle:Neutral]]N/A, can't meet R17 first|[[CellStyle:Neutral]]N/A, can't meet R17 first|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues|[[CellStyle:Neutral]]N/A|[[CellStyle:Good]]No issues|[[CellStyle:Neutral]]N/A, can't meed R17 first|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues||Sigix Exoskeleton|[[CellStyle:Good]]Multiple CRMs are fine to use after the first|[[CellStyle:Neutral]]N/A, can't enter Exoskeleton first|[[CellStyle:Neutral]]N/A, can't enter Exoskeleton first|[[CellStyle:Bad]]Can't surrender in Exoskeleton|[[CellStyle:Bad]]CRMing prevents using RIF installers|[[CellStyle:Neutral]]N/A, can't enter Exoskeleton first|[[CellStyle:Neutral]]N/A|[[CellStyle:Good]]N/A, can't enter Exoskeleton first|[[CellStyle:Bad]]Warlord turns aggressive upon seeing Exoskeleton|[[CellStyle:Bad]]Zhirov turns hostile after CRM||UFD|[[CellStyle:Good]]No issues|[[CellStyle:Neutral]]N/A, can't align with UFD first|[[CellStyle:Bad]]UFD prevents Imprinting|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues|[[CellStyle:Neutral]]N/A|[[CellStyle:Bad]]UFD alignment prevents Warlord alliance|[[CellStyle:Good]]No issues||Warlord|[[CellStyle:Good]]No issues|[[CellStyle:Neutral]]N/A, can't meet Warlord first|[[CellStyle:Neutral]]N/A, can't meet Warlord first|[[CellStyle:Bad]]Cogmind can't surrender if Warlord is alive and in Command|[[CellStyle:Good]]RIF installers okay after meeting Warlord but Encrypted Comm Array effects are removed|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues|[[CellStyle:Neutral]]N/A, can't meed Warlord first|[[CellStyle:Neutral]]N/A|[[CellStyle:Good]]No issues||Zhirov|[[CellStyle:Good]]No issues|[[CellStyle:Neutral]]N/A, can't meet Zhirov first|[[CellStyle:Neutral]]N/A, can't meet Zhirov first|[[CellStyle:Good]]No issues, Zhirov will not appear after surrendering|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues|[[CellStyle:Good]]No issues|[[CellStyle:Neutral]]N/A[[/Table]][[/Redacted]]","","","","","","",""
 "Allies","Other","[[Heading]]Ally Type/Color[[/Heading]]
+[[Image]]https://i.ibb.co/fQzvMXF/image.png|Cogminds allies (friends!)[[/Image]]
 [[Table]]
 Color|Will Follow|Hostile|Can be Ordered|Will Retaliate||
 Color not in list|[[CellStyle:Bad]]Pursues|[[CellStyle:Bad]]Yes|[[CellStyle:Bad]]No|[[CellStyle:Bad]]Yes||
@@ -493,7 +494,7 @@ Robots will by default follow [[Cogmind]] (you) and attack any hostile if combat
 [[GameText]]FOLLOW[[/GameText]] - Follow [[Cogmind]].|
 [[GameText]]GUARD[[/GameText]] - Follow the specified bot and prioritize attacking anything harming the specified bot.|
 [[GameText]]AID[[/GameText]] - Follow the specified bot and prioritize attacking anything the specified bot is attacking.|
-[[GameText]]TUNNEL[[/GameText]] - Tunnel to the specified location, if capable of digging (bots such as [[T-07 Excavator]].|
+[[GameText]]TUNNEL[[/GameText]] - Tunnel to the specified location, if capable of digging (bots such as [[T-07 Excavator]]).|
 [[GameText]]DROP[[/GameText]] - Drop everything in the bots inventory, then wander in a small area.|
 [[GameText]]PICKUP[[/GameText]] - Collect everything near [[Cogmind]], and then [[GameText]]Follow[[/GameText]] once inventory is full.|
 [[GameText]]COLLECT[[/GameText]] - Wander and collect items until inventory is full, then set to [[GameText]]Follow[[/GameText]].|
@@ -501,7 +502,6 @@ Robots will by default follow [[Cogmind]] (you) and attack any hostile if combat
 [[GameText]]RETURN[[/GameText]] - Return this [[Drone]] to its bay. Drones only, obviously.
 [[/List]]
 [[Heading]]Benefits[[/Heading]]
-[[Image]]https://i.ibb.co/fQzvMXF/image.png|Cogminds allies (friends!)[[/Image]]
 [[Operator]] class robots will give you a diminishing hacking bonus starting at +6% (6%, 3%, 1%..), and will reveal any hidden door or trap, provided the operator is within 20 tiles range of you. Operators will also report changes in security level.
 [[Mechanic]] class robots when set to [[GameText]]AID[[/GameText]] will repair core integrity [[B]](but NOT for Cogmind)[[/B]], broken parts, non-functional parts, and part integrity of their repair target (Cogmind is prioritized over allies) in that order. Mechanics cannot repair a part above 50% integrity.","","","","","","",""
 "Alpha 7","Bot","","","","","","","",""
@@ -677,8 +677,8 @@ A Pointy Stick has a chance to transform into a Behemoth Slayer when used to att
 "Blade Trap","Part","","","","","","","",""
 "Blast Cannon","Part","","","","","","","",""
 "Bolt Gun","Part","","","","","","","",""
-"Bolteater","Bot","","","","","","","",""
-"Bomb Drone","Bot","","","","","","","",""
+"Bolteater","Bot","Bolteaters are fast [[Wheels|wheeled]] [[UFD]] combat bots armed with [[Ripteeth]]. Valuable for a wheels build with their [[Rocket Booster|Rocket Boosters]]. Their ripteeth can rip off a component ignoring armor, so keep them away from you. Slightly resistant to Kinetic, Thermal, Electromagnetic and Explosive damage.","","","","","","",""
+"Bomb Drone","Bot","Fast disposable drones that attempt to melee hostiles, which will cause them to explode. Deployed by a [[Bomb Drone Bay]]","","","","","","",""
 "Bomb Drone Bay","Part","Deploys [[Bomb Drone|Bomb Drones]].","","","","","","",""
 "Bomb Factory No. 2","Part","","","","","","","",""
 "Bore Cannon","Part","","","","","","","",""
@@ -1626,8 +1626,8 @@ Cutters may appear in the following squads:
 "DD-05H","Bot","","","","","","","",""
 "DD-05H's Wartreads","Part","","","","","","","",""
 "DM-GVY's Chainsaw","Part","","","","","","","",""
-"DRS Beacon","Part","","","","","","","",""
-"DRS Ranger","Bot","","","","","","","",""
+"DRS Beacon","Part","Used to summon a [[DRS Ranger]] rescue squad in [[Caves]] when activated. Rangers will attempt to pathfind to cogmind and follow them until they leave the level.","","","","","","",""
+"DRS Ranger","Bot","More powerful [[Ranger]] variants that appear in [[Caves]] when a [[DRS Beacon]] is used.","","","","","","",""
 "DSF","Location","DSF (Distributed Storage Facility) is a [[0b10]]-controlled sub-floor in [[Factory]] and [[Research]] branches that appears in all depths from -7 through -2. It can only be entered by hacking open a DSF entrance terminal (base 50% chance) without being spotted by any hostiles on the map. DSFs contain large amounts of non-[[Prototype Part|Prototype]] parts in groups of 2-6 that can be any part that can normally appear on the ground for the given depth. Unlike most maps, the ambient temperature in DSFs is -10 rather than 0. This has the effect of giving an additional 10 heat dissipation per turn to all bots on the map.
 The overall map layout is semi-fixed. It consists of 2-4 quadrants connected by 2-tile wide corridors In the corner of each quadrant are large Matter Repository machines that will release [[Matter]] when broken. These corridors can have [[Alarm Trap|Alarm Traps]] and [[Stasis Trap|Stasis Traps]] in them but not in the item stockpiles. The exit will never be in the quadrant that Cogmind starts in. In the center of every DSF is a depth-appropriate [[Heavy]], guarding all of the main corridors in the map. Around the Heavy are 4 unpowered [[A-15 Conveyor|A-15 Conveyors]]. The corners of the map can have individual dormant [[Specialist|Specialists]], but not always. There are sometimes groups of 4 prototypes hidden behind emergency access doors in the center of a quadrant, and these prototypes will typically be out-of-depth. Sometimes there is a [[Sentry]] guarding this prototype stockpile.
 [[Lore]]0b10 Records|DSF[[/Lore]]
@@ -3128,7 +3128,7 @@ Components|Lgt. Nuclear Core|2|Arm. Leg|2|Imp. Light Armor Plating|2|Imp. Coolin
 Components|Dynamic Insulation System|1|Exp. Targeting Computer|1|Adv. Target Analyzer|1[[/BotDetails]]
 [[Heading]]Developers' Lab[[/Heading]]
 [[Gallery]]https://i.imgur.com/sJOhOx5.png|Entering|https://i.imgur.com/k959xii.png|Chungus and Bouncer|https://i.imgur.com/CC7gl4X.png|Hunter hideout|https://i.imgur.com/ujolGNy.png|Developers|https://i.imgur.com/JuUURKD.png|More Developers|https://i.imgur.com/TgvYIL5.png|Bonk Boyz[[/Gallery]]","","","","","","",""
-"Fanart/jimmyl","Other","[[FanartGallery]]https://i.ibb.co/Fk2FsVTr/image.png|Prefabs|https://i.ibb.co/QFX0LvT3/derelicttube.png|DerelictTube|https://i.ibb.co/1Gz6bTcS/ezgif-3-ae1dc60bf1.gif|Classic Garrison Trap|https://i.ibb.co/rf6QFmC8/ezgif-1-5962fb4d15.gif |Limited AI|https://i.ibb.co/C3TsNk7z/ezgif-4-6de5f1f83d.gif|J-985 Containment|https://i.ibb.co/zW3cPYsf/unnamed.png|Cant hear the fans|https://i.ibb.co/FLj01pRx/expedite.png|Wild Caves Derelict Conscript|https://i.ibb.co/VcwQydyP/ezgif-5-13808726b5.gif|Caves Hauler Experiment|https://i.ibb.co/b5F4MMYC/ezgif-1-e45fe5ba57.gif|0b1 Club|https://i.ibb.co/1ttDKY9s/ezgif-5-4f74ce1950.gif|STANDING HERE|https://i.ibb.co/DgjtTFd1/ezgif-4-d6b2029e45.gif|0b1 Football|https://i.ibb.co/mPLYQYz/ezgif-5-39024168a0.gif|Loop Theory|https://i.ibb.co/xk19Qm1/ezgif-2-0d4141b711.gif|Fake Prototypes|https://i.ibb.co/xtG8w84p/ezgif-1-7f4e6b0206.gif|Prototype ARC|https://i.ibb.co/6JTSP10J/ezgif-5-95e8354051.gif|Authchips[[/FanartGallery]]","Spoiler","","","","","",""
+"Fanart/jimmyl","Other","[[FanartGallery]]https://i.ibb.co/Fk2FsVTr/image.png|Prefabs|https://i.ibb.co/QFX0LvT3/derelicttube.png|DerelictTube|https://i.ibb.co/1Gz6bTcS/ezgif-3-ae1dc60bf1.gif|Classic Garrison Trap|https://i.ibb.co/rf6QFmC8/ezgif-1-5962fb4d15.gif |Limited AI|https://i.ibb.co/C3TsNk7z/ezgif-4-6de5f1f83d.gif|J-985 Containment|https://i.ibb.co/zW3cPYsf/unnamed.png|Cant hear the fans|https://i.ibb.co/FLj01pRx/expedite.png|Wild Caves Derelict Conscript|https://i.ibb.co/VcwQydyP/ezgif-5-13808726b5.gif|Caves Hauler Experiment|https://i.ibb.co/b5F4MMYC/ezgif-1-e45fe5ba57.gif|0b1 Club|https://i.ibb.co/1ttDKY9s/ezgif-5-4f74ce1950.gif|STANDING HERE|https://i.ibb.co/DgjtTFd1/ezgif-4-d6b2029e45.gif|0b1 Football|https://i.ibb.co/mPLYQYz/ezgif-5-39024168a0.gif|Loop Theory|https://i.ibb.co/xk19Qm1/ezgif-2-0d4141b711.gif|Fake Prototypes|https://i.ibb.co/xtG8w84p/ezgif-1-7f4e6b0206.gif|Prototype ARC|https://i.ibb.co/6JTSP10J/ezgif-5-95e8354051.gif|Authchips|https://i.ibb.co/8LVC87hR/imag3e.png|Lemonade|https://i.ibb.co/ZRJZV4hd/ezgif-5-1a1597833b.gif|Pet Serfs|https://i.ibb.co/Y4ZmLXgX/f1.png|No UTF-8|https://i.ibb.co/Hpq48jpC/dnd.png|Complexes And Dragons|https://i.ibb.co/tTp85hkR/image.png|-12 (real 100%)|https://i.ibb.co/fV98P2ff/ezgif-5c84c8ca48ec58.gif|Blade Trap Raking[[/FanartGallery]]","Spoiler","","","","","",""
 "Fanart/Maiker","Other","[[Fanart]] created by Maiker:
 [[FanartGallery]]fanart/maiker/Behemoth_GJ_was_here.gif|Behemoth + GJ was here|fanart/maiker/Brawler_Bonk.gif|Brawler Bonk|fanart/maiker/Demolisher_Shoot.gif|Demolisher Shoot|fanart/maiker/Disguised_Cogmind.gif|Disguised Cogmind|fanart/maiker/Get_Heavy'ed.gif|Get Heavy'd|fanart/maiker/GOLEM_Full_Loop.gif|GOLEM|fanart/maiker/Grunt_Shoot.gif|Grunt Shoot|fanart/maiker/Hunter_Drone.gif|Hunter Drone|fanart/maiker/luigi_force_ram.gif|LU-1G1's Force Ram|fanart/maiker/Programmer_Shoot.gif|Programmer Shoot|fanart/maiker/Sentry_Shoot.gif|Sentry Shoot[[/FanartGallery]]","","","","","","",""
 "Fanart/Radbanker","Other","[[Fanart]] created by Radbanker:
@@ -3242,7 +3242,7 @@ When entering -3 Research, the Exiles will send a warning message to Cogmind ind
 If slots of one type are full, blocking a part, the first part of another type will be build instead. For example, if all propulsion slots are filled but two power slots are open, the Asb. Flux Generator will start building instead of waiting on the first Asb. Alloy Leg. The first Asb. Nanovents will never grow without one Asb. Biocell Array on Cogmind's body, though, as they are both of the same slot type (utility).
 
 It may also be wise to carry an extra power source or significant energy storage, because rebuilding a destroyed Asb. Flux Generator in hostile conditions may be difficult or excessively dangerous, due to the time cost involved.","","","","","","",""
-"Game Mechanics","Other","[[List]][[Alert]] - Semi-hidden number that represents Cogmind's perceived threat level. Has dangerous consequences when too high.|[[Allies]] - Bots friendly to [[Cogmind]].|[[Cave-ins]] - Mechanic that causes dug out walls to collapse and deal large amounts of damage.|[[Corruption]] - Stat that has various negative penalties and can result in death.|[[Energy]] - Stat that is used to power most parts in the game.|[[Heat]] - Stat that can cause overheating side-effects and deaths in non-immune bots.|[[Matter]] - Stat that is used as a resource to attach parts and shoot some types of weapons.|[[Overload]]: Mechanic that can increase effectiveness of parts with a possible downside.[[/List]]","","","","","","",""
+"Game Mechanics","Other","[[List]][[Alert]] - Semi-hidden number that represents Cogmind's perceived threat level. Has dangerous consequences when too high.|[[Allies]] - Bots friendly to [[Cogmind]].|[[Cave-ins]] - Mechanic that causes dug out walls to collapse and deal large amounts of damage.|[[Corruption]] - Stat that has various negative penalties and can result in death.|[[Energy]] - Stat that is used to power most parts in the game.|[[Heat]] - Stat that can cause overheating side-effects and deaths in non-immune bots.|[[Matter]] - Stat that is used as a resource to attach parts and shoot some types of weapons.|[[Overload]] - Mechanic that can increase effectiveness of parts with a possible downside.[[/List]]","","","","","","",""
 "Gamma Bomb Array","Part","","","","","","","",""
 "Gamma Bomb Trap","Part","","","","","","","",""
 "Gamma Refractor","Part","","","","","","","",""
@@ -3948,7 +3948,7 @@ The following is a list of all locations in Cogmind:
 "Mak. Weapon Shielding","Part","","","","","","","",""
 "Mapping Drone","Bot","","","","","","","",""
 "Mapping Drone Bay","Part","Deploys [[Mapping Drone|Mapping Drones]].","","","","","","",""
-"Marauder","Bot Group","Marauders are [[Treads|treaded]] [[Derelict]] combat bots armed with kinetic weaponry. They are the Derelict versions of [[Behemoth|Behemoths]]. They have unreliable firepower, but their [[Slug Cannon|Slug Cannons]] can easily destroy hostiles with their high critical rate. In comparison to [[0b10]] Behemoths, they tend to be more fragile with low integrity in their armor, and are much more susceptible to EM damage.","","Marauder (6),Marauder (8)","","","","",""
+"Marauder","Bot Group","Marauders are [[Treads|treaded]] [[Derelict]] combat bots armed with kinetic weaponry. They are the Derelict versions of [[Behemoth|Behemoths]]. They have unreliable firepower, but their [[Slug Cannon|Slug Cannons]] can easily destroy hostiles with their high critical rate. In comparison to [[0b10]] Behemoths, they tend to be more fragile with low integrity in their armor, and are less susceptible to EM damage.","","Marauder (6),Marauder (8)","","","","",""
 "Marauder (6)","Bot","","","","","","","",""
 "Marauder (8)","Bot","","","","","","","",""
 "Martyr","Bot Group","Martyrs are [[Hover Unit|hovering]] [[Derelict]] combat bots armed with [[Launchers]]. They are the Derelict version of [[0b10]] [[Demolisher|Demolishers]]. They tend to be dubious allies due to their high destructive potential, and quite frequently end up skyrocketing [[Alert]] if kept around. Martyrs are common bots that show up in many different types of Derelict encounters and events.","","Martyr (5),Martyr (7)","","","","",""
@@ -4577,7 +4577,8 @@ There is always 1, and possibly 2 exits in Quarantine:
 "Ragnarok Missile Launcher","Part","","","","","","","",""
 "Railgun","Part","","","","","","","",""
 "Rainbow Chip","Part","","","","","","","",""
-"Ranger","Bot","","","","","","","",""
+"Ranger","Bot","Rangers are [[Hover Units|hovering]] [[UFD]] armed with penetrating [[Bolt Gun]]s. Slightly resistant to kinetic damage and slightly vulnerable to electromagnetic damage.
+For the rangers dispatched as part of a rescue squad, see [[DRS Ranger]].","","","","","","",""
 "Reaction Control System","Part","","","","","","","",""
 "Reaction Control Systems","Part Group","","","","","Reaction Control System,Imp. Reaction Control System,Adv. Reaction Control System,Exp. Reaction Control System","","",""
 "Reactive Plating","Part","","","","","","","",""
@@ -4882,7 +4883,8 @@ Last edited during Beta 14.","Spoiler","","","","","",""
 "Salvage Targeting Computer","Part","","","","","","","",""
 "Salvage Targeting Computers","Part Group","","","","","Salvage Targeting Computer,Imp. Salvage Targeting Computer,Adv. Salvage Targeting Computer,Mak. Salvage Targeting Computer","","",""
 "Salvaging Laser","Part","","","","","","","",""
-"Samaritan","Bot","","","","","","","",""
+"Samaritan","Bot","Samaritans are [[Treads|treaded]] [[Derelict|derelict]] non-combat bots with a big amount of batteries and two [[Neutrino Core|Neutrino Cores]], which are valuable if you lack spares in [[Caves]]. Slightly vulnerable to EM.
+Samaritans will give energy each turn to every robot (and [[Cogmind]]) in range.","","","","","","",""
 "Sapper","Bot","","","","","","","",""
 "Sapper Charge","Part","","","","","","","",""
 "Savage","Bot Group","Savages are [[Derelict]] [[Treads|treading]] combat bots armed with [[Impact Weapons]]. They are the Derelict versions of [[0b10]] [[Brawler|Brawlers]] and have fairly negligible differences between them. Savages are common bots that show up in many different types of Derelict encounters and events.","","Savage (5),Savage (7)","","","","",""
@@ -4912,7 +4914,7 @@ This hack can give up to 1-10 schematics that Cogmind does not already have. Thi
 "Scatter Rocket Array","Part","","","","","","","",""
 "Schematic","Other","Schematics can be acquired by using [[Scanalyzer|Scanalyzers]] or hacking [[Terminal|Terminals]] (see your status page for access to a list of schematics currently in your possession).","","","","","","",""
 "Schematic Archive","Part","","","","","","","",""
-"Scientist","Bot","","","","","","","",""
+"Scientist","Bot","Scientists are [[Wheels|two-wheeled]] [[UFD]] non-combat bots found in [[Scraptown]] and [[Recycling]]. They are quite valuable for their [[Tech Extrapolator]], and are defenseless. Vulnerable to EM.","","","","","","",""
 "Scrap","Part","","","","","","","",""
 "Scrap Engine","Part","Scrap Engine is a unique [[Derelict]] part that can only be obtained by stealing from the [[Recycling#Scraplab|Scraplab in Recycling]]. It has the capability to create powerful constructs by combining many different parts into one. It can create power constructs of up to 4 slots, propulsion up to 8 slots, and weapons of up to 4 slots. When more of Cogmind's slots are dedicated to constructs, they will also get more powerful overall.
 The Scrap Engine can create combinations of parts that would never be seen normally, such as energy cannons dealing kinetic damage with heat transfer, or 50 speed treads. Modifications to the constructs will only change a few stats at a time, so overall variability is extremely high when using the engine. Modifying a construct with a flight unit may result in a much higher speed, or it may dramatically reduce the integrity and support instead. Every part that is eaten can be a gamble, since the stats that are modified are random every time.
@@ -4952,12 +4954,12 @@ For a higher risk higher reward approach, mixing extremes like treads and flight
 "Scrap Shield","Part","","","","","","","",""
 "Scrap Shield Fragment","Part","","","","","","","",""
 "Scrap Suit","Part","","","","","","","",""
-"Scrapoid","Bot Group","Scrapoids are [[UFD]]-aligned bots Cogmind can create by using the [[Scrapoid Pod]] or by using the [[GameText]]Force(Scrapoids)[[/GameText]] hack at [[Recycling Unit|Recycling Units]]. They have little in the way of defenses, but have high offensive capabilities with their unique Ovr. weaponry, and can repair their parts and even core with their [[Scrap Suit|Scrap Suits]]. They also carry a [[CPS Tube]] and can use it while in combat.","Spoiler","Scrapoid (3),Scrapoid (6),Scrapoid (8)","","","","",""
+"Scrapoid","Bot Group","Scrapoids are [[UFD]]-aligned combat bots Cogmind can create by using the [[Scrapoid Pod]] or by using the [[GameText]]Force(Scrapoids)[[/GameText]] hack at [[Recycling Unit|Recycling Units]]. They have little in the way of defenses, but have high offensive capabilities with their unique Ovr. weaponry, and can repair their parts and even core with their [[Scrap Suit|Scrap Suits]]. They also carry a [[CPS Tube]] and can use it while in combat.","Spoiler","Scrapoid (3),Scrapoid (6),Scrapoid (8)","","","","",""
 "Scrapoid (3)","Bot","","","","","","","",""
 "Scrapoid (6)","Bot","","","","","","","",""
 "Scrapoid (8)","Bot","","","","","","","",""
 "Scrapoid Pod","Part","","","","","","","",""
-"Scrapper","Bot","","","","","","","",""
+"Scrapper","Bot","Scrappers are [[Legs|legged]] [[UFD]] bots armed with an [[Ovr. Pulse Rifle]] located mainly in [[Scraptown]].","","","","","","",""
 "Scraptown","Location","Scraptown is a [[Branch]] accessible through [[Recycling]], based in the Old 0b1 Recycling map, that is the home to a large amount of [[UFD|United Federation of Derelicts (UFD)]]-aligned [[Derelict|Derelicts]]. Scraptown contains many different groups of Derelicts and most have various rooms that can appear from run to run. The overall layout of Scraptown is the same each run, but the rooms will contain different combinations of groups each time. There are C-Scrubber machines at the entrance and all exits on this map that will cleanse corruption, and their use is recommended to avoid misfiring and causing accidental hostilities.
 The map always consists of an open left area that all bots are free to explore. The map is divided by a giant UFD HQ Gate with [[Triborg]] guarding nearby. The gate has 60 armor and high resistances to all main damage types except for Thermal damage. Realistically, the only options to cut through are [[Plasma Cutters|Plasma Cutter]] or the [[Siege Cannon]]. However, the gate will open automatically if Cogmind becomes UFD aligned. The right side of the map contains many more unique rooms.
 [[Heading]]Alignment - [[UFD]][[/Heading]]
@@ -5893,8 +5895,8 @@ See the following video: [[https://www.youtube.com/watch?v=XR2RoB6gKWA]]","","",
 "YI-UF0's Bottomless Matter Pit","Part","","","","","","","",""
 "YI-UF0's Doublenader","Part","","","","","","","",""
 "YOLO Cannon","Part","Rarely on firing, the YOLO Cannon will explode with the log message [[GameText]]YOLO Cannon suddenly explodes.[[/GameText]] When this occurs, the YOLO cannon and up to 3 other random parts will instantly be destroyed. Cogmind will also lose half of the current core integrity when this effect happens.","","","","","","",""
-"Z-Courier","Bot","","","","","","","",""
-"Z-Drone","Bot","","","","","","","",""
+"Z-Courier","Bot","[[Imprint]]-aligned derelict [[Hauler]] variant. Delivers resupplies via the [[Imprint]] roster.","","","","","","",""
+"Z-Drone","Bot","Created by a [[Z-Drone Bay]]. Slightly better than a [[Mini Drone]], with a makeshift cloaking device.","","","","","","",""
 "Z-Drone Bay","Part","Deploys [[Z-Drone|Z-Drones]].","","","","","","",""
 "Z-Experimental","Bot Group","Z-Experimental bots are a class of [[Legs|legged]] [[Imprint]] aligned combat bots equipped with a staggering amount of prototype parts, powerful unique weapons, and unique [[Armor]] with resistance to most conventional damage types. Appears in the [[Imprint]] Roster [[Redacted]]and also can come out of [[Command]] cave seals if Cogmind is Imprinted[[/Redacted]]. When summoned via roster, they have a special ally behavior where they will stop fighting and run back to Cogmind if they fall out of Cogmind's line of sight or are too many tiles away.","Spoiler","Z-Experimental (8),Z-Experimental (10)","","","","",""
 "Z-Experimental (10)","Bot","","","","","","","",""
@@ -5904,12 +5906,12 @@ See the following video: [[https://www.youtube.com/watch?v=XR2RoB6gKWA]]","","",
 "Z-Heavy (7)","Bot","","","","","","","",""
 "Z-Heavy (9)","Bot","","","","","","","",""
 "Z-Hero Parts","Part Group","","Spoiler","","","12-ASH's Boomstick,1C-UTU's Sword ""Choppy"",1C-UTU's Sword ""Lootmaker"",7V-RTL's Ultimate Field,99-TNT's Nukerbomber,AD-0RF's Magmablaster,CL-ANK's Mallet,ME-RLN's Wand,ME-RLN's Chromatic Screen,NK-0LA's Tesla Doomcannon,P1-3CE's Gatling Flakker","","",""
-"Z-Imprinter","Bot","","","","","","","",""
+"Z-Imprinter","Bot","See [[Zion Deep Caves]].","","","","","","",""
 "Z-Light","Bot Group","Z-Light bots are a class of [[Hover Units|hovering]] [[Imprint]] aligned combat bots equipped with many unique Zionite-specific prototype parts with powerful unique weapons. Appears in the [[Imprint]] Roster [[Redacted]]and also can come out of [[Command]] cave seals if Cogmind is Imprinted[[/Redacted]]. When summoned via roster, they have a special ally behavior where they will stop fighting and run back to Cogmind if they fall out of Cogmind's line of sight or are too many tiles away.","Spoiler","Z-Light (5),Z-Light (7),Z-Light (9)","","","","",""
 "Z-Light (5)","Bot","","","","","","","",""
 "Z-Light (7)","Bot","","","","","","","",""
 "Z-Light (9)","Bot","","","","","","","",""
-"Z-Technician","Bot","","","","","","","",""
+"Z-Technician","Bot","Harmless zion [[Derelict|derelict]] [[Operator]] variants found stationary in [[Zion Deep Caves]].","","","","","","",""
 "Z-bomb Delivery System","Part","","","","","","","",""
 "Zero-point Reactor","Part","","","","","","","",""
 "Zhirov","Bot","","","","","","","",""
