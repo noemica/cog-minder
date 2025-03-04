@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
 import { CombatLogEntry } from "../../types/combatLogTypes";
@@ -14,22 +13,26 @@ export type CombatLogDropzoneProps = {
 };
 
 export default function CombatLogDropzone({ onParse }: CombatLogDropzoneProps) {
-    const onDrop = useCallback((acceptedFiles: File[]) => {
-        acceptedFiles.forEach((file: File) => {
+    const onDrop = (acceptedFiles: File[]) => {
+        let entries: CombatLogEntry[] = [];
+
+        for (const file of acceptedFiles) {
             const reader = new FileReader();
 
             reader.onload = () => {
                 const text = reader.result;
-                if (text === null) {
-                    onParse([]);
-                } else {
-                    onParse(parseCombatLog(text as string));
+                if (text !== null) {
+                    // Can't reuse the same array or else it will be treated as
+                    // the same object and won't trigger another state update
+                    // Make a new array based off the old one instead
+                    entries = [...entries, ...parseCombatLog(text as string)];
+                    onParse(entries);
                 }
             };
 
             reader.readAsText(file);
-        });
-    }, []);
+        }
+    };
     const { getRootProps, getInputProps, open, isDragActive } = useDropzone({ noClick: true, onDrop: onDrop });
 
     const containerClasses = `dropzone-container${isDragActive ? " dropzone-container-drag-active" : ""}`;
