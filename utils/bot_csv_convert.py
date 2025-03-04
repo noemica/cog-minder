@@ -63,12 +63,14 @@ overload_speeds = {
     "C-17 Slicer": 20,
     "C-35 Carver": 15,
     "C-57 Dissector": 7,
+    "Decapitator": 7,
 }
 
 overload_speed_percentages = {
     "C-17 Slicer": 500,
     "C-35 Carver": 666,
     "C-57 Dissector": 1428,
+    "Decapitator": 1428,
 }
 
 name_replacements = {

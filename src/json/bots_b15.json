@@ -5289,7 +5289,9 @@
         ],
         "Analysis": "While Cutter designs are generally believed to be a hard counter against airborne intruders, a group of Decapitators equipped with Terror Saws is so deadly that even hardened combat bots are quickly taken apart.",
         "Armament String": "Cep. Concussive Dispersal Blaster, Exp. Terror Saw",
-        "Components String": "Mic. Antimatter Reactor, 3x Exp. Surge Thruster, Exp. Reaction Control System, Adv. Melee Analysis Suite"
+        "Components String": "Mic. Antimatter Reactor, 3x Exp. Surge Thruster, Exp. Reaction Control System, Adv. Melee Analysis Suite",
+        "Overload Speed": 7,
+        "Overload Speed %": 1428
     },
     {
         "Name": "Immortal",
