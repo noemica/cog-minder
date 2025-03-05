@@ -49,6 +49,9 @@ const disabledRegex = /^(?:.*) disabled \(Disruption\)$/;
 // Match 1: Target, includes Bot and Part
 const engineDetonateRegex = /^(.*) detonated$/;
 
+// Non-match 1: Part doing intercepting
+const interceptedRegex = /^Intercepted by (?:.*)$/;
+
 // Non-match 1: Gunslinging target
 const gunslingingRegex = /^Gunslinging -> (?:.*)$/;
 
@@ -102,34 +105,50 @@ const derelictRegex = /^\w{2}-\w{3}\((\w)\)$/;
 // For any multi-tier derelict there is no way to know which specific kind is
 // being referenced. All below default to the lowest tier of bot
 const derelictClasses: Map<string, string> = new Map([
+    ["u", "Artisan"],
     ["T", "Borebot"],
     ["Y", "Bouncer"],
     ["l", "Butcher (5)"],
     // Can't tell Commanders, Sappers, and Thugs apart, but Thugs are most common
     // ["g", "Commander"],
     // ["g", "Sapper"],
+    ["O", "Cobbler"],
     ["k", "Decomposer"],
     ["q", "Demented"],
     ["D", "Dragon"],
+    ["E", "Elite (4)"],
     ["i", "Fireman (5)"],
     ["F", "Furnace"],
     ["h", "Guerrilla (5)"],
+    // ["h", "Ranger"],
+    // Can't tell Guerrillas and Rangers apart
     ["H", "Hydra"],
     ["x", "Infiltrator (6)"],
+    // Can't tell Infiltrators and Explorers apart
+    //["x", "Explorer"],
     ["K", "Knight"],
     ["B", "Marauder (6)"],
     ["d", "Martyr (5)"],
     ["M", "Mutant (5)"],
     ["r", "Packrat"],
+    ["t", "Parasite"],
+    // Can't tell Bolteaters and Packrats apart
+    // ["r", "Bolteater"],
     ["S", "Samaritan"],
     ["b", "Savage (5)"],
+    ["j", "Scrapper (3)"],
+    ["R", "Subdweller"],
     ["m", "Surgeon (4)"],
     ["f", "Thief"],
     ["g", "Thug (5)"],
     ["c", "Tinkerer"],
+    // Can't tell Tinkerers and Scientists apart
+    ["c", "Scientist"],
     ["L", "Troll"],
     ["s", "Wasp (5)"],
     ["p", "Wizard (5)"],
+    // Can't tell Gurus and Wizards apart
+    //["p", "Guru"],
     ["A", "Z-Courier"],
     ["Z", "Z-Heavy (5)"],
     ["o", "Z-Technician"],
@@ -138,13 +157,21 @@ const derelictClasses: Map<string, string> = new Map([
     ["z", "Zionite"],
 ]);
 
+// Match 1: The Protovariant class
+const protovariantRegex = /^P(\w)-\w{10}$/;
+
 const specialBotRegexes: { name: string; regex: RegExp }[] = [
     // Note: Can't tell Assembled 4 vs 7 apart but 4 is more common so use that
     { name: "Assembled (4)", regex: /^as-\d+$/ },
     { name: "Assembler", regex: /^AS-\d+$/ },
     { name: "Golem", regex: /^AG-\d+$/ },
+    { name: "Lugger", regex: /^Lugger \d{3}$/ },
     { name: "Q-Series", regex: /^Q\d{3}-\w$/ },
+    { name: "Scrapoid (3)", regex: /^\w{5}-D/ },
+    { name: "Scraphulk (6)", regex: /^\w{5}-K/ },
+    { name: "Warlord (Command)", regex: /^ZY-L1N$/ },
     { name: "Z-Experimental (8)", regex: /^Z-Ex$/ },
+    { name: "Z-Imprinter", regex: /^Z-Im$/ },
 ];
 
 type PartialParsedLine = {
@@ -320,6 +347,7 @@ class ParserState {
         damageInsufficientToPenetrateRegex,
         disabledRegex,
         gunslingingRegex,
+        interceptedRegex,
         machineDisabledRegex,
         penetrationRegex,
         shieldingPreventedCritRegex,
@@ -517,11 +545,22 @@ function ignoreTarget(target: string) {
 // Parses a combat log string into an array of combat log entries
 export function parseCombatLog(logText: string): CombatLogEntry[] {
     const lines: PartialParsedLine[] = [];
-    for (let line of logText.split("\n")) {
-        line = line.trim();
+    const splitLines = logText.split("\n");
+    for (let i = 0; i < splitLines.length; i++) {
+        let line = splitLines[i].trim();
+
+        // If the next line is a continuation and wraps to the next line, wrap
+        // it before processing anything else
+        if (i + 1 < splitLines.length && splitLines[i + 1].startsWith(" ")) {
+            line += " " + splitLines[i + 1].trim();
+            i += 1;
+        }
+
         const result = lineStartRegex.exec(line);
 
         if (result === null) {
+            // Note: This shouldn't happen anymore now that lines are being
+            // added on the previous iteration, but leaving just in case
             if (lines.length > 0 && line.length > 0) {
                 // If a log line is long enough, it can wrap into the next one
                 lines[lines.length - 1].remainingText += " " + line;
@@ -645,6 +684,18 @@ function tryGetBot(botName: string) {
 
             return bot;
         }
+    }
+
+    const protovariantResult = protovariantRegex.exec(botName);
+    if (protovariantResult !== null) {
+        const protovariantBotName = `Protovariant ${protovariantResult[1]}`;
+
+        bot = getBotByName(protovariantBotName);
+        if (bot === undefined) {
+            console.log(`Bad protovariant name ${protovariantBotName}`);
+        }
+
+        return bot;
     }
 
     // Try other special cases

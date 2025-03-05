@@ -97,6 +97,7 @@ name_replacements = {
     'MAIN.C': ['MAIN.C (Shell)', 'MAIN.C'],
     'Player': ['Cogmind'],
     'Elite': ['Elite (4)', 'Elite (7)'],
+    'Scrapper': ['Scrapper (3)', 'Scrapper (6)'],
     'Scrapoid': ['Scrapoid (3)', 'Scrapoid (6)', 'Scrapoid (8)'],
     'Scraphulk': ['Scraphulk (6)', 'Scraphulk (8)'],
     'Ranger': ['Ranger', 'DRS Ranger'],

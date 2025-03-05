@@ -816,15 +816,6 @@
             }
         ]
     },
-    "Elite": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
-        "Locations": [
-            {
-                "Location": "Scraptown",
-                "Description": "Friendly: Stand Guard around Scraptown"
-            }
-        ]
-    },
     "Elite (4)": {
         "Categories": ["Derelict", "UFD", "Spoiler"],
         "Locations": [
@@ -2211,12 +2202,22 @@
             }
         ]
     },
-    "Scrapper": {
+    "Scrapper (3)": {
         "Categories": ["Derelict", "UFD", "Spoiler"],
         "Locations": [
             {
                 "Location": "Scraptown",
                 "Description": "Friendly: Roam around Scraptown"
+            }
+        ]
+    },
+    "Scrapper (6)": {
+        "Categories": ["Derelict", "UFD", "Redacted"],
+        "Locations": [
+            {
+                "Location": "Protoforge",
+                "Description": "Friendly: Appear after using Trojan(Fedlink) on a Recycling machine",
+                "Spoiler": "Redacted"
             }
         ]
     },

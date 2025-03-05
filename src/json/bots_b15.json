@@ -7147,7 +7147,7 @@
         "Components String": "Lgt. Ion Engine, 2x Wheel, Machine Analyzer, Tech Extrapolator"
     },
     {
-        "Name": "Scrapper",
+        "Name": "Scrapper (3)",
         "Class": "Scrapper (Derelict)",
         "Tier": "3",
         "Threat": "1",
@@ -7185,7 +7185,7 @@
         "Components String": "Lgt. Deuterium Engine, 2x Ovr. Titanium Leg, Scrap Suit, Mak. Microdissipator Network, Mak. Salvage Targeting Computer"
     },
     {
-        "Name": "Scrapper",
+        "Name": "Scrapper (6)",
         "Class": "Scrapper (Derelict)",
         "Tier": "6",
         "Threat": "3",
