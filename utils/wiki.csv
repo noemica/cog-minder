@@ -741,18 +741,18 @@ Destabilized tiles are tiles that will always collapse if given enough time. The
 [[List]]Explosive damage - Explosive damage (namely [[Launchers]]) will cause a tile to destabilized.|Attacking from a dug out tile - If Cogmind or any other bot fires a weapon inside of a dug out tile, the tile will destabilize. This tile may collapse instantly before Cogmind gets a chance to move, so digging from inside these tiles is never completely safe.
 In terms of destabilization, melee attacks are the least likely to collapse right away. Guns have a slightly higher chance, and then cannons and launchers have the highest chance.[[/List]]
 [[Heading:2]]Dug-out tile traversal[[/Heading]]
-It is possible to safely travel through dug-out tiles (that are not destabilized) for up to 2-4 tiles, depending on the type of tiles traversed. If the warnOnCaveinMove option in the advanced.cfg file is set to 1, the game will warn you when trying to move onto a dug-out tile that could collapse due to that movement. The safety of digs is follow (assuming the relevant tiles are not destabilized):
+It is possible to safely travel through dug-out tiles (that are not destabilized) for up to 1-4 tiles, depending on the type of tiles traversed. If the warnOnCaveinMove option in the advanced.cfg file is set to 1, the game will warn you when trying to move onto a dug-out tile that could collapse due to that movement. The safety of digs is follow (assuming the relevant tiles are not destabilized):
 [[List]]
 1-tile digs - Always safe.
-|2-tile digs - Always safe.
+|2-tile digs - Safe, unless both tiles are dug-out earth tiles (rarely relevant).
 |3-tile digs - Safe, but only if no more than one of the tiles is a dug-out Earth tile.
 For example, the most common safe 3-tile dig is Wall-Earth-Wall,
 whereas Wall-Earth-Earth or Earth-Earth-Wall would not be safe and could collapse on the third tile due to having traveled through more than one earth tile. 
 |4-tile digs - Only safe if all four tiles are dug-out Wall tiles. 4-tile digs are only rarely useful.
 |5-tile or more digs - Never safe.[[/List]]
-One way to think about it is to consider that moving through a dug-out tile has a ""cost"", 1 for Wall tiles and 2 for Earth tiles, and that having reached a ""cost"" of 5 or more during a single dig can cause a cave-in on the current tile. [[Comment]]I feel like there's a better way to word this sentence.[[/Comment]]
+One way to think about it is to consider that moving through a dug-out tile has a ""cost"", 2 for Wall tiles and 5 for Earth tiles, and that having reached a ""cost"" of 10 or more during a single dig can cause a cave-in on the current tile. [[Comment]]I feel like there's a better way to word this sentence.[[/Comment]]
 
-[[Comment]]Some late-game AAs can make it possible to dig more safely/farther/better, should they be mentioned here?[[/Comment]]
+[[Comment]]Some late-game AAs can make it possible to dig more safely/farther/better, should they be mentioned here? I'm not sure myself on how they function in regards to cave-ins due to movement.[[/Comment]]
 
 [[Heading]]Example digs[[/Heading]]
 [[Gallery]]Wall Earth Wall Dig.png|Safe 3-tile dig with a ranged weapon: Wall-earth-wall|Wall Dig.png|Safe 1-tile dig with a melee weapon: Wall only|Wall Wall Dig.png|UNSAFE 2-tile dig: Digging within a dug out tile is unsafe|Wall Earth Earth Wall Dig.png|UNSAFE 4-tile dig: Wall-earth is safe, second half earth-wall is unsafe[[/Gallery]]
