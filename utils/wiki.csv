@@ -806,6 +806,9 @@ There are also largely destroyed sub-variations of these, in which the terminal 
 Caves Mega Outpost.png|Large 0b10 outpost with 2 Sentries, 6 dormant Swarmers, 6 dormant Grunts, an Outpost Generator, a large weapon cache and an intel Terminal.|
 Caves Outpost Assembled Invasion.png|[[Assembled (4)|Assembled]] infesting an abandoned outpost.[[/Gallery]]
 
+[[Heading:2]]Proximity Caves exit structures[[/Heading]]
+[[Gallery]]Caves Demolisher Base.png|Proximity Caves [[Demolisher]] testing base exit.|Caves Huge Base.png|Proximity Caves huge 0b10 base exit.[[/Gallery]]
+
 [[Heading:3]]Warlord Outposts[[/Heading]]
 Warlordoutposts are circle-shaped, with a main entrance controlled by a Door Terminal. They are guarded by a [[Commander]] and several other Derelict bots that wander around the inside, and contain a few parts as well as an intel Terminal. The inside of the outpost is also reinforced by a ""Wall Reinforcements"" structure, which has an armor of 35. There are two main structural variants, one of which has a centered orthogonal entrance.
 
@@ -845,6 +848,7 @@ There are a lot of possible hidden prefabs in Caves maps. Some are hidden behind
 Four of the hidden prefabs are research stations, where a Derelict does science of some kind. Each of these prefabs may only appear once across all Caves maps, and they are not guaranteed to appear. [[Comment]]There's probably a better way to phrase that these prefabs are ""unique but not guaranteed"".[[/Comment]]
 [[List]]
 [[Tinkerer]] hiding behind some [[Assembled (4)|Assembled]] - Fluff encounter. There is no other place to encounter broken Assembled within Caves.
+[[GameText]]<Name>: """"I like it here. It's the perfect spot where no one bothers me, for obvious reasons.[[/GameText]]
 
 |[[Spoiler]]Tinkerer PL-HR7, hiding behind Sealed Heavy Doors, near [[Warlord Statue (Bot)]] - The Door Terminal is called ""W-Fans Enter Here"" and can be heard from far away. Upon entering, PL-HR7 greets Cogmind and offers their [[Heart of Steel]] prototype.[[/Spoiler]]
 [[Comment]]Dialogue (incomplete): A derelict excitedly rushes up: ""Another fan!""[[/Comment]]
@@ -867,7 +871,7 @@ A hostile Mutant hidden behind walls and a Locked Door, guarding either parts, o
 
 [[Heading:3]]Hidden Caches[[/Heading]]
 There are a lot of hidden cache prefabs, each hidden in one of many ways:
-[[List]]Some caches are fully hidden behind solid walls. These will contain either only [[Dirty Datajack|Dirty Datajacks]] or only [[Self-destruct Interrupter|Self-destruct Interrupters]]. They can only be detected through Terrain Scanning, Structural Scanning or rarely Caves map layout derelict intel.
+[[List]]Some caches are fully hidden behind solid walls. These will contain either only [[Dirty Datajack|Dirty Datajacks]] or only [[Self-destruct Interrupter|Self-destruct Interrupters]]. They can only be detected through Terrain Scanning, Structural Scanning or rarely Caves map layout derelict intel. The Self-destruct Interrupters inside those caches are capable of preventing the self-destruction of nearby unaware parts, possibly indicating their presence.
 |Many caches are hidden inside of difficult-to-spot paths, usually requiring diagonal movement to enter. The paths may be trapped with friendly Derelict Traps[[Comment]]Part of what i'm saying here is effectively ""trapped with traps"", maybe there's a way to avoid that repeat?[[/Comment]], so be careful when corrupted. These will either contain a handful of parts, in which case the cache may be additionally protected by a Sealed Door and the relevant Derelict Door Terminal, or several Dirty Datajacks.
 |Some caches contain a large amount of [[Scrap]]. These Scrap rooms aren't very well hidden, and sometimes have a functional door separating them from the rest of the caves. Fully looting these Scrap piles may be difficult, as they will quickly fill the small space they're contained within, possibly preventing some Scrap piles from yielding everything they otherwise would have.
 |Some caches are hidden behind a Sealed Door and its relevant Derelict Door Terminal, and contain a large number of parts. These may occasionally contain a friendly dormant Derelict guard.
@@ -879,14 +883,15 @@ I took this from a Hauler that was behaving strangely. This was all it had in it
 [[Gallery]]Caves Unguarded Cache.png|Unguarded cache of parts out of sight.|Caves Dirty Datajack Cache.png|Unguarded cache of [[Dirty Datajack|Dirty Datajacks]] behind a trapped concealed path.|Caves SDI Cache.png|Unguarded cache of [[Self-destruct Interrupter|Self-destruct Interrupters]] hidden behind a solid wall.|Caves Scrap Pile.png|Big cache of [[Scrap]].|[[Spoiler]]Caves DNI.png[[/Spoiler]]|[[Spoiler]][[Dimensional Node Initializer]] hidden behind Sealed Heavy Doors.[[/Spoiler]][[/Gallery]]
 
 [[Heading:3]]""Out of the way"" Robots[[/Heading]] [[Comment]]There's probably a better title for this heading.[[/Comment]]
-[[List]]
-""Remains of a fight""[[Comment]]There's got to be a better name for this[[/Comment]] - A dead end containing damaged parts and broken 0b10 and/or Derelict bots, as though there had been a fight. Both common and easy to find. Those bots' parts can be helpful if Cogmind is in a bad state, though be wary if corrupted, as the area may contain friendly Derelict Traps.
-|Non-combat Derelict bot graveyard - A small slightly hidden room containing lots of broken non-combat Derelict bots, including Decomposers[[Comment]]It's been a while, i'm not sure Decomposers can appear in those graveyards, but they probably can? Confirmation appreciated.[[/Comment]], Packrats, Samaritans, but also [[Furnace|Furnaces]], [[Parasite|Parasites]] and [[Demented]] bots, which cannot be found in a functional state anywhere. Since they are broken, their respective traits do not function.[[Comment]]""Their traits don't function"" carries the point across, but doesn't feel like an otherwise valid sentence. Does it actually work as a sentence?[[/Comment]]
-|Broken [[A-27 Freighter|Freighter]] - A Broken Freighter and Broken Specialist guard in a small slightly concealed room. There may be a friendly derelict guarding the outside. The Freighter contains intact prototype parts. If Cogmind spots the broken Freighter, it is possible a new Freighter and smaller than usual escort of a [[Protector]] and [[C-30 ARC]] will be sent to retrieve the parts.
-|Guarded [[Hauler]] - A Grunt squad guarding a Hauler slightly out-of-sight inside a dead end.
-[[/List]]
-[[Gallery]]Caves Broken Bots.png|Broken bots next to some damaged parts|Caves Graveyard.png|Graveyard of broken Derelict bots|Caves Broken Freighter.png|Broken [[A-27 Freighter|Freighter]] and guard with inventory of prototype parts.|Caves Hauler Escort.png|[[Hauler]] escorted by some [[Grunt|Grunts]][[/Gallery]]
 
+""Remains of a fight""[[Comment]]There's got to be a better name for this[[/Comment]] - A dead end containing damaged parts and broken 0b10 and/or Derelict bots, as though there had been a fight. Both common and easy to find. Those bots' parts can be helpful if Cogmind is in a bad state, though be wary if corrupted, as the area may contain friendly Derelict Traps.
+Non-combat Derelict bot graveyard - A small slightly hidden room containing lots of broken non-combat Derelict bots, including Decomposers[[Comment]]It's been a while, i'm not sure Decomposers can appear in those graveyards, but they probably can? Confirmation appreciated.[[/Comment]], Packrats, Samaritans, but also [[Furnace|Furnaces]], [[Parasite|Parasites]] and [[Demented]] bots, which cannot be found in a functional state anywhere. Since they are broken, their respective traits do not function.[[Comment]]""Their traits don't function"" carries the point across, but doesn't feel like an otherwise valid sentence. Does it actually work as a sentence?[[/Comment]]
+Broken [[A-27 Freighter|Freighter]] - A Broken Freighter and Broken Specialist guard in a small slightly concealed room. There may be a friendly derelict guarding the outside. The Freighter contains intact prototype parts. If Cogmind spots the broken Freighter, it is possible a new Freighter and smaller than usual escort of a [[Protector]] and [[C-30 ARC]] will be sent to retrieve the parts.
+Guarded [[Hauler]] - A Grunt squad guarding a Hauler slightly out-of-sight inside a dead end. The Hauler has a fixed pool of loot that can be contained:
+[[List]]2x of [[Lyr. Medium Armor Plating]], [[Med. Reflective Plating]], [[Med. Insulated Plating]], or [[Imp. Powered Armor]]|[[Imp. Particle Charger]], [[Imp. Force Field]], or [[Adv. Force Field]]|[[Prc. Matter Filter]] or [[Prc. Energy Filter]]|[[System Restoration Module]], [[Imp. Weapon Shielding]], [[Imp. Propulsion Shielding]], or [[Imp. Utility Shielding]]|[[Adv. Targeting Computer]], [[Reaction Control System]], or [[Imp. Transmission Jammer]]|[[Adv. Power Amplifier]] or [[Lrn. Terrain Scanner]][[/List]]
+
+
+[[Gallery]]Caves Broken Bots.png|Broken bots next to some damaged parts|Caves Graveyard.png|Graveyard of broken Derelict bots|Caves Broken Freighter.png|Broken [[A-27 Freighter|Freighter]] and guard with inventory of prototype parts.|Caves Hauler Escort.png|[[Hauler]] escorted by some [[Grunt|Grunts]][[/Gallery]]
 
 
 [[Heading:2]]Exits[[/Heading]]
@@ -897,8 +902,6 @@ There are primarily 2 types of exits in Caves, depending on which types of caves
 Caves has one of the largest collections of prefabs of all the maps in the game, with a wide mix of good and bad prefabs. One of the strongest prefabs, the derelict [[Researcher]] with a [[Core Expander]], is so strong that it alone can be a good reason to go into Caves.
 
 Friendly Derelicts will not move from their guard position, but they will engage any 0b10 forces they see. Leading hostile squads into them can let them do the fighting for you. This is particularly easy to do for fast airborne builds who don't want to engage in combat and can use the Derelicts as a distraction. These Derelicts can also be safely salvaged for parts and will not retaliate.
-The guarded Hauler in the Caves event has a fixed pool of loot that can be contained:
-[[List]]2x of [[Lyr. Medium Armor Plating]], [[Med. Reflective Plating]], [[Med. Insulated Plating]], or [[Imp. Powered Armor]]|[[Imp. Particle Charger]], [[Imp. Force Field]], or [[Adv. Force Field]]|[[Prc. Matter Filter]] or [[Prc. Energy Filter]]|[[System Restoration Module]], [[Imp. Weapon Shielding]], [[Imp. Propulsion Shielding]], or [[Imp. Utility Shielding]]|[[Adv. Targeting Computer]], [[Reaction Control System]], or [[Imp. Transmission Jammer]]|[[Adv. Power Amplifier]] or [[Lrn. Terrain Scanner]][[/List]]
 
 [[Heading]]Events[[/Heading]]
 [[Image]]Caves Huge Base Assault.png|Derelicts attacking a huge 0b10 base exit[[/Image]][[Image]]Caves Outpost Assembled Invasion.png|[[Assembled (4)|Assembled]] infesting an abandoned outpost[[/Image]]
