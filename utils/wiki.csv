@@ -806,8 +806,6 @@ There are also largely destroyed sub-variations of these, in which the terminal 
 Caves Mega Outpost.png|Large 0b10 outpost with 2 Sentries, 6 dormant Swarmers, 6 dormant Grunts, an Outpost Generator, a large weapon cache and an intel Terminal.|
 Caves Outpost Assembled Invasion.png|[[Assembled (4)|Assembled]] infesting an abandoned outpost.[[/Gallery]]
 
-[[Heading:2]]Proximity Caves exit structures[[/Heading]]
-[[Gallery]]Caves Demolisher Base.png|Proximity Caves [[Demolisher]] testing base exit.|Caves Huge Base.png|Proximity Caves huge 0b10 base exit.[[/Gallery]]
 
 [[Heading:3]]Warlord Outposts[[/Heading]]
 Warlordoutposts are circle-shaped, with a main entrance controlled by a Door Terminal. They are guarded by a [[Commander]] and several other Derelict bots that wander around the inside, and contain a few parts as well as an intel Terminal. The inside of the outpost is also reinforced by a ""Wall Reinforcements"" structure, which has an armor of 35. There are two main structural variants, one of which has a centered orthogonal entrance.
@@ -830,6 +828,20 @@ These outposts may get attacked by two [[Assault Squad|Assaults]]. Since these A
 Hostile Derelict outposts are structurally inelegant and are separated from regular cave walls by a minimum distance of 1 tile. They have 1-2 hostile Derelicts standing guard outside the structure, sometimes from positions far from any entrances, preventing them from getting quick help when spotting intruders. These outposts contain several active hostile Derelicts, some disabled Derelicts, and a few Derelict parts.
 [[Gallery]]Caves Hostile Derelicts Outpost.png|Hostile Derelict outpost, with two disabled Butchers, and a Thug standing guard at the bottom-left, far from any entrances, preventing them from getting quick backup from the Derelicts inside.[[/Gallery]]
 
+
+[[Heading:2]]Huge 0b10 Bases[[/Heading]]
+Huge 0b10 bases are fairly rare, can only appear within Proximity Caves, and will only ever appear at the upper-right corner of the map. These bases have a enormous size of 46x46, a main four-door entrance on their left side, a secondary two-door entrance on their bottom side near the right edge of the map, and are mostly or completely made out of [[Reinforced Walls|Reinforced Barriers]]. If one of these prefabs appears, its top-right corner will contain the map's only exit as part of the prefab, forcing Cogmind to infiltrate the base.
+These huge two-entrance prefabs tend to constrain the map generation process and noticeably affect the rest of the map, potentially creating unusual layouts such as extremely long corridors. There are two variations of huge 0b10 bases, both very different from the other.
+[[List]]
+Incomplete well-defended base - (Incomplete entry)
+
+|[[Demolisher]] testing base - Contains a large empty space used for testing Demolishers, at the center of which [[Target Drone|Target Drones]] are periodically launched. There are four active groups consisting of one Demolisher and one [[Protector]] each, each guarding one of each side of the Target Drone Dispatcher[[Comment]]I think there was a better way to word that sentence about the location and composition of active units within the base.[[/Comment]]. The Demolishers will attempt to destroy the Target Drones launched, though sometimes those will sometimes escape to the outside of the base. The top-left room of the base contains five unpowered or disabled Demolishers, as well as two caches of Launchers. The room opposite the base's main entrance contains a large stockpile of matter. There are several unpowered [[C-30 ARC|C-30 ARCs]] near the exit at the top-right corner of the base.
+
+[[/List]]
+
+
+[[Gallery]]Caves Huge Base.png|Proximity Caves huge 0b10 base exit.|Caves Demolisher Base.png|Proximity Caves Demolisher testing base exit.[[/Gallery]]
+
 [[Heading:2]]Ambushes[[/Heading]]
 Some hostile Derelicts and 0b10 robots will wait in ambush to attack enemies or sometimes specifically Cogmind as they pass through.
 [[List]]
@@ -848,7 +860,7 @@ There are a lot of possible hidden prefabs in Caves maps. Some are hidden behind
 Four of the hidden prefabs are research stations, where a Derelict does science of some kind. Each of these prefabs may only appear once across all Caves maps, and they are not guaranteed to appear. [[Comment]]There's probably a better way to phrase that these prefabs are ""unique but not guaranteed"".[[/Comment]]
 [[List]]
 [[Tinkerer]] hiding behind some [[Assembled (4)|Assembled]] - Fluff encounter. There is no other place to encounter broken Assembled within Caves.
-[[GameText]]<Name>: """"I like it here. It's the perfect spot where no one bothers me, for obvious reasons.[[/GameText]]
+[[GameText]]<Name>: ""I like it here. It's the perfect spot where no one bothers me, for obvious reasons.""[[/GameText]]
 
 |[[Spoiler]]Tinkerer PL-HR7, hiding behind Sealed Heavy Doors, near [[Warlord Statue (Bot)]] - The Door Terminal is called ""W-Fans Enter Here"" and can be heard from far away. Upon entering, PL-HR7 greets Cogmind and offers their [[Heart of Steel]] prototype.[[/Spoiler]]
 [[Comment]]Dialogue (incomplete): A derelict excitedly rushes up: ""Another fan!""[[/Comment]]
@@ -886,7 +898,7 @@ I took this from a Hauler that was behaving strangely. This was all it had in it
 
 ""Remains of a fight""[[Comment]]There's got to be a better name for this[[/Comment]] - A dead end containing damaged parts and broken 0b10 and/or Derelict bots, as though there had been a fight. Both common and easy to find. Those bots' parts can be helpful if Cogmind is in a bad state, though be wary if corrupted, as the area may contain friendly Derelict Traps.
 Non-combat Derelict bot graveyard - A small slightly hidden room containing lots of broken non-combat Derelict bots, including Decomposers[[Comment]]It's been a while, i'm not sure Decomposers can appear in those graveyards, but they probably can? Confirmation appreciated.[[/Comment]], Packrats, Samaritans, but also [[Furnace|Furnaces]], [[Parasite|Parasites]] and [[Demented]] bots, which cannot be found in a functional state anywhere. Since they are broken, their respective traits do not function.[[Comment]]""Their traits don't function"" carries the point across, but doesn't feel like an otherwise valid sentence. Does it actually work as a sentence?[[/Comment]]
-Broken [[A-27 Freighter|Freighter]] - A Broken Freighter and Broken Specialist guard in a small slightly concealed room. There may be a friendly derelict guarding the outside. The Freighter contains intact prototype parts. If Cogmind spots the broken Freighter, it is possible a new Freighter and smaller than usual escort of a [[Protector]] and [[C-30 ARC]] will be sent to retrieve the parts.
+Broken [[A-27 Freighter|Freighter]] - A Broken Freighter and Broken Specialist guard in a small slightly concealed room. There may be a friendly derelict guarding the outside. The Freighter contains intact prototype parts. If Cogmind spots the broken Freighter, it is possible a new Freighter and smaller than usual escort of a Protector and C-30 ARC will be sent to retrieve the parts.
 Guarded [[Hauler]] - A Grunt squad guarding a Hauler slightly out-of-sight inside a dead end. The Hauler has a fixed pool of loot that can be contained:
 [[List]]2x of [[Lyr. Medium Armor Plating]], [[Med. Reflective Plating]], [[Med. Insulated Plating]], or [[Imp. Powered Armor]]|[[Imp. Particle Charger]], [[Imp. Force Field]], or [[Adv. Force Field]]|[[Prc. Matter Filter]] or [[Prc. Energy Filter]]|[[System Restoration Module]], [[Imp. Weapon Shielding]], [[Imp. Propulsion Shielding]], or [[Imp. Utility Shielding]]|[[Adv. Targeting Computer]], [[Reaction Control System]], or [[Imp. Transmission Jammer]]|[[Adv. Power Amplifier]] or [[Lrn. Terrain Scanner]][[/List]]
 
@@ -911,7 +923,7 @@ Friendly Derelicts will not move from their guard position, but they will engage
 |(+) [[Data Miner (Location)]] shortcut: A Derelict will appear and create an exit. This shortcut can not skip depths.|(+) [[Warlord (Location)]] shortcut: A Derelict will appear and create an exit. This shortcut can not skip depths.
 |(+) Derelict assault on huge 0b10 exit base: Squads of Derelicts will appear and attack the exit|(-) [[Assembled (4)|Assembled]] Infestation: An abandoned outpost can become infested with Assembled that will roam the map and attack anything nearby.
 |(-) [[Molecular Deconstructor]] reclamation: A mix of 0b10 bots will be dispatched after opening the containing vault
-|(-) Freighter cargo recovery: Upon sighting the broken Freighter, a new Freighter and smaller than usual escort of a [[Protector]] and [[C-30 ARC]] will be sent to retrieve the parts. The broken Freighter will carries a full inventory of Prototype parts.
+|(-) Freighter cargo recovery: Upon sighting the broken Freighter, a new Freighter and smaller than usual escort of a [[Protector]] and C-30 ARC will be sent to retrieve the parts. The broken Freighter will carries a full inventory of Prototype parts.
 |(--) [[Sapper]] base attack: Two [[Assault Squad|Assaults]] can be dispatched directly to a Sapper base|[[N-01 Spotter]] spawn: 2 Spotters will appear near the 0b10 exit to caves. If any armed hostile appears in visible range, they will be scanned and reported as a threat. Each scan results in +150 alert heading into the next map, capping at 900 alert maximum.[[/List]]
 
 [[Heading]]Gallery[[/Heading]]
