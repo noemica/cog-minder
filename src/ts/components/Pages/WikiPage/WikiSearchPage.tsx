@@ -1,8 +1,8 @@
-import { Fragment, ReactNode, useEffect } from "react";
+import { Fragment, ReactNode, useEffect, useMemo } from "react";
 import { Link } from "wouter";
 
 import { WikiEntry } from "../../../types/wikiTypes";
-import { escapeHtml, getLinkSafeString } from "../../../utilities/common";
+import { getLinkSafeString } from "../../../utilities/common";
 import { createPreviewContent } from "../../../utilities/wikiParser";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
 
@@ -53,17 +53,27 @@ export default function WikiSearchPage({
 
     const spoilers = useSpoilers();
 
-    const lowerText = search.toLowerCase();
+    const previewContentsMap = useMemo(() => {
+        const previewContents = Array.from(allowedEntries).map((entryName) => {
+            return {
+                entry: allEntries.get(entryName)!,
+                previewContent: createPreviewContent(allEntries.get(entryName)!.content, spoilers),
+            };
+        });
+        const previewContentsMap = new Map(
+            previewContents.map((entryContent) => [entryContent.entry.name, entryContent]),
+        );
 
+        return previewContentsMap;
+    }, [allEntries, allowedEntries]);
+
+    const lowerText = search.toLowerCase();
     let anyResults = false;
     const titleMatches = Array.from(allowedEntries).filter((n) => n.toLowerCase().includes(lowerText));
-    const previewContents = Array.from(allowedEntries).map((entryName) => {
-        return {
-            name: entryName,
-            previewContent: createPreviewContent(allEntries.get(entryName)!.content, spoilers),
-        };
-    });
-    const contentMatches = previewContents.filter((e) => e.previewContent.toLowerCase().includes(lowerText));
+
+    const contentMatches = Array.from(previewContentsMap.values()).filter((e) =>
+        e.previewContent.toLowerCase().includes(lowerText),
+    );
 
     let titleMatchNode: ReactNode | undefined;
     let contentMatchNode: ReactNode | undefined;
@@ -73,7 +83,7 @@ export default function WikiSearchPage({
 
         const titleMatchNodes = titleMatches.map((titleMatch, i) => {
             // Determine the page preview
-            let matchText = previewContents.find((p) => p.name === titleMatch)!.previewContent;
+            let matchText = previewContentsMap.get(allEntries.get(titleMatch)!.name)!.previewContent;
             const fullText = matchText.length <= 250;
             const lastPeriod = matchText.lastIndexOf(". ");
 
@@ -152,11 +162,11 @@ export default function WikiSearchPage({
             }
 
             // Bold matches in the title
-            const boldedTitleMatch = boldMatches(contentMatch.name, lowerText);
+            const boldedTitleMatch = boldMatches(contentMatch.entry.name, lowerText);
 
             return (
                 <li key={i}>
-                    <Link href={`/${contentMatch.name}`}>{boldedTitleMatch}</Link>
+                    <Link href={`/${contentMatch.entry.name}`}>{boldedTitleMatch}</Link>
                     <p>{matchNode}</p>
                 </li>
             );
