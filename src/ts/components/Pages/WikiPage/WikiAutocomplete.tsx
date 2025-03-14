@@ -18,10 +18,21 @@ export default function WikiAutocomplete({
 
     const searchStringLower = searchString.toLowerCase();
 
-    const options = allowedEntries
-        .filter((entry) => {
+    // Start with options that start with the provided string
+    const fullOptions = new Set(
+        allowedEntries.filter((entry) => {
             return entry.toLowerCase().startsWith(searchStringLower) && searchString.length > 1;
+        }),
+    );
+
+    // Add on options that are partial matches
+    allowedEntries
+        .filter((entry) => {
+            return entry.toLowerCase().includes(searchStringLower) && searchString.length > 1;
         })
+        .forEach((entry) => fullOptions.add(entry));
+
+    const options = Array.from(fullOptions)
         .splice(0, 20)
         .map<SelectOptionType>((entry) => {
             return { value: entry };
