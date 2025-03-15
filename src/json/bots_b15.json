@@ -5620,7 +5620,7 @@
         "Salvage Potential": "80~100",
         "Inventory Capacity": "1",
         "Immunities": [
-            "Hacking/RIF"
+            "Hacking"
         ],
         "Armament": [
             "Com. Linear Accelerator",
@@ -5712,7 +5712,7 @@
         "Salvage Potential": "90~110",
         "Inventory Capacity": "1",
         "Immunities": [
-            "Hacking/RIF"
+            "Hacking"
         ],
         "Armament": [
             "Cep. XC Strikerail",
@@ -5878,7 +5878,7 @@
         "Immunities": [
             "Coring",
             "Disruption",
-            "Hacking/RIF",
+            "Hacking",
             "Jamming"
         ],
         "Armament": [
@@ -5957,7 +5957,7 @@
             "Adv. Coolant Injector",
             "Exp. Weapon Shielding"
         ],
-        "Analysis": "Only four Fortress prototypes have been built to garrison vital locations, utilizing the latest centrium armor technology and a wide array of other defensive components to render them highly resistant to all common forms of damage. While their offensive capabilities are limited to two powerful cannons, even a small army would have difficulty overcoming a Fortress before it picks them off one by one.",
+        "Analysis": "Only three Fortress prototypes have been built to garrison vital locations, utilizing the latest centrium armor technology and a wide array of other defensive components to render them highly resistant to all common forms of damage. While their offensive capabilities are limited to two powerful cannons, even a small army would have difficulty overcoming a Fortress before it picks them off one by one.",
         "Resistances": {
             "Kinetic": "25",
             "Thermal": "50",
@@ -6789,7 +6789,7 @@
         "Energy Generation": "20",
         "Heat Dissipation": "10",
         "Core Integrity": "25",
-        "Core Exposure": "417",
+        "Core Exposure": "409",
         "Core Exposure %": "29",
         "Salvage Potential": "30~60",
         "Inventory Capacity": "2",
@@ -6907,7 +6907,7 @@
         "Class": "Explorer (Derelict)",
         "Tier": "3",
         "Threat": "1",
-        "Rating": "19",
+        "Rating": "17",
         "Value": "40",
         "Size Class": "Medium",
         "Size": "1",
@@ -6921,7 +6921,7 @@
         "Energy Generation": "15",
         "Heat Dissipation": "20",
         "Core Integrity": "25",
-        "Core Exposure": "99",
+        "Core Exposure": "95",
         "Core Exposure %": "34",
         "Salvage Potential": "40~65",
         "Inventory Capacity": "1",
@@ -7012,7 +7012,7 @@
         "Class": "DRS Ranger (Derelict)",
         "Tier": "6",
         "Threat": "3",
-        "Rating": "64",
+        "Rating": "62",
         "Value": "70",
         "Size Class": "Medium",
         "Size": "1",
@@ -7189,7 +7189,7 @@
         "Class": "Scrapper (Derelict)",
         "Tier": "6",
         "Threat": "3",
-        "Rating": "59",
+        "Rating": "60",
         "Value": "61",
         "Size Class": "Medium",
         "Size": "1",
@@ -7241,7 +7241,7 @@
         "Class": "Elite (Derelict)",
         "Tier": "4",
         "Threat": "2",
-        "Rating": "42",
+        "Rating": "43",
         "Value": "56",
         "Size Class": "Large",
         "Size": "1",
@@ -7401,8 +7401,8 @@
         "Energy Generation": "17",
         "Heat Dissipation": "20",
         "Core Integrity": "22",
-        "Core Exposure": "228",
-        "Core Exposure %": "40",
+        "Core Exposure": "254",
+        "Core Exposure %": "39",
         "Salvage Potential": "50~70",
         "Inventory Capacity": "1",
         "Armament": [
@@ -7451,7 +7451,7 @@
         "Energy Generation": "24",
         "Heat Dissipation": "20",
         "Core Integrity": "37",
-        "Core Exposure": "254",
+        "Core Exposure": "281",
         "Core Exposure %": "39",
         "Salvage Potential": "60~80",
         "Inventory Capacity": "1",
@@ -13905,7 +13905,7 @@
         "Class": "Special",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "681",
+        "Rating": "481",
         "Value": "1",
         "Size Class": "Huge",
         "Size": "3",
@@ -13918,7 +13918,7 @@
         "Sight Range": "16",
         "Energy Generation": "104",
         "Heat Dissipation": "138",
-        "Core Integrity": "2000",
+        "Core Integrity": "1000",
         "Core Exposure": "892",
         "Core Exposure %": "25",
         "Salvage Potential": "500~1000",
