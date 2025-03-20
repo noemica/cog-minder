@@ -789,7 +789,7 @@
    "Content": ""
   },
   {
-   "Name": "Scrapper",
+   "Name": "Scrapper (3)",
    "Content": "Scrappers are [[Legs|legged]] [[UFD]] bots armed with an [[Ovr. Pulse Rifle]] located mainly in [[Scraptown]]."
   },
   {
@@ -7821,6 +7821,15 @@
    "Content": ""
   },
   {
+   "Name": "Electromagnetic Weapons",
+   "Content": "",
+   "Groups": [
+    "Electromagnetic Cannons",
+    "Electromagnetic Guns",
+    "Electromagnetic Launchers"
+   ]
+  },
+  {
    "Name": "Energy Cannons",
    "Groups": [
     "Alpha Cannons",
@@ -8042,6 +8051,25 @@
     "Matter Compressors"
    ],
    "Content": ""
+  },
+  {
+   "Name": "Thermal Weapons",
+   "Content": "",
+   "Groups": [
+    "Flamers",
+    "Plasma Cutters",
+    "Sigix Terminators",
+    "Thermal Cannons",
+    "Thermal Guns"
+   ],
+   "Parts": [
+    "AD-0RF's Magmablaster",
+    "Asb. P-torch",
+    "LU-1G1's Laser Shovel",
+    "Mining Laser",
+    "Thermoblaster",
+    "Welding Torch"
+   ]
   },
   {
    "Name": "Utilities",
@@ -9346,10 +9374,6 @@
   },
   {
    "Name": "Distress Signals",
-   "Content": ""
-  },
-  {
-   "Name": "Electromagnetic Weapons",
    "Content": ""
   },
   {
