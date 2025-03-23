@@ -1965,7 +1965,7 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
 
             const tempState = ParserState.Clone(state);
             tempState.initialContent = cell;
-            tempState.inlineOnly = "InlineOnly";
+            tempState.inlineOnly = "InlineWithNewlines";
             processSection(tempState, undefined);
             const cellHtml = outputGroupsToHtml(tempState.output, state.inSpoiler, false, false);
 
