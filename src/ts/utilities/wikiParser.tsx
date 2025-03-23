@@ -952,7 +952,7 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
 
         // Parse the image caption as a subsection individually so we can include links
         const tempState = ParserState.Clone(state);
-        tempState.inlineOnly = "InlineOnly";
+        tempState.inlineOnly = "InlineWithNewlines";
         tempState.initialContent = imageCaption;
         processSection(tempState, undefined);
         const imageCaptionHtml = outputGroupsToHtml(tempState.output, state.inSpoiler);
@@ -1191,7 +1191,7 @@ function processImageTag(state: ParserState, result: RegExpExecArray) {
         // Parse the image caption as a subsection individually so we can include links
         const tempState = ParserState.Clone(state);
         tempState.initialContent = split[1];
-        tempState.inlineOnly = "InlineOnly";
+        tempState.inlineOnly = "InlineWithNewlines";
         processSection(tempState, undefined);
         imageCaptionHtml = outputGroupsToHtml(tempState.output, state.inSpoiler);
     }
@@ -1703,6 +1703,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
         while ((newlineIndex = state.initialContent.indexOf("\n", state.index)) !== -1 && newlineIndex < result.index) {
             if (state.inlineOnly === "InlineOnly") {
                 // If inline only don't allow separated content
+                recordError(state, "Newlines are not supported inside the current action", state.index);
             } else {
                 state.output.push({
                     groupType: "Grouped",
