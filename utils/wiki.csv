@@ -1297,6 +1297,8 @@ When the Companion Sword transforms, the following game log message will appear:
 
 [[Heading]]Dialogue[[/Heading]]
 The following is a non-comprehensive list of Companion Sword dialogue:
+[[Comment]]If you turn on ""log output"" during a Companion Sword run, your entire run's log (including all Companion Sword dialogue lines) will be exported as a txt or html file after the run ends or when creating scoresheet dumps.
+Having such a file and using Ctrl+f can make it significantly easier to add missing dialogue lines to this list.[[/Comment]]
 
 [[Heading:2]]All variants[[/Heading]]
 [[Heading:3]]First meeting before pickup[[/Heading]]
@@ -1314,7 +1316,8 @@ The following is a non-comprehensive list of Companion Sword dialogue:
 [[GameText]]Whew.[[/GameText]]
 [[GameText]]I applaud your need for me.[[/GameText]]
 [[GameText]]I'd do the same for you[[/GameText]]
-[[Heading:3]]Build comments[[/Heading]]
+
+[[Heading:3]]Build comments[[/Heading]][[Comment]]This probably belongs to another category, like maybe ""Out of combat banter""?[[/Comment]]
 [[GameText]]Beware theres a new [second half of build] in town.[[/GameText]]
 
 [[Heading:3]]""Other weapons attached"" complaints[[/Heading]]
@@ -4605,13 +4608,13 @@ Materialization|The Quantum Companion will materialize in one of Cogmind's weapo
 Sensors|After some time in Quantum Companion form, the Quantum Companion will develop 12 range bot detection. Unlike typical sensors, this works on all bots without a [[Signal Interpreter]], even if they have the Scan Cloak trait, and cannot be jammed in any way. However, inactive (dormant/disabled/broken/unpowered) bots will not be detected.|Always||
 Surprise Attack|The Quantum Companion will ""surprise attack"" one additional target on a normal attack. The log message [[GameText]]Quantum Companion surprise attacks [target].[[/GameText]] will appear when this happens.|Common||
 Core Loss|The Companion Sword deals between 5-10 core damage directly to Cogmind's core on a normal attack. Can't be reduced by [[Core Shieldings]] or [[Defensive Utilities]]. Only happens when Cogmind attacks something with the Companion Sword.|Uncommon||
-Shadow Attack|A shadow clone of the sword attacks a hostile bot at range. Can occur even when not attacking. This attack cannot miss. The log message [[GameText]]Quantum Companion releases a shadow of itself that zips off toward [target].[[/GameText]] will appear when this happens. This attack deals 70-100 phasic damage.|Uncommon||
+Shadow Attack|A shadow clone of the sword attacks a hostile bot at range. Can occur even when not attacking. This attack cannot miss. The log message [[GameText]]Quantum Companion releases a shadow of itself that zips off toward [target].[[/GameText]] will appear when this happens. This attack deals 70-100 phasic damage.[[Comment]]IMPORTANT QUESTION: can this effect occur while a Researcher can see it? If so, would it cause them to notice Cogmind?[[/Comment]]|Uncommon||
 Bot Disruption|A bot is instantly disrupted on a normal attack. As with normal disruption, a disrupted bot can be rewired as long as it isn't hacking immune. The log message [[GameText]][target] shuts down.[[/GameText]] will appear when this happens.|Rare||
 Redirected Attack|When attacked by a projectile, the Quantum Companion will redirect the attack back to the attacker. The log message [[GameText]]Redirected attack with Quantum Companion.[[/GameText]] will appear with this happens.|Rare||
 Sever|A part is severed off of a bot on a normal attack. This effect can hit through the Dismemberment immunity, unlike standard Sever critical hits.|Rare||
 Sunder|This effect will instantly sunder a bot, similar to the [[Core Stripper]] on a normal attack. All parts are dropped between 1/3 and 2/3 integrity. Affected by the Dismemberment immunity. The log message [[GameText]][target] is sundered.[[/GameText]] will appear when this happens. 200 energy required for this effect.|Rare||
 Surge of Energy|This effect instantly kills a bot on a normal attack. The log message [[GameText]][target] is pierced by a surge of energy.[[/GameText]] will appear when this happens.|Rare||
-Teleport|Cogmind is instantly teleported next to a visible hostile bot at no time cost, through machinery and other bots if necessary. Can be used to trigger an instant sneak attack if the bot hasn't spotted Cogmind yet. Can happen at any point in time.[[Comment]]Can it really? I did a flight run with this, and it always seemed to trigger at the start of my turn (I was never spotted due to this movement, even when it triggered during a wait action).[[/Comment]] Be careful, as this effect can very easily send Cogmind into dangerous situations or hinder a tactical retreat. The log message [[GameText]]The surroundings shift and blur.[[/GameText]] will appear when this happens. 25 energy required for this effect.|Rare
+Teleport|Cogmind is instantly teleported to an empty space next to a visible hostile bot at no time cost, through machinery and other bots if necessary. Can be used to trigger an instant sneak attack if the bot hasn't spotted Cogmind yet. The teleport will prioritize targeting closer hostiles, unless some hostiles can be sneak attacked and some cannot, in which case it will prioritize hostiles that can be sneak attacked. Can happen at any point in time[[Comment]]Can it really? I did a flight run with this, and it always seemed to trigger at the start of my turn (I was never spotted due to this movement, even when it triggered during a wait action).[[/Comment]], and can still happen even if the Companion isn't currently attached, in which case the Materialization effect will be triggered simultaneously[[Comment]]I'm basing this information off of Kyzrati's ""swordy run part 2"" stream. Not sure if the materialization happens before or after the teleport, but probably before?[[/Comment]]. Be careful, as this effect can very easily send Cogmind into dangerous situations or hinder a tactical retreat. The log message [[GameText]]The surroundings shift and blur.[[/GameText]] will appear when this happens. 25 energy required for this effect.|Rare
 [[/Table]]
 [[Heading]]Transformation[[/Heading]]
 If a Subatomic Replicator is used on the Quantum Companion, it will transform into the [[Superquantum Companion]]. Unlike the base Companion Sword, this effect does not occur from use alone. This means that it is not possible to use a replicator to get from the base Companion Sword and also get the Quantum Companion. When this happens, the following game log message will appear: [[GameText]]Quantum Companion blips out of existence for a moment, then partially fades back in.[[/GameText]] The Superquantum Companion will also comment on it, saying one of multiple possible [[Companion Sword#upgrading|upgrade lines]].","","","","","","",""
