@@ -172,6 +172,14 @@ export class ItemData {
                 }
 
                 case "Propulsion": {
+                    const siege = (
+                        item.Siege
+                            ? item.Siege
+                            : item.Special === SiegeMode.High || item.Special === SiegeMode.Standard
+                              ? item.Special
+                              : undefined
+                    ) as SiegeMode;
+
                     const propItem: PropulsionItem = {
                         slot: "Propulsion",
                         supporterAttribution: item["Supporter Attribution"],
@@ -203,12 +211,8 @@ export class ItemData {
                         heatPerMove: parseIntOrUndefined(item["Heat/Move"]),
                         matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
                         modPerExtra: parseIntOrUndefined(item["Mod/Extra"]),
-                        siege: (item.Siege
-                            ? item.Siege
-                            : item.Special === SiegeMode.High || item.Special === SiegeMode.Standard
-                              ? item.Special
-                              : undefined) as SiegeMode,
-                        special: item.Special,
+                        siege: siege,
+                        special: siege === undefined ? item.Special : siege, // TODO b15 only
                         index: index,
                         specialProperty: specialProperty,
                         spoiler: spoiler,
