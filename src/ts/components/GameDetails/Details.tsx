@@ -249,8 +249,17 @@ export function DetailsItemImages({ part }: { part: Item }) {
     );
 }
 
+const extraNumRegex = /(?:Disposable|Unstable) \((\d*)\)/;
 export function DetailsItemTitleLine({ part }: { part: Item }) {
-    return <pre className="details-title details-item-image-title">{part.name}</pre>;
+    let extraNumText = "";
+    if (part.specialTrait !== undefined) {
+        let result = extraNumRegex.exec(part.specialTrait);
+        if (result !== null) {
+            extraNumText = ` (${result[1]})`;
+        }
+    }
+
+    return <pre className="details-title details-item-image-title">{part.name}{extraNumText}</pre>;
 }
 
 export function DetailsTextLine({
