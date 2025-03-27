@@ -3567,7 +3567,7 @@ If Cogmind or an ally stands in front of a Network Hub and a 0b10 bot misses int
 [[Heading:2]][[Traps|Trap]] explosion[[/Heading]]
 Traps never assign Alert to Cogmind unless they manually trigger the trap. Any explosive or area EM traps will work, [[I]]but[[/I]] if the trap triggers due to Cogmind's corruption then the alert isn't assigned, which can be used to avoid the alert.
 [[Heading:2]][[Plasma Cutter|Regular]] or [[Imp. Plasma Cutter]][[/Heading]]
-Plasma Cutters can destroy any machine with minimal Alert gain. As a bonus, Plasma Cutters also do not trigger the explosion at all which can otherwise place Cogmind in a bad defensive position.
+Plasma Cutters can destroy explosive machines like Hubs without triggering the explosion, avoiding the possibility for Cogmind to be caught out in the open in a bad defensive position. Because the majority of the Alert gained from destroying a Hub is from the explosion, this will reduce the typical several hundred Alert gain down to just 15.
 [[Heading:2]]Force(Sabotage)[[/Heading]]
 If successful, this hack will blow up a random explosive machine on the map. Network Hubs are the only available targets so this will always work on this map. This hack is inconsistent and may fail multiple times in a row. This hack will cause an Alert gain of 50 if successful, but it is substantially less than the several hundred of a manually-blown Network Hub. Note: unlike this hack, Trojan(Detonate) does cause Alert to go up from the Explosion and is not a great hack to use.
 [[Heading:2]]Lightning[[/Heading]]
