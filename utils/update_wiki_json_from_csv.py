@@ -14,10 +14,10 @@ parser.add_argument('--write-diffs', action='store_true')
 args = parser.parse_args()
 
 # Open/parse files
-with open(wiki_path) as f:
+with open(wiki_path, encoding='utf-8') as f:
     wiki_json = json.load(f)
 
-with open(csv_path) as f:
+with open(csv_path, encoding='utf-8') as f:
     wiki_csv = {}
     for row in csv.DictReader(f):
         row['Content'] = row['Content'].replace('\\n', '\n')
@@ -140,7 +140,7 @@ for l in lists:
     l.sort(key=lambda x: x['Name'])
 
 # Save JSON
-with open(wiki_path, 'w') as f:
+with open(wiki_path, 'w', encoding='utf-8') as f:
     json.dump(wiki_json, f, indent=1)
 
 updated_pages.sort()

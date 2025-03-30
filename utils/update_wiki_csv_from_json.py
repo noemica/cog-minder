@@ -9,11 +9,11 @@ wiki_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json'
 csv_path = path.join(path.dirname(path.realpath(__file__)), 'wiki.csv')
 
 # Open/parse files
-with open(wiki_path) as f:
+with open(wiki_path, encoding='utf-8') as f:
     wiki_json = json.load(f)
 
 csv_entries = set()
-with open(csv_path) as f:
+with open(csv_path, encoding='utf-8') as f:
     wiki_csv = {}
     for row in csv.DictReader(f):
         wiki_csv[row['Name']] = row
@@ -211,7 +211,7 @@ if len(csv_entries) > 0:
     sys.exit(1)
 
 # Write out updated csv
-with open(csv_path, 'w', newline='') as f:
+with open(csv_path, 'w', newline='', encoding='utf-8') as f:
     writer = csv.DictWriter(
         f,
         ['Name', 'Page Type', 'Content', 'Spoiler', 'Bots', 'Part Category',
@@ -225,8 +225,8 @@ with open(csv_path, 'w', newline='') as f:
         wiki_csv[name]['Content'] = wiki_csv[name]['Content']
         writer.writerow(wiki_csv[name])
 
-with open(csv_path, 'r') as f:
+with open(csv_path, 'r', encoding='utf-8') as f:
     text = f.read()
 
-with open(csv_path, 'w') as f:
+with open(csv_path, 'w', encoding='utf-8') as f:
     f.write(text.replace('\\""', '""'))
