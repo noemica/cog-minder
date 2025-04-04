@@ -680,7 +680,7 @@ export default function SimulatorPageInput({
                     value={pageState.corruption || ""}
                     onChange={(val) => updatePageState({ ...pageState, corruption: val })}
                     placeholder="0%"
-                    tooltip="The amount of corruption that Cogmind currently has. Corruption reduces accuracy by 3% for every 1% of corruption."
+                    tooltip="The amount of corruption that Cogmind currently has. Corruption reduces accuracy by 1% for every 3% of corruption."
                 />
                 <LabeledInput
                     label="Actions Since Moving"
