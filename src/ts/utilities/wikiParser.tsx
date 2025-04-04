@@ -220,11 +220,10 @@ export function createContentHtml(
 // Creates the preview content for a search result
 // This strips out any spoiler/redacted tags as well as their internal content
 // if not allowed by current spoiler level
+const spoilerRegex = /(\[\[Spoiler\]\])(.*?)(\[\[\/Spoiler\]\])/s;
+const redactedRegex = /(\[\[Redacted\]\])(.*?)(\[\[\/Redacted\]\])/s;
+const imageRegex = /\[\[Image\]\](.*?)\[\[\/Image\]\]/s;
 export function createPreviewContent(content: string, spoilerState: Spoiler): string {
-    const spoilerRegex = /(\[\[Spoiler\]\])(.*?)(\[\[\/Spoiler\]\])/s;
-    const redactedRegex = /(\[\[Redacted\]\])(.*?)(\[\[\/Redacted\]\])/s;
-    const imageRegex = /\[\[Image\]\](.*?)\[\[\/Image\]\]/s;
-
     function stripSpoilerContent(regex: RegExp, spoiler: Spoiler) {
         let result: RegExpExecArray | null;
         do {
@@ -1778,7 +1777,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
     while ((newlineIndex = state.initialContent.indexOf("\n", state.index)) !== -1) {
         state.output.push({
             groupType: "Grouped",
-            node: state.initialContent.substring(state.index, newlineIndex),
+            node: state.initialContent.substring(state.index, newlineIndex).replace("{{", "[").replace("}}", "]"),
         });
         state.output.push({ groupType: "Separator", node: undefined });
 
@@ -1789,7 +1788,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
     if (state.index < state.initialContent.length) {
         state.output.push({
             groupType: "Grouped",
-            node: state.initialContent.substring(state.index),
+            node: state.initialContent.substring(state.index).replace("{{", "[").replace("}}", "]"),
         });
     }
 }
