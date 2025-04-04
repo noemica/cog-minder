@@ -1504,6 +1504,15 @@ function simulateWeapon(
         return endCondition(botState);
     }
 
+    if (!offensiveState.melee && offensiveState.corruption > 0) {
+        // Jamming/failing to cycle/failing to launch is a corruption-based 
+        // effect for non-melee weapons. Odds to fail to attack increases by 
+        // .2% for every 1% of corruption.
+        if (randomInt(0, 1000) < offensiveState.corruption * 2) {
+            return false;
+        }
+    }
+
     for (let i = 0; i < weapon.numProjectiles; i++) {
         // Check if the attack was a sneak attack or was a hit.
         // Technically sneak attacks can miss, but not under any realistic

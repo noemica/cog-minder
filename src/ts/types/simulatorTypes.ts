@@ -175,6 +175,7 @@ export type OffensiveState = {
     analysis: boolean;
     chargerBonus: number;
     coreAnalyzerChance: number;
+    corruption: number;
     distance: number;
     followupChances: number[];
     forceBoosters: number[];

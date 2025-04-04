@@ -435,6 +435,8 @@ function getSimulatorState(
     // Salvage targeting bonus
     const salvageTargetingBonus = parseIntOrDefault(pageState.salvageTargeting, 0);
 
+    const corruption = parseIntOrDefault(pageState.corruption, 0);
+
     const weapons = userWeapons.map((weapon, i) => {
         const def = weapon.def;
         let damageMin = 0;
@@ -519,7 +521,7 @@ function getSimulatorState(
         }
 
         // Corruption penalty, -1% per 4% corruption
-        const corruptionPenalty = Math.trunc(parseIntOrDefault(pageState.corruption, 0) / 4);
+        const corruptionPenalty = Math.trunc(corruption / 4);
 
         // Calculate base accuracy that can't change over the course of the fight
         let baseAccuracy = melee ? initialMeleeAccuracy : initialRangedAccuracy;
@@ -710,6 +712,7 @@ function getSimulatorState(
         analysis: pageState.analysis === "Yes",
         chargerBonus: chargerBonus,
         coreAnalyzerChance: coreAnalyzerChance,
+        corruption: corruption,
         distance: distance,
         followupChances: followupChances,
         forceBoosters: forceBoosters,
