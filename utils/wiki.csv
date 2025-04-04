@@ -3910,7 +3910,7 @@ Signal Jamming is a RIF ability that behaves similar to Transmission Jammers. In
 Trap Scanners do exactly as their name implies: They scan for traps. Trap Scanners add fixed percentage to the chance to detect a trap each turn that one is within Cogmind's line of sight.
 [[Heading]]Infowar gallery[[/Heading]]
 [[Gallery]]Sensor Array Activated.webp|A sensor array being activated|
-Farcom Active.webp|FarCom bot detection active, with green ring indicating radius|
+FarCom Active.webp|FarCom bot detection active, with green ring indicating radius|
 Seismic Detector Activating.webp|Seismic Detector becoming activated and showing seismic activity|
 [[Spoiler]]Quantum Companion Sensors Active.webp[[/Spoiler]]|[[Spoiler]]Quantum Companion bot detection, with blue ring indicating radius[[/Spoiler]]|
 [[Redacted]]Sigix Exoskeleton Sensors.webp[[/Redacted]]|[[Redacted]]Sigix Exoskeleton bot detection and terrain scanning, with blue ring indicating radius[[/Redacted]]|
@@ -5302,7 +5302,7 @@ Robot movement detection: Bots that move on [[Wheels]], [[Legs]], or [[Treads]] 
 Active machine detection: Certain machines create seismic activity. Note that [[Interactive Machine|Interactive Machines]] such as [[Terminal|Terminals]] do not create any seismic activity, but many non-interactive machines do, especially in [[Factory]].
 [[Comment]]TODO: Could make a full list of machines that can be detected.[[/Comment]]|
 Explosion detection: Explosions create very large areas of intense bright yellow seismic activity.[[/List]]
-[[Image]]Seismic Detector Activated.gif|The Seismic Detector being activated[[/Image]]
+[[Image]]Seismic Detector Activating.webp|The Seismic Detector being activated[[/Image]]
 [[Heading]]Analysis[[/Heading]]
 Seismic Detector can be used both as a primary yet somewhat limited source of infowar or with a combination of other infowar parts effectively.
 [[Heading:2]]Pros/Cons[[/Heading]]
