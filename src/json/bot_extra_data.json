@@ -2321,7 +2321,7 @@
         "Locations": [
             {
                 "Location": "protoforge",
-                "Description": "Unpowered: Guards the prototype are above the Forge Plexus, wakes up when "
+                "Description": "Unpowered: Guards the prototype are above the Forge Plexus, wakes up when Cogmind is spotted by a bot that isn't jammed or if reported by an Operator"
             }
         ]
     },
