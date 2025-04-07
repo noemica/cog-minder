@@ -24227,6 +24227,7 @@
         "Integrity": "60",
         "No Repairs": "1",
         "Coverage": "20",
+        "Effect": "30% chance to rip component off target. Ignores armor.",
         "Range": "2",
         "Shot Energy": "30",
         "Shot Heat": "10",
@@ -24234,7 +24235,6 @@
         "Damage Min": "5",
         "Damage Max": "10",
         "Damage Type": "Slashing",
-        "Explosion Salvage": "50% chance to rip component off target.",
         "Index": 1153,
         "Full Name": "Mini Tearclaws"
     },
