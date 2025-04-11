@@ -935,7 +935,6 @@ Cep. Plasma Driver
 Hyp. Alpha Cannon
 Zio. Alpha Cannon Mk. II
 Imp. Potential Cannon
-Cep. Directed Potential Cannon
 Multinova Projection Cannon
 Disintegrator
 Core Cannon

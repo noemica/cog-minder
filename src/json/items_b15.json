@@ -14460,7 +14460,7 @@
         "Integrity": "50",
         "No Repairs": "1",
         "Special Trait": "Consumable",
-        "Effect": "Modifies base damage resistance: EM -25%.\n <stacks, consumed>",
+        "Effect": "Modifies base damage resistance: EM +25%.\n <stacks, consumed>",
         "Index": 777,
         "Full Name": "LRC Insulator"
     },
@@ -14475,7 +14475,7 @@
         "Integrity": "50",
         "No Repairs": "1",
         "Special Trait": "Consumable",
-        "Effect": "Modifies base damage resistances: TH +15%, EM -25%.\n <stacks, consumed>",
+        "Effect": "Modifies base damage resistances: TH -15%, EM +25%.\n <stacks, consumed>",
         "Index": 778,
         "Full Name": "Cep. Nanofilaments [Conductive]"
     },
@@ -14490,7 +14490,7 @@
         "Integrity": "50",
         "No Repairs": "1",
         "Special Trait": "Consumable",
-        "Effect": "Modifies base damage resistances: KI -20%, TH +10%, I -20%.\n <stacks, consumed>",
+        "Effect": "Modifies base damage resistances: KI +20%, TH -10%, I +20%.\n <stacks, consumed>",
         "Index": 779,
         "Full Name": "Cep. Nanofilaments [Tensile]"
     },
@@ -14505,7 +14505,7 @@
         "Integrity": "50",
         "No Repairs": "1",
         "Special Trait": "Consumable",
-        "Effect": "Modifies base damage resistances: KI +10%, TH -20%, EX +50%.\n <stacks, consumed>",
+        "Effect": "Modifies base damage resistances: KI -10%, TH +20%, EX -50%.\n <stacks, consumed>",
         "Index": 780,
         "Full Name": "Cep. Nanofilaments [Polyglass]"
     },
@@ -18507,7 +18507,7 @@
     },
     {
         "Slot": "Weapon",
-        "Name": "Cep. Directed Potential Cannon",
+        "Name": "Cld. Directed Potential Cannon",
         "Type": "Energy Cannon",
         "Rating": "10*",
         "Category": "Prototype",
@@ -18522,11 +18522,12 @@
         "Shot Heat": "120",
         "Recoil": "20",
         "Delay": "50",
+        "Overload Stability": "92%",
         "Projectile Count": "1",
         "Damage Min": "90",
         "Damage Max": "180",
         "Damage Type": "Thermal",
-        "Critical": "10% Meltdown",
+        "Critical": "25% Meltdown",
         "Heat Transfer": "High (50)",
         "Salvage": "-20",
         "Explosion Radius": "4",
@@ -18538,7 +18539,7 @@
         "Explosion Heat Transfer": "Massive (80)",
         "Explosion Salvage": "-10",
         "Index": 937,
-        "Full Name": "Cep. Directed Potential Cannon"
+        "Full Name": "Cooled Directed Potential Cannon"
     },
     {
         "Slot": "Weapon",
@@ -25963,7 +25964,7 @@
         "Size": "10",
         "Integrity": "225",
         "No Repairs": "1",
-        "Description": "If on the ground at current position use > or right-click on self to begin or continue installing at current location. Installation progresses in one-turn intervals.",
+        "Description": "If on the ground at current position use > or right-click on self to begin or continue installing at current location. Installation progresses in one-turn intervals, and requires 10 turns to complete.",
         "Index": 1237,
         "Full Name": "UFD Drillbomb"
     },
