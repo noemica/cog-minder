@@ -110,6 +110,7 @@ SPRITES = [
     Sprite(20, 14, 1, 'Fireman (Derelict)'),
     Sprite(21, 14, 1, 'Ranger (Derelict)'),
     Sprite(23, 14, 1, 'Mutant (Derelict)'),
+    Sprite(24, 14, 1, 'V-Series (Prototype)'),
 
     Sprite(0, 15, 1, 'Striker (Prototype)'),
     Sprite(1, 15, 1, 'Executioner (Prototype)'),

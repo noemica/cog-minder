@@ -1806,7 +1806,7 @@
         "Core Exposure": "73",
         "Core Exposure %": "29",
         "Salvage Potential": "5~10",
-        "Inventory Capacity": "3",
+        "Inventory Capacity": "5",
         "Immunities": [
             "Hacking"
         ],
@@ -4695,7 +4695,7 @@
         "Class": "Sentry (Prototype)",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "216",
+        "Rating": "212",
         "Value": "300",
         "Size Class": "Large",
         "Size": "1",
@@ -4709,7 +4709,7 @@
         "Energy Generation": "76",
         "Heat Dissipation": "68",
         "Core Integrity": "200",
-        "Core Exposure": "423",
+        "Core Exposure": "436",
         "Core Exposure %": "24",
         "Salvage Potential": "80~100",
         "Inventory Capacity": "1",
@@ -4772,7 +4772,7 @@
         "Class": "Sentry (Prototype)",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "168",
+        "Rating": "177",
         "Value": "300",
         "Size Class": "Large",
         "Size": "1",
@@ -4786,7 +4786,7 @@
         "Energy Generation": "50",
         "Heat Dissipation": "68",
         "Core Integrity": "200",
-        "Core Exposure": "365",
+        "Core Exposure": "418",
         "Core Exposure %": "24",
         "Salvage Potential": "80~100",
         "Inventory Capacity": "1",
@@ -4855,9 +4855,9 @@
         "Components": [
             "Hyb. Antimatter Reactor",
             "Hyb. Antimatter Reactor",
-            "Hdn. Centrium Wheel",
-            "Hdn. Centrium Wheel",
-            "Hdn. Centrium Wheel",
+            "Hds. Centrium Wheel",
+            "Hds. Centrium Wheel",
+            "Hds. Centrium Wheel",
             "Exp. Power Amplifier",
             "Exp. Energy Well",
             "Exp. Energy Well",
@@ -4869,7 +4869,7 @@
         "Resistances": {
             "Thermal": "25"
         },
-        "Components String": "2x Hyb. Antimatter Reactor, 3x Hdn. Centrium Wheel, Exp. Power Amplifier, 2x Exp. Energy Well, Adv. Powered Armor, Graphene Brace, Adv. Remote Force Field, Adv. Point Defense System"
+        "Components String": "2x Hyb. Antimatter Reactor, 3x Hds. Centrium Wheel, Exp. Power Amplifier, 2x Exp. Energy Well, Adv. Powered Armor, Graphene Brace, Adv. Remote Force Field, Adv. Point Defense System"
     },
     {
         "Name": "Enhanced Grunt",
@@ -5505,6 +5505,38 @@
         "Components String": "2x Com. Particle Reactor, 3x Cld. Linear Gravjet, Quantum Shading Machine, Exp. Cooling System, Exp. Target Analyzer, Exp. Focal Shield, Adv. Dynamic Insulation System, Centrium Medium Armor Plating, Exp. Weapon Shielding"
     },
     {
+        "Name": "V-Series",
+        "Class": "V-Series (Prototype)",
+        "Tier": "10",
+        "Threat": "5",
+        "Rating": "183",
+        "Value": "150",
+        "Size Class": "Large",
+        "Size": "1",
+        "Profile": "RD7X7",
+        "Memory": "120",
+        "Spot %": "100",
+        "Movement": "Hovering",
+        "Speed": "112",
+        "Speed %": "89",
+        "Sight Range": "16",
+        "Energy Generation": "50",
+        "Heat Dissipation": "50",
+        "Core Integrity": "120",
+        "Core Exposure": "300",
+        "Core Exposure %": "14",
+        "Salvage Potential": "30~100",
+        "Inventory Capacity": "1",
+        "Immunities": [
+            "Hacking",
+            "Jamming"
+        ],
+        "Resistances": {
+            "Kinetic": "30",
+            "Electromagnetic": "75"
+        }
+    },
+    {
         "Name": "Investigator",
         "Class": "Researcher (Prototype)",
         "Tier": "10",
@@ -5832,8 +5864,8 @@
         ],
         "Components": [
             "Imp. Quantum Reactor",
-            "Hdn. Centrium Leg",
-            "Hdn. Centrium Leg",
+            "Hds. Centrium Leg",
+            "Hds. Centrium Leg",
             "Centrium Medium Armor Plating",
             "Adv. Point Defense System",
             "Exp. ECM Suite",
@@ -5850,7 +5882,7 @@
             "Piercing": "-50"
         },
         "Armament String": "Multirail, Hvy. Quantum Rifle OR Enh. Gamma Rifle",
-        "Components String": "Imp. Quantum Reactor, 2x Hdn. Centrium Leg, Centrium Medium Armor Plating, Adv. Point Defense System, Exp. ECM Suite, Adv. Dynamic Insulation System, Exp. Cooling System, Exp. Targeting Computer, Exp. Target Analyzer"
+        "Components String": "Imp. Quantum Reactor, 2x Hds. Centrium Leg, Centrium Medium Armor Plating, Adv. Point Defense System, Exp. ECM Suite, Adv. Dynamic Insulation System, Exp. Cooling System, Exp. Targeting Computer, Exp. Target Analyzer"
     },
     {
         "Name": "AP7-3",
@@ -5942,10 +5974,10 @@
         "Components": [
             "Vortex Chain Reactor",
             "Vortex Chain Reactor",
-            "Hdn. Centrium Heavy Treads",
-            "Hdn. Centrium Heavy Treads",
-            "Hdn. Centrium Heavy Treads",
-            "Hdn. Centrium Heavy Treads",
+            "Hds. Centrium Heavy Treads",
+            "Hds. Centrium Heavy Treads",
+            "Hds. Centrium Heavy Treads",
+            "Hds. Centrium Heavy Treads",
             "Centrium Heavy Armor Plating",
             "Hvy. Insulated Plating",
             "Exp. EM Shield",
@@ -5965,7 +5997,7 @@
             "Electromagnetic": "100"
         },
         "Armament String": "Enh. Nova Cannon, Graviton Cannon",
-        "Components String": "2x Vortex Chain Reactor, 4x Hdn. Centrium Heavy Treads, Centrium Heavy Armor Plating, Hvy. Insulated Plating, Exp. EM Shield, Thermal Barrier, Adv. Point Defense System, Exp. Force Field, Adv. Dynamic Insulation System, Coolant Network, Adv. Coolant Injector, Exp. Weapon Shielding"
+        "Components String": "2x Vortex Chain Reactor, 4x Hds. Centrium Heavy Treads, Centrium Heavy Armor Plating, Hvy. Insulated Plating, Exp. EM Shield, Thermal Barrier, Adv. Point Defense System, Exp. Force Field, Adv. Dynamic Insulation System, Coolant Network, Adv. Coolant Injector, Exp. Weapon Shielding"
     },
     {
         "Name": "LRC-V4",
@@ -6044,7 +6076,7 @@
         "Class": "Grunt (Prototype)",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "142",
+        "Rating": "152",
         "Value": "200",
         "Size Class": "Medium",
         "Size": "1",
@@ -6056,10 +6088,10 @@
         "Speed %": "83",
         "Sight Range": "16",
         "Energy Generation": "68",
-        "Heat Dissipation": "118",
+        "Heat Dissipation": "154",
         "Core Integrity": "140",
-        "Core Exposure": "151",
-        "Core Exposure %": "20",
+        "Core Exposure": "190",
+        "Core Exposure %": "19",
         "Salvage Potential": "80~110",
         "Inventory Capacity": "1",
         "Armament": [
@@ -6106,7 +6138,7 @@
                     "number": 3
                 },
                 {
-                    "name": "Hdn. Centrium Leg",
+                    "name": "Hds. Centrium Leg",
                     "number": 3
                 }
             ],
@@ -6147,17 +6179,18 @@
         ],
         "Resistances": {
             "Kinetic": "-25",
+            "Thermal": "30",
             "Electromagnetic": "-25"
         },
         "Armament String": "Prc. Phase Gun OR Hvy. Dispersion Rifle, Adv. Plasma Rifle OR Hvy. Wave Gun OR Adv. Variable Charge Gun OR Cld. Phase Gun, Cld. Plasma Rifle OR Enh. Force Rifle OR Hvy. Gatling Laser",
-        "Components String": "2x Imp. Quantum Reactor, 3x Enh. Biometal Leg OR 3x Hdn. Centrium Leg, Imp. Armor Integrity Analyzer OR Exp. Weapon Cycler, Exp. Targeting Computer OR Adv. Particle Charger, 3x Exp. Heat Sink OR 3x Exp. Cooling System, Exp. Utility Shielding OR Exp. Thermal Shield"
+        "Components String": "2x Imp. Quantum Reactor, 3x Enh. Biometal Leg OR 3x Hds. Centrium Leg, Imp. Armor Integrity Analyzer OR Exp. Weapon Cycler, Exp. Targeting Computer OR Adv. Particle Charger, 3x Exp. Heat Sink OR 3x Exp. Cooling System, Exp. Utility Shielding OR Exp. Thermal Shield"
     },
     {
         "Name": "Protovariant L",
         "Class": "Duelist (Prototype)",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "114",
+        "Rating": "112",
         "Value": "200",
         "Size Class": "Medium",
         "Size": "1",
@@ -6244,7 +6277,7 @@
         "Class": "Sentry (Prototype)",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "146",
+        "Rating": "154",
         "Value": "200",
         "Size Class": "Large",
         "Size": "1",
@@ -6252,13 +6285,13 @@
         "Memory": "80",
         "Spot %": "50",
         "Movement": "Treading",
-        "Speed": "135",
-        "Speed %": "74",
+        "Speed": "160",
+        "Speed %": "62",
         "Sight Range": "16",
-        "Energy Generation": "38",
+        "Energy Generation": "68",
         "Heat Dissipation": "154",
         "Core Integrity": "170",
-        "Core Exposure": "272",
+        "Core Exposure": "307",
         "Core Exposure %": "16",
         "Salvage Potential": "80~105",
         "Inventory Capacity": "1",
@@ -6357,7 +6390,7 @@
         "Class": "Demolisher (Prototype)",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "124",
+        "Rating": "121",
         "Value": "200",
         "Size Class": "Medium",
         "Size": "1",
@@ -6371,8 +6404,8 @@
         "Energy Generation": "56",
         "Heat Dissipation": "55",
         "Core Integrity": "180",
-        "Core Exposure": "148",
-        "Core Exposure %": "20",
+        "Core Exposure": "147",
+        "Core Exposure %": "19",
         "Salvage Potential": "70~100",
         "Inventory Capacity": "1",
         "Armament": [
@@ -6426,7 +6459,7 @@
         "Class": "Specialist (Prototype)",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "163",
+        "Rating": "161",
         "Value": "200",
         "Size Class": "Medium",
         "Size": "1",
@@ -6436,7 +6469,7 @@
         "Movement": "Walking",
         "Speed": "100",
         "Speed %": "100",
-        "Sight Range": "23",
+        "Sight Range": "24",
         "Energy Generation": "68",
         "Heat Dissipation": "116",
         "Core Integrity": "140",
@@ -6473,7 +6506,7 @@
                     "number": 3
                 },
                 {
-                    "name": "Hdn. Centrium Leg",
+                    "name": "Hds. Centrium Leg",
                     "number": 3
                 },
                 {
@@ -6514,14 +6547,14 @@
             "Thermal": "30"
         },
         "Armament String": "3x Com. Linear Accelerator OR 3x Com. Mass Driver",
-        "Components String": "2x Com. Particle Reactor OR 2x Imp. Quantum Reactor, 3x Enh. Biometal Leg OR 3x Hdn. Centrium Leg OR 3x Exp. Biometal Leg, 2x Exp. Cooling System, Exp. Optical Array OR Spectral Analyzer, Exp. Thermal Shield OR Exp. Utility Shielding, Exp. Matter Compressor OR Prc. Matter Filter, Exp. Transmission Jammer, Exp. Targeting Computer"
+        "Components String": "2x Com. Particle Reactor OR 2x Imp. Quantum Reactor, 3x Enh. Biometal Leg OR 3x Hds. Centrium Leg OR 3x Exp. Biometal Leg, 2x Exp. Cooling System, Exp. Optical Array OR Spectral Analyzer, Exp. Thermal Shield OR Exp. Utility Shielding, Exp. Matter Compressor OR Prc. Matter Filter, Exp. Transmission Jammer, Exp. Targeting Computer"
     },
     {
         "Name": "Protovariant H",
         "Class": "Hunter (Prototype)",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "147",
+        "Rating": "150",
         "Value": "200",
         "Size Class": "Medium",
         "Size": "1",
@@ -6533,9 +6566,9 @@
         "Speed %": "100",
         "Sight Range": "16",
         "Energy Generation": "76",
-        "Heat Dissipation": "102",
+        "Heat Dissipation": "126",
         "Core Integrity": "150",
-        "Core Exposure": "170",
+        "Core Exposure": "172",
         "Core Exposure %": "16",
         "Salvage Potential": "70~100",
         "Inventory Capacity": "1",
@@ -6571,7 +6604,7 @@
                     "number": 3
                 },
                 {
-                    "name": "Hdn. Centrium Leg",
+                    "name": "Hds. Centrium Leg",
                     "number": 3
                 },
                 {
@@ -6613,14 +6646,14 @@
             "Electromagnetic": "-25"
         },
         "Armament String": "3x Helical Railgun OR 3x Adv. KE Penetrator",
-        "Components String": "2x Zero-point Reactor OR 2x Graviton Reactor, 3x Enh. Biometal Leg OR 3x Hdn. Centrium Leg OR 3x Exp. Biometal Leg, 2x Exp. Heat Sink OR 2x Exp. Cooling System, Exp. ECM Suite OR Exp. Reaction Control System, Adv. Recoil Stabilizer OR Exp. Weapon Cycler, Exp. Targeting Computer, Exp. Phase Shifter"
+        "Components String": "2x Zero-point Reactor OR 2x Graviton Reactor, 3x Enh. Biometal Leg OR 3x Hds. Centrium Leg OR 3x Exp. Biometal Leg, 2x Exp. Heat Sink OR 2x Exp. Cooling System, Exp. ECM Suite OR Exp. Reaction Control System, Adv. Recoil Stabilizer OR Exp. Weapon Cycler, Exp. Targeting Computer, Exp. Phase Shifter"
     },
     {
         "Name": "Protovariant P",
         "Class": "Programmer (Prototype)",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "210",
+        "Rating": "206",
         "Value": "200",
         "Size Class": "Medium",
         "Size": "1",
@@ -6628,13 +6661,13 @@
         "Memory": "160",
         "Spot %": "50",
         "Movement": "Hovering",
-        "Speed": "38",
-        "Speed %": "263",
+        "Speed": "88",
+        "Speed %": "113",
         "Sight Range": "16",
-        "Energy Generation": "113",
+        "Energy Generation": "102",
         "Heat Dissipation": "174",
         "Core Integrity": "150",
-        "Core Exposure": "145",
+        "Core Exposure": "170",
         "Core Exposure %": "14",
         "Salvage Potential": "60~70",
         "Inventory Capacity": "1",
@@ -6789,7 +6822,7 @@
         "Energy Generation": "20",
         "Heat Dissipation": "10",
         "Core Integrity": "25",
-        "Core Exposure": "409",
+        "Core Exposure": "400",
         "Core Exposure %": "29",
         "Salvage Potential": "30~60",
         "Inventory Capacity": "2",
@@ -6921,7 +6954,7 @@
         "Energy Generation": "15",
         "Heat Dissipation": "20",
         "Core Integrity": "25",
-        "Core Exposure": "95",
+        "Core Exposure": "99",
         "Core Exposure %": "34",
         "Salvage Potential": "40~65",
         "Inventory Capacity": "1",
@@ -7012,7 +7045,7 @@
         "Class": "DRS Ranger (Derelict)",
         "Tier": "6",
         "Threat": "3",
-        "Rating": "62",
+        "Rating": "64",
         "Value": "70",
         "Size Class": "Medium",
         "Size": "1",
@@ -7026,7 +7059,7 @@
         "Energy Generation": "30",
         "Heat Dissipation": "44",
         "Core Integrity": "55",
-        "Core Exposure": "263",
+        "Core Exposure": "241",
         "Core Exposure %": "34",
         "Salvage Potential": "60~80",
         "Inventory Capacity": "1",
@@ -7241,7 +7274,7 @@
         "Class": "Elite (Derelict)",
         "Tier": "4",
         "Threat": "2",
-        "Rating": "43",
+        "Rating": "42",
         "Value": "56",
         "Size Class": "Large",
         "Size": "1",
@@ -7719,7 +7752,7 @@
         "Class": "Zionite (Derelict)",
         "Tier": "1",
         "Threat": "1",
-        "Rating": "11",
+        "Rating": "19",
         "Value": "10",
         "Size Class": "Medium",
         "Size": "1",
@@ -8336,7 +8369,7 @@
         "Class": "Assembled (Derelict)",
         "Tier": "7",
         "Threat": "2",
-        "Rating": "14",
+        "Rating": "15",
         "Size Class": "Small",
         "Size": "1",
         "Profile": "SQ3X3",
@@ -14005,8 +14038,8 @@
         ],
         "Components": [
             "Singularity Reactor",
-            "Hdn. Centrium Heavy Treads",
-            "Hdn. Centrium Heavy Treads",
+            "Hds. Centrium Heavy Treads",
+            "Hds. Centrium Heavy Treads",
             "Centrium Heavy Armor Plating",
             "Centrium Heavy Armor Plating",
             "Coolant Network",
@@ -14019,7 +14052,7 @@
             "Electromagnetic": "100"
         },
         "Armament String": "2x Hvy. Quantum Rifle, 2x Hpw. Disruptor Cannon",
-        "Components String": "Singularity Reactor, 2x Hdn. Centrium Heavy Treads, 2x Centrium Heavy Armor Plating, 2x Coolant Network, 2x Exp. Energy Well, Enh. Optical Array"
+        "Components String": "Singularity Reactor, 2x Hds. Centrium Heavy Treads, 2x Centrium Heavy Armor Plating, 2x Coolant Network, 2x Exp. Energy Well, Enh. Optical Array"
     },
     {
         "Name": "MAIN.C",

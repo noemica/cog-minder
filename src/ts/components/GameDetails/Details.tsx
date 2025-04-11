@@ -84,6 +84,7 @@ const TooltipTexts = {
         "Immune to the part-severing effects of Blade Traps, Segregators, Tearclaws, Core Strippers, and Blast/Sever/Sunder critical effects.",
     "Disruption Immunity": "Immune to core disruption from electromagnetic sources.",
     Hacking: "Immune to remote hacking by Programmers. Cannot be rewired while core disrupted.",
+    "Hacking/RIF": "Immune to remote hacking by Programmers, and not accessible via RIF. Cannot be rewired while core disrupted.",
     Jamming: "Immune to transmission jamming",
     "Meltdown Immunity":
         "Immune to meltdown destruction and other side effects of overheating, as well as the Meltdown critical effect.",

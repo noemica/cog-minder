@@ -108,7 +108,7 @@ Biometal Heavy Treads
 Exp. Biometal Heavy Treads
 Enh. Armored Heavy Treads
 Adv. Heavy Siege Treads
-Hdn. Centrium Heavy Treads
+Hds. Centrium Heavy Treads
 Exp. Biometal Medium Treads
 Exp. Heavy Siege Treads
 Aluminum Leg
@@ -150,7 +150,7 @@ Tripod Weapons Platform
 Asb. Alloy Leg
 Centrium Leg
 Hvy. Shield Leg
-Hdn. Centrium Leg
+Hds. Centrium Leg
 Exp. Biometal Leg
 Exp. VSS Leg
 Zio. Supercomposite Leg
@@ -168,7 +168,7 @@ Arm. Huge Wheel
 Ballwheel
 Ovr. Huge Scrapsphere
 Centrium Wheel
-Hdn. Centrium Wheel
+Hds. Centrium Wheel
 Hover Unit
 Backup Propulsion I
 Imp. Hover Unit
@@ -271,12 +271,14 @@ Mak. Coolant Network
 Coolant Network
 Asb. Nanovents
 2N-1CE's Frost Array
+Cep. Turbovents
 Disposable Heat Sink
 Coolant Injector
 Imp. Coolant Injector
 Adv. Coolant Injector
 Exp. Coolant Injector
 Mak. Microdissipator Network
+Cep. Thermoelectric Network
 Sml. Storage Unit
 Med. Storage Unit
 Lrg. Storage Unit
@@ -411,6 +413,7 @@ Adv. Target Analyzer
 Exp. Target Analyzer
 Core Analyzer
 Exp. Core Analyzer
+Cep. Core Analysis Suite
 Armor Integrity Analyzer
 Imp. Armor Integrity Analyzer
 Exp. Armor Integrity Analyzer
@@ -593,6 +596,7 @@ Hardlight Generator
 Imp. Hardlight Generator
 Adv. Hardlight Generator
 Exp. Hardlight Generator
+Cep. Hardlight Director
 Shield Generator
 Imp. Shield Generator
 Adv. Shield Generator
@@ -627,6 +631,7 @@ Adv. Hacking Suite
 Exp. Hacking Suite
 System Mapper
 Deep Network Scanner
+Cep. Network Penetrator
 Architect God Chip A
 EX Chip 2
 System Shield
@@ -760,6 +765,8 @@ Terrabomb
 Core Physics Calibrator
 Personal Teleporter v0.10
 Telecube
+Cep. Navigation Harness
+Supercharged Navigation Harness
 Spacefold Activator
 Microwarp Drive
 LC Capacitor
@@ -769,6 +776,9 @@ LRC Energy Well
 LRC Matter Compressor
 LRC Inertial Stabilizer
 LRC Insulator
+Cep. Nanofilaments [Conductive]
+Cep. Nanofilaments [Tensile]
+Cep. Nanofilaments [Polyglass]
 EM Pulse Gun
 Hvy. EM Pulse Gun
 EM Shotgun
@@ -863,6 +873,7 @@ Hvy. Quantum Rifle
 Zio. Phaser-H
 Gatling Beam
 Cep. Variable Chargecaster
+Cep. Disintegration Ray
 Sigix Sheargun
 Modified Sigix Sheargun
 Lgt. EM Pulse Cannon
@@ -924,6 +935,7 @@ Cep. Plasma Driver
 Hyp. Alpha Cannon
 Zio. Alpha Cannon Mk. II
 Imp. Potential Cannon
+Cep. Directed Potential Cannon
 Multinova Projection Cannon
 Disintegrator
 Core Cannon

@@ -287,7 +287,7 @@
         "Locations": [
             {
                 "Location": "Protoforge",
-                "Description": "Hostile: Guard the entrance to the Forge Plexus"
+                "Description": "Hostile: Guard the entrance to the Forge Plexus and the top right guarded vault"
             }
         ]
     },
@@ -749,7 +749,7 @@
         "Locations": [
             {
                 "Location": "Protoforge",
-                "Description": "Hostile: Appear as Overlord reinforcements and as dormant bots in the top side of the map"
+                "Description": "Hostile: Appear as Overlord reinforcements and as dormant bots in the top side of the map and as random patrols"
             }
         ]
     },
@@ -1217,7 +1217,7 @@
         "Locations": [
             {
                 "Location": "Protoforge",
-                "Description": "Hostile: appear in groups of 3 in patrol squads"
+                "Description": "Hostile: Patrol the map in groups of 3-4"
             }
         ]
     },
@@ -2493,6 +2493,19 @@
             {
                 "Location": "0b10 maps",
                 "Description": "Neutral: Roam the map looking for walls to repair"
+            }
+        ]
+    },
+    "V-Series": {
+        "Categories": ["0b10", "Prototype", "Redacted"],
+        "Locations": [
+            {
+                "Location": "Protoforge",
+                "Description": "Dormant Hostile: Guard some of the vault items"
+            },
+            {
+                "Location": "Protoforge",
+                "Description": "Hostile: Patrols the top part of the map with a Researcher in tow"
             }
         ]
     },
