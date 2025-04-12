@@ -5775,12 +5775,12 @@ There is always 1, and possibly 2 exits in Testing:
 [[Heading:2]]Behavior[[/Heading]]
 Thieves dash towards the closest visible enemy robot and try to steal one of that robot's parts using their [[Tearclaws]]. If successful, the Thief will flee, carrying the stolen part in their inventory. If a Thief in the process of fleeing is or goes outside Cogmind's field of view, they will exit the map.
 
-When trying to steal parts, Thieves will prioritize attacking robots that they can see over those they track but can't currently see, and will always attack enemy robots that are within range.
+When trying to steal parts, Thieves might ignore unarmed robots and instead target Cogmind or combat robots.
 
 [[Heading:2]]Strategies[[/Heading]]
 Thieves are incapable of taking parts on the ground, so dropping important parts you don't want to lose keeps them safe from them. However, this strategy can backfire if there are [[Dirty Bomb Trap|Dirty Bomb Traps]] or [[Decomposer|Decomposer]] nearby, or if Cogmind or other robots carry  [[Launchers]] or [[Electromagnetic Weapons]] capable of triggering chain reactions in power sources.
 
-Because of how Thieves prioritize targets, moving out of sight can make them attack other robots if you know there are other within the Thieves' sight. Moving behind allies or swapping with them to place them closer to the Thieves can also prevent your own parts getting stolen.
+Moving behind combat allies or swapping with them to place them closer to the Thieves can prevent your own parts getting stolen, at the cost of your allies'.
 
 In order to actually destroy Thieves, Launchers can work well when aimed at walls next to the Thieves, though at close range the collateral damage might not be worth it. Targeting utilities can help actually hit them while they are approaching, and a Stasis Beam/Projector can prevent a single Thief from attacking or escaping while also making them easier to hit, at the cost of making them take 50% less damage.
 
