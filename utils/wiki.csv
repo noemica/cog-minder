@@ -957,7 +957,7 @@ There are no standard [[Extermination Squad|Exterminations]] or [[Assault Squad|
 The [[Cetus Guard|Cetus Guards]] are not too tough of foes and have some very nice loot, especially the [[Adv. KE Penetrator]], [[Centrium Heavy Treads]], [[Centrium Medium Armor Plating]]. They have an above average amount of core integrity but no critical destroy immunity or EM resistance, so destroy crit and EM weapons tend to be the most effective. EM Launchers are particularly effective at taking out each chunk of 4 in a short amount of time. There will be some [[Corrupted Parts|corrupted]] parts, but this loot is definitely worth the corruption. 
 Cogmind will often have a big group of allies from Extension. These can be helpful and harmful at the same time. Too many allies will just get in the way of each other and you, so telling some controllable allies to stay back is often a good idea. While the [[Guerrilla (5)|Guerillas]] have -Salvage from their [[Bore Cannon]], they tend to perform very well against the Cetus Guards due to their very high critical destroy chance.
 To best preserve the Cetus Manufacturing Module for the A7 code or Revision 17 events, tell all controllable allies to stay at the first intersection after killing the first set of Cetus Guards. This will cause any ARCs that spawn from the top-left exit to fight those allies out of the way. Otherwise|being created via the A7 code will often fight right in front of the module and cause the machine to get destroyed by wandering patrols trying to fight.
-The Cetus Mainframe door has a very low base success rate of 10%. While [[Hackware]] can help out here, the Cetus Guards can conveniently drop a [[Adv. Variable Charge Gun]] which can be overloaded to destroy the Sealed Heavy Doors. Otherwise, any rating 3 or higher [[Impact Weapons|Impact Weapon]] can destroy the Reinforced Barrier around it.
+The Cetus Mainframe door has a very low base success rate of 10%. While [[Hackware]] can help out here, the Cetus Guards can conveniently drop a [[Adv. Variable Charge Gun]] which can be overloaded to destroy the Sealed Heavy Doors. Otherwise, a [[Plasma Cutters|Plasma Cutter]] will eventually cut through as well.
 [[Heading]]Exits[[/Heading]]
 There are 3 exits on this map but only 2 kinds of exits:
 [[List]]Main access exits: The exits on the top left/right corners of the map will lead to the next main Factory or Research floor.|[[Archives]]: The exit on the bottom right corner leads to Archives.[[/List]]","Spoiler","","","","","",""
@@ -6131,6 +6131,41 @@ See the following video: [[https://www.youtube.com/watch?v=XR2RoB6gKWA]]","","",
 "YI-UF0","Bot","","","","","","","",""
 "YI-UF0's Bottomless Matter Pit","Part","","","","","","","",""
 "YI-UF0's Doublenader","Part","","","","","","","",""
+"YASD","Other","""Yet Another Stupid Death (commonly abbreviated to YASD) is used when a player has done something, usually avoidable, that leads to their hero's demise."" — [[https://nethackwiki.com/wiki/Yet_Another_Stupid_Death|NetHack Wiki]]
+
+Cogmind is full of silly ways to die. Here are just a few. A lot of them are harsh teachers of lessons best learned the hard way.
+
+Note: this page is heavily opinion-based; your mileage may vary.
+
+[[Heading]]General[[/Heading]]
+[[List]]
+Trying to run away or reposition with slow movement speed, either because you missed the warning or because you think you know better. When the game says [[GameText]]MOVEMENT SPEED EXTREMELY SLOW![[/GameText]] in all caps, take heed.
+|Fighting next to a bunch of explosive machines. Or in the middle of a bunch of explosive machines. They seem to always explode when you're within range.
+|Fighting next to a bunch of explosive machines, but with a melee weapon! Too bad it does knockback... BOOM
+|Actually fighting a bunch of explosive machines, for example, because you forgot to turn off Force Melee before moving in one's direction.
+|Digging too far and getting crushed by a cave-in. Sometimes it's worth rolling the dice.
+|Attaching a risky prototype that fries a vital part.
+|Forgetting to watch your heat. It does core damage if it gets too high...
+|Forgetting to watch your corruption.
+|Getting your squishy [[Infowar]] destroyed because you forget to swap it out in combat.
+|Spending too much time around a [[Heavy]], especially as a frail flight build.
+|In general, getting spotted on a fragile build by bots you can't outrun (think [[Swarmer|Swarmers]], [[Programmer|Programmers]], and especially [[Cutter|Cutters]]).
+[[/List]]
+
+[[Heading]]Location-Specific[[/Heading]]
+[[List]]
+Going to the [[Mines]] without a launcher. [[GameText]]Infestation in the Mines, dispatching Demolisher squad.[[/GameText]]
+|Going to the [[Subcaves]] unprepared.
+|Going to the Subcaves unprepared, ""but I got swarmed last time, so this time I'll bring a launcher!""
+|Forgetting that parts self-destruct in the [[Caves]]. Hope you brought spares.
+|Misfiring in a Caves branch, aggroing the inhabitants. Bonus points if it's [[Zion]] or [[Warlord (Location)]] and you [[I]]almost[[/I]] made it to the [[Spoiler]]Quarantine Array[[/Spoiler]].
+|Visiting [[Zion]] or [[Warlord (Location)]] when you have [[RIF]].
+|Aggroing the friends of [[Warlord]] while you fight off the [[Spoiler]]0b10 invasion[[/Spoiler]].
+|Killing or trying to kill [[Data Miner]] and accidentally sitting in the [[Spoiler]]gamer chair, i.e., Data Conduit[[/Spoiler]]. [[Spoiler]][[Tracker|Trackers]] can be dealt with, if you're prepared.[[/Spoiler]]
+|Going too far in the [[Zion Deep Caves]] without a plan to deal with [[Golem|what's inside]].
+|The many ways of going into [[Testing]] or [[Quarantine]] on [[FarCom]] (unless you're prepared, of course). Perhaps you needed to desperately dive for an exit. Perhaps you forgot the [[Exiles|Exiles']] warning. Or perhaps you chose to roll the dice.
+|Having a bot destroy the terminal at the [[Surface]] exit in [[Access]]. The closer you were to the terminal, the sillier it is.
+[[/List]]","","","","","","",""
 "YOLO Cannon","Part","Rarely on firing, the YOLO Cannon will explode with the log message [[GameText]]YOLO Cannon suddenly explodes.[[/GameText]] When this occurs, the YOLO cannon and up to 3 other random parts will instantly be destroyed. Cogmind will also lose half of the current core integrity when this effect happens.","","","","","","",""
 "Z-Courier","Bot","[[Imprint]]-aligned derelict [[Hauler]] variant. Delivers resupplies via the [[Imprint]] roster.","","","","","","",""
 "Z-Drone","Bot","Created by a [[Z-Drone Bay]]. Slightly better than a [[Mini Drone]], with a makeshift cloaking device.","","","","","","",""
