@@ -74,7 +74,7 @@ const TooltipTexts = {
     "Min Terminal/Depth":
         "The minimum terminal level required in order to hack for this schematic. Higher level terminals can hack for higher rating schematics, but the hacks will be more difficult to perform.",
     Time: "The amount of time it takes to fabricate at a Fabricator of level 1/2/3.",
-    Components: "Currently unused, no parts take components yet",
+    Components: "The listed part is required and is consumed as part of the fabrication process.",
 
     // Resistances/immunities
     Resistance:
