@@ -4056,7 +4056,7 @@ Latent energy will gradually return to an area after being used to power the Str
 "Lgt. Treads","Part","","","","","","","",""
 "Lightning","Bot","","","","","","","",""
 "Lightning Gun","Part","","","","","","","",""
-"Lightpack 2.0","Part","Each time a part is added to inventory, there is a chance that the Lightpack will lose a random part. When this happens, the log will display a message [[GameText]][Item] swallowed by quantum anomaly within Lightpack 2.0.[[/GameText]] Occasionally, the same part may be spit out later with another message [[GameText]]Quantum anomaly discharges [Item].[[/GameText]]. These effects occur more frequently when the inventory is more full.","","","","","","",""
+"Lightpack 2.0","Part","Each time a part is added to inventory, there is a chance that the Lightpack will lose a random part. When this happens, the log will display a message [[GameText]][Item] swallowed by quantum anomaly within Lightpack 2.0.[[/GameText]] Occasionally, the same part may be spit out later with another message [[GameText]]Quantum anomaly discharges [Item].[[/GameText]]. These effects occur more frequently when the inventory is more full. Roughly, one item is discharged for every 4 items eaten. The discharge effect can occur for any part that has been eaten.","","","","","","",""
 "Line of Sight","Other","","","","","","","",""
 "Linear Accelerator","Part","","","","","","","",""
 "Linear Gravjet","Part","","","","","","","",""

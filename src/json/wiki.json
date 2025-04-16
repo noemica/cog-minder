@@ -4644,7 +4644,7 @@
   },
   {
    "Name": "Lightpack 2.0",
-   "Content": "Each time a part is added to inventory, there is a chance that the Lightpack will lose a random part. When this happens, the log will display a message [[GameText]][Item] swallowed by quantum anomaly within Lightpack 2.0.[[/GameText]] Occasionally, the same part may be spit out later with another message [[GameText]]Quantum anomaly discharges [Item].[[/GameText]]. These effects occur more frequently when the inventory is more full."
+   "Content": "Each time a part is added to inventory, there is a chance that the Lightpack will lose a random part. When this happens, the log will display a message [[GameText]][Item] swallowed by quantum anomaly within Lightpack 2.0.[[/GameText]] Occasionally, the same part may be spit out later with another message [[GameText]]Quantum anomaly discharges [Item].[[/GameText]]. These effects occur more frequently when the inventory is more full. Roughly, one item is discharged for every 4 items eaten. The discharge effect can occur for any part that has been eaten."
   },
   {
    "Name": "Linear Accelerator",
