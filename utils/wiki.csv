@@ -2295,7 +2295,7 @@ After that, clear the top right section of the map to collect as many allies as 
 [[Heading]]Notable Locations[[/Heading]]
 [[Gallery]]Extension Energy Cycler.png|Energy Cycler machines|Extension Central Area.png|Central area with guards and locked exit|Extension Secret Cache.png|Cache of parts hidden behind Emergency Access|Extension Secret Guards.png|Group of guards hidden behind Emergency Access|Extension Rewirable Bots1.png|Rewirable bots with dormant guards|Extension Rewirable Bots2.png|Rewirable bots with awake guards|Extension Single Derelict Cell.png|Single Derelict prison cell|Extension Double Derelict Cell.png|Double Derelict prison cell with guard|Extension A7 Terminal.png|[[A7]] prison cell|Extension Broken Bots.png|Broken bots with damaged parts|Extension Exits.png|Exits with scattered parts[[/Gallery]]
 [[Heading:2]]Exits[[/Heading]]
-There are 2 exits right next to each other. The layout is always the same: The top path leads to Cetus and the lower path leads back to the next main floor, either Factory or Research.
+There are 3 exits, 2 of which right next to each other. The exit in the center of the map leads to the next main floor, either Factory or Research. The other two are on the right side of the map, and their layout is always the same: The top path leads to Cetus and the lower path leads to the next main floor.
 [[Heading]]Events[[/Heading]]
 [[List]](++) Derelict attack: There is an extremely rare event in which a large group of Derelicts attack Extension. The trigger conditions for this event are unknown.[[/List]]","Spoiler","","","","","",""
 "Extermination Squad","Other","[[Image]]Extermination Squad.png|An Extermination Squad hunting down Cogmind[[/Image]]
@@ -4205,9 +4205,26 @@ The other important cache is the out-of-depth parts cache. These caches contain 
 "Maul","Part","","","","","","","",""
 "Maximum Security","Other","[[Image]]Maximum Security Assaults.png|A wave of Assaults and Sentries dispatched during Maximum Security[[/Image]]
 Maximum Security is a special [[0b10]] response to a few specific threats that results in immediate shutdown of machines and increasingly large waves of [[Assault Squad|Assaults]] dispatched to Cogmind's position. Unlike the similar-behaving [[High Security]], Maximum Security is unrelated to [[Alert]] mechanics. Maximum Security can be triggered on most main and branch 0b10-controlled floors, excluding [[Command]], [[DSF|DSFs]], and [[Garrison|Garrisons]]. It can be triggered only by the following scenarios:
-[[List]]Cogmind has taken [[FarCom]] and enters [[Quarantine]], [[Testing]], or [[Section 7]]|The [[Sigix Containment Pod]] is inserted into the [[Sigix Exoskeleton]] (instant)|Cogmind attaches the [[Sigix Exoskeleton]] and is spotted by an 0b10 combat bot[[/List]]
+[[List]]
+Cogmind has taken [[FarCom]] and enters [[Quarantine]], [[Testing]], or [[Section 7]]|
+The [[Sigix Containment Pod]] is inserted into the [[Sigix Exoskeleton]] (instant)|
+Cogmind attaches the [[Sigix Exoskeleton]] and is spotted by an 0b10 combat bot|
+All the [[Garrison Access|Garrisons]] in [[Access]] have either been shut down or destroyed
+[[/List]]
+
 [[Heading]]Timeline of Events[[/Heading]]
-[[List]]0: Log message [[GameText]]ALERT: [reason for Max Security]. Maximum security lockdown in progress.[[/GameText]]|1: Machines shut down, log message [[GameText]]ALERT: Machine network offline[[/GameText]]|2: Log message [[GameText]]ALERT: Performing unscheduled system reset.[[/GameText]]|3: 4 [[Sentry|Sentries]] dispatched at each 0b10-controlled exit and Garrison, log message [[GameText]]ALERT: Lockdown in effect, collecting threat data.[[/GameText]]|5/100: First assault wave dispatched, 6 assaults dispatched from nearby 0b10-controlled exits and [[Garrison Access|Garrisons]]. The first wave will be dispatched after 100 turns for FarCom-triggered Maximum Security and 5 turns for other reasons.|105/200: Second wave, 6 assaults dispatched|255/350: Third wave, 8 assaults dispatched including heavy assaults with stronger bots|455/550: Fourth wave, 10 assaults dispatched including heavy assaults|705/800: Fifth wave, 12 assaults dispatched including heavy assaults|Etc. - Delay between assaults continues to increase by 50 and number of assaults per wave continues to increase by 2[[/List]]
+[[List]]
+0: Log message [[GameText]]ALERT: [reason for Max Security]. Maximum security lockdown in progress.[[/GameText]]|
+1: Machines shut down, log message [[GameText]]ALERT: Machine network offline[[/GameText]]|
+2: Log message [[GameText]]ALERT: Performing unscheduled system reset.[[/GameText]]|
+3: 4 [[Sentry|Sentries]] dispatched at each 0b10-controlled exit and Garrison, log message [[GameText]]ALERT: Lockdown in effect, collecting threat data.[[/GameText]]|
+5/100: First assault wave dispatched, 6 assaults dispatched from nearby 0b10-controlled exits and [[Garrison Access|Garrisons]]. The first wave will be dispatched after 100 turns for FarCom-triggered Maximum Security and 5 turns for other reasons.|
+105/200: Second wave, 6 assaults dispatched|
+255/350: Third wave, 8 assaults dispatched including heavy assaults with stronger bots|455/550: Fourth wave, 10 assaults dispatched including heavy assaults|
+705/800: Fifth wave, 12 assaults dispatched including heavy assaults|
+Etc. - Delay between assaults continues to increase by 50 and number of assaults per wave continues to increase by 2
+[[/List]]
+
 [[Heading]]Exiting Maximum Security[[/Heading]]
 The only 2 ways to exit Maximum Security are to trigger [[Sterilization]] after killing enough combat hostiles or to exit the map. Otherwise, an infinite number of Assaults will continue to be dispatched.","Spoiler","","","","","",""
 "Mechanic","Bot Group","Mechanics are [[Wheel|wheeling]] [[0b10]] non-combat bots that repair the parts and core of damaged allies. They tend to hang around a home [[Repair Station]]. Mechanics will head toward damaged allies as soon as they are hurt but will not repair them while in combat. Mechanics carry [[Recalibrators]] and [[Machine Analyzer|Machine Analyzers]] that can be good to salvage. They also carry a set of backup parts in their inventory based on the bot tier. These backup parts will be refitted on bots if they have empty slots.
