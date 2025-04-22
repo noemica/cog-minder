@@ -5898,7 +5898,7 @@ An enterprising Cogmind can, with the use of a [[Trap Extractor]] or similar var
 [[Heading]]Reprogramming[[/Heading]]
 By default traps are programmed to trigger on detection of any foreign robot, a setting that can be modified via hacking. Known traps may be reprogrammed with an active melee datajack by bumping them, and entire arrays of traps can be reprogrammed at once from nearby terminals. Reprogrammed traps will no longer recognize Cogmind or allies as a threat, instead reacting to local combat robots. As part of the new programming, each trap's sensitivity will also be set dangerously high, ensuring it will trigger whenever a hostile moves over it, regardless of propulsion.
 [[Heading]]Lore[[/Heading]]
-[[Lore]]0b10 Records|Traps[[/Lore]]","","","","Blade Trap,EMP Trap,Shock Trap,Explosive Trap,Piercing Trap,Stasis Trap,Proton Bomb Trap,Shrapnel Trap,Heavy Explosive Trap,Dirty Bomb Trap,EM Surge Trap,Fire Trap,Tesla Bomb Trap,Tiamat Bomb Trap,Fusion Bomb Trap,Segregator Trap,Gamma Bomb Trap,Hellfire Trap,Heat Bomb Trap,Armageddon Trap,Vortex Trap","","",""
+[[Lore]]0b10 Records|Traps[[/Lore]]","","","","Blade Trap,EMP Trap,Shock Trap,Explosive Trap,Piercing Trap,Stasis Trap,Proton Bomb Trap,Shrapnel Trap,Heavy Explosive Trap,Dirty Bomb Trap,EM Surge Trap,Fire Trap,Tesla Bomb Trap,Tiamat Bomb Trap,Fusion Bomb Trap,Segregator Trap,Gamma Bomb Trap,Hellfire Trap,Heat Bomb Trap,Armageddon Trap,Vortex Trap,Chute Trap,Ambush Trap","","",""
 "Treads","Part Group","","","","Treads","","","",""
 "Tri-rail Accelerator","Part","","","","","","","",""
 "Tri-treads","Part","","","","","","","",""
