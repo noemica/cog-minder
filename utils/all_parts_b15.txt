@@ -355,6 +355,8 @@ Adv. Signal Interpreter
 Exp. Signal Interpreter
 Active Sensor Suite
 Exp. Active Sensor Suite
+IFF Parser
+Lrn. IFF Parser
 Terrain Scanner
 Imp. Terrain Scanner
 Adv. Terrain Scanner
@@ -461,6 +463,7 @@ Mak. Transmission Jammer
 Imp. Transmission Jammer
 Adv. Transmission Jammer
 Exp. Transmission Jammer
+Jamming Amplifier
 ECM Suite
 Mak. ECM Suite
 Adv. ECM Suite
@@ -935,6 +938,7 @@ Cep. Plasma Driver
 Hyp. Alpha Cannon
 Zio. Alpha Cannon Mk. II
 Imp. Potential Cannon
+Cld. Directed Potential Cannon
 Multinova Projection Cannon
 Disintegrator
 Core Cannon

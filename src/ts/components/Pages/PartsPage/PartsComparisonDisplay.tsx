@@ -745,6 +745,7 @@ function ComparisonContent({ leftItem, rightItem }: { leftItem: Item; rightItem:
             <EmptyComparisonLine />
             <EmptyComparisonLine />
             <EmptyComparisonLine />
+            <EmptyComparisonLine />
             <UpkeepComparison leftItem={leftItem} rightItem={rightItem} />
             <PowerGenerationComparison leftItem={leftItem} rightItem={rightItem} />
             <PropulsionComparison leftItem={leftItem} rightItem={rightItem} />

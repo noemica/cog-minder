@@ -34,6 +34,9 @@ const TooltipTexts = {
         "Integrity reflects the amount of damage a part can sustain before it is destroyed or rendered useless. Maximum integrity for a part type that cannot be repaired is preceded by a *.",
     Coverage:
         "Coverage is a relative indicator of how likely this part is to be hit by a successful incoming attack compared to other attached parts. For example, a part with 100 coverage is twice as likely to be hit as another part with a value of 50. Armor, protective and large parts tend to have higher coverage values while small subsystems provide less coverage but are therefore less likely to be damaged.",
+    Fragile:
+        "Fragile parts are destroyed if removed after attaching them for use. While attached, these are also marked with a colon next ot their letter in the parts list, as a reminder.",
+    State: "Current state of this item.",
     Heat: "Heat produced each turn while this part is active.",
     Rating: "Rating is a relative indicator of the item's usefulness and/or value. When comparing items, the quickest and easiest method is to go with whatever has the highest rating. However, prototypes are almost always better than common parts with a similar rating (generally implying a +1 to their listed rating).",
     "Stability (Engine)":
@@ -84,7 +87,8 @@ const TooltipTexts = {
         "Immune to the part-severing effects of Blade Traps, Segregators, Tearclaws, Core Strippers, and Blast/Sever/Sunder critical effects.",
     "Disruption Immunity": "Immune to core disruption from electromagnetic sources.",
     Hacking: "Immune to remote hacking by Programmers. Cannot be rewired while core disrupted.",
-    "Hacking/RIF": "Immune to remote hacking by Programmers, and not accessible via RIF. Cannot be rewired while core disrupted.",
+    "Hacking/RIF":
+        "Immune to remote hacking by Programmers, and not accessible via RIF. Cannot be rewired while core disrupted.",
     Jamming: "Immune to transmission jamming",
     "Meltdown Immunity":
         "Immune to meltdown destruction and other side effects of overheating, as well as the Meltdown critical effect.",
@@ -162,10 +166,13 @@ const TooltipTexts = {
     Burnout:
         "Burnout represents the rate at which this propulsion's integrity will deteriorate while overloaded, indicated as a percent chance per move to lose one point of integrity. Overloading boosts performance: speed is calculated as if there is two of this part active at once, support is increased 50%, energy costs doubled, and heat generation tripled. If N/A, this propulsion cannot be overloaded; in general only cooled hover and flight units support overloading. If moving at the normal maximum speed for the current propulsion type, each overloaded hover/flight unit further reduces final movement time by 1, to a value no better than 5.",
     // TODO b15 7 turns
-    "High Siege": "Entering or exiting siege mode requires 5 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and tht treads cannot be disabled or removed. While in siege mode, non-melee attacks have +20% accuracy, coverage for all armor and heavy treads is doubled, any treads in siege mode get a free 25% damage reduction, no weapons suffer from recoil effects, and Cogmind is immune to instant part destruction from critical hits. Treads capable of High siege mode instead give +30% accuracy and have 50% damage resist.",
+    "High Siege":
+        "Entering or exiting siege mode requires 5 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and tht treads cannot be disabled or removed. While in siege mode, non-melee attacks have +20% accuracy, coverage for all armor and heavy treads is doubled, any treads in siege mode get a free 25% damage reduction, no weapons suffer from recoil effects, and Cogmind is immune to instant part destruction from critical hits. Treads capable of High siege mode instead give +30% accuracy and have 50% damage resist.",
     Siege: "Entering or exiting siege mode requires 5 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and tht treads cannot be disabled or removed. While in siege mode, non-melee attacks have +20% accuracy, coverage for all armor and heavy treads is doubled, any treads in siege mode get a free 25% damage reduction, no weapons suffer from recoil effects, and Cogmind is immune to instant part destruction from critical hits. Treads capable of High siege mode instead give +30% accuracy and have 50% damage resist.",
-    Martial: "Entering or exiting martial mode requires 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed. While in martial mode, will automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups). Also a 10% chance to use the melee weapon to deflect each incoming projectile, with a second melee weapon adding 5%, and an additional 2% for each after that. For example, three melee weapons have a collective 17% chance to deflect each projectile. Melee weapons successfully deflecting projectiles in this manner have a 50% chance to take 1 damage each time. While in this mode, Cogmind is also immune to knockback and cancels out all recoil from firing ranged weapons. Activate the exoskeleton a second time to begin changing its martial state.",
-    Shielding: "Entering or exiting shielding mode requires 4 turns. During this transition, and for as long as the mode is active, Cogmind is immobile and the leg cannot be disabled or removed. While in shielding mode, coverage for this leg is doubled, and it gains a 50% chance to glance each incoming projectile that would otherwise hit it, instead taking no damage. Activate the leg a second time to begin changing its shielding state.",
+    Martial:
+        "Entering or exiting martial mode requires 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed. While in martial mode, will automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups). Also a 10% chance to use the melee weapon to deflect each incoming projectile, with a second melee weapon adding 5%, and an additional 2% for each after that. For example, three melee weapons have a collective 17% chance to deflect each projectile. Melee weapons successfully deflecting projectiles in this manner have a 50% chance to take 1 damage each time. While in this mode, Cogmind is also immune to knockback and cancels out all recoil from firing ranged weapons. Activate the exoskeleton a second time to begin changing its martial state.",
+    Shielding:
+        "Entering or exiting shielding mode requires 4 turns. During this transition, and for as long as the mode is active, Cogmind is immobile and the leg cannot be disabled or removed. While in shielding mode, coverage for this leg is doubled, and it gains a 50% chance to glance each incoming projectile that would otherwise hit it, instead taking no damage. Activate the leg a second time to begin changing its shielding state.",
 
     // Weapon Criticals
     Blast: "Chance for this weapon to apply the same amount of damage to the core or a second part, ignoring coverage, and if not destroyed then the second part is knocked to the ground.",
@@ -182,6 +189,10 @@ const TooltipTexts = {
     Sever: "Chance for this weapon to sever target part. On a core hit, slightly damages and severs a random part.",
     Smash: "Chance for this weapon to instantly destroy the hit component, or even a robot core. (Cogmind is less susceptible to this effect, which can only destroy those parts which are already below 33% integrity when hit.) Armor is immune to this effect, instead taking an additional 20% damage. On smashing a part, an equal amount of damage is then applied as overflow damage, although unlike regular overflow damage this may be absorbed by any shielding protecting the secondary target.",
     Sunder: "Chance for this weapon to also knock target part to the ground. On a core hit, knocks 1~2 other parts to the ground without causing collateral damage.",
+
+    // Locations
+    "Available depths": "The depth or depths that this map can appear on.",
+    Branch: "Whether this location is a main floor or a branch floor."
 };
 
 // Color schemes
@@ -260,7 +271,12 @@ export function DetailsItemTitleLine({ part }: { part: Item }) {
         }
     }
 
-    return <pre className="details-title details-item-image-title">{part.name}{extraNumText}</pre>;
+    return (
+        <pre className="details-title details-item-image-title">
+            {part.name}
+            {extraNumText}
+        </pre>
+    );
 }
 
 export function DetailsTextLine({

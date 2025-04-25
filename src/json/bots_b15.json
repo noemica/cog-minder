@@ -1829,7 +1829,7 @@
         "Class": "Watcher",
         "Tier": "1",
         "Threat": "1",
-        "Rating": "9",
+        "Rating": "7",
         "Value": "16",
         "Size Class": "Small",
         "Size": "1",
@@ -1843,11 +1843,11 @@
         "Energy Generation": "15",
         "Heat Dissipation": "15",
         "Core Integrity": "12",
-        "Core Exposure": "124",
-        "Core Exposure %": "39",
+        "Core Exposure": "114",
+        "Core Exposure %": "40",
         "Salvage Potential": "10~30",
         "Traits": [
-            "Sensor Jamming: Prevents Sensor Arrays within range from pinpointing signals, but gives away its position in the process."
+            "Sensor Jamming (14): Prevents Sensor Arrays within a range of 14 from pinpointing signals, but gives away its position in the process."
         ],
         "Fabrication Count": "2",
         "Fabrication Time": "81/40/27",
@@ -1855,15 +1855,13 @@
             "Lgt. Ion Engine",
             "Hover Unit",
             "Hover Unit",
-            "Visual Processing Unit",
-            "Sensor Array",
-            "Signal Interpreter"
+            "Visual Processing Unit"
         ],
-        "Analysis": "W-series watchers are equipped with a wide variety of sensors to excel at surveillance. However, their heavy reliance on highly-exposed advanced electronic systems means they are extremely susceptible to electromagnetic attacks. On detecting intruders, a W-16 Scout will alert all nearby combat units and continue to provide position updates as long as the hostile is visible. They are also capable of leveraging their sensor package to jam any other sensor arrays within their range, thereby essentially cloaking other robots within their area of influence from hostile scans.",
+        "Analysis": "W-series watchers are equipped with a wide variety of built-in sensors to excel at surveillance. However, their light frame and reliance on highly-exposed electronic systems means they are extremely susceptible to electromagnetic attacks. On detecting intruders, a W-16 Scout will alert all nearby combat units and continue to provide position updates as long as the hostile is visible. They are also capable of leveraging their embedded sensor interference package to jam any sensor arrays within their operational range, thereby essentially cloaking other robots within their area of influence from hostile scans.",
         "Resistances": {
             "Electromagnetic": "-100"
         },
-        "Components String": "Lgt. Ion Engine, 2x Hover Unit, Visual Processing Unit, Sensor Array, Signal Interpreter",
+        "Components String": "Lgt. Ion Engine, 2x Hover Unit, Visual Processing Unit",
         "Short Name": "W-16",
         "Ally Name": "Scout"
     },
@@ -1872,7 +1870,7 @@
         "Class": "Watcher",
         "Tier": "3",
         "Threat": "2",
-        "Rating": "19",
+        "Rating": "13",
         "Value": "25",
         "Size Class": "Small",
         "Size": "1",
@@ -1886,11 +1884,11 @@
         "Energy Generation": "19",
         "Heat Dissipation": "15",
         "Core Integrity": "23",
-        "Core Exposure": "124",
-        "Core Exposure %": "39",
+        "Core Exposure": "114",
+        "Core Exposure %": "40",
         "Salvage Potential": "20~40",
         "Traits": [
-            "Sensor Jamming: Prevents Sensor Arrays within range from pinpointing signals, but gives away its position in the process."
+            "Sensor Jamming (15): Prevents Sensor Arrays within a range of 15 from pinpointing signals, but gives away its position in the process."
         ],
         "Fabrication Count": "2",
         "Fabrication Time": "116/58/38",
@@ -1898,15 +1896,13 @@
             "Lgt. Deuterium Engine",
             "Imp. Hover Unit",
             "Imp. Hover Unit",
-            "Visual Processing Unit",
-            "Imp. Sensor Array",
-            "Imp. Signal Interpreter"
+            "Visual Processing Unit"
         ],
-        "Analysis": "An upgrade to the W-16 Scout, Informers improve on the Scout's sensor and jamming range, and have access to even more specific signal interpretation data. As unarmed surveillance units rather than frontline combatants, agility is preferred over additional armor to protect their systems from electromagnetic damage.",
+        "Analysis": "An upgrade to the W-16 Scout, Informers improve on the Scout's jamming range. As unarmed surveillance units rather than frontline combatants, agility is preferred over additional armor to protect their systems from electromagnetic damage.",
         "Resistances": {
             "Electromagnetic": "-100"
         },
-        "Components String": "Lgt. Deuterium Engine, 2x Imp. Hover Unit, Visual Processing Unit, Imp. Sensor Array, Imp. Signal Interpreter",
+        "Components String": "Lgt. Deuterium Engine, 2x Imp. Hover Unit, Visual Processing Unit",
         "Short Name": "W-25",
         "Ally Name": "Informer"
     },
@@ -1915,7 +1911,7 @@
         "Class": "Watcher",
         "Tier": "7",
         "Threat": "3",
-        "Rating": "41",
+        "Rating": "31",
         "Value": "44",
         "Size Class": "Small",
         "Size": "1",
@@ -1929,11 +1925,11 @@
         "Energy Generation": "26",
         "Heat Dissipation": "25",
         "Core Integrity": "45",
-        "Core Exposure": "124",
-        "Core Exposure %": "39",
+        "Core Exposure": "114",
+        "Core Exposure %": "40",
         "Salvage Potential": "30~50",
         "Traits": [
-            "Sensor Jamming: Prevents Sensor Arrays within range from pinpointing signals, but gives away its position in the process."
+            "Sensor Jamming (16): Prevents Sensor Arrays within a range of 16 from pinpointing signals, but gives away its position in the process."
         ],
         "Fabrication Count": "2",
         "Fabrication Time": "187/93/62",
@@ -1941,15 +1937,13 @@
             "Lgt. Antimatter Reactor",
             "Antigrav System",
             "Antigrav System",
-            "Adv. Visual Processing Unit",
-            "Adv. Sensor Array",
-            "Adv. Signal Interpreter"
+            "Adv. Visual Processing Unit"
         ],
-        "Analysis": "The W-44 Eye is the ultimate surveillance robot, with among the best visual range of any class and the most powerful non-experimental sensors available.",
+        "Analysis": "The W-44 Eye is the ultimate surveillance robot, with among the best visual range of any class and the most powerful non-experimental jamming capabilities available.",
         "Resistances": {
             "Electromagnetic": "-100"
         },
-        "Components String": "Lgt. Antimatter Reactor, 2x Antigrav System, Adv. Visual Processing Unit, Adv. Sensor Array, Adv. Signal Interpreter",
+        "Components String": "Lgt. Antimatter Reactor, 2x Antigrav System, Adv. Visual Processing Unit",
         "Short Name": "W-44",
         "Ally Name": "Eye"
     },
@@ -4072,7 +4066,7 @@
         "Class": "Heavy",
         "Tier": "6",
         "Threat": "4",
-        "Rating": "137",
+        "Rating": "142",
         "Value": "71",
         "Size Class": "Large",
         "Size": "1",
@@ -4085,8 +4079,8 @@
         "Energy Generation": "34",
         "Heat Dissipation": "71",
         "Core Integrity": "90",
-        "Core Exposure": "518",
-        "Core Exposure %": "24",
+        "Core Exposure": "519",
+        "Core Exposure %": "25",
         "Salvage Potential": "80~100",
         "Inventory Capacity": "1",
         "Armament": [
@@ -4105,6 +4099,7 @@
             "EM Shield",
             "Active Sensor Suite",
             "Imp. Transmission Jammer",
+            "Jamming Amplifier",
             "Adv. Visual Processing Unit",
             "Imp. Weapon Cycler",
             "Kinecellerator",
@@ -4119,7 +4114,7 @@
             "Piercing": "50"
         },
         "Armament String": "Hvy. Mass Driver",
-        "Components String": "Rnf. Fission Core, 3x Arm. Medium Treads, Imp. Cooling System, Imp. Heat Sink, Imp. Heavy Armor Plating, Graphene Brace, Imp. Dynamic Insulation System, EM Shield, Active Sensor Suite, Imp. Transmission Jammer, Adv. Visual Processing Unit, Imp. Weapon Cycler, Kinecellerator, Imp. Targeting Computer",
+        "Components String": "Rnf. Fission Core, 3x Arm. Medium Treads, Imp. Cooling System, Imp. Heat Sink, Imp. Heavy Armor Plating, Graphene Brace, Imp. Dynamic Insulation System, EM Shield, Active Sensor Suite, Imp. Transmission Jammer, Jamming Amplifier, Adv. Visual Processing Unit, Imp. Weapon Cycler, Kinecellerator, Imp. Targeting Computer",
         "Short Name": "H-71",
         "Ally Name": "Marshal"
     },
@@ -4128,7 +4123,7 @@
         "Class": "Heavy",
         "Tier": "9",
         "Threat": "5",
-        "Rating": "178",
+        "Rating": "183",
         "Value": "81",
         "Size Class": "Large",
         "Size": "1",
@@ -4142,7 +4137,7 @@
         "Heat Dissipation": "80",
         "Core Integrity": "120",
         "Core Exposure": "572",
-        "Core Exposure %": "25",
+        "Core Exposure %": "24",
         "Salvage Potential": "100~125",
         "Inventory Capacity": "1",
         "Armament": [
@@ -4160,6 +4155,7 @@
             "EM Shield",
             "Active Sensor Suite",
             "Adv. Transmission Jammer",
+            "Jamming Amplifier",
             "Enh. Optical Array",
             "Adv. Weapon Cycler",
             "Imp. Kinecellerator",
@@ -4174,7 +4170,7 @@
             "Piercing": "50"
         },
         "Armament String": "Hvy. Linear Accelerator",
-        "Components String": "Rnf. Quantum Reactor, 2x Arm. Heavy Treads, Adv. Cooling System, Adv. Heat Sink, Lyr. Heavy Armor Plating, Graphene Brace, Imp. Dynamic Insulation System, EM Shield, Active Sensor Suite, Adv. Transmission Jammer, Enh. Optical Array, Adv. Weapon Cycler, Imp. Kinecellerator, Adv. Targeting Computer",
+        "Components String": "Rnf. Quantum Reactor, 2x Arm. Heavy Treads, Adv. Cooling System, Adv. Heat Sink, Lyr. Heavy Armor Plating, Graphene Brace, Imp. Dynamic Insulation System, EM Shield, Active Sensor Suite, Adv. Transmission Jammer, Jamming Amplifier, Enh. Optical Array, Adv. Weapon Cycler, Imp. Kinecellerator, Adv. Targeting Computer",
         "Short Name": "H-81",
         "Ally Name": "Overseer"
     },
@@ -4183,7 +4179,7 @@
         "Class": "Q-Series",
         "Tier": "8",
         "Threat": "5",
-        "Rating": "83",
+        "Rating": "91",
         "Value": "90",
         "Size Class": "Large",
         "Size": "1",
@@ -4197,8 +4193,8 @@
         "Energy Generation": "54",
         "Heat Dissipation": "90",
         "Core Integrity": "75",
-        "Core Exposure": "275",
-        "Core Exposure %": "29",
+        "Core Exposure": "282",
+        "Core Exposure %": "30",
         "Salvage Potential": "70~100",
         "Inventory Capacity": "1",
         "Immunities": [
@@ -4215,10 +4211,11 @@
             "Imp. Core Shielding",
             "Adv. Cooling System",
             "Adv. Heat Sink",
-            "Adv. Dynamic Insulation System"
+            "Adv. Dynamic Insulation System",
+            "Lrn. IFF Parser"
         ],
         "Analysis": "Q-Series robots are a new modular design built to deal with specific threats as they are encountered. The base form is an armored walker with a strong well-concealed core and numerous additional slots available for both utilities and armament.",
-        "Components String": "Lgt. Particle Reactor, Lgt. Antimatter Reactor, 3x Biometal Leg, Lyr. Medium Armor Plating, Imp. Core Shielding, Adv. Cooling System, Adv. Heat Sink, Adv. Dynamic Insulation System"
+        "Components String": "Lgt. Particle Reactor, Lgt. Antimatter Reactor, 3x Biometal Leg, Lyr. Medium Armor Plating, Imp. Core Shielding, Adv. Cooling System, Adv. Heat Sink, Adv. Dynamic Insulation System, Lrn. IFF Parser"
     },
     {
         "Name": "B-75 Beast",

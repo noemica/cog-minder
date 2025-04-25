@@ -177,6 +177,14 @@ function getSpectrumString(spectrum: Spectrum | undefined) {
     return spectrum.replace(")", "%)");
 }
 
+function getStateNode(specialTrait: string | undefined) {
+    if (specialTrait === "Fragile") {
+        return <span className="state-fragile"> Fragile </span>;
+    } else {
+        return <span className="state-na"> N/A </span>;
+    }
+}
+
 function signedStringOrUndefined(val: number | undefined): string | undefined {
     if (val === undefined) {
         return undefined;
@@ -1017,6 +1025,7 @@ export default function ItemDetails({ item, showWikiLink }: { item: Item; showWi
                 value={1}
             />
             <DetailsValueLine category="Coverage" valueString={item.coverage?.toString() ?? "0"} />
+            <DetailsTextLine category="State" content={getStateNode(item.specialTrait)} tooltipOverride={item.specialTrait}/>
             <DetailsTextLine category="Schematic" content={getSchematicString(item)} defaultContent="N/A" />
             {item.hackable ? (
                 <DetailsTextLine category=" Min Terminal/Depth" content={getSchematicDepthString(item)} />

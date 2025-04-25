@@ -101,6 +101,7 @@ export class ItemData {
                         categories: categories,
                         life: item.Life,
                         index: index,
+                        specialTrait: item["Special Trait"],
                         specialProperty: specialProperty,
                         spoiler: spoiler,
                     };
@@ -163,6 +164,7 @@ export class ItemData {
                         explosionType: item["Explosion Type"],
                         minChunks: minChunks,
                         maxChunks: maxChunks,
+                        specialTrait: item["Special Trait"],
                         index: index,
                         specialProperty: specialProperty,
                         spoiler: spoiler,
@@ -212,6 +214,7 @@ export class ItemData {
                         matterUpkeep: parseIntOrUndefined(item["Matter Upkeep"]),
                         modPerExtra: parseIntOrUndefined(item["Mod/Extra"]),
                         siege: siege,
+                        specialTrait: item["Special Trait"],
                         special: siege === undefined ? item.Special : siege, // TODO b15 only
                         index: index,
                         specialProperty: specialProperty,
