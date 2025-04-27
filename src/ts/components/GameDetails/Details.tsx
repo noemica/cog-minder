@@ -25,6 +25,10 @@ export type DetailsRangeLineProps = {
     tooltipOverride?: string;
 };
 
+const TooltipRegexes: [regExp: RegExp, text: string][] = [
+    [/Unstable \(\d+\)/, "Unstable weapons implode after the indicated remaining number of shots."],
+];
+
 const TooltipTexts = {
     //General Item Stats
     Type: "General classification of this item.",
@@ -192,7 +196,7 @@ const TooltipTexts = {
 
     // Locations
     "Available depths": "The depth or depths that this map can appear on.",
-    Branch: "Whether this location is a main floor or a branch floor."
+    Branch: "Whether this location is a main floor or a branch floor.",
 };
 
 // Color schemes
@@ -559,6 +563,16 @@ export function WikiLink({ wikiPage }: { wikiPage: string }) {
 function wrapInToolTipIfExists(node: ReactNode, value?: string, category?: string) {
     value = typeof value === "string" ? value.trim() : value;
     category = typeof category === "string" ? category.trim() : category;
+
+    for (const [regExp, tooltip] of TooltipRegexes) {
+        if (value && regExp.exec(value)) {
+            return (
+                <TextTooltip tooltipText={tooltip}>
+                    <div>{node}</div>
+                </TextTooltip>
+            );
+        }
+    }
 
     if (value && value in TooltipTexts) {
         return (
