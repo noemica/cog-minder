@@ -178,7 +178,9 @@ function getSpectrumString(spectrum: Spectrum | undefined) {
 }
 
 function getStateNode(specialTrait: string | undefined) {
-    if (specialTrait === "Fragile") {
+    if (specialTrait?.startsWith("Disposable")) {
+        return <span className="state-disposable"> {specialTrait} </span>
+    } else if (specialTrait === "Fragile") {
         return <span className="state-fragile"> Fragile </span>;
     } else if (specialTrait?.startsWith("Unstable")) {
         return <span className="state-unstable"> {specialTrait} </span>

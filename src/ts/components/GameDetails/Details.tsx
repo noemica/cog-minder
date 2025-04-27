@@ -26,6 +26,7 @@ export type DetailsRangeLineProps = {
 };
 
 const TooltipRegexes: [regExp: RegExp, text: string][] = [
+    [/Disposable \(\d+\)/, "Disposable parts have a limited number of uses, as indicated."],
     [/Unstable \(\d+\)/, "Unstable weapons implode after the indicated remaining number of shots."],
 ];
 
