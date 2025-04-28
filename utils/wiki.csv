@@ -8,8 +8,8 @@
 Entrances to new levels are implied to be long uneventful corridors where Cogmind loses all pursuers.
 0b10 means 2 (0b - binary representation, 10 - 2 in decimal). [[Spoiler]]This means Complex 0b10 is the second complex, 0b1 presumably being first.[[/Spoiler]]","","","","","","",""
 "0b10 Alert Chip","Part","Analyzes ambient [[0b10]] signals to guess the alert level. The best part of this item is the reduction of influence by 20%. This item is obtainable from the exiles.","","","","","","",""
-"0b10 Bots","Bot Supergroup","","","","","","","0b10 Combat Bots,0b10 Non-combat Bots",""
-"0b10 Combat Bots","Bot Supergroup","","","Alpha 7,Autobeam Turret,C-40 Crusher,Cetus Guard,E-15 Imp,Executioner,Fortress,MAIN.C,MAIN.C (Shell),Striker","","","Behemoth,Brawler,Cutter,Demolisher,Duelist,Grunt,Hauler,Heavy,Hunter,Programmer,Protovariant,Sentry,Specialist,Swarmer","",""
+"0b10 Bots","Bot Supergroup","0b10 Bots are a large [[Bot Group]] of bots that are found in nearly all maps in the game, and are particularly numerous in [[0b10|Complex 0b10]]. There are a large variety of [[0b10 Combat Bots|combat]] and [[0b10 Non-combat Bots|non-combat]] bots.","","","","","","0b10 Combat Bots,0b10 Non-combat Bots",""
+"0b10 Combat Bots","Bot Supergroup","0b10 Combat Bots are a large [[Bot Group]] of bots that make up the fighting force of [[0b10|Complex 0b10]]. They are most commonly found [[Patrol Squad|patrolling]] or [[Guard Squad|guarding]] areas within 0b10.","","Alpha 7,Autobeam Turret,C-40 Crusher,Cetus Guard,E-15 Imp,Executioner,Fortress,MAIN.C,MAIN.C (Shell),Striker","","","Behemoth,Brawler,Cutter,Demolisher,Duelist,Grunt,Hauler,Heavy,Hunter,Programmer,Protovariant,Sentry,Specialist,Swarmer","",""
 "0b10 Decoder Chip [Generic]","Part","","","","","","","",""
 "0b10 Decoder Chip [Looter]","Part","","","","","","","",""
 "0b10 Decoder Chip [Scout]","Part","","","","","","","",""
