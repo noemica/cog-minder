@@ -1236,8 +1236,6 @@
     "Master Drone",
     "Minesniffer Drone",
     "Mini Drone",
-    "N-01 Spotter",
-    "N-04 Retriever",
     "Sensor Drone",
     "Splice Drone",
     "Stealth Drone",
@@ -1551,6 +1549,15 @@
    "Spoiler": "Spoiler"
   },
   {
+   "Name": "Scrapper",
+   "Bots": [
+    "Scrapper (3)",
+    "Scrapper (6)"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Scrapoid",
    "Bots": [
     "Scrapoid (3)",
@@ -1772,6 +1779,7 @@
     "K-01 Serf",
     "N-00 Fly",
     "N-01 Spotter",
+    "N-04 Retriever",
     "T-07 Excavator",
     "U-05 Engineer"
    ],
@@ -1839,6 +1847,7 @@
    ],
    "Groups": [
     "Elite",
+    "Scrapper",
     "Scrapoid",
     "Scraphulk"
    ],
@@ -1852,11 +1861,12 @@
     "Large Mutated Botcube",
     "Master Drone",
     "Mutated Botcube",
+    "Optimus",
     "Ranger",
     "Scientist",
-    "Scrapper (3)",
     "Surveybot 24",
     "Triborg",
+    "Triborg (Optimus)",
     "Wyrm Statue"
    ],
    "Content": "The United Federation of Derelicts (UFD) is a major faction of [[Derelict|Derelicts]] that live in [[Scraptown]]. Cogmind can [[Alignment|align]] with the UFD become a member by entering Scraptown through [[Recycling]]. This alignment provides further access into Scraptown along with a few special hacks.\n[[Image]]Scraptown Alignment Derelict.png|[[Scrapper (3)]] in Scraptown that gives Cogmind the option to align[[/Image]]\n[[Heading]]Further Scraptown Access[[/Heading]]\nWhen Cogmind becomes a member of the UFD, the UFD HQ wall rises up on the map, and a few new areas open up with unique items and bot hacks available as possible benefits. See [[Scraptown#Possible right-side rooms|this page]] for additional details.\n[[Heading]]Unique hacks[[/Heading]]\nTwo new hacks become available with UFD alignment at [[Recycling Unit|Recycling Units]]: [[GameText]]Force(Fedlink)[[/GameText]] and [[GameText]]Force(Scrapoids)[[/GameText]]\n[[Heading:2]]Fedlink[[/Heading]]\nFedlink hooks up additional Recycling Units to the UFD network. This provides a few more resources to be used for Scrapoid summoning.\n[[Heading:2]]Scrapoids[[/Heading]]\nForce(Scrapoids) summons 5 blue controllable [[Scrapoid|Scrapoids]] to the Recycling unit within a few turns of performing the hack. Each hack consumes 2 resources from the pool. Initial resource count is around 16, and some resources may be added automatically when Cogmind enters a new floor.\n[[Heading]]Alignment Incompatibilities[[/Heading]]\n[[Heading:2]]Blocking Alignment[[/Heading]]\nThe following will prevent Cogmind from being able to align with UFD in the first place:\n[[List]][[RIF]] alignment: The UFD will believe Cogmind to be an unaware spy|[[FarCom]], hostilities in the [[Exiles (Location)|Exiles map]], or stealing an empty [[SUBCON Basin]] from the Scraplab in Recycling: Scraplab researchers will say that Cogmind cannot be trusted[[/List]]\n[[Heading:2]]Blocked Alignment[[/Heading]]\nSeveral factions will no longer be able to assist Cogmind after UFD alignment:\n[[List]][[Imprint]]: The [[Imprinter]] will say that the Imprinting machine requires a more thorough vetting process for a UFD member such as Cogmind|[[Warlord (Alignment)]]: [[Warlord]] will call Cogmind a spy and not perform the -2 [[Research]] invasion[[/List]]",

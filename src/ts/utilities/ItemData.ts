@@ -30,7 +30,7 @@ export class ItemData {
 
     constructor(items: JsonItem[]) {
         this.itemData = {};
-
+        
         // Create items
         Object.keys(items).forEach((key, index) => {
             const item = items[key] as JsonItem;
