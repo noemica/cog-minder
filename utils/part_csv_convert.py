@@ -6,11 +6,11 @@ from io import StringIO
 from os import path
 
 input_path = path.join(path.dirname(path.realpath(__file__)), 'gallery_export.csv')
-input_path_b15 = path.join(path.dirname(path.realpath(__file__)), 'gallery_export_b15.csv')
+# input_path_b15 = path.join(path.dirname(path.realpath(__file__)), 'gallery_export_b15.csv')
 output_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'items.json')
-output_path_b15 = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'items_b15.json')
+# output_path_b15 = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'items_b15.json')
 all_parts_output_path = path.join(path.dirname(path.realpath(__file__)), 'all_parts.txt')
-all_parts_output_path_b15 = path.join(path.dirname(path.realpath(__file__)), 'all_parts_b15.txt')
+# all_parts_output_path_b15 = path.join(path.dirname(path.realpath(__file__)), 'all_parts_b15.txt')
 
 categories = {
     'all': [
@@ -110,7 +110,6 @@ categories = {
         'Support',
         'Penalty',
         'Burnout',
-        'Siege'
     ],
     'shot': [
         'Range',
@@ -264,12 +263,6 @@ def process_csv(input_path, output_path, all_parts_output_path):
     index_lookup.clear()
     all_values.clear()
 
-    if input_path == input_path_b15:
-        # TODO remove after B15
-        categories['propulsion'][-1] = 'Special'
-        index = slot_categories['Propulsion'].index('Siege')
-        slot_categories['Propulsion'][index] = 'Special'
-
     with open(input_path) as f:
         # Escape a few quotes to properly parse
         string = f.read() \
@@ -329,4 +322,4 @@ def process_csv(input_path, output_path, all_parts_output_path):
         f.writelines('\n'.join([x['Name'] for x in all_values]))
 
 process_csv(input_path, output_path, all_parts_output_path)
-process_csv(input_path_b15, output_path_b15, all_parts_output_path_b15)
+# process_csv(input_path_b15, output_path_b15, all_parts_output_path_b15)

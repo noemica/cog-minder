@@ -89,12 +89,7 @@ function addBotGroups(addEntry: (entry: WikiEntry) => void, allEntries: Map<stri
 
 function addBots(botData: BotData, addEntry: (entry: WikiEntry) => void) {
     for (const botEntry of wiki.Bots) {
-        const bot = botData.getBotOrNull(botEntry.Name);
-
-        if (bot === null) {
-            // TODO b15 only
-            continue;
-        }
+        const bot = botData.getBot(botEntry.Name);
 
         addEntry({
             alternativeNames: [],
@@ -433,12 +428,7 @@ function addPartGroups(addEntry: (entry: WikiEntry) => void, itemData: ItemData,
 
 function addParts(itemData: ItemData, addEntry: (entry: WikiEntry) => void) {
     for (const partEntry of wiki.Parts) {
-        const part = itemData.tryGetItem(partEntry.Name);
-
-        if (part === undefined) {
-            // TODO b15 only
-            continue;
-        }
+        const part = itemData.getItem(partEntry.Name);
 
         let spoiler: Spoiler = "None";
         if (part.categories.includes("Redacted")) {

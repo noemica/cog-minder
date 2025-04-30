@@ -175,11 +175,9 @@ export class ItemData {
 
                 case "Propulsion": {
                     const siege = (
-                        item.Siege
-                            ? item.Siege
-                            : item.Special === SiegeMode.High || item.Special === SiegeMode.Standard
-                              ? item.Special
-                              : undefined
+                        item.Special === SiegeMode.High || item.Special === SiegeMode.Standard
+                            ? item.Special
+                            : undefined
                     ) as SiegeMode;
 
                     const propItem: PropulsionItem = {
@@ -215,7 +213,7 @@ export class ItemData {
                         modPerExtra: parseIntOrUndefined(item["Mod/Extra"]),
                         siege: siege,
                         specialTrait: item["Special Trait"],
-                        special: siege === undefined ? item.Special : siege, // TODO b15 only
+                        special: item.Special,
                         index: index,
                         specialProperty: specialProperty,
                         spoiler: spoiler,

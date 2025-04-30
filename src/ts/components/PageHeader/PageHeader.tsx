@@ -4,9 +4,9 @@ import { RouterObject, useLocation, useRouter } from "wouter";
 import { PageType, Spoiler, ThemeType, pageTypes } from "../../types/commonTypes";
 import { rootDirectory } from "../../utilities/common";
 import { ButtonLink } from "../Buttons/Button";
-import { useEditablePrerelease, useEditableSpoilers, useEditableTheme } from "../Effects/useLocalStorageValue";
+import { useEditableSpoilers, useEditableTheme } from "../Effects/useLocalStorageValue";
 import { RefreshIcon } from "../Icons/Icons";
-import { LabeledExclusiveButtonGroup, LabeledSelect } from "../LabeledItem/LabeledItem";
+import { LabeledSelect } from "../LabeledItem/LabeledItem";
 import ButtonPopover from "../Popover/ButtonPopover";
 import TextTooltipButton from "../Popover/TextTooltipButton";
 import { SelectOptionType } from "../Selectpicker/Select";
@@ -28,10 +28,10 @@ const themeOptions: SelectOptionType[] = [
     { value: "Cogmind", label: "Cogmind", tooltip: "Use a Cogmind-styled dark mode website theme." },
 ];
 
-const prereleaseOptions: SelectOptionType[] = [
-    { value: false, label: "No", tooltip: "Don't show prerelease content." },
-    { value: true, label: "Yes", tooltip: "Show prerelease content." },
-];
+// const prereleaseOptions: SelectOptionType[] = [
+//     { value: false, label: "No", tooltip: "Don't show prerelease content." },
+//     { value: true, label: "Yes", tooltip: "Show prerelease content." },
+// ];
 
 type PageDetails = {
     label: string;
@@ -161,8 +161,8 @@ function SettingsButton() {
     const [theme, setTheme] = useEditableTheme();
     const themeSelected = themeOptions.find((t) => t.value === theme) || themeOptions[0];
 
-    const [prerelease, setPrerelease] = useEditablePrerelease();
-    const prereleaseSelected = prereleaseOptions.find((p) => p.value === prerelease) || prereleaseOptions[0];
+    // const [prerelease, setPrerelease] = useEditablePrerelease();
+    // const prereleaseSelected = prereleaseOptions.find((p) => p.value === prerelease) || prereleaseOptions[0];
 
     return (
         <ButtonPopover buttonLabel="Settings" buttonTooltip="Change various site-wide settings">
@@ -187,7 +187,7 @@ function SettingsButton() {
                         setTheme(newValue!.value as ThemeType);
                     }}
                 />
-                <LabeledSelect
+                {/* <LabeledSelect
                     label="Beta 15 Prerelease"
                     tooltip="Whether to show prerelease bots and parts or not."
                     isSearchable={false}
@@ -196,7 +196,7 @@ function SettingsButton() {
                     onChange={(newValue) => {
                         setPrerelease(newValue!.value);
                     }}
-                />
+                /> */}
             </div>
         </ButtonPopover>
     );

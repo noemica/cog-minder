@@ -167,7 +167,6 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Exp. Thermal Defense Suite": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 30 } } },
     "Exp. Thermal Shield": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 30 } } },
     "Thermal Barrier": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 50 } } },
-    "Beam Splitter": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 75 } } }, // TODO b15
     "Cep. Beam Splitter": { active: "Part Active", trait: { kind: "DamageResists", resists: { Thermal: 75 } } },
     "8R-AWN's Armor/TH": { active: "Always", trait: { kind: "DamageResists", resists: { Thermal: 90 } } },
     // All

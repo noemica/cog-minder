@@ -378,7 +378,6 @@ export type JsonItem = {
     "Heat/Move"?: string;
     Support?: string;
     Penalty?: string;
-    Siege?: string; // TODO remove with b15
     Special?: string;
     Burnout?: string;
     "Energy Upkeep"?: string;

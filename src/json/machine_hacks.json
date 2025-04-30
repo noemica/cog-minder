@@ -330,8 +330,15 @@
                 "SpoilerLevel": "Spoiler"
             },
             {
+                "Name": "Force(Scraphulk)",
+                "Description": "Summons 1 Scrapoid within around 20 turns of performing the hack while consuming 5 resources from the UFD reserves. The Scraphulk varies based on depth. Only available after aligning with Optimus and using Force(Fedlink) enough times. Also, locks the machine and summons an investigation squad like all force hacks.",
+                "BaseChance": 80,
+                "Indirect": "Always",
+                "SpoilerLevel": "Spoiler"
+            },
+            {
                 "Name": "Force(Scrapoids)",
-                "Description": "Summons 5 Scrapoids within around 20 turns of performing the hack while consuming 2 resources from the UFD reserves. The Scrapoids vary based on depth. Also, locks the machine and summons an investigation squad like all force hacks.",
+                "Description": "Summons 5 Scrapoids within around 20 turns of performing the hack while consuming 3 resources from the UFD reserves. The Scrapoids vary based on depth. Also, locks the machine and summons an investigation squad like all force hacks.",
                 "BaseChance": 80,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"

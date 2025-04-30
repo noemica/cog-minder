@@ -8,9 +8,9 @@ from os import path
 import re
 
 input_path = path.join(path.dirname(path.realpath(__file__)), 'robots_export.csv')
-input_path_b15 = path.join(path.dirname(path.realpath(__file__)), 'robots_export_b15.csv')
+# input_path_b15 = path.join(path.dirname(path.realpath(__file__)), 'robots_export_b15.csv')
 output_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'bots.json')
-output_path_b15 = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'bots_b15.json')
+# output_path_b15 = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'bots_b15.json')
 
 categories = [
     'Name',
@@ -266,4 +266,4 @@ def process_csv(input_path, output_path):
         json.dump(all_values, f, indent=4)
 
 process_csv(input_path, output_path)
-process_csv(input_path_b15, output_path_b15)
+# process_csv(input_path_b15, output_path_b15)

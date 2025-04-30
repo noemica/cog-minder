@@ -1,4 +1,4 @@
-import jsonItems from "../../json/items_b15.json";
+import jsonItems from "../../json/items.json";
 import { JsonItem } from "../types/itemTypes";
 
 const itemsByName = new Map<string, JsonItem>(jsonItems.map((item) => [item.Name, item as JsonItem]));

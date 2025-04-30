@@ -1,4 +1,4 @@
-import jsonBots from "../../json/bots_b15.json";
+import jsonBots from "../../json/bots.json";
 import { JsonBot } from "../types/botTypes";
 
 const botsByName = new Map<string, JsonBot>(jsonBots.map((bot) => [bot.Name, bot]));
