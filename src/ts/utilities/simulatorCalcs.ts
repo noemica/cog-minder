@@ -244,419 +244,6 @@ function applyDamage(
         }
     }
 
-    function applyEngineExplosion(part: SimulatorPart) {
-        if (part.def.slot !== "Power") {
-            return;
-        }
-
-        const engine = part.def as PowerItem;
-        if (engine.explosionDamageMax > 0 && engine.explosionType !== undefined) {
-            // Apply engine explosion randomly as either 1 or 2 chunks (16)
-            const baseDamage = randomInt(engine.explosionDamageMin, engine.explosionDamageMax);
-            const numChunks = randomInt(engine.minChunks ?? 0, engine.maxChunks ?? 0);
-            const chunkDamage = Math.trunc(baseDamage / numChunks);
-            botState.salvage += engine.explosionSalvage;
-
-            for (let i = 0; i < numChunks; i++) {
-                applyDamageChunk(
-                    0,
-                    chunkDamage,
-                    engine.explosionType!,
-                    undefined,
-                    false,
-                    false,
-                    engine.explosionDisruption,
-                    spectrumToNumber(engine.explosionSpectrum),
-                    false,
-                );
-            }
-        }
-    }
-
-    function applyDamageChunk(
-        coreBonus: number,
-        damage: number,
-        damageType: DamageType,
-        critical: Critical | undefined,
-        isOverflow: boolean,
-        forceCore: boolean,
-        disruptChance: number,
-        spectrum: number,
-        armorAnalyzed: boolean,
-    ) {
-        // Determine hit part (13)
-        const { part, partIndex } = getHitPart(botState, coreBonus, damageType, isOverflow, forceCore, armorAnalyzed);
-        applyDamageChunkToPart(damage, damageType, critical, disruptChance, spectrum, isOverflow, part, partIndex);
-    }
-
-    function destroyPart(
-        partIndex: number,
-        part: SimulatorPart,
-        overflowDamage: number,
-        damageType: DamageType,
-        destroyReason: PartDestroyReason,
-    ) {
-        botState.parts.splice(partIndex, 1);
-        botState.armorAnalyzedCoverage -= part.armorAnalyzedCoverage;
-        botState.armorAnalyzedSiegedCoverage -= part.armorAnalyzedSiegedCoverage;
-        botState.siegedCoverage -= part.siegedCoverage;
-        botState.totalCoverage -= part.coverage;
-
-        // If the part was providing any damage resistances remove them now
-        // TODO - remove assumption that there can't be multiple sources of
-        // a single type of damage resistance. e.g. One part is 30% and
-        // another is providing 25% so we need to fallback to the 25%
-        if (part.resistances !== undefined) {
-            for (const type of Object.keys(part.resistances)) {
-                if (type in botState.resistances) {
-                    botState.resistances[type]! -= part.resistances![type]!;
-                }
-            }
-        }
-
-        if (overflowDamage > 0 && !part.protection && canOverflow && critical === undefined) {
-            // Handle overflow damage if excess damage was dealt
-            // against a non-protection part (18)
-            applyDamageChunk(0, overflowDamage, damageType, undefined, true, false, 0, 0, false);
-        }
-
-        if (damageType === "Impact") {
-            // Apply 50-150% random corruption to the bot after
-            // destroying a part (affected by EM resistance) (22)
-            let corruption = randomInt(50, 150);
-            corruption = calculateResistDamage(botState, corruption, "Electromagnetic");
-
-            applyCorruption(corruption);
-        }
-
-        if (
-            destroyReason === "CriticalRemove" &&
-            part.integrity > 0 &&
-            // Processors/hackware removed via crit get destroyed
-            part.def.type !== "Processor" &&
-            part.def.type !== "Hackware"
-        ) {
-            // Save loot stats if the part gets removed due to crit effect
-            state.lootState.items[part.initialIndex].numDrops += 1;
-            state.lootState.items[part.initialIndex].totalCritRemoves += 1;
-            state.lootState.items[part.initialIndex].totalIntegrity += part.integrity;
-        }
-
-        part.integrity = 0;
-        updateWeaponsAccuracy(state);
-
-        botState.destroyedParts.push(part);
-    }
-
-    function applyCorruption(corruption: number) {
-        // Check for corruption prevention parts
-        let corruptionPreventPart = getDefensiveStatePart(botState.defensiveState.corruptionPrevent);
-        while (corruption > 0 && corruptionPreventPart !== undefined) {
-            // Assume that corruption prevention parts lose 2 integrity per corruption purged
-            // TODO - remove this assumption someday
-            const maxPrevention = Math.ceil(corruptionPreventPart.part.integrity / 2);
-            if (maxPrevention < corruption) {
-                // Part has more than enough integrity to prevent corruption
-                corruptionPreventPart.part.integrity -= corruption *= 2;
-                corruption = 0;
-            } else {
-                // Corruption is greater than part can prevent, destroy part
-                botState.defensiveState.corruptionPrevent.shift();
-                const index = botState.parts.indexOf(corruptionPreventPart.part);
-                destroyPart(index, corruptionPreventPart.part, 0, "Entropic", "Integrity");
-                corruptionPreventPart = getDefensiveStatePart(botState.defensiveState.corruptionPrevent);
-
-                corruption -= maxPrevention;
-            }
-        }
-
-        botState.corruption += corruption;
-    }
-
-    function applyDamageChunkToPart(
-        damage: number,
-        damageType: DamageType,
-        critical: Critical | undefined,
-        disruptChance: number,
-        spectrum: number,
-        isOverflow: boolean,
-        part: SimulatorPart | undefined,
-        partIndex: number,
-    ) {
-        function doesCriticalDestroyPart(critical: Critical | undefined) {
-            if (critical === Critical.Destroy || critical === Critical.Smash) {
-                return true;
-            }
-
-            return false;
-        }
-
-        // Remove all criticals from totally immune bots
-        if (critical !== undefined) {
-            if (
-                botState.immunities.includes(BotImmunity.Criticals) ||
-                getDefensiveStatePart(botState.defensiveState.critImmunity) !== undefined
-            ) {
-                critical = undefined;
-            }
-        }
-
-        // Apply meltdown as immediate death unless immune
-        if (critical === Critical.Meltdown && !botState.immunities.includes(BotImmunity.Meltdown)) {
-            botState.coreIntegrity = 0;
-            return;
-        }
-        // Apply intensify damage doubling here
-        else if (critical === Critical.Intensify) {
-            damage *= 2.0;
-        }
-        // Apply impale damage doubling and add delay of 1 turn
-        else if (critical === Critical.Impale) {
-            damage *= 2.0;
-            state.tus += 100;
-        }
-        // Apply detonate crit
-        else if (critical === Critical.Detonate) {
-            let i: number;
-            for (i = 0; i < botState.parts.length; i++) {
-                if (botState.parts[i].def.slot === "Power") {
-                    break;
-                }
-            }
-
-            // Destroy first engine found (if any)
-            if (i < botState.parts.length) {
-                const engine = botState.parts[i];
-                destroyPart(i, engine, 0, "Entropic", "Integrity");
-                applyEngineExplosion(engine);
-
-                if (i === partIndex) {
-                    // If detonate exploded power we were targeting just exit
-                    return;
-                }
-            }
-        }
-        // Remove sever/sunder crit if target bot is immune
-        else if (
-            (critical === Critical.Sever || critical === Critical.Sunder) &&
-            botState.immunities.includes(BotImmunity.Dismemberment)
-        ) {
-            critical = undefined;
-        }
-        // Remove phase crit if bot is coring immune or has core shielding
-        else if (
-            critical === Critical.Phase &&
-            (botState.immunities.includes(BotImmunity.Coring) || getShieldingType(botState, "Core") === undefined)
-        ) {
-            critical = undefined;
-        }
-
-        // Handle core hit
-        if (part === undefined) {
-            // Try to get shielding
-            const shielding = isOverflow ? undefined : getShieldingType(botState, "Core");
-
-            // Remove crit types that apply to the core if immunity or shielding (14)
-            if (
-                (critical === Critical.Destroy ||
-                    critical == Critical.Phase ||
-                    critical == Critical.Smash ||
-                    critical == Critical.Sunder ||
-                    critical == Critical.Sever) &&
-                (botState.immunities.includes(BotImmunity.Coring) || shielding !== undefined)
-            ) {
-                critical = undefined;
-            }
-
-            if (shielding != undefined) {
-                // Handle core shielding reduction
-                // Note: shielding may absorb more damage than integrity
-                const shieldingDamage = Math.trunc(shielding.reduction * damage);
-                shielding.part.integrity -= shieldingDamage;
-
-                if (shielding.part.integrity <= 0) {
-                    // Remove shielding if it has run out of integrity
-                    const index = botState.parts.indexOf(shielding.part);
-                    destroyPart(index, shielding.part, 0, "Entropic", "Integrity");
-                }
-
-                damage = damage - shieldingDamage;
-            }
-
-            if (critical === Critical.Destroy || critical === Critical.Smash) {
-                botState.coreIntegrity = 0;
-            } else {
-                botState.coreIntegrity -= damage;
-            }
-
-            if (botState.coreIntegrity === 0) {
-                return;
-            }
-
-            // Apply disruption (15)
-            // Core disruption only has 50% of the usual chance
-            if (!botState.immunities.includes(BotImmunity.Disruption) && randomInt(0, 99) < disruptChance / 2) {
-                botState.coreDisrupted = true;
-            }
-
-            // Apply relevant criticals not yet applied
-            // Apply sever/sunder crits to other parts
-            if (critical === Critical.Sever || critical === Critical.Sunder) {
-                const numParts = critical === Critical.Sunder ? randomInt(1, 2) : 1;
-                for (let i = 0; i < numParts; i++) {
-                    const { part, partIndex } = getRandomNonCorePart(botState, undefined);
-                    if (part === undefined || getShieldingType(botState, part.def.slot) !== undefined) {
-                        // Shielding protects against sever/sunder completely
-                        continue;
-                    }
-
-                    if (part.def.size > 1) {
-                        // Parts taking 2 or more slots can't be removed via sever/sunder
-                        continue;
-                    }
-
-                    // Core severed parts lose 5-25% of integrity
-                    part.integrity -= Math.trunc((part.def.integrity * randomInt(5, 25)) / 100);
-
-                    destroyPart(partIndex, part, 0, "Phasic", "CriticalRemove");
-                }
-
-                return;
-            } else if (critical === Critical.Blast) {
-                const { part, partIndex } = getRandomNonCorePart(botState, undefined);
-                if (part === undefined || getShieldingType(botState, part.def.slot) !== undefined) {
-                    // Shielding protects against blast completely
-                    return;
-                }
-
-                if (part.def.size === 1) {
-                    // Single-slot items get blasted off
-                    // Deal damage first, then destroy as a critical part removal if still intact
-                    applyDamageChunkToPart(damage, "Phasic", undefined, 0, 0, false, part, partIndex);
-
-                    // Dismemberment immunity stops the blasting off part
-                    if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
-                        destroyPart(partIndex, part, 0, "Phasic", "CriticalRemove");
-                    }
-                } else {
-                    // Multi-slot items don't get blasted off but still take damage
-                    applyDamageChunkToPart(damage, "Phasic", undefined, 0, 0, false, part, partIndex);
-                }
-            } else if (critical === Critical.Phase) {
-                // Apply phasing damage to another random part
-                const { part, partIndex } = getRandomNonCorePart(botState, undefined);
-                applyDamageChunkToPart(damage, "Phasic", undefined, 0, 0, false, part, partIndex);
-            }
-
-            return;
-        }
-
-        // Handle non-core hit
-        // Try to get shielding for non-protection parts
-        const shielding =
-            part.def.type === "Protection" || isOverflow ? undefined : getShieldingType(botState, part.def.slot);
-
-        // Check for crit immunity or shielding (14)
-        if (shielding !== undefined && doesCriticalDestroyPart(critical)) {
-            critical = undefined;
-        }
-
-        // Check for spectrum engine explosion (16)
-        const engineExplosion = part.def.slot === "Power" && randomInt(0, 99) < spectrum;
-
-        // Protection can't get instantly destroyed, only receives 20% more damage
-        // Also check for crits against sieged treads, they can't be destroyed
-        if (
-            (doesCriticalDestroyPart(critical) && part.protection) ||
-            (botState.sieged && part.def.type === "Treads" && (part.def as PropulsionItem).siege !== undefined)
-        ) {
-            critical = undefined;
-            damage = Math.trunc(1.2 * damage);
-        }
-
-        // Reduce damage for powered armor/siege mode (17)
-        if (part.selfDamageReduction !== 0) {
-            damage = Math.trunc(damage * part.selfDamageReduction);
-        } else if (part.def.type === "Treads" && (part.def as PropulsionItem).siege !== undefined && botState.sieged) {
-            damage = Math.trunc(damage * ((part.def as PropulsionItem).siege === SiegeMode.High ? 0.5 : 0.75));
-        }
-
-        // Apply disruption to non-core parts (17)
-        // TODO
-
-        if (shielding != undefined) {
-            // Handle slot shielding reduction
-            // Note: shielding may absorb more damage than integrity
-            const shieldingDamage = Math.trunc(shielding.reduction * damage);
-            shielding.part.integrity -= shieldingDamage;
-
-            if (shielding.part.integrity <= 0) {
-                // Remove shielding if it has run out of integrity
-                const index = botState.parts.indexOf(shielding.part);
-                destroyPart(index, shielding.part, 0, "Entropic", "Integrity");
-            }
-
-            damage = damage - shieldingDamage;
-        }
-
-        const destroyed = part.integrity <= damage || doesCriticalDestroyPart(critical) || engineExplosion;
-
-        // Apply sever/sunder to instantly-remove (not destroy) part if it's a single slot and unshielded
-        // Applied differently than other part destruction since this can't affect multislot
-        // parts but can affect protection
-        if (
-            !destroyed &&
-            (critical === Critical.Sever || critical === Critical.Sunder) &&
-            part.def.size === 1 &&
-            shielding === undefined
-        ) {
-            if (!destroyed) {
-                destroyPart(partIndex, part, 0, "Slashing", "CriticalRemove");
-            }
-        }
-
-        if (destroyed) {
-            // Part destroyed, remove part and update bot state
-            // Smash critical destroys the part instantly and deals full overflow damage
-            const overflowDamage = critical === Critical.Smash ? damage : damage - part.integrity;
-            destroyPart(partIndex, part, overflowDamage, damageType, "Integrity");
-        } else {
-            // Part not destroyed, just reduce integrity
-            part.integrity -= damage;
-        }
-
-        // Apply relevant criticals not yet applied
-        const oldIndex = partIndex;
-        if (critical === Critical.Blast) {
-            const { part, partIndex } = getRandomNonCorePart(botState, destroyed ? oldIndex : undefined);
-            if (part === undefined || shielding !== undefined) {
-                // Shielding protects against blast completely
-                return;
-            }
-
-            if (part.def.size === 1) {
-                // Single-slot items get blasted off
-                // Deal damage first, then destroy as a critical part removal if still intact
-                applyDamageChunkToPart(damage, "Phasic", undefined, 0, 0, false, part, partIndex);
-
-                // Dismemberment immunity stops the blasting off part
-                if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
-                    destroyPart(partIndex, part, 0, "Phasic", "CriticalRemove");
-                }
-            } else {
-                // Multi-slot items don't get blasted off but still take damage
-                applyDamageChunkToPart(damage, "Phasic", undefined, 0, 0, false, part, partIndex);
-            }
-        } else if (critical === Critical.Phase) {
-            // Apply phasing damage to the core
-            applyDamageChunkToPart(damage, "Phasic", undefined, 0, 0, false, undefined, -1);
-        }
-
-        if (engineExplosion) {
-            applyEngineExplosion(part);
-        }
-    }
-
     // Apply salvage for all chunks simulatenously
     botState.salvage += salvage;
 
@@ -668,6 +255,7 @@ function applyDamage(
         }
 
         applyDamageChunk(
+            state,
             chunk.coreBonus,
             chunk.realDamage,
             chunk.damageType,
@@ -691,9 +279,339 @@ function applyDamage(
                 const corruptionPercent = corruptCritical ? 1.5 : randomInt(50, 150) / 100;
                 const corruption = chunk.originalDamage * corruptionPercent;
 
-                applyCorruption(corruption);
+                applyCorruption(state, corruption);
             }
         }
+    }
+}
+
+function applyDamageChunk(
+    state: SimulatorState,
+    coreBonus: number,
+    damage: number,
+    damageType: DamageType,
+    critical: Critical | undefined,
+    isOverflow: boolean,
+    forceCore: boolean,
+    disruptChance: number,
+    spectrum: number,
+    armorAnalyzed: boolean,
+) {
+    // Determine hit part (13)
+    const { part, partIndex } = getHitPart(state.botState, coreBonus, damageType, isOverflow, forceCore, armorAnalyzed);
+    applyDamageChunkToPart(state, damage, damageType, critical, disruptChance, spectrum, isOverflow, part, partIndex);
+}
+
+function applyCorruption(state: SimulatorState, corruption: number) {
+    const botState = state.botState;
+
+    // Check for corruption prevention parts
+    let corruptionPreventPart = getDefensiveStatePart(botState.defensiveState.corruptionPrevent);
+    while (corruption > 0 && corruptionPreventPart !== undefined) {
+        // Assume that corruption prevention parts lose 2 integrity per corruption purged
+        // TODO - remove this assumption someday
+        const maxPrevention = Math.ceil(corruptionPreventPart.part.integrity / 2);
+        if (maxPrevention < corruption) {
+            // Part has more than enough integrity to prevent corruption
+            corruptionPreventPart.part.integrity -= corruption *= 2;
+            corruption = 0;
+        } else {
+            // Corruption is greater than part can prevent, destroy part
+            botState.defensiveState.corruptionPrevent.shift();
+            const index = botState.parts.indexOf(corruptionPreventPart.part);
+            destroyPart(state, false, index, corruptionPreventPart.part, 0, "Entropic", "Integrity");
+            corruptionPreventPart = getDefensiveStatePart(botState.defensiveState.corruptionPrevent);
+
+            corruption -= maxPrevention;
+        }
+    }
+
+    botState.corruption += corruption;
+}
+
+function applyDamageChunkToPart(
+    state: SimulatorState,
+    damage: number,
+    damageType: DamageType,
+    critical: Critical | undefined,
+    disruptChance: number,
+    spectrum: number,
+    isOverflow: boolean,
+    part: SimulatorPart | undefined,
+    partIndex: number,
+) {
+    const botState = state.botState;
+    function doesCriticalDestroyPart(critical: Critical | undefined) {
+        if (critical === Critical.Destroy || critical === Critical.Smash) {
+            return true;
+        }
+
+        return false;
+    }
+
+    // Remove all criticals from totally immune bots
+    if (critical !== undefined) {
+        if (
+            botState.immunities.includes(BotImmunity.Criticals) ||
+            getDefensiveStatePart(botState.defensiveState.critImmunity) !== undefined
+        ) {
+            critical = undefined;
+        }
+    }
+
+    // Apply meltdown as immediate death unless immune
+    if (critical === Critical.Meltdown && !botState.immunities.includes(BotImmunity.Meltdown)) {
+        botState.coreIntegrity = 0;
+        return;
+    }
+    // Apply intensify damage doubling here
+    else if (critical === Critical.Intensify) {
+        damage *= 2.0;
+    }
+    // Apply impale damage doubling and add delay of 1 turn
+    else if (critical === Critical.Impale) {
+        damage *= 2.0;
+        state.tus += 100;
+    }
+    // Apply detonate crit
+    else if (critical === Critical.Detonate) {
+        let i: number;
+        for (i = 0; i < botState.parts.length; i++) {
+            if (botState.parts[i].def.slot === "Power") {
+                break;
+            }
+        }
+
+        // Destroy first engine found (if any)
+        if (i < botState.parts.length) {
+            const engine = botState.parts[i];
+            destroyPart(state, false, i, engine, 0, "Entropic", "Integrity");
+            applyEngineExplosion(state, engine);
+
+            if (i === partIndex) {
+                // If detonate exploded power we were targeting just exit
+                return;
+            }
+        }
+    }
+    // Remove sever/sunder crit if target bot is immune
+    else if (
+        (critical === Critical.Sever || critical === Critical.Sunder) &&
+        botState.immunities.includes(BotImmunity.Dismemberment)
+    ) {
+        critical = undefined;
+    }
+    // Remove phase crit if bot is coring immune or has core shielding
+    else if (
+        critical === Critical.Phase &&
+        (botState.immunities.includes(BotImmunity.Coring) || getShieldingType(botState, "Core") === undefined)
+    ) {
+        critical = undefined;
+    }
+
+    // Handle core hit
+    if (part === undefined) {
+        // Try to get shielding
+        const shielding = isOverflow ? undefined : getShieldingType(botState, "Core");
+
+        // Remove crit types that apply to the core if immunity or shielding (14)
+        if (
+            (critical === Critical.Destroy ||
+                critical == Critical.Phase ||
+                critical == Critical.Smash ||
+                critical == Critical.Sunder ||
+                critical == Critical.Sever) &&
+            (botState.immunities.includes(BotImmunity.Coring) || shielding !== undefined)
+        ) {
+            critical = undefined;
+        }
+
+        if (shielding != undefined) {
+            // Handle core shielding reduction
+            // Note: shielding may absorb more damage than integrity
+            const shieldingDamage = Math.trunc(shielding.reduction * damage);
+            shielding.part.integrity -= shieldingDamage;
+
+            if (shielding.part.integrity <= 0) {
+                // Remove shielding if it has run out of integrity
+                const index = botState.parts.indexOf(shielding.part);
+                destroyPart(state, false, index, shielding.part, 0, "Entropic", "Integrity");
+            }
+
+            damage = damage - shieldingDamage;
+        }
+
+        if (critical === Critical.Destroy || critical === Critical.Smash) {
+            botState.coreIntegrity = 0;
+        } else {
+            botState.coreIntegrity -= damage;
+        }
+
+        if (botState.coreIntegrity === 0) {
+            return;
+        }
+
+        // Apply disruption (15)
+        // Core disruption only has 50% of the usual chance
+        if (!botState.immunities.includes(BotImmunity.Disruption) && randomInt(0, 99) < disruptChance / 2) {
+            botState.coreDisrupted = true;
+        }
+
+        // Apply relevant criticals not yet applied
+        // Apply sever/sunder crits to other parts
+        if (critical === Critical.Sever || critical === Critical.Sunder) {
+            const numParts = critical === Critical.Sunder ? randomInt(1, 2) : 1;
+            for (let i = 0; i < numParts; i++) {
+                const { part, partIndex } = getRandomNonCorePart(botState, undefined);
+                if (part === undefined || getShieldingType(botState, part.def.slot) !== undefined) {
+                    // Shielding protects against sever/sunder completely
+                    continue;
+                }
+
+                if (part.def.size > 1) {
+                    // Parts taking 2 or more slots can't be removed via sever/sunder
+                    continue;
+                }
+
+                // Core severed parts lose 5-25% of integrity
+                part.integrity -= Math.trunc((part.def.integrity * randomInt(5, 25)) / 100);
+
+                destroyPart(state, false, partIndex, part, 0, "Phasic", "CriticalRemove");
+            }
+
+            return;
+        } else if (critical === Critical.Blast) {
+            const { part, partIndex } = getRandomNonCorePart(botState, undefined);
+            if (part === undefined || getShieldingType(botState, part.def.slot) !== undefined) {
+                // Shielding protects against blast completely
+                return;
+            }
+
+            if (part.def.size === 1) {
+                // Single-slot items get blasted off
+                // Deal damage first, then destroy as a critical part removal if still intact
+                applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, part, partIndex);
+
+                // Dismemberment immunity stops the blasting off part
+                if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
+                    destroyPart(state, false, partIndex, part, 0, "Phasic", "CriticalRemove");
+                }
+            } else {
+                // Multi-slot items don't get blasted off but still take damage
+                applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, part, partIndex);
+            }
+        } else if (critical === Critical.Phase) {
+            // Apply phasing damage to another random part
+            const { part, partIndex } = getRandomNonCorePart(botState, undefined);
+            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, part, partIndex);
+        }
+
+        return;
+    }
+
+    // Handle non-core hit
+    // Try to get shielding for non-protection parts
+    const shielding =
+        part.def.type === "Protection" || isOverflow ? undefined : getShieldingType(botState, part.def.slot);
+
+    // Check for crit immunity or shielding (14)
+    if (shielding !== undefined && doesCriticalDestroyPart(critical)) {
+        critical = undefined;
+    }
+
+    // Check for spectrum engine explosion (16)
+    const engineExplosion = part.def.slot === "Power" && randomInt(0, 99) < spectrum;
+
+    // Protection can't get instantly destroyed, only receives 20% more damage
+    // Also check for crits against sieged treads, they can't be destroyed
+    if (
+        (doesCriticalDestroyPart(critical) && part.protection) ||
+        (botState.sieged && part.def.type === "Treads" && (part.def as PropulsionItem).siege !== undefined)
+    ) {
+        critical = undefined;
+        damage = Math.trunc(1.2 * damage);
+    }
+
+    // Reduce damage for powered armor/siege mode (17)
+    if (part.selfDamageReduction !== 0) {
+        damage = Math.trunc(damage * part.selfDamageReduction);
+    } else if (part.def.type === "Treads" && (part.def as PropulsionItem).siege !== undefined && botState.sieged) {
+        damage = Math.trunc(damage * ((part.def as PropulsionItem).siege === SiegeMode.High ? 0.5 : 0.75));
+    }
+
+    // Apply disruption to non-core parts (17)
+    // TODO
+
+    if (shielding != undefined) {
+        // Handle slot shielding reduction
+        // Note: shielding may absorb more damage than integrity
+        const shieldingDamage = Math.trunc(shielding.reduction * damage);
+        shielding.part.integrity -= shieldingDamage;
+
+        if (shielding.part.integrity <= 0) {
+            // Remove shielding if it has run out of integrity
+            const index = botState.parts.indexOf(shielding.part);
+            destroyPart(state, false, index, shielding.part, 0, "Entropic", "Integrity");
+        }
+
+        damage = damage - shieldingDamage;
+    }
+
+    const destroyed = part.integrity <= damage || doesCriticalDestroyPart(critical) || engineExplosion;
+
+    // Apply sever/sunder to instantly-remove (not destroy) part if it's a single slot and unshielded
+    // Applied differently than other part destruction since this can't affect multislot
+    // parts but can affect protection
+    if (
+        !destroyed &&
+        (critical === Critical.Sever || critical === Critical.Sunder) &&
+        part.def.size === 1 &&
+        shielding === undefined
+    ) {
+        if (!destroyed) {
+            destroyPart(state, false, partIndex, part, 0, "Slashing", "CriticalRemove");
+        }
+    }
+
+    if (destroyed) {
+        // Part destroyed, remove part and update bot state
+        // Smash critical destroys the part instantly and deals full overflow damage
+        const overflowDamage = critical === Critical.Smash ? damage : damage - part.integrity;
+        destroyPart(state, false, partIndex, part, overflowDamage, damageType, "Integrity");
+    } else {
+        // Part not destroyed, just reduce integrity
+        part.integrity -= damage;
+    }
+
+    // Apply relevant criticals not yet applied
+    const oldIndex = partIndex;
+    if (critical === Critical.Blast) {
+        const { part, partIndex } = getRandomNonCorePart(botState, destroyed ? oldIndex : undefined);
+        if (part === undefined || shielding !== undefined) {
+            // Shielding protects against blast completely
+            return;
+        }
+
+        if (part.def.size === 1) {
+            // Single-slot items get blasted off
+            // Deal damage first, then destroy as a critical part removal if still intact
+            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, part, partIndex);
+
+            // Dismemberment immunity stops the blasting off part
+            if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
+                destroyPart(state, false, partIndex, part, 0, "Phasic", "CriticalRemove");
+            }
+        } else {
+            // Multi-slot items don't get blasted off but still take damage
+            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, part, partIndex);
+        }
+    } else if (critical === Critical.Phase) {
+        // Apply phasing damage to the core
+        applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, undefined, -1);
+    }
+
+    if (engineExplosion) {
+        applyEngineExplosion(state, part);
     }
 }
 
@@ -748,6 +666,36 @@ function cloneBotState(botState: BotState): BotState {
     newState.defensiveState = getBotDefensiveState(newState.parts, newState.externalDamageReduction);
 
     return newState;
+}
+
+function applyEngineExplosion(state: SimulatorState, part: SimulatorPart) {
+    if (part.def.slot !== "Power") {
+        return;
+    }
+
+    const engine = part.def as PowerItem;
+    if (engine.explosionDamageMax > 0 && engine.explosionType !== undefined) {
+        // Apply engine explosion randomly as either 1 or 2 chunks (16)
+        const baseDamage = randomInt(engine.explosionDamageMin, engine.explosionDamageMax);
+        const numChunks = randomInt(engine.minChunks ?? 0, engine.maxChunks ?? 0);
+        const chunkDamage = Math.trunc(baseDamage / numChunks);
+        state.botState.salvage += engine.explosionSalvage;
+
+        for (let i = 0; i < numChunks; i++) {
+            applyDamageChunk(
+                state,
+                0,
+                chunkDamage,
+                engine.explosionType!,
+                undefined,
+                false,
+                false,
+                engine.explosionDisruption,
+                spectrumToNumber(engine.explosionSpectrum),
+                false,
+            );
+        }
+    }
 }
 
 // Calculates the resisted damage for a bot given the initial damage value
@@ -915,6 +863,68 @@ export function getBotDefensiveState(
     // Warbot which, but that doesn't require sorting anyways.
 
     return state;
+}
+
+function destroyPart(
+    state: SimulatorState,
+    canOverflow: boolean,
+    partIndex: number,
+    part: SimulatorPart,
+    overflowDamage: number,
+    damageType: DamageType,
+    destroyReason: PartDestroyReason,
+) {
+    const botState = state.botState;
+    botState.parts.splice(partIndex, 1);
+    botState.armorAnalyzedCoverage -= part.armorAnalyzedCoverage;
+    botState.armorAnalyzedSiegedCoverage -= part.armorAnalyzedSiegedCoverage;
+    botState.siegedCoverage -= part.siegedCoverage;
+    botState.totalCoverage -= part.coverage;
+
+    // If the part was providing any damage resistances remove them now
+    // TODO - remove assumption that there can't be multiple sources of
+    // a single type of damage resistance. e.g. One part is 30% and
+    // another is providing 25% so we need to fallback to the 25%
+    if (part.resistances !== undefined) {
+        for (const type of Object.keys(part.resistances)) {
+            if (type in botState.resistances) {
+                botState.resistances[type]! -= part.resistances![type]!;
+            }
+        }
+    }
+
+    if (overflowDamage > 0 && !part.protection && canOverflow) {
+        // Handle overflow damage if excess damage was dealt
+        // against a non-protection part (18)
+        applyDamageChunk(state, 0, overflowDamage, damageType, undefined, true, false, 0, 0, false);
+    }
+
+    if (damageType === "Impact") {
+        // Apply 50-150% random corruption to the bot after
+        // destroying a part (affected by EM resistance) (22)
+        let corruption = randomInt(50, 150);
+        corruption = calculateResistDamage(botState, corruption, "Electromagnetic");
+
+        applyCorruption(state, corruption);
+    }
+
+    if (
+        destroyReason === "CriticalRemove" &&
+        part.integrity > 0 &&
+        // Processors/hackware removed via crit get destroyed
+        part.def.type !== "Processor" &&
+        part.def.type !== "Hackware"
+    ) {
+        // Save loot stats if the part gets removed due to crit effect
+        state.lootState.items[part.initialIndex].numDrops += 1;
+        state.lootState.items[part.initialIndex].totalCritRemoves += 1;
+        state.lootState.items[part.initialIndex].totalIntegrity += part.integrity;
+    }
+
+    part.integrity = 0;
+    updateWeaponsAccuracy(state);
+
+    botState.destroyedParts.push(part);
 }
 
 // Tries to get a bot defensive state part from an array
@@ -1505,8 +1515,8 @@ function simulateWeapon(
     }
 
     if (!offensiveState.melee && offensiveState.corruption > 0) {
-        // Jamming/failing to cycle/failing to launch is a corruption-based 
-        // effect for non-melee weapons. Odds to fail to attack increases by 
+        // Jamming/failing to cycle/failing to launch is a corruption-based
+        // effect for non-melee weapons. Odds to fail to attack increases by
         // .2% for every 1% of corruption.
         if (randomInt(0, 1000) < offensiveState.corruption * 2) {
             return false;
@@ -1631,6 +1641,24 @@ function simulateWeapon(
                     weapon.damageType,
                     weapon.salvage,
                 );
+
+                if (
+                    weapon.def.name === "Core Stripper" &&
+                    botState.coreIntegrity > 0 &&
+                    !botState.immunities.includes(BotImmunity.Dismemberment) &&
+                    randomInt(0, 99) < 33
+                ) {
+                    // If core stripper procs (33% chance) it will drop all
+                    // parts but they will be damaged between 25-75%
+                    for (let i = 0; i < botState.parts.length; i++) {
+                        const part = botState.parts[0];
+                        part.integrity *= randomInt(25, 75) / 100;
+
+                        destroyPart(state, false, 0, part, 0, "Entropic", "CriticalRemove");
+
+                        botState.coreIntegrity = 0;
+                    }
+                }
 
                 // If we've already met the end condition then exit mid-volley
                 // Also exit before checking the explosion
