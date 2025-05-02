@@ -362,6 +362,9 @@ function applyDamageChunkToPart(
     // Apply meltdown as immediate death unless immune
     if (critical === Critical.Meltdown && !botState.immunities.includes(BotImmunity.Meltdown)) {
         botState.coreIntegrity = 0;
+
+        // Meltdown sets to a minimum of 300 heat
+        botState.heat = Math.max(botState.heat, 300);
         return;
     }
     // Apply intensify damage doubling here
@@ -635,6 +638,7 @@ function cloneBotState(botState: BotState): BotState {
         defensiveState: undefined as any,
         destroyedParts: [],
         externalDamageReduction: botState.externalDamageReduction,
+        heat: 0,
         immunities: botState.immunities,
         initialCoreIntegrity: botState.initialCoreIntegrity,
         parts: botState.parts.map((p) => {
@@ -1451,7 +1455,13 @@ export function simulateCombat(state: SimulatorState): boolean {
                 }
             }
 
-            // TODO add part melting here with rest of heat support
+            if (drop && botState.heat > 0) {
+                // Chance to melt is ([heat - max_integrity] / 4)
+                if (randomInt(0, 99) < (botState.heat - part.def.integrity) / 4) {
+                    itemLootState.totalMelted += 1;
+                    drop = false;
+                }
+            }
 
             if (drop) {
                 // Part dropped, increase stats

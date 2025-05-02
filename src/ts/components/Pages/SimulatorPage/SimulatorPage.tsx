@@ -364,6 +364,7 @@ function getSimulatorState(
         defensiveState: defensiveState,
         destroyedParts: [],
         externalDamageReduction: pageState.damageReduction || "None",
+        heat: 0,
         immunities: bot.immunities,
         initialCoreIntegrity: botIntegrity,
         parts: parts,
@@ -693,6 +694,7 @@ function getSimulatorState(
             totalCorruptionPercent: 0,
             totalFried: 0,
             totalIntegrity: 0,
+            totalMelted: 0,
         });
     }
 
@@ -920,6 +922,7 @@ export default function SimulatorPage() {
                 ) !== undefined;
             const showCriticals =
                 activeChartState.lootState.items.find((item) => item.totalCritRemoves > 0) !== undefined;
+            const showMelted = activeChartState.lootState.items.find((item) => item.totalMelted > 0) !== undefined;
 
             lootData = (
                 <div className="loot-grid">
@@ -934,6 +937,7 @@ export default function SimulatorPage() {
                             numKills={activeChartState.lootState.numKills}
                             showCorruption={showCorruption}
                             showCriticals={showCriticals}
+                            showMelted={showMelted}
                         />
                     ))}
                 </div>

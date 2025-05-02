@@ -97,6 +97,7 @@ export type BotState = {
     defensiveState: DefensiveState;
     destroyedParts: SimulatorPart[];
     externalDamageReduction: ExternalDamageReduction;
+    heat: number;
     immunities: BotImmunity[];
     initialCoreIntegrity: number;
     parts: SimulatorPart[];
@@ -158,6 +159,7 @@ export type ItemLootState = {
     totalCritRemoves: number;
     totalCorruptionPercent: number;
     totalFried: number;
+    totalMelted: number;
     totalIntegrity: number;
 };
 
