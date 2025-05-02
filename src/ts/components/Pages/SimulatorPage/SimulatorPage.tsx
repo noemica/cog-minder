@@ -78,6 +78,7 @@ export type SimulatorPageState = {
     armorIntegrityAnalyzer?: string;
     coreAnalyzer?: string;
     targetAnalyzer?: string;
+    preSalvage?: string;
 
     // Ranged settings
     targeting?: string;
@@ -350,6 +351,8 @@ function getSimulatorState(
         behavior === "Already Sieged/Fight" &&
         parts.find((p) => p.def.type === "Treads" && (p.def as PropulsionItem).siege !== undefined) !== undefined;
 
+    const preSalvage = parseIntOrDefault(pageState.preSalvage, 0);
+
     // Enemy bot state
     const botState: BotState = {
         armorAnalyzedCoverage: armorAnalyzedCoverage,
@@ -373,7 +376,7 @@ function getSimulatorState(
         running: behavior === "Running",
         runningEvasion: runningEvasion,
         runningMomentum: behavior === "Running" ? 3 : 0,
-        salvage: 0,
+        salvage: preSalvage,
         sieged: sieged,
         siegedCoverage: siegedCoverage,
         superfortressRegen: bot.name === "Superfortress" ? { nextRegenAttempt: 0 } : undefined,

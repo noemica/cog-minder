@@ -660,7 +660,7 @@ function cloneBotState(botState: BotState): BotState {
         running: botState.running,
         runningEvasion: botState.runningEvasion,
         runningMomentum: botState.runningMomentum,
-        salvage: 0,
+        salvage: botState.salvage,
         sieged: botState.sieged,
         siegedCoverage: botState.siegedCoverage,
         superfortressRegen: botState.superfortressRegen,

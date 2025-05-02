@@ -467,6 +467,14 @@ export default function SimulatorPageInput({
                         updatePageState({ ...pageState, sneakAttacks: val!.value });
                     }}
                 />
+                <LabeledInput
+                    label="Pre-Salvage"
+                    disabled={simulationInProgress}
+                    value={pageState.preSalvage || ""}
+                    onChange={(val) => updatePageState({ ...pageState, preSalvage: val })}
+                    placeholder="0"
+                    tooltip="The amount of salvage applied to this bot before the simulation started. Can be used to simulate hitting a bot a few times with + salvage before aiming to kill the bot to increase loot drops."
+                />
             </div>
         </>
     );
@@ -543,6 +551,14 @@ export default function SimulatorPageInput({
                     onChange={(val) => updatePageState({ ...pageState, salvageTargeting: val })}
                     placeholder="0"
                     tooltip="The bonus of Salvage Targeting Computers that are equipped (if any). Increase salvage generated from Gun-type weapons that fire a single projectile (stacks). Base Salvage Targeting Computer starts at +1, Improved is +2, Advanced is +3, and Makeshift is +4."
+                />
+                <LabeledInput
+                    label="Pre-Salvage"
+                    disabled={simulationInProgress}
+                    value={pageState.preSalvage || ""}
+                    onChange={(val) => updatePageState({ ...pageState, preSalvage: val })}
+                    placeholder="0"
+                    tooltip="The amount of salvage applied to this bot before the simulation started. Can be used to simulate hitting a bot a few times with + salvage before aiming to kill the bot to increase loot drops."
                 />
             </div>
         </>
