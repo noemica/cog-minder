@@ -392,7 +392,8 @@ Destroying a Reinforced Barrier|10||
 Being forgotten by a combat hostile|10||
 Successful hack at a level 1 terminal|Up to 12 [[Sub]]1[[/Sub]]||
 Being spotted and forgotten by a combat hostile|15||
-Being spotted by a [[Behemoth]], [[Heavy]], [[Sentry]], or Watcher|15||
+Being partial spotted by any ""Guarding"" combat hostile or Watcher.
+Most common guards are [[Behemoth|Behemoths]], [[Heavy|Heavies]], and [[Sentry|Sentries]].|15||
 Destroying Sealed Heavy Doors|15||
 Destroying most machines|15||
 Successful hack at a level 2 terminal|Up to 18 [[Sub]]1[[/Sub]]||
@@ -446,26 +447,15 @@ Main floor to Caves exit|37%||
 Caves to Caves exit|19%
 [[/Table]]
 [[Heading:2]]Passive alert reduction[[/Heading]]
-The most substantial alert reduction method aside from exiting the map is a passive alert reduction over time. Every 400 turns, influence will decrease by a diminishing value that starts at 200. Each time alert is reduced, the value decreases by 25%.
+The most substantial alert reduction method aside from exiting the map is a passive alert reduction over time. Every 20 turns, influence will decrease by a slowly diminishing value.
 [[Table]]
-Turn|Alert influence reduction|Cumulative reduction||
-400|200|200||
-800|150|350||
-1200|112|462||
-1600|84|546||
-2000|63|609||
-2400|47|656||
-2800|35|691||
-3200|26|717||
-3600|19|736||
-4000|14|750||
-4400|10|760||
-4800|7|767||
-5200|5|772||
-5600|3|775||
-6000|2|777||
-6400|1|778
-[[/Table]]
+Turn range|Alert Influence reduction per 10 turns|Total cumulative reduction over range||
+20-380|10|190||
+400-780|18|350||
+800-1180|6|470||
+1200-1580|4|550||
+1600-1980|3|610||
+2000-2780|2|690||2800-4380|1|770[[/Table]]
 [[Heading:2]]Other alert influence reduction[[/Heading]]
 There are a few other miscellaneous ways of decreasing alert:
 [[Table]]
