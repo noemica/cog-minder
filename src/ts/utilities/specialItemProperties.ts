@@ -18,9 +18,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
 
     // Antimissile
     "Point Defense System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 8 } },
-    "Point Defense Array": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 16 } },
     "Imp. Point Defense System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 16 } },
-    "Antimissile System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 24 } },
     "Adv. Point Defense System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 24 } },
     "Cep. Antimissile System": { active: "Part Active", trait: { kind: "AntimissileChance", chance: 48 } },
 
@@ -89,8 +87,6 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
         active: "Part Active",
         trait: { kind: "DamageReduction", multiplier: 0.5, remote: true },
     },
-    "Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
-    "Imp. Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
     "AEGIS Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
     "Cep. Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
     "7V-RTL's Ultimate Field": {
@@ -111,14 +107,6 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
         trait: { kind: "DamageResists", resists: { Electromagnetic: 25 } },
     },
     "Hvy. Insulated Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Electromagnetic: 30 } } },
-    "Imp. EM Disruption Field": {
-        active: "Always",
-        trait: { kind: "DamageResists", resists: { Electromagnetic: 50 } },
-    },
-    "Adv. EM Disruption Field": {
-        active: "Always",
-        trait: { kind: "DamageResists", resists: { Electromagnetic: 75 } },
-    },
     "EM Shield": {
         active: "Part Active",
         trait: { kind: "DamageResists", resists: { Electromagnetic: 25 } },
