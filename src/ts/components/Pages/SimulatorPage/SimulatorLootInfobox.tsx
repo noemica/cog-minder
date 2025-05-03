@@ -80,6 +80,11 @@ export default function SimulatorLootItemInfobox({
         itemLootState.totalCritRemoves > 0 ? (itemLootState.totalCritRemoves / itemLootState.numDrops) * 100 : 0;
     const meltedPercent = itemLootState.totalMelted > 0 ? (itemLootState.totalMelted / numKills) * 100 : 0;
 
+    const sortedIntegrityDrops = [...itemLootState.integrityDrops];
+    sortedIntegrityDrops.sort();
+    const medianIntegrity =
+        sortedIntegrityDrops.length === 0 ? 0 : sortedIntegrityDrops[Math.floor(sortedIntegrityDrops.length / 2)];
+
     return (
         <div className="loot-box">
             <div className="loot-box-part-name-container">
@@ -90,13 +95,17 @@ export default function SimulatorLootItemInfobox({
             <div className="loot-box-content-grid">
                 <span>Drop Rate</span>
                 <span className={getClassHighGood(dropRatePercent / 70)}>{dropRatePercent.toFixed(1)}%</span>
-                <span>Avg. Integrity</span>
+                <span>Average Integrity</span>
                 <span className={getClassHighGood(averageDropIntegrity / itemLootState.item.integrity)}>
                     {averageDropIntegrity.toFixed(1)}/{itemLootState.item.integrity}
                 </span>
+                <span>Median Integrity</span>
+                <span className={getClassHighGood(medianIntegrity / itemLootState.item.integrity)}>
+                    {medianIntegrity}/{itemLootState.item.integrity}
+                </span>
                 {showCorruption && (
                     <>
-                        <span>Avg. Corruption</span>
+                        <span>Average Corruption</span>
                         <span className={getClassHighBad(averageCorruptionGain / 7.5)}>
                             {averageCorruptionGain.toFixed(1)}%
                         </span>

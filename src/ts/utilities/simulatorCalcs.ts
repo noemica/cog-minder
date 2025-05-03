@@ -923,6 +923,7 @@ function destroyPart(
         state.lootState.items[part.initialIndex].numDrops += 1;
         state.lootState.items[part.initialIndex].totalCritRemoves += 1;
         state.lootState.items[part.initialIndex].totalIntegrity += part.integrity;
+        state.lootState.items[part.initialIndex].integrityDrops.push(part.integrity);
     }
 
     part.integrity = 0;
@@ -1466,6 +1467,7 @@ export function simulateCombat(state: SimulatorState): boolean {
             if (drop) {
                 // Part dropped, increase stats
                 itemLootState.totalIntegrity += part.integrity;
+                itemLootState.integrityDrops.push(part.integrity);
                 itemLootState.numDrops += 1;
 
                 // Chance for corrupted part on bot death is simply corruption %

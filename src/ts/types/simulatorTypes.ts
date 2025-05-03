@@ -161,6 +161,7 @@ export type ItemLootState = {
     totalFried: number;
     totalMelted: number;
     totalIntegrity: number;
+    integrityDrops: number[];
 };
 
 export type LootState = {

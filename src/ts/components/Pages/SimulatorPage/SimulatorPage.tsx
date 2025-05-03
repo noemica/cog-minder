@@ -692,6 +692,7 @@ function getSimulatorState(
     for (const part of botState.parts) {
         itemLootStates.push({
             item: part.def,
+            integrityDrops: [],
             numDrops: 0,
             totalCritRemoves: 0,
             totalCorruptionPercent: 0,
