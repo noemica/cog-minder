@@ -5961,7 +5961,7 @@ Adds an additional 50 alert if the hack succeeds but is unsuccessful in sabotagi
 [[Heading:3]][[GameText]]Layout(zone)[[/GameText]][[/Heading]]
 Reveals an the map in a 32x32 area around the map. That is, 16 tiles in each cardinal direction from the center tile of the Terminal.
 [[Heading:3]][[GameText]]Inventory()[[/GameText]] Hacks[[/Heading]]
-Due to a bug in Beta 14, the definition of a ""stockpile"" is much different than what a player would consider a stockpile. As a result, this hack provides very little actual information. [[GameText]]Inventory(Prototypes)[[/GameText]] in particular often results in 1 or even 0 stockpiles revealed on most maps. This data can be enabled/disabled in the intel console window.
+All stockpiles matching the hack type on the floor are revealed. This is all groups of items within a 2x2-3x3 area, even if not all tiles in the square are filled out. Occasionally, a stockpile named after one item only actually has one of that item and has other different parts. This data can be enabled/disabled in the intel console window.
 [[Heading:3]][[GameText]]Prototypes[[/GameText]][[/Heading]]
 The number of prototype IDs received is 2 on a security level 1 terminal, 3 on a level 2, and 4 on a level 3. Duplicate prototype IDs cannot be received from a single hack. This hack is never grayed out as a direct hack, even if no new prototype IDs are available.
 [[Heading:3]][[GameText]]Recall()[[/GameText]] Hacks[[/Heading]]
