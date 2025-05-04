@@ -104,6 +104,10 @@ additional_content = {
             'during a rare event where Zhirov is present here instead of at his standard Lab.',
         'Spoiler': 'Spoiler',
     },
+    'Armory Records': {
+        'Content': 'Records obtainable in a terminal inside of the guarded Disassembled Obliterator lab',
+        'Spoiler': 'Spoiler',
+    },
     'Cave Peace Records': {
         'Content': 'Records obtainable from the Cave Peace club\'s Terminal in Scraptown',
         'Spoiler': 'Spoiler',
@@ -132,6 +136,14 @@ additional_content = {
     'Oracle Records': {
         'Content': 'Records obtainable on terminals on the Data Miner map.',
         'Spoiler': 'Spoiler',
+    },
+    'Protoforge Records': {
+        'Content': 'Records obtainable from Terminals inside the Protoforge map.',
+        'Spoiler': 'Redacted',
+    },
+    'Quarantine Records': {
+        'Content': 'Records obtainable from Terminals inside the Quarantine map.',
+        'Spoiler': 'Redacted',
     },
     'Scraplab Records': {
         'Content': 'Records obtainable from the Scraplab Terminals in the Scrap Lab Recycling.',
@@ -205,6 +217,13 @@ additional_content = {
     'MAIN.C Dialogue': {
         'Content': 'Dialogue obtainable by speaking with MAIN.C on the Command map.',
         'Spoiler': 'Redacted',
+    },
+    'Optimus Dialogue': {
+        'Content': 'Dialogue obtainable by speaking with Optimus.',
+        'Spoiler': 'Spoiler',
+        'Entries': {
+            '6': 'Redacted',
+        },
     },
     'Revision 17 Dialogue': {
         'Content': 'Dialogue obtainable by speaking with Revision 17 on various maps.',
