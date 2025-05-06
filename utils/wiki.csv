@@ -1122,21 +1122,55 @@ Attaching unknown [[Alien Artifacts]] or [[Prototype Part|Prototype Parts]] with
 "Cmb. Linear Gravjet","Part","","","","","","","",""
 "Cobbler","Bot","","","","","","","",""
 "Cobbler Unit","Part","Produces one of the following items, some of which are rarer than others:
+[[Heading]]Common: ~6.66% (1/15) chance of each[[/Heading]]
 [[List]]
-[[Sub. Laser]] ~7%|[[Sub. Power Source]] ~7%|
-[[Sub. Beam Cannon]] ~6%|[[Sub. Monowheel]] ~6%|
-[[Barrage Gun]] ~5%|[[Battle Cannon]] ~5%|[[Battle Rifle]] ~5%|[[Flamer]] ~5%|[[Sub. Machine Gun]] ~5%
+[[Battle Cannon]]|
+[[Battle Rifle]]|
+[[Flamer]]|
+[[Sub. Beam Cannon]]|
+[[Sub. Machine Gun]]|
+[[Sub. Monowheel]]|
+[[Sub. Laser]]|
+[[Sub. Power Source]]|
+[[Sub. Shrapnel Launcher]]
 [[/List]]
+
+[[Heading]]Uncommon: ~3.33% (1/30) chance of each[[/Heading]]
 [[List]]
-[[Mak. Light Armor Plating]] ~4%|
-[[Piercing Trap]] ~3%|[[Riot Gun]] ~3%|[[Scrap Shield]] ~3%|[[Shrapnel Trap]] ~3%|[[Spk. Treads]] ~3%|[[Sub. Optics]] ~3%
+[[Barrage Gun]]|
+[[Mak. Light Armor Plating]]|
+[[Piercing Trap]]|
+[[Riot Gun]]|
+[[Scrap Shield]]|
+[[Shrapnel Trap]]|
+[[Spk. Treads]]|
+[[Sub. Optics]]|
+[[Sub. Shrapnel Launcher]]
 [[/List]]
+[[Heading]]Rare: ~0.66% (1/150) chance of each[[/Heading]]
 [[List]]
-[[Mak. Thermal Plating]] ~2%|[[Sub. Shrapnel Launcher]] ~2%|
-[[Humpback]] ~1%|[[Mak. Axe]] ~1%|[[Mak. Flight Unit]] ~1%|[[Mak. Kinetic Plating]] ~1%|[[Mak. Hacking Suite]] ~1%|[[Mak. Hammer]] ~1%|[[Mak. Laser]] ~1%|[[Mak. Leg]] ~1%|[[Mak. Spear]] ~1%|[[Mak. Sword]] ~1%|[[Mak. System Shield]] ~1%|[[Multitool]] ~1%|[[Ripper]] ~1%
-[[/List]]
-[[List]]
-[[Enh. Flamer]] ~0.5%|[[Hvy. Riot Gun]] ~0.5%|[[Hvy. Battle Rifle]] ~0.5%|[[Mak. Power Source]] ~0.5%|[[Mak. Shrapnel Gun]] ~0.5%|[[Mak. System Restoration Module]] ~0.5%|[[Slug Cannon]] ~0.5%
+[[Enh. Flamer]]|
+[[Humpback]]|
+[[Hvy. Battle Rifle]]|
+[[Hvy. Riot Gun]]|
+[[Lgt. Humpback]]|
+[[Mak. Axe]]|
+[[Mak. Flight Unit]]|
+[[Mak. Hacking Suite]]|
+[[Mak. Hammer]]|
+[[Mak. Kinetic Plating]]|
+[[Mak. Laser]]|
+[[Mak. Leg]]|
+[[Mak. Power Source]]|
+[[Mak. Shrapnel Gun]]|
+[[Mak. Spear]]|
+[[Mak. Sword]]|
+[[Mak. System Restoration Module]]|
+[[Mak. System Shield]]|
+[[Mak. Thermal Plating]]|
+[[Multitool]]|
+[[Ripper]]|
+[[Slug Cannon]]
 [[/List]]","","","","","","",""
 "Cogmind","Bot","That's you.","","","","","","",""
 "Coil Gun","Part","","","","","","","",""
