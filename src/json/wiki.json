@@ -10243,6 +10243,10 @@
    "Content": "This is a list of terminology, or potentially things that do not merit a full page. Also check out [[Acronyms]].\n[[Heading:3]]Partial Spot[[/Heading]]\nPartial spotting is when you move through a (hostile) bots field of vision while its not its turn. The bot will investigate where it saw you, look a few tiles further then head back to whatever it was doing."
   },
   {
+   "Name": "TF Node",
+   "Content": "[[Image]]TF Node.png|A TF Node in a [[Factory]] junction[[/Image]]\nTF Nodes are blue one-tile non-interactive machines that can appear in most [[0b10]]-controlled maps. They appear at junctions in locations similar to where [[Sentry|Sentries]] would be placed. They are more numerous in larger maps, although they are not guaranteed to be present on any given map. They serve no purpose when active, but they can drop [[Sensor Arrays]] and [[Signal Interpreters]] when destroyed. No parts may drop when destroyed, but usually at least one of the two will drop. The parts contained within depend on the depth:\n[[Table]]\nDepth/Map|Sensor Array|Signal Interpreter||\n-10 to -9|[[Sensor Array]]|[[Signal Interpreter]]||-8 to -5|[[Imp. Sensor Array]]|[[Imp. Signal Interpreter]]||\n-4 to -1|[[Adv. Sensor Array]]|[[Adv. Signal Interpreter]]\n[[/Table]]"
+  },
+  {
    "Name": "Transfer Station",
    "Content": ""
   },
