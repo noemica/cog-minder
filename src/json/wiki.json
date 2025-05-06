@@ -1258,6 +1258,15 @@
    "Content": "Duelists are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[0b10]] combat bots armed with a [[Slashing Weapons|Slashing Weapon]] that can sever off important parts. While they can only attack at short range, they are frightening to face up close with their [[Melee Analysis Suites]] and [[Actuators]] allowing them to hit hard and fast. They also have [[Core Shieldings|Core Shielding]] which makes them immune to direct critical hits and a bit more survivable.\nDuelists don't have any particular damage type weaknesses, though their biggest weakness is [[Ballistic Cannons]] because the knockback will help keep a them out of melee range. Other than that, any non-melee weapon is good to use against Duelists. Using melee against them is a little more dangerous since that means Cogmind hast to go toe-to-toe with their strong melee loadout. Melee is a worse idea because of their innate minor slashing/piercing resistances.\n[[Gallery]]Duelists.png|All Duelist variants and colors[[/Gallery]]\n[[Heading]]Squads[[/Heading]]\nDuelists may appear in the following squads:\n[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Patrol Squad]] - [[Squad Leader]] only normally, or in [[Armory]]|[[Security Squad]] - Armory or [[Garrison|Garrisons]][[/List]]"
   },
   {
+   "Name": "Elite",
+   "Bots": [
+    "Elite (4)",
+    "Elite (7)"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Enhanced Bot",
    "Bots": [
     "Enhanced Demolisher",
@@ -1266,15 +1275,6 @@
     "Enhanced Programmer",
     "Enhanced Q-Series",
     "Enhanced Sentry"
-   ],
-   "Content": "",
-   "Spoiler": "Spoiler"
-  },
-  {
-   "Name": "Elite",
-   "Bots": [
-    "Elite (4)",
-    "Elite (7)"
    ],
    "Content": "",
    "Spoiler": "Spoiler"
@@ -1556,15 +1556,6 @@
    "Spoiler": "Spoiler"
   },
   {
-   "Name": "Scrapper",
-   "Bots": [
-    "Scrapper (3)",
-    "Scrapper (6)"
-   ],
-   "Content": "",
-   "Spoiler": "Spoiler"
-  },
-  {
    "Name": "Scrapoid",
    "Bots": [
     "Scrapoid (3)",
@@ -1572,6 +1563,15 @@
     "Scrapoid (8)"
    ],
    "Content": "Scrapoids are [[UFD]]-aligned combat bots Cogmind can create by using the [[Scrapoid Pod]] or by using the [[GameText]]Force(Scrapoids)[[/GameText]] hack at [[Recycling Unit|Recycling Units]]. They have little in the way of defenses, but have high offensive capabilities with their unique Ovr. weaponry, and can repair their parts and even core with their [[Scrap Suit|Scrap Suits]]. They also carry a [[CPS Tube]] and can use it while in combat.",
+   "Spoiler": "Spoiler"
+  },
+  {
+   "Name": "Scrapper",
+   "Bots": [
+    "Scrapper (3)",
+    "Scrapper (6)"
+   ],
+   "Content": "",
    "Spoiler": "Spoiler"
   },
   {
@@ -7035,16 +7035,6 @@
    "Spoiler": "Spoiler"
   },
   {
-   "Name": "Point Defense Systems",
-   "Parts": [
-    "Point Defense System",
-    "Imp. Point Defense System",
-    "Adv. Point Defense System",
-    "Cep. Antimissile System"
-   ],
-   "Content": ""
-  },
-  {
    "Name": "Armor Integrity Analyzers",
    "Parts": [
     "Armor Integrity Analyzer",
@@ -7282,6 +7272,15 @@
    "Content": ""
   },
   {
+   "Name": "EM Disruption Fields",
+   "Parts": [
+    "EM Disruption Field",
+    "Adv. EM Disruption Field",
+    "Exp. EM Disruption Field"
+   ],
+   "Content": ""
+  },
+  {
    "Name": "Electromagnetic Cannons",
    "Part Category": "Electromagnetic Cannons",
    "Content": ""
@@ -7294,15 +7293,6 @@
   {
    "Name": "Electromagnetic Launchers",
    "Part Category": "Electromagnetic Launchers",
-   "Content": ""
-  },
-  {
-   "Name": "EM Disruption Fields",
-   "Parts": [
-    "EM Disruption Field",
-    "Adv. EM Disruption Field",
-    "Exp. EM Disruption Field"
-   ],
    "Content": ""
   },
   {
@@ -7660,6 +7650,16 @@
     "Plasma Cutter",
     "Imp. Plasma Cutter",
     "Exp. Plasma Cutter"
+   ],
+   "Content": ""
+  },
+  {
+   "Name": "Point Defense Systems",
+   "Parts": [
+    "Point Defense System",
+    "Imp. Point Defense System",
+    "Adv. Point Defense System",
+    "Cep. Antimissile System"
    ],
    "Content": ""
   },
@@ -9946,7 +9946,7 @@
   },
   {
    "Name": "Community Challenges",
-   "Content": "This page contains alternate game challenges created by the community.\n[[Heading]][[Drained L-Cannon]] (DLC) Victory[[/Heading]]\nThis challenge relates to redacted-tier content.\n[[Redacted]]The Drained L-Cannon must be acquired in [[Section 7]] and taken to [[Command]] to kill [[MAIN.C]]. Through precise positioning and aiming, it is possible to kill both phases simultaneously. Then, it must be taken to [[Access_0]] and used to eliminate the [[Architect]]. Again, with proper aiming, it is possible to kill the Architect and the singularity gate simultaneously.[[/Redacted]]\n[[Heading:2]]DLC Completed Runs[[/Heading]]\n[[List]]Runia [[https://leiavoia.net/cogmind/dataminer/index.html?NqKDXkNv4e2NUuaXi|(scoresheet)]]|Runia (2nd completion) [[https://www.youtube.com/watch?v=V8C6bMmqdSA|(video part 1)]] [[https://www.youtube.com/watch?v=j3a8LcHc6p4|(video part 2)]] [[https://leiavoia.net/cogmind/dataminer/?FX1v9SHraRBMypQBq|(scoresheet)]][[/List]]\n[[Heading]]Inspector Madlad[[/Heading]]\n[[FanartGallery]]Inspector Madlad.png|[[/FanartGallery]]\n[[Heading:2]]Inspector Madlad Completed Runs[[/Heading]]\nNone yet\n[[Heading]]No Info Only War[[/Heading]]\n[[B]]No Info, Only War[[/B]] - Ever wondered what it's like to get a \"pure\" combat win without any of those pesky sensors or scanners or burner hackware, pooling all your resources not into avoiding combat or escaping the complex quickly, but into nothing but sheer, overwhelming power? Then you might be interested in this challenge!\nForbidden: Much like leiavoia's Tank it to the Top, you must use only grounded propulsion, not even core hover if you can avoid it. Strictly forbidden parts are anything listed within Cogminder as [[Hackware]] or [[Infowar]], and no [[Datajacks]] or [[Component Analysis Suites]] either! Alignment options: [[RIF]] and [[Data Conduit|DC]] are also forbidden. If you get [[FarCom]], you must aggro the [[Exiles (Group)]] before leaving the map. You are also not allowed to enter the [[Hub_04(d)|Hub]] branch map.\nPermitted: Unlike Tank it to the Top, you can go wherever you want (you may not even be able to ID exits, after all!), and you can use any unauthorized hacks you know, if you can succeed with no hackware! Feel free to restrict those for extra points (the points mean nothing). Parts that don't strictly help mid-combat, but don't give intel, like recalibrators or salvage targeting, are allowed and even recommended. Alignment options: [[Encrypted Comm Array|ECA]], [[UFD]], [[Core Reset Matrix|CRM]], and [[Imprint]] are fine.\nObjective: Surface exit. Extended is bonus points!\n[[Heading:2]]No Info Only War Completed Runs[[/Heading]]\n[[List]]aoemica [[https://www.youtube.com/watch?v=t6r8d4V9lKw|(video)]] [[https://leiavoia.net/cogmind/dataminer/?5wSoxrLwbPipVWytY|(scoresheet)]]|Captain Winky [[https://www.youtube.com/watch?v=K4PlqRi522U|(video)]] [[https://leiavoia.net/cogmind/dataminer/?CrYjCg31pBNi8XSEs|(scoresheet)]]|Darby [[https://leiavoia.net/cogmind/dataminer/?go3wEVTNs5Z9yFzSU|(scoresheet)]][[/List]]\n[[Heading]]Tank It To The Top[[/Heading]]\n\ud83e\uddbe \ud83d\udca5 \ud83d\udc4d\ud83c\udffc leiavoia's \"Tank It To The Top\" Challenge -  Showing just how hard is it to play combat treads from a new-player perspective. Think you're tough? Give it a try!\nDa Rulez: You have to take a combat build (treads recommended, but any grounded propulsion type is allowed) through a \"straight shot\" run. You may not take any branches, including [[Mines]], [[Caves]], [[DSF]] and [[Garrison|Garrisons]]. [[Wastes|Waste]] [[Chute Trap|Chutes]] are allowed. Access surface exit is the goal (\"W0\"). This challenge is meant to be \"spoiler free\", so you may not use any \"unauthorized\" terminal hacks that would be unknown to a new player (no botnets!). You can wear other prop in an emergency, but not as an alternative, and not as \"hover treads\".\nBackground: It turns out that doing this is really difficult. I wanted to make a n00b-friendly combat how-to, but keep getting my bot kicked. Attempts at doing this lately all burn down when alert finally catches up. Treads builds desperately want to escape to branches, but when there are none, you need to find a different method. Let me know if you make it work, and bonus points if its on video. Happy treading!\n[[Heading:2]]Tank It To The Top Completed runs[[/Heading]]\n[[List]]aoemica [[https://www.youtube.com/watch?v=fHhskjMH3oM|(video)]] [[https://leiavoia.net/cogmind/dataminer/?NX1wD2x8kVHi75wkF|(scoresheet)]]|CaptainWinky [[https://www.youtube.com/watch?v=Wmgx4KqNDtk|(video)]] [[https://leiavoia.net/cogmind/dataminer/?ULLgnw8djhgafSLZe|(scoresheet)]]|KTG-V3 [[https://www.youtube.com/watch?v=6Pto2Nddnd8|(video)]] [[https://leiavoia.net/cogmind/dataminer/?6RdhT6MNbTHGtjkBM|(scoresheet)]]|Kyzrati [[https://www.youtube.com/watch?v=QCkqoNAzhAc|(video)]] [[https://leiavoia.net/cogmind/dataminer/?K5siMRGDowSN6uQB|(scoresheet)]]|leiavoia [[https://www.youtube.com/watch?v=q6cYtmvHb1s&list=PLgSRAwnYg70TMw79Nj1VRKLhCR2WBjLHs|(video series)]] [[https://leiavoia.net/cogmind/dataminer/?bdBySbn3XupP3Lhba|(scoresheet)]][[/List]]"
+   "Content": "This page contains alternate game challenges created by the community.\n[[Heading]][[Drained L-Cannon]] (DLC) Victory[[/Heading]]\nThis challenge relates to redacted-tier content.\n[[Redacted]]The Drained L-Cannon must be acquired in [[Section 7]] and taken to [[Command]] to kill [[MAIN.C]]. Through precise positioning and aiming, it is possible to kill both phases simultaneously. Then, it must be taken to [[Access_0]] and used to eliminate the [[Architect]]. Again, with proper aiming, it is possible to kill the Architect and the singularity gate simultaneously.[[/Redacted]]\n[[Heading:2]]DLC Completed Runs[[/Heading]]\n[[List]]Runia [[https://leiavoia.net/cogmind/dataminer/index.html?NqKDXkNv4e2NUuaXi|(scoresheet)]]|Runia (2nd completion) [[https://www.youtube.com/watch?v=V8C6bMmqdSA|(video part 1)]] [[https://www.youtube.com/watch?v=j3a8LcHc6p4|(video part 2)]] [[https://leiavoia.net/cogmind/dataminer/?FX1v9SHraRBMypQBq|(scoresheet)]][[/List]]\n[[Heading]]Inspector Madlad[[/Heading]]\n[[FanartGallery]]Inspector Madlad.png|[[/FanartGallery]]\n[[Heading:2]]Inspector Madlad Completed Runs[[/Heading]]\nNone yet\n[[Heading]]No Info Only War[[/Heading]]\n[[B]]No Info, Only War[[/B]] - Ever wondered what it's like to get a \"pure\" combat win without any of those pesky sensors or scanners or burner hackware, pooling all your resources not into avoiding combat or escaping the complex quickly, but into nothing but sheer, overwhelming power? Then you might be interested in this challenge!\nForbidden: Much like leiavoia's Tank it to the Top, you must use only grounded propulsion, not even core hover if you can avoid it. Strictly forbidden parts are anything listed within Cogminder as [[Hackware]] or [[Infowar]], and no [[Datajacks]] or [[Component Analysis Suites]] either! Alignment options: [[RIF]] and [[Data Conduit|DC]] are also forbidden. If you get [[FarCom]], you must aggro the [[Exiles (Group)]] before leaving the map. You are also not allowed to enter the [[Hub_04(d)|Hub]] branch map.\nPermitted: Unlike Tank it to the Top, you can go wherever you want (you may not even be able to ID exits, after all!), and you can use any unauthorized hacks you know, if you can succeed with no hackware! Feel free to restrict those for extra points (the points mean nothing). Parts that don't strictly help mid-combat, but don't give intel, like recalibrators or salvage targeting, are allowed and even recommended. Alignment options: [[Encrypted Comm Array|ECA]], [[UFD]], [[Core Reset Matrix|CRM]], and [[Imprint]] are fine.\nObjective: Surface exit. Extended is bonus points!\n[[Heading:2]]No Info Only War Completed Runs[[/Heading]]\n[[List]]aoemica [[https://www.youtube.com/watch?v=t6r8d4V9lKw|(video)]] [[https://leiavoia.net/cogmind/dataminer/?5wSoxrLwbPipVWytY|(scoresheet)]]|Captain Winky [[https://www.youtube.com/watch?v=K4PlqRi522U|(video)]] [[https://leiavoia.net/cogmind/dataminer/?CrYjCg31pBNi8XSEs|(scoresheet)]]|Darby [[https://leiavoia.net/cogmind/dataminer/?go3wEVTNs5Z9yFzSU|(scoresheet)]][[/List]]\n[[Heading]]Tank It To The Top[[/Heading]]\n\ue05e\uff66\uff7e \ue05e\u5fb4 \ue05e\u7dcf\ue05e\u677e leiavoia's \"Tank It To The Top\" Challenge -  Showing just how hard is it to play combat treads from a new-player perspective. Think you're tough? Give it a try!\nDa Rulez: You have to take a combat build (treads recommended, but any grounded propulsion type is allowed) through a \"straight shot\" run. You may not take any branches, including [[Mines]], [[Caves]], [[DSF]] and [[Garrison|Garrisons]]. [[Wastes|Waste]] [[Chute Trap|Chutes]] are allowed. Access surface exit is the goal (\"W0\"). This challenge is meant to be \"spoiler free\", so you may not use any \"unauthorized\" terminal hacks that would be unknown to a new player (no botnets!). You can wear other prop in an emergency, but not as an alternative, and not as \"hover treads\".\nBackground: It turns out that doing this is really difficult. I wanted to make a n00b-friendly combat how-to, but keep getting my bot kicked. Attempts at doing this lately all burn down when alert finally catches up. Treads builds desperately want to escape to branches, but when there are none, you need to find a different method. Let me know if you make it work, and bonus points if its on video. Happy treading!\n[[Heading:2]]Tank It To The Top Completed runs[[/Heading]]\n[[List]]aoemica [[https://www.youtube.com/watch?v=fHhskjMH3oM|(video)]] [[https://leiavoia.net/cogmind/dataminer/?NX1wD2x8kVHi75wkF|(scoresheet)]]|CaptainWinky [[https://www.youtube.com/watch?v=Wmgx4KqNDtk|(video)]] [[https://leiavoia.net/cogmind/dataminer/?ULLgnw8djhgafSLZe|(scoresheet)]]|KTG-V3 [[https://www.youtube.com/watch?v=6Pto2Nddnd8|(video)]] [[https://leiavoia.net/cogmind/dataminer/?6RdhT6MNbTHGtjkBM|(scoresheet)]]|Kyzrati [[https://www.youtube.com/watch?v=QCkqoNAzhAc|(video)]] [[https://leiavoia.net/cogmind/dataminer/?K5siMRGDowSN6uQB|(scoresheet)]]|leiavoia [[https://www.youtube.com/watch?v=q6cYtmvHb1s&list=PLgSRAwnYg70TMw79Nj1VRKLhCR2WBjLHs|(video series)]] [[https://leiavoia.net/cogmind/dataminer/?bdBySbn3XupP3Lhba|(scoresheet)]][[/List]]"
   },
   {
    "Name": "Corrupted Parts",
@@ -10239,16 +10239,16 @@
    "Content": "[[Image]]Surveillance Squad.png|A Watcher surveillance squad[[/Image]]\nSurveillance squads are [[0b10]] aligned [[Squad|squads]] that roam the map looking for hostiles to report to 0b10 combat bots. They consist only of a single [[Watcher]]. This is a [[W-16 Scout]] on -10 and -9, a [[W-25 Informer]] on -8 through -5, and a [[W-44 Eye]] on -4 through -1. They can be Enumerated at [[Terminal|Terminals]]. They patrol between two points at a slow pace, then turn back around when they reach the end. The [[Garrison Access]] hack [[Spoiler]]Trojan(Watchers)[[/Spoiler]] reports where all Watchers are at all times."
   },
   {
+   "Name": "TF Node",
+   "Content": "[[Image]]TF Node.png|A TF Node in a [[Factory]] junction[[/Image]]\nTF Nodes are blue one-tile non-interactive machines that can appear in most [[0b10]]-controlled maps. They appear at junctions in locations similar to where [[Sentry|Sentries]] would be placed. They are more numerous in larger maps, although they are not guaranteed to be present on any given map. They serve no purpose when active, but they can drop [[Sensor Arrays]] and [[Signal Interpreters]] when destroyed. No parts may drop when destroyed, but usually at least one of the two will drop. The parts contained within depend on the depth:\n[[Table]]\nDepth/Map|Sensor Array|Signal Interpreter||\n-10 to -9|[[Sensor Array]]|[[Signal Interpreter]]||-8 to -5|[[Imp. Sensor Array]]|[[Imp. Signal Interpreter]]||\n-4 to -1|[[Adv. Sensor Array]]|[[Adv. Signal Interpreter]]\n[[/Table]]"
+  },
+  {
    "Name": "Terminal",
    "Content": "[[Image]]../game_sprites/Terminal.png|An 0b10-controlled Terminal[[/Image]]\nTerminals are typically [[0b10]]-controlled [[Interactive Machine|Interactive Machines]] that [[Cogmind]] can hack for a large variety of benefits. Unlike other interactive machines, non-limited 0b10 Terminals do not list all possible \"authorized\" hacks and instead only show a selection of hacks chosen from a large pool. Hack not listed can still be indirectly hacked through manual hacking, though this will incur a -15% penalty per security level to the base success rate of hacks. Some [[Branch|Branches]] have [[Derelict]]-controlled Terminals. 0b10 Terminals are also sometimes guarded by an [[Operator]], which if alerted will lock down the Terminal and call for a [[Reinforcement Squad]] unless it or the Terminal is disabled/destroyed.\n[[Heading]]Lore[[/Heading]]\n[[Lore]]0b10 Records|Terminal[[/Lore]]\n[[Heading]]Types of 0b10 Terminals[[/Heading]]\n[[Table]]Type|Average Size|Armor|Direct hacks|Other Notes||\nStandard security level 1|Small|18|Few available direct hacks|N/A||\n2|Medium|25|More available direct hacks|N/A||\n3|Large|30|Lots of available direct hacks|N/A||\nTerminals inside [[Garrison|Garrisons]]|Small|18|One of Access(Emergency), Download(Navigation), Download(Registry), or Download(Security)|Terminal is always security level 2||\nDoor-type/Lore Terminals|1 tile|18|Usually one direct hack, to open the relevant door or get relevant lore record|Terminal is always security level 1||\nCave outpost Terminal|1 tile|18|Random mix of flavor (useless) and intel \"Report\" hacks, with flavor reports always grouped on top of the list and intel reports grouped on the bottom of the list ending in X|Terminal is always security level 1[[/Table]]\n\n[[Heading]]Hacks[[/Heading]]\n[[Hacks]]Terminal[[/Hacks]]\n\n[[Heading:2]]Operator [[Data Core]][[/Heading]]\nMoving over a destroyed Operator's Data Core will automatically collect and it extract its dynamic key, which provides a one-time bonus that multiplies to the base success rate of all direct and indirect hacks by 1.5 if their base success rate was positive, or raise the base success rate to 0% if it was negative. The dynamic key can only be used within 40 turns before it expires at its Operator's Terminal.\n\n[[Heading:2]][[Multitool]][[/Heading]]\nUsing a Multitool on a Terminal's interactive tile removes all direct hacks and causes tracing to begin immediately, but applies a modifier to indirect hacks. This modifier can range from -20% to +50%. Multitool is best used with a lot of [[Defensive Hackware]] to increase the number of hacks that can be safely performed after modification.\n[[Heading:2]]Central database authorization[[/Heading]]\nIndirect hacks for lore records, prototype IDs, part or robot schematics, and robot analyses, are all considered \"database hacks\". Successfully hacking any of them has a base 25% chance to instead cause a map-wide central database lockout, preventing further indirect database hacks. However, direct hacks of those types remain possible after a central database lockout, and they cannot cause one in the first place. The first indirect database hack on a map cannot cause a database lockout.\nNot all lore records, parts schematic, robot analyses or robot schematics can be indirectly hacked on all Terminals. Terminals have a level of database authorization dependent on security level and current depth, equal to (10 - current depth + security level). It is only possible to indirectly hack a part/robot schematic or analysis if the Terminal's authorization level is equal to or higher than the rating/tier of the relevant part/robot (prototype parts are considered to have a +1 to their rating for this purpose).\nFor example, at -5/Factory, level 2 Terminals have an authorization level of (10 - 5 + 2) = 7, which would allow hacking for standard rating 7 parts or prototype rating 6 parts.\nLore records also have a hidden rating/tier stat. This value can only be determined by attempting and failing to access a particular record.\n[[Heading:2]]Additional Details/Usage Tips[[/Heading]]\n[[Heading:3]]Grayed Out Direct Hacks[[/Heading]]\n[[GameText]][Local Emergency Access][[/GameText]], [[GameText]][Purge Alert][[/GameText]] and all [[GameText]][Traps][[/GameText]] hacks appear greyed out in direct hacks if they are currently useless. In other words, if a Terminal has a greyed out direct [[GameText]][Locate Traps][[/GameText]] hack, then there are no traps within the Terminal's range.\n[[Heading:3]]Grouped Direct Hacks[[/Heading]]\nIf either [[GameText]][Disarm Traps][[/GameText]] or [[GameText]][Reprogram Traps][[/GameText]] is available as a direct hack, then [[GameText]][Locate Traps][[/GameText]] will also be a direct hack on that Terminal. If [[GameText]][Purge Alert][[/GameText]] is available as a direct hack, then [[GameText]][Check Alert][[/GameText]] will also be a direct hack on that Terminal. If there is a direct [[GameText]][Recall][[/GameText]] hack available, then the corresponding [[GameText]][Status][[/GameText]] hack will also be available on that Terminal.\n[[Heading:3]][[GameText]]Access(Branch)[[/GameText]][[/Heading]]\nCertain branch entrances are not revealed by this hack because they are either unknown to 0b10 or considered more secret/secure. The full list of these branches is: [[Lab]], [[Section 7]], [[Scraptown]] and [[Subcaves]].\n[[Heading:3]][[GameText]]Access(Emergency)[[/GameText]][[/Heading]]\nThis hack reveals emergency accesses within a radius of 20 tiles of the Terminal. Within a Garrison, this reveals all emergency accesses as well as phase walls throughout the entire map.\n[[Heading:3]][[GameText]]Alert(Check)[[/GameText]][[/Heading]]\n[[Alert]] is reported in the alphabet form rather than as the exact precise number. For example, the Terminal reports alert level 1-A at 200 influence.\n[[Heading:3]][[GameText]]Alert(Purge)[[/GameText]][[/Heading]]\nThe base success rate of this hack goes down by 10% after each successful hack. This reduction only applies for the current map.\n[[Heading:3]][[GameText]]Enumerate()[[/GameText]] Hacks[[/Heading]]\nEnumerate hacks reveal the current position of all bots of the matching type across the map. These positions can be enabled/disabled in the intel console window. These positions will not update in realtime. If the hack is performed again, all existing intel positions of the same type will be cleared before being added again, so the intel does not stack.\n[[Spoiler]][[Heading:3]][[GameText]]Force(Sabotage)[[/GameText]][[/Heading]]\nAdds an additional 50 alert if the hack succeeds but is unsuccessful in sabotaging a machine. Adds 100 alert if the hack succeeds and sabotages a machine. Additional alert from the explosive machine does not get added like when Cogmind shoots a machine to blow it up. This can reduce alert gained in maps with huge explosive machines such as [[Hub_04(d)]]. In fact, Hub is the best place to use this hack, as blowing up a random machine is seldom useful in most other maps, and the only valid targets within the map are the Network Hubs themselves.[[/Spoiler]]\n[[Heading:3]][[GameText]]Layout(zone)[[/GameText]][[/Heading]]\nReveals an the map in a 32x32 area around the map. That is, 16 tiles in each cardinal direction from the center tile of the Terminal.\n[[Heading:3]][[GameText]]Inventory()[[/GameText]] Hacks[[/Heading]]\nAll stockpiles matching the hack type on the floor are revealed. This is all groups of items within a 2x2-3x3 area, even if not all tiles in the square are filled out. Occasionally, a stockpile named after one item only actually has one of that item and has other different parts. This data can be enabled/disabled in the intel console window.\n[[Heading:3]][[GameText]]Prototypes[[/GameText]][[/Heading]]\nThe number of prototype IDs received is 2 on a security level 1 terminal, 3 on a level 2, and 4 on a level 3. Duplicate prototype IDs cannot be received from a single hack. This hack is never grayed out as a direct hack, even if no new prototype IDs are available.\n[[Heading:3]][[GameText]]Recall()[[/GameText]] Hacks[[/Heading]]\nThe base success rate of these hacks go down by 10% after each successful hack. This only applies to hacks of the same type, not all Recall hacks. This reduction only applies for the current map.\n[[Heading:3]][[GameText]]Schematic()[[/GameText]] Hacks[[/Heading]]\nDirect schematic hacks may contain parts/bots with a rating/tier up to 2 higher than that of the base floor. For example, in -7 Factory, standard floor parts may be rating 4, but schematics up to rating 6 may be offered.\nWhen entering a map, if you already have a schematic that's supposed to appear on a Terminal, that schematic hack may be re-rolled.[[Sup]][[Terminal#references|[1]]][[/Sup]]\n[[Heading]]References[[/Heading]]\n[[List:Ordered]]\n[[https://www.gridsagegames.com/blog/2018/11/debugging-mapgen-seed-divergence/|Kyzrati's blog]]: \"recalling that schematic hacks at Terminals would favor the player by usually re-rolling if the randomly chosen schematic happened to be one they already had.\"[[/List]]"
   },
   {
    "Name": "Terminology",
    "Content": "This is a list of terminology, or potentially things that do not merit a full page. Also check out [[Acronyms]].\n[[Heading:3]]Partial Spot[[/Heading]]\nPartial spotting is when you move through a (hostile) bots field of vision while its not its turn. The bot will investigate where it saw you, look a few tiles further then head back to whatever it was doing."
-  },
-  {
-   "Name": "TF Node",
-   "Content": "[[Image]]TF Node.png|A TF Node in a [[Factory]] junction[[/Image]]\nTF Nodes are blue one-tile non-interactive machines that can appear in most [[0b10]]-controlled maps. They appear at junctions in locations similar to where [[Sentry|Sentries]] would be placed. They are more numerous in larger maps, although they are not guaranteed to be present on any given map. They serve no purpose when active, but they can drop [[Sensor Arrays]] and [[Signal Interpreters]] when destroyed. No parts may drop when destroyed, but usually at least one of the two will drop. The parts contained within depend on the depth:\n[[Table]]\nDepth/Map|Sensor Array|Signal Interpreter||\n-10 to -9|[[Sensor Array]]|[[Signal Interpreter]]||-8 to -5|[[Imp. Sensor Array]]|[[Imp. Signal Interpreter]]||\n-4 to -1|[[Adv. Sensor Array]]|[[Adv. Signal Interpreter]]\n[[/Table]]"
   },
   {
    "Name": "Transfer Station",
@@ -10276,7 +10276,7 @@
   },
   {
    "Name": "YASD",
-   "Content": "\"Yet Another Stupid Death (commonly abbreviated to YASD) is used when a player has done something, usually avoidable, that leads to their hero's demise.\" \u2014 [[https://nethackwiki.com/wiki/Yet_Another_Stupid_Death|NetHack Wiki]]\n\nCogmind is full of silly ways to die. Here are just a few. A lot of them are harsh teachers of lessons best learned the hard way.\n\nNote: this page is heavily opinion-based; your mileage may vary.\n\n[[Heading]]General[[/Heading]]\n[[List]]\nTrying to run away or reposition with slow movement speed, either because you missed the warning or because you think you know better. When the game says [[GameText]]MOVEMENT SPEED EXTREMELY SLOW![[/GameText]] in all caps, take heed.\n|Fighting next to a bunch of explosive machines. Or in the middle of a bunch of explosive machines. They seem to always explode when you're within range.\n|Fighting next to a bunch of explosive machines, but with a melee weapon! Too bad it does knockback... BOOM\n|Actually fighting a bunch of explosive machines, for example, because you forgot to turn off Force Melee before moving in one's direction.\n|Digging too far and getting crushed by a cave-in. Sometimes it's worth rolling the dice.\n|Attaching a risky prototype that fries a vital part.\n|Forgetting to watch your heat. It does core damage if it gets too high...\n|Forgetting to watch your corruption.\n|Getting your squishy [[Infowar]] destroyed because you forget to swap it out in combat.\n|Spending too much time around a [[Heavy]], especially as a frail flight build.\n|In general, getting spotted on a fragile build by bots you can't outrun (think [[Swarmer|Swarmers]], [[Programmer|Programmers]], and especially [[Cutter|Cutters]]).\n[[/List]]\n\n[[Heading]]Location-Specific[[/Heading]]\n[[List]]\nGoing to the [[Mines]] without a launcher. [[GameText]]Infestation in the Mines, dispatching Demolisher squad.[[/GameText]]\n|Going to the [[Subcaves]] unprepared.\n|Going to the Subcaves unprepared, \"but I got swarmed last time, so this time I'll bring a launcher!\"\n|Forgetting that parts self-destruct in the [[Caves]]. Hope you brought spares.\n|Misfiring in a Caves branch, aggroing the inhabitants. Bonus points if it's [[Zion]] or [[Warlord (Location)]] and you [[I]]almost[[/I]] made it to the [[Spoiler]]Quarantine Array[[/Spoiler]].\n|Visiting [[Zion]] or [[Warlord (Location)]] when you have [[RIF]].\n|Aggroing the friends of [[Warlord]] while you fight off the [[Spoiler]]0b10 invasion[[/Spoiler]].\n|Killing or trying to kill [[Data Miner]] and accidentally sitting in the [[Spoiler]]gamer chair, i.e., Data Conduit[[/Spoiler]]. [[Spoiler]][[Tracker|Trackers]] can be dealt with, if you're prepared.[[/Spoiler]]\n|Going too far in the [[Zion Deep Caves]] without a plan to deal with [[Golem|what's inside]].\n|The many ways of going into [[Testing]] or [[Quarantine]] on [[FarCom]] (unless you're prepared, of course). Perhaps you needed to desperately dive for an exit. Perhaps you forgot the [[Exiles (Group)|Exiles']] warning. Or perhaps you chose to roll the dice.\n|Having a bot destroy the terminal at the [[Surface]] exit in [[Access]]. The closer you were to the terminal, the sillier it is.\n[[/List]]"
+   "Content": "\"Yet Another Stupid Death (commonly abbreviated to YASD) is used when a player has done something, usually avoidable, that leads to their hero's demise.\" \u7ab6\ufffd [[https://nethackwiki.com/wiki/Yet_Another_Stupid_Death|NetHack Wiki]]\n\nCogmind is full of silly ways to die. Here are just a few. A lot of them are harsh teachers of lessons best learned the hard way.\n\nNote: this page is heavily opinion-based; your mileage may vary.\n\n[[Heading]]General[[/Heading]]\n[[List]]\nTrying to run away or reposition with slow movement speed, either because you missed the warning or because you think you know better. When the game says [[GameText]]MOVEMENT SPEED EXTREMELY SLOW![[/GameText]] in all caps, take heed.\n|Fighting next to a bunch of explosive machines. Or in the middle of a bunch of explosive machines. They seem to always explode when you're within range.\n|Fighting next to a bunch of explosive machines, but with a melee weapon! Too bad it does knockback... BOOM\n|Actually fighting a bunch of explosive machines, for example, because you forgot to turn off Force Melee before moving in one's direction.\n|Digging too far and getting crushed by a cave-in. Sometimes it's worth rolling the dice.\n|Attaching a risky prototype that fries a vital part.\n|Forgetting to watch your heat. It does core damage if it gets too high...\n|Forgetting to watch your corruption.\n|Getting your squishy [[Infowar]] destroyed because you forget to swap it out in combat.\n|Spending too much time around a [[Heavy]], especially as a frail flight build.\n|In general, getting spotted on a fragile build by bots you can't outrun (think [[Swarmer|Swarmers]], [[Programmer|Programmers]], and especially [[Cutter|Cutters]]).\n[[/List]]\n\n[[Heading]]Location-Specific[[/Heading]]\n[[List]]\nGoing to the [[Mines]] without a launcher. [[GameText]]Infestation in the Mines, dispatching Demolisher squad.[[/GameText]]\n|Going to the [[Subcaves]] unprepared.\n|Going to the Subcaves unprepared, \"but I got swarmed last time, so this time I'll bring a launcher!\"\n|Forgetting that parts self-destruct in the [[Caves]]. Hope you brought spares.\n|Misfiring in a Caves branch, aggroing the inhabitants. Bonus points if it's [[Zion]] or [[Warlord (Location)]] and you [[I]]almost[[/I]] made it to the [[Spoiler]]Quarantine Array[[/Spoiler]].\n|Visiting [[Zion]] or [[Warlord (Location)]] when you have [[RIF]].\n|Aggroing the friends of [[Warlord]] while you fight off the [[Spoiler]]0b10 invasion[[/Spoiler]].\n|Killing or trying to kill [[Data Miner]] and accidentally sitting in the [[Spoiler]]gamer chair, i.e., Data Conduit[[/Spoiler]]. [[Spoiler]][[Tracker|Trackers]] can be dealt with, if you're prepared.[[/Spoiler]]\n|Going too far in the [[Zion Deep Caves]] without a plan to deal with [[Golem|what's inside]].\n|The many ways of going into [[Testing]] or [[Quarantine]] on [[FarCom]] (unless you're prepared, of course). Perhaps you needed to desperately dive for an exit. Perhaps you forgot the [[Exiles (Group)|Exiles']] warning. Or perhaps you chose to roll the dice.\n|Having a bot destroy the terminal at the [[Surface]] exit in [[Access]]. The closer you were to the terminal, the sillier it is.\n[[/List]]"
   },
   {
    "Name": "Zhirov (Alignment)",
