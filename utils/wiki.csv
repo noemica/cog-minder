@@ -5868,7 +5868,9 @@ TF Nodes are blue one-tile non-interactive machines that can appear in most [[0b
 Depth/Map|Sensor Array|Signal Interpreter||
 -10 to -9|[[Sensor Array]]|[[Signal Interpreter]]||-8 to -5|[[Imp. Sensor Array]]|[[Imp. Signal Interpreter]]||
 -4 to -1|[[Adv. Sensor Array]]|[[Adv. Signal Interpreter]]
-[[/Table]]","","","","","","",""
+[[/Table]]
+[[Heading]]Lore[[/Heading]]
+[[Lore]]0b10 Records|TF Node[[/Lore]]","","","","","","",""
 "Tachyon Dispersion Ray","Part","","","","","","","",""
 "Tactical Coordination Suite","Part","","","","","","","",""
 "Tactical Quantum Warhead","Part","","","","","","","",""

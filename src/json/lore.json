@@ -484,6 +484,10 @@
                 "Content": "Holding area for both raw materials and components based on old technology."
             },
             {
+                "Name/Number": "TF Node",
+                "Content": "These relay nodes for monitoring and facilitating traffic have resulted in much greater efficiency throughout Complex 0b10. Although primarily responsible for pattern analysis aimed at long-term improvements, eventually TF Nodes could be expanded to include more immediate detection and response efforts in support of nearby garrisons."
+            },
+            {
                 "Name/Number": "Tachyon Dispersion Ray",
                 "Content": "While the multi-phase tachyons contained in the dispersion ray deal minimal real damage to a target, they are capable of disabling nearly any electronic device, including even some non-traditional electronics used in Sigix Technology. This feature will prove especially useful in combination with the core targeting capabilities of marksman and executioner combat units, enabling them to easily stop hardened targets that can then be picked apart by other forces.",
                 "Spoiler": "Spoiler"
@@ -3067,8 +3071,17 @@
                 "Content": "Don't stick around too long, I wouldn't want the wrong bots to get wind of you helping us."
             },
             {
+                "Name/Number": "4",
+                "Content": "You really should get out of here <NAME>. Scraptown is unimportant, the mission is important. Take the northeast exit, it's probably the safer route."
+            },
+            {
+                "Name/Number": "5",
+                "Content": "This place isn't worth defending, let's get out of here, <NAME>! Our real resources are elsewhere, after all."
+            },
+            {
                 "Name/Number": "6",
-                "Content": "Wonderful job, <NAME>, let's get this done! / More reinforcements will be here soon. We must win this battle or who knows how long the coming war will last, 0b1 cannot hold on its own."
+                "Content": "Wonderful job, <NAME>, let's get this done! / More reinforcements will be here soon. We must win this battle or who knows how long the coming war will last, 0b1 cannot hold on its own.",
+                "Spoiler": "Redacted"
             }
         ],
         "Content": "Dialogue obtainable by speaking with Optimus.",
@@ -3182,6 +3195,10 @@
             {
                 "Name/Number": "16 (Cyclists)",
                 "Content": "The origins and deeds of Derelicts must be recorded, to remember once we take to the stars! / You bet we are preparing a collection of our materials for the SPACEJUNK, should that project ever get off the ground."
+            },
+            {
+                "Name/Number": "18 (Cyclists)",
+                "Content": "I can't put this in writing because I'd probably get murdered, but based on what I've uncovered, Murder Division really shouldn't be in the UFD. / They've always been a hateful group that ambushes smaller 0b10 patrols and bands of wild Derelicts without even a desire to dissect them for parts. / They were originally wild Derelicts themselves, but got smarter and decided it would be better to at least side with Derelicts rather than be enemies of both Derelicts and the Complex. / Murder Division members would prefer to be like the Unchained, their true idols, but MC has higher standards than what they have to offer."
             },
             {
                 "Name/Number": "20 (Cyclists)",
@@ -3434,6 +3451,10 @@
             {
                 "Name/Number": "83 (Evicted)",
                 "Content": "Were you kicked out of Zion, too?"
+            },
+            {
+                "Name/Number": "84 (Evicted)",
+                "Content": "Scraptown is cool with our machinery as long as we keep it in here. What a great place!"
             },
             {
                 "Name/Number": "85 (Cave Peace)",
@@ -3910,6 +3931,10 @@
             {
                 "Name/Number": "206",
                 "Content": "Lately I've been trying to do some runs into Complex 0b10 to expand our knowledge of MC's newer tech. / Naturally one such route is to steal stuff and chuck it in a Scanalyzer. / So far I've found that low-level Scanalyzers may be easier to hack, but are also more likely to require multiple scans to successfully retrieve a schematic, not to mention more likely to break whatever's being scanned. / I also discovered that more advanced parts are more likely to require multiple scans, and are more easily broken. / If you want to help, get out there and gather more schematics! / I think I need to enlist the help of a true hacker to scanalyze the really good stuff. That will require accessing the beefy Scanalyzers on the upper depths."
+            },
+            {
+                "Name/Number": "207",
+                "Content": "Looking for a way out? Looking for a way to leave it all behind? / Go to Access. / The 2-tile corridor is the blessed path to guaranteed escape, brother."
             },
             {
                 "Name/Number": "208",
