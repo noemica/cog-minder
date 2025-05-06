@@ -449,9 +449,9 @@ Caves to Caves exit|19%
 [[Heading:2]]Passive alert reduction[[/Heading]]
 The most substantial alert reduction method aside from exiting the map is a passive alert reduction over time. Every 20 turns, influence will decrease by a slowly diminishing value.
 [[Table]]
-Turn range|Alert Influence reduction per 10 turns|Total cumulative reduction over range||
+Turn range|Alert Influence reduction per 20 turns|Total cumulative reduction over range||
 20-380|10|190||
-400-780|18|350||
+400-780|8|350||
 800-1180|6|470||
 1200-1580|4|550||
 1600-1980|3|610||
