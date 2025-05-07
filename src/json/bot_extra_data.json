@@ -1409,7 +1409,7 @@
         ]
     },
     "Lugger": {
-        "Categories": ["0b10", "Redacted", "UFD"],
+        "Categories": ["Redacted", "UFD"],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -2181,7 +2181,7 @@
         ]
     },
     "Scraphulk (6)": {
-        "Categories": ["0b10", "UFD", "Spoiler"],
+        "Categories": ["UFD", "Spoiler"],
         "Locations": [
             {
                 "Location": "Recycling Unit",
@@ -2190,7 +2190,7 @@
         ]
     },
     "Scraphulk (8)": {
-        "Categories": ["0b10", "UFD", "Spoiler"],
+        "Categories": ["UFD", "Spoiler"],
         "Locations": [
             {
                 "Location": "Recycling Unit",
