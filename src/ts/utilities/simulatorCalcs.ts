@@ -102,10 +102,10 @@ export const meleeAnalysisMinDamageIncrease = [2, 3, 4, 6];
 // Siege mode text to accuracy bonus/TUs to activate map
 export const siegeModeBonusMap: Map<SiegeState, { bonus: number; tus: number }> = new Map([
     ["No Siege", { bonus: 0, tus: 0 }],
-    ["In Siege Mode", { bonus: 20, tus: 0 }],
-    ["In High Siege Mode", { bonus: 30, tus: 0 }],
-    ["Entering Siege Mode", { bonus: 20, tus: 500 }],
-    ["Entering High Siege Mode", { bonus: 30, tus: 500 }],
+    ["In Siege Mode", { bonus: 15, tus: 0 }],
+    ["In High Siege Mode", { bonus: 25, tus: 0 }],
+    ["Entering Siege Mode", { bonus: 15, tus: 700 }],
+    ["Entering High Siege Mode", { bonus: 25, tus: 700 }],
 ]);
 
 // Map of spectrum values to engine explosion chance
