@@ -5505,7 +5505,7 @@ Explosion detection: Explosions create very large areas of intense bright yellow
 Seismic Detector can be used both as a primary yet somewhat limited source of infowar or with a combination of other infowar parts effectively.
 [[Heading:2]]Pros/Cons[[/Heading]]
 [[List]](+) Swappable single slot: Other sources of infowar such as [[Sensor Arrays]] and [[Terrain Scanners]] can take 2 slots to use to maximum effectiveness, while the Seismic Detector only requires 1 slot and can be easily swapped during combat.|
-(+) Long range: 22 range is one of the largest ranges of infowar in the game for bot detection in the game ans is 6 tiles longer than the default sight range.|
+(+) Long range: 22 range is one of the largest ranges of infowar in the game for bot detection in the game and is 6 tiles longer than the default sight range.|
 (+) Machine detection (sometimes): While inconsistent at best, the Seismic Detector can occasionally give a rough idea of the size and position of rooms due to seismic activity-generating machines inside of them.|
 (+) Non-jammability: Unlike Sensor Arrays, Seismic Detectors can't be jammed by [[Watcher|Watchers]] or [[Heavy|Heavies]] and is also immune to the map-wide scrambling effect of the Phase Generator in [[Garrison|Garrisons]] and [[Command]].|
 (+) Detection of [[Investigation Squad|Investigation]] and [[Reinforcement Squad|Reinforcement Squads]]: Since these squads typically contain all grounded bots like [[Grunt|Grunts]] and [[Hunter|Hunters]], these squads can be detected and avoided from far away.|
