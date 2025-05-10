@@ -506,6 +506,11 @@
             {
                 "Location": "Scraptown",
                 "Description": "Friendly: Roam around Scraptown in groups of 3"
+            },
+            {
+                "Location": "Protoforge",
+                "Description": "Friendly: Appear after using Trojan(Fedlink) on a Recycling machine",
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -983,6 +988,11 @@
             {
                 "Location": "Scraptown",
                 "Description": "Friendly: Roam around Scraptown"
+            },
+            {
+                "Location": "Protoforge",
+                "Description": "Friendly: Appear after using Trojan(Fedlink) on a Recycling machine",
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -990,8 +1000,17 @@
         "Categories": ["Derelict", "UFD", "Spoiler"],
         "Locations": [
             {
+                "Location": "-10 Materials event",
+                "Description": "Friendly: Appear in a group at the entrance to Materials and head straight for Subcaves where they look for a shortcut to Scraptown"
+            },
+            {
                 "Location": "Scraptown",
                 "Description": "Friendly: Roam around Scraptown"
+            },
+            {
+                "Location": "Protoforge",
+                "Description": "Friendly: Appear after using Trojan(Fedlink) on a Recycling machine",
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -1138,6 +1157,11 @@
             {
                 "Location": "Scraptown",
                 "Description": "Friendly: Roam around Scraptown"
+            },
+            {
+                "Location": "Protoforge",
+                "Description": "Friendly: Appear after using Trojan(Fedlink) on a Recycling machine",
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -2023,6 +2047,11 @@
             {
                 "Location": "Scraptown",
                 "Description": "Friendly: Roam around Scraptown"
+            },
+            {
+                "Location": "Protoforge",
+                "Description": "Friendly: Appear after using Trojan(Fedlink) on a Recycling machine",
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -2143,6 +2172,10 @@
         "Categories": ["Derelict", "UFD", "Spoiler"],
         "Locations": [
             {
+                "Location": "Subcaves",
+                "Description": "Friendly: Appear at the start of the map and lead Cogmind to a Scraptown shortcut"
+            },
+            {
                 "Location": "Scraptown",
                 "Description": "Friendly: Roam around Scraptown"
             }
@@ -2163,6 +2196,11 @@
             {
                 "Location": "Recycling Unit",
                 "Description": "Friendly: Appear in groups of 5 from Recycling Units when using the Force(Scrapoids) hack from -5 to -4"
+            },
+            {
+                "Location": "Protoforge",
+                "Description": "Friendly: Appear after using Trojan(Fedlink) on a Recycling machine",
+                "Spoiler": "Redacted"
             }
         ]
     },
@@ -2186,6 +2224,11 @@
             {
                 "Location": "Recycling Unit",
                 "Description": "Friendly: Appear from Recycling Units when using the Force(Scraphulk) hack on -6 to -4"
+            },
+            {
+                "Location": "Protoforge",
+                "Description": "Friendly: Appear after using Trojan(Fedlink) on a Recycling machine",
+                "Spoiler": "Redacted"
             }
         ]
     },

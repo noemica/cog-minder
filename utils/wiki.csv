@@ -4909,11 +4909,13 @@ The map is divided into several distinct segments:
 The bottom-left section of the map that Cogmind spawns in is the most ""normal"" section of the map. There are standard [[Security Squad|Security]] and [[Patrol Squad|Patrol Squads]] hanging around the area, and most types of usual machines are accessible here, although not [[Recycling Unit|Recycling Units]] or [[Fabricator|Fabricators]]. Similar to other Research Branch maps, there can be small 3-tile nooks indented into the map containing special guards. Patrols can also contain unique [[Hotshot]] [[Grunt]] variants.
 One unique feature about this map is the large number of machines that phase out of existence when passing them. These machine flash briefly when entering a room with them but cannot be interacted with in any way, including by dropping parts on top of them.
 [[Heading:2]]Forge Plexus Area[[/Heading]]
-The Forge Plexus area is located in the bottom right section of the map, with the eponymous Forge Plexus located in the center of a room. This enormous machine is impossible to be destroyed as any destroyed tiles will reform very rapidly. This area is very heavily guarded, with 2 [[AP7-3|AP7-3s]] standing on the left entrance to this area of the map and Superfortress blocking the path to the top entrance. Additionally, 2 pairs of dormant [[EXE-6|EXE-6s]] guard the right and bottom left sides of the map, and 2 dormant [[Decapitator|Decapitators]] or 3 [[SKR-2|SKR-2s]] guard the bottom center area. Furthermore, the prototype [[Heavy]] [[Overlord]] spawns in this area, although it will typically roam into the bottom left section.
+The Forge Plexus area is located in the bottom right section of the map, with the eponymous Forge Plexus located in the center of a room. This enormous machine is impossible to be destroyed as any destroyed tiles will reform very rapidly. This area is very heavily guarded, with 2 [[AP7-3|AP7-3s]] standing on the left entrance and Superfortress blocking the path to the top entrance. Additionally, 2 pairs of dormant [[EXE-6|EXE-6s]] guard the right and bottom left sides of the map, and 2 dormant [[Decapitator|Decapitators]] or 3 [[SKR-2|SKR-2s]] guard the bottom center area. Furthermore, the prototype [[Heavy]] [[Overlord]] spawns in this area, although it will typically roam into the bottom left section.
 N-04 Retrievers will be created by the Plexus, pick up items dropped on the map, and then deposit them into the Forge Plexus. If all parts are gone, they will be re-absorbed by the Plexus.
 On the top right area of the Forge Plexus area is a group of 4 Fabricators. At the bottom right is a group of 3 Recycling Units. For typical purposes, the Recycling Machines are useless as parts are returned to the Forge Plexus by Retrievers rather than inserted into Recycling Units. However, if Cogmind aligns with [[Optimus]] and [[UFD]], the 0bPrime attack on Protoforge can be started by performing the [[GameText]]Force(Fedlink)[[/GameText]] hack on one of these machines.
+While this part of the map will always be in the same position, the connecting entrance to the left side of the map is not. The entrance can be anywhere along the left wall of the Forge Plexus area.
 [[Heading:2]]Superfortress Hallway[[/Heading]]
 There is a long hallway that connects the top right of the Forge area with the top of the opening area. Up to 10 stockpiles of up to 4 parts per group can appear here, with 6 to the left of Superfortress and 4 to the right. In the middle is a dormant Superfortress, a very dangerous and intimidating Prototype bot. Nearby are one or two Researchers and a [[Terminal]] containing some lore about Superfortress.
+The location of this area is variable. It can shift to the left and right, although the vertical position is fixed. This means that the left-side entrance to the Superfortress hallway is not always found in the same position.
 [[Heading:2]]Back Lab Area[[/Heading]]
 Behind Superfortress is a fixed prefab various rooms that immediately splits into a left and right side. 1 [[Garrison Access|Garrison]] is present on the left side of the map, with a room to the left of that containing the [[Crosscalibrator]] and another item stockpile. Inside the Crosscalibrator room is a Terminal containing a random selection of Prototype IDs of parts available on the map. This will grant a large number of IDs, but not all possible IDs of parts. There are also 8 different prototype vaults, 4 on each side. The locations of the vaults and their guard compositions are the same each run, but the types of parts that spawn in each vault are random. The same 8 groupings of parts will always appear somewhere on the map. Also in the area are the [[Tinkerer]] lab and one extra heavily-guarded vault with 2 AP7-3 guards that contains some of the strongest items on the map.
 Each vault has a different combination of guards including Researchers, Hotshots, Decapitators, and [[V-Series]]. Most of the prototype bots are dormant, but have a visual range that must be stepped into in order to loot the vault. Additionally, some Researchers have a visual range that block all attempts to shoot open the vault walls by normal approach.
@@ -4921,6 +4923,7 @@ The hallways between the vaults are heavily trapped with a combination of [[Stas
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Protoforge[[/Lore]]
+
 [[Heading]]Notable Locations[[/Heading]]
 [[Gallery]]Protoforge Disappearing Machine.webp|Disappearing machine in starting area|
 Protoforge Vault 1.png|1st left-side vault with Decapitators, V-Series, and Researcher|
@@ -4965,7 +4968,9 @@ Unlike most maps, Sterilization cannot occur inside the Protoforge. As a result,
 If Superfortress is destroyed or the UFD assault is started, all subsequent maps will have ""Advanced fortification protocols"" activated. This has the following effect on maps:
 [[List]]50% increase in patrol density|
 Patrols can have non-standard bots. See [[Patrol Squad#advanced_fortification_protocols]] page for more details.|
-Garrison Accesses will be locked with no way to interact with them[[/List]]
+Garrison Accesses will be locked with no way to interact with them|
+Sterilization will require roughly twice as many kills before activated
+[[/List]]
 [[Heading:2]]UFD Sabotage[[/Heading]]
 If aligned with UFD and Optimus, UFD agents will reduce the number of 0b10 Protoforge forces on the map. All prototype patrols, including Garrison prototype reinforcements, will be reduced in size by 1-2 bots.
 
@@ -5017,10 +5022,10 @@ Maximal|N/A|120+
 Roughly every 50 turns, a new wave of UFD bots will appear from the incursion point. Higher readiness levels result in stronger bots appearing more frequently. Low is the minimum readiness required for the strongest bots to spawn, and adequate is the minimum readiness required for the weakest bots to stop spawning. Waves can contain the following bots:
 [[Table]]
 UFD Readiness|Bots||
-All levels|[[Elite (7)]], Lugger, [[Scrapper (6)]], [[Scrapoid (8)]]||
+All levels|[[Elite (7)]], Lugger, [[Scrapper (6)]], [[Scrapoid (6)]], [[Scrapoid (8)]]||
 Minimal/Very Low|[[Bolteater]], [[Guru]], [[Explorer]], [[Federalist]], [[Ranger]]||
-Low|Bolteater, Guru, Explorer, Federalist, Ranger, [[Scraphulk (8)]]||
-Adequate/High/Maximal|Scraphulk (8)
+Low|Bolteater, Guru, Explorer, Federalist, Ranger, [[Scraphulk (6)]], [[Scraphulk (8)]]||
+Adequate/High/Maximal|Scraphulk (6), Scraphulk (8)
 [[/Table]]
 [[Heading:2]]0b10 Reinforcements[[/Heading]]
 0b10 Reinforcements come in two forms: Garrison reinforcements and Main exit reinforcements.
@@ -5119,7 +5124,7 @@ This strategy involves luring Superfortress out of its initial spawn position do
 [[Heading:4]][[Supercharged TR]][[/Heading]]
 By using a Dimensional Node Initializer with a Supercharged TR, Superfortress can be brought to the center of the forge where the assault is happening. Plant the Node close to the incursion point at the bottom right of the map, engage the event, and then rush over to Superfortress. If Cogmind is fast enough, the teleport will leave Superfortress surrounded by the initial assault of UFD bots. This strategy is most effective with high UFD readiness.
 [[Heading:3]]Fabricated Army[[/Heading]]
-[[Image]]Protoforge Fabricated Army.png|Reasonably sized fabricated army of Hunters and Duelists (10 Authchips)[[/Image]]
+[[Image]]Protoforge Fabricated Army.png|Reasonably sized fabricated army of Hunters and Duelists (10 Authchips worth)[[/Image]]
 Fabricating a bot army is a relatively difficult strategy to pull off. For optimal results, Superfortress must stay dormant for the entire process so that all fabricated bots can be adjusted into position before starting the fight. If the bot army has to approach an awake Superfortress, there is little chance of success since bots will only slowly trickle into range. For this reason, a Jamming Amplifier is highly recommended to avoid any jamming failures.
 There are 4 level 4 Fabricators in the forge section of the map that can allow for very rapid fabrication with a lot of [[Authchip [R/Combat]]]. The [[H-88 Terminator]] is arguably the best bot to fabricate for the Superfortress kill due to its high core integrity, damage output, and evasion. A few [[L-61 Swordsman|L-61 Swordsmen]] are also a good addition thanks to their high damage output that isn't resisted, although only a limited amount of melee bots can fit around Superfortress so there is a practical limit to them.
 [[Heading:2]]Cep. Rapid Grenade Launcher[[/Heading]]
@@ -5127,7 +5132,30 @@ While not capable of taking down Superfortress single-handedly, this part deserv
 [[Heading:2]][[PL-3XN's Obliterator]][[/Heading]]
 The Obliterator is another weapon that is worth mentioning independently. While it has high damage, its limited number of shots and very high matter cost makes it unsuitable for a full kill. Still, its ability to rip components off of any target makes it very valuable for nearly all kill strategies. The only parts that the Obliterator will fail to rip off are the Exp. Heavy Siege Treads, Centrium Heavy Armor Plating, and any 2-slot weapons that happen to be assembled. It rips off all power and all defensive utilities each time it is fired, dramatically reducing Superfortress's offensive and defensive capabilities. Its secondary instant-kill effect can also clear up any summoned hostile bots nearby.
 [[Heading:2]]Escaping the Map[[/Heading]]
-After Superfortress is dead, there is still the remaining issue of leaving the map in one piece. Unless the UFD assault has begun, High Security will begin to activate as Superfortress dies. The ideal strategy in this case is a Dimensional Node Initializer placed near the exit. Airborne builds can usually make it to the exit before the first wave of assaults spawn due to their high speed. For grounded builds without these options, be prepared to fight through multiple waves of High Security while heading to the exit. Sterilization not being an option on this map means that there is no possibility to siege up and fight until the end.","","","","","","",""
+After Superfortress is dead, there is still the remaining issue of leaving the map in one piece. Unless the UFD assault has begun, High Security will begin to activate as Superfortress dies. The ideal strategy in this case is a Dimensional Node Initializer placed near the exit. Airborne builds can usually make it to the exit before the first wave of assaults spawn due to their high speed. For grounded builds without these options, be prepared to fight through multiple waves of High Security while heading to the exit. Sterilization not being an option on this map means that there is no possibility to siege up and fight until the end.
+
+[[Heading]]W9: ""Defending 0bPrime"" Strategy[[/Heading]]
+Assisting the UFD forces in their Protoforge assault is initially a difficult challenge that can be made substantially easier with lots of preparation. The minimal readiness UFD will be utterly annihilated by 0b10 forces, leaving Cogmind up against a huge amount of bots with little assistance. On the other hand, the maximal readiness UFD can put up a solid fight against 0b10 and can even win fights well enough to even plant Drillbombs. The ideal scenario is to have at least 120 Fedlink resources when beginning the event and to avoid the civil war in Scraptown which would otherwise weaken the UFD forces.
+[[Heading:2]]Primary Strategies[[/Heading]]
+There are two main strategies for this event: Stealth based and combat based.
+[[Heading:3]]Stealth Bombing[[/Heading]]
+Stealth is the easier option of the two to beat the event. With maximal UFD forces, Cogmind has to do little to no fighting in order to help complete the event. Instead, focus on remaining out of sight and planting Drillbombs. Flight is the ideal propulsion type for stealth thanks to its high speed, allowing for easily sneaking to Drillbomb planting locations and retreating back to friendly bots when caught in a bad position. Hover is still a great option to use since it tends to be more capable of taking on fights when needed. The lack of inventory is one of the biggest issues for flight, with a [[Med. Storage Unit]] being required to carry a single Drillbomb without any backups available. However, thanks to the massive number of Strikers that appear during this event, there will always be spare flight units.
+Although rather slow, [[Impulse Thruster Array|Impulse Thruster Arrays]] have good support and integrity. Hover is much worse off here, as the only dropped hover propulsion, [[Imp. Antigrav System|Imp. Antigrav Systems]], from [[P-80 Master|P-80 Masters]] is not very impressive. However, the lab area has plenty of great hover units to stock up on before or during the event as needed.
+[[Heading:3]]Combat[[/Heading]]
+Heavy combat builds are also more than capable of completing the event, even at lower UFD resource levels. One major boon to combat builds is the amount of loot and matter generated from the attack. It's very difficult to run out of crucial build elements like power, propulsion, and weapons, although the choice of parts may not always be the most desirable. Cogmind will likely still have to do some Drillbomb planting on combat unless camping on the exit to ensure that no hostile bots can leave the spawn area.
+Mass Executioner spawns guarantee a limitless supply of good offensive processors. Their [[Adv. Kinecellerator|Adv. Kinecellerators]] are also a good option for any kinetic builds. They pair well with the Ovr. weaponry available from the Scrapoids and Scraphulks. While some [[Ovr. Medium Treads]] are available from Elites, they are not all that strong for the depth. Wheel builds can get the [[Ovr. Huge Scrapsphere]] from Scrapoids. Legs builds have the best options available between [[Enh. Biometal Leg|Enh. Biometal Legs]] from Executioners and [[Ovr. Armored Exoskeleton|Ovr. Armored Exoskeletons]] from Scraphulks.
+[[Heading:2]]General Strategies[[/Heading]]
+[[Image]]Protoforge Alternate Dig Path.png|A good alternate path to dig out of the Protoforge area[[/Image]]
+[[Heading:3]]Eliminate the Garrison[[/Heading]]
+The prototypes spit out from the Garrison can be a nuisance to the UFD forces. While they are not as numerous as the main assault forces, they are additional dispatches that tend to be tougher than usual bots. Shutting down or destroying the Garrison before starting the event begins is a good idea.
+[[Heading:3]]Dig to Improve UFD Routing[[/Heading]]
+The layout of the left part of the forge area can be quite variable from run to run. Sometimes there are multiple great routes for planting Drillbombs without having to fight off many 0b10 forces. Sometimes the map ends in a giant single hallway chokepoint where it is nearly impossible to make any headway. Don't be afraid of digging tunnels to create alternate routes to sneak past enemy forces. Being able to dig through the Forge Reinforced Barriers (80 armor) is often useful since the rooms on the left side tend to back up against the Forge in multiple locations other than just the entrance.
+[[Heading:3]]Launcher It Up[[/Heading]]
+Don't be afraid of using launchers during the event. Launchers are always a good tool against large groups of enemies, but some of their downsides costs are high matter use and alert generation. During the event, there is so much matter generated that it's impossible to ever run out. Alert during the event is irrelevant and will not cause any additional responses. Keep in mind that alert will still travel to the next map if planning to exit through the main exit instead of taking the win.
+[[Heading:3]]Useful Event Items[[/Heading]]
+[[List]]Cloaking Devices: Help traverse the map and plant Drillbombs without being spotted. Cep. Cloak Mesh is available on the map in the lab area.|
+Digging parts: Digging parts strong enough to dig through the Forge Plexus area Reinforced Barriers are highly useful for getting around a chokepoint|
+Good Launchers: Protoforge Launchers in particular are some of the most powerful options in the game and can easily wipe out squads to turn the tide in favor of the UFD forces.|[[Active Sensor Suite|Regular]] or Exp. Active Sensor Suite: The investigation-summoning effect of this part is not active during the event, leaving only the upside of powerful, long ranged and unjammable sensors.[[/List]]","","","","","","",""
 "Protomatter","Part","","","","","","","",""
 "Proton Bomb Trap","Part","","","","","","","",""
 "Proton Burst Cannon","Part","","","","","","","",""
