@@ -3419,7 +3419,7 @@ FarCom is one of the major faction [[Alignment|alignments]] available to Cogmind
 [[Heading:2]]Gaining FarCom[[/Heading]]
 Taking FarCom can be done in most runs in the [[Exiles (Location)|Exiles]] map off of either -10 or -9 [[Mines]]. After talking to [[EX-BIN]], walk into the FarCom Aligner machine. Cogmind can take up to 1 special vault item (or multiples of the same type). If Cogmind takes more than 1 type of item then the Exiles will notice you stealing when entering [[Factory]] and FarCom will be removed. Also, becoming hostile to the Exiles will result in instantly losing FarCom. If Cogmind takes FarCom, it is not possible to [[Imprint]]: [[Spoiler]]The [[Imprinter]] will be disappointed in Cogmind and warn you to leave right away. Attempting to use the Imprinting machine will result in turning all the bots at [[Zion]] hostile. Taking FarCom excludes cogmind from affiliating with the [[UFD|UFD]]. There are no other alignment restrictions with FarCom.[[/Spoiler]]
 [[Heading:2]]Research Branch side-effect[[/Heading]]
-When entering -3 Research, the Exiles will send a warning message to Cogmind indicating not to enter Research branches. If Cogmind does anyway, [[Spoiler]]immediately when entering [[Testing]], [[Quarantine]], or [[Section 7]], [[Maximum Security]] will instantly be triggered. Note that this does not include [[Armory]] when it is on -3. The immediate response is machines shut down right after entering the level, 4 [[Sentry]] spawns at each [[Garrison]] and exit, and 6 Assault [[C-30 ARC|ARCs]] sent at Cogmind shortly after. Unless Cogmind is prepared to fight off large waves of enemies or outrun them, these maps should not be entered.[[/Spoiler]]","","","","","","",""
+When entering -3 Research, the Exiles will send a warning message to Cogmind indicating not to enter Research branches. If Cogmind does anyway, [[Spoiler]]immediately when entering [[Testing]], [[Quarantine]] [[Maximum Security]] will instantly be triggered. This will also lock the exits to [[Section 7]] and [[Protoforge]]. Note that this does not include [[Armory]] when it is on -3. The immediate response is machines shut down right after entering the level, 4 [[Sentry]] spawns at each [[Garrison]] and exit, and 6 Assault [[C-30 ARC|ARCs]] sent at Cogmind shortly after. Unless Cogmind is prepared to fight off large waves of enemies or outrun them, these maps should not be entered.[[/Spoiler]]","","","","","","",""
 "Federalist","Bot","Federalists are [[Legs|legged]] grunt-like [[Derelict|derelicts]] that appear in [[Scraptown]] and are armed with two extremely weak lasers with positive salvage. Not particularly powerful or otherwise remarkable.","","","","","","",""
 "Femtoactuators","Part","","","","","","","",""
 "Field Laser","Part","","","","","","","",""
@@ -5010,7 +5010,7 @@ The following items can be found in CX-V1P's lab
 [[Image]]Protoforge Drillbomb Target.png|A marked drillbomb target[[/Image]]
 If Cogmind is both UFD and Optimus-aligned, a [[GameText]]Force(Fedlink)[[/GameText]] hack performed at any of the Recycling Units in the Forge area will trigger a massive assault on the Protoforge. Waves of UFD forces led by [[Triborg (Optimus)]] will begin to emerge from an opening in the bottom right of the Forge Plexus room. Their goal is to planet and then set off 10 [[UFD Drillbomb|UFD Drillbombs]] spaced throughout the bottom left area of the map to isolate the Protoforge from the rest of 0b10. [[Lugger|Luggers]] will be accompanied by various UFD forces to plant the bombs while Optimus remains in the forge area. Cogmind can help the Luggers by protecting them or by planting the Drillbombs alone. Once all 10 bombs are planted in the areas marked in yellow, Cogmind has 100 turns to either make it into an exit or outside of the opening bottom left area of the map. Exiting the map will continue the run in the next main floor. Otherwise, the bombs will go off after 100 turns and Cogmind will either be instantly killed or will achieve a W9 wintype.
 [[Heading:2]]UFD Reinforcements[[/Heading]]
-Several changes to this event can occur depending on whether or not the civil war occurs in [[Scraptown]]. If the civil war does not occur, [[7R-MNS]] will appear roughly 100 turns after starting the event and follow Cogmind around. If the civil war does occur, the maximum readiness which determines the strength of reinforcements will be capped at a lower level. The overall strength also depends on the number of resources Cogmind has contributed through Fedlink:
+Several changes to this event can occur depending on whether or not the civil war occurs in [[Scraptown]]. If the civil war does not occur, [[7R-MNS]] will appear roughly 100 turns after starting the event and follow Cogmind around. If the civil war does occur, the maximum readiness which determines the strength of reinforcements will be capped at a lower level. The overall strength also depends on the number of resources Cogmind has built up over time and through Fedlink:
 [[Table]]
 Readiness|Civil War Range|No Civil War Range||
 Minimal|0-79|0-39||
@@ -5020,6 +5020,7 @@ Adequate|120+|80-99||
 High|N/A|100-119||
 Maximal|N/A|120+
 [[/Table]]
+For a more detailed explanation of UFD resources, see [[UFD#resource_mechanics|this page]].
 Roughly every 50 turns, a new wave of UFD bots will appear from the incursion point. Higher readiness levels result in stronger bots appearing more frequently. Low is the minimum readiness required for the strongest bots to spawn, and adequate is the minimum readiness required for the weakest bots to stop spawning. Waves can contain the following bots:
 [[Table]]
 UFD Readiness|Bots||
@@ -5091,6 +5092,7 @@ Transmission Jammers: Jamming the dormant guards in each area can allow for pick
 Powerful Digging Items: Digging through the walls of the map can allow for getting into vaults without being spotted by Researchers. The Cep. Plasma Driver located on the map is a good choice. A [[Warp Cannon]], while unable to dig, can serve a similar purpose by shooting around walls.|
 Cloaking Devices: Cloaking serves dual purposes. One benefit is to allow firing in rooms where Researchers are present without getting spotted. Another is to see patrols roaming the lab area before they see Cogmind. [[Visual Processing Units]] can help provide the same benefit, but don't help in opening vaults like Cloaking does.|
 [[Relay Coupler [NC]]]: Relay Couplers have multiple useful Researcher hacks. They can disable scanning functionality, assimilate Researchers to identify picked up prototypes, and identify all prototypes nearby instantly. A similar Researcher-disabling effect can be obtained at the Research Penetration Think tank in Scraptown.|
+[[Phasing AFG]]: This part can grab loot stuck in bad positions, sometimes being able to bypass dormant guards or unfortunately-positioned Researchers.|
 Plenty of backups: Due to the inconsistent placement of different vault types in the lab and the lack of normal parts on the ground, backups of essential parts are very valuable since they may show up as the last vault checked.[[/List]]
 [[Heading:3]]Exploration Order[[/Heading]]
 The typical route to explore the Protoforge is to head to the left side first. This allows for shutting down or destroying the Garrison Access, grabbing the Crosscalibrator, and getting the prototype IDs from the Forge Research Registry Terminal early into the map. If the Garrison is shut down or destroyed, the Forge Plexus should be used right away to minimize time spent searching for useful parts. After that, plan out which rooms are worth going into and which aren't. While it's possible to loot every vault, doing this tends to be rougher on alert and build attrition.
@@ -5283,15 +5285,11 @@ Security level|Armor||
 Retrieving Matter from a Recycling Unit is a multi step process. First, parts must be inserted with [[GameText]]Recycle([Part Name])[[/GameText]]. Then, the [[GameText]]Recycling(Process)[[/GameText]] hack must be used to turn all parts in inventory into matter. Finally, the [[GameText]]Retrieve(Matter)[[/GameText]] hack must be used to obtain the recycled matter. All parts are processed at 50% efficiency such that 2 part integrity = 1 matter.
 [[Spoiler]]
 [[Heading:3]][[GameText]]Force(Fedlink)[[/GameText]][[/Heading]]
-This hack has no practical effect if Cogmind is not [[UFD]] aligned.
+This hack has no practical effect if Cogmind is not [[UFD]] aligned. See the UFD page for more details.
+[[Heading:3]][[GameText]]Force(Scraphulk)[[/GameText]][[/Heading]]
+This hack has no effect if Cogmind is not UFD aligned. See the UFD page for more details.
 [[Heading:3]][[GameText]]Force(Scrapoids)[[/GameText]][[/Heading]]
-This hack has no practical effect if Cogmind is not UFD aligned. The [[Scrapoid|Scrapoids]] summoned depends on the depth.
-[[Table]]
-Depth|Scrapoid||
--6|[[Scrapoid (3)]]||
--5 to -4|[[Scrapoid (6)]]||
--3 to -1|[[Scrapoid (8)]]
-[[/Table]]
+This hack has no practical effect if Cogmind is not UFD aligned. See the UFD page for more details.
 [[Heading:3]][[GameText]]Force(Tunnel)[[/GameText]][[/Heading]]
 This hack is most valuable in early floors like [[Materials]]. It can reveal the locations of all 0b10 [[Branch]] maps which can be useful in planning a route through the game.
 [[Heading:3]][[GameText]]Trojan(Mask)[[/GameText]][[/Heading]]
@@ -6513,18 +6511,69 @@ Last edited during Beta 14.","","","","Blade Trap,EMP Trap,Shock Trap,Explosive 
 [[Image]]Scraptown Alignment Derelict.png|[[Scrapper (3)]] in Scraptown that gives Cogmind the option to align[[/Image]]
 [[Heading]]Further Scraptown Access[[/Heading]]
 When Cogmind becomes a member of the UFD, the UFD HQ wall rises up on the map, and a few new areas open up with unique items and bot hacks available as possible benefits. See [[Scraptown#Possible right-side rooms|this page]] for additional details.
-[[Heading]]Unique hacks[[/Heading]]
-Two new hacks become available with UFD alignment at [[Recycling Unit|Recycling Units]]: [[GameText]]Force(Fedlink)[[/GameText]] and [[GameText]]Force(Scrapoids)[[/GameText]]
-[[Heading:2]]Fedlink[[/Heading]]
-Fedlink hooks up additional Recycling Units to the UFD network. This provides a few more resources to be used for Scrapoid summoning.
-[[Heading:2]]Scrapoids[[/Heading]]
-Force(Scrapoids) summons 5 blue controllable [[Scrapoid|Scrapoids]] to the Recycling unit within a few turns of performing the hack. Each hack consumes 2 resources from the pool. Initial resource count is around 16, and some resources may be added automatically when Cogmind enters a new floor.
+
+[[Heading]][[Optimus]] Alignment[[/Heading]]
+After registering as a UFD member, an additional choice is to align with Optimus and 0bPrime for an additional hack, lore, and a lategame event in [[Protoforge]]. This will also add an additional + to the UFD name in the UI. Doing this can cause a civil war to break out if Cogmind hangs around the map too long, which can be used to grab some loot on the map. However, if Optimus dies in the war, Cogmind's UFD membership is revoked.
+[[Heading]]Unique Hacks[[/Heading]]
+Several new hacks become available with UFD alignment at [[Recycling Unit|Recycling Units]]:
+[[Heading:2]][[GameText]]Force(Fedlink)[[/GameText]][[/Heading]]
+This hack hooks up additional Recycling Units to the UFD network. This provides a few more resources to be used for [[Scrapoid]] and [[Scraphulk]] summoning. [[Redacted]]Added resources provide additional support to the UFD during the [[Protoforge]] assault.[[/Redacted]]
+[[Heading:3]]Resource Mechanics[[/Heading]]
+The UFD resource count is a number that is indicated in the terminal after each UFD hack is performed. These resources go up automatically on each floor but are more substantially affected by performing Fedlink hacks. Each Fedlink provides +10 resources on the first hack of each depth, +4 resources on the second, and +2 on all subsequent hacks.
+The initial resource count is 20 (plus an additional 4 upon entering -6) if Scraptown is located on -9 or -8. This number is bumped up to 35 (plus an additional 3 upon entering -5) if Scraptown is located on -7 to compensate for the extra skipped Factory floor.
+Each depth, the number of resources goes up by a small amount:
+[[Table]]Depth|Resources added|Cumulative free resources||
+-6|+4|4||
+-5|+3|7||
+-4|+3|10||
+-3|+3|13||
+-2|+2|15||
+-1|+2|17
+[[/Table]]
+[[Heading:4]]0bPrime Readiness[[/Heading]]
+The numeric resource count is assigned a readiness value based on whether the civil war occurred in Scraptown:
+[[Table]]
+Readiness|Civil War Range|No Civil War Range||
+Minimal|0-79|0-39||
+Very Low|80-99|40-59||
+Low|100-119|60-79||
+Adequate|120+|80-99||
+High|N/A|100-119||
+Maximal|N/A|120+
+[[/Table]]
+For full details of what the readiness values indicate, see [[Protoforge#ufd_reinforcements|Protoforge UFD Reinforcements]].
+[[Heading:4]]Example Numbers[[/Heading]]
+Here are example numbers of a run with Scraptown on -9/-8 with 2 fedlinks performed per depth:
+[[Table]]
+Depth|Initial Resources|Ending Resources||
+-6|24|38||
+-5|41|55||
+-4|58|72||
+-3|75|89||
+-2|91|103
+[[/Table]]
+In order to hit the maximum readiness by -2, 9 additional Fedlinks need to be performed outside of those 2 Fedlinks per depth, assuming no hacks that consume resources are used. To achieve it by -3, that number goes up to 16 additional Fedlinks.
+[[Heading:2]][[GameText]]Force(Scraphulk)[[/GameText]][[/Heading]]
+This hack summons 1 blue controllable Scraphulk to the Recycling unit within a few turns of performing the hack. Each hack consumes 5 resources from the pool, and it cannot be used without aligning to Optimus and installing 6 Fedlinks first. The Scraphulk summoned depends on the depth.
+[[Table]]
+Depth|Scraphulk||
+-6 to -4|[[Scraphulk (6)]]||
+-3 to -1|[[Scraphulk (8)]]
+[[/Table]]
+[[Heading:2]][[GameText]]Force(Scrapoids)[[/GameText]][[/Heading]]
+This hack summons 5 blue controllable depth-dependent Scrapoids to the Recycling unit within a few turns of performing the hack. Each hack consumes 3 resources from the pool. The Scrapoids summoned depends on the depth.
+[[Table]]
+Depth|Scrapoid||
+-6|[[Scrapoid (3)]]||
+-5 to -4|[[Scrapoid (6)]]||
+-3 to -1|[[Scrapoid (8)]]
+[[/Table]]
 [[Heading]]Alignment Incompatibilities[[/Heading]]
 [[Heading:2]]Blocking Alignment[[/Heading]]
 The following will prevent Cogmind from being able to align with UFD in the first place:
 [[List]][[RIF]] alignment: The UFD will believe Cogmind to be an unaware spy|[[FarCom]], hostilities in the [[Exiles (Location)|Exiles map]], or stealing an empty [[SUBCON Basin]] from the Scraplab in Recycling: Scraplab researchers will say that Cogmind cannot be trusted[[/List]]
 [[Heading:2]]Blocked Alignment[[/Heading]]
-Several factions will no longer be able to assist Cogmind after UFD alignment:
+Several factions will no longer assist Cogmind after UFD alignment:
 [[List]][[Imprint]]: The [[Imprinter]] will say that the Imprinting machine requires a more thorough vetting process for a UFD member such as Cogmind|[[Warlord (Alignment)]]: [[Warlord]] will call Cogmind a spy and not perform the -2 [[Research]] invasion[[/List]]","Spoiler","Bolteater,DRS Ranger,Explorer,Federalist,Guru,KN-7UR,Large Mutated Botcube,Master Drone,Mutated Botcube,Optimus,Ranger,Scientist,Surveybot 24,Triborg,Triborg (Optimus),Wyrm Statue","","","Elite,Scrapper,Scrapoid,Scraphulk","",""
 "Utilities","Part Supergroup","","","","","Scrap Engine,Arm. Scrap Engine,Encrypted Comm Array,Stasis Canceller,Skeleton Box,01-MTF's Autohacker,A0-MCA's Component Scanner,Tech Extrapolator,Trap Reconfigurator,Scrap Suit,0bPrime Scrap Suit,PSU Rigger,Machine Rigger,Phasing AFG,AS-neutralizer No. 17b,V3-11A's Pendant,Amulet of Y3-NDR,Chronowheel,Phase Armor,Power Bank,Rainbow Chip,VL-GR5's Exoskeleton ""Deathgrip"",Plexus Tether,Cep. Melee Reflex Suite,Cep. Projectile Intercept Suite,Jamming Amplifier,Crosscalibrator,Cep. Navigation Harness,Supercharged Navigation Harness","Authchips,Component Analysis Suites,Fabrication Devices,Mass Support Devices,Power Amplifiers,Recalibrators,Relay Couplers,Speed Boosting Utilities,Salvage Targeting Computers,Storage Unit,Thermal Generators,Trap Extractors","Armor,Consumable Alien Artifacts,Cooling Utilities,Corruption Reduction Utilities,Defensive Utilities,Hackware,Infowar,Matter Refilling Devices,Offensive Utilities,Shieldings,Storage (Group)",""
 "Utility Shielding","Part","","","","","","","",""
