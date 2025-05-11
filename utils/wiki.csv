@@ -5408,7 +5408,7 @@ The bottom-left section of the map that Cogmind spawns in is the most ""normal""
 One unique feature about this map is the presence of non-interactive machines that phase out of existence when passing them. These machine flash briefly on sight, but they cannot be interacted with in any way, including by dropping parts on top of them.
 [[Heading:2]]Forge Plexus Area[[/Heading]]
 The Forge Plexus area is located in the bottom right section of the map, with the eponymous Forge Plexus located in the center of a room. This enormous machine is impossible to be destroyed as any destroyed tiles will reform very rapidly. This area is very heavily guarded, with 2 [[AP7-3|AP7-3s]] standing on the left entrance to this area of the map and Superfortress blocking the path to the top entrance. Additionally, 2 pairs of dormant [[EXE-6|EXE-6s]] guard the right and bottom left sides of the map, and 2 dormant [[Decapitator|Decapitators]] or 3 [[SKR-2|SKR-2s]] guard the bottom center area. Furthermore, the prototype [[Heavy]] [[Overlord]] spawns in this area, although it will typically roam into the bottom left section.
-N-04 Retrievers can be be created by the Plexus to pick up items dropped on the floor. The retrievers grab these items and then deposit them into the Forge Plexus. If there are no loose parts, Retrievers will be re-absorbed by the Plexus.
+N-04 Retrievers can be be created by the Plexus to pick up items dropped on the floor. The retrievers grab these items and then deposit them into the Forge Plexus. If there are no loose parts, Retrievers will be re-absorbed by the Plexus. The vault areas behind the glass walls in the back lab are safe from Retrievers, even for dropped parts. These spaces can be used as safe temporary storage.
 On the top right area of the Forge Plexus area is a group of 4 Fabricators. At the bottom right is a group of 3 Recycling Units. The Recycling Machines are not used for their typical purpose since parts are returned to the Forge Plexus by Retrievers rather than inserted into Recycling Units by Recyclers. However, if Cogmind aligns with [[Optimus]] and [[UFD]], the 0bPrime attack on Protoforge can be started by performing the [[GameText]]Force(Fedlink)[[/GameText]] hack on one of these machines.
 [[Heading:2]]Superfortress Hallway[[/Heading]]
 There is a long hallway that connects the top right of the Forge area with the top of the opening area. Up to 10 stockpiles of up to 4 parts per group can appear here, with 6 to the left of Superfortress and 4 to the right. In the middle is an initially dormant Superfortress, a very dangerous and intimidating Prototype bot. Nearby are one or two Researchers and a [[Terminal]] containing some lore about Superfortress.
@@ -5441,7 +5441,7 @@ Protoforge Exit.png|Main access exit
 There is only one exit in Protoforge. A main access will be in the top left of the opening area of the map, leading to the next main Research floor or [[Access]].
 
 [[Heading]]Superfortress[[/Heading]]
-Superfortress is the defensive backbone of the Protoforge and sits in the center of the map. It is arguably the most powerful bot in the game, capable of regenerating core integrity and parts as well as summoning large numbers of allies to its defense. Fighting it head-on is one of the toughest challenges in the game, and successfully doing so will result in a hefty score bonus, a + on the scoresheet, and an immediate triggering of [[High Security]] unless the UFD attack has begun.
+Superfortress is the defensive backbone of the Protoforge and sits in the center of the map. It is arguably the most powerful robot in the game, capable of regenerating core integrity and parts as well as assembling large numbers of allies in its defense. Fighting it head-on is one of the toughest challenges in the game, and successfully doing so will result in a hefty score bonus, a + on the scoresheet, and an immediate triggering of [[High Security]] unless the UFD attack has begun.
 [[Heading:2]]Dormancy[[/Heading]]
 Superfortress is initially Dormant upon entering the map. Sneaking past Superfortress into the back area in this state is trivial, so it is ideal to retain this state if possible. Many things can trigger Superfortress to begin powering up from this state:
 [[List]]
@@ -5665,7 +5665,10 @@ Don't shy away from using Launchers during the event. Launchers are always a goo
 [[Heading:3]]Useful Event Items[[/Heading]]
 [[List]]Cloaking Devices: Help traverse the map and plant Drillbombs without being spotted. Cep. Cloak Mesh is available on the map in the lab area.|
 Digging parts: Digging parts strong enough to dig through the Forge Plexus area Reinforced Barriers are highly useful for getting around a chokepoint.|
-Good Launchers: Protoforge Launchers in particular are some of the most powerful options in the game and can easily wipe out squads to turn the tide in favor of the UFD forces.|[[Active Sensor Suite|Regular]] or Exp. Active Sensor Suite: The investigation-summoning effect of this part is not active during the event, leaving only the upside of powerful, long ranged and unjammable sensors.[[/List]]","","","","","","",""
+Good Launchers: Protoforge Launchers in particular are some of the most powerful options in the game and can easily wipe out squads to turn the tide in favor of the UFD forces.|[[Active Sensor Suite|Regular]] or Exp. Active Sensor Suite: The investigation-summoning effect of this part is not active during the event, leaving only the upside of powerful, long ranged and unjammable sensors.[[/List]]
+[[Heading:2]]Loot the Lab?[[/Heading]
+The back lab area of the map can provide lots of good items, but may not always be worth going for. With a good build going into the map, there is a chance that going to the lab leads to losing the build instead of improving it. If alert is an issue, consider how likely it is that High Security will trigger before leaving, which will lock the event out altogether.
+If going into the lab, the other question is when? Going in before the event is a little safer since there aren't going to be any assaults wandering through the Superfortress hallway or prototypes dispatched from the Garrison, and there is the possibility that Superfortress is still dormant. After the ","","","","","","",""
 "Protomatter","Part","","","","","","","",""
 "Proton Bomb Trap","Part","","","","","","","",""
 "Proton Burst Cannon","Part","","","","","","","",""
@@ -6619,6 +6622,8 @@ Name|Storage|Mass|Equip Slots|Coverage|Max. Integrity||
 [[Lightpack 2.0]]|35|5|3|45|*500
 [[/Table]]","","","","Sml. Storage Unit,Med. Storage Unit,Lrg. Storage Unit,Hcp. Storage Unit,Huge Storage Unit,Cargo Storage Unit,Humpback,Lgt. Humpback,Vmp. Humpback,Lightpack 2.0,Cep. Antigrav Storage Unit","","",""
 "Storm Laser","Part","","","","","","","",""
+"Strategy","Other","Strategy guides to complete various content.","","","","","","",""
+"Strategy/Killing Superfortress","Other","","Redacted","","","","","",""
 "Striker","Bot","","","","","","","",""
 "Structural Scanner","Part","","","","","","","",""
 "Style Achievements","Other","Style [[Achievements]] are earned by reaching high statistics in some categories which usually require using an associated playstyle, or by using some rare items and/or their mechanics. Most of them will be simply eventually be obtained by players as they become familiar with the more common mechanics of the game and figure out playstyles that utilizes them or discover some of the less common mechanics of the game. 12 of the 46 Style Achievements have hidden descriptions that are only revealed after completing them. The borders of Style Achievement indicate their difficulty compared to other achievements with similar[[Comment]]TODO: Figure out a way to say ""Achievements with almost exactly the same requirements, with the only difference being that one achievement requires doing thing A while the more difficult achievement requires doing thing A+B."", but use fewer words to say this.[[/Comment]] requirements, with more ""intense"" borders meaning higher difficulty.
@@ -6751,7 +6756,47 @@ Materials exits: These always lead to -8 Materials. These exits always skip -9 e
 "Supercharged Sigix Terminator","Part","","","","","","","",""
 "Supercharged TR","Part","","","","","","","",""
 "Superdense Plating","Part","","","","","","","",""
-"Superfortress","Bot","","","","","","","",""
+"Superfortress","Bot","Superfortress is a massive and deadly bot that stands guard in the center of [[Protoforge]]. It is arguably the most powerful robot in the game, capable of regenerating core integrity and parts as well as assembling large numbers of allies to its defense. It is initially dormant but can [[Protoforge#dormancy|wake up]] for a variety of reasons.
+[[Heading]]Part Assembling[[/Heading]]
+Superfortress will assemble any destroyed non-weapon parts periodically. One destroyed part will be assembled roughly every 10 turns, although this number is variable. Weapons are instead periodically broken down and assembled instantly. As long as Superfortress has a least one weapon remaining, there will be no prioritization of reassembling weapons. However, if Superfortress runs out of weapons entirely, it will immediately reassemble a full set of weapons.
+[[Heading:2]]Weapon Reassembling[[/Heading]]
+Superfortress initially has no weapons attached. Upon waking up, it will assemble a random selection of weapons. Superfortress will assemble 4 weapon slots worth of weapons each time it assembles weapons.
+Typical weapons are from the following list:
+[[Table]]
+Part|Slots||
+[[Cep. Heavy Railcannon]]|2||
+[[Cep. Helical Railcannon]]|1||
+[[Cep. Miniperforator]]|1||[[Cep. Plasma Driver]]|1||
+[[Cld. Nova Cannon]]|1||
+[[Enh. Hardcell Cannon]]|1||
+[[Graviton Cannon]]|1||
+[[Hvy. Hardcell Cannon]]|2||
+[[Null Cannon]]|1||
+[[Omega Cannon]]|2
+[[/Table]]
+When there are 10 or more bots in line of sight, Superfortress may assemble a [[Launchers|Launcher]] instead of one of its typical weapons. The available launchers are from the following list:
+[[List]]
+[[Cep. Arcsight Missile Launcher]]|
+[[Com. Tesla Bomb Launcher]]|
+[[Enh. Gamma Bomb Array]]|
+[[Fusion Bomb Launcher]]|
+[[Gamma Bomb Array]]|
+[[Gamma Driveblaster]]|
+[[Ragnarok Missile Launcher]][[/List]]
+[[Heading]]Robot Assembling[[/Heading]]
+When Superfortress is under fire or there are lots of hostiles in line of sight, it will assemble allies to fight for it. The more hostiles are in line of sight, the more likely it is that Superfortress will assemble a new ally each turn. This can make it very difficult to maintain a numbers advantage over Superfortress. Bots assembled can be from the following list:
+[[List]]
+[[Decapitator]]|
+[[Executioner]]|
+[[H-88 Terminator]]|
+[[Hotshot]]|
+[[Immortal]]|
+[[P-80 Master]]|
+[[Striker]]|
+[[X-77 Beamer]]|
+[[X-82 Rainmaker]]|
+[[X-87 Electro]]
+[[/List]]","","","","","","",""
 "Superquantum Companion","Part","The Superquantum Companion is a unique talking melee weapon that is an upgrade to the [[Quantum Companion]]. It can be obtained by using a [[Subatomic Replicator]] on the Quantum Companion. The Superquantum Companion has [[Quantum Companion#special_effects|all of the effects]] that the Quantum Companion does, but the frequency of all effects is increased.","","","","","","",""
 "Supersonic Drone Bay","Part","Deploys a [[Trailblazer]].","","","","","","",""
 "Surface","Location","The surface is not a real map in the game, but exiting to the surface is one way to win the game. Many of the game's wintypes require getting to a surface exit. See [[Wintypes]] for more information.","Spoiler","","","","","",""
