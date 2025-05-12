@@ -2363,8 +2363,8 @@
         "Categories": ["0b10", "Prototype", "Redacted"],
         "Locations": [
             {
-                "Location": "protoforge",
-                "Description": "Unpowered: Guards the prototype are above the Forge Plexus, wakes up when Cogmind is spotted by a bot that isn't jammed or if reported by an Operator"
+                "Location": "Protoforge",
+                "Description": "Unpowered: Guards the prototype area above the Forge Plexus. Wakes up when certain bots are detected in the map, e.g. Cogmind is spotted by a bot that isn't jammed or is reported by an Operator"
             }
         ]
     },
