@@ -66,7 +66,7 @@
   },
   {
    "Name": "A7",
-   "Content": "Drops the [[A7 Data Core]] when killed or gives a code when they are show the Cetus Mainframe in [[Cetus]]"
+   "Content": "Drops the [[A7 Data Core]] when killed. Gives a code when shown the Cetus Mainframe in [[Cetus]]."
   },
   {
    "Name": "A8",
@@ -1997,7 +1997,7 @@
   },
   {
    "Name": "A7 Data Core",
-   "Content": "Allows entrance into [[Lab]] and [[Redacted]]reveals the hidden intruder detecting lasers.[[/Redacted]]\n\nDropped by [[A7]] on death."
+   "Content": "Allows entrance into [[Lab]] and [[Redacted]]reveals the hidden intruder-detecting lasers.[[/Redacted]]\n\nDropped by [[A7]] on death."
   },
   {
    "Name": "AD-0RF's Magmablaster",
