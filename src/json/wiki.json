@@ -9440,7 +9440,8 @@
    "MinDepth": -3,
    "MaxDepth": -2,
    "MultipleDepths": true,
-   "Branch": true
+   "Branch": true,
+   "Spoiler": "Redacted"
   },
   {
    "Name": "Quarantine",
