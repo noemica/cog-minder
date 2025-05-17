@@ -365,7 +365,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Core Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.2, slot: "Core" } },
     "Imp. Core Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.3, slot: "Core" } },
     "Exp. Core Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.4, slot: "Core" } },
-    "Cep. Core Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.9, slot: "Core" } },
+    "Cep. Core Shell": { active: "Always", trait: { kind: "Shielding", shielding: 0.9, slot: "Core" } },
     "Power Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.33, slot: "Power" } },
     "Imp. Power Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.66, slot: "Power" } },
     "Exp. Power Shielding": { active: "Always", trait: { kind: "Shielding", shielding: 0.9, slot: "Power" } },
