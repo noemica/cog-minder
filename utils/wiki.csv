@@ -1116,10 +1116,7 @@ There are no standard [[Extermination Squad|Exterminations]] or [[Assault Squad|
 [[Lore]]Cetus Records|Cetus Mainframe[[/Lore]]
 
 [[Heading]]Strategy[[/Heading]]
-The [[Cetus Guard|Cetus Guards]] are not too tough of foes and have some very nice loot, especially the [[Adv. KE Penetrator]], [[Centrium Heavy Treads]], [[Centrium Medium Armor Plating]]. They have an above average amount of core integrity but no critical destroy immunity or EM resistance, so destroy crit and EM weapons tend to be the most effective. EM Launchers are particularly effective at taking out each chunk of 4 in a short amount of time. There will be some [[Corrupted Parts|corrupted]] parts, but this loot is definitely worth the corruption. 
-Cogmind will often have a big group of allies from Extension. These can be helpful and harmful at the same time. Too many allies will just get in the way of each other and you, so telling some controllable allies to stay back is often a good idea. While the [[Guerrilla (5)|Guerillas]] have -Salvage from their [[Bore Cannon]], they tend to perform very well against the Cetus Guards due to their very high critical destroy chance.
-To best preserve the Cetus Manufacturing Module for the A7 code or Revision 17 events, tell all controllable allies to stay at the first intersection after killing the first set of Cetus Guards. This will cause any ARCs that spawn from the top-left exit to fight those allies out of the way. Otherwise|being created via the A7 code will often fight right in front of the module and cause the machine to get destroyed by wandering patrols trying to fight.
-The Cetus Mainframe door has a very low base success rate of 10%. While [[Hackware]] can help out here, the Cetus Guards can conveniently drop a [[Adv. Variable Charge Gun]] which can be overloaded to destroy the Sealed Heavy Doors. Otherwise, a [[Plasma Cutters|Plasma Cutter]] will eventually cut through as well.
+See [[Strategy/Cetus]]
 
 [[Heading]]Exits[[/Heading]]
 There are 3 exits on this map but only 2 kinds of exits:
@@ -4067,6 +4064,7 @@ Note: Beta 15 updates are in progress. Some information may be out of date.
 [[Acronyms]] - List of common community acronyms|
 [[Reinforced Walls]] - Reference of reinforced walls across the game|
 [[Power]]/[[Propulsion]]/[[Utilities]]/[[Weapons]] - List and categorization of all parts of the given slot type|
+[[Strategy]] - Strategy about how to deal with specific robots, locations, or wintypes|
 [[Achievements]]|
 [[Alignment]] - List of all alignments and their interactions|
 [[Non-empty Pages]] - List of non-empty pages|
@@ -6588,6 +6586,11 @@ Dig out the center earth tile in LU-1G1's Boring Crew room|
 Check rooms closed for remodelling for the rare Exp. Plasma Cutter|
 Smash open the wall hiding additional Botcubes in the Botcube Research room
 [[/List]]","Spoiler","","","","","",""
+"Strategy/Cetus","Other","When first entering [[Cetus]], the 4 [[Cetus Guard|Cetus Guards]] appearing around the corner may appear intimidating at first. However, they are not too tough of foes and have some extremely useful loot, especially the [[Adv. KE Penetrator]], [[Centrium Heavy Treads]], and [[Centrium Medium Armor Plating]]. They have an above average amount of core integrity but no critical destroy immunity or EM resistance, so destroy critical weapons like [[Hyp. Weapons]] and [[Electromagnetic Weapons]] work quite well against them. [[Electromagnetic Launchers]] like the [[Proton Missile Launcher|regular]] and [[Imp. Proton Missile Launcher]] are particularly effective at taking out 4 of them in a short amount of time. There will be some [[Corrupted Parts|corrupted]] parts, but this loot is definitely worth the corruption. 
+Often, Cogmind will have a big group of allies brought over from [[Extension]]. These can be helpful and harmful at the same time. Too many allies, especially melee ones, will get in the way of each other. Telling some blue-controllable allies to stay back can be a good idea. [[A7]] in particular is a great ally, providing EM damage and [[Remote Force Field|remote force fielding]] effects. Another standout ally is the [[Guerrilla (5)|Guerilla]]. They have -Salvage from their [[Bore Cannon]], but perform very well against the Cetus Guards due to their very high critical destroy chance, often destroying weapons or even cores in a single hit. However, to get optimal salvage, they should be left behind.
+
+[[Heading]]Cetus Mainframe[[/Heading]]
+The [[Reinforced Walls#cetus|Cetus Mainframe Doors]] have a very low base success rate of 10% and a high armor value of 40. While [[Hackware]] can help out here, the Cetus Guards can conveniently drop a [[Adv. Variable Charge Gun]] which can be overloaded to destroy the Sealed Heavy Doors. A [[Plasma Cutters|Plasma Cutter]] will eventually cut through as well.","Spoiler","","","","","",""
 "Strategy/Killing Superfortress","Other","[[Image]]Protoforge Superfortress.png|Dormant Superfortress in Protoforge[[/Image]]
 [[Superfortress]] in [[Protoforge]] is arguably the strongest robot in the game with powerful offenses that easily out-damage other endgame bosses and a defensive profile including resistances to most common damage types, an efficient [[Exp. Force Field]], near immunity to launchers with the [[Cep. Antimissile System]], and regenerating core integrity and parts. Killing Superfortress is a feat that can only be accomplished by incredible offensive firepower, either through Cogmind's own power or by overwhelming numbers. Even after getting the kill, the punishment includes much more dangerous future floors and an immediate triggering of [[High Security]] unless the UFD assault has begun. Builds should be in peak condition to even consider attempting the kill.
 
