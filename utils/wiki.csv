@@ -1343,7 +1343,7 @@ There are 2 of these power items on the bottom center of the cache:
 [[List]][[Vortex Chain Reactor]]|[[Zero-point Reactor]][[/List]]
 [[Heading:3]]Utility items[[/Heading]]
 There are 6 of these utility items on the bottom left of the cache. The bottom left one will always be an Exp. System Purifier.
-[[List]][[Adv. Kinecellerator]]|[[Adv. Particle Accelerator]]|[[Adv. Quantum Shading Machine]]|[[Thermal Barrier]]|[[Centrium Heavy Armor Plating]]|[[Centrium Medium Armor Plating]]|[[Exp. Armor Integrity Analyzer]]|[[Exp. Cloaking Device]]|[[Exp. Core Analyzer]]|[[Exp. EM Disruption Field]]|[[Exp. ECM Suite]]|[[Exp. Energy Well]]|[[Exp. Focal Shield]]|[[Exp. Force Field]]|[[Exp. Matter Compressor]]|[[Exp. Melee Analysis Suite]]|[[Exp. Target Analyzer]]|[[Exp. Targeting Computer]]|[[Exp. Phase Shifter]]|[[Exp. System Purifier]] (guaranteed, only one)|[[Exp. Transmission Jammer]]|[[Exp. Weapon Cycler]]|[[Femtoactuators]]|[[Hvy. Regenerative Plating]]|[[Prc. Energy Filter]]|[[Prc. Matter Filter]]|[[Spectral Analyzer]][[/List]]
+[[List]][[Adv. Kinecellerator]]|[[Adv. Particle Accelerator]]|[[Adv. Quantum Shading Machine]]|[[Thermal Barrier]]|[[Centrium Heavy Armor Plating]]|[[Centrium Medium Armor Plating]]|[[Exp. Armor Integrity Analyzer]]|[[Exp. Cloaking Device]]|[[Exp. Core Analyzer]]|[[Exp. EM Shield]]|[[Exp. ECM Suite]]|[[Exp. Energy Well]]|[[Exp. Focal Shield]]|[[Exp. Force Field]]|[[Exp. Matter Compressor]]|[[Exp. Melee Analysis Suite]]|[[Exp. Target Analyzer]]|[[Exp. Targeting Computer]]|[[Exp. Phase Shifter]]|[[Exp. System Purifier]] (guaranteed, only one)|[[Exp. Transmission Jammer]]|[[Exp. Weapon Cycler]]|[[Femtoactuators]]|[[Hvy. Regenerative Plating]]|[[Prc. Energy Filter]]|[[Prc. Matter Filter]]|[[Spectral Analyzer]][[/List]]
 [[Heading:3]]Weapon items[[/Heading]]
 There are 6 of these weapon items in the top left of the cache:
 [[List]][[Enh. Nova Cannon]]|[[Graviton Cannon]]|[[Hvy. Hardcell Cannon]]|[[Hvy. Quantum Rifle]][[/List]]
@@ -1396,7 +1396,7 @@ The Doom Corridor guards are scary in different ways. The Combat Programmers don
 Some specific parts can be especially helpful for conquering the Doom Corridor:
 [[Heading:4]][[Point Defense Systems]][[/Heading]]
 Most of the damage coming from the M Guards is from their Launchers. A single Adv. Point Defense System has a roughly 2/3 chance of shooting down a Launcher shot coming in from >3 range. A second one brings that chance up to about a 90% chance to shoot down Launcher shots. This is a significant damage decrease to Cogmind if fighting solo and is absolutely crucial to keeping large groups of allies alive.
-[[Heading:4]][[Exp. EM Disruption Field]][[/Heading]]
+[[Heading:4]][[Exp. EM Shield]][[/Heading]]
 Fairly self-explanatory, this part will turn Combat Programmers into largely ignorable nuisances.
 [[Heading:4]][[Imp. Shock Absorption System|Imp]]/[[Exp. Shock Absorption System]][[/Heading]]
 This is a good alternative to the Adv. Point Defense to cut down Launcher damage taken.
@@ -2513,7 +2513,7 @@ Armament|Wave Gun|2||
 Armament Option|Dispersion Rifle|1|Phase Gun|1||
 Components|Lgt. Quantum Reactor|1|Biometal Leg|2||
 Components Option|Adv. Heat Sink|3|Adv. Cooling System|2||
-Components Option|Dynamic Insulation System|1|EM Disruption Field|1[[/BotDetails]]
+Components Option|Dynamic Insulation System|1|EM Shield|1[[/BotDetails]]
 [[Heading:2]]List of bot details categories[[/Heading]]
 [[Table]]
 Category|Notes||
@@ -4020,7 +4020,7 @@ Faster bots (hover/flight users) detected will typically get [[Cutter|Cutters]] 
 
 [[Heading]]Strategies[[/Heading]]
 Heavies are quite sturdy and offensively very powerful. Though there are no damage type weaknesses, they have few weaknesses that can be taken advantage of. While Heavies have sufficient cooling to handle their own weaponry, they are unable to dissipate large amounts of additional heat. Even though the Graphene Brace prevents burn criticals, a few thermal guns with decent heat transfer are still easily capable of melting down a Heavy. A high heat transfer gun like a [[Plasma Rifle]] is a good choice for this. Another weakness of the Heavy is a high dependency on its engine to power its variety of energy-hungry utilities. If its engine is destroyed or blown off, the Heavy will quickly become unable to attack. This is most easily achieved with the [[RIF]] hacks [[GameText]]overload_power[[/GameText]] and [[GameText]]amplify_resonance[[/GameText]].
-On the other hand, inferior strategies to fight Heavies are EM and melee weaponry. All Heavies have a form of [[Dynamic Insulation Systems]], and all but the Shepherd have an additional [[EM Disruption Field]] to lower EM damage. Killing via corruption is difficult, and may often take longer than killing with other types of damage. Melee attacks are all 50% resisted by a Heavy, and its cannon will knock back all but a treaded melee build.
+On the other hand, inferior strategies to fight Heavies are EM and melee weaponry. All Heavies have a form of [[Dynamic Insulation Systems]], and all but the Shepherd have an additional [[EM Shield]] to lower EM damage. Killing via corruption is difficult, and may often take longer than killing with other types of damage. Melee attacks are all 50% resisted by a Heavy, and its cannon will knock back all but a treaded melee build.
 Nearly every part on the Heavy makes for great salvage. Try to kill Heavies with salvage neutral weaponry if possible to get the great loot. Applying positive salvage with [[Salvage Targeting Computers]] is always beneficial. [[Transmission Jammers]] are very handy at preventing the additional reinforcements that come when a Heavy gets attacked. A Graphene Brace neutralizes the Blast critical from their cannons and will help protect Cogmind's fragile utilities. Heavies have a very short memory, so the best way to approach is often from a nearby room instead of running down the center of a corridor. If using a Jammer, always consider the Jammer range when approaching a Heavy for combat. Tanking a lot of additional hits to get into range is very unpleasant. If trying to escape a Heavy, the short memory may be an advantage. Once Cogmind turns a corner, the Heavy will often lose tracking before it catches back up unless it is able to shoot its way back into line of sight.","","H-61 Shepherd,H-71 Marshal,H-81 Overseer,Overlord","","","","",""
 "Heavy Explosive Trap","Part","","","","","","","",""
 "Heavy Servo Lattice","Part","","","","","","","",""
@@ -4096,18 +4096,7 @@ There are two types of special machines in Hub. The first, the [[Transfer Statio
 [[List]]Network Hubs in corners: All 4 Network Hub machines will be in their own corners of the map. They are not likely to overlap in explosion radius and cause chain reactions.|Network Hubs on left side: All 4 Network Hub machines will be on the left side of the map. It is likely that either the top 2 or bottom 2 Hub machines will overlap in explosion radius and guarantee a chain reaction. It is very rarely possible for all 4 Hubs to chain together.|Network hubs on right side: Same as above but on the right side of the map.[[/List]]
 
 [[Heading]]Strategy[[/Heading]]
-Blowing up Network Hubs as soon as you see them is usually a bad idea. Shooting them directly causes a ton of [[Alert]] gain due to their large destructive radius. The Lightning squads that follow can also be very scary for an unprepared Cogmind. If unprepared to fight off the Lightning, it is a good idea to blow up the Hubs from a distance or right next an exit.
-There are a lot of methods to blow up Network Hubs that do not trigger the alert gain:
-[[Heading:2]]Hostile attack[[/Heading]]
-If Cogmind or an ally stands in front of a Network Hub and a 0b10 bot misses into it, the destruction will be associated with that bot and not Cogmind. This also works well with allies and drones. Just position the ally in front of a Hub and attacking enemies can shoot around or through them to trigger the explosion.
-[[Heading:2]][[Traps|Trap]] explosion[[/Heading]]
-Traps never assign Alert to Cogmind unless they manually trigger the trap. Any explosive or area EM traps will work, [[I]]but[[/I]] if the trap triggers due to Cogmind's corruption then the alert isn't assigned, which can be used to avoid the alert.
-[[Heading:2]][[Plasma Cutter|Regular]] or [[Imp. Plasma Cutter]][[/Heading]]
-Plasma Cutters can destroy explosive machines like Hubs without triggering the explosion, avoiding the possibility for Cogmind to be caught out in the open in a bad defensive position. Because the majority of the Alert gained from destroying a Hub is from the explosion, this will reduce the typical several hundred Alert gain down to just 15.
-[[Heading:2]]Force(Sabotage)[[/Heading]]
-If successful, this hack will blow up a random explosive machine on the map. Network Hubs are the only available targets so this will always work on this map. This hack is inconsistent and may fail multiple times in a row. This hack will cause an Alert gain of 50 if successful, but it is substantially less than the several hundred of a manually-blown Network Hub. Note: unlike this hack, Trojan(Detonate) does cause Alert to go up from the Explosion and is not a great hack to use.
-[[Heading:2]]Lightning[[/Heading]]
-The best way to deal with the Lightning squads is to use critical destroy weapons as they lack any critical immunity. [[8R-AWN's Boregun]], [[Adv. KE Penetrator]], and any Hyp. guns or cannons will work well. [[Damper Plating]] works great at reducing damage taken by Lightnings to negligible amounts. The [[Exp. EM Disruption Field]] that they carry can also do fine after being looted.
+See [[Strategy/Hub_04(d)]]
 
 [[Heading]]Exits[[/Heading]]
 There is only one type of exit on this map. All exits lead to the next main Factory or Research floor.","Spoiler","","","","","",""
@@ -6600,6 +6589,32 @@ Assuming the fight went reasonably well at this point, the remainder of the map 
 
 [[Heading]]Extension Dig[[/Heading]]
 One alternative to fighting through the center of the map is to dig across through the top. This is typically a 10 tile dig, which has a reasonable risk of cave-ins occurring. If there were few allies gained or they were destroyed, or if Cogmind's offensive ability is very low, this alternative route may be preferable. Beware [[cave-ins]] this way.","Spoiler","","","","","",""
+"Strategy/Hub_04(d)","Other","Blowing up Network Hubs in [[Hub_04(d)]] can be very valuable to the run thanks to the huge defensive hacking bonuses provided. However, destroying one as soon as you see one by shooting immediately is usually a bad idea. Shooting them directly causes a ton of [[Alert]] around the order of several hundred due to their large destructive radius. The [[Lightning]] squads that follow can also be very scary for an unprepared Cogmind. It is often a better idea to blow up the Hubs from a distance, especially when right next to exit.
+
+[[Heading]]Explosion Methods[[/Heading]]
+There are a lot of methods to blow up Network Hubs that do not trigger the alert gain:
+[[Heading:2]]Hostile attack[[/Heading]]
+If a bot stands in front of a Network Hub and an [[0b10]]-aligned bot misses into it, the destruction will be associated with that bot and not Cogmind. This works especially well with allies and drones. Position the ally in front of a Hub and attacking enemies can shoot around or through them to trigger the explosion. The Lightning [[EMDS]] has a 100% penetration, so any allies standing in front of a Hub is sure to get it to explode.
+[[Heading:2]][[Traps|Trap]] explosion[[/Heading]]
+Traps never assign Alert to Cogmind unless manually triggering the trap. Any explosive or area EM traps will work, [[I]]but[[/I]] if the trap triggers due to Cogmind's [[Corruption]] then the alert isn't assigned, which can be used to avoid the alert. For example, plant a [[Dirty Bomb]] trap and then walk back and forth over it. Eventually, this will trigger the trap to explode.
+[[Heading:2]][[Plasma Cutter|Regular]] or [[Imp. Plasma Cutter]][[/Heading]]
+Plasma Cutters can destroy explosive machines like Hubs without triggering the explosion. This can be nice for for Cogmind to avoid being caught out in the open in a bad defensive position. Because the majority of the Alert gained from destroying a Hub is from the explosion, this will reduce the typical several hundred Alert gain down to just 15.
+[[Heading:2]]Force(Sabotage)[[/Heading]]
+If successful, this hack will blow up a random explosive machine on the map. Network Hubs are the only available targets in this map, so this will always hit a Hub if successful. However, this hack is inconsistent and may fail multiple times in a row. It does cause an Alert gain of 50 if successful, but it is substantially less than the several hundred of a manually-blown Network Hub. Note: unlike this hack, Trojan(Detonate) does cause Alert to go up from the Explosion and is not a great hack to use.
+
+[[Heading]]Lightning[[/Heading]]
+4 squads of these will appear after blowing up any Hubs. They can be defeated with combat or evaded.
+[[Heading:2]]Combat[[/Heading]]
+The best way to deal with the Lightning squads is to use critical destroy weapons as they lack any critical immunity. [[8R-AWN's Boregun]], [[Adv. KE Penetrator]], or [[Hyp. Weapons]] work well. [[Damper Plating]] works great at reducing damage taken by Lightnings to negligible amounts. The [[Exp. EM Shield]] that they carry is a lot less effective than Damper Plating, but is still a substantial reduction and only costs 1 slot.
+[[Heading:2]]Evasion[[/Heading]]
+Lightning have Scan Cloak 5 which makes them entirely undetectable by [[Sensor Arrays]]. However, there are still some methods that can be used to track them:
+[[List]]
+Sensor Arrays can still track the [[I-47|Archangel]] that follows the squads around|
+[[Seismic Detector]]|
+[[FarCom]]|
+[[IFF Parser]]
+[[GameText]]Trojan(Track)[[/GameText]] at [[Terminal|Terminals]]
+[[/List]]","Spoiler","","","","","",""
 "Strategy/Killing Superfortress","Other","[[Image]]Protoforge Superfortress.png|Dormant Superfortress in Protoforge[[/Image]]
 [[Superfortress]] in [[Protoforge]] is arguably the strongest robot in the game with powerful offenses that easily out-damage other endgame bosses and a defensive profile including resistances to most common damage types, an efficient [[Exp. Force Field]], near immunity to launchers with the [[Cep. Antimissile System]], and regenerating core integrity and parts. Killing Superfortress is a feat that can only be accomplished by incredible offensive firepower, either through Cogmind's own power or by overwhelming numbers. Even after getting the kill, the punishment includes much more dangerous future floors and an immediate triggering of [[High Security]] unless the UFD assault has begun. Builds should be in peak condition to even consider attempting the kill.
 
