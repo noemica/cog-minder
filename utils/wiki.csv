@@ -2655,9 +2655,8 @@ There are two types of special machines in Extension. The first, the Transfer St
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Extension[[/Lore]]
 
-[[Heading]]Strategy[[/Heading]]The strategy for Extension is a fairly simple one. From the spawn location, take the path to the top-left of the map. Travel along the right and destroy any hostiles. Rewiring and freeing bots in cells is an option at this point, but it is usually better to wait to do this to keep [[Alert]] lower and to preserve ally integrity for the center fight. When you reach the center area where the only path is down, there are 2 primary options:
-[[List]]Head back and loop back around counter-clockwise to the center of the map. Free/rewire any allies along the way. Take on the first Behemoth alone, then keep moving forward with your allies to finish the rest of the center area off.|Dig through the top-center part of the map. This is about 10 tiles long and is a risky dig with a high chance of one or more cave-ins. For a build with no allies and no good way to take on the central area, this may be a better risk to take than a head-on fight.[[/List]]
-After that, clear the top right section of the map to collect as many allies as possible, then head to the exits.
+[[Heading]]Strategy[[/Heading]]
+See [[Strategy/Extension]]
 
 [[Heading]]Notable Locations[[/Heading]]
 [[Gallery]]Extension Energy Cycler.png|Energy Cycler machines|Extension Central Area.png|Central area with guards and locked exit|Extension Secret Cache.png|Cache of parts hidden behind Emergency Access|Extension Secret Guards.png|Group of guards hidden behind Emergency Access|Extension Rewirable Bots1.png|Rewirable bots with dormant guards|Extension Rewirable Bots2.png|Rewirable bots with awake guards|Extension Single Derelict Cell.png|Single Derelict prison cell|Extension Double Derelict Cell.png|Double Derelict prison cell with guard|Extension A7 Terminal.png|[[A7]] prison cell|Extension Broken Bots.png|Broken bots with damaged parts|Extension Exits.png|Exits with scattered parts[[/Gallery]]
@@ -6591,6 +6590,16 @@ Often, Cogmind will have a big group of allies brought over from [[Extension]]. 
 
 [[Heading]]Cetus Mainframe[[/Heading]]
 The [[Reinforced Walls#cetus|Cetus Mainframe Doors]] have a very low base success rate of 10% and a high armor value of 40. While [[Hackware]] can help out here, the Cetus Guards can conveniently drop a [[Adv. Variable Charge Gun]] which can be overloaded to destroy the Sealed Heavy Doors. A [[Plasma Cutters|Plasma Cutter]] will eventually cut through as well.","Spoiler","","","","","",""
+"Strategy/Extension","Other","[[Image]]Extension Guide Route.png|Recommended path through Extension[[/Image]]
+[[Extension]] is a straightforward map with little variation between runs. The typical strategy is a fairly simple one:
+[[List:Ordered]]
+From the spawn location, take the path to the top-left of the map. Travel along the right and destroy any hostiles. Rewiring and freeing bots in cells is an option at this point, but it is usually better to wait to do this to keep [[Alert]] lower and to preserve ally integrity for the center fight.|
+Once reaching the middle of the map vertically, head back to the beginning area rather than continuing down. The 1 tile corridor tends to get too congested and favors the [[0b10]] defenders there. Free or rewire any remaining allies along the way, then take the army and charge into the center of the map from below. Here, the open corridor allows for better lines of fire for the army.|
+Assuming the fight went reasonably well at this point, the remainder of the map should be a breeze to run through. Free and rewire any allies on the top right of the map and then head down to the exit.
+[[/List]]
+
+[[Heading]]Extension Dig[[/Heading]]
+One alternative to fighting through the center of the map is to dig across through the top. This is typically a 10 tile dig, which has a reasonable risk of cave-ins occurring. If there were few allies gained or they were destroyed, or if Cogmind's offensive ability is very low, this alternative route may be preferable. Beware [[cave-ins]] this way.","Spoiler","","","","","",""
 "Strategy/Killing Superfortress","Other","[[Image]]Protoforge Superfortress.png|Dormant Superfortress in Protoforge[[/Image]]
 [[Superfortress]] in [[Protoforge]] is arguably the strongest robot in the game with powerful offenses that easily out-damage other endgame bosses and a defensive profile including resistances to most common damage types, an efficient [[Exp. Force Field]], near immunity to launchers with the [[Cep. Antimissile System]], and regenerating core integrity and parts. Killing Superfortress is a feat that can only be accomplished by incredible offensive firepower, either through Cogmind's own power or by overwhelming numbers. Even after getting the kill, the punishment includes much more dangerous future floors and an immediate triggering of [[High Security]] unless the UFD assault has begun. Builds should be in peak condition to even consider attempting the kill.
 
