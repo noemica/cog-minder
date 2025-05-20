@@ -5486,7 +5486,7 @@ If Cogmind attaches the Plexus Tether, all parts on the map will be identified a
 [[Heading:2]]Lack of [[Sterilization]][[/Heading]]
 Unlike most maps, Sterilization cannot occur inside the Protoforge. As a result, [[High Security]] can continue endlessly.
 [[Heading:2]]Advanced Fortification Protocols[[/Heading]]
-If Superfortress is destroyed or the UFD assault is started, all subsequent maps will have ""Advanced fortification protocols"" activated. This has the following effect on maps:
+If Superfortress is destroyed, the UFD assault is started, or High Security is activated, all subsequent maps will have ""Advanced fortification protocols"" activated. This has the following effect on maps:
 [[List]]50% increase in patrol density|
 Patrols can have non-standard bots. See [[Patrol Squad#advanced_fortification_protocols]] page for more details.|
 Garrison Accesses will be locked with no way to interact with them|
