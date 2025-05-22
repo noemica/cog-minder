@@ -6967,7 +6967,11 @@ Materials exits: These always lead to -8 Materials. These exits always skip -9 e
 [[Scraptown]] exit: The lost [[Scientist]] and the group of [[Federalist|Federalists]] can both reveal a shortcut to Scraptown.[[/List]]
 
 [[Heading]]Events[[/Heading]]
-(++) Lost Scientist: A Scientist can appear as Cogmind enters the map. The Scientist will tell Cogmind that they got separated from the rest of their [[UFD]] group. They will periodically indicate the general direction of a secret exit to Scraptown. If they survive to the location of the shortcut, they will reveal the exit that goes directly to Scraptown.","","","","","","",""
+[[Image]]Subcaves Subdweller Attack.png|Subdwellers attacking, with allied Thugs and Guerrilla[[/Image]]
+[[List]]
+(++) Lost Scientist: A Scientist can appear as Cogmind enters the map. The Scientist will tell Cogmind that they got separated from the rest of their [[UFD]] group. They will periodically indicate the general direction of a secret exit to Scraptown. If they survive to the location of the shortcut, they will reveal the exit that goes directly to Scraptown.|
+(+) Cobbler Follower: A dormant Cobbler will wake up and begin to follow Cogmind around.|
+(~) Subdweller attack: An allied [[Guerrilla (7)|Guerrilla]] will show up upon entering the map. Shortly after, several Subdwellers will appear and attack, with [[Thug (5)|Thugs]] appearing as allied backup.[[/List]]","","","","","","",""
 "Subdweller","Bot","This page is a sub. Please consider contributing.","","","","","","",""
 "Superbattery","Part","","","","","","","",""
 "Superbehemoth","Bot","","","","","","","",""
