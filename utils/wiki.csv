@@ -6253,7 +6253,43 @@ Typically, one bot per squad is designated as the [[Squad Leader]]. Squad leader
 "Stasis Beams","Part Group","","","","","Stasis Beam,Stasis Projector,Exp. Stasis Projector","","",""
 "Stasis Canceller","Part","","","","","","","",""
 "Stasis Projector","Part","","","","","","","",""
-"Stasis Trap","Part","","","","","","","",""
+"Stasis Trap","Part","Stasis Traps are [[Traps]] found in 0b10-controlled areas, and are especially common in [[Garrison|Garrisons]]. They are uniquely the only trap type to temporarily remain after being triggered, the only extractable trap type that cannot be stored inside [[Trap Extractors]], as well as the only trap type to be extractable [[I]]after[[/I]] being triggered (but before being depleted).
+
+[[Heading]]Triggering[[/Heading]]
+While the probability of triggering traps is based on current [[Propulsion]] type, the probability of triggering Stasis Trap is the opposite of regular Traps :
+[[Table]]
+Mode|Probability| Min. depletion on move
+|| Overweight | 100% | N/A
+|| [[Treads]] | 0% | 30
+|| [[Legs]] | 25% | 15
+|| [[Wheels]] | 50% | 10
+|| [[Hover Units|Hover]] | 60% | 7
+|| Core | 60% | 6
+|| [[Flight Units|Flight]] | 80% | 5
+[[/Table]]
+Note that this means non-overweight threaded builds are ""immune"" to hostile Stasis Traps.
+
+[[Heading]]Effects and depletion[[/Heading]]
+Upon being triggered, Stasis Traps create a stasis field on the tile they occupy, which cancels the evasion bonus from [[Flight Units|Flight]]/[[Hover Units|Hover]]/[[Reaction Control Systems]] of robots inside and prevents them from moving away until the field is depleted, usually by the victim's repeated movement attempts. These traps pose no threat whatsoever on their own, but with bad timing can be can cause Cogmind to get stuck in exposed locations as nearby dangers approach the area. However, the stasis field also reduces all incoming damage by 25%.
+The stasis field's strength starts at 100 minus whatever one movement of the victim would deplete, and can be escaped in one of five ways:
+[[List]]
+Attempting to move away from the stasis field will cause it to deplete by an amount equal to ([current mass support] - [current mass]) OR a minimum dependent on propulsion type (see table above), whichever is larger.
+Note that attempting to move away always takes 1 turn, regardless of current movement speed, with the exception of the movement that finishes depleting the field.
+|Taking damage while in a stasis field will reduce that damage by 25% and deplete the stasis field by [damage absorbed].
+|Using a [[Stasis Canceller]] and moving away from the trap will deplete it instantly.
+|If the Stasis Trap is friendly, using a Trap Extractor will extract it and its stasis field, conserving whatever was left of the field strength.
+|If an explosion occurs and destroys the Stasis Trap itself, the stasis field will also disappear, and the corresponding [[Mechanics Achievements|Mechanics Achievement]] ""Short-term Sacrifices"" will be unlocked if it wasn't already.
+[[/List]]
+
+[[Heading]]Special Interactions[[/Heading]]
+Below is an incomplete list of special interactions with Stasis Traps:
+[[List]]Cogmind is capable of swapping with allies already in Stasis Traps, which frees the ally but traps Cogmind instead.
+|[[Spoiler]]A [[Field Manipulator]] allows taking greater advantage of Stasis Traps' defensive ability.[[/Spoiler]]
+[[/List]]
+
+
+
+Last edited during Beta 15.","","","","","","",""
 "Stealth Drone","Bot","","","","","","","",""
 "Stealth Drone Bay","Part","","","","","","","",""
 "Sterilization","Other","Sterilization is a special [[0b10]] response to Cogmind destroying too many combat bots on a single map. When activated, the ambient heat of the floor will be increased forever until Cogmind exits the map. As the heat increases, any remaining bots, parts on the ground, machines, and traps will all melt. Occasionally, machines will explode before they melt.
