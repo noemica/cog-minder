@@ -7956,7 +7956,7 @@
     "Lightpack 2.0",
     "Cep. Antigrav Storage Unit"
    ],
-   "Content": "Storage units expand a bot's inventory size by their listed amount. Cogmind has 5 innate storage spaces, but other bots can have a few builtin slots, or none at all.[[Table]]\nName|Storage|Mass|Equip Slots|Coverage|Max. Integrity||\n[[Sml. Storage Unit]]|3|5|1|25|150||\n[[Med. Storage Unit]]|5|10|1|25|250||\n[[Lrg. Storage Unit]]|10|20|1|25|350||\n[[Hcp. Storage Unit]]|15|40|1|25|500||\n[[Huge Storage Unit]]|20|80|1|25|600||\n[[Cargo Storage Unit]]|25|140|2|50|1000||\n[[Humpback]]|30|200|2|160|400||\n[[Vmp. Humpback]]|30|200|2|160|400||\n[[Lightpack 2.0]]|35|5|3|45|*500\n[[/Table]]"
+   "Content": "Storage units expand a bot's inventory size by their listed amount. Cogmind has 5 innate storage spaces, but other bots can have a few builtin slots, or none at all.[[Table]]\nName|Storage|Mass|Equip Slots|Coverage|Max. Integrity||\n[[Sml. Storage Unit]]|3|5|1|25|150||\n[[Med. Storage Unit]]|5|10|1|25|250||\n[[Lrg. Storage Unit]]|10|20|1|25|350||\n[[Hcp. Storage Unit]]|15|40|1|25|500||\n[[Huge Storage Unit]]|20|80|1|25|600||\n[[Cep. Antigrav Storage Unit]]|20|30|1|25|400||\n[[Cargo Storage Unit]]|25|140|2|50|1000||\n[[Humpback]]|30|200|2|160|400||\n[[Vmp. Humpback]]|30|200|2|160|400||\n[[Lightpack 2.0]]|35|5|3|45|*500\n[[/Table]]"
   },
   {
    "Name": "Supercharged Parts",
