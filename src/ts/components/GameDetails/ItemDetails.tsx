@@ -179,11 +179,11 @@ function getSpectrumString(spectrum: Spectrum | undefined) {
 
 function getStateNode(specialTrait: string | undefined) {
     if (specialTrait?.startsWith("Disposable")) {
-        return <span className="state-disposable"> {specialTrait} </span>
+        return <span className="state-disposable"> {specialTrait} </span>;
     } else if (specialTrait === "Fragile") {
         return <span className="state-fragile"> Fragile </span>;
     } else if (specialTrait?.startsWith("Unstable")) {
-        return <span className="state-unstable"> {specialTrait} </span>
+        return <span className="state-unstable"> {specialTrait} </span>;
     } else {
         return <span className="state-na"> N/A </span>;
     }
@@ -629,7 +629,12 @@ function PropulsionPartDetails({ item }: { item: PropulsionItem }) {
                 valueString={item.penalty?.toString()}
             />
             {item.special !== undefined ? (
-                <DetailsTextLine category="Special" content={item.special} defaultContent="N/A" tooltipOverride={item.special}/>
+                <DetailsTextLine
+                    category="Special"
+                    content={item.special}
+                    defaultContent="N/A"
+                    tooltipOverride={item.special}
+                />
             ) : (
                 <DetailsRangeLine
                     category="Burnout"
@@ -678,6 +683,38 @@ function UtilityPartDetails({ item }: { item: UtilityItem }) {
 }
 
 function SpecialMeleeWeaponPartDetails({ item }: { item: WeaponItem }) {
+    const damageNode = item.damageMin && item.damageMax && (
+        <>
+            <DetailsEmptyLine />
+            <DetailsProjectileSummaryLine category="Hit" item={item} />
+            <DetailsRangeLine
+                category="Damage"
+                colorScheme="Green"
+                maxValue={100}
+                value={getDamageValue(item)}
+                valueString={item.damage}
+            />
+            <DetailsTextLine category="Type" content={item.damageType} />
+            <DetailsTextValueLine
+                category="Critical"
+                value={item.critical?.toString()}
+                textNode={item.criticalType?.toString()}
+                defaultValueString="0"
+                unitString="%"
+            />
+            <DetailsRangeLine
+                category="Disruption"
+                colorScheme="Green"
+                maxValue={50}
+                defaultValueString="0"
+                value={item.disruption}
+                valueString={item.disruption?.toString()}
+                unitString="%"
+            />
+            <DetailsValueLine category="Salvage" valueString={signedStringOrUndefined(item.salvage)} defaultValue="0" />
+        </>
+    );
+
     return (
         <>
             <DetailsEmptyLine />
@@ -720,6 +757,7 @@ function SpecialMeleeWeaponPartDetails({ item }: { item: WeaponItem }) {
                 valueString={getDelayString(item)}
                 defaultValue="0"
             />
+            {damageNode}
         </>
     );
 }
@@ -1029,7 +1067,11 @@ export default function ItemDetails({ item, showWikiLink }: { item: Item; showWi
                 value={1}
             />
             <DetailsValueLine category="Coverage" valueString={item.coverage?.toString() ?? "0"} />
-            <DetailsTextLine category="State" content={getStateNode(item.specialTrait)} tooltipOverride={item.specialTrait}/>
+            <DetailsTextLine
+                category="State"
+                content={getStateNode(item.specialTrait)}
+                tooltipOverride={item.specialTrait}
+            />
             <DetailsTextLine category="Schematic" content={getSchematicString(item)} defaultContent="N/A" />
             {item.hackable ? (
                 <DetailsTextLine category=" Min Terminal/Depth" content={getSchematicDepthString(item)} />
