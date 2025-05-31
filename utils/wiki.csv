@@ -1106,7 +1106,13 @@ Attaching unknown [[Alien Artifacts]] or [[Prototype Part|Prototype Parts]] with
 [[/List]]
 [[Heading:2]]Secret second effect[[/Heading]]
 [[Spoiler]]The Chronowheel also has a hidden secondary effect when paired with the [[Subatomic Replicator]]. First, the warning [[GameText]]Chronowheel temporarily destabilized by failed replication attempt, a second attempt will likely cause a devastating explosion.[[/GameText]] will appear in the log. A second attempt will give the message [[GameText]]Local interference in replication process, triggered subspace vortex.[[/GameText]] A 20 tile radius explosion will then occur at the point of replication, dealing 1000 vortex damage in 10 damage chunks with 0 falloff.[[/Spoiler]]","","","","","","",""
-"Chute Trap","Other","","","","","","","",""
+"Chute Trap","Other","Chute Traps are [[Traps]] found exclusively in the first [[Factory]] map of each depth from -7 to -4. In other words, additional Factory maps reached via [[Wastes]] or [[Garrison]] looping do not have any Chute Traps. Like [[Alarm Trap|Alarm Traps]] and [[Ambush Trap|Ambush Traps]], they cannot be extracted using a [[Trap Extractors|Trap Extractor]].
+
+[[Heading]]Effects[[/Heading]]
+When triggered, a Chute Trap will bring the victim to the current depth's Wastes map, permanently sealing itself afterwards.
+Victims can be followed by triggering a different Chute Trap. If Cogmind falls victim to one, all allies currently following Cogmind will fall into Wastes one after the other following Cogmind, even if there weren't enough remaining Chute Traps for them to follow. If Cogmind follows a purple allied [[Derelict]] into Wastes, the Derelict will thank Cogmind for not abandoning them.
+
+On Factory maps containing Chute Traps, [[K-01 Serf|K-01 Serf Workers]] can sometimes spawn carrying disabled 0b10 bots towards Chutes, and some disabled 0b10 bots can sometimes be stored inside rooms. If a disabled bot is within range of a Worker, the Worker will try to latch onto the bot and carry them into the nearest Chute Trap, even if the bot is only temporarily disabled.","","","","","","",""
 "Cld. Aerolev Unit","Part","","","","","","","",""
 "Cld. Airjet","Part","","","","","","","",""
 "Cld. Antigrav System","Part","","","","","","","",""
