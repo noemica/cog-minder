@@ -570,6 +570,24 @@
             ]
         },
         {
+            "CategoryName": "Protector",
+            "Targets": ["Protector"],
+            "Hacks": [
+                {
+                    "Name": "disable_shields",
+                    "Rif": true,
+                    "Charges": 1,
+                    "Description": "Permanently disable an active shield or force field system."
+                },
+                {
+                    "Name": "redirect_shields",
+                    "Rif": true,
+                    "Charges": 3,
+                    "Description": "Permanently reprogram defensive system to protect yourself and allies from attacks, instead of Protector's allies.."
+                }
+            ]
+        },
+        {
             "CategoryName": "Serf",
             "Targets": ["Worker"],
             "Hacks": [
