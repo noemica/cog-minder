@@ -18,7 +18,7 @@ Entrances to new levels are implied to be long uneventful corridors where Cogmin
 "0b10 Decoder Chips","Part Group","","","","","0b10 Decoder Chip [Generic],0b10 Decoder Chip [Looter],0b10 Decoder Chip [Scout],0b10 Decoder Chip [Skirmisher]","","",""
 "0b10 Non-combat Bots","Bot Supergroup","","","C-30 ARC,K-01 Serf,N-00 Fly,N-01 Spotter,N-04 Retriever,T-07 Excavator,U-05 Engineer","","","Hauler,Mechanic,Minesweeper,Operator,Protector,Recycler,Researcher,Watcher","",""
 "0bPrime Scrap Suit","Part","","","","","","","",""
-"12-ASH","Bot","12-ASH is one of the Hero's Of Zion. Upon appearing, they will shout ""hail to the king"".","","","","","","",""
+"12-ASH","Bot","12-ASH is one of the [[Heroes of Zion]]. Upon appearing, they will shout ""hail to the king"".","","","","","","",""
 "12-ASH's Boomstick","Part","","","","","","","",""
 "1C-UTU","Bot","","","","","","","",""
 "1C-UTU's Buckler","Part","","","","","","","",""
@@ -37,7 +37,7 @@ Entrances to new levels are implied to be long uneventful corridors where Cogmin
 "8R-AWN's Boregun","Part","","","","","","","",""
 "99-TNT","Bot","","","","","","","",""
 "99-TNT's Nukerbomber","Part","","","","","","","",""
-"A Bots","Bot Group","A bots are a a [[Bot Groups|Bot Group]] of [[Hover Units|hovering]] [[Programmer]]-like bots that are aligned to the [[Architect]]. A few are friendly to Cogmind, but the majority of them are hostile and can only be encountered at their home base in [[Access_0]]. They have a variety of different offensive and defensive armament and boast some powerful unique parts. They are all formidable opponents in combat.","Redacted","A2,A3,A4,A5,A6,A7,A8","","","","",""
+"A Bots","Bot Group","A bots are a [[Bot Groups|Bot Group]] of [[Hover Units|hovering]] [[Programmer]]-like bots that are aligned to the [[Architect]]. A few are friendly to Cogmind, but the majority of them are hostile and can only be encountered at their home base in [[Access_0]]. They have a variety of different offensive and defensive armament and boast some powerful unique parts. They are all formidable opponents in combat.","Redacted","A2,A3,A4,A5,A6,A7,A8","","","","",""
 "A-02 Transporter","Bot","","","","","","","",""
 "A-15 Conveyor","Bot","","","","","","","",""
 "A-27 Freighter","Bot","Informally known as a yauler (yellow Hauler). In the main complex, appears as part of a [[Cargo Convoy]].","","","","","","",""
@@ -499,7 +499,11 @@ There are 3 exits on this map but only 2 kinds of exits:
 "Arm. Treads","Part","","","","","","","",""
 "Arm. Wheel","Part","","","","","","","",""
 "Armageddon Trap","Part","","","","","","","",""
-"Armor","Part Supergroup","","","","","Lgt. Armor Plating,Med. Armor Plating,Hvy. Armor Plating,Zio. Light Carapace,Zio. Heavy Carapace,Hrd. Light Armor Plating,Hrd. Medium Armor Plating,Hrd. Heavy Armor Plating,Imp. Light Armor Plating,Imp. Medium Armor Plating,Imp. Heavy Armor Plating,Mak. Light Armor Plating,Mak. Medium Armor Plating,Mak. Heavy Armor Plating,Lyr. Light Armor Plating,Lyr. Medium Armor Plating,Lyr. Heavy Armor Plating,Gun Armor,Centrium Light Armor Plating,Centrium Medium Armor Plating,Centrium Heavy Armor Plating,Centrium Linked Plating,Mak. Ablative Armor,Active Cooling Armor,Scrap Shield,Enh. Scrap Shield,Tower Shield,Vmp. Brace Plating","Backup Plating,Powered Armor (Group),Regenerative Armor,Resistance Armor","",""
+"Armor","Part Supergroup","Armor protects other parts, and the core, by having high coverage and integrity. The coverage makes attacks less likely to hit other parts or the core; the integrity allows the armor to tank many hits before being destoyed.
+
+Some armor provides additional functionality, like granting resistance to a certain damage type [[Spoiler]]or regenerating integrity over time while powered[[/Spoiler]].
+
+Any part with high coverage and integrity can act like armor. Parts often used for this include [[Treads]] and [[Ballistic Cannons]]. The difference is that dedicated ""armor"" parts have little other purpose than their protective role, whereas losing a tread or a cannon can disable critical aspects of a build.","","","","Lgt. Armor Plating,Med. Armor Plating,Hvy. Armor Plating,Zio. Light Carapace,Zio. Heavy Carapace,Hrd. Light Armor Plating,Hrd. Medium Armor Plating,Hrd. Heavy Armor Plating,Imp. Light Armor Plating,Imp. Medium Armor Plating,Imp. Heavy Armor Plating,Mak. Light Armor Plating,Mak. Medium Armor Plating,Mak. Heavy Armor Plating,Lyr. Light Armor Plating,Lyr. Medium Armor Plating,Lyr. Heavy Armor Plating,Gun Armor,Centrium Light Armor Plating,Centrium Medium Armor Plating,Centrium Heavy Armor Plating,Centrium Linked Plating,Mak. Ablative Armor,Active Cooling Armor,Scrap Shield,Enh. Scrap Shield,Tower Shield,Vmp. Brace Plating","Backup Plating,Powered Armor (Group),Regenerative Armor,Resistance Armor","",""
 "Armor Guard","Bot","","","","","","","",""
 "Armor Integrity Analyzer","Part","","","","","","","",""
 "Armor Integrity Analyzers","Part Group","","","","","Armor Integrity Analyzer,Imp. Armor Integrity Analyzer,Exp. Armor Integrity Analyzer","","",""
@@ -651,7 +655,7 @@ The Data Miner can redirect Assaults if his help is obtained by visiting his [[D
 "Backup Laser III","Part","","","","","","","",""
 "Backup Laser VII","Part","","","","","","","",""
 "Backup Lasers","Part Group","","","","","Backup Laser I,Backup Laser III,Backup Laser VII","","",""
-"Backup Parts","Part Supergroup","","","","","","Backup Lasers,Backup Plating,Backup Power,Backup Propulsion","",""
+"Backup Parts","Part Supergroup","Backup parts are refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack.","","","","","Backup Lasers,Backup Plating,Backup Power,Backup Propulsion","",""
 "Backup Plating","Part Group","","","","","Backup Plating I,Backup Plating III,Backup Plating VII","","",""
 "Backup Plating I","Part","","","","","","","",""
 "Backup Plating III","Part","","","","","","","",""
@@ -3623,7 +3627,7 @@ When entering -3 Research, the Exiles will send a warning message to Cogmind ind
 "Fusion Bomb Launcher","Part","","","","","","","",""
 "Fusion Bomb Trap","Part","","","","","","","",""
 "Fusion Compressor","Part","","","","","","","",""
-"Fusion Compressors","Part Group","","","","","Fusion Compressor,Imp. Fusion Compressor","","",""
+"Fusion Compressors","Part Group","Consume matter to produce energy.","","","","Fusion Compressor,Imp. Fusion Compressor","","",""
 "Fusion Reactor","Part","","","","","","","",""
 "G-34 Mercenary","Bot","The lowest tier of bipedal combat Robots deployed in Complex 0b10, they possess one Small Laser that can deal compounding damage to lower tier parts, especially in the numbers they are usually encountered in. Their lack of significant heat dissipation makes them quickly melt under a sustained salvo of Thermal attacks, while their low core integrity means any sufficiently consistent weapon (In upwards of 15 dmg or more) is good to destroy them, launchers are also effective due to this reason as well. Their minus -25% electromagnetic resistance makes them susceptible targets for your possibly game-start EM Pulse Gun though its actual damage will be weak. Proper positioning can limit the amount of damage you take in encounters with Grunts and most other 0b10 bots. Using doorways to limit the amount of fire you take is one such method, as well as using corners.","","","","","","",""
 "G-47 Trooper","Bot","The second iteration of the Grunt-type combat robot in 0b10, the Trooper is up-gunned from a Sml. Laser to a more potent Particle gun, capable of greater damage and heat transfer. In addition, it also possesses a Lgt. Nuclear Core and an Imp. Heat Sink along with double the core integrity of the G-34. In spite of these upgrades, the standard grunt weaknesses apply, sustained thermal damage will still melt them, along with the type's intrinsic -25% electromagnetic resistance.","","","","","","",""
@@ -3816,7 +3820,13 @@ Grunts may appear in the following squads:
 "Gui. Missile Launcher","Part","","","","","","","",""
 "Gui. Plasma Cannon","Part","","","","","","","",""
 "Gui. Remote Datajack","Part","","","","","","","",""
-"Guided Weapons","Part Group","","","","Guided Weapons","","","",""
+"Guided Weapons","Part Group","Guided weapons have several characteristics:
+[[List]]
+They cannot be fired in a volley with other weapons, only alone.
+|Their projectiles follow a series of waypoints defined when the weapon is fired.
+|They never miss.
+|They are unaffected by [[Corruption]] misfires.
+[[/List]]","","","Guided Weapons","","","",""
 "Gun Armor","Part","","","","","","","",""
 "Guru","Bot","","","","","","","",""
 "Gyrokinetic Inverter","Part","","","","","","","",""
@@ -4982,9 +4992,9 @@ Some energy weapons (e.g. [[Cld. Pulse Rifle]]) support overloading. Overloading
 If an overload side effect occurs, one of the following effects will occur:
 [[List]]Energy Bleed (~40% chance): Cogmind loses anywhere from 10-50% of total energy capacity|Heat Surge (~40% chance): Cogmind gains between 100 and 200 heat|Short Circuit (~20% chance): A random part breaks[[/List]]","","","","","","",""
 "Overloadable Parts","Part Supergroup","","","","","","Overloadable Power,Overloadable Propulsion,Overloadable Weapons","",""
-"Overloadable Power","Part Group","","","","Overloadable Power","","","",""
-"Overloadable Propulsion","Part Group","","","","Overloadable Propulsion","","","",""
-"Overloadable Weapons","Part Group","","","","Overloadable Weapons","","","",""
+"Overloadable Power","Part Group","For details on behavior when overloaded, see [[Overload#Power]].","","","Overloadable Power","","","",""
+"Overloadable Propulsion","Part Group","For details on behavior when overloaded, see [[Overload#Propulsion]].","","","Overloadable Propulsion","","","",""
+"Overloadable Weapons","Part Group","For details on behavior when overloaded, see [[Overload#Weapons]].","","","Overloadable Weapons","","","",""
 "Overlord","Bot","","","","","","","",""
 "Overtuned Parts","Part Group","","Spoiler","","Overtuned Parts","","","",""
 "Ovr. Antimatter Reactor","Part","","","","","","","",""
@@ -5437,7 +5447,30 @@ See [[Strategy/W9 Defending 0bPrime]].","Redacted","","","","","",""
 "Pulse Rifle","Part","","","","","","","",""
 "Q-Series","Bot","","","","","","","",""
 "Q-thruster","Part","","","","","","","",""
-"Quantum Capacitor","Part","","","","","","","",""
+"Quantum Capacitor","Part","The Quantum Capacitor (QC or Qcap) drastically reduces the firing time for an [[Energy Guns|Energy Gun]] or [[Energy Cannons|Energy Cannon]], but only if it is fired in a volley all by itself. This allows a bot to do much higher damage per turn (DPT) with that single weapon.
+
+Assuming no delay modifiers, a weapon with a Quantum Capacitor will do slightly more DPT than 3 of the same weapon, and slightly less than 4.
+[[Table]]
+Weapons|Time to fire|Time per weapon||
+[[CellStyle:Neutral]][[B]]1 with QC[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]||
+1|200|[[CellStyle:Bad]]200||
+2|300|[[CellStyle:Bad]]150||
+3|325|[[CellStyle:Bad]]108⅓||
+4|350|[[CellStyle:Good]] 87½||
+5|375|[[CellStyle:Good]] 75||
+6|400|[[CellStyle:Good]] 66⅔
+[[/Table]]
+
+The Quantum Capacitor has several benefits on top of firing time:
+[[List]]
+Equipping fewer weapons means they get damaged more slowly (but it leaves your core more exposed)
+|Lower mass from wearing fewer weapons
+|Only need to find one good weapon instead of several
+|Can simultaneously equip weapons for different situations, such as a thermal weapon and an electromagnetic weapon, instead of having to swap several weapon slots
+|No overkill: you can stop firing right when an enemy dies instead of finishing a large volley
+[[/List]]
+
+The Quantum Capacitor takes two slots, so it takes a lot of space and is difficult to swap in and out situationally. And because it tends to appear in the mid-to-late game, a build that has invested heavily in weapon slots may find the Quantum Capacitor difficult to justify, or at least face the sunk cost of extra weapon slots that will be little help with a Quantum Capacitor. The extra weapon slots can be used for situational weapons or for ""weapon armor"": high-coverage, high-integrity weapons like the [[Sigix Broadsword]].","","","","","","",""
 "Quantum Companion","Part","The Quantum Companion is a unique talking melee weapon that is an upgrade to the [[Companion Sword]]. It can be obtained by either using a [[Subatomic Replicator]] on a Companion Sword or by using the Companion Sword for while. The Quantum Companion has all of the special effects that the base Companion Sword has with a higher frequency of occurrence and also has some new unique effects of its own.
 
 [[Heading]]Special Effects[[/Heading]]
@@ -6181,7 +6214,7 @@ Additionally, Sentries will appear at [[Garrison Access|Garrisons]] and 0b10 exi
 "Shield Generators","Part Group","","","","","Shield Generator,Imp. Shield Generator,Adv. Shield Generator,Exp. Shield Generator,Remote Shield,Imp. Remote Shield,Adv. Remote Shield,Exp. Remote Shield","","",""
 "Shield Leg","Part","","","","","","","",""
 "Shield Trident","Part","","","","","","","",""
-"Shieldings","Part Supergroup","","","","","","Core Shieldings,Power Shieldings,Propulsion Shieldings,Utility Shieldings,Weapon Shieldings","",""
+"Shieldings","Part Supergroup","Shieldings protect the core or parts of a given type from damage and critical strikes. They have no coverage; instead, they take damage when an attack hits whatever they're protecting.","","","","","Core Shieldings,Power Shieldings,Propulsion Shieldings,Utility Shieldings,Weapon Shieldings","",""
 "Shock Absorption System","Part","","","","","","","",""
 "Shock Bomb Launcher","Part","","","","","","","",""
 "Shock Maul","Part","","","","","","","",""
@@ -6387,7 +6420,8 @@ Most of the events in Storage are driven by vault prefabs. There are several eve
 (+) [[Armory]] raid message: A Derelict will tell Cogmind the depth of Armory.|
 (+/-) [[Thug (5)|Derelict]] raid: 2 Derelicts will have already opened and raided a large open vault. Several parts will be missing from the normal vault contents. When discovered, the 2 Derelicts will turn into uncontrollable allies and two assault [[C-30 ARC|ARCs]] will be summoned to the vault.[[/List]]","","","","","","",""
 "Storage (Group)","Part Supergroup","","","","","","Storage Unit,Energy Wells,Matter Compressors","",""
-"Storage Unit","Part Group","Storage units expand a bot's inventory size by their listed amount. Cogmind has 5 innate storage spaces, but other bots can have a few builtin slots, or none at all.[[Table]]
+"Storage Unit","Part Group","Storage units expand a bot's inventory size by their listed amount. Cogmind has 5 innate storage spaces, but other bots can have a few builtin slots, or none at all.
+Storage units do not stack; the inventory size bonus from only one storage unit is applied.[[Table]]
 Name|Storage|Mass|Equip Slots|Coverage|Max. Integrity||
 [[Sml. Storage Unit]]|3|5|1|25|150||
 [[Med. Storage Unit]]|5|10|1|25|250||
