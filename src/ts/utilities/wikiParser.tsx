@@ -1949,7 +1949,7 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
                     );
                 }
 
-                cell = cell.substring(cellStyleResult[0].length);
+                cell = cell.substring(cellStyleResult.index + cellStyleResult[0].length);
             }
 
             let cellSpan: number | undefined = undefined;
@@ -1957,7 +1957,7 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
             if (cellSpanResult !== null) {
                 cellSpan = parseIntOrDefault(cellSpanResult[1], 1);
 
-                cell = cell.substring(cellSpanResult[0].length);
+                cell = cell.substring(cellSpanResult.index + cellSpanResult[0].length);
                 currentColumnCount += parseIntOrDefault(cellSpanResult[1], 1);
             } else {
                 currentColumnCount += 1;
