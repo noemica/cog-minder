@@ -25,6 +25,7 @@ import {
     parseIntOrUndefined,
     rootDirectory,
 } from "./common";
+import TextTooltipButton from "../components/Popover/TextTooltipButton";
 
 // Output group types
 // Grouped can be in the same <p> block
@@ -150,6 +151,31 @@ function createIdFromText(text: string) {
         .toLowerCase();
 }
 
+function SpoilerButton({spoiler} : {spoiler: Spoiler}) {
+    let buttonStyle: string;
+    let buttonText: string;
+    let tooltipText: string;
+
+    if (spoiler === "None") 
+    {
+        buttonStyle = "no-spoiler-info-button";
+        buttonText = "No Spoiler"
+        tooltipText = "This page has no spoiler-related content.";
+    } else if (spoiler === "Spoiler") {
+        buttonStyle = "spoiler-info-button";
+        buttonText = "Spoiler"
+        tooltipText = "This page relates to mild spoiler-related content. Spoiler-tier content primarily includes midgame Factory and Research branch maps.";
+    } else {
+        buttonStyle = "redacted-info-button";
+        buttonText = "Redacted"
+        tooltipText = "This page relates to the highest levels of spoiler-related content. Redacted-tier includes well hidden midgame maps like L, S7, and FRG, as well as extended endgame maps C and A0.";
+    }
+
+    return <TextTooltipButton className={buttonStyle} tooltipText={tooltipText}>
+            {buttonText}
+        </TextTooltipButton>
+}
+
 // Creates the HTML content of a wiki entry
 export function createContentHtml(
     entry: WikiEntry,
@@ -204,6 +230,7 @@ export function createContentHtml(
                         headingText
                     )}
                     <LinkIcon href="#" />
+                    <SpoilerButton spoiler={entry.spoiler} />
                 </h1>
                 {
                     // If the base heading is a link, don't create a TOC

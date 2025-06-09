@@ -31,6 +31,50 @@
     color: @font-paragraph-color;
 }
 
+.no-spoiler-info-button,
+.spoiler-info-button,
+.redacted-info-button {
+    margin-bottom: @wiki-spoiler-button-bottom-margin;
+    float: right;
+
+    > button {
+        border-radius: 0;
+        background-image: none;
+        background-color: @wiki-spoiler-background-color;
+        border-color: @wiki-spoiler-border-color;
+    }
+
+    :hover,
+    :focus {
+        background-image: none;
+        color: unset;
+        background-color: @wiki-spoiler-hover-focus-background-color;
+        border-color: @wiki-spoiler-active-border-color;
+    }
+}
+
+.no-spoiler-info-button {
+    > button {
+        color: @wiki-no-spoiler-button-color;
+    }
+}
+
+.spoiler-info-button {
+    > button,
+    :hover,
+    :focus {
+        color: @wiki-spoiler-button-color;
+    }
+}
+
+.redacted-info-button {
+    > button,
+    :hover,
+    :focus {
+        color: @wiki-redacted-button-color;
+    }
+}
+
 .spoiler-text,
 .spoiler-text * {
     transition: @transition-duration;
