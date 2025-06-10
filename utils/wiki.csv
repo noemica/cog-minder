@@ -5434,7 +5434,28 @@ See [[Strategy/W9 Defending 0bPrime]].","Redacted","","","","","",""
 "Proton Burst Cannon","Part","","","","","","","",""
 "Proton Cannon","Part","","","","","","","",""
 "Proton Missile Launcher","Part","","","","","","","",""
-"Prototype Part","Other","","","","","","","",""
+"Prototype Part","Other","Prototype parts are generally improvements on standard robot parts. They can be found in many places that standard parts appear, including in stockpiles, in [[Hauler|Haulers]], and equipped by other robots.
+
+Prototypes can be faulty, and initially Cogmind cannot tell what a prototype is or if it is faulty. Faulty prototypes can be harmful when equipped. In exchange, prototypes are generally slightly more effective than standard parts of the same rating. In particular, prototype [[Flight Units|Flight]] and [[Hover Units]] are considered essential because they have lower coverage and higher integrity than standard flight and hover units, giving them the durability they need to be viable.
+
+The game will often indicate a prototype part by putting an asterisk [[GameText]]*[[/GameText]] next to its rating, and prototype parts on the ground will have a pulsating glow.
+
+[[Heading]]Faulty Prototypes[[/Heading]]
+Prototype parts have a chance to be faulty. Faulty prototypes are inoperative, often have serious side effects when equipped, and cannot be repaired at a [[Repair Station]]. They can be scanned at a [[Scanalyzer]] to obtain the schematic.
+
+In general, any prototype part has a 20% chance to be faulty. But the chance is higher for some parts. And in some circumstances Cogmind can find prototypes that are guaranteed not to be faulty; examples include the contents of a [[Cargo Convoy]] (but not necessarily other Haulers), parts that other bots were using, and [[Spoiler]]some stockpiles in [[Armory]][[/Spoiler]].
+
+[[Heading]]Prototype IDs[[/Heading]]
+When the game begins, prototype part IDs are unknown. They will appear simply as ""Prototype"" of a specific type, and Cogmind will not be able to tell if they are faulty.
+
+Cogmind can learn to recognize a particular prototype in several ways. The most common are:[[List]]
+By equipping the part
+|Through the [[GameText]]Prototypes[[/GameText]] hack at a [[Terminal]]
+|By using a [[Datajacks|Datajack]] to parse a robot that has it equipped
+|With a [[Component Analysis Suites|Component Analysis Suite]]
+[[/List]]Identifying a prototype will teach Cogmind to recognize other copies of that specific part and see whether they are faulty.
+
+Equipping an unknown prototype is the riskiest option, akin to quaff-IDing in other roguelikes (and often referred to as such in Cogmind), because the prototype could be faulty. Outside of combat, Cogmind can often manage the risk. But it is smart to first detach other valuable parts, since attaching a faulty prototype can damage or break other equipment.","","","","","","",""
 "Prototype Robot","Bot Group","","Spoiler","Alpha 7,AP7-3,Armor Guard,Cetus Guard,Combat Programmer,Decapitator,Enhanced Demolisher,Enhanced Grunt,Enhanced Hunter,Enhanced Programmer,Enhanced Q-Series,Enhanced Sentry,EXE-6,Executioner,Fortress,Hotshot,Immortal,Investigator,Lightning,LRC-V4,LRC-V5,LRC-V6,M Guard,M Shell/Atk,M Shell/Def,Protovariant D,Protovariant G,Protovariant H,Protovariant L,Protovariant P,Protovariant X,Protovariant Y,Quarantine Guard,S7 Guard,SKR-2,Striker,Superbehemoth,Tracker,V-Series","","","","",""
 "Protovariant","Bot Group","Protovariants are a group of prototype [[0b10]] bots that appear only in [[Testing]]. They are much stronger than the average bot of each class and can appear in one of 4 states: Unpowered, Dormant, Active, or Disabled/rewirable. They can be made berserk with a special Testing-specific [[GameText]]Control(Protovariants)[[/GameText]] [[Terminal]] hack. If this happens, a special [[Assault Squad]] will be dispatched to their location that contains an [[Investigator]]. Occasionally, Protovariants will go out of control on their own even without performing the hack.","Spoiler","Protovariant D,Protovariant G,Protovariant H,Protovariant L,Protovariant P,Protovariant X,Protovariant Y","","","","",""
 "Protovariant D","Bot","","","","","","","",""
