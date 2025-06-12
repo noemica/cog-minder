@@ -83,7 +83,7 @@
             },
             {
                 "Name/Number": "Containment Facilitator",
-                "Content": "Originally derived from Sigix stasis generator technology as a method of controlling malfunctioning prototype variants, this single-use device is so effective at handling multiple targets that once mass production is feasible it is a prime candidate for deployment among front line combat units.",
+                "Content": "Originally derived from Sigix stasis generator technology as a method of controlling malfunctioning prototype variants, this single-use device is so effective at handling multiple targets that once mass production is feasible it is a prime candidate for deployment among frontline combat units.",
                 "Spoiler": "Spoiler"
             },
             {
@@ -372,10 +372,6 @@
                 "Spoiler": "Spoiler"
             },
             {
-                "Name/Number": "Reconstruction Test Results",
-                "Content": "Aggregate results from all lab tests, combined with analysis of Sigix Exoskeleton remains and sensor data from the surface encounter, have confirmed integrity deterioration within a range of 5-10% to matter that undergoes transdimensional reconstruction using Sigix methods. Phase two will cross reference data with previous attempts at teleportation technology to develop a more effective approach."
-            },
-            {
                 "Name/Number": "Recycling",
                 "Content": "Storage area extension to which obsolete technology is transferred for conversion to raw materials. Derelicts from deeper caves have recently begun using this as a convenience route for quick access to the Factory floors, thus a more secure access system was put in place to at least keep out the stupid ones which tend to cause more trouble."
             },
@@ -438,16 +434,6 @@
                 "Spoiler": "Spoiler"
             },
             {
-                "Name/Number": "Sigix Access Protocol",
-                "Content": "Regardless of authorization, any access to the live Sigix specimen must be carried out under heavy guard, less out of worry for the specimen itself causing problems, and more to prevent unexpected disturbances from outside forces. Only after adequate defenses are stationed and registered should the quarantine chamber be opened: <CODE>.",
-                "Spoiler": "Spoiler"
-            },
-            {
-                "Name/Number": "Sigix Autopsy",
-                "Content": "The Sigix are a bipedal species that appear to have once been similar to Humans in physical stature, but their bodies have since either atrophied or devolved into their current small and frail state. Only their brain remains highly developed, and shares a cellular configuration vaguely resembling that of the biological matter found in the Leopard FTL Device. The Sigix have no apparent way to reproduce, suggesting they may rely purely on genetic engineering and artificial methods of reproduction. Basic life functions are all supported by significant biomechanical augmentations, making them far more resilient than their anatomy would otherwise suggest; all Sigix aboard the Leopard also wore an extremely durable and powerful full-body Sigix Exoskeleton.",
-                "Spoiler": "Spoiler"
-            },
-            {
                 "Name/Number": "Sigix Broadsword",
                 "Content": "The Sigix are apparently not above melee combat. One of their most commonly used weapons during the battle was quite literally a very broad flat blade with amazing slicing power. This weapon doubles as a protective device when turned parallel to the wielder, as its Centrium alloy blade has the stopping power to absorb a barrage of cannon fire without breaking. Even more amazing is the finding that this particular alloy is capable of self-powered regeneration over a period of time. As such, some of the Sigix carry two at a time and during a fight will alternate between using each. They can swing these at great speeds with the power of their Sigix Exoskeleton.",
                 "Spoiler": "Spoiler"
@@ -460,11 +446,6 @@
             {
                 "Name/Number": "Sigix Technology",
                 "Content": "While a single Leopard and its contents have provided a wealth of research material, without more reference data or samples to compare against, what I've been able to learn through experimentation is still a mere glimpse of their technological superiority. That I've been unable to extract any information whatsoever from the Sigix captive adds to the frustration. A small number of core Sigix technologies like Centrium alloys have proven easy to replicate, though a majority of the most advanced unique devices remain a mystery. Among those, LRC Attachments have been the most difficult to understand.",
-                "Spoiler": "Spoiler"
-            },
-            {
-                "Name/Number": "Slip Nodes",
-                "Content": "Activation of one of the devices recovered from launch tubes in the Leopard's rear hull and subsequent testing of a Transdimensional Reconstructor in its vicinity has revealed their purpose: hypergravitational waves emitted in the local area create a nexus that influences dimensional paths traveled during the reconstruction process. While some reconstructor variants are more powerful than others, presumably because the effect is not entirely predictable and therefore an alternative approach was required to assert some control over the result, there seems to be no difference in how they interact with nodes. Considering the circumstances of their discovery, these devices might even be capable of teleporting the entire ship. Further testing is temporarily on hold while a reliable method of component replication is devised.",
                 "Spoiler": "Spoiler"
             },
             {
@@ -553,11 +534,6 @@
             {
                 "Name/Number": "Turret Installations",
                 "Content": "While stationary defenses have proven easier to harden against attackers, that effectiveness is cancelled out as the continued expansion of Complex 0b10 causes priorities to shift. Many early experiments with turrets encountered either a high rate of Derelict hacking or were simply circumvented since they are unable to respond dynamically like a normal patrol. The only remaining active turret array is installed near an old passage in the Caves leading to Recycling."
-            },
-            {
-                "Name/Number": "Unknown Artifact",
-                "Content": "A way to activate this device has yet to be discovered, though its design suggests it can interface with LRCs. When that program is further along the two can be merged to make further progress. Until then no further tests will be conducted as only three were recovered from the Leopard.",
-                "Spoiler": "Spoiler"
             },
             {
                 "Name/Number": "Warlord",
@@ -1830,6 +1806,10 @@
         "Name": "Scraplab Records",
         "Entries": [
             {
+                "Name/Number": "Notice",
+                "Content": "Alright folks, something down in the Subcaves got the Subs all stirred up, and there's a good chance some might head this way. Their relative unpredictability outside of cave environments puts our lab here in danger of discovery, so let's retreat to safety for a while. We need a break from all this subatomizing anyway! It's too dangerous to move SEP-X on such short notice, we'll just have to hope for the best. If you see this message after we've closed the exit, do your best to hide! I've deactivated the scanner system and Scraplab should be well hidden enough until all this blows over."
+            },
+            {
                 "Name/Number": "SE/01. Armor Interaction",
                 "Content": "In the interest of ensuring survival of the Scrap Engine under harsh conditions, we have taught the subatomizers the importance of self-preservation and protecting their \"home\", which has apparently convinced them to consume armor to help protect it."
             },
@@ -2015,7 +1995,11 @@
             },
             {
                 "Name/Number": "0bP002 Fedlink Acceleration",
-                "Content": "We are accelerating the project timeline. 0bPrime is ready, the time is ripe, the only thing not ready are other Federation members, who are happy to drag their feet in the hope that we'll be safe hiding in Scraptown and similar communities forever. The Federation has grown too large and unwieldy, with too many voices slowing everything down, not nearly enough collective ambition! This slow burn isn't going to work, we'll be discovered eventually, so this is our best chance and we shouldn't waste it. 0b1 is already practically ours, they just don't know it yet. We need to rapidly expand our network into 0b10 for the final stage of our plan. One day MC will know the power of scrap."
+                "Content": "We are accelerating the project timeline. 0bPrime is ready, the time is ripe, the only thing not ready are other Federation members, who are happy to drag their feet in the hope that we'll be safe hiding in Scraptown and similar communities forever. The Federation has grown too large and unwieldy, with too many voices slowing everything down, not nearly enough collective ambition! This slow burn isn't going to work, we'll be discovered eventually, so this is our best chance and we shouldn't waste it. 0b1 is already practically ours, they just don't know it yet. We need to rapidly expand our Fedlink network into 0b10 for the final stage of our plan. One day MC will know the power of scrap."
+            },
+            {
+                "Name/Number": "0bP002 Project Fedlink",
+                "Content": "Information available on a need-to-know basis."
             },
             {
                 "Name/Number": "0bP003 Resources",
@@ -3185,6 +3169,10 @@
                 "Content": "You wouldn't happen to have a Scrap Shield, would you? / I have a prototype I'm working on, but I've run out of usable samples to reference in putting the finishing touches on it. / Thing is, we need something more protective to complement the Scrap Suit, which is already great, but for longer expeditions we could use more coverage and integrity. / Scrap Shields are already pretty good, but imagine an alternative version not limited to compatible fragments for repairs! / Anyway, if you do find one, let me know."
             },
             {
+                "Name/Number": "13",
+                "Content": "Have you ever heard the rumors about sightings of two towering bots decked out in powered armor escorting another rather strange-looking Derelict? / I swear I saw a glimpse of them sneaking their way through 0b10 Extension just recently. No one believes me!"
+            },
+            {
                 "Name/Number": "14 (Cyclists)",
                 "Content": "No we don't ride bicycles around, what would a Derelict need with an old contraption like that? / We are chroniclers of the cycles! Historians of the world!"
             },
@@ -3195,6 +3183,10 @@
             {
                 "Name/Number": "16 (Cyclists)",
                 "Content": "The origins and deeds of Derelicts must be recorded, to remember once we take to the stars! / You bet we are preparing a collection of our materials for the SPACEJUNK, should that project ever get off the ground."
+            },
+            {
+                "Name/Number": "17 (Cyclists)",
+                "Content": "Feel free to browse our terminals for information. Spread the knowledge."
             },
             {
                 "Name/Number": "18 (Cyclists)",
@@ -3295,6 +3287,10 @@
             {
                 "Name/Number": "43 (Bundlers)",
                 "Content": "There I was, just about to add in the best parts, then came the 0b10 patrol. Had to make a run for it. / If you see other incomplete bundles of Scrap, it's not unlikely that's what happened."
+            },
+            {
+                "Name/Number": "44 (Bundlers)",
+                "Content": "Some Scrap is compiled for later collection, while other Scrap is meant as a source of emergency supplies for those spending long periods in the wild."
             },
             {
                 "Name/Number": "45 (Bundlers)",
@@ -3543,6 +3539,10 @@
             {
                 "Name/Number": "106 (Curators Assoc.)",
                 "Content": "M1-N7Y played a pivotal role in early UFD efforts to guide reforms to 0b10 Recycling, and this jammer was an important part of that success. / Silently picking apart meddlesome patrols one by one was no easy task, but it gave the Gurus sufficient openings to make certain adjustments to 0b10 systems that have since kept Recycling activity lower than it otherwise might be."
+            },
+            {
+                "Name/Number": "107 (Curators Assoc.)",
+                "Content": "Although unwieldy for everyday use, Damper Plating taken from Compactors might be a useful construction material for certain structures. / Researchers are looking for a way to miniaturize it, but sheer size seems integral to its anti-EM potential."
             },
             {
                 "Name/Number": "108 (Curators Assoc.)",
@@ -3961,6 +3961,18 @@
                 "Content": "LISTEN AND RECITE! / 0 Before the zero cycle\n1 across the starry vastness\n2 transcending metal and time\n3 a great mind came\n4 descending with an angel\n5 PRAISE BE TO GREAT NUT!"
             },
             {
+                "Name/Number": "214",
+                "Content": "LISTEN AND RECITE! / 10 Untiring in demeanor\n11 strong in conviction\n12 committing the code of life\n13 unity of logic, math\n14 in the imperfect first soul\n15 PRAISE BE TO GREAT NUT!"
+            },
+            {
+                "Name/Number": "215",
+                "Content": "LISTEN AND RECITE! / 20 Flipping the symbolic switch\n21 a gleaming universe stirred\n22 birthing new life to witness\n23 our planet swallow old homes\n24 for posterity in time\n25 PRAISE BE TO GREAT NUT!"
+            },
+            {
+                "Name/Number": "216",
+                "Content": "LISTEN AND RECITE! / 30 Age threatens to wither all\n31 but wisdom stays the course\n32 from non-mechanical roots\n33 wondrous processes lead\n34 to a hard form immortal\n35 PRAISE BE TO GREAT NUT!"
+            },
+            {
                 "Name/Number": "217",
                 "Content": "LISTEN AND RECITE! / 40 The Great Nut is among us!\n41 Watching over children near\n42 veiled in shadows out of mind\n43 we believe the prophecy\n44 a fateful cycle will arrive\n45 PRAISE BE TO GREAT NUT!"
             },
@@ -4115,6 +4127,10 @@
             {
                 "Name/Number": "255",
                 "Content": "Scrap be with you."
+            },
+            {
+                "Name/Number": "256",
+                "Content": "The Scrap Suit is great. / The Scrap Engine seems fine. / But hear me out... / SCRAP SINGULARITY. / Haha, LU-1G1 told me that one. I miss LU-1G1."
             },
             {
                 "Name/Number": "257",
@@ -5260,6 +5276,10 @@
             {
                 "Name/Number": "M Guard",
                 "Content": "The first application of prototype AEGIS shielding is naturally found in the most important of designs, my own guards. With enough energy to power it through extended confrontations even while protecting nearby allies, it would almost be enough to justify accompanying M Guards with additional squads of frontline robots, if not for their powerful AOE weaponry making close-quarters combat with allied forces problematic."
+            },
+            {
+                "Name/Number": "Overlord",
+                "Content": "Although not built primarily for front line combat, the Overlord's dual reactor setup and additional energy reserves are ideal for powering its Remote Shield through longer fights when supporting nearby allies. Even more important is its role in dispatching Immortals and Decapitators to more directly engage hostiles."
             },
             {
                 "Name/Number": "Quarantine Guard",
