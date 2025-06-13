@@ -41,7 +41,7 @@ categories = {
         'Integrity',
         'No Repairs',
         'Coverage',
-        'Special Trait',
+        'Special',
         'Effect',
         'Description',
     ],

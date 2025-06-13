@@ -120,6 +120,14 @@ function BurnoutOrSiegeComparison({
         } else {
             return <PositiveComparison>Standard</PositiveComparison>;
         }
+    } else if (leftPropulsion.special !== undefined || rightPropulsion.special !== undefined) {
+        if (leftPropulsion.special === rightPropulsion.special) {
+            return <EmptyComparisonLine />;
+        } else if (leftPropulsion.special === undefined) {
+            return <PositiveComparison>N/A</PositiveComparison>
+        } else {
+            return <NegativeComparison>N/A</NegativeComparison>
+        }
     }
 
     return <EmptyComparisonLine />;
