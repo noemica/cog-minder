@@ -189,6 +189,7 @@ const TooltipTexts = {
     Meltdown:
         "Chance for this weapon to instantly cause robot meltdown regardless of what part was hit. (Cogmind is less susceptible to this effect, instead gaining damage*10 extra heat.)",
     Impale: "Chance for this weapon to inflict twice as much damage and further delay both attacker and target's next opportunity to act by 1 turn. The attacker is not delayed if this effect is a property of a non-melee weapon.",
+    Intensify: "Chance for this weapon to inflict twice as much damage.",
     Phase: "Chance for this weapon to cause an equal amount of damage to target's core. On a direct core hit, instead damages a random part by the same amount.",
     Sever: "Chance for this weapon to sever target part. On a core hit, slightly damages and severs a random part.",
     Smash: "Chance for this weapon to instantly destroy the hit component, or even a robot core. (Cogmind is less susceptible to this effect, which can only destroy those parts which are already below 33% integrity when hit.) Armor is immune to this effect, instead taking an additional 20% damage. On smashing a part, an equal amount of damage is then applied as overflow damage, although unlike regular overflow damage this may be absorbed by any shielding protecting the secondary target.",
