@@ -6382,6 +6382,10 @@ Because of this, a spare Threads part can work as a makeshift [[Stasis Canceller
 |If an explosion occurs and destroys the Stasis Trap itself, the stasis field will also disappear, and the corresponding [[Mechanics Achievements|Mechanics Achievement]] ""Short-term Sacrifices"" will be unlocked if it wasn't already.
 [[/List]]
 
+
+If a Stasis Trap is activated by an EM explosion, a failure to hack using a [[Melee Datajacks|Melee Datajack]], is triggered and evaded using a [[Reaction Control Systems|Reaction Control System]] or if its victim is destroyed before the stasis field is depleted, the Trap will still generate its stasis field even without a victim inside. In this state, projectiles and explosions cannot interact with the stasis field itself (but can still destroy the Stasis Trap), and it is possible to move into the stasis field, which does not partially deplete it.
+
+
 [[Heading]]Special Interactions[[/Heading]]
 Below is an incomplete list of special interactions with Stasis Traps:
 [[List]]Cogmind is capable of swapping with allies already in Stasis Traps, which frees the ally but traps Cogmind instead.
