@@ -437,29 +437,33 @@ Blue|[[CellStyle:Good]]Yes|[[CellStyle:Good]]No|[[CellStyle:Good]]Yes|[[CellStyl
 
 [[Heading]]Orders[[/Heading]]
 Robots will by default follow [[Cogmind]] (you) and attack any hostile if combat capable. Orders can be issued to any robot [[B]]in sight[[/B]] listed in the allies menu [[B]](F6)[[/B]]. [[I]](Orders can also be issued directly on the map: Shift-right click on a robot, or press 'o' then its corresponding number, or in keyboard look mode, by moving the cursor over the bot and pressing 'o'.) [[/I]]
-[[List]][[GameText]]STAY[[/GameText]] - Remain at the current position, only moving aside to let allies pass. Combat-capable bots will still chase after hostiles and return to their position later.|
+[[List]][[GameText]]STAY[[/GameText]] - Remain at the current position, only moving aside to let allies pass. Combat-capable bots will still chase after hostiles and return to their position later. If you move into a bot with the stay command active you will swap positions with that bot, which can faciliate precise positioning of bots. Note that a swap may not occur if other friendly bots are also trying to swap with them.|
 [[GameText]]ROAM[[/GameText]] - Wander and do whatever.|
 [[GameText]]FOLLOW[[/GameText]] - Follow [[Cogmind]].|
-[[GameText]]GUARD[[/GameText]] - Follow the specified bot and prioritize attacking anything harming the specified bot.|
-[[GameText]]AID[[/GameText]] - Follow the specified bot and prioritize attacking anything the specified bot is attacking.|
+[[GameText]]GUARD[[/GameText]] - Follow the specified bot and prioritize attacking anything harming the specified bot. Telling bots to guard cogmind can be used to bring them in closer than follow. Multitile bots will try to keep several tiles away from cogmind.|
+[[GameText]]AID[[/GameText]] - Follow the specified bot and prioritize attacking anything the specified bot is attacking. For Mechanics, tells that bot to repair that bot and allies nearby. Mechanic pathing will behave erratically if there is no valid path to their aid target. Telling bots to aid cogmind can be used to bring them in closer than follow.|
 [[GameText]]TUNNEL[[/GameText]] - Tunnel to the specified location, if capable of digging (bots such as [[T-07 Excavator]]).|
 [[GameText]]DROP[[/GameText]] - Drop everything in the bots inventory, then wander in a small area.|
-[[GameText]]PICKUP[[/GameText]] - Collect everything near [[Cogmind]], and then [[GameText]]Follow[[/GameText]] once inventory is full.|
-[[GameText]]COLLECT[[/GameText]] - Wander and collect items until inventory is full, then set to [[GameText]]Follow[[/GameText]].|
+[[GameText]]PICKUP[[/GameText]] - Collect everything near [[Cogmind]], and then [[GameText]]Follow[[/GameText]] once inventory is full. If an item is directly under the bot, it gets picked up first.|
+[[GameText]]COLLECT[[/GameText]] - Wander and collect items until inventory is full, then set to [[GameText]]Follow[[/GameText]]. If an item is directly under the bot, it gets picked up first.|
 [[GameText]]EXPLORE[[/GameText]] - Explore unexplored areas, giving info to [[Cogmind]].|
 [[GameText]]RETURN[[/GameText]] - Return this [[Drone]] to its bay. Drones only, obviously.
 [[/List]]
 
 [[Heading]]Benefits[[/Heading]]
 [[Operator]] class robots will give you a diminishing hacking bonus starting at +6% (6%, 3%, 1%..), and will reveal any hidden door or trap, provided the operator is within 20 tiles range of you. Operators will also report changes in security level.
-[[Mechanic]] class robots when set to [[GameText]]AID[[/GameText]] will repair core integrity [[B]](but NOT for Cogmind)[[/B]], broken parts, non-functional parts, and part integrity of their repair target (Cogmind is prioritized over allies) in that order. Mechanics cannot repair a part above 50% integrity.","","","","","","",""
+[[Mechanic]] class robots when set to [[GameText]]AID[[/GameText]] will repair core integrity [[B]](but NOT for Cogmind)[[/B]], broken parts, non-functional parts, and part integrity of their repair target (Cogmind is prioritized over allies) in that order. Mechanics cannot repair a part above 50% integrity.
+[[Protector]] class robots shield nearby allies including Cogmind and potentially help with intercepting remote datajacks and launcher projectiles.
+[[Programmer]] class robots can cleanse corruption from allies and hack hostile bots.
+[[Recycler]] and [[Hauler]] class robots can pick up and store items for cogmind. Note that there is no warning message for crushing parts when dropping items.
+[[T-07 Excavator]] bots can dig for cogmind using the Tunnel command. Unlike the related [[RIF]] hack, this does not guarentee the tile will be stable. ","","","","","","",""
 "Alpha 7","Bot","","","","","","","",""
 "Alpha Cannons","Part Group","","Spoiler","","","Zio. Alpha Cannon,Hyp. Alpha Cannon,Zio. Alpha Cannon Mk. II","","",""
 "Aluminum Leg","Part","","","","","","","",""
-"Ambush Trap","Other","Ambush Traps are [[Traps]] that can appear in various [[0b10]] maps. Like [[Alarm Trap|Alarm Traps]] and [[Chute Trap|Chute Traps]], they cannot be extracted using a [[Trap Extractors|Trap Extractor]]. Ambush Traps cannot appear in [[Materials]] or in [[Garrison|Garrisons]].
+"Ambush Trap","Other","Ambush Traps are [[Traps]] that can appear in various [[0b10]] maps. Like [[Alarm Trap|Alarm Traps]] and [[Chute Trap|Chute Traps]], they cannot be extracted using a [[Trap Extractors|Trap Extractor]]. Some of the maps that Ambush Traps cannot appear in are [[Materials]] maps and [[Garrison|Garrisons]].
 
 [[Heading]]Effects[[/Heading]]
-When an Ambush Trap is triggered, it and all other Ambush Traps in the array will be spent, and 0b10 combat robots will emerge from nearby hidden hatches in the floor.[[Comment]]I think the robots might specifically emerge from the Ambush Traps themselves, but i haven't tested that to make sure.[[/Comment]] The robots will take their turn immediately, which can be particularly dangerous if some of them are [[Brawler|Brawlers]].
+When an Ambush Trap is triggered, it and all other Ambush Traps in the array will be spent, and up three 0b10 combat robots will emerge from some of the Traps. Each Ambush Trap can only reveal a single 0b10 combat robot, so if there are only one or two Ambush Traps left in the array, fewer than three robots will appear. The Ambush Trap that was triggered will always spawn a robot. If there is currently a robot on an Ambush Trap that spawns a combat robot, that combat robot will appear on the side of the trap instead. The robots will take their turn immediately, which can be particularly dangerous if some of them are [[Brawler|Brawlers]].
 
 On some rare occasions, Ambush Traps will have been infiltrated by friendly [[Derelict|Derelicts]]. This cannot happen in [[Research]] branches. [[Spoiler]]An [[Encrypted Comm Array]] is capable of detecting nearby Derelict-infiltrated Ambush Traps, even from inventory.[[/Spoiler]]
 On rarer occasions, Ambush Traps may have been infested by [[Assembled]].
@@ -7501,7 +7505,7 @@ Using a Transdimensional Reconstructor also deteriorates core integrity by 5-10%
 "Transmission Jammer","Part","","","","","","","",""
 "Transmission Jammers","Part Group","Transmission jammers are parts allowing to limit consequences of your activity by blocking enemy signals. Need [[Line of Sight|LoS]] to enemy to work.
 [[Heading:2]] List of effects [[/Heading]]
-[[List:Ordered]]Block [[Distress Signals|distress signals]]|Stop [[Heavy]] reinforcements calls|Prevent [[U-05 Engineer|engineers from calling reinforcements]]|When paired with [[Transport Network Coupler|TNC] block [[Hauler|hauler's reinforcements call]] [[/List]]
+[[List:Ordered]]Block [[Distress Signals|distress signals]]|Stop [[Heavy]] reinforcements calls|Prevent [[U-05 Engineer|engineers from calling reinforcements]]|When paired with [[Transport Network Coupler|TNC]] block [[Hauler|hauler's reinforcements call]] [[/List]]
 
 [[Heading]] Tips [[/Heading]]
 Most jammers have short range, so attention needed to keep enemies in range. [[Watcher]] and [[Heavy]] bots require special attention due to their big visual range.
