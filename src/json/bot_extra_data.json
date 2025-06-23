@@ -2857,7 +2857,7 @@
         "Locations": [
             {
                 "Location": "Mines event",
-                "Description": "Friendly/Hostile: Appears roaming the mines, friendly at first but turns hostile when attacked by an 0b10 bot"
+                "Description": "Friendly/Hostile: Appears roaming the mines, friendly at first but turns hostile when attacked by any bot, including Cogmind"
             }
         ]
     },
