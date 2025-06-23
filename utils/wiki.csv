@@ -451,7 +451,7 @@ Robots will by default follow [[Cogmind]] (you) and attack any hostile if combat
 [[/List]]
 
 [[Heading]]Benefits[[/Heading]]
-[[Operator]] class robots will give you a diminishing hacking bonus starting at +6% (6%, 3%, 1%..), and will reveal any hidden door or trap, provided the operator is within 20 tiles range of you. Operators will also report changes in security level.
+[[Operator]] class robots will give you a diminishing hacking bonus starting at +10% (10%, 5%, 2%, 1%..), and will reveal any hidden door or trap, provided the operator is within 20 tiles range of you. Operators will also report changes in security level.
 [[Mechanic]] class robots when set to [[GameText]]AID[[/GameText]] will repair core integrity [[B]](but NOT for Cogmind)[[/B]], broken parts, non-functional parts, and part integrity of their repair target (Cogmind is prioritized over allies) in that order. Mechanics cannot repair a part above 50% integrity.
 [[Protector]] class robots shield nearby allies including Cogmind and potentially help with intercepting remote datajacks and launcher projectiles.
 [[Programmer]] class robots can cleanse corruption from allies and hack hostile bots.
