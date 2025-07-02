@@ -1943,7 +1943,21 @@ Most of these usually affect the next main floor, rendered useless if you skip a
 "Detonator","Part","","","","","","","",""
 "Deuterium Engine","Part","","","","","","","",""
 "Diametric Drive","Part","","","","","","","",""
-"Dimensional Node Initializer","Part","","","","","","","",""
+"Dimensional Node Initializer","Part","Dimensional Node Initializers are consumable [[Alien Artifacts]]. It is possible to find one in a random prefab in [[Caves]] and three in a random prefab in [[Quarantine]].
+
+[[Heading]]Lore[[/Heading]]
+[[Lore]]Exiles Records|MSG002743-01[[/Lore]]
+
+[[Heading]]Effect[[/Heading]]
+Attaching a Dimensional Node Initializer consumes it and deploys a Slip Node a Cogmind's current location, unless currently standing on a non-broken door-type tile, a [[Traps|Trap]], or certain rare and seemingly random tiles, in which case a Dimensional Node Initializer does not do anything and is instead detached and dropped on the ground.
+
+[[Heading]]Slip Node effects[[/Heading]]
+Slip Nodes function as a way to control the destination of [[Transdimensional Reconstructors]], which always target the nearest active Slip Node, regardless of the distance limitations of Transdimensional Reconstructors.
+
+Slip Nodes are a unique type of explosive machinery. Unlike all other explosive machinery, they do not hinder movement or vision, though they will still block projectiles like regular machinery. They have 20 armor, and if destroyed will implode for 500 explosive damage with a radius of 5, a falloff of -50, 2-3 chunks, and high negative salvage.
+
+If a robot is standing on a Slip Node, all non-penetrating non-explosive attacks on that robot will hit the Slip Node instead. Some of the robots incapable of destroying Slip Nodes (and therefore incapable of damaging any robots on one) include the [[G-47 Trooper]], [[S-27 Virus]], [[Y-54 Guardian]], [[X-57 Shotgunner]], [[X-77 Beamer]], [[X-82 Rainmaker]], and most notably [[Master Thief|Master Thieves]].
+","","","","","","",""
 "Dirty Bomb Trap","Part","Dirty Bomb Traps are explosive EM [[Traps]] made and used by [[Derelict|Derelicts]] to defend areas or spring ambushes on [[0b10]] forces. The EM explosions caused by these traps are very likely to cause nearby Traps, including other Dirty Bomb Traps, to also trigger. These Traps are most commonly found in [[Caves]] and [[Warlord (Location)]] and are friendly to Cogmind unless one was reprogrammed by a [[Minesweeper]] that was interrupted before it could extract it, or if [[Spoiler]]Cogmind antagonises Warlord (Location), which will cause all derelict traps on that map to also turn hostile.[[/Spoiler]]
 
 [[Heading]]How to obtain[[/Heading]]
