@@ -116,7 +116,7 @@ const propulsionSlotColumns: ColumnDef<PropulsionItem>[] = [
             { accessorKey: "support", header: "Support" },
             { accessorKey: "penalty", header: "Penalty" },
             { accessorKey: "burnout", header: "Burnout" },
-            { accessorKey: "siege", header: "Siege" },
+            { accessorKey: "special", header: "Special" },
         ],
     },
     {
