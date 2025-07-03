@@ -1078,7 +1078,7 @@
   },
   {
    "Name": "Y-54 Guardian",
-   "Content": ""
+   "Content": "The Y-54 Guardian appears in the early [[Factory]] and is the only standard [[Sentry]] to use multi-projectile weapons. This can make [[Hardlight Generators]] more viable on the floors where Guardians appear, since a hardlight generator reduces each projectile's damage by a set value, and thus is more effective against weapons that fire more projectiles."
   },
   {
    "Name": "Y-64 Sentinel",
@@ -4102,7 +4102,7 @@
   },
   {
    "Name": "Hacking Suite",
-   "Content": "A must-have for when you want to go for a hacking route. Download the schematic and make sure you fabricate enough in the factories."
+   "Content": "A must-have for when you want to go for a hacking route. Download the schematic and make sure you fabricate enough in the factories. Can also be looted from [[Operator|Operators]]."
   },
   {
    "Name": "Hammer",
@@ -5394,7 +5394,7 @@
   },
   {
    "Name": "Matter",
-   "Content": "Matter is used to attach components, and is consumed by ballistic weapons and launchers, which convert it to the appropriate type of ammunition. It can be salvaged from robot remains, though the available amount varies depending on how the robot was destroyed. Cogmind automatically recycles 5 matter from each attached part that is destroyed."
+   "Content": "Matter is used to attach components, and is consumed by ballistic weapons and launchers, which convert it to the appropriate type of ammunition. It can be salvaged from robot remains, though the available amount varies depending on how the robot was destroyed. Robots hit with [[Ballistic Cannons]] will drop a small amount of matter nearby. Matter also appears randomly on the ground. Cogmind automatically recycles 5 matter from each attached part that is destroyed."
   },
   {
    "Name": "Matter Compressor",
@@ -5570,7 +5570,7 @@
   },
   {
    "Name": "Modified EM Gauss Rifle",
-   "Content": "The following RIF hacks can be performed:\n[[List]]amplify_resonance|disable_weapons|overload_power|overwrite_iff|reboot_system|spike_heat[[/List]]"
+   "Content": "Created by combining a [[Hyp. EM Gauss Rifle]] with a [[GAL Module]].\nThe following RIF hacks can be performed:\n[[List]]amplify_resonance|disable_weapons|overload_power|overwrite_iff|reboot_system|spike_heat[[/List]]"
   },
   {
    "Name": "Modified Sigix Sheargun",
@@ -8557,7 +8557,7 @@
     "Overloadable Propulsion",
     "Overloadable Weapons"
    ],
-   "Content": ""
+   "Content": "For details on behavior when overloaded, see [[Overload]]."
   },
   {
    "Name": "Power",
@@ -10182,7 +10182,7 @@
   },
   {
    "Name": "FarCom",
-   "Content": "[[Image]]FarCom Sensors.png|FarCom sensors revealing nearby hostiles[[/Image]]\n[[Image]]FarCom.gif|Using the FarCom Aligner machine[[/Image]]\nFarCom is one of the major faction [[Alignment|alignments]] available to Cogmind in most runs. Taking FarCom aligns Cogmind with the [[Exiles (Group)]] for the rest of the game. It provides a permanent 18 tile radius sensor for hostile [[0b10]] bots within 0b10 controlled map. This sensor cannot be jammed by [[Watcher|Watchers]] or masked by [[Heavy|Heavies]] unlike standard [[Sensor Arrays]]. The primary limitation of the FarCom sensor is that it doesn't work in any [[Caves]] branches. One other side-effect is that entering specific [[Research]] branches becomes much more dangerous. Occasionally the Exiles may have been abandoned or attacked, and FarCom is not an option in these runs.\n[[Heading:2]]Gaining FarCom[[/Heading]]\nTaking FarCom can be done in most runs in the [[Exiles (Location)|Exiles]] map off of either -10 or -9 [[Mines]]. After talking to [[EX-BIN]], walk into the FarCom Aligner machine. Cogmind can take up to 1 special vault item (or multiples of the same type). If Cogmind takes more than 1 type of item then the Exiles will notice you stealing when entering [[Factory]] and FarCom will be removed. Also, becoming hostile to the Exiles will result in instantly losing FarCom. If Cogmind takes FarCom, it is not possible to [[Imprint]]: [[Spoiler]]The [[Imprinter]] will be disappointed in Cogmind and warn you to leave right away. Attempting to use the Imprinting machine will result in turning all the bots at [[Zion]] hostile. Taking FarCom excludes cogmind from affiliating with the [[UFD|UFD]]. There are no other alignment restrictions with FarCom.[[/Spoiler]]\n[[Heading:2]]Research Branch side-effect[[/Heading]]\nWhen entering -3 Research, the Exiles will send a warning message to Cogmind indicating not to enter Research branches. If Cogmind does anyway, [[Spoiler]]immediately when entering [[Testing]], [[Quarantine]] [[Maximum Security]] will instantly be triggered. This will also lock the exits to [[Section 7]] and [[Protoforge]]. Note that this does not include [[Armory]] when it is on -3. The immediate response is machines shut down right after entering the level, 4 [[Sentry]] spawns at each [[Garrison]] and exit, and 6 Assault [[C-30 ARC|ARCs]] sent at Cogmind shortly after. Unless Cogmind is prepared to fight off large waves of enemies or outrun them, these maps should not be entered.[[/Spoiler]]"
+   "Content": "[[Image]]FarCom Sensors.png|FarCom sensors revealing nearby hostiles[[/Image]]\n[[Image]]FarCom.gif|Using the FarCom Aligner machine[[/Image]]\nFarCom is one of the major faction [[Alignment|alignments]] available to Cogmind in most runs. Taking FarCom aligns Cogmind with the [[Exiles (Group)]] for the rest of the game. It provides a permanent 18 tile radius sensor for hostile [[0b10]] bots within 0b10 controlled map. This sensor cannot be jammed by [[Watcher|Watchers]] or masked by [[Heavy|Heavies]] unlike standard [[Sensor Arrays]]. The primary limitation of the FarCom sensor is that it doesn't work in any [[Caves]] branches. One other side-effect is that entering specific [[Research]] branches becomes much more dangerous. Occasionally the Exiles may have been abandoned or attacked, and FarCom is not an option in these runs.\n[[Heading:2]]Gaining FarCom[[/Heading]]\nTaking FarCom can be done in most runs in the [[Exiles (Location)|Exiles]] map off of either -10 or -9 [[Mines]]. After talking to [[EX-BIN]], walk into the FarCom Aligner machine. Cogmind can take up to 1 special vault item (or multiples of the same type). If Cogmind takes more than 1 type of item, then the Exiles will notice you stealing when entering [[Factory]] or [[Storage]] and FarCom will be removed. Also, becoming hostile to the Exiles will result in instantly losing FarCom. If Cogmind takes FarCom, it is not possible to [[Imprint]]: [[Spoiler]]The [[Imprinter]] will be disappointed in Cogmind and warn you to leave right away. Attempting to use the Imprinting machine will result in turning all the bots at [[Zion]] hostile. Taking FarCom excludes cogmind from affiliating with the [[UFD|UFD]]. There are no other alignment restrictions with FarCom.[[/Spoiler]]\n[[Heading:2]]Research Branch side-effect[[/Heading]]\nWhen entering -3 Research, the Exiles will send a warning message to Cogmind indicating not to enter Research branches. If Cogmind does anyway, [[Spoiler]]immediately when entering [[Testing]], [[Quarantine]] [[Maximum Security]] will instantly be triggered. This will also lock the exits to [[Section 7]] and [[Protoforge]]. Note that this does not include [[Armory]] when it is on -3. The immediate response is machines shut down right after entering the level, 4 [[Sentry]] spawns at each [[Garrison]] and exit, and 6 Assault [[C-30 ARC|ARCs]] sent at Cogmind shortly after. Unless Cogmind is prepared to fight off large waves of enemies or outrun them, these maps should not be entered.[[/Spoiler]]"
   },
   {
    "Name": "Game Mechanics",
