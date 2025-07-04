@@ -2800,7 +2800,7 @@ Description|Effective sight range of robots attempting to spot you reduced by 3.
 
 [[Heading]]S-02 Bug[[/Heading]]
 [[GameText]]>Analysis(S-02 Bug)[[/GameText]]
-[[GameText]]One of my first robot designs was a small hexapod walker made in mass quantities to spread out and survey the surface.  When I began producing combat bots, I revisited this design and added an assault rifle and light armor.  The Bug's armored shell employs adaptive camouflage while the robot is dormant, enabling it to hide from distant hostiles until it wakes up.  The shell also compensates for the core's inherent weakness to explosive damage.  Bug squads were commonly used as patrols or stationed to guard an open area, but flying swarmers and sentries have replaced them in these roles.  All remaining units have been recalled to garrisons to supplement security positions.  So-called ""garrison divers"" who challenge a seemingly lone sentry might be surprised when three or four nearby Bugs reveal themselves.[[/GameText]]
+[[GameText]]One of my first robot designs was a small hexapod walker made in mass quantities to spread out and survey the surface.  When I began producing combat bots, I revisited this design and added an assault rifle and light armor.  The Bug's armored shell features passive camouflage that often enables it to blend into its surroundings while inactive.  The shell also compensates for the core's inherent weakness to explosive damage.  Bug squads were commonly used as patrols or stationed to guard an open area, but flying swarmers and sentries have replaced them in these roles.  All remaining units have been recalled to garrisons to supplement security positions.  So-called ""garrison divers"" who challenge a seemingly lone sentry might be surprised when three or four nearby Bugs reveal themselves.[[/GameText]]
 [[ItemDetails]]
 Name|Camouflage Shell||
 Image Name|https://i.imgur.com/i1OCyBr.png||
@@ -2814,8 +2814,8 @@ Hackable|false||
 Energy Upkeep|0||
 Matter Upkeep|0||
 Heat Generation|2||
-Description|Effective sight range of robots attempting to spot you reduced by 4 while dormant. Enables explosive damage resistance: 25%.
-  <no_stack>[[/ItemDetails]]
+Description|Enables explosive damage resistance: 25%.
+ <no_stack>[[/ItemDetails]]
 [[ItemDetails]]
 Name|Aluminum Hexapod Legs||
 Image Name|https://i.imgur.com/QbHmvmU.png||
@@ -3485,8 +3485,8 @@ Rating|20||
 Tier|5||
 Threat|2||
 Value|50||
-Energy Generation|40||
-Heat Dissipation|50||
+Energy Generation|30||
+Heat Dissipation|55||
 Visual Range|16||
 Memory|20||
 Spot Percent|20||
@@ -3494,9 +3494,9 @@ Movement|Walking (120/83%)||
 Core Integrity|35||
 Core Exposure|40||
 Salvage Potential|50~70||
-Description|A fairly capable dual-weapon light grunt with a cooled plasma rifle as primary weapon and the Derelict pulse pistol for close-range backup.  I saved on mass by using only internal power generation as well as light carbon-fiber legs, a part which I had designed cycles ago but archived unused until now.||
-Armament|Cld. Plasma Rifle|1|Pulse Pistol|1||
-Components|Lgt. Carbon-Fiber Leg|2|Adv. Heat Sink|1[[/BotDetails]]
+Description|A fairly capable dual-weapon light grunt with a heavy laser as primary weapon and the Derelict pulse pistol for close-range backup.  I saved on mass by using only internal power generation as well as light carbon-fiber legs, a part which I had designed cycles ago but archived unused until now.||
+Armament|Hvy. Laser|1|Pulse Pistol|1||
+Components|Lgt. Carbon-Fiber Leg|2|Adv. Heat Sink|2[[/BotDetails]]
 [[BotDetails]]Name|Stalker||
 Class|Hunter||
 Size|Medium||
@@ -3514,8 +3514,8 @@ Movement|Walking (120/83%)||
 Core Integrity|40||
 Core Exposure|40||
 Salvage Potential|60~80||
-Description|This light hunter uses a pair of compact gauss rifles and new light legs.  Has no built-in drone but should be more than capable of hunting and killing Spawned Derelicts.||
-Armament|Com. Gauss Rifle|2||
+Description|This light hunter uses a pair of gauss rifles and new light legs.  Has no built-in drone but should be more than capable of hunting and killing Spawned Derelicts.||
+Armament|Gauss Rifle|2||
 Components|Lgt. Deuterium Engine|1|Lgt. Flexi-Carbon Leg|2|Adv. Targeting Computer|1|Reaction Control System|1[[/BotDetails]]
 [[BotDetails]]Name|Gremlin||
 Class|Swarmer||
@@ -3555,7 +3555,7 @@ Core Exposure|40||
 Salvage Potential|60~80||
 Description|An updated take on the spear-wielding variant of the Stabber.  The idiots behind the Spawners are using the original dagger variant but neither one could handle a core hit from a lance.  The addition of a proper jammer makes this suitable for both solo defense and squad offense.||
 Armament|Lance|1||
-Components|Mic. Nuclear Core|1|Lgt. Carbon-Fiber Leg|2|Imp. Core Shielding|1|Microactuators|1||
+Components|Mic. Nuclear Core|1|Lgt. Flexi-Carbon Leg|2|Imp. Core Shielding|1|Microactuators|1||
 Components|Imp. Melee Analysis Suite|1|Imp. Transmission Jammer|1[[/BotDetails]]
 [[BotDetails]]Name|Spawner Guard||
 Class|Grunt||
@@ -3666,7 +3666,15 @@ When entering -3 Research, the Exiles will send a warning message to Cogmind ind
 "Flamers","Part Group","","","","","Flamer,Enh. Flamer,Plasma Flamer","","",""
 "Flexi-carbon Leg","Part","","","","","","","",""
 "Flight Unit","Part","","","","","","","",""
-"Flight Units","Part Group","","","","Flight Units","","","",""
+"Flight Units","Part Group","Flight units have the lowest support and the highest speed. They are quite fragile, though [[Prototype Part|prototype]] flight units are somewhat less so. They are notably used by [[Swarmer|Swarmers]].
+
+On flight, [[Cogmind]] can outrun most other bots, but will have trouble equipping high-mass parts, such as the best armor, cannons, and storage units. Flight builds are difficult to sustain in [[Materials]] due to their low availability and the high volume of encounters, so it is more common to use grounded propulsion in Materials and transition to flight upon reaching [[Factory]] or shortly thereafter.
+
+Most flight builds will favor prototype flight units for their improved resilience, along with multislot flight arrays. Cooled (Cld.) flight units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage.
+
+Like [[Hover Units]], flight units receive a bonus to movement speed when multiple are used at once, and are affected by drag from attached [[Legs]], [[Treads]], and [[Wheels]]. This bonus cannot bring the overall movement delay below 10 unless flight units are overloaded.
+
+While flying, Cogmind can hop over other bots in its way, unless Cogmind is overweight. Flying bots have a 10% evasion bonus, unless overweight or in stasis.","","","Flight Units","","","",""
 "Flightbrick","Part","","","","","","","",""
 "Flying Fortress v7","Part","","","","","","","",""
 "Focal Shield","Part","","","","","","","",""
@@ -3996,10 +4004,18 @@ Note: Beta 15 updates are in progress. Some information may be out of date.
 [[/List]]
 
 [[Heading]]Contributors[[/Heading]]
-[[List]]aoemica|jimmyl|ktur|lyrabold|Perseus|Rocko1345[[/List]]","","","","","","",""
+[[List]]aoemica|jimmyl|ktur|lyrabold|mathSq|Perseus|Rocko1345[[/List]]","","","","","","",""
 "Hotshot","Bot","","","","","","","",""
 "Hover Unit","Part","","","","","","","",""
-"Hover Units","Part Group","","","","Hover Units","","","",""
+"Hover Units","Part Group","Hover units have fairly low support and high speed, but not to the same extent as [[Flight Units]]. They are quite fragile (but also not as much as flight units), though [[Prototype Part|prototype]] hover units are somewhat less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
+
+Most hover builds will favor prototype hover units for their improved resilience, along with multislot hover arrays. Cooled (Cld.) hover units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage. Combat (Cmb.) hover units have higher integrity than other hover units and can support almost as much mass as legs, but have somewhat slower movement speeds.
+
+Like flight units, hover units receive a bonus to movement speed when multiple are used at once, and are affected by drag from attached [[Legs]], [[Treads]], and [[Wheels]]. This bonus cannot bring the overall movement delay below 20 unless hover units are overloaded.
+
+Hovering bots have a 5% evasion bonus, unless overweight or in stasis.
+
+Cogmind's core propulsion (often referred to as ""core hover"") is mechanically distinct from hover units.","","","Hover Units","","","",""
 "Hpw. Disruptor Cannon","Part","","","","","","","",""
 "Hpw. Field Laser","Part","","","","","","","",""
 "Hpw. Shock Rifle","Part","","","","","","","",""
@@ -4099,7 +4115,7 @@ Hunters may appear in the following squads:
 "Hyp. Mass Driver","Part","","","","","","","",""
 "Hyp. Multirail","Part","","","","","","","",""
 "Hyp. Railgun","Part","","","","","","","",""
-"Hyp. Weapons","Part Group","","","","","Hyp. Alpha Cannon,Hyp. Coil Gun,Hyp. EM Gauss Rifle,Hyp. Gauss Cannon,Hyp. Gauss Rifle,Hyp. Linear Accelerator,Hyp. Mass Driver,Hyp. Multirail,Hyp. Railgun","","",""
+"Hyp. Weapons","Part Group","Compared to their base versions, hypervelocity (Hyp.) weapons generally do less damage in exchange for higher crit chance and penetration.","","","","Hyp. Alpha Cannon,Hyp. Coil Gun,Hyp. EM Gauss Rifle,Hyp. Gauss Cannon,Hyp. Gauss Rifle,Hyp. Linear Accelerator,Hyp. Mass Driver,Hyp. Multirail,Hyp. Railgun","","",""
 "I-25 Savior","Bot","","","","","","","",""
 "I-36 Angel","Bot","","","","","","","",""
 "I-47 Archangel","Bot","","","","","","","",""
@@ -4571,7 +4587,13 @@ Latent energy will gradually return to an area after being used to power the Str
 
 The turns-per-volley table in the Quantum Capacitor article also applies to the Launcher Loader. But there is a higher proportion of launchers with delay modifiers, compared to [[Energy Guns]] and [[Energy Cannons|Cannons]], so it's more likely that the numbers in the table (which assume no delay modifiers) will be slightly inaccurate for a Launcher Loader build.","","","","","","",""
 "Launchers","Part Supergroup","","","","","Sub. Shrapnel Launcher,Thermoblaster,Vortex Catalyst Activator,Containment Facilitator","Electromagnetic Launchers,Explosive Launchers,Sigix Terminators","",""
-"Legs","Part Group","","","","Legs","","","",""
+"Legs","Part Group","Legs strike a middle ground in terms of support, speed, and structural integrity. They are commonly used by (and available from) light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]].
+
+While on legs, [[Cogmind]] is immune to damage from ramming hostile bots, and instead has a 20% chance per active leg slot to kick them out of the way (unless they are huge).
+
+Additionally, while moving on legs, Cogmind is in the Running state, which increases evasion (unless overweight) but decreases ranged accuracy, by 5% per level of [[Momentum]].
+
+A few specific legs are capable of [[Special Propulsion Modes]].","","","Legs","","","",""
 "Lgt. Angular Momentum Engine","Part","","","","","","","",""
 "Lgt. Antimatter Cannon","Part","","","","","","","",""
 "Lgt. Antimatter Reactor","Part","","","","","","","",""
@@ -5055,7 +5077,7 @@ If an overload side effect occurs, one of the following effects will occur:
 "Overloadable Propulsion","Part Group","For details on behavior when overloaded, see [[Overload#Propulsion]].","","","Overloadable Propulsion","","","",""
 "Overloadable Weapons","Part Group","For details on behavior when overloaded, see [[Overload#Weapons]].","","","Overloadable Weapons","","","",""
 "Overlord","Bot","","","","","","","",""
-"Overtuned Parts","Part Group","","Spoiler","","Overtuned Parts","","","",""
+"Overtuned Parts","Part Group","Overtuned (Ovr.) parts have a chance to malfunction, which temporarily disables them. This can be mitigated by attaching a [[Scrap Suit]] (activated or not). Compared to their base parts, overtuned parts generally have better characteristics in exchange for higher support requirements.","Spoiler","","Overtuned Parts","","","",""
 "Ovr. Antimatter Reactor","Part","","","","","","","",""
 "Ovr. Armored Exoskeleton","Part","","","","","","","",""
 "Ovr. Barrage Gun","Part","","","","","","","",""
@@ -5341,7 +5363,71 @@ Requires 128 Achievements.
 Requires 192 Achievements.
 |Perfect Achiever: Earn all other achievements.
 Requires all other 255 Achievements.[[/List]]","","","","","","",""
-"Propulsion","Part Supergroup","","","","","","Backup Propulsion,Flight Units,Hover Units,Legs,Overloadable Propulsion,Treads,Wheels","",""
+"Propulsion","Part Supergroup","Propulsion units allow robots to move and carry mass.
+
+Five types of propulsion exist: [[Flight Units]], [[Hover Units]], [[Legs]], [[Treads]], and [[Wheels]]. Flight and hover units are collectively known as fast propulsion, or ""fastprop""; legs, treads, and wheels are considered slow propulsion, or ""slowprop."" In addition, unlike other bots, [[Cogmind]] has a built-in core propulsion system used when no other propulsion is active.
+
+A robot can use only one type of propulsion at a time. If multiple types are equipped, activating a unit will deactivate all units of a different type.
+
+[[Heading]]Movement Speed Math[[/Heading]]
+A bot's movement speed is based on its mass and the stats of its propulsion units that are activated when it moves. This section describes legs, treads, and wheels. Flight and hover units have additional mechanics that affect movement speed, which are described below.
+
+Each propulsion unit has three basic stats:
+[[List]]
+The amount of mass the unit will [[I]]support[[/I]].
+|The base [[I]]speed[[/I]] of the unit (labeled ""time/move"").
+|The speed [[I]]penalty[[/I]] for overweight bots.
+[[/List]]
+Propulsion units themselves have zero mass (they don't weigh anything). Bots using legs, treads, or wheels can benefit from equipping unused propulsion units as ""propulsion armor,"" or ""prop armor,"" using their coverage and integrity to tank hits without increasing their mass.
+
+When a bot moves, the game determines whether it is underweight or overweight. The game adds together the mass of all equipped parts, and the support of all activated propulsion units. A bot is [[I]]overweight[[/I]] if its mass is greater than its support; otherwise it is [[I]]underweight[[/I]]. A bot can also be multiple times overweight: for example, it is two times overweight if its mass is greater than twice its support. Items in inventory do not count towards a bot's total mass.
+
+If a bot is underweight, it moves at the average speed of all of its activated propulsion units. A propulsion unit's speed is coded as a movement delay, or time per move: how many time units it takes a bot to move one tile if it's using only that propulsion unit. If a bot has multiple propulsion units activated, their movement delays are averaged.
+
+If a bot is overweight, it is slowed down by the average penalty of all of its activated propulsion units. Specifically, the average penalty is added to the average base movement delay, and the sum is how long it takes the bot to move one tile. If a bot is multiple times overweight, the penalty is applied that many times.
+
+A bot's mass and support are displayed above the parts list in the HUD. Overweight status is indicated by [[GameText]]Ox#[[/GameText]], where [[GameText]]#[[/GameText]] is how many times overweight ([[GameText]]*[[/GameText]] if greater than 9 times).
+
+[[Heading:2]]Example[[/Heading:2]]
+For example, if a bot has equipped:
+[[List]]
+[[Ion Engine]] (mass: 5)
+|[[Lgt. Treads]] (support: 20; time/move: 160; penalty: 80)
+|[[Wheel]] (support: 10; time/move: 80; penalty: 15)
+|[[Sml. Storage Unit]] (mass: 5)
+|[[Assault Rifle]] (mass: 2)
+|[[Med. Laser]] (mass: 2)
+[[/List]]
+its total mass is 14. Its movement speed depends on which propulsion unit it has activated:
+[[List]]
+With the treads: The bot is underweight (14 ≤ 20). The time to move one tile is 160.
+|With the wheel: The bot is 1 time overweight (10 < 14 ≤ 20). The time to move one tile is 80 + 15 = 95.
+|With neither (core propulsion): The bot is 4 times overweight (12 < 14 ≤ 15). The time to move one tile is 50 + (50 × 4) = 200.
+[[/List]]
+
+[[Heading:2]]Formula[[/Heading:2]]
+Mathematically, the amount of time it takes a bot to move one tile (ignoring mechanics for flight and hover units) is
+Σ[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + ⌊max(0, [[I]]m[[/I]] − 1)/Σ[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]⌋(Σ[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
+where
+[[List]]
+[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the mass support for propulsion unit [[I]]i[[/I]]
+|[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the base movement delay for propulsion unit [[I]]i[[/I]]
+|[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the penalty for propulsion unit [[I]]i[[/I]]
+|[[I]]m[[/I]] is the total mass of all attached parts
+|[[I]]n[[/I]] is the total number of activated propulsion units
+[[/List]]
+and all sums Σ are over all activated propulsion units.
+
+[[Heading]]Flight and Hover Units[[/Heading]]
+Flight and hover units calculate their movement speed in the same basic way as legs, treads, and wheels, but they have the following additional mechanics that affect movement speed:
+[[List]]
+Bots move faster with multiple units. Each unit has a [[I]]bonus[[/I]] (labeled ""mod/extra""). For every active flight or hover unit beyond the first, the bonus is subtracted from the movement delay. (If the active propulsion units have different bonuses, they are averaged.) But the bonus can never bring the overall movement delay below 20 for hovering, or 10 for flying.
+|Attached treads, legs, and wheels induce [[I]]drag[[/I]]. The drag from each attached unit is added to the movement delay, slowing the bot down.
+|Certain flight and hover units can be [[Overload#propulsion|overloaded]]. When a unit is overloaded, speed is calculated as if there were two of that unit, and the unit's support is increased by half. Additionally, if the bot is moving at the normal fastest possible speed, each overloaded unit reduces its movement delay by 1, to a minimum of 5.
+[[/List]]
+
+[[Heading]]Core Propulsion[[/Heading]]
+If Cogmind has no propulsion units active, it will move using core propulsion (informally, ""core hover""). Core propulsion is relatively fast, with a base movement delay of 50 (speed of 200%), but it has pitifully low mass support of only 3 and a harsh overweight penalty of 50. It is thus very difficult to actually use, but is necessary if Cogmind's build is destroyed or if you must core purge.","","","","","Backup Propulsion,Flight Units,Hover Units,Legs,Overloadable Propulsion,Treads,Wheels","",""
 "Propulsion Shielding","Part","","","","","","","",""
 "Propulsion Shieldings","Part Group","","","","","Propulsion Shielding,Imp. Propulsion Shielding,Mak. Propulsion Shielding,Exp. Propulsion Shielding","","",""
 "Protector","Bot Group","Protectors are [[0b10]] [[Wheels|wheeled]] non-combat bots that specialize in protecting their allies with remote [[Shield Generators]] and [[Force Fields]]. Protectors are equipped with two power sources and [[Energy Wells]] for higher damage reduction potential. They are most often seen as part of an [[Assault Squad]] or [[Cargo Convoy]]. Later tiers are equipped with [[Point Defense System|Point Defense Systems]] that make it more difficult to use [[Launchers]] against Assaults protected by them.
@@ -6060,8 +6146,10 @@ Storage]] selections - Larger storage units like [[Hcp. Storage Unit]] and above
 Modify constructs with slots open - If trying to grow a construct, make sure that an empty slot is available for growth. This is especially the case for weapon constructs. Even though two weapon constructs may occasionally merge into a single multislot construct, it is more reliable to grow the slot number by keeping one available.|
 Don't have more than 3 weapons in engine inventory at a time - If trying to grow a weapon construct in number of slots, having 4 parts in inventory with an open weapon slot will always result in a new construct being created rather than having the existing construct modified. It may take a little longer, but making sure to process only 2 at a time will ensure maximum modifications and the highest chance to grow a weapon construct in slot count.|
 Take Alignments - [[Warlord (Alignment)]] and [[Imprint]] can both be the source of great parts to feed the scrap engine. Note that in order to align, Cogmind must have taken the Scrap Engine from a Subdweller-attacked Recycling, otherwise the associated maps will be hostile.[[/List]]","","","","","","",""
-"Scrap Shield","Part","","","","","","","",""
-"Scrap Shield Fragment","Part","","","","","","","",""
+"Scrap Shield","Part","Used by [[Subdweller|Subdwellers]] in the [[Subcaves]]. Can be repaired with a [[Scrap Shield Fragment]], also commonly found in the Subcaves.
+
+Later on in [[Scraptown]], [[Spoiler]]can be returned to a [[Scientist]], which will cause an [[Enh. Scrap Shield]] to be delivered in the [[Caves]].[[/Spoiler]]","","","","","","",""
+"Scrap Shield Fragment","Part","Found in the Subcaves. Used to repair a [[Scrap Shield]].","","","","","","",""
 "Scrap Suit","Part","","","","","","","",""
 "Scraphulk","Bot Group","Scraphulks are large [[Legs|legged]] [[UFD]]-aligned combat bots Cogmind can create by using the [[GameText]]Force(Scrapoids)[[/GameText]] hack at [[Recycling Unit|Recycling Units]]. They are similar to scrapoids but are much tankier and individually more powerful with their Ovr. cannon weaponry, and can repair their parts and even core with their [[Scrap Suit|Scrap Suits]]. Their unique [[Partition Strike Chip]] allows them to apply salvage with cannons.","Spoiler","Scraphulk (6),Scraphulk (8)","","","","",""
 "Scraphulk (6)","Bot","","","","","","","",""
@@ -7731,7 +7819,15 @@ By default traps are programmed to trigger on detection of any foreign robot, a 
 An enterprising Cogmind can, with the use of a [[Trap Extractors|Trap Extractor]], extract and store or pick up friendly traps for their own use. However, [[Chute Trap|Chute Traps]], [[Alarm Trap|Alarm Traps]] and [[Ambush Trap|Ambush Traps]] cannot be extracted to begin with. Stasis Traps also exhibit special behavior; they can be extracted but cannot be stored inside a Trap Extractor, and they can still be extracted even after they were triggered, as long as the stasis field they produce hasn't been depleted.
 
 Last edited during Beta 15.","","","","Blade Trap,EMP Trap,Shock Trap,Explosive Trap,Piercing Trap,Stasis Trap,Proton Bomb Trap,Shrapnel Trap,Heavy Explosive Trap,Dirty Bomb Trap,EM Surge Trap,Fire Trap,Tesla Bomb Trap,Tiamat Bomb Trap,Fusion Bomb Trap,Segregator Trap,Gamma Bomb Trap,Hellfire Trap,Heat Bomb Trap,Armageddon Trap,Vortex Trap","","",""
-"Treads","Part Group","","","","Treads","","","",""
+"Treads","Part Group","Treads have the highest support and the lowest speed. They are the most durable propulsion, but lower-tier units will still often be destroyed and replaced. They are commonly used by (and available from) [[Hauler|Haulers]] as well as heavy combat 0b10 bots, including [[Sentry|Sentries]], [[Heavy|Heavies]], and [[Behemoth|Behemoths]].
+
+The slow movement speed of treads means [[Cogmind]] generally cannot outrun bots and will be forced to fight most encounters that it cannot avoid. Replacement treads can be difficult to obtain under duress since they are mostly equipped by powerful combat bots, and the best multislot treads are not commonly used by other bots until later in the game. In exchange, treads' high coverage and integrity (especially on mid- to late-game multislot treads), along with recoil reduction, allow them to support a combat bot and protect other parts. Treading bots that lack enough spare treads may choose a [[I]]half-track[[/I]] configuration, filling some propulsion slots with treads and some with [[Wheels]], as described in that article.
+
+All multislot treads are capable of [[Special Propulsion Modes#siege mode|Siege Mode]], and some are capable of High Siege Mode. Most tread builds will transition entirely to multislot treads as soon as practicable, for their improved resilience and siege mode capability. A common place to make this transition is in [[Cetus]] after looting [[Centrium Heavy Treads]] from the [[Cetus Guard]].
+
+While on treads, Cogmind is immune to damage from ramming hostile bots, and instead has a chance to crush them (unless they are large or huge or have greater than 50 core integrity). The chance to crush varies for each type of tread.
+
+When active, treads confer immunity to knockback and reduce the accuracy penalty from recoil when firing large volleys.","","","Treads","","","",""
 "Tri-rail Accelerator","Part","","","","","","","",""
 "Tri-treads","Part","","","","","","","",""
 "Triangulator","Part","","","","","","","",""
@@ -7958,7 +8054,17 @@ Watchers are quite difficult to kill, especially the W-44 Eye variant. Their nat
 "Weight Redist. System","Part","","","","","","","",""
 "Welding Torch","Part","","","","","","","",""
 "Wheel","Part","","","","","","","",""
-"Wheels","Part Group","","","","Wheels","","","",""
+"Wheels","Part Group","Wheels are the most fragile ground propulsion type, but have a lower overweight penalty than any other type of propulsion. They are commonly used by (and available from) almost all non-combat 0b10 bots, other than [[Hauler|Haulers]].
+
+Because of the low overweight penalty, it is viable for bots to use wheels even if they are several times overweight.
+
+The low overweight penalty of wheels, and their ready availability from the ubiquitous green bots, gives them some niches:
+[[List]]
+As a sole propulsion type for bots that carry massive inventories, including certain [[RIF]] builds.
+|In combination with [[Treads]] to form a [[I]]half-track[[/I]] configuration, where both wheels and treads are equipped at once. [[Cogmind]] activates wheels outside combat to benefit from the fast movement speed, and treads in combat for the knockback immunity and recoil reduction. Half-tracking is useful for bots that have not found enough spare treads, to reduce the churn of treads. The ease of obtaining wheels makes them a viable secondary propulsion type.
+|As backup propulsion. If all of Cogmind's propulsion is destroyed, it may have an extremely slow movement speed on core propulsion. Equipping just one wheel will often reduce the movement delay to a manageable amount.
+[[/List]]
+The main downside of wheels compared to other ground propulsion is their fragility. Cogmind can easily loot replacement wheels from green bots, but will still go through wheels fairly quickly.","","","Wheels","","","",""
 "Wins Achievements","Other","Wins [[Achievements]] are earned by winning the game under certain conditions. 10 of the 37 Wins Achievements have hidden descriptions that are only revealed after completing them. The borders of Wins Achievements indicate whether they are earned by winning with a specific ending, winning under certain conditions, or winning while a challenge mode is active. The borders of Achievements for winning under certain conditions also indicate their difficulty compared to other achievements with similar requirements, with more ""intense"" borders meaning higher difficulty.
 
 
