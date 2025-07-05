@@ -7756,6 +7756,13 @@ Cargo Convoys are a unique type of transport squad that appear in main [[Factory
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Traps[[/Lore]]
 
+[[Heading]]Arrays[[/Heading]]
+Trap arrays vary in size, Trap type, and layout formations. Each Trap array contains 1-6 Traps, and is composed entirely of the same Traps. The type of trap that an arrays will be made of depends on the location. For example, [[EM Surge Trap|EM Surge Traps]] cannot appear in [[Materials]]. Trap arrays appear in several types of formations:
+[[List]]Door Trap - A 1-Trap array formation where the only trap is directly adjacent to a Door or an Emergency Access door.
+|Rows - Found in corridors, usually perpendicularly to the corridor's direction. The Traps will form one or more rows across the corridor, though some tiles of some of the rows may be skipped. When spotting a single trap in a corridor, it is usually fairly simple to guess the approximate location of other Traps in the array.
+|Minefield - Usually found in open areas or inside rooms. The Traps are strewn about chaotically, making their locations very unpredictable.
+|Prefab - Some prefabs contain Traps in preset formations or random but unusual formations. This can result in unexpected behavior, such as each of the Traps of a prefab being part of its own separate array.  
+|Other - Some Trap formations are uncommon and maybe unique to certain maps, making them difficult to recognize and categorize.[[/List]]
 
 [[Heading]]Triggering[[/Heading]]
 Moving over a trap does not always trigger it. The chance is instead determined by the form of [[Propulsion]]:
@@ -7786,7 +7793,7 @@ Once triggered, the trap at that position is spent and will not trigger again. (
 
 
 [[Heading]]Detection[[/Heading]]
-Cogmind has a 1% chance to detect each trap in view, checked every turn, and each active Trap Scanner [[Comment]]and allied [[Drone Bays|Drone]], i think? I can't find the source i thought i remembered.[[/Comment]]has a separate chance to detect Traps.
+Cogmind has a 1% chance to detect each trap in view, checked every turn, and each active Trap Scanner and allied [[Drone Bays|Drone]] has a separate chance to detect Traps.
 Some other ways to detect traps include:
 [[List]]
 Successfully hacking [[GameText]][Locate Traps][[/GameText]]/Traps(Locate) at [[Terminal|Terminals]] will reveal all nearby trap arrays.
@@ -7800,7 +7807,7 @@ Successfully hacking [[GameText]][Locate Traps][[/GameText]]/Traps(Locate) at [[
 
 
 [[Heading]]Removal[[/Heading]]
-The simplest way to remove one or more traps is to destroy the section of floor housing them, for example using a [[Launchers|Launcher]]. Arrays of hostile traps can be permanently disarmed one array at a time via terminal hacking or [[Spoiler]][[RIF]]-hacking Operators[[/Spoiler]], and disabling traps on an individual basis is a possible side effect of attempting to hack one with an active melee [[Datajacks|Datajack]]. Successfully hacking [[Alarm Trap|Alarm Traps]] or [[Ambush Trap|Ambush Traps]] using a melee Datajack will always disable them.
+The simplest way to remove one or more traps is to destroy the section of floor housing them, for example using a [[Launchers|Launcher]]. Arrays of hostile traps can be permanently disarmed one array at a time via terminal hacking or [[Spoiler]][[RIF]]-hacking Operators[[/Spoiler]], and disarming traps on an individual basis is a possible side effect of attempting to hack one with an active melee [[Datajacks|Datajack]]. Successfully hacking [[Alarm Trap|Alarm Traps]] or [[Ambush Trap|Ambush Traps]] using a melee Datajack will always disarm them.
 
 
 [[Heading]]Reprogramming[[/Heading]]
@@ -7808,7 +7815,7 @@ Traps can be reprogrammed through various means, including:
 [[List]]
 Successfully hacking [[GameText]][Reprogram Traps][[/GameText]]/Traps(Reprogram) at terminals will reveal and reprogram a nearby trap arrays within range.
 |[[Spoiler]]Using the [[GameText]]reprogram_traps[[/GameText]] on Operators with a Datajack in combination with RIF will reveal and reprogram the nearest trap array within a range of 30.[[/Spoiler]]
-|Attempting to moving into a known hostile trap with an active melee Datajack will instead make Cogmind attempt reprogram it, with a base 10% to successfully do so, increased by [[Offensive Hackware]].
+|Attempting to moving into a known hostile trap with an active melee Datajack will instead make Cogmind attempt to hack it, with a base 10% to successfully do so, increased by [[Offensive Hackware]]. Successfully hacking a Trap will usually reprogram it, though this may sometimes disarm it. Successfully hacking [[Alarm Trap|Alarm Traps]] or [[Ambush Trap|Ambush Traps]] using a melee Datajack will always disarm them.
 |Having an active [[Trap Reconfigurator]] [[Exiles Vault Prototypes|Exile prototype]].
 [[/List]]
 From the [[https://www.gridsagegames.com/cogmind/manual.txt|official manual]]:
