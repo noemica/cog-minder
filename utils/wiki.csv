@@ -1170,8 +1170,7 @@ Attaching unknown [[Alien Artifacts]] or [[Prototype Part|Prototype Parts]] with
 If [[High Security]] is triggered, all Chute Traps on the map will disappear after 50 turns.
 
 [[Heading]]Effects[[/Heading]]
-When triggered, a Chute Trap will bring the victim to the current depth's Wastes map, permanently sealing itself afterwards.
-Victims can be followed by triggering a different Chute Trap. If Cogmind falls victim to one, all allies currently following Cogmind will fall into Wastes one after the other following Cogmind, even if there weren't enough remaining Chute Traps for them to follow. If Cogmind follows a purple allied [[Derelict]] into Wastes, the Derelict will thank Cogmind for not abandoning them.
+When triggered, a Chute Trap will bring the victim to the array's Wastes map, permanently sealing itself afterwards. Victims can be followed by triggering a different Chute Trap from the same array. This is because each Chute Trap array leads to a different Wastes map. If Cogmind falls victim to one, Cogmind's [[Alert]] will drop enormously, and any allies currently following Cogmind will fall into Wastes one after the other following Cogmind, so long as they are not immobile, even if there weren't enough remaining Chute Traps for them to follow. If Cogmind follows a purple allied [[Derelict]] into Wastes, the Derelict will thank Cogmind for not abandoning them.
 Standing on a known Chute Trap then manually triggering will grant the ""Wheee!"" [[Mechanics Achievements|Mechanics Achievement]] if it wasn't already unlocked.
 
 [[Heading]][[K-01 Serf|K-01 Serf]] Interactions[[/Heading]]
@@ -3668,13 +3667,13 @@ When entering -3 Research, the Exiles will send a warning message to Cogmind ind
 "Flight Unit","Part","","","","","","","",""
 "Flight Units","Part Group","Flight units have the lowest support and the highest speed. They are quite fragile, though [[Prototype Part|prototype]] flight units are somewhat less so. They are notably used by [[Swarmer|Swarmers]].
 
-On flight, [[Cogmind]] can outrun most other bots, but will have trouble equipping high-mass parts, such as the best armor, cannons, and storage units. Flight builds are difficult to sustain in [[Materials]] due to their low availability and the high volume of encounters, so it is more common to use grounded propulsion in Materials and transition to flight upon reaching [[Factory]] or shortly thereafter.
+On flight, [[Cogmind]] can outrun most other bots, but will have trouble equipping high-mass parts, such as the best armor, cannons, and storage units. Flight units are difficult to sustain in [[Materials]] due to their low availability and the high volume of encounters, so it is more common to use grounded propulsion in Materials and transition to flight upon reaching [[Factory]] or shortly thereafter.
 
 Most flight builds will favor prototype flight units for their improved resilience, along with multislot flight arrays. Cooled (Cld.) flight units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage.
 
 Like [[Hover Units]], flight units receive a bonus to movement speed when multiple are used at once, and are affected by drag from attached [[Legs]], [[Treads]], and [[Wheels]]. This bonus cannot bring the overall movement delay below 10 unless flight units are overloaded.
 
-While flying, Cogmind can hop over other bots in its way, unless Cogmind is overweight. Flying bots have a 10% evasion bonus, unless overweight or in stasis.","","","Flight Units","","","",""
+While flying, Cogmind can hop over other bots in its way, unless Cogmind is overweight. Flying bots have a 10% evasion bonus, unless overweight or in stasis. Flying bots, along with hovering and legged bots, receive an evasion bonus from [[Reaction Control Systems]].","","","Flight Units","","","",""
 "Flightbrick","Part","","","","","","","",""
 "Flying Fortress v7","Part","","","","","","","",""
 "Focal Shield","Part","","","","","","","",""
@@ -4009,11 +4008,11 @@ Note: Beta 15 updates are in progress. Some information may be out of date.
 "Hover Unit","Part","","","","","","","",""
 "Hover Units","Part Group","Hover units have fairly low support and high speed, but not to the same extent as [[Flight Units]]. They are quite fragile (but also not as much as flight units), though [[Prototype Part|prototype]] hover units are somewhat less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
 
-Most hover builds will favor prototype hover units for their improved resilience, along with multislot hover arrays. Cooled (Cld.) hover units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage. Combat (Cmb.) hover units have higher integrity than other hover units and can support almost as much mass as legs, but have somewhat slower movement speeds.
+Most hover builds will favor prototype hover units for their improved resilience, along with multislot hover arrays. Cooled (Cld.) hover units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage. Combat (Cmb.) hover units have higher integrity than other hover units and can support almost as much mass as [[Legs]], but have somewhat slower movement speeds.
 
-Like flight units, hover units receive a bonus to movement speed when multiple are used at once, and are affected by drag from attached [[Legs]], [[Treads]], and [[Wheels]]. This bonus cannot bring the overall movement delay below 20 unless hover units are overloaded.
+Like flight units, hover units receive a bonus to movement speed when multiple are used at once, and are affected by drag from attached legs, [[Treads]], and [[Wheels]]. This bonus cannot bring the overall movement delay below 20 unless hover units are overloaded.
 
-Hovering bots have a 5% evasion bonus, unless overweight or in stasis.
+Hovering bots have a 5% evasion bonus, unless overweight or in stasis. Hovering bots, along with flying and legged bots, receive an evasion bonus from [[Reaction Control Systems]].
 
 Cogmind's core propulsion (often referred to as ""core hover"") is mechanically distinct from hover units.","","","Hover Units","","","",""
 "Hpw. Disruptor Cannon","Part","","","","","","","",""
@@ -4591,7 +4590,7 @@ The turns-per-volley table in the Quantum Capacitor article also applies to the 
 
 While on legs, [[Cogmind]] is immune to damage from ramming hostile bots, and instead has a 20% chance per active leg slot to kick them out of the way (unless they are huge).
 
-Additionally, while moving on legs, Cogmind is in the Running state, which increases evasion (unless overweight) but decreases ranged accuracy, by 5% per level of [[Momentum]].
+While moving on legs, Cogmind is in the Running state, which increases evasion (unless overweight) but decreases ranged accuracy, by 5% per level of [[Momentum]]. Some legs, such as the [[Thunder Leg]], provide improve running bonuses. Legged bots, along with those using [[Flight Units|Flight]] and [[Hover Units]], receive an evasion bonus from [[Reaction Control Systems]].
 
 A few specific legs are capable of [[Special Propulsion Modes]].","","","Legs","","","",""
 "Lgt. Angular Momentum Engine","Part","","","","","","","",""
@@ -5003,7 +5002,9 @@ The following RIF hacks can be performed:
 "Modified TNC","Part","","","","","","","",""
 "Molecular Deconstructor","Part","When a bot is hit with the Molecular Deconstructor, they will take the 20-50 damage over a period of 2-5 turns, with 10 damage being dealt per turn. Multiple instances of the damage over time effect do stack with each other.","","","","","","",""
 "Molecular Scythe","Part","","","","","","","",""
-"Momentum","Other","","","","","","","",""
+"Momentum","Other","Moving multiple consecutive spaces in a row in the same direction adds momentum, up to a maximum of 3. Momentum has several effects, most notably improving the effectiveness of attacks with [[Melee Weapons]].
+
+A bot gains 1 momentum each time it moves in the same direction. It loses 1 momentum when it turns 45 degrees; for instance, if a bot has 3 momentum while moving east, and then moves southeast, it will have 2 momentum. Taking any other action, including stopping or moving in a different direction, resets momentum.","","","","","","",""
 "Multinova Projection Cannon","Part","","","","","","","",""
 "Multirail","Part","","","","","","","",""
 "Multireflex Exoskeleton","Part","","","","","","","",""
@@ -8057,7 +8058,64 @@ Watchers are quite difficult to kill, especially the W-44 Eye variant. Their nat
 "Weapon Mount","Part","","","","","","","",""
 "Weapon Shielding","Part","","","","","","","",""
 "Weapon Shieldings","Part Group","","","","","Weapon Shielding,Imp. Weapon Shielding,Mak. Weapon Shielding,Exp. Weapon Shielding,Zio. Weapon Casing","","",""
-"Weapons","Part Supergroup","","","","","","Autonomous Weapons,Backup Lasers,Ballistic Cannons,Ballistic Guns,Guided Weapons,Hyp. Weapons,Overloadable Weapons,Tearclaws (Group),Thermal Cannons","Datajacks,Electromagnetic Weapons,Energy Cannons,Energy Guns,Launchers,Melee Weapons,Special Melee Weapons,Special Weapons,Thermal Weapons",""
+"Weapons","Part Supergroup","Weapon components allow robots to deal damage or otherwise perform some utility.
+
+Weapons can be from 9 general categories: [[Ballistic Cannons]], [[Energy Cannons]], [[Ballistic Guns]], [[Energy Guns]], [[Launchers]], [[Slashing Weapons]], [[Piercing Weapons]], [[Impact Weapons]], [[Special Melee Weapons]], and [[Special Weapons]].
+
+[[Heading]]Multi-Weapon Volleys[[/Heading]]
+
+Most weapons can be fired together as a volley, excluding Special Weapons, Special Melee Weapons, and [[Guided Weapons]]. Multiple Slashing, Piercing, and Impact melee weapons can be made to fire in one volley, although any weapons beyond the first are restricted to chance-based follow-up attacks.
+
+[[Heading:2]]Volley Time Costs[[/Heading]]
+
+Each weapon in a ranged multi-weapon volley will increase the volley’s total time cost, with each weapon being more efficient time-wise:
+[[Table]]Number of Weapons|Time cost||1|200||2|300||3|325||4|350||5|375||6+|400[[/Table]]
+This is then modified by the sum of the delay stats of every weapon in the volley, then by the time cost reduction of an equipped [[Weapon Cyclers|Weapon Cycler]], [[Quantum Capacitor]], or [[Launcher Loader]], when applicable. A single volley may not cost less than 25 time units.
+
+[[Heading:2]]Follow-Up Attacks[[/Heading]]
+
+When multiple melee weapons are fired in a single volley, the first will always fire, and any others will have an independent chance to make a follow-up attack. Follow-up attacks are more likely when the primary weapon is slower than a given backup melee weapon. The chance may also be affected by supporting utilities. Follow-ups will add half the delay stat of the weapon that is following-up to the total time cost of the volley, before the time cost reduction of any [[Actuators]].
+
+[[Heading:2]]Recoil[[/Heading]]
+
+Certain weapons (Especially ballistic ones) suffer from recoil. The sum of every other weapon’s recoil will be assessed as a penalty to each weapon in a volley containing weapon(s) suffering from recoil.
+
+[[Heading]]Energy/Ballistic Gun Mechanics[[/Heading]]
+
+If a volley is comprised exclusively of ballistic and/or energy guns and its original target is destroyed, a secondary target may be selected, prioritizing the most easily hit armed and active hostile in range. New targets may continue to be selected until no weapons remain in the volley. This mechanic is also available to melee follow-ups, and can be expanded to any weapon with use of a [[Heavy Servo Lattice]] or [[Spoiler]][[VL-GR5's Timing Chip]][[/Spoiler]]. However, unlike every other weapons, guns cannot cause overflow damage when damage dealt is greater than the target components integrity. Overflow damage is sent to a second part according to standard coverage rules, unless the destroyed part was armor, and overflow damage is always sent to armor if any is present.
+
+[[Heading]]Weapon Types[[/Heading]]
+
+[[Heading:2]]Energy Cannons/Guns[[/Heading]]
+
+Energy weapons generally have a shorter range, but benefit from a more easily predictable damage potential and little or no recoil. Thermal damage also generally transfers heat to the target, and may cause meltdowns in hot enough targets. Electromagnetic damage is capable of causing system corruption in targets. Anywhere from 50-150% of damage is applied as system corruption. EM damage is additionally capable of disrupting hit parts or even robot cores, as well as causing chain reactions in target power components. 
+
+[[Heading:2]]Ballistic Cannons/Guns[[/Heading]]
+
+Ballistic weapons generally have a longer effective range and more destructive critical strikes, but suffer from less predictable damage and high recoil. Some kinetic projectiles, especially hypervelocity variants, are capable of penetrating one or more consecutive targets. Kinetic cannon hits also blast usable matter off target robots and have a damage-equivalent chance to cause knockback, with a (10 - range) * 5 modifier and a +/-10% per size class (Tiny/Small/Medium/Large/Huge) difference between the target and medium size (targets knocked into another robot may also damage and displace it). The amount of matter created per cannon projectile impact is randomized from between zero up to the absolute value of the weapon's salvage modifier, but only applies for those weapons with a negative salvage modifier below -2.
+
+[[Heading:2]]Launchers[[/Heading]]
+
+Launchers may deal either electromagnetic or explosive damage.  Damage from launchers is spread across targets in their area of effect, dividing damage into separate chunks before affecting a robot, where each chunk selects its own target part (though they may overlap). Launchers also suffer from damage falloff: targets at the edge of the area of effect will sustain less damage then targets near the center. Explosive launchers carry high salvage penalties and will tend to destabilize hit terrain. Electromagnetic launchers can initiate chain reactions in power components attached to [[Cogmind]] or on the ground and disrupt hit components or robot cores.
+
+[[Heading:2]]Impact Weapons[[/Heading]]
+
+Impact melee weapons have a damage-equivalent chance to cause knockback, with a +/-10% per size class (T/S/M/L/H) difference between attacker and target. Targets knocked into another robot may also damage and displace it. A robot hit by another displaced robot has a chance to itself be displaced and sustain damage, where the chance equals the original knockback chance further modified by +/-10% per size class difference between the blocking robot and the knocked back robot, and the resulting damage equals the original damage inflicted by the weapon after applying the +10% robot analysis damage modifier if applicable, further divided by the blocker size class if that class is greater than 1 (where Medium = 2, and so on).
+
+Impact weapons ignore relative coverage when determining which components to affect, and are therefore effective at destroying fragile systems regardless of armor and other protection. By ignoring coverage, there is an equal chance for an attack to hit any given part, where each slot of a multislot part also has a separate and equivalent chance to be hit. A target's core also counts as one slot for that purpose. In addition, for every component crushed by an impact, its owner's system is significantly corrupted (+25-150%), though electromagnetic resistance can help mitigate this effect.
+
+[[Heading:2]]Slashing Weapons[[/Heading]]
+
+Slashing melee weapons are generally very damaging, and most are also capable of severing components from a target without destroying them.
+
+[[Heading:2]]Piercing Weapons[[/Heading]]
+
+Piercing melee weapons inflict less collateral damage, but are more likely to hit a robot's core, and get double the melee momentum damage bonus.
+
+[[Heading:2]]Special Weapons and Special Melee Weapons[[/Heading]]
+
+Special weapons are usually intended to serve some utility rather than directly deal damage.
+","","","","","Autonomous Weapons,Backup Lasers,Ballistic Cannons,Ballistic Guns,Guided Weapons,Hyp. Weapons,Overloadable Weapons,Tearclaws (Group),Thermal Cannons","Datajacks,Electromagnetic Weapons,Energy Cannons,Energy Guns,Launchers,Melee Weapons,Special Melee Weapons,Special Weapons,Thermal Weapons",""
 "Weight Redist. System","Part","","","","","","","",""
 "Welding Torch","Part","","","","","","","",""
 "Wheel","Part","","","","","","","",""
