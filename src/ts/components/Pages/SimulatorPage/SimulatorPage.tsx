@@ -337,7 +337,8 @@ function getSimulatorState(
 
     const behavior = pageState.enemyBehavior || "Stand/Fight";
 
-    const defensiveState = getBotDefensiveState(parts, pageState.damageReduction || "None");
+    const dormant = behavior === "Unpowered/Dormant" || behavior === "Unpowered 10 Turns"
+    const defensiveState = getBotDefensiveState(parts, pageState.damageReduction || "None", dormant);
 
     let runningEvasion = 0;
     if (bot.speed < 100) {
@@ -366,6 +367,7 @@ function getSimulatorState(
         def: bot,
         defensiveState: defensiveState,
         destroyedParts: [],
+        dormant: dormant,
         externalDamageReduction: pageState.damageReduction || "None",
         heat: 0,
         immunities: bot.immunities,

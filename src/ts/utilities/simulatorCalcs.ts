@@ -187,7 +187,6 @@ function applyDamage(
     armorAnalyzed: boolean,
     disruptChance: any,
     spectrum: any,
-    canOverflow: any,
     damageType: DamageType,
     salvage: number,
 ) {
@@ -244,7 +243,7 @@ function applyDamage(
         }
     }
 
-    // Apply salvage for all chunks simulatenously
+    // Apply salvage for all chunks simultaneously
     botState.salvage += salvage;
 
     // Apply damage
@@ -637,6 +636,7 @@ function cloneBotState(botState: BotState): BotState {
         def: botState.def,
         defensiveState: undefined as any,
         destroyedParts: [],
+        dormant: botState.dormant,
         externalDamageReduction: botState.externalDamageReduction,
         heat: 0,
         immunities: botState.immunities,
@@ -667,7 +667,7 @@ function cloneBotState(botState: BotState): BotState {
         tusToSiege: botState.tusToSiege,
         totalCoverage: botState.totalCoverage,
     };
-    newState.defensiveState = getBotDefensiveState(newState.parts, newState.externalDamageReduction);
+    newState.defensiveState = getBotDefensiveState(newState.parts, newState.externalDamageReduction, botState.dormant);
 
     return newState;
 }
@@ -716,6 +716,7 @@ export function calculateResistDamage(botState: BotState, damage: number, damage
 export function getBotDefensiveState(
     parts: SimulatorPart[],
     externalDamageReduction: ExternalDamageReduction,
+    dormant: boolean,
 ): DefensiveState {
     const state: DefensiveState = {
         antimissile: [],
@@ -737,61 +738,61 @@ export function getBotDefensiveState(
     };
 
     for (const part of parts) {
-        if (hasActiveSpecialProperty(part.def, true, "AntimissileChance")) {
+        if (hasActiveSpecialProperty(part.def, !dormant, "AntimissileChance")) {
             state.antimissile.push({
                 // Antimissile system-like part
                 chance: (part.def.specialProperty!.trait as AntimissileChance).chance,
                 part: part,
             });
-        } else if (hasActiveSpecialProperty(part.def, true, "ReactionControlSystem")) {
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "ReactionControlSystem")) {
             // Reaction Control System-like part
             // Leg/hover/flight determination done at accuracy update time
             state.avoid.push({
                 chance: (part.def.specialProperty!.trait as ReactionControlSystem).chance,
                 part: part,
             });
-        } else if (hasActiveSpecialProperty(part.def, true, "CorruptionIgnore")) {
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "CorruptionIgnore")) {
             // Dynamic Insulation System-like part
             state.corruptionIgnore.push({
                 chance: (part.def.specialProperty!.trait as CorruptionIgnore).chance,
                 part: part,
             });
-        } else if (hasActiveSpecialProperty(part.def, true, "CorruptionPrevent")) {
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "CorruptionPrevent")) {
             // Corruption Screen part
             state.corruptionPrevent.push({
                 part: part,
             });
-        } else if (hasActiveSpecialProperty(part.def, true, "CorruptionReduce")) {
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "CorruptionReduce")) {
             // Corruption Screen part
             state.corruptionReduce.push({
                 amount: (part.def.specialProperty!.trait as CorruptionReduce).amount,
                 part: part,
             });
-        } else if (hasActiveSpecialProperty(part.def, true, "CriticalImmunity")) {
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "CriticalImmunity")) {
             // Critical immunity part
             state.critImmunity.push({
                 part: part,
             });
-        } else if (hasActiveSpecialProperty(part.def, true, "DamageReduction")) {
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "DamageReduction")) {
             // Force field-like part
             state.damageReduction.push({
                 reduction: (part.def.specialProperty!.trait as DamageReduction).multiplier,
                 remote: (part.def.specialProperty!.trait as DamageReduction).remote,
                 part: part,
             });
-        } else if (hasActiveSpecialProperty(part.def, true, "DamageResists")) {
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "DamageResists")) {
             // Damage type resist part
             part.resistances = (part.def.specialProperty!.trait as DamageResists).resists;
-        } else if (hasActiveSpecialProperty(part.def, true, "RangedAvoid")) {
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "RangedAvoid")) {
             // Phase shifter-like part
             state.rangedAvoid.push({
                 avoid: (part.def.specialProperty!.trait as RangedAvoid).avoid,
                 part: part,
             });
-        } else if (hasActiveSpecialProperty(part.def, true, "SelfReduction")) {
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "SelfReduction")) {
             // Powered armor-like part
             part.selfDamageReduction = (part.def.specialProperty!.trait as SelfReduction).shielding;
-        } else if (hasActiveSpecialProperty(part.def, true, "Shielding")) {
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "Shielding")) {
             // Shielding-like part
             const trait = part.def.specialProperty!.trait as Shielding;
             state.shieldings[trait.slot].push({ reduction: trait.shielding, part: part });
@@ -864,7 +865,7 @@ export function getBotDefensiveState(
     // All other parts should technically be sorted as well.
     // However, in game no bot ever has duplicate mixed-level defenses,
     // some have multiples of the same level like 2 base weapon shieldings on
-    // Warbot which, but that doesn't require sorting anyways.
+    // Warbot, but that doesn't require sorting anyway.
 
     return state;
 }
@@ -1257,6 +1258,9 @@ export function simulateCombat(state: SimulatorState): boolean {
     const offensiveState = state.offensiveState;
     let volleys = 0;
 
+    let dormantTimerSet = false;
+    let dormantTimerPassed = false;
+    let dormantTimer = Number.MAX_SAFE_INTEGER;
     let oldTus = 0;
     state.tus = 0;
     state.actionNum = 0;
@@ -1310,6 +1314,25 @@ export function simulateCombat(state: SimulatorState): boolean {
                 // enough approximation
                 botState.superfortressRegen.nextRegenAttempt += randomInt(5, 25);
             }
+        }
+
+        // Check for bot dormancy changes
+        if (newCompletedTurns >= dormantTimer && !dormantTimerPassed) {
+            // If timer has elapsed, recalculate the defensive state
+            botState.dormant = false;
+            botState.defensiveState = getBotDefensiveState(
+                botState.parts,
+                botState.externalDamageReduction,
+                botState.dormant,
+            );
+            dormantTimerPassed = true;
+        } else if (
+            !dormantTimerSet &&
+            botState.behavior === "Unpowered 10 Turns" &&
+            botState.coreIntegrity != botState.initialCoreIntegrity
+        ) {
+            dormantTimer = newCompletedTurns + 10;
+            dormantTimerSet = true;
         }
 
         // Process each volley
@@ -1520,7 +1543,7 @@ function simulateWeapon(
         damage = calculateResistDamage(botState, damage, "Impact");
 
         if (damage > 0) {
-            applyDamage(state, botState, damage, 1, undefined, false, false, false, false, true, "Impact", 3);
+            applyDamage(state, botState, damage, 1, undefined, false, false, false, false, "Impact", 3);
         }
 
         return endCondition(botState);
@@ -1615,7 +1638,7 @@ function simulateWeapon(
             }
 
             // Apply double damage sneak attack bonus
-            if (offensiveState.melee && offensiveState.sneakAttack) {
+            if ((offensiveState.melee && offensiveState.sneakAttack) || botState.dormant) {
                 damage *= 2;
             }
 
@@ -1649,7 +1672,6 @@ function simulateWeapon(
                     armorAnalyzed,
                     weapon.disruption,
                     weapon.spectrum,
-                    weapon.overflow,
                     weapon.damageType,
                     weapon.salvage,
                 );
@@ -1701,7 +1723,6 @@ function simulateWeapon(
                     false,
                     weapon.explosionDisruption,
                     0, // Explosion spectrum only applies to engines on ground, ignore it here
-                    weapon.overflow,
                     weapon.explosionType,
                     weapon.salvage,
                 );

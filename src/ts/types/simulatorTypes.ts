@@ -80,9 +80,16 @@ export type DefensiveState = {
 
 export type SuperfortressRegenState = {
     nextRegenAttempt: number;
-}
+};
 
-export type BotBehavior = "Stand/Fight" | "Siege/Fight" | "Already Sieged/Fight" | "Running" | "Run When Hit";
+export type BotBehavior =
+    | "Stand/Fight"
+    | "Unpowered/Dormant"
+    | "Unpowered 10 Turns"
+    | "Siege/Fight"
+    | "Already Sieged/Fight"
+    | "Running"
+    | "Run When Hit";
 
 export type BotState = {
     armorAnalyzedCoverage: number;
@@ -96,6 +103,7 @@ export type BotState = {
     def: Bot;
     defensiveState: DefensiveState;
     destroyedParts: SimulatorPart[];
+    dormant: boolean;
     externalDamageReduction: ExternalDamageReduction;
     heat: number;
     immunities: BotImmunity[];

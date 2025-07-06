@@ -25,6 +25,14 @@ const botBehaviorButtons: ExclusiveButtonDefinition<BotBehavior>[] = [
         value: "Stand/Fight",
     },
     {
+        value: "Unpowered/Dormant",
+    },
+    {
+        value: "Unpowered 10 Turns",
+        tooltip:
+            "The bot is unpowered initially and will wake up 10 turns after being hit in the core. Useful for a particular spoiler bot.",
+    },
+    {
         value: "Siege/Fight",
     },
     {
