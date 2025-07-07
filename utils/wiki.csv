@@ -3792,6 +3792,7 @@ There is also a special ""looping"" exit that will always loop or lead to a 0b10
 [[Heading]]Events[[/Heading]]
 [[List]](+) Derelict assault: Shortly after entering the map, the interior compromised alert plays and a group of Derelicts will appear randomly at an exit. They will wander through the Garrison randomly, looking for fights.|
 (+) Cache delivery: An [[A-27 Freighter]] will deliver an inventory full of parts to a guarded prefab. If found before it drops its parts off, it may be looted without having to deal with the usual dormant guards.|
+(+) [[Cargo Convoy]]: A cargo convoy will path through one wing of the Garrison, pass through the center, and exit through another wing. The standard guard compliment of a Protector and 2 ARCs are also present.|
 (+) Post-[[Assembled]] attack: The Garrison has been ransacked by a group of Assembled. Rewirable and unpowered 0b10 and Assembled bots are scattered across the map, and random items appear on the ground. Some of the Garrison's machines and walls will be destroyed at random. The Garrison infiltrated message will appear shortly after entering the map.|
 (+) [[Sapper]] sabotage: A Sapper will plant a [[Sapper Charge]] near a Phase Generator, causing it to blow up soon after|
 (~) Assembled infestation: Shortly after entering the map, a message will appear in the log [[GameText]]Infestation breaching garrison interior. Local demolisher support unavailable.[[/GameText]] A large number of Assembled will appear near the center of the map and attack anything in sight. The Garrison infiltrated alert will occur soon after. More Assembled will continue to spawn from the original location.|
@@ -3803,6 +3804,7 @@ Garrison Derelict Assault.png|A group of Derelicts invading the map|
 Garrison Post Assembled Invasion.png|Garrison after an Assembled attack|
 Garrison Cache Delivery.png|A-27 Freighter delivering cache items|
 Garrison Sapper.png|A Sapper running from the impending explosion|
+Garrison Cargo Convoy.png|A Cargo Convoy passing through a Garrison|
 Garrison Assembled Infestation.png|Assembled attacking the Garrison
 [[/Gallery]]","","","","","","",""
 "Garrison Access","Other","[[Image]]../game_sprites/Garrison.png|A Garrison Access machine[[/Image]]
@@ -6420,43 +6422,7 @@ Additionally, Sentries will appear at [[Garrison Access|Garrisons]] and 0b10 exi
 "Siege Articulator","Part","","","","","","","",""
 "Siege Cannon","Part","","","","","","","",""
 "Siege Cannon Replica","Part","","","","","","","",""
-"Special Propulsion Modes","Other","Certain [[Treads]] and [[Legs]] can be toggled into alternate states with special characteristics.
-
-[[Heading]]Treads[[/Heading]]
-
-[[Heading:2]]Siege mode[[/Heading:2]]
-All multislot treads can be toggled into siege mode. The transition into and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the treads cannot be disabled or removed.
-While in siege mode:
-[[List]]
-Non-melee attacks have +15% accuracy.
-|Coverage for all armor and heavy treads is doubled.
-|Any treads in siege mode get a free 25% damage reduction.
-|No weapons suffer from recoil effects.
-|Cogmind is immune to instant part destruction from critical hits.
-[[/List]]
-
-[[Heading:2]]High siege mode[[/Heading:2]]
-[[Spoiler]][[Megatreads]], [[Tri-treads]],[[/Spoiler]] and any treads containing the word ""siege"" in the name are capable of high siege mode, which instead gives +25% accuracy and 50% damage reduction.
-
-[[Heading]]Legs[[/Heading]]
-
-[[Heading:2]]Martial mode[[/Heading:2]]
-A few exoskeleton legs can be toggled into martial mode. The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.
-While in martial mode:
-[[List]]
-Will automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups).
-|10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.
-|Immune to knockback.
-|No ranged weapons suffer from recoil effects.
-[[/List]]
-
-[[Heading:2]]Shielding mode[[/Heading:2]]
-A few legs can be toggled into shielding mode. The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
-While in shielding mode:
-[[List]]
-Coverage for this leg is doubled.
-|This leg gains a 50% chance to glance any projectile that would otherwise hit it, instead taking no damage.
-[[/List]]","","","","","","",""
+"Siege Mode","Other","Siege mode is an alternate state toggleable on all mutilslot treads. The transition in and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the the treads cannot be disabled or removed. While in siege mode, non-melee attacks have +15% accuracy, coverage for all armor and heavy treads is doubled, any treads in siege mode get a free 25% damage reduction, no weapons suffer from recoil effects, and Cogmind is immune to instant part destruction from critical hits. [[Spoiler]][[Megatreads]], [[Tri-treads]],[[/Spoiler]] and any treads containing the word ""siege"" in the name are capable of high siege mode which instead gives +25% accuracy and 50% damage reduction.","","","","","","",""
 "Sigix","Other","","Spoiler","","","","","",""
 "Sigix Broadsword","Part","","","","","","","",""
 "Sigix Containment Pod","Part","The Sigix Containment Pod can be found in [[Quarantine]]. It has no gameplay effect by itself, but it enables the W3 [[Wintypes|Wintype]] and provides 5000 bonus score if carried to a win.
@@ -6535,6 +6501,43 @@ Spacefolds can allow for longer-range safe [[Digging|digs]]. While a [[Microwarp
 [[/List]]","","","","","","",""
 "Spear","Part","","","","","","","",""
 "Special Melee Weapons","Part Supergroup","","","","","Dirty Datajack,Detonator,Splice Injector,Master Link","Melee Datajacks","",""
+"Special Propulsion Modes","Other","Certain [[Treads]] and [[Legs]] can be toggled into alternate states with special characteristics.
+
+[[Heading]]Treads[[/Heading]]
+
+[[Heading:2]]Siege mode[[/Heading:2]]
+All multislot treads can be toggled into siege mode. The transition into and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the treads cannot be disabled or removed.
+While in siege mode:
+[[List]]
+Non-melee attacks have +15% accuracy.
+|Coverage for all armor and heavy treads is doubled.
+|Any treads in siege mode get a free 25% damage reduction.
+|No weapons suffer from recoil effects.
+|Cogmind is immune to instant part destruction from critical hits.
+[[/List]]
+
+[[Heading:2]]High siege mode[[/Heading:2]]
+[[Spoiler]][[Megatreads]], [[Tri-treads]],[[/Spoiler]] and any treads containing the word ""siege"" in the name are capable of high siege mode, which instead gives +25% accuracy and 50% damage reduction.
+
+[[Heading]]Legs[[/Heading]]
+
+[[Heading:2]]Martial mode[[/Heading:2]]
+A few exoskeleton legs can be toggled into martial mode. The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.
+While in martial mode:
+[[List]]
+Will automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups).
+|10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.
+|Immune to knockback.
+|No ranged weapons suffer from recoil effects.
+[[/List]]
+
+[[Heading:2]]Shielding mode[[/Heading:2]]
+A few legs can be toggled into shielding mode. The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
+While in shielding mode:
+[[List]]
+Coverage for this leg is doubled.
+|This leg gains a 50% chance to glance any projectile that would otherwise hit it, instead taking no damage.
+[[/List]]","","","","","","",""
 "Special Weapons","Part Supergroup","","","","","System Spiker,Field Lobotomy Kit,Mining Laser,Mak. Laser Shovel,LU-1G1's Laser Shovel,Welding Torch,CPS Tube,Multitool,Warlord Statue,Voltaic Drivehammer,AD-0RF's Magmablaster,IN-MT5's Pitchfork ""Insurrection"",Shield Trident,Junk Cannon,Molecular Deconstructor,Asb. F-torch,Asb. P-torch","Flamers,Plasma Cutters,Remote Datajacks,Stasis Beams,Throwing Claymores","",""
 "Specialist","Bot Group","Specialists are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[0b10]] combat bots with many different themes between each variant. The best description of Specialists are glass cannons. They typically have high offensive output and little in the way of protection. Higher tier Specialists have some the highest damage output of any standard 0b10 bots in the game. Some Specialists also are unique users of [[VSS Leg|VSS Legs]] and its higher rating variants which allow them to walk at a higher speed than most legs (90 vs 120).
 Specialists have no specific weaknesses or immunities, so generally any damage type or strategy can work against them. A few have strong cooling and [[Coolant Injectors]] so heat transfer strategies may fall flat against certain Specialists. However, the same cooling parts can also be looted and taken advantage of by Cogmind. Since Specialists are capable of dealing so much damage, they tend to be high priority targets to kill off first.
