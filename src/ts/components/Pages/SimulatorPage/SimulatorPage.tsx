@@ -240,7 +240,7 @@ function getSimulatorState(
 ): SimulatorState | undefined {
     const botName = pageState.botName || "G-34 Mercenary";
 
-    const userWeapons: { def: WeaponItem; overloaded: boolean }[] = [];
+    const userWeapons: { def: WeaponItem; overloaded: boolean; exo: boolean }[] = [];
 
     for (const weaponInfo of pageState.weaponState ?? []) {
         const weapon = itemData.tryGetItem(weaponInfo.name) as WeaponItem;
@@ -256,7 +256,7 @@ function getSimulatorState(
 
         for (let i = 0; i < number; i++) {
             // Overload and exoskeleton both double damage so treat them the same
-            userWeapons.push({ def: weapon, overloaded: overloaded || exo });
+            userWeapons.push({ def: weapon, overloaded: overloaded || exo, exo: exo });
         }
     }
 
@@ -337,7 +337,7 @@ function getSimulatorState(
 
     const behavior = pageState.enemyBehavior || "Stand/Fight";
 
-    const dormant = behavior === "Unpowered/Dormant" || behavior === "Unpowered 10 Turns"
+    const dormant = behavior === "Unpowered/Dormant" || behavior === "Unpowered 10 Turns";
     const defensiveState = getBotDefensiveState(parts, pageState.damageReduction || "None", dormant);
 
     let runningEvasion = 0;
@@ -473,8 +473,9 @@ function getSimulatorState(
                 if (damageMin > damageMax) {
                     damageMax = damageMin;
                 }
-            } else if (melee) {
+            } else if (melee && !weapon.exo) {
                 // Apply damage for melee analyses/force boosters (2)
+                // Exo-boosted weapons shouldn't be affected here
                 let minDamageIncrease = 0;
                 for (let i = 0; i < meleeAnalysisMinDamageIncrease.length; i++) {
                     minDamageIncrease += meleeAnalysis[i] * meleeAnalysisMinDamageIncrease[i];
@@ -600,6 +601,7 @@ function getSimulatorState(
             def: def,
             delay: delay,
             disruption: disruption,
+            exoBoosted: weapon.exo,
             explosionChunksMin: explosionChunksMin,
             explosionChunksMax: explosionChunksMax,
             explosionDisruption: explosionDisruption,
