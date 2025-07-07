@@ -166,7 +166,7 @@ export default function WikiSearchPage({
 
             return (
                 <li key={i}>
-                    <Link href={`/${contentMatch.entry.name}`}>{boldedTitleMatch}</Link>
+                    <Link href={`/${getLinkSafeString(contentMatch.entry.name)}`}>{boldedTitleMatch}</Link>
                     <p>{matchNode}</p>
                 </li>
             );
