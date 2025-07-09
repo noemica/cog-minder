@@ -4729,7 +4729,7 @@ The following is a list of all locations in Cogmind:
 "Master Drone Bay","Part","Deploys a [[Master Drone]]","","","","","","",""
 "Master Link","Part","","","","","","","",""
 "Master Tearclaws","Part","","","","","","","",""
-"Master Thief","Bot","Master Thieves will sometimes appear in groups near entrance/exits in [[Caves]] maps if Cogmind has stolen from the Exiles. They are slightly slower than regular [[Thief|Thieves]]. When appearing near an exit, some nearby Caves prefabs that normally have robots, such as 0b10 outposts may end up empty.
+"Master Thief","Bot","Master Thieves will sometimes appear in groups near entrance/exits in [[Caves]] maps if Cogmind has stolen from the Exiles. They are slightly slower than regular [[Thief|Thieves]]. Whether they appear or not in any given Caves map is not truly random, but is instead dependent on the world seed and the number of allies Cogmind enters the map with. When Master Thieves do appear, hostile/neutral bots are prevented from spawning near the Master Thieves' ambush. This may cause nearby prefabs, such as 0b10 outposts, to end up empty. One of the Master Thieves of an ambush carries a [[CPS Tube]] in their inventory.
 
 
 [[Heading:2]]Behavior[[/Heading]]
@@ -4738,13 +4738,13 @@ Master Thieves dash towards Cogmind to try to steal one of their parts using [[M
 Unlike regular Thieves, Master Thieves will only attack Cogmind, and will ignore all other robots.
 
 [[Heading:2]]Strategies[[/Heading]]
-Master Thieves are incapable of taking parts on the ground, so dropping important parts you don't want to lose keeps them safe from them. Dropping your [[Storage Unit]] can help drop a lot of parts quickly, at the cost of not being able to choose which parts remain in inventory. However, this strategy can backfire if there are [[Dirty Bomb Trap|Dirty Bomb Traps]] or [[Decomposer|Decomposer]] nearby, or if Cogmind or other robots carry  [[Launchers]] or [[Electromagnetic Weapons]] capable of triggering chain reactions in power sources.
+Master Thieves are incapable of taking parts on the ground, so dropping important parts you don't want to lose keeps them safe from them. Dropping your [[Storage Unit]] can help drop a lot of parts quickly, at the cost of not being able to choose which parts remain in inventory. However, this strategy can backfire if there are [[Dirty Bomb Trap|Dirty Bomb Traps]] or [[Decomposer|Decomposers]] nearby, or if Cogmind or other robots carry  [[Launchers]] or [[Electromagnetic Weapons]] capable of triggering chain reactions in power sources.
 
 In order to actually destroy Master Thieves, Launchers can work well when aimed at walls next to them, though at close range the collateral damage might not be worth it if you don't have high-value parts. Targeting utilities can help actually hit them while they are approaching, and a Stasis Beam/Projector can prevent a single Master Thief from attacking or escaping while also making them easier to hit, at the cost of making them take 50% less damage.
 
-If Cogmind is fast enough, fleeing is also an option, for example to lead the Master Thieves into 0b10 robots, [[Warlord]]-aligned derelicts or traps.
+If Cogmind is fast enough, fleeing is also an option, for example to lead the Master Thieves into allies, [[Warlord]]-aligned [[Derelict|Derelicts]], [[0b10]] robots, or [[Traps]]. Internally, the game considers wild Derelicts, regular Thieves and [[Assembled]] to all be part of the same ""hostile derelicts"" faction, meaning those robots will not attack Master Thieves.
 
-Last edited during Beta 14.","","","","","","",""
+Last edited during Beta 15.","","","","","","",""
 "Materials","Location","Materials is the first real level of the game. These maps are small, cramped and have few paths forward. This is the first map with hostile [[0b10]] patrols hanging around, comprised mainly of low level [[G-34 Mercenary]] and [[G-47 Trooper]] grunts and [[S-10 Pest]] swarmers. There are also a few special special mechanics such as [[U-05 Engineer|Engineers]] not calling for reinforcements when attacked while trying to build structures in -10 and -9 and [[A-02 Transporter|Haulers]] not calling for reinforcements at all.
 Trying to play flight or hover is not easy in Materials due to many forced encounters with combat robots, little room for maneuvering and few slots yet available for good utilities. The usual recommended way to play these maps is to grab some legs or treads and start blasting. Most players prefer not to transfer to airborne propulsion until [[Factory]] where it is much easier to stealth around and avoid combat. In Materials, it's good to fight enemies one at a time by leading them to one of the many doorways around the map. Use of launchers is very effective whenever there is more than a single bot grouped up close.
 [[Alert]] is not a big issue in these maps because of the relatively small map size and number of total patrols. If making a mess of the floors on -10 and -9, entering the [[Mines]] is a good way to lose all of the alert gained from the early Materials maps.
@@ -5421,7 +5421,7 @@ its total mass is 14. Its movement speed depends on which propulsion unit it has
 [[List]]
 With the treads: The bot is underweight (14 ≤ 20). The time to move one tile is 160.
 |With the wheel: The bot is 1 time overweight (10 < 14 ≤ 20). The time to move one tile is 80 + 15 = 95.
-|With neither (core propulsion): The bot is 4 times overweight (12 < 14 ≤ 15). The time to move one tile is 50 + (50 × 4) = 200.
+|With neither (core propulsion): The bot is 4 times overweight (12 < 14 ≤ 15). The time to move one tile is 50 + (50 × 4) = 250.
 [[/List]]
 
 [[Heading:2]]Formula[[/Heading:2]]
@@ -6422,7 +6422,43 @@ Additionally, Sentries will appear at [[Garrison Access|Garrisons]] and 0b10 exi
 "Siege Articulator","Part","","","","","","","",""
 "Siege Cannon","Part","","","","","","","",""
 "Siege Cannon Replica","Part","","","","","","","",""
-"Siege Mode","Other","Siege mode is an alternate state toggleable on all mutilslot treads. The transition in and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the the treads cannot be disabled or removed. While in siege mode, non-melee attacks have +15% accuracy, coverage for all armor and heavy treads is doubled, any treads in siege mode get a free 25% damage reduction, no weapons suffer from recoil effects, and Cogmind is immune to instant part destruction from critical hits. [[Spoiler]][[Megatreads]], [[Tri-treads]],[[/Spoiler]] and any treads containing the word ""siege"" in the name are capable of high siege mode which instead gives +25% accuracy and 50% damage reduction.","","","","","","",""
+"Special Propulsion Modes","Other","Certain [[Treads]] and [[Legs]] can be toggled into alternate states with special characteristics.
+
+[[Heading]]Treads[[/Heading]]
+
+[[Heading:2]]Siege mode[[/Heading:2]]
+All multislot treads can be toggled into siege mode. The transition into and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the treads cannot be disabled or removed.
+While in siege mode:
+[[List]]
+Non-melee attacks have +15% accuracy.
+|Coverage for all armor and heavy treads is doubled.
+|Any treads in siege mode get a free 25% damage reduction.
+|No weapons suffer from recoil effects.
+|Cogmind is immune to instant part destruction from critical hits.
+[[/List]]
+
+[[Heading:2]]High siege mode[[/Heading:2]]
+[[Spoiler]][[Megatreads]], [[Tri-treads]],[[/Spoiler]] and any treads containing the word ""siege"" in the name are capable of high siege mode, which instead gives +25% accuracy and 50% damage reduction.
+
+[[Heading]]Legs[[/Heading]]
+
+[[Heading:2]]Martial mode[[/Heading:2]]
+A few exoskeleton legs can be toggled into martial mode. The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.
+While in martial mode:
+[[List]]
+Will automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups).
+|10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.
+|Immune to knockback.
+|No ranged weapons suffer from recoil effects.
+[[/List]]
+
+[[Heading:2]]Shielding mode[[/Heading:2]]
+A few legs can be toggled into shielding mode. The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
+While in shielding mode:
+[[List]]
+Coverage for this leg is doubled.
+|This leg gains a 50% chance to glance any projectile that would otherwise hit it, instead taking no damage.
+[[/List]]","","","","","","",""
 "Sigix","Other","","Spoiler","","","","","",""
 "Sigix Broadsword","Part","","","","","","","",""
 "Sigix Containment Pod","Part","The Sigix Containment Pod can be found in [[Quarantine]]. It has no gameplay effect by itself, but it enables the W3 [[Wintypes|Wintype]] and provides 5000 bonus score if carried to a win.
@@ -6501,43 +6537,6 @@ Spacefolds can allow for longer-range safe [[Digging|digs]]. While a [[Microwarp
 [[/List]]","","","","","","",""
 "Spear","Part","","","","","","","",""
 "Special Melee Weapons","Part Supergroup","","","","","Dirty Datajack,Detonator,Splice Injector,Master Link","Melee Datajacks","",""
-"Special Propulsion Modes","Other","Certain [[Treads]] and [[Legs]] can be toggled into alternate states with special characteristics.
-
-[[Heading]]Treads[[/Heading]]
-
-[[Heading:2]]Siege mode[[/Heading:2]]
-All multislot treads can be toggled into siege mode. The transition into and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the treads cannot be disabled or removed.
-While in siege mode:
-[[List]]
-Non-melee attacks have +15% accuracy.
-|Coverage for all armor and heavy treads is doubled.
-|Any treads in siege mode get a free 25% damage reduction.
-|No weapons suffer from recoil effects.
-|Cogmind is immune to instant part destruction from critical hits.
-[[/List]]
-
-[[Heading:2]]High siege mode[[/Heading:2]]
-[[Spoiler]][[Megatreads]], [[Tri-treads]],[[/Spoiler]] and any treads containing the word ""siege"" in the name are capable of high siege mode, which instead gives +25% accuracy and 50% damage reduction.
-
-[[Heading]]Legs[[/Heading]]
-
-[[Heading:2]]Martial mode[[/Heading:2]]
-A few exoskeleton legs can be toggled into martial mode. The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.
-While in martial mode:
-[[List]]
-Will automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups).
-|10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.
-|Immune to knockback.
-|No ranged weapons suffer from recoil effects.
-[[/List]]
-
-[[Heading:2]]Shielding mode[[/Heading:2]]
-A few legs can be toggled into shielding mode. The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
-While in shielding mode:
-[[List]]
-Coverage for this leg is doubled.
-|This leg gains a 50% chance to glance any projectile that would otherwise hit it, instead taking no damage.
-[[/List]]","","","","","","",""
 "Special Weapons","Part Supergroup","","","","","System Spiker,Field Lobotomy Kit,Mining Laser,Mak. Laser Shovel,LU-1G1's Laser Shovel,Welding Torch,CPS Tube,Multitool,Warlord Statue,Voltaic Drivehammer,AD-0RF's Magmablaster,IN-MT5's Pitchfork ""Insurrection"",Shield Trident,Junk Cannon,Molecular Deconstructor,Asb. F-torch,Asb. P-torch","Flamers,Plasma Cutters,Remote Datajacks,Stasis Beams,Throwing Claymores","",""
 "Specialist","Bot Group","Specialists are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[0b10]] combat bots with many different themes between each variant. The best description of Specialists are glass cannons. They typically have high offensive output and little in the way of protection. Higher tier Specialists have some the highest damage output of any standard 0b10 bots in the game. Some Specialists also are unique users of [[VSS Leg|VSS Legs]] and its higher rating variants which allow them to walk at a higher speed than most legs (90 vs 120).
 Specialists have no specific weaknesses or immunities, so generally any damage type or strategy can work against them. A few have strong cooling and [[Coolant Injectors]] so heat transfer strategies may fall flat against certain Specialists. However, the same cooling parts can also be looted and taken advantage of by Cogmind. Since Specialists are capable of dealing so much damage, they tend to be high priority targets to kill off first.
