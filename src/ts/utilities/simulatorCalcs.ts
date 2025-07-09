@@ -185,8 +185,9 @@ function applyDamage(
     critical: Critical | undefined,
     isAoe: boolean,
     armorAnalyzed: boolean,
-    disruptChance: any,
-    spectrum: any,
+    disruptChance: number,
+    spectrum: number,
+    canOverflow: boolean,
     damageType: DamageType,
     salvage: number,
 ) {
@@ -259,6 +260,7 @@ function applyDamage(
             chunk.realDamage,
             chunk.damageType,
             chunk.critical,
+            canOverflow,
             false,
             chunk.forceCore,
             chunk.disruptChance,
@@ -290,6 +292,7 @@ function applyDamageChunk(
     damage: number,
     damageType: DamageType,
     critical: Critical | undefined,
+    canOverflow: boolean,
     isOverflow: boolean,
     forceCore: boolean,
     disruptChance: number,
@@ -298,7 +301,18 @@ function applyDamageChunk(
 ) {
     // Determine hit part (13)
     const { part, partIndex } = getHitPart(state.botState, coreBonus, damageType, isOverflow, forceCore, armorAnalyzed);
-    applyDamageChunkToPart(state, damage, damageType, critical, disruptChance, spectrum, isOverflow, part, partIndex);
+    applyDamageChunkToPart(
+        state,
+        damage,
+        damageType,
+        critical,
+        disruptChance,
+        spectrum,
+        canOverflow,
+        isOverflow,
+        part,
+        partIndex,
+    );
 }
 
 function applyCorruption(state: SimulatorState, corruption: number) {
@@ -335,6 +349,7 @@ function applyDamageChunkToPart(
     critical: Critical | undefined,
     disruptChance: number,
     spectrum: number,
+    canOverflow: boolean,
     isOverflow: boolean,
     part: SimulatorPart | undefined,
     partIndex: number,
@@ -492,7 +507,7 @@ function applyDamageChunkToPart(
             if (part.def.size === 1) {
                 // Single-slot items get blasted off
                 // Deal damage first, then destroy as a critical part removal if still intact
-                applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, part, partIndex);
+                applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, part, partIndex);
 
                 // Dismemberment immunity stops the blasting off part
                 if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
@@ -500,12 +515,12 @@ function applyDamageChunkToPart(
                 }
             } else {
                 // Multi-slot items don't get blasted off but still take damage
-                applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, part, partIndex);
+                applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, part, partIndex);
             }
         } else if (critical === Critical.Phase) {
             // Apply phasing damage to another random part
             const { part, partIndex } = getRandomNonCorePart(botState, undefined);
-            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, part, partIndex);
+            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, part, partIndex);
         }
 
         return;
@@ -579,7 +594,7 @@ function applyDamageChunkToPart(
         // Part destroyed, remove part and update bot state
         // Smash critical destroys the part instantly and deals full overflow damage
         const overflowDamage = critical === Critical.Smash ? damage : damage - part.integrity;
-        destroyPart(state, false, partIndex, part, overflowDamage, damageType, "Integrity");
+        destroyPart(state, canOverflow, partIndex, part, overflowDamage, damageType, "Integrity");
     } else {
         // Part not destroyed, just reduce integrity
         part.integrity -= damage;
@@ -597,7 +612,7 @@ function applyDamageChunkToPart(
         if (part.def.size === 1) {
             // Single-slot items get blasted off
             // Deal damage first, then destroy as a critical part removal if still intact
-            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, part, partIndex);
+            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, part, partIndex);
 
             // Dismemberment immunity stops the blasting off part
             if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
@@ -605,11 +620,11 @@ function applyDamageChunkToPart(
             }
         } else {
             // Multi-slot items don't get blasted off but still take damage
-            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, part, partIndex);
+            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, part, partIndex);
         }
     } else if (critical === Critical.Phase) {
         // Apply phasing damage to the core
-        applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, undefined, -1);
+        applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, undefined, -1);
     }
 
     if (engineExplosion) {
@@ -692,6 +707,7 @@ function applyEngineExplosion(state: SimulatorState, part: SimulatorPart) {
                 chunkDamage,
                 engine.explosionType!,
                 undefined,
+                true,
                 false,
                 false,
                 engine.explosionDisruption,
@@ -901,7 +917,7 @@ function destroyPart(
     if (overflowDamage > 0 && !part.protection && canOverflow) {
         // Handle overflow damage if excess damage was dealt
         // against a non-protection part (18)
-        applyDamageChunk(state, 0, overflowDamage, damageType, undefined, true, false, 0, 0, false);
+        applyDamageChunk(state, 0, overflowDamage, damageType, undefined, true, true, false, 0, 0, false);
     }
 
     if (damageType === "Impact") {
@@ -1543,7 +1559,7 @@ function simulateWeapon(
         damage = calculateResistDamage(botState, damage, "Impact");
 
         if (damage > 0) {
-            applyDamage(state, botState, damage, 1, undefined, false, false, false, false, "Impact", 3);
+            applyDamage(state, botState, damage, 1, undefined, false, false, 0, 0, true, "Impact", 3);
         }
 
         return endCondition(botState);
@@ -1672,6 +1688,7 @@ function simulateWeapon(
                     armorAnalyzed,
                     weapon.disruption,
                     weapon.spectrum,
+                    weapon.overflow,
                     weapon.damageType,
                     weapon.salvage,
                 );
@@ -1723,6 +1740,7 @@ function simulateWeapon(
                     false,
                     weapon.explosionDisruption,
                     0, // Explosion spectrum only applies to engines on ground, ignore it here
+                    true,
                     weapon.explosionType,
                     weapon.salvage,
                 );
