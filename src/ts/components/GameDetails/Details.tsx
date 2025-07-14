@@ -88,6 +88,7 @@ const TooltipTexts = {
     Resistance:
         "Depending on their design, robot may be more or less likely to be affected by a certain type of damage. Negative resistances represent a weakness, and therefore greater damage from that source. For example, 25% resistance would decrease the damage from an incoming attack of that type by 25%, while -25% would instead increase the damage sustained by 25%.",
     Coring: "Immune to any core-affecting effects from critical strikes, including Destroy, Blast, Smash, and Phase.",
+    Criticals: "Immune to all critical strike effects, and the core exposure effects of Core Analyzers and piercing damage.",
     Dismemberment:
         "Immune to the part-severing effects of Blade Traps, Segregators, Tearclaws, Core Strippers, and Blast/Sever/Sunder critical effects.",
     "Disruption Immunity": "Immune to core disruption from electromagnetic sources.",
