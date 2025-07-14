@@ -5467,14 +5467,14 @@ For example, if a bot has equipped:
 [[/List]]
 its total mass is 14. Its movement speed depends on which propulsion unit it has activated:
 [[List]]
-With the treads: The bot is underweight (14 ≤ 20). The time to move one tile is 160.
-|With the wheel: The bot is 1 time overweight (10 < 14 ≤ 20). The time to move one tile is 80 + 15 = 95.
-|With neither (core propulsion): The bot is 4 times overweight (12 < 14 ≤ 15). The time to move one tile is 50 + (50 × 4) = 250.
+With the treads: The bot is underweight (14 ��� 20). The time to move one tile is 160.
+|With the wheel: The bot is 1 time overweight (10 < 14 ��� 20). The time to move one tile is 80 + 15 = 95.
+|With neither (core propulsion): The bot is 4 times overweight (12 < 14 ��� 15). The time to move one tile is 50 + (50 �� 4) = 250.
 [[/List]]
 
 [[Heading:2]]Formula[[/Heading:2]]
 Mathematically, the amount of time it takes a bot to move one tile (ignoring mechanics for flight and hover units) is
-Σ[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + ⌊max(0, [[I]]m[[/I]] − 1)/Σ[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]⌋(Σ[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
+��[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + ���max(0, [[I]]m[[/I]] ��� 1)/��[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]���(��[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
 where
 [[List]]
 [[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the mass support for propulsion unit [[I]]i[[/I]]
@@ -5483,7 +5483,7 @@ where
 |[[I]]m[[/I]] is the total mass of all attached parts
 |[[I]]n[[/I]] is the total number of activated propulsion units
 [[/List]]
-and all sums Σ are over all activated propulsion units.
+and all sums �� are over all activated propulsion units.
 
 [[Heading]]Flight and Hover Units[[/Heading]]
 Flight and hover units calculate their movement speed in the same basic way as legs, treads, and wheels, but they have the following additional mechanics that affect movement speed:
@@ -5698,10 +5698,10 @@ Weapons|Time to fire|Time per weapon||
 [[CellStyle:Neutral]][[B]]1 with QC[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]||
 1|200|[[CellStyle:Bad]]200||
 2|300|[[CellStyle:Bad]]150||
-3|325|[[CellStyle:Bad]]108⅓||
-4|350|[[CellStyle:Good]] 87½||
-5|375|[[CellStyle:Good]] 75||
-6|400|[[CellStyle:Good]] 66⅔
+3|325|[[CellStyle:Bad]]108���||
+4|350|[[CellStyle:Good]]���87��||
+5|375|[[CellStyle:Good]]���75||
+6|400|[[CellStyle:Good]]���66���
 [[/Table]]
 
 The Quantum Capacitor has several benefits on top of firing time:
@@ -8140,7 +8140,7 @@ Most weapons can be fired together as a volley, excluding Special Weapons, Speci
 
 [[Heading:2]]Volley Time Costs[[/Heading]]
 
-Each weapon in a ranged multi-weapon volley will increase the volley’s total time cost, with each weapon being more efficient time-wise:
+Each weapon in a ranged multi-weapon volley will increase the volley���s total time cost, with each weapon being more efficient time-wise:
 [[Table]]Number of Weapons|Time cost||1|200||2|300||3|325||4|350||5|375||6+|400[[/Table]]
 This is then modified by the sum of the delay stats of every weapon in the volley, then by the time cost reduction of an equipped [[Weapon Cyclers|Weapon Cycler]], [[Quantum Capacitor]], or [[Launcher Loader]], when applicable. A single volley may not cost less than 25 time units.
 
@@ -8150,7 +8150,7 @@ When multiple melee weapons are fired in a single volley, the first will always 
 
 [[Heading:2]]Recoil[[/Heading]]
 
-Certain weapons (Especially ballistic ones) suffer from recoil. The sum of every other weapon’s recoil will be assessed as a penalty to each weapon in a volley containing weapon(s) suffering from recoil.
+Certain weapons (Especially ballistic ones) suffer from recoil. The sum of every other weapon���s recoil will be assessed as a penalty to each weapon in a volley containing weapon(s) suffering from recoil.
 
 [[Heading]]Energy/Ballistic Gun Mechanics[[/Heading]]
 
