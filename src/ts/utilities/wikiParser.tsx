@@ -3,11 +3,13 @@ import { Fragment, ReactNode } from "react";
 import lore from "../../json/lore.json";
 import hacks from "../../json/machine_hacks.json";
 import BotDetails from "../components/GameDetails/BotDetails";
+import { TooltipTexts } from "../components/GameDetails/Details";
 import ItemDetails from "../components/GameDetails/ItemDetails";
 import { LinkIcon } from "../components/Icons/Icons";
 import WikiGroupInfobox from "../components/Pages/WikiPage/WikiGroupNavbox";
 import WikiTableOfContents, { WikiHeadingState } from "../components/Pages/WikiPage/WikiTableOfContents";
 import { BotLink, ItemLink, LocationLink } from "../components/Pages/WikiPage/WikiTooltips";
+import TextTooltipButton from "../components/Popover/TextTooltipButton";
 import { Bot, BotPart } from "../types/botTypes";
 import { MapLocation, Spoiler } from "../types/commonTypes";
 import { Critical, Item, WeaponItem } from "../types/itemTypes";
@@ -25,7 +27,6 @@ import {
     parseIntOrUndefined,
     rootDirectory,
 } from "./common";
-import TextTooltipButton from "../components/Popover/TextTooltipButton";
 
 // Output group types
 // Grouped can be in the same <p> block
@@ -151,29 +152,32 @@ function createIdFromText(text: string) {
         .toLowerCase();
 }
 
-function SpoilerButton({spoiler} : {spoiler: Spoiler}) {
+function SpoilerButton({ spoiler }: { spoiler: Spoiler }) {
     let buttonStyle: string;
     let buttonText: string;
     let tooltipText: string;
 
-    if (spoiler === "None") 
-    {
+    if (spoiler === "None") {
         buttonStyle = "no-spoiler-info-button";
-        buttonText = "No Spoiler"
+        buttonText = "No Spoiler";
         tooltipText = "This page has no spoiler-related content.";
     } else if (spoiler === "Spoiler") {
         buttonStyle = "spoiler-info-button";
-        buttonText = "Spoiler"
-        tooltipText = "This page relates to mild spoiler-related content. Spoiler-tier content primarily includes midgame Factory and Research branch maps.";
+        buttonText = "Spoiler";
+        tooltipText =
+            "This page relates to mild spoiler-related content. Spoiler-tier content primarily includes midgame Factory and Research branch maps.";
     } else {
         buttonStyle = "redacted-info-button";
-        buttonText = "Redacted"
-        tooltipText = "This page relates to the highest levels of spoiler-related content. Redacted-tier includes well hidden midgame maps like L, S7, and FRG, as well as extended endgame maps C and A0.";
+        buttonText = "Redacted";
+        tooltipText =
+            "This page relates to the highest levels of spoiler-related content. Redacted-tier includes well hidden midgame maps like L, S7, and FRG, as well as extended endgame maps C and A0.";
     }
 
-    return <TextTooltipButton className={buttonStyle} tooltipText={tooltipText}>
+    return (
+        <TextTooltipButton className={buttonStyle} tooltipText={tooltipText}>
             {buttonText}
         </TextTooltipButton>
+    );
 }
 
 // Creates the HTML content of a wiki entry
@@ -1705,6 +1709,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["Redacted", processSpoilerTag],
     ["RedactedHidden", processSpoilerHiddenTag],
     ["Table", processTableTag],
+    ["TooltipText", processTooltipText],
 ]);
 
 // Processes the current section of text in the parser state
@@ -1777,7 +1782,8 @@ function processSection(state: ParserState, endTag: string | undefined) {
                     result[1] === "Sup" ||
                     result[1] === "Link" ||
                     result[1] === "Color" ||
-                    result[1] === "Comment"
+                    result[1] === "Comment" ||
+                    result[1] === "TooltipText"
                 ) {
                     actionFunc!(state, result);
                 } else if (actionFunc !== undefined) {
@@ -2056,6 +2062,20 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
     });
 
     state.index = endIndex + tableResult[0].length;
+}
+
+// Process a TooltipText tag like [[TooltipText]]Tooltip Category[[/TooltipText]]
+function processTooltipText(state: ParserState, result: RegExpExecArray) {
+    const endIndex = state.initialContent.indexOf("[[/TooltipText]]");
+    const category = state.initialContent.substring(result.index + result[0].length, endIndex);
+    state.index = endIndex + "[[/TooltipText]]".length;
+
+    if (category in TooltipTexts) {
+        state.output.push({ groupType: "Grouped", node: TooltipTexts[category] });
+    } else {
+        recordError(state, `Tooltip text category ${category} doesn't exist.`);
+        state.output.push({ groupType: "Grouped", node: category });
+    }
 }
 
 // Records a parse error in the error list

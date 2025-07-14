@@ -30,7 +30,7 @@ const TooltipRegexes: [regExp: RegExp, text: string][] = [
     [/Unstable \(\d+\)/, "Unstable weapons implode after the indicated remaining number of shots."],
 ];
 
-const TooltipTexts = {
+export const TooltipTexts = {
     //General Item Stats
     Type: "General classification of this item.",
     Mass: "Mass of an attached item contributes to a robot's total mass and affects its movement speed. Items held in inventory do not count towards total mass for movement calculation purposes.",

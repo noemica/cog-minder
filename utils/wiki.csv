@@ -437,7 +437,7 @@ Blue|[[CellStyle:Good]]Yes|[[CellStyle:Good]]No|[[CellStyle:Good]]Yes|[[CellStyl
 
 [[Heading]]Orders[[/Heading]]
 Robots will by default follow [[Cogmind]] (you) and attack any hostile if combat capable. Orders can be issued to any robot [[B]]in sight[[/B]] listed in the allies menu [[B]](F6)[[/B]]. [[I]](Orders can also be issued directly on the map: Shift-right click on a robot, or press 'o' then its corresponding number, or in keyboard look mode, by moving the cursor over the bot and pressing 'o'.) [[/I]]
-[[List]][[GameText]]STAY[[/GameText]] - Remain at the current position, only moving aside to let allies pass. Combat-capable bots will still chase after hostiles and return to their position later. If you move into a bot with the stay command active you will swap positions with that bot, which can faciliate precise positioning of bots. Note that a swap may not occur if other friendly bots are also trying to swap with them.|
+[[List]][[GameText]]STAY[[/GameText]] - Remain at the current position, only moving aside to let allies pass. Combat-capable bots will still chase after hostiles and return to their position later. If you move into a bot with the stay command active you will swap positions with that bot, which can facilitate precise positioning of bots. Note that a swap may not occur if other friendly bots are also trying to swap with them.|
 [[GameText]]ROAM[[/GameText]] - Wander and do whatever.|
 [[GameText]]FOLLOW[[/GameText]] - Follow [[Cogmind]].|
 [[GameText]]GUARD[[/GameText]] - Follow the specified bot and prioritize attacking anything harming the specified bot. Telling bots to guard cogmind can be used to bring them in closer than follow. Multitile bots will try to keep several tiles away from cogmind.|
@@ -456,7 +456,7 @@ Robots will by default follow [[Cogmind]] (you) and attack any hostile if combat
 [[Protector]] class robots shield nearby allies including Cogmind and potentially help with intercepting remote datajacks and launcher projectiles.
 [[Programmer]] class robots can cleanse corruption from allies and hack hostile bots.
 [[Recycler]] and [[Hauler]] class robots can pick up and store items for cogmind. Note that there is no warning message for crushing parts when dropping items.
-[[T-07 Excavator]] bots can dig for cogmind using the Tunnel command. Unlike the related [[RIF]] hack, this does not guarentee the tile will be stable. ","","","","","","",""
+[[T-07 Excavator]] bots can dig for cogmind using the Tunnel command. Unlike the related [[RIF]] hack, this does not guarantee the tile will be stable. ","","","","","","",""
 "Alpha 7","Bot","","","","","","","",""
 "Alpha Cannons","Part Group","","Spoiler","","","Zio. Alpha Cannon,Hyp. Alpha Cannon,Zio. Alpha Cannon Mk. II","","",""
 "Aluminum Leg","Part","","","","","","","",""
@@ -533,7 +533,7 @@ There are 3 exits on this map but only 2 kinds of exits:
 "Arm. Treads","Part","","","","","","","",""
 "Arm. Wheel","Part","","","","","","","",""
 "Armageddon Trap","Part","","","","","","","",""
-"Armor","Part Supergroup","Armor protects other parts, and the core, by having high coverage and integrity. The coverage makes attacks less likely to hit other parts or the core; the integrity allows the armor to tank many hits before being destoyed.
+"Armor","Part Supergroup","Armor protects other parts, and the core, by having high coverage and integrity. The coverage makes attacks less likely to hit other parts or the core; the integrity allows the armor to tank many hits before being destroyed.
 
 Some armor provides additional functionality, like granting resistance to a certain damage type [[Spoiler]]or regenerating integrity over time while powered[[/Spoiler]].
 
@@ -880,7 +880,7 @@ Caves Outpost Assembled Invasion.png|[[Assembled (4)|Assembled]] infesting an ab
 
 
 [[Heading:3]]Warlord Outposts[[/Heading]]
-Warlordoutposts are circle-shaped, with a main entrance controlled by a Door Terminal. They are guarded by a [[Commander]] and several other Derelict bots that wander around the inside, and contain a few parts as well as an intel Terminal. The inside of the outpost is also reinforced by a ""Wall Reinforcements"" structure, which has an armor of 35. There are two main structural variants, one of which has a centered orthogonal entrance.
+Warlord outposts are circle-shaped, with a main entrance controlled by a Door Terminal. They are guarded by a [[Commander]] and several other Derelict bots that wander around the inside, and contain a few parts as well as an intel Terminal. The inside of the outpost is also reinforced by a ""Wall Reinforcements"" structure, which has an armor of 35. There are two main structural variants, one of which has a centered orthogonal entrance.
 
 The Derelicts inside these outposts are friendly, and the Commander can even dispatch an escort for Cogmind. This escort will leave when reaching the next map, even if the next map is also a Caves map.
 
@@ -1847,27 +1847,27 @@ Each type of critical is generally associated with a given type of weapon. But t
 
 [[Table]]
 Name|Effect of critical hit|Usual weapon||
-Destroy|Instantly destroys the hit component or core. Armor takes 20% extra damage instead of being destroyed. Cogmind is less susceptible: can only destroy parts below 33% integrity when hit.|[[Ballistic Guns]]||
-Blast|Applies the same amount of damage to the core or a second part, ignoring coverage. If not destroyed, the second part is knocked to the ground.|[[Ballistic Cannons]]||
-Burn|Inflicts triple its normal amount of [[Heat]] transfer.|[[Thermal Guns]]||
-Meltdown|Instantly destroys the robot through meltdown, regardless of which part was hit. Cogmind is less susceptible: gains damage*10 heat instead.|[[Thermal Cannons]]||
-Corrupt|Applies the maximum possible amount of system corruption to the target. Cogmind is less susceptible: applies a random amount of corruption from 1 to 10%.|[[Electromagnetic Weapons]]||
-Smash|Instantly destroys the hit component or core. Armor takes 20% extra damage instead of being destroyed. Cogmind is less susceptible: can only destroy parts below 33% integrity when hit. After smashing a part, applies an equal amount of damage as overflow damage, which unlike regular overflow damage may be absorbed by [[Shieldings]].|[[Impact Weapons]]||
-Sever|Severs the target part or, if core is hit, slightly damages and severs a random part.|[[Slashing Weapons]], [[Plasma Cutters]]||
-Impale|Inflicts twice as much damage and delays both attacker's and target's next action by 1 turn. [[Spoiler]]Attacker is not delayed if this critical is applied by a non-melee weapon.[[/Spoiler]]|[[Piercing Weapons]]||
-[[Spoiler]]Detonate[[/Spoiler]]|[[Spoiler]]Detonates an engine, regardless of what part was hit.[[/Spoiler]]|[[Vortex Guns]], [[Vortex Lance]]||
-[[Spoiler]]Sunder[[/Spoiler]]|[[Spoiler]]Knocks the target part to the ground or, if core is hit, knocks 1 or 2 other parts to the ground.[[/Spoiler]]|[[Vortex Cannons]]||
-[[Spoiler]]Intensify[[/Spoiler]]|[[Spoiler]]Inflicts double damage.[[/Spoiler]]|[[Phasers]]||
-[[Spoiler]]Phase[[/Spoiler]]|[[Spoiler]]Inflicts equal damage to core or, if core is hit, to a random part.[[/Spoiler]]|[[Alpha Cannons]]||
+Destroy|[[TooltipText]]Destroy[[/TooltipText]]|[[Ballistic Guns]]||
+Blast|[[TooltipText]]Blast[[/TooltipText]]|[[Ballistic Cannons]]||
+Burn|[[TooltipText]]Burn[[/TooltipText]] (See [[Heat]]).|[[Thermal Guns]]||
+Meltdown|[[TooltipText]]Meltdown[[/TooltipText]]|[[Thermal Cannons]]||
+Corrupt|[[TooltipText]]Corrupt[[/TooltipText]]|[[Electromagnetic Weapons]]||
+Smash|[[TooltipText]]Smash[[/TooltipText]] (See [[Shieldings]]).|[[Impact Weapons]]||
+Sever|[[TooltipText]]Sever[[/TooltipText]]|[[Slashing Weapons]], [[Plasma Cutters]]||
+Impale|[[TooltipText]]Impale[[/TooltipText]]|[[Piercing Weapons]]||
+[[Spoiler]]Detonate[[/Spoiler]]|[[Spoiler]][[TooltipText]]Detonate[[/TooltipText]][[/Spoiler]]|[[Vortex Guns]]||
+[[Spoiler]]Sunder[[/Spoiler]]|[[Spoiler]][[TooltipText]]Sunder[[/TooltipText]][[/Spoiler]]|[[Vortex Cannons]], [[Vortex Lance]]||
+[[Spoiler]]Intensify[[/Spoiler]]|[[Spoiler]][[TooltipText]]Intensify[[/TooltipText]][[/Spoiler]]|[[Phasers]]||
+[[Spoiler]]Phase[[/Spoiler]]|[[Spoiler]][[TooltipText]]Phase[[/TooltipText]][[/Spoiler]]|[[Alpha Cannons]]
 [[/Table]]
 
 [[Heading]]Immunities[[/Heading]]
 Some bots have resistances that provide immunity to some criticals or some of their effects:
 [[List]]
-Coring: Immune to core-affecting effects of critical strikes, including Destroy, Blast, Smash, and [[Spoiler]]Phase[[/Spoiler]].
-|Meltdown: Immune to the Meltdown critical (and other heat-induced meltdown effects).
-|[[Spoiler]]Criticals[[/Spoiler]]: [[Spoiler]]Unaffected by critical effects.[[/Spoiler]]
-|[[Spoiler]]Dismemberment[[/Spoiler]]: [[Spoiler]]Immune to part-severing effects, including of the Blast, Sever, and Sunder criticals.[[/Spoiler]]
+Coring: [[TooltipText]]Coring[[/TooltipText]][[/Spoiler]]
+|Meltdown: [[TooltipText]]Meltdown[[/TooltipText]]
+|[[Spoiler]]Criticals[[/Spoiler]]: [[Spoiler]][[TooltipText]]Criticals[[/TooltipText]][[/Spoiler]]
+|[[Spoiler]]Dismemberment[[/Spoiler]]: [[Spoiler]][[TooltipText]]Dismemberment[[/TooltipText]][[/Spoiler]]
 [[/List]]
 
 [[Heading]]Improving Critical Chance[[/Heading]]
@@ -1875,8 +1875,7 @@ There are several ways to improve critical chance:
 [[List]]
 Simply using more weapons, which increases the chance that a given volley will include a critical hit.
 |Equipping [[Target Analyzers]], which increase each weapon's critical chance, though this does not affect the Meltdown critical or provide critical effects to weapons that do not have them already.
-|Using weapons with higher critical chances, such as [[Hyp. Weapons]]. (But weapons that specialize in critical hits generally do less raw damage.)
-[[/List]]","","","","","","",""
+|Using weapons with higher critical chances, such as [[Hyp. Weapons]]. (But weapons that specialize in critical hits generally do less raw damage.)[[/List]]","","","","","","",""
 "Crosscalibrator","Part","","","","","","","",""
 "Cryofiber Web","Part","","","","","","","",""
 "Cryofiber Webs","Part Group","","","","","Cryofiber Web,Imp. Cryofiber Web,Adv. Cryofiber Web,Exp. Cryofiber Web","","",""
@@ -2010,7 +2009,7 @@ This also does not work on regular [[Thief|Thieves]], as their [[Tearclaws]] are
 [[/List]]
 
 This article was last edited during Beta 15.","","","","","","",""
-"Dirty Bomb Trap","Part","Dirty Bomb Traps are explosive EM [[Traps]] made and used by [[Derelict|Derelicts]] to defend areas or spring ambushes on [[0b10]] forces. The EM explosions caused by these traps are very likely to cause nearby Traps, including other Dirty Bomb Traps, to also trigger. These Traps are most commonly found in [[Caves]] and [[Warlord (Location)]] and are friendly to Cogmind unless one was reprogrammed by a [[Minesweeper]] that was interrupted before it could extract it, or if [[Spoiler]]Cogmind antagonises Warlord (Location), which will cause all derelict traps on that map to also turn hostile.[[/Spoiler]]
+"Dirty Bomb Trap","Part","Dirty Bomb Traps are explosive EM [[Traps]] made and used by [[Derelict|Derelicts]] to defend areas or spring ambushes on [[0b10]] forces. The EM explosions caused by these traps are very likely to cause nearby Traps, including other Dirty Bomb Traps, to also trigger. These Traps are most commonly found in [[Caves]] and [[Warlord (Location)]] and are friendly to Cogmind unless one was reprogrammed by a [[Minesweeper]] that was interrupted before it could extract it, or if [[Spoiler]]Cogmind antagonizes Warlord (Location), which will cause all derelict traps on that map to also turn hostile.[[/Spoiler]]
 
 [[Heading]]How to obtain[[/Heading]]
 There are three main ways of acquiring Dirty Bomb Traps for personal use:
@@ -6471,43 +6470,7 @@ Additionally, Sentries will appear at [[Garrison Access|Garrisons]] and 0b10 exi
 "Siege Articulator","Part","","","","","","","",""
 "Siege Cannon","Part","","","","","","","",""
 "Siege Cannon Replica","Part","","","","","","","",""
-"Special Propulsion Modes","Other","Certain [[Treads]] and [[Legs]] can be toggled into alternate states with special characteristics.
-
-[[Heading]]Treads[[/Heading]]
-
-[[Heading:2]]Siege mode[[/Heading:2]]
-All multislot treads can be toggled into siege mode. The transition into and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the treads cannot be disabled or removed.
-While in siege mode:
-[[List]]
-Non-melee attacks have +15% accuracy.
-|Coverage for all armor and heavy treads is doubled.
-|Any treads in siege mode get a free 25% damage reduction.
-|No weapons suffer from recoil effects.
-|Cogmind is immune to instant part destruction from critical hits.
-[[/List]]
-
-[[Heading:2]]High siege mode[[/Heading:2]]
-[[Spoiler]][[Megatreads]], [[Tri-treads]],[[/Spoiler]] and any treads containing the word ""siege"" in the name are capable of high siege mode, which instead gives +25% accuracy and 50% damage reduction.
-
-[[Heading]]Legs[[/Heading]]
-
-[[Heading:2]]Martial mode[[/Heading:2]]
-A few exoskeleton legs can be toggled into martial mode. The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.
-While in martial mode:
-[[List]]
-Will automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups).
-|10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.
-|Immune to knockback.
-|No ranged weapons suffer from recoil effects.
-[[/List]]
-
-[[Heading:2]]Shielding mode[[/Heading:2]]
-A few legs can be toggled into shielding mode. The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
-While in shielding mode:
-[[List]]
-Coverage for this leg is doubled.
-|This leg gains a 50% chance to glance any projectile that would otherwise hit it, instead taking no damage.
-[[/List]]","","","","","","",""
+"Siege Mode","Other","Siege mode is an alternate state toggleable on all mutilslot treads. The transition in and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the the treads cannot be disabled or removed. While in siege mode, non-melee attacks have +15% accuracy, coverage for all armor and heavy treads is doubled, any treads in siege mode get a free 25% damage reduction, no weapons suffer from recoil effects, and Cogmind is immune to instant part destruction from critical hits. [[Spoiler]][[Megatreads]], [[Tri-treads]],[[/Spoiler]] and any treads containing the word ""siege"" in the name are capable of high siege mode which instead gives +25% accuracy and 50% damage reduction.","","","","","","",""
 "Sigix","Other","","Spoiler","","","","","",""
 "Sigix Broadsword","Part","","","","","","","",""
 "Sigix Containment Pod","Part","The Sigix Containment Pod can be found in [[Quarantine]]. It has no gameplay effect by itself, but it enables the W3 [[Wintypes|Wintype]] and provides 5000 bonus score if carried to a win.
@@ -6586,6 +6549,43 @@ Spacefolds can allow for longer-range safe [[Digging|digs]]. While a [[Microwarp
 [[/List]]","","","","","","",""
 "Spear","Part","","","","","","","",""
 "Special Melee Weapons","Part Supergroup","","","","","Dirty Datajack,Detonator,Splice Injector,Master Link","Melee Datajacks","",""
+"Special Propulsion Modes","Other","Certain [[Treads]] and [[Legs]] can be toggled into alternate states with special characteristics.
+
+[[Heading]]Treads[[/Heading]]
+
+[[Heading:2]]Siege mode[[/Heading:2]]
+All multislot treads can be toggled into siege mode. The transition into and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the treads cannot be disabled or removed.
+While in siege mode:
+[[List]]
+Non-melee attacks have +15% accuracy.
+|Coverage for all armor and heavy treads is doubled.
+|Any treads in siege mode get a free 25% damage reduction.
+|No weapons suffer from recoil effects.
+|Cogmind is immune to instant part destruction from critical hits.
+[[/List]]
+
+[[Heading:2]]High siege mode[[/Heading:2]]
+[[Spoiler]][[Megatreads]], [[Tri-treads]],[[/Spoiler]] and any treads containing the word ""siege"" in the name are capable of high siege mode, which instead gives +25% accuracy and 50% damage reduction.
+
+[[Heading]]Legs[[/Heading]]
+
+[[Heading:2]]Martial mode[[/Heading:2]]
+A few exoskeleton legs can be toggled into martial mode. The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.
+While in martial mode:
+[[List]]
+Will automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups).
+|10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.
+|Immune to knockback.
+|No ranged weapons suffer from recoil effects.
+[[/List]]
+
+[[Heading:2]]Shielding mode[[/Heading:2]]
+A few legs can be toggled into shielding mode. The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
+While in shielding mode:
+[[List]]
+Coverage for this leg is doubled.
+|This leg gains a 50% chance to glance any projectile that would otherwise hit it, instead taking no damage.
+[[/List]]","","","","","","",""
 "Special Weapons","Part Supergroup","","","","","System Spiker,Field Lobotomy Kit,Mining Laser,Mak. Laser Shovel,LU-1G1's Laser Shovel,Welding Torch,CPS Tube,Multitool,Warlord Statue,Voltaic Drivehammer,AD-0RF's Magmablaster,IN-MT5's Pitchfork ""Insurrection"",Shield Trident,Junk Cannon,Molecular Deconstructor,Asb. F-torch,Asb. P-torch","Flamers,Plasma Cutters,Remote Datajacks,Stasis Beams,Throwing Claymores","",""
 "Specialist","Bot Group","Specialists are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[0b10]] combat bots with many different themes between each variant. The best description of Specialists are glass cannons. They typically have high offensive output and little in the way of protection. Higher tier Specialists have some the highest damage output of any standard 0b10 bots in the game. Some Specialists also are unique users of [[VSS Leg|VSS Legs]] and its higher rating variants which allow them to walk at a higher speed than most legs (90 vs 120).
 Specialists have no specific weaknesses or immunities, so generally any damage type or strategy can work against them. A few have strong cooling and [[Coolant Injectors]] so heat transfer strategies may fall flat against certain Specialists. However, the same cooling parts can also be looted and taken advantage of by Cogmind. Since Specialists are capable of dealing so much damage, they tend to be high priority targets to kill off first.
