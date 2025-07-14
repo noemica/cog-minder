@@ -1840,6 +1840,43 @@ Coupling squads are dispatched if a Garrison has no Relay Couplers in its builti
 
 [[Heading]]Intentional dispatching[[/Heading]]
 Coupling squads can also dispatched if Cogmind uses the [[Spoiler]]Trojan(Restock)[[/Spoiler]] hack. If this is done, log text similar to [[GameText]]ALERT: Unscheduled coupler replacement inbound for Garrison vPm.7n.[[/GameText]] will appear after a few turns. A similar restock effect will occur if Cogmind uses the [[Spoiler]]Force(Eject)[[/Spoiler]] hack.","","","","","","",""
+"Critical Hits","Other","Critical hits (crits) are effects that have a chance to trigger on any successful hit. The chance and the specific effect depends on the weapon.
+
+[[Heading]]Critical Effects[[/Heading]]
+Each type of critical is generally associated with a given type of weapon. But there are exceptions: weapons that have a different type of critical effect or no critical at all.
+
+[[Table]]
+Name|Effect of critical hit|Usual weapon||
+Destroy|Instantly destroys the hit component or core. Armor takes 20% extra damage instead of being destroyed. Cogmind is less susceptible: can only destroy parts below 33% integrity when hit.|[[Ballistic Guns]]||
+Blast|Applies the same amount of damage to the core or a second part, ignoring coverage. If not destroyed, the second part is knocked to the ground.|[[Ballistic Cannons]]||
+Burn|Inflicts triple its normal amount of [[Heat]] transfer.|[[Thermal Guns]]||
+Meltdown|Instantly destroys the robot through meltdown, regardless of which part was hit. Cogmind is less susceptible: gains damage*10 heat instead.|[[Thermal Cannons]]||
+Corrupt|Applies the maximum possible amount of system corruption to the target. Cogmind is less susceptible: applies a random amount of corruption from 1 to 10%.|[[Electromagnetic Weapons]]||
+Smash|Instantly destroys the hit component or core. Armor takes 20% extra damage instead of being destroyed. Cogmind is less susceptible: can only destroy parts below 33% integrity when hit. After smashing a part, applies an equal amount of damage as overflow damage, which unlike regular overflow damage may be absorbed by [[Shieldings]].|[[Impact Weapons]]||
+Sever|Severs the target part or, if core is hit, slightly damages and severs a random part.|[[Slashing Weapons]], [[Plasma Cutters]]||
+Impale|Inflicts twice as much damage and delays both attacker's and target's next action by 1 turn. [[Spoiler]]Attacker is not delayed if this critical is applied by a non-melee weapon.[[/Spoiler]]|[[Piercing Weapons]]||
+[[Spoiler]]Detonate[[/Spoiler]]|[[Spoiler]]Detonates an engine, regardless of what part was hit.[[/Spoiler]]|[[Vortex Guns]], [[Vortex Lance]]||
+[[Spoiler]]Sunder[[/Spoiler]]|[[Spoiler]]Knocks the target part to the ground or, if core is hit, knocks 1 or 2 other parts to the ground.[[/Spoiler]]|[[Vortex Cannons]]||
+[[Spoiler]]Intensify[[/Spoiler]]|[[Spoiler]]Inflicts double damage.[[/Spoiler]]|[[Phasers]]||
+[[Spoiler]]Phase[[/Spoiler]]|[[Spoiler]]Inflicts equal damage to core or, if core is hit, to a random part.[[/Spoiler]]|[[Alpha Cannons]]||
+[[/Table]]
+
+[[Heading]]Immunities[[/Heading]]
+Some bots have resistances that provide immunity to some criticals or some of their effects:
+[[List]]
+Coring: Immune to core-affecting effects of critical strikes, including Destroy, Blast, Smash, and [[Spoiler]]Phase[[/Spoiler]].
+|Meltdown: Immune to the Meltdown critical (and other heat-induced meltdown effects).
+|[[Spoiler]]Criticals[[/Spoiler]]: [[Spoiler]]Unaffected by critical effects.[[/Spoiler]]
+|[[Spoiler]]Dismemberment[[/Spoiler]]: [[Spoiler]]Immune to part-severing effects, including of the Blast, Sever, and Sunder criticals.[[/Spoiler]]
+[[/List]]
+
+[[Heading]]Improving Critical Chance[[/Heading]]
+There are several ways to improve critical chance:
+[[List]]
+Simply using more weapons, which increases the chance that a given volley will include a critical hit.
+|Equipping [[Target Analyzers]], which increase each weapon's critical chance, though this does not affect the Meltdown critical or provide critical effects to weapons that do not have them already.
+|Using weapons with higher critical chances, such as [[Hyp. Weapons]]. (But weapons that specialize in critical hits generally do less raw damage.)
+[[/List]]","","","","","","",""
 "Crosscalibrator","Part","","","","","","","",""
 "Cryofiber Web","Part","","","","","","","",""
 "Cryofiber Webs","Part Group","","","","","Cryofiber Web,Imp. Cryofiber Web,Adv. Cryofiber Web,Exp. Cryofiber Web","","",""
