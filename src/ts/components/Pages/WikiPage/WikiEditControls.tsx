@@ -126,6 +126,12 @@ export default function WikiEditControls({
                     Game Text
                 </Button>
                 <Button
+                    tooltip="Provides text that matches a tooltip by the same name. For example, Tooltip Text of &quot;Burn&quot; shows the burn critical description."
+                    onClick={() => insertWrappedText("[[TooltipText]]", "[[/TooltipText]]")}
+                >
+                    Tooltip Text
+                </Button>
+                <Button
                     tooltip="Provides a spoiler section around any text or image content nested underneath if the spoiler setting is set to None."
                     onClick={() => insertWrappedText("[[Spoiler]]", "[[/Spoiler]]")}
                 >
