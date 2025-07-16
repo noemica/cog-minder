@@ -1176,10 +1176,11 @@ When triggered, a Chute Trap will bring the victim to the array's Wastes map, pe
 Standing on a known Chute Trap then manually triggering will grant the ""Wheee!"" [[Mechanics Achievements|Mechanics Achievement]] if it wasn't already unlocked.
 
 [[Heading]][[K-01 Serf|K-01 Serf]] Interactions[[/Heading]]
-On Factory maps containing Chute Traps, K-01 Serfs sometimes spawn carrying disabled 0b10 bots towards Chutes, and some disabled 0b10 bots can sometimes be stored inside rooms. If a disabled bot is within range of a Worker, the Worker will try to latch onto the bot and push them into the nearest Chute Trap, even if the bot is only temporarily disabled. If a Worker successfully pushes a disabled robot into a Chute Trap, the disabled bot will fall through but the trap will [[I]]not[[/I]] permanently seal itself afterwards. If Cogmind witness this, the Chute Trap will be revealed.
+On Factory maps containing Chute Traps, K-01 Serfs sometimes spawn carrying disabled 0b10 bots towards Chutes, and some disabled 0b10 bots can sometimes be stored inside rooms. If a disabled bot is within range of a Worker, the Worker will try to latch onto the bot and push them into the nearest Chute Trap, even if the bot is only temporarily disabled. If a Worker successfully pushes a disabled robot into a Chute Trap, the disabled bot will fall through but the trap will [[I]]not[[/I]] permanently seal itself afterwards. [[Comment]]If Cogmind witness this,[[/Comment]] The Chute Trap will then be revealed (due to a bug in Beta 15, Chute Traps are revealed this way even if Cogmind doesn't witness this happening).
+
 Because Serfs use Chute Traps, the [[GameText]]find_chute[[/GameText]] hack can be used when hacking one using a [[Datajacks|Datajack]], which reveals the nearest Chute Trap the Serf can use.
 
-[[Comment]]Can the [[RIF]] hacks [[GameText]]hold_bot[[/GameText]] and [[GameText]]start_disposal[[/GameText]] be used together to make Serfs throw bots into chutes, or will the second hack not work with the first?[[/Comment]]
+[[Spoiler]]The [[RIF]] hacks [[GameText]]hold_bot[[/GameText]] and [[GameText]]start_disposal[[/GameText]] can be used together to make a Serf latch onto and move a bot into a Chute Trap, so long as the Serf is not currently evacuating and has access to a Chute Trap. While the [[GameText]]hold_bot[[/GameText]] hack normally has a turn limit of 25, the [[GameText]]start_disposal[[/GameText]] hack overrides it.[[/Spoiler]]
 
 This article was last edited during Beta 15 ","","","","","","",""
 "Cld. Aerolev Unit","Part","","","","","","","",""
@@ -6158,13 +6159,17 @@ This hack can give up to 1-10 schematics that Cogmind does not already have. Thi
 "Scientist","Bot","Scientists are [[Wheels|two-wheeled]] [[UFD]] non-combat bots found in [[Scraptown]] and [[Recycling]]. They are quite valuable for their [[Tech Extrapolator]], and are defenseless. Vulnerable to EM.","","","","","","",""
 "Score","Other","Score is earned in multiple ways, including progressing through the game, destroying bots, identifying [[Prototype Part|Prototypes]], and many more. The total score earned throughout a run is shown at the end, after which the details of that run, including the different sources of points, can be found in the relevant scoresheet within the ""scores"" folder in the game files. From the ""[7] RECORDS"" menu, it is also possible to create a scoresheet dump in which the details of the run so far, including score earned, can be found. Scoresheet dump can be found in the ""dumps"" folder in the game files.
 
-[[List]]Ascending through each floor (500 points for every evolution threshold crossed)|
-Visiting regions (200 per map entered)|
-Destroying robots (5 points per robot destroyed)|
-Destroying stuff in general (depends on the value of what was destroyed)|
-Obtaining [[Prototype Part]] IDs (20 points per unique Prototype Part ID, including any that might have been forgotten due to reasons like component data loss)|
-[[Spoiler]]Attaching alien technology (200 points per unique alien part attached)[[/Spoiler]]|
-Bonus points, which are earned through a large variety of reasons, including some like meeting important characters, aligning with certain factions, and more. There is also one source of negative bonus points, ""Friendly Fire"", which is earned by damaging/destroying friendly robots and is dependent on the value of those robots.[[/List]]","","","","","","",""
+[[Table]]Name|Points|X =||
+Evolutions (X)|X * 500|Evolution thresholds crossed||
+Regions Visited (X)|X * 200|Maps visited, excluding Scrapyard||
+Robots Destroyed (X)|X * 5|Functional robots destroyed¹²||
+Value Destroyed (X)|X|Value destroyed, including functional robots¹² and some machines||
+Prototype IDs (X)|X * 20|Unique Prototype part IDs obtained, including any that were lost.||
+Alien Tech Used (X)|X * 200|[[Spoiler]]Unique [[Alien Artifacts]] attached (actual usage not required)[[/Spoiler]]||
+Bonus (X)|X|Total bonus points obtained from various sources[[/Table]]
+¹Broken/Unpowered robots are ignored.
+²In each map, no more than 60 robot kills of a single class may contribute to score. (Additional robots are not recorded in any part of the score total, but are still recorded in the ""Kills"" section of scoresheets.)
+","","","","","","",""
 "Scrap","Part","","","","","","","",""
 "Scrap Engine","Part","Scrap Engine is a unique [[Derelict]] part that can only be obtained by stealing from the [[Recycling#Scraplab|Scraplab in Recycling]]. It has the capability to create powerful constructs by combining many different parts into one. It can create power constructs of up to 4 slots, propulsion up to 8 slots, and weapons of up to 4 slots. When more of Cogmind's slots are dedicated to constructs, they will also get more powerful overall.
 The Scrap Engine can be obtained in one of two ways, with various consequences. The first way is by simply taking it from the Scraplab in Recycling normally. This will cause all the bots in the lab to become hostile to Cogmind, as well as enraging [[Zion]] and [[Warlord (Location)]]. However, if Cogmind visits the [[Subcaves]] beforehand, exits to [[Materials]], and then goes to Recycling, the map will be attacked by [[Subdweller|Subdwellers]]. In the chaos, the Scraplab will have been abandoned, and Cogmind can take the part without causing hostilities.
@@ -6738,7 +6743,9 @@ Name|Storage|Mass|Equip Slots|Coverage|Max. Integrity||
 Storage Units have special immunity to nearly all part-severing and instant destruction effects in the game, including [[Corruption]] part rejection, thus making it impossible to suddenly lose nearly all your inventory due to stepping on a [[Blade Trap]] or being shot by a [[Heavy]]. The one exception is the [[Compactor]] wielded by [[C-40 Crusher|C-40 Crushers]], which has unique effect that can destroy.
 
 [[Heading]]Special Interactions[[/Heading]]
-Under unknown circumstances, [[Piercing Weapons]] can ""poke a hole"" in a Storage Unit, causing the victim to lose one of their inventory parts. [[Comment]]I know it can happen, but i don't recall the exact situations in which i saw it happen, and my attempts at reproducing this with Haulers or Strikers have not been successful. Just to be clear, this is unrelated to Thieves/Master Thieves. Also, when this happens, a special indicator similar to those for critical hits and other robots having their parts destroyed appears on the map. I think it literally says ""poke"", but i'm not sure.[[/Comment]]","","","","Sml. Storage Unit,Med. Storage Unit,Lrg. Storage Unit,Hcp. Storage Unit,Huge Storage Unit,Cargo Storage Unit,Humpback,Lgt. Humpback,Vmp. Humpback,Lightpack 2.0,Cep. Antigrav Storage Unit","","",""
+Under unknown circumstances, [[Piercing Weapons]] can ""poke a hole"" in a Storage Unit, causing the victim to lose one of their inventory parts. [[Comment]]I know it can happen, but i don't recall the exact situations in which i saw it happen, and my attempts at reproducing this with Haulers or Strikers have not been successful. Just to be clear, this is unrelated to Thieves/Master Thieves. Also, when this happens, a special indicator similar to those for critical hits and other robots having their parts destroyed appears on the map. I think it literally says ""poke"", but i'm not sure.[[/Comment]]
+
+This article was last updated during Beta 15.","","","","Sml. Storage Unit,Med. Storage Unit,Lrg. Storage Unit,Hcp. Storage Unit,Huge Storage Unit,Cargo Storage Unit,Humpback,Lgt. Humpback,Vmp. Humpback,Lightpack 2.0,Cep. Antigrav Storage Unit","","",""
 "Storm Laser","Part","","","","","","","",""
 "Strategy","Other","Strategy guides to complete various content.","","","","","","",""
 "Strategy/Attacking Scraptown","Other","[[Scraptown]] is an extremely challenging mid-game area to fight and full-clear. The majority of the armed bots are individually weak, but they appear in the dozens and can easily overwhelm Cogmind and any allies. Many unique items are only obtainable by destroying terrain or killing certain bots, which can make attacking Scraptown seem like a promising endeavor. However, there is a serious drawback of going for a full clear or even smashing a container for one item and running: The [[Zion]] and [[Warlord (Location)]] maps will become hostile when Cogmind tries to enter them. The [[Scraptown#civil_war|Civil War]] is a highly recommended alternative to gaining loot from this map. It is much easier and less risky than a full Scraptown murder is. As such, a Scraptown kill is a challenge that exists more for bragging rights than being a truly beneficial move.
