@@ -1,6 +1,6 @@
 "Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","",""
-"01-MTF's Autohacker","Part","\u03A3","","","","","","",""
+"01-MTF's Autohacker","Part","","","","","","","",""
 "01-MTF's Shockpuncher","Part","","","","","","","",""
 "0b10","Other","This is the main complex. Cogmind starts from the bottom [[Scrapyard]] level at depth -11. Every level have stairs to an upper level until level -1 where the surface [[Access]] can be found. The levels can also contain other doorways which lead to different branches that eventually connect to the main complex. Read more about all levels at [[Locations]].
 
@@ -1312,7 +1312,7 @@ Above and below the Doom Corridor are passages to the ""Garrison"" sections of t
 12 [[X-87 Electro|X-87 Electros]]
 [[/List]]
 [[Heading:3]]MAIN.C room[[/Heading]]
-Above the Doom Corridor are some [[Sealed Barriers|Reinforced Walls#Command]] with 80 armor. surrounded by Reinforced Barriers with 100 armor. They are locked by a Terminal with a 60% base open chance. Past this hall is a large room with a big chunk of machinery called the 0b10 Conduit that is hooked up to MAIN.C. 100 armor Heavy Barriers appear on the bottom left side of this room that block off the left section of Command.
+Above the Doom Corridor are some [[Reinforced Walls#Command|Sealed Barriers]] with 80 armor. surrounded by Reinforced Barriers with 100 armor. They are locked by a Terminal with a 60% base open chance. Past this hall is a large room with a big chunk of machinery called the 0b10 Conduit that is hooked up to MAIN.C. 100 armor Heavy Barriers appear on the bottom left side of this room that block off the left section of Command.
 [[Heading:3]]Left Section[[/Heading]]
 The left section is similar in layout to the right side, although it tends to be much smaller. Unique features on this side include an unguarded exit, a Wave Inhibitor machine, and a cache of high rating parts near the top-right or bottom-right side of the map.
 [[Heading:2]]Special Machines[[/Heading]]
@@ -1385,7 +1385,7 @@ This wintype can be achieved by destroying both phases of MAIN.C and taking eith
 This win can be achieved in one of two ways using the 0b10 conduit that MAIN.C is normally hooked up into. The machine must remain intact in order to achieve this wintype. The first is to destroy both phases of MAIN.C and then stand next to one of the corners of the conduit. If using [[RIF]], MAIN.C does not need to be destroyed. Using RIF is by far the easier technique as the MAIN.C first phase is very slow and easy to lure away by a fast flight build that can hop back over MAIN.C and run into the machine.
 [[Heading:2]]W8: ""Fortifying 0b10""/Surrender[[/Heading]]
 [[Image]]Command EQ-Series.png|[[Enhanced Q-Series]] attacking 0b10[[/Image]]
-If the surrender option is chosen after defeating MAIN.C phase one, a different ending will begin. First, all 0b10 bots including MAIN.C will become friendly to Cogmind with the log entry [[GameText]]LRC-V3 rejoined 0b10. Threat protocols amended.[[/GameText]] MAIN.C will give Cogmind complete map intel and say to go stock up in the Command cache, which will open automatically on approach. After 100 moves or approximately 400 turns, another two alerts will indicate [[GameText]]System intrusion detected. Garrison defenses under attack.[[/GameText]] and [[GameText]]All Command Garrisons activated[[/GameText]]. Garrisons be significantly sabotaged, and after 40 more turns, a large group of [[Enhanced Q-Series]] will teleport into random locations on the map. After every 100 turns or so, more waves of Q-Series will spawn in. These bots have randomized loadouts just like regular [[Q-Series]] do, but are much more powerful. MAIN.C will order Cogmind to fight them off. Be careful of Launcher uses and misses/misfires for this event. If 0b10 bots are attacked enough times, MAIN.C will announce Cogmind as a traitor and all 0b10 bots will once again become hostile.
+If the surrender option is chosen after defeating MAIN.C phase one, a different ending will begin. First, all 0b10 bots including MAIN.C will become friendly to Cogmind with the log entry [[GameText]]LRC-V3 rejoined 0b10. Threat protocols amended.[[/GameText]] MAIN.C will give Cogmind complete map intel and say to go stock up in the Command cache, which will open automatically on approach. At this point, the Access_0 Dimensional Slip Node will explode and the exit will be closed. After 100 moves or approximately 400 turns, another two alerts will indicate [[GameText]]System intrusion detected. Garrison defenses under attack.[[/GameText]] and [[GameText]]All Command Garrisons activated[[/GameText]]. Garrisons be significantly sabotaged, and after 40 more turns, a large group of [[Enhanced Q-Series]] will teleport into random locations on the map. After every 100 turns or so, more waves of Q-Series will spawn in. These bots have randomized loadouts just like regular [[Q-Series]] do, but are much more powerful. MAIN.C will order Cogmind to fight them off. Be careful of Launcher uses and misses/misfires for this event. If 0b10 bots are attacked enough times, MAIN.C will announce Cogmind as a traitor and all 0b10 bots will once again become hostile.
 The Enhanced Q-Series waves will go on endlessly without intervention. There is some amount of contribution required to be able to complete the event. The details are not well understood, but participating in kills will move the event closer to completion. Expect between one to two dozen Enhanced Q-Series kills required before the event can be completed. If Cogmind is not contributing enough, when the 4th wave spawns, MAIN.C will tell Cogmind to help out a bit more or else they might lose. After enough kills, MAIN.C will say that the reinforcements seem to have stopped coming and must prepare for the future. This will end the run and result in the W8 ending.
 [[Heading:2]]Strategy[[/Heading]]
 See [[Strategy/W8 Fortifying 0b10]].","Redacted","","","","","",""
@@ -6159,16 +6159,20 @@ This hack can give up to 1-10 schematics that Cogmind does not already have. Thi
 "Scientist","Bot","Scientists are [[Wheels|two-wheeled]] [[UFD]] non-combat bots found in [[Scraptown]] and [[Recycling]]. They are quite valuable for their [[Tech Extrapolator]], and are defenseless. Vulnerable to EM.","","","","","","",""
 "Score","Other","Score is earned in multiple ways, including progressing through the game, destroying bots, identifying [[Prototype Part|Prototypes]], and many more. The total score earned throughout a run is shown at the end, after which the details of that run, including the different sources of points, can be found in the relevant scoresheet within the ""scores"" folder in the game files. From the ""[7] RECORDS"" menu, it is also possible to create a scoresheet dump in which the details of the run so far, including score earned, can be found. Scoresheet dump can be found in the ""dumps"" folder in the game files.
 
-[[Table]]Name|Points|X =||
+[[Table]]Name|Points|X||
 Evolutions (X)|X * 500|Evolution thresholds crossed||
-Regions Visited (X)|X * 200|Maps visited, excluding Scrapyard||
+Regions Visited (X)|X * 200|Maps visited, excluding [[Scrapyard]]||
 Robots Destroyed (X)|X * 5|Functional robots destroyed¹²||
-Value Destroyed (X)|X|Value destroyed, including functional robots¹² and some machines||
-Prototype IDs (X)|X * 20|Unique Prototype part IDs obtained, including any that were lost.||
+Value Destroyed (X)|X|Total value destroyed, including most machines (whether destroyed by Cogmind or blue/purple [[Allies]]) and functional non-friendly bots¹² (destroyed by Cogmind only)||
+Prototype IDs (X)|X * 20|Unique [[Prototype Part]] IDs obtained, including any that were lost||
 Alien Tech Used (X)|X * 200|[[Spoiler]]Unique [[Alien Artifacts]] attached (actual usage not required)[[/Spoiler]]||
 Bonus (X)|X|Total bonus points obtained from various sources[[/Table]]
 ¹Broken/Unpowered robots are ignored.
 ²In each map, no more than 60 robot kills of a single class may contribute to score. (Additional robots are not recorded in any part of the score total, but are still recorded in the ""Kills"" section of scoresheets.)
+
+[[Heading:2]]Value[[/Heading]]
+Value is dependent on robot class and type of machine. Generic machines called ""Machine"" have a value of 0, most machines have a value of 10, and some important machines like Garrison Relays have a value of 200. The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
+[[Assembled]], passive [[Derelict]] bot classes, special bots that can only ever be found unpowered as ""statues"" and most [[Drone (Group)|Drones]] have a value of 0. Three special bots have a value of 2000, while all unique bots and all other other special bots have a value of 1. Some important unique/special bots instead grant score through bonus points.
 ","","","","","","",""
 "Scrap","Part","","","","","","","",""
 "Scrap Engine","Part","Scrap Engine is a unique [[Derelict]] part that can only be obtained by stealing from the [[Recycling#Scraplab|Scraplab in Recycling]]. It has the capability to create powerful constructs by combining many different parts into one. It can create power constructs of up to 4 slots, propulsion up to 8 slots, and weapons of up to 4 slots. When more of Cogmind's slots are dedicated to constructs, they will also get more powerful overall.
@@ -6741,9 +6745,6 @@ Name|Storage|Mass|Equip Slots|Coverage|Max. Integrity||
 
 [[Heading]]Special Immunity[[/Heading]]
 Storage Units have special immunity to nearly all part-severing and instant destruction effects in the game, including [[Corruption]] part rejection, thus making it impossible to suddenly lose nearly all your inventory due to stepping on a [[Blade Trap]] or being shot by a [[Heavy]]. The one exception is the [[Compactor]] wielded by [[C-40 Crusher|C-40 Crushers]], which has unique effect that can destroy.
-
-[[Heading]]Special Interactions[[/Heading]]
-Under unknown circumstances, [[Piercing Weapons]] can ""poke a hole"" in a Storage Unit, causing the victim to lose one of their inventory parts. [[Comment]]I know it can happen, but i don't recall the exact situations in which i saw it happen, and my attempts at reproducing this with Haulers or Strikers have not been successful. Just to be clear, this is unrelated to Thieves/Master Thieves. Also, when this happens, a special indicator similar to those for critical hits and other robots having their parts destroyed appears on the map. I think it literally says ""poke"", but i'm not sure.[[/Comment]]
 
 This article was last updated during Beta 15.","","","","Sml. Storage Unit,Med. Storage Unit,Lrg. Storage Unit,Hcp. Storage Unit,Huge Storage Unit,Cargo Storage Unit,Humpback,Lgt. Humpback,Vmp. Humpback,Lightpack 2.0,Cep. Antigrav Storage Unit","","",""
 "Storm Laser","Part","","","","","","","",""
