@@ -4768,11 +4768,11 @@ The following is a list of all locations in Cogmind:
 "Master Drone Bay","Part","Deploys a [[Master Drone]]","","","","","","",""
 "Master Link","Part","","","","","","","",""
 "Master Tearclaws","Part","","","","","","","",""
-"Master Thief","Bot","Master Thieves will sometimes appear in groups near entrance/exits in [[Caves]] maps if Cogmind has stolen from the Exiles. They are slightly slower than regular [[Thief|Thieves]]. Whether they appear or not in any given Caves map is not truly random, but is instead dependent on the world seed and the number of allies Cogmind enters the map with. When Master Thieves do appear, hostile/neutral bots are prevented from spawning near the Master Thieves' ambush. This may cause nearby prefabs, such as 0b10 outposts, to end up empty. One of the Master Thieves of an ambush carries a [[CPS Tube]] in their inventory.
+"Master Thief","Bot","Master Thieves will sometimes appear in groups near entrance/exits in [[Caves]] maps if Cogmind has stolen from the Exiles. They are slightly slower than regular [[Thief|Thieves]]. Whether they appear or not in any given Caves map is not truly random, but is instead dependent on the world seed and the number of allies Cogmind enters the map with. When Master Thieves do appear, hostile/neutral bots are prevented from spawning near the Master Thieves' ambush. This may cause nearby prefabs, such as 0b10 outposts, to end up empty. Master Thieves may appear with a [[CPS Tube]] in their inventory.
 
 
 [[Heading]]Behavior[[/Heading]]
-Master Thieves dash towards Cogmind to try to steal one of their parts using [[Master Tearclaws]], prioritizing high rating parts and [[Exiles (Location)|Exiles]] prototypes. Upon success, they will start fleeing. If a fleeing Master Thief goes outside Cogmind's field of view, they will exit the map.
+Master Thieves dash towards Cogmind to try to steal one of their parts using [[Master Tearclaws]]. Unlike regular Thieves, they are capable os stealing parts from inventory, as well as choosing which parts they steal. They will prioritize high rating parts and [[Exiles (Location)|Exiles]] prototypes. Upon success, they will start fleeing. If a fleeing Master Thief goes outside Cogmind's field of view, they will exit the map.
 
 Unlike regular Thieves, Master Thieves will only attack Cogmind, and will ignore all other robots.
 
@@ -6162,17 +6162,39 @@ This hack can give up to 1-10 schematics that Cogmind does not already have. Thi
 [[Table]]Name|Points|X||
 Evolutions (X)|X * 500|Evolution thresholds crossed||
 Regions Visited (X)|X * 200|Maps visited, excluding [[Scrapyard]]||
-Robots Destroyed (X)|X * 5|Functional robots destroyed¹²||
-Value Destroyed (X)|X|Total value destroyed, including most machines (whether destroyed by Cogmind or blue/purple [[Allies]]) and functional non-friendly bots¹² (destroyed by Cogmind only)||
+Robots Destroyed (X)|X * 5|Functional robots destroyed¹², regardless of hostility, alignment or faction||
+Value Destroyed (X)|X|Total value destroyed, including most [[0b10]] machines (whether destroyed by Cogmind or blue/purple [[Allies]]) and functional non-friendly bots¹² (destroyed by Cogmind only)||
 Prototype IDs (X)|X * 20|Unique [[Prototype Part]] IDs obtained, including any that were lost||
 Alien Tech Used (X)|X * 200|[[Spoiler]]Unique [[Alien Artifacts]] attached (actual usage not required)[[/Spoiler]]||
 Bonus (X)|X|Total bonus points obtained from various sources[[/Table]]
-¹Broken/Unpowered robots are ignored.
+¹Broken/Unpowered robots do not count.
 ²In each map, no more than 60 robot kills of a single class may contribute to score. (Additional robots are not recorded in any part of the score total, but are still recorded in the ""Kills"" section of scoresheets.)
 
 [[Heading:2]]Value[[/Heading]]
-Value is dependent on robot class and type of machine. Generic machines called ""Machine"" have a value of 0, most machines have a value of 10, and some important machines like Garrison Relays have a value of 200. The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
+Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most machines have a value of 10, and some important machines like Garrison Relays have a value of 200. The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
 [[Assembled]], passive [[Derelict]] bot classes, special bots that can only ever be found unpowered as ""statues"" and most [[Drone (Group)|Drones]] have a value of 0. Three special bots have a value of 2000, while all unique bots and all other other special bots have a value of 1. Some important unique/special bots instead grant score through bonus points.
+
+
+[[Heading]]Bonus Points[[/Heading]]
+(This section is a work in progress, and as such is missing a lot of information.)
+Bonus points are obtained from a large variety of sources. The following is a very incomplete list of bonus point sources, in the order they appear in scoresheets:
+
+[[Table]]Name|Points|Stacks|Source||
+Triggered High Security|500|Yes|Triggering [[High Security]]||
+[[Spoiler]]Triggered Max Security[[/Spoiler]]|[[Spoiler]]1000[[/Spoiler]]|[[Spoiler]]Yes[[/Spoiler]]|[[Spoiler]]Triggering [[Maximum Security]][[/Spoiler]]||
+High Alert Combat Kills³|Dependent on bot value and [[Alert]]|Yes|Personally destroying [[0b10 Combat Bots]] while Alert is at least at level 2.
+At alert level 2, 25% of regular bot value. At level 3, 50%. At level 4, 75%. At level 5, 100%.||
+Follower Combat Kills|75% of regular bot value|Yes|Blue/purple Allies destroying combat bots||
+
+[[Spoiler]]Warlord Defense Kills³[[/Spoiler]]|[[Spoiler]]200% of regular bot value[[/Spoiler]]|[[Spoiler]]Yes[[/Spoiler]]|[[Spoiler]]Personally destroying 0b10 bots in [[Warlord (Location)]][[/Spoiler]]||
+
+
+Win|3000|N/A|Win the run through any ending||
+Friendly Fire|X + (Y * 100)|Yes|X = damage dealt to Allies⁴ by Cogmind, Y = Allies⁴ destroyed by Cogmind[[/Table]]
+³Bonus score earned from robot kills in these category is earned in addition to ""Value Destroyed"" score.
+⁴Only uncontrollable allies tha aren't 0b10 bots under the influence of a temporary IFF overwrite.
+
+
 ","","","","","","",""
 "Scrap","Part","","","","","","","",""
 "Scrap Engine","Part","Scrap Engine is a unique [[Derelict]] part that can only be obtained by stealing from the [[Recycling#Scraplab|Scraplab in Recycling]]. It has the capability to create powerful constructs by combining many different parts into one. It can create power constructs of up to 4 slots, propulsion up to 8 slots, and weapons of up to 4 slots. When more of Cogmind's slots are dedicated to constructs, they will also get more powerful overall.
