@@ -4775,7 +4775,7 @@ The following is a list of all locations in Cogmind:
 
 
 [[Heading]]Behavior[[/Heading]]
-Master Thieves dash towards Cogmind to try to steal one of their parts using [[Master Tearclaws]]. Unlike regular Thieves, they are capable of stealing parts from inventory, as well as choosing which parts they steal. They will prioritize high rating parts and [[Exiles (Location)|Exiles]] prototypes. Upon successfully obtaining a part, they will start fleeing. If a fleeing Master Thief goes outside Cogmind's field of view, they will exit the map.
+Master Thieves dash towards Cogmind to try to steal one of their parts using [[Master Tearclaws]]. Unlike regular Thieves, they are capable of stealing parts from inventory, as well as choosing which parts they steal. They will prioritize high rating parts and [[Exiles (Location)|Exiles]] prototypes. Because of their ability to choose parts, they are also capable of stealing [[Armor]] in spite of the description of their Master Tearclaws. Upon successfully obtaining a part, they will start fleeing. If a fleeing Master Thief goes outside Cogmind's field of view, they will exit the map.
 
 Despite only having a ""memory"" of 20, Master Thieves will not normally stop tracking Cogmind. Unlike regular Thieves, Master Thieves will only attack Cogmind, as well as Cogmind's [[Drone (Group)|Drones]], and will ignore all other robots unless they are rebooted by a [[Programmer]] or disrupted, in which case they may switch to a different target.
 
@@ -6809,7 +6809,7 @@ Name|Storage|Mass|Equip Slots|Coverage|Max. Integrity||
 [[/Table]]
 
 [[Heading]]Special Immunity[[/Heading]]
-Storage Units have special immunity to nearly all part-severing and instant destruction effects in the game, including [[Corruption]] part rejection, thus making it impossible to suddenly lose nearly all your inventory due to stepping on a [[Blade Trap]] or being shot by a [[Heavy]]. The one exception is the [[Compactor]] wielded by [[C-40 Crusher|C-40 Crushers]], which has unique effect that can destroy.
+Storage Units have special immunity to nearly all part-severing and instant destruction effects in the game, including [[Corruption]] part rejection, thus making it impossible to suddenly lose nearly all your inventory due to stepping on a [[Blade Trap]] or being shot by a [[Heavy]]. The most notable exception is the [[Compactor]] wielded by [[C-40 Crusher|C-40 Crushers]], which has unique destructive and part-severing effects that can affect Storage Units.
 
 This article was last updated during Beta 15.","","","","Sml. Storage Unit,Med. Storage Unit,Lrg. Storage Unit,Hcp. Storage Unit,Huge Storage Unit,Cargo Storage Unit,Humpback,Lgt. Humpback,Vmp. Humpback,Lightpack 2.0,Cep. Antigrav Storage Unit","","",""
 "Storm Laser","Part","","","","","","","",""
