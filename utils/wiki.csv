@@ -4775,9 +4775,9 @@ The following is a list of all locations in Cogmind:
 
 
 [[Heading]]Behavior[[/Heading]]
-Master Thieves dash towards Cogmind to try to steal one of their parts using [[Master Tearclaws]]. Unlike regular Thieves, they are capable of stealing parts from inventory, as well as choosing which parts they steal. They will prioritize high rating parts and [[Exiles (Location)|Exiles]] prototypes. Upon successfully stealing a part, they will start fleeing. If a fleeing Master Thief goes outside Cogmind's field of view, they will exit the map.
+Master Thieves dash towards Cogmind to try to steal one of their parts using [[Master Tearclaws]]. Unlike regular Thieves, they are capable of stealing parts from inventory, as well as choosing which parts they steal. They will prioritize high rating parts and [[Exiles (Location)|Exiles]] prototypes. Upon successfully obtaining a part, they will start fleeing. If a fleeing Master Thief goes outside Cogmind's field of view, they will exit the map.
 
-Unlike regular Thieves, Master Thieves will only attack Cogmind, as well as Cogmind's [[Drone (Group)|Drones]], and will ignore all other robots (while it is possible for Master Thieves to switch to a different target, this likely require Cogmind to have no parts to steal in the first place).
+Despite only having a ""memory"" of 20, Master Thieves will not normally stop tracking Cogmind. Unlike regular Thieves, Master Thieves will only attack Cogmind, as well as Cogmind's [[Drone (Group)|Drones]], and will ignore all other robots unless they are rebooted by a [[Programmer]] or disrupted, in which case they may switch to a different target.
 
 As allies, Master Thieves will try to steal parts from hostiles and return to Cogmind whenever they succeed to deliver the part they stole.
 
