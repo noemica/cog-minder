@@ -6173,13 +6173,13 @@ The quick overview of overall performance and score in scoresheets, followed by 
 [[Table]]Name|Points|X||
 Evolutions (X)|X * 500|Evolution thresholds crossed||
 Regions Visited (X)|X * 200|Maps visited, excluding [[Scrapyard]]||
-Robots Destroyed (X)|X * 5|Functional robots destroyed¹², regardless of hostility, alignment or faction||
+Robots Destroyed (X)|X * 5|Functional robots destroyed¹² that have a value of at least 1, regardless of hostility, alignment or faction||
 Value Destroyed (X)|X|Total value destroyed, including most [[0b10]] machines (whether destroyed by Cogmind or blue/purple [[Allies]]) and functional non-friendly bots¹² (destroyed by Cogmind only)||
 Prototype IDs (X)|X * 20|Unique [[Prototype Part]] IDs obtained, including any that were lost, for example due to to a minor Data Loss [[Corruption]] effect||
 Alien Tech Used (X)|X * 200|[[Spoiler]]Unique [[Alien Artifacts]] attached (actual usage not required)[[/Spoiler]]||
 Bonus (X)|X|Total bonus points obtained from various sources[[/Table]]
 ¹Broken/Unpowered robots do not count towards score in any way.
-²In each map, no more than 60 robot kills of a single class may contribute to score. (Additional robots are not recorded in any part of the score total, but are still recorded in the ""Kills"" section of scoresheets.)
+²In each map, no more than 60 robot kills of a single class may contribute to score. (Additional robots are not recorded in any part of the score section, but are still recorded in other sections of scoresheets.)
 
 [[Heading:2]]Value[[/Heading]]
 Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most machines have a value of 10, and some important machines like Garrison Relays have a value of 200. The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
@@ -6191,33 +6191,29 @@ Value is dependent on robot class and type of machine. Purely decorative machine
 Bonus points are obtained from a large variety of sources, almost all of them spoilery. Remember to set your spoilers settings to ""None"" if you do not want to see potential spoilers!
 Unlike overall performance score, bonus score categories only appear in scoresheets if point were earned in them. The following is a very incomplete list of bonus point sources, more or less in the order they appear in scoresheets:
 
-[[Heading:4]]General Destruction[[/Heading]]
 [[Table]]Name|Points|Stacks|Source||
 Triggered High Security|500|Yes|Triggering [[High Security]]||
 [[Spoiler]]Triggered Max Security[[/Spoiler]]|1000|Yes|[[Spoiler]]Triggering [[Maximum Security]][[/Spoiler]]||
 High Alert Combat Kills³|Dependent on bot value and [[Alert]]|Yes|Personally destroying [[0b10 Combat Bots]] while Alert is at least at level 2.
 At alert level 2, 25% of regular bot value. At level 3, 50%. At level 4, 75%. At level 5, 100%.||
-Follower Combat Kills|75% of regular bot value|Yes|Blue/purple Allies destroying combat bots[[/Table]]
-[[Heading:4]]Uncategorized Bonus Score[[/Heading]]
-[[Table]]Name|Points|Stacks|Source||
+Follower Combat Kills|75% of regular bot value|Yes|Blue/purple Allies destroying combat bots||
+
+
 Entered Garrisons|200|Yes|Entering [[Garrison]] maps||
 Entered DSFs|500|Yes|Entering [[DSF]]||
-Used RIF Installer|500|Yes|Using [[Garrison#rif_installer|RIF Installers]] with no incompatible alignment||
-[[Spoiler]]Network Hubs Disabled[[/Spoiler]]|200|Yes|[[Spoiler]]Disabling Network Hubs in [[Hub_04(d)]][[/Spoiler]]
-[[/Table]]
+Used RIF Installer|500|Yes|Using [[Garrison#rif_installer|RIF Installers]] with no incompatible [[Alignment|alignments]]||
+[[Spoiler]]Network Hubs Disabled[[/Spoiler]]|200|Yes|[[Spoiler]]Disabling Network Hubs in [[Hub_04(d)]][[/Spoiler]]||
 
-[[Heading:4]]Materials/Factory-Depths Branches[[/Heading]]
-[[Table]]Name|Points|Stacks|Source||
-Aligned with FarCom|300|N/A| ||
 
-[[Spoiler]]Registered with UFD[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Met Optimus in HQ[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Met Data Miner[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Met Imprinter[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Was Imprinted[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Destroyed Z-Imprinter[[/Spoiler]]|1000|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Triggered Deep Caves Wall[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Exposed GOLEM Chamber[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
+Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Aligner machine in Exiles (Location)]]||
+[[Spoiler]]Registered with UFD[[/Spoiler]]|300|N/A|[[Spoiler]][[Scraptown#alignment_-_ufd|Registering as a UFD member in Scraptown]][[/Spoiler]]||
+[[Spoiler]]Met Optimus in HQ[[/Spoiler]]|500|N/A|[[Spoiler]]Talking to [[Scraptown#sub-alignment_-_optimus|Optimus in Scraptown]][[/Spoiler]]||
+[[Spoiler]]Met Data Miner[[/Spoiler]]|300|N/A|[[Spoiler]]Talking to [[Data Miner]] in [[Data Miner (Location)]][[/Spoiler]]||
+[[Spoiler]]Met Imprinter[[/Spoiler]]|300|N/A|[[Spoiler]]Talking to [[Imprinter]] in [[Zion]][[/Spoiler]]||
+[[Spoiler]]Was Imprinted[[/Spoiler]]|300|N/A|[[Spoiler]]Using the [[Zion#alignment_-_imprinting|Imprinting machine in Zion]][[/Spoiler]]||
+[[Spoiler]]Destroyed Z-Imprinter[[/Spoiler]]|1000|N/A|[[Spoiler]]Destroying [[Z-Imprinter]] in [[Zion Deep Caves|Deep Caves]][[/Spoiler]]||
+[[Spoiler]]Triggered Deep Caves Wall[[/Spoiler]]|500|N/A|[[Spoiler]]Causing the [[Zion Deep Caves#impregnable_wall|Impregnable Wall in Deep Caves]] to open[[/Spoiler]]||
+[[Spoiler]]Exposed GOLEM Chamber[[/Spoiler]]|500|No|[[Spoiler]]Destroying one of the GOLEM Chambers in [[Zion Deep Caves|Deep Caves]][[/Spoiler]]||
 [[Spoiler]]Acquired ECA[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Met Zhirov[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Met Warlord at Base[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
@@ -6226,19 +6222,18 @@ Aligned with FarCom|300|N/A| ||
 [[Spoiler]]Built Enhanced Grunts[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]A7 Reached Mainframe[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Met R17 at Cetus[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Read Decrypted Archives[[/Spoiler]]|300|No|[[/Table]]
+[[Spoiler]]Read Decrypted Archives[[/Spoiler]]|300|No| ||
 
 
 
 
 
-[[Table]]
-Name|Points|Stacks|Source||
 Win|3000|N/A|Winning the run through any ending||
 Friendly Fire|X + (Y * 100)|Yes|X = damage dealt to Allies⁴ by Cogmind, Y = Allies⁴ destroyed by Cogmind[[/Table]]
 ³Bonus score earned from robot kills in these category is earned in addition to ""Value Destroyed"" score.
 ⁴Only uncontrollable allies that aren't 0b10 bots under the influence of a temporary IFF overwrite.
-","","","","","","",""
+
+If an amount of score earned is a decimal numeral (such as in the cases of ""High Alert Combat Kills"" and ""Follower Combat Kills"" bonus score categories), that amount of score is rounded down. For example, destroying an [[S-27 Virus]] at Alert level 2 would grant 6.75 points in the High Alert Combat Kills category, which would be rounded down to 6.","","","","","","",""
 "Scrap","Part","","","","","","","",""
 "Scrap Engine","Part","Scrap Engine is a unique [[Derelict]] part that can only be obtained by stealing from the [[Recycling#Scraplab|Scraplab in Recycling]]. It has the capability to create powerful constructs by combining many different parts into one. It can create power constructs of up to 4 slots, propulsion up to 8 slots, and weapons of up to 4 slots. When more of Cogmind's slots are dedicated to constructs, they will also get more powerful overall.
 The Scrap Engine can be obtained in one of two ways, with various consequences. The first way is by simply taking it from the Scraplab in Recycling normally. This will cause all the bots in the lab to become hostile to Cogmind, as well as enraging [[Zion]] and [[Warlord (Location)]]. However, if Cogmind visits the [[Subcaves]] beforehand, exits to [[Materials]], and then goes to Recycling, the map will be attacked by [[Subdweller|Subdwellers]]. In the chaos, the Scraplab will have been abandoned, and Cogmind can take the part without causing hostilities.
