@@ -1,4 +1,4 @@
-import{r as S,j as o,c as T,B as C,L as q,K as R,M as O,w as ue,N as fe,f as I,O as ye,Q as be,y as L,U as oe,a as j,s as we,V as Ce,S as Y,o as ve,W as ie,z as Se,u as re,X as _,Y as Te,Z as B,_ as ke,$ as xe,a0 as W,a1 as Ae,a2 as He}from"./index-CIUwADSv.js";import{l as Ne}from"./lore-CBKT07wE.js";import{h as Ge}from"./machine_hacks-CIEgi5MA.js";import{H as se,a as Ie,L as De,I as Re,B as Z,b as Me,u as Ee}from"./BotDetails-FYw2srDb.js";import{T as K,a as V,u as Pe}from"./ItemPopover-CljwKy-M.js";/* empty css              */import"./bots-DmHYWh_Z.js";import"./botTypes-_WzAd8ij.js";import"./items-0uiuNN38.js";const Le=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:'12-ASH is one of the [[Heroes of Zion]]. Upon appearing, they will shout "hail to the king".'},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:"Informally known as a yauler (yellow Hauler). In the main complex, appears as part of a [[Cargo Convoy]]."},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed. Gives a code when shown the Cetus Mainframe in [[Cetus]]."},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AP7-3",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:"Bolteaters are fast [[Wheels|wheeled]] [[UFD]] combat bots armed with [[Ripteeth]]. Valuable for a wheels build with their [[Rocket Booster|Rocket Boosters]]. Their ripteeth can rip off a component ignoring armor, so keep them away from you. Slightly resistant to Kinetic, Thermal, Electromagnetic and Explosive damage."},{Name:"Bomb Drone",Content:"Fast disposable drones that attempt to melee hostiles, which will cause them to explode. Deployed by a [[Bomb Drone Bay]]"},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
+import{r as S,j as o,c as T,B as C,L as q,K as R,M as O,w as ue,N as fe,f as I,O as ye,Q as be,y as L,U as oe,a as j,s as we,V as Ce,S as Y,o as ve,W as ie,z as Se,u as re,X as _,Y as Te,Z as B,_ as ke,$ as xe,a0 as W,a1 as Ae,a2 as He}from"./index-SLf3nRhe.js";import{l as Ne}from"./lore-CBKT07wE.js";import{h as Ge}from"./machine_hacks-CIEgi5MA.js";import{H as se,a as Ie,L as De,I as Re,B as Z,b as Me,u as Ee}from"./BotDetails-DEATxlmg.js";import{T as K,a as V,u as Pe}from"./ItemPopover-Bw32m-S1.js";/* empty css              */import"./bots-DmHYWh_Z.js";import"./botTypes-_WzAd8ij.js";import"./items-0uiuNN38.js";const Le=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:'12-ASH is one of the [[Heroes of Zion]]. Upon appearing, they will shout "hail to the king".'},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:"Informally known as a yauler (yellow Hauler). In the main complex, appears as part of a [[Cargo Convoy]]."},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed. Gives a code when shown the Cetus Mainframe in [[Cetus]]."},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AP7-3",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:"Bolteaters are fast [[Wheels|wheeled]] [[UFD]] combat bots armed with [[Ripteeth]]. Valuable for a wheels build with their [[Rocket Booster|Rocket Boosters]]. Their ripteeth can rip off a component ignoring armor, so keep them away from you. Slightly resistant to Kinetic, Thermal, Electromagnetic and Explosive damage."},{Name:"Bomb Drone",Content:"Fast disposable drones that attempt to melee hostiles, which will cause them to explode. Deployed by a [[Bomb Drone Bay]]"},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
 
 Due to their extreme lethality in melee, stay out of their range at all costs, and maybe just run the hell out of [[Wastes]]. Alternatively pack a good launcher or a good critical weapon, as their plating will tank most of your shots.`},{Name:"C-55 Analyst",Content:""},{Name:"C-57 Dissector",Content:""},{Name:"C-65 Expert",Content:""},{Name:"CL-ANK",Content:""},{Name:"Cetus Guard",Content:""},{Name:"Cobbler",Content:""},{Name:"Cogmind",Content:"That's you."},{Name:"Combat Drone",Content:""},{Name:"Combat Programmer",Content:""},{Name:"Commander",Content:""},{Name:"D-53 Grenadier",Content:""},{Name:"D-63 Destroyer",Content:""},{Name:"D-83 Annihilator",Content:""},{Name:"DAS Turret",Content:""},{Name:"DD-05H",Content:""},{Name:"DRS Ranger",Content:"More powerful [[Ranger]] variants that appear in [[Caves]] when a [[DRS Beacon]] is used."},{Name:"Data Miner",Content:""},{Name:"Decapitator",Content:""},{Name:"Decomposer",Content:""},{Name:"Decoy Drone",Content:""},{Name:"Demented",Content:""},{Name:"Dragon",Content:""},{Name:"Drone",Content:""},{Name:"E-15 Imp",Content:""},{Name:"EX-BIN",Content:`[[Heading]]Parse[[/Heading]]
 When datajacked, one of the following parse texts is shown:
@@ -4999,7 +4999,7 @@ Bonus (X)|X|Total bonus points obtained from various sources[[/Table]]
 
 [[Heading:2]]Value[[/Heading]]
 Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most machines have a value of 10, and some important machines like Garrison Relays have a value of 200. The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
-[[Assembled]], passive [[Derelict]] bot classes, special bots that can only ever be found unpowered as "statues" and most [[Drone (Group)|Drones]] have a value of 0. Three special bots have a value of 2000, while all unique bots and all other other special bots have a value of 1. Some important unique/special bots instead grant score through bonus points.
+[[Assembled]], passive [[Derelict]] bot classes, special bots that can only ever be found unpowered as "statues" and most [[Drone (Group)|Drones]] have a value of 0. Three special bots have a value of 2000, while all unique bots and all other other special bots have a value of 1. Some of those important unique/special bots instead grant score through bonus points.
 
 
 [[Heading]]Bonus Points[[/Heading]]
@@ -5008,19 +5008,21 @@ Bonus points are obtained from a large variety of sources, almost all of them sp
 Unlike overall performance score, bonus score categories only appear in scoresheets if point were earned in them. The following is a very incomplete list of bonus point sources, more or less in the order they appear in scoresheets:
 
 [[Table]]Name|Points|Stacks|Source||
+
+[[Comment]] --- General Destruction --- [[/Comment]]
 Triggered High Security|500|Yes|Triggering [[High Security]]||
 [[Spoiler]]Triggered Max Security[[/Spoiler]]|1000|Yes|[[Spoiler]]Triggering [[Maximum Security]][[/Spoiler]]||
 High Alert Combat Kills³|Dependent on bot value and [[Alert]]|Yes|Personally destroying [[0b10 Combat Bots]] while Alert is at least at level 2.
 At alert level 2, 25% of regular bot value. At level 3, 50%. At level 4, 75%. At level 5, 100%.||
 Follower Combat Kills|75% of regular bot value|Yes|Blue/purple Allies destroying combat bots||
 
-
+[[Comment]] --- "Side Stuff" --- [[/Comment]]
 Entered Garrisons|200|Yes|Entering [[Garrison]] maps||
 Entered DSFs|500|Yes|Entering [[DSF]]||
 Used RIF Installer|500|Yes|Using [[Garrison#rif_installer|RIF Installers]] with no incompatible [[Alignment|alignments]]||
 [[Spoiler]]Network Hubs Disabled[[/Spoiler]]|200|Yes|[[Spoiler]]Disabling Network Hubs in [[Hub_04(d)]][[/Spoiler]]||
 
-
+[[Comment]] --- Materials/Factory Branches --- [[/Comment]]
 Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Aligner machine in Exiles (Location)]]||
 [[Spoiler]]Registered with UFD[[/Spoiler]]|300|N/A|[[Spoiler]][[Scraptown#alignment_-_ufd|Registering as a UFD member in Scraptown]][[/Spoiler]]||
 [[Spoiler]]Met Optimus in HQ[[/Spoiler]]|500|N/A|[[Spoiler]]Talking to [[Scraptown#sub-alignment_-_optimus|Optimus in Scraptown]][[/Spoiler]]||
@@ -5040,10 +5042,59 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Spoiler]]Met R17 at Cetus[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Read Decrypted Archives[[/Spoiler]]|300|No| ||
 
+[[Comment]] --- Hidden Lab --- [[/Comment]]
+[[Redacted]]Found Hidden Lab[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Decrypted A0 Command[[/Redacted]]|3000|No|[[Redacted]] [[/Redacted]]||
 
+[[Comment]] --- Research-related Events & Branches --- [[/Comment]]
+[[Spoiler]]Used Core Reset Matrix[[/Spoiler]]|3000|No|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Hacked Protovariant[[/Spoiler]]|500|Yes|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Met R17 at Research[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Met Warlord at Research[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Invited to Help at Command[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Hacked God Mode[[/Spoiler]]|5000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Scanned by Researcher[[/Spoiler]]|500|Yes|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Pursued by Intercept[[/Spoiler]]|500|Yes|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Acquired SGEMP[[/Spoiler]]|2000| |[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Delivered SGEMP[[/Spoiler]]|2000| |[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Met Sigix[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
 
+[[Comment]] --- REDACTED Research branches --- [[/Comment]]
+[[Redacted]]Activated Exoskeleton[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Integrated Exoskeleton[[/Redacted]]|5000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed Superfortress[[/Redacted]]|15000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Met Optimus at Protoforge[[/Redacted]]|1000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Completed Drillbomb Mission[[/Redacted]]|10000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Optimus Survived to 0b1[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
 
+[[Comment]] --- Sigix Recovered --- [[/Comment]]
+[[Redacted]]Recovered Sigix Corpse[[/Redacted]]|2000|Yes|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Escaped with Sigix[[/Redacted]]|5000|Yes|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Escaped with Exo-Sigix[[/Redacted]]|10000|N/A|[[Redacted]] [[/Redacted]]||
 
+[[Comment]] --- Command --- [[/Comment]]
+[[Redacted]]Destroyed MAIN.C Guards[[/Redacted]]|500|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Met MAIN.C[[/Redacted]]|5000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Hacked MAIN.C[[/Redacted]]|300|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed MAIN.C Shell[[/Redacted]]|5000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Zhirov Destroyed MAIN.C[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed MAIN.C[[/Redacted]]|10000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Used 0b10 Conduit[[/Redacted]]|2000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Met Warlord at Command[[/Redacted]]|2000|N/A|[[Redacted]] [[/Redacted]]||
+
+[[Comment]] --- Access_0 --- [[/Comment]]
+[[Redacted]]Met Architect[[/Redacted]]|300|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Started Test 138-B[[/Redacted]]|500|No|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Started Test 138-C[[/Redacted]]|8000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A8[[/Redacted]]|300|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A6[[/Redacted]]|400|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A5[[/Redacted]]|500|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A4[[/Redacted]]|700|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A3[[/Redacted]]|800|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A2[[/Redacted]]|1000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed Architect[[/Redacted]]|15000|N/A|[[Redacted]] [[/Redacted]]||
+
+[[Comment]] --- Win Stuff + Friendly Fire --- [[/Comment]]
 Win|3000|N/A|Winning the run through any ending||
 Friendly Fire|X + (Y * 100)|Yes|X = damage dealt to Allies⁴ by Cogmind, Y = Allies⁴ destroyed by Cogmind[[/Table]]
 ³Bonus score earned from robot kills in these category is earned in addition to "Value Destroyed" score.
