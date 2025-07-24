@@ -6183,7 +6183,7 @@ Bonus (X)|X|Total bonus points obtained from various sources[[/Table]]
 
 [[Heading:2]]Value[[/Heading]]
 Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most machines have a value of 10, and some important machines like Garrison Relays have a value of 200. The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
-[[Assembled]], passive [[Derelict]] bot classes, special bots that can only ever be found unpowered as ""statues"" and most [[Drone (Group)|Drones]] have a value of 0. Three special bots have a value of 2000, while all unique bots and all other other special bots have a value of 1. Some important unique/special bots instead grant score through bonus points.
+[[Assembled]], passive [[Derelict]] bot classes, special bots that can only ever be found unpowered as ""statues"" and most [[Drone (Group)|Drones]] have a value of 0. Three special bots have a value of 2000, while all unique bots and all other other special bots have a value of 1. Some of those important unique/special bots instead grant score through bonus points.
 
 
 [[Heading]]Bonus Points[[/Heading]]
@@ -6192,19 +6192,21 @@ Bonus points are obtained from a large variety of sources, almost all of them sp
 Unlike overall performance score, bonus score categories only appear in scoresheets if point were earned in them. The following is a very incomplete list of bonus point sources, more or less in the order they appear in scoresheets:
 
 [[Table]]Name|Points|Stacks|Source||
+
+[[Comment]] --- General Destruction --- [[/Comment]]
 Triggered High Security|500|Yes|Triggering [[High Security]]||
 [[Spoiler]]Triggered Max Security[[/Spoiler]]|1000|Yes|[[Spoiler]]Triggering [[Maximum Security]][[/Spoiler]]||
 High Alert Combat Kills³|Dependent on bot value and [[Alert]]|Yes|Personally destroying [[0b10 Combat Bots]] while Alert is at least at level 2.
 At alert level 2, 25% of regular bot value. At level 3, 50%. At level 4, 75%. At level 5, 100%.||
 Follower Combat Kills|75% of regular bot value|Yes|Blue/purple Allies destroying combat bots||
 
-
+[[Comment]] --- ""Side Stuff"" --- [[/Comment]]
 Entered Garrisons|200|Yes|Entering [[Garrison]] maps||
 Entered DSFs|500|Yes|Entering [[DSF]]||
 Used RIF Installer|500|Yes|Using [[Garrison#rif_installer|RIF Installers]] with no incompatible [[Alignment|alignments]]||
 [[Spoiler]]Network Hubs Disabled[[/Spoiler]]|200|Yes|[[Spoiler]]Disabling Network Hubs in [[Hub_04(d)]][[/Spoiler]]||
 
-
+[[Comment]] --- Materials/Factory Branches --- [[/Comment]]
 Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Aligner machine in Exiles (Location)]]||
 [[Spoiler]]Registered with UFD[[/Spoiler]]|300|N/A|[[Spoiler]][[Scraptown#alignment_-_ufd|Registering as a UFD member in Scraptown]][[/Spoiler]]||
 [[Spoiler]]Met Optimus in HQ[[/Spoiler]]|500|N/A|[[Spoiler]]Talking to [[Scraptown#sub-alignment_-_optimus|Optimus in Scraptown]][[/Spoiler]]||
@@ -6224,10 +6226,59 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Spoiler]]Met R17 at Cetus[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Read Decrypted Archives[[/Spoiler]]|300|No| ||
 
+[[Comment]] --- Hidden Lab --- [[/Comment]]
+[[Redacted]]Found Hidden Lab[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Decrypted A0 Command[[/Redacted]]|3000|No|[[Redacted]] [[/Redacted]]||
 
+[[Comment]] --- Research-related Events & Branches --- [[/Comment]]
+[[Spoiler]]Used Core Reset Matrix[[/Spoiler]]|3000|No|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Hacked Protovariant[[/Spoiler]]|500|Yes|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Met R17 at Research[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Met Warlord at Research[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Invited to Help at Command[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Hacked God Mode[[/Spoiler]]|5000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Scanned by Researcher[[/Spoiler]]|500|Yes|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Pursued by Intercept[[/Spoiler]]|500|Yes|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Acquired SGEMP[[/Spoiler]]|2000| |[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Delivered SGEMP[[/Spoiler]]|2000| |[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Met Sigix[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
 
+[[Comment]] --- REDACTED Research branches --- [[/Comment]]
+[[Redacted]]Activated Exoskeleton[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Integrated Exoskeleton[[/Redacted]]|5000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed Superfortress[[/Redacted]]|15000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Met Optimus at Protoforge[[/Redacted]]|1000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Completed Drillbomb Mission[[/Redacted]]|10000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Optimus Survived to 0b1[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
 
+[[Comment]] --- Sigix Recovered --- [[/Comment]]
+[[Redacted]]Recovered Sigix Corpse[[/Redacted]]|2000|Yes|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Escaped with Sigix[[/Redacted]]|5000|Yes|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Escaped with Exo-Sigix[[/Redacted]]|10000|N/A|[[Redacted]] [[/Redacted]]||
 
+[[Comment]] --- Command --- [[/Comment]]
+[[Redacted]]Destroyed MAIN.C Guards[[/Redacted]]|500|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Met MAIN.C[[/Redacted]]|5000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Hacked MAIN.C[[/Redacted]]|300|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed MAIN.C Shell[[/Redacted]]|5000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Zhirov Destroyed MAIN.C[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed MAIN.C[[/Redacted]]|10000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Used 0b10 Conduit[[/Redacted]]|2000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Met Warlord at Command[[/Redacted]]|2000|N/A|[[Redacted]] [[/Redacted]]||
+
+[[Comment]] --- Access_0 --- [[/Comment]]
+[[Redacted]]Met Architect[[/Redacted]]|300|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Started Test 138-B[[/Redacted]]|500|No|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Started Test 138-C[[/Redacted]]|8000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A8[[/Redacted]]|300|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A6[[/Redacted]]|400|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A5[[/Redacted]]|500|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A4[[/Redacted]]|700|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A3[[/Redacted]]|800|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A2[[/Redacted]]|1000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed Architect[[/Redacted]]|15000|N/A|[[Redacted]] [[/Redacted]]||
+
+[[Comment]] --- Win Stuff + Friendly Fire --- [[/Comment]]
 Win|3000|N/A|Winning the run through any ending||
 Friendly Fire|X + (Y * 100)|Yes|X = damage dealt to Allies⁴ by Cogmind, Y = Allies⁴ destroyed by Cogmind[[/Table]]
 ³Bonus score earned from robot kills in these category is earned in addition to ""Value Destroyed"" score.
