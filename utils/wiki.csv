@@ -6182,14 +6182,14 @@ Bonus (X)|X|Total bonus points obtained from various sources[[/Table]]
 ²In each map, no more than 60 robot kills of a single class may contribute to score. (Additional robots are not recorded in any part of the score section, but are still recorded in other sections of scoresheets.)
 
 [[Heading:2]]Value[[/Heading]]
-Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most machines have a value of 10, and some important machines like Garrison Relays have a value of 200. The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
+Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most 0b10 machines have a value of 10, and some important machines like Garrison Relays and Phase Generators have a value of 200. The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
 [[Assembled]], passive [[Derelict]] bot classes, special bots that can only ever be found unpowered as ""statues"" and most [[Drone (Group)|Drones]] have a value of 0. Three special bots have a value of 2000, while all unique bots and all other other special bots have a value of 1. Some of those important unique/special bots instead grant score through bonus points.
 
 
 [[Heading]]Bonus Points[[/Heading]]
 (This section is a work in progress, and as such is missing a lot of information, features subpar formatting, and/or lacks links. It does not, however, lack spoiler tags.)
 Bonus points are obtained from a large variety of sources, almost all of them spoilery. Remember to set your spoilers settings to ""None"" if you do not want to see potential spoilers!
-Unlike overall performance score, bonus score categories only appear in scoresheets if point were earned in them. The following is a very incomplete list of bonus point sources, more or less in the order they appear in scoresheets:
+Unlike overall performance score, bonus score categories only appear in scoresheets if point were earned in them. For all but one of the bonus categories that require destroying very specific robots or machines, anything will count so long as the corresponding bots/machines are destroyed, and Cogmind does not actually have to personally destroy the bots/machines. The following is a very incomplete list of bonus point sources, more or less in the order they appear in scoresheets:
 
 [[Table]]Name|Points|Stacks|Source||
 
@@ -6237,7 +6237,7 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Spoiler]]Met Warlord at Research[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Invited to Help at Command[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Hacked God Mode[[/Spoiler]]|5000|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Scanned by Researcher[[/Spoiler]]|500|Yes|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Scanned by Researcher[[/Spoiler]]|500|Kinda|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Pursued by Intercept[[/Spoiler]]|500|Yes|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Acquired SGEMP[[/Spoiler]]|2000| |[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Delivered SGEMP[[/Spoiler]]|2000| |[[Spoiler]] [[/Spoiler]]||
@@ -6252,9 +6252,10 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Redacted]]Optimus Survived to 0b1[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
 
 [[Comment]] --- Sigix Recovered --- [[/Comment]]
-[[Redacted]]Recovered Sigix Corpse[[/Redacted]]|2000|Yes|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Escaped with Sigix[[/Redacted]]|5000|Yes|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Escaped with Exo-Sigix[[/Redacted]]|10000|N/A|[[Redacted]] [[/Redacted]]||
+[[Spoiler]]Recovered Sigix Corpse[[/Spoiler]]|X * 2000|Yes|[[Spoiler]]Winning through any(?) ending with X [[Sigix Corpse|Sigix Corpses]] in inventory[[/Spoiler]]||
+[[Spoiler]]Escaped with Sigix[[/Spoiler]]|X * 5000|Yes|[[Spoiler]]Ascending to the [[Surface]] with X [[Sigix Containment Pod|Sigix Containment Pods]] in inventory[[/Spoiler]]||
+[[Redacted]]Escaped with Exo-Sigix[[/Redacted]]|10000|N/A|[[Redacted]]Ascending to the [[Surface]] while accompanied by the [[Sigix Warrior]] in its [[Sigix Exoskeleton|Exoskeleton]][[/Redacted]]||
+[[Comment]]   Some endings won't grant points for bringing the Sigix Containement Pod or Exo-Sigix. For example, W5 doesn't grant ""Escaped with Sigix"" even if you have the Sigix Containement Pod. I assume the same is true for Exo-Sigix, but i don't know about Sigix Corpses. I also don't know for sure which endings this holds true for, but i think all those that ascend to the Surface are safe.[[/Comment]]
 
 [[Comment]] --- Command --- [[/Comment]]
 [[Redacted]]Destroyed MAIN.C Guards[[/Redacted]]|500|N/A|[[Redacted]] [[/Redacted]]||
@@ -6280,6 +6281,7 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 
 [[Comment]] --- Win Stuff + Friendly Fire --- [[/Comment]]
 Win|3000|N/A|Winning the run through any ending||
+Win Speed|Speed-dependent|N/A|Winning the run through any ending after few enough turns have passed||
 Friendly Fire|X + (Y * 100)|Yes|X = damage dealt to Allies⁴ by Cogmind, Y = Allies⁴ destroyed by Cogmind[[/Table]]
 ³Bonus score earned from robot kills in these category is earned in addition to ""Value Destroyed"" score.
 ⁴Only uncontrollable allies that aren't 0b10 bots under the influence of a temporary IFF overwrite.
