@@ -849,7 +849,7 @@ Caves checkpoints are square-shaped open spaces with a guard positioned at the c
 There are three types of checkpoints:
 [[Table]]
 Central guard|Alignment|Square size|Possible additional guards|Formation||
-[[Mutant]]|Friendly (Warlord)|7x7|0, 2 or 4 [[Thug|Thugs]], [[Butcher|Butchers]] or [[Savage|Savages]]|X, / or \-shaped||
+[[Mutant]]|Friendly (Warlord)|7x7|0, 2 or 4 [[Thug|Thugs]], [[Butcher|Butchers]] or [[Savage|Savages]]|X, / or \\-shaped||
 Sentry|Hostile (0b10)|7x7|[[Swarmer|Swarmers]], [[Grunt|Grunts]], [[Duelist|Duelists]] or [[Brawler|Brawlers]]|Chaotic||
 [[Behemoth]]|Hostile (0b10)|6x6|None|N/A
 [[/Table]]
@@ -2530,7 +2530,7 @@ There are more ways to interact with FarCom without just taking a single vault i
 
 [[Heading]]Variations[[/Heading]]
 There are several variations of the Exiles map that can change things dramatically. In the majority of maps, the Exiles are present. However, there are 2 possible variations in the maps:
-[[Image]]Exiles Attacked.png|Attacked Exiles vault[[/Image]][[List]]Abandoned Exiles: In this map, the Exiles have all fled the map and taken nearly everything on the map as well. Neither FarCom nor any vault items are obtainable in this seed. However, EX-DEC may be found in [[Spoiler]][[Warlord (Location)|Warlord]] in the Vortex Lab[[/Spoiler]] in these seeds.|Attacked Exiles: In this map, the Exiles have been attacked and are missing. There are disabled and rewirable bots on the map and random parts on the ground. FarCom is not obtainable on this seed, but one random vault prototype is available by using the manual code [[Spoiler]][[GameText]]\\1234[[/GameText]][[/Spoiler]] on the vault terminal.|While not changing the map in any way, there is a chance that a large [[0b10]] attack force will assault the Exiles base after using the FarCom machine and exiting the vault.[[/List]]
+[[Image]]Exiles Attacked.png|Attacked Exiles vault[[/Image]][[List]]Abandoned Exiles: In this map, the Exiles have all fled the map and taken nearly everything on the map as well. Neither FarCom nor any vault items are obtainable in this seed. However, EX-DEC may be found in [[Spoiler]][[Warlord (Location)|Warlord]] in the Vortex Lab[[/Spoiler]] in these seeds.|Attacked Exiles: In this map, the Exiles have been attacked and are missing. There are disabled and rewirable bots on the map and random parts on the ground. FarCom is not obtainable on this seed, but one random vault prototype is available by using the manual code [[Spoiler]][[GameText]]\\\\1234[[/GameText]][[/Spoiler]] on the vault terminal.|While not changing the map in any way, there is a chance that a large [[0b10]] attack force will assault the Exiles base after using the FarCom machine and exiting the vault.[[/List]]
 
 [[Heading]]Fighting[[/Heading]]
 Fighting the Exiles is a challenging yet rewarding endeavor. Although they are normally friendly, they can pack quite a punch and will likely end the run of any unprepared player. As far as rewards go, [[8R-AWN]] has some powerful unique [[8R-AWN's Boregun|Boreguns]] with a high salvage and destroy critical %, out-of-depth parts including [[Exp. Heat Sink]], [[Adv. Weapon Cycler]], [[Exp. Targeting Computer]], and [[Adv. Myomer Leg]]. Another unique part, the [[AS-neutralizer No. 17b]] is very helpful in a later game branch [[Zion Deep Caves]]. Other useful parts on some of the Exiles themselves are [[Adv. Component Analysis Suite]], [[System Purifier]], [[Cmb. Antigrav System]], [[Imp. Armor Integrity Analyzer]], [[Exp. Core Analyzer]], and [[Adv. Transmission Jammer]].
@@ -5415,7 +5415,7 @@ Just Browsing: Reach 25% gallery collection.
 Made in Tau Ceti IV: Enter [[Factory]].
 |Dangerous Findings: Enter [[Research]].
 |Denied?: Enter [[Access]].
-|\\IAMDERELICT: [[Spoiler]]Enter [[Recycling]] via [[Storage]].[[/Spoiler]]
+|\\\\IAMDERELICT: [[Spoiler]]Enter [[Recycling]] via [[Storage]].[[/Spoiler]]
 |I'm Back, Baby!: Exit [[Caves|Proximity Caves]].
 |Tourist: Visit 3 branch areas.
 |Adventurer: Visit 2 special cave areas.
@@ -5479,14 +5479,14 @@ For example, if a bot has equipped:
 [[/List]]
 its total mass is 14. Its movement speed depends on which propulsion unit it has activated:
 [[List]]
-With the treads: The bot is underweight (14 ≤ 20). The time to move one tile is 160.
-|With the wheel: The bot is 1 time overweight (10 < 14 ≤ 20). The time to move one tile is 80 + 15 = 95.
-|With neither (core propulsion): The bot is 4 times overweight (12 < 14 ≤ 15). The time to move one tile is 50 + (50 × 4) = 250.
+With the treads: The bot is underweight (14 \u2264 20). The time to move one tile is 160.
+|With the wheel: The bot is 1 time overweight (10 < 14 \u2264 20). The time to move one tile is 80 + 15 = 95.
+|With neither (core propulsion): The bot is 4 times overweight (12 < 14 \u2264 15). The time to move one tile is 50 + (50 \u00d7 4) = 250.
 [[/List]]
 
 [[Heading:2]]Formula[[/Heading:2]]
 Mathematically, the amount of time it takes a bot to move one tile (ignoring mechanics for flight and hover units) is
-Σ[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + ⌊max(0, [[I]]m[[/I]] − 1)/Σ[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]⌋(Σ[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
+\u03a3[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + \u230amax(0, [[I]]m[[/I]] \u2212 1)/\u03a3[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]\u230b(\u03a3[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
 where
 [[List]]
 [[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the mass support for propulsion unit [[I]]i[[/I]]
@@ -5495,7 +5495,7 @@ where
 |[[I]]m[[/I]] is the total mass of all attached parts
 |[[I]]n[[/I]] is the total number of activated propulsion units
 [[/List]]
-and all sums Σ are over all activated propulsion units.
+and all sums \u03a3 are over all activated propulsion units.
 
 [[Heading]]Flight and Hover Units[[/Heading]]
 Flight and hover units calculate their movement speed in the same basic way as legs, treads, and wheels, but they have the following additional mechanics that affect movement speed:
@@ -5710,10 +5710,10 @@ Weapons|Time to fire|Time per weapon||
 [[CellStyle:Neutral]][[B]]1 with QC[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]||
 1|200|[[CellStyle:Bad]]200||
 2|300|[[CellStyle:Bad]]150||
-3|325|[[CellStyle:Bad]]108⅓||
-4|350|[[CellStyle:Good]] 87½||
-5|375|[[CellStyle:Good]] 75||
-6|400|[[CellStyle:Good]] 66⅔
+3|325|[[CellStyle:Bad]]108\u2153||
+4|350|[[CellStyle:Good]]\u200787\u00bd||
+5|375|[[CellStyle:Good]]\u200775||
+6|400|[[CellStyle:Good]]\u200766\u2154
 [[/Table]]
 
 The Quantum Capacitor has several benefits on top of firing time:
@@ -5791,7 +5791,7 @@ For the rangers dispatched as part of a rescue squad, see [[DRS Ranger]].","",""
 "Recoil Stabilizer","Part","","","","","","","",""
 "Recoil Stabilizers","Part Group","","","","","Recoil Stabilizer,Adv. Recoil Stabilizer,Cep. Recoil Nullifier","","",""
 "Recycler","Bot Group","Recyclers are [[0b10]] [[Wheels|wheeled]] non-combat bots that collected dropped parts and deposit them at a nearby [[Recycling Unit]]. While they are equipped with [[Tractor Beams]] and [[Field Recycling Units]], Recyclers do not actually make use of these parts. Recyclers are a major nuisance for their ability to steal loot before Cogmind can pick it up. If Recyclers are closing in, fire a single shot at them to get them to run away for a while and leave your loot alone. They have the highest salvage potential of any 0b10 non-combat bot, so killing them is a great way to restock on matter.","","R-06 Scavenger,R-10 Processor","","","","",""
-"Recycling","Location","Recycling is an early game [[0b10]]-controlled [[Branch]] with few active combat hostiles. The 3 ways to enter this branch are by using the [[GameText]]\\IAMDERELICT[[/GameText]] code at the Recycling exit in [[Storage]], by entering a Storage [[Garrison Access|Garrisons]] and looping back into this floor instead of proceeding to the next depth, or by taking the guarded exit in [[Subcaves]]. There are a few dormant [[Sentry|Sentries]] guarding hallways and several more in rooms with large amounts of rewirable bots. Unlike most 0b10 maps, more combat bots will not be summoned in any scenario. Recycling is unique in that it forces a skipped depth. For example, entering a Storage map on -8 leads to a Recycling map on -8 that leads to a [[Factory]] map on -6 rather than -7 like most branches.
+"Recycling","Location","Recycling is an early game [[0b10]]-controlled [[Branch]] with few active combat hostiles. The 3 ways to enter this branch are by using the [[GameText]]\\\\IAMDERELICT[[/GameText]] code at the Recycling exit in [[Storage]], by entering a Storage [[Garrison Access|Garrisons]] and looping back into this floor instead of proceeding to the next depth, or by taking the guarded exit in [[Subcaves]]. There are a few dormant [[Sentry|Sentries]] guarding hallways and several more in rooms with large amounts of rewirable bots. Unlike most 0b10 maps, more combat bots will not be summoned in any scenario. Recycling is unique in that it forces a skipped depth. For example, entering a Storage map on -8 leads to a Recycling map on -8 that leads to a [[Factory]] map on -6 rather than -7 like most branches.
 The main benefits to going to Recycling are for [[Scraptown]] or obtaining the unique [[Scrap Engine]] from the scraplab. Because there are no combat reinforcements of any kind, there are few downsides to getting traced at all of the [[Terminal|Terminals]] and [[Recycling Unit|Recycling Units]] aside from minor [[Alert]] gain. There are a large number of Recycling Units on this map and using [[GameText]]Force(Tunnel)[[/GameText]] on all of them can be very helpful in uncovering the depths of many maps in the floors above. There are commonly a large number of [[Corrupted Parts|corrupted]] [[Authchips]] available for players who want to do a lot of [[Fabricator|Fabrication]]. A small army can be raised off of the rewirable bots in some of the rooms, though tend to be heavily damaged.
 
 [[Heading]]Notable Locations[[/Heading]]
@@ -6175,13 +6175,13 @@ The quick overview of overall performance and score in scoresheets, followed by 
 [[Table]]Name|Points|X||
 Evolutions (X)|X * 500|Evolution thresholds crossed||
 Regions Visited (X)|X * 200|Maps visited, excluding [[Scrapyard]]||
-Robots Destroyed (X)|X * 5|Functional robots destroyed¹² that have a value of at least 1, regardless of hostility, alignment or faction||
-Value Destroyed (X)|X|Total value destroyed, including most [[0b10]] machines (whether destroyed by Cogmind or blue/purple [[Allies]]) and functional non-friendly bots¹² (destroyed by Cogmind only)||
+Robots Destroyed (X)|X * 5|Functional robots destroyed\u00b9\u00b2 that have a value of at least 1, regardless of hostility, alignment or faction||
+Value Destroyed (X)|X|Total value destroyed, including most [[0b10]] machines (whether destroyed by Cogmind or blue/purple [[Allies]]) and functional non-friendly bots\u00b9\u00b2 (destroyed by Cogmind only)||
 Prototype IDs (X)|X * 20|Unique [[Prototype Part]] IDs obtained, including any that were lost, for example due to to a minor Data Loss [[Corruption]] effect||
 Alien Tech Used (X)|X * 200|[[Spoiler]]Unique [[Alien Artifacts]] attached (actual usage not required)[[/Spoiler]]||
 Bonus (X)|X|Total bonus points obtained from various sources[[/Table]]
-¹Broken/Unpowered robots do not count towards score in any way.
-²In each map, no more than 60 robot kills of a single class may contribute to score. (Additional robots are not recorded in any part of the score section, but are still recorded in other sections of scoresheets.)
+\u00b9Broken/Unpowered robots do not count towards score in any way.
+\u00b2In each map, no more than 60 robot kills of a single class may contribute to score. (Additional robots are not recorded in any part of the score section, but are still recorded in other sections of scoresheets.)
 
 [[Heading:2]]Value[[/Heading]]
 Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most 0b10 machines have a value of 10, and some important machines like Garrison Relays and Phase Generators have a value of 200. The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
@@ -6198,7 +6198,7 @@ Unlike overall performance score, bonus score categories only appear in scoreshe
 [[Comment]] --- General Destruction --- [[/Comment]]
 Triggered High Security|500|Yes|Triggering [[High Security]]||
 [[Spoiler]]Triggered Max Security[[/Spoiler]]|1000|Yes|[[Spoiler]]Triggering [[Maximum Security]][[/Spoiler]]||
-High Alert Combat Kills³|Dependent on bot value and [[Alert]]|Yes|Personally destroying [[0b10 Combat Bots]] while Alert is at least at level 2.
+High Alert Combat Kills\u00b3|Dependent on bot value and [[Alert]]|Yes|Personally destroying [[0b10 Combat Bots]] while Alert is at least at level 2.
 At alert level 2, 25% of regular bot value. At level 3, 50%. At level 4, 75%. At level 5, 100%.||
 Follower Combat Kills|75% of regular bot value|Yes|Blue/purple Allies destroying combat bots||
 
@@ -6228,7 +6228,7 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Spoiler]]Met Zhirov[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Zhirov]][[/Spoiler]]||
 [[Spoiler]]Met Warlord at Base[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]MAIN.C Attacked Warlord[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Warlord Defense Kills³[[/Spoiler]]|[[Spoiler]]200% of regular bot value[[/Spoiler]]|Yes|[[Spoiler]]Personally destroying 0b10 bots in [[Warlord (Location)]][[/Spoiler]]||
+[[Spoiler]]Warlord Defense Kills\u00b3[[/Spoiler]]|[[Spoiler]]200% of regular bot value[[/Spoiler]]|Yes|[[Spoiler]]Personally destroying 0b10 bots in [[Warlord (Location)]][[/Spoiler]]||
 [[Spoiler]]Built Enhanced Grunts[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]A7 Reached Mainframe[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Met R17 at Cetus[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
@@ -6290,9 +6290,9 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Comment]] --- Win Stuff + Friendly Fire --- [[/Comment]]
 Win|3000|N/A|Winning the run through any ending||
 Win Speed|Speed-dependent|N/A|Winning the run through any ending after few enough turns have passed||
-Friendly Fire|X + (Y * 100)|Yes|X = damage dealt to Allies⁴ by Cogmind, Y = Allies⁴ destroyed by Cogmind[[/Table]]
-³Bonus score earned from robot kills in these category is earned in addition to ""Value Destroyed"" score.
-⁴Only uncontrollable allies that aren't 0b10 bots under the influence of a temporary IFF overwrite.
+Friendly Fire|X + (Y * 100)|Yes|X = damage dealt to Allies\u2074 by Cogmind, Y = Allies\u2074 destroyed by Cogmind[[/Table]]
+\u00b3Bonus score earned from robot kills in these category is earned in addition to ""Value Destroyed"" score.
+\u2074Only uncontrollable allies that aren't 0b10 bots under the influence of a temporary IFF overwrite.
 
 If an amount of score earned is a decimal numeral (such as in the cases of ""High Alert Combat Kills"" and ""Follower Combat Kills"" bonus score categories), that amount of score is rounded down. For example, destroying an [[S-27 Virus]] at Alert level 2 would grant 6.75 points in the High Alert Combat Kills category, which would be rounded down to 6.","","","","","","",""
 "Scrap","Part","","","","","","","",""
@@ -6838,7 +6838,7 @@ Storage is notable for the large number of prototype parts available. Unique she
 All of the special loot in Storage comes in the form of vaults and shells. The shells will only contain standard floor rating non-prototype and prototype parts. However, some of the vaults contain very out of depth prototype parts. The single item locked vault and the vault full of traps can contain rating 5* prototypes that are far out of depth compared to the normal Storage depths. These vaults can contain great items like [[Cld. Plasma Cannon]], [[Exp. Targeting Computer]], and even a semi-unique part [[Lgt. Regenerative Plating]]. Shells must be broke open by a weapon, while vaults must be hacked open via [[Terminal]]. Some vaults will already be open on entering the map.
 [[Heading:2]]Exits[[/Heading]]
 There are 2 types of exits in Storage:
-[[List]]Main access exits: These always lead to the next main floor, either [[Materials]] or [[Factory]]. There is only one of these types of exits on the map and it will always be in the opposite corner of the map that Cogmind starts at.|[[Spoiler]][[Recycling]] exit: There is only one of these types of exits on the map and it will be in one of the remaining corners that the starting point and main access exit aren't in. This exit is blocked off by a [[Terminal]] with no Open hack. The only way past is to enter the special manual hack \\IAMDERELICT.[[/Spoiler]][[/List]]
+[[List]]Main access exits: These always lead to the next main floor, either [[Materials]] or [[Factory]]. There is only one of these types of exits on the map and it will always be in the opposite corner of the map that Cogmind starts at.|[[Spoiler]][[Recycling]] exit: There is only one of these types of exits on the map and it will be in one of the remaining corners that the starting point and main access exit aren't in. This exit is blocked off by a [[Terminal]] with no Open hack. The only way past is to enter the special manual hack \\\\IAMDERELICT.[[/Spoiler]][[/List]]
 [[Image]]Storage Derelict Unlocked Vault.png|Unlocked vault raided by friendly [[Thug (5)|Derelicts]][[/Image]][[Image]]MTF Vault.png|Unlocked vault raided by [[01-MTF]][[/Image]]
 
 [[Heading]]Events[[/Heading]]
@@ -8286,7 +8286,7 @@ Most weapons can be fired together as a volley, excluding Special Weapons, Speci
 
 [[Heading:2]]Volley Time Costs[[/Heading]]
 
-Each weapon in a ranged multi-weapon volley will increase the volley’s total time cost, with each weapon being more efficient time-wise:
+Each weapon in a ranged multi-weapon volley will increase the volley\u2019s total time cost, with each weapon being more efficient time-wise:
 [[Table]]Number of Weapons|Time cost||1|200||2|300||3|325||4|350||5|375||6+|400[[/Table]]
 This is then modified by the sum of the delay stats of every weapon in the volley, then by the time cost reduction of an equipped [[Weapon Cyclers|Weapon Cycler]], [[Quantum Capacitor]], or [[Launcher Loader]], when applicable. A single volley may not cost less than 25 time units.
 
@@ -8296,7 +8296,7 @@ When multiple melee weapons are fired in a single volley, the first will always 
 
 [[Heading:2]]Recoil[[/Heading]]
 
-Certain weapons (Especially ballistic ones) suffer from recoil. The sum of every other weapon’s recoil will be assessed as a penalty to each weapon in a volley containing weapon(s) suffering from recoil.
+Certain weapons (Especially ballistic ones) suffer from recoil. The sum of every other weapon\u2019s recoil will be assessed as a penalty to each weapon in a volley containing weapon(s) suffering from recoil.
 
 [[Heading]]Energy/Ballistic Gun Mechanics[[/Heading]]
 

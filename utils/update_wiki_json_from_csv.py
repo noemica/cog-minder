@@ -4,6 +4,7 @@ import argparse
 import csv
 import json
 from os import path
+import re
 
 wiki_path = path.join(path.dirname(path.realpath(__file__)),
                       '..', 'src', 'json', 'wiki.json')
@@ -20,11 +21,14 @@ with open(wiki_path, encoding='utf-8') as f:
 with open(csv_path, encoding='utf-8') as f:
     wiki_csv = {}
     for row in csv.DictReader(f):
-        row['Content'] = row['Content'].replace('\\n', '\n')
+        row['Content'] = row['Content'].replace('\\n', '\n').replace('\\\\u', '\\u').encode().decode('unicode-escape')
         wiki_csv[row['Name']] = row
 
 updated_pages = []
 
+def unescape(s):
+    return re.sub(r'\\\\u([0-9a-f]{4})', r'\\u\1', s)
+    
 def update_json_value(json_item, csv_obj, key_name):
     if csv_obj[key_name] == '':
         if key_name in json_item:
@@ -33,14 +37,16 @@ def update_json_value(json_item, csv_obj, key_name):
         
         return False
     
+    val = unescape(csv_obj[key_name])
+    
     if key_name in json_item:
-        if csv_obj[key_name] != json_item[key_name]:
-            json_item[key_name] = csv_obj[key_name]
+        if val != json_item[key_name]:
+            json_item[key_name] = val
             return True
         
         return False
     else:
-        json_item[key_name] = csv_obj[key_name]
+        json_item[key_name] = unescape(val)
         return True
 
 def update_json_list_value(json_item, csv_obj, key_name):
@@ -51,14 +57,16 @@ def update_json_list_value(json_item, csv_obj, key_name):
         
         return False
     
+    val = unescape(csv_obj[key_name])
+    
     if key_name in json_item:
-        if csv_obj[key_name] != ','.join(json_item[key_name]):
-            json_item[key_name] = csv_obj[key_name].split(',')
+        if val != ','.join(json_item[key_name]):
+            json_item[key_name] = val.split(',')
             return True
         
         return False
     else:
-        json_item[key_name] = csv_obj[key_name].split(',')
+        json_item[key_name] = val
         return True
 
 # Update JSON from CSV
@@ -89,9 +97,10 @@ for csv_obj in wiki_csv.values():
         if json_item['Name'] == csv_obj['Name']:
             # Found existing item, update values
             updated = False
-            if json_item['Content'] != csv_obj['Content']:
+            content = unescape(csv_obj['Content'])
+            if json_item['Content'] != content:
                 updated = True
-                json_item['Content'] = csv_obj['Content']
+                json_item['Content'] = content
 
             updated |= update_json_value(json_item, csv_obj, 'Spoiler')
 
@@ -140,8 +149,10 @@ for l in lists:
     l.sort(key=lambda x: x['Name'])
 
 # Save JSON
+json_str = unescape(json.dumps(wiki_json, ensure_ascii=False, indent=1))
 with open(wiki_path, 'w', encoding='utf-8') as f:
-    json.dump(wiki_json, f, indent=1)
+    f.write(json_str)
+    # json.dump(wiki_json, f, ensure_ascii=False, indent=1)
 
 updated_pages.sort()
 
