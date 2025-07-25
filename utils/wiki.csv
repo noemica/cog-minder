@@ -818,6 +818,8 @@ whereas Wall-Earth-Earth or Earth-Earth-Wall would not be safe and could collaps
 |5-tile or more digs - Never safe.[[/List]]
 One way to think about it is to consider that moving through a dug-out tile has a ""cost"", 2 for Wall tiles and 5 for Earth tiles, and that having reached a ""cost"" of 10 or more during a single dig can cause a cave-in on the current tile. [[Comment]]I feel like there's a better way to word this sentence.[[/Comment]]
 
+Each step into an unsafe tile has a 10% chance of instantly causing a collapse of the tile moved into.
+
 [[Comment]]Some late-game AAs can make it possible to dig more safely/farther/better, should they be mentioned here? I'm not sure myself on how they function in regards to cave-ins due to movement.[[/Comment]]
 
 [[Heading:2]]Closed-off Tunnels[[/Heading]]
@@ -6200,6 +6202,12 @@ High Alert Combat Kills³|Dependent on bot value and [[Alert]]|Yes|Personally de
 At alert level 2, 25% of regular bot value. At level 3, 50%. At level 4, 75%. At level 5, 100%.||
 Follower Combat Kills|75% of regular bot value|Yes|Blue/purple Allies destroying combat bots||
 
+[[Comment]] --- Side Quests --- [[/Comment]]
+[[Spoiler]]Awakened Behemoth Slayer[[/Spoiler]]|1000|?|[[Spoiler]]Transforming [[CR-A16's Pointy Stick]][[/Spoiler]]||
+[[Spoiler]]Forged Quantum Companion[[/Spoiler]]|1000|[[Subatomic Replicator|SR]]|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Built PL-3XN's Obliterator[[/Spoiler]]|1000|?|[[Spoiler]] [[/Spoiler]]||
+[[Redacted]]Installed LC Capacitor[[/Redacted]]|1000|N/A|[[Redacted]] [[/Redacted]]||
+
 [[Comment]] --- ""Side Stuff"" --- [[/Comment]]
 Entered Garrisons|200|Yes|Entering [[Garrison]] maps||
 Entered DSFs|500|Yes|Entering [[DSF]]||
@@ -6210,14 +6218,14 @@ Used RIF Installer|500|Yes|Using [[Garrison#rif_installer|RIF Installers]] with 
 Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Aligner machine in Exiles (Location)]]||
 [[Spoiler]]Registered with UFD[[/Spoiler]]|300|N/A|[[Spoiler]][[Scraptown#alignment_-_ufd|Registering as a UFD member in Scraptown]][[/Spoiler]]||
 [[Spoiler]]Met Optimus in HQ[[/Spoiler]]|500|N/A|[[Spoiler]]Talking to [[Scraptown#sub-alignment_-_optimus|Optimus in Scraptown]][[/Spoiler]]||
-[[Spoiler]]Met Data Miner[[/Spoiler]]|300|N/A|[[Spoiler]]Talking to [[Data Miner]] in [[Data Miner (Location)]][[/Spoiler]]||
-[[Spoiler]]Met Imprinter[[/Spoiler]]|300|N/A|[[Spoiler]]Talking to [[Imprinter]] in [[Zion]][[/Spoiler]]||
+[[Spoiler]]Met Data Miner[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Data Miner]] in [[Data Miner (Location)]][[/Spoiler]]||
+[[Spoiler]]Met Imprinter[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Imprinter]] in [[Zion]][[/Spoiler]]||
 [[Spoiler]]Was Imprinted[[/Spoiler]]|300|N/A|[[Spoiler]]Using the [[Zion#alignment_-_imprinting|Imprinting machine in Zion]][[/Spoiler]]||
 [[Spoiler]]Destroyed Z-Imprinter[[/Spoiler]]|1000|N/A|[[Spoiler]]Destroying [[Z-Imprinter]] in [[Zion Deep Caves|Deep Caves]][[/Spoiler]]||
 [[Spoiler]]Triggered Deep Caves Wall[[/Spoiler]]|500|N/A|[[Spoiler]]Causing the [[Zion Deep Caves#impregnable_wall|Impregnable Wall in Deep Caves]] to open[[/Spoiler]]||
 [[Spoiler]]Exposed GOLEM Chamber[[/Spoiler]]|500|No|[[Spoiler]]Destroying one of the GOLEM Chambers in [[Zion Deep Caves|Deep Caves]][[/Spoiler]]||
-[[Spoiler]]Acquired ECA[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Met Zhirov[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Acquired ECA[[/Spoiler]]|300|N/A|[[Spoiler]]Having the [[Encrypted Comm Array]] be delivered in [[Caves]][[/Spoiler]]||
+[[Spoiler]]Met Zhirov[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Zhirov]][[/Spoiler]]||
 [[Spoiler]]Met Warlord at Base[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]MAIN.C Attacked Warlord[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Warlord Defense Kills³[[/Spoiler]]|[[Spoiler]]200% of regular bot value[[/Spoiler]]|Yes|[[Spoiler]]Personally destroying 0b10 bots in [[Warlord (Location)]][[/Spoiler]]||
@@ -6253,7 +6261,7 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 
 [[Comment]] --- Sigix Recovered --- [[/Comment]]
 [[Spoiler]]Recovered Sigix Corpse[[/Spoiler]]|X * 2000|Yes|[[Spoiler]]Winning through any(?) ending with X [[Sigix Corpse|Sigix Corpses]] in inventory[[/Spoiler]]||
-[[Spoiler]]Escaped with Sigix[[/Spoiler]]|X * 5000|Yes|[[Spoiler]]Ascending to the [[Surface]] with X [[Sigix Containment Pod|Sigix Containment Pods]] in inventory[[/Spoiler]]||
+[[Spoiler]]Escaped with Sigix[[/Spoiler]]|X * 5000|[[Subatomic Replicator|SR]]|[[Spoiler]]Ascending to the [[Surface]] with X [[Sigix Containment Pod|Sigix Containment Pods]] in inventory[[/Spoiler]]||
 [[Redacted]]Escaped with Exo-Sigix[[/Redacted]]|10000|N/A|[[Redacted]]Ascending to the [[Surface]] while accompanied by the [[Sigix Warrior]] in its [[Sigix Exoskeleton|Exoskeleton]][[/Redacted]]||
 [[Comment]]   Some endings won't grant points for bringing the Sigix Containement Pod or Exo-Sigix. For example, W5 doesn't grant ""Escaped with Sigix"" even if you have the Sigix Containement Pod. I assume the same is true for Exo-Sigix, but i don't know about Sigix Corpses. I also don't know for sure which endings this holds true for, but i think all those that ascend to the Surface are safe.[[/Comment]]
 
