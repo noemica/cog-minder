@@ -8083,7 +8083,7 @@
     "Adv. Thermal Generator",
     "Exp. Thermal Generator"
    ],
-   "Content": ""
+   "Content": "Thermal Generators are devices that generate energy based on the user's surplus heat. They are relatively heavy compared to most devices, but relatively low coverage as well.\nEnergy is based on surplus heat (above 0) and is generated [[I]]before[[/I]] any cooling is applied."
   },
   {
    "Name": "Thermal Guns",

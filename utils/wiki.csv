@@ -7851,7 +7851,8 @@ There is always 1, and possibly 3 exits in Testing:
 "Thermal Cannons","Part Group","","","","Thermal Cannons","","","",""
 "Thermal Defense Suite","Part","","","","","","","",""
 "Thermal Generator","Part","","","","","","","",""
-"Thermal Generators","Part Group","","","","","Thermal Generator,Imp. Thermal Generator,Adv. Thermal Generator,Exp. Thermal Generator","","",""
+"Thermal Generators","Part Group","Thermal Generators are devices that generate energy based on the user's surplus heat. They are relatively heavy compared to most devices, but relatively low coverage as well.
+Energy is based on surplus heat (above 0) and is generated [[I]]before[[/I]] any cooling is applied.","","","","Thermal Generator,Imp. Thermal Generator,Adv. Thermal Generator,Exp. Thermal Generator","","",""
 "Thermal Guns","Part Group","","","","Thermal Guns","","","",""
 "Thermal Lance","Part","","","","","","","",""
 "Thermal Shield","Part","","","","","","","",""
