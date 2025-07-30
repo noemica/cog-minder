@@ -346,7 +346,7 @@
   },
   {
    "Name": "Executioner",
-   "Content": ""
+   "Content": "Executioners are relatively dangerous prototype combat robots deployed most often in high security areas or to attack serious threats to the safety of the complex. They are most dangerous at their maximum range of 23-24 tiles due to most opponents being unable to return fire, but they donât aim through walls and once theyâre being attacked they are approximately as durable as a [[H-88 Terminator]]. Executioners are also made of a very high proportion of rare and generally useful parts to Cogmind such as their Exp. Core Analyser, Imp. Quantum Reactor, Adv. Kinecellerator, and Enh. Biometal Legs, making them a worthwhile target to salvage for many builds."
   },
   {
    "Name": "Explorer",
@@ -1507,7 +1507,7 @@
     "Tracker",
     "V-Series"
    ],
-   "Content": "",
+   "Content": "Prototypes are a diverse set of robots that are frequently some combination of powerful, made in part of prototype technology, and rare/limited to certain areas. Some can be hacked with the appropriate prototype relay coupler, but many others are immune to hacking despite being the correct class. Other than these patterns, prototypes tend to not have much in common with each other and should be strategized around individually.",
    "Spoiler": "Spoiler"
   },
   {
@@ -3478,7 +3478,7 @@
   },
   {
    "Name": "Enh. Biometal Leg",
-   "Content": ""
+   "Content": "Enh. Biometal legs are a high rating prototype leg with above average speed, integrity, and support with unremarkable movement costs. Combined with their repairability, they can serve as a reliable backbone for legs builds.\n\n[[Spoiler]]Of particular note is their use by [[Executioner]] class robots, allowing one to obtain them out of depth in sufficient quantities by visiting [[Warlord]] and less reliably [[Garrison]] areas.[[/Spoiler]]"
   },
   {
    "Name": "Enh. Coil Gun",
@@ -4246,7 +4246,7 @@
   },
   {
    "Name": "Hvy. Autocannon",
-   "Content": ""
+   "Content": "Hvy. Autocannons are two slot kinetic cannons with a notably higher matter cost than most other non-unique Hvy. kinetic cannons, but without the +Delay that others frequently have. Their high coverage combined with their unrepairable nature and being exclusively found on [[Spoiler]][[Bouncer]][[/Spoiler]] class robots means they are likely to be a short term armament for most players if used.\n\nThis weapon is implied to have been developed by the [[Exiles (Group)]] as an incomplete version of the [[AWS/Autocannon]]."
   },
   {
    "Name": "Hvy. Battle Rifle",
