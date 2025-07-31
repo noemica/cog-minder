@@ -80,7 +80,7 @@ There are 2 types of exits on Access floors. Both exits can be identified by lon
 [[List]][[Surface]] exit: There are 2 sides to this Surface exit. One side is locked behind an 80 armor Sealed Barrier locked by a [[Terminal]] with a base 7% open chance. The other side has Sealed Heavy Doors that are much easier to break through, but is guarded by 2 Colossi. Blowing up the Energy Cyclers will open only the side with the Sealed Barrier. Trying to rush head-on past the Behemoths is usually not recommended due to their extreme damage output and heavy knockback.|[[Redacted]][[Command]] exit: There are 2 sides to this Command exit. One side has a 2 tile snaking corridor that has 3 consecutive Sealed Barriers. Each has a base 30% open chance. The other side has a single row of Sealed Heavy Doors, a guard area with 2 Terminators and 2 Colossi, and 3 more Sealed Heavy Doors blocking the exit. Blowing up the Energy Cycler will only open the side with the 3 Sealed Barriers.[[/Redacted]][[/List]]
 There are some effective ways at getting through the unguarded parts of each exit:
 [[List]]Blowing up the Energy Cyclers|A reasonable stack of offensive and defensive [[Hackware]]|Powerful thermal cannons like [[Cld. Nova Cannon]], [[Null Cannon]], [[Core Cannon]], [[Potential Cannon]], or [[Imp. Potential Cannon]]. The Sealed Barriers have 80 armor and high damage resistances to all common types except for Thermal damage.|The Terminal hacking utilities [[Skeleton Box]] or [[01-MTF's Autohacker]]|The digging [[Alien Artifacts]] [[Matter Drive]] or [[Terrabomb]] or the digging weapon [[LU-1G1's Laser Shovel]]|The Alien Artifact [[Spacefold Activator]]|Using an EM [[Launchers|Launcher]] on a high rating [[Reactors|Reactor]] dropped on the floor next to the Sealed Barrier to explode it[[/List]]","","","","","","",""
-"Access_0","Location","Access_0 is a non-[[0b10]] [[Branch]] off of [[Command]] that only appears on -1. It is the home to the [[Architect]], the [[A bots]], and several types of Enhanced bots. Access_0 is a very heavily combat-oriented map that has 2 unique wintypes available and has the Architect present, a special boss bot that will award a + on the scoresheet when defeated. It features a multitude of unique bots, a unique bossfight mechanic, and many of the strongest hostiles in the game to fight.
+"Access_0","Location","Access_0 is a non-[[0b10]] [[Branch]] off of [[Command]] that only appears on -1. It is the home to the [[Architect]], the [[A Bots]], and several types of Enhanced bots. Access_0 is a very heavily combat-oriented map that has 2 unique wintypes available and has the Architect present, a special boss bot that will award a + on the scoresheet when defeated. It features a multitude of unique bots, a unique bossfight mechanic, and many of the strongest hostiles in the game to fight.
 The overall structure of Access_0 can be split into 2 groups with a small bridge connecting section guarded by [[A2]].
 
 [[Heading]]Layout[[/Heading]]
@@ -117,7 +117,7 @@ Similar to the terminators, it is not possible to hit the Architect with the L-C
 If any Enhanced bots or A bots are assimilated by disruption and rewiring or via the [[Field Lobotomy Kit]] and the Architect spots them, a log message [[GameText]]Architect flashes a signal at [Bot Name].[[/GameText]] will appear, and the bot will self-destruct. Bots that self-destruct will drop loot normally according to their salvage. This usually results in some pretty large loot pile explosions, especially for some of the lower numbered A bots. Although these bots cannot be used as allies, assimilation is a good way to let the Architect get rid of them rather than fighting them yourself.
 [[Heading:3]]Defeat[[/Heading]]
 The Architect is a sore loser. If destroyed, the Singularity Gate will be activated (if intact) and trigger a 10 turn countdown. Cogmind must either use a Transdimensional Reconstructor and escape out the exit at the top of the map near the Slip Node or destroy the Gate machine within these 10 turns to avoid instant death.
-[[Heading:2]][[A bots]][[/Heading]]
+[[Heading:2]][[A Bots]][[/Heading]]
 The A bots are a series of very powerful and unique enemies, most of which only appearing in Access_0 or are allies on other maps. A8 appears at the entrance to the map and A2 guards the ""bridge"" to the left side of the map. [[A7]] does not appear on this map at all. Other than that, [[A6]], [[A5]], [[A4]], and [[A3]] all appear after Cogmind has explored a certain percentage of the map. They appear at roughly 10-15%, 25-30%, 45-50%, and 70-75% map exploration respectively. This is only affected by tiles seen by Cogmind and not other forms of intel such as drones or terrain scanning. If A8 was destroyed in [[Zion]], or A5 was in [[Lab]], they will not appear in Access_0. All A bots also maintain perfect tracking on Cogmind and can not be shaken.
 [[Heading:2]][[Enhanced Programmer|Enhanced Programmers]][[/Heading]]
 Enhanced Programmers are a unique type of bot that can show up in Access_0, but only under certain conditions. Using the [[Data Miner|Data Miner's]] [[Data Conduit]] or bringing more than 2 combat allies (bots with weapons) into the map will trigger these bots to spawn. They are extremely tough bots with many resistances and carry an [[Adv. Remote Force Field]] that will shield other allies. They will roam around the map as lone patrol bots.
@@ -1869,7 +1869,7 @@ Impale|[[TooltipText]]Impale[[/TooltipText]]|[[Piercing Weapons]]||
 [[Heading]]Immunities[[/Heading]]
 Some bots have resistances that provide immunity to some criticals or some of their effects:
 [[List]]
-Coring: [[TooltipText]]Coring[[/TooltipText]][[/Spoiler]]
+Coring: [[TooltipText]]Coring[[/TooltipText]]
 |Meltdown: [[TooltipText]]Meltdown[[/TooltipText]]
 |[[Spoiler]]Criticals[[/Spoiler]]: [[Spoiler]][[TooltipText]]Criticals[[/TooltipText]][[/Spoiler]]
 |[[Spoiler]]Dismemberment[[/Spoiler]]: [[Spoiler]][[TooltipText]]Dismemberment[[/TooltipText]][[/Spoiler]]
@@ -4688,7 +4688,7 @@ A few specific legs are capable of [[Special Propulsion Modes]].","","","Legs","
 The majority of maps are randomly generated, meaning no two runs or two depths will have the exact same layout. However, the overall structure of each location type is very similar. Some maps tend to be more open with large rooms and wide corridors, while others are more maze-like with tiny rooms and many small corridors leading into dead-ends. A few branches are partially or entirely static in layout and tend to be much more predictable in contents than main floors.
 Branches do not progress upward toward the exit and can often be harder than the main floors. However, branches can offer unique challenges and have similarly unique rewards that can dramatically change a run. This could be powerful unique items, special events, gameplay-altering alignment, or rare permanent buffs.
 The following is a list of all locations in Cogmind:
-[[AllLocations]]","","","","","","","Access,Access_0,Archives,Armory,Caves,Cetus,Command,DSF,Data Miner,Exiles,Extension,Factory,Garrison,Hub_04(d),Lab,Materials,Mines,Protoforge,Quarantine,Recycling,Research,Scraptown,Scrapyard,Section 7,Storage,Subcaves,Surface,Testing,Warlord,Wastes,Zhirov,Zion,Zion Deep Caves"
+[[AllLocations]]","","","","","","","Access,Access_0,Archives,Armory,Caves,Cetus,Command,DSF,Data Miner,Exiles (Location),Extension,Factory,Garrison,Hub_04(d),Lab,Materials,Mines,Protoforge,Quarantine,Recycling,Research,Scraptown,Scrapyard,Section 7,Storage,Subcaves,Surface,Testing,Warlord,Wastes,Zhirov,Zion,Zion Deep Caves"
 "Longsword +1","Part","","","","","","","",""
 "Lrg. Battery","Part","","","","","","","",""
 "Lrg. Botcube","Part","","","","","","","",""
@@ -6886,7 +6886,7 @@ The following items can be obtained by attacking Scraptown's inhabitants and are
 [[Field Manipulator]]: Science Guys shell prototype|
 [[ID Mask]]: Obtained by killing a Scientist in Chapter 10|
 [[LU-1G1's Laser Shovel]]: Obtained by digging in the center dirt of the LU-1G1's Boring Crew room|
-M[[A-1KR's Cyclogen]]: Curator's Association Exhibit|
+[[MA-1KR's Cyclogen]]: Curator's Association Exhibit|
 [[Master Drone Bay]]: Science Guys shell prototype|
 [[Personal Teleporter v0.10]]: Science Guys shell prototype|
 [[PL-3XN's Ring of Power]]: Obtained in one of two ways: Either killing the [[Explorer]] in the Fellowship of the Rings room or by taking it from a Curator's Association exhibit|
@@ -6911,7 +6911,7 @@ Aside from allies, there are few other Exiles Prototypes that can handle the Tri
 Cogmind should have an efficient way of dealing with the dozens of average to weak-strength bots that will swarm Scraptown after hostilities begin. All bots will rush straight to the center of the map and Cogmind needs to either hide or take them out very efficiently. Simply average-depth loot will be unable to take out the huge rush of bots. The main strategies are to have an overwhelming force in the center of the map or to stand further away down a corridor and try to take bots out in smaller groups. If opting for the second strategy, long-ranged weaponry is the best to take advantage of some of the shorter-ranged bots.
 Here are some good tools for the job:
 [[List]]
-Good [[Launcher|Launchers]]: Since these bots tend to roam the map in groups, having powerful decently-ranged launchers like the [[Hvy. Rocket Launcher]] is the best way to take out groups from afar.|
+Good [[Launchers]]: Since these bots tend to roam the map in groups, having powerful decently-ranged launchers like the [[Hvy. Rocket Launcher]] is the best way to take out groups from afar.|
 AWS/Autocannon: Autocannon has enough damage to core any bot on this level, builtin targeting, fires beyond Cogmind's vision, and even has no upkeep cost.|
 [[AWS/Gauss]]: Notably worse than the Autocannon with significantly lower damage, but still good for similar traits. With 3 weapon slots, can be combined with another non-AWS weapon for additional damage.|
 Siege Cannon: Easily lootable off of Triborg with a [[CPS Tube]]. This requires the use of [[Tri-treads]] also dropped from Triborg to enter siege mode and avoid the recoil chance. Siege Cannon is not a great weapon to stay in the center of the map with, but retreating down the corridors where it is most effective can be difficult too.|
@@ -7075,7 +7075,7 @@ After all this, the Architect can finally be fought normally. For grounded build
 [[Heading:2]]Escape/cleaning up[[/Heading]]
 After the Architect is destroyed, the Singularity Gate will be trigger a 10 turn countdown if still intact. Grounded builds may need to be close to the Architect if relying on the Transdimensional Reconstructor that it drops. The singularity countdown will kill Cogmind instantly if still on the map in that time. Slower builds will usually need to detach all parts and core hover to equip the Reconstructor and to make it to the exit. Airborne propulsion usually have enough time to get to the exit without needing to do this.
 If the gate is destroyed, however, there is an unlimited amount of time to clean up any stragglers on the map. Get the [[Architect Data Core]] and head to the bottom-left corner of the map to open up the Architect Logs Terminal and obtain any new lore. Exploring the rest of the map will cause all remaining A bots to spawn as normal. The A bots and any other remaining Enhanced bots can be fought for extra points.","Redacted","","","","","",""
-"Strategy/Defeating MAIN.C","Other","[[Command]] is one of the toughest maps in the game and has a lot to prepare for. Since the most challenging encounters on the map are fixed, it is possible to prepare for many things ahead of time. Unlike the basic [[Wintype]], combat is mandatory in order to kill [[MAIN.C]], although Cogmind does not necessarily need to do any fighting. However, it is always a good idea to be able to meaningfully contribute to the fight. [[Command#cave_seal_contents|Cave Seal allies]] can be incredibly strong, and can even kill MAIN.C unaided in some cases.
+"Strategy/Defeating MAIN.C","Other","[[Command]] is one of the toughest maps in the game and has a lot to prepare for. Since the most challenging encounters on the map are fixed, it is possible to prepare for many things ahead of time. Unlike the basic [[Wintypes]], combat is mandatory in order to kill [[MAIN.C]], although Cogmind does not necessarily need to do any fighting. However, it is always a good idea to be able to meaningfully contribute to the fight. [[Command#cave_seal_contents|Cave Seal allies]] can be incredibly strong, and can even kill MAIN.C unaided in some cases.
 
 [[Heading]]Seal Strategy[[/Heading]]
 Both [[Warlord (Alignment)]] and [[Imprint]] seals are quite powerful and have the potential to carry a run through the [[Command#doom_corridor|Doom Corridor]], and sometimes even through MAIN.C. Since seals have a 0% base success rate, opening them requires some forward planning. A decent stack of [[Hackware]] is all but required to open seals successfully. Killing 0b10 [[Operator|Operators]] can be a good way to stockpile Hackware ahead of time. Destroying one or more Network Hubs in [[Hub_04(d)]] can provide free defensive hacking bonuses. Prototype Hackware is very useful here for minimizing the number of utilities that need to be carried around. Other ways to increase hacking capabilities are the [[Terminal]] Trojan(Botnet) hack and the allied Operator bonus.
@@ -7116,7 +7116,7 @@ This launcher is uniquely good at softening up the Doom Corridor due to dealing 
 This part is very strong for slow treaded bots. Either get into line of sight or shoot with a long-ranged weapon to attract attention, then warp out of the corridor to safety. This allows for easily separating the Combat Programmers to destroy them first without any AEGIS protection. The M Guards will take a long time to make their way over.
 [[Heading:3]]Defensive [[Hackware]][[/Heading]]
 Defensive Hackware will reduce the chances of Combat Programmers being able to hack allies. Very useful if Cogmind has seal allies.
-[[Heading:3]][[Energy Wells]][[/Heading]]
+[[Heading:3]][[Energy Wells]] (DoCo)[[/Heading]]
 Using stored energy to continue firing EM weaponry or to power expensive [[Defensive Utilities]] is always useful in combat.
 [[Heading:3]]Traps[[/Heading]]
 [[Fire Trap|Fire Traps]] and EM traps like [[EM Surge Trap|EM Surge Traps]] can be used to take out the Combat Programmers and M Guards respectively.
@@ -7142,7 +7142,7 @@ This strategy works best with fast airborne builds or tread builds with the Micr
 Using RIF with Prototype Relay Couplers is an easy way to handle some bots in the Doom Corridor. However, Combat Programmers are immune to all RIF effects, which makes this strategy a little awkward. After taking out the Combat Programmers by whatever means are available, 26 charges of these couplers will assimilate the 2 M Guards.
 [[Heading:2]]Accessing MAIN.C[[/Heading]]
 MAIN.C is locked behind a very powerful [[Reinforced Walls#command|sealed barrier with 80 armor]]. The Terminal has a high base success rate of 60% but may not always be available. If Cogmind has hit High Security or if the Terminal is blown up while fighting the Doom Corridor, alternative methods must be used to gain entry.
-Powerful Thermal weaponry including [[Cld. Nova Cannon]], [[Null Cannon]], [[Potential Cannon]], [[Imp. Potential Cannon]], and [[Core Cannon]] can be used to dig through the center. An high rating reactor explosion from an [[Electromagnetic Launcher]], such as the [[Shock Bomb Launcher]] sometimes available on [[Warlord D3-CKR]], can destroy a few wall tiles at a time. [[Plasma Cutters]] can be used to disassemble the Sealed Barrier as well. Another alternative is to skip through the barrier with a [[Spacefold Activator]], or to dig around it using a [[Matter Drive]], [[LU-1G1's Laser Shovel]], or [[Terrabomb]].
+Powerful Thermal weaponry including [[Cld. Nova Cannon]], [[Null Cannon]], [[Potential Cannon]], [[Imp. Potential Cannon]], and [[Core Cannon]] can be used to dig through the center. An high rating reactor explosion from an [[Electromagnetic Launchers|Electromagnetic Launcher]], such as the [[Shock Bomb Launcher]] sometimes available on [[Warlord D3-CKR]], can destroy a few wall tiles at a time. [[Plasma Cutters]] can be used to disassemble the Sealed Barrier as well. Another alternative is to skip through the barrier with a [[Spacefold Activator]], or to dig around it using a [[Matter Drive]], [[LU-1G1's Laser Shovel]], or [[Terrabomb]].
 
 [[Heading]]MAIN.C Strategy[[/Heading]]
 After bypassing the Doom Corridor in one way or another, the big boss MAIN.C lies ahead. The [[MAIN.C (Shell)|first form]] is the easier of the two. It is easier to hit, has weaker weapons, lacks some resistances that the second phase has, and has no strict timer. However, the disruption effects on the [[Hpw. Disruptor Cannon|Hpw. Disruptor Cannons]] can be quite annoying, especially for builds that are very close to the support limit or builds with few weapons. Consider [[Dynamic Insulation Systems]] or [[Shieldings]] to protect crucial parts from Disruption.
@@ -7162,10 +7162,10 @@ while MAIN.C himself is highly resistant to Launchers, the Garrison ARCs can wan
 [[Heading:3]]Chance to hit core utilities[[/Heading]]
 Specifically, [[Core Analyzers]] and [[Armor Integrity Analyzers]]. Since killing MAIN.C quickly is the highest priority, these utilities are greatly appreciated to cut down time to kill. Killing quicker also has a stacking effect. The less time MAIN.C is alive, the less time he has to regenerate core, and the fewer overall core damage is required.
 [[Heading:3]]Kinetic resistance[[/Heading]]
-For example, [[Focal Shields]] or kinetic [[Resistance Armor]] like the [[Hvy. Reactive Plating]]. Being able to cut down on the kinetic damage dealt by phase two can help a lot. Hvy. Reactive Plating in particular can be acquired on the map from [[Warlord 4Z-XS3]]
+For example, [[Resistance Devices|Focal Shields]] or kinetic [[Resistance Armor]] like the [[Hvy. Reactive Plating]]. Being able to cut down on the kinetic damage dealt by phase two can help a lot. Hvy. Reactive Plating in particular can be acquired on the map from [[Warlord 4Z-XS3]]
 [[Heading:3]]Any Remote [[Datajacks|Datajack]][[/Heading]]
 The A7 MAIN.C hack can only be delivered with a manual hack performed with a Datajack.
-[[Heading:3]][[Energy Wells]][[/Heading]]
+[[Heading:3]][[Energy Wells]] (MC)[[/Heading]]
 Powering Force Fields or expensive Energy Cannons can require a lot of energy, and storing some in advance is always helpful. Consider pre-dropping energy wells so that energy is available when needed.
 [[Heading:3]][[Matter Compressors]] or [[Tractor Beams]][[/Heading]]
 Kinetic weapons, especially [[Ballistic Cannons]], can eat through stored matter very quickly. Without a good way to replenish it mid-combat, Cogmind can run out of matter entirely. Phase one will typically drop a large amount of matter that can be gathered mid-combat with a Tractor Beam. Matter Compressors do a good job of storing matter ahead of time. [[Exp. Matter Compressor|Exp. Matter Compressors]] can be looted from M Guards earlier. In a pinch, [[K-01 Serf|K-01 Serfs]] can carry [[Med. Matter Pod|Med. Matter Pods]]
@@ -7236,7 +7236,7 @@ Assuming the fight went reasonably well at this point, the remainder of the map 
 [[/List]]
 
 [[Heading]]Extension Dig[[/Heading]]
-One alternative to fighting through the center of the map is to dig across through the top. This is typically a 10 tile dig, which has a reasonable risk of cave-ins occurring. If there were few allies gained or they were destroyed, or if Cogmind's offensive ability is very low, this alternative route may be preferable. Beware [[cave-ins]] this way.","Spoiler","","","","","",""
+One alternative to fighting through the center of the map is to dig across through the top. This is typically a 10 tile dig, which has a reasonable risk of cave-ins occurring. If there were few allies gained or they were destroyed, or if Cogmind's offensive ability is very low, this alternative route may be preferable. Beware [[Cave-ins]] this way.","Spoiler","","","","","",""
 "Strategy/Hub_04(d)","Other","Blowing up Network Hubs in [[Hub_04(d)]] can be very valuable to the run thanks to the huge defensive hacking bonuses provided. However, destroying one as soon as you see one by shooting immediately is usually a bad idea. Shooting them directly causes a ton of [[Alert]] around the order of several hundred due to their large destructive radius. The [[Lightning]] squads that follow can also be very scary for an unprepared Cogmind. It is often a better idea to blow up the Hubs from a distance, especially when right next to exit.
 
 [[Heading]]Explosion Methods[[/Heading]]
@@ -7244,7 +7244,7 @@ There are a lot of methods to blow up Network Hubs that do not trigger the alert
 [[Heading:2]]Hostile attack[[/Heading]]
 If a bot stands in front of a Network Hub and an [[0b10]]-aligned bot misses into it, the destruction will be associated with that bot and not Cogmind. This works especially well with allies and drones. Position the ally in front of a Hub and attacking enemies can shoot around or through them to trigger the explosion. The Lightning [[EMDS]] has a 100% penetration, so any allies standing in front of a Hub is sure to get it to explode.
 [[Heading:2]][[Traps|Trap]] explosion[[/Heading]]
-Traps never assign Alert to Cogmind unless manually triggering the trap. Any explosive or area EM traps will work, [[I]]but[[/I]] if the trap triggers due to Cogmind's [[Corruption]] then the alert isn't assigned, which can be used to avoid the alert. For example, plant a [[Dirty Bomb]] trap and then walk back and forth over it. Eventually, this will trigger the trap to explode.
+Traps never assign Alert to Cogmind unless manually triggering the trap. Any explosive or area EM traps will work, [[I]]but[[/I]] if the trap triggers due to Cogmind's [[Corruption]] then the alert isn't assigned, which can be used to avoid the alert. For example, plant a [[Dirty Bomb Trap]] and then walk back and forth over it. Eventually, this will trigger the trap to explode.
 [[Heading:2]][[Plasma Cutter|Regular]] or [[Imp. Plasma Cutter]][[/Heading]]
 Plasma Cutters can destroy explosive machines like Hubs without triggering the explosion. This can be nice for for Cogmind to avoid being caught out in the open in a bad defensive position. Because the majority of the Alert gained from destroying a Hub is from the explosion, this will reduce the typical several hundred Alert gain down to just 15.
 [[Heading:2]]Force(Sabotage)[[/Heading]]
@@ -7257,7 +7257,7 @@ The best way to deal with the Lightning squads is to use critical destroy weapon
 [[Heading:2]]Evasion[[/Heading]]
 Lightning have Scan Cloak 5 which makes them entirely undetectable by [[Sensor Arrays]]. However, there are still some methods that can be used to track them:
 [[List]]
-Sensor Arrays can still track the [[I-47|Archangel]] that follows the squads around|
+Sensor Arrays can still track the [[I-47 Archangel]] that follows the squads around|
 [[Seismic Detector]]|
 [[FarCom]]|
 [[IFF Parser]]
@@ -7912,7 +7912,7 @@ Using a Transdimensional Reconstructor also deteriorates core integrity by 5-10%
 
 [[Heading]]Lore[[/Heading]]
 [[Spoiler]][[Lore]]0b10 Records|Transdimensional Reconstructor[[/Lore]][[/Spoiler]]
-[[Redacted]][[Lore]]0b10 Records|Reconstruction Test Results[[/Lore]][[/Redacted]]","Spoiler","","","Transdimensional Reconstructor,Hpw. Transdimensional Reconstructor,Supercharged TR","","",""
+[[Redacted]][[Lore]]Quarantine Records|Reconstruction Test Results[[/Lore]][[/Redacted]]","Spoiler","","","Transdimensional Reconstructor,Hpw. Transdimensional Reconstructor,Supercharged TR","","",""
 "Transfer Station","Other","","","","","","","",""
 "Transmission Jammer","Part","","","","","","","",""
 "Transmission Jammers","Part Group","Transmission jammers are parts allowing to limit consequences of your activity by blocking enemy signals. Need [[Line of Sight|LoS]] to enemy to work.
