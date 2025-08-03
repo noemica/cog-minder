@@ -35,10 +35,8 @@ function InfoboxSupergroupContent({
     groupEntry: WikiEntry;
     spoiler: Spoiler;
 }) {
-    return (groupEntry.childEntries).map((subgroupEntry) => {
-        const childEntries = (subgroupEntry.childEntries).filter((entry) =>
-            canShowSpoiler(entry.spoiler, spoiler),
-        );
+    return groupEntry.childEntries.map((subgroupEntry) => {
+        const childEntries = subgroupEntry.childEntries.filter((entry) => canShowSpoiler(entry.spoiler, spoiler));
 
         if (childEntries.length === 0) {
             return undefined;
@@ -88,9 +86,7 @@ function InfoboxContent({
         return <InfoboxSupergroupContent activeEntry={activeEntry} groupEntry={groupEntry} spoiler={spoiler} />;
     }
 
-    const childEntries = (groupEntry.childEntries).filter((entry) =>
-        canShowSpoiler(entry.spoiler, spoiler),
-    );
+    const childEntries = groupEntry.childEntries.filter((entry) => canShowSpoiler(entry.spoiler, spoiler));
 
     return (
         <tr>
@@ -165,7 +161,7 @@ function InfoboxTable({
             entry.type === "Bot Supergroup" ||
             entry.type === "Part Group" ||
             entry.type === "Part Supergroup" ||
-            (entry.type === "Other" && (entry.childEntries).length > 0)
+            (entry.type === "Other" && entry.childEntries.length > 0)
         ) {
             for (const childEntry of entry.childEntries) {
                 if (hasVisibleDescendent(childEntry)) {
@@ -214,15 +210,7 @@ export default function WikiGroupInfobox({
 }) {
     // Default to expanding at the top level group or if we're at the
     // second highest level in a part group/supergroup
-    const [show, setShow] = useState(
-        activeEntry === groupEntry ||
-            (activeEntry.parentEntries.includes(groupEntry) &&
-                (groupEntry.type === "Bot Group" ||
-                    groupEntry.type === "Bot Supergroup" ||
-                    groupEntry.type === "Part Group" ||
-                    groupEntry.type === "Part Supergroup" ||
-                    groupEntry.type === "Other")),
-    );
+    const [show, setShow] = useState(activeEntry === groupEntry || activeEntry.parentEntries.includes(groupEntry));
 
     if (groupEntry.hasSupergroupChildren) {
         return (
@@ -238,7 +226,7 @@ export default function WikiGroupInfobox({
                     </tbody>
                 </table>
                 {show &&
-                    (groupEntry.childEntries).map((childEntry) => {
+                    groupEntry.childEntries.map((childEntry) => {
                         return (
                             <InfoboxTable
                                 key={childEntry.name}

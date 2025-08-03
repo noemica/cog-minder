@@ -352,6 +352,32 @@ function addOther(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, 
         }
     }
 
+    // 
+    function combineRootChildrenIntoGroups(entry: WikiEntry) {
+        const rootChildEntries: WikiEntry[] = [];
+
+        for (let i = entry.childEntries.length - 1; i >= 0; i--) {
+            const childEntry = entry.childEntries[i];
+            if (childEntry.childEntries.length === 0) {
+                rootChildEntries.push(childEntry);
+                entry.childEntries.splice(i, 1);
+            }
+        }
+
+        if (rootChildEntries.length > 0) {
+            entry.childEntries.push({
+                alternativeNames: [],
+                childEntries: rootChildEntries,
+                content: "",
+                fakeGroup: true,
+                name: "Other",
+                parentEntries: [],
+                spoiler: "None",
+                type: "Other",
+            });
+        }
+    }
+
     // Figure out which pages are supergroups
     for (const otherEntry of wiki.Other) {
         const entry = allEntries.get(otherEntry.Name)!;
@@ -359,29 +385,14 @@ function addOther(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, 
         for (const parentEntry of entry.parentEntries) {
             if (parentEntry.parentEntries.length > 0) {
                 for (const grandparentEntry of parentEntry.parentEntries) {
-                    grandparentEntry.hasSupergroupChildren = true;
+                    if (grandparentEntry.parentEntries.length > 0) {
+                        for (const secondGrandparentEntry of grandparentEntry.parentEntries) {
+                            secondGrandparentEntry.hasSupergroupChildren = true;
 
-                    const rootChildEntries: WikiEntry[] = [];
-
-                    for (let i = grandparentEntry.childEntries.length - 1; i >= 0; i--) {
-                        const grandparentChildEntry = grandparentEntry.childEntries[i];
-                        if (grandparentChildEntry.childEntries.length === 0) {
-                            rootChildEntries.push(grandparentChildEntry);
-                            grandparentEntry.childEntries.splice(i, 1);
+                            combineRootChildrenIntoGroups(secondGrandparentEntry);
                         }
-                    }
-
-                    if (rootChildEntries.length > 0) {
-                        grandparentEntry.childEntries.push({
-                            alternativeNames: [],
-                            childEntries: rootChildEntries,
-                            content: "",
-                            fakeGroup: true,
-                            name: "Other",
-                            parentEntries: [],
-                            spoiler: "None",
-                            type: "Other",
-                        });
+                    } else {
+                        combineRootChildrenIntoGroups(grandparentEntry);
                     }
                 }
             }
