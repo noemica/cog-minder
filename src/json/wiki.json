@@ -10161,7 +10161,14 @@
   },
   {
    "Name": "Fanart",
-   "Content": "Check out the following artists' fanart pages:\n[[List]][[Fanart/CaptainWinky|CaptainWinky]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]]|[[Fanart/jimmyl|jimmyl]][[/List]]"
+   "Content": "Check out the following artists' fanart pages:\n[[List]][[Fanart/CaptainWinky|CaptainWinky]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]]|[[Fanart/jimmyl|jimmyl]][[/List]]",
+   "Subpages": [
+    "Fanart/CaptainWinky",
+    "Fanart/Maiker",
+    "Fanart/Radbanker",
+    "Fanart/jimmyl",
+    "Fanart/plasmoidman"
+   ]
   },
   {
    "Name": "Fanart/CaptainWinky",
@@ -10436,7 +10443,21 @@
   },
   {
    "Name": "Strategy",
-   "Content": "Strategy guides to complete various content."
+   "Content": "Strategy guides to complete various content.",
+   "Subpages": [
+    "Strategy/Attacking Scraptown",
+    "Strategy/Cetus",
+    "Strategy/Defeating Architect",
+    "Strategy/Defeating MAIN.C",
+    "Strategy/Defeating Superfortress",
+    "Strategy/Extension",
+    "Strategy/Hub_04(d)",
+    "Strategy/Looting Protoforge",
+    "Strategy/W8 Fortifying 0b10",
+    "Strategy/W9 Defending 0bPrime",
+    "Strategy/Wastes",
+    "Strategy/Zion Deep Caves"
+   ]
   },
   {
    "Name": "Strategy/Attacking Scraptown",

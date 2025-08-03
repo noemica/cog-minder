@@ -2771,7 +2771,7 @@ Main access exits: These always lead to the next main floor, either Factory or [
 Several non-standard exits also appear in Factory. [[Chute Trap|Chute Traps]] will throw Cogmind into [[Wastes]] which can end many good runs if unprepared. Using a [[Datajack]] on a [[K-01 Serf|Serf]] for the find_chute hack is very effective to either reveal traps to avoid or areas to head toward if planning to take on the [[C-40 Crusher|Crushers]] in combat. The other type of exit is a [[DSF]]. These exits can be hacked open at distinctive DSF terminals but will automatically lock upon being spotted by any hostile. Stealth or good luck is required to make it to these exits.","","","","","","",""
 "Falx","Part","","","","","","","",""
 "Fanart","Other","Check out the following artists' fanart pages:
-[[List]][[Fanart/CaptainWinky|CaptainWinky]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]]|[[Fanart/jimmyl|jimmyl]][[/List]]","","","","","","",""
+[[List]][[Fanart/CaptainWinky|CaptainWinky]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]]|[[Fanart/jimmyl|jimmyl]][[/List]]","","","","","","","Fanart/CaptainWinky,Fanart/Maiker,Fanart/Radbanker,Fanart/jimmyl,Fanart/plasmoidman"
 "Fanart/CaptainWinky","Other","Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]].
 
 [[Heading]]G-11 Fodder[[/Heading]]
@@ -6932,7 +6932,7 @@ Storage Units have special immunity to nearly all part-severing and instant dest
 
 This article was last updated during Beta 15.","","","","Sml. Storage Unit,Med. Storage Unit,Lrg. Storage Unit,Hcp. Storage Unit,Huge Storage Unit,Cargo Storage Unit,Humpback,Lgt. Humpback,Vmp. Humpback,Lightpack 2.0,Cep. Antigrav Storage Unit","","",""
 "Storm Laser","Part","","","","","","","",""
-"Strategy","Other","Strategy guides to complete various content.","","","","","","",""
+"Strategy","Other","Strategy guides to complete various content.","","","","","","","Strategy/Attacking Scraptown,Strategy/Cetus,Strategy/Defeating Architect,Strategy/Defeating MAIN.C,Strategy/Defeating Superfortress,Strategy/Extension,Strategy/Hub_04(d),Strategy/Looting Protoforge,Strategy/W8 Fortifying 0b10,Strategy/W9 Defending 0bPrime,Strategy/Wastes,Strategy/Zion Deep Caves"
 "Strategy/Attacking Scraptown","Other","[[Scraptown]] is an extremely challenging mid-game area to fight and full-clear. The majority of the armed bots are individually weak, but they appear in the dozens and can easily overwhelm Cogmind and any allies. Many unique items are only obtainable by destroying terrain or killing certain bots, which can make attacking Scraptown seem like a promising endeavor. However, there is a serious drawback of going for a full clear or even smashing a container for one item and running: The [[Zion]] and [[Warlord (Location)]] maps will become hostile when Cogmind tries to enter them. The [[Scraptown#civil_war|Civil War]] is a highly recommended alternative to gaining loot from this map. It is much easier and less risky than a full Scraptown murder is. As such, a Scraptown kill is a challenge that exists more for bragging rights than being a truly beneficial move.
 
 [[Heading]]Items Obtainable by Murder[[/Heading]]
