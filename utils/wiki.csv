@@ -534,7 +534,7 @@ There are 3 exits on this map but only 2 kinds of exits:
 "Arm. Scrap Engine","Part","Created from a [[Scrap Engine]] when a [[Armor|Protection]]-type part is fed. See the Scrap Engine page for more details. When destroyed, reverse back into a normal Scrap Engine.","","","","","","",""
 "Arm. Treads","Part","","","","","","","",""
 "Arm. Wheel","Part","","","","","","","",""
-"Armageddon Trap","Part","","","","","","","",""
+"Armageddon Trap","Part","Often found uninstalled in garrison caches and rarely elsewhere, these traps have twice the radius of conventional launchers and very low falloff. ","","","","","","",""
 "Armor","Part Supergroup","Armor protects other parts, and the core, by having high coverage and integrity. The coverage makes attacks less likely to hit other parts or the core; the integrity allows the armor to tank many hits before being destroyed.
 
 Some armor provides additional functionality, like granting resistance to a certain damage type [[Spoiler]]or regenerating integrity over time while powered[[/Spoiler]].
@@ -5091,7 +5091,9 @@ A bot gains 1 momentum each time it moves in the same direction. It loses 1 mome
 "Multirail","Part","","","","","","","",""
 "Multireflex Exoskeleton","Part","","","","","","","",""
 "Multitargeting Array","Part","","","","","","","",""
-"Multitool","Part","","","","","","","",""
+"Multitool","Part","When reconfiguring a terminal, Multitools apply a modifier between -20% and +50% with no known weighting. This combines very well with defensive hackware as you have the option to only put it on once you’ve gotten a high roll on a reconfigured terminal.
+
+Multitools are mainly found by looting [[Artisan]]s, but they can also be found in other assorted places, such as [[Subcaves]] scrap piles, occasionally falling from subcaves twisted machinery, a dropped item that a [[Subdweller]] was carrying, a rare creation from a [[Cobbler Unit]], and as a recipe from [[Spoiler]][[Tech Extrapolator]][[/Spoiler]].","","","","","","",""
 "Mutant","Bot Group","Mutants are [[Treads|treading]] [[Derelict]] combat robots that wield a large variety of offensive and defensive parts. They are not exactly the same, but are quite similar to the [[0b10]] [[Sentry]] class of bots as offensive treading guard bots with mixed weaponry. Mutants are common bots that show up in many different types of Derelict encounters and events.","","Mutant (5),Mutant (6),Mutant (7),Mutant (8)","","","","",""
 "Mutant (5)","Bot","","","","","","","",""
 "Mutant (6)","Bot","","","","","","","",""

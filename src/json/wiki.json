@@ -2433,7 +2433,7 @@
   },
   {
    "Name": "Armageddon Trap",
-   "Content": ""
+   "Content": "Often found uninstalled in garrison caches and rarely elsewhere, these traps have twice the radius of conventional launchers and very low falloff. "
   },
   {
    "Name": "Armor Integrity Analyzer",
@@ -5606,7 +5606,7 @@
   },
   {
    "Name": "Multitool",
-   "Content": ""
+   "Content": "When reconfiguring a terminal, Multitools apply a modifier between -20% and +50% with no known weighting. This combines very well with defensive hackware as you have the option to only put it on once youâve gotten a high roll on a reconfigured terminal.\n\nMultitools are mainly found by looting [[Artisan]]s, but they can also be found in other assorted places, such as [[Subcaves]] scrap piles, occasionally falling from subcaves twisted machinery, a dropped item that a [[Subdweller]] was carrying, a rare creation from a [[Cobbler Unit]], and as a recipe from [[Spoiler]][[Tech Extrapolator]][[/Spoiler]]."
   },
   {
    "Name": "Myomer Exoskeleton",
