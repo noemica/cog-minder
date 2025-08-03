@@ -39,12 +39,11 @@ function BotGroupContent({
     setGroupSelection: (selection: string) => void;
     spoiler: Spoiler
 }) {
-    const botEntries = entry.extraData as WikiEntry[];
     const bots = useMemo(() => {
         // Filter out bots based on spoiler setting
         // However, also support viewing all bots past spoiler level if the user
         // opted past the spoiler block page
-        return botEntries.filter(
+        return entry.childEntries.filter(
             (botEntry) => {
                 return canShowSpoiler(botEntry.spoiler, spoiler) || canShowSpoiler(botEntry.spoiler, entry.spoiler);
             }
@@ -107,12 +106,11 @@ function ItemGroupContent({
     setGroupSelection: (selection: string) => void;
     spoiler: Spoiler;
 }) {
-    const itemEntries = entry.extraData as WikiEntry[];
     const items = useMemo(() => {
         // Filter out items based on spoiler setting
         // However, also support viewing all items past spoiler level if the user
         // opted past the spoiler block page
-        return itemEntries.filter(
+        return entry.childEntries.filter(
             (itemEntry) =>
                 canShowSpoiler(itemEntry.spoiler, spoiler) || canShowSpoiler(itemEntry.spoiler, entry.spoiler),
         );
@@ -138,7 +136,7 @@ function ItemGroupContent({
         ?.extraData as Item;
 
     const itemPicker =
-        itemEntries.length < 20 ? (
+        entry.childEntries.length < 20 ? (
             <div className="wiki-infobox-button-group">
                 <ExclusiveButtonGroup
                     buttons={itemButtons}

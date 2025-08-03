@@ -12,6 +12,7 @@ export type EntryType =
 
 export type WikiEntry = {
     alternativeNames: string[];
+    childEntries: WikiEntry[];
     content: string;
     extraData?: any;
     fakeGroup?: boolean;
