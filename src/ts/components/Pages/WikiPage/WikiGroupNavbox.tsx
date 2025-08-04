@@ -57,22 +57,6 @@ function InfoboxSupergroupContent({
     });
 }
 
-function getMaxEntryDepth(entry: WikiEntry) {
-    if (entry.type === "Part" || entry.type === "Bot" || entry.type == "Location") {
-        return 1;
-    } else if (entry.type === "Part Group" || entry.type === "Bot Group") {
-        return 2;
-    } else {
-        const childEntries = entry.childEntries;
-
-        if (childEntries.length === 0) {
-            return 1;
-        }
-
-        return 1 + Math.max(...childEntries.map((entry) => getMaxEntryDepth(entry)));
-    }
-}
-
 function InfoboxContent({
     activeEntry,
     groupEntry,
@@ -82,7 +66,7 @@ function InfoboxContent({
     groupEntry: WikiEntry;
     spoiler: Spoiler;
 }) {
-    if (getMaxEntryDepth(groupEntry) >= 3) {
+    if (groupEntry.getMaxEntryDepth() >= 3) {
         return <InfoboxSupergroupContent activeEntry={activeEntry} groupEntry={groupEntry} spoiler={spoiler} />;
     }
 
@@ -155,29 +139,7 @@ function InfoboxTable({
 
     const [show, setShow] = useState(activeEntry === groupEntry || isDescendent(activeEntry, groupEntry));
 
-    function hasVisibleDescendent(entry: WikiEntry) {
-        if (
-            entry.type === "Bot Group" ||
-            entry.type === "Bot Supergroup" ||
-            entry.type === "Part Group" ||
-            entry.type === "Part Supergroup" ||
-            (entry.type === "Other" && entry.childEntries.length > 0)
-        ) {
-            for (const childEntry of entry.childEntries) {
-                if (hasVisibleDescendent(childEntry)) {
-                    return true;
-                }
-            }
-        } else {
-            if (canShowSpoiler(entry.spoiler, spoiler)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    if (!hasVisibleDescendent(groupEntry)) {
+    if (!groupEntry.hasVisibleDescendant(spoiler)) {
         return undefined;
     }
 
@@ -208,9 +170,8 @@ export default function WikiGroupInfobox({
     groupEntry: WikiEntry;
     spoiler: Spoiler;
 }) {
-    // Default to expanding at the top level group or if we're at the
-    // second highest level in a part group/supergroup
-    const [show, setShow] = useState(activeEntry === groupEntry || activeEntry.parentEntries.includes(groupEntry));
+    // Default to expanding any entry that is a parent above the active entry
+    const [show, setShow] = useState(activeEntry === groupEntry || activeEntry.hasAncestorEntry(groupEntry));
 
     if (groupEntry.hasSupergroupChildren) {
         return (
