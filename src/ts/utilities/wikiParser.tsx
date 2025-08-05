@@ -1,3 +1,4 @@
+import { ColumnDef, GroupColumnDef } from "@tanstack/react-table";
 import { Fragment, ReactNode } from "react";
 
 import lore from "../../json/lore.json";
@@ -10,6 +11,7 @@ import WikiGroupInfobox from "../components/Pages/WikiPage/WikiGroupNavbox";
 import WikiTableOfContents, { WikiHeadingState } from "../components/Pages/WikiPage/WikiTableOfContents";
 import { BotLink, ItemLink, LocationLink } from "../components/Pages/WikiPage/WikiTooltips";
 import TextTooltipButton from "../components/Popover/TextTooltipButton";
+import { SortingTable } from "../components/Table/Table";
 import { Bot, BotPart } from "../types/botTypes";
 import { MapLocation, Spoiler } from "../types/commonTypes";
 import { Critical, Item, WeaponItem } from "../types/itemTypes";
@@ -27,6 +29,7 @@ import {
     parseIntOrUndefined,
     rootDirectory,
 } from "./common";
+import { allPartColumnDefs } from "./partColumnDefs";
 
 // Output group types
 // Grouped can be in the same <p> block
@@ -866,7 +869,7 @@ function processCommentTag(state: ParserState, result: RegExpExecArray) {
     state.index = index + "[[/Comment]]".length;
 }
 
-// Process a [[NonEmptyPages]][[/NonEmptyPages]] tag
+// Process a [[NonEmptyPages]]
 function processNonEmptyPagesTag(state: ParserState, result: RegExpExecArray) {
     const listContents: { node: ReactNode; name: string }[] = [];
     const processedEntries = new Set<WikiEntry>();
@@ -893,6 +896,88 @@ function processNonEmptyPagesTag(state: ParserState, result: RegExpExecArray) {
     });
 
     state.index = result.index + result[0].length;
+}
+
+// Process a PartGroupTable tag like [[PartGroupTable]]Flight Units[[/PartGroupTable]]
+function processPartGroupTableTag(state: ParserState, result: RegExpExecArray) {
+    // Find [[/PartGroupTable]] closing tag first
+    const closeResult = /\[\[\/PartGroupTable\]\]/.exec(state.initialContent.substring(state.index));
+
+    if (closeResult === null) {
+        // If we can't find the end tag then just skip over the opening tag
+        recordError(state, `Found part group table tag without close tag`);
+        state.index += result[0].length;
+        return;
+    }
+
+    // Split interior text by |
+    // The first entry is the part group or supergroup
+    // Following entries are columns to show
+    const startIndex = state.index + result[0].length;
+    const endIndex = startIndex + closeResult.index - result[0].length;
+    const split = splitOutsideActions(state.initialContent.substring(startIndex, endIndex));
+
+    if (split.length < 1) {
+        recordError(state, `Found part group table without a part group`);
+        state.index = endIndex + closeResult[0].length;
+        return;
+    }
+
+    const partGroupName = split[0].trim();
+    const groupEntry = state.allEntries.get(partGroupName);
+    if (groupEntry === undefined) {
+        recordError(state, `Found part group table with invalid group ${partGroupName}`);
+        state.index = endIndex + closeResult[0].length;
+        return;
+    } else if (groupEntry.type !== "Part Group" && groupEntry.type !== "Part Supergroup") {
+        recordError(state, `Found part group table with non-part group or supergroup ${partGroupName}`);
+        state.index = endIndex + closeResult[0].length;
+        return;
+    }
+
+    const partEntries = groupEntry
+        .getAllDescendants()
+        .filter((entry) => entry.canShowSpoiler(state.spoiler) && entry.type === "Part");
+    const parts = partEntries.map((entry) => entry.extraData as Item);
+
+    const columnDefs: GroupColumnDef<Item>[] = [];
+    const nameColumnDef: ColumnDef<Item> = {
+        accessorKey: "name",
+        header: "Name",
+        cell: (info) => <ItemLink item={info.row.original} text={info.getValue() as string} />,
+    };
+    const overviewColumnDef: GroupColumnDef<Item> = { header: "Overview", columns: [nameColumnDef] };
+
+    const groupColumnDefs = new Map<string, GroupColumnDef<Item>>();
+    groupColumnDefs.set(overviewColumnDef.header, overviewColumnDef);
+    columnDefs.push(overviewColumnDef);
+
+    for (const columnName of split.slice(1).map((name) => name.trim())) {
+        const columnDef = allPartColumnDefs.get(columnName) as ColumnDef<Item>;
+
+        if (columnDef === undefined) {
+            recordError(state, `Found part column name ${columnName} that isn't supported`);
+            continue;
+        }
+
+        const groupColumnName = columnName.split("/")[0];
+        const groupColumnDef = groupColumnDefs.get(groupColumnName);
+
+        if (groupColumnDef === undefined) {
+            const newGroupColumnDef: GroupColumnDef<Item> = { header: groupColumnName, columns: [columnDef] };
+            columnDefs.push(newGroupColumnDef);
+            groupColumnDefs.set(groupColumnName, newGroupColumnDef);
+        } else {
+            groupColumnDef.columns!.push(columnDef);
+        }
+    }
+
+    state.output.push({
+        groupType: "Individual",
+        node: <SortingTable columns={columnDefs} data={parts} />,
+    });
+
+    state.index = endIndex + closeResult[0].length;
 }
 
 // Process a GameText tag like [[GameText]]Text[[/GameText]]
@@ -930,13 +1015,13 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
     const startIndex = state.index + result[0].length;
     const endIndex = startIndex + galleryResult.index - result[0].length;
     const split = splitOutsideActions(state.initialContent.substring(startIndex, endIndex));
+    state.index = endIndex + galleryResult[0].length;
 
     if (split.length < 2) {
         recordError(
             state,
             `Found gallery action without enough images/captions, there should always be an equal number of images and captions`,
         );
-        state.index = endIndex + galleryResult[0].length;
         return;
     }
 
@@ -1011,8 +1096,6 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
         groupType: "Individual",
         node: galleryContent,
     });
-
-    state.index = endIndex + galleryResult[0].length;
 }
 
 // Process a hacks tag like [[Hacks]]Terminal[[/Heading]]
@@ -1695,6 +1778,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["List", processListTag],
     ["Lore", processLoreTag],
     ["NonEmptyPages", processNonEmptyPagesTag],
+    ["PartGroupTable", processPartGroupTableTag],
     ["Spoiler", processSpoilerTag],
     ["SpoilerHidden", processSpoilerHiddenTag],
     ["Sub", processSubTag],

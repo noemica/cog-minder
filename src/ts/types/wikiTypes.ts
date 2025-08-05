@@ -46,6 +46,18 @@ export class WikiEntry {
         this.hasSupergroupChildren = hasSupergroupChildren ?? false;
     }
 
+    private appendDescendants(descendants: Set<WikiEntry>) {
+        for (const childEntry of this.childEntries) {
+            descendants.add(childEntry);
+
+            childEntry.appendDescendants(descendants);
+        }
+    }
+
+    public canShowSpoiler(spoiler: Spoiler) {
+        return canShowSpoiler(this.spoiler, spoiler);
+    }
+
     public hasAncestorEntry(entry: WikiEntry) {
         for (const parent of this.parentEntries) {
             if (entry === parent || parent.hasAncestorEntry(entry)) {
@@ -74,6 +86,16 @@ export class WikiEntry {
         }
 
         return false;
+    }
+
+    public getAllDescendants() {
+        const descendants = new Set<WikiEntry>();
+        this.appendDescendants(descendants);
+
+        const values = Array.from(descendants.values());
+        values.sort((a, b) => a.name.localeCompare(b.name));
+
+        return values;
     }
 
     public getMaxEntryDepth() {

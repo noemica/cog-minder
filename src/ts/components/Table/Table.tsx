@@ -11,6 +11,7 @@ import {
 } from "@tanstack/react-table";
 
 import "./Table.less";
+import { useState } from "react";
 
 export function TableRow<T>({ row }: { row: Row<T> }) {
     return (
@@ -77,6 +78,12 @@ export type TableProps<T> = {
     sorting: SortingState;
     setSorting: OnChangeFn<SortingState>;
 };
+
+export function SortingTable<T>(props: Omit<TableProps<T>, "sorting" | "setSorting">) {
+    const [sorting, setSorting] = useState<SortingState>([]);
+
+    return <Table {...props} sorting={sorting} setSorting={setSorting} />;
+}
 
 export default function Table<T>({ columns, data, sorting, setSorting }: TableProps<T>) {
     const table = useReactTable<T>({

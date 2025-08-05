@@ -126,7 +126,7 @@ export default function WikiEditControls({
                     Game Text
                 </Button>
                 <Button
-                    tooltip="Provides text that matches a tooltip by the same name. For example, Tooltip Text of &quot;Burn&quot; shows the burn critical description."
+                    tooltip='Provides text that matches a tooltip by the same name. For example, Tooltip Text of "Burn" shows the burn critical description.'
                     onClick={() => insertWrappedText("[[TooltipText]]", "[[/TooltipText]]")}
                 >
                     Tooltip Text
@@ -256,6 +256,12 @@ export default function WikiEditControls({
                     onClick={() => insertWrappedText("[[BotDetails]]", "[[/BotDetails]]")}
                 >
                     Bot Details
+                </Button>
+                <Button
+                    tooltip="Creates a sortable table of parts contained in a certain part group or part supergroup page in the form of [[PartGroupTable]]Group Name|Category/Stat|Category2/Stat 2...[[/PartGroupTable]]. The available categories and stat names are the same as the ones shown in the parts spreadsheet view. For example, Overview/Rating."
+                    onClick={() => insertWrappedText("[[PartGroupTable]]", "[[/PartGroupTable]]")}
+                >
+                    Part Group Table
                 </Button>
             </div>
             <textarea ref={editAreaRef} key={entry.name} className="wiki-edit-text" defaultValue={defaultEditorValue} />
