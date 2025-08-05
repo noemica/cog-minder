@@ -8,20 +8,42 @@ import Button from "../../Buttons/Button";
 
 import "./WikiPage.less";
 
-function LinkOrBoldedContent({ activeEntry, entry }: { activeEntry: WikiEntry; entry: WikiEntry }) {
+function LinkOrBoldedContent({
+    activeEntry,
+    entry,
+    parentEntry,
+}: {
+    activeEntry: WikiEntry;
+    entry: WikiEntry;
+    parentEntry: WikiEntry | undefined;
+}) {
+    let entryName = entry.name;
+
+    if (parentEntry !== undefined && entryName.startsWith(parentEntry.name + "/")) {
+        entryName = entryName.slice(parentEntry.name.length + 1);
+    }
+
     if (activeEntry === entry) {
-        return <span style={{ fontWeight: "bold" }}>{entry.name}</span>;
+        return <span style={{ fontWeight: "bold" }}>{entryName}</span>;
     } else if (entry.fakeGroup) {
-        return <span>{entry.name}</span>;
+        return <span>{entryName}</span>;
     } else {
-        return <Link href={`/${getLinkSafeString(entry.name)}`}>{entry.name}</Link>;
+        return <Link href={`/${getLinkSafeString(entry.name)}`}>{entryName}</Link>;
     }
 }
 
-function InfoboxGroupContent({ activeEntry, childEntries }: { activeEntry: WikiEntry; childEntries: WikiEntry[] }) {
+function InfoboxGroupContent({
+    activeEntry,
+    childEntries,
+    parentEntry,
+}: {
+    activeEntry: WikiEntry;
+    childEntries: WikiEntry[];
+    parentEntry: WikiEntry | undefined;
+}) {
     return childEntries.map((child) => (
         <li key={child.name}>
-            <LinkOrBoldedContent activeEntry={activeEntry} entry={child} />
+            <LinkOrBoldedContent activeEntry={activeEntry} entry={child} parentEntry={parentEntry} />
         </li>
     ));
 }
@@ -45,11 +67,15 @@ function InfoboxSupergroupContent({
         return (
             <tr key={subgroupEntry.name}>
                 <th>
-                    <LinkOrBoldedContent activeEntry={activeEntry} entry={subgroupEntry} />
+                    <LinkOrBoldedContent activeEntry={activeEntry} entry={subgroupEntry} parentEntry={groupEntry} />
                 </th>
                 <td>
                     <ul>
-                        <InfoboxGroupContent activeEntry={activeEntry} childEntries={childEntries} />
+                        <InfoboxGroupContent
+                            activeEntry={activeEntry}
+                            childEntries={childEntries}
+                            parentEntry={subgroupEntry.fakeGroup ? groupEntry : subgroupEntry}
+                        />
                     </ul>
                 </td>
             </tr>
@@ -60,10 +86,12 @@ function InfoboxSupergroupContent({
 function InfoboxContent({
     activeEntry,
     groupEntry,
+    parentEntry,
     spoiler,
 }: {
     activeEntry: WikiEntry;
     groupEntry: WikiEntry;
+    parentEntry: WikiEntry | undefined;
     spoiler: Spoiler;
 }) {
     if (groupEntry.getMaxEntryDepth() >= 3) {
@@ -76,7 +104,11 @@ function InfoboxContent({
         <tr>
             <td>
                 <ul>
-                    <InfoboxGroupContent activeEntry={activeEntry} childEntries={childEntries} />
+                    <InfoboxGroupContent
+                        activeEntry={activeEntry}
+                        childEntries={childEntries}
+                        parentEntry={groupEntry}
+                    />
                 </ul>
             </td>
         </tr>
@@ -86,11 +118,13 @@ function InfoboxContent({
 function InfoboxHeader({
     activeEntry,
     groupEntry,
+    parentEntry,
     setShow,
     show,
 }: {
     activeEntry: WikiEntry;
     groupEntry: WikiEntry;
+    parentEntry: WikiEntry | undefined;
     setShow: (show: boolean) => void;
     show: boolean;
 }) {
@@ -99,7 +133,7 @@ function InfoboxHeader({
             <td colSpan={2}>
                 <div>
                     <div>
-                        <LinkOrBoldedContent activeEntry={activeEntry} entry={groupEntry} />
+                        <LinkOrBoldedContent activeEntry={activeEntry} entry={groupEntry} parentEntry={parentEntry} />
                     </div>
                     <ShowHideButton setShow={setShow} show={show} />
                 </div>
@@ -111,10 +145,12 @@ function InfoboxHeader({
 function InfoboxTable({
     activeEntry,
     groupEntry,
+    parentEntry,
     spoiler,
 }: {
     activeEntry: WikiEntry;
     groupEntry: WikiEntry;
+    parentEntry: WikiEntry;
     spoiler: Spoiler;
 }) {
     function isDescendent(activeEntry: WikiEntry, entryToCheck: WikiEntry) {
@@ -146,8 +182,21 @@ function InfoboxTable({
     return (
         <table className="wiki-group-infobox">
             <tbody>
-                <InfoboxHeader activeEntry={activeEntry} groupEntry={groupEntry} setShow={setShow} show={show} />
-                {show && <InfoboxContent activeEntry={activeEntry} groupEntry={groupEntry} spoiler={spoiler} />}
+                <InfoboxHeader
+                    activeEntry={activeEntry}
+                    groupEntry={groupEntry}
+                    parentEntry={parentEntry}
+                    setShow={setShow}
+                    show={show}
+                />
+                {show && (
+                    <InfoboxContent
+                        activeEntry={activeEntry}
+                        groupEntry={groupEntry}
+                        parentEntry={parentEntry}
+                        spoiler={spoiler}
+                    />
+                )}
             </tbody>
         </table>
     );
@@ -181,6 +230,7 @@ export default function WikiGroupInfobox({
                         <InfoboxHeader
                             activeEntry={activeEntry}
                             groupEntry={groupEntry}
+                            parentEntry={undefined}
                             setShow={setShow}
                             show={show}
                         />
@@ -193,6 +243,7 @@ export default function WikiGroupInfobox({
                                 key={childEntry.name}
                                 activeEntry={activeEntry}
                                 groupEntry={childEntry}
+                                parentEntry={groupEntry}
                                 spoiler={spoiler}
                             />
                         );
@@ -204,8 +255,21 @@ export default function WikiGroupInfobox({
     return (
         <table className="wiki-group-infobox">
             <tbody>
-                <InfoboxHeader activeEntry={activeEntry} groupEntry={groupEntry} setShow={setShow} show={show} />
-                {show && <InfoboxContent activeEntry={activeEntry} groupEntry={groupEntry} spoiler={spoiler} />}
+                <InfoboxHeader
+                    activeEntry={activeEntry}
+                    groupEntry={groupEntry}
+                    parentEntry={undefined}
+                    setShow={setShow}
+                    show={show}
+                />
+                {show && (
+                    <InfoboxContent
+                        activeEntry={activeEntry}
+                        groupEntry={groupEntry}
+                        parentEntry={undefined}
+                        spoiler={spoiler}
+                    />
+                )}
             </tbody>
         </table>
     );
