@@ -6898,7 +6898,7 @@
   },
   {
    "Name": "Zhirov Special",
-   "Content": ""
+   "Content": "The Zhirov Special is an inventory item that can be activated to start a 10-turn timer that will cause it to violently explode. It can be obtained by destroying [[Zhirov]] or having a [[Master Thief]] steal it from his inventory. When Cogmind is standing on it, pressing > or right-clicking on Cogmind will start its 10-turn explosion timer. Doing so again will interrupt the timer, which can be useful in scenarios such as the player accidentally activating it. Note that both activation and deactivation take an entire turn, meaning only 9 of the 10 turns can actually be used to prepare for escape its high-damage 20-radius explosion.\nThe explosion is not attributed to Cogmind, meaning it will not raise alert or attribute Cogmind any kills or [[Score#value|value-based score]].\n\n[[Heading]]Avoiding Damage[[/Heading]]\nWhile the Zhirov Special's very high explosive damage should preferably be avoided, its large explosion radius makes escaping somewhat difficult. Without a high movement speed or conveniently-shaped [[Reinforced Walls]] that could contain the explosion, other type of movements such as teleportation would be required to avoid the explosion. If using a [[Transdimensional Reconstructors|Transdimensional Reconstructor]] for that purpose, make sure to not stand on the Zhirov Special when teleporting, as the Transdimensional Reconstructor would bring it along.\nAlternatively, using an explosive damage-reducing utility such as an [[Exp. Shock Absorption System]] preferably paired with a [[Force Fields|Force Field]] or similar damage reduction can help cut the damage significantly."
   },
   {
    "Name": "Zio. Alpha Cannon",
