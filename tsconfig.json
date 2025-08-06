@@ -4,7 +4,7 @@
         "allowSyntheticDefaultImports": true,
         "module": "commonjs",
         "moduleResolution": "node",
-        "target": "es6",
+        "target": "es2018",
         "sourceMap": true,
         "lib": ["ES2021", "DOM"],
         "strict": true,
