@@ -230,7 +230,7 @@ function BotsSimpleDisplay({ bots }: { bots: Bot[] }) {
 function BotsSpreadsheetDisplay({ bots }: { bots: Bot[] }) {
     const [sorting, setSorting] = React.useState<SortingState>([]);
 
-    return <Table data={bots} columns={botColumnDefs} setSorting={setSorting} sorting={sorting} />;
+    return <Table data={bots} columns={botColumnDefs} setSorting={setSorting} sorting={sorting} stickyHeader={true} />;
 }
 
 export default function BotsPage() {

@@ -435,6 +435,9 @@
     background-color: @table-header-background-color;
     margin-bottom: @large-gap;
 
+    border: @border-width solid @border-color;
+    border-collapse: collapse;
+
     // Normally we only have bottom margin on p elements, but in tables
     // We want to have no margin on the first element altogether
     // If we have multiple p elements in a row, add top margin only to
@@ -453,13 +456,38 @@
     }
 }
 
-.wiki-table,
-.wiki-table > * > tr > * {
-    border: @border-width solid @border-color;
-    border-collapse: collapse;
+// This travesty is needed to work around border collapse causing
+// borders to disappear on sticky table rows
+// Instead of adding a border around the table elements, a border
+// is selectively added around divs instead which don't collapse
+.wiki-sortable-table {
+    border-top: 0;
+
+    > thead {
+        > tr > th > div {
+            border-left: 0;
+        }
+
+        > tr:not(:last-child) > th > div {
+            border-bottom: 0;
+        }
+
+        > tr:last-child > th > div {
+            margin-bottom: -1px;
+        }
+
+        > tr > th:last-child > div {
+            border-right: 0;
+        }
+    }
 }
 
-.wiki-table > tbody > tr > * {
+.wiki-table:not(.wiki-sortable-table) td,
+.wiki-table:not(.wiki-sortable-table) th {
+    border: @border-width solid @border-color;
+}
+
+.wiki-table:not(.wiki-sortable-table) > * > tr > * {
     padding: @table-cell-text-padding;
 }
 

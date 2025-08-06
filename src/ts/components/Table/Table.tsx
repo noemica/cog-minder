@@ -9,9 +9,9 @@ import {
     getSortedRowModel,
     useReactTable,
 } from "@tanstack/react-table";
+import { useState } from "react";
 
 import "./Table.less";
-import { useState } from "react";
 
 export function TableRow<T>({ row }: { row: Row<T> }) {
     return (
@@ -73,10 +73,12 @@ export function TableHeaderGroup<T>({ headerGroup }: { headerGroup: HeaderGroup<
 }
 
 export type TableProps<T> = {
+    className?: string;
     columns: ColumnDef<T, any>[];
     data: T[];
     sorting: SortingState;
     setSorting: OnChangeFn<SortingState>;
+    stickyHeader?: boolean;
 };
 
 export function SortingTable<T>(props: Omit<TableProps<T>, "sorting" | "setSorting">) {
@@ -85,7 +87,7 @@ export function SortingTable<T>(props: Omit<TableProps<T>, "sorting" | "setSorti
     return <Table {...props} sorting={sorting} setSorting={setSorting} />;
 }
 
-export default function Table<T>({ columns, data, sorting, setSorting }: TableProps<T>) {
+export default function Table<T>({ className, columns, data, sorting, setSorting, stickyHeader }: TableProps<T>) {
     const table = useReactTable<T>({
         data: data,
         columns: columns,
@@ -98,8 +100,8 @@ export default function Table<T>({ columns, data, sorting, setSorting }: TablePr
     });
 
     return (
-        <table cellSpacing={0} cellPadding={0}>
-            <thead>
+        <table className={className} cellSpacing={0} cellPadding={0}>
+            <thead className={stickyHeader ? "table-sticky-header" : ""}>
                 {table.getHeaderGroups().map((headerGroup) => (
                     <TableHeaderGroup key={headerGroup.id} headerGroup={headerGroup} />
                 ))}

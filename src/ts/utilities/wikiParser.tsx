@@ -506,14 +506,14 @@ function processAllLocationsTag(state: ParserState, result: RegExpExecArray) {
 
     const html = (
         <table className="wiki-table">
-            <tbody>
+            <thead>
                 <tr>
                     <th>Location Name</th>
                     <th>Main Floor/Branch</th>
                     <th>Depths</th>
                 </tr>
-                {locationRows}
-            </tbody>
+            </thead>
+            <tbody>{locationRows}</tbody>
         </table>
     );
 
@@ -974,7 +974,14 @@ function processPartGroupTableTag(state: ParserState, result: RegExpExecArray) {
 
     state.output.push({
         groupType: "Individual",
-        node: <SortingTable columns={columnDefs} data={parts} />,
+        node: (
+            <SortingTable
+                className="wiki-table wiki-sortable-table"
+                columns={columnDefs}
+                data={parts}
+                stickyHeader={true}
+            />
+        ),
     });
 
     state.index = endIndex + closeResult[0].length;
@@ -2022,6 +2029,7 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
     const endIndex = startIndex + tableResult.index - result[0].length;
     const rowSplit = splitOutsideActions(state.initialContent.substring(startIndex, endIndex), "||");
 
+    let headerRow: ReactNode = undefined;
     const tableRows: ReactNode[] = [];
 
     let isHeaderRow = true;
@@ -2091,7 +2099,7 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
             if (isHeaderRow) {
                 cells.push(
                     <th key={j} className={cellStyle} colSpan={cellSpan}>
-                        {cellHtml}
+                        <div>{cellHtml}</div>
                     </th>,
                 );
             } else {
@@ -2121,7 +2129,11 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
             // );
         }
 
-        tableRows.push(<tr key={i}>{cells}</tr>);
+        if (headerRow === undefined) {
+            headerRow = <tr>{cells}</tr>;
+        } else {
+            tableRows.push(<tr key={i}>{cells}</tr>);
+        }
 
         isHeaderRow = false;
         _row += 1;
@@ -2129,6 +2141,7 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
 
     const tableContent = (
         <table className={`wiki-table${state.inSpoiler ? " spoiler-text spoiler-table" : ""}`}>
+            <thead>{headerRow}</thead>
             <tbody>{tableRows}</tbody>
         </table>
     );
