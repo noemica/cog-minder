@@ -6190,8 +6190,9 @@ Bonus (X)|X|Total bonus points obtained from various sources[[/Table]]
 ²In each map, no more than 60 robot kills of a single class may contribute to score. (Additional robots are not recorded in any part of the score section, but are still recorded in other sections of scoresheets.)
 
 [[Heading:2]]Value[[/Heading]]
-Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most 0b10 machines have a value of 10, functional [[Garrison Access|Garrison Accesses]] have a value of 100, and some important machines like Garrison Relays and Phase Generators have a value of 200. The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
-[[Assembled]], passive [[Derelict]] bot classes, special bots that can only ever be found unpowered as ""statues"" and most [[Drone (Group)|Drones]] have a value of 0. Three special bots have a value of 2000, while all unique bots and all other other special bots have a value of 1. Some of those important unique/special bots instead grant score through bonus points.
+Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most 0b10 machines have a value of 10, functional [[Garrison Access|Garrison Accesses]] have a value of 100, and some important machines like Garrison Relays and Phase Generators have a value of 200.
+The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
+Broken/unpowered bots, [[Assembled]], passive [[Derelict]] bot classes, special bots that can only ever be found unpowered as ""statues"" and most [[Drone (Group)|Drones]] have a value of 0. Three special bots have a value of 2000, while all unique bots and all other other special bots have a value of 1. Some of those important unique/special bots instead grant score through bonus points.
 
 
 [[Heading]]Bonus Points[[/Heading]]
@@ -6205,7 +6206,7 @@ Unlike overall performance score, bonus score categories only appear in scoreshe
 Pacifist|Dependent on regions visited|Yes|Not destroying any bot by any means that attribute a kill to Cogmind for an entire map. Also requires that no kills were attributed to Cogmind in previous maps.||
 Triggered High Security|500|Yes|Triggering [[High Security]]||
 [[Spoiler]]Triggered Max Security[[/Spoiler]]|1000|Yes|[[Spoiler]]Triggering [[Maximum Security]][[/Spoiler]]||
-High Alert Combat Kills³|Dependent on bot value and [[Alert]]|Yes|Personally destroying [[0b10 Combat Bots]] while Alert is at least at level 2.
+High Alert Combat Kills³|Dependent on bot value and [[Alert]]|Yes|Personally destroying hostile combat bots while Alert is at least at level 2.
 At alert level 2, 25% of regular bot value. At level 3, 50%. At level 4, 75%. At level 5, 100%.||
 Follower Combat Kills|75% of regular bot value|Yes|Blue/purple Allies destroying combat bots||
 
@@ -6246,8 +6247,8 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Redacted]]Decrypted A0 Command[[/Redacted]]|3000|No|[[Redacted]] [[/Redacted]]||
 
 [[Comment]] --- Research-related Events & Branches --- [[/Comment]]
-[[Spoiler]]Used Core Reset Matrix[[/Spoiler]]|3000|No|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Hacked Protovariant[[/Spoiler]]|500|Yes|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Used Core Reset Matrix[[/Spoiler]]|3000|No|[[Spoiler]]Attaching a [[Core Reset Matrix]][[/Spoiler]]||
+[[Spoiler]]Hacked Protovariant[[/Spoiler]]|500|Yes|[[Spoiler]]Using the [[GameText]]Protovariant Controls/Control(Protovariants)[[/GameText]] hack on a [[Terminal]] to unleash a [[Protovariant]] in [[Testing]][[/Spoiler]]||
 [[Spoiler]]Met R17 at Research[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Met Warlord at Research[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Invited to Help at Command[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
