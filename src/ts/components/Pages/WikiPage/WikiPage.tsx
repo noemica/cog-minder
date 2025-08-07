@@ -608,6 +608,8 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ["Hybrid Power", (item) => item.slot === "Power" && item.name.startsWith("Hyb.")],
     ["Impact Weapons", (item) => item.type === "Impact Weapon"],
     ["Legs", (item) => item.type === "Leg"],
+    ["Light Power", (item) => item.slot === "Power" && item.name.startsWith("Lgt.")],
+    ["Micro Power", (item) => item.slot === "Power" && item.name.startsWith("Mic.")],
     ["Overloadable Power", (item) => item.slot === "Power" && (item as PowerItem).powerStability !== undefined],
     ["Overloadable Propulsion", (item) => item.slot === "Propulsion" && (item as PropulsionItem).burnout !== undefined],
     ["Overloadable Weapons", (item) => item.slot === "Weapon" && (item as WeaponItem).overloadStability !== undefined],
