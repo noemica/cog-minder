@@ -1,6 +1,9 @@
 {
     "01-MTF": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Storage event",
@@ -9,7 +12,10 @@
         ]
     },
     "12-ASH": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Mines event",
@@ -30,7 +36,10 @@
         ]
     },
     "1C-UTU": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Mines event",
@@ -51,7 +60,10 @@
         ]
     },
     "5H-AD0": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Zion Deep Caves event",
@@ -60,7 +72,10 @@
         ]
     },
     "7R-MNS": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "-8 Materials Event",
@@ -69,7 +84,10 @@
         ]
     },
     "7V-RTL": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Mines event",
@@ -90,7 +108,10 @@
         ]
     },
     "8R-AWN": {
-        "Categories": ["Exiles", "Derelict"],
+        "Categories": [
+            "Exiles",
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Materials event",
@@ -107,7 +128,10 @@
         ]
     },
     "99-TNT": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Mines event",
@@ -128,7 +152,9 @@
         ]
     },
     "A-02 Transporter": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -10 through -7",
@@ -137,7 +163,9 @@
         ]
     },
     "A-15 Conveyor": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -6 through -1",
@@ -146,7 +174,9 @@
         ]
     },
     "A-27 Freighter": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "Non-branch 0b10 maps -7 through -2",
@@ -155,7 +185,10 @@
         ]
     },
     "A2": {
-        "Categories": ["Architect", "Redacted"],
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Access_0",
@@ -164,7 +197,10 @@
         ]
     },
     "A3": {
-        "Categories": ["Architect", "Redacted"],
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Access_0",
@@ -173,7 +209,10 @@
         ]
     },
     "A4": {
-        "Categories": ["Architect", "Redacted"],
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Access_0",
@@ -182,7 +221,10 @@
         ]
     },
     "A5": {
-        "Categories": ["Architect", "Redacted"],
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Lab",
@@ -195,7 +237,10 @@
         ]
     },
     "A6": {
-        "Categories": ["Architect", "Redacted"],
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Access_0",
@@ -204,7 +249,10 @@
         ]
     },
     "A7": {
-        "Categories": ["Architect", "Spoiler"],
+        "Categories": [
+            "Architect",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Extension",
@@ -213,7 +261,10 @@
         ]
     },
     "A8": {
-        "Categories": ["Architect", "Spoiler"],
+        "Categories": [
+            "Architect",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Zion event",
@@ -227,7 +278,10 @@
         ]
     },
     "AD-0RF": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Mines event",
@@ -248,7 +302,9 @@
         ]
     },
     "Advanced Drone": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "Advanced Drone Bay"
@@ -256,7 +312,11 @@
         ]
     },
     "Alpha 7": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Testing",
@@ -283,7 +343,10 @@
         ]
     },
     "AP7-3": {
-        "Categories": ["0b10", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -292,7 +355,10 @@
         ]
     },
     "Architect": {
-        "Categories": ["Architect", "Redacted"],
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Access_0",
@@ -301,7 +367,10 @@
         ]
     },
     "Armor Guard": {
-        "Categories": ["0b10", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Armory",
@@ -310,7 +379,9 @@
         ]
     },
     "Artisan": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Subcaves",
@@ -319,7 +390,10 @@
         ]
     },
     "Army Drone": {
-        "Categories": ["Drone", "Exiles"],
+        "Categories": [
+            "Drone",
+            "Exiles"
+        ],
         "Locations": [
             {
                 "Location": "Army Drone Bay"
@@ -327,7 +401,10 @@
         ]
     },
     "Assault Drone": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Assault Drone Bay"
@@ -335,7 +412,9 @@
         ]
     },
     "Assembled (4)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Mines event",
@@ -369,7 +448,9 @@
         ]
     },
     "Assembled (7)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Mobile Assembly Unit",
@@ -389,7 +470,10 @@
         ]
     },
     "Assembler": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Zion Deep Caves",
@@ -398,7 +482,9 @@
         ]
     },
     "Autobeam Turret": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "Subcaves",
@@ -407,7 +493,10 @@
         ]
     },
     "AZ-K3N": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Garrison event",
@@ -416,7 +505,9 @@
         ]
     },
     "B-36 Bruiser": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -9 through -8",
@@ -425,7 +516,9 @@
         ]
     },
     "B-48 Gladiator": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps and caves -7 through -6",
@@ -434,7 +527,9 @@
         ]
     },
     "B-60 Warrior": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps and caves -5 through -4",
@@ -443,7 +538,9 @@
         ]
     },
     "B-74 Champion": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -3 through -1",
@@ -452,7 +549,9 @@
         ]
     },
     "B-75 Beast": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -7 through -5",
@@ -461,7 +560,9 @@
         ]
     },
     "B-86 Titan": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -4 through -3",
@@ -470,7 +571,9 @@
         ]
     },
     "B-90 Cyclops": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -3 through -2",
@@ -479,7 +582,9 @@
         ]
     },
     "B-99 Colossus": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps on -1",
@@ -493,7 +598,9 @@
         ]
     },
     "Bomb Drone": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Bomb Drone Bay"
@@ -501,7 +608,11 @@
         ]
     },
     "Bolteater": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Scraptown",
@@ -515,7 +626,11 @@
         ]
     },
     "Borebot": {
-        "Categories": ["Derelict", "Spoiler", "Warlord"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "-2 Research Warlord Invasion",
@@ -524,7 +639,11 @@
         ]
     },
     "Bouncer": {
-        "Categories": ["Derelict", "Spoiler", "Warlord"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "Warlord",
@@ -533,7 +652,9 @@
         ]
     },
     "Butcher (5)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -542,7 +663,9 @@
         ]
     },
     "Butcher (7)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -551,7 +674,9 @@
         ]
     },
     "C-17 Slicer": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -8 through -6",
@@ -560,7 +685,9 @@
         ]
     },
     "C-30 ARC": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -9 through -1",
@@ -569,7 +696,9 @@
         ]
     },
     "C-35 Carver": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -5 through -3",
@@ -578,7 +707,9 @@
         ]
     },
     "C-40 Crusher": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "Wastes",
@@ -587,7 +718,10 @@
         ]
     },
     "C-55 Analyst": {
-        "Categories": ["0b10", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Research branches",
@@ -596,7 +730,9 @@
         ]
     },
     "C-57 Dissector": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -2 through -1",
@@ -605,7 +741,10 @@
         ]
     },
     "C-65 Expert": {
-        "Categories": ["0b10", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Research branches",
@@ -614,7 +753,11 @@
         ]
     },
     "Cetus Guard": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Cetus",
@@ -623,7 +766,10 @@
         ]
     },
     "CL-ANK": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Mines event",
@@ -644,7 +790,9 @@
         ]
     },
     "Cobbler": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Subcaves",
@@ -657,7 +805,10 @@
         "Locations": []
     },
     "Combat Drone": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Combat Drone Bay"
@@ -665,7 +816,11 @@
         ]
     },
     "Combat Programmer": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Intercept squad",
@@ -684,7 +839,9 @@
         ]
     },
     "Commander": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -693,7 +850,9 @@
         ]
     },
     "D-53 Grenadier": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -10 through -6",
@@ -702,7 +861,9 @@
         ]
     },
     "D-63 Destroyer": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -5 through -3",
@@ -711,7 +872,9 @@
         ]
     },
     "D-83 Annihilator": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -2 through -1",
@@ -720,7 +883,10 @@
         ]
     },
     "DAS Turret": {
-        "Categories": ["Derelict", "Exiles"],
+        "Categories": [
+            "Derelict",
+            "Exiles"
+        ],
         "Locations": [
             {
                 "Location": "Deploy A Sentry"
@@ -732,7 +898,11 @@
         ]
     },
     "DD-05H": {
-        "Categories": ["Derelict", "Spoiler", "Warlord"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "-2 Research Warlord Invasion",
@@ -741,7 +911,10 @@
         ]
     },
     "Data Miner": {
-        "Categories": ["Architect", "Spoiler"],
+        "Categories": [
+            "Architect",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Data Miner",
@@ -750,7 +923,10 @@
         ]
     },
     "Decapitator": {
-        "Categories": ["0b10", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -759,7 +935,9 @@
         ]
     },
     "Decomposer": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves",
@@ -768,7 +946,9 @@
         ]
     },
     "Decoy Drone": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Decoy Drone Bay"
@@ -776,10 +956,16 @@
         ]
     },
     "Demented": {
-        "Categories": ["Derelict"]
+        "Categories": [
+            "Derelict"
+        ]
     },
     "Dragon": {
-        "Categories": ["Derelict", "Spoiler", "Warlord"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "-2 Research Warlord Invasion",
@@ -793,7 +979,9 @@
         ]
     },
     "Drone": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "Drone Bay"
@@ -805,7 +993,11 @@
         ]
     },
     "DRS Ranger": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Caves",
@@ -814,7 +1006,9 @@
         ]
     },
     "E-15 Imp": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 Assaults -6 through -1",
@@ -823,7 +1017,11 @@
         ]
     },
     "Elite (4)": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Scraptown",
@@ -832,7 +1030,11 @@
         ]
     },
     "Elite (7)": {
-        "Categories": ["Derelict", "UFD", "Redacted"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -841,7 +1043,10 @@
         ]
     },
     "Enhanced Demolisher": {
-        "Categories": ["Architect", "Spoiler"],
+        "Categories": [
+            "Architect",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Warlord",
@@ -850,7 +1055,10 @@
         ]
     },
     "Enhanced Grunt": {
-        "Categories": ["Architect", "Spoiler"],
+        "Categories": [
+            "Architect",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Caves after Data Miner",
@@ -872,7 +1080,10 @@
         ]
     },
     "Enhanced Hunter": {
-        "Categories": ["Architect", "Redacted"],
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Access_0",
@@ -881,7 +1092,10 @@
         ]
     },
     "Enhanced Programmer": {
-        "Categories": ["Architect", "Redacted"],
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Access_0",
@@ -890,7 +1104,10 @@
         ]
     },
     "Enhanced Q-Series": {
-        "Categories": ["Architect", "Redacted"],
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -899,16 +1116,28 @@
         ]
     },
     "Enhanced Q-Series Ex 1": {
-        "Categories": ["Architect", "Redacted"]
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ]
     },
     "Enhanced Q-Series Ex 2": {
-        "Categories": ["Architect", "Redacted"]
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ]
     },
     "Enhanced Q-Series Ex 3": {
-        "Categories": ["Architect", "Redacted"]
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ]
     },
     "Enhanced Sentry": {
-        "Categories": ["Architect", "Redacted"],
+        "Categories": [
+            "Architect",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Access_0",
@@ -917,7 +1146,10 @@
         ]
     },
     "EX-BIN": {
-        "Categories": ["Derelict", "Exiles"],
+        "Categories": [
+            "Derelict",
+            "Exiles"
+        ],
         "Locations": [
             {
                 "Location": "Exiles",
@@ -926,7 +1158,10 @@
         ]
     },
     "EX-DEC": {
-        "Categories": ["Derelict", "Exiles"],
+        "Categories": [
+            "Derelict",
+            "Exiles"
+        ],
         "Locations": [
             {
                 "Location": "Exiles",
@@ -939,7 +1174,10 @@
         ]
     },
     "EX-HEX": {
-        "Categories": ["Derelict", "Exiles"],
+        "Categories": [
+            "Derelict",
+            "Exiles"
+        ],
         "Locations": [
             {
                 "Location": "Exiles",
@@ -948,7 +1186,10 @@
         ]
     },
     "EXE-6": {
-        "Categories": ["0b10", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -957,8 +1198,15 @@
         ]
     },
     "Executioner": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype"
+        ],
         "Locations": [
+            {
+                "Location": "Garrison",
+                "Description": "Dormant/Rewireable: Appear in a special Prototype room with 2 Executioners or Strikers"
+            },
             {
                 "Location": "Cargo convoy escort -4 through -2",
                 "Description": "Hostile: Appear in guard ARCs escorting a Freighter"
@@ -969,21 +1217,32 @@
             },
             {
                 "Location": "Warlord",
-                "Description": "Hostile: Appear as reinforcements during the 0b10 attack"
-            },
-            {
-                "Location": "-2 Research Warlord Invasion",
-                "Description": "Hostile: Appear as 0b10 reinforcements as part of Assault squads"
+                "Description": "Hostile: Appear as reinforcements during the 0b10 attack",
+                "Spoiler": "Spoiler"
             },
             {
                 "Location": "Section 7",
                 "Description": "Dormant Hostile: 2 guard the top left corner of the Leopard hangar and 2 guard the bottom right corner",
                 "Spoiler": "Redacted"
+            },
+            {
+                "Location": "Protoforge",
+                "Description": "Hostile: Appear as 0b10 reinforcements as part of Assault squads after the UFD attack has begun",
+                "Spoiler": "Redacted"
+            },
+            {
+                "Location": "-2 Research Warlord Invasion",
+                "Description": "Hostile: Appear as 0b10 reinforcements as part of Assault squads",
+                "Spoiler": "Spoiler"
             }
         ]
     },
     "Explorer": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Scraptown",
@@ -997,7 +1256,11 @@
         ]
     },
     "Federalist": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "-10 Materials event",
@@ -1015,7 +1278,9 @@
         ]
     },
     "Fireman (5)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -1028,7 +1293,9 @@
         ]
     },
     "Fireman (7)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -1041,7 +1308,11 @@
         ]
     },
     "Fortress": {
-        "Categories": ["0b10", "Prototype", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Quarantine/Testing",
@@ -1050,10 +1321,14 @@
         ]
     },
     "Furnace": {
-        "Categories": ["Derelict"]
+        "Categories": [
+            "Derelict"
+        ]
     },
     "G-34 Mercenary": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -10 through -9",
@@ -1062,7 +1337,9 @@
         ]
     },
     "G-47 Trooper": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -10 through -7",
@@ -1071,7 +1348,9 @@
         ]
     },
     "G-50 Soldier": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -8 through -5",
@@ -1080,7 +1359,9 @@
         ]
     },
     "G-67 Veteran": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -6 through -3",
@@ -1089,7 +1370,9 @@
         ]
     },
     "G-73 Enforcer": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -4 through -1",
@@ -1098,7 +1381,11 @@
         ]
     },
     "God Mode": {
-        "Categories": ["Derelict", "Spoiler", "Warlord"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "-2 Research Warlord Invasion",
@@ -1107,7 +1394,11 @@
         ]
     },
     "God Mode (Fake)": {
-        "Categories": ["Derelict", "Spoiler", "Warlord"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "Warlord",
@@ -1116,7 +1407,10 @@
         ]
     },
     "Golem": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Zion Deep Caves",
@@ -1125,7 +1419,10 @@
         ]
     },
     "Golem (Naked)": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Dropped GOLEM Unit",
@@ -1134,7 +1431,9 @@
         ]
     },
     "Guerrilla (5)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -1143,7 +1442,9 @@
         ]
     },
     "Guerrilla (7)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -1152,7 +1453,11 @@
         ]
     },
     "Guru": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Scraptown",
@@ -1166,7 +1471,9 @@
         ]
     },
     "H-55 Commando": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -8 through -7",
@@ -1175,7 +1482,9 @@
         ]
     },
     "H-61 Shepherd": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -8 through -6",
@@ -1184,7 +1493,9 @@
         ]
     },
     "H-66 Slayer": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -6 through -5",
@@ -1193,7 +1504,9 @@
         ]
     },
     "H-71 Marshal": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -5 through -3",
@@ -1202,7 +1515,9 @@
         ]
     },
     "H-77 Assassin": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -4 through -3",
@@ -1211,7 +1526,9 @@
         ]
     },
     "H-81 Overseer": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -2 through -1",
@@ -1220,7 +1537,9 @@
         ]
     },
     "H-88 Terminator": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -2 through -1",
@@ -1229,7 +1548,10 @@
         ]
     },
     "Hacking Drone": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Hacking Drone Bay"
@@ -1237,7 +1559,10 @@
         ]
     },
     "Hotshot": {
-        "Categories": ["0b10", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -1246,7 +1571,10 @@
         ]
     },
     "HV-R5K": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Garrison event",
@@ -1255,7 +1583,11 @@
         ]
     },
     "Hydra": {
-        "Categories": ["Derelict", "Spoiler", "Warlord"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "-2 Research Warlord Invasion",
@@ -1269,7 +1601,9 @@
         ]
     },
     "I-25 Savior": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -8",
@@ -1278,7 +1612,9 @@
         ]
     },
     "I-36 Angel": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -7 through -6",
@@ -1287,7 +1623,9 @@
         ]
     },
     "I-47 Archangel": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -5 through -1",
@@ -1296,7 +1634,10 @@
         ]
     },
     "Immortal": {
-        "Categories": ["0b10", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -1305,7 +1646,10 @@
         ]
     },
     "Impact Drone": {
-        "Categories": ["0b10", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Cep. Impact Drone Bay"
@@ -1313,7 +1657,11 @@
         ]
     },
     "Imprinter": {
-        "Categories": ["Derelict", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Zion",
@@ -1322,7 +1670,10 @@
         ]
     },
     "Infiltrator (6)": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Garrison",
@@ -1335,7 +1686,10 @@
         ]
     },
     "Infiltrator (7)": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Garrison",
@@ -1348,7 +1702,10 @@
         ]
     },
     "Infiltrator (8)": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Garrison",
@@ -1361,7 +1718,10 @@
         ]
     },
     "Investigator": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype"
+        ],
         "Locations": [
             {
                 "Location": "0b10 Heavy Assaults -3 through -1",
@@ -1370,7 +1730,9 @@
         ]
     },
     "K-01 Serf": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps",
@@ -1379,7 +1741,11 @@
         ]
     },
     "KN-7UR": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Recycling",
@@ -1388,7 +1754,11 @@
         ]
     },
     "Knight": {
-        "Categories": ["Derelict", "Spoiler", "Warlord"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "Warlord",
@@ -1406,7 +1776,9 @@
         ]
     },
     "L-31 Rogue": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -9 through -8",
@@ -1415,7 +1787,9 @@
         ]
     },
     "L-41 Fighter": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -7 through -5",
@@ -1424,7 +1798,9 @@
         ]
     },
     "L-61 Swordsman": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -4 through -1",
@@ -1433,7 +1809,10 @@
         ]
     },
     "Lugger": {
-        "Categories": ["Redacted", "UFD"],
+        "Categories": [
+            "Redacted",
+            "UFD"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -1442,7 +1821,11 @@
         ]
     },
     "LV-01A": {
-        "Categories": ["Derelict", "Spoiler", "Warlord"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "Warlord",
@@ -1451,7 +1834,11 @@
         ]
     },
     "Large Mutated Botcube": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Lrg. Botcube",
@@ -1460,7 +1847,11 @@
         ]
     },
     "Lightning": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Hub_04(d)",
@@ -1473,7 +1864,11 @@
         ]
     },
     "LRC-V4": {
-        "Categories": ["0b10", "Prototype", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Section 7",
@@ -1482,7 +1877,11 @@
         ]
     },
     "LRC-V5": {
-        "Categories": ["0b10", "Prototype", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Section 7",
@@ -1491,7 +1890,11 @@
         ]
     },
     "LRC-V6": {
-        "Categories": ["0b10", "Prototype", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Section 7",
@@ -1500,7 +1903,11 @@
         ]
     },
     "M Guard": {
-        "Categories": ["0b10", "Prototype", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -1509,7 +1916,10 @@
         ]
     },
     "M Shell/Atk": {
-        "Categories": ["0b10", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -1518,7 +1928,10 @@
         ]
     },
     "M Shell/Def": {
-        "Categories": ["0b10", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -1527,7 +1940,9 @@
         ]
     },
     "M-13 Machinist": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps",
@@ -1536,7 +1951,9 @@
         ]
     },
     "M-14 Sweeper": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "Caves",
@@ -1545,7 +1962,9 @@
         ]
     },
     "M-22 Extractor": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "Caves",
@@ -1554,7 +1973,9 @@
         ]
     },
     "M-28 Smith": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps",
@@ -1563,7 +1984,9 @@
         ]
     },
     "M-30 Cleanser": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "Caves",
@@ -1572,7 +1995,9 @@
         ]
     },
     "M-36 Artificer": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps",
@@ -1581,7 +2006,10 @@
         ]
     },
     "MAIN.C": {
-        "Categories": ["0b10", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -1590,7 +2018,10 @@
         ]
     },
     "MAIN.C (Shell)": {
-        "Categories": ["0b10", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -1599,7 +2030,9 @@
         ]
     },
     "Mapping Drone": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Mapping Drone Bay"
@@ -1607,7 +2040,9 @@
         ]
     },
     "Marauder (6)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Zion",
@@ -1620,7 +2055,9 @@
         ]
     },
     "Marauder (8)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "-2 Research Warlord Invasion",
@@ -1634,7 +2071,9 @@
         ]
     },
     "Martyr (5)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -1647,7 +2086,9 @@
         ]
     },
     "Martyr (7)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -1656,7 +2097,11 @@
         ]
     },
     "Master Drone": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Master Drone Bay"
@@ -1664,7 +2109,10 @@
         ]
     },
     "Master Thief": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Caves",
@@ -1673,7 +2121,10 @@
         ]
     },
     "ME-RLN": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Mines event",
@@ -1694,7 +2145,11 @@
         ]
     },
     "Minesniffer Drone": {
-        "Categories": ["Derelict", "Spoiler", "Warlord"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "Minesniffer Drone Bay"
@@ -1702,7 +2157,9 @@
         ]
     },
     "Mutant (5)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -1711,7 +2168,9 @@
         ]
     },
     "Mutant (6)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -1720,7 +2179,9 @@
         ]
     },
     "Mutant (7)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -1729,7 +2190,9 @@
         ]
     },
     "Mutant (8)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -1738,7 +2201,11 @@
         ]
     },
     "Mutated Botcube": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Botcube",
@@ -1747,7 +2214,9 @@
         ]
     },
     "Mini Drone": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "Mini Drone Bay"
@@ -1755,7 +2224,9 @@
         ]
     },
     "N-00 Fly": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "Garrison event",
@@ -1764,7 +2235,9 @@
         ]
     },
     "N-01 Spotter": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "Caves",
@@ -1773,7 +2246,10 @@
         ]
     },
     "N-04 Retriever": {
-        "Categories": ["0b10", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -1782,7 +2258,10 @@
         ]
     },
     "NK-0LA": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Mines event",
@@ -1803,7 +2282,9 @@
         ]
     },
     "O-16 Technician": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -10 through -3",
@@ -1812,7 +2293,9 @@
         ]
     },
     "O-24 Administrator": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -8 through -1",
@@ -1821,7 +2304,9 @@
         ]
     },
     "O-32 Director": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -4 through -1",
@@ -1830,7 +2315,11 @@
         ]
     },
     "Optimus": {
-        "Categories": ["Derelict", "Spoiler", "UFD"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "UFD"
+        ],
         "Locations": [
             {
                 "Location": "Scraptown",
@@ -1839,7 +2328,10 @@
         ]
     },
     "Overlord": {
-        "Categories": ["0b10", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -1848,7 +2340,9 @@
         ]
     },
     "P-60 Hacker": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -8 through -6",
@@ -1857,7 +2351,9 @@
         ]
     },
     "P-70 Sage": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -5 through -4",
@@ -1866,7 +2362,9 @@
         ]
     },
     "P-80 Master": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -3 through -1",
@@ -1875,7 +2373,10 @@
         ]
     },
     "P1-3CE": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Mines event",
@@ -1896,7 +2397,9 @@
         ]
     },
     "Packrat": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves",
@@ -1905,10 +2408,16 @@
         ]
     },
     "Parasite": {
-        "Categories": ["Derelict"]
+        "Categories": [
+            "Derelict"
+        ]
     },
     "Perun": {
-        "Categories": ["Derelict", "Spoiler", "Zhirov"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zhirov"
+        ],
         "Locations": [
             {
                 "Location": "Zhirov",
@@ -1925,7 +2434,9 @@
         ]
     },
     "PL-HR7": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves event",
@@ -1934,7 +2445,11 @@
         ]
     },
     "Protovariant D": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Testing event",
@@ -1943,7 +2458,11 @@
         ]
     },
     "Protovariant G": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Testing event",
@@ -1952,7 +2471,11 @@
         ]
     },
     "Protovariant H": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Testing event",
@@ -1961,7 +2484,11 @@
         ]
     },
     "Protovariant L": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Testing event",
@@ -1970,7 +2497,11 @@
         ]
     },
     "Protovariant P": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Testing event",
@@ -1979,7 +2510,11 @@
         ]
     },
     "Protovariant X": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Testing event",
@@ -1988,7 +2523,11 @@
         ]
     },
     "Protovariant Y": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Testing event",
@@ -1997,7 +2536,10 @@
         ]
     },
     "Q-Series": {
-        "Categories": ["0b10", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps",
@@ -2006,16 +2548,29 @@
         ]
     },
     "Q-Series Example 1": {
-        "Categories": ["0b10", "Spoiler"]
+        "Categories": [
+            "0b10",
+            "Spoiler"
+        ]
     },
     "Q-Series Example 2": {
-        "Categories": ["0b10", "Spoiler"]
+        "Categories": [
+            "0b10",
+            "Spoiler"
+        ]
     },
     "Q-Series Example 3": {
-        "Categories": ["0b10", "Spoiler"]
+        "Categories": [
+            "0b10",
+            "Spoiler"
+        ]
     },
     "Quarantine Guard": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Quarantine",
@@ -2024,7 +2579,9 @@
         ]
     },
     "R-06 Scavenger": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -11 through -7",
@@ -2033,7 +2590,9 @@
         ]
     },
     "R-10 Processor": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -6 through -1",
@@ -2042,7 +2601,11 @@
         ]
     },
     "Ranger": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Scraptown",
@@ -2056,7 +2619,10 @@
         ]
     },
     "Revision": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "-3 Research Revision 17 Invasion",
@@ -2065,7 +2631,9 @@
         ]
     },
     "Revision 17": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Scrapyard",
@@ -2079,7 +2647,10 @@
         ]
     },
     "Revision 17++": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "-3 Research Revision 17 Invasion",
@@ -2088,7 +2659,11 @@
         ]
     },
     "S7 Guard": {
-        "Categories": ["0b10", "Prototype", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Section 7",
@@ -2097,7 +2672,9 @@
         ]
     },
     "S-10 Pest": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -10 through -8",
@@ -2106,7 +2683,9 @@
         ]
     },
     "S-27 Virus": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -7 through -4",
@@ -2115,7 +2694,9 @@
         ]
     },
     "S-43 Plague": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -3 through -1",
@@ -2124,7 +2705,9 @@
         ]
     },
     "Samaritan": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves",
@@ -2133,7 +2716,10 @@
         ]
     },
     "Sapper": {
-        "Categories": ["Derelict", "Warlord"],
+        "Categories": [
+            "Derelict",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "Caves",
@@ -2151,7 +2737,9 @@
         ]
     },
     "Savage (5)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -2160,7 +2748,9 @@
         ]
     },
     "Savage (7)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -2169,7 +2759,11 @@
         ]
     },
     "Scientist": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Subcaves",
@@ -2182,7 +2776,11 @@
         ]
     },
     "Scrapoid (3)": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Recycling Unit",
@@ -2191,7 +2789,11 @@
         ]
     },
     "Scrapoid (6)": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Recycling Unit",
@@ -2205,7 +2807,11 @@
         ]
     },
     "Scrapoid (8)": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Recycling Unit",
@@ -2219,7 +2825,10 @@
         ]
     },
     "Scraphulk (6)": {
-        "Categories": ["UFD", "Spoiler"],
+        "Categories": [
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Recycling Unit",
@@ -2233,7 +2842,10 @@
         ]
     },
     "Scraphulk (8)": {
-        "Categories": ["UFD", "Spoiler"],
+        "Categories": [
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Recycling Unit",
@@ -2247,7 +2859,11 @@
         ]
     },
     "Scrapper (3)": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Scraptown",
@@ -2256,7 +2872,11 @@
         ]
     },
     "Scrapper (6)": {
-        "Categories": ["Derelict", "UFD", "Redacted"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -2266,7 +2886,9 @@
         ]
     },
     "Sensor Drone": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Sensor Drone Bay"
@@ -2274,7 +2896,10 @@
         ]
     },
     "Sigix Warrior": {
-        "Categories": ["Alien", "Redacted"],
+        "Categories": [
+            "Alien",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Section 7",
@@ -2283,7 +2908,10 @@
         ]
     },
     "SKR-2": {
-        "Categories": ["0b10", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -2292,7 +2920,9 @@
         ]
     },
     "Splice Drone": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Splice Drone Bay"
@@ -2300,7 +2930,9 @@
         ]
     },
     "Stealth Drone": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "Stealth Drone Bay"
@@ -2308,8 +2940,15 @@
         ]
     },
     "Striker": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype"
+        ],
         "Locations": [
+            {
+                "Location": "Garrison",
+                "Description": "Dormant/Rewireable: Appear in a special Prototype room with 2 Executioners or Strikers"
+            },
             {
                 "Location": "Cargo convoy escort -4 through -2",
                 "Description": "Hostile: Appear in guard ARCs escorting a Freighter"
@@ -2320,11 +2959,13 @@
             },
             {
                 "Location": "Warlord",
-                "Description": "Hostile: Appear as reinforcements during the 0b10 attack"
+                "Description": "Hostile: Appear as reinforcements during the 0b10 attack",
+                "Spoiler": "Spoiler"
             },
             {
                 "Location": "Testing",
-                "Description": "Hostile: 2 guard the SGEMP Prototype in the top or bottom left corner of the map"
+                "Description": "Hostile: 2 guard the SGEMP Prototype in the top or bottom left corner of the map",
+                "Spoiler": "Spoiler"
             },
             {
                 "Location": "Section 7",
@@ -2332,13 +2973,21 @@
                 "Spoiler": "Redacted"
             },
             {
+                "Location": "Protoforge",
+                "Description": "Hostile: Appear as 0b10 reinforcements as part of Assault squads after the UFD attack has begun",
+                "Spoiler": "Redacted"
+            },
+            {
                 "Location": "-2 Research Warlord Invasion",
-                "Description": "Hostile: Appear as 0b10 reinforcements as part of Assault squads"
+                "Description": "Hostile: Appear as 0b10 reinforcements as part of Assault squads",
+                "Spoiler": "Spoiler"
             }
         ]
     },
     "Subdweller": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Subcaves",
@@ -2351,7 +3000,11 @@
         ]
     },
     "Superbehemoth": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Testing event",
@@ -2360,7 +3013,11 @@
         ]
     },
     "Superfortress": {
-        "Categories": ["0b10", "Prototype", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -2369,7 +3026,9 @@
         ]
     },
     "Surgeon (4)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -2378,7 +3037,9 @@
         ]
     },
     "Surgeon (6)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -2387,10 +3048,18 @@
         ]
     },
     "Surveybot 24": {
-        "Categories": ["Derelict", "Spoiler", "UFD"]
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "UFD"
+        ]
     },
     "Svarog": {
-        "Categories": ["Derelict", "Spoiler", "Zhirov"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zhirov"
+        ],
         "Locations": [
             {
                 "Location": "Zhirov",
@@ -2407,7 +3076,10 @@
         ]
     },
     "Swarm Drone": {
-        "Categories": ["0b10", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Swarm Drone Bay"
@@ -2415,7 +3087,9 @@
         ]
     },
     "T-07 Excavator": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps",
@@ -2424,7 +3098,9 @@
         ]
     },
     "Target Drone": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "Caves event",
@@ -2433,7 +3109,9 @@
         ]
     },
     "Thief": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves",
@@ -2442,7 +3120,9 @@
         ]
     },
     "Thief Drone": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Thief Drone Bay"
@@ -2450,7 +3130,9 @@
         ]
     },
     "Thug (5)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -2459,7 +3141,9 @@
         ]
     },
     "Thug (7)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -2468,7 +3152,9 @@
         ]
     },
     "Tinkerer": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -2477,7 +3163,11 @@
         ]
     },
     "Tracker": {
-        "Categories": ["0b10", "Prototype", "Spoiler"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Intercept squad",
@@ -2491,7 +3181,10 @@
         ]
     },
     "Trailblazer": {
-        "Categories": ["Drone", "Exiles"],
+        "Categories": [
+            "Drone",
+            "Exiles"
+        ],
         "Locations": [
             {
                 "Location": "Supersonic Drone Bay"
@@ -2499,7 +3192,11 @@
         ]
     },
     "Triborg": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Scraptown",
@@ -2508,7 +3205,11 @@
         ]
     },
     "Triborg (Optimus)": {
-        "Categories": ["Derelict", "UFD", "Redacted"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -2517,7 +3218,10 @@
         ]
     },
     "Troll": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "-2 Research Warlord Invasion",
@@ -2531,7 +3235,9 @@
         ]
     },
     "U-05 Engineer": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps",
@@ -2540,7 +3246,11 @@
         ]
     },
     "V-Series": {
-        "Categories": ["0b10", "Prototype", "Redacted"],
+        "Categories": [
+            "0b10",
+            "Prototype",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Protoforge",
@@ -2553,7 +3263,10 @@
         ]
     },
     "VL-GR5": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Armory event",
@@ -2562,7 +3275,9 @@
         ]
     },
     "W-16 Scout": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -10 through -9",
@@ -2571,7 +3286,9 @@
         ]
     },
     "W-25 Informer": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -8 through -5",
@@ -2580,7 +3297,9 @@
         ]
     },
     "W-44 Eye": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -4 through -1",
@@ -2589,7 +3308,10 @@
         ]
     },
     "Warbot": {
-        "Categories": ["Derelict", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Heart of Steel",
@@ -2598,7 +3320,11 @@
         ]
     },
     "Wardrone": {
-        "Categories": ["Drone", "Spoiler", "Warlord"],
+        "Categories": [
+            "Drone",
+            "Spoiler",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "Wardrone Bay"
@@ -2606,7 +3332,11 @@
         ]
     },
     "Warlord": {
-        "Categories": ["Derelict", "Spoiler", "Warlord"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "Warlord",
@@ -2619,7 +3349,11 @@
         ]
     },
     "Warlord (Command)": {
-        "Categories": ["Derelict", "Redacted", "Warlord"],
+        "Categories": [
+            "Derelict",
+            "Redacted",
+            "Warlord"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -2629,7 +3363,10 @@
         ]
     },
     "Warlord 4Z-XS3": {
-        "Categories": ["Derelict", "Redacted"],
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -2638,7 +3375,10 @@
         ]
     },
     "Warlord AM-PH4": {
-        "Categories": ["Derelict", "Redacted"],
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -2647,7 +3387,10 @@
         ]
     },
     "Warlord D3-CKR": {
-        "Categories": ["Derelict", "Redacted"],
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -2656,7 +3399,10 @@
         ]
     },
     "Warlord HL-1SK": {
-        "Categories": ["Derelict", "Redacted"],
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -2665,7 +3411,10 @@
         ]
     },
     "Warlord KY-Z71": {
-        "Categories": ["Derelict", "Redacted"],
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -2674,7 +3423,10 @@
         ]
     },
     "Warlord MG-163": {
-        "Categories": ["Derelict", "Redacted"],
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -2683,7 +3435,10 @@
         ]
     },
     "Warlord SH-K8T": {
-        "Categories": ["Derelict", "Redacted"],
+        "Categories": [
+            "Derelict",
+            "Redacted"
+        ],
         "Locations": [
             {
                 "Location": "Command",
@@ -2692,7 +3447,9 @@
         ]
     },
     "Warlord Statue (Bot)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves event",
@@ -2701,7 +3458,9 @@
         ]
     },
     "Wasp (5)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -2710,7 +3469,9 @@
         ]
     },
     "Wasp (7)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -2719,7 +3480,9 @@
         ]
     },
     "Wizard (5)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -2732,7 +3495,9 @@
         ]
     },
     "Wizard (7)": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Caves and various derelict attack events",
@@ -2745,7 +3510,11 @@
         ]
     },
     "Wyrm Statue": {
-        "Categories": ["Derelict", "UFD", "Spoiler"],
+        "Categories": [
+            "Derelict",
+            "UFD",
+            "Spoiler"
+        ],
         "Locations": [
             {
                 "Location": "Scraptown",
@@ -2754,7 +3523,9 @@
         ]
     },
     "X-57 Shotgunner": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -8 through -7",
@@ -2763,7 +3534,9 @@
         ]
     },
     "X-62 Marksman": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -8 through -6",
@@ -2772,7 +3545,9 @@
         ]
     },
     "X-67 Chaingunner": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -7 through -5",
@@ -2781,7 +3556,9 @@
         ]
     },
     "X-72 Disruptor": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -6 through -4",
@@ -2790,7 +3567,9 @@
         ]
     },
     "X-77 Beamer": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -5 through -3",
@@ -2799,7 +3578,9 @@
         ]
     },
     "X-82 Rainmaker": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -4 through -2",
@@ -2808,7 +3589,9 @@
         ]
     },
     "X-87 Electro": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -3 through -1",
@@ -2817,7 +3600,9 @@
         ]
     },
     "Y-45 Defender": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -9 through -8",
@@ -2826,7 +3611,9 @@
         ]
     },
     "Y-54 Guardian": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -7 through -6",
@@ -2835,7 +3622,9 @@
         ]
     },
     "Y-64 Sentinel": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -5 through -4",
@@ -2844,7 +3633,9 @@
         ]
     },
     "Y-72 Warden": {
-        "Categories": ["0b10"],
+        "Categories": [
+            "0b10"
+        ],
         "Locations": [
             {
                 "Location": "0b10 maps -3 through -1",
@@ -2853,7 +3644,9 @@
         ]
     },
     "YI-UF0": {
-        "Categories": ["Derelict"],
+        "Categories": [
+            "Derelict"
+        ],
         "Locations": [
             {
                 "Location": "Mines event",
@@ -2862,7 +3655,11 @@
         ]
     },
     "Z-Courier": {
-        "Categories": ["Derelict", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Imprint roster",
@@ -2871,7 +3668,12 @@
         ]
     },
     "Z-Drone": {
-        "Categories": ["Derelict", "Drone", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Drone",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Z-drone bay"
@@ -2879,7 +3681,11 @@
         ]
     },
     "Z-Experimental (8)": {
-        "Categories": ["Derelict", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Imprint roster",
@@ -2893,7 +3699,11 @@
         ]
     },
     "Z-Experimental (10)": {
-        "Categories": ["Derelict", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Imprint roster",
@@ -2907,7 +3717,11 @@
         ]
     },
     "Z-Heavy (5)": {
-        "Categories": ["Derelict", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Imprint roster",
@@ -2916,7 +3730,11 @@
         ]
     },
     "Z-Heavy (7)": {
-        "Categories": ["Derelict", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Imprint roster",
@@ -2925,7 +3743,11 @@
         ]
     },
     "Z-Heavy (9)": {
-        "Categories": ["Derelict", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Imprint roster",
@@ -2939,7 +3761,11 @@
         ]
     },
     "Z-Imprinter": {
-        "Categories": ["Derelict", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Zion Deep Caves",
@@ -2948,7 +3774,11 @@
         ]
     },
     "Z-Light (5)": {
-        "Categories": ["Derelict", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Zion Deep Caves",
@@ -2961,7 +3791,11 @@
         ]
     },
     "Z-Light (7)": {
-        "Categories": ["Derelict", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Imprint roster",
@@ -2970,7 +3804,11 @@
         ]
     },
     "Z-Light (9)": {
-        "Categories": ["Derelict", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Imprint roster",
@@ -2984,7 +3822,11 @@
         ]
     },
     "Z-Technician": {
-        "Categories": ["Derelict", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Zion Deep Caves",
@@ -2993,7 +3835,11 @@
         ]
     },
     "Zhirov": {
-        "Categories": ["Derelict", "Spoiler", "Zhirov"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zhirov"
+        ],
         "Locations": [
             {
                 "Location": "Zhirov",
@@ -3010,7 +3856,11 @@
         ]
     },
     "Zionite": {
-        "Categories": ["Derelict", "Spoiler", "Zionite"],
+        "Categories": [
+            "Derelict",
+            "Spoiler",
+            "Zionite"
+        ],
         "Locations": [
             {
                 "Location": "Caves, Zion, and various events",
