@@ -1170,7 +1170,7 @@ function processHacksTag(state: ParserState, result: RegExpExecArray) {
     }
 }
 
-// Process a heading tag like [[Heading]]Heading Text[[/Heading]]
+// Process a heading tag like [[Heading]]Heading Text|Heading ID[[/Heading]]
 // or like [[Heading:2]]Heading Text[[/Heading]]
 function processHeadingTag(state: ParserState, result: RegExpExecArray) {
     let type = result[2];
@@ -1182,18 +1182,60 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
         type = "1";
     }
 
+    // Find [[/Heading]] closing tag first
+    const headingResult = /\[\[\/Heading\]\]/.exec(state.initialContent.substring(state.index));
+
+    if (headingResult === null) {
+        // If we can't find the end tag then just skip over the opening tag
+        recordError(state, "Found heading tag without close tag");
+        state.index += result[0].length;
+        return;
+    }
+
+    // Split by |s to see if there is a separately defined ID
+    const splitString = state.initialContent.substring(
+        result.index + result[0].length,
+        state.index + headingResult.index,
+    );
+    const split = splitOutsideActions(splitString);
+
+    let string: string;
+    let extraIndexOffset = 0;
+    let id: string | undefined = undefined;
+
+    if (split.length > 1) {
+        if (split.length > 2) {
+            recordError(state, "Found heading tag with multiple | characters, only 1 is supported");
+        }
+
+        // Found a bar means we have an explicitly defined ID
+        string = split[0];
+        id = createIdFromText(split[1]);
+        extraIndexOffset = splitString.length + headingResult[0].length;
+    } else {
+        // No bar means no explicitly defined ID, use the heading text to
+        // produce the ID
+        string = state.initialContent.slice(
+            state.index + result[0].length,
+            state.index + headingResult.index + headingResult[0].length,
+        );
+    }
+
     // Process the heading subsection independently
-    const subSectionStart = result.index + result[0].length;
     const tempState = ParserState.Clone(state);
-    tempState.index = subSectionStart;
+    tempState.index = 0;
     tempState.inlineOnly = "InlineOnly";
+    tempState.initialContent = string;
     processSection(tempState, "/Heading");
-    state.index = tempState.index;
+    state.index += result[0].length + tempState.index + extraIndexOffset;
     let headingContent = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
 
-    const { text: cleanedText, id } = cleanHeadingText(
-        state.initialContent.slice(subSectionStart, state.index - "[[/Heading]]".length),
-    );
+    const { text: cleanedText, id: cleanedId } = cleanHeadingText(string);
+
+    // Use the cleaned ID if no explicitly assigned ID
+    if (id === undefined) {
+        id = cleanedId;
+    }
 
     if (state.allowHeadingLinks) {
         if (state.headings.find((heading) => heading.id === id)) {
