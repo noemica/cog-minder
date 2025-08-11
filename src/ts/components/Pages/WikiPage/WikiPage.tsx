@@ -199,7 +199,16 @@ function addBotSupergroups(addEntry: (entry: WikiEntry) => void, allEntries: Map
             }
         }
 
-        entry.childEntries.sort((entry1, entry2) => entry1.name.localeCompare(entry2.name));
+        entry.childEntries.sort((entry1, entry2) => {
+            // Always sort the "Other" group last
+            if (entry1.name === "Other") {
+                return 1;
+            } else if (entry2.name === "Other") {
+                return -1;
+            }
+
+            return entry1.name.localeCompare(entry2.name);
+        });
     }
 }
 
@@ -578,7 +587,16 @@ function addPartSupergroups(
             }
         }
 
-        entry.childEntries.sort((entry1, entry2) => entry1.name.localeCompare(entry2.name));
+        entry.childEntries.sort((entry1, entry2) => {
+            // Always sort the "Other" group last
+            if (entry1.name === "Other") {
+                return 1;
+            } else if (entry2.name === "Other") {
+                return -1;
+            }
+
+            return entry1.name.localeCompare(entry2.name);
+        });
     }
 }
 

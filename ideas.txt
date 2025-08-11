@@ -1,6 +1,6 @@
 Small ideas:
 - Enforce proper headings (heading 1 -> 2 -> 3) and no skips (heading 1 -> 3) in wiki
-- Add support for broad categories in wiki part groups so I don't have to keep updating for every new part
+- Spoiler TOC in wiki pages
 
 Medium ideas:
 - Add ignore obsolete parts in search
@@ -10,7 +10,6 @@ Medium ideas:
 - Add drag/drop to spreadsheet view
     - https://codesandbox.io/p/devbox/intelligent-tereshkova-sqo7wj?embed=1&file=%2Fsrc%2Fmain.tsx%3A50%2C4&theme=light
 - Show relevant stat when sorting parts page
-- Add custom bot/part info to wiki
 
 Big ideas:
 - Add graph of part stats, allow any 2 axes to be selected
