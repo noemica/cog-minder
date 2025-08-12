@@ -804,8 +804,10 @@ Depth|[[E-15 Imp]]|[[Executioner]]|[[Hunter]]|[[Mechanic]]|[[Programmer]]|Protec
 [[Image]]Destabilized Tiles.png|Destabilized tiles are bright red as shown by a Structural Scanner[[/Image]]
 [[Heading:2]]Destabilization[[/Heading]]
 Destabilized tiles are tiles that will always collapse if given enough time. They may collapse instantly or they may last a hundred turns or more. Destabilized tiles can be viewed with a [[Structural Scanner]]. A tile can become destabilized in two ways:
-[[List]]Explosive damage - Explosive damage (namely [[Launchers]]) will cause a tile to destabilized.|Attacking from a dug out tile - If Cogmind or any other bot fires a weapon inside of a dug out tile, the tile will destabilize. This tile may collapse instantly before Cogmind gets a chance to move, so digging from inside these tiles is never completely safe.
+[[List]]Explosive damage - Explosive damage (namely [[Launchers]]) are likely to cause tiles to become destabilized. Note that Thermal and EM explosions do not have this effect.
+|Attacking from a dug out tile - If Cogmind or any other bot fires a weapon inside of a dug out tile, the tile will destabilize. This tile may collapse instantly before Cogmind gets a chance to move, so digging from inside these tiles is never completely safe.
 In terms of destabilization, melee attacks are the least likely to collapse right away. Guns have a slightly higher chance, and then cannons and launchers have the highest chance.[[/List]]
+
 [[Heading:2]]Dug-out tile traversal[[/Heading]]
 It is possible to safely travel through dug-out tiles (that are not destabilized) for up to 1-4 tiles, depending on the type of tiles traversed. If the warnOnCaveinMove option in the advanced.cfg file is set to 1, the game will warn you when trying to move onto a dug-out tile that could collapse due to that movement. The safety of digs is follow (assuming the relevant tiles are not destabilized):
 [[List]]
@@ -813,14 +815,13 @@ It is possible to safely travel through dug-out tiles (that are not destabilized
 |2-tile digs - Safe, unless both tiles are dug-out earth tiles (rarely relevant).
 |3-tile digs - Safe, but only if no more than one of the tiles is a dug-out Earth tile.
 For example, the most common safe 3-tile dig is Wall-Earth-Wall,
-whereas Wall-Earth-Earth or Earth-Earth-Wall would not be safe and could collapse on the third tile due to having traveled through more than one earth tile. 
+whereas Wall-Earth-Earth or Earth-Earth-Wall would not be safe and could collapse on the third and second tiles respecitvely due to having traveled through more than one earth tile. 
 |4-tile digs - Only safe if all four tiles are dug-out Wall tiles. 4-tile digs are only rarely useful.
 |5-tile or more digs - Never safe.[[/List]]
 One way to think about it is to consider that moving through a dug-out tile has a ""cost"", 2 for Wall tiles and 5 for Earth tiles, and that having reached a ""cost"" of 10 or more during a single dig can cause a cave-in on the current tile. [[Comment]]I feel like there's a better way to word this sentence.[[/Comment]]
 
 Each step into an unsafe tile has a 10% chance of instantly causing a collapse of the tile moved into.
 
-[[Comment]]Some late-game AAs can make it possible to dig more safely/farther/better, should they be mentioned here? I'm not sure myself on how they function in regards to cave-ins due to movement.[[/Comment]]
 
 [[Heading:2]]Closed-off Tunnels[[/Heading]]
 If a bot sits in a closed off area of the map, there is a chance each turn that a cave-in will occur. As long as there is a path to the main area of the map, it is safe to sit indefinitely in a dug out area. However, if the path closes due to something like an [[U-05 Engineer|Engineer]] rebuilding a wall, it will suddenly become dangerous.
@@ -830,7 +831,18 @@ If a bot sits in a closed off area of the map, there is a chance each turn that 
 
 [[Heading]]Avoiding cave-ins[[/Heading]]
 Here are some strategies to avoid cave-ins:
-[[List]]Don't use melee to dig more than 1 tile - Melee weapons need to be adjacent to the next tile to dig out. This means Cogmind will have to be in a dug out tile to dig two consecutive tiles which allows a chance for an immediate destabilization cave-in.|Don't use Explosive Launchers to dig - While Launchers can dig out a lot of tiles at once, those tiles have a chance to collapse as Cogmind walks through. Note: it is safe to do this with a Structural Scanner equipped, as destabilized tiles will be visible and are avoidable.|Use Thermal or Kinetic cannons - These cannons have a high base damage that is typically strong enough to dig through most non-reinforced walls. It is safe to dig a 3 tile path ahead of time and then walk through at no risk of cave-in.|Be wary of [[U-05 Engineer|Engineers]] - Engineers may seal off your path and leave you stuck in the wall, forced to dig again to escape and risk immediate cave-in.[[/List]]","","","","","","",""
+[[List]]Don't use melee to dig more than 1 tile - Melee weapons need to be adjacent to the next tile to dig out. This means Cogmind will have to be in a dug out tile to dig two consecutive tiles which allows a chance for an immediate destabilization cave-in.|Don't use Explosive Launchers to dig - While Launchers can dig out a lot of tiles at once, those tiles have a chance to collapse as Cogmind walks through. Note: it is safe to do this with a Structural Scanner equipped, as destabilized tiles will be visible and are avoidable.|Use Thermal or Kinetic cannons - These cannons have a high base damage that is typically strong enough to dig through most non-reinforced walls. It is safe to dig a 3 tile path ahead of time and then walk through at no risk of cave-in.|Be wary of [[U-05 Engineer|Engineers]] - Engineers may seal off your path and leave you stuck in the wall, forced to dig again to escape and risk immediate cave-in.[[/List]]
+
+[[Heading]]Non-standard Movement[[/Heading]]
+Because only standard movements count towards the safety limit when traversing dug-out tiles, non-standard movement types can be used to bypass the safe dig limit, usually at the cost of some kind of damage, which may be preferable to the chance of high Impact damage from cave-ins. Some non-standard movements include:
+[[List]]Being pushed into a dug-out tile by a friendly [[Behemoth]].
+|Being knocked back by [[Ballistic Cannons|Ballistic Cannon]] projectile, usually from hostiles.
+|Being knocked back by [[Concussive RPG]], including any used by Cogmind. Note that the explosion may cause dug-out tiles to become destabilized. [[Comment]]Since using one that way would push you away from the tile you fired from, i think that would make you immune to collapse due to attacking from a dug-out tile, but i haven't done thorough testing.[[/Comment]]
+|Being knocked back by hostile Impact weapons, which would hardly be beneficial.
+
+[[/List]]
+
+[[Comment]]Some late-game AAs can make it possible to dig more safely/farther/better, they should probably be mentioned here? I'm not sure myself on how they function in regards to cave-ins due to movement.[[/Comment]]","","","","","","",""
 "Caves","Location","Caves is the most frequent [[Branch]] map throughout all of [[Factory]] depths. It is a non-[[0b10]]-controlled map where [[Derelict|Derelicts]] often roam free and hostile 0b10 squads patrol and can be taken out without fear of reinforcements. Non-patrolling 0b10 outposts guarded by a [[Sentry]] and dormant bots are common. Every depth has 2 guaranteed Caves exits and each Caves map is a part of a series of 3 maps in a row. Not counting event-based exits, all first Caves maps of each depth can only be exited by entering the second Caves map. Caves maps do not have very many regular parts on the ground, but piles of [[Scrap]] contain usable but partially damaged parts and [[Derelict Log|Derelict Logs]] can give unique intel about upcoming floors.
 There are different names for the different types of Caves maps and they have slightly different characteristics. Lower Caves is the name given to the first 2 Caves maps on -7 and -6, while Caves maps on -5 and -4 are named Upper Caves. The third caves map is accessible only by exiting the depth-specific special branch at the left side of the second caves map and is called Proximity Caves, regardless of depth. Lower and Upper Caves are very similar in all but [[Robot Tier]], but Proximity Caves tends to be more densely populated with patrols, in addition to potentially having higher-tier robot variants due being one depth above the Caves that lead to them. They also contain [[N-01 Spotter|Spotters]] that will report armed hostiles on sight, causing a 150 alert increase per spot when entering the next map. This caps at 900 alert gained.
 Caves are patrolled lightly by hostile 0b10 bots compared to the main floors. [[Infowar]] utilities are a good option to avoid unnecessary encounters as many patrols can be avoided with a bit of patience. Caves have a unique mechanic where parts dropped from 0b10 bots will automatically self-destruct after a few turns. Looting must be done quickly or else the dropped parts will be lost forever. The only 2 ways around this mechanic are [[Self-destruct Interrupter|Self-destruct Interrupters]] and [[Electromagnetic Weapons]]. The interrupters will prevent the parts from frying while active and EM damage will interfere with the self-destruct mechanism. While EM will give [[Corrupted Parts]], it is far better to end up with corrupted parts than to end up with no parts at all.
@@ -6144,6 +6156,8 @@ Last edited during Beta 14.","Spoiler","","","","","",""
 Samaritans will give energy each turn to every robot (and [[Cogmind]]) in range.","","","","","","",""
 "Sapper","Bot","","","","","","","",""
 "Sapper Charge","Part","Sapper Charges are inventory items. They can be activated to start an 8-turn timer that will cause them to detonate. They can usually be found near [[Sapper|Sappers]], in some cases placed and activated by Sappers to destroy 0b10 machines. When Cogmind is standing on one, pressing > or right-clicking on Cogmind will start its 8-turn explosion timer. Doing so again will interrupt the timer, which can be useful when trying to collect/interrupt one from a Sapper's sabotage attempt or after accidentally activating one. Note that both activation and deactivation take an entire turn, meaning only 7 of the 8 turns can actually be used to escape its explosion radius. Picking up an active Sapper Charge will not halt its countdown, and it can explode from Cogmind's inventory.
+
+Because Sapper Charges' explosions deal thermal damage, they can be use to safely [[Digging|dig]] or destroy almost any 1-layer door-type obstacles such as [[Reinforced Walls|Sealed Blast Doors]].
 
 As Sapper Charges are non-part inventory items, [[Recycler|Recyclers]] will not attempt to pick them up. 
 
