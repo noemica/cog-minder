@@ -6062,9 +6062,11 @@ Repair Stations are [[0b10]]-controlled [[Interactive Machine|Machines]] that ca
 [[Hacks]]Repair Station[[/Hacks]]
 [[Heading:2]]Additional Details/Usage Tips[[/Heading]]
 [[Heading:3]]Repairing Things[[/Heading]]
-Repair stations can repair most parts in the game. The main exceptions are rating 9* prototypes, [[Alien Artifacts]], and a variety of other unique parts. Parts that cannot be repaired have a * next to their integrity in the stat view. Parts must first be inserted with the [[GameText]]Scan([Part Name])[[/GameText]] hack. Then, the rating-specific [[GameText]]Repair[[/GameText]] must be performed. Sometimes a part will become [[Broken Part|broken]] if this hack is failed. After the repair is initiated, the machine will take a rating-dependent number of turns to repair, regardless of the amount of missing integrity.
+Repair stations can repair most parts in the game. The main exceptions are rating 9* prototypes, [[Alien Artifacts]], and a variety of other unique parts. Parts that cannot be repaired have a * next to their integrity in the stat view. Parts must first be inserted with the [[GameText]]Scan([Part Name])[[/GameText]] hack. Then, the rating-specific [[GameText]]Repair[[/GameText]] must be performed. Sometimes a part will become [[Broken Part|broken]] if this hack is failed. After the repair is initiated, the machine will take a rating-dependent number of turns to repair, regardless of the amount of missing integrity. Broken parts do take longer to repair, however.
 [[Heading:4]]Time to Repair[[/Heading]]
+[[Comment]]The time to repair a part is equal to (20 + (6 * [rating])), +40% if broken, +60 if prototype, +100% if both / [Repair Station level], rounded down.[[/Comment]]
 Security level 2 Repair Stations repair roughly twice as fast as level 1s do, and level 3 Repair Stations repair three times as fast as level 1s.
+The times to repair unbroken parts are as follows:
 [[Table]]
 Rating|Level 1 Turns|Level 2 Turns|Level 3 Turns||
 1|26|13|8||
@@ -6079,13 +6081,13 @@ Rating|Level 1 Turns|Level 2 Turns|Level 3 Turns||
 6|56|28|18||
 6*|89|44|29||
 7|62|31|20||
-7*|99|44|33||
+7*|99|49|33||
 8|68|34|22||
 8*|108|54|36||
 9|74|37|24
 [[/Table]]
 [[Heading:3]]Refit[[/Heading]]
-If Cogmind has fewer than 2 filled slots in any of Power, Propulsion, Utility, and Weapons when performing this hack, he will be refitted with Backup Power, Propulsion, Plating, or Lasers respectively for each type of slots. While a maximum of 2 can be obtained at a time, more can be obtained through multiple refits by detaching the parts in between each hack.
+If you have fewer than 2 attached parts in any of Power, Propulsion, Utility, or Weapons when performing this hack, Cogmind will be refitted with Backup Power, Propulsion, Plating, or Lasers respectively for each type of slots. While a maximum of 2 for each slot type can be obtained at a time, more can be obtained through multiple refits by detaching the parts in between each hack.
 [[Table]]
 Slot|Security Level 1|Security Level 2|Security Level 3||
 Power|[[Backup Power I]]|[[Backup Power III]]|[[Backup Power VII]]||
