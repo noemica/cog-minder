@@ -140,6 +140,9 @@ function cleanHeadingText(text: string): { text: string; id: string } {
     if (index < text.length) {
         cleanedText += text.slice(index);
     }
+    
+    // Unescape the links that have double curly braces
+    cleanedText = cleanedText.replaceAll("{{", "[").replaceAll("}}", "]");
 
     // Replace all spaces with underscore since spaces are technically not allowed
     // Then strip out all chars except for alphabetical and -/_s.
