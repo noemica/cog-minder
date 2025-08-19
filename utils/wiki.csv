@@ -6236,7 +6236,7 @@ The value of common [[0b10 Bots]] is equal to their class number (for example, t
 [[Heading]]Bonus Points[[/Heading]]
 (This section is a work in progress, and as such is missing a lot of information, features subpar formatting, and/or lacks links. It does not, however, lack spoiler tags.)
 Bonus points are obtained from a large variety of sources, almost all of them spoilery. Remember to set your spoilers settings to ""None"" if you do not want to see potential spoilers!
-Unlike overall performance score, bonus score categories only appear in scoresheets if point were earned in them. For bonus categories that require destroying very specific robots or machines, unless otherwise noted, anything will count so long as the corresponding bots/machines are destroyed, and Cogmind does not actually have to personally destroy the bots/machines. The following is a very incomplete list of bonus point sources, more or less in the order they appear in scoresheets (a '?' indicates that the writer of this article is unsure about whether a source stacks or not):
+Unlike overall performance score, bonus score categories only appear in scoresheets if point were earned in them. Various [[Achievements]] have the same requirements as some bonus score categories. For categories that require destroying very specific robots or machines, unless otherwise noted, anything will count so long as the corresponding bots/machines are destroyed, and Cogmind does not actually have to personally destroy the bots/machines. The following is a very incomplete list of bonus point sources, more or less in the order they appear in scoresheets (a '?' indicates that the writer of this article is unsure about whether a source stacks or not):
 
 [[Table]]Name|Points|Stacks|Source||
 
@@ -6244,16 +6244,16 @@ Unlike overall performance score, bonus score categories only appear in scoreshe
 Pacifist|Dependent on regions visited|Yes|Not destroying any bot by any means that attribute a kill to Cogmind for an entire map, while no kills were attributed to Cogmind in previous maps||
 Triggered High Security|500|Yes|Triggering [[High Security]]||
 [[Spoiler]]Triggered Max Security[[/Spoiler]]|1000|Yes|[[Spoiler]]Triggering [[Maximum Security]][[/Spoiler]]||
-High Alert Combat Kills[[Sup]]3[[/Sup]]|Dependent on bot value and [[Alert]]|Yes|Personally destroying hostile combat bots while Alert is at least at level 2.
+High Alert Combat Kills[[Sup]]3[[/Sup]]|Dependent on bot value and [[Alert]]|Yes|Personally destroying hostile combat bots while Alert is at least at level 2 in [[0b10]]-controlled maps.
 At alert level 2, 25% of regular bot value. At level 3, 50%. At level 4, 75%. At level 5, 100%.||
 Follower Combat Kills|75% of regular bot value|Yes|Blue/purple Allies destroying combat bots||
 
 [[Comment]] --- Side Quests --- [[/Comment]]
-[[Spoiler]]Awakened Behemoth Slayer[[/Spoiler]]|1000|[[Subatomic Replicator|SR?]]|[[Spoiler]]Transforming [[CR-A16's Pointy Stick]][[/Spoiler]]||
-[[Spoiler]]Forged Quantum Companion[[/Spoiler]]|1000|[[Subatomic Replicator|SR]]|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Awakened Behemoth Slayer[[/Spoiler]]|1000|[[Subatomic Replicator|SR?]]|[[Spoiler]]Transforming [[CR-A16's Pointy Stick]] into [[CR-A16's Behemoth Slayer]] by attacking [[Behemoth|Behemoths]] with it[[/Spoiler]]||
+[[Spoiler]]Forged Quantum Companion[[/Spoiler]]|1000|[[Subatomic Replicator|SR]]|[[Spoiler]]Transforming either the [[Companion Sword]] or the [[Quantum Companion]] into its next form[[/Spoiler]]||
 [[Spoiler]]Built PL-3XN's Obliterator[[/Spoiler]]|1000|[[Subatomic Replicator|SR?]]|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Finished Modified EM Gauss[[/Spoiler]]|1000|[[Subatomic Replicator|SR?]]|[[Spoiler]] [[/Spoiler]]||
-[[Redacted]]Installed LC Capacitor[[/Redacted]]|1000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Installed LC Capacitor[[/Redacted]]|1000|N/A|[[Redacted]]Installing the [[LC Capacitor]] into the [[Drained L-Cannon]][[/Redacted]]||
 
 [[Comment]] --- ""Side Stuff"" --- [[/Comment]]
 Entered Garrisons|200|Yes|Entering [[Garrison]] maps||
@@ -6267,6 +6267,7 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Spoiler]]Registered with UFD[[/Spoiler]]|300|N/A|[[Spoiler]][[Scraptown#alignment_-_ufd|Registering as a UFD member in Scraptown]][[/Spoiler]]||
 [[Spoiler]]Met Optimus in HQ[[/Spoiler]]|500|N/A|[[Spoiler]]Talking to [[Scraptown#sub-alignment_-_optimus|Optimus in Scraptown]][[/Spoiler]]||
 [[Spoiler]]Met Data Miner[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Data Miner]] in [[Data Miner (Location)]][[/Spoiler]]||
+[[Spoiler]]Used Data Conduit[[/Spoiler]]|3000|N/A|[[Spoiler]]Using the [[Data Conduit]] in [[Data Miner (Location)#data_conduit|Data Miner (Location)]][[/Spoiler]]||
 [[Spoiler]]Met Imprinter[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Imprinter]] in [[Zion]][[/Spoiler]]||
 [[Spoiler]]Was Imprinted[[/Spoiler]]|300|N/A|[[Spoiler]]Using the [[Zion#alignment_-_imprinting|Imprinting machine in Zion]][[/Spoiler]]||
 [[Spoiler]]Destroyed Z-Imprinter[[/Spoiler]]|1000|N/A|[[Spoiler]]Destroying [[Z-Imprinter]] in [[Zion Deep Caves|Deep Caves]][[/Spoiler]]||
@@ -6274,13 +6275,13 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Spoiler]]Exposed GOLEM Chamber[[/Spoiler]]|500|No|[[Spoiler]]Destroying one of the GOLEM Chambers in [[Zion Deep Caves|Deep Caves]][[/Spoiler]]||
 [[Spoiler]]Acquired ECA[[/Spoiler]]|300|N/A|[[Spoiler]]Having the [[Encrypted Comm Array]] be delivered in [[Caves]][[/Spoiler]]||
 [[Spoiler]]Met Zhirov[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Zhirov]][[/Spoiler]]||
-[[Spoiler]]Met Warlord at Base[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]MAIN.C Attacked Warlord[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Warlord Defense Kills[[Sup]]3[[/Sup]][[/Spoiler]]|[[Spoiler]]200% of regular bot value[[/Spoiler]]|Yes|[[Spoiler]]Personally destroying 0b10 bots in [[Warlord (Location)]][[/Spoiler]]||
-[[Spoiler]]Built Enhanced Grunts[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]A7 Reached Mainframe[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Met R17 at Cetus[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Read Decrypted Archives[[/Spoiler]]|300|No| ||
+[[Spoiler]]Met Warlord at Base[[/Spoiler]]|500|N/A|[[Spoiler]]Meeting [[Warlord]] in [[Warlord (Location)]][[/Spoiler]]||
+[[Spoiler]]MAIN.C Attacked Warlord[[/Spoiler]]|500|N/A|[[Spoiler]]Being in [[Warlord (Location)]] when [[0b10]] forces attack the map[[/Spoiler]]||
+[[Spoiler]]Warlord Defense Kills[[Sup]]3[[/Sup]][[/Spoiler]]|[[Spoiler]]200% of regular bot value[[/Spoiler]]|Yes|[[Spoiler]]Personally destroying [[0b10]] bots in [[Warlord (Location)]][[/Spoiler]]||
+[[Spoiler]]Built Enhanced Grunts[[/Spoiler]]|300|N/A|[[Spoiler]]Using the code given by [[A7]] upon entering [[Cetus]] on the Cetus Manufacturing Module Terminal to build [[Enhanced Grunt|Enhanced Grunts]][[/Spoiler]]||
+[[Spoiler]]A7 Reached Mainframe[[/Spoiler]]|300|N/A|[[Spoiler]]Having [[A7]] reach the Cetus Mainframe and comment about it in [[Cetus]][[/Spoiler]]||
+[[Spoiler]]Met R17 at Cetus[[/Spoiler]]|500|N/A|[[Spoiler]]Meeting [[Revision 17]] in [[Cetus]] after destroying all 8 [[Cetus Guard|Cetus Guards]][[/Spoiler]]||
+[[Spoiler]]Read Decrypted Archives[[/Spoiler]]|300|No|[[Spoiler]]Reading the decrypted archives in [[Archives]] during the [[Archives#variations|special event]][[/Spoiler]]||
 
 [[Comment]] --- Hidden Lab --- [[/Comment]]
 [[Redacted]]Found Hidden Lab[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
@@ -6289,7 +6290,7 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Comment]] --- Research-related Events & Branches --- [[/Comment]]
 [[Spoiler]]Used Core Reset Matrix[[/Spoiler]]|3000|No|[[Spoiler]]Attaching a [[Core Reset Matrix]][[/Spoiler]]||
 [[Spoiler]]Hacked Protovariant[[/Spoiler]]|500|Yes|[[Spoiler]]Using the [[GameText]]Protovariant Controls/Control(Protovariants)[[/GameText]] hack on a [[Terminal]] to unleash a [[Protovariant]] in [[Testing]][[/Spoiler]]||
-[[Spoiler]]Met R17 at Research[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Met R17 at Research[[/Spoiler]]|2000|N/A|[[Spoiler]]Meeting [[Revision 17++]] in [[Revision 17 (Alignment)#-3_research_invasion|-3/Research]][[/Spoiler]]||
 [[Spoiler]]Met Warlord at Research[[/Spoiler]]|2000|N/A|[[Spoiler]]Meeting [[Warlord]] in [[Warlord (Alignment)#-2_research_assault|-2/Research]][[/Spoiler]]||
 [[Spoiler]]Invited to Help at Command[[/Spoiler]]|2000|N/A|[[Spoiler]]Being invited to [[Command]] by [[Warlord]] during the [[Warlord (Alignment)#-2_research_assault|-2/Research assault]][[/Spoiler]]||
 [[Spoiler]]Hacked God Mode[[/Spoiler]]|5000|N/A|[[Spoiler]] [[/Spoiler]]||
