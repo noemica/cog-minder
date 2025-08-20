@@ -6058,14 +6058,24 @@ Repair Stations are [[0b10]]-controlled [[Interactive Machine|Machines]] that ca
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Repair Station[[/Lore]]
 
+[[Heading]]Destruction[[/Heading]]
+Destroying a Repair Station can drop some of its level-appropriate [[Backup Parts]], though this will damage them, and possibly also the part that was undergoing repair, if any.
+Repair Stations differ in shape and armor value, which can be used to see what security level they are:
+[[Table]]
+Security level|Armor||
+1|22||
+2|32||
+3|35
+[[/Table]]
+
+
 [[Heading]]Hacks[[/Heading]]
 [[Hacks]]Repair Station[[/Hacks]]
 [[Heading:2]]Additional Details/Usage Tips[[/Heading]]
 [[Heading:3]]Repairing Things[[/Heading]]
-Repair stations can repair most parts in the game. The main exceptions are rating 9* prototypes, [[Alien Artifacts]], and a variety of other unique parts. Parts that cannot be repaired have a * next to their integrity in the stat view. Parts must first be inserted with the [[GameText]]Scan([Part Name])[[/GameText]] hack. Then, the rating-specific [[GameText]]Repair[[/GameText]] must be performed. Sometimes a part will become [[Broken Part|broken]] if this hack is failed. After the repair is initiated, the machine will take a rating-dependent number of turns to repair, regardless of the amount of missing integrity. Broken parts do take longer to repair, however.
+Repair stations can repair most parts in the game. The main exceptions are rating 9* prototypes, [[Alien Artifacts]], Backup Parts, non-part items like [[Traps]], and a variety of other unique parts. Parts that cannot be repaired have a * next to their integrity in the stat view. Parts must first be inserted with the [[GameText]]Scan([Part Name])[[/GameText]] hack. Then, the rating-specific [[GameText]]Repair[[/GameText]] must be performed. Sometimes a part will become [[Broken Part|broken]] if this hack is failed. After the repair is initiated, the machine will take a rating-dependent number of turns to repair, regardless of the amount of missing integrity. Broken parts do take longer to repair, however.
 [[Heading:4]]Time to Repair[[/Heading]]
-[[Comment]]The time to repair a part is equal to (20 + (6 * [rating])), +40% if broken, +60 if prototype, +100% if both / [Repair Station level], rounded down.[[/Comment]]
-Security level 2 Repair Stations repair roughly twice as fast as level 1s do, and level 3 Repair Stations repair three times as fast as level 1s.
+The time to repair a non-prototype non-broken part is equal to [20 + (6 * [rating])]. A broken part will take 140% of that time, a prototype part 160%, and a broken prototype 200%. The final time to repair a part is divided by the level of the Repair Station, and rounded down; Security level 2 Repair Stations repair roughly twice as fast as level 1s do, and level 3 Repair Stations repair three times as fast as level 1s.
 The times to repair unbroken parts are as follows:
 [[Table]]
 Rating|Level 1 Turns|Level 2 Turns|Level 3 Turns||
