@@ -6106,7 +6106,9 @@ Utility|[[Backup Plating I]]|[[Backup Plating III]]|[[Backup Plating VII]]||
 Weapon|[[Backup Laser I]]|[[Backup Laser III]]|[[Backup Laser VII]]
 [[/Table]]
 [[Spoiler]][[Heading:3]][[GameText]]Force(Patch)[[/GameText]][[/Heading]]
-This hack is best used to quickly repair things that have low current integrity but have a high maximum integrity. This can restore large amounts of integrity quickly for parts like [[Armor]] and [[Treads]]. [[Storage Unit|Storage Units]] are an especially good choice for this hack due to the unique ability of this hack to repair parts without needing to detach them and wait around. Otherwise, repairing storage units can be quite risky with [[Recycler|Recyclers]] stealing parts while waiting.[[/Spoiler]]","","","","","","",""
+This hack is best used to quickly repair things that have low current integrity but have a high maximum integrity. This can restore large amounts of integrity quickly for parts like [[Armor]] and [[Treads]]. [[Storage Unit|Storage Units]] are an especially good choice for this hack due to the unique ability of this hack to repair parts without needing to detach them and wait around. Otherwise, repairing storage units can be quite risky with [[Recycler|Recyclers]] stealing parts while waiting.[[/Spoiler]]
+
+This article was last edited during Beta 15.","","","","","","",""
 "Research","Location","Research is a [[0b10]]-controlled main floor that appears on both -3 and -2. Research maps continue to amp up the difficulty in strength and number of general combat encounters, hacking difficulty, and difficulty in locating exits. Compared to the previous [[Factory]] floors, Research maps are just as big, but are much more maze-like with large numbers of smaller interconnected rooms and big sections of the level entirely disconnected by large chunks of earth. Exploring all of these different rooms is more difficult than before, and finding an exit can be a real challenge.
 Unlike factory floors with [[Caves]] available, there are usually no easy exits to dissipate [[Alert]] in Research. The natural alert dissipation that occurs between levels continues to decrease. Purging alert or avoiding generating it in the first place can be a big deal if the player is not prepared to fight off [[High Security]]. [[Infowar]] continues to be important to avoid unnecessary encounters whenever possible, and [[Hackware]] should be used to purge alert and locate exits whenever possible.
 As the difficulty increases, the rewards do to match. Many powerful unique parts can be found in Research specific branches [[Testing]] and [[Quarantine]]. There are also more [[Prototype Part|Prototypes]] lying around on the floor. Using a [[Component Analysis Suites|Component Analysis Suite]] can pay off to avoid attaching faulty prototypes.
@@ -6273,7 +6275,7 @@ Used RIF Installer|500|Yes|Using [[Garrison#rif_installer|RIF Installers]] with 
 
 [[Comment]] --- Materials/Factory Branches --- [[/Comment]]
 Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Aligner machine in Exiles (Location)]]||
-[[Spoiler]]Delivered SUBCON Basin[[/Spoiler]]|2000|N/A|Delivering the full [[SUBCON Basin]] from [[Subcaves]] to the [[Recycling#scraplab|Scraplab in Recycling]]||
+[[Spoiler]]Delivered SUBCON Basin[[/Spoiler]]|2000|N/A|[[Spoiler]]Delivering the full [[SUBCON Basin]] from [[Subcaves]] to the [[Recycling#scraplab|Scraplab in Recycling]][[/Spoiler]]||
 [[Spoiler]]Registered with UFD[[/Spoiler]]|300|N/A|[[Spoiler]][[Scraptown#alignment_-_ufd|Registering as a UFD member in Scraptown]][[/Spoiler]]||
 [[Spoiler]]Met Optimus in HQ[[/Spoiler]]|500|N/A|[[Spoiler]]Talking to [[Scraptown#sub-alignment_-_optimus|Optimus in Scraptown]][[/Spoiler]]||
 [[Spoiler]]Met Data Miner[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Data Miner]] in [[Data Miner (Location)]][[/Spoiler]]||
@@ -6303,20 +6305,20 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Spoiler]]Met R17 at Research[[/Spoiler]]|2000|N/A|[[Spoiler]]Meeting [[Revision 17++]] in [[Revision 17 (Alignment)#-3_research_invasion|-3/Research]][[/Spoiler]]||
 [[Spoiler]]Met Warlord at Research[[/Spoiler]]|2000|N/A|[[Spoiler]]Meeting [[Warlord]] in [[Warlord (Alignment)#-2_research_assault|-2/Research]][[/Spoiler]]||
 [[Spoiler]]Invited to Help at Command[[/Spoiler]]|2000|N/A|[[Spoiler]]Being invited to [[Command]] by [[Warlord]] during the [[Warlord (Alignment)#-2_research_assault|-2/Research assault]][[/Spoiler]]||
-[[Spoiler]]Hacked God Mode[[/Spoiler]]|5000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Hacked God Mode[[/Spoiler]]|5000|N/A|[[Spoiler]]Hacking [[God Mode]] with the code given by [[Data Miner]][[/Spoiler]]||
 [[Spoiler]]Scanned by Researcher[[/Spoiler]]|500|Kinda|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Pursued by Intercept[[/Spoiler]]|500|Max once per map|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Pursued by Intercept[[/Spoiler]]|500|Max once per map|[[Spoiler]]Being pursued by the first [[Intercept Squad]] dispatch of a map[[/Spoiler]]||
 [[Spoiler]]Acquired SGEMP[[/Spoiler]]|2000|No|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Delivered SGEMP[[/Spoiler]]|2000|No|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Met Sigix[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Met Sigix[[/Spoiler]]|2000|N/A|[[Spoiler]]Meeting the [[Sigix Containment Pod]][[/Spoiler]]||
 
 [[Comment]]I'm not actually sure about the SGEMP quest. If you replicate the SGEMP before picking it up, i don't think it would count twice, but what about for the delivery?[[/Comment]]
 
 [[Comment]] --- REDACTED Research branches --- [[/Comment]]
-[[Redacted]]Activated Exoskeleton[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Integrated Exoskeleton[[/Redacted]]|5000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Destroyed Superfortress[[/Redacted]]|15000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Met Optimus at Protoforge[[/Redacted]]|1000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Activated Exoskeleton[[/Redacted]]|3000|N/A|[[Redacted]]Placing the [[Sigix Containment Pod]] into the [[Sigix Exoskeleton]] in [[Section 7]][[/Redacted]]||
+[[Redacted]]Integrated Exoskeleton[[/Redacted]]|5000|N/A|[[Redacted]]Integrating the [[Sigix Exoskeleton]] in [[Section 7]][[/Redacted]]||
+[[Redacted]]Destroyed Superfortress[[/Redacted]]|15000|N/A|[[Redacted]]Destroying the [[Superfortress]][[/Redacted]]||
+[[Redacted]]Met Optimus at Protoforge[[/Redacted]]|1000|N/A|[[Redacted]]Meeting [[Triborg (Optimus)]] in [[Protoforge]][[/Redacted]]||
 [[Redacted]]Completed Drillbomb Mission[[/Redacted]]|10000|N/A|[[Redacted]]Completing the [[Protoforge#w9_defending_0bprimeufd_assault|Drillbomb Mission during the UFD assault in Protoforge]][[/Redacted]]||
 [[Redacted]]Optimus Survived to 0b1[[/Redacted]]|3000|N/A|[[Redacted]][[Protoforge#w9_defending_0bprimeufd_assault|Winning or leaving Protoforge after completing the Drillbomb Mission]] while [[Optimus]] is still alive[[/Redacted]]||
 
@@ -6327,19 +6329,19 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Comment]]   Some endings won't grant points for bringing the Sigix Containement Pod or Exo-Sigix. For example, W5 doesn't grant ""Escaped with Sigix"" even if you have the Sigix Containement Pod. I assume the same is true for Exo-Sigix, but i don't know about Sigix Corpses. I also don't know for sure which endings this holds true for, but i think all those that ascend to the Surface are safe.[[/Comment]]
 
 [[Comment]] --- Command --- [[/Comment]]
-[[Redacted]]Destroyed MAIN.C Guards[[/Redacted]]|500|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed MAIN.C Guards[[/Redacted]]|500|N/A|[[Redacted]]Destroying both [[M Guard|M Guards]] and both [[Combat Programmer|Combat Programmers]] in [[Command#doom_corridor|Command]][[/Redacted]]||[[Comment]]NOTE: I'm not sure if the Combat Programmers are required for this category; After all, M Guards' names are from being MAIN.C's guards.[[/Comment]]
 [[Redacted]]Met MAIN.C[[/Redacted]]|5000|N/A|[[Redacted]]Meeting [[MAIN.C (Shell)]][[/Redacted]]||
 [[Redacted]]Hacked MAIN.C[[/Redacted]]|300|N/A|[[Redacted]]Using [[A7]]'s code from the [[Cetus|Cetus Mainframe]] on either [[MAIN.C (Shell)]] or [[MAIN.C]] via a [[Datajacks|Datajack]][[/Redacted]]||
 [[Redacted]]Destroyed MAIN.C Shell[[/Redacted]]|5000|N/A|[[Redacted]]Destroying [[MAIN.C (Shell)]][[/Redacted]]||
 [[Redacted]]Zhirov Destroyed MAIN.C[[/Redacted]]|3000|N/A|[[Redacted]][[Zhirov]] detonating the modified [[SGEMP Prototype]], regardless of whether [[MAIN.C]] is destroyed as a result[[/Redacted]]||
 [[Redacted]]Destroyed MAIN.C[[/Redacted]]|10000|N/A|[[Redacted]]Destroying [[MAIN.C]] in any way other than [[Zhirov]] detonating the modified [[SGEMP Prototype]][[/Redacted]]||
 [[Redacted]]Used 0b10 Conduit[[/Redacted]]|2000|N/A|[[Redacted]]Using the [[Command#w4_assimilated_0b10|0b10 Conduit in Command]][[/Redacted]]||
-[[Redacted]]Met Warlord at Command[[/Redacted]]|2000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Met Warlord at Command[[/Redacted]]|2000|N/A|[[Redacted]]Meeting [[Warlord (Command)]] in [[Command]][[/Redacted]]||
 
 [[Comment]] --- Access_0 --- [[/Comment]]
 [[Redacted]]Met Architect[[/Redacted]]|300|N/A|[[Redacted]]Meeting the [[Architect]][[/Redacted]]||
-[[Redacted]]Started Test 138-B[[/Redacted]]|500|No|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Started Test 138-C[[/Redacted]]|8000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Started Test 138-B[[/Redacted]]|500|No|[[Redacted]]Successfully starting Test 138-B on the [[Access_0#singularity_gate|Singularity Gate in Access_0]][[/Redacted]]||
+[[Redacted]]Started Test 138-C[[/Redacted]]|8000|N/A|[[Redacted]]Successfully starting Test 138-C on the [[Access_0#singularity_gate|Singularity Gate in Access_0]][[/Redacted]]||
 [[Redacted]]Destroyed A8[[/Redacted]]|300|N/A|[[Redacted]]Destroying [[A8]] in [[Access_0]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
 [[Redacted]]Destroyed A6[[/Redacted]]|400|N/A|[[Redacted]]Destroying [[A6]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
 [[Redacted]]Destroyed A5[[/Redacted]]|500|N/A|[[Redacted]]Destroying [[A5]] in [[Access_0]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
