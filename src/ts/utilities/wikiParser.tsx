@@ -166,7 +166,7 @@ function SpoilerButton({ spoiler }: { spoiler: Spoiler }) {
     if (spoiler === "None") {
         buttonStyle = "no-spoiler-info-button";
         buttonText = "No Spoiler";
-        tooltipText = "This page has no spoiler-related content.";
+        tooltipText = "This page does not directly relate to spoiler content.";
     } else if (spoiler === "Spoiler") {
         buttonStyle = "spoiler-info-button";
         buttonText = "Spoiler";
