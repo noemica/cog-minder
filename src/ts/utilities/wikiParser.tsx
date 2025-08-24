@@ -1214,7 +1214,7 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
         // Found a bar means we have an explicitly defined ID
         string = split[0];
         id = createIdFromText(split[1]);
-        extraIndexOffset = splitString.length + headingResult[0].length;
+        extraIndexOffset = split[1].length + 1 + headingResult[0].length;
     } else {
         // No bar means no explicitly defined ID, use the heading text to
         // produce the ID
@@ -1952,6 +1952,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
             groupType: "Grouped",
             node: state.initialContent.substring(state.index).replace("{{", "[").replace("}}", "]"),
         });
+        state.index = state.initialContent.length;
     }
 }
 
