@@ -5732,7 +5732,7 @@ A bot gains 1 momentum each time it moves in the same direction. It loses 1 mome
 "Multirail","Part","","","","","","","",""
 "Multireflex Exoskeleton","Part","","","","","","","",""
 "Multitargeting Array","Part","","","","","","","",""
-"Multitool","Part","When reconfiguring a terminal, Multitools apply a modifier between -20% and +50% with no known weighting. This combines very well with defensive hackware as you have the option to only put it on once you\u00e2\u0080\u0099ve gotten a high roll on a reconfigured terminal.
+"Multitool","Part","When reconfiguring a terminal, Multitools apply a modifier between -20% and +50% with no known weighting. This combines very well with defensive hackware as you have the option to only put it on once you've gotten a high roll on a reconfigured terminal.
 
 Multitools are mainly found by looting [[Artisan]]s, but they can also be found in other assorted places, such as [[Subcaves]] scrap piles, occasionally falling from subcaves twisted machinery, a dropped item that a [[Subdweller]] was carrying, a rare creation from a [[Cobbler Unit]], and as a recipe from [[Spoiler]][[Tech Extrapolator]][[/Spoiler]].","","","","","","",""
 "Mutant","Bot Group","Mutants are [[Treads|treading]] [[Derelict]] combat robots that wield a large variety of offensive and defensive parts. They are not exactly the same, but are quite similar to the [[0b10]] [[Sentry]] class of bots as offensive treading guard bots with mixed weaponry. Mutants are common bots that show up in many different types of Derelict encounters and events.","","Mutant (5),Mutant (6),Mutant (7),Mutant (8)","","","","",""
@@ -7063,38 +7063,41 @@ The quick overview of overall performance and score in scoresheets, followed by 
 [[Table]]Name|Points|X||
 Evolutions (X)|X * 500|Evolution thresholds crossed||
 Regions Visited (X)|X * 200|Maps visited, excluding [[Scrapyard]]||
-Robots Destroyed (X)|X * 5|Functional robots destroyed\u00b9\u00b2 that have a value of at least 1, regardless of hostility, alignment or faction||
-Value Destroyed (X)|X|Total value destroyed, including most [[0b10]] machines (whether destroyed by Cogmind or blue/purple [[Allies]]) and functional non-friendly bots\u00b9\u00b2 (destroyed by Cogmind only)||
+Robots Destroyed (X)|X * 5|Functional robots destroyed[[Sup]]12[[/Sup]] that have a value of at least 1, regardless of hostility, alignment or faction||
+Value Destroyed (X)|X|Total value destroyed, including most [[0b10]] machines (whether disabled by Cogmind or blue/purple [[Allies]]) and functional non-friendly bots[[Sup]]12[[/Sup]] (destroyed by Cogmind only)||
 Prototype IDs (X)|X * 20|Unique [[Prototype Part]] IDs obtained, including any that were lost, for example due to to a minor Data Loss [[Corruption]] effect||
 Alien Tech Used (X)|X * 200|[[Spoiler]]Unique [[Alien Artifacts]] attached (actual usage not required)[[/Spoiler]]||
 Bonus (X)|X|Total bonus points obtained from various sources[[/Table]]
-\u00b9Broken/Unpowered robots do not count towards score in any way.
-\u00b2In each map, no more than 60 robot kills of a single class may contribute to score. (Additional robots are not recorded in any part of the score section, but are still recorded in other sections of scoresheets.)
+[[Sup]]1[[/Sup]]Broken/Unpowered robots do not count towards score in any way.
+[[Sup]]2[[/Sup]]In each map, no more than 60 robot kills of a single class may contribute to score. (Additional robots are not recorded in any part of the score section, but are still recorded in other sections of scoresheets.)
 
 [[Heading:2]]Value[[/Heading]]
-Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most 0b10 machines have a value of 10, and some important machines like Garrison Relays and Phase Generators have a value of 200. The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
+Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most 0b10 machines have a value of 10, functional [[Garrison Access|Garrison Accesses]] have a value of 100, and some important machines like Garrison Relays and Phase Generators have a value of 200.
+The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
 [[Assembled]], passive [[Derelict]] bot classes, special bots that can only ever be found unpowered as ""statues"" and most [[Drone (Group)|Drones]] have a value of 0. Three special bots have a value of 2000, while all unique bots and all other other special bots have a value of 1. Some of those important unique/special bots instead grant score through bonus points.
 
 
 [[Heading]]Bonus Points[[/Heading]]
 (This section is a work in progress, and as such is missing a lot of information, features subpar formatting, and/or lacks links. It does not, however, lack spoiler tags.)
 Bonus points are obtained from a large variety of sources, almost all of them spoilery. Remember to set your spoilers settings to ""None"" if you do not want to see potential spoilers!
-Unlike overall performance score, bonus score categories only appear in scoresheets if point were earned in them. For all but one of the bonus categories that require destroying very specific robots or machines, anything will count so long as the corresponding bots/machines are destroyed, and Cogmind does not actually have to personally destroy the bots/machines. The following is a very incomplete list of bonus point sources, more or less in the order they appear in scoresheets:
+Unlike overall performance score, bonus score categories only appear in scoresheets if point were earned in them. Various [[Achievements]] have the same requirements as some bonus score categories. For categories that require destroying very specific robots or machines, unless otherwise noted, anything will count so long as the corresponding bots/machines are destroyed, and Cogmind does not actually have to personally destroy the bots/machines. The following is a very incomplete list of bonus point sources, more or less in the order they appear in scoresheets (a '?' indicates that the writer of this article is unsure about whether a source stacks or not):
 
 [[Table]]Name|Points|Stacks|Source||
 
 [[Comment]] --- General Destruction --- [[/Comment]]
+Pacifist|Dependent on regions visited|Yes|Not destroying any bot by any means that attribute a kill to Cogmind for an entire map, while no kills were attributed to Cogmind in previous maps||
 Triggered High Security|500|Yes|Triggering [[High Security]]||
 [[Spoiler]]Triggered Max Security[[/Spoiler]]|1000|Yes|[[Spoiler]]Triggering [[Maximum Security]][[/Spoiler]]||
-High Alert Combat Kills\u00b3|Dependent on bot value and [[Alert]]|Yes|Personally destroying [[0b10 Combat Bots]] while Alert is at least at level 2.
+High Alert Combat Kills[[Sup]]3[[/Sup]]|Dependent on bot value and [[Alert]]|Yes|Personally destroying hostile combat bots while Alert is at least at level 2 in [[0b10]]-controlled maps.
 At alert level 2, 25% of regular bot value. At level 3, 50%. At level 4, 75%. At level 5, 100%.||
 Follower Combat Kills|75% of regular bot value|Yes|Blue/purple Allies destroying combat bots||
 
 [[Comment]] --- Side Quests --- [[/Comment]]
-[[Spoiler]]Awakened Behemoth Slayer[[/Spoiler]]|1000|?|[[Spoiler]]Transforming [[CR-A16's Pointy Stick]][[/Spoiler]]||
-[[Spoiler]]Forged Quantum Companion[[/Spoiler]]|1000|[[Subatomic Replicator|SR]]|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Built PL-3XN's Obliterator[[/Spoiler]]|1000|?|[[Spoiler]] [[/Spoiler]]||
-[[Redacted]]Installed LC Capacitor[[/Redacted]]|1000|N/A|[[Redacted]] [[/Redacted]]||
+[[Spoiler]]Awakened Behemoth Slayer[[/Spoiler]]|1000|[[Subatomic Replicator|SR?]]|[[Spoiler]]Transforming [[CR-A16's Pointy Stick]] into [[CR-A16's Behemoth Slayer]] by attacking [[Behemoth|Behemoths]] with it[[/Spoiler]]||
+[[Spoiler]]Forged Quantum Companion[[/Spoiler]]|1000|[[Subatomic Replicator|SR]]|[[Spoiler]]Transforming either the [[Companion Sword]] or the [[Quantum Companion]] into its next form[[/Spoiler]]||
+[[Spoiler]]Built PL-3XN's Obliterator[[/Spoiler]]|1000|[[Subatomic Replicator|SR?]]|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Finished Modified EM Gauss[[/Spoiler]]|1000|[[Subatomic Replicator|SR?]]|[[Spoiler]] [[/Spoiler]]||
+[[Redacted]]Installed LC Capacitor[[/Redacted]]|1000|N/A|[[Redacted]]Installing the [[LC Capacitor]] into the [[Drained L-Cannon]][[/Redacted]]||
 
 [[Comment]] --- ""Side Stuff"" --- [[/Comment]]
 Entered Garrisons|200|Yes|Entering [[Garrison]] maps||
@@ -7104,9 +7107,11 @@ Used RIF Installer|500|Yes|Using [[Garrison#rif_installer|RIF Installers]] with 
 
 [[Comment]] --- Materials/Factory Branches --- [[/Comment]]
 Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Aligner machine in Exiles (Location)]]||
+[[Spoiler]]Delivered SUBCON Basin[[/Spoiler]]|2000|N/A|[[Spoiler]]Delivering the full [[SUBCON Basin]] from [[Subcaves]] to the [[Recycling#scraplab|Scraplab in Recycling]][[/Spoiler]]||
 [[Spoiler]]Registered with UFD[[/Spoiler]]|300|N/A|[[Spoiler]][[Scraptown#alignment_-_ufd|Registering as a UFD member in Scraptown]][[/Spoiler]]||
 [[Spoiler]]Met Optimus in HQ[[/Spoiler]]|500|N/A|[[Spoiler]]Talking to [[Scraptown#sub-alignment_-_optimus|Optimus in Scraptown]][[/Spoiler]]||
 [[Spoiler]]Met Data Miner[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Data Miner]] in [[Data Miner (Location)]][[/Spoiler]]||
+[[Spoiler]]Used Data Conduit[[/Spoiler]]|3000|N/A|[[Spoiler]]Using the [[Data Conduit]] in [[Data Miner (Location)#data_conduit|Data Miner (Location)]][[/Spoiler]]||
 [[Spoiler]]Met Imprinter[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Imprinter]] in [[Zion]][[/Spoiler]]||
 [[Spoiler]]Was Imprinted[[/Spoiler]]|300|N/A|[[Spoiler]]Using the [[Zion#alignment_-_imprinting|Imprinting machine in Zion]][[/Spoiler]]||
 [[Spoiler]]Destroyed Z-Imprinter[[/Spoiler]]|1000|N/A|[[Spoiler]]Destroying [[Z-Imprinter]] in [[Zion Deep Caves|Deep Caves]][[/Spoiler]]||
@@ -7114,73 +7119,75 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Spoiler]]Exposed GOLEM Chamber[[/Spoiler]]|500|No|[[Spoiler]]Destroying one of the GOLEM Chambers in [[Zion Deep Caves|Deep Caves]][[/Spoiler]]||
 [[Spoiler]]Acquired ECA[[/Spoiler]]|300|N/A|[[Spoiler]]Having the [[Encrypted Comm Array]] be delivered in [[Caves]][[/Spoiler]]||
 [[Spoiler]]Met Zhirov[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Zhirov]][[/Spoiler]]||
-[[Spoiler]]Met Warlord at Base[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]MAIN.C Attacked Warlord[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Warlord Defense Kills\u00b3[[/Spoiler]]|[[Spoiler]]200% of regular bot value[[/Spoiler]]|Yes|[[Spoiler]]Personally destroying 0b10 bots in [[Warlord (Location)]][[/Spoiler]]||
-[[Spoiler]]Built Enhanced Grunts[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]A7 Reached Mainframe[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Met R17 at Cetus[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Read Decrypted Archives[[/Spoiler]]|300|No| ||
+[[Spoiler]]Met Warlord at Base[[/Spoiler]]|500|N/A|[[Spoiler]]Meeting [[Warlord]] in [[Warlord (Location)]][[/Spoiler]]||
+[[Spoiler]]MAIN.C Attacked Warlord[[/Spoiler]]|500|N/A|[[Spoiler]]Being in [[Warlord (Location)]] when [[0b10]] forces attack the map[[/Spoiler]]||
+[[Spoiler]]Warlord Defense Kills[[Sup]]3[[/Sup]][[/Spoiler]]|[[Spoiler]]200% of regular bot value[[/Spoiler]]|Yes|[[Spoiler]]Personally destroying [[0b10]] bots in [[Warlord (Location)]][[/Spoiler]]||
+[[Spoiler]]Built Enhanced Grunts[[/Spoiler]]|300|N/A|[[Spoiler]]Using the code given by [[A7]] upon entering [[Cetus]] on the Cetus Manufacturing Module Terminal to build [[Enhanced Grunt|Enhanced Grunts]][[/Spoiler]]||
+[[Spoiler]]A7 Reached Mainframe[[/Spoiler]]|300|N/A|[[Spoiler]]Having [[A7]] reach the Cetus Mainframe and comment about it in [[Cetus]][[/Spoiler]]||
+[[Spoiler]]Met R17 at Cetus[[/Spoiler]]|500|N/A|[[Spoiler]]Meeting [[Revision 17]] in [[Cetus]] after destroying all 8 [[Cetus Guard|Cetus Guards]][[/Spoiler]]||
+[[Spoiler]]Read Decrypted Archives[[/Spoiler]]|300|No|[[Spoiler]]Reading the decrypted archives in [[Archives]] during the [[Archives#variations|special event]][[/Spoiler]]||
 
 [[Comment]] --- Hidden Lab --- [[/Comment]]
 [[Redacted]]Found Hidden Lab[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
 [[Redacted]]Decrypted A0 Command[[/Redacted]]|3000|No|[[Redacted]] [[/Redacted]]||
 
 [[Comment]] --- Research-related Events & Branches --- [[/Comment]]
-[[Spoiler]]Used Core Reset Matrix[[/Spoiler]]|3000|No|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Hacked Protovariant[[/Spoiler]]|500|Yes|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Met R17 at Research[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Met Warlord at Research[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Invited to Help at Command[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Hacked God Mode[[/Spoiler]]|5000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Used Core Reset Matrix[[/Spoiler]]|3000|No|[[Spoiler]]Attaching a [[Core Reset Matrix]][[/Spoiler]]||
+[[Spoiler]]Hacked Protovariant[[/Spoiler]]|500|Yes|[[Spoiler]]Using the [[GameText]]Protovariant Controls/Control(Protovariants)[[/GameText]] hack on a [[Terminal]] to unleash a [[Protovariant]] in [[Testing]][[/Spoiler]]||
+[[Spoiler]]Met R17 at Research[[/Spoiler]]|2000|N/A|[[Spoiler]]Meeting [[Revision 17++]] in [[Revision 17 (Alignment)#-3_research_invasion|-3/Research]][[/Spoiler]]||
+[[Spoiler]]Met Warlord at Research[[/Spoiler]]|2000|N/A|[[Spoiler]]Meeting [[Warlord]] in [[Warlord (Alignment)#-2_research_assault|-2/Research]][[/Spoiler]]||
+[[Spoiler]]Invited to Help at Command[[/Spoiler]]|2000|N/A|[[Spoiler]]Being invited to [[Command]] by [[Warlord]] during the [[Warlord (Alignment)#-2_research_assault|-2/Research assault]][[/Spoiler]]||
+[[Spoiler]]Hacked God Mode[[/Spoiler]]|5000|N/A|[[Spoiler]]Hacking [[God Mode]] with the code given by [[Data Miner]][[/Spoiler]]||
 [[Spoiler]]Scanned by Researcher[[/Spoiler]]|500|Kinda|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Pursued by Intercept[[/Spoiler]]|500|Yes|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Acquired SGEMP[[/Spoiler]]|2000| |[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Delivered SGEMP[[/Spoiler]]|2000| |[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Met Sigix[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Pursued by Intercept[[/Spoiler]]|500|Max once per map|[[Spoiler]]Being pursued by the first [[Intercept Squad]] dispatch of a map[[/Spoiler]]||
+[[Spoiler]]Acquired SGEMP[[/Spoiler]]|2000|No|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Delivered SGEMP[[/Spoiler]]|2000|No|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Met Sigix[[/Spoiler]]|2000|N/A|[[Spoiler]]Meeting the [[Sigix Containment Pod]][[/Spoiler]]||
+
+[[Comment]]I'm not actually sure about the SGEMP quest. If you replicate the SGEMP before picking it up, i don't think it would count twice, but what about for the delivery?[[/Comment]]
 
 [[Comment]] --- REDACTED Research branches --- [[/Comment]]
-[[Redacted]]Activated Exoskeleton[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Integrated Exoskeleton[[/Redacted]]|5000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Destroyed Superfortress[[/Redacted]]|15000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Met Optimus at Protoforge[[/Redacted]]|1000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Completed Drillbomb Mission[[/Redacted]]|10000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Optimus Survived to 0b1[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Activated Exoskeleton[[/Redacted]]|3000|N/A|[[Redacted]]Placing the [[Sigix Containment Pod]] into the [[Sigix Exoskeleton]] in [[Section 7]][[/Redacted]]||
+[[Redacted]]Integrated Exoskeleton[[/Redacted]]|5000|N/A|[[Redacted]]Integrating the [[Sigix Exoskeleton]] in [[Section 7]][[/Redacted]]||
+[[Redacted]]Destroyed Superfortress[[/Redacted]]|15000|N/A|[[Redacted]]Destroying the [[Superfortress]][[/Redacted]]||
+[[Redacted]]Met Optimus at Protoforge[[/Redacted]]|1000|N/A|[[Redacted]]Meeting [[Triborg (Optimus)]] in [[Protoforge]][[/Redacted]]||
+[[Redacted]]Completed Drillbomb Mission[[/Redacted]]|10000|N/A|[[Redacted]]Completing the [[Protoforge#w9_defending_0bprimeufd_assault|Drillbomb Mission during the UFD assault in Protoforge]][[/Redacted]]||
+[[Redacted]]Optimus Survived to 0b1[[/Redacted]]|3000|N/A|[[Redacted]][[Protoforge#w9_defending_0bprimeufd_assault|Winning or leaving Protoforge after completing the Drillbomb Mission]] while [[Optimus]] is still alive[[/Redacted]]||
 
 [[Comment]] --- Sigix Recovered --- [[/Comment]]
 [[Spoiler]]Recovered Sigix Corpse[[/Spoiler]]|X * 2000|Yes|[[Spoiler]]Winning through any(?) ending with X [[Sigix Corpse|Sigix Corpses]] in inventory[[/Spoiler]]||
 [[Spoiler]]Escaped with Sigix[[/Spoiler]]|X * 5000|[[Subatomic Replicator|SR]]|[[Spoiler]]Ascending to the [[Surface]] with X [[Sigix Containment Pod|Sigix Containment Pods]] in inventory[[/Spoiler]]||
 [[Redacted]]Escaped with Exo-Sigix[[/Redacted]]|10000|N/A|[[Redacted]]Ascending to the [[Surface]] while accompanied by the [[Sigix Warrior]] in its [[Sigix Exoskeleton|Exoskeleton]][[/Redacted]]||
-[[Comment]]   Some endings won't grant points for bringing the Sigix Containment Pod or Exo-Sigix. For example, W5 doesn't grant ""Escaped with Sigix"" even if you have the Sigix Containment Pod. I assume the same is true for Exo-Sigix, but i don't know about Sigix Corpses. I also don't know for sure which endings this holds true for, but i think all those that ascend to the Surface are safe.[[/Comment]]
+[[Comment]]   Some endings won't grant points for bringing the Sigix Containement Pod or Exo-Sigix. For example, W5 doesn't grant ""Escaped with Sigix"" even if you have the Sigix Containement Pod. I assume the same is true for Exo-Sigix, but i don't know about Sigix Corpses. I also don't know for sure which endings this holds true for, but i think all those that ascend to the Surface are safe.[[/Comment]]
 
 [[Comment]] --- Command --- [[/Comment]]
-[[Redacted]]Destroyed MAIN.C Guards[[/Redacted]]|500|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Met MAIN.C[[/Redacted]]|5000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Hacked MAIN.C[[/Redacted]]|300|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Destroyed MAIN.C Shell[[/Redacted]]|5000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Zhirov Destroyed MAIN.C[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Destroyed MAIN.C[[/Redacted]]|10000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Used 0b10 Conduit[[/Redacted]]|2000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Met Warlord at Command[[/Redacted]]|2000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed MAIN.C Guards[[/Redacted]]|500|N/A|[[Redacted]]Destroying both [[M Guard|M Guards]] and both [[Combat Programmer|Combat Programmers]] in [[Command#doom_corridor|Command]][[/Redacted]]||[[Comment]]NOTE: I'm not sure if the Combat Programmers are required for this category; After all, M Guards' names are from being MAIN.C's guards.[[/Comment]]
+[[Redacted]]Met MAIN.C[[/Redacted]]|5000|N/A|[[Redacted]]Meeting [[MAIN.C (Shell)]][[/Redacted]]||
+[[Redacted]]Hacked MAIN.C[[/Redacted]]|300|N/A|[[Redacted]]Using [[A7]]'s code from the [[Cetus|Cetus Mainframe]] on either [[MAIN.C (Shell)]] or [[MAIN.C]] via a [[Datajacks|Datajack]][[/Redacted]]||
+[[Redacted]]Destroyed MAIN.C Shell[[/Redacted]]|5000|N/A|[[Redacted]]Destroying [[MAIN.C (Shell)]][[/Redacted]]||
+[[Redacted]]Zhirov Destroyed MAIN.C[[/Redacted]]|3000|N/A|[[Redacted]][[Zhirov]] detonating the modified [[SGEMP Prototype]], regardless of whether [[MAIN.C]] is destroyed as a result[[/Redacted]]||
+[[Redacted]]Destroyed MAIN.C[[/Redacted]]|10000|N/A|[[Redacted]]Destroying [[MAIN.C]] in any way other than [[Zhirov]] detonating the modified [[SGEMP Prototype]][[/Redacted]]||
+[[Redacted]]Used 0b10 Conduit[[/Redacted]]|2000|N/A|[[Redacted]]Using the [[Command#w4_assimilated_0b10|0b10 Conduit in Command]][[/Redacted]]||
+[[Redacted]]Met Warlord at Command[[/Redacted]]|2000|N/A|[[Redacted]]Meeting [[Warlord (Command)]] in [[Command]][[/Redacted]]||
 
 [[Comment]] --- Access_0 --- [[/Comment]]
-[[Redacted]]Met Architect[[/Redacted]]|300|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Started Test 138-B[[/Redacted]]|500|No|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Started Test 138-C[[/Redacted]]|8000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Destroyed A8[[/Redacted]]|300|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Destroyed A6[[/Redacted]]|400|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Destroyed A5[[/Redacted]]|500|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Destroyed A4[[/Redacted]]|700|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Destroyed A3[[/Redacted]]|800|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Destroyed A2[[/Redacted]]|1000|N/A|[[Redacted]] [[/Redacted]]||
-[[Redacted]]Destroyed Architect[[/Redacted]]|15000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Met Architect[[/Redacted]]|300|N/A|[[Redacted]]Meeting the [[Architect]][[/Redacted]]||
+[[Redacted]]Started Test 138-B[[/Redacted]]|500|No|[[Redacted]]Successfully starting Test 138-B on the [[Access_0#singularity_gate|Singularity Gate in Access_0]][[/Redacted]]||
+[[Redacted]]Started Test 138-C[[/Redacted]]|8000|N/A|[[Redacted]]Successfully starting Test 138-C on the [[Access_0#singularity_gate|Singularity Gate in Access_0]][[/Redacted]]||
+[[Redacted]]Destroyed A8[[/Redacted]]|300|N/A|[[Redacted]]Destroying [[A8]] in [[Access_0]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
+[[Redacted]]Destroyed A6[[/Redacted]]|400|N/A|[[Redacted]]Destroying [[A6]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
+[[Redacted]]Destroyed A5[[/Redacted]]|500|N/A|[[Redacted]]Destroying [[A5]] in [[Access_0]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
+[[Redacted]]Destroyed A4[[/Redacted]]|700|N/A|[[Redacted]]Destroying [[A4]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
+[[Redacted]]Destroyed A3[[/Redacted]]|800|N/A|[[Redacted]]Destroying [[A3]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
+[[Redacted]]Destroyed A2[[/Redacted]]|1000|N/A|[[Redacted]]Destroying [[A2]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
+[[Redacted]]Destroyed Architect[[/Redacted]]|15000|N/A|[[Redacted]]Destroying the [[Architect]][[/Redacted]]||
 
 [[Comment]] --- Win Stuff + Friendly Fire --- [[/Comment]]
 Win|3000|N/A|Winning the run through any ending||
 Win Speed|Speed-dependent|N/A|Winning the run through any ending after few enough turns have passed||
-Friendly Fire|X + (Y * 100)|Yes|X = damage dealt to Allies\u2074 by Cogmind, Y = Allies\u2074 destroyed by Cogmind[[/Table]]
-\u00b3Bonus score earned from robot kills in these category is earned in addition to ""Value Destroyed"" score.
-\u2074Only uncontrollable allies that aren't 0b10 bots under the influence of a temporary IFF overwrite.
+Friendly Fire|X + (Y * 100)|Yes|X = damage dealt to Allies[[Sup]]4[[/Sup]] by Cogmind, Y = Allies[[Sup]]4[[/Sup]] destroyed by Cogmind[[/Table]]
+[[Sup]]3[[/Sup]]Bonus score earned from robot kills in these category is earned in addition to ""Value Destroyed"" score.
+[[Sup]]4[[/Sup]]Only uncontrollable allies that aren't 0b10 bots under the influence of a temporary IFF overwrite.
 
 If an amount of score earned is a decimal numeral (such as in the cases of ""High Alert Combat Kills"" and ""Follower Combat Kills"" bonus score categories), that amount of score is rounded down. For example, destroying an [[S-27 Virus]] at Alert level 2 would grant 6.75 points in the High Alert Combat Kills category, which would be rounded down to 6.","","","","","","",""
 "Scrap","Part","","","","","","","",""
