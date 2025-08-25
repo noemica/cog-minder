@@ -504,7 +504,7 @@ export default function SimulatorPageInput({
                     value={pageState.recoilReduction || ""}
                     onChange={(val) => updatePageState({ ...pageState, recoilReduction: val })}
                     placeholder="0"
-                    tooltip="The number of recoil reduction. Each tread slot has 1 recoil reduction, Recoil Stabilizers have 4, and Recoil Nullifiers have 6."
+                    tooltip="The number of recoil reduction. Each tread slot has 1 recoil reduction, Recoil Stabilizers have 4, and Adv. Recoil Stabilizers have 6."
                 />
                 <LabeledInput
                     label="Distance"
@@ -542,7 +542,7 @@ export default function SimulatorPageInput({
                     disabled={simulationInProgress}
                     onChange={(val) => updatePageState({ ...pageState, kinecellerator: val })}
                     placeholder="0%"
-                    tooltip="The bonus from a Kinecellerator that's equipped (if any). INcreases minimum damage of kinetic gun/cannon weapons. Base Kinecellerator starts at 30%, Improved at 40%, and Advanced at 50%."
+                    tooltip="The bonus from a Kinecellerator that's equipped (if any). Increases minimum damage of kinetic gun/cannon weapons. Base Kinecellerator starts at 30%, Improved at 40%, and Advanced at 50%."
                 />
                 <LabeledInput
                     label="Weapon Cycling"
@@ -639,7 +639,7 @@ export default function SimulatorPageInput({
                     className="enemy-behavior-select"
                     isDisabled={simulationInProgress}
                     label="Enemy Behavior"
-                    tooltip="The behavior of the enemy when engaged in combat. THe default for most hostile combat bots is Stand/Fight, and the behavior of most non-combat bots will be RUn When Hit."
+                    tooltip="The behavior of the enemy when engaged in combat. The default for most hostile combat bots is Stand/Fight, and the behavior of most non-combat bots will be RUn When Hit."
                     isSearchable={false}
                     options={botBehaviorButtons}
                     value={botBehaviorButtons.find((o) => o.value === pageState.enemyBehavior) || botBehaviorButtons[0]}
