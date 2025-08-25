@@ -1,4 +1,4 @@
-import{r as S,j as o,c as T,B as C,L as q,K as R,M as O,w as ue,N as fe,f as I,O as ye,Q as be,y as L,U as oe,a as j,s as we,V as Ce,S as _,o as ve,W as ie,z as Se,u as re,X as Y,Y as Te,Z as B,_ as ke,$ as xe,a0 as W,a1 as Ae,a2 as He}from"./index-I6wA7GwT.js";import{l as Ne}from"./lore-CBKT07wE.js";import{h as Ge}from"./machine_hacks-CIEgi5MA.js";import{H as se,a as Ie,L as De,I as Re,B as Z,b as Me,u as Ee}from"./BotDetails-di2ZfmRJ.js";import{T as K,a as V,u as Pe}from"./ItemPopover-DQdrgEhu.js";/* empty css              */import"./bots-DmHYWh_Z.js";import"./botTypes-_WzAd8ij.js";import"./items-0uiuNN38.js";const Le=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:'12-ASH is one of the [[Heroes of Zion]]. Upon appearing, they will shout "hail to the king".'},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:"Informally known as a yauler (yellow Hauler). In the main complex, appears as part of a [[Cargo Convoy]]."},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed. Gives a code when shown the Cetus Mainframe in [[Cetus]]."},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AP7-3",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:"Bolteaters are fast [[Wheels|wheeled]] [[UFD]] combat bots armed with [[Ripteeth]]. Valuable for a wheels build with their [[Rocket Booster|Rocket Boosters]]. Their ripteeth can rip off a component ignoring armor, so keep them away from you. Slightly resistant to Kinetic, Thermal, Electromagnetic and Explosive damage."},{Name:"Bomb Drone",Content:"Fast disposable drones that attempt to melee hostiles, which will cause them to explode. Deployed by a [[Bomb Drone Bay]]"},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
+import{c as k,r as T,j as i,B as v,L as U,K as D,M as z,w as ye,N as be,f as I,O as we,Q as ve,y as B,U as re,a as Z,s as Ce,V as Se,S as K,o as Te,W as se,z as ke,u as le,X as J,Y as xe,Z as O,_ as Ae,$ as He,a0 as q,a1 as Ge,a2 as Ne}from"./index-2xBH-3Er.js";import{l as Ie}from"./lore-CBKT07wE.js";import{h as Re}from"./machine_hacks-CIEgi5MA.js";import{H as he,a as De,L as Me,I as de,B as V,b as Ee,u as Pe}from"./BotDetails-D-D6v9aa.js";import{T as $,a as Q,u as Le}from"./ItemPopover-Ck9VxFw-.js";import{S as Fe}from"./Table-C0PY6Jg5.js";import{e as Be}from"./partColumnDefs-BrZyLxjh.js";/* empty css              */import"./bots-DmHYWh_Z.js";import"./botTypes-_WzAd8ij.js";import"./items-0uiuNN38.js";const We=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:'12-ASH is one of the [[Heroes of Zion]]. Upon appearing, they will shout "hail to the king".'},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:"Informally known as a yauler (yellow Hauler). In the main complex, appears as part of a [[Cargo Convoy]]."},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed. Gives a code when shown the Cetus Mainframe in [[Cetus]]."},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AP7-3",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:"Bolteaters are fast [[Wheels|wheeled]] [[UFD]] combat bots armed with [[Ripteeth]]. Valuable for a wheels build with their [[Rocket Booster|Rocket Boosters]]. Their ripteeth can rip off a component ignoring armor, so keep them away from you. Slightly resistant to Kinetic, Thermal, Electromagnetic and Explosive damage."},{Name:"Bomb Drone",Content:"Fast disposable drones that attempt to melee hostiles, which will cause them to explode. Deployed by a [[Bomb Drone Bay]]"},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
 
 Due to their extreme lethality in melee, stay out of their range at all costs, and maybe just run the hell out of [[Wastes]]. Alternatively pack a good launcher or a good critical weapon, as their plating will tank most of your shots.`},{Name:"C-55 Analyst",Content:""},{Name:"C-57 Dissector",Content:""},{Name:"C-65 Expert",Content:""},{Name:"CL-ANK",Content:""},{Name:"Cetus Guard",Content:""},{Name:"Cobbler",Content:""},{Name:"Cogmind",Content:"That's you."},{Name:"Combat Drone",Content:""},{Name:"Combat Programmer",Content:""},{Name:"Commander",Content:""},{Name:"D-53 Grenadier",Content:""},{Name:"D-63 Destroyer",Content:""},{Name:"D-83 Annihilator",Content:""},{Name:"DAS Turret",Content:""},{Name:"DD-05H",Content:""},{Name:"DRS Ranger",Content:"More powerful [[Ranger]] variants that appear in [[Caves]] when a [[DRS Beacon]] is used."},{Name:"Data Miner",Content:""},{Name:"Decapitator",Content:""},{Name:"Decomposer",Content:""},{Name:"Decoy Drone",Content:""},{Name:"Demented",Content:""},{Name:"Dragon",Content:""},{Name:"Drone",Content:""},{Name:"E-15 Imp",Content:""},{Name:"EX-BIN",Content:`[[Heading]]Parse[[/Heading]]
 When datajacked, one of the following parse texts is shown:
@@ -21,7 +21,7 @@ When datajacked, one of the following parse texts is shown:
 [[GameText]]If only there was a way to trick Unaware into thinking I'm a wall.[[/GameText]]
 [[GameText]]If only there was a way to turn a robot inside out.[[/GameText]]
 [[GameText]]If only there was a way to watch what all the Watchers are watching.[[/GameText]]
-[[GameText]]If only there was a way to weaponize debris.[[/GameText]]`},{Name:"EX-DEC",Content:""},{Name:"EX-HEX",Content:""},{Name:"EXE-6",Content:""},{Name:"Elite (4)",Content:""},{Name:"Elite (7)",Content:""},{Name:"Enhanced Demolisher",Content:""},{Name:"Enhanced Grunt",Content:""},{Name:"Enhanced Hunter",Content:""},{Name:"Enhanced Programmer",Content:""},{Name:"Enhanced Q-Series",Content:""},{Name:"Enhanced Sentry",Content:""},{Name:"Executioner",Content:"Executioners are relatively dangerous prototype combat robots deployed most often in high security areas or to attack serious threats to the safety of the complex. They are most dangerous at their maximum range of 23-24 tiles due to most opponents being unable to return fire, but they donât aim through walls and once theyâre being attacked they are approximately as durable as a [[H-88 Terminator]]. Executioners are also made of a very high proportion of rare and generally useful parts to Cogmind such as their Exp. Core Analyser, Imp. Quantum Reactor, Adv. Kinecellerator, and Enh. Biometal Legs, making them a worthwhile target to salvage for many builds."},{Name:"Explorer",Content:""},{Name:"Federalist",Content:"Federalists are [[Legs|legged]] grunt-like [[Derelict|derelicts]] that appear in [[Scraptown]] and are armed with two extremely weak lasers with positive salvage. Not particularly powerful or otherwise remarkable."},{Name:"Fireman (5)",Content:"Fireman variant with a normal [[Flamer]]."},{Name:"Fireman (7)",Content:"Fireman variant with an [[Enh. Flamer]] and enhanced cooling."},{Name:"Fortress",Content:""},{Name:"Furnace",Content:""},{Name:"G-34 Mercenary",Content:"The lowest tier of bipedal combat Robots deployed in Complex 0b10, they possess one Small Laser that can deal compounding damage to lower tier parts, especially in the numbers they are usually encountered in. Their lack of significant heat dissipation makes them quickly melt under a sustained salvo of Thermal attacks, while their low core integrity means any sufficiently consistent weapon (In upwards of 15 dmg or more) is good to destroy them, launchers are also effective due to this reason as well. Their minus -25% electromagnetic resistance makes them susceptible targets for your possibly game-start EM Pulse Gun though its actual damage will be weak. Proper positioning can limit the amount of damage you take in encounters with Grunts and most other 0b10 bots. Using doorways to limit the amount of fire you take is one such method, as well as using corners."},{Name:"G-47 Trooper",Content:"The second iteration of the Grunt-type combat robot in 0b10, the Trooper is up-gunned from a Sml. Laser to a more potent Particle gun, capable of greater damage and heat transfer. In addition, it also possesses a Lgt. Nuclear Core and an Imp. Heat Sink along with double the core integrity of the G-34. In spite of these upgrades, the standard grunt weaknesses apply, sustained thermal damage will still melt them, along with the type's intrinsic -25% electromagnetic resistance."},{Name:"G-50 Soldier",Content:"Soldier Content"},{Name:"G-67 Veteran",Content:""},{Name:"G-73 Enforcer",Content:""},{Name:"God Mode",Content:`When parsed, the text box reads:
+[[GameText]]If only there was a way to weaponize debris.[[/GameText]]`},{Name:"EX-DEC",Content:""},{Name:"EX-HEX",Content:""},{Name:"EXE-6",Content:""},{Name:"Elite (4)",Content:""},{Name:"Elite (7)",Content:""},{Name:"Enhanced Demolisher",Content:""},{Name:"Enhanced Grunt",Content:""},{Name:"Enhanced Hunter",Content:""},{Name:"Enhanced Programmer",Content:""},{Name:"Enhanced Q-Series",Content:""},{Name:"Enhanced Sentry",Content:""},{Name:"Executioner",Content:"Executioners are relatively dangerous prototype combat robots deployed most often in high security areas or to attack serious threats to the safety of the complex. They are most dangerous at their maximum range of 23-24 tiles due to most opponents being unable to return fire, but they don't aim through walls and once they are being attacked they are approximately as durable as a [[H-88 Terminator]]. Executioners are also made of a very high proportion of rare and generally useful parts to Cogmind such as their Exp. Core Analyzer, Imp. Quantum Reactor, Adv. Kinecellerator, and Enh. Biometal Legs, making them a worthwhile target to salvage for many builds."},{Name:"Explorer",Content:""},{Name:"Federalist",Content:"Federalists are [[Legs|legged]] grunt-like [[Derelict|derelicts]] that appear in [[Scraptown]] and are armed with two extremely weak lasers with positive salvage. Not particularly powerful or otherwise remarkable."},{Name:"Fireman (5)",Content:"Fireman variant with a normal [[Flamer]]."},{Name:"Fireman (7)",Content:"Fireman variant with an [[Enh. Flamer]] and enhanced cooling."},{Name:"Fortress",Content:""},{Name:"Furnace",Content:""},{Name:"G-34 Mercenary",Content:"The lowest tier of bipedal combat Robots deployed in Complex 0b10, they possess one Small Laser that can deal compounding damage to lower tier parts, especially in the numbers they are usually encountered in. Their lack of significant heat dissipation makes them quickly melt under a sustained salvo of Thermal attacks, while their low core integrity means any sufficiently consistent weapon (In upwards of 15 dmg or more) is good to destroy them, launchers are also effective due to this reason as well. Their minus -25% electromagnetic resistance makes them susceptible targets for your possibly game-start EM Pulse Gun though its actual damage will be weak. Proper positioning can limit the amount of damage you take in encounters with Grunts and most other 0b10 bots. Using doorways to limit the amount of fire you take is one such method, as well as using corners."},{Name:"G-47 Trooper",Content:"The second iteration of the Grunt-type combat robot in 0b10, the Trooper is up-gunned from a Sml. Laser to a more potent Particle gun, capable of greater damage and heat transfer. In addition, it also possesses a Lgt. Nuclear Core and an Imp. Heat Sink along with double the core integrity of the G-34. In spite of these upgrades, the standard grunt weaknesses apply, sustained thermal damage will still melt them, along with the type's intrinsic -25% electromagnetic resistance."},{Name:"G-50 Soldier",Content:"Soldier Content"},{Name:"G-67 Veteran",Content:""},{Name:"G-73 Enforcer",Content:""},{Name:"God Mode",Content:`When parsed, the text box reads:
 [[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
 [[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
 [[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
@@ -132,7 +132,7 @@ If Cogmind is fast enough, fleeing is also an option, for example to lead the Th
 
 Last edited during Beta 14`},{Name:"Thief Drone",Content:""},{Name:"Thug (5)",Content:""},{Name:"Thug (7)",Content:""},{Name:"Tinkerer",Content:""},{Name:"Tracker",Content:""},{Name:"Trailblazer",Content:""},{Name:"Triborg",Content:""},{Name:"Triborg (Optimus)",Content:""},{Name:"Troll",Content:""},{Name:"U-05 Engineer",Content:`A wheeled non-combat robot that repairs any broken walls, doors, or machines in sight. Good source of structural and terrain scanners. When attacked while repairing, calls reinforcements (unless you're in [[Materials]]) 
 [[GameText]]ALERT: Construction progress impeded, dispatching reinforcements to local area.[[/GameText]]`},{Name:"V-Series",Content:""},{Name:"VL-GR5",Content:"Appears at the entrance of [[Spoiler]][[Armory]][[/Spoiler]]. Challenges [[Cogmind]] to get to 15 kills first, providing [[Spoiler]][[VL-GR5's Timing Chip]][[/Spoiler]] as a reward. After the competition, he will head to the exit on the left side of [[Spoiler]]Armory[[/Spoiler]], dropping the [[Spoiler]][[Multinova Projection Cannon]][[/Spoiler]] if he survives and exits the map. Hitting [[VL-GR5]] a few times will turn him hostile, causing him to shed 2 [[Enh. Nova Cannon|Enh. Nova Cannons]] and attach the [[Spoiler]]Multinova Projection Cannon[[/Spoiler]]."},{Name:"W-16 Scout",Content:""},{Name:"W-25 Informer",Content:""},{Name:"W-44 Eye",Content:""},{Name:"Warbot",Content:""},{Name:"Wardrone",Content:""},{Name:"Warlord",Content:""},{Name:"Warlord (Command)",Content:""},{Name:"Warlord 4Z-XS3",Content:""},{Name:"Warlord AM-PH4",Content:""},{Name:"Warlord D3-CKR",Content:""},{Name:"Warlord HL-1SK",Content:""},{Name:"Warlord KY-Z71",Content:""},{Name:"Warlord MG-163",Content:""},{Name:"Warlord SH-K8T",Content:""},{Name:"Warlord Statue (Bot)",Content:""},{Name:"Wasp (5)",Content:""},{Name:"Wasp (7)",Content:""},{Name:"Wizard (5)",Content:""},{Name:"Wizard (7)",Content:""},{Name:"Wyrm Statue",Content:""},{Name:"X-57 Shotgunner",Content:""},{Name:"X-62 Marksman",Content:""},{Name:"X-67 Chaingunner",Content:""},{Name:"X-72 Disruptor",Content:""},{Name:"X-77 Beamer",Content:""},{Name:"X-82 Rainmaker",Content:""},{Name:"X-87 Electro",Content:""},{Name:"Y-45 Defender",Content:""},{Name:"Y-54 Guardian",Content:"The Y-54 Guardian appears in the early [[Factory]] and is the only standard [[Sentry]] to use multi-projectile weapons. This can make [[Hardlight Generators]] more viable on the floors where Guardians appear, since a hardlight generator reduces each projectile's damage by a set value, and thus is more effective against weapons that fire more projectiles."},{Name:"Y-64 Sentinel",Content:""},{Name:"Y-72 Warden",Content:""},{Name:"YI-UF0",Content:""},{Name:"Z-Courier",Content:"[[Imprint]]-aligned derelict [[Hauler]] variant. Delivers resupplies via the [[Imprint]] roster."},{Name:"Z-Drone",Content:"Created by a [[Z-Drone Bay]]. Slightly better than a [[Mini Drone]], with a makeshift cloaking device."},{Name:"Z-Experimental (10)",Content:""},{Name:"Z-Experimental (8)",Content:""},{Name:"Z-Heavy (5)",Content:""},{Name:"Z-Heavy (7)",Content:""},{Name:"Z-Heavy (9)",Content:""},{Name:"Z-Imprinter",Content:"See [[Zion Deep Caves]]."},{Name:"Z-Light (5)",Content:""},{Name:"Z-Light (7)",Content:""},{Name:"Z-Light (9)",Content:""},{Name:"Z-Technician",Content:"Harmless zion [[Derelict|derelict]] [[Operator]] variants found stationary in [[Zion Deep Caves]]."},{Name:"Zhirov",Content:""},{Name:"Zionite",Content:`Zionites are weak [[Derelict]] bots with a truly random assortment of makeshift parts (loadout not being awful not guaranteed), living mostly in [[Spoiler]][[Zion]][[/Spoiler]] with useful tips. Can also be found in a variety of events.
-Zionites have a decent core exposure and low core integrity, but can overwhelm through numbers.`}],Fe=[{Name:"01-MTF's Autohacker",Content:""},{Name:"01-MTF's Shockpuncher",Content:""},{Name:"0b10 Alert Chip",Content:"Analyzes ambient [[0b10]] signals to guess the alert level. The best part of this item is the reduction of influence by 20%. This item is obtainable from the exiles."},{Name:"0b10 Decoder Chip [Generic]",Content:""},{Name:"0b10 Decoder Chip [Looter]",Content:""},{Name:"0b10 Decoder Chip [Scout]",Content:""},{Name:"0b10 Decoder Chip [Skirmisher]",Content:""},{Name:"0bPrime Scrap Suit",Content:""},{Name:"12-ASH's Boomstick",Content:""},{Name:"1C-UTU's Buckler",Content:""},{Name:`1C-UTU's Sword "Choppy"`,Content:""},{Name:`1C-UTU's Sword "Lootmaker"`,Content:""},{Name:"2N-1CE's Frost Array",Content:""},{Name:"5H-AD0's Cloak",Content:""},{Name:"5H-AD0's Sniper Rifle",Content:""},{Name:"7V-RTL's Ultimate Field",Content:""},{Name:"8R-AWN's Armor/EX",Content:""},{Name:"8R-AWN's Armor/TH",Content:""},{Name:"8R-AWN's Boregun",Content:""},{Name:"99-TNT's Nukerbomber",Content:""},{Name:"A0-MCA's Component Scanner",Content:""},{Name:"A2 Data Core",Content:""},{Name:"A3's Sniper Rifle",Content:""},{Name:"A7 Data Core",Content:`Allows entrance into [[Lab]] and [[Redacted]]reveals the hidden intruder-detecting lasers.[[/Redacted]]
+Zionites have a decent core exposure and low core integrity, but can overwhelm through numbers.`}],Oe=[{Name:"01-MTF's Autohacker",Content:""},{Name:"01-MTF's Shockpuncher",Content:""},{Name:"0b10 Alert Chip",Content:"Analyzes ambient [[0b10]] signals to guess the alert level. The best part of this item is the reduction of influence by 20%. This item is obtainable from the exiles."},{Name:"0b10 Decoder Chip [Generic]",Content:""},{Name:"0b10 Decoder Chip [Looter]",Content:""},{Name:"0b10 Decoder Chip [Scout]",Content:""},{Name:"0b10 Decoder Chip [Skirmisher]",Content:""},{Name:"0bPrime Scrap Suit",Content:""},{Name:"12-ASH's Boomstick",Content:""},{Name:"1C-UTU's Buckler",Content:""},{Name:`1C-UTU's Sword "Choppy"`,Content:""},{Name:`1C-UTU's Sword "Lootmaker"`,Content:""},{Name:"2N-1CE's Frost Array",Content:""},{Name:"5H-AD0's Cloak",Content:""},{Name:"5H-AD0's Sniper Rifle",Content:""},{Name:"7V-RTL's Ultimate Field",Content:""},{Name:"8R-AWN's Armor/EX",Content:""},{Name:"8R-AWN's Armor/TH",Content:""},{Name:"8R-AWN's Boregun",Content:""},{Name:"99-TNT's Nukerbomber",Content:""},{Name:"A0-MCA's Component Scanner",Content:""},{Name:"A2 Data Core",Content:""},{Name:"A3's Sniper Rifle",Content:""},{Name:"A7 Data Core",Content:`Allows entrance into [[Lab]] and [[Redacted]]reveals the hidden intruder-detecting lasers.[[/Redacted]]
 
 Dropped by [[A7]] on death.`},{Name:"AD-0RF's Magmablaster",Content:""},{Name:"AEGIS Remote Shield",Content:""},{Name:"AS-neutralizer No. 17b",Content:""},{Name:"AWS/Autocannon",Content:""},{Name:"AWS/EX-DEC",Content:""},{Name:"AWS/Gauss",Content:""},{Name:"AWS/Thermal",Content:"If the AWS/Thermal is repaired with a [[Recalibrators|Recalibrator]], it will break down in fewer shots than it did the first time. After several repairs, it will consistently break down within a few shots of being repaired."},{Name:"Active Cooling Armor",Content:"Obtainable only from a [[Cargo Convoy]]."},{Name:"Active Sensor Spoofer",Content:""},{Name:"Active Sensor Suite",Content:`The Active Sensor Suite is the most powerful type of [[Sensor Arrays|Sensor Array]]. It can detect all bots, even inactive ones like the [[Exp. Signal Interpreter]] can. Additionally, it cannot be jammed by [[Watcher|Watchers]] or [[Heavy|Heavies]] like normal Sensor Arrays. It also has a unique effect of showing the paths that bots typically travel in, or "desire paths". These paths typically lead through busy corridors and into exits and interactive machines.
 
@@ -1072,7 +1072,7 @@ Alternatively, using an explosive damage-reducing utility such as an [[Exp. Shoc
 As the Zhirov Special's explosion does not raise Alert, it can be used to destroy most structures, machines and robots with few consequences. Keep in mind that [[Launchers|Launcher]] misfires due to [[Corruption]], explosive [[Traps]] and [[Demolisher|Demolishers]] are all capable of destroying the Zhirov Special. [[Cutter|Cutters]] can also interfere, and in the worst-case scenario their [[Concussive RPG]]s can knock back the Zhirov Special away from your target.
 As the Zhirov Special is a non-part inventory item, [[Recycler|Recyclers]] will not attempt to pick it up. 
 
-This article was last edited during Beta 15.`},{Name:"Zio. Alpha Cannon",Content:""},{Name:"Zio. Alpha Cannon Mk. II",Content:""},{Name:"Zio. Biocell",Content:""},{Name:"Zio. Biocell Array",Content:""},{Name:"Zio. Composite Leg I",Content:""},{Name:"Zio. Composite Leg II",Content:""},{Name:"Zio. Glidesys I",Content:""},{Name:"Zio. Glidesys II",Content:""},{Name:"Zio. Heavy Carapace",Content:""},{Name:"Zio. Heavy DM Reactor",Content:""},{Name:"Zio. Laser-H",Content:""},{Name:"Zio. Laser-M",Content:""},{Name:"Zio. Laser-S",Content:""},{Name:"Zio. Light Carapace",Content:""},{Name:"Zio. Light DM Reactor",Content:""},{Name:"Zio. Metafield Generator",Content:""},{Name:"Zio. Phaser-H",Content:""},{Name:"Zio. Phaser-M",Content:""},{Name:"Zio. Phaser-S",Content:""},{Name:"Zio. Shade Armor",Content:""},{Name:"Zio. Shade Carapace",Content:""},{Name:"Zio. Supercomposite Leg",Content:""},{Name:"Zio. Weapon Casing",Content:""}],Be=[{Name:"Access",ImageName:"Access.png",Content:`Access is the last [[0b10]]-controlled main floor that only appears on -1. Access is the most challenging main map with increased patrol density, number of bots per patrol, map size, and level and difficulty in hackable machines compared to [[Research]]. These maps have a 150x300 tile size, either being a tall vertical level or a wide horizontal level. Access maps tend to be fairly well connected across corridors and rooms, and have fewer large rooms and larger hallways more similar to [[Factory]] than the cramped maze-like layout of Research. There are only 2 exits in Access, and locating and taking the desired exit can be especially challenging.
+This article was last edited during Beta 15.`},{Name:"Zio. Alpha Cannon",Content:""},{Name:"Zio. Alpha Cannon Mk. II",Content:""},{Name:"Zio. Biocell",Content:""},{Name:"Zio. Biocell Array",Content:""},{Name:"Zio. Composite Leg I",Content:""},{Name:"Zio. Composite Leg II",Content:""},{Name:"Zio. Glidesys I",Content:""},{Name:"Zio. Glidesys II",Content:""},{Name:"Zio. Heavy Carapace",Content:""},{Name:"Zio. Heavy DM Reactor",Content:""},{Name:"Zio. Laser-H",Content:""},{Name:"Zio. Laser-M",Content:""},{Name:"Zio. Laser-S",Content:""},{Name:"Zio. Light Carapace",Content:""},{Name:"Zio. Light DM Reactor",Content:""},{Name:"Zio. Metafield Generator",Content:""},{Name:"Zio. Phaser-H",Content:""},{Name:"Zio. Phaser-M",Content:""},{Name:"Zio. Phaser-S",Content:""},{Name:"Zio. Shade Armor",Content:""},{Name:"Zio. Shade Carapace",Content:""},{Name:"Zio. Supercomposite Leg",Content:""},{Name:"Zio. Weapon Casing",Content:""}],qe=[{Name:"Access",ImageName:"Access.png",Content:`Access is the last [[0b10]]-controlled main floor that only appears on -1. Access is the most challenging main map with increased patrol density, number of bots per patrol, map size, and level and difficulty in hackable machines compared to [[Research]]. These maps have a 150x300 tile size, either being a tall vertical level or a wide horizontal level. Access maps tend to be fairly well connected across corridors and rooms, and have fewer large rooms and larger hallways more similar to [[Factory]] than the cramped maze-like layout of Research. There are only 2 exits in Access, and locating and taking the desired exit can be especially challenging.
 In contrast with the small number of exits, Access has the highest number of [[Garrison Access|Garrisons]] with 6 machines spread throughout the level. Shutting or destroying Garrisons is always a good idea, but there is a special interaction in Access: [[Spoiler]]If all 6 Garrisons are shut down or disabled, [[Maximum Security]] will be triggered, sending huge waves of hostiles directly to Cogmind. Either be prepared to fight your way out, or have an escape route planned for a fast airborne build to avoid engaging in combat.[[/Spoiler]]
 The biggest bot upgrade in Access is the [[Behemoth]] change. All Behemoths will become [[B-99 Colossus|Colossi]], extremely dangerous and hard to kill threats. They have some incredibly good loot, but trying to kill them with conventional methods is difficult due to their high damage output, high integrity, and [[Adv. Force Field]] reducing damage they take. Avoiding them or running if spotted is usually the best plan.
 [[Heading:2]]Special Machines[[/Heading]]
@@ -2073,12 +2073,29 @@ There are 2 unique prefabs that do not contain any of the above items and have t
 [[Heading:2]]Exits[[/Heading]]
 There is always 1, and possibly 3 exits in Testing:
 [[List]]Main access exit: There will always be 1 exit that leads to the next main Research or [[Access]] floor. It will always be at a dead end at a tile corridor near the top-middle or bottom-middle of the map.|[[Redacted]]Section 7 and Protoforge exits: These exit only appears some of the time. [[Quarantine]] must have been first on the world map, so these exits can only show up when Testing is on -2. A large 4 tile doorway will show up on the middle of the map, on the right side of where the map typically ends. It will open up into a 6 tile hallway and a [[Fortress]] will be guarding the path to the exits. These exits will be closed if Cogmind is FarCom aligned.[[/Redacted]][[/List]]`,Exits:[{Map:"Research",Depths:"-3"},{Map:"Garrison",Depths:"-3 to -2"},{Map:"Protoforge",Depths:"-3 to -2"},{Map:"Section 7",Depths:"-3 to -2"},{Map:"Access",Depths:"-2"}],SpecialBots:["Alpha 7","Fortress","Protovariant D","Protovariant G","Protovariant H","Protovariant L","Protovariant P","Protovariant X","Protovariant Y","Striker","Superbehemoth"],SpecialItems:["2N-1CE's Frost Array","AEGIS Remote Shield","Cld. Nova Cannon","Disintegrator","Exp. Hardlight Generator","Ghost Barrier","Gui. Remote Datajack","Hpw. Disruptor Cannon","Hvy. Quantum Rifle","Hvy. Regenerative Plating","Hyp. EM Gauss Rifle","Hyp. Multirail","Imp. Potential Cannon","Lgt. Regenerative Plating","Med. Regenerative Plating","Myomer Exoskeleton","Null Cannon","Omega Cannon","Perforator","Portable AFG","Potential Cannon","SGEMP Prototype","SHELL Armor","System Mapper","Tachyon Dispersion Ray","Terrabomb Derivative","Warp Gun","Z-bomb Delivery System"],MinDepth:-3,MaxDepth:-2,Branch:!0,Spoiler:"Spoiler"},{Name:"Warlord (Location)",ImageName:"Warlord.png",Content:`The Warlord base is a [[Caves]] [[Branch]] that appears on -5 or -4 and is named after the eponymous bot [[Warlord]]. This map is home to a large number of [[Derelict|Derelicts]] allied with Warlord and ready to fight. This branch is much more combat-oriented than many of the other Caves branches, with large waves of [[0b10]] bots assaulting the base. Initially the map is totally safe and filled with friendly NPCs, but after one of several conditions is met a large assault will begin.
-The right side of the map is the same every run. There is a small cave-like area with an exit just above the starting area. There are a few [[Dirty Bomb Trap|Dirty Bomb Traps]] spread around this section of the map, so be prepared if Cogmind has any [[Corruption]]. There are two entrances into the base: The first has some doors blocking a large corruption-cleansing System Quarantine Field Array, some opened Blast Doors, and a second set of regular doors opening up into 2 [[Marauder (6)|Marauders]]. This entrance has a large number of [[Fire Trap|Fire Traps]] installed. The second way in is either on the top or the bottom of the map, hidden behind some fake walls. These will automatically open if approached from the inside of the base. Behind these fake walls are a set of Sealed Heavy Doors, followed by one more set of fake walls. If Cogmind is [[RIF]] aligned, they will be detected and the entire base will be turned hostile. This occurs no matter which entrance is taken. It is safe to get the corruption cleanse, but any further will be dangerous.
-The interior of the base is different every run. There are always 3 guaranteed rooms in every run. The first is the Vortex Lab which is locked behind Sealed Heavy Doors with a [[Terminal]] to open it next to them. Inside are some [[Tinkerer|Tinkerers]], a lore Terminal, and a random assortment of Vortex weaponry. There will always be at least one pair of weapons from the following list:
+
+[[Heading]]Map Makeup[[/Heading]]
+
+[[Heading:2]]Right Side[[/Heading]]
+The right side of the map is the same every run. There is a small cave-like area with an exit just above the starting area. There are a few [[Dirty Bomb Trap|Dirty Bomb Traps]] spread around this section of the map, so be aware if Cogmind has any [[Corruption]].
+[[Heading:2]]Entrances[[/Heading]]
+There are two entrances into the base: The first has some doors blocking a large corruption-cleansing System Quarantine Field Array, some opened Blast Doors, and a second set of regular doors opening up into 2 [[Marauder (6)|Marauders]]. This entrance has a large number of [[Fire Trap|Fire Traps]] installed. The second way in is either on the top or the bottom of the map, hidden behind some fake walls. These will automatically open if approached from the inside of the base. Behind these fake walls are a set of Sealed Heavy Doors, followed by one more set of fake walls. If Cogmind is [[RIF]] aligned or has become hostile to the [[UFD]], they will be detected and the entire base will be turned hostile. This occurs no matter which entrance is taken. It is safe to get the corruption cleanse, but any further will be dangerous.
+
+[[Heading:2]]Interior[[/Heading]]
+The interior of the base is different every run, but there are always 3 guaranteed rooms in every run.
+[[Heading:3]]Vortex Lab[[/Heading]]
+The Vortex Lab which is locked behind Sealed Heavy Doors with a [[Terminal]] to open it next to them. Inside are some [[Tinkerer|Tinkerers]], a lore Terminal, and a random assortment of Vortex weaponry. There will always be at least one pair of weapons from the following list:
 [[List]][[Vortex Cannon]]|[[Vortex Driver]]|[[Vortex Lance]]|[[Vortex Rail]]|[[Vortex Rifle]]|[[Vortex Shotgun]][[/List]]
-There may also be a single [[Vortex Catalyst Activator]], and if this is a seed where the [[Exiles (Group)|Exiles]] abandoned their hideout, [[EX-DEC]] will be present along with a [[BFG-9k Vortex Edition]]. Another guaranteed room is Warlord's throne room. Inside are Warlord himself, 6 [[Thug (7)|Thugs]], 2 [[Knight|Knights]], and [[God Mode (Fake)|Fake God Mode]]. The final room is Warlord's stash which is locked by [[Reinforced Walls|Sealed Heavy Doors]]. The nearby Terminal can be hacked open with a special code obtained at a Terminal in [[Data Miner (Location)]].
+There may also be a single [[Vortex Catalyst Activator]], and if this is a seed where the [[Exiles (Group)|Exiles]] abandoned their hideout, [[EX-DEC]] will be present along with a [[BFG-9k Vortex Edition]].
+
+[[Heading:3]]Warlord's Throne Room[[/Heading]]
+In this room is are Warlord himself, 6 [[Thug (7)|Thugs]], 2 [[Knight|Knights]], and [[God Mode (Fake)|Fake God Mode]].
+
+[[Heading:3]]Warlord's Stash[[/Heading]]
+The final room is Warlord's stash which is locked by [[Reinforced Walls|Sealed Heavy Doors]]. The nearby Terminal can be hacked open with a special code obtained at a Terminal in [[Data Miner (Location)]].
 The contents of Warlord's stash will vary every game with only the Vortex Chain Reactor being guaranteed. The contents can be as follows:
-[[List]](guaranteed) [[Vortex Chain Reactor]]|[[Adv. Remote Shield]] or [[Adv. Remote Force Field]]|[[Exp. Phase Shifter]], [[Exp. Targeting Computer]], or [[Exp. Cloaking Device]]|1-2 of one of [[Electron Diverter]], [[Imp. Diametric Drive]], or [[Cld. Impulse Thruster]]|1-2 of one of [[Exp. Myomer Leg]] or [[Enh. Biometal Leg]]|1-2 of one of [[Cld. Antigrav System]]|[[System Mapper]] or [[Ghost Barrier]]|[[Exp. Energy Well]], [[Exp. Matter Compressor]], [[Exp. Cooling System]], [[Exp. Coolant Injector]], or [[Adv. Cryofiber Web]]|[[Spectral Analyzer]], [[Exp. Target Analyzer]], [[Exp. Core Analyzer]], or [[Exp. Armor Integrity Analyzer]]|[[Thermal Barrier]], [[Exp. Focal Shield]], or [[System Purifier]][[/List]]
+[[List]](guaranteed) [[Vortex Chain Reactor]]|[[Adv. Remote Shield]] or [[Adv. Remote Force Field]]|[[Exp. Phase Shifter]], [[Exp. Targeting Computer]], or [[Exp. Cloaking Device]]|1-2 of one of [[Electron Diverter]], [[Imp. Diametric Drive]], or [[Cld. Impulse Thruster]]|1-2 of one of [[Exp. Myomer Leg]] or [[Enh. Biometal Leg]]|1-2 of [[Cld. Antigrav System]]|[[System Mapper]] or [[Ghost Barrier]]|[[Exp. Energy Well]], [[Exp. Matter Compressor]], [[Exp. Cooling System]], [[Exp. Coolant Injector]], or [[Adv. Cryofiber Web]]|[[Spectral Analyzer]], [[Exp. Target Analyzer]], [[Exp. Core Analyzer]], or [[Exp. Armor Integrity Analyzer]]|[[Thermal Barrier]], [[Exp. Focal Shield]], or [[System Purifier]][[/List]]
+
 
 [[Heading]]Alignment - [[Warlord (Alignment)|Warlord]][[/Heading]]
 After entering Warlord's throne room, he will explain his plan to attack upper 0b10. As long as he survives until Cogmind exits the map and the 0b10 forces attack, he will attack on -2 [[Research]]. This will occur even if you turn the Warlord forces hostile before exiting the map. Keep in mind, it is possible for a fast Flight build to leave before the assault begins which will prevent the invasion. Along with this Research event, there is another event in [[Command]] that this affects: [[Redacted]]When the Command cave seals are opened, [[Warlord (Command)]] will pop out along with various other Warlord-aligned Derelicts.[[/Redacted]] This alignment is incompatible with RIF or attacking [[Scraptown]] as Warlord will be hostile when entering the base. It is also incompatible with [[Imprint]] or [[UFD]] alignment, as Warlord will not be happy talking with Cogmind. If the [[Encrypted Comm Array]] has been obtained, Warlord will thank Cogmind for assisting his forces. At this point, no more forces will be summonable and the Array can be dropped.
@@ -2173,7 +2190,7 @@ There is only one type of exit in Zion Deep Caves. An exit to Proximity Caves wi
 
 [[Heading]]Events[[/Heading]]
 [[Image]]ZDC 5H-AD0.png|5H-AD0 greeting Cogmind[[/Image]]
-[[List]](++) [[5H-AD0]]: When entering, 5H-AD0 will join Cogmind in investigating the map. They will leave after exiting the map or when they fall below approximately half core integrity. They are a huge assistance in fighting most of the enemies in the map, particularly the Z-Imprinter.[[/List]]`,Exits:[{Map:"Proximity Caves",Depths:"-7 to -6"}],SpecialBots:["Assembler","Golem","Surveybot 24","Z-Imprinter","Z-Light (5)","Z-Technician"],SpecialItems:["GOLEM Unit","Zio. Biocell","Zio. Composite Leg I","Zio. Glidesys I","Zio. Heavy Carapace","Zio. Laser-S","Zio. Light Carapace","Zio. Light DM Reactor","Zio. Phaser-S","Zio. Weapon Casing"],MinDepth:-7,MaxDepth:-6,Branch:!0,Spoiler:"Spoiler"}],We=[{Name:"0b10",Content:`This is the main complex. Cogmind starts from the bottom [[Scrapyard]] level at depth -11. Every level have stairs to an upper level until level -1 where the surface [[Access]] can be found. The levels can also contain other doorways which lead to different branches that eventually connect to the main complex. Read more about all levels at [[Locations]].
+[[List]](++) [[5H-AD0]]: When entering, 5H-AD0 will join Cogmind in investigating the map. They will leave after exiting the map or when they fall below approximately half core integrity. They are a huge assistance in fighting most of the enemies in the map, particularly the Z-Imprinter.[[/List]]`,Exits:[{Map:"Proximity Caves",Depths:"-7 to -6"}],SpecialBots:["Assembler","Golem","Surveybot 24","Z-Imprinter","Z-Light (5)","Z-Technician"],SpecialItems:["GOLEM Unit","Zio. Biocell","Zio. Composite Leg I","Zio. Glidesys I","Zio. Heavy Carapace","Zio. Laser-S","Zio. Light Carapace","Zio. Light DM Reactor","Zio. Phaser-S","Zio. Weapon Casing"],MinDepth:-7,MaxDepth:-6,Branch:!0,Spoiler:"Spoiler"}],Ue=[{Name:"0b10",Content:`This is the main complex. Cogmind starts from the bottom [[Scrapyard]] level at depth -11. Every level have stairs to an upper level until level -1 where the surface [[Access]] can be found. The levels can also contain other doorways which lead to different branches that eventually connect to the main complex. Read more about all levels at [[Locations]].
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Complex 0b10[[/Lore]]
@@ -2842,6 +2859,8 @@ Links are a type of inline content that can be used anywhere. Other types of inl
 
 [[Heading]]Heading type 1[[/Heading]]
 [[Heading:2]]Heading type 2[[/Heading]]
+[[Heading:3]]Heading type 3 with a different defined ID|Heading number 3[[/Heading]]
+This is useful to define multiple headings with the same name/content. A unique ID must be present in order to allow linking to the heading, so make sure that the ID is distinct. For example. declaring Heading|Heading 1 and Heading|Heading 2 will show the "Heading" text in both places, but use #heading_1 for the first heading and #heading_2 for the second.
 [[Heading:1]]Heading type 1 [[B]]with[[/B]] [[I]]inline[[/I]] [[Example|content]][[/Heading]]
 Text content before an image shows up vertically above.[[Image]]Materials.png|An image [[I]]with[[/I]] [[B]]inline[[/B]] [[Materials|content]] in the caption[[/Image]]Images will show on the far right side of the page while text content after an image shows up to the left of it.
 [[List]]Lists of items|can be generated|like this[[/List]]
@@ -2872,6 +2891,10 @@ Lore entry: [[Lore]]0b10 Records|Materials[[/Lore]][[/Redacted]]
 Spoiler hidden and Redacted hidden sections are basically the opposite of normal Spoiler/Redacted sections. They hide their contents if the spoiler setting is at least set to spoiler/redacted respectively. This can be used to indicate that content may be hidden/excluded in some locations based on spoiler settings.
 [[SpoilerHidden]]This text can only be seen when the spoiler setting is None[[/SpoilerHidden]]
 [[RedactedHidden]]This text can only be seen when the spoiler setting is None or Spoiler[[/RedactedHidden]]
+
+[[Heading]]Part group tables[[/Heading]]
+Any part group or supergroup can have a full table of parts and specified stats displayed. Each stat is explicitly specified to allow showing a more focused group of state. They are specified using a 2-tier system the way they are shown in the parts page in spreadsheet view. For example, effect is defined as Effect/Effect. The following is a list of [[Cryofiber Webs]] with energy upkeep and effect specified.
+[[PartGroupTable]]Cryofiber Webs|Upkeep/Energy|Effect/Effect[[/PartGroupTable]]
 
 [[Heading]]Fake items[[/Heading]]
 Fake item stats can be created. Different stats are available based on the item type. Examples:
@@ -3188,7 +3211,7 @@ Fabnet works on all 0b10 bots in the following two floors, even in [[Branch]] ma
 Although this hack does not reveal the path of [[Cargo Convoy|Cargo Convoys]], it will at least show the current location of the [[A-27 Freighter]]. This is still quite useful for both cargo convoy hunters and players trying to dodge an encounter at all costs.
 [[Heading:3]][[GameText]]Trojan(Liberate)[[/GameText]][[/Heading]]
 All further combat bots that are created from the Fabricator with this hack will become liberated. This applies to bots that are already in progress of fabrication when the hack is applied. Liberated bots will become purple uncontrollable allies that follow Cogmind around. If a liberated bot gets within a 60 tile radius of a Caves exit, even if unidentified or unrevealed, the bot will stop following Cogmind head into that exit.[[/Spoiler]]`},{Name:"Fanart",Content:`Check out the following artists' fanart pages:
-[[List]][[Fanart/CaptainWinky|CaptainWinky]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]]|[[Fanart/jimmyl|jimmyl]][[/List]]`},{Name:"Fanart/CaptainWinky",Content:`Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]].
+[[List]][[Fanart/CaptainWinky|CaptainWinky]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]]|[[Fanart/jimmyl|jimmyl]][[/List]]`,Subpages:["Fanart/CaptainWinky","Fanart/Maiker","Fanart/Radbanker","Fanart/jimmyl","Fanart/plasmoidman"]},{Name:"Fanart/CaptainWinky",Content:`Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]].
 
 [[Heading]]G-11 Fodder[[/Heading]]
 [[GameText]]>Analysis(G-11 Fodder)[[/GameText]]
@@ -5058,41 +5081,38 @@ The quick overview of overall performance and score in scoresheets, followed by 
 [[Table]]Name|Points|X||
 Evolutions (X)|X * 500|Evolution thresholds crossed||
 Regions Visited (X)|X * 200|Maps visited, excluding [[Scrapyard]]||
-Robots Destroyed (X)|X * 5|Functional robots destroyed[[Sup]]12[[/Sup]] that have a value of at least 1, regardless of hostility, alignment or faction||
-Value Destroyed (X)|X|Total value destroyed, including most [[0b10]] machines (whether disabled by Cogmind or blue/purple [[Allies]]) and functional non-friendly bots[[Sup]]12[[/Sup]] (destroyed by Cogmind only)||
+Robots Destroyed (X)|X * 5|Functional robots destroyed¹² that have a value of at least 1, regardless of hostility, alignment or faction||
+Value Destroyed (X)|X|Total value destroyed, including most [[0b10]] machines (whether destroyed by Cogmind or blue/purple [[Allies]]) and functional non-friendly bots¹² (destroyed by Cogmind only)||
 Prototype IDs (X)|X * 20|Unique [[Prototype Part]] IDs obtained, including any that were lost, for example due to to a minor Data Loss [[Corruption]] effect||
 Alien Tech Used (X)|X * 200|[[Spoiler]]Unique [[Alien Artifacts]] attached (actual usage not required)[[/Spoiler]]||
 Bonus (X)|X|Total bonus points obtained from various sources[[/Table]]
-[[Sup]]1[[/Sup]]Broken/Unpowered robots do not count towards score in any way.
-[[Sup]]2[[/Sup]]In each map, no more than 60 robot kills of a single class may contribute to score. (Additional robots are not recorded in any part of the score section, but are still recorded in other sections of scoresheets.)
+¹Broken/Unpowered robots do not count towards score in any way.
+²In each map, no more than 60 robot kills of a single class may contribute to score. (Additional robots are not recorded in any part of the score section, but are still recorded in other sections of scoresheets.)
 
 [[Heading:2]]Value[[/Heading]]
-Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most 0b10 machines have a value of 10, functional [[Garrison Access|Garrison Accesses]] have a value of 100, and some important machines like Garrison Relays and Phase Generators have a value of 200.
-The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
+Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most 0b10 machines have a value of 10, and some important machines like Garrison Relays and Phase Generators have a value of 200. The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
 [[Assembled]], passive [[Derelict]] bot classes, special bots that can only ever be found unpowered as "statues" and most [[Drone (Group)|Drones]] have a value of 0. Three special bots have a value of 2000, while all unique bots and all other other special bots have a value of 1. Some of those important unique/special bots instead grant score through bonus points.
 
 
 [[Heading]]Bonus Points[[/Heading]]
 (This section is a work in progress, and as such is missing a lot of information, features subpar formatting, and/or lacks links. It does not, however, lack spoiler tags.)
 Bonus points are obtained from a large variety of sources, almost all of them spoilery. Remember to set your spoilers settings to "None" if you do not want to see potential spoilers!
-Unlike overall performance score, bonus score categories only appear in scoresheets if point were earned in them. Various [[Achievements]] have the same requirements as some bonus score categories. For categories that require destroying very specific robots or machines, unless otherwise noted, anything will count so long as the corresponding bots/machines are destroyed, and Cogmind does not actually have to personally destroy the bots/machines. The following is a very incomplete list of bonus point sources, more or less in the order they appear in scoresheets (a '?' indicates that the writer of this article is unsure about whether a source stacks or not):
+Unlike overall performance score, bonus score categories only appear in scoresheets if point were earned in them. For all but one of the bonus categories that require destroying very specific robots or machines, anything will count so long as the corresponding bots/machines are destroyed, and Cogmind does not actually have to personally destroy the bots/machines. The following is a very incomplete list of bonus point sources, more or less in the order they appear in scoresheets:
 
 [[Table]]Name|Points|Stacks|Source||
 
 [[Comment]] --- General Destruction --- [[/Comment]]
-Pacifist|Dependent on regions visited|Yes|Not destroying any bot by any means that attribute a kill to Cogmind for an entire map, while no kills were attributed to Cogmind in previous maps||
 Triggered High Security|500|Yes|Triggering [[High Security]]||
 [[Spoiler]]Triggered Max Security[[/Spoiler]]|1000|Yes|[[Spoiler]]Triggering [[Maximum Security]][[/Spoiler]]||
-High Alert Combat Kills[[Sup]]3[[/Sup]]|Dependent on bot value and [[Alert]]|Yes|Personally destroying hostile combat bots while Alert is at least at level 2 in [[0b10]]-controlled maps.
+High Alert Combat Kills³|Dependent on bot value and [[Alert]]|Yes|Personally destroying [[0b10 Combat Bots]] while Alert is at least at level 2.
 At alert level 2, 25% of regular bot value. At level 3, 50%. At level 4, 75%. At level 5, 100%.||
 Follower Combat Kills|75% of regular bot value|Yes|Blue/purple Allies destroying combat bots||
 
 [[Comment]] --- Side Quests --- [[/Comment]]
-[[Spoiler]]Awakened Behemoth Slayer[[/Spoiler]]|1000|[[Subatomic Replicator|SR?]]|[[Spoiler]]Transforming [[CR-A16's Pointy Stick]] into [[CR-A16's Behemoth Slayer]] by attacking [[Behemoth|Behemoths]] with it[[/Spoiler]]||
-[[Spoiler]]Forged Quantum Companion[[/Spoiler]]|1000|[[Subatomic Replicator|SR]]|[[Spoiler]]Transforming either the [[Companion Sword]] or the [[Quantum Companion]] into its next form[[/Spoiler]]||
-[[Spoiler]]Built PL-3XN's Obliterator[[/Spoiler]]|1000|[[Subatomic Replicator|SR?]]|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Finished Modified EM Gauss[[/Spoiler]]|1000|[[Subatomic Replicator|SR?]]|[[Spoiler]] [[/Spoiler]]||
-[[Redacted]]Installed LC Capacitor[[/Redacted]]|1000|N/A|[[Redacted]]Installing the [[LC Capacitor]] into the [[Drained L-Cannon]][[/Redacted]]||
+[[Spoiler]]Awakened Behemoth Slayer[[/Spoiler]]|1000|?|[[Spoiler]]Transforming [[CR-A16's Pointy Stick]][[/Spoiler]]||
+[[Spoiler]]Forged Quantum Companion[[/Spoiler]]|1000|[[Subatomic Replicator|SR]]|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Built PL-3XN's Obliterator[[/Spoiler]]|1000|?|[[Spoiler]] [[/Spoiler]]||
+[[Redacted]]Installed LC Capacitor[[/Redacted]]|1000|N/A|[[Redacted]] [[/Redacted]]||
 
 [[Comment]] --- "Side Stuff" --- [[/Comment]]
 Entered Garrisons|200|Yes|Entering [[Garrison]] maps||
@@ -5102,11 +5122,9 @@ Used RIF Installer|500|Yes|Using [[Garrison#rif_installer|RIF Installers]] with 
 
 [[Comment]] --- Materials/Factory Branches --- [[/Comment]]
 Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Aligner machine in Exiles (Location)]]||
-[[Spoiler]]Delivered SUBCON Basin[[/Spoiler]]|2000|N/A|[[Spoiler]]Delivering the full [[SUBCON Basin]] from [[Subcaves]] to the [[Recycling#scraplab|Scraplab in Recycling]][[/Spoiler]]||
 [[Spoiler]]Registered with UFD[[/Spoiler]]|300|N/A|[[Spoiler]][[Scraptown#alignment_-_ufd|Registering as a UFD member in Scraptown]][[/Spoiler]]||
 [[Spoiler]]Met Optimus in HQ[[/Spoiler]]|500|N/A|[[Spoiler]]Talking to [[Scraptown#sub-alignment_-_optimus|Optimus in Scraptown]][[/Spoiler]]||
 [[Spoiler]]Met Data Miner[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Data Miner]] in [[Data Miner (Location)]][[/Spoiler]]||
-[[Spoiler]]Used Data Conduit[[/Spoiler]]|3000|N/A|[[Spoiler]]Using the [[Data Conduit]] in [[Data Miner (Location)#data_conduit|Data Miner (Location)]][[/Spoiler]]||
 [[Spoiler]]Met Imprinter[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Imprinter]] in [[Zion]][[/Spoiler]]||
 [[Spoiler]]Was Imprinted[[/Spoiler]]|300|N/A|[[Spoiler]]Using the [[Zion#alignment_-_imprinting|Imprinting machine in Zion]][[/Spoiler]]||
 [[Spoiler]]Destroyed Z-Imprinter[[/Spoiler]]|1000|N/A|[[Spoiler]]Destroying [[Z-Imprinter]] in [[Zion Deep Caves|Deep Caves]][[/Spoiler]]||
@@ -5114,75 +5132,73 @@ Aligned with FarCom|300|N/A|Using the [[Exiles (Location)#alignment|Farcom Align
 [[Spoiler]]Exposed GOLEM Chamber[[/Spoiler]]|500|No|[[Spoiler]]Destroying one of the GOLEM Chambers in [[Zion Deep Caves|Deep Caves]][[/Spoiler]]||
 [[Spoiler]]Acquired ECA[[/Spoiler]]|300|N/A|[[Spoiler]]Having the [[Encrypted Comm Array]] be delivered in [[Caves]][[/Spoiler]]||
 [[Spoiler]]Met Zhirov[[/Spoiler]]|300|N/A|[[Spoiler]]Meeting [[Zhirov]][[/Spoiler]]||
-[[Spoiler]]Met Warlord at Base[[/Spoiler]]|500|N/A|[[Spoiler]]Meeting [[Warlord]] in [[Warlord (Location)]][[/Spoiler]]||
-[[Spoiler]]MAIN.C Attacked Warlord[[/Spoiler]]|500|N/A|[[Spoiler]]Being in [[Warlord (Location)]] when [[0b10]] forces attack the map[[/Spoiler]]||
-[[Spoiler]]Warlord Defense Kills[[Sup]]3[[/Sup]][[/Spoiler]]|[[Spoiler]]200% of regular bot value[[/Spoiler]]|Yes|[[Spoiler]]Personally destroying [[0b10]] bots in [[Warlord (Location)]][[/Spoiler]]||
-[[Spoiler]]Built Enhanced Grunts[[/Spoiler]]|300|N/A|[[Spoiler]]Using the code given by [[A7]] upon entering [[Cetus]] on the Cetus Manufacturing Module Terminal to build [[Enhanced Grunt|Enhanced Grunts]][[/Spoiler]]||
-[[Spoiler]]A7 Reached Mainframe[[/Spoiler]]|300|N/A|[[Spoiler]]Having [[A7]] reach the Cetus Mainframe and comment about it in [[Cetus]][[/Spoiler]]||
-[[Spoiler]]Met R17 at Cetus[[/Spoiler]]|500|N/A|[[Spoiler]]Meeting [[Revision 17]] in [[Cetus]] after destroying all 8 [[Cetus Guard|Cetus Guards]][[/Spoiler]]||
-[[Spoiler]]Read Decrypted Archives[[/Spoiler]]|300|No|[[Spoiler]]Reading the decrypted archives in [[Archives]] during the [[Archives#variations|special event]][[/Spoiler]]||
+[[Spoiler]]Met Warlord at Base[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]MAIN.C Attacked Warlord[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Warlord Defense Kills³[[/Spoiler]]|[[Spoiler]]200% of regular bot value[[/Spoiler]]|Yes|[[Spoiler]]Personally destroying 0b10 bots in [[Warlord (Location)]][[/Spoiler]]||
+[[Spoiler]]Built Enhanced Grunts[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]A7 Reached Mainframe[[/Spoiler]]|300|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Met R17 at Cetus[[/Spoiler]]|500|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Read Decrypted Archives[[/Spoiler]]|300|No| ||
 
 [[Comment]] --- Hidden Lab --- [[/Comment]]
 [[Redacted]]Found Hidden Lab[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
 [[Redacted]]Decrypted A0 Command[[/Redacted]]|3000|No|[[Redacted]] [[/Redacted]]||
 
 [[Comment]] --- Research-related Events & Branches --- [[/Comment]]
-[[Spoiler]]Used Core Reset Matrix[[/Spoiler]]|3000|No|[[Spoiler]]Attaching a [[Core Reset Matrix]][[/Spoiler]]||
-[[Spoiler]]Hacked Protovariant[[/Spoiler]]|500|Yes|[[Spoiler]]Using the [[GameText]]Protovariant Controls/Control(Protovariants)[[/GameText]] hack on a [[Terminal]] to unleash a [[Protovariant]] in [[Testing]][[/Spoiler]]||
-[[Spoiler]]Met R17 at Research[[/Spoiler]]|2000|N/A|[[Spoiler]]Meeting [[Revision 17++]] in [[Revision 17 (Alignment)#-3_research_invasion|-3/Research]][[/Spoiler]]||
-[[Spoiler]]Met Warlord at Research[[/Spoiler]]|2000|N/A|[[Spoiler]]Meeting [[Warlord]] in [[Warlord (Alignment)#-2_research_assault|-2/Research]][[/Spoiler]]||
-[[Spoiler]]Invited to Help at Command[[/Spoiler]]|2000|N/A|[[Spoiler]]Being invited to [[Command]] by [[Warlord]] during the [[Warlord (Alignment)#-2_research_assault|-2/Research assault]][[/Spoiler]]||
-[[Spoiler]]Hacked God Mode[[/Spoiler]]|5000|N/A|[[Spoiler]]Hacking [[God Mode]] with the code given by [[Data Miner]][[/Spoiler]]||
+[[Spoiler]]Used Core Reset Matrix[[/Spoiler]]|3000|No|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Hacked Protovariant[[/Spoiler]]|500|Yes|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Met R17 at Research[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Met Warlord at Research[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Invited to Help at Command[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Hacked God Mode[[/Spoiler]]|5000|N/A|[[Spoiler]] [[/Spoiler]]||
 [[Spoiler]]Scanned by Researcher[[/Spoiler]]|500|Kinda|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Pursued by Intercept[[/Spoiler]]|500|Max once per map|[[Spoiler]]Being pursued by the first [[Intercept Squad]] dispatch of a map[[/Spoiler]]||
-[[Spoiler]]Acquired SGEMP[[/Spoiler]]|2000|No|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Delivered SGEMP[[/Spoiler]]|2000|No|[[Spoiler]] [[/Spoiler]]||
-[[Spoiler]]Met Sigix[[/Spoiler]]|2000|N/A|[[Spoiler]]Meeting the [[Sigix Containment Pod]][[/Spoiler]]||
-
-[[Comment]]I'm not actually sure about the SGEMP quest. If you replicate the SGEMP before picking it up, i don't think it would count twice, but what about for the delivery?[[/Comment]]
+[[Spoiler]]Pursued by Intercept[[/Spoiler]]|500|Yes|[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Acquired SGEMP[[/Spoiler]]|2000| |[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Delivered SGEMP[[/Spoiler]]|2000| |[[Spoiler]] [[/Spoiler]]||
+[[Spoiler]]Met Sigix[[/Spoiler]]|2000|N/A|[[Spoiler]] [[/Spoiler]]||
 
 [[Comment]] --- REDACTED Research branches --- [[/Comment]]
-[[Redacted]]Activated Exoskeleton[[/Redacted]]|3000|N/A|[[Redacted]]Placing the [[Sigix Containment Pod]] into the [[Sigix Exoskeleton]] in [[Section 7]][[/Redacted]]||
-[[Redacted]]Integrated Exoskeleton[[/Redacted]]|5000|N/A|[[Redacted]]Integrating the [[Sigix Exoskeleton]] in [[Section 7]][[/Redacted]]||
-[[Redacted]]Destroyed Superfortress[[/Redacted]]|15000|N/A|[[Redacted]]Destroying the [[Superfortress]][[/Redacted]]||
-[[Redacted]]Met Optimus at Protoforge[[/Redacted]]|1000|N/A|[[Redacted]]Meeting [[Triborg (Optimus)]] in [[Protoforge]][[/Redacted]]||
-[[Redacted]]Completed Drillbomb Mission[[/Redacted]]|10000|N/A|[[Redacted]]Completing the [[Protoforge#w9_defending_0bprimeufd_assault|Drillbomb Mission during the UFD assault in Protoforge]][[/Redacted]]||
-[[Redacted]]Optimus Survived to 0b1[[/Redacted]]|3000|N/A|[[Redacted]][[Protoforge#w9_defending_0bprimeufd_assault|Winning or leaving Protoforge after completing the Drillbomb Mission]] while [[Optimus]] is still alive[[/Redacted]]||
+[[Redacted]]Activated Exoskeleton[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Integrated Exoskeleton[[/Redacted]]|5000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed Superfortress[[/Redacted]]|15000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Met Optimus at Protoforge[[/Redacted]]|1000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Completed Drillbomb Mission[[/Redacted]]|10000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Optimus Survived to 0b1[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
 
 [[Comment]] --- Sigix Recovered --- [[/Comment]]
 [[Spoiler]]Recovered Sigix Corpse[[/Spoiler]]|X * 2000|Yes|[[Spoiler]]Winning through any(?) ending with X [[Sigix Corpse|Sigix Corpses]] in inventory[[/Spoiler]]||
 [[Spoiler]]Escaped with Sigix[[/Spoiler]]|X * 5000|[[Subatomic Replicator|SR]]|[[Spoiler]]Ascending to the [[Surface]] with X [[Sigix Containment Pod|Sigix Containment Pods]] in inventory[[/Spoiler]]||
 [[Redacted]]Escaped with Exo-Sigix[[/Redacted]]|10000|N/A|[[Redacted]]Ascending to the [[Surface]] while accompanied by the [[Sigix Warrior]] in its [[Sigix Exoskeleton|Exoskeleton]][[/Redacted]]||
-[[Comment]]   Some endings won't grant points for bringing the Sigix Containement Pod or Exo-Sigix. For example, W5 doesn't grant "Escaped with Sigix" even if you have the Sigix Containement Pod. I assume the same is true for Exo-Sigix, but i don't know about Sigix Corpses. I also don't know for sure which endings this holds true for, but i think all those that ascend to the Surface are safe.[[/Comment]]
+[[Comment]]   Some endings won't grant points for bringing the Sigix Containment Pod or Exo-Sigix. For example, W5 doesn't grant "Escaped with Sigix" even if you have the Sigix Containment Pod. I assume the same is true for Exo-Sigix, but i don't know about Sigix Corpses. I also don't know for sure which endings this holds true for, but i think all those that ascend to the Surface are safe.[[/Comment]]
 
 [[Comment]] --- Command --- [[/Comment]]
-[[Redacted]]Destroyed MAIN.C Guards[[/Redacted]]|500|N/A|[[Redacted]]Destroying both [[M Guard|M Guards]] and both [[Combat Programmer|Combat Programmers]] in [[Command#doom_corridor|Command]][[/Redacted]]||[[Comment]]NOTE: I'm not sure if the Combat Programmers are required for this category; After all, M Guards' names are from being MAIN.C's guards.[[/Comment]]
-[[Redacted]]Met MAIN.C[[/Redacted]]|5000|N/A|[[Redacted]]Meeting [[MAIN.C (Shell)]][[/Redacted]]||
-[[Redacted]]Hacked MAIN.C[[/Redacted]]|300|N/A|[[Redacted]]Using [[A7]]'s code from the [[Cetus|Cetus Mainframe]] on either [[MAIN.C (Shell)]] or [[MAIN.C]] via a [[Datajacks|Datajack]][[/Redacted]]||
-[[Redacted]]Destroyed MAIN.C Shell[[/Redacted]]|5000|N/A|[[Redacted]]Destroying [[MAIN.C (Shell)]][[/Redacted]]||
-[[Redacted]]Zhirov Destroyed MAIN.C[[/Redacted]]|3000|N/A|[[Redacted]][[Zhirov]] detonating the modified [[SGEMP Prototype]], regardless of whether [[MAIN.C]] is destroyed as a result[[/Redacted]]||
-[[Redacted]]Destroyed MAIN.C[[/Redacted]]|10000|N/A|[[Redacted]]Destroying [[MAIN.C]] in any way other than [[Zhirov]] detonating the modified [[SGEMP Prototype]][[/Redacted]]||
-[[Redacted]]Used 0b10 Conduit[[/Redacted]]|2000|N/A|[[Redacted]]Using the [[Command#w4_assimilated_0b10|0b10 Conduit in Command]][[/Redacted]]||
-[[Redacted]]Met Warlord at Command[[/Redacted]]|2000|N/A|[[Redacted]]Meeting [[Warlord (Command)]] in [[Command]][[/Redacted]]||
+[[Redacted]]Destroyed MAIN.C Guards[[/Redacted]]|500|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Met MAIN.C[[/Redacted]]|5000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Hacked MAIN.C[[/Redacted]]|300|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed MAIN.C Shell[[/Redacted]]|5000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Zhirov Destroyed MAIN.C[[/Redacted]]|3000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed MAIN.C[[/Redacted]]|10000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Used 0b10 Conduit[[/Redacted]]|2000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Met Warlord at Command[[/Redacted]]|2000|N/A|[[Redacted]] [[/Redacted]]||
 
 [[Comment]] --- Access_0 --- [[/Comment]]
-[[Redacted]]Met Architect[[/Redacted]]|300|N/A|[[Redacted]]Meeting the [[Architect]][[/Redacted]]||
-[[Redacted]]Started Test 138-B[[/Redacted]]|500|No|[[Redacted]]Successfully starting Test 138-B on the [[Access_0#singularity_gate|Singularity Gate in Access_0]][[/Redacted]]||
-[[Redacted]]Started Test 138-C[[/Redacted]]|8000|N/A|[[Redacted]]Successfully starting Test 138-C on the [[Access_0#singularity_gate|Singularity Gate in Access_0]][[/Redacted]]||
-[[Redacted]]Destroyed A8[[/Redacted]]|300|N/A|[[Redacted]]Destroying [[A8]] in [[Access_0]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
-[[Redacted]]Destroyed A6[[/Redacted]]|400|N/A|[[Redacted]]Destroying [[A6]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
-[[Redacted]]Destroyed A5[[/Redacted]]|500|N/A|[[Redacted]]Destroying [[A5]] in [[Access_0]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
-[[Redacted]]Destroyed A4[[/Redacted]]|700|N/A|[[Redacted]]Destroying [[A4]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
-[[Redacted]]Destroyed A3[[/Redacted]]|800|N/A|[[Redacted]]Destroying [[A3]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
-[[Redacted]]Destroyed A2[[/Redacted]]|1000|N/A|[[Redacted]]Destroying [[A2]] without assimilating them using the [[Field Lobotomy Kit]] or using self-destruct codes[[/Redacted]]||
-[[Redacted]]Destroyed Architect[[/Redacted]]|15000|N/A|[[Redacted]]Destroying the [[Architect]][[/Redacted]]||
+[[Redacted]]Met Architect[[/Redacted]]|300|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Started Test 138-B[[/Redacted]]|500|No|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Started Test 138-C[[/Redacted]]|8000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A8[[/Redacted]]|300|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A6[[/Redacted]]|400|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A5[[/Redacted]]|500|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A4[[/Redacted]]|700|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A3[[/Redacted]]|800|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed A2[[/Redacted]]|1000|N/A|[[Redacted]] [[/Redacted]]||
+[[Redacted]]Destroyed Architect[[/Redacted]]|15000|N/A|[[Redacted]] [[/Redacted]]||
 
 [[Comment]] --- Win Stuff + Friendly Fire --- [[/Comment]]
 Win|3000|N/A|Winning the run through any ending||
 Win Speed|Speed-dependent|N/A|Winning the run through any ending after few enough turns have passed||
-Friendly Fire|X + (Y * 100)|Yes|X = damage dealt to Allies[[Sup]]4[[/Sup]] by Cogmind, Y = Allies[[Sup]]4[[/Sup]] destroyed by Cogmind[[/Table]]
-[[Sup]]3[[/Sup]]Bonus score earned from robot kills in these category is earned in addition to "Value Destroyed" score.
-[[Sup]]4[[/Sup]]Only uncontrollable allies that aren't 0b10 bots under the influence of a temporary IFF overwrite.
+Friendly Fire|X + (Y * 100)|Yes|X = damage dealt to Allies⁴ by Cogmind, Y = Allies⁴ destroyed by Cogmind[[/Table]]
+³Bonus score earned from robot kills in these category is earned in addition to "Value Destroyed" score.
+⁴Only uncontrollable allies that aren't 0b10 bots under the influence of a temporary IFF overwrite.
 
 If an amount of score earned is a decimal numeral (such as in the cases of "High Alert Combat Kills" and "Follower Combat Kills" bonus score categories), that amount of score is rounded down. For example, destroying an [[S-27 Virus]] at Alert level 2 would grant 6.75 points in the High Alert Combat Kills category, which would be rounded down to 6.`},{Name:"Search Patrol",Content:"Search patrols are a unique type of [[0b10]] aligned [[Patrol Squad|patrol squad]]. They can be dispatched if Cogmind generates a lot of [[Alert]] from non-combat sources. This is primarily caused by being spotted by [[Watcher|Watchers]] or [[N-01 Spotter|Spotters]], guard bots like [[Sentry|Sentries]], or by being spotted by any combat hostile and then running away and losing tracking. If the Alert level is above the typical [[Assault Squad|Assault]] range of level 2/400 influence and Cogmind has gained the majority of the influence from these non-combat sources, there is a chance that one or more search patrols may be dispatched. If a search patrol is announced, influence will drop by 150. This will be accompanied by the alert [[GameText]]ALERT: Heightened foreign activity detected, dispatching search patrol.[[/GameText]] The alert will also indicate if multiple search patrols are to be sent out simultaneously. One or more ARCs will be dispatched after a few more turns. These ARCs behave similarly as regular patrol ARCs and have the same standard patrol contents within them. However, search squads will choose random points on the map to patrol to rather than having a fixed patrol route like all other patrols."},{Name:"Security Rotation",Content:"Event occurring on 0b10 floors containing [[Heavy|heavies]]. During a security rotation, heavies will move to a new [[Security Squad|security]] position, and any heavies that have been eliminated will be replaced."},{Name:"Security Squad",Content:`[[Image]]Security Squad Heavy.png|A Heavy guarding a busy intersection[[/Image]]
 Security squads are [[0b10]] aligned [[Squad|squads]] that guard a single location and do not move unless alerted to hostiles. While they are called squads, security bots nearly always work alone and do not come in groups. Security bots tend to be guarding busy exits, corridors, [[Interactive Machine|interactive machines]], and part stockpiles. These squads are primary composed of [[Behemoth|Behemoths]], [[Heavy|Heavies]], and [[Sentry|Sentries]]. They tend to be present on the map when Cogmind enters, and don't appear in greater numbers as time goes on. The main exception to this is Heavies, which may be replenished by the [[Security Rotation]] event, although there will typically never be more than the initial number of Heavies on a map. Security squads can be Enumerated at [[Terminal|Terminals]], but only within a very limited radius of 20 tiles.
@@ -5306,7 +5322,481 @@ Note: Unlike most other maps, in [[Access]] bots are not evacuated. The evacuati
 DSFs have a unique rapid sterilization system that works much quicker than normal sterilization. Ambient heat increases begin only 20 turns after the initial announcement and occur every 15 turns after that.
 
 [[Heading]]Part Melting[[/Heading]]
-After Sterilization is triggered, parts will begin to melt every 30-40 turns and be destroyed instantly. Parts that are 200 integrity or greater are safe from melting. Parts with a lower integrity are more likely to melt than those with higher integrity. For example, [[Treads]] and [[Armor]] tend to last longer or be immune to melting altogether, while fragile processors will melt almost instantly. Parts only melt when within a 20-tile radius around Cogmind, so with a good enough speed, timing, and luck, it is possible to grab parts that would otherwise melt quickly in the heat.`},{Name:"Strategy",Content:"Strategy guides to complete various content."},{Name:"Strategy/Attacking Scraptown",Content:`[[Scraptown]] is an extremely challenging mid-game area to fight and full-clear. The majority of the armed bots are individually weak, but they appear in the dozens and can easily overwhelm Cogmind and any allies. Many unique items are only obtainable by destroying terrain or killing certain bots, which can make attacking Scraptown seem like a promising endeavor. However, there is a serious drawback of going for a full clear or even smashing a container for one item and running: The [[Zion]] and [[Warlord (Location)]] maps will become hostile when Cogmind tries to enter them. The [[Scraptown#civil_war|Civil War]] is a highly recommended alternative to gaining loot from this map. It is much easier and less risky than a full Scraptown murder is. As such, a Scraptown kill is a challenge that exists more for bragging rights than being a truly beneficial move.
+After Sterilization is triggered, parts will begin to melt every 30-40 turns and be destroyed instantly. Parts that are 200 integrity or greater are safe from melting. Parts with a lower integrity are more likely to melt than those with higher integrity. For example, [[Treads]] and [[Armor]] tend to last longer or be immune to melting altogether, while fragile processors will melt almost instantly. Parts only melt when within a 20-tile radius around Cogmind, so with a good enough speed, timing, and luck, it is possible to grab parts that would otherwise melt quickly in the heat.`},{Name:"Strategy",Content:"Strategy guides to complete various content.",Subpages:["Strategy/aoemica's Flight Guide","Strategy/Attacking Scraptown","Strategy/Cetus","Strategy/Defeating Architect","Strategy/Defeating MAIN.C","Strategy/Defeating Superfortress","Strategy/Extension","Strategy/Hub_04(d)","Strategy/Looting Protoforge","Strategy/W8 Fortifying 0b10","Strategy/W9 Defending 0bPrime","Strategy/Wastes","Strategy/Zion Deep Caves"]},{Name:"Strategy/aoemica's Flight Guide",Content:`[[Heading]][[B]][[Color:Red]]WIP[[/Color]][[/B]][[/Heading]]
+[[Heading]]Intro[[/Heading]]
+
+[[Heading]]Basic Strategy[[/Heading]]
+
+[[Heading:2]]Materials[[/Heading]]
+
+[[Heading:2]]Factory[[/Heading]]
+
+[[Heading:2]]Research[[/Heading]]
+
+[[Heading:2]]Access[[/Heading]]
+
+[[Heading]]Good Parts[[/Heading]]
+See [[Strategy/aoemica's Flight Guide/Good Parts]]
+
+[[Heading]]Slot Evolutions[[/Heading]]
+
+[[Heading]]Alignments[[/Heading]]
+`,Subpages:["Strategy/aoemica's Flight Guide/Advanced Movement","Strategy/aoemica's Flight Guide/Good Parts","Strategy/aoemica's Flight Guide/Machine Hacking"]},{Name:"Strategy/aoemica's Flight Guide/Advanced Movement",Content:`[[Heading]][[B]][[Color:Red]]WIP[[/Color]][[/B]][[/Heading]][[Heading]]Attack Dancing[[/Heading]]
+
+[[Heading]]Greenbot Armor[[/Heading]]
+
+[[Heading]]Guard Luring[[/Heading]]
+
+[[Heading]]Room Circling[[/Heading]]
+
+`},{Name:"Strategy/aoemica's Flight Guide/Good Parts",Content:`This page contains a collection of various parts that I find useful on flight runs. This is not intended to be a fully comprehensive list, but tries to cover the more major aspects of each slot type.
+
+[[Heading]]Power[[/Heading]]
+Power is never exciting, but it is a necessity to all builds. The majority of energy on my flight builds typically ends up powering flight units and [[Mass Support Devices]]. In order to save mass for other essential parts, it's better to use lighter engines. It doesn't do much good to dedicate an engine that's so heavy that flight units take up all the energy needed to support it in the first place. As such, one of the most important stats for flight builds is the amount of energy that is generated compared to the mass of the engine, or the energy:mass ratio. Heat generation is also an important factor secondary factor, although it is usually easier to solve a heat problem than a support one.
+
+[[Image]]../part_art/Backup Power VII.png|Backup Power VII, the best Backup Power[[/Image]]
+[[Heading:2]][[Backup Power]][[/Heading]]
+Backup Power is a class of relatively unassuming power that has surprising effectiveness. This is primarily due to the [[Backup Power VII]]'s incredible energy:mass ratio of 3:1. Backup Power is not very durable, can't be repaired, and can be difficult to obtain since it is only available via [[GameText]]Refit[[/GameText]] hack on a [[Repair Station]]. Backup Power VII in particular requires a level 3 Repair Station and succeeding at a base 8% success rate, so [[Hackware]] is highly recommended. Despite these downsides, Backup Power VII is a solid low mass option.
+
+[[Heading:2]][[Fusion Compressors]][[/Heading]]
+Fusion Compressors are unique power sources that have high energy generation at the cost of very high heat and an unusual matter cost. Fusion Compressors, especially the [[Imp. Fusion Compressor]], can support a relatively energy-hungry flight build off a single engine. If using these, take care not to run out of matter, since doing so can spell disaster. The easiest way to restock on matter is to kill non-combat bots like [[Recycler|Recyclers]] and [[Hauler|Haulers]]. In [[Caves]], look for [[Scrap]] piles to restock on matter instead.
+
+[[Image]]../part_art/Graviton Reactor.png|Graviton Reactor, a heavy but powerful engine[[/Image]]
+[[Heading:2]]High Mass High Energy Power[[/Heading]]
+This category applies to a few mid to lategame prototype engines such as the [[Graviton Reactor]], [[Zero-point Reactor]], and [[Zio. Light DM Reactor]]. Non-prototype standard engines are often heavy and don't provide enough energy to properly support themselves. Engines in this group might not be quite so mass-efficient as lighter engines, but one advantage they have is slot compression. For example, the Graviton Reactor generates an impressive 24 energy at the cost of 15 mass. This is the energy equivalent of a [[Mic. Antimatter Reactor]] + a [[Mic. Neutrino Core]], which when combined, take up 13 mass. So at the cost of 2 extra mass, the Graviton generates the same energy in a single slot. While parts like these tend to be higher rating prototypes and are not readily available, in some cases they can help delay or prevent the need to evolve a second power slot altogether.
+
+[[Image]]../part_art/Lgt. Fission Core.png|[[Lgt. Fission Core]], a midgame light engine[[/Image]]
+[[Heading:2]][[Light Power]][[/Heading]]
+Light Power is the standard class of flight engine in the early game. They are reasonably lighter than non-light power sources, though they do give up some integrity and energy storage for the privilege. Light power is best in [[Factory]]-depths, with engines like the [[Lgt. Deuterium Engine]], [[Lgt. Nuclear Core]], [[Lgt. Angular Momentum Engine]], [[Lgt. Fission Core]], and [[Lgt. Neutrino Core]] all serving as viable power sources. However, in later depths, light engines become more difficult to use. For example, the rating 9 [[Lgt. Quantum Reactor]], while technically a "light" reactor, is still 15 mass, as much as 2 endgame flight units support alone! Micro power sources are much more desirable later on for their energy:mass ratios.
+
+[[Heading:3]][[Mak. Power Source]][[/Heading]]
+For all intents and purposes, the Mak. Power Source is like an early light engine. They run a little hot for their rating, but they are a perfectly serviceable engine.
+
+[[Spoiler]]
+[[Heading:2]][[Meta Core]][[/Heading]]
+This [[Subcaves]]-exclusive engine is among the best in the game. The durability of this part is off the charts, while the energy generation rivals the mid-lategame [[Mic. Antimatter Reactor]]. Flight can also make great use of its provided temporary slots for extended periods of time.
+
+[[/Spoiler]]
+
+[[Image]]../part_art/Mic. Antimatter Reactor.png|[[Mic. Antimatter Reactor]]|The best standard micro engine[[/Image]]
+[[Heading:2]][[Micro Power]][[/Heading]]
+Micro power sources are the bread and butter power sources of flight players. They have low total mass, low coverage so they don't die so quickly, and have some of the best energy:mass ratios in the game. Their overall energy generation is not particularly impressive, but they are always a solid pick.
+
+[[Heading:2]]Personal Power Tier List[[/Heading]]
+Parts are sorted alphabetically within ranks. This tier list is not a strict comparison, since comparing a rating 3 and a rating 9 engine directly based on stats doesn't make a lot of sense. This list is about general usefulness of parts based on all stats while also taking into account the depths that they become available.
+
+[[Heading:3]]S Rank|Power S Rank[[/Heading]]
+[[List]]
+[[Cep. Zero-point Core]]|
+[[Meta Core]]|
+[[Mic. Neutrino Core]]|
+[[Zero-point Reactor]]
+[[/List]]
+
+[[Heading:3]]A Rank[[/Heading]]
+[[List]]
+[[Backup Power VII]]|
+[[Graviton Reactor]]|
+[[Imp. Fusion Compressor]]|
+[[Lgt. Fission Core]]|
+[[Lgt. Neutrino Core]]|
+[[Mic. Antimatter Reactor]]|
+[[Mic. Fission Core]]|
+[[Mic. Nuclear Core]]|
+[[Zio. Light DM Reactor]]
+[[/List]]
+
+[[Heading:3]]B Rank|Power B Rank[[/Heading]]
+[[List]]
+[[Fusion Compressor]]|
+[[Lgt. Deuterium Engine]]|
+[[Lgt. Nuclear Core]]|
+[[Mak. Power Source]]|
+[[Mni. Fusion Reactor]]
+[[/List]]
+
+[[Heading:3]]C Rank|Power C Rank[[/Heading]]
+[[List]]
+[[Backup Power III]]|
+[[Fusion Reactor]]|
+All other Lgt. engines
+[[/List]]
+
+[[Heading]]Propulsion[[/Heading]]
+Good flight units are the key to the most successful flight builds. While it is possible to scrape by with any low integrity non-prototype [[Swarmer]]-tier flight units, builds relying heavily on these types of parts struggle greatly due to their fragility. [[Prototype Part|Prototype]] flight units have a large number of benefits over non-prototypes. However, that doesn't mean that non-prototypes aren't worth using. [[Flight Arrays]] and [[Surge Thrusters]] have good niches, and even typical non-prototype parts like the basic [[Flight Unit]] can be used in a pinch. Any flight unit is better than an empty slot.
+
+[[Heading:2]]Effect of Rating[[/Heading]]
+Higher rating parts have higher support and integrity at the cost of higher energy and heat upkeep. Unlike other propulsion types, higher rating parts are not always a superior choice. It is entirely possible to make a build off of early-game prototypes like [[Imp. VTOL Module|Imp. VTOL Modules]] and use them throughout the entire run, never opting to swap them out for higher rating parts. While this results in a lower total support limit, the tradeoff is that upkeep is very low, potentially avoiding the requirement of a 2nd power source or [[Cooling Utilities]]. Instead, these slots can be used to maximize the number of utility slots for other purposes like hacking.
+
+[[Heading:2]]Prototype Flight Units[[/Heading]]
+Prototype flight units are highly valuable to a flight player. Most importantly, prototypes are 2-4 times more durable than standard flight units due to their lower coverage and higher integrity. For example, compare a rating 2 flight unit [[VTOL Module]] vs a rating 2* prototype [[Imp. Flight Unit]]. The Imp. Flight Unit has an integrity:coverage ratio of 2.67, while the VTOL module has .83, meaning the Imp. Flight Unit will survive roughly 3 times as long under fire.
+
+[[Heading:2]]Notable Flight Units[[/Heading]]
+
+[[Image]]../part_art/Biomechanical Wings.png|Biomechanical Wings[[/Image]]
+[[Heading:3]][[Biomechanical Wings]][[/Heading]]
+These flight units have extremely low upkeep and coverage at the cost of very low integrity. Biomechanical Wings can be stacked in large numbers with low upkeep costs. However, they essentially require [[Propulsion Shieldings]] because a hit from most bots will destroy them even from full integrity.
+
+[[Heading:3]][[Cooled Flight Units]][[/Heading]]
+Cooled Flight Units, such as the [[Cld. VTOL Module]], have slightly lower support than other prototypes for their rating. However, they generate 0 heat by default and additionally provide the ability to [[Overload#propulsion]] for a temporary boost of speed and support. Overloading is a great way to quickly escape from hostiles after being spotted.
+
+[[Image]]../part_art/Diametric Drive.png|Diametric Drive[[/Image]]
+[[Heading:3]][[Diametric Drives]][[/Heading]]
+Diametric Drives have a relatively low energy cost and high speed for their rating. However, they are on the upper end of the heat generation spectrum at +3. These parts are difficult to stack in large numbers due to high cooling requirements, but work well with Cooled Flight Units that help balance out the heat.
+
+[[Heading:3]][[Exp. Cesium-ion Thruster|Exp. Cesium-ion]] and [[Exp. Q-thruster|Exp. Q-thrusters]][[/Heading]]
+These 2 flight units are unique in their abnormally low base Time/Move. They have slightly below average support and expensive upkeep for the support they provide. Additionally, their low base speed ends up making full speed movement even harder to support. Their best niche is not in a large stack of flight units, but rather keeping the speed down for a small number of dedicated flight units. For example, they work well for the Inspector Gadget [[Achievements|Achievement]] that restricts Cogmind to only 2 propulsion slots.
+
+[[Image]]../part_art/Nuclear Pulse Array.png|Nuclear Pulse Array, a the lowest rating flight array[[/Image]]
+[[Heading:3]][[Flight Arrays]][[/Heading]]
+Flight Arrays, such as the [[Nuclear Pulse Array]], are 2 slot non-prototype flight units that have better than average integrity and support. They have relatively low upkeep costs and run a bit slower than their single slot counterparts due to only one application of the "Mod/Extra" stat. Mixing one or two arrays into a flight build is usually a good idea to improve support while lowering the overall upkeep costs of the build. Notably, the [[Impulse Thruster Array]] can be looted off of [[Striker|Strikers]] which appear in many large scale [[Derelict]] vs [[0b10]] battles.
+
+[[Spoiler]]
+[[Heading:3]][[Flightbrick]][[/Heading]]
+This unique Subcaves-exclusive prototype is a great addition to any flight build. Its 3 temporary utility slots can provide great benefit throughout its lifespan, which is quite long due to its incredible 1800 integrity. The biggest drawback of the Flightbrick is its high upkeep costs, although it is still possible to support the Flightbrick at high speeds.
+
+[[/Spoiler]]
+
+[[Image]]../part_art/Flying Fortress v7.png|Flying Fortress V7[[/Image]]
+[[Heading:3]][[Flying Fortress v7]][[/Heading]]
+The Flying Fortress v7 is a unique [[Exiles (Location)|Exiles]] part that has an unparalleled 12.5 support per slot which makes it great for hauling around big storage units or other heavy parts. It has  high integrity, coverage and upkeep costs. However, its 800 integrity may not last as long as it may first sound. The relatively low speed for a flight unit and high coverage make it somewhat vulnerable in the long run. Using Propulsion Shieldings can significantly improve the lifespan of this part.
+
+[[Heading:3]][[Surge Thrusters]][[/Heading]]
+Surge Thrusters are non-prototype flight units with very low support, but high coverage, integrity, and base speed. These can be looted off of [[Cutter|Cutters]], although fighting Cutters is not something to be taken lightly.
+While Surge Thrusters are not very durable, one unique use of them are as makeshift propulsion armor due to their high coverage compared to other flight units. Since they are expensive to run, they don't need to be turned on at all times. Instead, keep them powered off to serve as armor at all times. Then, when needed, they can be turned on and overloaded to escape danger ASAP. Make sure to carry backups of them since they get destroyed rather quickly.
+
+[[Heading:2]]Personal Flight Unit Tier List[[/Heading]]
+Parts are sorted alphabetically within ranks. This tier list is not a strict comparison, since comparing a rating 3 and a rating 9 flight unit doesn't make a lot of sense. This list is about general usefulness of parts based on all stats, while also taking into account the depths that they become available.
+
+[[Heading:3]]S Rank|Flight S Rank[[/Heading]]
+[[List]]
+[[Cep. Fieldthrust Drive]]|
+[[Exp. Biomechanical Wings]]|
+[[Flightbrick]]|
+[[Flying Fortress v7]]
+[[/List]]
+
+[[Heading:3]]A Rank|Flight A Rank[[/Heading]]
+[[List]]
+[[Cld. Impulse Thruster]]|
+[[Cld. Nuclear Pulse Thruster]]|
+[[Cld. Q-thruster]]|
+[[Cld. VTOL Module]]|
+[[Diametric Drive]]|
+[[Electron Diverter]]|
+[[Field Propulsion Array]]|
+[[Imp. Cesium-ion Thruster]]|
+[[Imp. Diametric Drive]]|
+[[Imp. Q-thruster]]|
+[[Imp. VTOL Module]]|
+[[Impulse Thruster Array]]|
+[[Nuclear Pulse Array]]
+[[/List]]
+
+[[Heading:3]]B Rank|Flight B Rank[[/Heading]]
+[[List]]
+[[Adv. Surge Thruster]]|
+[[Biomechanical Wings]]|
+[[Cld. Field Propulsion Drive]]|
+[[Cld. Cesium-ion Thruster]]|
+[[Exp. Surge Thruster]]|
+[[Imp. Flight Unit]]|
+[[Imp. Surge Thruster]]
+[[/List]]
+
+[[Heading:3]]C Rank|Flight C Rank[[/Heading]]
+[[List]]
+[[Cesium-ion Thruster]]|
+[[Exp. Cesium-ion Thruster]][[Sup]]1[[/Sup]]|
+[[Exp. Q-thruster]][[Sup]]1[[/Sup]]|
+[[Field Propulsion Drive]]|
+[[Mak. Flight Unit]]|
+[[Nuclear Pulse Thruster]]|
+[[Q-thruster]]|
+[[Surge Thruster]]|
+[[VTOL Module]]
+[[/List]]
+
+[[Heading:3]]D Rank|Flight D Rank[[/Heading]]
+[[List]]
+[[Flight Unit]]|
+[[Impulse Thruster]]|
+[[Xenon Bombardment Thruster]]
+[[/List]]
+[[List:Ordered]]
+Exp. flight units are good for low propulsion count flight builds but are less useful for more "standard" flight builds with 6 or more propulsion slots.
+
+[[/List]]
+
+[[Heading]]Utilities[[/Heading]]
+Utilities contain the most diverse range of parts in the game. This guide will not touch on every single unique kind, but strives to cover the most important ones.
+
+[[Heading:2]][[Defensive Utilities]][[/Heading]]
+Although flight builds should rarely engage in combat, that doesn't mean that combat is off the table entirely. When in combat, flight should try to kill bots as fast as possible and use positioning and defensive utilities (when available) to reduce damage taken. Similarly, even when not intentionally fighting enemy bots, running past them often results in a few stray shots. Many kinds of damage utilities are not especially useful for flight due to prohibitive energy or mass costs, but a few are still worth consideration, namely evasion utilities.
+
+[[Heading:3]][[Phase Shifters]][[/Heading]]
+Phase Shifters are one half of the powerful avoidance-stacking strategy. They are reasonably light, but have disproportionately high coverage compared to their integrity, and are also very energy hungry. If they can be afforded, they will provide unparalleled damage mitigation for a flight build in a single slot. Utility Shieldings are helpful for long-term use of Phase Shifters due to their fragility.
+
+[[Image]]../part_art/Adv. Reaction Control System.png|[[Adv. Reaction Control System]], a mid-tier Reaction Control System variant[[/Image]]
+[[Heading:3]][[Reaction Control Systems]][[/Heading]]
+Reaction Control Systems are the much, much cheaper cousin of Phase Shifters and serve as the second half of the avoidance-stacking strategy. They are similarly light and fragile, but provide a high bonus to avoidance at a very reasonably low energy cost. As an added bonus, these serve as an offensive melee tool for a permanent +1 momentum to melee attacks. If you have to pick between just one evasion utility, these are typically the better choice.
+
+[[Heading:3]][[Shield Generators]][[/Heading]]
+Shield Generators are the lighter, less effective, but more efficient cousins of the [[Force Fields]]. Force Fields don't typically fit on flight builds due to their excessive mass and energy requirements. However, Shield Generators are a much more reasonable alternative. They are typically less effective than stacking evasion utilities, but can still be a useful part of a build's damage mitigation strategy.
+
+[[Image]]../part_art/Graphene Brace.png|Graphene Brace[[/Image]]
+[[Heading:3]][[Graphene Brace]][[/Heading]]
+The Graphene Brace is a defensive item unlike the others in the list above. Rather than reducing damage directly, it instead prevents critical hit effects. Namely, it can be used to prevent the 2 scariest critical types of blast (primarily from [[Heavy|Heavies]] and [[Behemoth|Behemoths]]) and sever (primarily from [[Cutter|Cutters]]). The Graphene Brace does not trivialize either bot type, but it does make them much less of a potentially run-ending threat.
+
+[[Image]]../part_art/Adv. Hacking Suite.png|[[Adv. Hacking Suite]], a mid-tier Hacking Suite variant[[/Image]]
+[[Heading:2]][[Hackware]][[/Heading]]
+Hackware is the crux of the "flighthack" playstyle. The speed of flight coupled with a big stack of hackware gives unparalleled control over standard 0b10 maps. Both [[Offensive Hackware]] and [[Defensive Hackware]] are valuable, although offensive hackware provides a greater benefit when being stacked in large numbers since it allows success at more difficult but powerful indirect hacks like hacks for schematics. By comparison, defensive hackware doesn't provide much value after the first one or two because its effect in reducing tracing is capped. Hacking is covered in more detail in [[Strategy/aoemica's Flight Guide/Machine Hacking]].
+
+[[Heading:2]][[Infowar]][[/Heading]]
+Infowar combined with high speeds is what enables flight to avoid nearly all combat throughout the game. Infowar helps detect bots, detect terrain, and identify ways to bypass hostiles, which in turns limits the need for lots of heavy combat gear or backups. Infowar is explained in detail on the dedicate page, so the following is a brief overview from a flight-oriented perspective.
+
+[[Image]]../part_art/ECM Suite.png|ECM Suite, the basic tier type of ECM Suite[[/Image]]
+[[Heading:3]][[ECM Suites]][[/Heading]]
+ECM Suites are a natural pair for flight. Cutting a long-tracking bot's memory in two (or more) can make major nuisance bots into much more manageable. [[Programmer|Programmers]] and [[Hunter|Hunters]] are the two standard bots with the highest memory durations of 80 and 60 actions respectively. Swapping on an ECM Suite can help avoid getting cornered in the later bot-dense maps like [[Research]].
+One extra note about ECM suites is that the higher rating variants tend to be less useful for flight due to their prohibitively expensive energy costs. A single basic [[ECM Suite]] is typically enough to deal with most encounters. Although better versions are appreciated, the jump from 5 to 20 or 25 energy from [[Adv. ECM Suite|Adv.]] or [[Exp. ECM Suite]] respectively is substantial enough to consider not "upgrading" even when given the option.
+
+[[Image]]../part_art/Adv. Sensor Array.png|[[Adv. Sensor Array]], a mid-tier Sensor Array[[/Image]]
+[[Heading:3]][[Infowar#Robot Detection|Robot Detection]][[/Heading]]
+[[Image]]../part_art/IFF Parser.png|IFF Parser[[/Image]]
+Robot detection is the most crucial component of infowar for a flight build. The most effective way to avoid damage is to simply never get shot at, and knowing where hostiles are is a good way of doing that. While slower builds can better get away with imprecise bot sensing like the [[Seismic Detector]], or [[IFF Parser]], I prefer more reliable bot class-detection for predictability. [[FarCom]] and standard [[Sensor Arrays]] work best.
+Note for Sensor Arrays: Without an [[Exp. Signal Interpreter]], [[H-88 Terminator|H-88 Terminators]] will not appear on sensors. In this case, the Seismic Detector or IFF Parser can be used in conjunction with a standard Sensor Array in order to detect these dangerous bots. The bot markings that only appear on Seismic with nothing on Sensors are [[Hunter|Hunters]] by process of elimination.
+
+[[Heading:4]]Preferred Bot Detection Infowar[[/Heading]]
+[[List:Ordered]]
+Sensor Array + [[Signal Interpreters|Signal Interpreter]]/FarCom|
+IFF Parser|
+Seismic Detector
+[[/List]]
+
+[[Image]]../part_art/Lrn. Terrain Scanner.png|[[Lrn. Terrain Scanner]], an upper tier Terrain Scanner variant[[/Image]]
+[[Heading:3]][[Infowar#Terrain Scanning|Terrain Scanning]][[/Heading]]
+[[Image]]../part_art/Structural Scanner.png|Structural Scanner[[/Image]]
+Terrain scanning is a useful, yet less required source of infowar for flight builds. Being able to dig in between rooms to avoid squads in busy hallways is highly valuable, although manually digging to check the distance between rooms is always an option. Slow forms of terrain scanning, like a [[Terrain Scanners|Terrain Scanner]] without a [[Terrain Scan Processors|Terrain Scan Processor]] or with a low rating one are not very valuable for flight. The fast move speed lends better to more instant forms of infowar like the [[Structural Scanner]] or [[Machine Analyzer]].
+
+[[Heading:4]]Preferred Terrain Scanning Infowar[[/Heading]]
+[[List:Ordered]]
+Terrain Scanner (with [[Exp. Terrain Scan Processor]] or better)|
+Structural Scanner|
+Machine Analyzer [[Sup]]1[[/Sup]]|
+[[Seismic Detector]] [[Sup]]2[[/Sup]]|
+Terrain Scanner with low rating or no Terrain Scan Processor
+[[/List]]
+[[Sup]]1[[/Sup]] The Machine Analyzer doesn't provide as good of pure terrain information as the ones above it, but the machine detection capabilities are unique and useful in its own right.
+
+[[Sup]]2[[/Sup]] The Seismic Detector's terrain scanning capabilities are fairly weak, although they are instantaneous. This terrain scanning effect is most useful in Factory, since few machines in Research or later generate seismic activity.
+
+[[Image]]../part_art/Adv. Transmission Jammer.png|[[Adv. Transmission Jammer]], an upper tier Transmission Jammer variant[[/Image]]
+[[Heading:3]][[Transmission Jammers]][[/Heading]]
+Transmission Jammers are great for every type of propulsion, and there isn't much unique about jammer use for flight. The primary use of flight jammers, in my experience, is blocking [[Watcher]] transmissions while killing or flying past them.
+Note: while not truly mutually exclusive, I find ECM Suites tend to compete with Transmission Jammers for the same inventory slot. With jamming Watchers and squads in general, it is less necessary to ECM away as many squads. With ECM, it is easier to ignore squads Watchers alert because of the reduced tracking duration. However, this is more of a note of personal preference rather than being strict advice.
+
+[[Image]]../part_art/Enh. Optical Array.png|[[Enh. Optical Array]], a mid-tier Visual Processing Unit variant[[/Image]]
+[[Heading:3]][[Infowar#Vision Manipulation|Vision Manipulation]][[/Heading]]
+The 2 types of vision manipulation utilities, [[Visual Processing Units]] and [[Cloaking Devices]], both are very useful for flight builds. Visual Processing Units are easier to use due to their lack of mass or energy costs, but Cloaking Devices are swappable and can be used sneak past tight corridors and into guarded machines. I personally rarely use Cloaking Devices, although I will consider taking the [[Exp. Cloaking Device]] that sometimes shows up in [[Warlord (Location)#Warlord's Stash|Warlord's Stash]]. The [[Cloak of Protection]] is a useful [[Exiles Vault Prototypes|Exiles Vault Prototype]] 2-in-1 part that combines armor and cloaking, but is energy hungry and fragile for much long-term use.
+
+[[Image]]../part_art/Gravity Neutralizer.png|Gravity Neutralizer, a mid-tier prototype Mass Support Device variant[[/Image]]
+[[Heading:2]][[Mass Support Devices]][[/Heading]]
+Mass support is one of the biggest weaknesses of flight units, so anything to help patch that low support number up is welcome. The lower rating mass support utilities are not especially slot efficient, but the prototypes like the [[Gravity Neutralizer]] and above can be worthwhile. The top normally obtainable part, the [[Adv. Quantum Shading Machine]], is a pricy 15 energy per turn, but at 25 mass support, it's worth about 3 endgame flight units of support in a single slot. Use powerful engines like the [[Imp. Fusion Compressor]] in order to offset the energy cost of the support.
+
+[[Image]]../part_art/Power Amplifier.png|Power Amplifier, the basic tier type of Power Amplifier[[/Image]]
+[[Heading:2]][[Power Amplifiers]][[/Heading]]
+Power Amplifiers are a mass efficient way of increasing power output while avoiding the need to evolve another power slot. These are best used with very high energy generation power like the [[Imp. Fusion Compressor]] or as a stopgap measure to delay evolving another power slot. As an example, the basic tier [[Power Amplifier]] provides 2 energy at 1 mass off of one [[Micro Power]]. Not especially powerful, but it can be enough to support a little more energy spend at a very low mass cost compared to another engine, which would take at least 3 for 5 energy with a [[Lgt. Ion Engine]].
+
+[[Image]]../part_art/Imp. Light Armor Plating.png|Imp. Light Armor Plating, a low tier light armor variant[[/Image]]
+[[Heading:2]]Standard [[Armor]][[/Heading]]
+Boring, yet practical. Flight builds should typically wear at least one slot of armor, or at least have one in inventory to swap over some other fragile utility while being shot at. Light armors are preferred early on, particularly the [[Imp. Light Armor Plating]], but the extra coverage of a medium armor in a single slot is always appreciated if the mass support is available. Armor's overflow-absorption properties can be run-saving when running past a [[Heavy]], where otherwise a single unlucky hit can overflow and shred through multiple low integrity but essential parts.
+
+[[Heading:2]][[Shieldings]][[/Heading]]
+The most important shieldings for flight are [[Propulsion Shieldings]] and [[Utility Shieldings]]. While [[Power Shieldings]] and [[Weapon Shieldings]] can be used to protect unique or low integrity parts, they are rarely worth the extra slot. While not strictly necessary, standard armor helps to reduce coverage of the parts that are being protected by shieldings and therefore keep the shieldings intact longer. One important note is that the "basic" rating 1 versions of the shieldings are not worth the cost of the slot for a paltry 33% damage reduction which makes the parts roughly 50% more durable. On the other hand, Imp. versions at 66% (3x more durable) or Exp. versions at 90% (10x more durable!) make a much more significant contribution to durability.
+
+[[Image]]../part_art/Imp. Propulsion Shielding.png|[[Imp. Propulsion Shielding]], a mid-tier Propulsion Shielding variant[[/Image]]
+[[Heading:3]]Propulsion Shieldings[[/Heading]]
+These shieldings have a lot of value at the extremes of low integrity flight units like [[Biomechanical Wings]] or high coverage flight units like the [[Flying Fortress v7]]. The Flying Fortress will chew through them quite quickly, so consider fabbing or repairing them on a regular basis. On the other hand, a single propulsion shielding can keep a stack of Biomechanical Wings going for ages. Of course, they are still reasonable for any kind of middle ground scenario as well.
+
+[[Image]]../part_art/Imp. Utility Shielding.png|[[Imp. Utility Shielding]], a mid-tier Utility Shielding variant[[/Image]]
+[[Heading:3]]Utility Shieldings[[/Heading]]
+These shieldings are the most useful of the bunch. Flight has a tendency to load up on powerful but fragile utilities of all kinds. Everybody knows the pain of having a 1/500 utility being sniped off, but these shieldings, especially [[Exp. Utility Shielding]], take that risk away. It's still worth swapping high coverage utilities like sensors off during combat in order to reduce the amount of damage the shieldings need to take.
+
+[[Image]]../part_art/Med. Storage Unit.png|Med. Storage Unit, a mid-tier storage unit that fits on most midgame flight builds[[/Image]]
+[[Heading:2]][[Storage Unit|Storage Units]][[/Heading]]
+Inventory is an essential part of any build, but it may be surprising to learn that flight doesn't need any dedicated storage units at all! A well-off flight build can avoid trouble and go without burning through backups. The builtin 5 storage is enough to carry a few essential backups and some utility swaps. Over the course of the run, upgrading to a reasonably sized storage unit becomes easier thanks to increasing flight unit support and number of total slots.
+
+[[Table]]
+Storage Unit|Analysis||
+[[CellStyle:Neutral]]
+[[Sml. Storage Unit]]|5 mass can be easily fit in early [[Factory]]. However, the low inventory increase and mass make it a low value pick. Trading 1 active utility slot gives +3 inventory slots to a total of 8, but practically speaking, it's only really +2 slots because a more useful part could have been used instead of the storage unit.||
+[[CellStyle:Good]][[Med. Storage Unit]]|
+10 mass can be reasonably fit in early-mid Factory. 10 is a good-sized inventory that can fit both essential backups and potentially useful/greed items for later. Can stay on Medium Storage throughout the run or upgrade later.||
+[[CellStyle:Good]][[Lrg. Storage Unit]]|20 mass is a little more difficult to fit until [[Research]] depths. 15 inventory gives a ton of room for hauling all sorts of goodies. [[Mass Support Devices]] can help achieve the required level of mass support.||
+[[CellStyle:Neutral]][[Hcp. Storage Unit]]|40 mass is not a reasonably-obtainable amount of free mass support for most flight builds. Hcp. Storage Units requires an excessive number of flight units or a powerful prototype Mass Support Device like the [[Quantum Shading Machine]]. 20 inventory is far more than most builds need, but can be useful when preparing for an extended [[Wintypes|Wintype]].||
+[[CellStyle:Good]][[Lightpack 2.0]]|
+A very funny storage unit due to its side effect of eating parts, but fairly well suited for a flight build. Make sure to take plenty of extra backups with this storage unit, since there's a good chance they might all be needed.||
+[[CellStyle:Bad]][[Humpback]]|Good luck!
+[[/Table]]
+
+[[Heading:2]][[Trap Extractors]][[/Heading]]
+Trap Extractors are a bit niche but can be quite valuable in certain extended [[Wintypes]]. There is also no shortage of random troublesome squads to use traps against. Flight's speed makes it easy to plant traps without being spotted or lure hostiles into already placed traps near explosive machines.
+
+[[Heading]]Weapons[[/Heading]]
+Even though flight builds can get away from most encounters without resorting to combat, it doesn't mean that weapons aren't important. Eliminating fast moving hostiles like [[Cutter|Cutters]], [[Swarmer|Swarmers]], or [[Programmer|Programmers]] might be a better option than trying to escape and getting backed into a corner. Additionally, it's often worth just clearing out an annoyingly positioned squad guarding a bottleneck in the map instead of running by and getting chased and shot a bunch of times. Some flight builds even specialize in combat exclusively instead of trying to stay stealthy.
+
+[[Heading:2]][[Ballistic Weapons]][[/Heading]]
+The longer-ranged and lower upkeep requirements of kinetic weaponry tend to be a good partner with flight. Guns, and especially cannons, can be used for kiting bots at maximum range with a [[Visual Processing Units|Visual Processing Unit]].
+
+[[Image]]../part_art/Hvy. Machine Gun.png|[[Hvy. Machine Gun]], a mid-tier ballistic gun[[/Image]]
+[[Heading:3]][[Ballistic Guns]][[/Heading]]
+Two advantages of guns are that they are lighter than cannons and don't have high recoil, at least generally speaking. "Gunstack" flight uses 4 or more kinetic guns, trading the tankiness of slower propulsion for unparalleled speed and repositioning capabilities of flight. Flight can also make good use of their penetration capabilities to kill hostiles through walls. A stack of guns can serve as the coverage for the build rather than using dedicated armor. However, in small numbers, kinetic guns are inefficient at any serious combat.
+
+[[Image]]../part_art/Hyp. Coil Gun.png|[[Hyp. Coil Gun]], a mid-tier hypervelocity gun[[/Image]]
+[[Heading:4]][[Hyp. Weapons]]|Hyp. Weapons (Guns)[[/Heading]]
+Hypervelocity guns have very low damage, but make up for it in their low recoil, high range, critical destroy chance, and penetration.
+
+[[Heading:4]]Recoil[[/Heading]]
+Some guns, like the [[Shotgun|Shotguns]], have abnormally high recoil that can really ruin Cogmind's aim. While this can be offset by a few means, it is  good idea to double check this stat before using a weapon. [[Recoil Stabilizers]] are a niche utility that can occasionally be beneficial for flight gunstack builds to deal with that recoil. Typically, [[Targeting Computers]] are superior as they not only cancel recoil but can provide better targeting even after cancelling the recoil. There is a break-even point with enough guns and/or enough high-recoil guns where a Recoil Stabilizer is better. Make sure to do the math to determine which one is the better choice.
+
+[[Heading:3]][[Ballistic Cannons]][[/Heading]]
+Cannons are much heavier, have higher recoil, and have higher upkeep requirements than guns. While at first this may make cannons appear to be a bad choice for flight, their great range of 22 makes them perfect for kiting nearly all bot types. Stacking cannons is not easy, but flight can make great use out of a single 2 slot cannon like a [[Hvy. Mass Driver]] and a [[Weapon Cyclers|Weapon Cycler]].
+
+[[Heading:4]][[Hyp. Weapons]]|Hyp. Weapons (Cannons)[[/Heading]]
+Hyp. Cannons like the [[Hyp. Gauss Cannon]] are very powerful due to their high critical hit chance taking out bots or their parts from full integrity. Destroying the propulsion of bots makes them even easier to kite.
+
+[[Image]]../part_art/Tri-rail Accelerator.png|Tri-rail Accelerator[[/Image]]
+[[Heading:4]][[Tri-rail Accelerator]][[/Heading]]
+The Tri-Rail Accelerator is notable for having relatively low mass for a 2 slot cannon, but still offering superb damage. This weapon is a very high value a schematic hack target, and it is worth fabbing these throughout the run.
+
+[[Heading:2]][[Electromagnetic Weapons]][[/Heading]]
+Electromagnetic Weapons are mediocre for flight builds because it is very difficult to support the kind of energy required for long term use. It is possible to store energy in [[Energy Wells]] to temporarily get enough energy for more volleys, but this is not reliable in the long term. EM is also a poor choice against [[Programmer|Programmers]], which is one of flight's biggest annoyances. That's not to say that EM should be written off entirely, but it is a lot more specialized in use compared to combat builds. Unfortunately, the bots that EM is best against are those that are most easily avoided by flight.
+One notable advantage of EM weaponry for flight builds is memory loss effect of [[Corruption]]. A bot with 10% corruption will lose tracking on Cogmind twice as fast, with higher corruption percentage working even more effectively. This is a niche use case, but tagging a bot with EM and then running can sometimes work out.
+
+[[Heading:3]][[Energy Filters]][[/Heading]]
+Energy Filters can make EM weaponry a lot more manageable to support. As this part is fragile, consider using [[Utility Shieldings]].
+
+[[Image]]../part_art/Com. Tesla Bomb Launcher.png|Com. Tesla Bomb Launcher[[/Image]]
+[[Heading:3]][[Electromagnetic Launchers]][[/Heading]]
+While more energy-intensive than guns or cannons, EM launchers allow Cogmind to hit multiple bots at once, even behind walls if aimed well. Some standout weapons are the [[Gui. EMP Blaster]], which is expensive but allows very safe kiting with waypoints, and the [[Hvy. Proton Missile Launcher]] and [[Com. Tesla Bomb Launcher]] for their high range and explosive radius.
+
+[[Heading:3]][[Lrn. Proton Cannon]]/[[EMDS]][[/Heading]]
+The 22 range on these weapons makes them particularly good for kiting bots. [[Spoiler]]The EMDS is especially powerful, heavy, and fragile. For all those downsides, it also gets penetration so it can be used to snipe bots safely through walls.[[/Spoiler]]
+
+[[Heading:2]][[Thermal Weapons]][[/Heading]]
+Thermal weaponry falls under a similar camp as EM weapons. The energy costs are not as expensive, but the heat dissipation is always an issue and will require multiple slots worth of cooling when running a decent amount.
+With enough thermal guns, it is possible to perform an alpha strike and trigger meltdown in one or two volleys, then run away to dissipate heat. However, this requires a lot of specific meltdown-enabling guns like [[Gatling Laser|Gatling Lasers]] or [[Plasma Rifle|Plasma Rifles]], and is significantly more fragile than a kinetic gunstack build.
+
+[[Image]]../part_art/Hvy. Plasma Cannon.png|[[Hvy. Plasma Cannon]], a good digging cannon[[/Image]]
+[[Heading:3]][[Thermal Cannons]][[/Heading]]
+A full set of Thermal Cannons are unrealistic for flight combat for their many downsides of mass, energy cost, and heat generation. However, Thermal Cannons can be used as a [[Digging]] tool that allows safe digging up up to 3  tiles. This only works well with rating 5 or higher cannons, as lower rating cannons either can't dig or can only inconsistently dig through walls.
+
+[[Heading:2]][[Explosive Launchers]][[/Heading]]
+[[Image]]Safe Explosive Digging.png|Structural Scanner revealing safe dug-out tiles[[/Image]]
+Launchers are one of flight's greatest offensive tools. Unlike slower builds, flight can use launchers without worrying too much about collateral damage and [[Alert]] thanks to its ability to run away from dangerous situations. Still, it is better to avoid careless uses of launchers that leads to cascading [[U-05 Engineer|Engineer]] [[Reinforcement Squad|Reinforcements]] and [[Assault Squad|Assaults]]. Launchers are by far the best way to take out an annoying squad of [[Swarmer|Swarmers]] or [[Cutter|Cutters]].
+One combo worth mentioning for flight is combining launchers with a [[Structural Scanner]]. Digging with explosives is dangerous because it destabilizes tiles and triggers [[Cave-ins]]. However, the Structural Scanner can reveal destabilized tiles with the brighter red color as shown on the right. Digging this way is more inventory efficient than keeping a dedicated digging cannon if you are already carrying both of these around.
+Any type of launchers will work well for Flight, but there are a few standout choices:
+
+[[Heading:3]][[Mni. Grenade Launcher]][[/Heading]]
+A good early-game Launcher with a minimal mass of 1. Early flight builds are often strapped for mass and inventory space. This allows you to keep your lightweight Launcher attached in an unused weapon slot to save an inventory swap slot. Just watch out for misfires if Cogmind has any corruption.
+
+[[Image]]../part_art/Rocket Array.png|Rocket Array[[/Image]]
+[[Heading:3]][[Rocket Array|Regular]] and [[Scatter Rocket Array]][[/Heading]]
+Rocket Arrays have a far above average damage output, even for launchers. Their biggest downsides are their arc, delay, and matter costs. However, flight can easily reposition to use these and support the matter costs by killing NC bots. Make sure your targets are around max range so the majority of the projectiles explode into the target. Trying to shoot nearby enemies usually just results most in rockets sailing past the target and leaving them unharmed.
+
+[[Heading:3]][[Lrn. Missile Launcher]][[/Heading]]
+The 20 range on this launcher makes it great for sniping and kiting most types of patrols.
+
+[[Image]]../part_art/Mni. Smartbomb Launcher.png|Mni. Smartbomb Launcher[[/Image]]
+[[Heading:3]][[Mni. Smartbomb Launcher]][[/Heading]]
+This Launcher is the king of flight launchers with its low mass and waypoints, which are an ideal combination for flight kiting. The Mni. Smartbomb Launcher can take out squads from around corner with ease. The tradeoff for this is the high matter cost and relatively low damage output. Be careful about nuking your own cover by hitting a bot you didn't expect to be there when shooting blindly around a corner.
+One thing to keep in mind about guided launchers is that standard [[Sensor Arrays]] don't update instantly, but instead once per turn. This means that hostiles may not always be in the location that the sensor indicates. Realtime sensors like [[FarCom]] and the [[Seismic Detector]] do report the bot location at all times, which makes them more useful when using these weapons.
+
+[[Heading:3]][[Gui. Micro-nuke Launcher]][[/Heading]]
+A grown up 2-slot version of the Mni. Smartbomb Launcher. This weapon is a bit harder to use safely due to its larger explosive radius, but it does have 20 range to make up for it. Works best with long ranged sensors like the [[Exp. Sensor Array]].
+
+[[Heading:2]][[Melee Weapons]][[/Heading]]
+Melee weapons are one of the most natural pairings for flight. Melee light, offers good damage with minimal resource costs, and works great with high speeds allowing for easy repositioning and [[Sneak Attack|Sneak Attacks]]. Melee boosting utilities tend to be light or are already beneficial for flight like [[Reaction Control Systems]]. Melee works best at 1v1 combat but is not so good against large groups of enemies, so launchers serve as a good secondary weapon type. All 3 types of melee are effective, although Impact is a little more niche compared to the other two.
+
+[[Image]]../part_art/Powered Hammer.png|[[Powered Hammer]], a mid-tier impact weapon[[/Image]]
+[[Heading:3]][[Impact Weapons]][[/Heading]]
+Impact weapons are the most powerful melee weapons in terms of raw damage but tend to be unreliable against bots that aren't weak to EM like [[Sentry|Sentries]] and [[Programmer|Programmers]]. In fact, their poor performance against Programmers, one of the biggest nuisances of flight, is one of the biggest downsides of impact. The upside is that they can very easily kill EM-weak green non-combat bots, [[Grunt|Grunts]], and [[Hunter|Hunters]] through their part-crushing corruption effect.
+One especially good use for impact is killing [[Hauler|Haulers]]. There is a high chance to kill Haulers in a single sneak attack which will avoid the call for reinforcements. This technique can work very effectively even on guarded Haulers. Either whack the Hauler from around the corner once or lure the guard Grunts out of the way to get a few uninterrupted swings.
+
+[[Redacted]]
+[[Heading:4]][[Cep. Blasthammer]][[/Heading]]
+As the only AOE-type melee weapon, this [[Protoforge]]-exclusive part is uniquely powerful at clearing out lategame squads. Make sure to maneuver around in combat to maximize the AOE attacks into as many bots as possible.
+[[/Redacted]]
+
+[[Spoiler]]
+[[Heading:4]][[Core Stripper]][[/Heading]]
+The Core Stripper is a fairly niche flight melee weapon. It is absurdly expensive to wield, but has a 1/3 chance of killing a lot of scary endgame bots in a single hit. [[Redacted]]This is worth consideration for fighting [[A Bots]] and the [[M Guard|M Guards]] and [[Combat Programmer|Combat Programmers]] of the [[Command#Doom Corridor|Doom Corridor]].[[/Redacted]] Very few normal bots are worth using this on, as even something scary like a [[B-99 Colossus]] can easily be run away from on flight.[[/Spoiler]]
+
+[[Image]]../part_art/Spear.png|[[Spear]], a mid-tier piercing weapon[[/Image]]
+[[Heading:3]][[Piercing Weapons]][[/Heading]]
+Piercing weapons are at their height of their power at the hands of a flight build. They tend to be less efficient at killing bots than slashing weapons for other propulsion types due to their low base damage, but flight can really make them shine with their doubled momentum boost capping out at an impressive 80% bonus damage. This is achievable for a flight build hitting 8 speed, with a single [[Reaction Control System]] preventing the need to move in between attacks to obtain momentum. While this is no easy feat, it is possible for an endgame flight build to reach this level of speed with some overloading.
+Throughout most of the run, piercing weapons tend to be slightly less effective than equally rated slashing weapons. The reduced damage often means that what will kill in one hit from a slashing weapon will take 2 hits with a piercing weapon. The 8% core analysis bonus is helpful, but it is still significantly worse to take an additional hit on core to kill. In general, they are roughly at or slightly below equivalently-rated slashing weapons in effectiveness, but creep ahead with a fully kitted out endgame melee build.
+
+[[Spoiler]]
+[[Heading:4]][[CR-A16's Pointy Stick]][[/Heading]]
+The Pointy Stick can be difficult to transform into the [[CR-A16's Behemoth Slayer|Behemoth Slayer]], but is very valuable if obtained. Being able to eliminate a Behemoth guarding a [[Fabricator]] or stockpile of good parts is always useful. To activate it, consider using allies to take aggro for you and/or temporarily swapping onto [[Treads]] and slapping on heavy armor to avoid losing a bunch of valuable flight units.
+[[/Spoiler]]
+
+[[Image]]../part_art/Plasma Lance.png|Plasma Lance[[/Image]]
+[[Heading:4]][[Plasma Lance]][[/Heading]]
+This weapon is the strongest standard 0b10 piercing weapon. Plasma Lances are fabbable relatively early as a 7* part, and are also obtainable from [[Striker|Strikers]] in many [[Derelict]]-related events.
+
+[[Spoiler]]
+[[Heading:4]][[Vortex Lance]][[/Heading]]
+Vortex Lances, only obtainable in [[Warlord (Location)#Warlord's Stash]] are the strongest piercing weapons in the game. They deal Entropic damage rather than Piercing damage, which is entirely unresisted by all bot types. They also have extremely high damage for a a melee weapon and 0 delay, leading to unparalleled melee damage per turn. Save these for important endgame targets as they have limited uses.
+[[/Spoiler]]
+
+[[Redacted]]
+[[Heading:4]][[Exp. Jetlance]][[/Heading]]
+Exp. Jetlance is a [[Protoforge]]-exclusive weapon that is also the strongest conventional piercing weapon. While the damage is significantly less impressive than the Vortex Lance, this weapon has unlimited uses, 0 delay, and an impressively high 50% Impale critical rate. Even though the damage effect is not overly significant combined with 50% actuating power from something like [[Femtoactuators]], the impale effect can end up reducing the damage taken by Cogmind thanks to the effect delaying the hit bot as well. Just make sure not to fight in the open with many surrounding bots, as impale crits may work against you.
+[[/Redacted]]
+
+[[Heading:3]][[Slashing Weapons]][[/Heading]]
+Slashing weapons are the go-to melee weapon for all build types, and for good reason. They have moderately high damage, are better than pierce without an optimized endgame melee build, and are more reliable than impact against many bot types. Slashing isn't particularly exciting damage type, but is the best choice for the job in most cases.
+
+[[Image]]../part_art/Greatsword.png|Greatsword[[/Image]]
+[[Heading:4]][[Greatsword]][[/Heading]]
+The Greatsword is a good early game flight weapon that doubles as armor at a reasonable mass. Its high damage also can destroy many early [[Factory]] bots with a single attack. Just watch its integrity, since its high coverage means it tends not to last long in combat.
+
+[[Spoiler]]
+[[Heading:4]][[Companion Sword]][[/Heading]]
+A fantastic weapon found in [[Scraptown]] that scales all the way into extended endgame combat. It does have a few negative side effects like random teleportation and core loss, but flight is well suited to deal with these costs, and can benefit from its many other special abilities. Notably, the free sensors can save 2 active utility slots, shadow attacks provide fantastic free bonus damage, sever can sever even bots that are immune to the normal effect, and sunder can annihilate tough enemies from full core integrity. See [[Quantum Companion]] for more details.
+[[/Spoiler]]
+
+[[Image]]../part_art/Longsword +1.png|Longsword +1[[/Image]]
+[[Heading:4]][[Longsword +1]][[/Heading]]
+This unique [[Exiles (Location)|Exiles]] weapon is a great weapon through the run with high early-game damage, builtin targeting, and no attack delay. While it is not especially fragile, it does tend to get worn down over the duration of a run. It may be worth using [[Weapon Shieldings]] on this part early in the run if you want this part to last.
+
+[[Spoiler]]
+[[Heading:4]][[1C-UTU's Sword "Lootmaker"|1C-UTU's Swords "Lootmaker"]] and [[1C-UTU's Sword "Choppy"|"Choppy"]][[/Heading]]
+2 rare swords only obtainable from the [[Z-Hero]] [[1C-UTU]]. "Choppy" is an above-average but fairly typical slashing weapon. However, "Lootmaker" has a positive salvage stat, the only instance of this stat on a melee weapon. The most common way that a flight build will see these items is by attacking the [[Exiles (Location)|Exiles]] or by [[Imprint#Roster Hacks|Imprint Roster Hacks]] summoning 1C-UTU. However, both methods are fairly unlikely to result in this outcome specifically.
+[[/Spoiler]]
+
+[[Image]]../part_art/Nanosword.png|Nanosword[[/Image]]
+[[Heading:4]][[Nanosword]][[/Heading]]
+Nanoswords are the strongest standard 0b10 slashing weapon. They have very low mass and coverage which makes them easy to support in large numbers (4 or more), which makes them pair well with [[Actuator Arrays]]. As an 8* part, they are fabbable fairly late into the run, but are at least repairable.
+
+[[Redacted]]
+[[Heading:4]][[Cep. Deflector Sword]][[/Heading]]
+The Deflector Sword is a [[Protoforge]]-exclusive upgrade to the Nanosword. It has higher integrity and damage as well as a unique 15% deflection ability. The deflection ability occasionally comes in handy, although many scary endgame bots are immune to the effect. Still, any deflects are useful, and this is the best guaranteed slashing weapon in the game.
+[[/Redacted]]
+
+[[Spoiler]][[Heading:4]][[Sigix Broadsword]][[/Heading]]
+The Sigix Broadsword is arguably the best flight melee weapon in the game. However, it is not its fighting capabilities that are useful, but rather its ability to serve as armor. 800 coverage is a massive amount for a flight build, often 50% of the coverage for the whole build, or even more. 10 mass for such good protection is a steal. Its 300 integrity is very low compared to its coverage value, and it has a habit of being worn down by lots of enemies or crit off by [[Hunter|Hunters]] at inconvenient times. It is often better to detach and carry this part in inventory when running low on integrity instead of risking letting it be destroyed entirely, although [[Corruption]] fuses can ruin this technique. Baby this part when you need to and the broadsword will prove a solid piece of armor for the rest of the run.
+[[/Spoiler]]`},{Name:"Strategy/aoemica's Flight Guide/Machine Hacking",Content:`[[Heading]][[B]][[Color:Red]]WIP[[/Color]][[/B]][[/Heading]][[Heading]][[Fabricator|Fabricators]][[/Heading]]
+
+[[Heading]][[Garrison Access|Garrison Accesses]][[/Heading]]
+
+[[Heading]][[Scanalyzer|Scanalyzers]][[/Heading]]
+
+[[Heading]][[Repair Station|Repair Stations]][[/Heading]]
+
+[[Heading]][[Terminal|Terminals]][[/Heading]]`},{Name:"Strategy/Attacking Scraptown",Content:`[[Scraptown]] is an extremely challenging mid-game area to fight and full-clear. The majority of the armed bots are individually weak, but they appear in the dozens and can easily overwhelm Cogmind and any allies. Many unique items are only obtainable by destroying terrain or killing certain bots, which can make attacking Scraptown seem like a promising endeavor. However, there is a serious drawback of going for a full clear or even smashing a container for one item and running: The [[Zion]] and [[Warlord (Location)]] maps will become hostile when Cogmind tries to enter them. The [[Scraptown#civil_war|Civil War]] is a highly recommended alternative to gaining loot from this map. It is much easier and less risky than a full Scraptown murder is. As such, a Scraptown kill is a challenge that exists more for bragging rights than being a truly beneficial move.
 
 [[Heading]]Items Obtainable by Murder[[/Heading]]
 The following items can be obtained by attacking Scraptown's inhabitants and are the main benefits of attacking:
@@ -6184,7 +6674,7 @@ Going to the [[Mines]] without a launcher. [[GameText]]Infestation in the Mines,
 [[/List]]`},{Name:"Zhirov (Alignment)",Content:`[[Image]]Testing SGEMP.png|The SGEMP room in Testing[[/Image]]
 Aligning with [[Zhirov]] is a minor [[Alignment|alignment]] that can be started in [[Zhirov (Location)|Zhirov's Lab]]. After entering and exiting the Terminal room on the left side of the map, Zhirov will ask Cogmind to steal the [[SGEMP Prototype]] from [[Testing]] and bring it to [[Access]]. If this is done, Zhirov, Perun, and Svarog will show up in Access and give Cogmind full map intel. They will follow Cogmind but will all teleport out if Zhirov falls below roughly half core integrity. They also leave if Cogmind enters [[Command]]. If a [[Core Reset Matrix]] is used prior to Access but Cogmind still carries the SGEMP, Zhirov and his allies will turn hostile and fight Cogmind to the death
 There is a second part of this quest that continues in [[Command]]. [[Redacted]][[Image]]ModifiedSGEMP.gif|Zhirov detonating the modified SGEMP in Command, disabling MAIN.C[[/Image]]
-After destroying the first form of [[MAIN.C (Shell)|MAIN.C]] in Command, Zhirov, Perun, and Svarog will show up and attack MAIN.C. Zhirov will activate the Modified SGEMP and disable all 0b10-aligned bots on the map. This also affects [[Warlord (Command)]], but no other Derelicts. This does stop Cogmind from getting the score bonuses of defeating [[MAIN.C]], as well as the + on the scoresheet.[[/Redacted]]`,Spoiler:"Spoiler"}],D={Bots:Le,"Bot Groups":[{Name:"A Bots",Bots:["A2","A3","A4","A5","A6","A7","A8"],Content:"A bots are a [[Bot Groups|Bot Group]] of [[Hover Units|hovering]] [[Programmer]]-like bots that are aligned to the [[Architect]]. A few are friendly to Cogmind, but the majority of them are hostile and can only be encountered at their home base in [[Access_0]]. They have a variety of different offensive and defensive armament and boast some powerful unique parts. They are all formidable opponents in combat.",Spoiler:"Redacted"},{Name:"Assembled",Bots:["Assembled (4)","Assembled (7)"],Content:"The Assembled are a [[Bot Groups|Bot Group]] of small swarming [[Hover Units|hovering]] robots that can be found in various infestation-related events. Due to the fact that they always appear in groups, have low core, and have high core exposure, using explosive [[Launchers]] is the best way to deal with them. [[Spoiler]]If a [[Core Reset Matrix]] was used, the Assembled will no longer be hostile and will instead be purple uncontrollable allies.[[/Spoiler]]"},{Name:"Behemoth",Bots:["B-75 Beast","B-86 Titan","B-90 Cyclops","B-99 Colossus","Superbehemoth"],Content:`Behemoths are a [[Bot Groups|Bot Group]] of heavily [[Armor|armored]] [[Treads|treading]] [[0b10]] bots that are much more durable and powerful than the majority of standard bots. They typically guard machines or valuable part stockpiles while sitting slightly indented in the wall. Similar to [[Hunter|Hunters]], Behemoths will fire through walls in order to hit an enemy, which makes it hard to hide or run from them. Behemoths can even make use of [[Special Propulsion Modes#Siege mode|Siege Mode]] to become more accurate and durable in combat. This combination of traits can make Behemoths terrifying encounters if not adequately prepared.
+After destroying the first form of [[MAIN.C (Shell)|MAIN.C]] in Command, Zhirov, Perun, and Svarog will show up and attack MAIN.C. Zhirov will activate the Modified SGEMP and disable all 0b10-aligned bots on the map. This also affects [[Warlord (Command)]], but no other Derelicts. This does stop Cogmind from getting the score bonuses of defeating [[MAIN.C]], as well as the + on the scoresheet.[[/Redacted]]`,Spoiler:"Spoiler"}],N={Bots:We,"Bot Groups":[{Name:"A Bots",Bots:["A2","A3","A4","A5","A6","A7","A8"],Content:"A bots are a [[Bot Groups|Bot Group]] of [[Hover Units|hovering]] [[Programmer]]-like bots that are aligned to the [[Architect]]. A few are friendly to Cogmind, but the majority of them are hostile and can only be encountered at their home base in [[Access_0]]. They have a variety of different offensive and defensive armament and boast some powerful unique parts. They are all formidable opponents in combat.",Spoiler:"Redacted"},{Name:"Assembled",Bots:["Assembled (4)","Assembled (7)"],Content:"The Assembled are a [[Bot Groups|Bot Group]] of small swarming [[Hover Units|hovering]] robots that can be found in various infestation-related events. Due to the fact that they always appear in groups, have low core, and have high core exposure, using explosive [[Launchers]] is the best way to deal with them. [[Spoiler]]If a [[Core Reset Matrix]] was used, the Assembled will no longer be hostile and will instead be purple uncontrollable allies.[[/Spoiler]]"},{Name:"Behemoth",Bots:["B-75 Beast","B-86 Titan","B-90 Cyclops","B-99 Colossus","Superbehemoth"],Content:`Behemoths are a [[Bot Groups|Bot Group]] of heavily [[Armor|armored]] [[Treads|treading]] [[0b10]] bots that are much more durable and powerful than the majority of standard bots. They typically guard machines or valuable part stockpiles while sitting slightly indented in the wall. Similar to [[Hunter|Hunters]], Behemoths will fire through walls in order to hit an enemy, which makes it hard to hide or run from them. Behemoths can even make use of [[Special Propulsion Modes#Siege mode|Siege Mode]] to become more accurate and durable in combat. This combination of traits can make Behemoths terrifying encounters if not adequately prepared.
 Behemoths have innate EM resistance as well as corruption resistance through [[Dynamic Insulation System|Dynamic Insulation Systems]], so EM weaponry is a subpar weapon choice to get a quick kill. Melee weapons are undesirable to use because most Behemoths pack [[Ballistic Cannons]] that will frequently cause knockback. Behemoths have a minor thermal weakness, though that is slightly mitigated by thermal [[Resistance Armor]]. Meltdown criticals from thermal cannons can instantly destroy a Behemoth from full core integrity (100+), which can save a lot of damage and provide some good undamaged loot. Thermal guns are not effective in smaller numbers, but given enough heat transferring weapons (4+) it is possible to overload their standard cooling and [[Coolant Injectors]] to get the melt instant kill.
 Behemoths can be a desirable looting target for their weapons, cooling, treads, and armor. For this reason, applying some positive salvage via Electromagnetic weaponry or [[Salvage Targeting Computers]] can be a good idea. However, it can often be a better idea to run the other way. Even slow treads builds can get away from a pursuing Behemoth with good tactics. Despite their ability to tear through walls in their way, they have a tendency to get stuck unable to path through 1 tile wide corridors. If such corridors are nearby, use them to your advantage. Otherwise, try to cut between connected rooms to avoid traveling through so much of the line of fire. Behemoths will only shoot through up to 3 walls to cut a path, so if Cogmind can turn a corner or get a good angle on the Behemoth where it is unable to shoot, it is possible to wait out the memory.
 Behemoths are often found in their own spot inside a wall as a [[Security Squad]]. In [[Caves]], they can be found in a small square open area.
@@ -6375,21 +6865,372 @@ The following will prevent Cogmind from being able to align with UFD in the firs
 [[List]][[RIF]] alignment: The UFD will believe Cogmind to be an unaware spy|[[FarCom]], hostilities in the [[Exiles (Location)|Exiles map]], or stealing an empty [[SUBCON Basin]] from the Scraplab in Recycling: Scraplab researchers will say that Cogmind cannot be trusted[[/List]]
 [[Heading:2]]Blocked Alignment[[/Heading]]
 Several factions will no longer assist Cogmind after UFD alignment:
-[[List]][[Imprint]]: The [[Imprinter]] will say that the Imprinting machine requires a more thorough vetting process for a UFD member such as Cogmind|[[Warlord (Alignment)]]: [[Warlord]] will call Cogmind a spy and not perform the -2 [[Research]] invasion[[/List]]`,Spoiler:"Spoiler"},{Name:"Zionite (Group)",Groups:["Z-Heavy","Z-Light","Z-Experimental"],Bots:["Imprinter","Zionite","Z-Courier","Z-Drone","Z-Imprinter","Z-Technician"],Content:"",Spoiler:"Spoiler"}],Parts:Fe,"Part Groups":[{Name:"0b10 Decoder Chips",Parts:["0b10 Decoder Chip [Generic]","0b10 Decoder Chip [Looter]","0b10 Decoder Chip [Scout]","0b10 Decoder Chip [Skirmisher]"],Content:""},{Name:"Actuator Arrays",Parts:["Actuator Array","Imp. Actuator Array","Adv. Actuator Array","Exp. Actuator Array"],Content:""},{Name:"Actuators",Parts:["Microactuators","Nanoactuators","Femtoactuators"],Content:""},{Name:"Alien Artifacts","Part Category":"Alien Artifacts",Content:"",Spoiler:"Spoiler"},{Name:"Alpha Cannons",Parts:["Zio. Alpha Cannon","Hyp. Alpha Cannon","Zio. Alpha Cannon Mk. II"],Content:"",Spoiler:"Spoiler"},{Name:"Armor Integrity Analyzers",Parts:["Armor Integrity Analyzer","Imp. Armor Integrity Analyzer","Exp. Armor Integrity Analyzer"],Content:""},{Name:"Authchips",Parts:["Authchip [Armor]","Authchip [Device]","Authchip [Power]","Authchip [Processor]","Authchip [Propulsion]","Authchip [R/NC]","Authchip [R/Combat]","Authchip [Storage]","Authchip [Weapon]"],Content:"Authchips are single-use items that allow printing the relevant type of item at a [[Fabricator]]. They can be acquired at a [[DSF]], [[Garrison|Garrisons]], corrupted in [[Storage]] or by using [[Spoiler]][[GameText]]Force(Recompile)[[/GameText]][[/Spoiler]] on a Fabricator."},{Name:"Autonomous Weapons",Parts:["Autobeam","AWS/Autocannon","AWS/EX-DEC","AWS/Gauss","AWS/Thermal","PD Laser"],Content:""},{Name:"Backup Lasers",Parts:["Backup Laser I","Backup Laser III","Backup Laser VII"],Content:""},{Name:"Backup Plating",Parts:["Backup Plating I","Backup Plating III","Backup Plating VII"],Content:""},{Name:"Backup Power",Parts:["Backup Power I","Backup Power III","Backup Power VII"],Content:""},{Name:"Backup Propulsion",Parts:["Backup Propulsion I","Backup Propulsion III","Backup Propulsion VII"],Content:""},{Name:"Ballistic Cannons","Part Category":"Ballistic Cannons",Content:""},{Name:"Ballistic Guns","Part Category":"Ballistic Guns",Content:""},{Name:"Cloaking Devices",Parts:["Cloaking Device","Mak. Cloaking Device","Imp. Cloaking Device","Adv. Cloaking Device","Exp. Cloaking Device","Cloak of Protection","5H-AD0's Cloak","Cep. Cloak Mesh"],Content:""},{Name:"Component Analysis Suites",Parts:["Component Analysis Suite","Imp. Component Analysis Suite","Adv. Component Analysis Suite"],Content:""},{Name:"Coolant Injectors",Parts:["Disposable Heat Sink","Coolant Injector","Imp. Coolant Injector","Adv. Coolant Injector","Exp. Coolant Injector"],Content:""},{Name:"Cooling Devices",Parts:["Heat Sink","Imp. Heat Sink","Adv. Heat Sink","Exp. Heat Sink","Cep. Phasing Heat Sink","Mak. Microdissipator Network","Cooling System","Imp. Cooling System","Mak. Coolant Network","Adv. Cooling System","Exp. Cooling System","Asb. Nanovents","Coolant Network","2N-1CE's Frost Array"],Content:""},{Name:"Core Analyzers",Parts:["Core Analyzer","Exp. Core Analyzer","Asb. Combat Suite","Cep. Core Analysis Suite"],Content:""},{Name:"Core Shieldings",Parts:["Core Shielding","Imp. Core Shielding","Mak. Core Shielding","Exp. Core Shielding","Cep. Core Shell"],Content:""},{Name:"Corruption Screens",Parts:["Corruption Screen","Imp. Corruption Screen","Adv. Corruption Screen"],Content:""},{Name:"Cryofiber Webs",Parts:["Cryofiber Web","Imp. Cryofiber Web","Adv. Cryofiber Web","Exp. Cryofiber Web"],Content:""},{Name:"Defensive Hackware",Parts:["EX Chip 2","System Shield","Mak. System Shield","Imp. System Shield","Adv. System Shield","Exp. System Shield","Ghost Barrier","Quantum Router","Architect God Chip D"],Content:""},{Name:"Drone Bays",Parts:["Drone Bay","Mni. Drone Bay","Adv. Drone Bay","Mapping Drone Bay","Z-Drone Bay","Bomb Drone Bay","Combat Drone Bay","Decoy Drone Bay","Master Drone Bay","Splice Drone Bay","Thief Drone Bay","Assault Drone Bay","Sensor Drone Bay","Stealth Drone Bay","Supersonic Drone Bay","Swarm Drone Bay","Hacking Drone Bay","Minesniffer Drone Bay","Army-in-a-Box","Wardrone Bay","Cep. Impact Drone Bay"],Content:""},{Name:"Dynamic Insulation Systems",Parts:["Dynamic Insulation System","Imp. Dynamic Insulation System","Adv. Dynamic Insulation System"],Content:""},{Name:"ECM Suites",Parts:["ECM Suite","Adv. ECM Suite","Mak. ECM Suite","Exp. ECM Suite"],Content:""},{Name:"EM Disruption Fields",Parts:["EM Disruption Field","Adv. EM Disruption Field","Exp. EM Disruption Field"],Content:""},{Name:"Electromagnetic Cannons","Part Category":"Electromagnetic Cannons",Content:""},{Name:"Electromagnetic Guns","Part Category":"Electromagnetic Guns",Content:""},{Name:"Electromagnetic Launchers","Part Category":"Electromagnetic Launchers",Content:""},{Name:"Energy Filters",Parts:["Energy Filter","Prc. Energy Filter"],Content:""},{Name:"Energy Wells",Parts:["Sml. Battery","Med. Battery","Lrg. Battery","Hcp. Battery","Com. Battery","Energy Well","Imp. Energy Well","Adv. Energy Well","Exp. Energy Well","Zio. Biocell","Zio. Biocell Array","Asb. Biocell Array","Superbattery","Cep. Chromion Battery"],Content:""},{Name:"Engines","Part Category":"Engines",Content:""},{Name:"Exiles Vault Prototypes",Parts:["0b10 Alert Chip","Army-in-a-Box","AWS/Autocannon","AWS/Gauss","AWS/Thermal","Chronowheel","Cloak of Protection","Deploy-a-Sentry","Field Lobotomy Kit","Firepult","Flying Fortress v7","Gui. Plasma Cannon","Latent Energy Streamer","Lightpack 2.0","Longsword +1","Modified TNC","Potential Leg","PSU Rigger","Skeleton Box","Superbattery","Supersonic Drone Bay","Trap Reconfigurator","XL Autogun Array","YOLO Cannon"],Content:""},{Name:"Explosive Launchers","Part Category":"Explosive Launchers",Content:""},{Name:"Fabrication Devices",Parts:["Cobbler Unit","Bomb Factory No. 2","Mobile Assembly Unit","Heart of Steel","Scrapoid Pod","GOLEM Unit"],Content:"",Spoiler:"Spoiler"},{Name:"Field Recycling Units",Parts:["Field Recycling Unit","Imp. Field Recycling Unit","Adv. Field Recycling Unit","Exp. Field Recycling Unit"],Content:"Like [[Recycling Unit|Recycling Units]], Field Recycling Units are capable of recycling parts into [[Matter]]. Intact parts grant [Efficiency% of (Part Integrity / 2)] Matter. Damaged parts grant less Matter depending on the difference between their current integrity and their maximum integrity, as the formula that determines Matter yield is roughly [Efficiency% of (Current Integrity * Current Integrity / Max Integrity / 2)], rounded down. For example, An Adv. Field Recycling Unit collecting an [[Antigrav System]] with 33 out of 55 integrity would yield [60% of (33 * 33 / 55 / 2)] = 5.94, rounded down to 5 Matter, while the same Adv. Field Recycling Unit collecting an intact intact Antigrav System would yield [60% of (55 * 55 / 55 / 2)] = 16.5, rounded down to 16 matter."},{Name:"Flamers",Parts:["Flamer","Enh. Flamer","Plasma Flamer"],Content:""},{Name:"Flight Units","Part Category":"Flight Units",Content:`Flight units have the lowest support and the highest speed. They are quite fragile, though [[Prototype Part|prototype]] flight units are somewhat less so. They are notably used by [[Swarmer|Swarmers]].
+[[List]][[Imprint]]: The [[Imprinter]] will say that the Imprinting machine requires a more thorough vetting process for a UFD member such as Cogmind|[[Warlord (Alignment)]]: [[Warlord]] will call Cogmind a spy and not perform the -2 [[Research]] invasion[[/List]]`,Spoiler:"Spoiler"},{Name:"Zionite (Group)",Groups:["Z-Heavy","Z-Light","Z-Experimental"],Bots:["Imprinter","Zionite","Z-Courier","Z-Drone","Z-Imprinter","Z-Technician"],Content:"",Spoiler:"Spoiler"}],Parts:Oe,"Part Groups":[{Name:"0b10 Decoder Chips",Parts:["0b10 Decoder Chip [Generic]","0b10 Decoder Chip [Looter]","0b10 Decoder Chip [Scout]","0b10 Decoder Chip [Skirmisher]"],Content:`[[Heading]]List of 0b10 Decoder Chips[[/Heading]]
+[[PartGroupTable]]
+0b10 Decoder Chips|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Actuator Arrays",Parts:["Actuator Array","Imp. Actuator Array","Adv. Actuator Array","Exp. Actuator Array"],Content:`[[Heading]]List of Actuator Arrays[[/Heading]]
+[[PartGroupTable]]
+Actuator Arrays|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Actuators",Parts:["Microactuators","Nanoactuators","Femtoactuators"],Content:`[[Heading]]List of Actuators[[/Heading]]
+[[PartGroupTable]]
+Actuators|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Alien Artifacts","Part Category":"Alien Artifacts",Content:"",Spoiler:"Spoiler"},{Name:"Alpha Cannons",Parts:["Zio. Alpha Cannon","Hyp. Alpha Cannon","Zio. Alpha Cannon Mk. II"],Content:"",Spoiler:"Spoiler"},{Name:"Armor Integrity Analyzers",Parts:["Armor Integrity Analyzer","Imp. Armor Integrity Analyzer","Exp. Armor Integrity Analyzer"],Content:`[[Heading]]List of Armor Integrity Analyzers[[/Heading]]
+[[PartGroupTable]]
+Armor Integrity Analyzers|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Authchips",Parts:["Authchip [Armor]","Authchip [Device]","Authchip [Power]","Authchip [Processor]","Authchip [Propulsion]","Authchip [R/NC]","Authchip [R/Combat]","Authchip [Storage]","Authchip [Weapon]"],Content:"Authchips are single-use items that allow printing the relevant type of item at a [[Fabricator]]. They can be acquired at a [[DSF]], [[Garrison|Garrisons]], corrupted in [[Storage]] or by using [[Spoiler]][[GameText]]Force(Recompile)[[/GameText]][[/Spoiler]] on a Fabricator."},{Name:"Autonomous Weapons",Parts:["Autobeam","AWS/Autocannon","AWS/EX-DEC","AWS/Gauss","AWS/Thermal","PD Laser"],Content:`[[Heading]]List of Autonomous Weapons[[/Heading]]
+[[PartGroupTable]]
+Autonomous Weapons|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Heat|
+Shot/Targeting|
+Shot/Delay|
+Projectile/Damage|
+Projectile/Type|
+Projectile/Critical|
+Projectile/Penetration|
+Projectile/Heat Transfer|
+Projectile/Spectrum|
+Projectile/Disruption|
+Projectile/Salvage|
+Effect/Effect|
+Effect/Description
+[[/PartGroupTable]]`},{Name:"Backup Lasers",Parts:["Backup Laser I","Backup Laser III","Backup Laser VII"],Content:`[[Heading]]List of Backup Lasers[[/Heading]]
+[[PartGroupTable]]
+Backup Lasers|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Heat|
+Projectile/Damage|
+Projectile/Type|
+Projectile/Heat Transfer
+[[/PartGroupTable]]`},{Name:"Backup Plating",Parts:["Backup Plating I","Backup Plating III","Backup Plating VII"],Content:`[[Heading]]List of Backup Plating[[/Heading]]
+[[PartGroupTable]]
+Backup Plating|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Heat|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Backup Power",Parts:["Backup Power I","Backup Power III","Backup Power VII"],Content:`[[Heading]]List of Backup Power[[/Heading]][[PartGroupTable]]
+Backup Power|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Overview/Heat|
+Overview/Matter|
+Power/Rate|
+Power/Storage|
+Power/Stability
+[[/PartGroupTable]]`},{Name:"Backup Propulsion",Parts:["Backup Propulsion I","Backup Propulsion III","Backup Propulsion VII"],Content:`[[Heading]]List of Backup Propulsion[[/Heading]]
+[[PartGroupTable]]
+Backup Propulsion|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Propulsion/Time/Move|
+Propulsion/Mod/Extra|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support
+[[/PartGroupTable]]`},{Name:"Ballistic Cannons","Part Category":"Ballistic Cannons",Content:`[[Heading]]List of Ballistic Weapons[[/Heading]]
+[[PartGroupTable]]
+Ballistic Weapons|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Heat|
+Shot/Targeting|
+Shot/Delay|
+Projectile/Damage|
+Projectile/Type|
+Projectile/Critical|
+Projectile/Penetration|
+Projectile/Salvage|
+Effect/Effect|
+Effect/Description
+[[/PartGroupTable]]`},{Name:"Ballistic Guns","Part Category":"Ballistic Guns",Content:`[[Heading]]List of Ballistic Weapons[[/Heading]]
+[[PartGroupTable]]
+Ballistic Weapons|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Heat|
+Shot/Targeting|
+Shot/Delay|
+Projectile/Damage|
+Projectile/Type|
+Projectile/Critical|
+Projectile/Penetration|
+Projectile/Salvage|
+Effect/Effect|
+Effect/Description
+[[/PartGroupTable]]`},{Name:"Cloaking Devices",Parts:["Cloaking Device","Mak. Cloaking Device","Imp. Cloaking Device","Adv. Cloaking Device","Exp. Cloaking Device","Cloak of Protection","5H-AD0's Cloak","Cep. Cloak Mesh"],Content:`[[Heading]]List of Cloaking Devices[[/Heading]]
+[[PartGroupTable]]
+Cloaking Devices|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Component Analysis Suites",Parts:["Component Analysis Suite","Imp. Component Analysis Suite","Adv. Component Analysis Suite"],Content:`[[Heading]]List of Component Analysis Suites[[/Heading]]
+[[PartGroupTable]]
+Component Analysis Suites|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Coolant Injectors",Parts:["Disposable Heat Sink","Coolant Injector","Mak. Microdissipator Network","Imp. Coolant Injector","Adv. Coolant Injector","Exp. Coolant Injector"],Content:`[[Heading]]List of Coolant Injectors[[/Heading]]
+[[PartGroupTable]]
+Coolant Injectors|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Cooled Flight Units","Part Category":"Cooled Flight Units",Content:""},{Name:"Cooling Devices",Parts:["Heat Sink","Imp. Heat Sink","Adv. Heat Sink","Exp. Heat Sink","Cep. Phasing Heat Sink","Cooling System","Imp. Cooling System","Mak. Coolant Network","Adv. Cooling System","Exp. Cooling System","Asb. Nanovents","Coolant Network","2N-1CE's Frost Array"],Content:`[[Heading]]List of Cooling Devices[[/Heading]]
+[[PartGroupTable]]
+Cooling Devices|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Core Analyzers",Parts:["Core Analyzer","Exp. Core Analyzer","Asb. Combat Suite","Cep. Core Analysis Suite"],Content:`[[Heading]]List of Core Analyzers[[/Heading]]
+[[PartGroupTable]]
+Core Analyzers|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Core Shieldings",Parts:["Core Shielding","Imp. Core Shielding","Mak. Core Shielding","Exp. Core Shielding","Cep. Core Shell"],Content:`[[Heading]]List of Core Shieldings[[/Heading]]
+[[PartGroupTable]]
+Core Shieldings|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Corruption Screens",Parts:["Corruption Screen","Imp. Corruption Screen","Adv. Corruption Screen"],Content:`[[Heading]]List of Corruption Screens[[/Heading]]
+[[PartGroupTable]]
+Corruption Screens|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Cryofiber Webs",Parts:["Cryofiber Web","Imp. Cryofiber Web","Adv. Cryofiber Web","Exp. Cryofiber Web"],Content:`[[Heading]]List of Cryofiber Webs[[/Heading]]
+[[PartGroupTable]]
+Cryofiber Webs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Defensive Hackware",Parts:["EX Chip 2","System Shield","Mak. System Shield","Imp. System Shield","Adv. System Shield","Exp. System Shield","Ghost Barrier","Quantum Router","Architect God Chip D"],Content:`[[Heading]]List of Defensive Hackware[[/Heading]]
+[[PartGroupTable]]
+Defensive Hackware|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Diametric Drives",Content:"",Parts:["Diametric Drive","Imp. Diametric Drive"]},{Name:"Drone Bays",Parts:["Drone Bay","Mni. Drone Bay","Adv. Drone Bay","Mapping Drone Bay","Z-Drone Bay","Bomb Drone Bay","Combat Drone Bay","Decoy Drone Bay","Master Drone Bay","Splice Drone Bay","Thief Drone Bay","Assault Drone Bay","Sensor Drone Bay","Stealth Drone Bay","Supersonic Drone Bay","Swarm Drone Bay","Hacking Drone Bay","Minesniffer Drone Bay","Army-in-a-Box","Wardrone Bay","Cep. Impact Drone Bay"],Content:`[[Heading]]List of Drone Bays[[/Heading]]
+[[PartGroupTable]]
+Drone Bays|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Dynamic Insulation Systems",Parts:["Dynamic Insulation System","Imp. Dynamic Insulation System","Adv. Dynamic Insulation System"],Content:`[[Heading]]List of Dynamic Insulation Systems[[/Heading]]
+[[PartGroupTable]]
+Dynamic Insulation Systems|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"ECM Suites",Parts:["ECM Suite","Adv. ECM Suite","Mak. ECM Suite","Exp. ECM Suite"],Content:`[[Heading]]List of ECM Suites[[/Heading]]
+[[PartGroupTable]]
+ECM Suites|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"EM Disruption Fields",Parts:["EM Disruption Field","Adv. EM Disruption Field","Exp. EM Disruption Field"],Content:`[[Heading]]List of EM Disruption Fields[[/Heading]]
+[[PartGroupTable]]
+EM Disruption Fields|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Electromagnetic Cannons","Part Category":"Electromagnetic Cannons",Content:`[[Heading]]List of Electromagnetic Cannons[[/Heading]]
+[[PartGroupTable]]
+Electromagnetic Cannons|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Matter|
+Shot/Heat|
+Shot/Recoil|
+Shot/Targeting|
+Shot/Delay|
+Shot/Stability|
+Projectile/Damage|
+Projectile/Type|
+Projectile/Critical|
+Projectile/Penetration|
+Projectile/Spectrum|
+Projectile/Disruption|
+Projectile/Salvage|
+Effect/Description
+[[/PartGroupTable]]`},{Name:"Electromagnetic Guns","Part Category":"Electromagnetic Guns",Content:""},{Name:"Electromagnetic Launchers","Part Category":"Electromagnetic Launchers",Content:""},{Name:"Energy Filters",Parts:["Energy Filter","Prc. Energy Filter"],Content:`[[Heading]]List of Energy Filters[[/Heading]]
+[[PartGroupTable]]
+Energy Filters|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Heat|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Energy Wells",Parts:["Sml. Battery","Med. Battery","Lrg. Battery","Hcp. Battery","Com. Battery","Energy Well","Imp. Energy Well","Adv. Energy Well","Exp. Energy Well","Zio. Biocell","Zio. Biocell Array","Asb. Biocell Array","Superbattery","Cep. Chromion Battery"],Content:`[[Heading]]List of Energy Wells[[/Heading]]
+[[PartGroupTable]]
+Energy Wells|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Engines","Part Category":"Engines",Content:`[[Heading]]List of Engines[[/Heading]][[PartGroupTable]]
+Engines|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Overview/Heat|
+Overview/Matter|
+Power/Rate|
+Power/Storage|
+Power/Stability
+[[/PartGroupTable]]`},{Name:"Exiles Vault Prototypes",Parts:["0b10 Alert Chip","Army-in-a-Box","AWS/Autocannon","AWS/Gauss","AWS/Thermal","Chronowheel","Cloak of Protection","Deploy-a-Sentry","Field Lobotomy Kit","Firepult","Flying Fortress v7","Gui. Plasma Cannon","Latent Energy Streamer","Lightpack 2.0","Longsword +1","Modified TNC","Potential Leg","PSU Rigger","Skeleton Box","Superbattery","Supersonic Drone Bay","Trap Reconfigurator","XL Autogun Array","YOLO Cannon"],Content:""},{Name:"Explosive Launchers","Part Category":"Explosive Launchers",Content:""},{Name:"Fabrication Devices",Parts:["Cobbler Unit","Bomb Factory No. 2","Mobile Assembly Unit","Heart of Steel","Scrapoid Pod","GOLEM Unit"],Content:"",Spoiler:"Spoiler"},{Name:"Field Recycling Units",Parts:["Field Recycling Unit","Imp. Field Recycling Unit","Adv. Field Recycling Unit","Exp. Field Recycling Unit"],Content:`Like [[Recycling Unit|Recycling Units]], Field Recycling Units are capable of recycling parts into [[Matter]]. Intact parts grant [Efficiency% of (Part Integrity / 2)] Matter. Damaged parts grant less Matter depending on the difference between their current integrity and their maximum integrity, as the formula that determines Matter yield is roughly [Efficiency% of (Current Integrity * Current Integrity / Max Integrity / 2)], rounded down. For example, An Adv. Field Recycling Unit collecting an [[Antigrav System]] with 33 out of 55 integrity would yield [60% of (33 * 33 / 55 / 2)] = 5.94, rounded down to 5 Matter, while the same Adv. Field Recycling Unit collecting an intact intact Antigrav System would yield [60% of (55 * 55 / 55 / 2)] = 16.5, rounded down to 16 matter.
 
-On flight, [[Cogmind]] can outrun most other bots, but will have trouble equipping high-mass parts, such as the best armor, cannons, and storage units. Flight units are difficult to sustain in [[Materials]] due to their low availability and the high volume of encounters, so it is more common to use grounded propulsion in Materials and transition to flight upon reaching [[Factory]] or shortly thereafter.
+[[Heading]]List of Field Recycling Units[[/Heading]]
+[[PartGroupTable]]
+Field Recycling Units|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Flamers",Parts:["Flamer","Enh. Flamer","Plasma Flamer"],Content:""},{Name:"Flight Arrays",Parts:["Nuclear Pulse Array","Field Propulsion Array","Impulse Thruster Array"],Content:""},{Name:"Force Boosters",Parts:["Force Booster","Imp. Force Booster","Adv. Force Booster","Exp. Force Booster"],Content:`[[Heading]]List of Force Boosters[[/Heading]]
+[[PartGroupTable]]
+Force Boosters|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Force Fields",Parts:["Force Field","Imp. Force Field","Adv. Force Field","Exp. Force Field","Remote Force Field","Imp. Remote Force Field","Adv. Remote Force Field","Cep. Energy Mantle","AEGIS Remote Shield","7V-RTL's Ultimate Field","Vortex Field Projector"],Content:`[[Heading]]List of Force Fields[[/Heading]]
+[[PartGroupTable]]
+Force Fields|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Fusion Compressors",Parts:["Fusion Compressor","Imp. Fusion Compressor"],Content:`Consume matter to produce energy.
 
-Most flight builds will favor prototype flight units for their improved resilience, along with multislot flight arrays. Cooled (Cld.) flight units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage.
-
-Like [[Hover Units]], flight units receive a bonus to movement speed when multiple are used at once, and are affected by drag from attached [[Legs]], [[Treads]], and [[Wheels]]. This bonus cannot bring the overall movement delay below 10 unless flight units are overloaded.
-
-While flying, Cogmind can hop over other bots in its way, unless Cogmind is overweight. Flying bots have a 10% evasion bonus, unless overweight or in stasis. Flying bots, along with hovering and legged bots, receive an evasion bonus from [[Reaction Control Systems]].`},{Name:"Force Boosters",Parts:["Force Booster","Imp. Force Booster","Adv. Force Booster","Exp. Force Booster"],Content:""},{Name:"Force Fields",Parts:["Force Field","Imp. Force Field","Adv. Force Field","Exp. Force Field","Remote Force Field","Imp. Remote Force Field","Adv. Remote Force Field","Cep. Energy Mantle","AEGIS Remote Shield","7V-RTL's Ultimate Field","Vortex Field Projector"],Content:""},{Name:"Fusion Compressors",Parts:["Fusion Compressor","Imp. Fusion Compressor"],Content:"Consume matter to produce energy."},{Name:"Guided Weapons","Part Category":"Guided Weapons",Content:`Guided weapons have several characteristics:
+[[Heading]]List of Fusion Compressors[[/Heading]][[PartGroupTable]]
+Fusion Compressors|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Overview/Heat|
+Overview/Matter|
+Power/Rate|
+Power/Storage|
+Power/Stability
+[[/PartGroupTable]]`},{Name:"Guided Weapons","Part Category":"Guided Weapons",Content:`Guided weapons have several characteristics:
 [[List]]
 They cannot be fired in a volley with other weapons, only alone.
 |Their projectiles follow a series of waypoints defined when the weapon is fired.
 |They never miss.
 |They are unaffected by [[Corruption]] misfires.
-[[/List]]`},{Name:"Hardlight Generators",Parts:["Hardlight Generator","Imp. Hardlight Generator","Adv. Hardlight Generator","Exp. Hardlight Generator","Cep. Hardlight Director"],Content:""},{Name:"Hover Units","Part Category":"Hover Units",Content:`Hover units have fairly low support and high speed, but not to the same extent as [[Flight Units]]. They are quite fragile (but also not as much as flight units), though [[Prototype Part|prototype]] hover units are somewhat less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
+[[/List]]`},{Name:"Hardlight Generators",Parts:["Hardlight Generator","Imp. Hardlight Generator","Adv. Hardlight Generator","Exp. Hardlight Generator","Cep. Hardlight Director"],Content:`[[Heading]]List of Hardlight Generators[[/Heading]]
+[[PartGroupTable]]
+Hardlight Generators|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Hover Units","Part Category":"Hover Units",Content:`Hover units have fairly low support and high speed, but not to the same extent as [[Flight Units]]. They are quite fragile (but also not as much as flight units), though [[Prototype Part|prototype]] hover units are somewhat less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
 
 Most hover builds will favor prototype hover units for their improved resilience, along with multislot hover arrays. Cooled (Cld.) hover units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage. Combat (Cmb.) hover units have higher integrity than other hover units and can support almost as much mass as [[Legs]], but have somewhat slower movement speeds.
 
@@ -6397,37 +7238,479 @@ Like flight units, hover units receive a bonus to movement speed when multiple a
 
 Hovering bots have a 5% evasion bonus, unless overweight or in stasis. Hovering bots, along with flying and legged bots, receive an evasion bonus from [[Reaction Control Systems]].
 
-Cogmind's core propulsion (often referred to as "core hover") is mechanically distinct from hover units.`},{Name:"Hybrid Power","Part Category":"Hybrid Power",Content:""},{Name:"Hyp. Weapons",Parts:["Hyp. Alpha Cannon","Hyp. Coil Gun","Hyp. EM Gauss Rifle","Hyp. Gauss Cannon","Hyp. Gauss Rifle","Hyp. Linear Accelerator","Hyp. Mass Driver","Hyp. Multirail","Hyp. Railgun"],Content:"Compared to their base versions, hypervelocity (Hyp.) weapons generally do less damage in exchange for higher crit chance and penetration."},{Name:"IFF Parsers",Parts:["IFF Parser","Lrn. IFF Parser"],Content:""},{Name:"Impact Weapons","Part Category":"Impact Weapons",Content:""},{Name:"Kinecellerators",Parts:["Kinecellerator","Imp. Kinecellerator","Adv. Kinecellerator","Exp. Kinecellerator"],Content:""},{Name:"Launcher Guidance Computers",Parts:["Launcher Guidance Computer","Imp. Launcher Guidance Computer","Adv. Launcher Guidance Computer","Exp. Launcher Guidance Computer"],Content:""},{Name:"Legs","Part Category":"Legs",Content:`Legs strike a middle ground in terms of support, speed, and structural integrity. They are commonly used by (and available from) light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]].
+Cogmind's core propulsion (often referred to as "core hover") is mechanically distinct from hover units.
+
+[[Heading]]List of Hover Units[[/Heading]]
+[[PartGroupTable]]
+Hover Units|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Propulsion/Time/Move|
+Propulsion/Mod/Extra|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Burnout
+[[/PartGroupTable]]`},{Name:"Hybrid Power","Part Category":"Hybrid Power",Content:`[[Heading]]List of Hybrid Power[[/Heading]][[PartGroupTable]]
+Hybrid Power|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Overview/Heat|
+Overview/Matter|
+Power/Rate|
+Power/Storage|
+Power/Stability
+[[/PartGroupTable]]`},{Name:"Hyp. Weapons",Parts:["Hyp. Alpha Cannon","Hyp. Coil Gun","Hyp. EM Gauss Rifle","Hyp. Gauss Cannon","Hyp. Gauss Rifle","Hyp. Linear Accelerator","Hyp. Mass Driver","Hyp. Multirail","Hyp. Railgun"],Content:"Compared to their base versions, hypervelocity (Hyp.) weapons generally do less damage in exchange for higher crit chance and penetration."},{Name:"IFF Parsers",Parts:["IFF Parser","Lrn. IFF Parser"],Content:`[[Heading]]List of IFF Parsers[[/Heading]]
+[[PartGroupTable]]
+IFF Parsers|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Impact Weapons","Part Category":"Impact Weapons",Content:""},{Name:"Kinecellerators",Parts:["Kinecellerator","Imp. Kinecellerator","Adv. Kinecellerator","Exp. Kinecellerator"],Content:`[[Heading]]List of Kinecellerators[[/Heading]]
+[[PartGroupTable]]
+Kinecellerators|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Launcher Guidance Computers",Parts:["Launcher Guidance Computer","Imp. Launcher Guidance Computer","Adv. Launcher Guidance Computer","Exp. Launcher Guidance Computer"],Content:`[[Heading]]List of Launcher Guidance Computers[[/Heading]]
+[[PartGroupTable]]
+Launcher Guidance Computers|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Legs","Part Category":"Legs",Content:`Legs strike a middle ground in terms of support, speed, and structural integrity. They are commonly used by (and available from) light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]].
 
 While on legs, [[Cogmind]] is immune to damage from ramming hostile bots, and instead has a 20% chance per active leg slot to kick them out of the way (unless they are huge).
 
 While moving on legs, Cogmind is in the Running state, which increases evasion (unless overweight) but decreases ranged accuracy, by 5% per level of [[Momentum]]. Some legs, such as the [[Thunder Leg]], provide improve running bonuses. Legged bots, along with those using [[Flight Units|Flight]] and [[Hover Units]], receive an evasion bonus from [[Reaction Control Systems]].
 
-A few specific legs are capable of [[Special Propulsion Modes]].`},{Name:"Mass Support Devices",Parts:["Weight Redist. System","Adv. Weight Redist. System","Gravity Neutralizer","Adv. Gravity Neutralizer","Quantum Shading Machine","Asb. Suspension Frame","Adv. Quantum Shading Machine","Cep. Dimensional Manipulator"],Content:""},{Name:"Matter Compressors",Parts:["Sml. Matter Pod","Med. Matter Pod","Lrg. Matter Pod","Hcp. Matter Pod","Com. Matter Pod","Matter Compressor","Imp. Matter Compressor","Adv. Matter Compressor","Exp. Matter Compressor","YI-UF0's Bottomless Matter Pit","Cep. NT7 Matterbank"],Content:""},{Name:"Matter Filters",Parts:["Matter Filter","Prc. Matter Filter"],Content:""},{Name:"Melee Analysis Suites",Parts:["Melee Analysis Suite","Imp. Melee Analysis Suite","Adv. Melee Analysis Suite","Exp. Melee Analysis Suite"],Content:""},{Name:"Melee Datajacks",Parts:["Datajack","Imp. Datajack","Adv. Datajack"],Content:""},{Name:"Offensive Hackware",Parts:["EX Chip 1","Hacking Suite","Mak. Hacking Suite","Imp. Hacking Suite","Adv. Hacking Suite","Exp. Hacking Suite","System Mapper","Deep Network Scanner","Cep. Network Penetrator","Architect God Chip A"],Content:""},{Name:"Overloadable Power","Part Category":"Overloadable Power",Content:"For details on behavior when overloaded, see [[Overload#Power]]."},{Name:"Overloadable Propulsion","Part Category":"Overloadable Propulsion",Content:"For details on behavior when overloaded, see [[Overload#Propulsion]]."},{Name:"Overloadable Weapons","Part Category":"Overloadable Weapons",Content:"For details on behavior when overloaded, see [[Overload#Weapons]]."},{Name:"Overtuned Parts","Part Category":"Overtuned Parts",Content:"Overtuned (Ovr.) parts have a chance to malfunction, which temporarily disables them. This can be mitigated by attaching a [[Scrap Suit]] (activated or not). Compared to their base parts, overtuned parts generally have better characteristics in exchange for higher support requirements.",Spoiler:"Spoiler"},{Name:"Particle Chargers",Parts:["Particle Charger","Imp. Particle Charger","Adv. Particle Charger","Particle Accelerator","Imp. Particle Accelerator","Adv. Particle Accelerator"],Content:""},{Name:"Phase Shifters",Parts:["Phase Shifter","Imp. Phase Shifter","Adv. Phase Shifter","Exp. Phase Shifter","Asb. Combat Suite","Cep. Phase Shift Module"],Content:""},{Name:"Phasers","Part Category":"Phasers",Content:"",Spoiler:"Spoiler"},{Name:"Piercing Weapons","Part Category":"Piercing Weapons",Content:""},{Name:"Plasma Cutters",Parts:["Plasma Cutter","Imp. Plasma Cutter","Exp. Plasma Cutter"],Content:""},{Name:"Point Defense Systems",Parts:["Point Defense System","Imp. Point Defense System","Adv. Point Defense System","Cep. Antimissile System"],Content:""},{Name:"Power Amplifiers",Parts:["Power Amplifier","Adv. Power Amplifier","Exp. Power Amplifier"],Content:""},{Name:"Power Cores","Part Category":"Power Cores",Content:""},{Name:"Power Shieldings",Parts:["Power Shielding","Imp. Power Shielding","Mak. Power Shielding","Exp. Power Shielding"],Content:""},{Name:"Powered Armor (Group)",Parts:["Powered Armor","Imp. Powered Armor","Adv. Powered Armor","Exp. Powered Armor","1C-UTU's Buckler"],Content:""},{Name:"Propulsion Shieldings",Parts:["Propulsion Shielding","Imp. Propulsion Shielding","Mak. Propulsion Shielding","Exp. Propulsion Shielding"],Content:""},{Name:"Ranged Targeting Utilities",Parts:["Targeting Computer","Imp. Targeting Computer","Mak. Targeting Computer","Adv. Targeting Computer","Exp. Targeting Computer","Tactical Coordination Suite","Weapon Mount","Cep. Weapon Articulator","Multitargeting Array","Asb. Combat Suite","Cep. Hypertargeting System","Cep. Countertargeting System","Cep. Networked Targeting System"],Content:""},{Name:"Reaction Control Systems",Parts:["Reaction Control System","Imp. Reaction Control System","Adv. Reaction Control System","Exp. Reaction Control System","Cep. Reaction Jets"],Content:""},{Name:"Reactors","Part Category":"Reactors",Content:""},{Name:"Recalibrators",Parts:["Recalibrator","Imp. Recalibrator","Adv. Recalibrator","Exp. Recalibrator"],Content:""},{Name:"Recoil Stabilizers",Parts:["Recoil Stabilizer","Adv. Recoil Stabilizer","Cep. Recoil Nullifier"],Content:""},{Name:"Regenerative Armor",Parts:["Lgt. Regenerative Plating","Med. Regenerative Plating","Hvy. Regenerative Plating","Cep. RG22 Armor","SHELL Armor"],Content:"",Spoiler:"Spoiler"},{Name:"Reinforced Power","Part Category":"Reinforced Power",Content:""},{Name:"Relay Couplers",Parts:["Relay Coupler [NC]","Relay Coupler [C]","Relay Coupler [Swarmer]","Relay Coupler [Cutter]","Relay Coupler [Grunt]","Relay Coupler [Brawler]","Relay Coupler [Duelist]","Relay Coupler [Sentry]","Relay Coupler [Demolisher]","Relay Coupler [Specialist]","Relay Coupler [Hunter]","Relay Coupler [Heavy]","Relay Coupler [Behemoth]","Relay Coupler [Programmer]","Relay Coupler [Proto]"],Content:`Relay couplers are used with [[RIF]] to enable special bot hacks via [[Datajacks|datajacking]] that particular robot class described in the couplers description.
-Relay couplers will fry themselves when attached if you do not have [[RIF]].`},{Name:"Remote Datajacks",Parts:["Remote Datajack","Imp. Remote Datajack","Adv. Remote Datajack","Exp. Remote Datajack","ME-RLN's Wand","Gui. Remote Datajack"],Content:""},{Name:"Resistance Armor","Part Category":"Resistance Armor",Content:""},{Name:"Resistance Devices",Parts:["Focal Shield","Imp. Focal Shield","Adv. Focal Shield","Exp. Focal Shield","Thermal Shield","Imp. Thermal Shield","Adv. Thermal Shield","Exp. Thermal Shield","Thermal Barrier","Cep. Beam Splitter","Thermal Defense Suite","Imp. Thermal Defense Suite","Adv. Thermal Defense Suite","Exp. Thermal Defense Suite","Shock Absorption System","Imp. Shock Absorption System","Exp. Shock Absorption System","EM Shield","Adv. EM Shield","Exp. EM Shield","ME-RLN's Chromatic Screen"],Content:""},{Name:"Salvage Targeting Computers",Parts:["Salvage Targeting Computer","Imp. Salvage Targeting Computer","Adv. Salvage Targeting Computer","Mak. Salvage Targeting Computer","Exp. Salvage Targeting Computer","Partition Strike Chip"],Content:""},{Name:"Sensor Arrays",Parts:["Sensor Array","Imp. Sensor Array","Adv. Sensor Array","Lrn. Sensor Array","Mak. Sensor Array","Exp. Sensor Array","Active Sensor Suite","Exp. Active Sensor Suite"],Content:""},{Name:"Shearguns",Parts:["Sigix Sheargun","Modified Sigix Sheargun"],Content:"",Spoiler:"Redacted"},{Name:"Shield Generators",Parts:["Shield Generator","Imp. Shield Generator","Adv. Shield Generator","Exp. Shield Generator","Remote Shield","Imp. Remote Shield","Adv. Remote Shield","Exp. Remote Shield"],Content:""},{Name:"Sigix Terminators",Parts:["Sigix Terminator","Supercharged Sigix Terminator"],Content:"",Spoiler:"Spoiler"},{Name:"Signal Interpreters",Parts:["Signal Interpreter","Imp. Signal Interpreter","Adv. Signal Interpreter","Exp. Signal Interpreter"],Content:""},{Name:"Slashing Weapons","Part Category":"Slashing Weapons",Content:""},{Name:"Speed Boosting Utilities",Parts:["Rocket Booster","Asb. Metafiber Network","Zio. Metafield Generator","ST Field Compressor"],Content:"",Spoiler:"Spoiler"},{Name:"Stasis Beams",Parts:["Stasis Beam","Stasis Projector","Exp. Stasis Projector"],Content:""},{Name:"Storage Unit",Parts:["Sml. Storage Unit","Med. Storage Unit","Lrg. Storage Unit","Hcp. Storage Unit","Huge Storage Unit","Cargo Storage Unit","Humpback","Lgt. Humpback","Vmp. Humpback","Lightpack 2.0","Cep. Antigrav Storage Unit"],Content:`Storage Units are utility parts that expand a bot's inventory size by their listed amount. Cogmind has 5 innate inventory spaces. Most other bots have exactly 1 built-in innate inventory space, some have as many as 12, and some have none. Most bots do not carry items, however.
+A few specific legs are capable of [[Special Propulsion Modes]].
+
+[[Heading]]List of Legs[[/Heading]]
+[[PartGroupTable]]
+Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty|
+Propulsion/Special
+[[/PartGroupTable]]`},{Name:"Light Power","Part Category":"Light Power",Content:`[[Heading]]List of Light Power[[/Heading]][[PartGroupTable]]
+Light Power|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Overview/Heat|
+Overview/Matter|
+Power/Rate|
+Power/Storage|
+Power/Stability
+[[/PartGroupTable]]`},{Name:"Mass Support Devices",Parts:["Weight Redist. System","Adv. Weight Redist. System","Gravity Neutralizer","Adv. Gravity Neutralizer","Quantum Shading Machine","Asb. Suspension Frame","Adv. Quantum Shading Machine","Cep. Dimensional Manipulator"],Content:`[[Heading]]List of Mass Support Devices[[/Heading]]
+[[PartGroupTable]]
+Mass Support Devices|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Matter Compressors",Parts:["Sml. Matter Pod","Med. Matter Pod","Lrg. Matter Pod","Hcp. Matter Pod","Com. Matter Pod","Matter Compressor","Imp. Matter Compressor","Adv. Matter Compressor","Exp. Matter Compressor","YI-UF0's Bottomless Matter Pit","Cep. NT7 Matterbank"],Content:`[[Heading]]List of Matter Compressors[[/Heading]]
+[[PartGroupTable]]
+Matter Compressors|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Matter Filters",Parts:["Matter Filter","Prc. Matter Filter"],Content:`[[Heading]]List of Matter Filters[[/Heading]]
+[[PartGroupTable]]
+Matter Filters|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Melee Analysis Suites",Parts:["Melee Analysis Suite","Imp. Melee Analysis Suite","Adv. Melee Analysis Suite","Exp. Melee Analysis Suite"],Content:`[[Heading]]List of Melee Analysis Suites[[/Heading]]
+[[PartGroupTable]]
+Melee Analysis Suites|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Melee Datajacks",Parts:["Datajack","Imp. Datajack","Adv. Datajack"],Content:`[[Heading]]List of Melee Datajacks[[/Heading]]
+[[PartGroupTable]]
+Melee Datajacks|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Heat|
+Shot/Targeting|
+Shot/Delay|
+Projectile/Type|
+Effect/Effect|
+Effect/Description
+[[/PartGroupTable]]`},{Name:"Micro Power","Part Category":"Micro Power",Content:`[[Heading]]List of Micro Power[[/Heading]][[PartGroupTable]]
+Micro Power|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Overview/Heat|
+Overview/Matter|
+Power/Rate|
+Power/Storage|
+Power/Stability
+[[/PartGroupTable]]`},{Name:"Offensive Hackware",Parts:["EX Chip 1","Hacking Suite","Mak. Hacking Suite","Imp. Hacking Suite","Adv. Hacking Suite","Exp. Hacking Suite","System Mapper","Deep Network Scanner","Cep. Network Penetrator","Architect God Chip A"],Content:`[[Heading]]List of Offensive Hackware[[/Heading]]
+[[PartGroupTable]]
+Offensive Hackware|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Overloadable Power","Part Category":"Overloadable Power",Content:`For details on behavior when overloaded, see [[Overload#Power]].
+
+[[Heading]]List of Overloadable Power[[/Heading]][[PartGroupTable]]
+Overloadable Power|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Overview/Heat|
+Overview/Matter|
+Power/Rate|
+Power/Storage|
+Power/Stability
+[[/PartGroupTable]]`},{Name:"Overloadable Propulsion","Part Category":"Overloadable Propulsion",Content:`For details on behavior when overloaded, see [[Overload#Propulsion]].
+
+[[Heading]]List of Overloadable Propulsion[[/Heading]]
+[[PartGroupTable]]
+Overloadable Propulsion|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Propulsion/Time/Move|
+Propulsion/Mod/Extra|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Burnout
+[[/PartGroupTable]]`},{Name:"Overloadable Weapons","Part Category":"Overloadable Weapons",Content:"For details on behavior when overloaded, see [[Overload#Weapons]]."},{Name:"Overtuned Parts","Part Category":"Overtuned Parts",Content:"Overtuned (Ovr.) parts have a chance to malfunction, which temporarily disables them. This can be mitigated by attaching a [[Scrap Suit]] (activated or not). Compared to their base parts, overtuned parts generally have better characteristics in exchange for higher support requirements.",Spoiler:"Spoiler"},{Name:"Particle Chargers",Parts:["Particle Charger","Imp. Particle Charger","Adv. Particle Charger","Particle Accelerator","Imp. Particle Accelerator","Adv. Particle Accelerator"],Content:`[[Heading]]List of Particle Chargers[[/Heading]]
+[[PartGroupTable]]
+Particle Chargers|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Phase Shifters",Parts:["Phase Shifter","Imp. Phase Shifter","Adv. Phase Shifter","Exp. Phase Shifter","Asb. Combat Suite","Cep. Phase Shift Module"],Content:`[[Heading]]List of Phase Shifters[[/Heading]]
+[[PartGroupTable]]
+Phase Shifters|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Phasers","Part Category":"Phasers",Content:"",Spoiler:"Spoiler"},{Name:"Piercing Weapons","Part Category":"Piercing Weapons",Content:""},{Name:"Plasma Cutters",Parts:["Plasma Cutter","Imp. Plasma Cutter","Exp. Plasma Cutter"],Content:""},{Name:"Point Defense Systems",Parts:["Point Defense System","Imp. Point Defense System","Adv. Point Defense System","Cep. Antimissile System"],Content:`[[Heading]]List of Point Defense Systems[[/Heading]]
+[[PartGroupTable]]
+Point Defense Systems|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Power Amplifiers",Parts:["Power Amplifier","Adv. Power Amplifier","Exp. Power Amplifier"],Content:`[[Heading]]List of Power Amplifiers[[/Heading]]
+[[PartGroupTable]]
+Power Amplifiers|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Power Cores","Part Category":"Power Cores",Content:`[[Heading]]List of Power Cores[[/Heading]][[PartGroupTable]]
+Power Cores|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Overview/Heat|
+Overview/Matter|
+Power/Rate|
+Power/Storage|
+Power/Stability
+[[/PartGroupTable]]`},{Name:"Power Shieldings",Parts:["Power Shielding","Imp. Power Shielding","Mak. Power Shielding","Exp. Power Shielding"],Content:`[[Heading]]List of Power Shieldings[[/Heading]]
+[[PartGroupTable]]
+Power Shieldings|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Powered Armor (Group)",Parts:["Powered Armor","Imp. Powered Armor","Adv. Powered Armor","Exp. Powered Armor","1C-UTU's Buckler"],Content:`[[Heading]]List of Powered Armor[[/Heading]]
+[[PartGroupTable]]
+Powered Armor (Group)|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Propulsion Shieldings",Parts:["Propulsion Shielding","Imp. Propulsion Shielding","Mak. Propulsion Shielding","Exp. Propulsion Shielding"],Content:`[[Heading]]List of Propulsion Shieldings[[/Heading]]
+[[PartGroupTable]]
+Propulsion Shieldings|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Ranged Targeting Utilities",Parts:["Targeting Computer","Imp. Targeting Computer","Mak. Targeting Computer","Adv. Targeting Computer","Exp. Targeting Computer","Tactical Coordination Suite","Weapon Mount","Cep. Weapon Articulator","Multitargeting Array","Asb. Combat Suite","Cep. Hypertargeting System","Cep. Countertargeting System","Cep. Networked Targeting System"],Content:`[[Heading]]List of Ranged Targeting Utilities[[/Heading]]
+[[PartGroupTable]]
+Ranged Targeting Utilities|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Reaction Control Systems",Parts:["Reaction Control System","Imp. Reaction Control System","Adv. Reaction Control System","Exp. Reaction Control System","Cep. Reaction Jets"],Content:`[[Heading]]List of Reaction Control Systems[[/Heading]]
+[[PartGroupTable]]
+Reaction Control Systems|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Reactors","Part Category":"Reactors",Content:`[[Heading]]List of Reactors[[/Heading]][[PartGroupTable]]
+Reactors|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Overview/Heat|
+Overview/Matter|
+Power/Rate|
+Power/Storage|
+Power/Stability
+[[/PartGroupTable]]`},{Name:"Recalibrators",Parts:["Recalibrator","Imp. Recalibrator","Adv. Recalibrator","Exp. Recalibrator"],Content:`[[Heading]]List of Recalibrators[[/Heading]]
+[[PartGroupTable]]
+Recalibrators|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Recoil Stabilizers",Parts:["Recoil Stabilizer","Adv. Recoil Stabilizer","Cep. Recoil Nullifier"],Content:`[[Heading]]List of Recoil Stabilizers[[/Heading]]
+[[PartGroupTable]]
+Recoil Stabilizers|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Regenerative Armor",Parts:["Lgt. Regenerative Plating","Med. Regenerative Plating","Hvy. Regenerative Plating","Cep. RG22 Armor","SHELL Armor"],Content:`[[Heading]]List of Regenerative Armor[[/Heading]]
+[[PartGroupTable]]
+Regenerative Armor|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Effect/Effect
+[[/PartGroupTable]]`,Spoiler:"Spoiler"},{Name:"Reinforced Power","Part Category":"Reinforced Power",Content:`[[Heading]]List of Reinforced Power[[/Heading]][[PartGroupTable]]
+Reinforced Power|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Overview/Heat|
+Overview/Matter|
+Power/Rate|
+Power/Storage|
+Power/Stability
+[[/PartGroupTable]]`},{Name:"Relay Couplers",Parts:["Relay Coupler [NC]","Relay Coupler [C]","Relay Coupler [Swarmer]","Relay Coupler [Cutter]","Relay Coupler [Grunt]","Relay Coupler [Brawler]","Relay Coupler [Duelist]","Relay Coupler [Sentry]","Relay Coupler [Demolisher]","Relay Coupler [Specialist]","Relay Coupler [Hunter]","Relay Coupler [Heavy]","Relay Coupler [Behemoth]","Relay Coupler [Programmer]","Relay Coupler [Proto]"],Content:`Relay couplers are used with [[RIF]] to enable special bot hacks via [[Datajacks|datajacking]] that particular robot class described in the couplers description.
+Relay couplers will fry themselves when attached if you do not have [[RIF]].`},{Name:"Remote Datajacks",Parts:["Remote Datajack","Imp. Remote Datajack","Adv. Remote Datajack","Exp. Remote Datajack","ME-RLN's Wand","Gui. Remote Datajack"],Content:`[[Heading]]List of Remote Datajacks[[/Heading]]
+[[PartGroupTable]]
+Remote Datajacks|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Heat|
+Shot/Targeting|
+Shot/Delay|
+Projectile/Type|
+Effect/Effect|
+[[/PartGroupTable]]`},{Name:"Resistance Armor","Part Category":"Resistance Armor",Content:""},{Name:"Resistance Devices",Parts:["Focal Shield","Imp. Focal Shield","Adv. Focal Shield","Exp. Focal Shield","Thermal Shield","Imp. Thermal Shield","Adv. Thermal Shield","Exp. Thermal Shield","Thermal Barrier","Cep. Beam Splitter","Thermal Defense Suite","Imp. Thermal Defense Suite","Adv. Thermal Defense Suite","Exp. Thermal Defense Suite","Shock Absorption System","Imp. Shock Absorption System","Exp. Shock Absorption System","EM Shield","Adv. EM Shield","Exp. EM Shield","ME-RLN's Chromatic Screen"],Content:`[[Heading]]List of Resistance Devices[[/Heading]]
+[[PartGroupTable]]
+Resistance Devices|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Salvage Targeting Computers",Parts:["Salvage Targeting Computer","Imp. Salvage Targeting Computer","Adv. Salvage Targeting Computer","Mak. Salvage Targeting Computer","Exp. Salvage Targeting Computer","Partition Strike Chip"],Content:`[[Heading]]List of Salvage Targeting Computers[[/Heading]]
+[[PartGroupTable]]
+Salvage Targeting Computers|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Sensor Arrays",Parts:["Sensor Array","Imp. Sensor Array","Adv. Sensor Array","Lrn. Sensor Array","Mak. Sensor Array","Exp. Sensor Array","Active Sensor Suite","Exp. Active Sensor Suite"],Content:`[[Heading]]List of Sensor Arrays[[/Heading]]
+[[PartGroupTable]]
+Sensor Arrays|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Shearguns",Parts:["Sigix Sheargun","Modified Sigix Sheargun"],Content:"",Spoiler:"Redacted"},{Name:"Shield Generators",Parts:["Shield Generator","Imp. Shield Generator","Adv. Shield Generator","Exp. Shield Generator","Remote Shield","Imp. Remote Shield","Adv. Remote Shield","Exp. Remote Shield"],Content:`[[Heading]]List of Shield Generators[[/Heading]]
+[[PartGroupTable]]
+Shield Generators|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Sigix Terminators",Parts:["Sigix Terminator","Supercharged Sigix Terminator"],Content:"",Spoiler:"Spoiler"},{Name:"Signal Interpreters",Parts:["Signal Interpreter","Imp. Signal Interpreter","Adv. Signal Interpreter","Exp. Signal Interpreter"],Content:`[[Heading]]List of Signal Interpreters[[/Heading]]
+[[PartGroupTable]]
+Signal Interpreters|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Slashing Weapons","Part Category":"Slashing Weapons",Content:""},{Name:"Speed Boosting Utilities",Parts:["Rocket Booster","Asb. Metafiber Network","Zio. Metafield Generator","ST Field Compressor"],Content:"",Spoiler:"Spoiler"},{Name:"Stasis Beams",Parts:["Stasis Beam","Stasis Projector","Exp. Stasis Projector"],Content:""},{Name:"Storage Unit",Parts:["Sml. Storage Unit","Med. Storage Unit","Lrg. Storage Unit","Hcp. Storage Unit","Huge Storage Unit","Cargo Storage Unit","Humpback","Lgt. Humpback","Vmp. Humpback","Lightpack 2.0","Cep. Antigrav Storage Unit"],Content:`Storage Units are utility parts that expand a bot's inventory size by their listed amount. Cogmind has 5 innate inventory spaces. Most other bots have exactly 1 built-in innate inventory space, some have as many as 12, and some have none. Most bots do not carry items, however.
 Storage Units do not stack; the inventory size bonus from only one storage unit is applied.
-[[Table]]
-Name|Storage|Mass|Equip Slots|Coverage|Max. Integrity||
-[[Sml. Storage Unit]]|3|5|1|25|150||
-[[Med. Storage Unit]]|5|10|1|25|250||
-[[Lrg. Storage Unit]]|10|20|1|25|350||
-[[Hcp. Storage Unit]]|15|40|1|25|500||
-[[Huge Storage Unit]]|20|80|1|25|600||
-[[Lgt. Humpback]]|20|40|2|160|150||
-[[Cep. Antigrav Storage Unit]]|20|30|1|25|*400||
-[[Cargo Storage Unit]]|25|140|2|50|1000||
-[[Humpback]]|30|200|2|160|400||
-[[Vmp. Humpback]]|30|200|2|160|*400||
-[[Lightpack 2.0]]|35|5|3|45|*500
-[[/Table]]
+
+[[Heading]]List of Storage Units[[/Heading]]
+[[PartGroupTable]]
+Storage Unit|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]
 
 [[Heading]]Special Immunity[[/Heading]]
 Storage Units have special immunity to nearly all part-severing and instant destruction effects in the game, including [[Corruption]] part rejection, thus making it impossible to suddenly lose nearly all your inventory due to stepping on a [[Blade Trap]] or being shot by a [[Heavy]]. The most notable exception is the [[Compactor]] wielded by [[C-40 Crusher|C-40 Crushers]], which has unique destructive and part-severing effects that can affect Storage Units.
 
-This article was last updated during Beta 15.`},{Name:"Supercharged Parts",Parts:["Supercharged TR","Supercharged Integrated Reactor","Supercharged Integrated Dissipator","Supercharged Sigix Terminator"],Content:"",Spoiler:"Spoiler"},{Name:"System Guards",Parts:["System Guard","Imp. System Guard","Exp. System Guard"],Content:""},{Name:"System Restoration Modules",Parts:["System Restoration Module","Imp. System Restoration Module","Mak. System Restoration Module","Adv. System Restoration Module","System Purifier","Exp. System Purifier"],Content:""},{Name:"Target Analyzers",Parts:["Target Analyzer","Imp. Target Analyzer","Adv. Target Analyzer","Exp. Target Analyzer"],Content:""},{Name:"Targeting Computers",Parts:["Targeting Computer","Imp. Targeting Computer","Mak. Targeting Computer","Adv. Targeting Computer","Exp. Targeting Computer"],Content:""},{Name:"Tearclaws (Group)",Parts:["Tearclaws","Master Tearclaws"],Content:"",Spoiler:"Spoiler"},{Name:"Tech Extrapolator Parts",Parts:["Electrostorm Shotgun","Energy Deflector","Heat Bomb Trap","Hyp. Alpha Cannon","Machine Rigger","Telecube","Vmp. Brace Plating","Vmp. Broadsword","Vmp. Heavy Siege Treads","Wartreads"],Content:"",Spoiler:"Spoiler"},{Name:"Temporary Slot Parts","Part Category":"Temporary Slot Parts",Content:"",Spoiler:"Spoiler"},{Name:"Terrain Scan Processors",Parts:["Terrain Scan Processor","Imp. Terrain Scan Processor","Mak. Terrain Scan Processor","Adv. Terrain Scan Processor","Surveybot 17 Chip","Exp. Terrain Scan Processor","Surveybot 24 Chip"],Content:""},{Name:"Terrain Scanners",Parts:["Terrain Scanner","Imp. Terrain Scanner","Adv. Terrain Scanner","Mak. Terrain Scanner","Lrn. Terrain Scanner","Surveybot 24 Scanner","Exp. Terrain Scanner"],Content:""},{Name:"Thermal Cannons","Part Category":"Thermal Cannons",Content:""},{Name:"Thermal Generators",Parts:["Thermal Generator","Imp. Thermal Generator","Adv. Thermal Generator","Exp. Thermal Generator"],Content:`Thermal Generators are devices that generate energy based on the user's surplus heat. They are relatively heavy compared to most devices, but have relatively low coverage as well.
+This article was last updated during Beta 15.`},{Name:"Supercharged Parts",Parts:["Supercharged TR","Supercharged Integrated Reactor","Supercharged Integrated Dissipator","Supercharged Sigix Terminator"],Content:"",Spoiler:"Spoiler"},{Name:"Surge Thrusters",Parts:["Surge Thruster","Imp. Surge Thruster","Adv. Surge Thruster","Exp. Surge Thruster"],Content:""},{Name:"System Guards",Parts:["System Guard","Imp. System Guard","Exp. System Guard"],Content:`[[Heading]]List of System Guards[[/Heading]]
+[[PartGroupTable]]
+System Guards|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"System Restoration Modules",Parts:["System Restoration Module","Imp. System Restoration Module","Mak. System Restoration Module","Adv. System Restoration Module","System Purifier","Exp. System Purifier"],Content:`[[Heading]]List of System Restoration Modules[[/Heading]]
+[[PartGroupTable]]
+System Restoration Modules|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Target Analyzers",Parts:["Target Analyzer","Imp. Target Analyzer","Adv. Target Analyzer","Exp. Target Analyzer"],Content:`[[Heading]]List of Target Analyzers[[/Heading]]
+[[PartGroupTable]]
+Target Analyzers|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Targeting Computers",Parts:["Targeting Computer","Imp. Targeting Computer","Mak. Targeting Computer","Adv. Targeting Computer","Exp. Targeting Computer"],Content:`[[Heading]]List of Targeting Computers[[/Heading]]
+[[PartGroupTable]]
+Targeting Computers|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Tearclaws (Group)",Parts:["Tearclaws","Master Tearclaws"],Content:"",Spoiler:"Spoiler"},{Name:"Tech Extrapolator Parts",Parts:["Electrostorm Shotgun","Energy Deflector","Heat Bomb Trap","Hyp. Alpha Cannon","Machine Rigger","Telecube","Vmp. Brace Plating","Vmp. Broadsword","Vmp. Heavy Siege Treads","Wartreads"],Content:"",Spoiler:"Spoiler"},{Name:"Temporary Slot Parts","Part Category":"Temporary Slot Parts",Content:"",Spoiler:"Spoiler"},{Name:"Terrain Scan Processors",Parts:["Terrain Scan Processor","Imp. Terrain Scan Processor","Mak. Terrain Scan Processor","Adv. Terrain Scan Processor","Surveybot 17 Chip","Exp. Terrain Scan Processor","Surveybot 24 Chip"],Content:`[[Heading]]List of Terrain Scan Processors[[/Heading]]
+[[PartGroupTable]]
+Terrain Scan Processors|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Terrain Scanners",Parts:["Terrain Scanner","Imp. Terrain Scanner","Adv. Terrain Scanner","Mak. Terrain Scanner","Lrn. Terrain Scanner","Surveybot 24 Scanner","Exp. Terrain Scanner"],Content:`[[Heading]]List of Terrain Scanners[[/Heading]]
+[[PartGroupTable]]
+Terrain Scanners|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Thermal Cannons","Part Category":"Thermal Cannons",Content:""},{Name:"Thermal Generators",Parts:["Thermal Generator","Imp. Thermal Generator","Adv. Thermal Generator","Exp. Thermal Generator"],Content:`Thermal Generators are devices that generate energy based on the user's surplus heat. They are relatively heavy compared to most devices, but have relatively low coverage as well.
 Energy is based on surplus heat (above 0) and is generated [[I]]before[[/I]] any heat dissipation is applied. As a result, they can generate energy from the user's passive heat generation before that heat is dissipated, and more importantly the heat generated by ranged weapons, especially [[Thermal Weapons]]. Energy generated from high-heat volleys can synergize well with [[Shield Generators]] and [[Force Fields]].
 
-This article was last edited during Beta 15.`},{Name:"Thermal Guns","Part Category":"Thermal Guns",Content:""},{Name:"Throwing Claymores",Parts:["RU-N14's Throwing Claymores","RU-N14's Throwing Claymores v3"],Content:"",Spoiler:"Spoiler"},{Name:"Tractor Beams",Parts:["Tractor Beam","Hpw. Tractor Beam","Lrn. Tractor Beam","Cep. Matter Streamer"],Content:""},{Name:"Transdimensional Reconstructors",Parts:["Transdimensional Reconstructor","Hpw. Transdimensional Reconstructor","Supercharged TR"],Content:`Transdimensional Reconstructors are one of the most common [[Alien Artifacts]] and can be found in a great variety of locations from different sources.
+[[Heading]]List of Thermal Generators[[/Heading]]
+[[PartGroupTable]]
+Thermal Generators|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]
+
+This article was last edited during Beta 15.`},{Name:"Thermal Guns","Part Category":"Thermal Guns",Content:""},{Name:"Throwing Claymores",Parts:["RU-N14's Throwing Claymores","RU-N14's Throwing Claymores v3"],Content:"",Spoiler:"Spoiler"},{Name:"Tractor Beams",Parts:["Tractor Beam","Hpw. Tractor Beam","Lrn. Tractor Beam","Cep. Matter Streamer"],Content:`[[Heading]]List of Tractor Beams[[/Heading]]
+[[PartGroupTable]]
+Tractor Beams|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Transdimensional Reconstructors",Parts:["Transdimensional Reconstructor","Hpw. Transdimensional Reconstructor","Supercharged TR"],Content:`Transdimensional Reconstructors are one of the most common [[Alien Artifacts]] and can be found in a great variety of locations from different sources.
 
 Attaching a Transdimensional Reconstructor consumes it and teleports the user and any part they might be standing on to an approximate distance of 32/64 from current position, depending on the range of the Transdimensional Reconstructor variant used. The direction of teleportation cannot be controlled. If a Slip Node is present on the map, Transdimensional Reconstructors will always teleport to one, regardless of the Reconstructor's range.
 
@@ -6435,7 +7718,9 @@ Using a Transdimensional Reconstructor also deteriorates core integrity by 5-10%
 
 [[Heading]]Lore[[/Heading]]
 [[Spoiler]][[Lore]]0b10 Records|Transdimensional Reconstructor[[/Lore]][[/Spoiler]]
-[[Redacted]][[Lore]]Quarantine Records|Reconstruction Test Results[[/Lore]][[/Redacted]]`,Spoiler:"Spoiler"},{Name:"Transmission Jammers",Parts:["Transmission Jammer","Mak. Transmission Jammer","Imp. Transmission Jammer","Adv. Transmission Jammer","Exp. Transmission Jammer"],Content:`Transmission jammers are parts allowing to limit consequences of your activity by blocking enemy signals. Need [[Line of Sight|LoS]] to enemy to work.
+[[Redacted]][[Lore]]Quarantine Records|Reconstruction Test Results[[/Lore]][[/Redacted]]
+
+`,Spoiler:"Spoiler"},{Name:"Transmission Jammers",Parts:["Transmission Jammer","Mak. Transmission Jammer","Imp. Transmission Jammer","Adv. Transmission Jammer","Exp. Transmission Jammer"],Content:`Transmission jammers are parts allowing to limit consequences of your activity by blocking enemy signals. Need [[Line of Sight|LoS]] to enemy to work.
 [[Heading:2]] List of effects [[/Heading]]
 [[List:Ordered]]Block [[Distress Signals|distress signals]]|Stop [[Heavy]] reinforcements calls|Prevent [[U-05 Engineer|engineers from calling reinforcements]]|When paired with [[Transport Network Coupler|TNC]] block [[Hauler|hauler's reinforcements call]] [[/List]]
 
@@ -6444,7 +7729,36 @@ Most jammers have short range, so attention needed to keep enemies in range. [[W
 Significantly decreases chances of small confrontation snowballing into big fight.
 Limits consequences of mistakes during stealth, if you can deal with bot that spotted you. Gives significantly more freedom to stealth builds able to take on small groups of enemies.
 If you can destroy [[Extermination Squad|extermination squad's]] leader without the rest of the squad seeing you, they might wander away.
-Jammers allow you to force 1-v-1 fights via [[Line of Sight|LoS]] manipulation. Works best versus stationary bots like [[Caves|caves outposts]]. Alternatively, good jammer paired with strong [[Cloaking Devices|cloaking device]] or [[Exp. Transmission Jammer]] on it's own allow forcing 1-v-1 fighting by surpassing enemy's visual range.`},{Name:"Trap Extractors",Parts:["Trap Extractor","Imp. Trap Extractor","Adv. Trap Extractor","Exp. Trap Extractor"],Content:""},{Name:"Trap Scanners",Parts:["Trap Scanner","Imp. Trap Scanner","Adv. Trap Scanner","Mak. Trap Scanner"],Content:""},{Name:"Traps",Parts:["Blade Trap","EMP Trap","Shock Trap","Explosive Trap","Piercing Trap","Stasis Trap","Proton Bomb Trap","Shrapnel Trap","Heavy Explosive Trap","Dirty Bomb Trap","EM Surge Trap","Fire Trap","Tesla Bomb Trap","Tiamat Bomb Trap","Fusion Bomb Trap","Segregator Trap","Gamma Bomb Trap","Hellfire Trap","Heat Bomb Trap","Armageddon Trap","Vortex Trap"],Content:`Traps are most often found in groups called arrays, and appear in a variety of layouts including rows, blocks or sparser "minefields". They are, however, usually triggered individually.
+Jammers allow you to force 1-v-1 fights via [[Line of Sight|LoS]] manipulation. Works best versus stationary bots like [[Caves|caves outposts]]. Alternatively, good jammer paired with strong [[Cloaking Devices|cloaking device]] or [[Exp. Transmission Jammer]] on it's own allow forcing 1-v-1 fighting by surpassing enemy's visual range.
+
+[[Heading]]List of Transmission Jammers[[/Heading]]
+[[PartGroupTable]]
+Transmission Jammers|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Trap Extractors",Parts:["Trap Extractor","Imp. Trap Extractor","Adv. Trap Extractor","Exp. Trap Extractor"],Content:`[[Heading]]List of Trap Extractors[[/Heading]]
+[[PartGroupTable]]
+Trap Extractors|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Trap Scanners",Parts:["Trap Scanner","Imp. Trap Scanner","Adv. Trap Scanner","Mak. Trap Scanner"],Content:`[[Heading]]List of Trap Scanners[[/Heading]]
+[[PartGroupTable]]
+Trap Scanners|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Traps",Parts:["Blade Trap","EMP Trap","Shock Trap","Explosive Trap","Piercing Trap","Stasis Trap","Proton Bomb Trap","Shrapnel Trap","Heavy Explosive Trap","Dirty Bomb Trap","EM Surge Trap","Fire Trap","Tesla Bomb Trap","Tiamat Bomb Trap","Fusion Bomb Trap","Segregator Trap","Gamma Bomb Trap","Hellfire Trap","Heat Bomb Trap","Armageddon Trap","Vortex Trap"],Content:`Traps are most often found in groups called arrays, and appear in a variety of layouts including rows, blocks or sparser "minefields". They are, however, usually triggered individually.
 
 
 [[Heading]]Lore[[/Heading]]
@@ -6527,7 +7841,56 @@ All multislot treads are capable of [[Special Propulsion Modes#siege mode|Siege 
 
 While on treads, Cogmind is immune to damage from ramming hostile bots, and instead has a chance to crush them (unless they are large or huge or have greater than 50 core integrity). The chance to crush varies for each type of tread.
 
-When active, treads confer immunity to knockback and reduce the accuracy penalty from recoil when firing large volleys.`},{Name:"Utility Shieldings",Parts:["Utility Shielding","Imp. Utility Shielding","Mak. Utility Shielding","Exp. Utility Shielding"],Content:""},{Name:"Visual Processing Units",Parts:["Visual Processing Unit","Sub. Optics","Adv. Visual Processing Unit","Enh. Optical Array","Exp. Optical Array","Spectral Analyzer"],Content:""},{Name:"Vortex Cannons","Part Category":"Vortex Cannons",Content:"",Spoiler:"Spoiler"},{Name:"Vortex Guns","Part Category":"Vortex Guns",Content:"",Spoiler:"Spoiler"},{Name:"Weapon Cyclers",Parts:["Weapon Cycler","Imp. Weapon Cycler","Adv. Weapon Cycler","Exp. Weapon Cycler","Quantum Capacitor","Mni. Quantum Capacitor","Launcher Loader"],Content:""},{Name:"Weapon Shieldings",Parts:["Weapon Shielding","Imp. Weapon Shielding","Mak. Weapon Shielding","Exp. Weapon Shielding","Zio. Weapon Casing"],Content:""},{Name:"Wheels","Part Category":"Wheels",Content:`Wheels are the most fragile ground propulsion type, but have a lower overweight penalty than any other type of propulsion. They are commonly used by (and available from) almost all non-combat 0b10 bots, other than [[Hauler|Haulers]].
+When active, treads confer immunity to knockback and reduce the accuracy penalty from recoil when firing large volleys.
+
+[[Heading]]List of Treads[[/Heading]]
+[[PartGroupTable]]
+Treads|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty|
+Propulsion/Special
+[[/PartGroupTable]]`},{Name:"Utility Shieldings",Parts:["Utility Shielding","Imp. Utility Shielding","Mak. Utility Shielding","Exp. Utility Shielding"],Content:`[[Heading]]List of Utility Shieldings[[/Heading]]
+[[PartGroupTable]]
+Utility Shieldings|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Visual Processing Units",Parts:["Visual Processing Unit","Sub. Optics","Adv. Visual Processing Unit","Enh. Optical Array","Exp. Optical Array","Spectral Analyzer"],Content:`[[Heading]]List of Visual Processing Units[[/Heading]]
+[[PartGroupTable]]
+Visual Processing Units|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Vortex Cannons","Part Category":"Vortex Cannons",Content:"",Spoiler:"Spoiler"},{Name:"Vortex Guns","Part Category":"Vortex Guns",Content:"",Spoiler:"Spoiler"},{Name:"Weapon Cyclers",Parts:["Weapon Cycler","Imp. Weapon Cycler","Adv. Weapon Cycler","Exp. Weapon Cycler","Quantum Capacitor","Mni. Quantum Capacitor","Launcher Loader"],Content:`[[Heading]]List of Weapon Cyclers[[/Heading]]
+[[PartGroupTable]]
+Weapon Cyclers|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Weapon Shieldings",Parts:["Weapon Shielding","Imp. Weapon Shielding","Mak. Weapon Shielding","Exp. Weapon Shielding","Zio. Weapon Casing"],Content:`[[Heading]]List of Weapon Shieldings[[/Heading]]
+[[PartGroupTable]]
+Weapon Shieldings|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Wheels","Part Category":"Wheels",Content:`Wheels are the most fragile ground propulsion type, but have a lower overweight penalty than any other type of propulsion. They are commonly used by (and available from) almost all non-combat 0b10 bots, other than [[Hauler|Haulers]].
 
 Because of the low overweight penalty, it is viable for bots to use wheels even if they are several times overweight.
 
@@ -6537,17 +7900,139 @@ As a sole propulsion type for bots that carry massive inventories, including cer
 |In combination with [[Treads]] to form a [[I]]half-track[[/I]] configuration, where both wheels and treads are equipped at once. [[Cogmind]] activates wheels outside combat to benefit from the fast movement speed, and treads in combat for the knockback immunity and recoil reduction. Half-tracking is useful for bots that have not found enough spare treads, to reduce the churn of treads. The ease of obtaining wheels makes them a viable secondary propulsion type.
 |As backup propulsion. If all of Cogmind's propulsion is destroyed, it may have an extremely slow movement speed on core propulsion. Equipping just one wheel will often reduce the movement delay to a manageable amount.
 [[/List]]
-The main downside of wheels compared to other ground propulsion is their fragility. Cogmind can easily loot replacement wheels from green bots, but will still go through wheels fairly quickly.`},{Name:"Z-Hero Parts",Parts:["12-ASH's Boomstick",`1C-UTU's Sword "Choppy"`,`1C-UTU's Sword "Lootmaker"`,"7V-RTL's Ultimate Field","99-TNT's Nukerbomber","AD-0RF's Magmablaster","CL-ANK's Mallet","ME-RLN's Wand","ME-RLN's Chromatic Screen","NK-0LA's Tesla Doomcannon","P1-3CE's Gatling Flakker"],Content:"",Spoiler:"Spoiler"}],"Part Supergroups":[{Name:"Armor",Groups:["Backup Plating","Powered Armor (Group)","Regenerative Armor","Resistance Armor"],Parts:["Lgt. Armor Plating","Med. Armor Plating","Hvy. Armor Plating","Zio. Light Carapace","Zio. Heavy Carapace","Hrd. Light Armor Plating","Hrd. Medium Armor Plating","Hrd. Heavy Armor Plating","Imp. Light Armor Plating","Imp. Medium Armor Plating","Imp. Heavy Armor Plating","Mak. Light Armor Plating","Mak. Medium Armor Plating","Mak. Heavy Armor Plating","Lyr. Light Armor Plating","Lyr. Medium Armor Plating","Lyr. Heavy Armor Plating","Gun Armor","Centrium Light Armor Plating","Centrium Medium Armor Plating","Centrium Heavy Armor Plating","Centrium Linked Plating","Mak. Ablative Armor","Active Cooling Armor","Scrap Shield","Enh. Scrap Shield","Tower Shield","Vmp. Brace Plating"],Content:`Armor protects other parts, and the core, by having high coverage and integrity. The coverage makes attacks less likely to hit other parts or the core; the integrity allows the armor to tank many hits before being destroyed.
+The main downside of wheels compared to other ground propulsion is their fragility. Cogmind can easily loot replacement wheels from green bots, but will still go through wheels fairly quickly.
+
+[[Heading]]List of Wheels[[/Heading]]
+[[PartGroupTable]]
+Wheels|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty
+[[/PartGroupTable]]`},{Name:"Z-Hero Parts",Parts:["12-ASH's Boomstick",`1C-UTU's Sword "Choppy"`,`1C-UTU's Sword "Lootmaker"`,"7V-RTL's Ultimate Field","99-TNT's Nukerbomber","AD-0RF's Magmablaster","CL-ANK's Mallet","ME-RLN's Wand","ME-RLN's Chromatic Screen","NK-0LA's Tesla Doomcannon","P1-3CE's Gatling Flakker"],Content:"",Spoiler:"Spoiler"}],"Part Supergroups":[{Name:"Armor",Groups:["Backup Plating","Powered Armor (Group)","Regenerative Armor"],Supergroups:["Shieldings"],Parts:["Lgt. Armor Plating","Med. Armor Plating","Hvy. Armor Plating","Zio. Light Carapace","Zio. Heavy Carapace","Hrd. Light Armor Plating","Hrd. Medium Armor Plating","Hrd. Heavy Armor Plating","Imp. Light Armor Plating","Imp. Medium Armor Plating","Imp. Heavy Armor Plating","Mak. Light Armor Plating","Mak. Medium Armor Plating","Mak. Heavy Armor Plating","Lyr. Light Armor Plating","Lyr. Medium Armor Plating","Lyr. Heavy Armor Plating","Gun Armor","Centrium Light Armor Plating","Centrium Medium Armor Plating","Centrium Heavy Armor Plating","Centrium Linked Plating","Mak. Ablative Armor","Active Cooling Armor","Scrap Shield","Enh. Scrap Shield","Tower Shield","Vmp. Brace Plating"],Content:`Armor protects other parts, and the core, by having high coverage and integrity. The coverage makes attacks less likely to hit other parts or the core; the integrity allows the armor to tank many hits before being destroyed.
 
 Some armor provides additional functionality, like granting resistance to a certain damage type [[Spoiler]]or regenerating integrity over time while powered[[/Spoiler]].
 
-Any part with high coverage and integrity can act like armor. Parts often used for this include [[Treads]] and [[Ballistic Cannons]]. The difference is that dedicated "armor" parts have little other purpose than their protective role, whereas losing a tread or a cannon can disable critical aspects of a build.`},{Name:"Backup Parts",Groups:["Backup Lasers","Backup Plating","Backup Power","Backup Propulsion"],Content:"Backup parts are refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack."},{Name:"Consumable Alien Artifacts",Groups:["Transdimensional Reconstructors"],Parts:["Dimensional Node Initializer","Core Expander","Core Regenerator","Integrity Redistributor","Integrated Dissipator","Supercharged Integrated Dissipator","Integrated Thermoelectric Network","Integrated Reactor","Supercharged Integrated Reactor","Integrated Mediator","Core Membrane","Navigation Efficiency Matrix","Core Reset Matrix","Subatomic Replicator","Terrabomb","LRC Armor","LRC Energy Well","LRC Matter Compressor","LRC Inertial Stabilizer","LRC Insulator","LRC Storage","Core Physics Calibrator","Personal Teleporter v0.10","Telecube","Spacefold Activator","Microwarp Drive","LC Capacitor","Cep. Nanofilaments [Conductive]","Cep. Nanofilaments [Tensile]","Cep. Nanofilaments [Polyglass]"],Spoiler:"Spoiler",Content:""},{Name:"Cooling Utilities",Groups:["Cooling Devices","Coolant Injectors","Cryofiber Webs"],Parts:["Active Cooling Armor","Mak. Ablative Armor","Mak. Microdissipator Network","Cep. Turbovents","Cep. Thermoelectric Network"],Content:""},{Name:"Corruption Reduction Utilities",Groups:["Corruption Screens","Dynamic Insulation Systems","System Guards","System Restoration Modules"],Content:""},{Name:"Datajacks",Groups:["Melee Datajacks","Remote Datajacks"],Content:`Datajacks are used for robot hacking, which provides some rudimentary capabilities, and many more with [[RIF]] and an appropriate [[Relay Couplers|Relay Coupler]].
+Any part with high coverage and integrity can act like armor. Parts often used for this include [[Treads]] and [[Ballistic Cannons]]. The difference is that dedicated "armor" parts have little other purpose than their protective role, whereas losing a tread or a cannon can disable critical aspects of a build.
+
+[[Heading]]List of Armor[[/Heading]]
+[[PartGroupTable]]
+Armor|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Effect/Effect|
+Effect/Description
+[[/PartGroupTable]]`},{Name:"Backup Parts",Groups:["Backup Lasers","Backup Plating","Backup Power","Backup Propulsion"],Content:"Backup parts are refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack."},{Name:"Consumable Alien Artifacts",Groups:["Transdimensional Reconstructors"],Parts:["Dimensional Node Initializer","Core Expander","Core Regenerator","Integrity Redistributor","Integrated Dissipator","Supercharged Integrated Dissipator","Integrated Thermoelectric Network","Integrated Reactor","Supercharged Integrated Reactor","Integrated Mediator","Core Membrane","Navigation Efficiency Matrix","Core Reset Matrix","Subatomic Replicator","Terrabomb","LRC Armor","LRC Energy Well","LRC Matter Compressor","LRC Inertial Stabilizer","LRC Insulator","LRC Storage","Core Physics Calibrator","Personal Teleporter v0.10","Telecube","Spacefold Activator","Microwarp Drive","LC Capacitor","Cep. Nanofilaments [Conductive]","Cep. Nanofilaments [Tensile]","Cep. Nanofilaments [Polyglass]"],Spoiler:"Spoiler",Content:""},{Name:"Ballistic Weapons",Content:`[[Heading]]List of Ballistic Weapons[[/Heading]]
+[[PartGroupTable]]
+Ballistic Weapons|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Heat|
+Shot/Targeting|
+Shot/Delay|
+Projectile/Damage|
+Projectile/Type|
+Projectile/Critical|
+Projectile/Penetration|
+Projectile/Salvage|
+Effect/Effect|
+Effect/Description
+[[/PartGroupTable]]`,Groups:["Ballistic Cannons","Ballistic Guns"]},{Name:"Cooling Utilities",Groups:["Cooling Devices","Coolant Injectors","Cryofiber Webs"],Parts:["Active Cooling Armor","Mak. Ablative Armor","Mak. Microdissipator Network","Cep. Turbovents","Cep. Thermoelectric Network"],Content:`[[Heading]]List of Cooling Utilities[[/Heading]]
+[[PartGroupTable]]
+Cooling Utilities|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Effect/Effect
+[[/PartGroupTable]]`},{Name:"Corruption Reduction Utilities",Groups:["Corruption Screens","Dynamic Insulation Systems","System Guards","System Restoration Modules"],Content:""},{Name:"Datajacks",Groups:["Melee Datajacks","Remote Datajacks"],Content:`Datajacks are used for robot hacking, which provides some rudimentary capabilities, and many more with [[RIF]] and an appropriate [[Relay Couplers|Relay Coupler]].
 
 [[Melee Datajacks]] can hack a robot within melee range. [[Remote Datajacks]] can hack a robot at a greater distance. Melee datajacks have advantages to compensate for their reduced range:
 [[List]]
 If a melee datajack is active, moving into a known hostile trap will attempt to disarm or reprogram it. Remote datajacks do not have a similar capability.
 |[[Programmer|Programmers]] can defend their allies against remote datajacks, but not melee datajacks.
-[[/List]]`},{Name:"Defensive Utilities",Groups:["Hardlight Generators","Force Fields","Phase Shifters","Point Defense Systems","Reaction Control Systems","Resistance Devices","Shield Generators"],Parts:["Energy Deflector","Field Manipulator","Graphene Brace","Phase Redirector","Siege Articulator"],Content:""},{Name:"Electromagnetic Weapons",Content:"",Groups:["Electromagnetic Cannons","Electromagnetic Guns","Electromagnetic Launchers"]},{Name:"Energy Cannons",Groups:["Alpha Cannons","Electromagnetic Cannons","Thermal Cannons","Vortex Cannons"],Parts:["Sigix Shearcannon"],Content:""},{Name:"Energy Guns",Groups:["Electromagnetic Guns","Phasers","Shearguns","Thermal Guns","Vortex Guns"],Content:""},{Name:"Exit",Content:""},{Name:"Hackware",Groups:["Defensive Hackware","Offensive Hackware"],Content:"Hackware is a group of Utility parts that improve hacking capabilities, mainly success chance for terminal hacks, trap rewiring and robot rewiring. Hackware also helps you hack hostiles through the defense of a [[Programmer]]. Additionally, later Hackware makes it harder for your allies to be hacked."},{Name:"Infowar",Groups:["0b10 Decoder Chips","Cloaking Devices","Drone Bays","ECM Suites","IFF Parsers","Sensor Arrays","Signal Interpreters","Terrain Scan Processors","Terrain Scanners","Transmission Jammers","Trap Scanners","Visual Processing Units"],Parts:["0b10 Alert Chip","Active Sensor Spoofer","Deep Structural Scanner","ID Mask","Machine Analyzer","Modified TNC","Seismic Detector","Structural Scanner","Transport Network Coupler","Triangulator"],Content:`Infowar (information warfare) is a general category of parts that revolve around gaining additional information about the surrounding map or its inhabitants and/or reducing the capabilities of hostile robots. Wandering around completely blind is possible, but can cause a lot of bad encounters and is generally very [[Community Challenges#No Info Only War|Challenging]]. Infowar can be used to do things like locate and avoid hostiles, search for specific elements of a map such as [[Interactive Machine|Interactive Machines]] or [[Exit|Exits]], and to generally navigate through a map more efficiently. Infowar is composed of primarily [[Utilities|Utility]] slot parts, although a few [[Alignment]]-related abilities can grant infowar-type effects without dedicating an active slot to them. The largest categories of infowar are bot detection and map detection.
+[[/List]]
+
+[[Heading]]List of Datajacks[[/Heading]]
+[[PartGroupTable]]
+Datajacks|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Heat|
+Shot/Targeting|
+Shot/Delay|
+Projectile/Type|
+Effect/Effect|
+Effect/Description
+[[/PartGroupTable]]`},{Name:"Defensive Utilities",Groups:["Hardlight Generators","Force Fields","Phase Shifters","Point Defense Systems","Reaction Control Systems","Resistance Devices","Shield Generators"],Parts:["Energy Deflector","Field Manipulator","Graphene Brace","Phase Redirector","Siege Articulator"],Content:""},{Name:"Electromagnetic Weapons",Groups:["Electromagnetic Cannons","Electromagnetic Guns","Electromagnetic Launchers"],Content:`[[Heading]]List of Electromagnetic Weapons[[/Heading]]
+[[PartGroupTable]]
+Electromagnetic Weapons|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Matter|
+Shot/Heat|
+Shot/Recoil|
+Shot/Targeting|
+Shot/Delay|
+Shot/Stability|
+Shot/Waypoints|
+Projectile/Arc|
+Projectile/Damage|
+Projectile/Type|
+Projectile/Critical|
+Projectile/Penetration|
+Projectile/Spectrum|
+Projectile/Disruption|
+Projectile/Salvage|
+Effect/Effect|
+Effect/Description
+[[/PartGroupTable]]`},{Name:"Energy Cannons",Groups:["Alpha Cannons","Electromagnetic Cannons","Thermal Cannons","Vortex Cannons"],Parts:["Sigix Shearcannon"],Content:""},{Name:"Energy Guns",Groups:["Electromagnetic Guns","Phasers","Shearguns","Thermal Guns","Vortex Guns"],Content:""},{Name:"Exit",Content:""},{Name:"Flight Units","Part Category":"Flight Units",Content:`Flight units have the lowest support and the highest speed. They are quite fragile, though [[Prototype Part|prototype]] flight units are somewhat less so. They are notably used by [[Swarmer|Swarmers]].
+
+On flight, [[Cogmind]] can outrun most other bots, but will have trouble equipping high-mass parts, such as the best armor, cannons, and storage units. Flight units are difficult to sustain in [[Materials]] due to their low availability and the high volume of encounters, so it is more common to use grounded propulsion in Materials and transition to flight upon reaching [[Factory]] or shortly thereafter.
+
+Most flight builds will favor prototype flight units for their improved resilience, along with multislot flight arrays. Cooled (Cld.) flight units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage.
+
+Like [[Hover Units]], flight units receive a bonus to movement speed when multiple are used at once, and are affected by drag from attached [[Legs]], [[Treads]], and [[Wheels]]. This bonus cannot bring the overall movement delay below 10 unless flight units are overloaded.
+
+While flying, Cogmind can hop over other bots in its way, unless Cogmind is overweight. Flying bots have a 10% evasion bonus, unless overweight or in stasis. Flying bots, along with hovering and legged bots, receive an evasion bonus from [[Reaction Control Systems]].
+
+[[Heading]]List of Flight Units[[/Heading]]
+[[PartGroupTable]]
+Flight Units|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Burnout
+[[/PartGroupTable]]`,Groups:["Cooled Flight Units","Diametric Drives","Flight Arrays","Surge Thrusters"]},{Name:"Hackware",Groups:["Defensive Hackware","Offensive Hackware"],Content:"Hackware is a group of Utility parts that improve hacking capabilities, mainly success chance for terminal hacks, trap rewiring and robot rewiring. Hackware also helps you hack hostiles through the defense of a [[Programmer]]. Additionally, later Hackware makes it harder for your allies to be hacked."},{Name:"Infowar",Groups:["0b10 Decoder Chips","Cloaking Devices","Drone Bays","ECM Suites","IFF Parsers","Sensor Arrays","Signal Interpreters","Terrain Scan Processors","Terrain Scanners","Transmission Jammers","Trap Scanners","Visual Processing Units"],Parts:["0b10 Alert Chip","Active Sensor Spoofer","Deep Structural Scanner","ID Mask","Machine Analyzer","Modified TNC","Seismic Detector","Structural Scanner","Transport Network Coupler","Triangulator"],Content:`Infowar (information warfare) is a general category of parts that revolve around gaining additional information about the surrounding map or its inhabitants and/or reducing the capabilities of hostile robots. Wandering around completely blind is possible, but can cause a lot of bad encounters and is generally very [[Community Challenges#No Info Only War|Challenging]]. Infowar can be used to do things like locate and avoid hostiles, search for specific elements of a map such as [[Interactive Machine|Interactive Machines]] or [[Exit|Exits]], and to generally navigate through a map more efficiently. Infowar is composed of primarily [[Utilities|Utility]] slot parts, although a few [[Alignment]]-related abilities can grant infowar-type effects without dedicating an active slot to them. The largest categories of infowar are bot detection and map detection.
 Infowar is useful on all build types, from combat to stealth alike. Stealth builds tend to have many slots of infowar active at once in order to completely avoid all contact with hostile bots. Combat builds, especially on slower propulsion types like [[Treads]], have difficulty avoiding encounters altogether, even with a large amount of infowar. However, infowar can help make informed decisions about combat encounters and help Cogmind take fights in beneficial scenarios. For example, one good use is preparing an [[Explosive Launchers|Explosive Launcher]] if a [[Swarmer]] squad is known to be nearby. Blindly wandering around into that same Swarmer squad might see Cogmind in a bad position, forced to take damage while spend turns swapping out a launcher or becoming surrounded.
 Many infowar utilities tend to be low integrity devices and should ideally be swapped into inventory before entering combat. High coverage [[Armor]] can help protect these parts, but even then, these parts tend to get destroyed fairly easily in combat. [[Utility Shieldings]] may reduce the need for swapping in combat, especially for a faster-moving flight or hover build that doesn't want to stick around for prolonged combat.
 
@@ -6647,7 +8132,18 @@ FarCom Active.webp|FarCom bot detection active, with green ring indicating radiu
 Seismic Detector Activating.webp|Seismic Detector becoming activated and showing seismic activity|IFF Parser.webp|[[IFF Parser]] becoming activated and showing a patrol|
 [[Spoiler]]Quantum Companion Sensors Active.webp[[/Spoiler]]|[[Spoiler]]Quantum Companion bot detection, with blue ring indicating radius[[/Spoiler]]|
 [[Redacted]]Sigix Exoskeleton Sensors.webp[[/Redacted]]|[[Redacted]]Sigix Exoskeleton bot detection and terrain scanning, with blue ring indicating radius[[/Redacted]]|
-Robot Detection With Patrol Navigation.webp|Robot Detection (bots within red ring) and Patrol Navigation (yellow paths)|0b10 Decoder Chip Skirmisher.webp|0b10 Decoder Chip [Skirmisher] detecting a patrol|Terrain Scanning.webp|Basic [[Terrain Scanner]] activating and scanning|Terrain Scanning With Processor.webp|Basic Terrain Scanner activating and scanning with [[Adv. Terrain Scan Processor]] attached|Structural Scanner Activating.webp|Structural Scanner activating and scanning|Machine Analyzer.webp|Machine Analyzer detecting a [[Terminal]] and locating nearby machines[[/Gallery]]`},{Name:"Launchers",Groups:["Electromagnetic Launchers","Explosive Launchers","Sigix Terminators"],Parts:["Sub. Shrapnel Launcher","Thermoblaster","Vortex Catalyst Activator","Containment Facilitator"],Content:""},{Name:"Matter Refilling Devices",Groups:["Field Recycling Units","Tractor Beams"],Parts:["Matter Focus","Desublimator","Mobile Refinery Mk. CCLXVII"],Content:""},{Name:"Melee Weapons",Groups:["Impact Weapons","Piercing Weapons","Slashing Weapons"],Content:""},{Name:"Offensive Utilities",Groups:["Actuators","Actuator Arrays","Armor Integrity Analyzers","Core Analyzers","EM Disruption Fields","Energy Filters","Force Boosters","Kinecellerators","Launcher Guidance Computers","Matter Filters","Melee Analysis Suites","Particle Chargers","Ranged Targeting Utilities","Recoil Stabilizers","Target Analyzers","Targeting Computers","Weapon Cyclers"],Parts:["Asb. Combat Suite","Expert System","Heavy Servo Lattice","VL-GR5's Timing Chip"],Content:""},{Name:"Overloadable Parts",Groups:["Overloadable Power","Overloadable Propulsion","Overloadable Weapons"],Content:"For details on behavior when overloaded, see [[Overload]]."},{Name:"Power",Groups:["Backup Power","Engines","Fusion Compressors","Hybrid Power","Overloadable Power","Power Cores","Reactors","Reinforced Power"],Content:""},{Name:"Propulsion",Groups:["Backup Propulsion","Flight Units","Hover Units","Legs","Overloadable Propulsion","Treads","Wheels"],Content:`Propulsion units allow robots to move and carry mass.
+Robot Detection With Patrol Navigation.webp|Robot Detection (bots within red ring) and Patrol Navigation (yellow paths)|0b10 Decoder Chip Skirmisher.webp|0b10 Decoder Chip [Skirmisher] detecting a patrol|Terrain Scanning.webp|Basic [[Terrain Scanner]] activating and scanning|Terrain Scanning With Processor.webp|Basic Terrain Scanner activating and scanning with [[Adv. Terrain Scan Processor]] attached|Structural Scanner Activating.webp|Structural Scanner activating and scanning|Machine Analyzer.webp|Machine Analyzer detecting a [[Terminal]] and locating nearby machines[[/Gallery]]`},{Name:"Launchers",Groups:["Electromagnetic Launchers","Explosive Launchers","Sigix Terminators"],Parts:["Sub. Shrapnel Launcher","Thermoblaster","Vortex Catalyst Activator","Containment Facilitator"],Content:""},{Name:"Matter Refilling Devices",Groups:["Field Recycling Units","Tractor Beams"],Parts:["Matter Focus","Desublimator","Mobile Refinery Mk. CCLXVII"],Content:""},{Name:"Melee Weapons",Groups:["Impact Weapons","Piercing Weapons","Slashing Weapons"],Content:""},{Name:"Offensive Utilities",Groups:["Actuators","Actuator Arrays","Armor Integrity Analyzers","Core Analyzers","EM Disruption Fields","Energy Filters","Force Boosters","Kinecellerators","Launcher Guidance Computers","Matter Filters","Melee Analysis Suites","Particle Chargers","Ranged Targeting Utilities","Recoil Stabilizers","Target Analyzers","Targeting Computers","Weapon Cyclers"],Parts:["Asb. Combat Suite","Expert System","Heavy Servo Lattice","VL-GR5's Timing Chip"],Content:""},{Name:"Overloadable Parts",Groups:["Overloadable Power","Overloadable Propulsion","Overloadable Weapons"],Content:"For details on behavior when overloaded, see [[Overload]]."},{Name:"Power",Groups:["Backup Power","Engines","Fusion Compressors","Hybrid Power","Light Power","Micro Power","Overloadable Power","Power Cores","Reactors","Reinforced Power"],Content:`[[Heading]]List of Power[[/Heading]][[PartGroupTable]]
+Power|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Overview/Heat|
+Overview/Matter|
+Power/Rate|
+Power/Storage|
+Power/Stability
+[[/PartGroupTable]]`},{Name:"Propulsion",Supergroups:["Flight Units"],Groups:["Backup Propulsion","Hover Units","Legs","Overloadable Propulsion","Treads","Wheels"],Content:`Propulsion units allow robots to move and carry mass.
 
 Five types of propulsion exist: [[Flight Units]], [[Hover Units]], [[Legs]], [[Treads]], and [[Wheels]]. Flight and hover units are collectively known as fast propulsion, or "fastprop"; legs, treads, and wheels are considered slow propulsion, or "slowprop." In addition, unlike other bots, [[Cogmind]] has a built-in core propulsion system used when no other propulsion is active.
 
@@ -6711,7 +8207,7 @@ Bots move faster with multiple units. Each unit has a [[I]]bonus[[/I]] (labeled 
 [[/List]]
 
 [[Heading]]Core Propulsion[[/Heading]]
-If Cogmind has no propulsion units active, it will move using core propulsion (informally, "core hover"). Core propulsion is relatively fast, with a base movement delay of 50 (speed of 200%), but it has pitifully low mass support of only 3 and a harsh overweight penalty of 50. It is thus very difficult to actually use, but is necessary if Cogmind's build is destroyed or if you must core purge.`},{Name:"Shieldings",Groups:["Core Shieldings","Power Shieldings","Propulsion Shieldings","Utility Shieldings","Weapon Shieldings"],Content:"Shieldings protect the core or parts of a given type from damage and critical strikes. They have no coverage; instead, they take damage when an attack hits whatever they're protecting."},{Name:"Special Melee Weapons",Groups:["Melee Datajacks"],Parts:["Dirty Datajack","Detonator","Splice Injector","Master Link"],Content:""},{Name:"Special Weapons",Groups:["Flamers","Plasma Cutters","Remote Datajacks","Stasis Beams","Throwing Claymores"],Parts:["System Spiker","Field Lobotomy Kit","Mining Laser","Mak. Laser Shovel","LU-1G1's Laser Shovel","Welding Torch","CPS Tube","Multitool","Warlord Statue","Voltaic Drivehammer","AD-0RF's Magmablaster",`IN-MT5's Pitchfork "Insurrection"`,"Shield Trident","Junk Cannon","Molecular Deconstructor","Asb. F-torch","Asb. P-torch"],Content:""},{Name:"Storage (Group)",Groups:["Storage Unit","Energy Wells","Matter Compressors"],Content:""},{Name:"Thermal Weapons",Content:"",Groups:["Flamers","Plasma Cutters","Sigix Terminators","Thermal Cannons","Thermal Guns"],Parts:["AD-0RF's Magmablaster","Asb. P-torch","LU-1G1's Laser Shovel","Mining Laser","Thermoblaster","Welding Torch"]},{Name:"Utilities",Groups:["Authchips","Component Analysis Suites","Fabrication Devices","Mass Support Devices","Power Amplifiers","Recalibrators","Relay Couplers","Speed Boosting Utilities","Salvage Targeting Computers","Storage Unit","Thermal Generators","Trap Extractors"],Supergroups:["Armor","Consumable Alien Artifacts","Cooling Utilities","Corruption Reduction Utilities","Defensive Utilities","Hackware","Infowar","Matter Refilling Devices","Offensive Utilities","Shieldings","Storage (Group)"],Parts:["Scrap Engine","Arm. Scrap Engine","Encrypted Comm Array","Stasis Canceller","Skeleton Box","01-MTF's Autohacker","A0-MCA's Component Scanner","Tech Extrapolator","Trap Reconfigurator","Scrap Suit","0bPrime Scrap Suit","PSU Rigger","Machine Rigger","Phasing AFG","AS-neutralizer No. 17b","V3-11A's Pendant","Amulet of Y3-NDR","Chronowheel","Phase Armor","Power Bank","Rainbow Chip",`VL-GR5's Exoskeleton "Deathgrip"`,"Plexus Tether","Cep. Melee Reflex Suite","Cep. Projectile Intercept Suite","Jamming Amplifier","Crosscalibrator","Cep. Navigation Harness","Supercharged Navigation Harness"],Content:""},{Name:"Weapons",Groups:["Autonomous Weapons","Backup Lasers","Ballistic Cannons","Ballistic Guns","Guided Weapons","Hyp. Weapons","Overloadable Weapons","Tearclaws (Group)","Thermal Cannons"],Supergroups:["Datajacks","Electromagnetic Weapons","Energy Cannons","Energy Guns","Launchers","Melee Weapons","Special Melee Weapons","Special Weapons","Thermal Weapons"],Content:`Weapon components allow robots to deal damage or otherwise perform some utility.
+If Cogmind has no propulsion units active, it will move using core propulsion (informally, "core hover"). Core propulsion is relatively fast, with a base movement delay of 50 (speed of 200%), but it has pitifully low mass support of only 3 and a harsh overweight penalty of 50. It is thus very difficult to actually use, but is necessary if Cogmind's build is destroyed or if you must core purge.`},{Name:"Shieldings",Groups:["Core Shieldings","Power Shieldings","Propulsion Shieldings","Utility Shieldings","Weapon Shieldings"],Content:"Shieldings protect the core or parts of a given type from damage and critical strikes. They have no coverage; instead, they take damage when an attack hits whatever they're protecting."},{Name:"Special Melee Weapons",Groups:["Melee Datajacks"],Parts:["Dirty Datajack","Detonator","Splice Injector","Master Link"],Content:""},{Name:"Special Weapons",Groups:["Flamers","Plasma Cutters","Remote Datajacks","Stasis Beams","Throwing Claymores"],Parts:["System Spiker","Field Lobotomy Kit","Mining Laser","Mak. Laser Shovel","LU-1G1's Laser Shovel","Welding Torch","CPS Tube","Multitool","Warlord Statue","Voltaic Drivehammer","AD-0RF's Magmablaster",`IN-MT5's Pitchfork "Insurrection"`,"Shield Trident","Junk Cannon","Molecular Deconstructor","Asb. F-torch","Asb. P-torch"],Content:""},{Name:"Storage (Group)",Groups:["Storage Unit","Energy Wells","Matter Compressors"],Content:""},{Name:"Thermal Weapons",Content:"",Groups:["Flamers","Plasma Cutters","Sigix Terminators","Thermal Cannons","Thermal Guns"],Parts:["AD-0RF's Magmablaster","Asb. P-torch","LU-1G1's Laser Shovel","Mining Laser","Thermoblaster","Welding Torch"]},{Name:"Utilities",Groups:["Authchips","Component Analysis Suites","Fabrication Devices","Mass Support Devices","Power Amplifiers","Recalibrators","Relay Couplers","Speed Boosting Utilities","Salvage Targeting Computers","Thermal Generators","Trap Extractors"],Supergroups:["Armor","Consumable Alien Artifacts","Cooling Utilities","Corruption Reduction Utilities","Defensive Utilities","Hackware","Infowar","Matter Refilling Devices","Offensive Utilities","Shieldings","Storage (Group)"],Parts:["Scrap Engine","Arm. Scrap Engine","Encrypted Comm Array","Stasis Canceller","Skeleton Box","01-MTF's Autohacker","A0-MCA's Component Scanner","Tech Extrapolator","Trap Reconfigurator","Scrap Suit","0bPrime Scrap Suit","PSU Rigger","Machine Rigger","Phasing AFG","AS-neutralizer No. 17b","V3-11A's Pendant","Amulet of Y3-NDR","Chronowheel","Phase Armor","Power Bank","Rainbow Chip",`VL-GR5's Exoskeleton "Deathgrip"`,"Plexus Tether","Cep. Melee Reflex Suite","Cep. Projectile Intercept Suite","Jamming Amplifier","Crosscalibrator","Cep. Navigation Harness","Supercharged Navigation Harness"],Content:""},{Name:"Weapons",Groups:["Autonomous Weapons","Backup Lasers","Guided Weapons","Hyp. Weapons","Overloadable Weapons","Tearclaws (Group)","Thermal Cannons"],Supergroups:["Ballistic Weapons","Datajacks","Electromagnetic Weapons","Energy Cannons","Energy Guns","Launchers","Melee Weapons","Special Melee Weapons","Special Weapons","Thermal Weapons"],Content:`Weapon components allow robots to deal damage or otherwise perform some utility.
 
 Weapons can be from 9 general categories: [[Ballistic Cannons]], [[Energy Cannons]], [[Ballistic Guns]], [[Energy Guns]], [[Launchers]], [[Slashing Weapons]], [[Piercing Weapons]], [[Impact Weapons]], [[Special Melee Weapons]], and [[Special Weapons]].
 
@@ -6739,35 +8235,35 @@ If a volley is comprised exclusively of ballistic and/or energy guns and its ori
 
 [[Heading]]Weapon Types[[/Heading]]
 
-[[Heading:2]]Energy Cannons/Guns[[/Heading]]
+[[Heading:2]][[Electromagnetic Weapons]]/[[Thermal Weapons]][[/Heading]]
 
 Energy weapons generally have a shorter range, but benefit from a more easily predictable damage potential and little or no recoil. Thermal damage also generally transfers heat to the target, and may cause meltdowns in hot enough targets. Electromagnetic damage is capable of causing system corruption in targets. Anywhere from 50-150% of damage is applied as system corruption. EM damage is additionally capable of disrupting hit parts or even robot cores, as well as causing chain reactions in target power components. 
 
-[[Heading:2]]Ballistic Cannons/Guns[[/Heading]]
+[[Heading:2]][[Ballistic Weapons]][[/Heading]]
 
 Ballistic weapons generally have a longer effective range and more destructive critical strikes, but suffer from less predictable damage and high recoil. Some kinetic projectiles, especially hypervelocity variants, are capable of penetrating one or more consecutive targets. Kinetic cannon hits also blast usable matter off target robots and have a damage-equivalent chance to cause knockback, with a (10 - range) * 5 modifier and a +/-10% per size class (Tiny/Small/Medium/Large/Huge) difference between the target and medium size (targets knocked into another robot may also damage and displace it). The amount of matter created per cannon projectile impact is randomized from between zero up to the absolute value of the weapon's salvage modifier, but only applies for those weapons with a negative salvage modifier below -2.
 
-[[Heading:2]]Launchers[[/Heading]]
+[[Heading:2]][[Launchers]][[/Heading]]
 
 Launchers may deal either electromagnetic or explosive damage.  Damage from launchers is spread across targets in their area of effect, dividing damage into separate chunks before affecting a robot, where each chunk selects its own target part (though they may overlap). Launchers also suffer from damage falloff: targets at the edge of the area of effect will sustain less damage then targets near the center. Explosive launchers carry high salvage penalties and will tend to destabilize hit terrain. Electromagnetic launchers can initiate chain reactions in power components attached to [[Cogmind]] or on the ground and disrupt hit components or robot cores.
 
-[[Heading:2]]Impact Weapons[[/Heading]]
+[[Heading:2]][[Impact Weapons]][[/Heading]]
 
 Impact melee weapons have a damage-equivalent chance to cause knockback, with a +/-10% per size class (T/S/M/L/H) difference between attacker and target. Targets knocked into another robot may also damage and displace it. A robot hit by another displaced robot has a chance to itself be displaced and sustain damage, where the chance equals the original knockback chance further modified by +/-10% per size class difference between the blocking robot and the knocked back robot, and the resulting damage equals the original damage inflicted by the weapon after applying the +10% robot analysis damage modifier if applicable, further divided by the blocker size class if that class is greater than 1 (where Medium = 2, and so on).
 
 Impact weapons ignore relative coverage when determining which components to affect, and are therefore effective at destroying fragile systems regardless of armor and other protection. By ignoring coverage, there is an equal chance for an attack to hit any given part, where each slot of a multislot part also has a separate and equivalent chance to be hit. A target's core also counts as one slot for that purpose. In addition, for every component crushed by an impact, its owner's system is significantly corrupted (+25-150%), though electromagnetic resistance can help mitigate this effect.
 
-[[Heading:2]]Slashing Weapons[[/Heading]]
+[[Heading:2]][[Slashing Weapons]][[/Heading]]
 
 Slashing melee weapons are generally very damaging, and most are also capable of severing components from a target without destroying them.
 
-[[Heading:2]]Piercing Weapons[[/Heading]]
+[[Heading:2]][[Piercing Weapons]][[/Heading]]
 
-Piercing melee weapons inflict less collateral damage, but are more likely to hit a robot's core, and get double the melee momentum damage bonus.
+Piercing melee weapons inflict less collateral damage, but are more likely to hit a robot's core, and get double the melee momentum damage bonus. The core exposure bonus is 8%, the same as an [[Exp. Core Analyzer]]
 
-[[Heading:2]]Special Weapons and Special Melee Weapons[[/Heading]]
+[[Heading:2]][[Special Weapons]] and [[Special Melee Weapons]][[/Heading]]
 
-Special weapons are usually intended to serve some utility rather than directly deal damage.`}],Locations:Be,Other:We};function z({activeEntry:e,entry:a}){return e===a?o.jsx("span",{style:{fontWeight:"bold"},children:a.name}):a.fakeGroup?o.jsx("span",{children:a.name}):o.jsx(q,{href:`/${R(a.name)}`,children:a.name})}function le({activeEntry:e,childEntries:a}){return a.map(t=>o.jsx("li",{children:o.jsx(z,{activeEntry:e,entry:t})},t.name))}function qe({activeEntry:e,groupEntry:a,spoiler:t}){return a.extraData.map(i=>{const n=i.extraData.filter(r=>T(r.spoiler,t));if(n.length!==0)return o.jsxs("tr",{children:[o.jsx("th",{children:o.jsx(z,{activeEntry:e,entry:i})}),o.jsx("td",{children:o.jsx("ul",{children:o.jsx(le,{activeEntry:e,childEntries:n})})})]},i.name)})}function he({activeEntry:e,groupEntry:a,spoiler:t}){if(a.type==="Bot Supergroup"||a.type==="Part Supergroup")return o.jsx(qe,{activeEntry:e,groupEntry:a,spoiler:t});const i=a.extraData.filter(n=>T(n.spoiler,t));return o.jsx("tr",{children:o.jsx("td",{children:o.jsx("ul",{children:o.jsx(le,{activeEntry:e,childEntries:i})})})})}function U({activeEntry:e,groupEntry:a,setShow:t,show:i}){return o.jsx("tr",{children:o.jsx("td",{colSpan:2,children:o.jsxs("div",{children:[o.jsx("div",{children:o.jsx(z,{activeEntry:e,entry:a})}),o.jsx(Oe,{setShow:t,show:i})]})})})}function Ue({activeEntry:e,groupEntry:a,spoiler:t}){function i(s,d){if(d.type==="Bot Group"||d.type==="Bot Supergroup"||d.type==="Part Group"||d.type==="Part Supergroup"||d.type==="Other"){const c=d.extraData;for(const h of c)if(h===s||i(s,h))return!0}return!1}const[n,r]=S.useState(e===a||i(e,a));function l(s){if(s.type==="Bot Group"||s.type==="Bot Supergroup"||s.type==="Part Group"||s.type==="Part Supergroup"||s.type==="Other"){for(const d of s.extraData)if(l(d))return!0}else if(T(s.spoiler,t))return!0;return!1}if(l(a))return o.jsx("table",{className:"wiki-group-infobox",children:o.jsxs("tbody",{children:[o.jsx(U,{activeEntry:e,groupEntry:a,setShow:r,show:n}),n&&o.jsx(he,{activeEntry:e,groupEntry:a,spoiler:t})]})})}function Oe({setShow:e,show:a}){return o.jsx(C,{className:"wiki-infobox-show-hide-button",onClick:()=>e(!a),children:a?"Hide":"Show"})}function J({activeEntry:e,groupEntry:a,spoiler:t}){const[i,n]=S.useState(e===a||e.parentEntries.includes(a)&&(a.type==="Bot Group"||a.type==="Bot Supergroup"||a.type==="Part Group"||a.type==="Part Supergroup"||a.type==="Other"));return a.hasSupergroupChildren?o.jsxs(o.Fragment,{children:[o.jsx("table",{className:"wiki-group-infobox wiki-group-infobox-supergroup",children:o.jsx("tbody",{children:o.jsx(U,{activeEntry:e,groupEntry:a,setShow:n,show:i})})}),i&&a.extraData.map(r=>o.jsx(Ue,{activeEntry:e,groupEntry:r,spoiler:t},r.name))]}):o.jsx("table",{className:"wiki-group-infobox",children:o.jsxs("tbody",{children:[o.jsx(U,{activeEntry:e,groupEntry:a,setShow:n,show:i}),i&&o.jsx(he,{activeEntry:e,groupEntry:a,spoiler:t})]})})}function de({heading:e}){const a=e.children.length>0&&o.jsx("ul",{children:e.children.map((t,i)=>o.jsx(de,{heading:t},i))});return o.jsxs("li",{children:[o.jsx("a",{href:`#${e.id}`,children:e.text}),a]})}function je({headings:e}){if(e.length<3)return;const a=[],t=[];for(const i of e){let n=a.findIndex(l=>l.indent===i.indent-1);n===-1&&(n=a.findIndex(l=>l.indent<i.indent));const r={children:[],id:i.id,indent:i.indent,text:i.text};n>=0?a[n].children.push(r):t.push(r),a.unshift(r)}return o.jsx("div",{className:"wiki-table-of-contents",children:o.jsxs("details",{children:[o.jsx("summary",{children:"Table of Contents"}),o.jsx("ul",{children:t.map((i,n)=>o.jsx(de,{heading:i},n))})]})})}class k{constructor(a,t,i,n,r,l,s,d,c,h,p){this.allowHeadingLinks=a,this.allEntries=t,this.botData=i,this.errors=n,this.headings=r,this.images=l,this.inSpoiler=s,this.initialContent=d,this.index=0,this.inlineOnly=c,this.itemData=h,this.output=[],this.spoiler=p}static Clone(a){return new k(a.allowHeadingLinks,a.allEntries,a.botData,a.errors,a.headings,a.images,a.inSpoiler,a.initialContent,a.inlineOnly,a.itemData,a.spoiler)}}function Ze(e){const a=/\[\[([^\]:]*)(?::([^\]]*))?\]\]/g;let t,i="",n=0;for(;(t=a.exec(e))&&(t.index>n&&(i+=e.slice(n,t.index)),me.has(t[1].replace("/",""))||(t[1].includes("|")?i+=t[1].slice(t[1].indexOf("|")+1):i+=t[1]),n=t.index+t[0].length,!(n>=e.length)););n<e.length&&(i+=e.slice(n));const r=ce(i);return{text:i,id:r}}function ce(e){return e.replaceAll(" ","_").replaceAll(/[^\w-]/g,"").toLowerCase()}function Ve({spoiler:e}){let a,t,i;return e==="None"?(a="no-spoiler-info-button",t="No Spoiler",i="This page has no spoiler-related content."):e==="Spoiler"?(a="spoiler-info-button",t="Spoiler",i="This page relates to mild spoiler-related content. Spoiler-tier content primarily includes midgame Factory and Research branch maps."):(a="redacted-info-button",t="Redacted",i="This page relates to the highest levels of spoiler-related content. Redacted-tier includes well hidden midgame maps like L, S7, and FRG, as well as extended endgame maps C and A0."),o.jsx(ue,{className:a,tooltipText:i,children:t})}function ze(e,a,t,i,n,r){const l=e.content.replace(/([^[])\[([\w/]*)\]/g,(p,m,g)=>`${m}{{${g}}}`),s=new k(!0,a,r,[],[],new Set,!1,l,"All",n,t);H(s,void 0);const d=[e.name];for(const p of e.alternativeNames)d.push(p);const c=d.join("/");let h=A(s.output,!1);return h===void 0&&(h=o.jsx("p",{children:"This page is a stub. Please consider contributing."})),{node:o.jsxs(o.Fragment,{children:[o.jsxs("h1",{className:"wiki-emphasized-heading",children:[c,o.jsx(O,{href:"#"}),o.jsx(Ve,{spoiler:e.spoiler})]}),o.jsx(je,{headings:s.headings}),h]}),errors:s.errors,images:s.images}}const Qe=/(\[\[Spoiler\]\])(.*?)(\[\[\/Spoiler\]\])/s,Xe=/(\[\[Redacted\]\])(.*?)(\[\[\/Redacted\]\])/s,_e=/\[\[Image\]\](.*?)\[\[\/Image\]\]/s;function Ye(e,a){function t(i,n){let r;do r=i.exec(e),r!==null&&(T(n,a)?e=e.substring(0,r.index)+r[2]+e.substring(r.index+r[0].length):e=e.substring(0,r.index)+e.substring(r.index+r[0].length));while(r!==null)}return t(Qe,"Spoiler"),t(Xe,"Redacted"),e=e.replace(_e,""),e}function F(e,a,t,i){let n;if(a.type==="Bot"){const r=a.extraData;n=o.jsx(Ie,{bot:r,linkTarget:i,text:t})}else if(a.type==="Location"){const r=a.extraData;n=o.jsx(De,{linkTarget:i,location:r,text:t})}else if(a.type==="Part"){const r=a.extraData;n=o.jsx(Re,{item:r,linkTarget:i,text:t})}else n=o.jsx(se,{to:i||`/${R(a.name)}`,children:t});return!T(a.spoiler,e.spoiler)&&!e.inSpoiler&&(n=o.jsx("span",{className:"spoiler-text spoiler-text-multiline",children:n})),n}function A(e,a,t=!1,i=!1){if(e.length===0)return;function n(s,d){switch(s.parentElement){case"none":return o.jsx(S.Fragment,{children:s.groupNodes},d);case"p":return o.jsx("p",{children:s.groupNodes},d);case"spoiler-p":return o.jsx("p",{children:o.jsx("span",{className:"spoiler-text spoiler-text-multiline",children:s.groupNodes})},d);case"spoiler-span":return o.jsx("span",{className:"spoiler-text spoiler-text-multiline",children:s.groupNodes},d)}}const r=[];let l;t&&(l={groupNodes:[],parentElement:"none"},r.push(l)),a&&i&&(e[0].groupType==="Grouped"?(l={groupNodes:[],parentElement:"spoiler-span"},r.push(l)):(l={groupNodes:[],parentElement:"none"},r.push(l)));for(const s of e)s.node!==""&&(l===void 0&&s.groupType==="Grouped"&&s.node!==void 0&&(l={groupNodes:[],parentElement:a?"spoiler-p":"p"},r.push(l)),(s.groupType==="Separator"||s.groupType==="Individual")&&(l=void 0),s.node!==void 0&&(l===void 0?r.push({groupNodes:[o.jsx(S.Fragment,{children:s.node},0)],parentElement:s.groupType==="Grouped"?"p":"none"}):l.groupNodes.push(o.jsx(S.Fragment,{children:s.node},l.groupNodes.length))));return r.map((s,d)=>n(s,d))}function Ke(e,a,t,i,n){const r=ze(e,a,t,!1,i,n);if(r.errors.length>0){console.log(`Errors while parsing ${e.name}`);for(const s of r.errors)console.log(`Parse error: ${s}`)}let l=[];if(e.parentEntries.length>0){let s=function(c){for(const h of c.parentEntries.values())h.parentEntries.length===0?d.add(h):s(h)};const d=new Set;s(e),l=Array.from(d.values()).sort((c,h)=>c.name.localeCompare(h.name)).map((c,h)=>o.jsx(J,{activeEntry:e,groupEntry:c,spoiler:t},h))}else(e.type==="Bot Group"||e.type==="Bot Supergroup"||e.type==="Part Group"||e.type==="Part Supergroup"||e.type==="Other")&&e.extraData.length>0&&l.push(o.jsx(J,{activeEntry:e,groupEntry:e,spoiler:t},0));return r.node=o.jsxs(o.Fragment,{children:[r.node,l]}),r}function Je(e,a){e.index+=a[0].length;const t=[];for(const n of e.allEntries.entries()){const r=n[0],l=n[1];if(l.type!=="Location"||r!=l.name)continue;const s=l.extraData;t.push(o.jsxs("tr",{children:[o.jsx("td",{children:F(e,l,s.name.replace(" (Location)",""))}),o.jsx("td",{children:s.branch?"Branch":"Main"}),o.jsx("td",{children:s.minDepth===s.maxDepth?s.minDepth:`${s.minDepth} to ${s.maxDepth} ${s.multipleDepths?"":"(Only at one depth per run)"}`})]},r))}const i=o.jsx("table",{className:"wiki-table",children:o.jsxs("tbody",{children:[o.jsxs("tr",{children:[o.jsx("th",{children:"Location Name"}),o.jsx("th",{children:"Main Floor/Branch"}),o.jsx("th",{children:"Depths"})]}),t]})});e.output.push({groupType:"Individual",node:i})}function $e(e,a){const t=a.index+a[0].length,i=k.Clone(e);i.index=t,i.inlineOnly="InlineOnly",H(i,"/B"),e.index=i.index;const n=o.jsx("b",{children:A(i.output,e.inSpoiler,!0)});e.output.push({groupType:"Grouped",node:n})}const et=new Map([["Name",{}],["Class",{}],["Size",{}],["Profile",{}],["Rating",{}],["Tier",{}],["Threat",{}],["Value",{isNumber:!0}],["Energy Generation",{isNumber:!0}],["Heat Dissipation",{isNumber:!0}],["Visual Range",{}],["Memory",{}],["Spot Percent",{}],["Movement",{}],["Core Integrity",{isNumber:!0}],["Core Exposure",{isNumber:!0}],["Salvage Potential",{}],["Inventory Size",{}],["Armament",{isArmament:!0}],["Armament Option",{isArmamentOption:!0}],["Components",{isComponents:!0}],["Components Option",{isComponentsOption:!0}],["Description",{}]]);function tt(e,a){function t(c,h){return h!==void 0?h:c[0].toLowerCase()+c.substring(1).replaceAll(" ","")}const i=/\[\[\/BotDetails\]\]/.exec(e.initialContent.substring(e.index));if(i===null){b(e,"Found bot details tag without close tag"),e.index+=a[0].length;return}const n=e.index+a[0].length,r=n+i.index-a[0].length,l=e.initialContent.substring(n,r).split("||"),s={armament:[],armamentData:[],armamentOptionData:[],armamentString:"",categories:[],class:"",componentData:[],componentOptionData:[],components:[],componentsString:"",coreCoverage:0,coreExposure:0,coreIntegrity:0,customBot:!0,description:"",energyGeneration:0,heatDissipation:0,immunities:[],immunitiesString:"",inventorySize:"1",locations:[],memory:"",movement:"",name:"",profile:"",rating:"",salvageHigh:0,salvageLow:0,salvagePotential:"",size:"Medium",speed:0,spoiler:"None",spotPercent:"",threat:"",tier:"",totalCoverage:0,traits:[],traitsString:"",value:0,visualRange:"16"};for(const c of l){const h=c.split("|"),p=h[0].trim();if(h.length===1){b(e,`Bot data category ${p} has no value`);continue}const m=et.get(p);if(m===void 0){b(e,`Bot data category ${p} is not expected`);continue}let g=h[1].trim();if(m.isNumber){if(g=oe(g),g===void 0){b(e,`Bot data category ${p} has invalid number ${h[1]}`);continue}if(g===0)continue}else if(m.isArmament||m.isComponents||m.isArmamentOption||m.isComponentsOption){if(h.shift(),h.length%2===1){b(e,`Bot data category ${p} has mismatched parts and part numbers`);continue}const f=[];for(let u=0;u<h.length;u+=2){const w=h[u].trim();let y=ye(h[u+1]);y===void 0&&(b(e,`Bot data category ${p} item ${w} has invalid number`),y=1);const v={coverage:0,integrity:0,name:w,number:y};m.isArmament?s.armamentData.push(v):m.isComponents?s.componentData.push(v):f.push(v)}m.isArmamentOption?s.armamentOptionData.push(f):m.isComponentsOption&&s.componentOptionData.push(f);continue}s[t(p,m==null?void 0:m.key)]=g}if(s.rating===""){let c=0;const h=[];h.push(...s.armamentData),h.push(...s.componentData),h.push(...s.armamentOptionData.map(p=>p[0])),h.push(...s.componentOptionData.map(p=>p[0]));for(const p of h){const m=e.itemData.tryGetItem(p.name);m!==void 0&&(c+=m.rating*p.number)}c+=I(s.tier,1),s.rating=c.toString()}e.index=r+i[0].length;const d=o.jsx("div",{className:"wiki-infobox wiki-infobox-centered",children:o.jsx(Z,{bot:s})});e.output.push({groupType:"Individual",node:d})}function at(e,a){var n;const t=new Set,i=new Map;for(const r of e.allEntries.values()){if(r.type!=="Bot Group"&&r.type!=="Bot Supergroup"||!T(r.spoiler,e.spoiler)||t.has(r))continue;t.add(r);const l=new Set;if(r.type==="Bot Group"){for(const p of e.allEntries.values())if((n=p.parentEntries)!=null&&n.includes(r)){const m=e.botData.getBot(p.name);l.add(be(m))}}const s=o.jsx(o.Fragment,{children:Array.from(l.values()).map(p=>o.jsx("img",{className:"wiki-bot-group-image",src:p},p))}),d=new k(!1,e.allEntries,e.botData,e.errors,e.headings,e.images,!1,r.content,"All",e.itemData,e.spoiler);H(d,void 0);const c=d.output.findIndex(p=>p.groupType==="Separator");c!==-1&&d.output.splice(c);const h=R(r.name);i.set(r.name,o.jsxs(o.Fragment,{children:[o.jsxs("h2",{id:h,className:"wiki-heading wiki-bot-group-heading",children:[F(e,r,r.name),s,o.jsx(O,{href:`#${h}`})]}),A(d.output,!1)]}))}for(const r of Array.from(i.keys()).sort())e.output.push({groupType:"Individual",node:i.get(r)});e.index=a.index+a[0].length}function nt(e,a){let t=a[2];(t===void 0||t==="")&&(b(e,"Color tag with no color, has been marked cyan"),t="cyan");const i=a.index+a[0].length,n=k.Clone(e);n.index=i,n.inlineOnly="InlineOnly",H(n,"/Color"),e.index=n.index;const r=o.jsx("span",{style:{color:t},children:A(n.output,e.inSpoiler,!0)});e.output.push({groupType:"Grouped",node:r})}function ot(e,a){const t=e.initialContent.indexOf("[[/Comment]]",a.index);e.index=t+12}function it(e,a){const t=[],i=new Set;for(const n of e.allEntries.values()){if(i.has(n)||n.content.length<20||!T(n.spoiler,e.spoiler))continue;const r=o.jsx("li",{children:F(e,n,n.name)},n.name);i.add(n),t.push({node:r,name:n.name})}t.sort((n,r)=>n.name.localeCompare(r.name)),e.output.push({groupType:"Individual",node:o.jsx("ul",{className:"wiki-list",children:t.map(n=>n.node)})}),e.index=a.index+a[0].length}function rt(e,a){const t=a.index+a[0].length,i=k.Clone(e);i.index=t,i.inlineOnly="InlineWithNewlines",H(i,"/GameText"),e.index=i.index;const n=o.jsx("span",{className:"wiki-game-text",children:A(i.output,e.inSpoiler,!0)});e.output.push({groupType:"Grouped",node:n})}function $(e,a){const t=/\[\[\/(Gallery|FanartGallery)\]\]/.exec(e.initialContent.substring(e.index));if(t===null){b(e,"Found gallery tag without close tag"),e.index+=a[0].length;return}const i=t[1]==="FanartGallery",n=e.index+a[0].length,r=n+t.index-a[0].length,l=E(e.initialContent.substring(n,r));if(l.length<2){b(e,"Found gallery action without enough images/captions, there should always be an equal number of images and captions"),e.index=r+t[0].length;return}l.length%2!==0&&b(e,"Found gallery action without equal number of links/captions");const s=[];for(let c=0;c<Math.floor(l.length/2);c++){let h=e.inSpoiler,p=l[2*c];const m=l[2*c+1],g=/\[\[([^\]]*)]\]([^[]*)\[\[\/([^\]]*)\]\]/.exec(p);if(g)if(g[1]===g[3])if(g[1]==="Spoiler"||g[1]==="Redacted"){const y=g[1];h=!T(y,e.spoiler),p=g[2]}else b(e,`Found unsupported tag in ${p}, should only be Spoiler/Redacted here`);else b(e,`Found mismatched start/end tags in image name ${p}, should only be Spoiler/Redacted`);e.images.add(p);const f=k.Clone(e);f.inlineOnly="InlineWithNewlines",f.initialContent=m,H(f,void 0);const u=A(f.output,e.inSpoiler),w=L(`${p}`,"wiki_images/");s.push(o.jsxs("div",{children:[i?u:void 0,o.jsx("div",{children:o.jsxs("a",{className:h?"spoiler-image":void 0,href:w,target:"_blank",rel:"noreferrer",children:[h&&o.jsx("div",{className:"wiki-spoiler-image-text",children:"SPOILER"}),o.jsx("img",{src:w,onError:y=>{y.target.src=L("wiki_images/Image Not Found.png")}})]})}),i?void 0:u]},c))}const d=o.jsx("div",{className:i?"wiki-fanart-gallery-images":"wiki-gallery-images",children:s});e.output.push({groupType:"Individual",node:d}),e.index=r+t[0].length}function st(e,a){const t=/\[\[\/Hacks\]\]/.exec(e.initialContent.substring(e.index));if(t===null){b(e,"Found hacks tag without close tag"),e.index+=a[0].length;return}const i=e.index+a[0].length,n=i+t.index-a[0].length,r=e.initialContent.substring(i,n);e.index=n+t[0].length;const l=Ge.find(s=>s.Name===r);if(l===void 0)b(e,"Found hacks tag with invalid machine type");else{const s=o.jsx("table",{className:"wiki-table",children:o.jsxs("tbody",{children:[o.jsxs("tr",{children:[o.jsx("th",{children:"Hack name"}),o.jsx("th",{children:"Description"}),o.jsx("th",{children:"Base success rate"})]}),l.Hacks.map((d,c)=>o.jsxs("tr",{className:T(d.SpoilerLevel||"None",e.spoiler)?"":"spoiler-text",children:[o.jsx("td",{className:"wiki-cell-nowrap",children:o.jsx("p",{children:d.Name})}),o.jsx("td",{children:o.jsx("p",{children:d.Description})}),o.jsx("td",{className:"wiki-cell-center-align",children:o.jsxs("p",{children:[d.BaseChance,"%"]})})]},c))]})});e.output.push({groupType:"Individual",node:s})}}function lt(e,a){let t=a[2];t===void 0?t="1":t!=="1"&&t!=="2"&&t!=="3"&&t!=="4"&&(b(e,`Found bad heading type ${t}, should be 1, 2, 3, or 4`),t="1");const i=a.index+a[0].length,n=k.Clone(e);n.index=i,n.inlineOnly="InlineOnly",H(n,"/Heading"),e.index=n.index;let r=A(n.output,e.inSpoiler,!0);const{text:l,id:s}=Ze(e.initialContent.slice(i,e.index-12));e.allowHeadingLinks&&(e.headings.find(c=>c.id===s)?b(e,`Found duplicate heading ID ${s}`,a.index):e.headings.push({id:s,indent:parseInt(t),text:l})),e.inSpoiler&&(r=o.jsx("span",{className:"spoiler-text spoiler-text-multiline",children:r}));const d=e.allowHeadingLinks&&o.jsx(O,{href:`#${s}`});t==="1"?e.output.push({groupType:"Individual",node:o.jsxs("h2",{id:s,className:"wiki-emphasized-heading",children:[r,d]})}):t==="2"?e.output.push({groupType:"Individual",node:o.jsxs("h3",{id:s,className:"wiki-heading",children:[r,d]})}):t==="3"?e.output.push({groupType:"Individual",node:o.jsxs("h4",{id:s,className:"wiki-heading",children:[r,d]})}):e.output.push({groupType:"Individual",node:o.jsxs("h5",{id:s,className:"wiki-heading",children:[r,d]})})}function ht(e,a){const t=a.index+a[0].length,i=k.Clone(e);i.index=t,i.inlineOnly="InlineOnly",H(i,"/I"),e.index=i.index;const n=o.jsx("i",{children:A(i.output,e.inSpoiler,!0)});e.output.push({groupType:"Grouped",node:n})}function dt(e,a){const t=/\[\[\/Image\]\]/.exec(e.initialContent.substring(e.index));if(t===null){b(e,`Found image tag "${a[0]}" without close tag`),e.index+=a[0].length;return}const i=e.index+a[0].length,n=i+t.index-a[0].length,r=E(e.initialContent.substring(i,n)),l=r[0];e.images.add(l);let s;if(r.length===1)s="";else{r.length>2&&b(e,`Found more than 1 | in image tag ${a[0]}`);const c=k.Clone(e);c.initialContent=r[1],c.inlineOnly="InlineWithNewlines",H(c,void 0),s=A(c.output,e.inSpoiler)}const d=L(`${l}`,"wiki_images/");e.output.push({groupType:"Individual",node:o.jsxs("div",{className:"wiki-sidebar-image",children:[o.jsxs("a",{className:e.inSpoiler?"spoiler-image":void 0,href:d,target:"_blank",rel:"noreferrer",children:[e.inSpoiler&&o.jsx("div",{className:"wiki-spoiler-image-text",children:"SPOILER"}),o.jsx("img",{src:d,onError:c=>{c.target.src=L("wiki_images/Image Not Found.png")}})]}),s]})}),e.index=n+t[0].length}const ct=new Map([["Image Name",{}],["Name",{}],["Type",{}],["Slot",{}],["Size",{isNumber:!0}],["Rating",{isNumber:!0}],["Rating Category",{}],["Integrity",{isNumber:!0}],["Coverage",{isNumber:!0}],["Hackable",{isBoolean:!0}],["Mass",{isNumber:!0}],["Description",{}],["Energy Upkeep",{isNumber:!0}],["Matter Upkeep",{isNumber:!0}],["Heat Generation",{isNumber:!0}],["Energy Generation",{isNumber:!0}],["Energy Storage",{isNumber:!0}],["Power Stability",{isNumber:!0}],["Time Per Move",{isNumber:!0}],["Drag",{isNumber:!0}],["Mod Per Extra",{isNumber:!0}],["Siege",{}],["Energy Per Move",{isNumber:!0}],["Heat Per Move",{isNumber:!0}],["Support",{isNumber:!0}],["Penalty",{isNumber:!0}],["Burnout",{}],["Range",{isNumber:!0}],["Shot Energy",{isNumber:!0}],["Shot Matter",{isNumber:!0}],["Shot Heat",{isNumber:!0}],["Recoil",{isNumber:!0}],["Targeting",{isNumber:!0}],["Delay",{isNumber:!0}],["Overload Stability",{isNumber:!0}],["Arc",{isNumber:!0}],["Waypoints",{isNumber:!0}],["Projectile Count",{isNumber:!0}],["Explosion Radius",{isDamage:!0}],["Damage",{isDamage:!0}],["Explosion Damage",{isExplosionDamage:!0}],["Falloff",{isNumber:!0}],["Chunks",{isChunks:!0}],["Damage Type",{}],["Explosion Type",{}],["Critical",{isCritical:!0}],["Penetration",{}],["Spectrum",{}],["Explosion Spectrum",{}],["Disruption",{isNumber:!0}],["Explosion Disruption",{isNumber:!0}],["Heat Transfer",{}],["Explosion Heat Transfer",{}],["Salvage",{isNumber:!0}],["Explosion Salvage",{isNumber:!0}]]);function mt(e,a){function t(c,h){return h!==void 0?h:c[0].toLowerCase()+c.substring(1).replaceAll(" ","")}const i=/\[\[\/ItemDetails\]\]/.exec(e.initialContent.substring(e.index));if(i===null){b(e,"Found item details tag without close tag"),e.index+=a[0].length;return}const n=e.index+a[0].length,r=n+i.index-a[0].length,l=e.initialContent.substring(n,r).split("||"),s={slot:"N/A",hackable:!1,name:"Item Name",noPrefixName:"",fullName:"",type:"Item",rating:1,ratingString:"",ratingCategory:"None",categories:[],size:1,integrity:0,noRepairs:!1,index:0,penalty:0,projectileCount:1,range:0,spoiler:"None",support:0,timePerMove:0,customItem:!0};for(const c of l){const h=c.split("|"),p=h[0].trim();if(h.length===1){b(e,`Item data category ${p} has no value`);continue}const m=ct.get(p);if(m===void 0){b(e,`Item data category ${p} is not expected`);continue}let g=h[1].trim();if(m.isNumber){if(g=oe(g),g===void 0){b(e,`Item data category ${p} has invalid number ${h[1]}`);continue}if(g===0)continue}else if(m.isBoolean)g==="True"||g==="true"?g=!0:(g==="False"||g==="false"||b(e,`Item data category ${p} should be true or false but is neither`),g=!1);else if(m.isDamage||m.isExplosionDamage){const f=g.split("-");let u,w;f.length===1?(w=I(f[0],0),u=w):(w=I(f[0],0),u=I(f[1],0)),m.isDamage?(s.damageMin=w,s.damageMax=u):(s.explosionDamageMin=w,s.explosionDamageMax=u)}else if(m.isCritical){const f=/(\d*)% (\w*)/.exec(g);f!==null?(s.critical=I(f[1],0),s.criticalType=f[2]):b(e,`Item data category ${p} has invalid format. Should be like "x% type"`);continue}else if(m.isChunks){const f=g.split("-");let u,w;f.length===1?(u=I(f[0],0),w=u):(u=I(f[0],0),w=I(f[1],0)),s.maxChunks=w,s.minChunks=u;continue}s[t(p,m==null?void 0:m.key)]=g}e.index=r+i[0].length;const d=o.jsx("div",{className:"wiki-infobox wiki-infobox-centered",children:o.jsx(V,{item:s})});e.output.push({groupType:"Individual",node:d})}function pt(e,a){const t=/\[\[\/List\]\]/.exec(e.initialContent.substring(e.index));if(t===null){b(e,"Found list tag without close tag"),e.index+=a[0].length;return}let i=!1;a[2]==="Ordered"?i=!0:a[2]!==void 0&&a[2]!=="Unordered"&&b(e,`Found list with invalid type ${a[2]}, type should be "Ordered", "Unordered", or empty (defaults to Unordered)`);const n=e.index+a[0].length,r=n+t.index-a[0].length,l=E(e.initialContent.substring(n,r)),s=[];for(let c=0;c<l.length;c++){const h=l[c].trim(),p=k.Clone(e);p.initialContent=h,p.inlineOnly="InlineWithNewlines",H(p,void 0);const m=A(p.output,e.inSpoiler,!0,!1);e.inSpoiler?s.push(o.jsx("li",{children:o.jsx("span",{className:"spoiler-text spoiler-text-multiline",children:m})},c)):s.push(o.jsx("li",{children:m},c))}const d=i?o.jsx("ol",{className:"wiki-list",children:s}):o.jsx("ul",{className:"wiki-list",children:s});e.output.push({groupType:"Individual",node:d}),e.index=r+t[0].length}function ee(e,a){function t(){return a[0].includes("http")}let i;t()&&a[2]!==void 0?i=(a[1]+":"+a[2]).replace("{{","[").replace("}}","]").split("|"):i=a[1].replace("{{","[").replace("}}","]").split("|");let n=i[0],r=n.split("#")[0];i.length>1&&(r=i[1],i.length>2&&b(e,"Too many | in link"));let l;const s=n.split("#");if(s.length>1&&e.allEntries.get(s[0])!==void 0?(l=e.allEntries.get(s[0]),n=`/${R(s[0])}#${ce(s[1])}`,i.length>2&&b(e,"Too many # in link")):(l=e.allEntries.get(n),l!==void 0&&(n=`/${R(n)}`)),l!==void 0){const d=F(e,l,r,n);e.output.push({groupType:"Grouped",node:d})}else n.startsWith("~/")?e.output.push({groupType:"Grouped",node:o.jsx(se,{to:`~/${fe}/${n.slice(2)}`,children:r})}):t()?e.output.push({groupType:"Grouped",node:o.jsx("a",{className:"wiki-link",href:n,children:r})}):(b(e,`Bad link to page "${n}" that doesn't exist`),e.output.push({groupType:"Grouped",node:n}));e.index+=a[0].length}function gt(e,a){const t=/\[\[\/Lore\]\]/.exec(e.initialContent.substring(e.index));if(t===null){b(e,`Found lore tag "${a[0]}" without close tag`),e.index+=a[0].length;return}const i=e.index+a[0].length,n=i+t.index-a[0].length,r=E(e.initialContent.substring(i,n)),l=r[0],s=r[1];if(e.index=n+t[0].length,r.length!==2){b(e,"Lore entry should have a group and entry name"),e.index+=a[0].length;return}const d=Ne.find(h=>h.Name===l);if(!d){b(e,`Lore group name ${l} is not valid, see lore.json for valid groups`);return}const c=d.Entries.find(h=>h["Name/Number"]===s);if(c===void 0){b(e,`Lore group name ${l} doesn't contain entry with name/number ${s}`);return}e.output.push({groupType:"Separator",node:void 0}),l=="0b10 Records"?(e.output.push({groupType:"Grouped",node:o.jsxs("span",{className:"wiki-game-text",children:[">Query(",s,")"]})}),e.output.push({groupType:"Separator",node:void 0})):l=="WAR.Sys Records"&&(e.output.push({groupType:"Grouped",node:o.jsxs("span",{className:"wiki-game-text",children:['Intel "',s,'"']})}),e.output.push({groupType:"Separator",node:void 0})),e.output.push({groupType:"Grouped",node:o.jsx("span",{className:"wiki-game-text",children:c.Content})}),e.output.push({groupType:"Separator",node:void 0})}const me=new Map([["AllLocations",Je],["B",$e],["BotDetails",tt],["BotGroups",at],["Color",nt],["Comment",ot],["FanartGallery",$],["GameText",rt],["Gallery",$],["Hacks",st],["Heading",lt],["I",ht],["Image",dt],["ItemDetails",mt],["List",pt],["Lore",gt],["NonEmptyPages",it],["Spoiler",te],["SpoilerHidden",ae],["Sub",ut],["Sup",ft],["Redacted",te],["RedactedHidden",ae],["Table",yt],["TooltipText",bt]]);function H(e,a){const t=/\[\[([^\]:]*)(?::([^\]]*))?\]\]/g;function i(l){return l.replaceAll("{{","[").replaceAll("}}","]")}let n;for(;n=t.exec(e.initialContent);){if(e.index>n.index)continue;let l;for(;(l=e.initialContent.indexOf(`
-`,e.index))!==-1&&l<n.index;)e.inlineOnly==="InlineOnly"?b(e,"Newlines are not supported inside the current action",e.index):(e.output.push({groupType:"Grouped",node:i(e.initialContent.substring(e.index,l))}),e.output.push({groupType:"Separator",node:void 0})),e.index=l+1;if(e.index<n.index&&(e.output.push({groupType:"Grouped",node:i(e.initialContent.substring(e.index,n.index))}),e.index=n.index),n[1].startsWith("/"))if(n[1]===a){e.index+=n[0].length;return}else b(e,`Found mismatched end tag ${n[1]} with expected tag ${a}`),e.index+=n[0].length;else{const s=me.get(n[1]);e.inlineOnly==="InlineOnly"||e.inlineOnly==="InlineWithNewlines"?n[1]==="Spoiler"||n[1]==="Redacted"||n[1]==="B"||n[1]==="I"||n[1]==="GameText"||n[1]==="Sub"||n[1]==="Sup"||n[1]==="Link"||n[1]==="Color"||n[1]==="Comment"||n[1]==="TooltipText"?s(e,n):s!==void 0?b(e,`Found action tag ${n[1]} in scope where only links and inline tags like bold/italics are allowed`):ee(e,n):s!==void 0?s(e,n):ee(e,n)}}let r;for(;(r=e.initialContent.indexOf(`
-`,e.index))!==-1;)e.output.push({groupType:"Grouped",node:e.initialContent.substring(e.index,r).replace("{{","[").replace("}}","]")}),e.output.push({groupType:"Separator",node:void 0}),e.index=r+1;e.index<e.initialContent.length&&e.output.push({groupType:"Grouped",node:e.initialContent.substring(e.index).replace("{{","[").replace("}}","]")})}function te(e,a){const t=!T(a[1],e.spoiler),i=a.index+a[0].length,n=k.Clone(e);n.index=i,n.inSpoiler=t,H(n,a[1]==="Spoiler"?"/Spoiler":"/Redacted"),e.index=n.index;let r=0;for(;r<n.output.length;){let l=1;for(;r+l<n.output.length&&n.output[r+l].groupType==="Grouped";)l++;const s=A(n.output.slice(r,r+l),t,!0,!0);e.output.push({groupType:n.output[r].groupType,node:s}),r+=l}}function ae(e,a){const t=a[1]==="RedactedHidden"?"Redacted":"Spoiler",i=!T(t,e.spoiler),n=a.index+a[0].length,r=k.Clone(e);r.index=n,r.inSpoiler=e.inSpoiler,H(r,a[1]==="RedactedHidden"?"/RedactedHidden":"/SpoilerHidden"),e.index=r.index;const l=A(r.output,e.inSpoiler);i&&e.output.push({groupType:"Individual",node:l})}function ut(e,a){const t=a.index+a[0].length,i=k.Clone(e);i.index=t,i.inlineOnly="InlineOnly",H(i,"/Sub"),e.index=i.index;const n=o.jsx("sub",{children:A(i.output,e.inSpoiler,!0)});e.output.push({groupType:"Grouped",node:n})}function ft(e,a){const t=a.index+a[0].length,i=k.Clone(e);i.index=t,i.inlineOnly="InlineOnly",H(i,"/Sup"),e.index=i.index;const n=o.jsx("sup",{children:A(i.output,e.inSpoiler,!0)});e.output.push({groupType:"Grouped",node:n})}function yt(e,a){const t=/\[\[\/Table\]\]/.exec(e.initialContent.substring(e.index));if(t===null){b(e,"Found table tag without close tag"),e.index+=a[0].length;return}const i=e.index+a[0].length,n=i+t.index-a[0].length,r=E(e.initialContent.substring(i,n),"||"),l=[];let s=!0,d=0;for(let h=0;h<r.length;h++){const p=r[h],m=E(p);s&&(d=m.length);const g=[];let f=0;for(let u=0;u<m.length;u++){let w=m[u],y;const v=/\[\[CellStyle:(.*?)\]\]/.exec(w);v!==null&&(v[1]==="Good"?y="wiki-cell-good":v[1]==="Neutral"?y="wiki-cell-neutral":v[1]==="Bad"?y="wiki-cell-bad":b(e,`Found invalid table cell style ${v[1]}, expected types are Good Neutral and Bad`),w=w.substring(v.index+v[0].length));let x;const N=/\[\[CellSpan:(.*?)\]\]/.exec(w);N!==null?(x=I(N[1],1),w=w.substring(N.index+N[0].length),f+=I(N[1],1)):f+=1;const G=k.Clone(e);G.initialContent=w,G.inlineOnly="InlineWithNewlines",H(G,void 0);const M=A(G.output,e.inSpoiler,!1,!1);e.inSpoiler&&(y!==void 0?y+=" spoiler-text":y="spoiler-text"),s?g.push(o.jsx("th",{className:y,colSpan:x,children:M},u)):g.push(o.jsx("td",{className:y,colSpan:x,children:M},u))}if(f!=d)for(let u=f;u<d;u++){let w="";e.inSpoiler&&(w="spoiler-text"),g.push(o.jsx("td",{className:w},u))}l.push(o.jsx("tr",{children:g},h)),s=!1}const c=o.jsx("table",{className:`wiki-table${e.inSpoiler?" spoiler-text spoiler-table":""}`,children:o.jsx("tbody",{children:l})});e.output.push({groupType:"Individual",node:c}),e.index=n+t[0].length}function bt(e,a){const t=e.initialContent.indexOf("[[/TooltipText]]"),i=e.initialContent.substring(a.index+a[0].length,t);e.index=t+16,i in K?e.output.push({groupType:"Grouped",node:K[i]}):(b(e,`Tooltip text category ${i} doesn't exist.`),e.output.push({groupType:"Grouped",node:i}))}function b(e,a,t=void 0){t===void 0&&(t=e.index);let i=e.initialContent.substring(t,t+50).replace(`
-`,"\\n");e.initialContent.length-t-50>0&&(i+="..."),e.errors.push(`${a}: section starting with "${i}"`)}function E(e,a="|"){let t=0,i=e.indexOf(a),n=e.indexOf("[[");if(i===-1)return[e];if(n===-1)return e.split(a);const r=[];let l="";for(;;){if(n===-1){const c=e.substring(t).split(a);return c[0]=l+c[0],r.concat(c)}if(i===-1)return t<e.length&&(l+=e.substring(t),r.push(l)),r;if(i<n){l+=e.substring(t,i),r.push(l),l="",t=i+a.length,i=e.indexOf(a,t);continue}l+=e.substring(t,n+2),t=n+2,n=e.indexOf("[[",t);let s=e.indexOf("]]",t),d=1;for(;d>0;){if(s===-1)return r;n!==-1&&(s===-1||n<s)?(d+=1,l+=e.substring(t,n+2),t=n+2,n=e.indexOf("[[",t)):(d-=1,l+=e.substring(t,s+2),t=s+2,s=e.indexOf("]]",t))}n=e.indexOf("[[",t),i=e.indexOf(a,t)}}function wt({allowedEntries:e,searchString:a,setSearchString:t}){const[i,n]=S.useState(!1),[r,l]=j(),s=a.toLowerCase(),d=new Set(e.filter(h=>h.toLowerCase().startsWith(s)&&a.length>1));e.filter(h=>h.toLowerCase().includes(s)&&a.length>1).forEach(h=>d.add(h));const c=Array.from(d).splice(0,20).map(h=>({value:h}));return e.find(h=>h.toLowerCase()==s)||c.unshift({value:`Search for ${a}`}),o.jsx(we,{className:"wiki-search",options:c,onInputChange:(h,p)=>{(p.action==="set-value"||p.action==="input-change")&&t(h)},onBlur:()=>{n(!1)},onFocus:()=>{n(!0)},onKeyDown:h=>{h.key==="Enter"&&a.length===1&&l(`/search/${R(a)}`)},onChange:h=>{const p=h.value;p.startsWith("Search for")?l(`/search/${R(a)}`):l(`/${R(p)}`)},inputValue:a,menuIsOpen:a.length>1&&i,placeholder:"Search Wiki"})}function Ct({editState:e,entry:a,parsingErrors:t,setEditState:i}){const n=S.useRef(null),[r,l]=Ce();if(!e.showEdit||a===void 0)return;function s(){const m={entries:[...r.entries]};let g=m.entries.find(u=>u.name===a.name);const f=n.current.value;g===void 0?g={name:a.name,content:f}:(m.entries.splice(m.entries.indexOf(g),1),g={...g,content:f}),m.entries.push(g),l(m)}const d=r.entries.find(m=>m.name===a.name),c=(d==null?void 0:d.content)||a.content;function h(m,g){const f=n.current;f.focus();const w=f.value.substring(f.selectionStart,f.selectionEnd);document.execCommand("insertText",!1,m+w+g),f.selectionStart=f.selectionStart-g.length-w.length-m.length}const p=t.length>0&&o.jsxs("div",{className:"wiki-edit-errors",children:[o.jsx("p",{children:"Parsing Errors"}),o.jsx("div",{children:t.map((m,g)=>o.jsx("p",{children:m},g))})]});return o.jsxs("div",{className:"wiki-edit-content",children:[o.jsxs("p",{children:["After editing the page, please visit the"," ",o.jsx("a",{href:"https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g",children:"spreadsheet"})," ","for instructions on how to update."]}),o.jsxs("div",{children:[o.jsx(_,{label:"Inline Content",tooltip:"Any kinds of inline content in this group can be placed anywhere where regular text can be processed. Except for Spoiler and Redacted tags, inline content can be nested with other inline content but not other top-level content. For example, Bold may be nested under Italicized text, but an Image cannot be nested under Bold Text"}),o.jsx(C,{tooltip:"Bolds any text inside the selection.",onClick:()=>h("[[B]]","[[/B]]"),children:"Bold"}),o.jsx(C,{tooltip:"Italicizes any text inside the selection.",onClick:()=>h("[[I]]","[[/I]]"),children:"Italicize"}),o.jsx(C,{tooltip:"Creates a subscript section of any text inside the selection.",onClick:()=>h("[[Sub]]","[[/Sub]]"),children:"Subscript"}),o.jsx(C,{tooltip:"Creates a superscript section of any text inside the selection.",onClick:()=>h("[[Sup]]","[[/Sup]]"),children:"Superscript"}),o.jsx(C,{tooltip:"Provides a game-text style to text inside the selection.",onClick:()=>h("[[GameText]]","[[/GameText]]"),children:"Game Text"}),o.jsx(C,{tooltip:'Provides text that matches a tooltip by the same name. For example, Tooltip Text of "Burn" shows the burn critical description.',onClick:()=>h("[[TooltipText]]","[[/TooltipText]]"),children:"Tooltip Text"}),o.jsx(C,{tooltip:"Provides a spoiler section around any text or image content nested underneath if the spoiler setting is set to None.",onClick:()=>h("[[Spoiler]]","[[/Spoiler]]"),children:"Spoiler"}),o.jsx(C,{tooltip:"Provides a spoiler section around any text or image content nested underneath if the spoiler setting is not set to Redacted.",onClick:()=>h("[[Redacted]]","[[/Redacted]]"),children:"Redacted"}),o.jsx(C,{tooltip:"Basically the opposite of Spoiler text; content is shown only if the spoiler setting is set to None.",onClick:()=>h("[[SpoilerHidden]]","[[/SpoilerHidden]]"),children:"Spoiler Hidden"}),o.jsx(C,{tooltip:"Basically the opposite of Redacted text; content is shown if the spoiler setting is not set to Redacted.",onClick:()=>h("[[RedactedHidden]]","[[/RedactedHidden]]"),children:"Redacted Hidden"}),o.jsx(C,{tooltip:"Inserts a link to the selected text. Link text may be different than the link itself by using the syntax [[Link|Link Text]].",onClick:()=>h("[[","]]"),children:"Link"}),o.jsx(C,{tooltip:"Color the selected text in the form of [[Color:Red]]Text[[/Color]]",onClick:()=>h("[[Color]]","[[/Color]]"),children:"Color"}),o.jsx(C,{tooltip:"Adds a comment for editors only that is ignored in the actual page in the form of [[Comment]]Hidden Text[[/Comment]]",onClick:()=>h("[[Comment]]","[[/Comment]]"),children:"Comment"})]}),o.jsxs("div",{children:[o.jsx(_,{label:"Top-level Content",tooltip:"Top-level content that can not typically be placed underneath other tags except for spoiler tags. Generally support all types of inline content."}),o.jsx(C,{tooltip:"Provides a large heading line with an underline containing the given text.",onClick:()=>h("[[Heading]]","[[/Heading]]"),children:"Heading 1"}),o.jsx(C,{tooltip:"Provides a slightly smaller heading line containing the given text.",onClick:()=>h("[[Heading:2]]","[[/Heading]]"),children:"Heading 2"}),o.jsx(C,{tooltip:"Provides an even smaller heading line containing the given text.",onClick:()=>h("[[Heading:3]]","[[/Heading]]"),children:"Heading 3"}),o.jsx(C,{tooltip:"Provides the smallest heading line containing the given text.",onClick:()=>h("[[Heading:4]]","[[/Heading]]"),children:"Heading 4"}),o.jsx(C,{tooltip:"Creates an image on the right side of the page with an optional caption in the form of [[Image]]Image Name.png|Image Caption[[/Image]]. May also use an external URL.",onClick:()=>h("[[Image]]","[[/Image]]"),children:"Sidebar Image"}),o.jsx(C,{tooltip:"Creates a list of images centered in the page in a list form. Images and captions should be sequentially listed, like [[Gallery]]Image 1.png|Image 1 caption|Image 2.png|Image 2 caption[[/Gallery]].",onClick:()=>h("[[Gallery]]","[[/Gallery]]"),children:"Gallery Images"}),o.jsx(C,{tooltip:"Creates a list of images centered in the page in a list form. Images and captions should be sequentially listed, like [[FanartGallery]]Image 1.png|Image 1 caption|Image 2.png|Image 2 caption[[/FanartGallery]]. Art takes up the full screen, compared to gallery where a smaller max size is allowed.",onClick:()=>h("[[FanartGallery]]","[[/FanartGallery]]"),children:"Fanart Gallery Images"}),o.jsx(C,{tooltip:"Creates a lore entry that pulls text from actual lore quotes, use Lore page as a reference.",onClick:()=>h("[[Lore]]","[[/Lore]]"),children:"Lore"}),o.jsx(C,{tooltip:"Creates an unordered (bulleted) list of items that can be separated out like [[List]]Item 1|Item 2|Item 3[[/List]].",onClick:()=>h("[[List]]","[[/List]]"),children:"Unordered List"}),o.jsx(C,{tooltip:"Creates an ordered (numbered) list of items that can be separated out like [[List:Ordered]]Item 1|Item 2|Item 3[[/List]].",onClick:()=>h("[[List:Ordered]]","[[/List]]"),children:"Ordered List"}),o.jsx(C,{tooltip:"Creates a 2-dimensional table of text items in the form of [[Table]]Column 1 Header|Column 2 header||Row 1 column 1|Row 1 column 2[[/Table]].",onClick:()=>h("[[Table]]","[[/Table]]"),children:"Table"}),o.jsx(C,{tooltip:"Creates a fake item infobox based on the provided data in the form of [[ItemDetails]]Name|XYZ||Image Name|...[[/ItemDetails]]. See the Example page for a full list of available parameters.",onClick:()=>h("[[ItemDetails]]","[[/ItemDetails]]"),children:"Item Details"}),o.jsx(C,{tooltip:"Creates a fake bot infobox based on the provided data in the form of [[BotDetails]]Name|XYZ||Class|...[[/BotDetails]]. See the Example page for a full list of available parameters.",onClick:()=>h("[[BotDetails]]","[[/BotDetails]]"),children:"Bot Details"})]}),o.jsx("textarea",{ref:n,className:"wiki-edit-text",defaultValue:c},a.name),o.jsxs("div",{className:"wiki-edit-changes-group",children:[o.jsx(C,{tooltip:"Clears any saved changes from local storage and restores the original page text. Normally, changes are saved between sessions.",className:"clear-changes-button",clickOverrideText:{tempChildren:"Cleared",tempDuration:2e3},disabled:r.entries.find(m=>m.name===a.name)===void 0,onClick:()=>{const m={entries:[...r.entries]};m.entries.splice(m.entries.findIndex(f=>f.name===a.name),1),l(m),i({...e,editText:""}),n.current.focus(),document.execCommand("selectall"),document.execCommand("delete"),document.execCommand("insertText",!1,a.content)},children:"Clear Changes"}),o.jsx(C,{tooltip:"Closes the edit pane and returns the content below to the original state if changes were previewed.",onClick:()=>{i({...e,showEdit:!1})},children:"Close"}),o.jsx(C,{tooltip:"Previews the changes made in the editor above in the page below.",className:"preview-changes-button",clickOverrideText:{tempChildren:"Updated",tempDuration:2e3},onClick:()=>{i({...e,editText:n.current.value,entry:a}),s()},children:"Preview Changes"}),o.jsx(C,{className:"copy-text-button",tooltip:"Copies the text in the editor above to the clipboard.",clickOverrideText:{tempChildren:"Copied",tempDuration:2e3},onClick:()=>{navigator.clipboard.writeText(n.current.value.replace(/\n/g,"\\n")),i({...e,modified:!1}),s()},children:"Copy Text"})]}),p]})}function vt({entry:e,parsedNode:a}){const t=e.extraData;return o.jsxs(o.Fragment,{children:[o.jsx("div",{className:"wiki-infobox",children:o.jsx(Z,{bot:t,popoversToLinks:!0})}),a]})}function St({entry:e,groupSelection:a,parsedNode:t,setGroupSelection:i,spoiler:n}){const r=e.extraData,l=S.useMemo(()=>r.filter(c=>T(c.spoiler,n)||T(c.spoiler,e.spoiler)),[n]),s=S.useMemo(()=>l.map(c=>({value:c.name})),[e]),d=(l.find(c=>c.name===a)||l[0]).extraData;return o.jsxs(o.Fragment,{children:[o.jsxs("div",{className:"wiki-infobox",children:[o.jsx("div",{className:"wiki-infobox-button-group",children:o.jsx(ie,{buttons:s,selected:a,onValueChanged:c=>{i(c)}})}),o.jsx(Z,{bot:d,popoversToLinks:!0,showWikiLink:!0})]}),t]})}function Tt({entry:e,parsedNode:a}){const t=e.extraData;return o.jsxs(o.Fragment,{children:[o.jsx("div",{className:"wiki-infobox",children:o.jsx(V,{item:t})}),a]})}function kt({entry:e,groupSelection:a,parsedNode:t,setGroupSelection:i,spoiler:n}){var p;const r=e.extraData,l=S.useMemo(()=>r.filter(m=>T(m.spoiler,n)||T(m.spoiler,e.spoiler)),[n]),[s,d]=S.useMemo(()=>{const m=l.map(f=>({value:f.name})),g=l.map(f=>({value:f.name}));return[m,g,l]},[e]),c=(p=l.find(m=>m.name===a)||(l.length>0?l[0]:void 0))==null?void 0:p.extraData,h=r.length<20?o.jsx("div",{className:"wiki-infobox-button-group",children:o.jsx(ie,{buttons:s,selected:a,onValueChanged:m=>{i(m)}})}):o.jsx(Se,{className:"wiki-item-select",label:"Item",tooltip:"Item to show information for.",options:d,value:d.find(m=>m.value===a)||d[0],onChange:m=>{i(m.value)}});return o.jsxs(o.Fragment,{children:[o.jsxs("div",{className:"wiki-infobox",children:[h,c&&o.jsx(V,{item:c,showWikiLink:!0})]}),t]})}function xt({entry:e,parsedNode:a}){const t=e.extraData;return o.jsxs(o.Fragment,{children:[o.jsx("div",{className:"wiki-infobox",children:o.jsx(Me,{location:t})}),a]})}function ne({entry:e,groupSelection:a,parsedNode:t,path:i,setGroupSelection:n,spoiler:r}){const[l,s]=S.useState(!1);if(S.useEffect(()=>{document.title=`${i} - Cog-Minder Wiki`},[i]),e===void 0)return o.jsxs("p",{children:["Page ",i," not found"]});if(!T(e.spoiler,r)&&!l)return o.jsxs("div",{className:"spoiler-warning",children:[o.jsx("p",{children:"Page blocked by Spoilers setting: Would you like to continue?"}),o.jsx("p",{children:" Spoilers settings can be updated in the Settings popup in the top right corner of the page."}),o.jsxs("div",{children:[o.jsx(C,{onClick:()=>s(!0),children:"Yes"}),o.jsx(C,{onClick:()=>history.back(),children:"Back"})]})]});switch(e.type){case"Bot":return o.jsx(vt,{entry:e,parsedNode:t});case"Bot Group":return o.jsx(St,{entry:e,groupSelection:a,parsedNode:t,setGroupSelection:n,spoiler:r});case"Bot Supergroup":return t;case"Location":return o.jsx(xt,{entry:e,parsedNode:t});case"Other":return t;case"Part":return o.jsx(Tt,{entry:e,parsedNode:t});case"Part Group":return o.jsx(kt,{entry:e,groupSelection:a,parsedNode:t,setGroupSelection:n,spoiler:r});case"Part Supergroup":return t;default:ve(e.type)}}function P(e,a){let t=0,i;const n=[],r=a.toLowerCase();for(;(i=e.substring(t).toLowerCase().indexOf(r))!==-1;)i!==0&&n.push(o.jsx(S.Fragment,{children:e.substring(t,t+i)},n.length)),n.push(o.jsx("b",{children:e.substring(t+i,t+i+a.length)},n.length)),t+=i+a.length;return t<e.length&&n.push(o.jsx(S.Fragment,{children:e.substring(t)},n.length)),o.jsx(o.Fragment,{children:n})}function At({allEntries:e,allowedEntries:a,search:t}){S.useEffect(()=>{document.title=`Search for "${t}" - Cog-Minder Wiki`});const i=re(),n=S.useMemo(()=>{const m=Array.from(a).map(f=>({entry:e.get(f),previewContent:Ye(e.get(f).content,i)}));return new Map(m.map(f=>[f.entry.name,f]))},[e,a]),r=t.toLowerCase();let l=!1;const s=Array.from(a).filter(m=>m.toLowerCase().includes(r)),d=Array.from(n.values()).filter(m=>m.previewContent.toLowerCase().includes(r));let c,h;if(s.length>0){l=!0;const m=s.map((g,f)=>{let u=n.get(e.get(g).name).previewContent;const w=u.length<=250,y=u.lastIndexOf(". ");y>-1&&y<=250?u=u.substring(0,y+1):u.length>0&&!w&&(u=u.substring(0,250)+"...");let v;u.length===0?v="No page content":v=P(u,r);const x=P(g,r);return o.jsxs("li",{children:[o.jsx(q,{href:`/${R(g)}`,children:x}),o.jsx("p",{children:v})]},f)});c=o.jsxs(o.Fragment,{children:[o.jsx("h3",{className:"wiki-heading-emphasized",children:"Title Matches"}),o.jsx("ul",{className:"wiki-search-result-list",children:m})]})}if(d.length>0){l=!0;const m=d.map((g,f)=>{let u=g.previewContent.toLowerCase().indexOf(r);const w=Math.max(0,u-150);let y=g.previewContent.substring(w,u+150);const v=w==0,x=u+150>=g.previewContent.length;u=y.toLowerCase().indexOf(r);const N=y.indexOf(". ");N!==-1&&N<u?y=y.substring(N+2):y.length>0&&!v&&(y="..."+y),u=y.toLowerCase().indexOf(r);const G=y.lastIndexOf(". ");G>-1&&G>u?y=y.substring(0,G+1):y.length>0&&!x&&(y=y+"...");let M;y.length===0?M="No page content":M=P(y,r);const ge=P(g.entry.name,r);return o.jsxs("li",{children:[o.jsx(q,{href:`/${R(g.entry.name)}`,children:ge}),o.jsx("p",{children:M})]},f)});h=o.jsxs(o.Fragment,{children:[o.jsx("h3",{className:"wiki-heading-emphasized",children:"Content Matches"}),o.jsx("ul",{className:"wiki-search-result-list",children:m})]})}const p=o.jsxs(o.Fragment,{children:[o.jsx("h1",{className:"wiki-emphasized-heading",children:"Search Results"}),o.jsxs("h2",{className:"wiki-heading",children:['Searching for "',t,'"']})]});return l?o.jsxs(o.Fragment,{children:[p,c,h]}):o.jsxs(o.Fragment,{children:[p,o.jsxs("span",{children:['No results found for "',t,'".']})]})}function Ht(e,a){for(const t of D["Bot Groups"]){let i="None";t.Spoiler==="Redacted"?i="Redacted":t.Spoiler==="Spoiler"&&(i="Spoiler");const n=[],r={alternativeNames:t.AlternateNames??[],content:t.Content??"",extraData:n,name:t.Name,parentEntries:[],spoiler:i,type:"Bot Group"};e(r);for(const l of t.Bots){const s=a.get(l);if(s===void 0){console.log(`Found bad bot name ${l} in group ${t.Name}`);continue}if(s.type!=="Bot"){console.log(`Found non-bot ${s.name} in bot group ${r.name}`);continue}s.parentEntries.push(r),n.push(s)}n.sort((l,s)=>{const d=l.extraData,c=s.extraData;return pe(d,c)})}}function Nt(e,a){for(const t of D.Bots){const i=e.getBot(t.Name);a({alternativeNames:[],content:t.Content,extraData:i,name:t.Name,parentEntries:[],spoiler:i.spoiler,type:"Bot"})}}function Gt(e,a){for(const t of D["Bot Supergroups"]){let i="None";t.Spoiler==="Redacted"?i="Redacted":t.Spoiler==="Spoiler"&&(i="Spoiler");const n=[],r={alternativeNames:t.AlternateNames||[],content:t.Content??"",extraData:n,name:t.Name,parentEntries:[],spoiler:i,type:"Bot Supergroup"};if(e(r),t.Groups!==void 0)for(const l of t.Groups){const s=a.get(l);if(s===void 0){console.log(`Found bad bot group name ${l} in group ${r.name}`);continue}if(s.type!=="Bot Group"){console.log(`Found non-group ${l} in bot group ${r.name}`);continue}s.parentEntries.push(r),n.push(s)}if(t.Bots!==void 0){const l=[];for(const s of t.Bots){const d=a.get(s);if(d===void 0){console.log(`Found bad bot name ${s} in group ${t.Name}`);continue}if(d.type!=="Bot"){console.log(`Found non-bot ${d.name} in bot group ${r.name}`);continue}d.parentEntries.push(r),l.push(d)}l.sort((s,d)=>{s.name.localeCompare(d.name);const c=s.extraData,h=d.extraData;return pe(c,h)}),l.length>0&&n.push({alternativeNames:[],content:"",fakeGroup:!0,name:"Other",parentEntries:[],spoiler:"None",type:"Bot Group",extraData:l})}}for(const t of D["Bot Supergroups"]){if(t.Supergroups===void 0)continue;const i=a.get(t.Name),n=i.extraData;for(const r of t.Supergroups){const l=a.get(r);if(l===void 0){console.log(`Found bad part supergroup name ${r} in supergroup ${t.Name}`);continue}if(l.type!=="Bot Supergroup"){console.log(`Found non-part supergroup name ${l.name} in supergroup ${i.name}`);continue}i.hasSupergroupChildren=!0,Q(l,i)?console.log(`Found recursion with bot supergroups ${i.name} and ${l.name}`):(l.parentEntries.push(i),n.push(l))}n.sort((r,l)=>r.name.localeCompare(l.name))}}function It(e,a,t,i){for(const n of D.Locations){let r="None";n.Spoiler==="Redacted"?r="Redacted":n.Spoiler==="Spoiler"&&(r="Spoiler");const l=(n.SpecialBots??[]).map(h=>{try{return e.getBot(h)}catch{return console.log(`Bad bot name ${h} in ${n.Name}`),null}}).filter(h=>h!==null),s=(n.SpecialItems??[]).map(h=>{try{return a.getItem(h)}catch{return console.log(`Bad item name ${h} in ${n.Name}`),null}}).filter(h=>h!==null),d={branch:n.Branch??!1,entries:[],exits:[],exitSkipsDepth:n.ExitSkipsDepth??!1,imageName:n.ImageName,maxDepth:n.MaxDepth,minDepth:n.MinDepth,multipleDepths:n.MultipleDepths??!1,name:n.Name,preDepthBranch:n.PreDepthBranch??!1,spoiler:r,specialBots:l,specialItems:s},c={alternativeNames:n.AlternateNames??[],content:n.Content,extraData:d,name:n.Name,parentEntries:[],spoiler:r,type:"Location"};t(c)}for(const n of D.Locations){const r=i.get(n.Name);for(const l of n.Exits){const s=i.get(l.Map);if(s===void 0)console.log(`Bad location reference ${l} in ${n.Name}`);else{const d=r.extraData,c=s.extraData;d.exits.push({depthsString:l.Depths,location:c}),c.entries.push({depthsString:l.Depths,location:d})}}}}function Dt(e,a){for(const t of D.Other){let i="None";t.Spoiler==="Redacted"?i="Redacted":t.Spoiler==="Spoiler"&&(i="Spoiler");const n={alternativeNames:t.AlternateNames??[],content:t.Content,extraData:[],name:t.Name,parentEntries:[],type:"Other",spoiler:i};e(n)}for(const t of a.values())if(t.type==="Other"&&t.name.includes("/")){const i=t.name.split("/")[0],n=a.get(i);n!==void 0&&(n.extraData.push(t),t.parentEntries.push(n))}for(const t of D.Other)if(t.Subpages!==void 0){const i=a.get(t.Name),n=i.extraData;for(const r of t.Subpages){const l=a.get(r);if(l===void 0){console.log(`Found bad page name ${r} in group ${t.Name}`);continue}l.parentEntries.push(i),n.push(l)}}}function Rt(e,a,t){for(const i of D["Part Groups"]){let n="None";i.Spoiler==="Redacted"?n="Redacted":i.Spoiler==="Spoiler"&&(n="Spoiler");const r=[],l={alternativeNames:[],content:i.Content??"",extraData:r,name:i.Name,parentEntries:[],spoiler:n,type:"Part Group"};e(l);let s=[];i.Parts?s=i.Parts:i["Part Category"]?s=Lt(i["Part Category"],a):console.log(`Part group ${l.name} has no parts`);for(const d of s){const c=t.get(d);if(c===void 0){console.log(`Found bad part name ${d} in group ${i.Name}`);continue}if(c.type!=="Part"){console.log(`Found non-part ${c.name} in part group ${l.name}`);continue}c.parentEntries.push(l),r.push(c)}r.sort((d,c)=>{const h=d.extraData,p=c.extraData;return X(h,p)})}}function Mt(e,a){for(const t of D.Parts){const i=e.getItem(t.Name);let n="None";i.categories.includes("Redacted")?n="Redacted":i.categories.includes("Spoiler")&&(n="Spoiler"),a({alternativeNames:[],content:t.Content,extraData:i,name:t.Name,parentEntries:[],spoiler:n,type:"Part"})}}function Et(e,a){for(const t of D["Part Supergroups"]){let i="None";t.Spoiler==="Redacted"?i="Redacted":t.Spoiler==="Spoiler"&&(i="Spoiler");const n=[],r={alternativeNames:[],content:t.Content??"",extraData:n,name:t.Name,parentEntries:[],spoiler:i,type:"Part Supergroup"};if(e(r),t.Groups!==void 0)for(const l of t.Groups){const s=a.get(l);if(s===void 0){console.log(`Found bad part group name ${l} in group ${r.name}`);continue}if(s.type!=="Part Group"){console.log(`Found non-group ${l} in part group ${r.name}`);continue}s.parentEntries.push(r),n.push(s)}if(t.Parts!==void 0){const l=[];for(const s of t.Parts){const d=a.get(s);if(d===void 0){console.log(`Found bad part name ${s} in group ${t.Name}`);continue}if(d.type!=="Part"){console.log(`Found non-part ${d.name} in part group ${r.name}`);continue}d.parentEntries.push(r),l.push(d)}l.sort((s,d)=>{const c=s.extraData,h=d.extraData;return X(c,h)}),l.length>0&&n.push({alternativeNames:[],content:"",fakeGroup:!0,name:"Other",parentEntries:[],spoiler:"None",type:"Part Group",extraData:l})}}for(const t of D["Part Supergroups"]){if(t.Supergroups===void 0)continue;const i=a.get(t.Name),n=i.extraData;for(const r of t.Supergroups){const l=a.get(r);if(l===void 0){console.log(`Found bad part supergroup name ${r} in supergroup ${t.Name}`);continue}if(l.type!=="Part Supergroup"){console.log(`Found non-part supergroup name ${l.name} in supergroup ${i.name}`);continue}i.hasSupergroupChildren=!0,Q(l,i)?console.log(`Found recursion with part supergroups ${i.name} and ${l.name}`):(l.parentEntries.push(i),n.push(l))}n.sort((r,l)=>r.name.localeCompare(l.name))}}const Pt=new Map([["Alien Artifacts",e=>e.ratingCategory==="Alien"],["Alpha Cannons",e=>e.type==="Energy Cannon"&&e.name.includes("Alpha Cannon")],["Ballistic Cannons",e=>e.type==="Ballistic Cannon"],["Ballistic Guns",e=>e.type==="Ballistic Gun"],["Electromagnetic Cannons",e=>e.type==="Energy Cannon"&&e.damageType==="Electromagnetic"],["Electromagnetic Guns",e=>e.type==="Energy Gun"&&e.damageType==="Electromagnetic"],["Electromagnetic Launchers",e=>e.type==="Launcher"&&e.explosionType==="Electromagnetic"],["Engines",e=>e.type==="Engine"],["Explosive Launchers",e=>e.type==="Launcher"&&e.explosionType==="Explosive"],["Flight Units",e=>e.type==="Flight Unit"],["Guided Weapons",e=>e.slot==="Weapon"&&e.waypoints!==void 0],["Hover Units",e=>e.type==="Hover Unit"],["Hybrid Power",e=>e.slot==="Power"&&e.name.startsWith("Hyb.")],["Impact Weapons",e=>e.type==="Impact Weapon"],["Legs",e=>e.type==="Leg"],["Overloadable Power",e=>e.slot==="Power"&&e.powerStability!==void 0],["Overloadable Propulsion",e=>e.slot==="Propulsion"&&e.burnout!==void 0],["Overloadable Weapons",e=>e.slot==="Weapon"&&e.overloadStability!==void 0],["Overtuned Parts",e=>e.name.startsWith("Ovr.")],["Phasers",e=>e.type==="Energy Gun"&&e.damageType==="Phasic"],["Piercing Weapons",e=>e.type==="Piercing Weapon"],["Power Cores",e=>e.type==="Power Core"],["Reactors",e=>e.type==="Reactor"],["Reinforced Power",e=>e.slot==="Power"&&e.name.startsWith("Rnf.")],["Resistance Armor",e=>e.type==="Protection"&&e.specialProperty!==void 0&&e.specialProperty.trait.kind==="DamageResists"],["Special Weapons",e=>e.type==="Special Weapon"],["Slashing Weapons",e=>e.type==="Slashing Weapon"],["Temporary Slot Parts",e=>{var a;return((a=e.effect)==null?void 0:a.startsWith("When attached, gives access to additional temporary slot"))||!1}],["Thermal Cannons",e=>e.type==="Energy Cannon"&&e.damageType==="Thermal"],["Thermal Guns",e=>e.type==="Energy Gun"&&e.damageType==="Thermal"],["Treads",e=>e.type==="Treads"],["Vortex Cannons",e=>e.type==="Energy Cannon"&&e.damageType==="Entropic"],["Vortex Guns",e=>e.type==="Energy Gun"&&e.damageType==="Entropic"],["Wheels",e=>e.type==="Wheel"]]);function Lt(e,a){const t=Pt.get(e);if(t===void 0)return console.log(`Tried to search for undefined item category ${e}`),[];const i=[];for(const n of a.getAllItems())t(n)&&i.push(n);return i.sort(X),i.map(n=>n.name)}function Ft(e,a){const t=new Map;function i(n){function r(l,s){t.get(l)!==void 0&&console.log(`Found duplicate wiki entries for "${l}"`),t.set(l,s)}r(n.name,n);for(const l of n.alternativeNames)r(l,n)}return Nt(e,i),Ht(i,t),Gt(i,t),It(e,a,i,t),Mt(a,i),Rt(i,a,t),Et(i,t),Dt(i,t),t}function Q(e,a){if(e===a)return!0;for(const t of a.parentEntries)if(Q(e,t))return!0;return!1}function pe(e,a){const t=I(e.tier,1),i=I(a.tier,1);return t===i?e.name.localeCompare(a.name):t-i}function X(e,a){return e.rating===a.rating?e.name.localeCompare(a.name):e.rating-a.rating}function Bt({allowedEntries:e,allEntries:a,setEditState:t}){const[i,n]=j(),[r,l]=S.useState("");return o.jsxs("div",{className:"navigation-bar",children:[Ae(),o.jsx(He,{href:"/",tooltip:"Navigates to the wiki home page.",children:"Home"}),o.jsx(C,{tooltip:"Pops open an editor that allows previewing edits to the current page.",onClick:()=>{t(s=>({...s,showEdit:!0}))},children:"Edit"}),o.jsx(wt,{allowedEntries:e,searchString:r,setSearchString:l}),o.jsx(C,{tooltip:"Searches all pages for the given text.",onClick:()=>{r.length>0&&n(`/search/${R(r)}`)},children:"Search"})]})}function Xt(){const e=Ee(),a=Pe(),[t]=j(),i=re(),[n,r]=S.useState(""),[l,s]=Y("/wiki/:page"),[d]=Y("/wiki"),[c,h]=S.useState({editText:"",entry:void 0,modified:!1,showEdit:!1}),[p]=Te(),[m,g]=S.useMemo(()=>{const v=Ft(e,a),x=Array.from(v.entries()).filter(([N,G])=>T(G.spoiler,i)&&G.name!=="Homepage").map(([N,G])=>N);return x.sort(),[v,x]},[e,a,i]);S.useEffect(()=>{const v=p.slice(1);if(v.length===0)return;const x=document.getElementById(v);x!==null&&x.scrollIntoView()},[]);let f,u,w,y=[];if(l||d){let v;if(d?v="Homepage":v=B(s[0]),f=m.get(v),u=f,u!==void 0&&c.editText.length>0&&c.entry===u&&(u={...u,content:c.editText}),u!==void 0){const x=Ke(u,m,i,a,e);w=x.node,y=x.errors}}return o.jsx(ke,{base:"/wiki",children:o.jsxs("div",{className:"page-content",children:[o.jsx(Bt,{allEntries:m,allowedEntries:g,setEditState:h,spoiler:i},t),o.jsx(Ct,{editState:c,entry:f,parsingErrors:y,setEditState:h}),o.jsx("div",{className:"wiki-page-content",children:o.jsxs(xe,{children:[o.jsx(W,{path:"/",children:o.jsx(ne,{allEntries:m,entry:m.get("Homepage"),groupSelection:n,parsedNode:w,spoiler:i,path:"Homepage",setGroupSelection:r},"Homepage")}),o.jsx(W,{path:"/search/:search",children:v=>o.jsx(At,{allEntries:m,allowedEntries:g,search:B(v.search)})}),o.jsx(W,{children:v=>o.jsx(ne,{allEntries:m,entry:u,groupSelection:n,parsedNode:w,spoiler:i,path:B(v[0]),setGroupSelection:r},u==null?void 0:u.name)})]})})]})})}export{Xt as default};
+Special weapons are usually intended to serve some utility rather than directly deal damage.`}],Locations:qe,Other:Ue};class R{constructor(t,o,a,n,r,s,l,d,c){this.alternativeNames=t,this.childEntries=o,this.content=a,this.name=n,this.parentEntries=[],this.spoiler=r,this.type=s,this.extraData=l,this.fakeGroup=d??!1,this.hasSupergroupChildren=c??!1}appendDescendants(t){for(const o of this.childEntries)t.add(o),o.appendDescendants(t)}canShowSpoiler(t){return k(this.spoiler,t)}hasAncestorEntry(t){for(const o of this.parentEntries)if(t===o||o.hasAncestorEntry(t))return!0;return!1}hasDescendantEntry(t){for(const o of this.childEntries)if(t===o||o.hasDescendantEntry(t))return!0;return!1}hasVisibleDescendant(t){for(const o of this.childEntries)if(k(o.spoiler,t)||o.hasVisibleDescendant(t))return!0;return!1}getAllDescendants(){const t=new Set;this.appendDescendants(t);const o=Array.from(t.values());return o.sort((a,n)=>a.name.localeCompare(n.name)),o}getMaxEntryDepth(){if(this.type==="Part"||this.type==="Bot"||this.type=="Location")return 1;if(this.type==="Part Group"||this.type==="Bot Group")return 2;{const t=this.childEntries;return t.length===0?1:1+Math.max(...t.map(o=>o.getMaxEntryDepth()))}}}function X({activeEntry:e,entry:t,parentEntry:o}){let a=t.name;return o!==void 0&&a.startsWith(o.name+"/")&&(a=a.slice(o.name.length+1)),e===t?i.jsx("span",{style:{fontWeight:"bold"},children:a}):t.fakeGroup?i.jsx("span",{children:a}):i.jsx(U,{href:`/${D(t.name)}`,children:a})}function ce({activeEntry:e,childEntries:t,parentEntry:o}){return t.map(a=>i.jsx("li",{children:i.jsx(X,{activeEntry:e,entry:a,parentEntry:o})},a.name))}function je({activeEntry:e,groupEntry:t,spoiler:o}){return t.childEntries.map(a=>{const n=a.childEntries.filter(r=>k(r.spoiler,o));if(n.length!==0)return i.jsxs("tr",{children:[i.jsx("th",{children:i.jsx(X,{activeEntry:e,entry:a,parentEntry:t})}),i.jsx("td",{children:i.jsx("ul",{children:i.jsx(ce,{activeEntry:e,childEntries:n,parentEntry:a.fakeGroup?t:a})})})]},a.name)})}function me({activeEntry:e,groupEntry:t,parentEntry:o,spoiler:a}){if(t.getMaxEntryDepth()>=3)return i.jsx(je,{activeEntry:e,groupEntry:t,spoiler:a});const n=t.childEntries.filter(r=>k(r.spoiler,a));return i.jsx("tr",{children:i.jsx("td",{children:i.jsx("ul",{children:i.jsx(ce,{activeEntry:e,childEntries:n,parentEntry:t})})})})}function j({activeEntry:e,groupEntry:t,parentEntry:o,setShow:a,show:n}){return i.jsx("tr",{children:i.jsx("td",{colSpan:2,children:i.jsxs("div",{children:[i.jsx("div",{children:i.jsx(X,{activeEntry:e,entry:t,parentEntry:o})}),i.jsx(Ze,{setShow:a,show:n})]})})})}function ze({activeEntry:e,groupEntry:t,parentEntry:o,spoiler:a}){function n(l,d){if(d.type==="Bot Group"||d.type==="Bot Supergroup"||d.type==="Part Group"||d.type==="Part Supergroup"||d.type==="Other"){const c=d.childEntries;for(const h of c)if(h===l||n(l,h))return!0}return!1}const[r,s]=T.useState(e===t||n(e,t));if(t.hasVisibleDescendant(a))return i.jsx("table",{className:"wiki-group-infobox",children:i.jsxs("tbody",{children:[i.jsx(j,{activeEntry:e,groupEntry:t,parentEntry:o,setShow:s,show:r}),r&&i.jsx(me,{activeEntry:e,groupEntry:t,parentEntry:o,spoiler:a})]})})}function Ze({setShow:e,show:t}){return i.jsx(v,{className:"wiki-infobox-show-hide-button",onClick:()=>e(!t),children:t?"Hide":"Show"})}function ee({activeEntry:e,groupEntry:t,spoiler:o}){const[a,n]=T.useState(e===t||e.hasAncestorEntry(t));return t.hasSupergroupChildren?i.jsxs(i.Fragment,{children:[i.jsx("table",{className:"wiki-group-infobox wiki-group-infobox-supergroup",children:i.jsx("tbody",{children:i.jsx(j,{activeEntry:e,groupEntry:t,parentEntry:void 0,setShow:n,show:a})})}),a&&t.childEntries.map(r=>i.jsx(ze,{activeEntry:e,groupEntry:r,parentEntry:t,spoiler:o},r.name))]}):i.jsx("table",{className:"wiki-group-infobox",children:i.jsxs("tbody",{children:[i.jsx(j,{activeEntry:e,groupEntry:t,parentEntry:void 0,setShow:n,show:a}),a&&i.jsx(me,{activeEntry:e,groupEntry:t,parentEntry:void 0,spoiler:o})]})})}function ge({heading:e}){const t=e.children.length>0&&i.jsx("ul",{children:e.children.map((o,a)=>i.jsx(ge,{heading:o},a))});return i.jsxs("li",{children:[i.jsx("a",{href:`#${e.id}`,children:e.text}),t]})}function Ve({headings:e}){if(e.length<3)return;const t=[],o=[];for(const a of e){let n=t.findIndex(s=>s.indent===a.indent-1);n===-1&&(n=t.findIndex(s=>s.indent<a.indent));const r={children:[],id:a.id,indent:a.indent,text:a.text};n>=0?t[n].children.push(r):o.push(r),t.unshift(r)}return i.jsx("div",{className:"wiki-table-of-contents",children:i.jsxs("details",{children:[i.jsx("summary",{children:"Table of Contents"}),i.jsx("ul",{children:o.map((a,n)=>i.jsx(ge,{heading:a},n))})]})})}class x{constructor(t,o,a,n,r,s,l,d,c,h,m){this.allowHeadingLinks=t,this.allEntries=o,this.botData=a,this.errors=n,this.headings=r,this.images=s,this.inSpoiler=l,this.initialContent=d,this.index=0,this.inlineOnly=c,this.itemData=h,this.output=[],this.spoiler=m}static Clone(t){return new x(t.allowHeadingLinks,t.allEntries,t.botData,t.errors,t.headings,t.images,t.inSpoiler,t.initialContent,t.inlineOnly,t.itemData,t.spoiler)}}function Qe(e){const t=/\[\[([^\]:]*)(?::([^\]]*))?\]\]/g;let o,a="",n=0;for(;(o=t.exec(e))&&(o.index>n&&(a+=e.slice(n,o.index)),pe.has(o[1].replace("/",""))||(o[1].includes("|")?a+=o[1].slice(o[1].indexOf("|")+1):a+=o[1]),n=o.index+o[0].length,!(n>=e.length)););n<e.length&&(a+=e.slice(n)),a=a.replaceAll("{{","[").replaceAll("}}","]");const r=_(a);return{text:a,id:r}}function _(e){return e.replaceAll(" ","_").replaceAll(/[^\w-]/g,"").toLowerCase()}function Xe({spoiler:e}){let t,o,a;return e==="None"?(t="no-spoiler-info-button",o="No Spoiler",a="This page does not directly relate to spoiler content."):e==="Spoiler"?(t="spoiler-info-button",o="Spoiler",a="This page relates to mild spoiler-related content. Spoiler-tier content primarily includes midgame Factory and Research branch maps."):(t="redacted-info-button",o="Redacted",a="This page relates to the highest levels of spoiler-related content. Redacted-tier includes well hidden midgame maps like L, S7, and FRG, as well as extended endgame maps C and A0."),i.jsx(ye,{className:t,tooltipText:a,children:o})}function _e(e,t,o,a,n,r){const s=e.content.replace(/([^[])\[([\w/]*)\]/g,(m,g,p)=>`${g}{{${p}}}`),l=new x(!0,t,r,[],[],new Set,!1,s,"All",n,o);H(l,void 0);const d=[e.name];for(const m of e.alternativeNames)d.push(m);const c=d.join("/");let h=A(l.output,!1);return h===void 0&&(h=i.jsx("p",{children:"This page is a stub. Please consider contributing."})),{node:i.jsxs(i.Fragment,{children:[i.jsxs("h1",{className:"wiki-emphasized-heading",children:[c,i.jsx(z,{href:"#"}),i.jsx(Xe,{spoiler:e.spoiler})]}),i.jsx(Ve,{headings:l.headings}),h]}),errors:l.errors,images:l.images}}const Ye=/(\[\[Spoiler\]\])(.*?)(\[\[\/Spoiler\]\])/s,Ke=/(\[\[Redacted\]\])(.*?)(\[\[\/Redacted\]\])/s,Je=/\[\[Image\]\](.*?)\[\[\/Image\]\]/s;function $e(e,t){function o(a,n){let r;do r=a.exec(e),r!==null&&(k(n,t)?e=e.substring(0,r.index)+r[2]+e.substring(r.index+r[0].length):e=e.substring(0,r.index)+e.substring(r.index+r[0].length));while(r!==null)}return o(Ye,"Spoiler"),o(Ke,"Redacted"),e=e.replace(Je,""),e}function W(e,t,o,a){let n;if(t.type==="Bot"){const r=t.extraData;n=i.jsx(De,{bot:r,linkTarget:a,text:o})}else if(t.type==="Location"){const r=t.extraData;n=i.jsx(Me,{linkTarget:a,location:r,text:o})}else if(t.type==="Part"){const r=t.extraData;n=i.jsx(de,{item:r,linkTarget:a,text:o})}else n=i.jsx(he,{to:a||`/${D(t.name)}`,children:o});return!k(t.spoiler,e.spoiler)&&!e.inSpoiler&&(n=i.jsx("span",{className:"spoiler-text spoiler-text-multiline",children:n})),n}function A(e,t,o=!1,a=!1){if(e.length===0)return;function n(l,d){switch(l.parentElement){case"none":return i.jsx(T.Fragment,{children:l.groupNodes},d);case"p":return i.jsx("p",{children:l.groupNodes},d);case"spoiler-p":return i.jsx("p",{children:i.jsx("span",{className:"spoiler-text spoiler-text-multiline",children:l.groupNodes})},d);case"spoiler-span":return i.jsx("span",{className:"spoiler-text spoiler-text-multiline",children:l.groupNodes},d)}}const r=[];let s;o&&(s={groupNodes:[],parentElement:"none"},r.push(s)),t&&a&&(e[0].groupType==="Grouped"?(s={groupNodes:[],parentElement:"spoiler-span"},r.push(s)):(s={groupNodes:[],parentElement:"none"},r.push(s)));for(const l of e)l.node!==""&&(s===void 0&&l.groupType==="Grouped"&&l.node!==void 0&&(s={groupNodes:[],parentElement:t?"spoiler-p":"p"},r.push(s)),(l.groupType==="Separator"||l.groupType==="Individual")&&(s=void 0),l.node!==void 0&&(s===void 0?r.push({groupNodes:[i.jsx(T.Fragment,{children:l.node},0)],parentElement:l.groupType==="Grouped"?"p":"none"}):s.groupNodes.push(i.jsx(T.Fragment,{children:l.node},s.groupNodes.length))));return r.map((l,d)=>n(l,d))}function et(e,t,o,a,n){const r=_e(e,t,o,!1,a,n);if(r.errors.length>0){console.log(`Errors while parsing ${e.name}`);for(const l of r.errors)console.log(`Parse error: ${l}`)}let s=[];if(e.parentEntries.length>0){let l=function(c){for(const h of c.parentEntries.values())h.parentEntries.length===0?d.add(h):l(h)};const d=new Set;l(e),s=Array.from(d.values()).sort((c,h)=>c.name.localeCompare(h.name)).map((c,h)=>i.jsx(ee,{activeEntry:e,groupEntry:c,spoiler:o},h))}else e.childEntries.length>0&&s.push(i.jsx(ee,{activeEntry:e,groupEntry:e,spoiler:o},0));return r.node=i.jsxs(i.Fragment,{children:[r.node,s]}),r}function tt(e,t){e.index+=t[0].length;const o=[];for(const n of e.allEntries.entries()){const r=n[0],s=n[1];if(s.type!=="Location"||r!=s.name)continue;const l=s.extraData;o.push(i.jsxs("tr",{children:[i.jsx("td",{children:W(e,s,l.name.replace(" (Location)",""))}),i.jsx("td",{children:l.branch?"Branch":"Main"}),i.jsx("td",{children:l.minDepth===l.maxDepth?l.minDepth:`${l.minDepth} to ${l.maxDepth} ${l.multipleDepths?"":"(Only at one depth per run)"}`})]},r))}const a=i.jsxs("table",{className:"wiki-table",children:[i.jsx("thead",{children:i.jsxs("tr",{children:[i.jsx("th",{children:"Location Name"}),i.jsx("th",{children:"Main Floor/Branch"}),i.jsx("th",{children:"Depths"})]})}),i.jsx("tbody",{children:o})]});e.output.push({groupType:"Individual",node:a})}function at(e,t){const o=t.index+t[0].length,a=x.Clone(e);a.index=o,a.inlineOnly="InlineOnly",H(a,"/B"),e.index=a.index;const n=i.jsx("b",{children:A(a.output,e.inSpoiler,!0)});e.output.push({groupType:"Grouped",node:n})}const nt=new Map([["Name",{}],["Class",{}],["Size",{}],["Profile",{}],["Rating",{}],["Tier",{}],["Threat",{}],["Value",{isNumber:!0}],["Energy Generation",{isNumber:!0}],["Heat Dissipation",{isNumber:!0}],["Visual Range",{}],["Memory",{}],["Spot Percent",{}],["Movement",{}],["Core Integrity",{isNumber:!0}],["Core Exposure",{isNumber:!0}],["Salvage Potential",{}],["Inventory Size",{}],["Armament",{isArmament:!0}],["Armament Option",{isArmamentOption:!0}],["Components",{isComponents:!0}],["Components Option",{isComponentsOption:!0}],["Description",{}]]);function ot(e,t){function o(c,h){return h!==void 0?h:c[0].toLowerCase()+c.substring(1).replaceAll(" ","")}const a=/\[\[\/BotDetails\]\]/.exec(e.initialContent.substring(e.index));if(a===null){y(e,"Found bot details tag without close tag"),e.index+=t[0].length;return}const n=e.index+t[0].length,r=n+a.index-t[0].length,s=e.initialContent.substring(n,r).split("||"),l={armament:[],armamentData:[],armamentOptionData:[],armamentString:"",categories:[],class:"",componentData:[],componentOptionData:[],components:[],componentsString:"",coreCoverage:0,coreExposure:0,coreIntegrity:0,customBot:!0,description:"",energyGeneration:0,heatDissipation:0,immunities:[],immunitiesString:"",inventorySize:"1",locations:[],memory:"",movement:"",name:"",profile:"",rating:"",salvageHigh:0,salvageLow:0,salvagePotential:"",size:"Medium",speed:0,spoiler:"None",spotPercent:"",threat:"",tier:"",totalCoverage:0,traits:[],traitsString:"",value:0,visualRange:"16"};for(const c of s){const h=c.split("|"),m=h[0].trim();if(h.length===1){y(e,`Bot data category ${m} has no value`);continue}const g=nt.get(m);if(g===void 0){y(e,`Bot data category ${m} is not expected`);continue}let p=h[1].trim();if(g.isNumber){if(p=re(p),p===void 0){y(e,`Bot data category ${m} has invalid number ${h[1]}`);continue}if(p===0)continue}else if(g.isArmament||g.isComponents||g.isArmamentOption||g.isComponentsOption){if(h.shift(),h.length%2===1){y(e,`Bot data category ${m} has mismatched parts and part numbers`);continue}const f=[];for(let u=0;u<h.length;u+=2){const w=h[u].trim();let b=we(h[u+1]);b===void 0&&(y(e,`Bot data category ${m} item ${w} has invalid number`),b=1);const C={coverage:0,integrity:0,name:w,number:b};g.isArmament?l.armamentData.push(C):g.isComponents?l.componentData.push(C):f.push(C)}g.isArmamentOption?l.armamentOptionData.push(f):g.isComponentsOption&&l.componentOptionData.push(f);continue}l[o(m,g==null?void 0:g.key)]=p}if(l.rating===""){let c=0;const h=[];h.push(...l.armamentData),h.push(...l.componentData),h.push(...l.armamentOptionData.map(m=>m[0])),h.push(...l.componentOptionData.map(m=>m[0]));for(const m of h){const g=e.itemData.tryGetItem(m.name);g!==void 0&&(c+=g.rating*m.number)}c+=I(l.tier,1),l.rating=c.toString()}e.index=r+a[0].length;const d=i.jsx("div",{className:"wiki-infobox wiki-infobox-centered",children:i.jsx(V,{bot:l})});e.output.push({groupType:"Individual",node:d})}function it(e,t){var n;const o=new Set,a=new Map;for(const r of e.allEntries.values()){if(r.type!=="Bot Group"&&r.type!=="Bot Supergroup"||!k(r.spoiler,e.spoiler)||o.has(r))continue;o.add(r);const s=new Set;if(r.type==="Bot Group"){for(const m of e.allEntries.values())if((n=m.parentEntries)!=null&&n.includes(r)){const g=e.botData.getBot(m.name);s.add(ve(g))}}const l=i.jsx(i.Fragment,{children:Array.from(s.values()).map(m=>i.jsx("img",{className:"wiki-bot-group-image",src:m},m))}),d=new x(!1,e.allEntries,e.botData,e.errors,e.headings,e.images,!1,r.content,"All",e.itemData,e.spoiler);H(d,void 0);const c=d.output.findIndex(m=>m.groupType==="Separator");c!==-1&&d.output.splice(c);const h=D(r.name);a.set(r.name,i.jsxs(i.Fragment,{children:[i.jsxs("h2",{id:h,className:"wiki-heading wiki-bot-group-heading",children:[W(e,r,r.name),l,i.jsx(z,{href:`#${h}`})]}),A(d.output,!1)]}))}for(const r of Array.from(a.keys()).sort())e.output.push({groupType:"Individual",node:a.get(r)});e.index=t.index+t[0].length}function rt(e,t){let o=t[2];(o===void 0||o==="")&&(y(e,"Color tag with no color, has been marked cyan"),o="cyan");const a=t.index+t[0].length,n=x.Clone(e);n.index=a,n.inlineOnly="InlineOnly",H(n,"/Color"),e.index=n.index;const r=i.jsx("span",{style:{color:o},children:A(n.output,e.inSpoiler,!0)});e.output.push({groupType:"Grouped",node:r})}function st(e,t){const o=e.initialContent.indexOf("[[/Comment]]",t.index);e.index=o+12}function lt(e,t){const o=[],a=new Set;for(const n of e.allEntries.values()){if(a.has(n)||n.content.length<20||!k(n.spoiler,e.spoiler))continue;const r=i.jsx("li",{children:W(e,n,n.name)},n.name);a.add(n),o.push({node:r,name:n.name})}o.sort((n,r)=>n.name.localeCompare(r.name)),e.output.push({groupType:"Individual",node:i.jsx("ul",{className:"wiki-list",children:o.map(n=>n.node)})}),e.index=t.index+t[0].length}function ht(e,t){const o=/\[\[\/PartGroupTable\]\]/.exec(e.initialContent.substring(e.index));if(o===null){y(e,"Found part group table tag without close tag"),e.index+=t[0].length;return}const a=e.index+t[0].length,n=a+o.index-t[0].length,r=P(e.initialContent.substring(a,n));if(r.length<1){y(e,"Found part group table without a part group"),e.index=n+o[0].length;return}const s=r[0].trim(),l=e.allEntries.get(s);if(l===void 0){y(e,`Found part group table with invalid group ${s}`),e.index=n+o[0].length;return}else if(l.type!=="Part Group"&&l.type!=="Part Supergroup"){y(e,`Found part group table with non-part group or supergroup ${s}`),e.index=n+o[0].length;return}const c=l.getAllDescendants().filter(f=>f.canShowSpoiler(e.spoiler)&&f.type==="Part").map(f=>f.extraData),h=[],g={header:"Overview",columns:[{accessorKey:"name",header:"Name",cell:f=>i.jsx(de,{item:f.row.original,text:f.getValue()})}]},p=new Map;p.set(g.header,g),h.push(g);for(const f of r.slice(1).map(u=>u.trim())){const u=Be.get(f);if(u===void 0){y(e,`Found part column name ${f} that isn't supported`);continue}const w=f.split("/")[0],b=p.get(w);if(b===void 0){const C={header:w,columns:[u]};h.push(C),p.set(w,C)}else b.columns.push(u)}e.output.push({groupType:"Individual",node:i.jsx(Fe,{className:"wiki-table wiki-sortable-table",columns:h,data:c,stickyHeader:!0})}),e.index=n+o[0].length}function dt(e,t){const o=t.index+t[0].length,a=x.Clone(e);a.index=o,a.inlineOnly="InlineWithNewlines",H(a,"/GameText"),e.index=a.index;const n=i.jsx("span",{className:"wiki-game-text",children:A(a.output,e.inSpoiler,!0)});e.output.push({groupType:"Grouped",node:n})}function te(e,t){const o=/\[\[\/(Gallery|FanartGallery)\]\]/.exec(e.initialContent.substring(e.index));if(o===null){y(e,"Found gallery tag without close tag"),e.index+=t[0].length;return}const a=o[1]==="FanartGallery",n=e.index+t[0].length,r=n+o.index-t[0].length,s=P(e.initialContent.substring(n,r));if(e.index=r+o[0].length,s.length<2){y(e,"Found gallery action without enough images/captions, there should always be an equal number of images and captions");return}s.length%2!==0&&y(e,"Found gallery action without equal number of links/captions");const l=[];for(let c=0;c<Math.floor(s.length/2);c++){let h=e.inSpoiler,m=s[2*c];const g=s[2*c+1],p=/\[\[([^\]]*)]\]([^[]*)\[\[\/([^\]]*)\]\]/.exec(m);if(p)if(p[1]===p[3])if(p[1]==="Spoiler"||p[1]==="Redacted"){const b=p[1];h=!k(b,e.spoiler),m=p[2]}else y(e,`Found unsupported tag in ${m}, should only be Spoiler/Redacted here`);else y(e,`Found mismatched start/end tags in image name ${m}, should only be Spoiler/Redacted`);e.images.add(m);const f=x.Clone(e);f.inlineOnly="InlineWithNewlines",f.initialContent=g,H(f,void 0);const u=A(f.output,e.inSpoiler),w=B(`${m}`,"wiki_images/");l.push(i.jsxs("div",{children:[a?u:void 0,i.jsx("div",{children:i.jsxs("a",{className:h?"spoiler-image":void 0,href:w,target:"_blank",rel:"noreferrer",children:[h&&i.jsx("div",{className:"wiki-spoiler-image-text",children:"SPOILER"}),i.jsx("img",{src:w,onError:b=>{b.target.src=B("wiki_images/Image Not Found.png")}})]})}),a?void 0:u]},c))}const d=i.jsx("div",{className:a?"wiki-fanart-gallery-images":"wiki-gallery-images",children:l});e.output.push({groupType:"Individual",node:d})}function ct(e,t){const o=/\[\[\/Hacks\]\]/.exec(e.initialContent.substring(e.index));if(o===null){y(e,"Found hacks tag without close tag"),e.index+=t[0].length;return}const a=e.index+t[0].length,n=a+o.index-t[0].length,r=e.initialContent.substring(a,n);e.index=n+o[0].length;const s=Re.find(l=>l.Name===r);if(s===void 0)y(e,"Found hacks tag with invalid machine type");else{const l=i.jsx("table",{className:"wiki-table",children:i.jsxs("tbody",{children:[i.jsxs("tr",{children:[i.jsx("th",{children:"Hack name"}),i.jsx("th",{children:"Description"}),i.jsx("th",{children:"Base success rate"})]}),s.Hacks.map((d,c)=>i.jsxs("tr",{className:k(d.SpoilerLevel||"None",e.spoiler)?"":"spoiler-text",children:[i.jsx("td",{className:"wiki-cell-nowrap",children:i.jsx("p",{children:d.Name})}),i.jsx("td",{children:i.jsx("p",{children:d.Description})}),i.jsx("td",{className:"wiki-cell-center-align",children:i.jsxs("p",{children:[d.BaseChance,"%"]})})]},c))]})});e.output.push({groupType:"Individual",node:l})}}function mt(e,t){let o=t[2];o===void 0?o="1":o!=="1"&&o!=="2"&&o!=="3"&&o!=="4"&&(y(e,`Found bad heading type ${o}, should be 1, 2, 3, or 4`),o="1");const a=/\[\[\/Heading\]\]/.exec(e.initialContent.substring(e.index));if(a===null){y(e,"Found heading tag without close tag"),e.index+=t[0].length;return}const n=e.initialContent.substring(t.index+t[0].length,e.index+a.index),r=P(n);let s,l=0,d;r.length>1?(r.length>2&&y(e,"Found heading tag with multiple | characters, only 1 is supported"),s=r[0],d=_(r[1]),l=r[1].length+1+a[0].length):s=e.initialContent.slice(e.index+t[0].length,e.index+a.index+a[0].length);const c=x.Clone(e);c.index=0,c.inlineOnly="InlineOnly",c.initialContent=s,H(c,"/Heading"),e.index+=t[0].length+c.index+l;let h=A(c.output,e.inSpoiler,!0);const{text:m,id:g}=Qe(s);d===void 0&&(d=g),e.allowHeadingLinks&&(e.headings.find(f=>f.id===d)?y(e,`Found duplicate heading ID ${d}`,t.index):e.headings.push({id:d,indent:parseInt(o),text:m})),e.inSpoiler&&(h=i.jsx("span",{className:"spoiler-text spoiler-text-multiline",children:h}));const p=e.allowHeadingLinks&&i.jsx(z,{href:`#${d}`});o==="1"?e.output.push({groupType:"Individual",node:i.jsxs("h2",{id:d,className:"wiki-emphasized-heading",children:[h,p]})}):o==="2"?e.output.push({groupType:"Individual",node:i.jsxs("h3",{id:d,className:"wiki-heading",children:[h,p]})}):o==="3"?e.output.push({groupType:"Individual",node:i.jsxs("h4",{id:d,className:"wiki-heading",children:[h,p]})}):e.output.push({groupType:"Individual",node:i.jsxs("h5",{id:d,className:"wiki-heading",children:[h,p]})})}function gt(e,t){const o=t.index+t[0].length,a=x.Clone(e);a.index=o,a.inlineOnly="InlineOnly",H(a,"/I"),e.index=a.index;const n=i.jsx("i",{children:A(a.output,e.inSpoiler,!0)});e.output.push({groupType:"Grouped",node:n})}function pt(e,t){const o=/\[\[\/Image\]\]/.exec(e.initialContent.substring(e.index));if(o===null){y(e,`Found image tag "${t[0]}" without close tag`),e.index+=t[0].length;return}const a=e.index+t[0].length,n=a+o.index-t[0].length,r=P(e.initialContent.substring(a,n)),s=r[0];e.images.add(s);let l;if(r.length===1)l="";else{r.length>2&&y(e,`Found more than 1 | in image tag ${t[0]}`);const c=x.Clone(e);c.initialContent=r[1],c.inlineOnly="InlineWithNewlines",H(c,void 0),l=A(c.output,e.inSpoiler)}const d=B(`${s}`,"wiki_images/");e.output.push({groupType:"Individual",node:i.jsxs("div",{className:"wiki-sidebar-image",children:[i.jsxs("a",{className:e.inSpoiler?"spoiler-image":void 0,href:d,target:"_blank",rel:"noreferrer",children:[e.inSpoiler&&i.jsx("div",{className:"wiki-spoiler-image-text",children:"SPOILER"}),i.jsx("img",{src:d,onError:c=>{c.target.src=B("wiki_images/Image Not Found.png")}})]}),l]})}),e.index=n+o[0].length}const ut=new Map([["Image Name",{}],["Name",{}],["Type",{}],["Slot",{}],["Size",{isNumber:!0}],["Rating",{isNumber:!0}],["Rating Category",{}],["Integrity",{isNumber:!0}],["Coverage",{isNumber:!0}],["Hackable",{isBoolean:!0}],["Mass",{isNumber:!0}],["Description",{}],["Energy Upkeep",{isNumber:!0}],["Matter Upkeep",{isNumber:!0}],["Heat Generation",{isNumber:!0}],["Energy Generation",{isNumber:!0}],["Energy Storage",{isNumber:!0}],["Power Stability",{isNumber:!0}],["Time Per Move",{isNumber:!0}],["Drag",{isNumber:!0}],["Mod Per Extra",{isNumber:!0}],["Siege",{}],["Energy Per Move",{isNumber:!0}],["Heat Per Move",{isNumber:!0}],["Support",{isNumber:!0}],["Penalty",{isNumber:!0}],["Burnout",{}],["Range",{isNumber:!0}],["Shot Energy",{isNumber:!0}],["Shot Matter",{isNumber:!0}],["Shot Heat",{isNumber:!0}],["Recoil",{isNumber:!0}],["Targeting",{isNumber:!0}],["Delay",{isNumber:!0}],["Overload Stability",{isNumber:!0}],["Arc",{isNumber:!0}],["Waypoints",{isNumber:!0}],["Projectile Count",{isNumber:!0}],["Explosion Radius",{isDamage:!0}],["Damage",{isDamage:!0}],["Explosion Damage",{isExplosionDamage:!0}],["Falloff",{isNumber:!0}],["Chunks",{isChunks:!0}],["Damage Type",{}],["Explosion Type",{}],["Critical",{isCritical:!0}],["Penetration",{}],["Spectrum",{}],["Explosion Spectrum",{}],["Disruption",{isNumber:!0}],["Explosion Disruption",{isNumber:!0}],["Heat Transfer",{}],["Explosion Heat Transfer",{}],["Salvage",{isNumber:!0}],["Explosion Salvage",{isNumber:!0}]]);function ft(e,t){function o(c,h){return h!==void 0?h:c[0].toLowerCase()+c.substring(1).replaceAll(" ","")}const a=/\[\[\/ItemDetails\]\]/.exec(e.initialContent.substring(e.index));if(a===null){y(e,"Found item details tag without close tag"),e.index+=t[0].length;return}const n=e.index+t[0].length,r=n+a.index-t[0].length,s=e.initialContent.substring(n,r).split("||"),l={slot:"N/A",hackable:!1,name:"Item Name",noPrefixName:"",fullName:"",type:"Item",rating:1,ratingString:"",ratingCategory:"None",categories:[],size:1,integrity:0,noRepairs:!1,index:0,penalty:0,projectileCount:1,range:0,spoiler:"None",support:0,timePerMove:0,customItem:!0};for(const c of s){const h=c.split("|"),m=h[0].trim();if(h.length===1){y(e,`Item data category ${m} has no value`);continue}const g=ut.get(m);if(g===void 0){y(e,`Item data category ${m} is not expected`);continue}let p=h[1].trim();if(g.isNumber){if(p=re(p),p===void 0){y(e,`Item data category ${m} has invalid number ${h[1]}`);continue}if(p===0)continue}else if(g.isBoolean)p==="True"||p==="true"?p=!0:(p==="False"||p==="false"||y(e,`Item data category ${m} should be true or false but is neither`),p=!1);else if(g.isDamage||g.isExplosionDamage){const f=p.split("-");let u,w;f.length===1?(w=I(f[0],0),u=w):(w=I(f[0],0),u=I(f[1],0)),g.isDamage?(l.damageMin=w,l.damageMax=u):(l.explosionDamageMin=w,l.explosionDamageMax=u)}else if(g.isCritical){const f=/(\d*)% (\w*)/.exec(p);f!==null?(l.critical=I(f[1],0),l.criticalType=f[2]):y(e,`Item data category ${m} has invalid format. Should be like "x% type"`);continue}else if(g.isChunks){const f=p.split("-");let u,w;f.length===1?(u=I(f[0],0),w=u):(u=I(f[0],0),w=I(f[1],0)),l.maxChunks=w,l.minChunks=u;continue}l[o(m,g==null?void 0:g.key)]=p}e.index=r+a[0].length;const d=i.jsx("div",{className:"wiki-infobox wiki-infobox-centered",children:i.jsx(Q,{item:l})});e.output.push({groupType:"Individual",node:d})}function yt(e,t){const o=/\[\[\/List\]\]/.exec(e.initialContent.substring(e.index));if(o===null){y(e,"Found list tag without close tag"),e.index+=t[0].length;return}let a=!1;t[2]==="Ordered"?a=!0:t[2]!==void 0&&t[2]!=="Unordered"&&y(e,`Found list with invalid type ${t[2]}, type should be "Ordered", "Unordered", or empty (defaults to Unordered)`);const n=e.index+t[0].length,r=n+o.index-t[0].length,s=P(e.initialContent.substring(n,r)),l=[];for(let c=0;c<s.length;c++){const h=s[c].trim(),m=x.Clone(e);m.initialContent=h,m.inlineOnly="InlineWithNewlines",H(m,void 0);const g=A(m.output,e.inSpoiler,!0,!1);e.inSpoiler?l.push(i.jsx("li",{children:i.jsx("span",{className:"spoiler-text spoiler-text-multiline",children:g})},c)):l.push(i.jsx("li",{children:g},c))}const d=a?i.jsx("ol",{className:"wiki-list",children:l}):i.jsx("ul",{className:"wiki-list",children:l});e.output.push({groupType:"Individual",node:d}),e.index=r+o[0].length}function ae(e,t){function o(){return t[0].includes("http")}let a;o()&&t[2]!==void 0?a=(t[1]+":"+t[2]).replace("{{","[").replace("}}","]").split("|"):a=t[1].replace("{{","[").replace("}}","]").split("|");let n=a[0],r=n.split("#")[0];a.length>1&&(r=a[1],a.length>2&&y(e,"Too many | in link"));let s;const l=n.split("#");if(l.length>1&&e.allEntries.get(l[0])!==void 0?(s=e.allEntries.get(l[0]),n=`/${D(l[0])}#${_(l[1])}`,a.length>2&&y(e,"Too many # in link")):(s=e.allEntries.get(n),s!==void 0&&(n=`/${D(n)}`)),s!==void 0){const d=W(e,s,r,n);e.output.push({groupType:"Grouped",node:d})}else n.startsWith("~/")?e.output.push({groupType:"Grouped",node:i.jsx(he,{to:`~/${be}/${n.slice(2)}`,children:r})}):o()?e.output.push({groupType:"Grouped",node:i.jsx("a",{className:"wiki-link",href:n,children:r})}):(y(e,`Bad link to page "${n}" that doesn't exist`),e.output.push({groupType:"Grouped",node:n}));e.index+=t[0].length}function bt(e,t){const o=/\[\[\/Lore\]\]/.exec(e.initialContent.substring(e.index));if(o===null){y(e,`Found lore tag "${t[0]}" without close tag`),e.index+=t[0].length;return}const a=e.index+t[0].length,n=a+o.index-t[0].length,r=P(e.initialContent.substring(a,n)),s=r[0],l=r[1];if(e.index=n+o[0].length,r.length!==2){y(e,"Lore entry should have a group and entry name"),e.index+=t[0].length;return}const d=Ie.find(h=>h.Name===s);if(!d){y(e,`Lore group name ${s} is not valid, see lore.json for valid groups`);return}const c=d.Entries.find(h=>h["Name/Number"]===l);if(c===void 0){y(e,`Lore group name ${s} doesn't contain entry with name/number ${l}`);return}e.output.push({groupType:"Separator",node:void 0}),s=="0b10 Records"?(e.output.push({groupType:"Grouped",node:i.jsxs("span",{className:"wiki-game-text",children:[">Query(",l,")"]})}),e.output.push({groupType:"Separator",node:void 0})):s=="WAR.Sys Records"&&(e.output.push({groupType:"Grouped",node:i.jsxs("span",{className:"wiki-game-text",children:['Intel "',l,'"']})}),e.output.push({groupType:"Separator",node:void 0})),e.output.push({groupType:"Grouped",node:i.jsx("span",{className:"wiki-game-text",children:c.Content})}),e.output.push({groupType:"Separator",node:void 0})}const pe=new Map([["AllLocations",tt],["B",at],["BotDetails",ot],["BotGroups",it],["Color",rt],["Comment",st],["FanartGallery",te],["GameText",dt],["Gallery",te],["Hacks",ct],["Heading",mt],["I",gt],["Image",pt],["ItemDetails",ft],["List",yt],["Lore",bt],["NonEmptyPages",lt],["PartGroupTable",ht],["Spoiler",ne],["SpoilerHidden",oe],["Sub",wt],["Sup",vt],["Redacted",ne],["RedactedHidden",oe],["Table",Ct],["TooltipText",St]]);function H(e,t){const o=/\[\[([^\]:]*)(?::([^\]]*))?\]\]/g;function a(s){return s.replaceAll("{{","[").replaceAll("}}","]")}let n;for(;n=o.exec(e.initialContent);){if(e.index>n.index)continue;let s;for(;(s=e.initialContent.indexOf(`
+`,e.index))!==-1&&s<n.index;)e.inlineOnly==="InlineOnly"?y(e,"Newlines are not supported inside the current action",e.index):(e.output.push({groupType:"Grouped",node:a(e.initialContent.substring(e.index,s))}),e.output.push({groupType:"Separator",node:void 0})),e.index=s+1;if(e.index<n.index&&(e.output.push({groupType:"Grouped",node:a(e.initialContent.substring(e.index,n.index))}),e.index=n.index),n[1].startsWith("/"))if(n[1]===t){e.index+=n[0].length;return}else y(e,`Found mismatched end tag ${n[1]} with expected tag ${t}`),e.index+=n[0].length;else{const l=pe.get(n[1]);e.inlineOnly==="InlineOnly"||e.inlineOnly==="InlineWithNewlines"?n[1]==="Spoiler"||n[1]==="Redacted"||n[1]==="B"||n[1]==="I"||n[1]==="GameText"||n[1]==="Sub"||n[1]==="Sup"||n[1]==="Link"||n[1]==="Color"||n[1]==="Comment"||n[1]==="TooltipText"?l(e,n):l!==void 0?y(e,`Found action tag ${n[1]} in scope where only links and inline tags like bold/italics are allowed`):ae(e,n):l!==void 0?l(e,n):ae(e,n)}}let r;for(;(r=e.initialContent.indexOf(`
+`,e.index))!==-1;)e.output.push({groupType:"Grouped",node:e.initialContent.substring(e.index,r).replace("{{","[").replace("}}","]")}),e.output.push({groupType:"Separator",node:void 0}),e.index=r+1;e.index<e.initialContent.length&&(e.output.push({groupType:"Grouped",node:e.initialContent.substring(e.index).replace("{{","[").replace("}}","]")}),e.index=e.initialContent.length)}function ne(e,t){const o=!k(t[1],e.spoiler),a=t.index+t[0].length,n=x.Clone(e);n.index=a,n.inSpoiler=o,H(n,t[1]==="Spoiler"?"/Spoiler":"/Redacted"),e.index=n.index;let r=0;for(;r<n.output.length;){let s=1;for(;r+s<n.output.length&&n.output[r+s].groupType==="Grouped";)s++;const l=A(n.output.slice(r,r+s),o,!0,!0);e.output.push({groupType:n.output[r].groupType,node:l}),r+=s}}function oe(e,t){const o=t[1]==="RedactedHidden"?"Redacted":"Spoiler",a=!k(o,e.spoiler),n=t.index+t[0].length,r=x.Clone(e);r.index=n,r.inSpoiler=e.inSpoiler,H(r,t[1]==="RedactedHidden"?"/RedactedHidden":"/SpoilerHidden"),e.index=r.index;const s=A(r.output,e.inSpoiler);a&&e.output.push({groupType:"Individual",node:s})}function wt(e,t){const o=t.index+t[0].length,a=x.Clone(e);a.index=o,a.inlineOnly="InlineOnly",H(a,"/Sub"),e.index=a.index;const n=i.jsx("sub",{children:A(a.output,e.inSpoiler,!0)});e.output.push({groupType:"Grouped",node:n})}function vt(e,t){const o=t.index+t[0].length,a=x.Clone(e);a.index=o,a.inlineOnly="InlineOnly",H(a,"/Sup"),e.index=a.index;const n=i.jsx("sup",{children:A(a.output,e.inSpoiler,!0)});e.output.push({groupType:"Grouped",node:n})}function Ct(e,t){const o=/\[\[\/Table\]\]/.exec(e.initialContent.substring(e.index));if(o===null){y(e,"Found table tag without close tag"),e.index+=t[0].length;return}const a=e.index+t[0].length,n=a+o.index-t[0].length,r=P(e.initialContent.substring(a,n),"||");let s;const l=[];let d=!0,c=0;for(let m=0;m<r.length;m++){const g=r[m],p=P(g);d&&(c=p.length);const f=[];let u=0;for(let w=0;w<p.length;w++){let b=p[w],C;const S=/\[\[CellStyle:(.*?)\]\]/.exec(b);S!==null&&(S[1]==="Good"?C="wiki-cell-good":S[1]==="Neutral"?C="wiki-cell-neutral":S[1]==="Bad"?C="wiki-cell-bad":y(e,`Found invalid table cell style ${S[1]}, expected types are Good Neutral and Bad`),b=b.substring(S.index+S[0].length));let M;const G=/\[\[CellSpan:(.*?)\]\]/.exec(b);G!==null?(M=I(G[1],1),b=b.substring(G.index+G[0].length),u+=I(G[1],1)):u+=1;const E=x.Clone(e);E.initialContent=b,E.inlineOnly="InlineWithNewlines",H(E,void 0);const L=A(E.output,e.inSpoiler,!1,!1);e.inSpoiler&&(C!==void 0?C+=" spoiler-text":C="spoiler-text"),d?f.push(i.jsx("th",{className:C,colSpan:M,children:i.jsx("div",{children:L})},w)):f.push(i.jsx("td",{className:C,colSpan:M,children:L},w))}if(u!=c)for(let w=u;w<c;w++){let b="";e.inSpoiler&&(b="spoiler-text"),f.push(i.jsx("td",{className:b},w))}s===void 0?s=i.jsx("tr",{children:f}):l.push(i.jsx("tr",{children:f},m)),d=!1}const h=i.jsxs("table",{className:`wiki-table${e.inSpoiler?" spoiler-text spoiler-table":""}`,children:[i.jsx("thead",{children:s}),i.jsx("tbody",{children:l})]});e.output.push({groupType:"Individual",node:h}),e.index=n+o[0].length}function St(e,t){const o=e.initialContent.indexOf("[[/TooltipText]]"),a=e.initialContent.substring(t.index+t[0].length,o);e.index=o+16,a in $?e.output.push({groupType:"Grouped",node:$[a]}):(y(e,`Tooltip text category ${a} doesn't exist.`),e.output.push({groupType:"Grouped",node:a}))}function y(e,t,o=void 0){o===void 0&&(o=e.index);let a=e.initialContent.substring(o,o+50).replace(`
+`,"\\n");e.initialContent.length-o-50>0&&(a+="..."),e.errors.push(`${t}: section starting with "${a}"`)}function P(e,t="|"){let o=0,a=e.indexOf(t),n=e.indexOf("[[");if(a===-1)return[e];if(n===-1)return e.split(t);const r=[];let s="";for(;;){if(n===-1){const c=e.substring(o).split(t);return c[0]=s+c[0],r.concat(c)}if(a===-1)return o<e.length&&(s+=e.substring(o),r.push(s)),r;if(a<n){s+=e.substring(o,a),r.push(s),s="",o=a+t.length,a=e.indexOf(t,o);continue}s+=e.substring(o,n+2),o=n+2,n=e.indexOf("[[",o);let l=e.indexOf("]]",o),d=1;for(;d>0;){if(l===-1)return r;n!==-1&&(l===-1||n<l)?(d+=1,s+=e.substring(o,n+2),o=n+2,n=e.indexOf("[[",o)):(d-=1,s+=e.substring(o,l+2),o=l+2,l=e.indexOf("]]",o))}n=e.indexOf("[[",o),a=e.indexOf(t,o)}}function Tt({allowedEntries:e,searchString:t,setSearchString:o}){const[a,n]=T.useState(!1),[r,s]=Z(),l=t.toLowerCase(),d=new Set(e.filter(h=>h.toLowerCase().startsWith(l)&&t.length>1));e.filter(h=>h.toLowerCase().includes(l)&&t.length>1).forEach(h=>d.add(h));const c=Array.from(d).splice(0,20).map(h=>({value:h}));return e.find(h=>h.toLowerCase()==l)||c.unshift({value:`Search for ${t}`}),i.jsx(Ce,{className:"wiki-search",options:c,onInputChange:(h,m)=>{(m.action==="set-value"||m.action==="input-change")&&o(h)},onBlur:()=>{n(!1)},onFocus:()=>{n(!0)},onKeyDown:h=>{h.key==="Enter"&&t.length===1&&s(`/search/${D(t)}`)},onChange:h=>{const m=h.value;m.startsWith("Search for")?s(`/search/${D(t)}`):s(`/${D(m)}`)},inputValue:t,menuIsOpen:t.length>1&&a,placeholder:"Search Wiki"})}function kt({editState:e,entry:t,parsingErrors:o,setEditState:a}){const n=T.useRef(null),[r,s]=Se();if(!e.showEdit||t===void 0)return;function l(){const g={entries:[...r.entries]};let p=g.entries.find(u=>u.name===t.name);const f=n.current.value;p===void 0?p={name:t.name,content:f}:(g.entries.splice(g.entries.indexOf(p),1),p={...p,content:f}),g.entries.push(p),s(g)}const d=r.entries.find(g=>g.name===t.name),c=(d==null?void 0:d.content)||t.content;function h(g,p){const f=n.current;f.focus();const w=f.value.substring(f.selectionStart,f.selectionEnd);document.execCommand("insertText",!1,g+w+p),f.selectionStart=f.selectionStart-p.length-w.length-g.length}const m=o.length>0&&i.jsxs("div",{className:"wiki-edit-errors",children:[i.jsx("p",{children:"Parsing Errors"}),i.jsx("div",{children:o.map((g,p)=>i.jsx("p",{children:g},p))})]});return i.jsxs("div",{className:"wiki-edit-content",children:[i.jsxs("p",{children:["After editing the page, please visit the"," ",i.jsx("a",{href:"https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g",children:"spreadsheet"})," ","for instructions on how to update."]}),i.jsxs("div",{children:[i.jsx(K,{label:"Inline Content",tooltip:"Any kinds of inline content in this group can be placed anywhere where regular text can be processed. Except for Spoiler and Redacted tags, inline content can be nested with other inline content but not other top-level content. For example, Bold may be nested under Italicized text, but an Image cannot be nested under Bold Text"}),i.jsx(v,{tooltip:"Bolds any text inside the selection.",onClick:()=>h("[[B]]","[[/B]]"),children:"Bold"}),i.jsx(v,{tooltip:"Italicizes any text inside the selection.",onClick:()=>h("[[I]]","[[/I]]"),children:"Italicize"}),i.jsx(v,{tooltip:"Creates a subscript section of any text inside the selection.",onClick:()=>h("[[Sub]]","[[/Sub]]"),children:"Subscript"}),i.jsx(v,{tooltip:"Creates a superscript section of any text inside the selection.",onClick:()=>h("[[Sup]]","[[/Sup]]"),children:"Superscript"}),i.jsx(v,{tooltip:"Provides a game-text style to text inside the selection.",onClick:()=>h("[[GameText]]","[[/GameText]]"),children:"Game Text"}),i.jsx(v,{tooltip:'Provides text that matches a tooltip by the same name. For example, Tooltip Text of "Burn" shows the burn critical description.',onClick:()=>h("[[TooltipText]]","[[/TooltipText]]"),children:"Tooltip Text"}),i.jsx(v,{tooltip:"Provides a spoiler section around any text or image content nested underneath if the spoiler setting is set to None.",onClick:()=>h("[[Spoiler]]","[[/Spoiler]]"),children:"Spoiler"}),i.jsx(v,{tooltip:"Provides a spoiler section around any text or image content nested underneath if the spoiler setting is not set to Redacted.",onClick:()=>h("[[Redacted]]","[[/Redacted]]"),children:"Redacted"}),i.jsx(v,{tooltip:"Basically the opposite of Spoiler text; content is shown only if the spoiler setting is set to None.",onClick:()=>h("[[SpoilerHidden]]","[[/SpoilerHidden]]"),children:"Spoiler Hidden"}),i.jsx(v,{tooltip:"Basically the opposite of Redacted text; content is shown if the spoiler setting is not set to Redacted.",onClick:()=>h("[[RedactedHidden]]","[[/RedactedHidden]]"),children:"Redacted Hidden"}),i.jsx(v,{tooltip:"Inserts a link to the selected text. Link text may be different than the link itself by using the syntax [[Link|Link Text]].",onClick:()=>h("[[","]]"),children:"Link"}),i.jsx(v,{tooltip:"Color the selected text in the form of [[Color:Red]]Text[[/Color]]",onClick:()=>h("[[Color]]","[[/Color]]"),children:"Color"}),i.jsx(v,{tooltip:"Adds a comment for editors only that is ignored in the actual page in the form of [[Comment]]Hidden Text[[/Comment]]",onClick:()=>h("[[Comment]]","[[/Comment]]"),children:"Comment"})]}),i.jsxs("div",{children:[i.jsx(K,{label:"Top-level Content",tooltip:"Top-level content that can not typically be placed underneath other tags except for spoiler tags. Generally support all types of inline content."}),i.jsx(v,{tooltip:"Provides a large heading line with an underline containing the given text.",onClick:()=>h("[[Heading]]","[[/Heading]]"),children:"Heading 1"}),i.jsx(v,{tooltip:"Provides a slightly smaller heading line containing the given text.",onClick:()=>h("[[Heading:2]]","[[/Heading]]"),children:"Heading 2"}),i.jsx(v,{tooltip:"Provides an even smaller heading line containing the given text.",onClick:()=>h("[[Heading:3]]","[[/Heading]]"),children:"Heading 3"}),i.jsx(v,{tooltip:"Provides the smallest heading line containing the given text.",onClick:()=>h("[[Heading:4]]","[[/Heading]]"),children:"Heading 4"}),i.jsx(v,{tooltip:"Creates an image on the right side of the page with an optional caption in the form of [[Image]]Image Name.png|Image Caption[[/Image]]. May also use an external URL.",onClick:()=>h("[[Image]]","[[/Image]]"),children:"Sidebar Image"}),i.jsx(v,{tooltip:"Creates a list of images centered in the page in a list form. Images and captions should be sequentially listed, like [[Gallery]]Image 1.png|Image 1 caption|Image 2.png|Image 2 caption[[/Gallery]].",onClick:()=>h("[[Gallery]]","[[/Gallery]]"),children:"Gallery Images"}),i.jsx(v,{tooltip:"Creates a list of images centered in the page in a list form. Images and captions should be sequentially listed, like [[FanartGallery]]Image 1.png|Image 1 caption|Image 2.png|Image 2 caption[[/FanartGallery]]. Art takes up the full screen, compared to gallery where a smaller max size is allowed.",onClick:()=>h("[[FanartGallery]]","[[/FanartGallery]]"),children:"Fanart Gallery Images"}),i.jsx(v,{tooltip:"Creates a lore entry that pulls text from actual lore quotes, use Lore page as a reference.",onClick:()=>h("[[Lore]]","[[/Lore]]"),children:"Lore"}),i.jsx(v,{tooltip:"Creates an unordered (bulleted) list of items that can be separated out like [[List]]Item 1|Item 2|Item 3[[/List]].",onClick:()=>h("[[List]]","[[/List]]"),children:"Unordered List"}),i.jsx(v,{tooltip:"Creates an ordered (numbered) list of items that can be separated out like [[List:Ordered]]Item 1|Item 2|Item 3[[/List]].",onClick:()=>h("[[List:Ordered]]","[[/List]]"),children:"Ordered List"}),i.jsx(v,{tooltip:"Creates a 2-dimensional table of text items in the form of [[Table]]Column 1 Header|Column 2 header||Row 1 column 1|Row 1 column 2[[/Table]].",onClick:()=>h("[[Table]]","[[/Table]]"),children:"Table"}),i.jsx(v,{tooltip:"Creates a fake item infobox based on the provided data in the form of [[ItemDetails]]Name|XYZ||Image Name|...[[/ItemDetails]]. See the Example page for a full list of available parameters.",onClick:()=>h("[[ItemDetails]]","[[/ItemDetails]]"),children:"Item Details"}),i.jsx(v,{tooltip:"Creates a fake bot infobox based on the provided data in the form of [[BotDetails]]Name|XYZ||Class|...[[/BotDetails]]. See the Example page for a full list of available parameters.",onClick:()=>h("[[BotDetails]]","[[/BotDetails]]"),children:"Bot Details"}),i.jsx(v,{tooltip:"Creates a sortable table of parts contained in a certain part group or part supergroup page in the form of [[PartGroupTable]]Group Name|Category/Stat|Category2/Stat 2...[[/PartGroupTable]]. The available categories and stat names are the same as the ones shown in the parts spreadsheet view. For example, Overview/Rating.",onClick:()=>h("[[PartGroupTable]]","[[/PartGroupTable]]"),children:"Part Group Table"})]}),i.jsx("textarea",{ref:n,className:"wiki-edit-text",defaultValue:c},t.name),i.jsxs("div",{className:"wiki-edit-changes-group",children:[i.jsx(v,{tooltip:"Clears any saved changes from local storage and restores the original page text. Normally, changes are saved between sessions.",className:"clear-changes-button",clickOverrideText:{tempChildren:"Cleared",tempDuration:2e3},disabled:r.entries.find(g=>g.name===t.name)===void 0,onClick:()=>{const g={entries:[...r.entries]};g.entries.splice(g.entries.findIndex(f=>f.name===t.name),1),s(g),a({...e,editText:""}),n.current.focus(),document.execCommand("selectall"),document.execCommand("delete"),document.execCommand("insertText",!1,t.content)},children:"Clear Changes"}),i.jsx(v,{tooltip:"Closes the edit pane and returns the content below to the original state if changes were previewed.",onClick:()=>{a({...e,showEdit:!1})},children:"Close"}),i.jsx(v,{tooltip:"Previews the changes made in the editor above in the page below.",className:"preview-changes-button",clickOverrideText:{tempChildren:"Updated",tempDuration:2e3},onClick:()=>{a({...e,editText:n.current.value,entry:t}),l()},children:"Preview Changes"}),i.jsx(v,{className:"copy-text-button",tooltip:"Copies the text in the editor above to the clipboard.",clickOverrideText:{tempChildren:"Copied",tempDuration:2e3},onClick:()=>{navigator.clipboard.writeText(n.current.value.replace(/\n/g,"\\n")),a({...e,modified:!1}),l()},children:"Copy Text"})]}),m]})}function xt({entry:e,parsedNode:t}){const o=e.extraData;return i.jsxs(i.Fragment,{children:[i.jsx("div",{className:"wiki-infobox",children:i.jsx(V,{bot:o,popoversToLinks:!0})}),t]})}function At({entry:e,groupSelection:t,parsedNode:o,setGroupSelection:a,spoiler:n}){const r=T.useMemo(()=>e.childEntries.filter(d=>k(d.spoiler,n)||k(d.spoiler,e.spoiler)),[n]),s=T.useMemo(()=>r.map(d=>({value:d.name})),[e]),l=(r.find(d=>d.name===t)||r[0]).extraData;return i.jsxs(i.Fragment,{children:[i.jsxs("div",{className:"wiki-infobox",children:[i.jsx("div",{className:"wiki-infobox-button-group",children:i.jsx(se,{buttons:s,selected:t,onValueChanged:d=>{a(d)}})}),i.jsx(V,{bot:l,popoversToLinks:!0,showWikiLink:!0})]}),o]})}function Ht({entry:e,parsedNode:t}){const o=e.extraData;return i.jsxs(i.Fragment,{children:[i.jsx("div",{className:"wiki-infobox",children:i.jsx(Q,{item:o})}),t]})}function Gt({entry:e,groupSelection:t,parsedNode:o,setGroupSelection:a,spoiler:n}){var h;const r=T.useMemo(()=>e.childEntries.filter(m=>k(m.spoiler,n)||k(m.spoiler,e.spoiler)),[n]),[s,l]=T.useMemo(()=>{const m=r.map(p=>({value:p.name})),g=r.map(p=>({value:p.name}));return[m,g,r]},[e]),d=(h=r.find(m=>m.name===t)||(r.length>0?r[0]:void 0))==null?void 0:h.extraData,c=e.childEntries.length<20?i.jsx("div",{className:"wiki-infobox-button-group",children:i.jsx(se,{buttons:s,selected:t,onValueChanged:m=>{a(m)}})}):i.jsx(ke,{className:"wiki-item-select",label:"Item",tooltip:"Item to show information for.",options:l,value:l.find(m=>m.value===t)||l[0],onChange:m=>{a(m.value)}});return i.jsxs(i.Fragment,{children:[i.jsxs("div",{className:"wiki-infobox",children:[c,d&&i.jsx(Q,{item:d,showWikiLink:!0})]}),o]})}function Nt({entry:e,parsedNode:t}){const o=e.extraData;return i.jsxs(i.Fragment,{children:[i.jsx("div",{className:"wiki-infobox",children:i.jsx(Ee,{location:o})}),t]})}function ie({entry:e,groupSelection:t,parsedNode:o,path:a,setGroupSelection:n,spoiler:r}){const[s,l]=T.useState(!1);if(T.useEffect(()=>{document.title=`${a} - Cog-Minder Wiki`},[a]),e===void 0)return i.jsxs("p",{children:["Page ",a," not found"]});if(!k(e.spoiler,r)&&!s)return i.jsxs("div",{className:"spoiler-warning",children:[i.jsx("p",{children:"Page blocked by Spoilers setting: Would you like to continue?"}),i.jsx("p",{children:" Spoilers settings can be updated in the Settings popup in the top right corner of the page."}),i.jsxs("div",{children:[i.jsx(v,{onClick:()=>l(!0),children:"Yes"}),i.jsx(v,{onClick:()=>history.back(),children:"Back"})]})]});switch(e.type){case"Bot":return i.jsx(xt,{entry:e,parsedNode:o});case"Bot Group":return i.jsx(At,{entry:e,groupSelection:t,parsedNode:o,setGroupSelection:n,spoiler:r});case"Bot Supergroup":return o;case"Location":return i.jsx(Nt,{entry:e,parsedNode:o});case"Other":return o;case"Part":return i.jsx(Ht,{entry:e,parsedNode:o});case"Part Group":return i.jsx(Gt,{entry:e,groupSelection:t,parsedNode:o,setGroupSelection:n,spoiler:r});case"Part Supergroup":return o;default:Te(e.type)}}function F(e,t){let o=0,a;const n=[],r=t.toLowerCase();for(;(a=e.substring(o).toLowerCase().indexOf(r))!==-1;)a!==0&&n.push(i.jsx(T.Fragment,{children:e.substring(o,o+a)},n.length)),n.push(i.jsx("b",{children:e.substring(o+a,o+a+t.length)},n.length)),o+=a+t.length;return o<e.length&&n.push(i.jsx(T.Fragment,{children:e.substring(o)},n.length)),i.jsx(i.Fragment,{children:n})}function It({allEntries:e,allowedEntries:t,search:o}){T.useEffect(()=>{document.title=`Search for "${o}" - Cog-Minder Wiki`});const a=le(),n=T.useMemo(()=>{const g=Array.from(t).map(f=>({entry:e.get(f),previewContent:$e(e.get(f).content,a)}));return new Map(g.map(f=>[f.entry.name,f]))},[e,t]),r=o.toLowerCase();let s=!1;const l=Array.from(t).filter(g=>g.toLowerCase().includes(r)),d=Array.from(n.values()).filter(g=>g.previewContent.toLowerCase().includes(r));let c,h;if(l.length>0){s=!0;const g=l.map((p,f)=>{let u=n.get(e.get(p).name).previewContent;const w=u.length<=250,b=u.lastIndexOf(". ");b>-1&&b<=250?u=u.substring(0,b+1):u.length>0&&!w&&(u=u.substring(0,250)+"...");let C;u.length===0?C="No page content":C=F(u,r);const S=F(p,r);return i.jsxs("li",{children:[i.jsx(U,{href:`/${D(p)}`,children:S}),i.jsx("p",{children:C})]},f)});c=i.jsxs(i.Fragment,{children:[i.jsx("h3",{className:"wiki-heading-emphasized",children:"Title Matches"}),i.jsx("ul",{className:"wiki-search-result-list",children:g})]})}if(d.length>0){s=!0;const g=d.map((p,f)=>{let u=p.previewContent.toLowerCase().indexOf(r);const w=Math.max(0,u-150);let b=p.previewContent.substring(w,u+150);const C=w==0,S=u+150>=p.previewContent.length;u=b.toLowerCase().indexOf(r);const M=b.indexOf(". ");M!==-1&&M<u?b=b.substring(M+2):b.length>0&&!C&&(b="..."+b),u=b.toLowerCase().indexOf(r);const G=b.lastIndexOf(". ");G>-1&&G>u?b=b.substring(0,G+1):b.length>0&&!S&&(b=b+"...");let E;b.length===0?E="No page content":E=F(b,r);const L=F(p.entry.name,r);return i.jsxs("li",{children:[i.jsx(U,{href:`/${D(p.entry.name)}`,children:L}),i.jsx("p",{children:E})]},f)});h=i.jsxs(i.Fragment,{children:[i.jsx("h3",{className:"wiki-heading-emphasized",children:"Content Matches"}),i.jsx("ul",{className:"wiki-search-result-list",children:g})]})}const m=i.jsxs(i.Fragment,{children:[i.jsx("h1",{className:"wiki-emphasized-heading",children:"Search Results"}),i.jsxs("h2",{className:"wiki-heading",children:['Searching for "',o,'"']})]});return s?i.jsxs(i.Fragment,{children:[m,c,h]}):i.jsxs(i.Fragment,{children:[m,i.jsxs("span",{children:['No results found for "',o,'".']})]})}function Rt(e,t){for(const o of N["Bot Groups"]){let a="None";o.Spoiler==="Redacted"?a="Redacted":o.Spoiler==="Spoiler"&&(a="Spoiler");const n=[],r=new R(o.AlternateNames??[],n,o.Content??"",o.Name,a,"Bot Group");e(r);for(const s of o.Bots){const l=t.get(s);if(l===void 0){console.log(`Found bad bot name ${s} in group ${o.Name}`);continue}if(l.type!=="Bot"){console.log(`Found non-bot ${l.name} in bot group ${r.name}`);continue}l.parentEntries.push(r),n.push(l)}n.sort((s,l)=>{const d=s.extraData,c=l.extraData;return fe(d,c)})}}function Dt(e,t){for(const o of N.Bots){const a=e.getBot(o.Name);t(new R([],[],o.Content,o.Name,a.spoiler,"Bot",a))}}function Mt(e,t){for(const o of N["Bot Supergroups"]){let a="None";o.Spoiler==="Redacted"?a="Redacted":o.Spoiler==="Spoiler"&&(a="Spoiler");const n=[],r=new R(o.AlternateNames||[],n,o.Content??"",o.Name,a,"Bot Supergroup");if(e(r),o.Groups!==void 0)for(const s of o.Groups){const l=t.get(s);if(l===void 0){console.log(`Found bad bot group name ${s} in group ${r.name}`);continue}if(l.type!=="Bot Group"){console.log(`Found non-group ${s} in bot group ${r.name}`);continue}l.parentEntries.push(r),n.push(l)}if(o.Bots!==void 0){const s=[];for(const l of o.Bots){const d=t.get(l);if(d===void 0){console.log(`Found bad bot name ${l} in group ${o.Name}`);continue}if(d.type!=="Bot"){console.log(`Found non-bot ${d.name} in bot group ${r.name}`);continue}d.parentEntries.push(r),s.push(d)}s.sort((l,d)=>{l.name.localeCompare(d.name);const c=l.extraData,h=d.extraData;return fe(c,h)}),s.length>0&&n.push(new R([],s,"","Other","None","Bot Group",void 0,!0))}}for(const o of N["Bot Supergroups"]){if(o.Supergroups===void 0)continue;const a=t.get(o.Name);for(const n of o.Supergroups){const r=t.get(n);if(r===void 0){console.log(`Found bad part supergroup name ${n} in supergroup ${o.Name}`);continue}if(r.type!=="Bot Supergroup"){console.log(`Found non-part supergroup name ${r.name} in supergroup ${a.name}`);continue}a.hasSupergroupChildren=!0,r.hasDescendantEntry(a)?console.log(`Found recursion with bot supergroups ${a.name} and ${r.name}`):(r.parentEntries.push(a),a.childEntries.push(r))}a.childEntries.sort((n,r)=>n.name==="Other"?1:r.name==="Other"?-1:n.name.localeCompare(r.name))}}function Et(e,t,o,a){for(const n of N.Locations){let r="None";n.Spoiler==="Redacted"?r="Redacted":n.Spoiler==="Spoiler"&&(r="Spoiler");const s=(n.SpecialBots??[]).map(h=>{try{return e.getBot(h)}catch{return console.log(`Bad bot name ${h} in ${n.Name}`),null}}).filter(h=>h!==null),l=(n.SpecialItems??[]).map(h=>{try{return t.getItem(h)}catch{return console.log(`Bad item name ${h} in ${n.Name}`),null}}).filter(h=>h!==null),d={branch:n.Branch??!1,entries:[],exits:[],exitSkipsDepth:n.ExitSkipsDepth??!1,imageName:n.ImageName,maxDepth:n.MaxDepth,minDepth:n.MinDepth,multipleDepths:n.MultipleDepths??!1,name:n.Name,preDepthBranch:n.PreDepthBranch??!1,spoiler:r,specialBots:s,specialItems:l},c=new R(n.AlternateNames??[],[],n.Content,n.Name,r,"Location",d);o(c)}for(const n of N.Locations){const r=a.get(n.Name);for(const s of n.Exits){const l=a.get(s.Map);if(l===void 0)console.log(`Bad location reference ${s} in ${n.Name}`);else{const d=r.extraData,c=l.extraData;d.exits.push({depthsString:s.Depths,location:c}),c.entries.push({depthsString:s.Depths,location:d})}}}}function Pt(e,t){for(const a of N.Other){let n="None";a.Spoiler==="Redacted"?n="Redacted":a.Spoiler==="Spoiler"&&(n="Spoiler");const r=new R(a.AlternateNames??[],[],a.Content,a.Name,n,"Other");e(r)}for(const a of N.Other){const n=t.get(a.Name);if(a.Subpages!==void 0)for(const r of a.Subpages){const s=t.get(r);if(s===void 0){console.log(`Found bad subpage name ${r} in group ${a.Name}`);continue}s.parentEntries.push(n),n.childEntries.push(s)}}function o(a){const n=[];for(let r=a.childEntries.length-1;r>=0;r--){const s=a.childEntries[r];s.childEntries.length===0&&(n.push(s),a.childEntries.splice(r,1))}n.length>0&&a.childEntries.push(new R([],n,"","Other","None","Other",void 0,!0))}for(const a of N.Other){const n=t.get(a.Name);for(const r of n.parentEntries)if(r.parentEntries.length>0)for(const s of r.parentEntries)if(s.parentEntries.length>0)for(const l of s.parentEntries)l.hasSupergroupChildren=!0,o(l);else o(s)}}function Lt(e,t,o){for(const a of N["Part Groups"]){let n="None";a.Spoiler==="Redacted"?n="Redacted":a.Spoiler==="Spoiler"&&(n="Spoiler");const r=[],s=new R([],r,a.Content??"",a.Name,n,"Part Group");e(s);let l=[];a.Parts?l=a.Parts:a["Part Category"]?l=ue(a["Part Category"],t):console.log(`Part group ${s.name} has no parts`);for(const d of l){const c=o.get(d);if(c===void 0){console.log(`Found bad part name ${d} in group ${a.Name}`);continue}if(c.type!=="Part"){console.log(`Found non-part ${c.name} in part group ${s.name}`);continue}c.parentEntries.push(s),r.push(c)}r.sort((d,c)=>{const h=d.extraData,m=c.extraData;return Y(h,m)})}}function Ft(e,t){for(const o of N.Parts){const a=e.getItem(o.Name);let n="None";a.categories.includes("Redacted")?n="Redacted":a.categories.includes("Spoiler")&&(n="Spoiler"),t(new R([],[],o.Content,o.Name,n,"Part",a))}}function Bt(e,t,o){for(const a of N["Part Supergroups"]){let n="None";a.Spoiler==="Redacted"?n="Redacted":a.Spoiler==="Spoiler"&&(n="Spoiler");const r=[],s=new R([],r,a.Content??"",a.Name,n,"Part Supergroup");if(t(s),a.Groups!==void 0)for(const c of a.Groups){const h=o.get(c);if(h===void 0){console.log(`Found bad part group name ${c} in group ${s.name}`);continue}if(h.type!=="Part Group"){console.log(`Found non-group ${c} in part group ${s.name}`);continue}h.parentEntries.push(s),r.push(h)}let l=[];a.Parts!==void 0?l=a.Parts:a["Part Category"]!==void 0&&(l=ue(a["Part Category"],e));const d=[];for(const c of l){const h=o.get(c);if(h===void 0){console.log(`Found bad part name ${c} in group ${a.Name}`);continue}if(h.type!=="Part"){console.log(`Found non-part ${h.name} in part group ${s.name}`);continue}let m=!0;if(a.Groups!==void 0)for(const g of a.Groups){const p=o.get(g);if(p!==void 0&&p.hasDescendantEntry(h)){m=!1;break}}m&&(h.parentEntries.push(s),d.push(h))}d.sort((c,h)=>{const m=c.extraData,g=h.extraData;return Y(m,g)}),d.length>0&&r.push(new R([],d,"","Other","None","Part Group",void 0,!0))}for(const a of N["Part Supergroups"]){if(a.Supergroups===void 0)continue;const n=o.get(a.Name);for(const r of a.Supergroups){const s=o.get(r);if(s===void 0){console.log(`Found bad part supergroup name ${r} in supergroup ${a.Name}`);continue}if(s.type!=="Part Supergroup"){console.log(`Found non-part supergroup name ${s.name} in supergroup ${n.name}`);continue}n.hasSupergroupChildren=!0,s.hasDescendantEntry(n)?console.log(`Found recursion with part supergroups ${n.name} and ${s.name}`):(s.parentEntries.push(n),n.childEntries.push(s))}n.childEntries.sort((r,s)=>r.name==="Other"?1:s.name==="Other"?-1:r.name.localeCompare(s.name))}}const Wt=new Map([["Alien Artifacts",e=>e.ratingCategory==="Alien"],["Alpha Cannons",e=>e.type==="Energy Cannon"&&e.name.includes("Alpha Cannon")],["Ballistic Cannons",e=>e.type==="Ballistic Cannon"],["Ballistic Guns",e=>e.type==="Ballistic Gun"],["Cooled Flight Units",e=>e.type==="Flight Unit"&&e.name.startsWith("Cld.")],["Electromagnetic Cannons",e=>e.type==="Energy Cannon"&&e.damageType==="Electromagnetic"],["Electromagnetic Guns",e=>e.type==="Energy Gun"&&e.damageType==="Electromagnetic"],["Electromagnetic Launchers",e=>e.type==="Launcher"&&e.explosionType==="Electromagnetic"],["Engines",e=>e.type==="Engine"],["Explosive Launchers",e=>e.type==="Launcher"&&e.explosionType==="Explosive"],["Flight Units",e=>e.type==="Flight Unit"],["Guided Weapons",e=>e.slot==="Weapon"&&e.waypoints!==void 0],["Hover Units",e=>e.type==="Hover Unit"],["Hybrid Power",e=>e.slot==="Power"&&e.name.startsWith("Hyb.")],["Impact Weapons",e=>e.type==="Impact Weapon"],["Legs",e=>e.type==="Leg"],["Light Power",e=>e.slot==="Power"&&e.name.startsWith("Lgt.")],["Micro Power",e=>e.slot==="Power"&&e.name.startsWith("Mic.")],["Overloadable Power",e=>e.slot==="Power"&&e.powerStability!==void 0],["Overloadable Propulsion",e=>e.slot==="Propulsion"&&e.burnout!==void 0],["Overloadable Weapons",e=>e.slot==="Weapon"&&e.overloadStability!==void 0],["Overtuned Parts",e=>e.name.startsWith("Ovr.")],["Phasers",e=>e.type==="Energy Gun"&&e.damageType==="Phasic"],["Piercing Weapons",e=>e.type==="Piercing Weapon"],["Power Cores",e=>e.type==="Power Core"],["Reactors",e=>e.type==="Reactor"],["Reinforced Power",e=>e.slot==="Power"&&e.name.startsWith("Rnf.")],["Resistance Armor",e=>e.type==="Protection"&&e.specialProperty!==void 0&&e.specialProperty.trait.kind==="DamageResists"],["Special Weapons",e=>e.type==="Special Weapon"],["Slashing Weapons",e=>e.type==="Slashing Weapon"],["Temporary Slot Parts",e=>{var t;return((t=e.effect)==null?void 0:t.startsWith("When attached, gives access to additional temporary slot"))||!1}],["Thermal Cannons",e=>e.type==="Energy Cannon"&&e.damageType==="Thermal"],["Thermal Guns",e=>e.type==="Energy Gun"&&e.damageType==="Thermal"],["Treads",e=>e.type==="Treads"],["Vortex Cannons",e=>e.type==="Energy Cannon"&&e.damageType==="Entropic"],["Vortex Guns",e=>e.type==="Energy Gun"&&e.damageType==="Entropic"],["Wheels",e=>e.type==="Wheel"]]);function ue(e,t){const o=Wt.get(e);if(o===void 0)return console.log(`Tried to search for undefined item category ${e}`),[];const a=[];for(const n of t.getAllItems())o(n)&&a.push(n);return a.sort(Y),a.map(n=>n.name)}function Ot(e,t){const o=new Map;function a(n){function r(s,l){o.get(s)!==void 0&&console.log(`Found duplicate wiki entries for "${s}"`),o.set(s,l)}r(n.name,n);for(const s of n.alternativeNames)r(s,n)}return Dt(e,a),Rt(a,o),Mt(a,o),Et(e,t,a,o),Ft(t,a),Lt(a,t,o),Bt(t,a,o),Pt(a,o),o}function fe(e,t){const o=I(e.tier,1),a=I(t.tier,1);return o===a?e.name.localeCompare(t.name):o-a}function Y(e,t){return e.rating===t.rating?e.name.localeCompare(t.name):e.rating-t.rating}function qt({allowedEntries:e,allEntries:t,setEditState:o}){const[a,n]=Z(),[r,s]=T.useState("");return i.jsxs("div",{className:"navigation-bar",children:[Ge(),i.jsx(Ne,{href:"/",tooltip:"Navigates to the wiki home page.",children:"Home"}),i.jsx(v,{tooltip:"Pops open an editor that allows previewing edits to the current page.",onClick:()=>{o(l=>({...l,showEdit:!0}))},children:"Edit"}),i.jsx(Tt,{allowedEntries:e,searchString:r,setSearchString:s}),i.jsx(v,{tooltip:"Searches all pages for the given text.",onClick:()=>{r.length>0&&n(`/search/${D(r)}`)},children:"Search"})]})}function $t(){const e=Pe(),t=Le(),[o]=Z(),a=le(),[n,r]=T.useState(""),[s,l]=J("/wiki/:page"),[d]=J("/wiki"),[c,h]=T.useState({editText:"",entry:void 0,modified:!1,showEdit:!1}),[m]=xe(),[g,p]=T.useMemo(()=>{const C=Ot(e,t),S=Array.from(C.entries()).filter(([M,G])=>k(G.spoiler,a)&&G.name!=="Homepage").map(([M,G])=>M);return S.sort(),[C,S]},[e,t,a]);T.useEffect(()=>{const C=m.slice(1);if(C.length===0)return;const S=document.getElementById(C);S!==null&&S.scrollIntoView()},[]);let f,u,w,b=[];if(s||d){let C;if(d?C="Homepage":C=O(l[0]),f=g.get(C),u=f,u!==void 0&&c.editText.length>0&&c.entry===u){const S=u.parentEntries;u=new R(u.alternativeNames,u.childEntries,c.editText,u.name,u.spoiler,u.type,u.extraData,u.fakeGroup,u.hasSupergroupChildren),u.parentEntries=S}if(u!==void 0){const S=et(u,g,a,t,e);w=S.node,b=S.errors}}return i.jsx(Ae,{base:"/wiki",children:i.jsxs("div",{className:"page-content",children:[i.jsx(qt,{allEntries:g,allowedEntries:p,setEditState:h,spoiler:a},o),i.jsx(kt,{editState:c,entry:f,parsingErrors:b,setEditState:h}),i.jsx("div",{className:"wiki-page-content",children:i.jsxs(He,{children:[i.jsx(q,{path:"/",children:i.jsx(ie,{allEntries:g,entry:g.get("Homepage"),groupSelection:n,parsedNode:w,spoiler:a,path:"Homepage",setGroupSelection:r},"Homepage")}),i.jsx(q,{path:"/search/:search",children:C=>i.jsx(It,{allEntries:g,allowedEntries:p,search:O(C.search)})}),i.jsx(q,{children:C=>i.jsx(ie,{allEntries:g,entry:u,groupSelection:n,parsedNode:w,spoiler:a,path:O(C[0]),setGroupSelection:r},u==null?void 0:u.name)})]})})]})})}export{$t as default};
