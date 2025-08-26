@@ -577,6 +577,9 @@ function applyDamageChunkToPart(
     } else if (part.def.type === "Leg" && (part.def as PropulsionItem).shield && botState.shielded) {
         if (!penetrate && randomInt(0, 1) === 1) {
             // 50% complete deflection chance for non-penetrating projectiles
+            // TODO: Try to figure out if there is an easy way to determine which
+            // projectiles are not deflected. Some example projectiles that don't deflect
+            // are null and potential cannons.
             damage = 0;
         } else {
             // Otherwise, divide damage in 2
