@@ -39,6 +39,12 @@ const botBehaviorButtons: ExclusiveButtonDefinition<BotBehavior>[] = [
         value: "Already Sieged/Fight",
     },
     {
+        value: "Shield/Fight",
+    },
+    {
+        value: "Already Shielded/Fight",
+    },
+    {
         value: "Running",
     },
     {

@@ -273,16 +273,19 @@ function getSimulatorState(
         const isProtection = itemDef.type === "Protection";
         const isTreads = itemDef.type === "Treads";
         const coverage = itemDef.coverage ?? 0;
+        const shieldedCoverage = itemDef.type === "Leg" && (itemDef as PropulsionItem).shield ? 2 * coverage : coverage;
         const siegedCoverage = isProtection || isTreads ? 2 * coverage : coverage;
         parts.push({
             armorAnalyzedCoverage: isProtection ? 0 : coverage,
+            armorAnalyzedShieldedCoverage: isProtection ? 0 : shieldedCoverage,
             armorAnalyzedSiegedCoverage: isProtection ? 0 : siegedCoverage,
             coverage: coverage,
             def: itemDef,
             integrity: integrity,
             initialIndex: partCount++,
             protection: isProtection,
-            selfDamageReduction: 1,
+            selfDamageReduction: 0,
+            shieldedCoverage: shieldedCoverage,
             siegedCoverage: siegedCoverage,
         });
     }
@@ -333,7 +336,9 @@ function getSimulatorState(
     // }
 
     const armorAnalyzedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedCoverage, 0);
+    const armorAnalyzedShieldedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.shieldedCoverage, 0);
     const armorAnalyzedSiegedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.siegedCoverage, 0);
+    const shieldedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.shieldedCoverage, 0);
     const siegedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.siegedCoverage, 0);
 
     const behavior = pageState.enemyBehavior || "Stand/Fight";
@@ -349,6 +354,10 @@ function getSimulatorState(
         runningEvasion = 0;
     }
 
+    const shielded =
+        behavior === "Already Shielded/Fight" &&
+        parts.find((p) => p.def.type === "Leg" && (p.def as PropulsionItem).shield) !== undefined;
+
     const sieged =
         behavior === "Already Sieged/Fight" &&
         parts.find((p) => p.def.type === "Treads" && (p.def as PropulsionItem).siege !== undefined) !== undefined;
@@ -358,6 +367,7 @@ function getSimulatorState(
     // Enemy bot state
     const botState: BotState = {
         armorAnalyzedCoverage: armorAnalyzedCoverage,
+        armorAnalyzedShieldedCoverage: armorAnalyzedShieldedCoverage,
         armorAnalyzedSiegedCoverage: armorAnalyzedSiegedCoverage,
         behavior: behavior,
         coreCoverage: botCoreCoverage,
@@ -380,10 +390,13 @@ function getSimulatorState(
         runningEvasion: runningEvasion,
         runningMomentum: behavior === "Running" ? 3 : 0,
         salvage: preSalvage,
+        shielded: shielded,
+        shieldedCoverage: shieldedCoverage,
         sieged: sieged,
         siegedCoverage: siegedCoverage,
         superfortressRegen: bot.name === "Superfortress" ? { nextRegenAttempt: 0 } : undefined,
         totalCoverage: botTotalCoverage,
+        tusToShield: behavior === "Shield/Fight" ? 400 : 0,
         tusToSiege: behavior === "Siege/Fight" ? 500 : 0,
     };
 

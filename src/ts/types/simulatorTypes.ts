@@ -18,6 +18,7 @@ export type SiegeState =
 
 export type SimulatorPart = {
     armorAnalyzedCoverage: number;
+    armorAnalyzedShieldedCoverage: number;
     armorAnalyzedSiegedCoverage: number;
     coverage: number;
     def: Item;
@@ -25,6 +26,7 @@ export type SimulatorPart = {
     initialIndex: number;
     protection: boolean;
     selfDamageReduction: number;
+    shieldedCoverage: number;
     siegedCoverage: number;
     resistances?: BotResistances;
 };
@@ -93,11 +95,14 @@ export type BotBehavior =
     | "Unpowered 10 Turns"
     | "Siege/Fight"
     | "Already Sieged/Fight"
+    | "Shield/Fight"
+    | "Already Shielded/Fight"
     | "Running"
     | "Run When Hit";
 
 export type BotState = {
     armorAnalyzedCoverage: number;
+    armorAnalyzedShieldedCoverage: number;
     armorAnalyzedSiegedCoverage: number;
     behavior: BotBehavior;
     coreCoverage: number;
@@ -120,10 +125,13 @@ export type BotState = {
     runningEvasion: number;
     runningMomentum: number;
     salvage: number;
+    shielded: boolean;
     sieged: boolean;
+    shieldedCoverage: number;
     siegedCoverage: number;
     superfortressRegen: SuperfortressRegenState | undefined;
     totalCoverage: number;
+    tusToShield: number;
     tusToSiege: number;
 };
 

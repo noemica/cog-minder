@@ -135,6 +135,7 @@ type DamageChunk = {
     disruptChance: number;
     forceCore: boolean;
     originalDamage: number;
+    penetrate: boolean;
     realDamage: number;
     salvage: number;
     spectrum: number;
@@ -155,6 +156,7 @@ function addRandomDestroyedPart(state: SimulatorState) {
 
     botState.parts.push(part);
     botState.armorAnalyzedCoverage += part.armorAnalyzedCoverage;
+    botState.armorAnalyzedShieldedCoverage += part.armorAnalyzedShieldedCoverage;
     botState.armorAnalyzedSiegedCoverage += part.armorAnalyzedSiegedCoverage;
     botState.siegedCoverage += part.siegedCoverage;
     botState.totalCoverage += part.coverage;
@@ -191,6 +193,7 @@ function applyDamage(
     canOverflow: boolean,
     damageType: DamageType,
     salvage: number,
+    penetrationChance: number,
 ) {
     const chunks: DamageChunk[] = [];
 
@@ -208,6 +211,7 @@ function applyDamage(
                 disruptChance: 0,
                 forceCore: false,
                 originalDamage: damage,
+                penetrate: false,
                 realDamage: 0,
                 salvage: salvage,
                 spectrum: 0,
@@ -223,6 +227,7 @@ function applyDamage(
                 disruptChance: disruptChance,
                 forceCore: false,
                 originalDamage: damage,
+                penetrate: randomInt(0, 100) <= penetrationChance,
                 realDamage: 0,
                 salvage,
                 spectrum: spectrum,
@@ -246,7 +251,8 @@ function applyDamage(
 
     if (part !== undefined && part.remote) {
         for (const chunk of chunks) {
-            chunk.realDamage = chunk.originalDamage - Math.trunc(chunk.originalDamage * (1 - multiplier)) - damageReduction;
+            chunk.realDamage =
+                chunk.originalDamage - Math.trunc(chunk.originalDamage * (1 - multiplier)) - damageReduction;
         }
     } else {
         for (const chunk of chunks) {
@@ -276,6 +282,7 @@ function applyDamage(
             chunk.disruptChance,
             chunk.spectrum,
             chunk.armorAnalyzed,
+            chunk.penetrate,
         );
 
         // Apply corruption (22)
@@ -308,6 +315,7 @@ function applyDamageChunk(
     disruptChance: number,
     spectrum: number,
     armorAnalyzed: boolean,
+    penetrate: boolean,
 ) {
     // Determine hit part (13)
     const { part, partIndex } = getHitPart(state.botState, coreBonus, damageType, isOverflow, forceCore, armorAnalyzed);
@@ -320,6 +328,7 @@ function applyDamageChunk(
         spectrum,
         canOverflow,
         isOverflow,
+        penetrate,
         part,
         partIndex,
     );
@@ -361,6 +370,7 @@ function applyDamageChunkToPart(
     spectrum: number,
     canOverflow: boolean,
     isOverflow: boolean,
+    penetrate: boolean,
     part: SimulatorPart | undefined,
     partIndex: number,
 ) {
@@ -517,7 +527,7 @@ function applyDamageChunkToPart(
             if (part.def.size === 1) {
                 // Single-slot items get blasted off
                 // Deal damage first, then destroy as a critical part removal if still intact
-                applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, part, partIndex);
+                applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, part, partIndex);
 
                 // Dismemberment immunity stops the blasting off part
                 if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
@@ -525,12 +535,12 @@ function applyDamageChunkToPart(
                 }
             } else {
                 // Multi-slot items don't get blasted off but still take damage
-                applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, part, partIndex);
+                applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, part, partIndex);
             }
         } else if (critical === Critical.Phase) {
             // Apply phasing damage to another random part
             const { part, partIndex } = getRandomNonCorePart(botState, undefined);
-            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, part, partIndex);
+            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, part, partIndex);
         }
 
         return;
@@ -564,6 +574,14 @@ function applyDamageChunkToPart(
         damage = Math.trunc(damage * part.selfDamageReduction);
     } else if (part.def.type === "Treads" && (part.def as PropulsionItem).siege !== undefined && botState.sieged) {
         damage = Math.trunc(damage * ((part.def as PropulsionItem).siege === SiegeMode.High ? 0.5 : 0.75));
+    } else if (part.def.type === "Leg" && (part.def as PropulsionItem).shield && botState.shielded) {
+        if (!penetrate && randomInt(0, 1) === 1) {
+            // 50% complete deflection chance for non-penetrating projectiles
+            damage = 0;
+        } else {
+            // Otherwise, divide damage in 2
+            damage = Math.trunc(damage * 0.5);
+        }
     }
 
     // Apply disruption to non-core parts (17)
@@ -622,7 +640,7 @@ function applyDamageChunkToPart(
         if (part.def.size === 1) {
             // Single-slot items get blasted off
             // Deal damage first, then destroy as a critical part removal if still intact
-            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, part, partIndex);
+            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, part, partIndex);
 
             // Dismemberment immunity stops the blasting off part
             if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
@@ -630,11 +648,11 @@ function applyDamageChunkToPart(
             }
         } else {
             // Multi-slot items don't get blasted off but still take damage
-            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, part, partIndex);
+            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, part, partIndex);
         }
     } else if (critical === Critical.Phase) {
         // Apply phasing damage to the core
-        applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, undefined, -1);
+        applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, undefined, -1);
     }
 
     if (engineExplosion) {
@@ -652,6 +670,7 @@ function cloneBotState(botState: BotState): BotState {
     }
     const newState: BotState = {
         armorAnalyzedCoverage: botState.armorAnalyzedCoverage,
+        armorAnalyzedShieldedCoverage: botState.armorAnalyzedShieldedCoverage,
         armorAnalyzedSiegedCoverage: botState.armorAnalyzedSiegedCoverage,
         behavior: botState.behavior,
         coreCoverage: botState.coreCoverage,
@@ -668,6 +687,7 @@ function cloneBotState(botState: BotState): BotState {
         initialCoreIntegrity: botState.initialCoreIntegrity,
         parts: botState.parts.map((p) => {
             return {
+                armorAnalyzedShieldedCoverage: p.armorAnalyzedShieldedCoverage,
                 armorAnalyzedSiegedCoverage: p.armorAnalyzedSiegedCoverage,
                 armorAnalyzedCoverage: p.armorAnalyzedCoverage,
                 coverage: p.coverage,
@@ -676,6 +696,7 @@ function cloneBotState(botState: BotState): BotState {
                 initialIndex: p.initialIndex,
                 protection: p.protection,
                 selfDamageReduction: p.selfDamageReduction,
+                shieldedCoverage: p.shieldedCoverage,
                 siegedCoverage: p.siegedCoverage,
             };
         }),
@@ -686,9 +707,12 @@ function cloneBotState(botState: BotState): BotState {
         runningEvasion: botState.runningEvasion,
         runningMomentum: botState.runningMomentum,
         salvage: botState.salvage,
+        shielded: botState.shielded,
+        shieldedCoverage: botState.shieldedCoverage,
         sieged: botState.sieged,
         siegedCoverage: botState.siegedCoverage,
         superfortressRegen: botState.superfortressRegen,
+        tusToShield: botState.tusToShield,
         tusToSiege: botState.tusToSiege,
         totalCoverage: botState.totalCoverage,
     };
@@ -722,6 +746,7 @@ function applyEngineExplosion(state: SimulatorState, part: SimulatorPart) {
                 false,
                 engine.explosionDisruption,
                 spectrumToNumber(engine.explosionSpectrum),
+                false,
                 false,
             );
         }
@@ -843,6 +868,7 @@ export function getBotDefensiveState(
                 reduction: reduction,
                 remote: remote,
                 part: {
+                    armorAnalyzedShieldedCoverage: 0,
                     armorAnalyzedSiegedCoverage: 0,
                     armorAnalyzedCoverage: 0,
                     coverage: 0,
@@ -851,6 +877,7 @@ export function getBotDefensiveState(
                     initialIndex: 0,
                     protection: false,
                     selfDamageReduction: 0,
+                    shieldedCoverage: 0,
                     siegedCoverage: 0,
                 },
             });
@@ -865,6 +892,7 @@ export function getBotDefensiveState(
                     remote: remote,
                     part: {
                         armorAnalyzedCoverage: 0,
+                        armorAnalyzedShieldedCoverage: 0,
                         armorAnalyzedSiegedCoverage: 0,
                         coverage: 0,
                         def: undefined as any,
@@ -872,6 +900,7 @@ export function getBotDefensiveState(
                         initialIndex: 0,
                         protection: false,
                         selfDamageReduction: 0,
+                        shieldedCoverage: 0,
                         siegedCoverage: 0,
                     },
                 });
@@ -881,6 +910,7 @@ export function getBotDefensiveState(
                     reduction: reduction,
                     part: {
                         armorAnalyzedCoverage: 0,
+                        armorAnalyzedShieldedCoverage: 0,
                         armorAnalyzedSiegedCoverage: 0,
                         coverage: 0,
                         def: undefined as any,
@@ -888,6 +918,7 @@ export function getBotDefensiveState(
                         integrity: 1,
                         protection: false,
                         selfDamageReduction: 0,
+                        shieldedCoverage: 0,
                         siegedCoverage: 0,
                     },
                 });
@@ -934,7 +965,7 @@ function destroyPart(
     if (overflowDamage > 0 && !part.protection && canOverflow) {
         // Handle overflow damage if excess damage was dealt
         // against a non-protection part (18)
-        applyDamageChunk(state, 0, overflowDamage, damageType, undefined, true, true, false, 0, 0, false);
+        applyDamageChunk(state, 0, overflowDamage, damageType, undefined, true, true, false, 0, 0, false, false);
     }
 
     if (damageType === "Impact") {
@@ -1452,13 +1483,23 @@ export function simulateCombat(state: SimulatorState): boolean {
             updateAccuracy = true;
         }
 
+        // Update enemy shield state
+        if (
+            oldTus < botState.tusToShield &&
+            state.tus >= botState.tusToShield &&
+            botState.behavior === "Shield/Fight" &&
+            botState.parts.find((p) => p.def.type === "Leg" && (p.def as PropulsionItem).shield) !== undefined
+        ) {
+            botState.shielded = true;
+        }
+
         // Update enemy siege state
         if (
             oldTus < botState.tusToSiege &&
             state.tus >= botState.tusToSiege &&
             botState.behavior === "Siege/Fight" &&
             botState.parts.find((p) => p.def.type === "Treads" && (p.def as PropulsionItem).siege !== undefined) !==
-            undefined
+                undefined
         ) {
             botState.sieged = true;
             updateAccuracy = true;
@@ -1576,7 +1617,7 @@ function simulateWeapon(
         damage = calculateResistDamage(botState, damage, "Impact");
 
         if (damage > 0) {
-            applyDamage(state, botState, damage, 1, undefined, false, false, 0, 0, true, "Impact", 3);
+            applyDamage(state, botState, damage, 1, undefined, false, false, 0, 0, true, "Impact", 3, 0);
         }
 
         return endCondition(botState);
@@ -1694,6 +1735,11 @@ function simulateWeapon(
             // Check for crit (8)
             const didCritical = randomInt(0, 99) < weapon.criticalChance;
 
+            let penetrationChance = 0;
+            if (weapon.def.penetrationChances !== undefined && weapon.def.penetrationChances.length > 0) {
+                penetrationChance = Math.max(Math.min(weapon.def.penetrationChances[0], 100), 0);
+            }
+
             if (damage > 0) {
                 applyDamage(
                     state,
@@ -1708,6 +1754,7 @@ function simulateWeapon(
                     weapon.overflow,
                     weapon.damageType,
                     weapon.salvage,
+                    penetrationChance,
                 );
 
                 if (
@@ -1760,6 +1807,7 @@ function simulateWeapon(
                     true,
                     weapon.explosionType,
                     weapon.salvage,
+                    0,
                 );
 
                 // If we've already met the end condition then exit mid-volley
@@ -1856,10 +1904,9 @@ function updateWeaponsAccuracy(state: SimulatorState) {
         perWeaponBonus += 10;
     }
 
-    // +20%/30% if attacker in standard/high siege mode (non-melee only)
+    // +10% if defender is immobile
     if (botState.sieged) {
-        // No enemy bots capable of high siege mode currently
-        perWeaponBonus += 20;
+        perWeaponBonus += 10;
     }
 
     if (botState.running) {

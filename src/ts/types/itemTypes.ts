@@ -304,6 +304,7 @@ export type PropulsionItem = BaseItem &
         support: number;
         penalty: number;
         burnout?: string;
+        shield?: boolean;
         siege?: SiegeMode;
         special?: string;
     };
@@ -328,6 +329,7 @@ export type WeaponItem = BaseItem & {
     criticalString?: string;
     targeting?: number;
     penetration?: string;
+    penetrationChances?: number[];
     delay?: number;
     heatTransfer?: HeatTransfer;
     overloadStability?: number;

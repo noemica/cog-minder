@@ -30,7 +30,7 @@ export class ItemData {
 
     constructor(items: JsonItem[]) {
         this.itemData = {};
-        
+
         // Create items
         Object.keys(items).forEach((key, index) => {
             const item = items[key] as JsonItem;
@@ -214,6 +214,7 @@ export class ItemData {
                         siege: siege,
                         specialTrait: item["Special Trait"],
                         special: item.Special,
+                        shield: item.Special === "Shielding",
                         index: index,
                         specialProperty: specialProperty,
                         spoiler: spoiler,
@@ -284,6 +285,16 @@ export class ItemData {
                         }
                     }
 
+                    const penetrationChances: number[] = [];
+                    const penetrationSplit = item.Penetration?.split("/");
+                    for (const percent of penetrationSplit ?? []) {
+                        if (percent === "Unlimited") {
+                            penetrationChances.push(100);
+                        } else {
+                            penetrationChances.push(parseIntOrDefault(percent, 0));
+                        }
+                    }
+
                     const weaponItem: WeaponItem = {
                         slot: "Weapon",
                         supporterAttribution: item["Supporter Attribution"],
@@ -312,6 +323,7 @@ export class ItemData {
                         explosionHeatTransfer: item["Explosion Heat Transfer"],
                         explosionType: item["Explosion Type"],
                         penetration: item.Penetration,
+                        penetrationChances: penetrationChances,
                         projectileCount: parseIntOrUndefined(item["Projectile Count"]) ?? 1,
                         range: parseInt(item.Range as string),
                         shotEnergy: parseIntOrUndefined(item["Shot Energy"]),
