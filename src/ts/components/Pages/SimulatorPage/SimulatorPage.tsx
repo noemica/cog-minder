@@ -87,6 +87,7 @@ export type SimulatorPageState = {
     particleCharger?: string;
     kinecellerator?: string;
     salvageTargeting?: string;
+    partitionStrikeChips?: string;
     recoilReduction?: string;
     weaponCycling?: string;
 
@@ -435,8 +436,9 @@ function getSimulatorState(
     // Target Analyzer crit bonus
     const critBonus = parseIntOrDefault(pageState.targetAnalyzer, 0);
 
-    // Salvage targeting bonus
+    // Salvage bonuses
     const salvageTargetingBonus = parseIntOrDefault(pageState.salvageTargeting, 0);
+    const partitionStrikeChipsBonus = parseIntOrDefault(pageState.partitionStrikeChips, 0) * 3;
 
     const corruption = parseIntOrDefault(pageState.corruption, 0);
 
@@ -582,6 +584,17 @@ function getSimulatorState(
             (def.type === "Ballistic Gun" || def.type === "Energy Gun")
         ) {
             salvage += salvageTargetingBonus;
+        }
+
+        if (
+            partitionStrikeChipsBonus > 0 &&
+            def.projectileCount === 1 &&
+            (def.type === "Ballistic Gun" ||
+                def.type === "Ballistic Cannon" ||
+                def.type === "Energy Gun" ||
+                def.type === "Energy Cannon")
+        ) {
+            salvage += partitionStrikeChipsBonus;
         }
 
         const state: SimulatorWeapon = {

@@ -576,14 +576,14 @@ export default function SimulatorPageInput({
                         "The bonus of Salvage Targeting Computers that are equipped (if any). Increase salvage generated from Gun-type weapons that fire a single projectile (stacks). Base starts at +1, Improved is +2, Advanced is +3, Makeshift is +4, and Experimental is +5." :
                         "The bonus of Salvage Targeting Computers that are equipped (if any). Increase salvage generated from Gun-type weapons that fire a single projectile (stacks). Base starts at +1, Improved is +2, Advanced is +3, and Makeshift is +4."}
                 />
-                <LabeledInput
-                    label="Pre-Salvage"
+                {spoilers !== "None" && <LabeledInput
+                    label="Partition Strike Chips"
                     disabled={simulationInProgress}
-                    value={pageState.preSalvage || ""}
-                    onChange={(val) => updatePageState({ ...pageState, preSalvage: val })}
+                    value={pageState.partitionStrikeChips || ""}
+                    onChange={(val) => updatePageState({ ...pageState, partitionStrikeChips: val })}
                     placeholder="0"
-                    tooltip="The amount of salvage applied to this bot before the simulation started. Can be used to simulate hitting a bot a few times with + salvage before aiming to kill the bot to increase loot drops."
-                />
+                    tooltip="The number of Partition Strike Chips that are equipped. Partition Strike Chips are like a +3 Salvage Targeting Computer that also works on cannons."
+                />}
             </div>
         </>
     );

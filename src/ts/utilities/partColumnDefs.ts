@@ -286,7 +286,7 @@ export const weaponSlotColumns: GroupColumnDef<WeaponItem>[] = [
 ];
 
 // Create a list of all legal column names
-export const allPartColumnDefs = new Map<String, ColumnDef<any>>();
+export const allPartColumnDefs = new Map<string, ColumnDef<any>>();
 function addColumns(defs: GroupColumnDef<any>[]) {
     for (const def of defs) {
         for (const column of def.columns!) {
