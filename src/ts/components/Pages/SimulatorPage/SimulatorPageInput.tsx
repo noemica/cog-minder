@@ -429,14 +429,14 @@ export default function SimulatorPageInput({
                     placeholder="0"
                     tooltip="The amount of Advanced Force Boosters equipped. Provides a maximum damage increase of 40% and a melee accuracy penalty of 8%."
                 />
-                <LabeledInput
+                {spoilers === "Redacted" && <LabeledInput
                     label="Exp."
                     disabled={simulationInProgress}
                     value={pageState.expForceBoosters || ""}
                     onChange={(val) => updatePageState({ ...pageState, expForceBoosters: val })}
                     placeholder="0"
                     tooltip="The amount of Experimental Force Boosters equipped. Provides a maximum damage increase of 50% and a melee accuracy penalty of 10%."
-                />
+                />}
             </div>
             <div className="page-input-group">
                 <LabeledInput
@@ -496,7 +496,7 @@ export default function SimulatorPageInput({
                     value={pageState.targeting || ""}
                     onChange={(val) => updatePageState({ ...pageState, targeting: val })}
                     placeholder="0%"
-                    tooltip="The amount of targeting bonus from Targeting Computers or similar utilities (stacks). Base is 5%, Improved is 6%, Advanced is 8%, Experimental is 12%."
+                    tooltip="The amount of targeting bonus from Targeting Computers or similar utilities (stacks). For reference, Base is 5%, Improved is 6%, Advanced is 8%, Experimental is 12%."
                 />
                 <LabeledInput
                     label="Recoil Reduction"
@@ -504,7 +504,9 @@ export default function SimulatorPageInput({
                     value={pageState.recoilReduction || ""}
                     onChange={(val) => updatePageState({ ...pageState, recoilReduction: val })}
                     placeholder="0"
-                    tooltip="The number of recoil reduction. Each tread slot has 1 recoil reduction, Recoil Stabilizers have 4, and Adv. Recoil Stabilizers have 6."
+                    tooltip={spoilers == "Redacted" ?
+                        "The amount of recoil reduction. Each tread slot has 1 recoil reduction, Recoil Stabilizers have 4, Adv. Recoil Stabilizers have 6, and Cep. Recoil Nullifiers have 99." :
+                        "The amount of recoil reduction. Each tread slot has 1 recoil reduction, Recoil Stabilizers have 4 and Adv. Recoil Stabilizers have 6."}
                 />
                 <LabeledInput
                     label="Distance"
@@ -519,7 +521,7 @@ export default function SimulatorPageInput({
                     isDisabled={simulationInProgress}
                     label="Siege"
                     isSearchable={false}
-                    tooltip="The type of siege mode active (if any). Siege mode removes all recoil and adds a 20% (standard) or 30% (high) bonus to targeting."
+                    tooltip="The type of siege mode active (if any). Siege mode removes all recoil and adds a 15% (standard) or 25% (high) bonus to targeting."
                     options={siegeOptions}
                     value={siegeOptions.find((o) => o.value === pageState.siege) || siegeOptions[0]}
                     onChange={(val) => {
@@ -542,7 +544,9 @@ export default function SimulatorPageInput({
                     disabled={simulationInProgress}
                     onChange={(val) => updatePageState({ ...pageState, kinecellerator: val })}
                     placeholder="0%"
-                    tooltip="The bonus from a Kinecellerator that's equipped (if any). Increases minimum damage of kinetic gun/cannon weapons. Base Kinecellerator starts at 30%, Improved at 40%, and Advanced at 50%."
+                    tooltip={spoilers === "Redacted" ?
+                        "The bonus from a Kinecellerator that's equipped (if any). Increases minimum damage of kinetic gun/cannon weapons. Base Kinecellerator starts at 30%, Improved at 40%, Advanced at 50%, and Experimental at 66%." :
+                        "The bonus from a Kinecellerator that's equipped (if any). Increases minimum damage of kinetic gun/cannon weapons. Base Kinecellerator starts at 30%, Improved at 40%, and Advanced at 50%."}
                 />
                 <LabeledInput
                     label="Weapon Cycling"
@@ -550,7 +554,9 @@ export default function SimulatorPageInput({
                     value={pageState.weaponCycling || ""}
                     onChange={(val) => updatePageState({ ...pageState, weaponCycling: val })}
                     placeholder="0%"
-                    tooltip="The percentage of Weapon Cycling or similar utilities that are equipped (if any). Decreases overall volley time. Stacks up to 30%, though a Quantum Capacitor or Launcher Loader can go up to 50%."
+                    tooltip={spoilers === "Redacted" ?
+                        "The percentage of Weapon Cycling or similar utilities that are equipped (if any). Decreases overall volley time. Stacks up to 30%, though a Mni. Quantum Capacitor can go up to 40%, and a Quantum Capacitor or Launcher Loader can go up to 50%." :
+                        "The percentage of Weapon Cycling or similar utilities that are equipped (if any). Decreases overall volley time. Stacks up to 30%, though a Quantum Capacitor or Launcher Loader can go up to 50%."}
                 />
                 <LabeledInput
                     label="Salvage Targeting"
@@ -558,7 +564,9 @@ export default function SimulatorPageInput({
                     value={pageState.salvageTargeting || ""}
                     onChange={(val) => updatePageState({ ...pageState, salvageTargeting: val })}
                     placeholder="0"
-                    tooltip="The bonus of Salvage Targeting Computers that are equipped (if any). Increase salvage generated from Gun-type weapons that fire a single projectile (stacks). Base Salvage Targeting Computer starts at +1, Improved is +2, Advanced is +3, and Makeshift is +4."
+                    tooltip={spoilers === "Redacted" ?
+                        "The bonus of Salvage Targeting Computers that are equipped (if any). Increase salvage generated from Gun-type weapons that fire a single projectile (stacks). Base starts at +1, Improved is +2, Advanced is +3, Makeshift is +4, and Experimental is +5." :
+                        "The bonus of Salvage Targeting Computers that are equipped (if any). Increase salvage generated from Gun-type weapons that fire a single projectile (stacks). Base starts at +1, Improved is +2, Advanced is +3, and Makeshift is +4."}
                 />
                 <LabeledInput
                     label="Pre-Salvage"
