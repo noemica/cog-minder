@@ -814,8 +814,8 @@ function CoreSection({ pageState, partsState }: { pageState: BuildPageState; par
 
         case "Vulnerability": {
             const vulnerability = partsState.coreInfo.vulnerability;
-            const diffFromMin = vulnerability - partsState.highestVulnerability;
-            const minMaxDiff = partsState.lowestVulnerability - partsState.highestVulnerability;
+            const diffFromMin = Math.log(vulnerability) - Math.log(partsState.highestVulnerability);
+            const minMaxDiff = Math.log(partsState.lowestVulnerability) - Math.log(partsState.highestVulnerability);
             const percentage = minMaxDiff === 0 ? 100.0 : 100.0 * (1.0 - diffFromMin / minMaxDiff);
             coreInfo = (
                 <InfoContainerBase
@@ -1006,8 +1006,8 @@ function InfoContainer({
 
         case "Vulnerability": {
             const vulnerability = partInfo.vulnerability;
-            const diffFromMin = vulnerability - partsState.highestVulnerability;
-            const minMaxDiff = partsState.lowestVulnerability - partsState.highestVulnerability;
+            const diffFromMin = Math.log(vulnerability) - Math.log(partsState.highestVulnerability);
+            const minMaxDiff = Math.log(partsState.lowestVulnerability) - Math.log(partsState.highestVulnerability);
             const percentage = minMaxDiff === 0 ? 100.0 : 100.0 * (1.0 - diffFromMin / minMaxDiff);
 
             return (
