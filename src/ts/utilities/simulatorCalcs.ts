@@ -431,7 +431,7 @@ function applyDamageChunkToPart(
     // Remove phase crit if bot is coring immune or has core shielding
     else if (
         critical === Critical.Phase &&
-        (botState.immunities.includes(BotImmunity.Coring) || getShieldingType(botState, "Core") === undefined)
+        (botState.immunities.includes(BotImmunity.Coring) || getShieldingType(botState, "Core") !== undefined)
     ) {
         critical = undefined;
     }
