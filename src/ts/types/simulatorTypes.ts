@@ -58,6 +58,10 @@ export type DamageReductionPart = SpecialPart & {
     remote: boolean;
 };
 
+export type HardlightGeneratorPart = SpecialPart & {
+    reduction: number;
+};
+
 export type RangedAvoidPart = SpecialPart & {
     avoid: number;
 };
@@ -74,6 +78,7 @@ export type DefensiveState = {
     corruptionReduce: CorruptionReductionPart[];
     critImmunity: CriticalImmunityPart[];
     damageReduction: DamageReductionPart[];
+    hardlightGenerator: HardlightGeneratorPart[];
     rangedAvoid: RangedAvoidPart[];
     shieldings: Record<ItemSlot | "Core", ShieldingPart[]>;
 };

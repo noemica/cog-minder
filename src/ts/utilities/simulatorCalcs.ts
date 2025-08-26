@@ -8,6 +8,7 @@ import {
     DamageReduction,
     DamageResists,
     DamageType,
+    HardlightGenerator,
     ItemSlot,
     PowerItem,
     PropulsionItem,
@@ -232,15 +233,24 @@ function applyDamage(
     // Apply any additional damage reduction (10)
     const part = getDefensiveStatePart(botState.defensiveState.damageReduction);
 
-    const multiplier = part != undefined ? part.reduction : 1;
+    let multiplier = 1;
+    let damageReduction = 0;
+    if (part !== undefined) {
+        multiplier = part.reduction;
+    } else {
+        const hardlightPart = getDefensiveStatePart(botState.defensiveState.hardlightGenerator);
+        if (hardlightPart !== undefined) {
+            damageReduction = hardlightPart.reduction;
+        }
+    }
 
     if (part !== undefined && part.remote) {
         for (const chunk of chunks) {
-            chunk.realDamage = chunk.originalDamage - Math.trunc(chunk.originalDamage * (1 - multiplier));
+            chunk.realDamage = chunk.originalDamage - Math.trunc(chunk.originalDamage * (1 - multiplier)) - damageReduction;
         }
     } else {
         for (const chunk of chunks) {
-            chunk.realDamage = Math.trunc(chunk.originalDamage * multiplier);
+            chunk.realDamage = Math.trunc(chunk.originalDamage * multiplier) - damageReduction;
         }
     }
 
@@ -742,6 +752,7 @@ export function getBotDefensiveState(
         corruptionReduce: [],
         critImmunity: [],
         damageReduction: [],
+        hardlightGenerator: [],
         rangedAvoid: [],
         shieldings: {
             Core: [],
@@ -799,6 +810,12 @@ export function getBotDefensiveState(
         } else if (hasActiveSpecialProperty(part.def, !dormant, "DamageResists")) {
             // Damage type resist part
             part.resistances = (part.def.specialProperty!.trait as DamageResists).resists;
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "HardlightGenerator")) {
+            // Force field-like part
+            state.hardlightGenerator.push({
+                reduction: (part.def.specialProperty!.trait as HardlightGenerator).amount,
+                part: part,
+            });
         } else if (hasActiveSpecialProperty(part.def, !dormant, "RangedAvoid")) {
             // Phase shifter-like part
             state.rangedAvoid.push({
@@ -1441,7 +1458,7 @@ export function simulateCombat(state: SimulatorState): boolean {
             state.tus >= botState.tusToSiege &&
             botState.behavior === "Siege/Fight" &&
             botState.parts.find((p) => p.def.type === "Treads" && (p.def as PropulsionItem).siege !== undefined) !==
-                undefined
+            undefined
         ) {
             botState.sieged = true;
             updateAccuracy = true;

@@ -258,6 +258,13 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Fusion Compressor": { active: "Part Active", trait: { kind: "FusionCompressor", energyPerTurn: 20 } },
     "Imp. Fusion Compressor": { active: "Part Active", trait: { kind: "FusionCompressor", energyPerTurn: 30 } },
 
+    // Hardlight Generator
+    "Hardlight Generator": { active: "Part Active", trait: { kind: "HardlightGenerator", amount: 4 } },
+    "Imp. Hardlight Generator": { active: "Part Active", trait: { kind: "HardlightGenerator", amount: 6 } },
+    "Adv. Hardlight Generator": { active: "Part Active", trait: { kind: "HardlightGenerator", amount: 8 } },
+    "Exp. Hardlight Generator": { active: "Part Active", trait: { kind: "HardlightGenerator", amount: 10 } },
+    "Cep. Hardlight Director": { active: "Part Active", trait: { kind: "HardlightGenerator", amount: 14 } },
+
     // Heat dissipation
     "2N-1CE's Frost Array": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 100 } },
     "Active Cooling Armor": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 60 } },
