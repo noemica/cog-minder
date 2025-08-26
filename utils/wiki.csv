@@ -578,7 +578,7 @@ Upkeep/Energy|
 Upkeep/Heat|
 Effect/Effect|
 Effect/Description
-[[/PartGroupTable]]","","","","Lgt. Armor Plating,Med. Armor Plating,Hvy. Armor Plating,Zio. Light Carapace,Zio. Heavy Carapace,Hrd. Light Armor Plating,Hrd. Medium Armor Plating,Hrd. Heavy Armor Plating,Imp. Light Armor Plating,Imp. Medium Armor Plating,Imp. Heavy Armor Plating,Mak. Light Armor Plating,Mak. Medium Armor Plating,Mak. Heavy Armor Plating,Lyr. Light Armor Plating,Lyr. Medium Armor Plating,Lyr. Heavy Armor Plating,Gun Armor,Centrium Light Armor Plating,Centrium Medium Armor Plating,Centrium Heavy Armor Plating,Centrium Linked Plating,Mak. Ablative Armor,Active Cooling Armor,Scrap Shield,Enh. Scrap Shield,Tower Shield,Vmp. Brace Plating","Backup Plating,Powered Armor (Group),Regenerative Armor","Shieldings",""
+[[/PartGroupTable]]","","","","Lgt. Armor Plating,Med. Armor Plating,Hvy. Armor Plating,Zio. Light Carapace,Zio. Heavy Carapace,Hrd. Light Armor Plating,Hrd. Medium Armor Plating,Hrd. Heavy Armor Plating,Imp. Light Armor Plating,Imp. Medium Armor Plating,Imp. Heavy Armor Plating,Mak. Light Armor Plating,Mak. Medium Armor Plating,Mak. Heavy Armor Plating,Lyr. Light Armor Plating,Lyr. Medium Armor Plating,Lyr. Heavy Armor Plating,Gun Armor,Centrium Light Armor Plating,Centrium Medium Armor Plating,Centrium Heavy Armor Plating,Centrium Linked Plating,Mak. Ablative Armor,Active Cooling Armor,Scrap Shield,Enh. Scrap Shield,Tower Shield,Vmp. Brace Plating","Backup Plating,Powered Armor (Group),Regenerative Armor,Resistance Armor","Shieldings",""
 "Armor Guard","Bot","","","","","","","",""
 "Armor Integrity Analyzer","Part","","","","","","","",""
 "Armor Integrity Analyzers","Part Group","[[Heading]]List of Armor Integrity Analyzers[[/Heading]]
@@ -6228,7 +6228,7 @@ If a bot is overweight, it is slowed down by the average penalty of all of its a
 
 A bot's mass and support are displayed above the parts list in the HUD. Overweight status is indicated by [[GameText]]Ox#[[/GameText]], where [[GameText]]#[[/GameText]] is how many times overweight ([[GameText]]*[[/GameText]] if greater than 9 times).
 
-[[Heading:2]]Example[[/Heading:2]]
+[[Heading:2]]Example[[/Heading]]
 For example, if a bot has equipped:
 [[List]]
 [[Ion Engine]] (mass: 5)
@@ -6245,7 +6245,7 @@ With the treads: The bot is underweight (14 \u2264 20). The time to move one til
 |With neither (core propulsion): The bot is 4 times overweight (12 < 14 \u2264 15). The time to move one tile is 50 + (50 \u00d7 4) = 250.
 [[/List]]
 
-[[Heading:2]]Formula[[/Heading:2]]
+[[Heading:2]]Formula[[/Heading]]
 Mathematically, the amount of time it takes a bot to move one tile (ignoring mechanics for flight and hover units) is
 \u03a3[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + \u230amax(0, [[I]]m[[/I]] \u2212 1)/\u03a3[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]\u230b(\u03a3[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
 where
@@ -6863,7 +6863,7 @@ Shot/Heat|
 Shot/Targeting|
 Shot/Delay|
 Projectile/Type|
-Effect/Effect|
+Effect/Effect
 [[/PartGroupTable]]","","","","Remote Datajack,Imp. Remote Datajack,Adv. Remote Datajack,Exp. Remote Datajack,ME-RLN's Wand,Gui. Remote Datajack","","",""
 "Remote Force Field","Part","","","","","","","",""
 "Remote Shield","Part","","","","","","","",""
@@ -7316,7 +7316,7 @@ The following items can appear in Curator's Association exhibits:
 [[Heading:3]]Modified Component R&D[[/Heading]]
 The following Ovr. parts are obtainable from the Modified Component R&D:
 [[List]][[Ovr. Barrage Gun]]|[[Ovr. Beamcaster]]|[[Ovr. Coil Gun]]|[[Ovr. Flexi-carbon Leg]]|[[Ovr. Huge Scrapsphere]]|[[Ovr. Medium Treads]]|[[Ovr. Pulse Rifle]]|[[Ovr. Quantum Rifle]]|[[Ovr. Railgun]]|[[Ovr. Scrapsphere]]|[[Ovr. Titanium Leg]]|[[Ovr. Treads]][[/List]]
-[[Heading:2]]Exits[[/Heading:2]]
+[[Heading:2]]Exits[[/Heading]]
 There are two exits from Scraptown, one in the upper-left area and one in the upper-right corner. If Scraptown is on -7, these exits lead to the -5 [[Factory]] map. Otherwise, these exits lead to the -6 Factory map.
 
 [[Heading]]Civil War[[/Heading]]
@@ -7615,7 +7615,7 @@ Spacefolds can allow for longer-range safe [[Digging|digs]]. While a [[Microwarp
 
 [[Heading]]Treads[[/Heading]]
 
-[[Heading:2]]Siege mode[[/Heading:2]]
+[[Heading:2]]Siege mode[[/Heading]]
 All multislot treads can be toggled into siege mode. The transition into and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the treads cannot be disabled or removed.
 While in siege mode:
 [[List]]
@@ -7626,12 +7626,12 @@ Non-melee attacks have +15% accuracy.
 |Cogmind is immune to instant part destruction from critical hits.
 [[/List]]
 
-[[Heading:2]]High siege mode[[/Heading:2]]
+[[Heading:2]]High siege mode[[/Heading]]
 [[Spoiler]][[Megatreads]], [[Tri-treads]],[[/Spoiler]] and any treads containing the word ""siege"" in the name are capable of high siege mode, which instead gives +25% accuracy and 50% damage reduction.
 
 [[Heading]]Legs[[/Heading]]
 
-[[Heading:2]]Martial mode[[/Heading:2]]
+[[Heading:2]]Martial mode[[/Heading]]
 A few exoskeleton legs can be toggled into martial mode. The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.
 While in martial mode:
 [[List]]
@@ -7641,7 +7641,7 @@ Will automatically use an active melee weapon to attack any hostile that moves i
 |No ranged weapons suffer from recoil effects.
 [[/List]]
 
-[[Heading:2]]Shielding mode[[/Heading:2]]
+[[Heading:2]]Shielding mode[[/Heading]]
 A few legs can be toggled into shielding mode. The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
 While in shielding mode:
 [[List]]
@@ -8296,7 +8296,7 @@ Propulsion/Weapon/Armor + backups: Lots of fighting is required in this map. Hav
 (Optional) Dead [[Imprinter]]: Killing the Imprinter in Zion prevents her from showing up in this map. She has no weapons in Zion so taking her out there can be an easy way to skip a big threat on this map.
 [[/List]]
 
-[[Heading]]Starting Area[[/Heading:2]]
+[[Heading]]Starting Area[[/Heading]]
 There isn't much threat here. There can be groups of 3 Assembled that can be easily dispatched by any weapons, although Launchers are most effective.
 [[Image]]ZDC Allies.png|Fighting the Z-Imprinter with allies[[/Image]][[Image]]ZDC Imprinter Launcher.png|Aiming past the Imprinter with a Launcher[[/Image]]
 
