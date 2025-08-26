@@ -399,6 +399,14 @@ export default function SimulatorPageInput({
                     placeholder="0"
                     tooltip="The amount of Experimental Melee Analysis Suites equipped. Each provides 12% accuracy and a minimum damage increase of 6."
                 />
+                <LabeledInput
+                    label="Targeting"
+                    disabled={simulationInProgress}
+                    value={pageState.targeting || ""}
+                    onChange={(val) => updatePageState({ ...pageState, targeting: val })}
+                    placeholder="0%"
+                    tooltip="The amount of targeting bonus from utilities such as the Weapon Mount. Applied directly to all weapons."
+                />
             </div>
             <div className="page-input-group">
                 <SoloLabel

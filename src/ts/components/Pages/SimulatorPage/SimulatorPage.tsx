@@ -393,10 +393,7 @@ function getSimulatorState(
     // Accuracy bonuses and penalties
     const noSiegeBonus = { bonus: 0, tus: 0 };
     const siegeBonus = melee ? noSiegeBonus : siegeModeBonusMap.get(pageState.siege!) || noSiegeBonus;
-    let targetingComputerBonus = 0;
-    if (!melee) {
-        targetingComputerBonus = parseIntOrDefault(pageState.targeting, 0);
-    }
+    const targetingBonus = parseIntOrDefault(pageState.targeting, 0);
 
     // Melee analysis/force boosters
     const meleeAnalysis = [
@@ -533,9 +530,7 @@ function getSimulatorState(
         // Calculate base accuracy that can't change over the course of the fight
         let baseAccuracy = melee ? initialMeleeAccuracy : initialRangedAccuracy;
 
-        if (!melee) {
-            baseAccuracy += targetingComputerBonus;
-        }
+        baseAccuracy += targetingBonus;
 
         // Size bonus/penalty
         if (sizeAccuracyMap.has(bot.size)) {
@@ -740,7 +735,7 @@ function getSimulatorState(
         sneakAttack: false,
         sneakAttackStrategy: sneakAttackStrategy,
         speed: speed,
-        targetingComputerBonus: targetingComputerBonus,
+        targetingComputerBonus: targetingBonus,
         volleyTime: volleyTime,
         volleyTimeModifier: volleyTimeModifier,
     };
