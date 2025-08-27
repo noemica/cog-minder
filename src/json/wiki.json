@@ -7036,7 +7036,7 @@
     "Hyp. Alpha Cannon",
     "Zio. Alpha Cannon Mk. II"
    ],
-   "Content": "",
+   "Content": "[[Heading]]List of Alpha Cannons[[/Heading]]\n[[PartGroupTable]]\nAlpha Cannons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration\n[[/PartGroupTable]]",
    "Spoiler": "Spoiler"
   },
   {
@@ -7114,12 +7114,12 @@
   {
    "Name": "Ballistic Cannons",
    "Part Category": "Ballistic Cannons",
-   "Content": "[[Heading]]List of Ballistic Weapons[[/Heading]]\n[[PartGroupTable]]\nBallistic Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
+   "Content": "[[Heading]]List of Ballistic Weapons[[/Heading]]\n[[PartGroupTable]]\nBallistic Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Ballistic Guns",
    "Part Category": "Ballistic Guns",
-   "Content": "[[Heading]]List of Ballistic Weapons[[/Heading]]\n[[PartGroupTable]]\nBallistic Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
+   "Content": "[[Heading]]List of Ballistic Weapons[[/Heading]]\n[[PartGroupTable]]\nBallistic Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Cloaking Devices",
@@ -7301,17 +7301,17 @@
   {
    "Name": "Electromagnetic Cannons",
    "Part Category": "Electromagnetic Cannons",
-   "Content": "[[Heading]]List of Electromagnetic Cannons[[/Heading]]\n[[PartGroupTable]]\nElectromagnetic Cannons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Matter|\nShot/Heat|\nShot/Recoil|\nShot/Targeting|\nShot/Delay|\nShot/Stability|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Spectrum|\nProjectile/Disruption|\nProjectile/Salvage|\nEffect/Description\n[[/PartGroupTable]]"
+   "Content": "[[Heading]]List of Electromagnetic Cannons[[/Heading]]\n[[PartGroupTable]]\nElectromagnetic Cannons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Matter|\nShot/Heat|\nShot/Recoil|\nShot/Targeting|\nShot/Delay|\nShot/Stability|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Spectrum|\nProjectile/Disruption|\nProjectile/Salvage|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Electromagnetic Guns",
    "Part Category": "Electromagnetic Guns",
-   "Content": ""
+   "Content": "[[Heading]]List of Electromagnetic Guns[[/Heading]]\n[[PartGroupTable]]\nElectromagnetic Guns|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Matter|\nShot/Heat|\nShot/Recoil|\nShot/Targeting|\nShot/Delay|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Spectrum|\nProjectile/Disruption|\nProjectile/Salvage|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Electromagnetic Launchers",
    "Part Category": "Electromagnetic Launchers",
-   "Content": ""
+   "Content": "[[Heading]]List of Electromagnetic Launchers[[/Heading]]\n[[PartGroupTable]]\nElectromagnetic Launchers|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Matter|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nShot/Waypoints|\nProjectile/Arc|\nProjectile/Count|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Spectrum|\nExplosion/Disruption|\nExplosion/Salvage\n[[/PartGroupTable]]"
   },
   {
    "Name": "Energy Filters",
@@ -7379,7 +7379,7 @@
   {
    "Name": "Explosive Launchers",
    "Part Category": "Explosive Launchers",
-   "Content": ""
+   "Content": "[[Heading]]List of Explosive Launchers[[/Heading]]\n[[PartGroupTable]]\nExplosive Launchers|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Matter|\nShot/Heat|\nShot/Recoil|\nShot/Targeting|\nShot/Delay|\nShot/Waypoints|\nProjectile/Arc|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Spectrum|\nExplosion/Disruption|\nExplosion/Salvage|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Fabrication Devices",
@@ -7411,7 +7411,7 @@
     "Enh. Flamer",
     "Plasma Flamer"
    ],
-   "Content": ""
+   "Content": "[[Heading]]List of Flamers[[/Heading]]\n[[PartGroupTable]]\nFlamers|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Heat Transfer|\nProjectile/Disruption|\nProjectile/Salvage\n[[/PartGroupTable]]"
   },
   {
    "Name": "Flight Arrays",
@@ -7496,7 +7496,7 @@
     "Hyp. Multirail",
     "Hyp. Railgun"
    ],
-   "Content": "Compared to their base versions, hypervelocity (Hyp.) weapons generally do less damage in exchange for higher crit chance and penetration."
+   "Content": "Compared to their base versions, hypervelocity (Hyp.) weapons generally do less damage in exchange for higher crit chance and penetration.\n\n[[Heading]]List of Hyp. Weapons[[/Heading]]\n[[PartGroupTable]]\nHyp. Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Matter|\nShot/Heat|\nShot/Recoil|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Spectrum|\nProjectile/Disruption|\nProjectile/Salvage\n[[/PartGroupTable]]"
   },
   {
    "Name": "IFF Parsers",
@@ -7509,7 +7509,7 @@
   {
    "Name": "Impact Weapons",
    "Part Category": "Impact Weapons",
-   "Content": ""
+   "Content": "[[Heading]]List of Impact Weapons[[/Heading]]\n[[PartGroupTable]]\nImpact Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Disruption|\nProjectile/Salvage|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Kinecellerators",
@@ -7633,7 +7633,7 @@
   {
    "Name": "Overloadable Weapons",
    "Part Category": "Overloadable Weapons",
-   "Content": "For details on behavior when overloaded, see [[Overload#Weapons]]."
+   "Content": "For details on behavior when overloaded, see [[Overload#Weapons]].\n\n[[Heading]]List of Overloadable Weapons[[/Heading]]\n[[PartGroupTable]]\nOverloadable Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Recoil|\nShot/Targeting|\nShot/Delay|\nShot/Stability|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Heat Transfer|\nnProjectile/Salvage|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Heat Transfer|\nExplosion/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Overtuned Parts",
@@ -7668,13 +7668,13 @@
   {
    "Name": "Phasers",
    "Part Category": "Phasers",
-   "Content": "",
+   "Content": "[[Heading]]List of Phasers[[/Heading]]\n[[PartGroupTable]]\nPhasers|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nProjectile/Arc|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical\n[[/PartGroupTable]]",
    "Spoiler": "Spoiler"
   },
   {
    "Name": "Piercing Weapons",
    "Part Category": "Piercing Weapons",
-   "Content": ""
+   "Content": "[[Heading]]List of Piercing Weapons[[/Heading]]\n[[PartGroupTable]]\nPiercing Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Salvage|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Plasma Cutters",
@@ -7683,7 +7683,7 @@
     "Imp. Plasma Cutter",
     "Exp. Plasma Cutter"
    ],
-   "Content": ""
+   "Content": "[[Heading]]List of Plasma Cutters[[/Heading]]\n[[PartGroupTable]]\nPlasma Cutters|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Heat Transfer|\nProjectile/Salvage|\nEffect/Effect\n[[/PartGroupTable]]"
   },
   {
    "Name": "Point Defense Systems",
@@ -7908,7 +7908,7 @@
     "Sigix Sheargun",
     "Modified Sigix Sheargun"
    ],
-   "Content": "",
+   "Content": "[[Heading]]List of Shearguns[[/Heading]]\n[[PartGroupTable]]\nShearguns|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Delay|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage\n[[/PartGroupTable]]",
    "Spoiler": "Redacted"
   },
   {
@@ -7931,7 +7931,7 @@
     "Sigix Terminator",
     "Supercharged Sigix Terminator"
    ],
-   "Content": "",
+   "Content": "[[Heading]]List of Sigix Terminators[[/Heading]]\n[[PartGroupTable]]\nSigix Terminators|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Waypoints|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Salvage\n[[/PartGroupTable]]",
    "Spoiler": "Spoiler"
   },
   {
@@ -7947,7 +7947,7 @@
   {
    "Name": "Slashing Weapons",
    "Part Category": "Slashing Weapons",
-   "Content": ""
+   "Content": "[[Heading]]List of Slashing Weapons[[/Heading]]\n[[PartGroupTable]]\nSlashing Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Speed Boosting Utilities",
@@ -7967,7 +7967,7 @@
     "Stasis Projector",
     "Exp. Stasis Projector"
    ],
-   "Content": ""
+   "Content": "[[Heading]]List of Stasis Beams[[/Heading]]\n[[PartGroupTable]]\nStasis Beams|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Targeting|\nShot/Delay|\nProjectile/Count|\nProjectile/Type|\nEffect/Effect\n[[/PartGroupTable]]"
   },
   {
    "Name": "Storage Unit",
@@ -8110,7 +8110,7 @@
   {
    "Name": "Thermal Cannons",
    "Part Category": "Thermal Cannons",
-   "Content": ""
+   "Content": "[[Heading]]List of Thermal Cannons[[/Heading]]\n[[PartGroupTable]]\nThermal Cannons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Recoil|\nShot/Targeting|\nShot/Delay|\nShot/Stability|\nShot/Waypoints|\nProjectile/Arc|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Heat Transfer|\nProjectile/Spectrum|\nProjectile/Disruption|\nProjectile/Salvage|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Heat Transfer|\nExplosion/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Thermal Generators",
@@ -8125,7 +8125,7 @@
   {
    "Name": "Thermal Guns",
    "Part Category": "Thermal Guns",
-   "Content": ""
+   "Content": "[[Heading]]List of Thermal Guns[[/Heading]]\n[[PartGroupTable]]\nThermal Guns|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nShot/Stability|\nShot/Waypoints|\nProjectile/Arc|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Heat Transfer|\nProjectile/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Throwing Claymores",
@@ -8133,7 +8133,7 @@
     "RU-N14's Throwing Claymores",
     "RU-N14's Throwing Claymores v3"
    ],
-   "Content": "",
+   "Content": "[[Heading]]List of Throwing Claymores[[/Heading]]\n[[PartGroupTable]]\nThrowing Claymores|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Targeting|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Salvage|\nEffect/Description\n[[/PartGroupTable]]",
    "Spoiler": "Spoiler"
   },
   {
@@ -8244,13 +8244,13 @@
   {
    "Name": "Vortex Cannons",
    "Part Category": "Vortex Cannons",
-   "Content": "",
+   "Content": "[[Heading]]List of Vortex Cannons[[/Heading]]\n[[PartGroupTable]]\nVortex Cannons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage\n[[/PartGroupTable]]",
    "Spoiler": "Spoiler"
   },
   {
    "Name": "Vortex Guns",
    "Part Category": "Vortex Guns",
-   "Content": "",
+   "Content": "[[Heading]]List of Vortex Guns[[/Heading]]\n[[PartGroupTable]]\nVortex Guns|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage\n[[/PartGroupTable]]",
    "Spoiler": "Spoiler"
   },
   {
@@ -8357,7 +8357,7 @@
   },
   {
    "Name": "Ballistic Weapons",
-   "Content": "[[Heading]]List of Ballistic Weapons[[/Heading]]\n[[PartGroupTable]]\nBallistic Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]",
+   "Content": "[[Heading]]List of Ballistic Weapons[[/Heading]]\n[[PartGroupTable]]\nBallistic Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]",
    "Groups": [
     "Ballistic Cannons",
     "Ballistic Guns"
@@ -8464,7 +8464,7 @@
     "Electromagnetic Guns",
     "Electromagnetic Launchers"
    ],
-   "Content": "[[Heading]]List of Electromagnetic Weapons[[/Heading]]\n[[PartGroupTable]]\nElectromagnetic Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Matter|\nShot/Heat|\nShot/Recoil|\nShot/Targeting|\nShot/Delay|\nShot/Stability|\nShot/Waypoints|\nProjectile/Arc|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Spectrum|\nProjectile/Disruption|\nProjectile/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
+   "Content": ""
   },
   {
    "Name": "Energy Cannons",
@@ -8477,18 +8477,19 @@
    "Parts": [
     "Sigix Shearcannon"
    ],
-   "Content": ""
+   "Content": "[[Heading]]List of Energy Cannons[[/Heading]]\n[[PartGroupTable]]\nEnergy Cannons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Matter|\nShot/Heat|\nShot/Recoil|\nShot/Targeting|\nShot/Delay|\nShot/Stability|\nShot/Waypoints|\nProjectile/Arc|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Heat Transfer|\nProjectile/Spectrum|\nProjectile/Disruption|\nProjectile/Salvage|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Heat Transfer|\nExplosion/Spectrum|\nExplosion/Disruption|\nExplosion/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Energy Guns",
    "Groups": [
+    "Backup Lasers",
     "Electromagnetic Guns",
     "Phasers",
     "Shearguns",
     "Thermal Guns",
     "Vortex Guns"
    ],
-   "Content": ""
+   "Content": "[[Heading]]List of Energy Guns[[/Heading]]\n[[PartGroupTable]]\nEnergy Guns|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nShot/Stability|\nShot/Waypoints|\nProjectile/Arc|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Heat Transfer|\nProjectile/Spectrum|\nProjectile/Disruption|\nProjectile/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Exit",
@@ -8556,7 +8557,7 @@
     "Vortex Catalyst Activator",
     "Containment Facilitator"
    ],
-   "Content": ""
+   "Content": "[[Heading]]List of Launchers[[/Heading]]\n[[PartGroupTable]]\nLaunchers|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Matter|\nShot/Heat|\nShot/Recoil|\nShot/Targeting|\nShot/Delay|\nShot/Waypoints|\nProjectile/Arc|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Heat Transfer|\nExplosion/Spectrum|\nExplosion/Disruption|\nExplosion/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Matter Refilling Devices",
@@ -8576,9 +8577,10 @@
    "Groups": [
     "Impact Weapons",
     "Piercing Weapons",
-    "Slashing Weapons"
+    "Slashing Weapons",
+    "Tearclaws (Group)"
    ],
-   "Content": ""
+   "Content": "[[Heading]]List of Melee Weapons[[/Heading]]\n[[PartGroupTable]]\nMelee Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Disruption|\nProjectile/Salvage|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Offensive Utilities",
@@ -8796,12 +8798,9 @@
    "Name": "Weapons",
    "Groups": [
     "Autonomous Weapons",
-    "Backup Lasers",
     "Guided Weapons",
     "Hyp. Weapons",
-    "Overloadable Weapons",
-    "Tearclaws (Group)",
-    "Thermal Cannons"
+    "Overloadable Weapons"
    ],
    "Supergroups": [
     "Ballistic Weapons",
