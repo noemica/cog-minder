@@ -8826,6 +8826,24 @@ Higher rating parts have higher support and integrity at the cost of higher ener
 [[Heading]]Prototype Flight Units[[/Heading]]
 Prototype flight units are highly valuable to a flight player. Most importantly, prototypes are 2-4 times more durable than standard flight units due to their lower coverage and higher integrity. For example, compare a rating 2 flight unit [[VTOL Module]] vs a rating 2* prototype [[Imp. Flight Unit]]. The Imp. Flight Unit has an integrity:coverage ratio of 2.67, while the VTOL module has .83, meaning the Imp. Flight Unit will survive roughly 3 times as long under fire.
 
+[[Heading]]Comparing Flight Units[[/Heading]]
+Comparing different flight units can be a difficult task. There are many different stats that all help determine how ""good"" a flight unit is. Depending on your current build, some stats may be more important than others. A build that is already struggling with energy may be better off with a slower, less expensive flight unit rather than a higher rated one. Another build may be ready to upgrade to a larger storage unit and cares only about getting enough support to stay underweight. Some of the more important stats to consider are below:
+[[Heading:2]]Durability[[/Heading]]
+This typically scales up with rating, and prototype parts are generally much more durable than non-prototype ones. A flight build that goes overweight while in combat is often in a very rough spot, so maintaining good flight units that won't instantly fold in combat is important. Consider the integrity:coverage ratio as an overall indicator of durability.
+
+[[Heading:2]][[Overload#Propulsion[[/Heading]]
+Overload is only available on a few different types of flight units, namely [[Cooled Flight Units]] and [[Surge Thrusters]]. Having a few overloadable flight units is extremely valuable for a flight build to be able to zoom out of bad situations as quickly as possible. Getting all the way to the minimum 5 speed is not particularly important since it's completely unsustainable. However, getting a few overloads can make a big difference in damage taken.
+
+[[Heading:2]]Speed[[/Heading]]
+Faster builds have many more options than slower builds. Being able to run away once spotted, lure bots out of position, or even just generally explore the map become easier the faster the build.However, with increased speed comes increased upkeep costs. It is a balancing act to consider both speed and upkeep in a build.
+
+[[Heading:2]]Support[[/Heading]]
+Fairly self explanatory. Support costs scale fairly linearly through rating. Many flight builds are constantly pressing against the upper edge of their support limits. Even if there isn't anything heavier you want to carry, getting a little extra leeway against [[Stasis Trap|Stasis Traps]] is never a bad idea.
+
+[[Heading:2]]Upkeep[[/Heading]]
+Energy cost and heat generation are the 2 upkeep considerations. Some flight units are more expensive on upkeep than others. These upkeep costs tend to scale through ratings, but some flight units are outliers in some ways, either high or low.
+There are two types of upkeep for flight units: active and per move. Active upkeep is fixed no matter what the speed is, and this tends to be the more important part of upkeep for slower builds. Typical flight units scale from .5 to 1.5 energy per turn, and 1-3 heat per turn, or 0 heat in the case of cooled flight units. On the other hand, per move upkeep is more important for faster builds. Move flight units have a fixed .5 energy and 1 heat per move cost, although a few unique parts have variable numbers here.
+
 [[Heading]]Notable Flight Units[[/Heading]]
 
 [[Image]]../part_art/Biomechanical Wings.png|Biomechanical Wings[[/Image]]
