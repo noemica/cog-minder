@@ -1,6 +1,6 @@
 #!/usr/bin/env py
 
-import codecs
+import argparse
 import csv
 import json
 import sys
@@ -39,8 +39,16 @@ def decode(s):
             else:
                 new_s += c
 
-    # re.sub('[\x7f-\xff]')
     return new_s
+
+
+parser = argparse.ArgumentParser('Wiki CSV from JSON')
+parser.add_argument(
+    '--force', 
+    help='Force update the CSV, deleting CSV entries that don\'t exist in the JSON', action='store_true')
+
+args = parser.parse_args()
+force = args.force
 
 # Update CSV from JSON
 for bot_group in wiki_json['Bots']:
@@ -226,14 +234,20 @@ for other in wiki_json['Other']:
         }
         wiki_csv[other_name] = new_other
 
-csv.register_dialect('wiki', 'excel', lineterminator='\n')
-
 if len(csv_entries) > 0:
     print('Found Wiki CSV entries not present in JSON')
     print(csv_entries)
-    sys.exit(1)
+
+    if force:
+        print('Force updating and deleting entries')
+        for entry in csv_entries:
+            del wiki_csv[entry]
+    else:
+        print('Use --force to delete these entries')
+        sys.exit(1)
 
 # Write out updated csv
+csv.register_dialect('wiki', 'excel', lineterminator='\n')
 with open(csv_path, 'w', newline='', encoding='utf-8') as f:
     writer = csv.DictWriter(
         f,
