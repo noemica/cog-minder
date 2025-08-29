@@ -621,7 +621,7 @@ function applyDamageChunkToPart(
     if (part.selfDamageReduction !== 0) {
         damage = Math.trunc(damage * part.selfDamageReduction);
     } else if (part.def.type === "Treads" && (part.def as PropulsionItem).siege !== undefined && botState.sieged) {
-        damage = Math.trunc(damage * ((part.def as PropulsionItem).siege === SiegeMode.High ? 0.5 : 0.75));
+        damage = Math.trunc(damage * ((part.def as PropulsionItem).siege === "High Siege" ? 0.5 : 0.75));
     } else if (part.def.type === "Leg" && (part.def as PropulsionItem).shield && botState.shielded) {
         if (!penetrate && !guided && randomInt(0, 1) === 1) {
             // 50% complete deflection chance for non-penetrating and non-guided projectiles

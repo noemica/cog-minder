@@ -175,7 +175,7 @@ export class ItemData {
 
                 case "Propulsion": {
                     const siege = (
-                        item.Special === SiegeMode.High || item.Special === SiegeMode.Standard
+                        (item.Special as SiegeMode) === "High Siege" || (item.Special as SiegeMode) === "Siege"
                             ? item.Special
                             : undefined
                     ) as SiegeMode;

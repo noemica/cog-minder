@@ -89,10 +89,9 @@ export type ItemType =
     | "Treads"
     | "Wheel";
 
-export enum SiegeMode {
-    High = "High",
-    Standard = "Standard",
-}
+export type SiegeMode =
+    | "High Siege"
+    | "Siege";
 
 export enum Spectrum {
     Wide = "Wide (10)",

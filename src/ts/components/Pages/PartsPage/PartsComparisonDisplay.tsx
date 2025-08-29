@@ -111,9 +111,9 @@ function BurnoutOrSiegeComparison({
     } else if (leftPropulsion.type === "Treads" && rightPropulsion.type === "Treads") {
         if (leftPropulsion.siege === rightPropulsion.siege) {
             return <EmptyComparisonLine />;
-        } else if (leftPropulsion.siege === SiegeMode.High) {
+        } else if (leftPropulsion.siege === "High Siege") {
             return <NegativeComparison>High</NegativeComparison>;
-        } else if (leftPropulsion.siege === SiegeMode.Standard && rightPropulsion.siege === undefined) {
+        } else if (leftPropulsion.siege === "Siege" && rightPropulsion.siege === undefined) {
             return <NegativeComparison>Standard</NegativeComparison>;
         } else if (leftPropulsion.siege === undefined) {
             return <PositiveComparison>N/A</PositiveComparison>;
@@ -124,9 +124,9 @@ function BurnoutOrSiegeComparison({
         if (leftPropulsion.special === rightPropulsion.special) {
             return <EmptyComparisonLine />;
         } else if (leftPropulsion.special === undefined) {
-            return <PositiveComparison>N/A</PositiveComparison>
+            return <PositiveComparison>N/A</PositiveComparison>;
         } else {
-            return <NegativeComparison>N/A</NegativeComparison>
+            return <NegativeComparison>N/A</NegativeComparison>;
         }
     }
 
