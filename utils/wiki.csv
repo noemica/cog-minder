@@ -4255,9 +4255,12 @@ The final form of KY-Z71's RIFcycle, flipped
 "FarCom","Other","[[Image]]FarCom Sensors.png|FarCom sensors revealing nearby hostiles[[/Image]]
 [[Image]]FarCom.gif|Using the FarCom Aligner machine[[/Image]]
 FarCom is one of the major faction [[Alignment|alignments]] available to Cogmind in most runs. Taking FarCom aligns Cogmind with the [[Exiles (Group)]] for the rest of the game. It provides a permanent 18 tile radius sensor for hostile [[0b10]] bots within 0b10 controlled map. This sensor cannot be jammed by [[Watcher|Watchers]] or masked by [[Heavy|Heavies]] unlike standard [[Sensor Arrays]]. The primary limitation of the FarCom sensor is that it doesn't work in any [[Caves]] branches. One other side-effect is that entering specific [[Research]] branches becomes much more dangerous. Occasionally the Exiles may have been abandoned or attacked, and FarCom is not an option in these runs.
-[[Heading:2]]Gaining FarCom[[/Heading]]
+When FarCom is obtained, Cogmind is allowed to take one item (or multiples of the same item) from the Exiles Vault. Parts that can be taken are from the following list: [[Exiles Vault Prototypes]]
+
+[[Heading]]Gaining FarCom[[/Heading]]
 Taking FarCom can be done in most runs in the [[Exiles (Location)|Exiles]] map off of either -10 or -9 [[Mines]]. After talking to [[EX-BIN]], walk into the FarCom Aligner machine. Cogmind can take up to 1 special vault item (or multiples of the same type). If Cogmind takes more than 1 type of item, then the Exiles will notice you stealing when entering [[Factory]] or [[Storage]] and FarCom will be removed. Also, becoming hostile to the Exiles will result in instantly losing FarCom. If Cogmind takes FarCom, it is not possible to [[Imprint]]: [[Spoiler]]The [[Imprinter]] will be disappointed in Cogmind and warn you to leave right away. Attempting to use the Imprinting machine will result in turning all the bots at [[Zion]] hostile. Taking FarCom excludes cogmind from affiliating with the [[UFD|UFD]]. There are no other alignment restrictions with FarCom.[[/Spoiler]]
-[[Heading:2]]Research Branch side-effect[[/Heading]]
+
+[[Heading]]Research Branch side-effect[[/Heading]]
 When entering -3 Research, the Exiles will send a warning message to Cogmind indicating not to enter Research branches. If Cogmind does anyway, [[Spoiler]]immediately when entering [[Testing]], [[Quarantine]] [[Maximum Security]] will instantly be triggered. This will also lock the exits to [[Section 7]] and [[Protoforge]]. Note that this does not include [[Armory]] when it is on -3. The immediate response is machines shut down right after entering the level, 4 [[Sentry]] spawns at each [[Garrison]] and exit, and 6 Assault [[C-30 ARC|ARCs]] sent at Cogmind shortly after. Unless Cogmind is prepared to fight off large waves of enemies or outrun them, these maps should not be entered.[[/Spoiler]]","","","","","","",""
 "Federalist","Bot","Federalists are [[Legs|legged]] grunt-like [[Derelict|derelicts]] that appear in [[Scraptown]] and are armed with two extremely weak lasers with positive salvage. Not particularly powerful or otherwise remarkable.","","","","","","",""
 "Femtoactuators","Part","","","","","","","",""
@@ -8739,7 +8742,7 @@ See [[Strategy/aoemica's Flight Guide/Good Power|Power]], [[Strategy/aoemica's F
 [[Heading]]Slot Evolutions[[/Heading]]
 
 [[Heading]]Alignments[[/Heading]]
-","","","","","","","Strategy/aoemica's Flight Guide/Advanced Movement,Strategy/aoemica's Flight Guide/Good Power,Strategy/aoemica's Flight Guide/Good Propulsion,Strategy/aoemica's Flight Guide/Good Utilities,Strategy/aoemica's Flight Guide/Good Weapons,Strategy/aoemica's Flight Guide/Machine Hacking"
+","","","","","","","Strategy/aoemica's Flight Guide/Advanced Movement,Strategy/aoemica's Flight Guide/Alignments,Strategy/aoemica's Flight Guide/Good Power,Strategy/aoemica's Flight Guide/Good Propulsion,Strategy/aoemica's Flight Guide/Good Utilities,Strategy/aoemica's Flight Guide/Good Weapons,Strategy/aoemica's Flight Guide/Machine Hacking"
 "Strategy/aoemica's Flight Guide/Advanced Movement","Other","[[Heading]][[B]][[Color:Red]]WIP[[/Color]][[/B]][[/Heading]][[Heading]]Attack Dancing[[/Heading]]
 
 [[Heading]]Greenbot Armor[[/Heading]]
@@ -8749,6 +8752,55 @@ See [[Strategy/aoemica's Flight Guide/Good Power|Power]], [[Strategy/aoemica's F
 [[Heading]]Room Circling[[/Heading]]
 
 ","","","","","","",""
+"Strategy/aoemica's Flight Guide/Alignments","Other","Flight playstyles are quite flexible and can work with any [[Alignment]] in the game, although some are more natural pairs than others. Throughout the entirety of the run, including extended endgame [[Wintypes]], flight builds appreciate using allies as both damage and distractions. Lots of unique alignment-specific rewards are fantastic boons for flight builds, from unique parts, to special map events, to gameplay-altering mechanics.
+
+[[Heading]][[FarCom]][[/Heading]]
+FarCom is undeniably the best alignment for a basic wintype and reaching the [[Surface]]. 0 slot, 18 range unjammable sensors that detect all hostiles is a fantastic benefit. Some of the [[Exiles Vault Prototypes]] are a little more hit or miss for flight. However, nearly all seeds have items that is worth taking. The punishment in [[Research]] [[Branch|Branches]] is quite sizeable, however, since those maps are the locations of some of the best parts in the game.
+
+[[Heading:2]]Good Vault Prototypes[[/Heading]]
+The following is my personal tier list of vault prototypes for flight builds:
+
+[[Heading:3]]S Rank[[/Heading]]
+[[List]]
+[[Field Lobotomy Kit]] - Great tool for getting out of many dangerous situations and stealing high powered enemies for yourself, look out for [[Heavy|Heavies]] and [[Behemoth|Behemoths]] as good targets|
+[[Flying Fortress v7]] - Powerful unique flight unit with tons of support and integrity|
+[[Longsword +1]] - Above average slashing weapon that stays useful throughout the run, notable for its + targeting
+[[/List]]
+
+[[Heading:3]]A Rank[[/Heading]]
+[[List]]
+[[Modified TNC]] - Flight can take full advantage of this by hunting [[Hauler|Haulers]] across the whole map|
+[[Lightpack 2.0]] - Capable of storing incredible amounts of parts at a low mass cost, albeit unreliably|
+[[XL Autogun Array]] - Great high damage gun that isn't restrictively heavy for flight, make sure to wear [[Weapon Shieldings]]
+[[/List]]
+
+[[Heading:3]]B Rank[[/Heading]]
+[[List]]
+[[AWS/Gauss]] - Good early-game gun with an above average range, perfect for kiting|
+[[Cloak of Protection]] - A bit difficult to use, but decent armor and a great [[Cloaking Devices|Cloaking Device]]|
+[[Firepult]] - Heavy and hard on heat but capable of eliminating large squads of bots and even powerful enemies like [[Behemoth|Behemoths]] with ease|
+[[Gui. Plasma Cannon]] - Great for sniping bots around corners with the FarCom sensors|
+[[PSU Rigger]] - Flight's speed makes it easy to set up traps for enemies and then lure them into place|
+[[Trap Reconfigurator]] - Most useful with an [[Operator]] ally or when frequently using the [[GameText]]Traps(Locate)[[/GameText]] [[Terminal]] hack
+[[/List]]
+
+[[Heading:2]]Stealing[[/Heading]]
+Stealing from the Exiles in the case of multiple good vault items can be a worthwhile consideration. Losing FarCom is not the end of the world, and flight is well suited to deal with the consequences of [[Master Thief|Master Thieves]] in [[Caves]]. As long as Cogmind is faster than the 34 speed of the Master Thieves, it is possible to kite them and avoid getting attacked and stolen from. Just be careful not to get trapped in a corner with no way out.
+
+[[Heading]]Spoilers[[/Heading]]
+All following factions contain mid-lategame spoilers.
+
+[[Spoiler]]
+[[Heading]][[Imprint]][[/Heading]]
+
+[[Heading]][[Revision 17]][[/Heading]]
+
+[[Heading]][[Relay Interface Framework]][[/Heading]]
+
+[[Heading]][[United Federation of Derelicts]][[/Heading]]
+
+[[Heading]][[Warlord (Alignment)|Warlord]][[/Heading]]
+[[/Spoiler]]","","","","","","",""
 "Strategy/aoemica's Flight Guide/Good Power","Other","Power is never exciting, but it is a necessity to all builds. The majority of energy on my flight builds typically ends up powering flight units and [[Mass Support Devices]]. In order to save mass for other essential parts, it's better to use lighter engines. It doesn't do much good to dedicate an engine that's so heavy that flight units take up all the energy needed to support it in the first place. As such, one of the most important stats for flight builds is the amount of energy that is generated compared to the mass of the engine, or the energy:mass ratio. Heat generation is also an important factor secondary factor, although it is usually easier to solve a heat problem than a support one.
 
 [[Image]]../part_art/Backup Power VII.png|Backup Power VII, the best Backup Power[[/Image]]
@@ -8870,7 +8922,7 @@ This unique Subcaves-exclusive prototype is a great addition to any flight build
 
 [[/Spoiler]]
 
-[[Image]]../part_art/Flying Fortress v7.png|Flying Fortress V7[[/Image]]
+[[Image]]../part_art/Flying Fortress v7.png|Flying Fortress v7[[/Image]]
 [[Heading:2]][[Flying Fortress v7]][[/Heading]]
 The Flying Fortress v7 is a unique [[Exiles (Location)|Exiles]] part that has an unparalleled 12.5 support per slot which makes it great for hauling around big storage units or other heavy parts. It has  high integrity, coverage and upkeep costs. However, its 800 integrity may not last as long as it may first sound. The relatively low speed for a flight unit and high coverage make it somewhat vulnerable in the long run. Using Propulsion Shieldings can significantly improve the lifespan of this part.
 
