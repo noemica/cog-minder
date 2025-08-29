@@ -112,7 +112,12 @@ const pages: Record<PageType, PageDetails> = {
             "with a given offensive loadout. Select an enemy, weapons, and any number of other various " +
             "combat-related utilities/stats, and then hit the Simulate button to kick off the simulator. " +
             "once complete, a graph of the number of volleys to kill is shown. Multiple simulations can be " +
-            'compared by giving each dataset a name and clicking the "Add to comparison" button.',
+            'compared by giving each dataset a name and clicking the "Add to comparison" button. Note: ' +
+            "There are some limitations of the simulator that make it not 100% accurate to the game. For " +
+            "example, part disruption and overheating effects including death by heat are not fully" +
+            "simulated. The simulator also generally assumes that all bots stand still and fight with" +
+            "infinite energy, so certain damage calculations, like force field-related ones, may" +
+            "overestimate defensive capabilities.",
     },
     Wiki: {
         label: "Wiki",
