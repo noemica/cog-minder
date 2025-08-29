@@ -273,7 +273,7 @@ function getSimulatorState(
         const isProtection = itemDef.type === "Protection";
         const isTreads = itemDef.type === "Treads";
         const coverage = itemDef.coverage ?? 0;
-        const shieldedCoverage = itemDef.type === "Leg" && (itemDef as PropulsionItem).shield ? 2 * coverage : coverage;
+        const shieldedCoverage = (itemDef.type === "Leg" && (itemDef as PropulsionItem).shield) ? 2 * coverage : coverage;
         const siegedCoverage = isProtection || isTreads ? 2 * coverage : coverage;
         parts.push({
             armorAnalyzedCoverage: isProtection ? 0 : coverage,
@@ -336,8 +336,8 @@ function getSimulatorState(
     // }
 
     const armorAnalyzedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedCoverage, 0);
-    const armorAnalyzedShieldedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.shieldedCoverage, 0);
-    const armorAnalyzedSiegedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.siegedCoverage, 0);
+    const armorAnalyzedShieldedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedShieldedCoverage, 0);
+    const armorAnalyzedSiegedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedSiegedCoverage, 0);
     const shieldedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.shieldedCoverage, 0);
     const siegedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.siegedCoverage, 0);
 

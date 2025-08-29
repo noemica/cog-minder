@@ -1,4 +1,5 @@
 // Battle simulation calculation functions/constants
+import { cogmindHitBotPartSneakAttackEntries } from "../__tests__/combatLogParserTestData";
 import { Bot, BotImmunity, BotSize } from "../types/botTypes";
 import {
     AntimissileChance,
@@ -1023,8 +1024,10 @@ function destroyPart(
     const botState = state.botState;
     botState.parts.splice(partIndex, 1);
     botState.armorAnalyzedCoverage -= part.armorAnalyzedCoverage;
+    botState.armorAnalyzedShieldedCoverage -= part.armorAnalyzedShieldedCoverage;
     botState.armorAnalyzedSiegedCoverage -= part.armorAnalyzedSiegedCoverage;
     botState.siegedCoverage -= part.siegedCoverage;
+    botState.shieldedCoverage -= part.shieldedCoverage;
     botState.totalCoverage -= part.coverage;
 
     // If the part was providing any damage resistances remove them now
@@ -1162,12 +1165,16 @@ function getHitPart(
         if (armorAnalyzed) {
             if (botState.sieged) {
                 totalCoverage = botState.armorAnalyzedSiegedCoverage;
+            } else if (botState.shielded) {
+                totalCoverage = botState.armorAnalyzedShieldedCoverage;
             } else {
                 totalCoverage = botState.armorAnalyzedCoverage;
             }
         } else {
             if (botState.sieged) {
                 totalCoverage = botState.siegedCoverage;
+            } else if (botState.shielded) {
+                totalCoverage = botState.shieldedCoverage;
             } else {
                 totalCoverage = botState.totalCoverage;
             }
@@ -1198,12 +1205,16 @@ function getHitPart(
             if (armorAnalyzed) {
                 if (botState.sieged) {
                     coverageHit -= botState.parts[partIndex].armorAnalyzedSiegedCoverage;
+                } else if (botState.shielded) {
+                    coverageHit -= botState.parts[partIndex].armorAnalyzedShieldedCoverage;
                 } else {
                     coverageHit -= botState.parts[partIndex].armorAnalyzedCoverage;
                 }
             } else {
                 if (botState.sieged) {
                     coverageHit -= botState.parts[partIndex].siegedCoverage;
+                } else if (botState.shielded) {
+                    coverageHit -= botState.parts[partIndex].shieldedCoverage;
                 } else {
                     coverageHit -= botState.parts[partIndex].coverage;
                 }
