@@ -4,9 +4,9 @@ import { ItemType, WeaponItem } from "../../../types/itemTypes";
 import {
     BotBehavior,
     ExternalDamageReduction,
-    SiegeState,
     SimulatorEndCondition,
     SneakAttackStrategy,
+    SpecialPropState,
 } from "../../../types/simulatorTypes";
 import { canShowSpoiler } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
@@ -112,9 +112,9 @@ architectEndSimulationConditionOptions.push({
 const haulerEndSimulationConditionOptions = [...baseEndSimulationConditionOptions];
 haulerEndSimulationConditionOptions.push({ value: "Kill or No TNC" });
 
-const siegeOptions: SelectOptionType<SiegeState>[] = [
+const specialOptions: SelectOptionType<SpecialPropState>[] = [
     {
-        value: "No Siege",
+        value: "No Special",
     },
     {
         value: "In Siege Mode",
@@ -123,10 +123,16 @@ const siegeOptions: SelectOptionType<SiegeState>[] = [
         value: "In High Siege Mode",
     },
     {
+        value: "In Martial Mode",
+    },
+    {
         value: "Entering Siege Mode",
     },
     {
         value: "Entering High Siege Mode",
+    },
+    {
+        value: "Entering Martial Mode",
     },
 ];
 
@@ -443,14 +449,16 @@ export default function SimulatorPageInput({
                     placeholder="0"
                     tooltip="The amount of Advanced Force Boosters equipped. Provides a maximum damage increase of 40% and a melee accuracy penalty of 8%."
                 />
-                {spoilers === "Redacted" && <LabeledInput
-                    label="Exp."
-                    disabled={simulationInProgress}
-                    value={pageState.expForceBoosters || ""}
-                    onChange={(val) => updatePageState({ ...pageState, expForceBoosters: val })}
-                    placeholder="0"
-                    tooltip="The amount of Experimental Force Boosters equipped. Provides a maximum damage increase of 50% and a melee accuracy penalty of 10%."
-                />}
+                {spoilers === "Redacted" && (
+                    <LabeledInput
+                        label="Exp."
+                        disabled={simulationInProgress}
+                        value={pageState.expForceBoosters || ""}
+                        onChange={(val) => updatePageState({ ...pageState, expForceBoosters: val })}
+                        placeholder="0"
+                        tooltip="The amount of Experimental Force Boosters equipped. Provides a maximum damage increase of 50% and a melee accuracy penalty of 10%."
+                    />
+                )}
             </div>
             <div className="page-input-group">
                 <LabeledInput
@@ -518,9 +526,11 @@ export default function SimulatorPageInput({
                     value={pageState.recoilReduction || ""}
                     onChange={(val) => updatePageState({ ...pageState, recoilReduction: val })}
                     placeholder="0"
-                    tooltip={spoilers == "Redacted" ?
-                        "The amount of recoil reduction. Each tread slot has 1 recoil reduction, Recoil Stabilizers have 4, Adv. Recoil Stabilizers have 6, and Cep. Recoil Nullifiers have 99." :
-                        "The amount of recoil reduction. Each tread slot has 1 recoil reduction, Recoil Stabilizers have 4 and Adv. Recoil Stabilizers have 6."}
+                    tooltip={
+                        spoilers == "Redacted"
+                            ? "The amount of recoil reduction. Each tread slot has 1 recoil reduction, Recoil Stabilizers have 4, Adv. Recoil Stabilizers have 6, and Cep. Recoil Nullifiers have 99."
+                            : "The amount of recoil reduction. Each tread slot has 1 recoil reduction, Recoil Stabilizers have 4 and Adv. Recoil Stabilizers have 6."
+                    }
                 />
                 <LabeledInput
                     label="Distance"
@@ -531,15 +541,15 @@ export default function SimulatorPageInput({
                     tooltip="The distance from the target. Each tile closer than 6 tiles away provides 3% accuracy up to 15% at 1 tile away."
                 />
                 <LabeledSelect
-                    className="siege-select"
+                    className="special-select"
                     isDisabled={simulationInProgress}
-                    label="Siege"
+                    label="Special"
                     isSearchable={false}
-                    tooltip="The type of siege mode active (if any). Siege mode removes all recoil and adds a 15% (standard) or 25% (high) bonus to targeting."
-                    options={siegeOptions}
-                    value={siegeOptions.find((o) => o.value === pageState.siege) || siegeOptions[0]}
+                    tooltip="The type of special propulsion mode active (if any). Siege mode removes all recoil and adds a 15% (standard) or 25% (high) bonus to targeting. Martial mode only removes all reocil."
+                    options={specialOptions}
+                    value={specialOptions.find((o) => o.value === pageState.special) || specialOptions[0]}
                     onChange={(val) => {
-                        updatePageState({ ...pageState, siege: val!.value });
+                        updatePageState({ ...pageState, special: val!.value });
                     }}
                 />
             </div>
@@ -558,9 +568,11 @@ export default function SimulatorPageInput({
                     disabled={simulationInProgress}
                     onChange={(val) => updatePageState({ ...pageState, kinecellerator: val })}
                     placeholder="0%"
-                    tooltip={spoilers === "Redacted" ?
-                        "The bonus from a Kinecellerator that's equipped (if any). Increases minimum damage of kinetic gun/cannon weapons. Base Kinecellerator starts at 30%, Improved at 40%, Advanced at 50%, and Experimental at 66%." :
-                        "The bonus from a Kinecellerator that's equipped (if any). Increases minimum damage of kinetic gun/cannon weapons. Base Kinecellerator starts at 30%, Improved at 40%, and Advanced at 50%."}
+                    tooltip={
+                        spoilers === "Redacted"
+                            ? "The bonus from a Kinecellerator that's equipped (if any). Increases minimum damage of kinetic gun/cannon weapons. Base Kinecellerator starts at 30%, Improved at 40%, Advanced at 50%, and Experimental at 66%."
+                            : "The bonus from a Kinecellerator that's equipped (if any). Increases minimum damage of kinetic gun/cannon weapons. Base Kinecellerator starts at 30%, Improved at 40%, and Advanced at 50%."
+                    }
                 />
                 <LabeledInput
                     label="Weapon Cycling"
@@ -568,9 +580,11 @@ export default function SimulatorPageInput({
                     value={pageState.weaponCycling || ""}
                     onChange={(val) => updatePageState({ ...pageState, weaponCycling: val })}
                     placeholder="0%"
-                    tooltip={spoilers === "Redacted" ?
-                        "The percentage of Weapon Cycling or similar utilities that are equipped (if any). Decreases overall volley time. Stacks up to 30%, though a Mni. Quantum Capacitor can go up to 40%, and a Quantum Capacitor or Launcher Loader can go up to 50%." :
-                        "The percentage of Weapon Cycling or similar utilities that are equipped (if any). Decreases overall volley time. Stacks up to 30%, though a Quantum Capacitor or Launcher Loader can go up to 50%."}
+                    tooltip={
+                        spoilers === "Redacted"
+                            ? "The percentage of Weapon Cycling or similar utilities that are equipped (if any). Decreases overall volley time. Stacks up to 30%, though a Mni. Quantum Capacitor can go up to 40%, and a Quantum Capacitor or Launcher Loader can go up to 50%."
+                            : "The percentage of Weapon Cycling or similar utilities that are equipped (if any). Decreases overall volley time. Stacks up to 30%, though a Quantum Capacitor or Launcher Loader can go up to 50%."
+                    }
                 />
                 <LabeledInput
                     label="Salvage Targeting"
@@ -578,18 +592,22 @@ export default function SimulatorPageInput({
                     value={pageState.salvageTargeting || ""}
                     onChange={(val) => updatePageState({ ...pageState, salvageTargeting: val })}
                     placeholder="0"
-                    tooltip={spoilers === "Redacted" ?
-                        "The bonus of Salvage Targeting Computers that are equipped (if any). Increase salvage generated from Gun-type weapons that fire a single projectile (stacks). Base starts at +1, Improved is +2, Advanced is +3, Makeshift is +4, and Experimental is +5." :
-                        "The bonus of Salvage Targeting Computers that are equipped (if any). Increase salvage generated from Gun-type weapons that fire a single projectile (stacks). Base starts at +1, Improved is +2, Advanced is +3, and Makeshift is +4."}
+                    tooltip={
+                        spoilers === "Redacted"
+                            ? "The bonus of Salvage Targeting Computers that are equipped (if any). Increase salvage generated from Gun-type weapons that fire a single projectile (stacks). Base starts at +1, Improved is +2, Advanced is +3, Makeshift is +4, and Experimental is +5."
+                            : "The bonus of Salvage Targeting Computers that are equipped (if any). Increase salvage generated from Gun-type weapons that fire a single projectile (stacks). Base starts at +1, Improved is +2, Advanced is +3, and Makeshift is +4."
+                    }
                 />
-                {spoilers !== "None" && <LabeledInput
-                    label="Partition Strike Chips"
-                    disabled={simulationInProgress}
-                    value={pageState.partitionStrikeChips || ""}
-                    onChange={(val) => updatePageState({ ...pageState, partitionStrikeChips: val })}
-                    placeholder="0"
-                    tooltip="The number of Partition Strike Chips that are equipped. Partition Strike Chips are like a +3 Salvage Targeting Computer that also works on cannons."
-                />}
+                {spoilers !== "None" && (
+                    <LabeledInput
+                        label="Partition Strike Chips"
+                        disabled={simulationInProgress}
+                        value={pageState.partitionStrikeChips || ""}
+                        onChange={(val) => updatePageState({ ...pageState, partitionStrikeChips: val })}
+                        placeholder="0"
+                        tooltip="The number of Partition Strike Chips that are equipped. Partition Strike Chips are like a +3 Salvage Targeting Computer that also works on cannons."
+                    />
+                )}
             </div>
         </>
     );

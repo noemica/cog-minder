@@ -12,12 +12,12 @@ import {
     ItemLootState,
     LootState,
     OffensiveState,
-    SiegeState,
     SimulatorEndCondition,
     SimulatorPart,
     SimulatorState,
     SimulatorWeapon,
     SneakAttackStrategy,
+    SpecialPropState,
 } from "../../../types/simulatorTypes";
 import { BotData } from "../../../utilities/BotData";
 import { ItemData } from "../../../utilities/ItemData";
@@ -30,10 +30,10 @@ import {
     initialMeleeAccuracy,
     initialRangedAccuracy,
     meleeAnalysisMinDamageIncrease,
-    siegeModeBonusMap,
     simulateCombat,
     maxVolleys as simulatorMaxVolleys,
     sizeAccuracyMap,
+    specialModeBonusMap,
     spectrumToNumber,
     volleyTimeMap,
 } from "../../../utilities/simulatorCalcs";
@@ -82,7 +82,7 @@ export type SimulatorPageState = {
 
     // Ranged settings
     targeting?: string;
-    siege?: SiegeState;
+    special?: SpecialPropState;
     distance?: string;
     particleCharger?: string;
     kinecellerator?: string;
@@ -405,8 +405,8 @@ function getSimulatorState(
     const melee = pageState.combatType === "Melee";
 
     // Accuracy bonuses and penalties
-    const noSiegeBonus = { bonus: 0, tus: 0 };
-    const siegeBonus = melee ? noSiegeBonus : siegeModeBonusMap.get(pageState.siege!) || noSiegeBonus;
+    const noSpecialBonus = { bonus: 0, recoilNegated: false, tus: 0 };
+    const specialBonus = melee ? noSpecialBonus : specialModeBonusMap.get(pageState.special!) || noSpecialBonus;
     const targetingBonus = parseIntOrDefault(pageState.targeting, 0);
 
     // Melee analysis/force boosters
@@ -758,7 +758,7 @@ function getSimulatorState(
         ramming: ramming,
         recoil: allRecoil,
         recoilReduction: recoilReduction,
-        siegeBonus: siegeBonus,
+        specialBonus: specialBonus,
         sneakAttack: false,
         sneakAttackStrategy: sneakAttackStrategy,
         speed: speed,
@@ -796,7 +796,7 @@ function skipLocationMember(key: string, pageState: SerializableSimulatorPageSta
         (typedKey === "endCondition" && pageState.endCondition === "Kill") ||
         (typedKey === "enemyBehavior" && pageState.enemyBehavior === "Stand/Fight") ||
         (typedKey === "onLegs" && pageState.onLegs === "No") ||
-        (typedKey === "siege" && pageState.siege === "No Siege") ||
+        (typedKey === "special" && pageState.special === "No Special") ||
         (typedKey === "xAxis" && pageState.xAxis === "Volleys")
     ) {
         // Skip enum default values

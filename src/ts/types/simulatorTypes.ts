@@ -9,12 +9,14 @@ export type ExternalDamageReduction =
     | "Remote Force Field"
     | "Stasis Bubble";
 
-export type SiegeState =
-    | "No Siege"
+export type SpecialPropState =
+    | "No Special"
     | "In Siege Mode"
     | "In High Siege Mode"
     | "Entering Siege Mode"
-    | "Entering High Siege Mode";
+    | "Entering High Siege Mode"
+    | "In Martial Mode"
+    | "Entering Martial Mode";
 
 export type SimulatorPart = {
     armorAnalyzedCoverage: number;
@@ -194,6 +196,12 @@ export type LootState = {
     matterBlasted: number;
 };
 
+export type SpecialPropulsionState = {
+    bonus: number;
+    recoilNegated: boolean;
+    tus: number;
+};
+
 export type OffensiveState = {
     action1Accuracy: number;
     action2Accuracy: number;
@@ -215,10 +223,7 @@ export type OffensiveState = {
     recoil: number;
     ramming: boolean;
     recoilReduction: number;
-    siegeBonus: {
-        bonus: number;
-        tus: number;
-    };
+    specialBonus: SpecialPropulsionState;
     sneakAttack: boolean;
     sneakAttackStrategy: SneakAttackStrategy;
     speed: number;

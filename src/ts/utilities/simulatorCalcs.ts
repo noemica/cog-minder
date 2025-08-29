@@ -1,5 +1,4 @@
 // Battle simulation calculation functions/constants
-import { cogmindHitBotPartSneakAttackEntries } from "../__tests__/combatLogParserTestData";
 import { Bot, BotImmunity, BotSize } from "../types/botTypes";
 import {
     AntimissileChance,
@@ -17,7 +16,6 @@ import {
     ReactionControlSystem,
     SelfReduction,
     Shielding,
-    SiegeMode,
     Spectrum,
     WeaponItem,
 } from "../types/itemTypes";
@@ -26,11 +24,12 @@ import {
     DefensiveState,
     ExternalDamageReduction,
     ShieldingPart,
-    SiegeState,
     SimulatorPart,
     SimulatorState,
     SimulatorWeapon,
     SpecialPart,
+    SpecialPropState,
+    SpecialPropulsionState,
 } from "../types/simulatorTypes";
 import { hasActiveSpecialProperty, randomInt, sum } from "./common";
 
@@ -102,12 +101,14 @@ const meleeAnalysisAccuracy = [5, 6, 8, 12];
 export const meleeAnalysisMinDamageIncrease = [2, 3, 4, 6];
 
 // Siege mode text to accuracy bonus/TUs to activate map
-export const siegeModeBonusMap: Map<SiegeState, { bonus: number; tus: number }> = new Map([
-    ["No Siege", { bonus: 0, tus: 0 }],
-    ["In Siege Mode", { bonus: 15, tus: 0 }],
-    ["In High Siege Mode", { bonus: 25, tus: 0 }],
-    ["Entering Siege Mode", { bonus: 15, tus: 700 }],
-    ["Entering High Siege Mode", { bonus: 25, tus: 700 }],
+export const specialModeBonusMap: Map<SpecialPropState, SpecialPropulsionState> = new Map([
+    ["No Special", { bonus: 0, recoilNegated: false, tus: 0 }],
+    ["In Siege Mode", { bonus: 15, recoilNegated: true, tus: 0 }],
+    ["In High Siege Mode", { bonus: 25, recoilNegated: true, tus: 0 }],
+    ["In Martial Mode", { bonus: 0, recoilNegated: true, tus: 0 }],
+    ["Entering Siege Mode", { bonus: 15, recoilNegated: true, tus: 700 }],
+    ["Entering High Siege Mode", { bonus: 25, recoilNegated: true, tus: 700 }],
+    ["Entering Martial Mode", { bonus: 0, recoilNegated: true, tus: 300 }],
 ]);
 
 // Map of spectrum values to engine explosion chance
@@ -1562,11 +1563,11 @@ export function simulateCombat(state: SimulatorState): boolean {
 
         let updateAccuracy = false;
 
-        // Update accuracy when crossing siege mode activation
+        // Update accuracy when crossing special prop mode activation
         if (
             !offensiveState.melee &&
-            oldTus < offensiveState.siegeBonus.tus &&
-            state.tus >= offensiveState.siegeBonus.tus
+            oldTus < offensiveState.specialBonus.tus &&
+            state.tus >= offensiveState.specialBonus.tus
         ) {
             updateAccuracy = true;
         }
@@ -1961,7 +1962,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
         perWeaponBonus += 5;
     }
 
-    let siegeBonus = 0;
+    let recoilNegated = false;
 
     if (offensiveState.melee) {
         // Add melee analysis bonuses
@@ -1985,12 +1986,12 @@ function updateWeaponsAccuracy(state: SimulatorState) {
         // Add (low) distance bonus
         perWeaponBonus += offensiveState.distance < 6 ? (6 - offensiveState.distance) * 3 : 0;
 
-        // Add siege bonus
-        const siege = offensiveState.siegeBonus;
-        if (state.tus >= siege.tus) {
-            siegeBonus = siege.bonus;
+        // Add special prop mode bonus
+        const specialBonus = offensiveState.specialBonus;
+        if (state.tus >= specialBonus.tus) {
+            perWeaponBonus += specialBonus.bonus;
+            recoilNegated = specialBonus.recoilNegated;
         }
-        perWeaponBonus += siegeBonus;
 
         // Subtract ranged avoid util (phase shifter)
         const rangedAvoidPart = getDefensiveStatePart(botState.defensiveState.rangedAvoid);
@@ -2027,7 +2028,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
     }
 
     for (const weapon of state.weapons) {
-        if (weapon.guided !== undefined) {
+        if (weapon.guided) {
             // Guided weapons always have 100% accuracy
             weapon.accuracy = 100;
             return;
@@ -2035,7 +2036,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
 
         let accuracy = weapon.baseAccuracy + perWeaponBonus;
 
-        if (!offensiveState.melee && siegeBonus === 0) {
+        if (!offensiveState.melee && !recoilNegated) {
             // Subtract recoil if siege mode inactive
             accuracy -= offensiveState.recoil - getRecoil(weapon.def, offensiveState.recoilReduction);
         }
