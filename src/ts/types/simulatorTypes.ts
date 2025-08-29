@@ -155,6 +155,7 @@ export type SimulatorWeapon = {
     explosionDisruption: number;
     explosionSpectrum: number;
     explosionType?: DamageType;
+    guided: boolean;
     isMissile: boolean;
     numProjectiles: number;
     overflow: boolean;

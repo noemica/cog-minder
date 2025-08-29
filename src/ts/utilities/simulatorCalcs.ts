@@ -134,6 +134,7 @@ type DamageChunk = {
     damageType: DamageType;
     disruptChance: number;
     forceCore: boolean;
+    guided: boolean;
     originalDamage: number;
     penetrate: boolean;
     realDamage: number;
@@ -194,6 +195,7 @@ function applyDamage(
     damageType: DamageType,
     salvage: number,
     penetrationChance: number,
+    guided: boolean,
 ) {
     const chunks: DamageChunk[] = [];
 
@@ -210,6 +212,7 @@ function applyDamage(
                 damageType: damageType,
                 disruptChance: 0,
                 forceCore: false,
+                guided: guided,
                 originalDamage: damage,
                 penetrate: false,
                 realDamage: 0,
@@ -226,6 +229,7 @@ function applyDamage(
                 damageType: damageType,
                 disruptChance: disruptChance,
                 forceCore: false,
+                guided: guided,
                 originalDamage: damage,
                 penetrate: randomInt(0, 100) <= penetrationChance,
                 realDamage: 0,
@@ -283,6 +287,7 @@ function applyDamage(
             chunk.spectrum,
             chunk.armorAnalyzed,
             chunk.penetrate,
+            chunk.guided,
         );
 
         // Apply corruption (22)
@@ -316,6 +321,7 @@ function applyDamageChunk(
     spectrum: number,
     armorAnalyzed: boolean,
     penetrate: boolean,
+    guided: boolean,
 ) {
     // Determine hit part (13)
     const { part, partIndex } = getHitPart(state.botState, coreBonus, damageType, isOverflow, forceCore, armorAnalyzed);
@@ -329,6 +335,7 @@ function applyDamageChunk(
         canOverflow,
         isOverflow,
         penetrate,
+        guided,
         part,
         partIndex,
     );
@@ -371,6 +378,7 @@ function applyDamageChunkToPart(
     canOverflow: boolean,
     isOverflow: boolean,
     penetrate: boolean,
+    guided: boolean,
     part: SimulatorPart | undefined,
     partIndex: number,
 ) {
@@ -527,7 +535,20 @@ function applyDamageChunkToPart(
             if (part.def.size === 1) {
                 // Single-slot items get blasted off
                 // Deal damage first, then destroy as a critical part removal if still intact
-                applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, part, partIndex);
+                applyDamageChunkToPart(
+                    state,
+                    damage,
+                    "Phasic",
+                    undefined,
+                    0,
+                    0,
+                    false,
+                    false,
+                    false,
+                    false,
+                    part,
+                    partIndex,
+                );
 
                 // Dismemberment immunity stops the blasting off part
                 if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
@@ -535,12 +556,38 @@ function applyDamageChunkToPart(
                 }
             } else {
                 // Multi-slot items don't get blasted off but still take damage
-                applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, part, partIndex);
+                applyDamageChunkToPart(
+                    state,
+                    damage,
+                    "Phasic",
+                    undefined,
+                    0,
+                    0,
+                    false,
+                    false,
+                    false,
+                    false,
+                    part,
+                    partIndex,
+                );
             }
         } else if (critical === Critical.Phase) {
             // Apply phasing damage to another random part
             const { part, partIndex } = getRandomNonCorePart(botState, undefined);
-            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, part, partIndex);
+            applyDamageChunkToPart(
+                state,
+                damage,
+                "Phasic",
+                undefined,
+                0,
+                0,
+                false,
+                false,
+                false,
+                false,
+                part,
+                partIndex,
+            );
         }
 
         return;
@@ -575,14 +622,14 @@ function applyDamageChunkToPart(
     } else if (part.def.type === "Treads" && (part.def as PropulsionItem).siege !== undefined && botState.sieged) {
         damage = Math.trunc(damage * ((part.def as PropulsionItem).siege === SiegeMode.High ? 0.5 : 0.75));
     } else if (part.def.type === "Leg" && (part.def as PropulsionItem).shield && botState.shielded) {
-        if (!penetrate && randomInt(0, 1) === 1) {
-            // 50% complete deflection chance for non-penetrating projectiles
+        if (!penetrate && !guided && randomInt(0, 1) === 1) {
+            // 50% complete deflection chance for non-penetrating and non-guided projectiles
             // TODO: Try to figure out if there is an easy way to determine which
             // projectiles are not deflected. Some example projectiles that don't deflect
             // are null and potential cannons.
             damage = 0;
         } else {
-            // Otherwise, divide damage in 2
+            // Otherwise, divide damage by 2
             damage = Math.trunc(damage * 0.5);
         }
     }
@@ -643,7 +690,20 @@ function applyDamageChunkToPart(
         if (part.def.size === 1) {
             // Single-slot items get blasted off
             // Deal damage first, then destroy as a critical part removal if still intact
-            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, part, partIndex);
+            applyDamageChunkToPart(
+                state,
+                damage,
+                "Phasic",
+                undefined,
+                0,
+                0,
+                false,
+                false,
+                false,
+                false,
+                part,
+                partIndex,
+            );
 
             // Dismemberment immunity stops the blasting off part
             if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
@@ -651,11 +711,24 @@ function applyDamageChunkToPart(
             }
         } else {
             // Multi-slot items don't get blasted off but still take damage
-            applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, part, partIndex);
+            applyDamageChunkToPart(
+                state,
+                damage,
+                "Phasic",
+                undefined,
+                0,
+                0,
+                false,
+                false,
+                false,
+                false,
+                part,
+                partIndex,
+            );
         }
     } else if (critical === Critical.Phase) {
         // Apply phasing damage to the core
-        applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, undefined, -1);
+        applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, false, undefined, -1);
     }
 
     if (engineExplosion) {
@@ -749,6 +822,7 @@ function applyEngineExplosion(state: SimulatorState, part: SimulatorPart) {
                 false,
                 engine.explosionDisruption,
                 spectrumToNumber(engine.explosionSpectrum),
+                false,
                 false,
                 false,
             );
@@ -968,7 +1042,7 @@ function destroyPart(
     if (overflowDamage > 0 && !part.protection && canOverflow) {
         // Handle overflow damage if excess damage was dealt
         // against a non-protection part (18)
-        applyDamageChunk(state, 0, overflowDamage, damageType, undefined, true, true, false, 0, 0, false, false);
+        applyDamageChunk(state, 0, overflowDamage, damageType, undefined, true, true, false, 0, 0, false, false, false);
     }
 
     if (damageType === "Impact") {
@@ -1620,7 +1694,22 @@ function simulateWeapon(
         damage = calculateResistDamage(botState, damage, "Impact");
 
         if (damage > 0) {
-            applyDamage(state, botState, damage, 1, undefined, false, false, 0, 0, true, "Impact", 3, 0);
+            applyDamage(
+                state,
+                botState,
+                damage,
+                1,
+                undefined,
+                false,
+                false,
+                0,
+                0,
+                true,
+                "Impact",
+                3,
+                0,
+                weapon.def.waypoints !== undefined,
+            );
         }
 
         return endCondition(botState);
@@ -1758,6 +1847,7 @@ function simulateWeapon(
                     weapon.damageType,
                     weapon.salvage,
                     penetrationChance,
+                    weapon.guided,
                 );
 
                 if (
@@ -1811,6 +1901,7 @@ function simulateWeapon(
                     weapon.explosionType,
                     weapon.salvage,
                     0,
+                    weapon.guided,
                 );
 
                 // If we've already met the end condition then exit mid-volley
@@ -1925,7 +2016,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
     }
 
     for (const weapon of state.weapons) {
-        if (weapon.def.waypoints !== undefined) {
+        if (weapon.guided !== undefined) {
             // Guided weapons always have 100% accuracy
             weapon.accuracy = 100;
             return;

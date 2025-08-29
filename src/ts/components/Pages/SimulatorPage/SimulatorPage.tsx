@@ -630,6 +630,7 @@ function getSimulatorState(
             explosionMax: explosionMax,
             explosionSpectrum: explosionSpectrum,
             explosionType: explosionType,
+            guided: def.waypoints !== undefined,
             isMissile: isMissile,
             numProjectiles: def.projectileCount,
             overflow: !def.type.includes("Gun"),
