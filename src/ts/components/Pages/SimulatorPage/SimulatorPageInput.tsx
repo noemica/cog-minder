@@ -543,7 +543,7 @@ export default function SimulatorPageInput({
                 <LabeledSelect
                     className="special-select"
                     isDisabled={simulationInProgress}
-                    label="Special"
+                    label="Special Prop"
                     isSearchable={false}
                     tooltip="The type of special propulsion mode active (if any). Siege mode removes all recoil and adds a 15% (standard) or 25% (high) bonus to targeting. Martial mode only removes all reocil."
                     options={specialOptions}
