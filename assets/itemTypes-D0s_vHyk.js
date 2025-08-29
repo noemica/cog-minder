@@ -1,0 +1,1 @@
+var n=(e=>(e.Wide="Wide (10)",e.Intermediate="Intermediate (30)",e.Narrow="Narrow (50)",e.Fine="Fine (100)",e))(n||{}),s=(e=>(e.Blast="Blast",e.Burn="Burn",e.Corrupt="Corrupt",e.Destroy="Destroy",e.Detonate="Detonate",e.Meltdown="Meltdown",e.Impale="Impale",e.Intensify="Intensify",e.Phase="Phase",e.Smash="Smash",e.Sever="Sever",e.Sunder="Sunder",e))(s||{});export{s as C,n as S};
