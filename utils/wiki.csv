@@ -7386,7 +7386,7 @@ This hack can give up to 1-10 schematics that Cogmind does not already have. Thi
 "Scientist","Bot","Scientists are [[Wheels|two-wheeled]] [[UFD]] non-combat bots found in [[Scraptown]] and [[Recycling]]. They are quite valuable for their [[Tech Extrapolator]], and are defenseless. Vulnerable to EM.","","","","","","",""
 "Score","Other","Score is earned in multiple ways, including progressing through the game, destroying bots, identifying [[Prototype Part|Prototypes]], and many more. The total score earned throughout a run is shown at the end, after which the details of that run, including the different sources of points, can be found in the relevant scoresheet within the ""scores"" folder in the game files. From the ""[7] RECORDS"" menu, it is also possible to create a scoresheet dump in which the details of the run so far, including score earned, can be found. Scoresheet dump can be found in the ""dumps"" folder in the game files.
 
-[[Heading:4]]Performance[[/Heading]]
+[[Heading]]Performance[[/Heading]]
 The quick overview of overall performance and score in scoresheets, followed by the total score. Each of these categories is always listed in scoresheets, regardless of whether any score was earned in any of them:
 [[Table]]Name|Points|X||
 Evolutions (X)|X * 500|Evolution thresholds crossed||
@@ -7406,8 +7406,8 @@ The value of common [[0b10 Bots]] is equal to their class number (for example, t
 
 
 [[Heading]]Bonus Points[[/Heading]]
-Bonus points are obtained from a large variety of sources, almost all of them spoilery. Remember to set your spoilers settings to ""None"" if you do not want to see potential spoilers! Sources of bonus points that require playing Challenge/Special Modes are not listed here.
-Unlike overall performance score, bonus score categories only appear in scoresheets if point were earned in them. Various [[Achievements]] have the same requirements as some bonus score categories. For categories that require destroying very specific robots or machines, unless otherwise noted, anything will count so long as the corresponding bots/machines are destroyed, and Cogmind does not actually have to personally destroy the bots/machines. The following is a complete(?) list of bonus point sources, more or less in the order they appear in scoresheets (a '?' indicates that the writer of this article is unsure about whether a source stacks or not):
+Bonus points are obtained from a large variety of sources, almost all of them spoilery. Remember to set your spoilers settings to ""None"" if you do not want to see potential spoilers! Sources of bonus points that require playing Challenge/Special Modes are listed in the dedicated table further below.
+Unlike overall performance score, bonus score categories only appear in scoresheets if point were earned in them. Various [[Achievements]] have the same requirements as some bonus score categories. For categories that require destroying very specific robots or machines, unless otherwise noted, anything will count so long as the corresponding bots/machines are destroyed, and Cogmind does not actually have to personally destroy the bots/machines. The following is a complete(?) list of bonus point sources, more or less in the order they appear in scoresheets (a '?' indicates that the writer of this article is unsure about whether a source stacks or not) :
 
 [[Table]]Name|Points|Stacks|Source||
 [[Comment]]I think i listed all non-challenge/special mode bonus point sources? Not sure, though.[[/Comment]]
@@ -7523,7 +7523,28 @@ Friendly Fire|X + (Y * 100)|Yes|X = damage dealt to Allies[[Sup]]4[[/Sup]] by Co
 [[Sup]]3[[/Sup]]Bonus score earned from robot kills in these category is earned in addition to ""Value Destroyed"" score.
 [[Sup]]4[[/Sup]]Only uncontrollable allies that aren't 0b10 bots under the influence of a temporary IFF overwrite.
 
-If an amount of score earned is a decimal numeral (such as in the cases of ""High Alert Combat Kills"" and ""Follower Combat Kills"" bonus score categories), that amount of score is rounded down. For example, destroying an [[S-27 Virus]] at Alert level 2 would grant 6.75 points in the High Alert Combat Kills category, which would be rounded down to 6.","","","","","","",""
+If an amount of score earned is a decimal numeral (such as in the cases of ""High Alert Combat Kills"" and ""Follower Combat Kills"" bonus score categories), that amount of score is rounded down. For example, destroying an [[S-27 Virus]] at Alert level 2 would grant 6.75 points in the High Alert Combat Kills category, which would be rounded down to 6.
+
+[[Heading]]Challenge/Special Modes-Related Score[[/Heading]]
+Some sources of score are affected by or exclusive to some Challenge/Special Modes. The following is a mostly unordered incomplete list of all relevant categories :
+
+[[Table]]Name|Points|Stacks|Source|Challenge/Special Mode||
+Devolution|???, modifier starts out negative but gets larger late-game|Yes|Crossing evolution thresholds|Devolution Challenge Mode||
+FragileParts|Dependent on ???|Yes|???|FragileParts Challenge Mode||
+Gauntlet|Dependent on ???|Yes|???|Gauntlet Challenge Mode||
+InhibitedEvolution|???|Yes|Crossing evolution thresholds|InhibitedEvolution Challenge Mode||
+NoSalvage|Dependent on ???|Yes|???|NoSalvage Challenge Mode||
+Pure Core|Dependent on ???|Yes|???|Pure Core Challenge Mode||
+Scavenger|Dependent on ???|Yes|???|Scavenger Challenge Mode||
+SimpleHacker|Dependent on ???|Yes|???|SimpleHacker Challenge Mode||
+StickyParts|Dependent on ???|Yes|???|StickyParts Challenge Mode||
+SuperGauntlet|Dependent on ???|Yes|???|SuperGauntlet Challenge Mode||
+Trapped|Dependent on ???|Yes|???|Trapped Challenge Mode||
+UnstableEvolution|500|Yes|Crossing evolution thresholds|UnstableEvolution Challenge Mode||
+Polymind Skill|Dependent on various factors|Yes| |Winter2022/Polymind Special Mode||
+Challenge Win|7000|???|Winning while one or more Challenge Modes are active|Any Challenge Mode[[/Table]]
+[[Comment]]You'd think some categories like Trapped or SimpleHacker would give points based on traps or hacking, but the scoresheets i've found seem to contradict this. For example, in one run that triggered 105 traps, the player got 1750 Trapped points. In one of my runs, where i triggered 22, i got 1000. But in a different run, where i'd triggered 53, i got only 500 Trapped points.[[/Comment]]
+","","","","","","",""
 "Scrap","Part","","","","","","","",""
 "Scrap Engine","Part","Scrap Engine is a unique [[Derelict]] part that can only be obtained by stealing from the [[Recycling#Scraplab|Scraplab in Recycling]]. It has the capability to create powerful constructs by combining many different parts into one. It can create power constructs of up to 4 slots, propulsion up to 8 slots, and weapons of up to 4 slots. When more of Cogmind's slots are dedicated to constructs, they will also get more powerful overall.
 The Scrap Engine can be obtained in one of two ways, with various consequences. The first way is by simply taking it from the Scraplab in Recycling normally. This will cause all the bots in the lab to become hostile to Cogmind, as well as enraging [[Zion]] and [[Warlord (Location)]]. However, if Cogmind visits the [[Subcaves]] beforehand, exits to [[Materials]], and then goes to Recycling, the map will be attacked by [[Subdweller|Subdwellers]]. In the chaos, the Scraplab will have been abandoned, and Cogmind can take the part without causing hostilities.
