@@ -7539,23 +7539,24 @@ Friendly Fire|X + (Y * 100)|Yes|X = damage dealt to Allies[[Sup]]4[[/Sup]] by Co
 If an amount of score earned is a decimal numeral (such as in the cases of ""High Alert Combat Kills"" and ""Follower Combat Kills"" bonus score categories), that amount of score is rounded down. For example, destroying an [[S-27 Virus]] at Alert level 2 would grant 6.75 points in the High Alert Combat Kills category, which would be rounded down to 6.
 
 [[Heading]]Challenge/Special Modes-Related Score[[/Heading]]
-Some sources of score are affected by or exclusive to some Challenge/Special Modes. The following is a mostly unordered incomplete list of all relevant categories :
+Some sources of score are affected by or exclusive to some Challenge/Special Modes. They are listed here separately, as runs with Challenge/Special Modes active are disqualified from the official leaderboards (though some Special Modes have had and may have temporary special leaderboards when they were/are released). The following is a mostly unordered list of all relevant categories :
 
 [[Table]]Name|Points|Stacks|Source|Challenge/Special Mode||
-Devolution|???, modifier starts out negative but gets larger late-game|Yes|Crossing evolution thresholds|Devolution Challenge Mode||
-FragileParts|Dependent on ???|Yes|???|FragileParts Challenge Mode||
-Gauntlet|Dependent on ???|Yes|???|Gauntlet Challenge Mode||
+Devolution|???, starts out negative but gets positive and larger late-game|Yes|Crossing evolution thresholds|Devolution Challenge Mode||
+FragileParts|???, multiple of 50?|Yes|Dependent on ???|FragileParts Challenge Mode||
+Gauntlet|???|Yes|Dependent on ???|Gauntlet Challenge Mode||
 InhibitedEvolution|???|Yes|Crossing evolution thresholds|InhibitedEvolution Challenge Mode||
-NoSalvage|Dependent on ???|Yes|???|NoSalvage Challenge Mode||
-Pure Core|Dependent on ???|Yes|???|Pure Core Challenge Mode||
-Scavenger|Dependent on ???|Yes|???|Scavenger Challenge Mode||
-SimpleHacker|Dependent on ???|Yes|???|SimpleHacker Challenge Mode||
-StickyParts|Dependent on ???|Yes|???|StickyParts Challenge Mode||
-SuperGauntlet|Dependent on ???|Yes|???|SuperGauntlet Challenge Mode||
-Trapped|Dependent on ???|Yes|???|Trapped Challenge Mode||
+NoSalvage|???|Yes|Dependent on ???|NoSalvage Challenge Mode||
+Pure Core|???|Yes|Dependent on ???|Pure Core Challenge Mode||
+Scavenger|???, multiple of 1000?|Yes|Dependent on ???|Scavenger Challenge Mode||
+SimpleHacker|???|Yes|Dependent on ???|SimpleHacker Challenge Mode||
+StickyParts|???, multiple of 1000?|Yes|Dependent on ???|StickyParts Challenge Mode||
+SuperGauntlet|???|Yes|Dependent on ???|SuperGauntlet Challenge Mode||
+Trapped|???, multiple of 50?|Yes|Dependent on ???|Trapped Challenge Mode||
 UnstableEvolution|500|Yes|Crossing evolution thresholds|UnstableEvolution Challenge Mode||
-Polymind Skill|Dependent on various factors|Yes| |Winter2022/Polymind Special Mode||
+Polymind Skill|???|Yes|Dependent on various factors|Winter2022/Polymind Special Mode||
 Challenge Win|7000|???|Winning while one or more Challenge Modes are active|Any Challenge Mode[[/Table]]
+(Note : Bonus points awarded from most Challenge Modes are fairly specific numbers, and as such the exact sources can be fairly difficult or impossible to deduce just from looking at Scoresheets, which the writer of this article was relying on, which is why the points awarded for those categories are marked as unknown.)
 [[Comment]]You'd think some categories like Trapped or SimpleHacker would give points based on traps or hacking, but the scoresheets i've found seem to contradict this. For example, in one run that triggered 105 traps, the player got 1750 Trapped points. In one of my runs, where i triggered 22, i got 1000. But in a different run, where i'd triggered 53, i got only 500 Trapped points.[[/Comment]]
 ","","","","","","",""
 "Scrap","Part","","","","","","","",""
