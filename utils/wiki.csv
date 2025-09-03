@@ -3586,7 +3586,8 @@ Hackable|false||
 Energy Upkeep|0||
 Matter Upkeep|0||
 Heat Generation|0||
-Description|While active, reverse engineers schematics of robot models that are killed 25 times by Cogmind and controllable allies. Cannot generate schematics for prototypes, multitile robots, heavies, Q-Series, or Assembled.[[/ItemDetails]]
+Description|Each enemy killed gives a 4% chance to gain a study for a random equipped non-prototype item.
+ <parallel_ok>[[/ItemDetails]]
 
 [[Heading]]D-04 Tanker[[/Heading]]
 [[GameText]]>Analysis(D-04 Tanker)[[/GameText]]
@@ -5150,12 +5151,12 @@ The Triangulator is an extremely niche 24 tile robot detecting utility with one 
 Category|Sensor Arrays|Active Sensor Suite|FarCom|Seismic Detector|IFF Parsers|[[Spoiler]]Quantum Companion[[/Spoiler]]|[[Redacted]]Sigix Exoskeleton[[/Redacted]]|Robot Detection/Patrol Navigation|0b10 Decoder Chip [Skirmisher/Generic]|Triangulator||
 Range|[[CellStyle:Neutral]]14-20|[[CellStyle:Good]]20|[[CellStyle:Good]]18|[[CellStyle:Good]]22|[[CellStyle:Neutral]]16-26|[[CellStyle:Bad]]12|[[CellStyle:Good]]18|[[CellStyle:Good]]24|[[CellStyle:Good]]22|[[CellStyle:Good]]24||
 Detect Bot Class|[[CellStyle:Neutral]]With Signal Interpreter|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Bad]]No|[[CellStyle:Good]]Yes||
-Ignores jamming/scrambling|[[CellStyle:Bad]]No|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Bad]]No|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes||
+Ignores jamming/scrambling|[[CellStyle:Bad]]No|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Neutral]]Ignores jamming but not scrambling|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes||
 Bot detection limitations|[[CellStyle:Good]]Affected by Scan Cloak, requires [[Exp. Signal Interpreter]] but can detect dormant bots|[[CellStyle:Good]]Affected by Scan Cloak|[[CellStyle:Neutral]]Combat bots only, does not detect dormant bots|[[CellStyle:Bad]]Grounded and moving bots only|[[CellStyle:Good]]Does not detect dormant bots|[[CellStyle:Good]]Does not detect dormant bots|[[CellStyle:Good]]Does not detect dormant bots|[[CellStyle:Good]]Does not detect dormant bots|[[CellStyle:Good]]Does not detect dormant bots|[[CellStyle:Bad]]Only combat bots actively tracking||
 Slot requirement|[[CellStyle:Neutral]]1 swappable utility, optionally 1 unswappable utility|[[CellStyle:Bad]]3 unswappable utility|[[CellStyle:Good]]None|[[CellStyle:Good]]1 swappable utility|[[CellStyle:Good]]1 swappable utility|[[CellStyle:Good]][[Spoiler]]1 swappable weapon[[/Spoiler]]|[[CellStyle:Good]][[Redacted]]3 unswappable propulsion[[/Redacted]]|[[CellStyle:Bad]]1 unswappable utility per bot class|[[CellStyle:Neutral]]1 unswappable utility|[[CellStyle:Good]]1 swappable utility||
 Alignment requirement|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]Exiles|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]][[Spoiler]]UFD or scraptown attack[[/Spoiler]]|[[CellStyle:Neutral]][[Redacted]][[Core Reset Matrix]] + Sigix Exoskeleton[[/Redacted]]|[[CellStyle:Neutral]]RIF|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A||
 Update frequency|[[CellStyle:Neutral]]Once per turn|[[CellStyle:Neutral]]Once per turn|[[CellStyle:Good]]Realtime|[[CellStyle:Good]]Realtime|[[CellStyle:Bad]]Once per two turns|[[CellStyle:Good]]Realtime|[[CellStyle:Good]]Realtime|[[CellStyle:Good]]Realtime|[[CellStyle:Bad]]Infrequent|[[CellStyle:Good]]Realtime||
-Map restrictions|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Good]]N/A||
+Map restrictions|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Good]]N/A||
 Other limitations|[[CellStyle:Neutral]]Can be difficult to decipher without a Signal Interpreter|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Bad]]Can be difficult to decipher, many bots are not detected|[[CellStyle:Neutral]]Can be difficult to decipher|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A
 [[/Table]]
 [[Heading:2]]Terrain Scanning[[/Heading]]
