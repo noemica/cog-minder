@@ -144,7 +144,11 @@ Similar to the Lab orders, there are some unique lore entries in the Architect L
 
 [[Heading]]Defeating the Architect Strategy[[/Heading]]
 See [[Strategy/Bosses/Defeating Architect]].","Redacted","","","","","",""
-"Achievements","Other","There are currently 256 achievements in Cogmind, which can be viewed in-game through the Achievements records submenu. They are divided into several categories organized by color, with the appearance of their borders sometimes providing additional information. 81 of the 256 Achievements have hidden descriptions that are only revealed after completing them.
+"Achievements","Other","[[Comment]]                       ---NOTE FOR EDITORS---
+Once Beta 16 releases, if you decide to update any of the Achievements pages, please consider whether it would be better to separate the new achievements from the old ones or not.
+I think that, ideally, whatever you choose to do, that decision should be applied to all Achievements pages, for the sake of consistency.[[/Comment]]
+
+There are currently 256 achievements in Cogmind, which can be viewed in-game through the Achievements records submenu. They are divided into several categories organized by color, with the appearance of their borders sometimes providing additional information. 81 of the 256 Achievements have hidden descriptions that are only revealed after completing them.
 
 Visually, Achievements are tile-based 5x5 squares. While an Achievement is locked, the inner 3x3 square is made out of question marks. Unlocking an Achievement changes the inner 3x3 square to visually represent the Achievement's requirements/results. The tiles on the border of the 5x5 square almost never change when the Achievement is unlocked. [[Comment]]Those achievements are ""Stardust"" and ""Planet Killer"". this is because Wins Achievements' inner art isn't a square but more of a cog, so some of the outer border tiles are part of said art, even if it's just a matching background. This dark green background is the same for all Wins Achievements, except those two. The locked versions, however, still have that dark green background.[[/Comment]]
 
@@ -1313,12 +1317,14 @@ There are 3 exits on this map but only 2 kinds of exits:
 "Cetus Guard","Bot","","","","","","","",""
 "Chain Missile Launcher","Part","","","","","","","",""
 "Chainsword","Part","","","","","","","",""
-"Challenges Achievements","Other","Challenges [[Achievements]] are earned by completing certain challenging feats, demonstrating the player's large experience with the game. Only some of them are likely to be obtained naturally by players not actively trying to earn them. 2 of the 27 Challenges Achievements have hidden descriptions that are only revealed after completing them. The borders of Challenges Achievements tend to indicate their general difficulty as a Challenges Achievement[[Comment]]Rincewind being the biggest exception. Why is that one considered ""easy""? It's basically the most difficult one in here.[[/Comment]], with more ""intense"" borders meaning higher difficulty.
+"Challenges Achievements","Other","[[Comment]]                       ---NOTE FOR EDITORS---
+Once Beta 16 releases, if you decide to update any of the Achievements pages, please consider whether it would be better to separate the new achievements from the old ones or not.
+I think that, ideally, whatever you choose to do, that decision should be applied to all Achievements pages, for the sake of consistency.[[/Comment]]
+
+Challenges [[Achievements]] are earned by completing certain challenging feats, demonstrating the player's large experience with the game. Only some of them are likely to be obtained naturally by players not actively trying to earn them. 2 of the 27 Challenges Achievements have hidden descriptions that are only revealed after completing them. The borders of Challenges Achievements tend to indicate their general difficulty as a Challenges Achievement[[Comment]]Rincewind being the biggest exception. Why is that one considered ""easy""? It's basically the most difficult one in here.[[/Comment]], with more ""intense"" borders meaning higher difficulty.
 
 [[Comment]]This warning is supposed to be there for all articles about achievement types, including those that do not have any Redacted-level spoilers.[[/Comment]]
 (The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least ""Spoilers"", and may be set to ""Redacted"" for achievements where that would be relevant. Remember to change your spoilers settings to ""None"" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
-
-Warning: The writer of this article has not yet earned the ""Full Golem"" Achievement, and as such its description in this page is a (likely accurate) guess instead of being the official description.
 
 [[Comment]]Important note : A lot of Challenges Achievements' descriptions mention by name some spoiler-tier stuff, such as the Cetus Guards or Transdimensional Reconstructors.
 Normally, these names would be contained within a Link tag.
@@ -1363,8 +1369,11 @@ Fearless: Enter a [[Garrison]] with below 10% core integrity and survive it.
 |Rambo: Earn 10,000 bonus points for high alert combat kills.
 |Most Wanted: Trigger [[High Security|high security]] 4 times.
 |404: Destroy 4 Network Hubs and escape to the next floor.
-|Full Golem: [[Spoiler]]Fully integrate all possible parts from a [[GOLEM Unit]].[[/Spoiler]][[Comment]]TODO: This is the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning at the top of the page.[[/Comment]]
+|Full Golem: [[Spoiler]]Become a complete Golem.[[/Spoiler]][[Comment]]TODO: This is the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning at the top of the page.[[/Comment]]
 |Traitor: Personally kill Warlord in his base and escape. Must initiate hostilities before incursion begins.[[/List]]
+
+
+This article was last edited during Beta 15.
 
 ","","","","","","",""
 "Chronowheel","Part","The effect of the Chronowheel allows Cogmind to rewind time as a one time save/load effect. Attaching saves, and after 30 turns (if not destroyed/removed) the load will occur.
@@ -2700,7 +2709,11 @@ Power/Stability
 "Enhanced Programmer","Bot","","","","","","","",""
 "Enhanced Q-Series","Bot","","","","","","","",""
 "Enhanced Sentry","Bot","","","","","","","",""
-"Events Achievements","Other","Events [[Achievements]] are earned by witnessing or triggering certain events. Most of them will simply eventually be obtained by players as they explore and understand more of the game world and its depths. 40 of the 41 Events Achievements have hidden descriptions that are only revealed after completing them. The borders of Events Achievement have 0-2 squares in their corners, with more squares usually meaning a more important event.
+"Events Achievements","Other","[[Comment]]                       ---NOTE FOR EDITORS---
+Once Beta 16 releases, if you decide to update any of the Achievements pages, please consider whether it would be better to separate the new achievements from the old ones or not.
+I think that, ideally, whatever you choose to do, that decision should be applied to all Achievements pages, for the sake of consistency.[[/Comment]]
+
+Events [[Achievements]] are earned by witnessing or triggering certain events. Most of them will simply eventually be obtained by players as they explore and understand more of the game world and its depths. 40 of the 41 Events Achievements have hidden descriptions that are only revealed after completing them. The borders of Events Achievement have 0-2 squares in their corners, with more squares usually meaning a more important event.
 
 [[Comment]]This warning is supposed to be there for all articles about achievement types, regardless of whether there are any Redacted-level spoilers, because saying there are no Redacted-level spoilers is itself a spoiler.[[/Comment]]
 (The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least ""Spoilers"", and may be set to ""Redacted"" for achievements where that would be relevant. Remember to change your spoilers settings to ""None"" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
@@ -2756,7 +2769,10 @@ Power/Stability
 |Sorry Old Pal: [[Redacted]]Enable Zhirov to destroy MAIN.C.[[/Redacted]]
 |Behind The Curtain: [[Redacted]]Find The Architect.[[/Redacted]]
 |The Bigger They Are: [[Redacted]]Destroy The Architect.[[/Redacted]]
-[[/List]]","","","","","","",""
+[[/List]]
+
+
+This article was last edited during Beta 15.","","","","","","",""
 "Example","Other","[[Materials#Lore]]
 This is a test of wiki content.
 Content separated by a newline is split into multiple paragraphs.
@@ -5704,7 +5720,11 @@ M-13 Machinist: 800|
 M-28 Smith: 1400|
 M-36 Artificer: 2600
 [[/List]]","","M-13 Machinist,M-28 Smith,M-36 Artificer","","","","",""
-"Mechanics Achievements","Other","Mechanics [[Achievements]] are earned by interacting with and/or using many of the mechanics of the game. They are largely used as a way to teach players about some of said mechanics. Most of them will be simply eventually be obtained by players as they make mistakes and/or learn new mechanics. 15 of the 72 Mechanics Achievements have hidden descriptions that are only revealed after completing them. The borders of Mechanics Achievement indicate their difficulty compared to other achievements of the same sub-type, with more ""intense"" borders meaning higher difficulty.
+"Mechanics Achievements","Other","[[Comment]]                       ---NOTE FOR EDITORS---
+Once Beta 16 releases, if you decide to update any of the Achievements pages, please consider whether it would be better to separate the new achievements from the old ones or not.
+I think that, ideally, whatever you choose to do, that decision should be applied to all Achievements pages, for the sake of consistency.[[/Comment]]
+
+Mechanics [[Achievements]] are earned by interacting with and/or using many of the mechanics of the game. They are largely used as a way to teach players about some of said mechanics. Most of them will be simply eventually be obtained by players as they make mistakes and/or learn new mechanics. 15 of the 72 Mechanics Achievements have hidden descriptions that are only revealed after completing them. The borders of Mechanics Achievement indicate their difficulty compared to other achievements of the same sub-type, with more ""intense"" borders meaning higher difficulty.
 
 [[Comment]]This warning is supposed to be there for all articles about achievement types, including those that do not have any Redacted-level spoilers.[[/Comment]]
 (The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least ""Spoilers"", and may be set to ""Redacted"" for achievements where that would be relevant. Remember to change your spoilers settings to ""None"" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
@@ -5837,7 +5857,10 @@ No Signal: Block an [[Alarm Trap]] transmission.
 Can't Catch Me: Reach a speed of FASTx3, or 4 spaces per turn.
 |Cya!: Fly over a row of 3 robots.
 |The More The Merrier: Have 5 allies.
-[[/List]]","","","","","","",""
+[[/List]]
+
+
+This article was last edited during Beta 15.","","","","","","",""
 "Med. Armor Plating","Part","","","","","","","",""
 "Med. Armored Exoskeleton","Part","","","","","","","",""
 "Med. Battery","Part","","","","","","","",""
@@ -6429,7 +6452,11 @@ Programmers are not initially very threatening bots. They deal small amounts of 
 [[Heading]][[Squad|Squads]][[/Heading]]
 Programmers may appear in the following squads:
 [[List]]Extermination Squad|[[Patrol Squad]]|[[Security Squad]] - [[Armory]], [[Testing]], and [[Quarantine]] only[[/List]]","","P-60 Hacker,P-70 Sage,P-80 Master,Combat Programmer,Protovariant P","","","","",""
-"Progress Achievements","Other","Progress [[Achievements]] are earned by accomplishing actions that demonstrate the player's progress and experience with the game. Most of them will simply eventually be obtained by players as they explore the game world and get better at surviving and exploring it. 2 of the 33 Progress Achievements have hidden descriptions that are only revealed after completing them. The borders of Progress Achievement indicate their difficulty compared to other achievements of the same sub-type, with more ""intense"" borders meaning higher difficulty.
+"Progress Achievements","Other","[[Comment]]                       ---NOTE FOR EDITORS---
+Once Beta 16 releases, if you decide to update any of the Achievements pages, please consider whether it would be better to separate the new achievements from the old ones or not.
+I think that, ideally, whatever you choose to do, that decision should be applied to all Achievements pages, for the sake of consistency.[[/Comment]]
+
+Progress [[Achievements]] are earned by accomplishing actions that demonstrate the player's progress and experience with the game. Most of them will simply eventually be obtained by players as they explore the game world and get better at surviving and exploring it. 2 of the 33 Progress Achievements have hidden descriptions that are only revealed after completing them. The borders of Progress Achievement indicate their difficulty compared to other achievements of the same sub-type, with more ""intense"" borders meaning higher difficulty.
 
 [[Comment]]This warning is supposed to be there for all articles about achievement types[[/Comment]]
 (The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least ""Spoilers"", and may be set to ""Redacted"" for achievements where that would be relevant. Remember to change your spoilers settings to ""None"" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
@@ -6443,16 +6470,7 @@ Strategy : You'll get this one eventually. The relevant scoresheet statistic is 
 [[/List]]
 
 [[Heading]]Earning points[[/Heading]]
-Earning points is done in a variety of ways, including :
-[[List]]Ascending through each floor (500 points for every evolution threshold crossed)|
-Visiting regions (200 per map entered)|
-Destroying robots (5 points per robot destroyed)|
-Destroying stuff in general (depends on the value of what was destroyed)|
-Obtaining [[Prototype Part]] IDs (20 points per unique Prototype Part ID, including any that might have been forgotten due to reasons like component data loss)|
-[[Spoiler]]Attaching alien technology (200 points per unique alien part attached)[[/Spoiler]]|
-Bonus points, which are earned through a large variety of reasons, including some like meeting important characters, aligning with certain factions, and more. There is also one source of negative bonus points, ""Friendly Fire"", which is earned by damaging/destroying friendly robots and is dependent on the value of those robots.[[/List]]
-
-The relevant scoresheet statistic is ""TOTAL SCORE"". These Achievements are awarded at the end of a run that meets their criteria.
+The relevant scoresheet statistic is ""TOTAL SCORE"". See the [[Score]] page for the different ways to gain points. These Achievements are awarded at the end of a run that meets their criteria.
 
 [[List]]
 5k Club: Earn 5,000 points.
@@ -6505,7 +6523,7 @@ Just Browsing: Reach 25% gallery collection.
 Made in Tau Ceti IV: Enter [[Factory]].
 |Dangerous Findings: Enter [[Research]].
 |Denied?: Enter [[Access]].
-|\\\\IAMDERELICT: [[Spoiler]]Enter [[Recycling]] via [[Storage]].[[/Spoiler]]
+|\\IAMDERELICT: [[Spoiler]]Enter [[Recycling]] via [[Storage]].[[/Spoiler]]
 |I'm Back, Baby!: Exit [[Caves|Proximity Caves]].
 |Tourist: Visit 3 branch areas.
 |Adventurer: Visit 2 special cave areas.
@@ -6531,7 +6549,10 @@ Requires 128 Achievements.
 |Superachiever: Earn 75% of achievements.
 Requires 192 Achievements.
 |Perfect Achiever: Earn all other achievements.
-Requires all other 255 Achievements.[[/List]]","","","","","","",""
+Requires all other 255 Achievements.[[/List]]
+
+
+This article was last edited during Beta 15.","","","","","","",""
 "Propulsion","Part Supergroup","Propulsion units allow robots to move and carry mass.
 
 Five types of propulsion exist: [[Flight Units]], [[Hover Units]], [[Legs]], [[Treads]], and [[Wheels]]. Flight and hover units are collectively known as fast propulsion, or ""fastprop""; legs, treads, and wheels are considered slow propulsion, or ""slowprop."" In addition, unlike other bots, [[Cogmind]] has a built-in core propulsion system used when no other propulsion is active.
@@ -9312,7 +9333,11 @@ Flight can occasionally make use of these to dig into areas locked by blast door
 [[Heading]][[Terminal|Terminals]][[/Heading]]","","","","","","",""
 "Striker","Bot","","","","","","","",""
 "Structural Scanner","Part","","","","","","","",""
-"Style Achievements","Other","Style [[Achievements]] are earned by reaching high statistics in some categories which usually require using an associated playstyle, or by using some rare items and/or their mechanics. Most of them will be simply eventually be obtained by players as they become familiar with the more common mechanics of the game and figure out playstyles that utilizes them or discover some of the less common mechanics of the game. 12 of the 46 Style Achievements have hidden descriptions that are only revealed after completing them. The borders of Style Achievement indicate their difficulty compared to other achievements with similar[[Comment]]TODO: Figure out a way to say ""Achievements with almost exactly the same requirements, with the only difference being that one achievement requires doing thing A while the more difficult achievement requires doing thing A+B."", but use fewer words to say this.[[/Comment]] requirements, with more ""intense"" borders meaning higher difficulty.
+"Style Achievements","Other","[[Comment]]                       ---NOTE FOR EDITORS---
+Once Beta 16 releases, if you decide to update any of the Achievements pages, please consider whether it would be better to separate the new achievements from the old ones or not.
+I think that, ideally, whatever you choose to do, that decision should be applied to all Achievements pages, for the sake of consistency.[[/Comment]]
+
+Style [[Achievements]] are earned by reaching high statistics in some categories which usually require using an associated playstyle, or by using some rare items and/or their mechanics. Most of them will be simply eventually be obtained by players as they become familiar with the more common mechanics of the game and figure out playstyles that utilizes them or discover some of the less common mechanics of the game. 12 of the 46 Style Achievements have hidden descriptions that are only revealed after completing them. The borders of Style Achievement indicate their difficulty compared to other achievements with similar[[Comment]]TODO: Figure out a way to say ""Achievements with almost exactly the same requirements, with the only difference being that one achievement requires doing thing A while the more difficult achievement requires doing thing A+B."", but use fewer words to say this.[[/Comment]] requirements, with more ""intense"" borders meaning higher difficulty.
 
 [[Comment]]This warning is supposed to be there for all articles about achievement types[[/Comment]]
 (The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least ""Spoilers"", and may be set to ""Redacted"" for achievements where that would be relevant. Remember to change your spoilers settings to ""None"" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
@@ -9398,8 +9423,10 @@ Packrat: [[Spoiler]]Carry 30 items in inventory.[[/Spoiler]]
 |More Power To You: [[Spoiler]]Reach 75 energy generation.[[/Spoiler]]
 |Minesweeper: Extract 30 [[Traps|traps]].
 |Superinsulated: Become immune to electromagnetic damage.
+[[/List]]
 
-[[/List]]","","","","","","",""
+
+This article was last edited during Beta 15.","","","","","","",""
 "Sub. Beam Cannon","Part","","","","","","","",""
 "Sub. Laser","Part","","","","","","","",""
 "Sub. Machine Gun","Part","","","","","","","",""
@@ -10542,13 +10569,17 @@ Propulsion/Heat|
 Propulsion/Support|
 Propulsion/Penalty
 [[/PartGroupTable]]","","","Wheels","","","",""
-"Wins Achievements","Other","Wins [[Achievements]] are earned by winning the game under certain conditions. 10 of the 37 Wins Achievements have hidden descriptions that are only revealed after completing them. The borders of Wins Achievements indicate whether they are earned by winning with a specific ending, winning under certain conditions, or winning while a challenge mode is active. The borders of Achievements for winning under certain conditions also indicate their difficulty compared to other achievements with similar requirements, with more ""intense"" borders meaning higher difficulty.
+"Wins Achievements","Other","[[Comment]]                       ---NOTE FOR EDITORS---
+Once Beta 16 releases, if you decide to update any of the Achievements pages, please consider whether it would be better to separate the new achievements from the old ones or not.
+I think that, ideally, whatever you choose to do, that decision should be applied to all Achievements pages, for the sake of consistency.
+
+In addition, consider whether to make a section dedicated to the Challenge Modes achievements that Beta 16 will remove/adapt.[[/Comment]]
+
+Wins [[Achievements]] are earned by winning the game under certain conditions. 10 of the 37 Wins Achievements have hidden descriptions that are only revealed after completing them. The borders of Wins Achievements indicate whether they are earned by winning with a specific ending, winning under certain conditions, or winning while a challenge mode is active. The borders of Achievements for winning under certain conditions also indicate their difficulty compared to other achievements with similar requirements, with more ""intense"" borders meaning higher difficulty.
 
 
 [[Comment]]This warning is supposed to be there for all articles about achievement types, including those that do not have any Redacted-level spoilers.[[/Comment]]
 (The visibility for the explanations, strategies and descriptions of hidden achievements is set to at least ""Spoilers"", and may be set to ""Redacted"" for achievements where that would be relevant. Remember to change your spoilers settings to ""None"" if you do not wish to see the explanations, strategies and descriptions of hidden achievements you have not yet obtained!)
-
-Warning: The writer of this article has not yet earned the ""Stardust"", ""Winner's Signature"", ""Data Run"" or ""By A Hair"" Achievements, and as such their descriptions in this page is a (probably accurate) guess instead of being the official description.
 
 [[Heading]]Endings[[/Heading]]
 These Achievements are earned by winning the game with a specific ending. Currently, only 7 of the 9 endings have Achievements tied to them. Each ending is mutually exclusive with all other endings, meaning only one of these achievements can be obtained per run.
@@ -10572,21 +10603,14 @@ Normally, these names would be contained within a Link tag.
 However, because those Achievements' descriptions are not hidden by the game (the descriptions themselves aren't spoiler-tier), these names should not be contained within a Link tag, because that would cause them to appear spoilered to anyone with a spoiler setting of ""None"".[[/Comment]]
 
 [[List]]Derelict Escape: Win while imprinted.
-
 |Winner's Signature: [[Redacted]]Win after getting scanned by a [[Researcher]] in [[Section 7]].[[/Redacted]]
-[[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
-
 |Data Run: [[Spoiler]]Win after interfacing with the [[Data Conduit]].[[/Spoiler]] 
-[[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
-
 |Inspector Gadget: Win while only evolving utility slots. Gaining non-utility slots through other means also disqualifies.
 |Straight Shot: Win without visiting any [[Branch|branches]] ([[Garrison|Garrisons]]/[[Wastes|Waste]]/[[DSF]] okay).
 |Pacifist: Win without destroying a single robot.
 |Speedrunner: Win in less than 2,000 turns.
 |Expert Speedrunner: Win in less than 1,000 turns.
-
-|By A Hair: [[Spoiler]]Win after being reduced to less than 5% of core integrity.[[/Spoiler]] [[Comment]]TODO: This is one of the achievement with a description that i just guessed. I know it to be technically accurate, but it isn't the same as the actual achievement's description. Once the description is corrected, please remember to delete the warning for it at the top of the page.[[/Comment]]
-
+|By A Hair: [[Spoiler]]Win with less than 5% of core integrity.[[/Spoiler]]
 |True Flier: Win without attaching any propulsion except [[Flight Units|flight]].
 |Mad Max: Win with 200 hostiles destroyed and without attaching any propulsion except [[Wheels|wheels]].
 |Victory By Combat: Win with 400 hostiles destroyed.
@@ -10615,7 +10639,10 @@ Grand Amoeba: Win the Devolution challenge mode.
 |Attach With Care: Win the Sticky Parts challenge mode.
 |Best of the Best: Win the Super Gauntlet challenge mode.
 |Master Trapper: Win the Trapped challenge mode.
-|Super Mutant: Win the Unstable Evolution challenge mode.[[/List]]","","","","","","",""
+|Super Mutant: Win the Unstable Evolution challenge mode.[[/List]]
+
+
+This article was last edited during Beta 15.","","","","","","",""
 "Wintypes","Other","W0 ""Escaped"": Take a [[Surface]] exit on -1.
 W1 [[Redacted]]""Establishing 0b11"": Take a Surface exit on -1 after destroying both phases of [[MAIN.C]] in [[Command]].[[/Redacted]]
 W2 [[Spoiler]]""Heading to fleet"": Take a surface exit on -1 after using a [[Core Reset Matrix]].[[/Spoiler]]
