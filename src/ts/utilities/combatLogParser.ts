@@ -1,3 +1,4 @@
+import { JsonBot } from "../types/botTypes";
 import { CombatLogDamageEntry, CombatLogEntry } from "../types/combatLogTypes";
 import { getBotByAllyName, getBotByName, getBotByShortName } from "./botUtilities";
 import { parseIntOrDefault } from "./common";
@@ -70,6 +71,9 @@ const machineExplosionRegex = /^(.*) explodes$/;
 // Non-match 1: Non-Cogmind bot being penetrated by projectile
 // Non-match 2: Cogmind being penetrated by projectile
 const penetrationRegex = /^(?:.* penetrates .*)|(?:Penetrated by .*)$/;
+
+// Non-match 1: Bot and shielding part preventing disruption
+const preventedDisruptionRegex = /^(?:.*) prevented disruption$/;
 
 // Non-match 1: Bot and shielding part preventing critical
 const shieldingPreventedCritRegex = /^(?:.*) prevented critical effect$/;
@@ -233,6 +237,11 @@ class ParserState {
             // If we're a known part then it means Cogmind was hit
             damageEntry.damagedEntity = "Cogmind";
             damageEntry.damagedPart = damagedTarget.toLowerCase() === "core" ? "Core" : damagedTarget;
+        } else if (damagedTarget.endsWith("+") && isKnownItem(damagedTarget.slice(0, damagedTarget.length - 1))) {
+            // Known studied part and Cogmind was hit
+            // Remove the + from the part name
+            damageEntry.damagedEntity = "Cogmind";
+            damageEntry.damagedPart = damagedTarget.slice(0, damagedTarget.length - 1);
         } else {
             // Non-Cogmind bot was hit, split name/weapon out
             const { botName, partName } = splitBotAndPart(damagedTarget);
@@ -350,6 +359,7 @@ class ParserState {
         interceptedRegex,
         machineDisabledRegex,
         penetrationRegex,
+        preventedDisruptionRegex,
         shieldingPreventedCritRegex,
         trapShortCircuited,
         trapTriggeredRegex,
@@ -619,6 +629,11 @@ function splitBotAndPart(line: string): { botName: string; partName: string } {
                 partName = "Core";
             }
 
+            // Strip + from
+            if (partName.endsWith("+")) {
+                partName = partName.slice(0, partName.length - 1);
+            }
+
             return { botName: bot.Name, partName: partName };
         }
     }
@@ -627,6 +642,10 @@ function splitBotAndPart(line: string): { botName: string; partName: string } {
     // known existing part instead
     for (let i = 1; i < split.length; i++) {
         let partName = split.slice(i).join(" ");
+        if (partName.endsWith("+")) {
+            partName = partName.slice(0, partName.length - 1);
+        }
+
         const part = getItemByName(partName);
         if (part !== undefined || partName === "core" || partName === "Core") {
             const botName = split.slice(0, i).join(" ");
