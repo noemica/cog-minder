@@ -8833,6 +8833,7 @@ See [[Strategy/aoemica's Flight Guide/Good Power|Power]], [[Strategy/aoemica's F
 "Strategy/aoemica's Flight Guide/Alignments","Other","Flight playstyles are quite flexible and can work with any [[Alignment]] in the game, although some are more natural pairs than others. Throughout the entirety of the run, including extended endgame [[Wintypes]], flight builds appreciate using allies as both damage and distractions. Lots of unique alignment-specific rewards are fantastic boons for flight builds, from unique parts, to special map events, to gameplay-altering mechanics.
 
 [[Heading]][[FarCom]][[/Heading]]
+[[Image]]FarCom Sensors.png|FarCom sensors revealing nearby hostiles[[/Image]]
 FarCom is undeniably the best alignment for a basic wintype and reaching the [[Surface]]. 0 slot, 18 range unjammable sensors that detect all hostiles is a fantastic benefit. Some of the [[Exiles Vault Prototypes]] are a little more hit or miss for flight. However, nearly all seeds have items that is worth taking. The punishment in [[Research]] [[Branch|Branches]] is quite sizeable, however, since those maps are the locations of some of the best parts in the game.
 
 [[Heading:2]]Good Vault Prototypes[[/Heading]]
@@ -8849,7 +8850,7 @@ The following is my personal tier list of vault prototypes for flight builds:
 [[List]]
 [[Modified TNC]] - Flight can take full advantage of this by hunting [[Hauler|Haulers]] across the whole map|
 [[Lightpack 2.0]] - Capable of storing incredible amounts of parts at a low mass cost, albeit unreliably|
-[[XL Autogun Array]] - Great high damage gun that isn't restrictively heavy for flight, make sure to wear [[Weapon Shieldings]]
+[[XL Autogun Array]] - Great high damage gun that isn't restrictively heavy for flight, make sure to wear [[Weapon Shieldings]] to keep it from falling apart
 [[/List]]
 
 [[Heading:3]]B Rank[[/Heading]]
@@ -8869,11 +8870,39 @@ Stealing from the Exiles in the case of multiple good vault items can be a worth
 All following factions contain mid to lategame spoilers.
 
 [[Spoiler]]
-[[Heading]][[Imprint]][[/Heading]]
+[[Heading]][[Data Conduit]][[/Heading]]
 
-[[Heading]][[Revision 17]][[/Heading]]
+[[Heading]][[Imprint]][[/Heading]]
+Imprint's ally-summoning and intel-granting capabilities work great when your build is fast enough to visit all the [[Terminal|Terminals]] on the map before the Terminal lockdown. [[Zionite (Group)|Zionite-aligned]] allies are very great disposable distractions with high firepower. Although recall hacks are not possible once imprinted, summoning a squad of bots like [[Z-Light|Z-Lights]] into an [[Extermination Squad]] is just about the next best thing. Z-Lights in particular drop some good loot in the form of [[Zio. Light DM Reactor|Zio. Light DM Reactors]], which is a great flight engine. Later, [[Z-Experimental|Z-Experimentals]] can drop the [[Zio. Shade Armor]], which is one of the best pieces of armor in the game. Imprint typically suffers from high [[Alert]] by summoning allies and losing the ability to pull off [[GameText]]Alert(Purge)[[/GameText]] hacks. However, flight can easily avoid [[Assault Squad|Assaults]], which is the biggest downside of alert.
+[[Heading:2]]Extended Endgame Potential|Extended Endgame Potential Imprint[[/Heading]]
+[[Redacted]]
+[[Image]]Command Doom Corridor Lure Setup.png|Imprint seals set up to take out the Doom Corridor[[/Image]]
+Imprint is a great faction with lots of endgame potential in [[Command]], primarily thanks to the [[Command#imprint_seal|Imprint seal contents]]. Hacking open one of the Command cave seals unleashes a large number of Zionites, potentially including multiple Experimentals. Typically, they are purple uncontrollable allies that will wander across the map, kill everything they see, and rack up a ton of alert. However, using a [[Core Reset Matrix]] will turn the Z-Lights, [[Z-Heavy|Z-Heavies]], and Z-Experimentals all blue controllable allies.
+Avoiding [[High Security]] after summoning a seal is essential. These seals are incredibly powerful, easily capable of smashing through dozens of standard patrols. However, doing so will surely result in a catastrophic high security trigger. While the Imprint army is strong, they do not last long under the unrelenting waves of assaults. Try to avoid generating alert whenever possible in the last few maps of the game to allow the most leeway when summoning seals. Don't fight when not absolutely necessary, use [[ECM Suites]] to avoid bot forget alert, and avoid summoning combat allies.
+With a CRM and good positioning, an Imprint seal is easily capable of taking out the [[Command#Doom Corridor|Doom Corridor]] (see image). After that, take the army through to [[MAIN.C]] and take him out. Sometimes, Cogmind doesn't need to do a single point of damage in order to win. The Experimentals are by far the strongest and most important part of the Imprint seals, so do everything you can to keep them safe.
+After defeating MAIN.C, the remnants of the Imprint army can be looted and used to construct a build for [[Access_0]]. Most of the Imprint bot parts are better for builds with higher support. However, some standout parts include Zio. Shade Armor, the [[Zio. Biocell]] and [[Zio. Biocell Array|Biocell Array]], the [[Zio. Weapon Casing]], and the [[Exp. Weapon Cycler]].
+[[/Redacted]]
+
+[[Heading]][[Revision 17 (Alignment)]][[/Heading]]
+Aligning with [[Revision 17]] is relatively minor compared to other alignment options. There is only an effect on a single map in the game. However, The -3 [[Research]] invasion makes the map nearly free to explore, with [[Revision 17++]] and his [[Revision|Revisions]] clearing out most squads on the map. [[Terminal|Terminals]] get locked down after a few hundred turns, but that is still plenty of time to explore the map before then.
+After the lockdown begins, [[Executioner|Executioners]] and [[Striker|Strikers]] are dispatched in squads to take down the Revisions. Use your Revision allies to take relatively free loot from the [[Prototype Robot|Prototype Robots]], including things like [[Exp. Core Analyzer|Exp. Core Analyzers]] and [[Exp. Optical Array|Exp. OpticalArrays]] from Executioners and [[Exp. Reaction Control System|Exp. Reaction Control Systems]], [[Impulse Thruster Array|Impulse Thruster Arrays]], and [[Plasma Lance|Plasma Lances]] from Strikers.
 
 [[Heading]][[Relay Interface Framework]][[/Heading]]
+RIF is an alignment that tricky to use on flight to say the least, since it is the antithesis of how most flight builds play. Rather than running from hostiles, RIF flight dives into [[Garrison|Garrisons]] filled with hostiles, either fighting through [[Garrison|Garrisons]] themselves or using [[Relay Couplers]] to hack [[0b10]] bots for their own purposes. Lots of combat is required in order to get more than the basic single RIF install. Garrisons are very hostile to flight with forced combat encounters, few to no escape routes, and [[Stasis Trap|Stasis Traps]] galore, so forewarned.
+I am not personally very experienced with Flight RIF, so I don't have too many specific points to bring up. However, here are a few generally helpful RIF strategies:
+
+[[Heading:2]]Fabricate Allies[[/Heading]]
+Use [[Fabricator|Fabricators]] to bring your own allies into Garrisons. [[Programmer|Programmers]] are one of the best offensive choices thanks to their hacking capabilities, corruption purging, and EM damage capable of quickly demolishing enemy hostiles. [[Hunter|Hunters]] and [[Sentry|Sentries]] also make good choices thanks to their durability. For defensive bots, [[Mechanic|Mechanics]], [[Operator|Operators]], [[Hauler|Haulers]], and [[Protector|Protectors]] are all helpful. Of particular note for flight is the Operators' ability to instantly spot traps on the ground, helping to avoid inconvenient [[Stasis Trap|Stasis Traps]].
+
+[[Heading:2]]Assimilate Allies[[/Heading]]
+Rather than deal with investigations and finding Fabricators, use Relay Couplers to steal bots that you meet instead. Flight is the best propulsion for army massing thanks to its high maneuverability. Place allies out of the way in rooms until you need them, or lure hostiles into your army to turn the numbers in your favor. Full assimilation is an expensive 13 charges, so there is a practical limit to the amount of assimilation you can do per floor. This limit is quite high, even outside of Garrisons, since each [[Garrison Access]] usually contains 3 or 4 coupler and can have even more with a [[GameText]]Trojan(Restock)[[/GameText]].
+
+[[Heading:2]]Use ""Florventory""[[/Heading]]
+Though your inventory slots may be limited, the floor is wide open. Inside Garrisons, there are no [[Recycler|Recyclers]] to steal your loot so you can drop parts on the floor for safekeeping. Use this technique to bring the maximum number of Relay Couplers to hack any bot you see inside the Garrison. Just remember to come back and pick up your parts before you leave the map.
+
+[[Heading:2]]Learn All RIF Hacks[[/Heading]]
+While assimilating or overwriting bots is always tempting, RIF can do much more than this alone. Consider other offensive or utility-focused options, such as engine explosion hacks like [[GameText]]overload_power[[/GameText]] or [[GameText]]amplify_resonance[[/GameText]], disruption hacks like [[GameText]]scatter_targeting[[/GameText]], [[GameText]]focus_fire[[/GameText]], or [[GameText]]disrupt_area[[/GameText]], and intel hacks like [[GameText]]show_paths[[/GameText]] and [[GameText]]find_garrison[[/GameText]].
+Non-combat bots have their own extensive range of special hacks as well. A few shout outs are [[GameText]]map_walls[[/GameText]] on [[U-05 Engineer|Engineers]], [[GameText]]drop_inventory[[/GameText]], [[GameText]]recall_reinforcements[[/GameText]], and [[GameText]]locate_stockpiles[[/GameText]] on [[Hauler|Haulers]], [[GameText]]reprogram_traps/locate_traps[[/GameText]], [[GameText]]recall_investigation[[/GameText]], [[GameText]]purge_threat[[/GameText]] on [[Operator|Operators]], [[GameText]]deconstruct_machine[[/GameText]] and [[GameText]]hold_bot[[/GameText]] on [[K-01 Serf|Serfs]], [[GameText]]map_earth[[/GameText]] and [[GameText]]randomize_corridors[[/GameText]] on [[T-07 Excavator|Tunnelers]], all the hacks on [[Researcher|Researchers]] (seriously these hacks are all good), and [[GameText]]map_route[[/GameText]] from [[Watcher|Watchers]]. Check out the full list of hacks on the [[~/rif.html|RIF Page]]
 
 [[Heading]][[United Federation of Derelicts]][[/Heading]]
 
@@ -9166,7 +9195,7 @@ These shieldings are the most useful of the bunch. Flight has a tendency to load
 Boring, yet practical. Flight builds should typically wear at least one slot of armor, or at least have one in inventory to swap over some other fragile utility while being shot at. Light armors are preferred early on, particularly the [[Imp. Light Armor Plating]], but the extra coverage of a medium armor in a single slot is always appreciated if the mass support is available. Armor's overflow-absorption properties can be run-saving when running past a [[Heavy]], where otherwise a single unlucky hit can overflow and shred through multiple low integrity but essential parts.
 
 [[Heading]][[Stasis Canceller]][[/Heading]]
-The Stasis Canceller completely negates [[Stasis Trap|Stasis Traps]], one of the biggest pain points to flight builds. Getting stuck in one of these while being shot by a nearby patrol can easily ruin a build. Swapping a Canceller on is the easiest way to escape a bad situation like this. They are not worth actively keeping attached unless you know there is a Stasis Trap nearby. However, it may be worth keeping attached preemptively when running through a [[Garrison (Location)|Garrison]] as they are very likely to have Stasis Traps strewn throughout.
+The Stasis Canceller completely negates [[Stasis Trap|Stasis Traps]], one of the biggest pain points to flight builds. Getting stuck in one of these while being shot by a nearby patrol can easily ruin a build. Swapping a Canceller on is the easiest way to escape a bad situation like this. They are not worth actively keeping attached unless you know there is a Stasis Trap nearby. However, it may be worth keeping attached preemptively when running through a [[Garrison]] as they are very likely to have Stasis Traps strewn throughout.
 
 [[Heading]][[Storage Unit|Storage Units]][[/Heading]]
 Inventory is an essential part of any build, but it may be surprising to learn that flight doesn't need any dedicated storage units at all! A well-off flight build can avoid trouble and go without burning through backups. The builtin 5 storage is enough to carry a few essential backups and some utility swaps. Over the course of the run, upgrading to a reasonably sized storage unit becomes easier thanks to increasing flight unit support and number of total slots.
