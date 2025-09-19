@@ -326,7 +326,7 @@
             },
             {
                 "Name/Number": "Myomer Exoskeleton",
-                "Content": "A resilient full-body bipedal system that serves as both protection and propulsion. The active components are linked to every part of the robot to provide better balance and enable even faster running than the best of leg models. This prototype has only just entered the testing phase and has yet to be deployed.",
+                "Content": "A resilient full-body bipedal system that serves as both protection and propulsion. The active components are linked to every part of the robot to provide better balance and enable even faster running than the best of leg models without compromising on an impressive speed:mass ratio. This prototype has only just entered the testing phase and has yet to be deployed.",
                 "Spoiler": "Spoiler"
             },
             {
@@ -582,7 +582,7 @@
             },
             {
                 "Name/Number": "Matter Cannon",
-                "Content": "I haven't gotten around to building the cannon yet, but they said the idea is to have a cannon with 'ridiculously high matter cost' but a corresondingly ridiculous high damage, and the ability to slot in the best high-capacity matter pods they can find for more efficient transfer while firing."
+                "Content": "I haven't gotten around to building the cannon yet, but they said the idea is to have a cannon with 'ridiculously high matter cost' but a correspondingly ridiculous high damage, and the ability to slot in the best high-capacity matter pods they can find for more efficient transfer while firing."
             },
             {
                 "Name/Number": "Procsplitter",
@@ -1702,7 +1702,7 @@
             },
             {
                 "Name/Number": "Garrison Access Points",
-                "Content": "Garrisons have several links to each of the largest Complex 0b10 levels, and taking out these locations will delay programmer response times by an average 25% each. The least dangerous way to do so is by overriding the seal controls, which may either go unnoticed or be considered a legitimate defensive lockdown. A Force(Jam) hack will also work, but always results in both an investigation and overall higher state of alert. Physically disabling the access point is another option, usually via heavy thermal weaponry, though this approach clearly signals that powerful hostiles are in close proximity, warranting the dispatch of an assault squad."
+                "Content": "Garrisons have several links to each of the largest Complex 0b10 levels, and taking out these locations will delay programmer response times by an average 25% each. The least dangerous way to do so is by overriding the seal controls, which may either go unnoticed or be considered a legitimate defensive lockdown. A Force(Jam) hack will also work, but always results in both an investigation and overall higher state of alert. Physically disabling the access point is another option, usually via heavy thermal weaponry, though this approach clearly signals that powerful hostiles are in close proximity, warranting the dispatch of assault squads."
             },
             {
                 "Name/Number": "God Mode Selective A-EMP",
