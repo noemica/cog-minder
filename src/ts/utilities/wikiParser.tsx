@@ -1889,10 +1889,12 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["NonEmptyPages", processNonEmptyPagesTag],
     ["PartGroupTable", processPartGroupTableTag],
     ["Spoiler", processSpoilerTag],
+    ["SpoilerExpandable", processSpoilerExpandableTag],
     ["SpoilerHidden", processSpoilerHiddenTag],
     ["Sub", processSubTag],
     ["Sup", processSupTag],
     ["Redacted", processSpoilerTag],
+    ["RedactedExpandable", processSpoilerExpandableTag],
     ["RedactedHidden", processSpoilerHiddenTag],
     ["Table", processTableTag],
     ["TooltipText", processTooltipText],
@@ -2058,6 +2060,55 @@ function processSpoilerTag(state: ParserState, result: RegExpExecArray) {
         });
 
         startIndex += count;
+    }
+}
+
+// Process a SpoilerExpandable tag like [[SpoilerExpandable]]Expandable Text[[/SpoilerExpandable]]
+// Creates an expandable tag if the spoiler
+function processSpoilerExpandableTag(state: ParserState, result: RegExpExecArray) {
+    let redacted = result[1] === "RedactedExpandable" ? true : false;
+
+    // Find [[/Expandable]] closing tag first
+    const expandableResult = redacted
+        ? /\[\[\/RedactedExpandable\]\]/.exec(state.initialContent.substring(state.index))
+        : /\[\[\/SpoilerExpandable\]\]/.exec(state.initialContent.substring(state.index));
+
+    if (expandableResult === null) {
+        // If we can't find the end tag then just skip over the opening image tag
+        recordError(state, `Found expandable tag "${result[0]}" without close tag`);
+        state.index += result[0].length;
+        return;
+    }
+
+    // Parse the details text
+    const tempState = ParserState.Clone(state);
+    tempState.index = result.index + result[0].length;
+    tempState.inSpoiler = state.inSpoiler;
+    processSection(tempState, `/${result[1]}`);
+    state.index = tempState.index;
+
+    const details = outputGroupsToHtml(tempState.output, state.inSpoiler);
+
+    const spoiler: Spoiler = redacted ? "Redacted" : "Spoiler";
+    if (canShowSpoiler(spoiler, state.spoiler)) {
+        // If we can show the designated spoiler level, show the processed text as usual
+        state.output.push({
+            groupType: "Individual",
+            node: details,
+        });
+    } else {
+        // If we can't show the spoiler level, place it in an expandable details block
+        state.output.push({
+            groupType: "Individual",
+            node: (
+                <div className="wiki-expandable">
+                    <details>
+                        <summary>{`Reveal ${redacted ? "redacted spoiler" : "spoiler"} content`}</summary>
+                        <div>{details}</div>
+                    </details>
+                </div>
+            ),
+        });
     }
 }
 

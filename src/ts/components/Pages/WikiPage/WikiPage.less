@@ -592,6 +592,18 @@
         li {
             line-height: @wiki-table-of-contents-line-height;
         }
+
+        // There is no usual margin around p elements inside details
+        // Apply some margin to give a bit of space between the details section
+        > div > p:first-child {
+            margin-top: @paragraph-top-margin;
+        }
+
+        // There is already plenty of margin around the details element so
+        // we don't need the standard margin around the p
+        > div > p {
+            margin-bottom: 0;
+        }
     }
 }
 
