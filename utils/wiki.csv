@@ -376,7 +376,7 @@ Using a [[Spoiler]]Force(Override)[[/Spoiler]] hack on a Garrison Terminal|50||
 Using a [[Spoiler]]Force(Sabotage)[[/Spoiler]] hack on a Terminal and succeeding|100||
 [[Garrison]] interior compromised alert|100||
 Destroying a Garrison Machine|150||
-Getting spotted by a [[N-01 Spotter]]|150 Alert when entering next map, stacks up to 3 times||
+Getting spotted by a [[N-01 Spotter]]|150 Alert when entering next map, stacks up to 3 times per Spotter||
 Using a [[Spoiler]]Force(Jam)[[/Spoiler]] hack on a Garrison Machine|200||
 Entering Maximum Security|If influence < 1600, set immediately to 1600
 [[/Table]]
@@ -653,7 +653,7 @@ There are 3 types of exits in Armory:
 "Assault Drone","Bot","","","","","","","",""
 "Assault Drone Bay","Part","Deploys [[Assault Drone|Assault Drones]].","","","","","","",""
 "Assault Rifle","Part","","","","","","","",""
-"Assault Squad","Other","Assault squads are [[0b10]] aligned [[Squad|squads]] that are dispatched as a result of Cogmind having too high [[Alert]] on most 0b10-controlled maps. Assaults are sent to Cogmind's initially reported position but will roam around an expanding search area after that. They consist of a single [[C-30 ARC]] typically containing 5 bots inside. If Cogmind has 3 or more allies, up to 2 additional bots may be sent to escort the ARC as additional firepower. Assault squads can be both Enumerated and Recalled at [[Terminal|Terminals]].
+"Assault Squad","Other","Assault squads are [[0b10]] aligned [[Squad|squads]] that are most frequently dispatched as a result of Cogmind having too high [[Alert]] on most 0b10-controlled maps. Assaults are sent to Cogmind's initially reported position but will roam around an expanding search area after that. They consist of a single [[C-30 ARC]] typically containing 5 bots inside. If Cogmind has 3 or more allies, up to 2 additional bots may be sent to escort the ARC as additional firepower. Assault squads can be both Enumerated and Recalled at [[Terminal|Terminals]].
 An alert indicates whenever an Assault squad is dispatched. Additionally, the log will display a message like [[GameText]]ALERT: Significant disruption in zone 9B, assault force dispatched[[/GameText]]. If more than one ARC was sent, the message will instead indicate [[GameText]]multiple assault carriers dispatched[[/GameText]].
 
 [[Heading]]Lore[[/Heading]]
@@ -4542,8 +4542,8 @@ Security Level|Armor Value|Kinetic Damage|Thermal Damage|Electromagnetic Damage|
 [[/Table]]
 
 [[Heading]]Destruction/Sealing[[/Heading]]
-When a Garrison is either sealed or destroyed, it adds an additional 75 turns per average dispatch check to the [[Extermination Squad]] dispatch timer. For example, rather than a chance for Extermination to occur every 250 turns, it will occur every 325 turns instead when the first Garrison is destroyed/sealed. This effect is cumulative for multiple Garrisons.
-When a Garrison is destroyed by any means while active, there will be an alert [[GameText]]ALERT: Garrison Access compromised, dispatching assault squad.[[/GameText]] and an [[Assault Squad]] will be dispatched to the Garrison's location. Cogmind's [[Alert]] will be increased by 150 when this happens. If the Garrison has already been sealed, neither of these effects occur. Additionally, there is a chance that installed Relay Couplers may be ejected onto the ground when a Garrison is destroyed. This chance is separate per coupler.
+When a Garrison is either sealed or destroyed, it adds an additional 75 turns per average dispatch check to the [[Extermination Squad]] dispatch timer. For example, rather than an Extermination being set 250 turns after Cogmind is on the map, that squad will be sent on turn 325 turns instead after the first Garrison is destroyed/sealed. This effect is cumulative for multiple Garrisons.
+When a Garrison is destroyed by any means while active, there will be an alert [[GameText]]ALERT: Garrison Access compromised, dispatching multiple assault carriers.[[/GameText]] and two [[Assault Squad|Assault Squads]] will be dispatched to the Garrison's location. Cogmind's [[Alert]] will be increased by 150 when this happens. If the Garrison has already been sealed, neither of these effects occur. Additionally, there is a chance that installed Relay Couplers may be ejected onto the ground when a Garrison is destroyed. This chance is separate per coupler.
 
 [[Heading]]Hacks[[/Heading]]
 [[Hacks]]Garrison[[/Hacks]]
@@ -5096,7 +5096,7 @@ Heavy Resupply|4|[[Armor]], [[Hcp. Storage Unit|Hcp.]] and [[Huge Storage Unit|H
 Hover Resupply|8|[[Hover Units]]||
 Infowar Resupply|4|infowar Utilities including [[0b10 Decoder Chips]], [[Cloaking Devices]], [[ECM Suites]], [[Machine Analyzer]], [[Seismic Detector]], [[Sensor Arrays]], [[Signal Interpreters]], [[Terrain Scanners]], [[Terrain Scan Processors]], [[Transmission Jammers]], [[Trap Scanners]], [[Triangulator]], and [[Visual Processing Units]]||
 Kinetic Resupply|8|[[Ballistic Cannons]], [[Ballistic Guns]], and offensive Utilities including [[Matter Filters]] and [[Recoil Stabilizers]]||
-Melee Resupply|4|[[Impact Weapons|Impact]], [[Piercing Weapons|Piercing]], and [[Slashing Weapons|Slashing]] weapons, including unique Derelict weapons like [[Particle Cleaver|Particle Cleavers]] and [[CR-A16's Behemoth Slayer]], as well as offensive Utilities including [[Actuators]], [[Actuator Arrays]], [[Melee Analysis Suites]], and [[Force Boosters]]||
+Melee Resupply|4|[[Impact Weapons|Impact]], [[Piercing Weapons|Piercing]], and [[Slashing Weapons|Slashing]] weapons, as well as offensive Utilities including [[Actuators]], [[Actuator Arrays]], [[Melee Analysis Suites]], and [[Force Boosters]]||
 Offense Resupply|4|Offensive utilities including [[Armor Integrity Analyzers]], [[Core Analyzers]], [[Launcher Guidance Computers]], [[Kinecellerators]], [[Launcher Loader]], [[Melee Analysis Suites]], [[Particle Chargers]], [[Tactical Coordination Suite]], [[Target Analyzers]], [[Ranged Targeting Utilities]], [[Weapon Cyclers]], and [[Weapon Mount]]||
 Resource Resupply|12|Storage or resource-related Utilities, including [[Energy Wells]], [[Field Recycling Units]], [[Matter Compressors]], [[Storage Unit|Storage Units]], and [[Tractor Beams]]. All resource-containing utilities will be filled.||
 Thermal Resupply|8|Thermal [[Energy Cannons]], [[Energy Guns]], and offensive Utilities including [[Cooling Devices]], [[Coolant Injectors]], [[Energy Filters]], [[Particle Chargers]], and [[Quantum Capacitor|Quantum Capacitors]]||
