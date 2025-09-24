@@ -246,6 +246,24 @@ export default function WikiEditControls({
                     Table
                 </Button>
                 <Button
+                    tooltip="Wraps a section of the page within a single expandable button, ideally used for large chunks of text. Can be set to be expanded by default like [[Expandable:Expanded]], otherwise, is collapsed by default."
+                    onClick={() => insertWrappedText("[[Expandable]]", "[[/Expandable]]")}
+                >
+                    Expandable
+                </Button>
+                <Button
+                    tooltip="Wraps a section of the page within a single expandable button, ideally used for large chunks of text intended to be hidden by spoiler setting. If the spoiler setting is None, the content is hidden behind the expandable button. If spoiler setting is Spoiler or Redacted, content is shown like normal."
+                    onClick={() => insertWrappedText("[[SpoilerExpandable]]", "[[/SpoilerExpandable]]")}
+                >
+                    Spoiler Expandable
+                </Button>
+                <Button
+                    tooltip="Wraps a section of the page within a single expandable button, ideally used for large chunks of text intended to be hidden by redacted spoiler setting. If the spoiler setting is None or Spoiler, the content is hidden behind the expandable button. If spoiler setting is Redacted, content is shown like normal."
+                    onClick={() => insertWrappedText("[[RedactedExpandable]]", "[[/RedactedExpandable]]")}
+                >
+                    Redacted Expandable
+                </Button>
+                <Button
                     tooltip="Creates a fake item infobox based on the provided data in the form of [[ItemDetails]]Name|XYZ||Image Name|...[[/ItemDetails]]. See the Example page for a full list of available parameters."
                     onClick={() => insertWrappedText("[[ItemDetails]]", "[[/ItemDetails]]")}
                 >
