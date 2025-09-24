@@ -569,7 +569,8 @@
     }
 }
 
-.wiki-table-of-contents {
+.wiki-table-of-contents,
+.wiki-expandable {
     display: table;
     background-color: @element-background-color;
 
@@ -582,8 +583,6 @@
         > summary {
             cursor: pointer;
             user-select: none;
-
-            font-size: @wiki-table-of-contents-font-size;
         }
 
         > ul {
@@ -594,6 +593,14 @@
             line-height: @wiki-table-of-contents-line-height;
         }
     }
+}
+
+.wiki-table-of-contents > details > summary {
+    font-size: @wiki-table-of-contents-font-size;
+}
+
+.wiki-expandable > details > summary {
+    font-size: @wiki-expandable-font-size;
 }
 
 .wiki-group-infobox {

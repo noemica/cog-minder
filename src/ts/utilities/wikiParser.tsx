@@ -1,5 +1,5 @@
 import { ColumnDef, GroupColumnDef } from "@tanstack/react-table";
-import { Fragment, ReactNode } from "react";
+import React, { Fragment, ReactNode } from "react";
 
 import lore from "../../json/lore.json";
 import hacks from "../../json/machine_hacks.json";
@@ -140,7 +140,7 @@ function cleanHeadingText(text: string): { text: string; id: string } {
     if (index < text.length) {
         cleanedText += text.slice(index);
     }
-    
+
     // Unescape the links that have double curly braces
     cleanedText = cleanedText.replaceAll("{{", "[").replaceAll("}}", "]");
 
@@ -870,6 +870,62 @@ function processColorTag(state: ParserState, result: RegExpExecArray) {
 function processCommentTag(state: ParserState, result: RegExpExecArray) {
     const index = state.initialContent.indexOf("[[/Comment]]", result.index);
     state.index = index + "[[/Comment]]".length;
+}
+
+// Process an Expandable tag like [[Expandable]]Expandable Text[[/Expandable]]
+function processExpandableTag(state: ParserState, result: RegExpExecArray) {
+    let isOpen = result[2] === "Expanded" ? true : false;
+
+    // Find [[/Expandable]] closing tag first
+    const expandableResult = /\[\[\/Expandable\]\]/.exec(state.initialContent.substring(state.index));
+
+    if (expandableResult === null) {
+        // If we can't find the end tag then just skip over the opening image tag
+        recordError(state, `Found expandable tag "${result[0]}" without close tag`);
+        state.index += result[0].length;
+        return;
+    }
+
+    // Split interior text by |
+    // First text contains header, second text contains content
+    const startIndex = state.index + result[0].length;
+    const endIndex = startIndex + expandableResult.index - result[0].length;
+    const split = splitOutsideActions(state.initialContent.substring(startIndex, endIndex));
+
+    if (split.length !== 2) {
+        recordError(state, `There should be 1 | in expandable tag ${result[0]}`);
+        state.index += result[0].length;
+        return;
+    }
+
+    // Parse the summary text
+    let tempState = ParserState.Clone(state);
+    tempState.initialContent = split[0];
+    tempState.inlineOnly = "InlineOnly";
+    processSection(tempState, undefined);
+    const summary = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
+
+    // Parse the details text
+    const subSectionStart = result.index + result[0].length + tempState.index + 1;
+    tempState = ParserState.Clone(state);
+    tempState.index = subSectionStart;
+    tempState.inSpoiler = state.inSpoiler;
+    processSection(tempState, "/Expandable");
+    state.index = tempState.index;
+
+    const details = outputGroupsToHtml(tempState.output, state.inSpoiler);
+
+    state.output.push({
+        groupType: "Individual",
+        node: (
+            <div className="wiki-expandable">
+                <details open={isOpen}>
+                    <summary>{summary}</summary>
+                    <div>{details}</div>
+                </details>
+            </div>
+        ),
+    });
 }
 
 // Process a [[NonEmptyPages]]
@@ -1819,6 +1875,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["BotGroups", processBotGroupsTag],
     ["Color", processColorTag],
     ["Comment", processCommentTag],
+    ["Expandable", processExpandableTag],
     ["FanartGallery", processGalleryTag],
     ["GameText", processGameTextTag],
     ["Gallery", processGalleryTag],
