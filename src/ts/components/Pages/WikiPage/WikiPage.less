@@ -578,7 +578,6 @@
 
     > details {
         border: @border-width solid @border-color;
-        padding: @medium-gap;
 
         > summary {
             cursor: pointer;
@@ -607,12 +606,20 @@
     }
 }
 
-.wiki-table-of-contents > details > summary {
-    font-size: @wiki-table-of-contents-font-size;
+.wiki-table-of-contents > details {
+    padding: @medium-gap;
+
+    > summary {
+        font-size: @wiki-table-of-contents-font-size;
+    }
 }
 
-.wiki-expandable > details > summary {
-    font-size: @wiki-expandable-font-size;
+.wiki-expandable > details {
+    padding: @small-gap;
+
+    > summary {
+        font-size: @wiki-expandable-font-size;
+    }
 }
 
 .wiki-group-infobox {
