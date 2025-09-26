@@ -892,23 +892,32 @@ function processExpandableTag(state: ParserState, result: RegExpExecArray) {
     const endIndex = startIndex + expandableResult.index - result[0].length;
     const split = splitOutsideActions(state.initialContent.substring(startIndex, endIndex));
 
-    if (split.length !== 2) {
-        recordError(state, `There should be 1 | in expandable tag ${result[0]}`);
+    if (split.length !== 1 && split.length !== 2) {
+        recordError(state, `There should be only 0 or 1 | in expandable tag ${result[0]}`);
         state.index += result[0].length;
         return;
     }
 
-    // Parse the summary text
-    let tempState = ParserState.Clone(state);
-    tempState.initialContent = split[0];
-    tempState.inlineOnly = "InlineOnly";
-    processSection(tempState, undefined);
-    const summary = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
+    let summaryNode: ReactNode;
+    let index = result.index + result[0].length;
+
+    if (split.length === 2) {
+        // Parse the summary text
+        const tempState = ParserState.Clone(state);
+        tempState.initialContent = split[0];
+        tempState.inlineOnly = "InlineOnly";
+        processSection(tempState, undefined);
+        summaryNode = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
+
+        index = result.index + result[0].length + tempState.index + 1
+    } else {
+        // Default to Show/Hide
+        summaryNode = "Show/Hide"
+    }
 
     // Parse the details text
-    const subSectionStart = result.index + result[0].length + tempState.index + 1;
-    tempState = ParserState.Clone(state);
-    tempState.index = subSectionStart;
+    const tempState = ParserState.Clone(state);
+    tempState.index = index;
     tempState.inSpoiler = state.inSpoiler;
     processSection(tempState, "/Expandable");
     state.index = tempState.index;
@@ -920,7 +929,7 @@ function processExpandableTag(state: ParserState, result: RegExpExecArray) {
         node: (
             <div className="wiki-expandable">
                 <details open={isOpen}>
-                    <summary>{summary}</summary>
+                    <summary>{summaryNode}</summary>
                     <div>{details}</div>
                 </details>
             </div>
@@ -2103,7 +2112,7 @@ function processSpoilerExpandableTag(state: ParserState, result: RegExpExecArray
             node: (
                 <div className="wiki-expandable">
                     <details>
-                        <summary>{`Reveal ${redacted ? "redacted spoiler" : "spoiler"} content`}</summary>
+                        <summary>{`Show/Hide ${redacted ? "redacted spoiler" : "spoiler"} content`}</summary>
                         <div>{details}</div>
                     </details>
                 </div>
