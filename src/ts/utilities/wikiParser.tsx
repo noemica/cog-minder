@@ -904,12 +904,12 @@ function processExpandableTag(state: ParserState, result: RegExpExecArray) {
     if (split.length === 2) {
         // Parse the summary text
         const tempState = ParserState.Clone(state);
-        tempState.initialContent = split[0];
+        tempState.initialContent = split[0].trim();
         tempState.inlineOnly = "InlineOnly";
         processSection(tempState, undefined);
         summaryNode = outputGroupsToHtml(tempState.output, state.inSpoiler, true);
 
-        index = result.index + result[0].length + tempState.index + 1
+        index = result.index + result[0].length + split[0].length + 1;
     } else {
         // Default to Show/Hide
         summaryNode = "Show/Hide"
