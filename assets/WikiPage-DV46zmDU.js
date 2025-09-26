@@ -1,4 +1,4 @@
-import{c as x,r as T,j as i,B as v,L as U,K as D,M as z,w as be,N as we,f as N,O as ve,Q as Ce,y as B,U as se,a as Z,s as Se,V as Te,S as K,o as ke,W as le,z as xe,u as he,X as J,Y as Ae,Z as O,_ as He,$ as Ge,a0 as q,a1 as Ie,a2 as Ne}from"./index-X5Y3kBSC.js";import{l as Re}from"./lore-08CTWJsY.js";import{h as De}from"./machine_hacks-6JhQQkKB.js";import{H as de,a as Ee,L as Pe,I as ce,B as V,b as Me,u as Le}from"./BotDetails-DzVPpRoj.js";import{T as $,a as _,u as Fe}from"./ItemPopover-DhiWNPjH.js";import{S as Be}from"./Table-AK3mprqN.js";import{e as We}from"./partColumnDefs-BrZyLxjh.js";/* empty css              */import"./bots-DmHYWh_Z.js";import"./botTypes-_WzAd8ij.js";import"./items-Xj_jdZG2.js";const Oe=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:'12-ASH is one of the [[Heroes of Zion]]. Upon appearing, they will shout "hail to the king".'},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:"Informally known as a yauler (yellow Hauler). In the main complex, appears as part of a [[Cargo Convoy]]."},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed. Gives a code when shown the Cetus Mainframe in [[Cetus]]."},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AP7-3",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:"Bolteaters are fast [[Wheels|wheeled]] [[UFD]] combat bots armed with [[Ripteeth]]. Valuable for a wheels build with their [[Rocket Booster|Rocket Boosters]]. Their ripteeth can rip off a component ignoring armor, so keep them away from you. Slightly resistant to Kinetic, Thermal, Electromagnetic and Explosive damage."},{Name:"Bomb Drone",Content:"Fast disposable drones that attempt to melee hostiles, which will cause them to explode. Deployed by a [[Bomb Drone Bay]]"},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
+import{c as x,r as T,j as i,B as v,L as U,K as D,M as z,w as be,N as we,f as N,O as ve,Q as Ce,y as B,U as se,a as Z,s as Se,V as Te,S as K,o as ke,W as le,z as xe,u as he,X as J,Y as Ae,Z as O,_ as He,$ as Ge,a0 as q,a1 as Ie,a2 as Ne}from"./index-CouwpcHv.js";import{l as Re}from"./lore-08CTWJsY.js";import{h as De}from"./machine_hacks-6JhQQkKB.js";import{H as de,a as Ee,L as Pe,I as ce,B as V,b as Me,u as Le}from"./BotDetails-BstxYecg.js";import{T as $,a as _,u as Fe}from"./ItemPopover-J6-6hWuD.js";import{S as Be}from"./Table-Cc1AqlV3.js";import{e as We}from"./partColumnDefs-BrZyLxjh.js";/* empty css              */import"./bots-DmHYWh_Z.js";import"./botTypes-_WzAd8ij.js";import"./items-Xj_jdZG2.js";const Oe=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:'12-ASH is one of the [[Heroes of Zion]]. Upon appearing, they will shout "hail to the king".'},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"7R-MNS",Content:""},{Name:"7V-RTL",Content:""},{Name:"8R-AWN",Content:""},{Name:"99-TNT",Content:""},{Name:"A-02 Transporter",Content:""},{Name:"A-15 Conveyor",Content:""},{Name:"A-27 Freighter",Content:"Informally known as a yauler (yellow Hauler). In the main complex, appears as part of a [[Cargo Convoy]]."},{Name:"A2",Content:""},{Name:"A3",Content:""},{Name:"A4",Content:""},{Name:"A5",Content:""},{Name:"A6",Content:""},{Name:"A7",Content:"Drops the [[A7 Data Core]] when killed. Gives a code when shown the Cetus Mainframe in [[Cetus]]."},{Name:"A8",Content:""},{Name:"AD-0RF",Content:""},{Name:"AP7-3",Content:""},{Name:"AZ-K3N",Content:""},{Name:"Advanced Drone",Content:""},{Name:"Alpha 7",Content:""},{Name:"Architect",Content:""},{Name:"Armor Guard",Content:""},{Name:"Army Drone",Content:""},{Name:"Artisan",Content:""},{Name:"Assault Drone",Content:""},{Name:"Assembled (4)",Content:""},{Name:"Assembled (7)",Content:""},{Name:"Assembler",Content:"Produces [[Assembled]] every 10 turns. Otherwise harmless."},{Name:"Autobeam Turret",Content:""},{Name:"B-36 Bruiser",Content:""},{Name:"B-48 Gladiator",Content:""},{Name:"B-60 Warrior",Content:""},{Name:"B-74 Champion",Content:""},{Name:"B-75 Beast",Content:""},{Name:"B-86 Titan",Content:""},{Name:"B-90 Cyclops",Content:""},{Name:"B-99 Colossus",Content:""},{Name:"Bolteater",Content:"Bolteaters are fast [[Wheels|wheeled]] [[UFD]] combat bots armed with [[Ripteeth]]. Valuable for a wheels build with their [[Rocket Booster|Rocket Boosters]]. Their ripteeth can rip off a component ignoring armor, so keep them away from you. Slightly resistant to Kinetic, Thermal, Electromagnetic and Explosive damage."},{Name:"Bomb Drone",Content:"Fast disposable drones that attempt to melee hostiles, which will cause them to explode. Deployed by a [[Bomb Drone Bay]]"},{Name:"Borebot",Content:""},{Name:"Bouncer",Content:""},{Name:"Butcher (5)",Content:""},{Name:"Butcher (7)",Content:""},{Name:"C-17 Slicer",Content:""},{Name:"C-30 ARC",Content:""},{Name:"C-35 Carver",Content:""},{Name:"C-40 Crusher",Content:`Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
 
 Due to their extreme lethality in melee, stay out of their range at all costs, and maybe just run the hell out of [[Wastes]]. Alternatively pack a good launcher or a good critical weapon, as their plating will tank most of your shots.`},{Name:"C-55 Analyst",Content:""},{Name:"C-57 Dissector",Content:""},{Name:"C-65 Expert",Content:""},{Name:"CL-ANK",Content:""},{Name:"Cetus Guard",Content:""},{Name:"Cobbler",Content:""},{Name:"Cogmind",Content:"That's you."},{Name:"Combat Drone",Content:""},{Name:"Combat Programmer",Content:""},{Name:"Commander",Content:""},{Name:"D-53 Grenadier",Content:""},{Name:"D-63 Destroyer",Content:""},{Name:"D-83 Annihilator",Content:""},{Name:"DAS Turret",Content:""},{Name:"DD-05H",Content:""},{Name:"DRS Ranger",Content:"More powerful [[Ranger]] variants that appear in [[Caves]] when a [[DRS Beacon]] is used."},{Name:"Data Miner",Content:""},{Name:"Decapitator",Content:""},{Name:"Decomposer",Content:""},{Name:"Decoy Drone",Content:""},{Name:"Demented",Content:""},{Name:"Dragon",Content:""},{Name:"Drone",Content:""},{Name:"E-15 Imp",Content:""},{Name:"EX-BIN",Content:`[[Heading]]Parse[[/Heading]]
 When datajacked, one of the following parse texts is shown:
@@ -4252,7 +4252,18 @@ When FarCom is obtained, Cogmind is allowed to take one item (or multiples of th
 Taking FarCom can be done in most runs in the [[Exiles (Location)|Exiles]] map off of either -10 or -9 [[Mines]]. After talking to [[EX-BIN]], walk into the FarCom Aligner machine. Cogmind can take up to 1 special vault item (or multiples of the same type). If Cogmind takes more than 1 type of item, then the Exiles will notice you stealing when entering [[Factory]] or [[Storage]] and FarCom will be removed. Also, becoming hostile to the Exiles will result in instantly losing FarCom. If Cogmind takes FarCom, it is not possible to [[Imprint]]: [[Spoiler]]The [[Imprinter]] will be disappointed in Cogmind and warn you to leave right away. Attempting to use the Imprinting machine will result in turning all the bots at [[Zion]] hostile. Taking FarCom excludes cogmind from affiliating with the [[UFD|UFD]]. There are no other alignment restrictions with FarCom.[[/Spoiler]]
 
 [[Heading]]Research Branch side-effect[[/Heading]]
-When entering -3 Research, the Exiles will send a warning message to Cogmind indicating not to enter Research branches. If Cogmind does anyway, [[Spoiler]]immediately when entering [[Testing]], [[Quarantine]] [[Maximum Security]] will instantly be triggered. This will also lock the exits to [[Section 7]] and [[Protoforge]]. Note that this does not include [[Armory]] when it is on -3. The immediate response is machines shut down right after entering the level, 4 [[Sentry]] spawns at each [[Garrison]] and exit, and 6 Assault [[C-30 ARC|ARCs]] sent at Cogmind shortly after. Unless Cogmind is prepared to fight off large waves of enemies or outrun them, these maps should not be entered.[[/Spoiler]]`},{Name:"Game Mechanics",Content:"[[List]][[Alert]] - Semi-hidden number that represents Cogmind's perceived threat level. Has dangerous consequences when too high.|[[Allies]] - Bots friendly to [[Cogmind]].|[[Cave-ins]] - Mechanic that causes dug out walls to collapse and deal large amounts of damage.|[[Corruption]] - Stat that has various negative penalties and can result in death.|[[Energy]] - Stat that is used to power most parts in the game.|[[Heat]] - Stat that can cause overheating side-effects and deaths in non-immune bots.|[[Matter]] - Stat that is used as a resource to attach parts and shoot some types of weapons.|[[Overload]] - Mechanic that can increase effectiveness of parts with a possible downside.|[[Sneak Attack]] - Attack that does doubled melee damage in certain circumstances.[[/List]]"},{Name:"Garrison Access",Content:`[[Image]]../game_sprites/Garrison.png|A Garrison Access machine[[/Image]]
+When entering -3 Research, the Exiles will send a warning message to Cogmind indicating not to enter Research branches. If Cogmind does anyway, [[Spoiler]]immediately when entering [[Testing]], [[Quarantine]] [[Maximum Security]] will instantly be triggered. This will also lock the exits to [[Section 7]] and [[Protoforge]]. Note that this does not include [[Armory]] when it is on -3. The immediate response is machines shut down right after entering the level, 4 [[Sentry]] spawns at each [[Garrison]] and exit, and 6 Assault [[C-30 ARC|ARCs]] sent at Cogmind shortly after. Unless Cogmind is prepared to fight off large waves of enemies or outrun them, these maps should not be entered.[[/Spoiler]]`},{Name:"Game Mechanics",Content:`[[List]]
+[[Alert]] - Semi-hidden number that represents Cogmind's perceived threat level. Has dangerous consequences when too high.|
+[[Allies]] - Bots friendly to [[Cogmind]].|
+[[Cave-ins]] - Mechanic that causes dug out walls to collapse and deal large amounts of damage.|
+[[Corruption]] - Stat that has various negative penalties and can result in death.|
+[[Energy]] - Stat that is used to power most parts in the game.|
+[[Heat]] - Stat that can cause overheating side-effects and deaths in non-immune bots.|
+[[Matter]] - Stat that is used as a resource to attach parts and shoot some types of weapons.|
+[[Overload]] - Mechanic that can increase effectiveness of parts with a possible downside.|
+[[Robot Analysis]] - Terminal record that contains lore about a bot, also grants minor combat bonuses|
+[[Sneak Attack]] - Attack that does doubled melee damage in certain circumstances.
+[[/List]]`},{Name:"Garrison Access",Content:`[[Image]]../game_sprites/Garrison.png|A Garrison Access machine[[/Image]]
 Garrison Accesses are heavily armored [[0b10]]-controlled [[Interactive Machine|Machines]] that primarily serve as a dispatch point for 0b10 [[Squad|Squads]] and as an exit into the [[Garrison|Garrison map]]. Cogmind can open Garrisons Accesses to go inside of them or seal them to prevent further dispatches from that location. Garrison Accesses can appear in every main 0b10 map starting from -8 [[Materials]]. They can also appear in [[Storage]], [[Hub_04(d)]], [[Testing]], [[Quarantine]], [[Section 7]], and [[Protoforge]].
 
 [[Heading]]Lore[[/Heading]]
@@ -4334,7 +4345,6 @@ Etc. - Delay between assaults continues to increase by 50 and number of assaults
 
 [[Heading]]Exiting High Security[[/Heading]]
 The only 2 ways to exit High Security are to trigger [[Sterilization]] after killing enough combat hostiles or to exit the map. Otherwise, an infinite number of Assaults will continue to be dispatched. One unique map [[Command]] has special behavior: [[Redacted]]Since there are a limited number of [[C-30 ARC|ARCs]] on the map, no more assaults will come for Cogmind after they have been depleted. However, the alerts that assaults are dispatched never stop coming.[[/Redacted]]`},{Name:"Homepage",Content:`This is a WIP unofficial Cogmind Wiki. Use the page dropdown to go to a specific page. For editing info, check out the [[https://discord.gg/f8Fqv2qQxV|Cog-Minder wiki Discord server]] and make contributions via [[https://docs.google.com/spreadsheets/d/1Fv3WlkoueecEmZDh88XWSMuV8Qdfm3epzFrcx5nF33g/edit?usp=sharing|This Google Spreadsheet]].
-Note: Beta 15 updates are in progress. Some information may be out of date.
 
 [[Heading]]Useful/Highlighted Pages[[/Heading]]
 [[List]][[Game Mechanics]]|
@@ -5141,7 +5151,14 @@ This event can be a great blessing or a curse depending on a lot of factors. Get
 
 Due to a bug (fixed for Beta 15), going through a Garrison and looping back to -3/Research will cause the event to partially continue.[[Comment]]Apparently it was a bug?[[/Comment]]
 
-Last edited during Beta 14.`,Spoiler:"Spoiler"},{Name:"Robot Analysis",Content:""},{Name:"Robot Tier",Content:""},{Name:"Scanalyzer",Content:`[[Image]]../game_sprites/Scanalyzer.png|A Scanalyzer[[/Image]]
+Last edited during Beta 14.`,Spoiler:"Spoiler"},{Name:"Robot Analysis",Content:`Robot analyses are lore entries about a certain class and tier of bot, either [[0b10]] or [[Derelict]]. They also grant minor combat bonuses. Cogmind gains 5% targeting and 10% bonus damage against an analyzed bot, while the analyzed bot suffers a 5% penalty to hitting Cogmind. Not all types of bots have analyses. Strong unique or otherwise hidden bots tend to not have analyses.
+
+[[Heading]]Ways to obtain[[/Heading]]
+[[List]]
+[[Terminal]] [[GameText]]Analysis([Bot Name])[[/GameText]] hack.|
+[[Spoiler]]Using the [[Data Conduit]][[/Spoiler]]|
+[[Spoiler]]Records from [[Zhirov (Location)]] Terminal. [[Alpha 7]], [[Executioner]], [[Striker]], and [[Q-Series]] only.[[/Spoiler]]
+[[/List]]`},{Name:"Robot Tier",Content:""},{Name:"Scanalyzer",Content:`[[Image]]../game_sprites/Scanalyzer.png|A Scanalyzer[[/Image]]
 Scanalyzers are [[0b10]]-controlled [[Interactive Machine|Machines]] that can identify and provide [[Schematic|Schematics]] of scanalyzed parts. Scanalyzers are capable of identifying all parts in the game, including [[Alien Artifacts]]. However, not every item can be scanalyzed to obtain a schematic.
 
 [[Heading]]Lore[[/Heading]]
@@ -6315,123 +6332,150 @@ Parts are sorted alphabetically within ranks. This tier list is not a strict com
 [[/List]]
 [[List:Ordered]]
 Exp. flight units are good for low propulsion count flight builds but are less useful for more "standard" flight builds with 6 or more propulsion slots.
-[[/List]]`},{Name:"Strategy/aoemica's Flight Guide/Good Utilities",Content:`Utilities contain the most diverse range of parts in the game. This guide will not touch on every single unique kind, but strives to cover the most important ones.
+[[/List]]`},{Name:"Strategy/aoemica's Flight Guide/Good Utilities",Content:`[[Heading]][[B]][[Color:Red]]WIP[[/Color]][[/B]][[/Heading]]
+A collection of thoughts and tips about machine hacking on flight. I highly recommend checking out the [[Interactive Machine]] and each machine's own page for additional details.
 
-[[Heading]][[Defensive Utilities]][[/Heading]]
-Although flight builds should rarely engage in combat, that doesn't mean that combat is off the table entirely. When in combat, flight should try to kill bots as fast as possible and use positioning and defensive utilities (when available) to reduce damage taken. Similarly, even when not intentionally fighting enemy bots, running past them often results in a few stray shots. Many kinds of damage utilities are not especially useful for flight due to prohibitive energy or mass costs, but a few are still worth consideration, namely evasion utilities.
-
-[[Heading:2]][[Phase Shifters]][[/Heading]]
-Phase Shifters are one half of the powerful avoidance-stacking strategy. They are reasonably light, but have disproportionately high coverage compared to their integrity, and are also very energy hungry. If they can be afforded, they will provide unparalleled damage mitigation for a flight build in a single slot. Utility Shieldings are helpful for long-term use of Phase Shifters due to their fragility.
-
-[[Image]]../part_art/Adv. Reaction Control System.png|[[Adv. Reaction Control System]], a mid-tier Reaction Control System variant[[/Image]]
-[[Heading:2]][[Reaction Control Systems]][[/Heading]]
-Reaction Control Systems are the much, much cheaper cousin of Phase Shifters and serve as the second half of the avoidance-stacking strategy. They are similarly light and fragile, but provide a high bonus to avoidance at a very reasonably low energy cost. As an added bonus, these serve as an offensive melee tool for a permanent +1 momentum to melee attacks. If you have to pick between just one evasion utility, these are typically the better choice.
-
-[[Heading:2]][[Shield Generators]][[/Heading]]
-Shield Generators are the lighter, less effective, but more efficient cousins of the [[Force Fields]]. Force Fields don't typically fit on flight builds due to their excessive mass and energy requirements. However, Shield Generators are a much more reasonable alternative. They are typically less effective than stacking evasion utilities, but can still be a useful part of a build's damage mitigation strategy.
-
-[[Image]]../part_art/Graphene Brace.png|Graphene Brace[[/Image]]
-[[Heading:2]][[Graphene Brace]][[/Heading]]
-The Graphene Brace is a defensive item unlike the others in the list above. Rather than reducing damage directly, it instead prevents critical hit effects. Namely, it can be used to prevent the 2 scariest critical types of blast (primarily from [[Heavy|Heavies]] and [[Behemoth|Behemoths]]) and sever (primarily from [[Cutter|Cutters]]). The Graphene Brace does not trivialize either bot type, but it does make them much less of a potentially run-ending threat.
-
-[[Image]]../part_art/Adv. Hacking Suite.png|[[Adv. Hacking Suite]], a mid-tier Hacking Suite variant[[/Image]]
-[[Heading]][[Hackware]][[/Heading]]
-Hackware is the crux of the "flighthack" playstyle. The speed of flight coupled with a big stack of hackware gives unparalleled control over standard 0b10 maps. Both [[Offensive Hackware]] and [[Defensive Hackware]] are valuable, although offensive hackware provides a greater benefit when being stacked in large numbers since it allows success at more difficult but powerful indirect hacks like hacks for schematics. By comparison, defensive hackware doesn't provide much value after the first one or two because its effect in reducing tracing is capped. Hacking is covered in more detail in [[Strategy/aoemica's Flight Guide/Machine Hacking]].
-
-[[Heading]][[Infowar]][[/Heading]]
-Infowar combined with high speeds is what enables flight to avoid nearly all combat throughout the game. Infowar helps detect bots, detect terrain, and identify ways to bypass hostiles, which in turns limits the need for lots of heavy combat gear or backups. Infowar is explained in detail on the dedicate page, so the following is a brief overview from a flight-oriented perspective.
-
-[[Image]]../part_art/ECM Suite.png|ECM Suite, the basic tier type of ECM Suite[[/Image]]
-[[Heading:2]][[ECM Suites]][[/Heading]]
-ECM Suites are a natural pair for flight. Cutting a long-tracking bot's memory in two (or more) can make major nuisance bots into much more manageable. [[Programmer|Programmers]] and [[Hunter|Hunters]] are the two standard bots with the highest memory durations of 80 and 60 actions respectively. Swapping on an ECM Suite can help avoid getting cornered in the later bot-dense maps like [[Research]].
-One extra note about ECM suites is that the higher rating variants tend to be less useful for flight due to their prohibitively expensive energy costs. A single basic [[ECM Suite]] is typically enough to deal with most encounters. Although better versions are appreciated, the jump from 5 to 20 or 25 energy from [[Adv. ECM Suite|Adv.]] or [[Exp. ECM Suite]] respectively is substantial enough to consider not "upgrading" even when given the option.
-
-[[Image]]../part_art/Adv. Sensor Array.png|[[Adv. Sensor Array]], a mid-tier Sensor Array[[/Image]]
-[[Heading:2]][[Infowar#Robot Detection|Robot Detection]][[/Heading]]
-[[Image]]../part_art/IFF Parser.png|IFF Parser[[/Image]]
-Robot detection is the most crucial component of infowar for a flight build. The most effective way to avoid damage is to simply never get shot at, and knowing where hostiles are is a good way of doing that. While slower builds can better get away with imprecise bot sensing like the [[Seismic Detector]], or [[IFF Parser]], I prefer more reliable bot class-detection for predictability. [[FarCom]] and standard [[Sensor Arrays]] work best.
-Note for Sensor Arrays: Without an [[Exp. Signal Interpreter]], [[H-88 Terminator|H-88 Terminators]] will not appear on sensors. In this case, the Seismic Detector or IFF Parser can be used in conjunction with a standard Sensor Array in order to detect these dangerous bots. The bot markings that only appear on Seismic with nothing on Sensors are [[Hunter|Hunters]] by process of elimination.
-
-[[Heading:3]]Preferred Bot Detection Infowar[[/Heading]]
-[[List:Ordered]]
-Sensor Array + [[Signal Interpreters|Signal Interpreter]]/FarCom|
-IFF Parser|
-Seismic Detector
+[[Heading]][[Fabricator|Fabricators]][[/Heading]]
+[[Image]]../game_sprites/Fabricator.png|A Fabricator machine[[/Image]]
+Fabricators are fairly straightforward to use, at least for their intended purposes. Fabricating preloaded [[Schematic|schematics]] can be a great idea, but more often than not they contain something not useful. Fabricating items based on schematics is the more typical use of Fabricators for flight builds. To do so, obtain a schematic from a Terminal (e.g. [[GameText]]Schematic(Flight Unit)[[/GameText]]) or some other source, attach an [[Authchips|Authchip]] if you have it, load the schematic, and start the fab. If you are fabbing without an Authchip, an [[Investigation Squad]] will be dispatched to the machine. There are a few ways to deal with the squad:
+[[List]]
+[[GameText]]Recall(Investigation)[[/GameText]] at a nearby Terminal|
+[[Spoiler]][[GameText]]Recall(Investigation)[[/GameText]] [[RIF]] hack on an [[Operator]][[/Spoiler]]|
+Wait approximately 400 turns for the squad to return to an exit|
+Finish fabricating the item before the squad arrives. Note: This is only possible for extra fast fabs or if the nearest Garrison/exit is very far away|
+Get spotted by the squad, lure them away from the Fabricator, then grab the item and run, ideally without getting shot more than once or twice|
+Ignore the squad, grab the part, and run while tanking shots
 [[/List]]
+In addition to fabricating parts, [[GameText]]Network(Status)[[/GameText]] is a great hack to perform if you have the [[Hackware]] to do so and still pull off a fab (or have nothing better to do with the machine). An [[GameText]]Index(Fabricators)[[/GameText]] has a base success rate of 40% on a level 1 Terminal, but this hack has a success rate of 70% and is always present, and also lets you know about all currently loaded schematics.
 
-[[Image]]../part_art/Lrn. Terrain Scanner.png|[[Lrn. Terrain Scanner]], an upper tier Terrain Scanner variant[[/Image]]
-[[Heading:2]][[Infowar#Terrain Scanning|Terrain Scanning]][[/Heading]]
-[[Image]]../part_art/Structural Scanner.png|Structural Scanner[[/Image]]
-Terrain scanning is a useful, yet less required source of infowar for flight builds. Being able to dig in between rooms to avoid squads in busy hallways is highly valuable, although manually digging to check the distance between rooms is always an option. Slow forms of terrain scanning, like a [[Terrain Scanners|Terrain Scanner]] without a [[Terrain Scan Processors|Terrain Scan Processor]] or with a low rating one are not very valuable for flight. The fast move speed lends better to more instant forms of infowar like the [[Structural Scanner]] or [[Machine Analyzer]].
+[[Heading:2]]Spoiler Hacks|Spoiler Hacks Fabricator[[/Heading]]
+[[Expandable]]
+Show/Hide hacks|
+Thoughts about select Force/Trojan hacks:
 
-[[Heading:3]]Preferred Terrain Scanning Infowar[[/Heading]]
-[[List:Ordered]]
-Terrain Scanner (with [[Exp. Terrain Scan Processor]] or better)|
-Structural Scanner|
-Machine Analyzer [[Sup]]1[[/Sup]]|
-[[Seismic Detector]] [[Sup]]2[[/Sup]]|
-Terrain Scanner with low rating or no Terrain Scan Processor
-[[/List]]
-[[Sup]]1[[/Sup]] The Machine Analyzer doesn't provide as good of pure terrain information as the ones above it, but the machine detection capabilities are unique and useful in its own right.
+[[Heading:3]][[GameText]]Force(Recompile)[[/GameText]][[/Heading]]
+My personal favorite Fabricator hack. Recompiling allow you to turn low security level or inconveniently located Fabricators into future fabs on more convenient machines via Authchip. Level 3 Fabricators operate 3 times as quickly as level 1s, which allows you to do your work and leave without hanging around and waiting for extra [[Extermination Squad|Exterminations]] for the trouble. This is even more pronounced if you can pull off a [[GameText]]Trojan(Prioritize)[[/GameText]]. Recompiling also allows for banking fabs for items that you don't currently have the schematic for, but plan on fabricating at a later part of the run.
 
-[[Sup]]2[[/Sup]] The Seismic Detector's terrain scanning capabilities are fairly weak, although they are instantaneous. This terrain scanning effect is most useful in Factory, since few machines in Research or later generate seismic activity.
+[[Heading:3]][[GameText]]Force(Overload)[[/GameText]][[/Heading]]
+An amusing hack that turns Fabricators into big EM weapons, but not a frequently practical one. Most bots that this hack effective against can be easily avoided through other means. If it did more than tickle [[Programmer|Programmers]], it would be a little more useful.
 
-[[Image]]../part_art/Adv. Transmission Jammer.png|[[Adv. Transmission Jammer]], an upper tier Transmission Jammer variant[[/Image]]
-[[Heading:2]][[Transmission Jammers]][[/Heading]]
-Transmission Jammers are great for every type of propulsion, and there isn't much unique about jammer use for flight. The primary use of flight jammers, in my experience, is blocking [[Watcher]] transmissions while killing or flying past them.
-Note: while not truly mutually exclusive, I find ECM Suites tend to compete with Transmission Jammers for the same inventory slot. With jamming Watchers and squads in general, it is less necessary to ECM away as many squads. With ECM, it is easier to ignore squads Watchers alert because of the reduced tracking duration. However, this is more of a note of personal preference rather than being strict advice.
+[[Heading:3]]Trojan(Fabnet)[[/Heading]]
+A difficult to pull off and rather niche hack that can temporarily overwrite enemy bots into allies. The base success rate is very low which makes hackware a near-requirement. Most importantly, the side effect of a floor-wide machine lockout is a huge detriment. Since the lockout can theoretically occur on the very first hostile combat bot you spot, there's always a chance that you can go an entire floor without access to most machines. This hack is best used if you are going to be engaging in a lot of combat, for example, diving into many [[Garrison|Garrisons]] for [[RIF]] or the [[Encrypted Comm Array]]. Notably, Garrisons are not locked down, so you don't have to worry about getting one open before the lockout occurs. More stealth-oriented flight builds benefit more from keeping the machines online than risk the chance of a lockout for the rare bot in a squad causing a distraction for a few turns.
 
-[[Image]]../part_art/Enh. Optical Array.png|[[Enh. Optical Array]], a mid-tier Visual Processing Unit variant[[/Image]]
-[[Heading:2]][[Infowar#Vision Manipulation|Vision Manipulation]][[/Heading]]
-The 2 types of vision manipulation utilities, [[Visual Processing Units]] and [[Cloaking Devices]], both are very useful for flight builds. Visual Processing Units are easier to use due to their lack of mass or energy costs, but Cloaking Devices are swappable and can be used sneak past tight corridors and into guarded machines. I personally rarely use Cloaking Devices, although I will consider taking the [[Exp. Cloaking Device]] that sometimes shows up in [[Warlord (Location)#Warlord's Stash|Warlord's Stash]]. The [[Cloak of Protection]] is a useful [[Exiles Vault Prototypes|Exiles Vault Prototype]] 2-in-1 part that combines armor and cloaking, but is energy hungry and fragile for much long-term use.
+[[Heading:3]][[GameText]]Trojan(Liberate)[[/GameText]][[/Heading]]
+A fun hack to slap on to take control of an in-progress bot fab or just try to get allies in the future. This is one of my go-to hacks if I don't have anything I have particular interest in fabricating. The bots can occasionally get you into trouble if you leave them alone, but a few free allies can always serve as a good distraction. [[GameText]]Trojan(Liberate)[[/GameText]] can pair well with this hack to give you a heads up when liberated bots have been fabricated.
 
-[[Image]]../part_art/Gravity Neutralizer.png|Gravity Neutralizer, a mid-tier prototype Mass Support Device variant[[/Image]]
-[[Heading]][[Mass Support Devices]][[/Heading]]
-Mass support is one of the biggest weaknesses of flight units, so anything to help patch that low support number up is welcome. The lower rating mass support utilities are not especially slot efficient, but the prototypes like the [[Gravity Neutralizer]] and above can be worthwhile. The top normally obtainable part, the [[Adv. Quantum Shading Machine]], is a pricy 15 energy per turn, but at 25 mass support, it's worth about 3 endgame flight units of support in a single slot. Use powerful engines like the [[Imp. Fusion Compressor]] in order to offset the energy cost of the support.
+[[Heading:3]][[GameText]]Trojan(Prioritize)[[/GameText]][[/Heading]]
+This hack's effect of cutting fabrication time in half is a great way to avoid hanging around for extra exterminations or patrols to wander by. A word of caution for this hack, don't get too greedy when trying to pull this off. Prioritize has a low 30% base success rate. An early failed hack into a trace can easily lock you out from pulling off the rest of the fab unless you have an Authchip. You can put this hack on after using an Authchip to start the fab, but not for an unauthorized hack. For unauthorized hacks, I would recommend at least loading the target part before attempting to Prioritize. Worst case, you should always have at least 1 chance at succeeding at starting the fabrication with careful trace progress awareness.
+[[/Expandable]]
 
-[[Image]]../part_art/Power Amplifier.png|Power Amplifier, the basic tier type of Power Amplifier[[/Image]]
-[[Heading]][[Power Amplifiers]][[/Heading]]
-Power Amplifiers are a mass efficient way of increasing power output while avoiding the need to evolve another power slot. These are best used with very high energy generation power like the [[Imp. Fusion Compressor]] or as a stopgap measure to delay evolving another power slot. As an example, the basic tier [[Power Amplifier]] provides 2 energy at 1 mass off of one [[Micro Power]]. Not especially powerful, but it can be enough to support a little more energy spend at a very low mass cost compared to another engine, which would take at least 3 for 5 energy with a [[Lgt. Ion Engine]].
+[[Heading]][[Garrison Access|Garrison Accesses]][[/Heading]]
+[[Image]]../game_sprites/Garrison.png|A Garrison Access machine[[/Image]]
+Garrison Accesses are a pretty basic machine. Enemies come out, Cogmind can go in, but usually the most important thing is to seal them. While the rare [[RIF]] or [[Encrypted Comm Array]] flight build may want to head into Garrisons, most builds are best off by taking the advantage of the additional 75-turn delay between [[Extermination Squad|Extermination]] dispatches when a Garrison is sealed. In fact, even if you can't get a seal off, if you have a powerful enough weapon that can smash the Garrison, it is often worth doing so, even though you will get an [[Alert]] bonus and 2 [[Assault Squad|Assaults]] dispatched to that location. Just make sure you don't get spotted by the [[C-30 ARC|ARCs]] as you're running away from the Garrison.
 
-[[Image]]../part_art/Imp. Light Armor Plating.png|Imp. Light Armor Plating, a low tier light armor variant[[/Image]]
+[[Heading:2]]Spoiler Hacks|Spoiler Hacks Garrison[[/Heading]]
+[[Expandable]]
+Show/Hide hacks|
+Thoughts about select Force/Trojan hacks:
 
-[[Heading]][[Shieldings]][[/Heading]]
-The most important shieldings for flight are [[Propulsion Shieldings]] and [[Utility Shieldings]]. While [[Power Shieldings]] and [[Weapon Shieldings]] can be used to protect unique or low integrity parts, they are rarely worth the extra slot. While not strictly necessary, standard armor helps to reduce coverage of the parts that are being protected by shieldings and therefore keep the shieldings intact longer. One important note is that the "basic" rating 1 versions of the shieldings are not worth the cost of the slot for a paltry 33% damage reduction which makes the parts roughly 50% more durable. On the other hand, Imp. versions at 66% (3x more durable) or Exp. versions at 90% (10x more durable!) make a much more significant contribution to durability.
+[[Heading:3]][[GameText]]Force(Eject) / Trojan(Restock)[[/GameText]][[/Heading]]
+These 2 hacks deal with getting [[Relay Couplers]] from the Garrison directly or via [[Coupling Squad]] and are useless for non-RIF runs. Both hacks can be used in conjunction to truly maximize the number of Relay Couplers obtained from a single Garrison, though this is usually overkill. Eject does raise some alert and trigger a squad, though it has a slightly higher success rate and doesn't require either fighting a [[Programmer]] or waiting around for the restock to occur.
 
-[[Image]]../part_art/Imp. Propulsion Shielding.png|[[Imp. Propulsion Shielding]], a mid-tier Propulsion Shielding variant[[/Image]]
-[[Heading:2]]Propulsion Shieldings[[/Heading]]
-These shieldings have a lot of value at the extremes of low integrity flight units like [[Biomechanical Wings]] or high coverage flight units like the [[Flying Fortress v7]]. The Flying Fortress will chew through them quite quickly, so consider fabbing or repairing them on a regular basis. On the other hand, a single propulsion shielding can keep a stack of Biomechanical Wings going for ages. Of course, they are still reasonable for any kind of middle ground scenario as well.
+[[Heading:3]][[GameText]]Force(Jam)[[/GameText]][[/Heading]]
+While jamming is significantly worse than sealing the Garrison, the base success chance of 80% vs 30% is quite significant. For flight, the extra assault and bonus 150 alert is not such a big deal. If you don't have a solid hack stack, consider pulling this hack out instead of trying for a low success seal and dealing with some slightly annoying consequences.
 
-[[Image]]../part_art/Imp. Utility Shielding.png|[[Imp. Utility Shielding]], a mid-tier Utility Shielding variant[[/Image]]
-[[Heading:2]]Utility Shieldings[[/Heading]]
-These shieldings are the most useful of the bunch. Flight has a tendency to load up on powerful but fragile utilities of all kinds. Everybody knows the pain of having a 1/500 utility being sniped off, but these shieldings, especially [[Exp. Utility Shielding]], take that risk away. It's still worth swapping high coverage utilities like sensors off during combat in order to reduce the amount of damage the shieldings need to take.
+[[Heading:3]][[GameText]]Trojan(Broadcast) / Trojan(Decoy) / Trojan(Intercept) / Trojan(Redirect) / Trojan(Watchers)[[/GameText]][[/Heading]]
+This section may seem like a random assortment of hacks but they all share one common attribute: Not only do they stop taking effect after a Garrison is sealed, but they are more importantly not very valuable hacks. The help they provide is limited or overly niche compared to the alternative of reduced extermination frequency. It may seem like I'm driving this point a bit too hard, but I can't overstate how much pain and suffering extermination squads cause to me, so anything I can do to cut them down is a high priority.
 
-[[Image]]../part_art/Med. Storage Unit.png|Med. Storage Unit, a mid-tier storage unit that fits on most midgame flight builds[[/Image]]
+[[Heading:3]][[GameText]]Trojan(Reprogram)[[/GameText]][[/Heading]]
+Reprogramming a Garrison takes control of the next dispatched squad, with the cost of a locked Garrison and an investigation. This hack is occasionally useful but requires a bit of forethought to get the best value out of. Reprogramming the average dispatched squad is somewhat useful, though locking a Garrison and dispatching a squad to its location can be a high price to pay. This hack is best performed in a remote location before entering a new map, especially a [[Caves]] map, where you can avoid the investigation sent to the Garrison. Some of my favorite bots to steal with this hack are extermination squads, since Programmers are always great allies, and [[Cutter]] squads, since you can use their flight units when they die.
+[[/Expandable]]
 
-[[Heading]]Standard [[Armor]][[/Heading]]
-Boring, yet practical. Flight builds should typically wear at least one slot of armor, or at least have one in inventory to swap over some other fragile utility while being shot at. Light armors are preferred early on, particularly the [[Imp. Light Armor Plating]], but the extra coverage of a medium armor in a single slot is always appreciated if the mass support is available. Armor's overflow-absorption properties can be run-saving when running past a [[Heavy]], where otherwise a single unlucky hit can overflow and shred through multiple low integrity but essential parts.
+[[Heading]][[Recycling Unit|Recycling Units]][[/Heading]]
+[[Image]]../game_sprites/Recycling Unit.png|A Recycling Unit[[/Image]]
+Recycling Units are one of the lesser interesting and useful interactive machines. Their intended purposes of recycling parts off the floor into matter is not so important for a any build really, but especially flight builds. While recycling parts for Matter can be useful for the rare pacifist run, [[Recycler|Recyclers]] have tons of matter and are easily killed with any melee weapon. The most useful hack to perform on Recycling Units is [[GameText]]Retrieve(Components)[[/GameText]]. Fresh Recycling Units can contain a few out of depth damaged parts when entering the map. This can be a good way to get higher rated power sources or flight units. While the parts are not consistently useful, it doesn't hurt to try.
 
-[[Heading]][[Stasis Canceller]][[/Heading]]
-The Stasis Canceller completely negates [[Stasis Trap|Stasis Traps]], one of the biggest pain points to flight builds. Getting stuck in one of these while being shot by a nearby patrol can easily ruin a build. Swapping a Canceller on is the easiest way to escape a bad situation like this. They are not worth actively keeping attached unless you know there is a Stasis Trap nearby. However, it may be worth keeping attached preemptively when running through a [[Garrison]] as they are very likely to have Stasis Traps strewn throughout.
+[[Heading:2]]Spoiler Hacks|Spoiler Hacks Recycling Unit[[/Heading]]
+[[Expandable]]
+Show/Hide hacks|
+Thoughts about select Force/Trojan hacks:
 
-[[Heading]][[Storage Unit|Storage Units]][[/Heading]]
-Inventory is an essential part of any build, but it may be surprising to learn that flight doesn't need any dedicated storage units at all! A well-off flight build can avoid trouble and go without burning through backups. The builtin 5 storage is enough to carry a few essential backups and some utility swaps. Over the course of the run, upgrading to a reasonably sized storage unit becomes easier thanks to increasing flight unit support and number of total slots.
+[[Heading:3]][[GameText]]Force(Fedlink) / Force(Scraphulk) / Force(Scrapoids)[[/GameText]][[/Heading]]
+This trio of hacks is exclusive to an [[United Federation of Derelicts]]-aligned Cogmind. Flight is easily the best propulsion type to install Fedlinks on Recycling Units to help [[Optimus]] in his plan. Investigation squads are pretty easy to avoid on flight, even when summoning a large number of them each floor. If helping Optimus out [[Redacted]]and starting the [[Protoforge#W9 Defending 0bPrime/UFD Assault|UFD Assault on Protoforge]][[/Redacted]], you should minimize the number of [[Scrapoid|Scrapoids]] and [[Scraphulk|Scraphulks]] you summon, as each will reduce the 0bPrime resources. Since all these hacks are force hacks, they will all dispatch an investigation squad to your location, so try to scout the area out ahead of time and plan an escape route to go unscathed. Summoning a batch of Scrapoids doesn't help much if they all die to the incoming squad. Also see [[Strategy/aoemica's Flight Guide/Alignments#United Federation of Derelicts (UFD)|this page]] for UFD tips.
 
-[[Table]]
-Storage Unit|Analysis||
-[[CellStyle:Neutral]]
-[[Sml. Storage Unit]]|5 mass can be easily fit in early [[Factory]]. However, the low inventory increase and mass make it a low value pick. Trading 1 active utility slot gives +3 inventory slots to a total of 8, but practically speaking, it's only really +2 slots because a more useful part could have been used instead of the storage unit.||
-[[CellStyle:Good]][[Med. Storage Unit]]|
-10 mass can be reasonably fit in early-mid Factory. 10 is a good-sized inventory that can fit both essential backups and potentially useful/greed items for later. Can stay on Medium Storage throughout the run or upgrade later.||
-[[CellStyle:Good]][[Lrg. Storage Unit]]|20 mass is a little more difficult to fit until [[Research]] depths. 15 inventory gives a ton of room for hauling all sorts of goodies. [[Mass Support Devices]] can help achieve the required level of mass support.||
-[[CellStyle:Neutral]][[Hcp. Storage Unit]]|40 mass is not a reasonably-obtainable amount of free mass support for most flight builds. Hcp. Storage Units requires an excessive number of flight units or a powerful prototype Mass Support Device like the [[Quantum Shading Machine]]. 20 inventory is far more than most builds need, but can be useful when preparing for an extended [[Wintypes|Wintype]].||
-[[CellStyle:Good]][[Lightpack 2.0]]|
-A very funny storage unit due to its side effect of eating parts, but fairly well suited for a flight build. Make sure to take plenty of extra backups with this storage unit, since there's a good chance they might all be needed.||
-[[CellStyle:Bad]][[Humpback]]|Good luck!
-[[/Table]]
+[[Heading:3]][[GameText]]Trojan(Mask)[[/GameText]][[/Heading]]
+Mask generates a small safe area of floor where no Recyclers will steal your loot. For a flight build, it is easy to stash parts here, go do things on other parts of the map, then return for your intact floor-stockpiled inventory. This strategy is fairly niche but can be especially useful for certain types of builds. For example, builds that want to gather a lot of Authchips to fabricate allies across the map may want to store allies and parts here for later. A similar strategy is to gather Relay Couplers for RIF. Another good use for this is the "be your own drone" strategy, where a combat build is temporarily stashed in a mask area to become a flight build to explore the floor and bring good combat parts back.
+Another slightly different use for this strategy is to use a mask when hunting [[Cargo Convoy|Cargo Convoys]]. If the [[A-27 Freighter]] dies within the mask range, the loot will be safe to pick up later. This can be very valuable if the escorts are still wandering around in the area, giving Recyclers time to pick up your loot in the meantime.
 
-[[Heading]][[Trap Extractors]][[/Heading]]
-Trap Extractors are a bit niche but can be quite valuable in certain extended [[Wintypes]]. There is also no shortage of random troublesome squads to use traps against. Flight's speed makes it easy to plant traps without being spotted or lure hostiles into already placed traps near explosive machines.`},{Name:"Strategy/aoemica's Flight Guide/Good Weapons",Content:`Even though flight builds can get away from most encounters without resorting to combat, it doesn't mean that weapons aren't important. Eliminating fast moving hostiles like [[Cutter|Cutters]], [[Swarmer|Swarmers]], or [[Programmer|Programmers]] might be a better option than trying to escape and getting backed into a corner. Additionally, it's often worth just clearing out an annoyingly positioned squad guarding a bottleneck in the map instead of running by and getting chased and shot a bunch of times. Some flight builds even specialize in combat exclusively instead of trying to stay stealthy.
+[[Heading:3]][[GameText]]Trojan(Reject)[[/GameText]][[/Heading]]
+Rejecting parts is a similar, but not quite equivalent effect to Mask. Its main advantage over Mask is when killing Cargo Convoys. It may be more desirable for Recyclers to steal the dropped parts and deliver them to a nearby Recycling Unit room, that way you don't have to try to loot through a busy hallway with lots of squad passing by. Other than that, I don't find that there is much floor loot that I want to save from Recyclers.
+[[/Expandable]]
+
+[[Heading]][[Repair Station|Repair Stations]][[/Heading]]
+[[Image]]../game_sprites/Repair Station.png|A Repair Station machine[[/Image]]
+Repair Stations are extremely useful machines that can keep your best parts topped up on integrity throughout the run. Simply toss a part in, start the repair, wait a few turns, and you receive your freshly repaired part. Since it can take some time to do this, try to explore the surrounding area while the repair is going off so you don't waste the whole time that the machine is running. I most often find myself repairing armor, power, and flight units. Armor is an especially good repair target since it can't break if a repair hack fails, unlike most other parts.
+A secondary function of the Repair Station is refitting Cogmind with [[Backup Parts]]. Most of the backup parts are not good, but [[Backup Power VII]] that is available from a level 3 machine is one of the best flight engines in the game, notable for its high energy generation for its low mass. [[Backup Power III]] is usable in a pinch as well, though it is not quite so effective. All other part types I tend to drop on the floor or avoid refitting in the first place.
+
+[[Heading:2]]Spoiler Hacks[[/Heading]]
+[[Expandable]]
+Show/Hide hacks|
+Thoughts about select Force/Trojan hacks:
+
+[[Heading:3]]Force(Patch)[[/Heading]]
+Patch is an interesting hack that repairs a few parts below 50% integrity instantly, but only up to a maximum of 50%. Most of the time, I would recommend trying for full integrity repairs on a single part. Flight doesn't have the kind of high integrity parts like multislot propulsion or armor that benefits the most from this hack. However, sometimes a patch is all you can afford as you are desperately fleeing from some pursuers. In that case, any repair is better than nothing, though try to make sure you won't run into the freshly summoned [[Investigation Squad]] afterwards. Some of the better flight targets for patch include [[Flight Arrays]] and armor, especially high rating armor like [[Centrium Light Armor Plating]].
+[[/Expandable]]
+
+[[Heading]][[Scanalyzer|Scanalyzers]]|A Scanalyzer machine[[/Heading]]
+[[Image]]../game_sprites/Scanalyzer.png|A Scanalyzer machine[[/Image]]
+Scanalyzers are often overlooked machines that give you the ability to identify unknown parts and obtain schematics. Scanalyzers are difficult to operate thanks to their tendency to require multiple scans of a single item or even break the item in the process of scanning. Hackware helps to succeed at the hacks in the first place as well as repair broken parts, although [[Recalibrators]] will get the job done just as well as a Repair Station.
+I mostly use Scanalyzers for their part identifying feature. Knowing whether a [[Prototype Part]] is faulty or not is nice to avoid negative side effects. However, getting the schematic of good parts can also be quite valuable, and is much easier to pull off than indirect high rating schematic hacking. This is especially true of out of depth parts that are obtained from various sources like [[Branch|Branches]], [[Wastes]], or [[Cargo Convoy|Cargo Convoys]].
+
+[[Heading:2]]Spoiler Hacks|Spoiler Hacks Scanalyzers[[/Heading]]
+[[Expandable]]
+Show/Hide Hacks|
+[[Heading:3]][[GameText]]Force(Extract)[[/GameText]][[/Heading]]
+Extract is a rather underwhelming hack that generally fails to reward you with good schematics. Occasionally, you will get useful parts, maybe even prototypes. However, the average pull from an extract is a low number of below-average part schematics that makes you wonder why you bothered in the first place. Despite this, the penalty of an investigation squad is not a big deal most of the time. As long as you weren't planning on using the machine for anything else, it still might be worth the gamble once in a while.
+[[/Expandable]]
+
+[[Heading]][[Terminal|Terminals]][[/Heading]]
+[[Image]]../game_sprites/Terminal.png|A Terminal machine[[/Image]]
+While most other machines have one or two purposes, Terminals are the true hacker's playground with dozens of different types of hacks available. For new players, it can be easy to become overwhelmed with options. However, not all hacks are created equal. For example, bot analyses are helpful, but finding an exit is much more important of an issue to worry about first. Generally, try to focus on hacks that will help you right now over speculative hacks that might help you later. The best way to learn and get a feel for hacking style is by trying out hacks and seeing how useful they feel.
+Terminal hacks typically fall under a few general categories:
+
+[[Heading:2]]Map Intel Hacks[[/Heading]]
+These types of hacks give you unchanging information about the current map. The earlier into the level you can perform these types of hacks, the better you can take advantage of the intel.
+
+[[Expandable]]Show/Hide Hacks|
+[[Heading:3]][[GameText]]Access(Branch) / Access(Main)[[/GameText]][[/Heading]]
+These two hacks are among the best and most important in the game. Locating exits should be a priority in each new map you enter. There's nothing worse than blindly scrambling around the map, desperately hoping you'll find an exit while you are fleeing from multiple squads. Flight tends to have an easier time of finding exits naturally than other propulsion types. Still, I still consider these hacks crucial, especially in [[Research]] and [[Access]], both of which often have massive and sprawling maps.
+
+[[Heading:3]][[GameText]]Access(Emergency)[[/GameText]][[/Heading]]
+A significantly less useful hack than the 2 previous Access hacks. Revealing nearby emergency doors is nice, but there are other methods of doing this. Allied [[Operator|Operators]] and a [[Structural Scanner]] both reveal emergency doors without costing you a hack. [[GameText]]Layout(Zone)[[/GameText]] can also reveal some emergency doors since you can see the empty spaces of the corridor, though it won't reveal 1 tile doors.
+[[/Expandable]]
+
+[[Heading:2]]Database Hacks[[/Heading]]
+These types of hacks provide Cogmind with permanent analysis or schematic information about a target. While direct hacks can always be performed, after succeeding at one of these hacks, there will be a 25% chance that future indirect database hacks trigger a database lockout. These hacks are depth and Terminal level restricted, so the better higher-rating parts require higher level and lategame Terminals.
+
+[[Expandable]]
+
+[[Heading:3]][[GameText]]Analysis([Bot Name])[[/GameText]][[/Heading]]
+This series of hacks obtains a [[Robot Analysis]] for a particular type of bot, providing a slight accuracy and damage bonus against and a slight accuracy penalty for the bot. The effect is not very significant so I will rarely go out of my way to pull an indirect analysis. However, it doesn't hurt to grab as a direct hack against common nuisances like [[Operator|Operators]], [[Programmer|Programmers]], and [[Watcher|Watchers]] if it shows up. Since each new tier of bot (like [[P-70 Sage]] vs. [[P-80 Master]]) requires a new analysis, it is difficult to keep up throughout the whole run. That is one of the other reasons why I pick only a few specific analysis targets.
+
+[[Heading:3]][[GameText]]Schematic([Part Name])[[/GameText]][[/Heading]]
+This series of hacks obtains a [[Schematic]] for a part that can be used at a [[Fabricator]]. Fabrication is a very powerful tool in Cogmind's disposal, but in order to use that power, schematics must be obtained. Hacking for schematics is by far the most reliable way to achieve desired results, but it is extraordinarily difficult to hack for high rating parts late in the game. These hacks are by far the most difficult hacks in the game, with highly negative base success rates popping up for highly rated parts. You will need to pull out all the stops in order to succeed at a 9* part.
+I tend to leave schematic hacking for late into a floor rather than earlier. By then, I can plan out which Terminals I need to hit based on my desired schematics, bringing [[Operator]] allies or attaching temporary additional hackware to have the best chance at success. Every little bit counts when trying to pull off such difficult hacks. Of course, strong prototype hackware is extra useful here, though it is hard to come by. Your best bet is to fill all free utility slots with any kind of hackware you can get your hands on.
+[[/Expandable]]
+
+[[Heading:2]][[Alert]] Hacks[[/Heading]]
+These hacks deal with checking and purging alert.
+
+[[Expandable]]Show/Hide Hacks|
+[[Heading:3]][[GameText]]Alert(Check)[[/GameText]][[/Heading]]
+A pretty low value hack for flight. Alert level is not a huge concern for most flight builds. Even if you are running high alert, it is not too difficult to avoid or run away from [[Assault Squad|assaults]]. A non-hack method of checking alert would be to use a [[Datajacks|Datajack]] on an [[Operator]] and use the [[GameText]]check_alert[[/GameText]] hack. Alternately, you can just wait and see if assaults are being dispatched to you. No assaults mean alert level is below level 2, which is all that really matters most of the time.
+
+[[Heading:3]][[GameText]]Alert(Purge)[[/GameText]][[/Heading]]
+Purging alert, on the other hand, is a little more useful than checking alert. If assaults are coming by then it's time to drop a few purges. Sometimes it's worth doing preemptively if you do something like smashing a few Garrisons or blowing up a large explosive machine array. Usually though, I don't bother with this hack until after I've already got the assault dispatch message.
+[[/Expandable]]`},{Name:"Strategy/aoemica's Flight Guide/Good Weapons",Content:`Even though flight builds can get away from most encounters without resorting to combat, it doesn't mean that weapons aren't important. Eliminating fast moving hostiles like [[Cutter|Cutters]], [[Swarmer|Swarmers]], or [[Programmer|Programmers]] might be a better option than trying to escape and getting backed into a corner. Additionally, it's often worth just clearing out an annoyingly positioned squad guarding a bottleneck in the map instead of running by and getting chased and shot a bunch of times. Some flight builds even specialize in combat exclusively instead of trying to stay stealthy.
 
 [[Heading]][[Ballistic Weapons]][[/Heading]]
 The longer-ranged and lower upkeep requirements of kinetic weaponry tend to be a good partner with flight. Guns, and especially cannons, can be used for kiting bots at maximum range with a [[Visual Processing Units|Visual Processing Unit]].
