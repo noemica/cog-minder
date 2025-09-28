@@ -911,8 +911,8 @@ function processExpandableTag(state: ParserState, result: RegExpExecArray) {
 
         index = result.index + result[0].length + split[0].length + 1;
     } else {
-        // Default to Show/Hide
-        summaryNode = "Show/Hide"
+        // Default to Show/hide if no summary is set
+        summaryNode = "Show/hide"
     }
 
     // Parse the details text
@@ -2112,7 +2112,7 @@ function processSpoilerExpandableTag(state: ParserState, result: RegExpExecArray
             node: (
                 <div className="wiki-expandable">
                     <details>
-                        <summary>{`Show/Hide ${redacted ? "redacted spoiler" : "spoiler"} content`}</summary>
+                        <summary>{`Show/hide ${redacted ? "redacted spoiler" : "spoiler"} content`}</summary>
                         <div>{details}</div>
                     </details>
                 </div>
