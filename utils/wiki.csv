@@ -916,6 +916,13 @@ Behemoths can be a desirable looting target for their weapons, cooling, treads, 
 Behemoths are often found in their own spot inside a wall as a [[Security Squad]]. In [[Caves]], they can be found in a small square open area.
 [[Gallery]]Behemoths.png|All Behemoth variants and colors|Behemoth Guarded Stockpile.png|A Behemoth guarding a stockpile of parts, sitting in a recognizable ""Behemoth nook""[[/Gallery]]
 
+[[Heading]]Line of Sight Reference[[/Heading]]
+[[Gallery]]Behemoth Facing Right.png|A Behemoth facing right|
+Behemoth Facing Down.png|A Behemoth facing down|
+Behemoth Facing Left.png|A Behemoth facing left|
+Behemoth Facing Up.png|A Behemoth facing up
+[[/Gallery]]
+
 [[Heading]][[CR-A16's Pointy Stick]]/[[CR-A16's Behemoth Slayer]][[/Heading]]
 [[Spoiler]]A Pointy Stick has a chance to transform into a Behemoth Slayer when used to attack a Behemoth. A Behemoth Slayer will instantly destroy any Behemoth and leave it in pieces.[[/Spoiler]]","","B-75 Beast,B-86 Titan,B-90 Cyclops,B-99 Colossus,Superbehemoth","","","","",""
 "Biomechanical Wings","Part","","","","","","","",""
@@ -8985,7 +8992,7 @@ The ECA is an added bonus to the Warlord alignment that is rather tricky to maxi
 
 [[Heading:2]]Extended Endgame Potential|Extended Endgame Potential Warlord[[/Heading]]
 [[RedactedExpandable]]As previously mentioned, the Command cave seals provide a great boon to flight builds. [[Warlord (Command)]] himself is an extremely powerful bot, capable of clearing the [[Command#Doom Corridor|Doom Corridor]] almost single-handedly or taking down [[MAIN.C]] as long as the [[A7]] poison hack is applied. Even if Warlord is shut down during phase 1, a full seal is capable of taking down MAIN.C without much assistance from Cogmind. Decent ECA support makes this even easier to do. [[Troll|Trolls]], [[Knight|Knights]], [[Hydra|Hydras]], and [[Marauder|Marauders]] are some of the better MAIN-C-killing bots to get from the seal. If you are counting on the assistance, make sure to have a seal safely planned to open after taking care of the Doom Corridor, since the [[M Guard]] launchers are sure to take out most of the weaker bots by itself.[[/RedactedExpandable]]
-[[/Spoiler]]
+[[/SpoilerExpandable]]
 
 [[Heading]]Overview[[/Heading]]
 [[Table]]
@@ -9007,7 +9014,7 @@ Base refers to not aligning with Optimus and not helping in his mission|
 Optimus refers to aligning with Optimus and helping in his mission|
 Base refers to either not getting ECA or getting it before transitioning to flight|
 ECA refers to continuing to try to earn ECA bonus on flight
-[[/List]][[/SpoilerExpandable]]","","","","","","",""
+[[/List]][[/Spoiler]]","","","","","","",""
 "Strategy/aoemica's Flight Guide/Good Power","Other","Power is never exciting, but it is a necessity to all builds. The majority of energy on my flight builds typically ends up powering flight units and [[Mass Support Devices]]. In order to save mass for other essential parts, it's better to use lighter engines. It doesn't do much good to dedicate an engine that's so heavy that flight units take up all the energy needed to support it in the first place. As such, one of the most important stats for flight builds is the amount of energy that is generated compared to the mass of the engine, or the energy:mass ratio. Heat generation is also an important factor secondary factor, although it is usually easier to solve a heat problem than a support one.
 
 [[Image]]../part_art/Backup Power VII.png|Backup Power VII, the best Backup Power[[/Image]]
@@ -9490,7 +9497,7 @@ In addition to fabricating parts, [[GameText]]Network(Status)[[/GameText]] is a 
 
 [[Heading:2]]Spoiler Hacks|Spoiler Hacks Fabricator[[/Heading]]
 [[Expandable]]
-Show/Hide hacks|
+Show/hide hacks|
 Thoughts about select Force/Trojan hacks:
 
 [[Heading:3]][[GameText]]Force(Recompile)[[/GameText]][[/Heading]]
@@ -9515,7 +9522,7 @@ Garrison Accesses are a pretty basic machine. Enemies come out, Cogmind can go i
 
 [[Heading:2]]Spoiler Hacks|Spoiler Hacks Garrison[[/Heading]]
 [[Expandable]]
-Show/Hide hacks|
+Show/hide hacks|
 Thoughts about select Force/Trojan hacks:
 
 [[Heading:3]][[GameText]]Force(Eject) / Trojan(Restock)[[/GameText]][[/Heading]]
@@ -9537,7 +9544,7 @@ Recycling Units are one of the lesser interesting and useful interactive machine
 
 [[Heading:2]]Spoiler Hacks|Spoiler Hacks Recycling Unit[[/Heading]]
 [[Expandable]]
-Show/Hide hacks|
+Show/hide hacks|
 Thoughts about select Force/Trojan hacks:
 
 [[Heading:3]][[GameText]]Force(Fedlink) / Force(Scraphulk) / Force(Scrapoids)[[/GameText]][[/Heading]]
@@ -9558,7 +9565,7 @@ A secondary function of the Repair Station is refitting Cogmind with [[Backup Pa
 
 [[Heading:2]]Spoiler Hacks[[/Heading]]
 [[Expandable]]
-Show/Hide hacks|
+Show/hide hacks|
 Thoughts about select Force/Trojan hacks:
 
 [[Heading:3]]Force(Patch)[[/Heading]]
@@ -9572,7 +9579,7 @@ I mostly use Scanalyzers for their part identifying feature. Knowing whether a [
 
 [[Heading:2]]Spoiler Hacks|Spoiler Hacks Scanalyzers[[/Heading]]
 [[Expandable]]
-Show/Hide Hacks|
+Show/hide hacks|
 [[Heading:3]][[GameText]]Force(Extract)[[/GameText]][[/Heading]]
 Extract is a rather underwhelming hack that generally fails to reward you with good schematics. Occasionally, you will get useful parts, maybe even prototypes. However, the average pull from an extract is a low number of below-average part schematics that makes you wonder why you bothered in the first place. Despite this, the penalty of an investigation squad is not a big deal most of the time. As long as you weren't planning on using the machine for anything else, it still might be worth the gamble once in a while.
 [[/Expandable]]
@@ -9585,7 +9592,7 @@ Terminal hacks typically fall under a few general categories:
 [[Heading:2]]Map Intel Hacks[[/Heading]]
 These types of hacks give you unchanging information about the current map. The earlier into the level you can perform these types of hacks, the better you can take advantage of the intel.
 
-[[Expandable]]Show/Hide Hacks|
+[[Expandable]]Show/hide hacks|
 [[Heading:3]][[GameText]]Access(Branch) / Access(Main)[[/GameText]][[/Heading]]
 These two hacks are among the best and most important in the game. Locating exits should be a priority in each new map you enter. There's nothing worse than blindly scrambling around the map, desperately hoping you'll find an exit while you are fleeing from multiple squads. Flight tends to have an easier time of finding exits naturally than other propulsion types. Still, I still consider these hacks crucial, especially in [[Research]] and [[Access]], both of which often have massive and sprawling maps.
 
@@ -9597,7 +9604,7 @@ A significantly less useful hack than the 2 previous Access hacks. Revealing nea
 These types of hacks provide Cogmind with permanent analysis or schematic information about a target. While direct hacks can always be performed, after succeeding at one of these hacks, there will be a 25% chance that future indirect database hacks trigger a database lockout. These hacks are depth and Terminal level restricted, so the better higher-rating parts require higher level and lategame Terminals.
 
 [[Expandable]]
-
+Show/hide hacks|
 [[Heading:3]][[GameText]]Analysis([Bot Name])[[/GameText]][[/Heading]]
 This series of hacks obtains a [[Robot Analysis]] for a particular type of bot, providing a slight accuracy and damage bonus against and a slight accuracy penalty for the bot. The effect is not very significant so I will rarely go out of my way to pull an indirect analysis. However, it doesn't hurt to grab as a direct hack against common nuisances like [[Operator|Operators]], [[Programmer|Programmers]], and [[Watcher|Watchers]] if it shows up. Since each new tier of bot (like [[P-70 Sage]] vs. [[P-80 Master]]) requires a new analysis, it is difficult to keep up throughout the whole run. That is one of the other reasons why I pick only a few specific analysis targets.
 
@@ -9609,7 +9616,7 @@ I tend to leave schematic hacking for late into a floor rather than earlier. By 
 [[Heading:2]][[Alert]] Hacks[[/Heading]]
 These hacks deal with checking and purging alert.
 
-[[Expandable]]Show/Hide Hacks|
+[[Expandable]]Show/hide hacks|
 [[Heading:3]][[GameText]]Alert(Check)[[/GameText]][[/Heading]]
 A pretty low value hack for flight. Alert level is not a huge concern for most flight builds. Even if you are running high alert, it is not too difficult to avoid or run away from [[Assault Squad|assaults]]. A non-hack method of checking alert would be to use a [[Datajacks|Datajack]] on an [[Operator]] and use the [[GameText]]check_alert[[/GameText]] hack. Alternately, you can just wait and see if assaults are being dispatched to you. No assaults mean alert level is below level 2, which is all that really matters most of the time.
 
