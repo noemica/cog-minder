@@ -53,7 +53,7 @@ export default function AboutPage() {
                 <a href="https://github.com/plhx/cogfont">Cog and Smallcaps font files</a>, and Kyzrati for making
                 Cogmind.
             </p>
-            <details>
+            <details className="other-credits">
                 <summary>Other website credits</summary>
                 <table className="credits-table">
                     <tbody>
