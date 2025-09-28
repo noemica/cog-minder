@@ -4,7 +4,11 @@ import { RouterObject, useLocation, useRouter } from "wouter";
 import { PageType, Spoiler, ThemeType, pageTypes } from "../../types/commonTypes";
 import { rootDirectory } from "../../utilities/common";
 import { ButtonLink } from "../Buttons/Button";
-import { useEditableSpoilers, useEditableTheme } from "../Effects/useLocalStorageValue";
+import {
+    useEditableSpoilers,
+    useEditableTheme,
+    useEditableUseWikiPartGroupSelectName,
+} from "../Effects/useLocalStorageValue";
 import { RefreshIcon } from "../Icons/Icons";
 import { LabeledSelect } from "../LabeledItem/LabeledItem";
 import ButtonPopover from "../Popover/ButtonPopover";
@@ -12,6 +16,11 @@ import TextTooltipButton from "../Popover/TextTooltipButton";
 import { SelectOptionType } from "../Selectpicker/Select";
 
 import "./PageHeader.less";
+
+const booleanOptions: SelectOptionType<boolean>[] = [
+    { value: false, label: "No" },
+    { value: true, label: "Yes" },
+];
 
 const spoilerOptions: SelectOptionType<Spoiler>[] = [
     { value: "None", label: "None", tooltip: "No spoilers: Factory or higher depth branch content is hidden." },
@@ -159,12 +168,16 @@ function PageButtons({ pageType }: { pageType: PageType }) {
     return <div className="navigation-buttons-container">{pageButtons}</div>;
 }
 
-function SettingsButton() {
+function SettingsButton({ pageType }: { pageType: PageType }) {
     const [spoilers, setSpoilers] = useEditableSpoilers();
     const spoilerSelected = spoilerOptions.find((o) => o.value === spoilers) || spoilerOptions[0];
 
     const [theme, setTheme] = useEditableTheme();
     const themeSelected = themeOptions.find((t) => t.value === theme) || themeOptions[0];
+
+    const [useUseWikiPartGroupSelectName, setUseWikiPartGroupSelectName] = useEditableUseWikiPartGroupSelectName();
+    const useWikiSelect = !useUseWikiPartGroupSelectName === false;
+    const useWikiSelectSelected = booleanOptions.find((v) => v.value === useWikiSelect) || booleanOptions[0];
 
     // const [prerelease, setPrerelease] = useEditablePrerelease();
     // const prereleaseSelected = prereleaseOptions.find((p) => p.value === prerelease) || prereleaseOptions[0];
@@ -202,6 +215,18 @@ function SettingsButton() {
                         setPrerelease(newValue!.value);
                     }}
                 /> */}
+                {pageType === "Wiki" && (
+                    <LabeledSelect
+                        label="Use part dropdown in Wiki part groups"
+                        tooltip="Whether to show a dropdown in Wiki part groups when there are a large number of parts (20). If set to false, all parts are visible, in the list of parts, but it may be a very long list."
+                        isSearchable={false}
+                        options={booleanOptions}
+                        value={useWikiSelectSelected}
+                        onChange={(newValue) => {
+                            setUseWikiPartGroupSelectName(newValue!.value);
+                        }}
+                    />
+                )}
             </div>
         </ButtonPopover>
     );
@@ -254,7 +279,7 @@ export default function PageHeader({ showIcon }: { showIcon: boolean }) {
                     </TextTooltipButton>
                 </div>
                 <div className="flex">
-                    <SettingsButton />
+                    <SettingsButton pageType={pageType} />
                     {showIcon && <RefreshIcon />}
                 </div>
             </div>

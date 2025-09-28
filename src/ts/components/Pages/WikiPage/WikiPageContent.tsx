@@ -7,6 +7,7 @@ import { WikiEntry } from "../../../types/wikiTypes";
 import { assertUnreachable, canShowSpoiler } from "../../../utilities/common";
 import Button from "../../Buttons/Button";
 import ExclusiveButtonGroup, { ExclusiveButtonDefinition } from "../../Buttons/ExclusiveButtonGroup";
+import { useUseWikiPartGroupSelectName } from "../../Effects/useLocalStorageValue";
 import BotDetails from "../../GameDetails/BotDetails";
 import ItemDetails from "../../GameDetails/ItemDetails";
 import LocationDetails from "../../GameDetails/LocationDetails";
@@ -37,17 +38,15 @@ function BotGroupContent({
     groupSelection: string;
     parsedNode: ReactNode;
     setGroupSelection: (selection: string) => void;
-    spoiler: Spoiler
+    spoiler: Spoiler;
 }) {
     const bots = useMemo(() => {
         // Filter out bots based on spoiler setting
         // However, also support viewing all bots past spoiler level if the user
         // opted past the spoiler block page
-        return entry.childEntries.filter(
-            (botEntry) => {
-                return canShowSpoiler(botEntry.spoiler, spoiler) || canShowSpoiler(botEntry.spoiler, entry.spoiler);
-            }
-        );
+        return entry.childEntries.filter((botEntry) => {
+            return canShowSpoiler(botEntry.spoiler, spoiler) || canShowSpoiler(botEntry.spoiler, entry.spoiler);
+        });
     }, [spoiler]);
 
     const botButtons = useMemo(() => {
@@ -106,6 +105,9 @@ function ItemGroupContent({
     setGroupSelection: (selection: string) => void;
     spoiler: Spoiler;
 }) {
+    const useWikiPartGroupSelectName = !(useUseWikiPartGroupSelectName() === false);
+    console.log(useWikiPartGroupSelectName);
+
     const items = useMemo(() => {
         // Filter out items based on spoiler setting
         // However, also support viewing all items past spoiler level if the user
@@ -136,7 +138,7 @@ function ItemGroupContent({
         ?.extraData as Item;
 
     const itemPicker =
-        entry.childEntries.length < 20 ? (
+        (entry.childEntries.length < 20 || !useWikiPartGroupSelectName) ? (
             <div className="wiki-infobox-button-group">
                 <ExclusiveButtonGroup
                     buttons={itemButtons}

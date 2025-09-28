@@ -13,6 +13,7 @@ const localStorageLastLocationName = "lastLocation";
 const localStoragePrereleasesName = "prerelease";
 const localStorageSpoilersName = "spoilers";
 const localStorageThemeName = "theme";
+const localStorageUseWikiPartGroupSelectName = "useWikiPartGroupSelect";
 const localStorageWikiEntriesName = "wikiEntries";
 
 type SetValue<T> = Dispatch<SetStateAction<T>>;
@@ -54,6 +55,14 @@ export function useEditablePrerelease() {
     return useEditableValue<boolean>(localStoragePrereleasesName, false);
 }
 
+export function useUseWikiPartGroupSelectName() {
+    return useValue<boolean>(localStorageUseWikiPartGroupSelectName, true);
+}
+
+export function useEditableUseWikiPartGroupSelectName() {
+    return useEditableValue<boolean>(localStorageUseWikiPartGroupSelectName, true);
+}
+
 export function useChartDisplayOptions(): [ChartDisplayOptions, SetValue<ChartDisplayOptions>] {
     const [chartDisplayOptions, setChartDisplayOptions] = useLocalStorage<ChartDisplayOptions>(
         localStorageCombatLogChartDisplayOptions,
@@ -77,7 +86,11 @@ export function useEditableWikiEntryEdits() {
 }
 
 function useValue<T>(key: string, defaultValue: T, validator?: (value: T) => boolean): T {
-    let value = useReadLocalStorage<T>(key) || defaultValue;
+    let value = useReadLocalStorage<T>(key);
+    if (value === undefined || value === null) {
+        value = defaultValue;
+    }
+
     if (validator && !validator(value)) {
         value = defaultValue;
     }
