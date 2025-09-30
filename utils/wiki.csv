@@ -9650,7 +9650,7 @@ A pretty low value hack for flight. Alert level is not a huge concern for most f
 [[Heading:3]][[GameText]]Alert(Purge)[[/GameText]][[/Heading]]
 Purging alert, on the other hand, is a little more useful than checking alert. If assaults are coming by then it's time to drop a few purges. Sometimes it's worth doing preemptively if you do something like smashing a few Garrisons or blowing up a large explosive machine array. Usually though, I don't bother with this hack until after I've already got the assault dispatch message.
 [[/Expandable]]","","","","","","",""
-"Striker","Bot","","","","","","","",""
+"Striker","Bot","Bot","","","","","","",""
 "Structural Scanner","Part","","","","","","","",""
 "Style Achievements","Other","[[Comment]]                       ---NOTE FOR EDITORS---
 Once Beta 16 releases, if you decide to update any of the Achievements pages, please consider whether it would be better to separate the new achievements from the old ones or not.
