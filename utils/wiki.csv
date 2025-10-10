@@ -6238,7 +6238,7 @@ Effect/Effect
 "Particle Reactor","Part","","","","","","","",""
 "Partition Strike Chip","Part","","","","","","","",""
 "Patrol Squad","Other","[[Image]]Patrol Squad.png|A patrol squad of Swarmers[[/Image]]
-Patrol squads are typically [[0b10]] aligned [[Squad|squads]] that patrol between points on the majority of 0b10-controlled maps, as well as [[Caves]]. They can be composed of a variety of bot types, all with slightly different patrolling behavior. Most patrol squads appear at the start of the map and will not appear over time, with the exception of [[Search Patrol|Search Patrols]]. Their presence is generally unrelated to [[Alert]]. Patrols can be Enumerated at [[Terminal|Terminals]]. Their frequency varies based on the type of map, but generally they are more common the higher up in the complex Cogmind goes.
+Patrol squads are typically [[0b10]] aligned [[Squad|squads]] that patrol between points on the majority of 0b10-controlled maps, as well as [[Caves]]. They can be composed of a variety of bot types, all with slightly different patrolling behavior. Most patrol squads appear at the start of the map and will not appear over time, with the exception of [[Search Patrol|Search Patrols]] and temporary patrols. Their presence is generally unrelated to [[Alert]]. Patrols can be Enumerated at [[Terminal|Terminals]]. Their frequency varies based on the type of map, but generally they are more common the higher up in the complex Cogmind goes.
 
 [[Heading]]Patrol Contents[[/Heading]]
 The following are the possible contents of patrol squads. At -9 and above, a [[C-30 ARC]] can also make up a single patrol squad. If it encounters a hostile, it will open up to reveal the contents of any other random patrol squad composition listed below:
@@ -6255,6 +6255,7 @@ Depth|[[Grunt]]|[[Hunter]]|[[Programmer]]|[[Swarmer]]||
 -2|1 B-74 Champion, L-61 Swordsman, or G-73 Enforcer squad leader and 3 G-73 Enforcer|2 [[H-88 Terminator]]|1-2 P-80 Master|4-5 S-43 Plague||
 -1|1 B-74 Champion, L-61 Swordsman, or G-73 Enforcer squad leader and 3-4 G-73 Enforcer|2 H-88 Terminator|1-2 P-80 Master|4-6 S-43 Plague
 [[/Table]]
+
 [[Heading:2]][[Armory]] Patrol Contents[[/Heading]]
 [[Spoiler]]Armory has additional patrol types that can appear:
 [[/Spoiler]]
@@ -6263,12 +6264,14 @@ Depth|Demolisher Squad|Duelist Squad|Specialist Squad||
 -4|1 [[D-63 Destroyer]] squad leader and 2 G-67 Veteran|3 L-61 Swordsman and 1 [[I-47 Archangel]]|2 [[X-72 Disruptor]], [[X-77 Beamer]], or [[X-82 Rainmaker]] and one [[E-15 Imp]]||
 -3|1 D-63 Destroyer squad leader and 2 G-67 Veteran|3 L-61 Swordsman and 1 I-47 Archangel|2 X-77 Beamer, X-82 Rainmaker, [[X-87 Electro]], and one E-15 Imp
 [[/Table]]
+
 [[Redacted]]
 [[Heading:2]][[Protoforge]] Patrol Contents[[/Heading]]
 Protoforge has additional patrol types that can appear:
 [[List]]4 [[Decapitator]]|
 4-5 [[Hotshot]]|
 4 [[Immortal]][[/List]]
+
 [[Heading:2]]Advanced Fortification Protocols[[/Heading]]
 When [[Superfortress]] is destroyed or the [[UFD]] assault is started against Protoforge, subsequent maps will have more patrols (50%) and stronger patrol makeups. The following new patrols are possible:
 [[List]]4-6 [[C-57 Dissector]]|
@@ -6307,12 +6310,22 @@ Map|Number of patrols||
 
 [[Heading]]Special patrol-summoning events[[/Heading]]
 There are a few special events that can trigger patrol dispatches when already on a level.
+
 [[Heading:2]][[Search Patrol|Search Patrols]][[/Heading]]
 Search Patrols are a special type of patrol that is related to Alert. These squads can be dispatched if Cogmind generates a lot of non-combat Alert. They consist of a single [[C-30 ARC]] that roam across the entire map instead of just between two points like most patrols.
-[[Spoiler]][[Heading:2]][[Lightning]] squads[[/Heading]]
+
+[[Spoiler]]
+[[Heading:2]][[Lightning]] squads[[/Heading]]
 [[Image]]Lightning Squad.png|A Lightning squad patrolling Quarantine[[/Image]]
 Lightning squads consist of 3 Lightnings and an [[I-47 Archangel]]. They can be summoned in one of two ways:
-[[List]]Destroying a Hub machine in [[Hub_04(d)]]: 3 Lightning patrols will be dispatched to the map out of exits and Garrisons. They will roam in the general area of each remaining Hub.|Opening the [[Sigix Containment Pod]] chamber: A single Lighting patrol will be dispatched to the map if Cogmind breaches the Sigix chamber. It will patrol around the location of the Sigix room.[[/List]][[/Spoiler]]","","","","","","",""
+[[List]]
+Destroying a Hub machine in [[Hub_04(d)]]: 3 Lightning patrols will be dispatched to the map out of exits and Garrisons. They will roam in the general area of each remaining Hub.|
+Opening the [[Sigix Containment Pod]] chamber: A single Lighting patrol will be dispatched to the map if Cogmind breaches the Sigix chamber. It will patrol around the location of the Sigix room.
+[[/List]]
+[[/Spoiler]]
+
+[[Heading]]Temporary Patrols[[/Heading]]
+Temporary patrols are a special type of patrol that are exactly what they sound like. They are dispatched to patrol the map for several hundred turns, then exit at any 0b10-controlled exit. There is no specific trigger or alert that indicates when these patrols have been dispatched.","","","","","","",""
 "Perfect Tracking","Other","Bots with perfect tracking will know where [[Cogmind]] is at all times. Most bots with this will lose it upon sighting Cogmind.","","","","","","",""
 "Perforator","Part","","","","","","","",""
 "Personal Teleporter v0.10","Part","","","","","","","",""
@@ -8185,7 +8198,20 @@ Specialists may appear in the following squads:
 Typically, one bot per squad is designated as the [[Squad Leader]]. Squad leaders are the only bots that have the AI or order type active. All other bots are set to follow the squad leader. If the squad leader is destroyed, the other bots in the squad will either end up wandering around randomly, or leaving the map if their squad leader was already leaving the map.
 
 [[Heading]]Types of 0b10 Squads[[/Heading]]
-[[List]][[Assault Squad]] - Dispatched by 0b10 to target Cogmind directly. Unlike most squads that walk to their target, all Assault contents are contained with a faster wheeled [[C-30 ARC]]. Only get dispatched if Cogmind has [[Alert]] level 2 or higher (400 influence).|[[Coupling Squad]] - Dispatched periodically by 0b10 on any floors where [[Garrison Access|Garrisons]] are available. Consist of a single [[Programmer]] carrying multiple [[Relay Couplers]] to restock a Garrison.|[[Demolisher Squad]] - Dispatched by 0b10 to eliminate large groups of hostiles, particularly [[Assembled]].|[[Extermination Squad]] - Dispatched periodically by 0b10 in [[Factory]] and beyond. They consist entirely of Programmers and will always head directly to Cogmind.|[[Garrison Squad]] - Dispatched by 0b10 Garrisons when combat occurs near that Garrison. Bots will roam around the area where the attack occurred, then return after 200-300 turns.|[[Spoiler]][[Intercept Squad]] - Dispatched by 0b10 directly to Cogmind only in a few special circumstances. Intercept squads consist of powerful [[Prototype Robot|Prototype]] bots designed to quickly neutralize Cogmind.[[/Spoiler]]|[[Investigation Squad]] - Dispatched by 0b10 to investigate an area of interest for 300-400 turns, then they exit the level.|[[Patrol Squad]] - Patrol between two points of interest at varying speeds. Unlike most other squads, patrols only appear at the beginning of a map, and more will not be replenished.|[[Reinforcement Squad]] - Dispatched by 0b10 to permanently reinforce an area of interest. Similar to investigations but do not leave their post and will patrol around the area they are summoned to forever.|[[Security Squad]] - Stand guard at intersections, on top of exits, and in rooms with part stockpiles or Machines. Will typically not move unless they are alerted of a hostile.|[[Surveillance Squad]] - Patrol between two points of interest similar to a Patrol squad, but made up of a single [[Watcher]] instead of combat bots.|[[Transport Squad]] - [[Hauler]] guarded by 0-2 [[Grunt|Grunts]] that transport parts from place to place. Empty Haulers may pick up parts fabricated at a [[Fabricator]].[[/List]]","","","","","","","Assault Squad,Coupling Squad,Demolisher Squad,Extermination Squad,Garrison Squad,Intercept Squad,Investigation Squad,Patrol Squad,Reinforcement Squad,Security Squad,Surveillance Squad,Transport Squad"
+[[List]]
+[[Assault Squad]] - Dispatched by 0b10 to target Cogmind directly. Unlike most squads that walk to their target, all Assault contents are contained with a faster wheeled [[C-30 ARC]]. Only get dispatched if Cogmind has [[Alert]] level 2 or higher (400 influence).|
+[[Coupling Squad]] - Dispatched periodically by 0b10 on any floors where [[Garrison Access|Garrisons]] are available. Consist of a single [[Programmer]] carrying multiple [[Relay Couplers]] to restock a Garrison.|
+[[Demolisher Squad]] - Dispatched by 0b10 to eliminate large groups of hostiles, particularly [[Assembled]].|
+[[Extermination Squad]] - Dispatched periodically by 0b10 in [[Factory]] and beyond. They consist entirely of Programmers and will always head directly to Cogmind.|
+[[Garrison Squad]] - Dispatched by 0b10 Garrisons when combat occurs near that Garrison. Bots will roam around the area where the attack occurred, then return after 200-300 turns.|
+[[Spoiler]][[Intercept Squad]] - Dispatched by 0b10 directly to Cogmind only in a few special circumstances. Intercept squads consist of powerful [[Prototype Robot|Prototype]] bots designed to quickly neutralize Cogmind.[[/Spoiler]]|
+[[Investigation Squad]] - Dispatched by 0b10 to investigate an area of interest for 300-400 turns, then they exit the level.|
+[[Patrol Squad]] - Patrol between two points of interest at varying speeds. Most patrols appear at the beginning of a map and will not be replenished. However there are also temporary patrols that are occasionally dispatched to roam around the map for a while before returning through an 0b10-controlled exit.|
+[[Reinforcement Squad]] - Dispatched by 0b10 to permanently reinforce an area of interest. Similar to investigations but do not leave their post and will patrol around the area they are summoned to forever.|
+[[Security Squad]] - Stand guard at intersections, on top of exits, and in rooms with part stockpiles or Machines. Will typically not move unless they are alerted of a hostile.|
+[[Surveillance Squad]] - Patrol between two points of interest similar to a Patrol squad, but made up of a single [[Watcher]] instead of combat bots.|
+[[Transport Squad]] - [[Hauler]] guarded by 0-2 [[Grunt|Grunts]] that transport parts from place to place. Empty Haulers may pick up parts fabricated at a [[Fabricator]].
+[[/List]]","","","","","","","Assault Squad,Coupling Squad,Demolisher Squad,Extermination Squad,Garrison Squad,Intercept Squad,Investigation Squad,Patrol Squad,Reinforcement Squad,Security Squad,Surveillance Squad,Transport Squad"
 "Squad Leader","Other","","","","","","","",""
 "Stasis Beam","Part","","","","","","","",""
 "Stasis Beams","Part Group","[[Heading]]List of Stasis Beams[[/Heading]]
