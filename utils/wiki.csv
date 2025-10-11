@@ -4443,26 +4443,26 @@ Power/Stability
 "GOLEM Unit","Part","GOLEM Units are unique utilities found on [[Golem|Golems]] and in the [[Zion Deep Caves]]. They are contained within the GOLEM Chambers found in the western wall. When attached and activated, they will produce a variety of assembled parts if there are empty slots available. While being integrated, these assembled parts have no effect and 0 coverage. These parts increase by 3 integrity every turn, and become active when their current integrity reaches 100% of maximum. Parts are built in the following order, assuming all slots are empty:
 [[Image]]Golem Parts.png|A full GOLEM loadout[[/Image]]
 [[Table]]
-Part|Turns to build part|Total time to build||
-[[Asb. Alloy Leg]] #1|133|133||
-[[Asb. Flux Generator]]|117|250||
-Asb. Alloy Leg #2|133|383||
-[[Asb. Biocell Array]] #1|17|400||
-[[Asb. Nanovents]] #1|2|402||
-Asb. Nanovents #2|2|404||
-[[Asb. Focal Cannon]] #1|52|456||
-[[Asb. Alloy Armor]] #1|67|523||
-Asb. Nanovents #3|2|525||
-[[Asb. Suspension Frame]]|18|543||
-Asb. Focal Cannon #2|52|595||
-[[Asb. Combat Suite]]|20|605||
-Asb. Alloy Armor #2|67|682||
-Asb. Biocell Array #2|17|699||
-Asb. Nanovents #4|2|701||
-Asb. Focal Cannon #3|52|753||
-Asb. Alloy Armor #3|67|820||
-[[Asb. Metafiber Network]]|17|837||
-Asb. Alloy Armor #4|67|904
+Part|Turns to build part|Total time to build|Slot Number
+[[Asb. Alloy Leg]] #1|133|133|1st [[Weapons]]||
+[[Asb. Flux Generator]]|117|250|1st [[Power]]||
+Asb. Alloy Leg #2|133|383|1st [[Propulsion]]||
+[[Asb. Biocell Array]] #1|17|400|1st [[Utilities]]||
+[[Asb. Nanovents]] #1|2|402|2nd Utility||
+Asb. Nanovents #2|2|404|3rd Utility||
+[[Asb. Focal Cannon]] #1|52|456|4th Utility||
+[[Asb. Alloy Armor]] #1|67|523|5th Utility||
+Asb. Nanovents #3|2|525|6th Utility||
+[[Asb. Suspension Frame]]|18|543|7th Utility||
+Asb. Focal Cannon #2|52|595|2nd Weapon||
+[[Asb. Combat Suite]]|20|605|8th Utility||
+Asb. Alloy Armor #2|67|682|9th Utility||
+Asb. Biocell Array #2|17|699|10th Utility||
+Asb. Nanovents #4|2|701|11th Utility||
+Asb. Focal Cannon #3|52|753|3rd Weapon||
+Asb. Alloy Armor #3|67|820|12th Utility||
+[[Asb. Metafiber Network]]|17|837|13th Utility||
+Asb. Alloy Armor #4|67|904|14th Utility
 [[/Table]]
 If slots of one type are full, blocking a part, the first part of another type will be build instead. For example, if all propulsion slots are filled but two power slots are open, the Asb. Flux Generator will start building instead of waiting on the first Asb. Alloy Leg. The first Asb. Nanovents will never grow without one Asb. Biocell Array on Cogmind's body, though, as they are both of the same slot type (utility).
 
