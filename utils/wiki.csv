@@ -1278,7 +1278,7 @@ Friendly Derelicts will not move from their guard position, but they will engage
 "Cep. Heavy Railcannon","Part","","","","","","","",""
 "Cep. Helical Railcannon","Part","","","","","","","",""
 "Cep. Hypertargeting System","Part","","","","","","","",""
-"Cep. Impact Drone Bay","Part","","","","","","","",""
+"Cep. Impact Drone Bay","Part","Deploys [[Impact Drone|Impact Drones]]","","","","","","",""
 "Cep. Lightning Penetrator","Part","","","","","","","",""
 "Cep. Matter Streamer","Part","","","","","","","",""
 "Cep. Melee Reflex Suite","Part","","","","","","","",""
@@ -2326,7 +2326,7 @@ An alert will indicate whenever a Demolisher squad is dispatched. Additionally, 
 
 [[Heading]]How to get Demolisher Squads[[/Heading]]
 [[List]]Assembled infestation: Any Assembled infestation events will trigger an immediate Demolisher response|[[Spoiler]]Friendly Assembled: If Cogmind has used a [[Core Reset Matrix]] and uses a [[Mobile Assembly Unit]] to create allied Assembled, Demolishers will be sent after a random amount of turns[[/Spoiler]]|Too many allies: If Cogmind has 18 or more allies, Demolishers may be dispatched to Cogmind's current location.[[/List]]","","","","","","",""
-"Deploy-a-Sentry","Part","After deployed, turns into a [[DAS Turret]].","","","","","","",""
+"Deploy-a-Sentry","Part","After being deployed, turns into a [[DAS Turret]].","","","","","","",""
 "Derelict","Bot Supergroup","","","7R-MNS,Artisan,Assembler,AZ-K3N,Cobbler,Commander,Decomposer,Demented,Furnace,Golem,Golem (Naked),HV-R5K,Master Thief,Packrat,Parasite,Revision,Revision 17,Revision 17++,Samaritan,Sapper,Subdweller,Thief,Tinkerer,VL-GR5,Warbot,YI-UF0","","","Assembled,Butcher,Exiles (Group),Fireman,Guerrilla,Heroes of Zion,Infiltrator,Marauder,Martyr,Mutant,Savage,Surgeon,Thug,Warlord (Group),Wasp,Wizard,Zhirov (Group)","United Federation of Derelicts,Zionite (Group)",""
 "Derelict Log","Part","Derelict logs are items found in [[Caves]], consumed immediately when moved over.
 
@@ -5553,7 +5553,7 @@ The following is a list of all locations in Cogmind:
 "Lrg. Matter Pod","Part","","","","","","","",""
 "Lrg. Storage Unit","Part","","","","","","","",""
 "Lrn. Gatling Laser","Part","","","","","","","",""
-"Lrn. IFF Parser","Part","","","","","","","",""
+"Lrn. IFF Parser","Part","Obtainable from [[Spoiler]][[Q-Series]][[/Spoiler]]","","","","","","",""
 "Lrn. Missile Launcher","Part","","","","","","","",""
 "Lrn. Phase Cannon","Part","","","","","","","",""
 "Lrn. Proton Cannon","Part","","","","","","","",""
@@ -6044,7 +6044,7 @@ A bot gains 1 momentum each time it moves in the same direction. It loses 1 mome
 "Multitargeting Array","Part","","","","","","","",""
 "Multitool","Part","When reconfiguring a terminal, Multitools apply a modifier between -20% and +50% with no known weighting. This combines very well with defensive hackware as you have the option to only put it on once you've gotten a high roll on a reconfigured terminal.
 
-Multitools are mainly found by looting [[Artisan]]s, but they can also be found in other assorted places, such as [[Subcaves]] scrap piles, occasionally falling from subcaves twisted machinery, a dropped item that a [[Subdweller]] was carrying, a rare creation from a [[Cobbler Unit]], and as a recipe from [[Spoiler]][[Tech Extrapolator]][[/Spoiler]].","","","","","","",""
+Multitools are mainly found by looting [[Artisan|Artisans]], but they can also be found in other assorted places, such as [[Subcaves]] scrap piles, occasionally falling from subcaves twisted machinery, a dropped item that a [[Subdweller]] was carrying, a rare creation from a [[Cobbler Unit]], and as a recipe from [[Spoiler]][[Tech Extrapolator]][[/Spoiler]].","","","","","","",""
 "Mutant","Bot Group","Mutants are [[Treads|treading]] [[Derelict]] combat robots that wield a large variety of offensive and defensive parts. They are not exactly the same, but are quite similar to the [[0b10]] [[Sentry]] class of bots as offensive treading guard bots with mixed weaponry. Mutants are common bots that show up in many different types of Derelict encounters and events.","","Mutant (5),Mutant (6),Mutant (7),Mutant (8)","","","","",""
 "Mutant (5)","Bot","","","","","","","",""
 "Mutant (6)","Bot","","","","","","","",""

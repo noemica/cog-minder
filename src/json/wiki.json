@@ -2882,7 +2882,7 @@
   },
   {
    "Name": "Cep. Impact Drone Bay",
-   "Content": ""
+   "Content": "Deploys [[Impact Drone|Impact Drones]]"
   },
   {
    "Name": "Cep. Lightning Penetrator",
@@ -3318,7 +3318,7 @@
   },
   {
    "Name": "Deploy-a-Sentry",
-   "Content": "After deployed, turns into a [[DAS Turret]]."
+   "Content": "After being deployed, turns into a [[DAS Turret]]."
   },
   {
    "Name": "Derelict Log",
@@ -5154,7 +5154,7 @@
   },
   {
    "Name": "Lrn. IFF Parser",
-   "Content": ""
+   "Content": "Obtainable from [[Spoiler]][[Q-Series]][[/Spoiler]]"
   },
   {
    "Name": "Lrn. Missile Launcher",
@@ -5606,7 +5606,7 @@
   },
   {
    "Name": "Multitool",
-   "Content": "When reconfiguring a terminal, Multitools apply a modifier between -20% and +50% with no known weighting. This combines very well with defensive hackware as you have the option to only put it on once you've gotten a high roll on a reconfigured terminal.\n\nMultitools are mainly found by looting [[Artisan]]s, but they can also be found in other assorted places, such as [[Subcaves]] scrap piles, occasionally falling from subcaves twisted machinery, a dropped item that a [[Subdweller]] was carrying, a rare creation from a [[Cobbler Unit]], and as a recipe from [[Spoiler]][[Tech Extrapolator]][[/Spoiler]]."
+   "Content": "When reconfiguring a terminal, Multitools apply a modifier between -20% and +50% with no known weighting. This combines very well with defensive hackware as you have the option to only put it on once you've gotten a high roll on a reconfigured terminal.\n\nMultitools are mainly found by looting [[Artisan|Artisans]], but they can also be found in other assorted places, such as [[Subcaves]] scrap piles, occasionally falling from subcaves twisted machinery, a dropped item that a [[Subdweller]] was carrying, a rare creation from a [[Cobbler Unit]], and as a recipe from [[Spoiler]][[Tech Extrapolator]][[/Spoiler]]."
   },
   {
    "Name": "Myomer Exoskeleton",
