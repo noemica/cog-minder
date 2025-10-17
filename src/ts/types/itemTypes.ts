@@ -43,8 +43,9 @@ export type ItemCategory =
     | "S7 Unguarded"
     | "Spoiler"
     | "Testing"
-    | "Unobtainable"
     | "UFD"
+    | "Unobtainable"
+    | "Unchained"
     | "Warlord"
     | "Zion"
     | "Zionite";
@@ -247,6 +248,7 @@ export type FabricationStats = {
 export type BaseItem = {
     slot: ItemSlot;
     hackable: boolean;
+    studyable: boolean;
     supporterAttribution?: string;
     name: string;
     noPrefixName: string;
@@ -368,6 +370,7 @@ export type JsonItem = {
     Index: number;
     "Supporter Attribution"?: string;
     "Hackable Schematic"?: string;
+    Studyable?: string;
     Mass?: string;
     Coverage?: string;
     "Heat Generation"?: string;

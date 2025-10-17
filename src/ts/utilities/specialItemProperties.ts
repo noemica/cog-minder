@@ -87,6 +87,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
         active: "Part Active",
         trait: { kind: "DamageReduction", multiplier: 0.5, remote: true },
     },
+    "QV-33N's Drone Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
     "AEGIS Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
     "Cep. Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
     "7V-RTL's Ultimate Field": {

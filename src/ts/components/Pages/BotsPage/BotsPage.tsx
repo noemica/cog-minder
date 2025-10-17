@@ -26,7 +26,7 @@ import "./BotsPage.less";
 
 type BotsPageMode = "Simple" | "Spreadsheet";
 
-type Faction = "Any" | "0b10" | "Architect" | "Derelict" | "Exiles" | "UFD" | "Warlord" | "Zionite";
+type Faction = "Any" | "0b10" | "Architect" | "Derelict" | "Exiles" | "UFD" | "Unchained" | "Warlord" | "Zionite";
 
 type BotsPageState = {
     name?: string;
@@ -45,6 +45,7 @@ const allFactionButtons: (ExclusiveButtonDefinition<Faction> & { spoiler?: Spoil
     { value: "Derelict", tooltip: "Any non-0b10 Derelict bots." },
     { value: "Exiles", tooltip: "Any Exiles or Exiles-related bots." },
     { value: "UFD", spoiler: "Spoiler", tooltip: "Any United Federation of Derelict (Scraptown) or related bots" },
+    { value: "Unchained", spoiler: "Spoiler", tooltip: "Any Unchained or related bots" },
     { value: "Warlord", spoiler: "Spoiler", tooltip: "Any Warlord-related bots" },
     { value: "Zionite", spoiler: "Spoiler", tooltip: "Any Zion-related bots including Imprint-related bots" },
 ];

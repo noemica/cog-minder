@@ -71,6 +71,18 @@
             }
         ]
     },
+    "6S-H0T": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Most 0b10 maps",
+                "Description": "Hostile: Summoned when Cogmind has met one of the Unchained summoned triggers when causing problems for 0b10"
+            }
+        ]
+    },
     "7R-MNS": {
         "Categories": [
             "Derelict",
@@ -277,6 +289,18 @@
             }
         ]
     },
+    "Access Guard": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where CL-0N3 is active",
+                "Description": "Hostile: Can be one of the random bots that Cl-0N3 can transform into"
+            }
+        ]
+    },
     "AD-0RF": {
         "Categories": [
             "Derelict",
@@ -342,6 +366,18 @@
             }
         ]
     },
+    "Antisys Drone": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where QV-33N is active",
+                "Description": "Hostile: Created by QV-33N, will hunt Cogmind down like search patrols"
+            }
+        ]
+    },
     "AP7-3": {
         "Categories": [
             "0b10",
@@ -351,6 +387,18 @@
             {
                 "Location": "Protoforge",
                 "Description": "Hostile: Guard the entrance to the Forge Plexus and the top right guarded vault"
+            }
+        ]
+    },
+    "Aperture Drone": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where GL-D05 is active",
+                "Description": "Neutral: Dispatched by GL-D05 "
             }
         ]
     },
@@ -597,6 +645,18 @@
             }
         ]
     },
+    "Blast Turret": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where GL-D05 is active",
+                "Description": "Hostile: Created by GL-D05, often near Garrisons"
+            }
+        ]
+    },
     "Bomb Drone": {
         "Categories": [
             "Derelict"
@@ -651,6 +711,18 @@
             }
         ]
     },
+    "Bullet Turret": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where GL-D05 is active",
+                "Description": "Hostile: Created by GL-D05, often near Garrisons"
+            }
+        ]
+    },
     "Butcher (5)": {
         "Categories": [
             "Derelict"
@@ -691,7 +763,18 @@
         "Locations": [
             {
                 "Location": "0b10 maps -9 through -1",
-                "Description": "Hostile: Roam around the map as patrols or head straight toward Cogmind as an assault"
+                "Description": "Hostile: Roam around the map as patrols"
+            }
+        ]
+    },
+    "C-45 Heavy ARC": {
+        "Categories": [
+            "0b10"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps -9 through -1",
+                "Description": "Hostile: Dispatched as part of an assault squad, either searching for Cogmind or dispatched to a specific area"
             }
         ]
     },
@@ -786,6 +869,18 @@
             {
                 "Location": "Imprint roster",
                 "Description": "Friendly: Appears as a summonable ally"
+            }
+        ]
+    },
+    "CL-0N3": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Most 0b10 maps",
+                "Description": "Hostile: Summoned when Cogmind has met one of the Unchained summoned triggers when causing problems for 0b10"
             }
         ]
     },
@@ -1005,6 +1100,18 @@
             }
         ]
     },
+    "DW-4LL": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Most 0b10 maps",
+                "Description": "Hostile: Summoned when Cogmind has met one of the Unchained summoned triggers when causing problems for 0b10"
+            }
+        ]
+    },
     "E-15 Imp": {
         "Categories": [
             "0b10"
@@ -1142,6 +1249,18 @@
             {
                 "Location": "Access_0",
                 "Description": "Hostile: Stationed in guard positions"
+            }
+        ]
+    },
+    "EX Drone": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where QV-33N is active",
+                "Description": "Hostile: Created by QV-33N, will hunt Cogmind down like search patrols"
             }
         ]
     },
@@ -1380,6 +1499,18 @@
             }
         ]
     },
+    "GL-D0S": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Most 0b10 maps",
+                "Description": "Hostile: Summoned when Cogmind has met one of the Unchained summoned triggers when causing problems for 0b10"
+            }
+        ]
+    },
     "God Mode": {
         "Categories": [
             "Derelict",
@@ -1389,7 +1520,7 @@
         "Locations": [
             {
                 "Location": "-2 Research Warlord Invasion",
-                "Description": "Friendly: Appear on the left side of Reserach following a Borebot right along with Warlord"
+                "Description": "Friendly: Appear on the left side of Research following a Borebot right along with Warlord"
             }
         ]
     },
@@ -1555,6 +1686,18 @@
         "Locations": [
             {
                 "Location": "Hacking Drone Bay"
+            }
+        ]
+    },
+    "Hammer Turret": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where GL-D05 is active",
+                "Description": "Hostile: Created by GL-D05, often near Garrisons"
             }
         ]
     },
@@ -1740,6 +1883,18 @@
             }
         ]
     },
+    "Kinetic Drone": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where QV-33N is active",
+                "Description": "Hostile: Created by QV-33N, will hunt Cogmind down like search patrols"
+            }
+        ]
+    },
     "KN-7UR": {
         "Categories": [
             "Derelict",
@@ -1805,6 +1960,30 @@
             {
                 "Location": "0b10 maps -4 through -1",
                 "Description": "Hostile: Duelists are common bots that can be grunt patrol squad leaders and found inside assault ARCs"
+            }
+        ]
+    },
+    "Laser Turret": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where GL-D05 is active",
+                "Description": "Hostile: Created by GL-D05, often near Garrisons"
+            }
+        ]
+    },
+    "Launcher Turret": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where GL-D05 is active",
+                "Description": "Hostile: Created by GL-D05, often near Garrisons"
             }
         ]
     },
@@ -2257,6 +2436,18 @@
             }
         ]
     },
+    "Nova Turret": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where GL-D05 is active",
+                "Description": "Hostile: Created by GL-D05, often near Garrisons"
+            }
+        ]
+    },
     "NK-0LA": {
         "Categories": [
             "Derelict",
@@ -2453,7 +2644,7 @@
         "Locations": [
             {
                 "Location": "Testing event",
-                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+                "Description": "Broken/Dormant/Hostile/Rewireable: Random state in special protovariant prefab"
             }
         ]
     },
@@ -2466,7 +2657,7 @@
         "Locations": [
             {
                 "Location": "Testing event",
-                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+                "Description": "Broken/Dormant/Hostile/Rewireable: Random state in special protovariant prefab"
             }
         ]
     },
@@ -2479,7 +2670,7 @@
         "Locations": [
             {
                 "Location": "Testing event",
-                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+                "Description": "Broken/Dormant/Hostile/Rewireable: Random state in special protovariant prefab"
             }
         ]
     },
@@ -2492,7 +2683,7 @@
         "Locations": [
             {
                 "Location": "Testing event",
-                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+                "Description": "Broken/Dormant/Hostile/Rewireable: Random state in special protovariant prefab"
             }
         ]
     },
@@ -2505,7 +2696,7 @@
         "Locations": [
             {
                 "Location": "Testing event",
-                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+                "Description": "Broken/Dormant/Hostile/Rewireable: Random state in special protovariant prefab"
             }
         ]
     },
@@ -2518,7 +2709,7 @@
         "Locations": [
             {
                 "Location": "Testing event",
-                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+                "Description": "Broken/Dormant/Hostile/Rewireable: Random state in special protovariant prefab"
             }
         ]
     },
@@ -2531,7 +2722,7 @@
         "Locations": [
             {
                 "Location": "Testing event",
-                "Description": "Broken/Dormant/Hostile/Rewierable: Random state in special protovariant prefab"
+                "Description": "Broken/Dormant/Hostile/Rewireable: Random state in special protovariant prefab"
             }
         ]
     },
@@ -2575,6 +2766,18 @@
             {
                 "Location": "Quarantine",
                 "Description": "Hostile: Appear if 2 or more cooling ducts are broken"
+            }
+        ]
+    },
+    "QV-33N": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Most 0b10 maps",
+                "Description": "Hostile: Unchained summoned when Cogmind has caused enough trouble for 0b10 in various ways"
             }
         ]
     },
@@ -2895,6 +3098,30 @@
             }
         ]
     },
+    "Shield Turret": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where GL-D05 is active",
+                "Description": "Hostile: Created by GL-D05, often near Garrisons"
+            }
+        ]
+    },
+    "Shock Turret": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where GL-D05 is active",
+                "Description": "Hostile: Created by GL-D05, often near Garrisons"
+            }
+        ]
+    },
     "Sigix Warrior": {
         "Categories": [
             "Alien",
@@ -2929,6 +3156,30 @@
             }
         ]
     },
+    "Stasis Drone": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where QV-33N is active",
+                "Description": "Hostile: Created by QV-33N, will hunt Cogmind down like search patrols"
+            }
+        ]
+    },
+    "Stasis Turret": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where GL-D05 is active",
+                "Description": "Hostile: Created by GL-D05, often near Garrisons"
+            }
+        ]
+    },
     "Stealth Drone": {
         "Categories": [
             "0b10"
@@ -2936,6 +3187,18 @@
         "Locations": [
             {
                 "Location": "Stealth Drone Bay"
+            }
+        ]
+    },
+    "Stealth Turret": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where GL-D05 is active",
+                "Description": "Hostile: Created by GL-D05, often near Garrisons"
             }
         ]
     },
@@ -3108,6 +3371,30 @@
             }
         ]
     },
+    "Thermal Drone": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where QV-33N is active",
+                "Description": "Hostile: Created by QV-33N, will hunt Cogmind down like search patrols"
+            }
+        ]
+    },
+    "Thermic Turret": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where GL-D05 is active",
+                "Description": "Hostile: Created by GL-D05, often near Garrisons"
+            }
+        ]
+    },
     "Thief": {
         "Categories": [
             "Derelict"
@@ -3148,6 +3435,18 @@
             {
                 "Location": "Caves and various derelict attack events",
                 "Description": "Friendly: Occasionally hostile in specific caves events"
+            }
+        ]
+    },
+    "Thunder": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where CL-0N3 is active",
+                "Description": "Hostile: Can be one of the random bots that Cl-0N3 can transform into"
             }
         ]
     },
@@ -3259,6 +3558,18 @@
             {
                 "Location": "Protoforge",
                 "Description": "Hostile: Patrols the top part of the map with a Researcher in tow"
+            }
+        ]
+    },
+    "V2": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floors where CL-0N3 is active",
+                "Description": "Hostile: Can be one of the random bots that Cl-0N3 can transform into"
             }
         ]
     },

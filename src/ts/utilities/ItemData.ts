@@ -104,6 +104,7 @@ export class ItemData {
                         specialTrait: item["Special Trait"],
                         specialProperty: specialProperty,
                         spoiler: spoiler,
+                        studyable: parseIntOrDefault(item["Studyable"], 0) === 1,
                     };
                     newItem = otherItem;
                     break;
@@ -168,6 +169,7 @@ export class ItemData {
                         index: index,
                         specialProperty: specialProperty,
                         spoiler: spoiler,
+                        studyable: parseIntOrDefault(item["Studyable"], 0) === 1,
                     };
                     newItem = powerItem;
                     break;
@@ -218,6 +220,7 @@ export class ItemData {
                         index: index,
                         specialProperty: specialProperty,
                         spoiler: spoiler,
+                        studyable: parseIntOrDefault(item["Studyable"], 0) === 1,
                     };
                     newItem = propItem;
                     break;
@@ -251,6 +254,7 @@ export class ItemData {
                         index: index,
                         specialProperty: specialProperty,
                         spoiler: spoiler,
+                        studyable: parseIntOrDefault(item["Studyable"], 0) === 1,
                     };
                     newItem = utilItem;
                     break;
@@ -367,6 +371,7 @@ export class ItemData {
                         index: index,
                         specialProperty: specialProperty,
                         spoiler: spoiler,
+                        studyable: parseIntOrDefault(item["Studyable"], 0) === 1,
                     };
                     newItem = weaponItem;
                     break;

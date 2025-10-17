@@ -15,6 +15,7 @@ all_parts_output_path = path.join(path.dirname(path.realpath(__file__)), 'all_pa
 categories = {
     'all': [
         'Slot',
+        'Studyable',
         'Hackable Schematic',
         'Supporter Attribution',
     ],
@@ -204,6 +205,7 @@ expansions = {
     'Adv.': 'Advanced',
     'Asb.': 'Assembled',
     'Arm.': 'Armored',
+    'Cep.': 'Concept',
     'Cld.': 'Cooled',
     'Com.': 'Compact',
     'Cmb.': 'Combat',

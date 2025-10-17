@@ -145,6 +145,7 @@ const allCategoryOptions: (SelectOptionType<PartCategory> & { spoiler?: Spoiler 
         tooltip: "Parts that can be found in Scraptown or are related to the United Federation of Derelicts",
         spoiler: "Spoiler",
     },
+    { value: "Unchained", tooltip: "Parts found on 0b10 Unchained related bots.", spoiler: "Spoiler" },
     {
         value: "Warlord",
         tooltip: "Parts that are obtainable in the Warlord map, or on Warlord-aligned bots",

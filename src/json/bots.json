@@ -958,6 +958,629 @@
         "Armament String": "Autobeam"
     },
     {
+        "Name": "Aperture Drone",
+        "Class": "Drone",
+        "Tier": "5",
+        "Threat": "3",
+        "Rating": "28",
+        "Size Class": "Tiny",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "1",
+        "Movement": "Flying",
+        "Speed": "22",
+        "Speed %": "454",
+        "Sight Range": "16",
+        "Energy Generation": "20",
+        "Heat Dissipation": "39",
+        "Core Integrity": "35",
+        "Core Exposure": "70",
+        "Core Exposure %": "50",
+        "Salvage Potential": "10~15",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Components": [
+            "Mic. Nuclear Core",
+            "Mni. Nuclear Pulse Thruster",
+            "Mni. Nuclear Pulse Thruster",
+            "Adv. Heat Sink"
+        ],
+        "Resistances": {
+            "Explosive": "-25",
+            "Electromagnetic": "-100"
+        },
+        "Components String": "Mic. Nuclear Core, 2x Mni. Nuclear Pulse Thruster, Adv. Heat Sink"
+    },
+    {
+        "Name": "Bullet Turret",
+        "Class": "Turret",
+        "Tier": "5",
+        "Threat": "3",
+        "Rating": "19",
+        "Value": "30",
+        "Size Class": "Small",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "2",
+        "Movement": "N/A",
+        "Speed": "200",
+        "Speed %": "50",
+        "Sight Range": "18",
+        "Energy Generation": "10",
+        "Heat Dissipation": "30",
+        "Core Integrity": "30",
+        "Core Exposure": "89",
+        "Core Exposure %": "29",
+        "Salvage Potential": "20~30",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            [
+                {
+                    "name": "Prc. Assault Rifle",
+                    "number": 2
+                },
+                {
+                    "name": "Hvy. Machine Gun",
+                    "number": 2
+                },
+                {
+                    "name": "Imp. Heavy Machine Gun",
+                    "number": 2
+                }
+            ]
+        ],
+        "Components": [
+            "Com. Matter Pod"
+        ],
+        "Armament String": "2x Prc. Assault Rifle OR 2x Hvy. Machine Gun OR 2x Imp. Heavy Machine Gun",
+        "Components String": "Com. Matter Pod"
+    },
+    {
+        "Name": "Laser Turret",
+        "Class": "Turret",
+        "Tier": "7",
+        "Threat": "3",
+        "Rating": "18",
+        "Value": "30",
+        "Size Class": "Small",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "20",
+        "Movement": "N/A",
+        "Speed": "200",
+        "Speed %": "50",
+        "Sight Range": "18",
+        "Energy Generation": "30",
+        "Heat Dissipation": "30",
+        "Core Integrity": "30",
+        "Core Exposure": "29",
+        "Core Exposure %": "29",
+        "Salvage Potential": "20~30",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Piercelight Module"
+        ],
+        "Components": [
+            "Com. Battery"
+        ],
+        "Armament String": "Piercelight Module",
+        "Components String": "Com. Battery"
+    },
+    {
+        "Name": "Shock Turret",
+        "Class": "Turret",
+        "Tier": "7",
+        "Threat": "3",
+        "Rating": "17",
+        "Value": "30",
+        "Size Class": "Small",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "2",
+        "Movement": "N/A",
+        "Speed": "150",
+        "Speed %": "66",
+        "Sight Range": "18",
+        "Energy Generation": "35",
+        "Heat Dissipation": "30",
+        "Core Integrity": "30",
+        "Core Exposure": "46",
+        "Core Exposure %": "29",
+        "Salvage Potential": "20~30",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Shockbolt Module"
+        ],
+        "Components": [
+            "Com. Battery"
+        ],
+        "Armament String": "Shockbolt Module",
+        "Components String": "Com. Battery"
+    },
+    {
+        "Name": "Launcher Turret",
+        "Class": "Turret",
+        "Tier": "6",
+        "Threat": "5",
+        "Rating": "13",
+        "Value": "30",
+        "Size Class": "Small",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "2",
+        "Movement": "N/A",
+        "Speed": "150",
+        "Speed %": "66",
+        "Sight Range": "18",
+        "Energy Generation": "10",
+        "Heat Dissipation": "30",
+        "Core Integrity": "30",
+        "Core Exposure": "50",
+        "Core Exposure %": "29",
+        "Salvage Potential": "20~30",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            [
+                {
+                    "name": "Imp. Grenade Launcher"
+                },
+                {
+                    "name": "Missile Launcher"
+                },
+                {
+                    "name": "Hvy. Rocket Launcher"
+                },
+                {
+                    "name": "Hvy. Missile Launcher"
+                },
+                {
+                    "name": "Lrn. Missile Launcher"
+                },
+                {
+                    "name": "Micro-nuke Launcher"
+                }
+            ]
+        ],
+        "Components": [
+            "Com. Matter Pod"
+        ],
+        "Resistances": {
+            "Explosive": "75"
+        },
+        "Armament String": "Imp. Grenade Launcher (10%) OR Missile Launcher (15%) OR Hvy. Rocket Launcher (25%) OR Hvy. Missile Launcher (25%) OR Lrn. Missile Launcher (15%) OR Micro-nuke Launcher (10%)",
+        "Components String": "Com. Matter Pod"
+    },
+    {
+        "Name": "Blast Turret",
+        "Class": "Turret",
+        "Tier": "6",
+        "Threat": "4",
+        "Rating": "12",
+        "Value": "30",
+        "Size Class": "Small",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "2",
+        "Movement": "N/A",
+        "Speed": "150",
+        "Speed %": "66",
+        "Sight Range": "18",
+        "Energy Generation": "10",
+        "Heat Dissipation": "30",
+        "Core Integrity": "30",
+        "Core Exposure": "51",
+        "Core Exposure %": "29",
+        "Salvage Potential": "20~30",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Enh. Gauss Cannon"
+        ],
+        "Armament String": "Enh. Gauss Cannon"
+    },
+    {
+        "Name": "Thermic Turret",
+        "Class": "Turret",
+        "Tier": "5",
+        "Threat": "4",
+        "Rating": "38",
+        "Value": "30",
+        "Size Class": "Small",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "2",
+        "Movement": "N/A",
+        "Speed": "250",
+        "Speed %": "40",
+        "Sight Range": "18",
+        "Energy Generation": "25",
+        "Heat Dissipation": "106",
+        "Core Integrity": "30",
+        "Core Exposure": "97",
+        "Core Exposure %": "29",
+        "Salvage Potential": "20~30",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Thermic Laser",
+            "Thermic Laser",
+            "Thermic Laser"
+        ],
+        "Components": [
+            "Adv. Heat Sink",
+            "Adv. Heat Sink",
+            "Adv. Cryofiber Web"
+        ],
+        "Armament String": "3x Thermic Laser",
+        "Components String": "2x Adv. Heat Sink, Adv. Cryofiber Web"
+    },
+    {
+        "Name": "Nova Turret",
+        "Class": "Turret",
+        "Tier": "5",
+        "Threat": "4",
+        "Rating": "47",
+        "Value": "30",
+        "Size Class": "Small",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "2",
+        "Movement": "N/A",
+        "Speed": "400",
+        "Speed %": "25",
+        "Sight Range": "18",
+        "Energy Generation": "35",
+        "Heat Dissipation": "112",
+        "Core Integrity": "30",
+        "Core Exposure": "72",
+        "Core Exposure %": "29",
+        "Salvage Potential": "20~30",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Nova Cannon"
+        ],
+        "Components": [
+            "Quantum Capacitor",
+            "Adv. Cooling System",
+            "Adv. Cooling System",
+            "Adv. Coolant Injector"
+        ],
+        "Armament String": "Nova Cannon",
+        "Components String": "Quantum Capacitor, 2x Adv. Cooling System, Adv. Coolant Injector"
+    },
+    {
+        "Name": "Stealth Turret",
+        "Class": "Turret",
+        "Tier": "5",
+        "Threat": "3",
+        "Rating": "14",
+        "Value": "30",
+        "Size Class": "Small",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "2",
+        "Movement": "N/A",
+        "Speed": "100",
+        "Speed %": "100",
+        "Sight Range": "18",
+        "Energy Generation": "25",
+        "Heat Dissipation": "40",
+        "Core Integrity": "30",
+        "Core Exposure": "25",
+        "Core Exposure %": "29",
+        "Salvage Potential": "20~30",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Stealth Gun"
+        ],
+        "Armament String": "Stealth Gun"
+    },
+    {
+        "Name": "Hammer Turret",
+        "Class": "Turret",
+        "Tier": "5",
+        "Threat": "3",
+        "Rating": "13",
+        "Value": "30",
+        "Size Class": "Small",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "2",
+        "Movement": "N/A",
+        "Speed": "150",
+        "Speed %": "66",
+        "Sight Range": "18",
+        "Energy Generation": "30",
+        "Heat Dissipation": "20",
+        "Core Integrity": "30",
+        "Core Exposure": "42",
+        "Core Exposure %": "29",
+        "Salvage Potential": "20~30",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Hammerchucker"
+        ],
+        "Armament String": "Hammerchucker"
+    },
+    {
+        "Name": "Stasis Turret",
+        "Class": "Turret",
+        "Tier": "5",
+        "Threat": "1",
+        "Rating": "14",
+        "Value": "30",
+        "Size Class": "Small",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "2",
+        "Movement": "N/A",
+        "Speed": "100",
+        "Speed %": "100",
+        "Sight Range": "18",
+        "Energy Generation": "20",
+        "Heat Dissipation": "20",
+        "Core Integrity": "30",
+        "Core Exposure": "42",
+        "Core Exposure %": "29",
+        "Salvage Potential": "20~30",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Stasis Beam"
+        ],
+        "Armament String": "Stasis Beam"
+    },
+    {
+        "Name": "Shield Turret",
+        "Class": "Turret",
+        "Tier": "5",
+        "Threat": "1",
+        "Rating": "23",
+        "Value": "30",
+        "Size Class": "Small",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "2",
+        "Movement": "N/A",
+        "Speed": "250",
+        "Speed %": "40",
+        "Sight Range": "18",
+        "Energy Generation": "100",
+        "Heat Dissipation": "20",
+        "Core Integrity": "30",
+        "Core Exposure": "33",
+        "Core Exposure %": "29",
+        "Salvage Potential": "20~30",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Components": [
+            "Adv. Remote Shield",
+            "Adv. Energy Well"
+        ],
+        "Components String": "Adv. Remote Shield, Adv. Energy Well"
+    },
+    {
+        "Name": "Kinetic Drone",
+        "Class": "Drone",
+        "Tier": "1",
+        "Threat": "4",
+        "Rating": "48",
+        "Value": "30",
+        "Size Class": "Tiny",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "50",
+        "Movement": "Flying",
+        "Speed": "22",
+        "Speed %": "454",
+        "Sight Range": "16",
+        "Energy Generation": "26",
+        "Heat Dissipation": "46",
+        "Core Integrity": "30",
+        "Core Exposure": "37",
+        "Core Exposure %": "29",
+        "Salvage Potential": "30~40",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Kinetic Shotgun"
+        ],
+        "Components": [
+            "Mic. Neutrino Core",
+            "Mni. Nuclear Pulse Thruster",
+            "Mni. Nuclear Pulse Thruster",
+            "Exp. Heat Sink",
+            "Exp. Targeting Computer"
+        ],
+        "Resistances": {
+            "Explosive": "-25"
+        },
+        "Armament String": "Kinetic Shotgun",
+        "Components String": "Mic. Neutrino Core, 2x Mni. Nuclear Pulse Thruster, Exp. Heat Sink, Exp. Targeting Computer"
+    },
+    {
+        "Name": "Thermal Drone",
+        "Class": "Drone",
+        "Tier": "1",
+        "Threat": "4",
+        "Rating": "48",
+        "Value": "30",
+        "Size Class": "Tiny",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "50",
+        "Movement": "Flying",
+        "Speed": "22",
+        "Speed %": "454",
+        "Sight Range": "16",
+        "Energy Generation": "26",
+        "Heat Dissipation": "46",
+        "Core Integrity": "30",
+        "Core Exposure": "52",
+        "Core Exposure %": "29",
+        "Salvage Potential": "30~40",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Thermal Shotgun"
+        ],
+        "Components": [
+            "Mic. Neutrino Core",
+            "Mni. Nuclear Pulse Thruster",
+            "Mni. Nuclear Pulse Thruster",
+            "Exp. Heat Sink",
+            "Exp. Targeting Computer"
+        ],
+        "Resistances": {
+            "Explosive": "-25"
+        },
+        "Armament String": "Thermal Shotgun",
+        "Components String": "Mic. Neutrino Core, 2x Mni. Nuclear Pulse Thruster, Exp. Heat Sink, Exp. Targeting Computer"
+    },
+    {
+        "Name": "Antisys Drone",
+        "Class": "Drone",
+        "Tier": "1",
+        "Threat": "4",
+        "Rating": "46",
+        "Value": "30",
+        "Size Class": "Tiny",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "50",
+        "Movement": "Flying",
+        "Speed": "22",
+        "Speed %": "454",
+        "Sight Range": "16",
+        "Energy Generation": "26",
+        "Heat Dissipation": "46",
+        "Core Integrity": "30",
+        "Core Exposure": "69",
+        "Core Exposure %": "29",
+        "Salvage Potential": "30~40",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Antisys Shotgun"
+        ],
+        "Components": [
+            "Mic. Neutrino Core",
+            "Mni. Nuclear Pulse Thruster",
+            "Mni. Nuclear Pulse Thruster",
+            "Exp. Heat Sink",
+            "Imp. Target Analyzer"
+        ],
+        "Resistances": {
+            "Explosive": "-25",
+            "Electromagnetic": "50"
+        },
+        "Armament String": "Antisys Shotgun",
+        "Components String": "Mic. Neutrino Core, 2x Mni. Nuclear Pulse Thruster, Exp. Heat Sink, Imp. Target Analyzer"
+    },
+    {
+        "Name": "EX Drone",
+        "Class": "Drone",
+        "Tier": "1",
+        "Threat": "4",
+        "Rating": "47",
+        "Value": "30",
+        "Size Class": "Tiny",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "50",
+        "Movement": "Flying",
+        "Speed": "22",
+        "Speed %": "454",
+        "Sight Range": "16",
+        "Energy Generation": "26",
+        "Heat Dissipation": "46",
+        "Core Integrity": "30",
+        "Core Exposure": "64",
+        "Core Exposure %": "29",
+        "Salvage Potential": "30~40",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Zip Rocket"
+        ],
+        "Components": [
+            "Mic. Neutrino Core",
+            "Mni. Nuclear Pulse Thruster",
+            "Mni. Nuclear Pulse Thruster",
+            "Exp. Heat Sink",
+            "Imp. Launcher Guidance Computer"
+        ],
+        "Resistances": {
+            "Explosive": "75",
+            "Electromagnetic": "-100"
+        },
+        "Armament String": "Zip Rocket",
+        "Components String": "Mic. Neutrino Core, 2x Mni. Nuclear Pulse Thruster, Exp. Heat Sink, Imp. Launcher Guidance Computer"
+    },
+    {
+        "Name": "Stasis Drone",
+        "Class": "Drone",
+        "Tier": "1",
+        "Threat": "3",
+        "Rating": "47",
+        "Value": "30",
+        "Size Class": "Tiny",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "50",
+        "Movement": "Flying",
+        "Speed": "22",
+        "Speed %": "454",
+        "Sight Range": "16",
+        "Energy Generation": "26",
+        "Heat Dissipation": "46",
+        "Core Integrity": "60",
+        "Core Exposure": "68",
+        "Core Exposure %": "29",
+        "Salvage Potential": "30~40",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Stasis Beam"
+        ],
+        "Components": [
+            "Mic. Neutrino Core",
+            "Mni. Nuclear Pulse Thruster",
+            "Mni. Nuclear Pulse Thruster",
+            "Exp. Heat Sink"
+        ],
+        "Resistances": {
+            "Explosive": "-25",
+            "Electromagnetic": "-100"
+        },
+        "Armament String": "Stasis Beam",
+        "Components String": "Mic. Neutrino Core, 2x Mni. Nuclear Pulse Thruster, Exp. Heat Sink"
+    },
+    {
         "Name": "K-01 Serf",
         "Class": "Worker",
         "Tier": "1",
@@ -1311,7 +1934,7 @@
         "Core Integrity": "80",
         "Core Exposure": "139",
         "Core Exposure %": "29",
-        "Salvage Potential": "80~120",
+        "Salvage Potential": "60~100",
         "Inventory Capacity": "2",
         "Components": [
             "Imp. Ion Engine",
@@ -1321,7 +1944,7 @@
             "Arm. Wheel",
             "Hcp. Storage Unit"
         ],
-        "Analysis": "C-class Armored Robot Carriers are disposable transports designed to rapidly deploy an assault force to a flash point. ARCs are hardened against kinetic attacks that might otherwise penetrate the shell and damage one or more of the robots compacted within.",
+        "Analysis": "C-class Armored Robot Carriers are disposable transports designed to conceal patrol squad members to limit the effectiveness of ambushes unable to predetermine their composition. ARCs are hardened against kinetic attacks that might otherwise penetrate the shell and damage one or more of the robots compacted within.",
         "Resistances": {
             "Kinetic": "50",
             "Electromagnetic": "-25",
@@ -1332,6 +1955,47 @@
         "Components String": "Imp. Ion Engine, 4x Arm. Wheel, Hcp. Storage Unit",
         "Short Name": "C-30",
         "Ally Name": "ARC"
+    },
+    {
+        "Name": "C-45 Heavy ARC",
+        "Class": "Carrier",
+        "Tier": "3",
+        "Threat": "5",
+        "Rating": "40",
+        "Value": "45",
+        "Size Class": "Large",
+        "Size": "1",
+        "Profile": "SQ9X9",
+        "Memory": "10",
+        "Movement": "Rolling",
+        "Speed": "100",
+        "Speed %": "100",
+        "Sight Range": "14",
+        "Energy Generation": "12",
+        "Heat Dissipation": "10",
+        "Core Integrity": "80",
+        "Core Exposure": "139",
+        "Core Exposure %": "29",
+        "Salvage Potential": "80~120",
+        "Inventory Capacity": "2",
+        "Components": [
+            "Imp. Ion Engine",
+            "Arm. Huge Wheel",
+            "Arm. Huge Wheel",
+            "Hcp. Storage Unit",
+            "Imp. Core Shielding"
+        ],
+        "Analysis": "Heavy ARCs are carriers better designed for protection and rapid deployment of assault forces to a flash point, in some cases approaching closer to known targets before unleashing their contents.",
+        "Resistances": {
+            "Kinetic": "50",
+            "Electromagnetic": "-25",
+            "Impact": "25",
+            "Slashing": "25",
+            "Piercing": "25"
+        },
+        "Components String": "Imp. Ion Engine, 2x Arm. Huge Wheel, Hcp. Storage Unit, Imp. Core Shielding",
+        "Short Name": "C-45",
+        "Ally Name": "Heavy ARC"
     },
     {
         "Name": "M-14 Sweeper",
@@ -3236,7 +3900,7 @@
             "Shock Absorption System",
             "Launcher Guidance Computer"
         ],
-        "Analysis": "D-series demolishers are the only class to carry explosive weaponry, and due to the high potential for collateral damage are only assigned to support assault forces dispatched to deal with groups of high-threat intruders. The D-53 itself is highly resistant against explosive damage, however, and is therefore willing to catch targets in an explosion even while within that blast radius.",
+        "Analysis": "D-series demolishers are the only common class to carry explosive weaponry, and due to the high potential for collateral damage are only assigned to support assault forces dispatched to deal with groups of high-threat intruders. The D-53 itself is highly resistant against explosive damage, however, and is therefore willing to catch targets in an explosion even while within that blast radius.",
         "Resistances": {
             "Explosive": "75",
             "Impact": "25"
@@ -4688,11 +5352,69 @@
         "Components String": "Imp. Quantum Reactor, Exp. Biometal Heavy Treads, Hvy. Regenerative Plating, Exp. Optical Array, 2x Exp. Cooling System"
     },
     {
+        "Name": "Access Guard",
+        "Class": "Sentry (Prototype)",
+        "Tier": "10",
+        "Threat": "5",
+        "Rating": "191",
+        "Value": "200",
+        "Size Class": "Large",
+        "Size": "1",
+        "Profile": "RD7X7",
+        "Memory": "80",
+        "Spot %": "100",
+        "Movement": "Treading",
+        "Speed": "160",
+        "Speed %": "62",
+        "Sight Range": "16",
+        "Energy Generation": "58",
+        "Heat Dissipation": "141",
+        "Core Integrity": "150",
+        "Core Exposure": "574",
+        "Core Exposure %": "24",
+        "Salvage Potential": "80~100",
+        "Inventory Capacity": "1",
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Jamming"
+        ],
+        "Armament": [
+            "Enh. Nova Cannon",
+            "Enh. Nova Cannon"
+        ],
+        "Components": [
+            "Rnf. Quantum Reactor",
+            "Hyb. Antimatter Reactor",
+            "Enh. Armored Heavy Treads",
+            "Enh. Armored Heavy Treads",
+            "Centrium Heavy Armor Plating",
+            "Exp. Energy Well",
+            "Adv. Remote Shield",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Exp. Coolant Injector",
+            "Exp. Weapon Cycler",
+            "Adv. Particle Accelerator",
+            "Exp. Targeting Computer"
+        ],
+        "Analysis": "Originally intended as the possible backbone of a frontline near-surface defense force, their concentration of extreme firepower into a single unit combined with the danger of overheating in potential high-temperature situations reinforced worries about reliability and flexibility. The base design was repurposed for another more important project.",
+        "Resistances": {
+            "Kinetic": "25",
+            "Thermal": "25",
+            "Explosive": "50",
+            "Electromagnetic": "50",
+            "Impact": "25"
+        },
+        "Armament String": "2x Enh. Nova Cannon",
+        "Components String": "Rnf. Quantum Reactor, Hyb. Antimatter Reactor, 2x Enh. Armored Heavy Treads, Centrium Heavy Armor Plating, Exp. Energy Well, Adv. Remote Shield, 2x Exp. Cooling System, Exp. Coolant Injector, Exp. Weapon Cycler, Adv. Particle Accelerator, Exp. Targeting Computer"
+    },
+    {
         "Name": "M Guard",
         "Class": "Sentry (Prototype)",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "212",
+        "Rating": "215",
         "Value": "300",
         "Size Class": "Large",
         "Size": "1",
@@ -4706,7 +5428,7 @@
         "Energy Generation": "76",
         "Heat Dissipation": "68",
         "Core Integrity": "200",
-        "Core Exposure": "436",
+        "Core Exposure": "423",
         "Core Exposure %": "24",
         "Salvage Potential": "80~100",
         "Inventory Capacity": "1",
@@ -5207,6 +5929,61 @@
         "Components String": "Quantum Reactor, 2x Enh. Biometal Leg, Exp. Heat Sink, Adv. Power Amplifier, Exp. Targeting Computer, Exp. Phase Shifter, Exp. EM Shield, Imp. Weapon Shielding"
     },
     {
+        "Name": "Thunder",
+        "Class": "Hunter (Prototype)",
+        "Tier": "10",
+        "Threat": "5",
+        "Rating": "95",
+        "Value": "150",
+        "Size Class": "Medium",
+        "Size": "1",
+        "Profile": "RD5X5",
+        "Memory": "60",
+        "Spot %": "90",
+        "Movement": "Walking",
+        "Speed": "100",
+        "Speed %": "100",
+        "Sight Range": "16",
+        "Energy Generation": "50",
+        "Heat Dissipation": "82",
+        "Core Integrity": "110",
+        "Core Exposure": "260",
+        "Core Exposure %": "25",
+        "Salvage Potential": "70~100",
+        "Inventory Capacity": "1",
+        "Immunities": [
+            "Jamming"
+        ],
+        "Traits": [
+            "Scan Cloak (5): Hides this robot from sensors without a Signal Interpreter of at least strength 5."
+        ],
+        "Armament": [
+            "Hvy. EM Shotgun",
+            "Hvy. EM Shotgun",
+            "Hvy. EM Shotgun",
+            "Hvy. EM Shotgun"
+        ],
+        "Components": [
+            "Quantum Reactor",
+            "Adv. VSS Leg",
+            "Adv. VSS Leg",
+            "Imp. Thunder Leg",
+            "Adv. Reaction Control System",
+            "Adv. Cooling System",
+            "Exp. Heat Sink",
+            "Imp. Coolant Injector"
+        ],
+        "Analysis": "Thunder-variant prototype hunters were a short-lived attempt at a fast-moving, nimble design of unquestionable deadliness up close. However, being outmatched at range, and having an unfortunate problem with collateral damage when working in groups, meant their potential use cases were always overshadowed by other options.",
+        "Resistances": {
+            "Kinetic": "25",
+            "Explosive": "25",
+            "Electromagnetic": "25",
+            "Impact": "-25"
+        },
+        "Armament String": "4x Hvy. EM Shotgun",
+        "Components String": "Quantum Reactor, 2x Adv. VSS Leg, Imp. Thunder Leg, Adv. Reaction Control System, Adv. Cooling System, Exp. Heat Sink, Imp. Coolant Injector"
+    },
+    {
         "Name": "Hotshot",
         "Class": "Grunt (Prototype)",
         "Tier": "10",
@@ -5466,7 +6243,7 @@
         "Inventory Capacity": "1",
         "Immunities": [
             "Coring",
-            "Hacking",
+            "Hacking/RIF",
             "Jamming"
         ],
         "Traits": [
@@ -5506,7 +6283,7 @@
         "Class": "V-Series (Prototype)",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "183",
+        "Rating": "161",
         "Value": "150",
         "Size Class": "Large",
         "Size": "1",
@@ -5521,17 +6298,70 @@
         "Heat Dissipation": "50",
         "Core Integrity": "120",
         "Core Exposure": "300",
+        "Core Exposure %": "18",
+        "Salvage Potential": "30~100",
+        "Inventory Capacity": "1",
+        "Immunities": [
+            "Hacking/RIF",
+            "Jamming"
+        ],
+        "Resistances": {
+            "Electromagnetic": "100"
+        }
+    },
+    {
+        "Name": "V2",
+        "Class": "V-Series (Prototype)",
+        "Tier": "10",
+        "Threat": "5",
+        "Rating": "196",
+        "Value": "175",
+        "Size Class": "Large",
+        "Size": "1",
+        "Profile": "RD7X7",
+        "Memory": "120",
+        "Spot %": "100",
+        "Movement": "Hovering",
+        "Speed": "46",
+        "Speed %": "217",
+        "Sight Range": "23",
+        "Energy Generation": "62",
+        "Heat Dissipation": "60",
+        "Core Integrity": "120",
+        "Core Exposure": "230",
         "Core Exposure %": "14",
         "Salvage Potential": "30~100",
         "Inventory Capacity": "1",
         "Immunities": [
-            "Hacking",
+            "Hacking/RIF",
             "Jamming"
         ],
+        "Armament": [
+            "Cep. XC Strikerail",
+            "Cep. XC Strikerail",
+            "Cep. XC Strikerail"
+        ],
+        "Components": [
+            "Hyb. Graviton Reactor",
+            "Gravjet Array",
+            "Cmb. Linear Gravjet",
+            "Cmb. Linear Gravjet",
+            "Quantum Shading Machine",
+            "Adv. Reaction Control System",
+            "Lyr. Heavy Armor Plating",
+            "Graphene Brace",
+            "Adv. Point Defense System",
+            "Exp. EM Disruption Field",
+            "Exp. Coolant Injector",
+            "Exp. Optical Array",
+            "Prc. Matter Filter",
+            "Adv. Kinecellerator"
+        ],
         "Resistances": {
-            "Kinetic": "30",
             "Electromagnetic": "75"
-        }
+        },
+        "Armament String": "3x Cep. XC Strikerail",
+        "Components String": "Hyb. Graviton Reactor, Gravjet Array, 2x Cmb. Linear Gravjet, Quantum Shading Machine, Adv. Reaction Control System, Lyr. Heavy Armor Plating, Graphene Brace, Adv. Point Defense System, Exp. EM Disruption Field, Exp. Coolant Injector, Exp. Optical Array, Prc. Matter Filter, Adv. Kinecellerator"
     },
     {
         "Name": "Investigator",
@@ -5649,7 +6479,7 @@
         "Salvage Potential": "80~100",
         "Inventory Capacity": "1",
         "Immunities": [
-            "Hacking"
+            "Hacking/RIF"
         ],
         "Armament": [
             "Com. Linear Accelerator",
@@ -5741,7 +6571,7 @@
         "Salvage Potential": "90~110",
         "Inventory Capacity": "1",
         "Immunities": [
-            "Hacking"
+            "Hacking/RIF"
         ],
         "Armament": [
             "Cep. XC Strikerail",
@@ -5907,7 +6737,7 @@
         "Immunities": [
             "Coring",
             "Disruption",
-            "Hacking",
+            "Hacking/RIF",
             "Jamming"
         ],
         "Armament": [
@@ -12094,6 +12924,262 @@
         },
         "Armament String": "99-TNT's Nukerbomber",
         "Components String": "Hvy. Antimatter Reactor, 3x Cmb. Antigrav System, Exp. Cooling System, Hvy. Reactive Plating, Exp. Weapon Shielding, Exp. Shock Absorption System, Exp. Matter Compressor, Lrn. Tractor Beam, Adv. Visual Processing Unit, Adv. Launcher Guidance Computer"
+    },
+    {
+        "Name": "QV-33N",
+        "Class": "Unique",
+        "Tier": "10",
+        "Threat": "5",
+        "Rating": "203",
+        "Value": "300",
+        "Size Class": "Large",
+        "Size": "1",
+        "Profile": "RD7X7",
+        "Memory": "-2",
+        "Spot %": "100",
+        "Movement": "Hovering",
+        "Speed": "120",
+        "Speed %": "83",
+        "Sight Range": "16",
+        "Energy Generation": "73",
+        "Heat Dissipation": "50",
+        "Core Integrity": "220",
+        "Core Exposure": "495",
+        "Core Exposure %": "19",
+        "Salvage Potential": "125~175",
+        "Inventory Capacity": "1",
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Hacking/RIF",
+            "Jamming",
+            "Meltdown"
+        ],
+        "Components": [
+            "Rnf. Quantum Reactor",
+            "Hyb. Antimatter Reactor",
+            "Hoverbase",
+            "Lrn. IFF Parser",
+            "Adv. Coolant Injector",
+            "Adv. Energy Well",
+            "Centrium Heavy Armor Plating",
+            "QV-33N's Drone Shield",
+            "Exp. Phase Shifter",
+            "Exp. Reaction Control System",
+            "QV-33N's Launch Deck"
+        ],
+        "Resistances": {
+            "Explosive": "75",
+            "Electromagnetic": "90",
+            "Impact": "50",
+            "Slashing": "50",
+            "Piercing": "50"
+        },
+        "Components String": "Rnf. Quantum Reactor, Hyb. Antimatter Reactor, Hoverbase, Lrn. IFF Parser, Adv. Coolant Injector, Adv. Energy Well, Centrium Heavy Armor Plating, QV-33N's Drone Shield, Exp. Phase Shifter, Exp. Reaction Control System, QV-33N's Launch Deck"
+    },
+    {
+        "Name": "CL-0N3",
+        "Class": "Unique",
+        "Tier": "10",
+        "Threat": "5",
+        "Rating": "69",
+        "Value": "300",
+        "Size Class": "Medium",
+        "Size": "1",
+        "Profile": "RD5X5",
+        "Memory": "-2",
+        "Spot %": "100",
+        "Movement": "Hovering",
+        "Speed": "40",
+        "Speed %": "250",
+        "Sight Range": "16",
+        "Energy Generation": "25",
+        "Heat Dissipation": "50",
+        "Core Integrity": "150",
+        "Core Exposure": "675",
+        "Core Exposure %": "75",
+        "Salvage Potential": "20~50",
+        "Inventory Capacity": "1",
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Disruption",
+            "Hacking/RIF",
+            "Jamming",
+            "Meltdown"
+        ],
+        "Components": [
+            "CL-0N3's Metamass Displacer"
+        ],
+        "Resistances": {
+            "Kinetic": "75",
+            "Thermal": "75",
+            "Explosive": "75",
+            "Electromagnetic": "90",
+            "Impact": "75",
+            "Slashing": "75",
+            "Piercing": "75"
+        },
+        "Components String": "CL-0N3's Metamass Displacer"
+    },
+    {
+        "Name": "DW-4LL",
+        "Class": "Unique",
+        "Tier": "9",
+        "Threat": "5",
+        "Rating": "178",
+        "Value": "300",
+        "Size Class": "Large",
+        "Size": "1",
+        "Profile": "RD7X7",
+        "Memory": "-2",
+        "Spot %": "100",
+        "Movement": "Treading",
+        "Speed": "70",
+        "Speed %": "142",
+        "Sight Range": "16",
+        "Energy Generation": "30",
+        "Heat Dissipation": "160",
+        "Core Integrity": "200",
+        "Core Exposure": "593",
+        "Core Exposure %": "14",
+        "Salvage Potential": "150~200",
+        "Inventory Capacity": "1",
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Hacking/RIF",
+            "Jamming",
+            "Meltdown"
+        ],
+        "Armament": [
+            [
+                {
+                    "name": "DW-4LL's Slamshotty"
+                },
+                {
+                    "name": "DW-4LL's Megashotty"
+                }
+            ]
+        ],
+        "Components": [
+            "Rnf. Quantum Reactor",
+            "DW-4LL's Griptreads",
+            "DW-4LL's Griptreads",
+            "Mak. Coolant Network",
+            "DW-4LL's Blast Wall",
+            "Adv. Matter Compressor",
+            "Exp. Weapon Cycler",
+            "Exp. Armor Integrity Analyzer"
+        ],
+        "Resistances": {
+            "Explosive": "75",
+            "Electromagnetic": "90"
+        },
+        "Armament String": "DW-4LL's Slamshotty OR DW-4LL's Megashotty",
+        "Components String": "Rnf. Quantum Reactor, 2x DW-4LL's Griptreads, Mak. Coolant Network, DW-4LL's Blast Wall, Adv. Matter Compressor, Exp. Weapon Cycler, Exp. Armor Integrity Analyzer"
+    },
+    {
+        "Name": "6S-H0T",
+        "Class": "Unique",
+        "Tier": "9",
+        "Threat": "5",
+        "Rating": "136",
+        "Value": "300",
+        "Size Class": "Medium",
+        "Size": "1",
+        "Profile": "RD5X5",
+        "Memory": "-2",
+        "Spot %": "100",
+        "Movement": "Hovering",
+        "Speed": "38",
+        "Speed %": "263",
+        "Sight Range": "22",
+        "Energy Generation": "46",
+        "Heat Dissipation": "139",
+        "Core Integrity": "140",
+        "Core Exposure": "77",
+        "Core Exposure %": "14",
+        "Salvage Potential": "100~120",
+        "Inventory Capacity": "5",
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Hacking/RIF",
+            "Jamming",
+            "Meltdown"
+        ],
+        "Armament": [
+            "6S-H0T's Six Shooter"
+        ],
+        "Components": [
+            "Com. Particle Reactor",
+            "Com. Particle Reactor",
+            "Imp. Linear Gravjet",
+            "Imp. Linear Gravjet",
+            "Exp. Antigrav System",
+            "Exp. Heat Sink",
+            "Exp. Heat Sink",
+            "Adv. Cryofiber Web",
+            "Exp. Reaction Control System",
+            "Exp. Propulsion Shielding",
+            "Exp. Weapon Shielding",
+            "Enh. Optical Array",
+            "Mak. Targeting Computer",
+            "Exp. Targeting Computer"
+        ],
+        "Resistances": {
+            "Kinetic": "25",
+            "Electromagnetic": "90"
+        },
+        "Armament String": "6S-H0T's Six Shooter",
+        "Components String": "2x Com. Particle Reactor, 2x Imp. Linear Gravjet, Exp. Antigrav System, 2x Exp. Heat Sink, Adv. Cryofiber Web, Exp. Reaction Control System, Exp. Propulsion Shielding, Exp. Weapon Shielding, Enh. Optical Array, Mak. Targeting Computer, Exp. Targeting Computer"
+    },
+    {
+        "Name": "GL-D0S",
+        "Class": "Unique",
+        "Tier": "9",
+        "Threat": "5",
+        "Rating": "113",
+        "Value": "300",
+        "Size Class": "Small",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "-2",
+        "Spot %": "100",
+        "Movement": "Flying",
+        "Speed": "34",
+        "Speed %": "294",
+        "Sight Range": "24",
+        "Energy Generation": "24",
+        "Heat Dissipation": "35",
+        "Core Integrity": "90",
+        "Core Exposure": "92",
+        "Core Exposure %": "14",
+        "Salvage Potential": "50~75",
+        "Inventory Capacity": "1",
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Hacking/RIF",
+            "Jamming",
+            "Meltdown"
+        ],
+        "Components": [
+            "Mic. Antimatter Reactor",
+            "Impulse Thruster Array",
+            "Imp. Diametric Drive",
+            "Exp. Matter Compressor",
+            "Exp. Matter Compressor",
+            "Exp. Sensor Array",
+            "Exp. Signal Interpreter",
+            "Spectral Analyzer",
+            "GL-D0S's Turretformer"
+        ],
+        "Resistances": {
+            "Electromagnetic": "75"
+        },
+        "Components String": "Mic. Antimatter Reactor, Impulse Thruster Array, Imp. Diametric Drive, 2x Exp. Matter Compressor, Exp. Sensor Array, Exp. Signal Interpreter, Spectral Analyzer, GL-D0S's Turretformer"
     },
     {
         "Name": "Revision",

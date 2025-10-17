@@ -3,7 +3,6 @@ Data Core
 Derelict Log
 Schematic Archive
 Imprinter Data Core
-CL-0N3 Data Core
 A2 Data Core
 A7 Data Core
 MAIN.C Data Core
@@ -111,7 +110,6 @@ Enh. Armored Heavy Treads
 Adv. Heavy Siege Treads
 Hds. Centrium Heavy Treads
 Exp. Biometal Medium Treads
-DW-4LL's Griptreads
 Exp. Heavy Siege Treads
 Aluminum Leg
 Imp. Aluminum Leg
@@ -199,7 +197,6 @@ Zio. Glidesys II
 Cld. Antigrav System
 Cmb. Antigrav System
 Antigrav Array
-Hoverbase
 Exp. Gyrokinetic Inverter
 Cld. Linear Gravjet
 Cmb. Linear Gravjet
@@ -207,7 +204,6 @@ Exp. Antigrav System
 Gravjet Array
 Cep. Combat Aerolev Unit
 Cep. Gyrokinetic System
-CL-0N3's Metamass Displacer
 Flight Unit
 VTOL Module
 Imp. Flight Unit
@@ -361,7 +357,6 @@ Active Sensor Suite
 Exp. Active Sensor Suite
 IFF Parser
 Lrn. IFF Parser
-Zeronet Interface
 Terrain Scanner
 Imp. Terrain Scanner
 Adv. Terrain Scanner
@@ -568,7 +563,6 @@ Adv. Powered Armor
 Exp. Powered Armor
 1C-UTU's Buckler
 Tower Shield
-DW-4LL's Blast Wall
 Lgt. Regenerative Plating
 Med. Regenerative Plating
 Hvy. Regenerative Plating
@@ -623,7 +617,6 @@ Exp. Remote Shield
 Remote Force Field
 Imp. Remote Force Field
 Adv. Remote Force Field
-QV-33N's Drone Shield
 AEGIS Remote Shield
 Cep. Energy Mantle
 Phase Redirector
@@ -741,8 +734,6 @@ Wardrone Bay
 Cobbler Unit
 Bomb Factory No. 2
 Mobile Assembly Unit
-QV-33N's Launch Deck
-GL-D0S's Turretformer
 Heart of Steel
 Scrapoid Pod
 GOLEM Unit
@@ -810,9 +801,7 @@ Imp. Arc Projector
 Hvy. Tesla Rifle
 Hyp. EM Gauss Rifle
 Imp. Arc Thrower
-Antisys Shotgun
 01-MTF's Shockpuncher
-Shockbolt Module
 Gamma Rifle
 Tachyon Dispersion Ray
 Immobilizer
@@ -874,15 +863,12 @@ Zio. Laser-M
 AWS/Thermal
 PD Laser
 KN-7UR's Autopenetrator
-Stealth Gun
 Quantum Rifle
 Ovr. Quantum Rifle
 Prc. Phase Gun
 Hvy. Dispersion Rifle
 Vortex Shotgun
 Vortex Rail
-Thermal Shotgun
-Piercelight Module
 Zio. Phaser-M
 Enh. Quantum Rifle
 Zio. Laser-H
@@ -999,11 +985,7 @@ Hyp. Railgun
 Ovr. Railgun
 Helical Railgun
 Com. Railgun
-Kinetic Shotgun
 XL Autogun Array
-DW-4LL's Slamshotty
-DW-4LL's Megashotty
-6S-H0T's Six Shooter
 12-ASH's Boomstick
 8R-AWN's Boregun
 Multirail
@@ -1095,7 +1077,6 @@ Tiamat Missile Launcher
 Thermoblaster
 Micro-nuke Launcher
 Adv. Concussive RPG
-Zip Rocket
 Neutron Missile Launcher
 Fusion Bomb Launcher
 Hellfire Missile Launcher
@@ -1150,7 +1131,6 @@ AD-0RF's Magmablaster
 IN-MT5's Pitchfork "Insurrection"
 Shield Trident
 Junk Cannon
-Hammerchucker
 Stasis Beam
 Stasis Projector
 Exp. Stasis Projector
@@ -1257,7 +1237,6 @@ Lrg. Botcube
 PL-3XN's Ring of Power
 Disassembled Obliterator
 GAL Module
-6S-H0T's SS Cartridge
 Portable AFG
 UFD Drillbomb
 Zhirov Special

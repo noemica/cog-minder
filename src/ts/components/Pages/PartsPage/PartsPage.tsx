@@ -45,6 +45,7 @@ export type PartCategory =
     | "Testing"
     | "Unobtainable"
     | "UFD"
+    | "Unchained"
     | "Warlord"
     | "Zion"
     | "Zionite";

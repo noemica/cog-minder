@@ -111,6 +111,8 @@ SPRITES = [
     Sprite(21, 14, 1, 'Ranger (Derelict)'),
     Sprite(23, 14, 1, 'Mutant (Derelict)'),
     Sprite(24, 14, 1, 'V-Series (Prototype)'),
+    Sprite(25, 14, 1, 'CL-0N3'),
+    Sprite(26, 14, 1, 'QV-33N'),
 
     Sprite(0, 15, 1, 'Striker (Prototype)'),
     Sprite(1, 15, 1, 'Executioner (Prototype)'),
@@ -213,25 +215,25 @@ def process_font(font, fonts_path):
 # Entry point
 def main(cogmind_dir):
     temp_dir = path.join(cogmind_dir, 'temp')
-    cogmind_resouces_path = path.join(cogmind_dir, 'cogmind.x')
+    cogmind_resources_path = path.join(cogmind_dir, 'cogmind.x')
     cogmind_resources_dir = path.join(temp_dir, 'cogmind_resources')
     fonts_path = path.join(cogmind_resources_dir, 'data', 'fonts')
 
-    extract_resources(cogmind_resouces_path, cogmind_resources_dir)
+    extract_resources(cogmind_resources_path, cogmind_resources_dir)
 
     for font in FONTS:
         logging.info('Processing font %s', font.filename)
         process_font(font, fonts_path)
 
-    shutil.rmtree(temp_dir)
+    # shutil.rmtree(temp_dir)
 
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
 
     parser = ArgumentParser()
-    parser.add_argument('cogmind_dir', help=r'Root Cogmind directory. If installed via Steam, this is something like '
-                                            r'C:\Program Files (x86)\Steam\steamapps\common\Cogmind')
+    parser.add_argument('cogmind_dir', help='Root Cogmind directory. If installed via Steam, this is something like '
+                                            'C:/Program Files (x86)/Steam/steamapps/common/Cogmind')
 
     args = parser.parse_args()
     main(args.cogmind_dir)
