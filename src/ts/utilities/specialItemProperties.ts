@@ -342,8 +342,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
 
     // Recoil reduction
     "Recoil Stabilizer": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 4 } },
-    "Adv. Recoil Nullifier": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 6 } },
-    "Recoil Nullifier": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 6 } },
+    "Adv. Recoil Stabilizer": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 6 } },
     "Cep. Recoil Nullifier": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 99 } },
 
     // Particle charging

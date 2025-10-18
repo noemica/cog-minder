@@ -18,6 +18,7 @@ import {
     PowerItem,
     PropulsionItem,
     RangedWeaponCycling,
+    RecoilReduction,
     WeaponItem,
     WeaponRegen,
 } from "../../../types/itemTypes";
@@ -62,6 +63,7 @@ type CalculatedPartInfo = {
     name: string;
     part: Item | undefined;
     partState: PartState;
+    recoil: number;
     slot: ItemSlot;
     size: number;
     vulnerability: number;
@@ -114,6 +116,10 @@ type TotalPartsState = {
     totalIntegrity: number;
     totalMass: number;
 
+    highestRecoil: number;
+    totalRecoilReduction: number;
+    totalRecoil: number;
+
     // The total support calculated from all active propulsion as the same type as the first active slot
     totalSupport: number;
 
@@ -136,7 +142,8 @@ type PartInfoType =
     | "Energy Gain/Move"
     | "Heat Gain/Move"
     | "Energy Gain/Volley"
-    | "Heat Gain/Volley";
+    | "Heat Gain/Volley"
+    | "Recoil";
 
 type PartState = {
     active?: boolean;
@@ -205,6 +212,10 @@ const partInfoButtons: ExclusiveButtonDefinition<PartInfoType>[] = [
     {
         value: "Heat Gain/Volley",
         tooltip: "The heat generation and dissipation of all active parts and weapons per volley.",
+    },
+    {
+        value: "Recoil",
+        tooltip: "The amount of recoil for each weapon in the volley.",
     },
 ];
 
@@ -385,11 +396,13 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     // Add mass support utils
     // First, disable all but the highest mass support utility
     const massSupportUtils = parts.filter((p) => hasActiveSpecialProperty(p.part, p.abilityActive, "MassSupport"));
-    massSupportUtils.sort(
-        (a, b) =>
-            (b.part.specialProperty!.trait as MassSupport).support -
-            (a.part.specialProperty!.trait as MassSupport).support,
-    ).slice(0, 1);
+    massSupportUtils
+        .sort(
+            (a, b) =>
+                (b.part.specialProperty!.trait as MassSupport).support -
+                (a.part.specialProperty!.trait as MassSupport).support,
+        )
+        .slice(0, 1);
     massSupportUtils.splice(1).map((p) => (p.active = false));
 
     // Now, add only the highest part
@@ -550,6 +563,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         id: -1,
         integrity: 1750 - 150 * depth,
         mass: activeProp.length > 0 ? 0 : -3,
+        recoil: 0,
         size: 0,
         slot: "N/A",
         vulnerability: (totalCoverage / 100) * (1750 - 150 * depth),
@@ -573,6 +587,15 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     });
     const [topFilter, secondFilter] = getTopTwoValues(filterValues);
     const energyFilterPercent = 1 - (topFilter + 0.5 * secondFilter);
+
+    let totalRecoilReduction = activeProp
+        .filter((p) => p.type === "Treads")
+        .map((p) => p.size)
+        .reduce(sum, 0);
+    totalRecoilReduction += parts
+        .filter((p) => p.active && hasActiveSpecialProperty(p.part, p.abilityActive, "RecoilReduction"))
+        .map((p) => p.number * (p.part.specialProperty!.trait as RecoilReduction).reduction)
+        .reduce(sum, 0);
 
     // Calculate info for each part
     const partsInfo: CalculatedPartInfo[] = parts.map((p) => {
@@ -598,6 +621,10 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
             mass: getMass(p, p.number),
             part: p.part,
             partState: p.partState,
+            recoil:
+                p.part.slot === "Weapon" && p.active
+                    ? Math.max(parseIntOrDefault((p.part as WeaponItem).recoil, 0) - totalRecoilReduction, 0) * p.number
+                    : 0,
             slot: p.part.slot,
             size: p.part.size * p.number,
             vulnerability: getVulnerability(p, totalCoverage),
@@ -633,6 +660,11 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     const vulnerabilities = allPartInfo.map((p) => p.vulnerability).filter((v) => v !== 0);
     const lowestVulnerability = Math.max(...vulnerabilities, coreInfo.vulnerability) / 0.9;
     const highestVulnerability = Math.min(...vulnerabilities, coreInfo.vulnerability) * 0.9;
+
+    const highestRecoil = partsInfo
+        .map((p) => p.recoil)
+        .reduce((highest, recoil) => (recoil > highest ? recoil : highest));
+    const totalRecoil = partsInfo.map((p) => p.recoil).reduce(sum, 0);
 
     const energyStorage =
         100 +
@@ -687,6 +719,9 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         totalHeatGenPerVolley: totalHeatGenPerVolley,
         totalIntegrity: totalIntegrity,
         totalMass: totalMass,
+        highestRecoil: highestRecoil,
+        totalRecoilReduction: totalRecoilReduction,
+        totalRecoil: totalRecoil,
         totalSupport: totalSupport,
         tusPerMove: tusPerMove,
         tusPerVolley: tusPerVolley,
@@ -825,6 +860,11 @@ function CoreSection({ pageState, partsState }: { pageState: BuildPageState; par
                     percentageString=""
                 />
             );
+            break;
+        }
+
+        case "Recoil": {
+            coreInfo = <InfoContainerBase color="Default" percentage={0} percentageString="" value={Math.ceil(0)} />;
             break;
         }
 
@@ -1016,6 +1056,20 @@ function InfoContainer({
                     percentage={percentage}
                     percentageString=""
                     value={Math.ceil(vulnerability)}
+                />
+            );
+        }
+
+        case "Recoil": {
+            const recoil = partInfo.part?.slot === "Weapon" ? partsState.totalRecoil - partInfo.recoil : 0;
+            const percentage = partsState.totalRecoil === 0 ? 0 : (recoil / partsState.totalRecoil) * 100.0;
+
+            return (
+                <InfoContainerBase
+                    color="Mass"
+                    percentage={percentage}
+                    percentageString=""
+                    value={Math.ceil(recoil)}
                 />
             );
         }
@@ -1295,6 +1349,11 @@ function SummarySection({ partsState }: { partsState: TotalPartsState }) {
                     label="Net Heat/Volley"
                     tooltip="The amount of heat gained (or lost) per full volley. For melee this assumes no followups."
                     value={partsState.totalHeatGenPerVolley - partsState.totalHeatDissipationPerVolley}
+                />
+                <SummaryDetail
+                    label="Total Recoil"
+                    tooltip="The total recoil from a volley."
+                    value={partsState.totalRecoil}
                 />
             </div>
         </>
