@@ -18,6 +18,10 @@ describe("Combat log parser", () => {
         expect(parseCombatLog(td.cogmindHitBotPartLog)).toEqual(td.cogmindHitBotPartEntries);
     });
 
+    test("Cogmind hitting a known part on a known bot with a studied part", () => {
+        expect(parseCombatLog(td.cogmindHitBotPartLogWithStudyLog)).toEqual(td.cogmindHitBotPartLogWithStudyEntries);
+    });
+
     test("Cogmind hitting a known part on a known bot with a multi-projectile weapon", () => {
         expect(parseCombatLog(td.cogmindHitBotPartMultiLog)).toEqual(td.cogmindHitBotPartMultiEntries);
     });
@@ -29,6 +33,7 @@ describe("Combat log parser", () => {
     test("Cogmind hitting a known part on a known bot with a burn critical", () => {
         expect(parseCombatLog(td.cogmindHitBotPartBurnCriticalLog)).toEqual(td.cogmindHitBotPartBurnCriticalEntries);
     });
+
     test("Cogmind hitting a known part on a known bot with a phase critical", () => {
         expect(parseCombatLog(td.cogmindHitBotPartPhaseCriticalLog)).toEqual(td.cogmindHitBotPartPhaseCriticalEntries);
     });
@@ -37,12 +42,28 @@ describe("Combat log parser", () => {
         expect(parseCombatLog(td.botHitCogmindPartLog)).toEqual(td.botHitCogmindPartEntries);
     });
 
+    test("A known non-Cogmind bot hitting a studied part on Cogmind", () => {
+        expect(parseCombatLog(td.botHitCogmindStudiedPartLog)).toEqual(td.botHitCogmindStudiedPartEntries);
+    });
+
     test("A known non-Cogmind bot hitting a part on Cogmind with a multi-projectile weapon", () => {
         expect(parseCombatLog(td.botHitCogmindPartMultiLog)).toEqual(td.botHitCogmindPartMultiEntries);
     });
 
     test("An unknown non-Cogmind bot hitting a part on Cogmind", () => {
         expect(parseCombatLog(td.unknownBotHitCogmindPartLog)).toEqual(td.unknownBotHitCogmindPartEntries);
+    });
+
+    test("A known non-Cogmind bot hitting a part on Cogmind with an unknown but determinable weapon", () => {
+        expect(parseCombatLog(td.botHitCogmindUnknownDeterminablePartLog)).toEqual(
+            td.botHitCogmindUnknownDeterminablePartEntries,
+        );
+    });
+
+    test("A known non-Cogmind bot hitting a part on Cogmind with an unknown but undeterminable weapon", () => {
+        expect(parseCombatLog(td.botHitCogmindUnknownUndeterminablePartLog)).toEqual(
+            td.botHitCogmindUnknownUndeterminablePartEntries,
+        );
     });
 
     // Hitting core

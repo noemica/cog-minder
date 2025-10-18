@@ -57,6 +57,32 @@ export const cogmindHitBotPartEntries: CombatLogEntry[] = [
     },
 ];
 
+export const cogmindHitBotPartLogWithStudyLog = `00001_ Base Hit%: 60+12r+10m=82
+00001_  Assault Rifle+ (82%) Hit
+00001_   G-34 Aluminum Leg damaged: 12`;
+
+export const cogmindHitBotPartLogWithStudyEntries: CombatLogEntry[] = [
+    {
+        damageEntries: [
+            {
+                damagedEntity: "G-34 Mercenary",
+                damagedPart: "Aluminum Leg",
+                criticalHitType: undefined,
+                damageDealt: 12,
+                damageOverflow: false,
+                targetDestroyed: false,
+            },
+        ],
+        projectilesHit: 1,
+        projectilesTotal: 1,
+        sourceEntity: "Cogmind",
+        sourceWeapon: "Assault Rifle",
+        sneakAttack: false,
+        turn: 1,
+        weaponAccuracy: 82,
+    },
+];
+
 export const cogmindHitBotPartMultiLog = `00001_ Base Hit%: 60+6r+10m=73
 00001_  Shotgun (100-5=94%) 2/2 Hit
 00001_   A-02 Ion Engine damaged: 10 <x2>`;
@@ -213,6 +239,31 @@ export const botHitCogmindPartEntries: CombatLogEntry[] = [
     },
 ];
 
+export const botHitCogmindStudiedPartLog = `00001_  Y-64: KE Penetrator (72%) Hit
+00001_   Imp. Treads+ damaged: 23`;
+
+export const botHitCogmindStudiedPartEntries: CombatLogEntry[] = [
+    {
+        damageEntries: [
+            {
+                damagedEntity: "Cogmind",
+                damagedPart: "Imp. Treads",
+                criticalHitType: undefined,
+                damageDealt: 23,
+                damageOverflow: false,
+                targetDestroyed: false,
+            },
+        ],
+        projectilesHit: 1,
+        projectilesTotal: 1,
+        sourceEntity: "Y-64 Sentinel",
+        sourceWeapon: "KE Penetrator",
+        sneakAttack: false,
+        turn: 1,
+        weaponAccuracy: 72,
+    },
+];
+
 export const botHitCogmindPartMultiLog = `00001_  Y-54: Gatling Laser (76%) 2/3 Hit
 00001_   Arm. Treads damaged: 10
 00001_   Core damaged: 10`;
@@ -272,6 +323,57 @@ export const unknownBotHitCogmindPartEntries: CombatLogEntry[] = [
         weaponAccuracy: undefined,
     },
 ];
+
+export const botHitCogmindUnknownDeterminablePartLog = `00001_  Y-64: Unknown Ballistic Gun (72%) Hit
+00001_   Imp. Treads damaged: 23`;
+
+export const botHitCogmindUnknownDeterminablePartEntries: CombatLogEntry[] = [
+    {
+        damageEntries: [
+            {
+                damagedEntity: "Cogmind",
+                damagedPart: "Imp. Treads",
+                criticalHitType: undefined,
+                damageDealt: 23,
+                damageOverflow: false,
+                targetDestroyed: false,
+            },
+        ],
+        projectilesHit: 1,
+        projectilesTotal: 1,
+        sourceEntity: "Y-64 Sentinel",
+        sourceWeapon: "KE Penetrator",
+        sneakAttack: false,
+        turn: 1,
+        weaponAccuracy: 72,
+    },
+];
+
+export const botHitCogmindUnknownUndeterminablePartLog = `00001_  P-70: Unknown Energy Gun (70%) Hit
+00001_   Imp. Treads damaged: 21`;
+
+export const botHitCogmindUnknownUndeterminablePartEntries: CombatLogEntry[] = [
+    {
+        damageEntries: [
+            {
+                damagedEntity: "Cogmind",
+                damagedPart: "Imp. Treads",
+                criticalHitType: undefined,
+                damageDealt: 21,
+                damageOverflow: false,
+                targetDestroyed: false,
+            },
+        ],
+        projectilesHit: 1,
+        projectilesTotal: 1,
+        sourceEntity: "P-70 Sage",
+        sourceWeapon: "Unknown Energy Gun",
+        sneakAttack: false,
+        turn: 1,
+        weaponAccuracy: 70,
+    },
+];
+
 
 export const cogmindHitBotCoreLog = `00001_ Base Hit%: 70=69
 00001_  Axe (69%) Hit

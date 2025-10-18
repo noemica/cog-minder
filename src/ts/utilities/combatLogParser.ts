@@ -44,6 +44,9 @@ const damageRegex = /^(.*) (overflow dmg|damaged): (\d*)(?: \(Crit: (.*)\))?$/;
 // Non-match 1: Target
 const damageInsufficientToPenetrateRegex = /^Damage insufficient to overcome (?:.*)$/;
 
+// Non-match 1: Part doing deflecting
+const deflectedRegex = /^Deflected by (?:.*)$/
+
 // Non-match 1: Target disabled, includes Bot and Part
 const disabledRegex = /^(?:.*) disabled \(Disruption\)$/;
 
@@ -93,15 +96,25 @@ const trapTriggeredRegex = /^(?:.*) triggered(?: by (?:.*))?$/;
 // Non-match: ??? unknown damage source
 const questionRegex = /^\?\?\?$/;
 
+// Non-match 1: Part doing redirecting
+const redirectedRegex = /^Redirected by (?:.*)$/
+
+// Match 1: Unknown / Prototype / Alien
+// Match 2: Part type
+const unknownPartRegex =
+    /(Unknown|Prototype|Alien) (Engine|Power Core|Reactor|Flight Unit|Hover Unit|Leg|Treads|Wheel|Armor|Device|Hackware|Storage|Processor|Ballistic Cannon|Ballistic Gun|Energy Cannon|Energy Gun|Impact Weapon|Launcher|Piercing Weapon|Slashing Weapon|Special Ranged Weapon|Special Weapon)/;
+
 // Match 1: Attacker if not Cogmind (optional)
 // Match 2: Weapon
+// Non-match: Follow-up (optional)
 // Match 3: Sneak attack (optional)
 // Non-match: Individual weapon accuracy modifiers (optional)
 // Match 4: Accuracy
 // Match 5: Projectiles hit for multi-projectile weapons (optional)
 // Match 6: Projectiles total for multi-projectile weapons (optional)
 // Match 7: Hit/Miss for single projectile weapons
-const weaponAttackRegex = /^(?:([^:]*): )?(.*?) (sneak attack )?\((?:[^=)]*=)?(\d+)%\) (?:(\d*)\/(\d*) )?(\w*)$/;
+const weaponAttackRegex =
+    /^(?:([^:]*): )?(.*?) (?:follow-up )?(sneak attack )?\((?:[^=)]*=)?(\d+)%\) (?:(\d*)\/(\d*) )?(\w*)$/;
 
 // Match 1: The derelict class
 const derelictRegex = /^\w{2}-\w{3}\((\w)\)$/;
@@ -168,11 +181,13 @@ const specialBotRegexes: { name: string; regex: RegExp }[] = [
     // Note: Can't tell Assembled 4 vs 7 apart but 4 is more common so use that
     { name: "Assembled (4)", regex: /^as-\d+$/ },
     { name: "Assembler", regex: /^AS-\d+$/ },
+    { name: "Enhanced Q-Series", regex: /^EQ-\d{3}$/ },
     { name: "Golem", regex: /^AG-\d+$/ },
     { name: "Lugger", regex: /^Lugger \d{3}$/ },
     { name: "Q-Series", regex: /^Q\d{3}-\w$/ },
-    { name: "Scrapoid (3)", regex: /^\w{5}-D/ },
-    { name: "Scraphulk (6)", regex: /^\w{5}-K/ },
+    { name: "Scrapoid (3)", regex: /^\w{5}-D/ }, //0[Depth][Map]##-D
+    { name: "Scraphulk (6)", regex: /^\w{5}-K/ }, // 0[Depth][Map]##-K
+    { name: "V-Series", regex: /^V\d{3}-\w$/ },
     { name: "Warlord (Command)", regex: /^ZY-L1N$/ },
     { name: "Z-Experimental (8)", regex: /^Z-Ex$/ },
     { name: "Z-Imprinter", regex: /^Z-Im$/ },
@@ -354,12 +369,14 @@ class ParserState {
         cogmindMeltdownRegex,
         criticalPartRemovedRegex,
         damageInsufficientToPenetrateRegex,
+        deflectedRegex,
         disabledRegex,
         gunslingingRegex,
         interceptedRegex,
         machineDisabledRegex,
         penetrationRegex,
         preventedDisruptionRegex,
+        redirectedRegex,
         shieldingPreventedCritRegex,
         trapShortCircuited,
         trapTriggeredRegex,
@@ -475,14 +492,28 @@ class ParserState {
             currentEntry.projectilesHit = 1;
             currentEntry.projectilesTotal = 1;
         } else {
+            let bot: JsonBot | undefined = undefined;
             if (weaponAttackResult[1] !== undefined) {
-                const bot = tryGetBot(weaponAttackResult[1]);
+                bot = tryGetBot(weaponAttackResult[1]);
                 currentEntry.sourceEntity = bot === undefined ? "Unknown" : bot.Name;
             } else {
                 currentEntry.sourceEntity = "Cogmind";
             }
 
             currentEntry.sourceWeapon = weaponAttackResult[2];
+            if (currentEntry.sourceWeapon.endsWith("+")) {
+                // Remove the study + from the weapon
+                currentEntry.sourceWeapon = currentEntry.sourceWeapon.slice(0, currentEntry.sourceWeapon.length - 1);
+            }
+
+            if (bot !== undefined) {
+                // If the part is an unknown part, see if we can determine
+                // what it is based on the type of part
+                const unknownPart = tryGetUnknownPart(currentEntry.sourceWeapon, bot);
+                if (unknownPart !== undefined) {
+                    currentEntry.sourceWeapon = unknownPart;
+                }
+            }
 
             if (weaponAttackResult[3] !== undefined) {
                 currentEntry.sneakAttack = true;
@@ -634,6 +665,12 @@ function splitBotAndPart(line: string): { botName: string; partName: string } {
                 partName = partName.slice(0, partName.length - 1);
             }
 
+            // See if we can determine the unknown part from the type of part
+            const unknownPart = tryGetUnknownPart(partName, bot);
+            if (unknownPart !== undefined) {
+                return { botName: bot.Name, partName: unknownPart };
+            }
+
             return { botName: bot.Name, partName: partName };
         }
     }
@@ -727,6 +764,51 @@ function tryGetBot(botName: string) {
             }
 
             return bot;
+        }
+    }
+
+    return undefined;
+}
+
+function tryGetUnknownPart(partName: string, bot: JsonBot) {
+    const unknownResult = unknownPartRegex.exec(partName);
+
+    if (unknownResult !== null) {
+        // Found unknown part, see if we can determine what it is
+        const isProto = unknownResult[1] === "Prototype";
+        const isAlien = unknownResult[1] === "Alien";
+        const matchingParts = new Set<string>();
+
+        const allParts = bot.Components?.concat(bot.Armament || []) || [];
+        for (const component of allParts) {
+            if (typeof component === "string") {
+                // Only support non-grouped types for now
+                const part = getItemByName(component);
+
+                if (part === undefined) {
+                    continue;
+                }
+
+                let ratingMatch: boolean;
+                if (isAlien) {
+                    ratingMatch = part.Rating.includes("**");
+                } else if (isProto) {
+                    ratingMatch = part.Rating.includes("*");
+                } else {
+                    ratingMatch = !part.Rating.includes("*");
+                }
+
+                if (part.Type === unknownResult[2] && ratingMatch) {
+                    // Found a part of the right part type and proto/non-proto category
+                    matchingParts.add(part.Name);
+                }
+            }
+        }
+
+        // If there is only one possibility for the type of part, use that now
+        // If there are no matches or multiple matches, we can't narrow it down
+        if (matchingParts.size === 1) {
+            return [...matchingParts][0];
         }
     }
 
