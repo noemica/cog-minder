@@ -663,7 +663,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
 
     const highestRecoil = partsInfo
         .map((p) => p.recoil)
-        .reduce((highest, recoil) => (recoil > highest ? recoil : highest));
+        .reduce((highest, recoil) => (recoil > highest ? recoil : highest), 0);
     const totalRecoil = partsInfo.map((p) => p.recoil).reduce(sum, 0);
 
     const energyStorage =
