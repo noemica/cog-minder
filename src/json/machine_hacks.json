@@ -660,6 +660,12 @@
                 "Indirect": "Never"
             },
             {
+                "Name": "Study",
+                "Description": "Search database for performance data of common 0b10 components in your possession, conferring permanent bonuses to using any such part.",
+                "BaseChance": 80,
+                "Indirect": "Never"
+            },
+            {
                 "Name": "Trojan(Researchers)",
                 "Description": "Reports in real time the position of all researchers across the entire floor.",
                 "BaseChance": 50,

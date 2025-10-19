@@ -2079,7 +2079,7 @@ Corruption is reset to 0%.
 [[Heading:3]]Hypermatrix Pings[[/Heading]]
 When Cogmind's core reaches below 33%, Cogmind will emit a hypermatrix ping and 6-8 Assembled will spawn next to Cogmind. This only happens on main [[0b10]] floors and in [[Command]]. After this, Cogmind will be able to detect further hypermatrix pings at a range of 18 tiles of other groups of assembled. Coming within a few tiles of these pings with visual contact will cause a further 6-8 Assembled to pop out.
 [[Heading:3]]Memory Reset[[/Heading]]
-Cogmind loses all map data, part IDs, [[Robot Analysis|Analyses]], [[Schematic|Schematics]], [[Data Conduit|Data Conduit intel]], [[RIF]] alliance, [[A7 Data Core|A7 Data Core intel]], and any manual [[Terminal]] or robot hacks. Notably, Cogmind will not lose [[FarCom]] or Imprint.
+Cogmind loses all map data, part IDs, [[Robot Analysis|Analyses]], [[Schematic|Schematics]], [[Study|Studies]], [[Data Conduit|Data Conduit intel]], [[RIF]] alliance, [[A7 Data Core|A7 Data Core intel]], and any manual [[Terminal]] or robot hacks. Notably, Cogmind will not lose [[FarCom]] or Imprint.
 [[Heading:3]]Non-Alien Hostilities[[/Heading]]
 Certain groups will no longer trust Cogmind as a result of using a CRM. If [[Zhirov]] shows up in [[Access]] as a result of completing the [[SGEMP Prototype]] quest, he and his allies will immediately turn hostile to Cogmind. [[Redacted]]The surrender option is no longer offered by [[MAIN.C]], causing the W8 [[Wintypes|Wintype]] to be unobtainable.[[/Redacted]]
 [[Redacted]][[Heading:3]][[Sigix Exoskeleton]] Control[[/Heading]]
@@ -5332,6 +5332,13 @@ Level 1 direct|Level 1 indirect|Level 2 direct|Level 2 indirect|Level 3 direct|L
 80%|80% - (15% * 1)|80% / 2|(80% / 2) - (15% * 2)|(80% / 4)|(80% / 4) - (15% * 3)||
 80%|65%|40%|10%|20%|-25%
 [[/Table]]
+
+[[Heading:2]]Central Database Authorization[[/Heading]]
+Indirect hacks for lore records, prototype IDs, part or robot schematics, Scanalyzer studies, and robot analyses, are all considered ""database hacks"". Successfully hacking any of them has a base 25% chance to instead cause a map-wide central database lockout, preventing further indirect database hacks. However, direct hacks of those types remain possible after a central database lockout, and they cannot cause one in the first place. The first indirect database hack on a map cannot cause a database lockout.
+Not all lore records, part schematics, studies, robot analyses or robot schematics can be indirectly hacked on all Terminals. Terminals have a level of database authorization dependent on security level and current depth, equal to (10 - current depth + security level). It is only possible to indirectly hack a part/robot schematic or analysis if the Terminal's authorization level is equal to or higher than the rating/tier of the relevant part/robot (prototype parts are considered to have a +1 to their rating for this purpose).
+For example, at -5/Factory, level 2 Terminals have an authorization level of (10 - 5 + 2) = 7, which would allow hacking for standard rating 7 parts or prototype rating 6 parts.
+Lore records also have a hidden rating/tier stat. This value can only be determined by attempting and failing to access a particular record.
+
 [[Heading:2]]Unauthorized Hacks[[/Heading]]
 There are certain unauthorized spoiler hacks can also be used on different machine types. These are a class of hacks known either as [[Spoiler]]Trojans or Force hacks[[/Spoiler]]. The names and effects of these hacks can be discovered from a variety of [[Derelict]] sources.
 [[Spoiler]][[Heading:3]]Trojans[[/Heading]]
@@ -7480,7 +7487,7 @@ This article was last updated during Beta 15.","","","","","","",""
 "Savage (5)","Bot","","","","","","","",""
 "Savage (7)","Bot","","","","","","","",""
 "Scanalyzer","Other","[[Image]]../game_sprites/Scanalyzer.png|A Scanalyzer[[/Image]]
-Scanalyzers are [[0b10]]-controlled [[Interactive Machine|Machines]] that can identify and provide [[Schematic|Schematics]] of scanalyzed parts. Scanalyzers are capable of identifying all parts in the game, including [[Alien Artifacts]]. However, not every item can be scanalyzed to obtain a schematic.
+Scanalyzers are [[0b10]]-controlled [[Interactive Machine|Machines]] that can identify and provide [[Schematic|Schematics]] of scanalyzed parts. Scanalyzers are capable of identifying all parts in the game, including [[Alien Artifacts]]. However, not every item can be scanalyzed to obtain a schematic. Scanalyzers can additionally be used to obtain [[Study|Studies]] for non-[[Prototype Part|prototype parts]] which grant a permanent minor buff to all parts of the same type.
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]0b10 Records|Scanalyzer[[/Lore]]
@@ -7501,6 +7508,8 @@ Security level|Armor||
 Identifying unknown parts is done by using the [[GameText]]Insert([Part Name])[[/GameText]] hack. This hack has no side effects if it fails, and can identify any part in the game. Identifying a [[Prototype Part]] this way will also determine whether it is faulty or not. If a part has no schematic available for downloading, the machine text will indicate [[GameText]]Failed: Components not registered.[[/GameText]]
 [[Heading:3]]Downloading Schematics[[/Heading]]
 After a part has been inserted, the [[GameText]]Scanalyze[[/GameText]] hack can be used to attempt to download the schematic. This process may fail to complete even if the hack was successful. Additionally, the inserted part may be broken by the scanalyzing attempt even if successful. If this happens, the part must be reinserted again before another download attempt can be made. Broken and faulty parts can be scanalyzed without issue. Higher security level Scanalyzers have a higher schematic downloading chance and a lower chance at breaking the scanalyzed part.
+[[Heading:3]][[GameText]][[Study]][[/GameText]][[/Heading]]
+Studies can only be obtained for parts held in inventory. Studies are [[Interactive Machine#Central Database Authorization|Database hacks]] and can trigger a database lockout.
 [[Spoiler]][[Heading:3]][[GameText]]Force(Extract)[[/GameText]][[/Heading]]
 This hack can give up to 1-10 schematics that Cogmind does not already have. This can include Prototype schematics, but only rarely. Only depth-appropriate rating parts can be obtained from this hack.[[/Spoiler]]","","","","","","",""
 "Scatter Rocket Array","Part","","","","","","","",""
@@ -9637,8 +9646,9 @@ Patch is an interesting hack that repairs a few parts below 50% integrity instan
 
 [[Heading]][[Scanalyzer|Scanalyzers]]|A Scanalyzer machine[[/Heading]]
 [[Image]]../game_sprites/Scanalyzer.png|A Scanalyzer machine[[/Image]]
-Scanalyzers are often overlooked machines that give you the ability to identify unknown parts and obtain schematics. Scanalyzers are difficult to operate thanks to their tendency to require multiple scans of a single item or even break the item in the process of scanning. Hackware helps to succeed at the hacks in the first place as well as repair broken parts, although [[Recalibrators]] will get the job done just as well as a Repair Station.
-I mostly use Scanalyzers for their part identifying feature. Knowing whether a [[Prototype Part]] is faulty or not is nice to avoid negative side effects. However, getting the schematic of good parts can also be quite valuable, and is much easier to pull off than indirect high rating schematic hacking. This is especially true of out of depth parts that are obtained from various sources like [[Branch|Branches]], [[Wastes]], or [[Cargo Convoy|Cargo Convoys]].
+Scanalyzers are machines that give you the ability to identify unknown parts and obtain part [[Study|Studies]] and [[Schematic|Schematics]]. Obtaining schematics can be a little finnicky thanks to the tendency of Scanalyzers to require multiple scans of a single item or even break the item in the process of scanning. Hackware helps to succeed at the hacks in the first place as well as repair broken parts, although [[Recalibrators]] will get the job done just as well as a Repair Station. Fortunately, studies do not have the same downside and a successful hack will always grant the study.
+I mostly use Scanalyzers for their part identifying and study obtaining features. Knowing whether a [[Prototype Part]] is faulty or not is nice to avoid negative side effects. However, getting the schematic of good parts can also be quite valuable, and is much easier to pull off than indirect high rating schematic hacking. This is especially true of out of depth parts that are obtained from various sources like [[Branch|Branches]], [[Wastes]], or [[Cargo Convoy|Cargo Convoys]].
+Flight gets a lot of value out of studies primarily in the power and propulsion areas. Power, especially [[Light Power|Light]] and [[Micro Power]] sources, tends to last a long time on flight builds. Although the benefit is only +1 power on these smaller power sources, any bonus power is helpful to try to avoid having to evolve an early second power slot. While the best propulsion on flight tends to be prototypes, there is still a lot of value to be had in studies for [[Flight Arrays]] and [[Surge Thrusters]]. Later in the game, the [[Impulse Thruster Array]] study reaches an impressive 9 support for slot, which is among the highest in the game.
 
 [[Heading:2]]Spoiler Hacks|Spoiler Hacks Scanalyzers[[/Heading]]
 [[Expandable]]
@@ -9791,6 +9801,23 @@ A relatively unimpressive hack that reveals all bots in a small radius nearby. T
 [[/Expandable]]","","","","","","",""
 "Striker","Bot","Bot","","","","","","",""
 "Structural Scanner","Part","","","","","","","",""
+"Study","Other","Studies are a collection of minor buffs that can be hacked for at a [[Scanalyzer]]. [[Power]], [[Propulsion]], and [[Weapons]] all have unique buff effects based on the type of part. Studies can only be obtained for non-[[Prototype Part|prototype parts]], but once obtained, will apply to all parts matching a given type. Studies are great for commonly looted parts that can be obtained many times throughout a run and for parts that can be used in large numbers.
+
+[[Heading]]Study effects[[/Heading]]
+[[List]]
+[[Light Power|Light]], [[Micro Power|Micro]], or Mini Power: +1 supply|
+Other power sources: +2 supply|
+[[Treads]]: Penalty / 2|
+[[Legs]]: -15 time/move|
+[[Wheels]]: -10 time/move|
+[[Hover Unit|Hover]]/[[Flight Unit|Flight Units]]: +1 support/slot|
+Weapons: +10% accuracy
+[[/List]]
+
+[[Spoiler]]
+[[Heading]][[Core Reset Matrix]] Interaction[[/Heading]]
+Using the Core Reset Matrix will remove knowledge of all studies.
+[[/Spoiler]]","","","","","","",""
 "Style Achievements","Other","[[Comment]]                       ---NOTE FOR EDITORS---
 Once Beta 16 releases, if you decide to update any of the Achievements pages, please consider whether it would be better to separate the new achievements from the old ones or not.
 I think that, ideally, whatever you choose to do, that decision should be applied to all Achievements pages, for the sake of consistency.[[/Comment]]
@@ -10195,11 +10222,6 @@ Moving over a destroyed Operator's Data Core will automatically collect and it e
 
 [[Heading:2]][[Multitool]][[/Heading]]
 Using a Multitool on a Terminal's interactive tile removes all direct hacks and causes tracing to begin immediately, but applies a modifier to indirect hacks. This modifier can range from -20% to +50%. Multitool is best used with a lot of [[Defensive Hackware]] to increase the number of hacks that can be safely performed after modification.
-[[Heading:2]]Central database authorization[[/Heading]]
-Indirect hacks for lore records, prototype IDs, part or robot schematics, and robot analyses, are all considered ""database hacks"". Successfully hacking any of them has a base 25% chance to instead cause a map-wide central database lockout, preventing further indirect database hacks. However, direct hacks of those types remain possible after a central database lockout, and they cannot cause one in the first place. The first indirect database hack on a map cannot cause a database lockout.
-Not all lore records, parts schematic, robot analyses or robot schematics can be indirectly hacked on all Terminals. Terminals have a level of database authorization dependent on security level and current depth, equal to (10 - current depth + security level). It is only possible to indirectly hack a part/robot schematic or analysis if the Terminal's authorization level is equal to or higher than the rating/tier of the relevant part/robot (prototype parts are considered to have a +1 to their rating for this purpose).
-For example, at -5/Factory, level 2 Terminals have an authorization level of (10 - 5 + 2) = 7, which would allow hacking for standard rating 7 parts or prototype rating 6 parts.
-Lore records also have a hidden rating/tier stat. This value can only be determined by attempting and failing to access a particular record.
 
 [[Heading:2]]Additional Details/Usage Tips[[/Heading]]
 [[Heading:3]]Grayed Out Direct Hacks[[/Heading]]
