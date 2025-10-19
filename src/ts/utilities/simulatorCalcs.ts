@@ -3,6 +3,7 @@ import { Bot, BotImmunity, BotSize } from "../types/botTypes";
 import {
     AntimissileChance,
     CorruptionIgnore,
+    CorruptionMaximum,
     CorruptionReduce,
     Critical,
     DamageReduction,
@@ -345,6 +346,12 @@ function applyDamageChunk(
 
 function applyCorruption(state: SimulatorState, corruption: number) {
     const botState = state.botState;
+
+    // Apply EM Disruption maximum corruption amount
+    let corruptionMaximumPart = getDefensiveStatePart(botState.defensiveState.corruptionMaximum);
+    if (corruptionMaximumPart !== undefined) {
+        corruption = Math.min(corruptionMaximumPart.maximumCorruption, corruption);
+    }
 
     // Check for corruption prevention parts
     let corruptionPreventPart = getDefensiveStatePart(botState.defensiveState.corruptionPrevent);
@@ -852,6 +859,7 @@ export function getBotDefensiveState(
         antimissile: [],
         avoid: [],
         corruptionIgnore: [],
+        corruptionMaximum: [],
         corruptionPrevent: [],
         corruptionReduce: [],
         critImmunity: [],
@@ -887,6 +895,12 @@ export function getBotDefensiveState(
             state.corruptionIgnore.push({
                 chance: (part.def.specialProperty!.trait as CorruptionIgnore).chance,
                 part: part,
+            });
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "CorruptionMaximum")) {
+            // EM Disruption part
+            state.corruptionMaximum.push({
+                part: part,
+                maximumCorruption: (part.def.specialProperty!.trait as CorruptionMaximum).amount,
             });
         } else if (hasActiveSpecialProperty(part.def, !dormant, "CorruptionPrevent")) {
             // Corruption Screen part

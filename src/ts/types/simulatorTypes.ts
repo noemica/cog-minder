@@ -49,6 +49,10 @@ export type CorruptionAvoidPart = SpecialPart & {
     chance: number;
 };
 
+export type CorruptionMaximumPart = SpecialPart & {
+    maximumCorruption: number;
+};
+
 export type CorruptionPreventPart = SpecialPart;
 
 export type CorruptionReductionPart = SpecialPart & {
@@ -78,6 +82,7 @@ export type DefensiveState = {
     antimissile: AntimissilePart[];
     avoid: AvoidPart[];
     corruptionIgnore: CorruptionAvoidPart[];
+    corruptionMaximum: CorruptionMaximumPart[];
     corruptionPrevent: CorruptionPreventPart[];
     corruptionReduce: CorruptionReductionPart[];
     critImmunity: CriticalImmunityPart[];

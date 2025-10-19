@@ -124,6 +124,7 @@ export type AntimissileChance = { kind: "AntimissileChance"; chance: number };
 export type CombatSuite = { kind: "CombatSuite"; core: 8; rangedAvoid: 8; targeting: 8 };
 export type CoreAnalyzer = { kind: "CoreAnalyzer"; bonus: number };
 export type CorruptionIgnore = { kind: "CorruptionIgnore"; chance: number };
+export type CorruptionMaximum = { kind: "CorruptionMaximum"; amount: number };
 export type CorruptionPrevent = { kind: "CorruptionPrevent"; amount: number };
 export type CorruptionReduce = { kind: "CorruptionReduce"; amount: number };
 export type CriticalImmunity = { kind: "CriticalImmunity" };
@@ -162,6 +163,7 @@ export type SpecialPropertyType =
     | CombatSuite
     | CoreAnalyzer
     | CorruptionIgnore
+    | CorruptionMaximum
     | CorruptionPrevent
     | CorruptionReduce
     | CriticalImmunity
@@ -200,6 +202,7 @@ export type SpecialPropertyTypeName =
     | "CombatSuite"
     | "CoreAnalyzer"
     | "CorruptionIgnore"
+    | "CorruptionMaximum"
     | "CorruptionPrevent"
     | "CorruptionReduce"
     | "CriticalImmunity"

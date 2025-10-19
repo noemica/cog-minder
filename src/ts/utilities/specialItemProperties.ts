@@ -102,10 +102,6 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     // EM
     "Insulated Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Electromagnetic: 15 } } },
     "Med. Insulated Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Electromagnetic: 20 } } },
-    "EM Disruption Field": {
-        active: "Part Active",
-        trait: { kind: "DamageResists", resists: { Electromagnetic: 25 } },
-    },
     "Hvy. Insulated Plating": { active: "Always", trait: { kind: "DamageResists", resists: { Electromagnetic: 30 } } },
     "EM Shield": {
         active: "Part Active",
@@ -233,6 +229,11 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
             },
         },
     },
+
+    // Em disruption fields
+    "EM Disruption Field": { active: "Part Active", trait: { kind: "CorruptionMaximum", amount: 10 } },
+    "Adv. EM Disruption Field": { active: "Part Active", trait: { kind: "CorruptionMaximum", amount: 6 } },
+    "Exp. EM Disruption Field": { active: "Part Active", trait: { kind: "CorruptionMaximum", amount: 3 } },
 
     // Energy filter
     "Energy Filter": { active: "Part Active", trait: { kind: "EnergyFilter", percent: 0.3 } },
