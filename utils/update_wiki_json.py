@@ -63,8 +63,6 @@ for part in parts:
                     found_group = True
                     break
 
-        if not found_group:
-            print('Part {} has no group'.format(part_name))
     except StopIteration:
         part = {'Name': part_name, 'Content': ''}
         wiki['Parts'].append(part)

@@ -17,6 +17,10 @@
    "Content": ""
   },
   {
+   "Name": "6S-H0T",
+   "Content": ""
+  },
+  {
    "Name": "7R-MNS",
    "Content": ""
   },
@@ -85,11 +89,23 @@
    "Content": ""
   },
   {
+   "Name": "Access Guard",
+   "Content": ""
+  },
+  {
    "Name": "Advanced Drone",
    "Content": ""
   },
   {
    "Name": "Alpha 7",
+   "Content": ""
+  },
+  {
+   "Name": "Antisys Drone",
+   "Content": ""
+  },
+  {
+   "Name": "Aperture Drone",
    "Content": ""
   },
   {
@@ -161,6 +177,10 @@
    "Content": ""
   },
   {
+   "Name": "Blast Turret",
+   "Content": ""
+  },
+  {
    "Name": "Bolteater",
    "Content": "Bolteaters are fast [[Wheels|wheeled]] [[UFD]] combat bots armed with [[Ripteeth]]. Valuable for a wheels build with their [[Rocket Booster|Rocket Boosters]]. Their ripteeth can rip off a component ignoring armor, so keep them away from you. Slightly resistant to Kinetic, Thermal, Electromagnetic and Explosive damage."
   },
@@ -174,6 +194,10 @@
   },
   {
    "Name": "Bouncer",
+   "Content": ""
+  },
+  {
+   "Name": "Bullet Turret",
    "Content": ""
   },
   {
@@ -201,6 +225,10 @@
    "Content": "Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).\n\nDue to their extreme lethality in melee, stay out of their range at all costs, and maybe just run the hell out of [[Wastes]]. Alternatively pack a good launcher or a good critical weapon, as their plating will tank most of your shots."
   },
   {
+   "Name": "C-45 Heavy ARC",
+   "Content": ""
+  },
+  {
    "Name": "C-55 Analyst",
    "Content": ""
   },
@@ -210,6 +238,10 @@
   },
   {
    "Name": "C-65 Expert",
+   "Content": ""
+  },
+  {
+   "Name": "CL-0N3",
    "Content": ""
   },
   {
@@ -265,6 +297,10 @@
    "Content": "More powerful [[Ranger]] variants that appear in [[Caves]] when a [[DRS Beacon]] is used."
   },
   {
+   "Name": "DW-4LL",
+   "Content": ""
+  },
+  {
    "Name": "Data Miner",
    "Content": ""
   },
@@ -294,6 +330,10 @@
   },
   {
    "Name": "E-15 Imp",
+   "Content": ""
+  },
+  {
+   "Name": "EX Drone",
    "Content": ""
   },
   {
@@ -393,6 +433,10 @@
    "Content": ""
   },
   {
+   "Name": "GL-D0S",
+   "Content": ""
+  },
+  {
    "Name": "God Mode",
    "Content": "When parsed, the text box reads:\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n[[GameText]]DESTROYDESTROYDESTROY[[/GameText]]\n"
   },
@@ -457,6 +501,10 @@
    "Content": ""
   },
   {
+   "Name": "Hammer Turret",
+   "Content": ""
+  },
+  {
    "Name": "Hotshot",
    "Content": ""
   },
@@ -513,6 +561,10 @@
    "Content": ""
   },
   {
+   "Name": "Kinetic Drone",
+   "Content": ""
+  },
+  {
    "Name": "Knight",
    "Content": ""
   },
@@ -546,6 +598,14 @@
   },
   {
    "Name": "Large Mutated Botcube",
+   "Content": ""
+  },
+  {
+   "Name": "Laser Turret",
+   "Content": ""
+  },
+  {
+   "Name": "Launcher Turret",
    "Content": ""
   },
   {
@@ -677,6 +737,10 @@
    "Content": ""
   },
   {
+   "Name": "Nova Turret",
+   "Content": ""
+  },
+  {
    "Name": "O-16 Technician",
    "Content": ""
   },
@@ -754,6 +818,10 @@
   },
   {
    "Name": "Q-Series",
+   "Content": ""
+  },
+  {
+   "Name": "QV-33N",
    "Content": ""
   },
   {
@@ -857,6 +925,14 @@
    "Content": ""
   },
   {
+   "Name": "Shield Turret",
+   "Content": ""
+  },
+  {
+   "Name": "Shock Turret",
+   "Content": ""
+  },
+  {
    "Name": "Sigix Warrior",
    "Content": ""
   },
@@ -865,7 +941,19 @@
    "Content": ""
   },
   {
+   "Name": "Stasis Drone",
+   "Content": ""
+  },
+  {
+   "Name": "Stasis Turret",
+   "Content": ""
+  },
+  {
    "Name": "Stealth Drone",
+   "Content": ""
+  },
+  {
+   "Name": "Stealth Turret",
    "Content": ""
   },
   {
@@ -913,6 +1001,14 @@
    "Content": ""
   },
   {
+   "Name": "Thermal Drone",
+   "Content": ""
+  },
+  {
+   "Name": "Thermic Turret",
+   "Content": ""
+  },
+  {
    "Name": "Thief",
    "Content": "Thieves will sometimes appear in [[Caves]] maps, usually either waiting in ambush or suddenly appearing from outside Cogmind's field of view.\n\n\n[[Heading:2]]Behavior[[/Heading]]\nThieves dash towards the closest visible enemy robot and try to steal one of that robot's parts using their [[Tearclaws]]. If successful, the Thief will flee, carrying the stolen part in their inventory. If a Thief in the process of fleeing is or goes outside Cogmind's field of view, they will exit the map.\n\nWhen trying to steal parts, Thieves might ignore unarmed robots and instead target Cogmind or combat robots.\n\n[[Heading:2]]Strategies[[/Heading]]\nThieves are incapable of taking parts on the ground, so dropping important parts you don't want to lose keeps them safe from them. However, this strategy can backfire if there are [[Dirty Bomb Trap|Dirty Bomb Traps]] or [[Decomposer|Decomposer]] nearby, or if Cogmind or other robots carry  [[Launchers]] or [[Electromagnetic Weapons]] capable of triggering chain reactions in power sources.\n\nMoving behind combat allies or swapping with them to place them closer to the Thieves can prevent your own parts getting stolen, at the cost of your allies'.\n\nIn order to actually destroy Thieves, Launchers can work well when aimed at walls next to the Thieves, though at close range the collateral damage might not be worth it. Targeting utilities can help actually hit them while they are approaching, and a Stasis Beam/Projector can prevent a single Thief from attacking or escaping while also making them easier to hit, at the cost of making them take 50% less damage.\n\n[[Blade Trap|Blade Traps]], [[Segregator Trap|Segregator Traps]] and [[Stasis Trap|Stasis Traps]] can work well in disarming or stopping Thieves, provided you have enough time to place them, for example before attacking a Thief ambush.\n\nIf Cogmind is fast enough, fleeing is also an option, for example to lead the Thieves into 0b10 robots, [[Warlord]]-aligned derelicts or traps.\n\n\nLast edited during Beta 14"
   },
@@ -926,6 +1022,10 @@
   },
   {
    "Name": "Thug (7)",
+   "Content": ""
+  },
+  {
+   "Name": "Thunder",
    "Content": ""
   },
   {
@@ -958,6 +1058,10 @@
   },
   {
    "Name": "V-Series",
+   "Content": ""
+  },
+  {
+   "Name": "V2",
    "Content": ""
   },
   {
@@ -1225,23 +1329,29 @@
    "Name": "Drone (Group)",
    "Bots": [
     "Advanced Drone",
+    "Antisys Drone",
+    "Aperture Drone",
     "Army Drone",
     "Assault Drone",
     "Bomb Drone",
     "Combat Drone",
     "Decoy Drone",
     "Drone",
+    "EX Drone",
     "Hacking Drone",
     "Impact Drone",
+    "Kinetic Drone",
     "Mapping Drone",
     "Master Drone",
     "Minesniffer Drone",
     "Mini Drone",
     "Sensor Drone",
     "Splice Drone",
+    "Stasis Drone",
     "Stealth Drone",
     "Swarm Drone",
     "Target Drone",
+    "Thermal Drone",
     "Thief Drone",
     "Wardrone",
     "Z-Drone"
@@ -1636,6 +1746,36 @@
    "Content": "Thugs are a [[Bot Groups|bot group]] of [[Legs|legged]] [[Derelict]] combat bots armed with thermal weaponry, uniquely [[Beamcaster|normal]] and [[Hvy. Beamcaster|Hvy. Beamcasters]]. They are the Derelict version of the [[0b10]] [[Grunt]] class. Thugs in [[Mines]] are notable for being significantly stronger than the typical Grunts at that depth, and their Beamcasters are one of the strongest standard weapons available in early Materials depths. Thugs are common bots that show up in many different types of Derelict encounters and events."
   },
   {
+   "Name": "Turret",
+   "Bots": [
+    "Autobeam Turret",
+    "Blast Turret",
+    "Bullet Turret",
+    "DAS Turret",
+    "Hammer Turret",
+    "Laser Turret",
+    "Launcher Turret",
+    "Nova Turret",
+    "Shield Turret",
+    "Shock Turret",
+    "Stasis Turret",
+    "Stealth Turret",
+    "Thermic Turret"
+   ]
+  },
+  {
+   "Name": "Unchained",
+   "Bots": [
+    "6S-H0T",
+    "CL-0N3",
+    "DW-4LL",
+    "GL-D0S",
+    "QV-33N"
+   ],
+   "Content": "",
+   "Spoiler": "Spoiler"
+  },
+  {
    "Name": "Warlord (Group)",
    "Bots": [
     "Borebot",
@@ -1747,7 +1887,8 @@
     "Protovariant",
     "Sentry",
     "Specialist",
-    "Swarmer"
+    "Swarmer",
+    "Unchained"
    ],
    "Bots": [
     "Alpha 7",
@@ -1787,6 +1928,7 @@
    ],
    "Bots": [
     "C-30 ARC",
+    "C-45 Heavy ARC",
     "K-01 Serf",
     "N-00 Fly",
     "N-01 Spotter",
@@ -1961,6 +2103,14 @@
   },
   {
    "Name": "5H-AD0's Sniper Rifle",
+   "Content": ""
+  },
+  {
+   "Name": "6S-H0T's SS Cartridge",
+   "Content": ""
+  },
+  {
+   "Name": "6S-H0T's Six Shooter",
    "Content": ""
   },
   {
@@ -2380,6 +2530,10 @@
    "Content": ""
   },
   {
+   "Name": "Antisys Shotgun",
+   "Content": ""
+  },
+  {
    "Name": "Arachnoskeleton",
    "Content": ""
   },
@@ -2713,6 +2867,14 @@
   },
   {
    "Name": "Botcube",
+   "Content": ""
+  },
+  {
+   "Name": "CL-0N3 Data Core",
+   "Content": ""
+  },
+  {
+   "Name": "CL-0N3's Metamass Displacer",
    "Content": ""
   },
   {
@@ -3291,6 +3453,22 @@
   {
    "Name": "DRS Beacon",
    "Content": "Used to summon a [[DRS Ranger]] rescue squad in [[Caves]] when activated. Rangers will attempt to pathfind to cogmind and follow them until they leave the level."
+  },
+  {
+   "Name": "DW-4LL's Blast Wall",
+   "Content": ""
+  },
+  {
+   "Name": "DW-4LL's Griptreads",
+   "Content": ""
+  },
+  {
+   "Name": "DW-4LL's Megashotty",
+   "Content": ""
+  },
+  {
+   "Name": "DW-4LL's Slamshotty",
+   "Content": ""
   },
   {
    "Name": "Damper Plating",
@@ -3973,6 +4151,10 @@
    "Content": "Found in [[Zion]], with the [[Derelict]] V3-CT5 nearby. When a [[Hyp. EM Gauss Rifle]] is picked up, the GAL Module will attach to the Rifle with the log message [[GameText]]GAL Module attaches itself to Hyp. EM Gauss Rifle.[[/GameText]] The Rifle will be transformed into the [[Modified EM Gauss Rifle]]."
   },
   {
+   "Name": "GL-D0S's Turretformer",
+   "Content": ""
+  },
+  {
    "Name": "GOLEM Unit",
    "Content": "GOLEM Units are unique utilities found on [[Golem|Golems]] and in the [[Zion Deep Caves]]. They are contained within the GOLEM Chambers found in the western wall. When attached and activated, they will produce a variety of assembled parts if there are empty slots available. While being integrated, these assembled parts have no effect and 0 coverage. These parts increase by 3 integrity every turn, and become active when their current integrity reaches 100% of maximum. Parts are built in the following order, assuming all slots are empty (slot number accounts for the Golem Unit itself taking two [[Utilities]] slots):\n[[Image]]Golem Parts.png|A full GOLEM loadout[[/Image]]\n[[Table]]\nPart|Turns to build part|Total time to build|Slot Number||\n[[Asb. Alloy Leg]] #1|133|133|1st [[Propulsion]]||\n[[Asb. Flux Generator]]|117|250|1st [[Power]]||\nAsb. Alloy Leg #2|133|383|2nd Propulsion||\n[[Asb. Biocell Array]] #1|17|400|3rd Utility||\n[[Asb. Nanovents]] #1|2|402|4th Utility||\nAsb. Nanovents #2|2|404|5th Utility||\n[[Asb. Focal Cannon]] #1|52|456|1st [[Weapons]]||\n[[Asb. Alloy Armor]] #1|67|523|6th Utility||\nAsb. Nanovents #3|2|525|7th Utility||\n[[Asb. Suspension Frame]]|18|543|8th Utility||\nAsb. Focal Cannon #2|52|595|2nd Weapon||\n[[Asb. Combat Suite]]|20|605|9th Utility||\nAsb. Alloy Armor #2|67|682|10th Utility||\nAsb. Biocell Array #2|17|699|11th Utility||\nAsb. Nanovents #4|2|701|12th Utility||\nAsb. Focal Cannon #3|52|753|3rd Weapon||\nAsb. Alloy Armor #3|67|820|13th Utility||\n[[Asb. Metafiber Network]]|17|837|14th Utility||\nAsb. Alloy Armor #4|67|904|15th Utility\n[[/Table]]\nIf slots of one type are full, blocking a part, the first part of another type will be build instead. For example, if all propulsion slots are filled but two power slots are open, the Asb. Flux Generator will start building instead of waiting on the first Asb. Alloy Leg. The first Asb. Nanovents will never grow without one Asb. Biocell Array on Cogmind's body, though, as they are both of the same slot type (utility).\n\nIt may also be wise to carry an extra power source or significant energy storage, because rebuilding a destroyed Asb. Flux Generator in hostile conditions may be difficult or excessively dangerous, due to the time cost involved."
   },
@@ -4109,6 +4291,10 @@
    "Content": ""
   },
   {
+   "Name": "Hammerchucker",
+   "Content": ""
+  },
+  {
    "Name": "Hardcell Cannon",
    "Content": ""
   },
@@ -4178,6 +4364,10 @@
   },
   {
    "Name": "Hover Unit",
+   "Content": ""
+  },
+  {
+   "Name": "Hoverbase",
    "Content": ""
   },
   {
@@ -4978,6 +5168,10 @@
   },
   {
    "Name": "Kinecellerator",
+   "Content": ""
+  },
+  {
+   "Name": "Kinetic Shotgun",
    "Content": ""
   },
   {
@@ -5825,6 +6019,10 @@
    "Content": ""
   },
   {
+   "Name": "Piercelight Module",
+   "Content": ""
+  },
+  {
    "Name": "Piercing Trap",
    "Content": ""
   },
@@ -5977,8 +6175,16 @@
    "Content": ""
   },
   {
+   "Name": "QV-33N's Drone Shield",
+   "Content": ""
+  },
+  {
+   "Name": "QV-33N's Launch Deck",
+   "Content": ""
+  },
+  {
    "Name": "Quantum Capacitor",
-   "Content": "The Quantum Capacitor (QC or Qcap) drastically reduces the firing time for an [[Energy Guns|Energy Gun]] or [[Energy Cannons|Energy Cannon]], but only if it is fired in a volley all by itself. This allows a bot to do much higher damage per turn (DPT) with that single weapon.\n\nAssuming no delay modifiers, a weapon with a Quantum Capacitor will do slightly more DPT than 3 of the same weapon, and slightly less than 4.\n[[Table]]\nWeapons|Time to fire|Time per weapon||\n[[CellStyle:Neutral]][[B]]1 with QC[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]||\n1|200|[[CellStyle:Bad]]200||\n2|300|[[CellStyle:Bad]]150||\n3|325|[[CellStyle:Bad]]108⅓||\n4|350|[[CellStyle:Good]]87½||\n5|375|[[CellStyle:Good]] 75||\n6|400|[[CellStyle:Good]] 66⅔\n[[/Table]]\n\nThe Quantum Capacitor has several benefits on top of firing time:\n[[List]]\nEquipping fewer weapons means they get damaged more slowly (but it leaves your core more exposed)\n|Lower mass from wearing fewer weapons\n|Only need to find one good weapon instead of several\n|Can simultaneously equip weapons for different situations, such as a thermal weapon and an electromagnetic weapon, instead of having to swap several weapon slots\n|No overkill: you can stop firing right when an enemy dies instead of finishing a large volley\n[[/List]]\n\nThe Quantum Capacitor takes two slots, so it takes a lot of space and is difficult to swap in and out situationally. And because it tends to appear in the mid-to-late game, a build that has invested heavily in weapon slots may find the Quantum Capacitor difficult to justify, or at least face the sunk cost of extra weapon slots that will be little help with a Quantum Capacitor. The extra weapon slots can be used for situational weapons or for \"weapon armor\": high-coverage, high-integrity weapons like the [[Sigix Broadsword]]."
+   "Content": "The Quantum Capacitor (QC or Qcap) drastically reduces the firing time for an [[Energy Guns|Energy Gun]] or [[Energy Cannons|Energy Cannon]], but only if it is fired in a volley all by itself. This allows a bot to do much higher damage per turn (DPT) with that single weapon.\n\nAssuming no delay modifiers, a weapon with a Quantum Capacitor will do slightly more DPT than 3 of the same weapon, and slightly less than 4.\n[[Table]]\nWeapons|Time to fire|Time per weapon||\n[[CellStyle:Neutral]][[B]]1 with QC[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]||\n1|200|[[CellStyle:Bad]]200||\n2|300|[[CellStyle:Bad]]150||\n3|325|[[CellStyle:Bad]]108\u00e2\u2026\u201c||\n4|350|[[CellStyle:Good]]\u00e2\u20ac\u202187\u00c2\u00bd||\n5|375|[[CellStyle:Good]]\u00e2\u20ac\u202175||\n6|400|[[CellStyle:Good]]\u00e2\u20ac\u202166\u00e2\u2026\u201d\n[[/Table]]\n\nThe Quantum Capacitor has several benefits on top of firing time:\n[[List]]\nEquipping fewer weapons means they get damaged more slowly (but it leaves your core more exposed)\n|Lower mass from wearing fewer weapons\n|Only need to find one good weapon instead of several\n|Can simultaneously equip weapons for different situations, such as a thermal weapon and an electromagnetic weapon, instead of having to swap several weapon slots\n|No overkill: you can stop firing right when an enemy dies instead of finishing a large volley\n[[/List]]\n\nThe Quantum Capacitor takes two slots, so it takes a lot of space and is difficult to swap in and out situationally. And because it tends to appear in the mid-to-late game, a build that has invested heavily in weapon slots may find the Quantum Capacitor difficult to justify, or at least face the sunk cost of extra weapon slots that will be little help with a Quantum Capacitor. The extra weapon slots can be used for situational weapons or for \"weapon armor\": high-coverage, high-integrity weapons like the [[Sigix Broadsword]]."
   },
   {
    "Name": "Quantum Companion",
@@ -6277,6 +6483,10 @@
    "Content": ""
   },
   {
+   "Name": "Shockbolt Module",
+   "Content": ""
+  },
+  {
    "Name": "Shotgun",
    "Content": ""
   },
@@ -6418,6 +6628,10 @@
   },
   {
    "Name": "Stealth Drone Bay",
+   "Content": ""
+  },
+  {
+   "Name": "Stealth Gun",
    "Content": ""
   },
   {
@@ -6626,6 +6840,10 @@
   },
   {
    "Name": "Thermal Shield",
+   "Content": ""
+  },
+  {
+   "Name": "Thermal Shotgun",
    "Content": ""
   },
   {
@@ -6897,6 +7115,10 @@
    "Content": ""
   },
   {
+   "Name": "Zeronet Interface",
+   "Content": ""
+  },
+  {
    "Name": "Zhirov Special",
    "Content": "The Zhirov Special is an inventory item similar to a [[Sapper Charge]]. It can be activated to start a 10-turn timer that will cause it to violently explode. It can be obtained by destroying [[Zhirov]] or having a [[Master Thief]] steal it from his inventory. When Cogmind is standing on it, pressing > or right-clicking on Cogmind will start its 10-turn explosion timer. Doing so again will interrupt the timer, which can be useful in scenarios such as the player accidentally activating it. Note that both activation and deactivation take an entire turn, meaning only 9 of the 10 turns can actually be used to prepare for or escape its high-damage 20-radius explosion. Picking up an active Zhirov Special will not halt its countdown, and it can explode from Cogmind's inventory.\nThe explosion is not attributed to Cogmind, meaning it will not raise [[Alert]] or attribute Cogmind any kills or [[Score#value|value-based score]].\n\n[[Heading]]Avoiding Damage[[/Heading]]\nWhile the Zhirov Special's very high explosive damage should preferably be avoided, its large explosion radius makes escaping somewhat difficult. Without a high movement speed or conveniently-shaped [[Reinforced Walls]] that could contain the explosion, other type of movement such as teleportation would be required to avoid the explosion.\nIf attempting to escape the explosion through high movement speed, consider making sure the area is clear of [[Stasis Trap|Stasis Traps]] beforehand or using a [[Stasis Canceller]]. If using a [[Transdimensional Reconstructors|Transdimensional Reconstructor]] for that purpose, make sure to not stand on the Zhirov Special when teleporting, as the Transdimensional Reconstructor would bring it along.\nAlternatively, using an explosive damage-reducing utility such as an [[Exp. Shock Absorption System]] preferably paired with a [[Force Fields|Force Field]] or similar damage reduction effect can help cut the damage significantly.\n\n[[Heading]]Usage Strategy[[/Heading]]\nAs the Zhirov Special's explosion does not raise Alert, it can be used to destroy most structures, machines and robots with few consequences. Keep in mind that [[Launchers|Launcher]] misfires due to [[Corruption]], explosive [[Traps]] and [[Demolisher|Demolishers]] are all capable of destroying the Zhirov Special. [[Cutter|Cutters]] can also interfere, and in the worst-case scenario their [[Concussive RPG]]s can knock back the Zhirov Special away from your target.\nAs the Zhirov Special is a non-part inventory item, [[Recycler|Recyclers]] will not attempt to pick it up. \n\nThis article was last edited during Beta 15."
   },
@@ -6990,6 +7212,10 @@
   },
   {
    "Name": "Zio. Weapon Casing",
+   "Content": ""
+  },
+  {
+   "Name": "Zip Rocket",
    "Content": ""
   }
  ],
@@ -7445,6 +7671,7 @@
     "Cep. Energy Mantle",
     "AEGIS Remote Shield",
     "7V-RTL's Ultimate Field",
+    "QV-33N's Drone Shield",
     "Vortex Field Projector"
    ],
    "Content": "[[Heading]]List of Force Fields[[/Heading]]\n[[PartGroupTable]]\nForce Fields|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nUpkeep/Energy|\nUpkeep/Heat|\nEffect/Effect\n[[/PartGroupTable]]"
@@ -8340,6 +8567,7 @@
     "Active Cooling Armor",
     "Scrap Shield",
     "Enh. Scrap Shield",
+    "DW-4LL's Blast Wall",
     "Tower Shield",
     "Vmp. Brace Plating"
    ],
@@ -8540,7 +8768,8 @@
     "Seismic Detector",
     "Structural Scanner",
     "Transport Network Coupler",
-    "Triangulator"
+    "Triangulator",
+    "Zeronet Interface"
    ],
    "Content": "Infowar (information warfare) is a general category of parts that revolve around gaining additional information about the surrounding map or its inhabitants and/or reducing the capabilities of hostile robots. Wandering around completely blind is possible, but can cause a lot of bad encounters and is generally very [[Community Challenges#No Info Only War|Challenging]]. Infowar can be used to do things like locate and avoid hostiles, search for specific elements of a map such as [[Interactive Machine|Interactive Machines]] or [[Exit|Exits]], and to generally navigate through a map more efficiently. Infowar is composed of primarily [[Utilities|Utility]] slot parts, although a few [[Alignment]]-related abilities can grant infowar-type effects without dedicating an active slot to them. The largest categories of infowar are bot detection and map detection.\nInfowar is useful on all build types, from combat to stealth alike. Stealth builds tend to have many slots of infowar active at once in order to completely avoid all contact with hostile bots. Combat builds, especially on slower propulsion types like [[Treads]], have difficulty avoiding encounters altogether, even with a large amount of infowar. However, infowar can help make informed decisions about combat encounters and help Cogmind take fights in beneficial scenarios. For example, one good use is preparing an [[Explosive Launchers|Explosive Launcher]] if a [[Swarmer]] squad is known to be nearby. Blindly wandering around into that same Swarmer squad might see Cogmind in a bad position, forced to take damage while spend turns swapping out a launcher or becoming surrounded.\nMany infowar utilities tend to be low integrity devices and should ideally be swapped into inventory before entering combat. High coverage [[Armor]] can help protect these parts, but even then, these parts tend to get destroyed fairly easily in combat. [[Utility Shieldings]] may reduce the need for swapping in combat, especially for a faster-moving flight or hover build that doesn't want to stick around for prolonged combat.\n\n[[Heading]]Infowar Types[[/Heading]]\n[[Heading:2]]Robot Detection[[/Heading]]\nThis type of infowar revolves around detecting bots before they are seen through normal [[Line of Sight]] mechanics. Being able to detect bots through walls, especially at a large distance, can be a large boon for avoiding unnecessary combat encounters.\n[[Heading:3]][[Sensor Arrays]][[/Heading]]\nSensor Arrays are the most basic and one of the most common forms of robot detection. Lower rating sensors have a low detection radius, equal or smaller than the primary 16 tile line of sight distance, so their primary use is finding bots in nearby rooms or around corners rather than long-ranged detection. Sensors are best paired with [[Signal Interpreters]] due to their ability to distinguish between different classes of bots. They can easily be looted from [[TF Node|TF Nodes]].\nThe [[Active Sensor Suite]] is a variant of the standard Sensor Array. It combines both the sensor and signal interpreting capabilities into a single part. It also provides a unique type of intel that shows commonly traveled robot paths to points of interest on the map.\n[[Heading:3]][[FarCom]][[/Heading]]\nFarCom is not a part, but is a free source of 18 tile radius robot detection that can be acquired by using the FarCom Aligner machine in the [[Exiles (Location)]]. Unlike most other types of robot detection, FarCom can detect only combat bots and only in [[0b10]] controlled maps. While [[Mines]] is counted as an 0b10-controlled map, [[Caves]] is notably not.\n[[Heading:3]][[Seismic Detector]] (bot detection)[[/Heading]]\nThe Seismic Detector is an indirect and somewhat unreliable source of robot detection. Grounded bots that move generate varying amounts of seismic activity that can be detected. Wheeled, legged, and treading bots create dark orange short, bright orange medium, and bright yellow long trails. Airborne bots cannot be detected by Seismic Detectors. They can often be looted off of [[T-07 Excavator|T-07 Excavators]].\n[[Heading:3]][[IFF Parsers]][[/Heading]]\nIFF Parsers are a basic form of robot detection. All bots are revealed by this part, although the type of bot is not revealed. Instead, the IFF parser reveals the faction of the scanned bot. 0b10-aligned bots show up in yellow while other bots show up in blue.\n[[Spoiler]]\n[[Heading:3]][[Quantum Companion]][[/Heading]]\nThe Quantum Companion is a unique weapon with many different effects. Some effects are not present on the [[Companion Sword|base form of the sword]], but only appear in the evolved Quantum form. One of these effects is a 12 tile radius sensor effect. While the range is very low, this part is unique in that it provides infowar in a weapon slot rather than in utility slots.\n[[/Spoiler]]\n[[Redacted]]\n[[Heading:3]][[Sigix Exoskeleton]] (Robot Detection)[[/Heading]]\nThe Sigix Exoskeleton is a unique propulsion item. It has a large number of effects, one of which is an 18-tile range robot detection effect. All active bots within the range are instantly detected. This part is unique in that it provides infowar in propulsion slots rather than in utility slots.[[/Redacted]]\n[[Heading:3]]Robot Detection and Patrol Navigation ([[RIF]] abilities)[[/Heading]]\nRobot Detection and Patrol Navigation are abilities that can randomly be gained when using a RIF installer. Robot Detection grants the detection of any 0b10-aligned combat bot within a 24 tile range when a matching [[Relay Couplers|Relay Coupler]] is attached. Patrol Navigation grants the prediction of squad movement paths within a 24 tile range when a matching Relay Coupler is attached, although it only reveals the path of the squad leader. While these abilities can detect bots with the Scan Cloak trait, they will not work in non-0b10 controlled maps like Caves. They tend to be fairly unreliable due to the many different types of bots that are present in 0b10. Having a coupler for every possible bot type takes an unreasonable amount of slots.\n[[Heading:3]][[0b10 Decoder Chip [Skirmisher]]][[/Heading]]\nThe Skirmisher, and to a lesser extent, the [[0b10 Decoder Chip [Generic]|Generic]] decoder chips, are two unique sources of bot detection. They do not directly reveal the class or location of specific bots like most bot detection sources. Instead, they can occasionally pick up the type and locations of patrol, investigation, reinforcement, and security squads and mark them as intel on the map. This effect only occurs in 0b10 controlled maps. This effect is somewhat unreliable due to the infrequent intel updates.\n[[Heading:3]][[Triangulator]][[/Heading]]\nThe Triangulator is an extremely niche 24 tile robot detecting utility with one major catch: It can only detect robots that are currently tracking Cogmind. This makes it unhelpful for avoiding hostile bots in the first place. However, once spotted, it can be a helpful tool to shake pursuers on faster propulsion types. This makes it unlike all of the other forms of bot detection since they are proactive instead of reactive. The Triangulator also has other effects including hostile visual range detection and travel paths, but they effects don't actively help in detecting bots. It has no restrictions on bot detection and can even detect bots with the Scan Cloak trait.\n[[Heading:3]]Robot Detection Infowar Comparison[[/Heading]]\n[[Table]]\nCategory|Sensor Arrays|Active Sensor Suite|FarCom|Seismic Detector|IFF Parsers|[[Spoiler]]Quantum Companion[[/Spoiler]]|[[Redacted]]Sigix Exoskeleton[[/Redacted]]|Robot Detection/Patrol Navigation|0b10 Decoder Chip [Skirmisher/Generic]|Triangulator||\nRange|[[CellStyle:Neutral]]14-20|[[CellStyle:Good]]20|[[CellStyle:Good]]18|[[CellStyle:Good]]22|[[CellStyle:Neutral]]16-26|[[CellStyle:Bad]]12|[[CellStyle:Good]]18|[[CellStyle:Good]]24|[[CellStyle:Good]]22|[[CellStyle:Good]]24||\nDetect Bot Class|[[CellStyle:Neutral]]With Signal Interpreter|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Bad]]No|[[CellStyle:Good]]Yes||\nIgnores jamming/scrambling|[[CellStyle:Bad]]No|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Neutral]]Ignores jamming but not scrambling|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes||\nBot detection limitations|[[CellStyle:Good]]Affected by Scan Cloak, requires [[Exp. Signal Interpreter]] but can detect dormant bots|[[CellStyle:Good]]Affected by Scan Cloak|[[CellStyle:Neutral]]Combat bots only, does not detect dormant bots|[[CellStyle:Bad]]Grounded and moving bots only|[[CellStyle:Good]]Does not detect dormant bots|[[CellStyle:Good]]Does not detect dormant bots|[[CellStyle:Good]]Does not detect dormant bots|[[CellStyle:Good]]Does not detect dormant bots|[[CellStyle:Good]]Does not detect dormant bots|[[CellStyle:Bad]]Only combat bots actively tracking||\nSlot requirement|[[CellStyle:Neutral]]1 swappable utility, optionally 1 unswappable utility|[[CellStyle:Bad]]3 unswappable utility|[[CellStyle:Good]]None|[[CellStyle:Good]]1 swappable utility|[[CellStyle:Good]]1 swappable utility|[[CellStyle:Good]][[Spoiler]]1 swappable weapon[[/Spoiler]]|[[CellStyle:Good]][[Redacted]]3 unswappable propulsion[[/Redacted]]|[[CellStyle:Bad]]1 unswappable utility per bot class|[[CellStyle:Neutral]]1 unswappable utility|[[CellStyle:Good]]1 swappable utility||\nAlignment requirement|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]Exiles|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]][[Spoiler]]UFD or scraptown attack[[/Spoiler]]|[[CellStyle:Neutral]][[Redacted]][[Core Reset Matrix]] + Sigix Exoskeleton[[/Redacted]]|[[CellStyle:Neutral]]RIF|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A||\nUpdate frequency|[[CellStyle:Neutral]]Once per turn|[[CellStyle:Neutral]]Once per turn|[[CellStyle:Good]]Realtime|[[CellStyle:Good]]Realtime|[[CellStyle:Bad]]Once per two turns|[[CellStyle:Good]]Realtime|[[CellStyle:Good]]Realtime|[[CellStyle:Good]]Realtime|[[CellStyle:Bad]]Infrequent|[[CellStyle:Good]]Realtime||\nMap restrictions|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Good]]N/A||\nOther limitations|[[CellStyle:Neutral]]Can be difficult to decipher without a Signal Interpreter|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Bad]]Can be difficult to decipher, many bots are not detected|[[CellStyle:Neutral]]Can be difficult to decipher|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A\n[[/Table]]\n[[Heading:2]]Terrain Scanning[[/Heading]]\nThis type of infowar revolves around detecting nearby terrain, especially exits, rooms, and machines. Terrain scanning can make traversal through a map more efficient and easier. When combined with robot detection, hostile squads can often be bypassed entirely with a safe path out of sight.\n[[Heading:3]][[Terrain Scanners]][[/Heading]]\nTerrain scanners are the basic form of terrain scanning that reveal a random selection of nearby tiles nearby. The basic rate of terrain scanning is very low and only reveals up to a few tiles per turn. They can be combined with [[Terrain Scan Processors]] to dramatically increase the amount of tiles that are scanned per turn. Slower propulsion types tend to get more value out of terrain scanners as it provides more time for the scanners to do their work. A powerful enough processor can make terrain scanning fast enough to work well for even fast flight builds.\n[[Heading:3]][[Structural Scanner]][[/Heading]]\nStructural Scanners are a form of short ranged terrain scanning that operate instantly. When a wall is seen in visual range, immediately surrounding tiles are instantly revealed, including emergency access doors. [[Spoiler]]For the [[Deep Structural Scanner]], 3 tiles deep are revealed instead.[[/Spoiler]] Due to its cheap upkeep and instant scanning speed, it is a high value for faster builds. It is particularly helpful at locating short digs and emergency accesses between adjacent rooms.\n[[Redacted]][[Heading:3]]Sigix Exoskeleton (Terrain Scanning)[[/Heading]]\nThe Sigix Exoskeleton is a unique propulsion item. It has a large number of effects, one of which is an 18-tile range terrain scanning effect. All types of terrain within that range, including hidden doors, are instantly detected.[[/Redacted]]\n[[Heading:3]][[Machine Analyzer]][[/Heading]]\nThe Machine Analyzer is an indirect source of terrain scanning. It does not reveal random terrain tiles, but it does reveal most types of machines. Once any interactive or non-interactive machine is spotted, nearby machines are also revealed. If an interactive machine was spotted, the nearest machine of the same type is also revealed regardless of distance.\n[[Heading:3]]Seismic Detector (terrain scanning)[[/Heading]]\nThe Seismic Detector is an indirect and unreliable source of terrain scanning. Certain machines will generate seismic activity that are picked up by this part. This only happens for a few types of non-interactive machines, and mostly in Factory maps. Interactive machines are never detected. This does not reveal any specific information about the terrain, but approximate room sizes and locations may be guessed based on the detected machines.\n[[Heading:3]][[0b10 Decoder Chip [Scout]]][[/Heading]]\nThe Scout, and to a lesser extent, the Generic decoder chips, are two sources of indirect terrain scanning. However, their terrain scanning effect is very limited. Only exits, [[Garrison Access|Garrisons]], and hidden doors can be detected.\n[[Heading:3]]Structural Interface  (RIF Ability)[[/Heading]]\nStructural Interface is an ability that can randomly be gained when using a RIF installer that provides an indirect source of terrain scanning. Hidden doors and phase walls (primarily inside Garrisons) are instantly revealed on sight, similar to the Structural Scanner.\n[[Heading:3]]Terrain Scanning Infowar Comparison[[/Heading]]\n[[Table]]\nCategory|Terrain Scanners|Structural Scanner|[[Redacted]]Sigix Exoskeleton[[/Redacted]]|Machine Analyzer|Seismic Detector|0b10 Decoder Chip [Scout/Generic]|Structural Interface||\nRange|[[CellStyle:Good]]14-30|[[CellStyle:Neutral]]Visual range|[[CellStyle:Good]]18|[[CellStyle:Good]]Potentially Map-wide|[[CellStyle:Good]]22|[[CellStyle:Good]]25 (square area)|[[CellStyle:Neutral]]Visual range||\nScanning type|[[CellStyle:Good]]Scans tiles at random in range|[[CellStyle:Neutral]]Scans tiles just past visual range|[[CellStyle:Good]][[Redacted]]Scans all tiles in range[[/Redacted]]|[[CellStyle:Neutral]]Scans machines only|[[CellStyle:Bad]]Scans only certain machines|[[CellStyle:Bad]]Scans only exits, Garrisons, and hidden doors|[[CellStyle:Bad]]Scans only hidden doors and phase walls within visual range||\nIgnores scrambling|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes||\nSlot requirement|[[CellStyle:Neutral]]1 swappable utility, optionally 1 unswappable utility|[[CellStyle:Good]]1 swappable utility|[[CellStyle:Good]][[Redacted]]3 unswappable propulsion[[/Redacted]]|[[CellStyle:Neutral]]1 unswappable utility|[[CellStyle:Good]]1 swappable utility|[[CellStyle:Neutral]]1 unswappable utility|[[CellStyle:Good]]None||\nAlignment requirement|[[CellStyle:Good]]No|[[CellStyle:Good]]No|[[CellStyle:Neutral]][[Redacted]]Core Reset Matrix + Sigix Exoskeleton[[/Redacted]]|[[CellStyle:Good]]No|[[CellStyle:Good]]No|[[CellStyle:Good]]No|[[CellStyle:Neutral]]RIF||\nUpdate frequency|[[CellStyle:Neutral]]Once per turn, very low rate without processor|[[CellStyle:Good]]Instant|[[CellStyle:Good]]Instant|[[CellStyle:Good]]Instant|[[CellStyle:Good]]Instant|[[CellStyle:Bad]]Infrequent|[[CellStyle:Good]]Instant||\nMap restrictions|[[CellStyle:Good]]N/A|[[CellStyle:Good]]None|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Good]]None\n[[/Table]]\n[[Heading:2]]Vision Manipulation[[/Heading]]\nUnlike the previous larger categories, there are only 2 types of vision manipulation. [[Cloaking Devices]] reduce vision of hostile bots and [[Visual Processing Units]] increase vision of the bot using them. While they function slightly differently, they serve a similar purpose of allowing additional exploration without being spotted by hostiles.\n[[Heading:3]]Vision Manipulation Infowar Comparison[[/Heading]]\n[[Table]]\nCategory|Cloaking Devices|Visual Processing Units||\nRange|[[CellStyle:Good]]-2 to -6, up to -9 when half_stacked|[[CellStyle:Good]]+2 to +8, not stackable||\nEnergy Upkeep|[[CellStyle:Neutral]]Expensive: -5 to -20 energy per turn|[[CellStyle:Good]]None||\nSlot requirement|[[CellStyle:Good]]1 swappable|[[CellStyle:Neutral]]1 unswappable||\nOther positives|[[CellStyle:Good]]Allows sneaking into areas guarded by bots without being spotted|[[CellStyle:Good]]Allows for seeing further in combat and sniping||\nOther Negatives|[[CellStyle:Neutral]]Low integrity/high coverage, no use if bots are already tracking Cogmind|[[CellStyle:Good]]N/A\n[[/Table]]\n[[Heading:2]]Other Infowar Types[[/Heading]]\n[[Heading:3]][[0b10 Decoder Chips]][[/Heading]]\nWhile some of the decoder chips were mentioned in other categories, as a whole they're an oddball group. They tend to provide intel that crosses in between major categories, while also providing unique intel like part detection.\n[[Heading:3]][[Drone Bays]][[/Heading]]\nDrone bays send out controlled allies to explore the map. Basic drones can only be used for exploration, although other drones can be used for combat purposes as well.\n[[Heading:3]][[ECM Suites]][[/Heading]]\nECM Suites are used to end tracking against Cogmind quicker. Each type of ECM Suite has a multiplier that makes hostile tracking less effective. Additionally, the [[Alert]] gain that occurs when a bot loses tracking on Cogmind does not occur when active. While this doesn't help avoid bots in the first place, it is helpful for losing pursuers.\n[[Heading:3]][[Transmission Jammers]][[/Heading]]\nTransmission Jammers are used for several purposes, but generally help prevent communication between hostiles, especially summoning of reinforcements. While in range, they will prevent bots from transmitting tracking data about Cogmind to other allies on spot. This can help pick off bots in a squad 1 by 1 and to eliminate or bypass Watchers even when hostiles are nearby. They can also block [[Alarm Trap|Alarm Traps]] entirely.\n[[Heading:3]]Signal Jamming (RIF Ability)[[/Heading]]\nSignal Jamming is a RIF ability that behaves similar to Transmission Jammers. Instead of requiring a specific part to use, 0b10 bots are jammed based on attached Relay Couplers. Additionally, Alarm Traps are blocked entirely.\n[[Heading:3]][[Trap Scanners]][[/Heading]]\nTrap Scanners do exactly as their name implies: They scan for traps. Trap Scanners add fixed percentage to the chance to detect a trap each turn that one is within Cogmind's line of sight.\n\n[[Heading]]Infowar gallery[[/Heading]]\n[[Gallery]]Sensor Array Activated.webp|A sensor array being activated|\nFarCom Active.webp|FarCom bot detection active, with green ring indicating radius|\nSeismic Detector Activating.webp|Seismic Detector becoming activated and showing seismic activity|IFF Parser.webp|[[IFF Parser]] becoming activated and showing a patrol|\n[[Spoiler]]Quantum Companion Sensors Active.webp[[/Spoiler]]|[[Spoiler]]Quantum Companion bot detection, with blue ring indicating radius[[/Spoiler]]|\n[[Redacted]]Sigix Exoskeleton Sensors.webp[[/Redacted]]|[[Redacted]]Sigix Exoskeleton bot detection and terrain scanning, with blue ring indicating radius[[/Redacted]]|\nRobot Detection With Patrol Navigation.webp|Robot Detection (bots within red ring) and Patrol Navigation (yellow paths)|0b10 Decoder Chip Skirmisher.webp|0b10 Decoder Chip [Skirmisher] detecting a patrol|Terrain Scanning.webp|Basic [[Terrain Scanner]] activating and scanning|Terrain Scanning With Processor.webp|Basic Terrain Scanner activating and scanning with [[Adv. Terrain Scan Processor]] attached|Structural Scanner Activating.webp|Structural Scanner activating and scanning|Machine Analyzer.webp|Machine Analyzer detecting a [[Terminal]] and locating nearby machines[[/Gallery]]"
   },
@@ -8649,7 +8878,7 @@
     "Treads",
     "Wheels"
    ],
-   "Content": "Propulsion units allow robots to move and carry mass.\n\nFive types of propulsion exist: [[Flight Units]], [[Hover Units]], [[Legs]], [[Treads]], and [[Wheels]]. Flight and hover units are collectively known as fast propulsion, or \"fastprop\"; legs, treads, and wheels are considered slow propulsion, or \"slowprop.\" In addition, unlike other bots, [[Cogmind]] has a built-in core propulsion system used when no other propulsion is active.\n\nA robot can use only one type of propulsion at a time. If multiple types are equipped, activating a unit will deactivate all units of a different type.\n\n[[Heading]]Movement Speed Math[[/Heading]]\nA bot's movement speed is based on its mass and the stats of its propulsion units that are activated when it moves. This section describes legs, treads, and wheels. Flight and hover units have additional mechanics that affect movement speed, which are described below.\n\nEach propulsion unit has three basic stats:\n[[List]]\nThe amount of mass the unit will [[I]]support[[/I]].\n|The base [[I]]speed[[/I]] of the unit (labeled \"time/move\").\n|The speed [[I]]penalty[[/I]] for overweight bots.\n[[/List]]\nPropulsion units themselves have zero mass (they don't weigh anything). Bots using legs, treads, or wheels can benefit from equipping unused propulsion units as \"propulsion armor,\" or \"prop armor,\" using their coverage and integrity to tank hits without increasing their mass.\n\nWhen a bot moves, the game determines whether it is underweight or overweight. The game adds together the mass of all equipped parts, and the support of all activated propulsion units. A bot is [[I]]overweight[[/I]] if its mass is greater than its support; otherwise it is [[I]]underweight[[/I]]. A bot can also be multiple times overweight: for example, it is two times overweight if its mass is greater than twice its support. Items in inventory do not count towards a bot's total mass.\n\nIf a bot is underweight, it moves at the average speed of all of its activated propulsion units. A propulsion unit's speed is coded as a movement delay, or time per move: how many time units it takes a bot to move one tile if it's using only that propulsion unit. If a bot has multiple propulsion units activated, their movement delays are averaged.\n\nIf a bot is overweight, it is slowed down by the average penalty of all of its activated propulsion units. Specifically, the average penalty is added to the average base movement delay, and the sum is how long it takes the bot to move one tile. If a bot is multiple times overweight, the penalty is applied that many times.\n\nA bot's mass and support are displayed above the parts list in the HUD. Overweight status is indicated by [[GameText]]Ox#[[/GameText]], where [[GameText]]#[[/GameText]] is how many times overweight ([[GameText]]*[[/GameText]] if greater than 9 times).\n\n[[Heading:2]]Example[[/Heading]]\nFor example, if a bot has equipped:\n[[List]]\n[[Ion Engine]] (mass: 5)\n|[[Lgt. Treads]] (support: 20; time/move: 160; penalty: 80)\n|[[Wheel]] (support: 10; time/move: 80; penalty: 15)\n|[[Sml. Storage Unit]] (mass: 5)\n|[[Assault Rifle]] (mass: 2)\n|[[Med. Laser]] (mass: 2)\n[[/List]]\nits total mass is 14. Its movement speed depends on which propulsion unit it has activated:\n[[List]]\nWith the treads: The bot is underweight (14 ≤ 20). The time to move one tile is 160.\n|With the wheel: The bot is 1 time overweight (10 < 14 ≤ 20). The time to move one tile is 80 + 15 = 95.\n|With neither (core propulsion): The bot is 4 times overweight (12 < 14 ≤ 15). The time to move one tile is 50 + (50 × 4) = 250.\n[[/List]]\n\n[[Heading:2]]Formula[[/Heading]]\nMathematically, the amount of time it takes a bot to move one tile (ignoring mechanics for flight and hover units) is\nΣ[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + ⌊max(0, [[I]]m[[/I]] − 1)/Σ[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]⌋(Σ[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])\nwhere\n[[List]]\n[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the mass support for propulsion unit [[I]]i[[/I]]\n|[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the base movement delay for propulsion unit [[I]]i[[/I]]\n|[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the penalty for propulsion unit [[I]]i[[/I]]\n|[[I]]m[[/I]] is the total mass of all attached parts\n|[[I]]n[[/I]] is the total number of activated propulsion units\n[[/List]]\nand all sums Σ are over all activated propulsion units.\n\n[[Heading]]Flight and Hover Units[[/Heading]]\nFlight and hover units calculate their movement speed in the same basic way as legs, treads, and wheels, but they have the following additional mechanics that affect movement speed:\n[[List]]\nBots move faster with multiple units. Each unit has a [[I]]bonus[[/I]] (labeled \"mod/extra\"). For every active flight or hover unit beyond the first, the bonus is subtracted from the movement delay. (If the active propulsion units have different bonuses, they are averaged.) But the bonus can never bring the overall movement delay below 20 for hovering, or 10 for flying.\n|Attached treads, legs, and wheels induce [[I]]drag[[/I]]. The drag from each attached unit is added to the movement delay, slowing the bot down.\n|Certain flight and hover units can be [[Overload#propulsion|overloaded]]. When a unit is overloaded, speed is calculated as if there were two of that unit, and the unit's support is increased by half. Additionally, if the bot is moving at the normal fastest possible speed, each overloaded unit reduces its movement delay by 1, to a minimum of 5.\n[[/List]]\n\n[[Heading]]Core Propulsion[[/Heading]]\nIf Cogmind has no propulsion units active, it will move using core propulsion (informally, \"core hover\"). Core propulsion is relatively fast, with a base movement delay of 50 (speed of 200%), but it has pitifully low mass support of only 3 and a harsh overweight penalty of 50. It is thus very difficult to actually use, but is necessary if Cogmind's build is destroyed or if you must core purge."
+   "Content": "Propulsion units allow robots to move and carry mass.\n\nFive types of propulsion exist: [[Flight Units]], [[Hover Units]], [[Legs]], [[Treads]], and [[Wheels]]. Flight and hover units are collectively known as fast propulsion, or \"fastprop\"; legs, treads, and wheels are considered slow propulsion, or \"slowprop.\" In addition, unlike other bots, [[Cogmind]] has a built-in core propulsion system used when no other propulsion is active.\n\nA robot can use only one type of propulsion at a time. If multiple types are equipped, activating a unit will deactivate all units of a different type.\n\n[[Heading]]Movement Speed Math[[/Heading]]\nA bot's movement speed is based on its mass and the stats of its propulsion units that are activated when it moves. This section describes legs, treads, and wheels. Flight and hover units have additional mechanics that affect movement speed, which are described below.\n\nEach propulsion unit has three basic stats:\n[[List]]\nThe amount of mass the unit will [[I]]support[[/I]].\n|The base [[I]]speed[[/I]] of the unit (labeled \"time/move\").\n|The speed [[I]]penalty[[/I]] for overweight bots.\n[[/List]]\nPropulsion units themselves have zero mass (they don't weigh anything). Bots using legs, treads, or wheels can benefit from equipping unused propulsion units as \"propulsion armor,\" or \"prop armor,\" using their coverage and integrity to tank hits without increasing their mass.\n\nWhen a bot moves, the game determines whether it is underweight or overweight. The game adds together the mass of all equipped parts, and the support of all activated propulsion units. A bot is [[I]]overweight[[/I]] if its mass is greater than its support; otherwise it is [[I]]underweight[[/I]]. A bot can also be multiple times overweight: for example, it is two times overweight if its mass is greater than twice its support. Items in inventory do not count towards a bot's total mass.\n\nIf a bot is underweight, it moves at the average speed of all of its activated propulsion units. A propulsion unit's speed is coded as a movement delay, or time per move: how many time units it takes a bot to move one tile if it's using only that propulsion unit. If a bot has multiple propulsion units activated, their movement delays are averaged.\n\nIf a bot is overweight, it is slowed down by the average penalty of all of its activated propulsion units. Specifically, the average penalty is added to the average base movement delay, and the sum is how long it takes the bot to move one tile. If a bot is multiple times overweight, the penalty is applied that many times.\n\nA bot's mass and support are displayed above the parts list in the HUD. Overweight status is indicated by [[GameText]]Ox#[[/GameText]], where [[GameText]]#[[/GameText]] is how many times overweight ([[GameText]]*[[/GameText]] if greater than 9 times).\n\n[[Heading:2]]Example[[/Heading]]\nFor example, if a bot has equipped:\n[[List]]\n[[Ion Engine]] (mass: 5)\n|[[Lgt. Treads]] (support: 20; time/move: 160; penalty: 80)\n|[[Wheel]] (support: 10; time/move: 80; penalty: 15)\n|[[Sml. Storage Unit]] (mass: 5)\n|[[Assault Rifle]] (mass: 2)\n|[[Med. Laser]] (mass: 2)\n[[/List]]\nits total mass is 14. Its movement speed depends on which propulsion unit it has activated:\n[[List]]\nWith the treads: The bot is underweight (14 \u00e2\u2030\u00a4 20). The time to move one tile is 160.\n|With the wheel: The bot is 1 time overweight (10 < 14 \u00e2\u2030\u00a4 20). The time to move one tile is 80 + 15 = 95.\n|With neither (core propulsion): The bot is 4 times overweight (12 < 14 \u00e2\u2030\u00a4 15). The time to move one tile is 50 + (50 \u00c3\u2014 4) = 250.\n[[/List]]\n\n[[Heading:2]]Formula[[/Heading]]\nMathematically, the amount of time it takes a bot to move one tile (ignoring mechanics for flight and hover units) is\n\u00ce\u00a3[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + \u00e2\u0152\u0160max(0, [[I]]m[[/I]] \u00e2\u02c6\u2019 1)/\u00ce\u00a3[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]\u00e2\u0152\u2039(\u00ce\u00a3[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])\nwhere\n[[List]]\n[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the mass support for propulsion unit [[I]]i[[/I]]\n|[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the base movement delay for propulsion unit [[I]]i[[/I]]\n|[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the penalty for propulsion unit [[I]]i[[/I]]\n|[[I]]m[[/I]] is the total mass of all attached parts\n|[[I]]n[[/I]] is the total number of activated propulsion units\n[[/List]]\nand all sums \u00ce\u00a3 are over all activated propulsion units.\n\n[[Heading]]Flight and Hover Units[[/Heading]]\nFlight and hover units calculate their movement speed in the same basic way as legs, treads, and wheels, but they have the following additional mechanics that affect movement speed:\n[[List]]\nBots move faster with multiple units. Each unit has a [[I]]bonus[[/I]] (labeled \"mod/extra\"). For every active flight or hover unit beyond the first, the bonus is subtracted from the movement delay. (If the active propulsion units have different bonuses, they are averaged.) But the bonus can never bring the overall movement delay below 20 for hovering, or 10 for flying.\n|Attached treads, legs, and wheels induce [[I]]drag[[/I]]. The drag from each attached unit is added to the movement delay, slowing the bot down.\n|Certain flight and hover units can be [[Overload#propulsion|overloaded]]. When a unit is overloaded, speed is calculated as if there were two of that unit, and the unit's support is increased by half. Additionally, if the bot is moving at the normal fastest possible speed, each overloaded unit reduces its movement delay by 1, to a minimum of 5.\n[[/List]]\n\n[[Heading]]Core Propulsion[[/Heading]]\nIf Cogmind has no propulsion units active, it will move using core propulsion (informally, \"core hover\"). Core propulsion is relatively fast, with a base movement delay of 50 (speed of 200%), but it has pitifully low mass support of only 3 and a harsh overweight penalty of 50. It is thus very difficult to actually use, but is necessary if Cogmind's build is destroyed or if you must core purge."
   },
   {
    "Name": "Shieldings",
@@ -8701,7 +8930,8 @@
     "Junk Cannon",
     "Molecular Deconstructor",
     "Asb. F-torch",
-    "Asb. P-torch"
+    "Asb. P-torch",
+    "Hammerchucker"
    ],
    "Content": ""
   },
@@ -8790,7 +9020,9 @@
     "Jamming Amplifier",
     "Crosscalibrator",
     "Cep. Navigation Harness",
-    "Supercharged Navigation Harness"
+    "Supercharged Navigation Harness",
+    "QV-33N's Launch Deck",
+    "GL-D0S's Turretformer"
    ],
    "Content": ""
   },
@@ -8814,7 +9046,7 @@
     "Special Weapons",
     "Thermal Weapons"
    ],
-   "Content": "Weapon components allow robots to deal damage or otherwise perform some utility.\n\nWeapons can be from 9 general categories: [[Ballistic Cannons]], [[Energy Cannons]], [[Ballistic Guns]], [[Energy Guns]], [[Launchers]], [[Slashing Weapons]], [[Piercing Weapons]], [[Impact Weapons]], [[Special Melee Weapons]], and [[Special Weapons]].\n\n[[Heading]]Multi-Weapon Volleys[[/Heading]]\n\nMost weapons can be fired together as a volley, excluding Special Weapons, Special Melee Weapons, and [[Guided Weapons]]. Multiple Slashing, Piercing, and Impact melee weapons can be made to fire in one volley, although any weapons beyond the first are restricted to chance-based follow-up attacks.\n\n[[Heading:2]]Volley Time Costs[[/Heading]]\n\nEach weapon in a ranged multi-weapon volley will increase the volley’s total time cost, with each weapon being more efficient time-wise:\n[[Table]]Number of Weapons|Time cost||1|200||2|300||3|325||4|350||5|375||6+|400[[/Table]]\nThis is then modified by the sum of the delay stats of every weapon in the volley, then by the time cost reduction of an equipped [[Weapon Cyclers|Weapon Cycler]], [[Quantum Capacitor]], or [[Launcher Loader]], when applicable. A single volley may not cost less than 25 time units.\n\n[[Heading:2]]Follow-Up Attacks[[/Heading]]\n\nWhen multiple melee weapons are fired in a single volley, the first will always fire, and any others will have an independent chance to make a follow-up attack. Follow-up attacks are more likely when the primary weapon is slower than a given backup melee weapon. The chance may also be affected by supporting utilities. Follow-ups will add half the delay stat of the weapon that is following-up to the total time cost of the volley, before the time cost reduction of any [[Actuators]].\n\n[[Heading:2]]Recoil[[/Heading]]\n\nCertain weapons (Especially ballistic ones) suffer from recoil. The sum of every other weapon’s recoil will be assessed as a penalty to each weapon in a volley containing weapon(s) suffering from recoil.\n\n[[Heading]]Energy/Ballistic Gun Mechanics[[/Heading]]\n\nIf a volley is comprised exclusively of ballistic and/or energy guns and its original target is destroyed, a secondary target may be selected, prioritizing the most easily hit armed and active hostile in range. New targets may continue to be selected until no weapons remain in the volley. This mechanic is also available to melee follow-ups, and can be expanded to any weapon with use of a [[Heavy Servo Lattice]] or [[Spoiler]][[VL-GR5's Timing Chip]][[/Spoiler]]. However, unlike every other weapons, guns cannot cause overflow damage when damage dealt is greater than the target components integrity. Overflow damage is sent to a second part according to standard coverage rules, unless the destroyed part was armor, and overflow damage is always sent to armor if any is present.\n\n[[Heading]]Weapon Types[[/Heading]]\n\n[[Heading:2]][[Electromagnetic Weapons]]/[[Thermal Weapons]][[/Heading]]\n\nEnergy weapons generally have a shorter range, but benefit from a more easily predictable damage potential and little or no recoil. Thermal damage also generally transfers heat to the target, and may cause meltdowns in hot enough targets. Electromagnetic damage is capable of causing system corruption in targets. Anywhere from 50-150% of damage is applied as system corruption. EM damage is additionally capable of disrupting hit parts or even robot cores, as well as causing chain reactions in target power components. \n\n[[Heading:2]][[Ballistic Weapons]][[/Heading]]\n\nBallistic weapons generally have a longer effective range and more destructive critical strikes, but suffer from less predictable damage and high recoil. Some kinetic projectiles, especially hypervelocity variants, are capable of penetrating one or more consecutive targets. Kinetic cannon hits also blast usable matter off target robots and have a damage-equivalent chance to cause knockback, with a (10 - range) * 5 modifier and a +/-10% per size class (Tiny/Small/Medium/Large/Huge) difference between the target and medium size (targets knocked into another robot may also damage and displace it). The amount of matter created per cannon projectile impact is randomized from between zero up to the absolute value of the weapon's salvage modifier, but only applies for those weapons with a negative salvage modifier below -2.\n\n[[Heading:2]][[Launchers]][[/Heading]]\n\nLaunchers may deal either electromagnetic or explosive damage.  Damage from launchers is spread across targets in their area of effect, dividing damage into separate chunks before affecting a robot, where each chunk selects its own target part (though they may overlap). Launchers also suffer from damage falloff: targets at the edge of the area of effect will sustain less damage then targets near the center. Explosive launchers carry high salvage penalties and will tend to destabilize hit terrain. Electromagnetic launchers can initiate chain reactions in power components attached to [[Cogmind]] or on the ground and disrupt hit components or robot cores.\n\n[[Heading:2]][[Impact Weapons]][[/Heading]]\n\nImpact melee weapons have a damage-equivalent chance to cause knockback, with a +/-10% per size class (T/S/M/L/H) difference between attacker and target. Targets knocked into another robot may also damage and displace it. A robot hit by another displaced robot has a chance to itself be displaced and sustain damage, where the chance equals the original knockback chance further modified by +/-10% per size class difference between the blocking robot and the knocked back robot, and the resulting damage equals the original damage inflicted by the weapon after applying the +10% robot analysis damage modifier if applicable, further divided by the blocker size class if that class is greater than 1 (where Medium = 2, and so on).\n\nImpact weapons ignore relative coverage when determining which components to affect, and are therefore effective at destroying fragile systems regardless of armor and other protection. By ignoring coverage, there is an equal chance for an attack to hit any given part, where each slot of a multislot part also has a separate and equivalent chance to be hit. A target's core also counts as one slot for that purpose. In addition, for every component crushed by an impact, its owner's system is significantly corrupted (+25-150%), though electromagnetic resistance can help mitigate this effect.\n\n[[Heading:2]][[Slashing Weapons]][[/Heading]]\n\nSlashing melee weapons are generally very damaging, and most are also capable of severing components from a target without destroying them.\n\n[[Heading:2]][[Piercing Weapons]][[/Heading]]\n\nPiercing melee weapons inflict less collateral damage, but are more likely to hit a robot's core, and get double the melee momentum damage bonus. The core exposure bonus is 8%, the same as an [[Exp. Core Analyzer]]\n\n[[Heading:2]][[Special Weapons]] and [[Special Melee Weapons]][[/Heading]]\n\nSpecial weapons are usually intended to serve some utility rather than directly deal damage."
+   "Content": "Weapon components allow robots to deal damage or otherwise perform some utility.\n\nWeapons can be from 9 general categories: [[Ballistic Cannons]], [[Energy Cannons]], [[Ballistic Guns]], [[Energy Guns]], [[Launchers]], [[Slashing Weapons]], [[Piercing Weapons]], [[Impact Weapons]], [[Special Melee Weapons]], and [[Special Weapons]].\n\n[[Heading]]Multi-Weapon Volleys[[/Heading]]\n\nMost weapons can be fired together as a volley, excluding Special Weapons, Special Melee Weapons, and [[Guided Weapons]]. Multiple Slashing, Piercing, and Impact melee weapons can be made to fire in one volley, although any weapons beyond the first are restricted to chance-based follow-up attacks.\n\n[[Heading:2]]Volley Time Costs[[/Heading]]\n\nEach weapon in a ranged multi-weapon volley will increase the volley\u00e2\u20ac\u2122s total time cost, with each weapon being more efficient time-wise:\n[[Table]]Number of Weapons|Time cost||1|200||2|300||3|325||4|350||5|375||6+|400[[/Table]]\nThis is then modified by the sum of the delay stats of every weapon in the volley, then by the time cost reduction of an equipped [[Weapon Cyclers|Weapon Cycler]], [[Quantum Capacitor]], or [[Launcher Loader]], when applicable. A single volley may not cost less than 25 time units.\n\n[[Heading:2]]Follow-Up Attacks[[/Heading]]\n\nWhen multiple melee weapons are fired in a single volley, the first will always fire, and any others will have an independent chance to make a follow-up attack. Follow-up attacks are more likely when the primary weapon is slower than a given backup melee weapon. The chance may also be affected by supporting utilities. Follow-ups will add half the delay stat of the weapon that is following-up to the total time cost of the volley, before the time cost reduction of any [[Actuators]].\n\n[[Heading:2]]Recoil[[/Heading]]\n\nCertain weapons (Especially ballistic ones) suffer from recoil. The sum of every other weapon\u00e2\u20ac\u2122s recoil will be assessed as a penalty to each weapon in a volley containing weapon(s) suffering from recoil.\n\n[[Heading]]Energy/Ballistic Gun Mechanics[[/Heading]]\n\nIf a volley is comprised exclusively of ballistic and/or energy guns and its original target is destroyed, a secondary target may be selected, prioritizing the most easily hit armed and active hostile in range. New targets may continue to be selected until no weapons remain in the volley. This mechanic is also available to melee follow-ups, and can be expanded to any weapon with use of a [[Heavy Servo Lattice]] or [[Spoiler]][[VL-GR5's Timing Chip]][[/Spoiler]]. However, unlike every other weapons, guns cannot cause overflow damage when damage dealt is greater than the target components integrity. Overflow damage is sent to a second part according to standard coverage rules, unless the destroyed part was armor, and overflow damage is always sent to armor if any is present.\n\n[[Heading]]Weapon Types[[/Heading]]\n\n[[Heading:2]][[Electromagnetic Weapons]]/[[Thermal Weapons]][[/Heading]]\n\nEnergy weapons generally have a shorter range, but benefit from a more easily predictable damage potential and little or no recoil. Thermal damage also generally transfers heat to the target, and may cause meltdowns in hot enough targets. Electromagnetic damage is capable of causing system corruption in targets. Anywhere from 50-150% of damage is applied as system corruption. EM damage is additionally capable of disrupting hit parts or even robot cores, as well as causing chain reactions in target power components. \n\n[[Heading:2]][[Ballistic Weapons]][[/Heading]]\n\nBallistic weapons generally have a longer effective range and more destructive critical strikes, but suffer from less predictable damage and high recoil. Some kinetic projectiles, especially hypervelocity variants, are capable of penetrating one or more consecutive targets. Kinetic cannon hits also blast usable matter off target robots and have a damage-equivalent chance to cause knockback, with a (10 - range) * 5 modifier and a +/-10% per size class (Tiny/Small/Medium/Large/Huge) difference between the target and medium size (targets knocked into another robot may also damage and displace it). The amount of matter created per cannon projectile impact is randomized from between zero up to the absolute value of the weapon's salvage modifier, but only applies for those weapons with a negative salvage modifier below -2.\n\n[[Heading:2]][[Launchers]][[/Heading]]\n\nLaunchers may deal either electromagnetic or explosive damage.  Damage from launchers is spread across targets in their area of effect, dividing damage into separate chunks before affecting a robot, where each chunk selects its own target part (though they may overlap). Launchers also suffer from damage falloff: targets at the edge of the area of effect will sustain less damage then targets near the center. Explosive launchers carry high salvage penalties and will tend to destabilize hit terrain. Electromagnetic launchers can initiate chain reactions in power components attached to [[Cogmind]] or on the ground and disrupt hit components or robot cores.\n\n[[Heading:2]][[Impact Weapons]][[/Heading]]\n\nImpact melee weapons have a damage-equivalent chance to cause knockback, with a +/-10% per size class (T/S/M/L/H) difference between attacker and target. Targets knocked into another robot may also damage and displace it. A robot hit by another displaced robot has a chance to itself be displaced and sustain damage, where the chance equals the original knockback chance further modified by +/-10% per size class difference between the blocking robot and the knocked back robot, and the resulting damage equals the original damage inflicted by the weapon after applying the +10% robot analysis damage modifier if applicable, further divided by the blocker size class if that class is greater than 1 (where Medium = 2, and so on).\n\nImpact weapons ignore relative coverage when determining which components to affect, and are therefore effective at destroying fragile systems regardless of armor and other protection. By ignoring coverage, there is an equal chance for an attack to hit any given part, where each slot of a multislot part also has a separate and equivalent chance to be hit. A target's core also counts as one slot for that purpose. In addition, for every component crushed by an impact, its owner's system is significantly corrupted (+25-150%), though electromagnetic resistance can help mitigate this effect.\n\n[[Heading:2]][[Slashing Weapons]][[/Heading]]\n\nSlashing melee weapons are generally very damaging, and most are also capable of severing components from a target without destroying them.\n\n[[Heading:2]][[Piercing Weapons]][[/Heading]]\n\nPiercing melee weapons inflict less collateral damage, but are more likely to hit a robot's core, and get double the melee momentum damage bonus. The core exposure bonus is 8%, the same as an [[Exp. Core Analyzer]]\n\n[[Heading:2]][[Special Weapons]] and [[Special Melee Weapons]][[/Heading]]\n\nSpecial weapons are usually intended to serve some utility rather than directly deal damage."
   }
  ],
  "Locations": [
