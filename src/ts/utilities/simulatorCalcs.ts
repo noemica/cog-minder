@@ -245,10 +245,12 @@ function applyDamage(
     // Apply any additional damage reduction (10)
     const part = getDefensiveStatePart(botState.defensiveState.damageReduction);
 
-    let multiplier = 1;
+    let ratio = 0;
+    let multiplier = 0;
     let damageReduction = 0;
     if (part !== undefined) {
         multiplier = part.reduction;
+        ratio = part.ratio;
     } else {
         const hardlightPart = getDefensiveStatePart(botState.defensiveState.hardlightGenerator);
         if (hardlightPart !== undefined) {
@@ -256,15 +258,30 @@ function applyDamage(
         }
     }
 
-    if (part !== undefined && part.remote) {
-        for (const chunk of chunks) {
-            chunk.realDamage =
+    for (const chunk of chunks) {
+        let damageReduced = 0;
+
+        if (part !== undefined && part.remote) {
+            damageReduced =
                 chunk.originalDamage - Math.trunc(chunk.originalDamage * (1 - multiplier)) - damageReduction;
+        } else {
+            damageReduced = Math.trunc(chunk.originalDamage * multiplier) - damageReduction;
         }
-    } else {
-        for (const chunk of chunks) {
-            chunk.realDamage = Math.trunc(chunk.originalDamage * multiplier) - damageReduction;
+
+        if (multiplier != 0) {
+            // If FF-like part, check that we actually have enough energy to
+            // do the reduction
+            const energyRequired = damageReduced * ratio;
+
+            if (botState.energy > energyRequired) {
+                botState.energy -= energyRequired;
+            } else {
+                // If not enough energy available then don't apply the FF reduction
+                damageReduced = 0;
+            }
         }
+
+        chunk.realDamage = chunk.originalDamage - damageReduced;
     }
 
     // Apply salvage for all chunks simultaneously
@@ -766,10 +783,13 @@ function cloneBotState(botState: BotState): BotState {
         defensiveState: undefined as any,
         destroyedParts: [],
         dormant: botState.dormant,
+        energy: botState.energy,
+        energyGen: botState.energyGen,
         externalDamageReduction: botState.externalDamageReduction,
         heat: 0,
         immunities: botState.immunities,
         initialCoreIntegrity: botState.initialCoreIntegrity,
+        maximumEnergy: botState.maximumEnergy,
         parts: botState.parts.map((p) => {
             return {
                 armorAnalyzedShieldedCoverage: p.armorAnalyzedShieldedCoverage,
@@ -777,6 +797,7 @@ function cloneBotState(botState: BotState): BotState {
                 armorAnalyzedCoverage: p.armorAnalyzedCoverage,
                 coverage: p.coverage,
                 def: p.def,
+                energyUpkeep: p.energyUpkeep,
                 integrity: p.integrity,
                 initialIndex: p.initialIndex,
                 protection: p.protection,
@@ -921,6 +942,7 @@ export function getBotDefensiveState(
         } else if (hasActiveSpecialProperty(part.def, !dormant, "DamageReduction")) {
             // Force field-like part
             state.damageReduction.push({
+                ratio: (part.def.specialProperty!.trait as DamageReduction).ratio,
                 reduction: (part.def.specialProperty!.trait as DamageReduction).multiplier,
                 remote: (part.def.specialProperty!.trait as DamageReduction).remote,
                 part: part,
@@ -958,6 +980,7 @@ export function getBotDefensiveState(
         if (state.damageReduction.length === 0) {
             // If no other damage reduction no need to sort
             state.damageReduction.push({
+                ratio: 0,
                 reduction: reduction,
                 remote: remote,
                 part: {
@@ -966,6 +989,7 @@ export function getBotDefensiveState(
                     armorAnalyzedCoverage: 0,
                     coverage: 0,
                     def: undefined as any,
+                    energyUpkeep: 0,
                     integrity: 1,
                     initialIndex: 0,
                     protection: false,
@@ -981,6 +1005,7 @@ export function getBotDefensiveState(
             // Use sort order to decide to insert before or after
             if (newIndex < existingIndex) {
                 state.damageReduction.unshift({
+                    ratio: 0,
                     reduction: reduction,
                     remote: remote,
                     part: {
@@ -989,6 +1014,7 @@ export function getBotDefensiveState(
                         armorAnalyzedSiegedCoverage: 0,
                         coverage: 0,
                         def: undefined as any,
+                        energyUpkeep: 0,
                         integrity: 1,
                         initialIndex: 0,
                         protection: false,
@@ -999,6 +1025,7 @@ export function getBotDefensiveState(
                 });
             } else {
                 state.damageReduction.push({
+                    ratio: 0,
                     remote: remote,
                     reduction: reduction,
                     part: {
@@ -1007,6 +1034,7 @@ export function getBotDefensiveState(
                         armorAnalyzedSiegedCoverage: 0,
                         coverage: 0,
                         def: undefined as any,
+                        energyUpkeep: 0,
                         initialIndex: 0,
                         integrity: 1,
                         protection: false,
@@ -1088,6 +1116,13 @@ function destroyPart(
 
     part.integrity = 0;
     updateWeaponsAccuracy(state);
+
+    // Subtract energy stats
+    if (part.def.slot === "Power") {
+        botState.energyGen -= (part.def as PowerItem).energyGeneration || 0;
+        botState.maximumEnergy -= (part.def as PowerItem).energyStorage || 0;
+        botState.energy = Math.min(botState.energy, botState.maximumEnergy);
+    }
 
     botState.destroyedParts.push(part);
 }
@@ -1449,12 +1484,13 @@ export function simulateCombat(state: SimulatorState): boolean {
         // Apply core regen
         const lastCompletedTurns = Math.trunc(oldTus / 100);
         const newCompletedTurns = Math.trunc(state.tus / 100);
-        const coreRegenIntegrity = botState.coreRegen * (newCompletedTurns - lastCompletedTurns);
+        const completedTurns = newCompletedTurns - lastCompletedTurns;
+        const coreRegenIntegrity = botState.coreRegen * completedTurns;
 
         botState.coreIntegrity = Math.min(botState.initialCoreIntegrity, botState.coreIntegrity + coreRegenIntegrity);
 
         // Apply part regen to existing parts
-        const partRegenIntegrity = botState.partRegen * (newCompletedTurns - lastCompletedTurns);
+        const partRegenIntegrity = botState.partRegen * completedTurns;
         for (const part of botState.parts) {
             part.integrity = Math.min(part.integrity + partRegenIntegrity, part.def.integrity);
         }
@@ -1462,7 +1498,7 @@ export function simulateCombat(state: SimulatorState): boolean {
         if (botState.partRegen > 0) {
             // Apply part regen to destroyed parts
             // Every 10 turns, one part is recreated
-            const numRegenTurns = [...Array(newCompletedTurns - lastCompletedTurns)]
+            const numRegenTurns = [...Array(completedTurns)]
                 .map((_, i) => i + lastCompletedTurns)
                 .filter((t) => t % 10 === 0).length;
 
@@ -1501,6 +1537,16 @@ export function simulateCombat(state: SimulatorState): boolean {
             dormantTimer = newCompletedTurns + 10;
             dormantTimerSet = true;
         }
+
+        // Handle energy changes
+        botState.energy += botState.energyGen;
+        for (const part of botState.parts) {
+            botState.energy -= part.energyUpkeep;
+        }
+
+        // Cap between 0 and maximum energy
+        botState.energy = Math.max(0, Math.min(botState.energy, botState.maximumEnergy));
+        // TODO: Simulate more energy-related effects apart from only FF/shield gen
 
         // Process each volley
         volleys += 1;

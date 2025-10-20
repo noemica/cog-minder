@@ -24,6 +24,7 @@ export type SimulatorPart = {
     armorAnalyzedSiegedCoverage: number;
     coverage: number;
     def: Item;
+    energyUpkeep: number;
     integrity: number;
     initialIndex: number;
     protection: boolean;
@@ -62,6 +63,7 @@ export type CorruptionReductionPart = SpecialPart & {
 export type CriticalImmunityPart = SpecialPart;
 
 export type DamageReductionPart = SpecialPart & {
+    ratio: number;
     reduction: number;
     remote: boolean;
 };
@@ -121,10 +123,13 @@ export type BotState = {
     defensiveState: DefensiveState;
     destroyedParts: SimulatorPart[];
     dormant: boolean;
+    energy: number;
+    energyGen: number;
     externalDamageReduction: ExternalDamageReduction;
     heat: number;
     immunities: BotImmunity[];
     initialCoreIntegrity: number;
+    maximumEnergy: number;
     parts: SimulatorPart[];
     partRegen: number;
     resistances: BotResistances;

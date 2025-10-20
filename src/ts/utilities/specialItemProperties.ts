@@ -57,46 +57,85 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Exp. Cryofiber Web": { active: "Part Active", trait: { kind: "CryofiberWeb" } },
 
     // Damage reduction
-    "Shield Generator": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: false } },
+    "Shield Generator": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.75, ratio: 6, remote: false },
+    },
     "Imp. Shield Generator": {
         active: "Part Active",
-        trait: { kind: "DamageReduction", multiplier: 0.75, remote: false },
+        trait: { kind: "DamageReduction", multiplier: 0.75, ratio: 5, remote: false },
     },
     "Adv. Shield Generator": {
         active: "Part Active",
-        trait: { kind: "DamageReduction", multiplier: 0.75, remote: false },
+        trait: { kind: "DamageReduction", multiplier: 0.75, ratio: 4, remote: false },
     },
     "Exp. Shield Generator": {
         active: "Part Active",
-        trait: { kind: "DamageReduction", multiplier: 0.75, remote: false },
+        trait: { kind: "DamageReduction", multiplier: 0.75, ratio: 2, remote: false },
     },
-    "Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: true } },
-    "Imp. Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: true } },
-    "Adv. Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: true } },
-    "Exp. Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.75, remote: true } },
-    "Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: false } },
-    "Imp. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: false } },
-    "Adv. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: false } },
-    "Exp. Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: false } },
-    "Remote Force Field": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
+    "Remote Shield": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.75, ratio: 6, remote: true },
+    },
+    "Imp. Remote Shield": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.75, ratio: 5, remote: true },
+    },
+    "Adv. Remote Shield": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.75, ratio: 4, remote: true },
+    },
+    "Exp. Remote Shield": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.75, ratio: 2, remote: true },
+    },
+    "Force Field": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.5, ratio: 7, remote: false },
+    },
+    "Imp. Force Field": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.5, ratio: 6, remote: false },
+    },
+    "Adv. Force Field": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.5, ratio: 5, remote: false },
+    },
+    "Exp. Force Field": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.5, ratio: 3, remote: false },
+    },
+    "Remote Force Field": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.5, ratio: 8, remote: true },
+    },
     "Imp. Remote Force Field": {
         active: "Part Active",
-        trait: { kind: "DamageReduction", multiplier: 0.5, remote: true },
+        trait: { kind: "DamageReduction", multiplier: 0.5, ratio: 7, remote: true },
     },
     "Adv. Remote Force Field": {
         active: "Part Active",
-        trait: { kind: "DamageReduction", multiplier: 0.5, remote: true },
+        trait: { kind: "DamageReduction", multiplier: 0.5, ratio: 6, remote: true },
     },
-    "QV-33N's Drone Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
-    "AEGIS Remote Shield": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
-    "Cep. Energy Mantle": { active: "Part Active", trait: { kind: "DamageReduction", multiplier: 0.5, remote: true } },
+    "QV-33N's Drone Shield": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.5, ratio: 4, remote: true },
+    },
+    "AEGIS Remote Shield": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.5, ratio: 2, remote: true },
+    },
+    "Cep. Energy Mantle": {
+        active: "Part Active",
+        trait: { kind: "DamageReduction", multiplier: 0.5, ratio: 1, remote: true },
+    },
     "7V-RTL's Ultimate Field": {
         active: "Part Active",
-        trait: { kind: "DamageReduction", multiplier: 0.25, remote: false },
+        trait: { kind: "DamageReduction", multiplier: 0.25, ratio: 3, remote: false },
     },
     "Vortex Field Projector": {
         active: "Part Active",
-        trait: { kind: "DamageReduction", multiplier: 0.25, remote: false },
+        trait: { kind: "DamageReduction", multiplier: 0.25, ratio: 1, remote: false },
     },
 
     // Damage resists

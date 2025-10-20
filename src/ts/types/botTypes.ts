@@ -71,6 +71,7 @@ export type Bot = {
     immunitiesString: string;
     inventorySize?: string;
     locations: BotLocation[];
+    maxEnergy: number;
     memory: string;
     movement: string;
     movementOverloaded?: string;

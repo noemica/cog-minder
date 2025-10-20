@@ -4,7 +4,7 @@ import { ReactNode, useRef, useState } from "react";
 import { useLocation, useSearch } from "wouter";
 
 import { Bot } from "../../../types/botTypes";
-import { Critical, DamageType, Item, PropulsionItem, WeaponItem } from "../../../types/itemTypes";
+import { Critical, DamageType, Item, ItemWithUpkeep, PropulsionItem, WeaponItem } from "../../../types/itemTypes";
 import {
     BotBehavior,
     BotState,
@@ -275,12 +275,19 @@ function getSimulatorState(
         const coverage = itemDef.coverage ?? 0;
         const shieldedCoverage = (itemDef.type === "Leg" && (itemDef as PropulsionItem).shield) ? 2 * coverage : coverage;
         const siegedCoverage = isProtection || isTreads ? 2 * coverage : coverage;
+        
+        let energyUpkeep = 0;
+        if (itemDef.slot === "Propulsion" || itemDef.slot === "Utility") {
+            energyUpkeep = (itemDef as ItemWithUpkeep).energyUpkeep || 0;
+        }
+
         parts.push({
             armorAnalyzedCoverage: isProtection ? 0 : coverage,
             armorAnalyzedShieldedCoverage: isProtection ? 0 : shieldedCoverage,
             armorAnalyzedSiegedCoverage: isProtection ? 0 : siegedCoverage,
             coverage: coverage,
             def: itemDef,
+            energyUpkeep: energyUpkeep,
             integrity: integrity,
             initialIndex: partCount++,
             protection: isProtection,
@@ -379,10 +386,13 @@ function getSimulatorState(
         defensiveState: defensiveState,
         destroyedParts: [],
         dormant: dormant,
+        energy: bot.maxEnergy,
+        energyGen: bot.energyGeneration,
         externalDamageReduction: pageState.damageReduction || "None",
         heat: 0,
         immunities: bot.immunities,
         initialCoreIntegrity: botIntegrity,
+        maximumEnergy: bot.maxEnergy,
         parts: parts,
         partRegen: getPartRegen(bot),
         resistances: bot.resistances === undefined ? {} : bot.resistances,

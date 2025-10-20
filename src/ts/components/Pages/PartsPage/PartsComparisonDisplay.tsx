@@ -8,7 +8,6 @@ import {
     ItemWithUpkeep,
     PowerItem,
     PropulsionItem,
-    SiegeMode,
     Spectrum,
     WeaponItem,
 } from "../../../types/itemTypes";

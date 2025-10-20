@@ -13,17 +13,9 @@ export type DamageType =
     | "Special"
     | "Thermal";
 
-export type HeatTransfer =
-    | "Minimal (5)"
-    | "Low (25)"
-    | "Medium (37)"
-    | "High (50)"
-    | "Massive (80)";
+export type HeatTransfer = "Minimal (5)" | "Low (25)" | "Medium (37)" | "High (50)" | "Massive (80)";
 
-export type ItemRatingCategory =
-    | "Alien"
-    | "Prototype"
-    | "None";
+export type ItemRatingCategory = "Alien" | "Prototype" | "None";
 
 export type ItemCategory =
     | "0b10"
@@ -90,9 +82,7 @@ export type ItemType =
     | "Treads"
     | "Wheel";
 
-export type SiegeMode =
-    | "High Siege"
-    | "Siege";
+export type SiegeMode = "High Siege" | "Siege";
 
 export enum Spectrum {
     Wide = "Wide (10)",
@@ -130,7 +120,7 @@ export type CorruptionPrevent = { kind: "CorruptionPrevent"; amount: number };
 export type CorruptionReduce = { kind: "CorruptionReduce"; amount: number };
 export type CriticalImmunity = { kind: "CriticalImmunity" };
 export type CryofiberWeb = { kind: "CryofiberWeb" };
-export type DamageReduction = { kind: "DamageReduction"; multiplier: number; remote: boolean };
+export type DamageReduction = { kind: "DamageReduction"; multiplier: number; ratio: number; remote: boolean };
 export type DamageResists = { kind: "DamageResists"; resists: BotResistances };
 export type EnergyFilter = { kind: "EnergyFilter"; percent: number };
 export type EnergyStorage = { kind: "EnergyStorage"; storage: number };
@@ -147,7 +137,7 @@ export type QuantumCapacitor = { kind: "QuantumCapacitor" };
 export type ParticleCharging = { kind: "ParticleCharging"; percent: number };
 export type RangedAvoid = { kind: "RangedAvoid"; avoid: number };
 export type RangedWeaponCycling = { kind: "RangedWeaponCycling"; amount: number };
-export type ReactionControlSystem = { kind: "ReactionControlSystem"; chance: number; };
+export type ReactionControlSystem = { kind: "ReactionControlSystem"; chance: number };
 export type RecoilReduction = { kind: "RecoilReduction"; reduction: number };
 export type SalvageTargeting = { kind: "SalvageTargeting"; amount: number };
 export type SelfReduction = { kind: "SelfReduction"; shielding: number };

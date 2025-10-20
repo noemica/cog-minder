@@ -1,9 +1,9 @@
 import botExtraData from "../../json/bot_extra_data.json";
 import lore from "../../json/lore.json";
 import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "../types/botTypes";
-import { FabricationStats } from "../types/itemTypes";
+import { EnergyStorage, FabricationStats } from "../types/itemTypes";
 import { ItemData } from "./ItemData";
-import { ceilToMultiple, getBotImageNames, loadImage, parseIntOrDefault } from "./common";
+import { ceilToMultiple, getBotImageNames, hasActiveSpecialProperty, loadImage, parseIntOrDefault } from "./common";
 
 export class BotData {
     botData: { [key: string]: Bot } = {};
@@ -141,6 +141,28 @@ export class BotData {
                 }
             }
 
+            // Base energy is fixed at 100 for almost every bot
+            // Large botcubes do have 200 base energy, though since their loadout
+            // can't be manually input into the sim, it isn't of much value to
+            // support this here
+            let maxEnergy = 100;
+            bot.Components?.forEach((data) => {
+                if (typeof data === "string") {
+                    const item = itemData.getItem(data);
+                    if (hasActiveSpecialProperty(item, true, "EnergyStorage")) {
+                        maxEnergy += (item.specialProperty!.trait as EnergyStorage).storage;
+                    }
+                } else {
+                    // For options, work with the first option
+                    const item = itemData.getItem((data as ItemOption[])[0].name);
+                    if (hasActiveSpecialProperty(item, true, "EnergyStorage")) {
+                        maxEnergy +=
+                            (item.specialProperty!.trait as EnergyStorage).storage *
+                            ((data as ItemOption[])[0].number || 1);
+                    }
+                }
+            });
+
             const newBot: Bot = {
                 armament: bot.Armament ?? [],
                 armamentData: armamentData,
@@ -163,6 +185,7 @@ export class BotData {
                 immunitiesString: bot.Immunities?.join(", ") ?? "",
                 inventorySize: bot["Inventory Capacity"],
                 locations: extraData?.Locations ?? [],
+                maxEnergy: maxEnergy,
                 memory: bot.Memory,
                 movement: `${bot.Movement} (${bot.Speed}/${bot["Speed %"]}%)`,
                 movementOverloaded:
