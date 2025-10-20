@@ -241,6 +241,23 @@ function WeaponRow({
                 }}
             />
         );
+    } else if (weaponItem.ratingCategory === "None" && weaponItem.categories.includes("0b10")) {
+        // Add study input
+        extraInput = (
+            <LabeledExclusiveButtonGroup
+                label="Study"
+                disabled={disabled}
+                buttons={yesNoButtons}
+                tooltip="Whether the study for the part has been obtained (+10% accuracy)."
+                selected={weaponState.study || "No"}
+                onValueChanged={(val) => {
+                    const newWeaponState = [...pageState.weaponState!];
+                    newWeaponState[i] = { ...weaponState, study: val };
+
+                    updatePageState({ ...pageState, weaponState: newWeaponState });
+                }}
+            />
+        );
     }
 
     return (

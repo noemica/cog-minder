@@ -59,6 +59,7 @@ export type WeaponState = {
     name: string;
     number?: string;
     overload?: YesNoType;
+    study?: YesNoType;
 };
 
 export type XAxisType = "Volleys" | "Time";
@@ -241,7 +242,7 @@ function getSimulatorState(
 ): SimulatorState | undefined {
     const botName = pageState.botName || "G-34 Mercenary";
 
-    const userWeapons: { def: WeaponItem; overloaded: boolean; exo: boolean }[] = [];
+    const userWeapons: { def: WeaponItem; overloaded: boolean; exo: boolean; study: boolean }[] = [];
 
     for (const weaponInfo of pageState.weaponState ?? []) {
         const weapon = itemData.tryGetItem(weaponInfo.name) as WeaponItem;
@@ -254,10 +255,10 @@ function getSimulatorState(
         const number = parseIntOrDefault(weaponInfo.number, 1);
         const overloaded = weaponInfo.overload === "Yes";
         const exo = weaponInfo.exo === "Yes";
+        const study = weaponInfo.study === "Yes";
 
         for (let i = 0; i < number; i++) {
-            // Overload and exoskeleton both double damage so treat them the same
-            userWeapons.push({ def: weapon, overloaded: overloaded || exo, exo: exo });
+            userWeapons.push({ def: weapon, overloaded: overloaded || exo, exo: exo, study: study });
         }
     }
 
@@ -273,9 +274,9 @@ function getSimulatorState(
         const isProtection = itemDef.type === "Protection";
         const isTreads = itemDef.type === "Treads";
         const coverage = itemDef.coverage ?? 0;
-        const shieldedCoverage = (itemDef.type === "Leg" && (itemDef as PropulsionItem).shield) ? 2 * coverage : coverage;
+        const shieldedCoverage = itemDef.type === "Leg" && (itemDef as PropulsionItem).shield ? 2 * coverage : coverage;
         const siegedCoverage = isProtection || isTreads ? 2 * coverage : coverage;
-        
+
         let energyUpkeep = 0;
         if (itemDef.slot === "Propulsion" || itemDef.slot === "Utility") {
             energyUpkeep = (itemDef as ItemWithUpkeep).energyUpkeep || 0;
@@ -343,8 +344,10 @@ function getSimulatorState(
     // }
 
     const armorAnalyzedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedCoverage, 0);
-    const armorAnalyzedShieldedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedShieldedCoverage, 0);
-    const armorAnalyzedSiegedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedSiegedCoverage, 0);
+    const armorAnalyzedShieldedCoverage =
+        botCoreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedShieldedCoverage, 0);
+    const armorAnalyzedSiegedCoverage =
+        botCoreCoverage + parts.reduce((prev, part) => prev + part.armorAnalyzedSiegedCoverage, 0);
     const shieldedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.shieldedCoverage, 0);
     const siegedCoverage = botCoreCoverage + parts.reduce((prev, part) => prev + part.siegedCoverage, 0);
 
@@ -564,6 +567,11 @@ function getSimulatorState(
             console.log(`${botName} has invalid size ${bot.size}`);
         }
 
+        // Study increase accuracy by 10%
+        if (weapon.study) {
+            baseAccuracy += 10;
+        }
+
         // Builtin targeting
         if (def.targeting !== undefined) {
             baseAccuracy += def.targeting;
@@ -647,6 +655,7 @@ function getSimulatorState(
             overloaded: weapon.overloaded,
             salvage: salvage,
             spectrum: spectrum,
+            study: weapon.study,
         };
 
         return state;

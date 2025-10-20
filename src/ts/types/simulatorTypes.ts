@@ -174,6 +174,7 @@ export type SimulatorWeapon = {
     overloaded: boolean;
     salvage: number;
     spectrum: number;
+    study: boolean;
 };
 
 export type SneakAttackStrategy = "None" | "First Only" | "All";
