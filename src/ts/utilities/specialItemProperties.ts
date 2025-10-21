@@ -295,10 +295,6 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Cep. Chromion Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 800 } },
     Superbattery: { active: "Always", trait: { kind: "EnergyStorage", storage: 1500 } },
 
-    // Fusion compressor
-    "Fusion Compressor": { active: "Part Active", trait: { kind: "FusionCompressor", energyPerTurn: 20 } },
-    "Imp. Fusion Compressor": { active: "Part Active", trait: { kind: "FusionCompressor", energyPerTurn: 30 } },
-
     // Hardlight Generator
     "Hardlight Generator": { active: "Part Active", trait: { kind: "HardlightGenerator", amount: 4 } },
     "Imp. Hardlight Generator": { active: "Part Active", trait: { kind: "HardlightGenerator", amount: 6 } },

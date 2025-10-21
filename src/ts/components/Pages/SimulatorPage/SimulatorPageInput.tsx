@@ -241,7 +241,7 @@ function WeaponRow({
                 }}
             />
         );
-    } else if (weaponItem.ratingCategory === "None" && weaponItem.categories.includes("0b10")) {
+    } else if (weaponItem.studyable) {
         // Add study input
         extraInput = (
             <LabeledExclusiveButtonGroup

@@ -7,7 +7,6 @@ import {
     BaseItem,
     EnergyFilter,
     EnergyStorage,
-    FusionCompressor,
     HeatDissipation,
     Item,
     ItemSlot,
@@ -66,6 +65,7 @@ type CalculatedPartInfo = {
     recoil: number;
     slot: ItemSlot;
     size: number;
+    study: boolean;
     vulnerability: number;
 };
 
@@ -130,7 +130,7 @@ type TotalPartsState = {
     tusPerVolley: number;
 };
 
-type PartActive = "Yes" | "No";
+type YesNo = "Yes" | "No";
 
 type PartInfoType =
     | "Mass"
@@ -150,6 +150,7 @@ type PartState = {
     id: number;
     name: string;
     number?: string;
+    study?: boolean;
 };
 
 type PercentageColor =
@@ -219,7 +220,7 @@ const partInfoButtons: ExclusiveButtonDefinition<PartInfoType>[] = [
     },
 ];
 
-const partActiveButtons: ExclusiveButtonDefinition<PartActive>[] = [{ value: "Yes" }, { value: "No" }];
+const yesNoButtons: ExclusiveButtonDefinition<YesNo>[] = [{ value: "Yes" }, { value: "No" }];
 
 function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     const itemData = useItemData();
@@ -231,6 +232,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         number: number;
         part: BaseItem;
         partState: PartState;
+        study: boolean;
     };
     function sum(a: number, b: number) {
         return a + b;
@@ -254,10 +256,21 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         // Return positive value for energy gen, negative for consumption
         if (p.active && p.part.slot === "Power") {
             // Multiply only power-slot energy generation by the power amplifier bonus
-            return ((p.part as PowerItem).energyGeneration ?? 0) * powerAmplifierBonus;
-        } else if (hasActiveSpecialProperty(p.part, p.abilityActive, "FusionCompressor")) {
-            // Fusion compressors convert matter to energy
-            return (p.part.specialProperty!.trait as FusionCompressor).energyPerTurn;
+            let gen = ((p.part as PowerItem).energyGeneration ?? 0) * powerAmplifierBonus;
+
+            // Apply study bonus, +1 for small engines and +2 for all others
+            if (p.study) {
+                if (
+                    p.part.name.startsWith("Lgt.") ||
+                    p.part.name.startsWith("Mic.") ||
+                    p.part.name.startsWith("Mni.")
+                ) {
+                    gen += 1;
+                } else {
+                    gen += 2;
+                }
+            }
+            return gen;
         } else if ((p.active && p.part.slot === "Propulsion") || p.part.slot === "Utility") {
             return -((p.part as ItemWithUpkeep).energyUpkeep ?? 0);
         } else if (hasActiveSpecialProperty(p.part, p.abilityActive, "WeaponRegen")) {
@@ -363,6 +376,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
                     number: parseIntOrDefault(partState.number, 1),
                     part: basePart,
                     partState: partState,
+                    study: partState.study || false,
                 };
             }
         })
@@ -381,7 +395,41 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         .filter((p) => p.active && p.part.type === propulsionType)
         .forEach((p) => {
             for (let i = 0; i < p.number; i++) {
-                activeProp.push(p.part as PropulsionItem);
+                let part = p.part as PropulsionItem;
+
+                if (p.study) {
+                    // Clone the part so we can modify the definition
+                    // Not ideal but the alternative would be to have to track
+                    // whether the study is active throughout the whole file in
+                    // many places which is worse
+
+                    // Clone is needed since we do a .includes() check which
+                    // would otherwise be defeated by the copy
+                    p.part = { ...p.part };
+                    part = p.part as PropulsionItem;
+
+                    // Apply unique study effect per prop type
+                    switch (part.type) {
+                        case "Hover Unit":
+                        case "Flight Unit":
+                            part.support += part.size;
+                            break;
+
+                        case "Leg":
+                            part.timePerMove -= 15;
+                            break;
+
+                        case "Treads":
+                            part.penalty = Math.trunc(part.penalty / 2);
+                            break;
+
+                        case "Wheel":
+                            part.timePerMove -= 10;
+                            break;
+                    }
+                }
+
+                activeProp.push(part);
             }
         });
     activeProp.sort((a, b) => (a.modPerExtra ?? 0) - (b.modPerExtra ?? 0));
@@ -566,6 +614,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         recoil: 0,
         size: 0,
         slot: "N/A",
+        study: false,
         vulnerability: (totalCoverage / 100) * (1750 - 150 * depth),
     };
 
@@ -627,6 +676,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
                     : 0,
             slot: p.part.slot,
             size: p.part.size * p.number,
+            study: p.partState.study || false,
             vulnerability: getVulnerability(p, totalCoverage),
         };
     });
@@ -1065,12 +1115,7 @@ function InfoContainer({
             const percentage = partsState.totalRecoil === 0 ? 0 : (recoil / partsState.totalRecoil) * 100.0;
 
             return (
-                <InfoContainerBase
-                    color="Mass"
-                    percentage={percentage}
-                    percentageString=""
-                    value={Math.ceil(recoil)}
-                />
+                <InfoContainerBase color="Mass" percentage={percentage} percentageString="" value={Math.ceil(recoil)} />
             );
         }
 
@@ -1096,6 +1141,8 @@ function PartRow({
     partsState: TotalPartsState;
     updatePageState: (newPageState: BuildPageState) => void;
 }) {
+    const item = itemData.getItem(partInfo.name);
+
     const selectInfoGroup = (
         <div className="build-part-row-group">
             <SelectWrapper
@@ -1104,19 +1151,14 @@ function PartRow({
                     // Update the current selected part
                     const oldPageState = pageState.partState!;
                     const partState = [...oldPageState];
-                    partState[i] = { ...oldPageState[i], name: val!.value };
+                    partState[i] = { ...oldPageState[i], name: val!.value, active: undefined, study: undefined };
 
                     updatePageState({ ...pageState, partState: partState });
                 }}
                 value={itemOptions.find((o) => o.value === partInfo.name)}
                 options={itemOptions}
             />
-            <ItemPopoverButton
-                item={itemData.getItem(partInfo.name)}
-                tooltip="Show details about the part."
-                text="?"
-                showWikiLink={true}
-            />
+            <ItemPopoverButton item={item} tooltip="Show details about the part." text="?" showWikiLink={true} />
         </div>
     );
 
@@ -1142,13 +1184,30 @@ function PartRow({
         <LabeledExclusiveButtonGroup
             label="Active"
             tooltip="Is the part active or not? Mixed propulsion types will be determined by the first active type."
-            buttons={partActiveButtons}
+            buttons={yesNoButtons}
             selected={partsState.partsInfo[i].active || partsState.partsInfo[i].active === undefined ? "Yes" : "No"}
             onValueChanged={(value) => {
                 // Update the current selected part
                 const oldPageState = pageState.partState!;
                 const partState = [...oldPageState];
                 partState[i] = { ...oldPageState[i], active: value === "No" ? false : true };
+
+                updatePageState({ ...pageState, partState: partState });
+            }}
+        />
+    );
+
+    const studyGroup = (
+        <LabeledExclusiveButtonGroup
+            label="Study"
+            tooltip="Does the part have a study? Studies are only available for non-prototype 0b10 parts. Study effects depend on the type of part."
+            buttons={yesNoButtons}
+            selected={partsState.partsInfo[i].study ? "Yes" : "No"}
+            onValueChanged={(value) => {
+                // Update the current selected part
+                const oldPageState = pageState.partState!;
+                const partState = [...oldPageState];
+                partState[i] = { ...oldPageState[i], study: value === "No" ? false : true };
 
                 updatePageState({ ...pageState, partState: partState });
             }}
@@ -1176,6 +1235,7 @@ function PartRow({
                 {selectInfoGroup}
                 {numberInput}
                 {activeGroup}
+                {item.studyable && studyGroup}
                 {deleteButton}
             </div>
             <InfoContainer infoType={pageState.partInfo || "Mass"} partInfo={partInfo} partsState={partsState} />

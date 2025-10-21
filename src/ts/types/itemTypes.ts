@@ -124,7 +124,6 @@ export type DamageReduction = { kind: "DamageReduction"; multiplier: number; rat
 export type DamageResists = { kind: "DamageResists"; resists: BotResistances };
 export type EnergyFilter = { kind: "EnergyFilter"; percent: number };
 export type EnergyStorage = { kind: "EnergyStorage"; storage: number };
-export type FusionCompressor = { kind: "FusionCompressor"; energyPerTurn: number };
 export type HardlightGenerator = { kind: "HardlightGenerator"; amount: number };
 export type HeatDissipation = { kind: "HeatDissipation"; dissipation: number };
 export type LauncherGuidance = { kind: "LauncherGuidance"; bonus: number };
@@ -163,7 +162,6 @@ export type SpecialPropertyType =
     | DamageResists
     | EnergyFilter
     | EnergyStorage
-    | FusionCompressor
     | HardlightGenerator
     | HeatDissipation
     | LauncherLoader
@@ -202,7 +200,6 @@ export type SpecialPropertyTypeName =
     | "DamageResists"
     | "EnergyFilter"
     | "EnergyStorage"
-    | "FusionCompressor"
     | "HardlightGenerator"
     | "HeatDissipation"
     | "LauncherLoader"
