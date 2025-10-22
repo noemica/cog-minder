@@ -200,6 +200,11 @@ export const TooltipTexts = {
     // Locations
     "Available depths": "The depth or depths that this map can appear on.",
     Branch: "Whether this location is a main floor or a branch floor.",
+
+    // Attacking information
+    "Damage/Turn": "The average amount of damage this robot deals per turn that it is actively firing. If multiple item options are available for the robot, the first one is chosen.",
+    "Damage/Volley": "The average amount of damage this robot deals per volley. If multiple item options are available for the robot, the first one is chosen.",
+    "Volley Time": "The amount of time it takes for this robot to fire a volley, in time units (1/100ths of a turn). If multiple item options are available for the robot, the first one is chosen.",
 };
 
 // Color schemes

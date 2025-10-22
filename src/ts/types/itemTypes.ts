@@ -126,9 +126,11 @@ export type EnergyFilter = { kind: "EnergyFilter"; percent: number };
 export type EnergyStorage = { kind: "EnergyStorage"; storage: number };
 export type HardlightGenerator = { kind: "HardlightGenerator"; amount: number };
 export type HeatDissipation = { kind: "HeatDissipation"; dissipation: number };
+export type Kinecellerator = { kind: "Kinecellerator"; amount: number };
 export type LauncherGuidance = { kind: "LauncherGuidance"; bonus: number };
 export type LauncherLoader = { kind: "LauncherLoader" };
 export type MassSupport = { kind: "MassSupport"; support: number };
+export type MeleeAnalysis = { kind: "MeleeAnalysis"; accuracy: number; minDamage: number };
 export type Metafiber = { kind: "Metafiber" };
 export type MniQuantumCapacitor = { kind: "MniQuantumCapacitor" };
 export type PowerAmplifier = { kind: "PowerAmplifier"; percent: number };
@@ -164,9 +166,11 @@ export type SpecialPropertyType =
     | EnergyStorage
     | HardlightGenerator
     | HeatDissipation
+    | Kinecellerator
     | LauncherLoader
     | LauncherGuidance
     | MassSupport
+    | MeleeAnalysis
     | Metafiber
     | MniQuantumCapacitor
     | ParticleCharging
@@ -202,9 +206,11 @@ export type SpecialPropertyTypeName =
     | "EnergyStorage"
     | "HardlightGenerator"
     | "HeatDissipation"
+    | "Kinecellerator"
     | "LauncherLoader"
     | "LauncherGuidance"
     | "MassSupport"
+    | "MeleeAnalysis"
     | "Metafiber"
     | "MniQuantumCapacitor"
     | "ParticleCharging"

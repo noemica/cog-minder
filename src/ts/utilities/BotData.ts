@@ -1,9 +1,28 @@
 import botExtraData from "../../json/bot_extra_data.json";
 import lore from "../../json/lore.json";
 import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from "../types/botTypes";
-import { EnergyStorage, FabricationStats } from "../types/itemTypes";
+import {
+    Actuator,
+    ActuatorArray,
+    EnergyStorage,
+    FabricationStats,
+    Item,
+    Kinecellerator,
+    MeleeAnalysis,
+    ParticleCharging,
+    RangedWeaponCycling,
+    WeaponItem,
+} from "../types/itemTypes";
 import { ItemData } from "./ItemData";
-import { ceilToMultiple, getBotImageNames, hasActiveSpecialProperty, loadImage, parseIntOrDefault } from "./common";
+import {
+    ceilToMultiple,
+    getBotImageNames,
+    hasActiveSpecialProperty,
+    loadImage,
+    parseIntOrDefault,
+    sum,
+} from "./common";
+import { volleyTimeMap } from "./simulatorCalcs";
 
 export class BotData {
     botData: { [key: string]: Bot } = {};
@@ -141,27 +160,33 @@ export class BotData {
                 }
             }
 
+            // Turn component names into list of active items
+            // For options, work with the first option
+            const components: Item[] = [];
+            bot.Components?.forEach((data) => {
+                if (typeof data === "string") {
+                    components.push(itemData.getItem(data));
+                } else {
+                    const item = itemData.getItem((data as ItemOption[])[0].name);
+                    for (let i = 0; i < (data[0].number || 1); i++) {
+                        components.push(item);
+                    }
+                }
+            });
+
             // Base energy is fixed at 100 for almost every bot
             // Large botcubes do have 200 base energy, though since their loadout
             // can't be manually input into the sim, it isn't of much value to
             // support this here
             let maxEnergy = 100;
-            bot.Components?.forEach((data) => {
-                if (typeof data === "string") {
-                    const item = itemData.getItem(data);
-                    if (hasActiveSpecialProperty(item, true, "EnergyStorage")) {
-                        maxEnergy += (item.specialProperty!.trait as EnergyStorage).storage;
-                    }
-                } else {
-                    // For options, work with the first option
-                    const item = itemData.getItem((data as ItemOption[])[0].name);
-                    if (hasActiveSpecialProperty(item, true, "EnergyStorage")) {
-                        maxEnergy +=
-                            (item.specialProperty!.trait as EnergyStorage).storage *
-                            ((data as ItemOption[])[0].number || 1);
-                    }
+
+            components.forEach((item) => {
+                if (hasActiveSpecialProperty(item, true, "EnergyStorage")) {
+                    maxEnergy += (item.specialProperty!.trait as EnergyStorage).storage;
                 }
             });
+
+            const { damagePerTurn, damagePerVolley, volleyTime } = BotData.calculateDamage(bot, components, itemData);
 
             const newBot: Bot = {
                 armament: bot.Armament ?? [],
@@ -177,6 +202,8 @@ export class BotData {
                 coreCoverage: roughCoreCoverage,
                 coreExposure: parseIntOrDefault(bot["Core Exposure %"], 0),
                 coreIntegrity: parseInt(bot["Core Integrity"]),
+                damagePerTurn: damagePerTurn,
+                damagePerVolley: damagePerVolley,
                 description: description,
                 energyGeneration: parseIntOrDefault(bot["Energy Generation"], 0),
                 fabrication: fabrication,
@@ -214,11 +241,186 @@ export class BotData {
                 traitsString: bot.Traits?.join(", ") ?? "",
                 value: parseIntOrDefault(bot.Value, 0),
                 visualRange: bot["Sight Range"],
+                volleyTime: volleyTime,
                 customBot: false,
             };
 
             this.botData[botName] = newBot;
         });
+    }
+
+    private static calculateDamage(bot: JsonBot, components: Item[], itemData: ItemData) {
+        function isMeleeWeapon(part: Item) {
+            return (
+                part.type === "Impact Weapon" ||
+                part.type === "Piercing Weapon" ||
+                part.type === "Slashing Weapon" ||
+                part.type === "Special Melee Weapon"
+            );
+        }
+
+        // TODO maybe consolidate the damage and TU calculation with simulator
+        const armament: WeaponItem[] = [];
+        bot.Armament?.forEach((p) => {
+            let part: WeaponItem;
+            if (typeof p === "string") {
+                armament.push(itemData.getItem(p) as WeaponItem);
+            } else {
+                part = itemData.getItem(p[0].name) as WeaponItem;
+                for (let i = 0; i < (p[0].number || 1); i++) {
+                    armament.push(part);
+                }
+            }
+        });
+
+        if (armament.length === 0) {
+            return { damagePerTurn: undefined, damagePerVolley: undefined, volleyTime: undefined };
+        }
+
+        const melee = armament.length > 0 && isMeleeWeapon(armament[0]);
+
+        const actuatorArrayBonus = Math.max(
+            ...components
+                .filter((p) => hasActiveSpecialProperty(p, true, "ActuatorArray"))
+                .map((p) => (p.specialProperty!.trait as ActuatorArray).amount),
+            0,
+        );
+
+        const kinecelleratorBoost = Math.max(
+            ...components
+                .filter((p) => hasActiveSpecialProperty(p, true, "Kinecellerator"))
+                .map((p) => (p.specialProperty!.trait as Kinecellerator).amount),
+            0,
+        );
+
+        // TODO technically this is half stack but no bot uses >1 charger
+        const particleChargerBoost = Math.max(
+            ...components
+                .filter((p) => hasActiveSpecialProperty(p, true, "ParticleCharging"))
+                .map((p) => (p.specialProperty!.trait as ParticleCharging).percent),
+            0,
+        );
+
+        const meleeAnalysisDamage = components
+            .filter((p) => hasActiveSpecialProperty(p, true, "MeleeAnalysis"))
+            .map((p) => (p.specialProperty!.trait as MeleeAnalysis).minDamage)
+            .reduce(sum, 0);
+
+        let volleyTime: number;
+        if (armament.length === 0) {
+            volleyTime = 0;
+        } else if (melee) {
+            // Melee weapons always have base 200 volley time
+            volleyTime = 200;
+        } else if (armament.length in volleyTimeMap) {
+            volleyTime = volleyTimeMap[armament.length];
+        } else {
+            // No additional penalty past 6 weapons
+            volleyTime = volleyTimeMap[6];
+        }
+
+        // Calculate damage per volley
+        const damagePerVolley =
+            armament
+                .map((part, i) => {
+                    if ((!melee && isMeleeWeapon(part)) || (melee && !isMeleeWeapon(part))) {
+                        // Don't mix melee with non-melee weapons
+                        return 0;
+                    }
+
+                    let minDamage = part.damageMin || 0;
+                    let maxDamage = part.damageMax || 0;
+
+                    // Apply kinecellerator boost if applicable
+                    if (
+                        (kinecelleratorBoost > 0 && part.type === "Ballistic Cannon") ||
+                        part.type === "Ballistic Gun"
+                    ) {
+                        minDamage *= 1 + kinecelleratorBoost / 100;
+                        // Bump max damage up if min damage is now higher
+                        maxDamage = Math.max(minDamage, maxDamage);
+                    }
+
+                    // Apply particle charger boost if applicable
+                    if (particleChargerBoost > 0 && (part.type === "Energy Cannon" || part.type === "Energy Gun")) {
+                        minDamage = Math.trunc(minDamage * (1 + particleChargerBoost / 100));
+                        maxDamage = Math.trunc(maxDamage * (1 + particleChargerBoost / 100));
+                    }
+
+                    if (melee) {
+                        // Boost min damage from MAS but not above max damage
+                        minDamage = Math.min(minDamage + meleeAnalysisDamage, maxDamage);
+                    }
+
+                    // Add explosion damage if applicable
+                    // For weapons with a base hit and explosion hit, this will
+                    // include both hits in the damage calculation
+                    minDamage += part.explosionDamageMin || 0;
+                    maxDamage += part.explosionDamageMax || 0;
+
+                    if (melee && i > 0) {
+                        // Apply melee follow-up damage as a ratio of the chance
+                        // to perform the follow-up attack
+                        const followUpChance =
+                            (20 + actuatorArrayBonus + ((armament[0].delay || 0) - (part.delay || 0)) / 10) / 100;
+
+                        minDamage *= followUpChance;
+                        maxDamage *= followUpChance;
+
+                        // Adjust volley time by half of the delay
+                        volleyTime += (followUpChance * (part.delay || 0)) / 2;
+                    } else {
+                        volleyTime += part.delay || 0;
+                    }
+
+                    return part.projectileCount * Math.trunc((minDamage + maxDamage) / 2);
+                })
+                .reduce(sum, 0) || 0;
+
+        // Adjust volley time based on utilities
+        if (melee) {
+            // Stack actuators up to 50%
+            const actuating = Math.max(
+                1 -
+                    components
+                        .filter((p) => hasActiveSpecialProperty(p, true, "Actuator"))
+                        .map((p) => (p.specialProperty!.trait as Actuator).amount)
+                        .reduce(sum, 0),
+                0.5,
+            );
+
+            volleyTime = Math.trunc(actuating * volleyTime);
+        } else {
+            // Stack cyclers up to 30%
+            let cycling = Math.max(
+                1 -
+                    components
+                        .filter((p) => hasActiveSpecialProperty(p, true, "RangedWeaponCycling"))
+                        .map((p) => (p.specialProperty!.trait as RangedWeaponCycling).amount)
+                        .reduce(sum, 0),
+                0.7,
+            );
+
+            // Launcher Loader/Quantum Capacitor override to 50%, Mni. QC to 60%
+            // TODO would be nice to make sure that bots can actually make use of
+            // these conditions
+            if (
+                components.find((p) => hasActiveSpecialProperty(p, true, "LauncherLoader")) ||
+                components.find((p) => hasActiveSpecialProperty(p, true, "QuantumCapacitor"))
+            ) {
+                cycling = 0.5;
+            } else if (components.find((p) => hasActiveSpecialProperty(p, true, "MniQuantumCapacitor"))) {
+                cycling = 0.6;
+            }
+
+            volleyTime = Math.trunc(cycling * volleyTime);
+        }
+
+        // Cap min volley time at 25
+        volleyTime = Math.max(volleyTime, 25);
+        const damagePerTurn = (damagePerVolley / volleyTime) * 100;
+
+        return { damagePerTurn: damagePerTurn, damagePerVolley: damagePerVolley, volleyTime: volleyTime };
     }
 
     public getAllBots() {

@@ -349,6 +349,8 @@ export class ItemData {
                                     ? `${item["Explosion Damage Min"]}-${item["Explosion Damage Max"]}`
                                     : undefined
                                 : item["Explosion Damage"],
+                        explosionDamageMin: parseIntOrUndefined(item["Explosion Damage Min"]),
+                        explosionDamageMax: parseIntOrUndefined(item["Explosion Damage Max"]),
                         explosionDisruption: parseIntOrUndefined(item["Explosion Disruption"]),
                         explosionRadius: parseIntOrUndefined(item["Explosion Radius"]),
                         explosionSalvage: parseIntOrUndefined(item["Explosion Salvage"]),

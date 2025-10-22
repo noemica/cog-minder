@@ -63,6 +63,8 @@ export type Bot = {
     coreExposure: number;
     coreIntegrity: number;
     customBot: boolean;
+    damagePerTurn: number | undefined;
+    damagePerVolley: number | undefined;
     description: string;
     energyGeneration: number;
     fabrication?: FabricationStats;
@@ -93,6 +95,7 @@ export type Bot = {
     traitsString: string;
     value: number;
     visualRange: string;
+    volleyTime: number | undefined;
 };
 
 export type JsonBotExtraData = {

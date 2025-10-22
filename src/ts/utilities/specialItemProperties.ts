@@ -295,6 +295,12 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Cep. Chromion Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 800 } },
     Superbattery: { active: "Always", trait: { kind: "EnergyStorage", storage: 1500 } },
 
+    // Kinecellerators
+    Kinecellerator: { active: "Part Active", trait: { kind: "Kinecellerator", amount: 30 } },
+    "Imp. Kinecellerator": { active: "Part Active", trait: { kind: "Kinecellerator", amount: 40 } },
+    "Adv. Kinecellerator": { active: "Part Active", trait: { kind: "Kinecellerator", amount: 50 } },
+    "Exp. Kinecellerator": { active: "Part Active", trait: { kind: "Kinecellerator", amount: 66 } },
+
     // Hardlight Generator
     "Hardlight Generator": { active: "Part Active", trait: { kind: "HardlightGenerator", amount: 4 } },
     "Imp. Hardlight Generator": { active: "Part Active", trait: { kind: "HardlightGenerator", amount: 6 } },
@@ -325,6 +331,12 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Adv. Quantum Shading Machine": { active: "Part Active", trait: { kind: "MassSupport", support: 25 } },
     "Asb. Suspension Frame": { active: "Part Active", trait: { kind: "MassSupport", support: 20 } },
     "Cep. Dimensional Manipulator": { active: "Part Active", trait: { kind: "MassSupport", support: 30 } },
+
+    // Melee analysis
+    "Melee Analysis Suite": { active: "Part Active", trait: { kind: "MeleeAnalysis", accuracy: 5, minDamage: 2 } },
+    "Imp. Melee Analysis Suite": { active: "Part Active", trait: { kind: "MeleeAnalysis", accuracy: 6, minDamage: 3 } },
+    "Adv. Melee Analysis Suite": { active: "Part Active", trait: { kind: "MeleeAnalysis", accuracy: 8, minDamage: 4 } },
+    "Exp. Melee Analysis Suite": { active: "Part Active", trait: { kind: "MeleeAnalysis", accuracy: 12, minDamage: 6 } },
 
     // Metafiber
     "Asb. Metafiber Network": { active: "Part Active", trait: { kind: "Metafiber" } },

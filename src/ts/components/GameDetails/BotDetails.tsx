@@ -8,7 +8,7 @@ import useItemData from "../Effects/useItemData";
 import { useSpoilers } from "../Effects/useLocalStorageValue";
 import { ItemTooltip } from "../Pages/WikiPage/WikiTooltips";
 import { BotItemPopoverButton } from "../Popover/ItemPopover";
-import {
+import DetailsValueLine, {
     DetailsBotImages,
     DetailsBotTitleLine,
     DetailsEmptyLine,
@@ -501,7 +501,6 @@ export default function BotDetails({
             <DetailsRangeLine
                 category="Core Exposure"
                 colorScheme="LowGood"
-                minValue={0}
                 maxValue={100}
                 value={bot.coreExposure}
                 valueString={bot.coreExposure.toString()}
@@ -509,6 +508,23 @@ export default function BotDetails({
             />
             <DetailsTextLine category="Salvage Potential" content={bot.salvagePotential} />
             <DetailsTextLine category="Inventory Size" content={bot.inventorySize} defaultContent="0" />
+            <DetailsRangeLine
+                category="Damage/Turn"
+                colorScheme="Green"
+                maxValue={60}
+                value={bot.damagePerTurn}
+                defaultValueString="0"
+                valueString={bot.damagePerTurn?.toFixed(0)}
+            />
+            <DetailsRangeLine
+                category="Damage/Volley"
+                colorScheme="Green"
+                maxValue={150}
+                value={bot.damagePerVolley}
+                defaultValueString="0"
+                valueString={bot.damagePerVolley?.toFixed(0)}
+            />
+            <DetailsTextLine category="Volley Time" content={bot.volleyTime} defaultContent="0" />
             <DetailsTextLine
                 category="Schematic"
                 content={bot.fabrication ? "Hackable" : undefined}

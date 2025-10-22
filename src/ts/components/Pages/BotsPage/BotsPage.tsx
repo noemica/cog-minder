@@ -105,6 +105,14 @@ const botColumnDefs: ColumnDef<Bot>[] = [
         ],
     },
     {
+        header: "Combat",
+        columns: [
+            { accessorFn: (bot) => bot.damagePerTurn?.toFixed(0) || 0, header: "Damage/Turn" },
+            { accessorFn: (bot) => bot.damagePerVolley?.toFixed(0) || 0, header: "Damage/Volley" },
+            { accessorFn: (bot) => bot.volleyTime || 0, header: "Volley Time" },
+        ],
+    },
+    {
         header: "Other",
         columns: [
             { accessorKey: "immunitiesString", header: "Immunities", size: 15 },
