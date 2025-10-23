@@ -1,10 +1,11 @@
 import { ColumnDef, GroupColumnDef } from "@tanstack/react-table";
 
 import { criticalSort, damageSort, heatSort, spectrumSort } from "../components/Pages/PartsPage/PartsSortingUtils";
+import ItemPopoverButton from "../components/Popover/ItemPopover";
 import { OtherItem, PowerItem, PropulsionItem, UtilityItem, WeaponItem } from "../types/itemTypes";
 
 const effectDescriptionWidth = 40;
-const nameWidth = 15;
+const nameWidth = 24;
 const typeWidth = 10;
 
 // Slot categories to show for spreadsheet view
@@ -12,7 +13,15 @@ export const otherSlotColumns: GroupColumnDef<OtherItem>[] = [
     {
         header: "Overview",
         columns: [
-            { accessorKey: "name", header: "Name", size: nameWidth, maxSize: nameWidth },
+            {
+                accessorKey: "name",
+                header: "Name",
+                size: nameWidth,
+                maxSize: nameWidth,
+                cell: (info) => (
+                    <ItemPopoverButton className="name-popover" item={info.row.original} showWikiLink={true} />
+                ),
+            },
             { accessorKey: "type", header: "Type", maxSize: typeWidth },
             { accessorKey: "ratingString", header: "Rating" },
             { accessorKey: "size", header: "Size" },
@@ -44,7 +53,15 @@ export const powerSlotColumns: GroupColumnDef<PowerItem>[] = [
     {
         header: "Overview",
         columns: [
-            { accessorKey: "name", header: "Name", size: nameWidth, maxSize: nameWidth },
+            {
+                accessorKey: "name",
+                header: "Name",
+                size: nameWidth,
+                maxSize: nameWidth,
+                cell: (info) => (
+                    <ItemPopoverButton className="name-popover" item={info.row.original} showWikiLink={true} />
+                ),
+            },
             { accessorKey: "type", header: "Type", maxSize: typeWidth },
             { accessorKey: "ratingString", header: "Rating" },
             { accessorKey: "size", header: "Size" },
@@ -87,7 +104,15 @@ export const propulsionSlotColumns: GroupColumnDef<PropulsionItem>[] = [
     {
         header: "Overview",
         columns: [
-            { accessorKey: "name", header: "Name", size: nameWidth, maxSize: nameWidth },
+            {
+                accessorKey: "name",
+                header: "Name",
+                size: nameWidth,
+                maxSize: nameWidth,
+                cell: (info) => (
+                    <ItemPopoverButton className="name-popover" item={info.row.original} showWikiLink={true} />
+                ),
+            },
             { accessorKey: "type", header: "Type", maxSize: typeWidth },
             { accessorKey: "ratingString", header: "Rating" },
             { accessorKey: "size", header: "Size" },
@@ -133,7 +158,15 @@ export const utilitySlotColumns: GroupColumnDef<UtilityItem>[] = [
     {
         header: "Overview",
         columns: [
-            { accessorKey: "name", header: "Name", size: nameWidth, maxSize: nameWidth },
+            {
+                accessorKey: "name",
+                header: "Name",
+                size: nameWidth,
+                maxSize: nameWidth,
+                cell: (info) => (
+                    <ItemPopoverButton className="name-popover" item={info.row.original} showWikiLink={true} />
+                ),
+            },
             { accessorKey: "type", header: "Type", maxSize: typeWidth },
             { accessorKey: "ratingString", header: "Rating" },
             { accessorKey: "size", header: "Size" },
@@ -175,7 +208,14 @@ export const weaponSlotColumns: GroupColumnDef<WeaponItem>[] = [
     {
         header: "Overview",
         columns: [
-            { accessorKey: "name", header: "Name", maxSize: nameWidth },
+            {
+                accessorKey: "name",
+                header: "Name",
+                maxSize: nameWidth,
+                cell: (info) => (
+                    <ItemPopoverButton className="name-popover" item={info.row.original} showWikiLink={true} />
+                ),
+            },
             { accessorKey: "type", header: "Type", maxSize: typeWidth },
             { accessorKey: "ratingString", header: "Rating" },
             { accessorKey: "size", header: "Size" },

@@ -81,11 +81,13 @@ export function GalleryItemPopoverButton({ item }: { item: Item }) {
 }
 
 export default function ItemPopoverButton({
+    className,
     item,
     text,
     tooltip,
     showWikiLink,
 }: {
+    className?: string;
     item: Item;
     text?: string;
     tooltip?: string;
@@ -94,7 +96,7 @@ export default function ItemPopoverButton({
     const [open, setOpen] = useState(false);
 
     const button = (
-        <div>
+        <div className={className}>
             <Button onClick={() => setOpen(!open)} tooltip={tooltip}>
                 {text || item.name}
             </Button>

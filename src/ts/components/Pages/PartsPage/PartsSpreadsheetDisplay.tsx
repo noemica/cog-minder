@@ -31,5 +31,14 @@ export default function PartsSpreadsheetDisplay({ pageState, items }: { pageStat
         return <span>Please select a slot to see the spreadsheet view.</span>;
     }
 
-    return <Table columns={columns} data={items} setSorting={setSorting} sorting={sorting} stickyHeader={true} />;
+    return (
+        <Table
+            className="parts-table"
+            columns={columns}
+            data={items}
+            setSorting={setSorting}
+            sorting={sorting}
+            stickyHeader={true}
+        />
+    );
 }
