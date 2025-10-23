@@ -54,7 +54,13 @@ const botColumnDefs: ColumnDef<Bot>[] = [
     {
         header: "Overview",
         columns: [
-            { accessorKey: "name", header: "Name", size: 12, maxSize: 12 },
+            {
+                accessorKey: "name",
+                header: "Name",
+                size: 12,
+                maxSize: 12,
+                cell: (info) => <BotPopoverButton className="name-popover" bot={info.row.original} />,
+            },
             { accessorKey: "class", header: "Class", size: 12, maxSize: 12 },
             { accessorKey: "size", header: "Size" },
             { accessorKey: "profile", header: "Profile" },
@@ -239,7 +245,7 @@ function BotsSimpleDisplay({ bots }: { bots: Bot[] }) {
 function BotsSpreadsheetDisplay({ bots }: { bots: Bot[] }) {
     const [sorting, setSorting] = React.useState<SortingState>([]);
 
-    return <Table data={bots} columns={botColumnDefs} setSorting={setSorting} sorting={sorting} stickyHeader={true} />;
+    return <Table className="table" data={bots} columns={botColumnDefs} setSorting={setSorting} sorting={sorting} stickyHeader={true} />;
 }
 
 export default function BotsPage() {
