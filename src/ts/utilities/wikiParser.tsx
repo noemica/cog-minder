@@ -2398,8 +2398,11 @@ function splitOutsideActions(string: string, delimiter = "|") {
         // Found start tag before split, process tags until we're back to neutral
         currentString += string.substring(index, actionStartIndex + 2);
         index = actionStartIndex + 2;
-        actionStartIndex = string.indexOf("[[", index);
         let actionEndIndex = string.indexOf("]]", index);
+
+        const tag = string.substring(index, actionEndIndex);
+
+        actionStartIndex = string.indexOf("[[", index);
         let numTags = 1;
         while (numTags > 0) {
             if (actionEndIndex === -1) {
@@ -2421,6 +2424,14 @@ function splitOutsideActions(string: string, delimiter = "|") {
 
                 actionEndIndex = string.indexOf("]]", index);
             }
+        }
+
+        // If there is a matching closing tag for the open tag, jump to it now
+        const closeTag = `[[/${tag}]]`;
+        const closeTagIndex = string.indexOf(closeTag, index);
+        if (closeTagIndex !== -1) {
+            currentString += string.substring(index, closeTagIndex + closeTag.length);
+            index = closeTagIndex + closeTag.length;
         }
 
         actionStartIndex = string.indexOf("[[", index);

@@ -798,14 +798,24 @@ function WikiNavigationBar({
         return (
             <Button
                 onClick={async () => {
+                    const verbose = false;
+                    let i = 0;
                     console.log("Validating...");
                     for (const entry of allEntries.values()) {
+                        if (verbose) {
+                            console.log(`Validating ${i++}/${allEntries.size} ${entry.name}`);
+                        }
+                        
                         const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData);
 
                         const promises: Promise<any>[] = [];
 
                         for (const imageName of parseResult.images.keys()) {
-                            promises.push(loadImage(createImagePath(`${imageName}`, `wiki_images/`)));
+                            // Exclude externally hosted images
+                            const imagePath = createImagePath(`${imageName}`, `wiki_images/`);
+                            if (imagePath.startsWith("/")) {
+                                promises.push(loadImage(imagePath));
+                            }
                         }
 
                         if (parseResult.errors.length > 0) {
