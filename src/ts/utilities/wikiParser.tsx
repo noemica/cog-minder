@@ -912,7 +912,7 @@ function processExpandableTag(state: ParserState, result: RegExpExecArray) {
         index = result.index + result[0].length + split[0].length + 1;
     } else {
         // Default to Show/hide if no summary is set
-        summaryNode = "Show/hide"
+        summaryNode = "Show/hide";
     }
 
     // Parse the details text
@@ -1857,19 +1857,26 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
 
     // Create the lore with an optional caption
     state.output.push({ groupType: "Separator", node: undefined });
-    if (groupName == "0b10 Records") {
+    if (groupName === "0b10 Records") {
         state.output.push({
             groupType: "Grouped",
             node: <span className="wiki-game-text">&gt;Query({entryName})</span>,
         });
         state.output.push({ groupType: "Separator", node: undefined });
-    } else if (groupName == "WAR.Sys Records") {
+    } else if (groupName === "WAR.Sys Records") {
         state.output.push({
             groupType: "Grouped",
             node: <span className="wiki-game-text">Intel &quot;{entryName}&quot;</span>,
         });
         state.output.push({ groupType: "Separator", node: undefined });
+    } else if (groupName === "Cyclists Records") {
+        state.output.push({
+            groupType: "Grouped",
+            node: <span className="wiki-game-text">&gt;Record &quot;{entryName}&quot;</span>,
+        });
+        state.output.push({ groupType: "Separator", node: undefined });
     }
+    
     state.output.push({
         groupType: "Grouped",
         node: <span className="wiki-game-text">{entry["Content"]}</span>,
