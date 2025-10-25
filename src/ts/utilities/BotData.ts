@@ -7,9 +7,12 @@ import {
     EnergyStorage,
     FabricationStats,
     Item,
+    ItemType,
     Kinecellerator,
+    MassSupport,
     MeleeAnalysis,
     ParticleCharging,
+    PropulsionItem,
     RangedWeaponCycling,
     WeaponItem,
 } from "../types/itemTypes";
@@ -186,6 +189,28 @@ export class BotData {
                 }
             });
 
+            let propulsionType: ItemType | undefined;
+            const support = components
+                .map((item) => {
+                    if (item.slot === "Propulsion") {
+                        if (propulsionType === undefined) {
+                            propulsionType = item.type;
+                        } else if (propulsionType !== item.type) {
+                            // Only count the first type of propulsion listed
+                            return 0;
+                        }
+
+                        return (item as PropulsionItem).support;
+                    } else if (hasActiveSpecialProperty(item, true, "MassSupport")) {
+                        return (item.specialProperty!.trait as MassSupport).support;
+                    }
+
+                    return 0;
+                })
+                .reduce(sum, 0);
+
+            const mass = components.map((item) => item.mass || 0).reduce(sum, 0);
+
             const { damagePerTurn, damagePerVolley, volleyTime } = BotData.calculateDamage(bot, components, itemData);
 
             const newBot: Bot = {
@@ -212,6 +237,7 @@ export class BotData {
                 immunitiesString: bot.Immunities?.join(", ") ?? "",
                 inventorySize: bot["Inventory Capacity"],
                 locations: extraData?.Locations ?? [],
+                mass: mass,
                 maxEnergy: maxEnergy,
                 memory: bot.Memory,
                 movement: `${bot.Movement} (${bot.Speed}/${bot["Speed %"]}%)`,
@@ -221,6 +247,7 @@ export class BotData {
                         : undefined,
                 name: botName,
                 profile: bot.Profile,
+                propulsionType: propulsionType,
                 rating: bot.Rating,
                 resistances: bot.Resistances,
                 salvageHigh: salvageHigh,
@@ -234,6 +261,7 @@ export class BotData {
                       ? "Spoiler"
                       : "None",
                 size: bot["Size Class"],
+                support: support,
                 threat: bot.Threat,
                 totalCoverage: totalCoverage,
                 tier: bot.Tier,

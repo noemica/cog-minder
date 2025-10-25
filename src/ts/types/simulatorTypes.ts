@@ -129,6 +129,7 @@ export type BotState = {
     heat: number;
     immunities: BotImmunity[];
     initialCoreIntegrity: number;
+    mass: number;
     maximumEnergy: number;
     parts: SimulatorPart[];
     partRegen: number;
@@ -142,6 +143,7 @@ export type BotState = {
     shieldedCoverage: number;
     siegedCoverage: number;
     superfortressRegen: SuperfortressRegenState | undefined;
+    support: number;
     totalCoverage: number;
     tusToShield: number;
     tusToSiege: number;

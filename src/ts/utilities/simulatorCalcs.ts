@@ -11,6 +11,7 @@ import {
     DamageType,
     HardlightGenerator,
     ItemSlot,
+    MassSupport,
     PowerItem,
     PropulsionItem,
     RangedAvoid,
@@ -789,6 +790,7 @@ function cloneBotState(botState: BotState): BotState {
         heat: 0,
         immunities: botState.immunities,
         initialCoreIntegrity: botState.initialCoreIntegrity,
+        mass: botState.mass,
         maximumEnergy: botState.maximumEnergy,
         parts: botState.parts.map((p) => {
             return {
@@ -818,6 +820,7 @@ function cloneBotState(botState: BotState): BotState {
         sieged: botState.sieged,
         siegedCoverage: botState.siegedCoverage,
         superfortressRegen: botState.superfortressRegen,
+        support: botState.support,
         tusToShield: botState.tusToShield,
         tusToSiege: botState.tusToSiege,
         totalCoverage: botState.totalCoverage,
@@ -1066,12 +1069,22 @@ function destroyPart(
 ) {
     const botState = state.botState;
     botState.parts.splice(partIndex, 1);
+
+    // Update coverage
     botState.armorAnalyzedCoverage -= part.armorAnalyzedCoverage;
     botState.armorAnalyzedShieldedCoverage -= part.armorAnalyzedShieldedCoverage;
     botState.armorAnalyzedSiegedCoverage -= part.armorAnalyzedSiegedCoverage;
     botState.siegedCoverage -= part.siegedCoverage;
     botState.shieldedCoverage -= part.shieldedCoverage;
     botState.totalCoverage -= part.coverage;
+
+    // Update mass/support
+    botState.mass -= part.def.mass || 0;
+    if (part.def.type === botState.def.propulsionType) {
+        botState.support -= part.def.mass || 0;
+    } else if (hasActiveSpecialProperty(part.def, true, "MassSupport")) {
+        botState.support -= (part.def.specialProperty!.trait as MassSupport).support;
+    }
 
     // If the part was providing any damage resistances remove them now
     // TODO - remove assumption that there can't be multiple sources of
@@ -2003,18 +2016,19 @@ function updateWeaponsAccuracy(state: SimulatorState) {
 
     let perWeaponBonus = 0;
 
-    // Flying/hovering enemy penalty
-    // TODO handle bots becoming overweight
-    const botDef = botState.def;
-    const movement = botDef.movement;
-    if (movement.includes("Hovering") || movement.includes("Flying")) {
+    // Flying/hovering enemy penalty if not overweight
+    if (
+        (botState.def.propulsionType === "Hover Unit" || botState.def.propulsionType === "Flight Unit") &&
+        botState.support > 0 &&
+        botState.mass <= botState.support
+    ) {
         perWeaponBonus -= 10;
     }
 
-    // Subtract always avoid util (reaction control system)
+    // Subtract always avoid util (reaction control system) unless overweight
+    // or out of prop
     const avoidPart = getDefensiveStatePart(botState.defensiveState.avoid);
-    if (avoidPart != undefined) {
-        // TODO - handle hover/flight units are active here and not overweight
+    if (avoidPart != undefined && botState.support > 0) {
         perWeaponBonus -= avoidPart.chance;
     }
 

@@ -1,5 +1,5 @@
 import { Spoiler } from "./commonTypes";
-import { DamageType, FabricationStats } from "./itemTypes";
+import { DamageType, FabricationStats, ItemType } from "./itemTypes";
 
 export enum BotCategory {
     Alien = "Alien",
@@ -73,12 +73,14 @@ export type Bot = {
     immunitiesString: string;
     inventorySize?: string;
     locations: BotLocation[];
+    mass: number;
     maxEnergy: number;
     memory: string;
     movement: string;
     movementOverloaded?: string;
     name: string;
     profile: string;
+    propulsionType: ItemType | undefined,
     rating: string;
     resistances?: BotResistances;
     salvageHigh: number;
@@ -88,6 +90,7 @@ export type Bot = {
     speed: number;
     spotPercent: string;
     spoiler: Spoiler;
+    support: number;
     threat: string;
     tier: string;
     totalCoverage: number;
