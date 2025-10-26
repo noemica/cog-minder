@@ -6890,9 +6890,9 @@ Weapons|Time to fire|Time per weapon||
 1|200|[[CellStyle:Bad]]200||
 2|300|[[CellStyle:Bad]]150||
 3|325|[[CellStyle:Bad]]108\u2153||
-4|350|[[CellStyle:Good]]\u200787\u00bd||
-5|375|[[CellStyle:Good]]\u200775||
-6|400|[[CellStyle:Good]]\u200766\u2154
+4|350|[[CellStyle:Good]]87\u00bd||
+5|375|[[CellStyle:Good]] 75||
+6|400|[[CellStyle:Good]] 66\u2154
 [[/Table]]
 
 The Quantum Capacitor has several benefits on top of firing time:
