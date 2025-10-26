@@ -632,6 +632,7 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ["Overloadable Propulsion", (item) => item.slot === "Propulsion" && (item as PropulsionItem).burnout !== undefined],
     ["Overloadable Weapons", (item) => item.slot === "Weapon" && (item as WeaponItem).overloadStability !== undefined],
     ["Overtuned Parts", (item) => item.name.startsWith("Ovr.")],
+    ["Phasic Weapons", (item) => item.slot === "Weapon" && (item as WeaponItem).damageType === "Phasic"],
     ["Phasers", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Phasic"],
     ["Piercing Weapons", (item) => item.type === "Piercing Weapon"],
     ["Power Cores", (item) => item.type === "Power Core"],
@@ -655,6 +656,7 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ["Treads", (item) => item.type === "Treads"],
     ["Vortex Cannons", (item) => item.type === "Energy Cannon" && (item as WeaponItem).damageType === "Entropic"],
     ["Vortex Guns", (item) => item.type === "Energy Gun" && (item as WeaponItem).damageType === "Entropic"],
+    ["Vortex Weapons", (item) => item.slot === "Weapon" && (item as WeaponItem).damageType === "Entropic"],
     ["Wheels", (item) => item.type === "Wheel"],
 ]);
 function getItemCategoryItems(itemCategory: string, itemData: ItemData): string[] {
@@ -805,7 +807,7 @@ function WikiNavigationBar({
                         if (verbose) {
                             console.log(`Validating ${i++}/${allEntries.size} ${entry.name}`);
                         }
-                        
+
                         const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData);
 
                         const promises: Promise<any>[] = [];
