@@ -7060,10 +7060,10 @@ Weapons|Time to fire|Time per weapon||
 [[CellStyle:Neutral]][[B]]1 with QC[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]||
 1|200|[[CellStyle:Bad]]200||
 2|300|[[CellStyle:Bad]]150||
-3|325|[[CellStyle:Bad]]108\u00e2\u2026\u201c||
-4|350|[[CellStyle:Good]]\u00e2\u20ac\u202187\u00c2\u00bd||
-5|375|[[CellStyle:Good]]\u00e2\u20ac\u202175||
-6|400|[[CellStyle:Good]]\u00e2\u20ac\u202166\u00e2\u2026\u201d
+3|325|[[CellStyle:Bad]]≈108.3||
+4|350|[[CellStyle:Good]]87.5||
+5|375|[[CellStyle:Good]]75||
+6|400|[[CellStyle:Good]]≈66.7
 [[/Table]]
 
 The Quantum Capacitor has several benefits on top of firing time:
@@ -10918,7 +10918,167 @@ Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
 [[/PartGroupTable]]","","","","Utility Shielding,Imp. Utility Shielding,Mak. Utility Shielding,Exp. Utility Shielding","","",""
-"V-Series","Bot","","","","","","","",""
+"V-Series","Bot","V-Series are [[Prototype Robot|Prototype Robots]] that exclusively show up in [[Protoforge]]. All V-Series are [[Hover Unit|hovering]], but this is about the only thing that they have in common. Each V-Series has a completely randomized loadout that can be made up of a large number of possible [[Prototype Part|Prototype Parts]]. In this regard, they are similar to [[Q-Series]], though they are much, much stronger.
+
+[[Heading]]Instability[[/Heading]]
+One distinguishing point about V-Series is that they are very unstable. Each turn they are active, there is a chance they may randomly explode in a burst of a small amount of EM damage. When this happens, the log message [[GameText]][V-Series name] suddenly sparks and explodes in a catastrophic instability.[[/GameText]] will appear. If a V-Series dies in this way, no parts will be dropped as salvage.
+
+[[Heading]]Loadouts[[/Heading]]
+
+[[Heading:2]]Power[[/Heading]]
+V-Series will have 0-1 power from the following list:
+[[List]]
+[[Cep. Zero-point Core]]|
+[[Hyb. Graviton Reactor]]
+[[/List]]
+
+[[Heading:2]]Propulsion[[/Heading]]
+3-4 slots of propulsion chosen randomly from the following list:
+[[List]]
+[[Cep. Combat Aerolev Unit]]|
+[[Cep. Gyrokinetic System]]|
+[[Exp. Antigrav System]]|
+[[Gravjet Array]]
+[[/List]]
+
+[[Heading:2]]Utilities[[/Heading]]
+V-Series have multiple utilities that are randomly chosen in the following subcategories. Note: Many utilities are specific to a certain kind of weapon type, such as melee. Utilities are only chosen if they would be compatible with the types of weapons used by the specific V-Series. For example, a melee V-Series would not be given an [[Exp. Weapon Cycler]].
+V-Series have 10 available utility slots. While 
+
+[[Heading:3]]Cooling[[/Heading]]
+0-2 cooling utility from the following list:
+[[List]]
+[[Cep. Phasing Heat Sink]]|
+[[Cep. Turbovents]]|
+[[Exp. Coolant Injector]]|
+[[Exp. Cooling System]]
+[[/List]]
+
+[[Heading:3]]Resource Storage[[/Heading]]
+0-2 resource storage utilities from the following list:
+[[List]]
+[[Cep. Chromion Battery]]|
+[[Cep. NT7 Matterbank]]|
+[[Exp. Energy Well]]|
+[[Exp. Matter Compressor]]
+[[/List]]
+Note: V-Series will only have matter storage if they have any weapons that use matter.
+
+[[Heading:3]]Vision[[/Heading]]
+0-1 from the following list:
+[[List]]
+[[Exp. Optical Array]]|
+[[Spectral Analyzer]]
+[[/List]]
+
+[[Heading:3]]Mass Support[[/Heading]]
+
+0-1 mass support utilities from the following list:
+[[List]]
+[[Adv. Quantum Shading Machine]]|
+[[Quantum Shading Machine]]
+[[/List]]
+
+[[Heading:3]]Targeting[[/Heading]]
+0-2 targeting utilities from the following list:
+[[List]][[Cep. Countertargeting System]]|
+[[Cep. Hypertargeting System]]|
+[[Cep. Recoil Nullifier]]|
+[[Exp. Launcher Guidance Computer]]|
+[[Exp. Melee Analysis Suite]]|
+[[Exp. Targeting Computer]]|
+[[Weapon Mount]]
+[[/List]]
+
+[[Heading:3]]Energy/Matter Filters[[/Heading]]
+0-1 filters from the following list:
+[[List]]
+[[Prc. Energy Filter]]|
+[[Prc. Matter Filter]]
+[[/List]]
+
+[[Heading:3]]Tractor Beams[[/Heading]]
+0-1 tractor beams from the following list:
+[[List]]
+[[Cep. Matter Streamer]]|
+[[Lrn. Tractor Beam]]
+[[/List]]
+
+[[Heading:3]]Weapon Cycling Utilities[[/Heading]]
+0-1 weapon cycling utilities from the following list:
+[[List]]
+[[Exp. Weapon Cycler]]|
+[[Femtoactuators]]|
+[[Launcher Loader]]|
+[[Mni. Quantum Capacitor]]
+[[/List]]
+
+[[Heading:3]]Damage Boosting Utilities[[/Heading]]
+0-1 damage-boosting utilities from the following list:
+[[List]]
+[[Adv. Force Booster]]|
+[[Adv. Particle Accelerator]]|
+[[Exp. Kinecellerator]]
+[[/List]]
+
+[[Heading:3]]Other offensive utilities[[/Heading]]
+0-1 offensive utilities from the following list
+[[List]]
+[[Cep. Melee Reflex Suite]]|
+[[Exp. Actuator Array]]|
+[[Exp. Armor Integrity Analyzer]]|
+[[Exp. Core Analyzer]]|
+[[Exp. Target Analyzer]][[/List]]
+
+[[Heading:3]]Corruption Resistance Utilities[[/Heading]]
+0-1 corruption resistance utilities from the following list:
+[[List]]
+[[Adv. Dynamic Insulation System]]|
+[[Exp. EM Disruption Field]]
+[[/List]]
+
+[[Heading:3]]Resistance Utilities[[/Heading]]
+0-2 resistance utility from the following list:
+[[List]]
+[[Exp. EM Shield]]|
+[[Exp. Focal Shield]]|
+[[Exp. Shock Absorption System]]|
+[[Exp. Thermal Defense Suite]]|
+[[Thermal Barrier]]
+[[/List]]
+
+[[Heading:3]]Other Defensive Utilities[[/Heading]]
+0-2 other defensive utilities from the following list:
+[[List]]
+[[Adv. Force Field]]|
+[[Cep. Antimissile System]]|
+[[Cep. Projectile Intercept Suite]]|
+[[Exp. Reaction Control System]]|
+[[Exp. Shield Generator]]|
+[[Graphene Brace]]
+[[/List]]
+
+[[Heading:3]]Armor[[/Heading]]
+2-3 slots of armor from the following list:
+[[List]]
+[[Adv. Powered Armor]]|
+[[Centrium Heavy Armor Plating]]|
+[[Centrium Medium Armor Plating]]|
+[[Cep. Core Shell]]|
+[[Cep. RG22 Armor]]|
+[[Exp. Utility Shielding]]|
+[[Exp. Weapon Shielding]]|
+[[Imp. Powered Armor]]|
+[[Lyr. Heavy Armor Plating]]|
+[[Lyr. Medium Armor Plating]]|
+[[Med. Insulated Plating]]|
+[[Med. Reactive Plating]]|
+[[Med. Reflective Plating]]|
+[[Med. Regenerative Plating]]
+[[/List]]
+
+[[Heading:3]]Swarm Drone Bay[[/Heading]]
+V-Series may have a [[Swarm Drone Bay]].","","","","","","",""
 "V2","Bot","","","","","","","",""
 "V3-11A's Pendant","Part","","","","","","","",""
 "VL-GR5","Bot","Appears at the entrance of [[Spoiler]][[Armory]][[/Spoiler]]. Challenges [[Cogmind]] to get to 15 kills first, providing [[Spoiler]][[VL-GR5's Timing Chip]][[/Spoiler]] as a reward. After the competition, he will head to the exit on the left side of [[Spoiler]]Armory[[/Spoiler]], dropping the [[Spoiler]][[Multinova Projection Cannon]][[/Spoiler]] if he survives and exits the map. Hitting [[VL-GR5]] a few times will turn him hostile, causing him to shed 2 [[Enh. Nova Cannon|Enh. Nova Cannons]] and attach the [[Spoiler]]Multinova Projection Cannon[[/Spoiler]].","","","","","","",""
@@ -11398,7 +11558,7 @@ Going to the [[Mines]] without a launcher. [[GameText]]Infestation in the Mines,
 "Z-Technician","Bot","Harmless zion [[Derelict|derelict]] [[Operator]] variants found stationary in [[Zion Deep Caves]].","","","","","","",""
 "Z-bomb Delivery System","Part","","","","","","","",""
 "Zero-point Reactor","Part","","","","","","","",""
-"Zeronet Interface","Part","","","","","","","",""
+"Zeronet Interface","Part","The Zeronet Interface allows for full tracking of every bot on 0b10-controlled floors for ~900 turns, before the chip fries itself in an UC-ID check.","","","","","","",""
 "Zhirov","Bot","","","","","","","",""
 "Zhirov (Alignment)","Other","[[Image]]Testing SGEMP.png|The SGEMP room in Testing[[/Image]]
 Aligning with [[Zhirov]] is a minor [[Alignment|alignment]] that can be started in [[Zhirov (Location)|Zhirov's Lab]]. After entering and exiting the Terminal room on the left side of the map, Zhirov will ask Cogmind to steal the [[SGEMP Prototype]] from [[Testing]] and bring it to [[Access]]. If this is done, Zhirov, Perun, and Svarog will show up in Access and give Cogmind full map intel. They will follow Cogmind but will all teleport out if Zhirov falls below roughly half core integrity. They also leave if Cogmind enters [[Command]]. If a [[Core Reset Matrix]] is used prior to Access but Cogmind still carries the SGEMP, Zhirov and his allies will turn hostile and fight Cogmind to the death
