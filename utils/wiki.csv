@@ -1036,7 +1036,7 @@ Once CL-0N3 is dropped back to base form, it will run away at 40 speed and be ha
 "CPS Tube","Part","","","","","","","",""
 "CR-A16's Behemoth Slayer","Part","Transformed from [[CR-A16's Pointy Stick]]. The Behemoth Slayer will always instantly kill any [[Behemoth]] it hits. Note: This only applies to standard [[0b10]] Behemoth-class bots. [[Marauder|Marauders]] and the [[Superbehemoth]] are immune to this effect. When its effect activates, the game log [[GameText]][Behemoth] suddenly blasts apart at the seams.[[/GameText]]","","","","","","",""
 "CR-A16's Pointy Stick","Part","Given by the [[Derelict]] CR-A16 in [[Zion]]. When used to attack [[Behemoth|Behemoths]], there is a chance that this will transform into [[CR-A16's Behemoth Slayer]]. When this occurs, the log message [[GameText]]CR-A16's Pointy Stick's crusty surface crumbles away to reveal its sleek core, which hums to life.[[/GameText]] will appear.
-Note: This transformation effect only applies to standard [[0b10]] Behemoth-class bots. [[Marauder|Marauders]] and the [[Superbehemoth]] are immune to this effect. However, it will still transform if used on an allied Behemoth or disabled one, such as the Behemoths that sometimes appear in [[Zhirov (Location)]].","Spoiler","","","","","",""
+Note: This transformation effect only applies to standard [[0b10]] Behemoth-class bots. [[Marauder|Marauders]] and the [[Superbehemoth]] are immune to this effect. However, it will still transform if used on an allied Behemoth or disabled one, such as the Behemoths that sometimes appear in [[Zhirov (Location)]].","","","","","","",""
 "Carbide Saw","Part","","","","","","","",""
 "Carbon-fiber Leg","Part","","","","","","","",""
 "Cargo Convoy","Other","[[Image]]Cargo Convoy.png|Intact cargo convoy[[/Image]]
@@ -1148,7 +1148,7 @@ Caves checkpoints are square-shaped open spaces with a guard positioned at the c
 There are three types of checkpoints:
 [[Table]]
 Central guard|Alignment|Square size|Possible additional guards|Formation||
-[[Mutant]]|Friendly (Warlord)|7x7|0, 2 or 4 [[Thug|Thugs]], [[Butcher|Butchers]] or [[Savage|Savages]]|X, / or \\-shaped||
+[[Mutant]]|Friendly (Warlord)|7x7|0, 2 or 4 [[Thug|Thugs]], [[Butcher|Butchers]] or [[Savage|Savages]]|X, / or \\\\-shaped||
 Sentry|Hostile (0b10)|7x7|[[Swarmer|Swarmers]], [[Grunt|Grunts]], [[Duelist|Duelists]] or [[Brawler|Brawlers]]|Chaotic||
 [[Behemoth]]|Hostile (0b10)|6x6|None|N/A
 [[/Table]]
@@ -4470,7 +4470,7 @@ Propulsion/Energy|
 Propulsion/Heat|
 Propulsion/Support|
 Propulsion/Burnout
-[[/PartGroupTable]]","","","Flight Units","","Cooled Flight Units,Diametric Drives,Flight Arrays,Surge Thrusters","",""
+[[/PartGroupTable]]","","","","","Cooled Flight Units,Diametric Drives,Flight Arrays,Surge Thrusters","",""
 "Flightbrick","Part","","","","","","","",""
 "Flying Fortress v7","Part","","","","","","","",""
 "Focal Shield","Part","","","","","","","",""
@@ -6717,7 +6717,7 @@ Just Browsing: Reach 25% gallery collection.
 Made in Tau Ceti IV: Enter [[Factory]].
 |Dangerous Findings: Enter [[Research]].
 |Denied?: Enter [[Access]].
-|\\IAMDERELICT: [[Spoiler]]Enter [[Recycling]] via [[Storage]].[[/Spoiler]]
+|\\\\IAMDERELICT: [[Spoiler]]Enter [[Recycling]] via [[Storage]].[[/Spoiler]]
 |I'm Back, Baby!: Exit [[Caves|Proximity Caves]].
 |Tourist: Visit 3 branch areas.
 |Adventurer: Visit 2 special cave areas.
@@ -7060,10 +7060,10 @@ Weapons|Time to fire|Time per weapon||
 [[CellStyle:Neutral]][[B]]1 with QC[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]||
 1|200|[[CellStyle:Bad]]200||
 2|300|[[CellStyle:Bad]]150||
-3|325|[[CellStyle:Bad]]108⅓||
-4|350|[[CellStyle:Good]]87½||
-5|375|[[CellStyle:Good]]75||
-6|400|[[CellStyle:Good]]66⅔
+3|325|[[CellStyle:Bad]]108\u2153||
+4|350|[[CellStyle:Good]]\u200787\u00bd||
+5|375|[[CellStyle:Good]]\u200775||
+6|400|[[CellStyle:Good]]\u200766\u2154
 [[/Table]]
 
 The Quantum Capacitor has several benefits on top of firing time:
