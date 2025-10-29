@@ -1,4 +1,4 @@
-﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
+"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","",""
 "01-MTF's Autohacker","Part","","","","","","","",""
 "01-MTF's Shockpuncher","Part","","","","","","","",""
@@ -40,6 +40,10 @@ Effect/Effect
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]Cyclists Records|UC/6S-H0T[[/Lore]]
+
+[[Heading:2]][[FarCom]] Lore[[/Heading]]
+If Cogmind has aligned with the [[Exiles (Group)|Exiles]] and has FarCom, the following message will be broadcast about 6S-H0T:
+[[GameText]]At least this one runs out of ammo quickly, but they're also really aggressive and if you're caught in range they are going to tear you to pieces. Maybe just be dodgy?[[/GameText]]
 
 [[Heading]]Behavior[[/Heading]]
 6S-H0T is a hit-and-run type of Unchained that only engages in short bursts of combat. Its gun is only able to fire with the use of [[6S-H0T's SS Cartridge|6S-H0T's SS Cartridges]], which 6S-H0T carries 5 of. After showing up on the map, it will chase Cogmind down, burn through all 5 Cartridges, then head for the nearest [[Garrison Access]] to restock. A few hundred turns later, it will pop out, fully repaired, ready to shoot again with another 5 Cartridges.
@@ -991,8 +995,12 @@ Due to their extreme lethality in melee, stay out of their range at all costs, a
 [[Heading]]Lore[[/Heading]]
 [[Lore]]Cyclists Records|UC/CL-0N3[[/Lore]]
 
+[[Heading:2]][[FarCom]] Lore[[/Heading]]
+If Cogmind has aligned with the [[Exiles (Group)|Exiles]] and has FarCom, the following message will be broadcast about CL-0N3:
+[[GameText]]They could be anywhere, or anyone. Be very ware of anything that moves. Destroying their true combat form damages their core, but you can cause the most damage once they're fully revealed, though they'll definitely run in that case, and fast.[[/GameText]]
+
 [[Heading]]Behavior[[/Heading]]
-CL-0N3 has two ways it can appear after being dispatched on a map. The first method is possession of an existing bot, for example, a [[K-01 Serf]]. That Serf will behave unusually, heading toward Cogmind when there is otherwise no reason for it to do so. Once it comes close enough, CL-0N3 will turn into a random combat bot several tiers above the standard depth and there will be an accompanying log message [[GameText]][Bot name] form shifts and reconstitutes itself, revealing [New bot name].[[/GameText]] If the possessed bot is instead destroyed, a slightly different message [[GameText]][New bot name] reconstitutes self from the rubble and scrap.[[/GameText]] will appear instead.
+CL-0N3 has two ways it can appear after being dispatched on a map. The first method is possession of an existing bot, for example, a [[K-01 Serf]]. That Serf will behave unusually, heading toward Cogmind when there is otherwise no reason for it to do so. Once it comes close enough, CL-0N3 will turn into a random combat bot several tiers above the standard depth and there will be an accompanying log message [[GameText]][Bot name] form shifts and reconstitutes itself, revealing [New bot name].[[/GameText]] If the possessed bot is instead destroyed, a slightly different message [[GameText]][New bot name] reconstitutes self from the rubble and scrap.[[/GameText]] will appear instead. Note: While transformed, CL-0N3 cannot be accessed with a [[Datajacks|Datajack]].
 The second method of CL-0N3 appearing is by forming a new copy of an existing ally on the map. This method is only used when there are non-controllable allies around (i.e. not blue-colored). CL-0N3 will appear as a copy of an ally, follow Cogmind around for a few turns, then surprise attack shortly after.
 When the combat bot that CL-0N3 has transformed into is destroyed, a new log message will appear: [[GameText]]CL-0N3 reconstitutes true from from the rubble and scrap.[[/GameText]] When this occurs, the real CL-0N3 will appear, losing core integrity equal to 10% of previous form's core integrity. After this, it will run away to a nearby [[Garrison Access]] or exit. A [[CL-0N3 Data Core]] is dropped when CL-0N3 is fully destroyed.
 
@@ -1022,7 +1030,8 @@ Note: bolded entries are CL-0N3-exclusive bots.
 [[Sentry]]|
 [[Specialist]]|
 [[Striker]]|
-[[B]][[Thunder]][[/B]]|[[B]][[V2]][[/B]]|
+[[B]][[Thunder]][[/B]]|
+[[B]][[V2]][[/B]]|
 [[Wizard]]
 [[/List]]
 
@@ -2306,6 +2315,10 @@ There is only one exit in each DSF. Most of the time the exit leads to the next 
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]Cyclists Records|UC/DW-4LL[[/Lore]]
+
+[[Heading:2]][[FarCom]] Lore[[/Heading]]
+If Cogmind has aligned with the [[Exiles (Group)|Exiles]] and has FarCom, the following message will be broadcast about DW-4LL:
+[[GameText]]This is a tough one, they are really good at hiding in the walls and will wait for you to get close before springing an attack. I guess you can use a [[Structural Scanner]] to help prevent being caught completely by surprise.[[/GameText]]
 
 [[Heading]]Behavior[[/Heading]]
 [[Image]]DW-4LL Disguise.png|DW-4LL revealed with a Structural Scanner[[/Image]]
@@ -4529,6 +4542,10 @@ Power/Stability
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]Cyclists Records|UC/GL-D0S[[/Lore]]
+
+[[Heading:2]][[FarCom]] Lore[[/Heading]]
+If Cogmind has aligned with the [[Exiles (Group)|Exiles]] and has FarCom, the following message will be broadcast about GL-D0S:
+[[GameText]]This one isn't even that scary unless they happen to be blocking your intended path. They'll set up a bunch of turret clusters loosely centered around a Garrison and just... wait. Don't go there unless you want to introduce them to the real boss: you! They'll probably just run away if you get too close anyway. But turrets can't run.[[/GameText]]
 
 [[Heading]]Behavior[[/Heading]]
 [[Image]]GL-D0S Turret Nest.png|GL-D0S with nest of turrets[[/Image]]
@@ -7032,6 +7049,10 @@ Cogmind can forget known prototype part IDs like any other part ID, including as
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]Cyclists Records|UC/QV-33N[[/Lore]]
+
+[[Heading:2]][[FarCom]] Lore[[/Heading]]
+If Cogmind has aligned with the [[Exiles (Group)|Exiles]] and has FarCom, the following message will be broadcast about QV-33N:
+[[GameText]]They will avoid you and gradually dispatch drone squads to different map locations from which to stage indirect attacks. If you find individual drones, those are probably defensive in nature and QV-33N could be nearby.[[/GameText]]
 
 [[Heading]]Behavior[[/Heading]]
 QV-33N is an evasive type of Unchained, never waiting around in one place or engaging in combat directly. Instead, it relies on their drones to do all their dirty work for them. Once it appears on the map, it will immediately create a drone to explore the map and search for hostiles with a log message [[GameText]]QV-33N launches drone.[[/GameText]] Drones created by QV-33N behave similar to [[Extermination Squad|Exterminations]] or [[Search Patrol|Search Patrols]]; they search in a general area from room to room to try to find Cogmind. Roughly every 40 turns, QV-33N will dispatch another drone to explore the map as long as the Launch Deck is intact. Every few dispatches, a squad of 3-4 drones will be dispatched instead of just one, with the associated log message [[GameText]]QV-33N launches drone squad.[[/GameText]] QV-33N itself wanders fairly aimlessly around the map without targeting any particular location.
@@ -10812,13 +10833,20 @@ Propulsion/Special
 [[Lore]]Cyclists Records|UC Origins[[/Lore]]
 [[Gallery]]Unchained.png|All Unchained[[/Gallery]]
 
+[[Heading:2]][[Exiles (Group)|Exiles]] Lore[[/Heading]]
+If Cogmind has aligned with the Exiles with [[FarCom]], the Exiles will deliver a message about each Unchained as they are dispatched. This is prefaced with the following messages:
+[[GameText]]FARCOM_MSG: We kinda like the data you're collecting and don't want to witness your untimely demise, so we kindly advice you to run like hell.[[/GameText]]
+[[GameText]]FARCOM_MSG: I've located an exit near your position you could probably use to shake them for a while.[[/GameText]] After this, the nearest exit is revealed.
+[[GameText]]FARCOM_MSG: EX-HEX means well, but I for one want to see you stick around and beat the bolts out of [Unchained bot name][[/GameText]]
+
 [[Heading]]Dispatch Triggers[[/Heading]]
 There are a large number of triggers which can cause Unchained to be dispatched, only some of which are currently known.
 [[List]]
 [[Sterilization]]: Sterilizing any 0b10 map in [[Factory]] depth (-7) or higher.|
 [[Hub_04(d)]] 404: Blowing up all 4 Network Hubs in Hub.|
 Too long on map: Spending too many turns on 0b10 maps (how this is calculated is unknown)|
-Hacking: Either accessing or performing too many hacks at [[Interactive Machine|Interactive Machines]].
+Hacking: Either accessing or performing too many hacks at [[Interactive Machine|Interactive Machines]].|
+[[Redacted]]Looting [[Protoforge]][[/Redacted]]: Taking too many parts from Protoforge.
 [[/List]]
 In addition to the above specific triggers, there is a general requirement for Cogmind to have a ""good enough"" build. A build that is falling apart is not a sufficient threat to result in an Unchained dispatch even if one of the triggers has been met.
 When an Unchained has been decided to be dispatched, an announcement like [[GameText]]ALERT: Unchained [Unchained] authorized to operate in [-Depth/Map], avoid or assist as necessary.[[/GameText]] will appear in the game log. The Unchained will not appear until a few hundred turns after the announcement. Initially, Unchained will only be dispatched on 0b10-controlled maps. However, some Unchained can continue to follow Cogmind into [[Caves]].
@@ -10946,7 +10974,7 @@ V-Series will have 0-1 power from the following list:
 
 [[Heading:2]]Utilities[[/Heading]]
 V-Series have multiple utilities that are randomly chosen in the following subcategories. Note: Many utilities are specific to a certain kind of weapon type, such as melee. Utilities are only chosen if they would be compatible with the types of weapons used by the specific V-Series. For example, a melee V-Series would not be given an [[Exp. Weapon Cycler]].
-V-Series have 10 available utility slots. While 
+V-Series have 10 available utility slots. Currently, they can actually go above the maximum 10 utility cap. However, they are not guaranteed to always have all 10 slots filled.
 
 [[Heading:3]]Cooling[[/Heading]]
 0-2 cooling utility from the following list:
@@ -10965,7 +10993,6 @@ V-Series have 10 available utility slots. While
 [[Exp. Energy Well]]|
 [[Exp. Matter Compressor]]
 [[/List]]
-Note: V-Series will only have matter storage if they have any weapons that use matter.
 
 [[Heading:3]]Vision[[/Heading]]
 0-1 from the following list:
@@ -11013,7 +11040,8 @@ Note: V-Series will only have matter storage if they have any weapons that use m
 [[Exp. Weapon Cycler]]|
 [[Femtoactuators]]|
 [[Launcher Loader]]|
-[[Mni. Quantum Capacitor]]
+[[Mni. Quantum Capacitor]]|
+[[Quantum Capacitor]]
 [[/List]]
 
 [[Heading:3]]Damage Boosting Utilities[[/Heading]]
@@ -11081,7 +11109,76 @@ Note: V-Series will only have matter storage if they have any weapons that use m
 [[/List]]
 
 [[Heading:3]]Swarm Drone Bay[[/Heading]]
-V-Series may have a [[Swarm Drone Bay]].","","","","","","",""
+V-Series may have a [[Swarm Drone Bay]].
+
+[[Heading:2]]Weapons[[/Heading]]
+V-Series can have multiple sets of weapon loadouts chosen between various weapon subcategories. Weapons are only assigned if they can be used in conjunction with other weapons and associated utilities. For example, a V-Series will not have both a melee and ranged weapon, nor will it have multiple weapons if it has a Mni. Quantum Capacitor.
+[[Heading:3]]Weapon Slots[[/Heading]]
+V-Series have one of the following combination of weapon slot counts:
+[[List]]
+Cannons only: 1-4 slots, but only 1-2 cannons. Note, if a [[Quantum Capacitor|regular]] or [[Mni. Quantum Capacitor]] is attached, only 1 energy cannon will be present.|
+Guns and Launcher: 2 slots of guns, 1 slot of launcher.|
+Guns only: 3-4 slots.|
+Launcher only: 1 slot|
+Melee only: 3-4 slots, but only 2-3 melee weapons.
+[[/List]]
+
+[[Heading:3]]Cannons[[/Heading]]
+[[List]]
+[[Cep. Helical Railcannon]]|
+[[Cep. Plasma Driver]]|
+[[Com. Linear Accelerator]]|
+[[Com. Mass Driver]]|
+[[Cld. Phase Cannon]]|
+[[Cld. Proton Cannon]]|
+[[Enh. Hardcell Cannon]]|
+[[Enh. Nova Cannon]]|
+[[Graviton Cannon]]|
+[[HERF Cannon]]|
+[[Hvy. Disruptor Cannon]]|
+[[Hvy. Hardcell Cannon]]|
+[[Imp. Matter Neutralizer]]
+[[/List]]
+
+[[Heading:3]]Guns[[/Heading]]
+[[List]]
+[[Adv. KE Penetrator]]|
+[[Cep. Variable Chargecaster]]|
+[[Cep. XC Strikerail]]|
+[[Enh. Gamma Rifle]]|
+[[Enh. Quantum Rifle]]|
+[[Helical Railgun]]|
+[[Hvy. Dispersion Rifle]]|
+[[Hvy. Tesla Rifle]]|
+[[Hvy. Quantum Rifle]]|
+[[Multirail]]|
+[[Prc. Phase Gun]]|
+[[Quantum Rifle]]
+[[/List]]
+
+[[Heading:3]]Launchers[[/Heading]]
+[[List]]
+[[Adv. Micro-nuke Launcher]]|
+[[Cep. Rapid Grenade Launcher]]|
+[[Com. Tesla Bomb Launcher]]|
+[[Enh. Gamma Bomb Array]]|
+[[Fusion Bomb Launcher]]|
+[[Gamma Bomb Array]]|
+[[Hellfire Missile Launcher]]|
+[[Ragnarok Missile Launcher]]
+[[/List]]
+
+[[Heading:3]]Melee[[/Heading]]
+[[List]]
+[[Centrium Greatsword]]|
+[[Cep. Deflector Sword]]|
+[[Enh. Force Lance]]|
+[[Exp. Jetlance]]|
+[[Gravity Flail]]|
+[[Molecular Scythe]]|
+[[Plasma Lance]]|
+[[Thunder Hammer]]
+[[/List]]","","","","","","",""
 "V2","Bot","","","","","","","",""
 "V3-11A's Pendant","Part","","","","","","","",""
 "VL-GR5","Bot","Appears at the entrance of [[Spoiler]][[Armory]][[/Spoiler]]. Challenges [[Cogmind]] to get to 15 kills first, providing [[Spoiler]][[VL-GR5's Timing Chip]][[/Spoiler]] as a reward. After the competition, he will head to the exit on the left side of [[Spoiler]]Armory[[/Spoiler]], dropping the [[Spoiler]][[Multinova Projection Cannon]][[/Spoiler]] if he survives and exits the map. Hitting [[VL-GR5]] a few times will turn him hostile, causing him to shed 2 [[Enh. Nova Cannon|Enh. Nova Cannons]] and attach the [[Spoiler]]Multinova Projection Cannon[[/Spoiler]].","","","","","","",""
@@ -11561,7 +11658,7 @@ Going to the [[Mines]] without a launcher. [[GameText]]Infestation in the Mines,
 "Z-Technician","Bot","Harmless zion [[Derelict|derelict]] [[Operator]] variants found stationary in [[Zion Deep Caves]].","","","","","","",""
 "Z-bomb Delivery System","Part","","","","","","","",""
 "Zero-point Reactor","Part","","","","","","","",""
-"Zeronet Interface","Part","The Zeronet Interface allows for full tracking of every bot on 0b10-controlled floors for ~900 turns, before the chip fries itself in an UC-ID check.","","","","","","",""
+"Zeronet Interface","Part","The Zeronet Interface allows for full tracking of every bot on 0b10-controlled floors for ~900 turns, before the chip fries itself in an UC-ID check. When the check fails, the following log message is shown: [[GameText]]""INVALID UC-ID CHECK!"" Zeronet Interface fries itself.","","","","","","",""
 "Zhirov","Bot","","","","","","","",""
 "Zhirov (Alignment)","Other","[[Image]]Testing SGEMP.png|The SGEMP room in Testing[[/Image]]
 Aligning with [[Zhirov]] is a minor [[Alignment|alignment]] that can be started in [[Zhirov (Location)|Zhirov's Lab]]. After entering and exiting the Terminal room on the left side of the map, Zhirov will ask Cogmind to steal the [[SGEMP Prototype]] from [[Testing]] and bring it to [[Access]]. If this is done, Zhirov, Perun, and Svarog will show up in Access and give Cogmind full map intel. They will follow Cogmind but will all teleport out if Zhirov falls below roughly half core integrity. They also leave if Cogmind enters [[Command]]. If a [[Core Reset Matrix]] is used prior to Access but Cogmind still carries the SGEMP, Zhirov and his allies will turn hostile and fight Cogmind to the death
