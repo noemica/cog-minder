@@ -6306,7 +6306,7 @@
             "Jamming"
         ],
         "Resistances": {
-            "Electromagnetic": "100"
+            "Electromagnetic": "75"
         }
     },
     {
