@@ -18,10 +18,10 @@ args = parser.parse_args()
 with open(wiki_path, encoding='utf-8') as f:
     wiki_json = json.load(f)
 
-with open(csv_path, encoding='utf-8') as f:
+with open(csv_path, encoding='utf-8-sig') as f:
     wiki_csv = {}
     for row in csv.DictReader(f):
-        row['Content'] = row['Content'].replace('\\n', '\n').replace('\\\\u', '\\u').encode().decode('unicode-escape')
+        row['Content'] = row['Content'].replace('\\n', '\n')
         wiki_csv[row['Name']] = row
 
 updated_pages = []

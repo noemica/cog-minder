@@ -1,6 +1,7 @@
 #!/usr/bin/env py
 
 import argparse
+import codecs
 import csv
 import json
 import sys
@@ -14,32 +15,11 @@ with open(wiki_path, encoding='utf-8') as f:
     wiki_json = json.load(f)
 
 csv_entries = set()
-with open(csv_path, encoding='utf-8') as f:
+with open(csv_path, encoding='utf-8-sig') as f:
     wiki_csv = {}
     for row in csv.DictReader(f):
         wiki_csv[row['Name']] = row
         csv_entries.add(row['Name'])
-
-def decode(s):
-    new_s = ''
-
-    s_len = len(s)
-    for i in range(len(s)):
-        c = s[i]
-
-        if c == '\\' and ((i + 1 < s_len and s[i + 1] != '\\') or (i > 0 and s[i - 1] != '\\')):
-            new_s += '\\\\'
-        else:
-            val = ord(c)
-            if val > 0x7f:
-                if val >= 0x10000:
-                    new_s += '\\u{:08x}'.format(val)
-                else:
-                    new_s += '\\u{:04x}'.format(val)
-            else:
-                new_s += c
-
-    return new_s
 
 
 parser = argparse.ArgumentParser('Wiki CSV from JSON')
@@ -55,13 +35,13 @@ for bot_group in wiki_json['Bots']:
     group_name = bot_group['Name']
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Bot'
-        wiki_csv[group_name]['Content'] = decode(bot_group['Content'])
+        wiki_csv[group_name]['Content'] = bot_group['Content']
         csv_entries.remove(group_name)
     else:
         new_bot = {
             'Name': group_name,
             'Page Type': 'Bot',
-            'Content': decode(bot_group['Content'])
+            'Content': bot_group['Content']
         }
         wiki_csv[group_name] = new_bot
 
@@ -70,7 +50,7 @@ for bot_group in wiki_json['Bot Groups']:
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Bot Group'
         wiki_csv[group_name]['Bots'] = ','.join(bot_group['Bots'])
-        wiki_csv[group_name]['Content'] = decode(bot_group['Content'])
+        wiki_csv[group_name]['Content'] = bot_group['Content']
         if 'Spoiler' in bot_group:
             wiki_csv[group_name]['Spoiler'] = bot_group['Spoiler']
 
@@ -80,7 +60,7 @@ for bot_group in wiki_json['Bot Groups']:
             'Name': group_name,
             'Page Type': 'Bot Group',
             'Bots': ','.join(bot_group['Bots']),
-            'Content': decode(bot_group['Content']),
+            'Content': bot_group['Content'],
             'Spoiler': bot_group['Spoiler'] if 'Spoiler' in bot_group else '',
         }
         wiki_csv[group_name] = new_group
@@ -89,7 +69,7 @@ for bot_group in wiki_json['Bot Supergroups']:
     group_name = bot_group['Name']
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Bot Supergroup'
-        wiki_csv[group_name]['Content'] = decode(bot_group['Content'])
+        wiki_csv[group_name]['Content'] = bot_group['Content']
         if 'Spoiler' in bot_group:
             wiki_csv[group_name]['Spoiler'] = bot_group['Spoiler']
         
@@ -113,7 +93,7 @@ for bot_group in wiki_json['Bot Supergroups']:
             'Bots': ','.join(bot_group['Bots']) if 'Bots' in bot_group else '',
             'Groups': ','.join(bot_group['Groups']) if 'Groups' in bot_group else '',
             'Supergroups': ','.join(bot_group['Supergroups']) if 'Supergroups' in bot_group else '',
-            'Content': decode(bot_group['Content']),
+            'Content': bot_group['Content'],
             'Spoiler': bot_group['Spoiler'] if 'Spoiler' in bot_group else '',
         }
         wiki_csv[group_name] = new_group
@@ -122,13 +102,13 @@ for part in wiki_json['Parts']:
     part_name = part['Name']
     if part_name in wiki_csv:
         wiki_csv[part_name]['Page Type'] = 'Part'
-        wiki_csv[part_name]['Content'] = decode(part['Content'])
+        wiki_csv[part_name]['Content'] = part['Content']
         csv_entries.remove(part_name)
     else:
         new_part = {
             'Name': part_name,
             'Page Type': 'Part',
-            'Content': decode(part['Content'])
+            'Content': part['Content']
         }
         wiki_csv[part_name] = new_part
 
@@ -136,7 +116,7 @@ for part_group in wiki_json['Part Groups']:
     group_name = part_group['Name']
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Part Group'
-        wiki_csv[group_name]['Content'] = decode(part_group['Content'])
+        wiki_csv[group_name]['Content'] = part_group['Content']
         if 'Spoiler' in part_group:
             wiki_csv[group_name]['Spoiler'] = part_group['Spoiler']
         
@@ -156,7 +136,7 @@ for part_group in wiki_json['Part Groups']:
             'Page Type': 'Part Group',
             'Parts': ','.join(part_group['Parts']) if 'Parts' in part_group else '',
             'Part Category': part_group['Part Category'] if 'Part Category' in part_group else '',
-            'Content': decode(part_group['Content']),
+            'Content': part_group['Content'],
             'Spoiler': part_group['Spoiler'] if 'Spoiler' in part_group else '',
         }
         wiki_csv[group_name] = new_group
@@ -165,7 +145,7 @@ for part_group in wiki_json['Part Supergroups']:
     group_name = part_group['Name']
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Part Supergroup'
-        wiki_csv[group_name]['Content'] = decode(part_group['Content'])
+        wiki_csv[group_name]['Content'] = part_group['Content']
         if 'Spoiler' in part_group:
             wiki_csv[group_name]['Spoiler'] = part_group['Spoiler']
         
@@ -189,7 +169,7 @@ for part_group in wiki_json['Part Supergroups']:
             'Parts': ','.join(part_group['Parts']) if 'Parts' in part_group else '',
             'Groups': ','.join(part_group['Groups']) if 'Groups' in part_group else '',
             'Supergroups': ','.join(part_group['Supergroups']) if 'Supergroups' in part_group else '',
-            'Content': decode(part_group['Content']),
+            'Content': part_group['Content'],
             'Spoiler': part_group['Spoiler'] if 'Spoiler' in part_group else '',
         }
         wiki_csv[group_name] = new_group
@@ -198,7 +178,7 @@ for location in wiki_json['Locations']:
     location_name = location['Name']
     if location_name in wiki_csv:
         wiki_csv[location_name]['Page Type'] = 'Location'
-        wiki_csv[location_name]['Content'] = decode(location['Content'])
+        wiki_csv[location_name]['Content'] = location['Content']
         if 'Spoiler' in location:
             wiki_csv[location_name]['Spoiler'] = location['Spoiler']
 
@@ -207,7 +187,7 @@ for location in wiki_json['Locations']:
         new_location = {
             'Name': location_name,
             'Page Type': 'Location',
-            'Content': decode(location['Content']),
+            'Content': location['Content'],
             'Spoiler': location['Spoiler'] if 'Spoiler' in location else '',
         }
         wiki_csv[location_name] = new_location
@@ -216,7 +196,7 @@ for other in wiki_json['Other']:
     other_name = other['Name']
     if other_name in wiki_csv:
         wiki_csv[other_name]['Page Type'] = 'Other'
-        wiki_csv[other_name]['Content'] = decode(other['Content'])
+        wiki_csv[other_name]['Content'] = other['Content']
         if 'Spoiler' in other:
             wiki_csv[other_name]['Spoiler'] = other['Spoiler']
 
@@ -229,7 +209,7 @@ for other in wiki_json['Other']:
             'Name': other_name,
             'Page Type': 'Other',
             'Subpages': ','.join(other['Subpages']) if 'Subpages' in other else '',
-            'Content': decode(other['Content']),
+            'Content': other['Content'],
             'Spoiler': other['Spoiler'] if 'Spoiler' in other else '',
         }
         wiki_csv[other_name] = new_other
@@ -249,6 +229,10 @@ if len(csv_entries) > 0:
 # Write out updated csv
 csv.register_dialect('wiki', 'excel', lineterminator='\n')
 with open(csv_path, 'w', newline='', encoding='utf-8') as f:
+    # Note: When importing UTF-8 characters into google drive, the BOM is 
+    # required or else character are assumed Latin-1
+    f.write('\ufeff')
+
     writer = csv.DictWriter(
         f,
         ['Name', 'Page Type', 'Content', 'Spoiler', 'Bots', 'Part Category',
