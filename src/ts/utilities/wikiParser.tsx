@@ -1802,7 +1802,16 @@ function processLinkTag(state: ParserState, result: RegExpExecArray) {
             ),
         });
     } else {
-        recordError(state, `Bad link to page "${linkTarget}" that doesn't exist`);
+        const linkTargetLower = linkTarget.toLowerCase();
+        let extraMessage = "";
+        for (const entryName of state.allEntries.keys()) {
+            if (entryName.toLowerCase() === linkTargetLower) {
+                extraMessage = `. Did you mean (case-sensitive) ${entryName}`;
+                break;
+            }
+        }
+
+        recordError(state, `Bad link to page "${linkTarget}" that doesn't exist${extraMessage}`);
         state.output.push({
             groupType: "Grouped",
             node: linkTarget,
