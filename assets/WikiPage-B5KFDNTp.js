@@ -1,4 +1,4 @@
-import{c as x,r as T,j as i,L as U,I as D,B as v,J as z,w as be,K as we,M as ve,f as N,N as Ce,y as B,O as se,a as V,s as Se,Q as Te,S as K,q as ke,U as xe,V as le,z as Ae,u as he,W as J,X as He,Y as O,Z as Ge,_ as Ie,$ as q,a0 as Ne,a1 as Re}from"./index-Csdg2IQu.js";import{l as De}from"./lore-08CTWJsY.js";import{h as Ee}from"./machine_hacks-CcpeyI32.js";import{H as de,B as Z,I as ce,a as Pe,L as Me,b as Le,u as Fe}from"./BotDetails-CokYcsCf.js";import{T as $,a as _,u as Be}from"./ItemPopover-XRmTRaUf.js";import{S as We}from"./Table-TgezPk1X.js";import{e as Oe}from"./partColumnDefs-DjgXbTb9.js";/* empty css              */import"./bots-BsBiS4QJ.js";import"./simulatorCalcs-B7pdV2PI.js";import"./items-RjbLE1iR.js";const qe=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:'12-ASH is one of the [[Heroes of Zion]]. Upon appearing, they will shout "hail to the king".'},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"6S-H0T",Content:`6S-H0T is a part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[6S-H0T's Six Shooter]], is a powerful perfectly accurate gun with a high blast critical chance. With a [[Exp. Reaction Control System]], [[Exp. Propulsion Shielding|Exp. Propulsion]] and [[Exp. Weapon Shielding|Weapon Shieldings]], and an incredibly low 15% core exposure, 6S-H0T is no defensive slouch either. Trying to pin this Unchained down is a tall order.
+import{c as x,r as T,j as i,L as U,I as D,B as v,J as z,w as be,K as we,M as ve,f as N,N as Ce,y as B,O as se,a as V,s as Se,Q as Te,S as K,q as ke,U as xe,V as le,z as Ae,u as he,W as J,X as He,Y as O,Z as Ge,_ as Ie,$ as q,a0 as Ne,a1 as Re}from"./index-CVj3Cf9T.js";import{l as De}from"./lore-08CTWJsY.js";import{h as Ee}from"./machine_hacks-CcpeyI32.js";import{H as de,B as Z,I as ce,a as Pe,L as Me,b as Le,u as Fe}from"./BotDetails-vh4Dt_wC.js";import{T as $,a as _,u as Be}from"./ItemPopover-BA-Yt_6x.js";import{S as We}from"./Table-Ba7N48NR.js";import{e as Oe}from"./partColumnDefs-BYpagc-Q.js";/* empty css              */import"./bots-BsBiS4QJ.js";import"./simulatorCalcs-CW8TGDyA.js";import"./items-RjbLE1iR.js";const qe=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:'12-ASH is one of the [[Heroes of Zion]]. Upon appearing, they will shout "hail to the king".'},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"6S-H0T",Content:`6S-H0T is a part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[6S-H0T's Six Shooter]], is a powerful perfectly accurate gun with a high blast critical chance. With a [[Exp. Reaction Control System]], [[Exp. Propulsion Shielding|Exp. Propulsion]] and [[Exp. Weapon Shielding|Weapon Shieldings]], and an incredibly low 15% core exposure, 6S-H0T is no defensive slouch either. Trying to pin this Unchained down is a tall order.
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]Cyclists Records|UC/6S-H0T[[/Lore]]
@@ -1004,10 +1004,10 @@ Weapons|Time to fire|Time per weapon||
 [[CellStyle:Neutral]][[B]]1 with QC[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]||
 1|200|[[CellStyle:Bad]]200||
 2|300|[[CellStyle:Bad]]150||
-3|325|[[CellStyle:Bad]]108â||
-4|350|[[CellStyle:Good]]â87Â½||
-5|375|[[CellStyle:Good]]â75||
-6|400|[[CellStyle:Good]]â66â
+3|325|[[CellStyle:Bad]]108⅓||
+4|350|[[CellStyle:Good]] 87½||
+5|375|[[CellStyle:Good]] 75||
+6|400|[[CellStyle:Good]] 66⅔
 [[/Table]]
 
 The Quantum Capacitor has several benefits on top of firing time:
@@ -1458,7 +1458,7 @@ Caves checkpoints are square-shaped open spaces with a guard positioned at the c
 There are three types of checkpoints:
 [[Table]]
 Central guard|Alignment|Square size|Possible additional guards|Formation||
-[[Mutant]]|Friendly (Warlord)|7x7|0, 2 or 4 [[Thug|Thugs]], [[Butcher|Butchers]] or [[Savage|Savages]]|X, / or \\\\-shaped||
+[[Mutant]]|Friendly (Warlord)|7x7|0, 2 or 4 [[Thug|Thugs]], [[Butcher|Butchers]] or [[Savage|Savages]]|X, / or \\\\\\\\-shaped||
 Sentry|Hostile (0b10)|7x7|[[Swarmer|Swarmers]], [[Grunt|Grunts]], [[Duelist|Duelists]] or [[Brawler|Brawlers]]|Chaotic||
 [[Behemoth]]|Hostile (0b10)|6x6|None|N/A
 [[/Table]]
@@ -1780,7 +1780,7 @@ There are more ways to interact with FarCom without just taking a single vault i
 
 [[Heading]]Variations[[/Heading]]
 There are several variations of the Exiles map that can change things dramatically. In the majority of maps, the Exiles are present. However, there are 2 possible variations in the maps:
-[[Image]]Exiles Attacked.png|Attacked Exiles vault[[/Image]][[List]]Abandoned Exiles: In this map, the Exiles have all fled the map and taken nearly everything on the map as well. Neither FarCom nor any vault items are obtainable in this seed. However, EX-DEC may be found in [[Spoiler]][[Warlord (Location)|Warlord]] in the Vortex Lab[[/Spoiler]] in these seeds.|Attacked Exiles: In this map, the Exiles have been attacked and are missing. There are disabled and rewirable bots on the map and random parts on the ground. FarCom is not obtainable on this seed, but one random vault prototype is available by using the manual code [[Spoiler]][[GameText]]\\\\1234[[/GameText]][[/Spoiler]] on the vault terminal.|While not changing the map in any way, there is a chance that a large [[0b10]] attack force will assault the Exiles base after using the FarCom machine and exiting the vault.[[/List]]
+[[Image]]Exiles Attacked.png|Attacked Exiles vault[[/Image]][[List]]Abandoned Exiles: In this map, the Exiles have all fled the map and taken nearly everything on the map as well. Neither FarCom nor any vault items are obtainable in this seed. However, EX-DEC may be found in [[Spoiler]][[Warlord (Location)|Warlord]] in the Vortex Lab[[/Spoiler]] in these seeds.|Attacked Exiles: In this map, the Exiles have been attacked and are missing. There are disabled and rewirable bots on the map and random parts on the ground. FarCom is not obtainable on this seed, but one random vault prototype is available by using the manual code [[Spoiler]][[GameText]]\\\\\\\\1234[[/GameText]][[/Spoiler]] on the vault terminal.|While not changing the map in any way, there is a chance that a large [[0b10]] attack force will assault the Exiles base after using the FarCom machine and exiting the vault.[[/List]]
 
 [[Heading]]Fighting[[/Heading]]
 Fighting the Exiles is a challenging yet rewarding endeavor. Although they are normally friendly, they can pack quite a punch and will likely end the run of any unprepared player. As far as rewards go, [[8R-AWN]] has some powerful unique [[8R-AWN's Boregun|Boreguns]] with a high salvage and destroy critical %, out-of-depth parts including [[Exp. Heat Sink]], [[Adv. Weapon Cycler]], [[Exp. Targeting Computer]], and [[Adv. Myomer Leg]]. Another unique part, the [[AS-neutralizer No. 17b]] is very helpful in a later game branch [[Zion Deep Caves]]. Other useful parts on some of the Exiles themselves are [[Adv. Component Analysis Suite]], [[System Purifier]], [[Cmb. Antigrav System]], [[Imp. Armor Integrity Analyzer]], [[Exp. Core Analyzer]], and [[Adv. Transmission Jammer]].
@@ -2129,7 +2129,7 @@ Some of the unique parts on this map come in uniquely identifiable prefabs. Othe
 [[List]][[Core Cannon]]|[[Core Stripper]]|[[Matter Drive]]|[[Phase Armor]]|[[Phase Redirector]]|[[Sigix Broadsword]][[/List]]
 [[Heading:2]]Exits[[/Heading]]
 There is always 1, and possibly 3 exits in Quarantine:
-[[List]]Main access exit: There will always be 1 exit that leads to the next main Research or [[Access]] floor. It will always be at a dead end at a tile corridor near the top-middle or bottom-middle of the map.|[[Redacted]]Section 7 and Protoforge exits: These exits only appears some of the time. These exits can only happen after Quarantine, but are not necessarily on the same floor. A large 4 tile doorway will show up on the middle of the map, on the right side of where the map typically ends. It will open up into a 6 tile hallway and a [[Fortress]] will be guarding the path to the exits. These exits will be closed if Cogmind is FarCom aligned.[[/Redacted]][[/List]]`,Exits:[{Map:"Research",Depths:"-3"},{Map:"Garrison",Depths:"-3 to -2"},{Map:"Protoforge",Depths:"-3 to -2"},{Map:"Section 7",Depths:"-3 to -2"},{Map:"Access",Depths:"-2"}],SpecialBots:["Alpha 7","Fortress","Lightning","Quarantine Guard"],SpecialItems:["Core Cannon","Core Reset Matrix","Core Stripper","Dimensional Node Initializer","Hpw. Transdimensional Reconstructor","Matter Drive","Phase Armor","Phase Redirector","Sigix Broadsword","Sigix Containment Pod","Sigix Corpse","Sigix Terminator","Subatomic Replicator","Terrabomb","Transdimensional Reconstructor"],MinDepth:-3,MaxDepth:-2,Branch:!0,Spoiler:"Spoiler"},{Name:"Recycling",ImageName:"Recycling.png",Content:`Recycling is an early game [[0b10]]-controlled [[Branch]] with few active combat hostiles. The 3 ways to enter this branch are by using the [[GameText]]\\\\IAMDERELICT[[/GameText]] code at the Recycling exit in [[Storage]], by entering a Storage [[Garrison Access|Garrisons]] and looping back into this floor instead of proceeding to the next depth, or by taking the guarded exit in [[Subcaves]]. There are a few dormant [[Sentry|Sentries]] guarding hallways and several more in rooms with large amounts of rewirable bots. Unlike most 0b10 maps, more combat bots will not be summoned in any scenario. Recycling is unique in that it forces a skipped depth. For example, entering a Storage map on -8 leads to a Recycling map on -8 that leads to a [[Factory]] map on -6 rather than -7 like most branches.
+[[List]]Main access exit: There will always be 1 exit that leads to the next main Research or [[Access]] floor. It will always be at a dead end at a tile corridor near the top-middle or bottom-middle of the map.|[[Redacted]]Section 7 and Protoforge exits: These exits only appears some of the time. These exits can only happen after Quarantine, but are not necessarily on the same floor. A large 4 tile doorway will show up on the middle of the map, on the right side of where the map typically ends. It will open up into a 6 tile hallway and a [[Fortress]] will be guarding the path to the exits. These exits will be closed if Cogmind is FarCom aligned.[[/Redacted]][[/List]]`,Exits:[{Map:"Research",Depths:"-3"},{Map:"Garrison",Depths:"-3 to -2"},{Map:"Protoforge",Depths:"-3 to -2"},{Map:"Section 7",Depths:"-3 to -2"},{Map:"Access",Depths:"-2"}],SpecialBots:["Alpha 7","Fortress","Lightning","Quarantine Guard"],SpecialItems:["Core Cannon","Core Reset Matrix","Core Stripper","Dimensional Node Initializer","Hpw. Transdimensional Reconstructor","Matter Drive","Phase Armor","Phase Redirector","Sigix Broadsword","Sigix Containment Pod","Sigix Corpse","Sigix Terminator","Subatomic Replicator","Terrabomb","Transdimensional Reconstructor"],MinDepth:-3,MaxDepth:-2,Branch:!0,Spoiler:"Spoiler"},{Name:"Recycling",ImageName:"Recycling.png",Content:`Recycling is an early game [[0b10]]-controlled [[Branch]] with few active combat hostiles. The 3 ways to enter this branch are by using the [[GameText]]\\\\\\\\IAMDERELICT[[/GameText]] code at the Recycling exit in [[Storage]], by entering a Storage [[Garrison Access|Garrisons]] and looping back into this floor instead of proceeding to the next depth, or by taking the guarded exit in [[Subcaves]]. There are a few dormant [[Sentry|Sentries]] guarding hallways and several more in rooms with large amounts of rewirable bots. Unlike most 0b10 maps, more combat bots will not be summoned in any scenario. Recycling is unique in that it forces a skipped depth. For example, entering a Storage map on -8 leads to a Recycling map on -8 that leads to a [[Factory]] map on -6 rather than -7 like most branches.
 The main benefits to going to Recycling are for [[Scraptown]] or obtaining the unique [[Scrap Engine]] from the scraplab. Because there are no combat reinforcements of any kind, there are few downsides to getting traced at all of the [[Terminal|Terminals]] and [[Recycling Unit|Recycling Units]] aside from minor [[Alert]] gain. There are a large number of Recycling Units on this map and using [[GameText]]Force(Tunnel)[[/GameText]] on all of them can be very helpful in uncovering the depths of many maps in the floors above. There are commonly a large number of [[Corrupted Parts|corrupted]] [[Authchips]] available for players who want to do a lot of [[Fabricator|Fabrication]]. A small army can be raised off of the rewirable bots in some of the rooms, though tend to be heavily damaged.
 
 [[Heading]]Notable Locations[[/Heading]]
@@ -2319,7 +2319,7 @@ Storage is notable for the large number of prototype parts available. Unique she
 All of the special loot in Storage comes in the form of vaults and shells. The shells will only contain standard floor rating non-prototype and prototype parts. However, some of the vaults contain very out of depth prototype parts. The single item locked vault and the vault full of traps can contain rating 5* prototypes that are far out of depth compared to the normal Storage depths. These vaults can contain great items like [[Cld. Plasma Cannon]], [[Exp. Targeting Computer]], and even a semi-unique part [[Lgt. Regenerative Plating]]. Shells must be broke open by a weapon, while vaults must be hacked open via [[Terminal]]. Some vaults will already be open on entering the map.
 [[Heading:2]]Exits[[/Heading]]
 There are 2 types of exits in Storage:
-[[List]]Main access exits: These always lead to the next main floor, either [[Materials]] or [[Factory]]. There is only one of these types of exits on the map and it will always be in the opposite corner of the map that Cogmind starts at.|[[Spoiler]][[Recycling]] exit: There is only one of these types of exits on the map and it will be in one of the remaining corners that the starting point and main access exit aren't in. This exit is blocked off by a [[Terminal]] with no Open hack. The only way past is to enter the special manual hack \\\\IAMDERELICT.[[/Spoiler]][[/List]]
+[[List]]Main access exits: These always lead to the next main floor, either [[Materials]] or [[Factory]]. There is only one of these types of exits on the map and it will always be in the opposite corner of the map that Cogmind starts at.|[[Spoiler]][[Recycling]] exit: There is only one of these types of exits on the map and it will be in one of the remaining corners that the starting point and main access exit aren't in. This exit is blocked off by a [[Terminal]] with no Open hack. The only way past is to enter the special manual hack \\\\\\\\IAMDERELICT.[[/Spoiler]][[/List]]
 [[Image]]Storage Derelict Unlocked Vault.png|Unlocked vault raided by friendly [[Thug (5)|Derelicts]][[/Image]][[Image]]MTF Vault.png|Unlocked vault raided by [[01-MTF]][[/Image]]
 
 [[Heading]]Events[[/Heading]]
@@ -5144,7 +5144,7 @@ Just Browsing: Reach 25% gallery collection.
 Made in Tau Ceti IV: Enter [[Factory]].
 |Dangerous Findings: Enter [[Research]].
 |Denied?: Enter [[Access]].
-|\\\\IAMDERELICT: [[Spoiler]]Enter [[Recycling]] via [[Storage]].[[/Spoiler]]
+|\\\\\\\\IAMDERELICT: [[Spoiler]]Enter [[Recycling]] via [[Storage]].[[/Spoiler]]
 |I'm Back, Baby!: Exit [[Caves|Proximity Caves]].
 |Tourist: Visit 3 branch areas.
 |Adventurer: Visit 2 special cave areas.
@@ -9604,14 +9604,14 @@ For example, if a bot has equipped:
 [[/List]]
 its total mass is 14. Its movement speed depends on which propulsion unit it has activated:
 [[List]]
-With the treads: The bot is underweight (14 â¤ 20). The time to move one tile is 160.
-|With the wheel: The bot is 1 time overweight (10 < 14 â¤ 20). The time to move one tile is 80 + 15 = 95.
-|With neither (core propulsion): The bot is 4 times overweight (12 < 14 â¤ 15). The time to move one tile is 50 + (50 Ã 4) = 250.
+With the treads: The bot is underweight (14 ≤ 20). The time to move one tile is 160.
+|With the wheel: The bot is 1 time overweight (10 < 14 ≤ 20). The time to move one tile is 80 + 15 = 95.
+|With neither (core propulsion): The bot is 4 times overweight (12 < 14 ≤ 15). The time to move one tile is 50 + (50 × 4) = 250.
 [[/List]]
 
 [[Heading:2]]Formula[[/Heading]]
 Mathematically, the amount of time it takes a bot to move one tile (ignoring mechanics for flight and hover units) is
-Î£[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + âmax(0, [[I]]m[[/I]] â 1)/Î£[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]â(Î£[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
+Σ[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + ⌊max(0, [[I]]m[[/I]] − 1)/Σ[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]⌋(Σ[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
 where
 [[List]]
 [[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the mass support for propulsion unit [[I]]i[[/I]]
@@ -9620,7 +9620,7 @@ where
 |[[I]]m[[/I]] is the total mass of all attached parts
 |[[I]]n[[/I]] is the total number of activated propulsion units
 [[/List]]
-and all sums Î£ are over all activated propulsion units.
+and all sums Σ are over all activated propulsion units.
 
 [[Heading]]Flight and Hover Units[[/Heading]]
 Flight and hover units calculate their movement speed in the same basic way as legs, treads, and wheels, but they have the following additional mechanics that affect movement speed:
