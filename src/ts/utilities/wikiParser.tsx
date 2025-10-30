@@ -2416,7 +2416,7 @@ function splitOutsideActions(string: string, delimiter = "|") {
         index = actionStartIndex + 2;
         let actionEndIndex = string.indexOf("]]", index);
 
-        const tag = string.substring(index, actionEndIndex);
+        const tag = string.substring(index, actionEndIndex).split(":")[0];
 
         actionStartIndex = string.indexOf("[[", index);
         let numTags = 1;
