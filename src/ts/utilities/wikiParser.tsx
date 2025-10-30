@@ -4,7 +4,7 @@ import React, { Fragment, ReactNode } from "react";
 import lore from "../../json/lore.json";
 import hacks from "../../json/machine_hacks.json";
 import BotDetails from "../components/GameDetails/BotDetails";
-import { TooltipTexts } from "../components/GameDetails/Details";
+import { RangeLine, TooltipTexts } from "../components/GameDetails/Details";
 import ItemDetails from "../components/GameDetails/ItemDetails";
 import { LinkIcon } from "../components/Icons/Icons";
 import WikiGroupInfobox from "../components/Pages/WikiPage/WikiGroupNavbox";
@@ -1885,7 +1885,7 @@ function processLoreTag(state: ParserState, result: RegExpExecArray) {
         });
         state.output.push({ groupType: "Separator", node: undefined });
     }
-    
+
     state.output.push({
         groupType: "Grouped",
         node: <span className="wiki-game-text">{entry["Content"]}</span>,
@@ -1918,6 +1918,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["SpoilerHidden", processSpoilerHiddenTag],
     ["Sub", processSubTag],
     ["Sup", processSupTag],
+    ["Range", processRangeTag],
     ["Redacted", processSpoilerTag],
     ["RedactedExpandable", processSpoilerExpandableTag],
     ["RedactedHidden", processSpoilerHiddenTag],
@@ -1996,7 +1997,8 @@ function processSection(state: ParserState, endTag: string | undefined) {
                     result[1] === "Link" ||
                     result[1] === "Color" ||
                     result[1] === "Comment" ||
-                    result[1] === "TooltipText"
+                    result[1] === "TooltipText" ||
+                    result[1] === "Range"
                 ) {
                     actionFunc!(state, result);
                 } else if (actionFunc !== undefined) {
@@ -2191,6 +2193,25 @@ function processSupTag(state: ParserState, result: RegExpExecArray) {
     state.output.push({ groupType: "Grouped", node: superscriptContent });
 }
 
+// Process a Range tag like [[Range]]1|5[[/Range]]
+function processRangeTag(state: ParserState, result: RegExpExecArray) {
+    const endIndex = state.initialContent.indexOf("[[/Range]]", state.index);
+    const split = state.initialContent.substring(result.index + result[0].length, endIndex).split("|");
+
+    if (split.length === 2) {
+        const value = parseInt(split[0]);
+        const maxBars = parseInt(split[1]);
+
+        state.output.push({
+            groupType: "Grouped",
+            node: <RangeLine colorScheme="HighGood" maxBars={maxBars} maxValue={maxBars} minValue={0} value={value} />,
+        });
+    } else {
+        recordError(state, "Expected 1 | in Range tag");
+    }
+    state.index = endIndex + "[[/Range]]".length;
+}
+
 // Processes table tag like [[Table]]Header 1|Header 2||Item 1|Item 2||Item 3|Item 4[[/Table]]
 function processTableTag(state: ParserState, result: RegExpExecArray) {
     // Find [[/Table]] closing tag first
@@ -2335,7 +2356,7 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
 
 // Process a TooltipText tag like [[TooltipText]]Tooltip Category[[/TooltipText]]
 function processTooltipText(state: ParserState, result: RegExpExecArray) {
-    const endIndex = state.initialContent.indexOf("[[/TooltipText]]");
+    const endIndex = state.initialContent.indexOf("[[/TooltipText]]", state.index);
     const category = state.initialContent.substring(result.index + result[0].length, endIndex);
     state.index = endIndex + "[[/TooltipText]]".length;
 

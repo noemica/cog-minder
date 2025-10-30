@@ -441,53 +441,12 @@ export function DetailsRangeLine({
         valueNode = <>{valueString + unitString}</>;
     }
 
-    // Determine bars and spacing
-    const maxBars = 22;
-    const numSpaces = 23 - 1 - 1 - category.length - (valueString as string).length - unitString.length;
-    let valuePercentage: number;
-    if (maxValue - minValue === 0) {
-        valuePercentage = 1;
-    } else {
-        valuePercentage = value / (maxValue - minValue);
-    }
-
-    let fullBars = Math.min(Math.floor(maxBars * valuePercentage), 22);
-
-    // Always round away from 0
-    // This allows for things like 1/100 to show 1 bar rather than 0
-    if (fullBars === 0 && value != minValue) {
-        fullBars = 1;
-    }
-
-    if (minValue === maxValue) {
-        fullBars = 0;
-    }
-    const emptyBars = maxBars - fullBars;
-
-    // Determine color
-    let colorClass: string;
-    if (valuePercentage < 0.25) {
-        colorClass = colorSchemes[colorScheme].Low;
-    } else if (valuePercentage < 0.5) {
-        colorClass = colorSchemes[colorScheme].MidLow;
-    } else if (valuePercentage < 0.75) {
-        colorClass = colorSchemes[colorScheme].MidHigh;
-    } else {
-        colorClass = colorSchemes[colorScheme].High;
-    }
-
     // Create bars HTML string
-    let barsNode: ReactNode;
-    if (emptyBars > 0) {
-        barsNode = (
-            <>
-                <span className={colorClass}>{"▮".repeat(fullBars)}</span>
-                <span className="details-range-dim">{"▯".repeat(emptyBars)}</span>
-            </>
-        );
-    } else {
-        barsNode = <span className={colorClass}>{"▮".repeat(fullBars)}</span>;
-    }
+    const barsNode = (
+        <RangeLine colorScheme={colorScheme} maxBars={22} maxValue={maxValue} minValue={minValue} value={value} />
+    );
+
+    const numSpaces = 23 - 1 - 1 - category.length - (valueString as string).length - unitString.length;
 
     // Return full HTML
     return wrapInToolTipIfExists(
@@ -558,6 +517,70 @@ export default function DetailsValueLine({
         tooltipOverride || valueString,
         category,
     );
+}
+
+export function RangeLine({
+    colorScheme,
+    maxBars,
+    maxValue,
+    minValue,
+    value,
+}: {
+    colorScheme: ColorScheme;
+    maxBars: number;
+    maxValue: number;
+    minValue: number;
+    value: number;
+}) {
+    // Determine bars and spacing
+    let valuePercentage: number;
+    if (maxValue - minValue === 0) {
+        valuePercentage = 1;
+    } else {
+        valuePercentage = value / (maxValue - minValue);
+    }
+
+    // Enforce at least 1 bar
+    maxBars = Math.max(maxBars, 1);
+    let fullBars = Math.min(Math.floor(maxBars * valuePercentage), value);
+
+    // Always round away from 0
+    // This allows for things like 1/100 to show 1 bar rather than 0
+    if (fullBars === 0 && value != 0) {
+        fullBars = 1;
+    }
+
+    if (minValue === maxValue) {
+        fullBars = 0;
+    }
+
+    fullBars = Math.min(Math.max(fullBars, 0), maxBars);
+
+    const emptyBars = maxBars - fullBars;
+
+    // Determine color
+    let colorClass: string;
+    if (valuePercentage < 0.25) {
+        colorClass = colorSchemes[colorScheme].Low;
+    } else if (valuePercentage < 0.5) {
+        colorClass = colorSchemes[colorScheme].MidLow;
+    } else if (valuePercentage < 0.75) {
+        colorClass = colorSchemes[colorScheme].MidHigh;
+    } else {
+        colorClass = colorSchemes[colorScheme].High;
+    }
+
+    // Create bars HTML string
+    if (emptyBars > 0) {
+        return (
+            <>
+                <span className={colorClass}>{"▮".repeat(fullBars)}</span>
+                <span className="details-range-dim">{"▯".repeat(emptyBars)}</span>
+            </>
+        );
+    } else {
+        return <span className={colorClass}>{"▮".repeat(fullBars)}</span>;
+    }
 }
 
 export function WikiLink({ wikiPage }: { wikiPage: string }) {

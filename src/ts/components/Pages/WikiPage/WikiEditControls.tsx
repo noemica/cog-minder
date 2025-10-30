@@ -126,6 +126,12 @@ export default function WikiEditControls({
                     Game Text
                 </Button>
                 <Button
+                    tooltip="Provides a game-style range bar with the specified number of filled and total squares."
+                    onClick={() => insertWrappedText("[[Range]]", "[[/Range]]")}
+                >
+                    Range
+                </Button>
+                <Button
                     tooltip='Provides text that matches a tooltip by the same name. For example, Tooltip Text of "Burn" shows the burn critical description.'
                     onClick={() => insertWrappedText("[[TooltipText]]", "[[/TooltipText]]")}
                 >
