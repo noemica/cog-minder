@@ -71,6 +71,7 @@ export type Bot = {
     heatDissipation: number;
     immunities: BotImmunity[];
     immunitiesString: string;
+    injectorDissipation: number;
     inventorySize?: string;
     locations: BotLocation[];
     mass: number;
@@ -79,6 +80,12 @@ export type Bot = {
     movement: string;
     movementOverloaded?: string;
     name: string;
+    netEnergyPerMove: number;
+    netEnergyPerTurn: number;
+    netEnergyPerVolley: number | undefined;
+    netHeatPerMove: number;
+    netHeatPerTurn: number;
+    netHeatPerVolley: number | undefined;
     profile: string;
     propulsionType: ItemType | undefined,
     rating: string;

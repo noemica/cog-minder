@@ -126,6 +126,7 @@ export type EnergyFilter = { kind: "EnergyFilter"; percent: number };
 export type EnergyStorage = { kind: "EnergyStorage"; storage: number };
 export type HardlightGenerator = { kind: "HardlightGenerator"; amount: number };
 export type HeatDissipation = { kind: "HeatDissipation"; dissipation: number };
+export type Injector = { kind: "Injector"; dissipation: number };
 export type Kinecellerator = { kind: "Kinecellerator"; amount: number };
 export type LauncherGuidance = { kind: "LauncherGuidance"; bonus: number };
 export type LauncherLoader = { kind: "LauncherLoader" };
@@ -166,6 +167,7 @@ export type SpecialPropertyType =
     | EnergyStorage
     | HardlightGenerator
     | HeatDissipation
+    | Injector
     | Kinecellerator
     | LauncherLoader
     | LauncherGuidance
@@ -206,6 +208,7 @@ export type SpecialPropertyTypeName =
     | "EnergyStorage"
     | "HardlightGenerator"
     | "HeatDissipation"
+    | "Injector"
     | "Kinecellerator"
     | "LauncherLoader"
     | "LauncherGuidance"

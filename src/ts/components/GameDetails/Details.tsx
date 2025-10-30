@@ -64,8 +64,16 @@ export const TooltipTexts = {
     Value: "The amount of score that will be obtained if the bot is destroyed.",
     "Energy Generation":
         "The amount of energy this bot generates per turn, not taking upkeep into account. This also includes any hidden energy generation bonuses that a bot may have hardcoded.",
+    "Net Energy/Turn": "The amount of energy this bot generates or loses each turn if it stands still.",
+    "Net Energy/Move": "The amount of energy this bot generates or loses when it makes a move.",
+    "Net Energy/Volley": "The amount of energy this bot generates or loses when it fires a volley.",
     "Heat Dissipation":
         "The amount of heat this bot dissipates per turn, including cooling utilities and hidden innate dissipation bonus that a bot may have hardcoded.",
+    "Injector Dissipation":
+        "The amount of heat this bot can dissipate per turn when using Coolant Injectors. This is applied on top of standard Heat Dissipation.",
+    "Net Heat/Turn": "The amount of heat this bot generates or dissipates each turn if it stands still.",
+    "Net Heat/Move": "The amount of heat this bot generates or dissipates each turn when it makes a move.",
+    "Net Heat/Volley": "The amount of heat this bot generates or dissipates each turn when it fires a volley.",
     "Visual Range": "The distance a bot can see.",
     Memory: "The base number of actions a bot will take before it loses tracking of a hostile. This number can be affected by corruption and ECM Suites.",
     "Spot %":
@@ -202,9 +210,12 @@ export const TooltipTexts = {
     Branch: "Whether this location is a main floor or a branch floor.",
 
     // Attacking information
-    "Damage/Turn": "The average amount of damage this robot deals per turn that it is actively firing. If multiple item options are available for the robot, the first one is chosen.",
-    "Damage/Volley": "The average amount of damage this robot deals per volley. If multiple item options are available for the robot, the first one is chosen.",
-    "Volley Time": "The amount of time it takes for this robot to fire a volley, in time units (1/100ths of a turn). If multiple item options are available for the robot, the first one is chosen.",
+    "Damage/Turn":
+        "The average amount of damage this robot deals per turn that it is actively firing. If multiple item options are available for the robot, the first one is chosen.",
+    "Damage/Volley":
+        "The average amount of damage this robot deals per volley. If multiple item options are available for the robot, the first one is chosen.",
+    "Volley Time":
+        "The amount of time it takes for this robot to fire a volley, in time units (1/100ths of a turn). If multiple item options are available for the robot, the first one is chosen.",
 };
 
 // Color schemes

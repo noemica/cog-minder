@@ -6,8 +6,10 @@ import {
     ActuatorArray,
     EnergyStorage,
     FabricationStats,
+    Injector,
     Item,
     ItemType,
+    ItemWithUpkeep,
     Kinecellerator,
     MassSupport,
     MeleeAnalysis,
@@ -166,7 +168,7 @@ export class BotData {
             // Turn component names into list of active items
             // For options, work with the first option
             const components: Item[] = [];
-            bot.Components?.forEach((data) => {
+            for (const data of bot.Components || []) {
                 if (typeof data === "string") {
                     components.push(itemData.getItem(data));
                 } else {
@@ -175,7 +177,7 @@ export class BotData {
                         components.push(item);
                     }
                 }
-            });
+            }
 
             // Base energy is fixed at 100 for almost every bot
             // Large botcubes do have 200 base energy, though since their loadout
@@ -183,11 +185,11 @@ export class BotData {
             // support this here
             let maxEnergy = 100;
 
-            components.forEach((item) => {
+            for (const item of components) {
                 if (hasActiveSpecialProperty(item, true, "EnergyStorage")) {
                     maxEnergy += (item.specialProperty!.trait as EnergyStorage).storage;
                 }
-            });
+            }
 
             let propulsionType: ItemType | undefined;
             const support = components
@@ -209,9 +211,54 @@ export class BotData {
                 })
                 .reduce(sum, 0);
 
+            // Calculate injector dissipation
+            let injectorDissipation = 0;
+            for (const item of components) {
+                if (hasActiveSpecialProperty(item, true, "Injector")) {
+                    injectorDissipation += (item.specialProperty!.trait as Injector).dissipation;
+                }
+            }
+
+            // Calculate energy/heat stats
+            let energyGeneration = parseIntOrDefault(bot["Energy Generation"], 0);
+            let heatDissipation = parseIntOrDefault(bot["Heat Dissipation"], 0);
+            let netEnergyPerTurn = energyGeneration;
+            let netHeatPerTurn = -heatDissipation;
+            let energyPerMove = 0;
+            let heatPerMove = 0;
+            for (const item of components) {
+                if (item.slot === "Power" || item.slot === "Propulsion" || item.slot === "Utility") {
+                    netEnergyPerTurn -= (item as ItemWithUpkeep).energyUpkeep || 0;
+                    netHeatPerTurn += (item as ItemWithUpkeep).heatGeneration || 0;
+                }
+
+                if (item.slot === "Propulsion") {
+                    energyPerMove += (item as PropulsionItem).energyPerMove || 0;
+                    heatPerMove += (item as PropulsionItem).heatPerMove || 0;
+                }
+            }
+
+            // Calculate move energy/heat stats
+            const speed = parseInt(bot.Speed);
+            let netEnergyPerMove = Math.trunc((speed / 100) * netEnergyPerTurn - energyPerMove);
+            let netHeatPerMove = Math.trunc((speed / 100) * netHeatPerTurn + heatPerMove);
+
             const mass = components.map((item) => item.mass || 0).reduce(sum, 0);
 
-            const { damagePerTurn, damagePerVolley, volleyTime } = BotData.calculateDamage(bot, components, itemData);
+            const { damagePerTurn, damagePerVolley, energyPerVolley, heatPerVolley, volleyTime } =
+                BotData.calculateArmamentStats(bot, components, itemData);
+
+            // Calculate volley energy/heat stats
+            let netEnergyPerVolley: number | undefined;
+            let netHeatPerVolley: number | undefined;
+
+            if (volleyTime === undefined) {
+                netEnergyPerVolley = undefined;
+                netHeatPerVolley = undefined;
+            } else {
+                netEnergyPerVolley = Math.trunc((volleyTime / 100) * netEnergyPerTurn - energyPerVolley);
+                netHeatPerVolley = Math.trunc((volleyTime / 100) * netHeatPerTurn + heatPerVolley);
+            }
 
             const newBot: Bot = {
                 armament: bot.Armament ?? [],
@@ -230,11 +277,12 @@ export class BotData {
                 damagePerTurn: damagePerTurn,
                 damagePerVolley: damagePerVolley,
                 description: description,
-                energyGeneration: parseIntOrDefault(bot["Energy Generation"], 0),
+                energyGeneration: energyGeneration,
                 fabrication: fabrication,
-                heatDissipation: parseIntOrDefault(bot["Heat Dissipation"], 0),
+                heatDissipation: heatDissipation,
                 immunities: bot.Immunities ?? [],
                 immunitiesString: bot.Immunities?.join(", ") ?? "",
+                injectorDissipation: injectorDissipation,
                 inventorySize: bot["Inventory Capacity"],
                 locations: extraData?.Locations ?? [],
                 mass: mass,
@@ -246,6 +294,12 @@ export class BotData {
                         ? `${bot.Movement} (${bot["Overload Speed"]}/${bot["Overload Speed %"]}%)`
                         : undefined,
                 name: botName,
+                netEnergyPerMove: netEnergyPerMove,
+                netEnergyPerTurn: netEnergyPerTurn,
+                netEnergyPerVolley: netEnergyPerVolley,
+                netHeatPerMove: netHeatPerMove,
+                netHeatPerTurn: netHeatPerTurn,
+                netHeatPerVolley: netHeatPerVolley,
                 profile: bot.Profile,
                 propulsionType: propulsionType,
                 rating: bot.Rating,
@@ -253,7 +307,7 @@ export class BotData {
                 salvageHigh: salvageHigh,
                 salvageLow: salvageLow,
                 salvagePotential: bot["Salvage Potential"],
-                speed: parseInt(bot.Speed),
+                speed: speed,
                 spotPercent: bot["Spot %"] ?? "100",
                 spoiler: extraData?.Categories.includes(BotCategory.Redacted)
                     ? "Redacted"
@@ -277,7 +331,7 @@ export class BotData {
         });
     }
 
-    private static calculateDamage(bot: JsonBot, components: Item[], itemData: ItemData) {
+    private static calculateArmamentStats(bot: JsonBot, components: Item[], itemData: ItemData) {
         function isMeleeWeapon(part: Item) {
             return (
                 part.type === "Impact Weapon" ||
@@ -347,6 +401,9 @@ export class BotData {
             volleyTime = volleyTimeMap[6];
         }
 
+        let heatPerVolley = 0;
+        let energyPerVolley = 0;
+
         // Calculate damage per volley
         const damagePerVolley =
             armament
@@ -397,8 +454,16 @@ export class BotData {
 
                         // Adjust volley time by half of the delay
                         volleyTime += (followUpChance * (part.delay || 0)) / 2;
+
+                        // Add melee heat/energy costs proportionally
+                        heatPerVolley += (part.shotHeat || 0) * followUpChance;
+                        energyPerVolley += (part.shotEnergy || 0) * followUpChance;
                     } else {
                         volleyTime += part.delay || 0;
+
+                        // Add heat/energy costs that aren't melee followups directly
+                        heatPerVolley += part.shotHeat || 0;
+                        energyPerVolley += part.shotEnergy || 0;
                     }
 
                     return part.projectileCount * Math.trunc((minDamage + maxDamage) / 2);
@@ -448,7 +513,13 @@ export class BotData {
         volleyTime = Math.max(volleyTime, 25);
         const damagePerTurn = (damagePerVolley / volleyTime) * 100;
 
-        return { damagePerTurn: damagePerTurn, damagePerVolley: damagePerVolley, volleyTime: volleyTime };
+        return {
+            damagePerTurn: damagePerTurn,
+            damagePerVolley: damagePerVolley,
+            energyPerVolley: energyPerVolley,
+            heatPerVolley: heatPerVolley,
+            volleyTime: volleyTime,
+        };
     }
 
     public getAllBots() {
