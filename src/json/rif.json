@@ -706,12 +706,6 @@
                     "Description": "Mark all active security positions within a range of 40."
                 },
                 {
-                    "Name": "relay_feed",
-                    "Rif": true,
-                    "Charges": 5,
-                    "Description": "Permanently hook into the sensor feed system, receiving scan data transmissions from up to a range of 20 from Watcher's position."
-                },
-                {
                     "Name": "map_route",
                     "Rif": true,
                     "Charges": 10,

@@ -339,7 +339,6 @@ function addOther(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, 
         }
     }
 
-    //
     function combineRootChildrenIntoGroups(entry: WikiEntry) {
         const rootChildEntries: WikiEntry[] = [];
 
