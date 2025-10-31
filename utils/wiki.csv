@@ -1,4 +1,4 @@
-﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
+"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","",""
 "01-MTF's Autohacker","Part","","","","","","","",""
 "01-MTF's Shockpuncher","Part","","","","","","","",""
@@ -10846,6 +10846,8 @@ There are a large number of triggers which can cause Unchained to be dispatched,
 [[Hub_04(d)]] 404: Blowing up all 4 Network Hubs in Hub.|
 Too long on map: Spending too many turns on 0b10 maps (how this is calculated is unknown)|
 Hacking: Either accessing or performing too many hacks at [[Interactive Machine|Interactive Machines]].|
+Interrupting [[Cargo Convoy|Cargo Convoys]]: Interrupting too many Cargo Convoys.|
+Killing unique NPCs: This includes named Derelicts such as the [[Exiles (Group)]].|
 [[Redacted]]Looting [[Protoforge]][[/Redacted]]: Taking too many parts from Protoforge.
 [[/List]]
 In addition to the above specific triggers, there is a general requirement for Cogmind to have a ""good enough"" build. A build that is falling apart is not a sufficient threat to result in an Unchained dispatch even if one of the triggers has been met.
@@ -11667,7 +11669,7 @@ Going to the [[Mines]] without a launcher. [[GameText]]Infestation in the Mines,
 "Z-Technician","Bot","Harmless zion [[Derelict|derelict]] [[Operator]] variants found stationary in [[Zion Deep Caves]].","","","","","","",""
 "Z-bomb Delivery System","Part","","","","","","","",""
 "Zero-point Reactor","Part","","","","","","","",""
-"Zeronet Interface","Part","The Zeronet Interface allows for full tracking of every bot on 0b10-controlled floors for ~900 turns, before the chip fries itself in an UC-ID check. When the check fails, the following log message is shown: [[GameText]]""INVALID UC-ID CHECK!"" Zeronet Interface fries itself.","","","","","","",""
+"Zeronet Interface","Part","The Zeronet Interface allows for full tracking of every bot on 0b10-controlled floors for ~900 turns (counted from the moment it drops ie. with or without being attached), before the chip fries itself in an UC-ID check. When the check fails, the following log message is shown: [[GameText]]""INVALID UC-ID CHECK!"" Zeronet Interface fries itself.","","","","","","",""
 "Zhirov","Bot","","","","","","","",""
 "Zhirov (Alignment)","Other","[[Image]]Testing SGEMP.png|The SGEMP room in Testing[[/Image]]
 Aligning with [[Zhirov]] is a minor [[Alignment|alignment]] that can be started in [[Zhirov (Location)|Zhirov's Lab]]. After entering and exiting the Terminal room on the left side of the map, Zhirov will ask Cogmind to steal the [[SGEMP Prototype]] from [[Testing]] and bring it to [[Access]]. If this is done, Zhirov, Perun, and Svarog will show up in Access and give Cogmind full map intel. They will follow Cogmind but will all teleport out if Zhirov falls below roughly half core integrity. They also leave if Cogmind enters [[Command]]. If a [[Core Reset Matrix]] is used prior to Access but Cogmind still carries the SGEMP, Zhirov and his allies will turn hostile and fight Cogmind to the death
