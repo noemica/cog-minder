@@ -6942,21 +6942,21 @@ The following items can be found in the hallway with Superfortress. Also, 1 extr
 [[Heading:2]]Standard Vaults[[/Heading]]
 The 8 primary vaults are always located in the same spots, but which vault type corresponds to each locations varies run to run.
 [[Heading:3]]Defensive Utilities Vault[[/Heading]]
-[[List]][[Cep. Beam Splitter]]|Cep. Core Shell|[[Cep. Energy Mantle]]|[[Cep. Hardlight Director]]|[[Cep. Phase Shift Module]]|[[Cep. Projectile Intercept Suite]]|[[Cep. Reaction Jets]]|[[Cep. RG22 Armor]]|[[Exp. EM Disruption Field]]|[[Exp. Force Field]]|[[Exp. Remote Shield]][[/List]]
+[[List]][[Cep. Beam Splitter]]|[[Cep. Core Shell]]|[[Cep. Energy Mantle]]|[[Cep. Hardlight Director]]|[[Cep. Phase Shift Module]]|[[Cep. Projectile Intercept Suite]]|[[Cep. Reaction Jets]]|[[Cep. RG22 Armor]]|[[Exp. EM Disruption Field]]|[[Exp. Force Field]]|[[Exp. Remote Shield]][[/List]]
 [[Heading:3]]Infowar Vault[[/Heading]]
 [[List]][[Cep. Network Penetrator]]|[[Exp. Active Sensor Suite]][[/List]]
 [[Heading:3]]Launcher Vault[[/Heading]]
 [[List]][[Cep. Arcsight Missile Launcher]]|[[Cep. EMP Blanket Launcher]]|[[Cep. Rapid Grenade Launcher]]|[[Cep. Smart ZDS]]|[[Cep. Tactical Fusion Warhead]]|[[Cep. Tiamat Rocket Array]][[/List]]
 [[Heading:3]]Offensive Utilities Vault[[/Heading]]
-[[List]][[Cep. Countertargeting System]]|[[Cep. Hypertargeting System]]|[[Cep. Melee Reflex Suite]]|[[Cep. Networked Targeting System]]|Cep. Recoil Nullifier|Cep. Weapon Articulator|[[Exp. Force Booster]]|[[Exp. Kinecellerator]]|[[Femtoactuators]]|[[Mni. Quantum Capacitor]][[/List]]
+[[List]][[Cep. Countertargeting System]]|[[Cep. Hypertargeting System]]|[[Cep. Melee Reflex Suite]]|[[Cep. Networked Targeting System]]|[[Cep. Recoil Nullifier]]|[[Cep. Weapon Articulator]]|[[Exp. Force Booster]]|[[Exp. Kinecellerator]]|[[Femtoactuators]]|[[Mni. Quantum Capacitor]][[/List]]
 [[Heading:3]]Power Vault[[/Heading]]
-[[List]][[Cep. Zero-point Core]]|[[Exp. Antimatter Reactor]]|Hyb. Graviton Reactor[[/List]]
+[[List]][[Cep. Zero-point Core]]|[[Exp. Antimatter Reactor]]|[[Hyb. Graviton Reactor]][[/List]]
 [[Heading:3]]Propulsion Vault[[/Heading]]
-[[List]][[Cep. Biometal Exoskeleton]]|[[Cep. Combat Aerolev Unit]]|[[Cep. Fieldthrust Drive]]|[[Cep. Gyrokinetic System]]|[[Exp. Antigrav System]]|[[Exp. Armored Exoskeleton]]|[[Exp. Biomechanical Wings]]|[[Exp. Heavy Siege Treads]]|Exp. Surge Thruster|Exp. VSS Leg|Gravjet Array[[/List]]
+[[List]][[Cep. Biometal Exoskeleton]]|[[Cep. Combat Aerolev Unit]]|[[Cep. Fieldthrust Drive]]|[[Cep. Gyrokinetic System]]|[[Exp. Antigrav System]]|[[Exp. Armored Exoskeleton]]|[[Exp. Biomechanical Wings]]|[[Exp. Heavy Siege Treads]]|[[Exp. Surge Thruster]]|[[Exp. VSS Leg]]|[[Gravjet Array]][[/List]]
 [[Heading:3]]Resource Vault[[/Heading]]
-[[List]][[Cep. Antigrav Storage Unit]]|Cep. Chromion Battery|[[Cep. Matter Streamer]]|Cep NT7 Matterbank[[/List]]
+[[List]][[Cep. Antigrav Storage Unit]]|[[Cep. Chromion Battery]]|[[Cep. Matter Streamer]]|[[Cep. NT7 Matterbank]][[/List]]
 [[Heading:3]]Weapon Vault[[/Heading]]
-[[List]][[Cep. Deflector Sword]]|[[Cep. Disintegration Ray]]|[[Cep. Heavy Railcannon]]|[[Cep. Helical Railcannon]]|[[Cep. Lightning Penetrator]]|[[Cep. Miniperforator]]|[[Cep. Plasma Driver]]|Cep. XC Strikerail|[[Exp. Jetlance]]|Exp. Terror Saw[[/List]]
+[[List]][[Cep. Deflector Sword]]|[[Cep. Disintegration Ray]]|[[Cep. Heavy Railcannon]]|[[Cep. Helical Railcannon]]|[[Cep. Lightning Penetrator]]|[[Cep. Miniperforator]]|[[Cep. Plasma Driver]]|[[Cep. XC Strikerail]]|[[Exp. Jetlance]]|[[Exp. Terror Saw]][[/List]]
 [[Heading:2]]Extra Guarded Vault[[/Heading]]
 The following items can be found in the vault guarded by the 2 AP7-3s:
 [[List]][[Cep. Blasthammer]]|[[Cep. Cloak Mesh]]|[[Cep. Core Analysis Suite]]|[[Cep. Dimensional Manipulator]]|[[Cep. Impact Drone Bay]]|[[Cep. Thermoelectric Network]]|[[Cld. Directed Potential Cannon]][[/List]]
@@ -6994,12 +6994,12 @@ Adequate/High/Maximal|Scraphulk (6), Scraphulk (8)
 0b10 Reinforcements come in two forms: Garrison reinforcements and Main exit reinforcements.
 [[Heading:3]]Garrison Reinforcements[[/Heading]]
 Prototype squads will periodically be dispatched from the Protoforge Garrison if it is intact. The first time this happens, there will be a log message [[GameText]]New 0b10 prototypes are being dispatched from the Protoforge Garrison Access, destroy it to block them![[/GameText]] Squads will be one of the following:
-[[List]]1 AP7-3|
-3-5 Decapitators|
-1 EXE-6|
-3-4 Hotshots|
-2-3 Immortals|
-1 SKR-2[[/List]]
+[[List]]1 [[AP7-3]]|
+3-5 [[Decapitator|Decapitators]]|
+1 [[EXE-6]]|
+3-4 [[Hotshot|Hotshots]]|
+2-3 [[Immortal|Immortals]]|
+1 [[SKR-2]][[/List]]
 [[Heading:3]]Main Exit Reinforcements[[/Heading]]
 Squads will always be dispatched from the main exit periodically. These reinforcements cannot be stopped unlike the Garrison reinforcements. 1 or 2 squads will be dispatched at a time, and each squad will consist of 2 [[Executioner|Executioners]] or 2 [[Striker|Strikers]] and a [[C-45 Heavy ARC]] with [[Assault Squad]] contents.
 [[Heading:2]]W9 Strategy[[/Heading]]
@@ -11669,7 +11669,7 @@ Going to the [[Mines]] without a launcher. [[GameText]]Infestation in the Mines,
 "Z-Technician","Bot","Harmless zion [[Derelict|derelict]] [[Operator]] variants found stationary in [[Zion Deep Caves]].","","","","","","",""
 "Z-bomb Delivery System","Part","","","","","","","",""
 "Zero-point Reactor","Part","","","","","","","",""
-"Zeronet Interface","Part","The Zeronet Interface allows for full tracking of every bot on 0b10-controlled floors for ~900 turns (counted from the moment it drops ie. with or without being attached), before the chip fries itself in an UC-ID check. When the check fails, the following log message is shown: [[GameText]]""INVALID UC-ID CHECK!"" Zeronet Interface fries itself.","","","","","","",""
+"Zeronet Interface","Part","The Zeronet Interface, dropped from any Unchained, allows for full tracking of every bot on 0b10-controlled floors for ~900 turns (counted from the moment it drops ie. with or without being attached), before the chip fries itself in an UC-ID check. When the check fails, the following log message is shown: [[GameText]]""INVALID UC-ID CHECK!"" Zeronet Interface fries itself.","","","","","","",""
 "Zhirov","Bot","","","","","","","",""
 "Zhirov (Alignment)","Other","[[Image]]Testing SGEMP.png|The SGEMP room in Testing[[/Image]]
 Aligning with [[Zhirov]] is a minor [[Alignment|alignment]] that can be started in [[Zhirov (Location)|Zhirov's Lab]]. After entering and exiting the Terminal room on the left side of the map, Zhirov will ask Cogmind to steal the [[SGEMP Prototype]] from [[Testing]] and bring it to [[Access]]. If this is done, Zhirov, Perun, and Svarog will show up in Access and give Cogmind full map intel. They will follow Cogmind but will all teleport out if Zhirov falls below roughly half core integrity. They also leave if Cogmind enters [[Command]]. If a [[Core Reset Matrix]] is used prior to Access but Cogmind still carries the SGEMP, Zhirov and his allies will turn hostile and fight Cogmind to the death
