@@ -345,7 +345,7 @@ function addOther(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, 
         for (let i = entry.childEntries.length - 1; i >= 0; i--) {
             const childEntry = entry.childEntries[i];
             if (childEntry.childEntries.length === 0) {
-                rootChildEntries.push(childEntry);
+                rootChildEntries.unshift(childEntry);
                 entry.childEntries.splice(i, 1);
             }
         }
