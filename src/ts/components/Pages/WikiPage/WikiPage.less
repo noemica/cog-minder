@@ -469,7 +469,12 @@
 
     > thead {
         > tr > th > div {
-            border-left: 0;
+            border-left-width: 0px;
+            border-right-width: 0px;
+        }
+
+        > tr > th {
+            border-left: @border-width solid @border-color;
         }
 
         > tr:not(:last-child) > th > div {
@@ -478,10 +483,6 @@
 
         > tr:last-child > th > div {
             margin-bottom: -1px;
-        }
-
-        > tr > th:last-child > div {
-            border-right: 0;
         }
     }
 }
