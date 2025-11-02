@@ -436,11 +436,18 @@
 
 .wiki-table {
     color: @font-color;
-    background-color: @table-header-background-color;
     margin-bottom: @large-gap;
 
     border: @border-width solid @border-color;
     border-collapse: collapse;
+
+    > thead {
+        background-color: @table-header-background-color;
+    }
+
+    > tbody > tr > :first-of-type {
+        background-color: @table-header-background-color;
+    }
 
     // Normally we only have bottom margin on p elements, but in tables
     // We want to have no margin on the first element altogether
