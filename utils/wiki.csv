@@ -1267,7 +1267,7 @@ Four of the hidden prefabs are research stations, where a Derelict does science 
 [[GameText]]C-55 Analyst: ""How did you find me??? Please don't shoot, I'm a Derelict like you now! I just had to learn more about this intriguing device...""[[/GameText]][[/Spoiler]]
 [[/List]]
 
-[[Gallery]]Caves Assembled Tinkerer.png|A Tinkerer hiding behind some Assembled|[[Spoiler]]Caves PL-HR7.png[[/Spoiler]]|[[Spoiler]]Tinkerer PL-HR7 and [[Warlord Statue (Bot)]] with a [[Heart of Steel]], hiding behind Sealed Heavy Doors[[/Spoiler]]|[[Spoiler]]Caves MolDe.png[[/Spoiler]]|[[Spoiler]]Tinkerer with a [[Molecular Deconstructor]] hiding behind a Locked Door[[/Spoiler]]|[[Spoiler]]Caves CE.png[[/Spoiler]]|[[Spoiler]]Derelict [[C-55 Analyst]] with a [[Core Expander]] hidden behind a wall[[/Spoiler]][[/Gallery]]
+[[Gallery]]Caves Assembled Tinkerer.png|A Tinkerer hiding behind some Assembled|[[Spoiler]]Caves PL-HR7.png[[/Spoiler]]|[[Spoiler]]Tinkerer PL-HR7 and [[Warlord Statue (Bot)]] with a [[Heart of Steel]], hiding behind Sealed Heavy Doors[[/Spoiler]]|[[Spoiler]]Caves MolDe.png[[/Spoiler]]|[[Spoiler]]Tinkerer with a [[Molecular Deconstructor]] hiding behind a Locked Door[[/Spoiler]]|[[Spoiler]]Caves CE.png[[/Spoiler]]|[[Spoiler]]Derelict [[C-55 Analyst]] with a [[Core Expander]] hidden behind a wall[[/Spoiler]]|Caves DRS Beacon.png|Broken [[Explorer]] with a [[DRS Beacon]] hidden behind a wall[[/Gallery]]
 
 [[Heading:3]]Delusional Mutants[[/Heading]] [[Comment]]I'm not sure, but i think only one of these can appear in each run?[[/Comment]]
 A hostile Mutant hidden behind walls and a Locked Door, guarding either parts or rewireable Unaware. Their hideout is not guaranteed to be fully enclosed by walls. They are referred to as ""delusional"" by scoresheets' ""History"" section.
@@ -5698,7 +5698,7 @@ Power/Stability
 The majority of maps are randomly generated, meaning no two runs or two depths will have the exact same layout. However, the overall structure of each location type is very similar. Some maps tend to be more open with large rooms and wide corridors, while others are more maze-like with tiny rooms and many small corridors leading into dead-ends. A few branches are partially or entirely static in layout and tend to be much more predictable in contents than main floors.
 Branches do not progress upward toward the exit and can often be harder than the main floors. However, branches can offer unique challenges and have similarly unique rewards that can dramatically change a run. This could be powerful unique items, special events, gameplay-altering alignment, or rare permanent buffs.
 The following is a list of all locations in Cogmind:
-[[AllLocations]]","","","","","","","Access,Access_0,Archives,Armory,Caves,Cetus,Command,DSF,Data Miner,Exiles (Location),Extension,Factory,Garrison,Hub_04(d),Lab,Materials,Mines,Protoforge,Quarantine,Recycling,Research,Scraptown,Scrapyard,Section 7,Storage,Subcaves,Surface,Testing,Warlord,Wastes,Zhirov,Zion,Zion Deep Caves"
+[[AllLocations]]","","","","","","","Access,Access_0,Archives,Armory,Caves,Cetus,Command,DSF,Data Miner (Location),Exiles (Location),Extension,Factory,Garrison,Hub_04(d),Lab,Materials,Mines,Protoforge,Quarantine,Recycling,Research,Scraptown,Scrapyard,Section 7,Storage,Subcaves,Surface,Testing,Warlord,Wastes,Zhirov,Zion,Zion Deep Caves"
 "Longsword +1","Part","","","","","","","",""
 "Lrg. Battery","Part","","","","","","","",""
 "Lrg. Botcube","Part","","","","","","","",""
@@ -7587,9 +7587,7 @@ There are a few other side-effects of this event. One is that explosive machines
 
 This event can be a great blessing or a curse depending on a lot of factors. Getting an escort of alert-free allies with other squads of allies roaming the map is great. They will clean up most of the map for you and can net some free prototype bot loot. Blocking Heavy spawns is incredibly useful here as well. The downsides can also be pretty major, however. Losing access to all Terminals by turn 700 can be very bad if Cogmind is on slow propulsion and has no exit intel and no form of terrain scanning. Trying to follow the spawning Revisions or suppression forces can lead to an exit, although it can be a bit unreliable. Another downside is that the Revisions will often create a ton of squads to appear right at the beginning of the event. Sometimes, large groups of [[Operator|Operators]] and alarm traps can all be triggered at nearly the same time. This can result in massive groups of hostiles to appear right in Cogmind's face with unlucky exit or [[Garrison Access|Garrison]] positioning.
 
-Due to a bug (fixed for Beta 15), going through a Garrison and looping back to -3/Research will cause the event to partially continue.[[Comment]]Apparently it was a bug?[[/Comment]]
-
-Last edited during Beta 14.","Spoiler","","","","","",""
+Last edited during Beta 16.","Spoiler","","","","","",""
 "Revision 17++","Bot","","","","","","","",""
 "Riot Gun","Part","","","","","","","",""
 "Ripper","Part","","","","","","","",""
@@ -8023,8 +8021,7 @@ Some loot can be obtained by killing certain bots on the map:
 [[Exp. Recalibrator]]: Dropped by CR-KLE|
 Expert System: Dropped by A0-MCA|
 [[ID Mask]]: Dropped by Scientist in Chapter 10|
-PL-3XN's Ring of Power:
-Dropped by Explorer in the Fellowship of the Rings
+PL-3XN's Ring of Power: Dropped by Explorer in the Fellowship of the Rings
 [[/List]]","Spoiler","","","","","",""
 "Scrapyard","Location","The starting point of every game. At the start of every game there is a semi-random fixed spawn of: [[Sml. Storage Unit]], 2 [[Lgt. Treads]], 2 [[Aluminum Leg]], a mix of 2 [[Wheel]] or [[Com. Wheel]], a mix of 2 [[Ion Engine]] or [[Lgt. Ion Engine]], and a mix of 3 [[Lgt. Assault Rifle]], [[Assault Rifle]], [[EM Pulse Gun]], [[Sml. Laser]], [[Med. Laser]]. If the advanced game option quickStart is set, all of the parts will be either collected or equipped.[[Heading]]Events[[/Heading]]A team of [[T-07 Excavator|Tunnelers]] and [[U-05 Engineer|Engineers]] will dig out and finish rooms over time. The rooms themselves do not contain anything of importance.[[Image]]Scrapyard Assembled Event.png|Assembled after ambushing a Tunneler[[/Image]]However, after several thousand turns of waiting, an Tunneler may dig open a small dug out area containing a large number of [[Assembled (4)|Assembled]]. This will prompt a response of a [[C-45 Heavy ARC|Heavy ARC]] containing 2 [[D-53 Grenadier|Demolishers]] which can be a good early source of [[Cmb. Airjet]] if they are destroyed by the assembled. Waiting around for this event can be fairly risky since there is no way to prepare for the fight and it is very easy to get destroyed by either the demolishers or the assembled.","","","","","","",""
 "Scythe","Part","","","","","","","",""
@@ -9963,20 +9960,20 @@ Propulsion/Special
 "U-05 Engineer","Bot","A wheeled non-combat robot that repairs any broken walls, doors, or machines in sight. Good source of structural and terrain scanners. When attacked while repairing, calls reinforcements (unless you're in [[Materials]]) 
 [[GameText]]ALERT: Construction progress impeded, dispatching reinforcements to local area.[[/GameText]]","","","","","","",""
 "UFD Drillbomb","Part","","","","","","","",""
-"Unchained","Bot Group","Unchained are a collection of powerful and unique [[Derelict|Derelicts]] that have defected to [[0b10]]. As a group, they have vastly different loadouts and behavior, but all are major threats to Cogmind. Unchained are not found on any particular floor, but instead can show up in many different places once Cogmind has caused enough mayhem in some way to trigger a dispatch. Only one of them is ever active at a single time, and the Unchained chosen to be dispatched is random. Unlike all other bots in the game, Unchained will actively pursue Cogmind through multiple maps.
+"Unchained","Bot Group","Unchained are a collection of powerful and unique [[Derelict|Derelicts]] that have defected to [[0b10]]. As a group, they have vastly different loadouts and behavior, but all are major threats to Cogmind. Unchained are not found on any particular floor, but instead can show up in many different places once Cogmind has caused enough mayhem in some way to trigger a dispatch. Only one of them is ever active at a single time, and the Unchained chosen to be authorized is random. Unlike all other bots in the game, Unchained will actively pursue Cogmind through multiple maps.
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]Cyclists Records|UC Origins[[/Lore]]
 [[Gallery]]Unchained.png|All Unchained[[/Gallery]]
 
 [[Heading:2]][[Exiles (Group)|Exiles]] Lore[[/Heading]]
-If Cogmind has aligned with the Exiles with [[FarCom]], the Exiles will deliver a message about each Unchained as they are dispatched. This is prefaced with the following messages:
+If Cogmind has aligned with the Exiles with [[FarCom]], the Exiles will deliver a message about each Unchained as they are authorized. This is prefaced with the following messages:
 [[GameText]]FARCOM_MSG: We kinda like the data you're collecting and don't want to witness your untimely demise, so we kindly advice you to run like hell.[[/GameText]]
 [[GameText]]FARCOM_MSG: I've located an exit near your position you could probably use to shake them for a while.[[/GameText]] After this, the nearest exit is revealed.
 [[GameText]]FARCOM_MSG: EX-HEX means well, but I for one want to see you stick around and beat the bolts out of [Unchained bot name][[/GameText]]
 
 [[Heading]]Dispatch Triggers[[/Heading]]
-There are a large number of triggers which can cause Unchained to be dispatched, only some of which are currently known.
+There are a large number of triggers which can cause Unchained to be authorized, only some of which are currently known.
 [[List]]
 [[Sterilization]]: Sterilizing any 0b10 map in [[Factory]] depth (-7) or higher.|
 [[Hub_04(d)]] 404: Blowing up all 4 Network Hubs in Hub.|
@@ -9987,7 +9984,7 @@ Killing unique NPCs: This includes named Derelicts such as the [[Exiles (Group)]
 [[Redacted]]Looting [[Protoforge]][[/Redacted]]: Taking too many parts from Protoforge.
 [[/List]]
 In addition to the above specific triggers, there is a general requirement for Cogmind to have a ""good enough"" build. A build that is falling apart is not a sufficient threat to result in an Unchained dispatch even if one of the triggers has been met.
-When an Unchained has been decided to be dispatched, an announcement like [[GameText]]ALERT: Unchained [Unchained] authorized to operate in [-Depth/Map], avoid or assist as necessary.[[/GameText]] will appear in the game log. The Unchained will not appear until a few hundred turns after the announcement. Initially, Unchained will only be dispatched on 0b10-controlled maps. However, some Unchained can continue to follow Cogmind into [[Caves]].
+When an Unchained has been decided to be authorized, an announcement like [[GameText]]ALERT: Unchained [Unchained] authorized to operate in [-Depth/Map], avoid or assist as necessary.[[/GameText]] will appear in the game log. The Unchained will not appear until a few hundred turns after the announcement. Initially, Unchained will only be authorized on 0b10-controlled maps. However, some Unchained can continue to follow Cogmind into [[Caves]].
 
 [[Heading]]Behavior[[/Heading]]
 Unchained have special behavior that allows them to follow Cogmind between multiple maps, so escape is not as easy as making it to the nearest exit. They take a few hundred turns after entering the map to show up, but once they appear, they will relentlessly pursue Cogmind with [[Perfect Tracking]]. Thanks to this tracking, a [[Triangulator]] may be used to help locate them from a distance before arrival.
@@ -9996,10 +9993,40 @@ Each Unchained has different specific behavior, but all have a tendency to haras
 [[Table]]
 Unchained|Engagement Style|Summons allies|Multiple returns per map||
 6S-H0T|Hit-and-run|No|Yes, with full repair||
-CL-0N3|Ambush|No|Yes, with no repair||
+CL-0N3|Ambush|No|Yes, but with no core repair||
 DW-4LL|Ambush|No|Yes, with full repair||
 GL-D0S|Avoid|Yes|No||
 QV-33N|Avoid|Yes|No
+[[/Table]]
+
+[[Heading:2]]Map Activity[[/Heading]]
+Unchained can only be authorized on 0b10-controlled maps, although they can follow into non-0b10 controlled maps. Typically, Unchained will pursue Cogmind through 3 potential maps before giving up chase. Some Unchained have spawn restrictions which make them not appear on all maps that are Unchained-viable. For example, GL-D0S and QV-33N will not appear in Caves, so taking an exit here will result in a few more maps of freedom. However, once returning to the main complex, they will continue to hunt Cogmind. Possible map dispatches are as follows:
+[[Table]]
+Map|Original dispatch possible|Continued pursuit||
+Main floors ([[Materials]], [[Factory]], [[Research]], [[Access]]|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes||
+[[Mines]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Exiles (Location)]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Subcaves]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[DSF]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Garrison]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Wastes]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Storage]]|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes||
+[[Recycling]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Scraptown]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Caves]]|[[CellStyle:Bad]]No|[[CellStyle:Good]]Yes||
+Caves end branches ([[Data Miner (Location)|Data Miner]], [[Warlord (Location)|Warlord]], [[Zhirov (Location)|Zhirov]], [[Zion]])|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Extension]]|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes||
+[[Cetus]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Archives]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Hub_04(d)]]|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes||
+[[Armory]]|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes||
+[[Lab]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Quarantine]]|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes||
+[[Testing]]|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes||
+[[Protoforge]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Section 7]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Command]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No||
+[[Access_0]]|[[CellStyle:Bad]]No|[[CellStyle:Bad]]No
 [[/Table]]
 
 [[Heading]]Unique Drops[[/Heading]]
@@ -11987,4 +12014,220 @@ Trojan(Skim)|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times p
 Trojan(Track)|[[Range]]2|5[[/Range]]|[[CellStyle:Bad]]Rare, situationally multiple times per floor
 [[/Table]]
 [[/Expandable]]","","","","","","",""
-"aoemica's Flight Guide/Routing","Other","[[Heading]][[B]][[Color:Red]]WIP[[/Color]][[/B]][[/Heading]]","","","","","","",""
+"aoemica's Flight Guide/Routing","Other","Routing is the art of planning which [[Branch]] maps you are going to go to throughout the course of a run. There are all sorts of benefits in different branches in the game, and many overlap in depth, so you must make a conscious decision about which maps to pick. Sometimes, this must be done off of imperfect information because you don't know which branch is at the end of a certain [[Caves]] depth. In other cases, you may learn the depth of an upcoming map like through a [[Derelict Log]] or [[Spoiler]][[GameText]]Force(Tunnel)[[/GameText]] from a [[Recycling Unit]][[/Spoiler]] and make other decisions to support that map choice later. Overall, routing is quite dynamic from run to run and isn't something that you can plan with 100% certainty from the beginning.
+Routing ties heavily into [[aoemica's Flight Guide/Alignments|Alignments]]. Most alignments require you to visit a certain map which may be on a different depth each run. If you're shooting for a certain alignment, you have to make sure you don't accidentally miss it by taking a random exit or the wrong branch on the depth they're at. For example, [[Caves]] branch ends can be one of 2 different maps. If you don't know which is which, you may need to take both Caves exits to be sure you don't miss it. Some alignments trigger active hostilities with factions on certain maps, so it often makes sense to plan to avoid actively hostile branches unless you're ready to fight your way through.
+
+[[Heading]]Maps[[/Heading]]
+The following is a brief overview of each map including depths, alignment potential, and unique loot that is especially helpful from a flight perspective.
+
+[[Heading:2]][[Mines]][[/Heading]]
+[[List]]
+Depths: -10 to -9|
+Summary: Cramped, hostile branch. [[Assembled]] infestation can be deadly. Flight is difficult.|
+Alignment: None|
+Rewards: [[Exp. Sensor Array]].
+[[/List]]
+
+[[Heading:2]][[Exiles (Location)]][[/Heading]]
+[[List]]
+Depths: -10 to -9|
+Summary: Friendly branch, home to the [[Exiles (Group)|Exiles]]. Most loot can only be obtained through alignment.|
+Alignment: [[FarCom]]|
+Rewards: Many [[Exiles Vault Prototypes]], see [[aoemica's Flight Guide/Alignments#good_vault_prototypes|this ranking]].
+[[/List]]
+
+[[Heading:2]][[Storage]][[/Heading]]
+[[List]]
+Depths: -9 to -7|
+Summary: Cramped, hostile [[0b10]] branch. Many [[Patrol Squad|Patrols]], [[Sentry|Sentries]], [[Hauler|Haulers]] and [[Prototype Part|Prototype]] stashes. Flight is difficult.|
+Alignment: None|
+Rewards: Many prototype [[Flight Unit|Flight Units]], especially from Haulers.
+[[/List]]
+
+[[Heading:2]][[Garrison]][[/Heading]]
+[[List]]
+Depths: -9 to -1|
+Summary: Cramped, hostile 0b10 branch. Few combat bots patrolling, many guards that will pop out at inconvenient times. Forced combat and lots of [[Stasis Trap|Stasis Traps]] can destroy unprepared flight builds. Flight is very difficult.|
+Alignment: [[RIF]]|
+Rewards: Potentially out of depth parts, though not prototypes.
+[[/List]]
+
+[[Heading:2]][[Caves]][[/Heading]]
+[[List]]
+Depths: -7 to -4|
+Summary: Fairly open semi-hostile branch. 0b10 guards and patrols the area but [[Derelict]] guards are also present sometimes.|
+Alignment: None|
+Rewards: 0b10 output [[Terminal]] intel, [[Core Expander]], [[Derelict Log|Derelict Logs]], [[Dirty Datajack|Dirty Datajacks]].
+[[/List]]
+
+[[Heading:2]][[DSF]][[/Heading]]
+[[List]]
+Depths: -7 to -2|
+Summary: Cramped, hostile branch. [[Heavy]] in center will likely summon [[Cutter|Cutters]]. Can be difficult to fully loot map with Heavy + summoned squads.|
+Alignment: None|
+Rewards: Large selection of in-depth parts, sometimes hidden prototypes.
+[[/List]]
+
+[[Heading:2]][[Wastes]][[/Heading]]
+[[List]]
+Depths: -7 to -4|
+Summary: Cramped, hostile 0b10 branch filled with [[C-40 Crusher|Crushers]], frequently with [[Corruption]]-inflicting EMP. Easy to fly past or kite Crushers to death.|
+Alignment: None|
+Rewards: Frequent out-of-depth parts up to 2 ratings high, though they are damaged and may be broken or faulty.
+[[/List]]
+[[SpoilerHidden]]All remaining branch maps are considered spoilers.[[/SpoilerHidden]]
+[[SpoilerExpandable]]
+
+[[Heading:2]][[Subcaves]][[/Heading]]
+[[List]]
+Depths: -10|
+Summary: Cramped, hostile Derelict branch filled with traps and [[Subdweller|Subdwellers]] Flight is very difficult.|
+Alignment: None|
+Rewards: [[Flightbrick]], [[Meta Core]], [[Rainbow Chip]].
+[[/List]]
+
+[[Heading:2]][[Recycling]][[/Heading]]
+[[List]]
+Depths: -9 to -7|
+Summary: Cramped, hostile 0b10 branch with many dormant bots, especially [[Sentry|Sentries]].|
+Alignment: None|
+Rewards: [[Scrap Engine]], [[Tech Extrapolator]] (from [[SUBCON Basin]] quest).
+[[/List]]
+
+[[Heading:2]][[Scraptown]][[/Heading]]
+[[List]]
+Depths: -9 to -7|
+Summary: Friendly map of Derelicts with many possible prefabs and items, home of the [[United Federation of Derelicts]]. Half of the map with the best rewards is locked behind alignment.|
+Alignment: [[UFD]]|
+Rewards: Too many to fully list. Some especially good rewards are [[Scraptown#Abandonware Association|Abandonware Association]], [[Scraptown#Cartography Club|Cartography Club]], [[Companion Sword]], and [[Scraptown#Infowarlord's Domain|Infowarlord]].
+[[/List]]
+
+[[Heading:2]][[Data Miner (Location)|Data Miner]][[/Heading]]
+[[List]]
+Depths: -7 or -6|
+Summary: Friendly branch with helpful Terminals, home to the [[Data Miner]].|
+Alignment: [[Data Miner (Location)#Alignment|Data Miner Alignment]] or [[Data Conduit]]|
+Rewards: [[Schematic|Schematics]] including [[Combat Drone Bay]], [[Warlord (Location)#Warlord's Stash|Warlord Stash Code]], prototype [[Hackware]] (if killing Data Miner).
+[[/List]]
+
+[[Heading:2]][[Zion]][[/Heading]]
+[[List]]
+Depths: -7 or -6|
+Summary: Friendly map of Derelicts with many possible prefabs and items, home to [[Imprinter]]. Map rewards themselves do not require alignment.|
+Alignment: [[Imprint]]|
+Rewards: [[A8]]'s [[Enhanced Grunt]] code, assorted allies, [[CR-A16's Pointy Stick]], [[Hacking Drone Bay]] (mainly for Imprint), high rating prototype Processors/Hackware, [[RU-N14's Throwing Claymores]]
+[[/List]]
+
+[[Heading:2]][[Extension]][[/Heading]]
+[[List]]
+Depths: -6 to -4|
+Summary: Hostile 0b10 map with wide open corridors through the bottom and cramped rooms along the top. Contains special Transfer Stations. Heavily guarded with many locked up and rewirable friendly Derelicts.|
+Alignment: None|
+Rewards: allied [[A7]], other assorted Derelict allies
+[[/List]]
+
+[[Heading:2]][[Cetus]][[/Heading]]
+[[List]]
+Depths: -6 to -4|
+Summary: Hostile map with forced [[Cetus Guard]] encounters. Can easily run from guards if necessary.|
+Alignment: [[Revision 17 (Alignment)]]|
+Rewards: up to 5 fabricated [[Enhanced Grunt]] allies with A7 code.
+[[/List]]
+
+[[Heading:2]][[Archives]][[/Heading]]
+[[List]]
+Depths: -6 to -4|
+Summary: Hostile map with forced [[Sentry]] encounter.|
+Alignment: None|
+Rewards: Plentiful [[Operator]] parts, particularly [[Imp. Hacking Suite|Imp. Hacking Suites]] and [[Imp. System Shield|Imp. System Shields]].
+[[/List]]
+
+[[Heading:2]][[Hub_04(d)]][[/Heading]]
+[[List]]
+Depths: -6 to -4|
+Summary: Cramped, hostile 0b10 map that is well covered by [[Heavy|Heavies]]. Contains multiple highly explosive Network Hubs and a Transfer Station machine.|
+Alignment: None|
+Rewards: Exploding Network Hubs provides permanent hacking bonuses.
+[[/List]]
+
+[[Heading:2]][[Warlord (Location)]][[/Heading]]
+[[List]]
+Depths: -5 or -4|
+Summary: Friendly map of Derelicts with many possible prefabs and items, home to [[Warlord]]. 0b10 assault will begin some time after entering the map so expect to help the fight or run through combat.|
+Alignment: [[Warlord (Alignment)]]|
+Rewards: [[Executioner]] and [[Striker]] loot, [[Exp. Cloaking Device]], prototype flight units and hackware, rewirable allies, [[RU-N14's Throwing Claymores]] [[Spectral Analyzer]], Terminal prototype IDs and intel, [[Vortex Weapons]].
+[[/List]]
+
+[[Heading:2]][[Zhirov (Location)]][[/Heading]]
+[[List]]
+Depths: -5 or -4|
+Summary: Friendly map of Derelicts with a small collection of possible items, home to [[Zhirov]].|
+Alignment: [[Zhirov (Alignment)]]|
+Rewards: Adv. tier hackware, [[Cld. Nuclear Pulse Thruster|Cld. Nuclear Pulse Thrusters]], Exp. tier [[Shieldings]], [[Integrated Dissipator]] or [[Integrated Reactor|Reactor]], [[Transdimensional Reconstructor]].
+[[/List]]
+
+[[Heading:2]][[Armory]][[/Heading]]
+[[List]]
+Depths: -4 or -3|
+Summary: Hostile 0b10 map with long corridors split by cramped rooms and tons of patrols. Flight is difficult without good long-ranged weapons.|
+Alignment: None|
+Rewards: Large [[Authchips|Authchip]] cache, many [[Fabricator|Fabricators]]
+[[/List]]
+
+[[Heading:2]][[Testing]][[/Heading]]
+[[List]]
+Depths: -3 or -2|
+Summary: Hostile and small [[Research]]-like 0b10 map.|
+Alignment: None|
+Rewards: [[2N-1CE's Frost Array]], [[Cld. Nova Cannon]], [[Hyp. Multirail]], [[Null Cannon]], [[Omega Cannon]], [[Perforator]], prototype Hackware, [[Warp Gun]].
+[[/List]]
+
+[[Heading:2]][[Quarantine]][[/Heading]]
+[[List]]
+Depths: -3 or -2|
+Summary: Hostile and small [[Research]]-like 0b10 map.|
+Alignment: None|
+Rewards: Too many to fully list. A few especially good rewards include [[Core Reset Matrix]], [[Hpw. Transdimensional Reconstructor|Hpw.]] and [[Transdimensional Reconstructor|Regular Transdimensional Reconstructor]], [[Sigix Broadsword]], [[Subatomic Replicator]].
+[[/List]]
+
+[[RedactedHidden]]All remaining branch maps are considered redacted spoilers.[[/RedactedHidden]]
+[[RedactedExpandable]]
+
+[[Heading:2]][[Lab]][[/Heading]]
+[[List]]
+Depths: -4 or -3|
+Summary: Initially deserted map with small area. Have to fight [[A5]] if scanned.|
+Alignment: None|
+Rewards: [[Core Expander]], [[Core Reset Matrix]], [[Exp. Powered Armor]], [[Integrated Dissipator]], [[Integrated Mediator|Mediator]], or [[Integrated Reactor|Reactor]], [[LC Capacitor]], [[Med. Regenerative Plating]], prototype Hackware, [[Transdimensional Reconstructor]], [[Warp Cannon]].
+[[/List]]
+
+[[Heading:2]][[Protoforge]][[/Heading]]
+[[List]]
+Depths: -3 or -2|
+Summary: Extremely hostile large unique 0b10 map with largely predetermined layout. Many top-tier [[Prototype Robot]] guards.|
+Alignment: None|
+Rewards: Too many to fully list. A few especially good flight rewards are [[Cep. Cloak Mesh]], [[Cep. Dimensional Manipulator]], [[Cep. Fieldthrust Drive]], [[Cep. Zero-point Core]], [[Exp. Biomechanical Wings]], [[Exp. Jetlance]], [[Femtoactuators]].
+[[/List]]
+
+[[Heading:2]][[Section 7]][[/Heading]]
+[[List]]Depths: -3 or -2|
+Summary: Hostile medium [[Research]]-like 0b10 level with large heavily-guarded fixed area on right half of map. Home to [[S7 Guard|S7 Guards]].|
+Rewards: Too many to fully list. A few especially good rewards include [[Core Membrane]], [[Drained L-Cannon]] (with LC Capacitor), [[Integrated Dissipator]] and [[Integrated Reactor|Reactor]], [[Integrity Redistributor]], [[LRC Inertial Stabilizer]], [[LRC Storage]].
+[[/List]]
+
+[[Heading:2]][[Command]][[/Heading]]
+[[List]]
+Depths: -1|
+Summary: Extremely hostile map with numerous patrols, fixed middle section with very powerful guards including [[Combat Programmer|Combat Programmers]], [[M Guard|M Guards]], and [[MAIN.C]].|
+Alignment: [[Command#W8: ""Fortifying 0b10""/Surrender|Surrender]]|
+Rewards: Getting a + on the scoresheet by defeating MAIN.C.[[/List]]
+
+[[Heading:2]][[Access_0]][[/Heading]]
+[[List]]
+Depths: -1|
+Summary: Extremely hostile map, home to the [[Architect]] and [[A Bots]].|
+Alignment: None|
+Rewards: Getting a + on the scoresheet by defeating the Architect.
+[[/List]]
+[[/RedactedExpandable]]
+[[/SpoilerExpandable]]","","","","","","",""
