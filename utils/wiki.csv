@@ -1,4 +1,4 @@
-﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
+"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","",""
 "01-MTF's Autohacker","Part","","","","","","","",""
 "01-MTF's Shockpuncher","Part","","","","","","","",""
@@ -10921,14 +10921,14 @@ Zionites have a decent core exposure and low core integrity, but can overwhelm t
 
 [[Heading:2]]Access[[/Heading]]
 
-[[Heading]]Good Parts[[/Heading]]
-See [[aoemica's Flight Guide/Good Power|Power]], [[aoemica's Flight Guide/Good Propulsion|Propulsion]], [[aoemica's Flight Guide/Good Utilities|Utility]], and [[aoemica's Flight Guide/Good Weapons|Weapon]] recommendations.
+[[Heading]][[aoemica's Flight Guide/Good Parts|Good Parts]][[/Heading]]
+See [[aoemica's Flight Guide/Good Parts/Power|Power]], [[aoemica's Flight Guide/Good Parts/Propulsion|Propulsion]], [[aoemica's Flight Guide/Good Parts/Utilities|Utility]], and [[aoemica's Flight Guide/Good Parts/Weapons|Weapon]] recommendations.
 
 [[Heading]]Slot Evolutions[[/Heading]]
 
 [[Heading]]Alignments[[/Heading]]
 ","","","","","","","aoemica's Flight Guide/Advanced Movement,aoemica's Flight Guide/Alignments,aoemica's Flight Guide/Good Parts,aoemica's Flight Guide/Machine Hacking,aoemica's Flight Guide/Routing"
-"aoemica's Flight Guide/Advanced Movement","Other","The following is a list of various advanced movement techniques that are useful for flight. Flight is the fastest and most maneuverable propulsion type in the game, so make sure you use these traits to your advantage. Generally, these types of techniques help to avoid taking unnecessary damage. Flight doesn't often have a lot of integrity to spare, so every avoided attack can make a big difference in a run.
+"aoemica's Flight Guide/Advanced Movement","Other","The following is a collection of some advanced movement techniques that are useful for flight. Flight is the fastest and most maneuverable propulsion type in the game, so make sure you use these traits to your advantage. Generally, these types of techniques help to avoid taking unnecessary damage. Flight doesn't often have a lot of integrity to spare, so every avoided attack can make a big difference in a run.
 
 [[Heading]]Attack Dancing[[/Heading]]
 Attack dancing is a strategy that takes combines flight's high move speed with the low time cost of [[Actuators|Actuator]]-boosted melee attacks in order to maximize evasion bonus and reduce damage taken in combat. It works best with a full evasion stack of a [[Phase Shifters|Phase Shifter]] and a [[Reaction Control Systems|Reaction Control System]]. The general technique is to take one or two swings at a bot (depending on both your and your target's volley time) and then take moves backwards before the bot gets a chance to attack. By doing this, you decrease the ranged targeting bonus your opponent gets by you being close to them (from +15% to +12% or less depending on moves) as well as gain the movement avoidance bonus from flight which can be quite substantial (up to 19% at 5 speed).
@@ -10952,7 +10952,7 @@ A variant of attack dancing is to use map layouts, particularly machines, to con
 [[Gallery]]Attack Dancing.webp|Attack dancing against a [[Behemoth]] with a [[Nanosword]] (note how many projectiles miss)|Machine Dancing.webp|Machine dancing against a [[Sentry]] with a [[Longsword +1]][[/Gallery]]
 
 [[Heading]]Bot Looping[[/Heading]]
-Bot looping is a technique that can be used to lose persistent pursuers like [[Programmer|Programmers]], [[Hunter|Hunters]], and [[Sentry}Sentries]]. Rather than running away from hostiles that are actively tracking you into the unknown or a busy corridor, this strategy revolves around using a known safe loopable area to force them to lose tracking. The key element of a potential loop is that the area must be large enough for you to loop without them spotting you. Ideally, the loop should also have no other hostiles nearby. If you have a suitable area, just run around the loop in circles for as long as you need to until the bots have lost tracking on you. [[ECM Suites]] help reduce the amount of time looping takes, though they are not required to perform this technique.
+Bot looping is a technique that can be used to lose persistent pursuers like [[Programmer|Programmers]], [[Hunter|Hunters]], and [[Sentry|Sentries]]. Rather than running away from hostiles that are actively tracking you into the unknown or a busy corridor, this strategy revolves around using a known safe loopable area to force them to lose tracking. The key element of a potential loop is that the area must be large enough for you to loop without them spotting you. Ideally, the loop should also have no other hostiles nearby. If you have a suitable area, just run around the loop in circles for as long as you need to until the bots have lost tracking on you. [[ECM Suites]] help reduce the amount of time looping takes, though they are not required to perform this technique.
 Note: When looping multiple bots at the same time, don't get too far ahead in order to keep them as grouped up as possible. If you go too far ahead you might end up splitting the squad into two and get pincered. If you are over halfway through the loop, that's when some of the bots in the back may turn around and decide to go the other way. If this happens, you might end up having to go a different route or else running past one of the pursuers.
 
 [[Heading:2]]Examples|Bot Looping Examples[[/Heading]]
@@ -11703,7 +11703,7 @@ Hack|Usefulness|Personal hack frequency||
 Retrieve(Components)|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
 Retrieve(Matter)|[[Range]]1|5[[/Range]]|[[CellStyle:Bad]]Practically never, situationally multiple times per map||
 Recycle([Part Name])|[[Range]]1|5[[/Range]]|[[CellStyle:Bad]]Practically never, situationally multiple times per map||
-[[Recycling(Report)]]|[[Range]]2|5[[/Range]]|[[CellStyle:Bad]]Practically never, situationally multiple times per map||
+Recycling(Report)|[[Range]]2|5[[/Range]]|[[CellStyle:Bad]]Practically never, situationally multiple times per map||
 Recycling(Process)|[[Range]]1|5[[/Range]]|[[CellStyle:Bad]]Practically never, situationally multiple times per map||
 [[Spoiler]]Trojan(Mask)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
 [[Spoiler]]Trojan(Monitor)[[/Spoiler]]|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally once per map||
