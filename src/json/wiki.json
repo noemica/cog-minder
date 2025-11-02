@@ -9214,6 +9214,18 @@
    "SpecialBots": [
     "Sapper"
    ],
+   "SpecialItems": [
+    "Core Expander",
+    "Dimensional Node Initializer",
+    "Dirty Datajack",
+    "Heart of Steel",
+    "Mak. Ablative Armor",
+    "Mak. Laser Shovel",
+    "Molecular Deconstructor",
+    "Sapper Charge",
+    "Self-destruct Interrupter",
+    "Thermoblaster"
+   ],
    "MinDepth": -7,
    "MaxDepth": -3,
    "MultipleDepths": true,
