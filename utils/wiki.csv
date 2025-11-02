@@ -1,4 +1,4 @@
-﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
+"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","",""
 "01-MTF's Autohacker","Part","","","","","","","",""
 "01-MTF's Shockpuncher","Part","","","","","","","",""
@@ -10927,7 +10927,7 @@ See [[aoemica's Flight Guide/Good Power|Power]], [[aoemica's Flight Guide/Good P
 [[Heading]]Slot Evolutions[[/Heading]]
 
 [[Heading]]Alignments[[/Heading]]
-","","","","","","","aoemica's Flight Guide/Advanced Movement,aoemica's Flight Guide/Alignments,aoemica's Flight Guide/Good Power,aoemica's Flight Guide/Good Propulsion,aoemica's Flight Guide/Good Utilities,aoemica's Flight Guide/Good Weapons,aoemica's Flight Guide/Machine Hacking,aoemica's Flight Guide/Routing"
+","","","","","","","aoemica's Flight Guide/Advanced Movement,aoemica's Flight Guide/Alignments,aoemica's Flight Guide/Good Parts,aoemica's Flight Guide/Machine Hacking,aoemica's Flight Guide/Routing"
 "aoemica's Flight Guide/Advanced Movement","Other","[[Heading]][[B]][[Color:Red]]WIP[[/Color]][[/B]][[/Heading]][[Heading]]Attack Dancing[[/Heading]]
 Attack dancing is a strategy 
 
@@ -11068,7 +11068,14 @@ Optimus refers to aligning with Optimus and helping in his mission|
 Base refers to either not getting ECA or getting it before transitioning to flight|
 ECA refers to continuing to try to earn ECA bonus on flight
 [[/List]][[/Spoiler]]","","","","","","",""
-"aoemica's Flight Guide/Good Power","Other","Power is never exciting, but it is a necessity to all builds. The majority of energy on my flight builds typically ends up powering flight units and [[Mass Support Devices]]. In order to save mass for other essential parts, it's better to use lighter engines. It doesn't do much good to dedicate an engine that's so heavy that flight units take up all the energy needed to support it in the first place. As such, one of the most important stats for flight builds is the amount of energy that is generated compared to the mass of the engine, or the energy:mass ratio. Heat generation is also an important factor secondary factor, although it is usually easier to solve a heat problem than a support one.
+"aoemica's Flight Guide/Good Parts","Other","A collection of thoughts and recommendations on good parts to aim for on flight builds. Each slot has its own page:
+[[List]]
+[[aoemica's Flight Guide/Good Parts/Power|Power]]|
+[[aoemica's Flight Guide/Good Parts/Propulsion|Propulsion]]|
+[[aoemica's Flight Guide/Good Parts/Utilities|Utilities]]|
+[[aoemica's Flight Guide/Good Parts/Weapons|Weapons]]
+[[/List]]","","","","","","","aoemica's Flight Guide/Good Parts/Power,aoemica's Flight Guide/Good Parts/Propulsion,aoemica's Flight Guide/Good Parts/Utilities,aoemica's Flight Guide/Good Parts/Weapons"
+"aoemica's Flight Guide/Good Parts/Power","Other","Power is never exciting, but it is a necessity to all builds. The majority of energy on my flight builds typically ends up powering flight units and [[Mass Support Devices]]. In order to save mass for other essential parts, it's better to use lighter engines. It doesn't do much good to dedicate an engine that's so heavy that flight units take up all the energy needed to support it in the first place. As such, one of the most important stats for flight builds is the amount of energy that is generated compared to the mass of the engine, or the energy:mass ratio. Heat generation is also an important factor secondary factor, although it is usually easier to solve a heat problem than a support one.
 
 [[Image]]../part_art/Backup Power VII.png|Backup Power VII, the best Backup Power[[/Image]]
 [[Heading]][[Backup Power]][[/Heading]]
@@ -11137,7 +11144,7 @@ Parts are sorted alphabetically within ranks. This tier list is not a strict com
 [[Fusion Reactor]]|
 All other Lgt. engines
 [[/List]]","","","","","","",""
-"aoemica's Flight Guide/Good Propulsion","Other","Good flight units are the key to the most successful flight builds. While it is possible to scrape by with any low integrity non-prototype [[Swarmer]]-tier flight units, builds relying heavily on these types of parts struggle greatly due to their fragility. [[Prototype Part|Prototype]] flight units have a large number of benefits over non-prototypes. However, that doesn't mean that non-prototypes aren't worth using. [[Flight Arrays]] and [[Surge Thrusters]] have good niches, and even typical non-prototype parts like the basic [[Flight Unit]] can be used in a pinch. Any flight unit is better than an empty slot.
+"aoemica's Flight Guide/Good Parts/Propulsion","Other","Good flight units are the key to the most successful flight builds. While it is possible to scrape by with any low integrity non-prototype [[Swarmer]]-tier flight units, builds relying heavily on these types of parts struggle greatly due to their fragility. [[Prototype Part|Prototype]] flight units have a large number of benefits over non-prototypes. However, that doesn't mean that non-prototypes aren't worth using. [[Flight Arrays]] and [[Surge Thrusters]] have good niches, and even typical non-prototype parts like the basic [[Flight Unit]] can be used in a pinch. Any flight unit is better than an empty slot.
 
 [[Heading]]Effect of Rating[[/Heading]]
 Higher rating parts have higher support and integrity at the cost of higher energy and heat upkeep. Unlike other propulsion types, higher rating parts are not always a superior choice. It is entirely possible to make a build off of early-game prototypes like [[Imp. VTOL Module|Imp. VTOL Modules]] and use them throughout the entire run, never opting to swap them out for higher rating parts. While this results in a lower total support limit, the tradeoff is that upkeep is very low, potentially avoiding the requirement of a 2nd power source or [[Cooling Utilities]]. Instead, these slots can be used to maximize the number of utility slots for other purposes like hacking.
@@ -11258,7 +11265,7 @@ Parts are sorted alphabetically within ranks. This tier list is not a strict com
 [[List:Ordered]]
 Exp. flight units are good for low propulsion count flight builds but are less useful for more ""standard"" flight builds with 6 or more propulsion slots.
 [[/List]]","","","","","","",""
-"aoemica's Flight Guide/Good Utilities","Other","Utilities contain the most diverse range of parts in the game. This guide will not touch on every single unique kind, but strives to cover the most important ones.
+"aoemica's Flight Guide/Good Parts/Utilities","Other","Utilities contain the most diverse range of parts in the game. This guide will not touch on every single unique kind, but strives to cover the most important ones.
 
 [[Heading]][[Defensive Utilities]][[/Heading]]
 Although flight builds should rarely engage in combat, that doesn't mean that combat is off the table entirely. When in combat, flight should try to kill bots as fast as possible and use positioning and defensive utilities (when available) to reduce damage taken. Similarly, even when not intentionally fighting enemy bots, running past them often results in a few stray shots. Many kinds of damage utilities are not especially useful for flight due to prohibitive energy or mass costs, but a few are still worth consideration, namely evasion utilities.
@@ -11375,7 +11382,7 @@ A very funny storage unit due to its side effect of eating parts, but fairly wel
 
 [[Heading]][[Trap Extractors]][[/Heading]]
 Trap Extractors are a bit niche but can be quite valuable in certain extended [[Wintypes]]. There is also no shortage of random troublesome squads to use traps against. Flight's speed makes it easy to plant traps without being spotted or lure hostiles into already placed traps near explosive machines.","","","","","","",""
-"aoemica's Flight Guide/Good Weapons","Other","Even though flight builds can get away from most encounters without resorting to combat, it doesn't mean that weapons aren't important. Eliminating fast moving hostiles like [[Cutter|Cutters]], [[Swarmer|Swarmers]], or [[Programmer|Programmers]] might be a better option than trying to escape and getting backed into a corner. Additionally, it's often worth just clearing out an annoyingly positioned squad guarding a bottleneck in the map instead of running by and getting chased and shot a bunch of times. Some flight builds even specialize in combat exclusively instead of trying to stay stealthy.
+"aoemica's Flight Guide/Good Parts/Weapons","Other","Even though flight builds can get away from most encounters without resorting to combat, it doesn't mean that weapons aren't important. Eliminating fast moving hostiles like [[Cutter|Cutters]], [[Swarmer|Swarmers]], or [[Programmer|Programmers]] might be a better option than trying to escape and getting backed into a corner. Additionally, it's often worth just clearing out an annoyingly positioned squad guarding a bottleneck in the map instead of running by and getting chased and shot a bunch of times. Some flight builds even specialize in combat exclusively instead of trying to stay stealthy.
 
 [[Heading]][[Ballistic Weapons]][[/Heading]]
 The longer-ranged and lower upkeep requirements of kinetic weaponry tend to be a good partner with flight. Guns, and especially cannons, can be used for kiting bots at maximum range with a [[Visual Processing Units|Visual Processing Unit]].
