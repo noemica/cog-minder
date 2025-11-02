@@ -8,7 +8,7 @@ import useItemData from "../Effects/useItemData";
 import { useSpoilers } from "../Effects/useLocalStorageValue";
 import { ItemTooltip } from "../Pages/WikiPage/WikiTooltips";
 import { BotItemPopoverButton } from "../Popover/ItemPopover";
-import DetailsValueLine, {
+import {
     DetailsBotImages,
     DetailsBotTitleLine,
     DetailsEmptyLine,
