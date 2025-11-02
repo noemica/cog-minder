@@ -1,4 +1,4 @@
-"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
+﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","",""
 "01-MTF's Autohacker","Part","","","","","","","",""
 "01-MTF's Shockpuncher","Part","","","","","","","",""
@@ -10928,16 +10928,61 @@ See [[aoemica's Flight Guide/Good Power|Power]], [[aoemica's Flight Guide/Good P
 
 [[Heading]]Alignments[[/Heading]]
 ","","","","","","","aoemica's Flight Guide/Advanced Movement,aoemica's Flight Guide/Alignments,aoemica's Flight Guide/Good Parts,aoemica's Flight Guide/Machine Hacking,aoemica's Flight Guide/Routing"
-"aoemica's Flight Guide/Advanced Movement","Other","[[Heading]][[B]][[Color:Red]]WIP[[/Color]][[/B]][[/Heading]][[Heading]]Attack Dancing[[/Heading]]
-Attack dancing is a strategy 
+"aoemica's Flight Guide/Advanced Movement","Other","The following is a list of various advanced movement techniques that are useful for flight. Flight is the fastest and most maneuverable propulsion type in the game, so make sure you use these traits to your advantage. Generally, these types of techniques help to avoid taking unnecessary damage. Flight doesn't often have a lot of integrity to spare, so every avoided attack can make a big difference in a run.
+
+[[Heading]]Attack Dancing[[/Heading]]
+Attack dancing is a strategy that takes combines flight's high move speed with the low time cost of [[Actuators|Actuator]]-boosted melee attacks in order to maximize evasion bonus and reduce damage taken in combat. It works best with a full evasion stack of a [[Phase Shifters|Phase Shifter]] and a [[Reaction Control Systems|Reaction Control System]]. The general technique is to take one or two swings at a bot (depending on both your and your target's volley time) and then take moves backwards before the bot gets a chance to attack. By doing this, you decrease the ranged targeting bonus your opponent gets by you being close to them (from +15% to +12% or less depending on moves) as well as gain the movement avoidance bonus from flight which can be quite substantial (up to 19% at 5 speed).
+This technique is most useful in the later depths of the game due to its numerous build requirements and benefits scaling with speed. It is a little niche since it only works well in 1v1 encounters, such as very powerful lategame enemies like top tier [[Behemoth|Behemoths]], [[Prototype Robot|Prototype Robots]], or [[Redacted]]bosses[[/Redacted]]. Against standard combat encounters, it may be more difficult to pull off due to layout or being fired at by multiple bots at once. Continuous attacks are more effective in most cases.
+The specifics for this technique are as follows:
+[[List]]
+Determine your base volley time. For example, a [[Nanosword]] with [[Femtoactuators]] or 2 [[Nanoactuators]] has a volley time of 125. Follow-ups can impact this time a little bit, but ignore that for now.|
+Determine your opponent's average volley time. For example, a [[B-99 Colossus]] has a volley time of 350.|
+Determine how many attacks you can perform per one of their attacks. In this example, you can get 2 125 TU swings inside of the Colossus's 350 volley time, but not the 3rd.|
+Perform your 1-2 attacks before the bot gets a chance to move.|
+Move away from the bot for as many moves as you can. You may want to consider overloading at this point.|
+Once the enemy has made their attacks with reduced accuracy, go back to them and continue attacking.|
+Repeat
+[[/List]]
+If you want to get min-max this technique, you can try to calculate the exact sub-turn time units and determine how safe you are to get follow-up attacks. In most cases this added delay is not a major factor, but if your volley time + 2 moves is very close to your target's volley time or you have a lot of melee weapons and an [[Actuator Arrays|Actuator Array]], you may want to consider skipping an attack in order to align your attacks better so you don't get take an extra volley with reduced evasion.
+
+[[Heading:2]]Machine Dancing[[/Heading]]
+A variant of attack dancing is to use map layouts, particularly machines, to continuously attack an enemy without ever giving them a chance to attack. In this case, your attack and movement speed combined need to be less than the opposing bot's movement speed instead of their volley time. By performing your attack and then retreating around a corner where the bot can't hit you, you can get an unlimited number of attacks off without being hit in return. This requires weapons with 0 delay and/or super high speed and generally only works against slower targets like [[Sentry|Sentries]].
+
+[[Heading:2]]Examples|Attack Dancing Examples[[/Heading]]
+[[Gallery]]Attack Dancing.webp|Attack dancing against a [[Behemoth]] with a [[Nanosword]] (note how many projectiles miss)|Machine Dancing.webp|Machine dancing against a [[Sentry]] with a [[Longsword +1]][[/Gallery]]
+
+[[Heading]]Bot Looping[[/Heading]]
+Bot looping is a technique that can be used to lose persistent pursuers like [[Programmer|Programmers]], [[Hunter|Hunters]], and [[Sentry}Sentries]]. Rather than running away from hostiles that are actively tracking you into the unknown or a busy corridor, this strategy revolves around using a known safe loopable area to force them to lose tracking. The key element of a potential loop is that the area must be large enough for you to loop without them spotting you. Ideally, the loop should also have no other hostiles nearby. If you have a suitable area, just run around the loop in circles for as long as you need to until the bots have lost tracking on you. [[ECM Suites]] help reduce the amount of time looping takes, though they are not required to perform this technique.
+Note: When looping multiple bots at the same time, don't get too far ahead in order to keep them as grouped up as possible. If you go too far ahead you might end up splitting the squad into two and get pincered. If you are over halfway through the loop, that's when some of the bots in the back may turn around and decide to go the other way. If this happens, you might end up having to go a different route or else running past one of the pursuers.
+
+[[Heading:2]]Examples|Bot Looping Examples[[/Heading]]
+[[Gallery]]Extermination Looping.webp|Looping an [[Extermination Squad]] of [[Programmer|Programmers]] around some rooms in [[Research]][[/Gallery]]
+
+[[Heading]]Bot Luring[[/Heading]]
+Bot luring is a technique that pulls hostiles out of position so you can do something in the area they were previously in. For example, you may want to grab an item from a cache, interact with a machine, kill a guarded [[Hauler]], or pass through a corridor. The gist of this technique is to get noticed by some way so that the target bot(s) are chasing you instead of hanging around the area you want to go to. [[Security Squad|Guards]] can be [[Partial Spot|partial spotted]] which can avoid taking an extra volley. If you do this, make sure to overload all overloadable propulsion to decrease the chance of getting hit while performing this technique. Some other methods of gaining attention are to shoot a long-ranged weapons like [[Ballistic Cannons]] at them or to get intentionally spotted by a [[Watcher]]. If you are trying to get noticed by visual range alone, try to do it in a way that machines are blocking the line of fire to avoid extra shots.
+
+[[Heading:2]]Examples|Guard Luring Examples[[/Heading]]
+[[Gallery]]Guard Luring.webp|Luring a [[Sentry]] out of a room in order to safely grab an item from the floor|Patrol Luring.webp|Luring a [[Patrol Squad|patrol]] of [[Grunt|Grunts]] into a room to safely bypass a corridor[[/Gallery]]
 
 [[Heading]]Greenbot Armor[[/Heading]]
+Greenbot armor is a technique that involves hiding behind green [[0b10 Non-combat Bots]] in such a way that hostile bots won't be able to shoot through them to hit you. This technique is most effective when horizontally or vertically aligned with the bot you don't want to shoot you since other alignments usually allow for some kind of firing angle. While it works best in 1-tile wide corridors, this isn't the only place this works. Most frequently, [[Security Squad|Guards]] are the best targets of this technique, especially [[Sentry|Sentries]] and [[Heavy|Heavies]].
+The primary reason to use this technique is to be able to run past a bot standing in an inconvenient location without being shot at. Busy corridors naturally have lots of non-combat bots pathing through it. In a pinch, you can always drop a part to try to lure a [[Recycler]] or destroy a wall to lure an [[U-05 Engineer|Engineer]].
 
-[[Heading]]Guard Luring[[/Heading]]
+[[Heading:2]]Examples|Greenbot Armor Examples[[/Heading]]
+[[Gallery]]Greenbot Armor.webp|Using non-combat bots to safely make it to an exit[[/Gallery]]
 
-[[Heading]]Room Circling[[/Heading]]
+[[Heading]]Kiting[[/Heading]]
+Kiting is a technique that combines superior movement speed of flight with [[Visual Processing Units]] and long-ranged weaponry like [[Ballistic Cannons]]. By taking advantage of your range and backing up when the bot you are shooting at comes close, you can reduce or even completely negate damage taken by fighting squads. Any weapon with a range longer than the bot you're fighting can be used, although you can fire more times before having to reposition with a larger difference between you and your opponent. [[Weapon Cyclers]] also help to maximize the number of volleys you can perform in your window of opportunity. Since airborne and leg-based bots get avoidance bonuses while moving, [[Targeting Computers|Targeting]] or a [[Weapon Mount]] help you hit more shots while kiting.
+In order to kite successfully, you need wide open corridors or paths in which to fire down. Some maps are better for this than others. For example, [[Factory]] is great with its tendency to produce many long open corridors, while [[Research]] is much more labyrinthine, favoring smaller and closer rooms. Depending on the layout, you may be able to loop through another path in order to keep shooting down your kiting corridor after you've ran out of space.
 
-","","","","","","",""
+[[Heading:2]]Examples|Kiting Examples[[/Heading]]
+[[Gallery]]Sentry Kiting.webp|Kiting a [[Sentry]] with a [[Tri-rail Accelerator]] to take no damage[[/Gallery]]
+
+[[Heading]][[Sneak Attack]] Preparation[[/Heading]]
+Sneak attacks are a great way to get the drop on troublesome combat and non-combat bots alike, though they are a little more difficult to achieve than simply walking up to a bot and hitting it. Even on flight's fast speed, you may not always get the drop. One of the best techniques to get a sneak attack is to allow a bot to [[Partial Spot]] you and then come in or out of the room they are in. It's better to move back and forth around a corner rather than just pressing the wait key until they show up. For faster bots, you may need the extra time. For slower bots, it's still nice to get a tiny bit of extra momentum damage. You can also use this technique on [[Watcher|Watchers]] if you predict where they are headed. Just move back and forth next to the door and smack them when they peek in.
+
+[[Heading:2]]Examples|Sneak Attack Examples[[/Heading]]
+[[Gallery]]Watcher Sneak Attack.webp|Sneak attacking a [[Watcher]][[/Gallery]]","","","","","","",""
 "aoemica's Flight Guide/Alignments","Other","Flight is quite flexible and can work with any [[Alignment]] in the game, although some are more natural pairings than others. Throughout the entirety of the run, including extended endgame [[Wintypes]], flight builds appreciate using allies as both extra damage and distractions to take fire away from Cogmind. Lots of unique alignment-specific rewards are fantastic boons for flight builds, from unique parts, to special map events, to gameplay-altering mechanics.
 
 [[Heading]][[FarCom]][[/Heading]]
