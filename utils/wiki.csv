@@ -7967,7 +7967,7 @@ List of available abandonware bot hacks:
 [[GameText]]TRNCOAT.EXE[[/GameText]] - A Programmer emits a 15 damage 3 tile radius EM damage effect every few turns. Has spectrum and disruption. The programmer itself is hit by the damage.[[/List]]
 [[Heading:3]]Cartography Club[[/Heading]]
 [[Image]]Scraptown Cartography Club Solve.png|Steps to solve the Cartography Club Maze (may be mirrored)[[/Image]]
-The Cartography Club contains multiple rewards that are locked behind a maze. These items are a [[Mapping Drone Bay]] (not guaranteed), a [[Surveybot 17 Chip]] (not guaranteed), a Terminal filled with various forms of map intel (guaranteed), and a [[Deep Structural Scanner]] (guaranteed). In order to perform steps 4-6, Cogmind must be at least 50 speed. A grounded bot can temporarily purge items in order to complete the puzzle, as core hover is enough speed.
+The Cartography Club contains multiple rewards that are locked behind a maze. These items are a [[Mapping Drone Bay]] (not guaranteed), a [[Surveybot 17 Chip]] (not guaranteed), a Terminal filled with various forms of map intel (guaranteed), and a [[Deep Structural Scanner]] (guaranteed). In order to perform steps 4-6, Cogmind must be at least 120 speed. A slower bot can temporarily purge items in order to complete the puzzle since core hover is more than enough speed.
 The maze may mirrored horizontally from the example image. The following steps will solve the maze:
 [[List]]1: From the entrance, step toward the terminal. A wall will rise in front of Cogmind.|
 2: From the Terminal, follow the path left path, bypassing an Explorer blocking the path. A wall will open up at the end of the path.|
