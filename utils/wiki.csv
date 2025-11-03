@@ -11637,7 +11637,7 @@ My personal favorite Fabricator hack. Recompiling allow you to turn low security
 [[Heading:2]][[GameText]]Force(Overload)[[/GameText]][[/Heading]]
 An amusing hack that turns Fabricators into big EM weapons, but not a frequently practical one. Most bots that this hack effective against can be easily avoided through other means. If it did more than tickle [[Programmer|Programmers]], it would be a little more useful.
 
-[[Heading:2]]Trojan(Fabnet)[[/Heading]]
+[[Heading:2]][[GameText]]Trojan(Fabnet)[[/GameText]][[/Heading]]
 A difficult to pull off and rather niche hack that can temporarily overwrite enemy bots into allies. The base success rate is very low which makes hackware a near-requirement. Most importantly, the side effect of a floor-wide machine lockout is a huge detriment. Since the lockout can theoretically occur on the very first hostile combat bot you spot, there's always a chance that you can go an entire floor without access to most machines. This hack is best used if you are going to be engaging in a lot of combat, for example, diving into many [[Garrison|Garrisons]] for [[RIF]] or the [[Encrypted Comm Array]]. Notably, Garrisons are not locked down, so you don't have to worry about getting one open before the lockout occurs. More stealth-oriented flight builds benefit more from keeping the machines online than risk the chance of a lockout for the rare bot in a squad causing a distraction for a few turns.
 
 [[Heading:2]][[GameText]]Trojan(Liberate)[[/GameText]][[/Heading]]
@@ -11747,7 +11747,7 @@ A secondary function of the Repair Station is refitting Cogmind with [[Backup Pa
 Show/hide hacks|
 Thoughts about select Force/Trojan hacks:
 
-[[Heading:2]]Force(Patch)[[/Heading]]
+[[Heading:2]][[GameText]]Force(Patch)[[/GameText]][[/Heading]]
 Patch is an interesting but rather niche hack that repairs a few parts below 50% integrity instantly, but only up to a maximum of 50%. Most of the time, I would recommend trying for full integrity repairs on a single part. Flight doesn't have too many very high integrity parts like multislot propulsion or armor that benefits the most from this hack. However, sometimes a patch is all you can afford as you are desperately fleeing from some pursuers. In that case, any repair is better than nothing, though try to make sure you won't run into the freshly summoned [[Investigation Squad]] afterwards. Some of the better flight targets for patch include [[Flight Arrays]] and armor, especially high rating armor like [[Centrium Light Armor Plating|Centrium Light]] or [[Centrium Medium Armor Plating|Medium Armor Plating]].
 [[/Expandable]]
 
