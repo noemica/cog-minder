@@ -484,6 +484,7 @@ export default function BotDetails({
             <DetailsTextLine category="Threat" content={bot.threat} />
             <DetailsTextLine category="Value" content={bot.value} />
             <DetailsTextLine category="Energy Generation" content={bot.energyGeneration} />
+            <DetailsTextLine category=" Innate" content={bot.innateEnergy} tooltipOverride="Innate Energy Generation" />
             <DetailsTextLine category="Net Energy/Turn" content={bot.netEnergyPerTurn} />
             <DetailsTextLine category="Net Energy/Move" content={bot.netEnergyPerMove} />
             {bot.netEnergyPerVolley !== undefined && (

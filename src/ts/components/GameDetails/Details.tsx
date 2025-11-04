@@ -64,6 +64,7 @@ export const TooltipTexts = {
     Value: "The amount of score that will be obtained if the bot is destroyed.",
     "Energy Generation":
         "The amount of energy this bot generates per turn, not taking upkeep into account. This also includes any hidden energy generation bonuses that a bot may have hardcoded.",
+    "Innate Energy Generation": "The amount of energy this bot generates per turn, not including power parts.",
     "Net Energy/Turn": "The amount of energy this bot generates or loses each turn if it stands still.",
     "Net Energy/Move": "The amount of energy this bot generates or loses when it makes a move.",
     "Net Energy/Volley": "The amount of energy this bot generates or loses when it fires a volley.",

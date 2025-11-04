@@ -69,6 +69,7 @@ const botColumnDefs: ColumnDef<Bot>[] = [
             { accessorKey: "Threat", header: "Threat" },
             { accessorKey: "value", header: "Value" },
             { accessorKey: "energyGeneration", header: "Energy Generation" },
+            { accessorKey: "innateEnergy", header: "Innate Energy" },
             { accessorKey: "netEnergyPerTurn", header: "Net Energy/Turn" },
             { accessorKey: "netEnergyPerMove", header: "Net Energy/Move" },
             { accessorKey: "netEnergyPerVolley", header: "Net Energy/Volley" },

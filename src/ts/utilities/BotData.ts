@@ -14,6 +14,8 @@ import {
     MassSupport,
     MeleeAnalysis,
     ParticleCharging,
+    PowerAmplifier,
+    PowerItem,
     PropulsionItem,
     RangedWeaponCycling,
     WeaponItem,
@@ -238,6 +240,19 @@ export class BotData {
                 }
             }
 
+            const powerAmplifierBonus = components
+                .filter((item) => hasActiveSpecialProperty(item, true, "PowerAmplifier"))
+                .map((item) => (item.specialProperty!.trait as PowerAmplifier).percent)
+                .reduce(sum, 1);
+
+            const energyFromPower = Math.trunc(
+                components
+                    .filter((item) => item.slot === "Power")
+                    .map((item) => (item as PowerItem).energyGeneration || 0)
+                    .reduce(sum, 0) * powerAmplifierBonus,
+            );
+            const innateEnergy = energyGeneration - energyFromPower;
+
             // Calculate move energy/heat stats
             const speed = parseInt(bot.Speed);
             let netEnergyPerMove = Math.trunc((speed / 100) * netEnergyPerTurn - energyPerMove);
@@ -282,6 +297,7 @@ export class BotData {
                 heatDissipation: heatDissipation,
                 immunities: bot.Immunities ?? [],
                 immunitiesString: bot.Immunities?.join(", ") ?? "",
+                innateEnergy: innateEnergy,
                 injectorDissipation: injectorDissipation,
                 inventorySize: bot["Inventory Capacity"],
                 locations: extraData?.Locations ?? [],

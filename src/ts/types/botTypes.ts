@@ -71,6 +71,7 @@ export type Bot = {
     heatDissipation: number;
     immunities: BotImmunity[];
     immunitiesString: string;
+    innateEnergy: number;
     injectorDissipation: number;
     inventorySize?: string;
     locations: BotLocation[];
