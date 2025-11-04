@@ -7,10 +7,6 @@
     width: 9.5rem;
 }
 
-.details-range-dim {
-    color: @details-dim-text-wiki;
-}
-
 .preview-changes-button {
     width: 11rem;
 }
@@ -33,6 +29,12 @@
     font-family: @paragraph-font-family;
     font-size: @paragraph-font-size;
     color: @font-paragraph-color;
+
+    > :not(.wiki-infobox) {
+        .details-range-dim {
+            color: @details-dim-text-wiki;
+        }
+    }
 }
 
 .no-spoiler-info-button,
