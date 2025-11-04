@@ -553,7 +553,7 @@ export function RangeLine({
 
     // Enforce at least 1 bar
     maxBars = Math.max(maxBars, 1);
-    let fullBars = Math.min(Math.floor(maxBars * valuePercentage), value);
+    let fullBars = Math.min(Math.floor(maxBars * valuePercentage), maxBars);
 
     // Always round away from 0
     // This allows for things like 1/100 to show 1 bar rather than 0
