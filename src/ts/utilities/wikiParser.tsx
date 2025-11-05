@@ -1211,7 +1211,7 @@ function processHacksTag(state: ParserState, result: RegExpExecArray) {
     }
 
     // If a subset of hacks are chosen, filter them now
-    const displayedHacks = machine.Hacks as JsonHack[];
+    const displayedHacks = [...machine.Hacks] as JsonHack[];
     if (hackNames !== undefined) {
         for (let i = displayedHacks.length - 1; i >= 0; i--) {
             if (hackNames.has(displayedHacks[i].Name)) {
@@ -1237,37 +1237,37 @@ function processHacksTag(state: ParserState, result: RegExpExecArray) {
             <table className="wiki-table">
                 <thead>
                     <tr>
-                        <th>
+                        <th colSpan={2}>
                             <TextTooltip tooltipText="The hack name to type into a machine.">Hack Name</TextTooltip>
                         </th>
                         <th>
                             <TextTooltip tooltipText="The success rate of a direct hack at a level 1 machine.">
-                                1 Dir
+                                1 Direct
                             </TextTooltip>
                         </th>
                         <th>
                             <TextTooltip tooltipText="The success rate of an indirect hack (aka manual hack) at a level 1 machine.">
-                                1 Indir
+                                1 Indirect
                             </TextTooltip>
                         </th>
                         <th>
                             <TextTooltip tooltipText="The success rate of a direct hack at a level 2 machine.">
-                                2 Dir
+                                2 Direct
                             </TextTooltip>
                         </th>
                         <th>
                             <TextTooltip tooltipText="The success rate of an indirect hack (aka manual hack) at a level 2 machine.">
-                                2 Indir
+                                2 Indirect
                             </TextTooltip>
                         </th>
                         <th>
                             <TextTooltip tooltipText="The success rate of a direct hack at a level 3 machine.">
-                                3 Dir
+                                3 Direct
                             </TextTooltip>
                         </th>
                         <th>
                             <TextTooltip tooltipText="The success rate of an indirect hack (aka manual hack) at a level 3 machine.">
-                                3 Indir
+                                3 Indirect
                             </TextTooltip>
                         </th>
                     </tr>
@@ -1286,6 +1286,11 @@ function processHacksTag(state: ParserState, result: RegExpExecArray) {
                             >
                                 <td className="wiki-cell-nowrap">
                                     <p>{hack.Name}</p>
+                                </td>
+                                <td className="hack-info-button-cell">
+                                    <TextTooltipButton className="hack-info-button" tooltipText={hack.Description}>
+                                        ?
+                                    </TextTooltipButton>
                                 </td>
                                 {hackValues.map((v, i) => (
                                     <td key={i} className="wiki-cell-center-align">

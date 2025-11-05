@@ -501,7 +501,7 @@
     border: @border-width solid @border-color;
 }
 
-.wiki-table:not(.wiki-sortable-table) > * > tr > * {
+.wiki-table:not(.wiki-sortable-table) > * > tr > *:not(.hack-info-button-cell) {
     padding: @table-cell-text-padding;
 }
 
@@ -695,5 +695,27 @@
 
     > tbody > tr:first-child > td > div > *:first-child {
         font-size: @wiki-supergroup-infobox-font-size;
+    }
+}
+
+.hack-info-button-cell {
+    padding: 0;
+}
+
+.hack-info-button {
+    align-self: stretch !important;
+
+    > button {
+        // Remove border radius as it doesn't look good with
+        // the smaller button sizes here
+        font-family: cog-mono;
+        border: 0;
+        padding: @button-small-padding;
+    }
+
+    :hover {
+        // Override the normal border invert since we're messing with the
+        // borders that would be shown here, and it looks weird to leave
+        border-color: @border-color;
     }
 }
