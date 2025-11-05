@@ -1,5 +1,5 @@
 import { ColumnDef, GroupColumnDef } from "@tanstack/react-table";
-import React, { Fragment, ReactNode } from "react";
+import { Fragment, ReactNode } from "react";
 
 import lore from "../../json/lore.json";
 import hacks from "../../json/machine_hacks.json";
@@ -10,10 +10,12 @@ import { LinkIcon } from "../components/Icons/Icons";
 import WikiGroupInfobox from "../components/Pages/WikiPage/WikiGroupNavbox";
 import WikiTableOfContents, { WikiHeadingState } from "../components/Pages/WikiPage/WikiTableOfContents";
 import { BotLink, ItemLink, LocationLink } from "../components/Pages/WikiPage/WikiTooltips";
+import TextTooltip from "../components/Popover/TextTooltip";
 import TextTooltipButton from "../components/Popover/TextTooltipButton";
 import { SortingTable } from "../components/Table/Table";
 import { Bot, BotPart } from "../types/botTypes";
 import { MapLocation, Spoiler } from "../types/commonTypes";
+import { JsonHack } from "../types/hackTypes";
 import { Critical, Item, WeaponItem } from "../types/itemTypes";
 import { WikiEntry } from "../types/wikiTypes";
 import { HashLink } from "../utilities/linkExport";
@@ -29,6 +31,7 @@ import {
     parseIntOrUndefined,
     rootDirectory,
 } from "./common";
+import { calculateHackPercentages } from "./hackUtilities";
 import { allPartColumnDefs } from "./partColumnDefs";
 
 // Output group types
@@ -1185,6 +1188,8 @@ function processHacksTag(state: ParserState, result: RegExpExecArray) {
         return;
     }
 
+    const percentagesOnly = result[2] === "Percentages";
+
     const startIndex = state.index + result[0].length;
     const endIndex = startIndex + hacksResult.index - result[0].length;
 
@@ -1206,7 +1211,7 @@ function processHacksTag(state: ParserState, result: RegExpExecArray) {
     }
 
     // If a subset of hacks are chosen, filter them now
-    const displayedHacks = machine.Hacks;
+    const displayedHacks = machine.Hacks as JsonHack[];
     if (hackNames !== undefined) {
         for (let i = displayedHacks.length - 1; i >= 0; i--) {
             if (hackNames.has(displayedHacks[i].Name)) {
@@ -1225,45 +1230,114 @@ function processHacksTag(state: ParserState, result: RegExpExecArray) {
         }
     }
 
-    const tableNode = (
-        <table className="wiki-table">
-            <thead>
-                <tr>
-                    <th>Hack name</th>
-                    <th>Description</th>
-                    <th>Base success rate</th>
-                </tr>
-            </thead>
-            <tbody>
-                {displayedHacks.map(
-                    (
-                        hack: { BaseChance: number; Description: string; Name: string; SpoilerLevel?: string },
-                        i: number,
-                    ) => (
-                        <tr
-                            className={
-                                canShowSpoiler((hack.SpoilerLevel as Spoiler) || "None", state.spoiler)
-                                    ? ""
-                                    : "spoiler-text"
-                            }
-                            key={i}
-                        >
-                            <td className="wiki-cell-nowrap">
-                                <p>{hack.Name}</p>
-                            </td>
-                            <td>
-                                <p>{hack.Description}</p>
-                            </td>
-                            <td className="wiki-cell-center-align">
-                                <p>{hack.BaseChance}%</p>
-                            </td>
-                        </tr>
-                    ),
-                )}
-            </tbody>
-        </table>
-    );
+    let tableNode: ReactNode;
 
+    if (percentagesOnly) {
+        tableNode = (
+            <table className="wiki-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <TextTooltip tooltipText="The hack name to type into a machine.">Hack Name</TextTooltip>
+                        </th>
+                        <th>
+                            <TextTooltip tooltipText="The success rate of a direct hack at a level 1 machine.">
+                                1 Dir
+                            </TextTooltip>
+                        </th>
+                        <th>
+                            <TextTooltip tooltipText="The success rate of an indirect hack (aka manual hack) at a level 1 machine.">
+                                1 Indir
+                            </TextTooltip>
+                        </th>
+                        <th>
+                            <TextTooltip tooltipText="The success rate of a direct hack at a level 2 machine.">
+                                2 Dir
+                            </TextTooltip>
+                        </th>
+                        <th>
+                            <TextTooltip tooltipText="The success rate of an indirect hack (aka manual hack) at a level 2 machine.">
+                                2 Indir
+                            </TextTooltip>
+                        </th>
+                        <th>
+                            <TextTooltip tooltipText="The success rate of a direct hack at a level 3 machine.">
+                                3 Dir
+                            </TextTooltip>
+                        </th>
+                        <th>
+                            <TextTooltip tooltipText="The success rate of an indirect hack (aka manual hack) at a level 3 machine.">
+                                3 Indir
+                            </TextTooltip>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {displayedHacks.map((hack: JsonHack, i: number) => {
+                        const hackValues = calculateHackPercentages(hack);
+                        return (
+                            <tr
+                                className={
+                                    canShowSpoiler((hack.SpoilerLevel as Spoiler) || "None", state.spoiler)
+                                        ? ""
+                                        : "spoiler-text"
+                                }
+                                key={i}
+                            >
+                                <td className="wiki-cell-nowrap">
+                                    <p>{hack.Name}</p>
+                                </td>
+                                {hackValues.map((v, i) => (
+                                    <td key={i} className="wiki-cell-center-align">
+                                        <p>{v}%</p>
+                                    </td>
+                                ))}
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+        );
+    } else {
+        tableNode = (
+            <table className="wiki-table">
+                <thead>
+                    <tr>
+                        <th>Hack name</th>
+                        <th>Description</th>
+                        <th>Base success rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {displayedHacks.map(
+                        (
+                            hack: { BaseChance: number; Description: string; Name: string; SpoilerLevel?: string },
+                            i: number,
+                        ) => (
+                            <tr
+                                className={
+                                    canShowSpoiler((hack.SpoilerLevel as Spoiler) || "None", state.spoiler)
+                                        ? ""
+                                        : "spoiler-text"
+                                }
+                                key={i}
+                            >
+                                <td className="wiki-cell-nowrap">
+                                    <p>{hack.Name}</p>
+                                </td>
+                                <td>
+                                    <p>{hack.Description}</p>
+                                </td>
+                                <td className="wiki-cell-center-align">
+                                    <p>{hack.BaseChance}%</p>
+                                </td>
+                            </tr>
+                        ),
+                    )}
+                </tbody>
+            </table>
+        );
+    }
     state.index = endIndex + hacksResult[0].length;
 
     state.output.push({ groupType: "Individual", node: tableNode });
