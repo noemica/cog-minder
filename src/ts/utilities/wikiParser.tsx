@@ -1185,8 +1185,6 @@ function processHacksTag(state: ParserState, result: RegExpExecArray) {
         return;
     }
 
-    // Split interior text by |
-    // Even numbered indices contain image filenames, odd numbers contain captions
     const startIndex = state.index + result[0].length;
     const endIndex = startIndex + hacksResult.index - result[0].length;
     const machineType = state.initialContent.substring(startIndex, endIndex);
@@ -1199,12 +1197,14 @@ function processHacksTag(state: ParserState, result: RegExpExecArray) {
     } else {
         const tableNode = (
             <table className="wiki-table">
-                <tbody>
+                <thead>
                     <tr>
                         <th>Hack name</th>
                         <th>Description</th>
                         <th>Base success rate</th>
                     </tr>
+                </thead>
+                <tbody>
                     {machineHacks.Hacks.map(
                         (
                             hack: { BaseChance: number; Description: string; Name: string; SpoilerLevel?: string },
