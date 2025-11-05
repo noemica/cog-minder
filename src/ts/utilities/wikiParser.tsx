@@ -1187,55 +1187,86 @@ function processHacksTag(state: ParserState, result: RegExpExecArray) {
 
     const startIndex = state.index + result[0].length;
     const endIndex = startIndex + hacksResult.index - result[0].length;
-    const machineType = state.initialContent.substring(startIndex, endIndex);
+
+    const split = state.initialContent.substring(startIndex, endIndex).split("|");
+    let hackNames: Set<string> | undefined;
+
+    const machineType = split[0];
+    if (split.length > 1) {
+        hackNames = new Set(split.slice(1).map((name) => name.trim()));
+    }
+
+    // Find the machine to display the hacks for
+    const machine = hacks.find((machine) => machine.Name === machineType);
+    if (machine === undefined) {
+        recordError(state, "Found hacks tag with invalid machine type");
+        state.index = endIndex + hacksResult[0].length;
+
+        return;
+    }
+
+    // If a subset of hacks are chosen, filter them now
+    const displayedHacks = machine.Hacks;
+    if (hackNames !== undefined) {
+        for (let i = displayedHacks.length - 1; i >= 0; i--) {
+            if (hackNames.has(displayedHacks[i].Name)) {
+                // Selected hack, remove from chosen hacks
+                hackNames.delete(displayedHacks[i].Name);
+            } else {
+                // Not selected hack, don't display
+                displayedHacks.splice(i, 1);
+            }
+        }
+
+        if (hackNames.size > 0) {
+            for (const hack of hackNames) {
+                recordError(state, `Found hacks tag with unrecognized hack name ${hack}`);
+            }
+        }
+    }
+
+    const tableNode = (
+        <table className="wiki-table">
+            <thead>
+                <tr>
+                    <th>Hack name</th>
+                    <th>Description</th>
+                    <th>Base success rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {displayedHacks.map(
+                    (
+                        hack: { BaseChance: number; Description: string; Name: string; SpoilerLevel?: string },
+                        i: number,
+                    ) => (
+                        <tr
+                            className={
+                                canShowSpoiler((hack.SpoilerLevel as Spoiler) || "None", state.spoiler)
+                                    ? ""
+                                    : "spoiler-text"
+                            }
+                            key={i}
+                        >
+                            <td className="wiki-cell-nowrap">
+                                <p>{hack.Name}</p>
+                            </td>
+                            <td>
+                                <p>{hack.Description}</p>
+                            </td>
+                            <td className="wiki-cell-center-align">
+                                <p>{hack.BaseChance}%</p>
+                            </td>
+                        </tr>
+                    ),
+                )}
+            </tbody>
+        </table>
+    );
 
     state.index = endIndex + hacksResult[0].length;
 
-    const machineHacks = hacks.find((machine) => machine.Name === machineType);
-    if (machineHacks === undefined) {
-        recordError(state, "Found hacks tag with invalid machine type");
-    } else {
-        const tableNode = (
-            <table className="wiki-table">
-                <thead>
-                    <tr>
-                        <th>Hack name</th>
-                        <th>Description</th>
-                        <th>Base success rate</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {machineHacks.Hacks.map(
-                        (
-                            hack: { BaseChance: number; Description: string; Name: string; SpoilerLevel?: string },
-                            i: number,
-                        ) => (
-                            <tr
-                                className={
-                                    canShowSpoiler((hack.SpoilerLevel as Spoiler) || "None", state.spoiler)
-                                        ? ""
-                                        : "spoiler-text"
-                                }
-                                key={i}
-                            >
-                                <td className="wiki-cell-nowrap">
-                                    <p>{hack.Name}</p>
-                                </td>
-                                <td>
-                                    <p>{hack.Description}</p>
-                                </td>
-                                <td className="wiki-cell-center-align">
-                                    <p>{hack.BaseChance}%</p>
-                                </td>
-                            </tr>
-                        ),
-                    )}
-                </tbody>
-            </table>
-        );
-
-        state.output.push({ groupType: "Individual", node: tableNode });
-    }
+    state.output.push({ groupType: "Individual", node: tableNode });
 }
 
 // Process a heading tag like [[Heading]]Heading Text|Heading ID[[/Heading]]
