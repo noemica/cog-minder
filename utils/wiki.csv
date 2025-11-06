@@ -2410,7 +2410,7 @@ Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
 [[/PartGroupTable]]","","","","EX Chip 2,System Shield,Mak. System Shield,Imp. System Shield,Adv. System Shield,Exp. System Shield,Ghost Barrier,Quantum Router,Architect God Chip D","","",""
-"Defensive Utilities","Part Supergroup","","","","","Energy Deflector,Field Manipulator,Graphene Brace,Phase Redirector,Siege Articulator","Hardlight Generators,Force Fields,Phase Shifters,Point Defense Systems,Reaction Control Systems,Resistance Devices,Shield Generators","",""
+"Defensive Utilities","Part Supergroup","","","","","Energy Deflector,Field Manipulator,Graphene Brace,Phase Redirector,Siege Articulator","Hardlight Generators,EM Disruption Fields,Force Fields,Phase Shifters,Point Defense Systems,Reaction Control Systems,Resistance Devices,Shield Generators","",""
 "Demented","Bot","","","","","","","",""
 "Demolisher","Bot Group","Demolishers are a [[Bot Groups|Bot Group]] [[Hover Units|hovering]] [[0b10]] combat robots armed with an [[Launchers|Launcher]] and some form of [[Launcher Guidance Computers|Launcher Guidance Computer]]. They are seen most often in [[Demolisher Squad|Demolisher Squads]] to deal with infestations and as part of an [[Assault Squad]] if Cogmind has allies. They have heavy resistance to explosive damage, so they don't take much damage from their own explosions. Demolishers are extremely dangerous as they can deal out damage very quickly to Cogmind and any allies. Their tendency to destroy terrain can make repositioning difficult and can often reveal Cogmind's location to other hostiles.
 Demolishers are one of the scariest standard 0b10 bots to fight head on. Their massive damage and high resistance (or immunity) to their own attacks means that they won't be harmed much by blowing themselves up. Their Shock Absorption Systems are fairly frail, and if those are destroyed they will take much more damage from self explosions. [[Point Defense Systems]] are very useful at cutting down Demolisher damage by intercepting their missiles. Demolishers don't have any particular weakness, so use any non-Explosive damage type available to take them out as quickly as possible.
@@ -6242,7 +6242,7 @@ Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
 [[/PartGroupTable]]","","","","EX Chip 1,Hacking Suite,Mak. Hacking Suite,Imp. Hacking Suite,Adv. Hacking Suite,Exp. Hacking Suite,System Mapper,Deep Network Scanner,Cep. Network Penetrator,Architect God Chip A","","",""
-"Offensive Utilities","Part Supergroup","","","","","Asb. Combat Suite,Expert System,Heavy Servo Lattice,VL-GR5's Timing Chip","Actuators,Actuator Arrays,Armor Integrity Analyzers,Core Analyzers,EM Disruption Fields,Energy Filters,Force Boosters,Kinecellerators,Launcher Guidance Computers,Matter Filters,Melee Analysis Suites,Particle Chargers,Ranged Targeting Utilities,Recoil Stabilizers,Target Analyzers,Targeting Computers,Weapon Cyclers","",""
+"Offensive Utilities","Part Supergroup","","","","","Asb. Combat Suite,Expert System,Heavy Servo Lattice,VL-GR5's Timing Chip","Actuators,Actuator Arrays,Armor Integrity Analyzers,Core Analyzers,Energy Filters,Force Boosters,Kinecellerators,Launcher Guidance Computers,Matter Filters,Melee Analysis Suites,Particle Chargers,Ranged Targeting Utilities,Recoil Stabilizers,Target Analyzers,Targeting Computers,Weapon Cyclers","",""
 "Omega Cannon","Part","","","","","","","",""
 "Operator","Bot Group","Operators are [[Hover Units|hovering]] [[0b10]] non-combat bots that guard a single nearby [[Terminal]]. Upon seeing a hostile, Operators will run to their Terminal, summon a [[Reinforcement Squad]] to their location, and disable the machine. [[Spoiler]]The same effect occurs if an [[Imprint|imprinted]] Cogmind pings a Terminal and the Operator is nearby.[[/Spoiler]] As such, Operators should ideally be avoided or prevented from summoning reinforcements in some way. Operators are good looting sources of [[Datajacks]], both offensive and defensive [[Hackware]], and [[System Restoration Modules]]. When destroyed, they drop a [[Data Core]] that provides a one-time hacking bonus on the Operator's assigned Terminal and reveals nearby traps.
 Operators make good allies due to their unique ability to increase Cogmind's hacking power and detect [[Traps]]. Operators within a range of 20 tiles will contribute a 10% (then 5%, 2%, and 1%) stacking offensive hacking bonus per Operator. Additionally, allied Operators will report all trap locations that Cogmind encounters in visual range as long as the Operator is within a 20 tile radius.
@@ -11411,6 +11411,31 @@ The 2 types of vision manipulation utilities, [[Visual Processing Units]] and [[
 [[Heading]][[Mass Support Devices]][[/Heading]]
 Mass support is one of the biggest weaknesses of flight units, so anything to help patch that low support number up is welcome. The lower rating mass support utilities are not especially slot efficient, but the prototypes like the [[Gravity Neutralizer]] and above can be worthwhile. The top normally obtainable part, the [[Adv. Quantum Shading Machine]], is a pricy 15 energy per turn, but at 25 mass support, it's worth about 3 endgame flight units of support in a single slot. Use powerful engines like the [[Imp. Fusion Compressor]] in order to offset the energy cost of the support.
 
+[[Heading]][[Offensive Utilities]][[/Heading]]
+Use these to take care of hostiles as quickly as possible since the best combat encounter is one in which you can avoid any damage taken. Use your own speed and maneuverability along with these offensive utilities to take down bots as quickly as possible.
+
+[[Image]]../part_art/Adv. Actuator Array.png|[[Adv. Actuator Array]], mid-tier Actuator Array[[/Image]]
+[[Heading:2]][[Actuator Arrays]][[/Heading]]
+A unique melee part that increases the chances of performing follow-up attacks. These parts work very effectively with large weapon stacks of melee weapons (4 or more). Below that many, they aren't very useful. Personally, I prefer to buff up a smaller number of weapons higher instead of trying to get a large stack of weapons to work due to the reduced utility slots, though this is a perfectly viable approach.
+
+[[Heading:2]][[Armor Integrity Analyzers]][[/Heading]]
+Armor Integrity Analyzers are a rather niche utility that isn't great for general combat use. Most hostile bots you run into don't carry [[Armor]] and this part is useless against bots without armor. It does have a niche against some heavily armored enemies like [[Sentry|Sentries]] and some other late-game enemies, but choose Core Analyzers most of the time instead.
+
+[[Image]]../part_art/Exp. Core Analyzer.png|[[Exp. Core Analyzer]], top-tier Core Analyzer[[/Image]]
+[[Heading:2]][[Core Analyzers]][[/Heading]]
+Great all-around offensive utility. Core is the only thing you care to hit in nearly every case, so anything that increases your chance to hit can't be bad. The first one is most important and half-stacking a second provides a much more limited effect. Generally, other offensive or defensive parts are more worth the slot than a second Core Analyzer.
+
+[[Heading:2]][[Force Boosters]]/[[Kinecellerators]]/[[Particle Chargers]][[/Heading]]
+These utilities are all similar in their effect to increase either minimum damage, maximum damage, or both. Increased damage is always welcome, though their use has a tendency to be more limited than others. Killing is frequently about damage breakpoints; can you kill your target in a single hit on core or not? The higher the chance to kill in a single core hit, the faster combat will be over. Kinecellerators are the best at ensuring kills thanks to their minimum damage-enhancing abilities. Particle Chargers have a more middling effect that increases both minimum and maximum damage. Force Boosters are on the other end of the sliding scale with their maximum damage-enhancing effect. Increased maximum damage frequently helps in longer fights where it will take more than a few hits to kill the target.
+
+[[Image]]../part_art/Adv. Melee Analysis Suite.png|[[Adv. Melee Analysis Suite]], mid-tier Melee Analysis Suite[[/Image]]
+[[Heading:2]][[Melee Analysis Suites]]/[[Targeting Computers]][[/Heading]]
+These utilities both serve similar purposes except for different combat styles. You can't kill your target unless you can hit them, so packing one of these can help a lot, especially against smaller targets like [[Swarmer|Swarmers]] and [[Watcher|Watchers]]. Melee Analysis Suites also have an added bonus of increasing minimum damage dealt, though it isn't enough to be a significant factor most of the time. [[Weapon Mount]] also serves a similar role with the added effect of doubling coverage of your weapons. Usually this added effect is a net positive for flight since you want all the coverage you can get, although it can be slightly awkward when it causes you to lose weapons you weren't prepared to.
+
+[[Image]]../part_art/Nanoactuators.png|[[Nanoactuators]], mid-tier Actuators[[/Image]]
+[[Heading:2]][[Weapon Cyclers]]/[[Actuators]][[/Heading]]
+Weapon Cyclers, Actuators, and their more specialized friends [[Quantum Capacitor]] and [[Launcher Loader]] all help reduce volley time. Of course, the faster you fire, the faster you kill your enemies, though they do come with an increased in resource usages. For melee, this is inconsequential. However, expensive energy cannons paired with the Quantum Capacitor are likely to be difficult to sustain for long. Decreased volley time can help with [[aoemica's Flight Guide/Advanced Movement#Kiting|Kiting]] for ranged weapons or [[aoemica's Flight Guide/Advanced Movement#Attack Dancing|Attack Dancing]] for melee weapons.
+
 [[Image]]../part_art/Power Amplifier.png|Power Amplifier, the basic tier type of Power Amplifier[[/Image]]
 [[Heading]][[Power Amplifiers]][[/Heading]]
 Power Amplifiers are a mass efficient way of increasing power output while avoiding the need to evolve another power slot. These are best used with very high energy generation power like the [[Imp. Fusion Compressor]] or as a stopgap measure to delay evolving another power slot. As an example, the basic tier [[Power Amplifier]] provides 2 energy at 1 mass off of one [[Micro Power]]. Not especially powerful, but it can be enough to support a little more energy spend at a very low mass cost compared to another engine, which would take at least 3 for 5 energy with a [[Lgt. Ion Engine]].
@@ -11428,14 +11453,13 @@ These shieldings have a lot of value at the extremes of low integrity flight uni
 [[Heading:2]]Utility Shieldings[[/Heading]]
 These shieldings are the most useful of the bunch. Flight has a tendency to load up on powerful but fragile utilities of all kinds. Everybody knows the pain of having a 1/500 utility being sniped off, but these shieldings, especially [[Exp. Utility Shielding]], take that risk away. It's still worth swapping high coverage utilities like sensors off during combat in order to reduce the amount of damage the shieldings need to take.
 
-[[Image]]../part_art/Med. Storage Unit.png|Med. Storage Unit, a mid-tier storage unit that fits on most midgame flight builds[[/Image]]
-
 [[Heading]]Standard [[Armor]][[/Heading]]
 Boring, yet practical. Flight builds should typically wear at least one slot of armor, or at least have one in inventory to swap over some other fragile utility while being shot at. Light armors are preferred early on, particularly the [[Imp. Light Armor Plating]], but the extra coverage of a medium armor in a single slot is always appreciated if the mass support is available. Armor's overflow-absorption properties can be run-saving when running past a [[Heavy]], where otherwise a single unlucky hit can overflow and shred through multiple low integrity but essential parts.
 
 [[Heading]][[Stasis Canceller]][[/Heading]]
 The Stasis Canceller completely negates [[Stasis Trap|Stasis Traps]], one of the biggest pain points to flight builds. Getting stuck in one of these while being shot by a nearby patrol can easily ruin a build. Swapping a Canceller on is the easiest way to escape a bad situation like this. They are not worth actively keeping attached unless you know there is a Stasis Trap nearby. However, it may be worth keeping attached preemptively when running through a [[Garrison]] as they are very likely to have Stasis Traps strewn throughout.
 
+[[Image]]../part_art/Med. Storage Unit.png|Med. Storage Unit, a mid-tier storage unit that fits on most midgame flight builds[[/Image]]
 [[Heading]][[Storage Unit|Storage Units]][[/Heading]]
 Inventory is an essential part of any build, but it may be surprising to learn that flight doesn't need any dedicated storage units at all! A well-off flight build can avoid trouble and go without burning through backups. The builtin 5 storage is enough to carry a few essential backups and some utility swaps. Over the course of the run, upgrading to a reasonably sized storage unit becomes easier thanks to increasing flight unit support and number of total slots.
 
@@ -11613,7 +11637,7 @@ The Multitool is not much of an offensive weapon, but it does have a few unique 
 Flight can occasionally make use of these to dig into areas locked by blast doors. However, a little bit of hacking power will also get into most locked doors very reliably. [[Spoiler]]One of the better uses of Plasma Cutters for flight is to destroy Hubs in [[Hub_04(d)]] without triggering an explosion.[[/Spoiler]]","","","","","","",""
 "aoemica's Flight Guide/Machine Hacking","Other","A collection of thoughts and tips about machine hacking on flight. Each machine has its own section listed below. I highly recommend checking out the [[Interactive Machine]] and each machine's own page for additional details.
 
-[[Gallery]]../game_sprites/Fabricator.png|[[aoemica's Flight Guide/Machine Hacking/Fabricators|Fabricators]]|../game_sprites/Garrison.png|[[aoemica's Flight Guide/Machine Hacking/Garrisons|Garrisons]]|../game_sprites/Recycling Unit.png|[[aoemica's Flight Guide/Machine Hacking/Recycling Units|Recycling Units]]|../game_sprites/Repair Station.png|[[aoemica's Flight Guide/Machine Hacking/Repair Stations|Repair Stations]]|../game_sprites/Scanalyzer.png|[[aoemica's Flight Guide/Machine Hacking/Scanalyzers|Scanalyzers]]|../game_sprites/Terminal.png|[[aoemica's Flight Guide/Machine Hacking/Fabricators|Terminals]][[/Gallery]]","","","","","","","aoemica's Flight Guide/Machine Hacking/Fabricators,aoemica's Flight Guide/Machine Hacking/Garrisons,aoemica's Flight Guide/Machine Hacking/Recycling Units,aoemica's Flight Guide/Machine Hacking/Repair Stations,aoemica's Flight Guide/Machine Hacking/Scanalyzers,aoemica's Flight Guide/Machine Hacking/Terminals"
+[[Gallery]]../game_sprites/Fabricator.png|[[aoemica's Flight Guide/Machine Hacking/Fabricators|Fabricators]]|../game_sprites/Garrison.png|[[aoemica's Flight Guide/Machine Hacking/Garrisons|Garrisons]]|../game_sprites/Recycling Unit.png|[[aoemica's Flight Guide/Machine Hacking/Recycling Units|Recycling Units]]|../game_sprites/Repair Station.png|[[aoemica's Flight Guide/Machine Hacking/Repair Stations|Repair Stations]]|../game_sprites/Scanalyzer.png|[[aoemica's Flight Guide/Machine Hacking/Scanalyzers|Scanalyzers]]|../game_sprites/Terminal.png|[[aoemica's Flight Guide/Machine Hacking/Fabricators|Terminals]][[/Gallery]]","","","","","","","aoemica's Flight Guide/Machine Hacking/Fabricators,aoemica's Flight Guide/Machine Hacking/Garrisons,aoemica's Flight Guide/Machine Hacking/Recycling Units,aoemica's Flight Guide/Machine Hacking/Repair Stations,aoemica's Flight Guide/Machine Hacking/Scanalyzers,aoemica's Flight Guide/Machine Hacking/Schematics Reference,aoemica's Flight Guide/Machine Hacking/Terminals"
 "aoemica's Flight Guide/Machine Hacking/Fabricators","Other","[[Image]]../game_sprites/Fabricator.png|A Fabricator machine[[/Image]]
 [[Fabricator|Fabricators]] are fabulous machines that can create parts that [[0b10]], or more importantly, Cogmind wants. Fabricating preloaded [[Schematic|schematics]] can be a good idea, but more often than not they contain something not useful. Fabricating items based on schematics is the more typical use of Fabricators for flight builds. To do so, obtain a schematic from a [[Terminal]] (e.g. [[GameText]]Schematic(Flight Unit)[[/GameText]]) or some other source, attach an [[Authchips|Authchip]] if you have it, load the schematic, and start the fab. If you are fabbing without an Authchip, an [[Investigation Squad]] will be dispatched to the machine. There are a few ways to deal with the squad:
 [[List]]
@@ -11783,6 +11807,258 @@ Study|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map|
 [[Spoiler]]Trojan(Researchers)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map[[Sub]]1[[/Sub]]
 [[/Table]]
 1. Only useful in [[Research]] [[Branch|Branches]] since they are the only maps where [[Researcher|Researchers]] spawn.","","","","","","",""
+"aoemica's Flight Guide/Machine Hacking/Schematics Reference","Other","The following is a reference for various schematics I find useful to pull off of [[Terminal|Terminals]] to [[Fabricator|fabricate]]. Most of these are a subset of parts I rate highly in the [[aoemica's Flight Guide/Good Parts|good parts page]].
+
+[[Heading]]Success rate reference[[/Heading]]
+[[Hacks:Percentages]]Terminal|
+Schematic([Part Name]) - rating 1|
+Schematic([Part Name]) - rating 2|
+Schematic([Part Name]) - rating 2*|
+Schematic([Part Name]) - rating 3|
+Schematic([Part Name]) - rating 3*|
+Schematic([Part Name]) - rating 4|
+Schematic([Part Name]) - rating 4*|
+Schematic([Part Name]) - rating 5|
+Schematic([Part Name]) - rating 5*|
+Schematic([Part Name]) - rating 6|
+Schematic([Part Name]) - rating 6*|
+Schematic([Part Name]) - rating 7|
+Schematic([Part Name]) - rating 7*|
+Schematic([Part Name]) - rating 8|
+Schematic([Part Name]) - rating 8*|
+Schematic([Part Name]) - rating 9|
+Schematic([Part Name]) - rating 9*[[/Hacks]]
+
+[[Heading]][[aoemica's Flight Guide/Good Parts/Propulsion|Power]][[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Mic. Nuclear Core]]|4|-7|-8|-9||
+[[Lgt. Fission Core]]|5|-6|-7|-8||
+[[Mic. Fission Core]]|6|-5|-6|-7||
+[[Lgt. Neutrino Core]]|6*|-4|-5|-6||
+[[Imp. Fusion Compressor]]|7|-4|-5|-6||
+[[Mni. Fusion Reactor]]|7*|-3|-4|-5||
+[[Mic. Antimatter Reactor]]|8|-3|-4|-5||
+[[Graviton Reactor]]|8*|-2|-3|-4||
+[[Zero-point Reactor]]|9*|-1|-2|-3
+[[/Table]]
+
+[[Heading]][[aoemica's Flight Guide/Good Parts/Propulsion|Propulsion]][[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Imp. Flight Unit]]|2*|-8|-9|-10||
+[[Imp. VTOL Module]]|3*|-7|-8|-9||
+[[Cld. VTOL Module]]|4*|-6|-7|-8||
+[[Imp. Cesium-ion Thruster]]|4*|-6|-7|-8||
+[[Imp. Surge Thruster]]|5|-6|-7|-8||
+[[Biomechanical Wings]]|5*|-5|-6|-7||
+[[Cld. Cesium-ion Thruster]]|5*|-5|-6|-7||
+[[Nuclear Pulse Array]]|6|-5|-6|-7||
+[[Cld. Nuclear Pulse Thruster]]|6*|-4|-5|-6||
+[[Exp. Cesium-ion Thruster]]|6*|-4|-5|-6||
+[[Adv. Surge Thruster]]|7|-4|-5|-6||
+[[Field Propulsion Array]]|7|-4|-5|-6||
+[[Cld. Field Propulsion Drive]]|7*|-3|-4|-5||
+[[Diametric Drive]]|7*|-3|-4|-5||
+[[Impulse Thruster Array]]|8|-3|-4|-5||
+[[Cld. Impulse Thruster]]|8*|-2|-3|-4||
+[[Electron Diverter]]|8*|-2|-3|-4||
+[[Imp. Diametric Drive]]|8*|-2|-3|-4||
+[[Cld. Q-thruster]]|9*|-1|-2|-3||
+[[Exp. Q-thruster]]|9*|-1|-2|-3||
+[[Imp. Q-thruster]]|9*|-1|-2|-3
+[[/Table]]
+
+[[Heading]][[aoemica's Flight Guide/Good Parts/Utilities|Utilities]][[/Heading]]
+
+[[Heading:2]][[Armor]][[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Imp. Light Armor Plating]]|3|-8|-9|-10||
+[[Imp. Medium Armor Plating]]|4|-7|-8|-9||
+[[Lyr. Light Armor Plating]]|4|-7|-8|-9||
+[[Lyr. Medium Armor Plating]]|5|-6|-7|-8||
+[[Centrium Light Armor Plating]]|8*|-2|-3|-4||
+[[Centrium Medium Armor Plating]]|8*|-2|-3|-4
+[[/Table]]
+
+[[Heading:2]][[Cloaking Devices]]/[[Visual Processing Units]][[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Cloaking Device]]|5|-6|-7|-8||
+[[Imp. Cloaking Device]]|7|-4|-5|-6||
+[[Adv. Cloaking Device]]|9|-2|-3|-4||
+[[Exp. Cloaking Device]]|9*|-1|-2|-3||
+[[Adv. Visual Processing Unit]]|3|-8|-9|-10||
+[[Enh. Optical Array]]|5|-6|-5|-4||
+[[Exp. Optical Array]]|7*|-3|-4|-5||
+[[Spectral Analyzer]]|8*|-2|-3|-4
+[[/Table]]
+
+[[Heading:2]][[Hackware]][[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Hacking Suite]]|3|-8|-9|-10||
+[[Imp. Hacking Suite]]|5|-6|-7|-8||
+[[Adv. Hacking Suite]]|6|-5|-6|-7||
+[[Exp. Hacking Suite]]|7*|-3|-4|-5||
+[[System Shield]]|3|-8|-9|-10||
+[[Imp. System Shield]]|5|-6|-7|-8||
+[[Adv. System Shield]]|6|-5|-6|-7||
+[[Exp. System Shield]]|7*|-3|-4|-5
+[[/Table]]
+
+[[Heading:2]]Offensive Utilities[[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Adv. Actuator Array]]|7|-4|-5|-6||
+[[Exp. Actuator Array]]|9*|-1|-2|-3||
+[[Nanoactuators]]|7|-4|-5|-6||
+[[Femtoactuators]]|9*|-1|-2|-3||
+[[Exp. Core Analyzer]]|9*|-1|-2|-3||
+[[Adv. Force Booster]]|9|-2|-3|-4||
+[[Adv. Melee Analysis Suite]]|5|-6|-7|-8||
+[[Exp. Melee Analysis Suite]]|7*|-3|-4|-5||
+[[Weapon Mount]]|5|-6|-7|-8||
+[[Exp. Targeting Computer]]|5*|-5|-6|-7||
+[[Adv. Weapon Cycler]]|8|-3|-4|-5||
+[[Exp. Weapon Cycler]]|9*|-1|-2|-3
+[[/Table]]
+
+[[Heading:2]][[Mass Support Devices]][[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Gravity Neutralizer]]|5*|-5|-6|-7||
+[[Adv. Gravity Neutralizer]]|7*|-3|-4|-5||
+[[Quantum Shading Machine]]|8*|-2|-3|-4||
+[[Adv. Quantum Shading Machine]]|9*|-1|-2|-3
+[[/Table]]
+
+[[Heading:2]][[Phase Shifters]]/[[Reaction Control Systems]][[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Adv. Phase Shifter]]|9|-2|-3|-4||
+[[Exp. Phase Shifter]]|9*|-1|-2|-3||
+[[Adv. Reaction Control System]]|7|-4|-5|-6||
+[[Exp. Reaction Control System]]|9*|-1|-2|-3
+[[/Table]]
+
+[[Heading:2]][[Sensor Arrays]]/[[Signal Interpreters]][[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Adv. Sensor Array]]|5|-6|-7|-8||
+[[Lrn. Sensor Array]]|7|-4|-5|-6||
+[[Exp. Sensor Array]]|8*|-2|-3|-4||
+[[Adv. Signal Interpreter]]|5|-6|-7|-8||
+[[Exp. Signal Interpreter]]|7*|-3|-4|-5
+[[/Table]]
+
+[[Heading:2]][[Shieldings]][[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Imp. Propulsion Shielding]]|3|-8|-9|-10||
+[[Imp. Utility Shielding]]|3|-8|-9|-10||
+[[Exp. Propulsion Shielding]]|5*|-5|-6|-7||
+[[Exp. Utility Shielding]]|5*|-5|-6|-7
+[[/Table]]
+
+[[Heading:2]][[Terrain Scanners]]/[[Terrain Scan Processors]][[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Adv. Terrain Scanner]]|5|-6|-7|-8||
+[[Lrn. Terrain Scanner]]|7|-4|-5|-6||
+[[Exp. Terrain Scanner]]|8*|-2|-3|-4||
+[[Adv. Terrain Scan Processor]]|5|-6|-7|-8||
+[[Exp. Terrain Scan Processor]]|7*|-3|-4|-5
+[[/Table]]
+
+[[Heading:2]][[Transmission Jammers]][[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Adv. Transmission Jammer]]|7|-4|-5|-6||
+[[Exp. Transmission Jammer]]|9*|-1|-2|-3
+[[/Table]]
+
+[[Heading:2]]Other[[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Graphene Brace]]|7|-4|-5|-6||
+[[Stasis Canceller]]|5|-6|-7|-8
+[[/Table]]
+
+[[Heading]][[aoemica's Flight Guide/Good Parts/Weapons|Weapons]][[/Heading]]
+[[Table]]
+Part|
+Rating|
+Level 1 Depth|
+Level 2 Depth|
+Level 3 Depth||
+[[Greatsword]]|4|-7|-8|-9||
+[[Rocket Array]]|4*|-6|-7|-8||
+[[Lrn. Missile Launcher]]|5|-6|-7|-8||
+[[Scatter Rocket Array]]|5*|-5|-6|-7||
+[[Hyp. Gauss Cannon]]|6|-5|-6|-7||
+[[Mni. Smartbomb Launcher]]|6*|-4|-5|-6||
+[[Tri-rail Accelerator]]|6*|-4|-5|-6||
+[[Hyp. Mass Driver]]|7|-4|-5|-6||
+[[Gravity Flail]]|7*|-3|-4|-5||
+[[Plasma Lance]]|7*|-3|-4|-5||
+[[Hyp. Railgun]]|8|-3|-4|-5||
+[[Nanosword]]|8*|-2|-3|-4||
+[[Gui. Micro-nuke Launcher]]|9*|-1|-2|-3
+[[/Table]]","","","","","","",""
 "aoemica's Flight Guide/Machine Hacking/Terminals","Other","[[Image]]../game_sprites/Terminal.png|A Terminal machine[[/Image]]
 While most other machines have one or two purposes, Terminals are the true hacker's playground with dozens of different types of hacks available. For new players, it can be easy to become overwhelmed with options. However, not all hacks are created equal. For example, bot analyses are helpful, but finding an exit is much more important of an issue to worry about first. Generally, try to focus on hacks that will help you right now over speculative hacks that might help you later. The best way to learn and get a feel for hacking style is by trying out hacks and seeing how useful they feel.
 Terminal hacks typically fall under a few general categories:
