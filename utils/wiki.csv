@@ -4661,7 +4661,7 @@ After 1200 turns in a Garrison, if not triggered by another special event, the f
 There are always at least 3 exits per Garrison, the main 3 of which all lead to the same map. If RIF-aligned, all of the exits will always be available. Otherwise, exits may lock when trying to use them. Destroying Garrison Relays will lower the chance that the exits will lock on use. Only 2/3 of the main exits may lock, so it is not possible to get stuck on the map. There are 3 possibilities for Garrison exits:
 [[List]]
 ""Looping"": A Garrison may exit back to a new map at the original depth. This can happen as long as the Garrison wasn't entered from a DSF and a RIF installer wasn't used on a previous Garrison. The chance of looping is reduced on each subsequent loop.|
-0b10-controlled branch: The following 0b10 branches are possible Garrison exit targets: [[Testing]], [[Quarantine]], and [[Redacted]][[Section 7]] or only when entering a Garrison from Testing or Quarantine when Section 7 is on the same depth. Note: [[Protoforge]], while also being a branch at the same depth, cannot be entered via Garrison exit.[[/Redacted]]|
+0b10-controlled branch: The following 0b10 branches are possible Garrison exit targets: [[Extension]], [[Armory]], [[Testing]], [[Quarantine]], and [[Redacted]][[Section 7]] or only when entering a Garrison from Testing or Quarantine when Section 7 is on the same depth. Note: [[Protoforge]], while also being a branch at the same depth, cannot be entered via Garrison exit.[[/Redacted]]|
 0b10-controlled main floor: The exit continues onto the next main 0b10 depth.
 [[/List]]
 There is also a special ""looping"" exit that will always loop or lead to a 0b10-controlled branch exit if available. This exit only rarely appears. It allows looping more than one time per depth even if a RIF installer has been used in a previous Garrison.
@@ -10954,7 +10954,7 @@ See [[aoemica's Flight Guide/Good Parts/Power|Power]], [[aoemica's Flight Guide/
 [[Heading]]Slot Evolutions[[/Heading]]
 
 [[Heading]]Alignments[[/Heading]]
-","","","","","","","aoemica's Flight Guide/Advanced Movement,aoemica's Flight Guide/Alignments,aoemica's Flight Guide/Good Parts,aoemica's Flight Guide/Machine Hacking,aoemica's Flight Guide/Routing"
+","","","","","","","aoemica's Flight Guide/Advanced Movement,aoemica's Flight Guide/Builds,aoemica's Flight Guide/Alignments,aoemica's Flight Guide/Good Parts,aoemica's Flight Guide/Machine Hacking,aoemica's Flight Guide/Routing"
 "aoemica's Flight Guide/Advanced Movement","Other","The following is a collection of some advanced movement techniques that are useful for flight. Flight is the fastest and most maneuverable propulsion type in the game, so make sure you use these traits to your advantage. Generally, these types of techniques help to avoid taking unnecessary damage. Flight doesn't often have a lot of integrity to spare, so every avoided attack can make a big difference in a run.
 
 [[Heading]]Attack Dancing[[/Heading]]
@@ -11140,6 +11140,11 @@ Optimus refers to aligning with Optimus and helping in his mission|
 Base refers to either not getting ECA or getting it before transitioning to flight|
 ECA refers to continuing to try to earn ECA bonus on flight
 [[/List]][[/Spoiler]]","","","","","","",""
+"aoemica's Flight Guide/Builds","Other","[[Heading]][[B]][[Color:Red]]WIP[[/Color]][[/B]][[/Heading]]
+This page contains some suggestions for different build types at different parts of the run. Flight builds often follow a similar numbers in terms of slot distribution and overall common parts, at least in the early half of the run like [[Factory]]. However, there are plenty of unconventional build ideas with uncommon parts and slot distributions.
+
+[[Heading]]Early Factory Hacker[[/Heading]]
+This is a common type of build you can evolve into just after entering Factory.","","","","","","",""
 "aoemica's Flight Guide/Good Parts","Other","A collection of thoughts and recommendations on good parts to aim for on flight builds. Each slot has its own page:
 [[List]]
 [[aoemica's Flight Guide/Good Parts/Power|Power]]|
