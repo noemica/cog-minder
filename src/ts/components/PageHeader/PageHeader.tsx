@@ -217,7 +217,7 @@ function SettingsButton({ pageType }: { pageType: PageType }) {
                 /> */}
                 {pageType === "Wiki" && (
                     <LabeledSelect
-                        label="Use part dropdown in Wiki part groups"
+                        label="Dropdown for large groups"
                         tooltip="Whether to show a dropdown in Wiki part groups when there are a large number of parts (20). If set to false, all parts are visible, in the list of parts, but it may be a very long list."
                         isSearchable={false}
                         options={booleanOptions}
