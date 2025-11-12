@@ -412,7 +412,7 @@ export class BotData {
             volleyTime = 200;
         } else if (armament.length in volleyTimeMap) {
             // Filter melee weapons out if the volley is non-melee
-            volleyTime = volleyTimeMap[armament.filter((a) => isMeleeWeapon(a)).length];
+            volleyTime = volleyTimeMap[armament.filter((a) => !isMeleeWeapon(a)).length];
         } else {
             // No additional penalty past 6 weapons
             volleyTime = volleyTimeMap[6];
