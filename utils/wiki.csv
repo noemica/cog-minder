@@ -6482,7 +6482,7 @@ Opening the [[Sigix Containment Pod]] chamber: A single Lighting patrol will be 
 Temporary patrols are a special type of patrol that are exactly what they sound like. They are dispatched to patrol the map for several hundred turns, then exit at any 0b10-controlled exit. There is no specific trigger or alert that indicates when these patrols have been dispatched.","","","","","","",""
 "Perfect Tracking","Other","Bots with perfect tracking will know where [[Cogmind]] is at all times. Most bots with this will lose it upon sighting Cogmind.","","","","","","",""
 "Perforator","Part","","","","","","","",""
-"Personal Teleporter v0.10","Part","","","","","","","",""
+"Personal Teleporter v0.10","Part","Destroys or displaces (drops on the ground near the teleport destination) 0-2 items on activation.","","","","","","",""
 "Perun","Bot","","","","","","","",""
 "Phase Armor","Part","","","","","","","",""
 "Phase Cannon","Part","","","","","","","",""
