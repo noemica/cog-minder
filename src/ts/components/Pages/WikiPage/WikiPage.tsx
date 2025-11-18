@@ -464,7 +464,7 @@ function addPartSupergroups(
 
         const groupEntries: WikiEntry[] = [];
         const entry = new WikiEntry(
-            [],
+            partSupergroupEntry.AlternateNames ?? [],
             groupEntries,
             partSupergroupEntry.Content ?? "",
             partSupergroupEntry.Name,
