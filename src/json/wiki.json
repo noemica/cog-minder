@@ -6,7 +6,7 @@
   },
   {
    "Name": "12-ASH",
-   "Content": "12-ASH is one of the [[Heroes of Zion]]. Upon appearing, they will shout \"hail to the king\"."
+   "Content": "[[GameText]]Hail to the king![[/GameText]]\n12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]]."
   },
   {
    "Name": "1C-UTU",
@@ -494,7 +494,7 @@
   },
   {
    "Name": "HV-R5K",
-   "Content": ""
+   "Content": "[[GameText]]They trapped me with the old Behemoth-in-the-wall trick. Won't happen again![[/GameText]]"
   },
   {
    "Name": "Hacking Drone",
@@ -962,7 +962,7 @@
   },
   {
    "Name": "Subdweller",
-   "Content": "This page is a sub. Please consider contributing."
+   "Content": "[[GameText]]SUBSUB![[/GameText]]\n[[GameText]]ECOKILL[[/GameText]]\n[[GameText]]UPDOG[[/GameText]]\n[[GameText]]MADSUB[[/GameText]]"
   },
   {
    "Name": "Superbehemoth",

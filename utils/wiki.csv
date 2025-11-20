@@ -26,7 +26,8 @@ Effect/Effect
 [[/PartGroupTable]]","","","","0b10 Decoder Chip [Generic],0b10 Decoder Chip [Looter],0b10 Decoder Chip [Scout],0b10 Decoder Chip [Skirmisher]","","",""
 "0b10 Non-combat Bots","Bot Supergroup","","","K-01 Serf,N-00 Fly,N-01 Spotter,N-04 Retriever,T-07 Excavator,U-05 Engineer","","","Carrier,Hauler,Mechanic,Minesweeper,Operator,Protector,Recycler,Researcher,Watcher","",""
 "0bPrime Scrap Suit","Part","","","","","","","",""
-"12-ASH","Bot","12-ASH is one of the [[Heroes of Zion]]. Upon appearing, they will shout ""hail to the king"".","","","","","","",""
+"12-ASH","Bot","[[GameText]]Hail to the king![[/GameText]]
+12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].","","","","","","",""
 "12-ASH's Boomstick","Part","","","","","","","",""
 "1C-UTU","Bot","","","","","","","",""
 "1C-UTU's Buckler","Part","","","","","","","",""
@@ -4796,7 +4797,7 @@ They cannot be fired in a volley with other weapons, only alone.
 "H-81 Overseer","Bot","","","","","","","",""
 "H-88 Terminator","Bot","","","","","","","",""
 "HERF Cannon","Part","","","","","","","",""
-"HV-R5K","Bot","","","","","","","",""
+"HV-R5K","Bot","[[GameText]]They trapped me with the old Behemoth-in-the-wall trick. Won't happen again![[/GameText]]","","","","","","",""
 "Hacking Drone","Bot","","","","","","","",""
 "Hacking Drone Bay","Part","Deploys [[Hacking Drone|Hacking Drones]].","","","","","","",""
 "Hacking Suite","Part","A must-have for when you want to go for a hacking route. Download the schematic and make sure you fabricate enough in the factories. Can also be looted from [[Operator|Operators]].","","","","","","",""
@@ -9252,7 +9253,10 @@ Materials exits: These always lead to -8 Materials. These exits always skip -9 e
 (+) Cobbler Follower: A dormant Cobbler will wake up and begin to follow Cogmind around.|
 (~) Subdweller attack: An allied [[Guerrilla (7)|Guerrilla]] will show up upon entering the map. Shortly after, several Subdwellers will appear and attack, with [[Thug (5)|Thugs]] appearing as allied backup.|
 [[/List]]","","","","","","",""
-"Subdweller","Bot","This page is a sub. Please consider contributing.","","","","","","",""
+"Subdweller","Bot","[[GameText]]SUBSUB![[/GameText]]
+[[GameText]]ECOKILL[[/GameText]]
+[[GameText]]UPDOG[[/GameText]]
+[[GameText]]MADSUB[[/GameText]]","","","","","","",""
 "Superbattery","Part","","","","","","","",""
 "Superbehemoth","Bot","","","","","","","",""
 "Supercharged Integrated Dissipator","Part","","","","","","","",""
