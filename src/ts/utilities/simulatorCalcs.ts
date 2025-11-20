@@ -864,7 +864,7 @@ function applyEngineExplosion(state: SimulatorState, part: SimulatorPart) {
 }
 
 // Calculates the resisted damage for a bot given the initial damage value
-export function calculateResistDamage(botState: BotState, damage: number, damageType: DamageType): number {
+function calculateResistDamage(botState: BotState, damage: number, damageType: DamageType): number {
     if (damageType in botState.resistances) {
         return Math.trunc(damage * (1 - botState.resistances[damageType]! / 100));
     }

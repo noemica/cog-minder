@@ -50,7 +50,7 @@ function addBotGroups(addEntry: (entry: WikiEntry) => void, allEntries: Map<stri
 
         const botEntries: WikiEntry[] = [];
         const entry = new WikiEntry(
-            botGroupEntry.AlternateNames ?? [],
+            botGroupEntry["Alternate Names"] ?? [],
             botEntries,
             botGroupEntry.Content ?? "",
             botGroupEntry.Name,
@@ -104,7 +104,7 @@ function addBotSupergroups(addEntry: (entry: WikiEntry) => void, allEntries: Map
         }
         const groupEntries: WikiEntry[] = [];
         const entry = new WikiEntry(
-            botSupergroupEntry.AlternateNames || [],
+            botSupergroupEntry["Alternate Names"] || [],
             groupEntries,
             botSupergroupEntry.Content ?? "",
             botSupergroupEntry.Name,
@@ -265,7 +265,7 @@ function addLocations(
         };
 
         const entry = new WikiEntry(
-            locationEntry.AlternateNames ?? [],
+            locationEntry["Alternate Names"] ?? [],
             [],
             locationEntry.Content,
             locationEntry.Name,
@@ -306,7 +306,7 @@ function addOther(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, 
         }
 
         const entry = new WikiEntry(
-            otherEntry.AlternateNames ?? [],
+            otherEntry["Alternate Names"] ?? [],
             [],
             otherEntry.Content,
             otherEntry.Name,
@@ -464,7 +464,7 @@ function addPartSupergroups(
 
         const groupEntries: WikiEntry[] = [];
         const entry = new WikiEntry(
-            partSupergroupEntry.AlternateNames ?? [],
+            partSupergroupEntry["Alternate Names"] ?? [],
             groupEntries,
             partSupergroupEntry.Content ?? "",
             partSupergroupEntry.Name,
