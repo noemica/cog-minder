@@ -388,7 +388,7 @@ function addPartGroups(addEntry: (entry: WikiEntry) => void, itemData: ItemData,
 
         const partEntries: WikiEntry[] = [];
         const entry = new WikiEntry(
-            [],
+            partGroupEntry["Alternate Names"] ?? [],
             partEntries,
             partGroupEntry.Content ?? "",
             partGroupEntry.Name,
