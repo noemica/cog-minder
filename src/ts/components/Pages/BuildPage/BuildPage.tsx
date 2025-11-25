@@ -1,7 +1,8 @@
 import LZString from "lz-string";
-import { ReactNode } from "react";
+import { ReactNode, useMemo } from "react";
 import { useLocation, useSearch } from "wouter";
 
+import { Spoiler } from "../../../types/commonTypes";
 import {
     Actuator,
     BaseItem,
@@ -832,6 +833,35 @@ function skipLocationMember(key: string, pageState: SerializableBuildPageState) 
 // TODO
 function processImportFromDump(_text: string, _usePeakState: boolean) {}
 
+function AddPartRow({
+    itemOptions,
+    pageState,
+    updatePageState,
+}: {
+    itemOptions: SelectOptionType[];
+    pageState: BuildPageState;
+    updatePageState: (newPageState: BuildPageState) => void;
+}) {
+    return (
+        <div className="build-part-row">
+            <SelectWrapper
+                className="flex-1-1"
+                onChange={(val) => {
+                    const partState = [...(pageState.partState || [])];
+
+                    // New ID = highest of all numbers
+                    const id = Math.max(0, ...partState.map((p) => p.id + 1));
+                    partState.push({ name: val!.value, id });
+
+                    updatePageState({ ...pageState, partState });
+                }}
+                controlShouldRenderValue={false}
+                options={itemOptions}
+            />
+        </div>
+    );
+}
+
 function CoreSection({ pageState, partsState }: { pageState: BuildPageState; partsState: TotalPartsState }) {
     let coreInfo: ReactNode;
 
@@ -1244,47 +1274,30 @@ function PartRow({
 }
 
 function SlotSection({
+    itemData,
+    spoilers,
     pageState,
     partsState,
     slot,
     updatePageState,
 }: {
+    itemData: ItemData;
+    spoilers: Spoiler;
     pageState: BuildPageState;
     partsState: TotalPartsState;
     slot: ItemSlot;
     updatePageState: (newPageState: BuildPageState) => void;
 }) {
-    const itemData = useItemData();
-    const spoilers = useSpoilers();
+    const itemOptions: SelectOptionType[] = useMemo(() => {
+        const availableItems = itemData
+            .getFilteredItems((item) => {
+                return item.slot === slot && canShowSpoiler(item.spoiler, spoilers);
+            })
+            .map((item) => item.name);
+        availableItems.sort();
 
-    const availableItems = itemData
-        .getFilteredItems((item) => {
-            return item.slot === slot && canShowSpoiler(item.spoiler, spoilers);
-        })
-        .map((item) => item.name);
-    availableItems.sort();
-    const itemOptions: SelectOptionType[] = availableItems.map((itemName) => ({ value: itemName }));
-
-    function AddPartRow() {
-        return (
-            <div className="build-part-row">
-                <SelectWrapper
-                    className="flex-1-1"
-                    onChange={(val) => {
-                        const partState = [...(pageState.partState || [])];
-
-                        // New ID = highest of all numbers
-                        const id = Math.max(0, ...partState.map((p) => p.id + 1));
-                        partState.push({ name: val!.value, id });
-
-                        updatePageState({ ...pageState, partState });
-                    }}
-                    controlShouldRenderValue={false}
-                    options={itemOptions}
-                />
-            </div>
-        );
-    }
+        return availableItems.map((itemName) => ({ value: itemName }));
+    }, [itemData, slot, spoilers]);
 
     const numSlotParts = partsState.partsInfo
         .map((partInfo) => (partInfo.slot === slot ? partInfo.size : 0))
@@ -1317,7 +1330,7 @@ function SlotSection({
             />
             <div className="build-grid-container">
                 {partRows}
-                <AddPartRow />
+                <AddPartRow itemOptions={itemOptions} pageState={pageState} updatePageState={updatePageState} />
             </div>
         </div>
     );
@@ -1432,6 +1445,8 @@ function TitleSection({ content, title, tooltip }: { content?: ReactNode; title:
 export default function BuildPage() {
     const [_, setLocation] = useLocation();
     const pageState = getPageState();
+    const itemData = useItemData();
+    const spoilers = useSpoilers();
 
     const totalPartsState = calculatePartsState(pageState);
 
@@ -1502,24 +1517,32 @@ export default function BuildPage() {
             <div className="build-parts-container">
                 <CoreSection pageState={pageState} partsState={totalPartsState} />
                 <SlotSection
+                    itemData={itemData}
+                    spoilers={spoilers}
                     pageState={pageState}
                     partsState={totalPartsState}
                     slot="Power"
                     updatePageState={updatePageState}
                 />
                 <SlotSection
+                    itemData={itemData}
+                    spoilers={spoilers}
                     pageState={pageState}
                     partsState={totalPartsState}
                     slot="Propulsion"
                     updatePageState={updatePageState}
                 />
                 <SlotSection
+                    itemData={itemData}
+                    spoilers={spoilers}
                     pageState={pageState}
                     partsState={totalPartsState}
                     slot="Utility"
                     updatePageState={updatePageState}
                 />
                 <SlotSection
+                    itemData={itemData}
+                    spoilers={spoilers}
                     pageState={pageState}
                     partsState={totalPartsState}
                     slot="Weapon"
