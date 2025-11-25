@@ -1003,6 +1003,7 @@ If Cogmind has aligned with the [[Exiles (Group)|Exiles]] and has FarCom, the fo
 [[Heading]]Behavior[[/Heading]]
 CL-0N3 has two ways it can appear after being dispatched on a map. The first method is possession of an existing bot, for example, a [[K-01 Serf]]. That Serf will behave unusually, heading toward Cogmind when there is otherwise no reason for it to do so. Once it comes close enough, CL-0N3 will turn into a random combat bot several tiers above the standard depth and there will be an accompanying log message [[GameText]][Bot name] form shifts and reconstitutes itself, revealing [New bot name].[[/GameText]] If the possessed bot is instead destroyed, a slightly different message [[GameText]][New bot name] reconstitutes self from the rubble and scrap.[[/GameText]] will appear instead. Note: While transformed, CL-0N3 cannot be accessed with a [[Datajacks|Datajack]].
 The second method of CL-0N3 appearing is by forming a new copy of an existing ally on the map. This method is only used when there are non-controllable allies around (i.e. not blue-colored). CL-0N3 will appear as a copy of an ally, follow Cogmind around for a few turns, then surprise attack shortly after.
+CL-0N3 will mimic the AI of its combat bot. For example, as a [[Demolisher]] they will avoid friendly fire.
 When the combat bot that CL-0N3 has transformed into is destroyed, a new log message will appear: [[GameText]]CL-0N3 reconstitutes true from from the rubble and scrap.[[/GameText]] When this occurs, the real CL-0N3 will appear, losing core integrity equal to 10% of previous form's core integrity. After this, it will run away to a nearby [[Garrison Access]] or exit. A [[CL-0N3 Data Core]] is dropped when CL-0N3 is fully destroyed.
 
 [[Heading:2]]List of Transformations[[/Heading]]
@@ -1038,7 +1039,13 @@ Note: bolded entries are CL-0N3-exclusive bots.
 
 [[Heading]]Strategy[[/Heading]]
 CL-0N3 is the most unpredictable Unchained and is difficult to fully prepare for thanks to its many potential forms. Your best bet is to have different weapon types at your disposal to take advantage of any particular form's weaknesses. EM is great at killing most of CL-0N3's potential transformations. For heavily EM resistant or immune forms, either kinetic or thermal damage usually round out the coverage fairly well. Other than that, it's hard to have a consistent strategy that works against all possible transformations.
-Once CL-0N3 is dropped back to base form, it will run away at 40 speed and be hard to get much damage off on. If you know which way the nearest Garrison is, try to reposition and/or dig to open sightlines so that you can keep shooting while it runs away. [[Explosive Launchers]] are great choices for both digging and being able to deal lots of damage in the limited attack window. The 75% resistances to all standard forms of damage makes dealing any substantial damage in this form quite unlikely. An important note is that [[Phasic Weapons|Phasic]] and [[Vortex Weapons]] bypass the standard resistances and can take it out quite easily.","","","","","","",""
+Once CL-0N3 is dropped back to base form, it will run away at 40 speed and be hard to get much damage off on. If you know which way the nearest Garrison is, try to reposition and/or dig to open sightlines so that you can keep shooting while it runs away. [[Explosive Launchers]] are great choices for both digging and being able to deal lots of damage in the limited attack window. The 75% resistances to all standard forms of damage makes dealing any substantial damage in this form quite unlikely. An important note is that [[Phasic Weapons|Phasic]] and [[Vortex Weapons]] bypass the standard resistances and can take it out quite easily.
+
+[[Heading:2]]Melee flight[[/Heading]]
+[[Image]]https://i.ibb.co/kVxPDLHq/clone-bounce-flight-kill.png|One example of bouncing CL-0N3 between two shortest paths to a garrison at the left.[[/Image]]
+Once CL-0N3 is in base form, they will path to the nearest Garrison, or exit if all are sealed. If there is only one path to the nearest Garrison or exit, CL-0N3 will hop over Cogmind to reach it, but if there are more paths they will not hop regardless of the distance and instead take the second shortest path. If lured into this position ahead of time, a sufficiently fast flight build can go back and forth between the two paths, block off CL-0N3 and melee them when they reach the choke point. 
+
+Alternatively, with a long 1-tile corridor that has paths in both directions to Garrisons, CL-0N3 can be lured into the corridor, then Cogmind can hop them and melee as they move towards each end of the corridor.","","","","","","",""
 "CL-0N3 Data Core","Part","","","","","","","",""
 "CL-0N3's Metamass Displacer","Part","","","","","","","",""
 "CL-ANK","Bot","","","","","","","",""
@@ -10962,7 +10969,7 @@ See [[aoemica's Flight Guide/Good Parts/Power|Power]], [[aoemica's Flight Guide/
 [[Heading]]Slot Evolutions[[/Heading]]
 
 [[Heading]]Alignments[[/Heading]]
-","","","","","","","aoemica's Flight Guide/Advanced Movement,aoemica's Flight Guide/Builds,aoemica's Flight Guide/Alignments,aoemica's Flight Guide/Good Parts,aoemica's Flight Guide/Machine Hacking,aoemica's Flight Guide/Routing"
+","","","","","","","aoemica's Flight Guide/Advanced Movement,aoemica's Flight Guide/Builds,aoemica's Flight Guide/Alignments,aoemica's Flight Guide/Good Parts,aoemica's Flight Guide/Machine Hacking,aoemica's Flight Guide/Map Strategy,aoemica's Flight Guide/Routing"
 "aoemica's Flight Guide/Advanced Movement","Other","The following is a collection of some advanced movement techniques that are useful for flight. Flight is the fastest and most maneuverable propulsion type in the game, so make sure you use these traits to your advantage. Generally, these types of techniques help to avoid taking unnecessary damage. Flight doesn't often have a lot of integrity to spare, so every avoided attack can make a big difference in a run.
 
 [[Heading]]Attack Dancing[[/Heading]]
@@ -12427,6 +12434,26 @@ Trojan(Skim)|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times p
 Trojan(Track)|[[Range]]2|5[[/Range]]|[[CellStyle:Bad]]Rare, situationally multiple times per floor
 [[/Table]]
 [[/Expandable]]","","","","","","",""
+"aoemica's Flight Guide/Map Strategy","Other","[[Heading]][[B]][[Color:Red]]WIP[[/Color]][[/B]][[/Heading]]
+These are a collection of thoughts about strategies on a per-map basis for select maps.
+","","","","","","","aoemica's Flight Guide/Map Strategy/Materials"
+"aoemica's Flight Guide/Map Strategy/Materials","Other","[[Image]]Materials.png|An example Materials map[[/Image]]
+[[Materials]] is the earliest main [[0b10]] map in the game and is one of the more difficult maps for flight. First off, there are no starting [[Flight Units]] in [[Scrapyard]], so you can't become flight until you find at least one of them. The general map design is not very favorable for flight either. [[Patrol Squad|Patrols]] and [[Sentry|Sentries]] are fairly common on -9 and -8, and the cramped map layout often railroads you directly into them. Running past them results in you taking a few hits as you go by, but trying to fight with a flimsy build is even worse. Given the very low integrity of early flight builds, it's easy to get shot out of the sky very early on if you try to switch too early. That's not to say that Materials flight is impossible, but it is definitely an uphill battle and does not prepare your build well for the rest of the game. For these reasons, I highly recommend not trying to attach any flight units in any Materials depths maps, including [[Mines]] and [[Storage]].
+Instead, I suggest treating Materials as a time to prepare your flight build to be the best it can be on -7 [[Factory]]. Stock up on some [[Lgt. Treads]] and weapons and tank your way through. Use a [[Lrg. Storage Unit|Lrg.]], [[Hcp. Storage Unit|Hcp.]], or [[Huge Storage Unit]] to carry good flight parts that you find along your way. Try to balance your backup combat parts with your flight parts, since running out of treads or weapons is a real threat when the rest of your build is flight. I try to keep at least two backup weapons and combat propulsion (treads/legs/wheels) in inventory unless I'm about to head to into Factory.
+[[Heading]]Factory Checklist[[/Heading]]
+A good way to prepare for Factory is to have a checklist for your build. You may not want or need all of the items on it, but it is good to help give you an idea of what to aim for. Here is an example [[aoemica's Flight Guide/Builds#Stealth|stealth flight]] checklist in Factory:
+[[Table]]
+Part type|Example parts (best first)|Ideal number|How to obtain (aside from floor)||
+[[Power]]|[[Lgt. Deuterium Engine]], [[Lgt. Nuclear Core]], [[Lgt. Ion Engine]]|1 to attach and 1 as backup|Lgt. Nuclear Core from [[G-47 Trooper]]||
+[[Propulsion]]|[[Imp. VTOL Module]], [[Imp. Flight Unit]], [[VTOL Module]], [[Flight Unit]]|3-4 to attach and 1-2 as backup|
+[[Hauler|Haulers]], worst case [[Swarmer|Swarmers]]||
+[[Armor]]|[[Imp. Light Armor Plating]], [[Reflective Plating]], [[Lgt. Armor Plating]]|1 to attach or swap as needed|[[Y-45 Defender]]||
+[[Hackware]]|[[Hacking Suite]], [[System Shield]]|1-3 Hacking Suite and 0-1 System Shield to attach|[[O-16 Technician]]||
+[[Infowar#Robot Detection|Robot Detection]]|[[Imp. Sensor Array]] + [[Imp. Signal Interpreter]] (if not [[FarCom]])|1 Sensor and 1 Interpreter to attach|[[TF Node]]||
+[[Visual Processing Units|Visual Processing Unit]]|[[Adv. Visual Processing Unit]], [[Visual Processing Unit]]|1 to attach|[[W-16 Scout]]||
+[[Explosive Launchers|Explosive Launcher]]|[[Mni. Grenade Launcher]], [[Missile Launcher]], [[Imp. Grenade Launcher]]|1 to swap as needed|[[D-53 Grenadier]] from [[Mines]] infestation event||
+[[Melee Weapons|Melee Weapon]]|[[Katana]], [[Hvy. Mace]]|1 to attach|[[L-41 Fighter]]
+[[/Table]]","","","","","","",""
 "aoemica's Flight Guide/Routing","Other","Routing is the art of planning which [[Branch]] maps you are going to go to throughout the course of a run. There are all sorts of benefits in different branches in the game, and many overlap in depth, so you must make a conscious decision about which maps to pick. Sometimes, this must be done off of imperfect information because you don't know which branch is at the end of a certain [[Caves]] depth. In other cases, you may learn the depth of an upcoming map like through a [[Derelict Log]] or [[Spoiler]][[GameText]]Force(Tunnel)[[/GameText]] from a [[Recycling Unit]][[/Spoiler]] and make other decisions to support that map choice later. Overall, routing is quite dynamic from run to run and isn't something that you can plan with 100% certainty from the beginning.
 Routing ties heavily into [[aoemica's Flight Guide/Alignments|Alignments]]. Most alignments require you to visit a certain map which may be on a different depth each run. If you're shooting for a certain alignment, you have to make sure you don't accidentally miss it by taking a random exit or the wrong branch on the depth they're at. For example, [[Caves]] branch ends can be one of 2 different maps. If you don't know which is which, you may need to take both Caves exits to be sure you don't miss it. Some alignments trigger active hostilities with factions on certain maps, so it often makes sense to plan to avoid actively hostile branches unless you're ready to fight your way through.
 
@@ -12632,7 +12659,7 @@ Rewards: Too many to fully list. A few especially good rewards include [[Core Me
 [[List]]
 Depths: -1|
 Summary: Extremely hostile map with numerous patrols, fixed middle section with very powerful guards including [[Combat Programmer|Combat Programmers]], [[M Guard|M Guards]], and [[MAIN.C]].|
-Alignment: [[Command#W8: ""Fortifying 0b10""/Surrender|Surrender]]|
+Alignment: [[Command#W8 ""Fortifying 0b10""/Surrender|Surrender]]|
 Rewards: Getting a + on the scoresheet by defeating MAIN.C.[[/List]]
 
 [[Heading:2]][[Access_0]][[/Heading]]
