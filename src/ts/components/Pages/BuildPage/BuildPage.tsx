@@ -395,42 +395,40 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     parts
         .filter((p) => p.active && p.part.type === propulsionType)
         .forEach((p) => {
-            for (let i = 0; i < p.number; i++) {
-                let part = p.part as PropulsionItem;
+            if (p.study) {
+                // Clone the part so we can modify the definition
+                // Not ideal but the alternative would be to have to track
+                // whether the study is active throughout the whole file in
+                // many places which is worse
 
-                if (p.study) {
-                    // Clone the part so we can modify the definition
-                    // Not ideal but the alternative would be to have to track
-                    // whether the study is active throughout the whole file in
-                    // many places which is worse
+                // Clone is needed since we do a .includes() check which
+                // would otherwise be defeated by the copy
+                p.part = { ...p.part };
+                const part = p.part as PropulsionItem;
 
-                    // Clone is needed since we do a .includes() check which
-                    // would otherwise be defeated by the copy
-                    p.part = { ...p.part };
-                    part = p.part as PropulsionItem;
+                // Apply unique study effect per prop type
+                switch (part.type) {
+                    case "Hover Unit":
+                    case "Flight Unit":
+                        part.support += part.size;
+                        break;
 
-                    // Apply unique study effect per prop type
-                    switch (part.type) {
-                        case "Hover Unit":
-                        case "Flight Unit":
-                            part.support += part.size;
-                            break;
+                    case "Leg":
+                        part.timePerMove -= 15;
+                        break;
 
-                        case "Leg":
-                            part.timePerMove -= 15;
-                            break;
+                    case "Treads":
+                        part.penalty = Math.trunc(part.penalty / 2);
+                        break;
 
-                        case "Treads":
-                            part.penalty = Math.trunc(part.penalty / 2);
-                            break;
-
-                        case "Wheel":
-                            part.timePerMove -= 10;
-                            break;
-                    }
+                    case "Wheel":
+                        part.timePerMove -= 10;
+                        break;
                 }
+            }
 
-                activeProp.push(part);
+            for (let i = 0; i < p.number; i++) {
+                activeProp.push(p.part as PropulsionItem);
             }
         });
     activeProp.sort((a, b) => (a.modPerExtra ?? 0) - (b.modPerExtra ?? 0));
