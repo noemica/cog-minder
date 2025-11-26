@@ -1,4 +1,4 @@
-﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
+"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","",""
 "01-MTF's Autohacker","Part","","","","","","","",""
 "01-MTF's Shockpuncher","Part","","","","","","","",""
@@ -3453,7 +3453,15 @@ Main access exits: These always lead to the next main floor, either Factory or [
 Several non-standard exits also appear in Factory. [[Chute Trap|Chute Traps]] will throw Cogmind into [[Wastes]] which can end many good runs if unprepared. Using a [[Datajack]] on a [[K-01 Serf|Serf]] for the find_chute hack is very effective to either reveal traps to avoid or areas to head toward if planning to take on the [[C-40 Crusher|Crushers]] in combat. The other type of exit is a [[DSF]]. These exits can be hacked open at distinctive DSF terminals but will automatically lock upon being spotted by any hostile. Stealth or good luck is required to make it to these exits.","","","","","","",""
 "Falx","Part","","","","","","","",""
 "Fanart","Other","Check out the following artists' fanart pages:
-[[List]][[Fanart/CaptainWinky|CaptainWinky]]|[[Fanart/Maiker|Maiker]]|[[Fanart/plasmoidman|plasmoidman]]|[[Fanart/Radbanker|Radbanker]]|[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]]|[[Fanart/jimmyl|jimmyl]][[/List]]","","","","","","","Fanart/CaptainWinky,Fanart/Maiker,Fanart/Radbanker,Fanart/jimmyl,Fanart/plasmoidman"
+[[List]]
+[[Fanart/CaptainWinky|CaptainWinky]]|
+[[Fanart/ivelieu|ivelieu|ivelieu]]|
+[[Fanart/jimmyl|jimmyl]]|
+[[Fanart/Maiker|Maiker]]|
+[[Fanart/plasmoidman|plasmoidman]]|
+[[Fanart/Radbanker|Radbanker]]|
+[[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]]
+[[/List]]","","","","","","","Fanart/CaptainWinky,Fanart/Maiker,Fanart/Radbanker,Fanart/ivelieu,Fanart/jimmyl,Fanart/plasmoidman"
 "Fanart/CaptainWinky","Other","Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]].
 
 [[Heading]]G-11 Fodder[[/Heading]]
@@ -4405,6 +4413,24 @@ Ms. V3-11A's beauty contest winning botcube
 The final form of KY-Z71's RIFcycle, flipped
 [[Redacted]][[FanartGallery]]fanart/radbanker/Map.png|World Map[[/FanartGallery]]
 [[FanartGallery]]fanart/radbanker/Bot Art 4.png|[[Fortress]][[/FanartGallery]][[/Redacted]]","","","","","","",""
+"Fanart/ivelieu","Other","[[Fanart]] created by ivelieu:[[FanartGallery]]fanart/ivelieu/cutter.png|[[Cutter]]|
+fanart/ivelieu/dummy programmer.png|Combat is for programmers|
+fanart/ivelieu/heavy-reinforcements-2.png|Heavy reinforcements|
+fanart/ivelieu/Hermelin build.png|Dr. Hermelin's build (legged humpback)|
+fanart/ivelieu/hunter.png|[[Hunter]]|
+fanart/ivelieu/swarmer_garrison.png|[[Swarmer]] + [[Garrison Access]]|
+fanart/ivelieu/swarmer_garrison_wallpaper.png|Swarmer + Garrison Access (wallpaper)
+[[/FanartGallery]]
+
+[[SpoilerExpandable]]
+[[FanartGallery]]fanart/ivelieu/dataminer.png|[[Data Miner]]|
+fanart/ivelieu/golem.png|[[Golem]]|
+fanart/ivelieu/imprinter.png|[[Imprinter]]|
+fanart/ivelieu/warlord-drone-grayscale.png|[[Wardrone]]|
+fanart/ivelieu/warlord-research.png|[[Warlord]] in [[Research]]|
+fanart/ivelieu/warlord-research-grayscale.png|Warlord in Research (grayscale)
+[[/FanartGallery]]
+[[/SpoilerExpandable]]","","","","","","",""
 "Fanart/jimmyl","Other","[[FanartGallery]]fanart/jimmyl/Prefabs.png|Prefabs|fanart/jimmyl/DerelictTube.png|DerelictTube|fanart/jimmyl/Classic Garrison Trap.gif|Classic Garrison Trap|fanart/jimmyl/Limited AI.gif|Limited AI|fanart/jimmyl/J-985 Containment.gif|J-985 Containment|fanart/jimmyl/Cant hear the fans.png|Cant hear the fans|fanart/jimmyl/Wild Caves Derelict Conscript.png|Wild Caves Derelict Conscript|fanart/jimmyl/Caves Hauler Experiment.gif|Caves Hauler Experiment|fanart/jimmyl/0b1 Club.gif|0b1 Club|fanart/jimmyl/Standing Here.gif|STANDING HERE|fanart/jimmyl/0b1 Football.gif|0b1 Football|fanart/jimmyl/Loop Theory.gif|Loop Theory|fanart/jimmyl/Fake Prototypes.gif|Fake Prototypes|fanart/jimmyl/Prototype ARC.gif|Prototype ARC|fanart/jimmyl/Authchips.gif|Authchips|fanart/jimmyl/Lemonade.png|Lemonade|fanart/jimmyl/Pet Serfs.gif|Pet Serfs|fanart/jimmyl/No UTF8.png|No UTF-8|fanart/jimmyl/Complexes and Dragons.png|Complexes And Dragons|fanart/jimmyl/Minus12.png|-12 (real 100%)|fanart/jimmyl/Blade Trap Raking.gif|Blade Trap Raking[[/FanartGallery]]","Spoiler","","","","","",""
 "Fanart/plasmoidman","Other","[[Fanart]] created by plasmoidman:
 [[FanartGallery]]fanart/plasmoidman/vmp.leg.png|Vmp. Leg|fanart/plasmoidman/integrity_siphon.png|Integrity Siphon|fanart/plasmoidman/abomination_parts.png|Abomination parts|fanart/plasmoidman/exit_id_mimic_chip.png|Hollowlith Exit ID Chip|fanart/plasmoidman/lgt-vmp._chainsaw.png|Lgt./Vmp. Chainsaw|fanart/plasmoidman/b-36_bruiser.png|[[B-36 Bruiser]]|fanart/plasmoidman/c-17.png|[[C-17 Slicer]]|fanart/plasmoidman/g-34.png|[[G-34 Mercenary]]|fanart/plasmoidman/hunter.png|[[H-55 Commando]]|fanart/plasmoidman/assembled_4.png|[[Assembled]]|fanart/plasmoidman/commander.png|Warlord [[Commander]]|fanart/plasmoidman/yi-ufo.png|[[YI-UF0]]|fanart/plasmoidman/yi-ufo_sprite.png|YI-UF0 sprite|fanart/plasmoidman/mutant.png|[[Mutant]]|fanart/plasmoidman/cogmind_core.png|Cogmind core|fanart/plasmoidman/tread_melee.png|Treads Melee|fanart/plasmoidman/coggy.png|Legged Cogmind|fanart/plasmoidman/legmind_original.png|Original Legmind|fanart/plasmoidman/raider.png|Raider|fanart/plasmoidman/r4-lph.png|CaptainWinky R4-LPH|fanart/plasmoidman/combatant.png|Combatant|fanart/plasmoidman/mortar_bot.png|B0-M8R Militia Mortar-Bot|fanart/plasmoidman/trishock.png|Chaos Squad Trishock|fanart/plasmoidman/corruptee.png|Chaos Squad Corruptee|fanart/plasmoidman/clone.png|CL-ON3 [MIMICRY=FAILED]|fanart/plasmoidman/reformer.png|Reformer[[/FanartGallery]][[Spoiler]][[FanartGallery]]fanart/plasmoidman/alpha_7.png|[[Alpha 7]]|fanart/plasmoidman/enhanced_grunt.png|[[Enhanced Grunt]]|fanart/plasmoidman/vg-lr5.png|VL-GR5 sprite|fanart/plasmoidman/lu-1gi.png|LU-1G1|fanart/plasmoidman/uc.png|UC/The General tactical training[[/FanartGallery]][[/Spoiler]]
@@ -9040,6 +9066,13 @@ The Seismic Detector is capable of detecting hostile Subdwellers at a long 22 ti
 [[Heading:2]][[Storage Unit|Storage]][[/Heading]]
 In order to haul the best loot off of the map, you want to bring the largest storage unit you can find in [[Materials]]. [[Huge Storage]], [[Hcp. Storage|Hcp.]], and [[Lrg. Storage]] are recommended in decreasing priority. Since subatomizers eat parts off of the floor, you can't count on parts left to remain forever. Keep the most useful parts in inventory at all times.
 
+[[Heading:2]][[Armor]][[/Heading]]
+There aren't a lot of armor options coming from Materials. Sometimes you can find [[Lgt. Armor Plating]] on the ground, but often you won't find any. If you don't get any, one strategy you can use is to try to [[GameText]]Refit[[/GameText]] at a [[Repair Station]]. This can give you some [[Backup Plating I]], which isn't great, but it's better than no armor. You can also try breaking the machine for a chance at more plating after you run out of hacks.
+
+[[Image]]../part_art/Scrap Shield.png|Scrap Shield[[/Image]]
+[[Heading:3]][[Scrap Shield]][[/Heading]]
+The Scrap Shield is one of the best parts for this map. Its massive coverage and ability to regenerate using [[Scrap Shield Fragment|Scrap Shield Fragments]] really helps keep Cogmind alive. It is a bit rare since most of the time Subdwellers drop only shield fragments instead of the shield itself. The largest downside of this part is the requirement to drop your storage unit on the ground since it takes up 2 slots. If you find one early into the map, dropping unnecessary backups and using the Scrap Shield to clear most of the map will massively reduce the risk of dying. Later on, it's often not worth dropping accumulated loot on the floor and letting it get eaten by subatomizers. If you do use a Scrap Shield, only drop your storage unit if it is undamaged, since it will likely be eaten otherwise. Otherwise, keep it in your inventory to attach before leaving the map.
+
 [[Heading:2]]Digging Tool[[/Heading]]
 To navigate the map effectively, you will need something that can dig through machinery and/or walls. Without digging, you may not be able to fully explore the map. [[Mining Laser|Mining Lasers]] and [[Mining Claw|Mining Claws]] can both be obtained in Materials frequently. They can dig through the 20 armor Twisted Machinery but not the 28 armor walls. All Subdweller weaponry can dig through machinery, though only the [[Sub. Beam Cannon]] can dig through walls.
 
@@ -9061,12 +9094,20 @@ Melee weapons dropped from [[Scrap]] in Subcaves are usable since they can kill 
 [[Heading:3]][[Launchers]][[/Heading]]
 Launchers are of somewhat questionable value in Subcaves. While it may be tempting to explode groups of Subdwellers, there is a mechanic where an additional Subdwellers may pop out of any dug tile. The risk of this is not very high, though if you use launchers heavily you will find yourself dealing with a few extra bots throughout the map. In my opinion, the best use of Launchers is not on the Subdwellers but on the [[Swarmer|Swarmers]] that guard the [[Recycling]] exit since killing all of them one by one is usually a big hassle.
 
-[[Image]]../part_art/Scrap Shield.png|Scrap Shield[[/Image]]
-[[Heading:2]][[Scrap Shield]][[/Heading]]
-The Scrap Shield is one of the best parts for this map. Its massive coverage and ability to regenerate using [[Scrap Shield Fragment|Scrap Shield Fragments]] really helps keep Cogmind alive. It is a bit rare since most of the time Subdwellers drop only shield fragments instead of the shield itself. The largest downside of this part is the requirement to drop your storage unit on the ground since it takes up 2 slots. If you find one early into the map, dropping unnecessary backups and using the Scrap Shield to clear most of the map will massively reduce the risk of dying. Later on, it's often not worth dropping accumulated loot on the floor and letting it get eaten by subatomizers. If you do use a Scrap Shield, only drop your storage unit if it is undamaged, since it will likely be eaten otherwise. Otherwise, keep it in your inventory to attach before leaving the map.
-
 [[Heading]]Materials Preparation[[/Heading]]
-Since core is the big lose condition for Subcaves, the amount of time you want to spend in Materials should be carefully considered. You can try to max out exploration in Materials, head into [[Mines]], and then come to Subcaves afterward. This can be done, but it is much more risky than taking the Subcaves exit as soon as you find it. Depending on what route you want to take, one strategy might be to try to pull off one [[Spoiler]][[GameText]]Trojan(Skim)[[/GameText]] to try to identify the depth of [[Recycling]].[[/Spoiler]] Another option is just to take the exit as soon as you find it. It's a good idea to at least obtain a Seismic Detector, a better storage unit, and a digging tool before heading inside. Most other parts can be obtained from within Subcaves.","","","","","","",""
+Since core is the big lose condition for Subcaves, the amount of time you want to spend in Materials should be carefully considered. You can try to max out exploration in Materials, head into [[Mines]], and then come to Subcaves afterward. This can be done, but it is much more risky than taking the Subcaves exit as soon as you find it. Depending on what route you want to take, one strategy might be to try to pull off one [[Spoiler]][[GameText]]Trojan(Skim)[[/GameText]] to try to identify the depth of [[Recycling]].[[/Spoiler]] Another option is just to take the exit as soon as you find it. It's a good idea to at least obtain a Seismic Detector, a better storage unit, and a digging tool before heading inside. Most other parts can be obtained from within Subcaves.
+
+[[Heading]]Exploration Tips[[/Heading]]
+
+[[Heading:2]]Subatomizers[[/Heading]]
+Subatomizers are a nuisance that eat damaged parts left on the floor over time. While they won't instantly destroy parts, there's no guarantee than any damaged parts you drop will be there when you come back later. Anything damaged that you want to keep safe needs to be kept in inventory. However, parts at full integrity are safe to leave on the ground and pick up later. Any full integrity backups can be safely stored on the ground. Knowing this is especially useful if you need to detach your storage unit to attach the Scrap Shield.
+
+[[Heading:2]][[Traps]][[/Heading]]
+There are batches of [[Shrapnel Trap|Shrapnel]] and [[Piercing Trap|Piercing Traps]] unique to Subcaves. Sometimes the traps are spread out over a wide area and other times they are highly concentrated. If you spot or step on a trap, the first thing you should do is immediately stop moving and wait around for a few hundred turns to discover all nearby traps. There is no real time pressure on this map, so unless you are actively being pursued, there is no reason to rush through and risk stepping on undiscovered traps.
+
+[[Image]]Subdweller in Machinery.webp|Subdweller hiding in a piece of machinery[[/Image]]
+[[Heading:2]]Subdwellers Hiding in Machinery[[/Heading]]
+Since Subdwellers can move through the machinery without being blocked, they can sometimes end up shooting you from inside the machinery. If you don't have a weapon that is capable of breaking the 20 machinery armor, you will never be able to kill them. If this happens, back away and try to pull them around a corner to get them to leave their hiding spot.","","","","","","",""
 "Strategy/Maps/Wastes","Other","[[Wastes]] is a very dangerous [[0b10]] map that can easily demolish slower builds with [[C-40 Crusher|Crushers]]. Airborne builds have a fairly easy time escaping this map, but grounded builds will need a plan to escape intact.
 
 [[Heading]]Airborne builds[[/Heading]]
@@ -9332,7 +9373,9 @@ Materials exits: These always lead to -8 Materials. These exits always skip -9 e
 "Subdweller","Bot","[[GameText]]SUBSUB![[/GameText]]
 [[GameText]]ECOKILL[[/GameText]]
 [[GameText]]UPDOG[[/GameText]]
-[[GameText]]MADSUB[[/GameText]]","","","","","","",""
+[[GameText]]MADSUB[[/GameText]]
+
+[[Image]]Subdweller in Machinery.webp|Subdweller hiding in a piece of machinery[[/Image]]","","","","","","",""
 "Superbattery","Part","","","","","","","",""
 "Superbehemoth","Bot","","","","","","","",""
 "Supercharged Integrated Dissipator","Part","","","","","","","",""
