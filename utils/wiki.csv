@@ -5728,7 +5728,7 @@ Power/Stability
 The majority of maps are randomly generated, meaning no two runs or two depths will have the exact same layout. However, the overall structure of each location type is very similar. Some maps tend to be more open with large rooms and wide corridors, while others are more maze-like with tiny rooms and many small corridors leading into dead-ends. A few branches are partially or entirely static in layout and tend to be much more predictable in contents than main floors.
 Branches do not progress upward toward the exit and can often be harder than the main floors. However, branches can offer unique challenges and have similarly unique rewards that can dramatically change a run. This could be powerful unique items, special events, gameplay-altering alignment, or rare permanent buffs.
 The following is a list of all locations in Cogmind:
-[[AllLocations]]","","","","","","","Access,Access_0,Archives,Armory,Caves,Cetus,Command,DSF,Data Miner (Location),Exiles (Location),Extension,Factory,Garrison,Hub_04(d),Lab,Materials,Mines,Protoforge,Quarantine,Recycling,Research,Scraptown,Scrapyard,Section 7,Storage,Subcaves,Surface,Testing,Warlord,Wastes,Zhirov,Zion,Zion Deep Caves"
+[[AllLocations]]","","","","","","","Access,Access_0,Archives,Armory,Caves,Cetus,Command,DSF,Data Miner (Location),Exiles (Location),Extension,Factory,Garrison,Hub_04(d),Lab,Materials,Mines,Protoforge,Quarantine,Recycling,Research,Scraptown,Scrapyard,Section 7,Storage,Subcaves,Surface,Testing,Warlord,Wastes,Zhirov (Location),Zion,Zion Deep Caves"
 "Longsword +1","Part","","","","","","","",""
 "Lrg. Battery","Part","","","","","","","",""
 "Lrg. Botcube","Part","","","","","","","",""
