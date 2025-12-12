@@ -1,4 +1,4 @@
-import{c as k,r as T,j as a,L as j,I as D,B as v,J as V,w as le,K as ve,M as Ce,f as I,N as Se,y as W,T as L,O as he,a as Z,s as Te,Q as ke,S as J,q as xe,U as He,V as de,z as Ae,u as ce,W as $,X as Ge,Y as O,Z as Re,_ as Ie,$ as U,a0 as Ne,a1 as De}from"./index-iZc4NIBO.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Pe,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as me,B as _,I as ge,a as Le,L as Fe,b as Be,u as We}from"./BotDetails-ptVdGJpU.js";import{R as qe,T as ee,a as Q,u as Oe}from"./ItemPopover-B9qavQv6.js";import{S as Ue}from"./Table-Cmw17GJh.js";import{e as je}from"./partColumnDefs-BvlpaJnv.js";/* empty css              */import"./bots-BVO9WYp3.js";import"./simulatorCalcs-DC1JPf9I.js";import"./items-RjbLE1iR.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as k,r as T,j as a,L as j,I as D,B as v,J as V,w as le,K as ve,M as Ce,f as I,N as Se,y as W,T as L,O as he,a as Z,s as Te,Q as ke,S as J,q as xe,U as He,V as de,z as Ae,u as ce,W as $,X as Ge,Y as O,Z as Re,_ as Ie,$ as U,a0 as Ne,a1 as De}from"./index-ukCPYYNj.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Pe,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as me,B as _,I as ge,a as Le,L as Fe,b as Be,u as We}from"./BotDetails-Bu0n3A7F.js";import{R as qe,T as ee,a as Q,u as Oe}from"./ItemPopover-Co5CHC3S.js";import{S as Ue}from"./Table-CszH038q.js";import{e as je}from"./partColumnDefs-CnqvN5jw.js";/* empty css              */import"./bots-BVO9WYp3.js";import"./simulatorCalcs-DfAeffsY.js";import"./items-RjbLE1iR.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"6S-H0T",Content:`6S-H0T is a part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[6S-H0T's Six Shooter]], is a powerful perfectly accurate gun with a high blast critical chance. With a [[Exp. Reaction Control System]], [[Exp. Propulsion Shielding|Exp. Propulsion]] and [[Exp. Weapon Shielding|Weapon Shieldings]], and an incredibly low 15% core exposure, 6S-H0T is no defensive slouch either. Trying to pin this Unchained down is a tall order.
 
 [[Heading]]Lore[[/Heading]]
@@ -3697,13 +3697,14 @@ Although this hack does not reveal the path of [[Cargo Convoy|Cargo Convoys]], i
 All further combat bots that are created from the Fabricator with this hack will become liberated. This applies to bots that are already in progress of fabrication when the hack is applied. Liberated bots will become purple uncontrollable allies that follow Cogmind around. If a liberated bot gets within a 60 tile radius of a Caves exit, even if unidentified or unrevealed, the bot will stop following Cogmind head into that exit.[[/Spoiler]]`},{Name:"Fanart",Content:`Check out the following artists' fanart pages:
 [[List]]
 [[Fanart/CaptainWinky|CaptainWinky]]|
+[[Fanart/Equine Sketcher|Equine Sketcher]]|
 [[Fanart/ivelieu|ivelieu|ivelieu]]|
 [[Fanart/jimmyl|jimmyl]]|
 [[Fanart/Maiker|Maiker]]|
-[[Fanart/Equine Sketcher|Equine Sketcher]]|
+[[Fanart/Nameless Sheetmusic|Nameless Sheetmusic]]|
 [[Fanart/Radbanker|Radbanker]]|
 [[https://zyalin.wixsite.com/zyalin-art/cogmind|Zyalin (external site)]]
-[[/List]]`,Subpages:["Fanart/CaptainWinky","Fanart/Equine Sketcher","Fanart/Maiker","Fanart/Radbanker","Fanart/ivelieu","Fanart/jimmyl"]},{Name:"Fanart/CaptainWinky",Content:`Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]].
+[[/List]]`,Subpages:["Fanart/CaptainWinky","Fanart/Equine Sketcher","Fanart/Maiker","Fanart/Nameless Sheetmusic","Fanart/Radbanker","Fanart/ivelieu","Fanart/jimmyl"]},{Name:"Fanart/CaptainWinky",Content:`Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]].
 
 [[Heading]]G-11 Fodder[[/Heading]]
 [[GameText]]>Analysis(G-11 Fodder)[[/GameText]]
@@ -4615,7 +4616,15 @@ fanart/Equine Sketcher/Zhirov.png|The Science Guy ([[Zhirov]])|
 fanart/Equine Sketcher/Clone.png|Alike (Cogmind and [[CL-0N3]])
 [[/FanartGallery]]
 [[/SpoilerExpandable]]`},{Name:"Fanart/Maiker",Content:`[[Fanart]] created by Maiker:
-[[FanartGallery]]fanart/maiker/Behemoth_GJ_was_here.gif|Behemoth + GJ was here|fanart/maiker/Brawler_Bonk.gif|Brawler Bonk|fanart/maiker/Demolisher_Shoot.gif|Demolisher Shoot|fanart/maiker/Disguised_Cogmind.gif|Disguised Cogmind|fanart/maiker/Get_Heavy'ed.gif|Get Heavy'd|fanart/maiker/GOLEM_Full_Loop.gif|GOLEM|fanart/maiker/Grunt_Shoot.gif|Grunt Shoot|fanart/maiker/Hunter_Drone.gif|Hunter Drone|fanart/maiker/luigi_force_ram.gif|LU-1G1's Force Ram|fanart/maiker/Programmer_Shoot.gif|Programmer Shoot|fanart/maiker/Sentry_Shoot.gif|Sentry Shoot[[/FanartGallery]]`},{Name:"Fanart/Radbanker",Content:`[[Fanart]] created by Radbanker:
+[[FanartGallery]]fanart/maiker/Behemoth_GJ_was_here.gif|Behemoth + GJ was here|fanart/maiker/Brawler_Bonk.gif|Brawler Bonk|fanart/maiker/Demolisher_Shoot.gif|Demolisher Shoot|fanart/maiker/Disguised_Cogmind.gif|Disguised Cogmind|fanart/maiker/Get_Heavy'ed.gif|Get Heavy'd|fanart/maiker/GOLEM_Full_Loop.gif|GOLEM|fanart/maiker/Grunt_Shoot.gif|Grunt Shoot|fanart/maiker/Hunter_Drone.gif|Hunter Drone|fanart/maiker/luigi_force_ram.gif|LU-1G1's Force Ram|fanart/maiker/Programmer_Shoot.gif|Programmer Shoot|fanart/maiker/Sentry_Shoot.gif|Sentry Shoot[[/FanartGallery]]`},{Name:"Fanart/Nameless Sheetmusic",Content:`[[Fanart]] created by Nameless Sheetmusic:
+[[FanartGallery]]
+fanart/Nameless Sheetmusic/Chainsaw_Compact.png|Compact Chainsaw|
+fanart/Nameless Sheetmusic/Chainsaw.png|Chainsaw
+|fanart/Nameless Sheetmusic/Chainsaw_Armored.png|Armored Chainsaw
+|fanart/Nameless Sheetmusic/Chainsaw_Extended.png|Extended Chainsaw|
+fanart/Nameless Sheetmusic/Sawblade_launcher.png|Sawblade Launcher|
+fanart/Nameless Sheetmusic/PSL_Array.png|PSL Array
+[[/FanartGallery]]`},{Name:"Fanart/Radbanker",Content:`[[Fanart]] created by Radbanker:
 [[FanartGallery]]fanart/radbanker/Part Art 1.png|Assorted part art[[/FanartGallery]]
 Top Left:
 cmb. antigrav arrays of varying size
