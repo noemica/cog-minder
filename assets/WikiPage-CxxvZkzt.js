@@ -1,4 +1,4 @@
-import{c as k,r as T,j as a,L as j,I as D,B as v,J as V,w as le,K as ve,M as Ce,f as I,N as Se,y as W,T as L,O as he,a as Z,s as Te,Q as ke,S as J,q as xe,U as He,V as de,z as Ae,u as ce,W as $,X as Ge,Y as O,Z as Re,_ as Ie,$ as U,a0 as Ne,a1 as De}from"./index-CihvMCqG.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Pe,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as me,B as _,I as ge,a as Le,L as Fe,b as Be,u as We}from"./BotDetails-sD86ZY1P.js";import{R as qe,T as ee,a as Q,u as Oe}from"./ItemPopover-0Nc05fTw.js";import{S as Ue}from"./Table-BoBaUUn0.js";import{e as je}from"./partColumnDefs-C_JmHgAV.js";/* empty css              */import"./bots-BVO9WYp3.js";import"./simulatorCalcs-CHRB8eo9.js";import"./items-RjbLE1iR.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as k,r as T,j as a,L as j,I as D,B as v,J as V,w as le,K as ve,M as Ce,f as I,N as Se,y as W,T as L,O as he,a as Z,s as Te,Q as ke,S as J,q as xe,U as He,V as de,z as Ae,u as ce,W as $,X as Ge,Y as O,Z as Re,_ as Ie,$ as U,a0 as Ne,a1 as De}from"./index-Bd_ZW7ji.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Pe,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as me,B as _,I as ge,a as Le,L as Fe,b as Be,u as We}from"./BotDetails-CLc-99ID.js";import{R as qe,T as ee,a as Q,u as Oe}from"./ItemPopover-BG0ekdNH.js";import{S as Ue}from"./Table-B_hSMdbB.js";import{e as je}from"./partColumnDefs-DQwhqr_O.js";/* empty css              */import"./bots-BVO9WYp3.js";import"./simulatorCalcs-BMYJ36Rh.js";import"./items-RjbLE1iR.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1C-UTU",Content:""},{Name:"5H-AD0",Content:""},{Name:"6S-H0T",Content:`6S-H0T is a part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[6S-H0T's Six Shooter]], is a powerful perfectly accurate gun with a high blast critical chance. With a [[Exp. Reaction Control System]], [[Exp. Propulsion Shielding|Exp. Propulsion]] and [[Exp. Weapon Shielding|Weapon Shieldings]], and an incredibly low 15% core exposure, 6S-H0T is no defensive slouch either. Trying to pin this Unchained down is a tall order.
 
 [[Heading]]Lore[[/Heading]]
@@ -8841,14 +8841,23 @@ If Cogmind has aligned with the Exiles with [[FarCom]], the Exiles will deliver 
 [[GameText]]FARCOM_MSG: EX-HEX means well, but I for one want to see you stick around and beat the bolts out of [Unchained bot name][[/GameText]]
 
 [[Heading]]Dispatch Triggers[[/Heading]]
-There are a large number of triggers which can cause Unchained to be authorized, only some of which are currently known.
+There are a large number of triggers which can cause Unchained to be authorized:
 [[List]]
-[[Sterilization]]: Sterilizing any 0b10 map in [[Factory]] depth (-7) or higher.|
-[[Hub_04(d)]] 404: Blowing up all 4 Network Hubs in Hub.|
-Too long on map: Spending too many turns on 0b10 maps (how this is calculated is unknown)|
-Hacking: Either accessing or performing too many hacks at [[Interactive Machine|Interactive Machines]].|
+Too many turns: Spending too many turns on 0b10 maps.|
+Too many moves: Performing too many moves on 0b10 maps.|
+Too many maps visited: Visiting too many 0b10 maps.|
+Machine hacking: Either accessing or performing too many hacks at [[Interactive Machine|Interactive Machines]].|
+Robot hacking: Hacking too many 0b10 bots with [[RIF]].|
+[[Search Patrol|Search Patrol]] dispatches: Getting too many Search patrols dispatched.|
+[[Assault Squad|Assault]] dispatches: Getting too many Assault squads dispatched|
 Interrupting [[Cargo Convoy|Cargo Convoys]]: Interrupting too many Cargo Convoys.|
+[[Garrison Access|Garrison Accesses]] disabled: Disabling too many Garrison Accesses (which methods count toward this is unknown).|
+[[Garrison|Garrisons]] compromised: Getting too many Garrison compromised alerts.|
+[[DSF|DSFs]] visited: Visiting too many DSFs.|
+[[Sterilization]]: Sterilizing any 0b10 map in [[Factory]] depth (-7) or higher.|
 Killing unique NPCs: This includes named Derelicts such as the [[Exiles (Group)]].|
+[[FarCom]] [[Research]] [[Branch]]: Visiting [[Quarantine]] or [[Testing]] after taking FarCom.|
+[[Hub_04(d)]] 404: Blowing up all 4 Network Hubs in Hub.|
 [[Redacted]]Looting [[Protoforge]][[/Redacted]]: Taking too many parts from Protoforge.
 [[/List]]
 In addition to the above specific triggers, there is a general requirement for Cogmind to have a "good enough" build. A build that is falling apart is not a sufficient threat to result in an Unchained dispatch even if one of the triggers has been met.
@@ -8856,7 +8865,7 @@ When an Unchained has been decided to be authorized, an announcement like [[Game
 
 [[Heading]]Behavior[[/Heading]]
 Unchained have special behavior that allows them to follow Cogmind between multiple maps, so escape is not as easy as making it to the nearest exit. They take a few hundred turns after entering the map to show up, but once they appear, they will relentlessly pursue Cogmind with [[Perfect Tracking]]. Thanks to this tracking, a [[Triangulator]] may be used to help locate them from a distance before arrival.
-Each Unchained has different specific behavior, but all have a tendency to harass Cogmind throughout the floor. Some bots ([[GL-D0S]] and [[QV-33N]]) avoid direct engagement altogether, instead making use of combat-capable allies. Others ([[6S-H0T]], [[DW-4LL]], and [[CL-0N3]]) instead rely on ambushes and general hit-and-run tactics. All Unchained are capable of fleeing into [[Garrison Access|Garrisons]] and through 0b10-controlled exits. Hit-and-run types can run to a Garrison and emerge later, ready to harass Cogmind again.
+Each Unchained has different specific behavior, but all have a tendency to harass Cogmind throughout the floor. Some bots ([[GL-D0S]] and [[QV-33N]]) avoid direct engagement altogether, instead making use of combat-capable allies. Others ([[6S-H0T]], [[DW-4LL]], and [[CL-0N3]]) instead rely on ambushes and general hit-and-run tactics. All Unchained are capable of fleeing into Garrisons and through 0b10-controlled exits. Hit-and-run types can run to a Garrison and emerge later, ready to harass Cogmind again.
 
 [[Table]]
 Unchained|Engagement Style|Summons allies|Multiple returns per map||
