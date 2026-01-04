@@ -111,6 +111,7 @@ const botNameImageMap = new Map<string, string>([
     ["Savage (5)", "Brawler"],
     ["Savage (7)", "Brawler"],
     ["Sigix Warrior", "Sigix Warrior"],
+    ["Stormtrooper", "Grunt"],
     ["Superbehemoth", "Behemoth"],
     ["Superfortress", "Fortress (Prototype)"],
     ["Surgeon (4)", "Mechanic"],

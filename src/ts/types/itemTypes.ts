@@ -131,6 +131,7 @@ export type Kinecellerator = { kind: "Kinecellerator"; amount: number };
 export type LauncherGuidance = { kind: "LauncherGuidance"; bonus: number };
 export type LauncherLoader = { kind: "LauncherLoader" };
 export type MassSupport = { kind: "MassSupport"; support: number };
+export type MatterStorage = { kind: "MatterStorage"; storage: number };
 export type MeleeAnalysis = { kind: "MeleeAnalysis"; accuracy: number; minDamage: number };
 export type Metafiber = { kind: "Metafiber" };
 export type MniQuantumCapacitor = { kind: "MniQuantumCapacitor" };
@@ -172,6 +173,7 @@ export type SpecialPropertyType =
     | LauncherLoader
     | LauncherGuidance
     | MassSupport
+    | MatterStorage
     | MeleeAnalysis
     | Metafiber
     | MniQuantumCapacitor
@@ -213,6 +215,7 @@ export type SpecialPropertyTypeName =
     | "LauncherLoader"
     | "LauncherGuidance"
     | "MassSupport"
+    | "MatterStorage"
     | "MeleeAnalysis"
     | "Metafiber"
     | "MniQuantumCapacitor"

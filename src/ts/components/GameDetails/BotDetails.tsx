@@ -484,12 +484,28 @@ export default function BotDetails({
             <DetailsTextLine category="Threat" content={bot.threat} />
             <DetailsTextLine category="Value" content={bot.value} />
             <DetailsTextLine category="Energy Generation" content={bot.energyGeneration} />
-            <DetailsTextLine category=" Innate" content={bot.innateEnergy} tooltipOverride="Innate Energy Generation" />
+            <DetailsTextLine
+                category=" Innate"
+                content={bot.innateEnergyGeneration}
+                tooltipOverride="Innate Energy Generation"
+            />
+            <DetailsTextLine category="Energy Storage" content={bot.energyStorage} />
+            <DetailsTextLine
+                category=" Innate"
+                content={bot.innateEnergyStorage}
+                tooltipOverride="Innate Energy Storage"
+            />
             <DetailsTextLine category="Net Energy/Turn" content={bot.netEnergyPerTurn} />
             <DetailsTextLine category="Net Energy/Move" content={bot.netEnergyPerMove} />
             {bot.netEnergyPerVolley !== undefined && (
                 <DetailsTextLine category="Net Energy/Volley" content={bot.netEnergyPerVolley} />
             )}
+            <DetailsTextLine category="Matter Storage" content={bot.matterStorage} />
+            <DetailsTextLine
+                category=" Innate"
+                content={bot.innateMatterStorage}
+                tooltipOverride="Innate Matter Storage"
+            />
             <DetailsTextLine category="Heat Dissipation" content={bot.heatDissipation} />
             {bot.injectorDissipation > 0 && (
                 <DetailsTextLine category=" Injector Dissipation" content={bot.injectorDissipation} />

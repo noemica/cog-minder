@@ -71,12 +71,15 @@ export type Bot = {
     heatDissipation: number;
     immunities: BotImmunity[];
     immunitiesString: string;
-    innateEnergy: number;
+    innateEnergyGeneration: number;
+    innateEnergyStorage: number;
+    innateMatterStorage: number;
     injectorDissipation: number;
     inventorySize?: string;
     locations: BotLocation[];
     mass: number;
-    maxEnergy: number;
+    energyStorage: number;
+    matterStorage: number;
     memory: string;
     movement: string;
     movementOverloaded?: string;
@@ -136,6 +139,9 @@ export type JsonBot = {
     "Sight Range": string;
     "Energy Generation": string;
     "Heat Dissipation": string;
+    "Innate Energy Storage": string;
+    "Innate Energy Generation": string;
+    "Innate Matter Storage": string;
     "Core Integrity": string;
     "Core Exposure": string;
     "Core Exposure %": string;

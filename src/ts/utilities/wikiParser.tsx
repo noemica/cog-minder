@@ -619,17 +619,33 @@ function processBotDetailsTag(state: ParserState, result: RegExpExecArray) {
         coreExposure: 0,
         coreIntegrity: 0,
         customBot: true,
+        damagePerTurn: undefined,
+        damagePerVolley: undefined,
         description: "",
         energyGeneration: 0,
+        energyStorage: 0,
         heatDissipation: 0,
         immunities: [],
         immunitiesString: "",
+        injectorDissipation: 0,
+        innateEnergyGeneration: 0,
+        innateEnergyStorage: 0,
+        innateMatterStorage: 0,
         inventorySize: "1",
         locations: [],
+        matterStorage: 0,
+        mass: 0,
         memory: "",
         movement: "",
         name: "",
+        netEnergyPerMove: 0,
+        netEnergyPerTurn: 0,
+        netEnergyPerVolley: undefined,
+        netHeatPerMove: 0,
+        netHeatPerTurn: 0,
+        netHeatPerVolley: undefined,
         profile: "",
+        propulsionType: "Leg",
         rating: "",
         salvageHigh: 0,
         salvageLow: 0,
@@ -638,12 +654,14 @@ function processBotDetailsTag(state: ParserState, result: RegExpExecArray) {
         speed: 0,
         spoiler: "None",
         spotPercent: "",
+        support: 0,
         threat: "",
         tier: "",
         totalCoverage: 0,
         traits: [],
         traitsString: "",
         value: 0,
+        volleyTime: undefined,
         visualRange: "16",
     };
 
@@ -1087,6 +1105,7 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
     }
 
     const isFanartGallery = galleryResult[1] === "FanartGallery";
+    const fullSizeGallery = !isFanartGallery && result[2] === "Full";
 
     // Split interior text by |
     // Even numbered indices contain image filenames, odd numbers contain captions
@@ -1167,7 +1186,17 @@ function processGalleryTag(state: ParserState, result: RegExpExecArray) {
     }
 
     const galleryContent = (
-        <div className={isFanartGallery ? "wiki-fanart-gallery-images" : "wiki-gallery-images"}>{galleryItems}</div>
+        <div
+            className={
+                isFanartGallery
+                    ? "wiki-fanart-gallery-images"
+                    : fullSizeGallery
+                      ? "wiki-gallery-fullsize-images"
+                      : "wiki-gallery-images"
+            }
+        >
+            {galleryItems}
+        </div>
     );
 
     state.output.push({
@@ -1668,6 +1697,7 @@ function processItemDetailsTag(state: ParserState, result: RegExpExecArray) {
         projectileCount: 1,
         range: 0,
         spoiler: "None",
+        studyable: false,
         support: 0,
         timePerMove: 0,
         customItem: true,

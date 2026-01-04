@@ -65,9 +65,13 @@ export const TooltipTexts = {
     "Energy Generation":
         "The amount of energy this bot generates per turn, not taking upkeep into account. This also includes any hidden energy generation bonuses that a bot may have hardcoded.",
     "Innate Energy Generation": "The amount of energy this bot generates per turn, not including power parts.",
+    "Energy Storage": "The maximum amount of energy this bot can store.",
+    "Innate Energy Storage": "The amount of energy this bot can store, not including power parts or energy storage utilities.",
     "Net Energy/Turn": "The amount of energy this bot generates or loses each turn if it stands still.",
     "Net Energy/Move": "The amount of energy this bot generates or loses when it makes a move.",
     "Net Energy/Volley": "The amount of energy this bot generates or loses when it fires a volley.",
+    "Matter Storage": "The amount of matter this bot can store.",
+    "Innate Matter Storage": "The amount of matter this bot can store, not including matter storage utilities.",
     "Heat Dissipation":
         "The amount of heat this bot dissipates per turn, including cooling utilities and hidden innate dissipation bonus that a bot may have hardcoded.",
     "Injector Dissipation":

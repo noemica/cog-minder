@@ -339,6 +339,18 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Asb. Suspension Frame": { active: "Part Active", trait: { kind: "MassSupport", support: 20 } },
     "Cep. Dimensional Manipulator": { active: "Part Active", trait: { kind: "MassSupport", support: 30 } },
 
+    // Matter storage
+    "Sml. Matter Pod": { active: "Always", trait: { kind: "MatterStorage", storage: 50 } },
+    "Med. Matter Pod": { active: "Always", trait: { kind: "MatterStorage", storage: 100 } },
+    "Lrg. Matter Pod": { active: "Always", trait: { kind: "MatterStorage", storage: 150 } },
+    "Hcp. Matter Pod": { active: "Always", trait: { kind: "MatterStorage", storage: 200 } },
+    "Com. Matter Pod": { active: "Always", trait: { kind: "MatterStorage", storage: 150 } },
+    "Matter Compressor": { active: "Always", trait: { kind: "MatterStorage", storage: 250 } },
+    "Imp. Matter Compressor": { active: "Always", trait: { kind: "MatterStorage", storage: 300 } },
+    "Adv. Matter Compressor": { active: "Always", trait: { kind: "MatterStorage", storage: 400 } },
+    "Exp. Matter Compressor": { active: "Always", trait: { kind: "MatterStorage", storage: 500 } },
+    "YI-UF0's Bottomless Matter Pit": { active: "Always", trait: { kind: "MatterStorage", storage: 1500 } },
+
     // Melee analysis
     "Melee Analysis Suite": { active: "Part Active", trait: { kind: "MeleeAnalysis", accuracy: 5, minDamage: 2 } },
     "Imp. Melee Analysis Suite": { active: "Part Active", trait: { kind: "MeleeAnalysis", accuracy: 6, minDamage: 3 } },

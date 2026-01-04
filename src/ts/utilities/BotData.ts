@@ -12,9 +12,9 @@ import {
     ItemWithUpkeep,
     Kinecellerator,
     MassSupport,
+    MatterStorage,
     MeleeAnalysis,
     ParticleCharging,
-    PowerAmplifier,
     PowerItem,
     PropulsionItem,
     RangedWeaponCycling,
@@ -181,15 +181,22 @@ export class BotData {
                 }
             }
 
-            // Base energy is fixed at 100 for almost every bot
-            // Large botcubes do have 200 base energy, though since their loadout
-            // can't be manually input into the sim, it isn't of much value to
-            // support this here
-            let maxEnergy = 100;
-
+            // Calculate energy storage
+            let energyStorage = parseInt(bot["Innate Energy Storage"]);
             for (const item of components) {
-                if (hasActiveSpecialProperty(item, true, "EnergyStorage")) {
-                    maxEnergy += (item.specialProperty!.trait as EnergyStorage).storage;
+                if (item.slot === "Power") {
+                    energyStorage += (item as PowerItem).energyStorage || 0;
+                } else if (hasActiveSpecialProperty(item, true, "EnergyStorage")) {
+                    energyStorage += (item.specialProperty!.trait as EnergyStorage).storage;
+                }
+            }
+
+            // Calculate matter storage
+            const innateMatterStorage = parseIntOrDefault(bot["Innate Matter Storage"], 0);
+            let matterStorage = innateMatterStorage;
+            for (const item of components) {
+                if (hasActiveSpecialProperty(item, true, "MatterStorage")) {
+                    matterStorage += (item.specialProperty!.trait as MatterStorage).storage;
                 }
             }
 
@@ -240,19 +247,6 @@ export class BotData {
                 }
             }
 
-            const powerAmplifierBonus = components
-                .filter((item) => hasActiveSpecialProperty(item, true, "PowerAmplifier"))
-                .map((item) => (item.specialProperty!.trait as PowerAmplifier).percent)
-                .reduce(sum, 1);
-
-            const energyFromPower = Math.trunc(
-                components
-                    .filter((item) => item.slot === "Power")
-                    .map((item) => (item as PowerItem).energyGeneration || 0)
-                    .reduce(sum, 0) * powerAmplifierBonus,
-            );
-            const innateEnergy = energyGeneration - energyFromPower;
-
             // Calculate move energy/heat stats
             const speed = parseInt(bot.Speed);
             let netEnergyPerMove = Math.trunc((speed / 100) * netEnergyPerTurn - energyPerMove);
@@ -293,16 +287,19 @@ export class BotData {
                 damagePerVolley: damagePerVolley,
                 description: description,
                 energyGeneration: energyGeneration,
+                energyStorage: energyStorage,
                 fabrication: fabrication,
                 heatDissipation: heatDissipation,
                 immunities: bot.Immunities ?? [],
                 immunitiesString: bot.Immunities?.join(", ") ?? "",
-                innateEnergy: innateEnergy,
+                innateEnergyGeneration: parseInt(bot["Innate Energy Generation"]),
+                innateEnergyStorage: parseInt(bot["Innate Energy Storage"]),
+                innateMatterStorage: innateMatterStorage,
                 injectorDissipation: injectorDissipation,
                 inventorySize: bot["Inventory Capacity"],
                 locations: extraData?.Locations ?? [],
                 mass: mass,
-                maxEnergy: maxEnergy,
+                matterStorage: matterStorage,
                 memory: bot.Memory,
                 movement: `${bot.Movement} (${bot.Speed}/${bot["Speed %"]}%)`,
                 movementOverloaded:
