@@ -113,6 +113,7 @@ SPRITES = [
     Sprite(24, 14, 1, 'V-Series (Prototype)'),
     Sprite(25, 14, 1, 'CL-0N3'),
     Sprite(26, 14, 1, 'QV-33N'),
+    Sprite(27, 14, 1, 'V4-D3R'),
 
     Sprite(0, 15, 1, 'Striker (Prototype)'),
     Sprite(1, 15, 1, 'Executioner (Prototype)'),
@@ -225,7 +226,7 @@ def main(cogmind_dir):
         logging.info('Processing font %s', font.filename)
         process_font(font, fonts_path)
 
-    # shutil.rmtree(temp_dir)
+    shutil.rmtree(temp_dir)
 
 
 if __name__ == '__main__':

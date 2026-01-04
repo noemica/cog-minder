@@ -264,6 +264,7 @@ Adv. Cryofiber Web
 Exp. Cryofiber Web
 Heat Sink
 Imp. Heat Sink
+Mak. Heat Sink
 Adv. Heat Sink
 Exp. Heat Sink
 Cep. Phasing Heat Sink
@@ -308,6 +309,7 @@ Zio. Biocell
 Asb. Biocell Array
 Zio. Biocell Array
 Superbattery
+V4-D3R's Forcewell
 Sml. Matter Pod
 Med. Matter Pod
 Lrg. Matter Pod
@@ -569,6 +571,7 @@ Exp. Powered Armor
 1C-UTU's Buckler
 Tower Shield
 DW-4LL's Blast Wall
+V4-D3R's Cape
 Lgt. Regenerative Plating
 Med. Regenerative Plating
 Hvy. Regenerative Plating
@@ -755,6 +758,7 @@ Amulet of Y3-NDR
 Chronowheel
 Power Bank
 Rainbow Chip
+Procsplitter
 VL-GR5's Exoskeleton "Deathgrip"
 Dimensional Node Initializer
 Transdimensional Reconstructor
@@ -779,6 +783,7 @@ Personal Teleporter v0.10
 Telecube
 Cep. Navigation Harness
 Supercharged Navigation Harness
+Blink Core
 Spacefold Activator
 Microwarp Drive
 LC Capacitor
@@ -791,6 +796,7 @@ LRC Insulator
 Cep. Nanofilaments [Conductive]
 Cep. Nanofilaments [Tensile]
 Cep. Nanofilaments [Polyglass]
+Cep. Nanofilaments [Endoweave]
 EM Pulse Gun
 Hvy. EM Pulse Gun
 EM Shotgun
@@ -1129,6 +1135,7 @@ Exp. Remote Datajack
 Gui. Remote Datajack
 ME-RLN's Wand
 System Spiker
+CY-PHR's Mindspike
 Field Lobotomy Kit
 Mining Laser
 Mak. Laser Shovel
@@ -1145,6 +1152,7 @@ Plasma Flamer
 RU-N14's Throwing Claymores
 RU-N14's Throwing Claymores v3
 Warlord Statue
+V4-D3R's Forcegen
 Voltaic Drivehammer
 AD-0RF's Magmablaster
 IN-MT5's Pitchfork "Insurrection"
@@ -1167,6 +1175,7 @@ Powered Hammer
 Mak. Hammer
 Power Maul
 Impact Mace
+H3-MLN's Flail
 Shock Maul
 Thunder Hammer
 Gravity Flail
@@ -1207,6 +1216,7 @@ Particle Cleaver
 DM-GVY's Chainsaw
 Exp. Terror Saw
 1C-UTU's Sword "Choppy"
+V4-D3R's Sabre
 Cep. Deflector Sword
 Quantum Companion
 Superquantum Companion

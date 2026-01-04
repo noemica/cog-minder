@@ -645,6 +645,18 @@
             }
         ]
     },
+    "BL-1NK": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Most 0b10 maps",
+                "Description": "Hostile: Summoned when Cogmind has met one of the Unchained summoned triggers when causing problems for 0b10"
+            }
+        ]
+    },
     "Blast Turret": {
         "Categories": [
             "Spoiler",
@@ -941,6 +953,18 @@
             {
                 "Location": "Caves and various derelict attack events",
                 "Description": "Friendly"
+            }
+        ]
+    },
+    "CY-PHR": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Main 0b10 maps",
+                "Description": "Hostile: Appears in a room full of machinery on a main 0b10 floor after Cogmind has done too much hacking"
             }
         ]
     },
@@ -3570,6 +3594,18 @@
             {
                 "Location": "Floors where CL-0N3 is active",
                 "Description": "Hostile: Can be one of the random bots that Cl-0N3 can transform into"
+            }
+        ]
+    },
+    "V4-D3R": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Most 0b10 maps",
+                "Description": "Hostile: Summoned when Cogmind has met one of the Unchained summoned triggers when causing problems for 0b10"
             }
         ]
     },
