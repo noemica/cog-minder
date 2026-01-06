@@ -621,7 +621,7 @@ Upkeep/Energy|
 Upkeep/Heat|
 Effect/Effect|
 Effect/Description
-[[/PartGroupTable]]","","","","Lgt. Armor Plating,Med. Armor Plating,Hvy. Armor Plating,Zio. Light Carapace,Zio. Heavy Carapace,Hrd. Light Armor Plating,Hrd. Medium Armor Plating,Hrd. Heavy Armor Plating,Imp. Light Armor Plating,Imp. Medium Armor Plating,Imp. Heavy Armor Plating,Mak. Light Armor Plating,Mak. Medium Armor Plating,Mak. Heavy Armor Plating,Lyr. Light Armor Plating,Lyr. Medium Armor Plating,Lyr. Heavy Armor Plating,Gun Armor,Centrium Light Armor Plating,Centrium Medium Armor Plating,Centrium Heavy Armor Plating,Centrium Linked Plating,Mak. Ablative Armor,Active Cooling Armor,Scrap Shield,Enh. Scrap Shield,DW-4LL's Blast Wall,Tower Shield,Vmp. Brace Plating","Backup Plating,Powered Armor (Group),Regenerative Armor,Resistance Armor","Shieldings",""
+[[/PartGroupTable]]","","","","Lgt. Armor Plating,Med. Armor Plating,Hvy. Armor Plating,Zio. Light Carapace,Zio. Heavy Carapace,Hrd. Light Armor Plating,Hrd. Medium Armor Plating,Hrd. Heavy Armor Plating,Imp. Light Armor Plating,Imp. Medium Armor Plating,Imp. Heavy Armor Plating,Mak. Light Armor Plating,Mak. Medium Armor Plating,Mak. Heavy Armor Plating,Lyr. Light Armor Plating,Lyr. Medium Armor Plating,Lyr. Heavy Armor Plating,Gun Armor,Centrium Light Armor Plating,Centrium Medium Armor Plating,Centrium Heavy Armor Plating,Centrium Linked Plating,Mak. Ablative Armor,Active Cooling Armor,Scrap Shield,Enh. Scrap Shield,DW-4LL's Blast Wall,Tower Shield,Vmp. Brace Plating,V4-D3R's Cape","Backup Plating,Powered Armor (Group),Regenerative Armor,Resistance Armor","Shieldings",""
 "Armor Guard","Bot","","","","","","","",""
 "Armor Integrity Analyzer","Part","","","","","","","",""
 "Armor Integrity Analyzers","Part Group","[[Heading]]List of Armor Integrity Analyzers[[/Heading]]
@@ -799,6 +799,7 @@ Effect/Description
 "B-90 Cyclops","Bot","","","","","","","",""
 "B-99 Colossus","Bot","","","","","","","",""
 "BFG-9k Vortex Edition","Part","","","","","","","",""
+"BL-1NK","Bot","","","","","","","",""
 "Backup Laser I","Part","","","","","","","",""
 "Backup Laser III","Part","","","","","","","",""
 "Backup Laser VII","Part","","","","","","","",""
@@ -956,6 +957,7 @@ Behemoth Facing Up.png|A Behemoth facing up
 "Blade Trap","Part","","","","","","","",""
 "Blast Cannon","Part","","","","","","","",""
 "Blast Turret","Bot","","","","","","","",""
+"Blink Core","Part","","","","","","","",""
 "Bolt Gun","Part","","","","","","","",""
 "Bolteater","Bot","Bolteaters are fast [[Wheels|wheeled]] [[UFD]] combat bots armed with [[Ripteeth]]. Valuable for a wheels build with their [[Rocket Booster|Rocket Boosters]]. Their ripteeth can rip off a component ignoring armor, so keep them away from you. Slightly resistant to Kinetic, Thermal, Electromagnetic and Explosive damage.","","","","","","",""
 "Bomb Drone","Bot","Fast disposable drones that attempt to melee hostiles, which will cause them to explode. Deployed by a [[Bomb Drone Bay]]","","","","","","",""
@@ -1064,6 +1066,96 @@ Alternatively, with a long 1-tile corridor that has paths in both directions to 
 "CR-A16's Behemoth Slayer","Part","Transformed from [[CR-A16's Pointy Stick]]. The Behemoth Slayer will always instantly kill any [[Behemoth]] it hits. Note: This only applies to standard [[0b10]] Behemoth-class bots. [[Marauder|Marauders]] and the [[Superbehemoth]] are immune to this effect. When its effect activates, the game log [[GameText]][Behemoth] suddenly blasts apart at the seams.[[/GameText]]","","","","","","",""
 "CR-A16's Pointy Stick","Part","Given by the [[Derelict]] CR-A16 in [[Zion]]. When used to attack [[Behemoth|Behemoths]], there is a chance that this will transform into [[CR-A16's Behemoth Slayer]]. When this occurs, the log message [[GameText]]CR-A16's Pointy Stick's crusty surface crumbles away to reveal its sleek core, which hums to life.[[/GameText]] will appear.
 Note: This transformation effect only applies to standard [[0b10]] Behemoth-class bots. [[Marauder|Marauders]] and the [[Superbehemoth]] are immune to this effect. However, it will still transform if used on an allied Behemoth or disabled one, such as the Behemoths that sometimes appear in [[Zhirov (Location)]].","","","","","","",""
+"CY-PHR","Bot","CY-PHR is a part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. They are arguably the most unique of the Unchained due to the fact that they can affect the game far before they appear on the map. CY-PHR interferes with Cogmind's [[Interactive Machine]] hacking capabilities early on and will not show up until several floors later. Offensively, they pose little threat with their [[CY-PHR's Mindspike]] only being capable of disabling Cogmind rather than dealing direct damage. However, this weapon paired with their high speed and [[Exp. Phase Shifter]] makes them difficult to pin down while fleeing, so killing them even after finding them can be a real challenge. While not functionally useful, they also have 4 slots of powerful [[Prototype Part|Prototype]] [[Hackware]] which make for some highly desirable loot.
+
+[[Heading]]Lore[[/Heading]]
+[[Lore]]Cyclists Records|UC/CY-PHR[[/Lore]]
+
+[[Heading:2]][[FarCom]] Lore[[/Heading]]
+If Cogmind has aligned with the [[Exiles (Group)|Exiles]] and has FarCom, the following message will be broadcast about CY-PHR:
+[[GameText]]Wow, you managed to get CY-PHR interested in you? Good luck in your future hacking endeavors, as they love to mess with the results. Keep at it and try to track them down... somewhere out there in 0b10. They're wimpy and will leave you alone for good if you can find them. Big if.[[/GameText]]
+
+[[Heading]]Behavior[[/Heading]]
+CY-PHR's first signs of interest in Cogmind come much sooner than the other Unchained. Rather than being authorized once Cogmind has caused lots of trouble, they will instead start to show their presence beforehand. CY-PHR adds cryptic leetspeak messages as part of machine hacking outputs under a stylized ascii MATRIX logo once Cogmind has performed enough successful hacks. There are 6 messages that appear this way, corresponding with 50%, 60%, 70%, 80%, 90%, and 100% of the successful hacking threshold required to fully trigger CY-PHR to begin interfering with Cogmind. The threshold to trigger is likely be somewhere between 150-300 successful hacks, with different hacks contributing a different amount of progress toward the trigger.
+
+[[Heading:2]]Threshold Messages[[/Heading]]
+[[Expandable]]Threshold messages with leetspeak|[[Gallery:Full]]CY-PHR Message 1.png|50% threshold message|CY-PHR Message 2.png|60% threshold message|CY-PHR Message 3.png|70% threshold message|CY-PHR Message 4.png|80% threshold message|CY-PHR Message 5.png|90% threshold message|CY-PHR Message 6.png|100% threshold message[[/Gallery]]
+Note: The binary ASCII around the MATRIX art translates to ""CYPHER"".
+[[/Expandable]]
+
+[[Heading:3]]""Translated"" Messages[[/Heading]]
+[[List]]
+50%: You feel like you're being watched. Probably because you are.|
+60%: You are quite the prolific hacker, derelict [random numbers]. Yep, you've done enough to enter into my personal database of naughty hacker bots. I've got my terminal eyes on you.|
+70%: You're probably dying to know who this is. Well try not to die too fast. This is just getting exciting because CYPHER is on your tail. Tracking your every mistake. And there sure are a lot of them.|
+80%: I may not be the oracle (that one is a subservient idiot), but I see a lot of roadblocks in your not-too-distance future if you keep this up.|
+90%: Pooling my resources as I send this message, just waiting until you cross the seemingly arbitrary threshold beyond which bossman said I can do whatever I want to counter network threats such as yourself. SOON ENOUGH.|
+100%: I can't believe it took this long, but I just discovered you are that Cogmind thing everyone's been raving about. Putting you in your place will be a nice digital trophy. IT'S ON.
+[[/List]]
+
+[[Heading:2]]Hacking interference[[/Heading]]
+Once the final message has been met, CY-PHR will begin to interrupt Cogmind's hacking capabilities on all interactive machines. There are a large number of effects, some that are applicable to all Terminals, and others that are unique to specific types of hacks.
+
+[[Heading:3]]Random Comments[[/Heading]]
+CY-PHR will taunt Cogmind when performing hacks, either successfully or unsuccessfully. For example, when Cogmind loads a schematic in a [[Fabricator]], CY-PHR may say [[GameText]]I think there's something wrong with your [part name] schematic. It's upside down.[[/GameText]] Comments like these are simply flavor text and do not have any practical effect.
+
+[[Heading:3]]Random Keyboard Noises[[/Heading]]
+Occasionally when successfully hacking, CY-PHR will cause an effect of [[GameText]]*random keyboard noises*[[/GameText]]. When this happens, the machine will be instantly shut down and an [[Investigation Squad]] will be summoned to the location. There is no chance of feedback effect with this occurs unlike regular machine tracing.
+
+[[Heading:3]]Locating Failures[[/Heading]]
+Whenever Cogmind performs any kind of location hack, there is a chance that CY-PHR will reduce the number of found things or fail to report them entirely. For example, performing a [[GameText]]Access(Main)[[/GameText]] hack may report only 2 out of 4 main exits on the floor. This effect can occurs with all Access hacks and [[GameText]]Traps(Locate)[[/GameText]].
+
+[[Heading:3]]Database Failure[[/Heading]]
+When Cogmind is trying to hack for a [[Robot Analysis]] or [[Schematic]], the hack may succeed but have a joke entry replace the real hack results instead. It is also possible that a real but other random schematic will be hacked instead of the requested one.
+
+[[Heading:3]][[GameText]]Prototypes[[/GameText]] Failure[[/Heading]]
+Instead of retrieving random prototype part IDs, fake part names may be generated instead. If this happens, Cogmind doesn't gain any real prototype information.
+
+[[Heading:3]][[GameText]]Alert(Purge)[[/GameText]] Failure[[/Heading]]
+Occasionally, this hack will instead increase the alert level instead of purging it. When this happens, 100 alert will be added and the message will be replaced with [[GameText]]Added threat record, spice level increased.[[/GameText]]
+
+[[Heading:3]][[GameText]]Alert(Check)[[/GameText]] Indirection[[/Heading]]
+This hack no longer tells the exact alert level but instead gives a taunting message by CY-PHR based on the alert level:
+[[Table]]
+Alert level|Message 1|Message 2|Message 3|Message 4||
+Low Security|Green|Not A Troublemaker?!|Baby Mode|Laughable||
+Level 1|Yellow|Weakling|Disappointingly Low|Enjoyable||
+Level 2|Red|Bad Boy|Who Wants To Know?|Unfriendly||
+Level 3|Purple|Tough Nut|Just Right|Promising||
+Level 4|Black|Popular|Really Really High|Outrageous||
+Level 5|Brimstone|I Want My Mommy|Are We Winning Yet?|Impossible
+[[/Table]]
+
+[[Heading:3]]Unreliable Parts[[/Heading]]
+Parts that are repaired at a [[Repair Station]] or that are created by a [[Fabricator]] have a chance of becoming unreliable. These parts have a small chance of breaking with use, with the log message [[GameText]][Part name] shoots sparks and powers down.[[/GameText]] They enter the broken state, though they do not have any other negative effects like integrity loss. Parts broken this way may be repaired through normal means like with [[Recalibrators]], [[Mechanic|Mechanics]], or other Repair Stations, although they will continue to break again in the future.
+
+[[Heading:3]]Traceback[[/Heading]]
+Performing a few hacks after CY-PHR has been fully triggered will result in a [[GameText]]### SYSTEM_CRASH ###[[/GameText]]. The machine will become locked, but among flavor text there is a depth listed that is a few depth higher than Cogmind's current depth. Another crash soon after will also indicate a map. This is the location that CY-PHR will appear. Once on the given map, two further crashes will reveal a quadrant of the map and a relative position of CY-PHR's lair.
+
+[[Heading:2]]CY-PHR's Lair[[/Heading]]
+[[Image]]CY-PHR Lair.png|CY-PHR in their lair[[/Image]]
+CY-PHR's lair will appear on the map and depth indicated in the traceback info. This can either be fully inside a standard room and accessible through a normal door or a special hidden area only accessible through an emergency access door. In the latter case, [[Terrain Scanners|Terrain Scanning]] or a [[Structural Scanner]] can be helpful to find the location without having to walk along the edge of every map. A [[Triangulator]] can also do the job since it will always locate CY-PHR from a long distance. CY-PHR will be in the middle of the room in some twisted machinery that they can move through, although Cogmind is unable to.
+
+[[Heading:3]]Engagement[[/Heading]]
+Once CY-PHR spots Cogmind, they will immediately start to flee toward a nearby exit or [[Garrison Access]]. They will use their Mindspike if blocked, but otherwise they will not attempt to engage in combat directly. At this time, they will also summon 6 random drones from a nearby exit. The summoned drones initially have tracking on Cogmind, though they can be shaken by running away. Drones can any of the following types with unique names:
+[[List]]
+[[Antisys Drone]]: EM-DR0N3 ""Zapster""|
+[[EX Drone]]: EX-DR0N3 ""Pwner""|
+[[Kinetic Drone]]: KI-DR0N3 ""Flydakka""|
+[[Thermal Drone]]: TH-DR0N3 ""Hotstuff""
+[[/List]]
+
+[[Heading:3]]Post-Engagement[[/Heading]]
+After Cogmind has met CY-PHR on the map they will leave Cogmind alone for good. All special hacking effects will go away on this and all future maps. This will happen even if CY-PHR is still alive and manages to escape.
+
+[[Heading]]Strategy[[/Heading]]
+ Offensively, CY-PHR is no threat alone. However, their summoned drones are much more problematic with their high damage output and 22 speed. CY-PHR tends to camp out close to stairs or a Garrison which they will summon the drones out of, so they will be on top of you almost immediately. You can deal with them reliably with an [[Explosive Launchers|Explosive Launcher]], though it does take precious time away from you chasing down CY-PHR before they leave the map. CY-PHR's Mindspike doesn't directly deal damage, but it will quickly immobilize you and stop your pursuit.
+Defensively, CY-PHR's main assets are a reasonably quick 32 speed, a sizeable chunk of low exposure core, an [[Exp. Propulsion Shielding]] to protect their hover units, and an [[Exp. Phase Shifter]]. The shielding prevents critical hits from removing their hover units too easily. They also have an [[Exp. Cloaking Device]], although Cogmind is not affected by it. Additionally, CY-PHR has a fairly standard Unchained 90% EM damage resistance which makes death by [[Corruption]] very unreliable. Other than that, all non-EM weapon types work equally well against CY-PHR.
+Depending on your offensive and defensive capabilities, it may be desirable to get spotted by CY-PHR purely so you can hack in peace. If you want to do this, the best strategy is to try to map out the nearby area before engaging. The moment you get spotted, the Drones will be instantly dispatched with tracking on Cogmind. If you are airborne, you can ideally take an alternate exit than the closest one or use an [[ECM Suites|ECM Suite]] to lose the Drones before they catch up. Using a cannon to dig into the room from another angle is a good way to get yourself an alternate route to safety. Note that you have to be fully spotted in order to trigger the Drones and the effect for them to leave you alone. A [[Partial Spot]] does not work to stop their harrassment. For combat builds, you will likely have to fight the summoned Drones no matter what.
+To successfully kill CY-PHR is another challenge entirely. Depending on the map layout, you might be able to block them in their lair by standing at the entrance to the room. They are unable to hop you while they have a weapon attached, though if you shoot off their Mindspike they will be able to hop Cogmind to get away. Melee weapons are good to use in this case since they can't miss and accidentally open up a path for CY-PHR to escape. The downside of this approach is that you can be consistently hit with the Mindspike and will have to tank the Drones coming up from behind. Some Drones can even dig a path for CY-PHR to escape around you which is not ideal. Having good offensive power like melee + 50% [[Actuators]] or lots of ranged weapons like [[Kinetic Guns]] can help you take them out before you are harassed too much by the Drones. Using salvage neutral or positive weapons is ideal due to the number of great parts they can drop.
+Another strategy to take out CY-PHR is to use traps. [[Blade Trap|Blade]] and [[Segregator Trap|Segregator Traps]] are the best choice for this. Planting 4 or more of these traps has a high chance of taking out the Mindspike and all 3 of their hover units, rendering them completely immobile and helpless. To have the best shot at pulling this out, try to figure out the path that CY-PHR will take to get to the exit and plant the traps along that path. Once you do this, try to fight the Drones away from where CY-PHR will hopefully be stuck waiting for you. The [[Zip Rocket]] from an EX Drone can kill your salvage otherwise.
+Large groups of allies are helpful to distract the Drones that are dispatched after being spotted by CY-PHR. However, unlike most other Unchained, they are not overly helpful to take down CY-PHR. The huge radius on their Mindspike will likely end up disabling most if not all of your allies immediately. Instead, you can try to park the allies at the nearest exit or Garrison so they can ambush the Drones when they appear. Worst case, they can still try to get a few shots off on CY-PHR if they manage to get away from you.","","","","","","",""
+"CY-PHR's Mindspike","Part","","","","","","","",""
 "Carbide Saw","Part","","","","","","","",""
 "Carbon-fiber Leg","Part","","","","","","","",""
 "Cargo Convoy","Other","[[Image]]Cargo Convoy.png|Intact cargo convoy[[/Image]]
@@ -1379,6 +1471,7 @@ Friendly Derelicts will not move from their guard position, but they will engage
 "Cep. Miniperforator","Part","","","","","","","",""
 "Cep. NT7 Matterbank","Part","","","","","","","",""
 "Cep. Nanofilaments [Conductive]","Part","","","","","","","",""
+"Cep. Nanofilaments [Endoweave]","Part","","","","","","","",""
 "Cep. Nanofilaments [Polyglass]","Part","","","","","","","",""
 "Cep. Nanofilaments [Tensile]","Part","","","","","","","",""
 "Cep. Navigation Harness","Part","","","","","","","",""
@@ -2091,7 +2184,7 @@ Upkeep/Energy|
 Effect/Effect
 [[/PartGroupTable]]","","","","Component Analysis Suite,Imp. Component Analysis Suite,Adv. Component Analysis Suite","","",""
 "Concussive RPG","Part","","","","","","","",""
-"Consumable Alien Artifacts","Part Supergroup","","Spoiler","","","Dimensional Node Initializer,Core Expander,Core Regenerator,Integrity Redistributor,Integrated Dissipator,Supercharged Integrated Dissipator,Integrated Thermoelectric Network,Integrated Reactor,Supercharged Integrated Reactor,Integrated Mediator,Core Membrane,Navigation Efficiency Matrix,Core Reset Matrix,Subatomic Replicator,Terrabomb,LRC Armor,LRC Energy Well,LRC Matter Compressor,LRC Inertial Stabilizer,LRC Insulator,LRC Storage,Core Physics Calibrator,Personal Teleporter v0.10,Telecube,Spacefold Activator,Microwarp Drive,LC Capacitor,Cep. Nanofilaments [Conductive],Cep. Nanofilaments [Tensile],Cep. Nanofilaments [Polyglass]","Transdimensional Reconstructors","",""
+"Consumable Alien Artifacts","Part Supergroup","","Spoiler","","","Dimensional Node Initializer,Core Expander,Core Regenerator,Integrity Redistributor,Integrated Dissipator,Supercharged Integrated Dissipator,Integrated Thermoelectric Network,Integrated Reactor,Supercharged Integrated Reactor,Integrated Mediator,Core Membrane,Navigation Efficiency Matrix,Core Reset Matrix,Subatomic Replicator,Terrabomb,LRC Armor,LRC Energy Well,LRC Matter Compressor,LRC Inertial Stabilizer,LRC Insulator,LRC Storage,Core Physics Calibrator,Personal Teleporter v0.10,Telecube,Spacefold Activator,Microwarp Drive,LC Capacitor,Cep. Nanofilaments [Conductive],Cep. Nanofilaments [Endoweave],Cep. Nanofilaments [Tensile],Cep. Nanofilaments [Polyglass]","Transdimensional Reconstructors","",""
 "Containment Facilitator","Part","","","","","","","",""
 "Coolant Injector","Part","","","","","","","",""
 "Coolant Injectors","Part Group","[[Heading]]List of Coolant Injectors[[/Heading]]
@@ -2115,7 +2208,7 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]","","","","Heat Sink,Imp. Heat Sink,Adv. Heat Sink,Exp. Heat Sink,Cep. Phasing Heat Sink,Cooling System,Imp. Cooling System,Mak. Coolant Network,Adv. Cooling System,Exp. Cooling System,Asb. Nanovents,Coolant Network,2N-1CE's Frost Array","","",""
+[[/PartGroupTable]]","","","","Heat Sink,Imp. Heat Sink,Mak. Heat Sink,Adv. Heat Sink,Exp. Heat Sink,Cep. Phasing Heat Sink,Cooling System,Imp. Cooling System,Mak. Coolant Network,Adv. Cooling System,Exp. Cooling System,Asb. Nanovents,Coolant Network,2N-1CE's Frost Array","","",""
 "Cooling System","Part","","","","","","","",""
 "Cooling Utilities","Part Supergroup","[[Heading]]List of Cooling Utilities[[/Heading]]
 [[PartGroupTable]]
@@ -2786,7 +2879,7 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
-[[/PartGroupTable]]","","","","Sml. Battery,Med. Battery,Lrg. Battery,Hcp. Battery,Com. Battery,Energy Well,Imp. Energy Well,Adv. Energy Well,Exp. Energy Well,Zio. Biocell,Zio. Biocell Array,Asb. Biocell Array,Superbattery,Cep. Chromion Battery","","",""
+[[/PartGroupTable]]","","","","Sml. Battery,Med. Battery,Lrg. Battery,Hcp. Battery,Com. Battery,Energy Well,Imp. Energy Well,Adv. Energy Well,Exp. Energy Well,Zio. Biocell,V4-D3R's Forcewell,Zio. Biocell Array,Asb. Biocell Array,Superbattery,Cep. Chromion Battery","","",""
 "Engines","Part Group","[[Heading]]List of Engines[[/Heading]][[PartGroupTable]]
 Engines|
 Overview/Size|
@@ -4817,7 +4910,7 @@ Another way to deal with Grunts is to take advantage of their low memory (20 act
 
 [[Heading]][[Squad|Squads]][[/Heading]]
 Grunts may appear in the following squads:
-[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Investigation Squad]]|[[Patrol Squad]]|[[Reinforcement Squad]]|[[Security Squad]] - Only in [[Armory]], [[Garrison|Garrisons]], [[Quarantine]], and [[Testing]]|[[Transport Squad]][[/List]]","","G-34 Mercenary,G-47 Trooper,G-50 Soldier,G-67 Veteran,G-73 Enforcer,Protovariant G,Hotshot","","","","",""
+[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Investigation Squad]]|[[Patrol Squad]]|[[Reinforcement Squad]]|[[Security Squad]] - Only in [[Armory]], [[Garrison|Garrisons]], [[Quarantine]], and [[Testing]]|[[Transport Squad]][[/List]]","","G-34 Mercenary,G-47 Trooper,G-50 Soldier,G-67 Veteran,G-73 Enforcer,Protovariant G,Hotshot,Stormtrooper","","","","",""
 "Guerrilla","Bot Group","Guerillas are [[Legs|legged]] [[Derelict]] combat bots equipped with an inaccurate yet powerful [[Bore Cannon]] with a high Destroy critical chance. These are the Derelict version of a [[Hunter]]. Their [[Targeting Computer]] somewhat offset the targeting penalty, and they have a minimal evasion boost with a [[Phase Shifter]]. Unlike Hunters, Guerillas have an [[Armor Integrity Analyzer]] allowing them to occasionally bypass enemy armor. Guerrillas are common bots that show up in many different types of Derelict encounters and events.","","Guerrilla (5),Guerrilla (7)","","","","",""
 "Guerrilla (5)","Bot","","","","","","","",""
 "Guerrilla (7)","Bot","","","","","","","",""
@@ -4843,6 +4936,7 @@ They cannot be fired in a volley with other weapons, only alone.
 "H-77 Assassin","Bot","","","","","","","",""
 "H-81 Overseer","Bot","","","","","","","",""
 "H-88 Terminator","Bot","","","","","","","",""
+"H3-MLN's Flail","Part","","","","","","","",""
 "HERF Cannon","Part","","","","","","","",""
 "HV-R5K","Bot","[[GameText]]They trapped me with the old Behemoth-in-the-wall trick. Won't happen again![[/GameText]]","","","","","","",""
 "Hacking Drone","Bot","","","","","","","",""
@@ -5799,6 +5893,7 @@ The following is a list of all locations in Cogmind:
 "Mak. Flight Unit","Part","","","","","","","",""
 "Mak. Hacking Suite","Part","","","","","","","",""
 "Mak. Hammer","Part","","","","","","","",""
+"Mak. Heat Sink","Part","","","","","","","",""
 "Mak. Heavy Armor Plating","Part","","","","","","","",""
 "Mak. Hover Unit","Part","","","","","","","",""
 "Mak. Kinetic Plating","Part","","","","","","","",""
@@ -6739,6 +6834,7 @@ Effect/Effect
 "Prc. Phase Gun","Part","","","","","","","",""
 "Prc. Rocket Launcher","Part","","","","","","","",""
 "Prc. Shock Rifle","Part","","","","","","","",""
+"Procsplitter","Part","","","","","","","",""
 "Programmer","Bot Group","Programmers are a [[Bot Groups|Bot Group]] of [[Hover Units|hovering]] [[0b10]] combat bots armed with EM weaponry and a [[Datajacks|Remote Datajack]]. Programmers will attempt to corrupt and hack any hostiles, potentially changing alliances by assimilating them. They can also remove system corruption from their allies and clear certain [[RIF]] hacks from allied bots. They are a persistent threat throughout [[Factory]] and beyond due to being sent as part of [[Extermination Squad|Extermination Squads]].
 Programmers are best fought with kinetic or thermal weaponry due to their slight weakness to them. Many cannons are able to kill a Programmer with only one core shot. These weapons are ideal to use. For thermal weaponry, they are also fairly susceptible to heat transfer triggering side effects and an early meltdown. Their EM resistance coupled with their tendency to travel in packs make EM and Impact poor choices to fight them, as corruption death is unlikely.
 Programmers are not initially very threatening bots. They deal small amounts of EM damage and appear only in small groups in [[Factory]] depths. However, in [[Research]] they turn into a frequent threat, appearing in larger groups and dealing significant EM damage inflicting consistent corruption to Cogmind. Having a good weapon that kill Programmers in a single core hit is ideal. For airborne builds, being able to outrun or recall Exterminations is a good strategy. Keep in mind that they are fairly fast for combat bots and have a high memory of 80. [[ECM Suites]] are very helpful for shaking Programmers more easily on the run.
@@ -6885,14 +6981,14 @@ For example, if a bot has equipped:
 [[/List]]
 its total mass is 14. Its movement speed depends on which propulsion unit it has activated:
 [[List]]
-With the treads: The bot is underweight (14 ≤ 20). The time to move one tile is 160.
-|With the wheel: The bot is 1 time overweight (10 < 14 ≤ 20). The time to move one tile is 80 + 15 = 95.
-|With neither (core propulsion): The bot is 4 times overweight (12 < 14 ≤ 15). The time to move one tile is 50 + (50 × 4) = 250.
+With the treads: The bot is underweight (14 â‰¤ 20). The time to move one tile is 160.
+|With the wheel: The bot is 1 time overweight (10 < 14 â‰¤ 20). The time to move one tile is 80 + 15 = 95.
+|With neither (core propulsion): The bot is 4 times overweight (12 < 14 â‰¤ 15). The time to move one tile is 50 + (50 Ã— 4) = 250.
 [[/List]]
 
 [[Heading:2]]Formula[[/Heading]]
 Mathematically, the amount of time it takes a bot to move one tile (ignoring mechanics for flight and hover units) is
-Σ[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + ⌊max(0, [[I]]m[[/I]] − 1)/Σ[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]⌋(Σ[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
+Î£[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + âŒŠmax(0, [[I]]m[[/I]] âˆ’ 1)/Î£[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]âŒ‹(Î£[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
 where
 [[List]]
 [[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the mass support for propulsion unit [[I]]i[[/I]]
@@ -6901,7 +6997,7 @@ where
 |[[I]]m[[/I]] is the total mass of all attached parts
 |[[I]]n[[/I]] is the total number of activated propulsion units
 [[/List]]
-and all sums Σ are over all activated propulsion units.
+and all sums Î£ are over all activated propulsion units.
 
 [[Heading]]Flight and Hover Units[[/Heading]]
 Flight and hover units calculate their movement speed in the same basic way as legs, treads, and wheels, but they have the following additional mechanics that affect movement speed:
@@ -7165,10 +7261,10 @@ Weapons|Time to fire|Time per weapon||
 [[CellStyle:Neutral]][[B]]1 with QC[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]||
 1|200|[[CellStyle:Bad]]200||
 2|300|[[CellStyle:Bad]]150||
-3|325|[[CellStyle:Bad]]108⅓||
-4|350|[[CellStyle:Good]] 87½||
-5|375|[[CellStyle:Good]] 75||
-6|400|[[CellStyle:Good]] 66⅔
+3|325|[[CellStyle:Bad]]108â…“||
+4|350|[[CellStyle:Good]]â€‡87Â½||
+5|375|[[CellStyle:Good]]â€‡75||
+6|400|[[CellStyle:Good]]â€‡66â…”
 [[/Table]]
 
 The Quantum Capacitor has several benefits on top of firing time:
@@ -8454,7 +8550,7 @@ While in shielding mode:
 Coverage for this leg is doubled.
 |This leg gains a 50% chance to glance any projectile that would otherwise hit it, instead taking no damage.
 [[/List]]","","","","","","",""
-"Special Weapons","Part Supergroup","","","","","System Spiker,Field Lobotomy Kit,Mining Laser,Mak. Laser Shovel,LU-1G1's Laser Shovel,Welding Torch,CPS Tube,Multitool,Warlord Statue,Voltaic Drivehammer,AD-0RF's Magmablaster,IN-MT5's Pitchfork ""Insurrection"",Shield Trident,Junk Cannon,Molecular Deconstructor,Asb. F-torch,Asb. P-torch,Hammerchucker","Flamers,Plasma Cutters,Remote Datajacks,Stasis Beams,Throwing Claymores","",""
+"Special Weapons","Part Supergroup","","","","","System Spiker,Field Lobotomy Kit,Mining Laser,Mak. Laser Shovel,LU-1G1's Laser Shovel,Welding Torch,CPS Tube,Multitool,Warlord Statue,Voltaic Drivehammer,AD-0RF's Magmablaster,IN-MT5's Pitchfork ""Insurrection"",Shield Trident,Junk Cannon,Molecular Deconstructor,Asb. F-torch,Asb. P-torch,Hammerchucker,CY-PHR's Mindspike,V4-D3R's Forcegen","Flamers,Plasma Cutters,Remote Datajacks,Stasis Beams,Throwing Claymores","",""
 "Specialist","Bot Group","Specialists are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[0b10]] combat bots with many different themes between each variant. The best description of Specialists are glass cannons. They typically have high offensive output and little in the way of protection. Higher tier Specialists have some the highest damage output of any standard 0b10 bots in the game. Some Specialists also are unique users of [[VSS Leg|VSS Legs]] and its higher rating variants which allow them to walk at a higher speed than most legs (90 vs 120).
 Specialists have no specific weaknesses or immunities, so generally any damage type or strategy can work against them. A few have strong cooling and [[Coolant Injectors]] so heat transfer strategies may fall flat against certain Specialists. However, the same cooling parts can also be looted and taken advantage of by Cogmind. Since Specialists are capable of dealing so much damage, they tend to be high priority targets to kill off first.
 [[Gallery]]Specialists.png|All Specialist variants and colors[[/Gallery]]
@@ -8623,6 +8719,7 @@ Storage Units have special immunity to nearly all part-severing and instant dest
 
 This article was last updated during Beta 15.","","","","Sml. Storage Unit,Med. Storage Unit,Lrg. Storage Unit,Hcp. Storage Unit,Huge Storage Unit,Cargo Storage Unit,Humpback,Lgt. Humpback,Vmp. Humpback,Lightpack 2.0,Cep. Antigrav Storage Unit","","",""
 "Storm Laser","Part","","","","","","","",""
+"Stormtrooper","Bot","","","","","","","",""
 "Strategy","Other","Strategy guides to complete various content. Also see [[aoemica's Flight Guide]].","","","","","","","Strategy/Bosses,Strategy/Maps,Strategy/Wintypes"
 "Strategy/Bosses","Other","Strategy guides to kill the 3 bosses in the game achieve +s on the scoresheet.","Redacted","","","","","","Strategy/Bosses/Defeating Architect,Strategy/Bosses/Defeating MAIN.C,Strategy/Bosses/Defeating Superfortress"
 "Strategy/Bosses/Defeating Architect","Other","[[Image]]Access_0 Entrance.png|Hostile Entrance to Access_0[[/Image]]
@@ -10150,15 +10247,16 @@ When an Unchained has been decided to be authorized, an announcement like [[Game
 
 [[Heading]]Behavior[[/Heading]]
 Unchained have special behavior that allows them to follow Cogmind between multiple maps, so escape is not as easy as making it to the nearest exit. They take a few hundred turns after entering the map to show up, but once they appear, they will relentlessly pursue Cogmind with [[Perfect Tracking]]. Thanks to this tracking, a [[Triangulator]] may be used to help locate them from a distance before arrival.
-Each Unchained has different specific behavior, but all have a tendency to harass Cogmind throughout the floor. Some bots ([[GL-D0S]] and [[QV-33N]]) avoid direct engagement altogether, instead making use of combat-capable allies. Others ([[6S-H0T]], [[DW-4LL]], and [[CL-0N3]]) instead rely on ambushes and general hit-and-run tactics. All Unchained are capable of fleeing into Garrisons and through 0b10-controlled exits. Hit-and-run types can run to a Garrison and emerge later, ready to harass Cogmind again.
+Each Unchained has different specific behavior, but all have a tendency to harass Cogmind throughout the floor. Some bots ([[GL-D0S]] and [[QV-33N]]) avoid direct engagement altogether, instead making use of combat-capable allies. Others ([[6S-H0T]], [[DW-4LL]], and [[CL-0N3]]) instead rely on ambushes or general hit-and-run tactics. [[CY-PHR]] has an even more unique styles of engagement that involves sabotaging your hacking capabilities across multiple maps even when not on the floor. All Unchained are capable of fleeing into Garrisons and through 0b10-controlled exits. Hit-and-run types can run to a Garrison and emerge later, ready to harass Cogmind again.
 
 [[Table]]
-Unchained|Engagement Style|Summons allies|Multiple returns per map||
-6S-H0T|Hit-and-run|No|Yes, with full repair||
-CL-0N3|Ambush|No|Yes, but with no core repair||
-DW-4LL|Ambush|No|Yes, with full repair||
-GL-D0S|Avoid|Yes|No||
-QV-33N|Avoid|Yes|No
+Unchained|Engagement Style|Summons allies|Multiple returns per map|Extra spawn restrictions||
+6S-H0T|Hit-and-run|No|Yes, with full repair|None||
+CL-0N3|Ambush|No|Yes, but with no core repair|No||
+CY-PHR|Avoid|Yes|No|Yes, only appears in a single room on a random future map if triggered||
+DW-4LL|Ambush|No|Yes, with full repair|No||
+GL-D0S|Avoid|Yes|No|Yes, won't appear outside of main 0b10 maps||
+QV-33N|Avoid|Yes|No|Yes, won't appear outside of main 0b10 maps
 [[/Table]]
 
 [[Heading:2]]Map Activity[[/Heading]]
@@ -10192,7 +10290,7 @@ Caves end branches ([[Data Miner (Location)|Data Miner]], [[Warlord (Location)|W
 [[/Table]]
 
 [[Heading]]Unique Drops[[/Heading]]
-In addition to normal salvage-based drops, each Unchained may also drop one of two special parts when destroyed. This can be either an [[ID Mask]] or a [[Zeronet Interface]].","Spoiler","6S-H0T,CL-0N3,DW-4LL,GL-D0S,QV-33N","","","","",""
+In addition to normal salvage-based drops, each Unchained may also drop one of two special parts when destroyed. This can be either an [[ID Mask]] or a [[Zeronet Interface]].","Spoiler","6S-H0T,BL-1NK,CL-0N3,CY-PHR,DW-4LL,GL-D0S,QV-33N,V4-D3R","","","","",""
 "United Federation of Derelicts","Bot Supergroup","The United Federation of Derelicts (UFD) is a major faction of [[Derelict|Derelicts]] that live in [[Scraptown]]. Cogmind can [[Alignment|align]] with the UFD become a member by entering Scraptown through [[Recycling]]. This alignment provides further access into Scraptown along with a few special hacks.
 [[Image]]Scraptown Alignment Derelict.png|[[Scrapper (3)]] in Scraptown that gives Cogmind the option to align[[/Image]]
 
@@ -10265,7 +10363,7 @@ The following will prevent Cogmind from being able to align with UFD in the firs
 [[Heading:2]]Blocked Alignment[[/Heading]]
 Several factions will no longer assist Cogmind after UFD alignment:
 [[List]][[Imprint]]: The [[Imprinter]] will say that the Imprinting machine requires a more thorough vetting process for a UFD member such as Cogmind|[[Warlord (Alignment)]]: [[Warlord]] will call Cogmind a spy and not perform the -2 [[Research]] invasion[[/List]]","Spoiler","Bolteater,DRS Ranger,Explorer,Federalist,Guru,KN-7UR,Large Mutated Botcube,Master Drone,Mutated Botcube,Optimus,Ranger,Scientist,Surveybot 24,Triborg,Triborg (Optimus),Wyrm Statue","","","Elite,Scrapper,Scrapoid,Scraphulk","",""
-"Utilities","Part Supergroup","","","","","Scrap Engine,Arm. Scrap Engine,Encrypted Comm Array,Stasis Canceller,Skeleton Box,01-MTF's Autohacker,A0-MCA's Component Scanner,Tech Extrapolator,Trap Reconfigurator,Scrap Suit,0bPrime Scrap Suit,PSU Rigger,Machine Rigger,Phasing AFG,AS-neutralizer No. 17b,V3-11A's Pendant,Amulet of Y3-NDR,Chronowheel,Phase Armor,Power Bank,Rainbow Chip,VL-GR5's Exoskeleton ""Deathgrip"",Plexus Tether,Cep. Melee Reflex Suite,Cep. Projectile Intercept Suite,Jamming Amplifier,Crosscalibrator,Cep. Navigation Harness,Supercharged Navigation Harness,QV-33N's Launch Deck,GL-D0S's Turretformer","Authchips,Component Analysis Suites,Fabrication Devices,Mass Support Devices,Power Amplifiers,Recalibrators,Relay Couplers,Speed Boosting Utilities,Salvage Targeting Computers,Thermal Generators,Trap Extractors","Armor,Consumable Alien Artifacts,Cooling Utilities,Corruption Reduction Utilities,Defensive Utilities,Hackware,Infowar,Matter Refilling Devices,Offensive Utilities,Shieldings,Storage (Group)",""
+"Utilities","Part Supergroup","","","","","Scrap Engine,Arm. Scrap Engine,Encrypted Comm Array,Stasis Canceller,Skeleton Box,01-MTF's Autohacker,A0-MCA's Component Scanner,Tech Extrapolator,Trap Reconfigurator,Scrap Suit,0bPrime Scrap Suit,PSU Rigger,Machine Rigger,Phasing AFG,AS-neutralizer No. 17b,V3-11A's Pendant,Amulet of Y3-NDR,Chronowheel,Phase Armor,Power Bank,Rainbow Chip,VL-GR5's Exoskeleton ""Deathgrip"",Plexus Tether,Cep. Melee Reflex Suite,Cep. Projectile Intercept Suite,Jamming Amplifier,Crosscalibrator,Cep. Navigation Harness,Supercharged Navigation Harness,QV-33N's Launch Deck,GL-D0S's Turretformer,Blink Core,Procsplitter","Authchips,Component Analysis Suites,Fabrication Devices,Mass Support Devices,Power Amplifiers,Recalibrators,Relay Couplers,Speed Boosting Utilities,Salvage Targeting Computers,Thermal Generators,Trap Extractors","Armor,Consumable Alien Artifacts,Cooling Utilities,Corruption Reduction Utilities,Defensive Utilities,Hackware,Infowar,Matter Refilling Devices,Offensive Utilities,Shieldings,Storage (Group)",""
 "Utility Shielding","Part","","","","","","","",""
 "Utility Shieldings","Part Group","[[Heading]]List of Utility Shieldings[[/Heading]]
 [[PartGroupTable]]
@@ -10517,6 +10615,11 @@ V-Series Melee.png|V-Series with melee only
 [[/Gallery]]","","","","","","",""
 "V2","Bot","","","","","","","",""
 "V3-11A's Pendant","Part","","","","","","","",""
+"V4-D3R","Bot","","","","","","","",""
+"V4-D3R's Cape","Part","","","","","","","",""
+"V4-D3R's Forcegen","Part","","","","","","","",""
+"V4-D3R's Forcewell","Part","","","","","","","",""
+"V4-D3R's Sabre","Part","","","","","","","",""
 "VL-GR5","Bot","Appears at the entrance of [[Spoiler]][[Armory]][[/Spoiler]]. Challenges [[Cogmind]] to get to 15 kills first, providing [[Spoiler]][[VL-GR5's Timing Chip]][[/Spoiler]] as a reward. After the competition, he will head to the exit on the left side of [[Spoiler]]Armory[[/Spoiler]], dropping the [[Spoiler]][[Multinova Projection Cannon]][[/Spoiler]] if he survives and exits the map. Hitting [[VL-GR5]] a few times will turn him hostile, causing him to shed 2 [[Enh. Nova Cannon|Enh. Nova Cannons]] and attach the [[Spoiler]]Multinova Projection Cannon[[/Spoiler]].","","","","","","",""
 "VL-GR5's Exoskeleton ""Deathgrip""","Part","","","","","","","",""
 "VL-GR5's Timing Chip","Part","","","","","","","",""
