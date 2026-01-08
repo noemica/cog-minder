@@ -800,7 +800,29 @@ Effect/Description
 "B-90 Cyclops","Bot","","","","","","","",""
 "B-99 Colossus","Bot","","","","","","","",""
 "BFG-9k Vortex Edition","Part","","","","","","","",""
-"BL-1NK","Bot","","","","","","","",""
+"BL-1NK","Bot","BL-1NK is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Most of their loadout is a fairly standard mix of offensive and defensive combat parts with one major exception: the [[Blink Core]]. This part forces BL-1NK to teleport at random close to Cogmind's position. It is quite difficult to shake them on faster propulsion types because they will always teleport nearby no matter how far away Cogmind gets. Slower builds may have trouble engaging them in combat, and especially finishing them off thanks to this frustrating ability. Another unique aspect of BL-1NK is their ability to wield a different set of weapons each time they reappear.
+
+[[Heading]]Lore[[/Heading]]
+[[Lore]]Cyclists Records|UC/BL-1NK[[/Lore]]
+
+[[Heading:2]][[FarCom]] Lore[[/Heading]]
+If Cogmind has aligned with the [[Exiles (Group)|Exiles]] and has FarCom, the following message will be broadcast about BL-1NK:
+[[GameText]]BL-1NK has a problem staying in one place during fights, but that's also your problem if you're hoping to use terrain to your advantage. Setting up an ambush could be hard... maybe a [[Triangulator]] would help![[/GameText]]
+
+[[Heading]]Behavior[[/Heading]]
+BL-1NK is an unparalleled guerrilla ambusher among the Unchained, appearing near Cogmind in a different direction each time after being dispatched. Each time they teleport, they wind up roughly 20 tiles away from Cogmind out of line of sight. This will frequently place them in rooms or around corners. When BL-1NK engages Cogmind in combat, they stick around to shoot for a few volleys of combat and then teleport away. Sometimes they only stay for a single volley and immediately teleport, giving no chance to fire back on them. After this, they ditch their current weapon loadout and restock with 3 random weapons from the following list:[[List]]
+[[Adv. KE Penetrator]]|
+[[Helical Railgun]]|
+[[Hvy. Tesla Rifle]]|
+[[Gamma Rifle]]|
+[[Prc. Phase Gun]]|
+[[Quantum Rifle]]
+[[/List]]
+Note: If they have penetrating weapons, they shoot through walls like [[Hunter|Hunters]] do.
+When BL-1NK teleports due to combat, they stay still for a few turns to regenerate energy and rearm themselves. They come running back after Cogmind after this. Once armed, BL-1NK will almost always end up overweight at 90 speed instead of their stated 43 speed due to the mass of their weapons.
+Bl-1NK is impossible to shake simply by running on faster builds. They teleport close to Cogmind every time they get around 30 tiles or further away. While it is possible to avoid combat with them if Cogmind is fast enough, they will continue to pursue relentlessly for the entirety of the map unless their core is lowered enough in combat to run away.
+
+[[Heading]]Strategy[[/Heading]]","","","","","","",""
 "Backup Laser I","Part","","","","","","","",""
 "Backup Laser III","Part","","","","","","","",""
 "Backup Laser VII","Part","","","","","","","",""
@@ -1129,6 +1151,9 @@ Level 5|Brimstone|I Want My Mommy|Are We Winning Yet?|Impossible
 
 [[Heading:3]]Unreliable Parts[[/Heading]]
 Parts that are repaired at a [[Repair Station]] or that are created by a [[Fabricator]] have a chance of becoming unreliable. These parts have a small chance of breaking with use, with the log message [[GameText]][Part name] shoots sparks and powers down.[[/GameText]] They enter the broken state, though they do not have any other negative effects like integrity loss. Parts broken this way may be repaired through normal means like with [[Recalibrators]], [[Mechanic|Mechanics]], or other Repair Stations, although they will continue to break again in the future.
+
+[[Heading:3]][[GameText]]Force(Recompile)[[/GameText]] Failure[[/Heading]]
+There is a random chance that performing a Recompile at a Fabricator will produce the wrong type of [[Authchip]].
 
 [[Heading:3]]Traceback[[/Heading]]
 Performing a few hacks after CY-PHR has been fully triggered will result in a [[GameText]]### SYSTEM_CRASH ###[[/GameText]]. The machine will become locked, but among flavor text there is a depth listed that is a few depth higher than Cogmind's current depth. Another crash soon after will also indicate a map. This is the location that CY-PHR will appear. Once on the given map, two further crashes will reveal a quadrant of the map and a relative position of CY-PHR's lair.
@@ -5975,7 +6000,7 @@ This strategy is unreliable, uses up the unique Chronowheel part, requires havin
 [[/List]]
 
 Last edited during Beta 16.","","","","","","",""
-"Materials","Location","Materials is the first real level of the game. These maps are small, cramped and have few paths forward. This is the first map with hostile [[0b10]] patrols hanging around, comprised mainly of low level [[G-34 Mercenary]] and [[G-47 Trooper]] grunts and [[S-10 Pest]] swarmers. There are also a few special special mechanics such as [[U-05 Engineer|Engineers]] not calling for reinforcements when attacked while trying to build structures in -10 and -9 and [[A-02 Transporter|Haulers]] not calling for reinforcements at all.
+"Materials","Location","Materials is the first real level of the game. These maps are small, cramped and have few paths forward. This is the first map with hostile [[0b10]] patrols hanging around, comprised mainly of low level [[G-34 Mercenary]] and [[G-47 Trooper]] grunts and [[S-10 Pest]] swarmers. There are also a few special special mechanics such as [[U-05 Engineer|Engineers]] not calling for reinforcements when attacked while trying to build structures in -10, with a low but increasing chance from -9 onward, and [[A-02 Transporter|Haulers]] not calling for reinforcements at all.
 Trying to play flight or hover is not easy in Materials due to many forced encounters with combat robots, little room for maneuvering and few slots yet available for good utilities. The usual recommended way to play these maps is to grab some legs or treads and start blasting. Most players prefer not to transfer to airborne propulsion until [[Factory]] where it is much easier to stealth around and avoid combat. In Materials, it's good to fight enemies one at a time by leading them to one of the many doorways around the map. Use of launchers is very effective whenever there is more than a single bot grouped up close.
 [[Alert]] is not a big issue in these maps because of the relatively small map size and number of total patrols. If making a mess of the floors on -10 and -9, entering the [[Mines]] is a good way to lose all of the alert gained from the early Materials maps.
 Full list of depth-specific mechanics that apply in Materials:
@@ -10229,7 +10254,7 @@ There are a large number of triggers which can cause Unchained to be authorized:
 Too many turns: Spending too many turns on 0b10 maps.|
 Too many moves: Performing too many moves on 0b10 maps.|
 Too many maps visited: Visiting too many 0b10 maps.|
-Machine hacking: Either accessing or performing too many hacks at [[Interactive Machine|Interactive Machines]].|
+Machine hacking: Either accessing or performing too many hacks at [[Interactive Machine|Interactive Machines]]. Note: This can only trigger [[BL-1NK]].|
 Robot hacking: Hacking too many 0b10 bots with [[RIF]].|
 [[Search Patrol|Search Patrol]] dispatches: Getting too many Search patrols dispatched.|
 [[Assault Squad|Assault]] dispatches: Getting too many Assault squads dispatched|
@@ -10248,7 +10273,7 @@ When an Unchained has been decided to be authorized, an announcement like [[Game
 
 [[Heading]]Behavior[[/Heading]]
 Unchained have special behavior that allows them to follow Cogmind between multiple maps, so escape is not as easy as making it to the nearest exit. They take a few hundred turns after entering the map to show up, but once they appear, they will relentlessly pursue Cogmind with [[Perfect Tracking]]. Thanks to this tracking, a [[Triangulator]] may be used to help locate them from a distance before arrival.
-Each Unchained has different specific behavior, but all have a tendency to harass Cogmind throughout the floor. Some bots ([[GL-D0S]] and [[QV-33N]]) avoid direct engagement altogether, instead making use of combat-capable allies. Others ([[6S-H0T]], [[DW-4LL]], and [[CL-0N3]]) instead rely on ambushes or general hit-and-run tactics. [[CY-PHR]] has an even more unique styles of engagement that involves sabotaging your hacking capabilities across multiple maps even when not on the floor. All Unchained are capable of fleeing into Garrisons and through 0b10-controlled exits. Hit-and-run types can run to a Garrison and emerge later, ready to harass Cogmind again.
+Each Unchained has different specific behavior, but all have a tendency to harass Cogmind throughout the floor. Some bots ([[GL-D0S]] and [[QV-33N]]) avoid direct engagement altogether, instead making use of combat-capable allies. Others ([[6S-H0T]], [[BL-1NK]], [[CL-0N3]], and [[DW-4LL]]) instead rely on ambushes or general hit-and-run tactics. [[CY-PHR]] has an even more unique styles of engagement that involves sabotaging your hacking capabilities across multiple maps even when not on the floor. All Unchained are capable of fleeing into Garrisons and through 0b10-controlled exits. Hit-and-run types can run to a Garrison and emerge later, ready to harass Cogmind again.
 
 [[Table]]
 Unchained|Engagement Style|Summons allies|Multiple returns per map|Extra spawn restrictions||
