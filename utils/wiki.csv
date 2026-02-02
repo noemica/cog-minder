@@ -4836,7 +4836,9 @@ They cannot be fired in a volley with other weapons, only alone.
 "HERF Cannon","Part","","","","","","","",""
 "HV-R5K","Bot","[[GameText]]They trapped me with the old Behemoth-in-the-wall trick. Won't happen again![[/GameText]]","","","","","","",""
 "Hacking Drone","Bot","","","","","","","",""
-"Hacking Drone Bay","Part","Deploys [[Hacking Drone|Hacking Drones]].","","","","","","",""
+"Hacking Drone Bay","Part","Deploys [[Hacking Drone|Hacking Drones]].
+
+When using with [[Imprint]], ensure you stay beyond the 10-tile ""ping"" radius of a terminal until the drone has hacked the terminal, since once the terminal has been hijacked by [[Zion]] it is unable to be hacked. The drone will only hack the terminal if it is within its field of view and its current command is ""Follow"". If you are unable to get within field of view of the terminal without triggering the Zion hijack, you can try and use the ""Explore"" and ""Roam"" ally commands to get the drone to fly into a spot where the terminal is in its field of view. When this happens, issue the ""Follow"" command. The drone will then hack the terminal.","","","","","","",""
 "Hacking Suite","Part","A must-have for when you want to go for a hacking route. Download the schematic and make sure you fabricate enough in the factories. Can also be looted from [[Operator|Operators]].","","","","","","",""
 "Hackware","Part Supergroup","Hackware is a group of Utility parts that improve hacking capabilities, mainly success chance for terminal hacks, trap rewiring and robot rewiring. Hackware also helps you hack hostiles through the defense of a [[Programmer]]. Additionally, later Hackware makes it harder for your allies to be hacked.","","","","","Defensive Hackware,Offensive Hackware","",""
 "Hammer","Part","","","","","","","",""

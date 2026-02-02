@@ -4287,7 +4287,7 @@
   },
   {
    "Name": "Hacking Drone Bay",
-   "Content": "Deploys [[Hacking Drone|Hacking Drones]]."
+   "Content": "Deploys [[Hacking Drone|Hacking Drones]].\n\nWhen using with [[Imprint]], ensure you stay beyond the 10-tile \"ping\" radius of a terminal until the drone has hacked the terminal, since once the terminal has been hijacked by [[Zion]] it is unable to be hacked. The drone will only hack the terminal if it is within its field of view and its current command is \"Follow\". If you are unable to get within field of view of the terminal without triggering the Zion hijack, you can try and use the \"Explore\" and \"Roam\" ally commands to get the drone to fly into a spot where the terminal is in its field of view. When this happens, issue the \"Follow\" command. The drone will then hack the terminal."
   },
   {
    "Name": "Hacking Suite",
