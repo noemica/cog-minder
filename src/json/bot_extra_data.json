@@ -3226,6 +3226,18 @@
             }
         ]
     },
+    "Stormtrooper": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Floor where V4-D3R is active, in squads of 2",
+                "Description": "Hostile: Summoned by V4-D3R to search for Cogmind"
+            }
+        ]
+    },
     "Striker": {
         "Categories": [
             "0b10",
