@@ -1127,7 +1127,10 @@ Once the final message has been met, CY-PHR will begin to interrupt Cogmind's ha
 CY-PHR will taunt Cogmind when performing hacks, either successfully or unsuccessfully. For example, when Cogmind loads a schematic in a [[Fabricator]], CY-PHR may say [[GameText]]I think there's something wrong with your [part name] schematic. It's upside down.[[/GameText]] Comments like these are simply flavor text and do not have any practical effect.
 
 [[Heading:3]]Random Keyboard Noises[[/Heading]]
-Occasionally when successfully hacking, CY-PHR will cause an effect of [[GameText]]*random keyboard noises*[[/GameText]]. When this happens, the machine will be instantly shut down and an [[Investigation Squad]] will be summoned to the location. There is no chance of feedback effect with this occurs unlike regular machine tracing.
+Sometimes when performing a hack, there will be an additional message of [[GameText]]*random keyboard noises*[[/GameText]]. This effect does not do anything by itself, but rather indicates that CY-PHR is messing with the results of a hack. It does not always show up, but if it is present, you can be sure that the results will be faulty.
+
+[[Heading:3]]Machine Lockout[[/Heading]]
+Sometimes when successfully hacking CY-PHR will cause the machine to be instantly shut down and an [[Investigation Squad]] will be summoned to the location. There is no chance of feedback effect with this occurs unlike standard machine tracing. This is always accompanied by the ""random keyboard noises"" effect.
 
 [[Heading:3]]Locating Failures[[/Heading]]
 Whenever Cogmind performs any kind of location hack, there is a chance that CY-PHR will reduce the number of found things or fail to report them entirely. For example, performing a [[GameText]]Access(Main)[[/GameText]] hack may report only 2 out of 4 main exits on the floor. This effect can occurs with all Access hacks and [[GameText]]Traps(Locate)[[/GameText]].
@@ -10289,7 +10292,8 @@ CL-0N3|Ambush|No|Yes, but with no core repair|No||
 CY-PHR|Avoid|Yes|No|Yes, only appears in a single room on a random future map if triggered||
 DW-4LL|Ambush|No|Yes, with full repair|No||
 GL-D0S|Avoid|Yes|No|Yes, won't appear outside of main 0b10 maps||
-QV-33N|Avoid|Yes|No|Yes, won't appear outside of main 0b10 maps
+QV-33N|Avoid|Yes|No|Yes, won't appear outside of main 0b10 maps||
+V4-D3R|Ambush|Yes|Yes, with full repair|No
 [[/Table]]
 
 [[Heading:2]]Map Activity[[/Heading]]
@@ -10648,7 +10652,18 @@ V-Series Melee.png|V-Series with melee only
 [[/Gallery]]","","","","","","",""
 "V2","Bot","","","","","","","",""
 "V3-11A's Pendant","Part","","","","","","","",""
-"V4-D3R","Bot","","","","","","","",""
+"V4-D3R","Bot","V4-D3R is a part of the deadly group of the [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. They are a threat in many different ways, starting with their ability to summon swarms of [[Stormtrooper|Stormtroopers]] to search for Cogmind across the map. Once spotted Cogmind, their high damage, [[Femtoactuators]]-boosted melee [[V4-D3R's Sabre|Sabre]] and ranged impact and teleporting [[V4-D3R's Forcegen|Forcegen]] will quickly dismantle an unprepared Cogmind. Defensively, [[Exp. Reaction Control System]] combined with their high melee resistances and projectile-deflecting [[V4-D3R's Cape|Cape]] make them a formidable opponent.
+
+[[Heading]]Lore[[/Heading]]
+[[Lore]]Cyclists Records|UC/V4-D3R[[/Lore]]
+
+[[Heading:2]][[FarCom]] Lore[[/Heading]]
+If Cogmind has aligned with the [[Exiles (Group)|Exiles]] and has FarCom, the following message will be broadcast about V4-D3R:
+[[GameText]]V4-D3R can't be bothered to come after you right away themselves. Stay out of sight of their scouting parties, or may the force be with you.[[/GameText]]
+
+[[Heading]]Behavior[[/Heading]]
+V4-D3R is a hybrid ally summoning/ambushing type of Unchained. V4-D3R will not immediately begin chasing down Cogmind like most other aggressive Unchained. Rather, they summon large numbers of [[Stormtrooper|Stormtroopers]] in squads of 2 first. While they can theoretically be avoided, it is difficult to do so due to sheer number. Once a Stormtrooper has spotted Cogmind, all Stormtroopers on the map will be alerted to Cogmind's location. Although they will lose tracking fairly quickly, they do trickle to the initial spot location before resuming normal patrolling behavior. Because of this, it is a good idea to avoid sticking around the area. Additionally, V4-D3R will appear nearby when spotted and begin pursuit of Cogmind. This effect can be negated by a [[Transmission Jammers|Transmission Jammer]].
+Once V4-D3R is in line of sight of Cogmind, they will begin to attack with their Forcegen. This will result in nearby parts, terrain, or bots being thrown at Cogmind for massive impact damage. Occasionally, V4-D3R may instead pull Cogmind immediately next to them and perform a melee attack with the Sabre. This pulling ability makes it extremely difficult to escape V4-D3R in wide open areas. Only by turning the corner and blocking line of sight is it reasonably possible to make a run for it. While incredibly threatening in combat, V4-D3R has no further tricks if Cogmind can escape their line of sight.","","","","","","",""
 "V4-D3R's Cape","Part","","","","","","","",""
 "V4-D3R's Forcegen","Part","","","","","","","",""
 "V4-D3R's Forcewell","Part","","","","","","","",""
@@ -11072,7 +11087,7 @@ W5 [[Redacted]]""Destroyed Tau Ceti IV"": In [[Access_0]], obtain the [[A2 Data 
 W6 [[Redacted]]""Escaped singularity"": In Access_0, destroy all 4 Subspace Access Nodes, destroy the [[Architect]], and take the surface exit within 10 turns.[[/Redacted]]
 W7 [[Redacted]]""Establishing Free Derelict Territories"": In Command, destroy both forms of MAIN.C with [[Warlord]] still alive and not shut down.[[/Redacted]]
 W8 [[Redacted]]""Fortifying 0b10"": Choose the Surrender option after destroying MAIN.C's outer shell, then destroy enough [[Enhanced Q-Series]] while keeping MAIN.C alive.[[/Redacted]]
-W9 [[Redacted]]Defending 0bPrime: Align with [[UFD]] and [[Optimus]] in [[Scraptown]], install [[GameText]]Force(Fedlink)[[/GameText]] in [[Protoforge]], and help plant 10 [[UFD Drillbomb|UFD Drillbombs]].[[/Redacted]]
+W9 [[Redacted]]""Defending 0bPrime"": Align with [[UFD]] and [[Optimus]] in [[Scraptown]], install [[GameText]]Force(Fedlink)[[/GameText]] in [[Protoforge]], and help plant 10 [[UFD Drillbomb|UFD Drillbombs]].[[/Redacted]]
 
 [[Heading]]Ending animations[[/Heading]]
 See the following video: [[https://www.youtube.com/watch?v=XR2RoB6gKWA]]","","","","","","",""
