@@ -984,9 +984,19 @@ Brawlers may appear in the following squads:
 "C-17 Slicer","Bot","","","","","","","",""
 "C-30 ARC","Bot","","","","","","","",""
 "C-35 Carver","Bot","","","","","","","",""
-"C-40 Crusher","Bot","Crushers are heavy-duty [[Treads|treading]] trash (you) compacting machines plated in [[Damper Plating]], rendering them nearly immune to electromagnetic damage. Crushers will attempt to compact anything that is not a Crusher, and their Compactor is a VERY formidable melee weapon (does not drop) that will either [[B]]destroy or drop a few of your parts[[/B]]. Weak to explosions and strong against melee (which would be a bad idea regardless).
+"C-40 Crusher","Bot","Wastes is a [[0b10]]-controlled sub-floor in Factory that appears on most floors between -7 and -4. It can only be entered when Cogmind triggers a [[Chute Trap]]. Cogmind will get dropped in instantly. Any bots that have been dropped into chutes previously will be present on the map. Any nearby allies will drop in over time. Wastes can be a very brutal map for an unprepared player thanks to the 6 hostile [[C-40 Crusher|Crushers]] that can crush Cogmind's build in a few hits. There is an EMP that is on in some Wastes maps that fires every 100 turns and adds between 5 to 10% [[Corruption]] to Cogmind. This corruption can be reduced by EM [[Resistance Devices]] and prevented with [[Dynamic Insulation Systems]]. There are various broken, faulty, or otherwise low integrity parts scattered on the ground. These parts can be up to 2 ratings out of depth and can be good to try to [[Repair Station|repair]] or [[Scanalyzer|scan]], and [[Fabricator|fabricate]].
+The layout of this map is semi-fixed. The entrance, exits, and general layouts of the map are similar, although the exact layout can vary a bit in which way paths are connected. There are wide 4 tile corridors that sometimes have 8 by 8 tile wide dead ends on the far ends of the map. Cogmind spawns on the left side, and the exit will always be in an 8 by 8 tile section on the right side of the map.
 
-Due to their extreme lethality in melee, stay out of their range at all costs, and maybe just run the hell out of [[Wastes]]. Alternatively pack a good launcher or a good critical weapon, as their plating will tank most of your shots.","","","","","","",""
+[[Heading]]Lore[[/Heading]]
+[[Lore]]0b10 Records|Waste[[/Lore]]
+
+[[Heading]]Variations[[/Heading]]
+[[Image]]Wastes Allies.png|[[Derelict|Derelicts]] hiding in the walls waiting to attack[[/Image]][[Image]]Wastes Allies Waiting.png|Allies that invaded chutes waiting for Cogmind[[/Image]]
+There are 4 primary variations of Wastes:
+[[List]]No Allies: Crushers are present, and there are no allies. The EMP may be on or off.|Hiding Allies: Crushers are present, and there are Derelict allies hiding in the walls. The Derelicts will burst out of their hiding spot when coming near them. There is a small stash of weapons and armor in their hiding spot. The EMP may be on or off|Raided: The EMP is disabled but there are no alive Crushers or Derelicts on the map. Some damaged Crusher loot and broken Crushers and Derelicts are present. Broken crushers may suddenly reactivate if Cogmind gets too close.|Personal Army: The EMP is disabled, there are no alive Crushers, but there is a group of Derelicts waiting for Cogmind.[[/List]]
+
+[[Heading]]Strategy[[/Heading]]
+See [[Strategy/Maps/Wastes]].","","","","","","",""
 "C-45 Heavy ARC","Bot","","","","","","","",""
 "C-55 Analyst","Bot","","","","","","","",""
 "C-57 Dissector","Bot","","","","","","","",""
