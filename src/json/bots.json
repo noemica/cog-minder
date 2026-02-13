@@ -8908,7 +8908,7 @@
     },
     {
         "Name": "Assembler",
-        "Class": "Assembler (Derelict)",
+        "Class": "Special",
         "Tier": "4",
         "Threat": "2",
         "Rating": "80",
@@ -8932,7 +8932,7 @@
         "Salvage Potential": "30~60",
         "Inventory Capacity": "1",
         "Immunities": [
-            "Hacking"
+            "Hacking/RIF"
         ],
         "Components": [
             "Lgt. Deuterium Engine",
@@ -9080,7 +9080,7 @@
     },
     {
         "Name": "Golem",
-        "Class": "Golem (Derelict)",
+        "Class": "Special",
         "Tier": "8",
         "Threat": "5",
         "Rating": "234",
@@ -9105,7 +9105,7 @@
         "Inventory Capacity": "1",
         "Immunities": [
             "Disruption",
-            "Hacking"
+            "Hacking/RIF"
         ],
         "Armament": [
             "Asb. Focal Cannon",
@@ -9145,7 +9145,7 @@
     },
     {
         "Name": "Golem (Naked)",
-        "Class": "Golem (Derelict)",
+        "Class": "Special",
         "Tier": "8",
         "Threat": "5",
         "Rating": "56",
@@ -9169,7 +9169,7 @@
         "Inventory Capacity": "1",
         "Immunities": [
             "Disruption",
-            "Hacking"
+            "Hacking/RIF"
         ],
         "Components": [
             "GOLEM Unit"
@@ -13100,7 +13100,7 @@
     {
         "Name": "DW-4LL",
         "Class": "Unique",
-        "Tier": "9",
+        "Tier": "10",
         "Threat": "5",
         "Rating": "178",
         "Value": "300",
@@ -13379,6 +13379,69 @@
         },
         "Armament String": "CY-PHR's Mindspike",
         "Components String": "2x Mic. Antimatter Reactor, 3x Imp. Linear Gravjet, Exp. Propulsion Shielding, Exp. Cooling System, Procsplitter, System Mapper, Deep Network Scanner, Ghost Barrier, Quantum Router, Exp. Cloaking Device, Exp. Phase Shifter"
+    },
+    {
+        "Name": "1B-0RG",
+        "Class": "Unique",
+        "Tier": "9",
+        "Threat": "5",
+        "Rating": "214",
+        "Value": "300",
+        "Size Class": "Medium",
+        "Size": "1",
+        "Profile": "RD5X5",
+        "Memory": "-2",
+        "Spot %": "100",
+        "Movement": "Hovering",
+        "Speed": "147",
+        "Speed %": "68",
+        "Sight Range": "21",
+        "Energy Generation": "42",
+        "Heat Dissipation": "105",
+        "Innate Energy Storage": "50",
+        "Innate Energy Generation": "10",
+        "Core Integrity": "180",
+        "Core Exposure": "341",
+        "Core Exposure %": "19",
+        "Salvage Potential": "20~30",
+        "Inventory Capacity": "1",
+        "Immunities": [
+            "Coring",
+            "Disruption",
+            "Hacking/RIF",
+            "Jamming",
+            "Meltdown"
+        ],
+        "Armament": [
+            "1B-0RG's Assimilator"
+        ],
+        "Components": [
+            "Sfc. Borg Power",
+            "Sfc. Borg Power",
+            "Cmb. Antigrav System",
+            "Cmb. Antigrav System",
+            "Cmb. Linear Gravjet",
+            "Sfc. Cooling Unit",
+            "Sfc. Cooling Unit",
+            "Sfc. Sightfinder",
+            "Sfc. Targeting Obfuscator",
+            "Sfc. Borg Regenerator",
+            "Sfc. Personal Shield",
+            "Sfc. Absorption Layer",
+            "Sfc. Interdiction Field",
+            "Exp. Weapon Shielding"
+        ],
+        "Resistances": {
+            "Kinetic": "50",
+            "Thermal": "50",
+            "Explosive": "50",
+            "Electromagnetic": "100",
+            "Impact": "50",
+            "Slashing": "50",
+            "Piercing": "50"
+        },
+        "Armament String": "1B-0RG's Assimilator",
+        "Components String": "2x Sfc. Borg Power, 2x Cmb. Antigrav System, Cmb. Linear Gravjet, 2x Sfc. Cooling Unit, Sfc. Sightfinder, Sfc. Targeting Obfuscator, Sfc. Borg Regenerator, Sfc. Personal Shield, Sfc. Absorption Layer, Sfc. Interdiction Field, Exp. Weapon Shielding"
     },
     {
         "Name": "Aperture Drone",

@@ -644,6 +644,7 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
             item.specialProperty !== undefined &&
             item.specialProperty.trait.kind === "DamageResists",
     ],
+    ["Self-contained Parts", (item) => item.name.startsWith("Sfc.")],
     ["Special Weapons", (item) => item.type === "Special Weapon"],
     ["Slashing Weapons", (item) => item.type === "Slashing Weapon"],
     [

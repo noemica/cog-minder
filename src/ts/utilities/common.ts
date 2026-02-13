@@ -7,6 +7,7 @@ import { BaseItem, Item, ItemType, SpecialPropertyTypeName } from "../types/item
 const botNameImageMap = new Map<string, string>([
     ["01-MTF", "Programmer"],
     ["12-ASH", "Grunt"],
+    ["1B-0RG", "1B-0RG"],
     ["1C-UTU", "Duelist"],
     ["5H-AD0", "Hunter"],
     ["6S-H0T", "Ranger (Derelict)"],
@@ -26,6 +27,7 @@ const botNameImageMap = new Map<string, string>([
     ["Access Guard", "Sentry"],
     ["Architect", "Architect"],
     ["Armor Guard", "Sentry"],
+    ["Assembler", "Assembler"],
     ["Autobeam Turret", "Turret"],
     ["BL-1NK", "Ranger (Derelict)"],
     ["Bouncer", "Sentry"],
@@ -57,6 +59,8 @@ const botNameImageMap = new Map<string, string>([
     ["GL-D0S", "Watcher"],
     ["God Mode", "God Mode"],
     ["God Mode (Fake)", "God Mode"],
+    ["Golem (Naked)", "Golem"],
+    ["Golem", "Golem"],
     ["Guerrilla (5)", "Hunter"],
     ["Guerrilla (7)", "Hunter"],
     ["Guru", "Programmer"],
@@ -153,32 +157,8 @@ const botNameImageMap = new Map<string, string>([
     ["Zhirov", "Zhirov"],
 ]);
 
-// A list of items with no gallery art
+// A list of items with no gallery art (currently unused)
 export const itemsWithNoArt = new Set([
-    "T-thruster",
-    "Mak. Microthruster",
-    "Integrated Tracker Drive",
-    "Detonator",
-    "Splice Injector",
-    "Mni. Tearclaws",
-    "DAS Cannon",
-    "Compactor",
-    "Asb. Blade",
-    "Asb. F-torch",
-    "Asb. Gauss Rifle",
-    "Asb. Heavy Rifle",
-    "Asb. Hover System",
-    "Asb. Hover Unit",
-    "Asb. Maul",
-    "Asb. P-maul",
-    "Asb. P-torch",
-    "Asb. P-sword",
-    "Asb. Rifle",
-    "Asb. Shotgun",
-    "Vortex Shredder",
-    "Centrium Claws",
-    "T.R.O.L.L. Exoskeleton",
-    "Master Link",
 ]);
 
 // Character -> escape character map

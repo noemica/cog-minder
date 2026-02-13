@@ -232,6 +232,7 @@ expansions = {
     'Ovr.': 'Overtuned',
     'Prc.': 'Precision',
     'Rnf.': 'Reinforced',
+    'Sfc.': 'Self-contained',
     'Sml.': 'Small',
     'Spk.': "Spiked",
     'Vmp.': 'Vampiric',

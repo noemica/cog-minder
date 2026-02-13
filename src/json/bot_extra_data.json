@@ -35,6 +35,18 @@
             }
         ]
     },
+    "1B-0RG": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Most 0b10 maps",
+                "Description": "Hostile: Summoned when Cogmind has met one of the Unchained summoned triggers when causing problems for 0b10"
+            }
+        ]
+    },
     "1C-UTU": {
         "Categories": [
             "Derelict",

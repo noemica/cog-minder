@@ -102,7 +102,7 @@ SPRITES = [
     Sprite(4, 14, 1, 'Furnace (Derelict)'),
     Sprite(6, 14, 1, 'Parasite (Derelict)'),
     Sprite(8, 14, 1, 'Thief (Derelict)'),
-    Sprite(9, 14, 1, 'Assembler (Derelict)'),
+    Sprite(9, 14, 1, 'Assembler'),
     Sprite(10, 14, 1, 'Assembled (Derelict)'),
     Sprite(12, 14, 1, 'Turret'),
     Sprite(15, 14, 1, 'Explorer (Derelict)'),
@@ -114,6 +114,7 @@ SPRITES = [
     Sprite(25, 14, 1, 'CL-0N3'),
     Sprite(26, 14, 1, 'QV-33N'),
     Sprite(27, 14, 1, 'V4-D3R'),
+    Sprite(28, 14, 1, '1B-0RG'),
 
     Sprite(0, 15, 1, 'Striker (Prototype)'),
     Sprite(1, 15, 1, 'Executioner (Prototype)'),
