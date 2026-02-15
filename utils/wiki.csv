@@ -1,4 +1,4 @@
-"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
+﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","",""
 "01-MTF's Autohacker","Part","","","","","","","",""
 "01-MTF's Shockpuncher","Part","","","","","","","",""
@@ -29,6 +29,54 @@ Effect/Effect
 "12-ASH","Bot","[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].","","","","","","",""
 "12-ASH's Boomstick","Part","","","","","","","",""
+"1B-0RG","Bot","1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
+
+[[Heading]]Lore[[/Heading]]
+[[Lore]]Cyclists Records|UC/1B-0RG[[/Lore]]
+
+[[Heading:2]][[FarCom]] Lore[[/Heading]]
+If Cogmind has aligned with the [[Exiles]] and has FarCOm, the following message will be broadcast about 1B-0RG:
+[[GameText]]They won't come after you directly, and take a while to assimilate the locals, but if you let them reach critical mass you will be in serious trouble. Even worse, getting spotted by 1B-0RG himself will instantly let all Borg know exactly where you are.[[/GameText]]
+
+[[Heading]]Behavior[[/Heading]]
+1B-0RG starts off with a few allies and is relatively harmless at first, but they quickly get to work in assimilating large amounts of 0b10 bots. 1B-0RG doesn't go so far out of their way as to assimilate every bot nearby, though they do typically try to assimilate any bots who happen to cross their path. All assimilated bots follow 1B-0RG initially, though once there are 8 bots following, 3 of them split up and form their own ""collective"" of a patrol. There is no limit to the total number of assimilated bots that can be controlled, and over time, this army will increase size practically indefinitely due to repeated non-combat bot respawn and assimilation loop. While these traditionally non-combat bots have low core integrity, they can still be quite threatening offensively due to the power of the Sfc. weapons.
+Unlike most Unchained, 1B-0RG does not possess [[Perfect Tracking]] on Cogmind, instead roaming around the map at random. They do not actively pursue even once Cogmind is spotted. However, once Cogmind has been spotted by 1B-0RG specifically, they gain perfect tracking for the rest of the floor. They grant that tracking to any assimilated bots as well. This is a very dangerous ability if Borg has been allowed to assimilate a large number of bots, since that entire army will immediately head to Cogmind's position. Even more annoying, further assimilated bots also gain that perfect tracking, leading to a constant trickle of hostiles heading to Cogmind's location if 1B-0RG is left to their devices.
+
+[[Heading:2]]Assimilated Bots[[/Heading]]
+Bots that are assimilated by 1B-0RG get some AI behavior changes, core and part regeneration, as well as new unique [[Self-contained Parts]]. See [[1B-0RG's Assimilator#Assimilated Bots|this page]] for more details.","","","","","","",""
+"1B-0RG's Assimilator","Part","1B-0RG's Assimilator is a unique weapon that is only found as a drop from [[1B-0RG]] or, as of Beta 16.1, in 4L-MR0's Lab in [[Subcaves]]. It cannot be used offensively, but instead has an effect to assimilate both friendly or hostile bots, buffing them in the process.
+[[Heading]]Assimilated Bots[[/Heading]]
+Bots that are assimilated with the Assimilator lose their standard AI and become combat bots if they weren't previously. For example, assimilated [[U-05 Engineer|Engineers]] no longer rebuild structures or flee during combat, instead engaging foes head-on. The exact behavior depends on whether it is Cogmind or 1B-0RG who assimilated the bot. 1B-0RG-assimilated bots do not retain any kind of non-combat behaviors whatsoever. However, Cogmind-assimilated bots still retain some of their old functionality. An assimilated [[Mechanic]] can still be used to AID Cogmind and other friendly bots.
+Assimilated bots gain a hidden ability to regenerate both part and core integrity based on the number of assimilated bots in their ""collective"" of active borg bots. The more bots in the collective, the higher the regeneration rate. Their loadout becomes modified as part of the assimilation process as well. 1-2 [[Self-contained Parts|Self-contained]] utilities and an additional 1-2 weapons are added at random to the bot. Existing weapons that are compatible with the current attack style of the bot are retained but  weapons not compatible are replaced. For example, a [[G-50 Soldier|G-50 Soldier's]] [[Hvy. Laser]] may be combined with a ranged [[Sfc. Borg Chaingun]] leading to a 2 weapon volley. However, if the Soldier gets a melee [[Sfc. Borg Fist]], the Hvy. Laser will be lost since it is not compatible in the volley. This variable effect can often be detrimental, like removing all of the good ranged armament of a [[Behemoth]] and instead replacing it with a less effective melee weapon.
+
+[[Heading:2]]Sfc. Weapons[[/Heading]]
+[[List]]
+[[Sfc. Borg Blade]]|
+[[Sfc. Borg Chaincannon]]|
+[[Sfc. Borg Chaingun]]|
+[[Sfc. Borg Fist]]|
+[[Sfc. Borg Gutpuncher]]|
+[[Sfc. Borg Joltstriker]]|
+[[Sfc. Borg Laser]]|
+[[Sfc. Borg Pulsar Launcher]]|
+[[Sfc. Borg Pulseblaster]]
+[[/List]]
+
+[[Heading:2]]Sfc. Utilities[[/Heading]]
+[[List]]
+[[Sfc. Absorption Layer]]|
+[[Sfc. Autominer]]|
+[[Sfc. Borg Regenerator]]|
+[[Sfc. Cooling Unit]]|
+[[Sfc. Door Spiker]]|
+[[Sfc. Materializer]]|
+[[Sfc. Impeller]]|
+[[Sfc. Interdiction Field]]|
+[[Sfc. Personal Shield]]|
+[[Sfc. Sightfinder]]|
+[[Sfc. Target Tracker]]|
+[[Sfc. Targeting Obfuscator]]
+[[/List]]","","","","","","",""
 "1C-UTU","Bot","","","","","","","",""
 "1C-UTU's Buckler","Part","","","","","","","",""
 "1C-UTU's Sword ""Choppy""","Part","","","","","","","",""
@@ -622,7 +670,7 @@ Upkeep/Energy|
 Upkeep/Heat|
 Effect/Effect|
 Effect/Description
-[[/PartGroupTable]]","","","","Lgt. Armor Plating,Med. Armor Plating,Hvy. Armor Plating,Zio. Light Carapace,Zio. Heavy Carapace,Hrd. Light Armor Plating,Hrd. Medium Armor Plating,Hrd. Heavy Armor Plating,Imp. Light Armor Plating,Imp. Medium Armor Plating,Imp. Heavy Armor Plating,Mak. Light Armor Plating,Mak. Medium Armor Plating,Mak. Heavy Armor Plating,Lyr. Light Armor Plating,Lyr. Medium Armor Plating,Lyr. Heavy Armor Plating,Gun Armor,Centrium Light Armor Plating,Centrium Medium Armor Plating,Centrium Heavy Armor Plating,Centrium Linked Plating,Mak. Ablative Armor,Active Cooling Armor,Scrap Shield,Enh. Scrap Shield,DW-4LL's Blast Wall,Tower Shield,Vmp. Brace Plating,V4-D3R's Cape","Backup Plating,Powered Armor (Group),Regenerative Armor,Resistance Armor","Shieldings",""
+[[/PartGroupTable]]","","","","Lgt. Armor Plating,Med. Armor Plating,Hvy. Armor Plating,Zio. Light Carapace,Zio. Heavy Carapace,Hrd. Light Armor Plating,Hrd. Medium Armor Plating,Hrd. Heavy Armor Plating,Imp. Light Armor Plating,Imp. Medium Armor Plating,Imp. Heavy Armor Plating,Mak. Light Armor Plating,Mak. Medium Armor Plating,Mak. Heavy Armor Plating,Lyr. Light Armor Plating,Lyr. Medium Armor Plating,Lyr. Heavy Armor Plating,Gun Armor,Centrium Light Armor Plating,Centrium Medium Armor Plating,Centrium Heavy Armor Plating,Centrium Linked Plating,Mak. Ablative Armor,Active Cooling Armor,Scrap Shield,Enh. Scrap Shield,DW-4LL's Blast Wall,Tower Shield,Vmp. Brace Plating,V4-D3R's Cape,Sfc. Absorption Layer","Backup Plating,Powered Armor (Group),Regenerative Armor,Resistance Armor","Shieldings",""
 "Armor Guard","Bot","","","","","","","",""
 "Armor Integrity Analyzer","Part","","","","","","","",""
 "Armor Integrity Analyzers","Part Group","[[Heading]]List of Armor Integrity Analyzers[[/Heading]]
@@ -1160,7 +1208,7 @@ Level 5|Brimstone|I Want My Mommy|Are We Winning Yet?|Impossible
 Parts that are repaired at a [[Repair Station]] (including [[GameText]]Force(Patch)[[/GameText]] or that are created by a [[Fabricator]] have a chance of becoming unreliable. These parts have a small chance of breaking with use, with the log message [[GameText]][Part name] shoots sparks and powers down.[[/GameText]] They enter the broken state, though they do not have any other negative effects like integrity loss. Parts broken this way may be repaired through normal means like with [[Recalibrators]], [[Mechanic|Mechanics]], or other Repair Stations, although they will continue to break again in the future.
 
 [[Heading:3]][[GameText]]Force(Recompile)[[/GameText]] Failure[[/Heading]]
-There is a random chance that performing a Recompile at a Fabricator will produce the wrong type of [[Authchip]].
+There is a random chance that performing a Recompile at a Fabricator will produce the wrong type of [[Authchips|Authchip]].
 
 [[Heading:3]]Traceback[[/Heading]]
 Performing a few hacks after CY-PHR has been fully triggered will result in a [[GameText]]### SYSTEM_CRASH ###[[/GameText]]. The machine will become locked, but among flavor text there is a depth listed that is a few depth higher than Cogmind's current depth. Another crash soon after will also indicate a map. This is the location that CY-PHR will appear. Once on the given map, two further crashes will reveal a quadrant of the map and a relative position of CY-PHR's lair.
@@ -2244,7 +2292,7 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]","","","","Heat Sink,Imp. Heat Sink,Mak. Heat Sink,Adv. Heat Sink,Exp. Heat Sink,Cep. Phasing Heat Sink,Cooling System,Imp. Cooling System,Mak. Coolant Network,Adv. Cooling System,Exp. Cooling System,Asb. Nanovents,Coolant Network,2N-1CE's Frost Array","","",""
+[[/PartGroupTable]]","","","","Heat Sink,Imp. Heat Sink,Mak. Heat Sink,Adv. Heat Sink,Exp. Heat Sink,Cep. Phasing Heat Sink,Cooling System,Imp. Cooling System,Mak. Coolant Network,Adv. Cooling System,Exp. Cooling System,Asb. Nanovents,Coolant Network,2N-1CE's Frost Array,Sfc. Cooling Unit","","",""
 "Cooling System","Part","","","","","","","",""
 "Cooling Utilities","Part Supergroup","[[Heading]]List of Cooling Utilities[[/Heading]]
 [[PartGroupTable]]
@@ -5818,7 +5866,7 @@ Explosion/Disruption|
 Explosion/Salvage|
 Effect/Effect|
 Effect/Description
-[[/PartGroupTable]]","","","","Sub. Shrapnel Launcher,Thermoblaster,Vortex Catalyst Activator,Containment Facilitator","Electromagnetic Launchers,Explosive Launchers,Sigix Terminators","",""
+[[/PartGroupTable]]","","","","Sub. Shrapnel Launcher,Thermoblaster,Vortex Catalyst Activator,Containment Facilitator,Sfc. Borg Pulsar Launcher","Electromagnetic Launchers,Explosive Launchers,Sigix Terminators","",""
 "Legs","Part Group","Legs strike a middle ground in terms of support, speed, and structural integrity. They are commonly used by (and available from) light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]].
 
 While on legs, [[Cogmind]] is immune to damage from ramming hostile bots, and instead has a 20% chance per active leg slot to kick them out of the way (unless they are huge).
@@ -6703,7 +6751,7 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]","","","","Phase Shifter,Imp. Phase Shifter,Adv. Phase Shifter,Exp. Phase Shifter,Asb. Combat Suite,Cep. Phase Shift Module","","",""
+[[/PartGroupTable]]","","","","Phase Shifter,Imp. Phase Shifter,Adv. Phase Shifter,Exp. Phase Shifter,Asb. Combat Suite,Cep. Phase Shift Module,Sfc. Targeting Obfuscator","","",""
 "Phasers","Part Group","[[Heading]]List of Phasers[[/Heading]]
 [[PartGroupTable]]
 Phasers|
@@ -7784,7 +7832,7 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]","","","","Focal Shield,Imp. Focal Shield,Adv. Focal Shield,Exp. Focal Shield,Thermal Shield,Imp. Thermal Shield,Adv. Thermal Shield,Exp. Thermal Shield,Thermal Barrier,Cep. Beam Splitter,Thermal Defense Suite,Imp. Thermal Defense Suite,Adv. Thermal Defense Suite,Exp. Thermal Defense Suite,Shock Absorption System,Imp. Shock Absorption System,Exp. Shock Absorption System,EM Shield,Adv. EM Shield,Exp. EM Shield,ME-RLN's Chromatic Screen","","",""
+[[/PartGroupTable]]","","","","Focal Shield,Imp. Focal Shield,Adv. Focal Shield,Exp. Focal Shield,Thermal Shield,Imp. Thermal Shield,Adv. Thermal Shield,Exp. Thermal Shield,Thermal Barrier,Cep. Beam Splitter,Thermal Defense Suite,Imp. Thermal Defense Suite,Adv. Thermal Defense Suite,Exp. Thermal Defense Suite,Shock Absorption System,Imp. Shock Absorption System,Exp. Shock Absorption System,EM Shield,Adv. EM Shield,Exp. EM Shield,ME-RLN's Chromatic Screen,Sfc. Personal Shield,Sfc. Absorption Layer","","",""
 "Revision","Bot","","","","","","","",""
 "Revision 17","Bot","","","","","","","",""
 "Revision 17 (Alignment)","Other","[[Image]]Cetus Saving Revision 17.png|Saving Revision 17 in Cetus[[/Image]]
@@ -8362,6 +8410,7 @@ Seismic Detector Guarded Hauler.gif|Movement behavior of a [[Hauler]] guarded by
 Seismic Detector Noncombat Bots.gif|Wheeled non-combat bots rolling through a corridor|
 Seismic Detector Fusion Modulators.png|2 machines (Fusion Modulators) with seismic activity|
 Seismic Detector Machine Explosion.png|A machine array explosion[[/Gallery]]","","","","","","",""
+"Self-contained Parts","Part Group","These parts can only be found on [[1B-0RG]] and bots assimilated with [[1B-0RG's Assimilator]].","Spoiler","","Self-contained Parts","","","",""
 "Self-destruct Interrupter","Part","","","","","","","",""
 "Sensor Array","Part","","","","","","","",""
 "Sensor Arrays","Part Group","[[Heading]]List of Sensor Arrays[[/Heading]]
@@ -8385,6 +8434,28 @@ While combat bots will want (or will be forced) to fight Sentries head-on, airbo
 Sentries may appear in the following squads:
 [[List]][[Garrison Squad]]|[[Security Squad]][[/List]]
 Additionally, Sentries will appear at [[Garrison Access|Garrisons]] and 0b10 exits during [[High Security]] and [[Maximum Security]].","","Y-45 Defender,Y-54 Guardian,Y-64 Sentinel,Y-72 Warden,Cetus Guard,Armor Guard,Quarantine Guard,Protovariant Y,S7 Guard,M Guard,M Shell/Atk","","","","",""
+"Sfc. Absorption Layer","Part","","","","","","","",""
+"Sfc. Autominer","Part","","","","","","","",""
+"Sfc. Borg Blade","Part","","","","","","","",""
+"Sfc. Borg Chaincannon","Part","","","","","","","",""
+"Sfc. Borg Chaingun","Part","","","","","","","",""
+"Sfc. Borg Fist","Part","","","","","","","",""
+"Sfc. Borg Gutpuncher","Part","","","","","","","",""
+"Sfc. Borg Joltstriker","Part","","","","","","","",""
+"Sfc. Borg Laser","Part","","","","","","","",""
+"Sfc. Borg Power","Part","","","","","","","",""
+"Sfc. Borg Pulsar Launcher","Part","","","","","","","",""
+"Sfc. Borg Pulseblaster","Part","","","","","","","",""
+"Sfc. Borg Regenerator","Part","","","","","","","",""
+"Sfc. Cooling Unit","Part","","","","","","","",""
+"Sfc. Door Spiker","Part","","","","","","","",""
+"Sfc. Impeller","Part","","","","","","","",""
+"Sfc. Interdiction Field","Part","","","","","","","",""
+"Sfc. Materializer","Part","","","","","","","",""
+"Sfc. Personal Shield","Part","","","","","","","",""
+"Sfc. Sightfinder","Part","","","","","","","",""
+"Sfc. Target Tracker","Part","","","","","","","",""
+"Sfc. Targeting Obfuscator","Part","","","","","","","",""
 "Shearguns","Part Group","[[Heading]]List of Shearguns[[/Heading]]
 [[PartGroupTable]]
 Shearguns|
@@ -8548,7 +8619,7 @@ Spacefolds can allow for longer-range safe [[Digging|digs]]. While a [[Microwarp
 
 [[/List]]","","","","","","",""
 "Spear","Part","","","","","","","",""
-"Special Melee Weapons","Part Supergroup","","","","","Dirty Datajack,Detonator,Splice Injector,Master Link","Melee Datajacks","",""
+"Special Melee Weapons","Part Supergroup","","","","","Dirty Datajack,Detonator,Splice Injector,Master Link,1B-0RG's Assimilator","Melee Datajacks","",""
 "Special Propulsion Modes","Other","Certain [[Treads]] and [[Legs]] can be toggled into alternate states with special characteristics.
 
 [[Heading]]Treads[[/Heading]]
@@ -9676,7 +9747,7 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
-[[/PartGroupTable]]","","","","Targeting Computer,Imp. Targeting Computer,Mak. Targeting Computer,Adv. Targeting Computer,Exp. Targeting Computer","","",""
+[[/PartGroupTable]]","","","","Targeting Computer,Imp. Targeting Computer,Mak. Targeting Computer,Adv. Targeting Computer,Exp. Targeting Computer,Sfc. Target Tracker","","",""
 "Tearclaws","Part","","","","","","","",""
 "Tearclaws (Group)","Part Group","","Spoiler","","","Tearclaws,Master Tearclaws","","",""
 "Tech Extrapolator","Part","The Tech Extrapolator is an item associated with the [[United Federation of Derelicts]], used by [[Scientist|Scientists]] to develop new parts. While attached, it can produce part schematics based on items that are seen on the ground or attached to other bots. Parts must be identified by Cogmind, but once they have been seen they can not be forgotten by the Tech Extrapolator, even if Cogmind forgets due to corruption or use of a [[Core Reset Matrix]]. A list of Tech Extrapolator only parts can be found at [[Tech Extrapolator Parts]].
@@ -10283,17 +10354,18 @@ When an Unchained has been decided to be authorized, an announcement like [[Game
 
 [[Heading]]Behavior[[/Heading]]
 Unchained have special behavior that allows them to follow Cogmind between multiple maps, so escape is not as easy as making it to the nearest exit. They take a few hundred turns after entering the map to show up, but once they appear, they will relentlessly pursue Cogmind with [[Perfect Tracking]]. Thanks to this tracking, a [[Triangulator]] may be used to help locate them from a distance before arrival.
-Each Unchained has different specific behavior, but all have a tendency to harass Cogmind throughout the floor. Some bots ([[GL-D0S]] and [[QV-33N]]) avoid direct engagement altogether, instead making use of combat-capable allies. Others ([[6S-H0T]], [[BL-1NK]], [[CL-0N3]], and [[DW-4LL]]) instead rely on ambushes or general hit-and-run tactics. [[CY-PHR]] has an even more unique styles of engagement that involves sabotaging your hacking capabilities across multiple maps even when not on the floor. All Unchained are capable of fleeing into Garrisons and through 0b10-controlled exits. Hit-and-run types can run to a Garrison and emerge later, ready to harass Cogmind again.
+Each Unchained has different specific behavior, but all have a tendency to harass Cogmind throughout the floor. Some bots avoid direct engagement altogether, instead making use of combat-capable allies. Others rely on ambushes or general hit-and-run tactics. CY-PHR has an even more unique styles of engagement that involves sabotaging your hacking capabilities across multiple maps even when not on the floor. All Unchained are capable of fleeing into Garrisons and through 0b10-controlled exits. Hit-and-run types can run to a Garrison and emerge later, ready to harass Cogmind again.
 
 [[Table]]
 Unchained|Engagement Style|Summons allies|Multiple returns per map|Extra spawn restrictions||
-6S-H0T|Hit-and-run|No|Yes, with full repair|No||Bl-1NK|Hit-and-run|No|Yes|No||
-CL-0N3|Ambush|No|Yes, but with no core repair|No||
-CY-PHR|Avoid|Yes|No|Yes, only appears in a single room on a random future map if triggered||
-DW-4LL|Ambush|No|Yes, with full repair|No||
-GL-D0S|Avoid|Yes|No|Yes, won't appear outside of main 0b10 maps||
-QV-33N|Avoid|Yes|No|Yes, won't appear outside of main 0b10 maps||
-V4-D3R|Ambush|Yes|Yes, with full repair|No
+[[1B-0RG]]|Avoid|Yes|No|Yes, won't appear outside of main 0b10 maps||
+[[6S-H0T]]|Hit-and-run|No|Yes, with full repair|No||[[BL-1NK]]|Hit-and-run|No|Yes|No||
+[[CL-0N3]]|Ambush|No|Yes, but with no core repair|No||
+[[CY-PHR]]|Avoid|Yes|No|Yes, only appears in a single room on a random future map if triggered||
+[[DW-4LL]]|Ambush|No|Yes, with full repair|No||
+[[GL-D0S]]|Avoid|Yes|No|Yes, won't appear outside of main 0b10 maps||
+[[QV-33N]]|Avoid|Yes|No|Yes, won't appear outside of main 0b10 maps||
+[[V4-D3R]]|Ambush|Yes|Yes, with full repair|No
 [[/Table]]
 
 [[Heading:2]]Map Activity[[/Heading]]
@@ -10327,7 +10399,7 @@ Caves end branches ([[Data Miner (Location)|Data Miner]], [[Warlord (Location)|W
 [[/Table]]
 
 [[Heading]]Unique Drops[[/Heading]]
-In addition to normal salvage-based drops, each Unchained may also drop one of two special parts when destroyed. This can be either an [[ID Mask]] or a [[Zeronet Interface]].","Spoiler","6S-H0T,BL-1NK,CL-0N3,CY-PHR,DW-4LL,GL-D0S,QV-33N,V4-D3R","","","","",""
+In addition to normal salvage-based drops, each Unchained may also drop one of two special parts when destroyed. This can be either an [[ID Mask]] or a [[Zeronet Interface]].","Spoiler","6S-H0T,BL-1NK,CL-0N3,CY-PHR,DW-4LL,GL-D0S,QV-33N,V4-D3R,1B-0RG","","","","",""
 "United Federation of Derelicts","Bot Supergroup","The United Federation of Derelicts (UFD) is a major faction of [[Derelict|Derelicts]] that live in [[Scraptown]]. Cogmind can [[Alignment|align]] with the UFD become a member by entering Scraptown through [[Recycling]]. This alignment provides further access into Scraptown along with a few special hacks.
 [[Image]]Scraptown Alignment Derelict.png|[[Scrapper (3)]] in Scraptown that gives Cogmind the option to align[[/Image]]
 
@@ -10400,7 +10472,7 @@ The following will prevent Cogmind from being able to align with UFD in the firs
 [[Heading:2]]Blocked Alignment[[/Heading]]
 Several factions will no longer assist Cogmind after UFD alignment:
 [[List]][[Imprint]]: The [[Imprinter]] will say that the Imprinting machine requires a more thorough vetting process for a UFD member such as Cogmind|[[Warlord (Alignment)]]: [[Warlord]] will call Cogmind a spy and not perform the -2 [[Research]] invasion[[/List]]","Spoiler","Bolteater,DRS Ranger,Explorer,Federalist,Guru,KN-7UR,Large Mutated Botcube,Master Drone,Mutated Botcube,Optimus,Ranger,Scientist,Surveybot 24,Triborg,Triborg (Optimus),Wyrm Statue","","","Elite,Scrapper,Scrapoid,Scraphulk","",""
-"Utilities","Part Supergroup","","","","","Scrap Engine,Arm. Scrap Engine,Encrypted Comm Array,Stasis Canceller,Skeleton Box,01-MTF's Autohacker,A0-MCA's Component Scanner,Tech Extrapolator,Trap Reconfigurator,Scrap Suit,0bPrime Scrap Suit,PSU Rigger,Machine Rigger,Phasing AFG,AS-neutralizer No. 17b,V3-11A's Pendant,Amulet of Y3-NDR,Chronowheel,Phase Armor,Power Bank,Rainbow Chip,VL-GR5's Exoskeleton ""Deathgrip"",Plexus Tether,Cep. Melee Reflex Suite,Cep. Projectile Intercept Suite,Jamming Amplifier,Crosscalibrator,Cep. Navigation Harness,Supercharged Navigation Harness,QV-33N's Launch Deck,GL-D0S's Turretformer,Blink Core,Procsplitter","Authchips,Component Analysis Suites,Fabrication Devices,Mass Support Devices,Power Amplifiers,Recalibrators,Relay Couplers,Speed Boosting Utilities,Salvage Targeting Computers,Thermal Generators,Trap Extractors","Armor,Consumable Alien Artifacts,Cooling Utilities,Corruption Reduction Utilities,Defensive Utilities,Hackware,Infowar,Matter Refilling Devices,Offensive Utilities,Shieldings,Storage (Group)",""
+"Utilities","Part Supergroup","","","","","Scrap Engine,Arm. Scrap Engine,Encrypted Comm Array,Stasis Canceller,Skeleton Box,01-MTF's Autohacker,A0-MCA's Component Scanner,Tech Extrapolator,Trap Reconfigurator,Scrap Suit,0bPrime Scrap Suit,PSU Rigger,Machine Rigger,Phasing AFG,AS-neutralizer No. 17b,V3-11A's Pendant,Amulet of Y3-NDR,Chronowheel,Phase Armor,Power Bank,Rainbow Chip,VL-GR5's Exoskeleton ""Deathgrip"",Plexus Tether,Cep. Melee Reflex Suite,Cep. Projectile Intercept Suite,Jamming Amplifier,Crosscalibrator,Cep. Navigation Harness,Supercharged Navigation Harness,QV-33N's Launch Deck,GL-D0S's Turretformer,Blink Core,Procsplitter,Sfc. Impeller,Sfc. Door Spiker,Sfc. Materializer,Sfc. Borg Regenerator,Sfc. Interdiction Field,Sfc. Autominer","Authchips,Component Analysis Suites,Fabrication Devices,Mass Support Devices,Power Amplifiers,Recalibrators,Relay Couplers,Speed Boosting Utilities,Salvage Targeting Computers,Thermal Generators,Trap Extractors","Armor,Consumable Alien Artifacts,Cooling Utilities,Corruption Reduction Utilities,Defensive Utilities,Hackware,Infowar,Matter Refilling Devices,Offensive Utilities,Shieldings,Storage (Group)",""
 "Utility Shielding","Part","","","","","","","",""
 "Utility Shieldings","Part Group","[[Heading]]List of Utility Shieldings[[/Heading]]
 [[PartGroupTable]]
@@ -10662,8 +10734,15 @@ If Cogmind has aligned with the [[Exiles (Group)|Exiles]] and has FarCom, the fo
 [[GameText]]V4-D3R can't be bothered to come after you right away themselves. Stay out of sight of their scouting parties, or may the force be with you.[[/GameText]]
 
 [[Heading]]Behavior[[/Heading]]
-V4-D3R is a hybrid ally summoning/ambushing type of Unchained. V4-D3R will not immediately begin chasing down Cogmind like most other aggressive Unchained. Rather, they summon large numbers of [[Stormtrooper|Stormtroopers]] in squads of 2 first. While they can theoretically be avoided, it is difficult to do so due to sheer number. Once a Stormtrooper has spotted Cogmind, all Stormtroopers on the map will be alerted to Cogmind's location. Although they will lose tracking fairly quickly, they do trickle to the initial spot location before resuming normal patrolling behavior. Because of this, it is a good idea to avoid sticking around the area. Additionally, V4-D3R will appear nearby when spotted and begin pursuit of Cogmind. This effect can be negated by a [[Transmission Jammers|Transmission Jammer]].
-Once V4-D3R is in line of sight of Cogmind, they will begin to attack with their Forcegen. This will result in nearby parts, terrain, or bots being thrown at Cogmind for massive impact damage. Occasionally, V4-D3R may instead pull Cogmind immediately next to them and perform a melee attack with the Sabre. This pulling ability makes it extremely difficult to escape V4-D3R in wide open areas. Only by turning the corner and blocking line of sight is it reasonably possible to make a run for it. While incredibly threatening in combat, V4-D3R has no further tricks if Cogmind can escape their line of sight.","","","","","","",""
+V4-D3R is a hybrid ally summoning/ambushing type of Unchained. V4-D3R will not immediately begin chasing down Cogmind like most other aggressive Unchained. Rather, they summon large numbers of [[Stormtrooper|Stormtroopers]] in squads of 2 first. While they can theoretically be avoided, it is difficult to do so due to sheer number. Once a Stormtrooper has gained tracking Cogmind or another controllable (blue) bot, all Stormtroopers on the map will be alerted to Cogmind's location. Although they will lose tracking fairly quickly, they do trickle to the initial spot location before resuming normal patrolling behavior. Because of this, it is a good idea to avoid sticking around the area. Additionally, V4-D3R will appear nearby when spotted and begin pursuit of Cogmind. Note: Unlike most kinds of bot communication this effect can't be negated by [[Transmission Jammers]].
+Once V4-D3R is in line of sight of Cogmind, they will begin to attack with their Forcegen. This will result in nearby parts, terrain, or bots being thrown at Cogmind for massive impact damage. Occasionally, V4-D3R may instead pull Cogmind immediately next to them and perform a melee attack with the Sabre. This pulling ability makes it extremely difficult to escape V4-D3R in wide open areas. Only by turning the corner and blocking line of sight is it reasonably possible to make a run for it. While incredibly threatening in combat, V4-D3R has no further tricks if Cogmind can escape their line of sight.
+
+[[Heading]]Strategy[[/Heading]]
+V4-D3R is a huge threat to fight in direct combat for most builds. Melee combat is nearly useless due to their huge 75% resistances. Ranged combat is preferable to the lack of resistances, but it still has issues getting around the 50% and 40% (non-stacking) projectile deflection chances of their [[V4-D3R's Sabre|Sabre]] and [[V4-D3R's Cape|Cape]] respectively. However, penetrating projectiles like most [[Kinetic Guns]] have no issues shooting through the deflection. Both the Sabre and Cape have high coverage and low integrity, but in order to fully get around the deflection mechanism both need to be destroyed or removed.
+Offensively, V4-D3R deals either ranged impact or slashing damage. While the Sabre's slashing damage is higher thanks to [[Femtoactuators|Femtoactuator]]-reduced volley time, impact damage from the [[V4-D3R's Forcegen|Forcegen]] is usually scarier thanks to the ability to wreck your processors or other fragile utilities. [[Kinetic Cannons|Kinetic Cannon]]-inflicted knockback is the best way to keep V4-D3R out of melee range if you would rather tank the impact damage. Otherwise, it is possible to step back each time V4-D3R draws you in, though depending on luck you may end up having to step away many times throughout the fight.
+Groups of allies are a great choice if you can lure V4-D3R into a favorable location. While V4-D3R can easily take down single bots very quickly, they are easily overwhelmed by a large amount of firepower, like a collection of [[Fabricator|fabricated]] allies or a [[Wastes]] Derelict army. A word of warning about armies against V4-D3R specifically is to be aware of deflection mechanics. Projectiles can be deflected back at your army in a 90 degree arc which can wind up hitting other parts of your army. Bots with penetrating weapons like [[Hunter|Hunters]] are ideal, but otherwise, try to space bots out as much as possible to avoid friendly fire. Another issue is the Forcegen's ability to knock bots into each other, dealing Impact damage to all involved. This effect is not avoidable, but is something worth considering when planning to fight V4-D3R. Overall, they chew through armies much more efficiently than many other Unchained.
+Similar to many Unchained, V4-D3R is weak to sever-based traps like the [[Blade Trap|Blade]] and [[Segregator Trap|Segregator Traps]]. They have no sever immunity and several high coverage parts that are susceptible to being cut off. Planting a few of these is likely to remove the cape, [[Med. Regenerative Plating]], and possibly even some propulsion or weapons. If V4-D3R loses the Forcegen, they become very susceptible to kiting by airborne build types. Losing their Sabre reduces their deflection chance from 50 to 40%, but it also opens up the possibility of removing the Cape to eliminate all deflection capability.
+All of the above deals with fighting V4-D3R, though that is not the only possibility. Avoiding Stormtroopers is more possible on larger maps but can be impossible on more confined maps like [[Testing]] or [[Quarantine]]. Unfortunately, Stormtroopers' alerting ability is immune to Transmission Jammer effects, and even non-Cogmind allies trigger tracking on Cogmind, so using allies is not a reliable method to avoid triggering V4-D3R either. The only method that works to avoid V4-D3R is to get off the map without being spotted by any Stormtroopers at all.","","","","","","",""
 "V4-D3R's Cape","Part","","","","","","","",""
 "V4-D3R's Forcegen","Part","","","","","","","",""
 "V4-D3R's Forcewell","Part","","","","","","","",""
@@ -10685,7 +10764,7 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]","","","","Visual Processing Unit,Sub. Optics,Adv. Visual Processing Unit,Enh. Optical Array,Exp. Optical Array,Spectral Analyzer","","",""
+[[/PartGroupTable]]","","","","Visual Processing Unit,Sub. Optics,Adv. Visual Processing Unit,Enh. Optical Array,Sfc. Sightfinder,Exp. Optical Array,Spectral Analyzer","","",""
 "Vmp. Brace Plating","Part","","","","","","","",""
 "Vmp. Broadsword","Part","","","","","","","",""
 "Vmp. Heavy Siege Treads","Part","","","","","","","",""
