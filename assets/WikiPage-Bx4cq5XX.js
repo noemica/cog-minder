@@ -1,4 +1,4 @@
-import{c as k,r as T,j as a,L as j,I as D,B as v,J as V,w as le,K as ve,M as Ce,f as I,N as Se,y as W,T as L,O as he,a as Z,s as Te,Q as ke,S as J,q as xe,U as He,V as de,z as Ae,u as ce,W as $,X as Ge,Y as O,Z as Re,_ as Ie,$ as U,a0 as Ne,a1 as De}from"./index-U05CGqQ6.js";import{l as Pe}from"./lore-08CTWJsY.js";import{h as Ee,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as me,B as Y,I as ge,a as Le,L as Fe,b as Be,u as We}from"./BotDetails-B4QOojjW.js";import{R as qe,T as ee,a as _,u as Oe}from"./ItemPopover-05opZbfs.js";import{S as Ue}from"./Table-Clc9M1xn.js";import{e as je}from"./partColumnDefs-C-a8aH4w.js";/* empty css              */import"./bots-Bp2ek_k2.js";import"./simulatorCalcs-BkDqMWpT.js";import"./items-Dv7HSrcJ.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as k,r as T,j as a,L as j,I as D,B as v,J as V,w as le,K as ve,M as Ce,f as I,N as Se,y as W,T as L,O as he,a as Z,s as Te,Q as ke,S as J,q as xe,U as He,V as de,z as Ae,u as ce,W as $,X as Ge,Y as O,Z as Re,_ as Ie,$ as U,a0 as Ne,a1 as De}from"./index-3bkAKnw_.js";import{l as Pe}from"./lore-08CTWJsY.js";import{h as Ee,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as me,B as Y,I as ge,a as Le,L as Fe,b as Be,u as We}from"./BotDetails-D4CyqpDB.js";import{R as qe,T as ee,a as _,u as Oe}from"./ItemPopover-Cv3EpbQ6.js";import{S as Ue}from"./Table-BzP3-aKL.js";import{e as je}from"./partColumnDefs-n5I0tDRD.js";/* empty css              */import"./bots-Bp2ek_k2.js";import"./simulatorCalcs-CP4iwRJy.js";import"./items-Dv7HSrcJ.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -2274,6 +2274,7 @@ If worst comes to worst and it looks like you might be at danger of not making i
 
 [[Heading]]Map Makeup[[/Heading]]
 The map is divided into several distinct segments:
+
 [[Heading:2]]Opening Area[[/Heading]]
 The bottom-left section of the map that Cogmind spawns in is the most "normal" section of the map. There are standard [[Security Squad|Security]] and [[Patrol Squad|Patrol Squads]] hanging around the area, and most types of usual machines are accessible here, although not [[Recycling Unit|Recycling Units]] or [[Fabricator|Fabricators]]. Similar to other Research Branch maps, there can be small 3-tile nooks indented into the map containing special guards. Patrols can also contain unique [[Hotshot]] [[Grunt]] variants.
 One unique feature about this map is the presence of non-interactive machines that phase out of existence when passing them. These machine flash briefly on sight, but they cannot be interacted with in any way, including by dropping parts on top of them.
@@ -2282,9 +2283,11 @@ One unique feature about this map is the presence of non-interactive machines th
 The Forge Plexus area is located in the bottom right section of the map, with the eponymous Forge Plexus located in the center of a room. This enormous machine is impossible to be destroyed as any destroyed tiles will regenerate very rapidly. If the Forge is damaged and a bot manages to enter the Forge Plexus before it regenerates itself, the regeneration process will attempt to push that robot towards the outside. If this somehow fails and the regeneration process has no way to push the robot towards the outside, it will instead crush and instantly destroy that robot (even Cogmind). This area is very heavily guarded, with 2 [[AP7-3|AP7-3s]] standing on the left entrance to this area of the map and Superfortress blocking the path to the top entrance. Additionally, 2 pairs of dormant [[EXE-6|EXE-6s]] guard the right and bottom left sides of the map, and 2 dormant [[Decapitator|Decapitators]] or 3 [[SKR-2|SKR-2s]] guard the bottom center area. Furthermore, the prototype [[Heavy]] [[Overlord]] spawns in this area, although it will typically roam into the bottom left section.
 
 On the top right area of the Forge Plexus area is a group of 4 Fabricators. At the bottom right is a group of 3 Recycling Units. The Recycling Machines are not used for their typical purpose since parts are returned to the Forge Plexus by Retrievers rather than inserted into Recycling Units by Recyclers. However, if Cogmind aligns with [[Optimus]] and [[UFD]], the 0bPrime attack on Protoforge can be started by performing the [[GameText]]Force(Fedlink)[[/GameText]] hack on one of these machines.
+
 [[Heading:3]]N-04 Retrievers[[/Heading]]
 N-04 Retrievers can be be created by the Plexus to pick up items dropped on the floor. The retrievers grab these items and then deposit them into the Forge Plexus. Unlike Recyclers, they are capable of grabbing multiple parts at once. If there are no loose parts, Retrievers will be re-absorbed by the Plexus. The following are safe from Retrievers :
-[[List]]Parts in the vault areas behind the glass walls in the back lab, even dropped parts. These spaces can be used as safe temporary storage.
+[[List]]
+Parts in the vault areas behind the glass walls in the back lab, even dropped parts. These spaces can be used as safe temporary storage.
 |Parts in secret corridors between two Emergency Access Doors, at least while those remain intact.
 |Non-part items such as [[Traps]] or [[Sapper Charge|Sapper Charges]], regardless of location.
 |All parts, if the [[GameText]]clear_recycling[[/GameText]] [[RIF]] hack is used on an [[Operator]] after those parts were dropped.
@@ -2326,6 +2329,7 @@ There is only one exit in Protoforge. A main access will be in the top left of t
 
 [[Heading]]Superfortress[[/Heading]]
 Superfortress is the defensive backbone of the Protoforge and sits in the center of the map. It is arguably the most powerful robot in the game, capable of regenerating core integrity and parts as well as assembling large numbers of allies in its defense. Fighting it head-on is one of the toughest challenges in the game, and successfully doing so will result in a hefty score bonus, a + on the scoresheet, and an immediate triggering of [[High Security]] unless the UFD attack has begun.
+
 [[Heading:2]]Dormancy[[/Heading]]
 Superfortress is initially Dormant upon entering the map. Sneaking past Superfortress into the back area in this state is trivial, so it is ideal to retain this state if possible. Many things can trigger Superfortress to begin powering up from this state:
 [[List]]
@@ -2339,59 +2343,179 @@ Superfortress taking core damage|
 Superfortress being teleported by a [[Supercharged TR]] (which makes it take core damage)
 [[/List]]
 If any of these events occur, there will be a log message [[GameText]]Superfortress powering up for active defense.[[/GameText]] After 10 turns, Superfortress will wake up with a message [[GameText]]Superfortress completes startup sequence.[[/GameText]] if in view. After this, it will begin to assemble weapons.
+
 [[Heading:2]]Killing Strategy[[/Heading]]
 See [[Strategy/Bosses/Defeating Superfortress]]
 
 [[Heading]]Additional Responses[[/Heading]]
+
 [[Heading:2]]Additional Patrols[[/Heading]]
 Certain actions can cause additional patrol squads to come from the main exit or the Garrison. If the Garrison is open, these patrols will be groups of up to 4 Decapitators, Hotshots, or Immortals. If the Garrison is closed, they will instead be [[Hunter|Hunters]] and [[Programmer|Programmers]]. They will wander throughout the map randomly once dispatched.
+
 [[Heading:3]]Breaking Lab Walls[[/Heading]]
 If the outer wall of the back lab area is breached, there will be a log message [[GameText]]Research labs perimeter wall breached, dispatching additional patrols.[[/GameText]] and 2 patrols will spawn.
+
 [[Heading:3]]Infiltrating Tinkerer Lab[[/Heading]]
 If Cogmind enters the Infiltrator Lab, a log message will appear [[GameText]]Tinkerer labs infiltrated, dispatching additional patrols.[[/GameText]] 2 patrols will spawn.
+
 [[Heading:3]][[Plexus Tether]][[/Heading]]
 If Cogmind attaches the Plexus Tether, all parts on the map will be identified and revealed. When this happens, 3-5 Decapitators will be dispatched to Cogmind's position. These bots will only be dispatched if the Garrison is intact, otherwise no bots are summoned.
+
 [[Heading:2]]Lack of [[Sterilization]][[/Heading]]
 Unlike most maps, Sterilization cannot occur inside the Protoforge. As a result, [[High Security]] can continue endlessly.
+
 [[Heading:2]]Advanced Fortification Protocols[[/Heading]]
 If Superfortress is destroyed, the UFD assault is started, or High Security is activated, all subsequent maps will have "Advanced fortification protocols" activated. This has the following effect on maps:
-[[List]]50% increase in patrol density|
+[[List]]
+50% increase in patrol density|
 Patrols can have non-standard bots. See [[Patrol Squad#advanced_fortification_protocols]] page for more details.|
 Garrison Accesses will be locked with no way to interact with them|
 Sterilization on future maps will require double the number of kills to engage
 [[/List]]
+
 [[Heading:2]]UFD Sabotage[[/Heading]]
 If aligned with UFD and Optimus, UFD agents will reduce the number of 0b10 Protoforge forces on the map. All prototype patrols, including additional prototype dispatches, will be reduced in size by 1-2 bots.
 
+
 [[Heading]]Available Loot[[/Heading]]
 The available loot is divided into separate pools of items.
+
 [[Heading:2]]Superfortress Hallway Loot[[/Heading]]
 The following items can be found in the hallway with Superfortress. Also, 1 extra stockpile in the Crosscalibrator room will have the same possible items.
-[[List]][[Cep. Antimissile System]]|[[Cep. Chromion Battery]]|[[Cep. Concussive Dispersal Blaster]]|[[Cep. Core Shell]]|[[Cep. NT7 Matterbank]]|[[Cep. Phasing Heat Sink]]|[[Cep. Recoil Nullifier]]|[[Cep. Variable Chargecaster]]|[[Cep. Weapon Articulator]]|[[Cep. XC Strikerail]]|[[Exp. Launcher Guidance Computer]]|[[Exp. Salvage Targeting Computer]]|[[Exp. Surge Thruster]]|[[Exp. System Purifier]]|[[Exp. Terror Saw]]|[[Exp. Trap Extractor]]|[[Exp. VSS Leg]]|[[Gravjet Array]]|[[Hyb. Graviton Reactor]][[/List]]
+[[List]]
+[[Cep. Antimissile System]]|
+[[Cep. Chromion Battery]]|
+[[Cep. Concussive Dispersal Blaster]]|
+[[Cep. Core Shell]]|
+[[Cep. NT7 Matterbank]]|
+[[Cep. Phasing Heat Sink]]|
+[[Cep. Recoil Nullifier]]|
+[[Cep. Variable Chargecaster]]|
+[[Cep. Weapon Articulator]]|
+[[Cep. XC Strikerail]]|
+[[Exp. Launcher Guidance Computer]]|
+[[Exp. Salvage Targeting Computer]]|
+[[Exp. Surge Thruster]]|
+[[Exp. System Purifier]]|
+[[Exp. Terror Saw]]|
+[[Exp. Trap Extractor]]|
+[[Exp. VSS Leg]]|
+[[Gravjet Array]]|
+[[Hyb. Graviton Reactor]]
+[[/List]]
+
 [[Heading:2]]Standard Vaults[[/Heading]]
 The 8 primary vaults are always located in the same spots, but which vault type corresponds to each locations varies run to run.
+
 [[Heading:3]]Defensive Utilities Vault[[/Heading]]
-[[List]][[Cep. Beam Splitter]]|[[Cep. Core Shell]]|[[Cep. Energy Mantle]]|[[Cep. Hardlight Director]]|[[Cep. Phase Shift Module]]|[[Cep. Projectile Intercept Suite]]|[[Cep. Reaction Jets]]|[[Cep. RG22 Armor]]|[[Exp. EM Disruption Field]]|[[Exp. Force Field]]|[[Exp. Remote Shield]][[/List]]
+[[List]]
+[[Cep. Beam Splitter]]|
+[[Cep. Core Shell]]|
+[[Cep. Energy Mantle]]|
+[[Cep. Hardlight Director]]|
+[[Cep. Phase Shift Module]]|
+[[Cep. Projectile Intercept Suite]]|
+[[Cep. Reaction Jets]]|
+[[Cep. RG22 Armor]]|
+[[Exp. EM Disruption Field]]|
+[[Exp. Force Field]]|
+[[Exp. Remote Shield]]
+[[/List]]
+
 [[Heading:3]]Infowar Vault[[/Heading]]
-[[List]][[Cep. Network Penetrator]]|[[Exp. Active Sensor Suite]][[/List]]
+[[List]]
+[[Cep. Network Penetrator]]|
+[[Exp. Active Sensor Suite]]
+[[/List]]
+
 [[Heading:3]]Launcher Vault[[/Heading]]
-[[List]][[Cep. Arcsight Missile Launcher]]|[[Cep. EMP Blanket Launcher]]|[[Cep. Rapid Grenade Launcher]]|[[Cep. Smart ZDS]]|[[Cep. Tactical Fusion Warhead]]|[[Cep. Tiamat Rocket Array]][[/List]]
+[[List]]
+[[Cep. Arcsight Missile Launcher]]|
+[[Cep. EMP Blanket Launcher]]|
+[[Cep. Rapid Grenade Launcher]]|
+[[Cep. Smart ZDS]]|
+[[Cep. Tactical Fusion Warhead]]|
+[[Cep. Tiamat Rocket Array]]
+[[/List]]
+
 [[Heading:3]]Offensive Utilities Vault[[/Heading]]
-[[List]][[Cep. Countertargeting System]]|[[Cep. Hypertargeting System]]|[[Cep. Melee Reflex Suite]]|[[Cep. Networked Targeting System]]|[[Cep. Recoil Nullifier]]|[[Cep. Weapon Articulator]]|[[Exp. Force Booster]]|[[Exp. Kinecellerator]]|[[Femtoactuators]]|[[Mni. Quantum Capacitor]][[/List]]
+[[List]]
+[[Cep. Countertargeting System]]|
+[[Cep. Hypertargeting System]]|
+[[Cep. Melee Reflex Suite]]|
+[[Cep. Networked Targeting System]]|
+[[Cep. Recoil Nullifier]]|
+[[Cep. Weapon Articulator]]|
+[[Exp. Force Booster]]|
+[[Exp. Kinecellerator]]|
+[[Femtoactuators]]|
+[[Mni. Quantum Capacitor]]
+[[/List]]
+
 [[Heading:3]]Power Vault[[/Heading]]
-[[List]][[Cep. Zero-point Core]]|[[Exp. Antimatter Reactor]]|[[Hyb. Graviton Reactor]][[/List]]
+[[List]]
+[[Cep. Zero-point Core]]|
+[[Exp. Antimatter Reactor]]|
+[[Hyb. Graviton Reactor]]
+[[/List]]
+
 [[Heading:3]]Propulsion Vault[[/Heading]]
-[[List]][[Cep. Biometal Exoskeleton]]|[[Cep. Combat Aerolev Unit]]|[[Cep. Fieldthrust Drive]]|[[Cep. Gyrokinetic System]]|[[Exp. Antigrav System]]|[[Exp. Armored Exoskeleton]]|[[Exp. Biomechanical Wings]]|[[Exp. Heavy Siege Treads]]|[[Exp. Surge Thruster]]|[[Exp. VSS Leg]]|[[Gravjet Array]][[/List]]
+[[List]]
+[[Cep. Biometal Exoskeleton]]|
+[[Cep. Combat Aerolev Unit]]|
+[[Cep. Fieldthrust Drive]]|
+[[Cep. Gyrokinetic System]]|
+[[Exp. Antigrav System]]|
+[[Exp. Armored Exoskeleton]]|
+[[Exp. Biomechanical Wings]]|
+[[Exp. Heavy Siege Treads]]|
+[[Exp. Surge Thruster]]|
+[[Exp. VSS Leg]]|
+[[Gravjet Array]]
+[[/List]]
+
 [[Heading:3]]Resource Vault[[/Heading]]
-[[List]][[Cep. Antigrav Storage Unit]]|[[Cep. Chromion Battery]]|[[Cep. Matter Streamer]]|[[Cep. NT7 Matterbank]][[/List]]
+[[List]]
+[[Cep. Antigrav Storage Unit]]|
+[[Cep. Chromion Battery]]|
+[[Cep. Matter Streamer]]|
+[[Cep. NT7 Matterbank]]|
+[[Cep. Phasing Heat Sink]]
+[[/List]]
+
 [[Heading:3]]Weapon Vault[[/Heading]]
-[[List]][[Cep. Deflector Sword]]|[[Cep. Disintegration Ray]]|[[Cep. Heavy Railcannon]]|[[Cep. Helical Railcannon]]|[[Cep. Lightning Penetrator]]|[[Cep. Miniperforator]]|[[Cep. Plasma Driver]]|[[Cep. XC Strikerail]]|[[Exp. Jetlance]]|[[Exp. Terror Saw]][[/List]]
+[[List]]
+[[Cep. Deflector Sword]]|
+[[Cep. Disintegration Ray]]|
+[[Cep. Heavy Railcannon]]|
+[[Cep. Helical Railcannon]]|
+[[Cep. Lightning Penetrator]]|
+[[Cep. Miniperforator]]|
+[[Cep. Plasma Driver]]|
+[[Cep. XC Strikerail]]|
+[[Exp. Jetlance]]|
+[[Exp. Terror Saw]]
+[[/List]]
+
 [[Heading:2]]Extra Guarded Vault[[/Heading]]
 The following items can be found in the vault guarded by the 2 AP7-3s:
-[[List]][[Cep. Blasthammer]]|[[Cep. Cloak Mesh]]|[[Cep. Core Analysis Suite]]|[[Cep. Dimensional Manipulator]]|[[Cep. Impact Drone Bay]]|[[Cep. Thermoelectric Network]]|[[Cld. Directed Potential Cannon]][[/List]]
+[[List]]
+[[Cep. Blasthammer]]|
+[[Cep. Cloak Mesh]]|
+[[Cep. Core Analysis Suite]]|
+[[Cep. Dimensional Manipulator]]|
+[[Cep. Impact Drone Bay]]|
+[[Cep. Thermoelectric Network]]|
+[[Cld. Directed Potential Cannon]]
+[[/List]]
+
 [[Heading:2]]Tinkerer Lab[[/Heading]]
 The following items can be found in CX-V1P's lab
-[[List]]One of [[Cep. Nanofilaments [Conductive]]], [[Cep. Nanofilaments [Polyglass]]], or [[Cep. Nanofilaments [Tensile]]]|[[Cep. Navigation Harness]] (always)|[[Transdimensional Reconstructor]] (always)[[/List]]
+[[List]]
+One of [[Cep. Nanofilaments [Conductive]]], [[Cep. Nanofilaments [Polyglass]]], or [[Cep. Nanofilaments [Tensile]]]|
+[[Cep. Navigation Harness]] (always)|[[Transdimensional Reconstructor]] (always)
+[[/List]]
+
 [[Heading:2]]Looting Strategy[[/Heading]]
 See [[Strategy/Maps/Looting Protoforge]]
 
@@ -2399,6 +2523,7 @@ See [[Strategy/Maps/Looting Protoforge]]
 [[Image]]Protoforge UFD Assault.png|Protoforge UFD assault with assorted UFD bots[[/Image]]
 [[Image]]Protoforge Drillbomb Target.png|A marked drillbomb target[[/Image]]
 If Cogmind is both UFD and Optimus-aligned, a [[GameText]]Force(Fedlink)[[/GameText]] hack performed at any of the Recycling Units in the Forge area will trigger a massive assault on the Protoforge. Waves of UFD forces led by [[Triborg (Optimus)]] will begin to emerge from an opening in the bottom right of the Forge Plexus room. Their goal is to planet and then set off 10 [[UFD Drillbomb|UFD Drillbombs]] spaced throughout the bottom left area of the map to isolate the Protoforge from the rest of 0b10. [[Lugger|Luggers]] will be accompanied by various UFD forces to plant the bombs while Optimus remains in the forge area. Cogmind can help the Luggers by protecting them or by planting the Drillbombs alone. One of the designated Drillbomb targets will always be placed next to the only exit. Once all 10 bombs are planted in the areas marked in yellow, the UFD will announce that the bombs will go off in 100 turns. The walls separating the opening area from the rest of the map will get a red highlight, indicating the safe area of the map. Cogmind must either enter that part of the map to get the W9 wintype, or exit the map to continue the run. Doing neither will results in instant death after that 100 turns. Exiting the map at this point means that a W9 will not be possible and it will also remove the ability to surrender to [[MAIN.C]] in [[Command]].
+
 [[Heading:2]]UFD Reinforcements[[/Heading]]
 Several changes to this event can occur depending on whether or not the civil war occurs in [[Scraptown]]. If the civil war does not occur, [[7R-MNS]] will appear roughly 100 turns after starting the event and follow Cogmind around. If the civil war does occur, the maximum readiness which determines the strength of reinforcements will be capped at a lower level. The overall strength also depends on the number of resources Cogmind has built up over time and through Fedlink:
 [[Table]]
@@ -2419,18 +2544,24 @@ Minimal/Very Low|[[Bolteater]], [[Guru]], [[Explorer]], [[Federalist]], [[Ranger
 Low|Bolteater, Guru, Explorer, Federalist, Ranger, [[Scraphulk (6)]], [[Scraphulk (8)]]||
 Adequate/High/Maximal|Scraphulk (6), Scraphulk (8)
 [[/Table]]
+
 [[Heading:2]]0b10 Reinforcements[[/Heading]]
 0b10 Reinforcements come in two forms: Garrison reinforcements and Main exit reinforcements.
+
 [[Heading:3]]Garrison Reinforcements[[/Heading]]
 Prototype squads will periodically be dispatched from the Protoforge Garrison if it is intact. The first time this happens, there will be a log message [[GameText]]New 0b10 prototypes are being dispatched from the Protoforge Garrison Access, destroy it to block them![[/GameText]] Squads will be one of the following:
-[[List]]1 [[AP7-3]]|
+[[List]]
+1 [[AP7-3]]|
 3-5 [[Decapitator|Decapitators]]|
 1 [[EXE-6]]|
 3-4 [[Hotshot|Hotshots]]|
 2-3 [[Immortal|Immortals]]|
-1 [[SKR-2]][[/List]]
+1 [[SKR-2]]
+[[/List]]
+
 [[Heading:3]]Main Exit Reinforcements[[/Heading]]
 Squads will always be dispatched from the main exit periodically. These reinforcements cannot be stopped unlike the Garrison reinforcements. 1 or 2 squads will be dispatched at a time, and each squad will consist of 2 [[Executioner|Executioners]] or 2 [[Striker|Strikers]] and a [[C-45 Heavy ARC]] with [[Assault Squad]] contents.
+
 [[Heading:2]]W9 Strategy[[/Heading]]
 See [[Strategy/Wintypes/W9 Defending 0bPrime]].`,Exits:[{Map:"Research",Depths:"-3"},{Map:"Garrison",Depths:"-3 to -2"},{Map:"Access",Depths:"-2"}],SpecialBots:["AP7-3","C-55 Analyst","C-65 Expert","Decapitator","EXE-6","Elite (7)","Hotshot","Immortal","Lugger","N-04 Retriever","Overlord","Scrapper (6)","Scraphulk (8)","Scrapoid (8)","SKR-2","Superfortress","Tinkerer","Triborg (Optimus)","V-Series"],SpecialItems:["Cep. Antigrav Storage Unit","Cep. Antimissile System","Cep. Arcsight Missile Launcher","Cep. Beam Splitter","Cep. Biometal Exoskeleton","Cep. Blasthammer","Cep. Chromion Battery","Cep. Cloak Mesh","Cep. Combat Aerolev Unit","Cep. Concussive Dispersal Blaster","Cep. Core Analysis Suite","Cep. Core Shell","Cep. Countertargeting System","Cep. Deflector Sword","Cep. Dimensional Manipulator","Cep. Disintegration Ray","Cep. EMP Blanket Launcher","Cep. Energy Mantle","Cep. Fieldthrust Drive","Cep. Gyrokinetic System","Cep. Hardlight Director","Cep. Heavy Railcannon","Cep. Helical Railcannon","Cep. Hypertargeting System","Cep. Impact Drone Bay","Cep. Lightning Penetrator","Cep. Matter Streamer","Cep. Melee Reflex Suite","Cep. Miniperforator","Cep. Nanofilaments [Conductive]","Cep. Nanofilaments [Polyglass]","Cep. Nanofilaments [Tensile]","Cep. Navigation Harness","Cep. Network Penetrator","Cep. Networked Targeting System","Cep. NT7 Matterbank","Cep. Phase Shift Module","Cep. Phasing Heat Sink","Cep. Plasma Driver","Cep. Projectile Intercept Suite","Cep. Rapid Grenade Launcher","Cep. Reaction Jets","Cep. Recoil Nullifier","Cep. RG22 Armor","Cep. Smart ZDS","Cep. Tactical Fusion Warhead","Cep. Thermoelectric Network","Cep. Tiamat Rocket Array","Cep. Variable Chargecaster","Cep. Weapon Articulator","Cep. XC Strikerail","Cep. Zero-point Core","Cld. Directed Potential Cannon","Crosscalibrator","Exp. Active Sensor Suite","Exp. Antigrav System","Exp. Antimatter Reactor","Exp. Armored Exoskeleton","Exp. Biomechanical Wings","Exp. Force Booster","Exp. Force Field","Exp. Heavy Siege Treads","Exp. Jetlance","Exp. Kinecellerator","Exp. Launcher Guidance Computer","Exp. Remote Shield","Exp. Salvage Targeting Computer","Exp. Surge Thruster","Exp. System Purifier","Exp. Terror Saw","Exp. Trap Extractor","Exp. VSS Leg","Femtoactuators","Gravjet Array","Hyb. Graviton Reactor","Mni. Quantum Capacitor"],MinDepth:-3,MaxDepth:-2,MultipleDepths:!0,Branch:!0,Spoiler:"Redacted"},{Name:"Quarantine",ImageName:"Quarantine.png",Content:`Quarantine is a [[0b10]]-controlled [[Branch]] off of [[Research]] that appears on either -3 or -2. It is always on the floor that [[Testing]] is not on. Quarantine is a much smaller and generally more manageable map compared to normal Research floors. There are few patrols, no [[Sentry]] or [[Heavy]] guards, and only a few special mini guard areas that can usually be easily avoided. There are unique [[Researcher]] bots that show up on this map that have dangerous effects when getting scanned. Quarantine is home to a large number of unique [[Alien Artifacts]] that can be strong equippable parts or consumable effects not found elsewhere. Unlike most maps, the ambient temperature in Quarantine is -20 rather than 0. This has the effect of giving an additional 20 heat dissipation per turn to all bots on the map. Like all Research branches, [[FarCom]] will trigger [[Maximum Security]] upon entry.
 Quarantine is home to the [[Sigix Containment Pod]], a captured [[Sigix]] warrior being trapped in a cage. Carrying the Sigix to the [[Surface]] is required to achieve a W3 [[Wintypes]]. The Sigix always spawns in the vertically opposite corner of the map that Cogmind first spawns on. For example, if Cogmind would spawn in the top-left section of the map, the Sigix would be in the bottom left. The Sigix is locked behind a [[Terminal]] and some Sealed Heavy Doors with 40 armor. After opening or digging past the doors, the Sigix will have some garbled dialogue unless Cogmind has used a [[Core Reset Matrix]] first. There will be a lockdown [[Patrol Squad|patrol squad]] dispatched consisting of an [[I-47 Archangel]] and 3 [[Lightning|Lightnings]] at this point. They do not have active tracking on Cogmind but simply patrol around the area. Behind the doors, one Terminal contains the access code needed to be used on the other Terminal to open the 80 armor Sigix Quarantine Chamber.
