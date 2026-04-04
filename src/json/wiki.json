@@ -6436,7 +6436,7 @@
   },
   {
    "Name": "SUBCON Basin",
-   "Content": ""
+   "Content": "If released on an 0b10 level, the subatomizers will dissolve walls, doors, parts of machines, and items. Eventually all non-combat bots will be evacuated, then the ambient temperature of the floor will be increased 10 degrees at a time, causing cogmind to overheat and melting walls, doors, parts of machines, and items."
   },
   {
    "Name": "Salvage Targeting Computer",

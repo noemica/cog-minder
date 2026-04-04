@@ -8006,7 +8006,7 @@ Last edited during Beta 16.","Spoiler","","","","","",""
 "SHELL Armor","Part","","","","","","","",""
 "SKR-2","Bot","","","","","","","",""
 "ST Field Compressor","Part","","","","","","","",""
-"SUBCON Basin","Part","","","","","","","",""
+"SUBCON Basin","Part","If released on an 0b10 level, the subatomizers will dissolve walls, doors, parts of machines, and items. Eventually all non-combat bots will be evacuated, then the ambient temperature of the floor will be increased 10 degrees at a time, causing cogmind to overheat and melting walls, doors, parts of machines, and items.","","","","","","",""
 "Salvage Targeting Computer","Part","","","","","","","",""
 "Salvage Targeting Computers","Part Group","[[Heading]]List of Salvage Targeting Computers[[/Heading]]
 [[PartGroupTable]]
