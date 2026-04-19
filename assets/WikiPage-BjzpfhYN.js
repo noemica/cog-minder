@@ -1,4 +1,4 @@
-import{c as k,r as T,j as a,L as j,I as D,B as v,J as V,w as le,K as ve,M as Ce,f as I,N as Se,y as W,T as L,O as he,a as Z,s as Te,Q as ke,S as J,q as xe,U as He,V as de,z as Ae,u as ce,W as $,X as Ge,Y as O,Z as Re,_ as Ie,$ as U,a0 as Ne,a1 as De}from"./index-Cn1xDXK5.js";import{l as Pe}from"./lore-08CTWJsY.js";import{h as Ee,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as me,B as Y,I as ge,a as Le,L as Fe,b as Be,u as We}from"./BotDetails-CRjR7F5a.js";import{R as qe,T as ee,a as _,u as Oe}from"./ItemPopover-CdRle4Gx.js";import{S as Ue}from"./Table-DP4AV3IT.js";import{e as je}from"./partColumnDefs-BoyNcy1G.js";/* empty css              */import"./bots-Bp2ek_k2.js";import"./simulatorCalcs-CFBZZylq.js";import"./items-Dv7HSrcJ.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as k,r as T,j as a,L as j,I as D,B as v,J as V,w as le,K as ve,M as Ce,f as I,N as Se,y as W,T as L,O as he,a as Z,s as Te,Q as ke,S as J,q as xe,U as He,V as de,z as Ae,u as ce,W as $,X as Ge,Y as O,Z as Re,_ as Ie,$ as U,a0 as Ne,a1 as De}from"./index-CCLUN0co.js";import{l as Pe}from"./lore-08CTWJsY.js";import{h as Ee,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as me,B as Y,I as ge,a as Le,L as Fe,b as Be,u as We}from"./BotDetails-BpfA38bM.js";import{R as qe,T as ee,a as _,u as Oe}from"./ItemPopover-DJwnMq8Q.js";import{S as Ue}from"./Table-CXf3YcNX.js";import{e as je}from"./partColumnDefs-Ritpz3s0.js";/* empty css              */import"./bots-Bp2ek_k2.js";import"./simulatorCalcs-idQd-tkD.js";import"./items-Dv7HSrcJ.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -2789,17 +2789,24 @@ Unlike most maps, some areas may not be accessible in Subcaves without digging. 
 [[Heading]]Unique Mechanics[[/Heading]]
 
 [[Heading:2]]Subdweller Uncovering[[/Heading]]
+
 Each tile that is destroyed by any means has a chance of revealing a Subdweller. [[Launchers|Explosive Launchers]] should not be used much, if at all, to avoid dealing with extra hostiles. Any means of destroying terrain can trigger this effect.
 
 [[Heading:2]]Subatomizers[[/Heading]]
+
 Leaving partially damaged parts on the ground will cause "Subatomizers" to show up. They are invisible and gradually destroy any damaged parts left on the ground for too long. Full integrity parts are unaffected.
 
 [[Heading]]Strategy[[/Heading]]
+
 See [[Strategy/Maps/Subcaves]]
 
 [[Heading]]Notable Locations[[/Heading]]
-[[Gallery]]Subcaves Recycling Exit.png|An exit to [[Recycling]], guarded by 4 dormant [[S-10 Pest|Swarmers]] and 2 [[Autobeam Turret|Autobeam Turrets]]|Subcaves 4L-MR0's Lab.png|4L-MR0's Lab, with a unique prototype in a Testing Chamber|Subcon Basin Container.png|[[SUBCON Basin]] holding machine|Subcaves V3-11A's Pendant.png|V3-11A with their [[V3-11A's Pendant|Pendant]]|Subcaves Clippy Terminal.png|"Clippyterm" Terminal with unique lore and intel|Subcaves Disabled Subdwellers.png|Collection of 3 broken Subdwellers|Subcaves Scrap Room.png|[[Scrap]] and machinery encased in Earth tiles|Subcaves Traps.png|Collection of installed hostile [[Piercing Trap|Piercing]] and [[Shrapnel Trap|Shrapnel Traps]][[/Gallery]]
+
+[[Gallery]]Subcaves Recycling Exit.png|An exit to [[Recycling]], guarded by 4 dormant [[S-10 Pest|Swarmers]] and 2 [[Autobeam Turret|Autobeam Turrets]]|Subcaves 4L-MR0's Lab.png|4L-MR0's Lab, with a unique prototype in a Testing Chamber|Subcon Basin Container.png|[[SUBCON Basin]] holding machine|Subcaves V3-11A's Pendant.png|V3-11A with their [[V3-11A's Pendant|Pendant]]|Subcaves Clippy Terminal.png|"Clippyterm" Terminal with unique lore and intel|Subcaves Disabled Subdwellers.png|Collection of 3 broken Subdwellers|Subcaves Scrap Room.png|[[Scrap]] and machinery encased in Earth tiles|Subcaves Traps.png|Collection of installed hostile [[Piercing Trap|Piercing]] and [[Shrapnel Trap|Shrapnel Traps]]|
+Subcaves H3-MLN.png|H3-MLN with [[Mutated Botcube|Botcubes]]
+[[/Gallery]]
 [[Heading:2]]4L-MR0 Prototypes[[/Heading]]
+
 The unique Artisan named 4L-MR0 has a variety of unique [[Prototype Part|Prototypes]] available in their lab. Only one part can be found this way per run. The possible 4L-MR0 prototypes are:
 [[List]]
 [[Arachnoskeleton]]|
@@ -2813,10 +2820,17 @@ The unique Artisan named 4L-MR0 has a variety of unique [[Prototype Part|Prototy
 [[Tower Shield]]
 [[/List]]
 [[Heading:3]]Subdweller Attack[[/Heading]]
+
 Sometimes, 4L-MR0's lab has been attacked by Subdwellers. When this happens, 3 Subdwellers will appear in the lab instead of 4L-MR0.
 [[Heading:3]]Broken Subdwellers[[/Heading]]
+
 A collection of 3 broken Subdwellers can found in Subcaves. Sometimes, they will spring to life when Cogmind comes near or attacks. If this happens, one of the Subdwellers will drop one of the 4L-MR0 prototypes. This can allow for a second prototype to be found in a single run.
+
+[[Heading:2]]H3-MLN[[/Heading]]
+H3-MLN is a Scientist that can be found in a special room buried in the walls of Subcaves. Inside it are two Mutated Botcubes named either "All I Could Find", "Angry About Something", "Battle Cannon Carrier", "Be With You Shortly", "Beam Cannon Carrier", "Botminer", "Bubbletank", "Budget Cyclops", "Chopster", "Dakkacube", "Double Barrel", "Face Your Regrets", "Gladiator", "Guncrazy", "Gunmaster", "Hackmaster 2000", "Hotrod", "Imp. Light Cannon Carrier", "Ion Cannon Carrier", "Meltycube", "No Trespassing x2", "OP.CUBE", "Particle Cannon Carrier", "Patient One", "Please Let Me Get Close", "Run 'n Gun", "Shellminer", "Slash Mode", "Warm Welcome", or "Zapcube" with varying loadouts. The Botcubes come pre-applied with a [[CPS Tube]] so they will drop all intact loot as well as a [[Botcube]] each. If H3-MLN is destroyed, they will drop a [[H3-MLN's Flail]].
+
 [[Heading:2]]Exits[[/Heading]]
+
 There are 3 types of exits in Subcaves:
 [[List]]
 Recycling exit: There is always 1 Recycling exit in Subcaves, guarded by dormant Swarmers and Autobeam Turrets. This exit can skip -9, -8, and -7 depending on the location of Recycling.|
@@ -2824,6 +2838,7 @@ Materials exits: These always lead to -8 Materials. These exits always skip -9 e
 [[Scraptown]] exit: The lost [[Scientist]] and the group of [[Federalist|Federalists]] can both reveal a shortcut to Scraptown.[[/List]]
 
 [[Heading]]Events[[/Heading]]
+
 [[Image]]Subcaves Subdweller Attack.png|Subdwellers attacking, with allied Thugs and Guerrilla[[/Image]]
 [[List]]
 (++) Lost Scientist: A Scientist can appear as Cogmind enters the map. The Scientist will tell Cogmind that they got separated from the rest of their [[UFD]] group. They will periodically indicate the general direction of a secret exit to Scraptown. If they survive to the location of the shortcut, they will reveal the exit that goes directly to Scraptown.|
