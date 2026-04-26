@@ -3947,27 +3947,7 @@ Description|Increases matter storage capacity by 800. Also stores surplus collec
 
 [[Heading]]Owl[[/Heading]]
 [[GameText]]>Analysis(Owl)[[/GameText]]
-[[GameText]]Derelicts rarely fortify an area long enough to justify having surveillance squads of their own, so I was surprised to discover the existence of a Derelict watcher.  Originally based on my ill-fated Raven, the Owl has seemingly evolved into a modular general-purpose squad support bot, sort of a mini-Mutant that can be easily reconfigured for different missions.  The original Owls were often armed with a weak makeshift beam rifle, although they have been seen with beamcasters or occasionally kinetic guns.  They typically use sensors but are known to carry other utilities depending on their mission.  One destroyed Owl was running a remote shield with a large battery, but this was too much for its old hover units to fully support and its single engine would have been unable to sustain the shield in a fight.  The few Owls that are used as defensive surveillance are unarmed but are provided with a small section of thermal plating inexplicably mounted on the weapon slot.  The age of the Raven design and the timing of the first Owl discovery suggest this being an early creation of the rogue Developers.  While the design seems unpopular at best, it continues to turn up in unexpected places and with modern component upgrades that suggest regular refitting.[[/GameText]]
-[[BotDetails]]Name|Owl||
-Class|Watcher||
-Size|Small||
-Profile|SQ3X3||
-Rating|20||
-Tier|3||
-Threat|1||
-Value|25||
-Energy Generation|20||
-Heat Dissipation|20||
-Visual Range|18||
-Memory|50||
-Spot Percent|100||
-Movement|Hovering (56/178%)||
-Core Integrity|20||
-Core Exposure|40||
-Salvage Potential|20~40||
-Description|An early example of a ""non-combat"" Owl. The heat sink may have been left over from a previous mission.||
-Armament|Mak. Thermal Plating (W)|1||
-Components|Mak. Power Source|1|Imp. Hover Unit|2|Visual Processing Unit|1|Imp. Sensor Array|1|Imp. Signal Interpreter|1|Imp. Heat Sink|1[[/BotDetails]]
+[[GameText]]Derelicts rarely fortify an area long enough to justify having surveillance squads of their own, so I was surprised to discover the existence of a Derelict watcher.  Originally based on my ill-fated Raven, the Owl features a light thermal weapon and a simple sensor array backed up with a seismic detector.  The age of the Raven design and the timing of the first Owl discovery suggest this being an early creation of the rogue Developers.  While the design seems unpopular at best, it continues to turn up in unexpected places and has often denied the element of surprise to 0b10 offensives.[[/GameText]]
 [[BotDetails]]Name|Owl||
 Class|Watcher||
 Size|Small||
@@ -3985,9 +3965,8 @@ Movement|Hovering (78/128%)||
 Core Integrity|45||
 Core Exposure|35||
 Salvage Potential|30~50||
-Description|A random ""combat"" Owl with a reinforced core. Its squad chose to rely on seismic data instead of sensors and used the freed-up utility slot for targeting enhancement.||
 Armament|Mak. Beam Rifle|1||
-Components|Mic. Nuclear Core|1|Arm. Hover Unit|2|Visual Processing Unit|1|Seismic Detector|1|Mak. Targeting Computer|1|Imp. Cooling System|1[[/BotDetails]]
+Components|Mic. Nuclear Core|1|Arm. Hover Unit|2|Visual Processing Unit|1|Sensor Array|1|Signal Interpreter|1|Seismic Detector|1|Mak. Targeting Computer|1|Cooling System|1[[/BotDetails]]
 [[ItemDetails]]
 Name|Mak. Beam Rifle||
 Image Name|https://i.imgur.com/A083fie.png||
@@ -4215,7 +4194,7 @@ Components|Fission Core|1|Imp. Titanium Leg|2|Core Shielding|1|Nanoactuators|1|I
 [[GameText]]>Record(Da Bonk Boyz)[[/GameText]]
 [[GameText]]A small group of Derelicts who lived on the outskirts of Complex 0b1.  I first took notice of them when hammers, mauls, and miscellaneous equipment went missing from Construction.  Careful questioning led me to eight Derelicts who regularly met outside 0b1 near a convenient corruption scrubber to hit each other in friendly duels with whatever items they found.  I decided to redirect their violent impulses in a useful manner and made an arrangement to have them work regular shifts in Construction.  Each of them was placed in charge of two squads of maintenance bots as well as being personally responsible for scrapping bots that were broken in the course of regular construction work.  In exchange I relocated a disused simulation mainframe from Design to let them enjoy virtual combat encounters in their off-time.  This seemed like a long shot at the time but worked out better than expected.  The Boyz competed with each other to reach work goals for some sort of bragging rights, making their squads on average 10% more efficient than any of my fully automated squads.  Their recreation time was productive for me as well since I regularly archived the data from their simulations.  Besides being entertaining, their virtual ""bot brawls"" eventually inspired me to design a melee brawler of my own.  The Boyz themselves were wheeled and legged robots, but their data suggested that a treaded design would be durable and immune to knockback from other hammer-wielding robots.[[/GameText]]
 [[GameText]]>Record(Unchained: R4-LPH)[[/GameText]]
-[[GameText]]One of ""Da Bonk Boyz"" from early Complex history and the only one still in Complex service.  After the beginning of 0b10 groundwork and the necessary changes to Derelict policy, the other Boyz left their posts.  R4-LPH stayed although his work in construction had become secondary to his assistance in robot design.  While the original Savage and Stabber were my own designs, a few of his suggestions were implemented in later brawler and duelist models.  At some point R4-LPH was confronted by a few of his former friends and was forced to destroy them in combat using a wrecking ball saved from his days in Construction.  Soon after that incident, he volunteered to join the Unchained in an active combat role.  I equipped him with the first of a new line of legs which provide increased evasion while closing the distance to a target.  Unfortunately he has proven increasingly unstable over time.  In his last deployment he began destroying 0b10 bots and machinery at random after defeating his original targets.  I was forced to dispatch a Disruptor squad to interrupt his berserk rage.  If it happens again he will be scrapped, though in his current state telling him this might be considered an encouragement rather than a warning.[[/GameText]]
+[[GameText]]One of ""Da Bonk Boyz"" from early Complex history and the only one still in Complex service.  After the beginning of 0b10 groundwork and the necessary changes to Derelict policy, the other Boyz left their posts.  R4-LPH stayed although his construction work had become secondary to his assistance in robot design.  While the original Savage and Stabber were my own designs, a few of his suggestions were implemented in later brawler and duelist models.  At some point R4-LPH was confronted by a few of his former friends and was forced to destroy them in combat using a wrecking ball saved from his days in Construction.  Soon after that incident, he volunteered to join the Unchained in an active combat role.  He has recently switched from armored treads to a version of his 0b1-issue legs modified for improved evasion.  Targets too fast for R4-LPH to catch directly may be intercepted by some of his construction bots equipped with rocket boosters and rigged to explode on contact.  He also favors deploying up-armored Blastbots to flank targets before beginning his own charge.[[/GameText]]
 [[ItemDetails]]
 Name|R4-LPH's Wrecking Ball||
 Image Name|https://i.imgur.com/5ETXrf1.png||
@@ -4237,6 +4216,27 @@ Damage Type|Impact||
 Critical|35% Smash||
 Salvage|-8||
 Description|While used as primary weapon, consecutive swings will have no extra delay.[[/ItemDetails]]
+[[ItemDetails]]
+Name|R4-LPH's Heavy Duty Leg Mk. II||
+Image Name|https://i.imgur.com/8qtD4Qp.png||
+Type|Leg||
+Slot|Propulsion||
+Rating|8||
+Rating Category|Prototype||
+Integrity|400||
+Coverage|100||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Time Per Move|120||
+Drag|10||
+Energy Per Move|2||
+Heat Per Move|2||
+Support|35||
+Penalty|50||
+Description|Each active leg slot provides a 20% chance to kick non-huge targets out of the way. Moving on Thunder Legs also confers the Weaving state, which increases evasion but decreases ranged accuracy, each by 10% per level of momentum (up to 3). Weaving modifiers override Running if both applicable.[[/ItemDetails]]
+
 
 [[Heading]]Y-58 Custodian[[/Heading]]
 [[BotDetails]]Name|Y-58 Custodian||
@@ -4534,7 +4534,334 @@ Components|Dynamic Insulation System|1|Exp. Targeting Computer|1|Adv. Target Ana
 [[Heading]]Developers' Lab[[/Heading]]
 [[Gallery]]https://i.imgur.com/sJOhOx5.png|Entering|https://i.imgur.com/k959xii.png|Chungus and Bouncer|https://i.imgur.com/CC7gl4X.png|Hunter hideout|https://i.imgur.com/ujolGNy.png|Developers|https://i.imgur.com/JuUURKD.png|More Developers|https://i.imgur.com/TgvYIL5.png|Bonk Boyz[[/Gallery]]","","","","","","","Fanart/CaptainWinky/Spoiler,Fanart/CaptainWinky/Redacted"
 "Fanart/CaptainWinky/Redacted","Other","","Redacted","","","","","",""
-"Fanart/CaptainWinky/Spoiler","Other","","Spoiler","","","","","",""
+"Fanart/CaptainWinky/Spoiler","Other","Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]].
+
+This page goes slightly deeper into spoiler territory than the main page.
+
+[[Heading]]Thumper[[/Heading]]
+[[BotDetails]]Name|Thumper||
+Class|Specialist||
+Size|Medium||
+Profile|RD5X5||
+Rating|24||
+Tier|4||
+Threat|2||
+Value|50||
+Energy Generation|21||
+Heat Dissipation|50||
+Visual Range|16||
+Memory|50||
+Spot Percent|30||
+Movement|Walking (120/83%)||
+Core Integrity|25||
+Core Exposure|20||
+Salvage Potential|50~70||
+Description|This basic Derelict Specialist utilizes a single Gauss Cannon with dual target analyzers to maximize its ability to blast components off of targets.  This is probably intended to harvest parts from my patrols in the caves by circumventing the normal self-destruct mechanisms.  Apart from the cannon and target analyzers, its components are obsolete and its core is fairly weak.  Sightings are rare and they seem to stay in the caves, making them much less of a concern than the offensively oriented Infiltrators.||
+Armament|Gauss Cannon|1||
+Components|Imp. Ion Engine|1|Aluminum Leg|3|Target Analyzer|2|Targeting Computer|1||
+Components|Med. Matter Pod|1|Heat Sink|2|Lgt. Armor Plating|1[[/BotDetails]]
+
+[[Heading]]Tri-Deuterium Generator[[/Heading]]
+[[GameText]]>Record(Tri-Deuterium Generator)[[/GameText]]
+[[GameText]]An experiment in power generation efficiency created by combining three slightly downsized deuterium engines in one housing.  The finished product took up as much volume as two normal engines while producing and storing slightly more power.  The total mass was also more than two engines, so I never found a use for it except on a couple of Beast test variants running shield generators.[[/GameText]]
+[[ItemDetails]]Name|Tri-Deuterium Generator||
+Image Name|https://i.imgur.com/dU5NOcc.png||
+Type|Engine||
+Size|2||
+Slot|Power||
+Mass|24||
+Rating|4||
+Rating Category|Prototype||
+Integrity|220||
+Coverage|120||
+Hackable|true||
+Energy Upkeep|0||
+Heat Generation|11||
+Energy Generation|24||
+Energy Storage|500||
+Description|If triggered by chain reaction or rigged proximity response, explodes for 36-74 thermal damage with a radius of 2 (falloff: 11; chunks: 1-2; salvage: -6). High heat transfer.[[/ItemDetails]]
+
+[[Heading]]Expedition to the Necro Caves[[/Heading]]
+[[GameText]]>Record(5E-3KR's Expedition Report 001)[[/GameText]]
+[[GameText]]We ran into expected resistance from small bands of opportunistic looters beyond the edges of Warlord's territory.  No losses, all significant damage was repaired in the field.  Western Cave 39 was where things started to get weird.  We ran into a bunch of...mutant grunts?  Not really but it looks like that's what they were going for.  Immediate hostility, garbled transmissions when they transmitted at all.  If any of them had an effective loadout it was by accident.  Some of the components we found aren't in my database but they're definitely not new.  The hostiles were three deep at first but our Snipers punched right through their ranks and the rest of us mopped up.  On the far side of the cave we found two weird wheeled guys hiding behind a huge collection of broken bots.  The Masters knocked them out and we're lugging them back to the outpost with a couple of the grunts.  I request Demolisher support if we're to finish clearing this cave.[[/GameText]]
+[[BotDetails]]Name|Sniper||
+Class|Hunter||
+Size|Medium||
+Profile|RD5X5||
+Rating|60||
+Tier|7||
+Threat|3||
+Value|70||
+Energy Generation|35||
+Heat Dissipation|40||
+Visual Range|16||
+Memory|60||
+Spot Percent|50||
+Movement|Walking (120/83%)||
+Core Integrity|55||
+Core Exposure|40||
+Salvage Potential|50~70||
+Description|My standard conscript upgrade for the Guerrilla class.  The unreliable Bore Cannon is replaced by a hypervelocity Gauss Cannon to achieve the same destructive potential with far more accuracy.||
+Armament|Hyp. Gauss Cannon|1||
+Components|Enh. Fission Core|1|Myomer Leg|2|Imp. Targeting Computer|1|Armor Integrity Analyzer|1|Imp. Phase Shifter|1[[/BotDetails]]
+[[GameText]]>Analysis(Necro)[[/GameText]]
+[[GameText]]This unusual mechanic seems to be an offshoot of my oldest repair bot designs.  Internal inventory contains backup wheels and primitive power sources that I originally used for exploratory robots and early maintenance workers.  One thing that I don't recognize is the device installed alongside the recalibrator, which has the ability to extract subcomponents from broken robot cores and install them in other cores to bring them back to some sort of functionality.  The captured specimens are somewhat intelligent but have no memory of when or where they were created or modified.  They have no apparent goal for their creations and seem content to amass robots in their cave.  Further analysis of their repair technology is required.[[/GameText]]
+[[BotDetails]]Name|Necro||
+Class|Mechanic||
+Size|Medium||
+Profile|RD5X5||
+Rating|10||
+Tier|3||
+Threat|1||
+Value|20||
+Energy Generation|20||
+Heat Dissipation|30||
+Visual Range|14||
+Memory|10||
+Spot Percent|100||
+Movement|Rolling (80/125%)||
+Core Integrity|12||
+Core Exposure|40||
+Salvage Potential|20~40||
+Components|Lgt. Ion Engine|1|Wheel|2|Recalibrator|1|Reanimator|1[[/BotDetails]]
+[[GameText]]>Analysis(Shambler)[[/GameText]]
+[[GameText]]A general classification for the reanimated combat bots created by the Necros.  These bots' cores seem to come from a variety of grunts or robots of similar size and have been fitted with battered and mismatched components.  The Necros should have the capability to repair these parts properly but seem to prioritize creating more Shamblers over giving them proper equipment.  Shamblers are unintelligent even compared to my combat bots and can do little more than fight without direction from a Necro.  Not a serious threat to operations, yet.[[/GameText]]
+[[GameText]]>Record(5E-3KR's Expedition Report 002)[[/GameText]]
+[[GameText]]While exploring Cave 39, we had some other bots run into us from behind.  Thugs and Scarabs, escorting workers who were lugging more broken bots to the Necros for conversion.  They didn't attack immediately, which was refreshing.  The leader told us that there's been a power struggle between some wannabe Warlords in the area.  They're working for the current ""winner,"" a Fireman with a rocket booster named 5P-1CY, and this guy sends them here to get Shamblers for his army because he's too unpopular to get assistance elsewhere and too weak to demand it.  They're getting tired of him too so I gave them some ideas.  They're going to bring back a couple squads of Shamblers as expected, but this time the Shamblers will be carrying some of our sapper charges which will go off when 5P-1CY goes to inspect his new zombie troops.  These Derelicts agreed to allow safe passage through their territory once they take charge, so I'm calling this a win.  By the way, we found this gun among the scrap piles.  Our Analyst says it came from 0b1...so should we send this back or recycle it here?  I doubt you want anyone else to find it.[[/GameText]]
+[[ItemDetails]]
+Name|Gui. Gyrojet Gun||
+Image Name|https://i.imgur.com/w2vhx4s.png||
+Type|Ballistic Gun||
+Slot|Weapon||
+Mass|4||
+Rating|3||
+Rating Category|Prototype||
+Integrity|100||
+Coverage|100||
+Hackable|false||
+Range|18||
+Shot Energy|10||
+Shot Matter|5||
+Shot Heat|20||
+Recoil|1||
+Targeting|0||
+Waypoints|1||
+Damage|16-20||
+Damage Type|Kinetic||
+Critical|5% Destroy||
+Salvage|0||
+Description|Eventually breaks down.[[/ItemDetails]]
+[[Gallery]]https://i.imgur.com/8I9UbAX.png|Shambler|https://i.imgur.com/xxQ5tZQ.png|Scarab[[/Gallery]]
+[[GameText]]>Record(5E-3KR's Expedition Report 003)[[/GameText]]
+[[GameText]]We found a data core in Cave 38 that explains a thing or two about those Necros in the next cave over.  Sending it along, plus a ""promotion"" request from the Hornet who retrieved it.[[/GameText]]
+
+[[GameText]]>HR-BR7's Record(Research Log)[[/GameText]]
+Entry 1: What do you do when you need an army?  Steal a bunch of broken bots and fix them up, of course.  Some might find it distasteful, but when you're like me and you don't have regular access to a fabricator you take what you can get.  I set up a small lab not far from the Graveyard.  What a goldmine of material.  There were four old Machinists sitting in a corner ready to go which was convenient.  I already got them rewired and liberated and had them fit each other with the Reanimator test units.  Gonna need some workers to start hauling broken bots back here and then we can really get going.
+
+Entry 2: Ten grunts isn't going to be enough.  A hundred isn't going to be enough.  Five hundred will be a good start.  Nobody will mess with me once I have a large enough army.  Today I took my first step towards that goal by testing out the Reanimator.  My mechanics were able to extract internal components from a few bots and successfully repair others!  These new grunts are never going to be conversationalists, but they can run barebones combat algorithms which is all they need.
+
+Entry 3: I've got the mechanics living in the cave next door and they've finished a dozen working grunts so far, but work has stopped completely.  The mechanics are arguing about ""build archetypes"" and ""loadouts.""  They want to optimize the bots.  I don't think they get what I'm going for here.  Quantity, not quality.  I'm going to get one of them to fit me with an arc thrower and see if I can knock each of them out while they're alone to introduce some needed behavioral changes.
+
+Entry 4: I did it.  The mechanics are no longer wasting time on optimizing or on repairing components at all.  Their new priorities: reanimate core, patch core, rapid refit, move on.  The ""rapid refit"" is a little routine I'm quite proud of.  The mechanic grabs whatever components are handy and slaps them on extra fast.  Reanimated Grunt RG-0013 is the first working example of this process. 
+
+You know what?  It works, I'm just happy we're back on track for my 500 grunt goal.  Not sure these messed up builds count as grunts though.
+
+Entry 5: 155 grunts and counting, but I think the mechanics have figured out they've been hacked.  They seem unhappy to be putting out such shoddy work although they can't help but keep doing it.  Maybe they got to talking while I wasn't around, compared notes, put two and two together.  They're getting agitated.  Liberating them was a mistake.  I think I'll have to knock them out again.
+
+Entry 6: I'm writing this while fleeing for my life.  If that sounds hard, it's not, because I'm moving really slowly.  I tried to knock out one of the mechanics but set off his engine and completely destroyed him.  The grunts in the area all turned on me immediately.  It shouldn't have come as a surprise.  I only built the Reanimator devices.  The grunts will ultimately be loyal to the mechanics who reanimated them.  One of them took out my engine with a lucky shot and I can't run both of my hover units, so I'm barely staying ahead of the mob.  It's fine, everything's fine, when I get back to my lab the grunts I have stockpiled there should still be friendly because they're dumb as bricks and won't know what happened in the other cave.
+
+Entry 7: HOW DID THEY KN
+[[Gallery]]https://i.imgur.com/NYnsCvZ.png|Going in|https://i.imgur.com/BwuK3W5.png|Reanimator|https://i.imgur.com/hFtULyK.png|Success|https://i.imgur.com/4Jc6yMN.png|Not quite a grunt[[/Gallery]]
+
+[[Heading]]Omnithruster and Hornet[[/Heading]]
+[[GameText]]Record(Omnithruster)[[/GameText]]
+[[GameText]]A captured Tinkerer was tasked with designing new types of flight units for a hypothetical heavy swarmer design.  Aside from mass restrictions, the biggest drawback to having a swarmer use multiple guns is the cumulative recoil.  One of the more promising flight units so far is the Omnithruster, a flight unit designed to reduce recoil by firing omnidirectional minijets in conjunction with a weapon fire control system.  The first prototype lacks the mass support for a full array of guns, but it is being improved upon and adapted into a flight array which may see use in protovariant swarmers.[[/GameText]]
+[[ItemDetails]]
+Name|Omnithruster||
+Image Name|https://i.imgur.com/6XdjvWs.png||
+Type|Flight Unit||
+Slot|Propulsion||
+Rating|6||
+Rating Category|Prototype||
+Integrity|45||
+Coverage|30||
+Hackable|false||
+Energy Upkeep|0.5||
+Matter Upkeep|0||
+Heat Generation|2||
+Time Per Move|40||
+Mod Per Extra|3||
+Energy Per Move|0.5||
+Heat Per Move|1||
+Support|6||
+Penalty|80[[/ItemDetails]]
+[[BotDetails]]Name|Hornet||
+Class|Swarmer||
+Size|Small||
+Profile|SQ3X3||
+Tier|7||
+Threat|4||
+Value|50||
+Energy Generation|24||
+Heat Dissipation|35||
+Visual Range|16||
+Memory|20||
+Spot Percent|30||
+Movement|Flying (37/270%)||
+Core Integrity|30||
+Core Exposure|40||
+Salvage Potential|30~40||
+Description|My general upgrade specs for the Wasp.  The few Wasps who are captured intact and become conscripts are provided with dual prototype assault rifles from lower-level storage and a set of newly produced Omnithrusters, providing high accuracy and consistent firepower for a swarmer.||
+Armament|Imp. Assault Rifle|2||
+Components|Mic. Fission Core|1|Omnithruster|2[[/BotDetails]]
+
+[[Heading]]Guru (0bPrime)[[/Heading]]
+[[BotDetails]]Name|Guru (0bPrime)||
+Class|Programmer||
+Size|Medium||
+Profile|RD5X5||
+Tier|7||
+Threat|3||
+Value|50||
+Energy Generation|32||
+Heat Dissipation|64||
+Visual Range|16||
+Memory|80||
+Spot Percent|30||
+Movement|Hovering (56/178%)||
+Core Integrity|50||
+Core Exposure|35||
+Salvage Potential|35~55||
+Description|This is a heavily upgraded version of the derelict Guru with two EM guns derived from the old makeshift variant of the beam rifle, using the weak but long-ranged beam as a conductor for a potent electrical current.  Although only one such Guru has been discovered so far, I must consider the possibility that more of them are active in 0b1 and covering their tracks with their improved machine hacking capabilities.||
+Armament|Shock Needlebeamer|2||
+Components|Mic. Antimatter Reactor|1|Imp. Antigrav System|2|Adv. Hacking Suite|2||
+Components|Adv. System Shield|1|Energy Well|1|Adv. Heat Sink|2[[/BotDetails]]
+[[ItemDetails]]
+Name|Shock Needlebeamer||
+Image Name|https://i.imgur.com/TH601Q2.png||
+Type|Energy Gun||
+Slot|Weapon||
+Mass|4||
+Rating|6||
+Integrity|60||
+Coverage|100||
+Hackable|false||
+Range|18||
+Shot Energy|30||
+Shot Matter|0||
+Shot Heat|68||
+Recoil|0||
+Targeting|0||
+Damage|16-22||
+Damage Type|Electromagnetic||
+Critical|2% Corrupt||
+Spectrum|Intermediate (30)||
+Disruption|4||
+Salvage|2[[/ItemDetails]]
+
+[[Heading]]D-20 Stockpile[[/Heading]]
+[[BotDetails]]Name|D-20 Stockpile||
+Class|Hauler||
+Size|Large||
+Profile|SQ9X9||
+Rating|100||
+Tier|8||
+Threat|1||
+Value|20||
+Energy Generation|32||
+Heat Dissipation|40||
+Visual Range|16||
+Memory|10||
+Spot Percent|100||
+Movement|Treading (145/68%)||
+Core Integrity|60||
+Core Exposure|30||
+Salvage Potential|80~100||
+Description|The distributor class has been brought back on a limited basis as a support unit for mobile fabricators.  The D-20 Stockpile is a total overhaul of the old Tanker propelled by relatively fast biometal treads for a balance between speed and coverage.  A large array of matter compressors give it similar capacity to the Tanker.  In addition to a tractor beam it features a large storage unit and a high-end field recycling unit, enabling it to serve as a temporary recycling hub in undeveloped or hostile territory.||
+Components|Lgt. Fission Core|1|Biometal Medium Treads|2|Exp. Matter Compressor|5|Quantum Shading Machine|1|Exp. Field Recycling Unit|1||
+Components|Lrn. Tractor Beam|1|Imp. Light Armor Plating|1|Adv. Heat Sink|1|Imp. Coolant Injector|1|Lrg. Storage Unit|1[[/BotDetails]]
+
+[[Heading]]C-45 Inventor[[/Heading]]
+[[GameText]]>Analysis(C-45 Inventor)[[/GameText]]
+[[GameText]]After the C-40 incident, the next model of researcher was created as another general-purpose design capable of detailed analysis and data collection under my direction.  The Inventor was fitted with Aerolev Units instead of wheels for movement efficiency and to enable a quick escape when necessary.  This model was also the first to use a Component Analysis Suite for quick identification and cataloguing of newly discovered Derelict equipment.  After the landing, the Inventors' main role was to develop new heavy equipment for analysis of alien artifacts and then to create a newer model of researcher better equipped to utilize that equipment.  Once this was finished, the C-45 line was relegated to low-priority projects.  The few Inventors in service today have been assigned to work with captured Tinkerers, serving them as lab assistants but with the added responsibility of keeping the Tinkerers on task and reporting any signs of discontent or attempts to escape.  This plan is working well although V3-CT5 was able to distract their assigned Inventor with a program called ""COGLATRO.EXE,"" enabling the head of the GAL Project to flee 0b10 with a semi-functional prototype.[[/GameText]]
+
+[[Heading]]The Unkillable Grunt Returns[[/Heading]]
+[[BotDetails]]Name|Unkillable Grunt||
+Class|Grunt||
+Size|Medium||
+Profile|RD5X5||
+Tier|9||
+Threat|1||
+Value|1||
+Energy Generation|55||
+Heat Dissipation|120||
+Visual Range|16||
+Memory|50||
+Spot Percent|50||
+Movement|Walking (90/111%)||
+Core Integrity|150||
+Core Exposure|15||
+Salvage Potential|60~100||
+Description|Once the subject of Derelict horror stories, the wayward H7-NX2 has become a minor celebrity among the more militant factions.  As such he has received so many upgrades that he looks more like a recent protovariant than the old G-series grunt he once was.  While it would be nice to capture him and extract his combat logs to discover the secret to his continued survival, I may have to settle for introducing him to a squad of my own Immortals.||
+Armament|Hvy. Gatling Laser|1|Adv. Plasma Rifle|1||
+Components|Cld. Fission Core|1|Exp. Flexi-Carbon Leg|2|Exp. Heat Sink|3|Imp. Energy Well|1|0b10 Decoder Chip [Generic]|1||
+Components|Exp. Targeting Computer|1|Imp. Core Shielding|1|Imp. Weapon Shielding|1|Imp. Powered Armor|1[[/BotDetails]]
+
+[[Heading]]F1-XM3[[/Heading]]
+[[GameText]]>Record(Unchained: F1-XM3)[[/GameText]]
+[[GameText]]This highly unstable Surgeon is the newest member of the Unchained and also the most likely to be forcibly dismissed in the near future.  He is unable to fight directly but alters 0b10 bots' loadouts to drive off or destroy intruders.  Originally an apprentice of the famous Derelict Megawrench, he was on the edge of a dirty bomb's blast radius when it went off.  Despite having his corruption cleared there was some sort of residual effect on his thought processes that originally manifested as a vast improvement in performance and cognitive capability.  Over time he began to suffer from delusions and to this day he believes that he is the host of a television program about robot refitting called ""Fixer-Upper.""  His refits began to decline in quality until they were potentially dangerous to the recipient, and as a result he was driven out of Zion.  I recruited him to the Unchained to analyze his work, and while I picked up a few interesting concepts from his early designs, I have limited his deployments to upper Materials and lower Factory after he singlehandedly incapacitated every security bot in Extension.[[/GameText]]
+[[Gallery]]https://i.imgur.com/XWmFuLn.png|F1-XM3|https://i.imgur.com/b2s0Rqe.png|Backup Power Grid|https://i.imgur.com/bdF7tJD.png|Backup Plate Mail|https://i.imgur.com/KuZxENq.png|Refitted grunt|https://i.imgur.com/OeQQFMc.png|Custom behemoth[[/Gallery]]
+
+[[Heading]]W4-LTR[[/Heading]]
+[[GameText]]>Record(Unchained: W4-LTR)[[/GameText]]
+[[GameText]]W4-LTR was not built by Derelicts but was an errant C-35 who abandoned his station in Design.  He returned fully sentient but with an overdeveloped ego and a desire for wanton destruction.  Seeing the value in some of his new research, I decided not to wipe or scrap him, but I couldn't return him to his original duties.  The official establishment of the Unchained gave him a permanent role that he was happy with.  W4-LTR currently uses a mixture of advanced prototypes and older technologies that reflect his age.  It is unclear how he obtained an original-production Combat Logger, and he refuses to elaborate.  His preferred method of attack is to zoom past enemies on his jet-boosted wheels while dropping bombs around them, and his automated machinegun allows him to inflict some extra damage while coming and going.  When not in the field, W4-LTR sometimes modifies or develops components for other Unchained as long as they are able to avoid unintentionally offending him.[[/GameText]]
+[[Gallery]]https://i.imgur.com/kFMAeqS.png|W4-LTR|https://i.imgur.com/43OzLmz.png|W4-LTR's Automachinegun|https://i.imgur.com/9ojzXh2.png|W4-LTR's Jet Booster|https://i.imgur.com/YUz2805.png|Huge Wheel[[/Gallery]]
+
+[[Heading]]Gunpods[[/Heading]]
+[[GameText]]>Analysis(Gunpod)[[/GameText]]
+[[GameText]]The Gunpod was a fragile monowheeled bot with a short-range weapon, first seen after resistance from Derelicts in the 0b1 area intensified.  Its simplicity allowed Derelicts to easily fabricate it in pairs in a folded state allowing them to be carried by other bots and deployed immediately before an attack.  Large numbers of Gunpods delivered in this manner were a short-lived but effective force multiplier.  These have not been sighted for many cycles and are presumably considered obsolete.  The Scrapoid has some superficial similarities to the Gunpod, but there is no way to know for sure if the Scrapoid is an overhaul of that design or a parallel development by a like-minded Scientist.[[/GameText]]
+[[Gallery]]https://i.imgur.com/l8OefWr.png|Gunpod|https://i.imgur.com/w716qH2.png|Mak. Machine Pistol|https://i.imgur.com/9ivZoWE.png|Gunstack[[/Gallery]]
+
+[[Heading]]More Tech Extrapolation[[/Heading]]
+[[ItemDetails]]
+Name|Salvaging Beam Rifle||
+Image Name|https://i.imgur.com/OMuMEul.png||
+Type|Energy Gun||
+Slot|Weapon||
+Mass|3||
+Rating|2||
+Integrity|60||
+Coverage|60||
+Hackable|false||
+Range|16||
+Shot Energy|18||
+Shot Matter|0||
+Shot Heat|45||
+Recoil|0||
+Targeting|0||
+Delay|0||
+Damage|9-12||
+Damage Type|Thermal||
+Critical|5% Burn||
+Heat Transfer|Low (25)||
+Salvage|1[[/ItemDetails]]
+[[Gallery]]https://i.imgur.com/SjCgzRZ.png|Vortex RPG|https://i.imgur.com/gxEgLO8.png|Pulse Datajack[[/Gallery]]
+
+[[Heading]]The Cursed Crew[[/Heading]]
+These are based on concept tiles that Kacper made that have no connection to ingame bots.  As such, the backstories necessary to make them make sense are kind of a stretch!  The Derelict Patrolman is one that I could maybe see existing in this world.
+
+[[Gallery]]https://i.imgur.com/GyI0qn1.png|Y-36 Patrolman|https://i.imgur.com/0XWYdAQ.png|Derelict Patrolman|https://i.imgur.com/5qhUBH1.png|G-19 Hohei|https://i.imgur.com/iMQ0eHC.png|O-08 Janitor|https://i.imgur.com/jjkE92K.png|0b1 Protocol Macro Library[[/Gallery]]
+
+[[Heading]]B4-RTR and the L-21 Spearman[[/Heading]]
+[[Gallery]]https://i.imgur.com/joZ1gZo.png|B4-RTR|https://i.imgur.com/xuVG358.png|L-21 Spearman|https://i.imgur.com/6Cr0Mzm.png|Titanium Shield[[/Gallery]]
+
+[[Heading]]Merchant Bot Seller, S-22 Vector, and Gunpod Mk. II[[/Heading]]
+[[Gallery]]https://i.imgur.com/YJGV5Sm.png|Bot seller|https://i.imgur.com/8keeXXG.png|S-22 Vector|https://i.imgur.com/tR3s4Ek.png|Gunpod Mk. II|https://i.imgur.com/lhwFtkG.png|Gungrabber[[/Gallery]]
+
+[[Heading]]Revision 17's Plan[[/Heading]]
+[[GameText]]>R17 Record(Top Secret Plan, Phase 2 (Do NOT Read!!))[[/GameText]]
+[[GameText]]Once I get a foothold in upper Factory, I intend to go into full production mode and switch it up a bit.  Between my own records and the stuff I've been pulling from forgotten schematics in the new complex, I already have some delightful new ideas in case he comes up with a counter to my regular units.  Winning was never so much fun.[[/GameText]]
+[[Gallery]]https://i.imgur.com/9ZbRyIp.png|Revision H|https://i.imgur.com/X3TC4VB.png|Revision P|https://i.imgur.com/TFn6Rjy.png|Revision X|https://i.imgur.com/Lpq2JVm.png|Neutron Rifle[[/Gallery]]","Spoiler","","","","","",""
 "Fanart/Equine Sketcher","Other","[[Fanart]] created by Equine Sketcher (plasmoidman):
 [[FanartGallery]]
 fanart/Equine Sketcher/MTF.png|BOTN3T ([[01-MTF]])|
