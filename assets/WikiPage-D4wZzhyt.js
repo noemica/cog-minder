@@ -1,4 +1,4 @@
-import{c as k,r as T,j as a,L as j,I as D,B as v,J as V,w as le,K as ve,M as Ce,f as I,N as Se,y as W,T as L,O as he,a as Z,s as Te,Q as ke,S as J,q as xe,U as He,V as de,z as Ae,u as ce,W as $,X as Ge,Y as O,Z as Re,_ as Ie,$ as U,a0 as Ne,a1 as De}from"./index-DaO69JtY.js";import{l as Pe}from"./lore-08CTWJsY.js";import{h as Ee,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as me,B as Y,I as ge,a as Le,L as Fe,b as Be,u as We}from"./BotDetails-DCME4jdM.js";import{R as qe,T as ee,a as Q,u as Oe}from"./ItemPopover-rfAM-J__.js";import{S as Ue}from"./Table-BBKOowl4.js";import{e as je}from"./partColumnDefs-CsS0_5tK.js";/* empty css              */import"./bots-Bp2ek_k2.js";import"./simulatorCalcs-iYmomMFc.js";import"./items-Dv7HSrcJ.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as k,r as T,j as a,L as j,I as D,B as v,J as V,w as le,K as ve,M as Ce,f as I,N as Se,y as W,T as L,O as he,a as Z,s as Te,Q as ke,S as J,q as xe,U as He,V as de,z as Ae,u as ce,W as $,X as Ge,Y as O,Z as Re,_ as Ie,$ as U,a0 as Ne,a1 as De}from"./index-CzpAA6TF.js";import{l as Pe}from"./lore-08CTWJsY.js";import{h as Ee,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as me,B as Y,I as ge,a as Le,L as Fe,b as Be,u as We}from"./BotDetails-DAUM2bFV.js";import{R as qe,T as ee,a as Q,u as Oe}from"./ItemPopover-HbwSK2xY.js";import{S as Ue}from"./Table-CbrX5JZH.js";import{e as je}from"./partColumnDefs-iLkcgNPx.js";/* empty css              */import"./bots-Bp2ek_k2.js";import"./simulatorCalcs-dLs4JrCt.js";import"./items-Dv7HSrcJ.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -4956,7 +4956,11 @@ Components|Lgt. Nuclear Core|2|Arm. Leg|2|Imp. Light Armor Plating|2|Imp. Coolin
 Components|Dynamic Insulation System|1|Exp. Targeting Computer|1|Adv. Target Analyzer|1[[/BotDetails]]
 
 [[Heading]]Developers' Lab[[/Heading]]
-[[Gallery]]https://i.imgur.com/sJOhOx5.png|Entering|https://i.imgur.com/k959xii.png|Chungus and Bouncer|https://i.imgur.com/CC7gl4X.png|Hunter hideout|https://i.imgur.com/ujolGNy.png|Developers|https://i.imgur.com/JuUURKD.png|More Developers|https://i.imgur.com/TgvYIL5.png|Bonk Boyz[[/Gallery]]`,Subpages:["Fanart/CaptainWinky/Spoiler","Fanart/CaptainWinky/Redacted"]},{Name:"Fanart/CaptainWinky/Redacted",Content:`Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]].
+[[Gallery]]https://i.imgur.com/sJOhOx5.png|Entering|https://i.imgur.com/k959xii.png|Chungus and Bouncer|https://i.imgur.com/CC7gl4X.png|Hunter hideout|https://i.imgur.com/ujolGNy.png|Developers|https://i.imgur.com/JuUURKD.png|More Developers|https://i.imgur.com/TgvYIL5.png|Bonk Boyz|https://i.imgur.com/Lo6oJdM.png|Microbehemoth[[/Gallery]]
+
+[[Heading]]Misc[[/Heading]]
+[[Gallery]]https://i.imgur.com/iAtUkvB.png|Core Guard|https://i.imgur.com/HVrHqiH.png|Gryphon|https://i.imgur.com/TRA1l8s.png|Mask of El Bonko[[/Gallery]]
+`,Subpages:["Fanart/CaptainWinky/Spoiler","Fanart/CaptainWinky/Redacted"]},{Name:"Fanart/CaptainWinky/Redacted",Content:`Original thread on gridsagegames forums [[https://www.gridsagegames.com/forums/index.php?topic=1773.0|here]].
 
 This page contains numerous references to endgame content and heavily redacted lore.
 
@@ -5222,6 +5226,9 @@ Description|This basic Derelict Specialist utilizes a single Gauss Cannon with d
 Armament|Gauss Cannon|1||
 Components|Imp. Ion Engine|1|Aluminum Leg|3|Target Analyzer|2|Targeting Computer|1||
 Components|Med. Matter Pod|1|Heat Sink|2|Lgt. Armor Plating|1[[/BotDetails]]
+
+[[Heading]]Slab[[/Heading]]
+[[Gallery]]https://i.imgur.com/JnJNIWj.png|Slab[[/Gallery]]
 
 [[Heading]]Tri-Deuterium Generator[[/Heading]]
 [[GameText]]>Record(Tri-Deuterium Generator)[[/GameText]]
@@ -5534,7 +5541,14 @@ These are based on concept tiles that Kacper made that have no connection to ing
 [[Heading]]Revision 17's Plan[[/Heading]]
 [[GameText]]>R17 Record(Top Secret Plan, Phase 2 (Do NOT Read!!))[[/GameText]]
 [[GameText]]Once I get a foothold in upper Factory, I intend to go into full production mode and switch it up a bit.  Between my own records and the stuff I've been pulling from forgotten schematics in the new complex, I already have some delightful new ideas in case he comes up with a counter to my regular units.  Winning was never so much fun.[[/GameText]]
-[[Gallery]]https://i.imgur.com/9ZbRyIp.png|Revision H|https://i.imgur.com/X3TC4VB.png|Revision P|https://i.imgur.com/TFn6Rjy.png|Revision X|https://i.imgur.com/Lpq2JVm.png|Neutron Rifle[[/Gallery]]`,Spoiler:"Spoiler"},{Name:"Fanart/Equine Sketcher",Content:`[[Fanart]] created by Equine Sketcher (plasmoidman):
+[[Gallery]]https://i.imgur.com/9ZbRyIp.png|Revision H|https://i.imgur.com/X3TC4VB.png|Revision P|https://i.imgur.com/TFn6Rjy.png|Revision X|https://i.imgur.com/Lpq2JVm.png|Neutron Rifle[[/Gallery]]
+
+[[Heading]]Assembled Heavy[[/Heading]]
+[[Gallery]]https://i.imgur.com/E0PEsPZ.png|A-Heavy|https://i.imgur.com/l5ADyof.png|Asb. Beam Cannon|https://i.imgur.com/hgFsOBC.png|Asb. Dual Flak Cannon|https://i.imgur.com/4NWfQTP.png|Asb. Myomer Leg|https://i.imgur.com/brBCr2K.png|Asb. Adaptive Armor[[/Gallery]]
+
+[[Heading]]Borg Parts[[/Heading]]
+[[Gallery]]https://i.imgur.com/jCIsZin.png|Sfc. Field Destabilizer|https://i.imgur.com/YoVfREN.png|Sfc. Interception Grid[[/Gallery]]
+`,Spoiler:"Spoiler"},{Name:"Fanart/Equine Sketcher",Content:`[[Fanart]] created by Equine Sketcher (plasmoidman):
 [[FanartGallery]]
 fanart/Equine Sketcher/MTF.png|BOTN3T ([[01-MTF]])|
 fanart/Equine Sketcher/eq-skt.png|EQ-SKT's Lab
