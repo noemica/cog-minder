@@ -283,6 +283,7 @@ function WeaponRow({
                     item={weaponItem}
                     tooltip="Show details about the part."
                     text="?"
+                    showBots={false}
                     showWikiLink={true}
                 />
             </div>

@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
+import { Link } from "wouter";
 
+import { Bot } from "../../types/botTypes";
 import {
     HeatTransfer,
     Item,
@@ -9,7 +11,11 @@ import {
     UtilityItem,
     WeaponItem,
 } from "../../types/itemTypes";
-import { parseIntOrDefault } from "../../utilities/common";
+import { canShowSpoiler, getLinkSafeString, parseIntOrDefault } from "../../utilities/common";
+import useBotData from "../Effects/useBotData";
+import { useShowBotsWithPart, useSpoilers } from "../Effects/useLocalStorageValue";
+import { BotTooltip } from "../Pages/WikiPage/WikiTooltips";
+import { ItemBotPopoverButton } from "../Popover/BotPopover";
 import DetailsValueLine, {
     DetailsEmptyLine,
     DetailsItemArtLine,
@@ -210,6 +216,40 @@ function splitEffectDescription(val: string) {
         </span>
     ));
     return <>{nodes}</>;
+}
+
+function BotLine({
+    botString,
+    bot,
+    popoversToLinks,
+    showWikiLink,
+}: {
+    botString: string;
+    bot: Bot | undefined;
+    popoversToLinks: boolean;
+    showWikiLink: boolean;
+}) {
+    let itemNode: ReactNode = botString.padEnd(44);
+
+    if (popoversToLinks && bot !== undefined) {
+        itemNode = <Link href={`/${getLinkSafeString(bot.name)}`}>{itemNode}</Link>;
+    }
+
+    const line = (
+        <pre className="details-part">
+            <span className="bot-popover-item-bracket">[</span>
+            {itemNode}
+            <span className="bot-popover-item-bracket">]</span>
+        </pre>
+    );
+
+    if (bot === undefined) {
+        return line;
+    } else if (popoversToLinks) {
+        return <BotTooltip bot={bot}>{line}</BotTooltip>;
+    } else {
+        return <ItemBotPopoverButton bot={bot} triggerContent={line} showWikiLink={showWikiLink} />;
+    }
 }
 
 function CannonGunPartDetails({ item }: { item: WeaponItem }) {
@@ -931,7 +971,22 @@ function SpecialWeaponPartDetails({ item }: { item: WeaponItem }) {
     );
 }
 
-export default function ItemDetails({ item, showWikiLink }: { item: Item; showWikiLink?: boolean }) {
+export default function ItemDetails({
+    item,
+    showWikiLink,
+    popoversToLinks = false,
+    showBots = true,
+}: {
+    item: Item;
+    popoversToLinks?: boolean;
+    showBots?: boolean;
+    showWikiLink?: boolean;
+}) {
+    const botData = useBotData();
+    const bots = botData.getAllBotsSorted();
+    const spoilers = useSpoilers();
+    showBots = showBots && useShowBotsWithPart();
+
     let typeSpecificDetails: ReactNode = <></>;
     switch (item.slot) {
         case "Power":
@@ -1025,6 +1080,44 @@ export default function ItemDetails({ item, showWikiLink }: { item: Item; showWi
         );
     }
 
+    let botDetails: ReactNode | undefined;
+    if (showBots) {
+        // Find all bots that use the item
+        const botsWithItem: Bot[] = bots.filter((bot) => {
+            if (!canShowSpoiler(bot.spoiler, spoilers)) {
+                return false;
+            }
+
+            for (const botItem of bot.armamentData.concat(bot.componentData)) {
+                if (botItem.name == item.name) {
+                    return true;
+                }
+
+                for (const itemOption of bot.armamentOptionData.concat(bot.componentOptionData)) {
+                    for (const botItem of itemOption) {
+                        if (botItem.name == item.name) {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
+        });
+
+        if (botsWithItem.length > 0) {
+            botDetails = (
+                <>
+                    <DetailsEmptyLine />
+                    <DetailsSummaryLine text="Bots With Part" />
+                    {botsWithItem.map((bot) => (
+                        <BotLine bot={bot} botString={bot.name} popoversToLinks={popoversToLinks} showWikiLink={true} />
+                    ))}
+                </>
+            );
+        }
+    }
+
     const attributionDetails = !item.customItem && (
         <>
             <DetailsEmptyLine />
@@ -1083,6 +1176,7 @@ export default function ItemDetails({ item, showWikiLink }: { item: Item; showWi
             {fabricationDetails}
             {fullNameDetails}
             {attributionDetails}
+            {botDetails}
         </div>
     );
 }

@@ -1186,7 +1186,13 @@ function PartRow({
                 value={itemOptions.find((o) => o.value === partInfo.name)}
                 options={itemOptions}
             />
-            <ItemPopoverButton item={item} tooltip="Show details about the part." text="?" showWikiLink={true} />
+            <ItemPopoverButton
+                item={item}
+                tooltip="Show details about the part."
+                text="?"
+                showBots={false}
+                showWikiLink={true}
+            />
         </div>
     );
 

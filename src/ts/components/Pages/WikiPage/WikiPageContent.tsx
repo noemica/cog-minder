@@ -85,7 +85,7 @@ function ItemContent({ entry, parsedNode }: { entry: WikiEntry; parsedNode: Reac
     return (
         <>
             <div className="wiki-infobox">
-                <ItemDetails item={item} />
+                <ItemDetails item={item} popoversToLinks={true} />
             </div>
             {parsedNode}
         </>

@@ -29,15 +29,7 @@ export function BotLink({ bot, linkTarget, text }: { bot: Bot; linkTarget?: stri
     );
 }
 
-export function ItemLink({ item, linkTarget, text }: { item: Item; linkTarget?: string; text?: ReactNode }) {
-    return (
-        <ItemTooltip item={item}>
-            <HashLink to={linkTarget || `/${getLinkSafeString(item.name)}`}>{text || item.name}</HashLink>
-        </ItemTooltip>
-    );
-}
-
-export function ItemTooltip({ item, children }: { item: Item; children: ReactNode }) {
+export function BotTooltip({ bot, children }: { bot: Bot; children: ReactNode }) {
     const positioning = useContext(PopupPositioningContext);
     if (positioning === undefined) {
         throw Error("Missing PopupPositioningContext");
@@ -47,7 +39,31 @@ export function ItemTooltip({ item, children }: { item: Item; children: ReactNod
         <Tooltip placement={positioning.placement} shouldShift={positioning.shouldShift}>
             <TooltipTrigger asChild={true}>{children}</TooltipTrigger>
             <TooltipContent floatingArrowClassName="item-tooltip-arrow" className="bot-tooltip">
-                <ItemDetails item={item} />
+                <BotDetails bot={bot} />
+            </TooltipContent>
+        </Tooltip>
+    );
+}
+
+export function ItemLink({ item, linkTarget, text }: { item: Item; linkTarget?: string; text?: ReactNode }) {
+    return (
+        <ItemTooltip item={item}>
+            <HashLink to={linkTarget || `/${getLinkSafeString(item.name)}`}>{text || item.name}</HashLink>
+        </ItemTooltip>
+    );
+}
+
+export function ItemTooltip({ item, children, showBots }: { item: Item; children: ReactNode; showBots?: boolean }) {
+    const positioning = useContext(PopupPositioningContext);
+    if (positioning === undefined) {
+        throw Error("Missing PopupPositioningContext");
+    }
+
+    return (
+        <Tooltip placement={positioning.placement} shouldShift={positioning.shouldShift}>
+            <TooltipTrigger asChild={true}>{children}</TooltipTrigger>
+            <TooltipContent floatingArrowClassName="item-tooltip-arrow" className="bot-tooltip">
+                <ItemDetails item={item} showBots={showBots} />
             </TooltipContent>
         </Tooltip>
     );

@@ -27,6 +27,14 @@ export type SavedWikiEntries = {
     entries: SavedWikiEntry[];
 };
 
+export function useShowBotsWithPart() {
+    return useValue<boolean>(localStorageSpoilersName, true);
+}
+
+export function useEditableShowBotsWithPart() {
+    return useEditableValue<boolean>(localStorageSpoilersName, true);
+}
+
 export function useSpoilers() {
     return useValue<Spoiler>(localStorageSpoilersName, "None", isValidSpoilerType);
 }
@@ -39,20 +47,20 @@ export function useLastLocation() {
     return useEditableValue<string>(localStorageLastLocationName, "/");
 }
 
-export function useTheme() {
-    return useValue<ThemeType>(localStorageThemeName, "Dark", isValidThemeType);
-}
-
-export function useEditableTheme() {
-    return useEditableValue<ThemeType>(localStorageThemeName, "Dark", isValidThemeType);
-}
-
 export function usePrerelease() {
     return useValue<boolean>(localStoragePrereleasesName, false);
 }
 
 export function useEditablePrerelease() {
     return useEditableValue<boolean>(localStoragePrereleasesName, false);
+}
+
+export function useTheme() {
+    return useValue<ThemeType>(localStorageThemeName, "Dark", isValidThemeType);
+}
+
+export function useEditableTheme() {
+    return useEditableValue<ThemeType>(localStorageThemeName, "Dark", isValidThemeType);
 }
 
 export function useUseWikiPartGroupSelectName() {

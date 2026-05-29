@@ -1,5 +1,6 @@
 import { ReactNode, useContext, useState } from "react";
 
+import { Bot } from "../../types/botTypes";
 import { Item } from "../../types/itemTypes";
 import { getItemAsciiArtImageName } from "../../utilities/common";
 import Button from "../Buttons/Button";
@@ -15,10 +16,11 @@ type ItemPopoverProps = {
     item: Item;
     open?: boolean;
     setOpen?: (open: boolean) => void;
+    showBots?: boolean;
     showWikiLink?: boolean;
 };
 
-function ItemPopover({ button, item, open, setOpen, showWikiLink }: ItemPopoverProps) {
+function ItemPopover({ button, item, open, setOpen, showBots, showWikiLink }: ItemPopoverProps) {
     const positioning = useContext(PopupPositioningContext);
     if (positioning === undefined) {
         throw Error("Missing PopupPositioningContext");
@@ -38,7 +40,9 @@ function ItemPopover({ button, item, open, setOpen, showWikiLink }: ItemPopoverP
             <PopoverTrigger asChild={true}>{button}</PopoverTrigger>
             <PopoverContent floatingArrowClassName="item-popover-arrow">
                 <div className="popover">
-                    {(open === undefined || open) && <ItemDetails item={item} showWikiLink={showWikiLink} />}
+                    {(open === undefined || open) && (
+                        <ItemDetails item={item} showBots={showBots} showWikiLink={showWikiLink} />
+                    )}
                 </div>
             </PopoverContent>
         </Popover>
@@ -46,15 +50,17 @@ function ItemPopover({ button, item, open, setOpen, showWikiLink }: ItemPopoverP
 }
 
 export function BotItemPopoverButton({
-    triggerContent,
     item,
+    triggerContent,
+    showBots,
     showWikiLink,
 }: {
-    triggerContent: ReactNode;
     item: Item;
+    triggerContent: ReactNode;
+    showBots?: boolean;
     showWikiLink?: boolean;
 }) {
-    return <ItemPopover button={triggerContent} item={item} showWikiLink={showWikiLink} />;
+    return <ItemPopover button={triggerContent} item={item} showBots={showBots} showWikiLink={showWikiLink} />;
 }
 
 export function GalleryItemPopoverButton({ item }: { item: Item }) {
@@ -85,12 +91,14 @@ export default function ItemPopoverButton({
     item,
     text,
     tooltip,
+    showBots,
     showWikiLink,
 }: {
     className?: string;
     item: Item;
     text?: string;
     tooltip?: string;
+    showBots?: boolean;
     showWikiLink: boolean;
 }) {
     const [open, setOpen] = useState(false);
@@ -103,5 +111,5 @@ export default function ItemPopoverButton({
         </div>
     );
 
-    return <ItemPopover button={button} item={item} open={open} setOpen={setOpen} showWikiLink={showWikiLink} />;
+    return <ItemPopover button={button} item={item} open={open} setOpen={setOpen} showBots={showBots} showWikiLink={showWikiLink} />;
 }

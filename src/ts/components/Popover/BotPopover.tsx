@@ -13,11 +13,13 @@ function BotPopover({
     button,
     open,
     setOpen,
+    showWikiLink,
 }: {
     bot: Bot;
     button: ReactNode;
     open?: boolean;
     setOpen?: (open: boolean) => void;
+    showWikiLink?: boolean;
 }) {
     const positioning = useContext(PopupPositioningContext);
     if (positioning === undefined) {
@@ -38,7 +40,7 @@ function BotPopover({
             <PopoverTrigger asChild={true}>{button}</PopoverTrigger>
             <PopoverContent floatingArrowClassName="bot-popover-arrow">
                 <div className="popover">
-                    <BotDetails bot={bot} showWikiLink={true} />
+                    <BotDetails bot={bot} showWikiLink={showWikiLink} />
                 </div>
             </PopoverContent>
         </Popover>
@@ -67,4 +69,16 @@ export default function BotPopoverButton({
     );
 
     return <BotPopover bot={bot} button={button} open={open} setOpen={setOpen} />;
+}
+
+export function ItemBotPopoverButton({
+    bot,
+    triggerContent,
+    showWikiLink,
+}: {
+    bot: Bot;
+    triggerContent: ReactNode;
+    showWikiLink?: boolean;
+}) {
+    return <BotPopover bot={bot} button={triggerContent} showWikiLink={showWikiLink} />;
 }

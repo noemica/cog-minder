@@ -5,6 +5,7 @@ import { PageType, Spoiler, ThemeType, pageTypes } from "../../types/commonTypes
 import { rootDirectory } from "../../utilities/common";
 import { ButtonLink } from "../Buttons/Button";
 import {
+    useEditableShowBotsWithPart,
     useEditableSpoilers,
     useEditableTheme,
     useEditableUseWikiPartGroupSelectName,
@@ -169,6 +170,9 @@ function PageButtons({ pageType }: { pageType: PageType }) {
 }
 
 function SettingsButton({ pageType }: { pageType: PageType }) {
+    const [showBotsWithPart, setShowBotsWithPart] = useEditableShowBotsWithPart();
+    const showBotsWithPartSelected = booleanOptions.find((o) => o.value === showBotsWithPart) || booleanOptions[1];
+
     const [spoilers, setSpoilers] = useEditableSpoilers();
     const spoilerSelected = spoilerOptions.find((o) => o.value === spoilers) || spoilerOptions[0];
 
@@ -205,6 +209,18 @@ function SettingsButton({ pageType }: { pageType: PageType }) {
                         setTheme(newValue!.value as ThemeType);
                     }}
                 />
+                {(pageType === "Bots" || pageType === "Parts" || pageType === "Wiki") && (
+                    <LabeledSelect
+                        label="Show Bots With Part"
+                        tooltip='Show the "Bots with Part" section in part details.'
+                        isSearchable={false}
+                        options={booleanOptions}
+                        value={showBotsWithPartSelected}
+                        onChange={(newValue) => {
+                            setShowBotsWithPart(newValue!.value);
+                        }}
+                    />
+                )}
                 {/* <LabeledSelect
                     label="Beta 15 Prerelease"
                     tooltip="Whether to show prerelease bots and parts or not."
