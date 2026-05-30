@@ -1,4 +1,4 @@
-import{c as k,r as T,j as a,L as j,F as D,B as v,G as V,w as le,H as ve,I as Ce,f as I,J as Se,y as W,T as L,K as he,a as Z,s as Te,M as ke,S as J,q as xe,N as He,O as de,z as Ae,u as ce,P as $,Q as Ge,U as O,V as Re,W as Ie,X as U,Y as Ne,Z as De}from"./index-B4ecKdbM.js";import{l as Pe}from"./lore-08CTWJsY.js";import{h as Ee,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as me,R as Le,T as ee,n as Y,b as Q,o as ge,p as Fe,L as Be,q as We,u as qe,a as Oe}from"./BotPopover-BxoSYEGe.js";import{S as Ue}from"./Table-Dbbff9DI.js";import{e as je}from"./partColumnDefs-B0ZT14fq.js";/* empty css              */import"./items-CZPqWis-.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as k,r as T,j as a,L as j,F as D,B as v,G as V,w as le,H as ve,I as Ce,f as I,J as Se,y as W,T as L,K as he,a as Z,s as Te,M as ke,S as J,q as xe,N as He,O as de,z as Ae,u as ce,P as $,Q as Ge,U as O,V as Re,W as Ie,X as U,Y as Ne,Z as De}from"./index-jcY4gUzH.js";import{l as Pe}from"./lore-08CTWJsY.js";import{h as Ee,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as me,R as Le,T as ee,n as Y,b as Q,o as ge,p as Fe,L as Be,q as We,u as qe,a as Oe}from"./BotPopover-DRTG_SJH.js";import{S as Ue}from"./Table-wbsJbH21.js";import{e as je}from"./partColumnDefs-RGgzL5NY.js";/* empty css              */import"./items-CZPqWis-.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -130,7 +130,7 @@ If Cogmind has aligned with the [[Exiles (Group)|Exiles]] and has FarCom, the fo
 [[GameText]]Wow, you managed to get CY-PHR interested in you? Good luck in your future hacking endeavors, as they love to mess with the results. Keep at it and try to track them down... somewhere out there in 0b10. They're wimpy and will leave you alone for good if you can find them. Big if.[[/GameText]]
 
 [[Heading]]Behavior[[/Heading]]
-CY-PHR's first signs of interest in Cogmind come much sooner than the other Unchained. Rather than being authorized once Cogmind has caused lots of trouble, they will instead start to show their presence beforehand. CY-PHR adds cryptic leetspeak messages as part of machine hacking outputs under a stylized ascii MATRIX logo once Cogmind has performed enough successful hacks. There are 6 messages that appear this way, corresponding with 50%, 60%, 70%, 80%, 90%, and 100% of the successful hacking threshold required to fully trigger CY-PHR to begin interfering with Cogmind. The threshold to trigger is likely be somewhere between 150-300 successful hacks, with different hacks contributing a different amount of progress toward the trigger.
+CY-PHR's first signs of interest in Cogmind come much sooner than the other Unchained. Rather than being authorized once Cogmind has caused lots of trouble, they will instead start to show their presence beforehand. CY-PHR adds cryptic leetspeak messages as part of machine hacking outputs under a stylized ascii MATRIX logo once Cogmind has performed enough successful hacks. There are 6 messages that appear this way, corresponding with 50%, 60%, 70%, 80%, 90%, and 100% of the successful hacking threshold required to fully trigger CY-PHR to begin interfering with Cogmind. The threshold to trigger is likely be somewhere between 100-200 successful hacks, with different hacks contributing a different amount of progress toward the trigger The trigger progress is described in the [[CY-PHR#Hacking Trigger Progression|Hacking Trigger Progression]] section.
 
 [[Heading:2]]Threshold Messages[[/Heading]]
 [[Expandable]]Threshold messages with leetspeak|[[Gallery:Full]]CY-PHR Message 1.png|50% threshold message|CY-PHR Message 2.png|60% threshold message|CY-PHR Message 3.png|70% threshold message|CY-PHR Message 4.png|80% threshold message|CY-PHR Message 5.png|90% threshold message|CY-PHR Message 6.png|100% threshold message[[/Gallery]]
@@ -146,6 +146,54 @@ Note: The binary ASCII around the MATRIX art translates to "CYPHER".
 90%: Pooling my resources as I send this message, just waiting until you cross the seemingly arbitrary threshold beyond which bossman said I can do whatever I want to counter network threats such as yourself. SOON ENOUGH.|
 100%: I can't believe it took this long, but I just discovered you are that Cogmind thing everyone's been raving about. Putting you in your place will be a nice digital trophy. IT'S ON.
 [[/List]]
+
+[[Heading:2]]Hacking Trigger Progression[[/Heading]]
+Each hack contributes a certain value toward a maximum limit depending on the difficulty. For rogue, the maximum value is 1750, while adventurer and explorer have 2250 and 3000 respectively. For hacks shown below, percentages reflect the rogue difficulty. Note: Hacks contribute the same amount of progress regardless of whether they are performed directly or indirectly/manually.
+
+[[Heading:3]][[Fabricator]] Hacks[[/Heading]]
+[[Table]]
+Trigger Contribution|Progression Points/Percentage|Hacks||High|[[CellStyle:Bad]]20, ~1.14%|Force(Recompile)||
+Moderate|[[CellStyle:Neutral]]10, ~0.57%|Build, Force(Download), Force(Overload) Network(Status), Trojan(Fabnet), Trojan(Haulers), Trojan(Liberate), Trojan(Prioritize), Trojan(Report)||
+Low|[[CellStyle:Neutral]]5, ~0.29%|Load()
+[[/Table]]
+
+[[Heading:3]][[Garrison Access]] Hacks[[/Heading]]
+[[Table]]
+Trigger Contribution|Progression Points/Percentage|Hacks||
+High|[[CellStyle:Bad]]20, ~1.14%|Seal||
+Moderate|[[CellStyle:Neutral]]10, ~0.57%|Couplers(), Force(Eject) Trojan(Broadcast), Trojan(Decoy), Trojan(Intercept), Trojan(Redirect), Trojan(Reprogram), Trojan(Restock), Trojan(Watchers)||
+None|[[CellStyle:Good]]0, 0%|Force(Jam), Unlock
+[[/Table]]
+
+[[Heading:3]][[Recycling Unit]] Hacks[[/Heading]]
+[[Table]]
+Trigger Contribution|Progression Points/Percentage|Hacks||
+Moderate|[[CellStyle:Neutral]]10, ~0.57%|Force(Tunnel), Recycle(), Recycling(Report), Retrieve(Components), Trojan(Mask), Trojan(Monitor), Trojan(Recyclers), Trojan(Reject)||
+Low|[[CellStyle:Neutral]]5, ~0.29%|Retrieve(Matter)||
+None|[[CellStyle:Good]]0, 0%|Force(Fedlink), Force(Scraphulk), Force(Scrapoids), Recycling(Process)
+[[/Table]]
+
+[[Heading:3]][[Repair Station]] Hacks[[/Heading]]
+[[Table]]
+Trigger Contribution|Progression Points/Percentage|Hacks||
+Moderate|[[CellStyle:Neutral]]10, ~0.57%|Force(Patch), Repair, Refit, Trojan(Mechanics)||
+Low|[[CellStyle:Neutral]]5, ~0.29%|Scan()
+[[/Table]]
+
+[[Heading:3]][[Scanalyzer]] Hacks[[/Heading]]
+[[Table]]
+Trigger Contribution|Progression Points/Percentage|Hacks||
+Moderate|[[CellStyle:Neutral]]10, ~0.57%|Force(Extract), Insert(), Scanalyze, Study, Trojan(Researchers)
+[[/Table]]
+
+[[Heading:3]][[Terminal]] Hacks[[/Heading]]
+[[Table]]
+Trigger Contribution|Progression Points/Percentage|Hacks||
+Highest|[[CellStyle:Bad]]30, ~1.71%|Index(Machines)||High|[[CellStyle:Bad]]20, ~1.14%|Access(Branch), Access(Main), Alert(Purge), Download(Registry), Enumerate(Maintenance), Force(Recompile), Manifests, Index(Garrisons), Inventory(Components), Inventory(Prototypes), Recall(Investigation), Recall(Extermination), Recall(Assaults), Seal||
+Moderate|[[CellStyle:Neutral]]10, ~0.57%|Access(Emergency), Analysis(), Control(Protovariants), Download(Navigation), Download(Security), Enumerate(Assaults), Enumerate(Coupling), Enumerate(Exterminations), Enumerate(Garrison), Enumerate(Guards), Enumerate(Intercept), Enumerate(Investigations), Enumerate(Patrols), Enumerate(Reinforcements), Enumerate(Squads), Enumerate(Surveillance), Enumerate(Transport), Force(Override), Force(Sabotage), Force(Search), Index(Fabricators), Index(Recycling Units), Index(Repair Stations), Index(Scanalyzers), Index(Terminals), Network(Status), Open(), Prototypes, Recall(Reinforcements), Schematic(), Traps(Disarm), Traps(Reprogram), Trojan(Assimilate), Trojan(Botnet), Trojan(Detonate), Trojan(Disrupt), Trojan(Operators), Trojan(Track)||
+Low|[[CellStyle:Neutral]]5, ~0.29%|Alert(Check), Traps(Locate), Trojan(Skim)||
+None|[[CellStyle:Good]]0, 0%|Query(), Other one-off  hacks not listed above
+[[/Table]]
 
 [[Heading:2]]Hacking Interference[[/Heading]]
 Once the final message has been met, CY-PHR will begin to interrupt Cogmind's hacking capabilities on all interactive machines. There are a large number of effects, some that are applicable to all Terminals, and others that are unique to specific types of hacks.
