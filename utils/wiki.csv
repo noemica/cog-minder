@@ -3734,7 +3734,7 @@ Salvage|0[[/ItemDetails]]
 
 [[Heading]]L-11 Stabber[[/Heading]]
 [[GameText]]>Analysis(L-11 Stabber)[[/GameText]]
-[[GameText]]The first dedicated melee robot, this duelist derivative of the grunt class was armed with a small but fast dagger.  Best suited for corner ambushes as its lack of core coverage made open attacks impractical.  A few minor modifications included switching the dagger for a spear and the addition of a low-powered transmission jammer to prevent victims from warning others.  Current duelists are focused on reliability in open combat, but ambush traps ensure that they (along with brawlers) enjoy the benefits of sneak attacks from time to time.[[/GameText]]
+[[GameText]]The first dedicated melee robot, this duelist derivative of the grunt class was armed with a small but fast dagger.  Best suited for corner ambushes as its lack of core coverage made open attacks impractical.  Shortly after initial deployment, Stabber specifications were modified to include a low-powered transmission jammer to prevent victims from warning others.  Current duelists are focused on reliability in open combat, but ambush traps ensure that they (along with brawlers) enjoy the benefits of sneak attacks from time to time.[[/GameText]]
 [[ItemDetails]]
 Name|Dagger||
 Image Name|https://i.imgur.com/iEtuajF.png||
@@ -4561,7 +4561,7 @@ Movement|Walking (120/83%)||
 Core Integrity|40||
 Core Exposure|40||
 Salvage Potential|60~80||
-Description|An updated take on the spear-wielding variant of the Stabber.  The idiots behind the Spawners are using the original dagger variant but neither one could handle a core hit from a lance.  The addition of a proper jammer makes this suitable for both solo defense and squad offense.||
+Description|The idiots behind the Spawners probably chose the L-11 Stabber schematic for ease of fabrication.  Unfortunately for them, the Stabber would have a hard time dealing damage to a duelist with now-standard core shielding.  The addition of a jammer enables the Impaler to fill the Stabber's original role as an ambusher though it could also be considered a direct upgrade to the Spearman.||
 Armament|Lance|1||
 Components|Mic. Nuclear Core|1|Lgt. Flexi-Carbon Leg|2|Imp. Core Shielding|1|Microactuators|1||
 Components|Imp. Melee Analysis Suite|1|Imp. Transmission Jammer|1[[/BotDetails]]
