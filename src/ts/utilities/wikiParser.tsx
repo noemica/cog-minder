@@ -228,6 +228,41 @@ export function createContentHtml(
 
     const headingText = names.join("/");
 
+    let headingNode: ReactNode;
+    if (headingLink) {
+        headingNode = <HashLink to={`/${getLinkSafeString(entry.name)}`}>{headingText}</HashLink>;
+    } else if (names.length === 1 && names[0].includes("/")) {
+        // If there is a nested path like A/B/C, create links to A and B
+        // for easier traversal to parents
+        const headingSplit = names[0].split("/");
+
+        let nodes: ReactNode[] = [];
+        for (let i = 0; i < headingSplit.length; i++) {
+            if (i === headingSplit.length - 1) {
+                // For last node just show name with no link
+                nodes.push(`${headingSplit[i]}`);
+            } else {
+                // Join the current split with all previous segments to check
+                // the link target
+                const linkTarget = headingSplit.slice(0, i + 1).join("/");
+
+                if (allEntries.has(linkTarget)) {
+                    nodes.push(
+                        <Fragment key={i}>
+                            <HashLink to={`/${getLinkSafeString(linkTarget)}`}>{headingSplit[i]}</HashLink>/
+                        </Fragment>,
+                    );
+                } else {
+                    nodes.push(`${headingSplit[i]}/`);
+                }
+            }
+        }
+
+        headingNode = nodes;
+    } else {
+        headingNode = headingText;
+    }
+
     // Convert to HTML
     let outputHtml = outputGroupsToHtml(state.output, false);
     if (outputHtml === undefined) {
@@ -237,11 +272,7 @@ export function createContentHtml(
         node: (
             <>
                 <h1 className="wiki-emphasized-heading">
-                    {headingLink ? (
-                        <HashLink to={`/${getLinkSafeString(entry.name)}`}>{headingText}</HashLink>
-                    ) : (
-                        headingText
-                    )}
+                    {headingNode}
                     <LinkIcon href="#" />
                     <SpoilerButton spoiler={entry.spoiler} />
                 </h1>
