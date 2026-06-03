@@ -6167,7 +6167,7 @@ There are initially 4 intel hacks available per 0b10 floor. Performing intel hac
 There are 2 categories of intel hacks: Repeatable and non-repeatable. Non-repeatable hacks can only be performed once per map. These types of hacks include map-specific intel and world map intel relating to the overall depth that certain locations occur on. Repeatable hacks can be performed an infinite number of times on any floor and tend to be longer-term types of information such as schematics and analyses. If trying to burn through intel for a specific piece of information, such as main or branch access, it is best to pick any non-repeatable hacks first. This will allow the pool of available hacks to get smaller, increasing the chances of getting the desired intel hack.
 The available intel hacks are as follows:
 [[Table]]
-Hack Name|Repatable|Effect||
+Hack Name|Repeatable|Effect||
 Active Garrisons|No|Reveals all [[Garrison Access|Garrisons]] on the current map||
 Active Terminals|No|Reveals all Terminals on the current map||
 Branch Access|No|Reveals all Derelict-known [[Branch]] exits on the current map[[Sub]]1[[/Sub]]||
