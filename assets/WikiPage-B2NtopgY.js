@@ -1,4 +1,4 @@
-import{c as k,r as S,j as a,L as j,F as N,B as v,G as V,w as he,H as ve,I as Ce,f as I,J as Se,y as W,T as L,K as de,a as Z,s as Te,M as ke,S as $,q as xe,N as He,O as ce,z as Ae,u as me,P as ee,Q as Ge,U as O,V as Re,W as Ie,X as U,Y as Ne,Z as De}from"./index-B9iSFUdQ.js";import{l as Pe}from"./lore-08CTWJsY.js";import{h as Ee,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Le,T as te,n as Q,b as _,o as ge,p as Fe,L as Be,q as We,u as qe,a as Oe}from"./BotPopover-cSM5nGkD.js";import{S as Ue}from"./Table-CTB2AgZL.js";import{e as je}from"./partColumnDefs-AGzUaz6a.js";/* empty css              */import"./items-CZPqWis-.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as k,r as S,j as a,L as j,F as N,B as v,G as V,w as he,H as ve,I as Ce,f as I,J as Se,y as W,T as L,K as de,a as Z,s as Te,M as ke,S as $,q as xe,N as He,O as ce,z as Ae,u as me,P as ee,Q as Ge,U as O,V as Re,W as Ie,X as U,Y as Ne,Z as De}from"./index-Bf4SqeNn.js";import{l as Pe}from"./lore-08CTWJsY.js";import{h as Ee,c as Me}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Le,T as te,n as Q,b as _,o as ge,p as Fe,L as Be,q as We,u as qe,a as Oe}from"./BotPopover-FhTTM9XU.js";import{S as Ue}from"./Table-DH_jVm1n.js";import{e as je}from"./partColumnDefs-Md-kTbpF.js";/* empty css              */import"./items-CZPqWis-.js";const ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -208,7 +208,7 @@ Sometimes when performing a hack, there will be an additional message of [[GameT
 Sometimes when successfully hacking CY-PHR will cause the machine to be instantly shut down and an [[Investigation Squad]] will be summoned to the location. There is no chance of feedback effect with this occurs unlike standard machine tracing. This is always accompanied by the "random keyboard noises" effect.
 
 [[Heading:3]]Locating Failures[[/Heading]]
-Whenever Cogmind performs any kind of location hack, there is a chance that CY-PHR will reduce the number of found things or fail to report them entirely. For example, performing a [[GameText]]Access(Main)[[/GameText]] hack may report only 2 out of 4 main exits on the floor. This effect can occurs with all Access hacks and [[GameText]]Traps(Locate)[[/GameText]].
+Whenever Cogmind performs any kind of location hack, there is a chance that CY-PHR will reduce the number of found things or fail to report them entirely. For example, performing a [[GameText]]Access(Main)[[/GameText]] hack may report only 2 out of 4 main exits on the floor. This effect can occurs with Access(Main/Branch) hacks and [[GameText]]Traps(Locate)[[/GameText]].
 
 [[Heading:3]]Database Failure[[/Heading]]
 When Cogmind is trying to hack for a [[Robot Analysis]] or [[Schematic]], the hack may succeed but have a joke entry replace the real hack results instead. It is also possible that a real but other random schematic will be hacked instead of the requested one.
@@ -8810,7 +8810,10 @@ The Multitool is not much of an offensive weapon, but it does have a few unique 
 [[Heading:2]][[Plasma Cutters]][[/Heading]]
 Flight can occasionally make use of these to dig into areas locked by blast doors. However, a little bit of hacking power will also get into most locked doors very reliably. [[Spoiler]]One of the better uses of Plasma Cutters for flight is to destroy Hubs in [[Hub_04(d)]] without triggering an explosion.[[/Spoiler]]`},{Name:"aoemica's Flight Guide/Machine Hacking",Content:`A collection of thoughts and tips about machine hacking on flight. Each machine has its own section listed below. I highly recommend checking out the [[Interactive Machine]] and each machine's own page for additional details.
 
-[[Gallery]]../game_sprites/Fabricator.png|[[aoemica's Flight Guide/Machine Hacking/Fabricators|Fabricators]]|../game_sprites/Garrison.png|[[aoemica's Flight Guide/Machine Hacking/Garrisons|Garrisons]]|../game_sprites/Recycling Unit.png|[[aoemica's Flight Guide/Machine Hacking/Recycling Units|Recycling Units]]|../game_sprites/Repair Station.png|[[aoemica's Flight Guide/Machine Hacking/Repair Stations|Repair Stations]]|../game_sprites/Scanalyzer.png|[[aoemica's Flight Guide/Machine Hacking/Scanalyzers|Scanalyzers]]|../game_sprites/Terminal.png|[[aoemica's Flight Guide/Machine Hacking/Fabricators|Terminals]][[/Gallery]]`,Subpages:["aoemica's Flight Guide/Machine Hacking/Fabricators","aoemica's Flight Guide/Machine Hacking/Garrisons","aoemica's Flight Guide/Machine Hacking/Recycling Units","aoemica's Flight Guide/Machine Hacking/Repair Stations","aoemica's Flight Guide/Machine Hacking/Scanalyzers","aoemica's Flight Guide/Machine Hacking/Schematics Reference","aoemica's Flight Guide/Machine Hacking/Terminals"]},{Name:"aoemica's Flight Guide/Machine Hacking/Fabricators",Content:`[[Image]]../game_sprites/Fabricator.png|A Fabricator machine[[/Image]]
+[[Gallery]]../game_sprites/Fabricator.png|[[aoemica's Flight Guide/Machine Hacking/Fabricators|Fabricators]]|../game_sprites/Garrison.png|[[aoemica's Flight Guide/Machine Hacking/Garrisons|Garrisons]]|../game_sprites/Recycling Unit.png|[[aoemica's Flight Guide/Machine Hacking/Recycling Units|Recycling Units]]|../game_sprites/Repair Station.png|[[aoemica's Flight Guide/Machine Hacking/Repair Stations|Repair Stations]]|../game_sprites/Scanalyzer.png|[[aoemica's Flight Guide/Machine Hacking/Scanalyzers|Scanalyzers]]|../game_sprites/Terminal.png|[[aoemica's Flight Guide/Machine Hacking/Fabricators|Terminals]][[/Gallery]]
+
+[[Heading]]CY-PHR[[/Heading]]
+While this bot is a spoiler concept (see [[CY-PHR]]), you are likely to encounter the effects of this bot sooner than later. If you do too many hacks, this bot will start to taunt you through the machine output, warning you that you will soon cause them to take action against you. The first message is 50% of the way toward their full effects, and if you get to 100% they will start messing with the effects of hacks at random. This has a ton of negative effects like making hacking intel, repairs, and fabrication unreliable. In order to avoid triggering these effects, try to restrict hacking to only the most important hacks to perform each floor, or else you may find that all the hacking you do will be much less valuable after that. Of course, if you want to try to take them head-on you can try to trigger them as soon as possible. You will get roughly between 1-200 hacks in before CY-PHR is fully triggered depending on which hacks you perform. See the CY-PHR page for more specific details.`,Subpages:["aoemica's Flight Guide/Machine Hacking/Fabricators","aoemica's Flight Guide/Machine Hacking/Garrisons","aoemica's Flight Guide/Machine Hacking/Recycling Units","aoemica's Flight Guide/Machine Hacking/Repair Stations","aoemica's Flight Guide/Machine Hacking/Scanalyzers","aoemica's Flight Guide/Machine Hacking/Schematics Reference","aoemica's Flight Guide/Machine Hacking/Terminals"]},{Name:"aoemica's Flight Guide/Machine Hacking/Fabricators",Content:`[[Image]]../game_sprites/Fabricator.png|A Fabricator machine[[/Image]]
 [[Fabricator|Fabricators]] are fabulous machines that can create parts that [[0b10]], or more importantly, you want. Fabricating preloaded [[Schematic|schematics]] can be a good idea, but frequently they contain something not useful. Fabricating items based on schematics is the more typical use of Fabricators for flight builds. To do so, obtain a schematic from a [[Terminal]] (e.g. [[GameText]]Schematic(Flight Unit)[[/GameText]]) or some other source, attach an [[Authchips|Authchip]] if you have it, load the schematic, and start the fab. For a reference of good parts to hack from schematics, see [[aoemica's Flight Guide/Machine Hacking/Schematics Reference|this page]]. If you are fabbing without an Authchip, an [[Investigation Squad]] will be dispatched to the machine. There are a few ways to deal with the squad:
 [[List]]
 [[GameText]]Recall(Investigation)[[/GameText]] at a nearby Terminal|
@@ -8822,16 +8825,20 @@ Ignore the squad, grab the part, and run while tanking shots
 [[/List]]
 In addition to fabricating parts, [[GameText]]Network(Status)[[/GameText]] is a great hack to perform if you have the [[Hackware]] to do so and still pull off a fab or have nothing better to do with the machine. An [[GameText]]Index(Fabricators)[[/GameText]] has a base success rate of 40% on a level 1 Terminal, but this hack has a success rate of 70% and is always present and also lets you know about all currently loaded schematics.
 
+[[Heading]]CY-PHR Effects[[/Heading]]
+[[CY-PHR]] makes fabricating unreliable for multiple reasons. If you have triggered CY-PHR, each part or bot fabricated has a chance of being "faulty", though in a different sense than standard prototype faulty parts. Parts will become broken after a bit of use, and will continue to break even if repaired again at a [[Repair Station]] or with a [[Recalibrators|Recalibrator]]. Fabricated bots may explode into a large AOE EM explosion with no warning. Additionally, the instant machine lockdown that occurs randomly can kill your machine hacking earlier than you want, especially if using Authchips. Fabricating is still possible even with these negative effects, but I recommend not relying on fabrications as much as you would otherwise after hitting the trigger. If you are trying to fab a combat build for extended gameplay, it's definitely worth doing the bare minimum number of hacks to avoid the trigger preemptively.
+
 [[Heading]]Spoiler Hacks|Spoiler Hacks Fabricator[[/Heading]]
 [[Expandable]]
 Show/hide hacks|
 Thoughts about select Force/Trojan hacks:
 
 [[Heading:2]][[GameText]]Force(Recompile)[[/GameText]][[/Heading]]
-My personal favorite Fabricator hack. Recompiling allow you to turn low security level or inconveniently located Fabricators into future fabs on more convenient machines via Authchip. Level 3 Fabricators operate 3 times as quickly as level 1s, which allows you to do your work and leave without hanging around and waiting for extra [[Extermination Squad|Exterminations]] for the trouble. This is even more pronounced if you can pull off a [[GameText]]Trojan(Prioritize)[[/GameText]]. Recompiling also allows for banking fabs for items that you don't currently have the schematic for, but plan on fabricating at a later part of the run.
+My personal favorite Fabricator hack. Recompiling allow you to turn low security level or inconveniently located Fabricators into future fabs on more convenient machines via Authchip. Level 3 Fabricators operate 3 times as quickly as level 1s, which allows you to do your work and leave without hanging around and waiting for extra [[Extermination Squad|Exterminations]] for the trouble. This is even more pronounced if you can pull off a [[GameText]]Trojan(Prioritize)[[/GameText]]. Recompiling also allows for banking fabs for items that you don't currently have the schematic for, but plan on fabricating at a later part of the run. 
+One big downside of this hack is that it makes a lot of progress toward the [[CY-PHR]] hacking trigger. Loading a schematic and fabricating a part is about 0.86% of the trigger, but loading a schematic, Recompiling, and then loading and fabricating a part on a separate Fabricator is more than doubled at 2.28% progress. As such, I recommend trying to fab directly when possible and recompiling authchips only for higher rating parts that would take forever to make on a level 1 machine.
 
 [[Heading:2]][[GameText]]Force(Overload)[[/GameText]][[/Heading]]
-An amusing hack that turns Fabricators into big EM weapons, but not a frequently practical one. Most bots that this hack effective against can be easily avoided through other means. If it did more than tickle [[Programmer|Programmers]], it would be a little more useful.
+An amusing hack that turns Fabricators into big EM weapons, but not a frequently practical one. Most bots that this hack effective against can be easily avoided through other means. If it did more than tickle [[Programmer|Programmers]], it would be a little more useful. Still, there is one notable niche for this hack. If a [[Cargo Convoy]] is pathing through a Fabricator, you can pull this hack off at the last second and hope that you take down the [[A-27 Freighter|Freighter]]. This hack lasts longer for higher rating machines, so this works best with a level 2 or higher one.
 
 [[Heading:2]][[GameText]]Trojan(Fabnet)[[/GameText]][[/Heading]]
 A difficult to pull off and rather niche hack that can temporarily overwrite enemy bots into allies. The base success rate is very low which makes hackware a near-requirement. Most importantly, the side effect of a floor-wide machine lockout is a huge detriment. Since the lockout can theoretically occur on the very first hostile combat bot you spot, there's always a chance that you can go an entire floor without access to most machines. This hack is best used if you are going to be engaging in a lot of combat, for example, diving into many [[Garrison|Garrisons]] for [[RIF]] or the [[Encrypted Comm Array]]. Notably, Garrisons are not locked down, so you don't have to worry about getting one open before the lockout occurs. More stealth-oriented flight builds benefit more from keeping the machines online than risk the chance of a lockout for the rare bot in a squad causing a distraction for a few turns.
@@ -8845,17 +8852,17 @@ This hack's effect of cutting fabrication time in half is a great way to avoid h
 
 [[Heading]]Hack Rating[[/Heading]]
 [[Table]]
-Hack|Usefulness|Personal hack frequency||
-Build|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
-[[Spoiler]]Force(Download)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
-[[Spoiler]]Force(Recompile)[[/Spoiler]]|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
-[[Spoiler]]Force(Overload)[[/Spoiler]]|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
-Network(Status)|[[Range]]4|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map||
-[[Spoiler]]Trojan(Fabnet)[[/Spoiler]]|[[Range]]2|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
-[[Spoiler]]Trojan(Haulers)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map||
-[[Spoiler]]Trojan(Liberate)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map
+Hack|Usefulness|Usefulness With CY-PHR|Personal hack frequency||
+Build|[[Range]]5|5[[/Range]]|[[Range]]3|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
+[[Spoiler]]Force(Download)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
+[[Spoiler]]Force(Recompile)[[/Spoiler]]|[[Range]]5|5[[/Range]]|[[Range]]2|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
+[[Spoiler]]Force(Overload)[[/Spoiler]]|[[Range]]2|5[[/Range]]|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
+Network(Status)|[[Range]]4|5[[/Range]]|[[Range]]4|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map||
+[[Spoiler]]Trojan(Fabnet)[[/Spoiler]]|[[Range]]2|5[[/Range]]|[[Range]]2|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
+[[Spoiler]]Trojan(Haulers)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[Range]]4|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map||
+[[Spoiler]]Trojan(Liberate)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[Range]]3|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map
 [[/Table]]`},{Name:"aoemica's Flight Guide/Machine Hacking/Garrisons",Content:`[[Image]]../game_sprites/Garrison.png|A Garrison Access machine[[/Image]]
-[[Garrison Access|Garrison Accesses]] are a pretty basic type of machine. Enemies come out, Cogmind can go in, but usually the most important thing is to seal them. While the rare [[RIF]] or [[Encrypted Comm Array]] flight build may want to head into Garrisons, most builds are best off by taking the advantage of the additional 75-turn delay between [[Extermination Squad|Extermination]] dispatches when a Garrison is sealed. In fact, even if you can't get a seal off, if you have a powerful enough weapon that can smash the Garrison, it is often worth doing so, even though you will get an [[Alert]] bonus and 2 [[Assault Squad|Assaults]] dispatched to that location. Just make sure you don't get spotted by the [[C-45 Heavy ARC|Heavy ARCs]] as you're running away from the Garrison.
+[[Garrison Access|Garrison Accesses]] are a pretty basic type of machine. Enemies come out, Cogmind can go in, but usually the most important thing is to seal them. While the rare [[RIF]] or [[Encrypted Comm Array]] flight build may want to head into Garrisons, most builds are best off by taking the advantage of the additional 75-turn delay between [[Extermination Squad|Extermination]] dispatches when a Garrison is sealed. In fact, even if you can't get a seal off, if you have a powerful enough weapon that can smash the Garrison, it is often worth doing so, even though you will get a 150 [[Alert]] bonus and 2 [[Assault Squad|Assaults]] dispatched to that location. Just make sure you don't get spotted by the [[C-45 Heavy ARC|Heavy ARCs]] as you're running away.
 
 [[Heading]]Spoiler Hacks|Spoiler Hacks Garrison[[/Heading]]
 [[Expandable]]
@@ -8866,7 +8873,7 @@ Thoughts about select Force/Trojan hacks:
 These 2 hacks deal with getting [[Relay Couplers]] from the Garrison directly or via [[Coupling Squad]] and are useless for non-RIF runs. Both hacks can be used in conjunction to truly maximize the number of Relay Couplers obtained from a single Garrison, though this is usually overkill. Eject does raise some alert and trigger a squad, though it has a slightly higher success rate and doesn't require either fighting a [[Programmer]] or waiting around for the restock to occur.
 
 [[Heading:2]][[GameText]]Force(Jam)[[/GameText]][[/Heading]]
-While jamming is significantly worse than sealing the Garrison, the base success chance of 80% vs 30% is quite significant. For flight, the extra assault and bonus 150 alert is not such a big deal. If you don't have a solid hack stack, consider pulling this hack out instead of trying for a low success seal and dealing with some slightly annoying consequences.
+While jamming is significantly worse than sealing the Garrison, the base success chance of 80% vs 30% is quite significant. For flight, the extra assault and bonus 200 alert is not such a big deal. If you don't have a solid hack stack, consider pulling this hack out instead of trying for a low success seal. Even if you do have hackware, it still might be worth doing this hack for another reason: This hack makes no progress toward the [[CY-PHR]] trigger. A seal would otherwise count for 1.14% progress toward the trigger.
 
 [[Heading:2]][[GameText]]Trojan(Broadcast / Decoy /Intercept / Redirect / Watchers)[[/GameText]][[/Heading]]
 This section may seem like a random assortment of hacks but they all share one common attribute: Not only do they stop taking effect after a Garrison is sealed, but they are more importantly not very valuable hacks. The help they provide is limited or overly niche compared to the alternative of reduced extermination frequency. It may seem like I'm driving this point a bit too hard, but I can't overstate how much pain and suffering extermination squads cause to me, so anything I can do to cut them down is a high priority.
@@ -8880,7 +8887,7 @@ Reprogramming a Garrison takes control of the next dispatched squad, with the co
 Hack|Usefulness|Personal hack frequency||
 Couplers|[[Range]]1|5[[/Range]]|[[CellStyle:Bad]]Never unless [[Spoiler]]RIF[[/Spoiler]], situationally multiple times per map||
 [[Spoiler]]Force(Eject)[[/Spoiler]]|[[Range]]2|5[[/Range]]|[[CellStyle:Bad]]Never unless [[Spoiler]]RIF[[/Spoiler]], situationally multiple times per map||
-[[Spoiler]]Force(Jam)[[/Spoiler]]|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
+[[Spoiler]]Force(Jam)[[/Spoiler]]|[[Range]]4|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
 Seal|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
 [[Spoiler]]Trojan(Broadcast)[[/Spoiler]]|[[Range]]1|5[[/Range]]|[[CellStyle:Bad]]Never||
 [[Spoiler]]Trojan(Decoy)[[/Spoiler]]|[[Range]]1|5[[/Range]]|[[CellStyle:Bad]]Never||
@@ -8928,12 +8935,15 @@ Recycling(Report)|[[Range]]2|5[[/Range]]|[[CellStyle:Bad]]Practically never, sit
 Recycling(Process)|[[Range]]1|5[[/Range]]|[[CellStyle:Bad]]Practically never, situationally multiple times per map||
 [[Spoiler]]Trojan(Mask)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
 [[Spoiler]]Trojan(Monitor)[[/Spoiler]]|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally once per map||
-[[Spoiler]]Trojan(Recyclers)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map||
+[[Spoiler]]Trojan(Recyclers)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
 [[Spoiler]]Trojan(Reject)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map
 [[/Table]]
 `},{Name:"aoemica's Flight Guide/Machine Hacking/Repair Stations",Content:`[[Image]]../game_sprites/Repair Station.png|A Repair Station machine[[/Image]]
 [[Repair Station|Repair Stations]] are extremely useful machines that can keep your best parts topped up on integrity throughout the run. Simply toss a part in, start the repair, wait a few turns, and you receive your freshly repaired part. Since it can take some time to do this, try to explore the surrounding area while the repair is going off so you don't waste the whole time that the machine is running. I most often find myself repairing armor, power, and flight units. Armor is an especially good repair target since it can't break if a repair hack fails, unlike most other parts.
 A secondary function of the Repair Station is refitting Cogmind with [[Backup Parts]]. Most of the backup parts are not good, but [[Backup Power VII]] that is available from a level 3 machine is one of the best flight engines in the game, notable for its high energy generation for its low mass. [[Backup Power III]] is usable in a pinch as well, though it is not quite so effective. All other part types I tend to drop on the floor or avoid refitting in the first place. Note: If you have 2 power slots available, make sure to remove both power before refitting in order to get 2 Backup Powers instead of just one.
+
+[[Heading]]CY-PHR Effects[[/Heading]]
+[[CY-PHR]] makes repairing parts unreliable. If you have triggered CY-PHR, each repaired part or bot has a chance of becoming "faulty", though in a difference sense than standard prototype faulty parts. Parts will become broken after use, and will continue to break even if repaired again at the Repair Station or with a [[Recalibrator]]. It is still worth trying to repair and use parts that are about to be destroyed, but topping integrity off is a bad idea since they can become broken instead. 
 
 [[Heading]]Spoiler Hacks[[/Heading]]
 [[Expandable]]
@@ -8946,11 +8956,11 @@ Patch is an interesting but rather niche hack that repairs a few parts below 50%
 
 [[Heading]]Hack Rating[[/Heading]]
 [[Table]]
-Hack|Usefulness|Personal hack frequency||
-[[Spoiler]]Force(Patch)[[/Spoiler]]|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
-Repair|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
-Refit|[[Range]]4|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
-[[Spoiler]]Trojan(Mechanics)[[/Spoiler]]|[[Range]]1|5[[/Range]]|[[CellStyle:Bad]]Practically never, situationally once per map
+Hack|Usefulness|Usefulness With CY-PHR|Personal hack frequency||
+[[Spoiler]]Force(Patch)[[/Spoiler]]|[[Range]]2|5[[/Range]]|[[Range]]1|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
+Repair|[[Range]]5|5[[/Range]]|[[Range]]4|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
+Refit|[[Range]]4|5[[/Range]]|[[Range]]4|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
+[[Spoiler]]Trojan(Mechanics)[[/Spoiler]]|[[Range]]2|5[[/Range]]|[[Range]]2|5[[/Range]]|[[CellStyle:Bad]]Practically never, situationally once per map
 [[/Table]]`},{Name:"aoemica's Flight Guide/Machine Hacking/Scanalyzers",Content:`[[Image]]../game_sprites/Scanalyzer.png|A Scanalyzer machine[[/Image]]
 Scanalyzers are machines that give you the ability to identify unknown parts and obtain part [[Study|Studies]] and [[Schematic|Schematics]]. Obtaining schematics can be a little finnicky thanks to the tendency of Scanalyzers to require multiple scans of a single item or even break the item in the process of scanning. Hackware helps to succeed at the hacks in the first place as well as repair broken parts, although [[Recalibrators]] will get the job done just as well as a Repair Station. Fortunately, studies do not have the same downside and a successful hack will always grant the study.
 I mostly use Scanalyzers for their part identifying and study obtaining features. Knowing whether a [[Prototype Part]] is faulty or not is nice to avoid negative side effects. However, getting the schematic of good parts can also be quite valuable and is much easier to pull off than indirect high rating schematic hacking. This is especially true of out of depth parts that are obtained from various sources like [[Branch|Branches]], [[Wastes]], or [[Cargo Convoy|Cargo Convoys]].
@@ -9227,6 +9237,7 @@ Level 3 Depth||
 [[Gui. Micro-nuke Launcher]]|9*|-1|-2|-3
 [[/Table]]`},{Name:"aoemica's Flight Guide/Machine Hacking/Terminals",Content:`[[Image]]../game_sprites/Terminal.png|A Terminal machine[[/Image]]
 While most other machines have one or two purposes, Terminals are the true hacker's playground with dozens of different types of hacks available. For new players, it can be easy to become overwhelmed with options. However, not all hacks are created equal. For example, bot analyses are helpful, but finding an exit is much more important of an issue to worry about first. Generally, try to focus on hacks that will help you right now over speculative hacks that might help you later. The best way to learn and get a feel for hacking style is by trying out hacks and seeing how useful they feel.
+CY-PHR (see spoiler page [[CY-PHR]]) is a huge pain for any kind of flight Terminal hacker. While some machines are hardly affected, Terminals are most affected due to how many of them there are and how many hacks you usually use. The instant lockout and [[Investigation Squad]] that can occur when randomly hacking is one of the worst effects, but on top of that, many other useful hacks end up being greatly nerfed if you trigger them. As an example, Access hacks have a chance of failing to show you some exits. If you want to do lots of hacking, try to make sure your hacks count instead of hacking as much as possible or else you will pay the price.
 Terminal hacks typically fall under a few general categories:
 
 [[Heading]]Map Intel Hacks[[/Heading]]
@@ -9235,12 +9246,13 @@ These types of hacks give you unchanging information about the current map. The 
 [[Expandable]]Show/hide hacks|
 [[Heading:2]][[GameText]]Access(Branch) / Access(Main)[[/GameText]][[/Heading]]
 These two hacks are among the best and most important in the game. Locating exits should be a priority in each new map you enter. There's nothing worse than blindly scrambling around the map, desperately hoping you'll find an exit while you are fleeing from multiple squads. Flight tends to have an easier time of finding exits naturally than other propulsion types. Still, I still consider these hacks crucial, especially in [[Research]] and [[Access]], both of which often have massive and sprawling maps.
+Sometimes these hacks will fail to report an exit when CY-PHR is around. The hack is still useful even finding a single exit, but it is will likely require you at succeeding on another hack on another Terminal to get full intel, wasting your time and hacks.
 
 [[Heading:2]][[GameText]]Access(Emergency)[[/GameText]][[/Heading]]
 A significantly less useful hack than the 2 previous Access hacks. Revealing nearby emergency doors is nice, but there are other methods of doing this. Allied [[Operator|Operators]] and a [[Structural Scanner]] both reveal emergency doors without costing you a hack. [[GameText]]Layout(Zone)[[/GameText]] can also reveal some emergency doors since you can see the empty spaces of the corridor, though it won't reveal 1 tile doors.
 
 [[Heading:2]][[GameText]]Index([Machine Type] / Machines)[[/GameText]][[/Heading]]
-This series of hacks provides map-wide intel about the locations of a particular type of [[Interactive Machine]]. They are quite useful, although some machine types are not as valuable as others. [[GameText]]Index(Fabricators)[[/GameText]] also competes with [[GameText]]Network(Status)[[/GameText]] on Fabricators, especially since the latter provides loaded schematics in addition to machine locations. In my opinion, the most valuable hack is Terminal locations since they are the most generically useful machine type. Conveniently, it is also the easiest hack of the bunch to perform. While hacking for all machine types with an [[GameText]]Index(Machines)[[/GameText]] is fantastic if you can afford to do it, a base 0% hack is quite a steep asking price. This hack is not very useful to go for without a large stack of hackware.
+This series of hacks provides map-wide intel about the locations of a particular type of [[Interactive Machine]]. They are quite useful, although some machine types are not as valuable as others. [[GameText]]Index(Fabricators)[[/GameText]] also competes with [[GameText]]Network(Status)[[/GameText]] on Fabricators, especially since the latter provides loaded schematics in addition to machine locations. In my opinion, the most valuable hack is Terminal locations since they are the most generically useful machine type. Conveniently, it is also the easiest hack of the bunch to perform. While hacking for all machine types with an [[GameText]]Index(Machines)[[/GameText]] is fantastic if you can afford to do it, a base 0% hack is quite a steep asking price.
 
 [[Heading:2]][[GameText]]Inventory(Component / Prototype)[[/GameText]][[/Heading]]
 These 2 hacks provide intel about part stockpiles across the map which is of moderate use. Since flight is good at exploring most if not all of each floor, this often won't tell you a lot of data about things you would miss. However, it certainly doesn't hurt to have a list of parts you can be on the lookout for. While prototype intel is nice to have, there are only a few prototype stockpiles per map, so quite frequently you will not be able to pull anything useful out of it. Non-prototype parts are less valuable, but there's a higher chance you will find something you want to grab.
@@ -9250,22 +9262,24 @@ A solid and reasonably easy hack to perform that reveals the nearby map layout. 
 
 [[Heading:2]]Hack Rating|Hack Rating Map Intel[[/Heading]]
 [[Table]]
-Hack|Usefulness|Personal hack frequency||
+Hack|Usefulness|Usefulness With CY-PHR|Personal hack frequency||
 Access(Branch)|[[Range]]5|5[[/Range]] (Desired exit)
-[[Range]]2|5[[/Range]] (Undesired exit)|[[CellStyle:Good]]Frequent, once per map||
-Access(Main)|[[Range]]5|5[[/Range]] (Desired exit)
+[[Range]]2|5[[/Range]] (Undesired exit)|[[Range]]4|5[[/Range]] (Desired exit)
+[[Range]]1|5[[/Range]] (Undesired exit)|[[CellStyle:Good]]Frequent, once per map||
+Access(Main)|[[Range]]4|5[[/Range]] (Desired exit)
+[[Range]]2|5[[/Range]] (Undesired exit)|[[Range]]5|5[[/Range]] (Desired exit)
 [[Range]]3|5[[/Range]] (Undesired exit)|[[CellStyle:Good]]Frequent, once per map||
-Access(Emergency)|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, multiple times per map||
-Index(Fabricators)|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
-Index(Garrisons)|[[Range]]3|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
-Index(Machines)|[[Range]]4|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
-Index(Recycling Units)|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
-Index(Repair Stations)|[[Range]]3|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
-Index(Scanalyzers)|[[Range]]3|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
-Index(Terminals)|[[Range]]4|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map||
-Inventory(Components)|[[Range]]3|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map||
-Inventory(Prototype)|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
-Layout(Zone)|[[Range]]4|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map
+Access(Emergency)|[[Range]]2|5[[/Range]]|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, multiple times per map||
+Index(Fabricators)|[[Range]]2|5[[/Range]]|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
+Index(Garrisons)|[[Range]]3|5[[/Range]]|[[Range]]3|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
+Index(Machines)|[[Range]]4|5[[/Range]]|[[Range]]4|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
+Index(Recycling Units)|[[Range]]2|5[[/Range]]|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
+Index(Repair Stations)|[[Range]]3|5[[/Range]]|[[Range]]3|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
+Index(Scanalyzers)|[[Range]]3|5[[/Range]]|[[Range]]3|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
+Index(Terminals)|[[Range]]4|5[[/Range]]|[[Range]]4|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map||
+Inventory(Components)|[[Range]]3|5[[/Range]]|[[Range]]3|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map||
+Inventory(Prototype)|[[Range]]2|5[[/Range]]|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, once per map||
+Layout(Zone)|[[Range]]4|5[[/Range]]|[[Range]]4|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map
 [[/Table]]
 [[/Expandable]]
 
@@ -9315,6 +9329,7 @@ Enumerate(Transport)|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, mul
 
 [[Heading]]Database Hacks[[/Heading]]
 These types of hacks provide Cogmind with permanent analysis or schematic information about a target. While direct hacks can always be performed, after succeeding at one of these hacks, there will be a 25% chance that future indirect database hacks trigger a database lockout. These hacks are depth and Terminal level restricted, so the better higher-rating parts require higher level and lategame Terminals.
+CY-PHR makes database hacks unreliable as there's a chance to get either a worthless of nonexistent analysis, schematic, or prototype IDs out of these hacks. If you plan to do a lot of schematic hacking, try to avoid CY-PHR triggers until you get the necessary schematics.
 
 [[Expandable]]
 Show/hide hacks|
@@ -9327,7 +9342,7 @@ I tend to leave schematic hacking for late into a floor rather than earlier. By 
 For a reference of good parts to hack for, see [[aoemica's Flight Guide/Machine Hacking/Schematics Reference|this page]].
 
 [[Heading:2]][[GameText]]Prototypes[[/GameText]][[/Heading]]
-This is a middling hack that gives a few random prototype IDs. Since there are so many prototype parts, the average value of a few IDs is not particularly high. I rarely go out of my way to do this hack, especially indirectly. If I have lots of hackware, I will occasionally take direct Prototypes hacks. However, you usually have something better to do unless you really are a fantastic hacker.
+This is a middling hack that gives a few random prototype IDs. Since there are so many prototype parts, the average value of a few IDs is not particularly high. I rarely go out of my way to do this hack, especially indirectly. If I have lots of hackware, I will occasionally take direct Prototypes hacks. However, you usually have something better to do unless you have an incredible hack stack.
 
 [[Heading:2]]Hack Rating|Hack Rating Database[[/Heading]]
 [[Table]]Hack|Usefulness|Personal hack frequency||
@@ -9345,7 +9360,7 @@ These hacks deal with recalling temporarily summoned [[Squad|Squads]] back to an
 [[Expandable]]
 Show/hide hacks|
 [[Heading:2]][[GameText]]Recall(Assault / Investigation / Extermination / Reinforcements)[[/GameText]][[/Heading]]
-Recall hacks are some of the most powerful hacks in that they have a tangible effect on bots on the map. Being able to eliminate squads without having to destroy them is a strong ability. All recall hacks behave pretty similarly; if the appropriate squad type is bothering you, hit recall to send them away. I find that [[Extermination Squad|exterminations]] are my most recalled squad type since they tend to be the biggest nuisance in the longer term. Having to juggle multiple exterminations or trying to kill them with a poorly combat-equipped flight build can easily end in disaster, but recalling is a surefire way of getting them off your tail. Since all recall hacks have quite low success rates, with an increasing difficult upon each successful hack, it's worth looking for direct hacks between multiple Terminals. Some other nice recall examples are recalling [[Investigation Squad|investigations]] to free up a [[Fabricator]] when used without an [[Authchips|Authchip]] or recalling [[Reinforcement Squad|reinforcements]] from a heavy.
+Recall hacks are some of the most powerful hacks in that they have a tangible effect on bots on the map. Being able to eliminate squads without having to destroy them is a strong ability. All recall hacks behave similarly; if the appropriate squad type is bothering you, hit recall to send them away. I find that [[Extermination Squad|exterminations]] are my most recalled squad type since they tend to be the biggest nuisance in the longer term. Having to juggle multiple exterminations or trying to kill them with a poorly combat-equipped flight build can easily end in disaster, but recalling is a surefire way of getting them off your tail. Since all recall hacks have quite low success rates, with an increasing difficult upon each successful hack, it's worth looking for direct hacks between multiple Terminals. Some other nice recall examples are recalling investigations to free up a [[Fabricator]] when used without an [[Authchips|Authchip]] or recalling [[Reinforcement Squad|reinforcements]], particularly [[Cutter|Cutters]], from a heavy.
 
 [[Heading:2]]Hack Rating|Hack Rating Recall[[/Heading]]
 [[Table]]
@@ -9362,15 +9377,15 @@ These hacks deal with checking and purging alert.
 
 [[Expandable]]Show/hide hacks|
 [[Heading:2]][[GameText]]Alert(Check)[[/GameText]][[/Heading]]
-A pretty low value hack for flight. Alert level is not a huge concern for most flight builds. Even if you are running high alert, it is not too difficult to avoid or run away from [[Assault Squad|assaults]]. A non-hack method of checking alert would be to use a [[Datajacks|Datajack]] on an [[Operator]] and use the [[GameText]]check_alert[[/GameText]] hack. Alternately, you can just wait and see if assaults are being dispatched to you. No assaults mean alert level is below level 2, which is all that really matters most of the time.
+A pretty low value hack for flight. Alert level is not a huge concern for most flight builds. Even if you are running high alert, it is not too difficult to avoid or run away from [[Assault Squad|assaults]]. A non-hack method of checking alert would be to use a [[Datajacks|Datajack]] on an [[Operator]] and use the [[GameText]]check_alert[[/GameText]] hack. Alternately, you can just wait and see if assaults are being dispatched to you. No assaults mean alert level is below level 2, which is all that really matters most of the time. With CY-PHR, the alert ratings are slightly obfuscated, but with [[CY-PHR#Alert(Check) Indirection|a reference]] this doesn't matter.
 
 [[Heading:2]][[GameText]]Alert(Purge)[[/GameText]][[/Heading]]
-Purging alert, on the other hand, is a little more useful than checking alert. If assaults are coming by then it's time to drop a few purges. Sometimes it's worth doing preemptively if you do something like smashing a few Garrisons or blowing up a large explosive machine array. Usually though, I don't bother with this hack until after I've already got the assault dispatch message.
+Purging alert, on the other hand, is a little more useful than checking alert. If assaults are coming by then it's time to drop a few purges. Sometimes it's worth doing preemptively if you do something like smashing a few Garrisons or blowing up a large explosive machine array. Usually though, I don't bother with this hack until after I've already got the assault dispatch message. Sometimes CY-PHR will make this hack increase your alert instead of decreasing it which can be trouble if you already have high alert to begin with, although it doesn't happen all that frequently.
 
 [[Heading:2]]Hack Rating|Hack Rating Alert[[/Heading]]
-[[Table]]Hack|Usefulness|Personal hack frequency||
-Alert(Check)|[[Range]]2|5[[/Range]]|[[CellStyle:Bad]]Rare, usually only once per map||
-Alert(Purge)|[[Range]]4|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map
+[[Table]]Hack|Usefulness|Usefulness With CY-PHR|Personal hack frequency||
+Alert(Check)|[[Range]]2|5[[/Range]]|[[Range]]2|5[[/Range]]|[[CellStyle:Bad]]Rare, usually only once per map||
+Alert(Purge)|[[Range]]4|5[[/Range]]|[[Range]]3|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map
 [[/Table]]
 [[/Expandable]]
 
@@ -9401,13 +9416,13 @@ These hacks don't fit into any particular category.
 [[Expandable]]
 Show/hide hacks|
 [[Heading:2]][[GameText]]Manifests[[/GameText]][[/Heading]]
-This useful hack provides intel about the contents of all [[Hauler|Haulers]] on the map. Haulers can contain all sorts of goodies for all build types, but flight is particularly adept at running across the whole map and looting all Haulers. If you see a big prototype stockpile from this hack, grab a [[Transport Network Coupler]] [[Spoiler]]or install a [[GameText]]Trojan(Haulers)[[/GameText]][[/Spoiler]] and start hunting. This is especially useful if you are considering hunting [[Cargo Convoy|Cargo Convoys]], since their loot is revealed when they are on the map. This hack also reveals the number of guards for each Hauler, so you can easily eliminate some Haulers as not worth hunting down.
+This useful hack provides intel about the contents of all [[Hauler|Haulers]] on the map. Haulers can contain all sorts of goodies for all build types, but flight is particularly adept at running across the whole map and looting all Haulers. If you see a big prototype stockpile from this hack, grab a [[Transport Network Coupler]] [[Spoiler]]or install a [[GameText]]Trojan(Haulers)[[/GameText]][[/Spoiler]] and start hunting. This is especially useful if you are considering hunting [[Cargo Convoy|Cargo Convoys]], since their loot is revealed when they are on the map. This hack also reveals the number of guards for each Hauler, so you can easily eliminate some Haulers as not worth hunting down. The value of Haulers increases dramatically in Research depths because they will often contain endgame parts that you might otherwise want to fabricate.
 
 [[Heading:2]]Hack Rank|Hack Rank Miscellaneous[[/Heading]]
 [[Table]]
 Hack|Usefulness|Personal hack frequency||
 [[Spoiler]]Control(Protovariants)[[/Spoiler]]|[[Range]]2|5[[/Range]]|[[CellStyle:Bad]]Rare, usually only once if at all
-||Manifests|[[Range]]3|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map
+||Manifests|[[Range]]4|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map
 [[/Table]]
 [[/Expandable]]
 
@@ -9426,7 +9441,7 @@ This low value hack locates all interactive machines in a moderately sized 31 ti
 This hack to assimilate an [[Operator]] is one of the best hacks in the game. You should nearly always be able to beat Operators to their Terminals, so there should be multiple opportunities to use this hack each floor. Operators make fantastic allies for their hacking bonus and trap-locating abilities. Try to keep at least one around at all times if possible and use this hack to get more.
 
 [[Heading:2]][[GameText]]Trojan(Botnet)[[/GameText]][[/Heading]]
-This hack is a somewhat divisive hack among Cogmind players. Its effect is simple; Botnet provides a small hacking bonus to hacks on all other machines on the floor. With a base value of 6% and diminishing returns, two of them isn't even worth a single [[Hacking Suite]]. Not to mention, a hack you spend on a Botnet is a hack you spend not doing anything else. Still, it is a hacking bonus that has no slot or ally requirements. It can help turn a Terminal you have little use for into a successful hack on a later Terminal that you really do care about. One of its best uses is in squeezing every single percentage point you can muster into hacking for a high level schematic or trying to quickly locate an exit. I typically install at least one or two per map and don't go more than that unless I have a fantastic hackware stack with nothing better to do.
+This hack is a somewhat divisive hack among Cogmind players. Its effect is simple; Botnet provides a small hacking bonus to hacks on all other machines on the floor. With a base value of 6% and diminishing returns, two of them isn't even worth a single [[Hacking Suite]]. Not to mention, a hack you spend on a Botnet is a hack you spend not doing anything else. Still, it is a hacking bonus that has no slot or ally requirements. It can help turn a Terminal you have little use for into a successful hack on a later Terminal that you really do care about. One of its best uses is in squeezing every single percentage point you can muster into hacking for a high level schematic or trying to quickly locate an exit. I typically install at least one per map if I'm trying to succeed at a high difficulty hack.
 
 [[Heading:2]][[GameText]]Trojan(Detonate)[[/GameText]][[/Heading]]
 This niche hack turns nearby explosive machines into proximity mines. Luring squads into big explosive machine arrays and then blowing them up is always a fun time, although it can be punishing to use too much since you are assigned all [[Alert]] that comes from the explosions. Additionally, make sure to look out for collateral damage when using this hack. It's easy for explosive machines to take out a useful interactive machine, nuke a part stockpile you may have wanted on the ground, or blow away your cover.
@@ -9449,7 +9464,7 @@ Force(Sabotage)|[[Range]]5|5[[/Range]] (Hub)
 [[Range]]1|5[[/Range]] (Rest)|[[CellStyle:Neutral]]Never unless Hub, then multiple times per map||
 Force(Search)|[[Range]]1|5[[/Range]]|[[CellStyle:Bad]]Practically never||
 Trojan(Assimilate)|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
-Trojan(Botnet)|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, once or twice per map (1-2)||
+Trojan(Botnet)|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, once or twice per map||
 Trojan(Detonate)|[[Range]]3|5[[/Range]]|[[CellStyle:Bad]]Rare, situationally multiple times per map||
 Trojan(Disrupt)|[[Range]]3|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
 Trojan(Operators)|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map||
