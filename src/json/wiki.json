@@ -2080,31 +2080,31 @@
  "Parts": [
   {
    "Name": "01-MTF's Autohacker",
-   "Content": ""
+   "Content": "A unique part only found on [[01-MTF]] that was stolen from the [[Exiles (Group)]]. Its Door [[Terminal]] hacking is most useful with high difficulty doors like the [[Access]] [[Surface]] exit. Generally better than [[Plasma Cutters]], although they have an advantage in being able to function even if the door Terminal gets destroyed."
   },
   {
    "Name": "01-MTF's Shockpuncher",
-   "Content": ""
+   "Content": "A unique part only found on [[01-MTF]], this short ranged [[Electromagnetic Guns|Electromagnetic Gun]] is an energy-hungry but powerful shotgun-type weapon. Its raw damage output is better than even lategame weapons like the [[Com. HERF Cannon]], capable of easily killing most bots in the game in 2 or 3 hits, and its high disruption helps disable crucial parts on bots that it hits. However, its short range and high spectrum can be a detriment since it has a high chance of blowing up any bots that it hits. Any nearby cover is not likely to last very long."
   },
   {
    "Name": "0b10 Alert Chip",
-   "Content": "Analyzes ambient [[0b10]] signals to guess the alert level. The best part of this item is the reduction of influence by 20%. This item is obtainable from the exiles."
+   "Content": "This unique part is one of the [[Exiles Vault Prototypes]] and can primarily be found on the [[Exiles (Location)]] map [[Spoiler]]or in the [[Zion Deep Caves]][[/Spoiler]]. This item provides a [[RIF]]-like [[Alert]] Influence indicator on the HUD as well as reduces all Alert gained by 20%. This part is best used with builds that are likely to generate a lot of alert like heavy combat builds or with heavy ally [[Alignment|Alignments]] like [[Imprint]]."
   },
   {
    "Name": "0b10 Decoder Chip [Generic]",
-   "Content": ""
+   "Content": "This jack of all trades [[0b10 Decoder Chips|0b10 Decoder Chip]] provides a large variety of information of different kinds while in [[0b10]] maps. All of the intel it gives can be obtained in other more specialized decoder chips, although they would require multiple slots to do so. The Generic chip provides intel roughly every 30 turns."
   },
   {
    "Name": "0b10 Decoder Chip [Looter]",
-   "Content": ""
+   "Content": "This [[0b10 Decoder Chips|0b10 Decoder Chip]] specializes in finding parts on the ground while in [[0b10]] maps. It is the decoder chip with the fastest update rate, providing part intel roughly every 18 turns. Providing item intel is a fairly rare [[Infowar]] capability and has a lot of value for slower propulsion types, allowing them to skip exploring large areas of the map with no interesting loot. This is particularly good in tougher lategame maps, especially [[Research]] and its branches like [[Testing]] since it can reveal prefabs containing valuable unique items at an enormous 30 tile range."
   },
   {
    "Name": "0b10 Decoder Chip [Scout]",
-   "Content": ""
+   "Content": "This [[0b10 Decoder Chips|0b10 Decoder Chip]] specializes in locating certain types of permanent map layout intel. [[Traps]], exits, [[Garrison Access|Garrisons]], and hidden doorways are all great intel to have that doesn't go bad over time unlike some other decoder chip intel. However, since all of this intel is permanent, it also is the slowest updating decoder chip at roughly 50 turns per update. Locating an essential exit may be difficult when a nearby 6 trap array can take about 300 turns to detect first."
   },
   {
    "Name": "0b10 Decoder Chip [Skirmisher]",
-   "Content": ""
+   "Content": "This [[0b10 Decoder Chips|0b10 Decoder Chip]] specializes in locating different types of [[Squad|Squads]] on the map, though it can also locate [[Garrison Access|Garrisons]]. Garrison intel is permanent since the location on the map doesn't move, but all other squad intel is only temporary and the intel indicator will fade over time to indicate age. This chip is good at finding the location of [[Sentry|Sentries]] and [[Behemoth|Behemoths]] as well as getting the gist of [[Patrol Squad|Patrol]] movements over time. However, a notable limitation is being unable to detect [[Extermination Squad|Exterminations]] and [[Assault Squad|Assaults]]. Additionally, its usefulness can diminish some if there are a large number of squads on the map in range. Due to its random nature and semi infrequent update rate of around once per 30 turns, it is easy for some squads to slip by unreported."
   },
   {
    "Name": "0bPrime Scrap Suit",
@@ -7392,7 +7392,7 @@
     "0b10 Decoder Chip [Scout]",
     "0b10 Decoder Chip [Skirmisher]"
    ],
-   "Content": "[[Heading]]List of 0b10 Decoder Chips[[/Heading]]\n[[PartGroupTable]]\n0b10 Decoder Chips|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nEffect/Effect\n[[/PartGroupTable]]"
+   "Content": "0b10 Decoder Chips are [[Derelict]]-created pieces of [[Infowar]] that work on any [[0b10]]-controlled floors to provide passive intel over time. Each decoder chip has an average frequency and certain types of intel that it provides. Their range is a 30 tile square area which is quite large compared to most Infowar parts. The intel is turn-based which means that it is much more effective on slower propulsion types that take longer to get around.\nSome types of intel are permanent based on features of the map and can't be obtained multiple times. Other intel is based on squad positioning that does frequently change and can be obtained more than once. For example, a Skirmisher chip may report the position of a single [[Patrol Squad]] multiple times in a row as it moves across the map.\nDecoder chips are typically found in Derelict-controlled areas like [[Caves]] in [[Scrap]] as well as Caves branches like [[Zion]]. Their [[Schematic|Schematics]] can be obtained through the [[Tech Extrapolator]].\n\n[[Table]]\nPart|Frequency|Intel Types||\n[[0b10 Decoder Chip [Generic]]]|~30 turns|Items, traps, exits, hidden doorways, interactive machines, patrol and security positions.||\n[[0b10 Decoder Chip [Looter]]]|~18 turns|Items.||\n[[0b10 Decoder Chip [Scout]]]|~50 turns|Traps, exits, garrisons, hidden doorways.||\n[[0b10 Decoder Chip [Skirmisher]]]|~30 turns|Garrisons, patrol, investigation, reinforcement, and security positions.\n[[/Table]]\n\n[[Heading]]List of 0b10 Decoder Chips[[/Heading]]\n[[PartGroupTable]]\n0b10 Decoder Chips|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nEffect/Effect\n[[/PartGroupTable]]"
   },
   {
    "Name": "Actuator Arrays",
