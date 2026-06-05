@@ -7919,6 +7919,11 @@
    "Content": "[[Heading]]List of Impact Weapons[[/Heading]]\n[[PartGroupTable]]\nImpact Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nShot/Delay|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Disruption|\nProjectile/Salvage|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
+   "Name": "Items",
+   "Part Category": "Items",
+   "Content": "Items are a category of unequippable parts that have various special effects, often related to quests with certain NPCs or working in combination with other parts. Some parts may be used directly by dropping them on the floor and pressing >."
+  },
+  {
    "Name": "Kinecellerators",
    "Parts": [
     "Kinecellerator",
