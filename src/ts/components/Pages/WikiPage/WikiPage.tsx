@@ -624,6 +624,7 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ["Hover Units", (item) => item.type === "Hover Unit"],
     ["Hybrid Power", (item) => item.slot === "Power" && item.name.startsWith("Hyb.")],
     ["Impact Weapons", (item) => item.type === "Impact Weapon"],
+    ["Items", (item) => item.type === "Item"],
     ["Legs", (item) => item.type === "Leg"],
     ["Light Power", (item) => item.slot === "Power" && item.name.startsWith("Lgt.")],
     ["Micro Power", (item) => item.slot === "Power" && item.name.startsWith("Mic.")],
