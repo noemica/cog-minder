@@ -8,6 +8,7 @@ export type EntryType =
     | "Location"
     | "Other"
     | "Part"
+    | "Partial"
     | "Part Group"
     | "Part Supergroup";
 

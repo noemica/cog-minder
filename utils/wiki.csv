@@ -1,4 +1,4 @@
-"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
+﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","",""
 "01-MTF's Autohacker","Part","A unique [[Utilities|Utility]] only found on [[01-MTF]] that was stolen from the [[Exiles (Group)]]. Its Door [[Terminal]] hacking is most useful with high difficulty doors like the [[Access]] [[Surface]] exit. Generally better than [[Plasma Cutters]], although they have an advantage in being able to function even if the door Terminal gets destroyed.","","","","","","",""
 "01-MTF's Shockpuncher","Part","A unique [[Energy Guns|Energy Gun]] only found on [[01-MTF]], this short ranged [[Electromagnetic Guns|Electromagnetic Gun]] is an energy-hungry but powerful shotgun-type weapon. Its raw damage output is better than even lategame weapons like the [[Com. HERF Cannon]], capable of easily killing most bots in the game in 2 or 3 hits, and its high disruption helps disable crucial parts on bots that it hits. However, its short range and high spectrum can be a detriment since it has a high chance of blowing up any bots that it hits. Any nearby cover is not likely to last very long.","","","","","","",""
@@ -1801,7 +1801,12 @@ This article was last edited during Beta 15 ","","","","","","",""
 "Cld. VTOL Module","Part","","","","","","","",""
 "Cloak of Protection","Part","","","","","","","",""
 "Cloaking Device","Part","","","","","","","",""
-"Cloaking Devices","Part Group","[[Heading]]List of Cloaking Devices[[/Heading]]
+"Cloaking Devices","Part Group","Cloaking [[Devices]] are a type of [[Infowar]] that reduces the vision of hostile robots. They also have a secondary effect of reducing the chance of being [[Partial Spot|Partial Spotted]] by moving through an enemy's vision without them having a turn, although this effect rarely comes into play. Cloaking devices compete with [[Visual Processing Units]] as a vision-manipulating part that allows for safer map exploration.
+
+[[Heading]]Vision Manipulation Infowar Comparison[[/Heading]]
+[[Partial]]Vision Manipulation Infowar Comparison[[/Partial]]
+
+[[Heading]]List of Cloaking Devices[[/Heading]]
 [[PartGroupTable]]
 Cloaking Devices|
 Overview/Size|
@@ -6239,30 +6244,41 @@ Infowar is useful on all build types, from combat to stealth alike. Stealth buil
 Many infowar utilities tend to be low integrity devices and should ideally be swapped into inventory before entering combat. High coverage [[Armor]] can help protect these parts, but even then, these parts tend to get destroyed fairly easily in combat. [[Utility Shieldings]] may reduce the need for swapping in combat, especially for a faster-moving flight or hover build that doesn't want to stick around for prolonged combat.
 
 [[Heading]]Infowar Types[[/Heading]]
+
 [[Heading:2]]Robot Detection[[/Heading]]
 This type of infowar revolves around detecting bots before they are seen through normal [[Line of Sight]] mechanics. Being able to detect bots through walls, especially at a large distance, can be a large boon for avoiding unnecessary combat encounters.
+
 [[Heading:3]][[Sensor Arrays]][[/Heading]]
 Sensor Arrays are the most basic and one of the most common forms of robot detection. Lower rating sensors have a low detection radius, equal or smaller than the primary 16 tile line of sight distance, so their primary use is finding bots in nearby rooms or around corners rather than long-ranged detection. Sensors are best paired with [[Signal Interpreters]] due to their ability to distinguish between different classes of bots. They can easily be looted from [[TF Node|TF Nodes]].
 The [[Active Sensor Suite]] is a variant of the standard Sensor Array. It combines both the sensor and signal interpreting capabilities into a single part. It also provides a unique type of intel that shows commonly traveled robot paths to points of interest on the map.
+
 [[Heading:3]][[FarCom]][[/Heading]]
 FarCom is not a part, but is a free source of 18 tile radius robot detection that can be acquired by using the FarCom Aligner machine in the [[Exiles (Location)]]. Unlike most other types of robot detection, FarCom can detect only combat bots and only in [[0b10]] controlled maps. While [[Mines]] is counted as an 0b10-controlled map, [[Caves]] is notably not.
+
 [[Heading:3]][[Seismic Detector]] (bot detection)[[/Heading]]
 The Seismic Detector is an indirect and somewhat unreliable source of robot detection. Grounded bots that move generate varying amounts of seismic activity that can be detected. Wheeled, legged, and treading bots create dark orange short, bright orange medium, and bright yellow long trails. Airborne bots cannot be detected by Seismic Detectors. They can often be looted off of [[T-07 Excavator|T-07 Excavators]].
+
 [[Heading:3]][[IFF Parsers]][[/Heading]]
 IFF Parsers are a basic form of robot detection. All bots are revealed by this part, although the type of bot is not revealed. Instead, the IFF parser reveals the faction of the scanned bot. 0b10-aligned bots show up in yellow while other bots show up in blue.
 [[Spoiler]]
+
 [[Heading:3]][[Quantum Companion]][[/Heading]]
 The Quantum Companion is a unique weapon with many different effects. Some effects are not present on the [[Companion Sword|base form of the sword]], but only appear in the evolved Quantum form. One of these effects is a 12 tile radius sensor effect. While the range is very low, this part is unique in that it provides infowar in a weapon slot rather than in utility slots.
 [[/Spoiler]]
 [[Redacted]]
+
 [[Heading:3]][[Sigix Exoskeleton]] (Robot Detection)[[/Heading]]
 The Sigix Exoskeleton is a unique propulsion item. It has a large number of effects, one of which is an 18-tile range robot detection effect. All active bots within the range are instantly detected. This part is unique in that it provides infowar in propulsion slots rather than in utility slots.[[/Redacted]]
+
 [[Heading:3]]Robot Detection and Patrol Navigation ([[RIF]] abilities)[[/Heading]]
 Robot Detection and Patrol Navigation are abilities that can randomly be gained when using a RIF installer. Robot Detection grants the detection of any 0b10-aligned combat bot within a 24 tile range when a matching [[Relay Couplers|Relay Coupler]] is attached. Patrol Navigation grants the prediction of squad movement paths within a 24 tile range when a matching Relay Coupler is attached, although it only reveals the path of the squad leader. While these abilities can detect bots with the Scan Cloak trait, they will not work in non-0b10 controlled maps like Caves. They tend to be fairly unreliable due to the many different types of bots that are present in 0b10. Having a coupler for every possible bot type takes an unreasonable amount of slots.
+
 [[Heading:3]][[0b10 Decoder Chip [Skirmisher]]][[/Heading]]
 The Skirmisher, and to a lesser extent, the [[0b10 Decoder Chip [Generic]|Generic]] decoder chips, are two unique sources of bot detection. They do not directly reveal the class or location of specific bots like most bot detection sources. Instead, they can occasionally pick up the type and locations of patrol, investigation, reinforcement, and security squads and mark them as intel on the map. This effect only occurs in 0b10 controlled maps. This effect is somewhat unreliable due to the infrequent intel updates.
+
 [[Heading:3]][[Triangulator]][[/Heading]]
 The Triangulator is an extremely niche 24 tile robot detecting utility with one major catch: It can only detect robots that are currently tracking Cogmind. This makes it unhelpful for avoiding hostile bots in the first place. However, once spotted, it can be a helpful tool to shake pursuers on faster propulsion types. This makes it unlike all of the other forms of bot detection since they are proactive instead of reactive. The Triangulator also has other effects including hostile visual range detection and travel paths, but they effects don't actively help in detecting bots. It has no restrictions on bot detection and can even detect bots with the Scan Cloak trait.
+
 [[Heading:3]]Robot Detection Infowar Comparison[[/Heading]]
 [[Table]]
 Category|Sensor Arrays|Active Sensor Suite|FarCom|Seismic Detector|IFF Parsers|[[Spoiler]]Quantum Companion[[/Spoiler]]|[[Redacted]]Sigix Exoskeleton[[/Redacted]]|Robot Detection/Patrol Navigation|0b10 Decoder Chip [Skirmisher/Generic]|Triangulator||
@@ -6276,22 +6292,30 @@ Update frequency|[[CellStyle:Neutral]]Once per turn|[[CellStyle:Neutral]]Once pe
 Map restrictions|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Good]]N/A||
 Other limitations|[[CellStyle:Neutral]]Can be difficult to decipher without a Signal Interpreter|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Bad]]Can be difficult to decipher, many bots are not detected|[[CellStyle:Neutral]]Can be difficult to decipher|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A|[[CellStyle:Good]]N/A
 [[/Table]]
+
 [[Heading:2]]Terrain Scanning[[/Heading]]
 This type of infowar revolves around detecting nearby terrain, especially exits, rooms, and machines. Terrain scanning can make traversal through a map more efficient and easier. When combined with robot detection, hostile squads can often be bypassed entirely with a safe path out of sight.
+
 [[Heading:3]][[Terrain Scanners]][[/Heading]]
 Terrain scanners are the basic form of terrain scanning that reveal a random selection of nearby tiles nearby. The basic rate of terrain scanning is very low and only reveals up to a few tiles per turn. They can be combined with [[Terrain Scan Processors]] to dramatically increase the amount of tiles that are scanned per turn. Slower propulsion types tend to get more value out of terrain scanners as it provides more time for the scanners to do their work. A powerful enough processor can make terrain scanning fast enough to work well for even fast flight builds.
+
 [[Heading:3]][[Structural Scanner]][[/Heading]]
 Structural Scanners are a form of short ranged terrain scanning that operate instantly. When a wall is seen in visual range, immediately surrounding tiles are instantly revealed, including emergency access doors. [[Spoiler]]For the [[Deep Structural Scanner]], 3 tiles deep are revealed instead.[[/Spoiler]] Due to its cheap upkeep and instant scanning speed, it is a high value for faster builds. It is particularly helpful at locating short digs and emergency accesses between adjacent rooms.
 [[Redacted]][[Heading:3]]Sigix Exoskeleton (Terrain Scanning)[[/Heading]]
 The Sigix Exoskeleton is a unique propulsion item. It has a large number of effects, one of which is an 18-tile range terrain scanning effect. All types of terrain within that range, including hidden doors, are instantly detected.[[/Redacted]]
+
 [[Heading:3]][[Machine Analyzer]][[/Heading]]
 The Machine Analyzer is an indirect source of terrain scanning. It does not reveal random terrain tiles, but it does reveal most types of machines. Once any interactive or non-interactive machine is spotted, nearby machines are also revealed. If an interactive machine was spotted, the nearest machine of the same type is also revealed regardless of distance.
+
 [[Heading:3]]Seismic Detector (terrain scanning)[[/Heading]]
 The Seismic Detector is an indirect and unreliable source of terrain scanning. Certain machines will generate seismic activity that are picked up by this part. This only happens for a few types of non-interactive machines, and mostly in Factory maps. Interactive machines are never detected. This does not reveal any specific information about the terrain, but approximate room sizes and locations may be guessed based on the detected machines.
+
 [[Heading:3]][[0b10 Decoder Chip [Scout]]][[/Heading]]
 The Scout, and to a lesser extent, the Generic decoder chips, are two sources of indirect terrain scanning. However, their terrain scanning effect is very limited. Only exits, [[Garrison Access|Garrisons]], and hidden doors can be detected.
+
 [[Heading:3]]Structural Interface  (RIF Ability)[[/Heading]]
 Structural Interface is an ability that can randomly be gained when using a RIF installer that provides an indirect source of terrain scanning. Hidden doors and phase walls (primarily inside Garrisons) are instantly revealed on sight, similar to the Structural Scanner.
+
 [[Heading:3]]Terrain Scanning Infowar Comparison[[/Heading]]
 [[Table]]
 Category|Terrain Scanners|Structural Scanner|[[Redacted]]Sigix Exoskeleton[[/Redacted]]|Machine Analyzer|Seismic Detector|0b10 Decoder Chip [Scout/Generic]|Structural Interface||
@@ -6303,28 +6327,30 @@ Alignment requirement|[[CellStyle:Good]]No|[[CellStyle:Good]]No|[[CellStyle:Neut
 Update frequency|[[CellStyle:Neutral]]Once per turn, very low rate without processor|[[CellStyle:Good]]Instant|[[CellStyle:Good]]Instant|[[CellStyle:Good]]Instant|[[CellStyle:Good]]Instant|[[CellStyle:Bad]]Infrequent|[[CellStyle:Good]]Instant||
 Map restrictions|[[CellStyle:Good]]N/A|[[CellStyle:Good]]None|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Good]]N/A|[[CellStyle:Neutral]]0b10 only|[[CellStyle:Good]]None
 [[/Table]]
+
 [[Heading:2]]Vision Manipulation[[/Heading]]
 Unlike the previous larger categories, there are only 2 types of vision manipulation. [[Cloaking Devices]] reduce vision of hostile bots and [[Visual Processing Units]] increase vision of the bot using them. While they function slightly differently, they serve a similar purpose of allowing additional exploration without being spotted by hostiles.
+
 [[Heading:3]]Vision Manipulation Infowar Comparison[[/Heading]]
-[[Table]]
-Category|Cloaking Devices|Visual Processing Units||
-Range|[[CellStyle:Good]]-2 to -6, up to -9 when half_stacked|[[CellStyle:Good]]+2 to +8, not stackable||
-Energy Upkeep|[[CellStyle:Neutral]]Expensive: -5 to -20 energy per turn|[[CellStyle:Good]]None||
-Slot requirement|[[CellStyle:Good]]1 swappable|[[CellStyle:Neutral]]1 unswappable||
-Other positives|[[CellStyle:Good]]Allows sneaking into areas guarded by bots without being spotted|[[CellStyle:Good]]Allows for seeing further in combat and sniping||
-Other Negatives|[[CellStyle:Neutral]]Low integrity/high coverage, no use if bots are already tracking Cogmind|[[CellStyle:Good]]N/A
-[[/Table]]
+[[Partial]]Vision Manipulation Infowar Comparison[[/Partial]]
+
 [[Heading:2]]Other Infowar Types[[/Heading]]
+
 [[Heading:3]][[0b10 Decoder Chips]][[/Heading]]
 While some of the decoder chips were mentioned in other categories, as a whole they're an oddball group. They tend to provide intel that crosses in between major categories, while also providing unique intel like part detection.
+
 [[Heading:3]][[Drone Bays]][[/Heading]]
 Drone bays send out controlled allies to explore the map. Basic drones can only be used for exploration, although other drones can be used for combat purposes as well.
+
 [[Heading:3]][[ECM Suites]][[/Heading]]
 ECM Suites are used to end tracking against Cogmind quicker. Each type of ECM Suite has a multiplier that makes hostile tracking less effective. Additionally, the [[Alert]] gain that occurs when a bot loses tracking on Cogmind does not occur when active. While this doesn't help avoid bots in the first place, it is helpful for losing pursuers.
+
 [[Heading:3]][[Transmission Jammers]][[/Heading]]
 Transmission Jammers are used for several purposes, but generally help prevent communication between hostiles, especially summoning of reinforcements. While in range, they will prevent bots from transmitting tracking data about Cogmind to other allies on spot. This can help pick off bots in a squad 1 by 1 and to eliminate or bypass Watchers even when hostiles are nearby. They can also block [[Alarm Trap|Alarm Traps]] entirely.
+
 [[Heading:3]]Signal Jamming (RIF Ability)[[/Heading]]
 Signal Jamming is a RIF ability that behaves similar to Transmission Jammers. Instead of requiring a specific part to use, 0b10 bots are jammed based on attached Relay Couplers. Additionally, Alarm Traps are blocked entirely.
+
 [[Heading:3]][[Trap Scanners]][[/Heading]]
 Trap Scanners do exactly as their name implies: They scan for traps. Trap Scanners add fixed percentage to the chance to detect a trap each turn that one is within Cogmind's line of sight.
 
@@ -11604,6 +11630,14 @@ All of the above deals with fighting V4-D3R, though that is not the only possibi
 "VTOL Module","Part","","","","","","","",""
 "Variable Charge Gun","Part","","","","","","","",""
 "Vibroblade","Part","","","","","","","",""
+"Vision Manipulation Infowar Comparison","Partial","[[Table]]
+Category|Cloaking Devices|Visual Processing Units||
+Range|[[CellStyle:Neutral]]-2 to -6, up to -9 when half_stacked|[[CellStyle:Neutral]]+2 to +8, not stackable||
+Energy Upkeep|[[CellStyle:Bad]]Expensive: -5 to -20 energy per turn|[[CellStyle:Good]]None||
+Slot requirement|[[CellStyle:Good]]1 swappable|[[CellStyle:Bad]]1 unswappable||
+Other positives|[[CellStyle:Neutral]]Sneak into areas guarded by bots without being spotted|[[CellStyle:Neutral]]See further in combat, good for sniping and kiting||
+Other Negatives|[[CellStyle:Bad]]Low integrity/high coverage, no use if bots are already tracking Cogmind|[[CellStyle:Good]]N/A
+[[/Table]]","None","","","","","",""
 "Visual Processing Unit","Part","","","","","","","",""
 "Visual Processing Units","Part Group","[[Heading]]List of Visual Processing Units[[/Heading]]
 [[PartGroupTable]]

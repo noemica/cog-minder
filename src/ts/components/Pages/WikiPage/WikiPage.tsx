@@ -377,6 +377,28 @@ function addOther(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, 
     }
 }
 
+function addPartial(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, WikiEntry>) {
+    for (const partialEntry of wiki.Partial) {
+        let spoiler: Spoiler = "None";
+        if (partialEntry.Spoiler === "Redacted") {
+            spoiler = "Redacted";
+        } else if (partialEntry.Spoiler === "Spoiler") {
+            spoiler = "Spoiler";
+        }
+
+        const entry = new WikiEntry(
+            [],
+            [],
+            partialEntry.Content,
+            "Partial/" + partialEntry.Name,
+            spoiler,
+            "Partial",
+        );
+
+        addEntry(entry);
+    }
+}
+
 function addPartGroups(addEntry: (entry: WikiEntry) => void, itemData: ItemData, allEntries: Map<string, WikiEntry>) {
     for (const partGroupEntry of wiki["Part Groups"]) {
         let spoiler: Spoiler = "None";
@@ -715,6 +737,8 @@ function initEntries(botData: BotData, itemData: ItemData) {
     addPartSupergroups(itemData, addEntry, allEntries);
 
     addOther(addEntry, allEntries);
+
+    addPartial(addEntry, allEntries);
 
     if (isDev()) {
         // Checks to make sure that all new parts are included in top level

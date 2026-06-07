@@ -1,7 +1,6 @@
 #!/usr/bin/env py
 
 import argparse
-import codecs
 import csv
 import json
 import sys
@@ -213,6 +212,24 @@ for other in wiki_json['Other']:
             'Spoiler': other['Spoiler'] if 'Spoiler' in other else '',
         }
         wiki_csv[other_name] = new_other
+
+for partial in wiki_json['Partial']:
+    partial_name = partial['Name']
+    if partial_name in wiki_csv:
+        wiki_csv[partial_name]['Page Type'] = 'Partial'
+        wiki_csv[partial_name]['Content'] = partial['Content']
+        if 'Spoiler' in partial:
+            wiki_csv[partial_name]['Spoiler'] = partial['Spoiler']
+
+        csv_entries.remove(partial_name)
+    else:
+        new_partial = {
+            'Name': partial_name,
+            'Page Type': 'Partial',
+            'Content': partial['Content'],
+            'Spoiler': partial['Spoiler'] if 'Spoiler' in partial else '',
+        }
+        wiki_csv[partial_name] = new_partial
 
 if len(csv_entries) > 0:
     print('Found Wiki CSV entries not present in JSON')

@@ -258,6 +258,12 @@ export default function WikiEditControls({
                     Expandable
                 </Button>
                 <Button
+                    tooltip="Pastes the content contained inside a Partial page of the matching name. Used to share page content between multiple locations without having to manually copy/paste it."
+                    onClick={() => insertWrappedText("[[Partial]]", "[[/Partial]]")}
+                >
+                    Partial
+                </Button>
+                <Button
                     tooltip="Wraps a section of the page within a single expandable button, ideally used for large chunks of text intended to be hidden by spoiler setting. If the spoiler setting is None, the content is hidden behind the expandable button. If spoiler setting is Spoiler or Redacted, content is shown like normal."
                     onClick={() => insertWrappedText("[[SpoilerExpandable]]", "[[/SpoilerExpandable]]")}
                 >

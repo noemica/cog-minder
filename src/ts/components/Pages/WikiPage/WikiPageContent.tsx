@@ -244,6 +244,7 @@ export default function WikiPageContent({
             return <LocationContent entry={entry} parsedNode={parsedNode} />;
 
         case "Other":
+        case "Partial":
             return parsedNode;
 
         case "Part":

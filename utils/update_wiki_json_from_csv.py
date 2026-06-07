@@ -87,6 +87,8 @@ for csv_obj in wiki_csv.values():
         json_list = wiki_json['Part Supergroups']
     elif csv_obj['Page Type'] == 'Other':
         json_list = wiki_json['Other']
+    elif csv_obj['Page Type'] == 'Partial':
+        json_list = wiki_json['Partial']
     else:
         print('Found csv object without a valid type {}'.format(
             csv_obj['Name']))
@@ -134,8 +136,8 @@ for csv_obj in wiki_csv.values():
         continue
 
     # Failed to find item, add to end
-    if csv_obj['Page Type'] != 'Other':
-        print('Found new page with type not other {}'.format(csv_obj['Name']))
+    if csv_obj['Page Type'] == 'Part' or csv_obj['Page Type'] == 'Bot':
+        print('New part and bot types are not allowed: Page {}'.format(csv_obj['Name']))
         continue
 
     updated_pages.append(csv_obj['Name'])
@@ -144,7 +146,7 @@ for csv_obj in wiki_csv.values():
 # Sort all lists
 lists = [wiki_json['Bots'], wiki_json['Bot Groups'], wiki_json['Bot Supergroups'],
          wiki_json['Parts'], wiki_json['Part Groups'], wiki_json['Part Supergroups'], 
-         wiki_json['Locations'], wiki_json['Other']]
+         wiki_json['Locations'], wiki_json['Other'], wiki_json['Partial']]
 for l in lists:
     l.sort(key=lambda x: x['Name'])
 
@@ -152,7 +154,6 @@ for l in lists:
 json_str = unescape(json.dumps(wiki_json, ensure_ascii=False, indent=1))
 with open(wiki_path, 'w', encoding='utf-8') as f:
     f.write(json_str)
-    # json.dump(wiki_json, f, ensure_ascii=False, indent=1)
 
 updated_pages.sort()
 
