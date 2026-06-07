@@ -66,7 +66,7 @@ def update_json_list_value(json_item, csv_obj, key_name):
         
         return False
     else:
-        json_item[key_name] = val
+        json_item[key_name] = val.split(',')
         return True
 
 # Update JSON from CSV

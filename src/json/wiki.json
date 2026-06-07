@@ -7542,7 +7542,13 @@
   },
   {
    "Name": "Concussive RPGs",
-   "Content": "A type of disposable [[Explosive Launchers|Explosive Launcher]] that are wielded by [[Cutter|Cutters]]. They are quite unique among other launchers due to their one-time use, - delay, knockback capability, and small amount of impact damage dealt on initial hit.\n\n[[Heading]]List of Concussive RPGs[[/Heading]]\n[[PartGroupTable]]\nConcussive RPGs|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Targeting|\nShot/Delay|\nProjectile/Arc|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nEffect/Description\n[[/PartGroupTable]]"
+   "Content": "A type of disposable [[Explosive Launchers|Explosive Launcher]] that are wielded by [[Cutter|Cutters]]. They are quite unique among other launchers due to their one-time use, - delay, knockback capability, and small amount of impact damage dealt on initial hit.\n\n[[Heading]]List of Concussive RPGs[[/Heading]]\n[[PartGroupTable]]\nConcussive RPGs|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Targeting|\nShot/Delay|\nProjectile/Arc|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nEffect/Description\n[[/PartGroupTable]]",
+   "Parts": [
+    "Concussive RPG",
+    "Imp. Concussive RPG",
+    "Adv. Concussive RPG",
+    "Cep. Concussive Dispersal Blaster"
+   ]
   },
   {
    "Name": "Coolant Injectors",
