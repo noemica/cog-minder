@@ -605,6 +605,7 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ["Ballistic Cannons", (item) => item.type === "Ballistic Cannon"],
     ["Ballistic Guns", (item) => item.type === "Ballistic Gun"],
     ["Cooled Flight Units", (item) => item.type === "Flight Unit" && item.name.startsWith("Cld.")],
+    ["Data Cores", (item) => item.type === "Data Core"],
     [
         "Electromagnetic Cannons",
         (item) => item.type === "Energy Cannon" && (item as WeaponItem).damageType === "Electromagnetic",
