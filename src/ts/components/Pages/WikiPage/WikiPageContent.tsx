@@ -106,7 +106,6 @@ function ItemGroupContent({
     spoiler: Spoiler;
 }) {
     const useWikiPartGroupSelectName = !(useUseWikiPartGroupSelectName() === false);
-    console.log(useWikiPartGroupSelectName);
 
     const items = useMemo(() => {
         // Filter out items based on spoiler setting
