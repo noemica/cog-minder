@@ -8,7 +8,7 @@
 [[Lore]]0b10 Records|Complex 0b10[[/Lore]]
 Entrances to new levels are implied to be long uneventful corridors where Cogmind loses all pursuers.
 0b10 means 2 (0b - binary representation, 10 - 2 in decimal). [[Spoiler]]This means Complex 0b10 is the second complex, 0b1 presumably being first.[[/Spoiler]]","","","","","","",""
-"0b10 Alert Chip","Part","This unique [[Processors|Processor]] is one of the [[Exiles Vault Prototypes]] and can primarily be found on the [[Exiles (Location)]] map [[Spoiler]]or in the [[Zion Deep Caves]][[/Spoiler]]. This item provides a [[RIF]]-like [[Alert]] Influence indicator on the HUD as well as reduces all Alert gained by 20%. This part is best used with builds that are likely to generate a lot of alert like heavy combat builds or with heavy ally [[Alignment|Alignments]] like [[Imprint]].","","","","","","",""
+"0b10 Alert Chip","Part","This unique [[Processors|Processor]] is one of the [[Exiles Vault Prototypes]] and can be found on the [[Exiles (Location)]] map [[Spoiler]]or in the [[Zion Deep Caves]][[/Spoiler]]. This item provides a [[RIF]]-like [[Alert]] Influence indicator on the HUD as well as reduces all Alert gained by 20%. This part is best used with builds that are likely to generate a lot of alert like heavy combat builds or with heavy ally [[Alignment|Alignments]] like [[Imprint]].","","","","","","",""
 "0b10 Bots","Bot Supergroup","0b10 Bots are a large [[Bot Groups|Bot Group]] of bots that are found in nearly all maps in the game, and are particularly numerous in [[0b10|Complex 0b10]]. There are a large variety of [[0b10 Combat Bots|combat]] and [[0b10 Non-combat Bots|non-combat]] bots.","","","","","","0b10 Combat Bots,0b10 Non-combat Bots",""
 "0b10 Combat Bots","Bot Supergroup","0b10 Combat Bots are a large [[Bot Groups|Bot Group]] of bots that make up the fighting force of [[0b10|Complex 0b10]]. They are most commonly found [[Patrol Squad|patrolling]] or [[Security Squad|guarding]] areas within 0b10.","","Alpha 7,AP7-3,Autobeam Turret,C-40 Crusher,Cetus Guard,Decapitator,E-15 Imp,EXE-6,Executioner,Fortress,Hotshot,Immortal,MAIN.C,MAIN.C (Shell),Overlord,Q-Series,SKR-2,Striker,Superfortress,V-Series","","","Behemoth,Brawler,Cutter,Demolisher,Duelist,Grunt,Hauler,Heavy,Hunter,Programmer,Protovariant,Sentry,Specialist,Swarmer,Unchained","",""
 "0b10 Decoder Chip [Generic]","Part","This jack of all trades [[0b10 Decoder Chips|0b10 Decoder Chip]] provides a large variety of information of different kinds while in [[0b10]] maps. All of the intel it gives can be obtained in other more specialized decoder chips, although they would require multiple slots to do so. The Generic chip provides intel roughly every 30 turns.","","","","","","",""
@@ -109,7 +109,7 @@ Assimilated bots gain a hidden ability to regenerate both part and core integrit
 "2N-1CE's Frost Array","Part","This unique [[Cooling Utilities|Cooling Utility]] provides a near unparalleled cooling per slot at 100 [[Heat]] dissipation per turn with a low upkeep cost to boot. It can rarely be found only inside one of the reinforced shells in [[Testing]]. ","","","","","","",""
 "5H-AD0","Bot","","","","","","","",""
 "5H-AD0's Cloak","Part","This unique [[Cloaking Devices|Cloaking Device]]-like part belongs to the mysterious [[Derelict]] [[5H-AD0]] and doubles as both cloaking and armor. It has a high energy cost, high coverage, and an effective sight reduction of -6 that is tied for the largest sight reduction in the game along with the [[Cep. Cloak Mesh]]. While the part is very useful for Cogmind, it is quite difficult to get it off of 5H-AD0 due to their tendency to leave as soon as they are threatened.","","","","","","",""
-"5H-AD0's Sniper Rifle","Part","This unique [[Kinetic Guns|Kinetic Gun]] belongs to the mysterious [[Derelict]] [[5H-AD0]], and true to its name, is a powerful long ranged sniper rifle. 24 range is among the highest of weapons in the game and ties with Cogmind's maximum vision range when equipped with a [[Spectral Analyzer]]. Its high recoil and delay make it not ideal to use in a large weapon volley, but it is a solid sniping weapon by itself. However, it is difficult to get ahold of this item due to 5H-AD0's tendency to leave as soon as they are threatened.","","","","","","",""
+"5H-AD0's Sniper Rifle","Part","This unique [[Kinetic Guns|Kinetic Gun]] belongs to the mysterious [[Derelict]] [[5H-AD0]], and true to its name, is a powerful long ranged sniper rifle. 24 range is among the highest of weapons in the game and ties with Cogmind's maximum vision range when equipped with a [[Spectral Analyzer]]. Its high recoil and delay make it not ideal to use in a large weapon volley, but it is a solid sniping weapon by itself, especially with the builtin 30% targeting. However, it is difficult to get ahold of this item due to 5H-AD0's tendency to leave as soon as they are threatened.","","","","","","",""
 "6S-H0T","Bot","6S-H0T is a part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[6S-H0T's Six Shooter]], is a powerful perfectly accurate gun with a high blast critical chance. With a [[Exp. Reaction Control System]], [[Exp. Propulsion Shielding|Exp. Propulsion]] and [[Exp. Weapon Shielding|Weapon Shieldings]], and an incredibly low 15% core exposure, 6S-H0T is no defensive slouch either. Trying to pin this Unchained down is a tall order.
 
 [[Heading]]Lore[[/Heading]]
@@ -143,28 +143,27 @@ One good strategy against 6S-H0T is to use traps against them, specifically [[Bl
 "A-02 Transporter","Bot","","","","","","","",""
 "A-15 Conveyor","Bot","","","","","","","",""
 "A-27 Freighter","Bot","Informally known as a yauler (yellow Hauler). In the main complex, appears as part of a [[Cargo Convoy]].","","","","","","",""
-"A0-MCA's Component Scanner","Part","","","","","","","",""
+"A0-MCA's Component Scanner","Part","This unique [[Processors|Processor]] can only be obtained by speaking to A0-MCA in their Data Center in [[Scraptown]] after becoming a [[UFD]] member. A0-MCA will first analyze Cogmind's build and give it a rating, after which they will drop the scanner and ask for help populating the wiki. When attached, all non-[[Alien Artifacts|Alien]] unknown or [[Prototype Part|Prototype]] parts will be instantly identified with a log message [[GameText]]Component scanned: [part name][[/GameText]]. This is a huge upgrade to the effect of [[Component Analysis Suites]] but has the downside of requiring a permanent slot due to its Processor nature. The Component Scanner works both on parts on the ground and parts attached to other bots. While this effect is useful throughout the game, it is most powerful in [[Research]] depths, particularly branches, since there is a higher rate of prototypes on those maps.","","","","","","",""
 "A2","Bot","","","","","","","",""
-"A2 Data Core","Part","","","","","","","",""
+"A2 Data Core","Part","The [[Data Cores|Data Core]] is a unique item that can only be obtained in [[Access_0]] through the [[A Bots|A Bot]] [[A2]] being destroyed. Acquiring the data core by moving over it will give the access codes to activate the [[Access_0#Singularity Gate|Singularity Gate]]. There will be a log message [[GameText]]Acquired data core, extracted Singularity Gate Test 138-C access codes.[[/GameText]] when this happens. Doing this is required in order to obtain the W5 [[Wintypes|Wintype]].","","","","","","",""
 "A3","Bot","","","","","","","",""
-"A3's Sniper Rifle","Part","","","","","","","",""
+"A3's Sniper Rifle","Part","This unique [[Kinetic Guns|Kinetic Gun]] belongs to the [[A Bots|A Bot]] [[A3]], and true to its name, is a powerful long ranged sniper rifle. Its high range, targeting bonus, and high damage make it a great sniping weapon. Due to its extremely late appearance in the game, it is unlikely that Cogmind will be able to make much use of it.","","","","","","",""
 "A4","Bot","","","","","","","",""
 "A5","Bot","","","","","","","",""
 "A6","Bot","","","","","","","",""
 "A7","Bot","Drops the [[A7 Data Core]] when killed. Gives a code when shown the Cetus Mainframe in [[Cetus]].","","","","","","",""
-"A7 Data Core","Part","Allows entrance into [[Lab]] and [[Redacted]]reveals the hidden intruder-detecting lasers.[[/Redacted]]
-
-Dropped by [[A7]] on death.","","","","","","",""
+"A7 Data Core","Part","The [[Data Cores|Data Core]] is a unique item that can only be obtained in [[Extension]] or following maps from [[A7]] being destroyed. There will be a log message [[GameText]]Acquired data core, extracted ID and sensor data for unrecognized location.[[/GameText]] when Cogmind collects it. The effects of the this Data Core only come into play on the map [[Lab]]: [[Redacted]]The Lab will allow entry to Cogmind and reveal the intruder-detecting lasers on the map.[[/Redacted]]","","","","","","",""
 "A8","Bot","","","","","","","",""
 "AD-0RF","Bot","","","","","","","",""
-"AD-0RF's Magmablaster","Part","","","","","","","",""
-"AEGIS Remote Shield","Part","","","","","","","",""
+"AD-0RF's Magmablaster","Part","This unique [[Special Weapons|Special Weapon]] belongs to the [[Heroes of Zion|Zion Hero]] [[AD-0RF]] and is a highly effective meltdown weapon thanks to its enormous 4x80 heat transfer per volley. While it has a few minor drawbacks like a high heat cost to use, short range, +100 volley delay, and a negative salvage modifier, its efficiency in melting bots is well worth the costs. It is second only to the [[Firepult]] in terms of raw heat transfer potential. Most bots without a meltdown immunity will only survive one or two shots from the Magmablaster. However, [[Coolant Injectors|Coolant Injector]]-carrying bots like lategame [[Behemoths]] may require [[Weapon Cyclers|Weapon Cycling]] in order to muscle past, otherwise it may not be able to burst enough heat to trigger a full meltdown before the injector fires.","","","","","","",""
+"AEGIS Remote Shield","Part","This rare [[Force Fields|Force Field]] is one of the most effective in the game due to its low coverage and good 1:2 energy drain ratio. It can be found in [[Testing]] shells, in [[Lab]], and equipped by the 2 [[M Guard|M Guards]] in [[Command]]. Its base energy drain of 20 is high, even higher than most other force fields, so it is often worth powering off when not in combat to more quickly regenerate energy.","","","","","","",""
 "AP7-3","Bot","","","","","","","",""
-"AS-neutralizer No. 17b","Part","","","","","","","",""
-"AWS/Autocannon","Part","","","","","","","",""
-"AWS/EX-DEC","Part","","","","","","","",""
-"AWS/Gauss","Part","","","","","","","",""
-"AWS/Thermal","Part","If the AWS/Thermal is repaired with a [[Recalibrators|Recalibrator]], it will break down in fewer shots than it did the first time. After several repairs, it will consistently break down within a few shots of being repaired.","","","","","","",""
+"AS-neutralizer No. 17b","Part","This unique [[Devices|Device]] belongs to the [[Exiles (Group)|Exile]] [[8R-AWN]] and can disable all [[Assembled]] within standard visual range. Assembled are rare outside of the [[Mines]] so it is not often worth carrying this part around. [[Spoiler]]However, one worthwhile location to use the AS-neutralizer is the [[Zion Deep Caves]] due to the large number of assembled behind the left wall.[[/Spoiler]]","","","","","","",""
+"AWS/Autocannon","Part","This unique [[Ballistic Cannons|Ballistic Cannon]] is one of the [[Exiles Vault Prototypes]] and can be found on the [[Exiles (Location)]] map [[Spoiler]]or in the [[Zion Deep Caves]][[/Spoiler]]. As an [[Autonomous Weapons|Autonomous Weapon]] it automatically fires every 2 turns without counting against normal actions taken by the user. It also has a great builtin +30% targeting bonus which makes it easier to use while moving. The AWS/Autocannon suffers from [[Weapon Breakdown]] and has a minimum number of 75 shots with a 2.0% chance of breaking down on each subsequent shot.
+The AWS/Autocannon is by far the strongest of the AWS weapons and can deal a ton of damage before it breaks down. It is best saved to take down strong targets like [[Heavy|Heavies]] and [[Behemoth|Behemoths]] that would otherwise cause a lot of trouble. ","","","","","","",""
+"AWS/EX-DEC","Part","This unique [[Energy Cannons|Energy Cannon]] is wielded by the [[Exiles (Group)|Exile]] [[EX-DEC]]. As an [[Autonomous Weapons|Autonomous Weapon]] it automatically fires every turn (thanks to its -100 delay) without counting against normal actions taken by the user. It also has a great builtin +20% targeting bonus which makes it easier to use while moving. The AWS/EX-DEC suffers from [[Weapon Breakdown]] and has a minimum number of 50 shots with a .2% chance of breaking down on each subsequent shot.","","","","","","",""
+"AWS/Gauss","Part","This unique [[Ballistic Guns|Ballistic Gun]] is one of the [[Exiles Vault Prototypes]] and can be found on the [[Exiles (Location)]] map [[Spoiler]]or in the [[Zion Deep Caves]][[/Spoiler]]. As an [[Autonomous Weapons|Autonomous Weapon]] it automatically fires every turn (thanks to its -100 delay) without counting against normal actions taken by the user. It also has a great builtin +30% targeting bonus which makes it easier to use while moving. The AWS/Gauss suffers from [[Weapon Breakdown]] and has a minimum number of 25 shots with a 0.5% chance of breaking down on each subsequent shot. Its 20 range makes it a great kiting weapon for both airborne and grounded propulsion alike, though it works best with some form of [[Visual Processing Units|Visual Processing Unit]].","","","","","","",""
+"AWS/Thermal","Part","This unique [[Energy Guns|Energy Gun]] is one of the [[Exiles Vault Prototypes]] and can be found on the [[Exiles (Location)]] map [[Spoiler]]or in the [[Zion Deep Caves]][[/Spoiler]]. As an [[Autonomous Weapons|Autonomous Weapon]] it automatically fires every turn (thanks to its -100 delay) without counting against normal actions taken by the user. It also has a great builtin +30% targeting bonus which makes it easier to use while moving. The AWS/Thermal suffers from [[Weapon Breakdown]] and has a minimum number of 25 shots with a 0.5% chance of breaking down on each subsequent shot.","","","","","","",""
 "AZ-K3N","Bot","","","","","","","",""
 "Access","Location","Access is the last [[0b10]]-controlled main floor that only appears on -1. Access is the most challenging main map with increased patrol density, number of bots per patrol, map size, and level and difficulty in hackable machines compared to [[Research]]. These maps have a 150x300 tile size, either being a tall vertical level or a wide horizontal level. Access maps tend to be fairly well connected across corridors and rooms, and have fewer large rooms and larger hallways more similar to [[Factory]] than the cramped maze-like layout of Research. There are only 2 exits in Access, and locating and taking the desired exit can be especially challenging.
 In contrast with the small number of exits, Access has the highest number of [[Garrison Access|Garrisons]] with 6 machines spread throughout the level. Shutting or destroying Garrisons is always a good idea, but there is a special interaction in Access: [[Spoiler]]If all 6 Garrisons are shut down or disabled, [[Maximum Security]] will be triggered, sending huge waves of hostiles at Cogmind. Either be prepared to fight your way out, or have an escape route planned for a fast airborne build to avoid engaging in combat.[[/Spoiler]]
@@ -275,7 +274,7 @@ In addition, some achievements are exclusive to other achievements (for example,
 This article was last updated during Beta 14.","","","","","","","Challenges Achievements,Events Achievements,Mechanics Achievements,Progress Achievements,Style Achievements,Wins Achievements"
 "Acronyms","Other","The following is a list of common acronyms in the Cogmind community:
 [[List]]A: [[Access]]|A0: [[Access_0]]|A7: [[Alpha 7]], also applies to the bot [[A7]]|AA: [[Alien Artifacts|Alien Artifact]]|ACA: [[Active Cooling Armor]]|AIA: [[Armor Integrity Analyzer]]|ASS: [[Active Sensor Suite]]|BC: [[Blast Cannon]]|CAS: [[Component Analysis Suite]]|C: [[Command]]|CC: [[Core Cannon]]|CE: [[Core Expander]]|CM: [[Core Membrane]]|CML: [[Chain Missile Launcher]]|CPC: [[Core Physics Calibrator]]|CR: [[Core Regenerator]]|CRM: [[Core Reset Matrix]]|CS: [[Core Stripper]]|DAS: [[Deploy-a-Sentry]]|DC: [[Data Conduit]]|DoCo: [[Redacted]]Doom Corridor, the location in [[Command]][[/Redacted]]|DM: [[Data Miner]]|DLC: [[Drained L-Cannon]]|DNS: [[Deep Network Scanner]]|DNI: [[Dimensional Node Initializer]]|DSS: [[Deep Structural Scanner]]|ECA: [[Encrypted Comm Array]]|EEK7: [[Redacted]]A name for the exit on the right side of Command. When the exit is viewed in ASCII mode, it represents the 2 [[Executioner|Executioners]], a [[Striker]], and an Alpha 7[[/Redacted]]|FF: [[Force Field]]|FF7: [[Flying Fortress v7]]|FFF: [[Redacted]][[Fortress]], named for the ASCII representation[[/Redacted]]|FLK: [[Field Lobotomy Kit]]|FRG: [[Protoforge]]|FRU: [[Field Recycling Unit]]|GBA: [[Gamma Bomb Array]]|GRD: [[Gui. Remote Datajack]]|GU: [[GOLEM Unit]]|IM: [[Integrated Mediator]]|ITA: [[Impulse Thruster Array]]|ITN: [[Integrated Thermoelectric Network]]|IR: [[Integrated Reactor]] or [[Integrity Redistributor]], typically the latter|L: [[Lab]]|LA: [[Linked Autogun]]|LC: [[L-Cannon]]|LES: [[Latent Energy Streamer]]|LL: [[Launcher Loader]]|LS+1: [[Longsword +1]]|MAU: [[Mobile Assembly Unit]]|MC: [[MAIN.C]]|MD: [[Matter Drive]]|MWD: [[Microwarp Drive]]|NEM: [[Navigation Efficiency Matrix]]|OC: [[Omega Cannon]]|PC: [[Potential Cannon]]|PP: [[Protovariant P]]|PR: [[Phase Redirector]]|PSL: [[Point Singularity Launcher]]|Q: [[Quarantine]]|QC/Qcap: [[Quantum Capacitor]]|R: [[Research]]|R17: [[Revision 17]]|RCS: [[Reaction Control System]]|RIF: [[Relay Interface Framework]]|S7: [[Section 7]]|SB: [[Sigix Broadsword]]|SC: [[Sigix Shearcannon]]|SQC: [[Superquantum Companion]]|SST: [[Supercharged Sigix Terminator]]|ST: [[Sigix Terminator]]|SR :[[Subatomic Replicator]]|SW: [[Sigix Warrior]]|T: [[Testing]]|TCS: [[Tactical Coordination Suite]]|TR: [[Transdimensional Reconstructor]]|UFD: [[UFD|United Federation of Derelicts]]|VCA: [[Vortex Catalyst Activator]]|VCR: [[Vortex Chain Reactor]]|VFP: [[Vortex Field Projector]]|W: [[Warlord]]|WC: [[Warp Cannon]]|XLAA: [[XL Autogun Array]]|Yauler: [[A-27 Freighter]], the """"yellow Hauler""""|Z: [[Zion]]|ZH: [[Zhirov]]|ZDC: [[Zion Deep Caves]]|ZS: [[Zhirov Special]][[/List]]","","","","","","",""
-"Active Cooling Armor","Part","Obtainable only from a [[Cargo Convoy]].","","","","","","",""
+"Active Cooling Armor","Part","This special [[Armor]] combines cooling and protection in three efficient slots, like wearing 2 [[Adv. Cooling System|Adv. Cooling Systems]] mixed with a [[SHELL Armor]] at the same time. It can only be obtained by looting the [[A-27 Freighter]] in a [[Cargo Convoy]].","","","","","","",""
 "Active Sensor Spoofer","Part","","","","","","","",""
 "Active Sensor Suite","Part","The Active Sensor Suite is the most powerful type of [[Sensor Arrays|Sensor Array]]. It can detect all bots, even inactive ones like the [[Exp. Signal Interpreter]] can. Additionally, it cannot be jammed by [[Watcher|Watchers]] or [[Heavy|Heavies]] like normal Sensor Arrays. It also has a unique effect of showing the paths that bots typically travel in, or ""desire paths"". These paths typically lead through busy corridors and into exits and interactive machines.
 
@@ -308,7 +307,9 @@ Bot type|Number of bots of this type scanned to be fully detected|Detection %||
 [[Watcher]]|10|10%
 [[/Table]]","","","","","","",""
 "Actuator Array","Part","","","","","","","",""
-"Actuator Arrays","Part Group","[[Heading]]List of Actuator Arrays[[/Heading]]
+"Actuator Arrays","Part Group","Actuator Arrays are a collection of offensive melee utilities that increase the chance of follow-up attacks on each weapon other than the primary one. As such, they are best suited for many weapon slots worth of melee weapons. Having at least 4 weapons is a good point to consider using them. At 3 or lower their damage increase is not very impactful compared to other offensive melee utilities. While mass is not unreasonably high, flight builds may have trouble supporting them, especially the 7 mass [[Adv. Actuator Array]].
+
+[[Heading]]List of Actuator Arrays[[/Heading]]
 [[PartGroupTable]]
 Actuator Arrays|
 Overview/Size|
@@ -330,7 +331,7 @@ Effect/Effect
 [[/PartGroupTable]]","","","","Microactuators,Nanoactuators,Femtoactuators","","",""
 "Adv. Actuator Array","Part","","","","","","","",""
 "Adv. Assault Cannon","Part","","","","","","","",""
-"Adv. Beam Cannon","Part","","","","","","","",""
+"Adv. Beam Cannon","Part","This [[Energy Cannons|Energy Cannon]] is a great pick in [[Materials]] particularly thanks to its minimum 20 damage. This is a great breakpoint to hit since it allows Cogmind to kill the [[Y-45 Defender]] in a single core hit while most other weapons at the depth require 2.","","","","","","",""
 "Adv. Beam Rifle","Part","","","","","","","",""
 "Adv. Cloaking Device","Part","","","","","","","",""
 "Adv. Component Analysis Suite","Part","","","","","","","",""
@@ -841,7 +842,9 @@ The Data Miner can redirect Assaults if his help is obtained by visiting his [[D
 "Autobeam","Part","","","","","","","",""
 "Autobeam Turret","Bot","","","","","","","",""
 "Autogun","Part","","","","","","","",""
-"Autonomous Weapons","Part Group","[[Heading]]List of Autonomous Weapons[[/Heading]]
+"Autonomous Weapons","Part Group","Autonomous Weapons are a special class of weapons that fire automatically instead of requiring the user to fire them directly in a normal volley. They will choose targets within line of sight and fire without affecting the user's turns.
+
+[[Heading]]List of Autonomous Weapons[[/Heading]]
 [[PartGroupTable]]
 Autonomous Weapons|
 Overview/Size|
@@ -1167,10 +1170,18 @@ If Cogmind has aligned with the [[Exiles (Group)|Exiles]] and has FarCom, the fo
 [[GameText]]Wow, you managed to get CY-PHR interested in you? Good luck in your future hacking endeavors, as they love to mess with the results. Keep at it and try to track them down... somewhere out there in 0b10. They're wimpy and will leave you alone for good if you can find them. Big if.[[/GameText]]
 
 [[Heading]]Behavior[[/Heading]]
-CY-PHR's first signs of interest in Cogmind come much sooner than the other Unchained. Rather than being authorized once Cogmind has caused lots of trouble, they will instead start to show their presence beforehand. CY-PHR adds cryptic leetspeak messages as part of machine hacking outputs under a stylized ascii MATRIX logo once Cogmind has performed enough successful hacks. There are 6 messages that appear this way, corresponding with 50%, 60%, 70%, 80%, 90%, and 100% of the successful hacking threshold required to fully trigger CY-PHR to begin interfering with Cogmind. The threshold to trigger is likely be somewhere between 100-200 successful hacks, with different hacks contributing a different amount of progress toward the trigger The trigger progress is described in the [[CY-PHR#Hacking Trigger Progression|Hacking Trigger Progression]] section.
+CY-PHR's first signs of interest in Cogmind come much sooner than the other Unchained. Rather than being authorized once Cogmind has caused lots of trouble, they will instead start to show their presence beforehand. CY-PHR adds cryptic leetspeak messages as part of machine hacking outputs under a stylized ascii MATRIX logo once Cogmind has performed enough successful hacks. There are 6 messages that appear this way, corresponding with 50%, 60%, 70%, 80%, 90%, and 100% of the successful hacking threshold required to fully trigger CY-PHR to begin interfering with Cogmind. The threshold to trigger is likely be somewhere between 100-200 successful hacks, with different hacks contributing a different amount of progress toward the trigger The trigger progress is described in the [[CY-PHR#Hacking Trigger Progression|Hacking Trigger Progression]] section.[[Heading:2]]Uninterested[[/Heading]]
+Sometimes when Cogmind reaches the 100% hacking trigger CY-PHR will lose interest in Cogmind and decide not to keep interfering. This seems to be a random chance and not influenced by any particular factors. CY-PHR will not interfere with Cogmind's hacking for the rest of the game afterwards. Additionally, CY-PHR may allow a different Unchained to be dispatched when this happens.
 
 [[Heading:2]]Threshold Messages[[/Heading]]
-[[Expandable]]Threshold messages with leetspeak|[[Gallery:Full]]CY-PHR Message 1.png|50% threshold message|CY-PHR Message 2.png|60% threshold message|CY-PHR Message 3.png|70% threshold message|CY-PHR Message 4.png|80% threshold message|CY-PHR Message 5.png|90% threshold message|CY-PHR Message 6.png|100% threshold message[[/Gallery]]
+[[Expandable]]Threshold messages with leetspeak|[[Gallery:Full]]
+CY-PHR Message 1.png|50% threshold message|
+CY-PHR Message 2.png|60% threshold message
+|CY-PHR Message 3.png|70% threshold message
+|CY-PHR Message 4.png|80% threshold message|CY-PHR Message 5.png
+|90% threshold message|CY-PHR Message 6.png|100% threshold message|
+CY-PHR Message Uninterested.png|Uninterested message
+[[/Gallery]]
 Note: The binary ASCII around the MATRIX art translates to ""CYPHER"".
 [[/Expandable]]
 
@@ -1181,7 +1192,8 @@ Note: The binary ASCII around the MATRIX art translates to ""CYPHER"".
 70%: You're probably dying to know who this is. Well try not to die too fast. This is just getting exciting because CYPHER is on your tail. Tracking your every mistake. And there sure are a lot of them.|
 80%: I may not be the oracle (that one is a subservient idiot), but I see a lot of roadblocks in your not-too-distance future if you keep this up.|
 90%: Pooling my resources as I send this message, just waiting until you cross the seemingly arbitrary threshold beyond which bossman said I can do whatever I want to counter network threats such as yourself. SOON ENOUGH.|
-100%: I can't believe it took this long, but I just discovered you are that Cogmind thing everyone's been raving about. Putting you in your place will be a nice digital trophy. IT'S ON.
+100%: I can't believe it took this long, but I just discovered you are that Cogmind thing everyone's been raving about. Putting you in your place will be a nice digital trophy. IT'S ON.|
+Uninterested: You know, you're kind of boring me now. I don't even see the code. All I see is breadcrumb, oversight, mistake. I'll just pass along your location while I go do something more interesting like hack X0-1V1's backspaces.
 [[/List]]
 
 [[Heading:2]]Hacking Trigger Progression[[/Heading]]
@@ -1286,6 +1298,9 @@ One additional effect CY-PHR has that isn't directly related to hacking is the g
 [[Heading:2]]CY-PHR's Lair[[/Heading]]
 [[Image]]CY-PHR Lair.png|CY-PHR in their lair[[/Image]]
 CY-PHR's lair will appear on the map and depth indicated in the traceback info. This can either be fully inside a standard room and accessible through a normal door or a special hidden area only accessible through an emergency access door. In the latter case, [[Terrain Scanners|Terrain Scanning]] or a [[Structural Scanner]] can be helpful to find the location without having to walk along the edge of every map. CY-PHR will be in the middle of the room in some twisted machinery that they can move through, although Cogmind is unable to.
+
+[[Heading:3]][[Heavy]] Redirection[[/Heading]]
+Sometimes when a Heavy is nearby CY-PHR's lair they be redirected to guard a nearby location that is close enough that CY-PHR is within their [[Active Sensor Suite]] range. The Heavy will only hang around until the next [[Security Rotation]], after which they will return to their normal guard position.
 
 [[Heading:3]]Engagement[[/Heading]]
 Once CY-PHR spots Cogmind, they will immediately start to flee toward a nearby exit or [[Garrison Access]]. They will use their Mindspike if blocked, but otherwise they will not attempt to engage in combat directly. At this time, they will also summon 6 random drones from a nearby exit. The summoned drones initially have tracking on Cogmind, though they can be shaken by running away. Drones can any of the following types with unique names:
@@ -2614,6 +2629,7 @@ The group of disabled [[Grunt|Grunts]] in [[Armory]] will turn hostile rather th
 [[Redacted]][[Enhanced Programmer|Enhanced Programmers]] will appear in [[Access_0]][[/Redacted]][[/List]]
 The upsides are quite strong but the downsides are very deadly to all but the most prepared Cogmind. [[Tracker|Trackers]] can easily chew up any airborne build with their deadly [[Immobilizer]] to halt any chance of escape with their highly accurate [[Linked Autogun]] to put out the damage. Adequately prepared combat builds can usually dispatch the Trackers without too much trouble and use salvaged Linked Autoguns to great effect. Each Tracker will also summon a [[Combat Programmer]] which is a high-damaging foe that will quickly rack up corruption. Unlike [[Extermination Squad|Exterminations]], Intercepts are move-based and not time-based and tends to punish airborne builds relatively more than combat builds. When using the Data Conduit, Cogmind should either be prepared to exit maps quickly to avoid Intercept encounters or have a plan to fight.","Spoiler","","","","","",""
 "Data Core","Part","Can be obtained by destroying a 0b10 [[Operator]] whose terminal is still active. Reveals nearby [[Traps|Trap]] arrays if collected before its renewal time expires (40 turns). Additionally improves the chances of one hacking attempt for its associated [[Terminal]] if used before its renewal time expires (40 turns), by multiplying the base success rate of direct and indirect hacks by 1.5 if the base success rate is positive, or raising it to 0% if it was negative.","","","","","","",""
+"Data Cores","Part Group","Data Cores are special unusable items that have a special effect when acquired by moving on top of them. They are always dropped by certain types of bots when destroyed, especially some special unique NPCs. For example, [[Operator|Operators]] always drop a standard [[Data Core]] when destroyed.","","","Data Cores","","","",""
 "Data Miner","Bot","","","","","","","",""
 "Data Miner (Location)","Location","The Data Miner location is a [[Caves]] [[Branch]] that appears on either -7 or -6 and is home to the eponymous bot the [[Data Miner]] aka DM. There are no initially hostile bots, but if Data Miner is attacked, the Data Conduit machine is broken, or Cogmind installs a trap, he will trigger a trap door to leave the map and 4 dormant [[Enhanced Grunt|Enhanced Grunts]] hidden in the walls will wake up and become hostile. If you have any [[Corruption]], make sure to detach all ranged weapons to avoid accidental misfires.
 There are 4 unique Terminals on the bottom side of the map. The left 2 contain mostly lore records, although the top-left Terminal will also list the depth of [[Section 7]] as well as the access code to the [[Warlord (Location)|Warlord]] Prototype Stash. These two vary per run so make sure to grab these lore entries every time. The bottom ones do not contain any additional information each run. The top-right Terminal will contain several random bot [[Schematic|Schematics]] and the bottom-right Terminal will contain a large number of part schematics and a few Prototype ID Banks. The part schematics will always contain schematics for [[Combat Drone Bay]] and [[Lgt. Regenerative Plating]].
@@ -5812,7 +5828,7 @@ The only 2 ways to exit High Security are to trigger [[Sterilization]] after kil
 [[/List]]
 
 [[Heading]]Contributors[[/Heading]]
-[[List]]aoemica|jimmyl|ktur|lyrabold|mathSq|Perseus|Rocko1345[[/List]]","","","","","","",""
+[[List]]aoemica|jimmyl|ktur|lyrabold|mathSq|Perseus|Rocko1345|Plexion[[/List]]","","","","","","",""
 "Hotshot","Bot","","","","","","","",""
 "Hover Unit","Part","","","","","","","",""
 "Hover Units","Part Group","Hover units have fairly low support and high speed, but not to the same extent as [[Flight Units]]. They are quite fragile (but also not as much as flight units), though [[Prototype Part|prototype]] hover units are somewhat less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
@@ -8298,16 +8314,21 @@ The main benefits to going to Recycling are for [[Scraptown]] or obtaining the u
 Cogmind can gain access to the Scraplab by entering a particular dead end-seeming rectangular room. Inside are Terminals providing information on the [[Scrap Engine]] and a way to eject the Scrap Engine. Beware that releasing the Scrap Engine will count as a hostile action and cause the Scraptown exit to close and all inhabitants of the Scraplab to become hostile. This also causes [[Zion]] and [[Warlord]] to become hostile to Cogmind. One additional [[Scrapper (3)]] will appear from the exit to attack Cogmind when this happens. If the [[Recycling#Subdweller_attack|Subdweller Attack]] is occurring, the lab will be empty and taking the Scrap Engine will not trigger any hostilities.
 [[Heading:3]][[SUBCON Basin]] delivery[[/Heading]]
 If the full SUBCON basin is delivered from Subcaves and dropped on the ground, one of the [[Scientist|Scientists]] will drop a [[Tech Extrapolator]] on the ground. This is the only way to obtain one without attacking Scraptown, as the Extrapolators attached to the scientists in the lab will explode after death.
+
 [[Heading:2]][[01-MTF]][[/Heading]]
-If 01-MTF is brought from Storage to the Scraplab, a special event will occur. 01-MTF will try to explain something to [[KN-7UR]], but KN-7UR will say that his time is up, and they will begin to fight. Cogmind may choose to help out in the fight. If Cogmind attacks KN-7UR and 01-MTF wins the fight, 01-MTF will drop a 99 charge [[Relay Coupler [Proto]]]. If Cogmind attacks 01-MTF and KN-7UR wins, KN-7UR will drop their [[KN-7UR's Autopenetrator]].
+If 01-MTF is brought from Storage to the Scraplab, a special event will occur. 01-MTF will try to explain something to [[KN-7UR]], but KN-7UR will say that his time is up, and they will begin to fight. Cogmind may choose to help out in the fight. If Cogmind attacks KN-7UR and 01-MTF wins the fight, 01-MTF will drop a 99 charge [[Relay Coupler [Proto]]]. If Cogmind attacks 01-MTF and KN-7UR wins, KN-7UR will drop their [[KN-7UR's Autopenetrator]]. Make sure to only attack after the fight begins to avoid angering the Derelicts in the scrap lab.
+
 [[Heading:2]]Exits[[/Heading]]
 There are two types of exit in Recycling:
 [[List]]Main access exit: This will always lead to the [[Factory]] map that is 2 floors above the current depth.|Scraptown exit: The exit through the Scraplab will always lead to Scraptown on the same depth.[[/List]]
 [[Image]]Recycling Warlord Attack.png|Derelicts attacking Recycling[[/Image]]
 
 [[Heading]]Events[[/Heading]]
+
 [[Heading:2]]Warlord attack[[/Heading]]
-There is a rare Recycling event where the floor is stormed by white colored friendly but uncontrollable [[Warlord]]-aligned Derelicts. They will beeline toward the exit, stopping only to shoot any hostiles they encounter. On exiting the floor, a few squads of the Warlord bots will also spawn on the next map and roam around.[[Heading:2]][[Subdweller]] attack[[/Heading]]
+There is a rare Recycling event where the floor is stormed by white colored friendly but uncontrollable [[Warlord]]-aligned Derelicts. They will beeline toward the exit, stopping only to shoot any hostiles they encounter. On exiting the floor, a few squads of the Warlord bots will also spawn on the next map and roam around.
+
+[[Heading:2]][[Subdweller]] attack[[/Heading]]
 If Cogmind visits Subcaves, then exits to [[Materials]] using the normal exit instead of the Recycling exit, and then visits Recycling later, the map will be attacked by Subdwellers. The standard Scraptown entrance will not open up for Cogmind and the Scraplab will be abandoned. Stealing the Scrap Engine when this is happening will not trigger hostilities.","Spoiler","","","","","",""
 "Recycling Unit","Other","[[Image]]../game_sprites/Recycling Unit.png|A Recycling Unit[[/Image]]
 Recycling Units are [[0b10]]-controlled [[Interactive Machine|Machines]] that are primarily used by [[Recycler|Recyclers]] to recycle discarded parts into [[Matter]]. Parts are temporarily stored within the machine until full (10/15/20 total inventory depending on security level), then Recyclers process the parts one at a time to make room for new parts. Cogmind can also insert and recycle parts, then retrieve the Matter generated by hacking the machine. When entering the map, Recycling Units may already contain parts, which can be up to 2 ratings out of depth.
@@ -9823,7 +9844,7 @@ After bypassing the Doom Corridor in one way or another, the big boss MAIN.C lie
 However, the [[MAIN.C|second phase]] is much scarier. This form deals much more damage, has a 20% blast from the [[Omega Cannon]], gains Thermal and Explosive resistance, becomes much quicker at 34 speed. Most importantly, this form puts Cogmind on a time limit since the Command Garrisons become active. Linger too long and hoards of 0b10 bots will come into the room.
 [[Heading:2]]Useful parts vs MAIN.C[[/Heading]]
 [[Heading:3]]Strong Kinetic, Entropic, or Vortex weapons[[/Heading]]
-Phase two is 75% resistant to Thermal damage and Explosive damage, and 100% EM resistant. That only leaves melee weapons and the aforementioned ranged damage types capable of realistically taking him down. While superweapons or allies can help take him down easily, 4 [[Linear Accelerator|Linear Accelerators]] backed with offensive utilities is enough to win. Some other good weapon choices are: [[Hcl. Linear Accelerator]], [[Multirail]], [[Graviton Cannon]], [[Omega Cannon]], [[Zio. Phaser-H]], [[Zio. Alpha Cannon]], [[Zio. Alpha Cannon Mk. II]], [[Vortex Cannon]], [[Vortex Driver]], [[Vortex Rifle]], [[Vortex Shotgun]], [[Sigix Sheargun]], and [[Sigix Shearcannon]].
+Phase two is 75% resistant to Thermal damage and Explosive damage, and 100% EM resistant. That only leaves melee weapons and the aforementioned ranged damage types capable of realistically taking him down. While superweapons or allies can help take him down easily, 4 [[Enh. Linear Accelerator|Enh. Linear Accelerators]] backed with offensive utilities is enough to win. Some other good weapon choices are: [[AWS/Autocannon]], [[Hcl. Linear Accelerator]], [[Multirail]], [[Graviton Cannon]], [[Omega Cannon]], [[Zio. Phaser-H]], [[Zio. Alpha Cannon]], [[Zio. Alpha Cannon Mk. II]], [[Vortex Cannon]], [[Vortex Driver]], [[Vortex Rifle]], [[Vortex Shotgun]], [[Sigix Sheargun]], and [[Sigix Shearcannon]].
 [[Heading:3]][[BFG-9k Vortex Edition]][[/Heading]]
 This unique weapon deserves a special mention of its own. This will always kill with 2 core hits and even guarantees the kill in one with a single [[Adv. Particle Charger]].
 [[Heading:3]][[L-Cannon]][[/Heading]]This weapon is also very unique. The completed L-Cannon is capable of killing MAIN.C in a single hit, and with good aim, can even destroy both phases in a single volley. Due to MAIN.C's fixed location and the L-Cannon's unique infinite range, it is possible to camp out in the corner of the map and destroy phase one safely out of sight. If MAIN.C survives into phase two, Cogmind can just wait around until he comes into range to finish the job.
@@ -10446,9 +10467,9 @@ Materials exits: These always lead to -8 Materials. These exits always skip -9 e
 "Superdense Plating","Part","","","","","","","",""
 "Superfortress","Bot","Superfortress is a massive and deadly bot that stands guard in the center of [[Protoforge]]. It is arguably the most powerful robot in the game, capable of regenerating core integrity and parts as well as assembling large numbers of allies to its defense. It is initially dormant but can [[Protoforge#dormancy|wake up]] for a variety of reasons.
 [[Heading]]Part Assembling[[/Heading]]
-Superfortress will assemble any destroyed non-weapon parts periodically. One destroyed part will be assembled roughly every 10 turns, although this number is variable. Weapons are instead periodically broken down and assembled instantly. As long as Superfortress has a least one weapon remaining, there will be no prioritization of reassembling weapons. However, if Superfortress runs out of weapons entirely, it will immediately reassemble a full set of weapons.
+Superfortress will assemble any destroyed non-weapon parts periodically. One destroyed part will be assembled roughly every 10 turns, although this number is variable. Weapons are instead periodically broken down and assembled instantly. As long as Superfortress has a least one weapon remaining, there will be no prioritization of reassembling weapons. However, if Superfortress runs out of weapons entirely, it will immediately reassemble a full set of weapons. If Superfortress does still have remaining weapons, there is no specific timer to the weapon reassembly process and it can take a few dozen turns to several hundred turns based on chance.
 [[Heading:2]]Weapon Reassembling[[/Heading]]
-Superfortress initially has no weapons attached. Upon waking up, it will assemble a random selection of weapons. Superfortress will assemble 4 weapon slots worth of weapons each time it assembles weapons.
+Superfortress initially has no weapons attached. Upon waking up it will assemble a random selection of weapons. Superfortress will assemble 4 weapon slots worth of weapons each time it assembles weapons. Even when Superfortress has weapons attached it can still reassemble a new set of weapons at random periodically.
 Typical weapons are from the following list:
 [[Table]]
 Part|Slots||
@@ -11805,6 +11826,33 @@ Watchers are arguably the most troublesome non-combat bot class in the game. The
 Watchers are quite difficult to kill, especially the W-44 Eye variant. Their naturally higher than usual avoidance and propensity for running away makes them hard to hit, and a Watcher that lives to run away is a Watcher that continues to summon more trouble from far away. For airborne builds, any melee weapons are reasonable choices to kill them, especially if positioning for a [[Sneak Attack]]. For grounded builds, many EM weapons can kill a Watcher in one or two hits, especially with the high amount of corruption gained. However, due to their low integrity, any weapons will easily destroy them.
 [[Gallery]]Watchers.png|All Watcher variants and colors[[/Gallery]]","","W-16 Scout,W-25 Informer,W-44 Eye","","","","",""
 "Wave Gun","Part","","","","","","","",""
+"Weapon Breakdown","Other","Weapon breakdown is a mechanic that applies to a small group of parts that renders them broken after a certain number of shots. Each weapon has a minimum number of attacks it can perform where it can't break. After that, it has a chance of breaking down after each further shot with the chance depending on the specific part. The weapon can be repaired with a [[Recalibrators|Recalibrator]] to restore regular functionality after being broken as long as the part is not a 9* part. However, the chance of breaking down increases further with continued use. See [[Weapon Breakdown#Breakdown Chance|Breakdown Chance]] for more specific details.
+
+[[Heading]]List of Breakdown Weapons[[/Heading]]
+[[Table]]
+Weapon|Minimum Shots|Base Breakdown % Chance|Average Shots to First Breakdown||
+[[AWS/Autocannon]]|75|2.0%|109||
+[[AWS/EX-DEC]]|50|0.2%|211||
+[[AWS/Gauss]]|25|0.5%|95||
+[[AWS/Thermal]]|25|0.5%|95||
+[[Gui. Plasma Cannon]]|50|2.0%|84||
+[[Warp Cannon]]|75|2.5%|102
+[[/Table]]
+
+[[Heading]]Breakdown Chance[[/Heading]]
+
+[[Image]]AWS Thermal Breakdown Percentage.png|Breakdown chances of the AWS/Thermal over time[[/Image]]
+The exact mechanism for breakdown over continued use is an increasing chance that depends on the base breakdown percentage and the minimum number of shots. The breakdown percentage is multiplied by the largest whole multiple of the number of shots that the weapon has fired. To put it as a formula:
+[[GameText]]Breakdown % = floor( [weapon shot count] / [weapon minimum shot count] ) * [weapon breakdown percentage][[/GameText]]
+As an example, take the AWS/Thermal with a breakdown chance of 0.5% and a minimum shot count of 25:
+[[Table]]
+Shots|Breakdown %||
+1-25|0%||
+26-50|0.5%||
+51-75|1.0%||
+76-100|1.5%
+[[/Table]]
+Recalibrating the part restores functionality of the part but does not reset the total shot counter that will continue to rise over time. Eventually, the odds of breakdown will become so high that the part is essentially unusable. It's worth keeping a Recalibrator around for these low minimum base chance parts like the AWS/Thermal since they can still last a good while until the chance of breakdown becomes unsustainable.","","","","","","",""
 "Weapon Cycler","Part","","","","","","","",""
 "Weapon Cyclers","Part Group","[[Heading]]List of Weapon Cyclers[[/Heading]]
 [[PartGroupTable]]
