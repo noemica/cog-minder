@@ -7619,6 +7619,11 @@
    "Content": "[[Heading]]List of Cryofiber Webs[[/Heading]]\n[[PartGroupTable]]\nCryofiber Webs|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nUpkeep/Energy|\nEffect/Effect\n[[/PartGroupTable]]"
   },
   {
+   "Name": "Data Cores",
+   "Part Category": "Data Cores",
+   "Content": "Data Cores are special unusable items that have a special effect when acquired by moving on top of them. They are always dropped by certain types of bots when destroyed, especially some special unique NPCs. For example, [[Operator|Operators]] always drop a standard [[Data Core]] when destroyed."
+  },
+  {
    "Name": "Defensive Hackware",
    "Parts": [
     "EX Chip 2",
