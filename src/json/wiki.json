@@ -5632,7 +5632,7 @@
   },
   {
    "Name": "Master Drone Bay",
-   "Content": "Deploys a [[Master Drone]]"
+   "Content": "The Master Drone Bay is a very powerful item that is only obtainable in [[Scraptown]]. It deploys a single [[Master Drone]] which is capable of hijacking any 0b10 non-prototype bot and turn it into an uncontrollable ally. After taking over a bot, the drone cannot be recalled. It will only return when the bot it has taken over is destroyed. "
   },
   {
    "Name": "Master Link",

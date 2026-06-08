@@ -6794,7 +6794,7 @@ Upkeep/Energy|
 Effect/Effect
 [[/PartGroupTable]]","","","","Weight Redist. System,Adv. Weight Redist. System,Gravity Neutralizer,Adv. Gravity Neutralizer,Quantum Shading Machine,Asb. Suspension Frame,Adv. Quantum Shading Machine,Cep. Dimensional Manipulator","","",""
 "Master Drone","Bot","","","","","","","",""
-"Master Drone Bay","Part","Deploys a [[Master Drone]]","","","","","","",""
+"Master Drone Bay","Part","The Master Drone Bay is a very powerful item that is only obtainable in [[Scraptown]]. It deploys a single [[Master Drone]] which is capable of hijacking any 0b10 non-prototype bot and turn it into an uncontrollable ally. After taking over a bot, the drone cannot be recalled. It will only return when the bot it has taken over is destroyed. ","","","","","","",""
 "Master Link","Part","","","","","","","",""
 "Master Tearclaws","Part","","","","","","","",""
 "Master Thief","Bot","Master Thieves will sometimes appear in groups near entrance or exits[[Comment]]I don't think they can appear from both?[[/Comment]] in [[Caves]] maps if Cogmind has stolen from the Exiles. They are slightly slower than regular [[Thief|Thieves]]. Whether or not they appear in any given Caves map start is not truly random, but is instead dependent on the world seed and the number of allies Cogmind enters the map with, and sometimes Master Thieves are guaranteed to appear. When Master Thieves do appear, hostile/neutral bots are prevented from spawning near the Master Thieves' ambush. This may cause nearby prefabs, such as 0b10 outposts, to end up empty, indicating an incoming ambush. One of the Master Thieves of an ambush may appear with a [[CPS Tube]] in their inventory.
