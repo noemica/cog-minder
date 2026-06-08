@@ -314,7 +314,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Imp. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 14 } },
     "Adv. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 19 } },
     "Exp. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 26 } },
-    "Cep. Phasing Heat sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 36 } },
+    "Cep. Phasing Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 36 } },
 
     // Injectors
     "Disposable Heat Sink": { active: "Part Active", trait: { kind: "Injector", dissipation: 50 } },
