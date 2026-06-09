@@ -107,7 +107,7 @@ Assimilated bots gain a hidden ability to regenerate both part and core integrit
 "1C-UTU's Sword ""Choppy""","Part","This unique [[Slashing Weapons|Slashing Weapon]] is one of two belonging to the [[Heroes of Zion|Zion Hero]] [[1C-UTU]] and is quite an offensive powerhouse. While its twin the [[1C-UTU's Sword ""Lootmaker""]] focuses on severing and salvaging, ""Choppy"" instead relies on pure damage and destructive power. It has a minor targeting penalty but its 0 delay and high damage potential allow it to easily outclass standard lategame melee weapons like the [[Nanosword]].","","","","","","",""
 "1C-UTU's Sword ""Lootmaker""","Part","This unique [[Slashing Weapons|Slashing Weapon]] is one of two belonging to the [[Heroes of Zion|Zion Hero]] [[1C-UTU]] and is a very strong utility-based weapon. While its twin the [[1C-UTU's Sword ""Choppy""]] focuses on pure destructive power, ""Lootmaker"" instead leans into severing and salvaging enemies. It is not as good at pure killing but is great to use on bots with good loot to try to sever or salvage the parts off. This sword boasts a positive salvage stat of +5 and is the only melee weapon that isn't neutral or salvage negative.","","","","","","",""
 "2N-1CE's Frost Array","Part","This unique [[Cooling Utilities|Cooling Utility]] provides a near unparalleled cooling per slot at 100 [[Heat]] dissipation per turn with a low upkeep cost to boot. It can rarely be found only inside one of the reinforced shells in [[Testing]]. ","","","","","","",""
-"5H-AD0","Bot","","","","","","","",""
+"5H-AD0","Bot","Sometimes appears as a friendly ally at the start of [[Zion Deep Caves]]. If attacked, he will quickly retreat. ","","","","","","",""
 "5H-AD0's Cloak","Part","This unique [[Cloaking Devices|Cloaking Device]]-like part belongs to the mysterious [[Derelict]] [[5H-AD0]] and doubles as both cloaking and armor. It has a high energy cost, high coverage, and an effective sight reduction of -6 that is tied for the largest sight reduction in the game along with the [[Cep. Cloak Mesh]]. While the part is very useful for Cogmind, it is quite difficult to get it off of 5H-AD0 due to their tendency to leave as soon as they are threatened.","","","","","","",""
 "5H-AD0's Sniper Rifle","Part","This unique [[Kinetic Guns|Kinetic Gun]] belongs to the mysterious [[Derelict]] [[5H-AD0]], and true to its name, is a powerful long ranged sniper rifle. 24 range is among the highest of weapons in the game and ties with Cogmind's maximum vision range when equipped with a [[Spectral Analyzer]]. Its high recoil and delay make it not ideal to use in a large weapon volley, but it is a solid sniping weapon by itself, especially with the builtin 30% targeting. However, it is difficult to get ahold of this item due to 5H-AD0's tendency to leave as soon as they are threatened.","","","","","","",""
 "6S-H0T","Bot","6S-H0T is a part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[6S-H0T's Six Shooter]], is a powerful perfectly accurate gun with a high blast critical chance. With a [[Exp. Reaction Control System]], [[Exp. Propulsion Shielding|Exp. Propulsion]] and [[Exp. Weapon Shielding|Weapon Shieldings]], and an incredibly low 15% core exposure, 6S-H0T is no defensive slouch either. Trying to pin this Unchained down is a tall order.
@@ -129,7 +129,7 @@ As with all Unchained, allies are extremely helpful when fighting 6S-H0T, both a
 One good strategy against 6S-H0T is to use traps against them, specifically [[Blade Trap|Blade]] and [[Segregator Trap|Segregator Traps]]. Since they are not dismember immune, you can use these to easily remove higher coverage parts off of their body like their Six Shooter and hover units. With a [[Triangulator]] or other kind of sensors, it is easier to tell which way they are coming and plant the traps so they step on them to get to you. Without one, just place them near a corner or at a doorway so you can force 6S-H0T to step on them by repositioning a little bit. With some luck, you can remove their gun or even render them completely immobile, making them a piece of cake to take out.","","","","","","",""
 "6S-H0T's SS Cartridge","Part","A special [[Items|Item]] carried by the [[Unchained]] [[6S-H0T]] that reloads their unique [[6S-H0T's Six Shooter]]. 5 of these are carried in their inventory at a time each time they appear on the map and are consumed one at a time until they run out of shots. Any spare cartridges are dropped if 6S-H0T is killed before they are all used up. Since they take up an inventory slot per reload they are not very efficient for Cogmind's own use.","","","","","","",""
 "6S-H0T's Six Shooter","Part","A unique high powered [[Kinetic Guns|Kinetic Gun]] owned by the [[Unchained]] [[6S-H0T]] that deals a large amount of damage over 6 projectiles with perfect accuracy and a 25% chance of a blast [[Critical Hits|Critical]]. On 6S-H0T this weapon is very threatening, likely rapidly dismantling the target from the combination of damage and blast criticals. However, only one volley can be fired at a time with this weapon before it runs off of ammo. At that point a [[6S-H0T's SS Cartridge]] is required to reload. Due to its very limited firing capabilities and expensive inventory count of cartridges this weapon is not very useful for Cogmind.","","","","","","",""
-"7R-MNS","Bot","","","","","","","",""
+"7R-MNS","Bot","Sometimes appears on -8 [[Materials]] as a friendly ally. The player can follow him all the way through factory as he will take main exits till -4, at which point he will disappear. They are quite powerful, and they have no trouble taking out most bots. ","","","","","","",""
 "7V-RTL","Bot","","","","","","","",""
 "7V-RTL's Ultimate Field","Part","A unique [[Force Fields|Force Field]] belonging to the [[Heroes of Zion|Zion Hero]] [[7V-RTL]] that is arguably the most powerful defensive utility in the game. Most other force fields, even top tier ones like [[Exp. Force Field]] and [[AEGIS Remote Shield]], only block up to 50% damage, but the Ultimate Field is twice as effective at damage reduction since it blocks 75% damage, energy permitting. The only other part so effective is the [[Vortex Field Projector]] which has other significant downsides. Keep this part well fed with 4 (or more) engines and maybe a [[Power Amplifiers|Power Amplifier]] and it will keep any build intact for a very long time.","","","","","","",""
 "8R-AWN","Bot","","","","","","","",""
@@ -1630,7 +1630,7 @@ Friendly Derelicts will not move from their guard position, but they will engage
 "Cep. Heavy Railcannon","Part","","","","","","","",""
 "Cep. Helical Railcannon","Part","","","","","","","",""
 "Cep. Hypertargeting System","Part","","","","","","","",""
-"Cep. Impact Drone Bay","Part","Deploys [[Impact Drone|Impact Drones]]","","","","","","",""
+"Cep. Impact Drone Bay","Part","The Cep. Impact Drone Bay is one of the most powerful drone bays in the entire game. It releases up to six [[Impact Drone|Impact Drones]]. Each drone is armed with a [[Gravity Flail]] and an [[Adv. Phase Shifter]], making them both deadly and hard to kill. They are especially useful during the [[MAIN.C]] fight, and for scouting in [[Access_0]].","","","","","","",""
 "Cep. Lightning Penetrator","Part","","","","","","","",""
 "Cep. Matter Streamer","Part","","","","","","","",""
 "Cep. Melee Reflex Suite","Part","","","","","","","",""
@@ -6794,7 +6794,7 @@ Upkeep/Energy|
 Effect/Effect
 [[/PartGroupTable]]","","","","Weight Redist. System,Adv. Weight Redist. System,Gravity Neutralizer,Adv. Gravity Neutralizer,Quantum Shading Machine,Asb. Suspension Frame,Adv. Quantum Shading Machine,Cep. Dimensional Manipulator","","",""
 "Master Drone","Bot","","","","","","","",""
-"Master Drone Bay","Part","The Master Drone Bay is a very powerful item that is only obtainable in [[Scraptown]]. It deploys a single [[Master Drone]] which is capable of hijacking any 0b10 non-prototype bot and turn it into an uncontrollable ally. After taking over a bot, the drone cannot be recalled. It will only return when the bot it has taken over is destroyed. ","","","","","","",""
+"Master Drone Bay","Part","The Master Drone Bay is a very powerful item that is only obtainable in [[Scraptown]]. It deploys a single [[Master Drone]] which is capable of hijacking any 0b10 non-prototype bot, turning it into an uncontrollable ally. After taking over a bot, the drone cannot be recalled. It will only return when the bot it has taken over is destroyed. Each time this happens, however, there is a chance that the drone doesn't survive.","","","","","","",""
 "Master Link","Part","","","","","","","",""
 "Master Tearclaws","Part","","","","","","","",""
 "Master Thief","Bot","Master Thieves will sometimes appear in groups near entrance or exits[[Comment]]I don't think they can appear from both?[[/Comment]] in [[Caves]] maps if Cogmind has stolen from the Exiles. They are slightly slower than regular [[Thief|Thieves]]. Whether or not they appear in any given Caves map start is not truly random, but is instead dependent on the world seed and the number of allies Cogmind enters the map with, and sometimes Master Thieves are guaranteed to appear. When Master Thieves do appear, hostile/neutral bots are prevented from spawning near the Master Thieves' ambush. This may cause nearby prefabs, such as 0b10 outposts, to end up empty, indicating an incoming ambush. One of the Master Thieves of an ambush may appear with a [[CPS Tube]] in their inventory.
@@ -7202,8 +7202,17 @@ If worst comes to worst and it looks like you might be at danger of not making i
 "Mobile Assembly Unit","Part","Creates 1 [[Assembled]] for -10 [[Matter]], +100 [[Heat]], -100 [[Energy]]","","","","","","",""
 "Mobile Refinery Mk. CCLXVII","Part","","","","","","","",""
 "Modified EM Gauss Rifle","Part","Created by combining a [[Hyp. EM Gauss Rifle]] with a [[GAL Module]].
-The following RIF hacks can be performed:
-[[List]]amplify_resonance|disable_weapons|overload_power|overwrite_iff|reboot_system|spike_heat[[/List]]","","","","","","",""
+The following RIF hacks can be randomly performed:
+[[Table]]
+Hack Name|Description||
+[[B]]amplify_resonance[[/B]]|Cause power source to explode when adjacent to any other active power source. Also causes the adjacent active power source to explode. Checked once per turn.||
+[[B]]disable_weapons[[/B]]|Disable all weapon systems for 20 turns.||
+[[B]]overload_power[[/B]]|Cause power source to explode. Process takes 4-6 turns to reach critical point.||
+[[B]]overwrite_iff[[/B]]|Trick system into believing it is allied with Cogmind. After 10 turns the network will perform an automated quickboot to restore it to normal, a process which takes anywhere from 5 to 10 turns.||
+[[B]]reboot_system[[/B]]|Force a complete reboot. The entire sequence requires anywhere from 15 to 25 turns to complete.||
+[[B]]spike_heat[[/B]]|Destabilize power system to induce a massive surge of heat.
+[[/Table]]
+","","","","","","",""
 "Modified Sigix Sheargun","Part","","","","","","","",""
 "Modified TNC","Part","","","","","","","",""
 "Molecular Deconstructor","Part","When a bot is hit with the Molecular Deconstructor, they will take the 20-50 damage over a period of 2-5 turns, with 10 damage being dealt per turn. Multiple instances of the damage over time effect do stack with each other.","","","","","","",""
@@ -9336,7 +9345,7 @@ Upkeep/Energy|
 Effect/Effect
 [[/PartGroupTable]]","","","","Sensor Array,Imp. Sensor Array,Adv. Sensor Array,Lrn. Sensor Array,Mak. Sensor Array,Exp. Sensor Array,Active Sensor Suite,Exp. Active Sensor Suite","","",""
 "Sensor Drone","Bot","","","","","","","",""
-"Sensor Drone Bay","Part","Deploys [[Sensor Drone|Sensor Drones]].","","","","","","",""
+"Sensor Drone Bay","Part","Deploys up to 20 [[Sensor Drone|Sensor Drones]]. Can be found in one of the derelict shops in the [[Mines]]. Each drone has a [[Mak. Sensor Array]] and a [[Exp. Signal Interpreter]]. This item is especially useful on slower propulsion, removing the need to carry robot detection [[Infowar|infowar]] entirely. ","","","","","","",""
 "Sentry","Bot Group","Sentries are a [[Bot Groups|Bot Group]] or [[Armor|armored]] [[Treads|treaded]] [[0b10]] bots that stand guard around exits, main corridors, and side rooms with machines or item stockpiles inside them. They wield dual Kinetic and Thermal guns at each tier. Sentries tend to be slightly more durable than most other bots at their depth. Sentries typically stand guard alone as a [[Security Squad]].
 Sentries have no particular weakness, and so most weapon types can be used to dispatch them. Electromagnetic damage is efficient at killing the higher tier bots, and EM is good in general at increasing the chances of looting their treads and armor.
 While combat bots will want (or will be forced) to fight Sentries head-on, airborne builds may want to avoid them or at least avoid getting shot by them. One way to do this is to use a [[Terminology#Partial Spot|partial spot]] to lure the Sentry out of their position. After that, Cogmind may be able to use the guarded machine or exit, or grab the loot without being spotted. A fast Cogmind may also be able to use the long memory of Sentries to their advantage while being spotted regularly. It is possible to lead Sentries far out of position and then leave them in the dust to grab their guarded loot.
@@ -10586,7 +10595,7 @@ When Superfortress is under fire or there are multiple  hostiles in line of sigh
 [[Heading]]Killing Superfortress[[/Heading]]
 See [[Strategy/Bosses/Defeating Superfortress]].","","","","","","",""
 "Superquantum Companion","Part","The Superquantum Companion is a unique talking melee weapon that is an upgrade to the [[Quantum Companion]]. It can be obtained by using a [[Subatomic Replicator]] on the Quantum Companion. The Superquantum Companion has [[Quantum Companion#special_effects|all of the effects]] that the Quantum Companion does, but the frequency of all effects is increased.","","","","","","",""
-"Supersonic Drone Bay","Part","Deploys a [[Trailblazer]].","","","","","","",""
+"Supersonic Drone Bay","Part","Deploys a [[Trailblazer]] which can move 33 tiles per turn. Can be useful for scouting, although the drone tends to die quite quickly, making it one of the worse items to pick. Can be found occasionally in the [[Exiles (Location)| Exiles]] prototype vault.","","","","","","",""
 "Surface","Location","The surface is not a real map in the game, but exiting to the surface is one way to win the game. Many of the game's wintypes require getting to a surface exit. See [[Wintypes]] for more information.","Spoiler","","","","","",""
 "Surge Thruster","Part","","","","","","","",""
 "Surge Thrusters","Part Group","","","","","Surge Thruster,Imp. Surge Thruster,Adv. Surge Thruster,Exp. Surge Thruster","","",""
@@ -10986,7 +10995,7 @@ If Cogmind is fast enough, fleeing is also an option, for example to lead the Th
 
 Last edited during Beta 14","","","","","","",""
 "Thief Drone","Bot","","","","","","","",""
-"Thief Drone Bay","Part","Deploys [[Thief Drone|Thief Drones]].","","","","","","",""
+"Thief Drone Bay","Part","Deploys up to three [[Thief Drone|Thief Drones]]. Useful for stealing parts off of powerful bots, such as [[8R-AWN]] when [[Exiles (Location)#fighting|fighting the Exiles]]. Can be found in one of the derelict shops in [[Mines]].","","","","","","",""
 "Throwing Claymores","Part Group","[[Heading]]List of Throwing Claymores[[/Heading]]
 [[PartGroupTable]]
 Throwing Claymores|
@@ -12185,7 +12194,7 @@ Going to the [[Mines]] without a launcher. [[GameText]]Infestation in the Mines,
 |The many ways of going into [[Testing]] or [[Quarantine]] on [[FarCom]] (unless you're prepared, of course). Perhaps you needed to desperately dive for an exit. Perhaps you forgot the [[Exiles (Group)|Exiles']] warning. Or perhaps you chose to roll the dice.
 |Having a bot destroy the terminal at the [[Surface]] exit in [[Access]]. The closer you were to the terminal, the sillier it is.
 [[/List]]","","","","","","",""
-"YI-UF0","Bot","","","","","","","",""
+"YI-UF0","Bot","Sometimes appears in the [[Mines]] initially as a friendly bot, but turns hostile after being attacked by anyone. When fighting him, be sure to position yourself in a way such that the explosions from his [[YI-UF0's Doublenader|Doublenader]] don't ruin his own salvage.","","","","","","",""
 "YI-UF0's Bottomless Matter Pit","Part","","","","","","","",""
 "YI-UF0's Doublenader","Part","","","","","","","",""
 "YOLO Cannon","Part","Rarely on firing, the YOLO Cannon will explode with the log message [[GameText]]YOLO Cannon suddenly explodes.[[/GameText]] When this occurs, the YOLO cannon and up to 3 other random parts will instantly be destroyed. Cogmind will also lose half of the current core integrity when this effect happens.","","","","","","",""

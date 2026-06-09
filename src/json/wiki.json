@@ -18,7 +18,7 @@
   },
   {
    "Name": "5H-AD0",
-   "Content": ""
+   "Content": "Sometimes appears as a friendly ally at the start of [[Zion Deep Caves]]. If attacked, he will quickly retreat. "
   },
   {
    "Name": "6S-H0T",
@@ -26,7 +26,7 @@
   },
   {
    "Name": "7R-MNS",
-   "Content": ""
+   "Content": "Sometimes appears on -8 [[Materials]] as a friendly ally. The player can follow him all the way through factory as he will take main exits till -4, at which point he will disappear. They are quite powerful, and they have no trouble taking out most bots. "
   },
   {
    "Name": "7V-RTL",
@@ -1214,7 +1214,7 @@
   },
   {
    "Name": "YI-UF0",
-   "Content": ""
+   "Content": "Sometimes appears in the [[Mines]] initially as a friendly bot, but turns hostile after being attacked by anyone. When fighting him, be sure to position yourself in a way such that the explosions from his [[YI-UF0's Doublenader|Doublenader]] don't ruin his own salvage."
   },
   {
    "Name": "Z-Courier",
@@ -3088,7 +3088,7 @@
   },
   {
    "Name": "Cep. Impact Drone Bay",
-   "Content": "Deploys [[Impact Drone|Impact Drones]]"
+   "Content": "The Cep. Impact Drone Bay is one of the most powerful drone bays in the entire game. It releases up to six [[Impact Drone|Impact Drones]]. Each drone is armed with a [[Gravity Flail]] and an [[Adv. Phase Shifter]], making them both deadly and hard to kill. They are especially useful during the [[MAIN.C]] fight, and for scouting in [[Access_0]]."
   },
   {
    "Name": "Cep. Lightning Penetrator",
@@ -5632,7 +5632,7 @@
   },
   {
    "Name": "Master Drone Bay",
-   "Content": "The Master Drone Bay is a very powerful item that is only obtainable in [[Scraptown]]. It deploys a single [[Master Drone]] which is capable of hijacking any 0b10 non-prototype bot and turn it into an uncontrollable ally. After taking over a bot, the drone cannot be recalled. It will only return when the bot it has taken over is destroyed. "
+   "Content": "The Master Drone Bay is a very powerful item that is only obtainable in [[Scraptown]]. It deploys a single [[Master Drone]] which is capable of hijacking any 0b10 non-prototype bot, turning it into an uncontrollable ally. After taking over a bot, the drone cannot be recalled. It will only return when the bot it has taken over is destroyed. Each time this happens, however, there is a chance that the drone doesn't survive."
   },
   {
    "Name": "Master Link",
@@ -5820,7 +5820,7 @@
   },
   {
    "Name": "Modified EM Gauss Rifle",
-   "Content": "Created by combining a [[Hyp. EM Gauss Rifle]] with a [[GAL Module]].\nThe following RIF hacks can be performed:\n[[List]]amplify_resonance|disable_weapons|overload_power|overwrite_iff|reboot_system|spike_heat[[/List]]"
+   "Content": "Created by combining a [[Hyp. EM Gauss Rifle]] with a [[GAL Module]].\nThe following RIF hacks can be randomly performed:\n[[Table]]\nHack Name|Description||\n[[B]]amplify_resonance[[/B]]|Cause power source to explode when adjacent to any other active power source. Also causes the adjacent active power source to explode. Checked once per turn.||\n[[B]]disable_weapons[[/B]]|Disable all weapon systems for 20 turns.||\n[[B]]overload_power[[/B]]|Cause power source to explode. Process takes 4-6 turns to reach critical point.||\n[[B]]overwrite_iff[[/B]]|Trick system into believing it is allied with Cogmind. After 10 turns the network will perform an automated quickboot to restore it to normal, a process which takes anywhere from 5 to 10 turns.||\n[[B]]reboot_system[[/B]]|Force a complete reboot. The entire sequence requires anywhere from 15 to 25 turns to complete.||\n[[B]]spike_heat[[/B]]|Destabilize power system to induce a massive surge of heat.\n[[/Table]]\n"
   },
   {
    "Name": "Modified Sigix Sheargun",
@@ -6508,7 +6508,7 @@
   },
   {
    "Name": "Sensor Drone Bay",
-   "Content": "Deploys [[Sensor Drone|Sensor Drones]]."
+   "Content": "Deploys up to 20 [[Sensor Drone|Sensor Drones]]. Can be found in one of the derelict shops in the [[Mines]]. Each drone has a [[Mak. Sensor Array]] and a [[Exp. Signal Interpreter]]. This item is especially useful on slower propulsion, removing the need to carry robot detection [[Infowar|infowar]] entirely. "
   },
   {
    "Name": "Sfc. Absorption Layer",
@@ -6856,7 +6856,7 @@
   },
   {
    "Name": "Supersonic Drone Bay",
-   "Content": "Deploys a [[Trailblazer]]."
+   "Content": "Deploys a [[Trailblazer]] which can move 33 tiles per turn. Can be useful for scouting, although the drone tends to die quite quickly, making it one of the worse items to pick. Can be found occasionally in the [[Exiles (Location)| Exiles]] prototype vault."
   },
   {
    "Name": "Surge Thruster",
@@ -7004,7 +7004,7 @@
   },
   {
    "Name": "Thief Drone Bay",
-   "Content": "Deploys [[Thief Drone|Thief Drones]]."
+   "Content": "Deploys up to three [[Thief Drone|Thief Drones]]. Useful for stealing parts off of powerful bots, such as [[8R-AWN]] when [[Exiles (Location)#fighting|fighting the Exiles]]. Can be found in one of the derelict shops in [[Mines]]."
   },
   {
    "Name": "Thunder Hammer",
