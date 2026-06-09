@@ -341,7 +341,7 @@ Effect/Effect
 "Adv. Corruption Screen","Part","","","","","","","",""
 "Adv. Cryofiber Web","Part","","","","","","","",""
 "Adv. Datajack","Part","","","","","","","",""
-"Adv. Drone Bay","Part","Deploys [[Advanced Drone|Advanced Drones]].","","","","","","",""
+"Adv. Drone Bay","Part","Deploys [[Advanced Drone|Advanced Drones]] which are durable and effective scouts with high speed, visual range, and evasion.","","","","","","",""
 "Adv. Dynamic Insulation System","Part","","","","","","","",""
 "Adv. ECM Suite","Part","","","","","","","",""
 "Adv. EM Disruption Field","Part","","","","","","","",""
@@ -2694,10 +2694,10 @@ After the Data Miner is attacked these grunts hidden in the wall will burst out 
 [[List]]Use 2 or more [[Launchers]] and fight them all at once. Explosive launchers will be slower and provide little to no loot but can have a nice range advantage over the Grunts' below average 14 range. EM launchers have a smaller range but will provide a decent amount of loot, although it will be [[Corrupted Parts|Corrupted]].|Dig a tunnel deep into the Data Conduit machine and hide out inside. The Grunts will spread out over time and you can lure them in to fight 1-on-1. This approach works best with some kind of [[Transmission Jammers|Transmission Jammer]] to avoid drawing more than one Grunt at a time. This is the best tactic to fight Grunts with melee or conventional non-launcher methods.[[/List]]
 Another approach is to simply run from the Grunts. This works best for airborne builds as they can get in and out with the fewest number of shots. Digging a tunnel through the Data Conduit machine is also very helpful for escaping. Luring the Grunts into a tunnel as you escape out the other end can avoid most attacks. Flight can hop over the grouped-up Grunts and dodge into the spawn areas to avoid more shots","Spoiler","","","","","",""
 "Datajack","Part","","","","","","","",""
-"Datajacks","Part Supergroup","Datajacks are used for robot hacking, which provides some rudimentary capabilities, and many more with [[RIF]] and an appropriate [[Relay Couplers|Relay Coupler]]. See the [[~/rif.html|RIF page]] for the full list of RIF hacks. Some special manual hacks can be unlocked during the course of each run, for example, the ""Woof"" code by a [[Tinkerer]] in [[Caves#Events]]. These hacks must also be performed with a Datajack. In addition to hacking, Datajacks can parse robots for some information about the class of robot as well as identifying all unknown and [[Prototype Part|Prototype Parts]] they have attached. Some special bots have unique parse text, usually lore-important bots.
+"Datajacks","Part Supergroup","Datajacks are primarily used for robot hacking, which provides some rudimentary capabilities by default, and many more with [[RIF]] and an appropriate [[Relay Couplers|Relay Coupler]]. See the [[~/rif.html|RIF page]] for the full list of RIF hacks. Some special manual hacks can be unlocked during the course of each run, for example, the ""Woof"" code by a [[Tinkerer]] in [[Caves#Events]]. These hacks must also be performed with a Datajack. In addition to hacking, Datajacks can parse robots to provide some information about the class of robot and identify all unknown and [[Prototype Part|Prototype Parts]] they have attached. Some special bots have unique parse text, usually lore-important bots. One final effect is that Datajacks can more quickly rewire green ""rewirable"" bots than moving into them.
 [[Image]]Parse Text.png|Parsing a [[R-06 Scavenger]][[/Image]]
 
-[[Melee Datajacks]] can hack a robot within melee range. [[Remote Datajacks]] can hack a robot at a greater distance. Melee datajacks have advantages to compensate for their reduced range:
+[[Melee Datajacks]] can hack a robot within melee range while [[Remote Datajacks]] can hack a robot at a greater distance. Melee datajacks have advantages to compensate for their reduced range:
 [[List]]
 If a melee datajack is active, moving into a known hostile trap will attempt to disarm or reprogram it. Remote datajacks do not have a similar capability.
 |[[Programmer|Programmers]] can defend their allies against remote datajacks, but not melee datajacks.|
@@ -2971,7 +2971,11 @@ Projectile/Disruption|
 Projectile/Salvage|
 Effect/Description
 [[/PartGroupTable]]","","","Electromagnetic Guns","","","",""
-"Electromagnetic Launchers","Part Group","[[Heading]]List of Electromagnetic Launchers[[/Heading]]
+"Electromagnetic Launchers","Part Group","Electromagnetic [[Launchers]] are high-profile weapons that specialize in dealing a lot of electromagnetic damage in an AOE blast. This makes them great at [[Corruption|Corrupting]] large [[Patrol Squad|Patrol]] and [[Assault Squad|Assault]] squads in relatively little time. For this killing power, they have a number of drawbacks like high collateral damage, high energy cost, [[Corrupted Parts|corrupting]] dropped parts, low integrity, and the ability to blow up your own engines. [[Energy Filters]] can help keep the energy cost down to more reasonable levels.
+[[Heading]]Explosive vs Electromagnetic Launchers[[/Heading]]
+[[Partial]]Explosive vs Electromagnetic Launchers[[/Partial]]
+
+[[Heading]]List of Electromagnetic Launchers[[/Heading]]
 [[PartGroupTable]]
 Electromagnetic Launchers|
 Overview/Size|
@@ -3095,7 +3099,10 @@ Effect/Effect|
 Effect/Description
 [[/PartGroupTable]]","","","","","Backup Lasers,Electromagnetic Guns,Phasers,Shearguns,Thermal Guns,Vortex Guns","",""
 "Energy Well","Part","","","","","","","",""
-"Energy Wells","Part Group","[[Heading]]List of Energy Wells[[/Heading]]
+"Energy Wells","Part Group","Additional [[Storage]] for [[Energy]] that can be filled up without the part being attached and retrieved by either attaching the part or by being positioned on the same tile as the part on the ground. This storage is especially useful for builds that use lots of energy on things like [[Electromagnetic Weapons]] and [[Force Fields]].
+Dropping energy wells is much more efficient in spent turns to restock on energy than swapping the part on and back off again. This can be done ahead of combat to save even more time. While it is generally superior, the dropping technique does have some downsides. It requires a free slot underneath Cogmind, otherwise the dropped part will take time to walk on top of. Leaving the part on the ground also leaves it liable to be destroyed by explosions or picked up by a [[Recycler]].
+
+[[Heading]]List of Energy Wells[[/Heading]]
 [[PartGroupTable]]
 Energy Wells|
 Overview/Size|
@@ -3617,7 +3624,12 @@ There are some things that should be done before actually doing the fight itself
 "Exp. Weapon Shielding","Part","","","","","","","",""
 "Expert System","Part","","","","","","","",""
 "Explorer","Bot","","","","","","","",""
-"Explosive Launchers","Part Group","[[Heading]]List of Explosive Launchers[[/Heading]]
+"Explosive Launchers","Part Group","Explosive [[Launchers]] are high-profile weapons that specialize in dealing tons of damage in an AOE blast. This makes them great at destroying large [[Patrol Squad|Patrol]] and [[Assault Squad|Assault]] squads in relatively little time. For this killing power, they have a number of drawbacks like high collateral damage, high [[Matter]] cost, and high - salvage modifiers that can make it difficult to support for sustained combat. However, [[Matter Filters]] and [[Tractor Beams]] work well to help handle the matter drawback.
+Explosive launchers can be used for more than solely combat. Another great use is safely destroying [[Traps]] on the ground. While they can't aimed at specific tiles, it is possible to shoot the launcher at maximum range to take out traps in range of the projectile. Explosive launchers are also good at digging, although it is a little more dangerous than other methods without a [[Structural Scanner]] to find safe tiles.
+[[Heading]]Explosive vs Electromagnetic Launchers[[/Heading]]
+[[Partial]]Explosive vs Electromagnetic Launchers[[/Partial]]
+
+[[Heading]]List of Explosive Launchers[[/Heading]]
 [[PartGroupTable]]
 Explosive Launchers|
 Overview/Size|
@@ -3645,6 +3657,25 @@ Explosion/Salvage|
 Effect/Description
 [[/PartGroupTable]]","","","Explosive Launchers","","","",""
 "Explosive Trap","Part","","","","","","","",""
+"Explosive vs Electromagnetic Launchers","Partial","[[Table]]
+Category|Explosive|Electromagnetic||
+Energy|[[CellStyle:Good]]None|[[CellStyle:Bad]]High: Over 100 energy per volley at highest ratings||
+Matter|[[CellStyle:Bad]]High: Over 50 matter per volley at highest ratings|[[CellStyle:Neutral]]Low: Over 10 matter per volley at highest ratings||
+Salvage|[[CellStyle:Bad]]Large negative salvage, more than -20 at highest ratings
+Can blow up matter on the ground, makes restocking difficult|[[CellStyle:Neutral]]Small positive salvage, between 2-4 at all ratings
+Leaves dropped parts [[Corrupted Parts|Corrupted]]||
+Range|[[CellStyle:Good]]Most in 14-16 range, some in 18+ range|[[CellStyle:Neutral]]Most 14 range, a few in 16+ range||
+Radius|[[CellStyle:Neutral]]Most in 4-6 radius, a few outliers above and below|[[CellStyle:Neutral]]Most in 4-6 radius, a few outliers above||
+Collateral Damage|[[CellStyle:Bad]]Likely to destroy noncombat bots, machines, and terrain with every shot|[[CellStyle:Neutral]]Likely to destroy noncombat bots and some machines
+Only blows up terrain with spectrum on engine explosions
+Can blow up own engines with spectrum
+Can trigger [[Traps]] directly or indirectly through giving [[Corruption]] to other bots||
+Kill effectiveness|[[CellStyle:Neutral]]Kills most bot types in a few volleys through damage, can easily kill bots on the first hit
+Some common bots have explosive resistance ([[Demolisher|Demolishers]] (75-100%), [[Heavy|Heavies]] (50%), [[Programmer|Programmers]] (25%), [[Sentry|Sentries]] (50%))
+[[Swarmer|Swarmers]] have explosive weakness (25%)|[[CellStyle:Neutral]]Kills most bot types in a few volleys through corruption, likely will take multiple shots to kill so multiple EM launchers become much more effective when stacked
+Some common bots have electromagnetic or corruption resistance ([[Behemoth|Behemoths]] ([[Dynamic Insulation Systems]]), Heavies (25-50% + Dynamic Insulation Systems), Programmers (75%))
+Some common bots have electromagnetic weakness ([[Grunt|Grunts]] (-25%), [[Hunter|Hunters]] (-25%))
+[[/Table]]","","","","","","",""
 "Extension","Location","Extension is an [[0b10]]-controlled [[Factory]] [[Branch]] that appears between -6 and -4 and serves as a connection between the main [[0b10]] complex and [[Cetus]]. It is the beginning of a 4-map sequences of branches that spans Extension, Cetus, [[Archives]], and [[Hub_04(d)]]. It is an 0b10-controlled map with a small amount of patrols and moderate amount of guards spread throughout. There are a large amount of non-combat hostiles moving in between [[Transfer Station|Transfer Stations]] at the left and right-most parts of the map. Unlike most 0b10-controlled maps, [[Extermination Squad|Exterminations]] will not spawn in Extension. The central area is heavily guarded with 2 [[Behemoth|Behemoths]] and 2 [[Sentry|Sentries]] standing by.
 The overall map shape is similar to a large B turned on its side. This map shape is the same between runs, although every map has random contents. There is a single bottom path that runs straight to the main Factory/Cetus exits and 2 branching paths that contain some machines and disabled and imprisoned [[Derelict|Derelicts]]. One special NPC, [[A7]], is guaranteed to be locked in one of the cells. The central area has the aforementioned guards stationed as well as a [[Terminal]]-locked exit. The bottom path to either side of the central area can have Emergency Access doors along the top or bottom of the path. These can contain hostile guards, part caches, or nothing.
 One unique mechanic to Extension is the persistent threat check. If too many non-combat hostiles are attacked and destroyed, an alert with the text [[GameText]]ALERT: Persistent threat to transfer network, dispatching additional forces.[[/GameText]] will appear, and 2 [[C-30 ARC|ARCs]] will be dispatched to patrol the map.
@@ -5380,7 +5411,7 @@ When entering -3 Research, the Exiles will send a warning message to Cogmind ind
 "Field Propulsion Array","Part","","","","","","","",""
 "Field Propulsion Drive","Part","","","","","","","",""
 "Field Recycling Unit","Part","","","","","","","",""
-"Field Recycling Units","Part Group","Like [[Recycling Unit|Recycling Units]], Field Recycling Units are capable of recycling parts into [[Matter]]. Intact parts grant [Efficiency% of (Part Integrity / 2)] Matter. Damaged parts grant less Matter depending on the difference between their current integrity and their maximum integrity, as the formula that determines Matter yield is roughly [Efficiency% of (Current Integrity * Current Integrity / Max Integrity / 2)], rounded down. For example, An Adv. Field Recycling Unit collecting an [[Antigrav System]] with 33 out of 55 integrity would yield [60% of (33 * 33 / 55 / 2)] = 5.94, rounded down to 5 Matter, while the same Adv. Field Recycling Unit collecting an intact intact Antigrav System would yield [60% of (55 * 55 / 55 / 2)] = 16.5, rounded down to 16 matter.
+"Field Recycling Units","Part Group","Like [[Recycling Unit|Recycling Units]], Field Recycling Units are [[Devices]] capable of recycling parts into [[Matter]]. Intact parts grant [Efficiency% of (Part Integrity / 2)] Matter. Damaged parts grant less Matter depending on  their maximum integrity, as the formula that determines Matter yield is roughly [Efficiency% of (Current Integrity * Current Integrity / Max Integrity / 2)], rounded down. For example, An [[Adv. Field Recycling Unit]] collecting an [[Antigrav System]] with 33 out of 55 integrity would yield [60% of (33 * 33 / 55 / 2)] = 5.94, rounded down to 5 Matter, while the same Adv. Field Recycling Unit collecting an intact intact Antigrav System would yield [60% of (55 * 55 / 55 / 2)] = 16.5, rounded down to 16 matter.
 
 [[Heading]]List of Field Recycling Units[[/Heading]]
 [[PartGroupTable]]
@@ -6605,7 +6636,12 @@ Effect/Effect
 
 The turns-per-volley table in the Quantum Capacitor article also applies to the Launcher Loader. But there is a higher proportion of launchers with delay modifiers, compared to [[Energy Guns]] and [[Energy Cannons|Cannons]], so it's more likely that the numbers in the table (which assume no delay modifiers) will be slightly inaccurate for a Launcher Loader build.","","","","","","",""
 "Launcher Turret","Bot","","","","","","","",""
-"Launchers","Part Supergroup","[[Heading]]List of Launchers[[/Heading]]
+"Launchers","Part Supergroup","Launchers are a type of [[Weapons|Weapon]] that specializes in doing AOE damage which works best against large groups of enemies and evasive bots like [[Swarmer|Swarmers]] and [[Hunter|Hunters]]. The biggest downside of launchers is their tendency to deal large amounts of collateral damage to nearby bots, wielder included. This often results in a high amount of [[Alert]] gain compared to using other types of weapons. Additionally, collateral damage against [[U-05 Engineer|Engineers]] will trigger [[Reinforcement Squad|Reinforcements]] unless a [[Transmission Jammers|Transmission Jammer]] is attached. The two main types of launchers are [[Electromagnetic Launchers]] and [[Explosive Launchers]]. Launchers have a unique companion part in the [[Launcher Loader]] that allows a single launcher to be fired twice as fast as usual.
+
+[[Heading]]Explosive vs Electromagnetic Launchers[[/Heading]]
+[[Partial]]Explosive vs Electromagnetic Launchers[[/Partial]]
+
+[[Heading]]List of Launchers[[/Heading]]
 [[PartGroupTable]]
 Launchers|
 Overview/Size|
@@ -6840,7 +6876,10 @@ The other important cache is the out-of-depth parts cache. These caches contain 
 [[Spoiler]][[Image]]Materials Subdwellers Attack.png|Subdwellers attacking 0b10[[/Image]][[/Spoiler]][[List]](++) [[8R-AWN]]: 8R-AWN can appear in -10 or -9 Materials, passing through to the nearest Mines exit. They will shoot any hostile 0b10 bots on the way and often leave large piles of loot in their wake. If encountered, they will tell you to follow them to the Mines and then to the [[Exiles (Location)|Exiles]] map.|(++) [[Spoiler]][[7R-MNS]]: 7R-MNS will appear on -8 Materials, roaming around the map and killing 0b10 combat bots. After a few hundred turns, they will head to a main exit and head to Factory. They can be followed through the exit.[[/Spoiler]]|(++) [[Federalist]] party: 6 Federalists will appear on -10 Materials and head directly for the Subcaves exit. They will continue exploring Subcaves until they find a shortcut to [[Scraptown]].|(--) [[Spoiler]]3 [[Subdweller|Subdwellers]] can appear from the Subcaves exit, attacking Cogmind and 0b10 alike, with the announcement of [[GameText]]Derelict incursion detected, dispatching patrols to target area.[[/GameText]] When this occurs, two patrols will be dispatched from a nearby main exit.[[/Spoiler]][[/List]]","","","","","","",""
 "Matter","Part","Matter is used to attach components, and is consumed by ballistic weapons and launchers, which convert it to the appropriate type of ammunition. It can be salvaged from robot remains, though the available amount varies depending on how the robot was destroyed. Robots hit with [[Ballistic Cannons]] will drop a small amount of matter nearby. Matter also appears randomly on the ground. Cogmind automatically recycles 5 matter from each attached part that is destroyed.","","","","","","",""
 "Matter Compressor","Part","","","","","","","",""
-"Matter Compressors","Part Group","[[Heading]]List of Matter Compressors[[/Heading]]
+"Matter Compressors","Part Group","Additional [[Storage]] for [[Matter]] that can be filled up without the part being attached and retrieved by either attaching the part or by being positioned on the same tile as the part on the ground. This storage is especially useful for builds that use lots of matter on things like [[Kinetic Cannons]] and [[Explosive Launchers]].
+Dropping matter compressors is much more efficient in spent turns to restock on matter than swapping the part on and back off again. This can be done ahead of combat to save more time. While it is generally superior, the dropping technique does have some downsides. It requires a free slot underneath Cogmind, otherwise the dropped part will take time to walk on top of. Leaving the part on the ground also leaves it liable to be destroyed by explosions or picked up by a [[Recycler]].
+
+[[Heading]]List of Matter Compressors[[/Heading]]
 [[PartGroupTable]]
 Matter Compressors|
 Overview/Size|
@@ -8744,7 +8783,17 @@ If Warlord is aligned with in his [[Warlord (Location)|base]], he will bring hug
 [[Heading]]Getting Scanned[[/Heading]]
 If [[Cogmind]] is scanned in most maps [[Q-Series]] will sometimes be dispatched for future [[Extermination Squad|Extermination Squads]] instead of [[Programmer|Programmers]]. [[Redacted]]Getting scanned in [[Section 7]] can instead trigger [[Intercept Squad|Intercepts]] to start showing up instead.[[/Redacted]]","Spoiler","C-55 Analyst,C-65 Expert,Investigator","","","","",""
 "Resistance Armor","Part Group","","","","Resistance Armor","","","",""
-"Resistance Devices","Part Group","[[Heading]]List of Resistance Devices[[/Heading]]
+"Resistance Devices","Part Group","Resistance [[Devices]] provide resistance to one or more ""standard"" damage type of kinetic, thermal, explosive, electromagnetic, impact, slashing, or piercing. Most parts only provide the effect to the user, although the Thermal Defense Suite line also affects allies within a 10 tile range. Since most of these devices only work against one type of damage they are primarily good as a conditional swap part depending on what hostiles are nearby.
+
+[[Heading]]Common Uses[[/Heading]]
+[[List]]
+Focal Shields (Kinetic): [[Hunter|Hunters]], [[Sentry|Sentries]]|
+EM Shields (Electromagnetic): [[Programmer|Programmers]]|
+Shock Absorption Systems (Explosive): [[Demolisher|Demolishers]]|
+Thermal Shields/Thermal Defense Suites: [[Grunt|Grunts]], Sentries
+[[/List]]
+
+[[Heading]]List of Resistance Devices[[/Heading]]
 [[PartGroupTable]]
 Resistance Devices|
 Overview/Size|
