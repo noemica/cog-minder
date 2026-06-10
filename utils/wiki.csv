@@ -3667,14 +3667,15 @@ Leaves dropped parts [[Corrupted Parts|Corrupted]]||
 Range|[[CellStyle:Good]]Most in 14-16 range, some in 18+ range|[[CellStyle:Neutral]]Most 14 range, a few in 16+ range||
 Radius|[[CellStyle:Neutral]]Most in 4-6 radius, a few outliers above and below|[[CellStyle:Neutral]]Most in 4-6 radius, a few outliers above||
 Collateral Damage|[[CellStyle:Bad]]Likely to destroy noncombat bots, machines, and terrain with every shot|[[CellStyle:Neutral]]Likely to destroy noncombat bots and some machines
-Only blows up terrain with spectrum on engine explosions
+Only blows up terrain with spectrum on [[Power]] explosions
 Can blow up own engines with spectrum
 Can trigger [[Traps]] directly or indirectly through giving [[Corruption]] to other bots||
 Kill effectiveness|[[CellStyle:Neutral]]Kills most bot types in a few volleys through damage, can easily kill bots on the first hit
 Some common bots have explosive resistance ([[Demolisher|Demolishers]] (75-100%), [[Heavy|Heavies]] (50%), [[Programmer|Programmers]] (25%), [[Sentry|Sentries]] (50%))
-[[Swarmer|Swarmers]] have explosive weakness (25%)|[[CellStyle:Neutral]]Kills most bot types in a few volleys through corruption, likely will take multiple shots to kill so multiple EM launchers become much more effective when stacked
+[[Swarmer|Swarmers]] have explosive weakness (25%)|[[CellStyle:Neutral]]Kills most bot types in a few volleys through corruption, likely will take multiple shots to kill so EM launchers become much more effective when stacked
 Some common bots have electromagnetic or corruption resistance ([[Behemoth|Behemoths]] ([[Dynamic Insulation Systems]]), Heavies (25-50% + Dynamic Insulation Systems), Programmers (75%))
-Some common bots have electromagnetic weakness ([[Grunt|Grunts]] (-25%), [[Hunter|Hunters]] (-25%))
+Some common bots have electromagnetic weakness ([[Grunt|Grunts]] (-25%), [[Hunter|Hunters]] (-25%))||
+[[Reinforced Walls|Reinforced Wall]] Destruction|[[CellStyle:Bad]]Unable to destroy reinforced walls|[[CellStyle:Good]]Able to destroy reinforced walls by exploding power in front of them
 [[/Table]]","","","","","","",""
 "Extension","Location","Extension is an [[0b10]]-controlled [[Factory]] [[Branch]] that appears between -6 and -4 and serves as a connection between the main [[0b10]] complex and [[Cetus]]. It is the beginning of a 4-map sequences of branches that spans Extension, Cetus, [[Archives]], and [[Hub_04(d)]]. It is an 0b10-controlled map with a small amount of patrols and moderate amount of guards spread throughout. There are a large amount of non-combat hostiles moving in between [[Transfer Station|Transfer Stations]] at the left and right-most parts of the map. Unlike most 0b10-controlled maps, [[Extermination Squad|Exterminations]] will not spawn in Extension. The central area is heavily guarded with 2 [[Behemoth|Behemoths]] and 2 [[Sentry|Sentries]] standing by.
 The overall map shape is similar to a large B turned on its side. This map shape is the same between runs, although every map has random contents. There is a single bottom path that runs straight to the main Factory/Cetus exits and 2 branching paths that contain some machines and disabled and imprisoned [[Derelict|Derelicts]]. One special NPC, [[A7]], is guaranteed to be locked in one of the cells. The central area has the aforementioned guards stationed as well as a [[Terminal]]-locked exit. The bottom path to either side of the central area can have Emergency Access doors along the top or bottom of the path. These can contain hostile guards, part caches, or nothing.
@@ -5486,7 +5487,9 @@ Propulsion/Burnout
 "Flying Fortress v7","Part","","","","","","","",""
 "Focal Shield","Part","","","","","","","",""
 "Force Booster","Part","","","","","","","",""
-"Force Boosters","Part Group","[[Heading]]List of Force Boosters[[/Heading]]
+"Force Boosters","Part Group","[[Offensive Utilities|Offensive]] [[Devices]] that raise maximum damage of [[Melee Weapons]] at the cost of some targeting. They are best paired with [[Melee Analysis Suites]] or a [[Weapon Mount]] to mitigate the accuracy penalty. Force Boosters are quite heavy for an offensive utility which makes them harder to support for airborne propulsion types. The damage increase is helpful for killing enemies in a single core hit, helping both the maximum and average damage potential of the weapon. The damage increase also stacks with the increase from [[Momentum]], so high speed builds, especially those with [[Reaction Control Systems]], get much more benefit out of them. Additionally, the maximum damage increase can help dig through high armor [[Reinforced Walls]].
+
+[[Heading]]List of Force Boosters[[/Heading]]
 [[PartGroupTable]]
 Force Boosters|
 Overview/Size|
@@ -5497,7 +5500,11 @@ Upkeep/Energy|
 Effect/Effect
 [[/PartGroupTable]]","","","","Force Booster,Imp. Force Booster,Adv. Force Booster,Exp. Force Booster","","",""
 "Force Field","Part","","","","","","","",""
-"Force Fields","Part Group","[[Heading]]List of Force Fields[[/Heading]]
+"Force Fields","Part Group","[[Defensive Utilities]] that turn [[Energy]] into damage reduction for the user, starting at 50% damage blocked. Some variants like the [[Remote Force Field]] also extend this protection to friendly bots within a 10 tile radius. Force Fields are heavy and difficult to power for prolonged combat, however, they are one of the single most efficient parts in terms of preserving the user's build. [[Shield Generators]] are a similar part that are generally more efficient in terms of damage to energy cost ratio but they only block 25% of damage.
+The damage:energy cost ratio starts out quite poorly with a 1:7 ratio with the basic [[Force Field]] and 1:8 ratio with the basic Remote Force Field. However, higher rating parts, especially [[Prototype Part|Prototype]] Force Fields, get much better ratios. Many of the best Force Fields can only be located in lategame [[Branch|Branches]], often in [[Research]] branches.
+Force Fields require lots of energy storage and generation for maximum effectiveness. Even if using only [[Kinetic Weapons]] with little energy requirements, 3 or 4 power slots are recommended to generate enough energy for extended encounters. [[Energy Wells]] should also be kept charged in inventory and used to restock on energy mid-combat to keep up the damage reduction.
+
+[[Heading]]List of Force Fields[[/Heading]]
 [[PartGroupTable]]
 Force Fields|
 Overview/Size|
@@ -9445,7 +9452,11 @@ Projectile/Penetration|
 Projectile/Salvage
 [[/PartGroupTable]]","Redacted","","","Sigix Sheargun,Modified Sigix Sheargun","","",""
 "Shield Generator","Part","","","","","","","",""
-"Shield Generators","Part Group","[[Heading]]List of Shield Generators[[/Heading]]
+"Shield Generators","Part Group","[[Defensive Utilities]] that turn [[Energy]] into 25% damage reduction for all damage dealt to user or their parts. Some remote variants like the [[Remote Shield]] also extend this protection to friendly bots within a 10 tile radius. Shield Generators are moderately heavy and can be expensive to power for prolonged combat, although they are significantly easier to power than the similar [[Force Fields]]. For their lower damage blocked, Shield Generators are more resource efficient in terms of damage:energy cost than similar rating Force Fields. [[Energy Wells]] can be kept charged in inventory and used to restock on energy mid-combat to keep up the damage reduction when running low on storage.
+
+The damage:energy cost ratio starts out quite poorly with a 1:6 ratio with the basic [[Shield Generator]]. However, higher rating parts, especially [[Prototype Part|Prototype]] Shield Generators, get much better ratios. The [[Exp. Shield Generator]] caps out as the most efficient at a 1:2 ratio.
+
+[[Heading]]List of Shield Generators[[/Heading]]
 [[PartGroupTable]]
 Shield Generators|
 Overview/Size|
@@ -10761,6 +10772,7 @@ Schematic|Item group 1|Item group 2|Item group 3|Item group 4|Item Group 5||
 [[Electrostorm Shotgun]]|[[Latent Energy Streamer]]|Any Shotgun (e.g. [[Shotgun]] or [[EM Shotgun]])||
 [[Energy Deflector]]|Any non-remote Force Field (e.g. [[Force Field]])|Any thermal resistant armor (e.g. [[Reflective Plating]])||
 [[Enh. Flamer]]|[[Flamer]]|[[Thermic Laser]]||
+[[Gui. EMP Blaster]]|[[EMP Blaster|Regular]] or [[Adv. EMP Blaster]]|Any guided [[Explosive Launchers]] (e.g. [[Smartbomb Launcher]]||
 [[Fire Trap]]|[[Explosive Trap]]|2 different [[Flamers]] (also includes [[Asb. P-torch]])||
 [[Heat Bomb Trap]]|Fire Trap|2 different Flamers (also includes Asb. P-torch)|Any Thermal [[Energy Cannons|Energy Cannon]]||
 [[Humpback]]|[[Huge Storage Unit]]|[[Cargo Storage Unit]]||
