@@ -1,4 +1,4 @@
-"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
+﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","",""
 "01-MTF's Autohacker","Part","A unique [[Utilities|Utility]] only found on [[01-MTF]] that was stolen from the [[Exiles (Group)]]. Its Door [[Terminal]] hacking is most useful with high difficulty doors like the [[Access]] [[Surface]] exit. Generally better than [[Plasma Cutters]], although they have an advantage in being able to function even if the door Terminal gets destroyed.","","","","","","",""
 "01-MTF's Shockpuncher","Part","A unique [[Energy Guns|Energy Gun]] only found on [[01-MTF]], this short ranged [[Electromagnetic Guns|Electromagnetic Gun]] is an energy-hungry but powerful shotgun-type weapon. Its raw damage output is better than even lategame weapons like the [[Com. HERF Cannon]], capable of easily killing most bots in the game in 2 or 3 hits, and its high disruption helps disable crucial parts on bots that it hits. However, its short range and high spectrum can be a detriment since it has a high chance of blowing up any bots that it hits. Any nearby cover is not likely to last very long.","","","","","","",""
@@ -449,16 +449,16 @@ Destroying a [[Hauler]]/[[Watcher]]|7||
 Destroying a Reinforced Barrier|10||
 Being forgotten by a combat hostile|10||
 Setting a trap that is triggered by an 0b10 bot|10||
-Successful hack at a level 1 terminal|Up to 12 [[Sub]]1[[/Sub]]||
+Successful hack at a level 1 terminal|Up to 12 [[Sup]]1[[/Sup]]||
 Being spotted and forgotten by a combat hostile|15||
 Being partial spotted by any ""Guarding"" combat hostile or Watcher.
 Most common guards are [[Behemoth|Behemoths]], [[Heavy|Heavies]], and [[Sentry|Sentries]].|15||
 Destroying Sealed Heavy Doors|15||
 Destroying most machines|15||
-Successful hack at a level 2 terminal|Up to 18 [[Sub]]1[[/Sub]]||
+Successful hack at a level 2 terminal|Up to 18 [[Sup]]1[[/Sup]]||
 Destroying most combat hostiles|20||
 Using a [[Spoiler]]Force(Download)[[/Spoiler]] hack on a [[Fabricator]]|20||
-Successful hack at a level 3 terminal|Up to 24 [[Sub]]1[[/Sub]]||
+Successful hack at a level 3 terminal|Up to 24 [[Sup]]1[[/Sup]]||
 Destroying a squad leader, guard, or intercept|30||
 Using a [[Spoiler]]Force(Extract)[[/Spoiler]] hack on a [[Scanalyzer]]|30||
 Using a [[Spoiler]]Force(Tunnel)[[/Spoiler]] on a [[Recycling Unit]]|30||
@@ -528,7 +528,7 @@ Non-combat ally destroyed by combat hostile|10||
 Combat ally destroyed by combat hostile|20||
 [[Search Patrol]] dispatched|100||
 Alert(Purge) [[Terminal]] hack|150||
-purge_threat [[Operator]] RIF hack|150 [[Sub]]1[[/Sub]]
+purge_threat [[Operator]] RIF hack|150 [[Sup]]1[[/Sup]]
 [[/Table]]
 [[List:Ordered]]Each purge_threat hack reduces the amount of influence reduced by 25 until the minimum value of 50 is reached. So purging will reduce by 150, 125, 100, 75, and remain at 50. This number resets back to 150 with each new map.[[/List]]","","","","","","",""
 "Alien Artifacts","Part Group","","Spoiler","","Alien Artifacts","","","",""
@@ -6294,11 +6294,11 @@ The available intel hacks are as follows:
 Hack Name|Repeatable|Effect||
 Active Garrisons|No|Reveals all [[Garrison Access|Garrisons]] on the current map||
 Active Terminals|No|Reveals all Terminals on the current map||
-Branch Access|No|Reveals all Derelict-known [[Branch]] exits on the current map[[Sub]]1[[/Sub]]||
+Branch Access|No|Reveals all Derelict-known [[Branch]] exits on the current map[[Sup]]1[[/Sup]]||
 Component Schematics|Yes|Gives 12-16 random non-Prototype [[Fabricator]] schematics||
 Component Stockpiles|No|Reveals locations of all non-Prototype part stockpiles on the current map||
-Depthwide Sectors/0|No|Reveals all Derelict-known maps on the current depth[[Sub]]1[[/Sub]]||
-Depthwide Sectors/-1|No|Reveals all Derelict-known maps on the next depth[[Sub]]1[[/Sub]]||
+Depthwide Sectors/0|No|Reveals all Derelict-known maps on the current depth[[Sup]]1[[/Sup]]||
+Depthwide Sectors/-1|No|Reveals all Derelict-known maps on the next depth[[Sup]]1[[/Sup]]||
 Emergency Access|No|Reveals all emergency access doors on the current map||
 Guard Positions|No|Reveals current locations (but not types) of all [[Behemoth]], [[Heavy]], and all [[Sentry]] bots on the map||
 Main Access|No|Reveals all main exits on the current map||
@@ -9832,24 +9832,24 @@ Some weapon types excel at some situations and not in others. Entropic, Kinetic,
 Weapon name|A bots|Architect shoo|Architect final fight|Enhanced Grunts|Enhanced Hunters|Enhanced Programmers|Enhanced Sentries||
 [[Blast Cannon]], 2 preferred with siege mode|(+)|(~)|(+)|(+)|(+)|(-)|(~)||
 [[Cld. Nova Cannon|Cld.]] or [[Enh. Nova Cannon]], [[Hvy. Quantum Rifle]], or [[Neutron Cannon]] stack (4+ somewhat interchangeable, cannons preferred)|(+)|(~)|(~)|(~)|(~)|(~)|(~)||
-[[Core Cannon]]|(+)|(~) [[Sub]]1[[/Sub]]|(++)|(~) [[Sub]]1[[/Sub]]|(~) [[Sub]]1[[/Sub]]|(~) [[Sub]]1[[/Sub]]|(~) [[Sub]]1[[/Sub]]||
+[[Core Cannon]]|(+)|(~) [[Sup]]1[[/Sup]]|(++)|(~) [[Sup]]1[[/Sup]]|(~) [[Sup]]1[[/Sup]]|(~) [[Sup]]1[[/Sup]]|(~) [[Sup]]1[[/Sup]]||
 [[Core Stripper]]/[[Disintegrator]]|(++)|(-)|(-)|(~)|(+)|(+)|(++)||
-[[Hyp. Multirail]]/[[Cep. Miniperforator]]/[[Perforator]]|(~) [[Sub]]2[[/Sub]]|(-)|(-)|(++)|(++)|(++)|(~) [[Sub]]2[[/Sub]]||
-EM weapons, namely [[Com. HERF Cannon]]|(+/-) [[Sub]]3[[/Sub]]|(-)|(-)|(+)|(+)|(-)|(+)||
+[[Hyp. Multirail]]/[[Cep. Miniperforator]]/[[Perforator]]|(~) [[Sup]]2[[/Sup]]|(-)|(-)|(++)|(++)|(++)|(~) [[Sup]]2[[/Sup]]||
+EM weapons, namely [[Com. HERF Cannon]]|(+/-) [[Sup]]3[[/Sup]]|(-)|(-)|(+)|(+)|(-)|(+)||
 [[Firepult]], especially with an [[Integrated Thermoelectric Network]] or [[Cep. Thermoelectric Network]]|(++)|(-)|(-)|(++)|(++)|(++)|(++)||
-Melee weapon stack (2+ [[Cep. Deflector Sword]]/[[Exp. Jetlance]]/[[Nanosword]]/[[Plasma Lance]]/[[1C-UTU's Sword ""Choppy""]]/[[1C-UTU's Sword ""Lootmaker""]]/[[Vortex Lance]] [[Sub]]4[[/Sub]] with optional [[Sigix Broadsword]])|(+)|(~)|(+)|(+)|(+)|(+)|(+)||
-[[Multirail]] stack (4+ with optional [[Adv. Target Analyzer|Adv.]] or [[Exp. Target Analyzer]])|(+)|(~) [[Sub]]5[[/Sub]]|(+)|(+)|(+)|(+)|(+)||
+Melee weapon stack (2+ [[Cep. Deflector Sword]]/[[Exp. Jetlance]]/[[Nanosword]]/[[Plasma Lance]]/[[1C-UTU's Sword ""Choppy""]]/[[1C-UTU's Sword ""Lootmaker""]]/[[Vortex Lance]] [[Sup]]4[[/Sup]] with optional [[Sigix Broadsword]])|(+)|(~)|(+)|(+)|(+)|(+)|(+)||
+[[Multirail]] stack (4+ with optional [[Adv. Target Analyzer|Adv.]] or [[Exp. Target Analyzer]])|(+)|(~) [[Sup]]5[[/Sup]]|(+)|(+)|(+)|(+)|(+)||
 [[Omega Cannon]] (with [[Adv. Kinecellerator|Adv.]] or [[Exp. Kinecellerator]])|(+)|(++)|(~)|(++)|(~)|(~)|(~)||
-[[Null Cannon]]/[[Cep. Plasma Driver]]|(+)|(+) [[Sub]]6[[/Sub]]|(+)|(~)|(~)|(+)|(~)||
+[[Null Cannon]]/[[Cep. Plasma Driver]]|(+)|(+) [[Sup]]6[[/Sup]]|(+)|(~)|(~)|(+)|(~)||
 [[Potential Cannon|Regular]], [[Imp. Potential Cannon|Improved]], or [[Cld. Directed Potential Cannon]]|(+)|(++)|(++)|(~)|(+)|(~)|(+)||
 [[Sigix Sheargun]] stack (3+), can mix with thermal cannons|(+)|(~)|(~)|(+)|(+)|(~)|(+)||
-[[Sigix Shearcannon]] [[Sub]]7[[/Sub]]|(++)|(++)|(++)|(++)|(++)|(+)|(++)||
-Vortex weaponry, namely [[Vortex Cannon]], [[Vortex Driver]], and [[Vortex Shotgun]]|(+)|(~) [[Sub]]8[[/Sub]]|(+)|(~) [[Sub]]8[[/Sub]]|(~) [[Sub]]8[[/Sub]]|(~) [[Sub]]8[[/Sub]]|(~) [[Sub]]8[[/Sub]]||
+[[Sigix Shearcannon]] [[Sup]]7[[/Sup]]|(++)|(++)|(++)|(++)|(++)|(+)|(++)||
+Vortex weaponry, namely [[Vortex Cannon]], [[Vortex Driver]], and [[Vortex Shotgun]]|(+)|(~) [[Sup]]8[[/Sup]]|(+)|(~) [[Sup]]8[[/Sup]]|(~) [[Sup]]8[[/Sup]]|(~) [[Sup]]8[[/Sup]]|(~) [[Sup]]8[[/Sup]]||
 [[Warp Cannon]]/[[Cep. Disintegration Ray]] (only for meltdown)|(+)|(-)|(-)|(~)|(+)|(+)|(+)||
 [[XL Autogun Array]]|(+)|(+)|(+)|(+)|(+)|(~)|(+)||
-[[Z-bomb Delivery System]]/[[Point Singularity Launcher]]|(~) [[Sub]]9[[/Sub]]|(~) [[Sub]]9[[/Sub]]|(+)|(~) [[Sub]]9[[/Sub]]|(~) [[Sub]]9[[/Sub]]|(-)|(-)||
+[[Z-bomb Delivery System]]/[[Point Singularity Launcher]]|(~) [[Sup]]9[[/Sup]]|(~) [[Sup]]9[[/Sup]]|(+)|(~) [[Sup]]9[[/Sup]]|(~) [[Sup]]9[[/Sup]]|(-)|(-)||
 [[Zio. Alpha Cannon]] (with [[Adv. Particle Charger]] or better)|(+)|(~)|(+)|(+)|(+)|(+)|(+)||
-[[Zio. Alpha Cannon Mk. II]]|(+/++) [[Sub]]10[[/Sub]]|(~/++) [[Sub]]10[[/Sub]]|(+)|(+)|(+)|(+)|(+) [[Sub]]10[[/Sub]]||
+[[Zio. Alpha Cannon Mk. II]]|(+/++) [[Sup]]10[[/Sup]]|(~/++) [[Sup]]10[[/Sup]]|(+)|(+)|(+)|(+)|(+) [[Sup]]10[[/Sup]]||
 [[Zio. Phaser-H]] stack (4+ with Adv. or Exp. Target Analyzer)|(+)|(+)|(+)|(+)|(+)|(+)|(+)
 [[/Table]]
 [[List:Ordered]]The Core Cannon is very strong vs most bots in Access_0 but costs too much core to use consistently, it will often result in early death by core.|Critical hits can disarm or destroy propulsion/weapons of some coring immune bots but not kill directly. Mostly niche use for flight/hover.|A6 is neutral to EM and annoying to kill otherwise, but all other A bots are 75% resistant.|Vortex Lances are the strongest melee weapon here but they have limited uses and should be used sparingly. A bots and the Architect final fight are the best uses for the Vortex Lance as a primary weapon.|Multirails are reasonable Architect shooers, but they have a very high matter upkeep. A [[Desublimator]] or other matter regenerating utilities are recommended to allow Multirails to shoo over a long period of time.|The Cep. Plasma Driver is a slightly worse Architect shoo due to its 1/3 chance of dealing less than the 80 damage required.|The Sigix Shearcannon has incredible firepower but it comes with a caveat. Cogmind must typically be within 2-4 tiles of the target in order to gain maximum damage potential. Otherwise the weapon's arc will cause some projectiles to miss, with higher percentages of projectiles missing at further distances. This weapon is best suited for faster propulsion types, although even treads can make good use if it in some situations.|Vortex weaponry is quite powerful and good at killing all in Access_0. However, it is not good to use for fighting everything as they have limited usages. A bots and the final Architect kill tend to be the most important uses.|These launchers have very strong killing power and Architect shooing potential. However, the incredibly high matter cost makes them not a good choice for regular usage. One or two [[Prc. Matter Filter|Prc. Matter Filters]] along with a Desublimator may make this a more reliable option, but it may be a bad idea to rely too heavily on launchers without other good options due to the risk of running out of matter entirely.|The Alpha Cannon Mk. II does not need any particle charging in some situations but does in others. It naturally kills 120 integrity Enhanced Grunts/Hunters in 2 hits with its base 65 damage. A bots and Enhanced Sentries have 150 core integrity which takes 3 hits. However, an Adv. Particle Charger ups the damage to 81. This turns those 3 hits into a 2 hit kill. This also matters for the Architect, where 81 damage will guarantee the shoo on a single core hit instead of requiring 2 hits.[[/List]]
@@ -12573,12 +12573,12 @@ Alignment|Difficulty|Surface win help|Extended win help||
 [[Spoiler]]Data Conduit[[/Spoiler]]|[[CellStyle:Bad]]Hard|[[CellStyle:Bad]]Low|[[CellStyle:Good]]High||
 FarCom|[[CellStyle:Good]]Easy|[[CellStyle:Good]]High|[[CellStyle:Neutral]]Low-Moderate||
 [[Spoiler]]Imprint[[/Spoiler]]|[[CellStyle:Neutral]]Moderate-Hard|[[CellStyle:Neutral]]Low-Moderate|[[CellStyle:Good]]High||
-[[Spoiler]]RIF (heavy)[[Sub]]1[[/Sub]][[/Spoiler]]|[[CellStyle:Bad]]Hard|[[CellStyle:Neutral]]Moderate|[[CellStyle:Neutral]]Moderate-High||
-[[Spoiler]]RIF (light)[[Sub]]2[[/Sub]][[/Spoiler]]|[[CellStyle:Good]]Easy|[[CellStyle:Neutral]]Moderate|[[CellStyle:Bad]]Low||
-[[Spoiler]]UFD (base)[[Sub]]3[[/Sub]][[/Spoiler]]|[[CellStyle:Neutral]]Easy-Moderate|[[CellStyle:Neutral]]Moderate|[[CellStyle:Bad]]Low||
-[[Spoiler]]UFD (Optimus)[[Sub]]4[[/Sub]][[/Spoiler]]|[[CellStyle:Neutral]]Moderate|[[CellStyle:Neutral]]Moderate|[[CellStyle:Good]]High||
-[[Spoiler]]Warlord (base)[[Sub]]5[[/Sub]][[/Spoiler]]|[[CellStyle:Neutral]]Easy-Moderate|[[CellStyle:Neutral]]Moderate|[[CellStyle:Good]]High||
-[[Spoiler]]Warlord (ECA)[[Sub]]6[[/Sub]][[/Spoiler]]|[[CellStyle:Bad]]Hard|[[CellStyle:Neutral]]Moderate|[[CellStyle:Good]]High
+[[Spoiler]]RIF (heavy)[[Sup]]1[[/Sup]][[/Spoiler]]|[[CellStyle:Bad]]Hard|[[CellStyle:Neutral]]Moderate|[[CellStyle:Neutral]]Moderate-High||
+[[Spoiler]]RIF (light)[[Sup]]2[[/Sup]][[/Spoiler]]|[[CellStyle:Good]]Easy|[[CellStyle:Neutral]]Moderate|[[CellStyle:Bad]]Low||
+[[Spoiler]]UFD (base)[[Sup]]3[[/Sup]][[/Spoiler]]|[[CellStyle:Neutral]]Easy-Moderate|[[CellStyle:Neutral]]Moderate|[[CellStyle:Bad]]Low||
+[[Spoiler]]UFD (Optimus)[[Sup]]4[[/Sup]][[/Spoiler]]|[[CellStyle:Neutral]]Moderate|[[CellStyle:Neutral]]Moderate|[[CellStyle:Good]]High||
+[[Spoiler]]Warlord (base)[[Sup]]5[[/Sup]][[/Spoiler]]|[[CellStyle:Neutral]]Easy-Moderate|[[CellStyle:Neutral]]Moderate|[[CellStyle:Good]]High||
+[[Spoiler]]Warlord (ECA)[[Sup]]6[[/Sup]][[/Spoiler]]|[[CellStyle:Bad]]Hard|[[CellStyle:Neutral]]Moderate|[[CellStyle:Good]]High
 [[/Table]]
 [[Spoiler]][[List:Ordered]]
 Heavy RIF refers to going into Garrisons and continuing to try to get RIF installers on flight|
@@ -13439,7 +13439,7 @@ Hack|Usefulness|Personal hack frequency||
 Insert|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
 Scanalyze|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
 Study|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
-[[Spoiler]]Trojan(Researchers)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map[[Sub]]1[[/Sub]]
+[[Spoiler]]Trojan(Researchers)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map[[Sup]]1[[/Sup]]
 [[/Table]]
 1. Only useful in [[Research]] [[Branch|Branches]] since they are the only maps where [[Researcher|Researchers]] spawn.","","","","","","",""
 "aoemica's Flight Guide/Machine Hacking/Schematics Reference","Other","The following is a reference for various schematics I find useful to pull off of [[Terminal|Terminals]] to [[Fabricator|fabricate]]. Most of these are a subset of parts I rate highly in the [[aoemica's Flight Guide/Good Parts|good parts page]].
