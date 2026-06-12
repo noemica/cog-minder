@@ -33,6 +33,7 @@ import {
 } from "./common";
 import { calculateHackPercentages } from "./hackUtilities";
 import { allPartColumnDefs } from "./partColumnDefs";
+import { useHashLocation } from "wouter/use-hash-location";
 
 // Output group types
 // Grouped can be in the same <p> block
@@ -59,6 +60,7 @@ class ParserState {
     index: number;
     inlineOnly: AllowedContentType;
     itemData: ItemData;
+    location: string;
     output: OutputGroup[];
     spoiler: Spoiler;
 
@@ -73,6 +75,7 @@ class ParserState {
         initialContent: string,
         inlineOnly: AllowedContentType,
         itemData: ItemData,
+        location: string,
         spoiler: Spoiler,
     ) {
         this.allowHeadingLinks = allowHeadingLinks;
@@ -86,6 +89,7 @@ class ParserState {
         this.index = 0;
         this.inlineOnly = inlineOnly;
         this.itemData = itemData;
+        this.location = location;
         this.output = [];
         this.spoiler = spoiler;
     }
@@ -102,6 +106,7 @@ class ParserState {
             state.initialContent,
             state.inlineOnly,
             state.itemData,
+            state.location,
             state.spoiler,
         );
     }
@@ -199,6 +204,8 @@ export function createContentHtml(
     botData: BotData,
 ): { node: ReactNode; errors: string[]; images: Set<string> } {
     // Process each section into the same output groups
+    const [location] = useHashLocation();
+
     const state = new ParserState(
         true,
         allEntries,
@@ -210,6 +217,7 @@ export function createContentHtml(
         createInitialContent(entry),
         "All",
         itemData,
+        location,
         spoilerState,
     );
     processSection(state, undefined);
@@ -871,6 +879,7 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
             groupEntry.content,
             "All",
             state.itemData,
+            state.location,
             state.spoiler,
         );
 
@@ -1065,6 +1074,7 @@ function processPartialTag(state: ParserState, result: RegExpExecArray) {
         createInitialContent(entry),
         "All",
         state.itemData,
+        state.location,
         state.spoiler,
     );
     processSection(partialState, undefined);
@@ -1553,12 +1563,13 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
     }
 
     const linkIcon = state.allowHeadingLinks && <LinkIcon href={`#${id}`} />;
+    const extraClasses = id === state.location.substring(1) ? " wiki-heading-current-location" : ""
 
     if (type === "1") {
         state.output.push({
             groupType: "Individual",
             node: (
-                <h2 id={id} className="wiki-emphasized-heading">
+                <h2 id={id} className={`wiki-emphasized-heading${extraClasses}`}>
                     {headingContent}
                     {linkIcon}
                 </h2>
@@ -1568,7 +1579,7 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
         state.output.push({
             groupType: "Individual",
             node: (
-                <h3 id={id} className="wiki-heading">
+                <h3 id={id} className={`wiki-heading${extraClasses}`}>
                     {headingContent}
                     {linkIcon}
                 </h3>
@@ -1578,7 +1589,7 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
         state.output.push({
             groupType: "Individual",
             node: (
-                <h4 id={id} className="wiki-heading">
+                <h4 id={id} className={`wiki-heading${extraClasses}`}>
                     {headingContent}
                     {linkIcon}
                 </h4>
@@ -1588,7 +1599,7 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
         state.output.push({
             groupType: "Individual",
             node: (
-                <h5 id={id} className="wiki-heading">
+                <h5 id={id} className={`wiki-heading${extraClasses}`}>
                     {headingContent}
                     {linkIcon}
                 </h5>
