@@ -1111,7 +1111,13 @@ export default function ItemDetails({
                     <DetailsEmptyLine />
                     <DetailsSummaryLine text="Bots With Part" />
                     {botsWithItem.map((bot) => (
-                        <BotLine bot={bot} botString={bot.name} popoversToLinks={popoversToLinks} showWikiLink={true} />
+                        <BotLine
+                            key={bot.name}
+                            bot={bot}
+                            botString={bot.name}
+                            popoversToLinks={popoversToLinks}
+                            showWikiLink={true}
+                        />
                     ))}
                 </>
             );
