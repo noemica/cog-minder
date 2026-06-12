@@ -1,4 +1,4 @@
-import{c as x,r as S,j as a,L as j,F as N,B as v,G as he,H as V,w as de,I as Se,J as Te,f as D,K as ke,y as W,T as L,M as ce,a as Z,s as xe,N as He,S as $,q as Ae,O as Ge,P as me,z as Re,u as ge,Q as ee,U as O,V as Ie,W as De,X as U,Y as Ne,Z as Pe}from"./index-CVYfZ52n.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as te,n as Q,b as K,o as ue,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-BevUG2pd.js";import{S as je}from"./Table-CxY695Ta.js";import{e as ze}from"./partColumnDefs-BmvKdjwa.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as x,r as S,j as a,L as j,F as N,B as v,G as he,H as V,w as de,I as Se,J as Te,f as D,K as ke,y as W,T as L,M as ce,a as Z,s as xe,N as He,S as $,q as Ae,O as Ge,P as me,z as Re,u as ge,Q as ee,U as O,V as Ie,W as De,X as U,Y as Ne,Z as Pe}from"./index-B_vqZVVy.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as te,n as Q,b as K,o as ue,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-BdtkheSp.js";import{S as je}from"./Table-DrnoR-lo.js";import{e as ze}from"./partColumnDefs-DuRQHOpd.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -5961,7 +5961,7 @@ Level 1 direct|Level 1 indirect|Level 2 direct|Level 2 indirect|Level 3 direct|L
 [[/Table]]
 
 [[Heading:2]]Central Database Authorization[[/Heading]]
-Indirect hacks for lore records, prototype IDs, part or robot schematics, Scanalyzer studies, and robot analyses, are all considered "database hacks". Successfully hacking any of them has a base 25% chance to instead cause a map-wide central database lockout, preventing further indirect database hacks. However, direct hacks of those types remain possible after a central database lockout, and they cannot cause one in the first place. The first indirect database hack on a map cannot cause a database lockout.
+Indirect hacks for lore records, prototype IDs, part or robot schematics, Scanalyzer studies, and robot analyses, are all considered "database hacks". Successfully hacking any of them has a base 25% chance to instead cause a map-wide central database lockout, preventing further indirect database hacks. Direct hacks of those types remain possible after a central database lockout, and they cannot cause one in the first place. The first indirect database hack on a map cannot cause a database lockout. Defensive hackware can reduce this chance below 25%, with a variable reduction listed in description depending on the specific type of hackware. 
 Not all lore records, part schematics, studies, robot analyses or robot schematics can be indirectly hacked on all Terminals. Terminals have a level of database authorization dependent on security level and current depth, equal to (10 - current depth + security level). It is only possible to indirectly hack a part/robot schematic or analysis if the Terminal's authorization level is equal to or higher than the rating/tier of the relevant part/robot (prototype parts are considered to have a +1 to their rating for this purpose).
 For example, at -5/Factory, level 2 Terminals have an authorization level of (10 - 5 + 2) = 7, which would allow hacking for standard rating 7 parts or prototype rating 6 parts.
 Lore records also have a hidden rating/tier stat. This value can only be determined by attempting and failing to access a particular record.
@@ -6920,7 +6920,7 @@ Non-melee attacks have +15% accuracy.
 [[/List]]
 
 [[Heading:2]]High siege mode[[/Heading]]
-[[Spoiler]][[Megatreads]], [[Tri-treads]],[[/Spoiler]] and any treads containing the word "siege" in the name are capable of high siege mode, which instead gives +25% accuracy and 50% damage reduction.
+[[Spoiler]][[Megatreads]], [[Tri-treads]],[[/Spoiler]] and any treads containing the word "siege" in the name (like [[Hvy. Siege Treads]] are capable of high siege mode, which instead gives +25% accuracy and 50% damage reduction.
 
 [[Heading]]Legs[[/Heading]]
 
@@ -10235,7 +10235,9 @@ Projectile/Disruption|
 Projectile/Salvage|
 Effect/Effect|
 Effect/Description
-[[/PartGroupTable]]`},{Name:"Backup Lasers",Parts:["Backup Laser I","Backup Laser III","Backup Laser VII"],Content:`[[Heading]]List of Backup Lasers[[/Heading]]
+[[/PartGroupTable]]`},{Name:"Backup Lasers",Parts:["Backup Laser I","Backup Laser III","Backup Laser VII"],Content:`Backup Lasers are [[Thermal Guns]] refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They are fairly ineffective compared to other similar rating weapons and should only be used as a last resort.
+
+[[Heading]]List of Backup Lasers[[/Heading]]
 [[PartGroupTable]]
 Backup Lasers|
 Overview/Size|
@@ -10248,7 +10250,9 @@ Shot/Heat|
 Projectile/Damage|
 Projectile/Type|
 Projectile/Heat Transfer
-[[/PartGroupTable]]`},{Name:"Backup Plating",Parts:["Backup Plating I","Backup Plating III","Backup Plating VII"],Content:`[[Heading]]List of Backup Plating[[/Heading]]
+[[/PartGroupTable]]`},{Name:"Backup Plating",Parts:["Backup Plating I","Backup Plating III","Backup Plating VII"],Content:`Backup Plating are [[Armor]] refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They have relatively low integrity and coverage compared to other similar rated armor and should only be used as a last resort.
+
+[[Heading]]List of Backup Plating[[/Heading]]
 [[PartGroupTable]]
 Backup Plating|
 Overview/Size|
@@ -10257,7 +10261,9 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Heat|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Backup Power",Parts:["Backup Power I","Backup Power III","Backup Power VII"],Content:`[[Heading]]List of Backup Power[[/Heading]][[PartGroupTable]]
+[[/PartGroupTable]]`},{Name:"Backup Power",Parts:["Backup Power I","Backup Power III","Backup Power VII"],Content:`Backup [[Power]] are refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They have relatively low [[Energy]] generation, storage, and integrity compared to other similar rated power. However, [[Backup Power III]] and [[Backup Power VII|VII]] have very high energy supply:mass ratios which makes them effective on low mass [[Flight Units|flight]] builds.
+
+[[Heading]]List of Backup Power[[/Heading]][[PartGroupTable]]
 Backup Power|
 Overview/Size|
 Overview/Rating|
@@ -10268,7 +10274,9 @@ Overview/Matter|
 Power/Rate|
 Power/Storage|
 Power/Stability
-[[/PartGroupTable]]`},{Name:"Backup Propulsion",Parts:["Backup Propulsion I","Backup Propulsion III","Backup Propulsion VII"],Content:`[[Heading]]List of Backup Propulsion[[/Heading]]
+[[/PartGroupTable]]`},{Name:"Backup Propulsion",Parts:["Backup Propulsion I","Backup Propulsion III","Backup Propulsion VII"],Content:`Backup Propulsion are [[Hover Units]] refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They have poor integrity and support compared to other similar rated propulsion and should only be used as a last resort.
+
+[[Heading]]List of Backup Propulsion[[/Heading]]
 [[PartGroupTable]]
 Backup Propulsion|
 Overview/Size|
@@ -10336,6 +10344,23 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
+[[/PartGroupTable]]`},{Name:"Combat Hover Units",Content:`A subclass of [[Hover Units]] that prioritizes integrity and support over speed and is notably used by the [[Demolisher]] line of bots. Standard combat hover has a lower Mod/Extra value of -3 instead of -4 like most normal hover, and they typically have a lower base speed of 80 as well. They are best mixed with [[Cooled Hover Units]] to lower the heat and increase the speed of a build while maintaining good integrity and support.
+Despite having [[Prototype Part|prototype]]-like stats, combat hover units are not prototypes which makes it easier to hack for [[Schematic]] of them to [[Fabricator|fabricate]]. Since they aren't prototypes they fabricate in pairs, and they are a great choice to fab. A single [[Authchip [Propulsion]]] is effectively 2 slots of propulsion in inventory, making it very efficient to store for later.
+
+[[Heading]]List of Combat Hover Units[[/Heading]]
+[[PartGroupTable]]
+Combat Hover Units|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Propulsion/Time/Move|
+Propulsion/Mod/Extra|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support
 [[/PartGroupTable]]`},{Name:"Component Analysis Suites",Parts:["Component Analysis Suite","Imp. Component Analysis Suite","Adv. Component Analysis Suite"],Content:`Component Analysis Suites are [[Devices]] that identify all non-[[Alien Artifacts|Alien]] unknown and [[Prototype Part|Prototype]] parts held in Cogmind's inventory. Low rating variants can take a while to identify parts, but the [[Adv. Component Analysis Suite|Adv. variant]] usually works pretty quickly with a 10% chance to identify each turn. Their greatest use is determining whether prototype parts are faulty to avoid the negative side effects of use-IDing parts.
 The advantage of using Component Analysis Suites over [[Scanalyzer|Scanalyzers]] is the ability to carry them with you and not requiring a successful hack. Scanalyzers may be in inconvenient locations but these parts can be kept in inventory and swapped on when necessary. Additionally, higher level Scanalyzers are difficult to insert parts into without [[Hackware]] bonuses. [[Research]] and branches like [[Testing]] and [[Quarantine]] have a higher than usual rate of prototype parts so they are most valuable in these maps.
 
@@ -10381,7 +10406,40 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Cooled Flight Units","Part Category":"Cooled Flight Units",Content:""},{Name:"Cooling Devices",Parts:["Heat Sink","Imp. Heat Sink","Mak. Heat Sink","Adv. Heat Sink","Exp. Heat Sink","Cep. Phasing Heat Sink","Cooling System","Imp. Cooling System","Mak. Coolant Network","Adv. Cooling System","Exp. Cooling System","Asb. Nanovents","Coolant Network","2N-1CE's Frost Array","Sfc. Cooling Unit"],Content:`A type of [[Cooling Utilities|Cooling Utility]] that dissipates heat every turn they are active. Compared to equivalent rating [[Coolant Injectors]] they have less dissipation potential, but since they don't lose integrity each turn they are more reliable for extended use. For example, a rating 4 [[Coolant Injector]] can dissipate 65 heat per turn which is over twice as much as the rating 4 [[Imp. Cooling System]] can provide at only 27 heat per turn.
+[[/PartGroupTable]]`},{Name:"Cooled Flight Units","Part Category":"Cooled Flight Units",Content:`A [[Prototype Part|prototype]] [[Overload#Propulsion|overloadable]] subclass of [[Flight Units]] with high speed, low coverage, and high integrity. Overloading provides a lot of value to a flight build, since it allows Cogmind to quickly escape a bad situation. Cooled flight units don't have an active heat upkeep unlike standard flight units which can help reduce the the need for [[Cooling Devices]].
+
+[[Heading]]List of Cooled Flight Units[[/Heading]]
+[[PartGroupTable]]
+Cooled Flight Units|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Burnout
+[[/PartGroupTable]]`},{Name:"Cooled Hover Units",Content:`A [[Prototype Part|prototype]] [[Overload#Propulsion|overloadable]] subclass of [[Hover Units]] with high speed. They are are faster than most standard hover units (50 or 40 speed as opposed to 60) and provide a lot of value to a hover build to be able to overload out of bad situations. Cooled hover has no active heat generation or move heat generation which can help reduce the need for [[Cooling Devices]]. Cooled hover is best when mixed with [[Combat Hover Units]] to gain additional support and integrity while counteracting the slow speed of the latter.
+
+[[Heading]]List of Cooled Hover Units[[/Heading]]
+[[PartGroupTable]]
+Cooled Hover Units|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Propulsion/Time/Move|
+Propulsion/Mod/Extra|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Burnout
+[[/PartGroupTable]]`},{Name:"Cooling Devices",Parts:["Heat Sink","Imp. Heat Sink","Mak. Heat Sink","Adv. Heat Sink","Exp. Heat Sink","Cep. Phasing Heat Sink","Cooling System","Imp. Cooling System","Mak. Coolant Network","Adv. Cooling System","Exp. Cooling System","Asb. Nanovents","Coolant Network","2N-1CE's Frost Array","Sfc. Cooling Unit"],Content:`A type of [[Cooling Utilities|Cooling Utility]] that dissipates heat every turn they are active. Compared to equivalent rating [[Coolant Injectors]] they have less dissipation potential, but since they don't lose integrity each turn they are more reliable for extended use. For example, a rating 4 [[Coolant Injector]] can dissipate 65 heat per turn which is over twice as much as the rating 4 [[Imp. Cooling System]] can provide at only 27 heat per turn.
 
 [[Heading]]Heat Sinks vs. Cooling Systems[[/Heading]]
 The two main categories of cooling utilities are Heat Sinks and Cooling Devices. Heat sinks have less coverage, integrity, energy cost, and cooling capability. For example, the rating 5 [[Adv. Heat Sink]] dissipates 19 heat with a cost of 1 energy per turn, while the rating 6 [[Adv. Cooling System]] dissipates 31 heat with a cost of 3 energy per turn. They also tend to be used by more common bots like [[Grunt|Grunts]] and [[Sentry|Sentries]], making them easier to replace.
@@ -10436,6 +10494,8 @@ Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
 [[/PartGroupTable]]`},{Name:"Data Cores","Part Category":"Data Cores",Content:"Data Cores are special unusable items that have a special effect when acquired by moving on top of them. They are always dropped by certain types of bots when destroyed, especially some special unique NPCs. For example, [[Operator|Operators]] always drop a standard [[Data Core]] when destroyed."},{Name:"Defensive Hackware",Parts:["EX Chip 2","System Shield","Mak. System Shield","Imp. System Shield","Adv. System Shield","Exp. System Shield","Ghost Barrier","Quantum Router","Architect God Chip D"],Content:`Defensive [[Hackware]] is a type of [[Processors|Processor]] that primarily provide a reduced chance to become detected and rate of being traced at [[Interactive Machine|Interactive Machines]]. They are useful on all build types from full combat to stealth hackers. Heavy combat builds might prefer to keep hackware in inventory and only temporarily attach them in order to try to pull off an [[GameText]]Access(Branch/Main)[[/GameText]] hack on a low level [[Terminal]] to figure out how to quickly exit the level. More hacking-focused builds may instead keep multiple pieces of both defensive and [[Offensive Hackware]] attached at all times to be able to consistently succeed at difficult hacks. Defensive hackware works best when paired with one or more pieces of offensive hackware, though it is much better to stack many pieces of offensive hackware than defensive hackware due to the latter having diminishing returns.
+Another use of defensive hackware is for its reduction of [[Interactive Machine#Central Database Authorization|database lockout]] chance, which starts with a base of 25% after each database hack. 5 standard [[System Shield|System Shields]] is required to reduce this chance to 0. Defensive hackware also reduces the chance of [[Interactive Machine#Being Fully Traced|hacking feedback negative effects]] when traced.
+A non-hacking related extra effect of defensive hackware is the chance to repel enemy [[Programmer]] robot hacks against allied bots with a range of 10. This ability tends to be more niche compared to the other more generally applicable hacking effects, however, it can be useful for [[Alignment|alignments]] like [[RIF]] or large [[Fabricator|fabricated]] ally builds.
 
 [[Heading]]List of Defensive Hackware[[/Heading]]
 [[PartGroupTable]]
@@ -10445,7 +10505,22 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Diametric Drives",Content:"",Parts:["Diametric Drive","Imp. Diametric Drive"]},{Name:"Drone Bays",Parts:["Drone Bay","Mni. Drone Bay","Adv. Drone Bay","Mapping Drone Bay","Z-Drone Bay","Bomb Drone Bay","Combat Drone Bay","Decoy Drone Bay","Master Drone Bay","Splice Drone Bay","Thief Drone Bay","Assault Drone Bay","Sensor Drone Bay","Stealth Drone Bay","Supersonic Drone Bay","Swarm Drone Bay","Hacking Drone Bay","Minesniffer Drone Bay","Army-in-a-Box","Wardrone Bay","Cep. Impact Drone Bay"],Content:`Drone Bays are [[Devices]] that can deploy a specific type of [[Drone]] depending on the type of bay. Each bay has a fixed number of drones that it can deploy, although drones from other bays the same type can also be deployed simultaneously. Drones will become unpowered if there is no matching drone bay attached. Damaged drones can be repaired at the cost of integrity of the drone bay, but destroyed drones cannot be replaced without obtaining a new bay. Some types of drone are only used for recon and will run away when attacked by a hostile, but others are more combat-oriented and will engage hostiles on sight.
+[[/PartGroupTable]]`},{Name:"Diametric Drives",Content:`A small subclass of high rating [[Prototype Part|prototype]] [[Flight Units]] with low energy, high heat, and high speed.
+
+[[Heading]]List of Diametric Drives[[/Heading]]
+[[PartGroupTable]]
+Diametric Drives|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support
+[[/PartGroupTable]]`,Parts:["Diametric Drive","Imp. Diametric Drive"]},{Name:"Drone Bays",Parts:["Drone Bay","Mni. Drone Bay","Adv. Drone Bay","Mapping Drone Bay","Z-Drone Bay","Bomb Drone Bay","Combat Drone Bay","Decoy Drone Bay","Master Drone Bay","Splice Drone Bay","Thief Drone Bay","Assault Drone Bay","Sensor Drone Bay","Stealth Drone Bay","Supersonic Drone Bay","Swarm Drone Bay","Hacking Drone Bay","Minesniffer Drone Bay","Army-in-a-Box","Wardrone Bay","Cep. Impact Drone Bay"],Content:`Drone Bays are [[Devices]] that can deploy a specific type of [[Drone]] depending on the type of bay. Each bay has a fixed number of drones that it can deploy, although drones from other bays the same type can also be deployed simultaneously. Drones will become unpowered if there is no matching drone bay attached. Damaged drones can be repaired at the cost of integrity of the drone bay, but destroyed drones cannot be replaced without obtaining a new bay. Some types of drone are only used for recon and will run away when attacked by a hostile, but others are more combat-oriented and will engage hostiles on sight.
 
 [[Heading]]List of Drone Bays[[/Heading]]
 [[PartGroupTable]]
@@ -10657,7 +10732,22 @@ Projectile/Critical|
 Projectile/Heat Transfer|
 Projectile/Disruption|
 Projectile/Salvage
-[[/PartGroupTable]]`},{Name:"Flight Arrays",Parts:["Nuclear Pulse Array","Field Propulsion Array","Impulse Thruster Array"],Content:""},{Name:"Force Boosters",Parts:["Force Booster","Imp. Force Booster","Adv. Force Booster","Exp. Force Booster"],Content:`[[Offensive Utilities|Offensive]] [[Devices]] that raise maximum damage of [[Melee Weapons]] at the cost of some targeting. They are best paired with [[Melee Analysis Suites]] or a [[Weapon Mount]] to mitigate the accuracy penalty. Force Boosters are quite heavy for an offensive utility which makes them harder to support for airborne propulsion types. The damage increase is helpful for killing enemies in a single core hit, helping both the maximum and average damage potential of the weapon. The damage increase also stacks with the increase from [[Momentum]], so high speed builds, especially those with [[Reaction Control Systems]], get much more benefit out of them. Additionally, the maximum damage increase can help dig through high armor [[Reinforced Walls]].
+[[/PartGroupTable]]`},{Name:"Flight Arrays",Parts:["Nuclear Pulse Array","Field Propulsion Array","Impulse Thruster Array"],Content:`A subclass of [[Flight Units]] that take 2 [[Propulsion]] slots instead of 1 like most other flight units. They are sturdier and have a higher support per slot than their associated standard variants. Their upkeep costs are also lower than 2 individual flight units. These parts make a great candidate for [[Study|Studies]] at [[Scanalyzer|Scanalyzers]] since they get 2 support per study instead of just 1. Flight arrays tend to slow flight builds down some because they only count once for the mod/extra bonus instead of twice like 2 single-slot flight units would.
+
+[[Heading]]List of Flight Arrays[[/Heading]]
+[[PartGroupTable]]
+Flight Arrays|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support
+[[/PartGroupTable]]`},{Name:"Force Boosters",Parts:["Force Booster","Imp. Force Booster","Adv. Force Booster","Exp. Force Booster"],Content:`[[Offensive Utilities|Offensive]] [[Devices]] that raise maximum damage of [[Melee Weapons]] at the cost of some targeting. They are best paired with [[Melee Analysis Suites]] or a [[Weapon Mount]] to mitigate the accuracy penalty. Force Boosters are quite heavy for an offensive utility which makes them harder to support for airborne propulsion types. The damage increase is helpful for killing enemies in a single core hit, helping both the maximum and average damage potential of the weapon. The damage increase also stacks with the increase from [[Momentum]], so high speed builds, especially those with [[Reaction Control Systems]], get much more benefit out of them. Additionally, the maximum damage increase can help dig through high armor [[Reinforced Walls]].
 
 [[Heading]]List of Force Boosters[[/Heading]]
 [[PartGroupTable]]
@@ -10695,13 +10785,14 @@ Overview/Matter|
 Power/Rate|
 Power/Storage|
 Power/Stability
-[[/PartGroupTable]]`},{Name:"Guided Weapons","Part Category":"Guided Weapons",Content:`Guided weapons have several characteristics:
+[[/PartGroupTable]]`},{Name:"Glidesys Hover",Content:"Unique [[Hover Units]] that can only be found on a few [[Zionite]]-aligned bots, namely [[Z-Lights]] and the [[Z-Imprinter]]. They are notable for their high support and fragility through high coverage and low integrity, which makes it hard to keep them around for long."},{Name:"Guided Weapons","Part Category":"Guided Weapons",Content:`Guided weapons have several characteristics:
 [[List]]
 They cannot be fired in a volley with other weapons, only alone.
 |Their projectiles follow a series of waypoints defined when the weapon is fired.
 |They never miss.
 |They are unaffected by [[Corruption]] misfires.
-[[/List]]`},{Name:"Hardlight Generators",Parts:["Hardlight Generator","Imp. Hardlight Generator","Adv. Hardlight Generator","Exp. Hardlight Generator","Cep. Hardlight Director"],Content:`Hardlight Generators are [[Defensive Utilities]] that reduce the damage of kinetic or thermal damage by a fixed amount. They usually reduce damage less than [[Shield Generators]] and [[Force Fields]] but only require a fixed upkeep of [[Energy]] to use rather than cost energy for each point of damage blocked. This makes them very efficient when being shot at by multiple hostiles at once, which are generally situations where Force Field users quickly run out of energy. Their fixed damage reduction applies after resistance calculations so they combine extremely well with [[Resistance Devices]].
+[[/List]]`},{Name:"Gyrokinetic Inverters",Content:`A very different form of [[Hover Units]] compared to the others. Gyrokinetic Inverters have a paltry 7 coverage which makes them extremely unlikely to be hit in combat and enough integrity to survive a few hits even if they do. However, their downside is low speed and a very high heat upkeep of +5/+4 at the standard-Exp. variants. Running a few of these will require one or more dedicated [[Cooling Devices]] just to keep the heat down.
+[[Redacted]]One unique lategame use for Gyrokinetic Inverters is in combination with either the [[Cep. Thermoelectric Network]] or [[Integrated Thermoelectric Network]]. Their very high heat generation can be turned into spare energy generation by going high above their 275 or 325 respective heat thresholds.[[/Redacted]]`},{Name:"Hardlight Generators",Parts:["Hardlight Generator","Imp. Hardlight Generator","Adv. Hardlight Generator","Exp. Hardlight Generator","Cep. Hardlight Director"],Content:`Hardlight Generators are [[Defensive Utilities]] that reduce the damage of kinetic or thermal damage by a fixed amount. They usually reduce damage less than [[Shield Generators]] and [[Force Fields]] but only require a fixed upkeep of [[Energy]] to use rather than cost energy for each point of damage blocked. This makes them very efficient when being shot at by multiple hostiles at once, which are generally situations where Force Field users quickly run out of energy. Their fixed damage reduction applies after resistance calculations so they combine extremely well with [[Resistance Devices]].
 
 [[Heading]]Example with Resistance Devices[[/Heading]]
 If a 50% thermal damage reducing [[Thermal Barrier]] is paired with a 8 damage reducing [[Adv. Hardlight Generator]], a [[G-73 Enforcer|G-73 Enforcer's]] [[Phase Gun]] goes from dealing on average 26 damage to only dealing [( 26 / 2 ) - 8] = 5 damage. An [[Adv. Force Field]] that cuts 50% of damage would instead reduce that damage to [floor( (26 / 2 ) / 2 )] = 6 damage and also cost 25 energy on top of the 5 energy upkeep. That Hardlight Generator would be a much more stable 15 energy upkeep.
@@ -10715,7 +10806,7 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Hover Units","Part Category":"Hover Units",Content:`Hover units have fairly low support and high speed, but not to the same extent as [[Flight Units]]. They are quite fragile (but also not as much as flight units), though [[Prototype Part|prototype]] hover units are somewhat less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
+[[/PartGroupTable]]`},{Name:"Hover Arrays",Content:"A type of [[Hover Units|hover]] that take up 2 slots instead of just 1 like most other hover. Their support per slot is a bit higher than their respective basic variants and they also have higher integrity. Another benefit of arrays is their very efficient upkeep costs compared to running multiple of the same part. Their downside is their lower speed and only slightly superior stats compared to basic hover, which makes them hard to want to use over [[Combat Hover Units]] and [[Cooled Hover Units]] if available."},{Name:"Hover Units","Part Category":"Hover Units",Content:`Hover units have fairly low support and high speed, but not to the same extent as [[Flight Units]]. They are quite fragile (but also not as much as flight units), though [[Prototype Part|prototype]] hover units are somewhat less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
 
 Most hover builds will favor prototype hover units for their improved resilience, along with multislot hover arrays. Cooled (Cld.) hover units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage. Combat (Cmb.) hover units have higher integrity than other hover units and can support almost as much mass as [[Legs]], but have somewhat slower movement speeds.
 
@@ -10802,13 +10893,15 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Legs","Part Category":"Legs",Content:`Legs strike a middle ground in terms of support, speed, and structural integrity. They are commonly used by (and available from) light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]].
+[[/PartGroupTable]]`},{Name:"Legs","Part Category":"Legs",Content:`Legs are [[Propulsion]] that strike a middle ground in terms of support, speed, and integrity. They are used by (and available from) common light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]]. Because of this, they are generally easy to acquire, although the legs that are dropped by these bots are not of the highest quality.
 
 While on legs, [[Cogmind]] is immune to damage from ramming hostile bots, and instead has a 20% chance per active leg slot to kick them out of the way (unless they are huge).
 
 While moving on legs, Cogmind is in the Running state, which increases evasion (unless overweight) but decreases ranged accuracy, by 5% per level of [[Momentum]]. Some legs, such as the [[Thunder Leg]], provide improve running bonuses. Legged bots, along with those using [[Flight Units|Flight]] and [[Hover Units]], receive an evasion bonus from [[Reaction Control Systems]].
 
-A few specific legs are capable of [[Special Propulsion Modes]].
+A few specific legs are capable of [[Special Propulsion Modes#Legs]], namely Martial and Shielding modes.
+
+Leg [[Study|Studies]] at [[Scanalyzer|Scanalyzers]] provide a -15 speed per move bonus.
 
 [[Heading]]List of Legs[[/Heading]]
 [[PartGroupTable]]
@@ -11330,7 +11423,24 @@ Effect/Effect
 [[Heading]]Special Immunity[[/Heading]]
 Storage Units have special immunity to nearly all part-severing and instant destruction effects in the game, including [[Corruption]] part rejection, thus making it impossible to suddenly lose nearly all your inventory due to stepping on a [[Blade Trap]] or being shot by a [[Heavy]]. The most notable exception is the [[Compactor]] wielded by [[C-40 Crusher|C-40 Crushers]], which has unique destructive and part-severing effects that can affect Storage Units.
 
-This article was last updated during Beta 15.`},{Name:"Supercharged Parts",Parts:["Supercharged TR","Supercharged Integrated Reactor","Supercharged Integrated Dissipator","Supercharged Sigix Terminator"],Content:"",Spoiler:"Spoiler"},{Name:"Surge Thrusters",Parts:["Surge Thruster","Imp. Surge Thruster","Adv. Surge Thruster","Exp. Surge Thruster"],Content:""},{Name:"System Guards",Parts:["System Guard","Imp. System Guard","Exp. System Guard"],Content:`[[Heading]]List of System Guards[[/Heading]]
+This article was last updated during Beta 15.`},{Name:"Supercharged Parts",Parts:["Supercharged TR","Supercharged Integrated Reactor","Supercharged Integrated Dissipator","Supercharged Sigix Terminator"],Content:"",Spoiler:"Spoiler"},{Name:"Surge Thrusters",Parts:["Surge Thruster","Imp. Surge Thruster","Adv. Surge Thruster","Exp. Surge Thruster"],Content:`An [[Overload#Propulsion|overloadable]] subclass of [[Flight Units]] with high speed, coverage, and integrity, but low mass support. They are most notably used by [[Cutter|Cutters]] to quickly overload and hunt down their targets. Surge Thrusters are very effective at escaping bad situations by virtue of their natural high base speed and overload combination. However, they have a very high burnout rate of 40%, so they lose integrity quite quickly when overloading for more than a few tiles at a time. Their high coverage also ensures that they will be hit frequently, making them into a form of pseudo-armor. This is a useful trait, though it does mean that more backups are required since they are likely to be destroyed before other flight units.
+Surge Thrusters are excellent targets for [[Study|studies]] at [[Scanalyzer|Scanalyzers]] thanks to their low base support. Even the minor +1 boost is a large increase percentage-wise from 3 or 4 to 4 or 5 support.
+
+[[Heading]]List of Surge Thrusters[[/Heading]]
+[[PartGroupTable]]
+Surge Thrusters|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Burnout
+[[/PartGroupTable]]`},{Name:"System Guards",Parts:["System Guard","Imp. System Guard","Exp. System Guard"],Content:`[[Heading]]List of System Guards[[/Heading]]
 [[PartGroupTable]]
 System Guards|
 Overview/Size|
@@ -11602,15 +11712,15 @@ By default traps are programmed to trigger on detection of any foreign robot, a 
 [[Heading]]Collection[[/Heading]]
 An enterprising Cogmind can, with the use of a [[Trap Extractors|Trap Extractor]], extract and store or pick up friendly traps for their own use. However, [[Chute Trap|Chute Traps]], [[Alarm Trap|Alarm Traps]] and [[Ambush Trap|Ambush Traps]] cannot be extracted to begin with. Stasis Traps also exhibit special behavior; they can be extracted but cannot be stored inside a Trap Extractor, and they can still be extracted even after they were triggered, as long as the stasis field they produce hasn't been depleted.
 
-Last edited during Beta 15.`},{Name:"Treads","Part Category":"Treads",Content:`Treads have the highest support and the lowest speed. They are the most durable propulsion, but lower-tier units will still often be destroyed and replaced. They are commonly used by (and available from) [[Hauler|Haulers]] as well as heavy combat 0b10 bots, including [[Sentry|Sentries]], [[Heavy|Heavies]], and [[Behemoth|Behemoths]].
+Last edited during Beta 15.`},{Name:"Treads","Part Category":"Treads",Content:`Treads are a type of [[Propulsion]] that have the highest support and the lowest speed. They are the most durable propulsion, but lower-tier units will still often be destroyed and replaced. They are commonly used by (and available from) [[Hauler|Haulers]] as well as heavy combat 0b10 bots, including [[Sentry|Sentries]], [[Heavy|Heavies]], and [[Behemoth|Behemoths]]. When active, treads confer immunity to knockback and reduce the accuracy penalty from recoil by 1 per active tread slot when firing a volley.
 
 The slow movement speed of treads means [[Cogmind]] generally cannot outrun bots and will be forced to fight most encounters that it cannot avoid. Replacement treads can be difficult to obtain under duress since they are mostly equipped by powerful combat bots, and the best multislot treads are not commonly used by other bots until later in the game. In exchange, treads' high coverage and integrity (especially on mid- to late-game multislot treads), along with recoil reduction, allow them to support a combat bot and protect other parts. Treading bots that lack enough spare treads may choose a [[I]]half-track[[/I]] configuration, filling some propulsion slots with treads and some with [[Wheels]], as described in that article.
 
-All multislot treads are capable of [[Special Propulsion Modes#siege mode|Siege Mode]], and some are capable of High Siege Mode. Most tread builds will transition entirely to multislot treads as soon as practicable, for their improved resilience and siege mode capability. A common place to make this transition is in [[Cetus]] after looting [[Centrium Heavy Treads]] from the [[Cetus Guard]].
+All multislot treads are capable of [[Special Propulsion Modes#siege mode|Siege Mode]], and some are capable of High Siege Mode. Most tread builds will transition entirely to multislot treads as soon as practicable, for their improved resilience and siege mode capability. A common place to make this transition is in [[Cetus]] after looting [[Centrium Heavy Treads]] from the [[Cetus Guard]]. Some other good spots to loot multislot treads are from [[C-40 Crusher|Crushers]] in [[Wastes]] and disabled [[A-27 Freighter|Freighters]] in [[Garrison|Garrisons]]
 
-While on treads, Cogmind is immune to damage from ramming hostile bots, and instead has a chance to crush them (unless they are large or huge or have greater than 50 core integrity). The chance to crush varies for each type of tread.
+While on treads, Cogmind is immune to damage from ramming hostile bots, and instead has a chance to crush them (unless they are large or huge or have greater than 50 core integrity). The chance to crush varies for each type of tread, but generally is 5% per slot.
 
-When active, treads confer immunity to knockback and reduce the accuracy penalty from recoil when firing large volleys.
+Tread [[Study|Studies]] from [[Scanalyzer|Scanalyzers]] reduce the overweight penalty of treads by 50%.
 
 [[Heading]]List of Treads[[/Heading]]
 [[PartGroupTable]]
@@ -11709,17 +11819,18 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Wheels","Part Category":"Wheels",Content:`Wheels are the most fragile ground propulsion type, but have a lower overweight penalty than any other type of propulsion. They are commonly used by (and available from) almost all non-combat 0b10 bots, other than [[Hauler|Haulers]].
+[[/PartGroupTable]]`},{Name:"Wheels","Part Category":"Wheels",Content:`Wheels are the most fragile ground propulsion type, but have a lower overweight penalty than any other type of propulsion. They are commonly used by (and available from) many common [[0b10 Non-combat Bots]].
 
 Because of the low overweight penalty, it is viable for bots to use wheels even if they are several times overweight.
 
 The low overweight penalty of wheels, and their ready availability from the ubiquitous green bots, gives them some niches:
 [[List]]
-As a sole propulsion type for bots that carry massive inventories, including certain [[RIF]] builds.
+As a sole propulsion type for bots that carry massive inventories with a [[Cargo Storage Unit]] or [[Humpback]], including certain [[RIF]] builds.
 |In combination with [[Treads]] to form a [[I]]half-track[[/I]] configuration, where both wheels and treads are equipped at once. [[Cogmind]] activates wheels outside combat to benefit from the fast movement speed, and treads in combat for the knockback immunity and recoil reduction. Half-tracking is useful for bots that have not found enough spare treads, to reduce the churn of treads. The ease of obtaining wheels makes them a viable secondary propulsion type.
 |As backup propulsion. If all of Cogmind's propulsion is destroyed, it may have an extremely slow movement speed on core propulsion. Equipping just one wheel will often reduce the movement delay to a manageable amount.
 [[/List]]
 The main downside of wheels compared to other ground propulsion is their fragility. Cogmind can easily loot replacement wheels from green bots, but will still go through wheels fairly quickly.
+Wheels may be [[Study|studied]] at a [[Scanalyzer]] to provide a reduction of 10 time/move for the associated wheel. While this effect is pretty minimal, grabbing studies for wheels can be a good idea since there are only a few wheel types and they will be available throughout all main [[0b10]] floors.
 
 [[Heading]]List of Wheels[[/Heading]]
 [[PartGroupTable]]
@@ -11750,7 +11861,7 @@ Upkeep/Energy|
 Upkeep/Heat|
 Effect/Effect|
 Effect/Description
-[[/PartGroupTable]]`},{Name:"Backup Parts",Groups:["Backup Lasers","Backup Plating","Backup Power","Backup Propulsion"],Content:"Backup parts are refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack."},{Name:"Ballistic Weapons","Alternate Names":["Kinetic Weapons"],Content:`[[Heading]]List of Ballistic Weapons[[/Heading]]
+[[/PartGroupTable]]`},{Name:"Backup Parts",Groups:["Backup Lasers","Backup Plating","Backup Power","Backup Propulsion"],Content:"Backup parts are refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. Most backup parts are poor and only useful in a true emergency, although [[Backup Power VII]] is a standout as a highly efficient [[Power]] source for [[Flight Units|flight]] builds thanks to its low mass cost."},{Name:"Ballistic Weapons","Alternate Names":["Kinetic Weapons"],Content:`[[Heading]]List of Ballistic Weapons[[/Heading]]
 [[PartGroupTable]]
 Ballistic Weapons|
 Overview/Size|
@@ -11814,7 +11925,7 @@ Applicability|[[CellStyle:Neutral]]Many common bots, not all types|[[CellStyle:G
 Energy Cost|[[CellStyle:Neutral]]Moderate-high, fixed upkeep|[[CellStyle:Neutral]]Moderate, low upkeep + moderate variable rate based on damage taken|[[CellStyle:Bad]]High, moderate upkeep, high variable rate based on damage taken|[[CellStyle:Good]]Low-moderate, fixed upkeep|[[CellStyle:Neutral]]Moderate-high, fixed upkeep|[[CellStyle:Good]]Low, fixed upkeep|[[CellStyle:Good]]Low-moderate, fixed upkeep||
 Fragility (Integrity:Coverage)|[[CellStyle:Neutral]]Somewhat fragile at low ratings (1:1-2:1)|[[CellStyle:Neutral]]Somewhat fragile at low ratings (1:1-1.5:1)|[[CellStyle:Neutral]]Somewhat fragile at low ratings (1:1-1.5:1)|[[CellStyle:Good]]Generally sturdy (2:1)[[Sup]]1[[/Sup]]|[[CellStyle:Bad]]Very fragile, very bad at low ratings (.5:1-.75:1)|[[CellStyle:Bad]]Fragile, very bad at low ratings (.5:1-1:1)|[[CellStyle:Good]]Sturdy, (2:1-3:1)||
 Mass|[[CellStyle:Neutral]]5-10|[[CellStyle:Neutral]]2-5 normal, 5-10 remote|[[CellStyle:Bad]]7-15, 8-18 remote|[[CellStyle:Neutral]]1-8, most 1-3 except Thermal Defense Suites and Shock Absorption Systems|[[CellStyle:Good]]1-4|[[CellStyle:Good]]1-3|[[CellStyle:Good]]2-4||
-Overall Analysis|Low energy cost for moderate damage reduction usually between Shield Generators and Force Fields for applicable damage types, combos well with resistance devices to drop damage from weak enemies to negligible amounts but worse against powerful enemies, fixed upkeep good vs groups|Moderate energy cost and moderate damage reduction that works on all damage types, variable upkeep is bad vs groups and powerful enemies|High energy cost and high damage reduction that works on all damage types, variable upkeep is bad vs groups and powerful enemies|Low to moderate energy cost and moderate damage reduction that works only for one specific damage type, fixed upkeep is good vs groups, takes lots of inventory to support multiple damage types|High energy cost and moderate to high avoid boost that works against most enemies, combos very well with Reaction Control Systems for full evasion stack, fixed upkeep is good vs groups|Low energy cost and moderate avoid boost that works against all enemies, combos very well with Phase Shifters for full evasion stack, fixed upkeep is good vs groups|Low energy cost for high damage reduction, very niche part since only a few hostiles use launchers, fixed upkeep is good vs groups
+Other notes|Moderate inconsistent damage reduction, usually between Shield Generators and Force Fields for applicable damage types, combos well with resistance devices to lower damage even further, fixed upkeep is good vs groups|Moderate consistent damage reduction, variable upkeep is bad vs groups and powerful enemies|Highest cost and highest single damage reduction, variable upkeep is bad vs groups and powerful enemies|Moderate inconsistent damage reduction, usually between 20-50%, takes lots of inventory to support multiple damage types, fixed upkeep is good vs groups|Moderate-high avoid bonus, combos best with Reaction Control Systems for full evasion stack, fixed upkeep is good vs groups|Moderate avoid bonus combos best with Phase Shifters for full evasion stack, fixed upkeep is good vs groups|High damage reduction at higher ratings, very niche part since only a few hostiles use launchers, fixed upkeep is good vs groups
 [[/Table]]
 
 [[List:Ordered]]
@@ -11905,7 +12016,32 @@ Propulsion/Energy|
 Propulsion/Heat|
 Propulsion/Support|
 Propulsion/Burnout
-[[/PartGroupTable]]`,Groups:["Cooled Flight Units","Diametric Drives","Flight Arrays","Surge Thrusters"]},{Name:"Hackware",Groups:["Defensive Hackware","Offensive Hackware"],Content:"Hackware is a group of [[Processor|Processors]] that improve [[Machine Hacking]] capabilities. [[Offensive Hackware]] increase chance of hack success while [[Defensive Hackware]] mainly decreases the chance of being traced. For large hackware stacks, lots of offensive hackware is preferred while only one or two pieces of defensive hackware are helpful due to diminishing returns."},{Name:"Hypervelocity Weapons",Groups:["Hypervelocity Cannons","Hypervelocity Guns"],Content:`Compared to their base versions, hypervelocity (Hyp.) weapons generally do less damage in exchange for higher crit chance and penetration.
+[[/PartGroupTable]]`,Groups:["Cooled Flight Units","Diametric Drives","Flight Arrays","Surge Thrusters"]},{Name:"Hackware",Groups:["Defensive Hackware","Offensive Hackware"],Content:"Hackware is a group of [[Processor|Processors]] that improve [[Machine Hacking]] capabilities. [[Offensive Hackware]] increase chance of hack success while [[Defensive Hackware]] mainly decreases the chance of being traced. For large hackware stacks, lots of offensive hackware is preferred while only one or two pieces of defensive hackware are helpful due to diminishing returns."},{Name:"Hover Units",Content:`Hover units have fairly low support and high speed, but not so far to either extreme as [[Flight Units]]. Standard hover is fragile (but also not as much as flight units), though special types of hover like [[Cooled Hover Units|cooled hover]], [[Combat Hover Units|combat hover]], and [[Gyrokinetic Inverters]] are less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
+
+Most hover builds will prefer some combination of cooled and combat hover units for a good mix of support, integrity, and speed. Cooled (Cld.) hover units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage. Combat (Cmb.) hover units have higher integrity and support than other hover units but have somewhat slower movement speeds.
+
+Like flight units, hover units receive a bonus to movement speed when multiple are used at once, and are affected by drag from attached legs, [[Treads]], and [[Wheels]]. This bonus cannot bring the overall movement delay below 20 unless hover units are overloaded.
+
+Hovering bots have a 5% evasion bonus, unless overweight or in stasis. Hovering bots, along with flying and legged bots, receive an evasion bonus from [[Reaction Control Systems]].
+
+Cogmind's core propulsion (often referred to as "core hover") is mechanically distinct from hover units.
+
+[[Heading]]List of Hover Units[[/Heading]]
+[[PartGroupTable]]
+Hover Units|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Upkeep/Energy|
+Upkeep/Heat|
+Propulsion/Time/Move|
+Propulsion/Mod/Extra|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Burnout
+[[/PartGroupTable]]`},{Name:"Hypervelocity Weapons",Groups:["Hypervelocity Cannons","Hypervelocity Guns"],Content:`Compared to their base versions, hypervelocity (Hyp.) weapons generally do less damage in exchange for higher crit chance and penetration.
 
 [[Heading]]List of Hypervelocity Weapons[[/Heading]]
 [[PartGroupTable]]
@@ -12117,7 +12253,7 @@ Overview/Matter|
 Power/Rate|
 Power/Storage|
 Power/Stability
-[[/PartGroupTable]]`},{Name:"Propulsion",Supergroups:["Flight Units"],Groups:["Backup Propulsion","Hover Units","Legs","Overloadable Propulsion","Treads","Wheels"],Content:`Propulsion units allow robots to move and carry mass.
+[[/PartGroupTable]]`},{Name:"Propulsion",Supergroups:["Flight Units","Hover Units"],Groups:["Legs","Overloadable Propulsion","Treads","Wheels"],Content:`Propulsion units allow robots to move and carry mass.
 
 Five types of propulsion exist: [[Flight Units]], [[Hover Units]], [[Legs]], [[Treads]], and [[Wheels]]. Flight and hover units are collectively known as fast propulsion, or "fastprop"; legs, treads, and wheels are considered slow propulsion, or "slowprop." In addition, unlike other bots, [[Cogmind]] has a built-in core propulsion system used when no other propulsion is active.
 
