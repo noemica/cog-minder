@@ -1,4 +1,4 @@
-import{c as x,r as S,j as a,L as j,F as N,B as v,G as V,w as he,H as Ce,I as Se,f as D,J as Te,y as W,T as L,K as de,a as Z,s as ke,M as xe,S as $,q as He,N as Ae,O as ce,z as Ge,u as me,P as ee,Q as Re,U as O,V as Ie,W as De,X as U,Y as Ne,Z as Pe}from"./index-B1yFIahr.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as te,n as Q,b as K,o as ge,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-CrBp-JHE.js";import{S as je}from"./Table-B2itJP-a.js";import{e as ze}from"./partColumnDefs-DqCVpWQU.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as x,r as S,j as a,L as j,F as N,B as v,G as V,w as he,H as Ce,I as Se,f as D,J as Te,y as W,T as L,K as de,a as Z,s as ke,M as xe,S as $,q as He,N as Ae,O as ce,z as Ge,u as me,P as ee,Q as Re,U as O,V as Ie,W as De,X as U,Y as Ne,Z as Pe}from"./index-DUKuRP0T.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as te,n as Q,b as K,o as ge,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-PWZBM-Z5.js";import{S as je}from"./Table-DhsGIP1z.js";import{e as ze}from"./partColumnDefs-DLDeqLyC.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -11613,21 +11613,7 @@ Propulsion/Energy|
 Propulsion/Heat|
 Propulsion/Support|
 Propulsion/Penalty
-[[/PartGroupTable]]`,Parts:["Thunder Leg","Imp. Thunder Leg"]},{Name:"Thunder Legs",Parts:["Thunder Leg","Imp. Thunder Leg"],Content:`A subclass of [[Legs]] that confers a special state called "weaving" to the wielder. Typical legs gain 5% evasion per momentum and 5% accuracy penalty per momentum while running when not overweight. Thunder legs double this bonus, providing up to 30% evasion when running at full momentum. Only a single Thunder Leg is needed to provide this effect. This effect is great in combination with [[Reaction Control Systems]] and [[Phase Shifters]] to significantly reduce hostiles' targeting capabilities while running.
-
-[[Heading]]List of Thunder Legs[[/Heading]]
-[[PartGroupTable]]
-Thunder Legs|
-Overview/Size|
-Overview/Rating|
-Overview/Integrity|
-Overview/Coverage|
-Propulsion/Time/Move|
-Propulsion/Energy|
-Propulsion/Heat|
-Propulsion/Support|
-Propulsion/Penalty
-[[/PartGroupTable]]`},{Name:"Tractor Beams",Parts:["Tractor Beam","Hpw. Tractor Beam","Lrn. Tractor Beam","Cep. Matter Streamer"],Content:`[[Heading]]List of Tractor Beams[[/Heading]]
+[[/PartGroupTable]]`,Parts:["Thunder Leg","Imp. Thunder Leg"]},{Name:"Tractor Beams",Parts:["Tractor Beam","Hpw. Tractor Beam","Lrn. Tractor Beam","Cep. Matter Streamer"],Content:`[[Heading]]List of Tractor Beams[[/Heading]]
 [[PartGroupTable]]
 Tractor Beams|
 Overview/Size|
@@ -11790,21 +11776,7 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"VSS Legs",Content:`A subclass of [[Legs]] that have high speed and low coverage than standard legs. This comes at the tradeoff of lower integrity, coverage, and support than similarly rated parts, as well as a high energy cost. They are most notably used for several types of [[Specialist|Specialists]].
-
-[[Heading]]List of VSS Legs[[/Heading]]
-[[PartGroupTable]]
-VSS Legs|
-Overview/Size|
-Overview/Rating|
-Overview/Integrity|
-Overview/Coverage|
-Propulsion/Time/Move|
-Propulsion/Energy|
-Propulsion/Heat|
-Propulsion/Support|
-Propulsion/Penalty
-[[/PartGroupTable]]`,Parts:["VSS Leg","Imp. VSS Leg","Adv. VSS Leg","Exp. VSS Leg"]},{Name:"VSS Legs",Parts:["VSS Leg","Imp. VSS Leg","Adv. VSS Leg","Exp. VSS Leg"],Content:`A subclass of [[Legs]] that have high speed and low coverage than standard legs. This comes at the tradeoff of lower integrity, coverage, and support than similarly rated parts, as well as a high energy cost. They are most notably used for several types of [[Specialist|Specialists]].
+[[/PartGroupTable]]`},{Name:"VSS Legs",Parts:["VSS Leg","Imp. VSS Leg","Adv. VSS Leg","Exp. VSS Leg"],Content:`A subclass of [[Legs]] that have high speed and low coverage than standard legs. This comes at the tradeoff of lower integrity, coverage, and support than similarly rated parts, as well as a high energy cost. They are most notably used for several types of [[Specialist|Specialists]].
 
 [[Heading]]List of VSS Legs[[/Heading]]
 [[PartGroupTable]]
