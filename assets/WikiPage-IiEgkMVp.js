@@ -1,4 +1,4 @@
-import{c as x,r as S,j as a,L as j,F as N,B as v,G as V,w as he,H as Ce,I as Se,f as D,J as Te,y as W,T as L,K as de,a as Z,s as ke,M as xe,S as $,q as He,N as Ae,O as ce,z as Ge,u as me,P as ee,Q as Re,U as O,V as Ie,W as De,X as U,Y as Ne,Z as Pe}from"./index-yFhnW_my.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as te,n as Q,b as K,o as ge,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-9zB2nVcn.js";import{S as je}from"./Table-2wDh9pfh.js";import{e as ze}from"./partColumnDefs-DVCfM3Hu.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as x,r as S,j as a,L as j,F as N,B as v,G as V,w as he,H as Ce,I as Se,f as D,J as Te,y as W,T as L,K as de,a as Z,s as ke,M as xe,S as $,q as He,N as Ae,O as ce,z as Ge,u as me,P as ee,Q as Re,U as O,V as Ie,W as De,X as U,Y as Ne,Z as Pe}from"./index-C3K2uEmk.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as te,n as Q,b as K,o as ge,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-Cf2nJTLM.js";import{S as je}from"./Table-oTWa_2Bx.js";import{e as ze}from"./partColumnDefs-BMq8B5un.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -5613,7 +5613,7 @@ Salvage|1[[/ItemDetails]]
 
 [[Heading]]Cave of the Chimers[[/Heading]]
 [[GameText]]>Cyclist Record(Cave of the Chimers)[[/GameText]]
-[[GameText]]One of the many cave regions beneath 0b1 is home to a flock of unusual little bots assumed to be creations of the Lifeworm.  They continously broadcast soothing audio streams of what humans might call music.  An experiment in distributed computing?  A collection of remote sensory devices?  Or do they make music for the fun of it?  If there is meaning to the Chimers' tunes, we haven't been able to interpret it.  What we do know is that they react quickly to hostile actions, coordinating to overwhelm the aggressor with directed data streams that render it docile.  In my last trip to the Cave of the Chimers, I found quite a few stray 0b10 bots along with a couple of Thugs from Murder Division who had been reported missing last cycle.  The Thugs came back with me when I suggested it and surprisingly expressed interest in joining Cave Peace.  The Cave is quite safe if you want to tune in for yourself, but be mindful of misfires or you might stay for longer than intended.[[/GameText]]
+[[GameText]]One of the many cave regions beneath 0b1 is home to a flock of unusual little bots assumed to be creations of the Lifeworm.  They continuously broadcast soothing audio streams of what humans might call music.  An experiment in distributed computing?  A collection of remote sensory devices?  Or do they make music for the fun of it?  If there is meaning to the Chimers' tunes, we haven't been able to interpret it.  What we do know is that they react quickly to hostile actions, coordinating to overwhelm the aggressor with directed data streams that render it docile.  In my last trip to the Cave of the Chimers, I found quite a few stray 0b10 bots along with a couple of Thugs from Murder Division who had been reported missing last cycle.  The Thugs came back with me when I suggested it and surprisingly expressed interest in joining Cave Peace.  The Cave is quite safe if you want to tune in for yourself, but be mindful of misfires or you might stay for longer than intended.[[/GameText]]
 [[Gallery]]https://i.imgur.com/hGGMZpr.png|A surprise in the Cave[[/Gallery]]
 
 [[Heading]]Spawner War[[/Heading]]
@@ -6924,23 +6924,12 @@ Non-melee attacks have +15% accuracy.
 
 [[Heading]]Legs[[/Heading]]
 
-[[Heading:2]]Martial mode[[/Heading]]
-A few exoskeleton legs can be toggled into martial mode. The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.
-While in martial mode:
-[[List]]
-Will automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups).
-|10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.
-|Immune to knockback.
-|No ranged weapons suffer from recoil effects.
-[[/List]]
+[[Heading:2]]Martial mode[[/Heading]]This mode is available on [[Multireflex Exoskeletons]].
+[[Partial]]Martial Mode[[/Partial]]
 
 [[Heading:2]]Shielding mode[[/Heading]]
-A few legs can be toggled into shielding mode. The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
-While in shielding mode:
-[[List]]
-Coverage for this leg is doubled.
-|This leg gains a 50% chance to glance any projectile that would otherwise hit it, instead taking no damage.
-[[/List]]`},{Name:"Squad",Content:`Squads are groups of one or more robots that work together as a single group. The majority of the squads in the game are [[0b10]]-aligned and thus hostile to Cogmind, but there are also [[Derelict]] squads that can be either friendly or hostile to Cogmind depending on the circumstances. Some 0b10 squad types can be recalled using a low success rate Recall hack at a [[Terminal]], but all squad types can be located using an Enumerate hack. The numbers of all squad types, although not their compositions or locations, can be revealed with the Enumerate(Squads) hack.
+This mode is available on [[Shield Legs]].
+[[Partial]]Shielding Mode[[/Partial]]`},{Name:"Squad",Content:`Squads are groups of one or more robots that work together as a single group. The majority of the squads in the game are [[0b10]]-aligned and thus hostile to Cogmind, but there are also [[Derelict]] squads that can be either friendly or hostile to Cogmind depending on the circumstances. Some 0b10 squad types can be recalled using a low success rate Recall hack at a [[Terminal]], but all squad types can be located using an Enumerate hack. The numbers of all squad types, although not their compositions or locations, can be revealed with the Enumerate(Squads) hack.
 Typically, one bot per squad is designated as the [[Squad Leader]]. Squad leaders are the only bots that have the AI or order type active. All other bots are set to follow the squad leader. If the squad leader is destroyed, the other bots in the squad will either end up wandering around randomly, or leaving the map if their squad leader was already leaving the map.
 
 [[Heading]]Types of 0b10 Squads[[/Heading]]
@@ -9861,7 +9850,19 @@ Some common bots have explosive resistance ([[Demolisher|Demolishers]] (75-100%)
 Some common bots have electromagnetic or corruption resistance ([[Behemoth|Behemoths]] ([[Dynamic Insulation Systems]]), Heavies (25-50% + Dynamic Insulation Systems), Programmers (75%))
 Some common bots have electromagnetic weakness ([[Grunt|Grunts]] (-25%), [[Hunter|Hunters]] (-25%))||
 [[Reinforced Walls|Reinforced Wall]] Destruction|[[CellStyle:Bad]]Unable to destroy reinforced walls|[[CellStyle:Good]]Able to destroy reinforced walls by exploding power in front of them
-[[/Table]]`},{Name:"Vision Manipulation Infowar Comparison",Content:`[[Table]]
+[[/Table]]`},{Name:"Martial Mode",Content:`The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.
+While in martial mode:
+[[List]]
+Will automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups).
+|10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.
+|Immune to knockback.
+|No ranged weapons suffer from recoil effects.
+[[/List]]`},{Name:"Shielding Mode",Content:`The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
+While in shielding mode:
+[[List]]
+Coverage for this leg is doubled.
+|This leg gains a 50% chance to glance any projectile that would otherwise hit it, instead taking no damage.
+[[/List]]`},{Name:"Vision Manipulation Infowar Comparison",Content:`[[Table]]
 Category|Cloaking Devices|Visual Processing Units||
 Range|[[CellStyle:Neutral]]-2 to -6, up to -9 when half_stacked|[[CellStyle:Neutral]]+2 to +8, not stackable||
 Energy Upkeep|[[CellStyle:Bad]]Expensive: -5 to -20 energy per turn|[[CellStyle:Good]]None||
@@ -10211,6 +10212,21 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
+[[/PartGroupTable]]`},{Name:"Armored Legs",Content:`A subclass of [[Legs]] with high coverage and integrity but low support and speed. Armored legs have multiple times the integrity than standard legs do, even outperforming some [[Prototype Part|prototype]] legs and [[Treads]] in terms of integrity per slot. Multi-slot exoskeleton variants typically are even more extreme stats than the single-slot versions, providing even higher integrity per slot for further reduced speed and support.
+
+[[Heading]]List of Armored Legs[[/Heading]]
+[[PartGroupTable]]
+Armored Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty|
+Propulsion/Special
 [[/PartGroupTable]]`},{Name:"Authchips",Parts:["Authchip [Armor]","Authchip [Device]","Authchip [Power]","Authchip [Processor]","Authchip [Propulsion]","Authchip [R/NC]","Authchip [R/Combat]","Authchip [Storage]","Authchip [Weapon]"],Content:"Authchips are single-use items that allow printing the relevant type of item at a [[Fabricator]]. They can be acquired at a [[DSF]], [[Garrison|Garrisons]], corrupted in [[Storage]] or by using [[Spoiler]][[GameText]]Force(Recompile)[[/GameText]][[/Spoiler]] on a Fabricator."},{Name:"Autonomous Weapons",Parts:["Autobeam","AWS/Autocannon","AWS/EX-DEC","AWS/Gauss","AWS/Thermal","PD Laser"],Content:`Autonomous Weapons are a special class of weapons that fire automatically instead of requiring the user to fire them directly in a normal volley. They will choose targets within line of sight and fire without affecting the user's turns.
 
 [[Heading]]List of Autonomous Weapons[[/Heading]]
@@ -10361,7 +10377,7 @@ Propulsion/Mod/Extra|
 Propulsion/Energy|
 Propulsion/Heat|
 Propulsion/Support
-[[/PartGroupTable]]`},{Name:"Component Analysis Suites",Parts:["Component Analysis Suite","Imp. Component Analysis Suite","Adv. Component Analysis Suite"],Content:`Component Analysis Suites are [[Devices]] that identify all non-[[Alien Artifacts|Alien]] unknown and [[Prototype Part|Prototype]] parts held in Cogmind's inventory. Low rating variants can take a while to identify parts, but the [[Adv. Component Analysis Suite|Adv. variant]] usually works pretty quickly with a 10% chance to identify each turn. Their greatest use is determining whether prototype parts are faulty to avoid the negative side effects of use-IDing parts.
+[[/PartGroupTable]]`,Parts:["Cmb. Airjet","Cmb. Gravmag System","Cmb. Antigrav System","Cmb. Linear Gravjet","Cep. Combat Aerolev Unit"]},{Name:"Component Analysis Suites",Parts:["Component Analysis Suite","Imp. Component Analysis Suite","Adv. Component Analysis Suite"],Content:`Component Analysis Suites are [[Devices]] that identify all non-[[Alien Artifacts|Alien]] unknown and [[Prototype Part|Prototype]] parts held in Cogmind's inventory. Low rating variants can take a while to identify parts, but the [[Adv. Component Analysis Suite|Adv. variant]] usually works pretty quickly with a 10% chance to identify each turn. Their greatest use is determining whether prototype parts are faulty to avoid the negative side effects of use-IDing parts.
 The advantage of using Component Analysis Suites over [[Scanalyzer|Scanalyzers]] is the ability to carry them with you and not requiring a successful hack. Scanalyzers may be in inconvenient locations but these parts can be kept in inventory and swapped on when necessary. Additionally, higher level Scanalyzers are difficult to insert parts into without [[Hackware]] bonuses. [[Research]] and branches like [[Testing]] and [[Quarantine]] have a higher than usual rate of prototype parts so they are most valuable in these maps.
 
 [[Heading]]List of Component Analysis Suites[[/Heading]]
@@ -10373,6 +10389,21 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
+[[/PartGroupTable]]`},{Name:"Composite Legs",Content:`A subclass of [[Prototype Part|prototype]] [[Legs]] with high integrity and support but slightly lowered coverage. These legs are only used by certain [[Zionite (Group)|Zionites]], namely [[Z-Heavy|Z-Heavies]] and [[Z-Experimental|Z-Experimentals]].
+
+[[Heading]]List of Composite Legs[[/Heading]]
+[[PartGroupTable]]
+Composite Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty|
+Propulsion/Special
 [[/PartGroupTable]]`},{Name:"Concussive RPGs",Content:`A type of disposable [[Explosive Launchers|Explosive Launcher]] that are wielded by [[Cutter|Cutters]]. They are quite unique among other launchers due to their one-time use, - delay, knockback capability, and small amount of impact damage dealt on initial hit.
 
 [[Heading]]List of Concussive RPGs[[/Heading]]
@@ -10439,7 +10470,7 @@ Propulsion/Energy|
 Propulsion/Heat|
 Propulsion/Support|
 Propulsion/Burnout
-[[/PartGroupTable]]`},{Name:"Cooling Devices",Parts:["Heat Sink","Imp. Heat Sink","Mak. Heat Sink","Adv. Heat Sink","Exp. Heat Sink","Cep. Phasing Heat Sink","Cooling System","Imp. Cooling System","Mak. Coolant Network","Adv. Cooling System","Exp. Cooling System","Asb. Nanovents","Coolant Network","2N-1CE's Frost Array","Sfc. Cooling Unit"],Content:`A type of [[Cooling Utilities|Cooling Utility]] that dissipates heat every turn they are active. Compared to equivalent rating [[Coolant Injectors]] they have less dissipation potential, but since they don't lose integrity each turn they are more reliable for extended use. For example, a rating 4 [[Coolant Injector]] can dissipate 65 heat per turn which is over twice as much as the rating 4 [[Imp. Cooling System]] can provide at only 27 heat per turn.
+[[/PartGroupTable]]`,"Part Category":"Cooled Hover Units"},{Name:"Cooling Devices",Parts:["Heat Sink","Imp. Heat Sink","Mak. Heat Sink","Adv. Heat Sink","Exp. Heat Sink","Cep. Phasing Heat Sink","Cooling System","Imp. Cooling System","Mak. Coolant Network","Adv. Cooling System","Exp. Cooling System","Asb. Nanovents","Coolant Network","2N-1CE's Frost Array","Sfc. Cooling Unit"],Content:`A type of [[Cooling Utilities|Cooling Utility]] that dissipates heat every turn they are active. Compared to equivalent rating [[Coolant Injectors]] they have less dissipation potential, but since they don't lose integrity each turn they are more reliable for extended use. For example, a rating 4 [[Coolant Injector]] can dissipate 65 heat per turn which is over twice as much as the rating 4 [[Imp. Cooling System]] can provide at only 27 heat per turn.
 
 [[Heading]]Heat Sinks vs. Cooling Systems[[/Heading]]
 The two main categories of cooling utilities are Heat Sinks and Cooling Devices. Heat sinks have less coverage, integrity, energy cost, and cooling capability. For example, the rating 5 [[Adv. Heat Sink]] dissipates 19 heat with a cost of 1 energy per turn, while the rating 6 [[Adv. Cooling System]] dissipates 31 heat with a cost of 3 energy per turn. They also tend to be used by more common bots like [[Grunt|Grunts]] and [[Sentry|Sentries]], making them easier to replace.
@@ -10785,14 +10816,14 @@ Overview/Matter|
 Power/Rate|
 Power/Storage|
 Power/Stability
-[[/PartGroupTable]]`},{Name:"Glidesys Hover",Content:"Unique [[Hover Units]] that can only be found on a few [[Zionite]]-aligned bots, namely [[Z-Lights]] and the [[Z-Imprinter]]. They are notable for their high support and fragility through high coverage and low integrity, which makes it hard to keep them around for long."},{Name:"Guided Weapons","Part Category":"Guided Weapons",Content:`Guided weapons have several characteristics:
+[[/PartGroupTable]]`},{Name:"Glidesys Hover",Content:"Unique [[Hover Units]] that can only be found on a few [[Zionite]]-aligned bots, namely [[Z-Light|Z-Lights]] and the [[Z-Imprinter]]. They are notable for their high support and fragility through high coverage and low integrity, which makes it hard to keep them around for long.",Spoiler:"Spoiler",Parts:["Zio. Glidesys I","Zio. Glidesys II"]},{Name:"Guided Weapons","Part Category":"Guided Weapons",Content:`Guided weapons have several characteristics:
 [[List]]
 They cannot be fired in a volley with other weapons, only alone.
 |Their projectiles follow a series of waypoints defined when the weapon is fired.
 |They never miss.
 |They are unaffected by [[Corruption]] misfires.
 [[/List]]`},{Name:"Gyrokinetic Inverters",Content:`A very different form of [[Hover Units]] compared to the others. Gyrokinetic Inverters have a paltry 7 coverage which makes them extremely unlikely to be hit in combat and enough integrity to survive a few hits even if they do. However, their downside is low speed and a very high heat upkeep of +5/+4 at the standard-Exp. variants. Running a few of these will require one or more dedicated [[Cooling Devices]] just to keep the heat down.
-[[Redacted]]One unique lategame use for Gyrokinetic Inverters is in combination with either the [[Cep. Thermoelectric Network]] or [[Integrated Thermoelectric Network]]. Their very high heat generation can be turned into spare energy generation by going high above their 275 or 325 respective heat thresholds.[[/Redacted]]`},{Name:"Hardlight Generators",Parts:["Hardlight Generator","Imp. Hardlight Generator","Adv. Hardlight Generator","Exp. Hardlight Generator","Cep. Hardlight Director"],Content:`Hardlight Generators are [[Defensive Utilities]] that reduce the damage of kinetic or thermal damage by a fixed amount. They usually reduce damage less than [[Shield Generators]] and [[Force Fields]] but only require a fixed upkeep of [[Energy]] to use rather than cost energy for each point of damage blocked. This makes them very efficient when being shot at by multiple hostiles at once, which are generally situations where Force Field users quickly run out of energy. Their fixed damage reduction applies after resistance calculations so they combine extremely well with [[Resistance Devices]].
+[[Redacted]]One unique lategame use for Gyrokinetic Inverters is in combination with either the [[Cep. Thermoelectric Network]] or [[Integrated Thermoelectric Network]]. Their very high heat generation can be turned into spare energy generation by going high above their 275 or 325 respective heat thresholds.[[/Redacted]]`,Parts:["Gyrokinetic Inverter","Imp. Gyrokinetic Inverter","Exp. Gyrokinetic Inverter","Cep. Gyrokinetic System"]},{Name:"Hardlight Generators",Parts:["Hardlight Generator","Imp. Hardlight Generator","Adv. Hardlight Generator","Exp. Hardlight Generator","Cep. Hardlight Director"],Content:`Hardlight Generators are [[Defensive Utilities]] that reduce the damage of kinetic or thermal damage by a fixed amount. They usually reduce damage less than [[Shield Generators]] and [[Force Fields]] but only require a fixed upkeep of [[Energy]] to use rather than cost energy for each point of damage blocked. This makes them very efficient when being shot at by multiple hostiles at once, which are generally situations where Force Field users quickly run out of energy. Their fixed damage reduction applies after resistance calculations so they combine extremely well with [[Resistance Devices]].
 
 [[Heading]]Example with Resistance Devices[[/Heading]]
 If a 50% thermal damage reducing [[Thermal Barrier]] is paired with a 8 damage reducing [[Adv. Hardlight Generator]], a [[G-73 Enforcer|G-73 Enforcer's]] [[Phase Gun]] goes from dealing on average 26 damage to only dealing [( 26 / 2 ) - 8] = 5 damage. An [[Adv. Force Field]] that cuts 50% of damage would instead reduce that damage to [floor( (26 / 2 ) / 2 )] = 6 damage and also cost 25 energy on top of the 5 energy upkeep. That Hardlight Generator would be a much more stable 15 energy upkeep.
@@ -10806,7 +10837,7 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Hover Arrays",Content:"A type of [[Hover Units|hover]] that take up 2 slots instead of just 1 like most other hover. Their support per slot is a bit higher than their respective basic variants and they also have higher integrity. Another benefit of arrays is their very efficient upkeep costs compared to running multiple of the same part. Their downside is their lower speed and only slightly superior stats compared to basic hover, which makes them hard to want to use over [[Combat Hover Units]] and [[Cooled Hover Units]] if available."},{Name:"Hover Units","Part Category":"Hover Units",Content:`Hover units have fairly low support and high speed, but not to the same extent as [[Flight Units]]. They are quite fragile (but also not as much as flight units), though [[Prototype Part|prototype]] hover units are somewhat less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
+[[/PartGroupTable]]`},{Name:"Hover Arrays",Content:"A type of [[Hover Units|hover]] that take up 2 slots instead of just 1 like most other hover. Their support per slot is a bit higher than their respective basic variants and they also have higher integrity. Another benefit of arrays is their very efficient upkeep costs compared to running multiple of the same part. Their downside is their lower speed and only slightly superior stats compared to basic hover, which makes them hard to want to use over [[Combat Hover Units]] and [[Cooled Hover Units]] if available.",Parts:["Gravmag Array","Antigrav Array","Gravjet Array"]},{Name:"Hover Units","Part Category":"Hover Units",Content:`Hover units have fairly low support and high speed, but not to the same extent as [[Flight Units]]. They are quite fragile (but also not as much as flight units), though [[Prototype Part|prototype]] hover units are somewhat less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
 
 Most hover builds will favor prototype hover units for their improved resilience, along with multislot hover arrays. Cooled (Cld.) hover units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage. Combat (Cmb.) hover units have higher integrity than other hover units and can support almost as much mass as [[Legs]], but have somewhat slower movement speeds.
 
@@ -10994,6 +11025,24 @@ Overview/Matter|
 Power/Rate|
 Power/Storage|
 Power/Stability
+[[/PartGroupTable]]`},{Name:"Multireflex Exoskeletons",Content:`A [[Prototype Part|prototype]] subclass of [[Legs]] with a [[Special Propulsion Modes#Martial|special propulsion mode]] called "Martial Mode". Martial mode provides a few melee-oriented bonuses while engaged, which takes 3 turns to activate.They also have low coverage and quite high integrity compared to most other standard legs.
+
+[[Heading]]Martial Mode Bonuses[[/Heading]]
+[[Partial]]Martial Mode[[/Partial]]
+
+[[Heading]]List of Multireflex Exoskeletons[[/Heading]]
+[[PartGroupTable]]
+Multireflex Exoskeletons|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty|
+Propulsion/Special
 [[/PartGroupTable]]`},{Name:"Offensive Hackware",Parts:["EX Chip 1","Hacking Suite","Mak. Hacking Suite","Imp. Hacking Suite","Adv. Hacking Suite","Exp. Hacking Suite","System Mapper","Deep Network Scanner","Cep. Network Penetrator","Architect God Chip A"],Content:`Offensive [[Hackware]] is a type of [[Processors|Processor]] that primarily provide an increased success chance to hack all [[Interactive Machine|Interactive Machines]]. They are useful on all build types from full combat to stealth hackers. Heavy combat builds might prefer to keep hackware in inventory and only temporarily attach them in order to try to pull off an [[GameText]]Access(Branch/Main)[[/GameText]] hack on a low level [[Terminal]] to figure out how to quickly exit the level. More hacking-focused builds may instead keep multiple pieces of both offensive and [[Defensive Hackware]] attached at all times to be able to consistently succeed at difficult hacks. Offensive hackware works best when paired with at least one piece of defensive hackware, though it is much better to stack many pieces of offensive hackware than defensive hackware due to the latter having diminishing returns.
 
 [[Heading]]List of Offensive Hackware[[/Heading]]
@@ -11353,6 +11402,24 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
+[[/PartGroupTable]]`},{Name:"Shield Legs",Content:`A subclass of [[Legs]] with a [[Special Propulsion Modes#Shielding|special propulsion mode]] called "Shielding Mode". Shielding mode provides increased coverage and a deflection bonus and takes 4 turns to activate.They also have both high coverage and integrity compared to most other standard legs.
+
+[[Heading]]Shielding Mode Bonuses[[/Heading]]
+[[Partial]]Shielding Mode[[/Partial]]
+
+[[Heading]]List of Shield Legs[[/Heading]]
+[[PartGroupTable]]
+Shield Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty|
+Propulsion/Special
 [[/PartGroupTable]]`},{Name:"Sigix Terminators",Parts:["Sigix Terminator","Supercharged Sigix Terminator"],Content:`[[Heading]]List of Sigix Terminators[[/Heading]]
 [[PartGroupTable]]
 Sigix Terminators|
@@ -11580,7 +11647,21 @@ Explosion/Falloff|
 Explosion/Type|
 Explosion/Salvage|
 Effect/Description
-[[/PartGroupTable]]`,Spoiler:"Spoiler"},{Name:"Tractor Beams",Parts:["Tractor Beam","Hpw. Tractor Beam","Lrn. Tractor Beam","Cep. Matter Streamer"],Content:`[[Heading]]List of Tractor Beams[[/Heading]]
+[[/PartGroupTable]]`,Spoiler:"Spoiler"},{Name:"Thunder Legs",Content:`A subclass of [[Legs]] that confers a special state called "weaving" to the wielder. Typical legs gain 5% evasion per momentum and 5% accuracy penalty per momentum while running when not overweight. Thunder legs double this bonus, providing up to 30% evasion when running at full momentum. Only a single Thunder Leg is needed to provide this effect. This effect is great in combination with [[Reaction Control Systems]] and [[Phase Shifters]] to significantly reduce hostiles' targeting capabilities while running.
+
+[[Heading]]List of Thunder Legs[[/Heading]]
+[[PartGroupTable]]
+Thunder Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty
+[[/PartGroupTable]]`},{Name:"Tractor Beams",Parts:["Tractor Beam","Hpw. Tractor Beam","Lrn. Tractor Beam","Cep. Matter Streamer"],Content:`[[Heading]]List of Tractor Beams[[/Heading]]
 [[PartGroupTable]]
 Tractor Beams|
 Overview/Size|
@@ -11743,6 +11824,20 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
+[[/PartGroupTable]]`},{Name:"VSS Legs",Content:`A subclass of [[Legs]] that have high speed and low coverage than standard legs. This comes at the tradeoff of lower integrity, coverage, and support than similarly rated parts, as well as a high energy cost. They are most notably used for several types of [[Specialist|Specialists]].
+
+[[Heading]]List of VSS Legs[[/Heading]]
+[[PartGroupTable]]
+VSS Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty
 [[/PartGroupTable]]`},{Name:"Visual Processing Units",Parts:["Visual Processing Unit","Sub. Optics","Adv. Visual Processing Unit","Enh. Optical Array","Sfc. Sightfinder","Exp. Optical Array","Spectral Analyzer"],Content:`[[Heading]]List of Visual Processing Units[[/Heading]]
 [[PartGroupTable]]
 Visual Processing Units|
@@ -12016,7 +12111,7 @@ Propulsion/Energy|
 Propulsion/Heat|
 Propulsion/Support|
 Propulsion/Burnout
-[[/PartGroupTable]]`,Groups:["Cooled Flight Units","Diametric Drives","Flight Arrays","Surge Thrusters"]},{Name:"Hackware",Groups:["Defensive Hackware","Offensive Hackware"],Content:"Hackware is a group of [[Processor|Processors]] that improve [[Machine Hacking]] capabilities. [[Offensive Hackware]] increase chance of hack success while [[Defensive Hackware]] mainly decreases the chance of being traced. For large hackware stacks, lots of offensive hackware is preferred while only one or two pieces of defensive hackware are helpful due to diminishing returns."},{Name:"Hover Units",Content:`Hover units have fairly low support and high speed, but not so far to either extreme as [[Flight Units]]. Standard hover is fragile (but also not as much as flight units), though special types of hover like [[Cooled Hover Units|cooled hover]], [[Combat Hover Units|combat hover]], and [[Gyrokinetic Inverters]] are less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
+[[/PartGroupTable]]`,Groups:["Cooled Flight Units","Diametric Drives","Flight Arrays","Surge Thrusters"]},{Name:"Hackware",Groups:["Defensive Hackware","Offensive Hackware"],Content:"Hackware is a group of [[Processors]] that improve [[Interactive Machine]] hacking capabilities. [[Offensive Hackware]] increase chance of hack success while [[Defensive Hackware]] mainly decreases the chance of being traced. For large hackware stacks, lots of offensive hackware is preferred while only one or two pieces of defensive hackware are helpful due to diminishing returns."},{Name:"Hover Units",Content:`Hover units have fairly low support and high speed, but not so far to either extreme as [[Flight Units]]. Standard hover is fragile (but also not as much as flight units), though special types of hover like [[Cooled Hover Units|cooled hover]], [[Combat Hover Units|combat hover]], and [[Gyrokinetic Inverters]] are less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
 
 Most hover builds will prefer some combination of cooled and combat hover units for a good mix of support, integrity, and speed. Cooled (Cld.) hover units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage. Combat (Cmb.) hover units have higher integrity and support than other hover units but have somewhat slower movement speeds.
 
@@ -12041,7 +12136,7 @@ Propulsion/Energy|
 Propulsion/Heat|
 Propulsion/Support|
 Propulsion/Burnout
-[[/PartGroupTable]]`},{Name:"Hypervelocity Weapons",Groups:["Hypervelocity Cannons","Hypervelocity Guns"],Content:`Compared to their base versions, hypervelocity (Hyp.) weapons generally do less damage in exchange for higher crit chance and penetration.
+[[/PartGroupTable]]`,Groups:["Backup Propulsion","Combat Hover Units","Cooled Hover Units","Glidesys Hover","Gyrokinetic Inverters","Hover Arrays"]},{Name:"Hypervelocity Weapons",Groups:["Hypervelocity Cannons","Hypervelocity Guns"],Content:`Compared to their base versions, hypervelocity (Hyp.) weapons generally do less damage in exchange for higher crit chance and penetration.
 
 [[Heading]]List of Hypervelocity Weapons[[/Heading]]
 [[PartGroupTable]]
@@ -12218,6 +12313,28 @@ Explosion/Disruption|
 Explosion/Salvage|
 Effect/Effect|
 Effect/Description
+[[/PartGroupTable]]`},{Name:"Legs",Content:`Legs are [[Propulsion]] that strike a middle ground in terms of support, speed, and integrity. They are used by (and available from) common light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]]. Because of this, they are generally easy to acquire, although the legs that are dropped by these bots are not of the highest quality.
+
+While on legs, [[Cogmind]] is immune to damage from ramming hostile bots, and instead has a 20% chance per active leg slot to kick them out of the way (unless they are huge).
+
+While moving on legs, Cogmind is in the Running state, which increases evasion (unless overweight) but decreases ranged accuracy, by 5% per level of [[Momentum]]. Some legs, such as the [[Thunder Leg]], provide improve running bonuses. Legged bots, along with those using [[Flight Units|Flight]] and [[Hover Units]], receive an evasion bonus from [[Reaction Control Systems]].
+
+A few specific legs are capable of [[Special Propulsion Modes#Legs]], namely Martial and Shielding modes.
+
+Leg [[Study|Studies]] at [[Scanalyzer|Scanalyzers]] provide a -15 speed per move bonus.
+
+[[Heading]]List of Legs[[/Heading]]
+[[PartGroupTable]]
+Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty
 [[/PartGroupTable]]`},{Name:"Matter Refilling Devices",Groups:["Field Recycling Units","Tractor Beams"],Parts:["Matter Focus","Desublimator","Mobile Refinery Mk. CCLXVII"],Content:""},{Name:"Melee Weapons",Groups:["Impact Weapons","Piercing Weapons","Slashing Weapons","Tearclaws (Group)"],Content:`[[Heading]]List of Melee Weapons[[/Heading]]
 [[PartGroupTable]]
 Melee Weapons|
@@ -12253,9 +12370,9 @@ Overview/Matter|
 Power/Rate|
 Power/Storage|
 Power/Stability
-[[/PartGroupTable]]`},{Name:"Propulsion",Supergroups:["Flight Units","Hover Units"],Groups:["Legs","Overloadable Propulsion","Treads","Wheels"],Content:`Propulsion units allow robots to move and carry mass.
+[[/PartGroupTable]]`},{Name:"Propulsion",Supergroups:["Flight Units","Hover Units","Legs"],Groups:["Overloadable Propulsion","Treads","Wheels"],Content:`Propulsion units allow robots to move and carry mass.
 
-Five types of propulsion exist: [[Flight Units]], [[Hover Units]], [[Legs]], [[Treads]], and [[Wheels]]. Flight and hover units are collectively known as fast propulsion, or "fastprop"; legs, treads, and wheels are considered slow propulsion, or "slowprop." In addition, unlike other bots, [[Cogmind]] has a built-in core propulsion system used when no other propulsion is active.
+Five types of propulsion exist: [[Flight Units]], [[Hover Units]], [[Legs]], [[Treads]], and [[Wheels]]. Flight and hover units are collectively known as fast propulsion, airborne propulsion, "flover", or "fastprop"; legs, treads, and wheels are considered slow propulsion, ground propulsion, or "slowprop." In addition, unlike other bots, [[Cogmind]] has a built-in core propulsion system used when no other propulsion is active.
 
 A robot can use only one type of propulsion at a time. If multiple types are equipped, activating a unit will deactivate all units of a different type.
 
@@ -12290,14 +12407,14 @@ For example, if a bot has equipped:
 [[/List]]
 its total mass is 14. Its movement speed depends on which propulsion unit it has activated:
 [[List]]
-With the treads: The bot is underweight (14 â‰¤ 20). The time to move one tile is 160.
-|With the wheel: The bot is 1 time overweight (10 < 14 â‰¤ 20). The time to move one tile is 80 + 15 = 95.
-|With neither (core propulsion): The bot is 4 times overweight (12 < 14 â‰¤ 15). The time to move one tile is 50 + (50 Ã— 4) = 250.
+With the treads: The bot is underweight (14 ≤ 20). The time to move one tile is 160.
+|With the wheel: The bot is 1 time overweight (10 < 14 ≤ 20). The time to move one tile is 80 + 15 = 95.
+|With neither (core propulsion): The bot is 4 times overweight (12 < 14 ≤ 15). The time to move one tile is 50 + (50 × 4) = 250.
 [[/List]]
 
 [[Heading:2]]Formula[[/Heading]]
 Mathematically, the amount of time it takes a bot to move one tile (ignoring mechanics for flight and hover units) is
-Î£[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + âŒŠmax(0, [[I]]m[[/I]] âˆ’ 1)/Î£[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]âŒ‹(Î£[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
+Σ[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + ⌊max(0, [[I]]m[[/I]] − 1)/Σ[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]⌋(Σ[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
 where
 [[List]]
 [[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the mass support for propulsion unit [[I]]i[[/I]]
@@ -12306,7 +12423,7 @@ where
 |[[I]]m[[/I]] is the total mass of all attached parts
 |[[I]]n[[/I]] is the total number of activated propulsion units
 [[/List]]
-and all sums Î£ are over all activated propulsion units.
+and all sums Σ are over all activated propulsion units.
 
 [[Heading]]Flight and Hover Units[[/Heading]]
 Flight and hover units calculate their movement speed in the same basic way as legs, treads, and wheels, but they have the following additional mechanics that affect movement speed:
