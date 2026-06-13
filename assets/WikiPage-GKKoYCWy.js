@@ -1,4 +1,4 @@
-import{c as x,r as S,j as a,L as j,F as N,B as v,G as V,w as he,H as Ce,I as Se,f as D,J as Te,y as W,T as L,K as de,a as Z,s as ke,M as xe,S as $,q as He,N as Ae,O as ce,z as Ge,u as me,P as ee,Q as Re,U as O,V as Ie,W as De,X as U,Y as Ne,Z as Pe}from"./index-C3K2uEmk.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as te,n as Q,b as K,o as ge,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-Cf2nJTLM.js";import{S as je}from"./Table-oTWa_2Bx.js";import{e as ze}from"./partColumnDefs-BMq8B5un.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as x,r as S,j as a,L as j,F as N,B as v,G as V,w as he,H as Ce,I as Se,f as D,J as Te,y as W,T as L,K as de,a as Z,s as ke,M as xe,S as $,q as He,N as Ae,O as ce,z as Ge,u as me,P as ee,Q as Re,U as O,V as Ie,W as De,X as U,Y as Ne,Z as Pe}from"./index-Cw9zkadA.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as te,n as Q,b as K,o as ge,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-DEbgAdMM.js";import{S as je}from"./Table-Ck4MU00L.js";import{e as ze}from"./partColumnDefs-Be5YOhtq.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -10212,7 +10212,7 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Armored Legs",Content:`A subclass of [[Legs]] with high coverage and integrity but low support and speed. Armored legs have multiple times the integrity than standard legs do, even outperforming some [[Prototype Part|prototype]] legs and [[Treads]] in terms of integrity per slot. Multi-slot exoskeleton variants typically are even more extreme stats than the single-slot versions, providing even higher integrity per slot for further reduced speed and support.
+[[/PartGroupTable]]`},{Name:"Armored Legs",Parts:["Arm. Leg","Enh. Armored Leg","Lgt. Armored Exoskeleton","Med. Armored Exoskeleton","Hvy. Armored Exoskeleton","Ovr. Armored Exoskeleton","Exp. Armored Exoskeleton"],Content:`A subclass of [[Legs]] with high coverage and integrity but low support and speed. Armored legs have multiple times the integrity than standard legs do, even outperforming some [[Prototype Part|prototype]] legs and [[Treads]] in terms of integrity per slot. Multi-slot exoskeleton variants typically are even more extreme stats than the single-slot versions, providing even higher integrity per slot for further reduced speed and support.
 
 [[Heading]]List of Armored Legs[[/Heading]]
 [[PartGroupTable]]
@@ -10389,7 +10389,7 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Composite Legs",Content:`A subclass of [[Prototype Part|prototype]] [[Legs]] with high integrity and support but slightly lowered coverage. These legs are only used by certain [[Zionite (Group)|Zionites]], namely [[Z-Heavy|Z-Heavies]] and [[Z-Experimental|Z-Experimentals]].
+[[/PartGroupTable]]`},{Name:"Composite Legs",Parts:["Zio. Composite Leg I","Zio. Composite Leg II","Zio. Supercomposite Leg"],Content:`A subclass of [[Prototype Part|prototype]] [[Legs]] with high integrity and support but slightly lowered coverage. These legs are only used by certain [[Zionite (Group)|Zionites]], namely [[Z-Heavy|Z-Heavies]] and [[Z-Experimental|Z-Experimentals]].
 
 [[Heading]]List of Composite Legs[[/Heading]]
 [[PartGroupTable]]
@@ -10404,7 +10404,7 @@ Propulsion/Heat|
 Propulsion/Support|
 Propulsion/Penalty|
 Propulsion/Special
-[[/PartGroupTable]]`},{Name:"Concussive RPGs",Content:`A type of disposable [[Explosive Launchers|Explosive Launcher]] that are wielded by [[Cutter|Cutters]]. They are quite unique among other launchers due to their one-time use, - delay, knockback capability, and small amount of impact damage dealt on initial hit.
+[[/PartGroupTable]]`,Spoiler:"Spoiler"},{Name:"Concussive RPGs",Content:`A type of disposable [[Explosive Launchers|Explosive Launcher]] that are wielded by [[Cutter|Cutters]]. They are quite unique among other launchers due to their one-time use, - delay, knockback capability, and small amount of impact damage dealt on initial hit.
 
 [[Heading]]List of Concussive RPGs[[/Heading]]
 [[PartGroupTable]]
@@ -10837,32 +10837,7 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Hover Arrays",Content:"A type of [[Hover Units|hover]] that take up 2 slots instead of just 1 like most other hover. Their support per slot is a bit higher than their respective basic variants and they also have higher integrity. Another benefit of arrays is their very efficient upkeep costs compared to running multiple of the same part. Their downside is their lower speed and only slightly superior stats compared to basic hover, which makes them hard to want to use over [[Combat Hover Units]] and [[Cooled Hover Units]] if available.",Parts:["Gravmag Array","Antigrav Array","Gravjet Array"]},{Name:"Hover Units","Part Category":"Hover Units",Content:`Hover units have fairly low support and high speed, but not to the same extent as [[Flight Units]]. They are quite fragile (but also not as much as flight units), though [[Prototype Part|prototype]] hover units are somewhat less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
-
-Most hover builds will favor prototype hover units for their improved resilience, along with multislot hover arrays. Cooled (Cld.) hover units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage. Combat (Cmb.) hover units have higher integrity than other hover units and can support almost as much mass as [[Legs]], but have somewhat slower movement speeds.
-
-Like flight units, hover units receive a bonus to movement speed when multiple are used at once, and are affected by drag from attached legs, [[Treads]], and [[Wheels]]. This bonus cannot bring the overall movement delay below 20 unless hover units are overloaded.
-
-Hovering bots have a 5% evasion bonus, unless overweight or in stasis. Hovering bots, along with flying and legged bots, receive an evasion bonus from [[Reaction Control Systems]].
-
-Cogmind's core propulsion (often referred to as "core hover") is mechanically distinct from hover units.
-
-[[Heading]]List of Hover Units[[/Heading]]
-[[PartGroupTable]]
-Hover Units|
-Overview/Size|
-Overview/Rating|
-Overview/Integrity|
-Overview/Coverage|
-Upkeep/Energy|
-Upkeep/Heat|
-Propulsion/Time/Move|
-Propulsion/Mod/Extra|
-Propulsion/Energy|
-Propulsion/Heat|
-Propulsion/Support|
-Propulsion/Burnout
-[[/PartGroupTable]]`},{Name:"Hybrid Power","Part Category":"Hybrid Power",Content:`[[Heading]]List of Hybrid Power[[/Heading]][[PartGroupTable]]
+[[/PartGroupTable]]`},{Name:"Hover Arrays",Content:"A type of [[Hover Units|hover]] that take up 2 slots instead of just 1 like most other hover. Their support per slot is a bit higher than their respective basic variants and they also have higher integrity. Another benefit of arrays is their very efficient upkeep costs compared to running multiple of the same part. Their downside is their lower speed and only slightly superior stats compared to basic hover, which makes them hard to want to use over [[Combat Hover Units]] and [[Cooled Hover Units]] if available.",Parts:["Gravmag Array","Antigrav Array","Gravjet Array"]},{Name:"Hybrid Power","Part Category":"Hybrid Power",Content:`[[Heading]]List of Hybrid Power[[/Heading]][[PartGroupTable]]
 Hybrid Power|
 Overview/Size|
 Overview/Rating|
@@ -10924,29 +10899,6 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Legs","Part Category":"Legs",Content:`Legs are [[Propulsion]] that strike a middle ground in terms of support, speed, and integrity. They are used by (and available from) common light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]]. Because of this, they are generally easy to acquire, although the legs that are dropped by these bots are not of the highest quality.
-
-While on legs, [[Cogmind]] is immune to damage from ramming hostile bots, and instead has a 20% chance per active leg slot to kick them out of the way (unless they are huge).
-
-While moving on legs, Cogmind is in the Running state, which increases evasion (unless overweight) but decreases ranged accuracy, by 5% per level of [[Momentum]]. Some legs, such as the [[Thunder Leg]], provide improve running bonuses. Legged bots, along with those using [[Flight Units|Flight]] and [[Hover Units]], receive an evasion bonus from [[Reaction Control Systems]].
-
-A few specific legs are capable of [[Special Propulsion Modes#Legs]], namely Martial and Shielding modes.
-
-Leg [[Study|Studies]] at [[Scanalyzer|Scanalyzers]] provide a -15 speed per move bonus.
-
-[[Heading]]List of Legs[[/Heading]]
-[[PartGroupTable]]
-Legs|
-Overview/Size|
-Overview/Rating|
-Overview/Integrity|
-Overview/Coverage|
-Propulsion/Time/Move|
-Propulsion/Energy|
-Propulsion/Heat|
-Propulsion/Support|
-Propulsion/Penalty|
-Propulsion/Special
 [[/PartGroupTable]]`},{Name:"Light Power","Part Category":"Light Power",Content:`[[Heading]]List of Light Power[[/Heading]][[PartGroupTable]]
 Light Power|
 Overview/Size|
@@ -11025,7 +10977,7 @@ Overview/Matter|
 Power/Rate|
 Power/Storage|
 Power/Stability
-[[/PartGroupTable]]`},{Name:"Multireflex Exoskeletons",Content:`A [[Prototype Part|prototype]] subclass of [[Legs]] with a [[Special Propulsion Modes#Martial|special propulsion mode]] called "Martial Mode". Martial mode provides a few melee-oriented bonuses while engaged, which takes 3 turns to activate.They also have low coverage and quite high integrity compared to most other standard legs.
+[[/PartGroupTable]]`},{Name:"Multireflex Exoskeletons",Parts:["Multireflex Exoskeleton","Enh. Multireflex Exoskeleton"],Content:`A [[Prototype Part|prototype]] subclass of [[Legs]] with a [[Special Propulsion Modes#Martial|special propulsion mode]] called "Martial Mode". Martial mode provides a few melee-oriented bonuses while engaged, which takes 3 turns to activate.They also have low coverage and quite high integrity compared to most other standard legs.
 
 [[Heading]]Martial Mode Bonuses[[/Heading]]
 [[Partial]]Martial Mode[[/Partial]]
@@ -11402,7 +11354,7 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Shield Legs",Content:`A subclass of [[Legs]] with a [[Special Propulsion Modes#Shielding|special propulsion mode]] called "Shielding Mode". Shielding mode provides increased coverage and a deflection bonus and takes 4 turns to activate.They also have both high coverage and integrity compared to most other standard legs.
+[[/PartGroupTable]]`},{Name:"Shield Legs",Parts:["Shield Leg","Hvy. Shield Leg"],Content:`A subclass of [[Legs]] with a [[Special Propulsion Modes#Shielding|special propulsion mode]] called "Shielding Mode". Shielding mode provides increased coverage and a deflection bonus and takes 4 turns to activate.They also have both high coverage and integrity compared to most other standard legs.
 
 [[Heading]]Shielding Mode Bonuses[[/Heading]]
 [[Partial]]Shielding Mode[[/Partial]]
@@ -11793,7 +11745,21 @@ By default traps are programmed to trigger on detection of any foreign robot, a 
 [[Heading]]Collection[[/Heading]]
 An enterprising Cogmind can, with the use of a [[Trap Extractors|Trap Extractor]], extract and store or pick up friendly traps for their own use. However, [[Chute Trap|Chute Traps]], [[Alarm Trap|Alarm Traps]] and [[Ambush Trap|Ambush Traps]] cannot be extracted to begin with. Stasis Traps also exhibit special behavior; they can be extracted but cannot be stored inside a Trap Extractor, and they can still be extracted even after they were triggered, as long as the stasis field they produce hasn't been depleted.
 
-Last edited during Beta 15.`},{Name:"Treads","Part Category":"Treads",Content:`Treads are a type of [[Propulsion]] that have the highest support and the lowest speed. They are the most durable propulsion, but lower-tier units will still often be destroyed and replaced. They are commonly used by (and available from) [[Hauler|Haulers]] as well as heavy combat 0b10 bots, including [[Sentry|Sentries]], [[Heavy|Heavies]], and [[Behemoth|Behemoths]]. When active, treads confer immunity to knockback and reduce the accuracy penalty from recoil by 1 per active tread slot when firing a volley.
+Last edited during Beta 15.`},{Name:"Thunder Legs",Parts:["Thunder Leg","Imp. Thunder Leg"],Content:`A subclass of [[Legs]] that confers a special state called "weaving" to the wielder. Typical legs gain 5% evasion per momentum and 5% accuracy penalty per momentum while running when not overweight. Thunder legs double this bonus, providing up to 30% evasion when running at full momentum. Only a single Thunder Leg is needed to provide this effect. This effect is great in combination with [[Reaction Control Systems]] and [[Phase Shifters]] to significantly reduce hostiles' targeting capabilities while running.
+
+[[Heading]]List of Thunder Legs[[/Heading]]
+[[PartGroupTable]]
+Thunder Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty
+[[/PartGroupTable]]`},{Name:"Treads","Part Category":"Treads",Content:`Treads are a type of [[Propulsion]] that have the highest support and the lowest speed. They are the most durable propulsion, but lower-tier units will still often be destroyed and replaced. They are commonly used by (and available from) [[Hauler|Haulers]] as well as heavy combat 0b10 bots, including [[Sentry|Sentries]], [[Heavy|Heavies]], and [[Behemoth|Behemoths]]. When active, treads confer immunity to knockback and reduce the accuracy penalty from recoil by 1 per active tread slot when firing a volley.
 
 The slow movement speed of treads means [[Cogmind]] generally cannot outrun bots and will be forced to fight most encounters that it cannot avoid. Replacement treads can be difficult to obtain under duress since they are mostly equipped by powerful combat bots, and the best multislot treads are not commonly used by other bots until later in the game. In exchange, treads' high coverage and integrity (especially on mid- to late-game multislot treads), along with recoil reduction, allow them to support a combat bot and protect other parts. Treading bots that lack enough spare treads may choose a [[I]]half-track[[/I]] configuration, filling some propulsion slots with treads and some with [[Wheels]], as described in that article.
 
@@ -11897,6 +11863,20 @@ Projectile/Type|
 Projectile/Critical|
 Projectile/Penetration|
 Projectile/Salvage
+[[/PartGroupTable]]`},{Name:"VSS Legs",Parts:["VSS Leg","Imp. VSS Leg","Adv. VSS Leg","Exp. VSS Leg"],Content:`A subclass of [[Legs]] that have high speed and low coverage than standard legs. This comes at the tradeoff of lower integrity, coverage, and support than similarly rated parts, as well as a high energy cost. They are most notably used for several types of [[Specialist|Specialists]].
+
+[[Heading]]List of VSS Legs[[/Heading]]
+[[PartGroupTable]]
+VSS Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty
 [[/PartGroupTable]]`},{Name:"Weapon Cyclers",Parts:["Weapon Cycler","Imp. Weapon Cycler","Adv. Weapon Cycler","Exp. Weapon Cycler","Quantum Capacitor","Mni. Quantum Capacitor","Launcher Loader"],Content:`[[Heading]]List of Weapon Cyclers[[/Heading]]
 [[PartGroupTable]]
 Weapon Cyclers|
@@ -12111,7 +12091,7 @@ Propulsion/Energy|
 Propulsion/Heat|
 Propulsion/Support|
 Propulsion/Burnout
-[[/PartGroupTable]]`,Groups:["Cooled Flight Units","Diametric Drives","Flight Arrays","Surge Thrusters"]},{Name:"Hackware",Groups:["Defensive Hackware","Offensive Hackware"],Content:"Hackware is a group of [[Processors]] that improve [[Interactive Machine]] hacking capabilities. [[Offensive Hackware]] increase chance of hack success while [[Defensive Hackware]] mainly decreases the chance of being traced. For large hackware stacks, lots of offensive hackware is preferred while only one or two pieces of defensive hackware are helpful due to diminishing returns."},{Name:"Hover Units",Content:`Hover units have fairly low support and high speed, but not so far to either extreme as [[Flight Units]]. Standard hover is fragile (but also not as much as flight units), though special types of hover like [[Cooled Hover Units|cooled hover]], [[Combat Hover Units|combat hover]], and [[Gyrokinetic Inverters]] are less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
+[[/PartGroupTable]]`,Groups:["Cooled Flight Units","Diametric Drives","Flight Arrays","Surge Thrusters"]},{Name:"Hackware",Groups:["Defensive Hackware","Offensive Hackware"],Content:"Hackware is a group of [[Processors]] that improve [[Interactive Machine]] hacking capabilities. [[Offensive Hackware]] increase chance of hack success while [[Defensive Hackware]] mainly decreases the chance of being traced. For large hackware stacks, lots of offensive hackware is preferred while only one or two pieces of defensive hackware are helpful due to diminishing returns."},{Name:"Hover Units","Part Category":"Hover Units",Content:`Hover units have fairly low support and high speed, but not so far to either extreme as [[Flight Units]]. Standard hover is fragile (but also not as much as flight units), though special types of hover like [[Cooled Hover Units|cooled hover]], [[Combat Hover Units|combat hover]], and [[Gyrokinetic Inverters]] are less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
 
 Most hover builds will prefer some combination of cooled and combat hover units for a good mix of support, integrity, and speed. Cooled (Cld.) hover units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage. Combat (Cmb.) hover units have higher integrity and support than other hover units but have somewhat slower movement speeds.
 
@@ -12313,7 +12293,7 @@ Explosion/Disruption|
 Explosion/Salvage|
 Effect/Effect|
 Effect/Description
-[[/PartGroupTable]]`},{Name:"Legs",Content:`Legs are [[Propulsion]] that strike a middle ground in terms of support, speed, and integrity. They are used by (and available from) common light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]]. Because of this, they are generally easy to acquire, although the legs that are dropped by these bots are not of the highest quality.
+[[/PartGroupTable]]`},{Name:"Legs",Groups:["Armored Legs","Composite Legs","Multireflex Exoskeletons","Shield Legs","Thunder Legs","VSS Legs"],"Part Category":"Legs",Content:`Legs are [[Propulsion]] that strike a middle ground in terms of support, speed, and integrity. They are used by (and available from) common light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]]. Because of this, they are generally easy to acquire, although the legs that are dropped by these bots are not of the highest quality.
 
 While on legs, [[Cogmind]] is immune to damage from ramming hostile bots, and instead has a 20% chance per active leg slot to kick them out of the way (unless they are huge).
 
