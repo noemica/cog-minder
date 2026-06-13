@@ -7440,6 +7440,15 @@
   },
   {
    "Name": "Armored Legs",
+   "Parts": [
+    "Arm. Leg",
+    "Enh. Armored Leg",
+    "Lgt. Armored Exoskeleton",
+    "Med. Armored Exoskeleton",
+    "Hvy. Armored Exoskeleton",
+    "Ovr. Armored Exoskeleton",
+    "Exp. Armored Exoskeleton"
+   ],
    "Content": "A subclass of [[Legs]] with high coverage and integrity but low support and speed. Armored legs have multiple times the integrity than standard legs do, even outperforming some [[Prototype Part|prototype]] legs and [[Treads]] in terms of integrity per slot. Multi-slot exoskeleton variants typically are even more extreme stats than the single-slot versions, providing even higher integrity per slot for further reduced speed and support.\n\n[[Heading]]List of Armored Legs[[/Heading]]\n[[PartGroupTable]]\nArmored Legs|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty|\nPropulsion/Special\n[[/PartGroupTable]]"
   },
   {
@@ -7557,7 +7566,13 @@
   },
   {
    "Name": "Composite Legs",
-   "Content": "A subclass of [[Prototype Part|prototype]] [[Legs]] with high integrity and support but slightly lowered coverage. These legs are only used by certain [[Zionite (Group)|Zionites]], namely [[Z-Heavy|Z-Heavies]] and [[Z-Experimental|Z-Experimentals]].\n\n[[Heading]]List of Composite Legs[[/Heading]]\n[[PartGroupTable]]\nComposite Legs|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty|\nPropulsion/Special\n[[/PartGroupTable]]"
+   "Parts": [
+    "Zio. Composite Leg I",
+    "Zio. Composite Leg II",
+    "Zio. Supercomposite Leg"
+   ],
+   "Content": "A subclass of [[Prototype Part|prototype]] [[Legs]] with high integrity and support but slightly lowered coverage. These legs are only used by certain [[Zionite (Group)|Zionites]], namely [[Z-Heavy|Z-Heavies]] and [[Z-Experimental|Z-Experimentals]].\n\n[[Heading]]List of Composite Legs[[/Heading]]\n[[PartGroupTable]]\nComposite Legs|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty|\nPropulsion/Special\n[[/PartGroupTable]]",
+   "Spoiler": "Spoiler"
   },
   {
    "Name": "Concussive RPGs",
@@ -7941,11 +7956,6 @@
    ]
   },
   {
-   "Name": "Hover Units",
-   "Part Category": "Hover Units",
-   "Content": "Hover units have fairly low support and high speed, but not to the same extent as [[Flight Units]]. They are quite fragile (but also not as much as flight units), though [[Prototype Part|prototype]] hover units are somewhat less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.\n\nMost hover builds will favor prototype hover units for their improved resilience, along with multislot hover arrays. Cooled (Cld.) hover units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage. Combat (Cmb.) hover units have higher integrity than other hover units and can support almost as much mass as [[Legs]], but have somewhat slower movement speeds.\n\nLike flight units, hover units receive a bonus to movement speed when multiple are used at once, and are affected by drag from attached legs, [[Treads]], and [[Wheels]]. This bonus cannot bring the overall movement delay below 20 unless hover units are overloaded.\n\nHovering bots have a 5% evasion bonus, unless overweight or in stasis. Hovering bots, along with flying and legged bots, receive an evasion bonus from [[Reaction Control Systems]].\n\nCogmind's core propulsion (often referred to as \"core hover\") is mechanically distinct from hover units.\n\n[[Heading]]List of Hover Units[[/Heading]]\n[[PartGroupTable]]\nHover Units|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nUpkeep/Energy|\nUpkeep/Heat|\nPropulsion/Time/Move|\nPropulsion/Mod/Extra|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Burnout\n[[/PartGroupTable]]"
-  },
-  {
    "Name": "Hybrid Power",
    "Part Category": "Hybrid Power",
    "Content": "[[Heading]]List of Hybrid Power[[/Heading]][[PartGroupTable]]\nHybrid Power|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
@@ -8009,11 +8019,6 @@
     "Exp. Launcher Guidance Computer"
    ],
    "Content": "[[Heading]]List of Launcher Guidance Computers[[/Heading]]\n[[PartGroupTable]]\nLauncher Guidance Computers|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nEffect/Effect\n[[/PartGroupTable]]"
-  },
-  {
-   "Name": "Legs",
-   "Part Category": "Legs",
-   "Content": "Legs are [[Propulsion]] that strike a middle ground in terms of support, speed, and integrity. They are used by (and available from) common light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]]. Because of this, they are generally easy to acquire, although the legs that are dropped by these bots are not of the highest quality.\n\nWhile on legs, [[Cogmind]] is immune to damage from ramming hostile bots, and instead has a 20% chance per active leg slot to kick them out of the way (unless they are huge).\n\nWhile moving on legs, Cogmind is in the Running state, which increases evasion (unless overweight) but decreases ranged accuracy, by 5% per level of [[Momentum]]. Some legs, such as the [[Thunder Leg]], provide improve running bonuses. Legged bots, along with those using [[Flight Units|Flight]] and [[Hover Units]], receive an evasion bonus from [[Reaction Control Systems]].\n\nA few specific legs are capable of [[Special Propulsion Modes#Legs]], namely Martial and Shielding modes.\n\nLeg [[Study|Studies]] at [[Scanalyzer|Scanalyzers]] provide a -15 speed per move bonus.\n\n[[Heading]]List of Legs[[/Heading]]\n[[PartGroupTable]]\nLegs|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty|\nPropulsion/Special\n[[/PartGroupTable]]"
   },
   {
    "Name": "Light Power",
@@ -8085,6 +8090,10 @@
   },
   {
    "Name": "Multireflex Exoskeletons",
+   "Parts": [
+    "Multireflex Exoskeleton",
+    "Enh. Multireflex Exoskeleton"
+   ],
    "Content": "A [[Prototype Part|prototype]] subclass of [[Legs]] with a [[Special Propulsion Modes#Martial|special propulsion mode]] called \"Martial Mode\". Martial mode provides a few melee-oriented bonuses while engaged, which takes 3 turns to activate.They also have low coverage and quite high integrity compared to most other standard legs.\n\n[[Heading]]Martial Mode Bonuses[[/Heading]]\n[[Partial]]Martial Mode[[/Partial]]\n\n[[Heading]]List of Multireflex Exoskeletons[[/Heading]]\n[[PartGroupTable]]\nMultireflex Exoskeletons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty|\nPropulsion/Special\n[[/PartGroupTable]]"
   },
   {
@@ -8425,6 +8434,10 @@
   },
   {
    "Name": "Shield Legs",
+   "Parts": [
+    "Shield Leg",
+    "Hvy. Shield Leg"
+   ],
    "Content": "A subclass of [[Legs]] with a [[Special Propulsion Modes#Shielding|special propulsion mode]] called \"Shielding Mode\". Shielding mode provides increased coverage and a deflection bonus and takes 4 turns to activate.They also have both high coverage and integrity compared to most other standard legs.\n\n[[Heading]]Shielding Mode Bonuses[[/Heading]]\n[[Partial]]Shielding Mode[[/Partial]]\n\n[[Heading]]List of Shield Legs[[/Heading]]\n[[PartGroupTable]]\nShield Legs|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty|\nPropulsion/Special\n[[/PartGroupTable]]"
   },
   {
@@ -8722,6 +8735,14 @@
    "Content": "Traps are most often found in groups called arrays, and appear in a variety of layouts including rows, blocks or sparser \"minefields\". They are, however, usually triggered individually.\n\n\n[[Heading]]Lore[[/Heading]]\n[[Lore]]0b10 Records|Traps[[/Lore]]\n\n[[Heading]]Arrays[[/Heading]]\nTrap arrays vary in size, Trap type, and layout formations. Each Trap array contains 1-6 Traps, and is composed entirely of the same Traps. The type of trap that an arrays will be made of depends on the location. For example, [[EM Surge Trap|EM Surge Traps]] cannot appear in [[Materials]]. Trap arrays appear in several types of formations:\n[[List]]Door Trap - A 1-Trap array formation where the only trap is directly adjacent to a Door or an Emergency Access door.\n|Rows - Found in corridors, usually perpendicularly to the corridor's direction. The Traps will form one or more rows across the corridor, though some tiles of some of the rows may be skipped. When spotting a single trap in a corridor, it is usually fairly simple to guess the approximate location of other Traps in the array.\n|Minefield - Usually found in open areas or inside rooms. The Traps are strewn about chaotically, making their locations very unpredictable.\n|Prefab - Some prefabs contain Traps in preset formations or random but unusual formations. This can result in unexpected behavior, such as each of the Traps of a prefab being part of its own separate array.  \n|Other - Some Trap formations are uncommon and maybe unique to certain maps, making them difficult to recognize and categorize.[[/List]]\n\n[[Heading]]Triggering[[/Heading]]\nMoving over a trap does not always trigger it. The chance is instead determined by the form of [[Propulsion]]:\n[[Table]]\nMode|Probability|Probability ([[Stasis Trap|Stasis Traps]])\n||\n Overweight | 100% | 100%\n||\n [[Treads]] | 100% | 0%\n||\n [[Legs]] | 75% | 25%\n||\n [[Wheels]] | 50% | 50%\n||\n [[Hover Units|Hover]]/Core | 40% | 60%\n||\n [[Flight Units|Flight]] | 20% | 80%\n[[/Table]]\nStasis Traps are a special case and their chance to trigger for each Propulsion type is the opposite of regular traps (Flight ex: 100 - 20 = 80%).\nNote there are also multiple undocumented circumstances under which a trap may be triggered, not simply regular movement. Some other ways to trigger traps include: \n[[List]]When corrupted, it is possible to accidentally trigger allied traps when moving over them, with a [corruption %] chance of triggering.\n|Attempting to install a trap at a location that already contains a trap unknown to Cogmind will fail to install the new trap and trigger the old one, regardless of the old trap's faction.\n|It is possible to manually trigger known traps at Cogmind's current position, although doing this will attribute any explosions from explosive traps to Cogmind, unlike the methods listed above.\n|Failure to reprogram a Trap using a [[Melee Datajacks|Melee Datajack]] can rarely cause it to trigger.\n|EM explosions have a chance to trigger any traps they hit. [[Sub]](Note: The writer of this is not sure if an EM explosion attributed to Cogmind would cause explosive traps triggered that way to also be attributed Cogmind)[[/Sub]][[/List]]\n\nOnce triggered, the trap at that position is spent and will not trigger again. (Some traps exhibit special behavior in this regard.)\n\n\n[[Heading]]Detection[[/Heading]]\nCogmind has a 1% chance to detect each trap in view, checked every turn, and each active Trap Scanner and allied [[Drone Bays|Drone]] has a separate chance to detect Traps.\nSome other ways to detect traps include:\n[[List]]\nSuccessfully hacking [[GameText]][Locate Traps][[/GameText]]/Traps(Locate) at [[Terminal|Terminals]] will reveal all nearby trap arrays.\n|In [[Garrison|Garrisons]], hacking Download(Registry) will locate all traps within the Garrison, among other things.\n|[[Spoiler]]Using the [[GameText]]locate_traps[[/GameText]] on [[Operator|Operators]] with [[RIF]] in combination with a [[Datajacks|Datajack]] will reveal all trap arrays within a range of 30.[[/Spoiler]]\n|Collecting a pre-expiry [[Operator]] [[Data Core]] will reveal the location of nearby trap arrays.\n|Nearby allied Operators in range will reveal hidden traps within your field of vision.\n|Some [[0b10 Decoder Chips]] are capable of passively detecting traps over time.\n|Sources of Derelict intel can provide the location of all traps across an entire map.\n|Using the [[GameText]]find_chute[[/GameText]] on a [[K-01 Serf]] with a [[Datajacks|Datajack]] will reveal the closest [[Chute Trap]].[[/List]]\n\n\n[[Heading]]Removal[[/Heading]]\nThe simplest way to remove one or more traps is to destroy the section of floor housing them, for example using a [[Launchers|Launcher]]. Arrays of hostile traps can be permanently disarmed one array at a time via terminal hacking or [[Spoiler]][[RIF]]-hacking Operators[[/Spoiler]], and disarming traps on an individual basis is a possible side effect of attempting to hack one with an active melee [[Datajacks|Datajack]]. Successfully hacking [[Alarm Trap|Alarm Traps]] or [[Ambush Trap|Ambush Traps]] using a melee Datajack will always disarm them.\n\n\n[[Heading]]Reprogramming[[/Heading]]\nTraps can be reprogrammed through various means, including:\n[[List]]\nSuccessfully hacking [[GameText]][Reprogram Traps][[/GameText]]/Traps(Reprogram) at terminals will reveal and reprogram a nearby trap arrays within range.\n|[[Spoiler]]Using the [[GameText]]reprogram_traps[[/GameText]] on Operators with a Datajack in combination with RIF will reveal and reprogram the nearest trap array within a range of 30.[[/Spoiler]]\n|Attempting to moving into a known hostile trap with an active melee Datajack will instead make Cogmind attempt to hack it, with a base 10% to successfully do so, increased by [[Offensive Hackware]]. Successfully hacking a Trap will usually reprogram it, though this may sometimes disarm it. Successfully hacking [[Alarm Trap|Alarm Traps]] or [[Ambush Trap|Ambush Traps]] using a melee Datajack will always disarm them.\n|Having an active [[Trap Reconfigurator]] [[Exiles Vault Prototypes|Exile prototype]].\n[[/List]]\nFrom the [[https://www.gridsagegames.com/cogmind/manual.txt|official manual]]:\nBy default traps are programmed to trigger on detection of any foreign robot, a setting that can be modified via hacking. Known traps may be reprogrammed with an active melee Datajack by bumping them, and entire arrays of traps can be reprogrammed at once from nearby terminals. Reprogrammed traps will no longer recognize Cogmind or allies as a threat, instead reacting to local combat robots. As part of the new programming, each trap's sensitivity will also be set dangerously high, ensuring it will trigger whenever a hostile moves over it, regardless of propulsion.\n\n\n[[Heading]]Collection[[/Heading]]\nAn enterprising Cogmind can, with the use of a [[Trap Extractors|Trap Extractor]], extract and store or pick up friendly traps for their own use. However, [[Chute Trap|Chute Traps]], [[Alarm Trap|Alarm Traps]] and [[Ambush Trap|Ambush Traps]] cannot be extracted to begin with. Stasis Traps also exhibit special behavior; they can be extracted but cannot be stored inside a Trap Extractor, and they can still be extracted even after they were triggered, as long as the stasis field they produce hasn't been depleted.\n\nLast edited during Beta 15."
   },
   {
+   "Name": "Thunder Legs",
+   "Parts": [
+    "Thunder Leg",
+    "Imp. Thunder Leg"
+   ],
+   "Content": "A subclass of [[Legs]] that confers a special state called \"weaving\" to the wielder. Typical legs gain 5% evasion per momentum and 5% accuracy penalty per momentum while running when not overweight. Thunder legs double this bonus, providing up to 30% evasion when running at full momentum. Only a single Thunder Leg is needed to provide this effect. This effect is great in combination with [[Reaction Control Systems]] and [[Phase Shifters]] to significantly reduce hostiles' targeting capabilities while running.\n\n[[Heading]]List of Thunder Legs[[/Heading]]\n[[PartGroupTable]]\nThunder Legs|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty\n[[/PartGroupTable]]"
+  },
+  {
    "Name": "Treads",
    "Part Category": "Treads",
    "Content": "Treads are a type of [[Propulsion]] that have the highest support and the lowest speed. They are the most durable propulsion, but lower-tier units will still often be destroyed and replaced. They are commonly used by (and available from) [[Hauler|Haulers]] as well as heavy combat 0b10 bots, including [[Sentry|Sentries]], [[Heavy|Heavies]], and [[Behemoth|Behemoths]]. When active, treads confer immunity to knockback and reduce the accuracy penalty from recoil by 1 per active tread slot when firing a volley.\n\nThe slow movement speed of treads means [[Cogmind]] generally cannot outrun bots and will be forced to fight most encounters that it cannot avoid. Replacement treads can be difficult to obtain under duress since they are mostly equipped by powerful combat bots, and the best multislot treads are not commonly used by other bots until later in the game. In exchange, treads' high coverage and integrity (especially on mid- to late-game multislot treads), along with recoil reduction, allow them to support a combat bot and protect other parts. Treading bots that lack enough spare treads may choose a [[I]]half-track[[/I]] configuration, filling some propulsion slots with treads and some with [[Wheels]], as described in that article.\n\nAll multislot treads are capable of [[Special Propulsion Modes#siege mode|Siege Mode]], and some are capable of High Siege Mode. Most tread builds will transition entirely to multislot treads as soon as practicable, for their improved resilience and siege mode capability. A common place to make this transition is in [[Cetus]] after looting [[Centrium Heavy Treads]] from the [[Cetus Guard]]. Some other good spots to loot multislot treads are from [[C-40 Crusher|Crushers]] in [[Wastes]] and disabled [[A-27 Freighter|Freighters]] in [[Garrison|Garrisons]]\n\nWhile on treads, Cogmind is immune to damage from ramming hostile bots, and instead has a chance to crush them (unless they are large or huge or have greater than 50 core integrity). The chance to crush varies for each type of tread, but generally is 5% per slot.\n\nTread [[Study|Studies]] from [[Scanalyzer|Scanalyzers]] reduce the overweight penalty of treads by 50%.\n\n[[Heading]]List of Treads[[/Heading]]\n[[PartGroupTable]]\nTreads|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty|\nPropulsion/Special\n[[/PartGroupTable]]"
@@ -8769,6 +8790,16 @@
    "Name": "Vortex Weapons",
    "Part Category": "Vortex Weapons",
    "Content": "[[Heading]]List of Vortex Weapons[[/Heading]]\n[[PartGroupTable]]\nVortex Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage\n[[/PartGroupTable]]"
+  },
+  {
+   "Name": "VSS Legs",
+   "Parts": [
+    "VSS Leg",
+    "Imp. VSS Leg",
+    "Adv. VSS Leg",
+    "Exp. VSS Leg"
+   ],
+   "Content": "A subclass of [[Legs]] that have high speed and low coverage than standard legs. This comes at the tradeoff of lower integrity, coverage, and support than similarly rated parts, as well as a high energy cost. They are most notably used for several types of [[Specialist|Specialists]].\n\n[[Heading]]List of VSS Legs[[/Heading]]\n[[PartGroupTable]]\nVSS Legs|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty\n[[/PartGroupTable]]"
   },
   {
    "Name": "Weapon Cyclers",
@@ -9043,6 +9074,7 @@
   },
   {
    "Name": "Hover Units",
+   "Part Category": "Hover Units",
    "Content": "Hover units have fairly low support and high speed, but not so far to either extreme as [[Flight Units]]. Standard hover is fragile (but also not as much as flight units), though special types of hover like [[Cooled Hover Units|cooled hover]], [[Combat Hover Units|combat hover]], and [[Gyrokinetic Inverters]] are less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.\n\nMost hover builds will prefer some combination of cooled and combat hover units for a good mix of support, integrity, and speed. Cooled (Cld.) hover units can be [[Overload#propulsion|overloaded]], which confers better speed and mass support at the expense of higher heat and energy usage. Combat (Cmb.) hover units have higher integrity and support than other hover units but have somewhat slower movement speeds.\n\nLike flight units, hover units receive a bonus to movement speed when multiple are used at once, and are affected by drag from attached legs, [[Treads]], and [[Wheels]]. This bonus cannot bring the overall movement delay below 20 unless hover units are overloaded.\n\nHovering bots have a 5% evasion bonus, unless overweight or in stasis. Hovering bots, along with flying and legged bots, receive an evasion bonus from [[Reaction Control Systems]].\n\nCogmind's core propulsion (often referred to as \"core hover\") is mechanically distinct from hover units.\n\n[[Heading]]List of Hover Units[[/Heading]]\n[[PartGroupTable]]\nHover Units|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nUpkeep/Energy|\nUpkeep/Heat|\nPropulsion/Time/Move|\nPropulsion/Mod/Extra|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Burnout\n[[/PartGroupTable]]",
    "Groups": [
     "Backup Propulsion",
@@ -9110,6 +9142,15 @@
   },
   {
    "Name": "Legs",
+   "Groups": [
+    "Armored Legs",
+    "Composite Legs",
+    "Multireflex Exoskeletons",
+    "Shield Legs",
+    "Thunder Legs",
+    "VSS Legs"
+   ],
+   "Part Category": "Legs",
    "Content": "Legs are [[Propulsion]] that strike a middle ground in terms of support, speed, and integrity. They are used by (and available from) common light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]]. Because of this, they are generally easy to acquire, although the legs that are dropped by these bots are not of the highest quality.\n\nWhile on legs, [[Cogmind]] is immune to damage from ramming hostile bots, and instead has a 20% chance per active leg slot to kick them out of the way (unless they are huge).\n\nWhile moving on legs, Cogmind is in the Running state, which increases evasion (unless overweight) but decreases ranged accuracy, by 5% per level of [[Momentum]]. Some legs, such as the [[Thunder Leg]], provide improve running bonuses. Legged bots, along with those using [[Flight Units|Flight]] and [[Hover Units]], receive an evasion bonus from [[Reaction Control Systems]].\n\nA few specific legs are capable of [[Special Propulsion Modes#Legs]], namely Martial and Shielding modes.\n\nLeg [[Study|Studies]] at [[Scanalyzer|Scanalyzers]] provide a -15 speed per move bonus.\n\n[[Heading]]List of Legs[[/Heading]]\n[[PartGroupTable]]\nLegs|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty\n[[/PartGroupTable]]"
   },
   {
