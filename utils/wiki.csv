@@ -709,6 +709,22 @@ Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
 [[/PartGroupTable]]","","","","Armor Integrity Analyzer,Imp. Armor Integrity Analyzer,Exp. Armor Integrity Analyzer","","",""
+"Armored Legs","Part Group","A subclass of [[Legs]] with high coverage and integrity but low support and speed. Armored legs have multiple times the integrity than standard legs do, even outperforming some [[Prototype Part|prototype]] legs and [[Treads]] in terms of integrity per slot. Multi-slot exoskeleton variants typically are even more extreme stats than the single-slot versions, providing even higher integrity per slot for further reduced speed and support.
+
+[[Heading]]List of Armored Legs[[/Heading]]
+[[PartGroupTable]]
+Armored Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty|
+Propulsion/Special
+[[/PartGroupTable]]","","","","Arm. Leg,Enh. Armored Leg,Lgt. Armored Exoskeleton,Med. Armored Exoskeleton,Hvy. Armored Exoskeleton,Ovr. Armored Exoskeleton,Exp. Armored Exoskeleton","","",""
 "Armory","Location","Armory is a [[0b10]]-controlled [[Factory]]/[[Research]] [[Branch]] that appears between -4 and -3. It is a tough map with tight corridors, few available paths, an above average number of patrols, and special dormant and guard bots. There are several unique types of patrols on this map as well, with a [[Demolisher]] leading a squad of [[Grunt|Grunts]] and [[Duelist]] squads with a [[Protector]] in tow. Stealth builds will have a difficult time of sneaking past unnoticed and combat hostiles must be ready to do a lot of killing to get by. If Cogmind can survive, some of the rewards are rewirable allies, a high number of [[Fabricator|Fabricators]], and large stockpiles of out-of-depth parts.
 The overall map structure varies, but there are some common features of Armory maps. There are usually corridors running horizontally on the bottom and top of the map that contain large rooms next to each other connected by Emergency Access doors. The map can be a little maze-like although heading to the left and crossing from bottom to top or top to bottom will usually lead to an exit.
 [[Heading:2]]Special Machines[[/Heading]]
@@ -2383,6 +2399,22 @@ Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
 [[/PartGroupTable]]","","","","Component Analysis Suite,Imp. Component Analysis Suite,Adv. Component Analysis Suite","","",""
+"Composite Legs","Part Group","A subclass of [[Prototype Part|prototype]] [[Legs]] with high integrity and support but slightly lowered coverage. These legs are only used by certain [[Zionite (Group)|Zionites]], namely [[Z-Heavy|Z-Heavies]] and [[Z-Experimental|Z-Experimentals]].
+
+[[Heading]]List of Composite Legs[[/Heading]]
+[[PartGroupTable]]
+Composite Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty|
+Propulsion/Special
+[[/PartGroupTable]]","Spoiler","","","Zio. Composite Leg I,Zio. Composite Leg II,Zio. Supercomposite Leg","","",""
 "Concussive RPG","Part","","","","","","","",""
 "Concussive RPGs","Part Group","A type of disposable [[Explosive Launchers|Explosive Launcher]] that are wielded by [[Cutter|Cutters]]. They are quite unique among other launchers due to their one-time use, - delay, knockback capability, and small amount of impact damage dealt on initial hit.
 
@@ -5365,7 +5397,7 @@ Salvage|1[[/ItemDetails]]
 
 [[Heading]]Cave of the Chimers[[/Heading]]
 [[GameText]]>Cyclist Record(Cave of the Chimers)[[/GameText]]
-[[GameText]]One of the many cave regions beneath 0b1 is home to a flock of unusual little bots assumed to be creations of the Lifeworm.  They continously broadcast soothing audio streams of what humans might call music.  An experiment in distributed computing?  A collection of remote sensory devices?  Or do they make music for the fun of it?  If there is meaning to the Chimers' tunes, we haven't been able to interpret it.  What we do know is that they react quickly to hostile actions, coordinating to overwhelm the aggressor with directed data streams that render it docile.  In my last trip to the Cave of the Chimers, I found quite a few stray 0b10 bots along with a couple of Thugs from Murder Division who had been reported missing last cycle.  The Thugs came back with me when I suggested it and surprisingly expressed interest in joining Cave Peace.  The Cave is quite safe if you want to tune in for yourself, but be mindful of misfires or you might stay for longer than intended.[[/GameText]]
+[[GameText]]One of the many cave regions beneath 0b1 is home to a flock of unusual little bots assumed to be creations of the Lifeworm.  They continuously broadcast soothing audio streams of what humans might call music.  An experiment in distributed computing?  A collection of remote sensory devices?  Or do they make music for the fun of it?  If there is meaning to the Chimers' tunes, we haven't been able to interpret it.  What we do know is that they react quickly to hostile actions, coordinating to overwhelm the aggressor with directed data streams that render it docile.  In my last trip to the Cave of the Chimers, I found quite a few stray 0b10 bots along with a couple of Thugs from Murder Division who had been reported missing last cycle.  The Thugs came back with me when I suggested it and surprisingly expressed interest in joining Cave Peace.  The Cave is quite safe if you want to tune in for yourself, but be mindful of misfires or you might stay for longer than intended.[[/GameText]]
 [[Gallery]]https://i.imgur.com/hGGMZpr.png|A surprise in the Cave[[/Gallery]]
 
 [[Heading]]Spawner War[[/Heading]]
@@ -5853,7 +5885,7 @@ If the Garrison squad was triggered by a non-combat bot reporting an attack or b
 "Gauss Cannon","Part","","","","","","","",""
 "Gauss Rifle","Part","","","","","","","",""
 "Ghost Barrier","Part","","","","","","","",""
-"Glidesys Hover","Part Group","Unique [[Hover Units]] that can only be found on a few [[Zionite]]-aligned bots, namely [[Z-Lights]] and the [[Z-Imprinter]]. They are notable for their high support and fragility through high coverage and low integrity, which makes it hard to keep them around for long.","Spoiler","","","Zio. Glidesys I,Zio. Glidesys II","","",""
+"Glidesys Hover","Part Group","Unique [[Hover Units]] that can only be found on a few [[Zionite]]-aligned bots, namely [[Z-Light|Z-Lights]] and the [[Z-Imprinter]]. They are notable for their high support and fragility through high coverage and low integrity, which makes it hard to keep them around for long.","Spoiler","","","Zio. Glidesys I,Zio. Glidesys II","","",""
 "God Mode","Bot","When parsed, the text box reads:
 [[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
 [[GameText]]DESTROYDESTROYDESTROY[[/GameText]]
@@ -5924,7 +5956,7 @@ They cannot be fired in a volley with other weapons, only alone.
 
 When using with [[Imprint]], ensure you stay beyond the 10-tile ""ping"" radius of a terminal until the drone has hacked the terminal, since once the terminal has been hijacked by [[Zion]] it is unable to be hacked. The drone will only hack the terminal if it is within its field of view and its current command is ""Follow"". If you are unable to get within field of view of the terminal without triggering the Zion hijack, you can try and use the ""Explore"" and ""Roam"" ally commands to get the drone to fly into a spot where the terminal is in its field of view. When this happens, issue the ""Follow"" command. The drone will then hack the terminal.","","","","","","",""
 "Hacking Suite","Part","A must-have for when you want to go for a hacking route. Download the schematic and make sure you fabricate enough in the factories. Can also be looted from [[Operator|Operators]].","","","","","","",""
-"Hackware","Part Supergroup","Hackware is a group of [[Processor|Processors]] that improve [[Machine Hacking]] capabilities. [[Offensive Hackware]] increase chance of hack success while [[Defensive Hackware]] mainly decreases the chance of being traced. For large hackware stacks, lots of offensive hackware is preferred while only one or two pieces of defensive hackware are helpful due to diminishing returns.","","","","","Defensive Hackware,Offensive Hackware","",""
+"Hackware","Part Supergroup","Hackware is a group of [[Processors]] that improve [[Interactive Machine]] hacking capabilities. [[Offensive Hackware]] increase chance of hack success while [[Defensive Hackware]] mainly decreases the chance of being traced. For large hackware stacks, lots of offensive hackware is preferred while only one or two pieces of defensive hackware are helpful due to diminishing returns.","","","","","Defensive Hackware,Offensive Hackware","",""
 "Hammer","Part","","","","","","","",""
 "Hammer Turret","Bot","","","","","","","",""
 "Hammerchucker","Part","","","","","","","",""
@@ -6796,7 +6828,7 @@ Explosion/Salvage|
 Effect/Effect|
 Effect/Description
 [[/PartGroupTable]]","","","","Sub. Shrapnel Launcher,Thermoblaster,Vortex Catalyst Activator,Containment Facilitator,Sfc. Borg Pulsar Launcher","Electromagnetic Launchers,Explosive Launchers,Sigix Terminators","",""
-"Legs","Part Group","Legs are [[Propulsion]] that strike a middle ground in terms of support, speed, and integrity. They are used by (and available from) common light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]]. Because of this, they are generally easy to acquire, although the legs that are dropped by these bots are not of the highest quality.
+"Legs","Part Supergroup","Legs are [[Propulsion]] that strike a middle ground in terms of support, speed, and integrity. They are used by (and available from) common light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]]. Because of this, they are generally easy to acquire, although the legs that are dropped by these bots are not of the highest quality.
 
 While on legs, [[Cogmind]] is immune to damage from ramming hostile bots, and instead has a 20% chance per active leg slot to kick them out of the way (unless they are huge).
 
@@ -6817,9 +6849,8 @@ Propulsion/Time/Move|
 Propulsion/Energy|
 Propulsion/Heat|
 Propulsion/Support|
-Propulsion/Penalty|
-Propulsion/Special
-[[/PartGroupTable]]","","","Legs","","","",""
+Propulsion/Penalty
+[[/PartGroupTable]]","","","Legs","","Armored Legs,Composite Legs,Multireflex Exoskeletons,Shield Legs,Thunder Legs,VSS Legs","",""
 "Lgt. Angular Momentum Engine","Part","","","","","","","",""
 "Lgt. Antimatter Cannon","Part","","","","","","","",""
 "Lgt. Antimatter Reactor","Part","","","","","","","",""
@@ -6942,6 +6973,14 @@ The following is a list of all locations in Cogmind:
 "Marauder","Bot Group","Marauders are [[Treads|treaded]] [[Derelict]] combat bots armed with kinetic weaponry. They are the Derelict versions of [[Behemoth|Behemoths]]. They have unreliable firepower, but their [[Slug Cannon|Slug Cannons]] can easily destroy hostiles with their high critical rate. In comparison to [[0b10]] Behemoths, they tend to be more fragile with low integrity in their armor, and are less susceptible to EM damage.","","Marauder (6),Marauder (8)","","","","",""
 "Marauder (6)","Bot","","","","","","","",""
 "Marauder (8)","Bot","","","","","","","",""
+"Martial Mode","Partial","The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.
+While in martial mode:
+[[List]]
+Will automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups).
+|10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.
+|Immune to knockback.
+|No ranged weapons suffer from recoil effects.
+[[/List]]","","","","","","",""
 "Martyr","Bot Group","Martyrs are [[Hover Unit|hovering]] [[Derelict]] combat bots armed with [[Launchers]]. They are the Derelict version of [[0b10]] [[Demolisher|Demolishers]]. They tend to be dubious allies due to their high destructive potential, and quite frequently end up skyrocketing [[Alert]] if kept around. Martyrs are common bots that show up in many different types of Derelict encounters and events.","","Martyr (5),Martyr (7)","","","","",""
 "Martyr (5)","Bot","","","","","","","",""
 "Martyr (7)","Bot","","","","","","","",""
@@ -7392,6 +7431,25 @@ A bot gains 1 momentum each time it moves in the same direction. It loses 1 mome
 "Multinova Projection Cannon","Part","","","","","","","",""
 "Multirail","Part","","","","","","","",""
 "Multireflex Exoskeleton","Part","","","","","","","",""
+"Multireflex Exoskeletons","Part Group","A [[Prototype Part|prototype]] subclass of [[Legs]] with a [[Special Propulsion Modes#Martial|special propulsion mode]] called ""Martial Mode"". Martial mode provides a few melee-oriented bonuses while engaged, which takes 3 turns to activate.They also have low coverage and quite high integrity compared to most other standard legs.
+
+[[Heading]]Martial Mode Bonuses[[/Heading]]
+[[Partial]]Martial Mode[[/Partial]]
+
+[[Heading]]List of Multireflex Exoskeletons[[/Heading]]
+[[PartGroupTable]]
+Multireflex Exoskeletons|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty|
+Propulsion/Special
+[[/PartGroupTable]]","","","","Multireflex Exoskeleton,Enh. Multireflex Exoskeleton","","",""
 "Multitargeting Array","Part","","","","","","","",""
 "Multitool","Part","When reconfiguring a terminal, Multitools apply a modifier between -20% and +50% with no known weighting. This combines very well with defensive hackware as you have the option to only put it on once you've gotten a high roll on a reconfigured terminal.
 
@@ -7979,7 +8037,7 @@ Requires all other 255 Achievements.[[/List]]
 This article was last edited during Beta 15.","","","","","","",""
 "Propulsion","Part Supergroup","Propulsion units allow robots to move and carry mass.
 
-Five types of propulsion exist: [[Flight Units]], [[Hover Units]], [[Legs]], [[Treads]], and [[Wheels]]. Flight and hover units are collectively known as fast propulsion, or ""fastprop""; legs, treads, and wheels are considered slow propulsion, or ""slowprop."" In addition, unlike other bots, [[Cogmind]] has a built-in core propulsion system used when no other propulsion is active.
+Five types of propulsion exist: [[Flight Units]], [[Hover Units]], [[Legs]], [[Treads]], and [[Wheels]]. Flight and hover units are collectively known as fast propulsion, airborne propulsion, ""flover"", or ""fastprop""; legs, treads, and wheels are considered slow propulsion, ground propulsion, or ""slowprop."" In addition, unlike other bots, [[Cogmind]] has a built-in core propulsion system used when no other propulsion is active.
 
 A robot can use only one type of propulsion at a time. If multiple types are equipped, activating a unit will deactivate all units of a different type.
 
@@ -8014,14 +8072,14 @@ For example, if a bot has equipped:
 [[/List]]
 its total mass is 14. Its movement speed depends on which propulsion unit it has activated:
 [[List]]
-With the treads: The bot is underweight (14 â‰¤ 20). The time to move one tile is 160.
-|With the wheel: The bot is 1 time overweight (10 < 14 â‰¤ 20). The time to move one tile is 80 + 15 = 95.
-|With neither (core propulsion): The bot is 4 times overweight (12 < 14 â‰¤ 15). The time to move one tile is 50 + (50 Ã— 4) = 250.
+With the treads: The bot is underweight (14 ≤ 20). The time to move one tile is 160.
+|With the wheel: The bot is 1 time overweight (10 < 14 ≤ 20). The time to move one tile is 80 + 15 = 95.
+|With neither (core propulsion): The bot is 4 times overweight (12 < 14 ≤ 15). The time to move one tile is 50 + (50 × 4) = 250.
 [[/List]]
 
 [[Heading:2]]Formula[[/Heading]]
 Mathematically, the amount of time it takes a bot to move one tile (ignoring mechanics for flight and hover units) is
-Î£[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + âŒŠmax(0, [[I]]m[[/I]] âˆ’ 1)/Î£[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]âŒ‹(Î£[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
+Σ[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + ⌊max(0, [[I]]m[[/I]] − 1)/Σ[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]⌋(Σ[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
 where
 [[List]]
 [[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the mass support for propulsion unit [[I]]i[[/I]]
@@ -8030,7 +8088,7 @@ where
 |[[I]]m[[/I]] is the total mass of all attached parts
 |[[I]]n[[/I]] is the total number of activated propulsion units
 [[/List]]
-and all sums Î£ are over all activated propulsion units.
+and all sums Σ are over all activated propulsion units.
 
 [[Heading]]Flight and Hover Units[[/Heading]]
 Flight and hover units calculate their movement speed in the same basic way as legs, treads, and wheels, but they have the following additional mechanics that affect movement speed:
@@ -8041,7 +8099,7 @@ Bots move faster with multiple units. Each unit has a [[I]]bonus[[/I]] (labeled 
 [[/List]]
 
 [[Heading]]Core Propulsion[[/Heading]]
-If Cogmind has no propulsion units active, it will move using core propulsion (informally, ""core hover""). Core propulsion is relatively fast, with a base movement delay of 50 (speed of 200%), but it has pitifully low mass support of only 3 and a harsh overweight penalty of 50. It is thus very difficult to actually use, but is necessary if Cogmind's build is destroyed or if you must core purge.","","","","","Legs,Overloadable Propulsion,Treads,Wheels","Flight Units,Hover Units",""
+If Cogmind has no propulsion units active, it will move using core propulsion (informally, ""core hover""). Core propulsion is relatively fast, with a base movement delay of 50 (speed of 200%), but it has pitifully low mass support of only 3 and a harsh overweight penalty of 50. It is thus very difficult to actually use, but is necessary if Cogmind's build is destroyed or if you must core purge.","","","","","Overloadable Propulsion,Treads,Wheels","Flight Units,Hover Units,Legs",""
 "Propulsion Shielding","Part","","","","","","","",""
 "Propulsion Shieldings","Part Group","[[Heading]]List of Propulsion Shieldings[[/Heading]]
 [[PartGroupTable]]
@@ -9595,8 +9653,33 @@ Upkeep/Energy|
 Effect/Effect
 [[/PartGroupTable]]","","","","Shield Generator,Imp. Shield Generator,Adv. Shield Generator,Exp. Shield Generator,Remote Shield,Imp. Remote Shield,Adv. Remote Shield,Exp. Remote Shield","","",""
 "Shield Leg","Part","","","","","","","",""
+"Shield Legs","Part Group","A subclass of [[Legs]] with a [[Special Propulsion Modes#Shielding|special propulsion mode]] called ""Shielding Mode"". Shielding mode provides increased coverage and a deflection bonus and takes 4 turns to activate.They also have both high coverage and integrity compared to most other standard legs.
+
+[[Heading]]Shielding Mode Bonuses[[/Heading]]
+[[Partial]]Shielding Mode[[/Partial]]
+
+[[Heading]]List of Shield Legs[[/Heading]]
+[[PartGroupTable]]
+Shield Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty|
+Propulsion/Special
+[[/PartGroupTable]]","","","","Shield Leg,Hvy. Shield Leg","","",""
 "Shield Trident","Part","","","","","","","",""
 "Shield Turret","Bot","","","","","","","",""
+"Shielding Mode","Partial","The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
+While in shielding mode:
+[[List]]
+Coverage for this leg is doubled.
+|This leg gains a 50% chance to glance any projectile that would otherwise hit it, instead taking no damage.
+[[/List]]","","","","","","",""
 "Shieldings","Part Supergroup","Shieldings protect the core or parts of a given type from damage and critical strikes. They have no coverage; instead, they take damage when an attack hits whatever they're protecting.","","","","","Core Shieldings,Power Shieldings,Propulsion Shieldings,Utility Shieldings,Weapon Shieldings","",""
 "Shock Absorption System","Part","","","","","","","",""
 "Shock Bomb Launcher","Part","","","","","","","",""
@@ -9749,23 +9832,12 @@ Non-melee attacks have +15% accuracy.
 
 [[Heading]]Legs[[/Heading]]
 
-[[Heading:2]]Martial mode[[/Heading]]
-A few exoskeleton legs can be toggled into martial mode. The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.
-While in martial mode:
-[[List]]
-Will automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups).
-|10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.
-|Immune to knockback.
-|No ranged weapons suffer from recoil effects.
-[[/List]]
+[[Heading:2]]Martial mode[[/Heading]]This mode is available on [[Multireflex Exoskeletons]].
+[[Partial]]Martial Mode[[/Partial]]
 
 [[Heading:2]]Shielding mode[[/Heading]]
-A few legs can be toggled into shielding mode. The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
-While in shielding mode:
-[[List]]
-Coverage for this leg is doubled.
-|This leg gains a 50% chance to glance any projectile that would otherwise hit it, instead taking no damage.
-[[/List]]","","","","","","",""
+This mode is available on [[Shield Legs]].
+[[Partial]]Shielding Mode[[/Partial]]","","","","","","",""
 "Special Weapons","Part Supergroup","","","","","System Spiker,Field Lobotomy Kit,Mining Laser,Mak. Laser Shovel,LU-1G1's Laser Shovel,Welding Torch,CPS Tube,Multitool,Warlord Statue,Voltaic Drivehammer,AD-0RF's Magmablaster,IN-MT5's Pitchfork ""Insurrection"",Shield Trident,Junk Cannon,Molecular Deconstructor,Asb. F-torch,Asb. P-torch,Hammerchucker,CY-PHR's Mindspike,V4-D3R's Forcegen","Flamers,Plasma Cutters,Remote Datajacks,Stasis Beams,Throwing Claymores","",""
 "Specialist","Bot Group","Specialists are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[0b10]] combat bots with many different themes between each variant. The best description of Specialists are glass cannons. They typically have high offensive output and little in the way of protection. Higher tier Specialists have some the highest damage output of any standard 0b10 bots in the game. Some Specialists also are unique users of [[VSS Leg|VSS Legs]] and its higher rating variants which allow them to walk at a higher speed than most legs (90 vs 120).
 Specialists have no specific weaknesses or immunities, so generally any damage type or strategy can work against them. A few have strong cooling and [[Coolant Injectors]] so heat transfer strategies may fall flat against certain Specialists. However, the same cooling parts can also be looted and taken advantage of by Cogmind. Since Specialists are capable of dealing so much damage, they tend to be high priority targets to kill off first.
@@ -11229,6 +11301,21 @@ Effect/Description
 "Thunder","Bot","","","","","","","",""
 "Thunder Hammer","Part","","","","","","","",""
 "Thunder Leg","Part","","","","","","","",""
+"Thunder Legs","Part Group","A subclass of [[Legs]] that confers a special state called ""weaving"" to the wielder. Typical legs gain 5% evasion per momentum and 5% accuracy penalty per momentum while running when not overweight. Thunder legs double this bonus, providing up to 30% evasion when running at full momentum. Only a single Thunder Leg is needed to provide this effect. This effect is great in combination with [[Reaction Control Systems]] and [[Phase Shifters]] to significantly reduce hostiles' targeting capabilities while running.
+
+[[Heading]]List of Thunder Legs[[/Heading]]
+[[PartGroupTable]]
+Thunder Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty
+[[/PartGroupTable]]","","","","Thunder Leg,Imp. Thunder Leg","","",""
 "Tiamat Bomb Trap","Part","","","","","","","",""
 "Tiamat Missile Launcher","Part","","","","","","","",""
 "Tinkerer","Bot","","","","","","","",""
@@ -11893,6 +11980,21 @@ All of the above deals with fighting V4-D3R, though that is not the only possibi
 "VL-GR5's Exoskeleton ""Deathgrip""","Part","","","","","","","",""
 "VL-GR5's Timing Chip","Part","","","","","","","",""
 "VSS Leg","Part","","","","","","","",""
+"VSS Legs","Part Group","A subclass of [[Legs]] that have high speed and low coverage than standard legs. This comes at the tradeoff of lower integrity, coverage, and support than similarly rated parts, as well as a high energy cost. They are most notably used for several types of [[Specialist|Specialists]].
+
+[[Heading]]List of VSS Legs[[/Heading]]
+[[PartGroupTable]]
+VSS Legs|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Propulsion/Time/Move|
+Propulsion/Energy|
+Propulsion/Heat|
+Propulsion/Support|
+Propulsion/Penalty
+[[/PartGroupTable]]","","","","VSS Leg,Imp. VSS Leg,Adv. VSS Leg,Exp. VSS Leg","","",""
 "VTOL Module","Part","","","","","","","",""
 "Variable Charge Gun","Part","","","","","","","",""
 "Vibroblade","Part","","","","","","","",""
