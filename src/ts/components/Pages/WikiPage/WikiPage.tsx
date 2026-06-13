@@ -386,14 +386,7 @@ function addPartial(addEntry: (entry: WikiEntry) => void, allEntries: Map<string
             spoiler = "Spoiler";
         }
 
-        const entry = new WikiEntry(
-            [],
-            [],
-            partialEntry.Content,
-            "Partial/" + partialEntry.Name,
-            spoiler,
-            "Partial",
-        );
+        const entry = new WikiEntry([], [], partialEntry.Content, "Partial/" + partialEntry.Name, spoiler, "Partial");
 
         addEntry(entry);
     }
@@ -835,7 +828,7 @@ function WikiNavigationBar({
                             console.log(`Validating ${i++}/${allEntries.size} ${entry.name}`);
                         }
 
-                        const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData);
+                        const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData, "");
 
                         const promises: Promise<any>[] = [];
 
@@ -993,7 +986,7 @@ export default function WikiPage() {
         }
 
         if (entry !== undefined) {
-            const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData);
+            const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData, hashLocation);
             parsedNode = parseResult.node;
             parsingErrors = parseResult.errors;
         }

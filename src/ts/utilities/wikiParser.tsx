@@ -1,5 +1,6 @@
 import { ColumnDef, GroupColumnDef } from "@tanstack/react-table";
 import { Fragment, ReactNode } from "react";
+import { useHashLocation } from "wouter/use-hash-location";
 
 import lore from "../../json/lore.json";
 import hacks from "../../json/machine_hacks.json";
@@ -33,7 +34,6 @@ import {
 } from "./common";
 import { calculateHackPercentages } from "./hackUtilities";
 import { allPartColumnDefs } from "./partColumnDefs";
-import { useHashLocation } from "wouter/use-hash-location";
 
 // Output group types
 // Grouped can be in the same <p> block
@@ -202,10 +202,9 @@ export function createContentHtml(
     headingLink: boolean,
     itemData: ItemData,
     botData: BotData,
+    location: string,
 ): { node: ReactNode; errors: string[]; images: Set<string> } {
     // Process each section into the same output groups
-    const [location] = useHashLocation();
-
     const state = new ParserState(
         true,
         allEntries,
@@ -476,8 +475,9 @@ export function parseEntryContent(
     spoiler: Spoiler,
     itemData: ItemData,
     botData: BotData,
+    location: string,
 ) {
-    const parseResult = createContentHtml(entry, allEntries, spoiler, false, itemData, botData);
+    const parseResult = createContentHtml(entry, allEntries, spoiler, false, itemData, botData, location);
 
     if (parseResult.errors.length > 0) {
         console.log(`Errors while parsing ${entry.name}`);
@@ -1563,7 +1563,7 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
     }
 
     const linkIcon = state.allowHeadingLinks && <LinkIcon href={`#${id}`} />;
-    const extraClasses = id === state.location.substring(1) ? " wiki-heading-current-location" : ""
+    const extraClasses = id === state.location.substring(1) ? " wiki-heading-current-location" : "";
 
     if (type === "1") {
         state.output.push({
