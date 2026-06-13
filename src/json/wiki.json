@@ -8661,14 +8661,6 @@
    ]
   },
   {
-   "Name": "Thunder Legs",
-   "Parts": [
-    "Thunder Leg",
-    "Imp. Thunder Leg"
-   ],
-   "Content": "A subclass of [[Legs]] that confers a special state called \"weaving\" to the wielder. Typical legs gain 5% evasion per momentum and 5% accuracy penalty per momentum while running when not overweight. Thunder legs double this bonus, providing up to 30% evasion when running at full momentum. Only a single Thunder Leg is needed to provide this effect. This effect is great in combination with [[Reaction Control Systems]] and [[Phase Shifters]] to significantly reduce hostiles' targeting capabilities while running.\n\n[[Heading]]List of Thunder Legs[[/Heading]]\n[[PartGroupTable]]\nThunder Legs|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty\n[[/PartGroupTable]]"
-  },
-  {
    "Name": "Tractor Beams",
    "Parts": [
     "Tractor Beam",
@@ -8760,16 +8752,6 @@
     "Exp. Utility Shielding"
    ],
    "Content": "[[Heading]]List of Utility Shieldings[[/Heading]]\n[[PartGroupTable]]\nUtility Shieldings|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nEffect/Effect\n[[/PartGroupTable]]"
-  },
-  {
-   "Name": "VSS Legs",
-   "Content": "A subclass of [[Legs]] that have high speed and low coverage than standard legs. This comes at the tradeoff of lower integrity, coverage, and support than similarly rated parts, as well as a high energy cost. They are most notably used for several types of [[Specialist|Specialists]].\n\n[[Heading]]List of VSS Legs[[/Heading]]\n[[PartGroupTable]]\nVSS Legs|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty\n[[/PartGroupTable]]",
-   "Parts": [
-    "VSS Leg",
-    "Imp. VSS Leg",
-    "Adv. VSS Leg",
-    "Exp. VSS Leg"
-   ]
   },
   {
    "Name": "VSS Legs",
