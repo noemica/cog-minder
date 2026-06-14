@@ -156,7 +156,8 @@ for csv_obj in wiki_csv.values():
 # Sort all lists
 lists = [wiki_json['Bots'], wiki_json['Bot Groups'], wiki_json['Bot Supergroups'],
          wiki_json['Parts'], wiki_json['Part Groups'], wiki_json['Part Supergroups'], 
-         wiki_json['Locations'], wiki_json['Other'], wiki_json['Partial']]
+         wiki_json['Locations'], wiki_json['Other'], wiki_json['Partial'], 
+         wiki_json['Redirects']]
 for l in lists:
     l.sort(key=lambda x: x['Name'])
 
