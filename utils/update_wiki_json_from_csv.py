@@ -89,6 +89,8 @@ for csv_obj in wiki_csv.values():
         json_list = wiki_json['Other']
     elif csv_obj['Page Type'] == 'Partial':
         json_list = wiki_json['Partial']
+    elif csv_obj['Page Type'] == 'Redirect':
+        json_list = wiki_json['Redirects']
     else:
         print('Found csv object without a valid type {}'.format(
             csv_obj['Name']))
@@ -100,7 +102,7 @@ for csv_obj in wiki_csv.values():
             # Found existing item, update values
             updated = False
             content = unescape(csv_obj['Content'])
-            if json_item['Content'] != content:
+            if csv_obj['Page Type'] != 'Redirect' and json_item['Content'] != content:
                 updated = True
                 json_item['Content'] = content
 
@@ -125,6 +127,9 @@ for csv_obj in wiki_csv.values():
 
             if csv_obj['Page Type'] == 'Other':
                 updated |= update_json_list_value(json_item, csv_obj, 'Subpages')
+
+            if csv_obj['Page Type'] == 'Redirect':
+                updated |= update_json_value(json_item, csv_obj, 'Target')
 
             if updated:
                 updated_pages.append(json_item['Name'])

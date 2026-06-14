@@ -616,9 +616,21 @@ function addPartSupergroups(
 
 function addRedirect(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, WikiEntry>) {
     for (const redirect of wiki.Redirects) {
+        let spoiler = (redirect.Spoiler as Spoiler) || "None";
+
         const split = redirect.Target.split("#");
-        if (!allEntries.has(split[0])) {
+        const targetEntry = allEntries.get(split[0]);
+        if (targetEntry === undefined) {
             console.log(`Found bad redirect target ${split[0]}`);
+            continue;
+        }
+
+        if (
+            (targetEntry.spoiler !== "None" && spoiler === "None") ||
+            (targetEntry.spoiler === "Redacted" && spoiler === "Spoiler")
+        ) {
+            // Promote spoiler level to target page spoiler level if unset or lower
+            spoiler = targetEntry.spoiler;
         }
 
         if (split.length > 1) {
@@ -630,7 +642,7 @@ function addRedirect(addEntry: (entry: WikiEntry) => void, allEntries: Map<strin
             redirect.Target = `${split[0]}#${createIdFromText(split[1])}`;
         }
 
-        addEntry(new WikiEntry([], [], "", redirect.Name, redirect["Spoiler"], "Redirect", redirect.Target));
+        addEntry(new WikiEntry([], [], "", redirect.Name, spoiler, "Redirect", redirect.Target));
     }
 }
 

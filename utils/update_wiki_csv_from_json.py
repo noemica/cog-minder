@@ -29,6 +29,20 @@ parser.add_argument(
 args = parser.parse_args()
 force = args.force
 
+def update_field(field_name, page_name, json_obj):
+    if field_name in json_obj:
+        wiki_csv[page_name][field_name] = json_obj[field_name]
+    elif field_name in wiki_csv[page_name]:
+        wiki_csv[page_name][field_name] = ''
+
+
+def update_field_array(field_name, page_name, json_obj):
+    if field_name in json_obj:
+        wiki_csv[page_name][field_name] = ','.join(json_obj[field_name])
+    elif field_name in wiki_csv[page_name]:
+        wiki_csv[page_name][field_name] = ''
+
+
 # Update CSV from JSON
 for bot_group in wiki_json['Bots']:
     group_name = bot_group['Name']
@@ -50,8 +64,7 @@ for bot_group in wiki_json['Bot Groups']:
         wiki_csv[group_name]['Page Type'] = 'Bot Group'
         wiki_csv[group_name]['Bots'] = ','.join(bot_group['Bots'])
         wiki_csv[group_name]['Content'] = bot_group['Content']
-        if 'Spoiler' in bot_group:
-            wiki_csv[group_name]['Spoiler'] = bot_group['Spoiler']
+        update_field('Spoiler', group_name, bot_group)
 
         csv_entries.remove(group_name)
     else:
@@ -69,17 +82,10 @@ for bot_group in wiki_json['Bot Supergroups']:
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Bot Supergroup'
         wiki_csv[group_name]['Content'] = bot_group['Content']
-        if 'Spoiler' in bot_group:
-            wiki_csv[group_name]['Spoiler'] = bot_group['Spoiler']
-        
-        if 'Bots' in bot_group:
-            wiki_csv[group_name]['Bots'] = ','.join(bot_group['Bots'])
-
-        if 'Groups' in bot_group:
-            wiki_csv[group_name]['Groups'] = ','.join(bot_group['Groups'])
-
-        if 'Supergroups' in bot_group:
-            wiki_csv[group_name]['Supergroups'] = ','.join(bot_group['Supergroups'])
+        update_field('Spoiler', group_name, bot_group)
+        update_field_array('Bots', group_name, bot_group)
+        update_field_array('Groups', group_name, bot_group)
+        update_field_array('Supergroups', group_name, bot_group)
 
         csv_entries.remove(group_name)
     else:
@@ -116,14 +122,9 @@ for part_group in wiki_json['Part Groups']:
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Part Group'
         wiki_csv[group_name]['Content'] = part_group['Content']
-        if 'Spoiler' in part_group:
-            wiki_csv[group_name]['Spoiler'] = part_group['Spoiler']
-        
-        if 'Parts' in part_group:
-            wiki_csv[group_name]['Parts'] = ','.join(part_group['Parts'])
-
-        if 'Part Category' in part_group:
-            wiki_csv[group_name]['Part Category'] = part_group['Part Category']
+        update_field('Spoiler', group_name, part_group)
+        update_field_array('Parts', group_name, part_group)
+        update_field('Part Category', group_name, part_group)
 
         csv_entries.remove(group_name)
     else:
@@ -145,17 +146,10 @@ for part_group in wiki_json['Part Supergroups']:
     if group_name in wiki_csv:
         wiki_csv[group_name]['Page Type'] = 'Part Supergroup'
         wiki_csv[group_name]['Content'] = part_group['Content']
-        if 'Spoiler' in part_group:
-            wiki_csv[group_name]['Spoiler'] = part_group['Spoiler']
-        
-        if 'Parts' in part_group:
-            wiki_csv[group_name]['Parts'] = ','.join(part_group['Parts'])
-
-        if 'Groups' in part_group:
-            wiki_csv[group_name]['Groups'] = ','.join(part_group['Groups'])
-
-        if 'Supergroups' in part_group:
-            wiki_csv[group_name]['Supergroups'] = ','.join(part_group['Supergroups'])
+        update_field('Spoiler', group_name, part_group)
+        update_field_array('Parts', group_name, part_group)
+        update_field_array('Groups', group_name, part_group)
+        update_field_array('Supergroups', group_name, part_group)
 
         csv_entries.remove(group_name)
     else:
@@ -178,8 +172,7 @@ for location in wiki_json['Locations']:
     if location_name in wiki_csv:
         wiki_csv[location_name]['Page Type'] = 'Location'
         wiki_csv[location_name]['Content'] = location['Content']
-        if 'Spoiler' in location:
-            wiki_csv[location_name]['Spoiler'] = location['Spoiler']
+        update_field('Spoiler', location_name, location)
 
         csv_entries.remove(location_name)
     else:
@@ -196,11 +189,8 @@ for other in wiki_json['Other']:
     if other_name in wiki_csv:
         wiki_csv[other_name]['Page Type'] = 'Other'
         wiki_csv[other_name]['Content'] = other['Content']
-        if 'Spoiler' in other:
-            wiki_csv[other_name]['Spoiler'] = other['Spoiler']
-
-        if 'Subpages' in other:
-            wiki_csv[other_name]['Subpages'] = ','.join(other['Subpages'])
+        update_field('Spoiler', other_name, other)
+        update_field_array('Subpages', other_name, other)
 
         csv_entries.remove(other_name)
     else:
@@ -218,8 +208,7 @@ for partial in wiki_json['Partial']:
     if partial_name in wiki_csv:
         wiki_csv[partial_name]['Page Type'] = 'Partial'
         wiki_csv[partial_name]['Content'] = partial['Content']
-        if 'Spoiler' in partial:
-            wiki_csv[partial_name]['Spoiler'] = partial['Spoiler']
+        update_field('Spoiler', partial_name, partial)
 
         csv_entries.remove(partial_name)
     else:
@@ -230,6 +219,23 @@ for partial in wiki_json['Partial']:
             'Spoiler': partial['Spoiler'] if 'Spoiler' in partial else '',
         }
         wiki_csv[partial_name] = new_partial
+
+for redirect in wiki_json['Redirects']:
+    redirect_name = redirect['Name']
+    if redirect_name in wiki_csv:
+        wiki_csv[redirect_name]['Page Type'] = 'Redirect'
+        update_field('Spoiler', redirect_name, redirect)
+        update_field('Target', redirect_name, redirect)
+
+        csv_entries.remove(redirect_name)
+    else:
+        new_redirect = {
+            'Name': redirect_name,
+            'Page Type': 'Redirect',
+            'Target': redirect['Target'] if 'Target' in redirect else '',
+            'Spoiler': redirect['Spoiler'] if 'Spoiler' in redirect else '',
+        }
+        wiki_csv[redirect_name] = new_redirect
 
 if len(csv_entries) > 0:
     print('Found Wiki CSV entries not present in JSON')
@@ -253,14 +259,16 @@ with open(csv_path, 'w', newline='', encoding='utf-8') as f:
     writer = csv.DictWriter(
         f,
         ['Name', 'Page Type', 'Content', 'Spoiler', 'Bots', 'Part Category',
-         'Parts', 'Groups', 'Supergroups', 'Subpages'],
+         'Parts', 'Groups', 'Supergroups', 'Subpages', 'Target'],
         quoting=csv.QUOTE_ALL, dialect='wiki')
 
     writer.writeheader()
     sorted_names = sorted(wiki_csv.keys())
 
     for name in sorted_names:
-        wiki_csv[name]['Content'] = wiki_csv[name]['Content']
+        if wiki_csv[name]['Page Type'] != 'Redirect':
+            wiki_csv[name]['Content'] = wiki_csv[name]['Content']
+            
         writer.writerow(wiki_csv[name])
 
 with open(csv_path, 'r', encoding='utf-8') as f:
