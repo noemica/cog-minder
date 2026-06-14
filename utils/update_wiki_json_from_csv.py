@@ -101,10 +101,12 @@ for csv_obj in wiki_csv.values():
         if json_item['Name'] == csv_obj['Name']:
             # Found existing item, update values
             updated = False
-            content = unescape(csv_obj['Content'])
-            if csv_obj['Page Type'] != 'Redirect' and json_item['Content'] != content:
-                updated = True
-                json_item['Content'] = content
+            if csv_obj['Page Type'] != 'Redirect':
+                content = unescape(csv_obj['Content'])
+
+                if json_item['Content'] != content:
+                    updated = True
+                    json_item['Content'] = content
 
             updated |= update_json_value(json_item, csv_obj, 'Spoiler')
 
@@ -146,7 +148,10 @@ for csv_obj in wiki_csv.values():
         continue
 
     updated_pages.append(csv_obj['Name'])
-    json_list.append({'Name': csv_obj['Name'], 'Content': csv_obj['Content']})
+    if csv_obj['Page Type'] == 'Redirect':
+        json_list.append({'Name': csv_obj['Name']})
+    else:
+        json_list.append({'Name': csv_obj['Name'], 'Content': csv_obj['Content']})
 
 # Sort all lists
 lists = [wiki_json['Bots'], wiki_json['Bot Groups'], wiki_json['Bot Supergroups'],

@@ -7453,6 +7453,13 @@
   },
   {
    "Name": "Armored Treads",
+   "Parts": [
+    "Arm. Treads",
+    "Arm. Medium Treads",
+    "Arm. Heavy Treads",
+    "Enh. Armored Medium Treads",
+    "Enh. Armored Heavy Treads"
+   ],
    "Content": "A subclass of [[Treads]] with higher coverage and integrity at the cost of reduced support and slightly lower speed.\n\n[[Heading]]List of Armored Treads[[/Heading]]\n[[PartGroupTable]]\nArmored Treads|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty|\nPropulsion/Special\n[[/PartGroupTable]]"
   },
   {
@@ -8446,6 +8453,15 @@
   },
   {
    "Name": "Siege Treads",
+   "Parts": [
+    "Hvy. Siege Treads",
+    "Tri-treads",
+    "Imp. Heavy Siege Treads",
+    "Vmp. Heavy Siege Treads",
+    "Adv. Heavy Siege Treads",
+    "Exp. Heavy Siege Treads",
+    "Megatreads"
+   ],
    "Content": "A subclass of [[Treads]] that have the power to enter [[Special Propulsion Modes#High Siege Mode|high siege mode]] which is an upgrade from the standard siege mode available on standard 2-slot treads. The accuracy bonus from high siege mode only requires a single pair of siege treads, although the increased damage reduction only applies to individual siege treads and not all treads.\n\n[[Heading]]List of Siege Treads[[/Heading]]\n[[PartGroupTable]]\nSiege Treads|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty|\nPropulsion/Special\n[[/PartGroupTable]]"
   },
   {
@@ -8485,6 +8501,11 @@
   },
   {
    "Name": "Spiked Treads",
+   "Parts": [
+    "Spk. Treads",
+    "Spk. Medium Treads",
+    "Spk. Heavy Treads"
+   ],
    "Content": "A [[Derelict]]-made subclass of [[Treads]] that have more coverage, integrity at the cost of higher penalty and worse support than normal treads. These parts are typically only found on a few Derelicts and in [[Scrap]].\n\n[[Heading]]List of Spiked Treads[[/Heading]]\n[[PartGroupTable]]\nSpiked Treads|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty|\nPropulsion/Special\n[[/PartGroupTable]]"
   },
   {
@@ -8749,11 +8770,6 @@
     "Vortex Trap"
    ],
    "Content": "Traps are most often found in groups called arrays, and appear in a variety of layouts including rows, blocks or sparser \"minefields\". They are, however, usually triggered individually.\n\n\n[[Heading]]Lore[[/Heading]]\n[[Lore]]0b10 Records|Traps[[/Lore]]\n\n[[Heading]]Arrays[[/Heading]]\nTrap arrays vary in size, Trap type, and layout formations. Each Trap array contains 1-6 Traps, and is composed entirely of the same Traps. The type of trap that an arrays will be made of depends on the location. For example, [[EM Surge Trap|EM Surge Traps]] cannot appear in [[Materials]]. Trap arrays appear in several types of formations:\n[[List]]Door Trap - A 1-Trap array formation where the only trap is directly adjacent to a Door or an Emergency Access door.\n|Rows - Found in corridors, usually perpendicularly to the corridor's direction. The Traps will form one or more rows across the corridor, though some tiles of some of the rows may be skipped. When spotting a single trap in a corridor, it is usually fairly simple to guess the approximate location of other Traps in the array.\n|Minefield - Usually found in open areas or inside rooms. The Traps are strewn about chaotically, making their locations very unpredictable.\n|Prefab - Some prefabs contain Traps in preset formations or random but unusual formations. This can result in unexpected behavior, such as each of the Traps of a prefab being part of its own separate array.  \n|Other - Some Trap formations are uncommon and maybe unique to certain maps, making them difficult to recognize and categorize.[[/List]]\n\n[[Heading]]Triggering[[/Heading]]\nMoving over a trap does not always trigger it. The chance is instead determined by the form of [[Propulsion]]:\n[[Table]]\nMode|Probability|Probability ([[Stasis Trap|Stasis Traps]])\n||\n Overweight | 100% | 100%\n||\n [[Treads]] | 100% | 0%\n||\n [[Legs]] | 75% | 25%\n||\n [[Wheels]] | 50% | 50%\n||\n [[Hover Units|Hover]]/Core | 40% | 60%\n||\n [[Flight Units|Flight]] | 20% | 80%\n[[/Table]]\nStasis Traps are a special case and their chance to trigger for each Propulsion type is the opposite of regular traps (Flight ex: 100 - 20 = 80%).\nNote there are also multiple undocumented circumstances under which a trap may be triggered, not simply regular movement. Some other ways to trigger traps include: \n[[List]]When corrupted, it is possible to accidentally trigger allied traps when moving over them, with a [corruption %] chance of triggering.\n|Attempting to install a trap at a location that already contains a trap unknown to Cogmind will fail to install the new trap and trigger the old one, regardless of the old trap's faction.\n|It is possible to manually trigger known traps at Cogmind's current position, although doing this will attribute any explosions from explosive traps to Cogmind, unlike the methods listed above.\n|Failure to reprogram a Trap using a [[Melee Datajacks|Melee Datajack]] can rarely cause it to trigger.\n|EM explosions have a chance to trigger any traps they hit. [[Sub]](Note: The writer of this is not sure if an EM explosion attributed to Cogmind would cause explosive traps triggered that way to also be attributed Cogmind)[[/Sub]][[/List]]\n\nOnce triggered, the trap at that position is spent and will not trigger again. (Some traps exhibit special behavior in this regard.)\n\n\n[[Heading]]Detection[[/Heading]]\nCogmind has a 1% chance to detect each trap in view, checked every turn, and each active Trap Scanner and allied [[Drone Bays|Drone]] has a separate chance to detect Traps.\nSome other ways to detect traps include:\n[[List]]\nSuccessfully hacking [[GameText]][Locate Traps][[/GameText]]/Traps(Locate) at [[Terminal|Terminals]] will reveal all nearby trap arrays.\n|In [[Garrison|Garrisons]], hacking Download(Registry) will locate all traps within the Garrison, among other things.\n|[[Spoiler]]Using the [[GameText]]locate_traps[[/GameText]] on [[Operator|Operators]] with [[RIF]] in combination with a [[Datajacks|Datajack]] will reveal all trap arrays within a range of 30.[[/Spoiler]]\n|Collecting a pre-expiry [[Operator]] [[Data Core]] will reveal the location of nearby trap arrays.\n|Nearby allied Operators in range will reveal hidden traps within your field of vision.\n|Some [[0b10 Decoder Chips]] are capable of passively detecting traps over time.\n|Sources of Derelict intel can provide the location of all traps across an entire map.\n|Using the [[GameText]]find_chute[[/GameText]] on a [[K-01 Serf]] with a [[Datajacks|Datajack]] will reveal the closest [[Chute Trap]].[[/List]]\n\n\n[[Heading]]Removal[[/Heading]]\nThe simplest way to remove one or more traps is to destroy the section of floor housing them, for example using a [[Launchers|Launcher]]. Arrays of hostile traps can be permanently disarmed one array at a time via terminal hacking or [[Spoiler]][[RIF]]-hacking Operators[[/Spoiler]], and disarming traps on an individual basis is a possible side effect of attempting to hack one with an active melee [[Datajacks|Datajack]]. Successfully hacking [[Alarm Trap|Alarm Traps]] or [[Ambush Trap|Ambush Traps]] using a melee Datajack will always disarm them.\n\n\n[[Heading]]Reprogramming[[/Heading]]\nTraps can be reprogrammed through various means, including:\n[[List]]\nSuccessfully hacking [[GameText]][Reprogram Traps][[/GameText]]/Traps(Reprogram) at terminals will reveal and reprogram a nearby trap arrays within range.\n|[[Spoiler]]Using the [[GameText]]reprogram_traps[[/GameText]] on Operators with a Datajack in combination with RIF will reveal and reprogram the nearest trap array within a range of 30.[[/Spoiler]]\n|Attempting to moving into a known hostile trap with an active melee Datajack will instead make Cogmind attempt to hack it, with a base 10% to successfully do so, increased by [[Offensive Hackware]]. Successfully hacking a Trap will usually reprogram it, though this may sometimes disarm it. Successfully hacking [[Alarm Trap|Alarm Traps]] or [[Ambush Trap|Ambush Traps]] using a melee Datajack will always disarm them.\n|Having an active [[Trap Reconfigurator]] [[Exiles Vault Prototypes|Exile prototype]].\n[[/List]]\nFrom the [[https://www.gridsagegames.com/cogmind/manual.txt|official manual]]:\nBy default traps are programmed to trigger on detection of any foreign robot, a setting that can be modified via hacking. Known traps may be reprogrammed with an active melee Datajack by bumping them, and entire arrays of traps can be reprogrammed at once from nearby terminals. Reprogrammed traps will no longer recognize Cogmind or allies as a threat, instead reacting to local combat robots. As part of the new programming, each trap's sensitivity will also be set dangerously high, ensuring it will trigger whenever a hostile moves over it, regardless of propulsion.\n\n\n[[Heading]]Collection[[/Heading]]\nAn enterprising Cogmind can, with the use of a [[Trap Extractors|Trap Extractor]], extract and store or pick up friendly traps for their own use. However, [[Chute Trap|Chute Traps]], [[Alarm Trap|Alarm Traps]] and [[Ambush Trap|Ambush Traps]] cannot be extracted to begin with. Stasis Traps also exhibit special behavior; they can be extracted but cannot be stored inside a Trap Extractor, and they can still be extracted even after they were triggered, as long as the stasis field they produce hasn't been depleted.\n\nLast edited during Beta 15."
-  },
-  {
-   "Name": "Treads",
-   "Part Category": "Treads",
-   "Content": "Treads are a type of [[Propulsion]] that have the highest support and the lowest speed. They are the most durable propulsion, but lower-tier units will still often be destroyed and replaced. They are commonly used by (and available from) [[Hauler|Haulers]] as well as heavy combat 0b10 bots, including [[Sentry|Sentries]], [[Heavy|Heavies]], and [[Behemoth|Behemoths]]. When active, treads confer immunity to knockback and reduce the accuracy penalty from recoil by 1 per active tread slot when firing a volley.\n\nThe slow movement speed of treads means [[Cogmind]] generally cannot outrun bots and will be forced to fight most encounters that it cannot avoid. Replacement treads can be difficult to obtain under duress since they are mostly equipped by powerful combat bots, and the best multislot treads are not commonly used by other bots until later in the game. In exchange, treads' high coverage and integrity (especially on mid- to late-game multislot treads), along with recoil reduction, allow them to support a combat bot and protect other parts. Treading bots that lack enough spare treads may choose a [[I]]half-track[[/I]] configuration, filling some propulsion slots with treads and some with [[Wheels]], as described in that article.\n\nAll multislot treads are capable of [[Special Propulsion Modes#siege mode|Siege Mode]], and some are capable of High Siege Mode. Most tread builds will transition entirely to multislot treads as soon as practicable, for their improved resilience and siege mode capability. A common place to make this transition is in [[Cetus]] after looting [[Centrium Heavy Treads]] from the [[Cetus Guard]]. Some other good spots to loot multislot treads are from [[C-40 Crusher|Crushers]] in [[Wastes]] and disabled [[A-27 Freighter|Freighters]] in [[Garrison|Garrisons]]\n\nWhile on treads, Cogmind is immune to damage from ramming hostile bots, and instead has a chance to crush them (unless they are large or huge or have greater than 50 core integrity). The chance to crush varies for each type of tread, but generally is 5% per slot.\n\nTread [[Study|Studies]] from [[Scanalyzer|Scanalyzers]] reduce the overweight penalty of treads by 50%.\n\n[[Heading]]List of Treads[[/Heading]]\n[[PartGroupTable]]\nTreads|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty|\nPropulsion/Special\n[[/PartGroupTable]]"
   },
   {
    "Name": "Utility Shieldings",
@@ -9335,6 +9351,12 @@
   },
   {
    "Name": "Treads",
+   "Part Category": "Treads",
+   "Groups": [
+    "Armored Treads",
+    "Siege Treads",
+    "Spiked Treads"
+   ],
    "Content": "Treads are a type of [[Propulsion]] that have the highest support and the lowest speed. They are the most durable propulsion, but lower-tier units will still often be destroyed and replaced. They are commonly used by (and available from) [[Hauler|Haulers]] as well as heavy combat 0b10 bots, including [[Sentry|Sentries]], [[Heavy|Heavies]], and [[Behemoth|Behemoths]]. When active, treads confer immunity to knockback and reduce the accuracy penalty from recoil by 1 per active tread slot when firing a volley.\n\nThe slow movement speed of treads means [[Cogmind]] generally cannot outrun bots and will be forced to fight most encounters that it cannot avoid. Replacement treads can be difficult to obtain under duress since they are mostly equipped by powerful combat bots, and the best multislot treads are not commonly used by other bots until later in the game. In exchange, treads' high coverage and integrity (especially on mid- to late-game multislot treads), along with recoil reduction, allow them to support a combat bot and protect other parts. Treading bots that lack enough spare treads may choose a [[I]]half-track[[/I]] configuration, filling some propulsion slots with treads and some with [[Wheels]], as described in that article.\n\nAll multislot treads are capable of [[Special Propulsion Modes#siege mode|Siege Mode]], and some are capable of High Siege Mode. Most tread builds will transition entirely to multislot treads as soon as practicable, for their improved resilience and siege mode capability. A common place to make this transition is in [[Cetus]] after looting [[Centrium Heavy Treads]] from the [[Cetus Guard]]. Some other good spots to loot multislot treads are from [[C-40 Crusher|Crushers]] in [[Wastes]] and disabled [[A-27 Freighter|Freighters]] in [[Garrison|Garrisons]]\n\nWhile on treads, Cogmind is immune to damage from ramming hostile bots, and instead has a chance to crush them (unless they are large or huge or have greater than 50 core integrity). The chance to crush varies for each type of tread, but generally is 5% per slot.\n\nTread [[Study|studies]] from [[Scanalyzer|Scanalyzers]] reduce the overweight penalty of treads by 50%.\n\n[[Heading]]Siege Mode[[/Heading]]\n[[Partial]]Siege Mode Description[[/Partial]]\n\n[[Heading]]List of Treads[[/Heading]]\n[[PartGroupTable]]\nTreads|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nPropulsion/Time/Move|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Penalty|\nPropulsion/Special\n[[/PartGroupTable]]"
   },
   {
@@ -11078,10 +11100,7 @@
   {
    "Name": "Relay Interface Framework",
    "Content": "[[Image]]Garrison RIF Installer 1.png|RIF Installer in a Garrison[[/Image]]\nRelay Interface Framework, or RIF, is one of the major [[Alignment|alignments]] available to Cogmind in a run. It helps Cogmind to have much more control over [[0b10]] bots, both combat and non-combat. RIF comes with the downside of alienating several key [[Derelict]] factions, namely turning all Derelicts at [[Zion]] and [[Warlord (Location)]] hostile when passing their associated System Quarantine Field Array machines. [[Scraptown]] is safe to enter and you may safely use the c-scrubber machine, however you are unable to align with Scraptown and cannot enter the right side of the map.\n\nRIF is incompatible with the [[Core Reset Matrix]]. If Cogmind has used a CRM then it is not possible to gain RIF. If Cogmind uses a CRM after using RIF, then RIF will be entirely erased. Similarly, if Cogmind has [[Imprint|imprinted]], then the RIF will fail to be installed.\nInstalling RIF can be done at any [[Garrison]] by walking into a RIF Installer machine. These machines can be hidden behind emergency accesses and Phase Walls, but there are always 1-2 installers available per map. Doing so will grant several unique abilities:\n[[List]]Alert Monitor: Know the ambient influence level while in 0b10-controlled areas.\n [[Alert]] is displayed near the top right corner of the HUD, showing both the numeric influence value and the number-letter classification.|Garrison Interface: Gain control over Garrison Access machines, making it easier to hack them, and also easier to escape once inside. Also automatically detects [[Garrison Access|Garrisons]] and RIF Installers up to a range of 15.\nAll standard (non-manual) hacks at Garrison Machines will have a 100% chance to succeed. The 15-radius detection is very handy for finding new Garrisons to enter, as well as finding hidden RIF installers behind walls.|Coupler Protocols: Use [[Relay Couplers]] to interface with their respective robots.\nUse [[Datajacks]] with Relay Couplers to perform special hacks at the cost of charges on the Couplers. See [[~/rif|this page]] for the full list of hackable bots as well as unique hacks applicable to each type of bot.|Additional RIF abilities: See [[~/rif|this page]] for the full list of abilities.|Special [[Wintypes|Wintype]] interaction: [[Redacted]]If Cogmind touches the intact 0b10 Conduit machine in [[Command]] while being RIF-aligned, the W4 Assimilated 0b10 win will be achieved without needing to destroy both phases of [[MAIN.C]] as is typically required.[[/Redacted]][[/List]]",
-   "Spoiler": "Spoiler",
-   "Alternate Names": [
-    "RIF"
-   ]
+   "Spoiler": "Spoiler"
   },
   {
    "Name": "Repair Station",
@@ -11123,10 +11142,6 @@
   {
    "Name": "Security Squad",
    "Content": "[[Image]]Security Squad Heavy.png|A Heavy guarding a busy intersection[[/Image]]\nSecurity squads are [[0b10]] aligned [[Squad|squads]] that guard a single location and do not move unless alerted to hostiles. While they are called squads, security bots nearly always work alone and do not come in groups. Security bots tend to be guarding busy exits, corridors, [[Interactive Machine|interactive machines]], and part stockpiles. These squads are primary composed of [[Behemoth|Behemoths]], [[Heavy|Heavies]], and [[Sentry|Sentries]]. They tend to be present on the map when Cogmind enters, and don't appear in greater numbers as time goes on. The main exception to this is Heavies, which may be replenished by the [[Security Rotation]] event, although there will typically never be more than the initial number of Heavies on a map. Security squads can be Enumerated at [[Terminal|Terminals]], but only within a very limited radius of 20 tiles.\n\n[[Heading]]Security Contents[[/Heading]]\nThe following bots can be contained within Security Squads in standard 0b10 floors:\n[[Table]]\nDepth|Behemoth|Heavy|Sentry||\n-10|N/A|N/A|N/A||\n-9|N/A|N/A|[[Y-45 Defender]]||\n-8|N/A|[[H-61 Shepherd]]|Y-45 Defender||\n-7|N/A|H-61 Shepherd|[[Y-54 Guardian]]||\n-6|[[B-75 Beast]]|H-61 Shepherd|Y-54 Guardian||\n-5|B-75 Beast|[[H-71 Marshal]]|[[Y-64 Sentinel]]||\n-4|[[B-86 Titan]]|H-71 Marshal|Y-64 Sentinel||\n-3|B-86 Titan|H-71 Marshal|[[Y-72 Warden]]||\n-2|[[B-90 Cyclops]]|[[H-81 Overseer]]|Y-72 Warden||\n-1|[[B-99 Colossus]]|H-81 Overseer|Y-72 Warden[[/Table]]\n[[Heading:2]][[Garrison|Garrison]] security contents[[/Heading]]\nGarrisons can have unique Security contents contained within special checkpoint walls:\n[[Table]]\nDepth|Demolisher + Protector|Grunt|Hunter|Melee|Saboteur|Sentry|Specialist|Swarmer||\n-9|N/A|2-3 [[G-34 Mercenary]]|N/A|2 of [[L-31 Rogue]] or [[B-36 Bruiser]]|2-3 [[E-15 Imp]]|1-2 Y-45 Defender|N/A|3-4 [[S-10 Pest]]||\n-8|[[D-53 Grenadier]] + [[I-25 Savior]]|2-3 [[G-47 Trooper]]|1-2 [[H-55 Commando]]|2 of L-31 Rogue or B-36 Bruiser|2-3 E-15 Imp|1-2 Y-45 Defender|1-2 [[X-57 Shotgunner]] or [[X-62 Marksman]]|3-4 S-10 Pest||\n-7|D-53 Grenadier + [[I-36 Angel]]|2-3 G-47 Trooper|1-2 H-55 Commando|2 of L-31 Rogue or [[B-48 Gladiator]]|2-3 E-15 Imp|1-2 Y-54 Guardian|1-2 X-57 Shotgunner, X-62 Marksman, or [[X-67 Chaingunner]]|3-4 [[S-27 Virus]]||\n-6|D-53 Grenadier + I-36 Angel|2-3 [[G-50 Soldier]]|1-2 [[H-66 Slayer]]|2 of [[L-41 Fighter]] or B-48 Gladiator|2-3 E-15 Imp|1-2 Y-54 Guardian|1-2 X-62 Marksman, X-67 Chaingunner, or [[X-72 Disruptor]]|3-4 S-27 Virus||\n-5|[[D-63 Destroyer]] + [[I-47 Archangel]]|2-3 G-50 Soldier|1-2 H-66 Slayer|2 of L-41 Fighter or [[B-60 Warrior]]|2-3 E-15 Imp|1-2 Y-64 Sentinel|1-2 X-67 Chaingunner, X-72 Disruptor, or [[X-77 Beamer]]|3-4 S-27 Virus||\n-4|D-63 Destroyer + I-47 Archangel|2-3 [[G-67 Veteran]]|1-2 [[H-77 Assassin]]|2 of L-41 Fighter or B-60 Warrior|2-3 E-15 Imp|1-2 Y-64 Sentinel|1-2 X-72 Disruptor, X-77 Beamer, or [[X-82 Rainmaker]]|3-4 S-27 Virus||\n-3|D-63 Destroyer + I-47 Archangel|2-3 G-67 Veteran|1-2 H-77 Assassin|2 of [[L-61 Swordsman]] or [[B-74 Champion]]|2-3 E-15 Imp|1-2 Y-72 Warden|1-2 X-77 Beamer, X-82 Rainmaker, or [[X-87 Electro]]|3-4 [[S-43 Plague]]||\n-2|[[D-83 Annihilator]] + I-47 Archangel|2-3 [[G-73 Enforcer]]|1-2 [[H-88 Terminator]]|2 of L-61 Swordsman or B-74 Champion|2-3 E-15 Imp|1-2 Y-72 Warden|1-2 X-82 Rainmaker or X-87 Electro|3-4 S-43 Plague||\n-1|D-83 Annihilator + I-47 Archangel|2-3 G-73 Enforcer|1-2 H-88 Terminator|2 of L-61 Swordsman or B-74 Champion|2-3 E-15 Imp|1-2 Y-72 Warden|1-2 X-87 Electro|3-4 S-43 Plague\n[[/Table]]\nA [[C-30 ARC]] may also be a part of a Security Squad, with 3 unpowered ARCs next to it. The active ARC will have standard contents for a [[Patrol Squad]] ARC.\n[[Heading:2]]Unique [[Armory]]/[[Testing]]/[[Quarantine]]/[[Protoforge]] security contents[[/Heading]]\nThese maps have unique Security contents within \"nooks\" in the wall. There can between 1-3 of the same type of bot contained within.\n[[Table]]\nDepth|Brawler ([[Spoiler]]Armory[[/Spoiler]] only)|Duelist ([[Spoiler]]Armory[[/Spoiler]] only)|Grunt|Hunter|Programmer|Saboteur ([[Spoiler]]Armory[[/Spoiler]] only)|Sentry|Specialist|Swarmer||\n-4|B-60 Warrior|L-41 Fighter|G-67 Veteran|H-77 Assassin|[[P-70 Sage]]|E-15 Imp|N/A|X-72 Disruptor, X-77 Beamer, or X-82 Rainmaker|S-27 Virus||\n-3|B-74 Champion|L-61 Swordsman|G-67 Veteran|H-77 Assassin|[[P-80 Master]]|E-15 Imp|Y-72 Warden|X-77 Beamer, X-82 Rainmaker, or X-87 Electro|S-43 Plague||\n-2|N/A|N/A|G-73 Enforcer|H-88 Terminator|P-80 Master|N/A|Y-72 Warden|X-82 Rainmaker or X-87 Electro|S-43 Plague\n[[/Table]]\n\n[[Heading]]Special security-summoning events[[/Heading]]\nThere are a few events that may trigger additional security guards to spawn on the map.\n[[Heading:2]][[Cargo Convoy]] interruption[[/Heading]]\n100 turns after a Cargo Convoy is disrupted, Heavies will begin to appear at 0b10-controlled exits and [[Garrison Access|Garrisons]]. Every further 100 turns that pass, another Heavy will enter the map and head toward a nearby exit.\n[[Heading:2]][[High Security|High]] or [[Maximum Security]][[/Heading]]\nAbout 80 turns after entering High or Maximum Security, 4 Sentries will spawn from all Garrisons and 0b10-controlled exits.\n[[Spoiler]][[Heading:2]][[Quarantine]] Cryocooling Duct failure[[/Heading]]\n[[Image]]Quarantine Guards.png|Quarantine Guards dispatched from a Garrison[[/Image]]\nCryocooling Duct machines may be sometimes found in Quarantine. These machines the ambient temperature of the map by default, but if 2 are destroyed, the ambient heat will rise up to +20. If this happens, all combat bots will be withdrawn from the map, and 12 [[Quarantine Guard|Quarantine Guards]] will be dispatched after about 100 turns. These bots will guard various high traffic parts of the map, while others patrol the map. A few will guard exits, as well as a Garrison, if one is present.[[/Spoiler]]"
-  },
-  {
-   "Name": "Siege Mode",
-   "Content": "Siege mode is an alternate state toggleable on all mutilslot treads. The transition in and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the the treads cannot be disabled or removed. While in siege mode, non-melee attacks have +15% accuracy, coverage for all armor and heavy treads is doubled, any treads in siege mode get a free 25% damage reduction, no weapons suffer from recoil effects, and Cogmind is immune to instant part destruction from critical hits. [[Spoiler]][[Megatreads]], [[Tri-treads]],[[/Spoiler]] and any treads containing the word \"siege\" in the name are capable of high siege mode which instead gives +25% accuracy and 50% damage reduction."
   },
   {
    "Name": "Sigix",
@@ -11457,16 +11472,8 @@
    "Content": "[[Table]]\nCategory|Explosive|Electromagnetic||\nEnergy|[[CellStyle:Good]]None|[[CellStyle:Bad]]High: Over 100 energy per volley at highest ratings||\nMatter|[[CellStyle:Bad]]High: Over 50 matter per volley at highest ratings|[[CellStyle:Neutral]]Low: Over 10 matter per volley at highest ratings||\nSalvage|[[CellStyle:Bad]]Large negative salvage, more than -20 at highest ratings\nCan blow up matter on the ground, makes restocking difficult|[[CellStyle:Neutral]]Small positive salvage, between 2-4 at all ratings\nLeaves dropped parts [[Corrupted Parts|Corrupted]]||\nRange|[[CellStyle:Good]]Most in 14-16 range, some in 18+ range|[[CellStyle:Neutral]]Most 14 range, a few in 16+ range||\nRadius|[[CellStyle:Neutral]]Most in 4-6 radius, a few outliers above and below|[[CellStyle:Neutral]]Most in 4-6 radius, a few outliers above||\nCollateral Damage|[[CellStyle:Bad]]Likely to destroy noncombat bots, machines, and terrain with every shot|[[CellStyle:Neutral]]Likely to destroy noncombat bots and some machines\nOnly blows up terrain with spectrum on [[Power]] explosions\nCan blow up own engines with spectrum\nCan trigger [[Traps]] directly or indirectly through giving [[Corruption]] to other bots||\nKill effectiveness|[[CellStyle:Neutral]]Kills most bot types in a few volleys through damage, can easily kill bots on the first hit\nSome common bots have explosive resistance ([[Demolisher|Demolishers]] (75-100%), [[Heavy|Heavies]] (50%), [[Programmer|Programmers]] (25%), [[Sentry|Sentries]] (50%))\n[[Swarmer|Swarmers]] have explosive weakness (25%)|[[CellStyle:Neutral]]Kills most bot types in a few volleys through corruption, likely will take multiple shots to kill so EM launchers become much more effective when stacked\nSome common bots have electromagnetic or corruption resistance ([[Behemoth|Behemoths]] ([[Dynamic Insulation Systems]]), Heavies (25-50% + Dynamic Insulation Systems), Programmers (75%))\nSome common bots have electromagnetic weakness ([[Grunt|Grunts]] (-25%), [[Hunter|Hunters]] (-25%))||\n[[Reinforced Walls|Reinforced Wall]] Destruction|[[CellStyle:Bad]]Unable to destroy reinforced walls|[[CellStyle:Good]]Able to destroy reinforced walls by exploding power in front of them\n[[/Table]]"
   },
   {
-   "Name": "Martial Mode",
-   "Content": "The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.\nWhile in martial mode:\n[[List]]\nWill automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups).\n|10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.\n|Immune to knockback.\n|No ranged weapons suffer from recoil effects.\n[[/List]]"
-  },
-  {
    "Name": "Martial Mode Description",
    "Content": "The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.\nWhile in martial mode:\n[[List]]\nWill automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups).\n|10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.\n|Immune to knockback.\n|No ranged weapons suffer from recoil effects.\n[[/List]]"
-  },
-  {
-   "Name": "Shielding Mode",
-   "Content": "The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.\nWhile in shielding mode:\n[[List]]\nCoverage for this leg is doubled.\n|This leg gains a 50% chance to glance any projectile that would otherwise hit it, instead taking no damage.\n[[/List]]"
   },
   {
    "Name": "Shielding Mode Description",
@@ -11485,35 +11492,35 @@
  "Redirects": [
   {
    "Name": "Doom Corridor",
-   "Content": ""
+   "Target": "Command#Doom Corridor"
   },
   {
    "Name": "High Siege Mode",
-   "Content": ""
+   "Target": "Special Propulsion Modes#High Siege Mode"
   },
   {
    "Name": "Martial Mode",
-   "Content": ""
+   "Target": "Special Propulsion Modes#Martial Mode"
   },
   {
    "Name": "Network Hub",
-   "Content": ""
+   "Target": "Hub_04(d)#Special Machines"
   },
   {
    "Name": "RIF",
-   "Content": ""
+   "Target": "Relay Interface Framework"
   },
   {
    "Name": "Shielding Mode",
-   "Content": ""
+   "Target": "Special Propulsion Modes#Shielding Mode"
   },
   {
    "Name": "Siege Mode",
-   "Content": ""
+   "Target": "Special Propulsion Modes#Siege Mode"
   },
   {
    "Name": "Yauler",
-   "Content": ""
+   "Target": "A-27 Freighter"
   }
  ]
 }
