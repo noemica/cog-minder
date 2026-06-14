@@ -11503,21 +11503,24 @@
  ],
  "Redirects": [
   {
-   "Name": "Digging"
+   "Name": "Digging",
+   "Target": "Cave-ins"
   },
   {
    "Name": "Doom Corridor",
    "Target": "Command#Doom Corridor"
   },
   {
-   "Name": "Flight"
+   "Name": "Flight",
+   "Target": "Flight Units"
   },
   {
    "Name": "High Siege Mode",
    "Target": "Special Propulsion Modes#High Siege Mode"
   },
   {
-   "Name": "Hover"
+   "Name": "Hover",
+   "Target": "Hover Units"
   },
   {
    "Name": "Martial Mode",
