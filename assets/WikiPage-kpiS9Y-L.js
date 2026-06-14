@@ -1,4 +1,4 @@
-import{c as x,r as T,j as a,L as z,F as E,B as v,G as Z,w as de,H as Se,I as Te,f as P,J as ke,y as q,T as L,K as ce,a as Y,s as xe,M as He,S as $,q as Ae,N as Ge,O as me,z as Re,u as ge,P as Ie,Q as De,U as ee,V as j,W as F,X as Ne,Y as te,Z as Pe,_ as Ee}from"./index-BQYFK8ZB.js";import{l as Me}from"./lore-08CTWJsY.js";import{h as Le,c as Fe}from"./hackUtilities-C7-c-ilu.js";import{H as Q,R as Be,T as ae,n as K,b as _,o as ue,p as We,L as qe,q as Oe,u as Ue,a as je}from"./BotPopover-D5xfGHM5.js";import{S as ze}from"./Table-DzoSYTS0.js";import{e as Ve}from"./partColumnDefs-KyTh2UiC.js";/* empty css              */import"./items-CZPqWis-.js";const Ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as x,r as T,j as a,L as z,F as E,B as v,G as Z,w as de,H as Se,I as Te,f as P,J as ke,y as q,T as L,K as ce,a as Y,s as xe,M as He,S as $,q as Ae,N as Ge,O as me,z as Re,u as ge,P as Ie,Q as De,U as ee,V as j,W as F,X as Ne,Y as te,Z as Pe,_ as Ee}from"./index-C5I4V-rZ.js";import{l as Me}from"./lore-08CTWJsY.js";import{h as Le,c as Fe}from"./hackUtilities-C7-c-ilu.js";import{H as Q,R as Be,T as ae,n as K,b as _,o as ue,p as We,L as qe,q as Oe,u as Ue,a as je}from"./BotPopover-DhIB8EH-.js";import{S as ze}from"./Table-BBFz9gPE.js";import{e as Ve}from"./partColumnDefs-B9Mxt5-u.js";/* empty css              */import"./items-CZPqWis-.js";const Ze=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -6197,19 +6197,16 @@ This article was last edited during Beta 15.`},{Name:"Meltdown",Content:""},{Nam
 A bot gains 1 momentum each time it moves in the same direction. It loses 1 momentum when it turns 45 degrees; for instance, if a bot has 3 momentum while moving east, and then moves southeast, it will have 2 momentum. Taking any other action, including stopping or moving in a different direction, resets momentum.`},{Name:"Non-empty Pages",Content:"[[NonEmptyPages]]"},{Name:"Overload",Content:`Overloading is a [[Game Mechanics|Game Mechanic]] available on [[Overloadable Parts]], primarily cooled (Cld.) parts, that allows for a temporary increase in effectiveness with additional heat costs and potential downsides based on the stability of the part. It is possible to perform for Power, Propulsion, and Weapon type items.
 
 [[Heading]][[Overloadable Power|Power]][[/Heading]]
-Some power parts (e.g. [[Cld. Ion Engine]]) support overloading. Overloading power causes the following changes:
-[[List]]Doubled energy generation|Doubled heat generation|Chance to shut down for ~5-10 turns and be damaged ~30-40% of the maximum integrity, based on the Stability % stat[[/List]]
+[[Overloadable Power|Some power parts]] (e.g. [[Cld. Ion Engine]]) support overloading.
+[[Partial]]Overload Power Details[[/Partial]]
 
 [[Heading]][[Overloadable Propulsion|Propulsion]][[/Heading]]
-Some propulsion types (mainly [[Flight Units]] and [[Hover Units]]), e.g. [[Cld. VTOL Module]], support overloading. Overloading propulsion causes the following changes:
-[[List]]Doubled energy cost|Tripled heat generation|50% additional support|Speed is calculated as if there are twice the number of active Flight/Hover units (e.g. an overloaded Cld. VTOL Module will gain an additional -3 speed modifier)|Overload propulsion has a chance to suffer 1 point of damage each move that the part is active or each melee attack, based on the Burnout % stat[[/List]]
-One special case, the [[Potential Leg]], does not have any of the above effects except for the burnout damage. Overloaded Potential Legs instead have their base speed halved.
+Some propulsion types (mainly [[Flight]] and [[Hover]]), e.g. [[Cld. VTOL Module]], support overloading.
+[[Partial]]Overload Propulsion Details[[/Partial]]
 
 [[Heading]][[Overloadable Weapons|Weapons]][[/Heading]]
-Some energy weapons (e.g. [[Cld. Pulse Rifle]]) support overloading. Overloading weapons causes the following changes:
-[[List]]Double damage|Doubled energy cost|Tripled heat generation|Additional level of heat transfer (e.g. Medium (+37) is turned into High (+50)|Chance of negative effect based on Shot Stability %.[[/List]]
-If an overload side effect occurs, one of the following effects will occur:
-[[List]]Energy Bleed (~40% chance): Cogmind loses anywhere from 10-50% of total energy capacity|Heat Surge (~40% chance): Cogmind gains between 100 and 200 heat|Short Circuit (~20% chance): A random part breaks[[/List]]`},{Name:"Partial Spot",Content:"Partial spotting is when you move through a (hostile) bots field of vision while its not its turn. The bot will investigate where it saw you, look a few tiles further then head back to whatever it was doing."},{Name:"Patrol Squad",Content:`[[Image]]Patrol Squad.png|A patrol squad of Swarmers[[/Image]]
+[[Overloadable Weapons|Some weapons]] (e.g. [[Cld. Pulse Rifle]]) support overloading.
+[[Partial]]Overload Weapon Details[[/Partial]]`},{Name:"Partial Spot",Content:"Partial spotting is when you move through a (hostile) bots field of vision while its not its turn. The bot will investigate where it saw you, look a few tiles further then head back to whatever it was doing."},{Name:"Patrol Squad",Content:`[[Image]]Patrol Squad.png|A patrol squad of Swarmers[[/Image]]
 Patrol squads are typically [[0b10]] aligned [[Squad|squads]] that patrol between points on the majority of 0b10-controlled maps, as well as [[Caves]]. They can be composed of a variety of bot types, all with slightly different patrolling behavior. Most patrol squads appear at the start of the map and will not appear over time, with the exception of [[Search Patrol|Search Patrols]] and temporary patrols. Their presence is generally unrelated to [[Alert]]. Patrols can be Enumerated at [[Terminal|Terminals]]. Their frequency varies based on the type of map, but generally they are more common the higher up in the complex Cogmind goes.
 
 [[Heading]]Patrol Contents[[/Heading]]
@@ -9858,7 +9855,13 @@ Will automatically use an active melee weapon to attack any hostile that moves i
 |10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.
 |Immune to knockback.
 |No ranged weapons suffer from recoil effects.
-[[/List]]`},{Name:"Shielding Mode Description",Content:`The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
+[[/List]]`},{Name:"Overload Power Details",Content:`Overloading power causes the following changes:
+[[List]]Doubled energy generation|Doubled heat generation|Chance to shut down for ~5-10 turns and be damaged ~30-40% of the maximum integrity, based on the Stability % stat[[/List]]`},{Name:"Overload Propulsion Details",Content:`Overloading propulsion causes the following changes:
+[[List]]Doubled energy cost|Tripled heat generation|50% additional support|Speed is calculated as if there are twice the number of active Flight/Hover units (e.g. an overloaded Cld. VTOL Module will gain an additional -3 speed modifier)|Overload propulsion has a chance to suffer 1 point of damage each move that the part is active or each melee attack, based on the Burnout % stat[[/List]]
+One special case, the [[Potential Leg]], does not have any of the above effects except for the burnout damage. Overloaded Potential Legs instead have their base speed halved.`},{Name:"Overload Weapon Details",Content:`Overloading weapons causes the following changes:
+[[List]]Double damage|Doubled energy cost|Tripled heat generation|Additional level of heat transfer (e.g. Medium (+37) is turned into High (+50)|Chance of negative effect based on Shot Stability %.[[/List]]
+If an overload side effect occurs, one of the following effects will occur:
+[[List]]Energy Bleed (~40% chance): Cogmind loses anywhere from 10-50% of total energy capacity|Heat Surge (~40% chance): Cogmind gains between 100 and 200 heat|Short Circuit (~20% chance): A random part breaks[[/List]]`},{Name:"Shielding Mode Description",Content:`The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
 While in shielding mode:
 [[List]]
 Coverage for this leg is doubled.
@@ -9878,7 +9881,7 @@ Energy Upkeep|[[CellStyle:Bad]]Expensive: -5 to -20 energy per turn|[[CellStyle:
 Slot requirement|[[CellStyle:Good]]1 swappable|[[CellStyle:Bad]]1 unswappable||
 Other positives|[[CellStyle:Neutral]]Sneak into areas guarded by bots without being spotted|[[CellStyle:Neutral]]See further in combat, good for sniping and kiting||
 Other Negatives|[[CellStyle:Bad]]Low integrity/high coverage, no use if bots are already tracking Cogmind|[[CellStyle:Good]]N/A
-[[/Table]]`,Spoiler:"None"}],Xe=[{Name:"Doom Corridor",Target:"Command#Doom Corridor"},{Name:"High Siege Mode",Target:"Special Propulsion Modes#High Siege Mode"},{Name:"Martial Mode",Target:"Special Propulsion Modes#Martial Mode"},{Name:"Network Hub",Target:"Hub_04(d)#Special Machines"},{Name:"RIF",Target:"Relay Interface Framework"},{Name:"Shielding Mode",Target:"Special Propulsion Modes#Shielding Mode"},{Name:"Siege Mode",Target:"Special Propulsion Modes#Siege Mode"},{Name:"Yauler",Target:"A-27 Freighter"}],R={Bots:Ze,"Bot Groups":[{Name:"A Bots",Bots:["A2","A3","A4","A5","A6","A7","A8"],Content:"A bots are a [[Bot Groups|Bot Group]] of [[Hover Units|hovering]] [[Programmer]]-like bots that are aligned to the [[Architect]]. A few are friendly to Cogmind, but the majority of them are hostile and can only be encountered at their home base in [[Access_0]]. They have a variety of different offensive and defensive armament and boast some powerful unique parts. They are all formidable opponents in combat.",Spoiler:"Redacted"},{Name:"Assembled",Bots:["Assembled (4)","Assembled (7)"],Content:"The Assembled are a [[Bot Groups|Bot Group]] of small swarming [[Hover Units|hovering]] robots that can be found in various infestation-related events. Due to the fact that they always appear in groups, have low core, and have high core exposure, using explosive [[Launchers]] is the best way to deal with them. [[Spoiler]]If a [[Core Reset Matrix]] was used, the Assembled will no longer be hostile and will instead be purple uncontrollable allies.[[/Spoiler]]"},{Name:"Behemoth",Bots:["B-75 Beast","B-86 Titan","B-90 Cyclops","B-99 Colossus","Superbehemoth"],Content:`Behemoths are a [[Bot Groups|Bot Group]] of heavily [[Armor|armored]] [[Treads|treading]] [[0b10]] bots that are much more durable and powerful than the majority of standard bots. They typically guard machines or valuable part stockpiles while sitting slightly indented in the wall. Similar to [[Hunter|Hunters]], Behemoths will fire through walls in order to hit an enemy, which makes it hard to hide or run from them. Behemoths can even make use of [[Special Propulsion Modes#Siege mode|Siege Mode]] to become more accurate and durable in combat. This combination of traits can make Behemoths terrifying encounters if not adequately prepared.
+[[/Table]]`,Spoiler:"None"}],Xe=[{Name:"Digging"},{Name:"Doom Corridor",Target:"Command#Doom Corridor"},{Name:"Flight"},{Name:"High Siege Mode",Target:"Special Propulsion Modes#High Siege Mode"},{Name:"Hover"},{Name:"Martial Mode",Target:"Special Propulsion Modes#Martial Mode"},{Name:"Network Hub",Target:"Hub_04(d)#Special Machines"},{Name:"RIF",Target:"Relay Interface Framework"},{Name:"Shielding Mode",Target:"Special Propulsion Modes#Shielding Mode"},{Name:"Siege Mode",Target:"Special Propulsion Modes#Siege Mode"},{Name:"Yauler",Target:"A-27 Freighter"}],R={Bots:Ze,"Bot Groups":[{Name:"A Bots",Bots:["A2","A3","A4","A5","A6","A7","A8"],Content:"A bots are a [[Bot Groups|Bot Group]] of [[Hover Units|hovering]] [[Programmer]]-like bots that are aligned to the [[Architect]]. A few are friendly to Cogmind, but the majority of them are hostile and can only be encountered at their home base in [[Access_0]]. They have a variety of different offensive and defensive armament and boast some powerful unique parts. They are all formidable opponents in combat.",Spoiler:"Redacted"},{Name:"Assembled",Bots:["Assembled (4)","Assembled (7)"],Content:"The Assembled are a [[Bot Groups|Bot Group]] of small swarming [[Hover Units|hovering]] robots that can be found in various infestation-related events. Due to the fact that they always appear in groups, have low core, and have high core exposure, using explosive [[Launchers]] is the best way to deal with them. [[Spoiler]]If a [[Core Reset Matrix]] was used, the Assembled will no longer be hostile and will instead be purple uncontrollable allies.[[/Spoiler]]"},{Name:"Behemoth",Bots:["B-75 Beast","B-86 Titan","B-90 Cyclops","B-99 Colossus","Superbehemoth"],Content:`Behemoths are a [[Bot Groups|Bot Group]] of heavily [[Armor|armored]] [[Treads|treading]] [[0b10]] bots that are much more durable and powerful than the majority of standard bots. They typically guard machines or valuable part stockpiles while sitting slightly indented in the wall. Similar to [[Hunter|Hunters]], Behemoths will fire through walls in order to hit an enemy, which makes it hard to hide or run from them. Behemoths can even make use of [[Special Propulsion Modes#Siege mode|Siege Mode]] to become more accurate and durable in combat. This combination of traits can make Behemoths terrifying encounters if not adequately prepared.
 Behemoths have innate EM resistance as well as corruption resistance through [[Dynamic Insulation System|Dynamic Insulation Systems]], so EM weaponry is a subpar weapon choice to get a quick kill. Melee weapons are undesirable to use because most Behemoths pack [[Ballistic Cannons]] that will frequently cause knockback. Behemoths have a minor thermal weakness, though that is slightly mitigated by thermal [[Resistance Armor]]. Meltdown criticals from thermal cannons can instantly destroy a Behemoth from full core integrity (100+), which can save a lot of damage and provide some good undamaged loot. Thermal guns are not effective in smaller numbers, but given enough heat transferring weapons (4+) it is possible to overload their standard cooling and [[Coolant Injectors]] to get the melt instant kill.
 Behemoths can be a desirable looting target for their weapons, cooling, treads, and armor. For this reason, applying some positive salvage via Electromagnetic weaponry or [[Salvage Targeting Computers]] can be a good idea. However, it can often be a better idea to run the other way. Even slow treads builds can get away from a pursuing Behemoth with good tactics. Despite their ability to tear through walls in their way, they have a tendency to get stuck unable to path through 1 tile wide corridors. If such corridors are nearby, use them to your advantage. Otherwise, try to cut between connected rooms to avoid traveling through so much of the line of fire. Behemoths will only shoot through up to 3 walls to cut a path, so if Cogmind can turn a corner or get a good angle on the Behemoth where it is unable to shoot, it is possible to wait out the memory.
 Behemoths are often found in their own spot inside a wall as a [[Security Squad]]. In [[Caves]], they can be found in a small square open area.
@@ -10310,10 +10313,8 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
-Power/Storage|
-Power/Stability
+Power/Storage
 [[/PartGroupTable]]`},{Name:"Backup Propulsion",Parts:["Backup Propulsion I","Backup Propulsion III","Backup Propulsion VII"],Content:`Backup Propulsion are [[Hover Units]] refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They have poor integrity and support compared to other similar rated propulsion and should only be used as a last resort.
 
 [[Heading]]List of Backup Propulsion[[/Heading]]
@@ -10714,14 +10715,15 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Engines","Part Category":"Engines",Content:`[[Heading]]List of Engines[[/Heading]][[PartGroupTable]]
+[[/PartGroupTable]]`},{Name:"Engines","Part Category":"Engines",Content:`Engines are the lowest rating type of [[Power]], with parts ranging from ratings 1-5. Engines are replaced by [[Power Cores]] at higher ratings.
+
+[[Heading]]List of Engines[[/Heading]][[PartGroupTable]]
 Engines|
 Overview/Size|
 Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
 Power/Storage|
 Power/Stability
@@ -10827,7 +10829,7 @@ Overview/Coverage|
 Upkeep/Energy|
 Upkeep/Heat|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Fusion Compressors",Parts:["Fusion Compressor","Imp. Fusion Compressor"],Content:`Consume matter to produce energy.
+[[/PartGroupTable]]`},{Name:"Fusion Compressors",Parts:["Fusion Compressor","Imp. Fusion Compressor"],Content:`A unique class of [[Power]] sources that produce large amounts of [[Energy]] compared to similarly rated parts but consume [[Matter]] as upkeep. Their [[Heat]] generation is also extra high compared to other power. The matter-consuming property makes them somewhat risky to use in some cases due to the potential of running out of matter, and thus, energy generation. They are best used on [[Flight]] or [[Hover]] to support energy-hungry propulsion or utilities thanks to their ability to quickly find and kill [[0b10 Non-combat Bots]] for their matter, especially [[Recycler|Recyclers]].
 
 [[Heading]]List of Fusion Compressors[[/Heading]][[PartGroupTable]]
 Fusion Compressors|
@@ -10837,9 +10839,7 @@ Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
 Overview/Matter|
-Power/Rate|
-Power/Storage|
-Power/Stability
+Power/Rate
 [[/PartGroupTable]]`},{Name:"Glidesys Hover",Content:"Unique [[Hover Units]] that can only be found on a few [[Zionite]]-aligned bots, namely [[Z-Light|Z-Lights]] and the [[Z-Imprinter]]. They are notable for their high support and fragility through high coverage and low integrity, which makes it hard to keep them around for long.",Spoiler:"Spoiler",Parts:["Zio. Glidesys I","Zio. Glidesys II"]},{Name:"Guided Weapons","Part Category":"Guided Weapons",Content:`Guided weapons have several characteristics:
 [[List]]
 They cannot be fired in a volley with other weapons, only alone.
@@ -10861,17 +10861,17 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Hover Arrays",Content:"A type of [[Hover Units|hover]] that take up 2 slots instead of just 1 like most other hover. Their support per slot is a bit higher than their respective basic variants and they also have higher integrity. Another benefit of arrays is their very efficient upkeep costs compared to running multiple of the same part. Their downside is their lower speed and only slightly superior stats compared to basic hover, which makes them hard to want to use over [[Combat Hover Units]] and [[Cooled Hover Units]] if available.",Parts:["Gravmag Array","Antigrav Array","Gravjet Array"]},{Name:"Hybrid Power","Part Category":"Hybrid Power",Content:`[[Heading]]List of Hybrid Power[[/Heading]][[PartGroupTable]]
+[[/PartGroupTable]]`},{Name:"Hover Arrays",Content:"A type of [[Hover Units|hover]] that take up 2 slots instead of just 1 like most other hover. Their support per slot is a bit higher than their respective basic variants and they also have higher integrity. Another benefit of arrays is their very efficient upkeep costs compared to running multiple of the same part. Their downside is their lower speed and only slightly superior stats compared to basic hover, which makes them hard to want to use over [[Combat Hover Units]] and [[Cooled Hover Units]] if available.",Parts:["Gravmag Array","Antigrav Array","Gravjet Array"]},{Name:"Hybrid Power","Part Category":"Hybrid Power",Content:`A type of [[Power]] that emphasizes [[Energy]] storage over energy generation. These power sources have very low power generation compared to similarly rated power, often less than 50% generation, but have many more times the storage instead. They are basically a mix between [[Energy Wells]] and power that fits in the power slot. One nice benefit of hybrid power is their very low coverage of 15, compared to the typical power source coverage of 60, ensuring that they will last a long time.
+
+[[Heading]]List of Hybrid Power[[/Heading]][[PartGroupTable]]
 Hybrid Power|
 Overview/Size|
 Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
-Power/Storage|
-Power/Stability
+Power/Storage
 [[/PartGroupTable]]`},{Name:"Hypervelocity Cannons",Parts:["Hyp. Alpha Cannon","Hyp. Gauss Cannon","Hyp. Linear Accelerator","Hyp. Mass Driver"],Content:""},{Name:"Hypervelocity Guns",Parts:["Hyp. Coil Gun","Hyp. EM Gauss Rifle","Hyp. Gauss Rifle","Hyp. Multirail","Hyp. Railgun","Modified EM Gauss Rifle"],Content:""},{Name:"IFF Parsers",Parts:["IFF Parser","Lrn. IFF Parser"],Content:`[[Heading]]List of IFF Parsers[[/Heading]]
 [[PartGroupTable]]
 IFF Parsers|
@@ -10923,17 +10923,17 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Light Power","Part Category":"Light Power",Content:`[[Heading]]List of Light Power[[/Heading]][[PartGroupTable]]
+[[/PartGroupTable]]`},{Name:"Light Power","Part Category":"Light Power",Content:`A type of power that contains variants of "normal" power sources with slightly lowered mass and [[Energy]] storage. Power sources are between 2-5 mass lighter and have energy storage between 125 and 160 less than their basic counterparts. Light power [[Study|studies]] only provide +1 energy compared to the +2 of standard power supplies.
+
+[[Heading]]List of Light Power[[/Heading]][[PartGroupTable]]
 Light Power|
 Overview/Size|
 Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
-Power/Storage|
-Power/Stability
+Power/Storage
 [[/PartGroupTable]]`},{Name:"Mass Support Devices",Parts:["Weight Redist. System","Adv. Weight Redist. System","Gravity Neutralizer","Adv. Gravity Neutralizer","Quantum Shading Machine","Asb. Suspension Frame","Adv. Quantum Shading Machine","Cep. Dimensional Manipulator"],Content:`Mass Support [[Devices]] increase the total mass support of the bot they are attached to at a high energy cost. The only other way to increase mass support is in [[Propulsion]] slots, so these devices are unique in their ability to do this through [[Utilities|Utility]] slots. They are most effective when used on [[Flight Units|flight]] or [[Wheels|wheel]] builds due to the typical low support per slot. A high rating device like a [[Quantum Shading Machine]] is over twice the support per slot than a lategame flight unit like the [[Impulse Thruster Array]]. Mass support devices are much more slot efficient at increasing support, though their energy usage is usually much more intensive than additional propulsion would be.
 For flight builds, some good ways to support these energy hungry parts are [[Study|studies]] on [[Power]], [[Power Amplifiers]] and very high energy power like [[Fusion Compressors]]. [[Utility Shieldings]] are also a good idea to prevent getting shot, since losing a mass support device is highly likely to leave Cogmind overweight.
 
@@ -10990,17 +10990,17 @@ Shot/Delay|
 Projectile/Type|
 Effect/Effect|
 Effect/Description
-[[/PartGroupTable]]`},{Name:"Micro Power","Part Category":"Micro Power",Content:`[[Heading]]List of Micro Power[[/Heading]][[PartGroupTable]]
+[[/PartGroupTable]]`},{Name:"Micro Power","Part Category":"Micro Power",Content:`A type of power that contains variants of "normal" power sources with lowered mass, [[Energy]] generation and storage, and coverage. These parts are even lighter than [[Light Power]]. They are best used on [[Flight]] and [[Hover]] builds because their low mass support makes it harder to use "normal" power sources. Micro power [[Study|studies]] only provide +1 energy compared to the +2 of standard power supplies.
+
+[[Heading]]List of Micro Power[[/Heading]][[PartGroupTable]]
 Micro Power|
 Overview/Size|
 Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
-Power/Storage|
-Power/Stability
+Power/Storage
 [[/PartGroupTable]]`},{Name:"Multireflex Exoskeletons",Parts:["Multireflex Exoskeleton","Enh. Multireflex Exoskeleton"],Content:`A [[Prototype Part|prototype]] subclass of [[Legs]] with a [[Special Propulsion Modes#Martial|special propulsion mode]] called "Martial Mode". Martial mode provides a few melee-oriented bonuses while engaged, which takes 3 turns to activate. They also have low coverage and quite high integrity compared to most other standard legs.
 Martial mode is very powerful with any melee weapons when standing diagonal to a doorway. Any hostiles that walk through will instantly be attacked for very little time cost to Cogmind. One especially powerful interaction is with [[Impact Weapons|impact weapons]]. Very frequently, impact weapons will knock hit bots back out of the room, forcing them to waste another move stepping back into the doorway again.
 
@@ -11030,7 +11030,10 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Overloadable Power","Part Category":"Overloadable Power",Content:`For details on behavior when overloaded, see [[Overload#Power]].
+[[/PartGroupTable]]`},{Name:"Overloadable Power","Part Category":"Overloadable Power",Content:`A type of [[Prototype Part|prototype]] [[Power]] with lower than average [[Heat]] generation and the ability to [[Overload#Power|overload]] for additional [[Energy]] generation.
+
+[[Heading]]Overload effects[[/Heading]]
+[[Partial]]Overload Power Details[[/Partial]]
 
 [[Heading]]List of Overloadable Power[[/Heading]][[PartGroupTable]]
 Overloadable Power|
@@ -11039,11 +11042,13 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
 Power/Storage|
 Power/Stability
-[[/PartGroupTable]]`},{Name:"Overloadable Propulsion","Part Category":"Overloadable Propulsion",Content:`For details on behavior when overloaded, see [[Overload#Propulsion]].
+[[/PartGroupTable]]`},{Name:"Overloadable Propulsion","Part Category":"Overloadable Propulsion",Content:`A type of [[Propulsion]] that allows [[Overload#Propulsion|overloading]] for additional mass and speed. Most types of overloadable propulsion are cooled [[Hover]] or [[Flight]] units which have reduced base [[Heat]] generation.
+
+[[Heading]]Overload Effect[[/Heading]]
+[[Partial]]Overload Propulsion Details[[/Partial]]
 
 [[Heading]]List of Overloadable Propulsion[[/Heading]]
 [[PartGroupTable]]
@@ -11060,7 +11065,10 @@ Propulsion/Energy|
 Propulsion/Heat|
 Propulsion/Support|
 Propulsion/Burnout
-[[/PartGroupTable]]`},{Name:"Overloadable Weapons","Part Category":"Overloadable Weapons",Content:`For details on behavior when overloaded, see [[Overload#Weapons]].
+[[/PartGroupTable]]`},{Name:"Overloadable Weapons","Part Category":"Overloadable Weapons",Content:`A type of [[Weapons|weapon]] that allows [[Overload#Weapons|overloading]] for extra damage output. All overloadable weapons are [[Energy Cannons]] or [[Energy Guns]].
+
+[[Heading]]Overload Effect[[/Heading]]
+[[Partial]]Overload Weapon Details[[/Partial]]
 
 [[Heading]]List of Overloadable Weapons[[/Heading]]
 [[PartGroupTable]]
@@ -11191,7 +11199,9 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Power Cores","Part Category":"Power Cores",Content:`[[Heading]]List of Power Cores[[/Heading]][[PartGroupTable]]
+[[/PartGroupTable]]`},{Name:"Power Cores","Part Category":"Power Cores",Content:`Power Cores are the middle rating type of [[Power]], with typical parts ranging from ratings 3-7. Power cores generally obsolete [[Engines]] and are replaced by [[Reactors]] at higher ratings.
+
+[[Heading]]List of Power Cores[[/Heading]][[PartGroupTable]]
 Power Cores|
 Overview/Size|
 Overview/Rating|
@@ -11246,14 +11256,15 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]`},{Name:"Reactors","Part Category":"Reactors",Content:`[[Heading]]List of Reactors[[/Heading]][[PartGroupTable]]
+[[/PartGroupTable]]`},{Name:"Reactors","Part Category":"Reactors",Content:`Reactors are the highest rating type of [[Power]], with typical parts ranging from ratings 5-9. Reactors generally obsolete [[Power Cores]].
+
+[[Heading]]List of Reactors[[/Heading]][[PartGroupTable]]
 Reactors|
 Overview/Size|
 Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
 Power/Storage|
 Power/Stability
@@ -11285,17 +11296,17 @@ Overview/Coverage|
 Upkeep/Energy|
 Upkeep/Heat|
 Effect/Effect
-[[/PartGroupTable]]`,Spoiler:"Spoiler"},{Name:"Reinforced Power","Part Category":"Reinforced Power",Content:`[[Heading]]List of Reinforced Power[[/Heading]][[PartGroupTable]]
+[[/PartGroupTable]]`,Spoiler:"Spoiler"},{Name:"Reinforced Power","Part Category":"Reinforced Power",Content:`A type of [[Power]] that has vastly higher than normal integrity at the cost of higher mass and [[Heat]] generation. Their integrity is roughly 2-3 times the "normal" variants of the power sources.
+
+[[Heading]]List of Reinforced Power[[/Heading]][[PartGroupTable]]
 Reinforced Power|
 Overview/Size|
 Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
-Power/Storage|
-Power/Stability
+Power/Storage
 [[/PartGroupTable]]`},{Name:"Relay Couplers",Parts:["Relay Coupler [NC]","Relay Coupler [C]","Relay Coupler [Swarmer]","Relay Coupler [Cutter]","Relay Coupler [Grunt]","Relay Coupler [Brawler]","Relay Coupler [Duelist]","Relay Coupler [Sentry]","Relay Coupler [Demolisher]","Relay Coupler [Specialist]","Relay Coupler [Hunter]","Relay Coupler [Heavy]","Relay Coupler [Behemoth]","Relay Coupler [Programmer]","Relay Coupler [Proto]"],Content:`Relay couplers are used with [[RIF]] to enable special bot hacks via [[Datajacks|datajacking]] that particular robot class described in the couplers description.
 Relay couplers will fry themselves when attached if you do not have [[RIF]].`},{Name:"Remote Datajacks",Parts:["Remote Datajack","Imp. Remote Datajack","Adv. Remote Datajack","Exp. Remote Datajack","ME-RLN's Wand","Gui. Remote Datajack"],Content:`[[Heading]]List of Remote Datajacks[[/Heading]]
 [[PartGroupTable]]
@@ -12346,7 +12357,12 @@ Explosion/Type|
 Explosion/Salvage|
 Effect/Effect|
 Effect/Description
-[[/PartGroupTable]]`},{Name:"Offensive Utilities",Groups:["Actuators","Actuator Arrays","Armor Integrity Analyzers","Core Analyzers","Energy Filters","Force Boosters","Kinecellerators","Launcher Guidance Computers","Matter Filters","Melee Analysis Suites","Particle Chargers","Ranged Targeting Utilities","Recoil Stabilizers","Target Analyzers","Targeting Computers","Weapon Cyclers"],Parts:["Asb. Combat Suite","Expert System","Heavy Servo Lattice","VL-GR5's Timing Chip"],Content:""},{Name:"Overloadable Parts",Groups:["Overloadable Power","Overloadable Propulsion","Overloadable Weapons"],Content:"For details on behavior when overloaded, see [[Overload]]."},{Name:"Power",Groups:["Backup Power","Engines","Fusion Compressors","Hybrid Power","Light Power","Micro Power","Overloadable Power","Power Cores","Reactors","Reinforced Power"],Content:`[[Heading]]List of Power[[/Heading]][[PartGroupTable]]
+[[/PartGroupTable]]`},{Name:"Offensive Utilities",Groups:["Actuators","Actuator Arrays","Armor Integrity Analyzers","Core Analyzers","Energy Filters","Force Boosters","Kinecellerators","Launcher Guidance Computers","Matter Filters","Melee Analysis Suites","Particle Chargers","Ranged Targeting Utilities","Recoil Stabilizers","Target Analyzers","Targeting Computers","Weapon Cyclers"],Parts:["Asb. Combat Suite","Expert System","Heavy Servo Lattice","VL-GR5's Timing Chip"],Content:""},{Name:"Overloadable Parts",Groups:["Overloadable Power","Overloadable Propulsion","Overloadable Weapons"],Content:"For details on behavior when overloaded, see [[Overload]]."},{Name:"Power",Groups:["Backup Power","Engines","Fusion Compressors","Hybrid Power","Light Power","Micro Power","Overloadable Power","Power Cores","Reactors","Reinforced Power"],Content:`Power is one of the 4 slot types in the game, and power parts creates [[Energy]] at the cost of excess [[Heat]] generation as well as add extra energy storage. There are 3 subtypes of power: [[Engines]], [[Power Cores]], and [[Reactors]]. There is no real functional difference between them aside from the fact that lower rating parts are typically engines, mid rating are power cores, and higher rating are reactors. Since every bot uses energy to move and to fight, power is one of the most crucial components in a build. Run out of power and the only option left might be to core purge and hope to rebuild later.
+Cogmind starts with 1 power slot on -10 but will typically need to evolve more in order to support high upkeep costs of propulsion on [[Flight|flight]] or [[Hover|hover]], or of [[Weapons]] and [[Defensive Utilities]] for grounded propulsion types. Endgame builds usually end up between 2-4 power slots as a slide scale between propulsion types. Flight remains on the lighter end with only 2, while [[Treads|treads]] and [[Legs]] stay the higher end with 3-4.
+Most bots, including Cogmind, do have some innate energy supply. For example, Cogmind's base energy starts at 5, [[Spoiler]]although it may increased by [[Alien Artifacts]] like the [[Integrated Reactor]][[/Spoiler]]. Some bots have enough bonus innate energy that they do not need an intact power source to be able to sustain combat. Other bots have so much energy drain from their utilities or propulsion that if they lose their power source then they will be rendered immobile.
+[[Study|Studies]] at [[Scanalyzer|Scanalyzers]] add 1 energy for [[Micro Power|micro]] and [[Light Power|light]] power or 2 for all other power sources.
+
+[[Heading]]List of Power[[/Heading]][[PartGroupTable]]
 Power|
 Overview/Size|
 Overview/Rating|
