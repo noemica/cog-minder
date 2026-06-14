@@ -7514,7 +7514,7 @@
     "Backup Power III",
     "Backup Power VII"
    ],
-   "Content": "Backup [[Power]] are refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They have relatively low [[Energy]] generation, storage, and integrity compared to other similar rated power. However, [[Backup Power III]] and [[Backup Power VII|VII]] have very high energy supply:mass ratios which makes them effective on low mass [[Flight Units|flight]] builds.\n\n[[Heading]]List of Backup Power[[/Heading]][[PartGroupTable]]\nBackup Power|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
+   "Content": "Backup [[Power]] are refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They have relatively low [[Energy]] generation, storage, and integrity compared to other similar rated power. However, [[Backup Power III]] and [[Backup Power VII|VII]] have very high energy supply:mass ratios which makes them effective on low mass [[Flight Units|flight]] builds.\n\n[[Heading]]List of Backup Power[[/Heading]][[PartGroupTable]]\nBackup Power|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nPower/Rate|\nPower/Storage\n[[/PartGroupTable]]"
   },
   {
    "Name": "Backup Propulsion",
@@ -7808,7 +7808,7 @@
   {
    "Name": "Engines",
    "Part Category": "Engines",
-   "Content": "[[Heading]]List of Engines[[/Heading]][[PartGroupTable]]\nEngines|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
+   "Content": "Engines are the lowest rating type of [[Power]], with parts ranging from ratings 1-5. Engines are replaced by [[Power Cores]] at higher ratings.\n\n[[Heading]]List of Engines[[/Heading]][[PartGroupTable]]\nEngines|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
   },
   {
    "Name": "Exiles Vault Prototypes",
@@ -7920,7 +7920,7 @@
     "Fusion Compressor",
     "Imp. Fusion Compressor"
    ],
-   "Content": "Consume matter to produce energy.\n\n[[Heading]]List of Fusion Compressors[[/Heading]][[PartGroupTable]]\nFusion Compressors|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
+   "Content": "A unique class of [[Power]] sources that produce large amounts of [[Energy]] compared to similarly rated parts but consume [[Matter]] as upkeep. Their [[Heat]] generation is also extra high compared to other power. The matter-consuming property makes them somewhat risky to use in some cases due to the potential of running out of matter, and thus, energy generation. They are best used on [[Flight]] or [[Hover]] to support energy-hungry propulsion or utilities thanks to their ability to quickly find and kill [[0b10 Non-combat Bots]] for their matter, especially [[Recycler|Recyclers]].\n\n[[Heading]]List of Fusion Compressors[[/Heading]][[PartGroupTable]]\nFusion Compressors|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate\n[[/PartGroupTable]]"
   },
   {
    "Name": "Glidesys Hover",
@@ -7969,7 +7969,7 @@
   {
    "Name": "Hybrid Power",
    "Part Category": "Hybrid Power",
-   "Content": "[[Heading]]List of Hybrid Power[[/Heading]][[PartGroupTable]]\nHybrid Power|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
+   "Content": "A type of [[Power]] that emphasizes [[Energy]] storage over energy generation. These power sources have very low power generation compared to similarly rated power, often less than 50% generation, but have many more times the storage instead. They are basically a mix between [[Energy Wells]] and power that fits in the power slot. One nice benefit of hybrid power is their very low coverage of 15, compared to the typical power source coverage of 60, ensuring that they will last a long time.\n\n[[Heading]]List of Hybrid Power[[/Heading]][[PartGroupTable]]\nHybrid Power|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nPower/Rate|\nPower/Storage\n[[/PartGroupTable]]"
   },
   {
    "Name": "Hypervelocity Cannons",
@@ -8034,7 +8034,7 @@
   {
    "Name": "Light Power",
    "Part Category": "Light Power",
-   "Content": "[[Heading]]List of Light Power[[/Heading]][[PartGroupTable]]\nLight Power|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
+   "Content": "A type of power that contains variants of \"normal\" power sources with slightly lowered mass and [[Energy]] storage. Power sources are between 2-5 mass lighter and have energy storage between 125 and 160 less than their basic counterparts. Light power [[Study|studies]] only provide +1 energy compared to the +2 of standard power supplies.\n\n[[Heading]]List of Light Power[[/Heading]][[PartGroupTable]]\nLight Power|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nPower/Rate|\nPower/Storage\n[[/PartGroupTable]]"
   },
   {
    "Name": "Mass Support Devices",
@@ -8097,7 +8097,7 @@
   {
    "Name": "Micro Power",
    "Part Category": "Micro Power",
-   "Content": "[[Heading]]List of Micro Power[[/Heading]][[PartGroupTable]]\nMicro Power|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
+   "Content": "A type of power that contains variants of \"normal\" power sources with lowered mass, [[Energy]] generation and storage, and coverage. These parts are even lighter than [[Light Power]]. They are best used on [[Flight]] and [[Hover]] builds because their low mass support makes it harder to use \"normal\" power sources. Micro power [[Study|studies]] only provide +1 energy compared to the +2 of standard power supplies.\n\n[[Heading]]List of Micro Power[[/Heading]][[PartGroupTable]]\nMicro Power|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nPower/Rate|\nPower/Storage\n[[/PartGroupTable]]"
   },
   {
    "Name": "Multireflex Exoskeletons",
@@ -8126,17 +8126,17 @@
   {
    "Name": "Overloadable Power",
    "Part Category": "Overloadable Power",
-   "Content": "For details on behavior when overloaded, see [[Overload#Power]].\n\n[[Heading]]List of Overloadable Power[[/Heading]][[PartGroupTable]]\nOverloadable Power|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
+   "Content": "A type of [[Prototype Part|prototype]] [[Power]] with lower than average [[Heat]] generation and the ability to [[Overload#Power|overload]] for additional [[Energy]] generation.\n\n[[Heading]]Overload effects[[/Heading]]\n[[Partial]]Overload Power Details[[/Partial]]\n\n[[Heading]]List of Overloadable Power[[/Heading]][[PartGroupTable]]\nOverloadable Power|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
   },
   {
    "Name": "Overloadable Propulsion",
    "Part Category": "Overloadable Propulsion",
-   "Content": "For details on behavior when overloaded, see [[Overload#Propulsion]].\n\n[[Heading]]List of Overloadable Propulsion[[/Heading]]\n[[PartGroupTable]]\nOverloadable Propulsion|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nUpkeep/Energy|\nUpkeep/Heat|\nPropulsion/Time/Move|\nPropulsion/Mod/Extra|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Burnout\n[[/PartGroupTable]]"
+   "Content": "A type of [[Propulsion]] that allows [[Overload#Propulsion|overloading]] for additional mass and speed. Most types of overloadable propulsion are cooled [[Hover]] or [[Flight]] units which have reduced base [[Heat]] generation.\n\n[[Heading]]Overload Effect[[/Heading]]\n[[Partial]]Overload Propulsion Details[[/Partial]]\n\n[[Heading]]List of Overloadable Propulsion[[/Heading]]\n[[PartGroupTable]]\nOverloadable Propulsion|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nUpkeep/Energy|\nUpkeep/Heat|\nPropulsion/Time/Move|\nPropulsion/Mod/Extra|\nPropulsion/Energy|\nPropulsion/Heat|\nPropulsion/Support|\nPropulsion/Burnout\n[[/PartGroupTable]]"
   },
   {
    "Name": "Overloadable Weapons",
    "Part Category": "Overloadable Weapons",
-   "Content": "For details on behavior when overloaded, see [[Overload#Weapons]].\n\n[[Heading]]List of Overloadable Weapons[[/Heading]]\n[[PartGroupTable]]\nOverloadable Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Recoil|\nShot/Targeting|\nShot/Delay|\nShot/Stability|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Heat Transfer|\nProjectile/Salvage|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Heat Transfer|\nExplosion/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
+   "Content": "A type of [[Weapons|weapon]] that allows [[Overload#Weapons|overloading]] for extra damage output. All overloadable weapons are [[Energy Cannons]] or [[Energy Guns]].\n\n[[Heading]]Overload Effect[[/Heading]]\n[[Partial]]Overload Weapon Details[[/Partial]]\n\n[[Heading]]List of Overloadable Weapons[[/Heading]]\n[[PartGroupTable]]\nOverloadable Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Recoil|\nShot/Targeting|\nShot/Delay|\nShot/Stability|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Heat Transfer|\nProjectile/Salvage|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Heat Transfer|\nExplosion/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
   {
    "Name": "Overtuned Parts",
@@ -8217,7 +8217,7 @@
   {
    "Name": "Power Cores",
    "Part Category": "Power Cores",
-   "Content": "[[Heading]]List of Power Cores[[/Heading]][[PartGroupTable]]\nPower Cores|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
+   "Content": "Power Cores are the middle rating type of [[Power]], with typical parts ranging from ratings 3-7. Power cores generally obsolete [[Engines]] and are replaced by [[Reactors]] at higher ratings.\n\n[[Heading]]List of Power Cores[[/Heading]][[PartGroupTable]]\nPower Cores|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
   },
   {
    "Name": "Power Shieldings",
@@ -8283,7 +8283,7 @@
   {
    "Name": "Reactors",
    "Part Category": "Reactors",
-   "Content": "[[Heading]]List of Reactors[[/Heading]][[PartGroupTable]]\nReactors|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
+   "Content": "Reactors are the highest rating type of [[Power]], with typical parts ranging from ratings 5-9. Reactors generally obsolete [[Power Cores]].\n\n[[Heading]]List of Reactors[[/Heading]][[PartGroupTable]]\nReactors|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
   },
   {
    "Name": "Recalibrators",
@@ -8319,7 +8319,7 @@
   {
    "Name": "Reinforced Power",
    "Part Category": "Reinforced Power",
-   "Content": "[[Heading]]List of Reinforced Power[[/Heading]][[PartGroupTable]]\nReinforced Power|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
+   "Content": "A type of [[Power]] that has vastly higher than normal integrity at the cost of higher mass and [[Heat]] generation. Their integrity is roughly 2-3 times the \"normal\" variants of the power sources.\n\n[[Heading]]List of Reinforced Power[[/Heading]][[PartGroupTable]]\nReinforced Power|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nPower/Rate|\nPower/Storage\n[[/PartGroupTable]]"
   },
   {
    "Name": "Relay Couplers",
@@ -9247,7 +9247,7 @@
     "Reactors",
     "Reinforced Power"
    ],
-   "Content": "[[Heading]]List of Power[[/Heading]][[PartGroupTable]]\nPower|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
+   "Content": "Power is one of the 4 slot types in the game, and power parts creates [[Energy]] at the cost of excess [[Heat]] generation as well as add extra energy storage. There are 3 subtypes of power: [[Engines]], [[Power Cores]], and [[Reactors]]. There is no real functional difference between them aside from the fact that lower rating parts are typically engines, mid rating are power cores, and higher rating are reactors. Since every bot uses energy to move and to fight, power is one of the most crucial components in a build. Run out of power and the only option left might be to core purge and hope to rebuild later.\nCogmind starts with 1 power slot on -10 but will typically need to evolve more in order to support high upkeep costs of propulsion on [[Flight|flight]] or [[Hover|hover]], or of [[Weapons]] and [[Defensive Utilities]] for grounded propulsion types. Endgame builds usually end up between 2-4 power slots as a slide scale between propulsion types. Flight remains on the lighter end with only 2, while [[Treads|treads]] and [[Legs]] stay the higher end with 3-4.\nMost bots, including Cogmind, do have some innate energy supply. For example, Cogmind's base energy starts at 5, [[Spoiler]]although it may increased by [[Alien Artifacts]] like the [[Integrated Reactor]][[/Spoiler]]. Some bots have enough bonus innate energy that they do not need an intact power source to be able to sustain combat. Other bots have so much energy drain from their utilities or propulsion that if they lose their power source then they will be rendered immobile.\n[[Study|Studies]] at [[Scanalyzer|Scanalyzers]] add 1 energy for [[Micro Power|micro]] and [[Light Power|light]] power or 2 for all other power sources.\n\n[[Heading]]List of Power[[/Heading]][[PartGroupTable]]\nPower|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nOverview/Heat|\nOverview/Matter|\nPower/Rate|\nPower/Storage|\nPower/Stability\n[[/PartGroupTable]]"
   },
   {
    "Name": "Propulsion",
@@ -11055,7 +11055,7 @@
   },
   {
    "Name": "Overload",
-   "Content": "Overloading is a [[Game Mechanics|Game Mechanic]] available on [[Overloadable Parts]], primarily cooled (Cld.) parts, that allows for a temporary increase in effectiveness with additional heat costs and potential downsides based on the stability of the part. It is possible to perform for Power, Propulsion, and Weapon type items.\n\n[[Heading]][[Overloadable Power|Power]][[/Heading]]\nSome power parts (e.g. [[Cld. Ion Engine]]) support overloading. Overloading power causes the following changes:\n[[List]]Doubled energy generation|Doubled heat generation|Chance to shut down for ~5-10 turns and be damaged ~30-40% of the maximum integrity, based on the Stability % stat[[/List]]\n\n[[Heading]][[Overloadable Propulsion|Propulsion]][[/Heading]]\nSome propulsion types (mainly [[Flight Units]] and [[Hover Units]]), e.g. [[Cld. VTOL Module]], support overloading. Overloading propulsion causes the following changes:\n[[List]]Doubled energy cost|Tripled heat generation|50% additional support|Speed is calculated as if there are twice the number of active Flight/Hover units (e.g. an overloaded Cld. VTOL Module will gain an additional -3 speed modifier)|Overload propulsion has a chance to suffer 1 point of damage each move that the part is active or each melee attack, based on the Burnout % stat[[/List]]\nOne special case, the [[Potential Leg]], does not have any of the above effects except for the burnout damage. Overloaded Potential Legs instead have their base speed halved.\n\n[[Heading]][[Overloadable Weapons|Weapons]][[/Heading]]\nSome energy weapons (e.g. [[Cld. Pulse Rifle]]) support overloading. Overloading weapons causes the following changes:\n[[List]]Double damage|Doubled energy cost|Tripled heat generation|Additional level of heat transfer (e.g. Medium (+37) is turned into High (+50)|Chance of negative effect based on Shot Stability %.[[/List]]\nIf an overload side effect occurs, one of the following effects will occur:\n[[List]]Energy Bleed (~40% chance): Cogmind loses anywhere from 10-50% of total energy capacity|Heat Surge (~40% chance): Cogmind gains between 100 and 200 heat|Short Circuit (~20% chance): A random part breaks[[/List]]"
+   "Content": "Overloading is a [[Game Mechanics|Game Mechanic]] available on [[Overloadable Parts]], primarily cooled (Cld.) parts, that allows for a temporary increase in effectiveness with additional heat costs and potential downsides based on the stability of the part. It is possible to perform for Power, Propulsion, and Weapon type items.\n\n[[Heading]][[Overloadable Power|Power]][[/Heading]]\n[[Overloadable Power|Some power parts]] (e.g. [[Cld. Ion Engine]]) support overloading.\n[[Partial]]Overload Power Details[[/Partial]]\n\n[[Heading]][[Overloadable Propulsion|Propulsion]][[/Heading]]\nSome propulsion types (mainly [[Flight]] and [[Hover]]), e.g. [[Cld. VTOL Module]], support overloading.\n[[Partial]]Overload Propulsion Details[[/Partial]]\n\n[[Heading]][[Overloadable Weapons|Weapons]][[/Heading]]\n[[Overloadable Weapons|Some weapons]] (e.g. [[Cld. Pulse Rifle]]) support overloading.\n[[Partial]]Overload Weapon Details[[/Partial]]"
   },
   {
    "Name": "Partial Spot",
@@ -11476,6 +11476,18 @@
    "Content": "The transition into and out of martial mode takes 3 turns. During the transition, and for as long as the mode is active, Cogmind movement speed is halved and the exoskeleton cannot be disabled or removed.\nWhile in martial mode:\n[[List]]\nWill automatically use an active melee weapon to attack any hostile that moves into an adjacent position at 33% of the normal time cost (no follow-ups).\n|10% chance to use the melee weapon to deflect each incoming projectile. A second melee weapon adds 5%; each melee weapon after that adds 2%. Melee weapons that successfully deflect a projectile have a 50% chance to take 1 damage each time.\n|Immune to knockback.\n|No ranged weapons suffer from recoil effects.\n[[/List]]"
   },
   {
+   "Name": "Overload Power Details",
+   "Content": "Overloading power causes the following changes:\n[[List]]Doubled energy generation|Doubled heat generation|Chance to shut down for ~5-10 turns and be damaged ~30-40% of the maximum integrity, based on the Stability % stat[[/List]]"
+  },
+  {
+   "Name": "Overload Propulsion Details",
+   "Content": "Overloading propulsion causes the following changes:\n[[List]]Doubled energy cost|Tripled heat generation|50% additional support|Speed is calculated as if there are twice the number of active Flight/Hover units (e.g. an overloaded Cld. VTOL Module will gain an additional -3 speed modifier)|Overload propulsion has a chance to suffer 1 point of damage each move that the part is active or each melee attack, based on the Burnout % stat[[/List]]\nOne special case, the [[Potential Leg]], does not have any of the above effects except for the burnout damage. Overloaded Potential Legs instead have their base speed halved."
+  },
+  {
+   "Name": "Overload Weapon Details",
+   "Content": "Overloading weapons causes the following changes:\n[[List]]Double damage|Doubled energy cost|Tripled heat generation|Additional level of heat transfer (e.g. Medium (+37) is turned into High (+50)|Chance of negative effect based on Shot Stability %.[[/List]]\nIf an overload side effect occurs, one of the following effects will occur:\n[[List]]Energy Bleed (~40% chance): Cogmind loses anywhere from 10-50% of total energy capacity|Heat Surge (~40% chance): Cogmind gains between 100 and 200 heat|Short Circuit (~20% chance): A random part breaks[[/List]]"
+  },
+  {
    "Name": "Shielding Mode Description",
    "Content": "The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.\nWhile in shielding mode:\n[[List]]\nCoverage for this leg is doubled.\n|This leg gains a 50% chance to glance any projectile that would otherwise hit it, instead taking no damage.\n[[/List]]"
   },
@@ -11491,12 +11503,21 @@
  ],
  "Redirects": [
   {
+   "Name": "Digging"
+  },
+  {
    "Name": "Doom Corridor",
    "Target": "Command#Doom Corridor"
   },
   {
+   "Name": "Flight"
+  },
+  {
    "Name": "High Siege Mode",
    "Target": "Special Propulsion Modes#High Siege Mode"
+  },
+  {
+   "Name": "Hover"
   },
   {
    "Name": "Martial Mode",

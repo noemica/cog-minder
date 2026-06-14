@@ -1,4 +1,4 @@
-﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
+"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","","",""
 "01-MTF's Autohacker","Part","A unique [[Utilities|Utility]] only found on [[01-MTF]] that was stolen from the [[Exiles (Group)]]. Its Door [[Terminal]] hacking is most useful with high difficulty doors like the [[Access]] [[Surface]] exit. Generally better than [[Plasma Cutters]], although they have an advantage in being able to function even if the door Terminal gets destroyed.","","","","","","","",""
 "01-MTF's Shockpuncher","Part","A unique [[Energy Guns|Energy Gun]] only found on [[01-MTF]], this short ranged [[Electromagnetic Guns|Electromagnetic Gun]] is an energy-hungry but powerful shotgun-type weapon. Its raw damage output is better than even lategame weapons like the [[Com. HERF Cannon]], capable of easily killing most bots in the game in 2 or 3 hits, and its high disruption helps disable crucial parts on bots that it hits. However, its short range and high spectrum can be a detriment since it has a high chance of blowing up any bots that it hits. Any nearby cover is not likely to last very long.","","","","","","","",""
@@ -980,10 +980,8 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
-Power/Storage|
-Power/Stability
+Power/Storage
 [[/PartGroupTable]]","","","","Backup Power I,Backup Power III,Backup Power VII","","","",""
 "Backup Power I","Part","","","","","","","","",""
 "Backup Power III","Part","","","","","","","","",""
@@ -2913,6 +2911,7 @@ Propulsion/Energy|
 Propulsion/Heat|
 Propulsion/Support
 [[/PartGroupTable]]","","","","Diametric Drive,Imp. Diametric Drive","","","",""
+"Digging","Redirect","","","","","","","","","Cave-ins"
 "Dimensional Node Initializer","Part","Dimensional Node Initializers are consumable [[Alien Artifacts]]. It is possible to find one in a random prefab in [[Caves]] and three in a random prefab in [[Quarantine]].
 
 [[Heading]]Lore[[/Heading]]
@@ -3263,14 +3262,15 @@ Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
 [[/PartGroupTable]]","","","","Sml. Battery,Med. Battery,Lrg. Battery,Hcp. Battery,Com. Battery,Energy Well,Imp. Energy Well,Adv. Energy Well,Exp. Energy Well,Zio. Biocell,V4-D3R's Forcewell,Zio. Biocell Array,Asb. Biocell Array,Superbattery,Cep. Chromion Battery","","","",""
-"Engines","Part Group","[[Heading]]List of Engines[[/Heading]][[PartGroupTable]]
+"Engines","Part Group","Engines are the lowest rating type of [[Power]], with parts ranging from ratings 1-5. Engines are replaced by [[Power Cores]] at higher ratings.
+
+[[Heading]]List of Engines[[/Heading]][[PartGroupTable]]
 Engines|
 Overview/Size|
 Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
 Power/Storage|
 Power/Stability
@@ -5608,6 +5608,7 @@ Projectile/Disruption|
 Projectile/Salvage
 [[/PartGroupTable]]","","","","Flamer,Enh. Flamer,Plasma Flamer","","","",""
 "Flexi-carbon Leg","Part","","","","","","","","",""
+"Flight","Redirect","","","","","","","","","Flight Units"
 "Flight Arrays","Part Group","A subclass of [[Flight Units]] that take 2 [[Propulsion]] slots instead of 1 like most other flight units. They are sturdier and have a higher support per slot than their associated standard variants. Their upkeep costs are also lower than 2 individual flight units. These parts make a great candidate for [[Study|studies]] at [[Scanalyzer|Scanalyzers]] since they get 2 support per study instead of just 1. Flight arrays tend to slow flight builds down some because they only count once for the mod/extra bonus instead of twice like 2 single-slot flight units would.
 
 [[Heading]]List of Flight Arrays[[/Heading]]
@@ -5690,7 +5691,7 @@ Effect/Effect
 "Fusion Bomb Launcher","Part","","","","","","","","",""
 "Fusion Bomb Trap","Part","","","","","","","","",""
 "Fusion Compressor","Part","","","","","","","","",""
-"Fusion Compressors","Part Group","Consume matter to produce energy.
+"Fusion Compressors","Part Group","A unique class of [[Power]] sources that produce large amounts of [[Energy]] compared to similarly rated parts but consume [[Matter]] as upkeep. Their [[Heat]] generation is also extra high compared to other power. The matter-consuming property makes them somewhat risky to use in some cases due to the potential of running out of matter, and thus, energy generation. They are best used on [[Flight]] or [[Hover]] to support energy-hungry propulsion or utilities thanks to their ability to quickly find and kill [[0b10 Non-combat Bots]] for their matter, especially [[Recycler|Recyclers]].
 
 [[Heading]]List of Fusion Compressors[[/Heading]][[PartGroupTable]]
 Fusion Compressors|
@@ -5700,9 +5701,7 @@ Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
 Overview/Matter|
-Power/Rate|
-Power/Storage|
-Power/Stability
+Power/Rate
 [[/PartGroupTable]]","","","","Fusion Compressor,Imp. Fusion Compressor","","","",""
 "Fusion Reactor","Part","","","","","","","","",""
 "G-34 Mercenary","Bot","The lowest tier of bipedal combat Robots deployed in Complex 0b10, they possess one Small Laser that can deal compounding damage to lower tier parts, especially in the numbers they are usually encountered in. Their lack of significant heat dissipation makes them quickly melt under a sustained salvo of Thermal attacks, while their low core integrity means any sufficiently consistent weapon (In upwards of 15 dmg or more) is good to destroy them, launchers are also effective due to this reason as well. Their minus -25% electromagnetic resistance makes them susceptible targets for your possibly game-start EM Pulse Gun though its actual damage will be weak. Proper positioning can limit the amount of damage you take in encounters with Grunts and most other 0b10 bots. Using doorways to limit the amount of fire you take is one such method, as well as using corners.","","","","","","","",""
@@ -6101,6 +6100,7 @@ The only 2 ways to exit High Security are to trigger [[Sterilization]] after kil
 [[Heading]]Contributors[[/Heading]]
 [[List]]aoemica|jimmyl|ktur|lyrabold|mathSq|Perseus|Rocko1345|Plexion[[/List]]","","","","","","","",""
 "Hotshot","Bot","","","","","","","","",""
+"Hover","Redirect","","","","","","","","","Hover Units"
 "Hover Arrays","Part Group","A type of [[Hover Units|hover]] that take up 2 slots instead of just 1 like most other hover. Their support per slot is a bit higher than their respective basic variants and they also have higher integrity. Another benefit of arrays is their very efficient upkeep costs compared to running multiple of the same part. Their downside is their lower speed and only slightly superior stats compared to basic hover, which makes them hard to want to use over [[Combat Hover Units]] and [[Cooled Hover Units]] if available.","","","","Gravmag Array,Antigrav Array,Gravjet Array","","","",""
 "Hover Unit","Part","","","","","","","","",""
 "Hover Units","Part Supergroup","Hover units have fairly low support and high speed, but not so far to either extreme as [[Flight Units]]. Standard hover is fragile (but also not as much as flight units), though special types of hover like [[Cooled Hover Units|cooled hover]], [[Combat Hover Units|combat hover]], and [[Gyrokinetic Inverters]] are less so. They are notably used by [[Programmer|Programmers]] and [[Operator|Operators]], along with [[Demolisher|Demolishers]] who use combat hover units.
@@ -6222,17 +6222,17 @@ This weapon is implied to have been developed by the [[Exiles (Group)]] as an in
 "Hyb. Deuterium Engine","Part","","","","","","","","",""
 "Hyb. Fission Core","Part","","","","","","","","",""
 "Hyb. Graviton Reactor","Part","","","","","","","","",""
-"Hybrid Power","Part Group","[[Heading]]List of Hybrid Power[[/Heading]][[PartGroupTable]]
+"Hybrid Power","Part Group","A type of [[Power]] that emphasizes [[Energy]] storage over energy generation. These power sources have very low power generation compared to similarly rated power, often less than 50% generation, but have many more times the storage instead. They are basically a mix between [[Energy Wells]] and power that fits in the power slot. One nice benefit of hybrid power is their very low coverage of 15, compared to the typical power source coverage of 60, ensuring that they will last a long time.
+
+[[Heading]]List of Hybrid Power[[/Heading]][[PartGroupTable]]
 Hybrid Power|
 Overview/Size|
 Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
-Power/Storage|
-Power/Stability
+Power/Storage
 [[/PartGroupTable]]","","","Hybrid Power","","","","",""
 "Hydra","Bot","","","","","","","","",""
 "Hyp. Alpha Cannon","Part","","","","","","","","",""
@@ -6899,17 +6899,17 @@ Propulsion/Penalty
 "Lgt. Quantum Reactor","Part","","","","","","","","",""
 "Lgt. Regenerative Plating","Part","","","","","","","","",""
 "Lgt. Treads","Part","","","","","","","","",""
-"Light Power","Part Group","[[Heading]]List of Light Power[[/Heading]][[PartGroupTable]]
+"Light Power","Part Group","A type of power that contains variants of ""normal"" power sources with slightly lowered mass and [[Energy]] storage. Power sources are between 2-5 mass lighter and have energy storage between 125 and 160 less than their basic counterparts. Light power [[Study|studies]] only provide +1 energy compared to the +2 of standard power supplies.
+
+[[Heading]]List of Light Power[[/Heading]][[PartGroupTable]]
 Light Power|
 Overview/Size|
 Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
-Power/Storage|
-Power/Stability
+Power/Storage
 [[/PartGroupTable]]","","","Light Power","","","","",""
 "Lightning","Bot","","","","","","","","",""
 "Lightning Gun","Part","","","","","","","","",""
@@ -7358,17 +7358,17 @@ Effect/Description
 "Mic. Fission Core","Part","","","","","","","","",""
 "Mic. Neutrino Core","Part","","","","","","","","",""
 "Mic. Nuclear Core","Part","","","","","","","","",""
-"Micro Power","Part Group","[[Heading]]List of Micro Power[[/Heading]][[PartGroupTable]]
+"Micro Power","Part Group","A type of power that contains variants of ""normal"" power sources with lowered mass, [[Energy]] generation and storage, and coverage. These parts are even lighter than [[Light Power]]. They are best used on [[Flight]] and [[Hover]] builds because their low mass support makes it harder to use ""normal"" power sources. Micro power [[Study|studies]] only provide +1 energy compared to the +2 of standard power supplies.
+
+[[Heading]]List of Micro Power[[/Heading]][[PartGroupTable]]
 Micro Power|
 Overview/Size|
 Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
-Power/Storage|
-Power/Stability
+Power/Storage
 [[/PartGroupTable]]","","","Micro Power","","","","",""
 "Micro-nuke Launcher","Part","","","","","","","","",""
 "Microactuators","Part","","","","","","","","",""
@@ -7548,21 +7548,30 @@ Operators can be blocked from summoning Reinforcements in a few different ways:
 "Overload","Other","Overloading is a [[Game Mechanics|Game Mechanic]] available on [[Overloadable Parts]], primarily cooled (Cld.) parts, that allows for a temporary increase in effectiveness with additional heat costs and potential downsides based on the stability of the part. It is possible to perform for Power, Propulsion, and Weapon type items.
 
 [[Heading]][[Overloadable Power|Power]][[/Heading]]
-Some power parts (e.g. [[Cld. Ion Engine]]) support overloading. Overloading power causes the following changes:
-[[List]]Doubled energy generation|Doubled heat generation|Chance to shut down for ~5-10 turns and be damaged ~30-40% of the maximum integrity, based on the Stability % stat[[/List]]
+[[Overloadable Power|Some power parts]] (e.g. [[Cld. Ion Engine]]) support overloading.
+[[Partial]]Overload Power Details[[/Partial]]
 
 [[Heading]][[Overloadable Propulsion|Propulsion]][[/Heading]]
-Some propulsion types (mainly [[Flight Units]] and [[Hover Units]]), e.g. [[Cld. VTOL Module]], support overloading. Overloading propulsion causes the following changes:
-[[List]]Doubled energy cost|Tripled heat generation|50% additional support|Speed is calculated as if there are twice the number of active Flight/Hover units (e.g. an overloaded Cld. VTOL Module will gain an additional -3 speed modifier)|Overload propulsion has a chance to suffer 1 point of damage each move that the part is active or each melee attack, based on the Burnout % stat[[/List]]
-One special case, the [[Potential Leg]], does not have any of the above effects except for the burnout damage. Overloaded Potential Legs instead have their base speed halved.
+Some propulsion types (mainly [[Flight]] and [[Hover]]), e.g. [[Cld. VTOL Module]], support overloading.
+[[Partial]]Overload Propulsion Details[[/Partial]]
 
 [[Heading]][[Overloadable Weapons|Weapons]][[/Heading]]
-Some energy weapons (e.g. [[Cld. Pulse Rifle]]) support overloading. Overloading weapons causes the following changes:
+[[Overloadable Weapons|Some weapons]] (e.g. [[Cld. Pulse Rifle]]) support overloading.
+[[Partial]]Overload Weapon Details[[/Partial]]","","","","","","","",""
+"Overload Power Details","Partial","Overloading power causes the following changes:
+[[List]]Doubled energy generation|Doubled heat generation|Chance to shut down for ~5-10 turns and be damaged ~30-40% of the maximum integrity, based on the Stability % stat[[/List]]","","","","","","","",""
+"Overload Propulsion Details","Partial","Overloading propulsion causes the following changes:
+[[List]]Doubled energy cost|Tripled heat generation|50% additional support|Speed is calculated as if there are twice the number of active Flight/Hover units (e.g. an overloaded Cld. VTOL Module will gain an additional -3 speed modifier)|Overload propulsion has a chance to suffer 1 point of damage each move that the part is active or each melee attack, based on the Burnout % stat[[/List]]
+One special case, the [[Potential Leg]], does not have any of the above effects except for the burnout damage. Overloaded Potential Legs instead have their base speed halved.","","","","","","","",""
+"Overload Weapon Details","Partial","Overloading weapons causes the following changes:
 [[List]]Double damage|Doubled energy cost|Tripled heat generation|Additional level of heat transfer (e.g. Medium (+37) is turned into High (+50)|Chance of negative effect based on Shot Stability %.[[/List]]
 If an overload side effect occurs, one of the following effects will occur:
 [[List]]Energy Bleed (~40% chance): Cogmind loses anywhere from 10-50% of total energy capacity|Heat Surge (~40% chance): Cogmind gains between 100 and 200 heat|Short Circuit (~20% chance): A random part breaks[[/List]]","","","","","","","",""
 "Overloadable Parts","Part Supergroup","For details on behavior when overloaded, see [[Overload]].","","","","","Overloadable Power,Overloadable Propulsion,Overloadable Weapons","","",""
-"Overloadable Power","Part Group","For details on behavior when overloaded, see [[Overload#Power]].
+"Overloadable Power","Part Group","A type of [[Prototype Part|prototype]] [[Power]] with lower than average [[Heat]] generation and the ability to [[Overload#Power|overload]] for additional [[Energy]] generation.
+
+[[Heading]]Overload effects[[/Heading]]
+[[Partial]]Overload Power Details[[/Partial]]
 
 [[Heading]]List of Overloadable Power[[/Heading]][[PartGroupTable]]
 Overloadable Power|
@@ -7571,12 +7580,14 @@ Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
 Power/Storage|
 Power/Stability
 [[/PartGroupTable]]","","","Overloadable Power","","","","",""
-"Overloadable Propulsion","Part Group","For details on behavior when overloaded, see [[Overload#Propulsion]].
+"Overloadable Propulsion","Part Group","A type of [[Propulsion]] that allows [[Overload#Propulsion|overloading]] for additional mass and speed. Most types of overloadable propulsion are cooled [[Hover]] or [[Flight]] units which have reduced base [[Heat]] generation.
+
+[[Heading]]Overload Effect[[/Heading]]
+[[Partial]]Overload Propulsion Details[[/Partial]]
 
 [[Heading]]List of Overloadable Propulsion[[/Heading]]
 [[PartGroupTable]]
@@ -7594,7 +7605,10 @@ Propulsion/Heat|
 Propulsion/Support|
 Propulsion/Burnout
 [[/PartGroupTable]]","","","Overloadable Propulsion","","","","",""
-"Overloadable Weapons","Part Group","For details on behavior when overloaded, see [[Overload#Weapons]].
+"Overloadable Weapons","Part Group","A type of [[Weapons|weapon]] that allows [[Overload#Weapons|overloading]] for extra damage output. All overloadable weapons are [[Energy Cannons]] or [[Energy Guns]].
+
+[[Heading]]Overload Effect[[/Heading]]
+[[Partial]]Overload Weapon Details[[/Partial]]
 
 [[Heading]]List of Overloadable Weapons[[/Heading]]
 [[PartGroupTable]]
@@ -7888,7 +7902,12 @@ Effect/Effect
 "Portable AFG","Part","","","","","","","","",""
 "Potential Cannon","Part","","","","","","","","",""
 "Potential Leg","Part","","","","","","","","",""
-"Power","Part Supergroup","[[Heading]]List of Power[[/Heading]][[PartGroupTable]]
+"Power","Part Supergroup","Power is one of the 4 slot types in the game, and power parts creates [[Energy]] at the cost of excess [[Heat]] generation as well as add extra energy storage. There are 3 subtypes of power: [[Engines]], [[Power Cores]], and [[Reactors]]. There is no real functional difference between them aside from the fact that lower rating parts are typically engines, mid rating are power cores, and higher rating are reactors. Since every bot uses energy to move and to fight, power is one of the most crucial components in a build. Run out of power and the only option left might be to core purge and hope to rebuild later.
+Cogmind starts with 1 power slot on -10 but will typically need to evolve more in order to support high upkeep costs of propulsion on [[Flight|flight]] or [[Hover|hover]], or of [[Weapons]] and [[Defensive Utilities]] for grounded propulsion types. Endgame builds usually end up between 2-4 power slots as a slide scale between propulsion types. Flight remains on the lighter end with only 2, while [[Treads|treads]] and [[Legs]] stay the higher end with 3-4.
+Most bots, including Cogmind, do have some innate energy supply. For example, Cogmind's base energy starts at 5, [[Spoiler]]although it may increased by [[Alien Artifacts]] like the [[Integrated Reactor]][[/Spoiler]]. Some bots have enough bonus innate energy that they do not need an intact power source to be able to sustain combat. Other bots have so much energy drain from their utilities or propulsion that if they lose their power source then they will be rendered immobile.
+[[Study|Studies]] at [[Scanalyzer|Scanalyzers]] add 1 energy for [[Micro Power|micro]] and [[Light Power|light]] power or 2 for all other power sources.
+
+[[Heading]]List of Power[[/Heading]][[PartGroupTable]]
 Power|
 Overview/Size|
 Overview/Rating|
@@ -7911,7 +7930,9 @@ Overview/Coverage|
 Effect/Effect
 [[/PartGroupTable]]","","","","Power Amplifier,Adv. Power Amplifier,Exp. Power Amplifier","","","",""
 "Power Bank","Part","","","","","","","","",""
-"Power Cores","Part Group","[[Heading]]List of Power Cores[[/Heading]][[PartGroupTable]]
+"Power Cores","Part Group","Power Cores are the middle rating type of [[Power]], with typical parts ranging from ratings 3-7. Power cores generally obsolete [[Engines]] and are replaced by [[Reactors]] at higher ratings.
+
+[[Heading]]List of Power Cores[[/Heading]][[PartGroupTable]]
 Power Cores|
 Overview/Size|
 Overview/Rating|
@@ -8618,14 +8639,15 @@ Upkeep/Energy|
 Effect/Effect
 [[/PartGroupTable]]","","","","Reaction Control System,Imp. Reaction Control System,Adv. Reaction Control System,Exp. Reaction Control System,Cep. Reaction Jets","","","",""
 "Reactive Plating","Part","","","","","","","","",""
-"Reactors","Part Group","[[Heading]]List of Reactors[[/Heading]][[PartGroupTable]]
+"Reactors","Part Group","Reactors are the highest rating type of [[Power]], with typical parts ranging from ratings 5-9. Reactors generally obsolete [[Power Cores]].
+
+[[Heading]]List of Reactors[[/Heading]][[PartGroupTable]]
 Reactors|
 Overview/Size|
 Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
 Power/Storage|
 Power/Stability
@@ -8732,17 +8754,17 @@ Upkeep/Energy|
 Upkeep/Heat|
 Effect/Effect
 [[/PartGroupTable]]","Spoiler","","","Lgt. Regenerative Plating,Med. Regenerative Plating,Hvy. Regenerative Plating,Cep. RG22 Armor,SHELL Armor","","","",""
-"Reinforced Power","Part Group","[[Heading]]List of Reinforced Power[[/Heading]][[PartGroupTable]]
+"Reinforced Power","Part Group","A type of [[Power]] that has vastly higher than normal integrity at the cost of higher mass and [[Heat]] generation. Their integrity is roughly 2-3 times the ""normal"" variants of the power sources.
+
+[[Heading]]List of Reinforced Power[[/Heading]][[PartGroupTable]]
 Reinforced Power|
 Overview/Size|
 Overview/Rating|
 Overview/Integrity|
 Overview/Coverage|
 Overview/Heat|
-Overview/Matter|
 Power/Rate|
-Power/Storage|
-Power/Stability
+Power/Storage
 [[/PartGroupTable]]","","","Reinforced Power","","","","",""
 "Reinforced Walls","Other","Many areas are sealed off by various types of Reinforced Walls. These walls all have much higher than typical armor values and resistances to most common damage types. The common theme between them all is that they do not have any Thermal resistance. As such, Cld. thermal [[Energy Cannons]] are the ideal way to cut through many of these barriers. Unlike basic walls, reinforced walls will not collapse due to penetrating weapons.
 There are two primary types of reinforced walls. Though they have different names, they behave functionally similarly. Orange doors block the main access to the blocked off area. These doors have a higher than normal armor value, but they tend to be lower than reinforced barriers. Reinforced barriers typically surround the remainder of the area to prevent digging in from the back side. In most maps, these have two times the normal armor level of walls. For example, an average Storage wall has an armor value of 24, so the reinforced barriers have an armor value of 48 on this map.
