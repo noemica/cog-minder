@@ -1269,7 +1269,7 @@ None|[[CellStyle:Good]]0, 0%|Query(), Other one-off  hacks not listed above
 [[/Table]]
 
 [[Heading:2]]Hacking Interference[[/Heading]]
-Once the final message has been met, CY-PHR will begin to interrupt Cogmind's hacking capabilities on all interactive machines. There are a large number of effects, some that are applicable to all Terminals, and others that are unique to specific types of hacks.
+Once the final message has been met, CY-PHR will begin to interrupt Cogmind's hacking capabilities on all interactive machines. There are a large number of effects, some that are applicable to all Terminals, and others that are unique to specific types of hacks. The following list is unlikely to be exhaustive, as some effects can be particularly tough to notice or confirm.
 
 [[Heading:3]]Random Comments[[/Heading]]
 CY-PHR will taunt Cogmind when performing hacks, either successfully or unsuccessfully. For example, when Cogmind loads a schematic in a [[Fabricator]], CY-PHR may say [[GameText]]I think there's something wrong with your [part name] schematic. It's upside down.[[/GameText]] Comments like these are simply flavor text and do not have any practical effect.
@@ -1313,11 +1313,21 @@ Bots that are created at a Fabricator have a chance of exploding into a large AO
 [[Heading:3]][[GameText]]Force(Recompile)[[/GameText]] Failure[[/Heading]]
 There is a random chance that performing a Recompile at a Fabricator will produce the wrong type of [[Authchips|Authchip]].
 
+[[Heading:3]]Trojan Removal[[/Heading]]
+Sometimes a previously-installed trojan may be removed from a machine. As it can occur long after the trojan was installed, this effect can be very hard to notice, especially when unaware of the effect's existence.
+Be cautious, as it can be easy to dismiss this effect and believe your own memory to be at fault, or worse, not notice a robot-tracking trojan is gone and end up spotted by dangerous foes. 
+[[Comment]]It's easiest to notice with stuff like botnets or tracking trojans, as it's easy to check for their presence from nearly anywhere by connecting to machines or occasionally looking at the map for tracked robots.
+The more important question is how this removal works;
+Does it trigger at random for each trojan independently?
+Or does it trigger at random/set intervals, picking a random trojan among those installed? In the latter case, then installing more trojans, even useless ones, might be useful?
+[[/Comment]]
+
 [[Heading:3]]Traceback[[/Heading]]
 Performing a few hacks after CY-PHR has been fully triggered will result in a [[GameText]]### SYSTEM_CRASH ###[[/GameText]]. The machine will become locked, but among flavor text there is a depth listed that is a few depth higher than Cogmind's current depth. Another crash soon after will also indicate a map. This is the location that CY-PHR will appear. Once on the given map, two further crashes will reveal a quadrant of the map and a relative position of CY-PHR's lair.
 
 [[Heading:2]]Fake Alerts[[/Heading]]
 One additional effect CY-PHR has that isn't directly related to hacking is the generation of fake alerts like [[High Security]] engaged. These will broadcast through the standard map alert message and include the standard sound effect too. This is purely to mess with the player and does not have any real effect.
+[[Comment]]Are you sure all of them are fake? I've had several squads be announced unrecalled after i'd recalled them, and i'm pretty that they had really been unrecalled.[[/Comment]]
 
 [[Heading:2]]CY-PHR's Lair[[/Heading]]
 [[Image]]CY-PHR Lair.png|CY-PHR in their lair[[/Image]]
@@ -1433,7 +1443,7 @@ Because only standard movements count towards the safety limit when traversing d
 |Being knocked back by [[Ballistic Cannons|Ballistic Cannon]] projectile, usually from hostiles.
 |Being knocked back by [[Concussive RPG]], including any used by Cogmind. Note that the explosion may cause dug-out tiles to become destabilized. [[Comment]]Since using one that way would push you away from the tile you fired from, i think that would make you immune to collapse due to attacking from a dug-out tile, but i haven't done thorough testing.[[/Comment]]
 |Being knocked back by hostile [[Impact Weapons]], which would hardly be beneficial since it would mean taking Impact damage to avoid the possible Impact damage of a cave-in.
-|[[Flight Units|Flying]] over robots, but only if that would move Cogmind onto a stable tile. Attempting to fly over robots onto a dug-tile will result in an ""invalid move"" message.
+|[[Flight Units|Flying]] over robots, which only counts the tile Cogmind ends up on. This is only possible with robots Cogmind cannot swap with, like hostile and neutral bots. For example, it is possible to achieve long safe digs by luring a squad of hostiles or a [[Recycler]] from the other side of a tunnel and flying over them at the appropriate time.
 [[/List]]
 
 [[Comment]]Some late-game AAs can make it possible to dig more safely/farther/better, they should probably be mentioned here? I'm not sure myself on how they function in regards to cave-ins due to movement.[[/Comment]]
