@@ -1,4 +1,4 @@
-import{c as x,r as S,j as a,L as j,F as N,B as v,G as V,w as he,H as Ce,I as Se,f as D,J as Te,y as W,T as L,K as de,a as Z,s as ke,M as xe,S as $,q as He,N as Ae,O as ce,z as Ge,u as me,P as ee,Q as Re,U as O,V as Ie,W as De,X as U,Y as Ne,Z as Pe}from"./index-DUKuRP0T.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as te,n as Q,b as K,o as ge,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-PWZBM-Z5.js";import{S as je}from"./Table-DhsGIP1z.js";import{e as ze}from"./partColumnDefs-DLDeqLyC.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as x,r as S,j as a,L as j,F as N,B as v,G as V,w as he,H as Ce,I as Se,f as D,J as Te,y as W,T as L,K as de,a as Z,s as ke,M as xe,S as $,q as He,N as Ae,O as ce,z as Ge,u as me,P as ee,Q as Re,U as O,V as Ie,W as De,X as U,Y as Ne,Z as Pe}from"./index-ineoUVUq.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as te,n as Q,b as K,o as ge,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-vKlC-Gao.js";import{S as je}from"./Table-BiFuL4YN.js";import{e as ze}from"./partColumnDefs-VkWY5Fvl.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -205,7 +205,7 @@ None|[[CellStyle:Good]]0, 0%|Query(), Other one-off  hacks not listed above
 [[/Table]]
 
 [[Heading:2]]Hacking Interference[[/Heading]]
-Once the final message has been met, CY-PHR will begin to interrupt Cogmind's hacking capabilities on all interactive machines. There are a large number of effects, some that are applicable to all Terminals, and others that are unique to specific types of hacks.
+Once the final message has been met, CY-PHR will begin to interrupt Cogmind's hacking capabilities on all interactive machines. There are a large number of effects, some that are applicable to all Terminals, and others that are unique to specific types of hacks. The following list is unlikely to be exhaustive, as some effects can be particularly tough to notice or confirm.
 
 [[Heading:3]]Random Comments[[/Heading]]
 CY-PHR will taunt Cogmind when performing hacks, either successfully or unsuccessfully. For example, when Cogmind loads a schematic in a [[Fabricator]], CY-PHR may say [[GameText]]I think there's something wrong with your [part name] schematic. It's upside down.[[/GameText]] Comments like these are simply flavor text and do not have any practical effect.
@@ -249,11 +249,21 @@ Bots that are created at a Fabricator have a chance of exploding into a large AO
 [[Heading:3]][[GameText]]Force(Recompile)[[/GameText]] Failure[[/Heading]]
 There is a random chance that performing a Recompile at a Fabricator will produce the wrong type of [[Authchips|Authchip]].
 
+[[Heading:3]]Trojan Removal[[/Heading]]
+Sometimes a previously-installed trojan may be removed from a machine. As it can occur long after the trojan was installed, this effect can be very hard to notice, especially when unaware of the effect's existence.
+Be cautious, as it can be easy to dismiss this effect and believe your own memory to be at fault, or worse, not notice a robot-tracking trojan is gone and end up spotted by dangerous foes. 
+[[Comment]]It's easiest to notice with stuff like botnets or tracking trojans, as it's easy to check for their presence from nearly anywhere by connecting to machines or occasionally looking at the map for tracked robots.
+The more important question is how this removal works;
+Does it trigger at random for each trojan independently?
+Or does it trigger at random/set intervals, picking a random trojan among those installed? In the latter case, then installing more trojans, even useless ones, might be useful?
+[[/Comment]]
+
 [[Heading:3]]Traceback[[/Heading]]
 Performing a few hacks after CY-PHR has been fully triggered will result in a [[GameText]]### SYSTEM_CRASH ###[[/GameText]]. The machine will become locked, but among flavor text there is a depth listed that is a few depth higher than Cogmind's current depth. Another crash soon after will also indicate a map. This is the location that CY-PHR will appear. Once on the given map, two further crashes will reveal a quadrant of the map and a relative position of CY-PHR's lair.
 
 [[Heading:2]]Fake Alerts[[/Heading]]
 One additional effect CY-PHR has that isn't directly related to hacking is the generation of fake alerts like [[High Security]] engaged. These will broadcast through the standard map alert message and include the standard sound effect too. This is purely to mess with the player and does not have any real effect.
+[[Comment]]Are you sure all of them are fake? I've had several squads be announced unrecalled after i'd recalled them, and i'm pretty that they had really been unrecalled.[[/Comment]]
 
 [[Heading:2]]CY-PHR's Lair[[/Heading]]
 [[Image]]CY-PHR Lair.png|CY-PHR in their lair[[/Image]]
@@ -3478,7 +3488,7 @@ Because only standard movements count towards the safety limit when traversing d
 |Being knocked back by [[Ballistic Cannons|Ballistic Cannon]] projectile, usually from hostiles.
 |Being knocked back by [[Concussive RPG]], including any used by Cogmind. Note that the explosion may cause dug-out tiles to become destabilized. [[Comment]]Since using one that way would push you away from the tile you fired from, i think that would make you immune to collapse due to attacking from a dug-out tile, but i haven't done thorough testing.[[/Comment]]
 |Being knocked back by hostile [[Impact Weapons]], which would hardly be beneficial since it would mean taking Impact damage to avoid the possible Impact damage of a cave-in.
-|[[Flight Units|Flying]] over robots, but only if that would move Cogmind onto a stable tile. Attempting to fly over robots onto a dug-tile will result in an "invalid move" message.
+|[[Flight Units|Flying]] over robots, which only counts the tile Cogmind ends up on. This is only possible with robots Cogmind cannot swap with, like hostile and neutral bots. For example, it is possible to achieve long safe digs by luring a squad of hostiles or a [[Recycler]] from the other side of a tunnel and flying over them at the appropriate time.
 [[/List]]
 
 [[Comment]]Some late-game AAs can make it possible to dig more safely/farther/better, they should probably be mentioned here? I'm not sure myself on how they function in regards to cave-ins due to movement.[[/Comment]]
