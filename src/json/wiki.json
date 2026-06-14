@@ -11453,5 +11453,6 @@
    "Content": "[[Table]]\nCategory|Cloaking Devices|Visual Processing Units||\nRange|[[CellStyle:Neutral]]-2 to -6, up to -9 when half_stacked|[[CellStyle:Neutral]]+2 to +8, not stackable||\nEnergy Upkeep|[[CellStyle:Bad]]Expensive: -5 to -20 energy per turn|[[CellStyle:Good]]None||\nSlot requirement|[[CellStyle:Good]]1 swappable|[[CellStyle:Bad]]1 unswappable||\nOther positives|[[CellStyle:Neutral]]Sneak into areas guarded by bots without being spotted|[[CellStyle:Neutral]]See further in combat, good for sniping and kiting||\nOther Negatives|[[CellStyle:Bad]]Low integrity/high coverage, no use if bots are already tracking Cogmind|[[CellStyle:Good]]N/A\n[[/Table]]",
    "Spoiler": "None"
   }
- ]
+ ],
+ "Redirects": []
 }
