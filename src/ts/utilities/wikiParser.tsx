@@ -1,6 +1,5 @@
 import { ColumnDef, GroupColumnDef } from "@tanstack/react-table";
 import { Fragment, ReactNode } from "react";
-import { useHashLocation } from "wouter/use-hash-location";
 
 import lore from "../../json/lore.json";
 import hacks from "../../json/machine_hacks.json";
@@ -159,7 +158,7 @@ function cleanHeadingText(text: string): { text: string; id: string } {
 }
 
 // Turns an arbitrary string into an HTML ID-compatible one
-function createIdFromText(text: string) {
+export function createIdFromText(text: string) {
     return text
         .replaceAll(" ", "_")
         .replaceAll(/[^\w-]/g, "")

@@ -10,7 +10,8 @@ export type EntryType =
     | "Part"
     | "Partial"
     | "Part Group"
-    | "Part Supergroup";
+    | "Part Supergroup"
+    | "Redirect";
 
 export class WikiEntry {
     alternativeNames: string[];

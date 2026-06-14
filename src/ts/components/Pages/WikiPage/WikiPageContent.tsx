@@ -264,6 +264,9 @@ export default function WikiPageContent({
         case "Part Supergroup":
             return parsedNode;
 
+        case "Redirect":
+            return "This should not be visible";
+
         default:
             assertUnreachable(entry.type);
     }

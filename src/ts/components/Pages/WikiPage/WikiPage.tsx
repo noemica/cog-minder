@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useMemo, useState } from "react";
-import { Route, Router, Switch, useLocation, useRoute } from "wouter";
+import { Redirect, Route, Router, Switch, useLocation, useRoute } from "wouter";
 // eslint-disable-next-line import/no-unresolved
 import { useHashLocation } from "wouter/use-hash-location";
 
@@ -19,7 +19,7 @@ import {
     loadImage,
     parseIntOrDefault,
 } from "../../../utilities/common";
-import { parseEntryContent } from "../../../utilities/wikiParser";
+import { createIdFromText, parseEntryContent } from "../../../utilities/wikiParser";
 import Button, { ButtonLink } from "../../Buttons/Button";
 import useBotData from "../../Effects/useBotData";
 import useItemData from "../../Effects/useItemData";
@@ -614,6 +614,26 @@ function addPartSupergroups(
     }
 }
 
+function addRedirect(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, WikiEntry>) {
+    for (const redirect of wiki.Redirects) {
+        const split = redirect.Target.split("#");
+        if (!allEntries.has(split[0])) {
+            console.log(`Found bad redirect target ${split[0]}`);
+        }
+
+        if (split.length > 1) {
+            // Replace the target with the ID-friendly name used by the actual pages
+            if (split.length > 2) {
+                console.log(`Found redirect ${redirect.Name} with more than 1 hash`);
+            }
+
+            redirect.Target = `${split[0]}#${createIdFromText(split[1])}`;
+        }
+
+        addEntry(new WikiEntry([], [], "", redirect.Name, redirect["Spoiler"], "Redirect", redirect.Target));
+    }
+}
+
 const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ["Alien Artifacts", (item) => item.ratingCategory === "Alien"],
     ["Alpha Cannons", (item) => item.type === "Energy Cannon" && item.name.includes("Alpha Cannon")],
@@ -733,6 +753,7 @@ function initEntries(botData: BotData, itemData: ItemData) {
     addOther(addEntry, allEntries);
 
     addPartial(addEntry, allEntries);
+    addRedirect(addEntry, allEntries);
 
     if (isDev()) {
         // Checks to make sure that all new parts are included in top level
@@ -898,15 +919,16 @@ function WikiNavigationBar({
     );
 }
 
-export default function WikiPage() {
+function MainPage() {
     const botData = useBotData();
     const itemData = useItemData();
-    const [location] = useLocation();
+    const [urlLocation] = useLocation();
+    const [hashLocation] = useHashLocation();
     const spoilers = useSpoilers();
 
     const [groupSelection, setGroupSelection] = useState("");
-    const [pageDidMatch, pageNameMatch] = useRoute("/wiki/:page");
-    const [pageIsHomepage] = useRoute("/wiki");
+    const [pageDidMatch, pageNameMatch] = useRoute("/:page");
+    const [pageIsHomepage] = useRoute("/");
 
     const [editState, setEditState] = useState<EditState>({
         editText: "",
@@ -914,8 +936,6 @@ export default function WikiPage() {
         modified: false,
         showEdit: false,
     });
-
-    const [hashLocation] = useHashLocation();
 
     const [allEntries, allowedEntries] = useMemo(() => {
         const allEntries = initEntries(botData, itemData);
@@ -992,62 +1012,83 @@ export default function WikiPage() {
         }
     }
 
+    const routes = Array.from(allEntries.values())
+        .filter((entry) => entry.type === "Redirect")
+        .map((entry) => {
+            return (
+                <Route key={entry.name} path={`/${entry.name}`}>
+                    <Redirect to={`/${entry.extraData}`} replace={true} />
+                </Route>
+            );
+        });
+
     return (
-        <Router base="/wiki">
-            <div className="page-content">
-                <WikiNavigationBar
-                    key={location}
-                    allEntries={allEntries}
-                    allowedEntries={allowedEntries}
-                    setEditState={setEditState}
-                    spoiler={spoilers}
-                />
-                <WikiEditControls
-                    editState={editState}
-                    entry={baseEntry}
-                    parsingErrors={parsingErrors}
-                    setEditState={setEditState}
-                />
-                <div className="wiki-page-content">
-                    <Switch>
-                        <Route path={"/"}>
-                            <WikiPageContent
-                                key="Homepage"
-                                allEntries={allEntries}
-                                entry={allEntries.get("Homepage")}
-                                groupSelection={groupSelection}
-                                parsedNode={parsedNode}
-                                spoiler={spoilers}
-                                path={"Homepage"}
-                                setGroupSelection={setGroupSelection}
-                            />
-                        </Route>
-                        <Route path={"/search/:search"}>
-                            {(params) => (
-                                <WikiSearchPage
-                                    allEntries={allEntries}
-                                    allowedEntries={allowedEntries}
-                                    search={getStringFromLinkSafeString(params["search"]!)}
-                                />
-                            )}
-                        </Route>
-                        <Route>
-                            {(params) => (
+        <Switch>
+            {routes}
+            <Route>
+                <div className="page-content">
+                    <WikiNavigationBar
+                        key={urlLocation}
+                        allEntries={allEntries}
+                        allowedEntries={allowedEntries}
+                        setEditState={setEditState}
+                        spoiler={spoilers}
+                    />
+                    <WikiEditControls
+                        editState={editState}
+                        entry={baseEntry}
+                        parsingErrors={parsingErrors}
+                        setEditState={setEditState}
+                    />
+                    <div className="wiki-page-content">
+                        <Switch>
+                            <Route path={"/"}>
                                 <WikiPageContent
-                                    key={entry?.name}
+                                    key="Homepage"
                                     allEntries={allEntries}
-                                    entry={entry}
+                                    entry={allEntries.get("Homepage")}
                                     groupSelection={groupSelection}
                                     parsedNode={parsedNode}
                                     spoiler={spoilers}
-                                    path={getStringFromLinkSafeString(params[0]!)}
+                                    path={"Homepage"}
                                     setGroupSelection={setGroupSelection}
                                 />
-                            )}
-                        </Route>
-                    </Switch>
+                            </Route>
+                            <Route path={"/search/:search"}>
+                                {(params) => (
+                                    <WikiSearchPage
+                                        allEntries={allEntries}
+                                        allowedEntries={allowedEntries}
+                                        search={getStringFromLinkSafeString(params["search"]!)}
+                                    />
+                                )}
+                            </Route>
+                            <Route>
+                                {(params) => (
+                                    <WikiPageContent
+                                        key={entry?.name}
+                                        allEntries={allEntries}
+                                        entry={entry}
+                                        groupSelection={groupSelection}
+                                        parsedNode={parsedNode}
+                                        spoiler={spoilers}
+                                        path={getStringFromLinkSafeString(params[0]!)}
+                                        setGroupSelection={setGroupSelection}
+                                    />
+                                )}
+                            </Route>
+                        </Switch>
+                    </div>
                 </div>
-            </div>
+            </Route>
+        </Switch>
+    );
+}
+
+export default function WikiPage() {
+    return (
+        <Router base="/wiki">
+            <MainPage />
         </Router>
     );
 }
