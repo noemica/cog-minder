@@ -1027,7 +1027,10 @@ Projectile/Salvage|
 Effect/Effect|
 Effect/Description
 [[/PartGroupTable]]","","","Ballistic Cannons","","","","",""
-"Ballistic Guns","Part Group","[[Heading]]List of Ballistic Weapons[[/Heading]]
+"Ballistic Guns","Part Group","[[Ballistic Weapons|Ballistic]] guns are a type of [[Weapons|weapon]] that cost [[Matter]] to fire and deal kinetic damage. While their damage output is middling, so too are their upkeep costs. Kinetic guns require negligible amounts of [[Energy|energy]] to fire, have low matter costs, and have low [[Heat|heat]] generation. This, combined with the ability to [[Gunsling]], makes them effectively stacked in large numbers. Gunslinging removes ones of the larger downsides of large weapon since it doesn't allow you to fire most of the volley into a useless spot where a bot is destroyed mid-volley, instead targeting another hostile.
+Most kinetic guns have the destroy [[Critical Hits|critical]] type which allows destroying a part or bot in a single hit regardless of remaining integrity. 
+
+[[Heading]]List of Ballistic Weapons[[/Heading]]
 [[PartGroupTable]]
 Ballistic Weapons|
 Overview/Size|
@@ -1048,7 +1051,7 @@ Projectile/Salvage|
 Effect/Effect|
 Effect/Description
 [[/PartGroupTable]]","","","Ballistic Guns","","","","",""
-"Ballistic Weapons","Part Supergroup","Ballistic [[weapons]], either [[Ballistic Guns|guns]] or [[Ballistic Cannons|cannons]], consume [[Matter]] to fire and suffer from [[Weapons#Recoil|recoil]]. Their [[Energy|energy]] costs are generally very low, and [[Heat|heat]] generation is very low for guns but moderately high for cannons. Kinetic damage is a good all-around damage type that is resisted by very few bots except for [[Hunter|Hunters]].
+"Ballistic Weapons","Part Supergroup","Ballistic [[Weapons|weapons]], either [[Ballistic Guns|guns]] or [[Ballistic Cannons|cannons]], consume [[Matter]] to fire and suffer from [[Weapons#Recoil|recoil]]. Their [[Energy|energy]] costs are generally very low, and [[Heat|heat]] generation is very low for guns but moderately high for cannons. Kinetic damage is a good all-around damage type that is resisted by very few bots except for [[Hunter|Hunters]].
 
 [[Heading]]List of Ballistic Weapons[[/Heading]]
 [[PartGroupTable]]
@@ -3251,6 +3254,33 @@ Projectile/Salvage|
 Effect/Effect|
 Effect/Description
 [[/PartGroupTable]]","","","","","Backup Lasers,Electromagnetic Guns,Phasers,Shearguns,Thermal Guns,Vortex Guns","","",""
+"Energy Weapons","Part Supergroup","[[Heading]]List of Energy Weapons[[/Heading]]
+[[PartGroupTable]]
+Energy Weapons|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Heat|
+Shot/Targeting|
+Shot/Delay|
+Shot/Stability|
+Shot/Waypoints|
+Projectile/Arc|
+Projectile/Count|
+Projectile/Damage|
+Projectile/Type|
+Projectile/Critical|
+Projectile/Penetration|
+Projectile/Heat Transfer|
+Projectile/Spectrum|
+Projectile/Disruption|
+Projectile/Salvage|
+Effect/Effect|
+Effect/Description
+[[/PartGroupTable]]","","","","","","Energy Guns,Energy Cannons","",""
 "Energy Well","Part","","","","","","","","",""
 "Energy Wells","Part Group","Additional [[Storage]] for [[Energy]] that can be filled up without the part being attached and retrieved by either attaching the part or by being positioned on the same tile as the part on the ground. This storage is especially useful for builds that use lots of energy on things like [[Electromagnetic Weapons]] and [[Force Fields]].
 Dropping energy wells is much more efficient in spent turns to restock on energy than swapping the part on and back off again. This can be done ahead of combat to save even more time. While it is generally superior, the dropping technique does have some downsides. It requires a free slot underneath Cogmind, otherwise the dropped part will take time to walk on top of. Leaving the part on the ground also leaves it liable to be destroyed by explosions or picked up by a [[Recycler]].
@@ -5780,6 +5810,7 @@ It may also be wise to carry an extra power source or significant energy storage
 [[Cave-ins]] - Mechanic that causes dug out walls to collapse and deal large amounts of damage.|
 [[Corruption]] - Stat that has various negative penalties and can result in death.|
 [[Energy]] - Stat that is used to power most parts in the game.|
+[[Gunsling]] - Ability to swap targets after killing one bot with a gun-only volley|
 [[Heat]] - Stat that can cause overheating side-effects and deaths in non-immune bots.|
 [[Matter]] - Stat that is used as a resource to attach parts and shoot some types of weapons.|
 [[Overload]] - Mechanic that can increase effectiveness of parts with a possible downside.|
@@ -5965,6 +5996,8 @@ They cannot be fired in a volley with other weapons, only alone.
 |They are unaffected by [[Corruption]] misfires.
 [[/List]]","","","Guided Weapons","","","","",""
 "Gun Armor","Part","","","","","","","","",""
+"Gunsling","Other","""Gunslinging"" is a gun-only [[Weapons|weapon]] mechanic that allows the attacker to switch to another hostile in line of sight after a first is destroyed in the same volley. When this occurs, the game log will display a message like [[GameText]]Switching to secondary target: [bot name][[/GameText]]. This mechanic works well with [[Kinetic Guns|kinetic guns]] due to their destroy [[Critical Hits|critical hit]] which is likely to kill bots in a single hit and the ease of stacking large numbers of weapons.
+Other weapon types can also gain this effect with the [[Heavy Servo Lattice]] or the [[VL-GR5's Timing Chip]].","","","","","","","",""
 "Guru","Bot","","","","","","","","",""
 "Gyrokinetic Inverter","Part","","","","","","","","",""
 "Gyrokinetic Inverters","Part Group","A very different form of [[Hover Units]] compared to the others. Gyrokinetic Inverters have a paltry 7 coverage which makes them extremely unlikely to be hit in combat and enough integrity to survive a few hits even if they do. However, their downside is low speed and a very high heat upkeep of +5/+4 at the standard-Exp. variants. Running a few of these will require one or more dedicated [[Cooling Devices]] just to keep the heat down.
@@ -8665,6 +8698,14 @@ Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
 [[/PartGroupTable]]","","","","Recalibrator,Imp. Recalibrator,Adv. Recalibrator,Exp. Recalibrator","","","",""
+"Recoil","Other","Recoil is a [[Weapons|weapon]] mechanic that is primarily applicable to [[Ballistic Weapons|ballistic weapons]]. Recoil reduces the accuracy of all other weapons in the volley regardless of firing order by a percent equal to the recoil value.
+Recoil can be reduced by having active [[Treads|treads]], with 1 recoil reduced for each weapon per active tread slot when firing. [[Siege Mode|siege mode]] and [[Martial Mode|martial mode]] can both negate recoil entirely. Another method to reduce recoil is [[Recoil Stabilizer|Recoil Stabilizers]] which also reduce recoil by a fixed amount per weapon.
+As an example, let's say that [[Cogmind]] is wearing a single set of [[Lgt. Treads]] and fires a volley consisting of a [[Gauss Rifle]] (2 recoil), [[Gauss Cannon]] (4 recoil), and a [[Field Laser]] (no recoil). If the base chance of hitting the target is 70%, accuracy is calculated as follows:
+[[List]]
+Gauss Rifle: 70% - ( 4 [Gauss Cannon] - 1 [Treads] ) = 67%|
+Gauss Cannon: 70% - ( 2 [Gauss Rifle] - 1 [Treads] ) = 69%|
+Field Rifle: 70% - ( 2 [Gauss Rifle] - 1 [Treads] ) - ( 4 [Gauss Cannon] - 1 [Treads] ) = 66%
+[[/List]]","","","","","","","",""
 "Recoil Stabilizer","Part","","","","","","","","",""
 "Recoil Stabilizers","Part Group","[[Heading]]List of Recoil Stabilizers[[/Heading]]
 [[PartGroupTable]]
@@ -12391,13 +12432,13 @@ This is then modified by the sum of the delay stats of every weapon in the volle
 When multiple melee weapons are fired in a single volley, the first will always fire, and any others will have an independent chance to make a follow-up attack. Follow-up attacks gain 10% accuracy and also only add half of their delay stat to the volley time, before the time cost reduction of any [[Actuators]]. Follow-up attacks are more likely when the primary weapon is slower than a given backup melee weapon. The exact follow-up calculation is:
 [[GameText]]20 + ([(primary weapon speed mod) - (followup weapon speed mod)] / 10)[[/GameText]]
 
-[[Heading:2]]Recoil[[/Heading]]
+[[Heading:2]][[Recoil]][[/Heading]]
 
 Certain weapons (Especially ballistic ones) suffer from recoil. The sum of every other weapon's recoil will be assessed as a penalty to each weapon in a volley containing weapon(s) suffering from recoil. The order of weapons in the volley does not matter. Recoil will be applied to all weapons other than the one causing the recoil.
 
 [[Heading]]Energy/Ballistic Gun Mechanics[[/Heading]]
 
-If a volley is comprised exclusively of ballistic and/or energy guns and its original target is destroyed, a secondary target may be selected, prioritizing the most easily hit armed and active hostile in range. New targets may continue to be selected until no weapons remain in the volley. This mechanic is also available to melee follow-ups, and can be expanded to any weapon with use of a [[Heavy Servo Lattice]] or [[Spoiler]][[VL-GR5's Timing Chip]][[/Spoiler]]. However, unlike every other weapon types, guns cannot cause overflow damage when damage dealt is greater than the target components integrity. Overflow damage is sent to a second part according to standard coverage rules, unless the destroyed part was [[Armor|armor]], and overflow damage is always sent to armor if any is present.
+If a volley is comprised exclusively of ballistic and/or energy guns and its original target is destroyed, a secondary target may be selected, prioritizing the most easily hit armed and active hostile in range. This mechanic is called [[Gunsling|gunslinging]]. New targets may continue to be selected until no weapons remain in the volley. A similar mechanic is also available to melee follow-ups, and can be expanded to any weapon with use of a [[Heavy Servo Lattice]] or [[Spoiler]][[VL-GR5's Timing Chip]][[/Spoiler]]. However, unlike every other weapon types, guns cannot cause overflow damage when damage dealt is greater than the target components integrity. Overflow damage is sent to a second part according to standard coverage rules, unless the destroyed part was [[Armor|armor]], and overflow damage is always sent to armor if any is present.
 
 [[Heading]]Weapon Types[[/Heading]]
 
@@ -12405,7 +12446,7 @@ If a volley is comprised exclusively of ballistic and/or energy guns and its ori
 
 Energy weapons generally have a shorter range, but benefit from a more easily predictable damage potential and little or no recoil. Thermal damage also transfers [[Heat|heat]] to the target, and may cause meltdowns in hot enough targets. Electromagnetic damage is capable of causing system [[Corruption|corruption]] in targets. Anywhere from 50-150% of damage is applied as system corruption. EM damage is additionally capable of disrupting hit parts or even robot cores, as well as causing chain reactions in target power components. [[Overloadable Weapons|Some energy weapons]] are capable of being [[Overload#Weapons|overloaded]] for additional damage.
 
-[[Heading:2]][[Ballistic Weapons]][[/Heading]]
+[[Heading:2]][[Ballistic Weapons|Ballistic AKA Kinetic Weapons]][[/Heading]]
 
 Ballistic weapons generally have a longer effective range and more destructive critical strikes, but suffer from less predictable damage and high recoil. Some kinetic projectiles, especially [[Hypervelocity Weapons|hypervelocity variants]], are capable of penetrating one or more consecutive targets. Kinetic cannon hits also blast usable matter off target robots and have a damage-equivalent chance to cause knockback, with a (10 - range) * 5 modifier and a +/-10% per size class (Tiny/Small/Medium/Large/Huge) difference between the target and medium size (targets knocked into another robot may also damage and displace it). The amount of matter created per cannon projectile impact is randomized from between zero up to the absolute value of the weapon's salvage modifier, but only applies for those weapons with a negative salvage modifier below -2.
 
@@ -12447,8 +12488,8 @@ Common bot resistance|[[CellStyle:Neutral]][[CellSpan:2]][[Hunter|Hunters]]|[[Ce
 Common bot weakness|[[CellStyle:Good]][[CellSpan:2]]Programmers|[[CellStyle:Good]][[CellSpan:2]]Some Behemoths, Programmers|[[CellStyle:Good]][[CellSpan:2]][[Grunt|Grunts]], Hunters|[[CellStyle:Good]][[Swarmer|Swarmers]]|[[CellStyle:Good]]Grunts, Hunters|[[CellStyle:Neutral]]N/A|[[CellStyle:Neutral]]N/A|[[CellStyle:Neutral]]N/A||
 Salvage|[[CellStyle:Neutral]]Neutral, can use [[Salvage Targeting Computers]]|[[CellStyle:Bad]]Negative|[[CellStyle:Neutral]]Neutral, can melt parts|[[CellStyle:Neutral]]Neutral, can melt parts|[[CellStyle:Neutral]]Positive, can [[Corrupted Parts|corrupt]] and fry parts|[[CellStyle:Neutral]]Positive, can corrupt and fry parts|[[CellStyle:Bad]]Highly negative|[[CellStyle:Neutral]]Positive, can corrupt and fry parts and explode engines|[[CellStyle:Bad]]Negative, can corrupt parts|[[CellStyle:Neutral]]Neutral, can sever parts|[[CellStyle:Neutral]]Neutral, more likely to hit core||
 Collateral damage|[[CellStyle:Neutral]]Penetration can  walls and machines and more likely to hit non-combat bots|[[CellStyle:Neutral]]High damage destroys walls|[[CellStyle:Good]]Little|[[CellStyle:Neutral]]High damage destroys walls|[[CellStyle:Neutral]]Spectrum can blow up engines|[[CellStyle:Neutral]]Spectrum can blow up engines|[[CellStyle:Bad]]Likely to blow up walls, machines, and non-combat bots|[[CellStyle:Neutral]]Can blow up walls, machines, and non-combat bots via spectrum but less often|[[CellStyle:Good]]None|[[CellStyle:Good]]None|[[CellStyle:Good]]None||
-Other unique traits|[[CellStyle:Good]]Penetration|[[CellStyle:Good]]Knockback + matter generation|[[CellStyle:Good]][[CellSpan:2]]Innate heat transfer|[[CellStyle:Good]][[CellSpan:2]]Corruption, spectrum, disruption|[[CellStyle:Good]]AOE attack|[[CellStyle:Good]]AOE attack, corruption, spectrum, disruption|[[CellStyle:Good]]Knockback|[[CellStyle:Neutral]]N/A|[[CellStyle:Good]]8% bonus core exposure
-[[/Table]]","","","","","Autonomous Weapons,Concussive RPGs,Guided Weapons,Overloadable Weapons,Phasic Weapons,Vortex Weapons","Ballistic Weapons,Datajacks,Electromagnetic Weapons,Energy Cannons,Energy Guns,Hypervelocity Weapons,Launchers,Melee Weapons,Special Melee Weapons,Special Weapons,Thermal Weapons","",""
+Other unique traits|[[CellStyle:Good]]Penetration, recoil|[[CellStyle:Good]]Knockback, matter generation, recoil|[[CellStyle:Good]][[CellSpan:2]]Innate heat transfer|[[CellStyle:Good]][[CellSpan:2]]Corruption, spectrum, disruption|[[CellStyle:Good]]AOE attack|[[CellStyle:Good]]AOE attack, corruption, spectrum, disruption|[[CellStyle:Good]]Knockback|[[CellStyle:Neutral]]N/A|[[CellStyle:Good]]8% bonus core exposure
+[[/Table]]","","","","","Autonomous Weapons,Concussive RPGs,Guided Weapons,Overloadable Weapons,Phasic Weapons,Vortex Weapons","Ballistic Weapons,Datajacks,Electromagnetic Weapons,Energy Cannons,Energy Guns,Energy Weapons,Hypervelocity Weapons,Launchers,Melee Weapons,Special Melee Weapons,Special Weapons,Thermal Weapons","",""
 "Weight Redist. System","Part","","","","","","","","",""
 "Welding Torch","Part","","","","","","","","",""
 "Wheel","Part","","","","","","","","",""
