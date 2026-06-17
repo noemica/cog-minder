@@ -1203,7 +1203,10 @@ Alternatively, with a long 1-tile corridor that has paths in both directions to 
 "CR-A16's Behemoth Slayer","Part","Transformed from [[CR-A16's Pointy Stick]]. The Behemoth Slayer will always instantly kill any [[Behemoth]] it hits. Note: This only applies to standard [[0b10]] Behemoth-class bots. [[Marauder|Marauders]] and the [[Superbehemoth]] are immune to this effect. When its effect activates, the game log [[GameText]][Behemoth] suddenly blasts apart at the seams.[[/GameText]]","","","","","","","",""
 "CR-A16's Pointy Stick","Part","Given by the [[Derelict]] CR-A16 in [[Zion]]. When used to attack [[Behemoth|Behemoths]], there is a chance that this will transform into [[CR-A16's Behemoth Slayer]]. When this occurs, the log message [[GameText]]CR-A16's Pointy Stick's crusty surface crumbles away to reveal its sleek core, which hums to life.[[/GameText]] will appear.
 Note: This transformation effect only applies to standard [[0b10]] Behemoth-class bots. [[Marauder|Marauders]] and the [[Superbehemoth]] are immune to this effect. However, it will still transform if used on an allied Behemoth or disabled one, such as the Behemoths that sometimes appear in [[Zhirov (Location)]].","","","","","","","",""
-"CY-PHR","Bot","CY-PHR is a part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. They are arguably the most unique of the Unchained due to the fact that they can affect the game far before they appear on the map. CY-PHR interferes with Cogmind's [[Interactive Machine]] hacking capabilities early on and will not show up until several floors later. Offensively, they pose little threat with their [[CY-PHR's Mindspike]] only being capable of disabling Cogmind rather than dealing direct damage. However, this weapon paired with their high speed and [[Exp. Phase Shifter]] makes them difficult to pin down while fleeing, so killing them even after finding them can be a real challenge. While not functionally useful, they also have 4 slots of powerful [[Prototype Part|Prototype]] [[Hackware]] which make for some highly desirable loot.
+"CY-PHR","Bot","CY-PHR is a part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. They are arguably the most unique of the Unchained due to the fact that they can affect the game far before they appear on the map, that they only appear once on a single map, and that unless confronted on that one map, will continue to cause trouble for the remainder of the run.
+CY-PHR interferes with Cogmind's [[Interactive Machine]] hacking capabilities early on and will not show up until several floors later. Offensively, they pose little threat with their [[CY-PHR's Mindspike]] only being capable of disabling Cogmind rather than dealing direct damage. However, this weapon paired with their high speed and [[Exp. Phase Shifter]] makes them difficult to pin down while fleeing, so killing them even after finding them can be a real challenge. While not functionally useful, they also have 4 slots of powerful [[Prototype Part|Prototype]] [[Hackware]] which make for some highly desirable loot.
+
+Because they will never stop causing trouble unless confronted, and because only a single Unchained can be active at once, intentionally getting hunted by CY-PHR and avoiding the only possible confrontation is an effective strategy to avoid being hunted by any of the other Unchained, at the cost of CY-PHR's hacking interference lasting until the end of the run. 
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]Cyclists Records|UC/CY-PHR[[/Lore]]
@@ -1302,6 +1305,10 @@ Sometimes when successfully hacking CY-PHR will cause the machine to be instantl
 [[Heading:3]]Locating Failures[[/Heading]]
 Whenever Cogmind performs any kind of location hack, there is a chance that CY-PHR will reduce the number of found things or fail to report them entirely. For example, performing a [[GameText]]Access(Main)[[/GameText]] hack may report only 2 out of 4 main exits on the floor. This effect can occurs with Access(Main/Branch) hacks and [[GameText]]Traps(Locate)[[/GameText]].
 
+[[Heading:3]][[GameText]]Traps(Disarm)[[/GameText]] and [[GameText]]Traps(Reprogram)[[/GameText]] Failure[[/Heading]]
+When successfully hacking either of [[GameText]]Traps(Disarm)[[/GameText]] or [[GameText]]Traps(Reprogram)[[/GameText]], it is possible that the Terminal will falsely report there being no [[Traps]] within its range, even if some had just been located via [[GameText]]Traps(Locate)[[/GameText]] on the same Terminal.
+[[Comment]]It's possible that this only happens when performing those hacks indirectly?[[/Comment]]
+
 [[Heading:3]]Database Failure[[/Heading]]
 When Cogmind is trying to hack for a [[Robot Analysis]] or [[Schematic]], the hack may succeed but have a joke entry replace the real hack results instead. It is also possible that a real but other random schematic will be hacked instead of the requested one.
 
@@ -1332,9 +1339,17 @@ Bots that are created at a Fabricator have a chance of exploding into a large AO
 [[Heading:3]][[GameText]]Force(Recompile)[[/GameText]] Failure[[/Heading]]
 There is a random chance that performing a Recompile at a Fabricator will produce the wrong type of [[Authchips|Authchip]].
 
+[[Heading:3]]Squad Unrecall[[/Heading]]
+Sometimes, a few turns after successfully performing a Recall() hack, an alert message such as [[GameText]]ALERT: Just where do you think you're going, squad KXEFLN409K?[[/GameText]] will indicate that the squad that was supposed to be recalled was unrecalled by CY-PHR. While the type of the unrecalled squad isn't always announced, unrecall alert messages will always contain the squad's hash (its name), making it possible to identify the Recall() hacks that were undone and the type of the unrecalled squads.
+[[Comment]]I'm not entirely sure how it works;
+After a successful recall hack that gets unrecalled, do the bots continue to move towards their target as though nothing had happened?
+Or do they start leaving the map until CY-PHR unrecalls them?
+If the latter, does that mean that recalling a squad really quickly can make it leave so fast that CY-PHR doesn't get an opportunity to unrecall them, or will they just leave the map and come back once unrecalled?
+[[/Comment]]
+
 [[Heading:3]]Trojan Removal[[/Heading]]
-Sometimes a previously-installed trojan may be removed from a machine. As it can occur long after the trojan was installed, this effect can be very hard to notice, especially when unaware of the effect's existence.
-Be cautious, as it can be easy to dismiss this effect and believe your own memory to be at fault, or worse, not notice a robot-tracking trojan is gone and end up spotted by dangerous foes. 
+Sometimes, a previously-installed trojan may be removed from a machine. As it can occur long after the trojan was installed, this effect can be very hard to notice, especially when unaware of its existence.
+Be cautious, as it can be easy to dismiss this effect and believe your own memory to be at fault, or worse, not notice a robot-tracking trojan is gone and end up spotted by an unforseen [[Operator]] or [[Cargo Convoy]].
 [[Comment]]It's easiest to notice with stuff like botnets or tracking trojans, as it's easy to check for their presence from nearly anywhere by connecting to machines or occasionally looking at the map for tracked robots.
 The more important question is how this removal works;
 Does it trigger at random for each trojan independently?
@@ -1346,7 +1361,6 @@ Performing a few hacks after CY-PHR has been fully triggered will result in a [[
 
 [[Heading:2]]Fake Alerts[[/Heading]]
 One additional effect CY-PHR has that isn't directly related to hacking is the generation of fake alerts like [[High Security]] engaged. These will broadcast through the standard map alert message and include the standard sound effect too. This is purely to mess with the player and does not have any real effect.
-[[Comment]]Are you sure all of them are fake? I've had several squads be announced unrecalled after i'd recalled them, and i'm pretty that they had really been unrecalled.[[/Comment]]
 
 [[Heading:2]]CY-PHR's Lair[[/Heading]]
 [[Image]]CY-PHR Lair.png|CY-PHR in their lair[[/Image]]
