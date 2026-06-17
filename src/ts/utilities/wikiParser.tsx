@@ -2268,7 +2268,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
     while ((newlineIndex = state.initialContent.indexOf("\n", state.index)) !== -1) {
         state.output.push({
             groupType: "Grouped",
-            node: state.initialContent.substring(state.index, newlineIndex).replace("{{", "[").replace("}}", "]"),
+            node: restoreBrackets(state.initialContent.substring(state.index, newlineIndex)),
         });
         state.output.push({ groupType: "Separator", node: undefined });
 
@@ -2279,7 +2279,7 @@ function processSection(state: ParserState, endTag: string | undefined) {
     if (state.index < state.initialContent.length) {
         state.output.push({
             groupType: "Grouped",
-            node: state.initialContent.substring(state.index).replace("{{", "[").replace("}}", "]"),
+            node: restoreBrackets(state.initialContent.substring(state.index)),
         });
         state.index = state.initialContent.length;
     }
