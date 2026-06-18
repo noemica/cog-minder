@@ -649,8 +649,6 @@ function addRedirect(addEntry: (entry: WikiEntry) => void, allEntries: Map<strin
 const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ["Alien Artifacts", (item) => item.ratingCategory === "Alien"],
     ["Alpha Cannons", (item) => item.type === "Energy Cannon" && item.name.includes("Alpha Cannon")],
-    ["Ballistic Cannons", (item) => item.type === "Ballistic Cannon"],
-    ["Ballistic Guns", (item) => item.type === "Ballistic Gun"],
     ["Cooled Flight Units", (item) => item.type === "Flight Unit" && item.name.startsWith("Cld.")],
     ["Cooled Hover Units", (item) => item.type === "Hover Unit" && item.name.startsWith("Cld.")],
     ["Data Cores", (item) => item.type === "Data Core"],
@@ -674,6 +672,8 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
     ["Hybrid Power", (item) => item.slot === "Power" && item.name.startsWith("Hyb.")],
     ["Impact Weapons", (item) => item.type === "Impact Weapon"],
     ["Items", (item) => item.type === "Item"],
+    ["Kinetic Cannons", (item) => item.type === "Ballistic Cannon"],
+    ["Kinetic Guns", (item) => item.type === "Ballistic Gun"],
     ["Legs", (item) => item.type === "Leg"],
     ["Light Power", (item) => item.slot === "Power" && item.name.startsWith("Lgt.")],
     ["Micro Power", (item) => item.slot === "Power" && item.name.startsWith("Mic.")],
