@@ -1,7 +1,7 @@
 "Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
-"01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high spectrum high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","","",""
+"01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","","",""
 "01-MTF's Autohacker","Part","A unique [[Utilities|Utility]] only found on [[01-MTF]] that was stolen from the [[Exiles (Group)]]. Its Door [[Terminal]] hacking is most useful with high difficulty doors like the [[Access]] [[Surface]] exit. Generally better than [[Plasma Cutters]], although they have an advantage in being able to function even if the door Terminal gets destroyed.","","","","","","","",""
-"01-MTF's Shockpuncher","Part","A unique [[Energy Guns|Energy Gun]] only found on [[01-MTF]], this short ranged [[Electromagnetic Guns|Electromagnetic Gun]] is an energy-hungry but powerful shotgun-type weapon. Its raw damage output is better than even lategame weapons like the [[Com. HERF Cannon]], capable of easily killing most bots in the game in 2 or 3 hits, and its high disruption helps disable crucial parts on bots that it hits. However, its short range and high spectrum can be a detriment since it has a high chance of blowing up any bots that it hits. Any nearby cover is not likely to last very long.","","","","","","","",""
+"01-MTF's Shockpuncher","Part","A unique [[Energy Guns|Energy Gun]] only found on [[01-MTF]], this short ranged [[Electromagnetic Guns|Electromagnetic Gun]] is an energy-hungry but powerful shotgun-type weapon. Its raw damage output is better than even lategame weapons like the [[Com. HERF Cannon]], capable of easily killing most bots in the game in 2 or 3 hits, and its high [[Disruption|disruption]] helps disable crucial parts on bots that it hits. However, its short range and high [[Spectrum|spectrum]] can be a detriment since it has a high chance of blowing up any bots that it hits. Any nearby cover is not likely to last very long.","","","","","","","",""
 "0b10","Other","This is the main complex. Cogmind starts from the bottom [[Scrapyard]] level at depth -11. Every level have stairs to an upper level until level -1 where the surface [[Access]] can be found. The levels can also contain other doorways which lead to different branches that eventually connect to the main complex. Read more about all levels at [[Locations]].
 
 [[Heading]]Lore[[/Heading]]
@@ -135,7 +135,7 @@ One good strategy against 6S-H0T is to use traps against them, specifically [[Bl
 "8R-AWN","Bot","","","","","","","","",""
 "8R-AWN's Armor/EX","Part","A unique [[Armor]] being one of two unique armors belonging to the [[Exiles (Group)|Exile]] [[8R-AWN]]. While it has great coverage and integrity, its true unique point is its massive 90% explosive damage resistance which is the highest the game has to offer. This item is quite difficult to obtain since killing 8R-AWN will result in this part being destroyed or ending up with pretty low integrity. Even if obtained, explosive is a pretty niche damage type with only a few enemies that use [[Explosive Launchers]].","","","","","","","",""
 "8R-AWN's Armor/TH","Part","A unique [[Armor]] being one of two unique armors belonging to the [[Exiles (Group)|Exile]] [[8R-AWN]]. It has low integrity and high coverage which make it very fragile in combat. However, it makes up for it in its massive 90% thermal damage resistance which is the highest the game has to offer. While very useful in theory, in practice this part is basically impossible to obtain as it will always be destroyed when killing 8R-AWN.","","","","","","","",""
-"8R-AWN's Boregun","Part","A pair of these unique [[Kinetic Guns]] are carried by the [[Exiles (Group)|Exile]] [[8R-AWN]]. This gun deals mediocre damage for a kinetic gun and suffers from a -10% targeting penalty. However, it more than makes up for it with a 50% destroy critical, guaranteed 2x penetration, and +4 salvage on hit bonus. Basically, it is like a top tier [[Hypervelocity Guns|Hypervelocity Gun]] that outclasses the best standard [[0b10]] part [[Hyp. Railgun]]. Any bot that is not crit immune is likely to be either disarmed or core crit outright. ","","","","","","","",""
+"8R-AWN's Boregun","Part","A pair of these unique [[Kinetic Guns]] are carried by the [[Exiles (Group)|Exile]] [[8R-AWN]]. This gun deals mediocre damage for a kinetic gun and suffers from a -10% targeting penalty. However, it more than makes up for it with a 50% destroy [[Critical Hits|critical]], guaranteed 2x penetration, and +4 salvage on hit bonus. Basically, it is like a top tier [[Hypervelocity Guns|Hypervelocity Gun]] that outclasses the best standard [[0b10]] part [[Hyp. Railgun]]. Any bot that is not crit immune is likely to be either disarmed or core crit outright. ","","","","","","","",""
 "99-TNT","Bot","","","","","","","","",""
 "99-TNT's Nukerbomber","Part","This unique [[Explosive Launchers|Explosive Launcher]] belongs to the [[Heroes of Zion|Zion Hero]] [[99-TNT]] and is among the most destructive launchers in the game with 4 projectiles dealing on average 76 damage each. While it's unlikely that all projectiles will hit every enemy due to its 20 degree arc, the potential damage per volley is staggering. It can be hard to use at times due to its high matter cost and arc causing it to miss into surrounding bots and terrain.
 [[Gallery:Full]]99-TNT's Nukerbomber.webp|The Nukerbomber in action[[/Gallery]]","","","","","","","",""
@@ -159,10 +159,10 @@ One good strategy against 6S-H0T is to use traps against them, specifically [[Bl
 "AEGIS Remote Shield","Part","This rare [[Force Fields|Force Field]] is one of the most effective in the game due to its low coverage and good 1:2 energy drain ratio. It can be found in [[Testing]] shells, in [[Lab]], and equipped by the 2 [[M Guard|M Guards]] in [[Command]]. Its base energy drain of 20 is high, even higher than most other force fields, so it is often worth powering off when not in combat to more quickly regenerate energy.","","","","","","","",""
 "AP7-3","Bot","","","","","","","","",""
 "AS-neutralizer No. 17b","Part","This unique [[Devices|Device]] belongs to the [[Exiles (Group)|Exile]] [[8R-AWN]] and can disable all [[Assembled]] within standard visual range. Assembled are rare outside of the [[Mines]] so it is not often worth carrying this part around. [[Spoiler]]However, one worthwhile location to use the AS-neutralizer is the [[Zion Deep Caves]] due to the large number of assembled behind the left wall.[[/Spoiler]]","","","","","","","",""
-"AWS/Autocannon","Part","This unique [[Ballistic Cannons|Ballistic Cannon]] is one of the [[Exiles Vault Prototypes]] and can be found on the [[Exiles (Location)]] map [[Spoiler]]or in the [[Zion Deep Caves]][[/Spoiler]]. As an [[Autonomous Weapons|Autonomous Weapon]] it automatically fires every 2 turns without counting against normal actions taken by the user. It also has a great builtin +30% targeting bonus which makes it easier to use while moving. The AWS/Autocannon suffers from [[Weapon Breakdown]] and has a minimum number of 75 shots with a 2.0% chance of breaking down on each subsequent shot.
+"AWS/Autocannon","Part","This unique [[Kinetic Cannons|Kinetic Cannon]] is one of the [[Exiles Vault Prototypes]] and can be found on the [[Exiles (Location)]] map [[Spoiler]]or in the [[Zion Deep Caves]][[/Spoiler]]. As an [[Autonomous Weapons|Autonomous Weapon]] it automatically fires every 2 turns without counting against normal actions taken by the user. It also has a great builtin +30% targeting bonus which makes it easier to use while moving. The AWS/Autocannon suffers from [[Weapon Breakdown]] and has a minimum number of 75 shots with a 2.0% chance of breaking down on each subsequent shot.
 The AWS/Autocannon is by far the strongest of the AWS weapons and can deal a ton of damage before it breaks down. It is best saved to take down strong targets like [[Heavy|Heavies]] and [[Behemoth|Behemoths]] that would otherwise cause a lot of trouble. ","","","","","","","",""
 "AWS/EX-DEC","Part","This unique [[Energy Cannons|Energy Cannon]] is wielded by the [[Exiles (Group)|Exile]] [[EX-DEC]]. As an [[Autonomous Weapons|Autonomous Weapon]] it automatically fires every turn (thanks to its -100 delay) without counting against normal actions taken by the user. It also has a great builtin +20% targeting bonus which makes it easier to use while moving. The AWS/EX-DEC suffers from [[Weapon Breakdown]] and has a minimum number of 50 shots with a .2% chance of breaking down on each subsequent shot.","","","","","","","",""
-"AWS/Gauss","Part","This unique [[Ballistic Guns|Ballistic Gun]] is one of the [[Exiles Vault Prototypes]] and can be found on the [[Exiles (Location)]] map [[Spoiler]]or in the [[Zion Deep Caves]][[/Spoiler]]. As an [[Autonomous Weapons|Autonomous Weapon]] it automatically fires every turn (thanks to its -100 delay) without counting against normal actions taken by the user. It also has a great builtin +30% targeting bonus which makes it easier to use while moving. The AWS/Gauss suffers from [[Weapon Breakdown]] and has a minimum number of 25 shots with a 0.5% chance of breaking down on each subsequent shot. Its 20 range makes it a great kiting weapon for both airborne and grounded propulsion alike, though it works best with some form of [[Visual Processing Units|Visual Processing Unit]].","","","","","","","",""
+"AWS/Gauss","Part","This unique [[Kinetic Guns|Kinetic Gun]] is one of the [[Exiles Vault Prototypes]] and can be found on the [[Exiles (Location)]] map [[Spoiler]]or in the [[Zion Deep Caves]][[/Spoiler]]. As an [[Autonomous Weapons|Autonomous Weapon]] it automatically fires every turn (thanks to its -100 delay) without counting against normal actions taken by the user. It also has a great builtin +30% targeting bonus which makes it easier to use while moving. The AWS/Gauss suffers from [[Weapon Breakdown]] and has a minimum number of 25 shots with a 0.5% chance of breaking down on each subsequent shot. Its 20 range makes it a great kiting weapon for both airborne and grounded propulsion alike, though it works best with some form of [[Visual Processing Units|Visual Processing Unit]].","","","","","","","",""
 "AWS/Thermal","Part","This unique [[Energy Guns|Energy Gun]] is one of the [[Exiles Vault Prototypes]] and can be found on the [[Exiles (Location)]] map [[Spoiler]]or in the [[Zion Deep Caves]][[/Spoiler]]. As an [[Autonomous Weapons|Autonomous Weapon]] it automatically fires every turn (thanks to its -100 delay) without counting against normal actions taken by the user. It also has a great builtin +30% targeting bonus which makes it easier to use while moving. The AWS/Thermal suffers from [[Weapon Breakdown]] and has a minimum number of 25 shots with a 0.5% chance of breaking down on each subsequent shot.","","","","","","","",""
 "AZ-K3N","Bot","","","","","","","","",""
 "Access","Location","Access is the last [[0b10]]-controlled main floor that only appears on -1. Access is the most challenging main map with increased patrol density, number of bots per patrol, map size, and level and difficulty in hackable machines compared to [[Research]]. These maps have a 150x300 tile size, either being a tall vertical level or a wide horizontal level. Access maps tend to be fairly well connected across corridors and rooms, and have fewer large rooms and larger hallways more similar to [[Factory]] than the cramped maze-like layout of Research. There are only 2 exits in Access, and locating and taking the desired exit can be especially challenging.
@@ -217,7 +217,7 @@ Using either of these weapons will cause the Architect to wrap to the nearest su
 [[Heading:4]][[L-Cannon]][[/Heading]]
 Similar to the terminators, it is not possible to hit the Architect with the L-Cannon unless the subspace nodes are all destroyed. The log message [[GameText]]I'm aware you stole the capacitor, you know...[[/GameText]] will accompany the Architect teleporting to the nearest subspace node. Even if the nodes are taken down, destroying the singularity gate is required before using the L-Cannon for the killing blow. Otherwise Cogmind will be crushed in the 10 turn countdown since the weapon itself takes 10 turns of delay after firing.
 [[Heading:3]]Self-destruct codes[[/Heading]]
-If any Enhanced bots or A bots are assimilated by disruption and rewiring or via the [[Field Lobotomy Kit]] and the Architect spots them, a log message [[GameText]]Architect flashes a signal at [Bot Name].[[/GameText]] will appear, and the bot will self-destruct. Bots that self-destruct will drop loot normally according to their salvage. This usually results in some pretty large loot pile explosions, especially for some of the lower numbered A bots. Although these bots cannot be used as allies, assimilation is a good way to let the Architect get rid of them rather than fighting them yourself.
+If any Enhanced bots or A bots are assimilated by [[Disruption|disruption]] and rewiring or via the [[Field Lobotomy Kit]] and the Architect spots them, a log message [[GameText]]Architect flashes a signal at [Bot Name].[[/GameText]] will appear, and the bot will self-destruct. Bots that self-destruct will drop loot normally according to their salvage. This usually results in some pretty large loot pile explosions, especially for some of the lower numbered A bots. Although these bots cannot be used as allies, assimilation is a good way to let the Architect get rid of them rather than fighting them yourself.
 [[Heading:3]]Defeat[[/Heading]]
 The Architect is a sore loser. If destroyed, the Singularity Gate will be activated (if intact) and trigger a 10 turn countdown. Cogmind must either use a Transdimensional Reconstructor and escape out the exit at the top of the map near the Slip Node or destroy the Gate machine within these 10 turns to avoid instant death.
 [[Heading:2]][[A Bots]][[/Heading]]
@@ -684,7 +684,7 @@ There are 3 exits on this map but only 2 kinds of exits:
 
 Some armor provides additional functionality, like granting resistance to a certain damage type [[Spoiler]]or regenerating integrity over time while powered[[/Spoiler]].
 
-Any part with high coverage and integrity can act like armor. Parts often used for this include [[Treads]] and [[Ballistic Cannons]]. The difference is that dedicated ""armor"" parts have little other purpose than their protective role, whereas losing a tread or a cannon can disable critical aspects of a build.
+Any part with high coverage and integrity can act like armor. Parts often used for this include [[Treads]] and [[Kinetic Cannons]]. The difference is that dedicated ""armor"" parts have little other purpose than their protective role, whereas losing a tread or a cannon can disable critical aspects of a build.
 
 [[Heading]]List of Armor[[/Heading]]
 [[PartGroupTable]]
@@ -1006,74 +1006,6 @@ Propulsion/Support
 "Backup Propulsion I","Part","","","","","","","","",""
 "Backup Propulsion III","Part","","","","","","","","",""
 "Backup Propulsion VII","Part","","","","","","","","",""
-"Ballistic Cannons","Part Group","[[Heading]]List of Ballistic Weapons[[/Heading]]
-[[PartGroupTable]]
-Ballistic Weapons|
-Overview/Size|
-Overview/Rating|
-Overview/Integrity|
-Overview/Coverage|
-Shot/Range|
-Shot/Energy|
-Shot/Heat|
-Shot/Targeting|
-Shot/Delay|
-Projectile/Count|
-Projectile/Damage|
-Projectile/Type|
-Projectile/Critical|
-Projectile/Penetration|
-Projectile/Salvage|
-Effect/Effect|
-Effect/Description
-[[/PartGroupTable]]","","","Ballistic Cannons","","","","",""
-"Ballistic Guns","Part Group","[[Ballistic Weapons|Ballistic]] guns are a type of [[Weapons|weapon]] that cost [[Matter]] to fire and deal kinetic damage. While their damage output is middling, so too are their upkeep costs. Kinetic guns require negligible amounts of [[Energy|energy]] to fire, have low matter costs, and have low [[Heat|heat]] generation. This, combined with the ability to [[Gunsling]], makes them effectively stacked in large numbers. Gunslinging removes ones of the larger downsides of large weapon since it doesn't allow you to fire most of the volley into a useless spot where a bot is destroyed mid-volley, instead targeting another hostile.
-Most kinetic guns have the destroy [[Critical Hits|critical]] type which allows destroying a part or bot in a single hit regardless of remaining integrity. 
-
-[[Heading]]List of Ballistic Weapons[[/Heading]]
-[[PartGroupTable]]
-Ballistic Weapons|
-Overview/Size|
-Overview/Rating|
-Overview/Integrity|
-Overview/Coverage|
-Shot/Range|
-Shot/Energy|
-Shot/Heat|
-Shot/Targeting|
-Shot/Delay|
-Projectile/Count|
-Projectile/Damage|
-Projectile/Type|
-Projectile/Critical|
-Projectile/Penetration|
-Projectile/Salvage|
-Effect/Effect|
-Effect/Description
-[[/PartGroupTable]]","","","Ballistic Guns","","","","",""
-"Ballistic Weapons","Part Supergroup","Ballistic [[Weapons|weapons]], either [[Ballistic Guns|guns]] or [[Ballistic Cannons|cannons]], consume [[Matter]] to fire and suffer from [[Weapons#Recoil|recoil]]. Their [[Energy|energy]] costs are generally very low, and [[Heat|heat]] generation is very low for guns but moderately high for cannons. Kinetic damage is a good all-around damage type that is resisted by very few bots except for [[Hunter|Hunters]].
-
-[[Heading]]List of Ballistic Weapons[[/Heading]]
-[[PartGroupTable]]
-Ballistic Weapons|
-Overview/Size|
-Overview/Rating|
-Overview/Integrity|
-Overview/Coverage|
-Shot/Range|
-Shot/Energy|
-Shot/Heat|
-Shot/Targeting|
-Shot/Delay|
-Projectile/Count|
-Projectile/Damage|
-Projectile/Type|
-Projectile/Critical|
-Projectile/Penetration|
-Projectile/Salvage|
-Effect/Effect|
-Effect/Description
-[[/PartGroupTable]]","","","","","Ballistic Cannons,Ballistic Guns","","",""
 "Ballwheel","Part","","","","","","","","",""
 "Barrage Gun","Part","","","","","","","","",""
 "Battle Cannon","Part","","","","","","","","",""
@@ -1082,7 +1014,7 @@ Effect/Description
 "Beam Rifle","Part","","","","","","","","",""
 "Beamcaster","Part","","","","","","","","",""
 "Behemoth","Bot Group","Behemoths are a [[Bot Groups|Bot Group]] of heavily [[Armor|armored]] [[Treads|treading]] [[0b10]] bots that are much more durable and powerful than the majority of standard bots. They typically guard machines or valuable part stockpiles while sitting slightly indented in the wall. Similar to [[Hunter|Hunters]], Behemoths will fire through walls in order to hit an enemy, which makes it hard to hide or run from them. Behemoths can even make use of [[Special Propulsion Modes#Siege mode|Siege Mode]] to become more accurate and durable in combat. This combination of traits can make Behemoths terrifying encounters if not adequately prepared.
-Behemoths have innate EM resistance as well as corruption resistance through [[Dynamic Insulation System|Dynamic Insulation Systems]], so EM weaponry is a subpar weapon choice to get a quick kill. Melee weapons are undesirable to use because most Behemoths pack [[Ballistic Cannons]] that will frequently cause knockback. Behemoths have a minor thermal weakness, though that is slightly mitigated by thermal [[Resistance Armor]]. Meltdown criticals from thermal cannons can instantly destroy a Behemoth from full core integrity (100+), which can save a lot of damage and provide some good undamaged loot. Thermal guns are not effective in smaller numbers, but given enough heat transferring weapons (4+) it is possible to overload their standard cooling and [[Coolant Injectors]] to get the melt instant kill.
+Behemoths have innate EM resistance as well as corruption resistance through [[Dynamic Insulation System|Dynamic Insulation Systems]], so EM weaponry is a subpar weapon choice to get a quick kill. Melee weapons are undesirable to use because most Behemoths pack [[Kinetic Cannons]] that will frequently cause knockback. Behemoths have a minor thermal weakness, though that is slightly mitigated by thermal [[Resistance Armor]]. Meltdown criticals from thermal cannons can instantly destroy a Behemoth from full core integrity (100+), which can save a lot of damage and provide some good undamaged loot. Thermal guns are not effective in smaller numbers, but given enough heat transferring weapons (4+) it is possible to overload their standard cooling and [[Coolant Injectors]] to get the melt instant kill.
 Behemoths can be a desirable looting target for their weapons, cooling, treads, and armor. For this reason, applying some positive salvage via Electromagnetic weaponry or [[Salvage Targeting Computers]] can be a good idea. However, it can often be a better idea to run the other way. Even slow treads builds can get away from a pursuing Behemoth with good tactics. Despite their ability to tear through walls in their way, they have a tendency to get stuck unable to path through 1 tile wide corridors. If such corridors are nearby, use them to your advantage. Otherwise, try to cut between connected rooms to avoid traveling through so much of the line of fire. Behemoths will only shoot through up to 3 walls to cut a path, so if Cogmind can turn a corner or get a good angle on the Behemoth where it is unable to shoot, it is possible to wait out the memory.
 Behemoths are often found in their own spot inside a wall as a [[Security Squad]]. In [[Caves]], they can be found in a small square open area.
 [[Gallery]]Behemoths.png|All Behemoth variants and colors|Behemoth Guarded Stockpile.png|A Behemoth guarding a stockpile of parts, sitting in a recognizable ""Behemoth nook""[[/Gallery]]
@@ -1349,7 +1281,7 @@ If the latter, does that mean that recalling a squad really quickly can make it 
 
 [[Heading:3]]Trojan Removal[[/Heading]]
 Sometimes, a previously-installed trojan may be removed from a machine. As it can occur long after the trojan was installed, this effect can be very hard to notice, especially when unaware of its existence.
-Be cautious, as it can be easy to dismiss this effect and believe your own memory to be at fault, or worse, not notice a robot-tracking trojan is gone and end up spotted by an unforseen [[Operator]] or [[Cargo Convoy]].
+Be cautious, as it can be easy to dismiss this effect and believe your own memory to be at fault, or worse, not notice a robot-tracking trojan is gone and end up spotted by an unforeseen [[Operator]] or [[Cargo Convoy]].
 [[Comment]]It's easiest to notice with stuff like botnets or tracking trojans, as it's easy to check for their presence from nearly anywhere by connecting to machines or occasionally looking at the map for tracked robots.
 The more important question is how this removal works;
 Does it trigger at random for each trojan independently?
@@ -1364,7 +1296,7 @@ One additional effect CY-PHR has that isn't directly related to hacking is the g
 
 [[Heading:2]]CY-PHR's Lair[[/Heading]]
 [[Image]]CY-PHR Lair.png|CY-PHR in their lair[[/Image]]
-CY-PHR's lair will appear on the map and depth indicated in the traceback info. This can either be fully inside a standard room and accessible through a normal door or a special hidden area only accessible through an emergency access door. In the latter case, [[Terrain Scanners|Terrain Scanning]] or a [[Structural Scanner]] can be helpful to find the location without having to walk along the edge of every map. CY-PHR will be in the middle of the room in some twisted machinery that they can move through, although Cogmind is unable to.
+CY-PHR's lair will appear on the map and depth indicated in the traceback info. Any map between -5 and -1 is fair game, although if Cogmind is past -5, a map between -3 and -1 is guaranteed to be chosen instead. This can either be fully inside a standard room and accessible through a normal door or a special hidden area only accessible through an emergency access door. In the latter case, [[Terrain Scanners|Terrain Scanning]] or a [[Structural Scanner]] can be helpful to find the location without having to walk along the edge of every map. CY-PHR will be in the middle of the room in some twisted machinery that they can move through, although Cogmind is unable to.
 
 [[Heading:3]][[Heavy]] Redirection[[/Heading]]
 Sometimes when a Heavy is nearby CY-PHR's lair they be redirected to guard a nearby location that is close enough that CY-PHR is within their [[Active Sensor Suite]] range. The Heavy will only hang around until the next [[Security Rotation]], after which they will return to their normal guard position.
@@ -1473,7 +1405,7 @@ There are a few ways to dig out tiles in ways that cause the resulting tile to b
 [[Heading]]Non-standard Movement[[/Heading]]
 Because only standard movements count towards the safety limit when traversing dug-out tiles, non-standard movement types can be used to bypass the safe dig limit, usually at the cost of some kind of damage, which may be preferable to the chance of high Impact damage from cave-ins. Some non-standard movements include:
 [[List]]Being pushed into a dug-out tile by a friendly [[Behemoth]].
-|Being knocked back by [[Ballistic Cannons|Ballistic Cannon]] projectile, usually from hostiles.
+|Being knocked back by [[Kinetic Cannons|Kinetic Cannon]] projectile, usually from hostiles.
 |Being knocked back by [[Concussive RPG]], including any used by Cogmind. Note that the explosion may cause dug-out tiles to become destabilized. [[Comment]]Since using one that way would push you away from the tile you fired from, i think that would make you immune to collapse due to attacking from a dug-out tile, but i haven't done thorough testing.[[/Comment]]
 |Being knocked back by hostile [[Impact Weapons]], which would hardly be beneficial since it would mean taking Impact damage to avoid the possible Impact damage of a cave-in.
 |[[Flight Units|Flying]] over robots, which only counts the tile Cogmind ends up on. This is only possible with robots Cogmind cannot swap with, like hostile and neutral bots. For example, it is possible to achieve long safe digs by luring a squad of hostiles or a [[Recycler]] from the other side of a tunnel and flying over them at the appropriate time.
@@ -2127,7 +2059,7 @@ leiavoia [[https://www.youtube.com/watch?v=q6cYtmvHb1s&list=PLgSRAwnYg70TMw79Nj1
 Effect|Description|Frequency||
 Surprise Attack|The Companion Sword will ""surprise attack"" one additional target on a normal attack. Can only happen if there is at least two hostiles are within melee range. The log message [[GameText]]Companion Sword surprise attacks [target].[[/GameText]] will appear when this happens.|Uncommon||
 Core Loss|The Companion Sword deals between 5-10 core damage directly to Cogmind's core on a normal attack. Can't be reduced by [[Core Shieldings]] or [[Defensive Utilities]]. Only happens when Cogmind attacks something with the Companion Sword.|Uncommon||
-Bot Disruption|A bot is instantly disrupted on a normal attack. As with normal disruption, a disrupted bot can be rewired as long as it isn't hacking immune. The log message [[GameText]][target] shuts down.[[/GameText]] will appear when this happens.|Rare||
+Bot Disruption|A bot is instantly disrupted on a normal attack. As with normal [[Disruption|disruption]], a disrupted bot can be rewired as long as it isn't hacking immune. The log message [[GameText]][target] shuts down.[[/GameText]] will appear when this happens.|Rare||
 Sever|A part is severed off of a bot on a normal attack. This effect can hit through the Dismemberment immunity, unlike standard Sever critical hits.|Rare||
 Surge of Energy|This effect instantly kills a bot on a normal attack. The log message [[GameText]][target] is pierced by a surge of energy.[[/GameText]] will appear when this happens.|Rare
 [[/Table]]
@@ -2639,7 +2571,7 @@ Data Loss (Minor/Major)|There are two similar effects of data loss. A minor data
 Misfire|A random weapon will be attempted to be fired. Fails if the weapon does not have enough resources to fire (matter/energy). This effect doesn't affect melee weapons, special weapons, or guided weapons. Also has the log message [[GameText]]System corrupted: FCS attempts to trigger [part name].[[/GameText]] If the misfire is successful, there is an additional log message [[GameText]]System corrupted: [part name] misfires.[[/GameText]] Similarly to [[Autonomous Weapons]], This does not incur any time cost. Similarly to regular volleys, any heat generated is averaged over the time it would have taken to fire that weapon normally.|N/A||
 IFF Burst|An IFF burst comes from Cogmind, alerting hostiles within a 15 tile radius. Bots will head to investigate the location of the IFF burst but do not gain active tracking on Cogmind. Also has the log message [[GameText]]IFF burst signal emitted.[[/GameText]]|N/A||
 Misdirection|Cogmind may move in a random direction other than the one commanded, with game popup message (not log message) [[GameText]]System corrupted: Misdirected.[[/GameText]] On flight, may come with an additional penalty of slamming into a wall. If this occurs, Cogmind will take minor impact damage, with the log message [[GameText]]Slammed into [ceiling/wall].[[/GameText]]|Only occurs while hostile bots are nearby||
-Weapon Failure|A weapon will fail to fire during a volley. Based on if the weapon is a ballistic weapon, energy weapon, or launcher, the log message will be the following: [[GameText]]System corrupted: [part name] jammed/failed to cycle/failed to launch.[[/GameText]]|Only occurs on firing a volley||
+Weapon Failure|A weapon will fail to fire during a volley. Based on if the weapon is a kinetic weapon, energy weapon, or launcher, the log message will be the following: [[GameText]]System corrupted: [part name] jammed/failed to cycle/failed to launch.[[/GameText]]|Only occurs on firing a volley||
 Hacking Penalty|Cogmind suffers a [corruption % / 3] penalty to the success rate of hacks on all interactive machines.|N/A||
 Accuracy Penalty|Cogmind suffers a [corruption % / 4]% penalty to accuracy.|N/A||
 Allied Trap Triggering|Can trigger allied traps when walking on top of them, with a [corruption %] chance of triggering.|N/A||
@@ -2691,8 +2623,8 @@ Each type of critical is generally associated with a given type of weapon. But t
 
 [[Table]]
 Name|Effect of critical hit|Usual weapon||
-Destroy|[[TooltipText]]Destroy[[/TooltipText]]|[[Ballistic Guns]]||
-Blast|[[TooltipText]]Blast[[/TooltipText]]|[[Ballistic Cannons]]||
+Destroy|[[TooltipText]]Destroy[[/TooltipText]]|[[Kinetic Guns]]||
+Blast|[[TooltipText]]Blast[[/TooltipText]]|[[Kinetic Cannons]]||
 Burn|[[TooltipText]]Burn[[/TooltipText]] (See [[Heat]]).|[[Thermal Guns]]||
 Meltdown|[[TooltipText]]Meltdown[[/TooltipText]]|[[Thermal Cannons]]||
 Corrupt|[[TooltipText]]Corrupt[[/TooltipText]]|[[Electromagnetic Weapons]]||
@@ -2781,7 +2713,7 @@ DW-4LL is an ambusher that will lie in wait inside a wall nearby and burst out b
 
 [[Heading]]Strategy[[/Heading]]
 Dealing an average of 66 or 71 damage per turn (with the Slamshotty and Megashotty respectively), this Unchained puts out an incredible amount of impact damage spread across all of Cogmind's parts at once. If you are forced to get into a head-on fight, make sure to preemptively remove all low-integrity parts. It is also often worth ripping off Processors upon announcement since they are highly likely to be destroyed anyway.
-The best way to prepare for DW-4LL is to use a lot of high integrity parts to soak up the damage. [[Treads]], [[Armor]], and [[Ballistic Cannons]] are good examples of parts that can take the punishment. [[Shield Generators]] and [[Force Fields]] are, as always, great options to cut the damage down. However, thanks to DW-4LL's massive damage output, these parts are unlikely to be sustainable for more than a few turns at a time without massive energy generation.
+The best way to prepare for DW-4LL is to use a lot of high integrity parts to soak up the damage. [[Treads]], [[Armor]], and [[Kinetic Cannons]] are good examples of parts that can take the punishment. [[Shield Generators]] and [[Force Fields]] are, as always, great options to cut the damage down. However, thanks to DW-4LL's massive damage output, these parts are unlikely to be sustainable for more than a few turns at a time without massive energy generation.
 Defensively, DW-4LL doesn't have any particular weaknesses. Builtin 90% EM resistance makes corruption death fairly difficult. 75% explosive resistance comes from the Blast Wall that is never going to die before DW-4LL does, so [[Explosive Launchers]] are out of the question. Other than that, all damage types are reasonable to use. For offensive utilities, [[Armor Integrity Analyzers]] and [[Core Analyzers]] are generally great options at hitting through the massive coverage of the Blast Wall. However, they tend to fall victim to impact damage due to their low integrity. If you can keep them alive a while with Force Fields, they do make a significant difference in time to kill.
 Due to the short range of both possible shotguns, DW-4LL is very vulnerable to being kited by a faster hover or flight build. Any weapon can work for this, though longer-ranged weapons are ideal. [[Hypervelocity Weapons]] are very effective at destroying DW-4LL's Griptreads, rendering it immobile. Once immobile, you can take DW-4LL down at your leisure with any weapon.","","","","","","","",""
 "DW-4LL's Blast Wall","Part","","","","","","","","",""
@@ -2848,7 +2780,6 @@ Overview/Coverage|
 Shot/Range|
 Shot/Energy|
 Shot/Heat|
-Shot/Targeting|
 Shot/Delay|
 Projectile/Type|
 Effect/Effect|
@@ -2984,7 +2915,7 @@ There are many ways to use Dirty Bomb Traps effectively. Some ways include:
 "Disintegrator","Part","","","","","","","","",""
 "Dispersion Rifle","Part","","","","","","","","",""
 "Disposable Heat Sink","Part","","","","","","","","",""
-"Disruption","Other","","","","","","","","",""
+"Disruption","Other","The chance to disable a hit part or bot for a random amount of turns. Disabled bots can be rewired to become allied. This chance is halved for bot cores. Only available on [[Electromagnetic Weapons|electromagnetic weapons]]. ","","","","","","","",""
 "Disruptor Cannon","Part","","","","","","","","",""
 "Distress Signals","Other","","","","","","","","",""
 "Doom Corridor","Redirect","","","","","","","","","Command#Doom Corridor"
@@ -3006,14 +2937,14 @@ Effect/Effect
 [[/PartGroupTable]]","","","","Drone Bay,Mni. Drone Bay,Adv. Drone Bay,Mapping Drone Bay,Z-Drone Bay,Bomb Drone Bay,Combat Drone Bay,Decoy Drone Bay,Master Drone Bay,Splice Drone Bay,Thief Drone Bay,Assault Drone Bay,Sensor Drone Bay,Stealth Drone Bay,Supersonic Drone Bay,Swarm Drone Bay,Hacking Drone Bay,Minesniffer Drone Bay,Army-in-a-Box,Wardrone Bay,Cep. Impact Drone Bay","","","",""
 "Dual-blade Saw","Part","","","","","","","","",""
 "Duelist","Bot Group","Duelists are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[0b10]] combat bots armed with a [[Slashing Weapons|Slashing Weapon]] that can sever off important parts. While they can only attack at short range, they are frightening to face up close with their [[Melee Analysis Suites]] and [[Actuators]] allowing them to hit hard and fast. They also have [[Core Shieldings|Core Shielding]] which makes them immune to direct critical hits and a bit more survivable.
-Duelists don't have any particular damage type weaknesses, though their biggest weakness is [[Ballistic Cannons]] because the knockback will help keep a them out of melee range. Other than that, any non-melee weapon is good to use against Duelists. Using melee against them is a little more dangerous since that means Cogmind hast to go toe-to-toe with their strong melee loadout. Melee is a worse idea because of their innate minor slashing/piercing resistances.
+Duelists don't have any particular damage type weaknesses, though their biggest weakness is [[Kinetic Cannons]] because the knockback will help keep a them out of melee range. Other than that, any non-melee weapon is good to use against Duelists. Using melee against them is a little more dangerous since that means Cogmind hast to go toe-to-toe with their strong melee loadout. Melee is a worse idea because of their innate minor slashing/piercing resistances.
 [[Gallery]]Duelists.png|All Duelist variants and colors[[/Gallery]]
 
 [[Heading]]Squads[[/Heading]]
 Duelists may appear in the following squads:
 [[List]][[Assault Squad]]|[[Garrison Squad]]|[[Patrol Squad]] - [[Squad Leader]] only normally, or in [[Armory]]|[[Security Squad]] - Armory or [[Garrison|Garrisons]][[/List]]","","L-31 Rogue,L-41 Fighter,L-61 Swordsman,Protovariant L,Immortal","","","","","",""
 "Dynamic Insulation System","Part","","","","","","","","",""
-"Dynamic Insulation Systems","Part Group","These are [[Corruption Reduction Utilities]] that have a chance of preventing [[Corruption]] gain on each attack and on [[Shock Trap|Shock]] and [[EM Surge Trap|EM Surge Traps]]. These parts are good to attach when fighting [[Electromagnetic Weapons|Electromagnetic Weapon]]-wielding bots like [[Programmer|Programmers]]. It also provides complete immunity to [[Disruption]] for all attached parts. One additional hidden effect is that it has a chance of blocking the corruption gain from the EMP inside of [[Wastes]]. Note: This part does not affect internal corruption gain from firing parts like the [[Latent Energy Streamer]].
+"Dynamic Insulation Systems","Part Group","These are [[Corruption Reduction Utilities]] that have a chance of preventing [[Corruption]] gain on each attack and on [[Shock Trap|Shock]] and [[EM Surge Trap|EM Surge Traps]]. These parts are good to attach when fighting [[Electromagnetic Weapons|Electromagnetic Weapon]]-wielding bots like [[Programmer|Programmers]]. It also provides complete immunity to [[Disruption|disruption]] for all attached parts. One additional hidden effect is that it has a chance of blocking the corruption gain from the EMP inside of [[Wastes]]. Note: This part does not affect internal corruption gain from firing parts like the [[Latent Energy Streamer]].
 
 [[Heading]]List of Dynamic Insulation Systems[[/Heading]]
 [[PartGroupTable]]
@@ -3169,7 +3100,21 @@ Explosion/Spectrum|
 Explosion/Disruption|
 Explosion/Salvage
 [[/PartGroupTable]]","","","Electromagnetic Launchers","","","","",""
-"Electromagnetic Weapons","Part Supergroup","","","","","","Electromagnetic Cannons,Electromagnetic Guns,Electromagnetic Launchers","","",""
+"Electromagnetic Weapons","Part Supergroup","A group of [[Energy Weapons|energy]] [[Weapons|weapons]] that deal electromagnetic (aka EM) damage and are capable of [[Corruption|corrupting]] bots to death. There are electromagnetic [[Electromagnetic Cannons|cannons]], [[Electromagnetic Guns|guns]], and [[Electromagnetic Launchers|launchers]]. These weapons have some of the the highest [[Energy|energy]] consumptions of all weapons, and they generate a decent amount of [[Heat|heat]] as well. They also have relatively high coverage and low integrity compared to other weapon types. However, their ability to corrupt non-immune bots to death is incredibly powerful, and this can result in reliably killing bots much faster than alternatives.
+Electromagnetic weapons are very useful against some targets and ineffective against others. A bot without any kind of electromagnetic resistance will die to corruption fairly quickly. Some common bots like [[Grunt|Grunts]] and [[Hunter|Hunters]] are even 25% weak to EM, making the corruption kill even faster. However, there are plenty of common bots that have either straight EM damage resistance like [[Programmer|Programmers]] (75% EM resistance) or corruption-resisting utilities in [[Dynamic Insulation Systems]] like [[Behemoth|Behemoths]] and [[Heavy|Heavies]]. It is better to prepare [[Kinetic Weapons|kinetic]] or [[Thermal Weapons|thermal weapons]] to help deal with these bots instead.
+
+[[Heading]]Special Effects[[/Heading]]
+There are some mechanics that are either mostly or fully unique to electromagnetic weapons.
+[[Heading:2]][[Corruption]][[/Heading]]
+When a bot is hit by an electromagnetic weapon, they will take corruption equal 50-150% of the damage at random, or always 150% on a corrupt [[Critical Hits|critical hit]]. This sets a fixed amount of EM damage any bot can take before corruption death because bots die at 100% corruption. 100 damage is the average damage required to kill a bot via corruption. For top rating weapons like the [[Com. HERF Cannon]], it is possible to deal this much damage consistently in 2 or 3 hits, especially to bots that are weak to EM damage like Grunts.
+In addition to being EM-resistant, Programmers also have an annoying ability to reset the corruption on friendly bots. This makes using EM very unreliable if Programmers are in the vicinity. While it is possible to still brute force the corruption kill since Programmers don't reset it every single turn, it may take a few attempts before breaking through.
+Corruption has other side effects aside from just killing the target. Most importantly, corrupted bots suffer an accuracy penalty of [corruption % / 8]% to all weapons, and they can also misfire, hitting something other than their intended target. Combined, these effects make corrupted bots less likely to hit their intended targets while in combat. However, corruption can fry low integrity parts and produce [[Corrupted Parts|corrupted parts]] when a corrupted bot is destroyed. Corrupted parts will transfer corruption to Cogmind if attached.
+
+[[Heading:2]][[Disruption]][[/Heading]]
+Disruption is the ability to temporarily disable a part or bot for a few turns when hit. The disruption chance is halved when targeting a bot core. Additionally, a disrupted bot can be rewired to become friendly, so carrying [[Remote Datajacks]] can be a good idea. Most EM weapons have fairly low disruption chances, less than 10%, although there are a few special weapons like the [[Arc Projector]] and [[Disruptor Cannon]] with significantly higher than average chances.
+
+[[Heading:2]][[Spectrum]][[/Heading]]
+Spectrum is the ability to explode a [[Power|power]] source when it is hit by an EM attack. Generally, lower rated EM weapons have a higher spectrum (50% explosion chance) and higher rated EM weapons have a lower spectrum (10% explosion chance). The spectrum on EM launchers doesn't explode power sources attached to bots except for those attached to Cogmind, (and yes it is unfair). Other than Cogmind's special case, only power on the ground can be exploded by launchers.","","","","","Electromagnetic Cannons,Electromagnetic Guns,Electromagnetic Launchers","","",""
 "Electron Diverter","Part","","","","","","","","",""
 "Electrostorm Shotgun","Part","","","","","","","","",""
 "Elite","Bot Group","","Spoiler","Elite (4),Elite (7)","","","","","",""
@@ -3738,7 +3683,7 @@ There are several variations of the Exiles map that can change things dramatical
 [[Heading]]Fighting[[/Heading]]
 Fighting the Exiles is a challenging yet rewarding endeavor. Although they are normally friendly, they can pack quite a punch and will likely end the run of any unprepared player. As far as rewards go, [[8R-AWN]] has some powerful unique [[8R-AWN's Boregun|Boreguns]] with a high salvage and destroy critical %, out-of-depth parts including [[Exp. Heat Sink]], [[Adv. Weapon Cycler]], [[Exp. Targeting Computer]], and [[Adv. Myomer Leg]]. Another unique part, the [[AS-neutralizer No. 17b]] is very helpful in a later game branch [[Zion Deep Caves]]. Other useful parts on some of the Exiles themselves are [[Adv. Component Analysis Suite]], [[System Purifier]], [[Cmb. Antigrav System]], [[Imp. Armor Integrity Analyzer]], [[Exp. Core Analyzer]], and [[Adv. Transmission Jammer]].
 [[Image]]Exiles Kill Build.png|Example Exiles kill build[[/Image]]
-Fighting the Exiles is not recommended on -10 due to lower slot count, lower core integrity, and difficulty in getting enough integrity to survive the 8R-AWN fight. If fighting on -9, evolving a 3rd weapon slot can be very effective in killing 8R-AWN and any potential [[Z-Hero|Z-Heroes]] that might spawn in the next Mines map. The third weapon slot is not required to kill by any means, however, and any combination of weapon, utility, and propulsion slots for the evolve will work. As a basic checklist, the following parts are recommended:[[List]]Multiple kinetic guns with backups, ideally [[Hvy. Assault Rifle|Hvy. Assault Rifles]] or [[Imp. Assault Rifle|Imp. Assault Rifles]], weapons with negative salvage like [[Shotgun]] or a ballistic cannon like [[Imp. Light Cannon]] can work but 8R-AWN has very strong loot that is nice to get if possible|Multiple pieces of armor, preferably [[Hrd. Light Armor Plating]] or [[Med. Armor Plating]]|Multiple [[Lgt. Treads]] or [[Imp. Treads]] with backups|At least one launcher like [[Grenade Launcher]], [[Mni. Grenade Launcher]], or [[Rocket Launcher]]|(Optional) A way to gain positive salvage like a [[Salvage Targeting Computer]] can provide a better chance at part drops|(Optional) [[Blade Trap|Blade Traps]] for 8R-AWN, if an early trap extractor or trap stockpile are found in Mines. IMPORTANT: Do not install more than one trap until after the attack has begun. Exiles will give a warning if a trap is installed, and immediately turn on Cogmind if a second is installed.|(Optional) [[Thief Drone Bay]] trivializes the 8R-AWN fight. Make sure that you have aggro (he is shooting you), then release the drones. They will rip off parts very quickly and leave them defenseless.[[/List]]
+Fighting the Exiles is not recommended on -10 due to lower slot count, lower core integrity, and difficulty in getting enough integrity to survive the 8R-AWN fight. If fighting on -9, evolving a 3rd weapon slot can be very effective in killing 8R-AWN and any potential [[Z-Hero|Z-Heroes]] that might spawn in the next Mines map. The third weapon slot is not required to kill by any means, however, and any combination of weapon, utility, and propulsion slots for the evolve will work. As a basic checklist, the following parts are recommended:[[List]]Multiple kinetic guns with backups, ideally [[Hvy. Assault Rifle|Hvy. Assault Rifles]] or [[Imp. Assault Rifle|Imp. Assault Rifles]], weapons with negative salvage like [[Shotgun]] or a kinetic cannon like [[Imp. Light Cannon]] can work but 8R-AWN has very strong loot that is nice to get if possible|Multiple pieces of armor, preferably [[Hrd. Light Armor Plating]] or [[Med. Armor Plating]]|Multiple [[Lgt. Treads]] or [[Imp. Treads]] with backups|At least one launcher like [[Grenade Launcher]], [[Mni. Grenade Launcher]], or [[Rocket Launcher]]|(Optional) A way to gain positive salvage like a [[Salvage Targeting Computer]] can provide a better chance at part drops|(Optional) [[Blade Trap|Blade Traps]] for 8R-AWN, if an early trap extractor or trap stockpile are found in Mines. IMPORTANT: Do not install more than one trap until after the attack has begun. Exiles will give a warning if a trap is installed, and immediately turn on Cogmind if a second is installed.|(Optional) [[Thief Drone Bay]] trivializes the 8R-AWN fight. Make sure that you have aggro (he is shooting you), then release the drones. They will rip off parts very quickly and leave them defenseless.[[/List]]
 [[Image]]Exiles Kill.png|A visual guide to killing the Exiles[[/Image]]
 There are some things that should be done before actually doing the fight itself. The image on the right serves as a visual reference. Any rigged engines used must be in inventory before attacking the Exiles, otherwise the engines will still remain loyal to the Exiles and explode only on Cogmind. Matter pods should be relocated near the 8R-AWN fighting spot (See point #4 in diagram) to avoid running out of matter in combat. Any allies should be told to stay in the same general area so they can contribute to the fight. However, Grunts can't deal much damage until [[8R-AWN's Armor/TH]] is destroyed. Finally, some vault items may come in handy for the fight. The [[Cloak of Protection]]'s effect is not so strong, but when turned off it is a high coverage high integrity piece of armor. The [[Longsword +1]] is a very effective kill tool. The [[Potential Leg|Potential Legs]] have a lot of integrity in case you run out of propulsion during the fight. The [[Gui. Plasma Cannon]] may be used to safely destroy the [[DAS Turret]] without getting attacked back. One thing to consider about the vault is that there may be a 0b10 attack on the Exiles after exiting. In those cases, an Exiles kill may either have to be cancelled or at least turned into a 8R-AWN only kill. Aside from that, the fight may begin:
 [[Image]]Exiles Launcher DAS.png|Launchering the DAS turret[[/Image]]
@@ -5787,7 +5732,7 @@ GL-D0S will produce turrets at random from the following list:
 [[/List]]
 
 [[Heading]]Strategy[[/Heading]]
-GL-D0S is not so much of a direct threat and can often be avoided entirely by routing a different way once spotting the first turret. However, intentionally trying to take down GL-D0S, the biggest threat is walking into a room filled with turrets and getting dogpiled. As such, one of the best ways to avoid a bad situation like this is the use of [[Sensor Arrays]] and [[IFF Parsers]]. IFF Parsers will uniquely identify Unchained and turrets as blue squares instead of yellow like other [[0b10]] bots. Once you locate a turret on the map, you can take it out at range. Since all turrets are stationary and many have 16 or less weapon ranges, you can use longer ranged weaponry like [[Ballistic Cannons]] to dig into rooms and take them out without taking any damage yourself. [[Visual Processing Units]] can also help to spot them from afar, although this only works for turrets out in the open. Using [[Launchers]] to angle shots around walls is also a good way to eliminate turrets without getting shot back, though [[Explosive Launchers]] may be more difficult to use due to their tendency to blow up walls.
+GL-D0S is not so much of a direct threat and can often be avoided entirely by routing a different way once spotting the first turret. However, intentionally trying to take down GL-D0S, the biggest threat is walking into a room filled with turrets and getting dogpiled. As such, one of the best ways to avoid a bad situation like this is the use of [[Sensor Arrays]] and [[IFF Parsers]]. IFF Parsers will uniquely identify Unchained and turrets as blue squares instead of yellow like other [[0b10]] bots. Once you locate a turret on the map, you can take it out at range. Since all turrets are stationary and many have 16 or less weapon ranges, you can use longer ranged weaponry like [[Kinetic Cannons]] to dig into rooms and take them out without taking any damage yourself. [[Visual Processing Units]] can also help to spot them from afar, although this only works for turrets out in the open. Using [[Launchers]] to angle shots around walls is also a good way to eliminate turrets without getting shot back, though [[Explosive Launchers]] may be more difficult to use due to their tendency to blow up walls.
 Locating GL-D0S is a challenging task of its own. They typically patrol across the map between turret nests and don't linger in one place for long. 34 speed makes catching up unrealistic for all but the fastest flight or hover builds. Instead, try to ambush them along their patrol route so you can take a few shots before they escape. Garrison intel can help figure out likely patrol locations. A [[Triangulator]] can also help you locate them at 24 range since they always have [[Perfect Tracking]] on Cogmind.
 Even once you make it past all the built up turrets and locate them, taking down the fast-moving and evasive GL-D0S is another task. Defensively, they have no weaknesses, although the EM resistance of 75% is low compared to most unchained. Using tons of targeting can help to land hits, though it's still quick difficult to overcome the many bonuses they have. Using Launchers is a good way to ensure you actually get damage off on them. Explosive launchers deal better damage, but [[Electromagnetic Launchers]] can provide a salvage bonus to obtain the Turretformer. Single target weapons of all varieties can work as well, though they are going to be much more difficult to land on a fleeing GL-D0S. ","","","","","","","",""
 "GL-D0S's Turretformer","Part","","","","","","","","",""
@@ -6208,7 +6153,7 @@ See [[Strategy/Maps/Hub_04(d)]]
 There is only one type of exit on this map. All exits lead to the next main Factory or Research floor.","Spoiler","","","","","","",""
 "Huge Storage Unit","Part","","","","","","","","",""
 "Humpback","Part","","","","","","","","",""
-"Hunter","Bot Group","Hunters are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[Ballistic Guns|Ballistic Gun]]-wielding [[0b10]] combat robots. They have unique AI where they use their penetrating guns to shoot through walls to get to hostiles. Hunters can also hit more accurately with their [[Ranged Targeting Utilities]] and avoid hits themselves with [[Phase Shifters]]. Hunters also have an innate resistance to [[Sensor Arrays]] and will not show up without a high enough rating [[Signal Interpreter|Signal Interpreters]]. [[Squad Leader]] Hunters also have the ability to launch a [[Drone]] to pursue bots even after losing normal tracking. If the Drone spots a hostile, it will alert the owning Hunter to their position.
+"Hunter","Bot Group","Hunters are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[Kinetic Guns|Kinetic Gun]]-wielding [[0b10]] combat robots. They have unique AI where they use their penetrating guns to shoot through walls to get to hostiles. Hunters can also hit more accurately with their [[Ranged Targeting Utilities]] and avoid hits themselves with [[Phase Shifters]]. Hunters also have an innate resistance to [[Sensor Arrays]] and will not show up without a high enough rating [[Signal Interpreter|Signal Interpreters]]. [[Squad Leader]] Hunters also have the ability to launch a [[Drone]] to pursue bots even after losing normal tracking. If the Drone spots a hostile, it will alert the owning Hunter to their position.
 Mid-lategame Hunters are one of the most durable standard 0b10 combat bots due to their high evasion. Early tier Hunters are still strong, but the Terminators are a dangerous threat. Using [[Treads]] with Siege Mode or lots of Targeting of your own will help dealing with the high innate avoidance. Electromagnetic weaponry is by far the best choice to deal with Hunters, especially EM [[Launchers]] that don't have to directly hit the Hunter to deal damage. Kinetic builds may have more difficulty fighting Hunters due to their kinetic resistance, though they will appreciate the many Kinetic guns that might drop as loot
 Dodging hunters is difficult to do for an airborne build. They have a much higher than average memory (60 actions), they shoot through walls, and they even release a fast-moving Drone to continue the chase. If running from a Hunter, make sure to consider the wall penetration ability because only certain angles will allow a Hunter to shoot through the wall and hit Cogmind. [[ECM Suites]] are of great use in reducing the memory to a more manageable number. Make use of [[Transmission Jammers]] when the Drone is nearby, since the jamming will prevent the Drone from alerting the Hunters of your position.
 [[Gallery]]Hunters.png|All Hunter variants and colors[[/Gallery]]
@@ -6506,7 +6451,7 @@ Hacking Resupply|2|[[Hackware]]||
 Heavy Resupply|4|[[Armor]], [[Hcp. Storage Unit|Hcp.]] and [[Huge Storage Unit|Huge Storage Units]], and [[Treads]]||
 Hover Resupply|8|[[Hover Units]]||
 Infowar Resupply|4|infowar Utilities including [[0b10 Decoder Chips]], [[Cloaking Devices]], [[ECM Suites]], [[Machine Analyzer]], [[Seismic Detector]], [[Sensor Arrays]], [[Signal Interpreters]], [[Terrain Scanners]], [[Terrain Scan Processors]], [[Transmission Jammers]], [[Trap Scanners]], [[Triangulator]], and [[Visual Processing Units]]||
-Kinetic Resupply|8|[[Ballistic Cannons]], [[Ballistic Guns]], and offensive Utilities including [[Matter Filters]] and [[Recoil Stabilizers]]||
+Kinetic Resupply|8|[[Kinetic Cannons]], [[Kinetic Guns]], and offensive Utilities including [[Matter Filters]] and [[Recoil Stabilizers]]||
 Melee Resupply|4|[[Impact Weapons|Impact]], [[Piercing Weapons|Piercing]], and [[Slashing Weapons|Slashing]] weapons, as well as offensive Utilities including [[Actuators]], [[Actuator Arrays]], [[Melee Analysis Suites]], and [[Force Boosters]]||
 Offense Resupply|4|Offensive utilities including [[Armor Integrity Analyzers]], [[Core Analyzers]], [[Launcher Guidance Computers]], [[Kinecellerators]], [[Launcher Loader]], [[Melee Analysis Suites]], [[Particle Chargers]], [[Tactical Coordination Suite]], [[Target Analyzers]], [[Ranged Targeting Utilities]], [[Weapon Cyclers]], and [[Weapon Mount]]||
 Resource Resupply|12|Storage or resource-related Utilities, including [[Energy Wells]], [[Field Recycling Units]], [[Matter Compressors]], [[Storage Unit|Storage Units]], and [[Tractor Beams]]. All resource-containing utilities will be filled.||
@@ -6553,7 +6498,7 @@ An Imprinted Cogmind loses the ability to receive help from a few NPCs. These ef
 Dropped by the [[Imprinter]] on death.","","","","","","","",""
 "Impulse Thruster","Part","","","","","","","","",""
 "Impulse Thruster Array","Part","","","","","","","","",""
-"Infiltrator","Bot Group","Infiltrators are [[Legs|legged]] [[Derelict]] combat bots with one [[Ballistic Cannons|Ballistic Cannon]] and 2 various other guns. They are the Derelict version of a [[Specialist]]. As their name suggests, they are most often seen infiltrating a [[Garrison]], hiding in a wall. If Cogmind has gained some [[Encrypted Comm Array]] score, Infiltrators will sometimes take the place of Specialist reinforcements called by a [[Heavy]]. In this case, they will only reveal themselves as friendly after seeing Cogmind. They come equipped with a unique [[Active Sensor Spoofer]] to mislead Heavy reinforcements.","Spoiler","Infiltrator (6),Infiltrator (7),Infiltrator (8)","","","","","",""
+"Infiltrator","Bot Group","Infiltrators are [[Legs|legged]] [[Derelict]] combat bots with one [[Kinetic Cannons|Kinetic Cannon]] and 2 various other guns. They are the Derelict version of a [[Specialist]]. As their name suggests, they are most often seen infiltrating a [[Garrison]], hiding in a wall. If Cogmind has gained some [[Encrypted Comm Array]] score, Infiltrators will sometimes take the place of Specialist reinforcements called by a [[Heavy]]. In this case, they will only reveal themselves as friendly after seeing Cogmind. They come equipped with a unique [[Active Sensor Spoofer]] to mislead Heavy reinforcements.","Spoiler","Infiltrator (6),Infiltrator (7),Infiltrator (8)","","","","","",""
 "Infiltrator (6)","Bot","","","","","","","","",""
 "Infiltrator (7)","Bot","","","","","","","","",""
 "Infiltrator (8)","Bot","","","","","","","","",""
@@ -6801,9 +6746,87 @@ Upkeep/Energy|
 Upkeep/Heat|
 Effect/Effect
 [[/PartGroupTable]]","","","","Kinecellerator,Imp. Kinecellerator,Adv. Kinecellerator,Exp. Kinecellerator","","","",""
+"Kinetic Cannons","Part Group","[[Kinetic Weapons|Kinetic]] or ballistic cannons are a type of [[Weapons|weapon]] that cost [[Matter]] to fire and deal kinetic damage. Their damage output is high but so are their upkeep costs. Kinetic cannons require little [[Energy|energy]] to fire, but have high matter costs, and have somewhat high [[Heat|heat]] generation. This, combined with their large - salvage stat, can make it hard to sustain kinetic cannon-heavy builds. However, kinetic cannons do at least generate some matter when hitting a bot that makes it a bit easier to manage. The amount of matter blasted off the target per shot is between 0 and the - salvage stat, averaging absolute( - salvage / 2 ) matter generated.
+Builds that rely heavily on kinetic cannons should have matter storage through [[Matter Compressors]] available in inventory. Running out of matter to fire can be disastrous in combat. [[Tractor Beams]] can also be used to restock matter both inside and out of combat without having to move to each matter pile. [[Matter Filters]] can keep the matter cost down lower in the first place.
+Kinetic cannons suffer from [[Recoil|recoil]], providing a minor accuracy penalty to all other weapons in a single volley. This makes [[Treads|treads]] a natural pairing with cannons since they can significantly reduce or even negate recoil entirely. [[Recoil Stabilizers]] can have a similar effect on other [[Propulsion|propulsion]] types.
+Most kinetic cannons have the blast [[Critical Hits|critical]] type which deals damage to another random part on the target and blasts a part off of the target. This effect is good for getting the occasional part knocked off of targets that keeps the part intact instead of destroying it outright, although this doesn't happen frequently due to the low blast chance of most cannons. [[Hypervelocity Cannons]] instead have a very high destroy crit chance with with the tradeoff of dealing much less damage. This can let them kill weaker bots in a single hit while failing to do any significant damage against crit-immune bots like the [[Heavy]] or [[Core Shieldings|Core Shielding]]-wearing bots like [[Duelist|Duelists]].
+
+[[Heading]]List of Kinetic Cannons[[/Heading]]
+[[PartGroupTable]]
+Kinetic Cannons|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Heat|
+Shot/Recoil|
+Shot/Targeting|
+Shot/Delay|
+Projectile/Count|
+Projectile/Damage|
+Projectile/Type|
+Projectile/Critical|
+Projectile/Penetration|
+Projectile/Salvage|
+Effect/Effect|
+Effect/Description
+[[/PartGroupTable]]","","","Kinetic Cannons","","","","",""
 "Kinetic Drone","Bot","","","","","","","","",""
+"Kinetic Guns","Part Group","[[Kinetic Weapons|Kinetic]] or ballistic guns are a type of [[Weapons|weapon]] that cost [[Matter]] to fire and deal kinetic damage. While their damage output is middling, so too are their upkeep costs. Kinetic guns require negligible amounts of [[Energy|energy]] to fire, have low matter costs, and have low [[Heat|heat]] generation. This, combined with the ability to [[Gunsling|gunsling]], makes them easily and effectively stacked in large numbers. Gunslinging removes ones of the larger downsides of large weapon since it doesn't allow you to fire most of the volley into a useless spot where a bot is destroyed mid-volley, instead targeting another hostile.
+Most kinetic guns suffer from [[Recoil|recoil]], providing a minor accuracy penalty to all other weapons in a single volley. This makes [[Treads|treads]] a natural pairing with guns since they can significantly reduce or even negate recoil entirely. [[Recoil Stabilizers]] can have a similar effect on other [[Propulsion|propulsion]] types.
+Most kinetic guns have the destroy [[Critical Hits|critical]] type which allows destroying a part or bot in a single hit regardless of remaining integrity. The chance of these criticals is low for most guns, typically under 10%. [[Target Analyzers]] can increase this chance by significant amounts, especially with multi-projectile weapons like the [[Multirail]]. [[Hypervelocity Guns]] have much higher destroy critical chances with the tradeoff of dealing little actual damage. This can let them kill weaker bots in a single hit while failing to do any significant damage against crit-immune bots like the [[Heavy]] or [[Core Shieldings|Core Shielding]]-wearing bots like [[Duelist|Duelists]].
+Most mid and lategame guns have penetration which allows them to shoot through multiple tiles in a single projectile. Hypervelocity guns have an especially high amount of penetration. This is useful when shooting enemies through walls, an ability that [[Hunter|Hunters]] frequently use, or shooting through multiple enemies in a single tile corridor. Tile penetration can destroy wall or machine tiles that the pure damage wouldn't normally destroy. This can occasionally lead to issues like loss of terrain cover or undesired machine explosions. Destroyed terrain has a bad tendency to summon [[U-05 Engineer|Engineers]] to repair nearby destroyed walls, and it is easy to accidentally penetrate into those bots and trigger [[Reinforcement Squad|reinforcements]]. A [[Transmission Jammers|Transmission Jammer]] can be used to reduce the chance of this happening.
+
+[[Heading]]List of Kinetic Guns[[/Heading]]
+[[PartGroupTable]]
+Kinetic Guns|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Heat|
+Shot/Recoil|
+Shot/Targeting|
+Shot/Delay|
+Projectile/Count|
+Projectile/Damage|
+Projectile/Type|
+Projectile/Critical|
+Projectile/Penetration|
+Projectile/Salvage|
+Effect/Effect|
+Effect/Description
+[[/PartGroupTable]]","","","Kinetic Guns","","","","",""
 "Kinetic Shotgun","Part","","","","","","","","",""
 "Kinetic Spear","Part","","","","","","","","",""
+"Kinetic Weapons","Part Supergroup","Kinetic or ballistic [[Weapons|weapons]], either [[Kinetic Guns|guns]] or [[Kinetic Cannons|cannons]], consume [[Matter]] to fire and suffer from [[Weapons#Recoil|recoil]]. Their [[Energy|energy]] costs are generally very low, and [[Heat|heat]] generation is low for guns but moderately high for cannons. Kinetic is a great all-around damage type that is resisted by very few common bots except for [[Hunter|Hunters]].
+All types of kinetic weapons can have their damage boosted with [[Kinecellerators]]. [[Matter Filters]] can help reduce the matter cost of volleys, especially cannons. [[Tractor Beams]] and [[Matter Compressors]] can be used to restock matter quickly both in and after combat.
+
+[[Heading]]List of Kinetic Weapons[[/Heading]]
+[[PartGroupTable]]
+Kinetic Weapons|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Heat|
+Shot/Targeting|
+Shot/Delay|
+Projectile/Count|
+Projectile/Damage|
+Projectile/Type|
+Projectile/Critical|
+Projectile/Penetration|
+Projectile/Salvage|
+Effect/Effect|
+Effect/Description
+[[/PartGroupTable]]","","","","","Kinetic Cannons,Kinetic Guns","","",""
 "Knight","Bot","","","","","","","","",""
 "L-31 Rogue","Bot","","","","","","","","",""
 "L-41 Fighter","Bot","","","","","","","","",""
@@ -6852,7 +6875,7 @@ Order 6-0319 will provide a manual Terminal hack that can be used in [[Section 7
 "Lance","Part","","","","","","","","",""
 "Large Mutated Botcube","Bot","","","","","","","","",""
 "Laser Turret","Bot","","","","","","","","",""
-"Latent Energy Streamer","Part","The Latent Energy Streamer uses a unique mechanic called latent energy to fire. At maximum latent energy capacity (100), the true damage potential is 90-100, with 1% disruption and +4 salvage.
+"Latent Energy Streamer","Part","The Latent Energy Streamer uses a unique mechanic called latent energy to fire. At maximum latent energy capacity (100), the true damage potential is 90-100, with 1% [[Disruption|disruption]] and +4 salvage.
 
 [[Heading]]Latent Energy[[/Heading]]
 Latent Energy is present all around the map but only in generally small quantities. The most latent energy is present in the various machinery. This means that the Streamer tends to be unimpressive in [[Caves]], but much stronger in [[0b10]]-controlled locations. Each type of machine has a different amount of latent energy it can provide to the Streamer. Generally, larger machines provide more latent energy. Attaching the Latent Energy Streamer allows visualization of how much latent energy is in an area.
@@ -7123,7 +7146,7 @@ Full list of depth-specific mechanics that apply in Materials:
 [[Heading]]Notable Locations[[/Heading]][[Gallery]]Materials Main Exit.png|A 3 tile corridor leading to a main access|Materials Mines Exit.png| A [[Mines]] exit prefab|Materials Mines Exit 2.png|A second Mines exit prefab|Materials Subcaves Exit.png|A dug out exit to Subcaves|Materials Subcaves Exit Predug.png|An exit to Subcaves surrounded by dirt, before being dug out|Materials OOD Cache.png|An out-of-depth parts cache|Materials Storage Cache.png|A cache full of [[Sml. Storage Unit|Small]], [[Med. Storage Unit|Medium]], and [[Lrg. Storage Unit|Large]] storage units[[/Gallery]]The storage cache prefab can be very important early on in the game. Cogmind only starts with a [[Sml. Storage Unit]] with very little room for important backup parts and should upgrade ASAP. While not guaranteed, these storage caches will appear on almost every Materials map. [[Hcp. Storage Unit]] and [[Huge Storage Unit]] can both be commonly found on the floor in these maps, but they are not included in the standard storage cache prefab.
 The other important cache is the out-of-depth parts cache. These caches contain 3 groups of 4 parts that will be one rating out of depth and can include prototypes. For example, on -9 Materials the standard highest rating part is a 2, while the cache will contain rating 3 or 3* [[Prototype Part|Prototype Parts]]. This is one of the best ways to become very strong in Materials. For example, getting a stockpile of [[Enh. Autogun|Enh. Autoguns]] on -9 can help set a combat up for multiple floors to come.[[Heading:2]]Exits[[/Heading]]There are 3 types of normal exits in Materials:[[List]]Main access exits: These always lead to the next main floor, either Materials or [[Factory]]. These exits can be recognized by their distinctive 3 tile corridor leading to a dead-end exit along the edges of the map. There are always 3 of these per Materials map.|[[Mines]] exits: These exits are almost always distinguishable by a few specific prefabs of some machinery and a cache of items. Occasionally Mines exits will spawn without the prefab and look like standard exits. There are either 1 or 2 Mines exits on -10 and -9.|[[Storage]] exits: These exits do not have a prefab at all and look like standard exits. There is often a [[Y-45 Defender|Sentry]] guarding these exits, but it is not guaranteed. Storage only spawns on 1 depth between -9 and -7 and 1-2 exits can be found to Storage on that map.|[[Subcaves]] exits: Hidden behind a large area of diggable dirt where a new room is planned. [[T-07 Excavator|Excavators]] will dig this area out over time, revealing the exit. It is also possible for Cogmind to dig this area out to find the exit ahead of time.[[/List]][[Heading]]Events[[/Heading]][[Image]]8R-AWN in Materials.png|8R-AWN passing through Materials[[/Image]]
 [[Spoiler]][[Image]]Materials Subdwellers Attack.png|Subdwellers attacking 0b10[[/Image]][[/Spoiler]][[List]](++) [[8R-AWN]]: 8R-AWN can appear in -10 or -9 Materials, passing through to the nearest Mines exit. They will shoot any hostile 0b10 bots on the way and often leave large piles of loot in their wake. If encountered, they will tell you to follow them to the Mines and then to the [[Exiles (Location)|Exiles]] map.|(++) [[Spoiler]][[7R-MNS]]: 7R-MNS will appear on -8 Materials, roaming around the map and killing 0b10 combat bots. After a few hundred turns, they will head to a main exit and head to Factory. They can be followed through the exit.[[/Spoiler]]|(++) [[Federalist]] party: 6 Federalists will appear on -10 Materials and head directly for the Subcaves exit. They will continue exploring Subcaves until they find a shortcut to [[Scraptown]].|(--) [[Spoiler]]3 [[Subdweller|Subdwellers]] can appear from the Subcaves exit, attacking Cogmind and 0b10 alike, with the announcement of [[GameText]]Derelict incursion detected, dispatching patrols to target area.[[/GameText]] When this occurs, two patrols will be dispatched from a nearby main exit.[[/Spoiler]][[/List]]","","","","","","","",""
-"Matter","Part","Matter is used to attach components, and is consumed by ballistic weapons and launchers, which convert it to the appropriate type of ammunition. It can be salvaged from robot remains, though the available amount varies depending on how the robot was destroyed. Robots hit with [[Ballistic Cannons]] will drop a small amount of matter nearby. Matter also appears randomly on the ground. Cogmind automatically recycles 5 matter from each attached part that is destroyed.","","","","","","","",""
+"Matter","Part","Matter is used to attach components, and is consumed by [[Kinetic Weapons|kinetic weapons]] and [[Launcher|launchers]], which convert it to the appropriate type of ammunition. It can be salvaged from robot remains, though the available amount varies depending on how the robot was destroyed. Robots hit with [[Kinetic Cannons]] will drop a small amount of matter nearby. Matter also appears randomly on the ground. Cogmind automatically recycles 5 matter from each attached part that is destroyed.","","","","","","","",""
 "Matter Compressor","Part","","","","","","","","",""
 "Matter Compressors","Part Group","Additional [[Storage]] for [[Matter]] that can be filled up without the part being attached and retrieved by either attaching the part or by being positioned on the same tile as the part on the ground. This storage is especially useful for builds that use lots of matter on things like [[Kinetic Cannons]] and [[Explosive Launchers]].
 Dropping matter compressors is much more efficient in spent turns to restock on matter than swapping the part on and back off again. This can be done ahead of combat to save more time. While it is generally superior, the dropping technique does have some downsides. It requires a free slot underneath Cogmind, otherwise the dropped part will take time to walk on top of. Leaving the part on the ground also leaves it liable to be destroyed by explosions or picked up by a [[Recycler]].
@@ -7360,7 +7383,9 @@ Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
 [[/PartGroupTable]]","","","","Melee Analysis Suite,Imp. Melee Analysis Suite,Adv. Melee Analysis Suite,Exp. Melee Analysis Suite","","","",""
-"Melee Datajacks","Part Group","[[Heading]]List of Melee Datajacks[[/Heading]]
+"Melee Datajacks","Part Group","A type of melee-range [[Datajacks|Datajack]] that is primarily used to hack robots. See the Datajacks page for more information.
+
+[[Heading]]List of Melee Datajacks[[/Heading]]
 [[PartGroupTable]]
 Melee Datajacks|
 Overview/Size|
@@ -8614,7 +8639,7 @@ Sensors|After some time in Quantum Companion form, the Quantum Companion will de
 Surprise Attack|The Quantum Companion will ""surprise attack"" one additional target on a normal attack. Can only happen if there is at least two hostiles are within melee range. The log message [[GameText]]Quantum Companion surprise attacks [target].[[/GameText]] will appear when this happens.|Common||
 Core Loss|The Companion Sword deals between 5-10 core damage directly to Cogmind's core on a normal attack. Can't be reduced by [[Core Shieldings]] or [[Defensive Utilities]]. Only happens when Cogmind attacks something with the Companion Sword.|Uncommon||
 Shadow Attack|A shadow clone of the sword attacks a hostile bot at range. Can occur even when not attacking. This attack cannot miss. The log message [[GameText]]Quantum Companion releases a shadow of itself that zips off toward [target].[[/GameText]] will appear when this happens. This attack deals 70-100 phasic damage.[[Comment]]IMPORTANT QUESTION: can this effect occur while a Researcher can see it? If so, would it cause them to notice Cogmind?[[/Comment]]|Uncommon||
-Bot Disruption|A bot is instantly disrupted on a normal attack. As with normal disruption, a disrupted bot can be rewired as long as it isn't hacking immune. The log message [[GameText]][target] shuts down.[[/GameText]] will appear when this happens.|Rare||
+Bot Disruption|A bot is instantly disrupted on a normal attack. As with normal [[Disruption|disruption]], a disrupted bot can be rewired as long as it isn't hacking immune. The log message [[GameText]][target] shuts down.[[/GameText]] will appear when this happens.|Rare||
 Redirected Attack|When attacked by a projectile, the Quantum Companion will redirect the attack back to the attacker. The log message [[GameText]]Redirected attack with Quantum Companion.[[/GameText]] will appear with this happens.|Rare||
 Sever|A part is severed off of a bot on a normal attack. This effect can hit through the Dismemberment immunity, unlike standard Sever critical hits.|Rare||
 Sunder|This effect will instantly sunder a bot, similar to the [[Core Stripper]] on a normal attack. All parts are dropped between 1/3 and 2/3 integrity. Affected by the Dismemberment immunity. The log message [[GameText]][target] is sundered.[[/GameText]] will appear when this happens. 200 energy required for this effect.|Rare||
@@ -8712,7 +8737,7 @@ Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
 [[/PartGroupTable]]","","","","Recalibrator,Imp. Recalibrator,Adv. Recalibrator,Exp. Recalibrator","","","",""
-"Recoil","Other","Recoil is a [[Weapons|weapon]] mechanic that is primarily applicable to [[Ballistic Weapons|ballistic weapons]]. Recoil reduces the accuracy of all other weapons in the volley regardless of firing order by a percent equal to the recoil value.
+"Recoil","Other","Recoil is a [[Weapons|weapon]] mechanic that is primarily applicable to [[Kinetic Weapons|kinetic weapons]]. Recoil reduces the accuracy of all other weapons in the volley regardless of firing order by a percent equal to the recoil value.
 Recoil can be reduced by having active [[Treads|treads]], with 1 recoil reduced for each weapon per active tread slot when firing. [[Siege Mode|siege mode]] and [[Martial Mode|martial mode]] can both negate recoil entirely. Another method to reduce recoil is [[Recoil Stabilizer|Recoil Stabilizers]] which also reduce recoil by a fixed amount per weapon.
 As an example, let's say that [[Cogmind]] is wearing a single set of [[Lgt. Treads]] and fires a volley consisting of a [[Gauss Rifle]] (2 recoil), [[Gauss Cannon]] (4 recoil), and a [[Field Laser]] (no recoil). If the base chance of hitting the target is 70%, accuracy is calculated as follows:
 [[List]]
@@ -8983,7 +9008,9 @@ Installing RIF can be done at any [[Garrison]] by walking into a RIF Installer m
 All standard (non-manual) hacks at Garrison Machines will have a 100% chance to succeed. The 15-radius detection is very handy for finding new Garrisons to enter, as well as finding hidden RIF installers behind walls.|Coupler Protocols: Use [[Relay Couplers]] to interface with their respective robots.
 Use [[Datajacks]] with Relay Couplers to perform special hacks at the cost of charges on the Couplers. See [[~/rif|this page]] for the full list of hackable bots as well as unique hacks applicable to each type of bot.|Additional RIF abilities: See [[~/rif|this page]] for the full list of abilities.|Special [[Wintypes|Wintype]] interaction: [[Redacted]]If Cogmind touches the intact 0b10 Conduit machine in [[Command]] while being RIF-aligned, the W4 Assimilated 0b10 win will be achieved without needing to destroy both phases of [[MAIN.C]] as is typically required.[[/Redacted]][[/List]]","Spoiler","","","","","","",""
 "Remote Datajack","Part","","","","","","","","",""
-"Remote Datajacks","Part Group","[[Heading]]List of Remote Datajacks[[/Heading]]
+"Remote Datajacks","Part Group","A type of ranged [[Datajacks|Datajack]] that is primarily used to hack robots. See the Datajacks page for more information.
+
+[[Heading]]List of Remote Datajacks[[/Heading]]
 [[PartGroupTable]]
 Remote Datajacks|
 Overview/Size|
@@ -9497,7 +9524,7 @@ List of available abandonware bot hacks:
 [[GameText]]REPAIR.EXE[[/GameText]] - Turns any [[Mechanic]] into a purple uncontrollable allied bot.|
 [[GameText]]REVENGE.EXE[[/GameText]] - Corrupts any [[Programmer]] within a few turns.|
 [[GameText]]SHUTEYE.EXE[[/GameText]] - Instantly breaks any [[Watcher]].|
-[[GameText]]TRNCOAT.EXE[[/GameText]] - A Programmer emits a 15 damage 3 tile radius EM damage effect every few turns. Has spectrum and disruption. The programmer itself is hit by the damage.[[/List]]
+[[GameText]]TRNCOAT.EXE[[/GameText]] - A Programmer emits a 15 damage 3 tile radius EM damage effect every few turns. Has [[Spectrum|spectrum]] and [[Disruption|disruption]]. The programmer itself is hit by the damage.[[/List]]
 [[Heading:3]]Cartography Club[[/Heading]]
 [[Image]]Scraptown Cartography Club Solve.png|Steps to solve the Cartography Club Maze (may be mirrored)[[/Image]]
 The Cartography Club contains multiple rewards that are locked behind a maze. These items are a [[Mapping Drone Bay]] (not guaranteed), a [[Surveybot 17 Chip]] (not guaranteed), a Terminal filled with various forms of map intel (guaranteed), and a [[Deep Structural Scanner]] (guaranteed). In order to perform steps 4-6, Cogmind must be at least 120 speed. A slower bot can temporarily purge items in order to complete the puzzle since core hover is more than enough speed.
@@ -9978,6 +10005,7 @@ Specialists have no specific weaknesses or immunities, so generally any damage t
 Specialists may appear in the following squads:
 [[List]][[Assault Squad]] - Only if Cogmind has allies|[[Cargo Convoy]] - Within the escorting [[C-45 Heavy ARC|Heavy ARCs]]|[[Patrol Squad]] - [[Armory]] and [[Garrison|Garrisons]] only|[[Reinforcement Squad]] - only from [[Heavy]]-summoned Reinforcements|[[Security Squad]] - [[Armory]], Garrisons, [[Quarantine]], and [[Testing]] only[[/List]]","","X-57 Shotgunner,X-62 Marksman,X-67 Chaingunner,X-72 Disruptor,X-77 Beamer,X-82 Rainmaker,X-87 Electro,Protovariant X","","","","","",""
 "Spectral Analyzer","Part","","","","","","","","",""
+"Spectrum","Other","The chance to blow up a [[Power|power]] source when dealing damage to it. Available to [[Electromagnetic Weapons|electromagnetic weapons]].","","","","","","","",""
 "Speed Boosting Utilities","Part Group","","Spoiler","","","Rocket Booster,Asb. Metafiber Network,Zio. Metafield Generator,ST Field Compressor","","","",""
 "Spiked Treads","Part Group","A [[Derelict]]-made subclass of [[Treads]] that have more coverage, integrity at the cost of higher penalty and worse support than normal treads. These parts are typically only found on a few Derelicts and in [[Scrap]].
 
@@ -10316,7 +10344,7 @@ The Field Lobotomy Kit can assimilate both Combat Programmers with the cost of 2
 There are several common Doom Corridor fighting strategies that depend on obtained parts and allies:
 [[Image]]Command Doom Corridor MWD.png|Using a Microwarp Drive to lure the Combat Programmers away[[/Image]]
 [[Heading:3]]Solo Cogmind[[/Heading]]
-If Cogmind is fighting alone, it can be very effective to lure the Combat Programmers out first to kill them before the M Guards arrive. A Microwarp Drive makes this very easy to do. Without a Microwarp Drive, one strategy is to use a long ranged [[Ballistic Cannons|Ballistic Cannon]] to shoot one of the M Guards and then duck into one of the Warlord cubbyholes. The Combat Programmers will run out of AEGIS protection range to fight. With good offensive firepower, the Programmers will be destroyed by the time the M Guards catch up. If not, it is still good to finish them off before moving to the M Guards. Switch over to EM to quickly finish the M Guards. Even a weaker EM weapon like a [[Gamma Rifle]] from a [[P-80 Master]] is more effective at killing M Guards than most other damage types.
+If Cogmind is fighting alone, it can be very effective to lure the Combat Programmers out first to kill them before the M Guards arrive. A Microwarp Drive makes this very easy to do. Without a Microwarp Drive, one strategy is to use a long ranged [[Kinetic Cannons|Kinetic Cannon]] to shoot one of the M Guards and then duck into one of the Warlord cubbyholes. The Combat Programmers will run out of AEGIS protection range to fight. With good offensive firepower, the Programmers will be destroyed by the time the M Guards catch up. If not, it is still good to finish them off before moving to the M Guards. Switch over to EM to quickly finish the M Guards. Even a weaker EM weapon like a [[Gamma Rifle]] from a [[P-80 Master]] is more effective at killing M Guards than most other damage types.
 [[Image]]Command Doco Warlord Aggro.png|Path to allow Warlord to draw aggro, good with Core Stripper and Disintegrator[[/Image]]
 [[Heading:3]]Seal Charge[[/Heading]]
 If one or more seals have been activated, there can be a large mass of allies following Cogmind around. If grounded and slow, sometimes there are so many allies that no kind of special maneuvering is possible. In this case, charging down the Corridor is the only real choice. If possible, try to use an Adv. Point Defense or two to keep allies alive as long as possible. This strategy usually results in most or all allies getting destroyed in the fight. If Warlord is present, he will typically be the last ally standing for this type of strategy. In fact, Warlord alone can end up carrying the entire Doom Corridor fight. He has 100% EM resistance so the Combat Programmers can't hurt at all, and he has a massive amount of integrity to tank the M Guards.
@@ -10333,7 +10361,7 @@ MAIN.C is locked behind a very powerful [[Reinforced Walls#command|sealed barrie
 Powerful Thermal weaponry including [[Cld. Nova Cannon]], [[Null Cannon]], [[Potential Cannon]], [[Imp. Potential Cannon]], and [[Core Cannon]] can be used to dig through the center. An high rating reactor explosion from an [[Electromagnetic Launchers|Electromagnetic Launcher]], such as the [[Shock Bomb Launcher]] sometimes available on [[Warlord D3-CKR]], can destroy a few wall tiles at a time. [[Plasma Cutters]] can be used to disassemble the Sealed Barrier as well. Another alternative is to skip through the barrier with a [[Spacefold Activator]], or to dig around it using a [[Matter Drive]], [[LU-1G1's Laser Shovel]], or [[Terrabomb]].
 
 [[Heading]]MAIN.C Strategy[[/Heading]]
-After bypassing the Doom Corridor in one way or another, the big boss MAIN.C lies ahead. The [[MAIN.C (Shell)|first form]] is the easier of the two. It is easier to hit, has weaker weapons, lacks some resistances that the second phase has, and has no strict timer. However, the disruption effects on the [[Hpw. Disruptor Cannon|Hpw. Disruptor Cannons]] can be quite annoying, especially for builds that are very close to the support limit or builds with few weapons. Consider [[Dynamic Insulation Systems]] or [[Shieldings]] to protect crucial parts from Disruption.
+After bypassing the Doom Corridor in one way or another, the big boss MAIN.C lies ahead. The [[MAIN.C (Shell)|first form]] is the easier of the two. It is easier to hit, has weaker weapons, lacks some resistances that the second phase has, and has no strict timer. However, the [[Disruption|disruption]] effects on the [[Hpw. Disruptor Cannon|Hpw. Disruptor Cannons]] can be quite annoying, especially for builds that are very close to the support limit or builds with few weapons. Consider [[Dynamic Insulation Systems]] or [[Shieldings]] to protect crucial parts from disruption.
 However, the [[MAIN.C|second phase]] is much scarier. This form deals much more damage, has a 20% blast from the [[Omega Cannon]], gains Thermal and Explosive resistance, becomes much quicker at 34 speed. Most importantly, this form puts Cogmind on a time limit since the Command Garrisons become active. Linger too long and hoards of 0b10 bots will come into the room.
 [[Heading:2]]Useful parts vs MAIN.C[[/Heading]]
 [[Heading:3]]Strong Kinetic, Entropic, or Vortex weapons[[/Heading]]
@@ -10356,7 +10384,7 @@ The A7 MAIN.C hack can only be delivered with a manual hack performed with a Dat
 [[Heading:3]][[Energy Wells]] (MC)[[/Heading]]
 Powering Force Fields or expensive Energy Cannons can require a lot of energy, and storing some in advance is always helpful. Consider pre-dropping energy wells so that energy is available when needed.
 [[Heading:3]][[Matter Compressors]] or [[Tractor Beams]][[/Heading]]
-Kinetic weapons, especially [[Ballistic Cannons]], can eat through stored matter very quickly. Without a good way to replenish it mid-combat, Cogmind can run out of matter entirely. Phase one will typically drop a large amount of matter that can be gathered mid-combat with a Tractor Beam. Matter Compressors do a good job of storing matter ahead of time. [[Exp. Matter Compressor|Exp. Matter Compressors]] can be looted from M Guards earlier. In a pinch, [[K-01 Serf|K-01 Serfs]] can carry [[Med. Matter Pod|Med. Matter Pods]]
+Kinetic weapons, especially [[Kinetic Cannons]], can eat through stored matter very quickly. Without a good way to replenish it mid-combat, Cogmind can run out of matter entirely. Phase one will typically drop a large amount of matter that can be gathered mid-combat with a Tractor Beam. Matter Compressors do a good job of storing matter ahead of time. [[Exp. Matter Compressor|Exp. Matter Compressors]] can be looted from M Guards earlier. In a pinch, [[K-01 Serf|K-01 Serfs]] can carry [[Med. Matter Pod|Med. Matter Pods]]
 [[Heading:2]]MAIN.C Combat Strategies[[/Heading]]
 [[Image]]Command Warlord Seal MC Attack.png|Charging MAIN.C with Warlord Cave seal allies[[/Image]]
 There are not too many strategies for killing MAIN.C. The majority of the work is going to be in the initial setup and not necessarily in the actual fight. The typical course of action is to step into the room, use the MAIN.C hack (if obtained this run), take a few steps into the room, and [[Siege Mode|siege]] up if wearing Treads. After that just start shooting. Phase one can be destroyed with thermal weapons to preserve matter for Kinetics or integrity for Vortex weaponry. When phase one is almost destroyed, it can be worth pre-switching to the phase two build to ensure minimum delay between phase two summoning the Garrisons and MAIN.C dying.
@@ -10446,7 +10474,7 @@ The most reliable way to beat Triborg is with meltdown. Large groups of allies w
 Aside from allies, there are few other Exiles Prototypes that can handle the Triborg fight:
 [[List]]
 [[AWS/Autocannon]]: The Autocannon has an incredibly high damage output that can take Triborg out within 4 core hits.|
-[[Field Lobotomy Kit]]: Triborg is not Disruption immune so the FLK will instantly turn a threat into a useful ally|
+[[Field Lobotomy Kit]]: Triborg is not [[Disruption|disruption]]-immune so the FLK will instantly turn a threat into a useful ally|
 [[Firepult]]: Firepult has sufficient heat transfer to melt Triborg with ease. Make sure to pack plenty of cooling to use this early.|
 [[YOLO Cannon]]: YOLO Cannon's high 50% meltdown critical easily kills Triborg. Note: the AOE effect of YOLO cannon may damage the loot on the ground.[[/List]]
 [[Heading:2]]Trash Killer[[/Heading]]
@@ -10719,7 +10747,7 @@ After everything else is cleaned out, all that's left is claiming the loot. Wall
 The Exiles item will normally require fighting both the wall and the top Golem. One alternative to grab it is using the Zion special item [[Phasing AFG]]. By using it, the item can be pulled in without any fighting on the left side of the map.","Spoiler","","","","","","",""
 "Strategy/Wintypes","Other","Strategies about obtaining particular [[Wintypes]].","Redacted","","","","","","Strategy/Wintypes/W8 Fortifying 0b10,Strategy/Wintypes/W9 Defending 0bPrime",""
 "Strategy/Wintypes/W8 Fortifying 0b10","Other","After defeating [[MAIN.C (Shell)]] in [[Command]], the [[Command#w8_fortifying_0b10surrender|surrender option]] may be selected instead of continuing to fight MAIN.C. A [[Core Reset Matrix]] or being [[Warlord (Alignment)|Warlord aligned]] while [[Warlord]] is alive will prevent this option from being selected.
-Cogmind, MAIN.C, and the newly allied [[0b10]] bots must face off against waves of [[Enhanced Q-Series]]. These bots are mostly randomized, but there are some common qualities to them. They all have [[Adv. Dynamic Insulation System|Adv. Dynamic Insulation Systems]] which makes EM damage not a very reliable way to kill. They typically have another damage resistance utility or armor, although Kinetic and Thermal damage is usually effective. A 4+ [[Ballistic Cannons]] or [[Multirail]] stack is a good set to deal a lot of damage to these bots. The overall build requirements tend not to be too strict here. Cogmind does need to be able to put out a decent amount of damage and manage to keep a build well intact from backup parts and from Q-Series or 0b10 bot loot. MAIN.C does have a tendency to wander off and get overwhelmed at times, so try to keep up with him.
+Cogmind, MAIN.C, and the newly allied [[0b10]] bots must face off against waves of [[Enhanced Q-Series]]. These bots are mostly randomized, but there are some common qualities to them. They all have [[Adv. Dynamic Insulation System|Adv. Dynamic Insulation Systems]] which makes EM damage not a very reliable way to kill. They typically have another damage resistance utility or armor, although Kinetic and Thermal damage is usually effective. A 4+ [[Kinetic Cannons]] or [[Multirail]] stack is a good set to deal a lot of damage to these bots. The overall build requirements tend not to be too strict here. Cogmind does need to be able to put out a decent amount of damage and manage to keep a build well intact from backup parts and from Q-Series or 0b10 bot loot. MAIN.C does have a tendency to wander off and get overwhelmed at times, so try to keep up with him.
 One consideration when doing this event is whether or not to go to the cache. Since Cogmind only gets 100 moves and about 40 more turns after that, it may be worth calculating the path ahead of time. If MAIN.C gets overwhelmed in the first fight, single-handedly fighting a large group of Q-Series, the event can end in failure right at the very beginning. A [[Microwarp Drive]] can help greatly here since one warp only counts as one move for the purposes of the counter.
 
 [[Heading]]Useful parts vs. Enhanced Q-Series[[/Heading]]
@@ -11038,7 +11066,7 @@ Surveillance squads are [[0b10]] aligned [[Squad|squads]] that roam the map look
 "Svarog","Bot","","","","","","","","",""
 "Swarm Drone","Bot","","","","","","","","",""
 "Swarm Drone Bay","Part","Deploys [[Swarm Drone|Swarm Drones]].","","","","","","","",""
-"Swarmer","Bot Group","Swarmers are a [[Bot Groups|bot group]] of [[Flight Units|flying]] [[0b10]] combat bots with one [[Ballistic Guns|Ballistic Gun]] that are always seen in groups. They are individually weak and non-threatening, but annoying in groups. Swarmers have a slight Explosive damage weakness. This, combined with their evasiveness, high core exposure, and low core integrity, make explosive [[Launchers|Launcher]] a great idea to use against them. Trying to pick off 6 Swarmers one by one may take much longer and result in a lot more damage dealt to Cogmind.
+"Swarmer","Bot Group","Swarmers are a [[Bot Groups|bot group]] of [[Flight Units|flying]] [[0b10]] combat bots with one [[Kinetic Guns|Kinetic Gun]] that are always seen in groups. They are individually weak and non-threatening, but annoying in groups. Swarmers have a slight Explosive damage weakness. This, combined with their evasiveness, high core exposure, and low core integrity, make explosive [[Launchers|Launcher]] a great idea to use against them. Trying to pick off 6 Swarmers one by one may take much longer and result in a lot more damage dealt to Cogmind.
 Swarmers have a very low memory (20 actions). While they may pursue airborne builds quickly compared to most other bots, it can be easy to lose them after turning the corner in a corridor or hallway near max range. This strategy is more effective when used with [[ECM Suites]].
 [[Gallery]]Swarmers.png|All Swarmer variants and colors[[/Gallery]]
 
@@ -12357,7 +12385,7 @@ This is the last chance to exit the map with any amount of assistance. With assa
 "Warp Cannon","Part","","","","","","","","",""
 "Warp Gun","Part","","","","","","","","",""
 "Wartreads","Part","","","","","","","","",""
-"Wasp","Bot Group","Wasps are a [[Bot Groups|bot group]] of [[Flight Units|flying]] [[Derelict]] combat bots armed with Derelict [[Ballistic Guns]]. They are the Derelict version of the [[0b10]] [[Swarmer]] class, and as such, are individually quite frail and nonthreatening bots, but can be more powerful in groups. Wasps are common bots that show up in many different types of Derelict encounters and events.","","Wasp (5),Wasp (7)","","","","","",""
+"Wasp","Bot Group","Wasps are a [[Bot Groups|bot group]] of [[Flight Units|flying]] [[Derelict]] combat bots armed with Derelict [[Kinetic Guns]]. They are the Derelict version of the [[0b10]] [[Swarmer]] class, and as such, are individually quite frail and nonthreatening bots, but can be more powerful in groups. Wasps are common bots that show up in many different types of Derelict encounters and events.","","Wasp (5),Wasp (7)","","","","","",""
 "Wasp (5)","Bot","","","","","","","","",""
 "Wasp (7)","Bot","","","","","","","","",""
 "Wastes","Location","Wastes is a [[0b10]]-controlled sub-floor in Factory that appears on most floors between -7 and -4. It can only be entered when Cogmind triggers a [[Chute Trap]]. Cogmind will get dropped in instantly. Any bots that have been dropped into chutes previously will be present on the map. Any nearby allies will drop in over time. Wastes can be a very brutal map for an unprepared player thanks to the 6 hostile [[C-40 Crusher|Crushers]] that can crush Cogmind's build in a few hits. There is an EMP in some Wastes maps that fires 10 turns after entering the map, and every 100 turns after that, which adds between 5 to 10% [[Corruption]] to Cogmind. This corruption can be reduced by EM [[Resistance Devices]] and prevented with [[Dynamic Insulation Systems]]. There are various broken, faulty, or otherwise low integrity parts scattered on the ground. These parts can be up to 2 ratings out of depth and can be good to try to [[Repair Station|repair]] or [[Scanalyzer|scan]], and [[Fabricator|fabricate]].
@@ -12429,7 +12457,7 @@ Effect/Effect
 [[/PartGroupTable]]","","","","Weapon Shielding,Imp. Weapon Shielding,Mak. Weapon Shielding,Exp. Weapon Shielding,Zio. Weapon Casing","","","",""
 "Weapons","Part Supergroup","Weapon components allow robots to deal damage or otherwise perform some utility.
 
-Weapons can be from 9 general categories: [[Ballistic Cannons]], [[Energy Cannons]], [[Ballistic Guns]], [[Energy Guns]], [[Launchers]], [[Slashing Weapons]], [[Piercing Weapons]], [[Impact Weapons]], [[Special Melee Weapons]], and [[Special Weapons]].
+Weapons can be from 9 general categories: [[Kinetic Cannons]], [[Energy Cannons]], [[Kinetic Guns]], [[Energy Guns]], [[Launchers]], [[Slashing Weapons]], [[Piercing Weapons]], [[Impact Weapons]], [[Special Melee Weapons]], and [[Special Weapons]].
 
 [[Heading]]Multi-Weapon Volleys[[/Heading]]
 
@@ -12448,11 +12476,11 @@ When multiple melee weapons are fired in a single volley, the first will always 
 
 [[Heading:2]][[Recoil]][[/Heading]]
 
-Certain weapons (Especially ballistic ones) suffer from recoil. The sum of every other weapon's recoil will be assessed as a penalty to each weapon in a volley containing weapon(s) suffering from recoil. The order of weapons in the volley does not matter. Recoil will be applied to all weapons other than the one causing the recoil.
+Certain weapons (Especially kinetic ones) suffer from recoil. The sum of every other weapon's recoil will be assessed as a penalty to each weapon in a volley containing weapon(s) suffering from recoil. The order of weapons in the volley does not matter. Recoil will be applied to all weapons other than the one causing the recoil.
 
-[[Heading]]Energy/Ballistic Gun Mechanics[[/Heading]]
+[[Heading]]Energy/Kinetic Gun Mechanics[[/Heading]]
 
-If a volley is comprised exclusively of ballistic and/or energy guns and its original target is destroyed, a secondary target may be selected, prioritizing the most easily hit armed and active hostile in range. This mechanic is called [[Gunsling|gunslinging]]. New targets may continue to be selected until no weapons remain in the volley. A similar mechanic is also available to melee follow-ups, and can be expanded to any weapon with use of a [[Heavy Servo Lattice]] or [[Spoiler]][[VL-GR5's Timing Chip]][[/Spoiler]]. However, unlike every other weapon types, guns cannot cause overflow damage when damage dealt is greater than the target components integrity. Overflow damage is sent to a second part according to standard coverage rules, unless the destroyed part was [[Armor|armor]], and overflow damage is always sent to armor if any is present.
+If a volley is comprised exclusively of kinetic and/or energy guns and its original target is destroyed, a secondary target may be selected, prioritizing the most easily hit armed and active hostile in range. This mechanic is called [[Gunsling|gunslinging]]. New targets may continue to be selected until no weapons remain in the volley. A similar mechanic is also available to melee follow-ups, and can be expanded to any weapon with use of a [[Heavy Servo Lattice]] or [[Spoiler]][[VL-GR5's Timing Chip]][[/Spoiler]]. However, unlike every other weapon types, guns cannot cause overflow damage when damage dealt is greater than the target components integrity. Overflow damage is sent to a second part according to standard coverage rules, unless the destroyed part was [[Armor|armor]], and overflow damage is always sent to armor if any is present.
 
 [[Heading]]Weapon Types[[/Heading]]
 
@@ -12460,9 +12488,8 @@ If a volley is comprised exclusively of ballistic and/or energy guns and its ori
 
 Energy weapons generally have a shorter range, but benefit from a more easily predictable damage potential and little or no recoil. Thermal damage also transfers [[Heat|heat]] to the target, and may cause meltdowns in hot enough targets. Electromagnetic damage is capable of causing system [[Corruption|corruption]] in targets. Anywhere from 50-150% of damage is applied as system corruption. EM damage is additionally capable of disrupting hit parts or even robot cores, as well as causing chain reactions in target power components. [[Overloadable Weapons|Some energy weapons]] are capable of being [[Overload#Weapons|overloaded]] for additional damage.
 
-[[Heading:2]][[Ballistic Weapons|Ballistic AKA Kinetic Weapons]][[/Heading]]
-
-Ballistic weapons generally have a longer effective range and more destructive critical strikes, but suffer from less predictable damage and high recoil. Some kinetic projectiles, especially [[Hypervelocity Weapons|hypervelocity variants]], are capable of penetrating one or more consecutive targets. Kinetic cannon hits also blast usable matter off target robots and have a damage-equivalent chance to cause knockback, with a (10 - range) * 5 modifier and a +/-10% per size class (Tiny/Small/Medium/Large/Huge) difference between the target and medium size (targets knocked into another robot may also damage and displace it). The amount of matter created per cannon projectile impact is randomized from between zero up to the absolute value of the weapon's salvage modifier, but only applies for those weapons with a negative salvage modifier below -2.
+[[Heading:2]][[Kinetic Weapons|Kinetic/Ballistic Weapons]][[/Heading]]
+Kinetic weapons generally have a longer effective range and more destructive critical strikes, but suffer from less predictable damage and high recoil. Some kinetic projectiles, especially [[Hypervelocity Weapons|hypervelocity variants]], are capable of penetrating one or more consecutive targets. Kinetic cannon hits also blast usable matter off target robots and have a damage-equivalent chance to cause knockback, with a (10 - range) * 5 modifier and a +/-10% per size class (Tiny/Small/Medium/Large/Huge) difference between the target and medium size (targets knocked into another robot may also damage and displace it). The amount of matter created per cannon projectile impact is randomized from between zero up to the absolute value of the weapon's salvage modifier, but only applies for those weapons with a negative salvage modifier below -2.
 
 [[Heading:2]][[Launchers]][[/Heading]]
 
@@ -12501,9 +12528,9 @@ Method of kill|[[CellStyle:Good]]Core damage or critical|[[CellStyle:Neutral]]Co
 Common bot resistance|[[CellStyle:Neutral]][[CellSpan:2]][[Hunter|Hunters]]|[[CellStyle:Good]][[CellSpan:2]]None|[[CellStyle:Bad]][[CellSpan:2]][[Behemoth|Behemoths]], [[Heavy|Heavies]], [[Programmer|Programmers]]|[[CellStyle:Bad]][[Demolisher|Demolishers]], Programmers, [[Sentry|Sentries]]|[[CellStyle:Bad]]Behemoths, Heavies, Programmers|[[CellStyle:Bad]]Behemoths, Heavies, Programmers, Sentries|[[CellStyle:Neutral]]Heavies|[[CellStyle:Neutral]]Heavies||
 Common bot weakness|[[CellStyle:Good]][[CellSpan:2]]Programmers|[[CellStyle:Good]][[CellSpan:2]]Some Behemoths, Programmers|[[CellStyle:Good]][[CellSpan:2]][[Grunt|Grunts]], Hunters|[[CellStyle:Good]][[Swarmer|Swarmers]]|[[CellStyle:Good]]Grunts, Hunters|[[CellStyle:Neutral]]N/A|[[CellStyle:Neutral]]N/A|[[CellStyle:Neutral]]N/A||
 Salvage|[[CellStyle:Neutral]]Neutral, can use [[Salvage Targeting Computers]]|[[CellStyle:Bad]]Negative|[[CellStyle:Neutral]]Neutral, can melt parts|[[CellStyle:Neutral]]Neutral, can melt parts|[[CellStyle:Neutral]]Positive, can [[Corrupted Parts|corrupt]] and fry parts|[[CellStyle:Neutral]]Positive, can corrupt and fry parts|[[CellStyle:Bad]]Highly negative|[[CellStyle:Neutral]]Positive, can corrupt and fry parts and explode engines|[[CellStyle:Bad]]Negative, can corrupt parts|[[CellStyle:Neutral]]Neutral, can sever parts|[[CellStyle:Neutral]]Neutral, more likely to hit core||
-Collateral damage|[[CellStyle:Neutral]]Penetration can  walls and machines and more likely to hit non-combat bots|[[CellStyle:Neutral]]High damage destroys walls|[[CellStyle:Good]]Little|[[CellStyle:Neutral]]High damage destroys walls|[[CellStyle:Neutral]]Spectrum can blow up engines|[[CellStyle:Neutral]]Spectrum can blow up engines|[[CellStyle:Bad]]Likely to blow up walls, machines, and non-combat bots|[[CellStyle:Neutral]]Can blow up walls, machines, and non-combat bots via spectrum but less often|[[CellStyle:Good]]None|[[CellStyle:Good]]None|[[CellStyle:Good]]None||
-Other unique traits|[[CellStyle:Good]]Penetration, recoil|[[CellStyle:Good]]Knockback, matter generation, recoil|[[CellStyle:Good]][[CellSpan:2]]Innate heat transfer|[[CellStyle:Good]][[CellSpan:2]]Corruption, spectrum, disruption|[[CellStyle:Good]]AOE attack|[[CellStyle:Good]]AOE attack, corruption, spectrum, disruption|[[CellStyle:Good]]Knockback|[[CellStyle:Neutral]]N/A|[[CellStyle:Good]]8% bonus core exposure
-[[/Table]]","","","","","Autonomous Weapons,Concussive RPGs,Guided Weapons,Overloadable Weapons,Phasic Weapons,Vortex Weapons","Ballistic Weapons,Datajacks,Electromagnetic Weapons,Energy Cannons,Energy Guns,Energy Weapons,Hypervelocity Weapons,Launchers,Melee Weapons,Special Melee Weapons,Special Weapons,Thermal Weapons","",""
+Collateral damage|[[CellStyle:Neutral]]Penetration can  walls and machines and more likely to hit non-combat bots|[[CellStyle:Neutral]]High damage destroys walls|[[CellStyle:Good]]Little|[[CellStyle:Neutral]]High damage destroys walls|[[CellStyle:Neutral]][[Spectrum]] can blow up engines|[[CellStyle:Neutral]]Spectrum can blow up engines|[[CellStyle:Bad]]Likely to blow up walls, machines, and non-combat bots|[[CellStyle:Neutral]]Can blow up walls, machines, and non-combat bots via spectrum but less often|[[CellStyle:Good]]None|[[CellStyle:Good]]None|[[CellStyle:Good]]None||
+Other unique traits|[[CellStyle:Good]]Penetration, recoil|[[CellStyle:Good]]Knockback, matter generation, recoil|[[CellStyle:Good]][[CellSpan:2]]Innate heat transfer|[[CellStyle:Good]][[CellSpan:2]]Corruption, spectrum, [[Disruption|disruption]]|[[CellStyle:Good]]AOE attack|[[CellStyle:Good]]AOE attack, corruption, spectrum, disruption|[[CellStyle:Good]]Knockback|[[CellStyle:Neutral]]N/A|[[CellStyle:Good]]8% bonus core exposure
+[[/Table]]","","","","","Autonomous Weapons,Concussive RPGs,Guided Weapons,Overloadable Weapons,Phasic Weapons,Vortex Weapons","Kinetic Weapons,Datajacks,Electromagnetic Weapons,Energy Cannons,Energy Guns,Energy Weapons,Hypervelocity Weapons,Launchers,Melee Weapons,Special Melee Weapons,Special Weapons,Thermal Weapons","",""
 "Weight Redist. System","Part","","","","","","","","",""
 "Welding Torch","Part","","","","","","","","",""
 "Wheel","Part","","","","","","","","",""
@@ -12852,7 +12879,7 @@ Note: When looping multiple bots at the same time, don't get too far ahead in or
 [[Gallery]]Extermination Looping.webp|Looping an [[Extermination Squad]] of [[Programmer|Programmers]] around some rooms in [[Research]][[/Gallery]]
 
 [[Heading]]Bot Luring[[/Heading]]
-Bot luring is a technique that pulls hostiles out of position so you can do something in the area they were previously in. For example, you may want to grab an item from a cache, interact with a machine, kill a guarded [[Hauler]], or pass through a corridor. The gist of this technique is to get noticed by some way so that the target bot(s) are chasing you instead of hanging around the area you want to go to. [[Security Squad|Guards]] can be [[Partial Spot|partial spotted]] which can avoid taking an extra volley. If you do this, make sure to overload all overloadable propulsion to decrease the chance of getting hit while performing this technique. Some other methods of gaining attention are to shoot a long-ranged weapons like [[Ballistic Cannons]] at them or to get intentionally spotted by a [[Watcher]]. If you are trying to get noticed by visual range alone, try to do it in a way that machines are blocking the line of fire to avoid extra shots.
+Bot luring is a technique that pulls hostiles out of position so you can do something in the area they were previously in. For example, you may want to grab an item from a cache, interact with a machine, kill a guarded [[Hauler]], or pass through a corridor. The gist of this technique is to get noticed by some way so that the target bot(s) are chasing you instead of hanging around the area you want to go to. [[Security Squad|Guards]] can be [[Partial Spot|partial spotted]] which can avoid taking an extra volley. If you do this, make sure to overload all overloadable propulsion to decrease the chance of getting hit while performing this technique. Some other methods of gaining attention are to shoot a long-ranged weapons like [[Kinetic Cannons]] at them or to get intentionally spotted by a [[Watcher]]. If you are trying to get noticed by visual range alone, try to do it in a way that machines are blocking the line of fire to avoid extra shots.
 
 [[Heading:2]]Examples|Guard Luring Examples[[/Heading]]
 [[Gallery]]Guard Luring.webp|Luring a [[Sentry]] out of a room in order to safely grab an item from the floor|Patrol Luring.webp|Luring a [[Patrol Squad|patrol]] of [[Grunt|Grunts]] into a room to safely bypass a corridor[[/Gallery]]
@@ -12865,7 +12892,7 @@ The primary reason to use this technique is to be able to run past a bot standin
 [[Gallery]]Greenbot Armor.webp|Using non-combat bots to safely make it to an exit[[/Gallery]]
 
 [[Heading]]Kiting[[/Heading]]
-Kiting is a technique that combines superior movement speed of flight with [[Visual Processing Units]] and long-ranged weaponry like [[Ballistic Cannons]]. By taking advantage of your range and backing up when the bot you are shooting at comes close, you can reduce or even completely negate damage taken by fighting squads. Any weapon with a range longer than the bot you're fighting can be used, although you can fire more times before having to reposition with a larger difference between you and your opponent. [[Weapon Cyclers]] also help to maximize the number of volleys you can perform in your window of opportunity. Since airborne and leg-based bots get avoidance bonuses while moving, [[Targeting Computers|Targeting]] or a [[Weapon Mount]] help you hit more shots while kiting.
+Kiting is a technique that combines superior movement speed of flight with [[Visual Processing Units]] and long-ranged weaponry like [[Kinetic Cannons]]. By taking advantage of your range and backing up when the bot you are shooting at comes close, you can reduce or even completely negate damage taken by fighting squads. Any weapon with a range longer than the bot you're fighting can be used, although you can fire more times before having to reposition with a larger difference between you and your opponent. [[Weapon Cyclers]] also help to maximize the number of volleys you can perform in your window of opportunity. Since airborne and leg-based bots get avoidance bonuses while moving, [[Targeting Computers|Targeting]] or a [[Weapon Mount]] help you hit more shots while kiting.
 In order to kite successfully, you need wide open corridors or paths in which to fire down. Some maps are better for this than others. For example, [[Factory]] is great with its tendency to produce many long open corridors, while [[Research]] is much more labyrinthine, favoring smaller and closer rooms. Depending on the layout, you may be able to loop through another path in order to keep shooting down your kiting corridor after you've ran out of space.
 
 [[Heading:2]]Examples|Kiting Examples[[/Heading]]
@@ -13524,11 +13551,11 @@ A very funny storage unit due to its side effect of eating parts, but fairly wel
 Trap Extractors are a bit niche but can be quite valuable in certain extended [[Wintypes]]. There is also no shortage of random troublesome squads to use traps against. Flight's speed makes it easy to plant traps without being spotted or lure hostiles into already placed traps near explosive machines.","","","","","","","",""
 "aoemica's Flight Guide/Good Parts/Weapons","Other","Even though flight builds can get away from most encounters without resorting to combat, it doesn't mean that weapons aren't important. Eliminating fast moving hostiles like [[Cutter|Cutters]], [[Swarmer|Swarmers]], or [[Programmer|Programmers]] might be a better option than trying to escape and getting backed into a corner. Additionally, it's often worth just clearing out an annoyingly positioned squad guarding a bottleneck in the map instead of running by and getting chased and shot a bunch of times. Some flight builds even specialize in combat exclusively instead of trying to stay stealthy.
 
-[[Heading]][[Ballistic Weapons]][[/Heading]]
+[[Heading]][[Kinetic Weapons]][[/Heading]]
 The longer-ranged and lower upkeep requirements of kinetic weaponry tend to be a good partner with flight. Guns, and especially cannons, can be used for [[aoemica's Flight Guide/Advanced Movement#Kiting|kiting]] bots at maximum range with a [[Visual Processing Units|Visual Processing Unit]].
 
-[[Image]]../part_art/Hvy. Machine Gun.png|[[Hvy. Machine Gun]], a mid-tier ballistic gun[[/Image]]
-[[Heading:2]][[Ballistic Guns]][[/Heading]]
+[[Image]]../part_art/Hvy. Machine Gun.png|[[Hvy. Machine Gun]], a mid-tier kinetic gun[[/Image]]
+[[Heading:2]][[Kinetic Guns]][[/Heading]]
 Two advantages of guns are that they are lighter than cannons and don't have high recoil, at least generally speaking. [[aoemica's Flight Guide/Builds#Gunstack|""Gunstack"" flight]] uses 4 or more kinetic guns, trading the tankiness of slower propulsion for unparalleled speed and repositioning capabilities of flight. Flight can also make good use of their penetration capabilities to kill hostiles through walls. A stack of guns can serve as the coverage for the build rather than using dedicated armor. However, in small numbers, kinetic guns are inefficient at any serious combat.
 
 [[Image]]../part_art/Hyp. Coil Gun.png|[[Hyp. Coil Gun]], a mid-tier hypervelocity gun[[/Image]]
@@ -13538,7 +13565,7 @@ Hypervelocity guns have very low damage, but make up for it in their low recoil,
 [[Heading:3]]Recoil[[/Heading]]
 Some guns, like the [[Shotgun|Shotguns]], have abnormally high recoil that can really ruin Cogmind's aim. While this can be offset, it's usually worth avoiding guns with recoil above 4. [[Recoil Stabilizers]] are a niche utility that can occasionally be beneficial for flight gunstack builds to deal with that recoil. Typically, [[Targeting Computers]] are superior as they can not only counteract the recoil but can provide better targeting on top. They are also much less fragile. However, there is a break-even point with enough guns and/or enough high-recoil guns where a Recoil Stabilizer is better. This usually happens with guns with 4 or more recoil or with 5 or more guns, though the exact crossover point can vary.
 
-[[Heading:2]][[Ballistic Cannons]][[/Heading]]
+[[Heading:2]][[Kinetic Cannons]][[/Heading]]
 Cannons are much heavier, have higher recoil, and have higher upkeep requirements than guns. While at first this may make cannons appear to be a bad choice for flight, their great range of 22 makes them perfect for kiting nearly all bot types with a dedicated [[aoemica's Flight Guide/Builds#Cannon Kiter|cannon kiting]] builds. Stacking cannons is challenging, but flight can make great use out of a single 2 slot cannon like a [[Hvy. Mass Driver]] and a [[Weapon Cyclers|Weapon Cycler]]. A [[Weapon Mount]] helps up accuracy to make the most of your high sniping range as well as provide a bit of additional reasonably durable coverage thanks to the high integrity of cannons.
 
 [[Heading:3]][[Hypervelocity Cannons]][[/Heading]]
