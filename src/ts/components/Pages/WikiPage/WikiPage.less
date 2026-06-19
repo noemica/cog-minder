@@ -502,9 +502,11 @@ wiki-gallery-fullsize-images,
             border-right-width: 0px;
         }
 
-        > tr > th {
-            border-left: @border-width solid @border-color;
-        }
+        // Want to add border to top column but this looks bad on Firefox on
+        // recent versions for some reason
+        // > tr > th {
+        //     border-left: @border-width solid @border-color;
+        // }
 
         > tr:not(:last-child) > th > div {
             border-bottom: 0;
