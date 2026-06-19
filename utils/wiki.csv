@@ -1,4 +1,4 @@
-﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
+"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","","",""
 "01-MTF's Autohacker","Part","A unique [[Utilities|Utility]] only found on [[01-MTF]] that was stolen from the [[Exiles (Group)]]. Its Door [[Terminal]] hacking is most useful with high difficulty doors like the [[Access]] [[Surface]] exit. Generally better than [[Plasma Cutters]], although they have an advantage in being able to function even if the door Terminal gets destroyed.","","","","","","","",""
 "01-MTF's Shockpuncher","Part","A unique [[Energy Guns|Energy Gun]] only found on [[01-MTF]], this short ranged [[Electromagnetic Guns|Electromagnetic Gun]] is an energy-hungry but powerful shotgun-type weapon. Its raw damage output is better than even lategame weapons like the [[Com. HERF Cannon]], capable of easily killing most bots in the game in 2 or 3 hits, and its high [[Disruption|disruption]] helps disable crucial parts on bots that it hits. However, its short range and high [[Spectrum|spectrum]] can be a detriment since it has a high chance of blowing up any bots that it hits. Any nearby cover is not likely to last very long.","","","","","","","",""
@@ -1271,12 +1271,11 @@ Bots that are created at a Fabricator have a chance of exploding into a large AO
 [[Heading:3]][[GameText]]Force(Recompile)[[/GameText]] Failure[[/Heading]]
 There is a random chance that performing a Recompile at a Fabricator will produce the wrong type of [[Authchips|Authchip]].
 
-[[Heading:3]]Squad Unrecall[[/Heading]]
-Sometimes, a few turns after successfully performing a Recall() hack, an alert message such as [[GameText]]ALERT: Just where do you think you're going, squad KXEFLN409K?[[/GameText]] will indicate that the squad that was supposed to be recalled was unrecalled by CY-PHR. While the type of the unrecalled squad isn't always announced, unrecall alert messages will always contain the squad's hash (its name), making it possible to identify the Recall() hacks that were undone and the type of the unrecalled squads.
-[[Comment]]I'm not entirely sure how it works;
-After a successful recall hack that gets unrecalled, do the bots continue to move towards their target as though nothing had happened?
-Or do they start leaving the map until CY-PHR unrecalls them?
-If the latter, does that mean that recalling a squad really quickly can make it leave so fast that CY-PHR doesn't get an opportunity to unrecall them, or will they just leave the map and come back once unrecalled?
+[[Heading:3]]Fake Squad Recall[[/Heading]]
+Sometimes, a few turns after successfully performing a Recall() hack, an alert message such as [[GameText]]ALERT: Just where do you think you're going, squad KXEFLN409K?[[/GameText]]. The referenced squad that was supposed to be recalled instead was overridden by CY-PHR to remain on the floor. While the type of the unrecalled squad isn't always announced, unrecall alert messages will always contain the squad's hash (its name), making it possible to identify the Recall() hacks that were undone and the type of the unrecalled squads. The bots in that squad will not change their orders and will not make any move toward an exit, despite CY-PHR's message taking a few turns to appear.
+Enumerate() hacks do reveal whether the recalled squad was actually recalled or not. For example, if an enumerate reveals 1 squad is present, then that squad is recalled, another enumerate will reveal 1 squad is still around if it wasn't actually recalled, or 0 if it was successfully recalled. However, this is requires a lot of hacks and risks CY-PHR shutdown which will summon yet another squad.
+[[Comment]]
+Taking a few turns to send the message instead of giving instant feedback even though the squad doesn't change behavior at all is especially cruel, thanks Kyzrati.
 [[/Comment]]
 
 [[Heading:3]]Trojan Removal[[/Heading]]
@@ -3023,7 +3022,9 @@ When datajacked, one of the following parse texts is shown:
 "EX-DEC","Bot","","","","","","","","",""
 "EX-HEX","Bot","","","","","","","","",""
 "EXE-6","Bot","","","","","","","","",""
-"Electromagnetic Cannons","Part Group","[[Heading]]List of Electromagnetic Cannons[[/Heading]]
+"Electromagnetic Cannons","Part Group","Type of [[Electromagnetic Weapons|electromagnetic]] [[Weapons|weapon]] that deals high amounts of electromagnetic damage at the cost of lots of [[Energy|energy]] and [[Heat|heat]] generation. They are better damage dealers but much more upkeep-heavy than [[Electromagnetic Guns|EM guns]]. EM damage is highly effective against non-resistant bots and is capable of killing them in only a few volleys via [[Corruption|corruption]]. A single high rating EM cannon combined with a [[Quantum Capacitor]] is a very strong combo.
+
+[[Heading]]List of Electromagnetic Cannons[[/Heading]]
 [[PartGroupTable]]
 Electromagnetic Cannons|
 Overview/Size|
@@ -3048,7 +3049,9 @@ Projectile/Disruption|
 Projectile/Salvage|
 Effect/Description
 [[/PartGroupTable]]","","","Electromagnetic Cannons","","","","",""
-"Electromagnetic Guns","Part Group","[[Heading]]List of Electromagnetic Guns[[/Heading]]
+"Electromagnetic Guns","Part Group","Type of [[Electromagnetic Weapons|electromagnetic]] [[Weapons|weapon]] that deals high amounts of electromagnetic damage at the cost of lots of [[Energy|energy]] and [[Heat|heat]] generation. They are worse damage dealers but much less upkeep-heavy than [[Electromagnetic Cannons|EM Cannons]]. EM damage is highly effective against non-resistant bots and is capable of killing them in only a few volleys via [[Corruption|corruption]]. Electromagnetic guns can easily be sourced by killing [[Programmer|Programmers]] in [[Extermination Squad|Extermination squads]].
+
+[[Heading]]List of Electromagnetic Guns[[/Heading]]
 [[PartGroupTable]]
 Electromagnetic Guns|
 Overview/Size|
@@ -3072,7 +3075,7 @@ Projectile/Disruption|
 Projectile/Salvage|
 Effect/Description
 [[/PartGroupTable]]","","","Electromagnetic Guns","","","","",""
-"Electromagnetic Launchers","Part Group","Electromagnetic [[Launchers]] are high-profile weapons that specialize in dealing a lot of electromagnetic damage in an AOE blast. This makes them great at [[Corruption|Corrupting]] large [[Patrol Squad|Patrol]] and [[Assault Squad|Assault]] squads in relatively little time. For this killing power, they have a number of drawbacks like high collateral damage, high energy cost, [[Corrupted Parts|corrupting]] dropped parts, low integrity, and the ability to blow up your own engines. [[Energy Filters]] can help keep the energy cost down to more reasonable levels.
+"Electromagnetic Launchers","Part Group","[[Electromagnetic Weapons|Electromagnetic]] [[Launchers|launchers]] are high-profile [[Weapons|weapons]] that specialize in dealing a lot of electromagnetic damage in an AOE blast. This makes them great at [[Corruption|corrupting]] large [[Patrol Squad|patrol]] and [[Assault Squad|assault squads]] in relatively little time. For this killing power, they have a number of drawbacks like high collateral damage, high [[Energy|energy]] cost, [[Corrupted Parts|corrupting]] dropped parts, low integrity, and the ability to blow up Cogmind's own [[Power|power]] sources. [[Energy Filters]] can help keep the energy cost down to more reasonable levels and [[Energy Wells]] can help refill energy mid-combat.
 [[Heading]]Explosive vs Electromagnetic Launchers[[/Heading]]
 [[Partial]]Explosive vs Electromagnetic Launchers[[/Partial]]
 
@@ -3100,13 +3103,13 @@ Explosion/Spectrum|
 Explosion/Disruption|
 Explosion/Salvage
 [[/PartGroupTable]]","","","Electromagnetic Launchers","","","","",""
-"Electromagnetic Weapons","Part Supergroup","A group of [[Energy Weapons|energy]] [[Weapons|weapons]] that deal electromagnetic (aka EM) damage and are capable of [[Corruption|corrupting]] bots to death. There are electromagnetic [[Electromagnetic Cannons|cannons]], [[Electromagnetic Guns|guns]], and [[Electromagnetic Launchers|launchers]]. These weapons have some of the the highest [[Energy|energy]] consumptions of all weapons, and they generate a decent amount of [[Heat|heat]] as well. They also have relatively high coverage and low integrity compared to other weapon types. However, their ability to corrupt non-immune bots to death is incredibly powerful, and this can result in reliably killing bots much faster than alternatives.
-Electromagnetic weapons are very useful against some targets and ineffective against others. A bot without any kind of electromagnetic resistance will die to corruption fairly quickly. Some common bots like [[Grunt|Grunts]] and [[Hunter|Hunters]] are even 25% weak to EM, making the corruption kill even faster. However, there are plenty of common bots that have either straight EM damage resistance like [[Programmer|Programmers]] (75% EM resistance) or corruption-resisting utilities in [[Dynamic Insulation Systems]] like [[Behemoth|Behemoths]] and [[Heavy|Heavies]]. It is better to prepare [[Kinetic Weapons|kinetic]] or [[Thermal Weapons|thermal weapons]] to help deal with these bots instead.
+"Electromagnetic Weapons","Part Supergroup","A group of [[Energy Weapons|energy]] [[Weapons|weapons]] that deal electromagnetic (aka EM) damage and are capable of [[Corruption|corrupting]] bots to death. There are electromagnetic [[Electromagnetic Cannons|cannons]], [[Electromagnetic Guns|guns]], and [[Electromagnetic Launchers|launchers]]. These weapons have some of the the highest [[Energy|energy]] consumptions of all weapons, and they generate a decent amount of [[Heat|heat]] as well. They also have relatively high coverage for their low integrity compared to other weapon types. However, their ability to corrupt non-immune bots to death is incredibly powerful, and this can result in reliably killing bots much faster than alternatives.
+Electromagnetic weapons are very useful against some targets and ineffective against others. A bot without any kind of electromagnetic resistance will die to corruption quickly at higher ratings. Some common bots like [[Grunt|Grunts]] and [[Hunter|Hunters]] are even 25% weak to EM, making the corruption kill even faster. However, there are plenty of common bots that have either straight EM damage resistance like [[Programmer|Programmers]] (75% EM resistance) or corruption-resisting utilities in [[Dynamic Insulation Systems]] like [[Behemoth|Behemoths]] and [[Heavy|Heavies]]. It is better to prepare [[Kinetic Weapons|kinetic]] or [[Thermal Weapons|thermal weapons]] to help deal with these bots instead.
 
 [[Heading]]Special Effects[[/Heading]]
 There are some mechanics that are either mostly or fully unique to electromagnetic weapons.
 [[Heading:2]][[Corruption]][[/Heading]]
-When a bot is hit by an electromagnetic weapon, they will take corruption equal 50-150% of the damage at random, or always 150% on a corrupt [[Critical Hits|critical hit]]. This sets a fixed amount of EM damage any bot can take before corruption death because bots die at 100% corruption. 100 damage is the average damage required to kill a bot via corruption. For top rating weapons like the [[Com. HERF Cannon]], it is possible to deal this much damage consistently in 2 or 3 hits, especially to bots that are weak to EM damage like Grunts.
+When a bot is hit by an electromagnetic weapon, they will take corruption equal 50-150% of the damage at random, or always 150% on a corrupt [[Critical Hits|critical hit]]. This means that any given bot can only take a fixed amount of EM damage take before corruption death because bots die at 100% corruption. 100 damage is the average damage required to kill a bot via corruption, with 67 being the minimum and 200 being the maximum damage required. For top rating weapons like the [[Com. HERF Cannon]], it is possible to deal this much damage consistently in 2 or 3 hits, especially to bots that are weak to EM damage like Grunts. In [[Materials]] and early [[Factory]], corruption kills tend to happen less frequently than core kills. Since there is a fixed damage cap, the more damage the weapon deals the faster that guaranteed threshold can be attained.
 In addition to being EM-resistant, Programmers also have an annoying ability to reset the corruption on friendly bots. This makes using EM very unreliable if Programmers are in the vicinity. While it is possible to still brute force the corruption kill since Programmers don't reset it every single turn, it may take a few attempts before breaking through.
 Corruption has other side effects aside from just killing the target. Most importantly, corrupted bots suffer an accuracy penalty of [corruption % / 8]% to all weapons, and they can also misfire, hitting something other than their intended target. Combined, these effects make corrupted bots less likely to hit their intended targets while in combat. However, corruption can fry low integrity parts and produce [[Corrupted Parts|corrupted parts]] when a corrupted bot is destroyed. Corrupted parts will transfer corruption to Cogmind if attached.
 
@@ -3114,7 +3117,7 @@ Corruption has other side effects aside from just killing the target. Most impor
 Disruption is the ability to temporarily disable a part or bot for a few turns when hit. The disruption chance is halved when targeting a bot core. Additionally, a disrupted bot can be rewired to become friendly, so carrying [[Remote Datajacks]] can be a good idea. Most EM weapons have fairly low disruption chances, less than 10%, although there are a few special weapons like the [[Arc Projector]] and [[Disruptor Cannon]] with significantly higher than average chances.
 
 [[Heading:2]][[Spectrum]][[/Heading]]
-Spectrum is the ability to explode a [[Power|power]] source when it is hit by an EM attack. Generally, lower rated EM weapons have a higher spectrum (50% explosion chance) and higher rated EM weapons have a lower spectrum (10% explosion chance). The spectrum on EM launchers doesn't explode power sources attached to bots except for those attached to Cogmind, (and yes it is unfair). Other than Cogmind's special case, only power on the ground can be exploded by launchers.","","","","","Electromagnetic Cannons,Electromagnetic Guns,Electromagnetic Launchers","","",""
+Spectrum is the ability to explode a [[Power|power]] source when it is hit by an EM attack. Generally, lower rated EM weapons have a narrower spectrum (50% explosion chance) and higher rated EM weapons have a wider spectrum (10% explosion chance). The spectrum on EM launchers doesn't explode power sources attached to bots except for those attached to Cogmind, (and yes it is unfair). Other than Cogmind's special case, only power on the ground can be exploded by EM launchers.","","","","","Electromagnetic Cannons,Electromagnetic Guns,Electromagnetic Launchers","","",""
 "Electron Diverter","Part","","","","","","","","",""
 "Electrostorm Shotgun","Part","","","","","","","","",""
 "Elite","Bot Group","","Spoiler","Elite (4),Elite (7)","","","","","",""
@@ -8611,10 +8614,10 @@ Weapons|Time to fire|Time per weapon||
 [[CellStyle:Neutral]][[B]]1 with QC[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]||
 1|200|[[CellStyle:Bad]]200||
 2|300|[[CellStyle:Bad]]150||
-3|325|[[CellStyle:Bad]]108â…“||
-4|350|[[CellStyle:Good]]â€‡87Â½||
-5|375|[[CellStyle:Good]]â€‡75||
-6|400|[[CellStyle:Good]]â€‡66â…”
+3|325|[[CellStyle:Bad]]108⅓||
+4|350|[[CellStyle:Good]] 87½||
+5|375|[[CellStyle:Good]] 75||
+6|400|[[CellStyle:Good]] 66⅔
 [[/Table]]
 
 The Quantum Capacitor has several benefits on top of firing time:
@@ -8626,8 +8629,7 @@ Equipping fewer weapons means they get damaged more slowly (but it leaves your c
 |No overkill: you can stop firing right when an enemy dies instead of finishing a large volley
 [[/List]]
 
-The Quantum Capacitor takes two slots, so it takes a lot of space and is difficult to swap in and out situationally. And because it tends to appear in the mid-to-late game, a build that has invested heavily in weapon slots may find the Quantum Capacitor difficult to justify, or at least face the sunk cost of extra weapon slots that will be little help with a Quantum Capacitor. The extra weapon slots can be used for situational weapons or for ""weapon armor"": high-coverage, high-integrity weapons like the [[Sigix Broadsword]].
-","","","","","","","",""
+The Quantum Capacitor takes two slots, so it takes a lot of space and is difficult to swap in and out situationally. And because it tends to appear in the mid-to-late game, a build that has invested heavily in weapon slots may find the Quantum Capacitor difficult to justify, or at least face the sunk cost of extra weapon slots that will be little help with a Quantum Capacitor. The extra weapon slots can be used for situational weapons or for ""weapon armor"": high-coverage, high-integrity weapons like the [[Sigix Broadsword]].","","","","","","","",""
 "Quantum Companion","Part","The Quantum Companion is a unique talking melee weapon that is an upgrade to the [[Companion Sword]]. It can be obtained by either using a [[Subatomic Replicator]] on a Companion Sword or by using the Companion Sword for while. The Quantum Companion has all of the special effects that the base Companion Sword has with a higher frequency of occurrence and also has some new unique effects of its own.
 
 [[Heading]]Special Effects[[/Heading]]
@@ -12527,7 +12529,7 @@ Critical Hits|[[CellStyle:Good]]Destroy|[[CellStyle:Good]]Blast|[[CellStyle:Good
 Method of kill|[[CellStyle:Good]]Core damage or critical|[[CellStyle:Neutral]]Core damage|[[CellStyle:Good]]Core damage or meltdown|[[CellStyle:Good]]Core damage or meltdown|[[CellStyle:Good]]Core damage or corruption|[[CellStyle:Good]]Core damage or corruption|[[CellStyle:Neutral]]Core damage|[[CellStyle:Good]]Core damage or corruption|[[CellStyle:Good]]Core damage or corruption|[[CellStyle:Neutral]]Core damage|[[CellStyle:Neutral]]Core damage||
 Common bot resistance|[[CellStyle:Neutral]][[CellSpan:2]][[Hunter|Hunters]]|[[CellStyle:Good]][[CellSpan:2]]None|[[CellStyle:Bad]][[CellSpan:2]][[Behemoth|Behemoths]], [[Heavy|Heavies]], [[Programmer|Programmers]]|[[CellStyle:Bad]][[Demolisher|Demolishers]], Programmers, [[Sentry|Sentries]]|[[CellStyle:Bad]]Behemoths, Heavies, Programmers|[[CellStyle:Bad]]Behemoths, Heavies, Programmers, Sentries|[[CellStyle:Neutral]]Heavies|[[CellStyle:Neutral]]Heavies||
 Common bot weakness|[[CellStyle:Good]][[CellSpan:2]]Programmers|[[CellStyle:Good]][[CellSpan:2]]Some Behemoths, Programmers|[[CellStyle:Good]][[CellSpan:2]][[Grunt|Grunts]], Hunters|[[CellStyle:Good]][[Swarmer|Swarmers]]|[[CellStyle:Good]]Grunts, Hunters|[[CellStyle:Neutral]]N/A|[[CellStyle:Neutral]]N/A|[[CellStyle:Neutral]]N/A||
-Salvage|[[CellStyle:Neutral]]Neutral, can use [[Salvage Targeting Computers]]|[[CellStyle:Bad]]Negative|[[CellStyle:Neutral]]Neutral, can melt parts|[[CellStyle:Neutral]]Neutral, can melt parts|[[CellStyle:Neutral]]Positive, can [[Corrupted Parts|corrupt]] and fry parts|[[CellStyle:Neutral]]Positive, can corrupt and fry parts|[[CellStyle:Bad]]Highly negative|[[CellStyle:Neutral]]Positive, can corrupt and fry parts and explode engines|[[CellStyle:Bad]]Negative, can corrupt parts|[[CellStyle:Neutral]]Neutral, can sever parts|[[CellStyle:Neutral]]Neutral, more likely to hit core||
+Salvage|[[CellStyle:Neutral]]Neutral, can use [[Salvage Targeting Computers]]|[[CellStyle:Bad]]Negative|[[CellStyle:Neutral]]Neutral, can melt parts, can use Salvage Targeting Computers|[[CellStyle:Neutral]]Neutral, can melt parts|[[CellStyle:Neutral]]Positive, can [[Corrupted Parts|corrupt]] and fry parts|[[CellStyle:Neutral]]Positive, can use Salvage Targeting Computers (though not impactful), can corrupt and fry parts|[[CellStyle:Bad]]Highly negative|[[CellStyle:Neutral]]Positive, can corrupt and fry parts and explode engines|[[CellStyle:Bad]]Negative, can corrupt parts|[[CellStyle:Neutral]]Neutral, can sever parts|[[CellStyle:Neutral]]Neutral, more likely to hit core||
 Collateral damage|[[CellStyle:Neutral]]Penetration can  walls and machines and more likely to hit non-combat bots|[[CellStyle:Neutral]]High damage destroys walls|[[CellStyle:Good]]Little|[[CellStyle:Neutral]]High damage destroys walls|[[CellStyle:Neutral]][[Spectrum]] can blow up engines|[[CellStyle:Neutral]]Spectrum can blow up engines|[[CellStyle:Bad]]Likely to blow up walls, machines, and non-combat bots|[[CellStyle:Neutral]]Can blow up walls, machines, and non-combat bots via spectrum but less often|[[CellStyle:Good]]None|[[CellStyle:Good]]None|[[CellStyle:Good]]None||
 Other unique traits|[[CellStyle:Good]]Penetration, recoil|[[CellStyle:Good]]Knockback, matter generation, recoil|[[CellStyle:Good]][[CellSpan:2]]Innate heat transfer|[[CellStyle:Good]][[CellSpan:2]]Corruption, spectrum, [[Disruption|disruption]]|[[CellStyle:Good]]AOE attack|[[CellStyle:Good]]AOE attack, corruption, spectrum, disruption|[[CellStyle:Good]]Knockback|[[CellStyle:Neutral]]N/A|[[CellStyle:Good]]8% bonus core exposure
 [[/Table]]","","","","","Autonomous Weapons,Concussive RPGs,Guided Weapons,Overloadable Weapons,Phasic Weapons,Vortex Weapons","Kinetic Weapons,Datajacks,Electromagnetic Weapons,Energy Cannons,Energy Guns,Energy Weapons,Hypervelocity Weapons,Launchers,Melee Weapons,Special Melee Weapons,Special Weapons,Thermal Weapons","",""
