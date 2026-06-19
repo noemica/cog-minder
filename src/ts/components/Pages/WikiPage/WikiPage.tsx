@@ -616,7 +616,7 @@ function addPartSupergroups(
 
 function addRedirect(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, WikiEntry>) {
     for (const redirect of wiki.Redirects) {
-        let spoiler = (redirect.Spoiler as Spoiler) || "None";
+        let spoiler = (redirect["Spoiler"] as Spoiler) || "None";
 
         const split = redirect.Target.split("#");
         const targetEntry = allEntries.get(split[0]);
