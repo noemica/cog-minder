@@ -29,7 +29,7 @@ jobs:
 
         steps:
             - name: Checkout repo
-              uses: actions/checkout@v4
+              uses: actions/checkout@v7
 
             - name: Install yarn
               run: |-
@@ -39,9 +39,9 @@ jobs:
                   echo "$HOME/bin" >> $GITHUB_PATH
 
             - name: Setup node
-              uses: actions/setup-node@v4
+              uses: actions/setup-node@v6
               with:
-                  node-version: 20
+                  node-version: 24
                   cache: "yarn"
 
             - name: Install dependencies
