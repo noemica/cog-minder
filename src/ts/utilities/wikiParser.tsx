@@ -51,6 +51,7 @@ class ParserState {
     allowHeadingLinks: boolean;
     allEntries: Map<string, WikiEntry>;
     botData: BotData;
+    entry: WikiEntry;
     errors: string[];
     headings: WikiHeadingState[];
     images: Set<string>;
@@ -67,11 +68,12 @@ class ParserState {
         allowHeadingLinks: boolean,
         allEntries: Map<string, WikiEntry>,
         botData: BotData,
+        entry: WikiEntry,
         errors: string[],
         headings: WikiHeadingState[],
         images: Set<string>,
+        initialContent,
         inSpoiler: boolean,
-        initialContent: string,
         inlineOnly: AllowedContentType,
         itemData: ItemData,
         location: string,
@@ -80,11 +82,12 @@ class ParserState {
         this.allowHeadingLinks = allowHeadingLinks;
         this.allEntries = allEntries;
         this.botData = botData;
+        this.entry = entry;
         this.errors = errors;
         this.headings = headings;
         this.images = images;
-        this.inSpoiler = inSpoiler;
         this.initialContent = initialContent;
+        this.inSpoiler = inSpoiler;
         this.index = 0;
         this.inlineOnly = inlineOnly;
         this.itemData = itemData;
@@ -93,16 +96,35 @@ class ParserState {
         this.spoiler = spoiler;
     }
 
+    // Retrieves first paragraph of a page (up to the first separator)
+    public getFirstParagraph() {
+        const firstSplitIdx = this.output.findIndex((outputGroup) => outputGroup.groupType === "Separator");
+        if (firstSplitIdx !== -1) {
+            return this.output.slice(0, firstSplitIdx);
+        }
+
+        return this.output;
+    }
+
+    // Process initial content by replacing any instances of [XYZ] in links with {{xyz}}
+    // Otherwise we have issues with the regex for any links that include square brackets in them
+    static createInitialContent(entry: WikiEntry) {
+        return entry.content.replace(/([^[])\[([\w/]*)\]/g, (_, p1, p2) => {
+            return `${p1}{{${p2}}}`;
+        });
+    }
+
     static Clone(state: ParserState): ParserState {
         return new ParserState(
             state.allowHeadingLinks,
             state.allEntries,
             state.botData,
+            state.entry,
             state.errors,
             state.headings,
             state.images,
-            state.inSpoiler,
             state.initialContent,
+            state.inSpoiler,
             state.inlineOnly,
             state.itemData,
             state.location,
@@ -208,11 +230,12 @@ export function createContentHtml(
         true,
         allEntries,
         botData,
+        entry,
         [],
         [],
         new Set<string>(),
+        ParserState.createInitialContent(entry),
         false,
-        createInitialContent(entry),
         "All",
         itemData,
         location,
@@ -291,14 +314,6 @@ export function createContentHtml(
         errors: state.errors,
         images: state.images,
     };
-}
-
-// Process initial content by replacing any instances of [XYZ] in links with {{xyz}}
-// Otherwise we have issues with the regex for any links that include square brackets in them
-function createInitialContent(entry: WikiEntry) {
-    return entry.content.replace(/([^[])\[([\w/]*)\]/g, (_, p1, p2) => {
-        return `${p1}{{${p2}}}`;
-    });
 }
 
 // Creates the preview content for a search result
@@ -871,11 +886,12 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
             false,
             state.allEntries,
             state.botData,
+            groupEntry,
             state.errors,
             state.headings,
             state.images,
+            ParserState.createInitialContent(groupEntry),
             false,
-            groupEntry.content,
             "All",
             state.itemData,
             state.location,
@@ -883,12 +899,6 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
         );
 
         processSection(tempState, undefined);
-
-        // Only display the first paragraph of a page (up to the first separator)
-        const firstSplitIdx = tempState.output.findIndex((outputGroup) => outputGroup.groupType === "Separator");
-        if (firstSplitIdx !== -1) {
-            tempState.output.splice(firstSplitIdx);
-        }
 
         const id = getLinkSafeString(groupEntry.name);
         nodes.set(
@@ -899,7 +909,7 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
                     {imageNode}
                     <LinkIcon href={`#${id}`} />
                 </h2>
-                {outputGroupsToHtml(tempState.output, false)}
+                {outputGroupsToHtml(tempState.getFirstParagraph(), false)}
             </>,
         );
     }
@@ -1066,11 +1076,12 @@ function processPartialTag(state: ParserState, result: RegExpExecArray) {
         false,
         state.allEntries,
         state.botData,
+        entry,
         [],
         [],
         new Set<string>(),
+        ParserState.createInitialContent(entry),
         state.inSpoiler,
-        createInitialContent(entry),
         "All",
         state.itemData,
         state.location,
@@ -2160,6 +2171,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["SpoilerExpandable", processSpoilerExpandableTag],
     ["SpoilerHidden", processSpoilerHiddenTag],
     ["Sub", processSubTag],
+    ["SubpageSummary", processSubpageSummary],
     ["Sup", processSupTag],
     ["Range", processRangeTag],
     ["Redacted", processSpoilerTag],
@@ -2420,6 +2432,78 @@ function processSubTag(state: ParserState, result: RegExpExecArray) {
     const subscriptContent = <sub>{outputGroupsToHtml(tempState.output, state.inSpoiler, true)}</sub>;
 
     state.output.push({ groupType: "Grouped", node: subscriptContent });
+}
+
+// Processes a SubpageSummary tag like [[SubpageSummary]]
+function processSubpageSummary(state: ParserState, result: RegExpExecArray) {
+    const nodes: Map<string, ReactNode> = new Map();
+    const processedEntries = new Set<WikiEntry>();
+
+    if (state.entry.childEntries.length === 0) {
+        recordError(state, "There are no subpages to summarize");
+        state.index = result.index + result[0].length;
+
+        return;
+    }
+
+    for (const childEntry of state.entry.childEntries) {
+        if (
+            processedEntries.has(childEntry) ||
+            childEntry.fakeGroup ||
+            !canShowSpoiler(childEntry.spoiler, state.spoiler)
+        ) {
+            continue;
+        }
+
+        processedEntries.add(childEntry);
+
+        const tempState = new ParserState(
+            false,
+            state.allEntries,
+            state.botData,
+            childEntry,
+            state.errors,
+            state.headings,
+            state.images,
+            ParserState.createInitialContent(childEntry),
+            false,
+            "All",
+            state.itemData,
+            state.location,
+            state.spoiler,
+        );
+
+        processSection(tempState, undefined);
+
+        const id = getLinkSafeString(childEntry.name);
+        nodes.set(
+            childEntry.name,
+            <>
+                <h3 id={id} className="wiki-heading wiki-bot-group-heading">
+                    {getLinkNode(state, childEntry, childEntry.name)}
+                    <LinkIcon href={`#${id}`} />
+                </h3>
+                {outputGroupsToHtml(tempState.getFirstParagraph(), false)}
+            </>,
+        );
+    }
+
+    // Create "Types of X" heading
+    state.output.push({
+        groupType: "Individual",
+        node: (
+            <>
+                <h2 className="wiki-emphasized-heading">{`Types of ${state.entry.name}`}</h2>
+            </>
+        ),
+    });
+
+    // Add each type of node
+    for (const entryName of Array.from(nodes.keys()).sort()) {
+        state.output.push({ groupType: "Individual", node: nodes.get(entryName)! });
+    }
+
+    state.index = result.index + result[0].length;
 }
 
 // Process a Sup tag like [[Sup]]Superscript Text[[/Sup]]
