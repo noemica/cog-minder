@@ -41,11 +41,13 @@ function InfoboxGroupContent({
     childEntries: WikiEntry[];
     parentEntry: WikiEntry | undefined;
 }) {
-    return childEntries.map((child) => (
-        <li key={child.name}>
-            <LinkOrBoldedContent activeEntry={activeEntry} entry={child} parentEntry={parentEntry} />
-        </li>
-    ));
+    return childEntries.map((child) =>
+        child.fakeGroup ? undefined : (
+            <li key={child.name}>
+                <LinkOrBoldedContent activeEntry={activeEntry} entry={child} parentEntry={parentEntry} />
+            </li>
+        ),
+    );
 }
 
 function InfoboxSupergroupContent({
