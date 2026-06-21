@@ -1035,6 +1035,7 @@ Behemoth Facing Up.png|A Behemoth facing up
 "Blade Saw","Part","","","","","","","","",""
 "Blade Trap","Part","","","","","","","","",""
 "Blast Cannon","Part","","","","","","","","",""
+"Blast Doors","Redirect","","","","","","","","","Reinforced Walls"
 "Blast Turret","Bot","","","","","","","","",""
 "Blink Core","Part","","","","","","","","",""
 "Bolt Gun","Part","","","","","","","","",""
@@ -3022,7 +3023,7 @@ When datajacked, one of the following parse texts is shown:
 "EX-DEC","Bot","","","","","","","","",""
 "EX-HEX","Bot","","","","","","","","",""
 "EXE-6","Bot","","","","","","","","",""
-"Electromagnetic Cannons","Part Group","Type of [[Electromagnetic Weapons|electromagnetic]] [[Weapons|weapon]] that deals high amounts of electromagnetic damage at the cost of lots of [[Energy|energy]] and [[Heat|heat]] generation. They are better damage dealers but much more upkeep-heavy than [[Electromagnetic Guns|EM guns]]. EM damage is highly effective against non-resistant bots and is capable of killing them in only a few volleys via [[Corruption|corruption]]. A single high rating EM cannon combined with a [[Quantum Capacitor]] is a very strong combo.
+"Electromagnetic Cannons","Part Group","Type of [[Electromagnetic Weapons|electromagnetic]] [[Weapons|weapon]] that deals electromagnetic damage at the cost of lots of [[Energy|energy]] and [[Heat|heat]] generation. They are better damage dealers but much more upkeep-heavy than [[Electromagnetic Guns|EM guns]]. EM damage is highly effective against non-resistant bots and is capable of killing them in only a few volleys via [[Corruption|corruption]]. A single high rating EM cannon combined with a [[Quantum Capacitor]] is a very strong combo.
 
 [[Heading]]List of Electromagnetic Cannons[[/Heading]]
 [[PartGroupTable]]
@@ -3103,7 +3104,7 @@ Explosion/Spectrum|
 Explosion/Disruption|
 Explosion/Salvage
 [[/PartGroupTable]]","","","Electromagnetic Launchers","","","","",""
-"Electromagnetic Weapons","Part Supergroup","A group of [[Energy Weapons|energy]] [[Weapons|weapons]] that deal electromagnetic (aka EM) damage and are capable of [[Corruption|corrupting]] bots to death. There are electromagnetic [[Electromagnetic Cannons|cannons]], [[Electromagnetic Guns|guns]], and [[Electromagnetic Launchers|launchers]]. These weapons have some of the the highest [[Energy|energy]] consumptions of all weapons, and they generate a decent amount of [[Heat|heat]] as well. They also have relatively high coverage for their low integrity compared to other weapon types. However, their ability to corrupt non-immune bots to death is incredibly powerful, and this can result in reliably killing bots much faster than alternatives.
+"Electromagnetic Weapons","Part Supergroup","A group of [[Energy Weapons|energy]] [[Weapons|weapons]] that deal electromagnetic (aka EM) damage and are capable of [[Corruption|corrupting]] bots to death. There are electromagnetic [[Electromagnetic Cannons|cannons]], [[Electromagnetic Guns|guns]], and [[Electromagnetic Launchers|launchers]]. These weapons have some of the the highest [[Energy|energy]] consumptions of all weapons, and they generate a decent amount of [[Heat|heat]] when fired. They also have relatively high coverage for their low integrity compared to other weapon types. However, their ability to corrupt non-immune bots to death is incredibly powerful, and this can result in reliably killing bots much faster than alternatives.
 Electromagnetic weapons are very useful against some targets and ineffective against others. A bot without any kind of electromagnetic resistance will die to corruption quickly at higher ratings. Some common bots like [[Grunt|Grunts]] and [[Hunter|Hunters]] are even 25% weak to EM, making the corruption kill even faster. However, there are plenty of common bots that have either straight EM damage resistance like [[Programmer|Programmers]] (75% EM resistance) or corruption-resisting utilities in [[Dynamic Insulation Systems]] like [[Behemoth|Behemoths]] and [[Heavy|Heavies]]. It is better to prepare [[Kinetic Weapons|kinetic]] or [[Thermal Weapons|thermal weapons]] to help deal with these bots instead.
 
 [[Heading]]Special Effects[[/Heading]]
@@ -5587,7 +5588,9 @@ Effect/Effect
 "Flak Cannon","Part","","","","","","","","",""
 "Flak Gun","Part","","","","","","","","",""
 "Flamer","Part","","","","","","","","",""
-"Flamers","Part Group","[[Heading]]List of Flamers[[/Heading]]
+"Flamers","Part Group","An unusual type of [[Derelict|derelict]]-exclusive [[Special Weapons|special]] [[Thermal Weapons|thermal]] [[Weapons|weapon]]. Flamers have massive + 80 heat transfer at the cost of short ranges, high delay, and high [[Heat|heat]] generation. Flamers are most notably used by [[Fireman|Firemen]] and [[Mutant|Mutants]].
+
+[[Heading]]List of Flamers[[/Heading]]
 [[PartGroupTable]]
 Flamers|
 Overview/Size|
@@ -6755,7 +6758,7 @@ Upkeep/Energy|
 Upkeep/Heat|
 Effect/Effect
 [[/PartGroupTable]]","","","","Kinecellerator,Imp. Kinecellerator,Adv. Kinecellerator,Exp. Kinecellerator","","","",""
-"Kinetic Cannons","Part Group","[[Kinetic Weapons|Kinetic]] or ballistic cannons are a type of [[Weapons|weapon]] that cost [[Matter]] to fire and deal kinetic damage. Their damage output is high but so are their upkeep costs. Kinetic cannons require little [[Energy|energy]] to fire, but have high matter costs, and have somewhat high [[Heat|heat]] generation. This, combined with their large - salvage stat, can make it hard to sustain kinetic cannon-heavy builds. However, kinetic cannons do at least generate some matter when hitting a bot that makes it a bit easier to manage. The amount of matter blasted off the target per shot is between 0 and the - salvage stat, averaging absolute( - salvage / 2 ) matter generated.
+"Kinetic Cannons","Part Group","[[Kinetic Weapons|Kinetic]] or ballistic cannons are a type of [[Weapons|weapon]] that cost [[Matter]] to fire and deal kinetic damage. Their damage output is high but so are their upkeep costs. Kinetic cannons require little [[Energy|energy]] to fire, but have high matter costs, and have somewhat high [[Heat|heat]] generation. This, combined with their large - salvage stat, can make it hard to sustain kinetic cannon-heavy builds. However, kinetic cannons do at least generate some matter when hitting a bot that makes it a bit easier to manage. The amount of matter blasted off the target per shot is between 0 and the - salvage stat, averaging absolute( - salvage / 2 ) matter generated. Kinetic cannons are most commonly found being wielded by [[Heavy|Heavies]].
 Builds that rely heavily on kinetic cannons should have matter storage through [[Matter Compressors]] available in inventory. Running out of matter to fire can be disastrous in combat. [[Tractor Beams]] can also be used to restock matter both inside and out of combat without having to move to each matter pile. [[Matter Filters]] can keep the matter cost down lower in the first place.
 Kinetic cannons suffer from [[Recoil|recoil]], providing a minor accuracy penalty to all other weapons in a single volley. This makes [[Treads|treads]] a natural pairing with cannons since they can significantly reduce or even negate recoil entirely. [[Recoil Stabilizers]] can have a similar effect on other [[Propulsion|propulsion]] types.
 Most kinetic cannons have the blast [[Critical Hits|critical]] type which deals damage to another random part on the target and blasts a part off of the target. This effect is good for getting the occasional part knocked off of targets that keeps the part intact instead of destroying it outright, although this doesn't happen frequently due to the low blast chance of most cannons. [[Hypervelocity Cannons]] instead have a very high destroy crit chance with with the tradeoff of dealing much less damage. This can let them kill weaker bots in a single hit while failing to do any significant damage against crit-immune bots like the [[Heavy]] or [[Core Shieldings|Core Shielding]]-wearing bots like [[Duelist|Duelists]].
@@ -6812,7 +6815,7 @@ Effect/Description
 [[/PartGroupTable]]","","","Kinetic Guns","","","","",""
 "Kinetic Shotgun","Part","","","","","","","","",""
 "Kinetic Spear","Part","","","","","","","","",""
-"Kinetic Weapons","Part Supergroup","Kinetic or ballistic [[Weapons|weapons]], either [[Kinetic Guns|guns]] or [[Kinetic Cannons|cannons]], consume [[Matter]] to fire and suffer from [[Weapons#Recoil|recoil]]. Their [[Energy|energy]] costs are generally very low, and [[Heat|heat]] generation is low for guns but moderately high for cannons. Kinetic is a great all-around damage type that is resisted by very few common bots except for [[Hunter|Hunters]].
+"Kinetic Weapons","Part Supergroup","Kinetic or ballistic [[Weapons|weapons]], either [[Kinetic Guns|guns]] or [[Kinetic Cannons|cannons]], consume [[Matter]] to fire and suffer from [[Weapons#Recoil|recoil]]. Their [[Energy|energy]] costs are generally very low, and [[Heat|heat]] generation is low for guns but moderately high for cannons. Kinetic is a great all-around damage type that is resisted by very few common bots except for [[Hunter|Hunters]]. Kinetic guns are most commonly found being wielded by Hunters, [[Sentry|Sentries]], and [[Swarmer|Swarmers]].
 All types of kinetic weapons can have their damage boosted with [[Kinecellerators]]. [[Matter Filters]] can help reduce the matter cost of volleys, especially cannons. [[Tractor Beams]] and [[Matter Compressors]] can be used to restock matter quickly both in and after combat.
 
 [[SubpageSummary]]
@@ -7950,7 +7953,10 @@ Effect/Description
 [[/PartGroupTable]]","","","Piercing Weapons","","","","",""
 "Plasma Cannon","Part","","","","","","","","",""
 "Plasma Cutter","Part","","","","","","","","",""
-"Plasma Cutters","Part Group","[[Heading]]List of Plasma Cutters[[/Heading]]
+"Plasma Cutters","Part Group","Type of [[Special Weapons|Special]] [[Thermal Weapons|thermal]] [[Weapons|weapon]] that is more of a tool than a real weapon. Plasma Cutters can be used to dismantle machines or [[Reinforced Walls|reinforced walls]] by moving into them. This effect can take quite a few turns for the basic [[Plasma Cutter]], with improved versions performing the effect more quickly. It takes 1 dismantle attempt per 5 armor of the thing being dismantled. For example, a reinforced wall with 40 armor will take 8 attempts to dismantle, which takes 24 turns with the basic Plasma Cutter.
+Dismantling machines with Plasma Cutters increases [[Alert|alert]] as much as it would shooting it or smashing it with a [[Melee Weapons|melee weapon]]. However, one advantage Plasma Cutters have is their ability to destroy explosive machines without triggering explosions. This effect can be quite niche, however, one great use of it is [[Spoiler]]destroying Network Hubs in [[Hub_04(d)]].[[/Spoiler]]
+
+[[Heading]]List of Plasma Cutters[[/Heading]]
 [[PartGroupTable]]
 Plasma Cutters|
 Overview/Size|
@@ -8864,7 +8870,7 @@ Overview/Heat|
 Power/Rate|
 Power/Storage
 [[/PartGroupTable]]","","","Reinforced Power","","","","",""
-"Reinforced Walls","Other","Many areas are sealed off by various types of Reinforced Walls. These walls all have much higher than typical armor values and resistances to most common damage types. The common theme between them all is that they do not have any Thermal resistance. As such, Cld. thermal [[Energy Cannons]] are the ideal way to cut through many of these barriers. Unlike basic walls, reinforced walls will not collapse due to penetrating weapons.
+"Reinforced Walls","Other","Many areas are sealed off by various types of reinforced walls like blast doors and sealed heavy doors. These walls all have much higher than typical armor values and resistances to most common damage types. The common theme between them all is that they do not have any Thermal resistance. As such, [[Overloadable Weapons|overloadable weapons]], particular [[Thermal Weapons|thermal weapons]], are a great way to cut through many of these barriers. [[Plasma Cutters]] are another good option that works on most doors, though not on the surrounding tiles. Unlike basic walls, reinforced walls will not collapse due to penetrating weapons.
 There are two primary types of reinforced walls. Though they have different names, they behave functionally similarly. Orange doors block the main access to the blocked off area. These doors have a higher than normal armor value, but they tend to be lower than reinforced barriers. Reinforced barriers typically surround the remainder of the area to prevent digging in from the back side. In most maps, these have two times the normal armor level of walls. For example, an average Storage wall has an armor value of 24, so the reinforced barriers have an armor value of 48 on this map.
 
 [[Heading]][[Storage]][[/Heading]]
@@ -9603,6 +9609,7 @@ PL-3XN's Ring of Power: Dropped by Explorer in the Fellowship of the Rings
 [[/List]]","Spoiler","","","","","","",""
 "Scrapyard","Location","The starting point of every game. At the start of every game there is a semi-random fixed spawn of: [[Sml. Storage Unit]], 2 [[Lgt. Treads]], 2 [[Aluminum Leg]], a mix of 2 [[Wheel]] or [[Com. Wheel]], a mix of 2 [[Ion Engine]] or [[Lgt. Ion Engine]], and a mix of 3 [[Lgt. Assault Rifle]], [[Assault Rifle]], [[EM Pulse Gun]], [[Sml. Laser]], [[Med. Laser]]. If the advanced game option quickStart is set, all of the parts will be either collected or equipped.[[Heading]]Events[[/Heading]]A team of [[T-07 Excavator|Tunnelers]] and [[U-05 Engineer|Engineers]] will dig out and finish rooms over time. The rooms themselves do not contain anything of importance.[[Image]]Scrapyard Assembled Event.png|Assembled after ambushing a Tunneler[[/Image]]However, after several thousand turns of waiting, an Tunneler may dig open a small dug out area containing a large number of [[Assembled (4)|Assembled]]. This will prompt a response of a [[C-45 Heavy ARC|Heavy ARC]] containing 2 [[D-53 Grenadier|Demolishers]] which can be a good early source of [[Cmb. Airjet]] if they are destroyed by the assembled. Waiting around for this event can be fairly risky since there is no way to prepare for the fight and it is very easy to get destroyed by either the demolishers or the assembled.","","","","","","","",""
 "Scythe","Part","","","","","","","","",""
+"Sealed Heavy Doors","Redirect","","","","","","","","","Reinforced Walls"
 "Search Patrol","Other","Search patrols are a unique type of [[0b10]] aligned [[Patrol Squad|patrol squad]]. They can be dispatched if Cogmind generates a lot of [[Alert]] from non-combat sources. This is primarily caused by being spotted by [[Watcher|Watchers]] or [[N-01 Spotter|Spotters]], guard bots like [[Sentry|Sentries]], or by being spotted by any combat hostile and then running away and losing tracking. If the Alert level is above the typical [[Assault Squad|Assault]] range of level 2/400 influence and Cogmind has gained the majority of the influence from these non-combat sources, there is a chance that one or more search patrols may be dispatched. If a search patrol is announced, influence will drop by 100. This will be accompanied by the alert [[GameText]]ALERT: Heightened foreign activity detected, dispatching search patrol.[[/GameText]] The alert will also indicate if multiple search patrols are to be sent out simultaneously. One or more ARCs will be dispatched after a few more turns. These ARCs behave similarly as regular patrol ARCs and have the same standard patrol contents within them. However, search squads will choose random points on the map to patrol to rather than having a fixed patrol route like all other patrols.","","","","","","","",""
 "Section 7","Location","Section 7 is a [[0b10]]-controlled [[Research]] [[Branch]] off of either [[Testing]] or [[Quarantine]] on -3 or -2. Compared to the previous branches, Section 7 is a lot tougher and more like a regular Research floor. Patrols are denser, [[Sentry|Sentries]] and [[Heavy|Heavies]] are present on the map, and [[Researcher|Researchers]] are present in higher numbers and have a worse scan effects. However, the [[Alien Artifacts|Alien Artifact]] unique parts can be quite gamechanging and can include effects like strong weaponry, part integrity regeneration effects, and permanent buffs to Cogmind for the remainder of the game. This map is also home to powerful [[S7 Guard|S7 Guards]] that guard some of the more powerful and unique Artifacts. 
 The left side of the map is different each run, but the right half, the ""hangar"", is always static. The hangar primarily contains large pieces of machinery used for the construction of a ship based after the Leopard, the [[Sigix]] ship that attacked 0b10. It also contains various Alien Artifacts, an LRC cache containing related Artifacts and is where LRC versions are tested, and several dormant prototype bot guards. The top section of this area is locked by Sealed Heavy Doors with 50 armor and strong resistances to all major damage types except for thermal damage.
@@ -9918,7 +9925,7 @@ Cogmind becomes indistinguishable from a Sigix Warrior to some NPCs. [[Warlord]]
 "Sigix Shearcannon","Part","","","","","","","","",""
 "Sigix Sheargun","Part","","","","","","","","",""
 "Sigix Terminator","Part","","","","","","","","",""
-"Sigix Terminators","Part Group","Special type of [[Alien Artifact|alien]] [[Launchers|launcher]] that can only be fired a single time but deals huge amounts of damage in a massive radius.
+"Sigix Terminators","Part Group","Special type of [[Thermal Weapons|thermal]] [[Alien Artifacts|alien]] [[Launchers|launcher]] that is disposable (i.e. can only be fired a single time) but deals huge amounts of damage in a massive radius.
 [[Heading]]List of Sigix Terminators[[/Heading]]
 [[PartGroupTable]]
 Sigix Terminators|
@@ -11360,7 +11367,9 @@ There are 2 unique prefabs that do not contain any of the above items and have t
 There is always 1, and possibly 3 exits in Testing:
 [[List]]Main access exit: There will always be 1 exit that leads to the next main Research or [[Access]] floor. It will always be at a dead end at a tile corridor near the top-middle or bottom-middle of the map.|[[Redacted]]Section 7 and Protoforge exits: These exit only appears some of the time. [[Quarantine]] must have been first on the world map, so these exits can only show up when Testing is on -2. A large 4 tile doorway will show up on the middle of the map, on the right side of where the map typically ends. It will open up into a 6 tile hallway and a [[Fortress]] will be guarding the path to the exits. These exits will be closed if Cogmind is FarCom aligned.[[/Redacted]][[/List]]","Spoiler","","","","","","",""
 "Thermal Barrier","Part","","","","","","","","",""
-"Thermal Cannons","Part Group","[[Heading]]List of Thermal Cannons[[/Heading]]
+"Thermal Cannons","Part Group","Type of [[Thermal Weapons|thermal]] [[Weapons|weapon]] that deals thermal damage at the cost of high [[Energy|energy]] usage and a large amount of [[Heat|heat]] generation. Thermal cannons transfer heat to enemies, although typically less than [[Thermal Guns|thermal guns]]. Their meltdown [[Critical Hits|critical hit]] can instantly overheat any non-meltdown immune target.
+
+[[Heading]]List of Thermal Cannons[[/Heading]]
 [[PartGroupTable]]
 Thermal Cannons|
 Overview/Size|
@@ -11411,7 +11420,9 @@ Effect/Effect
 [[/PartGroupTable]]
 
 This article was last edited during Beta 15.","","","","Thermal Generator,Imp. Thermal Generator,Adv. Thermal Generator,Exp. Thermal Generator","","","",""
-"Thermal Guns","Part Group","[[Heading]]List of Thermal Guns[[/Heading]]
+"Thermal Guns","Part Group","Type of [[Thermal Weapons|thermal]] [[Weapons|weapon]] that deals thermal damage at the cost of moderate [[Energy|energy]] usage and a large amount of [[Heat|heat]] generation. Thermal guns are great at transferring heat to enemies with their high heat transfer stat and burn [[Critical Hits|critical hit]] that triples heat transfer. They generally are better at killing directly via heat transfer than [[Thermal Cannons|thermal cannons]]. Thermal guns are most commonly encountered being wielded by [[Grunt|Grunts]].
+
+[[Heading]]List of Thermal Guns[[/Heading]]
 [[PartGroupTable]]
 Thermal Guns|
 Overview/Size|
@@ -11439,7 +11450,24 @@ Effect/Description
 "Thermal Lance","Part","","","","","","","","",""
 "Thermal Shield","Part","","","","","","","","",""
 "Thermal Shotgun","Part","","","","","","","","",""
-"Thermal Weapons","Part Supergroup","","","","","AD-0RF's Magmablaster,Asb. P-torch,LU-1G1's Laser Shovel,Mining Laser,Thermoblaster,Welding Torch","Flamers,Plasma Cutters,Sigix Terminators,Thermal Cannons,Thermal Guns","","",""
+"Thermal Weapons","Part Supergroup","A group of [[Energy Weapons|energy]] [[Weapons|weapons]], either [[Thermal Guns|guns]] or [[Thermal Cannons|cannons]], that deal thermal (aka TH) damage and are capable of transferring heat to targets. They are effective at overheating and melting bots, sometimes even killing them before they take any core damage. While death via overheat is less effective against meltdown immune bots or those with [[Coolant Injectors]], it is still a very effective alternate kill condition against many common bots. These weapons have a moderately high amount of [[Energy|energy]] usage and generate a large amount of [[Heat|heat]] when fired. Multiple [[Cooling Utilities|cooling utilities]] are practically a requirement when using lots of thermal weapons.
+
+[[Heading]]Heat Transfer[[/Heading]]
+The amount of heat transferred to a bot hit by a thermal weapon is based on the heat transfer stat rather than the damage taken. Some weapons deal low damage but have a very high heat transfer stat like the [[Thermic Laser]]. Heat transfer is not reduced thermal damage resistance, but it is reduced by [[Shield Generators]], [[Force Fields]], and [[Hardlight Generators]]. The burn [[Critical Hits|critical hit]] is the crit type of most thermal guns and will triple the heat transferred to the target.
+The amount of heat transferred can be one of the following:
+[[List]]
+Minimal: +5|
+Low: +25|
+Medium: +37|
+High: +50|
+Massive: +80|
+Deadly: +120
+[[/List]]
+If an [[Overloadable Weapons|overloadable]] thermal gun is [[Overload#Weapons|overloaded]], its heat transfer will be increased by 1 per the list above. For example, a medium heat transfer weapon (+ 37) will deal high heat transfer (+ 50) instead.
+
+Heat transfer is best when stacked in large numbers, especially with lots of guns with burn crits. Cannons do have high heat transfer, but they tend to kill either via damage or with their meltdown critical which instantly melts the target. [[Target Analyzers]] work well with burn criticals to increase the chance of a a heat transfer meltdown. Burn criticals in particular are the best way to get past a Coolant Injector's high heat dissipation. The burst heat can be enough to shoot right up to the kill threshold before the injector can fire. Otherwise, it is often difficult to sustain enough consistent heat transfer to beat it in the long run.
+
+[[SubpageSummary]]","","","","AD-0RF's Magmablaster,Asb. P-torch,LU-1G1's Laser Shovel,Mining Laser,Thermoblaster,Welding Torch","Flamers,Plasma Cutters,Sigix Terminators,Thermal Cannons,Thermal Guns","","",""
 "Thermic Laser","Part","","","","","","","","",""
 "Thermic Turret","Bot","","","","","","","","",""
 "Thermoblaster","Part","","","","","","","","",""
