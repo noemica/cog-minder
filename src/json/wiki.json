@@ -11520,7 +11520,8 @@
  ],
  "Redirects": [
   {
-   "Name": "Blast Doors"
+   "Name": "Blast Doors",
+   "Target": "Reinforced Walls"
   },
   {
    "Name": "Digging",
@@ -11555,7 +11556,8 @@
    "Target": "Relay Interface Framework"
   },
   {
-   "Name": "Sealed Heavy Doors"
+   "Name": "Sealed Heavy Doors",
+   "Target": "Reinforced Walls"
   },
   {
    "Name": "Shielding Mode",
