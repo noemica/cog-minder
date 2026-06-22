@@ -8816,11 +8816,6 @@
    "Spoiler": "Spoiler"
   },
   {
-   "Name": "Vortex Weapons",
-   "Part Category": "Vortex Weapons",
-   "Content": "[[Heading]]List of Vortex Weapons[[/Heading]]\n[[PartGroupTable]]\nVortex Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage\n[[/PartGroupTable]]"
-  },
-  {
    "Name": "Weapon Cyclers",
    "Parts": [
     "Weapon Cycler",
@@ -9439,6 +9434,11 @@
   },
   {
    "Name": "Vortex Weapons",
+   "Part Category": "Vortex Weapons",
+   "Groups": [
+    "Vortex Cannons",
+    "Vortex Guns"
+   ],
    "Content": "Type of powerful [[Energy Weapons|energy weapons]] that deals the rare unresisted entropic damage type, and are primarily found on the [[Warlord (Location)|Warlord map]]. Vortex weapons are are unstable, meaning they have a limited number of shots since each attack lowers their integrity by a fixed amount (weapon-dependent). These weapons have very high damage output and relatively low upkeep costs compared to similarly-rated weapons, though they do have a highly negative salvage stat. \n\n[[Heading]]List of Vortex Weapons[[/Heading]]\n[[PartGroupTable]]\nVortex Weapons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage\n[[/PartGroupTable]]"
   },
   {
