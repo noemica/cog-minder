@@ -585,7 +585,9 @@ Robots will by default follow [[Cogmind]] (you) and attack any hostile if combat
 [[Recycler]] and [[Hauler]] class robots can pick up and store items for cogmind. Note that there is no warning message for crushing parts when dropping items.
 [[T-07 Excavator]] bots can dig for cogmind using the Tunnel command. Unlike the related [[RIF]] hack, this does not guarantee the tile will be stable. ","","","","","","","",""
 "Alpha 7","Bot","","","","","","","","",""
-"Alpha Cannons","Part Group","[[Heading]]List of Alpha Cannons[[/Heading]]
+"Alpha Cannons","Part Group","Type of powerful [[Energy Cannons|energy cannon]] that deals the rare unresisted phasic damage type and is unique to the [[Zionite (Group)|Zionite]] [[Z-Experimental|Z-Experimentals]]. Alpha Cannons have very high [[Energy|energy]] costs, high [[Heat|heat]] generation, and extremely low integrity. They should be paired with some form of [[Weapon Shieldings|Weapon Shielding]], preferably the [[Zio. Weapon Casing]] that said Experimentals wear or else they are likely to be destroyed in only one or two hits. Alpha Cannons have a unique phase [[Critical Hits|critical hit]] type which re-deals damage dealt to another part back to the core.
+
+[[Heading]]List of Alpha Cannons[[/Heading]]
 [[PartGroupTable]]
 Alpha Cannons|
 Overview/Size|
@@ -870,11 +872,11 @@ The Data Miner can redirect Assaults if his help is obtained by visiting his [[D
 "Authchip [R/NC]","Part","","","","","","","","",""
 "Authchip [Storage]","Part","","","","","","","","",""
 "Authchip [Weapon]","Part","","","","","","","","",""
-"Authchips","Part Group","Authchips are single-use items that allow printing the relevant type of item at a [[Fabricator]]. They can be acquired at a [[DSF]], [[Garrison|Garrisons]], corrupted in [[Storage]] or by using [[Spoiler]][[GameText]]Force(Recompile)[[/GameText]][[/Spoiler]] on a Fabricator.","","","","Authchip [Armor],Authchip [Device],Authchip [Power],Authchip [Processor],Authchip [Propulsion],Authchip [R/NC],Authchip [R/Combat],Authchip [Storage],Authchip [Weapon]","","","",""
+"Authchips","Part Group","Authchips are single-use [[Processors|processors]] that allow printing the relevant type of item at a [[Fabricator]]. They can be acquired in [[DSF|DSFs]], [[Garrison|Garrisons]], corrupted in [[Storage]], carried by [[Hauler|Haulers]], or by using [[Spoiler]][[GameText]]Force(Recompile)[[/GameText]][[/Spoiler]] on a Fabricator.","","","","Authchip [Armor],Authchip [Device],Authchip [Power],Authchip [Processor],Authchip [Propulsion],Authchip [R/NC],Authchip [R/Combat],Authchip [Storage],Authchip [Weapon]","","","",""
 "Autobeam","Part","","","","","","","","",""
 "Autobeam Turret","Bot","","","","","","","","",""
 "Autogun","Part","","","","","","","","",""
-"Autonomous Weapons","Part Group","Autonomous Weapons are a special class of weapons that fire automatically instead of requiring the user to fire them directly in a normal volley. They will choose targets within line of sight and fire without affecting the user's turns.
+"Autonomous Weapons","Part Group","A special class of [[Weapons|weapons]] that fire automatically instead of requiring the user to fire them directly in a normal volley. They will choose targets within line of sight and fire without affecting the user's turns.
 
 [[Heading]]List of Autonomous Weapons[[/Heading]]
 [[PartGroupTable]]
@@ -939,7 +941,7 @@ Defensively, BL-1NK has a few strong points. An [[Adv. Hardlight Generator]] cou
 "Backup Laser I","Part","","","","","","","","",""
 "Backup Laser III","Part","","","","","","","","",""
 "Backup Laser VII","Part","","","","","","","","",""
-"Backup Lasers","Part Group","Backup Lasers are [[Thermal Guns]] refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They are fairly ineffective compared to other similar rating weapons and should only be used as a last resort.
+"Backup Lasers","Part Group","Backup Lasers are [[Thermal Guns|thermal guns]] refitted by allied [[Mechanic|Mechanics]] or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They are fairly ineffective compared to other similar rating weapons and should only be used as a last resort.
 
 [[Heading]]List of Backup Lasers[[/Heading]]
 [[PartGroupTable]]
@@ -956,7 +958,7 @@ Projectile/Type|
 Projectile/Heat Transfer
 [[/PartGroupTable]]","","","","Backup Laser I,Backup Laser III,Backup Laser VII","","","",""
 "Backup Parts","Part Supergroup","Backup parts are refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. Most backup parts are poor and only useful in a true emergency, although [[Backup Power VII]] is a standout as a highly efficient [[Power]] source for [[Flight Units|flight]] builds thanks to its low mass cost.","","","","","Backup Lasers,Backup Plating,Backup Power,Backup Propulsion","","",""
-"Backup Plating","Part Group","Backup Plating are [[Armor]] refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They have relatively low integrity and coverage compared to other similar rated armor and should only be used as a last resort.
+"Backup Plating","Part Group","Backup Plating are [[Armor|armor]] refitted by allied [[Mechanic|Mechanics]] or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They have relatively low integrity and coverage compared to other similar rated armor and should only be used as a last resort.
 
 [[Heading]]List of Backup Plating[[/Heading]]
 [[PartGroupTable]]
@@ -971,7 +973,7 @@ Effect/Effect
 "Backup Plating I","Part","","","","","","","","",""
 "Backup Plating III","Part","","","","","","","","",""
 "Backup Plating VII","Part","","","","","","","","",""
-"Backup Power","Part Group","Backup [[Power]] are refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They have relatively low [[Energy]] generation, storage, and integrity compared to other similar rated power. However, [[Backup Power III]] and [[Backup Power VII|VII]] have very high energy supply:mass ratios which makes them effective on low mass [[Flight Units|flight]] builds.
+"Backup Power","Part Group","Backup [[Power|power sources]] are refitted by allied [[Mechanic|Mechanics]] or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They have relatively low [[Energy]] generation, storage, and integrity compared to other similar rated power. However, [[Backup Power III]] and [[Backup Power VII|VII]] have very high energy supply:mass ratios which makes them effective on low mass [[Flight Units|flight]] builds.
 
 [[Heading]]List of Backup Power[[/Heading]][[PartGroupTable]]
 Backup Power|
@@ -986,7 +988,7 @@ Power/Storage
 "Backup Power I","Part","","","","","","","","",""
 "Backup Power III","Part","","","","","","","","",""
 "Backup Power VII","Part","","","","","","","","",""
-"Backup Propulsion","Part Group","Backup Propulsion are [[Hover Units]] refitted by allied [[Mechanic|Mechanics]], or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They have poor integrity and support compared to other similar rated propulsion and should only be used as a last resort.
+"Backup Propulsion","Part Group","Backup Propulsion are [[Hover Units|hover units]] refitted by allied [[Mechanic|Mechanics]] or by [[Repair Station|Repair Stations]] with the [[GameText]]Refit[[/GameText]] hack. They have poor integrity and support compared to other similar rated propulsion and should only be used as a last resort.
 
 [[Heading]]List of Backup Propulsion[[/Heading]]
 [[PartGroupTable]]
@@ -2390,7 +2392,7 @@ Propulsion/Penalty|
 Propulsion/Special
 [[/PartGroupTable]]","Spoiler","","","Zio. Composite Leg I,Zio. Composite Leg II,Zio. Supercomposite Leg","","","",""
 "Concussive RPG","Part","","","","","","","","",""
-"Concussive RPGs","Part Group","A type of disposable [[Explosive Launchers|Explosive Launcher]] that are wielded by [[Cutter|Cutters]]. They are quite unique among other launchers due to their one-time use, - delay, knockback capability, and small amount of impact damage dealt on initial hit.
+"Concussive RPGs","Part Group","A type of disposable (i.e. single use) [[Explosive Launchers|explosive launcher]] that are wielded by [[Cutter|Cutters]]. They are quite unique among other launchers due to their one-time use, - delay, knockback capability, and small amount of impact damage dealt on initial hit.
 
 [[Heading]]List of Concussive RPGs[[/Heading]]
 [[PartGroupTable]]
@@ -3023,7 +3025,7 @@ When datajacked, one of the following parse texts is shown:
 "EX-DEC","Bot","","","","","","","","",""
 "EX-HEX","Bot","","","","","","","","",""
 "EXE-6","Bot","","","","","","","","",""
-"Electromagnetic Cannons","Part Group","Type of [[Electromagnetic Weapons|electromagnetic]] [[Weapons|weapon]] that deals electromagnetic damage at the cost of lots of [[Energy|energy]] and [[Heat|heat]] generation. They are better damage dealers but much more upkeep-heavy than [[Electromagnetic Guns|EM guns]]. EM damage is highly effective against non-resistant bots and is capable of killing them in only a few volleys via [[Corruption|corruption]]. A single high rating EM cannon combined with a [[Quantum Capacitor]] is a very strong combo.
+"Electromagnetic Cannons","Part Group","Type of [[Electromagnetic Weapons|electromagnetic]] [[Weapons|weapon]] that deals high amounts of electromagnetic damage at the cost of lots of [[Energy|energy]] and [[Heat|heat]] generation. They are better damage dealers but much more upkeep-heavy than [[Electromagnetic Guns|EM guns]]. EM damage is highly effective against non-resistant bots and is capable of killing them in only a few volleys via [[Corruption|corruption]]. A single high rating EM cannon combined with a [[Quantum Capacitor]] is a very strong combo.
 
 [[Heading]]List of Electromagnetic Cannons[[/Heading]]
 [[PartGroupTable]]
@@ -3050,7 +3052,7 @@ Projectile/Disruption|
 Projectile/Salvage|
 Effect/Description
 [[/PartGroupTable]]","","","Electromagnetic Cannons","","","","",""
-"Electromagnetic Guns","Part Group","Type of [[Electromagnetic Weapons|electromagnetic]] [[Weapons|weapon]] that deals high amounts of electromagnetic damage at the cost of lots of [[Energy|energy]] and [[Heat|heat]] generation. They are worse damage dealers but much less upkeep-heavy than [[Electromagnetic Cannons|EM Cannons]]. EM damage is highly effective against non-resistant bots and is capable of killing them in only a few volleys via [[Corruption|corruption]]. Electromagnetic guns can easily be sourced by killing [[Programmer|Programmers]] in [[Extermination Squad|Extermination squads]].
+"Electromagnetic Guns","Part Group","Type of [[Electromagnetic Weapons|electromagnetic]] [[Weapons|weapon]] that deals electromagnetic damage at the cost of lots of [[Energy|energy]] and [[Heat|heat]] generation. They are worse damage dealers but much less upkeep-heavy than [[Electromagnetic Cannons|EM Cannons]]. EM damage is highly effective against non-resistant bots and is capable of killing them in only a few volleys via [[Corruption|corruption]]. Electromagnetic guns can easily be sourced by killing [[Programmer|Programmers]] in [[Extermination Squad|Extermination squads]].
 
 [[Heading]]List of Electromagnetic Guns[[/Heading]]
 [[PartGroupTable]]
@@ -3143,9 +3145,9 @@ The Encrypted Comm Array will detect and reveal friendly ambush traps. When this
 [[Heading]]Post-Warlord RIF[[/Heading]]
 It is possible to install RIF after meeting Warlord. Warlord and his forces will not turn against Cogmind at this point, as they can only detect RIF inside of the Warlord base. However, doing so will lose some of the benefits. The -2 special guards will not appear based on the force multiplier. [[Redacted]]Additionally, fewer squads will be dispatched to follow Cogmind around from the Command seals. However, the seals will still have a higher number and more powerful bots based on the force multiplier as usual.[[/Redacted]]","","","","","","","",""
 "Energy","Other","Once per turn energy is generated by power sources, and is necessary for moving, firing energy-based weapons, and sustaining the operation of some utility systems. Robot cores also generate some energy of their own, though not enough to support significant activity.","","","","","","","",""
-"Energy Cannons","Part Supergroup","A type of [[Weapons|weapon]] that deals high damage at the cost of high [[Energy|energy]] costs and [[Heat|heat]] generation. Energy cannons deal a variety of non-kinetic damage types, but primarily electromagnetic and thermal damage.
+"Energy Cannons","Part Supergroup","A type of [[Weapons|weapon]] that deals high damage at the cost of high [[Energy|energy]] costs and [[Heat|heat]] generation. Energy cannons deal a variety of non-kinetic damage types, though primarily [[Electromagnetic Guns|electromagnetic]] and [[Thermal Guns|thermal]] damage.
 
-[[Heading]][[Alpha Cannons]][[/Heading]]
+[[SubpageSummary]]
 
 [[Heading]]List of Energy Cannons[[/Heading]]
 [[PartGroupTable]]
@@ -3196,7 +3198,11 @@ Overview/Coverage|
 Upkeep/Heat|
 Effect/Effect
 [[/PartGroupTable]]","","","","Energy Filter,Prc. Energy Filter","","","",""
-"Energy Guns","Part Supergroup","[[Heading]]List of Energy Guns[[/Heading]]
+"Energy Guns","Part Supergroup","A type of [[Weapons|weapon]] with low coverage that typically have high [[Energy|energy]] costs and [[Heat|heat]] generation. Energy guns deal a variety of nin-kinetic damage types, though primarily [[Electromagnetic Guns|electromagnetic]] and [[Thermal Guns|thermal]] damage.
+
+[[SubpageSummary]]
+
+[[Heading]]List of Energy Guns[[/Heading]]
 [[PartGroupTable]]
 Energy Guns|
 Overview/Size|
@@ -5781,13 +5787,16 @@ It may also be wise to carry an extra power source or significant energy storage
 [[Cave-ins]] - Mechanic that causes dug out walls to collapse and deal large amounts of damage.|
 [[Corruption]] - Stat that has various negative penalties and can result in death.|
 [[Energy]] - Stat that is used to power most parts in the game.|
+[[Disruption]] - [[Weapons|Weapon]] effect that disables a hit part or bot.|
 [[Gunsling]] - Ability to swap targets after killing one bot with a gun-only volley|
 [[Heat]] - Stat that can cause overheating side-effects and deaths in non-immune bots.|
 [[Matter]] - Stat that is used as a resource to attach parts and shoot some types of weapons.|
 [[Overload]] - Mechanic that can increase effectiveness of parts with a possible downside.|
-[[Robot Analysis]] - Terminal record that contains lore about a bot, also grants minor combat bonuses|
-[[Sneak Attack]] - Attack that does doubled melee damage in certain circumstances.
-[[/List]]","","","","","","","",""
+[[Robot Analysis]] - Terminal record that contains lore about a bot, also grants minor combat bonuses.|
+[[Sneak Attack]] - Attack that does doubled melee damage in certain circumstances.|
+[[Spectrum]] - Weapon effect that explodes a [[Power|power source]] on hit.|
+[[Squad]] - One or more combat bots grouped together with a common purpose.
+[[/List]]","","","","","","","Alert,Allies,Cave-ins,Corruption,Disruption,Energy,Gunsling,Heat,Matter,Overload,Robot Analysis,Salvage,Sneak Attack,Spectrum,Squad Leader",""
 "Gamma Bomb Array","Part","","","","","","","","",""
 "Gamma Bomb Trap","Part","","","","","","","","",""
 "Gamma Driveblaster","Part","","","","","","","","",""
@@ -5957,11 +5966,14 @@ Grunts may appear in the following squads:
 "Gui. EMP Blaster","Part","","","","","","","","",""
 "Gui. Micro-nuke Launcher","Part","","","","","","","","",""
 "Gui. Missile Launcher","Part","","","","","","","","",""
-"Gui. Plasma Cannon","Part","","","","","","","","",""
+"Gui. Plasma Cannon","Part","An unique [[Exiles Vault Prototypes|Exiles vault prototype]] that can be found on the [[Exiles (Location)|Exiles map]] [[Spoiler]]or in the [[Zion Deep Caves]][[/Spoiler]]. This [[Guided Weapons|guided]] [[Thermal Cannons|thermal cannon]] has 2 waypoints, making it perfect for sniping bots around the corner. It suffers from [[Weapon Breakdown|weapon breakdown]] and has a minimum of 50 shots before it breaks, after which it will have a 2.0% chance to break each time it is fired. It can be repaired with a [[Recalibrators|Recalibrator]], though breakdowns become more frequent over time.
+[[Image]]Gui. Plasma Cannon.webp|Gui. Plasma Cannon destroying a [[Sentry]] around a corner[[/Image]]","","","","","","","",""
 "Gui. Remote Datajack","Part","","","","","","","","",""
-"Guided Weapons","Part Group","Guided weapons have several characteristics:
+"Guided Weapons","Part Group","Guided [[Weapons|weapons]] are unique in their ability to designate one or more waypoints (as indicated by the waypoints stat) that the weapon will travel along before hitting the target. This effect works great with some form of bot detection like [[Sensor Arrays]] to be able to aim at bots around corners without getting hit.
+[[Image]]Gui. Plasma Cannon.webp|A [[Gui. Plasma Cannon]] being used to destroy a [[Sentry]] around the corner[[/Image]]
+Guided weapons have several characteristics:
 [[List]]
-They cannot be fired in a volley with other weapons, only alone.
+They cannot be fired in a volley with other weapons, only alone. Even multiple guided weapons cannot be fired together.
 |Their projectiles follow a series of waypoints defined when the weapon is fired.
 |They never miss.
 |They are unaffected by [[Corruption]] misfires.
@@ -7162,7 +7174,7 @@ Full list of depth-specific mechanics that apply in Materials:
 [[Heading]]Notable Locations[[/Heading]][[Gallery]]Materials Main Exit.png|A 3 tile corridor leading to a main access|Materials Mines Exit.png| A [[Mines]] exit prefab|Materials Mines Exit 2.png|A second Mines exit prefab|Materials Subcaves Exit.png|A dug out exit to Subcaves|Materials Subcaves Exit Predug.png|An exit to Subcaves surrounded by dirt, before being dug out|Materials OOD Cache.png|An out-of-depth parts cache|Materials Storage Cache.png|A cache full of [[Sml. Storage Unit|Small]], [[Med. Storage Unit|Medium]], and [[Lrg. Storage Unit|Large]] storage units[[/Gallery]]The storage cache prefab can be very important early on in the game. Cogmind only starts with a [[Sml. Storage Unit]] with very little room for important backup parts and should upgrade ASAP. While not guaranteed, these storage caches will appear on almost every Materials map. [[Hcp. Storage Unit]] and [[Huge Storage Unit]] can both be commonly found on the floor in these maps, but they are not included in the standard storage cache prefab.
 The other important cache is the out-of-depth parts cache. These caches contain 3 groups of 4 parts that will be one rating out of depth and can include prototypes. For example, on -9 Materials the standard highest rating part is a 2, while the cache will contain rating 3 or 3* [[Prototype Part|Prototype Parts]]. This is one of the best ways to become very strong in Materials. For example, getting a stockpile of [[Enh. Autogun|Enh. Autoguns]] on -9 can help set a combat up for multiple floors to come.[[Heading:2]]Exits[[/Heading]]There are 3 types of normal exits in Materials:[[List]]Main access exits: These always lead to the next main floor, either Materials or [[Factory]]. These exits can be recognized by their distinctive 3 tile corridor leading to a dead-end exit along the edges of the map. There are always 3 of these per Materials map.|[[Mines]] exits: These exits are almost always distinguishable by a few specific prefabs of some machinery and a cache of items. Occasionally Mines exits will spawn without the prefab and look like standard exits. There are either 1 or 2 Mines exits on -10 and -9.|[[Storage]] exits: These exits do not have a prefab at all and look like standard exits. There is often a [[Y-45 Defender|Sentry]] guarding these exits, but it is not guaranteed. Storage only spawns on 1 depth between -9 and -7 and 1-2 exits can be found to Storage on that map.|[[Subcaves]] exits: Hidden behind a large area of diggable dirt where a new room is planned. [[T-07 Excavator|Excavators]] will dig this area out over time, revealing the exit. It is also possible for Cogmind to dig this area out to find the exit ahead of time.[[/List]][[Heading]]Events[[/Heading]][[Image]]8R-AWN in Materials.png|8R-AWN passing through Materials[[/Image]]
 [[Spoiler]][[Image]]Materials Subdwellers Attack.png|Subdwellers attacking 0b10[[/Image]][[/Spoiler]][[List]](++) [[8R-AWN]]: 8R-AWN can appear in -10 or -9 Materials, passing through to the nearest Mines exit. They will shoot any hostile 0b10 bots on the way and often leave large piles of loot in their wake. If encountered, they will tell you to follow them to the Mines and then to the [[Exiles (Location)|Exiles]] map.|(++) [[Spoiler]][[7R-MNS]]: 7R-MNS will appear on -8 Materials, roaming around the map and killing 0b10 combat bots. After a few hundred turns, they will head to a main exit and head to Factory. They can be followed through the exit.[[/Spoiler]]|(++) [[Federalist]] party: 6 Federalists will appear on -10 Materials and head directly for the Subcaves exit. They will continue exploring Subcaves until they find a shortcut to [[Scraptown]].|(--) [[Spoiler]]3 [[Subdweller|Subdwellers]] can appear from the Subcaves exit, attacking Cogmind and 0b10 alike, with the announcement of [[GameText]]Derelict incursion detected, dispatching patrols to target area.[[/GameText]] When this occurs, two patrols will be dispatched from a nearby main exit.[[/Spoiler]][[/List]]","","","","","","","",""
-"Matter","Part","Matter is used to attach components, and is consumed by [[Kinetic Weapons|kinetic weapons]] and [[Launcher|launchers]], which convert it to the appropriate type of ammunition. It can be salvaged from robot remains, though the available amount varies depending on how the robot was destroyed. Robots hit with [[Kinetic Cannons]] will drop a small amount of matter nearby. Matter also appears randomly on the ground. Cogmind automatically recycles 5 matter from each attached part that is destroyed.","","","","","","","",""
+"Matter","Part","Matter is used to attach components, and is consumed by [[Kinetic Weapons|kinetic weapons]] and [[Launchers|launchers]], which convert it to the appropriate type of ammunition. It can be salvaged from robot remains, though the available amount varies depending on how the robot was destroyed. Robots hit with [[Kinetic Cannons]] will drop a small amount of matter nearby. Matter also appears randomly on the ground. Cogmind automatically recycles 5 matter from each attached part that is destroyed.","","","","","","","",""
 "Matter Compressor","Part","","","","","","","","",""
 "Matter Compressors","Part Group","Additional [[Storage]] for [[Matter]] that can be filled up without the part being attached and retrieved by either attaching the part or by being positioned on the same tile as the part on the ground. This storage is especially useful for builds that use lots of matter on things like [[Kinetic Cannons]] and [[Explosive Launchers]].
 Dropping matter compressors is much more efficient in spent turns to restock on matter than swapping the part on and back off again. This can be done ahead of combat to save more time. While it is generally superior, the dropping technique does have some downsides. It requires a free slot underneath Cogmind, otherwise the dropped part will take time to walk on top of. Leaving the part on the ground also leaves it liable to be destroyed by explosions or picked up by a [[Recycler]].
@@ -7897,7 +7909,9 @@ Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
 [[/PartGroupTable]]","","","","Phase Shifter,Imp. Phase Shifter,Adv. Phase Shifter,Exp. Phase Shifter,Asb. Combat Suite,Cep. Phase Shift Module,Sfc. Targeting Obfuscator","","","",""
-"Phasers","Part Group","[[Heading]]List of Phasers[[/Heading]]
+"Phasers","Part Group","Type of [[Energy Guns|energy guns]] that deals the rare unresisted phasic damage type and is used by the [[Zionite (Group)|Zionite]] [[Z-Heavy|Z-Heavies]]. Phasers have moderately high [[Energy|energy]] costs and [[Heat|heat]] generation but very low integrity. They should be paired with some form of [[Weapon Shieldings|weapon shielding]], preferably the [[Zio. Weapon Casing]] that the Z-Heavies wear or else they are likely to be destroyed in only one or two hits. Phasers share a unique [[Critical Hits|critical hit]] in intensify which doubles damage dealt.
+
+[[Heading]]List of Phasers[[/Heading]]
 [[PartGroupTable]]
 Phasers|
 Overview/Size|
@@ -8654,25 +8668,26 @@ The Quantum Capacitor takes two slots, so it takes a lot of space and is difficu
 
 [[Heading]]Special Effects[[/Heading]]
 [[Image]]Quantum Companion Sensors Active.webp|Sensor radius of Quantum Companion[[/Image]]
-[[Table]]
+[[Partial]]Quantum Companion Special Effects[[/Partial]]
+
+[[Heading]]Transformation[[/Heading]]
+If a Subatomic Replicator is used on the Quantum Companion, it will transform into the [[Superquantum Companion]]. Unlike the base Companion Sword, this effect does not occur from use alone. This means that it is not possible to use a replicator to get from the base Companion Sword and also get the Quantum Companion. When this happens, the following game log message will appear: [[GameText]]Quantum Companion blips out of existence for a moment, then partially fades back in.[[/GameText]] The Superquantum Companion will also comment on it, saying one of multiple possible [[Companion Sword#upgrading|upgrade lines]].","","","","","","","",""
+"Quantum Companion Special Effects","Partial","[[Table]]
 Effect|Description|Frequency||
 Materialization|The Quantum Companion will materialize in one of Cogmind's weapon slots within a few turns of being detached. If no slots are available, the weapon in the first slot will be detached to make room. Occurs even if the Quantum Companion is destroyed, in which case it will reappear with full integrity. The log message [[GameText]]Quantum Companion materializes via a weapon slot.[[/GameText]] will appear when this happens.|Always||
 Sensors|After some time in Quantum Companion form, the Quantum Companion will develop 12 range bot detection. Unlike typical sensors, this works on all bots without a [[Signal Interpreter]], even if they have the Scan Cloak trait, and cannot be jammed in any way. However, inactive (dormant/disabled/broken/unpowered) bots will not be detected.|Always||
 Surprise Attack|The Quantum Companion will ""surprise attack"" one additional target on a normal attack. Can only happen if there is at least two hostiles are within melee range. The log message [[GameText]]Quantum Companion surprise attacks [target].[[/GameText]] will appear when this happens.|Common||
 Core Loss|The Companion Sword deals between 5-10 core damage directly to Cogmind's core on a normal attack. Can't be reduced by [[Core Shieldings]] or [[Defensive Utilities]]. Only happens when Cogmind attacks something with the Companion Sword.|Uncommon||
-Shadow Attack|A shadow clone of the sword attacks a hostile bot at range. Can occur even when not attacking. This attack cannot miss. The log message [[GameText]]Quantum Companion releases a shadow of itself that zips off toward [target].[[/GameText]] will appear when this happens. This attack deals 70-100 phasic damage.[[Comment]]IMPORTANT QUESTION: can this effect occur while a Researcher can see it? If so, would it cause them to notice Cogmind?[[/Comment]]|Uncommon||
+Shadow Attack|A shadow clone of the sword attacks a hostile bot at range. Can occur even when not attacking. This attack cannot miss. The log message [[GameText]]Quantum Companion releases a shadow of itself that zips off toward [target].[[/GameText]] will appear when this happens. This attack deals 70-100 phasic damage. Note: This does not count as an attack that turns [[Researcher|Researchers]] hostile.|Uncommon||
 Bot Disruption|A bot is instantly disrupted on a normal attack. As with normal [[Disruption|disruption]], a disrupted bot can be rewired as long as it isn't hacking immune. The log message [[GameText]][target] shuts down.[[/GameText]] will appear when this happens.|Rare||
 Redirected Attack|When attacked by a projectile, the Quantum Companion will redirect the attack back to the attacker. The log message [[GameText]]Redirected attack with Quantum Companion.[[/GameText]] will appear with this happens.|Rare||
 Sever|A part is severed off of a bot on a normal attack. This effect can hit through the Dismemberment immunity, unlike standard Sever critical hits.|Rare||
 Sunder|This effect will instantly sunder a bot, similar to the [[Core Stripper]] on a normal attack. All parts are dropped between 1/3 and 2/3 integrity. Affected by the Dismemberment immunity. The log message [[GameText]][target] is sundered.[[/GameText]] will appear when this happens. 200 energy required for this effect.|Rare||
 Surge of Energy|This effect instantly kills a bot on a normal attack. The log message [[GameText]][target] is pierced by a surge of energy.[[/GameText]] will appear when this happens.|Rare||
 
-Teleport|Cogmind is instantly teleported to an empty space next to a visible [[Comment]]IMPORTANT QUESTION: How do the visibility requirements work, exactly? Can you be teleported because one of your drone sees a hostile? Can you be teleported due to having higher vision range due to having a Visual Processing Unit?[[/Comment]] hostile bot at no time cost, through machinery, other bots and even the target itself if necessary. Also sets momentum to maximum, and can be used to trigger an instant sneak attack if the bot hasn't spotted Cogmind yet. The teleport will prioritize closer hostiles, unless some hostiles can be sneak attacked and some cannot, in which case it will prioritize hostiles that can be sneak attacked.[[Comment]]I feel like this last sentence about target priority could be reworded to be clearer, and could also possibly explicitly mention that a teleport will ignore a hostile if there is no empty space next to it.[[/Comment]]
-Can happen at any point in time[[Comment]]Can it really? I did a flight run with this, and it always seemed to trigger at the start of my turn (I was never spotted due to this movement, even when it triggered during a wait action).[[/Comment]], and can still happen even if the Companion isn't currently attached, in which case the Materialization effect will be triggered simultaneously[[Comment]]I'm basing this information off of Kyzrati's ""swordy run part 2"" stream. Not sure if the materialization happens before or after the teleport, but probably before?[[/Comment]]. Be careful, as this effect can very easily send Cogmind into dangerous situations or hinder a tactical retreat. The log message [[GameText]]The surroundings shift and blur.[[/GameText]] will appear when this happens. 25 energy required for this effect.|Rare
-[[/Table]]
-
-[[Heading]]Transformation[[/Heading]]
-If a Subatomic Replicator is used on the Quantum Companion, it will transform into the [[Superquantum Companion]]. Unlike the base Companion Sword, this effect does not occur from use alone. This means that it is not possible to use a replicator to get from the base Companion Sword and also get the Quantum Companion. When this happens, the following game log message will appear: [[GameText]]Quantum Companion blips out of existence for a moment, then partially fades back in.[[/GameText]] The Superquantum Companion will also comment on it, saying one of multiple possible [[Companion Sword#upgrading|upgrade lines]].","","","","","","","",""
+Teleport|Cogmind is instantly teleported to an empty space next to a visible hostile bot at no time cost, through machinery, other bots and even the target itself if necessary. Bots must be within Cogmind's line of sight, and other shared vision methods like [[Drone Bays]] won't trigger this effect. Also sets momentum to maximum, and can be used to trigger an instant sneak attack if the bot hasn't spotted Cogmind yet. The teleport will prioritize unaware enemies, and then close hostiles. Hostiles without an adjacent tile to teleport to will be ignored.
+This effect can happen once per turn, though not necessarily at the start of the turn. Internally, the sword is treated as an entity and takes its own turn independently of Cogmind. This effect can still happen even if the part isn't currently attached, in which case the Materialization effect will be triggered just before teleporting. Be careful, as this effect can very easily send Cogmind into dangerous situations or hinder a tactical retreat. The log message [[GameText]]The surroundings shift and blur.[[/GameText]] will appear when this happens. 25 energy required for this effect.|Rare
+[[/Table]]","","","","","","","",""
 "Quantum Reactor","Part","","","","","","","","",""
 "Quantum Rifle","Part","","","","","","","","",""
 "Quantum Router","Part","","","","","","","","",""
@@ -9202,6 +9217,11 @@ Last edited during Beta 16.","Spoiler","","","","","","",""
 "SKR-2","Bot","","","","","","","","",""
 "ST Field Compressor","Part","","","","","","","","",""
 "SUBCON Basin","Part","If released on an 0b10 level, the subatomizers will dissolve walls, doors, parts of machines, and items. Eventually all non-combat bots will be evacuated, then the ambient temperature of the floor will be increased 10 degrees at a time, causing cogmind to overheat and melting walls, doors, parts of machines, and items.","","","","","","","",""
+"Salvage","Other","How much of a robot remains to salvage when it is destroyed depends on the value of its cumulative ""salvage modifier"" which reflects everything that happened to it before that point. This internal value is initially set to zero, and each projectile that impacts the robot will contribute its own weapon-based salvage modifier to the total. Some [[Weapons|weapons]] lower the value (most notably [[Kinetic Cannons|kinetic cannons]]), others have no meaningful effect on it (most guns), while certain types may even raise it, ultimately increasing the likelihood of retrieving useful salvage.
+When a robot is destroyed, it leaves an amount of [[Matter]] equivalent to its salvage potential (usually a random range you can see on its info page), modified directly by the salvage modifier. This means a large enough negative salvage modifier, e.g. from [[Explosive Launchers|launchers]] or repeated cannon hits, has the potential to reduce the amount of salvageable matter to zero. A positive salvage modifier can never increase the resulting matter by more than the upper limit of a robot's salvage potential.
+The chance for the robot's parts to survive, checked individually for each part, is ([percent_remaining_integrity / 2] + [salvage_modifier]), thus more damaged parts are more likely to be destroyed completely along with the robot. But even if that check succeeds, there are still two more possible factors that may prevent a given part from dropping. If the robot has any residual [[Heat|heat]], parts can be melted, the chance of which is ([heat - max_integrity] / 4), so again less likely to affect large parts (though still possible, especially at very high heat levels). If the robot was [[Corruption|corrupted]], parts can be ""fried,"" the chance of which is [system_corruption - max_integrity]; by the numbers, this will generally only affect small electronic components like processors, and sometimes devices. Each salvageable part left by a corrupted robot also has a corruption% chance to itself be corrupted, specifically by a random amount from 1 to (10*[corruption]/100), and when attached will increase Cogmind's system corruption by the same value as well as possibly cause another side effect. In cases where a robot's system corruption significantly exceeded 100 at the time of destruction, a single part's corruption is capped at 15.
+Note that robots built by a fabricator do not leave salvageable parts. Also, anything in a robot's inventory (not attached) is always dropped to the ground, regardless of salvage modifiers or other factors.
+Note: This page has been adapted from the manual.","","","","","","","",""
 "Salvage Targeting Computer","Part","","","","","","","","",""
 "Salvage Targeting Computers","Part Group","[[Heading]]List of Salvage Targeting Computers[[/Heading]]
 [[PartGroupTable]]
@@ -9782,7 +9802,9 @@ Additionally, Sentries will appear at [[Garrison Access|Garrisons]] and 0b10 exi
 "Sfc. Sightfinder","Part","","","","","","","","",""
 "Sfc. Target Tracker","Part","","","","","","","","",""
 "Sfc. Targeting Obfuscator","Part","","","","","","","","",""
-"Shearguns","Part Group","[[Heading]]List of Shearguns[[/Heading]]
+"Shearguns","Part Group","Type of unique [[Alien Artifacts|alien]] [[Energy Guns|energy gun]] that deals slashing damage. Shearguns have a unique combination of stats in high range, negative delay, penetration, positive salvage, and the sever [[Critical Hits|critical hit]] type which is unusual for a ranged weapon. While very powerful when stacked, their [[Heat|heat]] generation may be prohibitively high for most builds, especially as the - delay reduces volley time.
+
+[[Heading]]List of Shearguns[[/Heading]]
 [[PartGroupTable]]
 Shearguns|
 Overview/Size|
@@ -10029,7 +10051,7 @@ Specialists have no specific weaknesses or immunities, so generally any damage t
 Specialists may appear in the following squads:
 [[List]][[Assault Squad]] - Only if Cogmind has allies|[[Cargo Convoy]] - Within the escorting [[C-45 Heavy ARC|Heavy ARCs]]|[[Patrol Squad]] - [[Armory]] and [[Garrison|Garrisons]] only|[[Reinforcement Squad]] - only from [[Heavy]]-summoned Reinforcements|[[Security Squad]] - [[Armory]], Garrisons, [[Quarantine]], and [[Testing]] only[[/List]]","","X-57 Shotgunner,X-62 Marksman,X-67 Chaingunner,X-72 Disruptor,X-77 Beamer,X-82 Rainmaker,X-87 Electro,Protovariant X","","","","","",""
 "Spectral Analyzer","Part","","","","","","","","",""
-"Spectrum","Other","The chance to blow up a [[Power|power]] source when dealing damage to it. Available to [[Electromagnetic Weapons|electromagnetic weapons]].","","","","","","","",""
+"Spectrum","Other","A [[Weapons|weapon]] [[Game Mechanics|game mechanic]] that is a chance to blow up a [[Power|power]] source when dealing damage to it. Primarily found on [[Electromagnetic Weapons|electromagnetic weapons]].","","","","","","","",""
 "Speed Boosting Utilities","Part Group","","Spoiler","","","Rocket Booster,Asb. Metafiber Network,Zio. Metafield Generator,ST Field Compressor","","","",""
 "Spiked Treads","Part Group","A [[Derelict]]-made subclass of [[Treads]] that have more coverage, integrity at the cost of higher penalty and worse support than normal treads. These parts are typically only found on a few Derelicts and in [[Scrap]].
 
@@ -10072,7 +10094,7 @@ Typically, one bot per squad is designated as the [[Squad Leader]]. Squad leader
 [[Surveillance Squad]] - Patrol between two points of interest similar to a Patrol squad, but made up of a single [[Watcher]] instead of combat bots.|
 [[Transport Squad]] - [[Hauler]] guarded by 0-2 [[Grunt|Grunts]] that transport parts from place to place. Empty Haulers may pick up parts fabricated at a [[Fabricator]].
 [[/List]]","","","","","","","Assault Squad,Coupling Squad,Demolisher Squad,Extermination Squad,Garrison Squad,Intercept Squad,Investigation Squad,Patrol Squad,Reinforcement Squad,Security Squad,Surveillance Squad,Transport Squad",""
-"Squad Leader","Other","","","","","","","","",""
+"Squad Leader","Other","The [[Squad|squad]] leader is the head bot in a group that has orders. If the squad leader is killed, other bots will roam around the area instead of continuing where they left off. Raises [[Alert]] by an extra 10 points over standard combat bots when killed.","","","","","","","",""
 "Stasis Beam","Part","","","","","","","","",""
 "Stasis Beams","Part Group","[[Heading]]List of Stasis Beams[[/Heading]]
 [[PartGroupTable]]
@@ -11053,7 +11075,10 @@ When Superfortress is under fire or there are multiple  hostiles in line of sigh
 [[/List]]
 [[Heading]]Killing Superfortress[[/Heading]]
 See [[Strategy/Bosses/Defeating Superfortress]].","","","","","","","",""
-"Superquantum Companion","Part","The Superquantum Companion is a unique talking melee weapon that is an upgrade to the [[Quantum Companion]]. It can be obtained by using a [[Subatomic Replicator]] on the Quantum Companion. The Superquantum Companion has [[Quantum Companion#special_effects|all of the effects]] that the Quantum Companion does, but the frequency of all effects is increased.","","","","","","","",""
+"Superquantum Companion","Part","The Superquantum Companion is a unique talking melee weapon that is an upgrade to the [[Quantum Companion]]. It can be obtained by using a [[Subatomic Replicator]] on the Quantum Companion. The Superquantum Companion has all of the effects that the Quantum Companion does, but the frequency of all effects is increased.
+
+[[Heading]]Special Effects[[/Heading]]
+[[Partial]]Quantum Companion Special Effects[[/Partial]]","","","","","","","",""
 "Supersonic Drone Bay","Part","Deploys a [[Trailblazer]] which can move 33 tiles per turn. Can be useful for scouting, although the drone tends to die quite quickly, making it one of the worse items to pick. Can be found occasionally in the [[Exiles (Location)| Exiles]] prototype vault.","","","","","","","",""
 "Surface","Location","The surface is not a real map in the game, but exiting to the surface is one way to win the game. Many of the game's wintypes require getting to a surface exit. See [[Wintypes]] for more information.","Spoiler","","","","","","",""
 "Surge Thruster","Part","","","","","","","","",""
@@ -11420,7 +11445,7 @@ Effect/Effect
 [[/PartGroupTable]]
 
 This article was last edited during Beta 15.","","","","Thermal Generator,Imp. Thermal Generator,Adv. Thermal Generator,Exp. Thermal Generator","","","",""
-"Thermal Guns","Part Group","Type of [[Thermal Weapons|thermal]] [[Weapons|weapon]] that deals thermal damage at the cost of moderate [[Energy|energy]] usage and a large amount of [[Heat|heat]] generation. Thermal guns are great at transferring heat to enemies with their high heat transfer stat and burn [[Critical Hits|critical hit]] that triples heat transfer. They generally are better at killing directly via heat transfer than [[Thermal Cannons|thermal cannons]]. Thermal guns are most commonly encountered being wielded by [[Grunt|Grunts]].
+"Thermal Guns","Part Group","Type of [[Thermal Weapons|thermal]] [[Weapons|weapon]] that deals thermal damage at the cost of moderate [[Energy|energy]] usage and a large amount of [[Heat|heat]] generation. Thermal guns are great at transferring heat to enemies with their high heat transfer stat and burn [[Critical Hits|critical hit]] that triples heat transfer. They generally are better at killing directly via heat transfer than [[Thermal Cannons|thermal cannons]]. Thermal guns are most commonly encountered being wielded by [[Grunt|Grunts]] and [[Sentry|Sentries]].
 
 [[Heading]]List of Thermal Guns[[/Heading]]
 [[PartGroupTable]]
@@ -12246,7 +12271,9 @@ Effect/Effect
 "Vmp. Humpback","Part","","","","","","","","",""
 "Voltaic Drivehammer","Part","","","","","","","","",""
 "Vortex Cannon","Part","","","","","","","","",""
-"Vortex Cannons","Part Group","[[Heading]]List of Vortex Cannons[[/Heading]]
+"Vortex Cannons","Part Group","Type of powerful [[Energy Cannons|energy cannon]] that deals the rare unresisted entropic damage type, and is unique to the [[Warlord (Location)|Warlord map]]. As with all [[Vortex Weapons|vortex weapons]], they are unstable, meaning they have a limited number of shots since each attack lowers their integrity by a fixed amount (weapon-dependent). Vortex cannons have incredibly high damage output compared to similarly-rated weapons, though they have a highly negative salvage stat. They also share a special [[Critical Hits|critical hit]] type sunder which knocks the target part off of the target.
+
+[[Heading]]List of Vortex Cannons[[/Heading]]
 [[PartGroupTable]]
 Vortex Cannons|
 Overview/Size|
@@ -12267,7 +12294,9 @@ Projectile/Salvage
 "Vortex Chain Reactor","Part","","","","","","","","",""
 "Vortex Driver","Part","","","","","","","","",""
 "Vortex Field Projector","Part","","","","","","","","",""
-"Vortex Guns","Part Group","[[Heading]]List of Vortex Guns[[/Heading]]
+"Vortex Guns","Part Group","Type of powerful [[Energy Guns|energy gun]] that deals the rare unresisted entropic damage type, and are primarily found on the [[Warlord (Location)|Warlord map]]. As with all [[Vortex Weapons|vortex weapons]], they are unstable, meaning they have a limited number of shots since each attack lowers their integrity by a fixed amount (weapon-dependent). Vortex guns have very high damage output and relatively low upkeep costs compared to similarly-rated weapons, though they do have a highly negative salvage stat. Most vortex guns have the detonate [[Critical Hits|critical hit]] type that instantly explodes a [[Power|power source]] on the target.
+
+[[Heading]]List of Vortex Guns[[/Heading]]
 [[PartGroupTable]]
 Vortex Guns|
 Overview/Size|
@@ -12291,7 +12320,9 @@ Projectile/Salvage
 "Vortex Shotgun","Part","","","","","","","","",""
 "Vortex Shredder","Part","","","","","","","","",""
 "Vortex Trap","Part","","","","","","","","",""
-"Vortex Weapons","Part Group","[[Heading]]List of Vortex Weapons[[/Heading]]
+"Vortex Weapons","Part Supergroup","Type of powerful [[Energy Weapons|energy weapons]] that deals the rare unresisted entropic damage type, and are primarily found on the [[Warlord (Location)|Warlord map]]. Vortex weapons are are unstable, meaning they have a limited number of shots since each attack lowers their integrity by a fixed amount (weapon-dependent). These weapons have very high damage output and relatively low upkeep costs compared to similarly-rated weapons, though they do have a highly negative salvage stat. 
+
+[[Heading]]List of Vortex Weapons[[/Heading]]
 [[PartGroupTable]]
 Vortex Weapons|
 Overview/Size|
@@ -12308,7 +12339,7 @@ Projectile/Type|
 Projectile/Critical|
 Projectile/Penetration|
 Projectile/Salvage
-[[/PartGroupTable]]","","","Vortex Weapons","","","","",""
+[[/PartGroupTable]]","","","Vortex Weapons","","Vortex Cannons,Vortex Guns","","",""
 "W-16 Scout","Bot","","","","","","","","",""
 "W-25 Informer","Bot","","","","","","","","",""
 "W-44 Eye","Bot","","","","","","","","",""
@@ -12575,7 +12606,7 @@ Common bot weakness|[[CellStyle:Good]][[CellSpan:2]]Programmers|[[CellStyle:Good
 Salvage|[[CellStyle:Neutral]]Neutral, can use [[Salvage Targeting Computers]]|[[CellStyle:Bad]]Negative|[[CellStyle:Neutral]]Neutral, can melt parts, can use Salvage Targeting Computers|[[CellStyle:Neutral]]Neutral, can melt parts|[[CellStyle:Neutral]]Positive, can [[Corrupted Parts|corrupt]] and fry parts|[[CellStyle:Neutral]]Positive, can use Salvage Targeting Computers (though not impactful), can corrupt and fry parts|[[CellStyle:Bad]]Highly negative|[[CellStyle:Neutral]]Positive, can corrupt and fry parts and explode engines|[[CellStyle:Bad]]Negative, can corrupt parts|[[CellStyle:Neutral]]Neutral, can sever parts|[[CellStyle:Neutral]]Neutral, more likely to hit core||
 Collateral damage|[[CellStyle:Neutral]]Penetration can  walls and machines and more likely to hit non-combat bots|[[CellStyle:Neutral]]High damage destroys walls|[[CellStyle:Good]]Little|[[CellStyle:Neutral]]High damage destroys walls|[[CellStyle:Neutral]][[Spectrum]] can blow up engines|[[CellStyle:Neutral]]Spectrum can blow up engines|[[CellStyle:Bad]]Likely to blow up walls, machines, and non-combat bots|[[CellStyle:Neutral]]Can blow up walls, machines, and non-combat bots via spectrum but less often|[[CellStyle:Good]]None|[[CellStyle:Good]]None|[[CellStyle:Good]]None||
 Other unique traits|[[CellStyle:Good]]Penetration, recoil|[[CellStyle:Good]]Knockback, matter generation, recoil|[[CellStyle:Good]][[CellSpan:2]]Innate heat transfer|[[CellStyle:Good]][[CellSpan:2]]Corruption, spectrum, [[Disruption|disruption]]|[[CellStyle:Good]]AOE attack|[[CellStyle:Good]]AOE attack, corruption, spectrum, disruption|[[CellStyle:Good]]Knockback|[[CellStyle:Neutral]]N/A|[[CellStyle:Good]]8% bonus core exposure
-[[/Table]]","","","","","Autonomous Weapons,Concussive RPGs,Guided Weapons,Overloadable Weapons,Phasic Weapons,Vortex Weapons","Kinetic Weapons,Datajacks,Electromagnetic Weapons,Energy Cannons,Energy Guns,Energy Weapons,Hypervelocity Weapons,Launchers,Melee Weapons,Special Melee Weapons,Special Weapons,Thermal Weapons","",""
+[[/Table]]","","","","","Autonomous Weapons,Concussive RPGs,Guided Weapons,Overloadable Weapons,Phasic Weapons","Kinetic Weapons,Datajacks,Electromagnetic Weapons,Energy Cannons,Energy Guns,Energy Weapons,Hypervelocity Weapons,Launchers,Melee Weapons,Special Melee Weapons,Special Weapons,Thermal Weapons,Vortex Weapons","",""
 "Weight Redist. System","Part","","","","","","","","",""
 "Welding Torch","Part","","","","","","","","",""
 "Wheel","Part","","","","","","","","",""
@@ -13756,7 +13787,7 @@ Flight can occasionally make use of these to dig into areas locked by blast door
 [[Gallery]]../game_sprites/Fabricator.png|[[aoemica's Flight Guide/Machine Hacking/Fabricators|Fabricators]]|../game_sprites/Garrison.png|[[aoemica's Flight Guide/Machine Hacking/Garrisons|Garrisons]]|../game_sprites/Recycling Unit.png|[[aoemica's Flight Guide/Machine Hacking/Recycling Units|Recycling Units]]|../game_sprites/Repair Station.png|[[aoemica's Flight Guide/Machine Hacking/Repair Stations|Repair Stations]]|../game_sprites/Scanalyzer.png|[[aoemica's Flight Guide/Machine Hacking/Scanalyzers|Scanalyzers]]|../game_sprites/Terminal.png|[[aoemica's Flight Guide/Machine Hacking/Fabricators|Terminals]][[/Gallery]]
 
 [[Heading]]CY-PHR[[/Heading]]
-While this bot is a spoiler concept (see [[CY-PHR]]), you are likely to encounter the effects of this bot sooner than later. If you do too many hacks, this bot will start to taunt you through the machine output, warning you that you will soon cause them to take action against you. The first message is 50% of the way toward their full effects, and if you get to 100% they will start messing with the effects of hacks at random. This has a ton of negative effects like making hacking intel, repairs, and fabrication unreliable. In order to avoid triggering these effects, try to restrict hacking to only the most important hacks to perform each floor, or else you may find that all the hacking you do will be much less valuable after that. Of course, if you want to try to take them head-on you can try to trigger them as soon as possible. You will get roughly between 1-200 hacks in before CY-PHR is fully triggered depending on which hacks you perform. See the CY-PHR page for more specific details.","","","","","","","aoemica's Flight Guide/Machine Hacking/Fabricators,aoemica's Flight Guide/Machine Hacking/Garrisons,aoemica's Flight Guide/Machine Hacking/Recycling Units,aoemica's Flight Guide/Machine Hacking/Repair Stations,aoemica's Flight Guide/Machine Hacking/Scanalyzers,aoemica's Flight Guide/Machine Hacking/Schematics Reference,aoemica's Flight Guide/Machine Hacking/Terminals",""
+While this bot is a spoiler concept (see [[CY-PHR]]), you are likely to encounter the effects of this bot sooner than later. If you do too many hacks, this bot will start to taunt you through the machine output, warning you that you will soon cause them to take action against you. The first message is 50% of the way toward their full effects, and if you get to 100% they will start messing with the effects of hacks at random. This has a ton of negative effects like making hacking intel, repairs, and fabrication unreliable. In order to avoid triggering these effects, try to restrict hacking to only the most important hacks to perform each floor or else you may find that all the hacking you do will be much less valuable after that. Of course, if you want to try to take them head-on you can try to trigger them as soon as possible. You will get roughly between 1-200 hacks in before CY-PHR is fully triggered depending on which hacks you perform. See the CY-PHR page for more specific details.","","","","","","","aoemica's Flight Guide/Machine Hacking/Fabricators,aoemica's Flight Guide/Machine Hacking/Garrisons,aoemica's Flight Guide/Machine Hacking/Recycling Units,aoemica's Flight Guide/Machine Hacking/Repair Stations,aoemica's Flight Guide/Machine Hacking/Scanalyzers,aoemica's Flight Guide/Machine Hacking/Schematics Reference,aoemica's Flight Guide/Machine Hacking/Terminals",""
 "aoemica's Flight Guide/Machine Hacking/Fabricators","Other","[[Image]]../game_sprites/Fabricator.png|A Fabricator machine[[/Image]]
 [[Fabricator|Fabricators]] are fabulous machines that can create parts that [[0b10]], or more importantly, you want. Fabricating preloaded [[Schematic|schematics]] can be a good idea, but frequently they contain something not useful. Fabricating items based on schematics is the more typical use of Fabricators for flight builds. To do so, obtain a schematic from a [[Terminal]] (e.g. [[GameText]]Schematic(Flight Unit)[[/GameText]]) or some other source, attach an [[Authchips|Authchip]] if you have it, load the schematic, and start the fab. For a reference of good parts to hack from schematics, see [[aoemica's Flight Guide/Machine Hacking/Schematics Reference|this page]]. If you are fabbing without an Authchip, an [[Investigation Squad]] will be dispatched to the machine. There are a few ways to deal with the squad:
 [[List]]
