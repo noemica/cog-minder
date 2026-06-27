@@ -135,7 +135,7 @@ One good strategy against 6S-H0T is to use traps against them, specifically [[Bl
 "8R-AWN","Bot","","","","","","","","",""
 "8R-AWN's Armor/EX","Part","A unique [[Armor]] being one of two unique armors belonging to the [[Exiles (Group)|Exile]] [[8R-AWN]]. While it has great coverage and integrity, its true unique point is its massive 90% explosive damage resistance which is the highest the game has to offer. This item is quite difficult to obtain since killing 8R-AWN will result in this part being destroyed or ending up with pretty low integrity. Even if obtained, explosive is a pretty niche damage type with only a few enemies that use [[Explosive Launchers]].","","","","","","","",""
 "8R-AWN's Armor/TH","Part","A unique [[Armor]] being one of two unique armors belonging to the [[Exiles (Group)|Exile]] [[8R-AWN]]. It has low integrity and high coverage which make it very fragile in combat. However, it makes up for it in its massive 90% thermal damage resistance which is the highest the game has to offer. While very useful in theory, in practice this part is basically impossible to obtain as it will always be destroyed when killing 8R-AWN.","","","","","","","",""
-"8R-AWN's Boregun","Part","A pair of these unique [[Kinetic Guns]] are carried by the [[Exiles (Group)|Exile]] [[8R-AWN]]. This gun deals mediocre damage for a kinetic gun and suffers from a -10% targeting penalty. However, it more than makes up for it with a 50% destroy [[Critical Hits|critical]], guaranteed 2x penetration, and +4 salvage on hit bonus. Basically, it is like a top tier [[Hypervelocity Guns|Hypervelocity Gun]] that outclasses the best standard [[0b10]] part [[Hyp. Railgun]]. Any bot that is not crit immune is likely to be either disarmed or core crit outright. ","","","","","","","",""
+"8R-AWN's Boregun","Part","A pair of these unique [[Kinetic Guns]] are carried by the [[Exiles (Group)|Exile]] [[8R-AWN]]. This gun deals mediocre damage for a kinetic gun and suffers from a -10% targeting penalty. However, it more than makes up for it with a 50% destroy [[Critical Hits|critical]], guaranteed 2x penetration, and +4 salvage on hit bonus. Basically, it is like a top tier [[Hypervelocity Kinetic Guns|hypervelocity kinetic gun]] that outclasses the best standard [[0b10]] part [[Hyp. Railgun]]. Any bot that is not crit immune is likely to be either disarmed or core crit outright. ","","","","","","","",""
 "99-TNT","Bot","","","","","","","","",""
 "99-TNT's Nukerbomber","Part","This unique [[Explosive Launchers|Explosive Launcher]] belongs to the [[Heroes of Zion|Zion Hero]] [[99-TNT]] and is among the most destructive launchers in the game with 4 projectiles dealing on average 76 damage each. While it's unlikely that all projectiles will hit every enemy due to its 20 degree arc, the potential damage per volley is staggering. It can be hard to use at times due to its high matter cost and arc causing it to miss into surrounding bots and terrain.
 [[Gallery:Full]]99-TNT's Nukerbomber.webp|The Nukerbomber in action[[/Gallery]]","","","","","","","",""
@@ -5969,7 +5969,7 @@ Grunts may appear in the following squads:
 "Gui. Plasma Cannon","Part","An unique [[Exiles Vault Prototypes|Exiles vault prototype]] that can be found on the [[Exiles (Location)|Exiles map]] [[Spoiler]]or in the [[Zion Deep Caves]][[/Spoiler]]. This [[Guided Weapons|guided]] [[Thermal Cannons|thermal cannon]] has 2 waypoints, making it perfect for sniping bots around the corner. It suffers from [[Weapon Breakdown|weapon breakdown]] and has a minimum of 50 shots before it breaks, after which it will have a 2.0% chance to break each time it is fired. It can be repaired with a [[Recalibrators|Recalibrator]], though breakdowns become more frequent over time.
 [[Image]]Gui. Plasma Cannon.webp|Gui. Plasma Cannon destroying a [[Sentry]] around a corner[[/Image]]","","","","","","","",""
 "Gui. Remote Datajack","Part","","","","","","","","",""
-"Guided Weapons","Part Group","Guided [[Weapons|weapons]] are unique in their ability to designate one or more waypoints (as indicated by the waypoints stat) that the weapon will travel along before hitting the target. This effect works great with some form of bot detection like [[Sensor Arrays]] to be able to aim at bots around corners without getting hit.
+"Guided Weapons","Part Group","Guided [[Weapons|weapons]] are unique in their ability to designate one or more waypoints (as indicated by the waypoints stat) that the weapon will travel along before hitting the target. This effect works great with some form of bot detection like [[Sensor Arrays]] to be able to aim at bots around corners without getting hit. Most guided weapons are [[Launchers|launchers]].
 [[Image]]Gui. Plasma Cannon.webp|A [[Gui. Plasma Cannon]] being used to destroy a [[Sentry]] around the corner[[/Image]]
 Guided weapons have several characteristics:
 [[List]]
@@ -6262,9 +6262,31 @@ Power/Storage
 "Hyp. Mass Driver","Part","","","","","","","","",""
 "Hyp. Multirail","Part","","","","","","","","",""
 "Hyp. Railgun","Part","","","","","","","","",""
-"Hypervelocity Cannons","Part Group","","","","","Hyp. Alpha Cannon,Hyp. Gauss Cannon,Hyp. Linear Accelerator,Hyp. Mass Driver","","","",""
-"Hypervelocity Guns","Part Group","","","","","Hyp. Coil Gun,Hyp. EM Gauss Rifle,Hyp. Gauss Rifle,Hyp. Multirail,Hyp. Railgun,Modified EM Gauss Rifle","","","",""
-"Hypervelocity Weapons","Part Supergroup","Compared to their base versions, hypervelocity (Hyp.) weapons generally do less damage in exchange for higher crit chance and penetration.
+"Hypervelocity Kinetic Cannons","Part Group","Type of [[Kinetic Weapons|kinetic]] [[Hypervelocity Weapons|hypervelocity]] cannon with low damage but very high destroy [[Critical Hits|critical hit]] chance.
+
+[[Heading]]List of Hypervelocity Kinetic Cannons[[/Heading]]
+[[PartGroupTable]]
+Hypervelocity Kinetic Cannons|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Matter|
+Shot/Heat|
+Shot/Recoil|
+Projectile/Count|
+Projectile/Damage|
+Projectile/Type|
+Projectile/Critical|
+Projectile/Penetration|
+Projectile/Salvage
+[[/PartGroupTable]]","","","","Hyp. Gauss Cannon,Hyp. Linear Accelerator,Hyp. Mass Driver","","","",""
+"Hypervelocity Kinetic Guns","Part Group","","","","","Hyp. Coil Gun,Hyp. Gauss Rifle,Hyp. Multirail,Hyp. Railgun","","","",""
+"Hypervelocity Weapons","Part Supergroup","A type of [[Weapons|weapon]], primarily [[Kinetic Weapons|kinetic weapons]], that have high penetration and destroy [[Critical Hit|critical hit]] chance at the tradeoff of low damage. This makes them very effective at instantly killing bots without any coring immunity or [[Core Shieldings]] but generally ineffective at killing immune bots like [[Behemoth|Behemoths]] and [[Heavy|Heavies]].
+
+[[SubpageSummary]]
 
 [[Heading]]List of Hypervelocity Weapons[[/Heading]]
 [[PartGroupTable]]
@@ -6286,7 +6308,7 @@ Projectile/Penetration|
 Projectile/Spectrum|
 Projectile/Disruption|
 Projectile/Salvage
-[[/PartGroupTable]]","","","","","Hypervelocity Cannons,Hypervelocity Guns","","",""
+[[/PartGroupTable]]","","","","Hyp. Alpha Cannon,EM Gauss Rifle,Modified EM Gauss Rifle","Hypervelocity Kinetic Cannons,Hypervelocity Kinetic Guns","","",""
 "I-25 Savior","Bot","","","","","","","","",""
 "I-36 Angel","Bot","","","","","","","","",""
 "I-47 Archangel","Bot","","","","","","","","",""
@@ -6773,7 +6795,7 @@ Effect/Effect
 "Kinetic Cannons","Part Group","[[Kinetic Weapons|Kinetic]] or ballistic cannons are a type of [[Weapons|weapon]] that cost [[Matter]] to fire and deal kinetic damage. Their damage output is high but so are their upkeep costs. Kinetic cannons require little [[Energy|energy]] to fire, but have high matter costs, and have somewhat high [[Heat|heat]] generation. This, combined with their large - salvage stat, can make it hard to sustain kinetic cannon-heavy builds. However, kinetic cannons do at least generate some matter when hitting a bot that makes it a bit easier to manage. The amount of matter blasted off the target per shot is between 0 and the - salvage stat, averaging absolute( - salvage / 2 ) matter generated. Kinetic cannons are most commonly found being wielded by [[Heavy|Heavies]].
 Builds that rely heavily on kinetic cannons should have matter storage through [[Matter Compressors]] available in inventory. Running out of matter to fire can be disastrous in combat. [[Tractor Beams]] can also be used to restock matter both inside and out of combat without having to move to each matter pile. [[Matter Filters]] can keep the matter cost down lower in the first place.
 Kinetic cannons suffer from [[Recoil|recoil]], providing a minor accuracy penalty to all other weapons in a single volley. This makes [[Treads|treads]] a natural pairing with cannons since they can significantly reduce or even negate recoil entirely. [[Recoil Stabilizers]] can have a similar effect on other [[Propulsion|propulsion]] types.
-Most kinetic cannons have the blast [[Critical Hits|critical]] type which deals damage to another random part on the target and blasts a part off of the target. This effect is good for getting the occasional part knocked off of targets that keeps the part intact instead of destroying it outright, although this doesn't happen frequently due to the low blast chance of most cannons. [[Hypervelocity Cannons]] instead have a very high destroy crit chance with with the tradeoff of dealing much less damage. This can let them kill weaker bots in a single hit while failing to do any significant damage against crit-immune bots like the [[Heavy]] or [[Core Shieldings|Core Shielding]]-wearing bots like [[Duelist|Duelists]].
+Most kinetic cannons have the blast [[Critical Hits|critical]] type which deals damage to another random part on the target and blasts a part off of the target. This effect is good for getting the occasional part knocked off of targets that keeps the part intact instead of destroying it outright, although this doesn't happen frequently due to the low blast chance of most cannons. [[Hypervelocity Kinetic Cannons]] instead have a very high destroy crit chance with with the tradeoff of dealing much less damage. This can let them kill weaker bots in a single hit while failing to do any significant damage against crit-immune bots like the [[Heavy]] or [[Core Shieldings|Core Shielding]]-wearing bots like [[Duelist|Duelists]].
 
 [[Heading]]List of Kinetic Cannons[[/Heading]]
 [[PartGroupTable]]
@@ -6800,7 +6822,7 @@ Effect/Description
 "Kinetic Drone","Bot","","","","","","","","",""
 "Kinetic Guns","Part Group","[[Kinetic Weapons|Kinetic]] or ballistic guns are a type of [[Weapons|weapon]] that cost [[Matter]] to fire and deal kinetic damage. While their damage output is middling, so too are their upkeep costs. Kinetic guns require negligible amounts of [[Energy|energy]] to fire, have low matter costs, and have low [[Heat|heat]] generation. This, combined with the ability to [[Gunsling|gunsling]], makes them easily and effectively stacked in large numbers. Gunslinging removes ones of the larger downsides of large weapon since it doesn't allow you to fire most of the volley into a useless spot where a bot is destroyed mid-volley, instead targeting another hostile.
 Most kinetic guns suffer from [[Recoil|recoil]], providing a minor accuracy penalty to all other weapons in a single volley. This makes [[Treads|treads]] a natural pairing with guns since they can significantly reduce or even negate recoil entirely. [[Recoil Stabilizers]] can have a similar effect on other [[Propulsion|propulsion]] types.
-Most kinetic guns have the destroy [[Critical Hits|critical]] type which allows destroying a part or bot in a single hit regardless of remaining integrity. The chance of these criticals is low for most guns, typically under 10%. [[Target Analyzers]] can increase this chance by significant amounts, especially with multi-projectile weapons like the [[Multirail]]. [[Hypervelocity Guns]] have much higher destroy critical chances with the tradeoff of dealing little actual damage. This can let them kill weaker bots in a single hit while failing to do any significant damage against crit-immune bots like the [[Heavy]] or [[Core Shieldings|Core Shielding]]-wearing bots like [[Duelist|Duelists]].
+Most kinetic guns have the destroy [[Critical Hits|critical]] type which allows destroying a part or bot in a single hit regardless of remaining integrity. The chance of these criticals is low for most guns, typically under 10%. [[Target Analyzers]] can increase this chance by significant amounts, especially with multi-projectile weapons like the [[Multirail]]. [[Hypervelocity Kinetic Guns|hypervelocity kinetic guns]] have much higher destroy critical chances with the tradeoff of dealing little actual damage. This can let them kill weaker bots in a single hit while failing to do any significant damage against crit-immune bots like the [[Heavy]] or [[Core Shieldings|Core Shielding]]-wearing bots like [[Duelist|Duelists]].
 Most mid and lategame guns have penetration which allows them to shoot through multiple tiles in a single projectile. Hypervelocity guns have an especially high amount of penetration. This is useful when shooting enemies through walls, an ability that [[Hunter|Hunters]] frequently use, or shooting through multiple enemies in a single tile corridor. Tile penetration can destroy wall or machine tiles that the pure damage wouldn't normally destroy. This can occasionally lead to issues like loss of terrain cover or undesired machine explosions. Destroyed terrain has a bad tendency to summon [[U-05 Engineer|Engineers]] to repair nearby destroyed walls, and it is easy to accidentally penetrate into those bots and trigger [[Reinforcement Squad|reinforcements]]. A [[Transmission Jammers|Transmission Jammer]] can be used to reduce the chance of this happening.
 
 [[Heading]]List of Kinetic Guns[[/Heading]]
@@ -13181,7 +13203,7 @@ Can be matter intensive: Prolonged fights may end up consuming your backup suppl
 
 [[Heading:2]]Late Factory Cannon Kiter[[/Heading]]
 [[FanartGallery]]builds/Late Factory Fly-rail.png|Fly-rail ([[Tri-rail Accelerator]])|builds/Late Factory Hyp. Cannon Sniper.png|Hyp. Cannon[[/FanartGallery]]
-[[Hypervelocity Cannons]] like the [[Hyp. Mass Driver]] have the advantage of being able to kill bots in a single core hit with their very high critical chance. However, they can be inconsistent thanks to having only a single low damage projectile that absolutely needs to roll the critical hit to kill. As such, they are also unhelpful against bots that are coring immune such as [[Heavy|Heavies]] and [[Behemoth|Behemoths]], although both of them are threatening for this build no matter what weapons you have. A step up from those is the [[Tri-rail Accelerator]]. This fantastic 2 slot cannon shoots 3 moderately high damage projectiles. It lacks one-shot potential like Hyp. cannons, though it more than makes up for it in its consistently high damage and good chance to hit core with multiple projectiles.
+[[Hypervelocity Kinetic Cannons]] like the [[Hyp. Mass Driver]] have the advantage of being able to kill bots in a single core hit with their very high critical chance. However, they can be inconsistent thanks to having only a single low damage projectile that absolutely needs to roll the critical hit to kill. As such, they are also unhelpful against bots that are coring immune such as [[Heavy|Heavies]] and [[Behemoth|Behemoths]], although both of them are threatening for this build no matter what weapons you have. A step up from those is the [[Tri-rail Accelerator]]. This fantastic 2 slot cannon shoots 3 moderately high damage projectiles. It lacks one-shot potential like Hyp. cannons, though it more than makes up for it in its consistently high damage and good chance to hit core with multiple projectiles.
 Most standard patrol bots, Programmers, and [[Sentry|Sentries]] should be easily taken out within a few hits at range, most reliably with the Tri-rail Accelerator. While you're in control of your positioning and with some kind map layouts, it's possible to avoid taking damage from most encounters. Even Sentires tucked deep inside rooms can often be taken out without retaliation with some careful engagement and digging. Visual Processing Units are key to maintaining your range advantage and get the first strike. A [[Triangulator]] is a niche alternative that has a slightly longer range at 24 tiles and can be swapped at will. However, the downside that you must be tracked before it works is a fairly significant issue for general use.
 
 [[Heading:2]]Access Cannon Kiter[[/Heading]]
@@ -13261,7 +13283,7 @@ The RIF NC hacks [[GameText]]drop_inventory[[/GameText]] and [[GameText]]formats
 
 [[Image]]Explosive Convoy Takedown.webp|Lrn. Missile Launcher + Nuclear Reactors taking out a Cargo Convoy[[/Image]]
 [[Heading:2]]Use Combat[[/Heading]]
-If you can't take the Freighter out by any other means but still crave their loot, you can always take the Hauler out with combat. This is much riskier thanks to the number of hostiles coming straight after you from the heavy ARCs. If you're going for this approach, I recommend [[Launchers]]. A [[Lrn. Missile Launcher]] can let you safely snipe bots from afar, while a [[Mni. Smartbomb Launcher]] lets you shoot bots around corners. It's also a good idea to use nearby explosive machines to help take out the assaults. The downside of using AOE attacks to clear out the convoy like this is that you will end up damaging the loot when the Freighter dies. If possible, try to separate the assaults from the Freighter first, take them out, and then kill the Freighter with some non-explosive weapon. A [[Hypervelocity Cannons|Hypervelocity Cannon]] is a good weapon for this task since it will take it out with a single core crit.
+If you can't take the Freighter out by any other means but still crave their loot, you can always take the Hauler out with combat. This is much riskier thanks to the number of hostiles coming straight after you from the heavy ARCs. If you're going for this approach, I recommend [[Launchers]]. A [[Lrn. Missile Launcher]] can let you safely snipe bots from afar, while a [[Mni. Smartbomb Launcher]] lets you shoot bots around corners. It's also a good idea to use nearby explosive machines to help take out the assaults. The downside of using AOE attacks to clear out the convoy like this is that you will end up damaging the loot when the Freighter dies. If possible, try to separate the assaults from the Freighter first, take them out, and then kill the Freighter with some non-explosive weapon. A [[Hypervelocity Kinetic Cannons|hypervelocity cannon]] is a good weapon for this task since it will take it out with a single core crit.
 Using allies is another combat-oriented approach to take down the convoy. This strategy is best executed with [[Spoiler]]RIF-supported ally builds with the Program Shield ability[[/Spoiler]] thanks to the high number of [[Programmer|Programmers]] that tend to come out of the heavy ARCs. Fully relying on allies to kill everything will probably require an overwhelming force. The guards coming out of the ARCs are quite powerful, and you will probably be losing bots to opposing Programmer hacks all the while. However, you don't need to have an army capable of destroying every single guard. You can always kill the Freighter and use your allies to keep the guards distracted long enough to grab your loot and run.
 
 [[Heading:2]]Identifying where to Ambush[[/Heading]]
@@ -13635,7 +13657,7 @@ The longer-ranged and lower upkeep requirements of kinetic weaponry tend to be a
 Two advantages of guns are that they are lighter than cannons and don't have high recoil, at least generally speaking. [[aoemica's Flight Guide/Builds#Gunstack|""Gunstack"" flight]] uses 4 or more kinetic guns, trading the tankiness of slower propulsion for unparalleled speed and repositioning capabilities of flight. Flight can also make good use of their penetration capabilities to kill hostiles through walls. A stack of guns can serve as the coverage for the build rather than using dedicated armor. However, in small numbers, kinetic guns are inefficient at any serious combat.
 
 [[Image]]../part_art/Hyp. Coil Gun.png|[[Hyp. Coil Gun]], a mid-tier hypervelocity gun[[/Image]]
-[[Heading:3]][[Hypervelocity Guns]][[/Heading]]
+[[Heading:3]][[Hypervelocity Kinetic Guns]][[/Heading]]
 Hypervelocity guns have very low damage, but make up for it in their low recoil, high range, critical destroy chance, and penetration. Their increased range and ability to destroy propulsion off of bots that would be chasing Cogmind back make them effective snipers.
 
 [[Heading:3]]Recoil[[/Heading]]
@@ -13644,7 +13666,7 @@ Some guns, like the [[Shotgun|Shotguns]], have abnormally high recoil that can r
 [[Heading:2]][[Kinetic Cannons]][[/Heading]]
 Cannons are much heavier, have higher recoil, and have higher upkeep requirements than guns. While at first this may make cannons appear to be a bad choice for flight, their great range of 22 makes them perfect for kiting nearly all bot types with a dedicated [[aoemica's Flight Guide/Builds#Cannon Kiter|cannon kiting]] builds. Stacking cannons is challenging, but flight can make great use out of a single 2 slot cannon like a [[Hvy. Mass Driver]] and a [[Weapon Cyclers|Weapon Cycler]]. A [[Weapon Mount]] helps up accuracy to make the most of your high sniping range as well as provide a bit of additional reasonably durable coverage thanks to the high integrity of cannons.
 
-[[Heading:3]][[Hypervelocity Cannons]][[/Heading]]
+[[Heading:3]][[Hypervelocity Kinetic Cannons]][[/Heading]]
 Hyp. Cannons like the [[Hyp. Gauss Cannon]] are very powerful due to their high critical hit chance taking out bots or their parts from full integrity. Destroying the propulsion of bots makes them even easier to kite.
 
 [[Image]]../part_art/Tri-rail Accelerator.png|Tri-rail Accelerator[[/Image]]
