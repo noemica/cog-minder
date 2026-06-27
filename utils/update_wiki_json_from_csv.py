@@ -69,6 +69,44 @@ def update_json_list_value(json_item, csv_obj, key_name):
         json_item[key_name] = val.split(',')
         return True
 
+
+def update_json_from_csv(csv_obj, json_item):
+    updated = False
+    if csv_obj['Page Type'] != 'Redirect':
+        content = unescape(csv_obj['Content'])
+
+        if json_item['Content'] != content:
+            updated = True
+            json_item['Content'] = content
+
+    updated |= update_json_value(json_item, csv_obj, 'Spoiler')
+
+    if csv_obj['Page Type'] == 'Bot Group':
+        updated |= update_json_list_value(json_item, csv_obj, 'Bots')
+
+    if csv_obj['Page Type'] == 'Bot Supergroup':
+        updated |= update_json_list_value(json_item, csv_obj, 'Bots')
+        updated |= update_json_list_value(json_item, csv_obj, 'Groups')
+        updated |= update_json_list_value(json_item, csv_obj, 'Supergroups')
+
+    if csv_obj['Page Type'] == 'Part Group':
+        updated |= update_json_list_value(json_item, csv_obj, 'Parts')
+        updated |= update_json_value(json_item, csv_obj, 'Part Category')
+
+    if csv_obj['Page Type'] == 'Part Supergroup':
+        updated |= update_json_list_value(json_item, csv_obj, 'Parts')
+        updated |= update_json_list_value(json_item, csv_obj, 'Groups')
+        updated |= update_json_list_value(json_item, csv_obj, 'Supergroups')
+
+    if csv_obj['Page Type'] == 'Other':
+        updated |= update_json_list_value(json_item, csv_obj, 'Subpages')
+
+    if csv_obj['Page Type'] == 'Redirect':
+        updated |= update_json_value(json_item, csv_obj, 'Target')
+
+    return updated
+
+
 # Update JSON from CSV
 for csv_obj in wiki_csv.values():
     if csv_obj['Page Type'] == 'Bot':
@@ -100,39 +138,7 @@ for csv_obj in wiki_csv.values():
     for json_item in json_list:
         if json_item['Name'] == csv_obj['Name']:
             # Found existing item, update values
-            updated = False
-            if csv_obj['Page Type'] != 'Redirect':
-                content = unescape(csv_obj['Content'])
-
-                if json_item['Content'] != content:
-                    updated = True
-                    json_item['Content'] = content
-
-            updated |= update_json_value(json_item, csv_obj, 'Spoiler')
-
-            if csv_obj['Page Type'] == 'Bot Group':
-                updated |= update_json_list_value(json_item, csv_obj, 'Bots')
-
-            if csv_obj['Page Type'] == 'Bot Supergroup':
-                updated |= update_json_list_value(json_item, csv_obj, 'Bots')
-                updated |= update_json_list_value(json_item, csv_obj, 'Groups')
-                updated |= update_json_list_value(json_item, csv_obj, 'Supergroups')
-
-            if csv_obj['Page Type'] == 'Part Group':
-                updated |= update_json_list_value(json_item, csv_obj, 'Parts')
-                updated |= update_json_value(json_item, csv_obj, 'Part Category')
-
-            if csv_obj['Page Type'] == 'Part Supergroup':
-                updated |= update_json_list_value(json_item, csv_obj, 'Parts')
-                updated |= update_json_list_value(json_item, csv_obj, 'Groups')
-                updated |= update_json_list_value(json_item, csv_obj, 'Supergroups')
-
-            if csv_obj['Page Type'] == 'Other':
-                updated |= update_json_list_value(json_item, csv_obj, 'Subpages')
-
-            if csv_obj['Page Type'] == 'Redirect':
-                updated |= update_json_value(json_item, csv_obj, 'Target')
-
+            updated = update_json_from_csv(csv_obj, json_item)
             if updated:
                 updated_pages.append(json_item['Name'])
 
