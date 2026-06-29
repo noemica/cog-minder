@@ -1,4 +1,4 @@
-import{c as x,r as k,j as n,L as V,F as N,B as v,G as U,w as de,H as Ce,I as Se,f as E,J as Te,y as O,T as L,K as ce,a as K,s as ke,M as xe,S as $,q as He,N as Ae,O as me,z as Ge,u as ge,P as Re,Q as Ie,U as ee,V as z,W as F,X as Ne,Y as te,Z as Pe,_ as De}from"./index-DrHHzJC0.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as ae,n as Q,b as _,o as ue,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-DEiY7vk5.js";import{S as je}from"./Table-CHnhs_I2.js";import{e as ze}from"./partColumnDefs-CdUn0WAQ.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as x,r as k,j as n,L as V,F as N,B as v,G as U,w as de,H as Ce,I as Se,f as E,J as Te,y as O,T as L,K as ce,a as K,s as ke,M as xe,S as $,q as He,N as Ae,O as me,z as Ge,u as ge,P as Re,Q as Ie,U as ee,V as z,W as F,X as Ne,Y as te,Z as Pe,_ as De}from"./index-BKhIdJhf.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as ae,n as Q,b as _,o as ue,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-CzAas3RB.js";import{S as je}from"./Table-D_JFuxLQ.js";import{e as ze}from"./partColumnDefs-DOhV4ORS.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -7959,7 +7959,109 @@ W8 [[Redacted]]"Fortifying 0b10": Choose the Surrender option after destroying M
 W9 [[Redacted]]"Defending 0bPrime": Align with [[UFD]] and [[Optimus]] in [[Scraptown]], install [[GameText]]Force(Fedlink)[[/GameText]] in [[Protoforge]], and help plant 10 [[UFD Drillbomb|UFD Drillbombs]].[[/Redacted]]
 
 [[Heading]]Ending animations[[/Heading]]
-See the following video: [[https://www.youtube.com/watch?v=XR2RoB6gKWA]]`},{Name:"YASD",Content:`"Yet Another Stupid Death (commonly abbreviated to YASD) is used when a player has done something, usually avoidable, that leads to their hero's demise." - [[https://nethackwiki.com/wiki/Yet_Another_Stupid_Death|NetHack Wiki]]
+See the following video: [[https://www.youtube.com/watch?v=XR2RoB6gKWA]]`},{Name:"X0-1V1 (Alignment)",Content:`
+Note: This page is a work in progress! As such, some information is incomplete and maybe even inaccurate!
+
+It is possible to permanently align with X0-1V1 by praying to them at the D.C.S.S Altar Unit in [[Materials#exits|-10/Materials]] near the entrance to [[Subcaves]]. This major [[Alignment|alignment]] is unique in a variety of ways, being the only one compatible with all other alignments, as well as the only alignment available on a main floor map, preventing it from ever being mutually exclusive with other alignment opportunities.
+
+To pray at the Altar Unit, a manual command of a related word is required. For example, "pray" and "worship" both work, as does "sacrifice", though the latter costs core integrity.
+[[Comment]]Not sure if it's max core integrity or just current, but i assume current. I also don't know if starting amusement differs based on the word input.[[/Comment]]
+
+After aligning, based on their current mood and amusement, X0-1V1 will also cause a variety of other effects throughout the remainder of the run, which can range from extremely disruptive to very mild. They will only stop causing effects when in "friendly" areas like [[Exiles (Location)]]. They will also provide X0-1V1's Piety Tracker after a few turns whenever Cogmind does not have it, which can be used to know X0-1V1's current mood and amusement.
+
+[[Heading]]Moods[[/Heading]]
+[[List]]
+FAVORITE TOY OF X0-1V1
+|BELOVED TOY OF X0-1V1
+|TOY OF X0-1V1
+|X0-1V1's TEDDY BEAR
+|SPECIAL PLAYTHING
+|VERY SPECIAL PLAYTHING
+|A BORING THING (0 amusement) - Effects occur with extreme frequency until X0-1V1 is amused[[/List]]
+
+[[Heading]]Amusement[[/Heading]]
+
+[[Heading:3]]Amusement loss[[/Heading]]
+X0-1V1's amusement decreases with time, especially while X0-1V1's Piety Tracker isn't attached and active. It also lowers significantly when going to and from [[Branch|Branches]].
+
+[[Heading:3]]Amusement gain[[/Heading]]
+X0-1V1's amusement may increase for a great variety of reasons, which can be mostly categorized as either "Cogmind is unlucky" or "chaos breaks out". Some sources include:
+[[List]]
+X0-1V1's Piety Tracker gets destroyed while attached.
+|Triggering unknown [[Traps]].
+|Attacking a robot with [[Electromagnetic Weapons|EM weaponry]] that then cause a [[Spectrum|chain reaction]] in the target's [[Power|power source]] that then hits Cogmind back.
+|Breaking a part by trying to repair it at a Repair Station.
+
+|A chaotic-type event begins ([[Assembled]] infestation, [[Scraptown#civil_war|Scraptown civil war]], ect)
+|Successfully [[Terminal#forcesabotage|sabotaging]] at a terminal.
+|Destroying a [[Phase Generator]] in a [[Garrison]].
+|Destroying a [[Network Hub|Network Hub in Hub_04(d)]].
+
+
+
+[[/List]]
+
+
+[[Heading]]"Good" acts[[/Heading]]
+These effects will be written in green text in the log, and counted under "good acts" in scoresheets, although for some, whether can be considered "good" may depend heavily on context.
+
+[[Heading:2]]Permanent buffs[[/Heading]]
+These very powerful good acts give a permanent effect that will last for the remainder of the run. Only a maximum of three will ever occur during a run, usually near the start. All three buffs will be different, and may or may not incur a cost to Cogmind's maximum core integrity, a cost which depends on the strength of the buff.
+The buffs may be selected from the following (Note: This page is a work in progress, and the upper and lower ranges on buffs may not necessarily be correct):
+
+
+[[Table]]
+Buff type|Range (X)|Increments|Max core integrity cost||
+Maximum core integrity|+200-400|50|N/A||
+Energy capacity|+200-600|100|X/2||
+Matter capacity|+200-500|100|X/2||
+Heat dissipation|+15-30|5|X*5||
+Energy generation|+10-20|5|X*10||
+Inventory capacity|+1-2|1|X*100||
+Ranged accuracy|+5%-8%|1|X*10||
+Melee accuracy|+5%-9%|1|X*10||
+Sight range|+1|N/A?|150||
+Mass support|+6-15|1?|140 + (10*X)||
+Damage type resistance|+10-15%|5|X*10?||
+Random slot type|+1|N/A|???[[/Table]]
+Note that the cost to maximum core integrity is optional only in the sense that it whether it is applied is dependent entirely on X0-1V1 (and likely also dependent on Cogmind's remaining maximum core integrity).
+
+[[Heading:2]]Temporary buffs[[/Heading]]
+[[List]]
+XOMVISION - 18 range unjammable ability to sense active robots, even if they have the Scan Cloak trait.
+|[[GameText]]X0-1V1 causes your matter storage to temporarily balloon in size.[[/GameText]] - Temporary +500-700 matter storage.
+[[/List]]
+
+[[Heading:2]]Other "good" acts[[/Heading]]
+[[List]]
+[[GameText]]"See, it buffs right out!"[[/GameText]] - Partial core integrity restoration
+|[[GameText]]"Fire in the hole!"[[/GameText]] - A large powerful explosion suddenly occurs centered on a visible hostile. May damage Cogmind.
+|[[GameText]]X0-1V1 imagines sitting ducks.[[/GameText]] - One or more hostiles receive a huge time delay before they can perform their next action.
+|[[GameText]]The cosmic winds blow in a new direction.[[/GameText]] - Several uncontrollable purple allies are teleported in nearby.
+|[[GameText]]"I find this area lacking in decorations."[[/GameText]] - A hostile permanently turns off, turning into a statue.
+|[[GameText]]"A floating RIF installer appears for a brief moment."[[/GameText]] - Gives an additional [[RIF]] ability. Only possible if RIF is already installed.
+[[/List]]
+
+[[Heading]]"Bad" acts[[/Heading]]
+These effects will be written in red text in the log, and counted under "bad acts" in scoresheets, although some of them may actually be beneficial in some contexts. Some bad effects are similar to the effects of [[Corruption]].
+
+[[Heading:2]]Temporary debuffs[[/Heading]]
+[[List]]
+[[GameText]]"I know that drunk sailor look when I see it."[[/GameText]] - Temporary guaranteed misdirection on move.
+|[[GameText]]"So many nails, never enough hammers..."[[/GameText]] - Temporary lower ranged accuracy
+[[/List]]
+
+[[Heading:2]]Other "bad" acts[[/Heading]]
+[[List]]
+[[GameText]]"Use it or lose it, i always say."[[/GameText]] - one or more parts are fused to Cogmind.
+|[[GameText]]"How much energy does one bot need, really?"[[/GameText]] - Energy drain.
+|[[GameText]]Vines of energy appear to reach out from the ground.[[/GameText]] - A hostile is suddenly caught in a [[Stasis Trap]], giving them 25% damage resistance.
+|[[GameText]]Leanred that one from the Sigix.[[/GameText]]
+|Additional threat records (minor) - ~140-~154 extra influence
+|Additional threat records (considerable) ~180-~212 extra influence
+|Additional threat records (major) - ~256-~300 extra influence
+[[/List]]
+`},{Name:"YASD",Content:`"Yet Another Stupid Death (commonly abbreviated to YASD) is used when a player has done something, usually avoidable, that leads to their hero's demise." - [[https://nethackwiki.com/wiki/Yet_Another_Stupid_Death|NetHack Wiki]]
 
 Cogmind is full of silly ways to die. Here are just a few. A lot of them are harsh teachers of lessons best learned the hard way.
 
@@ -10894,7 +10996,7 @@ Projectile/Type|
 Projectile/Critical|
 Projectile/Penetration|
 Projectile/Salvage
-[[/PartGroupTable]]`},{Name:"Hypervelocity Kinetic Guns",Content:""},{Name:"IFF Parsers",Parts:["IFF Parser","Lrn. IFF Parser"],Content:`[[Heading]]List of IFF Parsers[[/Heading]]
+[[/PartGroupTable]]`,Parts:["Hyp. Gauss Cannon","Hyp. Linear Accelerator","Hyp. Mass Driver"]},{Name:"Hypervelocity Kinetic Guns",Content:"",Parts:["Hyp. Coil Gun","Hyp. Gauss Rifle","Hyp. Multirail","Hyp. Railgun"]},{Name:"IFF Parsers",Parts:["IFF Parser","Lrn. IFF Parser"],Content:`[[Heading]]List of IFF Parsers[[/Heading]]
 [[PartGroupTable]]
 IFF Parsers|
 Overview/Size|
