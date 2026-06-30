@@ -154,10 +154,11 @@ for csv_obj in wiki_csv.values():
         continue
 
     updated_pages.append(csv_obj['Name'])
-    if csv_obj['Page Type'] == 'Redirect':
-        json_list.append({'Name': csv_obj['Name']})
-    else:
-        json_list.append({'Name': csv_obj['Name'], 'Content': csv_obj['Content']})
+
+    json_item = {'Name': csv_obj['Name']}
+    update_json_from_csv(csv_obj, json_item)
+
+    json_list.append(json_item)
 
 # Sort all lists
 lists = [wiki_json['Bots'], wiki_json['Bot Groups'], wiki_json['Bot Supergroups'],
