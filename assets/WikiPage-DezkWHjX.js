@@ -1,4 +1,4 @@
-import{c as x,r as k,j as n,L as V,F as N,B as v,G as U,w as de,H as Ce,I as Se,f as E,J as Te,y as O,T as L,K as ce,a as K,s as ke,M as xe,S as $,q as He,N as Ae,O as me,z as Ge,u as ge,P as Re,Q as Ie,U as ee,V as z,W as F,X as Ne,Y as te,Z as Pe,_ as De}from"./index-BPgNZbP6.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as ae,n as X,b as _,o as ue,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-BbJl2nVD.js";import{S as je}from"./Table-iX6-uh_e.js";import{e as ze}from"./partColumnDefs-4eGiozFO.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as x,r as k,j as n,L as V,F as N,B as v,G as U,w as de,H as Ce,I as Se,f as E,J as Te,y as O,T as L,K as ce,a as K,s as ke,M as xe,S as $,q as He,N as Ae,O as me,z as Ge,u as ge,P as Re,Q as Ie,U as ee,V as z,W as F,X as Ne,Y as te,Z as Pe,_ as De}from"./index-5lPzEE5F.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as ae,n as X,b as _,o as ue,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-B4Rb8OTh.js";import{S as je}from"./Table-BYiGmPy6.js";import{e as ze}from"./partColumnDefs-YXGeC1aB.js";/* empty css              */import"./items-CZPqWis-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -8021,7 +8021,7 @@ While bored, Xom will eventually entertain themselves even if there is no other 
 
 [[Heading:2]]Entertainment Decreases[[/Heading]]
 Typical entertainment decreases are due to time or exploration. Roughly every 40 non-move actions or 20 moves, whichever comes first, Xom's entertainment value will drop by 1. Both timers will reset after either of them is triggered. If the Piety Tracker is attached, there is only a 50% chance the value will drop instead. Entertainment also drops dramatically when exiting to a [[Branch]]. [[Comment]]Need to determine actual %s here[[/Comment]]
-
+[[Comment]]Well, it seems to drop by an average of 50%, but i would guess it's also somewhat dependent on mood?[[/Comment]]
 
 [[Heading:2]]Entertainment Increases[[/Heading]]
 X0-1V1's amusement may increase for a great variety of reasons, which can be mostly categorized as either "Cogmind is unlucky" or "chaos breaks out". Some sources include:[[Comment]]Would like to add values to this at some point[[/Comment]]
@@ -8037,7 +8037,7 @@ X0-1V1's Piety Tracker gets destroyed while attached.
 |Destroying a [[Network Hub|Network Hub in Hub_04(d)]].
 |Being on a floor when [[Sterilization]] is announced.
 |Interrupting a [[Cargo Convoy]]. [[Comment]]This and sterilization either set amusement to maximum or just add a whole lot, also i don't know how xom feels about dsf steri.[[/Comment]]
-
+|
 
 
 [[/List]]
@@ -8053,7 +8053,7 @@ X0-1V1 is a very direct reference to the [[https://crawl.develz.org/|Dungeon Cra
 
 
 [[Heading]]"Good" acts[[/Heading]]
-These effects will be written in green text in the log, and counted under "good acts" in scoresheets, although for some, whether can be considered "good" may depend heavily on context.
+These effects will be written in green text in the log, and counted under "good acts" in scoresheets, although for some, whether they can be considered "good" may depend heavily on context.
 
 [[Heading:2]]Permanent buffs[[/Heading]]
 These very powerful good acts give a permanent effect that will last for the remainder of the run. Only a maximum of three will ever occur during a run, usually near the start. All three buffs will be different, and may or may not incur a cost to Cogmind's maximum core integrity, a cost which depends on the magnitude of the buff. This magnitude is a scaling number based on Xom's current mood value. They are most powerful at the maximum 200 value and least powerful at the minimum 0 value.
@@ -8073,7 +8073,7 @@ Melee accuracy|+5%-10%|1|X*10||
 Sight range|+1|N/A?|150||
 Mass support|+6-15|1?|140 + (10*X)||
 Damage type resistance
-(EM, EX, KI, or TH)|+10-20%|5|X*10||
+(KI, TH, EX or EM)|+10-20%|5|X*10||
 Random slot type|+1|N/A|N/A[[/Table]]
 Note that the cost to maximum core integrity is optional only in the sense that it whether it is applied is dependent entirely on X0-1V1 (and likely also dependent on Cogmind's remaining maximum core integrity).
 
@@ -8087,26 +8087,27 @@ Note that the cost to maximum core integrity is optional only in the sense that 
 [[/List]]
 
 [[Heading:2]]Other "good" acts[[/Heading]]
-[[List]]
-[[GameText]]"See, it buffs right out!"[[/GameText]] - Partial core integrity restoration
-|[[GameText]]"Fire in the hole!"[[/GameText]] - A large powerful explosion suddenly occurs centered on a visible hostile. May damage Cogmind.
-|[[GameText]]X0-1V1 imagines sitting ducks.[[/GameText]] - One or more hostiles receive a huge time delay before they can perform their next action.
-|[[GameText]]The cosmic winds blow in a new direction.[[/GameText]] - Several uncontrollable purple allies are teleported in nearby.
-|[[GameText]]"I find this area lacking in decorations."[[/GameText]] - A hostile permanently turns off, turning into a statue.
-|[[GameText]]"A floating RIF installer appears for a brief moment."[[/GameText]] - Gives an additional [[RIF]] ability. Only possible if RIF is already installed.
-|[[GameText]]"Have you ever seen what subatomizers do to 0b10?"[[/GameText]] - X0-1V1 opens a [[SUBCON Basin]] at [[Cogmind]]'s location.
-|[[GameText]]"I guarantee there's even more fun over that way."[[/GameText]] - X0-1V1 reveals an exit.
-|[[GameText]]X0-1V1 smiles upon you.[[/GameText]] - Gives an item.
-|[[GameText]]"I found some blueprints, how convenient!"[[/GameText]] - X0-1V1 reveals nearby emergency access doors.
-|[[GameText]]"Oops."[[/GameText]] - X0-1V1 remotely destroys a Phase Generator in a Garrison.
-|[[GameText]]X0-1V1 lends a hand with your twisted circuits.[[/GameText]] - [[Corruption]] set to 0.
-|[[GameText]]X0-1V1 points here and there.[[/GameText]] - X0-1V1 reveals nearby item locations.
-|[[GameText]]X0-1V1 sends the all clear message.[[/GameText]] - X0-1V1 recalls a [[Squad|squad]].
-|[[GameText]]"One less obstacle for my toy on its journey to the highest levels of glorious entertainment."[[/GameText]] - X0-1V1 destroys a nearby hostile.
-|[[GameText]]"I sense action potential over that way.[[/GameText]] - X0-1V1 reveals a [[Garrison Access]].
-|[[GameText]]"You need a change of scenery."[[/GameText]] - X0-1V1 teleports Cogmind out of danger.
-|[[GameText]]"Just some junk I've been collecting."[[/GameText]] - X0-1V1 teleports Cogmind to a vault filled with out-of-depth and possibly unique items.
-[[/List]]
+[[Table]]Log message|Effect|Restrictions (if any)||
+[[GameText]]"See, it buffs right out!"[[/GameText]]|Partial core integrity restoration|Must have enough missing core integrity||
+[[GameText]]"Fire in the hole!"[[/GameText]]|A large powerful explosion suddenly occurs centered on a visible hostile. May damage Cogmind.|Multiple hostiles in range of explosion?||
+[[GameText]]X0-1V1 imagines sitting ducks.[[/GameText]]|One or more hostiles receive a huge time delay before they can perform their next action.||
+[[GameText]]The cosmic winds blow in a new direction.[[/GameText]]|Several uncontrollable purple allies are teleported in nearby.||
+[[GameText]]"I find this area lacking in decorations."[[/GameText]]|A hostile permanently turns off, turning into a statue.||
+[[GameText]]"A floating RIF installer appears for a brief moment."[[/GameText]]|Gives an additional [[RIF]] ability.|Only possible if RIF is already installed.||
+[[GameText]]"Have you ever seen what subatomizers do to 0b10?"[[/GameText]]|X0-1V1 opens a [[SUBCON Basin]] at [[Cogmind]]'s location.||
+[[GameText]]"I guarantee there's even more fun over that way."[[/GameText]]|X0-1V1 reveals and identifies the nearest unknown exit (ties split at random?).||
+[[GameText]]X0-1V1 smiles upon you.[[/GameText]]|Gives one or more items, discarding inventory items onto the ground to make space if necessary. Given and discarded items may receive tags. This effect can grant some [[Protomatter]], which cannot otherwise be obtained outside of the RPGLIKE and Polymind special modes.||
+[[GameText]]"I found some blueprints, how convenient!"[[/GameText]]|X0-1V1 reveals nearby emergency access doors.||
+[[GameText]]"Oops."[[/GameText]]|X0-1V1 remotely destroys a Phase Generator in a Garrison.||
+[[GameText]]X0-1V1 lends a hand with your twisted circuits.[[/GameText]]|[[Corruption]] set to 0.||
+[[GameText]]X0-1V1 points here and there.[[/GameText]]|X0-1V1 reveals nearby item locations.||
+[[GameText]]X0-1V1 sends the all clear message.[[/GameText]]|X0-1V1 recalls a [[Squad|squad]].||
+[[GameText]]"One less obstacle for my toy on its journey to the highest levels of glorious entertainment."[[/GameText]]|X0-1V1 destroys a nearby hostile.||
+[[GameText]]"I sense action potential over that way.[[/GameText]]|X0-1V1 reveals a [[Garrison Access]].||
+[[GameText]]"You need a change of scenery."[[/GameText]]|X0-1V1 teleports Cogmind out of danger.|Cogmind cannot be in good shape||
+[[GameText]]"Just some junk I've been collecting."[[/GameText]]|X0-1V1 teleports Cogmind to a "vault" filled with out-of-depth and possibly unique items.||
+
+[[/Table]]
 
 [[Heading]]"Bad" acts[[/Heading]]
 These effects will be written in red text in the log, and counted under "bad acts" in scoresheets, although some of them may actually be beneficial in some contexts. Some bad effects are similar to the effects of [[Corruption]].
@@ -8120,21 +8121,25 @@ These effects will be written in red text in the log, and counted under "bad act
 [[/List]]
 
 [[Heading:2]]Other "bad" acts[[/Heading]]
-[[List]]
-[[GameText]]"Use it or lose it, i always say."[[/GameText]] - one or more parts are fused to Cogmind.
-|[[GameText]]"How much energy does one bot need, really?"[[/GameText]] - Energy drain.
-|[[GameText]]Vines of energy appear to reach out from the ground.[[/GameText]] - A hostile is suddenly caught in a [[Stasis Trap]], giving them 25% damage resistance.
-|[[GameText]]Learned that one from the Sigix.[[/GameText]] - Nearby terrain is vaporized.
-|[[GameText]]"Don't be shy now."[[/GameText]] - [[Cogmind]] emits an [[Corruption|IFF burst signal]].
-|[[GameText]]X0-1V1 brushes you with a corrupting influence.[[/GameText]] - A random amount of Corruption is added to Cogmind.
-|[[GameText]]"And it's a trip and a fumble!"[[/GameText]] - A random piece of propulsion is rejected.
-|[[GameText]]X0-1V1 thinks 0b10 needs to up its game.[[/GameText]] - 0b10 dispatches a "surplus targeted" [[Investigation Squad|Investigation]], [[Assault Squad|Assault]], or [[Extermination Squad|Extermination]] squad. [[Comment]]this can maybe dispatch more squad types[[/Comment]]
-|[[GameText]]X0-1V1 uses Touch of Redecoration![[/GameText]] - X0-1V1 destroys a terminal. [[Comment]]this probably has more effects than just the one i listed[[/Comment]
-|[[GameText]]"ALERT: Introduced new transport parking protocols."[[/GameText]] - X0-1V1 redirects all haulers on the map to a single location.
-|Additional threat records (minor) - ~140-~154 extra influence
-|Additional threat records (considerable) ~180-~212 extra influence
-|Additional threat records (major) - ~256-~300 extra influence
-[[/List]]`,Spoiler:"Spoiler"},{Name:"YASD",Content:`"Yet Another Stupid Death (commonly abbreviated to YASD) is used when a player has done something, usually avoidable, that leads to their hero's demise." - [[https://nethackwiki.com/wiki/Yet_Another_Stupid_Death|NetHack Wiki]]
+[[Table]]Log message|Effect|Restrictions (if any)||
+[[GameText]]"Use it or lose it, i always say."[[/GameText]]|one or more parts are fused to Cogmind.||
+[[GameText]]"How much energy does one bot need, really?"[[/GameText]]|Energy drain.||
+[[GameText]]Vines of energy appear to reach out from the ground.[[/GameText]]|A hostile is suddenly caught in a [[Stasis Trap]], giving them 25% damage resistance.||
+[[GameText]]Learned that one from the Sigix.[[/GameText]]|Nearby terrain is vaporized in a random radius (15-24) centered on Cogmind.|Does not occur in Subcaves||
+[[GameText]]"Don't be shy now."[[/GameText]]|[[Cogmind]] emits an [[Corruption|IFF burst signal]].||
+[[GameText]]X0-1V1 brushes you with a corrupting influence.[[/GameText]]|A random amount of Corruption is added to Cogmind.||
+[[GameText]]"And it's a trip and a fumble!"[[/GameText]]|One or more attached parts are rejected.||
+[[GameText]]X0-1V1 thinks 0b10 needs to up its game.[[/GameText]]|0b10 dispatches a "surplus targeted" [[Investigation Squad|Investigation]], [[Assault Squad|Assault]], or [[Extermination Squad|Extermination]] squad. [[Comment]]this can maybe dispatch more squad types[[/Comment]]||
+[[GameText]]X0-1V1 uses Touch of Redecoration![[/GameText]]|X0-1V1 destroys a terminal.[[Comment]]this probably has more effects than just the one i listed[[/Comment]]||
+[[GameText]]"ALERT: Introduced new transport parking protocols."[[/GameText]]|X0-1V1 redirects all haulers on the map to a single location.||
+[[GameText]]"X0-1V1 taps a no entrance sign"[[/GameText]]|Removes an exit from the map|Another exit leading to the same map must exist?||
+Additional threat records (minor)|~140-~154 extra influence||
+Additional threat records (considerable)|~180-~212 extra influence||
+Additional threat records (major)|~256-~300 extra influence||
+[[GameText]]"X0-1V1 taps a no entrance sign"[[/GameText]]|Removes an exit from the map|Another exit leading to the same map must exist?||
+"Evolution hits right when you least expect it."|Mutates one slot into a slot of another type.|Cannot change base slot configuration by more than +1/-1. In other words, if a propulsion slot is mutated away, another will not be mutated away until at least one propulsion slot was mutated back in. For example, if, without X0-1V1's interference, you have 5 utility slots, no matter how many mutations occur, you will always have between 4 and 6 utility slots.||
+
+[[/Table]]`,Spoiler:"Spoiler"},{Name:"YASD",Content:`"Yet Another Stupid Death (commonly abbreviated to YASD) is used when a player has done something, usually avoidable, that leads to their hero's demise." - [[https://nethackwiki.com/wiki/Yet_Another_Stupid_Death|NetHack Wiki]]
 
 Cogmind is full of silly ways to die. Here are just a few. A lot of them are harsh teachers of lessons best learned the hard way.
 
