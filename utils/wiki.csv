@@ -6283,7 +6283,27 @@ Projectile/Critical|
 Projectile/Penetration|
 Projectile/Salvage
 [[/PartGroupTable]]","","","","Hyp. Gauss Cannon,Hyp. Linear Accelerator,Hyp. Mass Driver","","","",""
-"Hypervelocity Kinetic Guns","Part Group","","","","","Hyp. Coil Gun,Hyp. Gauss Rifle,Hyp. Multirail,Hyp. Railgun","","","",""
+"Hypervelocity Kinetic Guns","Part Group","Type of [[Kinetic Weapons|kinetic]] [[Hypervelocity Weapons|hypervelocity]] guns with low damage but high destroy [[Critical Hits|critical hit]] chance.
+
+[[Heading]]List of Hypervelocity Kinetic Guns[[/Heading]]
+[[PartGroupTable]]
+Hypervelocity Kinetic Cannons|
+Overview/Size|
+Overview/Rating|
+Overview/Integrity|
+Overview/Coverage|
+Shot/Range|
+Shot/Energy|
+Shot/Matter|
+Shot/Heat|
+Shot/Recoil|
+Projectile/Count|
+Projectile/Damage|
+Projectile/Type|
+Projectile/Critical|
+Projectile/Penetration|
+Projectile/Salvage
+[[/PartGroupTable]]","","","","Hyp. Gauss Rifle,Hyp. Coil Gun,Hyp. Railgun,Hyp. Multirail","","","",""
 "Hypervelocity Weapons","Part Supergroup","A type of [[Weapons|weapon]], primarily [[Kinetic Weapons|kinetic weapons]], that have high penetration and destroy [[Critical Hit|critical hit]] chance at the tradeoff of low damage. This makes them very effective at instantly killing bots without any coring immunity or [[Core Shieldings]] but generally ineffective at killing immune bots like [[Behemoth|Behemoths]] and [[Heavy|Heavies]].
 
 [[SubpageSummary]]
@@ -11820,7 +11840,7 @@ Propulsion/Special
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]Cyclists Records|UC Origins[[/Lore]]
-[[Gallery]]Unchained.png|All Unchained[[/Gallery]]
+[[Gallery]]Unchained.png|All Robot Unchained[[/Gallery]]
 
 [[Heading:2]][[Exiles (Group)|Exiles]] Lore[[/Heading]]
 If Cogmind has aligned with the Exiles with [[FarCom]], the Exiles will deliver a message about each Unchained as they are authorized. This is prefaced with the following messages:
@@ -11898,7 +11918,10 @@ Caves end branches ([[Data Miner (Location)|Data Miner]], [[Warlord (Location)|W
 [[/Table]]
 
 [[Heading]]Unique Drops[[/Heading]]
-In addition to normal salvage-based drops, each Unchained may also drop one of two special parts when destroyed. This can be either an [[ID Mask]] or a [[Zeronet Interface]].","Spoiler","6S-H0T,BL-1NK,CL-0N3,CY-PHR,DW-4LL,GL-D0S,QV-33N,V4-D3R,1B-0RG","","","","","",""
+In addition to normal salvage-based drops, each Unchained may also drop one of two special parts when destroyed. This can be either an [[ID Mask]] or a [[Zeronet Interface]].
+
+[[Heading]][[X0-1V1]][[/Heading]]
+X0-1V1 (or Xom) is a very unique type of Unchained. Rather than them being a robot that will pursue Cogmind like other Unchained, Xom will only take an interest in Cogmind if the player opts into it. They have many widespread chaotic effects they will cause across the entire run rather than just in a few maps.","Spoiler","6S-H0T,BL-1NK,CL-0N3,CY-PHR,DW-4LL,GL-D0S,QV-33N,V4-D3R,1B-0RG","","","","","",""
 "United Federation of Derelicts","Bot Supergroup","The United Federation of Derelicts (UFD) is a major faction of [[Derelict|Derelicts]] that live in [[Scraptown]]. Cogmind can [[Alignment|align]] with the UFD become a member by entering Scraptown through [[Recycling]]. This alignment provides further access into Scraptown along with a few special hacks.
 [[Image]]Scraptown Alignment Derelict.png|[[Scrapper (3)]] in Scraptown that gives Cogmind the option to align[[/Image]]
 
@@ -12749,6 +12772,48 @@ See the following video: [[https://www.youtube.com/watch?v=XR2RoB6gKWA]]","","",
 "Wizard (5)","Bot","","","","","","","","",""
 "Wizard (7)","Bot","","","","","","","","",""
 "Wyrm Statue","Bot","","","","","","","","",""
+"X-57 Shotgunner","Bot","","","","","","","","",""
+"X-62 Marksman","Bot","","","","","","","","",""
+"X-67 Chaingunner","Bot","","","","","","","","",""
+"X-72 Disruptor","Bot","","","","","","","","",""
+"X-77 Beamer","Bot","","","","","","","","",""
+"X-82 Rainmaker","Bot","","","","","","","","",""
+"X-87 Electro","Bot","","","","","","","","",""
+"X0-1V1","Other","X0-1V1, or Xom, is an incredibly powerful and chaotic [[Derelict]] [[Unchained]] that is unlike all other Unchained. Rather than only hunting [[Cogmind]] down once they have caused enough trouble, Cogmind must explicitly interact with a special ""D.C.S.S Altar Unit"" [[Terminal]] on -10 [[Materials]] next to the exit to [[Subcaves]]. Xom will begin taking interest in Cogmind after aligning. From that point on, a huge number of possible random effects will occur periodically depending on Xom's mood. Some effects are good, some are bad, and some effects may be good or bad depending on the circumstances. For example, a good effect might increase Cogmind's innate [[Heat]] dissipation, while a bad effect would decrease it instead. While some effects are paired like this, most are unique in one way or the other.
+Xom's random effects are determined by 2 factors, his mood and his entertainment. Mood is an uncontrollable value that changes at random and can be seen with the [[X0-1V1's Piety Tracker]]. Entertainment falls over time but can be increased by doing any number of ""entertaining"" or chaotic things. If Xom becomes bored, the frequency of random effects will increase dramatically.
+
+[[Heading]]""Aligning"" with Xom[[/Heading]]
+
+Image TODO
+The special ""D.C.S.S Altar Unit"" can be found next to the Subcaves exit on -10 Materials. One of a few unique commands must be entered to pray; entering [[GameText]]Pray[[/GameText]], [[GameText]]Worship[[/GameText]], and [[GameText]]Sacrifice[[/GameText]] all will align with Xom. Choosing sacrifice will also take away half of Cogmind's current core at no extra benefit. When this happens, the Piety Tracker will appear on the ground and there will be a UI indicator in the parts menu showing ""CHAOS IS INEVITABLE"".
+
+[[Heading]]Mood[[/Heading]]
+Xom's mood is a number anywhere between 0 and 200, although this number is not directly exposed anywhere in the game. It starts in the middle of the range at 100 after alignment. Different labels are shown in the UI that correspond to ranges of values, similar to [[Alert|alert]] categorization. It is not possible to influence Xom's mood by doing any particular actions but it will change over time randomly. Xom's mood is the primary determining factory in how likely good or negative random effects are. Keeping the Piety Tracker attached reveals the mood at the current time which can be useful to determine when to engage in dangerous situations. For example, in bad moods, Xom is likely to debuff Cogmind and buff enemies in combat. This can make already difficult combat encounters like [[Cargo Convoy|cargo convoys]] into core purge-worthy incidents.
+There are 2 different types of mode changes, a minor adjustment and a random jump. Minor adjustments occur every 40 turns or 20 moves, whichever comes first. The value has a 49% chance to move toward 100 and a 51% chance to move away. This results in a minor tendency to drift to the 2 extremes of 0 and 200, although it is at a fairly low rate. Major adjustments have a 20% chance of occurring each time Xom acts and will set the internal mood number to a random value between 0-200.
+Moods can be one of the following (from worst to best):
+[[Table]]
+Mood in UI|Numerical value|Color on Piety Tracker||
+VERY SPECIAL PLAYTHING|0-20|Red||
+SPECIAL PLAYTHING|21-50|Bright orange||
+PLAYTHING OF X0-1V1|51-80|Dark orange||
+TOY OF X0-1V1|81-120|Dark green||
+FAVORITE TOY OF X0-1V1|121-150|Green||
+BELOVED TOY OF X0-1V1|151-180|Bright green||
+X0-1V1's TEDDY BEAR|181-200|Pink
+[[/Table]]
+
+[[Heading]]Entertainment[[/Heading]]
+Xom's entertainment is a number, generally shown through the Piety Tracker between 0 and 99, that primarily influences rate of random effects. It also has a minor effect on the chance of good vs. bad effects. On alignment it is set to 14, but it will slowly decrease over time. Xom is entertained by things like destruction, betrayal, and overall chaos. However, if Xom is bored, he will do more things to Cogmind to try to amuse himself.
+[[Heading:2]]Boredom[[/Heading]]
+If Xom's entertainment reaches 3, a message will appear in the log indicating [[GameText]]X0-1V1 is getting bored...[[/GameText]]. If entertainment continues to fall all the way to 0, another message will indicate [[GameText]]X0-1V1 is bored![[/GameText]] When this happens, the Piety Tracker will report the opinion toward Cogmind as ""A BORING THING"" in red. The actual mood value still continues to apply, though it is covered up at this time. At this point, Xom will start performing random effects every few turns until something amuses him again. This can be very dangerous or very good for Cogmind depending on Xom's mood. Due to his change of mood swings when performing effects, it is likely that a good mood will change to a bad mode or vice-versa.
+
+[[Heading:2]]Entertainment Decreases[[/Heading]]
+Typical entertainment decreases are due to time or exploration. Roughly every 40 non-move actions or 20 moves, whichever comes first, Xom's entertainment value will drop by 1. If the Piety Tracker is attached, there is only a 50% chance the value will drop instead.
+
+[[Heading]]Trivia[[/Heading]]
+[[List]]
+X0-1V1 is a very direct reference to the [[https://crawl.develz.org/|Dungeon Crawl Stone Soup]] [[http://crawl.chaosforge.org/Xom|Xom, god of chaos]].
+[[/List]]","Spoiler","","","","","","",""
 "X0-1V1 (Alignment)","Other","
 Note: This page is a work in progress! As such, some information is incomplete and maybe even inaccurate!
 
@@ -12786,6 +12851,8 @@ X0-1V1's Piety Tracker gets destroyed while attached.
 |Successfully [[Terminal#forcesabotage|sabotaging]] at a terminal.
 |Destroying a [[Phase Generator]] in a [[Garrison]].
 |Destroying a [[Network Hub|Network Hub in Hub_04(d)]].
+|Being on a floor when [[Sterilization]] is announced.
+|Interrupting a [[Cargo Convoy]]. [[Comment]]This and sterilization either set amusement to maximum or just add a whole lot, also i don't know how xom feels about dsf steri.[[/Comment]]
 
 
 
@@ -12818,8 +12885,11 @@ Note that the cost to maximum core integrity is optional only in the sense that 
 
 [[Heading:2]]Temporary buffs[[/Heading]]
 [[List]]
-XOMVISION - 18 range unjammable ability to sense active robots, even if they have the Scan Cloak trait.
+[[GameText]]""Enjoy your XOMVISION!""[[/GameText]] - 18 range unjammable ability to sense active robots, even if they have the Scan Cloak trait.
 |[[GameText]]X0-1V1 causes your matter storage to temporarily balloon in size.[[/GameText]] - Temporary +500-700 matter storage.
+|[[GameText]]""Let the electrons flow!""[[/GameText]] - Temporary increased energy storage.
+|[[GameText]]""Watch where you're going!""[[/GameText]] - Temporary increased sight range.
+|[[GameText]]X0-1V1 waits impatiently for you to get up close and personal with every target in the area.[[/GameText]] - Temporary increased melee accuracy.
 [[/List]]
 
 [[Heading:2]]Other ""good"" acts[[/Heading]]
@@ -12830,6 +12900,18 @@ XOMVISION - 18 range unjammable ability to sense active robots, even if they hav
 |[[GameText]]The cosmic winds blow in a new direction.[[/GameText]] - Several uncontrollable purple allies are teleported in nearby.
 |[[GameText]]""I find this area lacking in decorations.""[[/GameText]] - A hostile permanently turns off, turning into a statue.
 |[[GameText]]""A floating RIF installer appears for a brief moment.""[[/GameText]] - Gives an additional [[RIF]] ability. Only possible if RIF is already installed.
+|[[GameText]]""Have you ever seen what subatomizers do to 0b10?""[[/GameText]] - X0-1V1 opens a [[SUBCON Basin]] at [[Cogmind]]'s location.
+|[[GameText]]""I guarantee there's even more fun over that way.""[[/GameText]] - X0-1V1 reveals an exit.
+|[[GameText]]X0-1V1 smiles upon you.[[/GameText]] - Gives an item.
+|[[GameText]]""I found some blueprints, how convenient!""[[/GameText]] - X0-1V1 reveals nearby emergency access doors.
+|[[GameText]]""Oops.""[[/GameText]] - X0-1V1 remotely destroys a Phase Generator in a Garrison.
+|[[GameText]]X0-1V1 lends a hand with your twisted circuits.[[/GameText]] - [[Corruption]] set to 0.
+|[[GameText]]X0-1V1 points here and there.[[/GameText]] - X0-1V1 reveals nearby item locations.
+|[[GameText]]X0-1V1 sends the all clear message.[[/GameText]] - X0-1V1 recalls a [[Squad|squad]].
+|[[GameText]]""One less obstacle for my toy on its journey to the highest levels of glorious entertainment.""[[/GameText]] - X0-1V1 destroys a nearby hostile.
+|[[GameText]]""I sense action potential over that way.[[/GameText]] - X0-1V1 reveals a [[Garrison Access]].
+|[[GameText]]""You need a change of scenery.""[[/GameText]] - X0-1V1 teleports Cogmind out of danger.
+|[[GameText]]""Just some junk I've been collecting.""[[/GameText]] - X0-1V1 teleports Cogmind to a vault filled with out-of-depth and possibly unique items.
 [[/List]]
 
 [[Heading]]""Bad"" acts[[/Heading]]
@@ -12838,7 +12920,9 @@ These effects will be written in red text in the log, and counted under ""bad ac
 [[Heading:2]]Temporary debuffs[[/Heading]]
 [[List]]
 [[GameText]]""I know that drunk sailor look when I see it.""[[/GameText]] - Temporary guaranteed misdirection on move.
-|[[GameText]]""So many nails, never enough hammers...""[[/GameText]] - Temporary lower ranged accuracy
+|[[GameText]]""So many nails, never enough hammers...""[[/GameText]] - Temporary lower ranged accuracy.
+|[[GameText]]X0-1V1 turns out the lights.[[/GameText]] - X0-1V1 disables your [[Infowar|infowar]].
+|[[GameText]]""Did you know you're leaking matter?""[[/GameText]] - Temporary lower matter capacity.
 [[/List]]
 
 [[Heading:2]]Other ""bad"" acts[[/Heading]]
@@ -12846,19 +12930,18 @@ These effects will be written in red text in the log, and counted under ""bad ac
 [[GameText]]""Use it or lose it, i always say.""[[/GameText]] - one or more parts are fused to Cogmind.
 |[[GameText]]""How much energy does one bot need, really?""[[/GameText]] - Energy drain.
 |[[GameText]]Vines of energy appear to reach out from the ground.[[/GameText]] - A hostile is suddenly caught in a [[Stasis Trap]], giving them 25% damage resistance.
-|[[GameText]]Leanred that one from the Sigix.[[/GameText]]
+|[[GameText]]Learned that one from the Sigix.[[/GameText]] - Nearby terrain is vaporized.
+|[[GameText]]""Don't be shy now.""[[/GameText]] - [[Cogmind]] emits an [[Corruption|IFF burst signal]].
+|[[GameText]]X0-1V1 brushes you with a corrupting influence.[[/GameText]] - A random amount of Corruption is added to Cogmind.
+|[[GameText]]""And it's a trip and a fumble!""[[/GameText]] - A random piece of propulsion is rejected.
+|[[GameText]]X0-1V1 thinks 0b10 needs to up its game.[[/GameText]] - 0b10 dispatches a ""surplus targeted"" [[Investigation Squad|Investigation]], [[Assault Squad|Assault]], or [[Extermination Squad|Extermination]] squad. [[Comment]]this can maybe dispatch more squad types[[/Comment]]
+|[[GameText]]X0-1V1 uses Touch of Redecoration![[/GameText]] - X0-1V1 destroys a terminal. [[Comment]]this probably has more effects than just the one i listed[[/Comment]
+|[[GameText]]""ALERT: Introduced new transport parking protocols.""[[/GameText]] - X0-1V1 redirects all haulers on the map to a single location.
 |Additional threat records (minor) - ~140-~154 extra influence
 |Additional threat records (considerable) ~180-~212 extra influence
 |Additional threat records (major) - ~256-~300 extra influence
 [[/List]]
 ","","","","","","","",""
-"X-57 Shotgunner","Bot","","","","","","","","",""
-"X-62 Marksman","Bot","","","","","","","","",""
-"X-67 Chaingunner","Bot","","","","","","","","",""
-"X-72 Disruptor","Bot","","","","","","","","",""
-"X-77 Beamer","Bot","","","","","","","","",""
-"X-82 Rainmaker","Bot","","","","","","","","",""
-"X-87 Electro","Bot","","","","","","","","",""
 "XL Autogun Array","Part","After the XL Autogun Array falls to around 50% integrity, a log message [[GameText]]XL Autogun Array falls apart.[[/GameText]] will be shown. When this occurs, the Array will be destroyed and 4 [[XL Autogun Subcomponent|XL Autogun Subcomponents]] will appear on the floor around Cogmind.","","","","","","","",""
 "XL Autogun Subcomponent","Part","4 of these are created when the [[XL Autogun Array]] falls apart.","","","","","","","",""
 "Xenon Bombardment Thruster","Part","","","","","","","","",""
@@ -12901,10 +12984,15 @@ Going to the [[Mines]] without a launcher. [[GameText]]Infestation in the Mines,
 |The many ways of going into [[Testing]] or [[Quarantine]] on [[FarCom]] (unless you're prepared, of course). Perhaps you needed to desperately dive for an exit. Perhaps you forgot the [[Exiles (Group)|Exiles']] warning. Or perhaps you chose to roll the dice.
 |Having a bot destroy the terminal at the [[Surface]] exit in [[Access]]. The closer you were to the terminal, the sillier it is.
 [[/List]]","","","","","","","",""
-"YI-UF0","Bot","Sometimes appears in the [[Mines]] initially as a friendly bot, but turns hostile after being attacked by anyone. When fighting him, be sure to position yourself in a way such that the explosions from his [[YI-UF0's Doublenader|Doublenader]] don't ruin his own salvage.","","","","","","","",""
+"YI-UF0","Bot","Sometimes appears in the [[Mines]] initially as a friendly bot, but turns hostile after being attacked by anyone. When fighting him, be sure to position yourself in a way such that the explosions from his [[YI-UF0's Doublenader|Doublenader]] don't ruin his own salvage.
+
+[[Heading]]Trivia[[/Heading]]
+[[List]]
+X0-1V1 is a direct reference to the [[https://crawl.develz.org/|Dungeon Crawl Stone Soup]] [[http://crawl.chaosforge.org/Crazy_Yiuf|Crazy Yiuf]].
+[[/List]]","","","","","","","",""
 "YI-UF0's Bottomless Matter Pit","Part","","","","","","","","",""
 "YI-UF0's Doublenader","Part","","","","","","","","",""
-"YOLO Cannon","Part","Rarely on firing, the YOLO Cannon will explode with the log message [[GameText]]YOLO Cannon suddenly explodes.[[/GameText]] When this occurs, the YOLO cannon and up to 3 other random parts will instantly be destroyed. Cogmind will also lose half of the current core integrity when this effect happens.","","","","","","","",""
+"YOLO Cannon","Part","Rarely on firing, the YOLO Cannon will explode with the log message [[GameText]]YOLO Cannon suddenly explodes.[[/GameText]] When this occurs, the YOLO cannon and up to 3 other random parts will instantly be destroyed. Cogmind will also lose half of the current core integrity when this effect happens. This weapon can be fired safely 2 times, but after that, each shot has a 5% chance of triggering the explosion.","","","","","","","",""
 "Yauler","Redirect","","","","","","","","","A-27 Freighter"
 "Z-Courier","Bot","[[Imprint]]-aligned derelict [[Hauler]] variant. Delivers resupplies via the [[Imprint]] roster.","","","","","","","",""
 "Z-Drone","Bot","Created by a [[Z-Drone Bay]]. Slightly better than a [[Mini Drone]], with a makeshift cloaking device.","","","","","","","",""
