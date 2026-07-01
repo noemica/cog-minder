@@ -505,6 +505,50 @@
         "Components String": "T-thruster, Exp. Optical Array"
     },
     {
+        "Name": "Item Mimic",
+        "Class": "Drone",
+        "Tier": "1",
+        "Threat": "3",
+        "Rating": "48",
+        "Size Class": "Tiny",
+        "Size": "1",
+        "Profile": "SQ3X3",
+        "Memory": "50",
+        "Movement": "Flying",
+        "Speed": "39",
+        "Speed %": "256",
+        "Sight Range": "16",
+        "Energy Generation": "20",
+        "Heat Dissipation": "20",
+        "Innate Energy Storage": "50",
+        "Innate Energy Generation": "10",
+        "Core Integrity": "55",
+        "Core Exposure": "180",
+        "Core Exposure %": "30",
+        "Salvage Potential": "20~30",
+        "Inventory Capacity": "2",
+        "Immunities": [
+            "Hacking"
+        ],
+        "Armament": [
+            "Ripteeth",
+            "Ripteeth",
+            "Ripteeth"
+        ],
+        "Components": [
+            "Mic. Nuclear Core",
+            "Field Propulsion Drive",
+            "Nuclear Pulse Array",
+            "Reaction Control System"
+        ],
+        "Resistances": {
+            "Explosive": "-25",
+            "Electromagnetic": "-100"
+        },
+        "Armament String": "3x Ripteeth",
+        "Components String": "Mic. Nuclear Core, Field Propulsion Drive, Nuclear Pulse Array, Reaction Control System"
+    },
+    {
         "Name": "Thief Drone",
         "Class": "Drone",
         "Tier": "1",
@@ -14145,6 +14189,188 @@
         },
         "Armament String": "Hvy. Laser",
         "Components String": "Lgt. Angular Momentum Engine, 2x Carbon-fiber Leg, Adv. Heat Sink"
+    },
+    {
+        "Name": "Chaos Knight",
+        "Class": "Chaos Knight (Derelict)",
+        "Tier": "5",
+        "Threat": "5",
+        "Rating": "57",
+        "Value": "200",
+        "Size Class": "Large",
+        "Size": "1",
+        "Profile": "RD7X7",
+        "Memory": "50",
+        "Spot %": "100",
+        "Movement": "Walking",
+        "Speed": "105",
+        "Speed %": "95",
+        "Sight Range": "16",
+        "Energy Generation": "24",
+        "Heat Dissipation": "25",
+        "Innate Energy Storage": "50",
+        "Innate Energy Generation": "10",
+        "Core Integrity": "80",
+        "Core Exposure": "217",
+        "Core Exposure %": "24",
+        "Salvage Potential": "70~90",
+        "Inventory Capacity": "1",
+        "Immunities": [
+            "Coring",
+            "Hacking",
+            "Meltdown"
+        ],
+        "Armament": [
+            "Scimitar of Distortion"
+        ],
+        "Components": [
+            "F-cell Engine",
+            "Thunder Leg",
+            "Imp. VSS Leg",
+            "Shield of Reprisal",
+            [
+                {
+                    "name": "Med. Reflective Plating"
+                },
+                {
+                    "name": "Med. Insulated Plating"
+                }
+            ],
+            "Mak. Weapon Shielding",
+            "Imp. Melee Analysis Suite"
+        ],
+        "Resistances": {
+            "Thermal": "15",
+            "Electromagnetic": "75"
+        },
+        "Armament String": "Scimitar of Distortion",
+        "Components String": "F-cell Engine, Thunder Leg, Imp. VSS Leg, Shield of Reprisal, Med. Reflective Plating OR Med. Insulated Plating, Mak. Weapon Shielding, Imp. Melee Analysis Suite"
+    },
+    {
+        "Name": "Chaos Knight 2.0",
+        "Class": "Chaos Knight (Derelict)",
+        "Tier": "8",
+        "Threat": "5",
+        "Rating": "79",
+        "Value": "250",
+        "Size Class": "Large",
+        "Size": "1",
+        "Profile": "RD7X7",
+        "Memory": "50",
+        "Spot %": "100",
+        "Movement": "Walking",
+        "Speed": "105",
+        "Speed %": "95",
+        "Sight Range": "16",
+        "Energy Generation": "34",
+        "Heat Dissipation": "25",
+        "Innate Energy Storage": "50",
+        "Innate Energy Generation": "10",
+        "Core Integrity": "110",
+        "Core Exposure": "344",
+        "Core Exposure %": "25",
+        "Salvage Potential": "90~130",
+        "Inventory Capacity": "1",
+        "Immunities": [
+            "Coring",
+            "Hacking",
+            "Meltdown"
+        ],
+        "Armament": [
+            "Hvy. Scimitar of Distortion"
+        ],
+        "Components": [
+            "Graviton Reactor",
+            "Imp. Thunder Leg",
+            "Adv. VSS Leg",
+            "Shield of Reprisal",
+            [
+                {
+                    "name": "Hvy. Reflective Plating"
+                },
+                {
+                    "name": "Hvy. Insulated Plating"
+                }
+            ],
+            "Imp. Weapon Shielding",
+            "Adv. Melee Analysis Suite"
+        ],
+        "Resistances": {
+            "Thermal": "25",
+            "Electromagnetic": "75"
+        },
+        "Armament String": "Hvy. Scimitar of Distortion",
+        "Components String": "Graviton Reactor, Imp. Thunder Leg, Adv. VSS Leg, Shield of Reprisal, Hvy. Reflective Plating OR Hvy. Insulated Plating, Imp. Weapon Shielding, Adv. Melee Analysis Suite"
+    },
+    {
+        "Name": "Chaos Wyrm",
+        "Class": "Chaos Wyrm",
+        "Tier": "10",
+        "Threat": "5",
+        "Rating": "446",
+        "Size Class": "Large",
+        "Size": "2",
+        "Profile": "SQ9X9",
+        "Memory": "50",
+        "Spot %": "100",
+        "Movement": "Walking",
+        "Speed": "120",
+        "Speed %": "83",
+        "Sight Range": "16",
+        "Energy Generation": "118",
+        "Heat Dissipation": "164",
+        "Innate Energy Storage": "50",
+        "Innate Energy Generation": "50",
+        "Innate Matter Storage": "800",
+        "Core Integrity": "666",
+        "Core Exposure": "1917",
+        "Core Exposure %": "29",
+        "Salvage Potential": "500~1000",
+        "Inventory Capacity": "1",
+        "Immunities": [
+            "Coring",
+            "Dismemberment",
+            "Disruption",
+            "Hacking/RIF",
+            "Meltdown"
+        ],
+        "Armament": [
+            "Com. HERF Cannon",
+            "Com. HERF Cannon",
+            "Hpw. Disruptor Cannon",
+            "Imp. Matter Neutralizer",
+            "Enh. Nova Cannon",
+            "Enh. Nova Cannon",
+            "Ragnarok Missile Launcher"
+        ],
+        "Components": [
+            "Rnf. Quantum Reactor",
+            "Imp. Quantum Reactor",
+            "Imp. Quantum Reactor",
+            "Hds. Centrium Leg",
+            "Hds. Centrium Leg",
+            "Hds. Centrium Leg",
+            "Hds. Centrium Leg",
+            "Hds. Centrium Leg",
+            "Hds. Centrium Leg",
+            "Hds. Centrium Leg",
+            "Hds. Centrium Leg",
+            "Wyrmplate",
+            "Graphene Brace",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Exp. Cooling System",
+            "Exp. Energy Well",
+            "Exp. Energy Well",
+            "Quantum Capacitor",
+            "Adv. Particle Accelerator"
+        ],
+        "Resistances": {
+            "Explosive": "75",
+            "Electromagnetic": "90"
+        },
+        "Armament String": "2x Com. HERF Cannon, Hpw. Disruptor Cannon, Imp. Matter Neutralizer, 2x Enh. Nova Cannon, Ragnarok Missile Launcher",
+        "Components String": "Rnf. Quantum Reactor, 2x Imp. Quantum Reactor, 8x Hds. Centrium Leg, Wyrmplate, Graphene Brace, 3x Exp. Cooling System, 2x Exp. Energy Well, Quantum Capacitor, Adv. Particle Accelerator"
     },
     {
         "Name": "Revision",

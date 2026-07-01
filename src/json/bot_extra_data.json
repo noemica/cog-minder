@@ -872,6 +872,42 @@
             }
         ]
     },
+    "Chaos Knight": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Any map after \"aligning\" with X0-1V1",
+                "Description": "Friendly (initially): Summoned to Cogmind's aid as a random effect"
+            }
+        ]
+    },
+    "Chaos Knight 2.0": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Any map after \"aligning\" with X0-1V1",
+                "Description": "Friendly (initially): Summoned to Cogmind's aid as a random effect"
+            }
+        ]
+    },
+    "Chaos Wyrm": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Scraptown",
+                "Description": "Friendly: Wyrm Statue turns into this when approached with X0-1V1 \"alignment\""
+            }
+        ]
+    },
     "CL-ANK": {
         "Categories": [
             "Derelict",
@@ -1905,6 +1941,18 @@
             {
                 "Location": "0b10 Heavy Assaults -3 through -1",
                 "Description": "Hostile: Appear as heavy assault ARC contents in High Security"
+            }
+        ]
+    },
+    "Item Mimic": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "0b10 maps after aligning with X0-1V1",
+                "Description": "Hostile: Appear as high rating items before transforming into mimic"
             }
         ]
     },

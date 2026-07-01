@@ -575,6 +575,8 @@ export class BotData {
                 botPromises.push(loadImage(imageName));
             }
         }
+
         await Promise.all(botPromises);
+        console.log("Verified bot images");
     }
 }

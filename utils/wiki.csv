@@ -1,4 +1,4 @@
-"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
+﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","","",""
 "01-MTF's Autohacker","Part","A unique [[Utilities|Utility]] only found on [[01-MTF]] that was stolen from the [[Exiles (Group)]]. Its Door [[Terminal]] hacking is most useful with high difficulty doors like the [[Access]] [[Surface]] exit. Generally better than [[Plasma Cutters]], although they have an advantage in being able to function even if the door Terminal gets destroyed.","","","","","","","",""
 "01-MTF's Shockpuncher","Part","A unique [[Energy Guns|Energy Gun]] only found on [[01-MTF]], this short ranged [[Electromagnetic Guns|Electromagnetic Gun]] is an energy-hungry but powerful shotgun-type weapon. Its raw damage output is better than even lategame weapons like the [[Com. HERF Cannon]], capable of easily killing most bots in the game in 2 or 3 hits, and its high [[Disruption|disruption]] helps disable crucial parts on bots that it hits. However, its short range and high [[Spectrum|spectrum]] can be a detriment since it has a high chance of blowing up any bots that it hits. Any nearby cover is not likely to last very long.","","","","","","","",""
@@ -702,7 +702,7 @@ Upkeep/Energy|
 Upkeep/Heat|
 Effect/Effect|
 Effect/Description
-[[/PartGroupTable]]","","","","Lgt. Armor Plating,Med. Armor Plating,Hvy. Armor Plating,Zio. Light Carapace,Zio. Heavy Carapace,Hrd. Light Armor Plating,Hrd. Medium Armor Plating,Hrd. Heavy Armor Plating,Imp. Light Armor Plating,Imp. Medium Armor Plating,Imp. Heavy Armor Plating,Mak. Light Armor Plating,Mak. Medium Armor Plating,Mak. Heavy Armor Plating,Lyr. Light Armor Plating,Lyr. Medium Armor Plating,Lyr. Heavy Armor Plating,Gun Armor,Centrium Light Armor Plating,Centrium Medium Armor Plating,Centrium Heavy Armor Plating,Centrium Linked Plating,Mak. Ablative Armor,Active Cooling Armor,Scrap Shield,Enh. Scrap Shield,DW-4LL's Blast Wall,Tower Shield,Vmp. Brace Plating,V4-D3R's Cape,Sfc. Absorption Layer","Backup Plating,Powered Armor (Group),Regenerative Armor,Resistance Armor","Shieldings","",""
+[[/PartGroupTable]]","","","","Lgt. Armor Plating,Med. Armor Plating,Hvy. Armor Plating,Zio. Light Carapace,Zio. Heavy Carapace,Hrd. Light Armor Plating,Hrd. Medium Armor Plating,Hrd. Heavy Armor Plating,Imp. Light Armor Plating,Imp. Medium Armor Plating,Imp. Heavy Armor Plating,Mak. Light Armor Plating,Mak. Medium Armor Plating,Mak. Heavy Armor Plating,Lyr. Light Armor Plating,Lyr. Medium Armor Plating,Lyr. Heavy Armor Plating,Gun Armor,Centrium Light Armor Plating,Centrium Medium Armor Plating,Centrium Heavy Armor Plating,Centrium Linked Plating,Mak. Ablative Armor,Active Cooling Armor,Scrap Shield,Enh. Scrap Shield,DW-4LL's Blast Wall,Tower Shield,Vmp. Brace Plating,V4-D3R's Cape,Sfc. Absorption Layer,Shield of Reprisal,Wyrmplate,Wyrmscale","Backup Plating,Powered Armor (Group),Regenerative Armor,Resistance Armor","Shieldings","",""
 "Armor Guard","Bot","","","","","","","","",""
 "Armor Integrity Analyzer","Part","","","","","","","","",""
 "Armor Integrity Analyzers","Part Group","[[Heading]]List of Armor Integrity Analyzers[[/Heading]]
@@ -1741,6 +1741,10 @@ Fearless: Enter a [[Garrison]] with below 10% core integrity and survive it.
 This article was last edited during Beta 15.
 
 ","","","","","","","",""
+"Chaos Jack","Part","","","","","","","","",""
+"Chaos Knight","Bot","","","","","","","","",""
+"Chaos Knight 2.0","Bot","","","","","","","","",""
+"Chaos Wyrm","Bot","","","","","","","","",""
 "Chronowheel","Part","The effect of the Chronowheel allows Cogmind to rewind time as a one time save/load effect. Attaching saves, and after 30 turns (if not destroyed/removed) the load will occur.
 
 [[Heading]]Timeline of Effects[[/Heading]]
@@ -6232,6 +6236,7 @@ This weapon is implied to have been developed by the [[Exiles (Group)]] as an in
 "Hvy. Regenerative Plating","Part","","","","","","","","",""
 "Hvy. Riot Gun","Part","","","","","","","","",""
 "Hvy. Rocket Launcher","Part","","","","","","","","",""
+"Hvy. Scimitar of Distortion","Part","","","","","","","","",""
 "Hvy. Shield Leg","Part","","","","","","","","",""
 "Hvy. Shock Bomb Launcher","Part","","","","","","","","",""
 "Hvy. Siege Cannon","Part","","","","","","","","",""
@@ -6331,7 +6336,7 @@ Projectile/Penetration|
 Projectile/Spectrum|
 Projectile/Disruption|
 Projectile/Salvage
-[[/PartGroupTable]]","","","","Hyp. Alpha Cannon,EM Gauss Rifle,Modified EM Gauss Rifle","Hypervelocity Kinetic Cannons,Hypervelocity Kinetic Guns","","",""
+[[/PartGroupTable]]","","","","Hyp. Alpha Cannon,Hyp. EM Gauss Rifle,Modified EM Gauss Rifle","Hypervelocity Kinetic Cannons,Hypervelocity Kinetic Guns","","",""
 "I-25 Savior","Bot","","","","","","","","",""
 "I-36 Angel","Bot","","","","","","","","",""
 "I-47 Archangel","Bot","","","","","","","","",""
@@ -6794,6 +6799,7 @@ The Data Miner can redirect Investigations if his help is obtained by visiting h
 "Ion Cannon","Part","","","","","","","","",""
 "Ion Engine","Part","","","","","","","","",""
 "Ionic Axe","Part","","","","","","","","",""
+"Item Mimic","Bot","","","","","","","","",""
 "Items","Part Group","Items are a category of unequippable parts that have various special effects, often related to quests with certain NPCs or working in combination with other parts. Some parts may be used directly by dropping them on the floor and pressing >.","","","Items","","","","",""
 "Jamming Amplifier","Part","","","","","","","","",""
 "Junk Cannon","Part","","","","","","","","",""
@@ -7274,6 +7280,7 @@ Etc. - Delay between assaults continues to increase by 50 and number of assaults
 
 [[Heading]]Exiting Maximum Security[[/Heading]]
 The only 2 ways to exit Maximum Security are to trigger [[Sterilization]] after killing enough combat hostiles or to exit the map. Otherwise, an infinite number of Assaults will continue to be dispatched.","Spoiler","","","","","","",""
+"Maxwheels","Part","","","","","","","","",""
 "Mechanic","Bot Group","Mechanics are [[Wheel|wheeling]] [[0b10]] non-combat bots that repair the parts and core of damaged allies. They tend to hang around a home [[Repair Station]]. Mechanics will head toward damaged allies as soon as they are hurt but will not repair them while in combat. Mechanics carry [[Recalibrators]] and [[Machine Analyzer|Machine Analyzers]] that can be good to salvage. They also carry a set of backup parts in their inventory based on the bot tier. These backup parts will be refitted on bots if they have empty slots.
 If a hurt bot is not shot at for a few turns, the Mechanic will repair core integrity up to 85% and part integrity up to 50%. Allied Mechanics will also repair Cogmind's parts up to 50% integrity but will not touch core integrity. Blue allied Mechanics must be set to Aid before they will repair integrity.
 Mechanics can refit parts if a bot has a slot available and fewer than 2 power, propulsion, utility, or weapon slots. 0b10 aligned Mechanics can resupply on backup parts at their home Repair Station. The available refittable parts are based on the type of Mechanic:
@@ -8280,14 +8287,14 @@ For example, if a bot has equipped:
 [[/List]]
 its total mass is 14. Its movement speed depends on which propulsion unit it has activated:
 [[List]]
-With the treads: The bot is underweight (14 ≤ 20). The time to move one tile is 160.
-|With the wheel: The bot is 1 time overweight (10 < 14 ≤ 20). The time to move one tile is 80 + 15 = 95.
-|With neither (core propulsion): The bot is 4 times overweight (12 < 14 ≤ 15). The time to move one tile is 50 + (50 × 4) = 250.
+With the treads: The bot is underweight (14 â‰¤ 20). The time to move one tile is 160.
+|With the wheel: The bot is 1 time overweight (10 < 14 â‰¤ 20). The time to move one tile is 80 + 15 = 95.
+|With neither (core propulsion): The bot is 4 times overweight (12 < 14 â‰¤ 15). The time to move one tile is 50 + (50 Ã— 4) = 250.
 [[/List]]
 
 [[Heading:2]]Formula[[/Heading]]
 Mathematically, the amount of time it takes a bot to move one tile (ignoring mechanics for flight and hover units) is
-Σ[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + ⌊max(0, [[I]]m[[/I]] − 1)/Σ[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]⌋(Σ[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
+Î£[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + âŒŠmax(0, [[I]]m[[/I]] âˆ’ 1)/Î£[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]âŒ‹(Î£[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
 where
 [[List]]
 [[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the mass support for propulsion unit [[I]]i[[/I]]
@@ -8296,7 +8303,7 @@ where
 |[[I]]m[[/I]] is the total mass of all attached parts
 |[[I]]n[[/I]] is the total number of activated propulsion units
 [[/List]]
-and all sums Σ are over all activated propulsion units.
+and all sums Î£ are over all activated propulsion units.
 
 [[Heading]]Flight and Hover Units[[/Heading]]
 Flight and hover units calculate their movement speed in the same basic way as legs, treads, and wheels, but they have the following additional mechanics that affect movement speed:
@@ -8693,10 +8700,10 @@ Weapons|Time to fire|Time per weapon||
 [[CellStyle:Neutral]][[B]]1 with QC[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]||
 1|200|[[CellStyle:Bad]]200||
 2|300|[[CellStyle:Bad]]150||
-3|325|[[CellStyle:Bad]]108⅓||
-4|350|[[CellStyle:Good]] 87½||
-5|375|[[CellStyle:Good]] 75||
-6|400|[[CellStyle:Good]] 66⅔
+3|325|[[CellStyle:Bad]]108â…“||
+4|350|[[CellStyle:Good]]â€‡87Â½||
+5|375|[[CellStyle:Good]]â€‡75||
+6|400|[[CellStyle:Good]]â€‡66â…”
 [[/Table]]
 
 The Quantum Capacitor has several benefits on top of firing time:
@@ -9322,6 +9329,7 @@ This hack can give up to 1-10 schematics that Cogmind does not already have. Thi
 "Schematic","Other","Schematics can be acquired by using [[Scanalyzer|Scanalyzers]] or hacking [[Terminal|Terminals]] (see your status page for access to a list of schematics currently in your possession).","","","","","","","",""
 "Schematic Archive","Part","","","","","","","","",""
 "Scientist","Bot","Scientists are [[Wheels|two-wheeled]] [[UFD]] non-combat bots found in [[Scraptown]] and [[Recycling]]. They are quite valuable for their [[Tech Extrapolator]], and are defenseless. Vulnerable to EM.","","","","","","","",""
+"Scimitar of Distortion","Part","","","","","","","","",""
 "Score","Other","Score is earned in multiple ways, including progressing through the game, destroying bots, identifying [[Prototype Part|Prototypes]], and many more. The total score earned throughout a run is shown at the end, after which the details of that run, including the different sources of points, can be found in the relevant scoresheet within the ""scores"" folder in the game files. From the ""[7] RECORDS"" menu, it is also possible to create a scoresheet dump in which the details of the run so far, including score earned, can be found. Scoresheet dump can be found in the ""dumps"" folder in the game files.
 
 [[Heading]]Performance[[/Heading]]
@@ -9847,6 +9855,7 @@ Additionally, Sentries will appear at [[Garrison Access|Garrisons]] and 0b10 exi
 "Sfc. Sightfinder","Part","","","","","","","","",""
 "Sfc. Target Tracker","Part","","","","","","","","",""
 "Sfc. Targeting Obfuscator","Part","","","","","","","","",""
+"Sfc. Transmogrifier","Part","","","","","","","","",""
 "Shearguns","Part Group","Type of unique [[Alien Artifacts|alien]] [[Energy Guns|energy gun]] that deals slashing damage. Shearguns have a unique combination of stats in high range, negative delay, penetration, positive salvage, and the sever [[Critical Hits|critical hit]] type which is unusual for a ranged weapon. While very powerful when stacked, their [[Heat|heat]] generation may be prohibitively high for most builds, especially as the - delay reduces volley time.
 
 [[Heading]]List of Shearguns[[/Heading]]
@@ -9904,6 +9913,7 @@ Propulsion/Special
 [[/PartGroupTable]]","","","","Shield Leg,Hvy. Shield Leg","","","",""
 "Shield Trident","Part","","","","","","","","",""
 "Shield Turret","Bot","","","","","","","","",""
+"Shield of Reprisal","Part","","","","","","","","",""
 "Shielding Mode","Redirect","","","","","","","","","Special Propulsion Modes#Shielding Mode"
 "Shielding Mode Description","Partial","The transition into and out of shielding mode takes 4 turns. During the transition, and for as long as the mode is active, Cogmind is immobile and the legs cannot be disabled or removed.
 While in shielding mode:
@@ -10068,7 +10078,7 @@ Spacefolds can allow for longer-range safe [[Digging|digs]]. While a [[Microwarp
 
 [[/List]]","","","","","","","",""
 "Spear","Part","","","","","","","","",""
-"Special Melee Weapons","Part Supergroup","","","","","Dirty Datajack,Detonator,Splice Injector,Master Link,1B-0RG's Assimilator","Melee Datajacks","","",""
+"Special Melee Weapons","Part Supergroup","","","","","Dirty Datajack,Detonator,Splice Injector,Master Link,1B-0RG's Assimilator,Chaos Jack","Melee Datajacks","","",""
 "Special Propulsion Modes","Other","Certain [[Treads]] and [[Legs]] can be toggled into alternate states with special characteristics.
 
 [[Heading]]Treads[[/Heading]]
@@ -11997,7 +12007,7 @@ The following will prevent Cogmind from being able to align with UFD in the firs
 [[Heading:2]]Blocked Alignment[[/Heading]]
 Several factions will no longer assist Cogmind after UFD alignment:
 [[List]][[Imprint]]: The [[Imprinter]] will say that the Imprinting machine requires a more thorough vetting process for a UFD member such as Cogmind|[[Warlord (Alignment)]]: [[Warlord]] will call Cogmind a spy and not perform the -2 [[Research]] invasion[[/List]]","Spoiler","Bolteater,DRS Ranger,Explorer,Federalist,Guru,KN-7UR,Large Mutated Botcube,Master Drone,Mutated Botcube,Optimus,Ranger,Scientist,Surveybot 24,Triborg,Triborg (Optimus),Wyrm Statue","","","Elite,Scrapper,Scrapoid,Scraphulk","","",""
-"Utilities","Part Supergroup","","","","","Scrap Engine,Arm. Scrap Engine,Encrypted Comm Array,Stasis Canceller,Skeleton Box,01-MTF's Autohacker,A0-MCA's Component Scanner,Tech Extrapolator,Trap Reconfigurator,Scrap Suit,0bPrime Scrap Suit,PSU Rigger,Machine Rigger,Phasing AFG,AS-neutralizer No. 17b,V3-11A's Pendant,Amulet of Y3-NDR,Chronowheel,Phase Armor,Power Bank,Rainbow Chip,VL-GR5's Exoskeleton ""Deathgrip"",Plexus Tether,Cep. Melee Reflex Suite,Cep. Projectile Intercept Suite,Jamming Amplifier,Crosscalibrator,Cep. Navigation Harness,Supercharged Navigation Harness,QV-33N's Launch Deck,GL-D0S's Turretformer,Blink Core,Procsplitter,Sfc. Impeller,Sfc. Door Spiker,Sfc. Materializer,Sfc. Borg Regenerator,Sfc. Interdiction Field,Sfc. Autominer","Authchips,Component Analysis Suites,Fabrication Devices,Mass Support Devices,Power Amplifiers,Recalibrators,Relay Couplers,Speed Boosting Utilities,Salvage Targeting Computers,Thermal Generators,Trap Extractors","Armor,Consumable Alien Artifacts,Cooling Utilities,Corruption Reduction Utilities,Defensive Utilities,Hackware,Infowar,Matter Refilling Devices,Offensive Utilities,Shieldings,Storage (Group)","",""
+"Utilities","Part Supergroup","","","","","Scrap Engine,Arm. Scrap Engine,Encrypted Comm Array,Stasis Canceller,Skeleton Box,01-MTF's Autohacker,A0-MCA's Component Scanner,Tech Extrapolator,Trap Reconfigurator,Scrap Suit,0bPrime Scrap Suit,PSU Rigger,Machine Rigger,Phasing AFG,AS-neutralizer No. 17b,V3-11A's Pendant,Amulet of Y3-NDR,Chronowheel,Phase Armor,Power Bank,Rainbow Chip,VL-GR5's Exoskeleton ""Deathgrip"",Plexus Tether,Cep. Melee Reflex Suite,Cep. Projectile Intercept Suite,Jamming Amplifier,Crosscalibrator,Cep. Navigation Harness,Supercharged Navigation Harness,QV-33N's Launch Deck,GL-D0S's Turretformer,Blink Core,Procsplitter,Sfc. Impeller,Sfc. Door Spiker,Sfc. Materializer,Sfc. Borg Regenerator,Sfc. Interdiction Field,Sfc. Autominer,Sfc. Transmogrifier,X0-1V1's Piety Tracker","Authchips,Component Analysis Suites,Fabrication Devices,Mass Support Devices,Power Amplifiers,Recalibrators,Relay Couplers,Speed Boosting Utilities,Salvage Targeting Computers,Thermal Generators,Trap Extractors","Armor,Consumable Alien Artifacts,Cooling Utilities,Corruption Reduction Utilities,Defensive Utilities,Hackware,Infowar,Matter Refilling Devices,Offensive Utilities,Shieldings,Storage (Group)","",""
 "Utility Shielding","Part","","","","","","","","",""
 "Utility Shieldings","Part Group","[[Heading]]List of Utility Shieldings[[/Heading]]
 [[PartGroupTable]]
@@ -12775,6 +12785,8 @@ See the following video: [[https://www.youtube.com/watch?v=XR2RoB6gKWA]]","","",
 "Wizard (5)","Bot","","","","","","","","",""
 "Wizard (7)","Bot","","","","","","","","",""
 "Wyrm Statue","Bot","","","","","","","","",""
+"Wyrmplate","Part","","","","","","","","",""
+"Wyrmscale","Part","","","","","","","","",""
 "X-57 Shotgunner","Bot","","","","","","","","",""
 "X-62 Marksman","Bot","","","","","","","","",""
 "X-67 Chaingunner","Bot","","","","","","","","",""
@@ -12955,6 +12967,7 @@ Additional threat records (major)|~256-~300 extra influence||
 ""Evolution hits right when you least expect it.""|Mutates one slot into a slot of another type.|Cannot change base slot configuration by more than +1/-1. In other words, if a propulsion slot is mutated away, another will not be mutated away until at least one propulsion slot was mutated back in. For example, if, without X0-1V1's interference, you have 5 utility slots, no matter how many mutations occur, you will always have between 4 and 6 utility slots.||
 
 [[/Table]]","Spoiler","","","","","","",""
+"X0-1V1's Piety Tracker","Part","","","","","","","","",""
 "XL Autogun Array","Part","After the XL Autogun Array falls to around 50% integrity, a log message [[GameText]]XL Autogun Array falls apart.[[/GameText]] will be shown. When this occurs, the Array will be destroyed and 4 [[XL Autogun Subcomponent|XL Autogun Subcomponents]] will appear on the floor around Cogmind.","","","","","","","",""
 "XL Autogun Subcomponent","Part","4 of these are created when the [[XL Autogun Array]] falls apart.","","","","","","","",""
 "Xenon Bombardment Thruster","Part","","","","","","","","",""

@@ -34,6 +34,9 @@ const botNameImageMap = new Map<string, string>([
     ["Butcher (5)", "Duelist"],
     ["Butcher (7)", "Duelist"],
     ["Cetus Guard", "Sentry"],
+    ["Chaos Knight", "Knight (Derelict)"],
+    ["Chaos Knight 2.0", "Knight (Derelict)"],
+    ["Chaos Wyrm", "Dragon (Derelict)"],
     ["Cobbler", "Mechanic"],
     ["Combat Programmer", "Programmer"],
     ["Commander", "Grunt"],
@@ -158,7 +161,7 @@ const botNameImageMap = new Map<string, string>([
 ]);
 
 // A list of items with no gallery art (currently unused)
-export const itemsWithNoArt = new Set([
+export const itemsWithNoArt = new Set<string>([
 ]);
 
 // Character -> escape character map

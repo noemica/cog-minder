@@ -272,8 +272,8 @@ def process_csv(input_path, output_path, all_parts_output_path):
             .replace('"Lootmaker"', '\\"Lootmaker\\"') \
             .replace('"Choppy"', '\\"Choppy\\"') \
             .replace('"Deathgrip"', '\\"Deathgrip\\"') \
-            .replace('"Insurrection"', '\\"Insurrection\\"')
-        
+            .replace('"Insurrection"', '\\"Insurrection\\"') \
+            .replace('"Broken".', '\\"Broken\\".') #This one not technically improperly escaped but the parser has issues with this string for some reason
 
     csv.register_dialect('cog', 'excel', escapechar='\\')
     reader = csv.reader(StringIO(string), csv.get_dialect('cog'))
