@@ -1,4 +1,4 @@
-import{c as x,r as k,j as n,L as V,F as N,B as v,G as U,w as de,H as Ce,I as Se,f as E,J as Te,y as O,T as L,K as ce,a as K,s as ke,M as xe,S as $,q as He,N as Ae,O as me,z as Ge,u as ge,P as Re,Q as Ie,U as ee,V as z,W as F,X as Ne,Y as te,Z as Pe,_ as De}from"./index-DGKjNweF.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as ae,n as X,b as _,o as ue,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-DnstYrVQ.js";import{S as je}from"./Table-l1AvSzEH.js";import{e as ze}from"./partColumnDefs-eONNbByT.js";/* empty css              */import"./items-BlOYhrq-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as x,r as k,j as n,L as V,F as N,B as v,G as U,w as de,H as Ce,I as Se,f as E,J as Te,y as O,T as L,K as ce,a as K,s as ke,M as xe,S as $,q as He,N as Ae,O as me,z as Ge,u as ge,P as Re,Q as Ie,U as ee,V as z,W as F,X as Ne,Y as te,Z as Pe,_ as De}from"./index-BeBBv__P.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as ae,n as X,b as _,o as ue,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-2eMsthKh.js";import{S as je}from"./Table-l-KzRUTP.js";import{e as ze}from"./partColumnDefs-aMTeHQ3f.js";/* empty css              */import"./items-BlOYhrq-.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -8037,20 +8037,7 @@ X0-1V1's Piety Tracker gets destroyed while attached.
 |Destroying a [[Network Hub|Network Hub in Hub_04(d)]].
 |Being on a floor when [[Sterilization]] is announced.
 |Interrupting a [[Cargo Convoy]]. [[Comment]]This and sterilization either set amusement to maximum or just add a whole lot, also i don't know how xom feels about dsf steri.[[/Comment]]
-|
-
-
 [[/List]]
-
-
-
-
-
-[[Heading]]Trivia[[/Heading]]
-[[List]]
-X0-1V1 is a very direct reference to the [[https://crawl.develz.org/|Dungeon Crawl Stone Soup]] [[http://crawl.chaosforge.org/Xom|Xom, god of chaos]].
-[[/List]]
-
 
 [[Heading]]"Good" acts[[/Heading]]
 These effects will be written in green text in the log, and counted under "good acts" in scoresheets, although for some, whether they can be considered "good" may depend heavily on context.
@@ -8077,7 +8064,8 @@ Damage type resistance
 Random slot type|+1|N/A|N/A[[/Table]]
 Note that the cost to maximum core integrity is optional only in the sense that it whether it is applied is dependent entirely on X0-1V1 (and likely also dependent on Cogmind's remaining maximum core integrity).
 
-[[Comment]]Not totally sure on this categorization, Kyzrati divided these effects into combat and non-combat in his Patreon post. Might be more helpful to split things in this way since the effects are majorly dependent on this distinction. I also want to make this into a table to indicate what effects are once per map and which are repeatable, as well as any additional restrictions since there's a lot of extremely niche effects.[[/Comment]][[Heading:2]]Temporary buffs[[/Heading]]
+[[Comment]]Not totally sure on this categorization, Kyzrati divided these effects into combat and non-combat in his Patreon post. Might be more helpful to split things in this way since the effects are majorly dependent on this distinction. I also want to make this into a table to indicate what effects are once per map and which are repeatable, as well as any additional restrictions since there's a lot of extremely niche effects.[[/Comment]]
+[[Heading:2]]Temporary buffs[[/Heading]]
 [[List]]
 [[GameText]]"Enjoy your XOMVISION!"[[/GameText]] - 18 range unjammable ability to sense active robots, even if they have the Scan Cloak trait.
 |[[GameText]]X0-1V1 causes your matter storage to temporarily balloon in size.[[/GameText]] - Temporary +500-700 matter storage.
@@ -8114,10 +8102,10 @@ These effects will be written in red text in the log, and counted under "bad act
 
 [[Heading:2]]Temporary debuffs[[/Heading]]
 [[List]]
-[[GameText]]"I know that drunk sailor look when I see it."[[/GameText]] - Temporary guaranteed misdirection on move.
-|[[GameText]]"So many nails, never enough hammers..."[[/GameText]] - Temporary lower ranged accuracy.
-|[[GameText]]X0-1V1 turns out the lights.[[/GameText]] - X0-1V1 disables your [[Infowar|infowar]].
-|[[GameText]]"Did you know you're leaking matter?"[[/GameText]] - Temporary lower matter capacity.
+[[GameText]]"I know that drunk sailor look when I see it."[[/GameText]] - Temporary guaranteed misdirection on move.|
+[[GameText]]"So many nails, never enough hammers..."[[/GameText]] - Temporary lower ranged accuracy.|
+[[GameText]]X0-1V1 turns out the lights.[[/GameText]] - X0-1V1 disables your [[Infowar|infowar]].|
+[[GameText]]"Did you know you're leaking matter?"[[/GameText]] - Temporary lower matter capacity.|
 [[/List]]
 
 [[Heading:2]]Other "bad" acts[[/Heading]]
@@ -8139,7 +8127,13 @@ Additional threat records (major)|~256-~300 extra influence||
 [[GameText]]"X0-1V1 taps a no entrance sign"[[/GameText]]|Removes an exit from the map|Another exit leading to the same map must exist?||
 "Evolution hits right when you least expect it."|Mutates one slot into a slot of another type.|Cannot change base slot configuration by more than +1/-1. In other words, if a propulsion slot is mutated away, another will not be mutated away until at least one propulsion slot was mutated back in. For example, if, without X0-1V1's interference, you have 5 utility slots, no matter how many mutations occur, you will always have between 4 and 6 utility slots.||
 
-[[/Table]]`,Spoiler:"Spoiler"},{Name:"YASD",Content:`"Yet Another Stupid Death (commonly abbreviated to YASD) is used when a player has done something, usually avoidable, that leads to their hero's demise." - [[https://nethackwiki.com/wiki/Yet_Another_Stupid_Death|NetHack Wiki]]
+[[/Table]]
+
+[[Heading]]Trivia[[/Heading]]
+[[List]]
+X0-1V1 is a very direct reference to the [[https://crawl.develz.org/|Dungeon Crawl Stone Soup]] [[http://crawl.chaosforge.org/Xom|Xom, god of chaos]].
+[[/List]]
+`,Spoiler:"Spoiler"},{Name:"YASD",Content:`"Yet Another Stupid Death (commonly abbreviated to YASD) is used when a player has done something, usually avoidable, that leads to their hero's demise." - [[https://nethackwiki.com/wiki/Yet_Another_Stupid_Death|NetHack Wiki]]
 
 Cogmind is full of silly ways to die. Here are just a few. A lot of them are harsh teachers of lessons best learned the hard way.
 
