@@ -1,4 +1,4 @@
-﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
+"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","","",""
 "01-MTF's Autohacker","Part","A unique [[Utilities|Utility]] only found on [[01-MTF]] that was stolen from the [[Exiles (Group)]]. Its Door [[Terminal]] hacking is most useful with high difficulty doors like the [[Access]] [[Surface]] exit. Generally better than [[Plasma Cutters]], although they have an advantage in being able to function even if the door Terminal gets destroyed.","","","","","","","",""
 "01-MTF's Shockpuncher","Part","A unique [[Energy Guns|Energy Gun]] only found on [[01-MTF]], this short ranged [[Electromagnetic Guns|Electromagnetic Gun]] is an energy-hungry but powerful shotgun-type weapon. Its raw damage output is better than even lategame weapons like the [[Com. HERF Cannon]], capable of easily killing most bots in the game in 2 or 3 hits, and its high [[Disruption|disruption]] helps disable crucial parts on bots that it hits. However, its short range and high [[Spectrum|spectrum]] can be a detriment since it has a high chance of blowing up any bots that it hits. Any nearby cover is not likely to last very long.","","","","","","","",""
@@ -12864,20 +12864,7 @@ X0-1V1's Piety Tracker gets destroyed while attached.
 |Destroying a [[Network Hub|Network Hub in Hub_04(d)]].
 |Being on a floor when [[Sterilization]] is announced.
 |Interrupting a [[Cargo Convoy]]. [[Comment]]This and sterilization either set amusement to maximum or just add a whole lot, also i don't know how xom feels about dsf steri.[[/Comment]]
-|
-
-
 [[/List]]
-
-
-
-
-
-[[Heading]]Trivia[[/Heading]]
-[[List]]
-X0-1V1 is a very direct reference to the [[https://crawl.develz.org/|Dungeon Crawl Stone Soup]] [[http://crawl.chaosforge.org/Xom|Xom, god of chaos]].
-[[/List]]
-
 
 [[Heading]]""Good"" acts[[/Heading]]
 These effects will be written in green text in the log, and counted under ""good acts"" in scoresheets, although for some, whether they can be considered ""good"" may depend heavily on context.
@@ -12904,7 +12891,8 @@ Damage type resistance
 Random slot type|+1|N/A|N/A[[/Table]]
 Note that the cost to maximum core integrity is optional only in the sense that it whether it is applied is dependent entirely on X0-1V1 (and likely also dependent on Cogmind's remaining maximum core integrity).
 
-[[Comment]]Not totally sure on this categorization, Kyzrati divided these effects into combat and non-combat in his Patreon post. Might be more helpful to split things in this way since the effects are majorly dependent on this distinction. I also want to make this into a table to indicate what effects are once per map and which are repeatable, as well as any additional restrictions since there's a lot of extremely niche effects.[[/Comment]][[Heading:2]]Temporary buffs[[/Heading]]
+[[Comment]]Not totally sure on this categorization, Kyzrati divided these effects into combat and non-combat in his Patreon post. Might be more helpful to split things in this way since the effects are majorly dependent on this distinction. I also want to make this into a table to indicate what effects are once per map and which are repeatable, as well as any additional restrictions since there's a lot of extremely niche effects.[[/Comment]]
+[[Heading:2]]Temporary buffs[[/Heading]]
 [[List]]
 [[GameText]]""Enjoy your XOMVISION!""[[/GameText]] - 18 range unjammable ability to sense active robots, even if they have the Scan Cloak trait.
 |[[GameText]]X0-1V1 causes your matter storage to temporarily balloon in size.[[/GameText]] - Temporary +500-700 matter storage.
@@ -12941,10 +12929,10 @@ These effects will be written in red text in the log, and counted under ""bad ac
 
 [[Heading:2]]Temporary debuffs[[/Heading]]
 [[List]]
-[[GameText]]""I know that drunk sailor look when I see it.""[[/GameText]] - Temporary guaranteed misdirection on move.
-|[[GameText]]""So many nails, never enough hammers...""[[/GameText]] - Temporary lower ranged accuracy.
-|[[GameText]]X0-1V1 turns out the lights.[[/GameText]] - X0-1V1 disables your [[Infowar|infowar]].
-|[[GameText]]""Did you know you're leaking matter?""[[/GameText]] - Temporary lower matter capacity.
+[[GameText]]""I know that drunk sailor look when I see it.""[[/GameText]] - Temporary guaranteed misdirection on move.|
+[[GameText]]""So many nails, never enough hammers...""[[/GameText]] - Temporary lower ranged accuracy.|
+[[GameText]]X0-1V1 turns out the lights.[[/GameText]] - X0-1V1 disables your [[Infowar|infowar]].|
+[[GameText]]""Did you know you're leaking matter?""[[/GameText]] - Temporary lower matter capacity.|
 [[/List]]
 
 [[Heading:2]]Other ""bad"" acts[[/Heading]]
@@ -12966,7 +12954,13 @@ Additional threat records (major)|~256-~300 extra influence||
 [[GameText]]""X0-1V1 taps a no entrance sign""[[/GameText]]|Removes an exit from the map|Another exit leading to the same map must exist?||
 ""Evolution hits right when you least expect it.""|Mutates one slot into a slot of another type.|Cannot change base slot configuration by more than +1/-1. In other words, if a propulsion slot is mutated away, another will not be mutated away until at least one propulsion slot was mutated back in. For example, if, without X0-1V1's interference, you have 5 utility slots, no matter how many mutations occur, you will always have between 4 and 6 utility slots.||
 
-[[/Table]]","Spoiler","","","","","","",""
+[[/Table]]
+
+[[Heading]]Trivia[[/Heading]]
+[[List]]
+X0-1V1 is a very direct reference to the [[https://crawl.develz.org/|Dungeon Crawl Stone Soup]] [[http://crawl.chaosforge.org/Xom|Xom, god of chaos]].
+[[/List]]
+","Spoiler","","","","","","",""
 "X0-1V1's Piety Tracker","Part","","","","","","","","",""
 "XL Autogun Array","Part","After the XL Autogun Array falls to around 50% integrity, a log message [[GameText]]XL Autogun Array falls apart.[[/GameText]] will be shown. When this occurs, the Array will be destroyed and 4 [[XL Autogun Subcomponent|XL Autogun Subcomponents]] will appear on the floor around Cogmind.","","","","","","","",""
 "XL Autogun Subcomponent","Part","4 of these are created when the [[XL Autogun Array]] falls apart.","","","","","","","",""
