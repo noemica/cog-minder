@@ -946,6 +946,13 @@ function processColorTag(state: ParserState, result: RegExpExecArray) {
 // Process a Comment tag like [[Comment]]Hidden Text[[/Comment]]
 function processCommentTag(state: ParserState, result: RegExpExecArray) {
     const index = state.initialContent.indexOf("[[/Comment]]", result.index);
+
+    if (index == -1) {
+        recordError(state, "Found comment without associated ending tag");
+        state.index = result.index + result[0].length;
+        return;
+    }
+
     state.index = index + "[[/Comment]]".length;
 }
 
