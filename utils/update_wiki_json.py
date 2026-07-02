@@ -1,21 +1,21 @@
 #!/usr/bin/env py
 # Updates the wiki JSON file from the items/bots JSON, adding missing parts
 import json
-from io import StringIO
 from os import path
+import re
 
 wiki_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'wiki.json')
 parts_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'items.json')
 bots_path = path.join(path.dirname(path.realpath(__file__)), '..', 'src', 'json', 'bots.json')
 
 # Open/parse files
-with open(wiki_path) as f:
+with open(wiki_path, encoding='utf-8') as f:
     wiki = json.load(f)
 
-with open(parts_path) as f:
+with open(parts_path, encoding='utf-8') as f:
     parts = json.load(f)
 
-with open (bots_path) as f:
+with open (bots_path, encoding='utf-8') as f:
     bots = json.load(f)
 
 # Update bots
@@ -70,5 +70,9 @@ for part in parts:
 # Sort parts
 wiki['Parts'] = list(sorted(wiki['Parts'], key=lambda part: part['Name']))
 
-with open(wiki_path, 'w') as f:
-    json.dump(wiki, f, indent=1)
+def unescape(s):
+    return re.sub(r'\\\\u([0-9a-f]{4})', r'\\u\1', s)
+
+json_str = unescape(json.dumps(wiki, ensure_ascii=False, indent=1))
+with open(wiki_path, 'w', encoding='utf-8') as f:
+    f.write(json_str)
