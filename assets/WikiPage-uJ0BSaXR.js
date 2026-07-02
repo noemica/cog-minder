@@ -1,4 +1,4 @@
-import{c as x,r as k,j as n,L as V,F as N,B as v,G as U,w as de,H as Ce,I as Se,f as E,J as Te,y as O,T as L,K as ce,a as K,s as ke,M as xe,S as $,q as He,N as Ae,O as me,z as Ge,u as ge,P as Re,Q as Ie,U as ee,V as z,W as F,X as Ne,Y as te,Z as Pe,_ as De}from"./index-MSfkr79N.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as ae,n as X,b as _,o as ue,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-0_JhzPfA.js";import{S as je}from"./Table-CbqOrZmR.js";import{e as ze}from"./partColumnDefs-WOF3b3Ml.js";/* empty css              */import"./items-DWkEaWKJ.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as x,r as k,j as n,L as V,F as N,B as v,G as U,w as de,H as Ce,I as Se,f as E,J as Te,y as O,T as L,K as ce,a as K,s as ke,M as xe,S as $,q as He,N as Ae,O as me,z as Ge,u as ge,P as Re,Q as Ie,U as ee,V as z,W as F,X as Ne,Y as te,Z as Pe,_ as De}from"./index-CAfbyA_z.js";import{l as Ee}from"./lore-08CTWJsY.js";import{h as Me,c as Le}from"./hackUtilities-C7-c-ilu.js";import{H as Y,R as Fe,T as ae,n as X,b as _,o as ue,p as Be,L as We,q as qe,u as Oe,a as Ue}from"./BotPopover-BDzPASxr.js";import{S as je}from"./Table-Bbl3rz50.js";import{e as ze}from"./partColumnDefs-CGTM6htl.js";/* empty css              */import"./items-DWkEaWKJ.js";const Ve=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -1404,10 +1404,10 @@ Weapons|Time to fire|Time per weapon||
 [[CellStyle:Neutral]][[B]]1 with QC[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]|[[CellStyle:Neutral]][[B]]100[[/B]]||
 1|200|[[CellStyle:Bad]]200||
 2|300|[[CellStyle:Bad]]150||
-3|325|[[CellStyle:Bad]]108â…“||
-4|350|[[CellStyle:Good]]â€‡87Â½||
-5|375|[[CellStyle:Good]]â€‡75||
-6|400|[[CellStyle:Good]]â€‡66â…”
+3|325|[[CellStyle:Bad]]108⅓||
+4|350|[[CellStyle:Good]] 87½||
+5|375|[[CellStyle:Good]] 75||
+6|400|[[CellStyle:Good]] 66⅔
 [[/Table]]
 
 The Quantum Capacitor has several benefits on top of firing time:
@@ -12775,14 +12775,14 @@ For example, if a bot has equipped:
 [[/List]]
 its total mass is 14. Its movement speed depends on which propulsion unit it has activated:
 [[List]]
-With the treads: The bot is underweight (14 â‰¤ 20). The time to move one tile is 160.
-|With the wheel: The bot is 1 time overweight (10 < 14 â‰¤ 20). The time to move one tile is 80 + 15 = 95.
-|With neither (core propulsion): The bot is 4 times overweight (12 < 14 â‰¤ 15). The time to move one tile is 50 + (50 Ã— 4) = 250.
+With the treads: The bot is underweight (14 ≤ 20). The time to move one tile is 160.
+|With the wheel: The bot is 1 time overweight (10 < 14 ≤ 20). The time to move one tile is 80 + 15 = 95.
+|With neither (core propulsion): The bot is 4 times overweight (12 < 14 ≤ 15). The time to move one tile is 50 + (50 × 4) = 250.
 [[/List]]
 
 [[Heading:2]]Formula[[/Heading]]
 Mathematically, the amount of time it takes a bot to move one tile (ignoring mechanics for flight and hover units) is
-Î£[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + âŒŠmax(0, [[I]]m[[/I]] âˆ’ 1)/Î£[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]âŒ‹(Î£[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
+Σ[[I]]d[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]] + ⌊max(0, [[I]]m[[/I]] − 1)/Σ[[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]⌋(Σ[[I]]p[[/I]][[Sub]][[I]]i[[/I]][[/Sub]]/[[I]]n[[/I]])
 where
 [[List]]
 [[I]]s[[/I]][[Sub]][[I]]i[[/I]][[/Sub]] is the mass support for propulsion unit [[I]]i[[/I]]
@@ -12791,7 +12791,7 @@ where
 |[[I]]m[[/I]] is the total mass of all attached parts
 |[[I]]n[[/I]] is the total number of activated propulsion units
 [[/List]]
-and all sums Î£ are over all activated propulsion units.
+and all sums Σ are over all activated propulsion units.
 
 [[Heading]]Flight and Hover Units[[/Heading]]
 Flight and hover units calculate their movement speed in the same basic way as legs, treads, and wheels, but they have the following additional mechanics that affect movement speed:
