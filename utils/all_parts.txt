@@ -1,4 +1,4 @@
-"Matter
+Matter
 Data Core
 Derelict Log
 Schematic Archive
@@ -836,6 +836,7 @@ Prc. Shock Rifle
 Hpw. Shock Rifle
 Arc Thrower
 Imp. Lightning Gun
+D4-RBY's Behemoth Befriender
 Tesla Rifle
 Imp. Arc Projector
 Hvy. Tesla Rifle
@@ -1332,4 +1333,4 @@ Terrabomb Derivative
 Sigix Containment Pod
 Sigix Corpse
 Meganuke
-Gamma Refractor"
+Gamma Refractor

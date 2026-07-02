@@ -15840,6 +15840,30 @@
     },
     {
         "Slot": "Weapon",
+        "Name": "D4-RBY's Behemoth Befriender",
+        "Type": "Energy Gun",
+        "Rating": "5*",
+        "Category": "Prototype",
+        "Size": "1",
+        "Mass": "4",
+        "Integrity": "85",
+        "No Repairs": "1",
+        "Coverage": "100",
+        "Range": "8",
+        "Shot Energy": "22",
+        "Shot Heat": "40",
+        "Projectile Count": "1",
+        "Damage Min": "12",
+        "Damage Max": "18",
+        "Damage Type": "Electromagnetic",
+        "Spectrum": "Intermediate (30)",
+        "Disruption": "20",
+        "Salvage": "3",
+        "Index": 838,
+        "Full Name": "D4-RBY's Behemoth Befriender"
+    },
+    {
+        "Slot": "Weapon",
         "Studyable": "1",
         "Hackable Schematic": "1",
         "Supporter Attribution": "Zakharovian",
@@ -15863,7 +15887,7 @@
         "Salvage": "3",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 838,
+        "Index": 839,
         "Full Name": "Tesla Rifle"
     },
     {
@@ -15890,7 +15914,7 @@
         "Salvage": "3",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 839,
+        "Index": 840,
         "Full Name": "Improved Arc Projector"
     },
     {
@@ -15918,7 +15942,7 @@
         "Salvage": "4",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 840,
+        "Index": 841,
         "Full Name": "Heavy Tesla Rifle"
     },
     {
@@ -15944,7 +15968,7 @@
         "Spectrum": "Fine (100)",
         "Disruption": "60",
         "Salvage": "4",
-        "Index": 841,
+        "Index": 842,
         "Full Name": "Hypervelocity EM Gauss Rifle"
     },
     {
@@ -15969,7 +15993,7 @@
         "Salvage": "1",
         "Fabrication Number": "1",
         "Fabrication Time": "117/58/39",
-        "Index": 842,
+        "Index": 843,
         "Full Name": "Improved Arc Thrower"
     },
     {
@@ -15995,7 +16019,7 @@
         "Spectrum": "Wide (10)",
         "Disruption": "2",
         "Salvage": "1",
-        "Index": 843,
+        "Index": 844,
         "Full Name": "Antisys Shotgun"
     },
     {
@@ -16020,7 +16044,7 @@
         "Spectrum": "Narrow (50)",
         "Disruption": "50",
         "Salvage": "3",
-        "Index": 844,
+        "Index": 845,
         "Full Name": "01-MTF's Shockpuncher"
     },
     {
@@ -16046,7 +16070,7 @@
         "Spectrum": "Wide (10)",
         "Disruption": "2",
         "Salvage": "4",
-        "Index": 845,
+        "Index": 846,
         "Full Name": "Shockbolt Module"
     },
     {
@@ -16074,7 +16098,7 @@
         "Salvage": "4",
         "Fabrication Number": "2",
         "Fabrication Time": "128/64/42",
-        "Index": 846,
+        "Index": 847,
         "Full Name": "Gamma Rifle"
     },
     {
@@ -16099,7 +16123,7 @@
         "Spectrum": "Fine (100)",
         "Disruption": "80",
         "Salvage": "4",
-        "Index": 847,
+        "Index": 848,
         "Full Name": "Tachyon Dispersion Ray"
     },
     {
@@ -16124,7 +16148,7 @@
         "Damage Type": "Electromagnetic",
         "Spectrum": "Narrow (50)",
         "Disruption": "2",
-        "Index": 848,
+        "Index": 849,
         "Full Name": "Immobilizer"
     },
     {
@@ -16152,7 +16176,7 @@
         "Salvage": "4",
         "Fabrication Number": "1",
         "Fabrication Time": "204/102/68",
-        "Index": 849,
+        "Index": 850,
         "Full Name": "Electrostorm Shotgun"
     },
     {
@@ -16178,7 +16202,7 @@
         "Spectrum": "Fine (100)",
         "Disruption": "60",
         "Salvage": "4",
-        "Index": 850,
+        "Index": 851,
         "Full Name": "Modified EM Gauss Rifle"
     },
     {
@@ -16205,7 +16229,7 @@
         "Spectrum": "Wide (10)",
         "Disruption": "2",
         "Salvage": "1",
-        "Index": 851,
+        "Index": 852,
         "Full Name": "AWS/EX-DEC"
     },
     {
@@ -16231,7 +16255,7 @@
         "Spectrum": "Wide (10)",
         "Disruption": "6",
         "Salvage": "8",
-        "Index": 852,
+        "Index": 853,
         "Full Name": "Enhanced Gamma Rifle"
     },
     {
@@ -16256,7 +16280,7 @@
         "Penetration": "100 / 75",
         "Spectrum": "Intermediate (30)",
         "Disruption": "12",
-        "Index": 853,
+        "Index": 854,
         "Full Name": "Concept Lightning Penetrator"
     },
     {
@@ -16282,7 +16306,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "51/25/17",
-        "Index": 854,
+        "Index": 855,
         "Full Name": "Medium Laser"
     },
     {
@@ -16307,7 +16331,7 @@
         "Heat Transfer": "Low (25)",
         "Fabrication Number": "3",
         "Fabrication Time": "51/25/17",
-        "Index": 855,
+        "Index": 856,
         "Full Name": "Small Laser"
     },
     {
@@ -16331,7 +16355,7 @@
         "Salvage": "1",
         "Fabrication Number": "1",
         "Fabrication Time": "51/25/17",
-        "Index": 856,
+        "Index": 857,
         "Full Name": "Salvaging Laser"
     },
     {
@@ -16352,7 +16376,7 @@
         "Damage Max": "10",
         "Damage Type": "Thermal",
         "Heat Transfer": "Medium (37)",
-        "Index": 857,
+        "Index": 858,
         "Full Name": "Backup Laser I"
     },
     {
@@ -16377,7 +16401,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 858,
+        "Index": 859,
         "Full Name": "Beam Rifle"
     },
     {
@@ -16404,7 +16428,7 @@
         "Salvage": "-1",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 859,
+        "Index": 860,
         "Full Name": "Particle Gun"
     },
     {
@@ -16431,7 +16455,7 @@
         "Salvage": "-1",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 860,
+        "Index": 861,
         "Full Name": "Spread Laser"
     },
     {
@@ -16457,7 +16481,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "99/49/33",
-        "Index": 861,
+        "Index": 862,
         "Full Name": "Improved Medium Laser"
     },
     {
@@ -16480,7 +16504,7 @@
         "Heat Transfer": "Low (25)",
         "Fabrication Number": "1",
         "Fabrication Time": "62/31/20",
-        "Index": 862,
+        "Index": 863,
         "Full Name": "Sub. Laser"
     },
     {
@@ -16504,7 +16528,7 @@
         "Damage Type": "Thermal",
         "Heat Transfer": "Low (25)",
         "Salvage": "-1",
-        "Index": 863,
+        "Index": 864,
         "Full Name": "Autobeam"
     },
     {
@@ -16530,7 +16554,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 864,
+        "Index": 865,
         "Full Name": "Field Laser"
     },
     {
@@ -16558,7 +16582,7 @@
         "Salvage": "-2",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 865,
+        "Index": 866,
         "Full Name": "Pulse Rifle"
     },
     {
@@ -16584,7 +16608,7 @@
         "Salvage": "-2",
         "Fabrication Number": "1",
         "Fabrication Time": "73/36/24",
-        "Index": 866,
+        "Index": 867,
         "Full Name": "Overtuned Pulse Rifle"
     },
     {
@@ -16606,7 +16630,7 @@
         "Damage Max": "14",
         "Damage Type": "Thermal",
         "Heat Transfer": "Medium (37)",
-        "Index": 867,
+        "Index": 868,
         "Full Name": "Backup Laser III"
     },
     {
@@ -16632,7 +16656,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "116/58/38",
-        "Index": 868,
+        "Index": 869,
         "Full Name": "Heavy Particle Gun"
     },
     {
@@ -16659,7 +16683,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "116/58/38",
-        "Index": 869,
+        "Index": 870,
         "Full Name": "Precision Beam Rifle"
     },
     {
@@ -16684,7 +16708,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "116/58/38",
-        "Index": 870,
+        "Index": 871,
         "Full Name": "Advanced Beam Rifle"
     },
     {
@@ -16710,7 +16734,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 871,
+        "Index": 872,
         "Full Name": "Heavy Laser"
     },
     {
@@ -16736,7 +16760,7 @@
         "Salvage": "-1",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 872,
+        "Index": 873,
         "Full Name": "Gatling Laser"
     },
     {
@@ -16764,7 +16788,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "134/67/44",
-        "Index": 873,
+        "Index": 874,
         "Full Name": "Cooled Pulse Rifle"
     },
     {
@@ -16790,7 +16814,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "134/67/44",
-        "Index": 874,
+        "Index": 875,
         "Full Name": "High-powered Field Laser"
     },
     {
@@ -16817,7 +16841,7 @@
         "Salvage": "-1",
         "Fabrication Number": "1",
         "Fabrication Time": "134/67/44",
-        "Index": 875,
+        "Index": 876,
         "Full Name": "Improved Spread Laser"
     },
     {
@@ -16841,7 +16865,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 876,
+        "Index": 877,
         "Full Name": "Makeshift Laser"
     },
     {
@@ -16867,7 +16891,7 @@
         "Heat Transfer": "High (50)",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 877,
+        "Index": 878,
         "Full Name": "Plasma Rifle"
     },
     {
@@ -16892,7 +16916,7 @@
         "Heat Transfer": "High (50)",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 878,
+        "Index": 879,
         "Full Name": "Thermic Laser"
     },
     {
@@ -16915,7 +16939,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "95/47/31",
-        "Index": 879,
+        "Index": 880,
         "Full Name": "Beamcaster"
     },
     {
@@ -16942,7 +16966,7 @@
         "Salvage": "5",
         "Fabrication Number": "2",
         "Fabrication Time": "152/76/50",
-        "Index": 880,
+        "Index": 881,
         "Full Name": "Force Rifle"
     },
     {
@@ -16967,7 +16991,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "152/76/50",
-        "Index": 881,
+        "Index": 882,
         "Full Name": "Improved Heavy Laser"
     },
     {
@@ -16991,7 +17015,7 @@
         "Damage Max": "18",
         "Damage Type": "Thermal",
         "Heat Transfer": "Low (25)",
-        "Index": 882,
+        "Index": 883,
         "Full Name": "Storm Laser"
     },
     {
@@ -17013,7 +17037,7 @@
         "Damage Max": "30",
         "Damage Type": "Thermal",
         "Heat Transfer": "Medium (37)",
-        "Index": 883,
+        "Index": 884,
         "Full Name": "Zionite Laser-S"
     },
     {
@@ -17034,7 +17058,7 @@
         "Damage Type": "Thermal",
         "Critical": "10% Burn",
         "Heat Transfer": "Medium (37)",
-        "Index": 884,
+        "Index": 885,
         "Full Name": "Self-contained Borg Laser"
     },
     {
@@ -17060,7 +17084,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 885,
+        "Index": 886,
         "Full Name": "Wave Gun"
     },
     {
@@ -17086,7 +17110,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 886,
+        "Index": 887,
         "Full Name": "Variable Charge Gun"
     },
     {
@@ -17110,7 +17134,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "106/53/35",
-        "Index": 887,
+        "Index": 888,
         "Full Name": "Heavy Beamcaster"
     },
     {
@@ -17134,7 +17158,7 @@
         "Heat Transfer": "High (50)",
         "Fabrication Number": "1",
         "Fabrication Time": "106/53/35",
-        "Index": 888,
+        "Index": 889,
         "Full Name": "Overtuned Beamcaster"
     },
     {
@@ -17161,7 +17185,7 @@
         "Heat Transfer": "High (50)",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 889,
+        "Index": 890,
         "Full Name": "Cooled Plasma Rifle"
     },
     {
@@ -17188,7 +17212,7 @@
         "Salvage": "5",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 890,
+        "Index": 891,
         "Full Name": "Enhanced Force Rifle"
     },
     {
@@ -17215,7 +17239,7 @@
         "Salvage": "-2",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 891,
+        "Index": 892,
         "Full Name": "Heavy Gatling Laser"
     },
     {
@@ -17237,7 +17261,7 @@
         "Damage Max": "33",
         "Damage Type": "Phasic",
         "Critical": "7% Intensify",
-        "Index": 892,
+        "Index": 893,
         "Full Name": "Zionite Phaser-S"
     },
     {
@@ -17263,7 +17287,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "117/58/39",
-        "Index": 893,
+        "Index": 894,
         "Full Name": "Phase Gun"
     },
     {
@@ -17290,7 +17314,7 @@
         "Salvage": "-1",
         "Fabrication Number": "2",
         "Fabrication Time": "117/58/39",
-        "Index": 894,
+        "Index": 895,
         "Full Name": "Dispersion Rifle"
     },
     {
@@ -17312,7 +17336,7 @@
         "Damage Max": "20",
         "Damage Type": "Thermal",
         "Heat Transfer": "Medium (37)",
-        "Index": 895,
+        "Index": 896,
         "Full Name": "Backup Laser VII"
     },
     {
@@ -17344,7 +17368,7 @@
         "Chunks": "1",
         "Explosion Type": "Thermal",
         "Explosion Heat Transfer": "Low (25)",
-        "Index": 896,
+        "Index": 897,
         "Full Name": "Plasma Storm"
     },
     {
@@ -17370,7 +17394,7 @@
         "Heat Transfer": "High (50)",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 897,
+        "Index": 898,
         "Full Name": "Advanced Plasma Rifle"
     },
     {
@@ -17397,7 +17421,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 898,
+        "Index": 899,
         "Full Name": "Heavy Wave Gun"
     },
     {
@@ -17423,7 +17447,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 899,
+        "Index": 900,
         "Full Name": "Advanced Variable Charge Gun"
     },
     {
@@ -17449,7 +17473,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 900,
+        "Index": 901,
         "Full Name": "Cooled Phase Gun"
     },
     {
@@ -17472,7 +17496,7 @@
         "Damage Max": "18",
         "Damage Type": "Thermal",
         "Heat Transfer": "Low (25)",
-        "Index": 901,
+        "Index": 902,
         "Full Name": "Long-range Gatling Laser"
     },
     {
@@ -17497,7 +17521,7 @@
         "Damage Type": "Thermal",
         "Critical": "10% Destroy",
         "Heat Transfer": "Medium (37)",
-        "Index": 902,
+        "Index": 903,
         "Full Name": "Warp Gun"
     },
     {
@@ -17521,7 +17545,7 @@
         "Damage Type": "Entropic",
         "Critical": "5% Detonate",
         "Salvage": "-10",
-        "Index": 903,
+        "Index": 904,
         "Full Name": "Vortex Rifle"
     },
     {
@@ -17543,7 +17567,7 @@
         "Damage Max": "35",
         "Damage Type": "Thermal",
         "Heat Transfer": "Medium (37)",
-        "Index": 904,
+        "Index": 905,
         "Full Name": "Zionite Laser-M"
     },
     {
@@ -17567,7 +17591,7 @@
         "Damage Max": "32",
         "Damage Type": "Thermal",
         "Heat Transfer": "Medium (37)",
-        "Index": 905,
+        "Index": 906,
         "Full Name": "AWS/Thermal"
     },
     {
@@ -17590,7 +17614,7 @@
         "Damage Max": "30",
         "Damage Type": "Thermal",
         "Heat Transfer": "Low (25)",
-        "Index": 906,
+        "Index": 907,
         "Full Name": "PD Laser"
     },
     {
@@ -17613,7 +17637,7 @@
         "Damage Type": "Thermal",
         "Penetration": "100 / 50",
         "Heat Transfer": "Low (25)",
-        "Index": 907,
+        "Index": 908,
         "Full Name": "KN-7UR's Autopenetrator"
     },
     {
@@ -17637,7 +17661,7 @@
         "Damage Type": "Thermal",
         "Critical": "10% Burn",
         "Heat Transfer": "Medium (37)",
-        "Index": 908,
+        "Index": 909,
         "Full Name": "Stealth Gun"
     },
     {
@@ -17662,7 +17686,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "128/64/42",
-        "Index": 909,
+        "Index": 910,
         "Full Name": "Quantum Rifle"
     },
     {
@@ -17685,7 +17709,7 @@
         "Heat Transfer": "High (50)",
         "Fabrication Number": "1",
         "Fabrication Time": "128/64/42",
-        "Index": 910,
+        "Index": 911,
         "Full Name": "Overtuned Quantum Rifle"
     },
     {
@@ -17712,7 +17736,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "204/102/68",
-        "Index": 911,
+        "Index": 912,
         "Full Name": "Precision Phase Gun"
     },
     {
@@ -17739,7 +17763,7 @@
         "Salvage": "-2",
         "Fabrication Number": "1",
         "Fabrication Time": "204/102/68",
-        "Index": 912,
+        "Index": 913,
         "Full Name": "Heavy Dispersion Rifle"
     },
     {
@@ -17764,7 +17788,7 @@
         "Damage Type": "Entropic",
         "Critical": "5% Detonate",
         "Salvage": "-5",
-        "Index": 913,
+        "Index": 914,
         "Full Name": "Vortex Shotgun"
     },
     {
@@ -17789,7 +17813,7 @@
         "Critical": "20% Detonate",
         "Penetration": "80 / 65 / 50 / 35",
         "Salvage": "-10",
-        "Index": 914,
+        "Index": 915,
         "Full Name": "Vortex Rail"
     },
     {
@@ -17813,7 +17837,7 @@
         "Damage Type": "Thermal",
         "Critical": "30% Burn",
         "Heat Transfer": "High (50)",
-        "Index": 915,
+        "Index": 916,
         "Full Name": "Thermal Shotgun"
     },
     {
@@ -17838,7 +17862,7 @@
         "Critical": "20% Burn",
         "Penetration": "Unlimited",
         "Heat Transfer": "Medium (37)",
-        "Index": 916,
+        "Index": 917,
         "Full Name": "Piercelight Module"
     },
     {
@@ -17860,7 +17884,7 @@
         "Damage Max": "38",
         "Damage Type": "Phasic",
         "Critical": "7% Intensify",
-        "Index": 917,
+        "Index": 918,
         "Full Name": "Zionite Phaser-M"
     },
     {
@@ -17885,7 +17909,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "139/69/46",
-        "Index": 918,
+        "Index": 919,
         "Full Name": "Enhanced Quantum Rifle"
     },
     {
@@ -17907,7 +17931,7 @@
         "Damage Max": "41",
         "Damage Type": "Thermal",
         "Heat Transfer": "Medium (37)",
-        "Index": 919,
+        "Index": 920,
         "Full Name": "Zionite Laser-H"
     },
     {
@@ -17930,7 +17954,7 @@
         "Damage Max": "42",
         "Damage Type": "Thermal",
         "Heat Transfer": "Medium (37)",
-        "Index": 920,
+        "Index": 921,
         "Full Name": "Heavy Quantum Rifle"
     },
     {
@@ -17952,7 +17976,7 @@
         "Damage Max": "44",
         "Damage Type": "Phasic",
         "Critical": "7% Intensify",
-        "Index": 921,
+        "Index": 922,
         "Full Name": "Zionite Phaser-H"
     },
     {
@@ -17975,7 +17999,7 @@
         "Damage Type": "Thermal",
         "Critical": "5% Burn",
         "Heat Transfer": "Medium (37)",
-        "Index": 922,
+        "Index": 923,
         "Full Name": "Gatling Beam"
     },
     {
@@ -17998,7 +18022,7 @@
         "Damage Max": "45",
         "Damage Type": "Thermal",
         "Heat Transfer": "Medium (37)",
-        "Index": 923,
+        "Index": 924,
         "Full Name": "Concept Variable Chargecaster"
     },
     {
@@ -18023,7 +18047,7 @@
         "Damage Type": "Entropic",
         "Critical": "40% Meltdown",
         "Salvage": "-20",
-        "Index": 924,
+        "Index": 925,
         "Full Name": "Concept Disintegration Ray"
     },
     {
@@ -18049,7 +18073,7 @@
         "Critical": "4% Sever",
         "Penetration": "100",
         "Salvage": "2",
-        "Index": 925,
+        "Index": 926,
         "Full Name": "Sigix Sheargun"
     },
     {
@@ -18074,7 +18098,7 @@
         "Critical": "4% Sever",
         "Penetration": "50",
         "Salvage": "2",
-        "Index": 926,
+        "Index": 927,
         "Full Name": "Modified Sigix Sheargun"
     },
     {
@@ -18103,7 +18127,7 @@
         "Salvage": "2",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 927,
+        "Index": 928,
         "Full Name": "Light EM Pulse Cannon"
     },
     {
@@ -18132,7 +18156,7 @@
         "Salvage": "2",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 928,
+        "Index": 929,
         "Full Name": "EM Pulse Cannon"
     },
     {
@@ -18161,7 +18185,7 @@
         "Salvage": "3",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 929,
+        "Index": 930,
         "Full Name": "Improved EM Pulse Cannon"
     },
     {
@@ -18189,7 +18213,7 @@
         "Salvage": "3",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 930,
+        "Index": 931,
         "Full Name": "Proton Cannon"
     },
     {
@@ -18217,7 +18241,7 @@
         "Salvage": "3",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 931,
+        "Index": 932,
         "Full Name": "Long-range Proton Cannon"
     },
     {
@@ -18245,7 +18269,7 @@
         "Salvage": "4",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 932,
+        "Index": 933,
         "Full Name": "Disruptor Cannon"
     },
     {
@@ -18273,7 +18297,7 @@
         "Salvage": "3",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 933,
+        "Index": 934,
         "Full Name": "Heavy Proton Cannon"
     },
     {
@@ -18301,7 +18325,7 @@
         "Salvage": "4",
         "Fabrication Number": "2",
         "Fabrication Time": "117/58/39",
-        "Index": 934,
+        "Index": 935,
         "Full Name": "HERF Cannon"
     },
     {
@@ -18329,7 +18353,7 @@
         "Salvage": "4",
         "Fabrication Number": "2",
         "Fabrication Time": "117/58/39",
-        "Index": 935,
+        "Index": 936,
         "Full Name": "Heavy Disruptor Cannon"
     },
     {
@@ -18358,7 +18382,7 @@
         "Salvage": "4",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 936,
+        "Index": 937,
         "Full Name": "Cooled Proton Cannon"
     },
     {
@@ -18387,7 +18411,7 @@
         "Salvage": "4",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 937,
+        "Index": 938,
         "Full Name": "Proton Burst Cannon"
     },
     {
@@ -18414,7 +18438,7 @@
         "Salvage": "4",
         "Fabrication Number": "1",
         "Fabrication Time": "128/64/42",
-        "Index": 938,
+        "Index": 939,
         "Full Name": "Compact HERF Cannon"
     },
     {
@@ -18437,7 +18461,7 @@
         "Spectrum": "Narrow (50)",
         "Disruption": "2",
         "Salvage": "4",
-        "Index": 939,
+        "Index": 940,
         "Full Name": "Self-contained Borg Joltstriker"
     },
     {
@@ -18470,7 +18494,7 @@
         "Explosion Spectrum": "Wide (10)",
         "Explosion Disruption": "1",
         "Explosion Salvage": "4",
-        "Index": 940,
+        "Index": 941,
         "Full Name": "Latent Energy Streamer"
     },
     {
@@ -18496,7 +18520,7 @@
         "Spectrum": "Fine (100)",
         "Disruption": "4",
         "Salvage": "4",
-        "Index": 941,
+        "Index": 942,
         "Full Name": "NK-0LA's Tesla Doomcannon"
     },
     {
@@ -18524,7 +18548,7 @@
         "Penetration": "90",
         "Spectrum": "Wide (10)",
         "Disruption": "4",
-        "Index": 942,
+        "Index": 943,
         "Full Name": "EMDS"
     },
     {
@@ -18550,7 +18574,7 @@
         "Spectrum": "Fine (100)",
         "Disruption": "90",
         "Salvage": "4",
-        "Index": 943,
+        "Index": 944,
         "Full Name": "High-powered Disruptor Cannon"
     },
     {
@@ -18575,7 +18599,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "51/25/17",
-        "Index": 944,
+        "Index": 945,
         "Full Name": "Beam Cannon"
     },
     {
@@ -18600,7 +18624,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 945,
+        "Index": 946,
         "Full Name": "Particle Cannon"
     },
     {
@@ -18626,7 +18650,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "99/49/33",
-        "Index": 946,
+        "Index": 947,
         "Full Name": "Advanced Beam Cannon"
     },
     {
@@ -18649,7 +18673,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "62/31/20",
-        "Index": 947,
+        "Index": 948,
         "Full Name": "Sub. Beam Cannon"
     },
     {
@@ -18674,7 +18698,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 948,
+        "Index": 949,
         "Full Name": "Heavy Particle Cannon"
     },
     {
@@ -18699,7 +18723,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 949,
+        "Index": 950,
         "Full Name": "Ion Cannon"
     },
     {
@@ -18725,7 +18749,7 @@
         "Heat Transfer": "High (50)",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 950,
+        "Index": 951,
         "Full Name": "Plasma Cannon"
     },
     {
@@ -18751,7 +18775,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 951,
+        "Index": 952,
         "Full Name": "Heavy Ion Cannon"
     },
     {
@@ -18778,7 +18802,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "134/67/44",
-        "Index": 952,
+        "Index": 953,
         "Full Name": "Cooled Particle Cannon"
     },
     {
@@ -18804,7 +18828,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 953,
+        "Index": 954,
         "Full Name": "Phase Cannon"
     },
     {
@@ -18830,7 +18854,7 @@
         "Heat Transfer": "High (50)",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 954,
+        "Index": 955,
         "Full Name": "Heavy Plasma Cannon"
     },
     {
@@ -18857,7 +18881,7 @@
         "Heat Transfer": "High (50)",
         "Fabrication Number": "1",
         "Fabrication Time": "152/76/50",
-        "Index": 955,
+        "Index": 956,
         "Full Name": "Cooled Plasma Cannon"
     },
     {
@@ -18883,7 +18907,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "152/76/50",
-        "Index": 956,
+        "Index": 957,
         "Full Name": "Compact Ion Cannon"
     },
     {
@@ -18911,7 +18935,7 @@
         "Salvage": "-2",
         "Fabrication Number": "1",
         "Fabrication Time": "152/76/50",
-        "Index": 957,
+        "Index": 958,
         "Full Name": "Ion Burst Cannon"
     },
     {
@@ -18936,7 +18960,7 @@
         "Heat Transfer": "High (50)",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 958,
+        "Index": 959,
         "Full Name": "Advanced Plasma Cannon"
     },
     {
@@ -18962,7 +18986,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 959,
+        "Index": 960,
         "Full Name": "Heavy Phase Cannon"
     },
     {
@@ -18986,7 +19010,7 @@
         "Heat Transfer": "High (50)",
         "Fabrication Number": "1",
         "Fabrication Time": "106/53/35",
-        "Index": 960,
+        "Index": 961,
         "Full Name": "Overtuned Phase Cannon"
     },
     {
@@ -19014,7 +19038,7 @@
         "Salvage": "-3",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 961,
+        "Index": 962,
         "Full Name": "Neutron Cannon"
     },
     {
@@ -19040,7 +19064,7 @@
         "Damage Max": "60",
         "Damage Type": "Thermal",
         "Critical": "12% Meltdown",
-        "Index": 962,
+        "Index": 963,
         "Full Name": "Powered Cannon"
     },
     {
@@ -19067,7 +19091,7 @@
         "Salvage": "-3",
         "Fabrication Number": "2",
         "Fabrication Time": "117/58/39",
-        "Index": 963,
+        "Index": 964,
         "Full Name": "Matter Neutralizer"
     },
     {
@@ -19094,7 +19118,7 @@
         "Salvage": "-6",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 964,
+        "Index": 965,
         "Full Name": "Heavy Neutron Cannon"
     },
     {
@@ -19120,7 +19144,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 965,
+        "Index": 966,
         "Full Name": "Long-range Phase Cannon"
     },
     {
@@ -19147,7 +19171,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 966,
+        "Index": 967,
         "Full Name": "Cooled Phase Cannon"
     },
     {
@@ -19171,7 +19195,7 @@
         "Damage Type": "Entropic",
         "Critical": "50% Sunder",
         "Salvage": "-15",
-        "Index": 967,
+        "Index": 968,
         "Full Name": "Vortex Cannon"
     },
     {
@@ -19195,7 +19219,7 @@
         "Damage Max": "40",
         "Damage Type": "Thermal",
         "Heat Transfer": "Massive (80)",
-        "Index": 968,
+        "Index": 969,
         "Full Name": "Guided Plasma Cannon"
     },
     {
@@ -19216,7 +19240,7 @@
         "Damage Type": "Thermal",
         "Critical": "4% Meltdown",
         "Heat Transfer": "High (50)",
-        "Index": 969,
+        "Index": 970,
         "Full Name": "Self-contained Borg Pulseblaster"
     },
     {
@@ -19242,7 +19266,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "128/64/42",
-        "Index": 970,
+        "Index": 971,
         "Full Name": "Nova Cannon"
     },
     {
@@ -19266,7 +19290,7 @@
         "Heat Transfer": "High (50)",
         "Fabrication Number": "1",
         "Fabrication Time": "128/64/42",
-        "Index": 971,
+        "Index": 972,
         "Full Name": "Overtuned Nova Cannon"
     },
     {
@@ -19293,7 +19317,7 @@
         "Salvage": "-6",
         "Fabrication Number": "1",
         "Fabrication Time": "204/102/68",
-        "Index": 972,
+        "Index": 973,
         "Full Name": "Improved Matter Neutralizer"
     },
     {
@@ -19316,7 +19340,7 @@
         "Damage Type": "Thermal",
         "Critical": "40% Burn",
         "Heat Transfer": "Massive (80)",
-        "Index": 973,
+        "Index": 974,
         "Full Name": "Experimental Thermic Cannon"
     },
     {
@@ -19341,7 +19365,7 @@
         "Critical": "75% Sunder",
         "Penetration": "90",
         "Salvage": "-20",
-        "Index": 974,
+        "Index": 975,
         "Full Name": "Vortex Driver"
     },
     {
@@ -19363,7 +19387,7 @@
         "Damage Max": "53",
         "Damage Type": "Phasic",
         "Critical": "5% Phase",
-        "Index": 975,
+        "Index": 976,
         "Full Name": "Zionite Alpha Cannon"
     },
     {
@@ -19387,7 +19411,7 @@
         "Damage Max": "60",
         "Damage Type": "Thermal",
         "Heat Transfer": "Low (25)",
-        "Index": 976,
+        "Index": 977,
         "Full Name": "Assembled Focal Cannon"
     },
     {
@@ -19413,7 +19437,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "139/69/46",
-        "Index": 977,
+        "Index": 978,
         "Full Name": "Enhanced Nova Cannon"
     },
     {
@@ -19444,7 +19468,7 @@
         "Chunks": "1",
         "Explosion Type": "Thermal",
         "Explosion Heat Transfer": "Massive (80)",
-        "Index": 978,
+        "Index": 979,
         "Full Name": "Firepult"
     },
     {
@@ -19479,7 +19503,7 @@
         "Explosion Type": "Thermal",
         "Explosion Heat Transfer": "Massive (80)",
         "Explosion Salvage": "-8",
-        "Index": 979,
+        "Index": 980,
         "Full Name": "YOLO Cannon"
     },
     {
@@ -19515,7 +19539,7 @@
         "Explosion Type": "Thermal",
         "Explosion Heat Transfer": "Massive (80)",
         "Explosion Salvage": "-10",
-        "Index": 980,
+        "Index": 981,
         "Full Name": "Potential Cannon"
     },
     {
@@ -19540,7 +19564,7 @@
         "Damage Type": "Thermal",
         "Critical": "15% Meltdown",
         "Heat Transfer": "Medium (37)",
-        "Index": 981,
+        "Index": 982,
         "Full Name": "Warp Cannon"
     },
     {
@@ -19564,7 +19588,7 @@
         "Damage Type": "Thermal",
         "Critical": "3% Meltdown",
         "Heat Transfer": "Medium (37)",
-        "Index": 982,
+        "Index": 983,
         "Full Name": "Cooled Nova Cannon"
     },
     {
@@ -19590,7 +19614,7 @@
         "Critical": "10% Meltdown",
         "Heat Transfer": "High (50)",
         "Salvage": "-20",
-        "Index": 983,
+        "Index": 984,
         "Full Name": "Null Cannon"
     },
     {
@@ -19614,7 +19638,7 @@
         "Critical": "15% Meltdown",
         "Penetration": "100",
         "Heat Transfer": "High (50)",
-        "Index": 984,
+        "Index": 985,
         "Full Name": "Concept Plasma Driver"
     },
     {
@@ -19639,7 +19663,7 @@
         "Penetration": "Unlimited",
         "Fabrication Number": "1",
         "Fabrication Time": "240/120/80",
-        "Index": 985,
+        "Index": 986,
         "Full Name": "Hypervelocity Alpha Cannon"
     },
     {
@@ -19661,7 +19685,7 @@
         "Damage Max": "65",
         "Damage Type": "Phasic",
         "Critical": "5% Phase",
-        "Index": 986,
+        "Index": 987,
         "Full Name": "Zionite Alpha Cannon Mk. II"
     },
     {
@@ -19696,7 +19720,7 @@
         "Explosion Type": "Thermal",
         "Explosion Heat Transfer": "Massive (80)",
         "Explosion Salvage": "-10",
-        "Index": 987,
+        "Index": 988,
         "Full Name": "Improved Potential Cannon"
     },
     {
@@ -19732,7 +19756,7 @@
         "Explosion Type": "Thermal",
         "Explosion Heat Transfer": "Massive (80)",
         "Explosion Salvage": "-10",
-        "Index": 988,
+        "Index": 989,
         "Full Name": "Cooled Directed Potential Cannon"
     },
     {
@@ -19755,7 +19779,7 @@
         "Damage Type": "Thermal",
         "Critical": "1% Meltdown",
         "Heat Transfer": "Medium (37)",
-        "Index": 989,
+        "Index": 990,
         "Full Name": "Multinova Projection Cannon"
     },
     {
@@ -19782,7 +19806,7 @@
         "Critical": "25% Meltdown",
         "Penetration": "100 / 100 / 100 / 100",
         "Salvage": "20",
-        "Index": 990,
+        "Index": 991,
         "Full Name": "Disintegrator"
     },
     {
@@ -19809,7 +19833,7 @@
         "Critical": "100% Destroy",
         "Penetration": "Unlimited",
         "Salvage": "-20",
-        "Index": 991,
+        "Index": 992,
         "Full Name": "Core Cannon"
     },
     {
@@ -19833,7 +19857,7 @@
         "Damage Type": "Slashing",
         "Critical": "4% Sever",
         "Penetration": "100",
-        "Index": 992,
+        "Index": 993,
         "Full Name": "Sigix Shearcannon"
     },
     {
@@ -19861,7 +19885,7 @@
         "Critical": "100% Phase",
         "Penetration": "Unlimited",
         "Salvage": "-100",
-        "Index": 993,
+        "Index": 994,
         "Full Name": "Drained L-Cannon"
     },
     {
@@ -19888,7 +19912,7 @@
         "Critical": "100% Phase",
         "Penetration": "Unlimited",
         "Salvage": "-100",
-        "Index": 994,
+        "Index": 995,
         "Full Name": "L-Cannon"
     },
     {
@@ -19913,7 +19937,7 @@
         "Damage Type": "Entropic",
         "Critical": "90% Sunder",
         "Salvage": "-50",
-        "Index": 995,
+        "Index": 996,
         "Full Name": "BFG-9k Vortex Edition"
     },
     {
@@ -19939,7 +19963,7 @@
         "Critical": "1% Destroy",
         "Fabrication Number": "3",
         "Fabrication Time": "51/25/17",
-        "Index": 996,
+        "Index": 997,
         "Full Name": "Assault Rifle"
     },
     {
@@ -19963,7 +19987,7 @@
         "Damage Max": "15",
         "Damage Type": "Kinetic",
         "Critical": "1% Destroy",
-        "Index": 997,
+        "Index": 998,
         "Full Name": "Assembled Rifle"
     },
     {
@@ -19991,7 +20015,7 @@
         "Critical": "1% Destroy",
         "Fabrication Number": "3",
         "Fabrication Time": "51/25/17",
-        "Index": 998,
+        "Index": 999,
         "Full Name": "Light Assault Rifle"
     },
     {
@@ -20016,7 +20040,7 @@
         "Penetration": "60",
         "Fabrication Number": "1",
         "Fabrication Time": "51/25/17",
-        "Index": 999,
+        "Index": 1000,
         "Full Name": "Bolt Gun"
     },
     {
@@ -20043,7 +20067,7 @@
         "Critical": "1% Destroy",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 1000,
+        "Index": 1001,
         "Full Name": "Heavy Assault Rifle"
     },
     {
@@ -20071,7 +20095,7 @@
         "Critical": "1% Destroy",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 1001,
+        "Index": 1002,
         "Full Name": "Autogun"
     },
     {
@@ -20100,7 +20124,7 @@
         "Salvage": "-1",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 1002,
+        "Index": 1003,
         "Full Name": "Shotgun"
     },
     {
@@ -20126,7 +20150,7 @@
         "Critical": "2% Destroy",
         "Fabrication Number": "1",
         "Fabrication Time": "62/31/20",
-        "Index": 1003,
+        "Index": 1004,
         "Full Name": "Battle Rifle"
     },
     {
@@ -20151,7 +20175,7 @@
         "Damage Max": "20",
         "Damage Type": "Kinetic",
         "Critical": "2% Destroy",
-        "Index": 1004,
+        "Index": 1005,
         "Full Name": "Assembled Heavy Rifle"
     },
     {
@@ -20176,7 +20200,7 @@
         "Salvage": "-2",
         "Fabrication Number": "1",
         "Fabrication Time": "62/31/20",
-        "Index": 1005,
+        "Index": 1006,
         "Full Name": "Sub. Machine Gun"
     },
     {
@@ -20204,7 +20228,7 @@
         "Critical": "1% Destroy",
         "Fabrication Number": "1",
         "Fabrication Time": "99/49/33",
-        "Index": 1006,
+        "Index": 1007,
         "Full Name": "Improved Assault Rifle"
     },
     {
@@ -20232,7 +20256,7 @@
         "Critical": "1% Destroy",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 1007,
+        "Index": 1008,
         "Full Name": "Minigun"
     },
     {
@@ -20261,7 +20285,7 @@
         "Salvage": "-2",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 1008,
+        "Index": 1009,
         "Full Name": "High-powered Shotgun"
     },
     {
@@ -20287,7 +20311,7 @@
         "Damage Type": "Kinetic",
         "Critical": "1% Destroy",
         "Salvage": "-2",
-        "Index": 1009,
+        "Index": 1010,
         "Full Name": "Assembled Shotgun"
     },
     {
@@ -20312,7 +20336,7 @@
         "Critical": "1% Destroy",
         "Fabrication Number": "1",
         "Fabrication Time": "73/36/24",
-        "Index": 1010,
+        "Index": 1011,
         "Full Name": "Barrage Gun"
     },
     {
@@ -20337,7 +20361,7 @@
         "Critical": "6% Destroy",
         "Fabrication Number": "1",
         "Fabrication Time": "73/36/24",
-        "Index": 1011,
+        "Index": 1012,
         "Full Name": "Overtuned Barrage Gun"
     },
     {
@@ -20365,7 +20389,7 @@
         "Critical": "1% Destroy",
         "Fabrication Number": "1",
         "Fabrication Time": "116/58/38",
-        "Index": 1012,
+        "Index": 1013,
         "Full Name": "Enhanced Autogun"
     },
     {
@@ -20393,7 +20417,7 @@
         "Penetration": "65",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 1013,
+        "Index": 1014,
         "Full Name": "Gauss Rifle"
     },
     {
@@ -20418,7 +20442,7 @@
         "Damage Type": "Kinetic",
         "Critical": "3% Destroy",
         "Penetration": "65",
-        "Index": 1014,
+        "Index": 1015,
         "Full Name": "Assembled Gauss Rifle"
     },
     {
@@ -20446,7 +20470,7 @@
         "Salvage": "-1",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 1015,
+        "Index": 1016,
         "Full Name": "Flak Gun"
     },
     {
@@ -20474,7 +20498,7 @@
         "Critical": "1% Destroy",
         "Fabrication Number": "1",
         "Fabrication Time": "134/67/44",
-        "Index": 1016,
+        "Index": 1017,
         "Full Name": "Precision Assault Rifle"
     },
     {
@@ -20500,7 +20524,7 @@
         "Salvage": "-1",
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
-        "Index": 1017,
+        "Index": 1018,
         "Full Name": "Heavy Battle Rifle"
     },
     {
@@ -20525,7 +20549,7 @@
         "Salvage": "-2",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 1018,
+        "Index": 1019,
         "Full Name": "Makeshift Shrapnel Gun"
     },
     {
@@ -20553,7 +20577,7 @@
         "Penetration": "60 / 30",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 1019,
+        "Index": 1020,
         "Full Name": "Coil Gun"
     },
     {
@@ -20582,7 +20606,7 @@
         "Salvage": "4",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 1020,
+        "Index": 1021,
         "Full Name": "Hypervelocity Gauss Rifle"
     },
     {
@@ -20611,7 +20635,7 @@
         "Salvage": "-1",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 1021,
+        "Index": 1022,
         "Full Name": "Heavy Machine Gun"
     },
     {
@@ -20640,7 +20664,7 @@
         "Salvage": "-2",
         "Fabrication Number": "1",
         "Fabrication Time": "152/76/50",
-        "Index": 1022,
+        "Index": 1023,
         "Full Name": "Improved Heavy Machine Gun"
     },
     {
@@ -20665,7 +20689,7 @@
         "Damage Type": "Kinetic",
         "Critical": "3% Destroy",
         "Penetration": "65",
-        "Index": 1023,
+        "Index": 1024,
         "Full Name": "Compact Gauss Rifle"
     },
     {
@@ -20689,7 +20713,7 @@
         "Damage Min": "18",
         "Damage Max": "22",
         "Damage Type": "Kinetic",
-        "Index": 1024,
+        "Index": 1025,
         "Full Name": "XL Autogun Subcomponent"
     },
     {
@@ -20711,7 +20735,7 @@
         "Damage Type": "Kinetic",
         "Critical": "5% Destroy",
         "Salvage": "-2",
-        "Index": 1025,
+        "Index": 1026,
         "Full Name": "Self-contained Borg Chaingun"
     },
     {
@@ -20739,7 +20763,7 @@
         "Penetration": "80",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 1026,
+        "Index": 1027,
         "Full Name": "KE Penetrator"
     },
     {
@@ -20768,7 +20792,7 @@
         "Salvage": "4",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 1027,
+        "Index": 1028,
         "Full Name": "Hypervelocity Coil Gun"
     },
     {
@@ -20794,7 +20818,7 @@
         "Penetration": "80 / 50",
         "Fabrication Number": "1",
         "Fabrication Time": "106/53/35",
-        "Index": 1028,
+        "Index": 1029,
         "Full Name": "Overtuned Coil Gun"
     },
     {
@@ -20822,7 +20846,7 @@
         "Penetration": "80",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 1029,
+        "Index": 1030,
         "Full Name": "Improved KE Penetrator"
     },
     {
@@ -20850,7 +20874,7 @@
         "Penetration": "60 / 30",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 1030,
+        "Index": 1031,
         "Full Name": "Enhanced Coil Gun"
     },
     {
@@ -20875,7 +20899,7 @@
         "Damage Type": "Kinetic",
         "Critical": "5% Destroy",
         "Penetration": "60 / 30",
-        "Index": 1031,
+        "Index": 1032,
         "Full Name": "Compact Coil Gun"
     },
     {
@@ -20903,7 +20927,7 @@
         "Penetration": "50 / 50",
         "Fabrication Number": "2",
         "Fabrication Time": "117/58/39",
-        "Index": 1032,
+        "Index": 1033,
         "Full Name": "Railgun"
     },
     {
@@ -20930,7 +20954,7 @@
         "Penetration": "80",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 1033,
+        "Index": 1034,
         "Full Name": "Advanced KE Penetrator"
     },
     {
@@ -20956,7 +20980,7 @@
         "Damage Max": "25",
         "Damage Type": "Kinetic",
         "Critical": "1% Destroy",
-        "Index": 1034,
+        "Index": 1035,
         "Full Name": "Linked Autogun"
     },
     {
@@ -20981,7 +21005,7 @@
         "Damage Type": "Kinetic",
         "Critical": "2% Destroy",
         "Penetration": "50 / 50",
-        "Index": 1035,
+        "Index": 1036,
         "Full Name": "AWS/Gauss"
     },
     {
@@ -21010,7 +21034,7 @@
         "Salvage": "4",
         "Fabrication Number": "2",
         "Fabrication Time": "128/64/42",
-        "Index": 1036,
+        "Index": 1037,
         "Full Name": "Hypervelocity Railgun"
     },
     {
@@ -21036,7 +21060,7 @@
         "Penetration": "80 / 80",
         "Fabrication Number": "1",
         "Fabrication Time": "128/64/42",
-        "Index": 1037,
+        "Index": 1038,
         "Full Name": "Overtuned Railgun"
     },
     {
@@ -21064,7 +21088,7 @@
         "Penetration": "50 / 50",
         "Fabrication Number": "1",
         "Fabrication Time": "204/102/68",
-        "Index": 1038,
+        "Index": 1039,
         "Full Name": "Helical Railgun"
     },
     {
@@ -21089,7 +21113,7 @@
         "Damage Type": "Kinetic",
         "Critical": "2% Destroy",
         "Penetration": "50 / 50",
-        "Index": 1039,
+        "Index": 1040,
         "Full Name": "Compact Railgun"
     },
     {
@@ -21114,7 +21138,7 @@
         "Damage Type": "Kinetic",
         "Critical": "35% Destroy",
         "Salvage": "-2",
-        "Index": 1040,
+        "Index": 1041,
         "Full Name": "Kinetic Shotgun"
     },
     {
@@ -21139,7 +21163,7 @@
         "Damage Min": "20",
         "Damage Max": "28",
         "Damage Type": "Kinetic",
-        "Index": 1041,
+        "Index": 1042,
         "Full Name": "XL Autogun Array"
     },
     {
@@ -21165,7 +21189,7 @@
         "Damage Type": "Impact",
         "Critical": "5% Destroy",
         "Salvage": "-3",
-        "Index": 1042,
+        "Index": 1043,
         "Full Name": "DW-4LL's Slamshotty"
     },
     {
@@ -21189,7 +21213,7 @@
         "Damage Max": "10",
         "Damage Type": "Impact",
         "Salvage": "-2",
-        "Index": 1043,
+        "Index": 1044,
         "Full Name": "DW-4LL's Megashotty"
     },
     {
@@ -21215,7 +21239,7 @@
         "Damage Type": "Kinetic",
         "Critical": "25% Blast",
         "Salvage": "-4",
-        "Index": 1044,
+        "Index": 1045,
         "Full Name": "6S-H0T's Six Shooter"
     },
     {
@@ -21241,7 +21265,7 @@
         "Damage Type": "Kinetic",
         "Critical": "5% Destroy",
         "Salvage": "-3",
-        "Index": 1045,
+        "Index": 1046,
         "Full Name": "12-ASH's Boomstick"
     },
     {
@@ -21267,7 +21291,7 @@
         "Critical": "50% Destroy",
         "Penetration": "100 / 100",
         "Salvage": "4",
-        "Index": 1046,
+        "Index": 1047,
         "Full Name": "8R-AWN's Boregun"
     },
     {
@@ -21293,7 +21317,7 @@
         "Damage Type": "Kinetic",
         "Critical": "2% Destroy",
         "Penetration": "50 / 50",
-        "Index": 1047,
+        "Index": 1048,
         "Full Name": "Multirail"
     },
     {
@@ -21319,7 +21343,7 @@
         "Damage Type": "Kinetic",
         "Critical": "50% Destroy",
         "Penetration": "80 / 65 / 50 / 50",
-        "Index": 1048,
+        "Index": 1049,
         "Full Name": "Hypervelocity Multirail"
     },
     {
@@ -21344,7 +21368,7 @@
         "Damage Type": "Kinetic",
         "Critical": "15% Destroy",
         "Penetration": "50 / 50",
-        "Index": 1049,
+        "Index": 1050,
         "Full Name": "Concept XC Strikerail"
     },
     {
@@ -21369,7 +21393,7 @@
         "Damage Type": "Kinetic",
         "Critical": "6% Destroy",
         "Penetration": "100 / 90 / 60",
-        "Index": 1050,
+        "Index": 1051,
         "Full Name": "5H-AD0's Sniper Rifle"
     },
     {
@@ -21396,7 +21420,7 @@
         "Damage Type": "Kinetic",
         "Critical": "10% Destroy",
         "Penetration": "100 / 75 / 50 / 25",
-        "Index": 1051,
+        "Index": 1052,
         "Full Name": "A3's Sniper Rifle"
     },
     {
@@ -21424,7 +21448,7 @@
         "Salvage": "-4",
         "Fabrication Number": "2",
         "Fabrication Time": "51/25/17",
-        "Index": 1052,
+        "Index": 1053,
         "Full Name": "Light Cannon"
     },
     {
@@ -21452,7 +21476,7 @@
         "Salvage": "-5",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 1053,
+        "Index": 1054,
         "Full Name": "Improved Light Cannon"
     },
     {
@@ -21478,7 +21502,7 @@
         "Salvage": "-5",
         "Fabrication Number": "1",
         "Fabrication Time": "62/31/20",
-        "Index": 1054,
+        "Index": 1055,
         "Full Name": "Battle Cannon"
     },
     {
@@ -21506,7 +21530,7 @@
         "Salvage": "-5",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 1055,
+        "Index": 1056,
         "Full Name": "Assault Cannon"
     },
     {
@@ -21535,7 +21559,7 @@
         "Salvage": "-8",
         "Fabrication Number": "1",
         "Fabrication Time": "73/36/24",
-        "Index": 1056,
+        "Index": 1057,
         "Full Name": "Heavy Assault Cannon"
     },
     {
@@ -21563,7 +21587,7 @@
         "Salvage": "-2",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 1057,
+        "Index": 1058,
         "Full Name": "Flak Cannon"
     },
     {
@@ -21590,7 +21614,7 @@
         "Salvage": "-6",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 1058,
+        "Index": 1059,
         "Full Name": "Advanced Assault Cannon"
     },
     {
@@ -21618,7 +21642,7 @@
         "Salvage": "-6",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 1059,
+        "Index": 1060,
         "Full Name": "Gauss Cannon"
     },
     {
@@ -21645,7 +21669,7 @@
         "Salvage": "-8",
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
-        "Index": 1060,
+        "Index": 1061,
         "Full Name": "Slug Cannon"
     },
     {
@@ -21673,7 +21697,7 @@
         "Salvage": "-6",
         "Fabrication Number": "1",
         "Fabrication Time": "134/67/44",
-        "Index": 1061,
+        "Index": 1062,
         "Full Name": "Mini Assault Cannon"
     },
     {
@@ -21701,7 +21725,7 @@
         "Critical": "8% Blast",
         "Penetration": "100 / 50 / 25",
         "Salvage": "-15",
-        "Index": 1062,
+        "Index": 1063,
         "Full Name": "Siege Cannon Replica"
     },
     {
@@ -21729,7 +21753,7 @@
         "Salvage": "-6",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 1063,
+        "Index": 1064,
         "Full Name": "Magnetic Acceleration Cannon"
     },
     {
@@ -21757,7 +21781,7 @@
         "Salvage": "-2",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 1064,
+        "Index": 1065,
         "Full Name": "Heavy Flak Cannon"
     },
     {
@@ -21784,7 +21808,7 @@
         "Salvage": "-4",
         "Fabrication Number": "1",
         "Fabrication Time": "95/47/31",
-        "Index": 1065,
+        "Index": 1066,
         "Full Name": "Bore Cannon"
     },
     {
@@ -21812,7 +21836,7 @@
         "Salvage": "-10",
         "Fabrication Number": "1",
         "Fabrication Time": "152/76/50",
-        "Index": 1066,
+        "Index": 1067,
         "Full Name": "Antimatter Cannon"
     },
     {
@@ -21840,7 +21864,7 @@
         "Critical": "12% Blast",
         "Penetration": "100 / 50 / 25",
         "Salvage": "-15",
-        "Index": 1067,
+        "Index": 1068,
         "Full Name": "Siege Cannon"
     },
     {
@@ -21869,7 +21893,7 @@
         "Salvage": "-7",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 1068,
+        "Index": 1069,
         "Full Name": "Mass Driver"
     },
     {
@@ -21898,7 +21922,7 @@
         "Salvage": "-10",
         "Fabrication Number": "1",
         "Fabrication Time": "106/53/35",
-        "Index": 1069,
+        "Index": 1070,
         "Full Name": "Heavy Mass Driver"
     },
     {
@@ -21927,7 +21951,7 @@
         "Salvage": "-7",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 1070,
+        "Index": 1071,
         "Full Name": "Enhanced Gauss Cannon"
     },
     {
@@ -21956,7 +21980,7 @@
         "Salvage": "-3",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 1071,
+        "Index": 1072,
         "Full Name": "Hypervelocity Gauss Cannon"
     },
     {
@@ -21984,7 +22008,7 @@
         "Salvage": "-6",
         "Fabrication Number": "1",
         "Fabrication Time": "106/53/35",
-        "Index": 1072,
+        "Index": 1073,
         "Full Name": "Overtuned Bore Cannon"
     },
     {
@@ -22012,7 +22036,7 @@
         "Salvage": "-5",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 1073,
+        "Index": 1074,
         "Full Name": "Tri-rail Accelerator"
     },
     {
@@ -22040,7 +22064,7 @@
         "Salvage": "-7",
         "Fabrication Number": "2",
         "Fabrication Time": "117/58/39",
-        "Index": 1074,
+        "Index": 1075,
         "Full Name": "Hardcell Cannon"
     },
     {
@@ -22069,7 +22093,7 @@
         "Salvage": "-8",
         "Fabrication Number": "2",
         "Fabrication Time": "117/58/39",
-        "Index": 1075,
+        "Index": 1076,
         "Full Name": "Heavy Gauss Cannon"
     },
     {
@@ -22098,7 +22122,7 @@
         "Salvage": "-3",
         "Fabrication Number": "2",
         "Fabrication Time": "117/58/39",
-        "Index": 1076,
+        "Index": 1077,
         "Full Name": "Hypervelocity Mass Driver"
     },
     {
@@ -22123,7 +22147,7 @@
         "Damage Type": "Kinetic",
         "Critical": "12% Blast",
         "Salvage": "-10",
-        "Index": 1077,
+        "Index": 1078,
         "Full Name": "Heavy Autocannon"
     },
     {
@@ -22149,7 +22173,7 @@
         "Damage Type": "Kinetic",
         "Critical": "5% Blast",
         "Salvage": "-10",
-        "Index": 1078,
+        "Index": 1079,
         "Full Name": "DAS Cannon"
     },
     {
@@ -22177,7 +22201,7 @@
         "Salvage": "-10",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 1079,
+        "Index": 1080,
         "Full Name": "Light Antimatter Cannon"
     },
     {
@@ -22198,7 +22222,7 @@
         "Damage Type": "Kinetic",
         "Critical": "10% Destroy",
         "Salvage": "-5",
-        "Index": 1080,
+        "Index": 1081,
         "Full Name": "Self-contained Borg Chaincannon"
     },
     {
@@ -22226,7 +22250,7 @@
         "Salvage": "-8",
         "Fabrication Number": "2",
         "Fabrication Time": "128/64/42",
-        "Index": 1081,
+        "Index": 1082,
         "Full Name": "Linear Accelerator"
     },
     {
@@ -22255,7 +22279,7 @@
         "Salvage": "-15",
         "Fabrication Number": "1",
         "Fabrication Time": "128/64/42",
-        "Index": 1082,
+        "Index": 1083,
         "Full Name": "Heavy Linear Accelerator"
     },
     {
@@ -22281,7 +22305,7 @@
         "Salvage": "-12",
         "Fabrication Number": "1",
         "Fabrication Time": "128/64/42",
-        "Index": 1083,
+        "Index": 1084,
         "Full Name": "Overtuned Linear Accelerator"
     },
     {
@@ -22310,7 +22334,7 @@
         "Salvage": "-8",
         "Fabrication Number": "1",
         "Fabrication Time": "204/102/68",
-        "Index": 1084,
+        "Index": 1085,
         "Full Name": "Compact Mass Driver"
     },
     {
@@ -22339,7 +22363,7 @@
         "Salvage": "-12",
         "Fabrication Number": "1",
         "Fabrication Time": "204/102/68",
-        "Index": 1085,
+        "Index": 1086,
         "Full Name": "Heavy Hardcell Cannon"
     },
     {
@@ -22366,7 +22390,7 @@
         "Salvage": "-8",
         "Fabrication Number": "2",
         "Fabrication Time": "139/69/46",
-        "Index": 1086,
+        "Index": 1087,
         "Full Name": "Enhanced Hardcell Cannon"
     },
     {
@@ -22395,7 +22419,7 @@
         "Salvage": "-8",
         "Fabrication Number": "1",
         "Fabrication Time": "222/111/74",
-        "Index": 1087,
+        "Index": 1088,
         "Full Name": "Compact Linear Accelerator"
     },
     {
@@ -22421,7 +22445,7 @@
         "Critical": "60% Destroy",
         "Penetration": "80 / 40",
         "Salvage": "-4",
-        "Index": 1088,
+        "Index": 1089,
         "Full Name": "Hypervelocity Linear Accelerator"
     },
     {
@@ -22446,7 +22470,7 @@
         "Damage Type": "Kinetic",
         "Critical": "9% Blast",
         "Salvage": "-8",
-        "Index": 1089,
+        "Index": 1090,
         "Full Name": "Hypercooled Linear Accelerator"
     },
     {
@@ -22475,7 +22499,7 @@
         "Salvage": "-10",
         "Fabrication Number": "1",
         "Fabrication Time": "222/111/74",
-        "Index": 1090,
+        "Index": 1091,
         "Full Name": "Graviton Cannon"
     },
     {
@@ -22509,7 +22533,7 @@
         "Chunks": "1",
         "Explosion Type": "Kinetic",
         "Explosion Salvage": "-1",
-        "Index": 1091,
+        "Index": 1092,
         "Full Name": "Blast Cannon"
     },
     {
@@ -22533,7 +22557,7 @@
         "Damage Max": "25",
         "Damage Type": "Kinetic",
         "Salvage": "-1",
-        "Index": 1092,
+        "Index": 1093,
         "Full Name": "P1-3CE's Gatling Flakker"
     },
     {
@@ -22561,7 +22585,7 @@
         "Critical": "15% Blast",
         "Penetration": "100 / 50 / 25",
         "Salvage": "-25",
-        "Index": 1093,
+        "Index": 1094,
         "Full Name": "Heavy Siege Cannon"
     },
     {
@@ -22585,7 +22609,7 @@
         "Damage Type": "Kinetic",
         "Critical": "12% Blast",
         "Salvage": "-10",
-        "Index": 1094,
+        "Index": 1095,
         "Full Name": "AWS/Autocannon"
     },
     {
@@ -22613,7 +22637,7 @@
         "Damage Type": "Kinetic",
         "Critical": "40% Destroy",
         "Penetration": "100 / 75 / 50",
-        "Index": 1095,
+        "Index": 1096,
         "Full Name": "Perforator"
     },
     {
@@ -22639,7 +22663,7 @@
         "Damage Type": "Kinetic",
         "Critical": "40% Destroy",
         "Penetration": "100 / 75 / 50",
-        "Index": 1096,
+        "Index": 1097,
         "Full Name": "Concept Miniperforator"
     },
     {
@@ -22667,7 +22691,7 @@
         "Damage Type": "Kinetic",
         "Critical": "20% Blast",
         "Salvage": "-20",
-        "Index": 1097,
+        "Index": 1098,
         "Full Name": "Omega Cannon"
     },
     {
@@ -22693,7 +22717,7 @@
         "Critical": "15% Destroy",
         "Penetration": "100 / 75",
         "Salvage": "-6",
-        "Index": 1098,
+        "Index": 1099,
         "Full Name": "Concept Helical Railcannon"
     },
     {
@@ -22719,7 +22743,7 @@
         "Critical": "30% Blast",
         "Penetration": "100 / 75 / 50",
         "Salvage": "-22",
-        "Index": 1099,
+        "Index": 1100,
         "Full Name": "Concept Heavy Railcannon"
     },
     {
@@ -22747,7 +22771,7 @@
         "Critical": "100% Blast",
         "Penetration": "Unlimited",
         "Salvage": "-30",
-        "Index": 1100,
+        "Index": 1101,
         "Full Name": "PL-3XN's Obliterator"
     },
     {
@@ -22778,7 +22802,7 @@
         "Explosion Salvage": "2",
         "Fabrication Number": "1",
         "Fabrication Time": "62/31/20",
-        "Index": 1101,
+        "Index": 1102,
         "Full Name": "EMP Blaster"
     },
     {
@@ -22809,7 +22833,7 @@
         "Explosion Salvage": "2",
         "Fabrication Number": "1",
         "Fabrication Time": "73/36/24",
-        "Index": 1102,
+        "Index": 1103,
         "Full Name": "Shock Bomb Launcher"
     },
     {
@@ -22840,7 +22864,7 @@
         "Explosion Salvage": "2",
         "Fabrication Number": "1",
         "Fabrication Time": "116/58/38",
-        "Index": 1103,
+        "Index": 1104,
         "Full Name": "Advanced EMP Blaster"
     },
     {
@@ -22873,7 +22897,7 @@
         "Explosion Salvage": "3",
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
-        "Index": 1104,
+        "Index": 1105,
         "Full Name": "Proton Missile Launcher"
     },
     {
@@ -22905,7 +22929,7 @@
         "Explosion Salvage": "3",
         "Fabrication Number": "1",
         "Fabrication Time": "95/47/31",
-        "Index": 1105,
+        "Index": 1106,
         "Full Name": "Improved Proton Missile Launcher"
     },
     {
@@ -22935,7 +22959,7 @@
         "Explosion Salvage": "2",
         "Fabrication Number": "1",
         "Fabrication Time": "152/76/50",
-        "Index": 1106,
+        "Index": 1107,
         "Full Name": "Guided EMP Blaster"
     },
     {
@@ -22966,7 +22990,7 @@
         "Explosion Salvage": "3",
         "Fabrication Number": "1",
         "Fabrication Time": "106/53/35",
-        "Index": 1107,
+        "Index": 1108,
         "Full Name": "Heavy Shock Bomb Launcher"
     },
     {
@@ -22997,7 +23021,7 @@
         "Explosion Salvage": "3",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 1108,
+        "Index": 1109,
         "Full Name": "Tesla Bomb Launcher"
     },
     {
@@ -23030,7 +23054,7 @@
         "Explosion Salvage": "3",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 1109,
+        "Index": 1110,
         "Full Name": "Heavy Proton Missile Launcher"
     },
     {
@@ -23060,7 +23084,7 @@
         "Explosion Salvage": "4",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 1110,
+        "Index": 1111,
         "Full Name": "Compact Tesla Bomb Launcher"
     },
     {
@@ -23092,7 +23116,7 @@
         "Explosion Salvage": "2",
         "Fabrication Number": "1",
         "Fabrication Time": "128/64/42",
-        "Index": 1111,
+        "Index": 1112,
         "Full Name": "Gamma Bomb Array"
     },
     {
@@ -23125,7 +23149,7 @@
         "Explosion Salvage": "3",
         "Fabrication Number": "1",
         "Fabrication Time": "222/111/74",
-        "Index": 1112,
+        "Index": 1113,
         "Full Name": "Enhanced Gamma Bomb Array"
     },
     {
@@ -23153,7 +23177,7 @@
         "Explosion Spectrum": "Wide (10)",
         "Explosion Disruption": "2",
         "Explosion Salvage": "2",
-        "Index": 1113,
+        "Index": 1114,
         "Full Name": "Gamma Driveblaster"
     },
     {
@@ -23181,7 +23205,7 @@
         "Explosion Spectrum": "Wide (10)",
         "Explosion Disruption": "2",
         "Explosion Salvage": "4",
-        "Index": 1114,
+        "Index": 1115,
         "Full Name": "Concept EMP Blanket Launcher"
     },
     {
@@ -23210,7 +23234,7 @@
         "Explosion Salvage": "-8",
         "Fabrication Number": "1",
         "Fabrication Time": "51/25/17",
-        "Index": 1115,
+        "Index": 1116,
         "Full Name": "Grenade Launcher"
     },
     {
@@ -23238,7 +23262,7 @@
         "Explosion Salvage": "-9",
         "Fabrication Number": "1",
         "Fabrication Time": "62/31/20",
-        "Index": 1116,
+        "Index": 1117,
         "Full Name": "Rocket Launcher"
     },
     {
@@ -23267,7 +23291,7 @@
         "Explosion Salvage": "-9",
         "Fabrication Number": "1",
         "Fabrication Time": "62/31/20",
-        "Index": 1117,
+        "Index": 1118,
         "Full Name": "Mini Grenade Launcher"
     },
     {
@@ -23292,7 +23316,7 @@
         "Explosion Salvage": "-11",
         "Fabrication Number": "1",
         "Fabrication Time": "62/31/20",
-        "Index": 1118,
+        "Index": 1119,
         "Full Name": "Sub. Shrapnel Launcher"
     },
     {
@@ -23321,7 +23345,7 @@
         "Explosion Salvage": "-10",
         "Fabrication Number": "1",
         "Fabrication Time": "73/36/24",
-        "Index": 1119,
+        "Index": 1120,
         "Full Name": "Improved Grenade Launcher"
     },
     {
@@ -23351,7 +23375,7 @@
         "Explosion Salvage": "-10",
         "Fabrication Number": "1",
         "Fabrication Time": "73/36/24",
-        "Index": 1120,
+        "Index": 1121,
         "Full Name": "Missile Launcher"
     },
     {
@@ -23382,7 +23406,7 @@
         "Explosion Type": "Explosive",
         "Fabrication Number": "3",
         "Fabrication Time": "73/36/24",
-        "Index": 1121,
+        "Index": 1122,
         "Full Name": "Concussive RPG"
     },
     {
@@ -23407,7 +23431,7 @@
         "Chunks": "1-3",
         "Explosion Type": "Explosive",
         "Explosion Salvage": "-8",
-        "Index": 1122,
+        "Index": 1123,
         "Full Name": "YI-UF0's Doublenader"
     },
     {
@@ -23434,7 +23458,7 @@
         "Explosion Salvage": "-11",
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
-        "Index": 1123,
+        "Index": 1124,
         "Full Name": "Heavy Rocket Launcher"
     },
     {
@@ -23464,7 +23488,7 @@
         "Explosion Salvage": "-11",
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
-        "Index": 1124,
+        "Index": 1125,
         "Full Name": "Heavy Missile Launcher"
     },
     {
@@ -23491,7 +23515,7 @@
         "Chunks": "1-3",
         "Explosion Type": "Explosive",
         "Explosion Salvage": "-10",
-        "Index": 1125,
+        "Index": 1126,
         "Full Name": "Guided Missile Launcher"
     },
     {
@@ -23520,7 +23544,7 @@
         "Explosion Salvage": "-10",
         "Fabrication Number": "1",
         "Fabrication Time": "134/67/44",
-        "Index": 1126,
+        "Index": 1127,
         "Full Name": "Precision Grenade Launcher"
     },
     {
@@ -23550,7 +23574,7 @@
         "Explosion Salvage": "-6",
         "Fabrication Number": "1",
         "Fabrication Time": "134/67/44",
-        "Index": 1127,
+        "Index": 1128,
         "Full Name": "Rocket Array"
     },
     {
@@ -23580,7 +23604,7 @@
         "Explosion Salvage": "-12",
         "Fabrication Number": "1",
         "Fabrication Time": "95/47/31",
-        "Index": 1128,
+        "Index": 1129,
         "Full Name": "Long-range Missile Launcher"
     },
     {
@@ -23611,7 +23635,7 @@
         "Explosion Type": "Explosive",
         "Fabrication Number": "3",
         "Fabrication Time": "95/47/31",
-        "Index": 1129,
+        "Index": 1130,
         "Full Name": "Improved Concussive RPG"
     },
     {
@@ -23641,7 +23665,7 @@
         "Explosion Salvage": "-12",
         "Fabrication Number": "1",
         "Fabrication Time": "152/76/50",
-        "Index": 1130,
+        "Index": 1131,
         "Full Name": "Precision Rocket Launcher"
     },
     {
@@ -23672,7 +23696,7 @@
         "Explosion Salvage": "-6",
         "Fabrication Number": "1",
         "Fabrication Time": "152/76/50",
-        "Index": 1131,
+        "Index": 1132,
         "Full Name": "Scatter Rocket Array"
     },
     {
@@ -23701,7 +23725,7 @@
         "Explosion Salvage": "-13",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 1132,
+        "Index": 1133,
         "Full Name": "Smartbomb Launcher"
     },
     {
@@ -23730,7 +23754,7 @@
         "Explosion Salvage": "-12",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 1133,
+        "Index": 1134,
         "Full Name": "Mini Smartbomb Launcher"
     },
     {
@@ -23760,7 +23784,7 @@
         "Explosion Salvage": "-13",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 1134,
+        "Index": 1135,
         "Full Name": "Tiamat Missile Launcher"
     },
     {
@@ -23785,7 +23809,7 @@
         "Explosion Type": "Thermal",
         "Explosion Heat Transfer": "Massive (80)",
         "Explosion Salvage": "-7",
-        "Index": 1135,
+        "Index": 1136,
         "Full Name": "Thermoblaster"
     },
     {
@@ -23813,7 +23837,7 @@
         "Explosion Salvage": "-14",
         "Fabrication Number": "1",
         "Fabrication Time": "117/58/39",
-        "Index": 1136,
+        "Index": 1137,
         "Full Name": "Micro-nuke Launcher"
     },
     {
@@ -23844,7 +23868,7 @@
         "Explosion Type": "Explosive",
         "Fabrication Number": "3",
         "Fabrication Time": "117/58/39",
-        "Index": 1137,
+        "Index": 1138,
         "Full Name": "Advanced Concussive RPG"
     },
     {
@@ -23873,7 +23897,7 @@
         "Chunks": "1-3",
         "Explosion Type": "Explosive",
         "Explosion Salvage": "-15",
-        "Index": 1138,
+        "Index": 1139,
         "Full Name": "Zip Rocket"
     },
     {
@@ -23905,7 +23929,7 @@
         "Explosion Salvage": "-14",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 1139,
+        "Index": 1140,
         "Full Name": "Neutron Missile Launcher"
     },
     {
@@ -23933,7 +23957,7 @@
         "Explosion Salvage": "-15",
         "Fabrication Number": "1",
         "Fabrication Time": "128/64/42",
-        "Index": 1140,
+        "Index": 1141,
         "Full Name": "Fusion Bomb Launcher"
     },
     {
@@ -23963,7 +23987,7 @@
         "Explosion Salvage": "-20",
         "Fabrication Number": "1",
         "Fabrication Time": "204/102/68",
-        "Index": 1141,
+        "Index": 1142,
         "Full Name": "Hellfire Missile Launcher"
     },
     {
@@ -23991,7 +24015,7 @@
         "Explosion Salvage": "-15",
         "Fabrication Number": "1",
         "Fabrication Time": "204/102/68",
-        "Index": 1142,
+        "Index": 1143,
         "Full Name": "Advanced Micro-nuke Launcher"
     },
     {
@@ -24021,7 +24045,7 @@
         "Explosion Salvage": "-30",
         "Fabrication Number": "1",
         "Fabrication Time": "204/102/68",
-        "Index": 1143,
+        "Index": 1144,
         "Full Name": "Tactical Quantum Warhead"
     },
     {
@@ -24047,7 +24071,7 @@
         "Chunks": "2-3",
         "Explosion Type": "Entropic",
         "Explosion Salvage": "-30",
-        "Index": 1144,
+        "Index": 1145,
         "Full Name": "Vortex Catalyst Activator"
     },
     {
@@ -24073,7 +24097,7 @@
         "Chunks": "1-3",
         "Explosion Type": "Explosive",
         "Explosion Salvage": "-15",
-        "Index": 1145,
+        "Index": 1146,
         "Full Name": "Chain Missile Launcher"
     },
     {
@@ -24095,7 +24119,7 @@
         "Chunks": "1-3",
         "Explosion Type": "Thermal",
         "Explosion Salvage": "-50",
-        "Index": 1146,
+        "Index": 1147,
         "Full Name": "Self-contained Borg Pulsar Launcher"
     },
     {
@@ -24126,7 +24150,7 @@
         "Explosion Salvage": "-20",
         "Fabrication Number": "1",
         "Fabrication Time": "222/111/74",
-        "Index": 1147,
+        "Index": 1148,
         "Full Name": "Ragnarok Missile Launcher"
     },
     {
@@ -24153,7 +24177,7 @@
         "Chunks": "1-2",
         "Explosion Type": "Explosive",
         "Explosion Salvage": "-10",
-        "Index": 1148,
+        "Index": 1149,
         "Full Name": "Concept Rapid Grenade Launcher"
     },
     {
@@ -24182,7 +24206,7 @@
         "Explosion Salvage": "-100",
         "Fabrication Number": "1",
         "Fabrication Time": "222/111/74",
-        "Index": 1149,
+        "Index": 1150,
         "Full Name": "Point Singularity Launcher"
     },
     {
@@ -24213,7 +24237,7 @@
         "Explosion Salvage": "-15",
         "Fabrication Number": "1",
         "Fabrication Time": "222/111/74",
-        "Index": 1150,
+        "Index": 1151,
         "Full Name": "Guided Micro-nuke Launcher"
     },
     {
@@ -24241,7 +24265,7 @@
         "Falloff": "1",
         "Chunks": "1-3",
         "Explosion Type": "Explosive",
-        "Index": 1151,
+        "Index": 1152,
         "Full Name": "Concept Concussive Dispersal Blaster"
     },
     {
@@ -24268,7 +24292,7 @@
         "Chunks": "1-2",
         "Explosion Type": "Explosive",
         "Explosion Salvage": "-14",
-        "Index": 1152,
+        "Index": 1153,
         "Full Name": "99-TNT's Nukerbomber"
     },
     {
@@ -24295,7 +24319,7 @@
         "Explosion Spectrum": "Intermediate (30)",
         "Explosion Disruption": "4",
         "Explosion Salvage": "-14",
-        "Index": 1153,
+        "Index": 1154,
         "Full Name": "Experimental Neutron Missile Launcher"
     },
     {
@@ -24321,7 +24345,7 @@
         "Chunks": "2-3",
         "Explosion Type": "Explosive",
         "Explosion Salvage": "-25",
-        "Index": 1154,
+        "Index": 1155,
         "Full Name": "Concept Arcsight Missile Launcher"
     },
     {
@@ -24347,7 +24371,7 @@
         "Chunks": "1-3",
         "Explosion Type": "Explosive",
         "Explosion Salvage": "-15",
-        "Index": 1155,
+        "Index": 1156,
         "Full Name": "Concept Tactical Fusion Warhead"
     },
     {
@@ -24374,7 +24398,7 @@
         "Chunks": "1-3",
         "Explosion Type": "Explosive",
         "Explosion Salvage": "-6",
-        "Index": 1156,
+        "Index": 1157,
         "Full Name": "Concept Tiamat Rocket Array"
     },
     {
@@ -24400,7 +24424,7 @@
         "Chunks": "1-3",
         "Explosion Type": "Explosive",
         "Explosion Salvage": "-100",
-        "Index": 1157,
+        "Index": 1158,
         "Full Name": "Z-bomb Delivery System"
     },
     {
@@ -24426,7 +24450,7 @@
         "Chunks": "1-3",
         "Explosion Type": "Explosive",
         "Explosion Salvage": "-100",
-        "Index": 1158,
+        "Index": 1159,
         "Full Name": "Concept Smart ZDS"
     },
     {
@@ -24453,7 +24477,7 @@
         "Explosion Type": "Thermal",
         "Explosion Heat Transfer": "Deadly (120)",
         "Explosion Salvage": "-500",
-        "Index": 1159,
+        "Index": 1160,
         "Full Name": "Sigix Terminator"
     },
     {
@@ -24479,7 +24503,7 @@
         "Explosion Type": "Thermal",
         "Explosion Heat Transfer": "Deadly (120)",
         "Explosion Salvage": "-500",
-        "Index": 1160,
+        "Index": 1161,
         "Full Name": "Supercharged Sigix Terminator"
     },
     {
@@ -24503,7 +24527,7 @@
         "Explosion Damage Max": "1",
         "Chunks": "1",
         "Explosion Type": "Special",
-        "Index": 1161,
+        "Index": 1162,
         "Full Name": "Containment Facilitator"
     },
     {
@@ -24521,7 +24545,7 @@
         "Targeting": "1000",
         "Projectile Count": "1",
         "Damage Type": "Special",
-        "Index": 1162,
+        "Index": 1163,
         "Full Name": "Detonator"
     },
     {
@@ -24540,7 +24564,7 @@
         "Range": "2",
         "Projectile Count": "1",
         "Damage Type": "Special",
-        "Index": 1163,
+        "Index": 1164,
         "Full Name": "1B-0RG's Assimilator"
     },
     {
@@ -24565,7 +24589,7 @@
         "Damage Min": "1",
         "Damage Max": "3",
         "Damage Type": "Piercing",
-        "Index": 1164,
+        "Index": 1165,
         "Full Name": "Dirty Datajack"
     },
     {
@@ -24589,7 +24613,7 @@
         "Damage Min": "2",
         "Damage Max": "5",
         "Damage Type": "Piercing",
-        "Index": 1165,
+        "Index": 1166,
         "Full Name": "Splice Injector"
     },
     {
@@ -24613,7 +24637,7 @@
         "Damage Min": "1",
         "Damage Max": "2",
         "Damage Type": "Piercing",
-        "Index": 1166,
+        "Index": 1167,
         "Full Name": "Chaos Jack"
     },
     {
@@ -24631,7 +24655,7 @@
         "Targeting": "1000",
         "Projectile Count": "1",
         "Damage Type": "Special",
-        "Index": 1167,
+        "Index": 1168,
         "Full Name": "Master Link"
     },
     {
@@ -24655,7 +24679,7 @@
         "Damage Type": "Special",
         "Fabrication Number": "2",
         "Fabrication Time": "51/25/17",
-        "Index": 1168,
+        "Index": 1169,
         "Full Name": "Datajack"
     },
     {
@@ -24680,7 +24704,7 @@
         "Damage Type": "Special",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 1169,
+        "Index": 1170,
         "Full Name": "Improved Datajack"
     },
     {
@@ -24705,7 +24729,7 @@
         "Damage Type": "Special",
         "Fabrication Number": "2",
         "Fabrication Time": "117/58/39",
-        "Index": 1170,
+        "Index": 1171,
         "Full Name": "Advanced Datajack"
     },
     {
@@ -24730,7 +24754,7 @@
         "Damage Type": "Special",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 1171,
+        "Index": 1172,
         "Full Name": "Remote Datajack"
     },
     {
@@ -24755,7 +24779,7 @@
         "Damage Type": "Special",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 1172,
+        "Index": 1173,
         "Full Name": "Improved Remote Datajack"
     },
     {
@@ -24780,7 +24804,7 @@
         "Damage Type": "Special",
         "Fabrication Number": "2",
         "Fabrication Time": "128/64/42",
-        "Index": 1173,
+        "Index": 1174,
         "Full Name": "Advanced Remote Datajack"
     },
     {
@@ -24802,7 +24826,7 @@
         "Delay": "-100",
         "Projectile Count": "1",
         "Damage Type": "Special",
-        "Index": 1174,
+        "Index": 1175,
         "Full Name": "Experimental Remote Datajack"
     },
     {
@@ -24824,7 +24848,7 @@
         "Waypoints": "2",
         "Projectile Count": "1",
         "Damage Type": "Special",
-        "Index": 1175,
+        "Index": 1176,
         "Full Name": "Guided Remote Datajack"
     },
     {
@@ -24845,7 +24869,7 @@
         "Waypoints": "2",
         "Projectile Count": "1",
         "Damage Type": "Special",
-        "Index": 1176,
+        "Index": 1177,
         "Full Name": "ME-RLN's Wand"
     },
     {
@@ -24869,7 +24893,7 @@
         "Explosion Damage Max": "1",
         "Chunks": "1",
         "Explosion Type": "Special",
-        "Index": 1177,
+        "Index": 1178,
         "Full Name": "System Spiker"
     },
     {
@@ -24893,7 +24917,7 @@
         "Explosion Damage Max": "1",
         "Chunks": "1",
         "Explosion Type": "Special",
-        "Index": 1178,
+        "Index": 1179,
         "Full Name": "CY-PHR's Mindspike"
     },
     {
@@ -24914,7 +24938,7 @@
         "Delay": "100",
         "Projectile Count": "1",
         "Damage Type": "Special",
-        "Index": 1179,
+        "Index": 1180,
         "Full Name": "Field Lobotomy Kit"
     },
     {
@@ -24942,7 +24966,7 @@
         "Salvage": "-20",
         "Fabrication Number": "3",
         "Fabrication Time": "51/25/17",
-        "Index": 1180,
+        "Index": 1181,
         "Full Name": "Mining Laser"
     },
     {
@@ -24966,7 +24990,7 @@
         "Damage Max": "5",
         "Damage Type": "Thermal",
         "Penetration": "100",
-        "Index": 1181,
+        "Index": 1182,
         "Full Name": "Makeshift Laser Shovel"
     },
     {
@@ -24990,7 +25014,7 @@
         "Damage Max": "5",
         "Damage Type": "Thermal",
         "Penetration": "100",
-        "Index": 1182,
+        "Index": 1183,
         "Full Name": "LU-1G1's Laser Shovel"
     },
     {
@@ -25017,7 +25041,7 @@
         "Heat Transfer": "Low (25)",
         "Fabrication Number": "3",
         "Fabrication Time": "51/25/17",
-        "Index": 1183,
+        "Index": 1184,
         "Full Name": "Welding Torch"
     },
     {
@@ -25046,7 +25070,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 1184,
+        "Index": 1185,
         "Full Name": "Plasma Cutter"
     },
     {
@@ -25075,7 +25099,7 @@
         "Heat Transfer": "Medium (37)",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 1185,
+        "Index": 1186,
         "Full Name": "Improved Plasma Cutter"
     },
     {
@@ -25102,7 +25126,7 @@
         "Critical": "15% Sever",
         "Heat Transfer": "Low (25)",
         "Salvage": "15",
-        "Index": 1186,
+        "Index": 1187,
         "Full Name": "Experimental Plasma Cutter"
     },
     {
@@ -25122,7 +25146,7 @@
         "Damage Type": "Special",
         "Fabrication Number": "1",
         "Fabrication Time": "73/36/24",
-        "Index": 1187,
+        "Index": 1188,
         "Full Name": "CPS Tube"
     },
     {
@@ -25149,7 +25173,7 @@
         "Salvage": "10",
         "Fabrication Number": "1",
         "Fabrication Time": "62/31/20",
-        "Index": 1188,
+        "Index": 1189,
         "Full Name": "Multitool"
     },
     {
@@ -25176,7 +25200,7 @@
         "Salvage": "-5",
         "Fabrication Number": "1",
         "Fabrication Time": "62/31/20",
-        "Index": 1189,
+        "Index": 1190,
         "Full Name": "Flamer"
     },
     {
@@ -25203,7 +25227,7 @@
         "Heat Transfer": "Massive (80)",
         "Disruption": "25",
         "Salvage": "-5",
-        "Index": 1190,
+        "Index": 1191,
         "Full Name": "Assembled F-torch"
     },
     {
@@ -25231,7 +25255,7 @@
         "Salvage": "-6",
         "Fabrication Number": "1",
         "Fabrication Time": "73/36/24",
-        "Index": 1191,
+        "Index": 1192,
         "Full Name": "Enhanced Flamer"
     },
     {
@@ -25258,7 +25282,7 @@
         "Salvage": "-8",
         "Fabrication Number": "1",
         "Fabrication Time": "95/47/31",
-        "Index": 1192,
+        "Index": 1193,
         "Full Name": "Plasma Flamer"
     },
     {
@@ -25285,7 +25309,7 @@
         "Heat Transfer": "Massive (80)",
         "Disruption": "40",
         "Salvage": "-8",
-        "Index": 1193,
+        "Index": 1194,
         "Full Name": "Assembled P-torch"
     },
     {
@@ -25316,7 +25340,7 @@
         "Chunks": "2-3",
         "Explosion Type": "Explosive",
         "Explosion Salvage": "-20",
-        "Index": 1194,
+        "Index": 1195,
         "Full Name": "RU-N14's Throwing Claymores"
     },
     {
@@ -25347,7 +25371,7 @@
         "Chunks": "2-3",
         "Explosion Type": "Explosive",
         "Explosion Salvage": "-30",
-        "Index": 1195,
+        "Index": 1196,
         "Full Name": "RU-N14's Throwing Claymores v3"
     },
     {
@@ -25369,7 +25393,7 @@
         "Damage Type": "Impact",
         "Critical": "95% Smash",
         "Salvage": "-25",
-        "Index": 1196,
+        "Index": 1197,
         "Full Name": "Warlord Statue"
     },
     {
@@ -25389,7 +25413,7 @@
         "Targeting": "90",
         "Projectile Count": "1",
         "Damage Type": "Special",
-        "Index": 1197,
+        "Index": 1198,
         "Full Name": "V4-D3R's Forcegen"
     },
     {
@@ -25423,7 +25447,7 @@
         "Explosion Spectrum": "Wide (10)",
         "Explosion Disruption": "2",
         "Explosion Salvage": "3",
-        "Index": 1198,
+        "Index": 1199,
         "Full Name": "Voltaic Drivehammer"
     },
     {
@@ -25449,7 +25473,7 @@
         "Heat Transfer": "Massive (80)",
         "Disruption": "20",
         "Salvage": "-3",
-        "Index": 1199,
+        "Index": 1200,
         "Full Name": "AD-0RF's Magmablaster"
     },
     {
@@ -25473,7 +25497,7 @@
         "Damage Max": "25",
         "Damage Type": "Piercing",
         "Critical": "100% Impale",
-        "Index": 1200,
+        "Index": 1201,
         "Full Name": "IN-MT5's Pitchfork \"Insurrection\""
     },
     {
@@ -25496,7 +25520,7 @@
         "Damage Max": "22",
         "Damage Type": "Piercing",
         "Critical": "100% Impale",
-        "Index": 1201,
+        "Index": 1202,
         "Full Name": "Shield Trident"
     },
     {
@@ -25520,7 +25544,7 @@
         "Damage Type": "Impact",
         "Critical": "20% Smash",
         "Salvage": "-4",
-        "Index": 1202,
+        "Index": 1203,
         "Full Name": "Junk Cannon"
     },
     {
@@ -25543,7 +25567,7 @@
         "Damage Type": "Impact",
         "Critical": "20% Smash",
         "Salvage": "-6",
-        "Index": 1203,
+        "Index": 1204,
         "Full Name": "Hammerchucker"
     },
     {
@@ -25564,7 +25588,7 @@
         "Delay": "200",
         "Projectile Count": "1",
         "Damage Type": "Special",
-        "Index": 1204,
+        "Index": 1205,
         "Full Name": "Stasis Beam"
     },
     {
@@ -25585,7 +25609,7 @@
         "Delay": "200",
         "Projectile Count": "1",
         "Damage Type": "Special",
-        "Index": 1205,
+        "Index": 1206,
         "Full Name": "Stasis Projector"
     },
     {
@@ -25607,7 +25631,7 @@
         "Delay": "100",
         "Projectile Count": "1",
         "Damage Type": "Special",
-        "Index": 1206,
+        "Index": 1207,
         "Full Name": "Experimental Stasis Projector"
     },
     {
@@ -25628,7 +25652,7 @@
         "Delay": "100",
         "Projectile Count": "1",
         "Damage Type": "Special",
-        "Index": 1207,
+        "Index": 1208,
         "Full Name": "Molecular Deconstructor"
     },
     {
@@ -25655,7 +25679,7 @@
         "Salvage": "-1",
         "Fabrication Number": "2",
         "Fabrication Time": "51/25/17",
-        "Index": 1208,
+        "Index": 1209,
         "Full Name": "Hammer"
     },
     {
@@ -25682,7 +25706,7 @@
         "Salvage": "-2",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 1209,
+        "Index": 1210,
         "Full Name": "Mace"
     },
     {
@@ -25710,7 +25734,7 @@
         "Salvage": "-2",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 1210,
+        "Index": 1211,
         "Full Name": "Flail"
     },
     {
@@ -25737,7 +25761,7 @@
         "Salvage": "-3",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 1211,
+        "Index": 1212,
         "Full Name": "Maul"
     },
     {
@@ -25760,7 +25784,7 @@
         "Damage Max": "36",
         "Damage Type": "Impact",
         "Salvage": "-3",
-        "Index": 1212,
+        "Index": 1213,
         "Full Name": "Assembled Maul"
     },
     {
@@ -25787,7 +25811,7 @@
         "Salvage": "-2",
         "Fabrication Number": "2",
         "Fabrication Time": "62/31/20",
-        "Index": 1213,
+        "Index": 1214,
         "Full Name": "Heavy Hammer"
     },
     {
@@ -25814,7 +25838,7 @@
         "Salvage": "-2",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 1214,
+        "Index": 1215,
         "Full Name": "Heavy Mace"
     },
     {
@@ -25842,7 +25866,7 @@
         "Salvage": "-2",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 1215,
+        "Index": 1216,
         "Full Name": "Heavy Flail"
     },
     {
@@ -25869,7 +25893,7 @@
         "Salvage": "-3",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 1216,
+        "Index": 1217,
         "Full Name": "Great Maul"
     },
     {
@@ -25896,7 +25920,7 @@
         "Salvage": "-2",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 1217,
+        "Index": 1218,
         "Full Name": "Powered Hammer"
     },
     {
@@ -25920,7 +25944,7 @@
         "Salvage": "-2",
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
-        "Index": 1218,
+        "Index": 1219,
         "Full Name": "Makeshift Hammer"
     },
     {
@@ -25947,7 +25971,7 @@
         "Salvage": "-3",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 1219,
+        "Index": 1220,
         "Full Name": "Power Maul"
     },
     {
@@ -25970,7 +25994,7 @@
         "Damage Max": "48",
         "Damage Type": "Impact",
         "Salvage": "-3",
-        "Index": 1220,
+        "Index": 1221,
         "Full Name": "Assembled P-maul"
     },
     {
@@ -25997,7 +26021,7 @@
         "Salvage": "-3",
         "Fabrication Number": "1",
         "Fabrication Time": "134/67/44",
-        "Index": 1221,
+        "Index": 1222,
         "Full Name": "Impact Mace"
     },
     {
@@ -26018,7 +26042,7 @@
         "Delay": "100",
         "Projectile Count": "1",
         "Damage Type": "Special",
-        "Index": 1222,
+        "Index": 1223,
         "Full Name": "H3-MLN's Flail"
     },
     {
@@ -26046,7 +26070,7 @@
         "Salvage": "-3",
         "Fabrication Number": "1",
         "Fabrication Time": "152/76/50",
-        "Index": 1223,
+        "Index": 1224,
         "Full Name": "Shock Maul"
     },
     {
@@ -26066,7 +26090,7 @@
         "Damage Type": "Kinetic",
         "Critical": "20% Smash",
         "Salvage": "-3",
-        "Index": 1224,
+        "Index": 1225,
         "Full Name": "Self-contained Borg Fist"
     },
     {
@@ -26093,7 +26117,7 @@
         "Salvage": "-3",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 1225,
+        "Index": 1226,
         "Full Name": "Thunder Hammer"
     },
     {
@@ -26118,7 +26142,7 @@
         "Damage Type": "Kinetic",
         "Critical": "50% Destroy",
         "Salvage": "-3",
-        "Index": 1226,
+        "Index": 1227,
         "Full Name": "Compactor"
     },
     {
@@ -26145,7 +26169,7 @@
         "Salvage": "-3",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 1227,
+        "Index": 1228,
         "Full Name": "Gravity Flail"
     },
     {
@@ -26165,7 +26189,7 @@
         "Damage Type": "Impact",
         "Critical": "30% Smash",
         "Salvage": "-3",
-        "Index": 1228,
+        "Index": 1229,
         "Full Name": "Self-contained Borg Gutpuncher"
     },
     {
@@ -26190,7 +26214,7 @@
         "Damage Type": "Kinetic",
         "Critical": "95% Smash",
         "Salvage": "-5",
-        "Index": 1229,
+        "Index": 1230,
         "Full Name": "CL-ANK's Mallet"
     },
     {
@@ -26222,7 +26246,7 @@
         "Chunks": "1",
         "Explosion Type": "Impact",
         "Explosion Salvage": "-3",
-        "Index": 1230,
+        "Index": 1231,
         "Full Name": "Concept Blasthammer"
     },
     {
@@ -26247,7 +26271,7 @@
         "Damage Max": "80",
         "Damage Type": "Kinetic",
         "Disruption": "25",
-        "Index": 1231,
+        "Index": 1232,
         "Full Name": "Core Stripper"
     },
     {
@@ -26273,7 +26297,7 @@
         "Damage Type": "Slashing",
         "Fabrication Number": "3",
         "Fabrication Time": "51/25/17",
-        "Index": 1232,
+        "Index": 1233,
         "Full Name": "Mining Claw"
     },
     {
@@ -26299,7 +26323,7 @@
         "Critical": "20% Sever",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 1233,
+        "Index": 1234,
         "Full Name": "Katana"
     },
     {
@@ -26322,7 +26346,7 @@
         "Damage Max": "36",
         "Damage Type": "Slashing",
         "Critical": "5% Sever",
-        "Index": 1234,
+        "Index": 1235,
         "Full Name": "Assembled Blade"
     },
     {
@@ -26347,7 +26371,7 @@
         "Critical": "25% Sever",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 1235,
+        "Index": 1236,
         "Full Name": "Scythe"
     },
     {
@@ -26373,7 +26397,7 @@
         "Critical": "20% Sever",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 1236,
+        "Index": 1237,
         "Full Name": "Axe"
     },
     {
@@ -26398,7 +26422,7 @@
         "Critical": "40% Sever",
         "Fabrication Number": "2",
         "Fabrication Time": "73/36/24",
-        "Index": 1237,
+        "Index": 1238,
         "Full Name": "Blade Saw"
     },
     {
@@ -26424,7 +26448,7 @@
         "Critical": "25% Sever",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 1238,
+        "Index": 1239,
         "Full Name": "Chainsword"
     },
     {
@@ -26447,7 +26471,7 @@
         "Critical": "25% Sever",
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
-        "Index": 1239,
+        "Index": 1240,
         "Full Name": "Ripper"
     },
     {
@@ -26470,7 +26494,7 @@
         "Critical": "20% Sever",
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
-        "Index": 1240,
+        "Index": 1241,
         "Full Name": "Makeshift Axe"
     },
     {
@@ -26493,7 +26517,7 @@
         "Critical": "20% Sever",
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
-        "Index": 1241,
+        "Index": 1242,
         "Full Name": "Makeshift Sword"
     },
     {
@@ -26519,7 +26543,7 @@
         "Critical": "25% Sever",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 1242,
+        "Index": 1243,
         "Full Name": "Great Axe"
     },
     {
@@ -26545,7 +26569,7 @@
         "Critical": "40% Sever",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 1243,
+        "Index": 1244,
         "Full Name": "Greatsword"
     },
     {
@@ -26567,7 +26591,7 @@
         "Damage Min": "2",
         "Damage Max": "4",
         "Damage Type": "Slashing",
-        "Index": 1244,
+        "Index": 1245,
         "Full Name": "Ripteeth"
     },
     {
@@ -26593,7 +26617,7 @@
         "Critical": "25% Sever",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 1245,
+        "Index": 1246,
         "Full Name": "Power Sword"
     },
     {
@@ -26616,7 +26640,7 @@
         "Damage Max": "48",
         "Damage Type": "Slashing",
         "Critical": "5% Sever",
-        "Index": 1246,
+        "Index": 1247,
         "Full Name": "Assembled P-sword"
     },
     {
@@ -26642,7 +26666,7 @@
         "Critical": "30% Sever",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 1247,
+        "Index": 1248,
         "Full Name": "Falx"
     },
     {
@@ -26667,7 +26691,7 @@
         "Critical": "40% Sever",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 1248,
+        "Index": 1249,
         "Full Name": "Carbide Saw"
     },
     {
@@ -26690,7 +26714,7 @@
         "Damage Min": "10",
         "Damage Max": "20",
         "Damage Type": "Thermal",
-        "Index": 1249,
+        "Index": 1250,
         "Full Name": "Segregator"
     },
     {
@@ -26713,7 +26737,7 @@
         "Damage Min": "5",
         "Damage Max": "30",
         "Damage Type": "Slashing",
-        "Index": 1250,
+        "Index": 1251,
         "Full Name": "Tearclaws"
     },
     {
@@ -26736,7 +26760,7 @@
         "Damage Min": "32",
         "Damage Max": "42",
         "Damage Type": "Slashing",
-        "Index": 1251,
+        "Index": 1252,
         "Full Name": "Scimitar of Distortion"
     },
     {
@@ -26759,7 +26783,7 @@
         "Damage Min": "28",
         "Damage Max": "50",
         "Damage Type": "Slashing",
-        "Index": 1252,
+        "Index": 1253,
         "Full Name": "Companion Sword"
     },
     {
@@ -26783,7 +26807,7 @@
         "Critical": "25% Sever",
         "Fabrication Number": "1",
         "Fabrication Time": "106/53/35",
-        "Index": 1253,
+        "Index": 1254,
         "Full Name": "Phasing Sabre"
     },
     {
@@ -26809,7 +26833,7 @@
         "Critical": "30% Sever",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 1254,
+        "Index": 1255,
         "Full Name": "Plasma Sword"
     },
     {
@@ -26834,7 +26858,7 @@
         "Critical": "25% Sever",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 1255,
+        "Index": 1256,
         "Full Name": "Ionic Axe"
     },
     {
@@ -26855,7 +26879,7 @@
         "Damage Min": "5",
         "Damage Max": "10",
         "Damage Type": "Slashing",
-        "Index": 1256,
+        "Index": 1257,
         "Full Name": "Mini Tearclaws"
     },
     {
@@ -26881,7 +26905,7 @@
         "Critical": "25% Sever",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 1257,
+        "Index": 1258,
         "Full Name": "Vampiric Broadsword"
     },
     {
@@ -26906,7 +26930,7 @@
         "Critical": "50% Sever",
         "Fabrication Number": "2",
         "Fabrication Time": "117/58/39",
-        "Index": 1258,
+        "Index": 1259,
         "Full Name": "Dual-blade Saw"
     },
     {
@@ -26932,7 +26956,7 @@
         "Critical": "30% Sever",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 1259,
+        "Index": 1260,
         "Full Name": "Vibroblade"
     },
     {
@@ -26958,7 +26982,7 @@
         "Critical": "30% Sever",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 1260,
+        "Index": 1261,
         "Full Name": "Molecular Scythe"
     },
     {
@@ -26984,7 +27008,7 @@
         "Critical": "50% Sever",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 1261,
+        "Index": 1262,
         "Full Name": "Centrium Greatsword"
     },
     {
@@ -27006,7 +27030,7 @@
         "Damage Min": "5",
         "Damage Max": "10",
         "Damage Type": "Slashing",
-        "Index": 1262,
+        "Index": 1263,
         "Full Name": "Master Tearclaws"
     },
     {
@@ -27025,7 +27049,7 @@
         "Damage Max": "59",
         "Damage Type": "Slashing",
         "Critical": "30% Sever",
-        "Index": 1263,
+        "Index": 1264,
         "Full Name": "Self-contained Borg Blade"
     },
     {
@@ -27048,7 +27072,7 @@
         "Damage Max": "55",
         "Damage Type": "Slashing",
         "Critical": "25% Sever",
-        "Index": 1264,
+        "Index": 1265,
         "Full Name": "Longsword +1"
     },
     {
@@ -27073,7 +27097,7 @@
         "Critical": "30% Sever",
         "Fabrication Number": "1",
         "Fabrication Time": "204/102/68",
-        "Index": 1265,
+        "Index": 1266,
         "Full Name": "Nanosword"
     },
     {
@@ -27097,7 +27121,7 @@
         "Damage Max": "80",
         "Damage Type": "Slashing",
         "Critical": "40% Sever",
-        "Index": 1266,
+        "Index": 1267,
         "Full Name": "Particle Cleaver"
     },
     {
@@ -27118,7 +27142,7 @@
         "Damage Max": "80",
         "Damage Type": "Slashing",
         "Critical": "10% Destroy",
-        "Index": 1267,
+        "Index": 1268,
         "Full Name": "Centrium Claws"
     },
     {
@@ -27142,7 +27166,7 @@
         "Damage Type": "Slashing",
         "Critical": "40% Sever",
         "Salvage": "5",
-        "Index": 1268,
+        "Index": 1269,
         "Full Name": "1C-UTU's Sword \"Lootmaker\""
     },
     {
@@ -27165,7 +27189,7 @@
         "Damage Max": "52",
         "Damage Type": "Slashing",
         "Critical": "66% Sever",
-        "Index": 1269,
+        "Index": 1270,
         "Full Name": "DM-GVY's Chainsaw"
     },
     {
@@ -27188,7 +27212,7 @@
         "Damage Min": "40",
         "Damage Max": "58",
         "Damage Type": "Slashing",
-        "Index": 1270,
+        "Index": 1271,
         "Full Name": "Heavy Scimitar of Distortion"
     },
     {
@@ -27210,7 +27234,7 @@
         "Damage Min": "9999",
         "Damage Max": "9999",
         "Damage Type": "Entropic",
-        "Index": 1271,
+        "Index": 1272,
         "Full Name": "Vortex Shredder"
     },
     {
@@ -27233,7 +27257,7 @@
         "Damage Max": "33",
         "Damage Type": "Slashing",
         "Critical": "80% Sever",
-        "Index": 1272,
+        "Index": 1273,
         "Full Name": "Experimental Terror Saw"
     },
     {
@@ -27256,7 +27280,7 @@
         "Damage Max": "80",
         "Damage Type": "Slashing",
         "Critical": "25% Destroy",
-        "Index": 1273,
+        "Index": 1274,
         "Full Name": "1C-UTU's Sword \"Choppy\""
     },
     {
@@ -27280,7 +27304,7 @@
         "Damage Max": "90",
         "Damage Type": "Slashing",
         "Critical": "20% Intensify",
-        "Index": 1274,
+        "Index": 1275,
         "Full Name": "V4-D3R's Sabre"
     },
     {
@@ -27304,7 +27328,7 @@
         "Damage Max": "75",
         "Damage Type": "Slashing",
         "Critical": "30% Sever",
-        "Index": 1275,
+        "Index": 1276,
         "Full Name": "Concept Deflector Sword"
     },
     {
@@ -27327,7 +27351,7 @@
         "Damage Min": "35",
         "Damage Max": "80",
         "Damage Type": "Slashing",
-        "Index": 1276,
+        "Index": 1277,
         "Full Name": "Quantum Companion"
     },
     {
@@ -27347,7 +27371,7 @@
         "Damage Min": "55",
         "Damage Max": "90",
         "Damage Type": "Slashing",
-        "Index": 1277,
+        "Index": 1278,
         "Full Name": "Superquantum Companion"
     },
     {
@@ -27372,7 +27396,7 @@
         "Damage Max": "100",
         "Damage Type": "Slashing",
         "Critical": "30% Sever",
-        "Index": 1278,
+        "Index": 1279,
         "Full Name": "Sigix Broadsword"
     },
     {
@@ -27398,7 +27422,7 @@
         "Critical": "10% Impale",
         "Fabrication Number": "2",
         "Fabrication Time": "84/42/28",
-        "Index": 1279,
+        "Index": 1280,
         "Full Name": "Spear"
     },
     {
@@ -27421,7 +27445,7 @@
         "Critical": "10% Impale",
         "Fabrication Number": "1",
         "Fabrication Time": "84/42/28",
-        "Index": 1280,
+        "Index": 1281,
         "Full Name": "Makeshift Spear"
     },
     {
@@ -27444,7 +27468,7 @@
         "Damage Max": "35",
         "Damage Type": "Piercing",
         "Critical": "10% Impale",
-        "Index": 1281,
+        "Index": 1282,
         "Full Name": "CR-A16's Pointy Stick"
     },
     {
@@ -27470,7 +27494,7 @@
         "Critical": "10% Impale",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 1282,
+        "Index": 1283,
         "Full Name": "Heavy Pick"
     },
     {
@@ -27496,7 +27520,7 @@
         "Critical": "10% Impale",
         "Fabrication Number": "2",
         "Fabrication Time": "106/53/35",
-        "Index": 1283,
+        "Index": 1284,
         "Full Name": "Lance"
     },
     {
@@ -27522,7 +27546,7 @@
         "Critical": "10% Impale",
         "Fabrication Number": "1",
         "Fabrication Time": "169/84/56",
-        "Index": 1284,
+        "Index": 1285,
         "Full Name": "Kinetic Spear"
     },
     {
@@ -27547,7 +27571,7 @@
         "Critical": "15% Impale",
         "Fabrication Number": "2",
         "Fabrication Time": "117/58/39",
-        "Index": 1285,
+        "Index": 1286,
         "Full Name": "Force Lance"
     },
     {
@@ -27573,7 +27597,7 @@
         "Critical": "10% Impale",
         "Fabrication Number": "1",
         "Fabrication Time": "187/93/62",
-        "Index": 1286,
+        "Index": 1287,
         "Full Name": "Plasma Lance"
     },
     {
@@ -27598,7 +27622,7 @@
         "Critical": "15% Impale",
         "Fabrication Number": "2",
         "Fabrication Time": "128/64/42",
-        "Index": 1287,
+        "Index": 1288,
         "Full Name": "Enhanced Force Lance"
     },
     {
@@ -27622,7 +27646,7 @@
         "Damage Type": "Entropic",
         "Critical": "35% Sunder",
         "Salvage": "-5",
-        "Index": 1288,
+        "Index": 1289,
         "Full Name": "Vortex Lance"
     },
     {
@@ -27645,7 +27669,7 @@
         "Damage Max": "50",
         "Damage Type": "Piercing",
         "Critical": "25% Impale",
-        "Index": 1289,
+        "Index": 1290,
         "Full Name": "CR-A16's Behemoth Slayer"
     },
     {
@@ -27667,7 +27691,7 @@
         "Damage Max": "60",
         "Damage Type": "Piercing",
         "Critical": "50% Impale",
-        "Index": 1290,
+        "Index": 1291,
         "Full Name": "Experimental Jetlance"
     },
     {
@@ -27692,7 +27716,7 @@
         "Damage Type": "Thermal",
         "Critical": "8% Meltdown",
         "Heat Transfer": "Deadly (120)",
-        "Index": 1291,
+        "Index": 1292,
         "Full Name": "Thermal Lance"
     },
     {
@@ -27704,7 +27728,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Severs 1-3 components from victim, damaging each by 12-20% of remaining integrity. Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1292,
+        "Index": 1293,
         "Full Name": "Blade Trap"
     },
     {
@@ -27716,7 +27740,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Blows 2-4 components off victim, damaging each by 20-33% of remaining integrity. Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1293,
+        "Index": 1294,
         "Full Name": "Segregator Trap"
     },
     {
@@ -27728,7 +27752,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Explodes for 20-48 explosive damage with a radius of 3 (falloff: 8; chunks: 1-3; salvage: -8). Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1294,
+        "Index": 1295,
         "Full Name": "Explosive Trap"
     },
     {
@@ -27740,7 +27764,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Explodes for 41-83 explosive damage with a radius of 4 (falloff: 12; chunks: 1-3; salvage: -12). Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1295,
+        "Index": 1296,
         "Full Name": "Heavy Explosive Trap"
     },
     {
@@ -27752,7 +27776,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Explodes for 46-92 explosive damage with a radius of 4 (falloff: 13; chunks: 1-3; salvage: -13). Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1296,
+        "Index": 1297,
         "Full Name": "Tiamat Bomb Trap"
     },
     {
@@ -27764,7 +27788,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Explodes for 57-109 explosive damage with a radius of 5 (falloff: 15; chunks: 1-3; salvage: -15). Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1297,
+        "Index": 1298,
         "Full Name": "Fusion Bomb Trap"
     },
     {
@@ -27776,7 +27800,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Explodes for 57-109 explosive damage with a radius of 4 (falloff: 7; chunks: 1-3; salvage: -20). Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1298,
+        "Index": 1299,
         "Full Name": "Hellfire Trap"
     },
     {
@@ -27788,7 +27812,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Explodes for 100-140 explosive damage with a radius of 10 (falloff: 3; chunks: 2-4; salvage: -30). Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1299,
+        "Index": 1300,
         "Full Name": "Armageddon Trap"
     },
     {
@@ -27802,7 +27826,7 @@
         "Description": "Explodes for 50-90 electromagnetic damage with a radius of 5 (falloff: 10; chunks: 1-3; salvage: -10). Drop on the ground and use > or right-click on self to install trap.",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 1300,
+        "Index": 1301,
         "Full Name": "Dirty Bomb Trap"
     },
     {
@@ -27814,7 +27838,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Explodes for 12-24 electromagnetic damage with a radius of 3 (falloff: 5; chunks: 1; salvage: 2). Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1301,
+        "Index": 1302,
         "Full Name": "EMP Trap"
     },
     {
@@ -27826,7 +27850,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Explodes for 16-30 electromagnetic damage with a radius of 4 (falloff: 6; chunks: 1; salvage: 3). Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1302,
+        "Index": 1303,
         "Full Name": "Proton Bomb Trap"
     },
     {
@@ -27838,7 +27862,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Explodes for 24-40 electromagnetic damage with a radius of 4 (falloff: 3; chunks: 1; salvage: 3). Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1303,
+        "Index": 1304,
         "Full Name": "Tesla Bomb Trap"
     },
     {
@@ -27850,7 +27874,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Explodes for 42-50 electromagnetic damage with a radius of 5 (falloff: 2; chunks: 1; salvage: 6). Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1304,
+        "Index": 1305,
         "Full Name": "Gamma Bomb Trap"
     },
     {
@@ -27862,7 +27886,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Explodes for 50-70 kinetic damage with a radius of 3 (falloff: 13; chunks: 1-3; salvage: -11). Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1305,
+        "Index": 1306,
         "Full Name": "Shrapnel Trap"
     },
     {
@@ -27874,7 +27898,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Explodes for 134-186 entropic damage with a radius of 5 (falloff: 7; chunks: 2-3; salvage: -30). Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1306,
+        "Index": 1307,
         "Full Name": "Vortex Trap"
     },
     {
@@ -27886,7 +27910,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Pierces victim three times for 7-12 damage each, with each pierce having a 50% chance of causing an Impale critical. Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1307,
+        "Index": 1308,
         "Full Name": "Piercing Trap"
     },
     {
@@ -27898,7 +27922,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Shocks victim for 50-80% system corruption. Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1308,
+        "Index": 1309,
         "Full Name": "Shock Trap"
     },
     {
@@ -27910,7 +27934,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Shocks victim for 80-120% system corruption. Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1309,
+        "Index": 1310,
         "Full Name": "EM Surge Trap"
     },
     {
@@ -27924,7 +27948,7 @@
         "Description": "Burns victim 3-5 times for 12-14 thermal damage each, and adds 200-400 heat to victim and any adjacent robots. Drop on the ground and use > or right-click on self to install trap.",
         "Fabrication Number": "2",
         "Fabrication Time": "95/47/31",
-        "Index": 1310,
+        "Index": 1311,
         "Full Name": "Fire Trap"
     },
     {
@@ -27938,7 +27962,7 @@
         "Description": "Explodes for 30-40 thermal damage with a radius of 2 (falloff: 2; chunks: 3-4; salvage: -3). High heat transfer. Also adds 150-300 heat to each victim. Drop on the ground and use > or right-click on self to install trap.",
         "Fabrication Number": "2",
         "Fabrication Time": "117/58/39",
-        "Index": 1311,
+        "Index": 1312,
         "Full Name": "Heat Bomb Trap"
     },
     {
@@ -27951,7 +27975,7 @@
         "No Repairs": "1",
         "Life": "100",
         "Description": "Holds victim until stasis field depleted. Drop on the ground and use > or right-click on self to install trap.",
-        "Index": 1312,
+        "Index": 1313,
         "Full Name": "Stasis Trap"
     },
     {
@@ -27963,7 +27987,7 @@
         "Integrity": "50",
         "No Repairs": "1",
         "Description": "Drop on the ground and use > or right-click on self to merge fragment with an attached damaged Scrap Shield.",
-        "Index": 1313,
+        "Index": 1314,
         "Full Name": "Scrap Shield Fragment"
     },
     {
@@ -27975,7 +27999,7 @@
         "Integrity": "500",
         "No Repairs": "1",
         "Description": "If on the ground at current position use > or right-click on self to release subatomizers.",
-        "Index": 1314,
+        "Index": 1315,
         "Full Name": "SUBCON Basin"
     },
     {
@@ -27988,7 +28012,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Generates signals likely to trigger an assault dispatch in 0b10-controlled areas, or if there is an active assault squad in the area redirect it to the source of the signals.",
-        "Index": 1315,
+        "Index": 1316,
         "Full Name": "Signal Generator"
     },
     {
@@ -28001,7 +28025,7 @@
         "No Repairs": "1",
         "Life": "50",
         "Description": "Remotely deactivates self-destruction routines employed by 0b10 robots in some scenarios. Drop to activate, retrieve to deactivate.",
-        "Index": 1316,
+        "Index": 1317,
         "Full Name": "Self-destruct Interrupter"
     },
     {
@@ -28013,7 +28037,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "Drop on the ground and use > or right-click on self to activate. Single use only, and valid only in Lower, Upper, or Proximity Caves.",
-        "Index": 1317,
+        "Index": 1318,
         "Full Name": "DRS Beacon"
     },
     {
@@ -28025,7 +28049,7 @@
         "Integrity": "50",
         "No Repairs": "1",
         "Description": "If on the ground at current position use > or right-click on self to start timer. Automatically detonates after 8 turns. Thermal explosion inflicts 110 damage with a radius of 4 (falloff: 10; chunks: 1-2). Deadly heat transfer.",
-        "Index": 1318,
+        "Index": 1319,
         "Full Name": "Sapper Charge"
     },
     {
@@ -28037,7 +28061,7 @@
         "Integrity": "200",
         "No Repairs": "1",
         "Description": "Drop on the ground and use > or right-click on self to prepare for deployment, then move aside.",
-        "Index": 1319,
+        "Index": 1320,
         "Full Name": "Deploy-a-Sentry"
     },
     {
@@ -28052,7 +28076,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "139/69/46",
         "Fabrication Components": "Core Expander",
-        "Index": 1320,
+        "Index": 1321,
         "Full Name": "Botcube"
     },
     {
@@ -28067,7 +28091,7 @@
         "Fabrication Number": "1",
         "Fabrication Time": "150/75/50",
         "Fabrication Components": "Core Expander",
-        "Index": 1321,
+        "Index": 1322,
         "Full Name": "Large Botcube"
     },
     {
@@ -28079,7 +28103,7 @@
         "Integrity": "50",
         "No Repairs": "1",
         "Description": "A piece of something larger.",
-        "Index": 1322,
+        "Index": 1323,
         "Full Name": "PL-3XN's Ring of Power"
     },
     {
@@ -28091,7 +28115,7 @@
         "Integrity": "350",
         "No Repairs": "1",
         "Description": "An incomplete weapon.",
-        "Index": 1323,
+        "Index": 1324,
         "Full Name": "Disassembled Obliterator"
     },
     {
@@ -28103,7 +28127,7 @@
         "Integrity": "20",
         "No Repairs": "1",
         "Description": "Module given by V3-CT5, from a project to improve the Hypervelocity EM Gauss Rifle.",
-        "Index": 1324,
+        "Index": 1325,
         "Full Name": "GAL Module"
     },
     {
@@ -28115,7 +28139,7 @@
         "Integrity": "50",
         "No Repairs": "1",
         "Description": "Consumed automatically to reload an attached 6S-H0T's Six Shooter.",
-        "Index": 1325,
+        "Index": 1326,
         "Full Name": "6S-H0T's SS Cartridge"
     },
     {
@@ -28128,7 +28152,7 @@
         "No Repairs": "1",
         "Life": "100",
         "Description": "Attracts any loose items within at least a range of 14. Drop to activate, retrieve to deactivate.",
-        "Index": 1326,
+        "Index": 1327,
         "Full Name": "Portable AFG"
     },
     {
@@ -28140,7 +28164,7 @@
         "Integrity": "225",
         "No Repairs": "1",
         "Description": "If on the ground at current position use > or right-click on self to begin or continue installing at current location. Installation progresses in one-turn intervals, and requires 10 turns to complete.",
-        "Index": 1327,
+        "Index": 1328,
         "Full Name": "UFD Drillbomb"
     },
     {
@@ -28152,7 +28176,7 @@
         "Integrity": "100",
         "No Repairs": "1",
         "Description": "If on the ground at current position use > or right-click on self to start timer. Automatically detonates after 10 turns. Explosion inflicts 500 damage with a radius of 20 (falloff: 10; chunks: 1-2).",
-        "Index": 1328,
+        "Index": 1329,
         "Full Name": "Zhirov Special"
     },
     {
@@ -28164,7 +28188,7 @@
         "Integrity": "100",
         "No Repairs": "1",
         "Description": "There does not seem to be any way to use it.",
-        "Index": 1329,
+        "Index": 1330,
         "Full Name": "SGEMP Prototype"
     },
     {
@@ -28176,7 +28200,7 @@
         "Integrity": "100",
         "No Repairs": "1",
         "Description": "There does not seem to be any way to use it.",
-        "Index": 1330,
+        "Index": 1331,
         "Full Name": "Terrabomb Derivative"
     },
     {
@@ -28188,7 +28212,7 @@
         "Integrity": "100",
         "No Repairs": "1",
         "Description": "Pod contains a live Sigix.",
-        "Index": 1331,
+        "Index": 1332,
         "Full Name": "Sigix Containment Pod"
     },
     {
@@ -28200,7 +28224,7 @@
         "Integrity": "10",
         "No Repairs": "1",
         "Description": "The post-autopsy corpse of a Sigix Warrior.",
-        "Index": 1332,
+        "Index": 1333,
         "Full Name": "Sigix Corpse"
     },
     {
@@ -28212,7 +28236,7 @@
         "Integrity": "100",
         "No Repairs": "1",
         "Description": "If on the ground at current position use > or right-click on self to detonate. Thermal explosion inflicts 2000 damage with a radius of 35 (falloff: 10; chunks: 5). Massive heat transfer.",
-        "Index": 1333,
+        "Index": 1334,
         "Full Name": "Meganuke"
     },
     {
@@ -28224,7 +28248,7 @@
         "Integrity": "100",
         "No Repairs": "1",
         "Description": "If on the ground at current position use > or right-click on self to detonate. Electromagnetic explosion inflicts 200 damage with a radius of 25 (falloff: 1; chunks: 6), piercing any walls or barriers. Fine spectrum.",
-        "Index": 1334,
+        "Index": 1335,
         "Full Name": "Gamma Refractor"
     }
 ]
