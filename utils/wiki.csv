@@ -12801,13 +12801,17 @@ X0-1V1, or Xom, is an incredibly powerful and chaotic [[Derelict]] [[Unchained]]
 
 Xom's random effects are determined by 2 factors: mood and entertainment. Mood is an uncontrollable value that changes at random, and is the primary factor that determines whether effects are positive or negative. The other state, entertainment, is a stat that decreases over time but can be increased by doing any number of ""entertaining"" or chaotic things. If Xom becomes bored, the frequency of random effects will increase dramatically until something amuses him again.
 
+[[Heading]]Lore[[/Heading]]
+[[Lore]]Cyclists Records|UC/X0-1V1[[/Lore]]
+[[Comment]]They're probably using Latent Energy technology, if i had to guess.[[/Comment]]
 
 [[Heading]]""Aligning"" with Xom[[/Heading]]
 
 [[Image]]DCSS Altar.png|D.C.S.S Altar Unit[[/Image]]
 A special ""D.C.S.S Altar Unit"" can be found next to the Subcaves exit on -10 Materials. One of a few unique commands must be entered to pray; entering any of ""[[GameText]]Pray[[/GameText]]"", ""[[GameText]]P[[/GameText]]"", ""[[GameText]]Worship[[/GameText]]"", ""[[GameText]]Sacrifice[[/GameText]]"", ""[[GameText]]<[[/GameText]]"" or ""[[GameText]]>[[/GameText]]"" will ""align"" with Xom. Choosing sacrifice will also take away half of Cogmind's current core at no extra benefit. When this happens, [[X0-1V1's Piety Tracker]] will appear on the ground, and there will be a UI indicator in the parts menu showing ""CHAOS IS INEVITABLE"".
 
-Xom is not like other [[Alignment|alignments]] in the game. Most alignments involve joining forces with special derelict groups in unique [[Branch|branch]] maps for mutual benefit. Each have a few upsides and maybe one or two downsides and some incompatible other alignments. Xom is compatible with all other alignments in the game and can be found straight away on -10. To Xom, Cogmind is simply another amusing plaything. Whether Cogmind succeeds or is destroyed is irrelevant; all that matters is whether it is entertaining. Xom's upsides and downsides both tend to both be far greater than all other alignments.
+Xom is not like other [[Alignment|alignments]] in the game. Most alignments involve joining forces with special derelict groups in unique [[Branch|branch]] maps for mutual benefit. Each have a few upsides and maybe one or two downsides and some incompatible other alignments. Xom is compatible with all other alignments in the game and can be found straight away on -10. The only thing aligning will prevent is other Unchained from being dispatched against Cogmind, with the exception of [[CY-PHR]]. To Xom, Cogmind is simply another amusing plaything. Whether Cogmind succeeds or is destroyed is irrelevant; all that matters is whether it is entertaining. Xom's upsides and downsides both tend to both be far greater than all other alignments.
+
 
 
 [[Heading:2]]X0-1V1's Piety Tracker[[/Heading]]
@@ -12840,7 +12844,7 @@ There are 2 different types of mode changes: minor adjustment and random jump. M
 
 
 [[Heading]]Entertainment[[/Heading]]
-Xom's entertainment is a number, generally shown through the Piety Tracker between 0 and 99 (or ** at 100+[[Comment]]Kyzrati mentioned that it's capped at 100, is it actually? Scoresheets seem to support a cap existing, but i've also seen mine stay at ** for very long periods of time.[[/Comment]]), that primarily influences rate of random effects. It also has a minor effect on the chance of good vs. bad effects, up to 15% additional chance of good effects at 100 entertainment. [[Comment]]TODO need to verify this when wizmode is back. Number based on kyzrati's stream but not guaranteed to be right, might also be 10%[[/Comment]] On alignment, it is initially set to 14, but it will slowly decrease over time. Xom is entertained by things like destruction, betrayal, and overall chaos. However, if Xom is bored, he will do more things to Cogmind to try to amuse himself.
+Xom's entertainment is a number, indicated through the Piety Tracker between 0 and 99 or ** at 100, that primarily influences rate of random effects. The value is capped at 100 and can't get higher under any circumstance. Entertainment also has a minor effect on the chance of good vs. bad effects, up to 15% additional chance of good effects at 100 entertainment. On alignment, it is initially set to a random value between 5 and 35, but it will slowly decrease over time. Xom is entertained by things like destruction, betrayal, and overall chaos. However, if Xom is bored, he will do more things to Cogmind to try to amuse himself.
 
 [[Heading:2]]Boredom[[/Heading]]
 If Xom's entertainment reaches 3, a message will appear in the log indicating [[GameText]]X0-1V1 is getting bored...[[/GameText]]. If entertainment continues to fall all the way to 0, another message will indicate [[GameText]]X0-1V1 is bored![[/GameText]] When this happens, the Piety Tracker will report the opinion toward Cogmind as ""A BORING THING"" in red. The actual mood value still continues to apply, though it is covered up at this time. At this point, Xom will start performing random effects every few turns until something amuses him again. This can be very dangerous or very good for Cogmind depending on Xom's mood. Due to the large number of effects, it is likely that there will be large mood swings between good and bad moods. Very bad moods can be extra scary during this time as Cogmind will likely be repeatedly hit with multiple bad effects.
@@ -12899,21 +12903,27 @@ Note that the cost to maximum core integrity is optional only in the sense that 
 [[Table]]
 Log message|Temporary effect||
 [[GameText]]""Enjoy your XOMVISION!""[[/GameText]]|18 range unjammable ability to sense active robots, even if they have the Scan Cloak trait. [[Comment]]I'm mostly assuming it pierces scan cloak 5 like the Quantum Companion.[[/Comment]]||
-[[GameText]]X0-1V1 causes your matter storage to temporarily balloon in size.[[/GameText]]|Temporary +500-700 matter storage.||
+[[GameText]]X0-1V1 causes your matter storage to temporarily balloon in size.[[/GameText]]|Temporary +500-800 matter storage.||
 [[GameText]]""Let the electrons flow!""[[/GameText]]|Temporary increased energy storage. (Can be 1300)||
 [[GameText]]""Don't spend it all in one place.""[[/GameText]]|Temporary increased energy generation.||
-[[GameText]]""Watch where you're going!""[[/GameText]]|Temporary increased sight range. (+4?)||
-[[GameText]]X0-1V1 waits impatiently for you to get up close and personal with every target in the area.[[/GameText]]|Temporary increased melee accuracy.||
+[[GameText]]""Watch where you're going!""[[/GameText]]|Temporary additional (4-6) sight range.||
+[[GameText]]X0-1V1 waits impatiently for you to get up close and personal with every target in the area.[[/GameText]]|Temporary increased melee accuracy. (Can be +16)||
 [[GameText]]""Weapons, camera, action!""[[/GameText]]|Temporary 1-3 additional weapon slots.||
+[[GameText]]X0-1V1 manipulates the space around you.[[/GameText]]|Temporary increase to base type resistance (KI, TH, EX or EM?). (Between +15? and +25?)||
+[[GameText]]X0-1V1 reimagines you as a refrigerator in hell.[[/GameText]]|Temporary lower base temperature to -666. (and sets current to it as well?)||
+
 [[/Table]]
+
 
 [[Heading:2]]Other ""good"" acts[[/Heading]]
 [[Table]]Log message|Effect|Restrictions (if any)||
 [[GameText]]""See? It buffs right out!""[[/GameText]]|Partial core integrity restoration|Must have enough missing core integrity||
+[[GameText]]Your [parts] briefly glow, restoring integrity.[[/GameText]]|The mentioned parts have some missing integrity restored|Only ""red integrity"" parts?||
 [[GameText]]X0-1V1 imagines sitting ducks.[[/GameText]]|One or more hostiles receive a huge time delay before they can perform their next action.||
 [[GameText]]The cosmic winds blow in a new direction.[[/GameText]]|Several uncontrollable purple allies are teleported in nearby.||
 [[GameText]]I sense a duel![[/GameText]]|A temporary IFF filter overwrite is applied on a visible hostile.|Multiple visible hostiles? (2?)||
 [[GameText]]""I find this area lacking in decorations.""[[/GameText]]|A visible hostile permanently turns off, turning into a statue.||
+[[GameText]]""One less obstacle for my toy on its journey to the highest levels of glorious entertainment.""[[/GameText]]|X0-1V1 destroys a nearby hostile.||
 [[GameText]]X0-1V1 twists the quantum threads just so.[[/GameText]]|A visible hostile is sundered.||
 [[GameText]]X0-1V1 briefly opens a portal to the matter dimension.[[/GameText]]|A large? amount of Matter appears at Cogmind's location?.||
 [[GameText]]X0-1V1 makes it rain matter.[[/GameText]]|Some matter piles appear at random nearby locations.||
@@ -12923,22 +12933,28 @@ Log message|Temporary effect||
 [[GameText]]""X0-1V1 Flashes the [Relay Coupler] buffer.""[[/GameText]]|The mentioned [[Relay Couplers|Relay Coupler]] is set to 99 charges and may get tagged.|Requires RIF? Cannot affect [NC]/[C]/[Proto] Couplers.||
 [[GameText]]""Have you ever seen what subatomizers do to 0b10?""[[/GameText]]|X0-1V1 opens a [[SUBCON Basin]] at [[Cogmind]]'s location.||
 [[GameText]]""I guarantee there's even more fun over that way.""[[/GameText]]|X0-1V1 reveals and identifies an unknown exit.||
-[[GameText]]X0-1V1 smiles upon you.[[/GameText]]|Gives one or more items, discarding inventory items onto the ground to make space if necessary. Given and discarded items may receive tags. This effect can grant some [[Protomatter]], which cannot otherwise be obtained outside of the RPGLIKE and Polymind special modes.||
+[[GameText]]X0-1V1 smiles upon you.[[/GameText]]|Gives one or more items, attaching them if corresponding slots available, or placing them in inventory and discarding others inventory items onto the ground to make space if necessary. Given and discarded items may receive tags. This effect can grant some [[Protomatter]], which cannot otherwise be obtained outside of the RPGLIKE and Polymind special modes, or even unique items like a [[Skeleton Box]].||
 [[GameText]]""I found some blueprints, how convenient!""[[/GameText]]|X0-1V1 reveals nearby emergency access doors.||
 [[GameText]]""Oops.""[[/GameText]]|X0-1V1 remotely destroys a Phase Generator in a Garrison.||
 [[GameText]]X0-1V1 lends a hand with your twisted circuits.[[/GameText]]|[[Corruption]] set to 0.||
 [[GameText]]X0-1V1 points here and there.[[/GameText]]|X0-1V1 reveals nearby item locations.||
+
 [[GameText]]X0-1V1 sends the all clear message.[[/GameText]]|X0-1V1 recalls a [[Squad|squad]].||
-[[GameText]]""One less obstacle for my toy on its journey to the highest levels of glorious entertainment.""[[/GameText]]|X0-1V1 destroys a nearby hostile.||
+[[Comment]]Some of the messages might be squad-specific.
+I've had :
+X0-1V1 adds a dash of confusion to 0b10's systems. - Extermination squad recall
+""I've sent the detectives back to the station. For now."" - Investigation squad recall
+[[/Comment]]
+
 [[GameText]]""I sense action potential over that way.[[/GameText]]|X0-1V1 reveals a [[Garrison Access]].||
 [[GameText]]""You need a change of scenery.""[[/GameText]]|X0-1V1 teleports Cogmind out of danger.|Cogmind cannot be in good shape||
 [[GameText]]""Just some junk I've been collecting.""[[/GameText]]
 [[GameText]]""Someone left a few trinkets here.""[[/GameText]]|X0-1V1 teleports Cogmind to a ""vault"" filled with out-of-depth and possibly unique items. Prototype parts can be faulty, and the room can contain Traps.||
 
 [[GameText]]""Fire in the hole!""[[/GameText]]|A powerful explosion suddenly occurs centered on a visible hostile. May damage Cogmind.|Multiple hostiles in range of explosion?||
-[[Comment]][[/Comment]]
+[[Comment]]Possible explosions include: Micro-nuke (variant unknown),[[/Comment]]
 [[GameText]]X0-1V1 uses you as a vessel of destruction.[[/GameText]]|A shot from a powerful weapon is fired from Cogmind's location with 100% accuracy towards a hostile, with none of the regular heat or energy/matter/time cost.||
-[[Comment]][[/Comment]]
+[[Comment]]Possible weapons include: Null Cannon, L-Cannon[[/Comment]]
 [[/Table]]
 
 [[Heading]]""Bad"" acts[[/Heading]]
@@ -12951,8 +12967,10 @@ Log message|Temporary effect||
 [[GameText]]""So many nails, never enough hammers...""[[/GameText]]|Temporary lower ranged accuracy.||
 [[GameText]]X0-1V1 turns out the lights.[[/GameText]]|X0-1V1 disables your [[Infowar|infowar]].||
 [[GameText]]""Did you know you're leaking matter?""[[/GameText]]|Temporary lower matter capacity.||
-[[GameText]]""X0-1V1 blurs the world around you""[[/GameText]]|Temporary lower visual range.||
+[[GameText]]""X0-1V1 blurs the world around you""[[/GameText]]|Temporary lower visual range. (minor)||
+[[GameText]]""In a world full of sensor tech, vision is overrated.""[[/GameText]]|Temporary lower visual range. (?-10, major)||
 [[/Table]]
+
 
 [[Heading:2]]Other ""bad"" acts[[/Heading]]
 [[Table]]Log message|Effect|Restrictions (if any)||
@@ -12966,33 +12984,36 @@ Log message|Temporary effect||
 This effect may also happen without the above message.|A temporary IFF filter overwrite is applied on a visible ally.||
 [[GameText]]""Don't be shy now.""[[/GameText]]|[[Cogmind]] emits an [[Corruption|IFF burst signal]].||
 [[GameText]]""It's not much, but it's the thought that counts.""[[/GameText]]|A small amount of corruption is added to Cogmind (~3-4).||
-[[GameText]]X0-1V1 brushes you with a corrupting influence.[[/GameText]]|A medium amount of Corruption is added to Cogmind (~7).||
+[[GameText]]X0-1V1 brushes you with a corrupting influence.[[/GameText]]|A large amount of Corruption is added to Cogmind between 7? and 20?).||
 [[GameText]]""And it's a trip and a fumble!""[[/GameText]]|One or more attached parts are rejected.||
-[[GameText]]""C'mon, do something!""[[/GameText]]|A single hostile is teleported in nearby.||
-[[GameText]]""Some new friends to play with.""[[/GameText]]|Several hostiles are teleported in nearby.||
-[[GameText]]""I may have passed a hint to a nearby [hostile].""[[/GameText]]|The hostile (Heavy?) mentioned gets tracking on Cogmind? was directed to Cogmind's current location?||
-[[GameText]]""Enjoy the ride!""[[/GameText]]|Cogmind is teleported into view of (potentially dormant) hostiles.|Cannot teleport into [[Command#command_garrisons|the Command garrisons]]||
-[[GameText]]""A box. Just for you.""[[/GameText]]|Additional stationary [[Sentry|Sentries]](?) are placed nearby on the map and marked.|||
+[[GameText]]""C'mon, do something!""[[/GameText]]
+[[GameText]]""Some new friends to play with.""[[/GameText]]|Between 1-6 hostile bots are spawned in nearby and within line of sight. Using a [Visual Processing Unit] makes it more likely that this effect may place bots within the greater range of Cogmind's sight but outside of the hostiles' sight.||
+[[GameText]]""I may have passed a hint to a nearby [Heavy].""[[/GameText]]|The [[Heavy]] mentioned gets tracking on Cogmind? was directed to Cogmind's current location?[[Comment]]I've had it trice, every time it was a Heavy. But i didn't stay long enough to find out what happened.[[/Comment]]||
+[[GameText]]""Enjoy the ride!""[[/GameText]]|Cogmind is teleported into view of nearby (potentially dormant) hostile(s).|Cannot teleport into [[Command#command_garrisons|the Command garrisons]]||
+[[GameText]]""A box. Just for you.""[[/GameText]]|Additional stationary [[Sentry|Sentries]](?) are placed nearby on the map and marked.||
 [[GameText]]X0-1V1 thinks 0b10 needs to up its game.[[/GameText]]|0b10 dispatches a ""surplus targeted"" [[Investigation Squad|Investigation]], [[Assault Squad|Assault]], or [[Extermination Squad|Extermination]] squad. [[Comment]]this can maybe dispatch more squad types[[/Comment]]||
 [[GameText]]X0-1V1 uses Touch of Redecoration![[/GameText]]|X0-1V1 destroys a terminal.[[Comment]]this probably has more effects than just the one i listed[[/Comment]]||
-[[GameText]]""ALERT: Updating transport parking with improved safety requirements.""[[/GameText]]|Haulers get additional escorts?||
-[[GameText]]""ALERT: Engaging LAN party protocols.""[[/GameText]]|Several new [[Operator|Operators]] are assigned to various (all?) Terminals on the map.||
+[[GameText]]""ALERT: Updating transport protocols with improved security requirements.""[[/GameText]]|[[Hauler|Haulers]] get additional Hunter escorts? Have their Grunt escorts replaced with Hunters? ||
+[[GameText]]""ALERT: Introduced new transport parking protocols.""[[/GameText]]|X0-1V1 redirects all Haulers on the map to a single location.||
 [[GameText]]""ALERT: Engaging LAN party protocols.""[[/GameText]]|Several new [[Operator|Operators]] are assigned to various (all?) Terminals on the map.||
 [[GameText]]""X0-1V1 taps a no entrance sign""[[/GameText]]|Removes an exit from the map|Another exit leading to the same map must exist?||
 [[GameText]]""Threat records for the threat god!""[[/GameText]]|140-~154 extra influence (minor increase)||
 (Missing log message)Additional threat records (considerable)|~180-~212 extra influence||
 (Missing log message)Additional threat records (major)|~256-~300 extra influence||
-[[GameText]]""Evolution hits right when you least expect it.""[[/GameText]]|Mutates one slot into a slot of another type.|Cannot change base slot configuration by more than +1/-1. In other words, if a propulsion slot is mutated away, another will not be mutated away until at least one propulsion slot was mutated back in. For example, if, without X0-1V1's interference, you have 5 utility slots, no matter how many mutations occur, you will always have between 4 and 6 utility slots.||
-(Missing log message)[[GameText]][[/GameText]]|X0-1V1 triggers the [[Zion Deep Caves#impregnable_wall|Wall in Deep Caves]]|Requires being in Deep Caves||
+[[GameText]]""Evolution hits right when you least expect it.""[[/GameText]]|Mutates one slot into a slot of another type.|Cannot change base slot configuration by more than +1/-1 (and cannot lower slots of a given type below 1?). In other words, if a propulsion slot is mutated away, another will not be mutated away until at least one propulsion slot was mutated back in. For example, if, without X0-1V1's interference, you have 5 utility slots, no matter how many mutations occur, you will always have between 4 and 6 utility slots.||
+[[GameText]]""X0-1V1 pokes a wall.""[[/GameText]][[GameText]][[/GameText]]|X0-1V1 triggers the [[Zion Deep Caves#impregnable_wall|Wall in Deep Caves]]|Requires being in Deep Caves. Is also the only effect that can happen there.||
+[[Comment]]The deep caves thing is especially bad because that's the only thing that can happen in that map. There's no chance of you getting help from X0-1V1.[[/Comment]]
 [[/Table]]
 
 [[Heading]]Other interactions[[/Heading]]
 The [[Quantum Companion]]/[[Superquantum Companion]] has additional side effects when Cogmind has aligned with X0-1V1.
 
+
 [[Heading]]Trivia[[/Heading]]
 [[List]]
 X0-1V1 is a very direct reference to the [[https://crawl.develz.org/|Dungeon Crawl Stone Soup]] [[http://crawl.chaosforge.org/Xom|Xom, god of chaos]].
-[[/List]]","Spoiler","","","","","","",""
+[[/List]]
+","Spoiler","","","","","","",""
 "X0-1V1's Piety Tracker","Part","","","","","","","","",""
 "XL Autogun Array","Part","After the XL Autogun Array falls to around 50% integrity, a log message [[GameText]]XL Autogun Array falls apart.[[/GameText]] will be shown. When this occurs, the Array will be destroyed and 4 [[XL Autogun Subcomponent|XL Autogun Subcomponents]] will appear on the floor around Cogmind.","","","","","","","",""
 "XL Autogun Subcomponent","Part","4 of these are created when the [[XL Autogun Array]] falls apart.","","","","","","","",""
