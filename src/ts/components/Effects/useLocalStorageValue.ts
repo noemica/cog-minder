@@ -14,6 +14,8 @@ const localStoragePrereleasesName = "prerelease";
 const localStorageSpoilersName = "spoilers";
 const localStorageThemeName = "theme";
 const localStorageUseWikiPartGroupSelectName = "useWikiPartGroupSelect";
+const localStorageWikiEditorWordWrap = "wikiEditorWordWrap";
+const localStorageWikiEditorUncappedWidth = "wikiEditorUncappedWidth";
 const localStorageWikiEntriesName = "wikiEntries";
 
 type SetValue<T> = Dispatch<SetStateAction<T>>;
@@ -91,6 +93,23 @@ export function useChartDisplayOptions(): [ChartDisplayOptions, SetValue<ChartDi
 
 export function useEditableWikiEntryEdits() {
     return useEditableValue<SavedWikiEntries>(localStorageWikiEntriesName, { entries: [] });
+}
+
+export function useWikiEditorWordWrap() {
+    return useValue<boolean>(localStorageWikiEditorWordWrap, true);
+}
+
+export function useEditableWikiEditorWordWrap() {
+    return useEditableValue<boolean>(localStorageWikiEditorWordWrap, true);
+}
+
+
+export function useWikiEditorUncappedWidth() {
+    return useValue<boolean>(localStorageWikiEditorUncappedWidth, false);
+}
+
+export function useEditableWikiEditorUncappedWidth() {
+    return useEditableValue<boolean>(localStorageWikiEditorUncappedWidth, false);
 }
 
 function useValue<T>(key: string, defaultValue: T, validator?: (value: T) => boolean): T {

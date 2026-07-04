@@ -2,11 +2,26 @@ import { useRef } from "react";
 
 import { WikiEntry } from "../../../types/wikiTypes";
 import Button from "../../Buttons/Button";
-import { SavedWikiEntries, SavedWikiEntry, useEditableWikiEntryEdits } from "../../Effects/useLocalStorageValue";
-import { SoloLabel } from "../../LabeledItem/LabeledItem";
+import {
+    SavedWikiEntries,
+    SavedWikiEntry,
+    useEditableWikiEditorUncappedWidth,
+    useEditableWikiEditorWordWrap,
+    useEditableWikiEntryEdits,
+    useWikiEditorUncappedWidth,
+    useWikiEditorWordWrap,
+} from "../../Effects/useLocalStorageValue";
+import { LabeledSelect, SoloLabel } from "../../LabeledItem/LabeledItem";
+import ButtonPopover from "../../Popover/ButtonPopover";
+import { SelectOptionType } from "../../Selectpicker/Select";
 import { EditState } from "./WikiPage";
 
 import "./WikiPage.less";
+
+const booleanOptions: SelectOptionType<boolean>[] = [
+    { value: false, label: "No" },
+    { value: true, label: "Yes" },
+];
 
 export default function WikiEditControls({
     editState,
@@ -21,6 +36,8 @@ export default function WikiEditControls({
 }) {
     const editAreaRef = useRef<HTMLTextAreaElement>(null);
     const [savedWikiEntries, setSavedWikiEntries] = useEditableWikiEntryEdits();
+    const wikiEditorWordWrap = useWikiEditorWordWrap();
+    const wikiEditorUncappedWidth = useWikiEditorUncappedWidth();
 
     if (!editState.showEdit || entry === undefined) {
         return undefined;
@@ -294,8 +311,16 @@ export default function WikiEditControls({
                     Part Group Table
                 </Button>
             </div>
-            <textarea ref={editAreaRef} key={entry.name} className="wiki-edit-text" defaultValue={defaultEditorValue} />
+            <textarea
+                ref={editAreaRef}
+                key={entry.name}
+                className={`wiki-edit-text${wikiEditorWordWrap ? "" : " wiki-edit-text-nowrap"}${
+                    wikiEditorUncappedWidth ? " wiki-edit-text-uncapped" : ""
+                }`}
+                defaultValue={defaultEditorValue}
+            />
             <div className="wiki-edit-changes-group">
+                <EditSettingsButton />
                 <Button
                     tooltip="Clears any saved changes from local storage and restores the original page text. Normally, changes are saved between sessions."
                     className="clear-changes-button"
@@ -373,5 +398,41 @@ export default function WikiEditControls({
             </div>
             {parsingErrorsNode}
         </div>
+    );
+}
+
+function EditSettingsButton() {
+    const [wikiEditorUncappedWidth, setWikiEditorUncappedWidth] = useEditableWikiEditorUncappedWidth();
+    const wikiEditorUncappedWidthSelected =
+        booleanOptions.find((o) => o.value === wikiEditorUncappedWidth) || booleanOptions[0];
+
+    const [wikiEditorWordWrap, setWikiEditorWordWrap] = useEditableWikiEditorWordWrap();
+    const wikiEditorWordWrapSelected = booleanOptions.find((o) => o.value === wikiEditorWordWrap) || booleanOptions[1];
+
+    return (
+        <ButtonPopover buttonLabel="Settings" buttonTooltip="Change wiki editor settings">
+            <div className="settings-popover-container">
+                <LabeledSelect
+                    label="Uncapped width"
+                    tooltip="Whether to allow the editor and controls to expand to the full width of the browser."
+                    isSearchable={false}
+                    options={booleanOptions}
+                    value={wikiEditorUncappedWidthSelected}
+                    onChange={(newValue) => {
+                        setWikiEditorUncappedWidth(newValue!.value as boolean);
+                    }}
+                />
+                <LabeledSelect
+                    label="Word wrap"
+                    tooltip="Whether to wrap newlines in the editor."
+                    isSearchable={false}
+                    options={booleanOptions}
+                    value={wikiEditorWordWrapSelected}
+                    onChange={(newValue) => {
+                        setWikiEditorWordWrap(newValue!.value as boolean);
+                    }}
+                />
+            </div>
+        </ButtonPopover>
     );
 }

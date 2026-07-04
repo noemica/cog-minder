@@ -410,7 +410,7 @@ wiki-gallery-fullsize-images,
 }
 
 .wiki-edit-text {
-    resize: none;
+    resize: vertical;
     height: @wiki-edit-content-height;
     width: 100%;
     max-width: @wiki-edit-content-max-width;
@@ -419,6 +419,17 @@ wiki-gallery-fullsize-images,
     background-color: @element-background-color;
     color: @font-color;
     border: @border-width solid @border-color;
+}
+
+.wiki-edit-text-nowrap {
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: scroll;
+}
+
+.wiki-edit-text-uncapped {
+    resize: both;
+    max-width: unset;
 }
 
 .wiki-edit-changes-group {
