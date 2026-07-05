@@ -71,11 +71,16 @@ const damageReductionSortOrder = [
     "Stasis Trap",
     "Remote Shield",
     "Imp. Remote Shield",
+    "Adv. Remote Shield",
+    "Exp. Remote Shield",
     "Remote Force Field",
     "Imp. Remote Force Field",
+    "Adv. Remote Force Field",
     "Energy Mantle",
     "Imp. Energy Mantle",
     "AEGIS Remote Shield",
+    "QV-33N's Drone Shield",
+    "Cep. Energy Mantle",
 ];
 
 const externalDamageReductionMap: Map<ExternalDamageReduction, number> = new Map([
