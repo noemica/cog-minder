@@ -1,4 +1,4 @@
-"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
+﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","","",""
 "01-MTF's Autohacker","Part","A unique [[Utilities|Utility]] only found on [[01-MTF]] that was stolen from the [[Exiles (Group)]]. Its Door [[Terminal]] hacking is most useful with high difficulty doors like the [[Access]] [[Surface]] exit. Generally better than [[Plasma Cutters]], although they have an advantage in being able to function even if the door Terminal gets destroyed.","","","","","","","",""
 "01-MTF's Shockpuncher","Part","A unique [[Energy Guns|Energy Gun]] only found on [[01-MTF]], this short ranged [[Electromagnetic Guns|Electromagnetic Gun]] is an energy-hungry but powerful shotgun-type weapon. Its raw damage output is better than even lategame weapons like the [[Com. HERF Cannon]], capable of easily killing most bots in the game in 2 or 3 hits, and its high [[Disruption|disruption]] helps disable crucial parts on bots that it hits. However, its short range and high [[Spectrum|spectrum]] can be a detriment since it has a high chance of blowing up any bots that it hits. Any nearby cover is not likely to last very long.","","","","","","","",""
@@ -2811,6 +2811,30 @@ Effect/Description
 "Decomposer","Bot","","","","","","","","",""
 "Decoy Drone","Bot","","","","","","","","",""
 "Decoy Drone Bay","Part","Deploys [[Decoy Drone|Decoy Drones]].","","","","","","","",""
+"Deep Caves","Location","The Deep Caves, Zion Deep Caves, or ZDC, is a [[Branch]] off of [[Zion]] that seems to serve as a sort of base of operations for the [[Imprinter]] and the [[Zionite (Group)|Zionites]]. This is a very combat oriented map that requires a lot of preparation to complete entirely. It is possible for a very fast flight build to sneak in, grab one or two things, and escape, but the presence of the perfect-tracking 24 speed [[Z-Imprinter]] makes things tough.
+
+[[Heading]]Layout[[/Heading]]
+The bulk of the map has a predefined layout except for the right starting point and middle-left exit area which are slightly different every time. These two random areas are mostly empty but can contain small groups of [[Assembled (4)|Assembled]] and a disabled [[Surveybot 24]]. To the left of the starting area are a big Z-Facility machine, a huge explosive Z-Power, and some [[Z-Technician|Z-Technicians]] working on the machine. Above and below are [[Z-Light (5)|Z-Light]] guards. On the top and left side there are Zionite item stashes. To the left side of the exit area is a collection of assorted broken Derelict bots and highly damaged parts. There is an [[Exiles (Location)|Exiles]] item near the top of the area. The far left is an Impregnable Wall which contains a large amount of Assembled and 2 [[Assembler|Assemblers]]. The wall is guarded by a [[Golem]] above and below. There are also some Wall Chambers that drop [[GOLEM Unit|GOLEM Units]] when destroyed. The units will start regrowing into hostile Golems.
+[[Heading:2]][[Z-Imprinter]][[/Heading]]
+After entering the center portion of the map, there will be an alert [[GameText]]NEW_ZION: Z-Facility proximity alert.[[/GameText]] When this happens, the Z-Imprinter will appear at the exit and head directly to Cogmind, with 2 [[Z-Light (5)|Z-Lights]] following behind.
+[[Heading:2]]Impregnable Wall[[/Heading]]
+[[Image]]ZDC Wall Activation Zone.png|Approximate wall activation zone[[/Image]]
+The Impregnable Wall on the far left side of the map cannot be destroyed by any method. However, a small portion of the wall in the center will open automatically when Cogmind enters a nearby area or if one of the wall chambers containing GOLEM Units is opened.
+
+[[Heading]]Rewards[[/Heading]]
+While quite challenging, there are some very strong unique rewards on this map. GOLEM units are only available here and can provide a strong build in a-box. [[Asb. Focal Cannon|Focal Cannons]] will tear through most anything in the game quite easily. The [[Asb. Combat Suite]] is a unique part that combines [[Phase Shifters]], [[Ranged Targeting Utilities]], and [[Core Analyzers]] in a single slot. The [[Surveybot 24 Chip]] is the strongest type of [[Terrain Scan Processors|Terrain Scan Processor]] in the game. [[Zio. Weapon Casing|Weapon Casings]] can protect late-game super-weapons from harm. The [[Zio. Biocell]] is an early way to gain a mostly identical [[Exp. Energy Well]] early in the game.
+
+[[Heading]]Strategy[[/Heading]]
+See [[Strategy/Maps/Zion Deep Caves]]
+
+[[Heading]]Notable Locations[[/Heading]]
+[[Gallery]]ZDC Assembled Flower.png|A small group of Assembled|ZDC Surveybot.png|[[Surveybot 24]]|ZDC Exit.png|Exit to Caves[[/Gallery]]
+[[Heading:2]]Exits[[/Heading]]
+There is only one type of exit in Zion Deep Caves. An exit to Proximity Caves will appear in the middle-left area of the map.
+
+[[Heading]]Events[[/Heading]]
+[[Image]]ZDC 5H-AD0.png|5H-AD0 greeting Cogmind[[/Image]]
+[[List]](++) [[5H-AD0]]: When entering, 5H-AD0 will join Cogmind in investigating the map. They will leave after exiting the map or when they fall below approximately half core integrity. They are a huge assistance in fighting most of the enemies in the map, particularly the Z-Imprinter.[[/List]]","Spoiler","","","","","","",""
 "Deep Network Scanner","Part","","","","","","","","",""
 "Deep Structural Scanner","Part","","","","","","","","",""
 "Defensive Hackware","Part Group","Defensive [[Hackware]] is a type of [[Processors|Processor]] that primarily provide a reduced chance to become detected and rate of being traced at [[Interactive Machine|Interactive Machines]]. They are useful on all build types from full combat to stealth hackers. Heavy combat builds might prefer to keep hackware in inventory and only temporarily attach them in order to try to pull off an [[GameText]]Access(Branch/Main)[[/GameText]] hack on a low level [[Terminal]] to figure out how to quickly exit the level. More hacking-focused builds may instead keep multiple pieces of both defensive and [[Offensive Hackware]] attached at all times to be able to consistently succeed at difficult hacks. Defensive hackware works best when paired with one or more pieces of offensive hackware, though it is much better to stack many pieces of offensive hackware than defensive hackware due to the latter having diminishing returns.
@@ -7086,7 +7110,7 @@ Power/Storage
 The majority of maps are randomly generated, meaning no two runs or two depths will have the exact same layout. However, the overall structure of each location type is very similar. Some maps tend to be more open with large rooms and wide corridors, while others are more maze-like with tiny rooms and many small corridors leading into dead-ends. A few branches are partially or entirely static in layout and tend to be much more predictable in contents than main floors.
 Branches do not progress upward toward the exit and can often be harder than the main floors. However, branches can offer unique challenges and have similarly unique rewards that can dramatically change a run. This could be powerful unique items, special events, gameplay-altering alignment, or rare permanent buffs.
 The following is a list of all locations in Cogmind:
-[[AllLocations]]","","","","","","","Access,Access_0,Archives,Armory,Caves,Cetus,Command,DSF,Data Miner (Location),Exiles (Location),Extension,Factory,Garrison,Hub_04(d),Lab,Materials,Mines,Protoforge,Quarantine,Recycling,Research,Scraptown,Scrapyard,Section 7,Storage,Subcaves,Surface,Testing,Warlord,Wastes,Zhirov (Location),Zion,Zion Deep Caves",""
+[[AllLocations]]","","","","","","","Access,Access_0,Archives,Armory,Caves,Cetus,Command,DSF,Data Miner (Location),Deep Caves,Exiles (Location),Extension,Factory,Garrison,Hub_04(d),Lab,Materials,Mines,Protoforge,Quarantine,Recycling,Research,Scraptown,Scrapyard,Section 7,Storage,Subcaves,Surface,Testing,Warlord,Wastes,Zhirov (Location),Zion",""
 "Longsword +1","Part","","","","","","","","",""
 "Lrg. Battery","Part","","","","","","","","",""
 "Lrg. Botcube","Part","","","","","","","","",""
@@ -13246,30 +13270,6 @@ There are a wide variety of encounters in Zion. A few are useless, some are more
 [[Heading:2]]Exits[[/Heading]]
 There are 2 types of exits in Zion:[[List]][[Proximity Caves]] exit: This exit is on the top right side of the map near where Cogmind spawns.|[[Zion Deep Caves]] exit: This exit is on the top left side of the map protected by locked blast doors. The doors can be unlocked with a random Derelict event that will provide the hacking codes or with the same codes obtained by using the [[Imprinter Data Core]]. Additionally, the doors can be broken into with a very powerful Impact weapon ([[Impact Mace]] with high speed momentum required), an overloadable Thermal cannon like a [[Cld. Particle Cannon]], or by using a [[Plasma Cutters|Plasma Cutter]]. The Sealed Blast Doors have an armor value of 45 with 0% thermal resistance but many other strong resistances.[[/List]][[Heading]]Events[[/Heading]]
 [[List]](+/-) [[Hunter]] attack: A Hunter disguised as a Derelict will sneak up to the gates of Zion and attack the Marauder guards. This will usually result in the quarantine array being destroyed and the Hunter losing the fight. The dropped parts can be collected by Cogmind but will quickly self-destruct.[[/List]]","Spoiler","","","","","","",""
-"Zion Deep Caves","Location","The Zion Deep Caves, or ZDC, is a [[Branch]] off of [[Zion]] that seems to serve as a sort of base of operations for the [[Imprinter]] and the [[Zionite (Group)|Zionites]]. This is a very combat oriented map that requires a lot of preparation to complete entirely. It is possible for a very fast flight build to sneak in, grab one or two things, and escape, but the presence of the perfect-tracking 24 speed [[Z-Imprinter]] makes things tough.
-
-[[Heading]]Layout[[/Heading]]
-The bulk of the map has a predefined layout except for the right starting point and middle-left exit area which are slightly different every time. These two random areas are mostly empty but can contain small groups of [[Assembled (4)|Assembled]] and a disabled [[Surveybot 24]]. To the left of the starting area are a big Z-Facility machine, a huge explosive Z-Power, and some [[Z-Technician|Z-Technicians]] working on the machine. Above and below are [[Z-Light (5)|Z-Light]] guards. On the top and left side there are Zionite item stashes. To the left side of the exit area is a collection of assorted broken Derelict bots and highly damaged parts. There is an [[Exiles (Location)|Exiles]] item near the top of the area. The far left is an Impregnable Wall which contains a large amount of Assembled and 2 [[Assembler|Assemblers]]. The wall is guarded by a [[Golem]] above and below. There are also some Wall Chambers that drop [[GOLEM Unit|GOLEM Units]] when destroyed. The units will start regrowing into hostile Golems.
-[[Heading:2]][[Z-Imprinter]][[/Heading]]
-After entering the center portion of the map, there will be an alert [[GameText]]NEW_ZION: Z-Facility proximity alert.[[/GameText]] When this happens, the Z-Imprinter will appear at the exit and head directly to Cogmind, with 2 [[Z-Light (5)|Z-Lights]] following behind.
-[[Heading:2]]Impregnable Wall[[/Heading]]
-[[Image]]ZDC Wall Activation Zone.png|Approximate wall activation zone[[/Image]]
-The Impregnable Wall on the far left side of the map cannot be destroyed by any method. However, a small portion of the wall in the center will open automatically when Cogmind enters a nearby area or if one of the wall chambers containing GOLEM Units is opened.
-
-[[Heading]]Rewards[[/Heading]]
-While quite challenging, there are some very strong unique rewards on this map. GOLEM units are only available here and can provide a strong build in a-box. [[Asb. Focal Cannon|Focal Cannons]] will tear through most anything in the game quite easily. The [[Asb. Combat Suite]] is a unique part that combines [[Phase Shifters]], [[Ranged Targeting Utilities]], and [[Core Analyzers]] in a single slot. The [[Surveybot 24 Chip]] is the strongest type of [[Terrain Scan Processors|Terrain Scan Processor]] in the game. [[Zio. Weapon Casing|Weapon Casings]] can protect late-game super-weapons from harm. The [[Zio. Biocell]] is an early way to gain a mostly identical [[Exp. Energy Well]] early in the game.
-
-[[Heading]]Strategy[[/Heading]]
-See [[Strategy/Maps/Zion Deep Caves]]
-
-[[Heading]]Notable Locations[[/Heading]]
-[[Gallery]]ZDC Assembled Flower.png|A small group of Assembled|ZDC Surveybot.png|[[Surveybot 24]]|ZDC Exit.png|Exit to Caves[[/Gallery]]
-[[Heading:2]]Exits[[/Heading]]
-There is only one type of exit in Zion Deep Caves. An exit to Proximity Caves will appear in the middle-left area of the map.
-
-[[Heading]]Events[[/Heading]]
-[[Image]]ZDC 5H-AD0.png|5H-AD0 greeting Cogmind[[/Image]]
-[[List]](++) [[5H-AD0]]: When entering, 5H-AD0 will join Cogmind in investigating the map. They will leave after exiting the map or when they fall below approximately half core integrity. They are a huge assistance in fighting most of the enemies in the map, particularly the Z-Imprinter.[[/List]]","Spoiler","","","","","","",""
 "Zionite","Bot","Zionites are weak [[Derelict]] bots with a truly random assortment of makeshift parts (loadout not being awful not guaranteed), living mostly in [[Spoiler]][[Zion]][[/Spoiler]] with useful tips. Can also be found in a variety of events.
 Zionites have a decent core exposure and low core integrity, but can overwhelm through numbers.","","","","","","","",""
 "Zionite (Group)","Bot Supergroup","","Spoiler","Imprinter,Zionite,Z-Courier,Z-Drone,Z-Imprinter,Z-Technician","","","Z-Heavy,Z-Light,Z-Experimental","","",""
