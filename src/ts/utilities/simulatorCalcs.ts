@@ -269,7 +269,7 @@ function applyDamage(
 
         if (part !== undefined && part.remote) {
             damageReduced =
-                chunk.originalDamage - Math.trunc(chunk.originalDamage * (1 - multiplier)) - damageReduction;
+                chunk.originalDamage - Math.trunc(chunk.originalDamage * multiplier) - damageReduction;
         } else {
             damageReduced = Math.trunc(chunk.originalDamage * multiplier) - damageReduction;
         }
