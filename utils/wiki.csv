@@ -1,4 +1,4 @@
-﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
+"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","","",""
 "01-MTF's Autohacker","Part","A unique [[Utilities|Utility]] only found on [[01-MTF]] that was stolen from the [[Exiles (Group)]]. Its Door [[Terminal]] hacking is most useful with high difficulty doors like the [[Access]] [[Surface]] exit. Generally better than [[Plasma Cutters]], although they have an advantage in being able to function even if the door Terminal gets destroyed.","","","","","","","",""
 "01-MTF's Shockpuncher","Part","A unique [[Energy Guns|Energy Gun]] only found on [[01-MTF]], this short ranged [[Electromagnetic Guns|Electromagnetic Gun]] is an energy-hungry but powerful shotgun-type weapon. Its raw damage output is better than even lategame weapons like the [[Com. HERF Cannon]], capable of easily killing most bots in the game in 2 or 3 hits, and its high [[Disruption|disruption]] helps disable crucial parts on bots that it hits. However, its short range and high [[Spectrum|spectrum]] can be a detriment since it has a high chance of blowing up any bots that it hits. Any nearby cover is not likely to last very long.","","","","","","","",""
@@ -13003,7 +13003,7 @@ Log message|Temporary effect|Restrictions (if any)||
 Micro-nuke (variant unknown), Telsa bomb?[[/Comment]]
 [[GameText]]X0-1V1 uses you as a vessel of destruction.[[/GameText]]|A shot from a powerful weapon is fired from Cogmind's location with 100% accuracy towards a hostile, with none of the regular heat or energy/matter/time cost.||
 [[Comment]]Incomplete list of possible weapons:
-Null Cannon, L-Cannon[[/Comment]]
+Null Cannon, L-Cannon (variant unknown), Hvy. Hardcell Cannon? (it dealt 77 kinetic damage)[[/Comment]]
 
 [[GameText]]""This lineup is depressingly uninteresting.""[[/GameText]]|Upgrades allied bot to another higher tier bot of the same type.|During combat only.||
 [[GameText]]""We can take them down a peg or two.""[[/GameText]]|Downgrades hostile bot to another lower tier bot of the same type.|During combat only.||
@@ -13055,8 +13055,8 @@ Note: During the drunk sailor effect, moving in the opposite direction of where 
 [[GameText]]""There is a traitor in your midst!""[[/GameText]]
 This effect may also happen without the above message.|A temporary IFF filter overwrite is applied on a visible ally.||
 [[GameText]]""Don't be shy now.""[[/GameText]]|[[Cogmind]] emits an [[Corruption|IFF burst signal]].||
-[[GameText]]""It's not much, but it's the thought that counts.""[[/GameText]]|A small amount of corruption is added to Cogmind (~3-4).||
-[[GameText]]X0-1V1 brushes you with a corrupting influence.[[/GameText]]|A large amount of Corruption is added to Cogmind between 7? and 20).||
+[[GameText]]""It's not much, but it's the thought that counts.""[[/GameText]]|A small amount of corruption is added to Cogmind, between ~2 and 5).||
+[[GameText]]X0-1V1 brushes you with a corrupting influence.[[/GameText]]|A large amount of Corruption is added to Cogmind, between 7? and 20).||
 [[GameText]]""And it's a trip and a fumble!""[[/GameText]]|One or more attached parts are rejected.||
 [[GameText]]""C'mon, do something!""[[/GameText]]
 [[GameText]]""Some new friends to play with.""[[/GameText]]|Between 1-6 hostile bots are spawned in nearby and within line of sight. Using a [[Visual Processing Units|Visual Processing Unit]] makes it more likely that this effect may place bots within the greater range of Cogmind's sight but outside of the hostiles' sight.||
@@ -13085,7 +13085,7 @@ There is no log message for this effect.|A fake part appears nearby, and, if att
 
 
 
-[[GameText]]Vines of energy appear to reach out from the ground.[[/GameText]]|A hostile is suddenly caught in a [[Stasis Trap]], giving them 25% damage resistance.|During combat only.||
+[[GameText]]Vines of energy appear to reach out from the ground.[[/GameText]]|A hostile is suddenly caught in a [[Stasis Trap]], giving them the usual 25% damage resistance.|During combat only.||
 [[GameText]]X0-1V1 wants to heat up the action around here.[[/GameText]]|X-Y extra heat instantly added to Cogmind (200-300?)|During combat only.||
 [[GameText]]X0-1V1 feels inspired![[/GameText]]|Hostile bot weapons are replaced with random higher rating weapons of the same type|During combat only.||
 [[GameText]]X0-1V1 tips the scales in a new dimension.[[/GameText]]|A hostile is upgraded into a higher tier version of itself.|During combat only.||
@@ -13110,9 +13110,13 @@ Log message|Area|Effect|Trigger||
 The [[Quantum Companion]]/[[Superquantum Companion]] has additional side effects when Cogmind has aligned with X0-1V1.
 
 [[Heading]]Strategy[[/Heading]]
-Strategizing with X0-1V1 is difficult, as their chaotic effects can cause any plan can go sideways really quickly. However, the core restoration and Corruption-reducing effects, among others, lower the long-term downside of taking risks or attaching [[Corrupted Parts]], and getting unlucky is also slightly offset by the amusement it provides X0-1V1, all of which makes Cogmind more resilient than usual. Being capable of adapting to the chaos is the primary tool to survive praying to X0-1V1.
+Although being capable of adapting to the chaos is the primary tool to survive praying to X0-1V1, strategizing with them is very difficult, as their chaotic effects can cause any plan to go sideways really quickly. And while Cogmind is generally more resilient than usual thanks to both the lower long-term downside of taking risks or attaching [[Corrupted Parts]], which is reduced by the relatively common core restoration and Corruption-reducing effects (among others) and the fact that getting unlucky is slightly offset by the amusement it provides X0-1V1, [[Alert]] also rises more easily and quickly than usual.
+
+Due to the higher average damage taken and the part repair effect being fairly rare (especially compared to the core integrity restoration and the corruption-reducing effects), being capable of maintaining your own build without relying on X0-1V1 is crucial. For several builds, the Sfc. Transmogrifier is particularly helpful as it also amuses X0-1V1, though it prevents reliable use of other parts like Signal Interpreters. The Scrap Engine can likewise be really helpful, especially with complementary permanent buffs. This is also true of [[GOLEM Unit|GOLEM Units]], though X0-1V1 makes getting those more difficult than usual. Various alignments can also help with restocking parts. 
 
 The permanent buffs are the most important thing to adapt to (when they're useful enough), as making good use of them can drastically benefit your odds of survival. For example, additional ranged accuracy makes long-range combat more favorable, additional mass support would suggest [[Flight]] or [[Hover]]-based propulsion, while additional energy capacity would benefit both [[Shield Generators]]/[[Force Fields]] and EM weapons.
+
+The very disruptive slot mutation effect is worth keeping in mind, as it requires dedicating an extra slot to whatever a build may consider the minimum necessary to function. For instance, a powerful four-slot weapon would require evolving 3 weapon slots to make sure the minimum four slot are always available even when one gets taken away, and a flight build might need an extra propulsion slot to have enough mass support at all times. The Scrap Engine, however, is largely resistant to this effect since it cannot affect contruct-occupied slots. 
 
 As X0-1V1's entertainment remains the same when entering Garrisons and [[DSF|DSFs]] (as opposed to Branches), visiting those can be more useful than usual. RIF is especially powerful with X0-1V1's ability to add charges to Relay Couplers and the potential free random RIF ability.
 
