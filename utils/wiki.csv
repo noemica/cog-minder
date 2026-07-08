@@ -12924,7 +12924,7 @@ These effects will be written in green text in the log, and counted under ""good
 
 [[Heading:2]]Permanent buffs[[/Heading]]
 These very powerful good acts give a permanent effect that will last for the remainder of the run. Only a maximum of three will ever occur during a run, usually near the start. All three buffs will be different, and may or may not incur a cost to Cogmind's maximum core integrity, a cost which depends on the magnitude of the buff. This magnitude is a scaling number based on Xom's current mood value. They are most powerful at the maximum 200 value and least powerful at the minimum 0 value.
-The buffs may be selected from the following (Note: This page is a work in progress, and the upper and lower ranges on buffs may not necessarily be correct):
+The buffs may be selected from the following (Note: This page is a work in progress, and the upper and lower ranges on buffs (and other ranges in this page) may not necessarily be correct):
 
 
 [[Table]]
@@ -12942,7 +12942,7 @@ Mass support|+6-15|1?|140 + (10*X)||
 Damage type resistance
 (KI, TH, EX or EM)|+10-20%|5|X*10||
 Random slot type|+1|N/A|N/A[[/Table]]
-Note that the cost to maximum core integrity is optional only in the sense that it whether it is applied is dependent entirely on X0-1V1 (and likely also dependent on Cogmind's remaining maximum core integrity?).[[Comment]]An interesting question here is: If you have too little max core integrity, what happens? Kyzrati said that that postpones the effect, but if that is true, does the postponed effect retain the same magnitude even on a different mood?[[/Comment]]
+Note that the cost to maximum core integrity is optional only in the sense that it whether it is applied is dependent entirely on X0-1V1. According to Kyzrati, if a buff would take too much of remaining maximum core integrity, it is delayed until the cost is deemed acceptable.[[Comment]]Kyzrati said that that postpones the effect, but if that is true, does the postponed effect retain the same magnitude even on a different mood?[[/Comment]]
 
 [[Comment]]Not totally sure on this categorization, Kyzrati divided these effects into combat and non-combat in his Patreon post. Might be more helpful to split things in this way since the effects are majorly dependent on this distinction. I also want to make this into a table to indicate what effects are once per map and which are repeatable, as well as any additional restrictions since there's a lot of extremely niche effects.[[/Comment]]
 [[Heading:2]]Temporary buffs[[/Heading]]
@@ -12956,7 +12956,7 @@ Log message|Temporary effect|Restrictions (if any)||
 [[GameText]]""Watch where you're going!""[[/GameText]]|Temporary increased sight range, between +4 and +6.||
 [[GameText]]""A slightly more accurate toy is still a toy.""[[/GameText]]|Temporary increased melee accuracy, between +? and +9.||
 [[GameText]]X0-1V1 waits impatiently for you to get up close and personal with every target in the area.[[/GameText]]|Temporary increased melee accuracy, between +10 and +20.|During combat only||
-[[GameText]]""Weapons, camera, action!""[[/GameText]]|Temporary 1-3 additional weapon slots.|During combat only||
+[[GameText]]""Weapons, camera, action!""[[/GameText]]|Temporary 1-4 additional weapon slots.|During combat only||
 [[GameText]]X0-1V1 manipulates the space around you.[[/GameText]]|Temporary increase to KI, TH, or EM base damage type resistance, Between +15% and +50%.|During combat only||
 [[GameText]]X0-1V1 reimagines you as a refrigerator in hell.[[/GameText]]
 [[GameText]]X0-1V1 enshrouds you in a swirling icy cloud.[[/GameText]]|Temporary lower base temperature to -666, and also sets current to -666 at the effect's start.|During combat only||
@@ -12980,8 +12980,8 @@ Log message|Temporary effect|Restrictions (if any)||
 [[GameText]]X0-1V1 smiles upon you.[[/GameText]]|Gives one or more items, attaching them if corresponding slots available, or placing them in inventory and discarding others inventory items onto the ground to make space if necessary. Given and discarded items may receive tags. This effect can grant some [[Protomatter]], which cannot otherwise be obtained outside of the RPGLIKE and Polymind special modes, or even unique items like a [[Skeleton Box]].||
 [[GameText]]""I found some blueprints, how convenient!""[[/GameText]]|X0-1V1 reveals nearby emergency access doors.||
 [[GameText]]""Oops.""[[/GameText]]|X0-1V1 remotely destroys a Phase Generator in a Garrison.||
-[[GameText]]X0-1V1 lends a hand with your twisted circuits.[[/GameText]]|[[Corruption]] set to 0.||
-[[GameText]]X0-1V1 points here and there.[[/GameText]]|X0-1V1 reveals nearby item locations within a range of ?.||
+[[GameText]]X0-1V1 lends a hand with your twisted circuits.[[/GameText]]|Some of Cogmind's [[Corruption]] is purged, scaling from 10% at 100 mood to 50% at maximum or minimum mood (i.e. effect increases both at high and low piety).||
+[[GameText]]X0-1V1 points here and there.[[/GameText]]|X0-1V1 reveals nearby item locations within a range of ~33?.||
 [[GameText]]""I sense action potential over that way.[[/GameText]]|X0-1V1 reveals a [[Garrison Access]].||
 [[GameText]]""You need a change of scenery.""[[/GameText]]|X0-1V1 teleports Cogmind out of danger.|Cogmind cannot be in good shape.||
 [[GameText]]""Just some junk I've been collecting.""[[/GameText]]
@@ -13020,9 +13020,10 @@ Null Cannon, L-Cannon (variant unknown), Hvy. Hardcell Cannon? (it dealt 77 kine
 [[GameText]]X0-1V1 twists and redirects some latent energy in your direction.[[/GameText]]|Some/all of Cogmind's energy storage is filled.|During combat only.||
 [[GameText]]X0-1V1 ensures you are ready for glorious battle.[[/GameText]]|A weapon is forcibly given, attached and fused on Cogmind.|During combat only.||
 [[GameText]]""What are these fools even fielding?""[[/GameText]]|Friendly bot weapons are replaced with random higher rating weapons of the same type|During combat only while one or more allies are nearby.||
-[[GameText]]X0-1V1 stares into the ether.[[/GameText]]|Hostile bot is teleported to some far away location on the map.|During combat only.||
-[[GameText]]""Being a leader is both a boon and a curse.""[[/GameText]]|Teleported to a room with several blue-controllable allies.|During combat only, max once per map, mutually exclusive with ""vault"" effect.||
-[[GameText]]X0-1V1 tries on a Mechanic's hat.[[/GameText]]|Repairs up to 3 allies to full integrity.|During combat only, 3 or more allies must be sufficiently damaged.||
+[[GameText]]X0-1V1 stares into the ether.[[/GameText]]|One or more hostile bots are teleported roughly 30-40 tiles away. Their memory is wiped, so bots will go back to doing whatever they were doing before.|During combat only.||
+[[GameText]]""Being a leader is both a boon and a curse.""[[/GameText]]
+[[GameText]]""I think they like you.""[[/GameText]]|Teleported to a room with several blue-controllable allies.|During combat only, max once per map, mutually exclusive with ""vault"" effect.||
+[[GameText]]X0-1V1 tries on a Mechanic's hat.[[/GameText]]|Repairs any number of damaged allies to full integrity. Accompanied by the game log [[GameText]][Bot name] sparkles and shines.[[/GameText]]|During combat only, 3 or more allies must be sufficiently damaged.||
 
 
 [[/Table]]
@@ -13055,8 +13056,8 @@ Note: During the drunk sailor effect, moving in the opposite direction of where 
 [[GameText]]""There is a traitor in your midst!""[[/GameText]]
 This effect may also happen without the above message.|A temporary IFF filter overwrite is applied on a visible ally.||
 [[GameText]]""Don't be shy now.""[[/GameText]]|[[Cogmind]] emits an [[Corruption|IFF burst signal]].||
-[[GameText]]""It's not much, but it's the thought that counts.""[[/GameText]]|A small amount of corruption is added to Cogmind, between ~2 and 5).||
-[[GameText]]X0-1V1 brushes you with a corrupting influence.[[/GameText]]|A large amount of Corruption is added to Cogmind, between 7? and 20).||
+[[GameText]]""It's not much, but it's the thought that counts.""[[/GameText]]
+[[GameText]]X0-1V1 brushes you with a corrupting influence.[[/GameText]]|Corruption is added to Cogmind, scaling from 2% at 100 mood to 20% at maximum or minimum mood (i.e. effect increases both at high and low piety). The first message is shown from 2-5% and the second from 6-20%.||
 [[GameText]]""And it's a trip and a fumble!""[[/GameText]]|One or more attached parts are rejected.||
 [[GameText]]""C'mon, do something!""[[/GameText]]
 [[GameText]]""Some new friends to play with.""[[/GameText]]|Between 1-6 hostile bots are spawned in nearby and within line of sight. Using a [[Visual Processing Units|Visual Processing Unit]] makes it more likely that this effect may place bots within the greater range of Cogmind's sight but outside of the hostiles' sight.||
@@ -13090,6 +13091,7 @@ There is no log message for this effect.|A fake part appears nearby, and, if att
 [[GameText]]X0-1V1 feels inspired![[/GameText]]|Hostile bot weapons are replaced with random higher rating weapons of the same type|During combat only.||
 [[GameText]]X0-1V1 tips the scales in a new dimension.[[/GameText]]|A hostile is upgraded into a higher tier version of itself.|During combat only.||
 [[GameText]]""The ol' switcheroo""[[/GameText]]|Cogmind and all nearby bots swap places at random.|During combat only.||
+[[GameText]]""One team is clearly getting beat up here. Hardly fair.""[[/GameText]]|Repairs any number of damaged hostiles to full integrity. Accompanied by the game log [[GameText]][Bot name] sparkles and shines.[[/GameText]]||
 
 
 [[/Table]]
@@ -13112,14 +13114,20 @@ The [[Quantum Companion]]/[[Superquantum Companion]] has additional side effects
 [[Heading]]Strategy[[/Heading]]
 Although being capable of adapting to the chaos is the primary tool to survive praying to X0-1V1, strategizing with them is very difficult, as their chaotic effects can cause any plan to go sideways really quickly. And while Cogmind is generally more resilient than usual thanks to both the lower long-term downside of taking risks or attaching [[Corrupted Parts]], which is reduced by the relatively common core restoration and Corruption-reducing effects (among others) and the fact that getting unlucky is slightly offset by the amusement it provides X0-1V1, [[Alert]] also rises more easily and quickly than usual.
 
+[[Heading:3]]Maintaining your build[[/Heading]]
 Due to the higher average damage taken and the part repair effect being fairly rare (especially compared to the core integrity restoration and the corruption-reducing effects), being capable of maintaining your own build without relying on X0-1V1 is crucial. For several builds, the Sfc. Transmogrifier is particularly helpful as it also amuses X0-1V1, though it prevents reliable use of other parts like Signal Interpreters. The Scrap Engine can likewise be really helpful, especially with complementary permanent buffs. This is also true of [[GOLEM Unit|GOLEM Units]], though X0-1V1 makes getting those more difficult than usual. Various alignments can also help with restocking parts. 
 
+[[Heading:3]]Using the permanent buffs[[/Heading]]
 The permanent buffs are the most important thing to adapt to (when they're useful enough), as making good use of them can drastically benefit your odds of survival. For example, additional ranged accuracy makes long-range combat more favorable, additional mass support would suggest [[Flight]] or [[Hover]]-based propulsion, while additional energy capacity would benefit both [[Shield Generators]]/[[Force Fields]] and EM weapons.
 
-The very disruptive slot mutation effect is worth keeping in mind, as it requires dedicating an extra slot to whatever a build may consider the minimum necessary to function. For instance, a powerful four-slot weapon would require evolving 3 weapon slots to make sure the minimum four slot are always available even when one gets taken away, and a flight build might need an extra propulsion slot to have enough mass support at all times. The Scrap Engine, however, is largely resistant to this effect since it cannot affect contruct-occupied slots. 
+[[Heading:3]]Adapting to slot mutations[[/Heading]]
+The very disruptive slot mutation effect is worth keeping in mind, as it requires dedicating an extra slot to whatever a build may consider the minimum necessary to function. For instance, a powerful four-slot weapon would require evolving 3 weapon slots to make sure the minimum four slot are always available even when one gets taken away, and a flight build might need an extra propulsion slot to have enough mass support at all times. The Scrap Engine, however, is largely resistant to this effect since it cannot affect contruct-occupied slots.
 
-As X0-1V1's entertainment remains the same when entering Garrisons and [[DSF|DSFs]] (as opposed to Branches), visiting those can be more useful than usual. RIF is especially powerful with X0-1V1's ability to add charges to Relay Couplers and the potential free random RIF ability.
+[[Heading:3]]Submaps and entertainement[[/Heading]]
+As X0-1V1's entertainment remains the same when entering Garrisons, [[Wastes]] and [[DSF|DSFs]] (as opposed to Branches), visiting those can be more useful than usual. RIF is especially powerful with X0-1V1's ability to add charges to Relay Couplers and the potential free random RIF ability. Wastes can be helpful to lower the overall higher alert, and can even raise X0-1V1's amusement when entering via an unknown Chute Trap, though some effects make the area much more dangerous as well.
 
+[[Heading:3]]Dealing with CY-PHR[[/Heading]]
+X0-1V1's effects do not directly affect hacking, while CY-PHR only affects hacking, and both of them independently cause the overall danger and alert to be higher than usual. As a result, having both active at once is absolutely terrible, especially given that none of CY-PHR's effects amuse X0-1V1 and that CY-PHR's only positive effect (preventing other unchained from being dispatched) is shared by X0-1V1 and is thus redundant. Either try to avoid getting targeted by CY-PHR, or try to trigger them early while hoping they appear on an early floor and be prepared to deal with them then.
 
 
 [[Heading]]Trivia[[/Heading]]
