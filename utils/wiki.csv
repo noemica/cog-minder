@@ -12923,7 +12923,7 @@ Note that, while X0-1V1 is capable of directly causing some of these events, doi
 These effects will be written in green text in the log, and counted under ""good acts"" in scoresheets, although for some, whether they can be considered ""good"" may depend heavily on context.
 
 [[Heading:2]]Permanent buffs[[/Heading]]
-These very powerful good acts give a permanent effect that will last for the remainder of the run. Only a maximum of three will ever occur during a run, usually near the start. All three buffs will be different, and may or may not incur a cost to Cogmind's maximum core integrity, a cost which depends on the magnitude of the buff. This magnitude is a scaling number based on Xom's current mood value. They are most powerful at the maximum 200 value and least powerful at the minimum 0 value.
+These very powerful good acts give a permanent effect that will last for the remainder of the run. Only a maximum of three will ever occur during a run, usually near the start. Only a single permanent buff can be obtained per map. All three buffs will be different, and may or may not incur a cost to Cogmind's maximum core integrity, a cost which depends on the magnitude of the buff. This magnitude is a scaling number based on Xom's current mood value. They are most powerful at the maximum 200 value and least powerful at the minimum 0 value.
 The buffs may be selected from the following (Note: This page is a work in progress, and the upper and lower ranges on buffs (and other ranges in this page) may not necessarily be correct):
 
 
