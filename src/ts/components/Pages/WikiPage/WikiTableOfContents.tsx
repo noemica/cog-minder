@@ -42,7 +42,7 @@ export default function WikiTableOfContents({ headings }: { headings: WikiHeadin
         // Find the previous nested heading e.g. heading 2 -> heading 1
         // Can fall back to any parent e.g. heading 3 -> heading 1 but not ideal
         // Eventually would like to enforce this with a warning, but currently just convention
-        let headingIndex = allHeadings.findIndex((h) => h.indent > heading.indent);
+        let headingIndex = allHeadings.findIndex((h) => h.indent < heading.indent);
 
         const newHeading: HeadingTree = {
             children: [],
