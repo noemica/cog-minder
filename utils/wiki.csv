@@ -12982,7 +12982,7 @@ WARNING: If this effect is active on -2 when ascending to -1, it is possible to 
 [[GameText]]""I found some blueprints, how convenient!""[[/GameText]]|X0-1V1 reveals nearby emergency access doors.||
 [[GameText]]""Oops.""[[/GameText]]|X0-1V1 sabotages a Phase Generator on the map, exploding it and removing all Phase Walls.|Only occurs inside a Garrison.||
 [[GameText]]X0-1V1 lends a hand with your twisted circuits.[[/GameText]]|Some of Cogmind's [[Corruption]] is purged, scaling from 10% at 100 mood to 50% at maximum or minimum mood (i.e. effect increases both at high and low mood).||
-[[GameText]]X0-1V1 points here and there.[[/GameText]]|X0-1V1 reveals nearby item locations within a range of 33?-37?.||
+[[GameText]]X0-1V1 points here and there.[[/GameText]]|X0-1V1 reveals item locations within a square range of 61 tiles centered around Cogmind (30 tiles in each direction).||
 [[GameText]]""I sense action potential over that way.[[/GameText]]|X0-1V1 reveals a [[Garrison Access]].||
 [[GameText]]""You need a change of scenery.""[[/GameText]]|X0-1V1 teleports Cogmind out of danger.|Cogmind cannot be in good shape.||
 [[GameText]]""Just some junk I've been collecting.""[[/GameText]]
