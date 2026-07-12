@@ -268,8 +268,7 @@ function applyDamage(
         let damageReduced = 0;
 
         if (part !== undefined && part.remote) {
-            damageReduced =
-                chunk.originalDamage - Math.trunc(chunk.originalDamage * multiplier) - damageReduction;
+            damageReduced = chunk.originalDamage - Math.trunc(chunk.originalDamage * multiplier) - damageReduction;
         } else {
             damageReduced = Math.trunc(chunk.originalDamage * multiplier) - damageReduction;
         }
@@ -1894,7 +1893,7 @@ function simulateWeapon(
             }
 
             // Apply double damage sneak attack bonus
-            if ((offensiveState.melee && offensiveState.sneakAttack) || botState.dormant) {
+            if (offensiveState.melee && (offensiveState.sneakAttack || botState.dormant)) {
                 damage *= 2;
             }
 
