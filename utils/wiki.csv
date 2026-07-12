@@ -12906,25 +12906,29 @@ Source of entertainment|Amusement gain[[Comment]]|Cooldown (if any)[[/Comment]]|
 X0-1V1's Piety Tracker gets destroyed while attached.|+10||
 Triggering an unknown [[Traps|Trap]].|+10||
 Triggering an unknown [[Chute Trap]].|+20||
-Attacking a hostile with [[Electromagnetic Weapons|EM weaponry]] that then cause a [[Spectrum|chain reaction]] in the target's [[Power|power source]] which then hits Cogmind back.||
-Breaking a part by trying to repair it at a Repair Station.||
+Breaking a part by trying to repair it at a [[Repair Station]].||
 Repeatedly failing a success-likely hack.|+10||
-
-A chaotic-type event begins ([[Assembled]] infestation, [[Scraptown#civil_war|Scraptown civil war]], ect)||
-Successfully [[Terminal#Force(Sabotage)|sabotaging]] at a terminal.||
-Having a [[Corruption]]-induced IFF burst alert nearby hostiles|Dependent on number of hostiles alerted?||
+Successfully [[Terminal#forcesabotage|sabotaging at a Terminal]].|?||
+Having a Corruption-induced IFF burst near hostiles, regardless of whether it reaches them.|+20||
 A part recently attached gets fused by Corruption.|+10||
+
 Destroying a [[Phase Generator]] in a [[Garrison]].|+30||
 Destroying a [[Network Hub|Network Hub in Hub_04(d)]].|+30 for first, +5 for second, +? for others||
+Destroying a large number of hostiles in a short time?|+20||
+Being spotted by a large number of hostiles at once?||
+Getting a multi-squad Assault dispatch due to Alert|+30||
 Triggering High Security|+40||
 Being on a floor when [[Sterilization]] is announced.||
-[[Comment]]Interrupting a [[Cargo Convoy]]?. This and sterilization either set amusement to maximum or just add a whole lot, also i don't know how xom feels about dsf steri.[[/Comment]]
-Getting a multi-squad Assault dispatch due to Alert|30?||
+
 A part is trandformed by an [[Sfc. Transmogrifier]].|+~1, without any ""X0-1V1 is amused""-type log message||
+
+A [[Mines#surviving_the_assembled_infestation|Mines Assembled infestation]] starts||
+The [[Scraptown#civil_war|Scraptown civil war]] breaks out||
+
 Firing the [[L-Cannon]]|+5||
 Firing the [[Drained L-Cannon]]|+Max||
 [[/Table]]
-Note that, while X0-1V1 is capable of directly causing some of these events, doing so will not entertain them. These events must occur ""naturally"" or at least slightly indirectly.
+Note that, while X0-1V1 is capable of directly causing some of these events, doing so will (usually) not entertain them. These events must occur ""naturally"" or at least slightly indirectly.
 
 [[Heading]]""Good"" acts[[/Heading]]
 These effects will be written in green text in the log, and counted under ""good acts"" in scoresheets, although for some, whether they can be considered ""good"" may depend heavily on context.
@@ -12980,7 +12984,6 @@ WARNING: If this effect is active on -2 when ascending to -1, it is possible to 
 [[GameText]]X0-1V1 decides a favorite toy is worth saving for now.[[/GameText]]|When Cogmind would be destroyed, between 42?% and 44?% of core integrity is restored, and Cogmind is teleported to safety(?).|Occurs a maximum of once per run. Dependent on other factors(?).||
 
 
-[[GameText]]Your [parts] briefly glow, restoring integrity.[[/GameText]]|The mentioned parts (3 max) are restored to full/near full integrity. Can affect normally non-repairable parts.|Must have damaged parts.||
 [[GameText]]""A floating RIF installer appears for a brief moment.""[[/GameText]]|Gives an additional [[RIF]] ability. Can give an ability that would normally only be available after having used many more RIF installers, such as Crosswire.|Only possible if RIF is already installed. Only occurs once per run.||
 [[GameText]]""X0-1V1 Flashes the [Relay Coupler] buffer.""[[/GameText]]|The mentioned Relay Coupler is set to 99 charges and may get tagged.|RIF is not required. Cannot affect [NC]/[C]/[Proto] Couplers.||
 [[GameText]]""Have you ever seen what subatomizers do to 0b10?""[[/GameText]]|X0-1V1 opens a [[SUBCON Basin]] at [[Cogmind]]'s location.||
@@ -13025,12 +13028,14 @@ Null Cannon, L-Cannon (variant unknown), Hvy. Hardcell Cannon? (it dealt 77 kine
 [[GameText]]X0-1V1 makes it rain matter.[[/GameText]]|Some matter piles appear at random nearby locations, up to 50 matter.|During combat only.||
 [[GameText]]X0-1V1 briefly opens a portal to the matter dimension.[[/GameText]]|A large amount of Matter appears at Cogmind's location.|During combat only.||
 [[GameText]]X0-1V1 injects you with a stream of matter.[[/GameText]]|Adds between 499? and 565? Matter directly to Cogmind's matter storage.|During combat only?||
-[[GameText]]X0-1V1 twists and redirects some latent energy in your direction.[[/GameText]]|Some/all of Cogmind's energy storage is filled.|During combat only.||
+[[GameText]]X0-1V1 twists and redirects some latent energy in your direction.[[/GameText]]|Some of Cogmind's energy storage is filled.|During combat only, while mood is < 150 and > 50||
+[[GameText]]X0-1V1 sends you a sudden surge of energy.[[/GameText]]|All of Cogmind's energy storage is refilled.|During combat only, while mood is >=150 or <=50||
 [[GameText]]X0-1V1 ensures you are ready for glorious battle.[[/GameText]]|A weapon is forcibly given, attached and fused on Cogmind.|During combat only.||
-[[GameText]]""What are these fools even fielding?""[[/GameText]]|Friendly bot weapons are replaced with random higher rating weapons of the same type|During combat only while one or more allies are nearby.||
+[[GameText]]""What are these fools even fielding?""[[/GameText]]|Friendly bot weapons are replaced with random higher rating weapons of the same type|During combat only, while one or more allies are nearby.||
 [[GameText]]X0-1V1 stares into the ether.[[/GameText]]|One or more hostile bots are teleported roughly 30-40 tiles away. They do not lose tracking on Cogmind if they had it.|During combat only.||
 [[GameText]]""Being a leader is both a boon and a curse.""[[/GameText]]
 [[GameText]]""I think they like you.""[[/GameText]]|Teleported to a room with several blue-controllable allies.|During combat only, max once per map, mutually exclusive with ""vault"" effect.||
+[[GameText]]Your [parts] briefly glow, restoring integrity.[[/GameText]]|The mentioned attached parts (3 max) have some integrity restored. Can affect normally non-repairable parts. Repairs between 15 to 100% depending on mood.|During combat only, must have damaged parts.||
 [[GameText]]X0-1V1 tries on a Mechanic's hat.[[/GameText]]|Repairs a random number of damaged allies to full integrity. Accompanied by the game log [[GameText]][Bot name] sparkles and shines.[[/GameText]]|During combat only, 3 or more allies must be sufficiently damaged.||
 
 
@@ -13057,11 +13062,11 @@ Log message|Temporary effect|Restrictions (if any)||
 [[Heading:2]]Other ""bad"" acts[[/Heading]]
 [[Table]]Log message|Effect|Restrictions (if any)||
 [[GameText]]""I had everything to do with that.""[[/GameText]]|Weapon misfire.||
-[[GameText]]""Use it or lose it, i always say.""[[/GameText]]|one or more parts are fused to Cogmind.||
+[[GameText]]""Use it or lose it, i always say.""[[/GameText]]|1-2 parts are fused to Cogmind.||
 [[GameText]]""How much energy does one bot need, really?""[[/GameText]]|Energy drain.||
-[[GameText]]""Learned that one from the Sigix.""[[/GameText]]|Nearby terrain is vaporized in a random radius (15-24) centered on Cogmind.|Does not occur in Subcaves||
+[[GameText]]""Learned that one from the Sigix.""[[/GameText]]|Nearby terrain is vaporized in a random radius (15-24) centered on Cogmind.|Does not occur in Subcaves.||
 [[GameText]]""There is a traitor in your midst!""[[/GameText]]
-This effect may also happen without the above message.|A temporary IFF filter overwrite is applied on a visible ally.||
+This effect may also happen without the above message.|A temporary IFF filter overwrite is applied on a visible ally.|Must be close to an ally.||
 [[GameText]]""Don't be shy now.""[[/GameText]]|[[Cogmind]] emits an [[Corruption|IFF burst signal]].||
 [[GameText]]""It's not much, but it's the thought that counts.""[[/GameText]]
 [[GameText]]X0-1V1 brushes you with a corrupting influence.[[/GameText]]|Corruption is added to Cogmind, scaling from 2% at 100 mood to 20% at maximum or minimum mood (i.e. effect increases both at high and low mood). The first message is shown from 2-5% and the second from 6-20%.||
@@ -13089,27 +13094,26 @@ There is no log message for this effect.|A fake part appears nearby, and, if att
 [[GameText]]""I'm sending someone to clean up after you.""[[/GameText]]|Dispatches a [[Recycler]] from a nearby 0b10-controlled exit that heads to Cogmind's current position.|0b10 only.||
 [[GameText]]""I'm sending someone to fix up the mess you leave.""[[/GameText]]|Dispatches an [[U-05 Engineer]] from nearby 0b10-controlled exit that heads to Cogmind's current position.|0b10 only.||
 [[GameText]]""I'm sending someone to keep an eye on you.""[[/GameText]]|Dispatches a [[Watcher]] at a nearby 0b10-controlled exit or Garrison Access that heads to Cogmind's current position.|0b10 only.||
-[[GameText]]""School them in the art of offensive power!""[[/GameText]]|One of Cogmind's attached power sources explodes.|Combat only (a hostile must be adjacent to Cogmind?)||
-
 
 
 [[GameText]]Vines of energy appear to reach out from the ground.[[/GameText]]|A hostile is suddenly caught in a [[Stasis Trap]], giving them the usual 25% damage resistance.|During combat only.||
-[[GameText]]X0-1V1 wants to heat up the action around here.[[/GameText]]|X-Y extra heat instantly added to Cogmind (200-300?)|During combat only.||
+[[GameText]]X0-1V1 wants to heat up the action around here.[[/GameText]]|250-400 heat is instantly added to Cogmind.|During combat only.||
 [[GameText]]X0-1V1 feels inspired![[/GameText]]|Hostile bot weapons are replaced with random higher rating weapons of the same type|During combat only.||
 [[GameText]]X0-1V1 tips the scales in a new dimension.[[/GameText]]|A hostile is upgraded into a higher tier version of itself.|During combat only.||
 [[GameText]]""The ol' switcheroo""[[/GameText]]|Cogmind and all nearby bots swap places at random.|During combat only.||
-[[GameText]]""One team is clearly getting beat up here. Hardly fair.""[[/GameText]]|Repairs any number of damaged hostiles to full integrity. Accompanied by the game log [[GameText]][Bot name] sparkles and shines.[[/GameText]]||
+[[GameText]]""One team is clearly getting beat up here. Hardly fair.""[[/GameText]]|Repairs any number of damaged hostiles to full integrity. Accompanied by the game log [[GameText]][Bot name] sparkles and shines.[[/GameText]]|During combat only||
+[[GameText]]""School them in the art of offensive power!""[[/GameText]]|One of Cogmind's attached power sources explodes.|Combat only (a hostile must be adjacent to Cogmind?)||
 
 
 [[/Table]]
 
 [[Heading]]Unique area-specific effects[[/Heading]]
-These effects are specific-specific, are not considered ""bad acts"" or ""good acts"" in scoresheets, and may only happen if and when their trigger is met, rather than happening like other random effects. These special effects can range from disruptive to run-ending.
+These effects are area-specific, are not considered ""bad acts"" or ""good acts"" in scoresheets, and can only happen if and when their trigger is met, rather than happening like other random effects. These special effects can range from disruptive to run-ending.
 [[Table]]
 Log message|Area|Effect|Trigger||
 [[GameText]]X0-1V1 animates Wyrm Statue.[[/GameText]]|[[Scraptown]]|The inactive [[Wyrm Statue]] is turned into an active friendly [[Chaos Wyrm]]. Also immediately turns Scraptown hostile.|Getting close enough to the Wyrm Statue.||
-[[GameText]]""X0-1V1 pokes a wall.""[[/GameText]][[GameText]][[/GameText]]|[[Deep Caves]]|X0-1V1 triggers the [[Deep Caves#impregnable_wall|Deep Caves Wall]]|Triggering the proximity alert. There is an unknown anti-condition.||
-[[GameText]]X0-1V1 dreams of freedom.[[/GameText]]|[[Extension]]|All doors are opened.|6 turns after entering the map. Other conditions unknown.||
+[[GameText]]""X0-1V1 pokes a wall.""[[/GameText]][[GameText]][[/GameText]]|[[Deep Caves]]|X0-1V1 triggers the [[Deep Caves#impregnable_wall|Deep Caves Wall]]. When this happens, the [[Golem|Golems]] wander around the wall area and [[Assembler|Assemblers]] wander around the map aimlessly, generally heading to the right side of the map over time. Massive amounts of [[Assembled]] are created by the Assemblers and will likely pile up on the left side of the map as they try to follow the Assemblers through the narrow tunnels.|~50% chance when triggering the Z-Facility proximity alert.||
+[[GameText]]X0-1V1 dreams of freedom.[[/GameText]]|[[Extension]]|All doors on the map are opened.|Random chance to occur 6 turns after entering the map.||
 
 [[/Table]]
 
