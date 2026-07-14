@@ -568,6 +568,12 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         ) {
             cyclerModifier = 0.5;
         } else if (
+            parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "MniQuantumCapacitor")).length > 0 &&
+            activeWeapons.length === 1 &&
+            (activeWeapons[0].type === "Energy Gun" || activeWeapons[0].type === "Energy Cannon")
+        ) {
+            cyclerModifier = 0.6;
+        } else if (
             parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "LauncherLoader")).length > 0 &&
             activeWeapons.length === 1 &&
             activeWeapons[0].type === "Launcher"
