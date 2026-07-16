@@ -509,14 +509,22 @@ export class BotData {
             );
 
             // Launcher Loader/Quantum Capacitor override to 50%, Mni. QC to 60%
-            // TODO would be nice to make sure that bots can actually make use of
-            // these conditions
+            const qcap = components.find((p) => hasActiveSpecialProperty(p, true, "QuantumCapacitor"));
+            const miniQcap = components.find((p) => hasActiveSpecialProperty(p, true, "QuantumCapacitor"));
+            const launcherLoader = components.find((p) => hasActiveSpecialProperty(p, true, "QuantumCapacitor"));
+
             if (
-                components.find((p) => hasActiveSpecialProperty(p, true, "LauncherLoader")) ||
-                components.find((p) => hasActiveSpecialProperty(p, true, "QuantumCapacitor"))
+                (qcap !== undefined &&
+                    armament.length === 1 &&
+                    (armament[0].type === "Energy Cannon" || armament[0].type === "Energy Gun")) ||
+                (launcherLoader !== undefined && armament.length === 1 && armament[0].type === "Launcher")
             ) {
                 cycling = 0.5;
-            } else if (components.find((p) => hasActiveSpecialProperty(p, true, "MniQuantumCapacitor"))) {
+            } else if (
+                miniQcap !== undefined &&
+                armament.length === 1 &&
+                (armament[0].type === "Energy Cannon" || armament[0].type === "Energy Gun")
+            ) {
                 cycling = 0.6;
             }
 
