@@ -9392,7 +9392,9 @@ Bonus (X)|X|Total bonus points obtained from various sources[[/Table]]
 [[Heading:2]]Value[[/Heading]]
 Value is dependent on robot class and type of machine. Purely decorative machines and non-0b10 machines usually have a value of 0, most 0b10 machines have a value of 10, functional [[Garrison Access|Garrison Accesses]] have a value of 100, and some important machines like Garrison Relays and Phase Generators have a value of 200.
 The value of common [[0b10 Bots]] is equal to their class number (for example, the [[G-67 Veteran]] has a value of 67), though there are a few exceptions, like the entire [[Duelist]] class. Other combat robot classes' values aren't listed anywhere in-game, but usually reflects their strength fairly well.
-[[Assembled]], passive [[Derelict]] bot classes, special bots that can only ever be found unpowered as ""statues"" and most [[Drone (Group)|Drones]] have a value of 0. Three special bots have a value of 2000, while all unique bots and all other other special bots have a value of 1. Some of those important unique/special bots instead grant score through bonus points.
+
+
+[[Assembled]], passive [[Derelict]] bot classes, special bots that can only ever be found unpowered as ""statues"" and most [[Drone (Group)|Drones]] have a value of 0. [[DAS Turret|DAS Turrets]] have a value of 0, but all other [[Turret|Turrets]] as well as all of [[Spoiler]][[QV-33N]]'s [[Drone|Drones]][[/Spoiler]] have a value of 30. [[Unchained]] have a value of 300, and three special bots have a value of 2000, while all other unique/special bots have a value of 1. Some of those important unique/special bots instead grant score through bonus points.
 
 
 [[Heading]]Bonus Points[[/Heading]]
@@ -9409,6 +9411,13 @@ Triggered High Security|500|Yes|Triggering [[High Security]]||
 High Alert Combat Kills[[Sup]]3[[/Sup]]|Dependent on bot value and [[Alert]]|Yes|Personally destroying hostile combat bots while Alert is at least at level 2 in [[0b10]]-controlled maps.
 At alert level 2, 25% of regular bot value. At level 3, 50%. At level 4, 75%. At level 5, 100%.||
 Follower Combat Kills|75% of regular bot value|Yes|Blue/purple Allies destroying combat bots||
+
+[[Comment]] --- Unchained --- [[/Comment]]
+[[Spoiler]]Prayed to X0-1V1[[/Spoiler]]|5000|No|[[Spoiler]]""Aligning"" with [[X0-1V1]] in -10/[[Materials]] by praying at the ""D.C.S.S Altar Unit""[[/Spoiler]]||
+[[Spoiler]]Major X0-1V1 Interference[[/Spoiler]]|???|Yes|[[Spoiler]][[X0-1V1]] causing highly disruptive effects, dependent on effects[[/Spoiler]]||
+[[Spoiler]]Hunted by Unchained[[/Spoiler]]|X * 500|Yes|[[Spoiler]]Getting hunted/targeted by X different [[Unchained]], excluding [[X0-1V1]][[/Spoiler]]||
+[[Spoiler]]Destroyed Unchained[[/Spoiler]]|1000|Yes|[[Spoiler]]Destroying [[Unchained]][[/Spoiler]]||
+[[Comment]]For ""Major X0-1V1 Interference"", there could be a cap on each map?[[/Comment]]
 
 [[Comment]] --- Side Quests --- [[/Comment]]
 [[Spoiler]]Awakened Behemoth Slayer[[/Spoiler]]|1000|[[Subatomic Replicator|SR?]]|[[Spoiler]]Transforming [[CR-A16's Pointy Stick]] into [[CR-A16's Behemoth Slayer]] by attacking [[Behemoth|Behemoths]] with it[[/Spoiler]]||
@@ -12991,9 +13000,8 @@ Log message|Temporary effect|Restrictions (if any)||
 [[GameText]]""Have you ever seen what subatomizers do to 0b10?""[[/GameText]]|X0-1V1 opens a [[SUBCON Basin]] at [[Cogmind]]'s location.||
 [[GameText]]""I guarantee there's even more fun over that way.""[[/GameText]]|X0-1V1 reveals and identifies an unknown exit.||
 [[GameText]]X0-1V1 smiles upon you.[[/GameText]]|Gives one or more items, attaching them if corresponding slots available, or placing them in inventory and discarding others inventory items onto the ground to make space if necessary. Given and discarded items may receive tags. This effect can grant some [[Protomatter]], which cannot otherwise be obtained outside of the RPGLIKE and Polymind special modes, or even unique items like a [[Skeleton Box]].||
-[[GameText]]""I found some blueprints, how convenient!""[[/GameText]]|X0-1V1 reveals unknown Emergency Access locations within a square range of 61 tiles centered around Cogmind (30 tiles in each direction).|Must be at least one unknown Emergency Access location within range.||
+[[GameText]]""I found some blueprints, how convenient!""[[/GameText]]|X0-1V1 reveals unknown Emergency Access door locations within a square range of 61 tiles centered around Cogmind (30 tiles in each direction).|Must be at least one unknown Emergency Access door location within range.||
 [[GameText]]X0-1V1 points here and there.[[/GameText]]|X0-1V1 reveals item locations within a square range of 61 tiles centered around Cogmind (30 tiles in each direction).|Must be at least one unknown part location on the ground within range.||
-[[GameText]]""Oops.""[[/GameText]]|X0-1V1 sabotages a Phase Generator on the map, exploding it and removing all Phase Walls.|Only occurs inside a Garrison.||
 [[GameText]]X0-1V1 lends a hand with your twisted circuits.[[/GameText]]|Some of Cogmind's [[Corruption]] is purged, scaling from 10% at 100 mood to 50% at maximum or minimum mood (i.e. effect increases both at high and low mood).||
 [[GameText]]""I sense action potential over that way.[[/GameText]]|X0-1V1 reveals a [[Garrison Access]].||
 [[GameText]]""You need a change of scenery.""[[/GameText]]|X0-1V1 teleports Cogmind out of danger.|Cogmind cannot be in good shape.||
@@ -13058,7 +13066,7 @@ Log message|Temporary effect|Restrictions (if any)||
 [[GameText]]""So many nails, never enough hammers...""[[/GameText]]|Temporary lowered ranged accuracy, between -11% to -20%.|During combat only.||
 [[GameText]]""Dakka mode, ENGAGE!""[[/GameText]]|Temporary lowered melee accuracy, between -5% to -10%.||During combat only.||
 [[GameText]]X0-1V1 projects screaming human faces on all surfaces in the area.[[/GameText]]|Temporary lowered melee accuracy, between -11% to -20%.|During combat only.||
-[[GameText]]""Your inner air conditioner seems to have fall into disrepair.""[[/GameText]]|Lowered heat dissipation, dependent on base heat dissipation.|During combat only.||
+[[GameText]]""Your inner air conditioner seems to have fall into disrepair.""[[/GameText]]|Lowered heat dissipation between -19 and -45. The effect ranges based on number of evolutions. At -10 the range is -19 and -25. At -1 the range is -35 to -45.|During combat only.||
 [[/Table]]
 
 
@@ -13072,17 +13080,17 @@ Log message|Temporary effect|Restrictions (if any)||
 This effect may also happen without the above message.|A temporary IFF filter overwrite is applied on a visible ally.|Must be close to an ally.||
 [[GameText]]""Don't be shy now.""[[/GameText]]|[[Cogmind]] emits an [[Corruption|IFF burst signal]].||
 [[GameText]]""It's not much, but it's the thought that counts.""[[/GameText]]
-[[GameText]]X0-1V1 brushes you with a corrupting influence.[[/GameText]]|Corruption is added to Cogmind, scaling from 2% at 100 mood to 20% at maximum or minimum mood (i.e. effect increases both at high and low mood). The first message is shown from 2-5% and the second from 6-20%.|Cannot occur if Cogmind already has a lot of corruption.||
+[[GameText]]X0-1V1 brushes you with a corrupting influence.[[/GameText]]|Corruption is added to Cogmind, scaling from 2% at 100 mood to 20% at maximum or minimum mood (i.e. effect increases both at high and low piety). The first message is shown from 2-5% and the second from 6-20%. Ignores EM resistance and ALL other forms of corruption prevention, with the exception of [[System Guards]].|Cannot raise Cogmind's corruption above 80%.||
 [[GameText]]""And it's a trip and a fumble!""[[/GameText]]|One or more attached parts are rejected.||
 [[GameText]]""C'mon, do something!""[[/GameText]]
 [[GameText]]""Some new friends to play with.""[[/GameText]]|Between 1-6 hostile 0b10-aligned bots are spawned around the edge of Cogmind's line of sight. Unlike the ally-summoning version of this effect, these hostiles never disappear after a certain amount of time. Using a [[Visual Processing Units|Visual Processing Unit]] makes it more likely that this effect places bots within the greater range of Cogmind's sight but outside of the hostiles' sight. However, this means that the temporary vision debuff effect will make enemies appear closer. The first message is shown if Cogmind is not in combat and the second is shown if Cogmind is in combat.||
 [[GameText]]""Evolution hits right when you least expect it.""[[/GameText]]|Mutates one slot into a slot of another type.|Cannot change base slot configuration by more than +1/-1 (and cannot lower slots of a given type below 1?). In other words, if a propulsion slot is mutated away, another will not be mutated away until at least one propulsion slot was mutated back in. For example, if, without X0-1V1's interference, you have 5 utility slots, no matter how many mutations occur, you will always have between 4 and 6 utility slots. Also, can't remove a slot occupied by a [[Scrap Engine]] construct.||
-[[GameText]]""Enjoy the ride!""[[/GameText]]|Cogmind is teleported nearby into view of (potentially dormant) hostile(s). Generally tries to place Cogmind into view of as much danger as possible.|Cannot teleport into [[Command#command_garrisons|the Command garrisons]]||
+[[GameText]]""Enjoy the ride!""[[/GameText]]|Cogmind is teleported nearby into view of (potentially dormant) hostile(s). Generally tries to place Cogmind into view of as much danger as possible. Bots lose tracking on Cogmind if they had it before the teleport.|Cannot teleport into [[Command#command_garrisons|the Command garrisons]]||
 [[GameText]]""A box. Just for you.""[[/GameText]]|Up to 6 additional stationary [[Sentry|Sentries]] are placed in a ring around Cogmind and marked on the map. The ring is roughly 20-25 tiles away from Cogmind.||
 [[GameText]]""X0-1V1 taps a no entrance sign""[[/GameText]]|Removes an exit from the map|Another exit leading to the same map must exist.||
 [[GameText]]X0-1V1 uses Touch of Redecoration![[/GameText]]|X0-1V1 destroys a machine, detonates a trap, or triggers [[GameText]]Force(Overload)[[/GameText]] on a [[Fabricator]].||
 [[GameText]]""That meddlesome character is spoiling all the fun. Not anymore!""[[/GameText]]|[Data Miner] will no longer redirect Reinforcement Squads or Assault Squads. The current squad is still redirected.|Has a chance of happening whenever Data Miner successfully redirects a squad.||
-There is no log message for this effect.|A fake part appears nearby, and, if attached, is reconfigured into an [[Item Mimic]]. Fake parts can be higher rating than regular floor parts, and can appear in locations where regular floor parts cannot. The fake part can appear unidentified. Destroying one via explosives does not reconfigure it.|Cannot happen below depth -8.||
+There is no log message for this effect.|One or more fake parts appear nearby but out of line of sight, and, if one is attached, it is reconfigured into an [[Item Mimic]]. Fake parts can be higher rating than regular floor parts, and can appear in locations where regular floor parts cannot. The fake part can be unidentified. The part is treated as a usual part in all ways except when attaching it. For example, destroying via explosives or placing in a [[Scanalyzer]] does work as a standard part. Prefers to spawn parts of the same or a similar type that Cogmind has recently used.|Cannot happen below depth -8.||
 
 
 [[GameText]]X0-1V1 thinks 0b10 needs to up its game.[[/GameText]]|0b10 dispatches a ""surplus targeted"" [[Investigation Squad|Investigation]], [[Assault Squad|Assault]], or [[Extermination Squad|Extermination]] squad. [[Comment]]this can maybe dispatch more squad types[[/Comment]]|0b10 only.||
@@ -13100,7 +13108,7 @@ There is no log message for this effect.|A fake part appears nearby, and, if att
 
 
 [[GameText]]Vines of energy appear to reach out from the ground.[[/GameText]]|One or more hostiles are suddenly caught in a [[Stasis Trap]], giving them the usual 25% damage resistance.|During combat only.||
-[[GameText]]X0-1V1 wants to heat up the action around here.[[/GameText]]|250-400 heat is instantly added to Cogmind.|During combat only.||
+[[GameText]]X0-1V1 wants to heat up the action around here.[[/GameText]]|200-300 + ( 10 * (11 - [depth] ) * 10 ) extra heat is instantly added to Cogmind. For example, 210-310 at -10, 300-400 at -1.|During combat only.||
 [[GameText]]X0-1V1 feels inspired![[/GameText]]|Hostile bot weapons are replaced with random higher rating weapons of the same type|During combat only.||
 [[GameText]]X0-1V1 tips the scales in a new dimension.[[/GameText]]|A hostile is upgraded into a higher tier version of itself.|During combat only.||
 [[GameText]]""The ol' switcheroo""[[/GameText]]|Cogmind and all nearby bots swap places at random.|During combat only.||
@@ -13117,7 +13125,8 @@ Log message|Area|Effect|Trigger||
 [[GameText]]X0-1V1 animates Wyrm Statue.[[/GameText]]|[[Scraptown]]|The inactive [[Wyrm Statue]] is turned into an active friendly [[Chaos Wyrm]]. Also immediately turns Scraptown hostile.|Getting close enough to the Wyrm Statue.||
 [[GameText]]""X0-1V1 pokes a wall.""[[/GameText]][[GameText]][[/GameText]]|[[Deep Caves]]. Is also the only effect that can occur there.|X0-1V1 triggers the [[Deep Caves#impregnable_wall|Deep Caves Wall]]. When this happens, the [[Golem|Golems]] wander around the wall area and [[Assembler|Assemblers]] wander around the map aimlessly, generally heading to the right side of the map over time. Massive amounts of [[Assembled]] are created by the Assemblers and will likely pile up on the left side of the map as they try to follow the Assemblers through the narrow tunnels.|~50% chance when triggering the Z-Facility proximity alert.||
 [[GameText]]X0-1V1 dreams of freedom.[[/GameText]]|[[Extension]]|All doors on the map are opened.|Random chance to occur 6 turns after entering the map.||
-[[GameText]]X0-1V1: ""Who turned this fun thing off?""[[/GameText]]|[[Wastes]]|Can occur as a random bad effect.||
+[[GameText]]""Who turned this fun thing off?""[[/GameText]]|[[Wastes]]|The Wastes EMP is reactivated.|Can occur as a random bad effect.||
+[[GameText]]""Oops.""[[/GameText]]|Garrison|A Phase Generator on the map explodes, removing all Phase Walls. Cogmind does not gain any alert from this.|Can occur as a random good effect if a Phase generator is present on the map.||
 
 [[/Table]]
 
