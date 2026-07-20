@@ -24,6 +24,7 @@ import { ItemData } from "./ItemData";
 import {
     canShowSpoiler,
     createImagePath,
+    gallerySort,
     getLargeBotImageName,
     getLinkSafeString,
     parseFloatOrUndefined,
@@ -1147,6 +1148,11 @@ function processPartGroupTableTag(state: ParserState, result: RegExpExecArray) {
         .getAllDescendants()
         .filter((entry) => entry.canShowSpoiler(state.spoiler) && entry.type === "Part");
     const parts = partEntries.map((entry) => entry.extraData as Item);
+
+    // Sort in gallery export index order. This sorts by basic low rated parts 
+    // first, and if similar parts are at the same rating (such as storage 
+    // units), generally sorts by lowest effect value first.
+    parts.sort((a, b) => a.index - b.index);
 
     const columnDefs: GroupColumnDef<Item>[] = [];
     const nameColumnDef: ColumnDef<Item> = {
