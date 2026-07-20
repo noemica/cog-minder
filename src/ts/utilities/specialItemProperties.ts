@@ -472,6 +472,10 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Adv. Targeting Computer": { active: "Part Active", trait: { kind: "Targeting", bonus: 8 } },
     "Exp. Targeting Computer": { active: "Part Active", trait: { kind: "Targeting", bonus: 12 } },
 
+    // Thunder Legs
+    "Thunder Leg": { active: "Part Active", trait: { kind: "ThunderLeg" } },
+    "Imp. Thunder Leg": { active: "Part Active", trait: { kind: "ThunderLeg" } },
+
     // Weapon regen
     "Sigix Broadsword": {
         active: "Part Active",

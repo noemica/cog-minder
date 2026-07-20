@@ -147,6 +147,7 @@ export type SelfReduction = { kind: "SelfReduction"; shielding: number };
 export type Shielding = { kind: "Shielding"; shielding: number; slot: ItemSlot | "Core" };
 export type TargetAnalyzer = { kind: "TargetAnalyzer"; bonus: number };
 export type Targeting = { kind: "Targeting"; bonus: number };
+export type ThunderLeg = { kind: "ThunderLeg" };
 export type WeaponRegen = { kind: "WeaponRegen"; energyPerTurn: number; integrityPerTurn: number };
 
 export type SpecialPropertyType =
@@ -189,6 +190,7 @@ export type SpecialPropertyType =
     | Shielding
     | TargetAnalyzer
     | Targeting
+    | ThunderLeg
     | WeaponRegen;
 
 export type SpecialPropertyTypeName =
@@ -231,6 +233,7 @@ export type SpecialPropertyTypeName =
     | "Shielding"
     | "TargetAnalyzer"
     | "Targeting"
+    | "ThunderLeg"
     | "WeaponRegen";
 
 export type SpecialItemProperty = {

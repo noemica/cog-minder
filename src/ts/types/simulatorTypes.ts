@@ -92,6 +92,7 @@ export type DefensiveState = {
     hardlightGenerator: HardlightGeneratorPart[];
     rangedAvoid: RangedAvoidPart[];
     shieldings: Record<ItemSlot | "Core", ShieldingPart[]>;
+    thunderLegs: SpecialPart[];
 };
 
 export type SuperfortressRegenState = {

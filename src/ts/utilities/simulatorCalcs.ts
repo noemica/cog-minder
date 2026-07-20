@@ -902,6 +902,7 @@ export function getBotDefensiveState(
             Utility: [],
             Weapon: [],
         },
+        thunderLegs: [],
     };
 
     for (const part of parts) {
@@ -976,6 +977,9 @@ export function getBotDefensiveState(
             // Shielding-like part
             const trait = part.def.specialProperty!.trait as Shielding;
             state.shieldings[trait.slot].push({ reduction: trait.shielding, part: part });
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "ThunderLeg")) {
+            // Thunder leg part
+            state.thunderLegs.push({ part: part });
         }
     }
 
@@ -2017,14 +2021,14 @@ export function spectrumToNumber(spectrum: Spectrum | undefined): number {
 function updateWeaponsAccuracy(state: SimulatorState) {
     const offensiveState = state.offensiveState;
     const botState = state.botState;
+    const isUnderweight = botState.support > 0 && botState.mass <= botState.support;
 
     let perWeaponBonus = 0;
 
     // Flying/hovering enemy penalty if not overweight
     if (
         (botState.def.propulsionType === "Hover Unit" || botState.def.propulsionType === "Flight Unit") &&
-        botState.support > 0 &&
-        botState.mass <= botState.support
+        isUnderweight
     ) {
         if (botState.def.propulsionType === "Hover Unit") {
             perWeaponBonus -= 5;
@@ -2036,7 +2040,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
     // Subtract always avoid util (reaction control system) unless overweight
     // or out of prop
     const avoidPart = getDefensiveStatePart(botState.defensiveState.avoid);
-    if (avoidPart != undefined && botState.support > 0 && botState.mass <= botState.support) {
+    if (avoidPart != undefined && isUnderweight) {
         perWeaponBonus -= avoidPart.chance;
     }
 
@@ -2098,11 +2102,17 @@ function updateWeaponsAccuracy(state: SimulatorState) {
     }
 
     if (botState.running) {
-        // TODO don't assume that bots don't become overweight
-        if (botState.parts.find((p) => p.def.type === "Leg") !== undefined) {
+        const legs = botState.parts.filter((p) => p.def.type === "Leg");
+
+        if (legs.length > 0 && isUnderweight) {
             // -5~15% if attacker running on legs (ranged attacks only)
             // (5% for each level of momentum)
             perWeaponBonus -= 5 * botState.runningMomentum;
+
+            if (getDefensiveStatePart(botState.defensiveState.thunderLegs) !== undefined) {
+                // If thunder leg is active then double the momentum bonus
+                perWeaponBonus -= 5 * botState.runningMomentum;
+            }
         }
 
         // Apply non-running evasion (<100 speed bonus)
