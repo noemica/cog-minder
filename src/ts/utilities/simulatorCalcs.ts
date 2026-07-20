@@ -2026,7 +2026,11 @@ function updateWeaponsAccuracy(state: SimulatorState) {
         botState.support > 0 &&
         botState.mass <= botState.support
     ) {
-        perWeaponBonus -= 10;
+        if (botState.def.propulsionType === "Hover Unit") {
+            perWeaponBonus -= 5;
+        } else {
+            perWeaponBonus -= 10;
+        }
     }
 
     // Subtract always avoid util (reaction control system) unless overweight
