@@ -111,10 +111,12 @@ function ItemGroupContent({
         // Filter out items based on spoiler setting
         // However, also support viewing all items past spoiler level if the user
         // opted past the spoiler block page
-        return entry.childEntries.filter(
+        const entries = entry.childEntries.filter(
             (itemEntry) =>
                 canShowSpoiler(itemEntry.spoiler, spoiler) || canShowSpoiler(itemEntry.spoiler, entry.spoiler),
         );
+
+        return entries.sort((a, b) => (a.extraData as Item).index - (b.extraData as Item).index);
     }, [spoiler]);
 
     const [itemButtons, itemOptions] = useMemo(() => {
@@ -137,7 +139,7 @@ function ItemGroupContent({
         ?.extraData as Item;
 
     const itemPicker =
-        (entry.childEntries.length < 20 || !useWikiPartGroupSelectName) ? (
+        entry.childEntries.length < 20 || !useWikiPartGroupSelectName ? (
             <div className="wiki-infobox-button-group">
                 <ExclusiveButtonGroup
                     buttons={itemButtons}
