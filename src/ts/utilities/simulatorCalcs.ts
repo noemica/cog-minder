@@ -2036,7 +2036,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
     // Subtract always avoid util (reaction control system) unless overweight
     // or out of prop
     const avoidPart = getDefensiveStatePart(botState.defensiveState.avoid);
-    if (avoidPart != undefined && botState.support > 0) {
+    if (avoidPart != undefined && botState.support > 0 && botState.mass <= botState.support) {
         perWeaponBonus -= avoidPart.chance;
     }
 
