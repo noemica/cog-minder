@@ -13021,10 +13021,10 @@ Log message|Temporary effect|Restrictions (if any)||
 [[GameText]]""'Every door you open is another chance for more unexpected chaos.' --some infamous god.""[[/GameText]]|Opens a Sealed Barrier-type machine.|Must be nearby Sealed Barrier.||
 [[GameText]]""Let's take things to the next level.""[[/GameText]]|Attaches a Sfc. Transmogrifier.||
 
-[[GameText]]""I've sent the detectives back to the station. For now.""[[/GameText]]|X0-1V1 recalls an [[Investigation Squad]].||
-[[GameText]]X0-1V1 sends the all clear message.[[/GameText]]|X0-1V1 recalls a [[Reinforcement Squad]].||
-[[GameText]]X0-1V1 adds a dash of confusion to 0b10's systems.[[/GameText]]|X0-1V1 recalls an [[Extermination Squad]].||
-[[GameText]]""Assault is a crime, you know!""[[/GameText]]|X0-1V1 recalls an [[Assault Squad]].||
+[[GameText]]""I've sent the detectives back to the station. For now.""[[/GameText]]|X0-1V1 recalls an [[Investigation Squad]].|Must be an active investigation squad. This and all other recall hacks can only occur in 0b10 maps, even when they would otherwise be non-recallable like in [[High Security|High]]/[[Maximum Security]] or in [[Command]].||
+[[GameText]]X0-1V1 sends the all clear message.[[/GameText]]|X0-1V1 recalls a [[Reinforcement Squad]].|Must be an active reinforcement squad.||
+[[GameText]]X0-1V1 adds a dash of confusion to 0b10's systems.[[/GameText]]|X0-1V1 recalls an [[Extermination Squad]].|Must be an active extermination squad.||
+[[GameText]]""Assault is a crime, you know!""[[/GameText]]|X0-1V1 recalls an [[Assault Squad]].|Must be an active assault squad.||
 
 
 [[GameText]]""Fire in the hole!""[[/GameText]]|A powerful explosion suddenly occurs centered on a visible hostile. Will also damage Cogmind.|During combat only, Cogmind in range of explosion centered on the target||
