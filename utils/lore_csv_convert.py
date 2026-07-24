@@ -279,6 +279,9 @@ additional_content = {
         'Content':
             'Analyses about derelict bots, obtainable at regular 0b10-controlled terminals via analysis() hacks.',
     },
+    'N/A Analysis': {
+        'Content': 'Analyses about derelict bots, obtainable at regular 0b10-controlled terminals via analysis() hacks.',
+    },
     'Prototype Analysis': {
         'Content':
             'Analyses about prototype 0b10 bots, obtainable at regular 0b10-controlled terminals via analysis() hacks.',

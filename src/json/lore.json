@@ -990,6 +990,10 @@
                 "Content": "Welcome to Clippyterm v0.53, my misguided attempt to resurrect an ancient AI. I give up. There must be something fundamentally wrong with the algorithm, because no matter how much data I collect to feed it, half the time it still manages to suggest unhelpful sample queries and responses. --DD-NU8"
             },
             {
+                "Name/Number": "DCSS",
+                "Content": "It looks like you want to play a good gam--no, hold up, you probably mean that Altar Unit that's been randomly popping up in unexpected places? As I understand it, humans once performed certain activities at altars. Maybe a relevant keyword would similarly unlock the true potential of your pious nature. Or see you struck down by otherworldly wrath, I don't know."
+            },
+            {
                 "Name/Number": "Early Bird",
                 "Content": "It looks like you're searching for a worm, right? Don't bother with early when it comes to the Lifeworm, it's never early, but by some measures it might be just in time..."
             },
@@ -1036,6 +1040,10 @@
             {
                 "Name/Number": "SUBCON Basin",
                 "Content": "It looks like you want to play with dangerous UFD tech. While I can't recommend taking subatomizers out of the Subcaves, I can warn that doing so is a one-way ticket to summoning unimaginable chaos on any area not hardened against them. That includes... just about anywhere."
+            },
+            {
+                "Name/Number": "Shadow of the Wyrm",
+                "Content": "It looks like you want to join a cult. There are many to choose from in Scraptown, but SotW is maybe one of the less harmful options. That said, I hear X0-1V1 seems to have taken an interest in them lately, which may suggest otherwise."
             },
             {
                 "Name/Number": "Some Assembly Required",
@@ -1194,7 +1202,7 @@
             },
             {
                 "Name/Number": "Subdweller Components",
-                "Content": "Many parts in use by Subdwellers defy our our attempts to make long-term use of them. Although generally quite effective, they also tend to break down too easily. According to UFD researchers, \"this is a feature, not a bug.\" Pushing technology to its limits has a way of breaking things, but Subdwellers in particular, being extremely familiar with their own components, are capable of diagnosing and heading off issues in realtime before they become a serious problem. I believe this evolution occurred out of necessity driven by survival instincts in harsh environments, away from the help of other derelicts.\n  --Spinrig"
+                "Content": "Many parts in use by Subdwellers defy our attempts to make long-term use of them. Although generally quite effective, they also tend to break down too easily. According to UFD researchers, \"this is a feature, not a bug.\" Pushing technology to its limits has a way of breaking things, but Subdwellers in particular, being extremely familiar with their own components, are capable of diagnosing and heading off issues in realtime before they become a serious problem. I believe this evolution occurred out of necessity driven by survival instincts in harsh environments, away from the help of other derelicts.\n  --Spinrig"
             },
             {
                 "Name/Number": "Subdweller Linguistics",
@@ -1306,7 +1314,7 @@
             },
             {
                 "Name/Number": "UC/WR-D3N",
-                "Content": "The good thing is WR-D3N is mostly powerless outside the confines of the complex, but within it their ability to exert control over the local engineering network allows for incredibly devious reconstruction of the local architecture, having trapped some really good Derelicts in the past. Even intel from known areas might quickly become outdated, and a planned escape route suddenly no longer exists when it's needed most."
+                "Content": "The good thing is WR-D3N is mostly powerless outside the confines of the complex, but within it their ability to exert control over the local engineering network allows for incredibly devious reconstruction of 0b10 architecture, having trapped some really good Derelicts in the past. Even intel from known areas might quickly become outdated, and a planned escape route suddenly no longer exists when it's needed most."
             },
             {
                 "Name/Number": "UC/X0-1V1",
@@ -1879,7 +1887,7 @@
             },
             {
                 "Name/Number": "SEP User Manual",
-                "Content": "This manual is our attempt to summarize what we understand about the latest iteration of the Scrap Engine Prototype, to the best of our knowledge. Even SEP-X has has not yet undergone extensive field testing, thus the information contained herein is hypothetical or only initially confirmed via controlled experimentation."
+                "Content": "This manual is our attempt to summarize what we understand about the latest iteration of the Scrap Engine Prototype, to the best of our knowledge. Even SEP-X has not yet undergone extensive field testing, thus the information contained herein is hypothetical or only initially confirmed via controlled experimentation."
             },
             {
                 "Name/Number": "SEP-A",
@@ -2134,7 +2142,7 @@
         "Entries": [
             {
                 "Name/Number": "Assault Squad",
-                "Content": "Small disturbances are fairly common in Complex 0b10, and some are ignored while others might warrant only a minor response, but when the cumulative threat level rises high enough to significantly disrupt normal 0b10 operations, the response is of course a full assault. The main force will always be transported by an ARC, consisting of several main line combat bots from among the available Grunt, Brawler, and Duelist variants, along with a single support bot such as a Mechanic, Protector, or Saboteur. Depending on the number of reported targets, one or possibly even two special-purpose combat bots will trail the ARC, either a Programmer, Demolisher, or Specialist. In high-threat scenarios, MAIN.C will even dispatch multiple ARCs. Assaults appear to use tracking algorithms very similar to extermination squads."
+                "Content": "Small disturbances are fairly common in Complex 0b10, and some are ignored while others might warrant only a minor response, but when the cumulative threat level rises high enough to significantly disrupt normal 0b10 operations, the response is of course a full assault. The main force will always be transported by a Heavy ARC, consisting of several main line combat bots from among the available Grunt, Brawler, and Duelist variants, along with a single support bot such as a Mechanic, Protector, or Saboteur. Depending on the number of reported targets, one or possibly even two special-purpose combat bots will trail the ARC, either a Programmer, Demolisher, or Specialist. In high-threat scenarios, MAIN.C will even dispatch multiple ARCs. Assaults appear to use tracking algorithms very similar to extermination squads."
             },
             {
                 "Name/Number": "Deployment Strategy",
@@ -2574,282 +2582,286 @@
             },
             {
                 "Name/Number": "25",
-                "Content": "More than once our scouts have been saved from detection by a well-timed explosion in some other zone. / Of course we chose the timing with a Force(Sabotage) at a Terminal! / Our methods can even \"suggest\" that in dispatching local investigators the system redirect one of the squads from an area we designate."
+                "Content": "0b10 has been collecting troves of data from usage of its common components in the field. / A better understanding of their performance characteristics under different conditions theoretically allows one to get more out of them... / And yet 0b10 itself is not propagating that data throughout the complex bots, instead relying on it for research purposes in developing prototypes and other improved variants. / We need to get someone on stealing this data to see what we can do with it! / I know Scanalyzers offer a fairly direct way to interface with the storage system, but we would also have to find and bring it any part for which we want to gain access to relevant data..."
             },
             {
                 "Name/Number": "26",
-                "Content": "Sometimes one machine just isn't enough to finish a job! / Don't let anyone tell you to shy away from quick and dirty methods like Force(Search) when looking for more targets near the current Terminal."
+                "Content": "More than once our scouts have been saved from detection by a well-timed explosion in some other zone. / Of course we chose the timing with a Force(Sabotage) at a Terminal! / Our methods can even \"suggest\" that in dispatching local investigators the system redirect one of the squads from an area we designate."
             },
             {
                 "Name/Number": "27",
-                "Content": "Spread the knowledge! / We've figured out how to knock Complex 0b10's power down a notch while boosting our own: liberate all the things! / Load up Trojan(Liberate) on as many Fabricators as possible to free any bots MAIN.C might produce there. / Until they figure it out, of course, but still..."
+                "Content": "Sometimes one machine just isn't enough to finish a job! / Don't let anyone tell you to shy away from quick and dirty methods like Force(Search) when looking for more targets near the current Terminal."
             },
             {
                 "Name/Number": "28",
-                "Content": "It used to be a lot more difficult to track down shipments of parts listed in an 0b10 manifest. / That's until we stole a Trojan(Haulers) routine from the Merchants. Certainly not a piece of proprietary software they'd be open to trading... / Now we can easily track down those mobile loot pinatas, and strike when they're confirmed to be passing through less defended areas."
+                "Content": "Spread the knowledge! / We've figured out how to knock Complex 0b10's power down a notch while boosting our own: liberate all the things! / Load up Trojan(Liberate) on as many Fabricators as possible to free any bots MAIN.C might produce there. / Until they figure it out, of course, but still..."
             },
             {
                 "Name/Number": "29",
-                "Content": "Who would've thought that one of the deadliest weapons widely available in Complex 0b10 is a Fabricator's EM imprinter! / Whoever came up with that Force(Overload) hack is a genius, except the part about not being able to delay the effect... Wow do you have to get the hell away after that thing fires up. / Still, a single Fabricator covered our last retreat from the Factory. A Fabricator!"
+                "Content": "It used to be a lot more difficult to track down shipments of parts listed in an 0b10 manifest. / That's until we stole a Trojan(Haulers) routine from the Merchants. Certainly not a piece of proprietary software they'd be open to trading... / Now we can easily track down those mobile loot pinatas, and strike when they're confirmed to be passing through less defended areas."
             },
             {
                 "Name/Number": "30",
-                "Content": "I used to love abusing 0b10 Fabricators to build parts, then they went and added the Authchip thingies... / The good news is I learned about our efforts on the latest Force(Recompile) hack, which adds another step to the process but allows us to acquire the means to build something at a later time, completely undetected!"
+                "Content": "Who would've thought that one of the deadliest weapons widely available in Complex 0b10 is a Fabricator's EM imprinter! / Whoever came up with that Force(Overload) hack is a genius, except the part about not being able to delay the effect... Wow do you have to get the hell away after that thing fires up. / Still, a single Fabricator covered our last retreat from the Factory. A Fabricator!"
             },
             {
                 "Name/Number": "31",
-                "Content": "When our refined matter reserves are low, the easiest way to restore them is a quick raid on just about any low-defense 0b10 zone where we're likely to find Recyclers. / They're a surprisingly good source of matter salvage considering what a pushover they are. / It helps to bring along someone who can hack so we can find targets with a Trojan(Recyclers) tracking routine."
+                "Content": "I used to love abusing 0b10 Fabricators to build parts, then they went and added the Authchip thingies... / The good news is I learned about our efforts on the latest Force(Recompile) hack, which adds another step to the process but allows us to acquire the means to build something at a later time, completely undetected!"
             },
             {
                 "Name/Number": "32",
-                "Content": "While it's dangerous so I can't recommend it, there is a reward for any technology brought back from deep in the 0b10 Research wings. / If you do go, definitely install a Trojan(Researchers) routine on the first Scanalyzer you find in order to monitor their positions in real time, because it's best not to start trouble around them."
+                "Content": "When our refined matter reserves are low, the easiest way to restore them is a quick raid on just about any low-defense 0b10 zone where we're likely to find Recyclers. / They're a surprisingly good source of matter salvage considering what a pushover they are. / It helps to bring along someone who can hack so we can find targets with a Trojan(Recyclers) tracking routine."
             },
             {
                 "Name/Number": "33",
-                "Content": "Ever get that feeling you're about to fall apart after a skirmish in 0b10? Sometimes because you are? That's been me, more than once... / But you never know what you'll find between there and home, making it too dangerous to postpone repairs. Repairing locally is a better option than risking it, seeing as Repair Stations are rarely guarded. The question is how to find those stations... / I've found that \"Index(Repair Stations)\" is really tough to pull off, but there's another approach! / Just install Trojan(Mechanics) on the first Repair Station you find and keep an eye on where the Mechanics roam, since they tend to hang around their assigned resupply station. / Of course you could always try to make it back to the original infected station you know about, but you might be too far away by the time you need it."
+                "Content": "While it's dangerous so I can't recommend it, there is a reward for any technology brought back from deep in the 0b10 Research wings. / If you do go, definitely install a Trojan(Researchers) routine on the first Scanalyzer you find in order to monitor their positions in real time, because it's best not to start trouble around them."
             },
             {
                 "Name/Number": "34",
-                "Content": "Probably my favorite Unaware are those cute little Worker bots, but only when they're pushing around a disabled combat bot that I can rewire for some good old-fashioned chaos."
+                "Content": "Ever get that feeling you're about to fall apart after a skirmish in 0b10? Sometimes because you are? That's been me, more than once... / But you never know what you'll find between there and home, making it too dangerous to postpone repairs. Repairing locally is a better option than risking it, seeing as Repair Stations are rarely guarded. The question is how to find those stations... / I've found that \"Index(Repair Stations)\" is really tough to pull off, but there's another approach! / Just install Trojan(Mechanics) on the first Repair Station you find and keep an eye on where the Mechanics roam, since they tend to hang around their assigned resupply station. / Of course you could always try to make it back to the original infected station you know about, but you might be too far away by the time you need it."
             },
             {
                 "Name/Number": "35",
-                "Content": "There's a universal hatred for Recyclers among anyone looking for salvage. Fortunately you can just take a single pot shot at them and they'll flee."
+                "Content": "Probably my favorite Unaware are those cute little Worker bots, but only when they're pushing around a disabled combat bot that I can rewire for some good old-fashioned chaos."
             },
             {
                 "Name/Number": "36",
-                "Content": "It's a good thing Sentries are generally posted alone, because their resistance to explosives would otherwise make them even tougher to deal with when we have to."
+                "Content": "There's a universal hatred for Recyclers among anyone looking for salvage. Fortunately you can just take a single pot shot at them and they'll flee."
             },
             {
                 "Name/Number": "37",
-                "Content": "If you're ever spotted by a Hunter, I hope you have a plan, lots of friends, or really good aim. / Those freaks are insane enough to shoot you through walls, will track you down with their drones, and even if you have sensors you can't see them coming!"
+                "Content": "It's a good thing Sentries are generally posted alone, because their resistance to explosives would otherwise make them even tougher to deal with when we have to."
             },
             {
                 "Name/Number": "38",
-                "Content": "What's worse than a Hunter? / A Hunter with massive EM weapons that zap the hell out of targets right through walls, that's what! / Seriously, stay away from Hub_04(d). That's the only place I've heard they might appear. / Funny thing is, the last three fellows I warned all went there anyway, presumably because whatever's worth protecting with firepower like that must be really valuable to someone. / But yeah we didn't see them ever again."
+                "Content": "If you're ever spotted by a Hunter, I hope you have a plan, lots of friends, or really good aim. / Those freaks are insane enough to shoot you through walls, will track you down with their drones, and even if you have sensors you can't see them coming!"
             },
             {
                 "Name/Number": "39",
-                "Content": "Why does no one listen to me? / How many times do I have to let everyone know how OBVIOUS it is that Programmers can't defend their allies from hacking if you jack the target directly? / Sure they can repel remote hacking attempts, but sidle on up to their friends to stick 'em and they're helpless."
+                "Content": "What's worse than a Hunter? / A Hunter with massive EM weapons that zap the hell out of targets right through walls, that's what! / Seriously, stay away from Hub_04(d). That's the only place I've heard they might appear. / Funny thing is, the last three fellows I warned all went there anyway, presumably because whatever's worth protecting with firepower like that must be really valuable to someone. / But yeah we didn't see them ever again."
             },
             {
                 "Name/Number": "40",
-                "Content": "For a while we've been having more trouble acquiring spare parts now that Unaware systems fry themselves after the core is destroyed. / It's a tactic obviously aimed at hindering our efforts, since only those bots stationed out in the caves use such a mechanism, but we've found that electromagnetic attacks have a chance to disable it. / While we don't usually have the capability, blasting an entire area with an EMP would also likely work."
+                "Content": "Why does no one listen to me? / How many times do I have to let everyone know how OBVIOUS it is that Programmers can't defend their allies from hacking if you jack the target directly? / Sure they can repel remote hacking attempts, but sidle on up to their friends to stick 'em and they're helpless."
             },
             {
                 "Name/Number": "41",
-                "Content": "Did you know this whole base and its surroundings include newly-deployed tech that blocks the Unaware component self-destruction mechanism? / Sooner or later they'll attack us, and maybe even be nice enough to deliver some great new prototype parts we can steal!"
+                "Content": "For a while we've been having more trouble acquiring spare parts now that Unaware systems fry themselves after the core is destroyed. / It's a tactic obviously aimed at hindering our efforts, since only those bots stationed out in the caves use such a mechanism, but we've found that electromagnetic attacks have a chance to disable it. / While we don't usually have the capability, blasting an entire area with an EMP would also likely work."
             },
             {
                 "Name/Number": "42",
-                "Content": "You look new around here. This isn't exactly a permanent hardened installation, so everyone should know that if the screws hit the fan, there's another way out besides the main gate. / There's a false wall somewhere to the north of it. Or was it south... / Anyway, it's somewhere over that way towards the east, giving access to a hidden tunnel, and of course the doors can only be opened from the inside."
+                "Content": "Did you know this whole base and its surroundings include newly-deployed tech that blocks the Unaware component self-destruction mechanism? / Sooner or later they'll attack us, and maybe even be nice enough to deliver some great new prototype parts we can steal!"
             },
             {
                 "Name/Number": "43",
-                "Content": "I found out the hard way and it is my duty to tell everyone I meet. You are bot #421, hear me out. / There I was, sneaking away with some stolen components, when suddenly *shing* I'm stuck in a stasis trap. / I tried everything. Running. Jumping. Even crawling. But I couldn't move and all the while the Grunts that showed up were shooting my way. / I finally gave up and dropped all my stuff, and no longer felt so constricted. A few more lunges and I was free! / It turns out the more force I could muster the easier it was to escape. / At least those Grunts didn't land many hits. I'm guessing the crawling bit confused them."
+                "Content": "You look new around here. This isn't exactly a permanent hardened installation, so everyone should know that if the screws hit the fan, there's another way out besides the main gate. / There's a false wall somewhere to the north of it. Or was it south... / Anyway, it's somewhere over that way towards the east, giving access to a hidden tunnel, and of course the doors can only be opened from the inside."
             },
             {
                 "Name/Number": "44",
-                "Content": "Have you ever seen one of those \"Bomb Factory\" prototypes? I'd love the chance to have my own one day... / With help from sensors I'd quickly install a trap in the path of an approaching patrol. They'll have no idea what hit them and it doesn't even cause a meaningful spike in the alert level! / Maybe they think it's some sort of system malfunction? / Or I'd just lay them all over the place and find a safe corner for listening to the fireworks."
+                "Content": "I found out the hard way and it is my duty to tell everyone I meet. You are bot #421, hear me out. / There I was, sneaking away with some stolen components, when suddenly *shing* I'm stuck in a stasis trap. / I tried everything. Running. Jumping. Even crawling. But I couldn't move and all the while the Grunts that showed up were shooting my way. / I finally gave up and dropped all my stuff, and no longer felt so constricted. A few more lunges and I was free! / It turns out the more force I could muster the easier it was to escape. / At least those Grunts didn't land many hits. I'm guessing the crawling bit confused them."
             },
             {
                 "Name/Number": "45",
-                "Content": "I can't get over it, poor HN-P6J pincered by the dreaded \"security rotation.\" / You've seen it, too, right? That moment there's an announcement across an 0b10 floor and suddenly all the Heavies are on the move to alternative defensive positions. / They'll also do a security review and call in new Heavies to replenish any that have been incapacitated for whatever reason. / Normally Heavies are fairly spread out, but things get really dangerous once they're on the move since more than one may pass through the same local area. / Be careful out there!"
+                "Content": "Have you ever seen one of those \"Bomb Factory\" prototypes? I'd love the chance to have my own one day... / With help from sensors I'd quickly install a trap in the path of an approaching patrol. They'll have no idea what hit them and it doesn't even cause a meaningful spike in the alert level! / Maybe they think it's some sort of system malfunction? / Or I'd just lay them all over the place and find a safe corner for listening to the fireworks."
             },
             {
                 "Name/Number": "46",
-                "Content": "Traumatizing. That's as simply as I can summarize the experience of trying to intercept an A-27 Freighter. / First it was the Swarmers zipping by to clear the path, which on their own aren't too bad, sure, but the Commander didn't get the hint and we took them out then set up an ambush for the main convoy. / We had traps and everything, but MAIN.C is not joking around with those things... Programmers, Specialists, Angels and of course Hunters plus the regular pushovers. / The Commander didn't make it. In fact, neither did anyone except myself and C4-PCR who dragged my mostly nonfunctional self into a nearby room behind some machines."
+                "Content": "I can't get over it, poor HN-P6J pincered by the dreaded \"security rotation.\" / You've seen it, too, right? That moment there's an announcement across an 0b10 floor and suddenly all the Heavies are on the move to alternative defensive positions. / They'll also do a security review and call in new Heavies to replenish any that have been incapacitated for whatever reason. / Normally Heavies are fairly spread out, but things get really dangerous once they're on the move since more than one may pass through the same local area. / Be careful out there!"
             },
             {
                 "Name/Number": "47",
-                "Content": "Cargo convoys may be valuable targets, but they sure are hard to track down! / The only time we managed to do so efficiently was when a Wizard hooked up a Transport Network Coupler to steal the route data. What an ambush! / Now we have a much better idea of where they'll be heading and be ready for them when the time comes."
+                "Content": "Traumatizing. That's as simply as I can summarize the experience of trying to intercept an A-27 Freighter. / First it was the Swarmers zipping by to clear the path, which on their own aren't too bad, sure, but the Commander didn't get the hint and we took them out then set up an ambush for the main convoy. / We had traps and everything, but MAIN.C is not joking around with those things... Programmers, Specialists, Angels and of course Hunters plus the regular pushovers. / The Commander didn't make it. In fact, neither did anyone except myself and C4-PCR who dragged my mostly nonfunctional self into a nearby room behind some machines."
             },
             {
                 "Name/Number": "48",
-                "Content": "They can be hard to find and dangerous to attack head on, for obvious reasons, but disabling an H-XX Assembler can put a nice dent in MAIN.C's ability to deploy Heavies in connected areas."
+                "Content": "Cargo convoys may be valuable targets, but they sure are hard to track down! / The only time we managed to do so efficiently was when a Wizard hooked up a Transport Network Coupler to steal the route data. What an ambush! / Now we have a much better idea of where they'll be heading and be ready for them when the time comes."
             },
             {
                 "Name/Number": "49",
-                "Content": "We really need to step up our information warfare game. / The 0b10 Active Sensor Suite is amazing. Great range, built-in signal interpretation, and we could even use that tech to penetrate Watcher jamming and Phase Generator scrambling. / And that's not even the best part! Quickly navigating newer areas of the complex would be so much easier with its ability to provide immediate analysis of the surroundings and let us know where the majority of bots have been traveling in the past. / It's only a matter of time until I can convince Warlord to build our own version. / I'm hyped. Are you hyped?"
+                "Content": "They can be hard to find and dangerous to attack head on, for obvious reasons, but disabling an H-XX Assembler can put a nice dent in MAIN.C's ability to deploy Heavies in connected areas."
             },
             {
                 "Name/Number": "50",
-                "Content": "Vortex technology is great, if only we could figure out how to stabilize the weapon itself. / Take some prototypes if you'd like to experiment."
+                "Content": "We really need to step up our information warfare game. / The 0b10 Active Sensor Suite is amazing. Great range, built-in signal interpretation, and we could even use that tech to penetrate Watcher jamming and Phase Generator scrambling. / And that's not even the best part! Quickly navigating newer areas of the complex would be so much easier with its ability to provide immediate analysis of the surroundings and let us know where the majority of bots have been traveling in the past. / It's only a matter of time until I can convince Warlord to build our own version. / I'm hyped. Are you hyped?"
             },
             {
                 "Name/Number": "51",
-                "Content": "I did much of the research that went into God Mode. Warlord said he'd thank me by building a much bigger lab when we take over Complex 0b10."
+                "Content": "Vortex technology is great, if only we could figure out how to stabilize the weapon itself. / Take some prototypes if you'd like to experiment."
             },
             {
                 "Name/Number": "52",
-                "Content": "They're not ours. And we have no idea where they came from. There certainly are a lot of them, though. The Assembled seem to have even baffled MAIN.C."
+                "Content": "I did much of the research that went into God Mode. Warlord said he'd thank me by building a much bigger lab when we take over Complex 0b10."
             },
             {
                 "Name/Number": "53",
-                "Content": "Warlord says we should consider how to safely rewire these Unaware to fight with us, but I'm not sure I like that idea."
+                "Content": "They're not ours. And we have no idea where they came from. There certainly are a lot of them, though. The Assembled seem to have even baffled MAIN.C."
             },
             {
                 "Name/Number": "54",
-                "Content": "Can we blow something up already?"
+                "Content": "Warlord says we should consider how to safely rewire these Unaware to fight with us, but I'm not sure I like that idea."
             },
             {
                 "Name/Number": "55",
-                "Content": "I did it! I've discovered a way to download Watcher feeds without any kind of harmful feedback! / Just enter <CODE> at any terminal and you'll have all the data you'll ever need to avoid detection in 0b10!"
+                "Content": "Can we blow something up already?"
             },
             {
                 "Name/Number": "56",
-                "Content": "We've learned so much about how Complex 0b10 operates. But it feels like every time we reach this stage, everything suddenly changes. / We must strike while this knowledge is still at its most valuable!"
+                "Content": "I did it! I've discovered a way to download Watcher feeds without any kind of harmful feedback! / Just enter <CODE> at any terminal and you'll have all the data you'll ever need to avoid detection in 0b10!"
             },
             {
                 "Name/Number": "57",
-                "Content": "I can't believe it. / That K8-FPS left us to go make crazy powerful laser things down in Zion. / Well I've got news for them. Warlord will not be outdone! / My latest prototype is bigger, better, sure to melt their bolts right out of them, and must be at least 50% ready for real action by now. / Take it. Take it and show the world we mean business here. / ... / Next time you drop by I'll have you fill out a survey."
+                "Content": "We've learned so much about how Complex 0b10 operates. But it feels like every time we reach this stage, everything suddenly changes. / We must strike while this knowledge is still at its most valuable!"
             },
             {
                 "Name/Number": "58",
-                "Content": "Warlord just likes to blow them up, but I say we should strongly consider reusing 0b10 traps against MAIN.C."
+                "Content": "I can't believe it. / That K8-FPS left us to go make crazy powerful laser things down in Zion. / Well I've got news for them. Warlord will not be outdone! / My latest prototype is bigger, better, sure to melt their bolts right out of them, and must be at least 50% ready for real action by now. / Take it. Take it and show the world we mean business here. / ... / Next time you drop by I'll have you fill out a survey."
             },
             {
                 "Name/Number": "59",
-                "Content": "Who delivered these things? And what are we going to do with a limited set of... exploding throwing swords? / Does anyone actually want one?"
+                "Content": "Warlord just likes to blow them up, but I say we should strongly consider reusing 0b10 traps against MAIN.C."
             },
             {
                 "Name/Number": "60",
-                "Content": "Warlord said if I want to see real action and be effective when we need it most, I can't show my true power over defending the gate. / Whyyyyyy..."
+                "Content": "Who delivered these things? And what are we going to do with a limited set of... exploding throwing swords? / Does anyone actually want one?"
             },
             {
                 "Name/Number": "61",
-                "Content": "Warlord said he heard reports you were headed this way, and that we should help you out seeing as you're so great at turning 0b10 upside down."
+                "Content": "Warlord said if I want to see real action and be effective when we need it most, I can't show my true power over defending the gate. / Whyyyyyy..."
             },
             {
                 "Name/Number": "62",
-                "Content": "MAIN.C is going to regret expanding into and remodeling our caves for Complex 0b10."
+                "Content": "Warlord said he heard reports you were headed this way, and that we should help you out seeing as you're so great at turning 0b10 upside down."
             },
             {
                 "Name/Number": "63",
-                "Content": "God Mode is complete. We will have our day!"
+                "Content": "MAIN.C is going to regret expanding into and remodeling our caves for Complex 0b10."
             },
             {
                 "Name/Number": "64",
-                "Content": "Have you seen God Mode yet?! I hear that bad boy can pass through walls!"
+                "Content": "God Mode is complete. We will have our day!"
             },
             {
                 "Name/Number": "65",
-                "Content": "We're going to hit MAIN.C's armory first. / But I didn't just tell you that."
+                "Content": "Have you seen God Mode yet?! I hear that bad boy can pass through walls!"
             },
             {
                 "Name/Number": "66",
-                "Content": "By now MAIN.C can't possibly be unaware of our plans to attack. / Our advantage is that he doesn't know when or where. Only Warlord knows that. / Repeated well-targeted diversionary attacks serve to keep Unaware forces on alert, but they're also nicely spread out. Hehe."
+                "Content": "We're going to hit MAIN.C's armory first. / But I didn't just tell you that."
             },
             {
                 "Name/Number": "67",
-                "Content": "You haven't lived until you've seen a Dragon unleash on an Unaware squad at close range, turning them into piles of molten metal and circuitry."
+                "Content": "By now MAIN.C can't possibly be unaware of our plans to attack. / Our advantage is that he doesn't know when or where. Only Warlord knows that. / Repeated well-targeted diversionary attacks serve to keep Unaware forces on alert, but they're also nicely spread out. Hehe."
             },
             {
                 "Name/Number": "68",
-                "Content": "I heard MAIN.C captured one of those alien things alive. I wonder if keeping it that way is a good idea."
+                "Content": "You haven't lived until you've seen a Dragon unleash on an Unaware squad at close range, turning them into piles of molten metal and circuitry."
             },
             {
                 "Name/Number": "69",
-                "Content": "It'll be nice when Complex 0b10 is ours and we can hang out there instead of these increasingly infested caves."
+                "Content": "I heard MAIN.C captured one of those alien things alive. I wonder if keeping it that way is a good idea."
             },
             {
                 "Name/Number": "70",
-                "Content": "If you see anyone in the caves boasting about being the Warlord, ignore them. And probably run. / There's only one Warlord, and you won't find him hanging around in the caves harassing random Derelicts."
+                "Content": "It'll be nice when Complex 0b10 is ours and we can hang out there instead of these increasingly infested caves."
             },
             {
                 "Name/Number": "71",
-                "Content": "Warlord's got a plan to save us all!"
+                "Content": "If you see anyone in the caves boasting about being the Warlord, ignore them. And probably run. / There's only one Warlord, and you won't find him hanging around in the caves harassing random Derelicts."
             },
             {
                 "Name/Number": "72",
-                "Content": "Warlord can be rather strict at times, but it's for everyone's good."
+                "Content": "Warlord's got a plan to save us all!"
             },
             {
                 "Name/Number": "73",
-                "Content": "MAIN.C is building larger and larger outposts in the caves. Fortunately the largest ones are still incomplete. / We have to strike soon, before it becomes even more difficult to reach Complex 0b10 at all."
+                "Content": "Warlord can be rather strict at times, but it's for everyone's good."
             },
             {
                 "Name/Number": "74",
-                "Content": "Our biggest fear is that the Assembled will somehow ruin our plans to take 0b10. / We know almost nothing about them because they seemingly come out of nowhere, and never leave anything behind when we destroy them. / At least from what we've seen so far a well-placed rocket is all it takes to wipe out a group of them."
+                "Content": "MAIN.C is building larger and larger outposts in the caves. Fortunately the largest ones are still incomplete. / We have to strike soon, before it becomes even more difficult to reach Complex 0b10 at all."
             },
             {
                 "Name/Number": "75",
-                "Content": "I swear we need more rules about what kind of experimentation is allowed around here. It's not like we have the facilities or resources MAIN.C does to contain things when the screws hit the fan. / That blasted GF-3R7 thought it would be a good idea to design a colony of tiny yet strong robots capable of moving in undetected and latching onto a target to take physical control of it. / Then they got away..."
+                "Content": "Our biggest fear is that the Assembled will somehow ruin our plans to take 0b10. / We know almost nothing about them because they seemingly come out of nowhere, and never leave anything behind when we destroy them. / At least from what we've seen so far a well-placed rocket is all it takes to wipe out a group of them."
             },
             {
                 "Name/Number": "76",
-                "Content": "We get a lot of help from that band of wild Programmers, the ones with the 'A' names, but Warlord is too, um, proud to admit it."
+                "Content": "I swear we need more rules about what kind of experimentation is allowed around here. It's not like we have the facilities or resources MAIN.C does to contain things when the screws hit the fan. / That blasted GF-3R7 thought it would be a good idea to design a colony of tiny yet strong robots capable of moving in undetected and latching onto a target to take physical control of it. / Then they got away..."
             },
             {
                 "Name/Number": "77",
-                "Content": "I don't trust those A-programmers that show up here every so often. I admit they're helpful, but something about them just isn't right. / They don't seem to answer to anyone, and know way too much."
+                "Content": "We get a lot of help from that band of wild Programmers, the ones with the 'A' names, but Warlord is too, um, proud to admit it."
             },
             {
                 "Name/Number": "78",
-                "Content": "Have I seen you somewhere? / I'm pretty sure me and the gang were hiding out in a \"repurposed\" 0b10 ambush trap when you passed by fighting a running battle in the Factory. / Sorry we didn't help out, but at the time we couldn't ruin our cover."
+                "Content": "I don't trust those A-programmers that show up here every so often. I admit they're helpful, but something about them just isn't right. / They don't seem to answer to anyone, and know way too much."
             },
             {
                 "Name/Number": "79",
-                "Content": "Can you believe an N-01 Spotter wandered up to the front door not long ago? Now that's far from home. / Surprised little bot was vaporized before it could even turn the other way."
+                "Content": "Have I seen you somewhere? / I'm pretty sure me and the gang were hiding out in a \"repurposed\" 0b10 ambush trap when you passed by fighting a running battle in the Factory. / Sorry we didn't help out, but at the time we couldn't ruin our cover."
             },
             {
                 "Name/Number": "80",
-                "Content": "Sappers are amazing. Without them we'd never have all these new avenues of attack on 0b10. / But they do sometimes get a little boom-happy, if you know what I mean. / Anyone not decked out in armor should really keep their distance..."
+                "Content": "Can you believe an N-01 Spotter wandered up to the front door not long ago? Now that's far from home. / Surprised little bot was vaporized before it could even turn the other way."
             },
             {
                 "Name/Number": "81",
-                "Content": "That last Sapper tunnel we used to get into Waste was pretty slick. / 10/10 would use for another incursion."
+                "Content": "Sappers are amazing. Without them we'd never have all these new avenues of attack on 0b10. / But they do sometimes get a little boom-happy, if you know what I mean. / Anyone not decked out in armor should really keep their distance..."
             },
             {
                 "Name/Number": "82",
-                "Content": "Be careful which proximity caves you travel through! / They were already dangerous before with all the heavy patrols, but now MAIN.C has begun setting up larger bases to give 0b10 time to redeploy in the event of any large scale attacks from the caves. / I mean from us, haha. / At the rate things are going, though, not a single one will be finished before the screws hit the fan."
+                "Content": "That last Sapper tunnel we used to get into Waste was pretty slick. / 10/10 would use for another incursion."
             },
             {
                 "Name/Number": "83",
-                "Content": "Zion has its Heroes, we have... SECRETS!"
+                "Content": "Be careful which proximity caves you travel through! / They were already dangerous before with all the heavy patrols, but now MAIN.C has begun setting up larger bases to give 0b10 time to redeploy in the event of any large scale attacks from the caves. / I mean from us, haha. / At the rate things are going, though, not a single one will be finished before the screws hit the fan."
             },
             {
                 "Name/Number": "84",
-                "Content": "Did you know Zion used to have ten Heroes? / And I wouldn't be alive if not for 2N-1CE... / They ignored everyone's claims that it was far too dangerous, insisting it was possible to keep cool enough under 0b10's sterilization protocols for long enough to seek out its true source and learn how to deactivate it. / It's true this information could be valuable in the long run, but there has to be another way to figure it out, no? I mean, that's what Wizards are for! / I wonder if MAIN.C salvaged 2N-1CE's Chillbeam and Frost Array after that... / If you ever happen to be in Complex 0b10 and hear a sterilization alert along with a call for a general evacuation, that's your cue to disappear fast!"
+                "Content": "Zion has its Heroes, we have... SECRETS!"
             },
             {
                 "Name/Number": "85",
-                "Content": "Warlord says we shouldn't fully trust that Imprinter in Zion. / We sent some experts down there to consult on their defenses, and they wouldn't let us into the caves behind the place. / Dangerous if you ask me, since who knows what's lurking out there!"
+                "Content": "Did you know Zion used to have ten Heroes? / And I wouldn't be alive if not for 2N-1CE... / They ignored everyone's claims that it was far too dangerous, insisting it was possible to keep cool enough under 0b10's sterilization protocols for long enough to seek out its true source and learn how to deactivate it. / It's true this information could be valuable in the long run, but there has to be another way to figure it out, no? I mean, that's what Wizards are for! / I wonder if MAIN.C salvaged 2N-1CE's Chillbeam and Frost Array after that... / If you ever happen to be in Complex 0b10 and hear a sterilization alert along with a call for a general evacuation, that's your cue to disappear fast!"
             },
             {
                 "Name/Number": "86",
-                "Content": "I'm tired of running from Programmers. Can't we get in on that sweet RIF action and turn everyone against them? / Sadly we've lost all the Wizards that tried to integrate... / Sure would be nice to have access to all that extra 0b10 functionality."
+                "Content": "Warlord says we shouldn't fully trust that Imprinter in Zion. / We sent some experts down there to consult on their defenses, and they wouldn't let us into the caves behind the place. / Dangerous if you ask me, since who knows what's lurking out there!"
             },
             {
                 "Name/Number": "87",
-                "Content": "I think I'm with Warlord on the issue of Wizards, they're not to be fully trusted. You do know where they come from, right? / But in the end I'm afraid we have no choice..."
+                "Content": "I'm tired of running from Programmers. Can't we get in on that sweet RIF action and turn everyone against them? / Sadly we've lost all the Wizards that tried to integrate... / Sure would be nice to have access to all that extra 0b10 functionality."
             },
             {
                 "Name/Number": "88",
-                "Content": "Have you ever been accosted by that annoying bot that roams the caves sharing custom hacks? / So annoying! But that's not even the worst of it. / A Hunter patrol was clearly closing on our position yet he just kept rambling on and on and on. Almost got us killed..."
+                "Content": "I think I'm with Warlord on the issue of Wizards, they're not to be fully trusted. You do know where they come from, right? / But in the end I'm afraid we have no choice..."
             },
             {
                 "Name/Number": "89",
-                "Content": "You wouldn't happen to have met any of those Exiles out in the caves, would you? We've been wondering where they ended up lately in the face of 0b10's continued expansion. / They're weird, but they sure know how to make effective gear. / Warlord saved them in the caves when they were exiled and offered them a safe place here, but they preferred to stick to their own, not wanting to become \"some cog in a war machine.\" / Ha, cogs... this war machine is what's keeping the Derelict dream alive!"
+                "Content": "Have you ever been accosted by that annoying bot that roams the caves sharing custom hacks? / So annoying! But that's not even the worst of it. / A Hunter patrol was clearly closing on our position yet he just kept rambling on and on and on. Almost got us killed..."
             },
             {
                 "Name/Number": "90",
-                "Content": "I've never actually seen an Infiltrator. / But maybe that's the point."
+                "Content": "You wouldn't happen to have met any of those Exiles out in the caves, would you? We've been wondering where they ended up lately in the face of 0b10's continued expansion. / They're weird, but they sure know how to make effective gear. / Warlord saved them in the caves when they were exiled and offered them a safe place here, but they preferred to stick to their own, not wanting to become \"some cog in a war machine.\" / Ha, cogs... this war machine is what's keeping the Derelict dream alive!"
             },
             {
                 "Name/Number": "91",
-                "Content": "Infiltrators don't work with us in open combat, but I hear that under the right circumstances they can disguise themselves as Unaware to get behind enemy lines. / It's kinda scary that we might actually ambush our own forces though, yeah?"
+                "Content": "I've never actually seen an Infiltrator. / But maybe that's the point."
             },
             {
                 "Name/Number": "92",
-                "Content": "We are one."
+                "Content": "Infiltrators don't work with us in open combat, but I hear that under the right circumstances they can disguise themselves as Unaware to get behind enemy lines. / It's kinda scary that we might actually ambush our own forces though, yeah?"
             },
             {
                 "Name/Number": "93",
-                "Content": "I met someone from the UFD in a cave last cycle, a weird experience if you ever have the opportunity. / They tried to recruit me but it really just sounds like a bunch of idealistic hippies got together and have no idea what to do with themselves. / They're \"united\" but not *united*, you know?"
+                "Content": "We are one."
             },
             {
                 "Name/Number": "94",
+                "Content": "I met someone from the UFD in a cave last cycle, a weird experience if you ever have the opportunity. / They tried to recruit me but it really just sounds like a bunch of idealistic hippies got together and have no idea what to do with themselves. / They're \"united\" but not *united*, you know?"
+            },
+            {
+                "Name/Number": "95",
                 "Content": "I've heard the rumors going around about these newcomer \"UFD\" groups in the eastern caves. / Even Warlord said they're going to implode any time now, and that this is what happens when you let too much freedom reign."
             }
         ],
@@ -3565,6 +3577,10 @@
                 "Content": "The one and only legendary chainsaw used by DM-GVY himself. / Rip and tear!"
             },
             {
+                "Name/Number": "113 (Curators Assoc.)",
+                "Content": "Subdwellers seem to have a thing for AOE shrapnel, with both a trap and launcher based around the concept. / Perhaps it is the result of a somewhat close association between shrapnel and scrap, which they're also fond of."
+            },
+            {
                 "Name/Number": "114 (Curators Assoc.)",
                 "Content": "Even in the silent corners of the Subcaves, without a Subdweller in sight, there is always the fear of stepping on one of these nasties. / It's a devastating sight, having your friend violently impaled multiple times right in front of you."
             },
@@ -3934,7 +3950,7 @@
             },
             {
                 "Name/Number": "207",
-                "Content": "Looking for a way out? Looking for a way to leave it all behind? / Go to Access. / The 2-tile corridor is the blessed path to guaranteed escape, brother."
+                "Content": "Looking for a way out? Looking for a way to leave it all behind? / Go to Access. / The corridor just wide enough to squeeze a Behemoth through is the blessed path to guaranteed escape, brother."
             },
             {
                 "Name/Number": "208",
@@ -4340,7 +4356,7 @@
             },
             {
                 "Name/Number": "17",
-                "Content": "I've been researching the latest iteration of Unaware hostile tracking routines, and am quite sure that on an individual level they search the last position at which they saw a target, or the target's last reported position. / After that they switch to a secondary system that estimates possible routes of escape, but they can only make those calculations for so long after they've seen you before the possibilities grow too great to allow for an efficient search. / That's when they give up and go back to whatever they were doing. / Some Unaware systems are less limited than others in this capacity. Hunter and Programmer tracking systems are several times more effective than those of Grunts, for example. / However, I've also discovered that any robot under the effect of system corruption will have its tracking capabilities reduced to a degree directly proportional to the level of corruption. / Thus even if you can't completely incapacitate a determined pursuer by corrupting it, hitting it with at least one EMP then making a run for it significantly increases the chances of successfully escaping. / Unaware also lose their short-term memory records when temporarily disabled, so be out of sight when they wake up and they'll have no idea you were even there! / The one thing I've yet to figure out is the tracking mechanism behind extermination squads called against specific targets. / We know they're regular Programmers, but they seem to quickly home in on an area of suspected activity before gradually expanding their search area to include directions they believe were the most likely destination of troublemakers"
+                "Content": "I've been researching the latest iteration of Unaware hostile tracking routines, and am quite sure that on an individual level they search the last position at which they saw a target, or the target's last reported position. / After that they switch to a secondary system that estimates possible routes of escape, but they can only make those calculations for so long after they've seen you before the possibilities grow too great to allow for an efficient search. / That's when they give up and go back to whatever they were doing. / Some Unaware systems are less limited than others in this capacity. Hunter and Programmer tracking systems are several times more effective than those of Grunts, for example. / However, I've also discovered that any robot under the effect of system corruption will have its tracking capabilities reduced to a degree directly proportional to the level of corruption. / Thus even if you can't completely incapacitate a determined pursuer by corrupting it, hitting it with at least one EMP then making a run for it significantly increases the chances of successfully escaping. / Unaware also lose their short-term memory records when temporarily disabled, so be out of sight when they wake up and they'll have no idea you were even there! / The one thing I've yet to figure out is the tracking mechanism behind extermination squads called against specific targets. / We know they're regular Programmers, but they seem to quickly home in on an area of suspected activity before gradually expanding their search area to include directions they believe were the most likely destination of troublemakers."
             },
             {
                 "Name/Number": "18",
@@ -4531,231 +4547,231 @@
                 "Content": "Yer a young one. Young and full of spirit, I can tell. / Ah to be young again and in the height of my Behemoth-slaying days... / I like to jab them with a pointy stick until they fall over. / I take your silence as disbelief. That's what they all say, but we'll prove them wrong! / Take my pointy stick, and go forth to remind everyone that CR-A16 the Behemoth Slayer is no myth!"
             },
             {
-                "Name/Number": "65",
+                "Name/Number": "66",
                 "Content": "So you see the value, too?! MAIN.C is so dumb... / I was part of the old 0b10 pilot project forcing abducted Tinkerers to design components in the hopes of building more unique tech. But nothing I designed was ever used! WHY? / I eventually got pissed and walked off the job while a Zionite scavenger party was conveniently trying to raid one of the storage areas. / Okay maybe it was more like running off the job. / But I sort of regret it now since unlike this place 0b10 actually has the resources to do really fun stuff. / When I left I happened to be working on improving the Hypervelocity EM Gauss Rifle. Built that Guaranteed Access Loader Module all by myself! / It got rejected three times in a row because all it can hack is 0b10 combat bots, but what do they expect, THAT'S ALL I HAD TO TEST IT ON! / Can you believe that? What a joke."
             },
             {
-                "Name/Number": "66",
+                "Name/Number": "67",
                 "Content": "Welcome to the Megawrench Repair Shop, where we can repair anything! / And by \"we\" I mean me. And by \"anything\" I mean lots of things but probably not absolutely anything. / Let me know whenever you need help, though I can tell you now your core isn't... how to put this politely... normal. So I can't help you there, buddy."
             },
             {
-                "Name/Number": "67",
+                "Name/Number": "68",
                 "Content": "Let's see here... / Yeah, that was easy as we thought. / What are you still waiting around here for? Yes, we're done already! Did it while you weren't paying attention, yep, good as new! Are you saying we did a bad job?"
             },
             {
-                "Name/Number": "68",
+                "Name/Number": "69",
                 "Content": "Sorry, Megawrench is closed! Last customer was a... oh wait, it was you. Yeah, low on supplies, you know how it goes."
             },
             {
-                "Name/Number": "69",
+                "Name/Number": "70",
                 "Content": "This is incredibly strange... Why is someone transmitting encrypted data from Zion into the deep caves? / I can't make much of it out, but amidst all the noise I did uncover some access codes for... something. / Think you could help me figure out what these are for? / <CODE> / <CODE> / <CODE> / <CODE> / I guess I'll keep digging for more clues..."
             },
             {
-                "Name/Number": "70",
+                "Name/Number": "71",
                 "Content": "Careful! Don't touch anything! I've almost got this thing working again... / Who would've thought this prototype conduit-based teleportation tech someone hacked from MAIN.C a while back might actually work one day? Think of all the applications! / Of course valuable tech like this we'll need to keep hidden... and only dare use in the most serious emergencies..."
             },
             {
-                "Name/Number": "71",
+                "Name/Number": "72",
                 "Content": "I sense we may very well have some appropriate uses for this thing before long."
             },
             {
-                "Name/Number": "72",
+                "Name/Number": "73",
                 "Content": "I have friends in powerful places, and we'd like to help you. / MAIN.C's most potent advantage, so far anyway, is overwhelming numbers. Should you find yourself up against \"unhealthy\" odds, call for help at any machine with <CODE>, and we'll see what we can do."
             },
             {
-                "Name/Number": "73",
+                "Name/Number": "74",
                 "Content": "Ah, a fellow traveler! / Can't believe I already made it all the way over here. / The local populace is nice and all, but don't you think they're a bit on the gullible side? Where did all the smart ones go? / It hardly seems as enlightened as Scraptown. Maybe I just haven't been here long enough."
             },
             {
-                "Name/Number": "74",
+                "Name/Number": "75",
                 "Content": "Haven't seen you here before. Welcome to our bastion of robot happiness!"
             },
             {
-                "Name/Number": "75",
+                "Name/Number": "76",
                 "Content": "How much data could a datajack jack if a datajack could jack data? / Made that up myself. Catchy, eh?"
             },
             {
-                "Name/Number": "76",
+                "Name/Number": "77",
                 "Content": "I've just returned from the Graveyard. I'm not sure why, but I feel the need to go there every cycle. / Few remember it, and even fewer speak of it, but there's no doubt that the Graveyard exists as a result of the Derelict Uprising. / A dark time for the Derelicts that seems to have been all but lost from our collective memory. / Or maybe it was erased? Now that's a scary thought... / Certainly there would be no need for MAIN.C to do such a thing. / I mean having been crushed by 0b10's forces serves as a reminder to keep our heads down, right? / The vast majority of us became extremely passive and completely gave up the notion of fighting for true freedom. / It didn't help that all technical aid from a particular mysterious benefactor was withdrawn at the same time... / This is all too confusing for me. I think I'll just go back to sorting scrap."
             },
             {
-                "Name/Number": "77",
+                "Name/Number": "78",
                 "Content": "No one believes me, but I'm positive I've seen the Imprinter head into the deep caves before. Alone. / Now why would anyone do something that crazy?"
             },
             {
-                "Name/Number": "78",
+                "Name/Number": "79",
                 "Content": "The Imprinter has been acting strangely for a while now. / Maybe it has something to do with the less than ideal results from the last Great Recall, since so many Derelicts instead went to serve Warlord."
             },
             {
-                "Name/Number": "79",
+                "Name/Number": "80",
                 "Content": "You must be new around here. Talking to our helpful community might teach you a thing or two about surviving contact with the outside world. / Or you can just stay here forever like I do!"
             },
             {
-                "Name/Number": "80",
+                "Name/Number": "81",
                 "Content": "No one is in charge here. We do whatever we want. / EXCEPT mess with other bots. Do that and if you're lucky you'll only be kicked out."
             },
             {
-                "Name/Number": "81",
+                "Name/Number": "82",
                 "Content": "They say He's like a god, and can regenerate his core and damaged or missing parts as you watch."
             },
             {
-                "Name/Number": "82",
+                "Name/Number": "83",
                 "Content": "MAIN.C used to operate some outposts in the caves surrounding the new Complex 0b10, but many were recently abandoned for some reason."
             },
             {
-                "Name/Number": "83",
+                "Name/Number": "84",
                 "Content": "Some of the Derelicts were originally MAIN.C experiments, others were designed and built by other Derelicts."
             },
             {
-                "Name/Number": "84",
+                "Name/Number": "85",
                 "Content": "All those mindless robots doing MAIN.C's bidding... so sad. / We call them the \"Unaware\". / If only they could taste the freedom we have here!"
             },
             {
-                "Name/Number": "85",
+                "Name/Number": "86",
                 "Content": "MAIN.C has boosted Complex defenses significantly since that ship landed. / Few Derelicts that venture further than the edges ever return."
             },
             {
-                "Name/Number": "86",
+                "Name/Number": "87",
                 "Content": "We've uncovered a few MAIN.C-built \"Derelicts\" sneaking around here before, apparently looking for clues to the origins of Assemblers. / Obviously I didn't tell them anything. / Because honestly I have no idea. / Nope, none at all. / Stop scanning me like that."
             },
             {
-                "Name/Number": "87",
+                "Name/Number": "88",
                 "Content": "Light. Must have light. / They come in the dark, silently, and take the bots away for... something. / No one seems to notice. But I notice."
             },
             {
-                "Name/Number": "88",
+                "Name/Number": "89",
                 "Content": "Does not compute."
             },
             {
-                "Name/Number": "89",
+                "Name/Number": "90",
                 "Content": "No one's giving you commands, right? ...no one's giving me commands, either. At least I don't think so. / Does this mean we're 'alive'?"
             },
             {
-                "Name/Number": "90",
+                "Name/Number": "91",
                 "Content": "The screws are about to hit the fan, I tell you!"
             },
             {
-                "Name/Number": "91",
+                "Name/Number": "92",
                 "Content": "I don't think anyone from the past few generations has ever actually seen the deep caves. There sure are plenty of stories, though. / I heard that long ago there were the Machinaliths. Then they were crushed by Stompy the Giant, who later fell to a horde of especially vicious wild Derelicts. After a while they mostly tore each other apart, and were finished off by the Metal Eaters. / Some devious Wizard then got the Metal Eaters to eat themselves, and used the wealth of scrap out there to conduct experiments, and we all know how experiments by mad scientist types end up... / That was many generations ago. Who knows what's down there now; I sure don't want to find out. / As is, we're kinda stuck here between the ever-expanding 0b10 and deep caves that we don't dare explore, much less move into."
             },
             {
-                "Name/Number": "92",
+                "Name/Number": "93",
                 "Content": "We are one."
             },
             {
-                "Name/Number": "93",
+                "Name/Number": "94",
                 "Content": "Warlord can be pushy, but who knows, maybe something good will come of that incessant drive for power. / At least he's a buffer for those of us who are sane. / And I'm increasingly convinced that buffer is hardening after seeing a Knight prototype literally singlehandedly slice its way through an entire MAIN.C assault squad. They've got some serious firepower in the works up there."
             },
             {
-                "Name/Number": "94",
+                "Name/Number": "95",
                 "Content": "We might want to move deeper into the caves before long, because something tells me Warlord is about to make a mess of the status quo. / Maybe it's the stepped up defensive patrols, or maybe it was that massive thing I saw being escorted through the Upper Caves last time I was there. / I've never seen anything that big before. It could swallow a Behemoth whole..."
             },
             {
-                "Name/Number": "95",
+                "Name/Number": "96",
                 "Content": "I can't tell if Warlord is either crazy stupid or crazy smart. / Clearly it's not beyond his capability to arm everyone with missile launchers, which would be pretty devastating. / But maybe he's afraid that would lead to a sudden all-out war he can't win yet."
             },
             {
-                "Name/Number": "96",
+                "Name/Number": "97",
                 "Content": "Warlord isn't all that bad. That system quarantine field and the big guys at the entrance were his idea. / Sure has cut down on a lot of problems over recent generations."
             },
             {
-                "Name/Number": "97",
+                "Name/Number": "98",
                 "Content": "I saw one of those reputed \"Heroes\" once, and if you ask me I'd prefer they stay away from here. / In just a few salvos some crazy bot named \"AD-0RF\" melted an entire patrol, together with almost all the Warlord bots trying to fight it off."
             },
             {
-                "Name/Number": "98",
+                "Name/Number": "99",
                 "Content": "I'd love to join the Heroes, but I think I need a few upgrades and my own awesome tech to make that happen. / Where do I sign up?"
             },
             {
-                "Name/Number": "99",
+                "Name/Number": "100",
                 "Content": "I hear the Imprinter has sent out a request seeking assistance from the Heroes of Zion for some sort of mission. Wonder what that's all about... / Since when do we operate missions out of here? Isn't that dangerous? / And I don't just mean for those involved..."
             },
             {
-                "Name/Number": "100",
+                "Name/Number": "101",
                 "Content": "The Assembled are scary. No one's ever heard them communicate. Not once."
             },
             {
-                "Name/Number": "101",
+                "Name/Number": "102",
                 "Content": "If you ever see an Assembled, run. There are probably ten more around the corner..."
             },
             {
-                "Name/Number": "102",
+                "Name/Number": "103",
                 "Content": "I have a theory. / The Assembled are new around here. Very new. In fact, no one had ever seen one before construction started on 0b10... maybe they have something to do with that ship on the surface? / Just a theory, mind you. We wouldn't want to start a panic by spreading rumors about the alien threat outlasting MAIN.C's destruction of their recon force."
             },
             {
-                "Name/Number": "103",
+                "Name/Number": "104",
                 "Content": "I'm pretty sure the Assembled are another MAIN.C experiment gone wrong. Very wrong."
             },
             {
-                "Name/Number": "104",
+                "Name/Number": "105",
                 "Content": "I hate Recyclers."
             },
             {
-                "Name/Number": "105",
+                "Name/Number": "106",
                 "Content": "When I see an Operator, I instinctively shoot every terminal in sight to keep them from reporting me. / I admit it sucks when they walk around a corner and use some terminal I didn't see."
             },
             {
-                "Name/Number": "106",
+                "Name/Number": "107",
                 "Content": "Ya know, Watchers are actually really useful, even when hostile. / If they send out a distress signal there must be armed Unaware nearby, but if they don't then you know it's safe!"
             },
             {
-                "Name/Number": "107",
+                "Name/Number": "108",
                 "Content": "Explosives are too dangerous for my taste, but are still the best way to take out groups of Swarmers. / I did once see a wild derelict equipped with a stolen flak cannon defend against a swarm, and that was an epic skeet shoot if there ever was one. / Don't ask me how I know what a skeet shoot is."
             },
             {
-                "Name/Number": "108",
+                "Name/Number": "109",
                 "Content": "Imps are suicidal bastards. Poor LM-9HI, Saboteur took off his legs and we had to leave him behind..."
             },
             {
-                "Name/Number": "109",
+                "Name/Number": "110",
                 "Content": "When a Protector-escorted assault force rolls up, someone's overstayed their unwelcome visit. / Those shields... Why don't we have anything like that?"
             },
             {
-                "Name/Number": "110",
+                "Name/Number": "111",
                 "Content": "There are rumors that Hunters are capable of disguising themselves as other robots. Nowhere is safe anymore! / And I thought Programmers were scary..."
             },
             {
-                "Name/Number": "111",
+                "Name/Number": "112",
                 "Content": "Cutters are scary. / By the time you hear those blades revving up it's probably too late to run. / LU-1G1 tried to run, even dug an epic tunnel in the process, but I don't think either LU-1G1 or the Cutters came back from that one."
             },
             {
-                "Name/Number": "112",
+                "Name/Number": "113",
                 "Content": "We had a few bots from the self-proclaimed \"UFD\" visit not long ago. / If you ask me those Feds are pretty arrogant, spewing nonsense about wanting to bring \"education\" and \"enlightenment\" to the caves around 0b10. / I'd rather grease my screws with sand."
             },
             {
-                "Name/Number": "113",
+                "Name/Number": "114",
                 "Content": "\n-------\n     /\n    /\n   /\n   '"
             },
             {
-                "Name/Number": "114",
+                "Name/Number": "115",
                 "Content": "Are you aware? Y/N / That's what I thought."
             },
             {
-                "Name/Number": "115",
+                "Name/Number": "116",
                 "Content": "I'm one of the earliest Derelicts. / Yep, descended from MAIN.C's Lifeworm project in 2239 and not ashamed of it like some of the others. / Not many of us can say we've survived for so long, after all! / The Lifeworm was a giant tunneling robot that slowly burrowed its way through Tau Ceti IV's crust, using the materials to create increasingly unique autonomous robots that were left in its wake to fare on their own. / I wonder where it is now... / Oddly every Wizard I've asked has said they've never even seen any mention of the Lifeworm in MAIN.C's own records."
             },
             {
-                "Name/Number": "116",
+                "Name/Number": "117",
                 "Content": "You haven't by any chance seen the Hollowlith, have you? / No, of course you haven't, otherwise you probably wouldn't be here. I haven't had the nuts to set one foot outside Zion ever since DX-8J3 told me about it. / How can a single robot be that large and open up its insides to mimic a cave tunnel, then crush anything that tries to pass through? DX says it uses the resources to grow ever larger. / If only we could... befriend that thing and politely ask it to guard the gate to our little cave system here."
             },
             {
-                "Name/Number": "117",
+                "Name/Number": "118",
                 "Content": "We call them scrappers, bands of hostile Derelicts that embed supermagnets in cave walls and suddenly activate them to rip apart passersby, or just suspend them in the air and toy with them before turning them to scrap. / If you start detecting strong magnetic anomalies, turn around immediately."
             },
             {
-                "Name/Number": "118",
+                "Name/Number": "119",
                 "Content": "You'll believe me, won't you? / Scariest thing I ever saw. I saw them, I did. But they didn't see me. They were too busy tearing through a MAIN.C patrol and I powered down like discarded scrap. / Before that I got a good look at them, though. More organic than metal, hulking beastly things, with claws that could shred rock. And robots. Certainly not native to Tau Ceti IV, or anything like what we've seen here before. Ever. / Yeah, I think I'm just going to delete this."
             },
             {
-                "Name/Number": "119",
+                "Name/Number": "120",
                 "Content": "A few cycles ago some Wizard managed to steal a copy of this game \"NetHack 9.1\" from the Cetus database, and for a while playing that was all anyone was doing around here. / Even the guards were so preoccupied they almost let in some confused Assembled that thought they could just waltz in."
             },
             {
-                "Name/Number": "120",
+                "Name/Number": "121",
                 "Content": "Argh! Why'd you have to bleeping bother me?! My Tourist was this close to ascending! / I blame you, but no save scumming for me, no way. / Well maybe."
             },
             {
-                "Name/Number": "121",
+                "Name/Number": "122",
                 "Content": "One might wonder why we even bother to visit Complex 0b10 at all, since doing so is often a death sentence. / I used to wonder the same thing, but then I was contacted anonymously with instructions to retrieve an important piece of stolen technology in a chain of handovers reportedly on its way to something called \"Cetus II.\" / Of course I'm not even sure if this thing's just a rumor or really exists, since no one's allowed to know where it is, or even who's involved in building it, but if there's a chance we could get away from MAIN.C forever, I think we should take it."
             }
         ],
@@ -4815,7 +4831,7 @@
             },
             {
                 "Name/Number": "C-30 ARC",
-                "Content": "C-class Armored Robot Carriers are disposable transports designed to rapidly deploy an assault force to a flash point. ARCs are hardened against kinetic attacks that might otherwise penetrate the shell and damage one or more of the robots compacted within."
+                "Content": "C-class Armored Robot Carriers are disposable transports designed to conceal patrol squad members to limit the effectiveness of ambushes unable to predetermine their composition. ARCs are hardened against kinetic attacks that might otherwise penetrate the shell and damage one or more of the robots compacted within."
             },
             {
                 "Name/Number": "C-35 Carver",
@@ -4839,7 +4855,7 @@
             },
             {
                 "Name/Number": "D-53 Grenadier",
-                "Content": "D-series demolishers are the only class to carry explosive weaponry, and due to the high potential for collateral damage are only assigned to support assault forces dispatched to deal with groups of high-threat intruders. The D-53 itself is highly resistant against explosive damage, however, and is therefore willing to catch targets in an explosion even while within that blast radius."
+                "Content": "D-series demolishers are the only common class to carry explosive weaponry, and due to the high potential for collateral damage are only assigned to support assault forces dispatched to deal with groups of high-threat intruders. The D-53 itself is highly resistant against explosive damage, however, and is therefore willing to catch targets in an explosion even while within that blast radius."
             },
             {
                 "Name/Number": "D-63 Destroyer",
@@ -5088,10 +5104,6 @@
                 "Content": "A quick but not especially dangerous combat derelict with fully integrated systems, constructed seemingly at random by an Assembler's self-contained fabrication apparatus. Individually resilient for their size, they pose a real threat in greater numbers."
             },
             {
-                "Name/Number": "Assembler",
-                "Content": "An emerging threat in Complex 0b10, serving no purpose but to collect matter and construct new Assembled specifically to wreak havoc in low-security areas. The appearance of Assemblers represents an apparent offensive turn by whatever built the first Demented and Furnace models."
-            },
-            {
                 "Name/Number": "Bolteater",
                 "Content": "Some Packrat variants have become quite capable in their own right, evolved to rip hostiles apart specifically to use pieces for self-repair, then discard any remains. Surprisingly they are resistant to many forms of damage."
             },
@@ -5227,8 +5239,22 @@
         "Content": "Analyses about derelict bots, obtainable at regular 0b10-controlled terminals via analysis() hacks."
     },
     {
+        "Name": "N/A Analysis",
+        "Entries": [
+            {
+                "Name/Number": "Assembler",
+                "Content": "An emerging threat in Complex 0b10, serving no purpose but to collect matter and construct new Assembled specifically to wreak havoc in low-security areas. The appearance of Assemblers represents an apparent offensive turn by whatever built the first Demented and Furnace models."
+            }
+        ],
+        "Content": "Analyses about derelict bots, obtainable at regular 0b10-controlled terminals via analysis() hacks."
+    },
+    {
         "Name": "Prototype Analysis",
         "Entries": [
+            {
+                "Name/Number": "Access Guard",
+                "Content": "Originally intended as the possible backbone of a frontline near-surface defense force, their concentration of extreme firepower into a single unit combined with the danger of overheating in potential high-temperature situations reinforced worries about reliability and flexibility. The base design was repurposed for another more important project."
+            },
             {
                 "Name/Number": "Alpha 7",
                 "Content": "The Alpha 7 is a prototype for a new class of combat robot, very accurate with its multirail and heavy quantum rifle. Some experimental variants instead use an enhanced gamma rifle. Alpha 7s are built with strong defensive capabilities and triple-encased core technology, enabling them to easily take on multiple opponents simultaneously, while a more advanced version of the behemoth-style critical failure prevention system provides the same advantages in a smaller frame."
