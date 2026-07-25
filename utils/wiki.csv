@@ -1053,6 +1053,9 @@ Behemoth Facing Up.png|A Behemoth facing up
 "Bot Groups","Other","Bots of the same class have different parts from type to type, but behave similarly when considered as a single class. This page categorizes common bots by class as well as grouping a few other unique bots by faction.
 [[BotGroups]]","","","","","","","",""
 "Botcube","Part","","","","","","","","",""
+"Botcube Brawl","Other","A community event hosted by Plexion and 01-MTF where players submitted [[Botcube]] designs to fight each other in a single elimination tournament. Video at [[https://www.youtube.com/watch?v=FWymQqhj0m0]]
+[[Image]]Caves JM-MYL.png|JM-MYL hidden behind a wall in caves[[/Image]]
+A reference to one of the contestants, JM-MYL, can be found as a broken [[Mutated Botcube]] in [[Caves]].","","","","","","","",""
 "Bouncer","Bot","","","","","","","","",""
 "Branch","Other","Branches are side locations from the main [[0b10]] complex, often with its own unique rewards and sights to behold. All of them lead back to main locations.
 Read more at: [[Locations]].","","","","","","","",""
@@ -1582,7 +1585,9 @@ Guarded [[Hauler]] - A Grunt squad guarding a Hauler slightly out-of-sight insid
 [[List]]2x of [[Lyr. Medium Armor Plating]], [[Med. Reflective Plating]], [[Med. Insulated Plating]], or [[Imp. Powered Armor]]|[[Imp. Particle Charger]], [[Imp. Force Field]], or [[Adv. Force Field]]|[[Prc. Matter Filter]] or [[Prc. Energy Filter]]|[[System Restoration Module]], [[Imp. Weapon Shielding]], [[Imp. Propulsion Shielding]], or [[Imp. Utility Shielding]]|[[Adv. Targeting Computer]], [[Reaction Control System]], or [[Imp. Transmission Jammer]]|[[Adv. Power Amplifier]] or [[Lrn. Terrain Scanner]][[/List]]
 
 
-[[Gallery]]Caves Broken Bots.png|Broken bots next to some damaged parts|Caves Graveyard.png|Graveyard of broken Derelict bots|Caves Broken Freighter.png|Broken [[A-27 Freighter|Freighter]] and guard with inventory of prototype parts.|Caves Hauler Escort.png|[[Hauler]] escorted by some [[Grunt|Grunts]][[/Gallery]]
+[[Gallery]]
+Caves Broken Bots.png|Broken bots next to some damaged parts|Caves Graveyard.png|Graveyard of broken Derelict bots|Caves Broken Freighter.png|Broken [[A-27 Freighter|Freighter]] and guard with inventory of prototype parts.|Caves Hauler Escort.png|[[Hauler]] escorted by some [[Grunt|Grunts]]|Caves JM-MYL.png|JM-MYL, a [[Mutated Botcube]] and reference to the [[Botcube Brawl]].
+[[/Gallery]]
 
 
 [[Heading:2]]Exits[[/Heading]]
@@ -9271,7 +9276,7 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]","","","","Focal Shield,Imp. Focal Shield,Adv. Focal Shield,Exp. Focal Shield,Thermal Shield,Imp. Thermal Shield,Adv. Thermal Shield,Exp. Thermal Shield,Thermal Barrier,Cep. Beam Splitter,Thermal Defense Suite,Imp. Thermal Defense Suite,Adv. Thermal Defense Suite,Exp. Thermal Defense Suite,Shock Absorption System,Imp. Shock Absorption System,Exp. Shock Absorption System,EM Shield,Adv. EM Shield,Exp. EM Shield,ME-RLN's Chromatic Screen,Sfc. Personal Shield,Sfc. Absorption Layer","","","",""
+[[/PartGroupTable]]","","","","Focal Shield,Imp. Focal Shield,Adv. Focal Shield,Exp. Focal Shield,Thermal Shield,Imp. Thermal Shield,Adv. Thermal Shield,Exp. Thermal Shield,Thermal Barrier,Cep. Beam Splitter,Thermal Defense Suite,Imp. Thermal Defense Suite,Adv. Thermal Defense Suite,Exp. Thermal Defense Suite,Shock Absorption System,Imp. Shock Absorption System,Exp. Shock Absorption System,EM Shield,Adv. EM Shield,Exp. EM Shield,ME-RLN's Chromatic Screen,Sfc. Personal Shield","","","",""
 "Revision","Bot","","","","","","","","",""
 "Revision 17","Bot","","","","","","","","",""
 "Revision 17 (Alignment)","Other","[[Image]]Cetus Saving Revision 17.png|Saving Revision 17 in Cetus[[/Image]]
@@ -12938,7 +12943,7 @@ Destroying a large number of hostiles in a short time, AKA killstreak|+20||
 A [[Mines#surviving_the_assembled_infestation|Mines Assembled infestation]] starts|+20||
 Having a Corruption-induced IFF burst near hostiles, regardless of whether it reaches them.|+20||Breaking a part by trying to repair it at a [[Repair Station]].|+30||
 Destroying a [[Phase Generator]] in a [[Garrison]]. Note: the one in [[Command]] does not count.|+30||
-Destroying a [[Network Hub|Network Hub in Hub_04(d)]].|+30 for first, +5 for second, +? for others||
+Destroying a [[Network Hub|Network Hub in Hub_04(d)]].|+30 for first only||
 Getting a multi-squad Assault dispatch due to Alert|+30||
 Triggering [[High Security]]|+40||
 The [[Scraptown#civil_war|Scraptown civil war]] breaks out|+50||
