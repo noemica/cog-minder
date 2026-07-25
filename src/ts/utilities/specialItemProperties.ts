@@ -254,7 +254,21 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
             },
         },
     },
-    "Sigix Exoskeleton": {
+    "Sfc. Absorption Layer": {
+        active: "Always",
+        trait: {
+            kind: "DamageResists",
+            resists: {
+                Electromagnetic: 50,
+                Explosive: 50,
+                Impact: 50,
+                Kinetic: 50,
+                Piercing: 50,
+                Slashing: 50,
+                Thermal: 50,
+            },
+        },
+    },    "Sigix Exoskeleton": {
         active: "Always",
         trait: {
             kind: "DamageResists",
