@@ -8093,7 +8093,10 @@ Effect/Effect
 "Plasma Sword","Part","","","","","","","","",""
 "Plexus Tether","Part","","","","","","","","",""
 "Point Defense System","Part","","","","","","","","",""
-"Point Defense Systems","Part Group","[[Heading]]List of Point Defense Systems[[/Heading]]
+"Point Defense Systems","Part Group","Point Defense Systems are [[Defensive Utilities|defensive utilities]] that can intercept the projectiles of most [[Launchers]], [[Remote Datajacks]] and [[CPS Tube|CPS Tubes]], preventing their explosions/effects. Their primary use is to defend against Launcher-wielding hostiles such as [[Demolisher|Demolishers]], and are especially useful for protecting nearby allies from explosives. Point Defense Systems can only work against projectiles currently visible to Cogmind, [[B]]Regardless of the user[[/B]].
+
+
+[[Heading]]List of Point Defense Systems[[/Heading]]
 [[PartGroupTable]]
 Point Defense Systems|
 Overview/Size|

@@ -8255,7 +8255,7 @@
     "Adv. Point Defense System",
     "Cep. Antimissile System"
    ],
-   "Content": "[[Heading]]List of Point Defense Systems[[/Heading]]\n[[PartGroupTable]]\nPoint Defense Systems|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nUpkeep/Energy|\nEffect/Effect\n[[/PartGroupTable]]"
+   "Content": "Point Defense Systems are [[Defensive Utilities|defensive utilities]] that can intercept the projectiles of most [[Launchers]], [[Remote Datajacks]] and [[CPS Tube|CPS Tubes]], preventing their explosions/effects. Their primary use is to defend against Launcher-wielding hostiles such as [[Demolisher|Demolishers]], and are especially useful for protecting nearby allies from explosives. Point Defense Systems can only work against projectiles currently visible to Cogmind, [[B]]Regardless of the user[[/B]].\n\n\n[[Heading]]List of Point Defense Systems[[/Heading]]\n[[PartGroupTable]]\nPoint Defense Systems|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nUpkeep/Energy|\nEffect/Effect\n[[/PartGroupTable]]"
   },
   {
    "Name": "Power Amplifiers",
