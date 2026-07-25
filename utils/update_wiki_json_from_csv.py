@@ -75,7 +75,7 @@ def update_json_from_csv(csv_obj, json_item):
     if csv_obj['Page Type'] != 'Redirect':
         content = unescape(csv_obj['Content'])
 
-        if json_item['Content'] != content:
+        if 'Content' not in json_item or json_item['Content'] != content:
             updated = True
             json_item['Content'] = content
 
