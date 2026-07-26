@@ -1,4 +1,4 @@
-import{c as x,r as k,j as a,L as Z,F as D,B as v,G as j,w as me,H as Te,I as ke,f as E,J as xe,y as U,T as L,K as ge,a as K,s as He,M as Ae,N as Ge,O as Re,S as te,P as Ie,Q as De,h as Pe,z as X,q as Ne,U as Ee,V as ue,u as pe,W as Me,X as Le,Y as ae,Z as z,_ as B,$ as Fe,a0 as ne,a1 as Be,a2 as We}from"./index-D0OZ-BvP.js";import{l as qe}from"./lore-CuRZTvIv.js";import{h as Oe,c as Ue}from"./hackUtilities-C7-c-ilu.js";import{H as _,R as je,T as oe,n as Q,b as J,o as ye,p as Ve,L as ze,q as Ze,u as Xe,a as Ye}from"./BotPopover-CEsWDMRm.js";import{S as Ke}from"./Table-TTn1AQZG.js";import{e as _e}from"./partColumnDefs-JQLUG1o4.js";/* empty css              */import"./items-DWkEaWKJ.js";const Qe=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{c as x,r as k,j as a,L as Z,F as D,B as v,G as j,w as me,H as Te,I as ke,f as E,J as xe,y as U,T as L,K as ge,a as K,s as He,M as Ae,N as Ge,O as Re,S as te,P as Ie,Q as De,h as Pe,z as X,q as Ne,U as Ee,V as ue,u as pe,W as Me,X as Le,Y as ae,Z as z,_ as B,$ as Fe,a0 as ne,a1 as Be,a2 as We}from"./index-CWUjv6Yy.js";import{l as qe}from"./lore-CuRZTvIv.js";import{h as Oe,c as Ue}from"./hackUtilities-C7-c-ilu.js";import{H as _,R as je,T as oe,n as Q,b as J,o as ye,p as Ve,L as ze,q as Ze,u as Xe,a as Ye}from"./BotPopover-BAsPQ-Vp.js";import{S as Ke}from"./Table-B-VOucNa.js";import{e as _e}from"./partColumnDefs-PYYFnKEY.js";/* empty css              */import"./items-DWkEaWKJ.js";const Qe=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -8073,30 +8073,46 @@ Typical entertainment decreases are due to time or exploration. Roughly every 40
 X0-1V1's amusement may increase for a great variety of reasons, which can be mostly categorized as either "Cogmind is unlucky" or "chaos breaks out", and are often outside the player's control. Some sources of entertainment have a cooldown before they can be "amusing" again. Some of the ways to amuse X0-1V1 include: (Note: this table is very much a work-in-progress and is missing most values)[[Comment]]Would like to add values to this at some point[[/Comment]]
 [[Table]]
 Source of entertainment|Amusement gain[[Comment]]|Cooldown (if any)[[/Comment]]||
-Using a [[Scimitar of Distortion|regular]] or [[Hvy. Scimitar of Distortion]] and triggering a chaotic effect|+1 if non-combat bot, +2 if combat bot||
 A part is transformed by an [[Sfc. Transmogrifier]]|+1 if new part is equal or higher rating, +2 otherwise||
+Using a [[Scimitar of Distortion|regular]] or [[Hvy. Scimitar of Distortion]] and triggering a chaotic effect|+2||
+Triggering an unknown [[Shock Trap|Shock]] or [[EM Surge Trap]]|+5||
 Successfully [[Terminal#Force(Sabotage)|sabotaging at a Terminal]]|+5||
 Overloading a [[Fabricator]]|+5||
 Firing the [[L-Cannon]]|+5||
-X0-1V1's Piety Tracker gets destroyed while attached.|+10||
-Repeatedly failing a success-likely hack.|+10||
-A part that was swapped out multiple times gets fused by Corruption.|+10||
-Triggering an unknown AOE [[Traps|Trap]]. Both explosive and EM traps count for this effect.|+10||
-Triggering an unknown [[Chute Trap]] or [[Ambush Trap]].|+20||
+X0-1V1's Piety Tracker gets destroyed while attached|+10||
+Repeatedly failing a success-likely hack|+10||
+A part that was swapped out multiple times gets fused by Corruption|+10||
+Triggering an unknown AOE [[Traps|Trap]]. Both explosive and EM traps count for this effect|+10||
+Triggering an unknown [[Ambush Trap]]|+20||
 Destroying a large number of hostiles in a short time, AKA killstreak|+20||
 A [[Mines#surviving_the_assembled_infestation|Mines Assembled infestation]] starts|+20||
-Having a Corruption-induced IFF burst near hostiles, regardless of whether it reaches them.|+20||Breaking a part by trying to repair it at a [[Repair Station]].|+30||
+Having a Corruption-induced IFF burst near hostiles, regardless of whether it reaches them.|+20||Breaking a part by trying to repair it at a [[Repair Station]]|+30||
 Destroying a [[Phase Generator]] in a [[Garrison]]. Note: the one in [[Command]] does not count.|+30||
-Destroying a [[Network Hub|Network Hub in Hub_04(d)]].|+30 for first only||
+Destroying a [[Network Hub|Network Hub in Hub_04(d)]]|+30 for first only||
 Getting a multi-squad Assault dispatch due to Alert|+30||
-Triggering [[High Security]]|+40||
+Triggering [[High Security]]|+40||Triggering an unknown [[Chute Trap]]|+40 while on [[Treads]], [[Legs]], or [[Wheels]], +20 otherwise||
 The [[Scraptown#civil_war|Scraptown civil war]] breaks out|+50||
 Being spotted by a large number of hostiles at once?|?||
-Being on a floor when [[Sterilization]] is announced.|+100||
+Being on a floor when [[Sterilization]] is announced|+100||
 Releasing subatomizers from a [[SUBCON Basin]]|+100||
 Firing the [[Drained L-Cannon]]|+100
 [[/Table]]
 Note that, while X0-1V1 is capable of directly causing some of these events, doing so will (usually) not entertain them. These events must occur "naturally" or at least slightly indirectly. Also, amusement gains lower than 5 will not be reported in the log.
+
+
+[[Heading:3]]Amusement Reactions[[/Heading]]X0-1V1 responds to amusement gains with a log message depending on how much the value increased by:
+
+[[Table]]
+Log message|Amusement Gain||
+None|1-4||
+X0-1V1 is interested.|5-9||
+X0-1V1 is mildly amused.|10-19||
+X0-1V1 is amused|20-29||
+X0-1V1 is highly amused!|30-39||
+X0-1V1 thinks this is hilarious!|40-99||
+X0-1V1 roars with laughter!|100
+[[/Table]]
+
 
 [[Heading]]"Good" acts[[/Heading]]
 These effects will be written in green text in the log, and counted under "good acts" in scoresheets, although for some, whether they can be considered "good" may depend heavily on context.
@@ -10679,7 +10695,7 @@ Propulsion/Heat|
 Propulsion/Support|
 Propulsion/Penalty|
 Propulsion/Special
-[[/PartGroupTable]]`},{Name:"Authchips",Parts:["Authchip [Armor]","Authchip [Device]","Authchip [Power]","Authchip [Processor]","Authchip [Propulsion]","Authchip [R/NC]","Authchip [R/Combat]","Authchip [Storage]","Authchip [Weapon]"],Content:"Authchips are single-use [[Processors|processors]] that allow printing the relevant type of item at a [[Fabricator]]. They can be acquired in [[DSF|DSFs]], [[Garrison|Garrisons]], corrupted in [[Storage]], carried by [[Hauler|Haulers]], or by using [[Spoiler]][[GameText]]Force(Recompile)[[/GameText]][[/Spoiler]] on a Fabricator."},{Name:"Autonomous Weapons",Parts:["Autobeam","AWS/Autocannon","AWS/EX-DEC","AWS/Gauss","AWS/Thermal","PD Laser"],Content:`A special class of [[Weapons|weapons]] that fire automatically instead of requiring the user to fire them directly in a normal volley. They will choose targets within line of sight and fire without affecting the user's turns.
+[[/PartGroupTable]]`},{Name:"Authchips",Parts:["Authchip [Armor]","Authchip [Device]","Authchip [Power]","Authchip [Processor]","Authchip [Propulsion]","Authchip [R/NC]","Authchip [R/Combat]","Authchip [Storage]","Authchip [Weapon]"],Content:"Authchips are single-use [[Processors|processors]] that guarantee successful loading and building of the relevant type of [[Schematic]] at a [[Fabricator]] without any chance of hacking detection or any trace increase. They can be acquired in [[DSF|DSFs]] and [[Armory]], [[Corrupted Parts|corrupted]] in [[Recycling]] and [[Recycling Unit|Recycling Units]], carried by [[Hauler|Haulers]], or by using [[Spoiler]][[GameText]]Force(Recompile)[[/GameText]][[/Spoiler]] on a Fabricator. [[Garrison|Garrisons]] may also contain [[Authchip [R/Combat]|combat bot Authchips]]."},{Name:"Autonomous Weapons",Parts:["Autobeam","AWS/Autocannon","AWS/EX-DEC","AWS/Gauss","AWS/Thermal","PD Laser"],Content:`A special class of [[Weapons|weapons]] that fire automatically instead of requiring the user to fire them directly in a normal volley. They will choose targets within line of sight and fire without affecting the user's turns.
 
 [[Heading]]List of Autonomous Weapons[[/Heading]]
 [[PartGroupTable]]
