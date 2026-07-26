@@ -588,8 +588,8 @@
     "Med. Regenerative Plating": ["Lab", "Spoiler"],
     "Hvy. Regenerative Plating": ["Lab", "Spoiler"],
     "SHELL Armor": ["Spoiler", "Testing"],
-    "Wyrmplate": ["Derelict", "Spoiler", "Unobtainable"],
-    "Wyrmscale": ["Derelict", "Spoiler"],
+    "Wyrmplate": ["Derelict", "Spoiler", "Unchained", "Unobtainable"],
+    "Wyrmscale": ["Derelict", "Spoiler", "Unchained"],
     "Cep. RG22 Armor": ["Protoforge", "Redacted"],
     "Phase Armor": ["Alien", "Quarantine", "Spoiler"],
     "Vmp. Brace Plating": ["Derelict", "Spoiler", "UFD"],
@@ -1333,6 +1333,6 @@
     "Asb. Hover Unit": ["Unobtainable"],
     "Asb. Rifle": ["Unobtainable"],
     "Sigix Exoskeleton": ["Redacted", "S7 Hangar"],
-    "Chaos Jack": ["Derelict", "Spoiler"],
+    "Chaos Jack": ["Derelict", "Spoiler", "Unchained"],
     "Master Link": ["Derelict", "Spoiler", "Unobtainable"]
 }
