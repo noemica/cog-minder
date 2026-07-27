@@ -12955,6 +12955,7 @@ Triggering [[High Security]]|+40||
 Interrupting a [[Cargo Convoy]] and having the [[C-45 Heavy ARC|Heavy ARCs]] deploy while on grounded propulsion[[Sup]]1[[/Sup]]|+40||Triggering an unknown [[Chute Trap]]|+40 while on grounded propulsion[[Sup]]1[[/Sup]], +20 otherwise||
 The [[Scraptown#civil_war|Scraptown civil war]] breaks out|+50||
 Being spotted by a large number of hostiles at once?|?||
+Destroying an unused RIF Installer (only while RIF)|+100||
 Being on a floor when [[Sterilization]] is announced|+100||
 Releasing subatomizers from a [[SUBCON Basin]]|+100||
 Firing the [[Drained L-Cannon]]|+100
@@ -13156,12 +13157,14 @@ There is no log message for this effect.|One or more fake parts appear nearby bu
 [[GameText]]""Let's see how everyone fares in the upcoming heat wave.""[[/GameText]]|Sterilization system partially engages, bringing heat up to +20 over the next several hundred turns, then falls back down over another several hundred turns.||
 [[GameText]]""I told that [Heavy] to go sit in the corner.""[[/GameText]]|The closest [[Heavy]] moves to the nearest corner of the map and stays there until the next [[Security Rotation]].||
 [[GameText]]""'Every door you open is another chance for more unexpected chaos.' --some infamous god.""[[/GameText]]|Opens a Sealed Barrier-type machine.|Must be nearby Sealed Barrier||
-[[GameText]]""Let's take things to the next level.""[[/GameText]]|Attaches a Sfc. Transmogrifier.||
+[[GameText]]""Let's take things to the next level.""[[/GameText]]|Attaches a [[Sfc. Transmogrifier]].||
 
 [[GameText]]""I've sent the detectives back to the station. For now.""[[/GameText]]|X0-1V1 recalls an [[Investigation Squad]].|Must be an active investigation squad. This and all other recall hacks can only occur in 0b10 maps, even when they would otherwise be non-recallable like in [[High Security|High]]/[[Maximum Security]] or in [[Command]].||
 [[GameText]]X0-1V1 sends the all clear message.[[/GameText]]|X0-1V1 recalls a [[Reinforcement Squad]].|Must be an active reinforcement squad||
 [[GameText]]X0-1V1 adds a dash of confusion to 0b10's systems.[[/GameText]]|X0-1V1 recalls an [[Extermination Squad]].|Must be an active extermination squad||
 [[GameText]]""Assault is a crime, you know!""[[/GameText]]|X0-1V1 recalls an [[Assault Squad]].|Must be an active assault squad||
+""[[GameText]]I love subatomizers![[/GameText]]""
+""[[GameText]]Subatomizers go![[/GameText]]""|[[Scrap Engine]]'s inventory is packed with random depth-appropriate parts.|Regular or [[Arm. Scrap Engine]] must be attached||
 
 
 [[GameText]]""Fire in the hole!""[[/GameText]]|A powerful explosion suddenly occurs centered on a visible hostile. Will also damage Cogmind.|During combat only, Cogmind in range of explosion centered on the target||
@@ -13197,22 +13200,22 @@ Null Cannon, L-Cannon (variant unknown), Hvy. Autocannon? (it dealt 77 kinetic d
 "X0-1V1 Temporary Buffs","Partial","[[Table]]
 Log message|Temporary effect|Restrictions (if any)|Duration[[Sup]]1[[/Sup]]||
 [[GameText]]""Enjoy your XOMVISION!""[[/GameText]]|18 range unjammable ability to sense active robots, even if they have the Scan Cloak trait.| |2 * [Mood Magnitude] + 125||
-[[GameText]]X0-1V1 causes your matter storage to temporarily balloon in size.[[/GameText]]|Temporary +400-800 matter storage based on mood magnitude.| |1000-1500||
-[[GameText]]""Let the electrons flow!""[[/GameText]]|Temporary +800-1500 energy storage based on mood magnitude.||
-[[GameText]]X0-1V1 makes important surrounding features appear closer to you.[[/GameText]]|Temporary increased sight range, +2 or +3.||
-[[GameText]]""Watch where you're going!""[[/GameText]]|Temporary increased sight range, between +4 to +6.||
-[[GameText]]""A slightly more accurate toy is still a toy.""[[/GameText]]|Temporary increased ranged or melee accuracy between +5% to +10%.|During combat only|100-300||
-[[GameText]]X0-1V1 shines guiding lasers throughout the area.[[/GameText]]|Temporary increased ranged accuracy between +10% and 20%.|During combat only|50-150||
-[[GameText]]X0-1V1 waits impatiently for you to get up close and personal with every target in the area.[[/GameText]]|Temporary increased melee accuracy between +10% to +20%.|During combat only|50-150||
-[[GameText]]""Weapons, camera, action!""[[/GameText]]|Temporary additional weapon slots, between +1 to +5. Number of slots is ( ([Mood Magnitude] / 25) + 1 ).
+[[GameText]]X0-1V1 causes your matter storage to temporarily balloon in size. (+X matter capacity)[[/GameText]]|Temporary +400-800 matter storage based on mood magnitude.| |1000-1500||
+[[GameText]]""Let the electrons flow!"" (+X energy capacity)[[/GameText]]|Temporary +800-1500 energy storage based on mood magnitude.||
+[[GameText]]X0-1V1 makes important surrounding features appear closer to you. (+X sight range)[[/GameText]]|Temporary increased sight range, +2 or +3.||
+[[GameText]]""Watch where you're going!"" (+X sight range)[[/GameText]]|Temporary increased sight range, between +4 to +6.||
+[[GameText]]""A slightly more accurate toy is still a toy."" (+X% [ranged/melee accuracy])[[/GameText]]|Temporary increased ranged or melee accuracy between +5% to +10%.|During combat only|100-300||
+[[GameText]]X0-1V1 shines guiding lasers throughout the area (+X% ranged accuracy).[[/GameText]]|Temporary increased ranged accuracy between +10% and 20%.|During combat only|50-150||
+[[GameText]]X0-1V1 waits impatiently for you to get up close and personal with every target in the area. (+X% melee accuracy)[[/GameText]]|Temporary increased melee accuracy between +10% to +20%.|During combat only|50-150||
+[[GameText]]""Weapons, camera, action!"" (+X weapon slots)[[/GameText]]|Temporary additional weapon slots, between +1 to +5. Number of slots is ( ([Mood Magnitude] / 25) + 1 ).
 Warning: This effect may interfere with the evolution process due to Cogmind's part slot limit being 26; if the current slot count is 25 or 26 due to this effect, reaching an evolution threshold will force the evolution process to assign 1 or 2 of the new slots to replace the temporary weapon slots with permanent ones.|During combat only|250-500||
-[[GameText]]X0-1V1 manipulates the space around you.[[/GameText]]|Temporary increase to KI, TH, or EM base damage type resistance, between +12% to +50%.|During combat only|100-300 if between 12-25%, 50-150 otherwise||
-[[GameText]]X0-1V1 connects you with a stream of twisted latent energy.[[/GameText]]|Increased energy generation between +7 to +14.|During combat only|100-300||
-[[GameText]]""Don't spend it all in one place.""[[/GameText]]|Temporary increased energy generation, between +20 to +35.|During combat only|50-150||
+[[GameText]]X0-1V1 manipulates the space around you (+X% [damage type] resistance).[[/GameText]]|Temporary increase to KI, TH, or EM base damage type resistance, between +12% to +50%.|During combat only|100-300 if between 12-25%, 50-150 otherwise||
+[[GameText]]X0-1V1 connects you with a stream of twisted latent energy (+X energy generation).[[/GameText]]|Increased energy generation between +7 to +14.|During combat only|100-300||
+[[GameText]]""Don't spend it all in one place."" (+X energy generation)[[/GameText]]|Temporary increased energy generation, between +20 to +35.|During combat only|50-150||
 [[GameText]]X0-1V1 reimagines you as a refrigerator in hell.[[/GameText]]
 [[GameText]]X0-1V1 enshrouds you in a swirling icy cloud.[[/GameText]]|Temporary lower base temperature to -666, and also sets current to -666 at the effect's start.|During combat only|([Mood Magnitude] / 3) + 20||
-[[GameText]]X0-1V1 thinks you're pretty cool, for now[[/GameText]]|Temporary bonus heat dissipation, between +30 to +60.|During combat only|100-300||
-[[GameText]]""Heat sink stocks are down. Don't ask me how I know.""[[/GameText]]|Temporary bonus heat dissipation, between +17 to +125.|During combat only|50-150
+[[GameText]]X0-1V1 thinks you're pretty cool, for now (+X heat dissipation).[[/GameText]]|Temporary bonus heat dissipation, between +30 to +60.|During combat only|100-300||
+[[GameText]]""Heat sink stocks are down. Don't ask me how I know."" (+X heat dissipation)[[/GameText]]|Temporary bonus heat dissipation, between +17 to +125.|During combat only|50-150
 [[/Table]]
 
 [[List:Ordered]]
@@ -13221,15 +13224,15 @@ Duration is based on moves or turns. Each move or turn spent performing non-move
 "X0-1V1 Temporary Debuffs","Partial","[[Table]]
 Log message|Temporary effect|Restrictions (if any)||
 [[GameText]]""I know that drunk sailor look when I see it.""[[/GameText]]|Temporary high chance of misdirection on move.||
-[[GameText]]""Did you know you're leaking matter?""[[/GameText]]|Temporary lower base matter capacity by 50%.||
-[[GameText]]""X0-1V1 blurs the world around you""[[/GameText]]|Temporary lower visual range, between -2 to -4.||
-[[GameText]]""In a world full of sensor tech, vision is overrated.""[[/GameText]]|Temporarily lower visual range, between -6 to -10.||
+[[GameText]]""Did you know you're leaking matter?"" (-X matter capacity)[[/GameText]]|Temporary lower base matter capacity by 50%.||
+[[GameText]]X0-1V1 blurs the world around you (-X sight range)[[/GameText]]|Temporary lower visual range, between -2 to -4.||
+[[GameText]]""In a world full of sensor tech, vision is overrated."" (-X sight range)[[/GameText]]|Temporarily lower visual range, between -6 to -10.||
 [[GameText]]X0-1V1 turns out the lights.[[/GameText]]|X0-1V1 disables your sensor-based infowar, including [[Sensor Arrays]], [[Seismic Detector]], and [[IFF Parsers]]. Message [[GameText]]X0-1V1 lifts the temporary sensor veil.[[/GameText]] when effect is done.|Must have sensor-based infowar active||
-[[GameText]]""There's a penalty for shooting from the hip 'round these parts.""[[/GameText]]|Temporary lowered ranged accuracy, between -5% to -10%.|During combat only||
-[[GameText]]""So many nails, never enough hammers...""[[/GameText]]|Temporary lowered ranged accuracy, between -10% to -20%.|During combat only||
-[[GameText]]""Dakka mode, ENGAGE!""[[/GameText]]|Temporary lowered melee accuracy, between -5% to -10%.|During combat only||
-[[GameText]]X0-1V1 projects screaming human faces on all surfaces in the area.[[/GameText]]|Temporary lowered melee accuracy, between -10% to -20%.|During combat only||
-[[GameText]]""Your inner air conditioner seems to have fall into disrepair.""[[/GameText]]|Lowered heat dissipation between -19 and -45. The effect ranges based on number of evolutions. At -10 the range is -19 and -25. At -1 the range is -35 to -45.|During combat only
+[[GameText]]""There's a penalty for shooting from the hip 'round these parts."" (-X% ranged accuracy)[[/GameText]]|Temporary lowered ranged accuracy, between -5% to -10%.|During combat only||
+[[GameText]]""So many nails, never enough hammers..."" (-X% ranged accuracy)[[/GameText]]|Temporary lowered ranged accuracy, between -10% to -20%.|During combat only||
+[[GameText]]""Dakka mode, ENGAGE!"" (-X% melee accuracy)[[/GameText]]|Temporary lowered melee accuracy, between -5% to -10%.|During combat only||
+[[GameText]]X0-1V1 projects screaming human faces on all surfaces in the area (-X% melee accuracy).[[/GameText]]|Temporary lowered melee accuracy, between -10% to -20%.|During combat only||
+[[GameText]]""Your inner air conditioner seems to have fall into disrepair."" (-X% heat dissipation)[[/GameText]]|Lowered heat dissipation between -19 and -45. The effect ranges based on number of evolutions. At -10 the range is -19 and -25. At -1 the range is -35 to -45.|During combat only
 [[/Table]]","Spoiler","","","","","","",""
 "X0-1V1's Piety Tracker","Part","","","","","","","","",""
 "XL Autogun Array","Part","After the XL Autogun Array falls to around 50% integrity, a log message [[GameText]]XL Autogun Array falls apart.[[/GameText]] will be shown. When this occurs, the Array will be destroyed and 4 [[XL Autogun Subcomponent|XL Autogun Subcomponents]] will appear on the floor around Cogmind.","","","","","","","",""
