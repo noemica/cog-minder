@@ -100,15 +100,16 @@ export default function WikiAutocomplete({
                 }
             }}
             onChange={(option) => {
-                console.log(location);
-
                 // Removed in favor of links
                 const value = option!.value as string;
 
                 const selectedLocation = value.startsWith("search") ? `/${value}` : `/${getLinkSafeString(value)}`;
 
                 if (location !== selectedLocation) {
-                    // Direct value
+                    // Only set the value if we haven't updated the current location yet
+                    // Since the options are links, we might have already changed our location
+                    // to the new page if the user clicked on the option. If they used the arrow
+                    // keys then the link won't fire and we need to handle navigation here.
                     setLocation(selectedLocation);
                 }
             }}
