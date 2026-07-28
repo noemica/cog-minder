@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import { ReactNode, useMemo } from "react";
 import Select, { GroupBase, OptionProps, Props, components, createFilter } from "react-select";
-// eslint-disable-next-line import/no-unresolved
 import { SelectComponents } from "react-select/dist/declarations/src/components";
+import { Link } from "wouter";
 
 import TextTooltip from "../Popover/TextTooltip";
 
@@ -11,6 +11,14 @@ export type SelectOptionType<T = any> = {
     value: T;
     label?: string | ReactNode;
     tooltip?: string;
+};
+
+export type SelectOptionProps<IsMulti extends boolean, Group extends GroupBase<SelectOptionType>> = Props<
+    SelectOptionType,
+    IsMulti,
+    Group
+> & {
+    useLink?: boolean;
 };
 
 const Option = (props: OptionProps<SelectOptionType>) => {
@@ -34,6 +42,21 @@ const Option = (props: OptionProps<SelectOptionType>) => {
             </components.Option>
         );
     }
+};
+
+// A link version of the regular option, supporting right click links
+const LinkOption = (props: OptionProps<SelectOptionType>) => {
+    if (props.data.tooltip !== undefined) {
+        // TODO not needed yet
+        console.log("Need to add tooltip support");
+    }
+    return (
+        <components.Option {...props}>
+            <Link href={`/${props.data.value}`}>
+                {props.data.label}
+            </Link>
+        </components.Option>
+    );
 };
 
 // const VirtualizedMenuList = (props: MenuListProps<SelectOptionType>) => {
@@ -68,15 +91,17 @@ const Option = (props: OptionProps<SelectOptionType>) => {
 export default function SelectWrapper<
     IsMulti extends boolean = false,
     Group extends GroupBase<SelectOptionType> = GroupBase<SelectOptionType>,
->({ defaultValue, options, value, ...props }: Props<SelectOptionType, IsMulti, Group>) {
-    options = (options as SelectOptionType[])?.map((o) => {
-        let label = o.label || o.value;
-        if (typeof label === "string") {
-            label = <div>{label}</div>;
-        }
+>({ defaultValue, options, value, ...props }: SelectOptionProps<IsMulti, Group>) {
+    options = useMemo(() => {
+        return (options as SelectOptionType[])?.map((o) => {
+            let label = o.label || o.value;
+            if (typeof label === "string") {
+                label = <div>{label}</div>;
+            }
 
-        return { ...o, label: label };
-    });
+            return { ...o, label: label };
+        });
+    }, [options]);
 
     if (value !== undefined) {
         value = (options as SelectOptionType[]).find((o) => o.value === (value as SelectOptionType).value);
@@ -88,7 +113,7 @@ export default function SelectWrapper<
     }
 
     const components: Partial<SelectComponents<SelectOptionType, IsMulti, Group>> = {
-        Option: Option as any,
+        Option: props.useLink ? LinkOption : (Option as any),
     };
 
     // Only virtualize if we have a significant number of items

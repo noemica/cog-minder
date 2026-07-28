@@ -102,7 +102,11 @@
     background-color: unset;
     color: @font-color;
 
-    > * {
+    > *:not(a) {
+        padding: @select-padding;
+    }
+
+    > a > div {
         padding: @select-padding;
     }
 }
