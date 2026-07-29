@@ -1929,7 +1929,7 @@ Propulsion/Heat|
 Propulsion/Support
 [[/PartGroupTable]]","","","","Cmb. Airjet,Cmb. Gravmag System,Cmb. Antigrav System,Cmb. Linear Gravjet,Cep. Combat Aerolev Unit","","","",""
 "Combat Programmer","Bot","","","","","","","","",""
-"Command","Location","Command is an [[0b10]]-controlled [[Access]] [[Branch]] that only appears on -1. It is the home to [[MAIN.C (Shell)|MAIN.C]], the mastermind AI behind 0b10, and huge groups of his forces. Command features a heavily patrolled dense layout that feels more similar to [[Research]] than [[Access]] with smaller corridors and generally smaller heavily interconnected rooms with Emergency Accesses connecting many rooms. One unique feature of Command is that dispatched squads are not spawned from an exit. Instead, there is a dedicated ""Garrison"" area in the map where bots are dispatched from. This means that unlike most maps, it is possible for Command to run out of squads to send after Cogmind.
+"Command","Location","Command is an [[0b10]]-controlled [[Access]] [[Branch]] that only appears on -1. It is the home to [[MAIN.C (Shell)|MAIN.C]], the mastermind AI behind 0b10, and huge groups of his forces. Command features a heavily patrolled dense layout that feels more similar to [[Research]] than [[Access]] with smaller corridors and generally smaller heavily interconnected rooms with Emergency Accesses connecting many rooms. One unique feature of Command is that dispatched squads are not spawned from an exit. Instead, there is a dedicated ""Garrison"" area in the map where bots are dispatched from. This means that unlike most maps, it is possible for Command to run out of squads to send after Cogmind. It is also impossible to recall dispatched squads via [[Terminal]] hacking or [[RIF]].
 
 [[Heading]]Layout[[/Heading]]
 The overall structure of Command can be split into 3 groups. The right and left sections are both randomly generated per seed, although there are several fixed features per each. The center section of the map is always fixed and in the same location.
@@ -1940,8 +1940,10 @@ The center of the map is always fixed, with a few distinct sub-areas.
 [[Heading:3]]Doom Corridor[[/Heading]]
 The Doom Corridor is a 5 tile wide corridor that contains multiple unpowered Warlord variations, 2 [[Combat Programmer|Combat Programmers]] and 2 [[M Guard|M Guards]]. Trying to go farther into the map requires killing or bypassing these tough [[Prototype Robot|Prototype Robots]].
 [[Heading:3]]Command ""Garrisons""[[/Heading]]
-Above and below the Doom Corridor are passages to the ""Garrison"" sections of the map. They are not the usual [[Garrison Access]] machines but do behave similarly in function, being able to dispatch bots as part of normal summoned squads like [[Investigation Squad|Investigation]], [[Reinforcement Squad|Reinforcement]], and [[Extermination Squad|Extermination]] squads. Each Garrison has a fixed set of bots that are initially present. Each garrison has the following list of bots:
+[[Image]]Command Garrison.png|Northern Command Garrison, filled with dormant bots[[/Image]]
+Above and below the Doom Corridor are the ""Garrison"" sections of the map. They are not the usual [[Garrison Access]] machines but do behave similarly in function, being able to dispatch bots as part of normal summoned [[Investigation Squad|Investigation]], [[Reinforcement Squad|Reinforcement]], [[Extermination Squad|Extermination]] and [[Assault Squad|Assault]] squads through the Phase Walls on the east side of the Garrisons. Notably, while squads dispatched in Command cannot be recalled via Terminal Hacking or RIF, destroying a squad's [[Squad Leader|Leader]] will cause following bots to return to their original spot instead of aimlessly wandering around like in other maps. Each Garrison has a fixed set of bots that are initially present. Each garrison has the following list of bots, which are all initially dormant:
 [[List]]
+2 [[W-44 Eye|W-44 Eyes]] ""watching"" the Phase Wall entrance|
 12 [[B-74 Champion|B-74 Champions]]|
 18 [[C-45 Heavy ARC]]|
 6 [[C-57 Dissector|C-57 Dissector]]|
@@ -1954,6 +1956,19 @@ Above and below the Doom Corridor are passages to the ""Garrison"" sections of t
 18 [[S-43 Plague|S-43 Plagues]]|
 12 [[X-87 Electro|X-87 Electros]]
 [[/List]]
+
+[[Comment]]It might be worth moving this into a separate section further below? Not sure.[[/Comment]]
+[[Redacted]]It is also possible for the Command Garrions to get ""activated"", opening a direct path to the Doom Corridor from both Garrisons and causing all bots within to activate and begin roaming the map, and also preventing [[High Security]] from triggering afterwards. This will happen if:
+[[List]]
+The [[Sigix Terminator]]/[[Supercharged Sigix Terminator]] is fired into either Garrison.| [[Comment]]Not sure, might just be fired anywhere in Command instead? Or maybe the actual trigger is killing enough bots (similar to Sterilization) without triggering High Security?[[/Comment]]
+Cogmind enters the left section of Command past MAIN.C's room while MAIN.C is alive and hostile.| [[Comment]]This might also have a condition where the Heavy Barriers must still be intact/not possible for Main.C to follow Cogmind? Though MAIN.C doesn't need to have had tracking on Cogmind for this to trigger. Also, this has a set, finite range, it won't trigger if you're too far west.[[/Comment]]
+MAIN.C's first form is defeated and MAIN.C's second form talks to Cogmind, who then refuses/is not offered the option to surrender.|
+MAIN.C's first form is defeated and MAIN.C's second form is unable to talk to Cogmind due to being outside Cogmind's visual range.[[Comment]]There might be a few turns of leeway?[[/Comment]]
+[[/List]]
+
+[[/Redacted]]
+
+
 [[Heading:3]]MAIN.C room[[/Heading]]
 Above the Doom Corridor are some [[Reinforced Walls#Command|Sealed Barriers]] with 80 armor. surrounded by Reinforced Barriers with 100 armor. They are locked by a Terminal with a 60% base open chance. Past this hall is a large room with a big chunk of machinery called the 0b10 Conduit that is hooked up to MAIN.C. 100 armor Heavy Barriers appear on the bottom left side of this room that block off the left section of Command.
 [[Heading:3]]Left Section[[/Heading]]
