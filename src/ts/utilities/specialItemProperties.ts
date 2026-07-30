@@ -305,6 +305,7 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Exp. Energy Well": { active: "Always", trait: { kind: "EnergyStorage", storage: 600 } },
     "Asb. Biocell Array": { active: "Always", trait: { kind: "EnergyStorage", storage: 1000 } },
     "Zio. Biocell": { active: "Always", trait: { kind: "EnergyStorage", storage: 600 } },
+    "V4-D3R's Forcewell": { active: "Always", trait: { kind: "EnergyStorage", storage: 750 } },
     "Zio. Biocell Array": { active: "Always", trait: { kind: "EnergyStorage", storage: 750 } },
     "Cep. Chromion Battery": { active: "Always", trait: { kind: "EnergyStorage", storage: 800 } },
     Superbattery: { active: "Always", trait: { kind: "EnergyStorage", storage: 1500 } },
