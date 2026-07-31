@@ -1560,9 +1560,9 @@ export function simulateCombat(state: SimulatorState): boolean {
         }
 
         // Handle energy changes
-        botState.energy += botState.energyGen;
+        botState.energy += completedTurns * botState.energyGen;
         for (const part of botState.parts) {
-            botState.energy -= part.energyUpkeep;
+            botState.energy -= completedTurns * part.energyUpkeep;
         }
 
         // Cap between 0 and maximum energy
