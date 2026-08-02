@@ -73,6 +73,7 @@ export type Bot = {
     immunitiesString: string;
     innateEnergyGeneration: number;
     innateEnergyStorage: number;
+    innateHeatDissipation: number;
     innateMatterStorage: number;
     injectorDissipation: number;
     inventorySize?: string;

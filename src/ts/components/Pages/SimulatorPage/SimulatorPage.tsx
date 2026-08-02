@@ -24,7 +24,7 @@ import { ItemData } from "../../../utilities/ItemData";
 import { getLocationFromState, parseIntOrDefault, parseSearchParameters } from "../../../utilities/common";
 import {
     forceBoosterMaxDamageIncrease,
-    getBotDefensiveState,
+    getBotSpecialPartState,
     getRangedVolleyTime,
     getRecoil,
     initialMeleeAccuracy,
@@ -277,18 +277,37 @@ function getSimulatorState(
         const shieldedCoverage = itemDef.type === "Leg" && (itemDef as PropulsionItem).shield ? 2 * coverage : coverage;
         const siegedCoverage = isProtection || isTreads ? 2 * coverage : coverage;
 
+        // Calculate energy upkeep for propulsion and utility only
+        // 1 weapon (Sigix Broadsword) does have an inherent energy upkeep
+        // but it is not used by any bot currently
         let energyUpkeep = 0;
         if (itemDef.slot === "Propulsion" || itemDef.slot === "Utility") {
             energyUpkeep = (itemDef as ItemWithUpkeep).energyUpkeep || 0;
         }
 
+        // Calculate heat generation for power, propulsion, and utilities
+        let activeHeatGeneration = 0;
+        let inactiveHeatGeneration = 0;
+        if (itemDef.slot === "Power" || itemDef.slot === "Propulsion" || itemDef.slot === "Utility") {
+            activeHeatGeneration = (itemDef as ItemWithUpkeep).heatGeneration || 0;
+
+            // Armor that can't be enabled always contributes heat generation
+            if (itemDef.type === "Protection" && (itemDef as ItemWithUpkeep).energyUpkeep === 0) {
+                inactiveHeatGeneration = activeHeatGeneration;
+            }
+        }
+
         parts.push({
+            activeHeatGeneration: activeHeatGeneration,
             armorAnalyzedCoverage: isProtection ? 0 : coverage,
             armorAnalyzedShieldedCoverage: isProtection ? 0 : shieldedCoverage,
             armorAnalyzedSiegedCoverage: isProtection ? 0 : siegedCoverage,
+            broken: false,
             coverage: coverage,
             def: itemDef,
+            disabledTurns: 0,
             energyUpkeep: energyUpkeep,
+            inactiveHeatGeneration: inactiveHeatGeneration,
             integrity: integrity,
             initialIndex: partCount++,
             protection: isProtection,
@@ -354,7 +373,7 @@ function getSimulatorState(
     const behavior = pageState.enemyBehavior || "Stand/Fight";
 
     const dormant = behavior === "Unpowered/Dormant" || behavior === "Unpowered 10 Turns";
-    const defensiveState = getBotDefensiveState(parts, pageState.damageReduction || "None", dormant);
+    const defensiveState = getBotSpecialPartState(parts, pageState.damageReduction || "None", dormant);
 
     let runningEvasion = 0;
     if (bot.speed < 100) {
@@ -386,17 +405,20 @@ function getSimulatorState(
         coreRegen: getCoreRegen(bot),
         corruption: 0,
         def: bot,
-        defensiveState: defensiveState,
+        specialPartsState: defensiveState,
         destroyedParts: [],
         dormant: dormant,
+        dormantTimerSet: false,
+        dormantTimerPassed: false,
+        dormantTimer: Number.MAX_SAFE_INTEGER,
         energy: bot.energyStorage,
-        energyGen: bot.energyGeneration,
         externalDamageReduction: pageState.damageReduction || "None",
         heat: 0,
         immunities: bot.immunities,
         initialCoreIntegrity: botIntegrity,
         mass: bot.mass,
         maximumEnergy: bot.energyStorage,
+        meltNextTurn: false,
         parts: parts,
         partRegen: getPartRegen(bot),
         resistances: bot.resistances === undefined ? {} : bot.resistances,
@@ -646,10 +668,12 @@ function getSimulatorState(
             explosionChunksMin: explosionChunksMin,
             explosionChunksMax: explosionChunksMax,
             explosionDisruption: explosionDisruption,
+            explosionHeatTransfer: def.explosionHeatTransfer,
             explosionMin: explosionMin,
             explosionMax: explosionMax,
             explosionSpectrum: explosionSpectrum,
             explosionType: explosionType,
+            heatTransfer: def.heatTransfer,
             guided: def.waypoints !== undefined,
             isMissile: isMissile,
             numProjectiles: def.projectileCount,

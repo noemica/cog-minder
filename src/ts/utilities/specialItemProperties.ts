@@ -1,6 +1,9 @@
 import { SpecialItemProperty } from "../types/itemTypes";
 
 export const specialItemProperties: { [name: string]: SpecialItemProperty | undefined } = {
+    // Ablative armor
+    "Mak. Ablative Armor": { active: "Always", trait: { kind: "AblativeArmor" } },
+
     // Actuator
     Microactuators: { active: "Part Active", trait: { kind: "Actuator", amount: 0.2 } },
     Nanoactuators: { active: "Part Active", trait: { kind: "Actuator", amount: 0.3 } },
@@ -51,10 +54,22 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Graphene Brace": { active: "Always", trait: { kind: "CriticalImmunity" } },
 
     // Cryofiber Web
-    "Cryofiber Web": { active: "Part Active", trait: { kind: "CryofiberWeb" } },
-    "Imp. Cryofiber Web": { active: "Part Active", trait: { kind: "CryofiberWeb" } },
-    "Adv. Cryofiber Web": { active: "Part Active", trait: { kind: "CryofiberWeb" } },
-    "Exp. Cryofiber Web": { active: "Part Active", trait: { kind: "CryofiberWeb" } },
+    "Cryofiber Web": {
+        active: "Part Active",
+        trait: { kind: "CryofiberWeb", sideEffectNegationPercentage: 25, temperatureReduction: 100 },
+    },
+    "Imp. Cryofiber Web": {
+        active: "Part Active",
+        trait: { kind: "CryofiberWeb", sideEffectNegationPercentage: 30, temperatureReduction: 150 },
+    },
+    "Adv. Cryofiber Web": {
+        active: "Part Active",
+        trait: { kind: "CryofiberWeb", sideEffectNegationPercentage: 35, temperatureReduction: 200 },
+    },
+    "Exp. Cryofiber Web": {
+        active: "Part Active",
+        trait: { kind: "CryofiberWeb", sideEffectNegationPercentage: 55, temperatureReduction: 400 },
+    },
 
     // Damage reduction
     "Shield Generator": {
@@ -268,7 +283,8 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
                 Thermal: 50,
             },
         },
-    },    "Sigix Exoskeleton": {
+    },
+    "Sigix Exoskeleton": {
         active: "Always",
         trait: {
             kind: "DamageResists",
@@ -318,18 +334,45 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Cep. Hardlight Director": { active: "Part Active", trait: { kind: "HardlightGenerator", amount: 14 } },
 
     // Heat dissipation
-    "2N-1CE's Frost Array": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 100 } },
-    "Active Cooling Armor": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 60 } },
-    "Coolant Network": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 90 } },
-    "Cooling System": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 22 } },
-    "Imp. Cooling System": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 27 } },
-    "Adv. Cooling System": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 31 } },
-    "Exp. Cooling System": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 38 } },
-    "Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 10 } },
-    "Imp. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 14 } },
-    "Adv. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 19 } },
-    "Exp. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 26 } },
-    "Cep. Phasing Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 36 } },
+    "2N-1CE's Frost Array": {
+        active: "Part Active",
+        trait: { kind: "HeatDissipation", dissipation: 100, heatSink: false },
+    },
+    "Active Cooling Armor": {
+        active: "Part Active",
+        trait: { kind: "HeatDissipation", dissipation: 60, heatSink: false },
+    },
+    "Asb. Nanovents": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 15, heatSink: false } },
+    "Coolant Network": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 90, heatSink: false } },
+    "Mak. Coolant Network": {
+        active: "Part Active",
+        trait: { kind: "HeatDissipation", dissipation: 110, heatSink: false },
+    },
+    "Cooling System": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 22, heatSink: false } },
+    "Imp. Cooling System": {
+        active: "Part Active",
+        trait: { kind: "HeatDissipation", dissipation: 27, heatSink: false },
+    },
+    "Adv. Cooling System": {
+        active: "Part Active",
+        trait: { kind: "HeatDissipation", dissipation: 31, heatSink: false },
+    },
+    "Sfc. Cooling System": {
+        active: "Part Active",
+        trait: { kind: "HeatDissipation", dissipation: 35, heatSink: false },
+    },
+    "Exp. Cooling System": {
+        active: "Part Active",
+        trait: { kind: "HeatDissipation", dissipation: 38, heatSink: false },
+    },
+    "Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 10, heatSink: true } },
+    "Imp. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 14, heatSink: true } },
+    "Adv. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 19, heatSink: true } },
+    "Exp. Heat Sink": { active: "Part Active", trait: { kind: "HeatDissipation", dissipation: 26, heatSink: true } },
+    "Cep. Phasing Heat Sink": {
+        active: "Part Active",
+        trait: { kind: "HeatDissipation", dissipation: 36, heatSink: true },
+    },
 
     // Injectors
     "Disposable Heat Sink": { active: "Part Active", trait: { kind: "Injector", dissipation: 50 } },
@@ -377,6 +420,9 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
 
     // Metafiber
     "Asb. Metafiber Network": { active: "Part Active", trait: { kind: "Metafiber" } },
+
+    // Microdissipator
+    "Mak. Microdissipator Network": { active: "Part Active", trait: { kind: "Microdissipator" } },
 
     // Launcher Guidance
     "Launcher Guidance Computer": { active: "Part Active", trait: { kind: "LauncherGuidance", bonus: 20 } },
@@ -430,6 +476,9 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Recoil Stabilizer": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 4 } },
     "Adv. Recoil Stabilizer": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 6 } },
     "Cep. Recoil Nullifier": { active: "Part Active", trait: { kind: "RecoilReduction", reduction: 99 } },
+
+    // Rocket Booster
+    "Rocket Booster": { active: "Part Active", trait: { kind: "RocketBooster" } },
 
     // Particle charging
     "Particle Charger": { active: "Part Active", trait: { kind: "ParticleCharging", percent: 15 } },

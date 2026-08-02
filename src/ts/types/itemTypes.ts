@@ -13,7 +13,7 @@ export type DamageType =
     | "Special"
     | "Thermal";
 
-export type HeatTransfer = "Minimal (5)" | "Low (25)" | "Medium (37)" | "High (50)" | "Massive (80)";
+export type HeatTransfer = "Minimal (5)" | "Low (25)" | "Medium (37)" | "High (50)" | "Massive (80)" | "Deadly (120)";
 
 export type ItemRatingCategory = "Alien" | "Prototype" | "None";
 
@@ -108,6 +108,7 @@ export enum Critical {
 
 export type SpecialPropertyActive = "Always" | "Part Active";
 
+export type AblativeArmor = { kind: "AblativeArmor" };
 export type Actuator = { kind: "Actuator"; amount: number };
 export type ActuatorArray = { kind: "ActuatorArray"; amount: number };
 export type AirborneSpeedDoubling = { kind: "AirborneSpeedDoubling" };
@@ -119,13 +120,13 @@ export type CorruptionMaximum = { kind: "CorruptionMaximum"; amount: number };
 export type CorruptionPrevent = { kind: "CorruptionPrevent"; amount: number };
 export type CorruptionReduce = { kind: "CorruptionReduce"; amount: number };
 export type CriticalImmunity = { kind: "CriticalImmunity" };
-export type CryofiberWeb = { kind: "CryofiberWeb" };
+export type CryofiberWeb = { kind: "CryofiberWeb"; temperatureReduction: number; sideEffectNegationPercentage: number };
 export type DamageReduction = { kind: "DamageReduction"; multiplier: number; ratio: number; remote: boolean };
 export type DamageResists = { kind: "DamageResists"; resists: BotResistances };
 export type EnergyFilter = { kind: "EnergyFilter"; percent: number };
 export type EnergyStorage = { kind: "EnergyStorage"; storage: number };
 export type HardlightGenerator = { kind: "HardlightGenerator"; amount: number };
-export type HeatDissipation = { kind: "HeatDissipation"; dissipation: number };
+export type HeatDissipation = { kind: "HeatDissipation"; dissipation: number; heatSink: boolean };
 export type Injector = { kind: "Injector"; dissipation: number };
 export type Kinecellerator = { kind: "Kinecellerator"; amount: number };
 export type LauncherGuidance = { kind: "LauncherGuidance"; bonus: number };
@@ -134,6 +135,7 @@ export type MassSupport = { kind: "MassSupport"; support: number };
 export type MatterStorage = { kind: "MatterStorage"; storage: number };
 export type MeleeAnalysis = { kind: "MeleeAnalysis"; accuracy: number; minDamage: number };
 export type Metafiber = { kind: "Metafiber" };
+export type Microdissipator = { kind: "Microdissipator" };
 export type MniQuantumCapacitor = { kind: "MniQuantumCapacitor" };
 export type PowerAmplifier = { kind: "PowerAmplifier"; percent: number };
 export type QuantumCapacitor = { kind: "QuantumCapacitor" };
@@ -142,6 +144,7 @@ export type RangedAvoid = { kind: "RangedAvoid"; avoid: number };
 export type RangedWeaponCycling = { kind: "RangedWeaponCycling"; amount: number };
 export type ReactionControlSystem = { kind: "ReactionControlSystem"; chance: number };
 export type RecoilReduction = { kind: "RecoilReduction"; reduction: number };
+export type RocketBooster = { kind: "RocketBooster" };
 export type SalvageTargeting = { kind: "SalvageTargeting"; amount: number };
 export type SelfReduction = { kind: "SelfReduction"; shielding: number };
 export type Shielding = { kind: "Shielding"; shielding: number; slot: ItemSlot | "Core" };
@@ -151,6 +154,7 @@ export type ThunderLeg = { kind: "ThunderLeg" };
 export type WeaponRegen = { kind: "WeaponRegen"; energyPerTurn: number; integrityPerTurn: number };
 
 export type SpecialPropertyType =
+    | AblativeArmor
     | Actuator
     | ActuatorArray
     | AntimissileChance
@@ -177,6 +181,7 @@ export type SpecialPropertyType =
     | MatterStorage
     | MeleeAnalysis
     | Metafiber
+    | Microdissipator
     | MniQuantumCapacitor
     | ParticleCharging
     | PowerAmplifier
@@ -185,6 +190,7 @@ export type SpecialPropertyType =
     | RangedWeaponCycling
     | ReactionControlSystem
     | RecoilReduction
+    | RocketBooster
     | SalvageTargeting
     | SelfReduction
     | Shielding
@@ -194,6 +200,7 @@ export type SpecialPropertyType =
     | WeaponRegen;
 
 export type SpecialPropertyTypeName =
+    | "AblativeArmor"
     | "Actuator"
     | "ActuatorArray"
     | "AirborneSpeedDoubling"
@@ -220,6 +227,7 @@ export type SpecialPropertyTypeName =
     | "MatterStorage"
     | "MeleeAnalysis"
     | "Metafiber"
+    | "Microdissipator"
     | "MniQuantumCapacitor"
     | "ParticleCharging"
     | "PowerAmplifier"
@@ -228,6 +236,7 @@ export type SpecialPropertyTypeName =
     | "RangedWeaponCycling"
     | "ReactionControlSystem"
     | "RecoilReduction"
+    | "RocketBooster"
     | "SalvageTargeting"
     | "SelfReduction"
     | "Shielding"

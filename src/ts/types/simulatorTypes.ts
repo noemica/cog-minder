@@ -1,5 +1,5 @@
 import { Bot, BotImmunity, BotResistances } from "./botTypes";
-import { Critical, DamageType, Item, ItemSlot, WeaponItem } from "./itemTypes";
+import { Critical, DamageType, HeatTransfer, Item, ItemSlot, WeaponItem } from "./itemTypes";
 
 export type ExternalDamageReduction =
     | "None"
@@ -19,12 +19,16 @@ export type SpecialPropState =
     | "Entering Martial Mode";
 
 export type SimulatorPart = {
+    activeHeatGeneration: number;
     armorAnalyzedCoverage: number;
     armorAnalyzedShieldedCoverage: number;
     armorAnalyzedSiegedCoverage: number;
+    broken: boolean;
     coverage: number;
     def: Item;
+    disabledTurns: number;
     energyUpkeep: number;
+    inactiveHeatGeneration: number;
     integrity: number;
     initialIndex: number;
     protection: boolean;
@@ -46,6 +50,15 @@ export type AvoidPart = SpecialPart & {
     chance: number;
 };
 
+export type CoolantInjectorPart = SpecialPart & {
+    amount: number;
+}
+
+export type CoolingDevicePart = SpecialPart & {
+    amount: number;
+    isHeatSink: boolean;
+}
+
 export type CorruptionAvoidPart = SpecialPart & {
     chance: number;
 };
@@ -62,6 +75,11 @@ export type CorruptionReductionPart = SpecialPart & {
 
 export type CriticalImmunityPart = SpecialPart;
 
+export type CryofiberWebPart = SpecialPart & {
+    temperatureReduction: number;
+    sideEffectNegationPercentage: number;
+}
+
 export type DamageReductionPart = SpecialPart & {
     ratio: number;
     reduction: number;
@@ -72,6 +90,10 @@ export type HardlightGeneratorPart = SpecialPart & {
     reduction: number;
 };
 
+export type PowerAmplifierPart = SpecialPart & {
+    multiplier: number;
+}
+
 export type RangedAvoidPart = SpecialPart & {
     avoid: number;
 };
@@ -80,16 +102,22 @@ export type ShieldingPart = SpecialPart & {
     reduction: number;
 };
 
-export type DefensiveState = {
+export type SpecialPartsState = {
+    ablativeArmors: SpecialPart[];
     antimissile: AntimissilePart[];
     avoid: AvoidPart[];
+    coolingDevices: CoolingDevicePart[];
+    coolantInjectors: CoolantInjectorPart[];
     corruptionIgnore: CorruptionAvoidPart[];
     corruptionMaximum: CorruptionMaximumPart[];
     corruptionPrevent: CorruptionPreventPart[];
     corruptionReduce: CorruptionReductionPart[];
     critImmunity: CriticalImmunityPart[];
+    cryofiberWebs: CryofiberWebPart[];
     damageReduction: DamageReductionPart[];
     hardlightGenerator: HardlightGeneratorPart[];
+    microdissipator: SpecialPart[];
+    powerAmplifiers: PowerAmplifierPart[];
     rangedAvoid: RangedAvoidPart[];
     shieldings: Record<ItemSlot | "Core", ShieldingPart[]>;
     thunderLegs: SpecialPart[];
@@ -121,17 +149,20 @@ export type BotState = {
     coreRegen: number;
     corruption: number;
     def: Bot;
-    defensiveState: DefensiveState;
+    specialPartsState: SpecialPartsState;
     destroyedParts: SimulatorPart[];
     dormant: boolean;
+    dormantTimer: number;
+    dormantTimerSet: boolean;
+    dormantTimerPassed: boolean;
     energy: number;
-    energyGen: number;
     externalDamageReduction: ExternalDamageReduction;
     heat: number;
     immunities: BotImmunity[];
     initialCoreIntegrity: number;
     mass: number;
     maximumEnergy: number;
+    meltNextTurn: boolean;
     parts: SimulatorPart[];
     partRegen: number;
     resistances: BotResistances;
@@ -168,9 +199,11 @@ export type SimulatorWeapon = {
     explosionMin: number;
     explosionMax: number;
     explosionDisruption: number;
+    explosionHeatTransfer: HeatTransfer | undefined;
     explosionSpectrum: number;
     explosionType?: DamageType;
     guided: boolean;
+    heatTransfer: HeatTransfer | undefined;
     isMissile: boolean;
     numProjectiles: number;
     overflow: boolean;

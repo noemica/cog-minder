@@ -317,7 +317,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         if (hasActiveSpecialProperty(p.part, p.active, "HeatDissipation")) {
             let dissipation = -(p.part.specialProperty!.trait as HeatDissipation).dissipation;
 
-            if (hasCryofiberWeb && p.part.name.endsWith("Heat Sink")) {
+            if (hasCryofiberWeb && (p.part.specialProperty!.trait as HeatDissipation).heatSink) {
                 dissipation *= 2;
             }
 

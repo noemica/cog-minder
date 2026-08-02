@@ -124,10 +124,9 @@ const pages: Record<PageType, PageDetails> = {
             "once complete, a graph of the number of volleys to kill is shown. Multiple simulations can be " +
             'compared by giving each dataset a name and clicking the "Add to comparison" button. Note: ' +
             "There are some limitations of the simulator that make it not 100% accurate to the game. For " +
-            "example, part disruption and overheating effects including death by heat are not fully" +
-            "simulated. The simulator also generally assumes that all bots stand still and fight with" +
-            "infinite energy, so certain damage calculations, like force field-related ones, may" +
-            "overestimate defensive capabilities.",
+            "example, part disruption is not fully simulated. The simulator also generally assumes that all " +
+            "bots stand still and do not fire back, so certain damage calculations, like force " +
+            "field-related ones, may overestimate defensive capabilities.",
     },
     Wiki: {
         label: "Wiki",

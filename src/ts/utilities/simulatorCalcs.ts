@@ -6,12 +6,19 @@ import {
     CorruptionMaximum,
     CorruptionReduce,
     Critical,
+    CryofiberWeb,
     DamageReduction,
     DamageResists,
     DamageType,
+    EnergyStorage,
     HardlightGenerator,
+    HeatDissipation,
+    HeatTransfer,
+    Injector,
     ItemSlot,
+    ItemWithUpkeep,
     MassSupport,
+    PowerAmplifier,
     PowerItem,
     PropulsionItem,
     RangedAvoid,
@@ -23,13 +30,13 @@ import {
 } from "../types/itemTypes";
 import {
     BotState,
-    DefensiveState,
     ExternalDamageReduction,
     ShieldingPart,
     SimulatorPart,
     SimulatorState,
     SimulatorWeapon,
     SpecialPart,
+    SpecialPartsState,
     SpecialPropState,
     SpecialPropulsionState,
 } from "../types/simulatorTypes";
@@ -136,17 +143,40 @@ export const volleyTimeMap = {
     6: 400,
 };
 
+// Heat transfer stats
+type HeatTransferValues = {
+    heatTransfer: number;
+    botMeltdownChance: number;
+};
+
+const heatTransferLookup = new Map<HeatTransfer, HeatTransferValues>([
+    ["Minimal (5)", { heatTransfer: 5, botMeltdownChance: 5 }],
+    ["Low (25)", { heatTransfer: 25, botMeltdownChance: 10 }],
+    ["Medium (37)", { heatTransfer: 37, botMeltdownChance: 15 }],
+    ["High (50)", { heatTransfer: 50, botMeltdownChance: 20 }],
+    ["Massive (80)", { heatTransfer: 80, botMeltdownChance: 30 }],
+    ["Deadly (120)", { heatTransfer: 120, botMeltdownChance: 100 }],
+]);
+const heatTransferTypes: HeatTransfer[] = [
+    "Minimal (5)",
+    "Low (25)",
+    "Medium (37)",
+    "High (50)",
+    "Massive (80)",
+    "Deadly (120)",
+];
+
 type DamageChunk = {
     armorAnalyzed: boolean;
     coreBonus: number;
     critical: Critical | undefined;
+    damage: number;
     damageType: DamageType;
     disruptChance: number;
     forceCore: boolean;
     guided: boolean;
-    originalDamage: number;
+    heatTransferValues: HeatTransferValues | undefined;
     penetrate: boolean;
-    realDamage: number;
     salvage: number;
     spectrum: number;
 };
@@ -187,7 +217,7 @@ function addRandomDestroyedPart(state: SimulatorState) {
     updateWeaponsAccuracy(state);
 }
 
-type PartDestroyReason = "Integrity" | "CriticalRemove";
+type PartDestroyReason = "Integrity" | "CriticalRemove" | "Melt";
 
 // Applies a final calculated damage value to a bot, splitting into chunks if necessary
 function applyDamage(
@@ -199,6 +229,8 @@ function applyDamage(
     isAoe: boolean,
     armorAnalyzed: boolean,
     disruptChance: number,
+    heatTransfer: HeatTransfer | undefined,
+    overloaded: boolean,
     spectrum: number,
     canOverflow: boolean,
     damageType: DamageType,
@@ -211,6 +243,10 @@ function applyDamage(
     // Split damage evenly between chunks while discarding the remainder
     const damage = Math.trunc(totalDamage / numChunks);
 
+    const microdissipator = getSpecialStatePart(botState.specialPartsState.microdissipator);
+    const finalHeatTransfer = adjustHeatTransferLevel(heatTransfer, overloaded, microdissipator !== undefined);
+    const heatTransferValues = finalHeatTransfer === undefined ? undefined : heatTransferLookup.get(finalHeatTransfer);
+
     if (isAoe) {
         for (let i = 0; i < numChunks; i++) {
             // Aoe damage ignores a lot of specific mechanics
@@ -218,75 +254,40 @@ function applyDamage(
                 armorAnalyzed: false,
                 critical: undefined,
                 coreBonus: 0,
+                damage: damage,
                 damageType: damageType,
                 disruptChance: 0,
                 forceCore: false,
                 guided: guided,
-                originalDamage: damage,
+                // Only the last chunk is capable of heat transfer
+                heatTransferValues: i == numChunks - 1 ? heatTransferValues : undefined,
                 penetrate: false,
-                realDamage: 0,
                 salvage: salvage,
                 spectrum: 0,
             });
         }
     } else {
+        if (numChunks !== 1) {
+            console.log("Shouldn't have more than 1 chunk of non-AOE weapon");
+        }
+
         for (let i = 0; i < numChunks; i++) {
+            console;
             chunks.push({
                 armorAnalyzed: armorAnalyzed,
                 coreBonus: state.offensiveState.coreAnalyzerChance,
                 critical: critical,
+                damage: damage,
                 damageType: damageType,
                 disruptChance: disruptChance,
                 forceCore: false,
                 guided: guided,
-                originalDamage: damage,
-                penetrate: randomInt(0, 100) <= penetrationChance,
-                realDamage: 0,
+                heatTransferValues: i == numChunks - 1 ? heatTransferValues : undefined,
+                penetrate: randomInt(0, 99) < penetrationChance,
                 salvage,
                 spectrum: spectrum,
             });
         }
-    }
-
-    // Apply any additional damage reduction (10)
-    const part = getDefensiveStatePart(botState.defensiveState.damageReduction);
-
-    let ratio = 0;
-    let multiplier = 0;
-    let damageReduction = 0;
-    if (part !== undefined) {
-        multiplier = part.reduction;
-        ratio = part.ratio;
-    } else {
-        const hardlightPart = getDefensiveStatePart(botState.defensiveState.hardlightGenerator);
-        if (hardlightPart !== undefined) {
-            damageReduction = hardlightPart.reduction;
-        }
-    }
-
-    for (const chunk of chunks) {
-        let damageReduced = 0;
-
-        if (part !== undefined && part.remote) {
-            damageReduced = chunk.originalDamage - Math.trunc(chunk.originalDamage * multiplier) - damageReduction;
-        } else {
-            damageReduced = Math.trunc(chunk.originalDamage * multiplier) - damageReduction;
-        }
-
-        if (multiplier != 0) {
-            // If FF-like part, check that we actually have enough energy to
-            // do the reduction
-            const energyRequired = damageReduced * ratio;
-
-            if (botState.energy > energyRequired) {
-                botState.energy -= energyRequired;
-            } else {
-                // If not enough energy available then don't apply the FF reduction
-                damageReduced = 0;
-            }
-        }
-
-        chunk.realDamage = chunk.originalDamage - damageReduced;
     }
 
     // Apply salvage for all chunks simultaneously
@@ -294,7 +295,7 @@ function applyDamage(
 
     // Apply damage
     for (const chunk of chunks) {
-        if (chunk.realDamage === 0) {
+        if (chunk.damage === 0) {
             // Don't process the chunk if damage is reduced to 0 by shielding
             return;
         }
@@ -302,13 +303,14 @@ function applyDamage(
         applyDamageChunk(
             state,
             chunk.coreBonus,
-            chunk.realDamage,
+            chunk.damage,
             chunk.damageType,
             chunk.critical,
             canOverflow,
             false,
             chunk.forceCore,
             chunk.disruptChance,
+            chunk.heatTransferValues,
             chunk.spectrum,
             chunk.armorAnalyzed,
             chunk.penetrate,
@@ -318,14 +320,14 @@ function applyDamage(
         // Apply corruption (22)
         if (damageType === "Electromagnetic") {
             // Check for corruption ignore chance
-            const corruptionIgnorePart = getDefensiveStatePart(botState.defensiveState.corruptionIgnore);
+            const corruptionIgnorePart = getSpecialStatePart(botState.specialPartsState.corruptionIgnore);
             const corruptCritical =
                 critical === Critical.Corrupt && !botState.immunities.includes(BotImmunity.Criticals);
 
             if (corruptionIgnorePart === undefined || randomInt(0, 99) >= corruptionIgnorePart.chance) {
                 // Corruption critical always applies maximum 1.5 critical modifier
                 const corruptionPercent = corruptCritical ? 1.5 : randomInt(50, 150) / 100;
-                const corruption = chunk.originalDamage * corruptionPercent;
+                const corruption = chunk.damage * corruptionPercent;
 
                 applyCorruption(state, corruption);
             }
@@ -343,6 +345,7 @@ function applyDamageChunk(
     isOverflow: boolean,
     forceCore: boolean,
     disruptChance: number,
+    heatTransferValues: HeatTransferValues | undefined,
     spectrum: number,
     armorAnalyzed: boolean,
     penetrate: boolean,
@@ -356,6 +359,7 @@ function applyDamageChunk(
         damageType,
         critical,
         disruptChance,
+        heatTransferValues,
         spectrum,
         canOverflow,
         isOverflow,
@@ -370,16 +374,15 @@ function applyCorruption(state: SimulatorState, corruption: number) {
     const botState = state.botState;
 
     // Apply EM Disruption maximum corruption amount
-    let corruptionMaximumPart = getDefensiveStatePart(botState.defensiveState.corruptionMaximum);
+    let corruptionMaximumPart = getSpecialStatePart(botState.specialPartsState.corruptionMaximum);
     if (corruptionMaximumPart !== undefined) {
         corruption = Math.min(corruptionMaximumPart.maximumCorruption, corruption);
     }
 
     // Check for corruption prevention parts
-    let corruptionPreventPart = getDefensiveStatePart(botState.defensiveState.corruptionPrevent);
+    let corruptionPreventPart = getSpecialStatePart(botState.specialPartsState.corruptionPrevent);
     while (corruption > 0 && corruptionPreventPart !== undefined) {
         // Assume that corruption prevention parts lose 2 integrity per corruption purged
-        // TODO - remove this assumption someday
         const maxPrevention = Math.ceil(corruptionPreventPart.part.integrity / 2);
         if (maxPrevention < corruption) {
             // Part has more than enough integrity to prevent corruption
@@ -387,10 +390,10 @@ function applyCorruption(state: SimulatorState, corruption: number) {
             corruption = 0;
         } else {
             // Corruption is greater than part can prevent, destroy part
-            botState.defensiveState.corruptionPrevent.shift();
+            botState.specialPartsState.corruptionPrevent.shift();
             const index = botState.parts.indexOf(corruptionPreventPart.part);
             destroyPart(state, false, index, corruptionPreventPart.part, 0, "Entropic", "Integrity");
-            corruptionPreventPart = getDefensiveStatePart(botState.defensiveState.corruptionPrevent);
+            corruptionPreventPart = getSpecialStatePart(botState.specialPartsState.corruptionPrevent);
 
             corruption -= maxPrevention;
         }
@@ -399,12 +402,91 @@ function applyCorruption(state: SimulatorState, corruption: number) {
     botState.corruption += corruption;
 }
 
+// Applies heat transfer to the bot, potentially melting the bot or the target part
+function applyHeatTransfer(
+    state: SimulatorState,
+    heatTransferValues: HeatTransferValues | undefined,
+    originalDamage: number,
+    damageForHeatTransfer: number,
+    critical: Critical | undefined,
+    part: SimulatorPart | undefined,
+    partIndex: number,
+) {
+    if (heatTransferValues === undefined) {
+        return;
+    }
+
+    const botState = state.botState;
+
+    // Apply heat transfer (listed as *)
+    // Need to do this first so that the bot can be instantly melted before damaging the parts
+    let heatTransfer = heatTransferValues.heatTransfer;
+
+    if (originalDamage !== damageForHeatTransfer) {
+        // Reduce heat by ratio of damage reduced via force field or similar
+        heatTransfer = Math.trunc((heatTransfer * damageForHeatTransfer) / originalDamage);
+    }
+    if (critical === Critical.Burn && !botState.immunities.includes(BotImmunity.Criticals)) {
+        // The tripling effect happens after the reduction
+        heatTransfer *= 3;
+    }
+
+    if (botState.heat >= 250 && !botState.immunities.includes(BotImmunity.Meltdown)) {
+        // Check for part instant meltdown before the heat is transferred to the bot (20)
+        // The chance is original heat transfer % chance to melt the hit part
+        if (part !== undefined && randomInt(0, 99) < heatTransferValues.heatTransfer) {
+            destroyPart(state, false, partIndex, part, 0, "Entropic", "Melt");
+        }
+    }
+
+    botState.heat += heatTransfer;
+    updateWeaponsAccuracy(state);
+
+    if (botState.heat >= 250 && !botState.immunities.includes(BotImmunity.Meltdown)) {
+        // Check for bot meltdown after the heat is transferred (this is listed as an * item not numbered)
+        // The specific % chance of the bot instantly melting depending on the heat transfer level
+        // This value is also increased by 1% per 20 heat above the 250 melting point
+        if (randomInt(0, 99) < heatTransferValues.botMeltdownChance) {
+            // There is a 50% chance that the bot will instantly melt or melt at the beginning of their next turn
+            if (randomInt(0, 1) === 1) {
+                botState.coreIntegrity = 0;
+            } else {
+                botState.meltNextTurn = true;
+            }
+        }
+    }
+}
+
+function applyUnresistedDamageChunkToPart(
+    state: SimulatorState,
+    damage: number,
+    part: SimulatorPart | undefined,
+    partIndex: number,
+) {
+    applyDamageChunkToPart(
+        state,
+        damage,
+        "Phasic",
+        undefined,
+        0,
+        undefined,
+        0,
+        false,
+        false,
+        false,
+        false,
+        part,
+        partIndex,
+    );
+}
+
 function applyDamageChunkToPart(
     state: SimulatorState,
     damage: number,
     damageType: DamageType,
     critical: Critical | undefined,
     disruptChance: number,
+    heatTransferValues: HeatTransferValues | undefined,
     spectrum: number,
     canOverflow: boolean,
     isOverflow: boolean,
@@ -415,6 +497,10 @@ function applyDamageChunkToPart(
 ) {
     const botState = state.botState;
     function doesCriticalDestroyPart(critical: Critical | undefined) {
+        if (critical === undefined) {
+            return false;
+        }
+
         if (critical === Critical.Destroy || critical === Critical.Smash) {
             return true;
         }
@@ -422,11 +508,51 @@ function applyDamageChunkToPart(
         return false;
     }
 
+    // Save original damage (10)
+    const originalDamage = damage;
+
+    // Apply any additional damage reduction (11)
+    const damageReductionPart = getSpecialStatePart(botState.specialPartsState.damageReduction);
+
+    let damageReductionEnergyRatio = 0;
+    let damageReductionMultiplier = 1;
+    let damageReduced = 0;
+    if (damageReductionPart !== undefined) {
+        damageReductionMultiplier = damageReductionPart.reduction;
+        damageReductionEnergyRatio = damageReductionPart.ratio;
+
+        if (damageReductionPart.remote) {
+            damageReduced = Math.trunc(damage * damageReductionMultiplier);
+        } else {
+            damageReduced = damage - Math.trunc(damage * damageReductionMultiplier);
+        }
+
+        // If FF-like part, check that we actually have enough energy to
+        // do the reduction
+        const energyRequired = damageReduced * damageReductionEnergyRatio;
+
+        if (botState.energy > energyRequired) {
+            botState.energy -= energyRequired;
+        } else {
+            // If not enough energy available then don't apply the FF reduction
+            damageReduced = 0;
+        }
+    } else {
+        const hardlightPart = getSpecialStatePart(botState.specialPartsState.hardlightGenerator);
+        if (hardlightPart !== undefined) {
+            damageReduced = hardlightPart.reduction;
+        }
+    }
+
+    // Save damage for heat transfer (12)
+    damage = originalDamage - damageReduced;
+    const damageForHeatTransfer = damage;
+
     // Remove all criticals from totally immune bots
     if (critical !== undefined) {
         if (
             botState.immunities.includes(BotImmunity.Criticals) ||
-            getDefensiveStatePart(botState.defensiveState.critImmunity) !== undefined
+            getSpecialStatePart(botState.specialPartsState.critImmunity) !== undefined
         ) {
             critical = undefined;
         }
@@ -529,9 +655,13 @@ function applyDamageChunkToPart(
 
         // Apply disruption (15)
         // Core disruption only has 50% of the usual chance
-        if (!botState.immunities.includes(BotImmunity.Disruption) && randomInt(0, 99) < disruptChance / 2) {
+        if (!botState.immunities.includes(BotImmunity.Disruption) && randomInt(0, 99) < Math.trunc(disruptChance / 2)) {
+            // TODO need to disable everything on the bot when this happens
             botState.coreDisrupted = true;
         }
+
+        // Apply heat transfer (20)
+        applyHeatTransfer(state, heatTransferValues, originalDamage, damageForHeatTransfer, critical, part, partIndex);
 
         // Apply relevant criticals not yet applied
         // Apply sever/sunder crits to other parts
@@ -566,20 +696,7 @@ function applyDamageChunkToPart(
             if (part.def.size === 1) {
                 // Single-slot items get blasted off
                 // Deal damage first, then destroy as a critical part removal if still intact
-                applyDamageChunkToPart(
-                    state,
-                    damage,
-                    "Phasic",
-                    undefined,
-                    0,
-                    0,
-                    false,
-                    false,
-                    false,
-                    false,
-                    part,
-                    partIndex,
-                );
+                applyUnresistedDamageChunkToPart(state, damage, part, partIndex);
 
                 // Dismemberment immunity stops the blasting off part
                 if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
@@ -587,38 +704,12 @@ function applyDamageChunkToPart(
                 }
             } else {
                 // Multi-slot items don't get blasted off but still take damage
-                applyDamageChunkToPart(
-                    state,
-                    damage,
-                    "Phasic",
-                    undefined,
-                    0,
-                    0,
-                    false,
-                    false,
-                    false,
-                    false,
-                    part,
-                    partIndex,
-                );
+                applyUnresistedDamageChunkToPart(state, damage, part, partIndex);
             }
         } else if (critical === Critical.Phase) {
             // Apply phasing damage to another random part
             const { part, partIndex } = getRandomNonCorePart(botState, undefined);
-            applyDamageChunkToPart(
-                state,
-                damage,
-                "Phasic",
-                undefined,
-                0,
-                0,
-                false,
-                false,
-                false,
-                false,
-                part,
-                partIndex,
-            );
+            applyUnresistedDamageChunkToPart(state, damage, part, partIndex);
         }
 
         return;
@@ -666,7 +757,14 @@ function applyDamageChunkToPart(
     }
 
     // Apply disruption to non-core parts (17)
-    // TODO
+    if (
+        part !== undefined &&
+        part.disabledTurns === 0 &&
+        !botState.immunities.includes(BotImmunity.Disruption) &&
+        randomInt(0, 99) < disruptChance
+    ) {
+        part.disabledTurns = randomInt(4, 12);
+    }
 
     if (shielding != undefined) {
         // Handle slot shielding reduction
@@ -682,6 +780,9 @@ function applyDamageChunkToPart(
 
         damage = damage - shieldingDamage;
     }
+
+    // Apply heat transfer (20)
+    applyHeatTransfer(state, heatTransferValues, originalDamage, damageForHeatTransfer, critical, part, partIndex);
 
     const destroyed = part.integrity <= damage || doesCriticalDestroyPart(critical) || engineExplosion;
 
@@ -721,20 +822,7 @@ function applyDamageChunkToPart(
         if (part.def.size === 1) {
             // Single-slot items get blasted off
             // Deal damage first, then destroy as a critical part removal if still intact
-            applyDamageChunkToPart(
-                state,
-                damage,
-                "Phasic",
-                undefined,
-                0,
-                0,
-                false,
-                false,
-                false,
-                false,
-                part,
-                partIndex,
-            );
+            applyUnresistedDamageChunkToPart(state, damage, part, partIndex);
 
             // Dismemberment immunity stops the blasting off part
             if (part.integrity > 0 && !botState.immunities.includes(BotImmunity.Dismemberment)) {
@@ -742,24 +830,25 @@ function applyDamageChunkToPart(
             }
         } else {
             // Multi-slot items don't get blasted off but still take damage
-            applyDamageChunkToPart(
-                state,
-                damage,
-                "Phasic",
-                undefined,
-                0,
-                0,
-                false,
-                false,
-                false,
-                false,
-                part,
-                partIndex,
-            );
+            applyUnresistedDamageChunkToPart(state, damage, part, partIndex);
         }
     } else if (critical === Critical.Phase) {
         // Apply phasing damage to the core
-        applyDamageChunkToPart(state, damage, "Phasic", undefined, 0, 0, false, false, false, false, undefined, -1);
+        applyDamageChunkToPart(
+            state,
+            damage,
+            "Phasic",
+            undefined,
+            0,
+            undefined,
+            0,
+            false,
+            false,
+            false,
+            false,
+            undefined,
+            -1,
+        );
     }
 
     if (engineExplosion) {
@@ -785,25 +874,32 @@ function cloneBotState(botState: BotState): BotState {
         coreIntegrity: botState.coreIntegrity,
         corruption: botState.corruption,
         def: botState.def,
-        defensiveState: undefined as any,
+        specialPartsState: undefined as any,
         destroyedParts: [],
         dormant: botState.dormant,
+        dormantTimer: botState.dormantTimer,
+        dormantTimerPassed: botState.dormantTimerPassed,
+        dormantTimerSet: botState.dormantTimerSet,
         energy: botState.energy,
-        energyGen: botState.energyGen,
         externalDamageReduction: botState.externalDamageReduction,
         heat: 0,
         immunities: botState.immunities,
         initialCoreIntegrity: botState.initialCoreIntegrity,
         mass: botState.mass,
         maximumEnergy: botState.maximumEnergy,
+        meltNextTurn: botState.meltNextTurn,
         parts: botState.parts.map((p) => {
             return {
+                activeHeatGeneration: p.activeHeatGeneration,
                 armorAnalyzedShieldedCoverage: p.armorAnalyzedShieldedCoverage,
                 armorAnalyzedSiegedCoverage: p.armorAnalyzedSiegedCoverage,
                 armorAnalyzedCoverage: p.armorAnalyzedCoverage,
+                broken: p.broken,
                 coverage: p.coverage,
                 def: p.def,
+                disabledTurns: p.disabledTurns,
                 energyUpkeep: p.energyUpkeep,
+                inactiveHeatGeneration: p.inactiveHeatGeneration,
                 integrity: p.integrity,
                 initialIndex: p.initialIndex,
                 protection: p.protection,
@@ -829,7 +925,11 @@ function cloneBotState(botState: BotState): BotState {
         tusToSiege: botState.tusToSiege,
         totalCoverage: botState.totalCoverage,
     };
-    newState.defensiveState = getBotDefensiveState(newState.parts, newState.externalDamageReduction, botState.dormant);
+    newState.specialPartsState = getBotSpecialPartState(
+        newState.parts,
+        newState.externalDamageReduction,
+        botState.dormant,
+    );
 
     return newState;
 }
@@ -858,6 +958,7 @@ function applyEngineExplosion(state: SimulatorState, part: SimulatorPart) {
                 false,
                 false,
                 engine.explosionDisruption,
+                heatTransferLookup.get(engine.explosionHeatTransfer!),
                 spectrumToNumber(engine.explosionSpectrum),
                 false,
                 false,
@@ -865,6 +966,45 @@ function applyEngineExplosion(state: SimulatorState, part: SimulatorPart) {
             );
         }
     }
+}
+
+// Determines the heat transfer level when adjusting for overload and Mak. Microdissipator
+function adjustHeatTransferLevel(
+    heatTransfer: HeatTransfer | undefined,
+    overloaded: boolean,
+    microdissipator: boolean,
+) {
+    if (heatTransfer === undefined) {
+        return undefined;
+    }
+
+    // Return original if there is no change
+    if ((overloaded && microdissipator) || (!overloaded && !microdissipator)) {
+        return heatTransfer;
+    }
+
+    let index = heatTransferTypes.indexOf(heatTransfer);
+    if (index === undefined) {
+        return undefined;
+    }
+
+    if (overloaded) {
+        // Overload increases transfer type by 1
+        if (index == heatTransferTypes.length) {
+            console.log("Can't overload deadly heat transfer");
+            return heatTransfer;
+        }
+
+        return heatTransferTypes[index + 1];
+    }
+
+    // Microdissipator decreases transfer type by 1
+    if (index === 0) {
+        // Minimal heat transfer gets reduced to 0
+        return undefined;
+    }
+
+    return heatTransferTypes[index - 1];
 }
 
 // Calculates the resisted damage for a bot given the initial damage value
@@ -876,23 +1016,29 @@ function calculateResistDamage(botState: BotState, damage: number, damageType: D
     return damage;
 }
 
-// Returns a bot's defensive state based on parts, also adds new relevant
+// Returns a bot's special parts state based on specific parts, also adds new relevant
 // properties to parts
-export function getBotDefensiveState(
+export function getBotSpecialPartState(
     parts: SimulatorPart[],
     externalDamageReduction: ExternalDamageReduction,
     dormant: boolean,
-): DefensiveState {
-    const state: DefensiveState = {
+): SpecialPartsState {
+    const state: SpecialPartsState = {
+        ablativeArmors: [],
         antimissile: [],
         avoid: [],
+        coolantInjectors: [],
         corruptionIgnore: [],
         corruptionMaximum: [],
         corruptionPrevent: [],
         corruptionReduce: [],
         critImmunity: [],
+        cryofiberWebs: [],
         damageReduction: [],
         hardlightGenerator: [],
+        coolingDevices: [],
+        microdissipator: [],
+        powerAmplifiers: [],
         rangedAvoid: [],
         shieldings: {
             Core: [],
@@ -906,17 +1052,16 @@ export function getBotDefensiveState(
     };
 
     for (const part of parts) {
-        if (hasActiveSpecialProperty(part.def, !dormant, "AntimissileChance")) {
-            state.antimissile.push({
-                // Antimissile system-like part
-                chance: (part.def.specialProperty!.trait as AntimissileChance).chance,
+        if (hasActiveSpecialProperty(part.def, !dormant, "AblativeArmor")) {
+            // Mak. Ablative Armor
+            state.ablativeArmors.push({
                 part: part,
             });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, "ReactionControlSystem")) {
-            // Reaction Control System-like part
-            // Leg/hover/flight determination done at accuracy update time
-            state.avoid.push({
-                chance: (part.def.specialProperty!.trait as ReactionControlSystem).chance,
+        }
+        if (hasActiveSpecialProperty(part.def, !dormant, "AntimissileChance")) {
+            // Antimissile system-like part
+            state.antimissile.push({
+                chance: (part.def.specialProperty!.trait as AntimissileChance).chance,
                 part: part,
             });
         } else if (hasActiveSpecialProperty(part.def, !dormant, "CorruptionIgnore")) {
@@ -947,6 +1092,14 @@ export function getBotDefensiveState(
             state.critImmunity.push({
                 part: part,
             });
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "CryofiberWeb")) {
+            // Cryofiber web part
+            state.cryofiberWebs.push({
+                part: part,
+                sideEffectNegationPercentage: (part.def.specialProperty!.trait as CryofiberWeb)
+                    .sideEffectNegationPercentage,
+                temperatureReduction: (part.def.specialProperty!.trait as CryofiberWeb).temperatureReduction,
+            });
         } else if (hasActiveSpecialProperty(part.def, !dormant, "DamageReduction")) {
             // Force field-like part
             state.damageReduction.push({
@@ -964,10 +1117,41 @@ export function getBotDefensiveState(
                 reduction: (part.def.specialProperty!.trait as HardlightGenerator).amount,
                 part: part,
             });
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "HeatDissipation")) {
+            // Cooling device (heat sink/cooling system) part
+            state.coolingDevices.push({
+                part: part,
+                amount: (part.def.specialProperty!.trait as HeatDissipation).dissipation,
+                isHeatSink: (part.def.specialProperty!.trait as HeatDissipation).heatSink,
+            });
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "Injector")) {
+            // Coolant injector part
+            state.coolantInjectors.push({
+                part: part,
+                amount: (part.def.specialProperty!.trait as Injector).dissipation,
+            });
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "Microdissipator")) {
+            // Microdissipator part
+            state.microdissipator.push({
+                part: part,
+            });
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "PowerAmplifier")) {
+            // Power amplifier part
+            state.powerAmplifiers.push({
+                multiplier: (part.def.specialProperty!.trait as PowerAmplifier).percent,
+                part: part,
+            });
         } else if (hasActiveSpecialProperty(part.def, !dormant, "RangedAvoid")) {
             // Phase shifter-like part
             state.rangedAvoid.push({
                 avoid: (part.def.specialProperty!.trait as RangedAvoid).avoid,
+                part: part,
+            });
+        } else if (hasActiveSpecialProperty(part.def, !dormant, "ReactionControlSystem")) {
+            // Reaction Control System-like part
+            // Leg/hover/flight determination done at accuracy update time
+            state.avoid.push({
+                chance: (part.def.specialProperty!.trait as ReactionControlSystem).chance,
                 part: part,
             });
         } else if (hasActiveSpecialProperty(part.def, !dormant, "SelfReduction")) {
@@ -995,12 +1179,16 @@ export function getBotDefensiveState(
                 reduction: reduction,
                 remote: remote,
                 part: {
+                    activeHeatGeneration: 0,
                     armorAnalyzedShieldedCoverage: 0,
                     armorAnalyzedSiegedCoverage: 0,
                     armorAnalyzedCoverage: 0,
+                    broken: false,
                     coverage: 0,
                     def: undefined as any,
+                    disabledTurns: 0,
                     energyUpkeep: 0,
+                    inactiveHeatGeneration: 0,
                     integrity: 1,
                     initialIndex: 0,
                     protection: false,
@@ -1020,12 +1208,16 @@ export function getBotDefensiveState(
                     reduction: reduction,
                     remote: remote,
                     part: {
+                        activeHeatGeneration: 0,
                         armorAnalyzedCoverage: 0,
                         armorAnalyzedShieldedCoverage: 0,
                         armorAnalyzedSiegedCoverage: 0,
+                        broken: false,
                         coverage: 0,
                         def: undefined as any,
+                        disabledTurns: 0,
                         energyUpkeep: 0,
+                        inactiveHeatGeneration: 0,
                         integrity: 1,
                         initialIndex: 0,
                         protection: false,
@@ -1040,12 +1232,16 @@ export function getBotDefensiveState(
                     remote: remote,
                     reduction: reduction,
                     part: {
+                        activeHeatGeneration: 0,
                         armorAnalyzedCoverage: 0,
                         armorAnalyzedShieldedCoverage: 0,
                         armorAnalyzedSiegedCoverage: 0,
+                        broken: false,
                         coverage: 0,
                         def: undefined as any,
+                        disabledTurns: 0,
                         energyUpkeep: 0,
+                        inactiveHeatGeneration: 0,
                         initialIndex: 0,
                         integrity: 1,
                         protection: false,
@@ -1086,30 +1282,27 @@ function destroyPart(
     botState.shieldedCoverage -= part.shieldedCoverage;
     botState.totalCoverage -= part.coverage;
 
-    // Update mass/support
-    botState.mass -= part.def.mass || 0;
-    if (part.def.type === botState.def.propulsionType) {
-        botState.support -= part.def.mass || 0;
-    } else if (hasActiveSpecialProperty(part.def, true, "MassSupport")) {
-        botState.support -= (part.def.specialProperty!.trait as MassSupport).support;
-    }
-
-    // If the part was providing any damage resistances remove them now
-    // TODO - remove assumption that there can't be multiple sources of
-    // a single type of damage resistance. e.g. One part is 30% and
-    // another is providing 25% so we need to fallback to the 25%
-    if (part.resistances !== undefined) {
-        for (const type of Object.keys(part.resistances)) {
-            if (type in botState.resistances) {
-                botState.resistances[type]! -= part.resistances![type]!;
-            }
-        }
-    }
+    removePartBonusesFromState(state, part);
 
     if (overflowDamage > 0 && !part.protection && canOverflow) {
         // Handle overflow damage if excess damage was dealt
         // against a non-protection part (18)
-        applyDamageChunk(state, 0, overflowDamage, damageType, undefined, true, true, false, 0, 0, false, false, false);
+        applyDamageChunk(
+            state,
+            0,
+            overflowDamage,
+            damageType,
+            undefined,
+            true,
+            true,
+            false,
+            0,
+            undefined,
+            0,
+            false,
+            false,
+            false,
+        );
     }
 
     if (damageType === "Impact") {
@@ -1133,38 +1326,50 @@ function destroyPart(
         state.lootState.items[part.initialIndex].totalCritRemoves += 1;
         state.lootState.items[part.initialIndex].totalIntegrity += part.integrity;
         state.lootState.items[part.initialIndex].integrityDrops.push(part.integrity);
-    }
-
-    part.integrity = 0;
-    updateWeaponsAccuracy(state);
-
-    // Subtract energy stats
-    if (part.def.slot === "Power") {
-        botState.energyGen -= (part.def as PowerItem).energyGeneration || 0;
-        botState.maximumEnergy -= (part.def as PowerItem).energyStorage || 0;
-        botState.energy = Math.min(botState.energy, botState.maximumEnergy);
+    } else if (destroyReason === "Melt" && part.integrity > 0) {
+        state.lootState.items[part.initialIndex].totalMelted += 1;
     }
 
     botState.destroyedParts.push(part);
 }
 
-// Tries to get a bot defensive state part from an array
+// Tries to get a bot special state part from an array
 // Parts will be removed from the array if their integrity has dropped below 0
-function getDefensiveStatePart<T extends SpecialPart>(array: T[]) {
+function getSpecialStatePart<T extends SpecialPart>(array: T[]) {
     let part: T | undefined = undefined;
 
-    while (array.length > 0) {
-        if (array[0].part.integrity > 0) {
+    let i = 0;
+    while (i < array.length) {
+        if (array[i].part.integrity <= 0 || array[i].part.broken) {
+            // Found destroyed or broken part, remove from array
+            array.shift();
+        } else if (array[0].part.disabledTurns === 0) {
             // Found a good part, use it here
             part = array[0];
             break;
         } else {
-            // Found destroyed part, remove from array
-            array.shift();
+            i++;
         }
     }
 
     return part;
+}
+
+// Tries to get all bot special state parts from an array
+// Parts will be removed from the array if their integrity has dropped below 0
+function getSpecialStateParts<T extends SpecialPart>(array: T[]) {
+    const returnArray: T[] = [];
+    for (let i = array.length - 1; i >= 0; i--) {
+        // Check for and remove all destroyed parts
+        if (array[i].part.integrity <= 0 || array[i].part.broken) {
+            array.splice(i);
+        } else if (array[i].part.disabledTurns === 0) {
+            // Add to new list if part is not currently disabled
+            returnArray.unshift(array[i]);
+        }
+    }
+
+    return returnArray;
 }
 
 // Determines the part that was hit by an attack
@@ -1306,13 +1511,13 @@ function getHitPart(
     };
 }
 
-// Gets a random (i.e. coverage-ignoring) non-core part, used for some crit effects
+// Gets a random (i.e. coverage-ignoring) non-core part, used for some crit and heat effects
 function getRandomNonCorePart(botState: BotState, ignoreIndex: number | undefined) {
     // Randomly target all parts, possibly excluding another specific index
     let partHit = randomInt(0, botState.parts.length - 1 - (ignoreIndex === undefined ? 0 : 1));
 
     if (ignoreIndex !== undefined && ignoreIndex > 0 && partHit >= ignoreIndex) {
-        // Adjust the coverage index based on the ignored part
+        // Adjust the index based on the ignored part
         partHit += 1;
     }
 
@@ -1329,6 +1534,29 @@ function getRandomNonCorePart(botState: BotState, ignoreIndex: number | undefine
         part: part,
         partIndex: partHit,
     };
+}
+
+// Gets a random (i.e. coverage-ignoring) non-core part, used for some crit and heat effects
+function getRandomUniqueNonCoreParts(botState: BotState, numParts: number) {
+    const randomParts: SimulatorPart[] = [];
+
+    // Make clone of parts array for easier pruning
+    const parts = [...botState.parts];
+
+    // Keep picking random parts until we have found all requested or we run out
+    for (let i = 0; i < numParts && parts.length >= 1; i++) {
+        let partIndex = randomInt(0, parts.length - 1);
+        const part = parts[partIndex];
+
+        if (part === undefined) {
+            console.log("Test");
+        }
+
+        randomParts.push(part);
+        parts.splice(i, 1);
+    }
+
+    return randomParts;
 }
 
 // Calculates a weapon's recoil based on the number of treads and other recoil reduction
@@ -1387,20 +1615,59 @@ export function getRangedVolleyTime(weapons: WeaponItem[], cyclerModifier: numbe
 // Tries to get a bot's first shielding for a specific slot
 // Parts will be removed from the array if their integrity has dropped below 0
 function getShieldingType(botState: BotState, slot: ItemSlot | "Core"): ShieldingPart | undefined {
-    return getDefensiveStatePart(botState.defensiveState.shieldings[slot]);
+    return getSpecialStatePart(botState.specialPartsState.shieldings[slot]);
 }
 
 // Gets the bot's corruption when accounting for corruption reduction utilities
 function getBotCorruption(botState: BotState) {
     let corruption = botState.corruption;
 
-    for (const p of botState.defensiveState.corruptionReduce) {
+    for (const p of botState.specialPartsState.corruptionReduce) {
         if (p.part.integrity >= 0) {
             corruption -= p.amount;
         }
     }
 
     return corruption;
+}
+
+function removePartBonusesFromState(state: SimulatorState, part: SimulatorPart) {
+    const botState = state.botState;
+
+    // Update mass/support
+    // TODO do we ever need to update the time/move here?
+    botState.mass -= part.def.mass || 0;
+    if (part.def.type === botState.def.propulsionType) {
+        botState.support -= part.def.mass || 0;
+    } else if (hasActiveSpecialProperty(part.def, true, "MassSupport")) {
+        botState.support -= (part.def.specialProperty!.trait as MassSupport).support;
+    }
+
+    // If the part was providing any damage resistances remove them now
+    // TODO - remove assumption that there can't be multiple sources of
+    // a single type of damage resistance. e.g. One part is 30% and
+    // another is providing 25% so we need to fallback to the 25%
+    if (part.resistances !== undefined) {
+        for (const type of Object.keys(part.resistances)) {
+            if (type in botState.resistances) {
+                botState.resistances[type]! -= part.resistances![type]!;
+            }
+        }
+    }
+
+    part.integrity = 0;
+    updateWeaponsAccuracy(state);
+
+    // Subtract energy stats
+    if (part.def.slot === "Power") {
+        botState.maximumEnergy -= (part.def as PowerItem).energyStorage || 0;
+        botState.energy = Math.min(botState.energy, botState.maximumEnergy);
+    }
+
+    if (hasActiveSpecialProperty(part.def, true, "EnergyStorage")) {
+        botState.maximumEnergy -= (part.def.specialProperty!.trait as EnergyStorage).storage;
+        botState.energy = Math.min(botState.energy, botState.maximumEnergy);
+    }
 }
 
 type EndConditions = {
@@ -1480,11 +1747,6 @@ export function simulateCombat(state: SimulatorState): boolean {
     state.botState = botState;
     const offensiveState = state.offensiveState;
     let volleys = 0;
-
-    let dormantTimerSet = false;
-    let dormantTimerPassed = false;
-    let dormantTimer = Number.MAX_SAFE_INTEGER;
-    let oldTus = 0;
     state.tus = 0;
     state.actionNum = 0;
 
@@ -1502,73 +1764,6 @@ export function simulateCombat(state: SimulatorState): boolean {
 
     let end = false;
     while (!end) {
-        // Apply core regen
-        const lastCompletedTurns = Math.trunc(oldTus / 100);
-        const newCompletedTurns = Math.trunc(state.tus / 100);
-        const completedTurns = newCompletedTurns - lastCompletedTurns;
-        const coreRegenIntegrity = botState.coreRegen * completedTurns;
-
-        botState.coreIntegrity = Math.min(botState.initialCoreIntegrity, botState.coreIntegrity + coreRegenIntegrity);
-
-        // Apply part regen to existing parts
-        const partRegenIntegrity = botState.partRegen * completedTurns;
-        for (const part of botState.parts) {
-            part.integrity = Math.min(part.integrity + partRegenIntegrity, part.def.integrity);
-        }
-
-        if (botState.partRegen > 0) {
-            // Apply part regen to destroyed parts
-            // Every 10 turns, one part is recreated
-            const numRegenTurns = [...Array(completedTurns)]
-                .map((_, i) => i + lastCompletedTurns)
-                .filter((t) => t % 10 === 0).length;
-
-            for (let i = 0; i < numRegenTurns; i++) {
-                addRandomDestroyedPart(state);
-            }
-        }
-
-        if (botState.superfortressRegen) {
-            // Check for superfortress part regrowth
-            if (newCompletedTurns <= botState.superfortressRegen.nextRegenAttempt) {
-                addRandomDestroyedPart(state);
-
-                // Observation shows this to be between this range
-                // There are probably more complex rules, but this is a decent
-                // enough approximation
-                botState.superfortressRegen.nextRegenAttempt += randomInt(5, 25);
-            }
-        }
-
-        // Check for bot dormancy changes
-        if (newCompletedTurns >= dormantTimer && !dormantTimerPassed) {
-            // If timer has elapsed, recalculate the defensive state
-            botState.dormant = false;
-            botState.defensiveState = getBotDefensiveState(
-                botState.parts,
-                botState.externalDamageReduction,
-                botState.dormant,
-            );
-            dormantTimerPassed = true;
-        } else if (
-            !dormantTimerSet &&
-            botState.behavior === "Unpowered 10 Turns" &&
-            botState.coreIntegrity != botState.initialCoreIntegrity
-        ) {
-            dormantTimer = newCompletedTurns + 10;
-            dormantTimerSet = true;
-        }
-
-        // Handle energy changes
-        botState.energy += completedTurns * botState.energyGen;
-        for (const part of botState.parts) {
-            botState.energy -= completedTurns * part.energyUpkeep;
-        }
-
-        // Cap between 0 and maximum energy
-        botState.energy = Math.max(0, Math.min(botState.energy, botState.maximumEnergy));
-        // TODO: Simulate more energy-related effects apart from only FF/shield gen
-
         // Process each volley
         volleys += 1;
         let volleyTime = offensiveState.volleyTime;
@@ -1638,54 +1833,16 @@ export function simulateCombat(state: SimulatorState): boolean {
             volleyTime = Math.max(100, offensiveState.speed);
         }
 
-        // Update TUs and time based changes
-        oldTus = state.tus;
-        state.tus += volleyTime;
-
-        let updateAccuracy = false;
-
-        // Update accuracy when crossing special prop mode activation
-        if (
-            !offensiveState.melee &&
-            oldTus < offensiveState.specialBonus.tus &&
-            state.tus >= offensiveState.specialBonus.tus
-        ) {
-            updateAccuracy = true;
+        if (botState.meltNextTurn) {
+            // Don't count the whole volley time, treat as just 100 tus for the
+            // bot to take its next turn (assuming bot is waiting)
+            state.tus += 100;
+            botState.coreIntegrity = 0;
+            end = true;
+            break;
         }
 
-        // Update enemy shield state
-        if (
-            oldTus < botState.tusToShield &&
-            state.tus >= botState.tusToShield &&
-            botState.behavior === "Shield/Fight" &&
-            botState.parts.find((p) => p.def.type === "Leg" && (p.def as PropulsionItem).shield) !== undefined
-        ) {
-            botState.shielded = true;
-        }
-
-        // Update enemy siege state
-        if (
-            oldTus < botState.tusToSiege &&
-            state.tus >= botState.tusToSiege &&
-            botState.behavior === "Siege/Fight" &&
-            botState.parts.find((p) => p.def.type === "Treads" && (p.def as PropulsionItem).siege !== undefined) !==
-                undefined
-        ) {
-            botState.sieged = true;
-            updateAccuracy = true;
-        }
-
-        // Update enemy running state
-        if (botState.behavior === "Run When Hit" && botState.runningMomentum < 3) {
-            botState.running = true;
-            botState.runningMomentum = Math.min(Math.trunc(state.tus / botState.def.speed), 3);
-            updateAccuracy == true;
-        }
-
-        // Update accuracy from any end of turn-based states
-        if (updateAccuracy) {
-            updateWeaponsAccuracy(state);
-        }
+        updateTimeBasedStateChanges(state, volleyTime);
 
         end = endConditions.volleyEndCondition(botState);
     }
@@ -1764,6 +1921,187 @@ export function simulateCombat(state: SimulatorState): boolean {
     return true;
 }
 
+type BotHeatEffect = {
+    minHeat: number;
+    effect: (state: SimulatorState) => void;
+};
+const botOverheatEffects: BotHeatEffect[] = [
+    {
+        minHeat: 150,
+        effect: (state) => {
+            // Spike heat
+            state.botState.heat += randomInt(60, 119);
+        },
+    },
+    {
+        minHeat: 150,
+        effect: (state) => {
+            // Disable random part
+            const { part } = getRandomNonCorePart(state.botState, undefined);
+            if (part !== undefined) {
+                part.disabledTurns += randomInt(8, 15);
+            }
+        },
+    },
+    {
+        minHeat: 150,
+        effect: (state) => {
+            // Short circuit, break random already unbroken part that can be broken
+            const { part } = getRandomNonCorePart(state.botState, undefined);
+            if (
+                part !== undefined &&
+                !part.broken &&
+                !(part.def.slot === "Utility" && !(part.def as ItemWithUpkeep).energyUpkeep === undefined)
+            ) {
+                part.broken = true;
+                removePartBonusesFromState(state, part);
+            }
+        },
+    },
+    {
+        minHeat: 150,
+        effect: (state) => {
+            // Damage random part from 50-100% of current integrity
+            const { part, partIndex } = getRandomNonCorePart(state.botState, undefined);
+            if (part !== undefined) {
+                part.integrity -= Math.trunc(randomInt(50, 100) * part.integrity);
+                if (part.integrity <= 0) {
+                    destroyPart(state, false, partIndex, part, 0, "Entropic", "Integrity");
+                }
+            }
+        },
+    },
+    {
+        minHeat: 200,
+        effect: (state) => {
+            // Damage 1-4 parts from 60-90% of current integrity
+            const numParts = randomInt(1, 4);
+            const parts = getRandomUniqueNonCoreParts(state.botState, numParts);
+            for (const part of parts) {
+                part.integrity -= Math.trunc(randomInt(50, 100) * part.integrity);
+                if (part.integrity <= 0) {
+                    destroyPart(state, false, state.botState.parts.indexOf(part), part, 0, "Entropic", "Integrity");
+                }
+            }
+        },
+    },
+    {
+        minHeat: 250,
+        effect: (state) => {
+            // Damages core 20-40%
+            state.botState.coreIntegrity -= Math.trunc(randomInt(20, 40) * state.botState.initialCoreIntegrity);
+        },
+    },
+];
+// Updates bot heat changes per turn
+function simulateBotHeatUpdates(state: SimulatorState) {
+    const botState = state.botState;
+
+    // Handle heat changes
+    // As a minor optimization, ignore heat if Cogmind didn't transfer any heat
+    // While some bots do heat up when shooting, currently all bots are expected
+    // to not be actively firing by the simulator. TODO add this later
+    if (botState.heat <= 0) {
+        return;
+    }
+
+    // Apply bot heat generation first
+    for (const part of botState.parts) {
+        if (part.broken || part.disabledTurns > 0) {
+            botState.heat += part.inactiveHeatGeneration;
+        } else {
+            botState.heat += part.activeHeatGeneration;
+        }
+    }
+
+    const cryofiberWeb = getSpecialStatePart(botState.specialPartsState.cryofiberWebs);
+    const coolantInjectors = getSpecialStateParts(botState.specialPartsState.coolantInjectors);
+    const coolingDevices = getSpecialStateParts(botState.specialPartsState.coolingDevices);
+    const ablativeArmors = getSpecialStateParts(botState.specialPartsState.ablativeArmors);
+    const microdissipator = getSpecialStatePart(botState.specialPartsState.microdissipator);
+
+    // Apply base heat dissipation first
+    botState.heat -= botState.def.innateHeatDissipation;
+
+    // Apply cooling devices first
+    for (const coolingDevice of coolingDevices || []) {
+        botState.heat -= coolingDevice.amount;
+
+        // If heat sink + cryofiber web, double the dissipation
+        if (cryofiberWeb !== undefined && coolingDevice.isHeatSink) {
+            botState.heat -= coolingDevice.amount;
+        }
+    }
+
+    // Technically should randomize the injector order as the chosen
+    // injector is random, but this matters very little for simulator purposes
+    for (const coolantInjector of coolantInjectors || []) {
+        // Apply coolant injectors next if still over heat threshold
+        // Note: The threshold for bots is 150 heat rather than 200 like
+        // it is for Cogmind. The description doesn't mention this fact
+        // though.
+        if (botState.heat >= 150) {
+            // All injectors lose 2 heat per application
+            coolantInjector.part.integrity -= 2;
+            botState.heat -= coolantInjector.amount;
+        }
+    }
+
+    // Technically should randomize the ablative order as the chosen
+    // armor is random, but there are no bots with more than one of these
+    for (const ablativeArmor of ablativeArmors || []) {
+        if (botState.heat > 150) {
+            // Note: This subtracts 0 integrity for dissipating 1-19 heat
+            ablativeArmor.part.integrity -= Math.trunc((botState.heat - 15) / 20);
+        }
+    }
+
+    if (botState.heat > 150 && microdissipator !== undefined) {
+        // Deal 1 point of damage per every 10 heat dissipated rounded down
+        // Unlike ablative, even 1 dissipation results in 1 point of damage
+        // However, 2 points aren't subtracted until 20 heat is dissipated
+        let damageToApply = Math.min(Math.trunc((botState.heat - 150) / 10), 1);
+
+        // Divide damage into 5 (or fewer) damage chunks
+        while (damageToApply > 0) {
+            const damageChunk = Math.min(5, damageToApply);
+            damageToApply -= damageChunk;
+
+            const { part, partIndex } = getRandomNonCorePart(botState, botState.parts.indexOf(microdissipator.part));
+            applyUnresistedDamageChunkToPart(state, damageToApply, part, partIndex);
+        }
+    }
+
+    // Apply heat effects per turn
+    // They have an increasing chance to apply based on heat, capping at 50% at 300
+    let effectChance = 0;
+    if (botState.heat >= 300) {
+        effectChance = 50;
+    } else if (botState.heat >= 240) {
+        effectChance = 25;
+    } else if (botState.heat >= 180) {
+        effectChance = 12;
+    } else if (botState.heat >= 120) {
+        effectChance = 6;
+    }
+
+    // Hardcode minimum effect heat value here for slightly simpler code
+    if (
+        !botState.immunities.includes(BotImmunity.Meltdown) &&
+        botState.heat >= 150 &&
+        randomInt(0, 99) < effectChance
+    ) {
+        // Apply random applicable effect
+        // TODO if a heat effect is rolled that is N/A do we reroll or just give up?
+        const effects = botOverheatEffects.filter((e) => botState.heat >= e.minHeat);
+        const effect = effects[randomInt(0, effects.length - 1)];
+        effect.effect(state);
+    }
+
+    const minBotHeat = cryofiberWeb ? cryofiberWeb.temperatureReduction : 0;
+    botState.heat = Math.max(botState.heat, minBotHeat);
+}
+
 // Simulates 1 weapon's damage in a volley
 // Returns true if the weapon triggered the simulation end condition
 function simulateWeapon(
@@ -1796,6 +2134,8 @@ function simulateWeapon(
                 false,
                 false,
                 0,
+                undefined,
+                false,
                 0,
                 true,
                 "Impact",
@@ -1812,7 +2152,7 @@ function simulateWeapon(
         // Jamming/failing to cycle/failing to launch is a corruption-based
         // effect for non-melee weapons. Odds to fail to attack increases by
         // .2% for every 1% of corruption.
-        if (randomInt(0, 1000) < offensiveState.corruption * 2) {
+        if (randomInt(0, 999) < offensiveState.corruption * 2) {
             return false;
         }
     }
@@ -1830,7 +2170,7 @@ function simulateWeapon(
 
         if (hit && weapon.isMissile) {
             // Check for an antimissile intercept
-            const part = getDefensiveStatePart(botState.defensiveState.antimissile);
+            const part = getSpecialStatePart(botState.specialPartsState.antimissile);
 
             if (part != undefined) {
                 const intercept = part.chance;
@@ -1935,6 +2275,8 @@ function simulateWeapon(
                     false,
                     armorAnalyzed,
                     weapon.disruption,
+                    weapon.heatTransfer,
+                    weapon.overloaded,
                     weapon.spectrum,
                     weapon.overflow,
                     weapon.damageType,
@@ -1989,6 +2331,8 @@ function simulateWeapon(
                     true,
                     false,
                     weapon.explosionDisruption,
+                    weapon.explosionHeatTransfer,
+                    false, // Explosions don't get overloaded
                     0, // Explosion spectrum only applies to engines on ground, ignore it here
                     true,
                     weapon.explosionType,
@@ -2017,6 +2361,153 @@ export function spectrumToNumber(spectrum: Spectrum | undefined): number {
     return spectrumMap[spectrum];
 }
 
+// Updates misc bot state changes over time from sim settings
+function updateTimeBasedStateChanges(state: SimulatorState, volleyTime: number) {
+    const botState = state.botState;
+    const offensiveState = state.offensiveState;
+    let updateAccuracy = false;
+
+    // Update TUs and time based changes
+    const oldTus = state.tus;
+    state.tus += volleyTime;
+
+    const lastCompletedTurns = Math.trunc(oldTus / 100);
+    const newCompletedTurns = Math.trunc(state.tus / 100);
+    const completedTurns = newCompletedTurns - lastCompletedTurns;
+    const coreRegenIntegrity = botState.coreRegen * completedTurns;
+
+    const powerMultiplier = getSpecialStateParts(botState.specialPartsState.powerAmplifiers)
+        .map((amplifier) => amplifier.multiplier)
+        .reduce(sum, 1);
+
+    for (let i = 0; i < completedTurns; i++) {
+        // Handle things that need to be checked once per turn
+
+        // Add energy
+        botState.energy += botState.def.innateEnergyGeneration;
+
+        for (const part of botState.parts) {
+            if (part.def.slot === "Power") {
+                botState.energy += Math.trunc(powerMultiplier * ((part.def as PowerItem).energyGeneration || 0));
+            }
+        }
+
+        // Subtract energy upkeep
+        for (const part of botState.parts) {
+            if (!part.broken && part.disabledTurns === 0) {
+                botState.energy -= part.energyUpkeep;
+            }
+        }
+
+        // Cap between 0 and maximum energy
+        botState.energy = Math.max(0, Math.min(botState.energy, botState.maximumEnergy));
+
+        simulateBotHeatUpdates(state);
+
+        // Decrement disabled turns check
+        for (const part of botState.parts) {
+            if (part.disabledTurns > 0) {
+                part.disabledTurns -= 1;
+            }
+        }
+    }
+
+    // Update accuracy when crossing special prop mode activation
+    if (
+        !offensiveState.melee &&
+        oldTus < offensiveState.specialBonus.tus &&
+        state.tus >= offensiveState.specialBonus.tus
+    ) {
+        updateAccuracy = true;
+    }
+
+    // Update enemy shield state
+    if (
+        oldTus < botState.tusToShield &&
+        state.tus >= botState.tusToShield &&
+        botState.behavior === "Shield/Fight" &&
+        botState.parts.find((p) => p.def.type === "Leg" && (p.def as PropulsionItem).shield) !== undefined
+    ) {
+        botState.shielded = true;
+    }
+
+    // Update enemy siege state
+    if (
+        oldTus < botState.tusToSiege &&
+        state.tus >= botState.tusToSiege &&
+        botState.behavior === "Siege/Fight" &&
+        botState.parts.find((p) => p.def.type === "Treads" && (p.def as PropulsionItem).siege !== undefined) !==
+            undefined
+    ) {
+        botState.sieged = true;
+        updateAccuracy = true;
+    }
+
+    // Update enemy running state
+    if (botState.behavior === "Run When Hit" && botState.runningMomentum < 3) {
+        botState.running = true;
+        botState.runningMomentum = Math.min(Math.trunc(state.tus / botState.def.speed), 3);
+        updateAccuracy == true;
+    }
+
+    // Apply core regen
+    botState.coreIntegrity = Math.min(botState.initialCoreIntegrity, botState.coreIntegrity + coreRegenIntegrity);
+
+    // Apply part regen to existing parts
+    const partRegenIntegrity = botState.partRegen * completedTurns;
+    for (const part of botState.parts) {
+        part.integrity = Math.min(part.integrity + partRegenIntegrity, part.def.integrity);
+    }
+
+    if (botState.partRegen > 0) {
+        // Apply part regen to destroyed parts
+        // Every 10 turns, one part is recreated
+        const numRegenTurns = [...Array(completedTurns)]
+            .map((_, i) => i + lastCompletedTurns)
+            .filter((t) => t % 10 === 0).length;
+
+        for (let i = 0; i < numRegenTurns; i++) {
+            addRandomDestroyedPart(state);
+        }
+    }
+
+    if (botState.superfortressRegen) {
+        // Check for superfortress part regrowth
+        if (newCompletedTurns <= botState.superfortressRegen.nextRegenAttempt) {
+            addRandomDestroyedPart(state);
+
+            // Observation shows this to be between this range
+            // There are probably more complex rules, but this is a decent
+            // enough approximation
+            botState.superfortressRegen.nextRegenAttempt += randomInt(5, 25);
+        }
+    }
+
+    // Check for bot dormancy changes
+    if (newCompletedTurns >= botState.dormantTimer && !botState.dormantTimerPassed) {
+        // If timer has elapsed, recalculate the defensive state
+        botState.dormant = false;
+        botState.specialPartsState = getBotSpecialPartState(
+            botState.parts,
+            botState.externalDamageReduction,
+            botState.dormant,
+        );
+        botState.dormantTimerPassed = true;
+    } else if (
+        !botState.dormantTimerSet &&
+        botState.behavior === "Unpowered 10 Turns" &&
+        botState.coreIntegrity != botState.initialCoreIntegrity
+    ) {
+        botState.dormantTimer = newCompletedTurns + 10;
+        botState.dormantTimerSet = true;
+    }
+
+    // Update accuracy from any end of turn-based states
+    if (updateAccuracy) {
+        updateWeaponsAccuracy(state);
+    }
+}
+
 // Updates all calculated weapon accuracies
 function updateWeaponsAccuracy(state: SimulatorState) {
     const offensiveState = state.offensiveState;
@@ -2039,7 +2530,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
 
     // Subtract always avoid util (reaction control system) unless overweight
     // or out of prop
-    const avoidPart = getDefensiveStatePart(botState.defensiveState.avoid);
+    const avoidPart = getSpecialStatePart(botState.specialPartsState.avoid);
     if (avoidPart != undefined && isUnderweight) {
         perWeaponBonus -= avoidPart.chance;
     }
@@ -2080,7 +2571,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
         }
 
         // Subtract ranged avoid util (phase shifter)
-        const rangedAvoidPart = getDefensiveStatePart(botState.defensiveState.rangedAvoid);
+        const rangedAvoidPart = getSpecialStatePart(botState.specialPartsState.rangedAvoid);
         if (rangedAvoidPart != undefined) {
             perWeaponBonus -= rangedAvoidPart.avoid;
         }
@@ -2109,7 +2600,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
             // (5% for each level of momentum)
             perWeaponBonus -= 5 * botState.runningMomentum;
 
-            if (getDefensiveStatePart(botState.defensiveState.thunderLegs) !== undefined) {
+            if (getSpecialStatePart(botState.specialPartsState.thunderLegs) !== undefined) {
                 // If thunder leg is active then double the momentum bonus
                 perWeaponBonus -= 5 * botState.runningMomentum;
             }
@@ -2117,6 +2608,11 @@ function updateWeaponsAccuracy(state: SimulatorState) {
 
         // Apply non-running evasion (<100 speed bonus)
         perWeaponBonus -= botState.runningEvasion;
+    }
+
+    // Apply heat bonus, +3% of heat
+    if (botState.heat > 0) {
+        perWeaponBonus += Math.trunc(botState.heat * 0.03);
     }
 
     for (const weapon of state.weapons) {
