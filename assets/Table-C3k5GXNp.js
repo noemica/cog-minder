@@ -1,4 +1,4 @@
-import{r as E,j as _}from"./index-BjCIqOof.js";/**
+import{r as E,j as _}from"./index-BNOxLUd9.js";/**
  * table-core
  *
  * Copyright (c) TanStack
