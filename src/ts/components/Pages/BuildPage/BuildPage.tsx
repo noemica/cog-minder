@@ -392,6 +392,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         propulsionType = firstProp.part.type;
     }
     const activeProp: PropulsionItem[] = [];
+
     parts
         .filter((p) => p.active && p.part.type === propulsionType)
         .forEach((p) => {
@@ -514,13 +515,19 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         tusPerMove = Math.max(tusPerMove, 10);
     }
 
-    // Apply metafiber after penalties
+    // Apply metafiber and rocket booster after penalties
     if (
         parts.find((p) => hasActiveSpecialProperty(p.part, p.active, "Metafiber")) !== undefined &&
         activeProp.length > 0 &&
         activeProp[0].type === "Leg"
     ) {
-        tusPerMove *= 0.8;
+        tusPerMove = Math.trunc(tusPerMove * 1 / 1.2);
+    } else if (
+        parts.find((p) => hasActiveSpecialProperty(p.part, p.active, "RocketBooster")) !== undefined &&
+        activeProp.length > 0 &&
+        activeProp[0].type === "Wheel"
+    ) {
+        tusPerMove = Math.trunc(tusPerMove * 1 / 1.75);
     }
 
     // Calculate weapon-related stats
