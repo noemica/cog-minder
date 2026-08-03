@@ -540,6 +540,9 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
     "Thunder Leg": { active: "Part Active", trait: { kind: "ThunderLeg" } },
     "Imp. Thunder Leg": { active: "Part Active", trait: { kind: "ThunderLeg" } },
 
+    // Turbovents
+    "Cep. Turbovents": { active: "Part Active", trait: { kind: "Turbovents" } },
+
     // Weapon regen
     "Sigix Broadsword": {
         active: "Part Active",

@@ -521,13 +521,13 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         activeProp.length > 0 &&
         activeProp[0].type === "Leg"
     ) {
-        tusPerMove = Math.trunc(tusPerMove * 1 / 1.2);
+        tusPerMove = Math.trunc((tusPerMove * 1) / 1.2);
     } else if (
         parts.find((p) => hasActiveSpecialProperty(p.part, p.active, "RocketBooster")) !== undefined &&
         activeProp.length > 0 &&
         activeProp[0].type === "Wheel"
     ) {
-        tusPerMove = Math.trunc(tusPerMove * 1 / 1.75);
+        tusPerMove = Math.trunc((tusPerMove * 1) / 1.75);
     }
 
     // Calculate weapon-related stats
@@ -649,6 +649,11 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     const [topFilter, secondFilter] = getTopTwoValues(filterValues);
     const energyFilterPercent = 1 - (topFilter + 0.5 * secondFilter);
 
+    // Apply turbovents for multi-weapon volleys
+    const hasTurbovents =
+        parts.find((p) => hasActiveSpecialProperty(p.part, p.active, "Turbovents")) !== undefined &&
+        activeWeapons.length >= 2;
+
     let totalRecoilReduction = activeProp
         .filter((p) => p.type === "Treads")
         .map((p) => p.size)
@@ -714,7 +719,10 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     const totalHeatGenPerMove = getValuePerTus(totalHeatGenPerTurn, tusPerMove) + heatPerMove;
 
     const energyPerVolley = activeWeapons.map((p) => (p.shotEnergy ?? 0) * energyFilterPercent).reduce(sum, 0);
-    const heatPerVolley = activeWeapons.map((p) => p.shotHeat ?? 0).reduce(sum, 0);
+    let heatPerVolley = activeWeapons.map((p) => p.shotHeat ?? 0).reduce(sum, 0);
+    if (hasTurbovents) {
+        heatPerVolley = Math.trunc(heatPerVolley / 2);
+    }
     const totalEnergyGenPerVolley = getValuePerTus(totalEnergyGenPerTurn, tusPerVolley);
     const totalEnergyUsePerVolley = getValuePerTus(totalEnergyUsePerTurn, tusPerVolley) + energyPerVolley;
     const totalHeatDissipationPerVolley = getValuePerTus(totalHeatDissipationPerTurn, tusPerVolley);

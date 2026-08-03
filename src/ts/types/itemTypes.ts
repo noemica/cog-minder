@@ -151,6 +151,7 @@ export type Shielding = { kind: "Shielding"; shielding: number; slot: ItemSlot |
 export type TargetAnalyzer = { kind: "TargetAnalyzer"; bonus: number };
 export type Targeting = { kind: "Targeting"; bonus: number };
 export type ThunderLeg = { kind: "ThunderLeg" };
+export type Turbovents = { kind: "Turbovents" };
 export type WeaponRegen = { kind: "WeaponRegen"; energyPerTurn: number; integrityPerTurn: number };
 
 export type SpecialPropertyType =
@@ -197,6 +198,7 @@ export type SpecialPropertyType =
     | TargetAnalyzer
     | Targeting
     | ThunderLeg
+    | Turbovents
     | WeaponRegen;
 
 export type SpecialPropertyTypeName =
@@ -243,6 +245,7 @@ export type SpecialPropertyTypeName =
     | "TargetAnalyzer"
     | "Targeting"
     | "ThunderLeg"
+    | "Turbovents"
     | "WeaponRegen";
 
 export type SpecialItemProperty = {
