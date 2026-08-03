@@ -765,6 +765,7 @@ function getSimulatorState(
             item: part.def,
             integrityDrops: [],
             numDrops: 0,
+            totalBroken: 0,
             totalCritRemoves: 0,
             totalCorruptionPercent: 0,
             totalFried: 0,
@@ -995,6 +996,7 @@ export default function SimulatorPage() {
                 activeChartState.lootState.items.find(
                     (item) => item.totalCorruptionPercent > 0 || item.totalFried > 0,
                 ) !== undefined;
+            const showBroken = activeChartState.lootState.items.find((item) => item.totalBroken > 0) !== undefined;
             const showCriticals =
                 activeChartState.lootState.items.find((item) => item.totalCritRemoves > 0) !== undefined;
             const showMelted = activeChartState.lootState.items.find((item) => item.totalMelted > 0) !== undefined;
@@ -1010,6 +1012,7 @@ export default function SimulatorPage() {
                             key={i}
                             itemLootState={itemLootState}
                             numKills={activeChartState.lootState.numKills}
+                            showBroken={showBroken}
                             showCorruption={showCorruption}
                             showCriticals={showCriticals}
                             showMelted={showMelted}

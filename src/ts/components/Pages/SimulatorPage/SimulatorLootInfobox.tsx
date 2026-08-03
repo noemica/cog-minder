@@ -64,12 +64,14 @@ export default function SimulatorLootItemInfobox({
     showCorruption,
     showCriticals,
     showMelted,
+    showBroken,
 }: {
     itemLootState: ItemLootState;
     numKills: number;
     showCorruption: boolean;
     showCriticals: boolean;
     showMelted: boolean;
+    showBroken: boolean;
 }) {
     const dropRatePercent = (itemLootState.numDrops / numKills) * 100;
     const averageDropIntegrity =
@@ -79,6 +81,8 @@ export default function SimulatorLootItemInfobox({
     const critRatePercent =
         itemLootState.totalCritRemoves > 0 ? (itemLootState.totalCritRemoves / itemLootState.numDrops) * 100 : 0;
     const meltedPercent = itemLootState.totalMelted > 0 ? (itemLootState.totalMelted / numKills) * 100 : 0;
+    const brokenPercent =
+        itemLootState.totalBroken > 0 ? (itemLootState.totalBroken / itemLootState.numDrops) * 100 : 0;
 
     const sortedIntegrityDrops = [...itemLootState.integrityDrops];
     sortedIntegrityDrops.sort();
@@ -123,6 +127,12 @@ export default function SimulatorLootItemInfobox({
                     <>
                         <span>Melted rate</span>
                         <span className={getClassHighBad(meltedPercent / 40)}>{meltedPercent.toFixed(1)}%</span>
+                    </>
+                )}
+                {showBroken && (
+                    <>
+                        <span>Broken rate</span>
+                        <span className={getClassHighBad(brokenPercent / 5)}>{brokenPercent.toFixed(1)}%</span>
                     </>
                 )}
             </div>

@@ -228,6 +228,7 @@ export type ItemLootState = {
     numDrops: number;
 
     // Stats totaled for all drops
+    totalBroken: number;
     totalCritRemoves: number;
     totalCorruptionPercent: number;
     totalFried: number;

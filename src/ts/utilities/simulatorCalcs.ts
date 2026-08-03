@@ -1331,6 +1331,8 @@ function destroyPart(
     }
 
     botState.destroyedParts.push(part);
+
+    part.integrity = 0;
 }
 
 // Tries to get a bot special state part from an array
@@ -1655,7 +1657,6 @@ function removePartBonusesFromState(state: SimulatorState, part: SimulatorPart) 
         }
     }
 
-    part.integrity = 0;
     updateWeaponsAccuracy(state);
 
     // Subtract energy stats
@@ -1901,6 +1902,10 @@ export function simulateCombat(state: SimulatorState): boolean {
                     // Corrupted bot part corruption increase is: 1 to (10*[corruption]/100)
                     // Also has a hard cap of 15
                     itemLootState.totalCorruptionPercent += randomInt(1, Math.min((10 * corruption) / 100, 15));
+                }
+
+                if (part.broken) {
+                    itemLootState.totalBroken += 1;
                 }
             }
         }
