@@ -94,6 +94,8 @@ export type PowerAmplifierPart = SpecialPart & {
     multiplier: number;
 }
 
+export type PowerPart = SpecialPart;
+
 export type RangedAvoidPart = SpecialPart & {
     avoid: number;
 };
@@ -117,6 +119,7 @@ export type SpecialPartsState = {
     damageReduction: DamageReductionPart[];
     hardlightGenerator: HardlightGeneratorPart[];
     microdissipator: SpecialPart[];
+    power: PowerPart[];
     powerAmplifiers: PowerAmplifierPart[];
     rangedAvoid: RangedAvoidPart[];
     shieldings: Record<ItemSlot | "Core", ShieldingPart[]>;
@@ -151,6 +154,7 @@ export type BotState = {
     def: Bot;
     specialPartsState: SpecialPartsState;
     destroyedParts: SimulatorPart[];
+    disabledParts: SimulatorPart[];
     dormant: boolean;
     dormantTimer: number;
     dormantTimerSet: boolean;

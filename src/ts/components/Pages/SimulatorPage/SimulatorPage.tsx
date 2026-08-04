@@ -373,7 +373,7 @@ function getSimulatorState(
     const behavior = pageState.enemyBehavior || "Stand/Fight";
 
     const dormant = behavior === "Unpowered/Dormant" || behavior === "Unpowered 10 Turns";
-    const defensiveState = getBotSpecialPartState(parts, pageState.damageReduction || "None", dormant);
+    const specialPartsState = getBotSpecialPartState(parts, pageState.damageReduction || "None", dormant);
 
     let runningEvasion = 0;
     if (bot.speed < 100) {
@@ -405,8 +405,8 @@ function getSimulatorState(
         coreRegen: getCoreRegen(bot),
         corruption: 0,
         def: bot,
-        specialPartsState: defensiveState,
         destroyedParts: [],
+        disabledParts: [],
         dormant: dormant,
         dormantTimerSet: false,
         dormantTimerPassed: false,
@@ -430,6 +430,7 @@ function getSimulatorState(
         shieldedCoverage: shieldedCoverage,
         sieged: sieged,
         siegedCoverage: siegedCoverage,
+        specialPartsState: specialPartsState,
         superfortressRegen: bot.name === "Superfortress" ? { nextRegenAttempt: 0 } : undefined,
         support: bot.support,
         totalCoverage: botTotalCoverage,
@@ -1000,8 +1001,10 @@ export default function SimulatorPage() {
             const showBroken = activeChartState.lootState.items.find((item) => item.totalBroken > 0) !== undefined;
             const showCriticals =
                 activeChartState.lootState.items.find((item) => item.totalCritRemoves > 0) !== undefined;
-            const showMeltedDrop = activeChartState.lootState.items.find((item) => item.totalMeltedDrop > 0) !== undefined;
-            const showMeltedHit = activeChartState.lootState.items.find((item) => item.totalMeltedHit > 0) !== undefined;
+            const showMeltedDrop =
+                activeChartState.lootState.items.find((item) => item.totalMeltedDrop > 0) !== undefined;
+            const showMeltedHit =
+                activeChartState.lootState.items.find((item) => item.totalMeltedHit > 0) !== undefined;
 
             lootData = (
                 <div className="loot-grid">

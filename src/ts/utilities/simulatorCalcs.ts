@@ -582,20 +582,14 @@ function applyDamageChunkToPart(
     }
     // Apply detonate crit
     else if (critical === Critical.Detonate) {
-        let i: number;
-        for (i = 0; i < botState.parts.length; i++) {
-            if (botState.parts[i].def.slot === "Power") {
-                break;
-            }
-        }
+        const power = getSpecialStatePart(botState.specialPartsState.power);
 
         // Destroy first engine found (if any)
-        if (i < botState.parts.length) {
-            const engine = botState.parts[i];
-            destroyPart(state, false, i, engine, 0, "Entropic", "Integrity");
-            applyEngineExplosion(state, engine);
+        if (power !== undefined) {
+            destroyPart(state, false, botState.parts.indexOf(power.part), power.part, 0, "Entropic", "Integrity");
+            applyEngineExplosion(state, power.part);
 
-            if (i === partIndex) {
+            if (part === power.part) {
                 // If detonate exploded power we were targeting just exit
                 return;
             }
@@ -888,8 +882,8 @@ function cloneBotState(botState: BotState): BotState {
         coreIntegrity: botState.coreIntegrity,
         corruption: botState.corruption,
         def: botState.def,
-        specialPartsState: undefined as any,
         destroyedParts: [],
+        disabledParts: [],
         dormant: botState.dormant,
         dormantTimer: botState.dormantTimer,
         dormantTimerPassed: botState.dormantTimerPassed,
@@ -933,6 +927,7 @@ function cloneBotState(botState: BotState): BotState {
         shieldedCoverage: botState.shieldedCoverage,
         sieged: botState.sieged,
         siegedCoverage: botState.siegedCoverage,
+        specialPartsState: undefined as any,
         superfortressRegen: botState.superfortressRegen,
         support: botState.support,
         tusToShield: botState.tusToShield,
@@ -1053,6 +1048,7 @@ export function getBotSpecialPartState(
         coolingDevices: [],
         microdissipator: [],
         powerAmplifiers: [],
+        power: [],
         rangedAvoid: [],
         shieldings: {
             Core: [],
@@ -1178,6 +1174,10 @@ export function getBotSpecialPartState(
         } else if (hasActiveSpecialProperty(part.def, !dormant, "ThunderLeg")) {
             // Thunder leg part
             state.thunderLegs.push({ part: part });
+        }
+
+        if (part.def.slot === "Power") {
+            state.power.push({ part: part });
         }
     }
 
@@ -2401,10 +2401,8 @@ function updateTimeBasedStateChanges(state: SimulatorState, volleyTime: number) 
         // Add energy
         botState.energy += botState.def.innateEnergyGeneration;
 
-        for (const part of botState.parts) {
-            if (part.def.slot === "Power") {
-                botState.energy += Math.trunc(powerMultiplier * ((part.def as PowerItem).energyGeneration || 0));
-            }
+        for (const power of getSpecialStateParts(botState.specialPartsState.power)) {
+            botState.energy += Math.trunc(powerMultiplier * ((power.part.def as PowerItem).energyGeneration || 0));
         }
 
         // Subtract energy upkeep
@@ -2420,9 +2418,15 @@ function updateTimeBasedStateChanges(state: SimulatorState, volleyTime: number) 
         simulateBotHeatUpdates(state);
 
         // Decrement disabled turns check
-        for (const part of botState.parts) {
+        for (let i = botState.disabledParts.length - 1; i >= 0; i--) {
+            const part = botState.disabledParts[i];
             if (part.disabledTurns > 0) {
                 part.disabledTurns -= 1;
+            }
+
+            // Remove if no longer present
+            if (part.disabledTurns === 0) {
+                botState.disabledParts.splice(i, 1);
             }
         }
     }
