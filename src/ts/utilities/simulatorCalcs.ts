@@ -53,6 +53,7 @@ import {
 import {
     BotState,
     ExternalDamageReduction,
+    OffensiveState,
     ShieldingPart,
     SimulatorPart,
     SimulatorState,
@@ -465,7 +466,6 @@ function applyHeatTransfer(
     }
 
     botState.heat += heatTransfer;
-    updateWeaponsAccuracy(state);
 
     if (botState.heat >= 250 && !botState.immunities.includes(BotImmunity.Meltdown)) {
         // Check for bot meltdown after the heat is transferred (this is listed as an * item not numbered)
@@ -884,6 +884,12 @@ function applyDamageChunkToPart(
     if (engineExplosion) {
         applyEngineExplosion(state, part);
     }
+}
+
+// Cap accuracy at a minimum of 10% and a maximum of 95% for ranged weapons or 100% for melee
+function capAccuracy(offensiveState: OffensiveState, accuracy: number) {
+    const max = offensiveState.melee ? maxMeleeAccuracy : maxRangedAccuracy;
+    return Math.min(max, Math.max(accuracy, minAccuracy));
 }
 
 // Returns a clone of a bot state
@@ -2195,6 +2201,15 @@ function simulateWeapon(
     }
 
     for (let i = 0; i < weapon.numProjectiles; i++) {
+        let accuracy = weapon.accuracy;
+        if (botState.heat > 0) {
+            // Apply heat bonus, +3% of heat
+            // This is done here instead of updateWeaponsAccuracy as an optimization
+            // It is expensive to do the full set of accuracy updates each time a
+            // projectile transfers heat
+            accuracy = capAccuracy(offensiveState, Math.trunc(botState.heat * 0.03) + accuracy);
+        }
+
         // Check if the attack was a sneak attack or was a hit.
         // Technically sneak attacks can miss, but not under any realistic
         // scenario I could find. Sneak attacks force a base accuracy of 120%,
@@ -2203,7 +2218,7 @@ function simulateWeapon(
         // take into account is -targeting, the lowest of which
         // (CR-A16's Pointy Stick) only has -20%, making this always a
         // guaranteed hit.
-        let hit = (offensiveState.melee && offensiveState.sneakAttack) || randomInt(0, 99) < weapon.accuracy;
+        let hit = (offensiveState.melee && offensiveState.sneakAttack) || randomInt(0, 99) < accuracy;
 
         if (hit && weapon.isMissile) {
             // Check for an antimissile intercept
@@ -2651,11 +2666,6 @@ function updateWeaponsAccuracy(state: SimulatorState) {
         perWeaponBonus -= botState.runningEvasion;
     }
 
-    // Apply heat bonus, +3% of heat
-    if (botState.heat > 0) {
-        perWeaponBonus += Math.trunc(botState.heat * 0.03);
-    }
-
     for (const weapon of state.weapons) {
         if (weapon.guided) {
             // Guided weapons always have 100% accuracy
@@ -2670,8 +2680,6 @@ function updateWeaponsAccuracy(state: SimulatorState) {
             accuracy -= offensiveState.recoil - getRecoil(weapon.def, offensiveState.recoilReduction);
         }
 
-        // Cap accuracy
-        const max = offensiveState.melee ? maxMeleeAccuracy : maxRangedAccuracy;
-        weapon.accuracy = Math.min(max, Math.max(accuracy, minAccuracy));
+        weapon.accuracy = capAccuracy(offensiveState, accuracy);
     }
 }
