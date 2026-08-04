@@ -1090,118 +1090,200 @@ export function getBotSpecialPartState(
     };
 
     for (const part of parts) {
-        if (hasActiveSpecialProperty(part.def, !dormant, AblativeArmorIndex)) {
-            // Mak. Ablative Armor
-            state.ablativeArmors.push({
-                part: part,
-            });
-        }
-        if (hasActiveSpecialProperty(part.def, !dormant, AntimissileChanceIndex)) {
-            // Antimissile system-like part
-            state.antimissile.push({
-                chance: (part.def.specialProperty!.trait as AntimissileChance).chance,
-                part: part,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, CorruptionIgnoreIndex)) {
-            // Dynamic Insulation System-like part
-            state.corruptionIgnore.push({
-                chance: (part.def.specialProperty!.trait as CorruptionIgnore).chance,
-                part: part,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, CorruptionMaximumIndex)) {
-            // EM Disruption part
-            state.corruptionMaximum.push({
-                part: part,
-                maximumCorruption: (part.def.specialProperty!.trait as CorruptionMaximum).amount,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, CorruptionPreventIndex)) {
-            // Corruption Screen part
-            state.corruptionPrevent.push({
-                part: part,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, CorruptionReduceIndex)) {
-            // Corruption Screen part
-            state.corruptionReduce.push({
-                amount: (part.def.specialProperty!.trait as CorruptionReduce).amount,
-                part: part,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, CriticalImmunityIndex)) {
-            // Critical immunity part
-            state.critImmunity.push({
-                part: part,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, CryofiberWebIndex)) {
-            // Cryofiber web part
-            state.cryofiberWebs.push({
-                part: part,
-                sideEffectNegationPercentage: (part.def.specialProperty!.trait as CryofiberWeb)
-                    .sideEffectNegationPercentage,
-                temperatureReduction: (part.def.specialProperty!.trait as CryofiberWeb).temperatureReduction,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, DamageReductionIndex)) {
-            // Force field-like part
-            state.damageReduction.push({
-                ratio: (part.def.specialProperty!.trait as DamageReduction).ratio,
-                reduction: (part.def.specialProperty!.trait as DamageReduction).multiplier,
-                remote: (part.def.specialProperty!.trait as DamageReduction).remote,
-                part: part,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, DamageResistsIndex)) {
-            // Damage type resist part
-            part.resistances = (part.def.specialProperty!.trait as DamageResists).resists;
-        } else if (hasActiveSpecialProperty(part.def, !dormant, HardlightGeneratorIndex)) {
-            // Force field-like part
-            state.hardlightGenerator.push({
-                reduction: (part.def.specialProperty!.trait as HardlightGenerator).amount,
-                part: part,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, HeatDissipationIndex)) {
-            // Cooling device (heat sink/cooling system) part
-            state.coolingDevices.push({
-                part: part,
-                amount: (part.def.specialProperty!.trait as HeatDissipation).dissipation,
-                isHeatSink: (part.def.specialProperty!.trait as HeatDissipation).heatSink,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, InjectorIndex)) {
-            // Coolant injector part
-            state.coolantInjectors.push({
-                part: part,
-                amount: (part.def.specialProperty!.trait as Injector).dissipation,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, MicrodissipatorIndex)) {
-            // Microdissipator part
-            state.microdissipator.push({
-                part: part,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, PowerAmplifierIndex)) {
-            // Power amplifier part
-            state.powerAmplifiers.push({
-                multiplier: (part.def.specialProperty!.trait as PowerAmplifier).percent,
-                part: part,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, RangedAvoidIndex)) {
-            // Phase shifter-like part
-            state.rangedAvoid.push({
-                avoid: (part.def.specialProperty!.trait as RangedAvoid).avoid,
-                part: part,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, ReactionControlSystemIndex)) {
-            // Reaction Control System-like part
-            // Leg/hover/flight determination done at accuracy update time
-            state.avoid.push({
-                chance: (part.def.specialProperty!.trait as ReactionControlSystem).chance,
-                part: part,
-            });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, SelfReductionIndex)) {
-            // Powered armor-like part
-            part.selfDamageReduction = (part.def.specialProperty!.trait as SelfReduction).shielding;
-        } else if (hasActiveSpecialProperty(part.def, !dormant, ShieldingIndex)) {
-            // Shielding-like part
-            const trait = part.def.specialProperty!.trait as Shielding;
-            state.shieldings[trait.slot].push({ reduction: trait.shielding, part: part });
-        } else if (hasActiveSpecialProperty(part.def, !dormant, ThunderLegIndex)) {
-            // Thunder leg part
-            state.thunderLegs.push({ part: part });
+        if (part.def.specialProperty !== undefined) {
+            switch (part.def.specialProperty!.trait.kind) {
+                case AblativeArmorIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, AblativeArmorIndex)) {
+                        // Mak. Ablative Armor
+                        state.ablativeArmors.push({
+                            part: part,
+                        });
+                    }
+                    break;
+
+                case AntimissileChanceIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, AntimissileChanceIndex)) {
+                        // Antimissile system-like part
+                        state.antimissile.push({
+                            chance: (part.def.specialProperty!.trait as AntimissileChance).chance,
+                            part: part,
+                        });
+                    }
+                    break;
+
+                case CorruptionIgnoreIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, CorruptionIgnoreIndex)) {
+                        // Dynamic Insulation System-like part
+                        state.corruptionIgnore.push({
+                            chance: (part.def.specialProperty!.trait as CorruptionIgnore).chance,
+                            part: part,
+                        });
+                    }
+                    break;
+
+                case CorruptionMaximumIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, CorruptionMaximumIndex)) {
+                        // EM Disruption part
+                        state.corruptionMaximum.push({
+                            part: part,
+                            maximumCorruption: (part.def.specialProperty!.trait as CorruptionMaximum).amount,
+                        });
+                    }
+                    break;
+
+                case CorruptionPreventIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, CorruptionPreventIndex)) {
+                        // Corruption Screen part
+                        state.corruptionPrevent.push({
+                            part: part,
+                        });
+                    }
+                    break;
+
+                case CorruptionReduceIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, CorruptionReduceIndex)) {
+                        // Corruption Screen part
+                        state.corruptionReduce.push({
+                            amount: (part.def.specialProperty!.trait as CorruptionReduce).amount,
+                            part: part,
+                        });
+                    }
+                    break;
+
+                case CriticalImmunityIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, CriticalImmunityIndex)) {
+                        // Critical immunity part
+                        state.critImmunity.push({
+                            part: part,
+                        });
+                    }
+                    break;
+
+                case CryofiberWebIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, CryofiberWebIndex)) {
+                        // Cryofiber web part
+                        state.cryofiberWebs.push({
+                            part: part,
+                            sideEffectNegationPercentage: (part.def.specialProperty!.trait as CryofiberWeb)
+                                .sideEffectNegationPercentage,
+                            temperatureReduction: (part.def.specialProperty!.trait as CryofiberWeb)
+                                .temperatureReduction,
+                        });
+                    }
+                    break;
+
+                case DamageReductionIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, DamageReductionIndex)) {
+                        // Force field-like part
+                        state.damageReduction.push({
+                            ratio: (part.def.specialProperty!.trait as DamageReduction).ratio,
+                            reduction: (part.def.specialProperty!.trait as DamageReduction).multiplier,
+                            remote: (part.def.specialProperty!.trait as DamageReduction).remote,
+                            part: part,
+                        });
+                    }
+                    break;
+
+                case DamageResistsIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, DamageResistsIndex)) {
+                        // Damage type resist part
+                        part.resistances = (part.def.specialProperty!.trait as DamageResists).resists;
+                    }
+                    break;
+
+                case HardlightGeneratorIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, HardlightGeneratorIndex)) {
+                        // Force field-like part
+                        state.hardlightGenerator.push({
+                            reduction: (part.def.specialProperty!.trait as HardlightGenerator).amount,
+                            part: part,
+                        });
+                    }
+                    break;
+
+                case HeatDissipationIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, HeatDissipationIndex)) {
+                        // Cooling device (heat sink/cooling system) part
+                        state.coolingDevices.push({
+                            part: part,
+                            amount: (part.def.specialProperty!.trait as HeatDissipation).dissipation,
+                            isHeatSink: (part.def.specialProperty!.trait as HeatDissipation).heatSink,
+                        });
+                    }
+                    break;
+
+                case InjectorIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, InjectorIndex)) {
+                        // Coolant injector part
+                        state.coolantInjectors.push({
+                            part: part,
+                            amount: (part.def.specialProperty!.trait as Injector).dissipation,
+                        });
+                    }
+                    break;
+
+                case MicrodissipatorIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, MicrodissipatorIndex)) {
+                        // Microdissipator part
+                        state.microdissipator.push({
+                            part: part,
+                        });
+                    }
+                    break;
+
+                case PowerAmplifierIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, PowerAmplifierIndex)) {
+                        // Power amplifier part
+                        state.powerAmplifiers.push({
+                            multiplier: (part.def.specialProperty!.trait as PowerAmplifier).percent,
+                            part: part,
+                        });
+                    }
+                    break;
+
+                case RangedAvoidIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, RangedAvoidIndex)) {
+                        // Phase shifter-like part
+                        state.rangedAvoid.push({
+                            avoid: (part.def.specialProperty!.trait as RangedAvoid).avoid,
+                            part: part,
+                        });
+                    }
+                    break;
+
+                case ReactionControlSystemIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, ReactionControlSystemIndex)) {
+                        // Reaction Control System-like part
+                        // Leg/hover/flight determination done at accuracy update time
+                        state.avoid.push({
+                            chance: (part.def.specialProperty!.trait as ReactionControlSystem).chance,
+                            part: part,
+                        });
+                    }
+                    break;
+
+                case SelfReductionIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, SelfReductionIndex)) {
+                        // Powered armor-like part
+                        part.selfDamageReduction = (part.def.specialProperty!.trait as SelfReduction).shielding;
+                    }
+                    break;
+
+                case ShieldingIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, ShieldingIndex)) {
+                        // Shielding-like part
+                        const trait = part.def.specialProperty!.trait as Shielding;
+                        state.shieldings[trait.slot].push({ reduction: trait.shielding, part: part });
+                    }
+                    break;
+
+                case ThunderLegIndex:
+                    if (hasActiveSpecialProperty(part.def, !dormant, ThunderLegIndex)) {
+                        // Thunder leg part
+                        state.thunderLegs.push({ part: part });
+                    }
+                    break;
+            }
         }
 
         if (part.def.slot === "Power") {
