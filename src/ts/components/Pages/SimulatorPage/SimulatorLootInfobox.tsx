@@ -88,7 +88,7 @@ export default function SimulatorLootItemInfobox({
         itemLootState.totalBroken > 0 ? (itemLootState.totalBroken / itemLootState.numDrops) * 100 : 0;
 
     const sortedIntegrityDrops = [...itemLootState.integrityDrops];
-    sortedIntegrityDrops.sort();
+    sortedIntegrityDrops.sort((x, y) => x - y);
     const medianIntegrity =
         sortedIntegrityDrops.length === 0 ? 0 : sortedIntegrityDrops[Math.floor(sortedIntegrityDrops.length / 2)];
 
