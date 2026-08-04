@@ -1406,8 +1406,8 @@ function getSpecialStateParts<T extends SpecialPart>(array: T[]) {
     // Disabled parts will require an array copy to only return those parts
     // that are currently active. If none are required we can return just the
     // array by itself
-    for (const part of array) {
-        if (part.part.disabledTurns > 0) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].part.disabledTurns > 0) {
             needsCopy = true;
             break;
         }
@@ -1864,17 +1864,15 @@ export function simulateCombat(state: SimulatorState): boolean {
                 offensiveState.momentum.current = offensiveState.momentum.bonus;
             }
         } else {
-            let firstWeapon = true;
-            for (const weapon of state.weapons) {
-                end = simulateWeapon(state, weapon, endConditions.projectileEndCondition);
+            for (let i = 0; i < state.weapons.length; i++) {
+                end = simulateWeapon(state, state.weapons[i], endConditions.projectileEndCondition);
 
                 if (end) {
                     break;
                 }
 
-                if (firstWeapon) {
+                if (i == 0) {
                     // Update accuracy after the initial weapon on relevant action #s
-                    firstWeapon = false;
                     state.actionNum += 1;
 
                     if (state.actionNum <= 2) {
@@ -2072,7 +2070,9 @@ function simulateBotHeatUpdates(state: SimulatorState) {
     }
 
     // Apply bot heat generation first
-    for (const part of botState.parts) {
+    for (let i = 0; i < botState.parts.length; i++) {
+        const part = botState.parts[i];
+
         if (part.broken || part.disabledTurns > 0) {
             botState.heat += part.inactiveHeatGeneration;
         } else {
@@ -2153,9 +2153,9 @@ function simulateBotHeatUpdates(state: SimulatorState) {
 
     // Hardcode minimum effect heat value here for slightly simpler code
     if (
-        !botState.immunities.includes(BotImmunity.Meltdown) &&
         botState.heat >= 150 &&
-        randomInt(0, 99) < effectChance
+        randomInt(0, 99) < effectChance &&
+        !botState.immunities.includes(BotImmunity.Meltdown)
     ) {
         // Apply random applicable effect
         // TODO if a heat effect is rolled that is N/A do we reroll or just give up?
@@ -2466,7 +2466,8 @@ function updateTimeBasedStateChanges(state: SimulatorState, volleyTime: number) 
         }
 
         // Subtract energy upkeep
-        for (const part of botState.parts) {
+        for (let j = 0; j < botState.parts.length; j++) {
+            const part = botState.parts[j];
             if (!part.broken && part.disabledTurns === 0) {
                 botState.energy -= part.energyUpkeep;
             }
@@ -2532,13 +2533,13 @@ function updateTimeBasedStateChanges(state: SimulatorState, volleyTime: number) 
     // Apply core regen
     botState.coreIntegrity = Math.min(botState.initialCoreIntegrity, botState.coreIntegrity + coreRegenIntegrity);
 
-    // Apply part regen to existing parts
-    const partRegenIntegrity = botState.partRegen * completedTurns;
-    for (const part of botState.parts) {
-        part.integrity = Math.min(part.integrity + partRegenIntegrity, part.def.integrity);
-    }
-
     if (botState.partRegen > 0) {
+        // Apply part regen to existing parts
+        const partRegenIntegrity = botState.partRegen * completedTurns;
+        for (const part of botState.parts) {
+            part.integrity = Math.min(part.integrity + partRegenIntegrity, part.def.integrity);
+        }
+
         // Apply part regen to destroyed parts
         // Every 10 turns, one part is recreated
         const numRegenTurns = [...Array(completedTurns)]
