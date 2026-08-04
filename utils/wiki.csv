@@ -2664,10 +2664,10 @@ Coupling squads are dispatched if a Garrison has no Relay Couplers in its builti
 
 [[Heading]]Intentional dispatching[[/Heading]]
 Coupling squads can also dispatched if Cogmind uses the [[Spoiler]]Trojan(Restock)[[/Spoiler]] hack. If this is done, log text similar to [[GameText]]ALERT: Unscheduled coupler replacement inbound for Garrison vPm.7n.[[/GameText]] will appear after a few turns. A similar restock effect will occur if Cogmind uses the [[Spoiler]]Force(Eject)[[/Spoiler]] hack.","","","","","","","",""
-"Critical Hits","Other","Critical hits (crits) are effects that have a chance to trigger on any successful hit. The chance and the specific effect depends on the weapon.
+"Critical Hits","Other","Critical hits (crits) are effects that have a chance to trigger on any successful damaging hit from a weapon capable of inflicting critical hits. The chance and the specific effect depends on the weapon. Critical hits can be completely resisted with the use of a [[Graphene Brace]] or [[Spoiler]]partially with a [[Vmp. Brace Plating]][[/Spoiler]], and some of their effects can also be prevented via [[Shieldings|Shielding]].
 
 [[Heading]]Critical Effects[[/Heading]]
-Each type of critical is generally associated with a given type of weapon. But there are exceptions: weapons that have a different type of critical effect or no critical at all.
+Each type of critical effect is generally associated with a given type of weapon, though there are exceptions. For example, [[Force Rifle|Force Rifles]] have a Destroy critical instead of a Burn critical.
 
 [[Table]]
 Name|Effect of critical hit|Usual weapon||
@@ -2689,7 +2689,7 @@ Impale|[[TooltipText]]Impale[[/TooltipText]]|[[Piercing Weapons]]||
 Some bots have resistances that provide immunity to some criticals or some of their effects:
 [[List]]
 Coring: [[TooltipText]]Coring[[/TooltipText]]
-|Meltdown: [[TooltipText]]Meltdown[[/TooltipText]]
+|Meltdown: [[TooltipText]]Meltdown Immunity[[/TooltipText]]
 |[[Spoiler]]Criticals[[/Spoiler]]: [[Spoiler]][[TooltipText]]Criticals[[/TooltipText]][[/Spoiler]]
 |[[Spoiler]]Dismemberment[[/Spoiler]]: [[Spoiler]][[TooltipText]]Dismemberment[[/TooltipText]][[/Spoiler]]
 [[/List]]
@@ -2698,7 +2698,7 @@ Coring: [[TooltipText]]Coring[[/TooltipText]]
 There are several ways to improve critical chance:
 [[List]]
 Simply using more weapons, which increases the chance that a given volley will include a critical hit.
-|Equipping [[Target Analyzers]], which increase each weapon's critical chance, though this does not affect the Meltdown critical or provide critical effects to weapons that do not have them already.
+|Equipping 1-2 [[Target Analyzers]], which increase each weapon's critical chance (half-stack), though this does not affect the Meltdown critical or provide critical effects to weapons that do not have them already.
 |Using weapons with higher critical chances, such as [[Hypervelocity Weapons]]. (But weapons that specialize in critical hits generally do less raw damage.)[[/List]]","","","","","","","",""
 "Crosscalibrator","Part","","","","","","","","",""
 "Cryofiber Web","Part","","","","","","","","",""
