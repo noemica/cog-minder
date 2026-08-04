@@ -658,7 +658,7 @@ function getSimulatorState(
             accuracy: baseAccuracy,
             baseAccuracy: baseAccuracy,
             criticalChance: critical,
-            criticalType: def.criticalType,
+            criticalType: def.criticalIndex,
             damageMin: damageMin,
             damageMax: damageMax,
             damageType: damageType,

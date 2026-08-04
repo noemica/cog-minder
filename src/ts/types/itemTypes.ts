@@ -106,6 +106,35 @@ export enum Critical {
     Sunder = "Sunder",
 }
 
+export const CriticalNoneIndex = 0;
+export const CriticalBlastIndex = 1;
+export const CriticalBurnIndex = 2;
+export const CriticalCorruptIndex = 3;
+export const CriticalDestroyIndex = 4;
+export const CriticalDetonateIndex = 5;
+export const CriticalMeltdownIndex = 6;
+export const CriticalImpaleIndex = 7;
+export const CriticalIntensifyIndex = 8;
+export const CriticalPhaseIndex = 9;
+export const CriticalSmashIndex = 10;
+export const CriticalSeverIndex = 11;
+export const CriticalSunderIndex = 12;
+
+export type CriticalIndex =
+    | typeof CriticalNoneIndex
+    | typeof CriticalBlastIndex
+    | typeof CriticalBurnIndex
+    | typeof CriticalCorruptIndex
+    | typeof CriticalDestroyIndex
+    | typeof CriticalDetonateIndex
+    | typeof CriticalMeltdownIndex
+    | typeof CriticalImpaleIndex
+    | typeof CriticalIntensifyIndex
+    | typeof CriticalPhaseIndex
+    | typeof CriticalSmashIndex
+    | typeof CriticalSeverIndex
+    | typeof CriticalSunderIndex;
+
 export const SpecialPropertyPartActiveActive = false;
 export const SpecialPropertyAlwaysActive = true;
 export type SpecialPropertyActive = typeof SpecialPropertyPartActiveActive | typeof SpecialPropertyAlwaysActive;
@@ -395,6 +424,7 @@ export type WeaponItem = BaseItem & {
     disruption?: number;
     salvage?: number;
     critical?: number;
+    criticalIndex: CriticalIndex;
     criticalType?: Critical;
     criticalString?: string;
     targeting?: number;

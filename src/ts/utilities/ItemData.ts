@@ -2,6 +2,20 @@ import itemCategories from "../../json/item_categories.json";
 import { Spoiler } from "../types/commonTypes";
 import {
     Critical,
+    CriticalBlastIndex,
+    CriticalBurnIndex,
+    CriticalCorruptIndex,
+    CriticalDestroyIndex,
+    CriticalDetonateIndex,
+    CriticalImpaleIndex,
+    CriticalIndex,
+    CriticalIntensifyIndex,
+    CriticalMeltdownIndex,
+    CriticalNoneIndex,
+    CriticalPhaseIndex,
+    CriticalSeverIndex,
+    CriticalSmashIndex,
+    CriticalSunderIndex,
     FabricationStats,
     Item,
     ItemCategory,
@@ -274,6 +288,57 @@ export class ItemData {
                         }
                     }
 
+                    let criticalIndex: CriticalIndex = CriticalNoneIndex;
+                    switch (criticalType) {
+                        case Critical.Blast:
+                            criticalIndex = CriticalBlastIndex;
+                            break;
+
+                        case Critical.Burn:
+                            criticalIndex = CriticalBurnIndex;
+                            break;
+
+                        case Critical.Corrupt:
+                            criticalIndex = CriticalCorruptIndex;
+                            break;
+
+                        case Critical.Destroy:
+                            criticalIndex = CriticalDestroyIndex;
+                            break;
+
+                        case Critical.Detonate:
+                            criticalIndex = CriticalDetonateIndex;
+                            break;
+
+                        case Critical.Impale:
+                            criticalIndex = CriticalImpaleIndex;
+                            break;
+
+                        case Critical.Intensify:
+                            criticalIndex = CriticalIntensifyIndex;
+                            break;
+
+                        case Critical.Meltdown:
+                            criticalIndex = CriticalMeltdownIndex;
+                            break;
+
+                        case Critical.Phase:
+                            criticalIndex = CriticalPhaseIndex;
+                            break;
+
+                        case Critical.Sever:
+                            criticalIndex = CriticalSeverIndex;
+                            break;
+
+                        case Critical.Smash:
+                            criticalIndex = CriticalSmashIndex;
+                            break;
+
+                        case Critical.Sunder:
+                            criticalIndex = CriticalSunderIndex;
+                            break;
+                    }
+
                     let minChunks: number | undefined = undefined;
                     let maxChunks: number | undefined = undefined;
 
@@ -321,6 +386,7 @@ export class ItemData {
                         mass: parseIntOrUndefined(item.Mass) ?? 0,
                         specialTrait: item["Special Trait"],
                         critical: critical,
+                        criticalIndex: criticalIndex,
                         criticalType: criticalType,
                         criticalString: item.Critical,
                         delay: parseIntOrUndefined(item.Delay),

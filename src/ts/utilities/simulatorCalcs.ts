@@ -12,7 +12,21 @@ import {
     CorruptionReduce,
     CorruptionReduceIndex,
     Critical,
+    CriticalBlastIndex,
+    CriticalBurnIndex,
+    CriticalCorruptIndex,
+    CriticalDestroyIndex,
+    CriticalDetonateIndex,
     CriticalImmunityIndex,
+    CriticalImpaleIndex,
+    CriticalIndex,
+    CriticalIntensifyIndex,
+    CriticalMeltdownIndex,
+    CriticalNoneIndex,
+    CriticalPhaseIndex,
+    CriticalSeverIndex,
+    CriticalSmashIndex,
+    CriticalSunderIndex,
     CryofiberWeb,
     CryofiberWebIndex,
     DamageReduction,
@@ -192,7 +206,7 @@ const heatTransferTypes: HeatTransfer[] = [
 type DamageChunk = {
     armorAnalyzed: boolean;
     coreBonus: number;
-    critical: Critical | undefined;
+    critical: CriticalIndex;
     damage: number;
     damageType: DamageType;
     disruptChance: number;
@@ -248,7 +262,7 @@ function applyDamage(
     botState: BotState,
     totalDamage: number,
     numChunks: number,
-    critical: Critical | undefined,
+    critical: CriticalIndex,
     isAoe: boolean,
     armorAnalyzed: boolean,
     disruptChance: number,
@@ -275,7 +289,7 @@ function applyDamage(
             // Aoe damage ignores a lot of specific mechanics
             chunks.push({
                 armorAnalyzed: false,
-                critical: undefined,
+                critical: CriticalNoneIndex,
                 coreBonus: 0,
                 damage: damage,
                 damageType: damageType,
@@ -345,7 +359,7 @@ function applyDamage(
             // Check for corruption ignore chance
             const corruptionIgnorePart = getSpecialStatePart(botState.specialPartsState.corruptionIgnore);
             const corruptCritical =
-                critical === Critical.Corrupt && !botState.immunities.includes(BotImmunity.Criticals);
+                critical === CriticalCorruptIndex && !botState.immunities.includes(BotImmunity.Criticals);
 
             if (corruptionIgnorePart === undefined || randomInt(0, 99) >= corruptionIgnorePart.chance) {
                 // Corruption critical always applies maximum 1.5 critical modifier
@@ -363,7 +377,7 @@ function applyDamageChunk(
     coreBonus: number,
     damage: number,
     damageType: DamageType,
-    critical: Critical | undefined,
+    critical: CriticalIndex,
     canOverflow: boolean,
     isOverflow: boolean,
     forceCore: boolean,
@@ -432,7 +446,7 @@ function applyHeatTransfer(
     heatTransferValues: HeatTransferValues | undefined,
     originalDamage: number,
     damageForHeatTransfer: number,
-    critical: Critical | undefined,
+    critical: CriticalIndex,
     part: SimulatorPart | undefined,
     partIndex: number,
 ) {
@@ -451,7 +465,7 @@ function applyHeatTransfer(
         // Reduce heat by ratio of damage reduced via force field or similar
         heatTransfer = Math.trunc((heatTransfer * damageForHeatTransfer) / originalDamage);
     }
-    if (critical === Critical.Burn && !botState.immunities.includes(BotImmunity.Criticals)) {
+    if (critical === CriticalBurnIndex && !botState.immunities.includes(BotImmunity.Criticals)) {
         // The tripling effect happens after the reduction
         heatTransfer *= 3;
     }
@@ -494,7 +508,7 @@ function applyUnresistedDamageChunkToPart(
         state,
         damage,
         "Phasic",
-        undefined,
+        CriticalNoneIndex,
         0,
         undefined,
         0,
@@ -511,7 +525,7 @@ function applyDamageChunkToPart(
     state: SimulatorState,
     damage: number,
     damageType: DamageType,
-    critical: Critical | undefined,
+    critical: CriticalIndex,
     disruptChance: number,
     heatTransferValues: HeatTransferValues | undefined,
     spectrum: number,
@@ -523,12 +537,12 @@ function applyDamageChunkToPart(
     partIndex: number,
 ) {
     const botState = state.botState;
-    function doesCriticalDestroyPart(critical: Critical | undefined) {
+    function doesCriticalDestroyPart(critical: CriticalIndex) {
         if (critical === undefined) {
             return false;
         }
 
-        if (critical === Critical.Destroy || critical === Critical.Smash) {
+        if (critical === CriticalDestroyIndex || critical === CriticalSmashIndex) {
             return true;
         }
 
@@ -576,17 +590,17 @@ function applyDamageChunkToPart(
     const damageForHeatTransfer = damage;
 
     // Remove all criticals from totally immune bots
-    if (critical !== undefined) {
+    if (critical !== CriticalNoneIndex) {
         if (
             botState.immunities.includes(BotImmunity.Criticals) ||
             getSpecialStatePart(botState.specialPartsState.critImmunity) !== undefined
         ) {
-            critical = undefined;
+            critical = CriticalNoneIndex;
         }
     }
 
     // Apply meltdown as immediate death unless immune
-    if (critical === Critical.Meltdown && !botState.immunities.includes(BotImmunity.Meltdown)) {
+    if (critical === CriticalMeltdownIndex && !botState.immunities.includes(BotImmunity.Meltdown)) {
         botState.coreIntegrity = 0;
 
         // Meltdown sets to a minimum of 300 heat
@@ -594,16 +608,16 @@ function applyDamageChunkToPart(
         return;
     }
     // Apply intensify damage doubling here
-    else if (critical === Critical.Intensify) {
+    else if (critical === CriticalIntensifyIndex) {
         damage *= 2.0;
     }
     // Apply impale damage doubling and add delay of 1 turn
-    else if (critical === Critical.Impale) {
+    else if (critical === CriticalImpaleIndex) {
         damage *= 2.0;
         state.tus += 100;
     }
     // Apply detonate crit
-    else if (critical === Critical.Detonate) {
+    else if (critical === CriticalDetonateIndex) {
         const power = getSpecialStatePart(botState.specialPartsState.power);
 
         // Destroy first engine found (if any)
@@ -619,17 +633,17 @@ function applyDamageChunkToPart(
     }
     // Remove sever/sunder crit if target bot is immune
     else if (
-        (critical === Critical.Sever || critical === Critical.Sunder) &&
+        (critical === CriticalSeverIndex || critical === CriticalSunderIndex) &&
         botState.immunities.includes(BotImmunity.Dismemberment)
     ) {
-        critical = undefined;
+        critical = CriticalNoneIndex;
     }
     // Remove phase crit if bot is coring immune or has core shielding
     else if (
-        critical === Critical.Phase &&
+        critical === CriticalPhaseIndex &&
         (botState.immunities.includes(BotImmunity.Coring) || getShieldingType(botState, "Core") !== undefined)
     ) {
-        critical = undefined;
+        critical = CriticalNoneIndex;
     }
 
     // Handle core hit
@@ -639,14 +653,14 @@ function applyDamageChunkToPart(
 
         // Remove crit types that apply to the core if immunity or shielding (14)
         if (
-            (critical === Critical.Destroy ||
-                critical == Critical.Phase ||
-                critical == Critical.Smash ||
-                critical == Critical.Sunder ||
-                critical == Critical.Sever) &&
+            (critical === CriticalDestroyIndex ||
+                critical === CriticalPhaseIndex ||
+                critical === CriticalSmashIndex ||
+                critical === CriticalSunderIndex ||
+                critical === CriticalSeverIndex) &&
             (botState.immunities.includes(BotImmunity.Coring) || shielding !== undefined)
         ) {
-            critical = undefined;
+            critical = CriticalNoneIndex;
         }
 
         if (shielding != undefined) {
@@ -664,7 +678,7 @@ function applyDamageChunkToPart(
             damage = damage - shieldingDamage;
         }
 
-        if (critical === Critical.Destroy || critical === Critical.Smash) {
+        if (critical === CriticalDestroyIndex || critical === CriticalSmashIndex) {
             botState.coreIntegrity = 0;
         } else {
             botState.coreIntegrity -= damage;
@@ -690,8 +704,8 @@ function applyDamageChunkToPart(
 
         // Apply relevant criticals not yet applied
         // Apply sever/sunder crits to other parts
-        if (critical === Critical.Sever || critical === Critical.Sunder) {
-            const numParts = critical === Critical.Sunder ? randomInt(1, 2) : 1;
+        if (critical === CriticalSeverIndex || critical === CriticalSunderIndex) {
+            const numParts = critical === CriticalSunderIndex ? randomInt(1, 2) : 1;
             for (let i = 0; i < numParts; i++) {
                 const { part, partIndex } = getRandomNonCorePart(botState, undefined);
                 if (part === undefined || getShieldingType(botState, part.def.slot) !== undefined) {
@@ -711,7 +725,7 @@ function applyDamageChunkToPart(
             }
 
             return;
-        } else if (critical === Critical.Blast) {
+        } else if (critical === CriticalBlastIndex) {
             const { part, partIndex } = getRandomNonCorePart(botState, undefined);
             if (part === undefined || getShieldingType(botState, part.def.slot) !== undefined) {
                 // Shielding protects against blast completely
@@ -731,7 +745,7 @@ function applyDamageChunkToPart(
                 // Multi-slot items don't get blasted off but still take damage
                 applyUnresistedDamageChunkToPart(state, damage, part, partIndex);
             }
-        } else if (critical === Critical.Phase) {
+        } else if (critical === CriticalPhaseIndex) {
             // Apply phasing damage to another random part
             const { part, partIndex } = getRandomNonCorePart(botState, undefined);
             applyUnresistedDamageChunkToPart(state, damage, part, partIndex);
@@ -747,7 +761,7 @@ function applyDamageChunkToPart(
 
     // Check for crit immunity or shielding (14)
     if (shielding !== undefined && doesCriticalDestroyPart(critical)) {
-        critical = undefined;
+        critical = CriticalNoneIndex;
     }
 
     // Check for spectrum engine explosion (16)
@@ -759,7 +773,7 @@ function applyDamageChunkToPart(
         (doesCriticalDestroyPart(critical) && part.protection) ||
         (botState.sieged && part.def.type === "Treads" && (part.def as PropulsionItem).siege !== undefined)
     ) {
-        critical = undefined;
+        critical = CriticalNoneIndex;
         damage = Math.trunc(1.2 * damage);
     }
 
@@ -825,7 +839,7 @@ function applyDamageChunkToPart(
     // parts but can affect protection
     if (
         !destroyed &&
-        (critical === Critical.Sever || critical === Critical.Sunder) &&
+        (critical === CriticalSeverIndex || critical === CriticalSunderIndex) &&
         part.def.size === 1 &&
         shielding === undefined
     ) {
@@ -837,7 +851,7 @@ function applyDamageChunkToPart(
     if (destroyed) {
         // Part destroyed, remove part and update bot state
         // Smash critical destroys the part instantly and deals full overflow damage
-        const overflowDamage = critical === Critical.Smash ? damage : damage - part.integrity;
+        const overflowDamage = critical === CriticalSmashIndex ? damage : damage - part.integrity;
         destroyPart(state, canOverflow, partIndex, part, overflowDamage, damageType, "Integrity");
     } else {
         // Part not destroyed, just reduce integrity
@@ -846,7 +860,7 @@ function applyDamageChunkToPart(
 
     // Apply relevant criticals not yet applied
     const oldIndex = partIndex;
-    if (critical === Critical.Blast) {
+    if (critical === CriticalBlastIndex) {
         const { part, partIndex } = getRandomNonCorePart(botState, destroyed ? oldIndex : undefined);
         if (part === undefined || shielding !== undefined) {
             // Shielding protects against blast completely
@@ -866,13 +880,13 @@ function applyDamageChunkToPart(
             // Multi-slot items don't get blasted off but still take damage
             applyUnresistedDamageChunkToPart(state, damage, part, partIndex);
         }
-    } else if (critical === Critical.Phase) {
+    } else if (critical === CriticalPhaseIndex) {
         // Apply phasing damage to the core
         applyDamageChunkToPart(
             state,
             damage,
             "Phasic",
-            undefined,
+            CriticalNoneIndex,
             0,
             undefined,
             0,
@@ -994,7 +1008,7 @@ function applyEngineExplosion(state: SimulatorState, part: SimulatorPart) {
                 0,
                 chunkDamage,
                 engine.explosionType!,
-                undefined,
+                CriticalNoneIndex,
                 true,
                 false,
                 false,
@@ -1420,7 +1434,7 @@ function destroyPart(
             0,
             overflowDamage,
             damageType,
-            undefined,
+            CriticalNoneIndex,
             true,
             true,
             false,
@@ -2282,7 +2296,7 @@ function simulateWeapon(
                 botState,
                 damage,
                 1,
-                undefined,
+                CriticalNoneIndex,
                 false,
                 false,
                 0,
@@ -2432,7 +2446,7 @@ function simulateWeapon(
                     botState,
                     damage,
                     1,
-                    didCritical ? weapon.criticalType : undefined,
+                    didCritical ? weapon.criticalType : CriticalNoneIndex,
                     false,
                     armorAnalyzed,
                     weapon.disruption,
@@ -2488,7 +2502,7 @@ function simulateWeapon(
                     botState,
                     damage,
                     numChunks,
-                    undefined,
+                    CriticalNoneIndex,
                     true,
                     false,
                     weapon.explosionDisruption,

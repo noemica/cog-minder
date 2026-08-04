@@ -1,5 +1,5 @@
 import { Bot, BotImmunity, BotResistances } from "./botTypes";
-import { Critical, DamageType, HeatTransfer, Item, ItemSlot, WeaponItem } from "./itemTypes";
+import { CriticalIndex, DamageType, HeatTransfer, Item, ItemSlot, WeaponItem } from "./itemTypes";
 
 export type ExternalDamageReduction =
     | "None"
@@ -190,7 +190,7 @@ export type SimulatorWeapon = {
     accuracy: number;
     baseAccuracy: number;
     criticalChance: number;
-    criticalType?: Critical;
+    criticalType: CriticalIndex;
     damageMin: number;
     damageMax: number;
     damageType?: DamageType;
