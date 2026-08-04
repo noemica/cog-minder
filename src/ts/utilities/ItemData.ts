@@ -458,7 +458,8 @@ export class ItemData {
 
     public getAllItemsSorted() {
         const itemNames = Object.keys(this.itemData);
-        itemNames.sort();
+        const collator = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
+        itemNames.sort((a, b) => collator.compare(a, b));
         return itemNames.map((itemName) => this.itemData[itemName]);
     }
 
