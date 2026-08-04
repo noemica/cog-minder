@@ -4,21 +4,34 @@ import { Bot, BotCategory, BotPart, ItemOption, JsonBot, JsonBotExtraData } from
 import {
     Actuator,
     ActuatorArray,
+    ActuatorArrayIndex,
+    ActuatorIndex,
+    CryofiberWebIndex,
     EnergyStorage,
+    EnergyStorageIndex,
     FabricationStats,
     HeatDissipation,
+    HeatDissipationIndex,
     Injector,
+    InjectorIndex,
     Item,
     ItemType,
     ItemWithUpkeep,
     Kinecellerator,
+    KinecelleratorIndex,
     MassSupport,
+    MassSupportIndex,
     MatterStorage,
+    MatterStorageIndex,
     MeleeAnalysis,
+    MeleeAnalysisIndex,
     ParticleCharging,
+    ParticleChargingIndex,
     PowerItem,
     PropulsionItem,
+    QuantumCapacitorIndex,
     RangedWeaponCycling,
+    RangedWeaponCyclingIndex,
     WeaponItem,
 } from "../types/itemTypes";
 import { ItemData } from "./ItemData";
@@ -187,7 +200,7 @@ export class BotData {
             for (const item of components) {
                 if (item.slot === "Power") {
                     energyStorage += (item as PowerItem).energyStorage || 0;
-                } else if (hasActiveSpecialProperty(item, true, "EnergyStorage")) {
+                } else if (hasActiveSpecialProperty(item, true, EnergyStorageIndex)) {
                     energyStorage += (item.specialProperty!.trait as EnergyStorage).storage;
                 }
             }
@@ -196,7 +209,7 @@ export class BotData {
             const innateMatterStorage = parseIntOrDefault(bot["Innate Matter Storage"], 0);
             let matterStorage = innateMatterStorage;
             for (const item of components) {
-                if (hasActiveSpecialProperty(item, true, "MatterStorage")) {
+                if (hasActiveSpecialProperty(item, true, MatterStorageIndex)) {
                     matterStorage += (item.specialProperty!.trait as MatterStorage).storage;
                 }
             }
@@ -213,7 +226,7 @@ export class BotData {
                         }
 
                         return (item as PropulsionItem).support;
-                    } else if (hasActiveSpecialProperty(item, true, "MassSupport")) {
+                    } else if (hasActiveSpecialProperty(item, true, MassSupportIndex)) {
                         return (item.specialProperty!.trait as MassSupport).support;
                     }
 
@@ -224,7 +237,7 @@ export class BotData {
             // Calculate injector dissipation
             let injectorDissipation = 0;
             for (const item of components) {
-                if (hasActiveSpecialProperty(item, true, "Injector")) {
+                if (hasActiveSpecialProperty(item, true, InjectorIndex)) {
                     injectorDissipation += (item.specialProperty!.trait as Injector).dissipation;
                 }
             }
@@ -250,11 +263,11 @@ export class BotData {
 
             let innateHeatDissipation = heatDissipation;
             const hasCryofiberWeb =
-                components.find((item) => hasActiveSpecialProperty(item, true, "CryofiberWeb")) != undefined;
+                components.find((item) => hasActiveSpecialProperty(item, true, CryofiberWebIndex)) != undefined;
 
             // Calculate innate dissipation by subtracting all dissipation provided by parts
             for (const item of components) {
-                if (hasActiveSpecialProperty(item, true, "HeatDissipation")) {
+                if (hasActiveSpecialProperty(item, true, HeatDissipationIndex)) {
                     let dissipation = (item.specialProperty!.trait as HeatDissipation).dissipation;
 
                     if (hasCryofiberWeb && (item.specialProperty!.trait as HeatDissipation).heatSink) {
@@ -396,14 +409,14 @@ export class BotData {
 
         const actuatorArrayBonus = Math.max(
             ...components
-                .filter((p) => hasActiveSpecialProperty(p, true, "ActuatorArray"))
+                .filter((p) => hasActiveSpecialProperty(p, true, ActuatorArrayIndex))
                 .map((p) => (p.specialProperty!.trait as ActuatorArray).amount),
             0,
         );
 
         const kinecelleratorBoost = Math.max(
             ...components
-                .filter((p) => hasActiveSpecialProperty(p, true, "Kinecellerator"))
+                .filter((p) => hasActiveSpecialProperty(p, true, KinecelleratorIndex))
                 .map((p) => (p.specialProperty!.trait as Kinecellerator).amount),
             0,
         );
@@ -411,13 +424,13 @@ export class BotData {
         // TODO technically this is half stack but no bot uses >1 charger
         const particleChargerBoost = Math.max(
             ...components
-                .filter((p) => hasActiveSpecialProperty(p, true, "ParticleCharging"))
+                .filter((p) => hasActiveSpecialProperty(p, true, ParticleChargingIndex))
                 .map((p) => (p.specialProperty!.trait as ParticleCharging).percent),
             0,
         );
 
         const meleeAnalysisDamage = components
-            .filter((p) => hasActiveSpecialProperty(p, true, "MeleeAnalysis"))
+            .filter((p) => hasActiveSpecialProperty(p, true, MeleeAnalysisIndex))
             .map((p) => (p.specialProperty!.trait as MeleeAnalysis).minDamage)
             .reduce(sum, 0);
 
@@ -510,7 +523,7 @@ export class BotData {
             const actuating = Math.max(
                 1 -
                     components
-                        .filter((p) => hasActiveSpecialProperty(p, true, "Actuator"))
+                        .filter((p) => hasActiveSpecialProperty(p, true, ActuatorIndex))
                         .map((p) => (p.specialProperty!.trait as Actuator).amount)
                         .reduce(sum, 0),
                 0.5,
@@ -522,16 +535,16 @@ export class BotData {
             let cycling = Math.max(
                 1 -
                     components
-                        .filter((p) => hasActiveSpecialProperty(p, true, "RangedWeaponCycling"))
+                        .filter((p) => hasActiveSpecialProperty(p, true, RangedWeaponCyclingIndex))
                         .map((p) => (p.specialProperty!.trait as RangedWeaponCycling).amount)
                         .reduce(sum, 0),
                 0.7,
             );
 
             // Launcher Loader/Quantum Capacitor override to 50%, Mni. QC to 60%
-            const qcap = components.find((p) => hasActiveSpecialProperty(p, true, "QuantumCapacitor"));
-            const miniQcap = components.find((p) => hasActiveSpecialProperty(p, true, "QuantumCapacitor"));
-            const launcherLoader = components.find((p) => hasActiveSpecialProperty(p, true, "QuantumCapacitor"));
+            const qcap = components.find((p) => hasActiveSpecialProperty(p, true, QuantumCapacitorIndex));
+            const miniQcap = components.find((p) => hasActiveSpecialProperty(p, true, QuantumCapacitorIndex));
+            const launcherLoader = components.find((p) => hasActiveSpecialProperty(p, true, QuantumCapacitorIndex));
 
             if (
                 (qcap !== undefined &&

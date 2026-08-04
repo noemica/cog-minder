@@ -5,22 +5,39 @@ import { useLocation, useSearch } from "wouter";
 import { Spoiler } from "../../../types/commonTypes";
 import {
     Actuator,
+    ActuatorIndex,
+    AirborneSpeedDoublingIndex,
     BaseItem,
+    CryofiberWebIndex,
     EnergyFilter,
+    EnergyFilterIndex,
     EnergyStorage,
+    EnergyStorageIndex,
     HeatDissipation,
+    HeatDissipationIndex,
     Item,
     ItemSlot,
     ItemType,
     ItemWithUpkeep,
+    LauncherLoaderIndex,
     MassSupport,
+    MassSupportIndex,
+    MetafiberIndex,
+    MniQuantumCapacitorIndex,
     PowerAmplifier,
+    PowerAmplifierIndex,
     PowerItem,
     PropulsionItem,
+    QuantumCapacitorIndex,
     RangedWeaponCycling,
+    RangedWeaponCyclingIndex,
     RecoilReduction,
+    RecoilReductionIndex,
+    RocketBoosterIndex,
+    TurboventsIndex,
     WeaponItem,
     WeaponRegen,
+    WeaponRegenIndex,
 } from "../../../types/itemTypes";
 import { ItemData } from "../../../utilities/ItemData";
 import {
@@ -274,7 +291,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
             return gen;
         } else if ((p.active && p.part.slot === "Propulsion") || p.part.slot === "Utility") {
             return -((p.part as ItemWithUpkeep).energyUpkeep ?? 0);
-        } else if (hasActiveSpecialProperty(p.part, p.abilityActive, "WeaponRegen")) {
+        } else if (hasActiveSpecialProperty(p.part, p.abilityActive, WeaponRegenIndex)) {
             // Weapon regen ability turns energy into weapon integrity
             return -(p.part.specialProperty!.trait as WeaponRegen).energyPerTurn;
         }
@@ -314,7 +331,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
 
     function getHeatPerTurn(p: Part, hasCryofiberWeb: boolean) {
         // Return negative value for heat dissipation, positive for generation
-        if (hasActiveSpecialProperty(p.part, p.active, "HeatDissipation")) {
+        if (hasActiveSpecialProperty(p.part, p.active, HeatDissipationIndex)) {
             let dissipation = -(p.part.specialProperty!.trait as HeatDissipation).dissipation;
 
             if (hasCryofiberWeb && (p.part.specialProperty!.trait as HeatDissipation).heatSink) {
@@ -346,7 +363,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         // Return negative value for support, positive for mass used
         if (p.active && p.part.slot === "Propulsion") {
             return -(p.part as PropulsionItem).support * num;
-        } else if (hasActiveSpecialProperty(p.part, p.active, "MassSupport")) {
+        } else if (hasActiveSpecialProperty(p.part, p.active, MassSupportIndex)) {
             // Mass support doesn't stack so only count 1
             return -(p.part.specialProperty!.trait as MassSupport).support;
         } else {
@@ -443,7 +460,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
 
     // Add mass support utils
     // First, disable all but the highest mass support utility
-    const massSupportUtils = parts.filter((p) => hasActiveSpecialProperty(p.part, p.abilityActive, "MassSupport"));
+    const massSupportUtils = parts.filter((p) => hasActiveSpecialProperty(p.part, p.abilityActive, MassSupportIndex));
     massSupportUtils
         .sort(
             (a, b) =>
@@ -491,7 +508,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
 
     // Then apply speed doubling like metafield before penalties...
     if (
-        parts.find((p) => hasActiveSpecialProperty(p.part, p.active, "AirborneSpeedDoubling")) !== undefined &&
+        parts.find((p) => hasActiveSpecialProperty(p.part, p.active, AirborneSpeedDoublingIndex)) !== undefined &&
         (activeProp.length === 0 || activeProp[0].type === "Hover Unit" || activeProp[0].type === "Flight Unit")
     ) {
         tusPerMove /= 2;
@@ -517,13 +534,13 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
 
     // Apply metafiber and rocket booster after penalties
     if (
-        parts.find((p) => hasActiveSpecialProperty(p.part, p.active, "Metafiber")) !== undefined &&
+        parts.find((p) => hasActiveSpecialProperty(p.part, p.active, MetafiberIndex)) !== undefined &&
         activeProp.length > 0 &&
         activeProp[0].type === "Leg"
     ) {
         tusPerMove = Math.trunc((tusPerMove * 1) / 1.2);
     } else if (
-        parts.find((p) => hasActiveSpecialProperty(p.part, p.active, "RocketBooster")) !== undefined &&
+        parts.find((p) => hasActiveSpecialProperty(p.part, p.active, RocketBoosterIndex)) !== undefined &&
         activeProp.length > 0 &&
         activeProp[0].type === "Wheel"
     ) {
@@ -557,7 +574,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     let tusPerVolley: number;
     if (isMelee) {
         // Assumes that all actuators stack up to 50%
-        const actuatorParts = parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "Actuator"));
+        const actuatorParts = parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, ActuatorIndex));
         let actuatorModifier = 0;
         actuatorParts.forEach(
             (p) => (actuatorModifier += (p.part.specialProperty!.trait as Actuator).amount * p.number),
@@ -569,25 +586,27 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         let cyclerModifier = 0;
         // Semi-hacky, assumes that 50% cyclers are no-stack and all others stack up to 30%
         if (
-            parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "QuantumCapacitor")).length > 0 &&
+            parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, QuantumCapacitorIndex)).length > 0 &&
             activeWeapons.length === 1 &&
             (activeWeapons[0].type === "Energy Gun" || activeWeapons[0].type === "Energy Cannon")
         ) {
             cyclerModifier = 0.5;
         } else if (
-            parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "MniQuantumCapacitor")).length > 0 &&
+            parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, MniQuantumCapacitorIndex)).length > 0 &&
             activeWeapons.length === 1 &&
             (activeWeapons[0].type === "Energy Gun" || activeWeapons[0].type === "Energy Cannon")
         ) {
             cyclerModifier = 0.6;
         } else if (
-            parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "LauncherLoader")).length > 0 &&
+            parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, LauncherLoaderIndex)).length > 0 &&
             activeWeapons.length === 1 &&
             activeWeapons[0].type === "Launcher"
         ) {
             cyclerModifier = 0.5;
         } else {
-            const cyclerParts = parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "RangedWeaponCycling"));
+            const cyclerParts = parts.filter((p) =>
+                hasActiveSpecialProperty(p.part, p.active, RangedWeaponCyclingIndex),
+            );
             cyclerParts.forEach(
                 (p) => (cyclerModifier += (p.part.specialProperty!.trait as RangedWeaponCycling).amount),
             );
@@ -602,7 +621,8 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
 
     const innateEnergyGen = parseIntOrDefault(pageState.bonusEnergyGen, 0);
     const innateHeatDissipation = parseIntOrDefault(pageState.bonusHeatDissipation, 0);
-    const hasCryofiberWeb = parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, "CryofiberWeb")).length > 0;
+    const hasCryofiberWeb =
+        parts.filter((p) => hasActiveSpecialProperty(p.part, p.active, CryofiberWebIndex)).length > 0;
 
     // Core is additional 100 coverage
     const totalCoverage = parts.map((p) => (p.part.coverage ?? 0) * p.number).reduce(sum, 0) + 100;
@@ -633,14 +653,14 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
     // Get energy bonuses
     let powerAmplifierBonus = 1;
     parts.forEach((p) => {
-        if (hasActiveSpecialProperty(p.part, p.active, "PowerAmplifier")) {
+        if (hasActiveSpecialProperty(p.part, p.active, PowerAmplifierIndex)) {
             powerAmplifierBonus += (p.part.specialProperty!.trait as PowerAmplifier).percent * p.number;
         }
     });
 
     const filterValues: number[] = [];
     parts.forEach((p) => {
-        if (hasActiveSpecialProperty(p.part, p.active, "EnergyFilter")) {
+        if (hasActiveSpecialProperty(p.part, p.active, EnergyFilterIndex)) {
             for (let i = 0; i < p.number; i++) {
                 filterValues.push((p.part.specialProperty!.trait as EnergyFilter).percent);
             }
@@ -651,7 +671,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
 
     // Apply turbovents for multi-weapon volleys
     const hasTurbovents =
-        parts.find((p) => hasActiveSpecialProperty(p.part, p.active, "Turbovents")) !== undefined &&
+        parts.find((p) => hasActiveSpecialProperty(p.part, p.active, TurboventsIndex)) !== undefined &&
         activeWeapons.length >= 2;
 
     let totalRecoilReduction = activeProp
@@ -659,7 +679,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         .map((p) => p.size)
         .reduce(sum, 0);
     totalRecoilReduction += parts
-        .filter((p) => p.active && hasActiveSpecialProperty(p.part, p.abilityActive, "RecoilReduction"))
+        .filter((p) => p.active && hasActiveSpecialProperty(p.part, p.abilityActive, RecoilReductionIndex))
         .map((p) => p.number * (p.part.specialProperty!.trait as RecoilReduction).reduction)
         .reduce(sum, 0);
 
@@ -740,7 +760,7 @@ function calculatePartsState(pageState: BuildPageState): TotalPartsState {
         100 +
         parts
             .map((p) => {
-                if (hasActiveSpecialProperty(p.part, p.active, "EnergyStorage")) {
+                if (hasActiveSpecialProperty(p.part, p.active, EnergyStorageIndex)) {
                     return (p.part.specialProperty!.trait as EnergyStorage).storage * p.number;
                 } else if (p.active && p.part.slot === "Power") {
                     return ((p.part as PowerItem).energyStorage ?? 0) * p.number;

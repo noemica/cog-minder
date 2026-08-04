@@ -1,7 +1,7 @@
 // Common code
 import { Bot } from "../types/botTypes";
 import { Spoiler } from "../types/commonTypes";
-import { BaseItem, Item, ItemType, SpecialPropertyTypeName } from "../types/itemTypes";
+import { BaseItem, Item, ItemType, SpecialPropertyTypeIndex } from "../types/itemTypes";
 
 // A special bot name to image name map for special/unique bots
 const botNameImageMap = new Map<string, string>([
@@ -427,7 +427,7 @@ export function getSpoilersValue<T>(spoiler: Spoiler, noSpoilerValue: T, spoiler
 export function hasActiveSpecialProperty(
     part: Item,
     partActive: boolean,
-    propertyType: SpecialPropertyTypeName,
+    propertyType: SpecialPropertyTypeIndex,
 ): boolean {
     if (part.specialProperty === undefined) {
         return false;

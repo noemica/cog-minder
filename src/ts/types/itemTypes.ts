@@ -108,51 +108,144 @@ export enum Critical {
 
 export type SpecialPropertyActive = "Always" | "Part Active";
 
-export type AblativeArmor = { kind: "AblativeArmor" };
-export type Actuator = { kind: "Actuator"; amount: number };
-export type ActuatorArray = { kind: "ActuatorArray"; amount: number };
-export type AirborneSpeedDoubling = { kind: "AirborneSpeedDoubling" };
-export type AntimissileChance = { kind: "AntimissileChance"; chance: number };
-export type CombatSuite = { kind: "CombatSuite"; core: 8; rangedAvoid: 8; targeting: 8 };
-export type CoreAnalyzer = { kind: "CoreAnalyzer"; bonus: number };
-export type CorruptionIgnore = { kind: "CorruptionIgnore"; chance: number };
-export type CorruptionMaximum = { kind: "CorruptionMaximum"; amount: number };
-export type CorruptionPrevent = { kind: "CorruptionPrevent"; amount: number };
-export type CorruptionReduce = { kind: "CorruptionReduce"; amount: number };
-export type CriticalImmunity = { kind: "CriticalImmunity" };
-export type CryofiberWeb = { kind: "CryofiberWeb"; temperatureReduction: number; sideEffectNegationPercentage: number };
-export type DamageReduction = { kind: "DamageReduction"; multiplier: number; ratio: number; remote: boolean };
-export type DamageResists = { kind: "DamageResists"; resists: BotResistances };
-export type EnergyFilter = { kind: "EnergyFilter"; percent: number };
-export type EnergyStorage = { kind: "EnergyStorage"; storage: number };
-export type HardlightGenerator = { kind: "HardlightGenerator"; amount: number };
-export type HeatDissipation = { kind: "HeatDissipation"; dissipation: number; heatSink: boolean };
-export type Injector = { kind: "Injector"; dissipation: number };
-export type Kinecellerator = { kind: "Kinecellerator"; amount: number };
-export type LauncherGuidance = { kind: "LauncherGuidance"; bonus: number };
-export type LauncherLoader = { kind: "LauncherLoader" };
-export type MassSupport = { kind: "MassSupport"; support: number };
-export type MatterStorage = { kind: "MatterStorage"; storage: number };
-export type MeleeAnalysis = { kind: "MeleeAnalysis"; accuracy: number; minDamage: number };
-export type Metafiber = { kind: "Metafiber" };
-export type Microdissipator = { kind: "Microdissipator" };
-export type MniQuantumCapacitor = { kind: "MniQuantumCapacitor" };
-export type PowerAmplifier = { kind: "PowerAmplifier"; percent: number };
-export type QuantumCapacitor = { kind: "QuantumCapacitor" };
-export type ParticleCharging = { kind: "ParticleCharging"; percent: number };
-export type RangedAvoid = { kind: "RangedAvoid"; avoid: number };
-export type RangedWeaponCycling = { kind: "RangedWeaponCycling"; amount: number };
-export type ReactionControlSystem = { kind: "ReactionControlSystem"; chance: number };
-export type RecoilReduction = { kind: "RecoilReduction"; reduction: number };
-export type RocketBooster = { kind: "RocketBooster" };
-export type SalvageTargeting = { kind: "SalvageTargeting"; amount: number };
-export type SelfReduction = { kind: "SelfReduction"; shielding: number };
-export type Shielding = { kind: "Shielding"; shielding: number; slot: ItemSlot | "Core" };
-export type TargetAnalyzer = { kind: "TargetAnalyzer"; bonus: number };
-export type Targeting = { kind: "Targeting"; bonus: number };
-export type ThunderLeg = { kind: "ThunderLeg" };
-export type Turbovents = { kind: "Turbovents" };
-export type WeaponRegen = { kind: "WeaponRegen"; energyPerTurn: number; integrityPerTurn: number };
+export const AblativeArmorIndex = 0;
+export const ActuatorIndex = 1;
+export const ActuatorArrayIndex = 2;
+export const AirborneSpeedDoublingIndex = 3;
+export const AntimissileChanceIndex = 4;
+export const CombatSuiteIndex = 5;
+export const CoreAnalyzerIndex = 6;
+export const CorruptionIgnoreIndex = 7;
+export const CorruptionMaximumIndex = 8;
+export const CorruptionPreventIndex = 9;
+export const CorruptionReduceIndex = 10;
+export const CriticalImmunityIndex = 11;
+export const CryofiberWebIndex = 12;
+export const DamageReductionIndex = 13;
+export const DamageResistsIndex = 14;
+export const EnergyFilterIndex = 15;
+export const EnergyStorageIndex = 16;
+export const HardlightGeneratorIndex = 17;
+export const HeatDissipationIndex = 18;
+export const InjectorIndex = 19;
+export const KinecelleratorIndex = 20;
+export const LauncherGuidanceIndex = 21;
+export const LauncherLoaderIndex = 22;
+export const MassSupportIndex = 23;
+export const MatterStorageIndex = 24;
+export const MeleeAnalysisIndex = 25;
+export const MetafiberIndex = 26;
+export const MicrodissipatorIndex = 27;
+export const MniQuantumCapacitorIndex = 28;
+export const PowerAmplifierIndex = 29;
+export const QuantumCapacitorIndex = 30;
+export const ParticleChargingIndex = 31;
+export const RangedAvoidIndex = 32;
+export const RangedWeaponCyclingIndex = 33;
+export const ReactionControlSystemIndex = 34;
+export const RecoilReductionIndex = 35;
+export const RocketBoosterIndex = 36;
+export const SalvageTargetingIndex = 37;
+export const SelfReductionIndex = 38;
+export const ShieldingIndex = 39;
+export const TargetAnalyzerIndex = 40;
+export const TargetingIndex = 41;
+export const ThunderLegIndex = 42;
+export const TurboventsIndex = 43;
+export const WeaponRegenIndex = 44;
+
+export type AblativeArmor = { kind: typeof AblativeArmorIndex };
+export type Actuator = { kind: typeof ActuatorIndex; amount: number };
+export type ActuatorArray = { kind: typeof ActuatorArrayIndex; amount: number };
+export type AirborneSpeedDoubling = { kind: typeof AirborneSpeedDoublingIndex };
+export type AntimissileChance = { kind: typeof AntimissileChanceIndex; chance: number };
+export type CombatSuite = { kind: typeof CombatSuiteIndex; core: 8; rangedAvoid: 8; targeting: 8 };
+export type CoreAnalyzer = { kind: typeof CoreAnalyzerIndex; bonus: number };
+export type CorruptionIgnore = { kind: typeof CorruptionIgnoreIndex; chance: number };
+export type CorruptionMaximum = { kind: typeof CorruptionMaximumIndex; amount: number };
+export type CorruptionPrevent = { kind: typeof CorruptionPreventIndex; amount: number };
+export type CorruptionReduce = { kind: typeof CorruptionReduceIndex; amount: number };
+export type CriticalImmunity = { kind: typeof CriticalImmunityIndex };
+export type CryofiberWeb = { kind: typeof CryofiberWebIndex; temperatureReduction: number; sideEffectNegationPercentage: number };
+export type DamageReduction = { kind: typeof DamageReductionIndex; multiplier: number; ratio: number; remote: boolean };
+export type DamageResists = { kind: typeof DamageResistsIndex; resists: BotResistances };
+export type EnergyFilter = { kind: typeof EnergyFilterIndex; percent: number };
+export type EnergyStorage = { kind: typeof EnergyStorageIndex; storage: number };
+export type HardlightGenerator = { kind: typeof HardlightGeneratorIndex; amount: number };
+export type HeatDissipation = { kind: typeof HeatDissipationIndex; dissipation: number; heatSink: boolean };
+export type Injector = { kind: typeof InjectorIndex; dissipation: number };
+export type Kinecellerator = { kind: typeof KinecelleratorIndex; amount: number };
+export type LauncherGuidance = { kind: typeof LauncherGuidanceIndex; bonus: number };
+export type LauncherLoader = { kind: typeof LauncherLoaderIndex };
+export type MassSupport = { kind: typeof MassSupportIndex; support: number };
+export type MatterStorage = { kind: typeof MatterStorageIndex; storage: number };
+export type MeleeAnalysis = { kind: typeof MeleeAnalysisIndex; accuracy: number; minDamage: number };
+export type Metafiber = { kind: typeof MetafiberIndex };
+export type Microdissipator = { kind: typeof MicrodissipatorIndex };
+export type MniQuantumCapacitor = { kind: typeof MniQuantumCapacitorIndex };
+export type PowerAmplifier = { kind: typeof PowerAmplifierIndex; percent: number };
+export type QuantumCapacitor = { kind: typeof QuantumCapacitorIndex };
+export type ParticleCharging = { kind: typeof ParticleChargingIndex; percent: number };
+export type RangedAvoid = { kind: typeof RangedAvoidIndex; avoid: number };
+export type RangedWeaponCycling = { kind: typeof RangedWeaponCyclingIndex; amount: number };
+export type ReactionControlSystem = { kind: typeof ReactionControlSystemIndex; chance: number };
+export type RecoilReduction = { kind: typeof RecoilReductionIndex; reduction: number };
+export type RocketBooster = { kind: typeof RocketBoosterIndex };
+export type SalvageTargeting = { kind: typeof SalvageTargetingIndex; amount: number };
+export type SelfReduction = { kind: typeof SelfReductionIndex; shielding: number };
+export type Shielding = { kind: typeof ShieldingIndex; shielding: number; slot: ItemSlot | "Core" };
+export type TargetAnalyzer = { kind: typeof TargetAnalyzerIndex; bonus: number };
+export type Targeting = { kind: typeof TargetingIndex; bonus: number };
+export type ThunderLeg = { kind: typeof ThunderLegIndex };
+export type Turbovents = { kind: typeof TurboventsIndex };
+export type WeaponRegen = { kind: typeof WeaponRegenIndex; energyPerTurn: number; integrityPerTurn: number };
+
+export type SpecialPropertyTypeIndex =
+    | typeof AblativeArmorIndex
+    | typeof ActuatorIndex
+    | typeof ActuatorArrayIndex
+    | typeof AirborneSpeedDoublingIndex
+    | typeof AntimissileChanceIndex
+    | typeof CombatSuiteIndex
+    | typeof CoreAnalyzerIndex
+    | typeof CorruptionIgnoreIndex
+    | typeof CorruptionMaximumIndex
+    | typeof CorruptionPreventIndex
+    | typeof CorruptionReduceIndex
+    | typeof CriticalImmunityIndex
+    | typeof CryofiberWebIndex
+    | typeof DamageReductionIndex
+    | typeof DamageResistsIndex
+    | typeof EnergyFilterIndex
+    | typeof EnergyStorageIndex
+    | typeof HardlightGeneratorIndex
+    | typeof HeatDissipationIndex
+    | typeof InjectorIndex
+    | typeof KinecelleratorIndex
+    | typeof LauncherLoaderIndex
+    | typeof LauncherGuidanceIndex
+    | typeof MassSupportIndex
+    | typeof MatterStorageIndex
+    | typeof MeleeAnalysisIndex
+    | typeof MetafiberIndex
+    | typeof MicrodissipatorIndex
+    | typeof MniQuantumCapacitorIndex
+    | typeof ParticleChargingIndex
+    | typeof PowerAmplifierIndex
+    | typeof QuantumCapacitorIndex
+    | typeof RangedAvoidIndex
+    | typeof RangedWeaponCyclingIndex
+    | typeof ReactionControlSystemIndex
+    | typeof RecoilReductionIndex
+    | typeof RocketBoosterIndex
+    | typeof SalvageTargetingIndex
+    | typeof SelfReductionIndex
+    | typeof ShieldingIndex
+    | typeof TargetAnalyzerIndex
+    | typeof TargetingIndex
+    | typeof ThunderLegIndex
+    | typeof TurboventsIndex
+    | typeof WeaponRegenIndex;
 
 export type SpecialPropertyType =
     | AblativeArmor
@@ -200,53 +293,6 @@ export type SpecialPropertyType =
     | ThunderLeg
     | Turbovents
     | WeaponRegen;
-
-export type SpecialPropertyTypeName =
-    | "AblativeArmor"
-    | "Actuator"
-    | "ActuatorArray"
-    | "AirborneSpeedDoubling"
-    | "AntimissileChance"
-    | "CombatSuite"
-    | "CoreAnalyzer"
-    | "CorruptionIgnore"
-    | "CorruptionMaximum"
-    | "CorruptionPrevent"
-    | "CorruptionReduce"
-    | "CriticalImmunity"
-    | "CryofiberWeb"
-    | "DamageReduction"
-    | "DamageResists"
-    | "EnergyFilter"
-    | "EnergyStorage"
-    | "HardlightGenerator"
-    | "HeatDissipation"
-    | "Injector"
-    | "Kinecellerator"
-    | "LauncherLoader"
-    | "LauncherGuidance"
-    | "MassSupport"
-    | "MatterStorage"
-    | "MeleeAnalysis"
-    | "Metafiber"
-    | "Microdissipator"
-    | "MniQuantumCapacitor"
-    | "ParticleCharging"
-    | "PowerAmplifier"
-    | "QuantumCapacitor"
-    | "RangedAvoid"
-    | "RangedWeaponCycling"
-    | "ReactionControlSystem"
-    | "RecoilReduction"
-    | "RocketBooster"
-    | "SalvageTargeting"
-    | "SelfReduction"
-    | "Shielding"
-    | "TargetAnalyzer"
-    | "Targeting"
-    | "ThunderLeg"
-    | "Turbovents"
-    | "WeaponRegen";
 
 export type SpecialItemProperty = {
     active: SpecialPropertyActive;
