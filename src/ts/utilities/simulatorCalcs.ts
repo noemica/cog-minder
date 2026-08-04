@@ -403,6 +403,7 @@ function applyCorruption(state: SimulatorState, corruption: number) {
 }
 
 // Applies heat transfer to the bot, potentially melting the bot or the target part
+// Returns true if the part was destroyed via melting
 function applyHeatTransfer(
     state: SimulatorState,
     heatTransferValues: HeatTransferValues | undefined,
@@ -413,9 +414,10 @@ function applyHeatTransfer(
     partIndex: number,
 ) {
     if (heatTransferValues === undefined) {
-        return;
+        return false;
     }
 
+    let partDestroyed = false;
     const botState = state.botState;
 
     // Apply heat transfer (listed as *)
@@ -436,6 +438,7 @@ function applyHeatTransfer(
         // The chance is original heat transfer % chance to melt the hit part
         if (part !== undefined && randomInt(0, 99) < heatTransferValues.heatTransfer) {
             destroyPart(state, false, partIndex, part, 0, "Entropic", "Melt");
+            partDestroyed = true;
         }
     }
 
@@ -455,6 +458,8 @@ function applyHeatTransfer(
             }
         }
     }
+
+    return partDestroyed;
 }
 
 function applyUnresistedDamageChunkToPart(
@@ -782,9 +787,18 @@ function applyDamageChunkToPart(
     }
 
     // Apply heat transfer (20)
-    applyHeatTransfer(state, heatTransferValues, originalDamage, damageForHeatTransfer, critical, part, partIndex);
+    let destroyed = applyHeatTransfer(
+        state,
+        heatTransferValues,
+        originalDamage,
+        damageForHeatTransfer,
+        critical,
+        part,
+        partIndex,
+    );
 
-    const destroyed = part.integrity <= damage || doesCriticalDestroyPart(critical) || engineExplosion;
+    // Destroy the part if not already destroyed from heat transfer
+    destroyed = !destroyed && (part.integrity <= damage || doesCriticalDestroyPart(critical) || engineExplosion);
 
     // Apply sever/sunder to instantly-remove (not destroy) part if it's a single slot and unshielded
     // Applied differently than other part destruction since this can't affect multislot
@@ -1327,7 +1341,7 @@ function destroyPart(
         state.lootState.items[part.initialIndex].totalIntegrity += part.integrity;
         state.lootState.items[part.initialIndex].integrityDrops.push(part.integrity);
     } else if (destroyReason === "Melt" && part.integrity > 0) {
-        state.lootState.items[part.initialIndex].totalMelted += 1;
+        state.lootState.items[part.initialIndex].totalMeltedHit += 1;
     }
 
     botState.destroyedParts.push(part);
@@ -1549,10 +1563,6 @@ function getRandomUniqueNonCoreParts(botState: BotState, numParts: number) {
     for (let i = 0; i < numParts && parts.length >= 1; i++) {
         let partIndex = randomInt(0, parts.length - 1);
         const part = parts[partIndex];
-
-        if (part === undefined) {
-            console.log("Test");
-        }
 
         randomParts.push(part);
         parts.splice(i, 1);
@@ -1884,7 +1894,7 @@ export function simulateCombat(state: SimulatorState): boolean {
             if (drop && botState.heat > 0) {
                 // Chance to melt is ([heat - max_integrity] / 4)
                 if (randomInt(0, 99) < (botState.heat - part.def.integrity) / 4) {
-                    itemLootState.totalMelted += 1;
+                    itemLootState.totalMeltedDrop += 1;
                     drop = false;
                 }
             }

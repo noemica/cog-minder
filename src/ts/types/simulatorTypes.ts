@@ -232,7 +232,8 @@ export type ItemLootState = {
     totalCritRemoves: number;
     totalCorruptionPercent: number;
     totalFried: number;
-    totalMelted: number;
+    totalMeltedDrop: number;
+    totalMeltedHit: number;
     totalIntegrity: number;
     integrityDrops: number[];
 };

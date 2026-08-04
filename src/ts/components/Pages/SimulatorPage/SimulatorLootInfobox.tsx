@@ -63,14 +63,16 @@ export default function SimulatorLootItemInfobox({
     numKills,
     showCorruption,
     showCriticals,
-    showMelted,
+    showMeltedHit,
+    showMeltedDrop,
     showBroken,
 }: {
     itemLootState: ItemLootState;
     numKills: number;
     showCorruption: boolean;
     showCriticals: boolean;
-    showMelted: boolean;
+    showMeltedHit: boolean;
+    showMeltedDrop: boolean;
     showBroken: boolean;
 }) {
     const dropRatePercent = (itemLootState.numDrops / numKills) * 100;
@@ -80,7 +82,8 @@ export default function SimulatorLootItemInfobox({
     const friedPercent = (itemLootState.totalFried / numKills) * 100;
     const critRatePercent =
         itemLootState.totalCritRemoves > 0 ? (itemLootState.totalCritRemoves / itemLootState.numDrops) * 100 : 0;
-    const meltedPercent = itemLootState.totalMelted > 0 ? (itemLootState.totalMelted / numKills) * 100 : 0;
+    const meltedDropPercent = itemLootState.totalMeltedDrop > 0 ? (itemLootState.totalMeltedDrop / numKills) * 100 : 0;
+    const meltedHitPercent = itemLootState.totalMeltedHit > 0 ? (itemLootState.totalMeltedHit / numKills) * 100 : 0;
     const brokenPercent =
         itemLootState.totalBroken > 0 ? (itemLootState.totalBroken / itemLootState.numDrops) * 100 : 0;
 
@@ -123,10 +126,16 @@ export default function SimulatorLootItemInfobox({
                         <span>{critRatePercent.toFixed(1)}%</span>
                     </>
                 )}
-                {showMelted && (
+                {showMeltedDrop && (
                     <>
-                        <span>Melted rate</span>
-                        <span className={getClassHighBad(meltedPercent / 40)}>{meltedPercent.toFixed(1)}%</span>
+                        <span>Melted drop rate</span>
+                        <span className={getClassHighBad(meltedDropPercent / 40)}>{meltedDropPercent.toFixed(1)}%</span>
+                    </>
+                )}
+                {showMeltedHit && (
+                    <>
+                        <span>Melted on hit rate</span>
+                        <span className={getClassHighBad(meltedHitPercent / 40)}>{meltedHitPercent.toFixed(1)}%</span>
                     </>
                 )}
                 {showBroken && (

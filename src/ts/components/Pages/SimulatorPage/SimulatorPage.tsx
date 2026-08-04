@@ -770,7 +770,8 @@ function getSimulatorState(
             totalCorruptionPercent: 0,
             totalFried: 0,
             totalIntegrity: 0,
-            totalMelted: 0,
+            totalMeltedDrop: 0,
+            totalMeltedHit: 0,
         });
     }
 
@@ -999,7 +1000,8 @@ export default function SimulatorPage() {
             const showBroken = activeChartState.lootState.items.find((item) => item.totalBroken > 0) !== undefined;
             const showCriticals =
                 activeChartState.lootState.items.find((item) => item.totalCritRemoves > 0) !== undefined;
-            const showMelted = activeChartState.lootState.items.find((item) => item.totalMelted > 0) !== undefined;
+            const showMeltedDrop = activeChartState.lootState.items.find((item) => item.totalMeltedDrop > 0) !== undefined;
+            const showMeltedHit = activeChartState.lootState.items.find((item) => item.totalMeltedHit > 0) !== undefined;
 
             lootData = (
                 <div className="loot-grid">
@@ -1015,7 +1017,8 @@ export default function SimulatorPage() {
                             showBroken={showBroken}
                             showCorruption={showCorruption}
                             showCriticals={showCriticals}
-                            showMelted={showMelted}
+                            showMeltedDrop={showMeltedDrop}
+                            showMeltedHit={showMeltedHit}
                         />
                     ))}
                 </div>
