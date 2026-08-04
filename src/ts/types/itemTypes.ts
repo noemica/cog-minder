@@ -106,7 +106,9 @@ export enum Critical {
     Sunder = "Sunder",
 }
 
-export type SpecialPropertyActive = "Always" | "Part Active";
+export const SpecialPropertyPartActiveActive = false;
+export const SpecialPropertyAlwaysActive = true;
+export type SpecialPropertyActive = typeof SpecialPropertyPartActiveActive | typeof SpecialPropertyAlwaysActive;
 
 export const AblativeArmorIndex = 0;
 export const ActuatorIndex = 1;
@@ -166,7 +168,11 @@ export type CorruptionMaximum = { kind: typeof CorruptionMaximumIndex; amount: n
 export type CorruptionPrevent = { kind: typeof CorruptionPreventIndex; amount: number };
 export type CorruptionReduce = { kind: typeof CorruptionReduceIndex; amount: number };
 export type CriticalImmunity = { kind: typeof CriticalImmunityIndex };
-export type CryofiberWeb = { kind: typeof CryofiberWebIndex; temperatureReduction: number; sideEffectNegationPercentage: number };
+export type CryofiberWeb = {
+    kind: typeof CryofiberWebIndex;
+    temperatureReduction: number;
+    sideEffectNegationPercentage: number;
+};
 export type DamageReduction = { kind: typeof DamageReductionIndex; multiplier: number; ratio: number; remote: boolean };
 export type DamageResists = { kind: typeof DamageResistsIndex; resists: BotResistances };
 export type EnergyFilter = { kind: typeof EnergyFilterIndex; percent: number };

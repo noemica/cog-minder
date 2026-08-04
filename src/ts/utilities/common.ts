@@ -1,7 +1,13 @@
 // Common code
 import { Bot } from "../types/botTypes";
 import { Spoiler } from "../types/commonTypes";
-import { BaseItem, Item, ItemType, SpecialPropertyTypeIndex } from "../types/itemTypes";
+import {
+    BaseItem,
+    Item,
+    ItemType,
+    SpecialPropertyPartActiveActive,
+    SpecialPropertyTypeIndex,
+} from "../types/itemTypes";
 
 // A special bot name to image name map for special/unique bots
 const botNameImageMap = new Map<string, string>([
@@ -161,8 +167,7 @@ const botNameImageMap = new Map<string, string>([
 ]);
 
 // A list of items with no gallery art (currently unused)
-export const itemsWithNoArt = new Set<string>([
-]);
+export const itemsWithNoArt = new Set<string>([]);
 
 // Character -> escape character map
 export const entityMap: { [key: string]: string } = {
@@ -437,7 +442,7 @@ export function hasActiveSpecialProperty(
         return false;
     }
 
-    if (part.specialProperty.active === "Part Active" && !partActive) {
+    if (part.specialProperty.active === SpecialPropertyPartActiveActive && !partActive) {
         return false;
     }
 

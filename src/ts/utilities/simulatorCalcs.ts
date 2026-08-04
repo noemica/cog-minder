@@ -1402,18 +1402,41 @@ function getSpecialStatePart<T extends SpecialPart>(array: T[]) {
 // Tries to get all bot special state parts from an array
 // Parts will be removed from the array if their integrity has dropped below 0
 function getSpecialStateParts<T extends SpecialPart>(array: T[]) {
-    const returnArray: T[] = [];
-    for (let i = array.length - 1; i >= 0; i--) {
-        // Check for and remove all destroyed parts
-        if (array[i].part.integrity <= 0 || array[i].part.broken) {
-            array.splice(i);
-        } else if (array[i].part.disabledTurns === 0) {
-            // Add to new list if part is not currently disabled
-            returnArray.unshift(array[i]);
+    let needsCopy = false;
+    // Disabled parts will require an array copy to only return those parts
+    // that are currently active. If none are required we can return just the
+    // array by itself
+    for (const part of array) {
+        if (part.part.disabledTurns > 0) {
+            needsCopy = true;
+            break;
         }
     }
 
-    return returnArray;
+    if (needsCopy) {
+        const returnArray: T[] = [];
+        for (let i = array.length - 1; i >= 0; i--) {
+            // Check for and remove all destroyed parts
+            if (array[i].part.integrity <= 0 || array[i].part.broken) {
+                array.splice(i);
+            } else if (array[i].part.disabledTurns === 0) {
+                // Add to new list if part is not currently disabled
+                returnArray.unshift(array[i]);
+            }
+        }
+
+        return returnArray;
+    } else {
+        // Since copy is not needed, just remove the destroyed/broken parts
+        // and return the original array
+        for (let i = array.length - 1; i >= 0; i--) {
+            if (array[i].part.integrity <= 0 || array[i].part.broken) {
+                array.splice(i);
+            }
+        }
+
+        return array;
+    }
 }
 
 // Determines the part that was hit by an attack
