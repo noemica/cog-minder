@@ -676,7 +676,11 @@ function applyDamageChunkToPart(
 
         // Apply disruption (15)
         // Core disruption only has 50% of the usual chance
-        if (!botState.immunities.includes(BotImmunity.Disruption) && randomInt(0, 99) < Math.trunc(disruptChance / 2)) {
+        if (
+            disruptChance > 0 &&
+            !botState.immunities.includes(BotImmunity.Disruption) &&
+            randomInt(0, 99) < Math.trunc(disruptChance / 2)
+        ) {
             // TODO need to disable everything on the bot when this happens
             botState.coreDisrupted = true;
         }
@@ -747,7 +751,7 @@ function applyDamageChunkToPart(
     }
 
     // Check for spectrum engine explosion (16)
-    const engineExplosion = part.def.slot === "Power" && randomInt(0, 99) < spectrum;
+    const engineExplosion = spectrum > 0 && part.def.slot === "Power" && randomInt(0, 99) < spectrum;
 
     // Protection can't get instantly destroyed, only receives 20% more damage
     // Also check for crits against sieged treads, they can't be destroyed
@@ -779,7 +783,7 @@ function applyDamageChunkToPart(
 
     // Apply disruption to non-core parts (17)
     if (
-        part !== undefined &&
+        disruptChance > 0 &&
         part.disabledTurns === 0 &&
         !botState.immunities.includes(BotImmunity.Disruption) &&
         randomInt(0, 99) < disruptChance
