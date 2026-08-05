@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import { WikiEntry } from "../../../types/wikiTypes";
 import Button from "../../Buttons/Button";
@@ -38,6 +38,7 @@ export default function WikiEditControls({
     const [savedWikiEntries, setSavedWikiEntries] = useEditableWikiEntryEdits();
     const wikiEditorWordWrap = useWikiEditorWordWrap();
     const wikiEditorUncappedWidth = useWikiEditorUncappedWidth();
+    const [tooLongWarning, setTooLongWarning] = useState(false);
 
     if (!editState.showEdit || entry === undefined) {
         return undefined;
@@ -375,6 +376,9 @@ export default function WikiEditControls({
                     onClick={() => {
                         setEditState({ ...editState, editText: editAreaRef.current!.value, entry: entry });
                         updateSavedWikiEntries();
+                        console.log(tooLongWarning);
+
+                        setTooLongWarning(editAreaRef.current!.value.length >= 49000);
                     }}
                 >
                     Preview Changes
@@ -391,10 +395,16 @@ export default function WikiEditControls({
 
                         setEditState({ ...editState, modified: false });
                         updateSavedWikiEntries();
+
+                        console.log(tooLongWarning);
+                        setTooLongWarning(editAreaRef.current!.value.length >= 49000);
                     }}
                 >
                     Copy Text
                 </Button>
+                {tooLongWarning && (
+                    <span className="too-long-page-warning">WARNING: approaching 50k character max page length</span>
+                )}
             </div>
             {parsingErrorsNode}
         </div>
