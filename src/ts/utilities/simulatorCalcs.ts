@@ -12,7 +12,6 @@ import {
     CorruptionPreventIndex,
     CorruptionReduce,
     CorruptionReduceIndex,
-    Critical,
     CriticalBlastIndex,
     CriticalBurnIndex,
     CriticalCorruptIndex,
@@ -784,7 +783,11 @@ function applyDamageChunkToPart(
     // Reduce damage for powered armor/siege mode (17)
     if (part.selfDamageReduction !== 0) {
         damage = Math.trunc(damage * part.selfDamageReduction);
-    } else if (part.def.typeIndex === TreadsIndex && (part.def as PropulsionItem).siege !== undefined && botState.sieged) {
+    } else if (
+        part.def.typeIndex === TreadsIndex &&
+        (part.def as PropulsionItem).siege !== undefined &&
+        botState.sieged
+    ) {
         damage = Math.trunc(damage * ((part.def as PropulsionItem).siege === "High Siege" ? 0.5 : 0.75));
     } else if (part.def.typeIndex === LegIndex && (part.def as PropulsionItem).shield && botState.shielded) {
         if (!penetrate && !guided && randomInt(0, 1) === 1) {
@@ -2133,7 +2136,7 @@ const botOverheatEffects: BotHeatEffect[] = [
             // Damage random part from 50-100% of current integrity
             const { part, partIndex } = getRandomNonCorePart(state.botState, undefined);
             if (part !== undefined) {
-                part.integrity -= Math.trunc(randomInt(50, 100) * part.integrity);
+                part.integrity -= Math.trunc(randomInt(50, 100) * part.integrity / 100);
                 if (part.integrity <= 0) {
                     destroyPart(state, false, partIndex, part, 0, "Entropic", "Integrity");
                 }
@@ -2147,7 +2150,7 @@ const botOverheatEffects: BotHeatEffect[] = [
             const numParts = randomInt(1, 4);
             const parts = getRandomUniqueNonCoreParts(state.botState, numParts);
             for (const part of parts) {
-                part.integrity -= Math.trunc(randomInt(50, 100) * part.integrity);
+                part.integrity -= Math.trunc(randomInt(50, 100) * part.integrity / 100);
                 if (part.integrity <= 0) {
                     destroyPart(state, false, state.botState.parts.indexOf(part), part, 0, "Entropic", "Integrity");
                 }
@@ -2158,7 +2161,7 @@ const botOverheatEffects: BotHeatEffect[] = [
         minHeat: 250,
         effect: (state) => {
             // Damages core 20-40%
-            state.botState.coreIntegrity -= Math.trunc(randomInt(20, 40) * state.botState.initialCoreIntegrity);
+            state.botState.coreIntegrity -= Math.trunc(randomInt(20, 40) * state.botState.initialCoreIntegrity / 100);
         },
     },
 ];
@@ -2572,7 +2575,6 @@ function updateTimeBasedStateChanges(state: SimulatorState, volleyTime: number) 
 
         const powerParts = getSpecialStateParts(botState.specialPartsState.power);
         for (let j = 0; j < powerParts.length; j++) {
-
             if (powerMultiplier === 1) {
                 botState.energy += (powerParts[j].part.def as PowerItem).energyGeneration || 0;
             } else {
