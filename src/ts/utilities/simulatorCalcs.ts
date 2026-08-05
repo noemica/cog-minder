@@ -320,7 +320,7 @@ function applyDamage(
                 forceCore: false,
                 guided: guided,
                 heatTransferValues: i == numChunks - 1 ? heatTransferValues : undefined,
-                penetrate: randomInt(0, 99) < penetrationChance,
+                penetrate: penetrationChance > 0 && randomInt(0, 99) < penetrationChance,
                 salvage,
                 spectrum: spectrum,
             });
@@ -2055,7 +2055,7 @@ export function simulateCombat(state: SimulatorState): boolean {
                 itemLootState.numDrops += 1;
 
                 // Chance for corrupted part on bot death is simply corruption %
-                const corrupted = randomInt(0, 99) < corruption;
+                const corrupted = corruption > 0 && randomInt(0, 99) < corruption;
 
                 if (corrupted) {
                     // Corrupted bot part corruption increase is: 1 to (10*[corruption]/100)
@@ -2430,10 +2430,11 @@ function simulateWeapon(
             damage = calculateResistDamage(botState, damage, weapon.damageType);
 
             // Check for armor integrity analyzer
-            const armorAnalyzed = randomInt(0, 99) < offensiveState.armorAnalyzerChance;
+            const armorAnalyzed =
+                offensiveState.armorAnalyzerChance > 0 && randomInt(0, 99) < offensiveState.armorAnalyzerChance;
 
             // Check for crit (8)
-            const didCritical = randomInt(0, 99) < weapon.criticalChance;
+            const didCritical = weapon.criticalChance > 0 && randomInt(0, 99) < weapon.criticalChance;
 
             let penetrationChance = 0;
             if (weapon.def.penetrationChances !== undefined && weapon.def.penetrationChances.length > 0) {
@@ -2461,7 +2462,7 @@ function simulateWeapon(
                 );
 
                 if (
-                    weapon.def.name === "Core Stripper" &&
+                    weapon.isCoreStripper &&
                     botState.coreIntegrity > 0 &&
                     !botState.immunities.includes(BotImmunity.Dismemberment) &&
                     randomInt(0, 99) < 33

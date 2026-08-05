@@ -688,6 +688,7 @@ function processBotDetailsTag(state: ParserState, result: RegExpExecArray) {
         heatDissipation: 0,
         immunities: [],
         immunitiesString: "",
+        innateHeatDissipation: 0,
         injectorDissipation: 0,
         innateEnergyGeneration: 0,
         innateEnergyStorage: 0,

@@ -36,11 +36,13 @@ import {
     parseFloatOrUndefined,
     parseIntOrDefault,
     parseIntOrUndefined,
+    stringSort,
 } from "./common";
 import { specialItemProperties } from "./specialItemProperties";
 
 export class ItemData {
     itemData: { [key: string]: Item } = {};
+    sortedNames: string[];
 
     constructor(items: JsonItem[]) {
         this.itemData = {};
@@ -450,6 +452,8 @@ export class ItemData {
                 this.itemData[itemName] = newItem;
             }
         });
+
+        this.sortedNames = stringSort(Object.keys(this.itemData));
     }
 
     public getAllItems() {
@@ -457,10 +461,7 @@ export class ItemData {
     }
 
     public getAllItemsSorted() {
-        const itemNames = Object.keys(this.itemData);
-        const collator = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
-        itemNames.sort((a, b) => collator.compare(a, b));
-        return itemNames.map((itemName) => this.itemData[itemName]);
+        return this.sortedNames.map((itemName) => this.itemData[itemName]);
     }
 
     public getAllItemNames() {

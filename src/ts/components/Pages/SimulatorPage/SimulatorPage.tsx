@@ -676,6 +676,7 @@ function getSimulatorState(
             explosionType: explosionType,
             heatTransfer: def.heatTransfer,
             guided: def.waypoints !== undefined,
+            isCoreStripper: def.name === "Core Stripper",
             isMissile: isMissile,
             numProjectiles: def.projectileCount,
             overflow: !def.type.includes("Gun"),

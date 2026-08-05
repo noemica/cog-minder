@@ -567,6 +567,12 @@ export function randomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Faster string sort than the typical array.sort()
+export function stringSort(strings: string[]): string[] {
+    const collator = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
+    return strings.sort((a, b) => collator.compare(a, b));
+}
+
 // Sums the two values
 export function sum(a: number, b: number): number {
     return a + b;

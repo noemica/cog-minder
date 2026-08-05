@@ -208,6 +208,7 @@ export type SimulatorWeapon = {
     explosionType?: DamageType;
     guided: boolean;
     heatTransfer: HeatTransfer | undefined;
+    isCoreStripper: boolean;
     isMissile: boolean;
     numProjectiles: number;
     overflow: boolean;
