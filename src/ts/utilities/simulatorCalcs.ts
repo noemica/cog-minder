@@ -2572,9 +2572,14 @@ function updateTimeBasedStateChanges(state: SimulatorState, volleyTime: number) 
 
         const powerParts = getSpecialStateParts(botState.specialPartsState.power);
         for (let j = 0; j < powerParts.length; j++) {
-            botState.energy += Math.trunc(
-                powerMultiplier * ((powerParts[j].part.def as PowerItem).energyGeneration || 0),
-            );
+
+            if (powerMultiplier === 1) {
+                botState.energy += (powerParts[j].part.def as PowerItem).energyGeneration || 0;
+            } else {
+                botState.energy += Math.trunc(
+                    powerMultiplier * ((powerParts[j].part.def as PowerItem).energyGeneration || 0),
+                );
+            }
         }
 
         // Subtract energy upkeep
