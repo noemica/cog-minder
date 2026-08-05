@@ -4,6 +4,7 @@ import {
     AblativeArmorIndex,
     AntimissileChance,
     AntimissileChanceIndex,
+    BallisticCannonIndex,
     CorruptionIgnore,
     CorruptionIgnoreIndex,
     CorruptionMaximum,
@@ -45,6 +46,7 @@ import {
     InjectorIndex,
     ItemSlot,
     ItemWithUpkeep,
+    LegIndex,
     MassSupport,
     MassSupportIndex,
     MicrodissipatorIndex,
@@ -52,6 +54,7 @@ import {
     PowerAmplifierIndex,
     PowerItem,
     PropulsionItem,
+    ProtectionIndex,
     RangedAvoid,
     RangedAvoidIndex,
     ReactionControlSystem,
@@ -62,6 +65,7 @@ import {
     ShieldingIndex,
     Spectrum,
     ThunderLegIndex,
+    TreadsIndex,
     WeaponItem,
 } from "../types/itemTypes";
 import {
@@ -757,7 +761,7 @@ function applyDamageChunkToPart(
     // Handle non-core hit
     // Try to get shielding for non-protection parts
     const shielding =
-        part.def.type === "Protection" || isOverflow ? undefined : getShieldingType(botState, part.def.slot);
+        part.def.typeIndex === ProtectionIndex || isOverflow ? undefined : getShieldingType(botState, part.def.slot);
 
     // Check for crit immunity or shielding (14)
     if (shielding !== undefined && doesCriticalDestroyPart(critical)) {
@@ -771,7 +775,7 @@ function applyDamageChunkToPart(
     // Also check for crits against sieged treads, they can't be destroyed
     if (
         (doesCriticalDestroyPart(critical) && part.protection) ||
-        (botState.sieged && part.def.type === "Treads" && (part.def as PropulsionItem).siege !== undefined)
+        (botState.sieged && part.def.typeIndex === TreadsIndex && (part.def as PropulsionItem).siege !== undefined)
     ) {
         critical = CriticalNoneIndex;
         damage = Math.trunc(1.2 * damage);
@@ -780,9 +784,9 @@ function applyDamageChunkToPart(
     // Reduce damage for powered armor/siege mode (17)
     if (part.selfDamageReduction !== 0) {
         damage = Math.trunc(damage * part.selfDamageReduction);
-    } else if (part.def.type === "Treads" && (part.def as PropulsionItem).siege !== undefined && botState.sieged) {
+    } else if (part.def.typeIndex === TreadsIndex && (part.def as PropulsionItem).siege !== undefined && botState.sieged) {
         damage = Math.trunc(damage * ((part.def as PropulsionItem).siege === "High Siege" ? 0.5 : 0.75));
-    } else if (part.def.type === "Leg" && (part.def as PropulsionItem).shield && botState.shielded) {
+    } else if (part.def.typeIndex === LegIndex && (part.def as PropulsionItem).shield && botState.shielded) {
         if (!penetrate && !guided && randomInt(0, 1) === 1) {
             // 50% complete deflection chance for non-penetrating and non-guided projectiles
             // TODO: Try to figure out if there is an easy way to determine which
@@ -1801,7 +1805,7 @@ function removePartBonusesFromState(state: SimulatorState, part: SimulatorPart) 
     // Update mass/support
     // TODO do we ever need to update the time/move here?
     botState.mass -= part.def.mass || 0;
-    if (part.def.type === botState.def.propulsionType) {
+    if (part.def.typeIndex === botState.def.propulsionTypeIndex) {
         botState.support -= part.def.mass || 0;
     } else if (hasActiveSpecialProperty(part.def, true, MassSupportIndex)) {
         botState.support -= (part.def.specialProperty!.trait as MassSupport).support;
@@ -2376,7 +2380,7 @@ function simulateWeapon(
             continue;
         }
 
-        if (weapon.def.type === "Ballistic Cannon" && (weapon.def.salvage ?? 0) < -2) {
+        if (weapon.def.typeIndex === BallisticCannonIndex && (weapon.def.salvage ?? 0) < -2) {
             // Apply matter blasted off for kinetic cannons
             state.lootState.matterBlasted += Math.trunc(randomInt(0, -weapon.def.salvage!));
         }
@@ -2614,7 +2618,7 @@ function updateTimeBasedStateChanges(state: SimulatorState, volleyTime: number) 
         oldTus < botState.tusToShield &&
         state.tus >= botState.tusToShield &&
         botState.behavior === "Shield/Fight" &&
-        botState.parts.find((p) => p.def.type === "Leg" && (p.def as PropulsionItem).shield) !== undefined
+        botState.parts.find((p) => p.def.typeIndex === LegIndex && (p.def as PropulsionItem).shield) !== undefined
     ) {
         botState.shielded = true;
     }
@@ -2624,7 +2628,7 @@ function updateTimeBasedStateChanges(state: SimulatorState, volleyTime: number) 
         oldTus < botState.tusToSiege &&
         state.tus >= botState.tusToSiege &&
         botState.behavior === "Siege/Fight" &&
-        botState.parts.find((p) => p.def.type === "Treads" && (p.def as PropulsionItem).siege !== undefined) !==
+        botState.parts.find((p) => p.def.typeIndex === TreadsIndex && (p.def as PropulsionItem).siege !== undefined) !==
             undefined
     ) {
         botState.sieged = true;
@@ -2781,7 +2785,7 @@ function updateWeaponsAccuracy(state: SimulatorState) {
     }
 
     if (botState.running) {
-        const legs = botState.parts.filter((p) => p.def.type === "Leg");
+        const legs = botState.parts.filter((p) => p.def.typeIndex === LegIndex);
 
         if (legs.length > 0 && isUnderweight) {
             // -5~15% if attacker running on legs (ranged attacks only)

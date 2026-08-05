@@ -82,6 +82,69 @@ export type ItemType =
     | "Treads"
     | "Wheel";
 
+export const ArtifactIndex = 0;
+export const BallisticCannonIndex = 1;
+export const BallisticGunIndex = 2;
+export const DataCoreIndex = 3;
+export const DeviceIndex = 4;
+export const EnergyCannonIndex = 5;
+export const EnergyGunIndex = 6;
+export const EngineIndex = 7;
+export const FlightUnitIndex = 8;
+export const HackwareIndex = 9;
+export const HoverUnitIndex = 10;
+export const ImpactWeaponIndex = 11;
+export const ItemIndex = 12;
+export const LauncherIndex = 13;
+export const LegIndex = 14;
+export const MatterIndex = 15;
+export const PiercingWeaponIndex = 16;
+export const PowerCoreIndex = 17;
+export const ProcessorIndex = 18;
+export const ProtectionIndex = 19;
+export const ProtomatterIndex = 20;
+export const ReactorIndex = 21;
+export const ScrapIndex = 22;
+export const SlashingWeaponIndex = 23;
+export const SpecialMeleeWeaponIndex = 24;
+export const SpecialWeaponIndex = 25;
+export const StorageIndex = 26;
+export const TrapIndex = 27;
+export const TreadsIndex = 28;
+export const WheelIndex = 29;
+
+export type ItemTypeIndex =
+    | typeof ArtifactIndex
+    | typeof BallisticCannonIndex
+    | typeof BallisticGunIndex
+    | typeof DataCoreIndex
+    | typeof DeviceIndex
+    | typeof EnergyCannonIndex
+    | typeof EnergyGunIndex
+    | typeof EngineIndex
+    | typeof FlightUnitIndex
+    | typeof HackwareIndex
+    | typeof HoverUnitIndex
+    | typeof ImpactWeaponIndex
+    | typeof ItemIndex
+    | typeof LauncherIndex
+    | typeof LegIndex
+    | typeof MatterIndex
+    | typeof PiercingWeaponIndex
+    | typeof PowerCoreIndex
+    | typeof ProcessorIndex
+    | typeof ProtectionIndex
+    | typeof ProtomatterIndex
+    | typeof ReactorIndex
+    | typeof ScrapIndex
+    | typeof SlashingWeaponIndex
+    | typeof SpecialMeleeWeaponIndex
+    | typeof SpecialWeaponIndex
+    | typeof StorageIndex
+    | typeof TrapIndex
+    | typeof TreadsIndex
+    | typeof WheelIndex;
+
 export type SiegeMode = "High Siege" | "Siege";
 
 export enum Spectrum {
@@ -349,6 +412,7 @@ export type BaseItem = {
     noPrefixName: string;
     fullName: string;
     type: ItemType;
+    typeIndex: ItemTypeIndex;
     rating: number;
     ratingString: string;
     ratingCategory: ItemRatingCategory;

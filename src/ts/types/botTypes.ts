@@ -1,5 +1,5 @@
 import { Spoiler } from "./commonTypes";
-import { DamageType, FabricationStats, ItemType } from "./itemTypes";
+import { DamageType, FabricationStats, ItemType, ItemTypeIndex } from "./itemTypes";
 
 export enum BotCategory {
     Alien = "Alien",
@@ -93,6 +93,7 @@ export type Bot = {
     netHeatPerVolley: number | undefined;
     profile: string;
     propulsionType: ItemType | undefined,
+    propulsionTypeIndex: ItemTypeIndex | undefined,
     rating: string;
     resistances?: BotResistances;
     salvageHigh: number;

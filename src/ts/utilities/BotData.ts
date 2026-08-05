@@ -348,6 +348,7 @@ export class BotData {
                 netHeatPerVolley: netHeatPerVolley,
                 profile: bot.Profile,
                 propulsionType: propulsionType,
+                propulsionTypeIndex: ItemData.getItemTypeIndex(propulsionType || "Item"),
                 rating: bot.Rating,
                 resistances: bot.Resistances,
                 salvageHigh: salvageHigh,

@@ -1,6 +1,9 @@
 import itemCategories from "../../json/item_categories.json";
 import { Spoiler } from "../types/commonTypes";
 import {
+    ArtifactIndex,
+    BallisticCannonIndex,
+    BallisticGunIndex,
     Critical,
     CriticalBlastIndex,
     CriticalBurnIndex,
@@ -16,17 +19,46 @@ import {
     CriticalSeverIndex,
     CriticalSmashIndex,
     CriticalSunderIndex,
+    DataCoreIndex,
+    DeviceIndex,
+    EnergyCannonIndex,
+    EnergyGunIndex,
+    EngineIndex,
     FabricationStats,
+    FlightUnitIndex,
+    HackwareIndex,
+    HoverUnitIndex,
+    ImpactWeaponIndex,
     Item,
     ItemCategory,
+    ItemIndex,
     ItemRatingCategory,
+    ItemType,
+    ItemTypeIndex,
     JsonItem,
+    LauncherIndex,
+    LegIndex,
+    MatterIndex,
     OtherItem,
+    PiercingWeaponIndex,
+    PowerCoreIndex,
     PowerItem,
+    ProcessorIndex,
     PropulsionItem,
+    ProtectionIndex,
+    ProtomatterIndex,
+    ReactorIndex,
+    ScrapIndex,
     SiegeMode,
+    SlashingWeaponIndex,
+    SpecialMeleeWeaponIndex,
+    SpecialWeaponIndex,
+    StorageIndex,
+    TrapIndex,
+    TreadsIndex,
     UtilityItem,
     WeaponItem,
+    WheelIndex,
 } from "../types/itemTypes";
 import {
     getItemAsciiArtImageName,
@@ -113,6 +145,7 @@ export class ItemData {
                         ratingString: ratingString,
                         size: size,
                         type: item.Type,
+                        typeIndex: ItemData.getItemTypeIndex(item.Type),
                         description: item.Description,
                         categories: categories,
                         life: item.Life,
@@ -162,6 +195,7 @@ export class ItemData {
                         ratingString: ratingString,
                         size: size,
                         type: item.Type,
+                        typeIndex: ItemData.getItemTypeIndex(item.Type),
                         description: item.Description,
                         categories: categories,
                         effect: item.Effect,
@@ -218,6 +252,7 @@ export class ItemData {
                         support: parseInt(item.Support as string),
                         timePerMove: parseInt(item["Time/Move"] as string),
                         type: item.Type,
+                        typeIndex: ItemData.getItemTypeIndex(item.Type),
                         fabrication: fabrication,
                         burnout: item.Burnout,
                         description: item.Description,
@@ -258,6 +293,7 @@ export class ItemData {
                         ratingString: ratingString,
                         size: size,
                         type: item.Type,
+                        typeIndex: ItemData.getItemTypeIndex(item.Type),
                         fabrication: fabrication,
                         description: item.Description,
                         effect: item.Effect,
@@ -381,6 +417,7 @@ export class ItemData {
                         ratingString: ratingString,
                         size: size,
                         type: item.Type,
+                        typeIndex: ItemData.getItemTypeIndex(item.Type),
                         fabrication: fabrication,
                         description: item.Description,
                         effect: item.Effect,
@@ -503,5 +540,73 @@ export class ItemData {
 
         await Promise.all(itemPromises);
         console.log("Verified item images");
+    }
+
+    public static getItemTypeIndex(itemType: ItemType): ItemTypeIndex {
+        switch (itemType) {
+            case "Artifact":
+                return ArtifactIndex;
+            case "Ballistic Cannon":
+                return BallisticCannonIndex;
+            case "Ballistic Gun":
+                return BallisticGunIndex;
+            case "Data Core":
+                return DataCoreIndex;
+            case "Device":
+                return DeviceIndex;
+            case "Energy Cannon":
+                return EnergyCannonIndex;
+            case "Energy Gun":
+                return EnergyGunIndex;
+            case "Engine":
+                return EngineIndex;
+            case "Flight Unit":
+                return FlightUnitIndex;
+            case "Hackware":
+                return HackwareIndex;
+            case "Hover Unit":
+                return HoverUnitIndex;
+            case "Impact Weapon":
+                return ImpactWeaponIndex;
+            case "Item":
+                return ItemIndex;
+            case "Launcher":
+                return LauncherIndex;
+            case "Leg":
+                return LegIndex;
+            case "Matter":
+                return MatterIndex;
+            case "Piercing Weapon":
+                return PiercingWeaponIndex;
+            case "Power Core":
+                return PowerCoreIndex;
+            case "Processor":
+                return ProcessorIndex;
+            case "Protection":
+                return ProtectionIndex;
+            case "Protomatter":
+                return ProtomatterIndex;
+            case "Reactor":
+                return ReactorIndex;
+            case "Scrap":
+                return ScrapIndex;
+            case "Slashing Weapon":
+                return SlashingWeaponIndex;
+            case "Special Melee Weapon":
+                return SpecialMeleeWeaponIndex;
+            case "Special Weapon":
+                return SpecialWeaponIndex;
+            case "Storage":
+                return StorageIndex;
+            case "Trap":
+                return TrapIndex;
+            case "Treads":
+                return TreadsIndex;
+            case "Wheel":
+                return WheelIndex;
+        }
+
+        console.log(`Invalid item type ${itemType}`);
+        return ItemIndex;
     }
 }

@@ -16,7 +16,7 @@ import { SortingTable } from "../components/Table/Table";
 import { Bot, BotPart } from "../types/botTypes";
 import { MapLocation, Spoiler } from "../types/commonTypes";
 import { JsonHack } from "../types/hackTypes";
-import { Critical, Item, WeaponItem } from "../types/itemTypes";
+import { Critical, Item, ItemIndex, WeaponItem } from "../types/itemTypes";
 import { WikiEntry } from "../types/wikiTypes";
 import { HashLink } from "../utilities/linkExport";
 import { BotData } from "./BotData";
@@ -707,7 +707,8 @@ function processBotDetailsTag(state: ParserState, result: RegExpExecArray) {
         netHeatPerTurn: 0,
         netHeatPerVolley: undefined,
         profile: "",
-        propulsionType: "Leg",
+        propulsionType: undefined,
+        propulsionTypeIndex: ItemIndex,
         rating: "",
         salvageHigh: 0,
         salvageLow: 0,
@@ -1150,8 +1151,8 @@ function processPartGroupTableTag(state: ParserState, result: RegExpExecArray) {
         .filter((entry) => entry.canShowSpoiler(state.spoiler) && entry.type === "Part");
     const parts = partEntries.map((entry) => entry.extraData as Item);
 
-    // Sort in gallery export index order. This sorts by basic low rated parts 
-    // first, and if similar parts are at the same rating (such as storage 
+    // Sort in gallery export index order. This sorts by basic low rated parts
+    // first, and if similar parts are at the same rating (such as storage
     // units), generally sorts by lowest effect value first.
     parts.sort((a, b) => a.index - b.index);
 
@@ -1723,11 +1724,12 @@ const itemDetailsMap = new Map<
         isNumber?: boolean;
         isDamage?: boolean;
         isExplosionDamage?: boolean;
+        isType?: boolean;
     }
 >([
     ["Image Name", {}],
     ["Name", {}],
-    ["Type", {}],
+    ["Type", { isType: true }],
     ["Slot", {}],
     ["Size", { isNumber: true }],
     ["Rating", { isNumber: true }],
@@ -1812,6 +1814,7 @@ function processItemDetailsTag(state: ParserState, result: RegExpExecArray) {
         noPrefixName: "",
         fullName: "",
         type: "Item",
+        typeIndex: ItemIndex,
         rating: 1,
         ratingString: "",
         ratingCategory: "None",
@@ -1913,6 +1916,10 @@ function processItemDetailsTag(state: ParserState, result: RegExpExecArray) {
             (item as WeaponItem).maxChunks = maxChunks;
             (item as WeaponItem).minChunks = minChunks;
             continue;
+        } else if (categoryData.isType) {
+            // Assign type index from type string
+            // Probably not needed but just in case
+            item.typeIndex = ItemData.getItemTypeIndex(value);
         }
 
         // Assign the value to the item
