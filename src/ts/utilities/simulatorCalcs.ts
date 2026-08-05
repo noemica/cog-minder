@@ -1503,6 +1503,7 @@ function getSpecialStatePart<T extends SpecialPart>(array: T[]) {
 // Parts will be removed from the array if their integrity has dropped below 0
 function getSpecialStateParts<T extends SpecialPart>(array: T[]) {
     let needsCopy = false;
+
     // Disabled parts will require an array copy to only return those parts
     // that are currently active. If none are required we can return just the
     // array by itself
@@ -2190,35 +2191,35 @@ function simulateBotHeatUpdates(state: SimulatorState) {
     botState.heat -= botState.def.innateHeatDissipation;
 
     // Apply cooling devices first
-    for (const coolingDevice of coolingDevices || []) {
-        botState.heat -= coolingDevice.amount;
+    for (let i = 0; i < coolingDevices?.length || 0; i++) {
+        botState.heat -= coolingDevices[i].amount;
 
         // If heat sink + cryofiber web, double the dissipation
-        if (cryofiberWeb !== undefined && coolingDevice.isHeatSink) {
-            botState.heat -= coolingDevice.amount;
+        if (cryofiberWeb !== undefined && coolingDevices[i].isHeatSink) {
+            botState.heat -= coolingDevices[i].amount;
         }
     }
 
     // Technically should randomize the injector order as the chosen
     // injector is random, but this matters very little for simulator purposes
-    for (const coolantInjector of coolantInjectors || []) {
+    for (let i = 0; i < coolantInjectors?.length || 0; i++) {
         // Apply coolant injectors next if still over heat threshold
         // Note: The threshold for bots is 150 heat rather than 200 like
         // it is for Cogmind. The description doesn't mention this fact
         // though.
         if (botState.heat >= 150) {
             // All injectors lose 2 heat per application
-            coolantInjector.part.integrity -= 2;
-            botState.heat -= coolantInjector.amount;
+            coolantInjectors[i].part.integrity -= 2;
+            botState.heat -= coolantInjectors[i].amount;
         }
     }
 
     // Technically should randomize the ablative order as the chosen
     // armor is random, but there are no bots with more than one of these
-    for (const ablativeArmor of ablativeArmors || []) {
+    for (let i = 0; i < ablativeArmors?.length || 0; i++) {
         if (botState.heat > 150) {
             // Note: This subtracts 0 integrity for dissipating 1-19 heat
-            ablativeArmor.part.integrity -= Math.trunc((botState.heat - 15) / 20);
+            ablativeArmors[i].part.integrity -= Math.trunc((botState.heat - 15) / 20);
         }
     }
 
@@ -2552,9 +2553,12 @@ function updateTimeBasedStateChanges(state: SimulatorState, volleyTime: number) 
     const completedTurns = newCompletedTurns - lastCompletedTurns;
     const coreRegenIntegrity = botState.coreRegen * completedTurns;
 
-    const powerMultiplier = getSpecialStateParts(botState.specialPartsState.powerAmplifiers)
-        .map((amplifier) => amplifier.multiplier)
-        .reduce(sum, 1);
+    let powerMultiplier = 1;
+    if (botState.specialPartsState.powerAmplifiers.length > 0) {
+        powerMultiplier += getSpecialStateParts(botState.specialPartsState.powerAmplifiers)
+            .map((amplifier) => amplifier.multiplier)
+            .reduce(sum, 0);
+    }
 
     for (let i = 0; i < completedTurns; i++) {
         // Handle things that need to be checked once per turn
@@ -2562,8 +2566,11 @@ function updateTimeBasedStateChanges(state: SimulatorState, volleyTime: number) 
         // Add energy
         botState.energy += botState.def.innateEnergyGeneration;
 
-        for (const power of getSpecialStateParts(botState.specialPartsState.power)) {
-            botState.energy += Math.trunc(powerMultiplier * ((power.part.def as PowerItem).energyGeneration || 0));
+        const powerParts = getSpecialStateParts(botState.specialPartsState.power);
+        for (let j = 0; j < powerParts.length; j++) {
+            botState.energy += Math.trunc(
+                powerMultiplier * ((powerParts[j].part.def as PowerItem).energyGeneration || 0),
+            );
         }
 
         // Subtract energy upkeep
@@ -2580,15 +2587,15 @@ function updateTimeBasedStateChanges(state: SimulatorState, volleyTime: number) 
         simulateBotHeatUpdates(state);
 
         // Decrement disabled turns check
-        for (let i = botState.disabledParts.length - 1; i >= 0; i--) {
-            const part = botState.disabledParts[i];
+        for (let j = botState.disabledParts.length - 1; j >= 0; j--) {
+            const part = botState.disabledParts[j];
             if (part.disabledTurns > 0) {
                 part.disabledTurns -= 1;
             }
 
             // Remove if no longer present
             if (part.disabledTurns === 0) {
-                botState.disabledParts.splice(i, 1);
+                botState.disabledParts.splice(j, 1);
             }
         }
     }
