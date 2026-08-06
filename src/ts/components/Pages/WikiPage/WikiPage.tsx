@@ -6,7 +6,7 @@ import { useHashLocation } from "wouter/use-hash-location";
 import wiki from "../../../../json/wiki.json";
 import { Bot } from "../../../types/botTypes";
 import { MapLocation, Spoiler } from "../../../types/commonTypes";
-import { Item, PowerItem, PropulsionItem, WeaponItem } from "../../../types/itemTypes";
+import { DamageResistsIndex, Item, PowerItem, PropulsionItem, WeaponItem } from "../../../types/itemTypes";
 import { WikiEntry } from "../../../types/wikiTypes";
 import { BotData } from "../../../utilities/BotData";
 import { ItemData } from "../../../utilities/ItemData";
@@ -692,7 +692,7 @@ const itemCategoryFilters = new Map<string, (item: Item) => boolean>([
         (item) =>
             item.type === "Protection" &&
             item.specialProperty !== undefined &&
-            item.specialProperty.trait.kind === "DamageResists",
+            item.specialProperty.trait.kind === DamageResistsIndex,
     ],
     ["Self-contained Parts", (item) => item.name.startsWith("Sfc.")],
     ["Special Weapons", (item) => item.type === "Special Weapon"],
