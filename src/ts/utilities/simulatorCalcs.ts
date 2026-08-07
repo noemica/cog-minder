@@ -566,9 +566,9 @@ function applyDamageChunkToPart(
         damageReductionEnergyRatio = damageReductionPart.ratio;
 
         if (damageReductionPart.remote) {
-            damageReduced = Math.trunc(damage * damageReductionMultiplier);
+            damageReduced = Math.trunc(damage * (1 - damageReductionMultiplier));
         } else {
-            damageReduced = damage - Math.trunc(damage * damageReductionMultiplier);
+            damageReduced = damage - Math.trunc(damage * (damageReductionMultiplier));
         }
 
         // If FF-like part, check that we actually have enough energy to
