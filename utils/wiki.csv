@@ -10285,7 +10285,7 @@ Mode|Probability| Min. depletion on move
 || Core | 60% | 6
 || [[Flight Units|Flight]] | 80% | 5
 [[/Table]]
-Note that this means non-overweight threaded builds are ""immune"" to hostile Stasis Traps.
+Note that this means non-overweight tread builds are ""immune"" to hostile Stasis Traps.
 
 [[Heading]]Effects and depletion[[/Heading]]
 Upon being triggered, Stasis Traps create a stasis field on the tile they occupy, which cancels the evasion bonus from [[Flight Units|Flight]]/[[Hover Units|Hover]]/[[Reaction Control Systems]] of robots inside and prevents them from moving away until the field is depleted, usually by the victim's repeated movement attempts. These traps pose no threat whatsoever on their own, but with bad timing can be can cause Cogmind to get stuck in exposed locations as nearby dangers approach the area. However, the stasis field also reduces all incoming damage by 25%.
@@ -10295,7 +10295,7 @@ Attempting to move away from the stasis field will cause it to deplete by an amo
 This means that detaching heavy parts can significantly speed up field depletion.
 Note that attempting to move away always takes 1 turn, regardless of current movement speed, with the exception of the movement that finishes depleting the field.
 Because of this, a spare Threads part can work as a makeshift [[Stasis Canceller]].
-|Taking damage while in a stasis field will reduce that damage by 25% and deplete the stasis field by [damage absorbed].
+|Taking damage while in a stasis field will reduce that damage by 25% and deplete the stasis field by 1% per 3 damage reduced.
 |Using a Stasis Canceller and moving away from the trap will deplete it instantly.
 |If the Stasis Trap is friendly, using a Trap Extractor will extract it and its stasis field, conserving whatever was left of the field strength.
 |If an explosion occurs and destroys the Stasis Trap itself, the stasis field will also disappear, and the corresponding [[Mechanics Achievements|Mechanics Achievement]] ""Short-term Sacrifices"" will be unlocked if it wasn't already.
