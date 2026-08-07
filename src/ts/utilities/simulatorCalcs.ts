@@ -568,7 +568,7 @@ function applyDamageChunkToPart(
         if (damageReductionPart.remote) {
             damageReduced = Math.trunc(damage * (1 - damageReductionMultiplier));
         } else {
-            damageReduced = damage - Math.trunc(damage * (damageReductionMultiplier));
+            damageReduced = damage - Math.trunc(damage * damageReductionMultiplier);
         }
 
         // If FF-like part, check that we actually have enough energy to
@@ -577,6 +577,17 @@ function applyDamageChunkToPart(
 
         if (botState.energy > energyRequired) {
             botState.energy -= energyRequired;
+
+            if (damageReductionPart.stasisTrap) {
+                // Reduce stasis trap by 1% for every 3 damage reduced, rounded up
+                damageReductionPart.part.integrity -= Math.ceil(damageReduced / 3);
+                if (damageReductionPart.part.integrity <= 0) {
+                    botState.specialPartsState.damageReduction.splice(
+                        botState.specialPartsState.damageReduction.indexOf(damageReductionPart),
+                        1,
+                    );
+                }
+            }
         } else {
             // If not enough energy available then don't apply the FF reduction
             damageReduced = 0;
@@ -1209,6 +1220,7 @@ export function getBotSpecialPartState(
                             reduction: (part.def.specialProperty!.trait as DamageReduction).multiplier,
                             remote: (part.def.specialProperty!.trait as DamageReduction).remote,
                             part: part,
+                            stasisTrap: false,
                         });
                     }
                     break;
@@ -1342,13 +1354,14 @@ export function getBotSpecialPartState(
                     disabledTurns: 0,
                     energyUpkeep: 0,
                     inactiveHeatGeneration: 0,
-                    integrity: 1,
+                    integrity: externalDamageReduction === "Stasis Trap" ? 100 : 1,
                     initialIndex: 0,
                     protection: false,
                     selfDamageReduction: 0,
                     shieldedCoverage: 0,
                     siegedCoverage: 0,
                 },
+                stasisTrap: externalDamageReduction === "Stasis Trap",
             });
         } else {
             const existingIndex = damageReductionSortOrder.indexOf(state.damageReduction[0].part.def.name);
@@ -1371,13 +1384,14 @@ export function getBotSpecialPartState(
                         disabledTurns: 0,
                         energyUpkeep: 0,
                         inactiveHeatGeneration: 0,
-                        integrity: 1,
+                        integrity: externalDamageReduction === "Stasis Trap" ? 100 : 1,
                         initialIndex: 0,
                         protection: false,
                         selfDamageReduction: 0,
                         shieldedCoverage: 0,
                         siegedCoverage: 0,
                     },
+                    stasisTrap: externalDamageReduction === "Stasis Trap",
                 });
             } else {
                 state.damageReduction.push({
@@ -1396,12 +1410,13 @@ export function getBotSpecialPartState(
                         energyUpkeep: 0,
                         inactiveHeatGeneration: 0,
                         initialIndex: 0,
-                        integrity: 1,
+                        integrity: externalDamageReduction === "Stasis Trap" ? 100 : 1,
                         protection: false,
                         selfDamageReduction: 0,
                         shieldedCoverage: 0,
                         siegedCoverage: 0,
                     },
+                    stasisTrap: externalDamageReduction === "Stasis Trap",
                 });
             }
         }

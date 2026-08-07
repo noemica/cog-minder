@@ -83,6 +83,7 @@ export type CryofiberWebPart = SpecialPart & {
 export type DamageReductionPart = SpecialPart & {
     ratio: number;
     reduction: number;
+    stasisTrap: boolean;
     remote: boolean;
 };
 
