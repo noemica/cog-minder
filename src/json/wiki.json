@@ -10749,7 +10749,7 @@
    "Exits": [
     {
      "Map": "Factory",
-     "Depths": "=7 to -4"
+     "Depths": "-7 to -4"
     }
    ],
    "MinDepth": -7,
