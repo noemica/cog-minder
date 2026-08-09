@@ -31,6 +31,7 @@ import WikiSearchPage from "./WikiSearchPage";
 
 import "../Pages.less";
 import "./WikiPage.less";
+import { BackToTopButton } from "./BackToTopButton";
 
 export type EditState = {
     editText: string;
@@ -1091,6 +1092,7 @@ function MainPage() {
                             </Route>
                         </Switch>
                     </div>
+                    <BackToTopButton />
                 </div>
             </Route>
         </Switch>

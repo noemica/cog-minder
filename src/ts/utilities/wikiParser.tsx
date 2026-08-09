@@ -24,7 +24,6 @@ import { ItemData } from "./ItemData";
 import {
     canShowSpoiler,
     createImagePath,
-    gallerySort,
     getLargeBotImageName,
     getLinkSafeString,
     parseFloatOrUndefined,

@@ -10,6 +10,7 @@ import {
     useReactTable,
 } from "@tanstack/react-table";
 import { useState } from "react";
+import { useMediaQuery } from "usehooks-ts";
 
 import "./Table.less";
 

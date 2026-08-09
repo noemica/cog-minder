@@ -88,12 +88,10 @@ function InfoboxSupergroupContent({
 function InfoboxContent({
     activeEntry,
     groupEntry,
-    parentEntry,
     spoiler,
 }: {
     activeEntry: WikiEntry;
     groupEntry: WikiEntry;
-    parentEntry: WikiEntry | undefined;
     spoiler: Spoiler;
 }) {
     if (groupEntry.getMaxEntryDepth() >= 3) {
@@ -191,14 +189,7 @@ function InfoboxTable({
                     setShow={setShow}
                     show={show}
                 />
-                {show && (
-                    <InfoboxContent
-                        activeEntry={activeEntry}
-                        groupEntry={groupEntry}
-                        parentEntry={parentEntry}
-                        spoiler={spoiler}
-                    />
-                )}
+                {show && <InfoboxContent activeEntry={activeEntry} groupEntry={groupEntry} spoiler={spoiler} />}
             </tbody>
         </table>
     );
@@ -264,14 +255,7 @@ export default function WikiGroupInfobox({
                     setShow={setShow}
                     show={show}
                 />
-                {show && (
-                    <InfoboxContent
-                        activeEntry={activeEntry}
-                        groupEntry={groupEntry}
-                        parentEntry={undefined}
-                        spoiler={spoiler}
-                    />
-                )}
+                {show && <InfoboxContent activeEntry={activeEntry} groupEntry={groupEntry} spoiler={spoiler} />}
             </tbody>
         </table>
     );

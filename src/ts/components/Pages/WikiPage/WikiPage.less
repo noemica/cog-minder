@@ -2,6 +2,11 @@
 
 @transition-duration: 0.15s;
 
+.opaque {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
 .clear-changes-button {
     margin-right: @large-gap;
     width: 9.5rem;
@@ -39,6 +44,13 @@
         .details-range-dim {
             color: @details-dim-text-wiki;
         }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    // Scroll specific content specially on mobile 
+    .wiki-page-content {
+        overflow-x: scroll;
     }
 }
 
@@ -589,7 +601,6 @@ wiki-gallery-fullsize-images,
     .select__indicators {
         display: none;
     }
-
 }
 
 .wiki-search-result-list {
@@ -763,5 +774,35 @@ wiki-gallery-fullsize-images,
         // Override the normal border invert since we're messing with the
         // borders that would be shown here, and it looks weird to leave
         border-color: @border-color;
+    }
+}
+
+.back-to-top-button {
+    > button {
+        opacity: 0.6;
+        transition: opacity @transition-duration ease-in;
+
+        position: fixed;
+        bottom: @medium-gap;
+        right: @medium-gap;
+        margin: 0 !important;
+
+        width: @back-to-top-button-size;
+        height: @back-to-top-button-size;
+    }
+
+    > button:focus,
+    > button:hover {
+        transition: opacity 0s;
+        opacity: 1;
+    }
+
+    > button:before {
+        content: "";
+        position: absolute;
+        inset: 25%;
+        transform: translateY(20%) rotate(-45deg);
+        border-top: 0.375rem solid @border-color;
+        border-right: 0.375rem solid @border-color;
     }
 }
