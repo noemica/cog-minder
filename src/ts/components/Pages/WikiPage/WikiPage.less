@@ -48,7 +48,7 @@
 }
 
 @media screen and (max-width: 700px) {
-    // Scroll specific content specially on mobile 
+    // Scroll specific content specially on mobile
     .wiki-page-content {
         overflow-x: scroll;
     }
@@ -635,10 +635,11 @@ wiki-gallery-fullsize-images,
 
 .wiki-table-of-contents,
 .wiki-expandable {
+    width: 100%;
+    margin-bottom: @medium-gap;
+
     display: table;
     background-color: @expandable-background-color;
-
-    margin-bottom: @medium-gap;
 
     > details {
         border: @border-width solid @border-color;
