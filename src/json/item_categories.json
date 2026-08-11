@@ -1175,7 +1175,7 @@
     "Plasma Cutter": ["0b10"],
     "Imp. Plasma Cutter": ["0b10"],
     "Exp. Plasma Cutter": ["Derelict", "Spoiler"],
-    "Multitool": ["Derelict"],
+    "Multitool": ["Derelict", "Spoiler"],
     "CPS Tube": ["Derelict"],
     "Flamer": ["Derelict"],
     "Enh. Flamer": ["Derelict"],
