@@ -1852,7 +1852,7 @@ Effect/Effect
 [[Sub. Machine Gun]]|
 [[Sub. Monowheel]]|
 [[Sub. Laser]]|
-[[Sub. Power Source]]|
+[[Sub. Power Source]]
 [[/List]]
 
 [[Heading]]Uncommon: ~3.33% (1/30) chance of each[[/Heading]]
@@ -6402,7 +6402,7 @@ Projectile/Critical|
 Projectile/Penetration|
 Projectile/Salvage
 [[/PartGroupTable]]","","","","Hyp. Gauss Rifle,Hyp. Coil Gun,Hyp. Railgun,Hyp. Multirail","","","",""
-"Hypervelocity Weapons","Part Supergroup","A type of [[Weapons|weapon]], primarily [[Kinetic Weapons|kinetic weapons]], that have high penetration and destroy [[Critical Hit|critical hit]] chance at the tradeoff of low damage. This makes them very effective at instantly killing bots without any coring immunity or [[Core Shieldings]] but generally ineffective at killing immune bots like [[Behemoth|Behemoths]] and [[Heavy|Heavies]].
+"Hypervelocity Weapons","Part Supergroup","A type of [[Weapons|weapon]], primarily [[Kinetic Weapons|kinetic weapons]], that have high penetration and destroy [[Critical Hits|critical hit]] chance at the tradeoff of low damage. This makes them very effective at instantly killing bots without any coring immunity or [[Core Shieldings]] but generally ineffective at killing immune bots like [[Behemoth|Behemoths]] and [[Heavy|Heavies]].
 
 [[SubpageSummary]]
 
@@ -10278,7 +10278,7 @@ Effect/Effect
 "Stasis Trap","Part","Stasis Traps are [[Traps]] found in 0b10-controlled areas, and are especially common in [[Garrison|Garrisons]]. They are uniquely the only trap type to temporarily remain after being triggered, the only extractable trap type that cannot be stored inside [[Trap Extractors]], as well as the only trap type to be extractable [[I]]after[[/I]] being triggered (but before being depleted).
 
 [[Heading]]Triggering[[/Heading]]
-While the probability of triggering traps is based on current [[Propulsion]] type, the probability of triggering Stasis Trap is the opposite of regular Traps :
+While the probability of triggering traps is based on current [[Propulsion]] type, the probability of triggering Stasis Trap is the opposite of regular Traps:
 [[Table]]
 Mode|Probability| Min. depletion on move
 || Overweight | 100% | N/A
@@ -10299,7 +10299,7 @@ Attempting to move away from the stasis field will cause it to deplete by an amo
 This means that detaching heavy parts can significantly speed up field depletion.
 Note that attempting to move away always takes 1 turn, regardless of current movement speed, with the exception of the movement that finishes depleting the field.
 Because of this, a spare Threads part can work as a makeshift [[Stasis Canceller]].
-|Taking damage while in a stasis field will reduce that damage by 25% and deplete the stasis field by 1% per 3 damage reduced.
+|Taking damage while in a stasis field will reduce that damage by 25% and deplete the stasis field by 1% per 1 damage reduced. So for example, 4 damage will be reduced to 3 damage and 1 damage will be redirected to 1% stasis depletion.
 |Using a Stasis Canceller and moving away from the trap will deplete it instantly.
 |If the Stasis Trap is friendly, using a Trap Extractor will extract it and its stasis field, conserving whatever was left of the field strength.
 |If an explosion occurs and destroys the Stasis Trap itself, the stasis field will also disappear, and the corresponding [[Mechanics Achievements|Mechanics Achievement]] ""Short-term Sacrifices"" will be unlocked if it wasn't already.
@@ -10390,8 +10390,54 @@ Storage Units have special immunity to nearly all part-severing and instant dest
 This article was last updated during Beta 15.","","","","Sml. Storage Unit,Med. Storage Unit,Lrg. Storage Unit,Hcp. Storage Unit,Huge Storage Unit,Cargo Storage Unit,Humpback,Lgt. Humpback,Vmp. Humpback,Lightpack 2.0,Cep. Antigrav Storage Unit","","","",""
 "Storm Laser","Part","","","","","","","","",""
 "Stormtrooper","Bot","","","","","","","","",""
-"Strategy","Other","Strategy guides to complete various content. Also see [[aoemica's Flight Guide]].","","","","","","","Strategy/Bosses,Strategy/Maps,Strategy/Wintypes",""
-"Strategy/Bosses","Other","Strategy guides to kill the 3 bosses in the game achieve +s on the scoresheet.","Redacted","","","","","","Strategy/Bosses/Defeating Architect,Strategy/Bosses/Defeating MAIN.C,Strategy/Bosses/Defeating Superfortress",""
+"Strategy","Other","Strategy guides to complete various content. Also see [[aoemica's Flight Guide]].","","","","","","","Strategy/Alignments,Strategy/Bosses,Strategy/Maps,Strategy/Wintypes",""
+"Strategy/Alignments","Other","Strategy guides for particular alignments.","Spoiler","","","","","","Strategy/Alignments/X0-1V1",""
+"Strategy/Alignments/X0-1V1","Other","Although being capable of adapting to the chaos is the primary tool to survive praying to [[X0-1V1]], strategizing with them is very difficult, as their chaotic effects can cause any plan to go sideways really quickly. And while Cogmind is generally more resilient than usual thanks to both the lower long-term downside of taking risks or attaching [[Corrupted Parts]], which is reduced by the relatively common core restoration and Corruption-reducing effects (among others) and the fact that getting unlucky is slightly offset by the amusement it provides X0-1V1, [[Alert]] also rises more easily and quickly than usual.
+
+[[Heading]]General[[/Heading]]
+[[Heading:2]]Maintaining your build[[/Heading]]
+Due to the higher average damage taken and the part repair effect being fairly rare (especially compared to the core integrity restoration and the corruption-reducing effects), being capable of maintaining your own build without relying on X0-1V1 is crucial. For several builds, the [[Sfc. Transmogrifier]] is particularly helpful as it also amuses X0-1V1, though it prevents reliable use of other parts like [[Signal Interpreters]]. The [[Scrap Engine]] can likewise be really helpful, especially with complementary permanent buffs. This is also true of [[GOLEM Unit|GOLEM Units]], though X0-1V1 makes getting those more difficult than usual. Various alignments can also help with restocking parts.
+
+[[Heading:2]]Using the permanent buffs[[/Heading]]
+The permanent buffs are the most important thing to adapt to (when they're useful enough), as making good use of them can drastically benefit your odds of survival. For example, additional ranged accuracy makes long-range combat more favorable, additional mass support would suggest [[Flight]] or [[Hover]]-based propulsion, while additional energy capacity would benefit both [[Shield Generators]]/[[Force Fields]] and [[Electromagnetic Weapons]].
+
+[[Heading:2]]Adapting to slot mutations[[/Heading]]
+The very disruptive slot mutation effect is worth keeping in mind, as it requires dedicating an extra slot to whatever a build may consider the minimum necessary to function. For instance, a powerful four-slot weapon would require evolving 3 weapon slots to make sure the minimum four slot are always available even when one gets taken away, and a flight build might need an extra propulsion slot to have enough mass support at all times. The Scrap Engine, however, is largely resistant to this effect since it cannot affect construct-occupied slots.
+
+[[Heading:2]]Submaps and entertainment[[/Heading]]
+As X0-1V1's entertainment remains the same when entering/exiting Garrisons, [[Wastes]] or [[DSF|DSFs]] (as opposed to [[Branch|branches]] or even just going to the next main floor), visiting submaps can be more useful than usual. [[RIF]] is especially powerful with X0-1V1's ability to add charges to [[Relay Couplers]] and the potential free random RIF ability. Wastes can be helpful to lower the overall higher alert, and can even raise X0-1V1's amusement when entering via an unknown [[Chute Trap]], though some effects make the area much more dangerous as well.
+
+[[Heading:2]]Dealing with [[CY-PHR]][[/Heading]]
+X0-1V1's effects do not directly affect hacking, while CY-PHR only affects hacking, and both of them independently cause the overall danger and alert to be higher than usual. As a result, having both active at once is absolutely terrible, especially given that none of CY-PHR's effects amuse X0-1V1. Either try to avoid getting targeted by CY-PHR, or try to trigger them early while hoping they appear on an early floor and be prepared to deal with them then.
+
+
+[[Heading]]Branches[[/Heading]]
+While the long-term benefit many branches offer are often worth more after praying to X0-1V1, their chaotic effects make most of those branches even more dangerous than usual to travel through or reach.
+
+[[Heading:2]][[Caves|Lower/Upper/Proximity Caves]][[/Heading]]
+X0-1V1's ability to teleport Cogmind into nearby dangers, vaporize nearby terrain or cause an IFF burst all make Caves maps much more dangerous. 0b10 outposts specifically are most dangerous, especially near the start of the second Lower/Upper Caves map of the depth. A [[Transmission Jammers|Transmission Jammer]] or [[Cloaking Devices|Cloaking Device]] can help mitigate this danger. Detecting 0b10 outposts and [[Behemoth|Behemoths]] from far away and taking long paths around is the best way to prevent X0-1V1's effects from alerting those, though the map generation does not always provide such paths.
+
+As several X0-1V1 effects can cause Cogmind to drop parts, including inventory parts, take precaution near [[Decomposer|Decomposers]] or shoot them on sight to avoid getting your parts decomposed.
+
+
+[[Heading:2]][[Scraptown]][[/Heading]]
+While X0-1V1 will not cause random effects while Scraptown is peaceful, they will still transform the Shadow of the Wyrm association's Wyrm Statue into a [[Chaos Wyrm]] if Cogmind gets close enough to it, which will immediately turn the [[UFD]] hostile. While this is terrible when Cogmind is in bad condition or unprepared, the Chaos Wyrm is an extremely powerful ally that is more than capable of taking on large groups of robots and even [[Triborg]] (whether by raw damage, corruption, or meltdown critical), making it the easiest method of attacking Scraptown. Caution is still advised, as X0-1V1 will start acting again after hostilities begin, and their ""Enjoy the ride!"" effect can easily put Cogmind in Triborg's line of fire.
+
+On a less chaotic note, if a fake part ([[Item Mimic]]) was found and recognized in a previous map, it can be intentionally attached to try to safely make it trigger an AOE Trap, making it possible to destroy walls/machines without turning Scraptown hostile, allowing access to parts normally only obtainable while fighting the UFD or during the civil war.
+
+[[Heading:2]][[Zion]][[/Heading]]
+If a fake part (Item Mimic) was found and recognized in a previous map, it can be intentionally attached near D4-RBY while there are few or no [[Zionite|Zionites]] in view that could arm themselves and kill the Item Mimic, making it possible to get [[D4-RBY's Behemoth Befriender]] without turning the map hostile.
+
+[[Heading:2]][[Deep Caves]][[/Heading]]
+With the ~50% chance that X0-1V1 will trigger the Wall when activating the Z-Facility proximity alert, going into this map without a good way to deal with the consequences is a terrible idea. X0-1V1 will not cause random effects on this map, meaning strategies do not need to account for their other effects.
+
+For a stealth build, a [[Visual Processing Units|Visual Processing Unit]] and/or [[Cloaking Devices|Cloaking Device]] can help spot [[Assembled]] groups from a safe distance to avoid them, a [[Terrain Scanners|Terrain Scanner]] with a good [[Terrain Scan Processors|Terrain Scan Processor]] can help find the exit and safe dig spots, while an [[IFF Parser]] or [[Sensor Arrays|Sensor Array]] can also help with digging by indicating whether the other end of a tunnel is safe. If the main goal of visiting the map was to get [[Z-Imprinter]]'s loot, a fast movement speed can allow avoiding the Assembled entirely by quickly reaching the exit after defeating her. A fast flight build may even be able to locate and reach the exit before Z-Imprinter can catch up, further lowering the chances of encountering Assembled groups. Having a [[Launchers|Launcher]] is still highly recommended, and [[Propulsion Shieldings|Propulsion Shielding]] may help to reach the exit without losing too many propulsion parts in really bad scenarios.
+
+For a combat build, several Launchers (especially a [[Rocket Array]] or [[Scatter Rocket Array]]), good [[Matter Compressors|Matter storage]] and/or [[Matter Filters|Matter Filtering]], and also a good [[Tractor Beams|Tractor Beam]] can help fight the groups of Assembled, a Visual Processing Unit can help spot them from a distance, and a Cloaking Device can make it easier to get close enough to use launchers more effectively. [[Armor]] can lower the chances of losing Launchers, and Allies can both distract Assembled and destroy lone ones. Allied [[Martyr|Martyrs]] or [[Demolisher|Demolishers]] are particularly helpful, but may be difficult to bring to this map. A fast combat build may be able to reach and destroy the [[Assembler|Assemblers]] before they can create too many new Assembled, especially if the [[Imprinter]] was destroyed in Zion or the Z-Imprinter was immobilized with [[Blade Trap|Blade Traps]] or [[Segregator Trap|Segregator Traps]]. However, the two [[Golem|Golems]] may make it difficult to deal with the Assemblers while they are still close to the Wall. 
+
+[[Heading:2]][[Research]] Branches[[/Heading]]
+Research Branches can be quite dangerous when the [[Prototype Robot|Prototype bots]] and [[Researcher|Researchers]] they contain are combined with X0-1V1's chaos. The danger teleport, terrain vaporization and IFF Burst effects can alert Prototype bots, and/or put Cogmind into combat situations in view of Researchers. The switcheroo effect can also turn a ""safe"" combat scenario into a mess by suddenly causing Cogmind to be near a Researcher. X0-1V1 may also send cosmic wind allies or new hostiles, both of which are bad when near Researchers. Both RIF and the Scraptown Research Penetration Think Tank code can be extremely valuable in dealing with Researchers in various scenarios.","Spoiler","","","","","","",""
+"Strategy/Bosses","Other","Strategy guides to kill the 3 bosses in the game which achieve +s on the scoresheet.","Redacted","","","","","","Strategy/Bosses/Defeating Architect,Strategy/Bosses/Defeating MAIN.C,Strategy/Bosses/Defeating Superfortress",""
 "Strategy/Bosses/Defeating Architect","Other","[[Image]]Access_0 Entrance.png|Hostile Entrance to Access_0[[/Image]]
 [[Access_0]] is one of the hardest maps in the game that requires Cogmind to deal with numerous powerful threats on the map that gives very little breathing room for fixing a build that is starting to fall apart. Assuming [[MAIN.C]] is defeated in [[Command]], there is a large amount of preparation that can be done after all of the bots have become disabled. [[Command#command_cache_contents|MAIN.C's cache]] can provide some incredibly powerful parts, and the rest of the map can have plenty of goodies to grab. Since Access_0 is a very combat-oriented map, make sure to bring backups of essentials like power, propulsion, weapons, and armor. While there are some part caches in Access_0 itself, their contents are not particularly reliable and shouldn't be counted on to provide crucial backups. A more consistent source of parts are the drops from the [[Enhanced Bot|Enhanced Bots]] and the [[A Bots]], assuming weapons with neutral salvage can be used at least some of the time. There tend to be abundant legs and mediocre-quality power above all else from the [[Enhanced Grunt|Enhanced Grunts]] and [[Enhanced Hunter|Enhanced Hunters]]. The Grunt's [[Neutron Cannon|Neutron Cannons]] can serve in a pinch, but aren't impressive due to their middling damage and short range.
 
@@ -13086,13 +13132,13 @@ Random slot type|+1|N/A|N/A[[/Table]]
 Note that the cost to maximum core integrity is optional only in the sense that it whether it is applied is dependent entirely on X0-1V1. According to Kyzrati, if a buff would take too much of remaining maximum core integrity, it is delayed until the cost is deemed acceptable. In practice, what this means is that high core-costing buffs are unlikely to occur because a different permanent effect can happen first. [[Comment]]Kyzrati said that that postpones the effect, but if that is true, does the postponed effect retain the same magnitude even on a different mood? It appears that the effect simply fails and it can roll for a new effect again immediately rather than saving the current effect.[[/Comment]]
 
 [[Heading:2]]Temporary buffs[[/Heading]]
-[[Expandable]]Show/hide temporary buffs|
+[[Expandable:Expanded]]Show/hide temporary buffs|
 [[Partial]]X0-1V1 Temporary Buffs[[/Partial]]
 [[/Expandable]]
 
 
 [[Heading:2]]Other ""good"" acts[[/Heading]]
-[[Expandable]]Show/hide other ""good"" acts|
+[[Expandable:Expanded]]Show/hide other ""good"" acts|
 [[Partial]]X0-1V1 Good Acts[[/Partial]]
 [[/Expandable]]
 
@@ -13101,13 +13147,13 @@ Note that the cost to maximum core integrity is optional only in the sense that 
 These effects will be written in red text in the log, and counted under ""bad acts"" in scoresheets, although some of them may actually be beneficial in some contexts. Some bad effects are similar to the effects of [[Corruption]].
 
 [[Heading:2]]Temporary debuffs[[/Heading]]
-[[Expandable]]Show/hide temporary debuffs|
+[[Expandable:Expanded]]Show/hide temporary debuffs|
 [[Partial]]X0-1V1 Temporary Debuffs[[/Partial]]
 [[/Expandable]]
 
 
 [[Heading:2]]Other ""bad"" acts[[/Heading]]
-[[Expandable]]Show/hide other ""bad"" acts|
+[[Expandable:Expanded]]Show/hide other ""bad"" acts|
 [[Partial]]X0-1V1 Bad Acts[[/Partial]]
 [[/Expandable]]
 
@@ -13128,53 +13174,6 @@ Log message|Area|Effect|Trigger||
 
 [[Heading]]Other interactions[[/Heading]]
 The [[Quantum Companion]]/[[Superquantum Companion]] has additional side effects when Cogmind has aligned with X0-1V1.
-
-[[Heading]]Strategy[[/Heading]]
-Although being capable of adapting to the chaos is the primary tool to survive praying to X0-1V1, strategizing with them is very difficult, as their chaotic effects can cause any plan to go sideways really quickly. And while Cogmind is generally more resilient than usual thanks to both the lower long-term downside of taking risks or attaching [[Corrupted Parts]], which is reduced by the relatively common core restoration and Corruption-reducing effects (among others) and the fact that getting unlucky is slightly offset by the amusement it provides X0-1V1, [[Alert]] also rises more easily and quickly than usual.
-
-[[Heading:2]]General[[/Heading]]
-[[Heading:3]]Maintaining your build[[/Heading]]
-Due to the higher average damage taken and the part repair effect being fairly rare (especially compared to the core integrity restoration and the corruption-reducing effects), being capable of maintaining your own build without relying on X0-1V1 is crucial. For several builds, the Sfc. Transmogrifier is particularly helpful as it also amuses X0-1V1, though it prevents reliable use of other parts like Signal Interpreters. The Scrap Engine can likewise be really helpful, especially with complementary permanent buffs. This is also true of [[GOLEM Unit|GOLEM Units]], though X0-1V1 makes getting those more difficult than usual. Various alignments can also help with restocking parts. 
-
-[[Heading:3]]Using the permanent buffs[[/Heading]]
-The permanent buffs are the most important thing to adapt to (when they're useful enough), as making good use of them can drastically benefit your odds of survival. For example, additional ranged accuracy makes long-range combat more favorable, additional mass support would suggest [[Flight]] or [[Hover]]-based propulsion, while additional energy capacity would benefit both [[Shield Generators]]/[[Force Fields]] and EM weapons.
-
-[[Heading:3]]Adapting to slot mutations[[/Heading]]
-The very disruptive slot mutation effect is worth keeping in mind, as it requires dedicating an extra slot to whatever a build may consider the minimum necessary to function. For instance, a powerful four-slot weapon would require evolving 3 weapon slots to make sure the minimum four slot are always available even when one gets taken away, and a flight build might need an extra propulsion slot to have enough mass support at all times. The Scrap Engine, however, is largely resistant to this effect since it cannot affect construct-occupied slots.
-
-[[Heading:3]]Submaps and entertainment[[/Heading]]
-As X0-1V1's entertainment remains the same when entering/exiting Garrisons, [[Wastes]] or [[DSF|DSFs]] (as opposed to Branches or even just going to the next main floor), visiting submaps can be more useful than usual. RIF is especially powerful with X0-1V1's ability to add charges to Relay Couplers and the potential free random RIF ability. Wastes can be helpful to lower the overall higher alert, and can even raise X0-1V1's amusement when entering via an unknown Chute Trap, though some effects make the area much more dangerous as well.
-
-[[Heading:3]]Dealing with CY-PHR[[/Heading]]
-X0-1V1's effects do not directly affect hacking, while CY-PHR only affects hacking, and both of them independently cause the overall danger and alert to be higher than usual. As a result, having both active at once is absolutely terrible, especially given that none of CY-PHR's effects amuse X0-1V1 and that CY-PHR's only positive effect (preventing other unchained from being dispatched) is shared by X0-1V1 and is thus redundant. Either try to avoid getting targeted by CY-PHR, or try to trigger them early while hoping they appear on an early floor and be prepared to deal with them then.
-
-
-[[Heading:2]]Branches[[/Heading]]
-While the long-term benefit many branches offer are often worth more after praying to X0-1V1, their chaotic effects make most of those branches even more dangerous than usual to travel through or reach.
-
-[[Heading:3]][[Caves|Lower/Upper/Proximity Caves]][[/Heading]]
-X0-1V1's ability to teleport Cogmind into nearby dangers, vaporize nearby terrain or cause an IFF burst all make Caves maps much more dangerous. 0b10 outposts specifically are most dangerous, especially near the start of the second Lower/Upper Caves map of the depth. A [[Transmission Jammers|Transmission Jammer]] or [[Cloaking Devices|Cloaking Device]] can help mitigate this danger. Detecting 0b10 outposts and Behemoths from far away and taking long paths around is the best way to prevent X0-1V1's effects from alerting those, though the map generation does not always provide such paths.
-
-As several X0-1V1 effects can cause Cogmind to drop parts, including inventory parts, take precaution near [[Decomposer|Decomposers]] or shoot them on sight to avoid getting your parts decomposed.
-
-
-[[Heading:3]][[Scraptown]][[/Heading]]
-While X0-1V1 will not cause random effects while Scraptown is peaceful, they will still transform the Shadow of the Wyrm association's Wyrm Statue into a Chaos Wyrm if Cogmind gets close enough to it, which will immediately turn the UFD hostile. While this is terrible when Cogmind is in bad condition or unprepared, the Chaos Wyrm is an extremely powerful ally that is more than capable of taking on large groups of robots and even Triborg (whether by raw damage, corruption, or meltdown critical), making it the easiest method of attacking Scraptown. Caution is still advised, as X0-1V1 will start acting again after hostilities begin, and their ""Enjoy the ride!"" effect can easily put Cogmind in Triborg's line of fire.
-
-On a less chaotic note, if a fake part (Item Mimic) was found and recognized in a previous map, it can be intentionally attached to try to safely make it trigger an AOE Trap, making it possible to destroy walls/machines without turning Scraptown hostile, allowing access to parts normally only obtainable while fighting the UFD or during the civil war.
-
-[[Heading:3]][[Zion]][[/Heading]]
-If a fake part (Item Mimic) was found and recognized in a previous map, it can be intentionally attached near D4-RBY while there are few or no [[Zionite|Zionites]] in view that could arm themselves and kill the Item Mimic, making it possible to get [[D4-RBY's Behemoth Befriender]] without turning the map hostile.
-
-[[Heading:3]][[Deep Caves]][[/Heading]]
-With the ~50% chance that X0-1V1 will trigger the Wall when activating the Z-Facility proximity alert, going into this map without a good way to deal with the consequences is a terrible idea. X0-1V1 will not cause random effects on this map, meaning strategies do not need to account for their other effects.
-
-For a stealth build, a Visual Processing Unit and/or Cloaking Device can help spot Assembled groups from a safe distance to avoid them, a [[Terrain Scanners|Terrain Scanner]] with a good [[Terrain Scan Processors|Terrain Scan Processor]] can help find the exit and safe dig spots, while an IFF Parser or Sensor Array can also help with digging by indicating whether the other end of a tunnel is safe. If the main goal of visiting the map was to get [[Z-Imprinter]]'s loot, a fast movement speed can allow avoiding the Assembled entirely by quickly reaching the exit after defeating her. A fast flight build may even be able to locate and reach the exit before Z-Imprinter can catch up, further lowering the chances of encountering Assembled groups. Having a [[Launchers|Launcher]] is still highly recommended, and [[Propulsion Shieldings|Propulsion Shielding]] may help to reach the exit without losing too many propulsion parts in really bad scenarios.
-
-For a combat build, several Launchers (especially a [[Rocket Array]] or [[Scatter Rocket Array]]), good [[Matter Compressors|Matter storage]] and/or [[Matter Filters|Matter Filtering]], and also a good [[Tractor Beams|Tractor Beam]] can help fight the groups of Assembled, a Visual Processing Unit can help spot them from a distance, and a Cloaking Device can make it easier to get close enough to use launchers more effectively. [[Armor]] can lower the chances of losing Launchers, and Allies can both distract Assembled and destroy lone ones. Allied [[Martyr|Martyrs]] or [[Demolisher|Demolishers]] are particularly helpful, but may be difficult to bring to this map. A fast combat build may be able to reach and destroy the Assemblers before they can create too many new Assembled, especially if the [[Imprinter]] was destroyed in Zion or the Z-Imprinter was immobilized with [[Blade Trap|Blade Traps]] or [[Segregator Trap|Segregator Traps]]. However, the two Golems may make it difficult to deal with the Assemblers while they are still close to the Wall. 
-
-[[Heading:3]][[Research]] Branches[[/Heading]]
-Research Branches can be quite dangerous when the [[Prototype Robot|Prototype bots]] and [[Researcher|Researchers]] they contain are combined with X0-1V1's chaos. The danger teleport, terrain vaporization and IFF Burst effects can alert Prototype bots, and/or put Cogmind into combat situations in view of Researchers. The switcheroo effect can also turn a ""safe"" combat scenario into a mess by suddenly causing Cogmind to be near a Researcher. X0-1V1 may also send cosmic wind allies or new hostiles, both of which are bad when near Researchers. Both RIF and the Scraptown Research Penetration Think Tank code can be extremely valuable in dealing with Researchers in various scenarios.
 
 
 [[Heading]]Trivia[[/Heading]]
@@ -13279,17 +13278,18 @@ Being spotted by a large number of hostiles at once?|?[[/Table]]
 [[GameText]]""A floating RIF installer appears for a brief moment.""[[/GameText]]|Gives an additional [[RIF]] ability. Can give an ability that would normally only be available after having used many more RIF installers, such as Crosswire.|Only possible if RIF is already installed. Only occurs once per run.||
 [[GameText]]""X0-1V1 Flashes the [Relay Coupler] buffer.""[[/GameText]]|The mentioned Relay Coupler is set to 99 charges and may get tagged.|RIF is not required. Cannot affect [[Relay Coupler [NC]|NC]]/[[Relay Coupler [C]|C]]/[[Relay Coupler [Proto]|Proto]] Couplers.||
 [[GameText]]""Have you ever seen what subatomizers do to 0b10?""[[/GameText]]|X0-1V1 opens a [[SUBCON Basin]] at [[Cogmind]]'s location.|Occurs a maximum of once per run. 0b10 maps only.||
-[[GameText]]""I guarantee there's even more fun over that way.""[[/GameText]]|X0-1V1 reveals and identifies an unknown exit. Known but unidentified exits can not be revealed.||
-[[GameText]]X0-1V1 smiles upon you.[[/GameText]]|Gives one or more items, attaching them if corresponding slots available, or placing them in inventory and discarding others inventory items onto the ground to make space if necessary. Given and discarded items may receive tags. This effect can grant some [[Protomatter]], which cannot otherwise be obtained outside of the RPGLIKE and Polymind special modes, or even unique items like a [[Skeleton Box]].||
+[[GameText]]""I guarantee there's even more fun over that way.""[[/GameText]]|X0-1V1 reveals and identifies a random unknown exit. Known but unidentified exits can not be revealed.||
+[[GameText]]X0-1V1 smiles upon you.[[/GameText]]|Gives one or more items, attaching them if corresponding slots available, or placing them in inventory and discarding others inventory items onto the ground to make space if necessary. Given and discarded items may receive tags. This effect can grant some [[Protomatter]], which cannot otherwise be obtained outside of the RPGLIKE and Polymind special modes, or even unique items like a [[Skeleton Box]].
+WARNING: This effect may crush inventory parts if there is no room on the ground.||
 [[GameText]]""I found some blueprints, how convenient!""[[/GameText]]|X0-1V1 reveals unknown Emergency Access door locations within a square range of 61 tiles centered around Cogmind (30 tiles in each direction).|Must be at least one unknown Emergency Access door location within range||
 [[GameText]]X0-1V1 points here and there.[[/GameText]]|X0-1V1 reveals item locations within a square range of 61 tiles centered around Cogmind (30 tiles in each direction).|Must be at least one unknown part location on the ground within range||
 [[GameText]]X0-1V1 lends a hand with your twisted circuits.[[/GameText]]|Some of Cogmind's [[Corruption]] is purged, between 10% to 50% based on mood magnitude.||
 [[GameText]]""I sense action potential over that way.[[/GameText]]|X0-1V1 reveals a [[Garrison Access]].||
 [[GameText]]""You need a change of scenery.""[[/GameText]]|X0-1V1 teleports Cogmind out of danger.|Cogmind cannot be in good shape||
 [[GameText]]""Just some junk I've been collecting.""[[/GameText]]
-[[GameText]]""Someone left a few trinkets here.""[[/GameText]]|Teleports Cogmind to a ""vault"" containing many out-of-depth and possibly unique items. Prototype parts can be faulty, and the room can contain Traps.|Max once per map, mutually exclusive with the next effect||
+[[GameText]]""Someone left a few trinkets here.""[[/GameText]]|Teleports Cogmind to a ""vault"" containing many out-of-depth and possibly unique items. Prototype parts can be faulty, and the room can contain Traps. The number of parts in the room are 10 + [Mood Magnitude]. There doesn't seem to be any difference between the two messages.|Max once per map, mutually exclusive with the next effect||
 [[GameText]]""Being a leader is both a boon and a curse.""[[/GameText]]
-[[GameText]]""I think they like you.""[[/GameText]]|Teleports to a ""vault"" with several blue-controllable allies. These bots will not drop parts when destroyed.|Max once per map, mutually exclusive with the previous effect||
+[[GameText]]""I think they like you.""[[/GameText]]|Teleports to a ""vault"" with several blue-controllable allies. These bots will not drop parts when destroyed. The number of allies is increased by mood magnitude: 3 appear at 0-39, 4 at 40-79 and 5 at 80-100. There doesn't seem to be any difference between the two messages.|Max once per map, mutually exclusive with the previous effect||
 [[GameText]]""Open Sesame""[[/GameText]]|A power cycler on the map is exploded.|Must be a power cycler on the map. Only once per map.||
 [[GameText]]""Let's see how everyone fares in the upcoming heat wave.""[[/GameText]]|Sterilization system partially engages, bringing heat up to +20 over the next several hundred turns, then falls back down over another several hundred turns.||
 [[GameText]]""I told that [Heavy] to go sit in the corner.""[[/GameText]]|The closest [[Heavy]] moves to the nearest corner of the map and stays there until the next [[Security Rotation]].||
@@ -13304,6 +13304,7 @@ Being spotted by a large number of hostiles at once?|?[[/Table]]
 ""[[GameText]]Subatomizers go![[/GameText]]""|[[Scrap Engine]]'s inventory is packed with random depth-appropriate parts.|Regular or [[Arm. Scrap Engine]] must be attached||
 
 
+[[GameText]]The cosmic winds blow in a new direction.[[/GameText]]|Several uncontrollable purple allies are teleported in nearby. They will eventually disappear after several hundred turns with the log message [[GameText]][bot] form shifts, blurs, and dematerializes.[[/GameText]] These bots will not drop parts when destroyed.|During combat only||
 [[GameText]]""Fire in the hole!""[[/GameText]]|A powerful explosion suddenly occurs centered on a visible hostile. Will also damage Cogmind.|During combat only, Cogmind in range of explosion centered on the target||
 [[Comment]]Incomplete list of possible explosions:
 Micro-nuke (variant unknown), Tesla bomb?[[/Comment]]
@@ -13311,16 +13312,15 @@ Micro-nuke (variant unknown), Tesla bomb?[[/Comment]]
 [[Comment]]Incomplete list of possible weapons:
 Null Cannon, L-Cannon (variant unknown), Hvy. Autocannon? (it dealt 77 kinetic damage)[[/Comment]]
 
-[[GameText]]""This lineup is depressingly uninteresting.""[[/GameText]]|Upgrades allied bot to another higher tier bot of the same type.|During combat only||
-[[GameText]]""We can take them down a peg or two.""[[/GameText]]|Downgrades hostile bot to another lower tier bot of the same type.|During combat only||
-[[GameText]]X0-1V1 imagines sitting ducks.[[/GameText]]|One or more hostiles receive a huge time delay before they can perform their next action.|During combat only||
-[[GameText]]The cosmic winds blow in a new direction.[[/GameText]]|Several uncontrollable purple allies are teleported in nearby. They will eventually disappear after several hundred turns with the log message [[GameText]][bot] form shifts, blurs, and dematerializes.[[/GameText]] These bots will not drop parts when destroyed.|During combat only||
-[[GameText]]I sense a duel![[/GameText]]|A temporary IFF filter overwrite is applied on a visible hostile.|During combat only, multiple visible hostiles||
-[[GameText]]""A civil war? On my watch? More likely than you'd think.""[[/GameText]]|A temporary IFF filter overwrite is applied on half of all visible hostiles.|During combat only, multiple visible hostiles||
-[[GameText]]""I find this area lacking in decorations.""[[/GameText]]|A visible hostile permanently turns off, turning into a statue.|During combat only||
-[[GameText]]""One less obstacle for my toy on its journey to the highest levels of glorious entertainment.""[[/GameText]]|X0-1V1 destroys a nearby hostile.|During combat only||
-[[GameText]]X0-1V1 twists the quantum threads just so.[[/GameText]]|A visible hostile is sundered.|During combat only||
-[[GameText]]X0-1V1 makes it rain matter.[[/GameText]]|Some matter piles appear at random nearby locations, up to 50 matter.|During combat only||
+[[GameText]]""This lineup is depressingly uninteresting.""[[/GameText]]|Upgrades allied bot to another higher tier bot of the same type. The new bot will have full core and part integrity.|During combat only, only affects bots with multiple variants||
+[[GameText]]""We can take them down a peg or two.""[[/GameText]]|Downgrades hostile bot to another lower tier bot of the same type. The new bot will have full core and part integrity.|During combat only, only affects bots with multiple variants||
+[[GameText]]X0-1V1 imagines sitting ducks.[[/GameText]]|One or more hostiles receive a huge time delay before they can perform their next action.|During combat only, some bots are immune[[Sup]]1[[/Sup]]||
+[[GameText]]I sense a duel![[/GameText]]|A temporary IFF filter overwrite is applied on a visible hostile.|During combat only, multiple visible hostiles, some bots are immune[[Sup]]1[[/Sup]]||
+[[GameText]]""A civil war? On my watch? More likely than you'd think.""[[/GameText]]|A temporary IFF filter overwrite is applied on half of all visible hostiles.|During combat only, multiple visible hostiles, some bots are immune[[Sup]]1[[/Sup]]||
+[[GameText]]""I find this area lacking in decorations.""[[/GameText]]|A visible hostile permanently turns off, turning into a statue.|During combat only, some bots are immune[[Sup]]1[[/Sup]]||
+[[GameText]]""One less obstacle for my toy on its journey to the highest levels of glorious entertainment.""[[/GameText]]|X0-1V1 destroys a nearby hostile.|During combat only, some bots are immune[[Sup]]1[[/Sup]]||
+[[GameText]]X0-1V1 twists the quantum threads just so.[[/GameText]]|A visible hostile is sundered like the [[Core Stripper]] effect.|During combat only, some bots are immune[[Sup]]1[[/Sup]]||
+[[GameText]]X0-1V1 makes it rain matter.[[/GameText]]|Some matter piles appear at random nearby locations, up to 50 matter.|During combat only, some bots are immune[[Sup]]1[[/Sup]]||
 [[GameText]]X0-1V1 briefly opens a portal to the matter dimension.[[/GameText]]|A large amount of Matter appears at Cogmind's location, between 200-1000 depending on mood magnitude.|During combat only||
 [[GameText]]X0-1V1 injects you with a stream of matter.[[/GameText]]|Cogmind's Matter is refilled up to maximum capacity.|During combat only, Cogmind has < 75% of maximum Matter capacity, mood magnitude is < 50||
 [[GameText]]X0-1V1 sends you a sudden surge of matter[[/GameText]]|Cogmind's Matter is refilled up to maximum capacity and all [[Matter Compressors]] in inventory are also refilled.|During combat only, Cogmind has < 75% of maximum Matter capacity, mood magnitude is >= 50||
@@ -13333,7 +13333,11 @@ Null Cannon, L-Cannon (variant unknown), Hvy. Autocannon? (it dealt 77 kinetic d
 [[GameText]]Your [parts] briefly glow, restoring integrity.[[/GameText]]|The mentioned attached parts (3 max) have some integrity restored. Can affect normally non-repairable parts. Repairs between 15% to 100% depending on mood magnitude.|During combat only, must have damaged parts||
 [[GameText]]X0-1V1 tries on a Mechanic's hat.[[/GameText]]|Repairs a random number of damaged allies to full integrity. Accompanied by the game log [[GameText]][Bot name] sparkles and shines.[[/GameText]]|During combat only, 3 or more allies must be sufficiently damaged||
 [[GameText]]X0-1V1 sucks the heat right out of you (-[heat] heat).|Cogmind's heat is reduced to 0.|Combat only, heat > 300
-[[/Table]]","Spoiler","","","","","","",""
+[[/Table]]
+
+[[List:Ordered]]
+Some powerful unique bots are immune to hostile-affecting special effects. This includes [[Warlord]], [[Superfortress]], [[MAIN.C]], and [[Architect]].
+[[/List]]","Spoiler","","","","","","",""
 "X0-1V1 Temporary Buffs","Partial","[[Table]]
 Log message|Temporary effect|Restrictions (if any)|Duration[[Sup]]1[[/Sup]]||
 [[GameText]]""Enjoy your XOMVISION!""[[/GameText]]|18 range unjammable ability to sense active robots, even if they have the Scan Cloak trait.| |2 * [Mood Magnitude] + 125||
