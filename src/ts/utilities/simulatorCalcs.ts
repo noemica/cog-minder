@@ -579,8 +579,8 @@ function applyDamageChunkToPart(
             botState.energy -= energyRequired;
 
             if (damageReductionPart.stasisTrap) {
-                // Reduce stasis trap by 1% for every 3 damage reduced, rounded up
-                damageReductionPart.part.integrity -= Math.ceil(damageReduced / 3);
+                // Reduce stasis trap by 1% for every 1 damage reduced, rounded up
+                damageReductionPart.part.integrity -= damageReduced;
                 if (damageReductionPart.part.integrity <= 0) {
                     botState.specialPartsState.damageReduction.splice(
                         botState.specialPartsState.damageReduction.indexOf(damageReductionPart),
