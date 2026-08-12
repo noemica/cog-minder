@@ -2776,11 +2776,13 @@ Due to the short range of both possible shotguns, DW-4LL is very vulnerable to b
 [[List]]All obtainable analyses in the game|
 Most [[0b10]] [[Prototype Part|Prototype]] IDs, with a notable exception of parts found in [[Protoforge]]|
 All interactive and non-interactive machine intel on 0b10 maps|
+The depths of almost all main maps and branches (visible in world map), where the depths of the few missing maps (such as [[Caves]] and [[Zhirov (Location)]]) are easy to figure out|
 [[Redacted]]The ability to decrypt the [[Lab]] Terminal and see the Lab scanner tiles[[/Redacted]]|
 [[Redacted]]Manual bot hacking [[Datajacks|Datajack]] codes that can be used to destroy all ""A"" bots on sight[[/Redacted]][[/List]]
 
 [[Heading]]Downsides[[/Heading]]
 [[List]][[Intercept Squad|Intercepts]] will be dispatched on most 0b10-controlled floors|
+[[A8]]'s code will no longer work|
 No more [[Enhanced Grunt]] backup when turning [[Warlord]] hostile on the [[Warlord (Alignment)#-2 Research Assault|-2 Research assault]]|
 [[God Mode]]'s on-death EMP will inflict massive corruption on Cogmind during the -2 Research assault|
 Trying to perform the God Mode hack during the -2 Research Assault will instead instantly detonate God Mode's EMP, also inflicting corruption on Cogmind|
