@@ -1784,17 +1784,20 @@ Attaching unknown [[Alien Artifacts]] or [[Prototype Part|Prototype Parts]] with
 If [[High Security]] is triggered, all Chute Traps on the map will disappear after 50 turns.
 
 [[Heading]]Effects[[/Heading]]
-When triggered, a Chute Trap will bring the victim to the array's Wastes map, permanently sealing itself afterwards. Victims can be followed by triggering a different Chute Trap from the same array. This is because each Chute Trap array leads to a different Wastes map. If Cogmind falls victim to one, Cogmind's [[Alert]] will drop enormously, and any allies currently following Cogmind will fall into Wastes one after the other following Cogmind, so long as they are not immobile, even if there weren't enough remaining Chute Traps for them to follow. If Cogmind follows a purple allied [[Derelict]] into Wastes, the Derelict will thank Cogmind for not abandoning them.
+When triggered, a Chute Trap will bring the victim to the array's Wastes map, permanently sealing itself afterwards. Each Chute Trap array leads to a different Wastes map, so victims can only be followed by triggering a different Chute Trap from the same array. If Cogmind falls victim to one, The [[Alert]] level will drop enormously, and any allies currently following Cogmind and not immobile will fall into Wastes one after the other after Cogmind, even if there weren't enough remaining Chute Traps for them to follow. If Cogmind follows an allied [[Derelict]] into Wastes, the Derelict will thank Cogmind for not abandoning them.
 Standing on a known Chute Trap then manually triggering will grant the ""Wheee!"" [[Mechanics Achievements|Mechanics Achievement]] if it wasn't already unlocked.
 
 [[Heading]][[K-01 Serf|K-01 Serf]] Interactions[[/Heading]]
-On Factory maps containing Chute Traps, K-01 Serfs sometimes spawn carrying disabled 0b10 bots towards Chutes, and some disabled 0b10 bots can sometimes be stored inside rooms. If a disabled bot is within range of a Worker, the Worker will try to latch onto the bot and push them into the nearest Chute Trap, even if the bot is only temporarily disabled. If a Worker successfully pushes a disabled robot into a Chute Trap, the disabled bot will fall through but the trap will [[I]]not[[/I]] permanently seal itself afterwards. [[Comment]]If Cogmind witness this,[[/Comment]] The Chute Trap will then be revealed (due to a bug in Beta 15, Chute Traps are revealed this way even if Cogmind doesn't witness this happening).
+On Factory maps containing Chute Traps, K-01 Serfs sometimes spawn carrying disabled 0b10 combat bots towards Chutes, and some disabled 0b10 combat bots can sometimes be found stored inside rooms. If a disabled bot is within range of a Worker, the Worker will try to latch onto the bot and push them into the nearest Chute Trap, even if the bot is only temporarily disabled. If a Worker successfully pushes a disabled robot into a Chute Trap, the disabled bot will fall through but the trap will [[I]]not[[/I]] permanently seal itself afterwards. If Cogmind witness this, the Chute Trap will be revealed. [[Comment]]I know that 0b10 bots that fall into chute traps can be found in Wastes if you go through the same array, and i know that they can be active and green-colored, but i don't know if that's only true for the permanently-disabled ones pushed into Wastes by Serfs or for all of them.[[/Comment]]
 
 Because Serfs use Chute Traps, the [[GameText]]find_chute[[/GameText]] hack can be used when hacking one using a [[Datajacks|Datajack]], which reveals the nearest Chute Trap the Serf can use.
 
 [[Spoiler]]The [[RIF]] hacks [[GameText]]hold_bot[[/GameText]] and [[GameText]]start_disposal[[/GameText]] can be used together to make a Serf latch onto and move a bot into a Chute Trap, so long as the Serf is not currently evacuating and has access to a Chute Trap. While the [[GameText]]hold_bot[[/GameText]] hack normally has a turn limit of 25, the [[GameText]]start_disposal[[/GameText]] hack overrides it.[[/Spoiler]]
 
-This article was last edited during Beta 15 ","","","","","","","",""
+[[Heading]]Lore[[/Heading]]
+[[Lore]]0b10 Records|Chute Trap[[/Lore]]
+
+This page was last edited during Beta 17","","","","","","","",""
 "Cld. Aerolev Unit","Part","","","","","","","","",""
 "Cld. Airjet","Part","","","","","","","","",""
 "Cld. Antigrav System","Part","","","","","","","","",""
