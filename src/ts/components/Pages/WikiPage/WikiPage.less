@@ -637,8 +637,6 @@ wiki-gallery-fullsize-images,
 .wiki-expandable {
     margin-bottom: @medium-gap;
 
-    display: block;
-    overflow: hidden;
     background-color: @expandable-background-color;
 
     > details {
@@ -672,19 +670,29 @@ wiki-gallery-fullsize-images,
     }
 }
 
-.wiki-table-of-contents > details {
-    padding: @medium-gap;
+.wiki-table-of-contents {
+    display: table;
+    overflow: hidden;
 
-    > summary {
-        font-size: @wiki-table-of-contents-font-size;
+    > details {
+        padding: @medium-gap;
+
+        > summary {
+            font-size: @wiki-table-of-contents-font-size;
+        }
     }
 }
 
-.wiki-expandable > details {
-    padding: @small-gap;
+.wiki-expandable {
+    display: block;
+    overflow: hidden;
 
-    > summary {
-        font-size: @wiki-expandable-font-size;
+    > details {
+        padding: @small-gap;
+
+        > summary {
+            font-size: @wiki-expandable-font-size;
+        }
     }
 }
 
