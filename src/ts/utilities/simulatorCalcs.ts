@@ -488,7 +488,7 @@ function applyHeatTransfer(
         // Check for bot meltdown after the heat is transferred (this is listed as an * item not numbered)
         // The specific % chance of the bot instantly melting depending on the heat transfer level
         // This value is also increased by 1% per 20 heat above the 250 melting point
-        if (randomInt(0, 99) < heatTransferValues.botMeltdownChance) {
+        if (randomInt(0, 99) < heatTransferValues.botMeltdownChance + Math.trunc((botState.heat - 250) / 20)) {
             // There is a 50% chance that the bot will instantly melt or melt at the beginning of their next turn
             if (randomInt(0, 1) === 1) {
                 botState.coreIntegrity = 0;
