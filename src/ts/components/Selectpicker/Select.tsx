@@ -123,15 +123,21 @@ export default function SelectWrapper<
     //     components.MenuList = VirtualizedMenuList;
     // }
 
+    // If ignoreAccents is true it causes a noticeable slowdown
+
+    const filter = linkSafeString
+        ? createFilter({
+              stringify: linkSafeString ? (option) => getStringFromLinkSafeString(option.value) : undefined,
+              ignoreAccents: false,
+          })
+        : createFilter({
+              ignoreAccents: false,
+          });
+
     return (
         <Select
             {...props}
-            filterOption={createFilter({
-                // If we're using a link safe string, need to unescape it in order to search correctly
-                stringify: linkSafeString ? (option) => getStringFromLinkSafeString(option.value) : undefined,
-                // If ignoreAccents is true it causes a noticeable slowdown
-                ignoreAccents: false,
-            })}
+            filterOption={filter}
             options={options}
             formatGroupLabel={(data: GroupBase<SelectOptionType>) => {
                 return <span>{data.label}</span>;
