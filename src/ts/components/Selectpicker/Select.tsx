@@ -3,6 +3,7 @@ import Select, { GroupBase, OptionProps, Props, components, createFilter } from 
 import { SelectComponents } from "react-select/dist/declarations/src/components";
 import { Link } from "wouter";
 
+import { getLinkSafeString, getStringFromLinkSafeString } from "../../utilities/common";
 import TextTooltip from "../Popover/TextTooltip";
 
 import "./Select.less";
@@ -18,10 +19,11 @@ export type SelectOptionProps<IsMulti extends boolean, Group extends GroupBase<S
     IsMulti,
     Group
 > & {
+    linkSafeString?: boolean;
     useLink?: boolean;
 };
 
-const Option = (props: OptionProps<SelectOptionType>) => {
+const DefaultOption = (props: OptionProps<SelectOptionType>) => {
     // Possible alternate perf improvement, but doesn't fix scrolling speed
     // or show currently focused option
     // const { innerProps, isFocused, ...otherProps } = props;
@@ -52,9 +54,7 @@ const LinkOption = (props: OptionProps<SelectOptionType>) => {
     }
     return (
         <components.Option {...props}>
-            <Link href={`/${props.data.value}`}>
-                {props.data.label}
-            </Link>
+            <Link href={`/${props.data.value}`}>{props.data.label}</Link>
         </components.Option>
     );
 };
@@ -91,7 +91,7 @@ const LinkOption = (props: OptionProps<SelectOptionType>) => {
 export default function SelectWrapper<
     IsMulti extends boolean = false,
     Group extends GroupBase<SelectOptionType> = GroupBase<SelectOptionType>,
->({ defaultValue, options, value, ...props }: SelectOptionProps<IsMulti, Group>) {
+>({ defaultValue, options, value, linkSafeString, ...props }: SelectOptionProps<IsMulti, Group>) {
     options = useMemo(() => {
         return (options as SelectOptionType[])?.map((o) => {
             let label = o.label || o.value;
@@ -113,7 +113,7 @@ export default function SelectWrapper<
     }
 
     const components: Partial<SelectComponents<SelectOptionType, IsMulti, Group>> = {
-        Option: props.useLink ? LinkOption : (Option as any),
+        Option: props.useLink ? LinkOption : (DefaultOption as any),
     };
 
     // Only virtualize if we have a significant number of items
@@ -126,8 +126,12 @@ export default function SelectWrapper<
     return (
         <Select
             {...props}
-            // If ignoreAccents is true it causes a noticeable slowdown
-            filterOption={createFilter({ ignoreAccents: false })}
+            filterOption={createFilter({
+                // If we're using a link safe string, need to unescape it in order to search correctly
+                stringify: linkSafeString ? (option) => getStringFromLinkSafeString(option.value) : undefined,
+                // If ignoreAccents is true it causes a noticeable slowdown
+                ignoreAccents: false,
+            })}
             options={options}
             formatGroupLabel={(data: GroupBase<SelectOptionType>) => {
                 return <span>{data.label}</span>;

@@ -40,7 +40,7 @@ export default function WikiAutocomplete({
         const options = Array.from(fullOptions)
             .splice(0, 20)
             .map<SelectOptionType>((entry) => {
-                return { label: <div>{entry}</div>, value: entry };
+                return { label: <div>{entry}</div>, value: getLinkSafeString(entry) };
             });
 
         if (!allowedEntries.find((entry) => entry.toLowerCase() == searchStringLower)) {
@@ -103,7 +103,8 @@ export default function WikiAutocomplete({
                 // Removed in favor of links
                 const value = option!.value as string;
 
-                const selectedLocation = value.startsWith("search") ? `/${value}` : `/${getLinkSafeString(value)}`;
+                // const selectedLocation = value.startsWith("search") ? `/${value}` : `/${getLinkSafeString(value)}`;
+                const selectedLocation = `/${value}`;
 
                 if (location !== selectedLocation) {
                     // Only set the value if we haven't updated the current location yet
@@ -114,6 +115,7 @@ export default function WikiAutocomplete({
                 }
             }}
             useLink={true}
+            linkSafeString={true}
             inputValue={searchString}
             menuIsOpen={searchString.length > 1 && isFocused}
             placeholder="Search Wiki"
