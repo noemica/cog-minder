@@ -5889,7 +5889,7 @@
         "Class": "Swarmer (Prototype)",
         "Tier": "10",
         "Threat": "4",
-        "Rating": "84",
+        "Rating": "124",
         "Value": "100",
         "Size Class": "Small",
         "Size": "1",
@@ -13040,7 +13040,7 @@
         "Class": "Unique",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "164",
+        "Rating": "171",
         "Value": "300",
         "Size Class": "Medium",
         "Size": "1",
@@ -13056,7 +13056,7 @@
         "Innate Energy Storage": "50",
         "Innate Energy Generation": "10",
         "Core Integrity": "210",
-        "Core Exposure": "285",
+        "Core Exposure": "287",
         "Core Exposure %": "20",
         "Salvage Potential": "80~130",
         "Inventory Capacity": "1",
@@ -13080,6 +13080,7 @@
             "V4-D3R's Cape",
             "V4-D3R's Forcewell",
             "Exp. Reaction Control System",
+            "Adv. Trap Scanner",
             "Exp. Cooling System",
             "Femtoactuators",
             "Exp. Melee Analysis Suite"
@@ -13092,7 +13093,7 @@
             "Piercing": "75"
         },
         "Armament String": "V4-D3R's Sabre, V4-D3R's Forcegen",
-        "Components String": "Imp. Quantum Reactor, 2x Exp. Biometal Leg, Exp. Propulsion Shielding, Med. Regenerative Plating, V4-D3R's Cape, V4-D3R's Forcewell, Exp. Reaction Control System, Exp. Cooling System, Femtoactuators, Exp. Melee Analysis Suite"
+        "Components String": "Imp. Quantum Reactor, 2x Exp. Biometal Leg, Exp. Propulsion Shielding, Med. Regenerative Plating, V4-D3R's Cape, V4-D3R's Forcewell, Exp. Reaction Control System, Adv. Trap Scanner, Exp. Cooling System, Femtoactuators, Exp. Melee Analysis Suite"
     },
     {
         "Name": "CL-0N3",
@@ -13146,7 +13147,7 @@
         "Class": "Unique",
         "Tier": "10",
         "Threat": "5",
-        "Rating": "178",
+        "Rating": "184",
         "Value": "300",
         "Size Class": "Large",
         "Size": "1",
@@ -13157,13 +13158,13 @@
         "Speed": "70",
         "Speed %": "142",
         "Sight Range": "16",
-        "Energy Generation": "30",
+        "Energy Generation": "35",
         "Heat Dissipation": "160",
         "Innate Energy Storage": "50",
-        "Innate Energy Generation": "10",
+        "Innate Energy Generation": "15",
         "Innate Matter Storage": "150",
         "Core Integrity": "200",
-        "Core Exposure": "593",
+        "Core Exposure": "594",
         "Core Exposure %": "14",
         "Salvage Potential": "150~200",
         "Inventory Capacity": "1",
@@ -13190,6 +13191,7 @@
             "DW-4LL's Griptreads",
             "Mak. Coolant Network",
             "DW-4LL's Blast Wall",
+            "Mak. Trap Scanner",
             "Adv. Matter Compressor",
             "Exp. Weapon Cycler",
             "Exp. Armor Integrity Analyzer"
@@ -13199,14 +13201,14 @@
             "Electromagnetic": "90"
         },
         "Armament String": "DW-4LL's Slamshotty OR DW-4LL's Megashotty",
-        "Components String": "Rnf. Quantum Reactor, 2x DW-4LL's Griptreads, Mak. Coolant Network, DW-4LL's Blast Wall, Adv. Matter Compressor, Exp. Weapon Cycler, Exp. Armor Integrity Analyzer"
+        "Components String": "Rnf. Quantum Reactor, 2x DW-4LL's Griptreads, Mak. Coolant Network, DW-4LL's Blast Wall, Mak. Trap Scanner, Adv. Matter Compressor, Exp. Weapon Cycler, Exp. Armor Integrity Analyzer"
     },
     {
         "Name": "6S-H0T",
         "Class": "Unique",
         "Tier": "9",
         "Threat": "5",
-        "Rating": "136",
+        "Rating": "143",
         "Value": "300",
         "Size Class": "Medium",
         "Size": "1",
@@ -13222,7 +13224,7 @@
         "Innate Energy Storage": "50",
         "Innate Energy Generation": "10",
         "Core Integrity": "140",
-        "Core Exposure": "77",
+        "Core Exposure": "79",
         "Core Exposure %": "14",
         "Salvage Potential": "100~120",
         "Inventory Capacity": "5",
@@ -13246,6 +13248,7 @@
             "Exp. Heat Sink",
             "Adv. Cryofiber Web",
             "Exp. Reaction Control System",
+            "Adv. Trap Scanner",
             "Exp. Propulsion Shielding",
             "Exp. Weapon Shielding",
             "Enh. Optical Array",
@@ -13257,7 +13260,7 @@
             "Electromagnetic": "90"
         },
         "Armament String": "6S-H0T's Six Shooter",
-        "Components String": "2x Com. Particle Reactor, 2x Imp. Linear Gravjet, Exp. Antigrav System, 2x Exp. Heat Sink, Adv. Cryofiber Web, Exp. Reaction Control System, Exp. Propulsion Shielding, Exp. Weapon Shielding, Enh. Optical Array, Mak. Targeting Computer, Exp. Targeting Computer"
+        "Components String": "2x Com. Particle Reactor, 2x Imp. Linear Gravjet, Exp. Antigrav System, 2x Exp. Heat Sink, Adv. Cryofiber Web, Exp. Reaction Control System, Adv. Trap Scanner, Exp. Propulsion Shielding, Exp. Weapon Shielding, Enh. Optical Array, Mak. Targeting Computer, Exp. Targeting Computer"
     },
     {
         "Name": "GL-D0S",
@@ -13312,7 +13315,7 @@
         "Class": "Unique",
         "Tier": "9",
         "Threat": "5",
-        "Rating": "154",
+        "Rating": "161",
         "Value": "300",
         "Size Class": "Medium",
         "Size": "1",
@@ -13329,7 +13332,7 @@
         "Innate Energy Generation": "10",
         "Innate Matter Storage": "200",
         "Core Integrity": "160",
-        "Core Exposure": "99",
+        "Core Exposure": "101",
         "Core Exposure %": "14",
         "Salvage Potential": "100~120",
         "Inventory Capacity": "1",
@@ -13355,6 +13358,7 @@
             "Mak. Heat Sink",
             "Adv. Cryofiber Web",
             "Blink Core",
+            "Adv. Trap Scanner",
             "Lgt. Regenerative Plating",
             "Adv. Hardlight Generator",
             "Exp. Propulsion Shielding",
@@ -13366,14 +13370,14 @@
             "Kinetic": "25",
             "Electromagnetic": "90"
         },
-        "Components String": "2x Com. Particle Reactor, Cld. Antigrav System, Antigrav Array, Exp. Gyrokinetic Inverter, Cld. Gravmag System, 3x Mak. Heat Sink, Adv. Cryofiber Web, Blink Core, Lgt. Regenerative Plating, Adv. Hardlight Generator, Exp. Propulsion Shielding, Exp. Weapon Shielding, Mak. Targeting Computer, Adv. Targeting Computer"
+        "Components String": "2x Com. Particle Reactor, Cld. Antigrav System, Antigrav Array, Exp. Gyrokinetic Inverter, Cld. Gravmag System, 3x Mak. Heat Sink, Adv. Cryofiber Web, Blink Core, Adv. Trap Scanner, Lgt. Regenerative Plating, Adv. Hardlight Generator, Exp. Propulsion Shielding, Exp. Weapon Shielding, Mak. Targeting Computer, Adv. Targeting Computer"
     },
     {
         "Name": "CY-PHR",
         "Class": "Unique",
         "Tier": "9",
         "Threat": "5",
-        "Rating": "157",
+        "Rating": "164",
         "Value": "300",
         "Size Class": "Small",
         "Size": "1",
@@ -13389,7 +13393,7 @@
         "Innate Energy Storage": "50",
         "Innate Energy Generation": "30",
         "Core Integrity": "110",
-        "Core Exposure": "120",
+        "Core Exposure": "122",
         "Core Exposure %": "19",
         "Salvage Potential": "20~30",
         "Inventory Capacity": "1",
@@ -13416,20 +13420,21 @@
             "Ghost Barrier",
             "Quantum Router",
             "Exp. Cloaking Device",
-            "Exp. Phase Shifter"
+            "Exp. Phase Shifter",
+            "Adv. Trap Scanner"
         ],
         "Resistances": {
             "Electromagnetic": "90"
         },
         "Armament String": "CY-PHR's Mindspike",
-        "Components String": "2x Mic. Antimatter Reactor, 3x Imp. Linear Gravjet, Exp. Propulsion Shielding, Exp. Cooling System, Procsplitter, System Mapper, Deep Network Scanner, Ghost Barrier, Quantum Router, Exp. Cloaking Device, Exp. Phase Shifter"
+        "Components String": "2x Mic. Antimatter Reactor, 3x Imp. Linear Gravjet, Exp. Propulsion Shielding, Exp. Cooling System, Procsplitter, System Mapper, Deep Network Scanner, Ghost Barrier, Quantum Router, Exp. Cloaking Device, Exp. Phase Shifter, Adv. Trap Scanner"
     },
     {
         "Name": "1B-0RG",
         "Class": "Unique",
         "Tier": "9",
         "Threat": "5",
-        "Rating": "214",
+        "Rating": "220",
         "Value": "300",
         "Size Class": "Medium",
         "Size": "1",
@@ -13445,7 +13450,7 @@
         "Innate Energy Storage": "50",
         "Innate Energy Generation": "10",
         "Core Integrity": "180",
-        "Core Exposure": "341",
+        "Core Exposure": "343",
         "Core Exposure %": "19",
         "Salvage Potential": "20~30",
         "Inventory Capacity": "1",
@@ -13473,6 +13478,7 @@
             "Sfc. Personal Shield",
             "Sfc. Absorption Layer",
             "Sfc. Interdiction Field",
+            "Mak. Trap Scanner",
             "Exp. Weapon Shielding"
         ],
         "Resistances": {
@@ -13485,7 +13491,7 @@
             "Piercing": "50"
         },
         "Armament String": "1B-0RG's Assimilator",
-        "Components String": "2x Sfc. Borg Power, 2x Cmb. Antigrav System, Cmb. Linear Gravjet, 2x Sfc. Cooling Unit, Sfc. Sightfinder, Sfc. Targeting Obfuscator, Sfc. Borg Regenerator, Sfc. Personal Shield, Sfc. Absorption Layer, Sfc. Interdiction Field, Exp. Weapon Shielding"
+        "Components String": "2x Sfc. Borg Power, 2x Cmb. Antigrav System, Cmb. Linear Gravjet, 2x Sfc. Cooling Unit, Sfc. Sightfinder, Sfc. Targeting Obfuscator, Sfc. Borg Regenerator, Sfc. Personal Shield, Sfc. Absorption Layer, Sfc. Interdiction Field, Mak. Trap Scanner, Exp. Weapon Shielding"
     },
     {
         "Name": "Aperture Drone",
