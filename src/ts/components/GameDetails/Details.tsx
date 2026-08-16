@@ -133,6 +133,7 @@ export const TooltipTexts = {
         "Electromagnetic weapons have less of an impact on integrity, but are capable of corrupting a target's computer systems. Anywhere from 50 to 150% of damage done is also applied as system corruption. (Cogmind is less susceptible to EM-caused corruption, but still has a damage% chance to suffer 1 point of system corruption per hit.) EM-based explosions only deal half damage to inactive items lying on the ground, but can also corrupt them.",
     Explosive:
         "While powerful, explosives generally spread damage across each target in the area of effect. Explosions also tend to reduce the amount of salvage remaining after destroying a target.",
+    Impact: "Impact weapons have a damage-equivalent chance to cause knockback, and ignore coverage thus are effective at destroying fragile systems. By ignoring coverage, there is an equal chance for an attack to hit any given part, where each slot of a multislot part also has a separate and equivalent chance to be hit. A target's core also counts as one slot for that purpose. For every component crushed by an impact, its owner's system is significantly corrupted (+25-150%), though electromagnetic resistance can help mitigate this effect. (Cogmind is less susceptible to corruption caused in this manner.)",
 
     // General Weapon Stats
     Range: "Maximum effective range.",
