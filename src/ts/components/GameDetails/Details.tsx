@@ -6,6 +6,7 @@ import {
     getBotImageNames,
     getItemAsciiArtImageName,
     getItemSpriteImageNames,
+    getLinkSafeString,
     rootDirectory,
 } from "../../utilities/common";
 import { ButtonLink } from "../Buttons/Button";
@@ -66,7 +67,8 @@ export const TooltipTexts = {
         "The amount of energy this bot generates per turn, not taking upkeep into account. This also includes any hidden energy generation bonuses that a bot may have hardcoded.",
     "Innate Energy Generation": "The amount of energy this bot generates per turn, not including power parts.",
     "Energy Storage": "The maximum amount of energy this bot can store.",
-    "Innate Energy Storage": "The amount of energy this bot can store, not including power parts or energy storage utilities.",
+    "Innate Energy Storage":
+        "The amount of energy this bot can store, not including power parts or energy storage utilities.",
     "Net Energy/Turn": "The amount of energy this bot generates or loses each turn if it stands still.",
     "Net Energy/Move": "The amount of energy this bot generates or loses when it makes a move.",
     "Net Energy/Volley": "The amount of energy this bot generates or loses when it fires a volley.",
@@ -601,7 +603,11 @@ export function RangeLine({
 
 export function WikiLink({ wikiPage }: { wikiPage: string }) {
     return (
-        <ButtonLink className="wiki-link-button" href={`~/${rootDirectory}/wiki/${wikiPage}`} tabIndex={-1}>
+        <ButtonLink
+            className="wiki-link-button"
+            href={`~/${rootDirectory}/wiki/${getLinkSafeString(wikiPage)}`}
+            tabIndex={-1}
+        >
             Wiki
         </ButtonLink>
     );
