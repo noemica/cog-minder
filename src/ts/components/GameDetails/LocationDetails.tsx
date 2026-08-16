@@ -23,9 +23,7 @@ export default function LocationDetails({
         }
     }
 
-    const allowedEntries = location.entries.filter((e) =>
-        location.branch ? canShowSpoiler(e.location.spoiler, spoilers) : !e.location.branch,
-    );
+    const allowedEntries = location.entries.filter((e) => (location.branch ? true : !e.location.branch));
 
     // Entry from other maps to this map
     const entries = allowedEntries.length > 0 && (
@@ -36,17 +34,30 @@ export default function LocationDetails({
                 const depthsString = entry.depthsString;
 
                 // Don't bother showing entrances from spoiler-blocked maps
-                if (!canShowSpoiler(entry.location.spoiler, spoilers)) {
+                if (inPopover && !canShowSpoiler(entry.location.spoiler, spoilers)) {
                     return undefined;
                 }
 
                 if (inPopover) {
                     return <DetailsTextLine key={i} category={entry.location.name} content={depthsString} />;
-                } else {
+                } else if (canShowSpoiler(entry.location.spoiler, spoilers)) {
                     return (
                         <DetailsTextNode
                             key={i}
                             category={<LocationLink location={entry.location} inPopover={true} />}
+                            categoryLength={entry.location.name.length}
+                            content={depthsString}
+                        />
+                    );
+                } else {
+                    return (
+                        <DetailsTextNode
+                            key={i}
+                            category={
+                                <span className="spoiler-text spoiler-text-margin">
+                                    <LocationLink location={entry.location} />
+                                </span>
+                            }
                             categoryLength={entry.location.name.length}
                             content={depthsString}
                         />
