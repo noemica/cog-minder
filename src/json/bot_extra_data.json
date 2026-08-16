@@ -1951,7 +1951,7 @@
         ],
         "Locations": [
             {
-                "Location": "0b10 maps after aligning with X0-1V1",
+                "Location": "Any map depth -8 and above after aligning with X0-1V1",
                 "Description": "Hostile: Appear as high rating items before transforming into mimic"
             }
         ]
