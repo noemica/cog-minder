@@ -264,6 +264,10 @@ export const specialItemProperties: { [name: string]: SpecialItemProperty | unde
         active: SpecialPropertyPartActiveActive,
         trait: { kind: itemTypes.DamageResistsIndex, resists: { Explosive: 75 } },
     },
+    "DW-4LL's Blast Wall": {
+        active: SpecialPropertyPartActiveActive,
+        trait: { kind: itemTypes.DamageResistsIndex, resists: { Explosive: 75 } },
+    },
     "8R-AWN's Armor/EX": {
         active: SpecialPropertyAlwaysActive,
         trait: { kind: itemTypes.DamageResistsIndex, resists: { Explosive: 90 } },
