@@ -70,6 +70,7 @@ const botNameImageMap = new Map<string, string>([
     ["God Mode (Fake)", "God Mode"],
     ["Golem (Naked)", "Golem (Derelict)"],
     ["Golem", "Golem (Derelict)"],
+    ["Greater Chaos Wyrm", "Dragon (Derelict)"],
     ["Guerrilla (5)", "Hunter"],
     ["Guerrilla (7)", "Hunter"],
     ["Guru", "Programmer"],

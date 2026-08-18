@@ -32,6 +32,7 @@ categories = [
     'Heat Dissipation',
     "Innate Energy Storage",
     "Innate Energy Generation",
+    "Innate Heat Dissipation",
     "Innate Matter Storage",
     'Core Integrity',
     'Core Exposure',

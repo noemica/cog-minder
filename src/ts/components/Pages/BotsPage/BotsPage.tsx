@@ -72,6 +72,7 @@ const botColumnDefs: ColumnDef<Bot>[] = [
             { accessorKey: "innateEnergy", header: "Innate Energy Generation" },
             { accessorKey: "energyStorage", header: "Energy Storage" },
             { accessorKey: "innateEnergyStorage", header: "Innate Energy Storage" },
+            { accessorKey: "innateHeatDissipation", header: "Innate Heat Dissipation" },
             { accessorKey: "netEnergyPerTurn", header: "Net Energy/Turn" },
             { accessorKey: "netEnergyPerMove", header: "Net Energy/Move" },
             { accessorKey: "netEnergyPerVolley", header: "Net Energy/Volley" },
@@ -257,7 +258,16 @@ function BotsSimpleDisplay({ bots }: { bots: Bot[] }) {
 function BotsSpreadsheetDisplay({ bots }: { bots: Bot[] }) {
     const [sorting, setSorting] = React.useState<SortingState>([]);
 
-    return <Table className="table" data={bots} columns={botColumnDefs} setSorting={setSorting} sorting={sorting} stickyHeader={true} />;
+    return (
+        <Table
+            className="table"
+            data={bots}
+            columns={botColumnDefs}
+            setSorting={setSorting}
+            sorting={sorting}
+            stickyHeader={true}
+        />
+    );
 }
 
 export default function BotsPage() {

@@ -1633,6 +1633,30 @@
             }
         ]
     },
+    "Greater Chaos Wyrm": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Varies",
+                "Description": "Friendly: The Chaos Wyrm turns into this after ascending enough depths"
+            }
+        ]
+    },
+    "Greater Item Mimic": {
+        "Categories": [
+            "Spoiler",
+            "Unchained"
+        ],
+        "Locations": [
+            {
+                "Location": "Any map depth -3 and above after aligning with X0-1V1",
+                "Description": "Hostile: Appear as high rating items before transforming into mimic"
+            }
+        ]
+    },
     "Guerrilla (5)": {
         "Categories": [
             "Derelict"
@@ -1951,7 +1975,7 @@
         ],
         "Locations": [
             {
-                "Location": "Any map depth -8 and above after aligning with X0-1V1",
+                "Location": "Any map depth between -8 and -4 after aligning with X0-1V1",
                 "Description": "Hostile: Appear as high rating items before transforming into mimic"
             }
         ]

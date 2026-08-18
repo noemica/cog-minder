@@ -143,6 +143,7 @@ export type JsonBot = {
     "Heat Dissipation": string;
     "Innate Energy Storage": string;
     "Innate Energy Generation": string;
+    "Innate Heat Dissipation": string;
     "Innate Matter Storage": string;
     "Core Integrity": string;
     "Core Exposure": string;

@@ -261,24 +261,6 @@ export class BotData {
                 }
             }
 
-            let innateHeatDissipation = heatDissipation;
-            const hasCryofiberWeb =
-                components.find((item) => hasActiveSpecialProperty(item, true, CryofiberWebIndex)) != undefined;
-
-            // Calculate innate dissipation by subtracting all dissipation provided by parts
-            for (const item of components) {
-                if (hasActiveSpecialProperty(item, true, HeatDissipationIndex)) {
-                    let dissipation = (item.specialProperty!.trait as HeatDissipation).dissipation;
-
-                    if (hasCryofiberWeb && (item.specialProperty!.trait as HeatDissipation).heatSink) {
-                        // Apply cryofiber web bonus
-                        dissipation *= 2;
-                    }
-
-                    innateHeatDissipation -= dissipation;
-                }
-            }
-
             // Calculate move energy/heat stats
             const speed = parseInt(bot.Speed);
             let netEnergyPerMove = Math.trunc((speed / 100) * netEnergyPerTurn - energyPerMove);
@@ -326,7 +308,7 @@ export class BotData {
                 immunitiesString: bot.Immunities?.join(", ") ?? "",
                 innateEnergyGeneration: parseInt(bot["Innate Energy Generation"]),
                 innateEnergyStorage: parseInt(bot["Innate Energy Storage"]),
-                innateHeatDissipation: innateHeatDissipation,
+                innateHeatDissipation: parseInt(bot["Innate Heat Dissipation"]),
                 innateMatterStorage: innateMatterStorage,
                 injectorDissipation: injectorDissipation,
                 inventorySize: bot["Inventory Capacity"],
