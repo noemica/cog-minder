@@ -2463,7 +2463,7 @@ Explosion/Falloff|
 Explosion/Type|
 Effect/Description
 [[/PartGroupTable]]","","","","Concussive RPG,Imp. Concussive RPG,Adv. Concussive RPG,Cep. Concussive Dispersal Blaster","","","",""
-"Consumable Alien Artifacts","Part Supergroup","","Spoiler","","","Dimensional Node Initializer,Core Expander,Core Regenerator,Integrity Redistributor,Integrated Dissipator,Supercharged Integrated Dissipator,Integrated Thermoelectric Network,Integrated Reactor,Supercharged Integrated Reactor,Integrated Mediator,Core Membrane,Navigation Efficiency Matrix,Core Reset Matrix,Subatomic Replicator,Terrabomb,LRC Armor,LRC Energy Well,LRC Matter Compressor,LRC Inertial Stabilizer,LRC Insulator,LRC Storage,Core Physics Calibrator,Personal Teleporter v0.10,Telecube,Spacefold Activator,Microwarp Drive,LC Capacitor,Cep. Nanofilaments [Conductive],Cep. Nanofilaments [Endoweave],Cep. Nanofilaments [Tensile],Cep. Nanofilaments [Polyglass]","Transdimensional Reconstructors","","",""
+"Consumable Alien Artifacts","Part Supergroup","","Spoiler","","","Dimensional Node Initializer,Core Expander,Core Regenerator,Integrity Redistributor,Integrated Dissipator,Supercharged Integrated Dissipator,Integrated Thermoelectric Network,Integrated Reactor,Supercharged Integrated Reactor,Integrated Mediator,Core Membrane,Navigation Efficiency Matrix,Core Reset Matrix,Subatomic Replicator,Terrabomb,LRC Armor,LRC Energy Well,LRC Matter Compressor,LRC Inertial Stabilizer,LRC Insulator,LRC Storage,Core Physics Calibrator,Spacefold Activator,Microwarp Drive,LC Capacitor,Cep. Nanofilaments [Conductive],Cep. Nanofilaments [Endoweave],Cep. Nanofilaments [Tensile],Cep. Nanofilaments [Polyglass]","Transdimensional Reconstructors","","",""
 "Containment Facilitator","Part","","","","","","","","",""
 "Coolant Injector","Part","","","","","","","","",""
 "Coolant Injectors","Part Group","A type of [[Cooling Utilities|Cooling Utility]] that trades integrity for heat dissipation when above 200 heat. Their dissipation potential is much greater than comparable [[Cooling Devices]] like heat sinks and cooling systems which makes it great for very heat-intensive volleys of weapons like [[Thermal Guns|Thermal Guns]] and [[Thermal Cannons|Cannons]]. For example, a rating 4 [[Coolant Injector]] can dissipate 65 heat per turn which is over twice as much as the rating 4 [[Imp. Cooling System]] can provide at only 27 heat per turn. However, injectors will not last as long as other types due to their integrity-spending effect.
@@ -8513,7 +8513,7 @@ Certain actions can cause additional patrol squads to come from the main exit or
 If the outer wall of the back lab area is breached, there will be a log message [[GameText]]Research labs perimeter wall breached, dispatching additional patrols.[[/GameText]] and 2 patrols will spawn.
 
 [[Heading:3]]Infiltrating Tinkerer Lab[[/Heading]]
-If Cogmind enters the Infiltrator Lab, a log message will appear [[GameText]]Tinkerer labs infiltrated, dispatching additional patrols.[[/GameText]] 2 patrols will spawn.
+If Cogmind enters the Tinkerer Labs, a log message will appear [[GameText]]Tinkerer labs infiltrated, dispatching additional patrols.[[/GameText]] 2 patrols will spawn.
 
 [[Heading:3]][[Plexus Tether]][[/Heading]]
 If Cogmind attaches the Plexus Tether, all parts on the map will be identified and revealed. When this happens, 3-5 Decapitators will be dispatched to Cogmind's position. These bots will only be dispatched if the Garrison is intact, otherwise no bots are summoned.
