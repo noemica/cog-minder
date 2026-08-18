@@ -10230,6 +10230,7 @@
     "Cep. Melee Reflex Suite",
     "Cep. Miniperforator",
     "Cep. Nanofilaments [Conductive]",
+    "Cep. Nanofilaments [Endoweave]",
     "Cep. Nanofilaments [Polyglass]",
     "Cep. Nanofilaments [Tensile]",
     "Cep. Navigation Harness",
@@ -10421,6 +10422,7 @@
    ],
    "SpecialBots": [
     "Bolteater",
+    "Chaos Wyrm",
     "Elite (4)",
     "Explorer",
     "Federalist",
@@ -10433,6 +10435,7 @@
     "Thug (5)",
     "Tinkerer",
     "Triborg",
+    "Wyrm Statue",
     "Zionite"
    ],
    "SpecialItems": [
