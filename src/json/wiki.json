@@ -10601,6 +10601,10 @@
     {
      "Map": "Recycling",
      "Depths": "-10"
+    },
+    {
+     "Map": "Scraptown",
+     "Depths": "-10"
     }
    ],
    "SpecialItems": [
