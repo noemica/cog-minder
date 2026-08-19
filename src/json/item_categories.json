@@ -2,7 +2,7 @@
     "Matter": [],
     "Data Core": ["0b10"],
     "Derelict Log": ["Derelict"],
-    "Schematic Archive": ["Derelict"],
+    "Schematic Archive": ["Derelict", "Spoiler"],
     "Imprinter Data Core": ["Spoiler"],
     "CL-0N3 Data Core": ["Spoiler", "Unchained"],
     "A2 Data Core": ["Architects", "Redacted"],
