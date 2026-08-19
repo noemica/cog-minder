@@ -8859,12 +8859,18 @@
   },
   {
    "Name": "Vortex Cannons",
+   "Alternate Names": [
+    "Entropic Cannons"
+   ],
    "Part Category": "Vortex Cannons",
    "Content": "Type of powerful [[Energy Cannons|energy cannon]] that deals the rare unresisted entropic damage type, and is unique to the [[Warlord (Location)|Warlord map]]. As with all [[Vortex Weapons|vortex weapons]], they are unstable, meaning they have a limited number of shots since each attack lowers their integrity by a fixed amount (weapon-dependent). Vortex cannons have incredibly high damage output compared to similarly-rated weapons, though they have a highly negative salvage stat. They also share a special [[Critical Hits|critical hit]] type sunder which knocks the target part off of the target.\n\n[[Heading]]List of Vortex Cannons[[/Heading]]\n[[PartGroupTable]]\nVortex Cannons|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage\n[[/PartGroupTable]]",
    "Spoiler": "Spoiler"
   },
   {
    "Name": "Vortex Guns",
+   "Alternate Names": [
+    "Entropic Guns"
+   ],
    "Part Category": "Vortex Guns",
    "Content": "Type of powerful [[Energy Guns|energy gun]] that deals the rare unresisted entropic damage type, and are primarily found on the [[Warlord (Location)|Warlord map]]. As with all [[Vortex Weapons|vortex weapons]], they are unstable, meaning they have a limited number of shots since each attack lowers their integrity by a fixed amount (weapon-dependent). Vortex guns have very high damage output and relatively low upkeep costs compared to similarly-rated weapons, though they do have a highly negative salvage stat. Most vortex guns have the detonate [[Critical Hits|critical hit]] type that instantly explodes a [[Power|power source]] on the target.\n\n[[Heading]]List of Vortex Guns[[/Heading]]\n[[PartGroupTable]]\nVortex Guns|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Heat|\nShot/Targeting|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nProjectile/Critical|\nProjectile/Penetration|\nProjectile/Salvage\n[[/PartGroupTable]]",
    "Spoiler": "Spoiler"
@@ -9499,6 +9505,9 @@
   },
   {
    "Name": "Vortex Weapons",
+   "Alternate Names": [
+    "Entropic Weapons"
+   ],
    "Part Category": "Vortex Weapons",
    "Groups": [
     "Vortex Cannons",
