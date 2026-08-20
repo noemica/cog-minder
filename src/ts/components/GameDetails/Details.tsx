@@ -173,7 +173,7 @@ export const TooltipTexts = {
     Radius: "Maximum radius of the explosion from its origin",
     Falloff:
         "Amount of damage potential lost per space as the explosion expands from its origin. While targeting, this falloff is represented visually by the AOE color's brightness relative to the origin (this feature can be toggled via Explosion Predictions option).",
-    Chunks: "AOE damage is often spread across each target in the area of effect, dividing the damage into separate chunks before affecting a robot, where each chunk of damage selects its own target part (though they may overlap). SOme explosive effects have a static number of chunks, while others randomly select from within a range for each attack.",
+    Chunks: "AOE damage is often spread across each target in the area of effect, dividing the damage into separate chunks before affecting a robot, where each chunk of damage selects its own target part (though they may overlap). Some explosive effects have a static number of chunks, while others randomly select from within a range for each attack.",
 
     // Propulsion stats
     "Time/Move":
