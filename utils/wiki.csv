@@ -7309,7 +7309,7 @@ Effect/Effect
 
 
 [[Heading]]Behavior[[/Heading]]
-Master Thieves dash towards Cogmind to try to steal one of their parts using [[Master Tearclaws]]. Unlike regular Thieves, they are capable of stealing parts from inventory, as well as choosing which parts they steal. They will prioritize high rating parts and [[Exiles (Location)|Exiles]] prototypes. Because of their ability to choose parts, they are also capable of stealing [[Armor]] in spite of the description of their Master Tearclaws. Upon successfully obtaining a part, they will start fleeing. If a fleeing Master Thief goes outside Cogmind's field of view, they will exit the map.
+Master Thieves dash towards Cogmind to try to steal one of their parts using [[Master Tearclaws]]. Unlike regular Thieves, they are capable of stealing parts from inventory, as well as choosing which parts they steal. They will prioritize high rating parts and [[Exiles (Location)|Exiles]] prototypes. Because of their ability to choose parts, they are also capable of stealing [[Armor]] in spite of the description of their Master Tearclaws. Upon successfully obtaining a part, they will start fleeing. Fleeing Master Thieves that get outside of Cogmind's field of view will exit the map.
 
 Despite only having a ""memory"" of 20, Master Thieves will not normally stop tracking Cogmind. Unlike regular Thieves, Master Thieves will only attack Cogmind, as well as Cogmind's [[Drone (Group)|Drones]], and will ignore all other robots unless they are rebooted by a [[Programmer]] or disrupted, in which case they may switch to a different target.
 
@@ -7319,6 +7319,8 @@ As allies, Master Thieves will try to steal parts from hostiles and return to Co
 Master Thieves are incapable of taking parts on the ground, so dropping important parts you don't want to lose keeps them safe from them. Dropping your [[Storage Unit|Storage Unit]] can help drop a lot of parts quickly, at the cost of not being able to choose which parts remain in inventory. However, this strategy can backfire if there are [[Dirty Bomb Trap|Dirty Bomb Traps]] or [[Decomposer|Decomposers]] nearby, or if Cogmind or other robots carry [[Launchers]] or [[Electromagnetic Weapons]] capable of triggering chain reactions in power sources.
 
 In order to actually destroy Master Thieves, Launchers can work well when aimed at walls next to them, though at close range the collateral damage might not be worth it if you don't have high-value parts. Targeting utilities can help actually hit them while they are approaching, and a Stasis Beam/Projector can prevent a single Master Thief from attacking or escaping while also making them easier to hit, at the cost of making them take 50% less damage. Having a lot of [[Allies]] always helps, though they are very likely to miss and hit each other in the process.
+
+[[Blade Trap|Blade Traps]], [[Segregator Trap|Segregator Traps]] and [[Stasis Trap|Stasis Traps]] can work well in disarming or stopping Master Thieves, provided you have enough time to place them, for example before attacking reaching an exit, or during an ambush through high movement speed.
 
 If Cogmind is fast enough, fleeing is also an option, for example to lead the Master Thieves into allies, [[Warlord]]-aligned [[Derelict|Derelicts]], [[0b10]] robots, or [[Traps]]. Internally, the game considers wild Derelicts, Thieves and [[Assembled]] to all be part of the same ""hostile derelicts"" faction, meaning those robots will not attack Master Thieves.
 
@@ -7333,7 +7335,7 @@ If there are Master Thieves, let the Chronowheel deplete naturally to go back in
 This strategy is unreliable, uses up the unique Chronowheel part, requires having allies and can only work on start-of-map ambushes.
 [[/List]]
 
-Last edited during Beta 16.","","","","","","","",""
+This page was last edited during Beta 17.","","","","","","","",""
 "Materials","Location","Materials is the first real level of the game. These maps are small, cramped and have few paths forward. This is the first map with hostile [[0b10]] patrols hanging around, comprised mainly of low level [[G-34 Mercenary]] and [[G-47 Trooper]] grunts and [[S-10 Pest]] swarmers. There are also a few special special mechanics such as [[U-05 Engineer|Engineers]] not calling for reinforcements when attacked while trying to build structures in -10, with a low but increasing chance from -9 onward, and [[A-02 Transporter|Haulers]] not calling for reinforcements at all.
 Trying to play flight or hover is not easy in Materials due to many forced encounters with combat robots, little room for maneuvering and few slots yet available for good utilities. The usual recommended way to play these maps is to grab some legs or treads and start blasting. Most players prefer not to transfer to airborne propulsion until [[Factory]] where it is much easier to stealth around and avoid combat. In Materials, it's good to fight enemies one at a time by leading them to one of the many doorways around the map. Use of launchers is very effective whenever there is more than a single bot grouped up close.
 [[Alert]] is not a big issue in these maps because of the relatively small map size and number of total patrols. If making a mess of the floors on -10 and -9, entering the [[Mines]] is a good way to lose all of the alert gained from the early Materials maps.
@@ -11816,23 +11818,23 @@ Heat transfer is best when stacked in large numbers, especially with lots of gun
 
 
 [[Heading:2]]Behavior[[/Heading]]
-Thieves dash towards the closest visible enemy robot and try to steal one of that robot's parts using their [[Tearclaws]]. If successful, the Thief will flee, carrying the stolen part in their inventory. If a Thief in the process of fleeing is or goes outside Cogmind's field of view, they will exit the map.
+Thieves dash towards the closest visible enemy robot and try to steal one of that robot's parts using their [[Tearclaws]]. If successful, the Thief will flee, carrying the stolen part in their inventory. Thieves in the process of fleeing that go or already are outside Cogmind's field of view will exit the map.
 
 When trying to steal parts, Thieves might ignore unarmed robots and instead target Cogmind or combat robots.
 
 [[Heading:2]]Strategies[[/Heading]]
-Thieves are incapable of taking parts on the ground, so dropping important parts you don't want to lose keeps them safe from them. However, this strategy can backfire if there are [[Dirty Bomb Trap|Dirty Bomb Traps]] or [[Decomposer|Decomposer]] nearby, or if Cogmind or other robots carry  [[Launchers]] or [[Electromagnetic Weapons]] capable of triggering chain reactions in power sources.
+Thieves are incapable of taking parts on the ground, so dropping important parts you don't want to lose keeps them safe from them. However, this can backfire if there are [[Dirty Bomb Trap|Dirty Bomb Traps]] or [[Decomposer|Decomposer]] nearby, or if Cogmind or other robots carry [[Launchers]] or [[Electromagnetic Weapons]] capable of triggering chain reactions in power sources.
 
 Moving behind combat allies or swapping with them to place them closer to the Thieves can prevent your own parts getting stolen, at the cost of your allies'.
 
-In order to actually destroy Thieves, Launchers can work well when aimed at walls next to the Thieves, though at close range the collateral damage might not be worth it. Targeting utilities can help actually hit them while they are approaching, and a Stasis Beam/Projector can prevent a single Thief from attacking or escaping while also making them easier to hit, at the cost of making them take 50% less damage.
+In order to actually destroy Thieves, Launchers can work well when aimed at walls next to the Thieves, though at close range the collateral damage might not be worth it. Targeting utilities can help actually hit them while they are approaching.
 
-[[Blade Trap|Blade Traps]], [[Segregator Trap|Segregator Traps]] and [[Stasis Trap|Stasis Traps]] can work well in disarming or stopping Thieves, provided you have enough time to place them, for example before attacking a Thief ambush.
+[[Blade Trap|Blade Traps]], [[Segregator Trap|Segregator Traps]] and [[Stasis Trap|Stasis Traps]] can work well in disarming or stopping Thieves, provided you have enough time to place them, for example before attacking a Thief hidehout/ambush.
 
-If Cogmind is fast enough, fleeing is also an option, for example to lead the Thieves into 0b10 robots, [[Warlord]]-aligned derelicts or traps.
+If Cogmind is fast enough, fleeing is also an option, for example to lead the Thieves into allies, [[Warlord]]-aligned [[Derelict|Derelicts]], [[0b10]] robots, or [[Traps]]. Internally, the game considers wild Derelicts, Thieves and [[Assembled]] to all be part of the same ""hostile derelicts"" faction, meaning those robots will not attack each other.
 
 
-Last edited during Beta 14","","","","","","","",""
+This page was last edited during Beta 17","","","","","","","",""
 "Thief Drone","Bot","","","","","","","","",""
 "Thief Drone Bay","Part","Deploys up to three [[Thief Drone|Thief Drones]]. Useful for stealing parts off of powerful bots, such as [[8R-AWN]] when [[Exiles (Location)#fighting|fighting the Exiles]]. Can be found in one of the derelict shops in [[Mines]].","","","","","","","",""
 "Throwing Claymores","Part Group","[[Heading]]List of Throwing Claymores[[/Heading]]
