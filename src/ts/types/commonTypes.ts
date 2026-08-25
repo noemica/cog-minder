@@ -47,6 +47,7 @@ export type MapLocation = {
     entries: MapEntryExit[];
     exits: MapEntryExit[];
     exitSkipsDepth: boolean;
+    horizontalDepth: number;
     imageName: string | undefined;
     minDepth: number;
     maxDepth: number;

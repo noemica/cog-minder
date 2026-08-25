@@ -24,6 +24,7 @@ import Button, { ButtonLink } from "../../Buttons/Button";
 import useBotData from "../../Effects/useBotData";
 import useItemData from "../../Effects/useItemData";
 import { useSpoilers } from "../../Effects/useLocalStorageValue";
+import { BackToTopButton } from "./BackToTopButton";
 import WikiAutocomplete from "./WikiAutocomplete";
 import WikiEditControls from "./WikiEditControls";
 import WikiPageContent from "./WikiPageContent";
@@ -31,7 +32,6 @@ import WikiSearchPage from "./WikiSearchPage";
 
 import "../Pages.less";
 import "./WikiPage.less";
-import { BackToTopButton } from "./BackToTopButton";
 
 export type EditState = {
     editText: string;
@@ -254,6 +254,7 @@ function addLocations(
             entries: [],
             exits: [],
             exitSkipsDepth: locationEntry.ExitSkipsDepth ?? false,
+            horizontalDepth: 0,
             imageName: locationEntry.ImageName,
             maxDepth: locationEntry.MaxDepth,
             minDepth: locationEntry.MinDepth,
@@ -279,8 +280,12 @@ function addLocations(
     }
 
     // Need to do a second pass to connect entry/exit references
+    // as well as organize horizontal depth
+    const visitedLocations = new Set<MapLocation>();
+
     for (const locationEntry of wiki.Locations) {
         const location = allEntries.get(locationEntry.Name)!;
+        const entryLocation = location.extraData as MapLocation;
 
         for (const exit of locationEntry.Exits) {
             const exitEntry = allEntries.get(exit.Map);
@@ -292,6 +297,31 @@ function addLocations(
 
                 entryLocation.exits.push({ depthsString: exit.Depths, location: exitLocation });
                 exitLocation.entries.push({ depthsString: exit.Depths, location: entryLocation });
+            }
+        }
+
+        function addHorizontalDepth(location: MapLocation, visitedLocations: Set<MapLocation>, depth: number) {
+            const visited = visitedLocations.has(location);
+            if (!location.branch || (visited && depth >= location.horizontalDepth)) {
+                return;
+            }
+
+            location.horizontalDepth = depth;
+
+            if (visited) {
+                return;
+            }
+
+            visitedLocations.add(location);
+
+            for (const exit of location.exits) {
+                addHorizontalDepth(exit.location, visitedLocations, depth + 1);
+            }
+        }
+
+        if (!entryLocation.branch) {
+            for (const exit of entryLocation.exits) {
+                addHorizontalDepth(exit.location, visitedLocations, 1);
             }
         }
     }

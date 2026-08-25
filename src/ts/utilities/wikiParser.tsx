@@ -542,12 +542,42 @@ function processAllLocationsTag(state: ParserState, result: RegExpExecArray) {
     state.index += result[0].length;
 
     const locationRows: ReactNode[] = [];
+    // Don't include alternative names as separate entries, only show the main entry
+    const locationEntries = Array.from(state.allEntries).filter(
+        (entryPair) => entryPair[1].type === "Location" && entryPair[0] === entryPair[1].name,
+    );
 
-    for (const entryPair of state.allEntries.entries()) {
+    locationEntries.sort((a, b) => {
+        const aLocation = a[1].extraData as MapLocation;
+        const bLocation = b[1].extraData as MapLocation;
+
+        // Sort non-branches before anything else
+        if (aLocation.branch && !bLocation.branch) {
+            return 1;
+        }
+
+        if (!aLocation.branch && bLocation.branch) {
+            return -1;
+        }
+
+        // Sort by minimum depth
+        if (aLocation.minDepth !== bLocation.minDepth) {
+            return aLocation.minDepth - bLocation.minDepth;
+        }
+
+        // Sort by horizontal depth (how many maps you need to get to this point)
+        if (aLocation.horizontalDepth !== bLocation.horizontalDepth) {
+            return aLocation.horizontalDepth - bLocation.horizontalDepth;
+        }
+
+        // Finally, sort by name
+        return aLocation.name.localeCompare(bLocation.name);
+    });
+
+    for (const entryPair of locationEntries) {
         const entryName = entryPair[0];
         const entry = entryPair[1];
 
-        // Don't include alternative names as separate entries, only show the main entry
         if (entry.type !== "Location" || entryName != entry.name) {
             continue;
         }
