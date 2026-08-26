@@ -592,11 +592,13 @@ Med. Regenerative Plating
 Hvy. Regenerative Plating
 SHELL Armor
 Wyrmplate
+Greater Wyrmplate
 Wyrmscale
 Cep. RG22 Armor
 Phase Armor
 Vmp. Brace Plating
 Graphene Brace
+Plateshifter
 Focal Shield
 Imp. Focal Shield
 Adv. Focal Shield
@@ -798,6 +800,7 @@ Integrated Thermoelectric Network
 Integrated Reactor
 Supercharged Integrated Reactor
 Integrated Mediator
+Emergency Decompositor
 Core Membrane
 Navigation Efficiency Matrix
 Core Reset Matrix
@@ -876,6 +879,7 @@ Cld. Pulse Rifle
 Hpw. Field Laser
 Imp. Spread Laser
 Mak. Laser
+Sfc. X0-Gun
 Plasma Rifle
 Thermic Laser
 Beamcaster
@@ -962,6 +966,7 @@ Hvy. Phase Cannon
 Ovr. Phase Cannon
 Neutron Cannon
 Powered Cannon
+Sfc. X0-Cannon
 Matter Neutralizer
 Hvy. Neutron Cannon
 Lrn. Phase Cannon
@@ -1139,6 +1144,7 @@ Micro-nuke Launcher
 Adv. Concussive RPG
 Zip Rocket
 Neutron Missile Launcher
+Sfc. X0-Launcher
 Fusion Bomb Launcher
 Hellfire Missile Launcher
 Adv. Micro-nuke Launcher
@@ -1193,6 +1199,7 @@ Asb. F-torch
 Enh. Flamer
 Plasma Flamer
 Asb. P-torch
+Dynamite
 RU-N14's Throwing Claymores
 RU-N14's Throwing Claymores v3
 Warlord Statue
