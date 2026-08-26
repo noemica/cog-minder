@@ -147,7 +147,7 @@ export const TooltipTexts = {
     Recoil: "Recoil causes any other weapons fired in the same volley to suffer this penalty to their accuracy.",
     Targeting:
         "This is a direct modifier to the weapon's accuracy calculation when firing. Some weapons are inherently easier or more difficult to accurately target with.",
-    Delay: "This is a direct modifier to the time it takes to fire the weapon. Some weapons are inherently faster or slower to fire.",
+    Delay: "This is a direct modifier to the time it takes to fire the weapon. Some weapons are inherently faster or slower to fire. Multiple negative-delay weapons cannot contribute more than -100 to the volley firing time, but positive values have no such cap.",
     "Delay (Melee)":
         "This is a direct modifier to the time it takes to attack with this weapon. Some weapons are inherently faster or slower to attack with.",
     Stability:
