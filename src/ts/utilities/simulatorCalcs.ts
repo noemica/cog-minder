@@ -1791,14 +1791,31 @@ export function getRangedVolleyTime(weapons: WeaponItem[], cyclerModifier: numbe
         volleyTime = 400;
     }
 
+    let negativeDelay = 0;
+    let positiveDelay = 0;
+
     for (const weapon of weapons) {
         // Apply individual delays
-        volleyTime += weapon.delay ?? 0;
+        if (weapon.delay === undefined) {
+            continue;
+        }
+
+        if (weapon.delay > 0) {
+            positiveDelay += weapon.delay;
+        } else {
+            negativeDelay += weapon.delay;
+        }
     }
 
+    // Ranged weapons can only have a total of 100 negative delay applied
+    negativeDelay = Math.max(negativeDelay, -100);
+
+    volleyTime += positiveDelay + negativeDelay;
     volleyTime *= cyclerModifier;
 
     // Min time is capped at 25
+    // This shouldn't be possible to be hit anymore since stacking -delay was removed
+    // but leaving this just in case
     return Math.trunc(Math.max(25, volleyTime));
 }
 
