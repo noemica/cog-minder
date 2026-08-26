@@ -477,6 +477,14 @@
    "Content": ""
   },
   {
+   "Name": "Greater Chaos Wyrm",
+   "Content": ""
+  },
+  {
+   "Name": "Greater Item Mimic",
+   "Content": ""
+  },
+  {
    "Name": "Guerrilla (5)",
    "Content": ""
   },
@@ -3638,6 +3646,10 @@
    "Content": ""
   },
   {
+   "Name": "Dynamite",
+   "Content": ""
+  },
+  {
    "Name": "ECM Suite",
    "Content": ""
   },
@@ -3691,6 +3703,10 @@
   },
   {
    "Name": "Electrostorm Shotgun",
+   "Content": ""
+  },
+  {
+   "Name": "Emergency Decompositor",
    "Content": ""
   },
   {
@@ -4307,6 +4323,10 @@
   },
   {
    "Name": "Great Maul",
+   "Content": ""
+  },
+  {
+   "Name": "Greater Wyrmplate",
    "Content": ""
   },
   {
@@ -6142,6 +6162,10 @@
    "Content": ""
   },
   {
+   "Name": "Plateshifter",
+   "Content": ""
+  },
+  {
    "Name": "Plexus Tether",
    "Content": ""
   },
@@ -6635,6 +6659,18 @@
   },
   {
    "Name": "Sfc. Transmogrifier",
+   "Content": ""
+  },
+  {
+   "Name": "Sfc. X0-Cannon",
+   "Content": ""
+  },
+  {
+   "Name": "Sfc. X0-Gun",
+   "Content": ""
+  },
+  {
+   "Name": "Sfc. X0-Launcher",
    "Content": ""
   },
   {
@@ -8969,6 +9005,7 @@
     "Sfc. Absorption Layer",
     "Shield of Reprisal",
     "Wyrmplate",
+    "Greater Wyrmplate",
     "Wyrmscale"
    ],
    "Content": "Armor protects other parts, and the core, by having high coverage and integrity. The coverage makes attacks less likely to hit other parts or the core; the integrity allows the armor to tank many hits before being destroyed.\n\nSome armor provides additional functionality, like granting resistance to a certain damage type [[Spoiler]]or regenerating integrity over time while powered[[/Spoiler]].\n\nAny part with high coverage and integrity can act like armor. Parts often used for this include [[Treads]] and [[Kinetic Cannons]]. The difference is that dedicated \"armor\" parts have little other purpose than their protective role, whereas losing a tread or a cannon can disable critical aspects of a build.\n\n[[Heading]]List of Armor[[/Heading]]\n[[PartGroupTable]]\nArmor|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nUpkeep/Energy|\nUpkeep/Heat|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
@@ -9017,7 +9054,8 @@
     "Cep. Nanofilaments [Conductive]",
     "Cep. Nanofilaments [Endoweave]",
     "Cep. Nanofilaments [Tensile]",
-    "Cep. Nanofilaments [Polyglass]"
+    "Cep. Nanofilaments [Polyglass]",
+    "Emergency Decompositor"
    ],
    "Spoiler": "Spoiler",
    "Content": ""
@@ -9226,7 +9264,8 @@
     "Thermoblaster",
     "Vortex Catalyst Activator",
     "Containment Facilitator",
-    "Sfc. Borg Pulsar Launcher"
+    "Sfc. Borg Pulsar Launcher",
+    "Sfc. X0-Launcher"
    ],
    "Content": "Launchers are a type of [[Weapons|Weapon]] that specializes in doing AOE damage which works best against large groups of enemies and evasive bots like [[Swarmer|Swarmers]] and [[Hunter|Hunters]]. The biggest downside of launchers is their tendency to deal large amounts of collateral damage to nearby bots, wielder included. This often results in a high amount of [[Alert]] gain compared to using other types of weapons. Additionally, collateral damage against [[U-05 Engineer|Engineers]] will trigger [[Reinforcement Squad|Reinforcements]] unless a [[Transmission Jammers|Transmission Jammer]] is attached. The two main types of launchers are [[Electromagnetic Launchers]] and [[Explosive Launchers]]. Launchers have a unique companion part in the [[Launcher Loader]] that allows a single launcher to be fired twice as fast as usual.\n\n[[Heading]]Explosive vs Electromagnetic Launchers[[/Heading]]\n[[Partial]]Explosive vs Electromagnetic Launchers[[/Partial]]\n\n[[SubpageSummary]]\n\n[[Heading]]List of Launchers[[/Heading]]\n[[PartGroupTable]]\nLaunchers|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nShot/Range|\nShot/Energy|\nShot/Matter|\nShot/Heat|\nShot/Recoil|\nShot/Targeting|\nShot/Delay|\nShot/Waypoints|\nProjectile/Arc|\nProjectile/Count|\nProjectile/Damage|\nProjectile/Type|\nExplosion/Radius|\nExplosion/Damage|\nExplosion/Falloff|\nExplosion/Type|\nExplosion/Heat Transfer|\nExplosion/Spectrum|\nExplosion/Disruption|\nExplosion/Salvage|\nEffect/Effect|\nEffect/Description\n[[/PartGroupTable]]"
   },
@@ -9388,7 +9427,8 @@
     "Asb. P-torch",
     "Hammerchucker",
     "CY-PHR's Mindspike",
-    "V4-D3R's Forcegen"
+    "V4-D3R's Forcegen",
+    "Dynamite"
    ],
    "Content": ""
   },
@@ -9499,7 +9539,10 @@
     "Sfc. Interdiction Field",
     "Sfc. Autominer",
     "Sfc. Transmogrifier",
-    "X0-1V1's Piety Tracker"
+    "X0-1V1's Piety Tracker",
+    "Plateshifter",
+    "Personal Teleporter v0.10",
+    "Telecube"
    ],
    "Content": ""
   },

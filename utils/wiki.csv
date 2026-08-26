@@ -728,7 +728,7 @@ Upkeep/Energy|
 Upkeep/Heat|
 Effect/Effect|
 Effect/Description
-[[/PartGroupTable]]","","","","Lgt. Armor Plating,Med. Armor Plating,Hvy. Armor Plating,Zio. Light Carapace,Zio. Heavy Carapace,Hrd. Light Armor Plating,Hrd. Medium Armor Plating,Hrd. Heavy Armor Plating,Imp. Light Armor Plating,Imp. Medium Armor Plating,Imp. Heavy Armor Plating,Mak. Light Armor Plating,Mak. Medium Armor Plating,Mak. Heavy Armor Plating,Lyr. Light Armor Plating,Lyr. Medium Armor Plating,Lyr. Heavy Armor Plating,Gun Armor,Centrium Light Armor Plating,Centrium Medium Armor Plating,Centrium Heavy Armor Plating,Centrium Linked Plating,Mak. Ablative Armor,Active Cooling Armor,Scrap Shield,Enh. Scrap Shield,DW-4LL's Blast Wall,Tower Shield,Vmp. Brace Plating,V4-D3R's Cape,Sfc. Absorption Layer,Shield of Reprisal,Wyrmplate,Wyrmscale","Backup Plating,Powered Armor (Group),Regenerative Armor,Resistance Armor","Shieldings","",""
+[[/PartGroupTable]]","","","","Lgt. Armor Plating,Med. Armor Plating,Hvy. Armor Plating,Zio. Light Carapace,Zio. Heavy Carapace,Hrd. Light Armor Plating,Hrd. Medium Armor Plating,Hrd. Heavy Armor Plating,Imp. Light Armor Plating,Imp. Medium Armor Plating,Imp. Heavy Armor Plating,Mak. Light Armor Plating,Mak. Medium Armor Plating,Mak. Heavy Armor Plating,Lyr. Light Armor Plating,Lyr. Medium Armor Plating,Lyr. Heavy Armor Plating,Gun Armor,Centrium Light Armor Plating,Centrium Medium Armor Plating,Centrium Heavy Armor Plating,Centrium Linked Plating,Mak. Ablative Armor,Active Cooling Armor,Scrap Shield,Enh. Scrap Shield,DW-4LL's Blast Wall,Tower Shield,Vmp. Brace Plating,V4-D3R's Cape,Sfc. Absorption Layer,Shield of Reprisal,Wyrmplate,Greater Wyrmplate,Wyrmscale","Backup Plating,Powered Armor (Group),Regenerative Armor,Resistance Armor","Shieldings","",""
 "Armor Guard","Bot","","","","","","","","",""
 "Armor Integrity Analyzer","Part","","","","","","","","",""
 "Armor Integrity Analyzers","Part Group","[[Heading]]List of Armor Integrity Analyzers[[/Heading]]
@@ -2489,7 +2489,7 @@ Explosion/Falloff|
 Explosion/Type|
 Effect/Description
 [[/PartGroupTable]]","","","","Concussive RPG,Imp. Concussive RPG,Adv. Concussive RPG,Cep. Concussive Dispersal Blaster","","","",""
-"Consumable Alien Artifacts","Part Supergroup","","Spoiler","","","Dimensional Node Initializer,Core Expander,Core Regenerator,Integrity Redistributor,Integrated Dissipator,Supercharged Integrated Dissipator,Integrated Thermoelectric Network,Integrated Reactor,Supercharged Integrated Reactor,Integrated Mediator,Core Membrane,Navigation Efficiency Matrix,Core Reset Matrix,Subatomic Replicator,Terrabomb,LRC Armor,LRC Energy Well,LRC Matter Compressor,LRC Inertial Stabilizer,LRC Insulator,LRC Storage,Core Physics Calibrator,Spacefold Activator,Microwarp Drive,LC Capacitor,Cep. Nanofilaments [Conductive],Cep. Nanofilaments [Endoweave],Cep. Nanofilaments [Tensile],Cep. Nanofilaments [Polyglass]","Transdimensional Reconstructors","","",""
+"Consumable Alien Artifacts","Part Supergroup","","Spoiler","","","Dimensional Node Initializer,Core Expander,Core Regenerator,Integrity Redistributor,Integrated Dissipator,Supercharged Integrated Dissipator,Integrated Thermoelectric Network,Integrated Reactor,Supercharged Integrated Reactor,Integrated Mediator,Core Membrane,Navigation Efficiency Matrix,Core Reset Matrix,Subatomic Replicator,Terrabomb,LRC Armor,LRC Energy Well,LRC Matter Compressor,LRC Inertial Stabilizer,LRC Insulator,LRC Storage,Core Physics Calibrator,Spacefold Activator,Microwarp Drive,LC Capacitor,Cep. Nanofilaments [Conductive],Cep. Nanofilaments [Endoweave],Cep. Nanofilaments [Tensile],Cep. Nanofilaments [Polyglass],Emergency Decompositor","Transdimensional Reconstructors","","",""
 "Containment Facilitator","Part","","","","","","","","",""
 "Coolant Injector","Part","","","","","","","","",""
 "Coolant Injectors","Part Group","A type of [[Cooling Utilities|Cooling Utility]] that trades integrity for heat dissipation when above 200 heat. Their dissipation potential is much greater than comparable [[Cooling Devices]] like heat sinks and cooling systems which makes it great for very heat-intensive volleys of weapons like [[Thermal Guns|Thermal Guns]] and [[Thermal Cannons|Cannons]]. For example, a rating 4 [[Coolant Injector]] can dissipate 65 heat per turn which is over twice as much as the rating 4 [[Imp. Cooling System]] can provide at only 27 heat per turn. However, injectors will not last as long as other types due to their integrity-spending effect.
@@ -3085,6 +3085,7 @@ Upkeep/Energy|
 Upkeep/Heat|
 Effect/Effect
 [[/PartGroupTable]]","","","","Dynamic Insulation System,Imp. Dynamic Insulation System,Adv. Dynamic Insulation System","","","",""
+"Dynamite","Part","","","","","","","","",""
 "E-15 Imp","Bot","","","","","","","","",""
 "ECM Suite","Part","","","","","","","","",""
 "ECM Suites","Part Group","[[Infowar]] that reduces the effective memory of tracking bots when out of line of sight. For example, a [[Grunt]] has a memory of 20 actions once a bot is outside of LOS. If Cogmind has a regular [[ECM Suite]] (which has a forget multiplier of 2x) attached, that Grunt will only be able to perform 10 actions until they lose tracking on Cogmind. The ECM suite can be attached at any point in time after breaking LOS and it will take effect on remaining memory. So if the Grunt performed 4 actions before Cogmind attached the ECM suite, the Grunt will have (20 - 4) / 2 = 8 actions before losing tracking.
@@ -3254,6 +3255,7 @@ Spectrum is the ability to explode a [[Power|power]] source when it is hit by an
 "Elite","Bot Group","","Spoiler","Elite (4),Elite (7)","","","","","",""
 "Elite (4)","Bot","","","","","","","","",""
 "Elite (7)","Bot","","","","","","","","",""
+"Emergency Decompositor","Part","","","","","","","","",""
 "Empty","Other","Empty page for undisturbed creation of new pages","","","","","","","",""
 "Encrypted Comm Array","Part","The Encrypted Comm Array, or ECA, is a [[Warlord (Alignment)|Warlord-aligned]] item that enables summoning various groups of [[Derelict]] allies on main [[0b10]] floors. It can be obtained by performing any of the actions that increase the Warlord force multiplier listed on the [[Warlord (Alignment)#Force Multiplier Modifiers|Warlord Alignment Page]]. After this, a Derelict will appear in the next [[Caves]] map and deliver the Array, give some more details on its usage, and reveal the depth of [[Warlord (Location)]]. The ECA cannot be used if Cogmind has been [[Imprint|Imprinted]] or made use of a [[RIF|RIF installer]], as these alignments are mutually exclusive with Warlord.
 
@@ -6078,6 +6080,9 @@ If the Garrison squad was triggered by a non-combat bot reporting an attack or b
 "Gravmag System","Part","","","","","","","","",""
 "Great Axe","Part","","","","","","","","",""
 "Great Maul","Part","","","","","","","","",""
+"Greater Chaos Wyrm","Bot","","","","","","","","",""
+"Greater Item Mimic","Bot","","","","","","","","",""
+"Greater Wyrmplate","Part","","","","","","","","",""
 "Greatsword","Part","","","","","","","","",""
 "Grenade Launcher","Part","","","","","","","","",""
 "Grunt","Bot Group","Grunts are a [[Bot Groups|Bot Group]] of [[Legs|legged]] Thermal [[Energy Guns]] users and make up the backbone of the [[0b10]] army. They are by far the most populous combat bot class, being found on nearly every map and in many different squad types. Most Grunts are not especially durable or threatening on their own, though at higher depths ([[Research]] +) they can be dangerous due to their tendency to appear in large groups. Veterans and Enforcers in particular have a significant jump in firepower due to the upgrade from 1 to 2 weapons.
@@ -7129,7 +7134,7 @@ Explosion/Disruption|
 Explosion/Salvage|
 Effect/Effect|
 Effect/Description
-[[/PartGroupTable]]","","","","Sub. Shrapnel Launcher,Thermoblaster,Vortex Catalyst Activator,Containment Facilitator,Sfc. Borg Pulsar Launcher","Electromagnetic Launchers,Explosive Launchers,Sigix Terminators","","",""
+[[/PartGroupTable]]","","","","Sub. Shrapnel Launcher,Thermoblaster,Vortex Catalyst Activator,Containment Facilitator,Sfc. Borg Pulsar Launcher,Sfc. X0-Launcher","Electromagnetic Launchers,Explosive Launchers,Sigix Terminators","","",""
 "Legs","Part Supergroup","Legs are [[Propulsion]] that strike a middle ground in terms of support, speed, and integrity. They are used by (and available from) common light combat 0b10 bots, including [[Grunt|Grunts]], [[Hunter|Hunters]], and [[Specialist|Specialists]]. Because of this, they are generally easy to acquire, although the legs that are dropped by these bots are not of the highest quality.
 
 While on legs, [[Cogmind]] is immune to damage from ramming hostile bots, and instead has a 20% chance per active leg slot to kick them out of the way (unless they are huge).
@@ -8170,6 +8175,7 @@ Effect/Effect
 "Plasma Rifle","Part","","","","","","","","",""
 "Plasma Storm","Part","","","","","","","","",""
 "Plasma Sword","Part","","","","","","","","",""
+"Plateshifter","Part","","","","","","","","",""
 "Plexus Tether","Part","","","","","","","","",""
 "Point Defense System","Part","","","","","","","","",""
 "Point Defense Systems","Part Group","Point Defense Systems are [[Defensive Utilities|defensive utilities]] that can intercept the projectiles of most [[Launchers]], [[Remote Datajacks]] and [[CPS Tube|CPS Tubes]], preventing their explosions/effects. Their primary use is to defend against Launcher-wielding hostiles such as [[Demolisher|Demolishers]], and are especially useful for protecting nearby allies from explosives. Point Defense Systems can only work against projectiles currently visible to Cogmind, [[B]]regardless of the user[[/B]].
@@ -9993,6 +9999,9 @@ Additionally, Sentries will appear at [[Garrison Access|Garrisons]] and 0b10 exi
 "Sfc. Target Tracker","Part","","","","","","","","",""
 "Sfc. Targeting Obfuscator","Part","","","","","","","","",""
 "Sfc. Transmogrifier","Part","","","","","","","","",""
+"Sfc. X0-Cannon","Part","","","","","","","","",""
+"Sfc. X0-Gun","Part","","","","","","","","",""
+"Sfc. X0-Launcher","Part","","","","","","","","",""
 "Shearguns","Part Group","Type of unique [[Alien Artifacts|alien]] [[Energy Guns|energy gun]] that deals slashing damage. Shearguns have a unique combination of stats in high range, negative delay, penetration, positive salvage, and the sever [[Critical Hits|critical hit]] type which is unusual for a ranged weapon. While very powerful when stacked, their [[Heat|heat]] generation may be prohibitively high for most builds, especially as the - delay reduces volley time.
 
 [[Heading]]List of Shearguns[[/Heading]]
@@ -10236,7 +10245,7 @@ Spacefolds can allow for longer-range safe [[Digging|digs]]. While a [[Microwarp
 [[Heading:2]]Shielding mode[[/Heading]]
 This mode is available on [[Shield Legs]].
 [[Partial]]Shielding Mode Description[[/Partial]]","","","","","","","",""
-"Special Weapons","Part Supergroup","","","","","System Spiker,Field Lobotomy Kit,Mining Laser,Mak. Laser Shovel,LU-1G1's Laser Shovel,Welding Torch,CPS Tube,Multitool,Warlord Statue,Voltaic Drivehammer,AD-0RF's Magmablaster,IN-MT5's Pitchfork ""Insurrection"",Shield Trident,Junk Cannon,Molecular Deconstructor,Asb. F-torch,Asb. P-torch,Hammerchucker,CY-PHR's Mindspike,V4-D3R's Forcegen","Flamers,Plasma Cutters,Remote Datajacks,Stasis Beams,Throwing Claymores","","",""
+"Special Weapons","Part Supergroup","","","","","System Spiker,Field Lobotomy Kit,Mining Laser,Mak. Laser Shovel,LU-1G1's Laser Shovel,Welding Torch,CPS Tube,Multitool,Warlord Statue,Voltaic Drivehammer,AD-0RF's Magmablaster,IN-MT5's Pitchfork ""Insurrection"",Shield Trident,Junk Cannon,Molecular Deconstructor,Asb. F-torch,Asb. P-torch,Hammerchucker,CY-PHR's Mindspike,V4-D3R's Forcegen,Dynamite","Flamers,Plasma Cutters,Remote Datajacks,Stasis Beams,Throwing Claymores","","",""
 "Specialist","Bot Group","Specialists are a [[Bot Groups|Bot Group]] of [[Legs|legged]] [[0b10]] combat bots with many different themes between each variant. The best description of Specialists are glass cannons. They typically have high offensive output and little in the way of protection. Higher tier Specialists have some the highest damage output of any standard 0b10 bots in the game. Some Specialists also are unique users of [[VSS Leg|VSS Legs]] and its higher rating variants which allow them to walk at a higher speed than most legs (90 vs 120).
 Specialists have no specific weaknesses or immunities, so generally any damage type or strategy can work against them. A few have strong cooling and [[Coolant Injectors]] so heat transfer strategies may fall flat against certain Specialists. However, the same cooling parts can also be looted and taken advantage of by Cogmind. Since Specialists are capable of dealing so much damage, they tend to be high priority targets to kill off first.
 [[Gallery]]Specialists.png|All Specialist variants and colors[[/Gallery]]
@@ -12273,7 +12282,7 @@ The following will prevent Cogmind from being able to align with UFD in the firs
 [[Heading:2]]Blocked Alignment[[/Heading]]
 Several factions will no longer assist Cogmind after UFD alignment:
 [[List]][[Imprint]]: The [[Imprinter]] will say that the Imprinting machine requires a more thorough vetting process for a UFD member such as Cogmind|[[Warlord (Alignment)]]: [[Warlord]] will call Cogmind a spy and not perform the -2 [[Research]] invasion[[/List]]","Spoiler","Bolteater,DRS Ranger,Explorer,Federalist,Guru,KN-7UR,Large Mutated Botcube,Master Drone,Mutated Botcube,Optimus,Ranger,Scientist,Surveybot 24,Triborg,Triborg (Optimus),Wyrm Statue","","","Elite,Scrapper,Scrapoid,Scraphulk","","",""
-"Utilities","Part Supergroup","","","","","Scrap Engine,Arm. Scrap Engine,Encrypted Comm Array,Stasis Canceller,Skeleton Box,01-MTF's Autohacker,A0-MCA's Component Scanner,Tech Extrapolator,Trap Reconfigurator,Scrap Suit,0bPrime Scrap Suit,PSU Rigger,Machine Rigger,Phasing AFG,AS-neutralizer No. 17b,V3-11A's Pendant,Amulet of Y3-NDR,Chronowheel,Phase Armor,Power Bank,Rainbow Chip,VL-GR5's Exoskeleton ""Deathgrip"",Plexus Tether,Cep. Melee Reflex Suite,Cep. Projectile Intercept Suite,Jamming Amplifier,Crosscalibrator,Cep. Navigation Harness,Supercharged Navigation Harness,QV-33N's Launch Deck,GL-D0S's Turretformer,Blink Core,Procsplitter,Sfc. Impeller,Sfc. Door Spiker,Sfc. Materializer,Sfc. Borg Regenerator,Sfc. Interdiction Field,Sfc. Autominer,Sfc. Transmogrifier,X0-1V1's Piety Tracker","Authchips,Component Analysis Suites,Fabrication Devices,Mass Support Devices,Power Amplifiers,Recalibrators,Relay Couplers,Speed Boosting Utilities,Salvage Targeting Computers,Thermal Generators,Trap Extractors","Armor,Consumable Alien Artifacts,Cooling Utilities,Corruption Reduction Utilities,Defensive Utilities,Hackware,Infowar,Matter Refilling Devices,Offensive Utilities,Shieldings,Storage (Group)","",""
+"Utilities","Part Supergroup","","","","","Scrap Engine,Arm. Scrap Engine,Encrypted Comm Array,Stasis Canceller,Skeleton Box,01-MTF's Autohacker,A0-MCA's Component Scanner,Tech Extrapolator,Trap Reconfigurator,Scrap Suit,0bPrime Scrap Suit,PSU Rigger,Machine Rigger,Phasing AFG,AS-neutralizer No. 17b,V3-11A's Pendant,Amulet of Y3-NDR,Chronowheel,Phase Armor,Power Bank,Rainbow Chip,VL-GR5's Exoskeleton ""Deathgrip"",Plexus Tether,Cep. Melee Reflex Suite,Cep. Projectile Intercept Suite,Jamming Amplifier,Crosscalibrator,Cep. Navigation Harness,Supercharged Navigation Harness,QV-33N's Launch Deck,GL-D0S's Turretformer,Blink Core,Procsplitter,Sfc. Impeller,Sfc. Door Spiker,Sfc. Materializer,Sfc. Borg Regenerator,Sfc. Interdiction Field,Sfc. Autominer,Sfc. Transmogrifier,X0-1V1's Piety Tracker,Plateshifter,Personal Teleporter v0.10,Telecube","Authchips,Component Analysis Suites,Fabrication Devices,Mass Support Devices,Power Amplifiers,Recalibrators,Relay Couplers,Speed Boosting Utilities,Salvage Targeting Computers,Thermal Generators,Trap Extractors","Armor,Consumable Alien Artifacts,Cooling Utilities,Corruption Reduction Utilities,Defensive Utilities,Hackware,Infowar,Matter Refilling Devices,Offensive Utilities,Shieldings,Storage (Group)","",""
 "Utility Shielding","Part","","","","","","","","",""
 "Utility Shieldings","Part Group","[[Heading]]List of Utility Shieldings[[/Heading]]
 [[PartGroupTable]]
