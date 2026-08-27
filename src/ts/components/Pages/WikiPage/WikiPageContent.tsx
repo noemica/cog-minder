@@ -166,7 +166,7 @@ function ItemGroupContent({
         <>
             <div className="wiki-infobox">
                 {itemPicker}
-                {item && <ItemDetails item={item} showWikiLink={true} />}
+                {item && <ItemDetails item={item} showWikiLink={true} showBots={true} popoversToLinks={true} />}
             </div>
             {parsedNode}
         </>
