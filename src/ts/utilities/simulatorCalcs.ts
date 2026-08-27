@@ -2250,7 +2250,7 @@ function simulateBotHeatUpdates(state: SimulatorState) {
         // Note: The threshold for bots is 150 heat rather than 200 like
         // it is for Cogmind. The description doesn't mention this fact
         // though.
-        if (botState.heat >= 150) {
+        if (botState.heat > 150) {
             // All injectors lose 2 heat per application
             coolantInjectors[i].part.integrity -= 2;
             botState.heat -= coolantInjectors[i].amount;
