@@ -12880,7 +12880,7 @@ Most weapons can be fired together as a volley, excluding Special Weapons, Speci
 
 Each weapon in a ranged multi-weapon volley will increase the volley's total time cost, with each weapon being more efficient time-wise:
 [[Table]]Number of Weapons|Time cost||1|200||2|300||3|325||4|350||5|375||6+|400[[/Table]]
-This is then modified by the sum of the delay stats of every weapon in the volley, then by the time cost reduction of an equipped [[Weapon Cyclers|Weapon Cycler]], [[Quantum Capacitor]], or [[Launcher Loader]], when applicable. A single volley may not cost less than 25 time units.
+This is then modified by the sum of the delay stats of every weapon in the volley, then by the time cost reduction of an equipped [[Weapon Cyclers|Weapon Cycler]], [[Quantum Capacitor]], or [[Launcher Loader]], when applicable. However, the negative delay applied to a volley cannot be larger than -100, even if a positive delay stat is included in the volley. For example, a volley with 3 [[Enh. Autogun|Enh. Autoguns]] and a [[Hvy. Assault Cannon]] would provide -100 delay + 50 delay for a total of -50 delay to the final volley time.
 
 [[Heading:2]]Follow-Up Attacks[[/Heading]]
 
@@ -13087,7 +13087,7 @@ Clippyterm Subcaves Terminal DCSS teaser:
 [[Heading]]""Aligning"" with X0-1V1[[/Heading]]
 
 [[Image]]DCSS Altar.png|D.C.S.S Altar Unit[[/Image]]
-A special ""D.C.S.S Altar Unit"" can be found next to the Subcaves exit on -10 Materials. One of a few unique commands must be entered to pray; entering any of ""[[GameText]]Pray[[/GameText]]"", ""[[GameText]]P[[/GameText]]"", ""[[GameText]]Worship[[/GameText]]"", ""[[GameText]]Sacrifice[[/GameText]]"", ""[[GameText]]<[[/GameText]]"" or ""[[GameText]]>[[/GameText]]"" will ""align"" with X0-1V1. Choosing sacrifice will also take away half of Cogmind's current core at no extra benefit. When this happens, [[X0-1V1's Piety Tracker]] will appear on the ground, and there will be a UI indicator in the parts menu showing ""CHAOS IS INEVITABLE"".
+A special ""D.C.S.S Altar Unit"" can be found next to the Subcaves exit on -10 Materials. One of a few unique commands must be entered to pray; entering any of ""[[GameText]]Pray[[/GameText]]"", ""[[GameText]]P[[/GameText]]"", ""[[GameText]]Worship[[/GameText]]"", ""[[GameText]]Sacrifice[[/GameText]]"", ""[[GameText]]<[[/GameText]]"" or ""[[GameText]]>[[/GameText]]"" will ""align"" with X0-1V1. When this happens, [[X0-1V1's Piety Tracker]] will appear on the ground, and there will be a UI indicator in the parts menu showing ""CHAOS IS INEVITABLE"". Choosing sacrifice will also take away 150 of Cogmind's current and maximum core, with the upside of instantly granting Cogmind a [[Sfc. Transmogrifier]] that is attached to a random utility slot.
 
 X0-1V1 is not like other [[Alignment|alignments]] in the game. Most alignments involve joining forces with special derelict groups in unique [[Branch|branch]] maps for mutual benefit. Each have a few upsides and maybe one or two downsides and some incompatible other alignments. X0-1V1 is compatible with all other alignments in the game and can be found straight away on -10. The only thing aligning will prevent is other Unchained from being dispatched against Cogmind, with the exception of [[CY-PHR]]. To X0-1V1, Cogmind is simply another amusing plaything. Whether Cogmind succeeds or is destroyed is irrelevant; all that matters is whether it is entertaining. X0-1V1's upsides and downsides both tend to both be far greater than all other alignments.
 
