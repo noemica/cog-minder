@@ -1,4 +1,4 @@
-﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
+"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","","",""
 "01-MTF's Autohacker","Part","A unique [[Utilities|Utility]] only found on [[01-MTF]] that was stolen from the [[Exiles (Group)]]. Its Door [[Terminal]] hacking is most useful with high difficulty doors like the [[Access]] [[Surface]] exit. Generally better than [[Plasma Cutters]], although they have an advantage in being able to function even if the door Terminal gets destroyed.","","","","","","","",""
 "01-MTF's Shockpuncher","Part","A unique [[Energy Guns|Energy Gun]] only found on [[01-MTF]], this short ranged [[Electromagnetic Guns|Electromagnetic Gun]] is an energy-hungry but powerful shotgun-type weapon. Its raw damage output is better than even lategame weapons like the [[Com. HERF Cannon]], capable of easily killing most bots in the game in 2 or 3 hits, and its high [[Disruption|disruption]] helps disable crucial parts on bots that it hits. However, its short range and high [[Spectrum|spectrum]] can be a detriment since it has a high chance of blowing up any bots that it hits. Any nearby cover is not likely to last very long.","","","","","","","",""
@@ -12128,17 +12128,19 @@ Propulsion/Special
 "U-05 Engineer","Bot","A wheeled non-combat robot that repairs any broken walls, doors, or machines in sight. Good source of structural and terrain scanners. When attacked while repairing, calls reinforcements (unless you're in [[Materials]]) 
 [[GameText]]ALERT: Construction progress impeded, dispatching reinforcements to local area.[[/GameText]]","","","","","","","",""
 "UFD Drillbomb","Part","","","","","","","","",""
-"Unchained","Bot Group","Unchained are a collection of powerful and unique [[Derelict|Derelicts]] that have defected to [[0b10]]. As a group, they have vastly different loadouts and behavior, but all are major threats to Cogmind. Unchained are not found on any particular floor, but instead can show up in many different places once Cogmind has caused enough mayhem in some way to trigger a dispatch. Only one of them is ever active at a single time, and the Unchained chosen to be authorized is random. Unlike all other bots in the game, Unchained will actively pursue Cogmind through multiple maps.
+"Unchained","Bot Group","Unchained are a collection of powerful and unique [[Derelict|Derelicts]] that have defected to [[0b10]]. As a group, they have vastly different loadouts and behavior, but all are major threats to Cogmind. Unchained are not found on any particular floor, but instead can show up in many different places once Cogmind has caused enough mayhem in some way to trigger a dispatch. Only one of them is ever active at a single time, and the Unchained chosen to be authorized is random. Unlike all other hostile bots in the game, Unchained can actively pursue Cogmind through multiple maps.
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]Cyclists Records|UC Origins[[/Lore]]
 [[Gallery]]Unchained.png|All Robot Unchained[[/Gallery]]
 
 [[Heading:2]][[Exiles (Group)|Exiles]] Lore[[/Heading]]
-If Cogmind has aligned with the Exiles with [[FarCom]], the Exiles will deliver a message about each Unchained as they are authorized. This is prefaced with the following messages:
+If Cogmind has aligned with the Exiles with [[FarCom]], the Exiles will deliver a message about each Unchained as they are authorized. For the first dispatch, this is prefaced with the following messages:
 [[GameText]]FARCOM_MSG: We kinda like the data you're collecting and don't want to witness your untimely demise, so we kindly advice you to run like hell.[[/GameText]]
-[[GameText]]FARCOM_MSG: I've located an exit near your position you could probably use to shake them for a while.[[/GameText]] After this, the nearest exit is revealed.
+[[GameText]]FARCOM_MSG: I've located an exit near your position you could probably use to shake them for a while.[[/GameText]] This massage only appears if the nearest exit is unknown. If it appears, the nearest exit is revealed afterwards.
 [[GameText]]FARCOM_MSG: EX-HEX means well, but I for one want to see you stick around and beat the bolts out of [Unchained bot name][[/GameText]]
+Note that this is the only active assistance provided by the Exiles. Despite the Unchained and their allies being aligned with 0b10, FarCom is completely incapable of detecting any of them.
+
 
 [[Heading]]Dispatch Triggers[[/Heading]]
 There are a large number of triggers which can cause Unchained to be authorized:
@@ -12158,13 +12160,16 @@ Interrupting [[Cargo Convoy|Cargo Convoys]]: Every 3 Cargo Convoys interrupted.|
 Killing unique NPCs: This includes named Derelicts such as the [[Exiles (Group)]].|
 [[FarCom]] [[Research]] [[Branch]]: Visiting [[Quarantine]] or [[Testing]] after taking FarCom.|
 [[Hub_04(d)]] 404: Blowing up all 4 Network Hubs in Hub.|
-[[Redacted]]Looting [[Protoforge]][[/Redacted]]: Taking too many parts from Protoforge.
+[[Redacted]]Looting [[Protoforge]]: Taking too many parts from Protoforge.[[/Redacted]]
 [[/List]]
-In addition to the above specific triggers, there is a general requirement for Cogmind to have a ""good enough"" build. A build that is falling apart is not a sufficient threat to result in an Unchained dispatch even if one of the triggers has been met.
+[[Comment]]At least some of the counters above reset whenever... A trigger is met? an Unchained is dispatched? I also don't know if triggers can stack and cause a second Unchained to be dispatched once the first gives up chase/gets destroyed, but they probably can't?[[/Comment]]
+
+In addition to the above specific triggers, there is a general requirement for Cogmind to be in a good enough shape. A build that is falling apart or has low core integrity is not a sufficient threat to result in an Unchained dispatch even if one of the triggers has been met.
+
 When an Unchained has been decided to be authorized, an announcement like [[GameText]]ALERT: Unchained [Unchained] authorized to operate in [-Depth/Map], avoid or assist as necessary.[[/GameText]] will appear in the game log. The Unchained will not show up immediately but will appear over time. They may trigger based on exploration of the map (more likely for airborne propulsion types) or turn count (more likely for grounded propulsion types). It can take several hundred turns for the Unchained to appear if the exploration trigger is not met first. Initially, Unchained will only be authorized on 0b10-controlled maps. However, some Unchained can continue to follow Cogmind into [[Caves]].
 
 [[Heading]]Behavior[[/Heading]]
-Unchained have special behavior that allows them to follow Cogmind between multiple maps, so escape is not as easy as making it to the nearest exit. They take a few hundred turns after entering the map to show up, but once they appear, they will relentlessly pursue Cogmind with [[Perfect Tracking]]. Thanks to this tracking, a [[Triangulator]] may be used to help locate them from a distance before arrival.
+Unchained have special behavior that allows them to follow Cogmind between multiple maps, so escape is not as easy as making it to the nearest exit. They take a few hundred turns after entering the map to show up, but once they appear, most will relentlessly pursue Cogmind with [[Perfect Tracking]]. Thanks to this tracking, a [[Triangulator]] may be used to help locate most Unchained from a distance before arrival.
 Each Unchained has different specific behavior, but all have a tendency to harass Cogmind throughout the floor. Some bots avoid direct engagement altogether, instead making use of combat-capable allies. Others rely on ambushes or general hit-and-run tactics. CY-PHR has an even more unique styles of engagement that involves sabotaging your hacking capabilities across multiple maps even when not on the floor. All Unchained are capable of fleeing into Garrisons and through 0b10-controlled exits. Hit-and-run types can run to a Garrison and emerge later, ready to harass Cogmind again.
 
 [[Table]]
@@ -12178,9 +12183,10 @@ Unchained|Engagement Style|Summons allies|Multiple returns per map|Extra spawn r
 [[QV-33N]]|Avoid|Yes|No|Yes, won't appear outside of main 0b10 maps||
 [[V4-D3R]]|Ambush|Yes|Yes, with full repair|No
 [[/Table]]
+[[Comment]]I know that GL-D0S will completely give up chase if they ever flee the map and not continue in subsequent maps, but i don't know if that's also true of the other Unchained that can't return to a map after leaving it.[[/Comment]]
 
 [[Heading:2]]Map Activity[[/Heading]]
-Unchained can only be authorized on 0b10-controlled maps, although they can follow into non-0b10 controlled maps. Typically, Unchained will pursue Cogmind through 3 potential maps before giving up chase. Some Unchained have spawn restrictions which make them not appear on all maps that are Unchained-viable. For example, GL-D0S and QV-33N will not appear in Caves, so taking an exit here will result in a few more maps of freedom. However, once returning to the main complex, they will continue to hunt Cogmind. Possible map dispatches are as follows:
+Unchained can only be authorized on 0b10-controlled maps, although they can follow into non-0b10 controlled maps. Typically, Unchained will pursue Cogmind through up to 3 potential maps before giving up chase, though some will pursue through fewer. Some Unchained have spawn restrictions which make them not appear on all maps that are Unchained-viable. For example, GL-D0S and QV-33N will not appear in Caves, so taking an exit here will result in a few more maps of freedom. However, once returning to the main complex, they will continue to hunt Cogmind. Possible map dispatches are as follows:
 [[Table]]
 Map|Original dispatch possible|Continued pursuit||
 Main floors ([[Materials]], [[Factory]], [[Research]], [[Access]]|[[CellStyle:Good]]Yes|[[CellStyle:Good]]Yes||
