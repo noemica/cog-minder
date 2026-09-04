@@ -5873,24 +5873,27 @@ After arriving on the map, GL-D0S will patrol between different nests of turrets
 
 [[Heading:2]]Turrets[[/Heading]]
 GL-D0S will produce turrets at random from the following list:
-[[List]]
-[[Blast Turret]]|
-[[Bullet Turret]]|
-[[Hammer Turret]]|
-[[Laser Turret]]|
-[[Launcher Turret]]|
-[[Nova Turret]]|
-[[Shield Turret]]|
-[[Shock Turret]]|
-[[Stasis Turret]]|
-[[Stealth Turret]]|
-[[Thermic Turret]]
-[[/List]]
+[[Table]]
+Turret|Weapon range|Other notes||
+[[Blast Turret]]|22|20% Blast critical||
+[[Laser Turret]]|20|100% unlimited penetration, 20 memory, attempts to fire through at most a single wall like [[Hunter|Hunters]], disposable weapon (20)||
+[[Launcher Turret]]|10-20|75% Explosive resistance, one of five different possible [[Launchers]]||
+[[Bullet Turret]]|18|Two identical [[Kinetic Guns]] at random out of three different possible guns||
+[[Nova Turret]]|16|[[Quantum Capacitor]] halves volley time||
+[[Shock Turret]]|16|66% Impale critical, disposable weapon (20)||
+[[Stealth Turret]]|16|Undetectable and indestructible before it reveals itself by popping up from the floor to attack when approached||
+[[Hammer Turret]]|14|High Impact damage, 20% Crush critical, disposable weapon (15)||
+[[Thermic Turret]]|14|Three [[Thermic Laser|Thermic Lasers]] with 20% Burn critical||
+[[Stasis Turret]]|10|Weapon is a non-damaging [[Stasis Beam]]||
+[[Shield Turret]]|N/A|Shields nearby allies from 25% of incoming damage
+[[/Table]]
+Unless otherwise noted, all of GL-D0S' Turrets have 29% base core exposure, 30 core integrity, 18 visual range, 2 memory, no [[Propulsion]], no [[Power|Power Sources]], no resistances, and immunity to hacking but nothing else. While they are immobile, other bots passing through may swap with them, slightly altering their positions over time.
+
 
 [[Heading]]Strategy[[/Heading]]
-GL-D0S is not so much of a direct threat and can often be avoided entirely by routing a different way once spotting the first turret. However, intentionally trying to take down GL-D0S, the biggest threat is walking into a room filled with turrets and getting dogpiled. As such, one of the best ways to avoid a bad situation like this is the use of [[Sensor Arrays]] and [[IFF Parsers]]. IFF Parsers will uniquely identify Unchained and turrets as blue squares instead of yellow like other [[0b10]] bots. Once you locate a turret on the map, you can take it out at range. Since all turrets are stationary and many have 16 or less weapon ranges, you can use longer ranged weaponry like [[Kinetic Cannons]] to dig into rooms and take them out without taking any damage yourself. [[Visual Processing Units]] can also help to spot them from afar, although this only works for turrets out in the open. Using [[Launchers]] to angle shots around walls is also a good way to eliminate turrets without getting shot back, though [[Explosive Launchers]] may be more difficult to use due to their tendency to blow up walls.
+GL-D0S is not so much of a direct threat and can often be avoided entirely by routing a different way once spotting the first turret. However, intentionally trying to take down GL-D0S, the biggest threat is walking into a room filled with turrets and getting dogpiled. As such, one of the best ways to avoid a bad situation like this is the use of [[Sensor Arrays]] and [[IFF Parsers]]. IFF Parsers will uniquely identify Unchained and turrets as blue squares instead of yellow like other [[0b10]] bots. Once you locate a turret on the map, you can take it out at range. Since all turrets are stationary and many have 16 or less weapon ranges, you can use longer ranged weaponry like [[Kinetic Cannons]] to dig into rooms and take them out without taking any damage yourself. As Turret have few to no parts besides their weapon(s), they are especially vulnerable to long-range high Destroy/Blast critical weapons like [[Hypervelocity Weapons]] which are extremely likely to either disarm or kill on any critical hit. [[Visual Processing Units]] can also help to spot them from afar, although this only works for turrets out in the open. Using [[Launchers]] to angle shots around walls is also a good way to eliminate turrets without getting shot back, though [[Explosive Launchers]] may be more difficult to use due to their tendency to blow up walls.
 Locating GL-D0S is a challenging task of its own. They typically patrol across the map between turret nests and don't linger in one place for long. 34 speed makes catching up unrealistic for all but the fastest flight or hover builds. Instead, try to ambush them along their patrol route so you can take a few shots before they escape. Garrison intel can help figure out likely patrol locations. A [[Triangulator]] can also help you locate them at 24 range since they always have [[Perfect Tracking]] on Cogmind.
-Even once you make it past all the built up turrets and locate them, taking down the fast-moving and evasive GL-D0S is another task. Defensively, they have no weaknesses, although the EM resistance of 75% is low compared to most unchained. Using tons of targeting can help to land hits, though it's still quick difficult to overcome the many bonuses they have. Using Launchers is a good way to ensure you actually get damage off on them. Explosive launchers deal better damage, but [[Electromagnetic Launchers]] can provide a salvage bonus to obtain the Turretformer. Single target weapons of all varieties can work as well, though they are going to be much more difficult to land on a fleeing GL-D0S. ","","","","","","","",""
+Even once you make it past all the built up turrets and locate them, taking down the fast-moving and evasive GL-D0S is another task. Defensively, they have no weaknesses, although the EM resistance of 75% is low compared to most unchained. Using tons of targeting can help to land hits, though it's still quite difficult to overcome the size, flight and speed evasion bonuses they have. Using Launchers is a good way to ensure you actually get damage off on them. Explosive launchers deal better damage, but [[Electromagnetic Launchers]] can provide a salvage bonus to obtain the Turretformer. Single target weapons of all varieties can work as well, though they are going to be much more difficult to land on a fleeing GL-D0S.","","","","","","","",""
 "GL-D0S's Turretformer","Part","","","","","","","","",""
 "GOLEM Unit","Part","GOLEM Units are unique utilities found on [[Golem|Golems]] and in the [[Zion Deep Caves]]. They are contained within the GOLEM Chambers found in the western wall. When attached and activated, they will produce a variety of assembled parts if there are empty slots available. While being integrated, these assembled parts have no effect and 0 coverage. These parts increase by 3 integrity every turn, and become active when their current integrity reaches 100% of maximum. Parts are built in the following order, assuming all slots are empty (slot number accounts for the Golem Unit itself taking two [[Utilities]] slots):
 [[Image]]Golem Parts.png|A full GOLEM loadout[[/Image]]
