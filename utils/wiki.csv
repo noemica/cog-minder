@@ -5876,7 +5876,7 @@ GL-D0S will produce turrets at random from the following list:
 [[Table]]
 Turret|Weapon range|Other notes||
 [[Blast Turret]]|22|20% Blast critical||
-[[Laser Turret]]|20|100% unlimited penetration, 20 memory, attempts to fire through at most a single wall like [[Hunter|Hunters]], disposable weapon (20)||
+[[Laser Turret]]|20|100% unlimited penetration, 20 memory, attempts to fire through at most a single obstacle like [[Hunter|Hunters]], disposable weapon (20)||[[Comment]]I'm fairly certain it's only one obstacle, but i'm not completely sure.[[/Comment]]
 [[Launcher Turret]]|10-20|75% Explosive resistance, one of five different possible [[Launchers]]||
 [[Bullet Turret]]|18|Two identical [[Kinetic Guns]] at random out of three different possible guns||
 [[Nova Turret]]|16|[[Quantum Capacitor]] halves volley time||
@@ -5889,6 +5889,12 @@ Turret|Weapon range|Other notes||
 [[/Table]]
 Unless otherwise noted, all of GL-D0S' Turrets have 29% base core exposure, 30 core integrity, 18 visual range, 2 memory, no [[Propulsion]], no [[Power|Power Sources]], no resistances, and immunity to hacking but nothing else. While they are immobile, other bots passing through may swap with them, slightly altering their positions over time.
 
+[[Heading:2]]Floorwide announcements[[/Heading]]
+GL-D0S is capable of making special floorwide announcements such as
+[[GameText]]GL-D0S: No one will blame you for giving up. In fact, quitting at this point is a perfectly reasonable response.[[/GameText]]
+These messages are unimportant.
+[[Comment]]I don't think these messages have any effects or are at all relevant, but it's possible they might have specific triggers or something that would grant information on the current situation?
+Also, is it worth mentioning that these messages imitate their namesake?[[/Comment]]
 
 [[Heading]]Strategy[[/Heading]]
 GL-D0S is not so much of a direct threat and can often be avoided entirely by routing a different way once spotting the first turret. However, intentionally trying to take down GL-D0S, the biggest threat is walking into a room filled with turrets and getting dogpiled. As such, one of the best ways to avoid a bad situation like this is the use of [[Sensor Arrays]] and [[IFF Parsers]]. IFF Parsers will uniquely identify Unchained and turrets as blue squares instead of yellow like other [[0b10]] bots. Once you locate a turret on the map, you can take it out at range. Since all turrets are stationary and many have 16 or less weapon ranges, you can use longer ranged weaponry like [[Kinetic Cannons]] to dig into rooms and take them out without taking any damage yourself. As Turret have few to no parts besides their weapon(s), they are especially vulnerable to long-range high Destroy/Blast critical weapons like [[Hypervelocity Weapons]] which are extremely likely to either disarm or kill on any critical hit. [[Visual Processing Units]] can also help to spot them from afar, although this only works for turrets out in the open. Using [[Launchers]] to angle shots around walls is also a good way to eliminate turrets without getting shot back, though [[Explosive Launchers]] may be more difficult to use due to their tendency to blow up walls.
@@ -12131,7 +12137,7 @@ Propulsion/Special
 "U-05 Engineer","Bot","A wheeled non-combat robot that repairs any broken walls, doors, or machines in sight. Good source of structural and terrain scanners. When attacked while repairing, calls reinforcements (unless you're in [[Materials]]) 
 [[GameText]]ALERT: Construction progress impeded, dispatching reinforcements to local area.[[/GameText]]","","","","","","","",""
 "UFD Drillbomb","Part","","","","","","","","",""
-"Unchained","Bot Group","Unchained are a collection of powerful and unique [[Derelict|Derelicts]] that have defected to [[0b10]]. As a group, they have vastly different loadouts and behavior, but all are major threats to Cogmind. Unchained are not found on any particular floor, but instead can show up in many different places once Cogmind has caused enough mayhem in some way to trigger a dispatch. Only one of them is ever active at a single time, and the Unchained chosen to be authorized is random. Unlike all other hostile bots in the game, Unchained can actively pursue Cogmind through multiple maps.
+"Unchained","Bot Group","Unchained are a collection of powerful and unique [[Derelict|Derelicts]] that have defected to [[0b10]]. As a group, they have vastly different loadouts and behavior, but all are major threats to Cogmind. Unchained are not found on any particular floor, but instead can show up in many different places once Cogmind has caused enough mayhem in some way to trigger a dispatch. With the exception of [[CY-PHR]], only one of them is ever active at a single time, and the Unchained chosen to be authorized is random. Unlike all other hostile bots in the game, Unchained can actively pursue Cogmind through multiple maps.
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]Cyclists Records|UC Origins[[/Lore]]
@@ -12186,7 +12192,8 @@ Unchained|Engagement Style|Summons allies|Multiple returns per map|Extra spawn r
 [[QV-33N]]|Avoid|Yes|No|Yes, won't appear outside of main 0b10 maps||
 [[V4-D3R]]|Ambush|Yes|Yes, with full repair|No
 [[/Table]]
-[[Comment]]I know that GL-D0S will completely give up chase if they ever flee the map and not continue in subsequent maps, but i don't know if that's also true of the other Unchained that can't return to a map after leaving it.[[/Comment]]
+[[Comment]]I think DW-4LL only chases through two maps?[[/Comment]]
+[[Comment]]Also, i know that GL-D0S will completely give up chase if they ever flee the map and not continue in subsequent maps, but i don't know if that's also true of the other Unchained that can't return to a map after leaving it.[[/Comment]]
 
 [[Heading:2]]Map Activity[[/Heading]]
 Unchained can only be authorized on 0b10-controlled maps, although they can follow into non-0b10 controlled maps. Typically, Unchained will pursue Cogmind through up to 3 potential maps before giving up chase, though some will pursue through fewer. Some Unchained have spawn restrictions which make them not appear on all maps that are Unchained-viable. For example, GL-D0S and QV-33N will not appear in Caves, so taking an exit here will result in a few more maps of freedom. However, once returning to the main complex, they will continue to hunt Cogmind. Possible map dispatches are as follows:
