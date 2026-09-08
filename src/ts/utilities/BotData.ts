@@ -261,6 +261,8 @@ export class BotData {
                 }
             }
 
+            const naMovement = bot.Movement === "N/A";
+
             // Calculate move energy/heat stats
             const speed = parseInt(bot.Speed);
             let netEnergyPerMove = Math.trunc((speed / 100) * netEnergyPerTurn - energyPerMove);
@@ -282,6 +284,8 @@ export class BotData {
                 netEnergyPerVolley = Math.trunc((volleyTime / 100) * netEnergyPerTurn - energyPerVolley);
                 netHeatPerVolley = Math.trunc((volleyTime / 100) * netHeatPerTurn + heatPerVolley);
             }
+
+            const movement = naMovement ? "N/A" : `${bot.Movement} (${bot.Speed}/${bot["Speed %"]}%)`;
 
             const newBot: Bot = {
                 armament: bot.Armament ?? [],
@@ -316,12 +320,13 @@ export class BotData {
                 mass: mass,
                 matterStorage: matterStorage,
                 memory: bot.Memory,
-                movement: `${bot.Movement} (${bot.Speed}/${bot["Speed %"]}%)`,
+                movement: movement,
                 movementOverloaded:
                     bot["Overload Speed"] !== undefined
                         ? `${bot.Movement} (${bot["Overload Speed"]}/${bot["Overload Speed %"]}%)`
                         : undefined,
                 name: botName,
+                naMovement: naMovement,
                 netEnergyPerMove: netEnergyPerMove,
                 netEnergyPerTurn: netEnergyPerTurn,
                 netEnergyPerVolley: netEnergyPerVolley,

@@ -85,6 +85,7 @@ export type Bot = {
     movement: string;
     movementOverloaded?: string;
     name: string;
+    naMovement: boolean;
     netEnergyPerMove: number;
     netEnergyPerTurn: number;
     netEnergyPerVolley: number | undefined;

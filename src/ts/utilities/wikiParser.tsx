@@ -729,6 +729,7 @@ function processBotDetailsTag(state: ParserState, result: RegExpExecArray) {
         memory: "",
         movement: "",
         name: "",
+        naMovement: false,
         netEnergyPerMove: 0,
         netEnergyPerTurn: 0,
         netEnergyPerVolley: undefined,

@@ -82,9 +82,15 @@ function ItemLine({
     if (item === undefined) {
         return line;
     } else if (popoversToLinks) {
-        return <ItemTooltip item={item} showBots={showBots}>{line}</ItemTooltip>;
+        return (
+            <ItemTooltip item={item} showBots={showBots}>
+                {line}
+            </ItemTooltip>
+        );
     } else {
-        return <BotItemPopoverButton item={item} triggerContent={line} showBots={showBots} showWikiLink={showWikiLink} />;
+        return (
+            <BotItemPopoverButton item={item} triggerContent={line} showBots={showBots} showWikiLink={showWikiLink} />
+        );
     }
 }
 
@@ -154,9 +160,15 @@ function ItemLineOption({
     if (item === undefined) {
         return line;
     } else if (popoversToLinks) {
-        return <ItemTooltip item={item} showBots={showBots}>{line}</ItemTooltip>;
+        return (
+            <ItemTooltip item={item} showBots={showBots}>
+                {line}
+            </ItemTooltip>
+        );
     } else {
-        return <BotItemPopoverButton triggerContent={line} item={item} showBots={showBots} showWikiLink={showWikiLink} />;
+        return (
+            <BotItemPopoverButton triggerContent={line} item={item} showBots={showBots} showWikiLink={showWikiLink} />
+        );
     }
 }
 
@@ -518,7 +530,7 @@ export default function BotDetails({
                 tooltipOverride="Innate Energy Storage"
             />
             <DetailsTextLine category="Net Energy/Turn" content={bot.netEnergyPerTurn} />
-            <DetailsTextLine category="Net Energy/Move" content={bot.netEnergyPerMove} />
+            {!bot.naMovement && <DetailsTextLine category="Net Energy/Move" content={bot.netEnergyPerMove} />}
             {bot.netEnergyPerVolley !== undefined && (
                 <DetailsTextLine category="Net Energy/Volley" content={bot.netEnergyPerVolley} />
             )}
@@ -533,7 +545,7 @@ export default function BotDetails({
                 <DetailsTextLine category=" Injector Dissipation" content={bot.injectorDissipation} />
             )}
             <DetailsTextLine category="Net Heat/Turn" content={bot.netHeatPerTurn} />
-            <DetailsTextLine category="Net Heat/Move" content={bot.netHeatPerTurn} />
+            {!bot.naMovement && <DetailsTextLine category="Net Heat/Move" content={bot.netHeatPerMove} />}
             {bot.netHeatPerVolley !== undefined && (
                 <DetailsTextLine category="Net Heat/Volley" content={bot.netHeatPerVolley} defaultContent="N/A" />
             )}
