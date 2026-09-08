@@ -19,10 +19,6 @@ Loop, Read, %A_WorkingDir%\all_parts.txt
     parts.Push(A_LoopReadLine)
 }
 
-; Create parts directory
-If !FileExist("%A_ScriptDir%\part_art")
-    FileCreateDir, %A_ScriptDir%\part_art
-
 for index, partName in parts
 {
     ; Open debug menu
@@ -45,7 +41,7 @@ for index, partName in parts
     bitmap := Gdip_BitmapFromScreen( X + 929 "|" 29 + Y + 195 "|" 432 "|" 180)
     
     ; Strip invalid characters from the filename
-    partFileName := StrReplace(StrReplace(A_WorkingDir "\part_art\" partName ".png", """"), "/")
+    partFileName := StrReplace(StrReplace(A_WorkingDir "\..\src\public\part_art\" partName ".png", """"), "/")
     Gdip_SaveBitmapToFile(bitmap , partFileName)
     Gdip_DisposeImage(bitmap)
 

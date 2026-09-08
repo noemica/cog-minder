@@ -4,6 +4,7 @@ Derelict Log
 Schematic Archive
 Imprinter Data Core
 CL-0N3 Data Core
+0b10 Backdoor Data
 A2 Data Core
 A7 Data Core
 MAIN.C Data Core
