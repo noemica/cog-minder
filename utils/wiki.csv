@@ -1,4 +1,4 @@
-﻿"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
+"Name","Page Type","Content","Spoiler","Bots","Part Category","Parts","Groups","Supergroups","Subpages","Target"
 "01-MTF","Bot","[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]","","","","","","","",""
 "01-MTF's Autohacker","Part","A unique [[Utilities|Utility]] only found on [[01-MTF]] that was stolen from the [[Exiles (Group)]]. Its Door [[Terminal]] hacking is most useful with high difficulty doors like the [[Access]] [[Surface]] exit. Generally better than [[Plasma Cutters]], although they have an advantage in being able to function even if the door Terminal gets destroyed.","","","","","","","",""
 "01-MTF's Shockpuncher","Part","A unique [[Energy Guns|Energy Gun]] only found on [[01-MTF]], this short ranged [[Electromagnetic Guns|Electromagnetic Gun]] is an energy-hungry but powerful shotgun-type weapon. Its raw damage output is better than even lategame weapons like the [[Com. HERF Cannon]], capable of easily killing most bots in the game in 2 or 3 hits, and its high [[Disruption|disruption]] helps disable crucial parts on bots that it hits. However, its short range and high [[Spectrum|spectrum]] can be a detriment since it has a high chance of blowing up any bots that it hits. Any nearby cover is not likely to last very long.","","","","","","","",""
@@ -5634,6 +5634,51 @@ These are based on concept tiles that Kacper made that have no connection to ing
 
 [[Heading]]Borg Parts[[/Heading]]
 [[Gallery]]https://i.imgur.com/jCIsZin.png|Sfc. Field Destabilizer|https://i.imgur.com/YoVfREN.png|Sfc. Interception Grid[[/Gallery]]
+
+[[Heading]]Vault[[/Heading]]
+[[Gallery]]https://i.imgur.com/bjS5Tmd.png|The Vault|https://i.imgur.com/RpjkupK.png|G-56 Legionary|https://i.imgur.com/2Rwcs3P.png|Luchador|https://i.imgur.com/xwS5t1w.png|Tier 3 Thug|https://i.imgur.com/HtNQzIV.png|UFD Bomber[[/Gallery]]
+
+[[ItemDetails]]
+Name|Lrn. Light Cannon||
+Image Name|https://i.imgur.com/EnYBtj7.png||
+Type|Ballistic Cannon||
+Slot|Weapon||
+Mass|5||
+Rating|2||
+Rating Category|Prototype||
+Integrity|180||
+Coverage|120||
+Hackable|false||
+Range|24||
+Shot Energy|2||
+Shot Matter|5||
+Shot Heat|35||
+Recoil|4||
+Targeting|0||
+Delay|0||
+Damage|18-24||
+Damage Type|Kinetic||
+Critical|5% Blast||
+Salvage|-5[[/ItemDetails]]
+[[ItemDetails]]
+Name|Dura-leg||
+Image Name|https://i.imgur.com/qvLfdNw.png||
+Type|Leg||
+Slot|Propulsion||
+Rating|2||
+Integrity|150||
+Coverage|240||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Time Per Move|120||
+Drag|10||
+Energy Per Move|2||
+Heat Per Move|0||
+Support|9||
+Penalty|70[[/ItemDetails]]
+
 ","Spoiler","","","","","","",""
 "Fanart/Equine Sketcher","Other","[[Fanart]] created by Equine Sketcher (plasmoidman):
 [[FanartGallery]]
@@ -13306,10 +13351,10 @@ This effect may also happen without the above message.|A temporary IFF filter ov
 [[GameText]]X0-1V1 brushes you with a corrupting influence.[[/GameText]]|Corruption is added to Cogmind, between 2% and 20% depending on mood magnitude. The first message is shown from 2-5% and the second from 6-20% added. Ignores EM resistance and ALL other forms of corruption prevention, with the exception of [[System Guards]].|Cannot raise Cogmind's corruption above 80%||
 [[GameText]]""C'mon, do something!""[[/GameText]]
 [[GameText]]""Some new friends to play with.""[[/GameText]]|Between 1-6 hostile 0b10-aligned bots are spawned around the edge of Cogmind's line of sight. Unlike the ally-summoning version of this effect, these hostiles never disappear after a certain amount of time. Using a [[Visual Processing Units|Visual Processing Unit]] makes it more likely that this effect places bots within the greater range of Cogmind's sight but outside of the hostiles' sight. However, this means that the temporary vision debuff effect will make enemies appear closer. The first message is shown if Cogmind is not in combat and the second is shown if Cogmind is in combat.||
-[[GameText]]""Evolution hits right when you least expect it.""[[/GameText]]|Cannot change base slot configuration by more than +1/-1 and cannot ever mutate a power slot away unless it had already mutated one in. In other words, if a propulsion slot is mutated away, another will not be mutated away until at least one propulsion slot was mutated back in. For example, if, without X0-1V1's interference, you have 5 utility slots, no matter how many mutations occur, you will always have between 4 and 6 utility slots. Also, can't remove a slot that a fused part is in, like a [[Processors|Processor]] or a [[Scrap Engine]] construct.||
-[[GameText]]""Enjoy the ride!""[[/GameText]]|Cogmind is teleported nearby into view of (potentially dormant) hostile(s). Generally tries to place Cogmind into view of as much danger as possible. Bots lose tracking on Cogmind if they had it before the teleport.|Cannot teleport into [[Command#command_garrisons|the Command garrisons]]||
+[[GameText]]""Evolution hits right when you least expect it.""[[/GameText]]|Mutates one slot into a slot of another type.|Cannot change base slot configuration by more than +1/-1 and cannot ever mutate a power slot away unless it had already mutated one in. In other words, if a propulsion slot is mutated away, another will not be mutated away until at least one propulsion slot was mutated back in. For example, if, without X0-1V1's interference, you have 5 utility slots, no matter how many mutations occur, you will always have between 4 and 6 utility slots. Also, cannot remove a slot that is occupied by an undetachable part such as a [[Processors|Processor]] or a [[Scrap Engine]] construct.||
+[[GameText]]""Enjoy the ride!""[[/GameText]]|Cogmind is teleported [[Sup]]2[[/Sup]] nearby into view of (potentially dormant) hostile(s). Generally tries to place Cogmind into view of as much danger as possible. Bots lose tracking on Cogmind if they had it before the teleport.|0b10 only, also see note [[Sup]]2[[/Sup]]||
 [[GameText]]""A box. Just for you.""[[/GameText]]|Up to 6 additional stationary [[Sentry|Sentries]] are placed in a ring around Cogmind and marked on the map. The ring is roughly 20-25 tiles away from Cogmind.||
-[[GameText]]""X0-1V1 taps a no entrance sign""[[/GameText]]|Removes an exit from the map|Another exit leading to the same map must exist||
+[[GameText]]""X0-1V1 taps a no entrance sign""[[/GameText]]|Removes an exit from the map.|Another exit leading to the same map must exist, exits on some maps may be unaffected like [[Scraptown]]||
 [[GameText]]X0-1V1 uses Touch of Redecoration![[/GameText]]|X0-1V1 destroys a machine, detonates a trap, triggers [[GameText]]Force(Overload)[[/GameText]] on a [[Fabricator]], or turns [[Scrap]] into a hostile [[Mutant]].||
 [[GameText]]""That meddlesome character is spoiling all the fun. Not anymore!""[[/GameText]]|[[Data Miner]] will no longer redirect Reinforcement Squads or Assault Squads. The current squad is still redirected.|Has a chance of happening whenever Data Miner successfully redirects a squad||
 There is no log message for this effect.|One or more fake parts appear nearby but out of line of sight, and, if one is attached by Cogmind, it is reconfigured into an [[Item Mimic]]. Fake parts can be higher rating than regular floor parts, and can appear in locations where regular floor parts cannot. Fake parts can be unidentified. They are treated as a usual part in all ways except when attaching them. For example, destroying them via explosives or placing them in a [[Scanalyzer]] works like regular part. Prefers to spawn parts of the same/similar type to those Cogmind has recently used or has in inventory.|Cannot happen below depth -8||
@@ -13349,7 +13394,9 @@ Bot|Weapon||
 [[Recycler]]|[[Hpw. Shotgun]]||
 [[Watcher]]|[[Lance]]||
 [[U-05 Engineer]]|[[Dynamite]]
-[[/Table]]","Spoiler","","","","","","",""
+[[/Table]]
+
+[[Sup]]2[[/Sup]] Teleportation has limited restrictions in [[Command]]: [[Redacted]]X0-1V1 will never teleport Cogmind directly into the [[Command#Command Garrisons|the Command garrisons]] or to the left side of Command. However, they may teleport Cogmind nearby, or into the heavily guarded surface exit area. Other maps do not have restrictions even when it might be very detrimental, such as being teleported inside or outside of the [[Protoforge]] back labs area. A teleport into the [[Disassembled Obliterator]] section of [[Armory]] may softlock Cogmind if there is no way to dig out.[[/Redacted]]","Spoiler","","","","","","",""
 "X0-1V1 Entertainment Increases","Partial","[[Table]]
 Source of entertainment|Amusement gain[[Comment]]|Cooldown (if any)[[/Comment]]||
 Using a [[Dirty Datajack]] and successfully performing a hack|+1||
@@ -13398,7 +13445,7 @@ Being spotted by a large number of hostiles at once?|?[[/Table]]
 "X0-1V1 Good Acts","Partial","[[Table]]Log message|Effect|Restrictions (if any)||
 [[GameText]]""See? It buffs right out!""[[/GameText]]|15-30% core integrity restoration based on mood magnitude.|Must have enough missing core integrity||
 [[GameText]]X0-1V1 barely happened to notice your imminent destruction.[[/GameText]]
-[[GameText]]X0-1V1 decides a favorite toy is worth saving for now.[[/GameText]]|When Cogmind would be destroyed, between 39-45% of core integrity is restored, and Cogmind is teleported to safety.|Occurs a maximum of once per run. May happen in any map, even in those where X0-1V1 would not normally act. Might be dependent on other factors(?).||
+[[GameText]]X0-1V1 decides a favorite toy is worth saving for now.[[/GameText]]|When Cogmind would be destroyed, between 39-45% of core integrity is restored, and Cogmind is teleported [[Sup]]2[[/Sup]] to safety.|Occurs a maximum of once per run. May happen in any map, even in those where X0-1V1 would not normally act. Might be dependent on other factors(?).||
 
 
 [[GameText]]""A floating RIF installer appears for a brief moment.""[[/GameText]]|Gives an additional [[RIF]] ability. Can give an ability that would normally only be available after having used many more RIF installers, such as Crosswire.|Only possible if RIF is already installed. Only once per run.||
@@ -13411,11 +13458,11 @@ WARNING: This effect may crush inventory parts if there is no room on the ground
 [[GameText]]X0-1V1 points here and there.[[/GameText]]|X0-1V1 reveals item locations within a square range of 61 tiles centered around Cogmind (30 tiles in each direction).|Must be at least one unknown part location on the ground within range||
 [[GameText]]X0-1V1 lends a hand with your twisted circuits.[[/GameText]]|Some of Cogmind's [[Corruption]] is purged, between 10% to 50% based on mood magnitude.||
 [[GameText]]""I sense action potential over that way.[[/GameText]]|X0-1V1 reveals a [[Garrison Access]].||
-[[GameText]]""You need a change of scenery.""[[/GameText]]|X0-1V1 teleports Cogmind out of danger.|Cogmind cannot be in good shape||
+[[GameText]]""You need a change of scenery.""[[/GameText]]|X0-1V1 teleports [[Sup]]2[[/Sup]] Cogmind out of danger.|Cogmind cannot be in good shape||
 [[GameText]]""Just some junk I've been collecting.""[[/GameText]]
-[[GameText]]""Someone left a few trinkets here.""[[/GameText]]|Teleports Cogmind to a ""vault"" containing many out-of-depth and possibly unique items. Prototype parts can be faulty, and the room can contain Traps. The number of parts in the room are 10 + [Mood Magnitude / 10]. There doesn't seem to be any difference between the two messages.|Max once per map, mutually exclusive with the next effect||
+[[GameText]]""Someone left a few trinkets here.""[[/GameText]]|Teleports [[Sup]]2[[/Sup]] Cogmind to a ""vault"" containing many out-of-depth and possibly unique items. Prototype parts can be faulty, and the room can contain Traps. The number of parts in the room are 10 + [Mood Magnitude / 10]. There doesn't seem to be any difference between the two messages.|Max once per map, mutually exclusive with the next effect||
 [[GameText]]""Being a leader is both a boon and a curse.""[[/GameText]]
-[[GameText]]""I think they like you.""[[/GameText]]|Teleports to a ""vault"" with several blue-controllable allies. These bots will not drop parts when destroyed. The number of allies is increased by mood magnitude: 3 appear at 0-39, 4 at 40-79 and 5 at 80-100. There doesn't seem to be any difference between the two messages.|Max once per map, mutually exclusive with the previous effect||
+[[GameText]]""I think they like you.""[[/GameText]]|Teleports [[Sup]]2[[/Sup]] to a ""vault"" with several blue-controllable allies. These bots will not drop parts when destroyed. The number of allies is increased by mood magnitude: 3 appear at 0-39, 4 at 40-79 and 5 at 80-100. There doesn't seem to be any difference between the two messages.|Max once per map, mutually exclusive with the previous effect||
 [[GameText]]""Open Sesame""[[/GameText]]|A power cycler on the map is exploded.|Must be a power cycler on the map. Only once per map.||
 [[GameText]]""Let's see how everyone fares in the upcoming heat wave.""[[/GameText]]|Sterilization system partially engages, bringing heat up to +20 over the next several hundred turns, then falls back down over another several hundred turns.||
 [[GameText]]""I told that [Heavy] to go sit in the corner.""[[/GameText]]|The closest [[Heavy]] moves to the nearest corner of the map and stays there until the next [[Security Rotation]].||
@@ -13462,9 +13509,8 @@ Null Cannon, L-Cannon (variant unknown), Hvy. Autocannon? (it dealt 77 kinetic d
 [[GameText]]X0-1V1 sucks the heat right out of you (-[heat] heat).|Cogmind's heat is reduced to 0.|Combat only, heat > 300
 [[/Table]]
 
-[[List:Ordered]]
-Some powerful unique bots are immune to hostile-affecting special effects. This includes [[Warlord]], [[Superfortress]], [[MAIN.C]], and [[Architect]].
-[[/List]]","Spoiler","","","","","","",""
+[[Sup]]1[[/Sup]] Some powerful unique bots are immune to hostile-affecting special effects. This includes [[Warlord]], [[Superfortress]], [[MAIN.C]], and [[Architect]].
+[[Sup]]2[[/Sup]] Teleportation effects that affect Cogmind have certain common limitations. No teleportation effect will place Cogmind into the [[Command#Command Garrisons|the Command garrisons]] or [[Redacted]]the left side of Command[[/Redacted]]. Additionally, the ""vault"" and ally effects can only occur in some 0b10-controlled maps. These effects will always place Cogmind into a predetermined empty room on the map.","Spoiler","","","","","","",""
 "X0-1V1 Temporary Buffs","Partial","[[Table]]
 Log message|Temporary effect|Restrictions (if any)|Duration[[Sup]]1[[/Sup]]||
 [[GameText]]""Enjoy your XOMVISION!""[[/GameText]]|18 range unjammable ability to sense active robots, even if they have the Scan Cloak trait.| |2 * [Mood Magnitude] + 125||
