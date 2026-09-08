@@ -157,6 +157,10 @@ additional_content = {
         'Content': 'Records obtainable from a Terminal in the room holding the SUBCON Basin in Subcaves.',
         'Spoiler': 'Spoiler',
     },
+    'Survivor 1 Records': {
+        'Content': "Records obtainable from a Terminal in Caves.",
+        'Spoiler': 'Spoiler',
+    },
     'Symbiants Records': {
         'Content': 'Records obtainable from the Symbiant club\'s Terminal in Scraptown.',
         'Spoiler': 'Spoiler',
