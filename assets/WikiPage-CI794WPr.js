@@ -1,4 +1,4 @@
-import{r as T,c as H,j as a,L as Z,a0 as N,B as S,a1 as j,K as ge,a2 as xe,a3 as He,a4 as ue,f as E,a5 as Ae,O as U,J as L,a6 as pe,a7 as Ge,a as Y,t as Re,a8 as Ie,a9 as De,aa as Pe,S as te,ab as Ne,ac as Ee,h as Me,X,q as Le,ad as Fe,ae as fe,u as ye,af as Be,ag as We,ah as ae,ai as z,aj as B,ak as qe,al as ne,am as Oe,an as Ue,ao as je}from"./index-Bp2gsElm.js";import{l as Ve}from"./lore-BU3dqS5H.js";import{h as ze,c as Ze}from"./hackUtilities-C7-c-ilu.js";import{H as _,n as Xe,R as Ke,T as oe,o as Q,b as J,p as be,q as Ye,L as _e,r as Qe,u as Je,a as $e}from"./BotPopover-B05NYFsN.js";import{S as et}from"./Table-B8C8oeEa.js";import{e as tt}from"./partColumnDefs-8eMQtPd1.js";/* empty css              */import"./items-DrzhB8H_.js";function at(e){const t=r=>typeof window<"u"?window.matchMedia(r).matches:!1,[n,o]=T.useState(t(e));function i(){o(t(e))}return T.useEffect(()=>{const r=window.matchMedia(e);return i(),r.addListener?r.addListener(i):r.addEventListener("change",i),()=>{r.removeListener?r.removeListener(i):r.removeEventListener("change",i)}},[e]),n}const nt=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{r as T,c as H,j as a,L as Z,a0 as N,B as S,a1 as j,K as ge,a2 as xe,a3 as He,a4 as ue,f as E,a5 as Ae,O as U,J as L,a6 as pe,a7 as Ge,a as Y,t as Re,a8 as Ie,a9 as De,aa as Pe,S as te,ab as Ne,ac as Ee,h as Me,X,q as Le,ad as Fe,ae as fe,u as ye,af as Be,ag as We,ah as ae,ai as z,aj as B,ak as qe,al as ne,am as Oe,an as Ue,ao as je}from"./index-Bv0fvjvm.js";import{l as Ve}from"./lore-BU3dqS5H.js";import{h as ze,c as Ze}from"./hackUtilities-C7-c-ilu.js";import{H as _,n as Xe,R as Ke,T as oe,o as Q,b as J,p as be,q as Ye,L as _e,r as Qe,u as Je,a as $e}from"./BotPopover-DnyevEcF.js";import{S as et}from"./Table-CC-fST9R.js";import{e as tt}from"./partColumnDefs-wHVoFdMg.js";/* empty css              */import"./items-DrzhB8H_.js";function at(e){const t=r=>typeof window<"u"?window.matchMedia(r).matches:!1,[n,o]=T.useState(t(e));function i(){o(t(e))}return T.useEffect(()=>{const r=window.matchMedia(e);return i(),r.addListener?r.addListener(i):r.addEventListener("change",i),()=>{r.removeListener?r.removeListener(i):r.removeEventListener("change",i)}},[e]),n}const nt=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -5361,6 +5361,43 @@ Description|The newest concept brawler has been provided with an incredibly powe
 Armament|Cep. Blasthammer|1||
 Components|Exp. Antimatter Reactor|1|Enh. Armored Medium Treads|2|Exp. Coolant Injector|1|Cep. Chromion Battery|1||
 Components|Cep. Melee Reflex Suite|1|Exp. Power Shielding|1|Med. Regenerative Plating|2|Exp. EM Shield|1|Exp. Force Field|1[[/BotDetails]]
+
+[[ItemDetails]]
+Name|Cep. Biometal Assault Treads||
+Image Name|https://i.imgur.com/4Bf7YOH.png||
+Type|Treads||
+Slot|Propulsion||
+Rating|10||
+Rating Category|Prototype||
+Integrity|300||
+Coverage|120||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Time Per Move|140||
+Drag|20||
+Energy Per Move|4||
+Heat Per Move|2||
+Support|40||
+Penalty|80||
+Burnout|40[[/ItemDetails]]
+
+[[ItemDetails]]
+Name|Cep. Corruption Buffer||
+Image Name|https://i.imgur.com/LkPxRqr.png||
+Type|Processor||
+Slot|Utility||
+Mass|0||
+Rating|10||
+Rating Category|Prototype||
+Integrity|100||
+Coverage|2||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Description|Prevents infliction of new system corruption from any external source, losing 2 integrity per percent of corruption blocked.[[/ItemDetails]]
 
 [[Heading]]If Optimus Wins[[/Heading]]
 [[GameText]]>0b1 Record(Home At Last)[[/GameText]]
