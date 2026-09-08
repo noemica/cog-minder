@@ -5202,6 +5202,43 @@ Armament|Cep. Blasthammer|1||
 Components|Exp. Antimatter Reactor|1|Enh. Armored Medium Treads|2|Exp. Coolant Injector|1|Cep. Chromion Battery|1||
 Components|Cep. Melee Reflex Suite|1|Exp. Power Shielding|1|Med. Regenerative Plating|2|Exp. EM Shield|1|Exp. Force Field|1[[/BotDetails]]
 
+[[ItemDetails]]
+Name|Cep. Biometal Assault Treads||
+Image Name|https://i.imgur.com/4Bf7YOH.png||
+Type|Treads||
+Slot|Propulsion||
+Rating|10||
+Rating Category|Prototype||
+Integrity|300||
+Coverage|120||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Time Per Move|140||
+Drag|20||
+Energy Per Move|4||
+Heat Per Move|2||
+Support|40||
+Penalty|80||
+Burnout|40[[/ItemDetails]]
+
+[[ItemDetails]]
+Name|Cep. Corruption Buffer||
+Image Name|https://i.imgur.com/LkPxRqr.png||
+Type|Processor||
+Slot|Utility||
+Mass|0||
+Rating|10||
+Rating Category|Prototype||
+Integrity|100||
+Coverage|2||
+Hackable|false||
+Energy Upkeep|0||
+Matter Upkeep|0||
+Heat Generation|0||
+Description|Prevents infliction of new system corruption from any external source, losing 2 integrity per percent of corruption blocked.[[/ItemDetails]]
+
 [[Heading]]If Optimus Wins[[/Heading]]
 [[GameText]]>0b1 Record(Home At Last)[[/GameText]]
 [[GameText]]This is Optimus.  Thanks to your combined efforts, we have secured Protoforge and cleared 0b1 of all MAIN.C forces.  We can't let our guard down though.  MAIN.C was working on a spaceship and he might not be able to complete it without components that only the Forge can produce.  I'd be happy to give him whatever parts he wants to get him off the damn planet, but I doubt he's willing to accept any peaceful solution after the beating we gave him.  So we need to upgrade our own capabilities and reinforce 0b1's defenses as quickly as possible.  Those bots who are still in or near Scraptown should prepare to return to 0b1 ASAP.  I've already asked LU-1G1 and his crew to temporarily reopen the eastern tunnel so that our Luggers and Trashmen can transfer everything of value.
