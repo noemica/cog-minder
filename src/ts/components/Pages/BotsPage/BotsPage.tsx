@@ -142,6 +142,12 @@ const botColumnDefs: ColumnDef<Bot>[] = [
 
 const movementSpeedRegex = /\((\d*)/;
 function movementSpeedSort(a: string, b: string) {
+    if (a === "N/A") {
+        return 1;
+    } else if (b === "N/A") {
+        return -1;
+    }
+
     const aValue = parseIntOrDefault(movementSpeedRegex.exec(a)![1], 0);
     const bValue = parseIntOrDefault(movementSpeedRegex.exec(b)![1], 0);
 
