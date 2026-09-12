@@ -325,6 +325,41 @@ function addLocations(
             }
         }
     }
+
+    // Do a final third pass to sort entry from
+    for (const locationEntry of wiki.Locations) {
+        const location = allEntries.get(locationEntry.Name)!.extraData! as MapLocation;
+
+        location.entries.sort((a, b) => {
+            const aExit = a.location.exits.find((exit) => exit.location === location);
+            const bExit = b.location.exits.find((exit) => exit.location === location);
+
+            // Hack to avoid having to actually parse out the min/max depths out of the exit string
+            // When comparing something like -9 to -8, puts the -9 first
+            // Need to do it this way instead of checking the actual depth that the
+            // map can appear on because in some cases (like Garrisons in Mats) 
+            // a map doesn't overlap at all depths
+            if (parseIntOrDefault(aExit?.depthsString[1], 0) < parseIntOrDefault(bExit?.depthsString[1], 0)) {
+                return 1;
+            }
+
+            const aMinDepth = Math.max(a.location.minDepth, location.minDepth);
+            const bMinDepth = Math.max(b.location.minDepth, location.minDepth);
+
+            if (aMinDepth !== bMinDepth) {
+                return aMinDepth - bMinDepth;
+            }
+
+            const aMaxDepth = Math.min(a.location.maxDepth, location.maxDepth);
+            const bMaxDepth = Math.min(b.location.maxDepth, location.maxDepth);
+
+            if (aMaxDepth !== bMaxDepth) {
+                return aMaxDepth - bMaxDepth;
+            }
+
+            return a.location.name.localeCompare(b.location.name);
+        });
+    }
 }
 
 function addOther(addEntry: (entry: WikiEntry) => void, allEntries: Map<string, WikiEntry>) {
