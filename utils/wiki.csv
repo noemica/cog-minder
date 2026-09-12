@@ -10918,26 +10918,41 @@ After Superfortress is dead, there is still the remaining issue of leaving the m
 
 [[Heading]]Items Obtainable by Murder[[/Heading]]
 The following items can be obtained by attacking Scraptown's inhabitants and are the main benefits of attacking:
-[[List]][[Ballwheel]]: Curator's Association Exhibit|
-[[DM-GVY's Chainsaw]]: Curator's Association Exhibit|
-[[Exp. Plasma Cutter]]: Obtained by digging through a specific ""closed for remodeling"" room|
-[[Exp. Recalibrator]]: Obtained by killing CR-KLE|
-[[Expert System]]: Obtained by killing A0-MCA|
-[[Field Manipulator]]: Science Guys shell prototype|
-[[ID Mask]]: Obtained by killing a Scientist in Chapter 10|
-[[LU-1G1's Laser Shovel]]: Obtained by digging in the center dirt of the LU-1G1's Boring Crew room|
-[[MA-1KR's Cyclogen]]: Curator's Association Exhibit|
-[[Master Drone Bay]]: Science Guys shell prototype|
-[[Personal Teleporter v0.10]]: Science Guys shell prototype|
-[[PL-3XN's Ring of Power]]: Obtained in one of two ways: Either killing the [[Explorer]] in the Fellowship of the Rings room or by taking it from a Curator's Association exhibit|
-[[Siege Cannon Replica]]: Curator's Association Exhibit|
-[[System Spiker]]: Science Guys shell prototype|
-[[Thermal Lance]]: Science Guys shell prototype|
-[[Voltaic Drivehammer]]: Science Guys shell prototype|
-[[Vmp. Humpback]]: Curator's Association Exhibit[[/List]]
 
-[[Heading]]Requirements[[/Heading]]
-In order to effectively full clear Scraptown, there are a few general requirements:
+[[Heading:2]]Left Side of Gate[[/Heading]]
+[[List]]
+[[Exp. Recalibrator]]: Obtained by killing CR-KLE|
+[[PL-3XN's Ring of Power]]: Killing the [[Explorer]] in the Fellowship of the Rings room
+[[/List]]
+
+[[Heading:2]]Right Side of Gate[[/Heading]]
+[[Heading:3]]Curator's Association Exhibit[[/Heading]]
+[[List]]
+[[Ballwheel]]|
+[[DM-GVY's Chainsaw]]|
+[[MA-1KR's Cyclogen]]|
+PL-3XN's Ring of Power|
+[[Siege Cannon Replica]]|
+[[Vmp. Humpback]]
+[[/List]]
+
+[[Heading:3]]Science Guys Shell Prototypes[[/Heading]]
+[[List]][[Field Manipulator]]|
+[[Master Drone Bay]]|
+[[Personal Teleporter v0.10]]|
+[[System Spiker]]|
+[[Thermal Lance]]|
+[[Voltaic Drivehammer]][[/List]]
+
+[[Heading:3]]Other[[/Heading]]
+[[List]]
+
+[[Exp. Plasma Cutter]]: Obtained by digging through a specific ""closed for remodeling"" room|
+[[Expert System]]: Obtained by killing A0-MCA|
+[[ID Mask]]: Obtained by killing a Scientist in Chapter 10|
+[[LU-1G1's Laser Shovel]]: Obtained by digging in the center dirt of the LU-1G1's Boring Crew room
+[[/List]]
+
 [[Heading:2]][[Triborg]] Solve[[/Heading]]
 Triborg is by far the scariest individual bot on the map with an incredibly powerful [[Siege Cannon]] that can quickly kill an unprepared Cogmind. Siege mode brings Triborg's initially high 40% core exposure down to a significantly reduced 28% which makes direct damage dealing a rather inefficient method. An EM resistance of 65% doesn't help an EM approach much either, with an average requirement of 285 EM damage to be dealt before corruption death. Very little conventional weaponry can deal enough damage to eliminate Triborg in a reasonable amount of time.
 The most reliable way to beat Triborg is with meltdown. Large groups of allies with heat transfer can easily overheat Triborg before it gets much chance to deal damage. [[Storage]] frequently has a vault of 10 [[Grunt|Grunts]] that will become friendly to Cogmind upon entry. These 10 Grunts are sufficient to melt Triborg within a few volleys, if not instantly. [[Army Drone|Army Drones]] from [[Army-in-a-Box]] can also produce sufficient heat transfer for an easy kill. [[DAS Turret|DAS Turrets]] from [[Deploy-a-Sentry]] do not have heat transfer but have extremely high damage output, so if Cogmind can hold Triborg's fire, 3 or 4 turrets taken from the Exiles can deal enough conventional damage for core destruction.
@@ -10947,6 +10962,7 @@ Aside from allies, there are few other Exiles Prototypes that can handle the Tri
 [[Field Lobotomy Kit]]: Triborg is not [[Disruption|disruption]]-immune so the FLK will instantly turn a threat into a useful ally|
 [[Firepult]]: Firepult has sufficient heat transfer to melt Triborg with ease. Make sure to pack plenty of cooling to use this early.|
 [[YOLO Cannon]]: YOLO Cannon's high 50% meltdown critical easily kills Triborg. Note: the AOE effect of YOLO cannon may damage the loot on the ground.[[/List]]
+
 [[Heading:2]]Trash Killer[[/Heading]]
 Cogmind should have an efficient way of dealing with the dozens of average to weak-strength bots that will swarm Scraptown after hostilities begin. All bots will rush straight to the center of the map and Cogmind needs to either hide or take them out very efficiently. Simply average-depth loot will be unable to take out the huge rush of bots. The main strategies are to have an overwhelming force in the center of the map or to stand further away down a corridor and try to take bots out in smaller groups. If opting for the second strategy, long-ranged weaponry is the best to take advantage of some of the shorter-ranged bots.
 Here are some good tools for the job:
@@ -10960,6 +10976,7 @@ DAS Turrets have high visual range (22) and will kill every bot in one core hit.
 Bot Army: While they don't last forever, a well positioned army can act as a firing squad for bots that wander into their line of sight. Ideally this includes some combination of Storage Grunts, miscellaneous [[Recycling]] rewirable bots, and potentially even fabricated [[0b10]] bots like [[P-60 Hacker|P-60 Hackers]].|
 Army-in-a-Box: Similar to a Grunt army, only there's a lot more Army Drones available. Don't use too many at once or else they will get in each others' way. For maximum effectiveness, return bots that have taken core hits and bots that have short-ranged weapons.
 [[/List]]
+
 [[Heading:2]]Essential Parts[[/Heading]]
 No NPC murder setup is complete without a few highly essential build components:
 [[List]]Backup Treads: Cogmind can easily salvage Triborg for Tri-treads and those should be used if possible. However, depending on Cogmind's starting position, it may be possible to be stuck fighting without having time to move over to the Triborg loot and swapping to the treads. If Cogmind happens to miss a CPS tube hit, a lot of essential loot may not drop.|
@@ -10979,9 +10996,11 @@ Generally, a build should be designed for killing Scraptown several maps ahead o
 
 [[Heading]]Location to Fight[[/Heading]]
 When engaging hostilities, there are 2 best points where Cogmind can choose to start the fight:
+
 [[Heading:2]]Next to the UFD Gate[[/Heading]]
 [[Image]]Scraptown Triborg Surrounded.png|Grunts surrounding Triborg prepared to melt it down, with nearby Protector[[/Image]]
 The gate is the best place to begin if Cogmind has allies or a quick way to neutralize Triborg. There is lots of room so allies won't have to run past each other or try to shoot through each other like they would in hallways. However, the open area is also a downside for the hostile UFD bots that can pour in from many different directions. Allies should initially be positioned around Triborg in a box as shown to the right. If a [[Protector]] is available, place it close to the corner of the Gate so it is more out of harms way. Note: Even with a large number of allies, expect to have to retreat to the corner of the map at some point during the fight.
+
 [[Heading:2]]Bottom Left Corner[[/Heading]]
 [[Image]]Scraptown Bottom Left Triborg Path.png|Path Triborg should take if in the bottom left corner[[/Image]]
 If the Triborg solution doesn't involve allies, it is much better to hide in the corner of the map to avoid the initial bot swarm. Stay in the position shown in the image to the right to begin hostilities. When Triborg peeks around the corner, move up a few tiles so Triborg is forced to move closer to Cogmind to shoot. The right side path to this location is a little short, but the top path can take good advantage of the large sightlines.
@@ -14585,7 +14604,7 @@ The Multitool is not much of an offensive weapon, but it does have a few unique 
 Flight can occasionally make use of these to dig into areas locked by blast doors. However, a little bit of hacking power will also get into most locked doors very reliably. [[Spoiler]]One of the better uses of Plasma Cutters for flight is to destroy Hubs in [[Hub_04(d)]] without triggering an explosion.[[/Spoiler]]","","","","","","","",""
 "aoemica's Flight Guide/Machine Hacking","Other","A collection of thoughts and tips about machine hacking on flight. Each machine has its own section listed below. I highly recommend checking out the [[Interactive Machine]] and each machine's own page for additional details.
 
-[[Gallery]]../game_sprites/Fabricator.png|[[aoemica's Flight Guide/Machine Hacking/Fabricators|Fabricators]]|../game_sprites/Garrison.png|[[aoemica's Flight Guide/Machine Hacking/Garrisons|Garrisons]]|../game_sprites/Recycling Unit.png|[[aoemica's Flight Guide/Machine Hacking/Recycling Units|Recycling Units]]|../game_sprites/Repair Station.png|[[aoemica's Flight Guide/Machine Hacking/Repair Stations|Repair Stations]]|../game_sprites/Scanalyzer.png|[[aoemica's Flight Guide/Machine Hacking/Scanalyzers|Scanalyzers]]|../game_sprites/Terminal.png|[[aoemica's Flight Guide/Machine Hacking/Fabricators|Terminals]][[/Gallery]]
+[[Gallery]]../game_sprites/Fabricator.png|[[aoemica's Flight Guide/Machine Hacking/Fabricators|Fabricators]]|../game_sprites/Garrison.png|[[aoemica's Flight Guide/Machine Hacking/Garrisons|Garrisons]]|../game_sprites/Recycling Unit.png|[[aoemica's Flight Guide/Machine Hacking/Recycling Units|Recycling Units]]|../game_sprites/Repair Station.png|[[aoemica's Flight Guide/Machine Hacking/Repair Stations|Repair Stations]]|../game_sprites/Scanalyzer.png|[[aoemica's Flight Guide/Machine Hacking/Scanalyzers|Scanalyzers]]|../game_sprites/Terminal.png|[[aoemica's Flight Guide/Machine Hacking/Terminals|Terminals]][[/Gallery]]
 
 [[Heading]]CY-PHR[[/Heading]]
 While this bot is a spoiler concept (see [[CY-PHR]]), you are likely to encounter the effects of this bot sooner than later. If you do too many hacks, this bot will start to taunt you through the machine output, warning you that you will soon cause them to take action against you. The first message is 50% of the way toward their full effects, and if you get to 100% they will start messing with the effects of hacks at random. This has a ton of negative effects like making hacking intel, repairs, and fabrication unreliable. In order to avoid triggering these effects, try to restrict hacking to only the most important hacks to perform each floor or else you may find that all the hacking you do will be much less valuable after that. Of course, if you want to try to take them head-on you can try to trigger them as soon as possible. You will get roughly between 1-200 hacks in before CY-PHR is fully triggered depending on which hacks you perform. See the CY-PHR page for more specific details.","","","","","","","aoemica's Flight Guide/Machine Hacking/Fabricators,aoemica's Flight Guide/Machine Hacking/Garrisons,aoemica's Flight Guide/Machine Hacking/Recycling Units,aoemica's Flight Guide/Machine Hacking/Repair Stations,aoemica's Flight Guide/Machine Hacking/Scanalyzers,aoemica's Flight Guide/Machine Hacking/Schematics Reference,aoemica's Flight Guide/Machine Hacking/Terminals",""
