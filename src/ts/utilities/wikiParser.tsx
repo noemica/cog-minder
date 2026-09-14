@@ -62,6 +62,7 @@ class ParserState {
     itemData: ItemData;
     location: string;
     output: OutputGroup[];
+    showEditorComments: boolean;
     spoiler: Spoiler;
 
     constructor(
@@ -77,6 +78,7 @@ class ParserState {
         inlineOnly: AllowedContentType,
         itemData: ItemData,
         location: string,
+        showEditorComments: boolean,
         spoiler: Spoiler,
     ) {
         this.allowHeadingLinks = allowHeadingLinks;
@@ -93,6 +95,7 @@ class ParserState {
         this.itemData = itemData;
         this.location = location;
         this.output = [];
+        this.showEditorComments = showEditorComments;
         this.spoiler = spoiler;
     }
 
@@ -128,6 +131,7 @@ class ParserState {
             state.inlineOnly,
             state.itemData,
             state.location,
+            state.showEditorComments,
             state.spoiler,
         );
     }
@@ -224,6 +228,7 @@ export function createContentHtml(
     itemData: ItemData,
     botData: BotData,
     location: string,
+    showEditorComments: boolean,
 ): { node: ReactNode; errors: string[]; images: Set<string> } {
     // Process each section into the same output groups
     const state = new ParserState(
@@ -239,6 +244,7 @@ export function createContentHtml(
         "All",
         itemData,
         location,
+        showEditorComments,
         spoilerState,
     );
     processSection(state, undefined);
@@ -490,8 +496,9 @@ export function parseEntryContent(
     itemData: ItemData,
     botData: BotData,
     location: string,
+    showEditorComments: boolean,
 ) {
-    const parseResult = createContentHtml(entry, allEntries, spoiler, false, itemData, botData, location);
+    const parseResult = createContentHtml(entry, allEntries, spoiler, false, itemData, botData, location, showEditorComments);
 
     if (parseResult.errors.length > 0) {
         console.log(`Errors while parsing ${entry.name}`);
@@ -928,6 +935,7 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
             "All",
             state.itemData,
             state.location,
+            state.showEditorComments,
             state.spoiler,
         );
 
@@ -984,6 +992,18 @@ function processCommentTag(state: ParserState, result: RegExpExecArray) {
         recordError(state, "Found comment without associated ending tag");
         state.index = result.index + result[0].length;
         return;
+    }
+
+    if (state.showEditorComments) {
+        state.output.push({
+            groupType: "Grouped",
+            node: (
+                <p>
+                    <b style={{ color: "red" }}>EDITOR COMMENT</b>:{" "}
+                    {state.initialContent.substring(result.index + result[0].length, index)}
+                </p>
+            ),
+        });
     }
 
     state.index = index + "[[/Comment]]".length;
@@ -1125,6 +1145,7 @@ function processPartialTag(state: ParserState, result: RegExpExecArray) {
         "All",
         state.itemData,
         state.location,
+        state.showEditorComments,
         state.spoiler,
     );
     processSection(partialState, undefined);
@@ -2521,6 +2542,7 @@ function processSubpageSummary(state: ParserState, result: RegExpExecArray) {
             "All",
             state.itemData,
             state.location,
+            state.showEditorComments,
             state.spoiler,
         );
 

@@ -23,7 +23,7 @@ import { createIdFromText, parseEntryContent } from "../../../utilities/wikiPars
 import Button, { ButtonLink } from "../../Buttons/Button";
 import useBotData from "../../Effects/useBotData";
 import useItemData from "../../Effects/useItemData";
-import { useSpoilers } from "../../Effects/useLocalStorageValue";
+import { useSpoilers, useWikiShowEditorComments } from "../../Effects/useLocalStorageValue";
 import { BackToTopButton } from "./BackToTopButton";
 import WikiAutocomplete from "./WikiAutocomplete";
 import WikiEditControls from "./WikiEditControls";
@@ -927,7 +927,7 @@ function WikiNavigationBar({
                             console.log(`Validating ${i++}/${allEntries.size} ${entry.name}`);
                         }
 
-                        const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData, "");
+                        const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData, "", false);
 
                         const promises: Promise<any>[] = [];
 
@@ -1015,6 +1015,8 @@ function MainPage() {
         showEdit: false,
     });
 
+    const showEditorComments = useWikiShowEditorComments();
+
     const [allEntries, allowedEntries] = useMemo(() => {
         const allEntries = initEntries(botData, itemData);
 
@@ -1084,7 +1086,7 @@ function MainPage() {
         }
 
         if (entry !== undefined) {
-            const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData, hashLocation);
+            const parseResult = parseEntryContent(entry, allEntries, spoilers, itemData, botData, hashLocation, showEditorComments);
             parsedNode = parseResult.node;
             parsingErrors = parseResult.errors;
         }

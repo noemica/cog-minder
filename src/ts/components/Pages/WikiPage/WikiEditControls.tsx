@@ -8,6 +8,7 @@ import {
     useEditableWikiEditorUncappedWidth,
     useEditableWikiEditorWordWrap,
     useEditableWikiEntryEdits,
+    useEditableWikiShowEditorComments,
     useWikiEditorUncappedWidth,
     useWikiEditorWordWrap,
 } from "../../Effects/useLocalStorageValue";
@@ -422,6 +423,9 @@ function EditSettingsButton() {
     const [wikiEditorWordWrap, setWikiEditorWordWrap] = useEditableWikiEditorWordWrap();
     const wikiEditorWordWrapSelected = booleanOptions.find((o) => o.value === wikiEditorWordWrap) || booleanOptions[1];
 
+    const [wikiShowEditorComments, setWikiShowEditorComments] = useEditableWikiShowEditorComments();
+    const wikiShowEditorCommentsSelected = booleanOptions.find((o) => o.value === wikiShowEditorComments) || booleanOptions[1];
+
     return (
         <ButtonPopover buttonLabel="Settings" buttonTooltip="Change wiki editor settings">
             <div className="settings-popover-container">
@@ -443,6 +447,16 @@ function EditSettingsButton() {
                     value={wikiEditorWordWrapSelected}
                     onChange={(newValue) => {
                         setWikiEditorWordWrap(newValue!.value as boolean);
+                    }}
+                />
+                <LabeledSelect
+                    label="Show editor comments"
+                    tooltip="Whether to show editor comments in the normal page content."
+                    isSearchable={false}
+                    options={booleanOptions}
+                    value={wikiShowEditorCommentsSelected}
+                    onChange={(newValue) => {
+                        setWikiShowEditorComments(newValue!.value as boolean);
                     }}
                 />
             </div>

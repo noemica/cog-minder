@@ -16,6 +16,7 @@ const localStorageThemeName = "theme";
 const localStorageUseWikiPartGroupSelectName = "useWikiPartGroupSelect";
 const localStorageWikiEditorWordWrap = "wikiEditorWordWrap";
 const localStorageWikiEditorUncappedWidth = "wikiEditorUncappedWidth";
+const localStorageWikiShowEditorComments = "wikiShowEditorComments";
 const localStorageWikiEntriesName = "wikiEntries";
 
 type SetValue<T> = Dispatch<SetStateAction<T>>;
@@ -103,13 +104,20 @@ export function useEditableWikiEditorWordWrap() {
     return useEditableValue<boolean>(localStorageWikiEditorWordWrap, true);
 }
 
-
 export function useWikiEditorUncappedWidth() {
     return useValue<boolean>(localStorageWikiEditorUncappedWidth, false);
 }
 
 export function useEditableWikiEditorUncappedWidth() {
     return useEditableValue<boolean>(localStorageWikiEditorUncappedWidth, false);
+}
+
+export function useWikiShowEditorComments() {
+    return useValue<boolean>(localStorageWikiShowEditorComments, false);
+}
+
+export function useEditableWikiShowEditorComments() {
+    return useEditableValue<boolean>(localStorageWikiShowEditorComments, false);
 }
 
 function useValue<T>(key: string, defaultValue: T, validator?: (value: T) => boolean): T {
