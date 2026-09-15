@@ -2687,14 +2687,6 @@ function processTableTag(state: ParserState, result: RegExpExecArray) {
             processSection(tempState, undefined);
             const cellHtml = outputGroupsToHtml(tempState.output, state.inSpoiler, false, false);
 
-            if (state.inSpoiler) {
-                if (cellStyle !== undefined) {
-                    cellStyle += " spoiler-text";
-                } else {
-                    cellStyle = "spoiler-text";
-                }
-            }
-
             // Append cell HTML
             if (isHeaderRow) {
                 cells.push(

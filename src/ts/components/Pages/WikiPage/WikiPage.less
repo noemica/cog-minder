@@ -100,17 +100,12 @@
 
 .spoiler-text,
 .spoiler-text * {
-    transition: @transition-duration;
+    transition: background-color @transition-duration;
 }
 
 .spoiler-text {
     background-color: @spoiler-background-color;
     padding: @single-line-spoiler-padding;
-
-    > a {
-        // Needed or else we get a brief blue flicker on hover
-        transition: color 0s;
-    }
 
     > a:hover,
     > a:focus {
@@ -124,6 +119,10 @@
 
 .spoiler-text-multiline {
     padding: @multi-line-spoiler-padding;
+}
+
+span.spoiler-text-multiline {
+    display: inline-block;
 }
 
 .spoiler-text:not(:focus):not(:hover) {
