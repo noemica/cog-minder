@@ -1,4 +1,4 @@
-import{r as T,c as A,j as a,L as X,a0 as E,B as C,a1 as V,K as ge,a2 as xe,a3 as He,a4 as ue,f as P,a5 as Ae,O as j,J as B,a6 as pe,a7 as Ge,a as Y,t as Re,a8 as Ie,a9 as De,aa as Pe,S as te,ab as Ne,ac as Ee,ad as Me,h as Le,X as U,q as Fe,ae as Be,af as fe,u as ye,ag as We,ah as qe,ai as ae,aj as Oe,ak as Z,al as W,am as Ue,an as ne,ao as je,ap as Ve,aq as ze}from"./index-BRRgDlih.js";import{l as Ze}from"./lore-w0tZ_Ijz.js";import{h as Xe,c as Ke}from"./hackUtilities-C7-c-ilu.js";import{H as Q,n as Ye,R as Qe,T as oe,o as _,b as J,p as be,q as _e,L as Je,r as $e,u as et,a as tt}from"./BotPopover-BbxGHNKG.js";import{S as at}from"./Table-5hiznoHw.js";import{e as nt}from"./partColumnDefs-ClVZzGOa.js";/* empty css              */import"./items-C9aTWJqF.js";function ot(e){const t=r=>typeof window<"u"?window.matchMedia(r).matches:!1,[n,o]=T.useState(t(e));function i(){o(t(e))}return T.useEffect(()=>{const r=window.matchMedia(e);return i(),r.addListener?r.addListener(i):r.addEventListener("change",i),()=>{r.removeListener?r.removeListener(i):r.removeEventListener("change",i)}},[e]),n}const it=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{r as T,c as A,j as a,L as X,a0 as E,B as C,a1 as V,K as ge,a2 as xe,a3 as He,a4 as ue,f as P,a5 as Ae,O as j,J as B,a6 as pe,a7 as Ge,a as Y,t as Re,a8 as Ie,a9 as De,aa as Pe,S as te,ab as Ne,ac as Ee,ad as Me,h as Le,X as U,q as Fe,ae as Be,af as fe,u as ye,ag as We,ah as qe,ai as ae,aj as Oe,ak as Z,al as W,am as Ue,an as ne,ao as je,ap as Ve,aq as ze}from"./index--2gEvaFU.js";import{l as Ze}from"./lore-w0tZ_Ijz.js";import{h as Xe,c as Ke}from"./hackUtilities-C7-c-ilu.js";import{H as Q,n as Ye,R as Qe,T as oe,o as _,b as J,p as be,q as _e,L as Je,r as $e,u as et,a as tt}from"./BotPopover-CXdGwH7i.js";import{S as at}from"./Table-CAvgELDA.js";import{e as nt}from"./partColumnDefs-Dvn03PPg.js";/* empty css              */import"./items-C9aTWJqF.js";function ot(e){const t=r=>typeof window<"u"?window.matchMedia(r).matches:!1,[n,o]=T.useState(t(e));function i(){o(t(e))}return T.useEffect(()=>{const r=window.matchMedia(e);return i(),r.addListener?r.addListener(i):r.addEventListener("change",i),()=>{r.removeListener?r.removeListener(i):r.removeEventListener("change",i)}},[e]),n}const it=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -5992,26 +5992,100 @@ If the Garrison was activated by a nearby non-combat bot reporting an attack lik
 If the Garrison squad was triggered by a non-combat bot reporting an attack or by the Garrison itself being attacked, the Garrison will only send out single [[Sentry|Sentries]] for the squads. If a combat bot reported an attack instead, the following squad compositions are possible:
 [[List]]1 [[Brawler]] and 1 [[Duelist]]|1 [[Demolisher]], only if Cogmind has 1 or more allies|1-2 [[Grunt|Grunts]]|1-2 Sentries|2-3 [[Swarmer|Swarmers]][[/List]]`},{Name:"Gunsling",Content:`"Gunslinging" is a gun-only [[Weapons|weapon]] mechanic that allows the attacker to switch to another hostile in line of sight after a first is destroyed in the same volley. When this occurs, the game log will display a message like [[GameText]]Switching to secondary target: [bot name][[/GameText]]. This mechanic works well with [[Kinetic Guns|kinetic guns]] due to their destroy [[Critical Hits|critical hit]] which is likely to kill bots in a single hit and the ease of stacking large numbers of weapons.
 Other weapon types can also gain this effect with the [[Heavy Servo Lattice]] or the [[VL-GR5's Timing Chip]].`},{Name:"Heat",Content:`[[Image]]Heat.png|State / Current Heat / Heat Per Turn / Heat Per Turns Spent Moving[[/Image]]
-Movement, firing weapons, and running power sources and some utilities generates heat, as does being hit by thermal weapons. Some of this heat is naturally dissipated by the core's own heat sinks, but not enough to deal with heat generated by numerous/large energy weapons. Heat sinks and cooling systems can be used to avoid overheating, which can have a wide range of negative effects. Heat is only a significant issue for robots that rely heavily on energy weapons. However, note that when firing a volley the heat produced is averaged over the volley's turn duration rather than being immediately applied all at once.
+The heat stat is a number which indicates the general amount of heat that any given robot has. Heat is primarily generated by movement from [[Propulsion|propulsion]], firing [[Weapons|weapons]], and keeping [[Power|power]] sources and some [[Utilities|utilities]] active. Some lesser sources include getting hit by [[Thermal Weapons|thermal weapons]] and [[Corruption|corruption]] heat spikes. Some of this heat is naturally dissipated each turn by the core's own innate heat sinks, but not enough to deal with heat generated by numerous/large energy weapons. [[Cooling Devices|Cooling devices]] and [[Coolant Injectors]] can be used to avoid overheating, which can have a wide range of negative effects. Heat is a significant issue for robots that rely heavily on [[Energy Weapons|energy weapons]], use large numbers of weapons or power, or that move at extremely high speeds by using [[Overloadable Propulsion|overloadable propulsion]]. Note that when firing a volley the heat produced is averaged over the volley's turn duration rather than being immediately applied all at once.
 
 [[Heading]]Side Effects[[/Heading]]
-Once heat reaches the "Hot" level (200+), active utilities and weapons may be temporarily disabled. At "Warning" levels (300+) power sources are likely to shut down. Many more serious (and permanent) effects are possible, especially at higher heat levels, [[B]]such as core damage[[/B]].
+There are multiple downsides that come from having heat, with significantly more punishing effects at extreme heat levels.
 
-Disabled power sources automatically restart when possible, but other parts must be manually reactivated.
+[[Heading:2]]Accuracy Effects[[/Heading]]
+All bots suffer a few similar heat penalties in the form of reduced accuracy and avoidance. 3% of a bot's heat is applied as a penalty to both stats while in combat. Due to the way that accuracy is calculated, having even a single point of heat counts as 1% penalty. That is, a heat stat between 1 and 30 inclusive will result in 1% penalty, while the 31st point of heat will add a 2% penalty. Despite the wording implying otherwise, meltdown immune bots are not immune to these heat penalties.
 
-Heat effects are not calculated until after the dissipation phase, so heat can temporarily spike very high with no side effects as long as there are sufficient utilities to dissipate it.
+[[Heading:2]]Turn-based Overheating Effects[[/Heading]]
+Cogmind and non-Cogmind robots alike have different effects that can occur each turn when overheating. These effects are chance based and occur when a bot is above the "Hot" heat threshold. Meltdown-immune bots do not suffer from these effects.
 
-[[Heading]]Cooling Resolution[[/Heading]]
+[[Heading:3]]Cogmind Overheating Effects[[/Heading]]
+
+[[Image]]Heat Levels.png|Heat levels indicated by UI[[/Image]]
+
+Effects may start occurring to Cogmind at the "Hot" threshold of 200 heat:
+[[Table]]
+Heat|UI State Name|Chance for Negative Effects per Turn||
+-101 and lower|Freezing|0%||
+-100 to -1|Frigid|0%||
+0 to 99|Cool|0%||
+100 to 199|Warm|0%||
+200 to 299|Hot|6%||
+300 to 399|Warning|12%||
+400 to 499|Danger|25%||
+500 and higher|Critical|50%
+[[/Table]]
+The following overheating effects are possible for Cogmind:
+[[Table]]
+Minimum Heat Level|Log Message|Effect Description||
+200|System interference|1-3 active weapons or utilities are randomly disabled for 8-15 turns||
+200|Energy bleed|Lose 10-25% of current energy reserves (current not total capacity)||
+300|Matter decay|Lose 10-25% of current [[Matter]] reserves (current not total capacity)||
+300|Short circuit|One random active part is permanently broken||
+300|Overheating (Part damage)|Random part loses 25-80% of current integrity||
+305|Power failure|Random active power source shuts disabled for 4-8 turns||
+400|Overheating (Multiple part damage)|2-5 random parts lose 25-80% of current integrity||
+500|Overheating (Core damage)|Lose 15-20% of Maximum core integrity (NOT current, meaning this can kill Cogmind)
+[[/Table]]
+While the heat effects at lower heat levels are minor nuisance, the ones at 300 or higher can start permanently affecting Cogmind's build. Avoid staying at high heat levels too long or suffer serious consequences.
+Note: Disabled power sources automatically restart when possible, but other parts must be manually reactivated.
+
+[[Heading:3]]Other Robot Overheating Effects[[/Heading]]
+There is a chance for a negative effect to occur each turn that any bot is above the "Hot" threshold of 120 heat. Heat thresholds are lower than the thresholds that Cogmind has, and the negative effects are slightly different as well:
+[[Table]]
+Heat|UI State Name|Chance for Negative Effects per Turn||
+-101 and lower|Freezing|0%||
+-100 to -1|Frigid|0%||
+0 to 59|Cool|0%||
+60 to 119|Warm|0%||
+120 to 179|Hot|6%||
+180 to 239|Warning|12%||
+240 to 299|Danger|25%||
+300 and higher|Critical|50%
+[[/Table]]
+The following overheating effects are possible for other bots:
+[[Table]]
+Minimum Heat Level|Log Message|Effect Description||
+150|Heat spikes uncontrollably|Heat is randomly increased between 60-119||
+150|Short circuit|Random unbroken part is broken||
+150|damages [part name]|Random part is damaged between 50-100% of current integrity||
+200|damages [part name]|1-4 random parts are damaged between 60-90% of current integrity||
+250|damages core|Lose 20-40% of Maximum core integrity (NOT current, meaning this can kill the bot)
+[[/Table]]
+
+[[Heading:2]]Instant Meltdown[[/Heading]]
+When non-Cogmind bots have a high enough heat value (250), additional heat transfer may result in an instant meltdown. The meltdown % varies based on the amount of heat transfer received as well as the current heat level. The chance of meltdown is equal to 5% of the heat above 250 + a base chance depending on the type of heat transfer being received as follows:
+[[Table]]
+Heat transfer|Base Meltdown %||
+Minimal (5)|5%||
+Low (25)|10%||
+Medium (37)|15%||
+High (50)|20%||
+Massive (80)|30%||
+Deadly (120)|100%
+[[/Table]]
+
+[[Heading]]Uses of Heat[[/Heading]]
+Heat is a negative for the bot that has it in the majority of situations. It is usually bad for Cogmind to have it, but good to inflict it upon hostile bots via heat transfer. However, there are a few small reasons where heat may benefit Cogmind too. The first is [[Thermal Generators]] which can turn any excess heat into bonus energy generation. It doesn't actually dissipate the heat so it still needs to be combined with cooling sources, but it can create a ton of energy generation on the right build. The second are the spoiler lategame parts [[Redacted]][[Integrated Thermoelectric Network|Integrated]] and [[Cep. Thermoelectric Network]]. These parts consume all heat above a certain point and turn it into energy. They work great with extremely hot weapon volleys, such as a build with lots of [[Enh. Nova Cannon|Enh. Nova Cannons]] or a [[Firepult]].[[/Redacted]]
+
+[[Heading]]Cooling Resolution Order[[/Heading]]
+Heat effects are not calculated until after the dissipation phase, so heat can temporarily spike very high with no side effects as long as there are sufficient utilities to dissipate it. This is particularly noteworthy when using Coolant Injectors or certain lategame spoiler parts with very high heat dissipation potential. Some powerful [[Prototype Part|prototype]] weapons can generate hundreds of heat in a single volley, like the [[Firepult]], and using them effectively requires having enough dissipation to avoid side effects.
+[[Heading:2]]Details[[/Heading]]
+The following section is copied from the game manual:
 Eventually you will discover a range of different mechanics that factor into heat management, especially with regard to cooling parts, thus knowing the specific order of operations between them may be of help for min-maxers seeking to optimize a build. Below is a list of heat-related processes that play out once per turn. Note that you most likely DO NOT need to know this stuff, but it may help answer a few specific questions min-maxers have about prioritization.
 
 [[List:Ordered]]
 Add heat from all sources, including that generated by active attached parts, gradual heat from an ongoing weapon volley, and any ambient heat. Spread combined volley heat across its duration, in other words a 3-turn volley which according to its weapon properties generates 100 heat adds 33 heat per turn until complete.|
-If used the unique "ITN" artifact, automatically drop heat to 250 if above that value.|
+If used the unique "ITN" artifact, automatically drop heat to 325 if above that value. Alternatively, drop to 275 if using the Cep. version ([[Cep. Thermoelectric Network]]) of that technology.|
 Subtract innate heat dissipation.|
 Subtract heat dissipation from direct cooling utilities such as Heat Sinks and Cooling Systems.|
 If heat exceeds 200, apply dissipation effects of disposable cooling systems such as Coolant Injectors, up to that threshold. If more disposable systems than necessary, apply them in parts list order.|
-If heat exceeds 200, apply self-damaging ablative cooling systems such as Mak. Ablative Armor. If using multiple ablative systems at once, dissipation is split into equal-sized chunks for each, where if one system fails, the entire chunk it is responsible for is still successfully dissipated.|
-If heat exceeds 200, apply broad-effect ablative cooling systems such as Mak. Microdissipator Network.[[/List]]`},{Name:"High Security",Content:`[[Image]]High Security Assaults.png|A wave of Assaults dispatched after Cogmind[[/Image]]High Security is an [[0b10]] response to Cogmind causing too much destruction on a floor. It can be triggered by having a very high [[Alert]] level (5X/1600 influence) and by killing further 0b10 bots. After being triggered, machines will be shut down, guards will be dispatched at exits, and increasingly large waves of [[Assault Squad|Assaults]] will be dispatched to Cogmind's position.
+If heat exceeds 200, apply self-damaging ablative cooling systems such as [[Mak. Ablative Armor]]. If using multiple ablative systems at once, dissipation is split into equal-sized chunks for each, where if one system fails, the entire chunk it is responsible for is still successfully dissipated.|
+If heat exceeds 200, apply broad-effect ablative cooling systems such as [[Mak. Microdissipator Network]].[[/List]]`},{Name:"High Security",Content:`[[Image]]High Security Assaults.png|A wave of Assaults dispatched after Cogmind[[/Image]]High Security is an [[0b10]] response to Cogmind causing too much destruction on a floor. It can be triggered by having a very high [[Alert]] level (5X/1600 influence) and by killing further 0b10 bots. After being triggered, machines will be shut down, guards will be dispatched at exits, and increasingly large waves of [[Assault Squad|Assaults]] will be dispatched to Cogmind's position.
 High Security can be triggered on the majority of 0b10-controlled maps, excluding [[DSF|DSFs]] and [[Garrison|Garrisons]]. Although 1600 influence is the start of the Alert range, there is only a chance of triggering. The higher Cogmind's alert gets, the more likely it is that High Security begins. Each kill of an 0b10 combat bot, whether by Cogmind, a Cogmind controlled ally, or even a neutral Derelict, can trigger it.
 [[Lore]]0b10 Records|High Security[[/Lore]]
 
