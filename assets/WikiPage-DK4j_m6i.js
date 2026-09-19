@@ -1,4 +1,4 @@
-import{r as T,c as A,j as a,L as X,a0 as E,B as C,a1 as V,K as ge,a2 as xe,a3 as He,a4 as ue,f as P,a5 as Ae,O as j,J as B,a6 as pe,a7 as Ge,a as Y,t as Re,a8 as Ie,a9 as De,aa as Pe,S as te,ab as Ne,ac as Ee,ad as Me,h as Le,X as U,q as Fe,ae as Be,af as fe,u as ye,ag as We,ah as qe,ai as ae,aj as Oe,ak as Z,al as W,am as Ue,an as ne,ao as je,ap as Ve,aq as ze}from"./index--2gEvaFU.js";import{l as Ze}from"./lore-w0tZ_Ijz.js";import{h as Xe,c as Ke}from"./hackUtilities-C7-c-ilu.js";import{H as Q,n as Ye,R as Qe,T as oe,o as _,b as J,p as be,q as _e,L as Je,r as $e,u as et,a as tt}from"./BotPopover-CXdGwH7i.js";import{S as at}from"./Table-CAvgELDA.js";import{e as nt}from"./partColumnDefs-Dvn03PPg.js";/* empty css              */import"./items-C9aTWJqF.js";function ot(e){const t=r=>typeof window<"u"?window.matchMedia(r).matches:!1,[n,o]=T.useState(t(e));function i(){o(t(e))}return T.useEffect(()=>{const r=window.matchMedia(e);return i(),r.addListener?r.addListener(i):r.addEventListener("change",i),()=>{r.removeListener?r.removeListener(i):r.removeEventListener("change",i)}},[e]),n}const it=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
+import{r as T,c as A,j as a,L as X,a0 as E,B as C,a1 as V,K as ge,a2 as xe,a3 as He,a4 as ue,f as P,a5 as Ae,O as j,J as B,a6 as pe,a7 as Ge,a as Y,t as Re,a8 as Ie,a9 as De,aa as Pe,S as te,ab as Ne,ac as Ee,ad as Me,h as Le,X as U,q as Fe,ae as Be,af as fe,u as ye,ag as We,ah as qe,ai as ae,aj as Oe,ak as Z,al as W,am as Ue,an as ne,ao as je,ap as Ve,aq as ze}from"./index-DRMP2N9y.js";import{l as Ze}from"./lore-w0tZ_Ijz.js";import{h as Xe,c as Ke}from"./hackUtilities-C7-c-ilu.js";import{H as Q,n as Ye,R as Qe,T as oe,o as _,b as J,p as be,q as _e,L as Je,r as $e,u as et,a as tt}from"./BotPopover-bUUGf1rj.js";import{S as at}from"./Table-Bsxk8Dn0.js";import{e as nt}from"./partColumnDefs-CV1_qaOw.js";/* empty css              */import"./items-C9aTWJqF.js";function ot(e){const t=r=>typeof window<"u"?window.matchMedia(r).matches:!1,[n,o]=T.useState(t(e));function i(){o(t(e))}return T.useEffect(()=>{const r=window.matchMedia(e);return i(),r.addListener?r.addListener(i):r.addEventListener("change",i),()=>{r.removeListener?r.removeListener(i):r.removeEventListener("change",i)}},[e]),n}const it=[{Name:"01-MTF",Content:"[[Image]]MTF Vault.png|Running into MTF in a [[Storage]] vault[[/Image]]A friendly bot that rarely shows up in [[Storage]] in an already opened vault. Will join Cogmind as an uncontrollable purple ally for the duration of the map and uses [[01-MTF's Autohacker]] to automatically open any other vaults it can see. It will assimilate or destroy most enemies it encounters extremely quickly with its high [[Spectrum|spectrum]] high damage EM gun [[01-MTF's Shockpuncher]]. The Shockpuncher is a very powerful weapon that is strong throughout the majority of the game as long as you can deal with its short range if you can get it to drop. [[Spoiler]]Presumably stole exiles prototypes.[[/Spoiler]]"},{Name:"12-ASH",Content:`[[GameText]]Hail to the king![[/GameText]]
 12-ASH is a member of the [[Heroes of Zion]] equipped with [[12-ASH's Boomstick]] and [[Ripper]].`},{Name:"1B-0RG",Content:`1B-0RG is part of the deadly group of [[Unchained]] [[Derelict|Derelicts]] that work for [[0b10]] to track down threats to the complex. Its signature weapon, [[1B-0RG's Assimilator]], can be used to assimilate friendly and hostile bots alike, granting them additional offensive and defensive parts as well as regeneration. While unable to deal damage directly, 1B-0RG always surrounds themselves with souped-up allies that make them hard to pin down. Standard 0b10 combat bots are buffed into larger threats while non-combat bots are armed. Additionally, they continue to assimilate bots throughout the map and send them in smaller scouting patrols, overwhelming the map given enough time. Although 1B-0RG is greatly overweight, their [[Sfc. Targeting Obfuscator]], [[Sfc. Borg Regenerator]], and [[Sfc. Absorption Layer]] make it difficult to deal enough damage to take them out while they are on the run.
 
 [[Heading]]Lore[[/Heading]]
@@ -9444,7 +9444,7 @@ Flight can occasionally make use of these to dig into areas locked by blast door
 
 [[Heading]]CY-PHR[[/Heading]]
 While this bot is a spoiler concept (see [[CY-PHR]]), you are likely to encounter the effects of this bot sooner than later. If you do too many hacks, this bot will start to taunt you through the machine output, warning you that you will soon cause them to take action against you. The first message is 50% of the way toward their full effects, and if you get to 100% they will start messing with the effects of hacks at random. This has a ton of negative effects like making hacking intel, repairs, and fabrication unreliable. In order to avoid triggering these effects, try to restrict hacking to only the most important hacks to perform each floor or else you may find that all the hacking you do will be much less valuable after that. Of course, if you want to try to take them head-on you can try to trigger them as soon as possible. You will get roughly between 1-200 hacks in before CY-PHR is fully triggered depending on which hacks you perform. See the CY-PHR page for more specific details.`,Subpages:["aoemica's Flight Guide/Machine Hacking/Fabricators","aoemica's Flight Guide/Machine Hacking/Garrisons","aoemica's Flight Guide/Machine Hacking/Recycling Units","aoemica's Flight Guide/Machine Hacking/Repair Stations","aoemica's Flight Guide/Machine Hacking/Scanalyzers","aoemica's Flight Guide/Machine Hacking/Schematics Reference","aoemica's Flight Guide/Machine Hacking/Terminals"]},{Name:"aoemica's Flight Guide/Machine Hacking/Fabricators",Content:`[[Image]]../game_sprites/Fabricator.png|A Fabricator machine[[/Image]]
-[[Fabricator|Fabricators]] are fabulous machines that can create parts that [[0b10]], or more importantly, you want. Fabricating preloaded [[Schematic|schematics]] can be a good idea, but frequently they contain something not useful. Fabricating items based on schematics is the more typical use of Fabricators for flight builds. To do so, obtain a schematic from a [[Terminal]] (e.g. [[GameText]]Schematic(Flight Unit)[[/GameText]]) or some other source, attach an [[Authchips|Authchip]] if you have it, load the schematic, and start the fab. For a reference of good parts to hack from schematics, see [[aoemica's Flight Guide/Machine Hacking/Schematics Reference|this page]]. If you are fabbing without an Authchip, an [[Investigation Squad]] will be dispatched to the machine. There are a few ways to deal with the squad:
+[[Fabricator|Fabricators]] are fabulous machines that can create parts that [[0b10]], or more importantly, you want. Fabricating preloaded [[Schematic|schematics]] can be a good idea, but most frequently they contain something not useful. Fabricating items based on schematics is a more beneficial use of Fabricators for flight builds. To do so, obtain a schematic from a [[Terminal]] (e.g. [[GameText]]Schematic(Flight Unit)[[/GameText]]) or some other source, attach an [[Authchips|Authchip]] if you have it, load the schematic, and start the fab. For a reference of good parts to hack from schematics, see [[aoemica's Flight Guide/Machine Hacking/Schematics Reference|this page]]. If you are fabbing without an Authchip, an [[Investigation Squad]] will be dispatched to the machine. There are a few ways to deal with the squad:
 [[List]]
 [[GameText]]Recall(Investigation)[[/GameText]] at a nearby Terminal|
 [[Spoiler]][[GameText]]Recall(Investigation)[[/GameText]] [[RIF]] hack on an [[Operator]][[/Spoiler]]|
@@ -9498,7 +9498,34 @@ Network(Status)|[[Range]]4|5[[/Range]]|[[Range]]4|5[[/Range]]|[[CellStyle:Good]]
 [[Spoiler]]Trojan(Liberate)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[Range]]3|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
 [[Spoiler]]Trojan(Prioritize)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[Range]]2|5[[/Range]]|[[CellStyle:Neutral]]Infrequent, situationally multiple times per map||
 [[Spoiler]]Trojan(Report)[[/Spoiler]]|[[Range]]2|5[[/Range]]|[[Range]]2|5[[/Range]]|[[CellStyle:Bad]]Rare, once per map
-[[/Table]]`},{Name:"aoemica's Flight Guide/Machine Hacking/Garrisons",Content:`[[Image]]../game_sprites/Garrison.png|A Garrison Access machine[[/Image]]
+[[/Table]]
+
+[[Heading]]What to Fabricate[[/Heading]]
+So, you know how to fab, you have fantastic [[Hackware|hackware]] to pull any schematic you want, but you still don't know the most important thing. What should you make? The answer is, of course, that it depends. [[aoemica's Flight Guide/Machine Hacking/Schematics Reference|This page]] includes a large number of useful parts to consider, but it can be overwhelming if you don't know exactly what you're looking for. There are basically 2 categories of parts you can fabricate: parts that are useful now and parts that are useful later.
+[[Heading:2]]Parts That Are Useful Now[[/Heading]]
+These are often things that you want to attach to your build right away. For example, upgrading your lackluster basic [[Flight Unit]] to the highest available prototype flight unit like a [[Cld. VTOL Module]]. These types of fabs will immediately make you stronger, at least as long as you can perform the fab without the investigation squad ruining your day if it is an unauthorized fab. The cost of the fab should always be taken into account when deciding whether or not to fab something. If the Fabricator is right next to an exit and you have no way to recall the squad, a new flight unit might not help you much if your existing flight units get shot up by the squad spawning nearby.
+Here are some specific examples of useful fabs that fall in this category:
+[[List]]
+Flight units: Upgrading flight units is always helpful, especially if you are running the ultra flimsy basic non-prototype flight units. More integrity is always great, and a bit more support may help you fit something else onto your build that you couldn't before. You can refer to [[aoemica's Flight Guide/Good Parts/Propulsion|this page]] for a breakdown of flight unit rating, but generally you can just pick up one of the highest rated available flight units and you'll be set. Prioritize [[Overloadable Propulsion|cooled flight units]] if you want speed or [[Flight Arrays|flight arrays]] if you want support.|
+Hackware: Basic tier hackware is uncommon on the ground but plentiful on [[Operator|Operators]]. The really good Adv. and Exp. versions are harder to find. Aiming for these higher rating parts can give you a leg up on hacking where every point counts. Prioritize [[Offensive Hackware|offensive hackware]] here due to the lesser effect of stacking more than one [[Defensive Hackware|defensive hackware]].|
+[[Mni. Smartbomb Launcher]]: While any [[Explosive Launchers|explosive launchers]] can work, the Mni. Smartbomb is especially good for flight since it lets you shoot around corners and kill entire squads without tanking damage thanks to its waypoints. The ability to kill squads in this way can save your build a ton of damage over the course of a run, so consider this above something like an integrity restocking fab.|
+[[Shieldings]], namely [[Utility Shieldings|Utility]] and [[Propulsion Shieldings]]: Flight ends up with a lot of coverage tied up in fragile propulsion and utility slots that you would rather not see shot off. These shieldings can be extra helpful at keeping your most important parts getting shot up. I would especially recommend the [[Exp. Utility Shielding]] which is worth its weight in gold on a flight build.|
+[[Assault Drone Bay|Assault]] and [[Combat Drone Bay|Combat Drone Bays]]: [[Spoiler]]These unique drone bays can be found from [[Zhirov (Location)]] and [[Data Miner (Location)]] respectively rather than directly hacked for, and are a great way to kill bots without risking your own build in the process. These drones make great allies that will beat most non-Programmer bots with ease.[[/Spoiler]]|
+[[Mass Support Devices]]: While energy hungry, these are the fastest way to instantly add a ton of support to your build. You will usually want these to carry the bigger storage units like a [[Lrg. Storage Unit]] or even a [[Hcp. Storage Unit]].|
+Power: Usually it's not too hard to find good power, whether on the ground or from Programmers, but in a pinch you can always make the best [[Micro Power]] for something reliable. If you want to aim for only a single power slot, you can also aim for upper-end prototype power like [[Graviton Reactor|Graviton]] or [[Zero-point Reactor|Zero-point Reactors]].|
+Armor: Similar to power, armor can usually be found on the ground or looted from other bots. In later depths like [[Research]], it can be harder to find good light armor, in which case fabricating it might be your best option. In particular, centrium armor has a ton of integrity and will probably last longer than the rest of your build.
+[[/List]]
+
+[[Heading:2]]Parts That Are Useful Later[[/Heading]]
+Some parts are very useful, but not immediately applicable to your build. This is most frequently going to apply to combat parts while you are still running a hauler/hacker build. You may be forced to do combat for some wintypes, so preparing for a combat swap ahead of time is a great idea. Other common parts in this category are useful backups of things that you already have. I called out the Exp. Utility Shielding earlier in the useful now section, and they are just as applicable here. When I do certain extended combat wintypes, I sometimes try to fabricate at least 3 or 4 of these parts and hoard them all game because they are so valuable. Of course, keeping this many junk items in inventory isn't helpful now, but if you have the inventory space and your build is in good shape already, why not save up for the future?
+For some examples of parts that will be good to use later, see some [[aoemica's Flight Guide/Builds#access_melee|endgame flight melee builds]].
+
+[[Heading:2]]How to Decide[[/Heading]]
+The primary decision for whether to fab parts that are useful now or later depends on your current build situation, your playstyle, and what wintype you're shooting for. A bad build now usually means you should try to make something that helps right away. You can always be greedy and try to fab something for later instead, though you run the risk of falling out of the sky with useless items in inventory. Once your build is in solid condition, you can start looking toward the future of your run and what your end goal is. If you need to do combat to win, you should consider preparing for that as soon as possible.
+When the choice is not clear, my best recommendation is to simply upgrade your flight units. If you are playing carefully, they should contribute a lot to your build and last a long time already.
+
+[[Heading:2]]Fabricating Allies[[/Heading]]
+I personally rarely do this, but there are some good use cases for fabricating allies. Strong combat bots like [[Hunter|Hunters]], [[Programmer|Programmers]], or [[Sentry|Sentries]] can serve as either a distraction or even kill squads of bots on their own. Some good locations for this are [[Caves]] or a [[Garrison]]. However, keeping them around in main floors is usually more asking for trouble than anything else. Because bots are coming out of the Fabricator and not items, this only works effectively if you use an [[Authchip [R/Combat]]] or immediately recall the investigation squad after you initiate the fab. Otherwise, the investigation will damage or even kill your freshly created allies.`},{Name:"aoemica's Flight Guide/Machine Hacking/Garrisons",Content:`[[Image]]../game_sprites/Garrison.png|A Garrison Access machine[[/Image]]
 [[Garrison Access|Garrison Accesses]] are a pretty basic type of machine. Enemies come out, Cogmind can go in, but usually the most important thing is to seal them. While the rare [[RIF]] or [[Encrypted Comm Array]] flight build may want to head into Garrisons, most builds are best off by taking the advantage of the additional 75-turn delay between [[Extermination Squad|Extermination]] dispatches when a Garrison is sealed. In fact, even if you can't get a seal off, if you have a powerful enough weapon that can smash the Garrison, it is often worth doing so, even though you will get a 150 [[Alert]] bonus and 2 [[Assault Squad|Assaults]] dispatched to that location. Just make sure you don't get spotted by the [[C-45 Heavy ARC|Heavy ARCs]] as you're running away.
 
 [[Heading]]Spoiler Hacks|Spoiler Hacks Garrison[[/Heading]]
@@ -9621,7 +9648,7 @@ Scanalyze|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per 
 Study|[[Range]]5|5[[/Range]]|[[CellStyle:Good]]Frequent, multiple times per map||
 [[Spoiler]]Trojan(Researchers)[[/Spoiler]]|[[Range]]3|5[[/Range]]|[[CellStyle:Good]]Frequent, once per map[[Sup]]1[[/Sup]]
 [[/Table]]
-1. Only useful in [[Research]] [[Branch|Branches]] since they are the only maps where [[Researcher|Researchers]] spawn.`},{Name:"aoemica's Flight Guide/Machine Hacking/Schematics Reference",Content:`The following is a reference for various schematics I find useful to pull off of [[Terminal|Terminals]] to [[Fabricator|fabricate]]. Most of these are a subset of parts I rate highly in the [[aoemica's Flight Guide/Good Parts|good parts page]].
+1. Only useful in [[Research]] [[Branch|Branches]] since they are the only maps where [[Researcher|Researchers]] spawn.`},{Name:"aoemica's Flight Guide/Machine Hacking/Schematics Reference",Content:`The following is a reference for various schematics I find useful to pull off of [[Terminal|Terminals]] to [[Fabricator|fabricate]]. Most of these are a subset of parts I rate highly in the [[aoemica's Flight Guide/Good Parts|good parts page]]. Parts I either find myself frequently fabricating or am especially happy to fabricate are [[B]]bolded[[/B]].
 
 [[Heading]]Success rate reference[[/Heading]]
 [[Hacks:Percentages]]Terminal|
@@ -9670,23 +9697,23 @@ Level 2 Depth|
 Level 3 Depth||
 [[Imp. Flight Unit]]|2*|-8|-9|-10||
 [[Imp. VTOL Module]]|3*|-7|-8|-9||
-[[Cld. VTOL Module]]|4*|-6|-7|-8||
+[[B]][[Cld. VTOL Module]][[/B]]|4*|-6|-7|-8||
 [[Imp. Cesium-ion Thruster]]|4*|-6|-7|-8||
 [[Imp. Surge Thruster]]|5|-6|-7|-8||
 [[Biomechanical Wings]]|5*|-5|-6|-7||
 [[Cld. Cesium-ion Thruster]]|5*|-5|-6|-7||
-[[Nuclear Pulse Array]]|6|-5|-6|-7||
-[[Cld. Nuclear Pulse Thruster]]|6*|-4|-5|-6||
+[[B]][[Nuclear Pulse Array]][[/B]]|6|-5|-6|-7||
+[[B]][[Cld. Nuclear Pulse Thruster]][[/B]]|6*|-4|-5|-6||
 [[Exp. Cesium-ion Thruster]]|6*|-4|-5|-6||
 [[Adv. Surge Thruster]]|7|-4|-5|-6||
-[[Field Propulsion Array]]|7|-4|-5|-6||
+[[B]][[Field Propulsion Array]][[/B]]|7|-4|-5|-6||
 [[Cld. Field Propulsion Drive]]|7*|-3|-4|-5||
 [[Diametric Drive]]|7*|-3|-4|-5||
-[[Impulse Thruster Array]]|8|-3|-4|-5||
-[[Cld. Impulse Thruster]]|8*|-2|-3|-4||
-[[Electron Diverter]]|8*|-2|-3|-4||
+[[B]][[Impulse Thruster Array]][[/B]]|8|-3|-4|-5||
+[[B]][[Cld. Impulse Thruster]][[/B]]|8*|-2|-3|-4||
+[[B]][[Electron Diverter]][[/B]]|8*|-2|-3|-4||
 [[Imp. Diametric Drive]]|8*|-2|-3|-4||
-[[Cld. Q-thruster]]|9*|-1|-2|-3||
+[[B]][[Cld. Q-thruster]][[/B]]|9*|-1|-2|-3||
 [[Exp. Q-thruster]]|9*|-1|-2|-3||
 [[Imp. Q-thruster]]|9*|-1|-2|-3
 [[/Table]]
@@ -9704,8 +9731,8 @@ Level 3 Depth||
 [[Imp. Medium Armor Plating]]|4|-7|-8|-9||
 [[Lyr. Light Armor Plating]]|4|-7|-8|-9||
 [[Lyr. Medium Armor Plating]]|5|-6|-7|-8||
-[[Centrium Light Armor Plating]]|8*|-2|-3|-4||
-[[Centrium Medium Armor Plating]]|8*|-2|-3|-4
+[[B]][[Centrium Light Armor Plating]][[/B]]|8*|-2|-3|-4||
+[[B]][[Centrium Medium Armor Plating]][[/B]]|8*|-2|-3|-4
 [[/Table]]
 
 [[Heading:2]][[Cloaking Devices]]/[[Visual Processing Units]][[/Heading]]
@@ -9735,7 +9762,7 @@ Level 3 Depth||
 [[Hacking Suite]]|3|-8|-9|-10||
 [[Imp. Hacking Suite]]|5|-6|-7|-8||
 [[Adv. Hacking Suite]]|6|-5|-6|-7||
-[[Exp. Hacking Suite]]|7*|-3|-4|-5||
+[[B]][[Exp. Hacking Suite]][[/B]]|7*|-3|-4|-5||
 [[System Shield]]|3|-8|-9|-10||
 [[Imp. System Shield]]|5|-6|-7|-8||
 [[Adv. System Shield]]|6|-5|-6|-7||
@@ -9752,12 +9779,12 @@ Level 3 Depth||
 [[Adv. Actuator Array]]|7|-4|-5|-6||
 [[Exp. Actuator Array]]|9*|-1|-2|-3||
 [[Nanoactuators]]|7|-4|-5|-6||
-[[Femtoactuators]]|9*|-1|-2|-3||
+[[B]][[Femtoactuators]][[/B]]|9*|-1|-2|-3||
 [[Exp. Core Analyzer]]|9*|-1|-2|-3||
 [[Adv. Force Booster]]|9|-2|-3|-4||
 [[Adv. Melee Analysis Suite]]|5|-6|-7|-8||
-[[Exp. Melee Analysis Suite]]|7*|-3|-4|-5||
-[[Weapon Mount]]|5|-6|-7|-8||
+[[B]][[Exp. Melee Analysis Suite]][[/B]]|7*|-3|-4|-5||
+[[B]][[Weapon Mount]][[/B]]|5|-6|-7|-8||
 [[Exp. Targeting Computer]]|5*|-5|-6|-7||
 [[Adv. Weapon Cycler]]|8|-3|-4|-5||
 [[Exp. Weapon Cycler]]|9*|-1|-2|-3
@@ -9800,7 +9827,7 @@ Level 3 Depth||
 [[Lrn. Sensor Array]]|7|-4|-5|-6||
 [[Exp. Sensor Array]]|8*|-2|-3|-4||
 [[Adv. Signal Interpreter]]|5|-6|-7|-8||
-[[Exp. Signal Interpreter]]|7*|-3|-4|-5
+[[B]][[Exp. Signal Interpreter]][[/B]]|7*|-3|-4|-5
 [[/Table]]
 
 [[Heading:2]][[Shieldings]][[/Heading]]
@@ -9813,7 +9840,7 @@ Level 3 Depth||
 [[Imp. Propulsion Shielding]]|3|-8|-9|-10||
 [[Imp. Utility Shielding]]|3|-8|-9|-10||
 [[Exp. Propulsion Shielding]]|5*|-5|-6|-7||
-[[Exp. Utility Shielding]]|5*|-5|-6|-7
+[[B]][[Exp. Utility Shielding]][[/B]]|5*|-5|-6|-7
 [[/Table]]
 
 [[Heading:2]][[Terrain Scanners]]/[[Terrain Scan Processors]][[/Heading]]
@@ -9827,7 +9854,7 @@ Level 3 Depth||
 [[Lrn. Terrain Scanner]]|7|-4|-5|-6||
 [[Exp. Terrain Scanner]]|8*|-2|-3|-4||
 [[Adv. Terrain Scan Processor]]|5|-6|-7|-8||
-[[Exp. Terrain Scan Processor]]|7*|-3|-4|-5
+[[B]][[Exp. Terrain Scan Processor]][[/B]]|7*|-3|-4|-5
 [[/Table]]
 
 [[Heading:2]][[Transmission Jammers]][[/Heading]]
@@ -9864,13 +9891,13 @@ Level 3 Depth||
 [[Lrn. Missile Launcher]]|5|-6|-7|-8||
 [[Scatter Rocket Array]]|5*|-5|-6|-7||
 [[Hyp. Gauss Cannon]]|6|-5|-6|-7||
-[[Mni. Smartbomb Launcher]]|6*|-4|-5|-6||
-[[Tri-rail Accelerator]]|6*|-4|-5|-6||
+[[B]][[Mni. Smartbomb Launcher]][[/B]]|6*|-4|-5|-6||
+[[B]][[Tri-rail Accelerator]][[/B]]|6*|-4|-5|-6||
 [[Hyp. Mass Driver]]|7|-4|-5|-6||
 [[Gravity Flail]]|7*|-3|-4|-5||
 [[Plasma Lance]]|7*|-3|-4|-5||
 [[Hyp. Railgun]]|8|-3|-4|-5||
-[[Nanosword]]|8*|-2|-3|-4||
+[[B]][[Nanosword]][[/B]]|8*|-2|-3|-4||
 [[Gui. Micro-nuke Launcher]]|9*|-1|-2|-3
 [[/Table]]`},{Name:"aoemica's Flight Guide/Machine Hacking/Terminals",Content:`[[Image]]../game_sprites/Terminal.png|A Terminal machine[[/Image]]
 While most other machines have one or two purposes, Terminals are the true hacker's playground with dozens of different types of hacks available. For new players, it can be easy to become overwhelmed with options. However, not all hacks are created equal. For example, bot analyses are helpful, but finding an exit is much more important of an issue to worry about first. Generally, try to focus on hacks that will help you right now over speculative hacks that might help you later. The best way to learn and get a feel for hacking style is by trying out hacks and seeing how useful they feel.
