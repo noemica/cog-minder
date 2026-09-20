@@ -8651,14 +8651,14 @@ The Forge Plexus area is located in the bottom right section of the map, with th
 On the top right area of the Forge Plexus area is a group of 4 Fabricators. At the bottom right is a group of 3 Recycling Units. The Recycling Machines are not used for their typical purpose since parts are returned to the Forge Plexus by Retrievers rather than inserted into Recycling Units by Recyclers. However, if Cogmind aligns with [[Optimus]] and [[UFD]], the 0bPrime attack on Protoforge can be started by performing the [[GameText]]Force(Fedlink)[[/GameText]] hack on one of these machines.
 
 [[Heading:3]]N-04 Retrievers[[/Heading]]
-N-04 Retrievers can be be created by the Plexus to pick up items dropped on the floor. The retrievers grab these items and then deposit them into the Forge Plexus. Unlike Recyclers, they are capable of grabbing multiple parts at once. If there are no loose parts, Retrievers will be re-absorbed by the Plexus. The following are safe from Retrievers :
+N-04 Retrievers can be be created by the Plexus to pick up items dropped on the floor. The retrievers grab these items and then deposit them into the Forge Plexus. Unlike Recyclers, they are capable of grabbing multiple parts at once. If there are no loose parts, Retrievers will be re-absorbed by the Plexus. The following are safe from Retrievers:
 [[List]]
 Parts in the vault areas behind the glass walls in the back lab, even dropped parts. These spaces can be used as safe temporary storage.
 |Parts in secret corridors between two Emergency Access Doors, at least while those remain intact.
 |Non-part items such as [[Traps]] or [[Sapper Charge|Sapper Charges]], regardless of location.
 |All parts, if the [[GameText]]clear_recycling[[/GameText]] [[RIF]] hack is used on an [[Operator]] after those parts were dropped.
-|Parts moved deep inside of Walls or other solid structures by using the [[Phasing AFG]], so long as those structures remain intact.
-[[Comment]]Parts inside of functional Recycling Units if Cogmind has high enough hacking skills, because there are no Recyclers to trigger the recycling process (I'm not entirely sure if Recycling Units are truly safe, i haven't confirmed if they can trigger their recycling process on their own after a while.)[[/Comment]]
+|Parts moved deep inside of Walls or other solid structures by using the [[Phasing AFG]], so long as those structures remain intact.|
+Parts inside of functional Recycling Units if Cogmind has high enough hacking skills, since no other bots on the map will insert parts into the machine
 [[/List]]
 Note that the [[Spoiler]]Trojan(Reject) and Trojan(Mask)[[/Spoiler]] hacks are completely useless against N-04 Retrievers.
 
@@ -8924,6 +8924,7 @@ Prototype squads will periodically be dispatched from the Protoforge Garrison if
 2-3 [[Immortal|Immortals]]|
 1 [[SKR-2]]
 [[/List]]
+From the above list, Hotshots are by far the most common squad type, followed by Decapitators and Immortals as slightly less common. AP7-3s, EXE-6s, and SKR-2s are all rare squad dispatches.
 
 [[Heading:3]]Main Exit Reinforcements[[/Heading]]
 Squads will always be dispatched from the main exit periodically. These reinforcements cannot be stopped unlike the Garrison reinforcements. 1 or 2 squads will be dispatched at a time, and each squad will consist of 2 [[Executioner|Executioners]] or 2 [[Striker|Strikers]] and a [[C-45 Heavy ARC]] with [[Assault Squad]] contents.
