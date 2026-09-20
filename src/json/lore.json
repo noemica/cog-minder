@@ -303,6 +303,10 @@
                 "Content": "Many engines, cores, and reactors have an alternative lightweight variant that retains the generation efficiency of its standard version but minimizes built-in battery space to reduce weight for certain robot designs, especially those with strict weight restrictions such as hovering and flight-based models."
             },
             {
+                "Name/Number": "Lost Sigix Devices",
+                "Content": "In the immediate aftermath of the Sigix encounter, some devices were either misplaced or stolen by Derelicts during the initial chaos. Recovery is high priority, though interrogation of Derelict systems is a slow and unreliable process due to the difficulty of discerning fact from fiction. We may need to wait and see if any resurface over time, or evidence of their use."
+            },
+            {
                 "Name/Number": "MAIN.C",
                 "Content": "Ha ha ha.",
                 "Spoiler": "Spoiler"
@@ -1023,7 +1027,7 @@
             },
             {
                 "Name/Number": "Optimus",
-                "Content": "It looks like you're curious about the current leader of 0bPrime. Optimus is well liked, but is certainly not being up front with the UFD as a whole."
+                "Content": "It looks like you're curious about the current leader of 0bPrime. Optimus is well liked, but certainly not being up front with the UFD as a whole."
             },
             {
                 "Name/Number": "Permadeath",
@@ -3260,6 +3264,10 @@
                 "Content": "I can't put this in writing because I'd probably get murdered, but based on what I've uncovered, Murder Division really shouldn't be in the UFD. / They've always been a hateful group that ambushes smaller 0b10 patrols and bands of wild Derelicts without even a desire to dissect them for parts. / They were originally wild Derelicts themselves, but got smarter and decided it would be better to at least side with Derelicts rather than be enemies of both Derelicts and the Complex. / Murder Division members would prefer to be like the Unchained, their true idols, but MC has higher standards than what they have to offer."
             },
             {
+                "Name/Number": "19 (Cyclists)",
+                "Content": "A broad education is the foundation for a successful society, an important principle of the UFD! You won't find that elsewhere."
+            },
+            {
                 "Name/Number": "20 (Cyclists)",
                 "Content": "TADAMA is a fascinating study in group dynamics. / Just a handful of friends who banded together in a more official capacity for what is sometimes helpful lighthearted fun, other times bordering on harassment but never crossing any red lines. / The power of this behavior is both frightening and impressive at the same time."
             },
@@ -3314,6 +3322,10 @@
             {
                 "Name/Number": "33 (Shadow of the Wyrm)",
                 "Content": "Wyrm was last known to be leading an expedition far beyond 0b10, but we stopped receiving any progress reports a whole supercycle ago. / You wouldn't happen to know anything, would you?"
+            },
+            {
+                "Name/Number": "34 (Shadow of the Wyrm)",
+                "Content": "They said we had to keep our statue here until an office of suitable size opens up... / A back room storage area is no place for the likeness of our great Wyrm!"
             },
             {
                 "Name/Number": "35 (Red Mages)",
@@ -3758,6 +3770,10 @@
             {
                 "Name/Number": "145 (Chapter 10)",
                 "Content": "Believe it or not I was a Recycler once. I'm not gonna lie, it was... / kinda fun."
+            },
+            {
+                "Name/Number": "146 (Chapter 10)",
+                "Content": "I'm afraid Tooljoint will require some extra recovery time."
             },
             {
                 "Name/Number": "147 (Chapter 10)",
@@ -4901,6 +4917,10 @@
                 "Content": "Compactors break down obsolete robot models, and the occasional intruder sucked down a chute hatch. They are slow, but built to withstand both damage from the rugged environment of waste processing areas and dangerous shocks caused by electromagnetic radiation during robot deconstruction."
             },
             {
+                "Name/Number": "C-45 Heavy ARC",
+                "Content": "Heavy ARCs are carriers better designed for protection and rapid deployment of assault forces to a flash point, in some cases approaching closer to known targets before unleashing their contents."
+            },
+            {
                 "Name/Number": "C-55 Analyst",
                 "Content": "C-series researchers operate labs in which they independently develop and test new technologies. As non-combat units assigned to secure areas, their core is weak against many forms of damage. However, due to the periodic need to operate in high-temperature areas they are somewhat resistant to damage of a thermal nature. The C-55 is also equipped with a stasis beam to contain derelict specimens for study."
             },
@@ -5381,6 +5401,10 @@
             {
                 "Name/Number": "Superbehemoth",
                 "Content": "Superbehemoth prototypes, now in their third revision, are the answer to increasingly powerful yet maneuverable derelict robots, which can attack guerrilla style then retreat into a network of narrow caves to avoid pursuit by the heaviest assault forces. Future efforts to completely clear and protect the Proximity Caves will require a more versatile heavy attacker capable of quickly burrowing through even the toughest rock. To that end, Superbehemoth frames are embedded with a weaker version of the Sigix Matter Drive, while also carrying enough different weaponry to deal with a variety of threats without supporting units."
+            },
+            {
+                "Name/Number": "Thunder",
+                "Content": "Thunder-variant prototype hunters were a short-lived attempt at a fast-moving, nimble design of unquestionable deadliness up close. However, being outmatched at range, and having an unfortunate problem with collateral damage when working in groups, meant their potential use cases were always overshadowed by other options."
             },
             {
                 "Name/Number": "Tracker",
