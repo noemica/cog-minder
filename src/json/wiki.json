@@ -6905,7 +6905,7 @@
   },
   {
    "Name": "Subatomic Replicator",
-   "Content": ""
+   "Content": "An [[Alien Artifacts|alien artifact]] that can be found in [[Quarantine]]. When attached, it is consumed to create an exact duplicate of the part on the ground underneath Cogmind. This includes all attributes like current integrity, broken status, and part-specific status like number of drones remaining in [[Drone Bays]]. If there is no part on the floor, the game log states [[GameText]]Unable to initiate replication process, detached Subatomic Replicator.[[/GameText]] Helpfully, this does identify the part without use of a [[Scanalyzer]].\n\n[[Heading]][[Supercharged Parts]][[/Heading]]\nSome alien artifacts can't be replicated but instead create \"supercharged\" versions of themselves:\n[[List]]\n[[Integrated Dissipator]]: [[Supercharged Integrated Dissipator]]|\n[[Integrated Reactor]]: [[Supercharged Integrated Reactor]]|\n[[Sigix Terminator]]: [[Supercharged Sigix Terminator]]|\n[[Transdimensional Reconstructor|Regular]] or [[Hpw. Transdimensional Reconstructor]]: [[Supercharged TR]]\n[[/List]]"
   },
   {
    "Name": "Superbattery",

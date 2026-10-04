@@ -11470,7 +11470,16 @@ This article was last edited during Beta 15.","","","","","","","",""
 "Sub. Optics","Part","","","","","","","","",""
 "Sub. Power Source","Part","","","","","","","","",""
 "Sub. Shrapnel Launcher","Part","","","","","","","","",""
-"Subatomic Replicator","Part","","","","","","","","",""
+"Subatomic Replicator","Part","An [[Alien Artifacts|alien artifact]] that can be found in [[Quarantine]]. When attached, it is consumed to create an exact duplicate of the part on the ground underneath Cogmind. This includes all attributes like current integrity, broken status, and part-specific status like number of drones remaining in [[Drone Bays]]. If there is no part on the floor, the game log states [[GameText]]Unable to initiate replication process, detached Subatomic Replicator.[[/GameText]] Helpfully, this does identify the part without use of a [[Scanalyzer]].
+
+[[Heading]][[Supercharged Parts]][[/Heading]]
+Some alien artifacts can't be replicated but instead create ""supercharged"" versions of themselves:
+[[List]]
+[[Integrated Dissipator]]: [[Supercharged Integrated Dissipator]]|
+[[Integrated Reactor]]: [[Supercharged Integrated Reactor]]|
+[[Sigix Terminator]]: [[Supercharged Sigix Terminator]]|
+[[Transdimensional Reconstructor|Regular]] or [[Hpw. Transdimensional Reconstructor]]: [[Supercharged TR]]
+[[/List]]","","","","","","","",""
 "Subcaves","Location","Subcaves is a tough early game [[Branch]] that is guaranteed to appear on -10 every run, with exits being available from [[Materials]] and [[Mines]]. It is a dangerous map, containing a large number of [[Subdweller|Subdwellers]] that will attack Cogmind on sight with relatively powerful weapons. A few [[0b10]] patrols may roam the map, engaging wild [[Derelict|Derelicts]].
 Unlike most maps, some areas may not be accessible in Subcaves without digging. 20 armor machinery strewn throughout the map can block passage to important areas. [[Artisan|Artisans]] will grow the machinery even more. Another unique bot present, [[Cobbler|Cobblers]], scoop up matter and produce random parts with their [[Cobbler Unit]].
 
