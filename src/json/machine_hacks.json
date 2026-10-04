@@ -290,7 +290,7 @@
             },
             {
                 "Name": "Trojan(Reprogram)",
-                "Description": "Reprograms the next squad emerging from this garrison. No effect on prototypes, though if dispatched from here they do not affect the installed trojan.",
+                "Description": "Reprograms the next squad emerging from this garrison. No effect on prototypes, though if dispatched from here they do not affect the installed trojan. Also locks the Garrison and summons an investigation squad after successful reprogramming.",
                 "BaseChance": 20,
                 "Indirect": "Always",
                 "SpoilerLevel": "Spoiler"
