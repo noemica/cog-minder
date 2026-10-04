@@ -3,14 +3,16 @@ import "./WikiPage.less";
 export type WikiHeadingState = {
     id: string;
     indent: number;
+    spoiler: boolean;
     text: string;
 };
 
 type HeadingTree = {
+    children: HeadingTree[];
     id: string;
     indent: number;
+    inSpoiler: boolean;
     text: string;
-    children: HeadingTree[];
 };
 
 function HeadingTree({ heading }: { heading: HeadingTree }) {
@@ -22,9 +24,15 @@ function HeadingTree({ heading }: { heading: HeadingTree }) {
         </ul>
     );
 
+    let className = "";
+
+    if (heading.inSpoiler) {
+        className = "spoiler-text";
+    }
+
     return (
         <li>
-            <a href={`#${heading.id}`}>{heading.text}</a>
+            <a className={className} href={`#${heading.id}`}>{heading.text}</a>
             {children}
         </li>
     );
@@ -48,6 +56,7 @@ export default function WikiTableOfContents({ headings }: { headings: WikiHeadin
             children: [],
             id: heading.id,
             indent: heading.indent,
+            inSpoiler: heading.spoiler,
             text: heading.text,
         };
 

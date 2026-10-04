@@ -55,10 +55,11 @@ class ParserState {
     errors: string[];
     headings: WikiHeadingState[];
     images: Set<string>;
-    inSpoiler: boolean;
     initialContent: string;
     index: number;
     inlineOnly: AllowedContentType;
+    inSpoiler: boolean;
+    inSpoilerExpandable: boolean;
     itemData: ItemData;
     location: string;
     output: OutputGroup[];
@@ -73,9 +74,10 @@ class ParserState {
         errors: string[],
         headings: WikiHeadingState[],
         images: Set<string>,
+        inlineOnly: AllowedContentType,
         initialContent,
         inSpoiler: boolean,
-        inlineOnly: AllowedContentType,
+        inSpoilerExpandable: boolean,
         itemData: ItemData,
         location: string,
         showEditorComments: boolean,
@@ -88,10 +90,11 @@ class ParserState {
         this.errors = errors;
         this.headings = headings;
         this.images = images;
-        this.initialContent = initialContent;
-        this.inSpoiler = inSpoiler;
         this.index = 0;
+        this.initialContent = initialContent;
         this.inlineOnly = inlineOnly;
+        this.inSpoiler = inSpoiler;
+        this.inSpoilerExpandable = inSpoilerExpandable;
         this.itemData = itemData;
         this.location = location;
         this.output = [];
@@ -126,9 +129,10 @@ class ParserState {
             state.errors,
             state.headings,
             state.images,
+            state.inlineOnly,
             state.initialContent,
             state.inSpoiler,
-            state.inlineOnly,
+            state.inSpoilerExpandable,
             state.itemData,
             state.location,
             state.showEditorComments,
@@ -239,9 +243,10 @@ export function createContentHtml(
         [],
         [],
         new Set<string>(),
+        "All",
         ParserState.createInitialContent(entry),
         false,
-        "All",
+        false,
         itemData,
         location,
         showEditorComments,
@@ -930,9 +935,10 @@ function processBotGroupsTag(state: ParserState, result: RegExpExecArray) {
             state.errors,
             state.headings,
             state.images,
+            "All",
             ParserState.createInitialContent(groupEntry),
             false,
-            "All",
+            false,
             state.itemData,
             state.location,
             state.showEditorComments,
@@ -1140,9 +1146,10 @@ function processPartialTag(state: ParserState, result: RegExpExecArray) {
         [],
         [],
         new Set<string>(),
+        "All",
         ParserState.createInitialContent(entry),
         state.inSpoiler,
-        "All",
+        state.inSpoilerExpandable,
         state.itemData,
         state.location,
         state.showEditorComments,
@@ -1629,6 +1636,7 @@ function processHeadingTag(state: ParserState, result: RegExpExecArray) {
             state.headings.push({
                 id: id,
                 indent: parseInt(type),
+                spoiler: state.inSpoiler || state.inSpoilerExpandable,
                 text: cleanedText,
             });
         }
@@ -2434,17 +2442,20 @@ function processSpoilerExpandableTag(state: ParserState, result: RegExpExecArray
         return;
     }
 
+    const spoiler: Spoiler = redacted ? "Redacted" : "Spoiler";
+    const isSpoiler = !canShowSpoiler(spoiler, state.spoiler);
+
     // Parse the details text
     const tempState = ParserState.Clone(state);
     tempState.index = result.index + result[0].length;
     tempState.inSpoiler = state.inSpoiler;
+    tempState.inSpoilerExpandable = isSpoiler;
     processSection(tempState, `/${result[1]}`);
     state.index = tempState.index;
 
     const details = outputGroupsToHtml(tempState.output, state.inSpoiler);
 
-    const spoiler: Spoiler = redacted ? "Redacted" : "Spoiler";
-    if (canShowSpoiler(spoiler, state.spoiler)) {
+    if (!isSpoiler) {
         // If we can show the designated spoiler level, show the processed text as usual
         state.output.push({
             groupType: "Individual",
@@ -2537,9 +2548,10 @@ function processSubpageSummary(state: ParserState, result: RegExpExecArray) {
             state.errors,
             state.headings,
             state.images,
+            "All",
             ParserState.createInitialContent(childEntry),
             false,
-            "All",
+            false,
             state.itemData,
             state.location,
             state.showEditorComments,
