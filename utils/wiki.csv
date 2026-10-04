@@ -1275,8 +1275,7 @@ Sometimes when successfully hacking CY-PHR will cause the machine to be instantl
 Whenever Cogmind performs any kind of location hack, there is a chance that CY-PHR will reduce the number of found things or fail to report them entirely. For example, performing a [[GameText]]Access(Main)[[/GameText]] hack may report only 2 out of 4 main exits on the floor. This effect can occurs with Access(Main/Branch) hacks and [[GameText]]Traps(Locate)[[/GameText]].
 
 [[Heading:3]][[GameText]]Traps(Disarm)[[/GameText]] and [[GameText]]Traps(Reprogram)[[/GameText]] Failure[[/Heading]]
-When successfully hacking either of [[GameText]]Traps(Disarm)[[/GameText]] or [[GameText]]Traps(Reprogram)[[/GameText]], it is possible that the Terminal will falsely report there being no [[Traps]] within its range, even if some had just been located via [[GameText]]Traps(Locate)[[/GameText]] on the same Terminal.
-[[Comment]]It's possible that this only happens when performing those hacks indirectly?[[/Comment]]
+When successfully hacking either of [[GameText]]Traps(Disarm)[[/GameText]] or [[GameText]]Traps(Reprogram)[[/GameText]], it is possible that the Terminal will falsely report there being no [[Traps]] within its range, even if some had just been located via [[GameText]]Traps(Locate)[[/GameText]] on the same Terminal. If this hack is direct, the hack will be grayed out in the UI as though no longer applicable. However, manually retyping the hack can still perform the effect afterwards.
 
 [[Heading:3]]Database Failure[[/Heading]]
 When Cogmind is trying to hack for a [[Robot Analysis]] or [[Schematic]], the hack may succeed but have a joke entry replace the real hack results instead. It is also possible that a real but other random schematic will be hacked instead of the requested one.
@@ -1322,13 +1321,8 @@ Taking a few turns to send the message instead of giving instant feedback even t
 [[/Comment]]
 
 [[Heading:3]]Trojan Removal[[/Heading]]
-Sometimes, a previously-installed trojan may be removed from a machine. As it can occur long after the trojan was installed, this effect can be very hard to notice, especially when unaware of its existence.
-Be cautious, as it can be easy to dismiss this effect and believe your own memory to be at fault, or worse, not notice a robot-tracking trojan is gone and end up spotted by an unforeseen [[Operator]] or [[Cargo Convoy]].
-[[Comment]]It's easiest to notice with stuff like botnets or tracking trojans, as it's easy to check for their presence from nearly anywhere by connecting to machines or occasionally looking at the map for tracked robots.
-The more important question is how this removal works;
-Does it trigger at random for each trojan independently?
-Or does it trigger at random/set intervals, picking a random trojan among those installed? In the latter case, then installing more trojans, even useless ones, might be useful?
-[[/Comment]]
+Sometimes, a previously-installed trojan may be randomly removed from a machine when Cogmind performs a hack. As it can occur long after the trojan was installed, this effect can be very hard to notice, especially when unaware of its existence. The effect is global, so the removed trojan may not even be on the machine that Cogmind is currently hacking at.
+Be cautious, as it can be easy to dismiss this effect and believe your own memory to be at fault, or worse, not notice a robot-tracking trojan is gone and end up spotted by an unforeseen [[Operator]] or [[Cargo Convoy|cargo convoy]].
 
 [[Heading:3]]Traceback[[/Heading]]
 Performing a few hacks after CY-PHR has been fully triggered will result in a [[GameText]]### SYSTEM_CRASH ###[[/GameText]]. The machine will become locked, but among flavor text there is a depth listed that is a few depth higher than Cogmind's current depth. Another crash soon after will also indicate a map. This is the location that CY-PHR will appear. Once on the given map, two further crashes will reveal a quadrant of the map and a relative position of CY-PHR's lair.
@@ -1980,32 +1974,7 @@ The center of the map is always fixed, with a few distinct sub-areas.
 The Doom Corridor is a 5 tile wide corridor that contains multiple unpowered Warlord variations, 2 [[Combat Programmer|Combat Programmers]] and 2 [[M Guard|M Guards]]. Trying to go farther into the map requires killing or bypassing these tough [[Prototype Robot|Prototype Robots]].
 [[Heading:3]]Command ""Garrisons""[[/Heading]]
 [[Image]]Command Garrison.png|Northern Command Garrison, filled with dormant bots[[/Image]]
-Above and below the Doom Corridor are the ""Garrison"" sections of the map. They are not the usual [[Garrison Access]] machines but do behave similarly in function, being able to dispatch bots as part of normal summoned [[Investigation Squad|Investigation]], [[Reinforcement Squad|Reinforcement]], [[Extermination Squad|Extermination]] and [[Assault Squad|Assault]] squads through the Phase Walls on the east side of the Garrisons. Notably, while squads dispatched in Command cannot be recalled via Terminal Hacking or RIF, destroying a squad's [[Squad Leader|Leader]] will cause following bots to return to their original spot instead of aimlessly wandering around like in other maps. Also, [[X0-1V1]] is still capable of recalling squads. Each Garrison has a fixed set of bots that are initially present. Each garrison has the following list of bots, which are all initially dormant:
-[[List]]
-2 [[W-44 Eye|W-44 Eyes]] ""watching"" the Phase Wall entrance|
-12 [[B-74 Champion|B-74 Champions]]|
-18 [[C-45 Heavy ARC]]|
-6 [[C-57 Dissector|C-57 Dissector]]|
-6 [[D-83 Annihilator|D-83 Annihilators]]|
-48 [[G-73 Enforcer|G-73 Enforcers]]|
-24 [[H-88 Terminator|H-88 Terminators]]|
-6 [[I-47 Archangel|I-47 Archangels]]|
-12 [[L-61 Swordsman|L-61 Swordsmen]]|
-24 [[P-80 Master|P-80 Masters]]|
-18 [[S-43 Plague|S-43 Plagues]]|
-12 [[X-87 Electro|X-87 Electros]]
-[[/List]]
-
-[[Comment]]It might be worth moving this into a separate section further below? Not sure.[[/Comment]]
-[[Redacted]]It is also possible for the Command Garrions to get ""activated"", opening a direct path to the Doom Corridor from both Garrisons and causing all bots within to activate and begin roaming the map, and also preventing [[High Security]] from triggering afterwards. This will happen if:
-[[List]]
-The [[Sigix Terminator]]/[[Supercharged Sigix Terminator]] is fired into either Garrison.| [[Comment]]Not sure, might just be fired anywhere in Command instead? Or maybe the actual trigger is killing enough bots (similar to Sterilization) without triggering High Security?[[/Comment]]
-Cogmind enters the left section of Command past MAIN.C's room while MAIN.C is alive and hostile.| [[Comment]]This might also have a condition where the Heavy Barriers must still be intact/not possible for Main.C to follow Cogmind? Though MAIN.C doesn't need to have had tracking on Cogmind for this to trigger. Also, this has a set, finite range, it won't trigger if you're too far west.[[/Comment]]
-MAIN.C's first form is defeated and MAIN.C's second form talks to Cogmind, who then refuses/is not offered the option to surrender.|
-MAIN.C's first form is defeated and MAIN.C's second form is unable to talk to Cogmind due to being outside Cogmind's visual range.[[Comment]]There might be a few turns of leeway?[[/Comment]]
-[[/List]]
-
-[[/Redacted]]
+Above and below the Doom Corridor are the ""Garrison"" sections of the map. They are not the usual [[Garrison Access]] machines but do behave similarly in function, being able to dispatch bots as part of normal summoned [[Investigation Squad|Investigation]], [[Reinforcement Squad|Reinforcement]], [[Extermination Squad|Extermination]] and [[Assault Squad|Assault]] squads through the Phase Walls on the east side of the Garrisons. Notably, while squads dispatched in Command cannot be recalled via Terminal Hacking or RIF, destroying a squad's [[Squad Leader|Leader]] will cause following bots to return to their original spot instead of aimlessly wandering around like in other maps. Also, [[X0-1V1]] is still capable of recalling squads. Each Garrison has a fixed set of bots that are initially present.
 
 
 [[Heading:3]]MAIN.C room[[/Heading]]
@@ -2021,6 +1990,33 @@ The Wave Inhibitor, only appears on the left section of the map. It will prevent
 
 [[Heading]]Notable Locations[[/Heading]]
 [[Gallery]]Command Phase Gen.png|Phase Generator room|Command Cave Seal.png|Cave Seal machine|Command Wild Cave Derelicts Seal.png|Wild Derelicts from a Cave Seal|Cogmind Warlord Seal.png|Warlord aligned cave seal|Cogmind CRM Seal.png|[[Core Reset Matrix]]-aligned cave seal|Command Imprint Seal.png|[[Imprint]]-aligned cave seal|Command Garrison.png|Command Garrison with many dormant bots|Command DoCo.png|Doom Corridor with M Guards, Combat Programmers, and unpowered Warlords|Command MAIN.C.png|[[MAIN.C (Shell)|MAIN.C]] room|Cogmind Wave Inhibitor.png|Wave Inhibitor machine|Command Cache.png|Cache of strong high-rating parts|Command Right Side Surface Exit.png|Right side Surface exit|Command Left Side Surface Exit.png|Left side Surface exit|Command A0 Exit.png|Exit to [[Access_0]][[/Gallery]]
+
+[[Heading:2]]Command Garrisons[[/Heading]]
+Each garrison has the following list of bots, which are all initially dormant:
+[[List]]
+2 [[W-44 Eye|W-44 Eyes]] ""watching"" the Phase Wall entrance|
+12 [[B-74 Champion|B-74 Champions]]|
+18 [[C-45 Heavy ARC]]|
+6 [[C-57 Dissector|C-57 Dissector]]|
+6 [[D-83 Annihilator|D-83 Annihilators]]|
+48 [[G-73 Enforcer|G-73 Enforcers]]|
+24 [[H-88 Terminator|H-88 Terminators]]|
+6 [[I-47 Archangel|I-47 Archangels]]|
+12 [[L-61 Swordsman|L-61 Swordsmen]]|
+24 [[P-80 Master|P-80 Masters]]|
+18 [[S-43 Plague|S-43 Plagues]]|
+12 [[X-87 Electro|X-87 Electros]]
+[[/List]]
+
+It is also possible for the Command Garrisons to get ""activated"", opening a direct path to the Doom Corridor from both Garrisons and causing all bots within to activate and begin roaming the map, and also preventing [[High Security]] from triggering afterwards. This will happen if:
+[[List]]
+The [[Sigix Terminator]]/[[Supercharged Sigix Terminator]] is fired into either Garrison. Technically, the trigger is getting enough kills in a single turn, but it is fairly unreasonable to achieve without use of a Terminator.|
+Cogmind enters the left section of Command past MAIN.C's room while MAIN.C is alive and hostile.| [[Comment]]This might also have a condition where the Heavy Barriers must still be intact/not possible for Main.C to follow Cogmind? Though MAIN.C doesn't need to have had tracking on Cogmind for this to trigger. Also, this has a set, finite range, it won't trigger if you're too far west.[[/Comment]]
+[[Comment]]There is no requirement relating to MC's pathing, the second Cogmind steps left of the barrier it triggers. I can't reproduce a distance cap, it seems to always trigger no matter where I teleport to.[[/Comment]]
+MAIN.C's first form is defeated and MAIN.C's second form talks to Cogmind, who then refuses/is not offered the option to surrender.|
+MAIN.C's first form is defeated and MAIN.C's second form is unable to talk to Cogmind within a few turns due to being outside Cogmind's visual range.
+[[/List]]
+
 [[Heading:2]]Cave Seal contents[[/Heading]]
 The contents of the cave seal depend on alignment. Warlord/Imprint alignment are mutually exclusive and take priority over Core Reset Matrix seals. If no other options apply, wild cave [[Derelict|Derelicts]] will appear. For allied seals, some of the bots will follow Cogmind around and others will roam the map randomly.
 [[Heading:3]]Warlord seal[[/Heading]]
@@ -2070,8 +2066,8 @@ See [[Strategy/Bosses/Defeating MAIN.C]]
 [[Heading:2]]Warlord interaction[[/Heading]]
 If phase one of MAIN.C sees Warlord, he will unpower Warlord permanently. This ability can be avoided in two ways. The first is to destroy phase one of MAIN.C before Warlord comes into view. This is only really possible for an airborne builds that can leave Warlord behind to try and fight phase one before Warlord can catch up, or when Cogmind is followed by so many large allies that ally traffic through the 3-tile wide corridor leading to MAIN.C's room is considerably slowed down. The second way is to use the MAIN.C hack. There are a few turns of wiggle room before Warlord is shut down, so make sure to use this hack via some kind of remote [[Datajacks| Datajack]] immediately on entering the MAIN.C room.
 
-[[Heading:3]]W7: ""Establishing Free Derelict Territories""[[/Heading]][[Comment]]To get the ending, i think there's an additional condition of Warlord must not be hostile?[[/Comment]]
-If MAIN.C is destroyed and Warlord is still alive and has not been unpowered, a W7 will be achieved after Warlord talks to Cogmind. Using the MAIN.C hack first makes this wintype much easier to accomplish to stop the unpowering ability. With a high [[Warlord (Alignment)#force multiplier|ECA Force Multiplier]], if Cogmind has not aligned with [[RIF]], there may be many large bots (such as Hydras) following Cogmind directly, in which case Warlord may have trouble staying close to Cogmind and may not be able to get close enough to MAIN.C to get shut down before MAIN.C's first phase is defeated by numerous allies. This can in contrast make it difficult to [[I]]prevent[[/I]] the ending.
+[[Heading:3]]W7: ""Establishing Free Derelict Territories""[[/Heading]]
+If MAIN.C is destroyed and Warlord is still alive, friendly, and has not been unpowered, a W7 will be achieved after Warlord talks to Cogmind. Using the MAIN.C hack first makes this wintype much easier to accomplish to stop the unpowering ability. With a high [[Warlord (Alignment)#force multiplier|ECA force multiplier]], if Cogmind has not aligned with [[RIF]], there may be many large bots (such as Hydras) following Cogmind directly, in which case Warlord may have trouble staying close to Cogmind and may not be able to get close enough to MAIN.C to get shut down before MAIN.C's first phase is defeated by numerous allies. This can in contrast make it difficult to [[I]]prevent[[/I]] the ending.
 [[Comment]]Almost happened to me, used Core Cannon to widen the corridor to try to help traffic[[/Comment]]
 
 [[Heading:2]]MAIN.C Hack[[/Heading]]If [[A7]] is rescued in [[Extension]] and his quest to see the [[Cetus]] Mainframe is completed, they will provide the MAIN.C hack. Using this hack has two primary effects. It stops Warlord from being shut down after being spotted and it dramatically slows down MAIN.C's action speed. Every free turn, there is a chance that MAIN.C will be unable to move with the text [[GameText]]MAIN.C reaction time slowed by virus[[/GameText]]. This substantially decreases the amount of damage output, although it doesn't slow down any of the Command Garrison bots from running into the room quickly.
@@ -2920,11 +2916,11 @@ Overview/Integrity|
 Overview/Coverage|
 Effect/Effect
 [[/PartGroupTable]]","","","","EX Chip 2,System Shield,Mak. System Shield,Imp. System Shield,Adv. System Shield,Exp. System Shield,Ghost Barrier,Quantum Router,Architect God Chip D","","","",""
-"Defensive Utilities","Part Supergroup","Defensive [[Utilities]] are a collection of [[Devices]] that help protect the user and sometimes allies through a variety of methods. For example, some parts reduce damage directly while others increase avoidance or shoot down projectiles to prevent taking damage at all. Many of these parts have high coverage, high energy costs, and low integrity, and so they are best protected with [[Armor]], especially [[Utility Shieldings]].
+"Defensive Utilities","Part Supergroup","Defensive [[Utilities]] are a collection comprised mostly of [[Devices]] that help protect the user and sometimes allies through a variety of methods. For example, some parts reduce damage directly while others increase avoidance or shoot down projectiles to prevent taking damage at all. Many of these parts have high coverage, high energy costs, and low integrity, and so they are best protected with [[Armor]], especially [[Utility Shieldings]].
 
 [[Heading]]Comparison of Common Parts[[/Heading]]
 [[Table]]Category|[[Hardlight Generators]]|[[Shield Generators]]|[[Force Fields]]|[[Resistance Devices]]|[[Phase Shifters]]|[[Reaction Control Systems]]|[[Point Defense Systems]]|[[EM Disruption Fields]]||
-Effect|Fixed kinetic/thermal damage reduction|25% damage and [[Heat|Heat transfer]] reduction|50% damage and [[Heat|Heat transfer]] reduction|Variable % damage reduction for part-specific damage type|Evasion increase, ranged only|Evasion increase, all types, may also evade [[Traps]]|[[Launchers|Launcher]], [[Remote Datajacks|Remote Datajack]] and [[CPS Tube]] projectile interception|Reduction of [[Corruption]] from EM traps/damage for allies||
+Effect|Fixed kinetic/thermal damage reduction, [[Heat|Heat transfer]] reduction based on % of thermal damage reduced|25% damage and [[Heat|Heat transfer]] reduction|50% damage and [[Heat|Heat transfer]] reduction|Variable % damage reduction for part-specific damage type|Evasion increase, ranged only|Evasion increase, all types, may also evade [[Traps]]|[[Launchers|Launcher]], [[Remote Datajacks|Remote Datajack]] and [[CPS Tube]] projectile interception|Reduction of [[Corruption]] from EM traps/damage for allies||
 Good combos|[[CellStyle:Good]]Work well with resistance devices|[[CellStyle:Good]]Point Defense Systems and EM Disruption Fields cover the weaknesses of Remote Shields when defending allies |[[CellStyle:Good]]Point Defense Systems and EM Disruption Fields cover some weaknesses of Remote Force Fields when defending allies |[[CellStyle:Good]]Work well with Hardlight Generators|[[CellStyle:Good]]Work well with Reaction Control Systems|[[CellStyle:Good]]Work well with Phase Shifters|[[CellStyle:Good]]Lower risk of explosions massively draining energy reserves when defending allies using Remote Shield/Force Field|[[CellStyle:Good]]Cover the inability of Remote Shield/Force Field from defending allies against Corruption||
 Applicability|[[CellStyle:Neutral]]Many common bots, not all types|[[CellStyle:Good]]All damage|[[CellStyle:Good]]All damage|[[CellStyle:Bad]]Only 1 damage type per part|[[CellStyle:Neutral]]All ranged attacks|[[CellStyle:Good]]All attacks and [[Traps]]|[[CellStyle:Bad]]Only Launchers and remote bothacking attempts (mostly [[Programmer|Programmers]])|[[CellStyle:Bad]]Mostly just Programmers, some [[Specialist]] variants and some rarer bots||
 Energy Cost|[[CellStyle:Neutral]]Moderate-high, fixed upkeep|[[CellStyle:Neutral]]Moderate, low upkeep + moderate variable rate based on damage taken|[[CellStyle:Bad]]High, moderate upkeep, high variable rate based on damage taken|[[CellStyle:Good]]Low-moderate, fixed upkeep|[[CellStyle:Neutral]]Moderate-high, fixed upkeep|[[CellStyle:Good]]Low, fixed upkeep|[[CellStyle:Good]]Low-moderate, fixed upkeep|[[CellStyle:Good]]Low, fixed upkeep||
@@ -2937,22 +2933,26 @@ Other notes|Moderate inconsistent damage reduction, usually between Shield Gener
 Shock Absorption Systems are an outlier and are extremely fragile, as bad as 1:3 integrity:coverage ratio.
 [[/List]]
 
-[[Comment]]
-Commented out until i finish the list. And add spoiler/redacted tags.
+
 
 [[Heading]]Other Defensive Utilities[[/Heading]]
-[[List]]
-[[Graphene Brace]] - 100% immunity to [[Critical Hits]], no energy cost, extremely sturdy and light. For Cogmind, this is mostly useful against [[Heavy|Heavies]] and [[Cutter|Cutters]], as well as against some rare or even unique bots, though can also be rarely helpful against various other bots.|
-[[Vmp. Brace Plating]] - 50% stackable immunity to [[Critical Hits]], no energy cost, extremely sturdy thanks to its vampiric regeneration,
-[[Siege Articulator]] - 
-[[Field Manipulator]] - 
-[[Energy Deflector]] - 
-[[V4-D3R's Cape]] - 40% chance to deflect most incoming projectiles, no energy cost or mass, extremely fragile with a ~1:3 integrity:coverage ratio and cannot be protected with Utility Shielding.
-[[Phase Redirector]] - 
-[[Cep. Projectile Intercept Suite]] - 
-[[/List]]
-
-[[/Comment]]","","","","Cep. Projectile Intercept Suite,Energy Deflector,Field Manipulator,Graphene Brace,Phase Redirector,Siege Articulator,V4-D3R's Cape,Vmp. Brace Plating","EM Disruption Fields,Force Fields,Hardlight Generators,Phase Shifters,Point Defense Systems,Reaction Control Systems,Resistance Devices,Shield Generators","","",""
+Rarer/unique Utilities with defensive properties that do not fit in any of the categories above. Most of these parts have very different effects, and even those with similar effects differ largely in strengths/weaknesses.
+[[Table]]
+Part|Slots|Effect|Energy Upkeep|Mass|Fragility (Integrity:Coverage)|Applicability||
+[[Graphene Brace]]|1|Full immunity to [[Critical Hits|Critical Effects]]|0|1|Extremely sturdy (~19:1)|For Cogmind, mostly against [[Heavy|Heavies]], [[Cutter|Cutters]], some rare/unique bots, as well as rarely useful against other critical-capable bots.||
+[[Vmp. Brace Plating]]|2|[[Spoiler]]50% stackable resistance to [[Critical Hits|Critical Effects]][[/Spoiler]]|0|18|[[Spoiler]]Vulnerable (1:1.2) but very sturdy thanks to its vampiric regeneration.[[/Spoiler]]|[[Spoiler]]For Cogmind, mostly against [[Heavy|Heavies]], [[Cutter|Cutters]], some rare/unique bots, as well as rarely useful against other critical-capable bots.[[/Spoiler]]||
+[[Siege Articulator]]|1, fragile|[[Spoiler]]3-turn stackable reduction to [[Siege Mode]] transition[[/Spoiler]]|0|3|Extremely sturdy (~9:1)|[[Spoiler]]Any build with Siege-capable [[Treads]][[/Spoiler]]||
+[[Energy Deflector]]|1|[[Spoiler]]10% non-stackable chance to deflect most incoming projectiles[[/Spoiler]]|3|8|Somewhat fragile (1.5:1)|[[Spoiler]]Most ranged hostiles, excluding mostly [[Hunter|Hunters]], most [[Behemoth|Behemoths]] and some [[Specialist|Specialists]][[/Spoiler]]||
+[[V4-D3R's Cape]]|1|[[Spoiler]]40% non-stackable chance to deflect most incoming projectiles[[/Spoiler]]|0|0|[[Spoiler]]Extremely fragile (1:3), cannot be protected with Utility Shielding[[/Spoiler]]|[[Spoiler]]Most ranged hostiles, excluding mostly [[Hunter|Hunters]], most [[Behemoth|Behemoths]] and some [[Specialist|Specialists]][[/Spoiler]]||
+[[Field Manipulator]]|1|[[Spoiler]]75% non-stackable conditional chance to reflect most incoming projectiles towards attacker[[/Spoiler]]|3|4|Somewhat fragile (~1,14:1)|[[Spoiler]]Most ranged hostiles, excluding mostly [[Hunter|Hunters]], most [[Behemoth|Behemoths]] and some [[Specialist|Specialists]]
+Requires [[Stasis Trap|Stasis Traps]] to use, which cannot be stored inside [[Trap Extractors]]
+Lots of opportunities to use in [[Garrison|Garrisons]][[/Spoiler]]||
+[[Plateshifter]]|2, fragile|[[Spoiler]]3x non-stackable coverage multiplier of all attached [[Armor]][[/Spoiler]]|0|1|Sturdy (3:1)|[[Spoiler]]Any build with [[Armor]]
+Most useful with [[Powered Armor]]/[[Regenerative Armor]][[/Spoiler]]||
+[[Phase Redirector]]|1|[[Spoiler]]25% stackable redirection of damage from parts to core[[/Spoiler]]|5|15|Extremely fragile (0.5:1)|[[Spoiler]]Any build capable of supporting its mass that isn't too reliant on other core-draining [[Alien Artifacts]].[[/Spoiler]]||
+[[Cep. Projectile Intercept Suite]]|1, fragile|[[Redacted]]Martial projectile deflection ability without actually being in [[Martial Mode]][[/Redacted]]|0|0|Extremely sturdy (10:1)|[[Redacted]]Any build using [[Melee Weapons]] without other deflecting utilities[[/Redacted]]
+[[/Table]]
+","","","","Cep. Projectile Intercept Suite,Energy Deflector,Field Manipulator,Graphene Brace,Phase Redirector,Siege Articulator,V4-D3R's Cape,Vmp. Brace Plating","EM Disruption Fields,Force Fields,Hardlight Generators,Phase Shifters,Point Defense Systems,Reaction Control Systems,Resistance Devices,Shield Generators","","",""
 "Demented","Bot","","","","","","","","",""
 "Demolisher","Bot Group","Demolishers are a [[Bot Groups|Bot Group]] [[Hover Units|hovering]] [[0b10]] combat robots armed with an [[Launchers|Launcher]] and some form of [[Launcher Guidance Computers|Launcher Guidance Computer]]. They are seen most often in [[Demolisher Squad|Demolisher Squads]] to deal with infestations and as part of an [[Assault Squad]] if Cogmind has allies. They have heavy resistance to explosive damage, so they don't take much damage from their own explosions. Demolishers are extremely dangerous as they can deal out damage very quickly to Cogmind and any allies. Their tendency to destroy terrain can make repositioning difficult and can often reveal Cogmind's location to other hostiles.
 Demolishers are one of the scariest standard 0b10 bots to fight head on. Their massive damage and high resistance (or immunity) to their own attacks means that they won't be harmed much by blowing themselves up. Their Shock Absorption Systems are fairly frail, and if those are destroyed they will take much more damage from self explosions. [[Point Defense Systems]] are very useful at cutting down Demolisher damage by intercepting their missiles. Demolishers don't have any particular weakness, so use any non-Explosive damage type available to take them out as quickly as possible.
@@ -9537,11 +9537,14 @@ Rescuing [[Revision 17]] in [[Cetus]] allows for a minor faction [[Alignment|ali
 [[Image]]Research Revisions.png|Revision 17++ with Revision allies[[/Image]]
 [[Image]]Research Suppression Forces.png|Suppression forces dispatched to fight the Revisions[[/Image]]
 200 turns after entering the map, Revision 17++ will lead a group of 4 Revisions to follow Cogmind. They are uncontrollable allies but do not generate any alert for Cogmind when attacking. The announcement text [[GameText]]Unknown forces entering zones 8R, 1R, 4T. Local Systems Malfunctioning[[/GameText]] will precede their coming. Squads of 4 Revisions will continue to appear from main access exits every 200 turns. Occasionally a Revision will shout [[GameText]]Recycler![[/GameText]] and turn hostile, although this may also be followed by [[GameText]]##MEMORY:RESET##[[/GameText]] to turn them friendly again. 500 turns after Revision 17 arrives, an alert [[GameText]]Research terminal network lockdown[[/GameText]] will appear, and all Terminals on the map will shut down (other interactive machines are unaffected). Another alert will show up 50 turns later: [[GameText]]Suppression forces dispatched. All non-combat units evacuate.[[/GameText]] After this message, squads of 2 [[Executioner|Executioners]] or [[Striker|Strikers]] and a [[C-45 Heavy ARC|Heavy ARC]] will start to appear from exits and roam the map, looking for hostiles. They will also spawn every 200 turns.
+
+[[Heading:3]]Unique Effects[[/Heading]]
 There are a few other side-effects of this event. One is that explosive machines will explode at random whenever Cogmind is nearby. This can be good when fighting enemies around explosive machines, but be wary of them when walking around the map or else they may surprise you at a bad time. Another is that mapgen is affected. [[Heavy|Heavies]] will not appear on a map that Revision 17 invades.
 
-This event can be a great blessing or a curse depending on a lot of factors. Getting an escort of alert-free allies with other squads of allies roaming the map is great. They will clean up most of the map for you and can net some free prototype bot loot. Blocking Heavy spawns is incredibly useful here as well. The downsides can also be pretty major, however. Losing access to all Terminals by turn 700 can be very bad if Cogmind is on slow propulsion and has no exit intel and no form of terrain scanning. Trying to follow the spawning Revisions or suppression forces can lead to an exit, although it can be a bit unreliable. Another downside is that the Revisions will often create a ton of squads to appear right at the beginning of the event. Sometimes, large groups of [[Operator|Operators]] and alarm traps can all be triggered at nearly the same time. This can result in massive groups of hostiles to appear right in Cogmind's face with unlucky exit or [[Garrison Access|Garrison]] positioning.
+[[Heading:3]]Analysis[[/Heading]]
+This event can be a great blessing or a curse depending on a lot of factors. Getting an escort of alert-free allies with other squads of allies roaming the map is great. They will clean up most of the map for you and can grant some free prototype bot loot. Blocking Heavy spawns is incredibly useful as well. The downsides can also be pretty major, however. Losing access to all Terminals by turn 700 can be very bad if Cogmind is on slow propulsion and has no exit intel and no form of terrain scanning. Trying to follow the spawning Revisions or suppression forces can lead to an exit, although it can be a bit unreliable. Another downside is that the Revisions will often create a ton of squads to appear right at the beginning of the event. Sometimes, large groups of [[Operator|Operators]] and alarm traps can all be triggered at nearly the same time. This can result in massive groups of hostiles to appear right in Cogmind's face with unlucky exit or [[Garrison Access|Garrison]] positioning.
 
-Last edited during Beta 16.","Spoiler","","","","","","",""
+Last edited during Beta 17.1.","Spoiler","","","","","","",""
 "Revision 17++","Bot","","","","","","","","",""
 "Riot Gun","Part","","","","","","","","",""
 "Ripper","Part","","","","","","","","",""
@@ -11474,12 +11477,7 @@ This article was last edited during Beta 15.","","","","","","","",""
 
 [[Heading]][[Supercharged Parts]][[/Heading]]
 Some alien artifacts can't be replicated but instead create ""supercharged"" versions of themselves:
-[[List]]
-[[Integrated Dissipator]]: [[Supercharged Integrated Dissipator]]|
-[[Integrated Reactor]]: [[Supercharged Integrated Reactor]]|
-[[Sigix Terminator]]: [[Supercharged Sigix Terminator]]|
-[[Transdimensional Reconstructor|Regular]] or [[Hpw. Transdimensional Reconstructor]]: [[Supercharged TR]]
-[[/List]]","","","","","","","",""
+[[Partial]]Supercharged Parts List[[/Partial]]","","","","","","","",""
 "Subcaves","Location","Subcaves is a tough early game [[Branch]] that is guaranteed to appear on -10 every run, with exits being available from [[Materials]] and [[Mines]]. It is a dangerous map, containing a large number of [[Subdweller|Subdwellers]] that will attack Cogmind on sight with relatively powerful weapons. A few [[0b10]] patrols may roam the map, engaging wild [[Derelict|Derelicts]].
 Unlike most maps, some areas may not be accessible in Subcaves without digging. 20 armor machinery strewn throughout the map can block passage to important areas. [[Artisan|Artisans]] will grow the machinery even more. Another unique bot present, [[Cobbler|Cobblers]], scoop up matter and produce random parts with their [[Cobbler Unit]].
 
@@ -11553,7 +11551,14 @@ Materials exits: These always lead to -8 Materials. These exits always skip -9 e
 "Supercharged Integrated Dissipator","Part","","","","","","","","",""
 "Supercharged Integrated Reactor","Part","","","","","","","","",""
 "Supercharged Navigation Harness","Part","","","","","","","","",""
-"Supercharged Parts","Part Group","","Spoiler","","","Supercharged TR,Supercharged Integrated Reactor,Supercharged Integrated Dissipator,Supercharged Sigix Terminator","","","",""
+"Supercharged Parts","Part Group","These special [[Alien Artifacts|alien artifacts]] can only be produced by using a [[Subatomic Replicator]] on certain parts:
+[[Partial]]Supercharged Parts List[[/Partial]]","Spoiler","","","Supercharged TR,Supercharged Integrated Reactor,Supercharged Integrated Dissipator,Supercharged Sigix Terminator","","","",""
+"Supercharged Parts List","Partial","[[List]]
+[[Integrated Dissipator]]: [[Supercharged Integrated Dissipator]]|
+[[Integrated Reactor]]: [[Supercharged Integrated Reactor]]|
+[[Sigix Terminator]]: [[Supercharged Sigix Terminator]]|
+[[Transdimensional Reconstructor|Regular]] or [[Hpw. Transdimensional Reconstructor]]: [[Supercharged TR]]
+[[/List]]","Spoiler","","","","","","",""
 "Supercharged Sigix Terminator","Part","","","","","","","","",""
 "Supercharged TR","Part","","","","","","","","",""
 "Superdense Plating","Part","","","","","","","","",""
@@ -12922,7 +12927,7 @@ Ascending a depth|- 0.01
 [[Heading]]-2 Research Assault[[/Heading]]
 The event will begin with the alert [[GameText]]ALERT: Engineering response network critical failure, offline[[/GameText]]. More announcements will show up, but the next most important one will be [[GameText]]Warlord currently on norther/central/southern western approach. All units hit designated targets[[/GameText]] which indicates where Warlord and [[God Mode]] will appear on the map. 50 turns after entering the map, another announcement [[GameText]]Trap arrays successfully disabled[[/GameText]] will come with all traps being removed from the map. 110 after entering the maps, [[GameText]]Machine network successfully disabled[[/GameText]] will indicate that every machine on the map is now shut down except for [[Garrison Access|Garrisons]] due to the follow-up message [[GameText]]Unrecognized interference restored Garrison access controls. Oops. Just blast them.[[/GameText]] 250 turns after entering the map and every 150 turns after that, 3 different assault squad spawns will appear from Garrisons and map exits with the message [[GameText]]Unaware assault squad dispatched in northeast/southeast/southwest/northwest quadrant.[[/GameText]] The spawn location will be indicated on the map. Every 100 turns 1 Derelict squad will spawn on the left side of the map for each tunnel. After 1500 turns on the map, Warlord will tell Cogmind that it is time to retreat and to open the [[Redacted]]Cave Seals in [[Command]] for the final push. He, or a random Derelict if Warlord is not within range, will also give Cogmind a manual hack that can be applied to open the Cave Seals without any need for hackware.[[/Redacted]]
 [[Heading:2]]Downside of event[[/Heading]]
-As a result of the Warlord assault, additional patrols will be dispatched in [[Testing]], [[Quarantine]], and [[Access]]. Patrols will increase by 40% in these maps. This is most significant in Access, upping the Patrol count from 20 to 28. A few Warlord bots will also appear at the entrance to these maps.
+As a result of the Warlord assault, additional patrols will be dispatched in [[Testing]], [[Quarantine]], and [[Access]]. Patrols will increase by 40% in these maps. This is most significant in Access, upping the Patrol count from 20 to 28. A few Warlord bots will also appear at the entrance to these maps. While they might help kill a squad or two, they are also likely to cause trouble and get extra reinforcements summoned nearby.
 [[Image]]Research Warlord Squads.png|A few Derelict squads[[/Image]]
 
 [[Heading:2]]Derelict Forces[[/Heading]]
@@ -12934,7 +12939,7 @@ The Derelict forces consist of many unique bots during this event. All of them a
 [[List]]Bridgeowners Association: Trolls|Cat Herders: Wasps|Death Star: Martyrs|Department No. 42: Firemen|Offensive Angels: Wasps|Golden Rifles: Commanders, Geurrillas, Surgeons, and Thugs|Grunt Murderers: Thugs|Gunslingers: Guerrillas|Lair Dwellers: Hydras|Lobotomizers: Wizards|Lucky Slug: Marauders|Magnificent Bastards: Mutants|Metalheads: Mutants|Knights of the Pentagonal Table: Knights|Railsplitters: Guerrillas|Shockpunchers: Wizards|Smaug Morners: Dragons|The Professionals: Commanders, Guerrillas, Knights, Surgeons, Trolls, and Wizards|Vikings: Butchers|Viscera Detail: Butchers and Savages[[/List]]
 
 [[Heading:3]][[DD-05H]][[/Heading]]
-Sometimes DD-05H will appear a few hundred turns into the invasion. It will run toward Warlord and then follow Warlord around for the duration of the event. When this happens, the [[Tinkerer]] PL-HR7 will also appear at one of the invasion entrances on the left side of the map. PL-HR7 will drop a [[Warlord Statue]] that Cogmind can use.","Spoiler","","","","","","",""
+Sometimes DD-05H will appear as a replacement for the standard Warlord escort. There will be a log message [[GameText]]ANNOUNCEMENT: Who is that? Where did the real bodyguards go?[[/GameText]] followed by [[GameText]]Whatever, let's roll with it, he looks buff.[[/GameText]] He will follow Warlord around for the duration of the event. When this happens, the [[Tinkerer]] PL-HR7 will also appear at one of the invasion entrances on the left side of the map. PL-HR7 will drop a [[Warlord Statue]] that Cogmind can use.","Spoiler","","","","","","",""
 "Warlord (Command)","Bot","","","","","","","","",""
 "Warlord (Group)","Bot Group","","Spoiler","Borebot,Bouncer,DD-05H,Dragon,God Mode,God Mode (Fake),Hydra,Knight,LV-01A,Sapper,Warlord,Warlord (Command)","","","","","",""
 "Warlord (Location)","Location","The Warlord base is a [[Caves]] [[Branch]] that appears on -5 or -4 and is named after the eponymous bot [[Warlord]]. This map is home to a large number of [[Derelict|Derelicts]] allied with Warlord and ready to fight. This branch is much more combat-oriented than many of the other Caves branches, with large waves of [[0b10]] bots assaulting the base. Initially the map is totally safe and filled with friendly NPCs, but after one of several conditions is met a large assault will begin.
@@ -15539,7 +15544,47 @@ Recycling is always available on the same depth that Storage is on. It doesn't h
 [[Heading:2]][[Scraptown]][[/Heading]]
 Scraptown is always on the same depth as Storage and Recycling. It is home to the [[United Federation of Derelicts]], one of the major friendly [[Derelict|derelict]] factions. See [[aoemica's Flight Guide/Alignments#United Federation of Derelicts (UFD)|this page]] for more alignment information. There are a ton of useful parts, intel, and unique hacks available in Scraptown, though the variability is quite high from run to run.
 [[/SpoilerExpandable]]","","","","","","","",""
-"aoemica's Flight Guide/Map Strategy/Research Depths","Other","[[Heading]][[B]][[Color:Red]]WIP[[/Color]][[/B]][[/Heading]]","","","","","","","",""
+"aoemica's Flight Guide/Map Strategy/Research Depths","Other","[[Image]]Research.png|An example Research map[[/Image]]
+[[Image]]builds/Late Factory Stealth Flight.png|Example [[aoemica's Flight Guide/Builds#Late Factory Stealth Flight|stealth hack flight build]] about to enter Research[[/Image]]
+
+[[Heading]][[B]][[Color:Red]]WIP[[/Color]][[/B]][[/Heading]]
+[[Research]], the third main [[0b10]] [[Locations|location]] spanning -3 and -2, is where things start to get serious. [[Extermination Squad|Exterminations]] become more frequent and are much more threatening, containing 2-3 [[P-80 Master|Masters]] that are difficult to take out for most flight builds. [[Patrol Squad|Patrol]] density continues to increase, making it much more difficult to stealth around squads without being seen. For [[FarCom]] builds, the number of exits becomes restricted to only [[DSF|DSFs]] and main floor exits unless you want to deal with the heavy consequences of visiting Research [[Branch|branches]] (with the exception of [[Armory]]). [[Alert]] can be an issue for builds that engage in a lot of combat, especially those use lots of allies, since there are no more easy exits through [[Caves]] to purge alert. [[Interactive Machine|Machines]] are mostly security levels 2 and 3 in Research, making hacks for non-[[Hackware|hackware]] focused builds far a few between. Make sure your build is prepared for all these challenges, since 0b10 won't hold back.
+
+[[Heading]]Research-specific Notes[[/Heading]]
+
+[[Heading:2]]Layout[[/Heading]]
+While there are still large halls and wide corridors, the overall layout of Research maps is much more cramped than [[Factory]]. The rooms are smaller and tightly packed together, which is perfect for digging between areas without being spotted. Use a [[Structural Scanner]] or [[Terrain Scanners|Terrain Scanner]] with a good [[Terrain Scan Processors|processor]] to find easy digs and hidden emergency accesses between rooms. While [[Visual Processing Units]] are always useful, they are arguably less good in Research, especially if you spend most of your time digging from room to room instead of trying to run through the main corridors.
+
+[[Heading:2]][[H-88 Terminator|H-88 Terminators]][[/Heading]]
+On -2, [[Hunter|Hunters]] will turn into the highest rating standard Hunter, the Terminator. This variant is special in that it requires an [[Exp. Signal Interpreter]] or [[Active Sensor Suite]] to see thanks to its [[GameText]]Scan Cloak (4)[[/GameText]]. Exp. Signal Interpreters never drop from [[TF Node|TF Nodes]] and are a rare find on the floor, so [[Sensor Arrays]] will frequently let you down on this depth. [[Fabricator|Fabricating]] one of these prior to this depth is great if you can manage it. Otherwise, [[Seismic Detector|Seismic Detectors]], [[IFF Parser|IFF Parsers]], and Visual Processing Units are your main way of spotting these bots before they spot you.
+
+[[Heading]][[Alignment]] Events[[/Heading]]
+[[SpoilerHidden]]The following events are considered spoilers.[[/SpoilerHidden]]
+[[SpoilerExpandable]]There are 2 possible major events that can occur in Research. Both of them are very beneficial to flight:
+
+[[Heading:2]][[Revision 17 (Alignment)#-3 Research Invasion|Revision 17 -3 Assault]][[/Heading]]
+
+[[Heading:2]][[Warlord (Alignment)#-2 Research Assault|Warlord -2 Assault]][[/Heading]]
+[[/SpoilerExpandable]]
+
+[[Heading]][[aoemica's Flight Guide/Routing|Routing]] Decisions[[/Heading]]
+[[SpoilerHidden]]All Research-level branches are considered spoilers.[[/SpoilerHidden]]
+
+[[SpoilerExpandable]]
+[[Heading:2]][[Armory]][[/Heading]]
+See [[aoemica's Flight Guide/Map Strategy/Factory Depths#Armory|the Factory routing page]].
+
+[[Heading:2]][[Testing]][[/Heading]]
+
+[[Heading:2]][[Quarantine]][[/Heading]]
+
+[[RedactedHidden]]All other branches are considered redacted.[[/RedactedHidden]]
+[[RedactedExpandable]]
+[[Heading:2]][[Protoforge]][[/Heading]]
+
+[[Heading:2]][[Section 7]][[/Heading]]
+[[/RedactedExpandable]]
+[[/SpoilerExpandable]]","","","","","","","",""
 "aoemica's Flight Guide/Routing","Other","Routing is the art of planning which [[Branch|branch]] maps you are going to go to throughout the course of a run. There are all sorts of benefits in different branches in the game, and many overlap in depth, so you must make a conscious decision about which maps to pick. Sometimes, this must be done off of imperfect information because you don't know which branch is at the end of a certain [[Caves]] depth. In other cases, you may learn the depth of an upcoming map like through a [[Derelict Log]] or [[Spoiler]][[GameText]]Force(Tunnel)[[/GameText]] from a [[Recycling Unit]][[/Spoiler]] and make other decisions to support that map choice later. Overall, routing is quite dynamic from run to run and isn't something that you can plan with 100% certainty from the beginning.
 Routing ties heavily into [[aoemica's Flight Guide/Alignments|alignments]]. Most alignments require you to visit a certain map which may be on a different depth each run. If you're shooting for a certain alignment, you have to make sure you don't accidentally miss it by taking a random exit or the wrong branch on the depth they're at. For example, [[Caves]] branch ends can be one of 2 different maps. If you don't know which is which, you may need to take both Caves exits to be sure you don't miss it. Some alignments trigger active hostilities with factions on certain maps, so it often makes sense to plan to avoid actively hostile branches unless you're ready to fight your way through.
 
