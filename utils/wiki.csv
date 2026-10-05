@@ -10257,14 +10257,16 @@ Coverage for this leg is doubled.
 "Siege Cannon","Part","","","","","","","","",""
 "Siege Cannon Replica","Part","","","","","","","","",""
 "Siege Mode","Redirect","","","","","","","","","Special Propulsion Modes#Siege Mode"
-"Siege Mode Description","Partial","All multislot treads can be toggled into siege mode. The transition into and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the treads cannot be disabled or removed.
+"Siege Mode Description","Partial","All multislot treads can be toggled into siege mode. The transition into and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the treads cannot be disabled or removed. High siege mode is a variant of siege mode with increased benefits, which [[Siege Treads]] are capable of.
 While in siege mode:
 [[List]]
-Non-melee attacks have +15% accuracy.
+Non-melee attacks have +15% accuracy. (+25 in high siege mode)
 |Coverage for all armor and heavy treads is doubled.
 |Any treads in siege mode get a free 25% damage reduction.
+|Any treads in high siege mode get a free 50% damage reduction.
 |No weapons suffer from recoil effects.
 |Cogmind is immune to instant part destruction from critical hits.
+[[Comment]]Is that also the case for other bots?[[/Comment]]
 [[/List]]","","","","","","","",""
 "Siege Treads","Part Group","A subclass of [[Treads]] that have the power to enter [[Special Propulsion Modes#High Siege Mode|high siege mode]] which is an upgrade from the standard siege mode available on standard 2-slot treads. The accuracy bonus from high siege mode only requires a single pair of siege treads, although the increased damage reduction only applies to individual siege treads and not all treads.
 

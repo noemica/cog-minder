@@ -11709,7 +11709,7 @@
   },
   {
    "Name": "Siege Mode Description",
-   "Content": "All multislot treads can be toggled into siege mode. The transition into and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the treads cannot be disabled or removed.\nWhile in siege mode:\n[[List]]\nNon-melee attacks have +15% accuracy.\n|Coverage for all armor and heavy treads is doubled.\n|Any treads in siege mode get a free 25% damage reduction.\n|No weapons suffer from recoil effects.\n|Cogmind is immune to instant part destruction from critical hits.\n[[/List]]"
+   "Content": "All multislot treads can be toggled into siege mode. The transition into and out of siege mode takes 7 turns. During the transition, and for as long as the mode is active, [[Cogmind]] is immobile and the treads cannot be disabled or removed. High siege mode is a variant of siege mode with increased benefits, which [[Siege Treads]] are capable of.\nWhile in siege mode:\n[[List]]\nNon-melee attacks have +15% accuracy. (+25 in high siege mode)\n|Coverage for all armor and heavy treads is doubled.\n|Any treads in siege mode get a free 25% damage reduction.\n|Any treads in high siege mode get a free 50% damage reduction.\n|No weapons suffer from recoil effects.\n|Cogmind is immune to instant part destruction from critical hits.\n[[Comment]]Is that also the case for other bots?[[/Comment]]\n[[/List]]"
   },
   {
    "Name": "Supercharged Parts List",
