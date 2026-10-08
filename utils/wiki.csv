@@ -11493,7 +11493,10 @@ This article was last edited during Beta 15.","","","","","","","",""
 
 [[Heading]][[Supercharged Parts]][[/Heading]]
 Some alien artifacts can't be replicated but instead create ""supercharged"" versions of themselves:
-[[Partial]]Supercharged Parts List[[/Partial]]","","","","","","","",""
+[[Partial]]Supercharged Parts List[[/Partial]]
+
+[[Heading:2]][[Chronowheel]][[/Heading]]
+The Chronowheel has a unique effect when replicated. First, the warning [[GameText]]Chronowheel temporarily destabilized by failed replication attempt, a second attempt will likely cause a devastating explosion.[[/GameText]] will appear in the log. A second attempt will give the message [[GameText]]Local interference in replication process, triggered subspace vortex.[[/GameText]] A 20 tile radius explosion will then occur at the point of replication, dealing 1000 vortex damage in 10 damage chunks with 0 falloff.","","","","","","","",""
 "Subcaves","Location","Subcaves is a tough early game [[Branch]] that is guaranteed to appear on -10 every run, with exits being available from [[Materials]] and [[Mines]]. It is a dangerous map, containing a large number of [[Subdweller|Subdwellers]] that will attack Cogmind on sight with relatively powerful weapons. A few [[0b10]] patrols may roam the map, engaging wild [[Derelict|Derelicts]].
 Unlike most maps, some areas may not be accessible in Subcaves without digging. 20 armor machinery strewn throughout the map can block passage to important areas. [[Artisan|Artisans]] will grow the machinery even more. Another unique bot present, [[Cobbler|Cobblers]], scoop up matter and produce random parts with their [[Cobbler Unit]].
 
