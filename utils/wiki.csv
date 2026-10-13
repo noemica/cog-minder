@@ -3991,18 +3991,37 @@ There are 3 exits, 2 of which right next to each other. The exit in the center o
 [[List]](++) Derelict attack: There is an extremely rare event in which a large group of Derelicts attack Extension. The trigger conditions for this event are unknown.[[/List]]","Spoiler","","","","","","",""
 "Extermination Squad","Other","[[Image]]Extermination Squad.png|An Extermination Squad hunting down Cogmind[[/Image]]
 Extermination squads are [[0b10]] aligned [[Squad|squads]] that are sent after Cogmind periodically in [[Factory]] (-7) and beyond. Exterminations are sent to the area that Cogmind was located at when they are summoned. Once they arrive there, they will begin a search pattern that steadily grows in range over time until they find Cogmind. Extermination squads consist of 1-3 [[Programmer|Programmers]] based on the floor: 1 [[P-60 Hacker]] on -7 and -6, 1 or 2 [[P-70 Sage|P-70 Sages]] on -5 and -4, and 2 or 3 [[P-80 Master|P-80 Masters]] on -3 to -1. Extermination squads can be both Enumerated and Recalled at [[Terminal|Terminals]].
-An alert will indicate whenever an an Extermination squad is dispatched. Additionally, the log will display a message like [[GameText]]ALERT: Rogue bot located, Programmers report to Factory Zone 5B.[[/GameText]]
+An alert will indicate whenever an an extermination squad is dispatched. Additionally, the log will display a message like [[GameText]]ALERT: Rogue bot located, Programmers report to Factory Zone 5B.[[/GameText]]
 
 [[Heading]]Lore[[/Heading]]
 [[Lore]]WAR.Sys Records|Extermination Squad[[/Lore]]
 
 [[Heading]]Frequency[[/Heading]]
-Extermination squads are dispatched on a regular basis on most 0b10 maps past -7. The higher the depth, the more frequently that Exterminations will be dispatched. There are several factors that affect the spawn frequency. The first is turn count. Waiting in one place for too long will trigger an Extermination. This factor is more significant for slower grounded propulsion types. The other is map exploration. Exploration of a large part of the map will much more quickly trigger Exterminations, sometimes within 100 turns or even less. Note: Sources of map intel like [[Terrain Scanner|Terrain Scanners]] do not affect this exploration determination. This factor is more significant for faster airborne propulsion types.
-The spawn frequency can be delayed with [[Spoiler]]the [[RIF]] ability Zone Cloak[[/Spoiler]] or by sealing [[Garrison Access|Garrison Machines]]. Both of these methods stack, and each provides an average of +75 turns to each Extermination squad spawn.
+Extermination squads are dispatched on a regular basis on most 0b10 maps past -7. The higher the depth, the more frequently that exterminations will be dispatched. There are two factors that affect the dispatch frequency. The first is turn count: waiting in one place for too long will trigger an extermination. The second is map traversal. The remaining time until the next extermination dispatch will occur is decreased as Cogmind enters different sections of the map. Each map is divided into square sections, with the size of each square and turn penalty per section entered depending on the map type. Speedy exploration of the map will also be met by a much quicker extermination trigger, within 100 turns or even less on faster propulsion types, especially flight.
+The dispatch frequency can be delayed with [[Spoiler]]the [[RIF]] ability Zone Cloak[[/Spoiler]] or by sealing [[Garrison Access|Garrison Machines]]. Both of these methods stack, and each provides an average of +75 turns to each extermination squad.
+
+[[Heading:2]]Base Frequency[[/Heading]]
+Whenever Cogmind enters map with exterminations or an extermination is dispatched, the next extermination dispatch turn is determined to be a random number of turns in the future based on the following ranges:
+[[Table]]
+Depth|Turns to Dispatch||
+-7 to -5|300-1000||
+-4 to -3|300-850||
+-2 to -1|300-700
+[[/Table]]
+
+[[Heading:2]]Map Sections[[/Heading]]
+Each new section visited by Cogmind triggers a turn penalty to be subtracted from the remaining turns until the next extermination will be dispatched. After each dispatch, the visited sections are reset. This means that backtracking is not punished up to the point that an extermination is dispatched, after which point it will result in faster dispatches.
+[[Table]]
+Map|Section Size|Turn Penalty per Section Explored||
+[[Factory]] and [[Section 7]]|20x20|20||
+[[Research]] and [[Access]]|20x20|25||
+[[Storage]], [[Hub_04(d)]], [[Armory]], [[Quarantine]], [[Testing]], and [[Command]]|15x15|20||
+[[Protoforge]]|20x20|15
+[[/Table]]
 
 [[Spoiler]][[Heading]][[Q-Series]][[/Heading]]
 [[Image]]Q-Series.png|2 Q-Series coming for Cogmind[[/Image]]
-It is possible for Extermination Programmers to be replaced by 1-2 Q-Series instead. This can occur randomly if Cogmind gets scanned by a [[Researcher]] in [[Testing]] or [[Quarantine]]. These Q-Series have customized and randomized loadouts, but will behave in the same way as regular Extermination squads do. This includes heading for Cogmind's initial position and then continuing to search for Cogmind as well as the ability to be recalled at Terminals. However, unlike Exterminations, Q-Series have a [[Lrn. IFF Parser]] that they can use to locate Cogmind from a large distance.[[/Spoiler]]","","","","","","","",""
+It is possible for extermination Programmers to be replaced by 1-2 Q-Series instead. This can occur randomly if Cogmind gets scanned by a [[Researcher]] in [[Testing]] or [[Quarantine]]. These Q-Series have customized and randomized loadouts, but will behave in the same way as regular extermination squads do. This includes heading for Cogmind's initial position and then continuing to search for Cogmind as well as the ability to be recalled at Terminals. However, unlike exterminations, Q-Series have a [[Lrn. IFF Parser]] that they can use to locate Cogmind from a large distance.[[/Spoiler]]","","","","","","","",""
 "F-cell Engine","Part","","","","","","","","",""
 "Fabrication Devices","Part Group","","Spoiler","","","Cobbler Unit,Bomb Factory No. 2,Mobile Assembly Unit,Heart of Steel,Scrapoid Pod,GOLEM Unit","","","",""
 "Fabricator","Other","[[Image]]../game_sprites/Fabricator.png|A Fabricator[[/Image]]
@@ -11493,7 +11512,10 @@ This article was last edited during Beta 15.","","","","","","","",""
 
 [[Heading]][[Supercharged Parts]][[/Heading]]
 Some special parts can't be replicated but instead create ""supercharged"" versions of themselves:
-[[Partial]]Supercharged Parts List[[/Partial]]","","","","","","","",""
+[[Partial]]Supercharged Parts List[[/Partial]]
+
+[[Heading:2]][[Chronowheel]][[/Heading]]
+The Chronowheel has a unique effect when replicated. First, the warning [[GameText]]Chronowheel temporarily destabilized by failed replication attempt, a second attempt will likely cause a devastating explosion.[[/GameText]] will appear in the log. A second attempt will give the message [[GameText]]Local interference in replication process, triggered subspace vortex.[[/GameText]] A 20 tile radius explosion will then occur at the point of replication, dealing 1000 vortex damage in 10 damage chunks with 0 falloff.","","","","","","","",""
 "Subcaves","Location","Subcaves is a tough early game [[Branch]] that is guaranteed to appear on -10 every run, with exits being available from [[Materials]] and [[Mines]]. It is a dangerous map, containing a large number of [[Subdweller|Subdwellers]] that will attack Cogmind on sight with relatively powerful weapons. A few [[0b10]] patrols may roam the map, engaging wild [[Derelict|Derelicts]].
 Unlike most maps, some areas may not be accessible in Subcaves without digging. 20 armor machinery strewn throughout the map can block passage to important areas. [[Artisan|Artisans]] will grow the machinery even more. Another unique bot present, [[Cobbler|Cobblers]], scoop up matter and produce random parts with their [[Cobbler Unit]].
 
@@ -11567,7 +11589,7 @@ Materials exits: These always lead to -8 Materials. These exits always skip -9 e
 "Supercharged Integrated Dissipator","Part","","","","","","","","",""
 "Supercharged Integrated Reactor","Part","","","","","","","","",""
 "Supercharged Navigation Harness","Part","","","","","","","","",""
-"Supercharged Parts","Part Group","These special [[Alien Artifacts|alien artifacts]] can only be produced by using a [[Subatomic Replicator]] on certain parts:
+"Supercharged Parts","Part Group","These special parts can only be produced by using a [[Subatomic Replicator]] on the following:
 [[Partial]]Supercharged Parts List[[/Partial]]","Spoiler","","","Supercharged TR,Supercharged Integrated Reactor,Supercharged Integrated Dissipator,Supercharged Navigation Harness,Supercharged Sigix Terminator","","","",""
 "Supercharged Parts List","Partial","[[List]]
 [[Cep. Navigation Harness]]: [[Supercharged Navigation Harness]]|
