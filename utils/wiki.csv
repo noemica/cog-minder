@@ -11590,7 +11590,7 @@ Materials exits: These always lead to -8 Materials. These exits always skip -9 e
 "Supercharged Integrated Reactor","Part","","","","","","","","",""
 "Supercharged Navigation Harness","Part","","","","","","","","",""
 "Supercharged Parts","Part Group","These special parts can only be produced by using a [[Subatomic Replicator]] on the following:
-[[Partial]]Supercharged Parts List[[/Partial]]","Spoiler","","","Supercharged TR,Supercharged Integrated Reactor,Supercharged Integrated Dissipator,Supercharged Navigation Harness,Supercharged Sigix Terminator","","","",""
+[[Partial]]Supercharged Parts List[[/Partial]]","Spoiler","","","Supercharged TR,Supercharged Integrated Reactor,Supercharged Integrated Dissipator,Supercharged Navigation Harness,Supercharged Sigix Terminator,Superquantum Companion","","","",""
 "Supercharged Parts List","Partial","[[List]]
 [[Cep. Navigation Harness]]: [[Supercharged Navigation Harness]]|
 [[Integrated Dissipator]]: [[Supercharged Integrated Dissipator]]|
