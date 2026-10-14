@@ -1094,7 +1094,7 @@
   },
   {
    "Name": "U-05 Engineer",
-   "Content": "A wheeled non-combat robot that repairs any broken walls, doors, or machines in sight. Good source of structural and terrain scanners. When attacked while repairing, calls reinforcements (unless you're in [[Materials]]) \n[[GameText]]ALERT: Construction progress impeded, dispatching reinforcements to local area.[[/GameText]]"
+   "Content": "A [[Wheels|wheeled]] [[0b10 Non-combat Bots|non-combat]] [[0b10]] robot that repairs any broken walls, doors, or machines nearby. Good source of [[Structural Scanner|Structural]] and basic [[Terrain Scanner|Terrain Scanners]]. When attacked while repairing, calls a [[Reinforcement Squad|reinforcement]]. In [[Materials]] there is only a chance that this may occur starting on -9.\n[[GameText]]ALERT: Construction progress impeded, dispatching reinforcements to local area.[[/GameText]]"
   },
   {
    "Name": "V-Series",
