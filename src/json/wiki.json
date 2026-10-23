@@ -8671,7 +8671,7 @@
     "System Purifier",
     "Exp. System Purifier"
    ],
-   "Content": "[[Heading]]List of System Restoration Modules[[/Heading]]\n[[PartGroupTable]]\nSystem Restoration Modules|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nUpkeep/Energy|\nEffect/Effect\n[[/PartGroupTable]]"
+   "Content": "System Restoration Modules are fragile Devices that have a chance to purge 1% [[Corruption]] each turn, losing 3 integrity whenever the effect is applied. They are particularly useful for builds that rarely receive corruption, such as non-combat stealth builds, as a way to completely get rid of corruption and its effects without having to keep a dedicated part attached forever,[[Comment]]The \"forever\" feels wrong to put in a wiki page, but i currently can't figure out how to rephrase the sentence to avoid using the word \"forever\" while still communicating the same thing.[[/Comment]] but they are still useful for other builds to reduce corruption and thus lower the frequency of its effects.\nWhile most variants are easiest to obtain from stockpiles or by [[Fabricator|fabrication]], the basic [[System Restoration Module]] and the [[Imp. System Restoration Module]] variants can also be salvaged from [[O-24 Administrator|O-24 Administrators]] and [[O-32 Director|O-32 Directors]] respectively.\n\nFor other ways to mitigate Corruption, see the [[Corruption Reduction Utilities]] page.\n\n[[Heading]]List of System Restoration Modules[[/Heading]]\n[[PartGroupTable]]\nSystem Restoration Modules|\nOverview/Size|\nOverview/Rating|\nOverview/Integrity|\nOverview/Coverage|\nUpkeep/Energy|\nEffect/Effect\n[[/PartGroupTable]]\n\n\nThis page was last updated during Beta 17.1"
   },
   {
    "Name": "Target Analyzers",

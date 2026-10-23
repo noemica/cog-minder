@@ -11732,7 +11732,12 @@ Effect/Effect
 "System Mapper","Part","","","","","","","","",""
 "System Purifier","Part","","","","","","","","",""
 "System Restoration Module","Part","","","","","","","","",""
-"System Restoration Modules","Part Group","[[Heading]]List of System Restoration Modules[[/Heading]]
+"System Restoration Modules","Part Group","System Restoration Modules are fragile Devices that have a chance to purge 1% [[Corruption]] each turn, losing 3 integrity whenever the effect is applied. They are particularly useful for builds that rarely receive corruption, such as non-combat stealth builds, as a way to completely get rid of corruption and its effects without having to keep a dedicated part attached forever,[[Comment]]The ""forever"" feels wrong to put in a wiki page, but i currently can't figure out how to rephrase the sentence to avoid using the word ""forever"" while still communicating the same thing.[[/Comment]] but they are still useful for other builds to reduce corruption and thus lower the frequency of its effects.
+While most variants are easiest to obtain from stockpiles or by [[Fabricator|fabrication]], the basic [[System Restoration Module]] and the [[Imp. System Restoration Module]] variants can also be salvaged from [[O-24 Administrator|O-24 Administrators]] and [[O-32 Director|O-32 Directors]] respectively.
+
+For other ways to mitigate Corruption, see the [[Corruption Reduction Utilities]] page.
+
+[[Heading]]List of System Restoration Modules[[/Heading]]
 [[PartGroupTable]]
 System Restoration Modules|
 Overview/Size|
@@ -11741,7 +11746,10 @@ Overview/Integrity|
 Overview/Coverage|
 Upkeep/Energy|
 Effect/Effect
-[[/PartGroupTable]]","","","","System Restoration Module,Imp. System Restoration Module,Mak. System Restoration Module,Adv. System Restoration Module,System Purifier,Exp. System Purifier","","","",""
+[[/PartGroupTable]]
+
+
+This page was last updated during Beta 17.1","","","","System Restoration Module,Imp. System Restoration Module,Mak. System Restoration Module,Adv. System Restoration Module,System Purifier,Exp. System Purifier","","","",""
 "System Shield","Part","","","","","","","","",""
 "System Spiker","Part","","","","","","","","",""
 "T-07 Excavator","Bot","","","","","","","","",""
