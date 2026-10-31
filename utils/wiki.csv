@@ -8050,11 +8050,68 @@ Effect/Effect
 [[/PartGroupTable]]","","","","EX Chip 1,Hacking Suite,Mak. Hacking Suite,Imp. Hacking Suite,Adv. Hacking Suite,Exp. Hacking Suite,System Mapper,Deep Network Scanner,Cep. Network Penetrator,Architect God Chip A","","","",""
 "Offensive Utilities","Part Supergroup","","","","","Asb. Combat Suite,Expert System,Heavy Servo Lattice,VL-GR5's Timing Chip","Actuators,Actuator Arrays,Armor Integrity Analyzers,Core Analyzers,Energy Filters,Force Boosters,Kinecellerators,Launcher Guidance Computers,Matter Filters,Melee Analysis Suites,Particle Chargers,Ranged Targeting Utilities,Recoil Stabilizers,Target Analyzers,Targeting Computers,Weapon Cyclers","","",""
 "Omega Cannon","Part","","","","","","","","",""
-"Operator","Bot Group","Operators are [[Hover Units|hovering]] [[0b10]] non-combat bots that guard a single nearby [[Terminal]]. Upon seeing a hostile, Operators will run to their Terminal, summon a [[Reinforcement Squad]] to their location, and disable the machine. [[Spoiler]]The same effect occurs if an [[Imprint|imprinted]] Cogmind pings a Terminal and the Operator is nearby.[[/Spoiler]] As such, Operators should ideally be avoided or prevented from summoning reinforcements in some way. Operators are good looting sources of [[Datajacks]], both offensive and defensive [[Hackware]], and [[System Restoration Modules]]. When destroyed, they drop a [[Data Core]] that provides a one-time hacking bonus on the Operator's assigned Terminal and reveals nearby traps.
-Operators make good allies due to their unique ability to increase Cogmind's hacking power and detect [[Traps]]. Operators within a range of 20 tiles will contribute a 10% (then 5%, 2%, and 1%) stacking offensive hacking bonus per Operator. Additionally, allied Operators will report all trap locations that Cogmind encounters in visual range as long as the Operator is within a 20 tile radius.
+"Operator","Bot Group","Operators are [[Hover Units|hovering]] [[0b10 Non-combat Bots|0b10 non-combat bots]] that are usually assigned to a specific [[Terminal]], which they never go too far from. Upon seeing or taking damage from a hostile (any non-0b10 bot), Operators will emit a distress signal to alert [[0b10 Combat Bots|0b10 combat bots]] if any are close enough, rush to their Terminal, summon a [[Reinforcement Squad]] to their location, disable the machine, then turn neutral. The same effect (besides the distress signal) occurs if the Operator is indirectly alerted by a different robot or if [[Spoiler]]an [[Imprint|imprinted]] Cogmind pings a Terminal[[/Spoiler]] and the Operator is close enough. As such, Operators should ideally be avoided or prevented from summoning reinforcements in some way. Operators are good looting sources of melee [[Datajacks]], both offensive and defensive [[Hackware]], and [[System Restoration Modules]]. When destroyed, if their assigned Terminal is still active, they drop a [[Data Core]] that provides a one-time hacking bonus on the Operator's assigned Terminal and reveals nearby [[Traps]].
+
+[[Heading]]Preventing Reinforcements[[/Heading]]
 Operators can be blocked from summoning Reinforcements in a few different ways:
-[[List]]Bot destruction: A destroyed bot will be unable to report Cogmind|[[Spoiler]][[Scraptown#abandonware_association|Scraptown hack]] [[GameText]]HACKBUD.EXE[[/GameText]]: Turn the Operator instantly friendly[[/Spoiler]]|Terminal destruction: A destroyed Terminal is unusable|[[Spoiler]][[GameText]]Trojan(Assimilate)[[/GameText]]: If used on an Operator's assigned Terminal, the Operator will become a blue controllable ally when it tries to report Cogmind[[/Spoiler]]|[[RIF]] hacks [[GameText]]block_reporting[[/GameText]], [[GameText]]summon_haulers[[/GameText]], or [[GameText]]formatsys_high[[/GameText]]: Either avoid reporting altogether, turn the reporting to instead summon [[Hauler|Haulers]], or turn the Operator friendly respectively[[/List]]
-[[Gallery]]Operators.png|All Operator variants and colors[[/Gallery]]","","O-16 Technician,O-24 Administrator,O-32 Director","","","","","",""
+[[List]]Bot destruction: A destroyed Operator will be unable to report hostiles|
+Bot propulsion destruction: An Operator that cannot move will be unable to reach the Terminal to report hotiles (though [[Mechanic]]-class bots may restore their movement)|
+Unreachable Terminal: An Operator whose only paths to their Terminal are blocked by Cogmind or Cogmind's allies will be unable to reach their Terminal to report hostiles while still blocked, making them easier to destroy. Particularly easy to pull off with Terminals that can only be accessed from exactly one tile, especially with high movement speed|
+Terminal destruction: A destroyed Terminal is unusable|
+[[Spoiler]][[GameText]]Trojan(Assimilate)[[/GameText]]: If used on an Operator's assigned Terminal, the Operator will become a blue controllable ally when it tries to report hostiles[[/Spoiler]]|
+[[Spoiler]][[Scraptown#abandonware_association|Scraptown bothack]] [[GameText]]HACKBUD.EXE[[/GameText]]: Turn the Operator instantly friendly[[/Spoiler]]|
+[[Spoiler]][[RIF]] hacks [[GameText]]block_reporting[[/GameText]], [[GameText]]summon_haulers[[/GameText]], or [[GameText]]formatsys_high[[/GameText]]: Either avoid reporting altogether, turn the reporting to instead summon [[Hauler|Haulers]], or turn the Operator friendly respectively[[/Spoiler]][[/List]]
+Any way of detecting Operators/Terrain/Terminals from a distance, especially the Index(Terminal) hack and [[Spoiler]]the Trojan(Operators) hack[[/Spoiler]], will only make it easier to prevent Operators from summoning a Reinforcement Squad.
+
+[[Heading:2]]Operator as Allies[[/Heading]]
+Operators make good allies due to their ability to provide Cogmind with a wide range of benefits, though this benefits only apply while they are within a range of 20 tiles from Cogmind.
+[[List]]A stacking offensive hacking bonus (+10% for the first Operator, 5% for the second, 2% for the third, and 1% for all additional ones).|
+The location of all unknown 0b10 [[Traps]], Emergency Access doors and Phase Walls that Cogmind encounters in visual range.[[Comment]]I don't know if that also applies to Drones, but probably not?[[/Comment]]|
+Reports on the new Alert level whenever it changes and whether it is an increase or decrease from the previous level.
+[[/List]]
+
+
+[[Heading]]Differences between Operators variants[[/Heading]]
+Different Operator variants have different Datajacks, Hackware, and System Restoration Modules, but also are also assigned to different Terminals.
+[[Table]]
+Category|Assigned at Level 1 Terminals|Assigned at Level 2 Terminals|Assigned at Level 3 Terminals|[[Datajacks|Datajack]]|[[Offensive Hackware]]|[[Defensive Hackware]]|[[System Restoration Modules|System Restoration Module]]||
+O-16 Technician|Any depth|Depths -10 and -9|Depths -10 and -9|Basic [[Datajack]]|[[Hacking Suite]]|No|No||
+O-24 Administrator|No|Depths -8 through -1|Depths -8 through -5|[[Imp. Datajack]]|[[Hacking Suite]]|[[System Shield]]|[[System Restoration Module]]||
+O-32 Director|No|No|Depths -4 through -1|[[Adv. Datajack]]|[[Imp. Hacking Suite]]|[[Imp. System Shield]]|[[Imp. System Restoration Module]]
+[[/Table]]
+(Note that this table only lists which Operators would be assigned at a Terminal based on its depth and security level, and does not take into account whether Terminals of those levels can appear at those depths in the first place.)
+[[Gallery]]Operators.png|All Operator variants and colors[[/Gallery]]
+
+[[Heading]][[Spoiler]]Operator-specific bothacks[[/Spoiler]][[/Heading]]
+[[SpoilerExpandable]]
+Operators have the highest number of class-exclusive bothacks with a total of 11: 
+[[Table]]
+Bothack name |[[RIF]] and [[Relay Coupler [NC]]]|Coupler charges required|Description|Notes||
+check_alert|Not required|0|Query system for current alert level.|Same as Alert(Check) Terminal hack.||
+disarm_traps|Required|1|Disarm the nearest trap array within a range of 30.|Similar to Traps(Disarm) Terminal hack.||
+clear_repairs|Required|1|Clear the sector-wide repair queue and any pending Builder orders.|Unique way to prevent all [[U-05 Engineer|Builders]] from repairing already-destroyed Walls even with [[Programmer]] interference.||
+clear_recycling|Required|1|Clear the sector-wide part collection queue and any pending Recycler order.|Unique way to prevent [[Recycler|Recyclers]] from picking up any currently dropped parts even with Programmer interference.||
+reprogram_traps|Required|2|Reveal and reprogram the nearest trap array within a range of 30.|Similar to Traps(Reprogram) Terminal hack.||
+locate_traps|Required|3|Reveal and mark all traps within a range of 30.|Similar to Traps(Locate) Terminal hack.||
+block_reporting|Required|3|Block ability to report hostiles at a Terminal.|Causes the Operator to immediately go to their assigned Terminal to turn neutral.||
+find_terminal|Required|4|Locate the nearest Terminal.|Will locate nearest functional Terminal, even if already known. Worse version of Index(Terminals) Terminal hack, but still useful.||
+summon_haulers|Required|5|Force system's call for reinforcements to instead redirect any Haulers within a range of 50.|[[Comment]]I've never used it, but i'm guessing it also makes the Operator go directly to their terminal to cause the effect?[[/Comment]]||
+recall_investigation|Required|6|Recall the most recently dispatched investigation squad.|Generally better (non-random) version of Recall(Investigation) Terminal hack.||
+purge_threat|Required|10|Lower the alert influence by 150 initially. Subsequent purges reduce alert by 125, 100, 75, and finally stops at 50.|Similar to Alert(Purge) Terminal hack. Especially powerful (even with reduced effect) when possible inside a [[Garrison]].
+[[/Table]][[/SpoilerExpandable]]
+
+[[Heading]]Other Special Cases, Behavior and Interactions[[/Heading]]
+[[List]]
+On the Adventurer and Explorer difficulties, Operators never appear at depth -10.|
+On Rogue difficulty, there is no special protection to prevent Operators from being within view of the starting location when entering a new map. On Adventurer and Explorer difficulties, there is a protection until depths -8 and -7 respectively.|
+When entering a map, Operators' initial position is simply somewhere within a direct radius of their assigned Terminal, with no regard for movement distance to their Terminal. This means that in some layouts, Operators' initial position may be a few tiles away in direct distance from their Terminal but also be in a very disconnected part of the map that is dozens or even hundreds of tiles away in movement distance from their assigned Terminal.[[Comment]], where they will stay because they can never wander off too far in direct distance from their Terminal unless trying to report a hostile. (not sure about this last part, which is why it's in a comment)[[/Comment]]|
+Operators can appear on certain maps without being assigned to a Terminal, including in [[Garrison]] robot assembler machine prefabs and in [[Archives]]. In those cases, they will start out neutral instead of hostile and will not react to Cogmind's or other robots' prescences.|
+Similarly to [[Watcher|Watchers]], new 0b10 Operators can never be dispatched to the current map for any reason besides [[X0-1V1]] interference. In the case of Operators, this can only be caused by [[Spoiler]]X0-1V1's ""LAN party"" effect, which dispatches a large number of new Operators and assigns them to currently active and unassigned Terminals.[[/Spoiler]]
+[[/List]]
+
+
+
+This page was lasted updated during Beta 17.1","","O-16 Technician,O-24 Administrator,O-32 Director","","","","","",""
 "Optimus","Bot","","","","","","","","",""
 "Overload","Other","Overloading is a [[Game Mechanics|Game Mechanic]] available on [[Overloadable Parts]], primarily cooled (Cld.) parts, that allows for a temporary increase in effectiveness with additional heat costs and potential downsides based on the stability of the part. It is possible to perform for Power, Propulsion, and Weapon type items.
 
