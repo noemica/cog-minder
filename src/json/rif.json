@@ -261,7 +261,7 @@
         },
         {
             "CategoryName": "Noncombat (NC) Yellow",
-            "Targets": ["Carrier", "Operator", "Researcher", "Watcher"],
+            "Targets": ["Carrier", "Hauler", "Operator", "Researcher", "Watcher"],
             "Hacks": [
                 {
                     "Name": "parse_system",
@@ -304,6 +304,7 @@
                 "Minesweeper",
                 "Operator",
                 "Protector",
+                "Researcher",
                 "Recycler",
                 "Tunneler",
                 "Worker"
