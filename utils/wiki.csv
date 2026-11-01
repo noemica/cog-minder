@@ -3262,7 +3262,6 @@ Spectrum is the ability to explode a [[Power|power]] source when it is hit by an
 "Elite (7)","Bot","","","","","","","","",""
 "Emergency Decompositor","Part","","","","","","","","",""
 "Empty","Other","Empty page for undisturbed creation of new pages","","","","","","","",""
-"Empty Pages","Other","[[EmptyPages]]","","","","","","","",""
 "Encrypted Comm Array","Part","The Encrypted Comm Array, or ECA, is a [[Warlord (Alignment)|Warlord-aligned]] item that enables summoning various groups of [[Derelict]] allies on main [[0b10]] floors. It can be obtained by performing any of the actions that increase the Warlord force multiplier listed on the [[Warlord (Alignment)#Force Multiplier Modifiers|Warlord Alignment Page]]. After this, a Derelict will appear in the next [[Caves]] map and deliver the Array, give some more details on its usage, and reveal the depth of [[Warlord (Location)]]. The ECA cannot be used if Cogmind has been [[Imprint|Imprinted]] or made use of a [[RIF|RIF installer]], as these alignments are mutually exclusive with Warlord.
 
 [[Heading]]Summoning squads[[/Heading]]
@@ -6448,7 +6447,7 @@ The only 2 ways to exit High Security are to trigger [[Sterilization]] after kil
 [[Strategy]] - Strategy about how to deal with specific robots, locations, or wintypes|
 [[Achievements]]|
 [[Alignment]] - List of all alignments and their interactions|
-[[Empty Pages|Empty]] and [[Non-empty Pages]] - List of pages with and without content|
+[[Non-empty Pages]] - List of non-empty pages|
 [[Fanart]]
 [[/List]]
 
