@@ -1015,6 +1015,35 @@ function processCommentTag(state: ParserState, result: RegExpExecArray) {
     state.index = index + "[[/Comment]]".length;
 }
 
+// Process an [[EmptyPages]]
+function processEmptyPagesTag(state: ParserState, result: RegExpExecArray) {
+    const listContents: { node: ReactNode; name: string }[] = [];
+    const processedEntries = new Set<WikiEntry>();
+
+    for (const groupEntry of state.allEntries.values()) {
+        if (
+            processedEntries.has(groupEntry) ||
+            groupEntry.content.length > 20 ||
+            !canShowSpoiler(groupEntry.spoiler, state.spoiler)
+        ) {
+            continue;
+        }
+
+        const listContent = <li key={groupEntry.name}>{getLinkNode(state, groupEntry, groupEntry.name)}</li>;
+        processedEntries.add(groupEntry);
+        listContents.push({ node: listContent, name: groupEntry.name });
+    }
+
+    listContents.sort((a, b) => a.name.localeCompare(b.name));
+
+    state.output.push({
+        groupType: "Individual",
+        node: <ul className="wiki-list">{listContents.map((content) => content.node)}</ul>,
+    });
+
+    state.index = result.index + result[0].length;
+}
+
 // Process an Expandable tag like [[Expandable]]Expandable Text[[/Expandable]]
 function processExpandableTag(state: ParserState, result: RegExpExecArray) {
     let isOpen = result[2] === "Expanded" ? true : false;
@@ -2233,6 +2262,7 @@ const actionMap: Map<string, (state: ParserState, result: RegExpExecArray) => vo
     ["BotGroups", processBotGroupsTag],
     ["Color", processColorTag],
     ["Comment", processCommentTag],
+    ["EmptyPages", processEmptyPagesTag],
     ["Expandable", processExpandableTag],
     ["FanartGallery", processGalleryTag],
     ["GameText", processGameTextTag],
