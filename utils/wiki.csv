@@ -8036,7 +8036,14 @@ A single NEM teleport will move Cogmind anywhere between 8-12 tiles from the ori
 "Null Cannon","Part","","","","","","","","",""
 "O-16 Technician","Bot","","","","","","","","",""
 "O-24 Administrator","Bot","","","","","","","","",""
-"O-32 Director","Bot","","","","","","","","",""
+"O-32 Director","Bot","0-32 Directors are the highest-tier variant of the [[0b10]] [[Operator]]-class series. Their high core integrity of 50, higher than most other non-combat bots can be somewhat surprising. They can appear in most 0b10 maps starting from depth -4, and can only ever be assigned to level 3 [[Terminal|Terminals]]. [[Spoiler]]They can also reliably be found in large numbers in [[Archives]] regardless of that map's depth, where they are not assigned to any Terminals and start out neutral.[[/Spoiler]]
+
+Their [[Adv. Datajack]], [[Imp. System Restoration Module]], [[Imp. Hacking Suite]] and [[Imp. System Shield]] all make for particularly nice loot. Their [[Data Core]] is extremely valuable to hacker-type builds thanks to its powerful effect on indirect hacks with high negative base success rates, which makes successfully obtaining high-rating and/or out-of-depth schematics or other indirect hacks at level 3 Terminals much more realistic. For non-hacker builds, said Data Core is nearly useless for hacking purposes but will still reveal nearby [[Traps]] if there are any.
+
+For details on their behavior and other traits common to their class' variants, see the [[Operator]] page.
+
+
+This page was last edited during Beta 17.1","","","","","","","",""
 "Offensive Hackware","Part Group","Offensive [[Hackware]] is a type of [[Processors|Processor]] that primarily provide an increased success chance to hack all [[Interactive Machine|Interactive Machines]]. They are useful on all build types from full combat to stealth hackers. Heavy combat builds might prefer to keep hackware in inventory and only temporarily attach them in order to try to pull off an [[GameText]]Access(Branch/Main)[[/GameText]] hack on a low level [[Terminal]] to figure out how to quickly exit the level. More hacking-focused builds may instead keep multiple pieces of both offensive and [[Defensive Hackware]] attached at all times to be able to consistently succeed at difficult hacks. Offensive hackware works best when paired with at least one piece of defensive hackware, though it is much better to stack many pieces of offensive hackware than defensive hackware due to the latter having diminishing returns.
 
 [[Heading]]List of Offensive Hackware[[/Heading]]
@@ -8050,7 +8057,7 @@ Effect/Effect
 [[/PartGroupTable]]","","","","EX Chip 1,Hacking Suite,Mak. Hacking Suite,Imp. Hacking Suite,Adv. Hacking Suite,Exp. Hacking Suite,System Mapper,Deep Network Scanner,Cep. Network Penetrator,Architect God Chip A","","","",""
 "Offensive Utilities","Part Supergroup","","","","","Asb. Combat Suite,Expert System,Heavy Servo Lattice,VL-GR5's Timing Chip","Actuators,Actuator Arrays,Armor Integrity Analyzers,Core Analyzers,Energy Filters,Force Boosters,Kinecellerators,Launcher Guidance Computers,Matter Filters,Melee Analysis Suites,Particle Chargers,Ranged Targeting Utilities,Recoil Stabilizers,Target Analyzers,Targeting Computers,Weapon Cyclers","","",""
 "Omega Cannon","Part","","","","","","","","",""
-"Operator","Bot Group","Operators are [[Hover Units|hovering]] [[0b10 Non-combat Bots|0b10 non-combat bots]] that are usually assigned to a specific [[Terminal]], which they never go too far from. Upon seeing or taking damage from a hostile (any non-0b10 bot), Operators will emit a distress signal to alert [[0b10 Combat Bots|0b10 combat bots]] if any are close enough, rush to their Terminal, summon a [[Reinforcement Squad]] to their location, disable the machine, then turn neutral. The same effect (besides the distress signal) occurs if the Operator is indirectly alerted by a different robot or if [[Spoiler]]an [[Imprint|imprinted]] Cogmind pings a Terminal[[/Spoiler]] and the Operator is close enough. As such, Operators should ideally be avoided or prevented from summoning reinforcements in some way. Operators are good looting sources of melee [[Datajacks]], both offensive and defensive [[Hackware]], and [[System Restoration Modules]]. When destroyed, if their assigned Terminal is still active, they drop a [[Data Core]] that provides a one-time hacking bonus on the Operator's assigned Terminal and reveals nearby [[Traps]].
+"Operator","Bot Group","Operators are [[Hover Units|hovering]] [[0b10 Non-combat Bots|0b10 non-combat bots]] that are usually assigned to a specific [[Terminal]], which they never go too far from. Upon seeing or taking damage from a hostile (any non-0b10 bot), Operators will emit a distress signal to alert [[0b10 Combat Bots|0b10 combat bots]] if any are close enough, rush to their Terminal, summon a [[Reinforcement Squad]] to their location, disable the machine, then turn neutral. The same effect (besides the distress signal) occurs if the Operator is indirectly alerted by a different robot or if [[Spoiler]]an [[Imprint|imprinted]] Cogmind pings a Terminal[[/Spoiler]] and the Operator is close enough. As such, Operators should ideally be avoided or prevented from summoning reinforcements in some way. Operators are good looting sources of melee [[Datajacks]], both offensive and defensive [[Hackware]], and [[System Restoration Modules]]. When destroyed, if their assigned Terminal is still active, they drop a [[Data Core]] that reveals nearby [[Traps]] and provides a temporary one-time hacking bonus on the Operator's assigned Terminal.
 
 [[Heading]]Preventing Reinforcements[[/Heading]]
 Operators can be blocked from summoning Reinforcements in a few different ways:
@@ -8063,7 +8070,7 @@ Terminal destruction: A destroyed Terminal is unusable|
 [[Spoiler]][[RIF]] hacks [[GameText]]block_reporting[[/GameText]], [[GameText]]summon_haulers[[/GameText]], or [[GameText]]formatsys_high[[/GameText]]: Either avoid reporting altogether, turn the reporting to instead summon [[Hauler|Haulers]], or turn the Operator friendly respectively[[/Spoiler]][[/List]]
 Any way of detecting Operators/Terrain/Terminals from a distance, especially the Index(Terminal) hack and [[Spoiler]]the Trojan(Operators) hack[[/Spoiler]], will only make it easier to prevent Operators from summoning a Reinforcement Squad.
 
-[[Heading:2]]Operator as Allies[[/Heading]]
+[[Heading]]Operator as Allies[[/Heading]]
 Operators make good allies due to their ability to provide Cogmind with a wide range of benefits, though these benefits only apply while they are within a range of 20 tiles from Cogmind.
 [[List]]A stacking offensive hacking bonus (+10% for the first Operator, 5% for the second, 2% for the third, and 1% for all additional ones).|
 The location of all unknown 0b10 [[Traps]], Emergency Access doors and Phase Walls that Cogmind encounters in visual range.[[Comment]]I don't know if that also applies to Drones, but probably not?[[/Comment]]|
@@ -8072,7 +8079,7 @@ Reports on the new Alert level whenever it changes and whether it is an increase
 
 
 [[Heading]]Differences Between Operators Variants[[/Heading]]
-Different Operator variants have different Datajacks, Hackware, and System Restoration Modules, but also are also assigned to different Terminals.
+Different Operator variants have different Datajacks, Hackware, and System Restoration Modules, but also are also assigned to different Terminals. This can often make it easier to deduce the Terminal an Operator is assigned to, and also means that low-tier Operator variants aren't ever fully replaced by the highest-tier variant, unlike all other 0b10 bots classes.
 [[Table]]
 Category|Assigned at Level 1 Terminals|Assigned at Level 2 Terminals|Assigned at Level 3 Terminals|[[Datajacks|Datajack]]|[[Offensive Hackware]]|[[Defensive Hackware]]|[[System Restoration Modules|System Restoration Module]]||
 O-16 Technician|Any depth|Depths -10 and -9|Depths -10 and -9|Basic [[Datajack]]|[[Hacking Suite]]|No|No||
@@ -8080,14 +8087,17 @@ O-24 Administrator|No|Depths -8 through -1|Depths -8 through -5|[[Imp. Datajack]
 O-32 Director|No|No|Depths -4 through -1|[[Adv. Datajack]]|[[Imp. Hacking Suite]]|[[Imp. System Shield]]|[[Imp. System Restoration Module]]
 [[/Table]]
 (Note that this table only lists which Operators would be assigned at a Terminal based on its depth and security level, and does not take into account whether Terminals of those levels can appear at those depths in the first place.)
+Operators can only ever be assigned to regular, non-limited 0b10 Terminals. In other words, limited Terminals (such as Door Terminals or [[Caves#outposts|Caves outpost]] Terminals), [[Mines]] Terminals (not regular because they are always both one tile in size and level 1), [[Garrison#garrison terminal|Garrison Terminals]] (always one tile in size, level 2, with one direct hack) and [[Derelict]] Terminals can never have Operators assigned to them.
+
+
 [[Gallery]]Operators.png|All Operator variants and colors[[/Gallery]]
 
-[[Heading]]Extra Spawning Restrictions[[/Heading]]
+[[Heading:2]]Extra Spawning Mechanics[[/Heading]]
 [[List]]
 On the Adventurer and Explorer difficulties, Operators never appear at depth -10.|
 On Rogue difficulty, there is no special protection to prevent Operators from being within view of the starting location when entering a new map. On Adventurer and Explorer difficulties, there is a protection until depths -8 and -7 respectively.|
 When entering a map, Operators' initial position is simply somewhere within a direct radius of their assigned Terminal, with no regard for movement distance to their Terminal. This means that in some layouts, Operators' initial position may be a few tiles away in direct distance from their Terminal but also be in a very disconnected part of the map that is dozens or even hundreds of tiles away in movement distance from their assigned Terminal.[[Comment]], where they will stay because they can never wander off too far in direct distance from their Terminal unless trying to report a hostile. (not sure about this last part, which is why it's in a comment)[[/Comment]]|
-Operators can appear on certain maps without being assigned to a Terminal, including in [[Garrison]] robot assembler machine prefabs and in [[Archives]]. In those cases, they will start out neutral instead of hostile and will not react to Cogmind's or other robots' prescences.|
+Operators can appear on certain maps without being assigned to a Terminal, including in [[Garrison]] robot assembler machine prefabs and in [[Archives]][[Comment]]I'm not sure, but i think those in Archives are always O-32 Directors? Don't know about Garrison Operators, though.[[/Comment]]. In those cases, they will start out neutral instead of hostile and will not react to Cogmind's or other robots' presences.|
 Similarly to [[Watcher|Watchers]], new 0b10 Operators can never be dispatched to the current map for any reason besides [[X0-1V1]] interference. In the case of Operators, this can only be caused by [[Spoiler]]X0-1V1's ""LAN party"" effect, which dispatches a large number of new Operators and assigns them to currently active and unassigned Terminals.[[/Spoiler]]
 [[/List]]
 
@@ -8098,8 +8108,8 @@ Operators have the highest number of class-exclusive bothacks with a total of 11
 Bothack name |[[RIF]] and [[Relay Coupler [NC]]]|Coupler charges required|Description|Notes||
 check_alert|Not required|0|Query system for current alert level.|Same as Alert(Check) Terminal hack.||
 disarm_traps|Required|1|Disarm the nearest trap array within a range of 30.|Similar to Traps(Disarm) Terminal hack.||
-clear_repairs|Required|1|Clear the sector-wide repair queue and any pending Builder orders.|Unique way to prevent all [[U-05 Engineer|Builders]] from repairing already-destroyed Walls even with [[Programmer]] interference.||
-clear_recycling|Required|1|Clear the sector-wide part collection queue and any pending Recycler order.|Unique way to prevent [[Recycler|Recyclers]] from picking up any currently dropped parts even with Programmer interference.||
+clear_repairs|Required|1|Clear the sector-wide repair queue and any pending Builder orders.|Unique way to prevent all [[U-05 Engineer|Builders]] from repairing any already-destroyed Walls even with [[Programmer]] interference.||
+clear_recycling|Required|1|Clear the sector-wide part collection queue and any pending Recycler order.|Unique way to prevent [[Recycler|Recyclers]] from picking up any already-dropped parts even with Programmer interference.||
 reprogram_traps|Required|2|Reveal and reprogram the nearest trap array within a range of 30.|Similar to Traps(Reprogram) Terminal hack.||
 locate_traps|Required|3|Reveal and mark all traps within a range of 30.|Similar to Traps(Locate) Terminal hack.||
 block_reporting|Required|3|Block ability to report hostiles at a Terminal.|Causes the Operator to immediately go to their assigned Terminal to turn neutral.||
@@ -8111,7 +8121,7 @@ purge_threat|Required|10|Lower the alert influence by 150 initially. Subsequent 
 
 
 
-This page was lasted updated during Beta 17.1","","O-16 Technician,O-24 Administrator,O-32 Director","","","","","",""
+This page was last edited during Beta 17.1","","O-16 Technician,O-24 Administrator,O-32 Director","","","","","",""
 "Optimus","Bot","","","","","","","","",""
 "Overload","Other","Overloading is a [[Game Mechanics|Game Mechanic]] available on [[Overloadable Parts]], primarily cooled (Cld.) parts, that allows for a temporary increase in effectiveness with additional heat costs and potential downsides based on the stability of the part. It is possible to perform for Power, Propulsion, and Weapon type items.
 
