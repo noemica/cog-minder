@@ -2586,8 +2586,8 @@
         ],
         "Locations": [
             {
-                "Location": "0b10 maps",
-                "Description": "Hostile: Roams around a home level 1 terminal, reports Cogmind and turns neutral on visual contact"
+                "Location": "0b10 maps -10 through -1",
+                "Description": "Hostile: Roams around a home level 1 terminal (or level 2 terminal below -8), reports Cogmind and turns neutral on visual contact"
             }
         ]
     },
@@ -2597,8 +2597,8 @@
         ],
         "Locations": [
             {
-                "Location": "0b10 maps",
-                "Description": "Hostile: Roams around a home level 2 terminal, reports Cogmind and turns neutral on visual contact"
+                "Location": "0b10 maps -8 through -1",
+                "Description": "Hostile: Roams around a home level 2 terminal (or level 3 terminal below -4), reports Cogmind and turns neutral on visual contact"
             }
         ]
     },
@@ -2608,7 +2608,7 @@
         ],
         "Locations": [
             {
-                "Location": "0b10 maps",
+                "Location": "0b10 maps -4 through -1",
                 "Description": "Hostile: Roams around a home level 3 terminal, reports Cogmind and turns neutral on visual contact"
             }
         ]
