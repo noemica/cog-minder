@@ -1286,7 +1286,7 @@
   },
   {
    "Name": "Z-Technician",
-   "Content": "Harmless zion [[Derelict|derelict]] [[Operator]] variants found stationary in [[Zion Deep Caves]]."
+   "Content": "Z-Technicians are [[Derelict]] variants of the [[0b10 Non-combat Bots|0b10 non-combat]] [[Operator]] class. Only five of them can be found per run. All five will always be in the same spots, tending to the Z-Facility machine in [[Deep Caves]]. Unlike 0b10 Operators, they are never neutral and always hostile, but this is irrelevant as they will also move away from their post or do anything, even if they spot an enemy, get attacked, or if the Z-Facility is disabled.\nIf turned into allies, Z-Technicians will provide the [[Operator#Operator as Allies|same benefits]] as regular 0b10 Operators.\n\nTheir parts and stats are almost exactly the same as [[O-16 Technician|O-16 Technicians]]. Z-Technicians have:\n[[List]]\nA [[Mak. Hacking Suite]] instead of a basic [[Hacking Suite]], which also raises their bot rating from 10 to 11.|\nA \"Spot %\" stat of 100 instead of 50, which is irrelevant as they do not do anything upon spotting enemies.|\nA \"Value\" stat of 0 instead of 16, meaning that destroying them will not grant any [[Score|score]].|\nNo [[Schematic]].\n[[/List]]\n\n\n\nThis page was last edited during Beta 17.1"
   },
   {
    "Name": "Zhirov",
