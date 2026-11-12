@@ -8039,7 +8039,14 @@ A single NEM teleport will move Cogmind anywhere between 8-12 tiles from the ori
 "Nuclear Pulse Array","Part","","","","","","","","",""
 "Nuclear Pulse Thruster","Part","","","","","","","","",""
 "Null Cannon","Part","","","","","","","","",""
-"O-16 Technician","Bot","","","","","","","","",""
+"O-16 Technician","Bot","O-16 Technicians are the lowest-tier [[0b10]] [[Operator]]-class variant. Unlike higher-tier variants, they do not have either a [[System Restoration Modules|System Restoration Module]] or [[Defensive Hackware]]. They can appear in most 0b10 maps starting from depth -10, are the only tier that can be assigned to level 1 [[Terminal|Terminals]], and can also be assigned to level 2 Terminals at depths -10 and -9.
+
+Their basic melee [[Datajack]] and [[Hacking Suite]] can be nice to get in early depths. Even if their usefulness is somewhat limited in the [[Materials]] depths, they are great to keep for or have in [[Factory]] depths and later. Their [[Data Core]] will reveal any nearby [[Traps]] and is useful to have for most direct hacks and a few indirect hacks, especially for non-hacker builds trying to secure hacks with high base success rates like [[GameText]]Traps(Locate)[[/GameText]], [[GameText]]Enumerate(Maintenance)[[/GameText]], or [[GameText]]Manifests[[/GameText]], but for many hacks, the one-attempt bonus they provide isn't much higher than the longer-lasting +10% hacking success rate of having an allied Operator.
+
+For details on their behavior and other traits common to their class' variants, see the [[Operator]] page.
+
+
+This page was last edited during Beta 17.1","","","","","","","",""
 "O-24 Administrator","Bot","","","","","","","","",""
 "O-32 Director","Bot","0-32 Directors are the highest-tier variant of the [[0b10]] [[Operator]]-class series. Their high core integrity of 50, higher than most other non-combat bots can be somewhat surprising. They can appear in most 0b10 maps starting from depth -4, and can only ever be assigned to level 3 [[Terminal|Terminals]]. [[Spoiler]]They can also reliably be found in large numbers in [[Archives]] regardless of that map's depth, where they are not assigned to any Terminals and start out neutral.[[/Spoiler]]
 
