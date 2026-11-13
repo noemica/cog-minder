@@ -107,6 +107,11 @@
     background-color: @spoiler-background-color;
     padding: @single-line-spoiler-padding;
 
+    > a {
+        // Needed or else we get a brief blue flicker on hover
+        transition: color 0s;
+    }
+
     > a:hover,
     > a:focus {
         background-color: @spoiler-preview-background-color;
@@ -121,21 +126,13 @@
     padding: @multi-line-spoiler-padding;
 }
 
-span.spoiler-text-multiline {
-    display: inline-block;
-}
-
-li > .spoiler-text-multiline {
-    vertical-align: top;
-}
-
 .spoiler-text:not(:focus):not(:hover) {
     user-select: none;
     color: transparent;
 }
 
-.spoiler-text:hover:not(.spoiler-table),
-.spoiler-text:focus:not(.spoiler-table) {
+.spoiler-text:hover:not(.spoiler-table):not(td):not(th),
+.spoiler-text:focus:not(.spoiler-table):not(td):not(th) {
     background-color: @spoiler-preview-background-color;
 }
 
@@ -510,6 +507,10 @@ wiki-gallery-fullsize-images,
         line-height: 1;
     }
 
+    p > span.spoiler-text {
+        line-height: 1.25;
+    }
+
     p:first-child {
         margin: 0;
     }
@@ -655,10 +656,6 @@ wiki-gallery-fullsize-images,
             margin: 0;
         }
 
-        li {
-            line-height: @wiki-table-of-contents-line-height;
-        }
-
         // There is no usual margin around p elements inside details
         // Apply some margin to give a bit of space between the details section
         > div > p:first-child {
@@ -683,6 +680,10 @@ wiki-gallery-fullsize-images,
         > summary {
             font-size: @wiki-table-of-contents-font-size;
         }
+    }
+
+    > li {
+        line-height: @wiki-table-of-contents-line-height;
     }
 }
 
