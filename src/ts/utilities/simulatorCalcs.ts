@@ -2685,8 +2685,11 @@ function updateTimeBasedStateChanges(state: SimulatorState, volleyTime: number) 
         updateAccuracy == true;
     }
 
-    // Apply core regen
-    botState.coreIntegrity = Math.min(botState.initialCoreIntegrity, botState.coreIntegrity + coreRegenIntegrity);
+    // Apply core regen (only if bot not dead yet)
+    if (botState.coreIntegrity > 0)
+    {
+        botState.coreIntegrity = Math.min(botState.initialCoreIntegrity, botState.coreIntegrity + coreRegenIntegrity);
+    }
 
     if (botState.partRegen > 0) {
         // Apply part regen to existing parts
