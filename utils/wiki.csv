@@ -3075,7 +3075,7 @@ Duelists don't have any particular damage type weaknesses, though their biggest 
 
 [[Heading]]Squads[[/Heading]]
 Duelists may appear in the following squads:
-[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Patrol Squad]] - [[Squad Leader]] only normally, or in [[Armory]]|[[Security Squad]] - Armory or [[Garrison|Garrisons]][[/List]]","","L-31 Rogue,L-41 Fighter,L-61 Swordsman,Protovariant L,Immortal","","","","","",""
+[[List]][[Assault Squad]]|[[Garrison Squad]]|[[Patrol Squad]] - [[Squad Leader]] only normally, or in [[Armory]]|[[Security Squad]] - [[Armory]] or [[Garrison|Garrisons]][[/List]]","","L-31 Rogue,L-41 Fighter,L-61 Swordsman,Protovariant L,Immortal","","","","","",""
 "Dynamic Insulation System","Part","","","","","","","","",""
 "Dynamic Insulation Systems","Part Group","These are [[Corruption Reduction Utilities]] that have a chance of preventing [[Corruption]] gain on each attack and on [[Shock Trap|Shock]] and [[EM Surge Trap|EM Surge Traps]]. These parts are good to attach when fighting [[Electromagnetic Weapons|Electromagnetic Weapon]]-wielding bots like [[Programmer|Programmers]]. It also provides complete immunity to [[Disruption|disruption]] for all attached parts. One additional hidden effect is that it has a chance of blocking the corruption gain from the EMP inside of [[Wastes]]. Note: This part does not affect internal corruption gain from firing parts like the [[Latent Energy Streamer]].
 
@@ -8047,7 +8047,14 @@ For details on their behavior and other traits common to their class' variants, 
 
 
 This page was last edited during Beta 17.1","","","","","","","",""
-"O-24 Administrator","Bot","","","","","","","","",""
+"O-24 Administrator","Bot","0-24 Administrators are the middle-tier variant of the [[0b10]] [[Operator]]-class series. They can appear in most 0b10 maps starting from -8, a depth at which their core integrity of 30 is either higher than most or on par with 0b10 combat bots. From there, they will be the only Operator tier to ever be assigned to level 2 [[Terminal|Terminals]], and, until depth -4, level 3 Terminals. 
+
+Their [[Imp. Datajack]], [[System Restoration Module]], [[Hacking Suite]] and [[System Shield]] all make for valuable loot. Their [[Data Core]] is very valuable to hacker-type builds thanks to its powerful effect on indirect hacks with high negative base success rates, which makes successfully obtaining high-rating and/or out-of-depth schematics or other indirect hacks at level 2 and 3 Terminals much more realistic. For non-hacker builds, said Data Core is slightly useful for direct hacking purposes and nearly pointless for indirect hacking, but will still reveal nearby [[Traps]] if there are any.
+
+For details on their behavior and other traits common to their class' variants, see the [[Operator]] page.
+
+
+This page was last edited during Beta 17.1","","","","","","","",""
 "O-32 Director","Bot","0-32 Directors are the highest-tier variant of the [[0b10]] [[Operator]]-class series. Their high core integrity of 50, higher than most other non-combat bots can be somewhat surprising. They can appear in most 0b10 maps starting from depth -4, and can only ever be assigned to level 3 [[Terminal|Terminals]]. [[Spoiler]]They can also reliably be found in large numbers in [[Archives]] regardless of that map's depth, where they are not assigned to any Terminals and start out neutral.[[/Spoiler]]
 
 Their [[Adv. Datajack]], [[Imp. System Restoration Module]], [[Imp. Hacking Suite]] and [[Imp. System Shield]] all make for particularly nice loot. Their [[Data Core]] is extremely valuable to hacker-type builds thanks to its powerful effect on indirect hacks with high negative base success rates, which makes successfully obtaining high-rating and/or out-of-depth schematics or other indirect hacks at level 3 Terminals much more realistic. For non-hacker builds, said Data Core is nearly useless for hacking purposes but will still reveal nearby [[Traps]] if there are any.
