@@ -10784,9 +10784,9 @@ This article was last updated during Beta 15.","","","","Sml. Storage Unit,Med. 
 "Stormtrooper","Bot","","","","","","","","",""
 "Strategy","Other","Strategy guides to complete various content. Also see [[aoemica's Flight Guide]].","","","","","","","Strategy/Alignments,Strategy/Bosses,Strategy/Maps,Strategy/Wintypes",""
 "Strategy/Alignments","Other","Strategy guides for particular alignments.","Spoiler","","","","","","Strategy/Alignments/X0-1V1",""
-"Strategy/Alignments/X0-1V1","Other","Although being capable of adapting to the chaos is the primary tool to survive praying to [[X0-1V1]], strategizing with them is very difficult, as their chaotic effects can cause any plan to go sideways really quickly. And while Cogmind is generally more resilient than usual thanks to both the lower long-term downside of taking risks or attaching [[Corrupted Parts]], which is reduced by the relatively common core restoration and [[Corruption]]-reducing effects (among others) and the fact that getting unlucky is slightly offset by the amusement it provides X0-1V1, [[Alert]] also rises more easily and quickly than usual.
+"Strategy/Alignments/X0-1V1","Other","[[Heading]]General[[/Heading]]
+Although being capable of adapting to the chaos is the primary tool to survive praying to [[X0-1V1]], strategizing with them is very difficult, as their chaotic effects can cause any plan to go sideways really quickly. And while Cogmind is generally more resilient than usual thanks to both the lower long-term downside of taking risks or attaching [[Corrupted Parts]], which is reduced by the relatively common core restoration and [[Corruption]]-reducing effects (among others) and the fact that getting unlucky is slightly offset by the amusement it provides X0-1V1, [[Alert]] also rises more easily and quickly than usual.
 
-[[Heading]]General[[/Heading]]
 [[Heading:2]]Maintaining your build[[/Heading]]
 Due to the higher average damage taken and the part repair effect being fairly rare (especially compared to the core integrity restoration and the corruption-reducing effects), being capable of maintaining your own build without relying on X0-1V1 is crucial. For several builds, the [[Sfc. Transmogrifier]] is particularly helpful as it also amuses X0-1V1, though it prevents reliable use of other parts like [[Signal Interpreters]]. The [[Scrap Engine]] can likewise be really helpful, especially with complementary permanent buffs. This is also true of [[GOLEM Unit|GOLEM Units]], though X0-1V1 can make getting those much more difficult than usual. Various alignments can also help with restocking parts.
 
@@ -10798,7 +10798,34 @@ The very disruptive slot mutation effect is worth keeping in mind, as it require
 As this effect cannot mutate away a slot from a type that is completely occupied by undetachable parts, certain builds, particularly those reliant on the Scrap Engine, are largely resistant to this effect.
 
 [[Heading:2]]Submaps and entertainment[[/Heading]]
-As X0-1V1's entertainment remains the same when entering/exiting Garrisons, [[Wastes]] or [[DSF|DSFs]] (as opposed to [[Branch|branches]] or even just going to the next main floor), visiting submaps can be more useful than usual. [[RIF]] is especially powerful with X0-1V1's ability to add charges to [[Relay Couplers]] and the potential free random RIF ability. Wastes can be helpful to lower the overall higher alert, and can even raise X0-1V1's amusement when entering via an unknown [[Chute Trap]], though some effects make the area much more dangerous as well.
+As X0-1V1's entertainment remains the same when entering/exiting [[Garrison|Garrisons]], [[Wastes]] or [[DSF|DSFs]] (as opposed to [[Branch|branches]] or even just going to the next main floor), visiting submaps can be more useful than usual. [[RIF]] is especially powerful with X0-1V1's ability to add charges to [[Relay Couplers]] and the potential free random RIF ability. Wastes can be helpful to lower the overall higher alert, and can even raise X0-1V1's amusement when entering via an unknown [[Chute Trap]], though some effects make the area much more dangerous as well.
+
+[[Heading:2]]Dealing with [[Item Mimic|Item Mimics]][[/Heading]]
+Item Mimics are particularly pernicious, and failing to recognize one and picking it up can range from annoying to devastating. Replacing a real backup with Mimic, discarding a fused/fragile part to replace it with a Mimic, keeping a [[Adv. Transmission Jammer]] Mimic for emergencies, and so on.
+
+[[Heading:3]]Recognizing Mimics[[/Heading]]
+Thankfully, more often than not, Item Mimics are very easy to spot. Or rather, the irregularity they present is easy to spot. They can appear on any nearby tile outside your view that is not occupied by a [[Traps|Trap]] or other part, which is often in places that parts cannot otherwise appear in. Item Mimics can also be of higher rating than regular floor parts, always start out with full integrity, tend to mimic parts of the same types as those you've carried/used recently, but will never mimic unattachable parts (including [[Items]], [[Traps]], [[Matter]], [[Protomatter]], [[Data Cores]] and [[Scrap]]). Here is a list of some restrictions that apply to regular floor parts. Anything part that breaks one or more of these restrictions is most likely an Item Mimic: 
+[[List]]
+Intact 0b10 floor parts cannot appear in corridors of any kind, except sometimes in [[Extension]] near the entrance to [[Cetus]].|
+Intact 0b10 floor parts cannot appear adjacent to 0b10 machines, except in open areas when part of a stockpile.|
+Intact 0b10 floor parts cannot appear adjacent to other parts or stockpiles, unless they are either in a stockpile themselves or in a branch/submap cache.|
+Intact 0b10 floor parts cannot appear adjacent to normal doors (not to be confused with Emergency Access doors), except in ""refuse rooms"" and Garrisons.|
+Intact 0b10 floor parts can only be of a rating lower than or equal to [11 - current depth], including [[Prototype Part|prototype parts]]. For instance, at depth -7, regular floor parts can only be rating 4 (prototype or not) or lower, as 11 - 7 = 4.|
+Intact 0b10 floor parts cannot appear in ""refuse rooms"" (initially full of debris) or in Wastes (except in Derelict tunnels' caches). Damaged 0b10 parts, meanwhile, can appear in both.
+[[/List]]
+Note that this is a list of restrictions for where regular parts can be when the map is entered; For instance, it is entirely possible for a [[Fabricator]] to create new parts or for existing parts to get displaced because a Trap at their original location was revealed, causing some real parts to be put in a scenario where they look like Mimics.
+
+Seeing that there's a part that shouldn't be there is only the first part, which many experienced players will do instinctively; The difficult part of recognizing Mimics is to have the presence of mind to question why something feels off and realize there's a Mimic, instead of blindly accepting some inexistent weirdness or stroke of luck. ""Huh, this part looks slightly weird. Is it because it's adjacent to an explosive machine?"", ""What!? i didn't know there could be parts there!"" and ""How did this [[Adv. Cloaking Device]] get here?"" are examples of insufficient thinking. These kinds of thoughts should be followed with ""Wait, is this an Item Mimic?"".
+
+[[Heading:3]]Using Mimics[[/Heading]]
+Fake parts will [[B]]only[[/B]] turn into Item Mimics when attached to Cogmind. In [[B]]all[[/B]] other ways, they will behave like real parts. Because of this, it is possible to use the part form of Item Mimics to your benefit.
+[[List]]Like faulty prototypes, the [[Schematic]] for the real, functional version can be obtained by scanalyzing them at a [[Scanalyzer]]¹.|
+Like faulty prototypes, feeding them to the Scrap Engine will work just as well as with the real, functional version¹.|
+They can be fed to [[Field Recycling Units]], [[Recycling Unit|Recycling Units]], the [[Enh. Scrap Shield]] and the [[Junk Cannon]] like any other part.|
+Other robots can successfully attach and use fake weapons by using a [[Scrap Suit]] ([[Elite|Elites]], [[Scrapoid|Scrapoids]], [[Scraphulk|Scraphulks]]).|
+Botcubes can be built out of fake parts.[[/List]]
+¹Since fake parts tend to be of the same kind as those you're using/carrying, and can be of out-of-depth in ratings, Item Mimics can be particularly useful in these scenarios.
+
 
 [[Heading:2]]Dealing with [[CY-PHR]][[/Heading]]
 X0-1V1's effects do not directly affect hacking, while CY-PHR only affects hacking, and both of them independently cause the overall danger and alert to be higher than usual. As a result, having both active at once is absolutely terrible, especially given that none of CY-PHR's effects amuse X0-1V1. Either try to avoid getting targeted by CY-PHR, or try to trigger them early while hoping they appear on an early floor and be prepared to deal with them then.
